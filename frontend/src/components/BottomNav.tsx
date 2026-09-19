@@ -15,8 +15,8 @@ export function BottomNav() {
 
   return (
     <nav
-      aria-label="Navegação principal"
       className="fixed inset-x-0 bottom-0 z-20 border-t border-ink/10 bg-paper"
+      style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
     >
       <ul className="mx-auto flex max-w-md items-stretch justify-around px-2 pb-[env(safe-area-inset-bottom)]">
         {items.map(({ href, label, icon: Icon }) => {
