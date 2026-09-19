@@ -26,9 +26,10 @@
 }
 
 html, body {
-  overscroll-behavior-y: none; /* bloqueia pull-to-refresh nativo */
+  overscroll-behavior-y: none;
+  overscroll-behavior-x: none; /* mata scroll lateral */
+  overflow-x: hidden;           /* esconde a scrollbar horizontal */
 }
-
 html {
   background: var(--color-paper);
   -webkit-tap-highlight-color: transparent;
