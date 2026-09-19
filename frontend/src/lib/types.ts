@@ -60,6 +60,40 @@ export interface AnswerResult {
   correct_index: number;
   explanation: string;
   pitfall: string | null;
+  /** XP ganho nesta resposta; null quando o plano não mostra gamificação */
+  xp?: number | null;
+}
+
+export interface StreakInfo {
+  current: number;
+  longest: number;
+  studied_today: boolean;
+}
+
+export interface BadgeInfo {
+  key: string;
+  name: string;
+  description: string;
+}
+
+export interface BadgeStatus extends BadgeInfo {
+  earned: boolean;
+  earned_at: string | null;
+}
+
+export interface GamificationSnapshot {
+  xp_total: number;
+  streak: StreakInfo;
+  /** últimos 7 dias, do mais antigo até hoje */
+  week: { date: string; studied: boolean }[];
+  badges: BadgeStatus[];
+}
+
+export interface ResultGamification {
+  xp_earned: number;
+  xp_total: number;
+  streak: StreakInfo;
+  new_badges: BadgeInfo[];
 }
 
 export interface FinishResult {
@@ -74,6 +108,7 @@ export interface FinishResult {
   weak_topic: string | null;
   next_lesson: { id: number; title: string } | null;
   limited_by_plan: boolean;
+  gamification: ResultGamification | null;
 }
 
 export interface TopicStat {
@@ -100,4 +135,5 @@ export interface ProgressResponse {
     finished: boolean;
     percent: number | null;
   } | null;
+  gamification: GamificationSnapshot | null;
 }

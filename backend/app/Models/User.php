@@ -63,4 +63,9 @@ class User extends Authenticatable
     {
         return Plans::label($this->plan);
     }
+
+    public function hasGamification(): bool
+    {
+        return Plans::hasGamification($this->plan);
+    }
 }

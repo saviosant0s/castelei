@@ -5,13 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\Attempt;
 use App\Models\Lesson;
 use App\Models\Question;
+use App\Models\User;
+use App\Services\GamificationService;
 use Illuminate\Database\UniqueConstraintViolationException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Throwable;
 
 class AttemptController extends Controller
 {
+    public function __construct(private GamificationService $gamification)
+    {
+    }
+
     /** Inicia uma tentativa e devolve as questões SEM gabarito nem explicação. */
     public function store(Request $request, Lesson $lesson): JsonResponse
     {
@@ -67,6 +74,7 @@ class AttemptController extends Controller
         abort_if($selected !== null && $selected >= count($question->options), 422, 'Alternativa inválida.');
 
         $isCorrect = $selected !== null && $selected === $question->correct_index;
+        $xp = $isCorrect ? (int) config('castelei.xp_per_correct_answer') : 0;
 
         try {
             $attempt->answers()->create([
@@ -74,9 +82,17 @@ class AttemptController extends Controller
                 'selected_index' => $selected,
                 'is_correct' => $isCorrect,
                 'seconds' => (int) $data['seconds'],
+                'xp' => $xp,
             ]);
         } catch (UniqueConstraintViolationException) {
             abort(409, 'Questão já respondida.');
+        }
+
+        // Gamificação nunca pode atrapalhar o estudo: se falhar, só registramos o erro.
+        try {
+            $this->gamification->recordStudyToday($request->user());
+        } catch (Throwable $e) {
+            report($e);
         }
 
         return response()->json([
@@ -84,6 +100,8 @@ class AttemptController extends Controller
             'correct_index' => $question->correct_index,
             'explanation' => $question->explanation,
             'pitfall' => $question->pitfall,
+            // Só aparece para planos com gamificação (o XP é guardado para todos).
+            'xp' => $request->user()->hasGamification() ? $xp : null,
         ]);
     }
 
@@ -91,7 +109,9 @@ class AttemptController extends Controller
     {
         $this->ensureOwner($request, $attempt);
 
-        if ($attempt->finished_at === null) {
+        $firstFinish = $attempt->finished_at === null;
+
+        if ($firstFinish) {
             $answers = $attempt->answers()->get();
 
             $attempt->update([
@@ -101,7 +121,41 @@ class AttemptController extends Controller
             ]);
         }
 
-        return response()->json($this->result($attempt->fresh()));
+        $attempt = $attempt->fresh();
+        $result = $this->result($attempt);
+        $result['gamification'] = $this->gamificationBlock($request->user(), $attempt, $result['is_record'], $firstFinish);
+
+        return response()->json($result);
+    }
+
+    /**
+     * Streak, XP e conquistas do resultado. Devolve null se o plano não inclui gamificação
+     * ou se algo falhar (o resultado da lição é mais importante do que os pontos).
+     *
+     * @return array<string, mixed>|null
+     */
+    private function gamificationBlock(User $user, Attempt $attempt, bool $isRecord, bool $firstFinish): ?array
+    {
+        try {
+            if ($firstFinish) {
+                $this->gamification->awardBadges($user, $attempt, $isRecord); // ganha para todos, aparece para quem tem o plano
+            }
+
+            if (! $user->hasGamification()) {
+                return null;
+            }
+
+            return [
+                'xp_earned' => (int) $attempt->answers()->sum('xp'),
+                'xp_total' => $this->gamification->xpTotal($user),
+                'streak' => $this->gamification->streak($user),
+                'new_badges' => $this->gamification->badgesAwardedIn($attempt),
+            ];
+        } catch (Throwable $e) {
+            report($e);
+
+            return null;
+        }
     }
 
     private function ensureOwner(Request $request, Attempt $attempt): void

@@ -39,3 +39,23 @@ describe("helpers", () => {
     expect(pluralize(5, "questão", "questões")).toBe("5 questões");
   });
 });
+
+import { formatNumber, streakMessage, weekdayInitial } from "./format";
+
+describe("gamificação", () => {
+  it("formatNumber usa ponto de milhar", () => {
+    expect(formatNumber(1240)).toBe("1.240");
+    expect(formatNumber(80)).toBe("80");
+  });
+  it("weekdayInitial acerta o dia da semana", () => {
+    expect(weekdayInitial("2026-09-19")).toBe("S"); // sábado
+    expect(weekdayInitial("2026-09-20")).toBe("D"); // domingo
+    expect(weekdayInitial("2026-09-21")).toBe("S"); // segunda
+    expect(weekdayInitial("2026-09-22")).toBe("T"); // terça
+  });
+  it("streakMessage", () => {
+    expect(streakMessage(0)).toContain("começar");
+    expect(streakMessage(1)).toBe("Streak iniciado: 1 dia.");
+    expect(streakMessage(7)).toBe("Streak mantido! 7 dias seguidos.");
+  });
+});

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BookOpen, Calculator, Languages } from "lucide-react";
+import { ArrowRight, BookOpen, Calculator, Flame, Languages, Star } from "lucide-react";
 import { serverGet } from "@/lib/backend";
-import { firstName, pluralize } from "@/lib/format";
+import { firstName, formatNumber, pluralize } from "@/lib/format";
 import type { ProgressResponse, Subject, User } from "@/lib/types";
 
 export const metadata: Metadata = { title: "Início" };
@@ -20,6 +20,7 @@ export default async function Inicio() {
   ]);
 
   const last = progress.last_attempt;
+  const gami = progress.gamification;
   const firstLesson = subjects[0]?.lessons[0];
 
   return (
@@ -28,6 +29,24 @@ export default async function Inicio() {
         <div>
           <p className="label-mono">Bora estudar</p>
           <h1 className="mt-1 text-4xl">Oi, {firstName(user.name)}!</h1>
+          {gami && (
+            <>
+              <div className="mt-3 flex flex-wrap items-center gap-2">
+                <span
+                  className="inline-flex items-center gap-1.5 rounded-full bg-coral-soft px-3 py-1.5 font-mono text-sm font-medium"
+                  aria-label={`Streak: ${gami.streak.current} ${gami.streak.current === 1 ? "dia seguido" : "dias seguidos"}`}
+                >
+                  <Flame className="size-4 text-coral" aria-hidden="true" /> {gami.streak.current} {gami.streak.current === 1 ? "dia" : "dias"}
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-sky-soft px-3 py-1.5 font-mono text-sm font-medium" aria-label={`${gami.xp_total} pontos de experiência`}>
+                  <Star className="size-4" aria-hidden="true" /> {formatNumber(gami.xp_total)} XP
+                </span>
+              </div>
+              {gami.streak.current > 0 && !gami.streak.studied_today && (
+                <p className="mt-2 text-sm text-ink/70">Estude hoje para manter seu streak.</p>
+              )}
+            </>
+          )}
         </div>
         <Link href="/planos" className="mt-1 rounded-full bg-sky-soft px-3.5 py-1.5 font-mono text-sm font-medium">
           {user.plan_label}

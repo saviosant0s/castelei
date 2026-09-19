@@ -2,9 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Check, Crown, Lightbulb, RotateCcw, SkipForward, Target, Timer, Trophy, TriangleAlert, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Crown, Flame, Lightbulb, RotateCcw, SkipForward, Star, Target, Timer, Trophy, TriangleAlert, X } from "lucide-react";
+import { BadgeIcon } from "@/components/BadgeIcon";
+import { Confetti } from "@/components/Confetti";
 import { messageOf, postJson } from "@/lib/client";
-import { formatClock, formatSeconds, optionLetter, pluralize } from "@/lib/format";
+import { formatClock, formatNumber, formatSeconds, optionLetter, pluralize, streakMessage } from "@/lib/format";
 import type { AnswerResult, FinishResult, PracticeQuestion, StartAttemptResponse } from "@/lib/types";
 
 type Phase = "loading" | "failed" | "answering" | "feedback" | "result";
@@ -208,9 +210,16 @@ export function PracticeClient({ lessonId, lessonTitle }: { lessonId: number; le
         {phase === "feedback" && feedback && (
           <div ref={feedbackRef} className="anim-rise mt-6 space-y-4">
             <div className={`rounded-2xl px-5 py-4 ${feedback.is_correct ? "bg-sage-soft" : selected === null ? "bg-paper-2" : "bg-brick-soft"}`}>
-              <p className="font-display text-2xl font-bold">
-                {feedback.is_correct ? "Acertou!" : selected === null ? "Você pulou esta" : "Não foi dessa vez"}
-              </p>
+              <div className="flex items-center justify-between gap-3">
+                <p className="font-display text-2xl font-bold">
+                  {feedback.is_correct ? "Acertou!" : selected === null ? "Você pulou esta" : "Não foi dessa vez"}
+                </p>
+                {feedback.xp ? (
+                  <span className="anim-pop inline-flex shrink-0 items-center gap-1 rounded-full bg-white px-3 py-1 font-mono text-base font-medium">
+                    <Star className="size-4 text-coral" aria-hidden="true" /> +{feedback.xp} XP
+                  </span>
+                ) : null}
+              </div>
               {!feedback.is_correct && (
                 <p className="mt-1 text-base">
                   Gabarito: <strong>{optionLetter(feedback.correct_index)}) {question.options[feedback.correct_index]}</strong>
@@ -254,12 +263,15 @@ export function PracticeClient({ lessonId, lessonTitle }: { lessonId: number; le
 
 function ResultView({ result, lessonId, onRetry }: { result: FinishResult; lessonId: number; onRetry: () => void }) {
   const headline = result.percent >= 80 ? "Mandou bem!" : result.percent >= 50 ? "Bom caminho." : "Agora você conhece as pegadinhas.";
+  const g = result.gamification;
+  const celebrate = result.is_record || (g?.new_badges.length ?? 0) > 0;
   const diff = result.is_record && result.previous_best_avg_seconds !== null && result.avg_seconds !== null
     ? result.previous_best_avg_seconds - result.avg_seconds
     : null;
 
   return (
-    <div className="mx-auto min-h-dvh max-w-md px-5 pb-12 pt-8">
+    <div className="relative mx-auto min-h-dvh max-w-md px-5 pb-12 pt-8">
+      {celebrate && <Confetti />}
       <Trophy className="size-10 text-coral" aria-hidden="true" />
       <p className="label-mono mt-4">Lição concluída</p>
       <h1 className="anim-rise mt-2 text-4xl">{headline}</h1>
@@ -304,6 +316,53 @@ function ResultView({ result, lessonId, onRetry }: { result: FinishResult; lesso
           </div>
         )}
       </dl>
+
+      {g && (
+        <section aria-labelledby="pontos" className="mt-6 space-y-4">
+          <h2 id="pontos" className="sr-only">Pontos e conquistas</h2>
+          <div className="flex items-center justify-between gap-4 rounded-2xl bg-white px-5 py-4 shadow-lift">
+            <div className="flex items-center gap-3">
+              <Star className="size-5 shrink-0 text-coral" aria-hidden="true" />
+              <div>
+                <p className="text-sm text-ink/60">XP ganho nesta lição</p>
+                <p className="font-mono text-2xl font-medium">+{formatNumber(g.xp_earned)} XP</p>
+              </div>
+            </div>
+            <p className="text-right text-sm text-ink/60">
+              Total
+              <span className="block font-mono text-base font-medium text-ink">{formatNumber(g.xp_total)}</span>
+            </p>
+          </div>
+
+          <div className="flex items-center gap-3 rounded-2xl bg-coral-soft px-5 py-4">
+            <Flame className="size-5 shrink-0 text-coral" aria-hidden="true" />
+            <p className="text-base font-bold">{streakMessage(g.streak.current)}</p>
+          </div>
+
+          {g.new_badges.length > 0 && (
+            <div>
+              <h3 className="text-2xl">{g.new_badges.length === 1 ? "Nova conquista!" : "Novas conquistas!"}</h3>
+              <ul className="mt-3 space-y-3">
+                {g.new_badges.map((badge, i) => (
+                  <li
+                    key={badge.key}
+                    className="anim-pop flex items-center gap-4 rounded-2xl border-2 border-sage bg-sage-soft px-5 py-4"
+                    style={{ animationDelay: `${i * 140}ms` }}
+                  >
+                    <span className="grid size-12 shrink-0 place-items-center rounded-full bg-sage">
+                      <BadgeIcon badgeKey={badge.key} className="size-6" />
+                    </span>
+                    <span>
+                      <span className="block text-base font-bold">{badge.name}</span>
+                      <span className="block text-sm text-ink/70">{badge.description}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </section>
+      )}
 
       {result.limited_by_plan && (
         <Link href="/planos" className="mt-6 flex items-center gap-3 rounded-2xl border-2 border-dashed border-ink/25 px-5 py-4 hover:border-ink/50">

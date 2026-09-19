@@ -87,6 +87,10 @@ h3 {
   }
 }
 
+.confetti-piece {
+  opacity: 0;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   @keyframes fill-bar {
     from {
@@ -99,8 +103,37 @@ h3 {
       transform: translateY(10px);
     }
   }
+  @keyframes confetti-fall {
+    0% {
+      opacity: 1;
+      transform: translateY(-14px) rotate(0deg);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(170px) rotate(var(--rot, 40deg));
+    }
+  }
+  @keyframes pop-in {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    60% {
+      transform: scale(1.03);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
   .anim-fill {
     animation: fill-bar 900ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .anim-pop {
+    animation: pop-in 480ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .confetti-piece {
+    animation: confetti-fall 1400ms ease-out both;
   }
   .anim-rise {
     animation: rise-in 420ms cubic-bezier(0.22, 1, 0.36, 1) both;

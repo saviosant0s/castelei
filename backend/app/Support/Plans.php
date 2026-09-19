@@ -25,4 +25,11 @@ class Plans
     {
         return self::all()[$plan]['questions_per_lesson'] ?? self::all()[config('castelei.default_plan')]['questions_per_lesson'];
     }
+
+    /** Streak, XP e conquistas aparecem para este plano? */
+    public static function hasGamification(string $plan): bool
+    {
+        return (bool) config('castelei.gamification_for_all')
+            || (bool) (self::all()[$plan]['gamification'] ?? false);
+    }
 }

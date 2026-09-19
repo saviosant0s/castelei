@@ -3,12 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Attempt;
+use App\Services\GamificationService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Throwable;
 
 class ProgressController extends Controller
 {
+    public function __construct(private GamificationService $gamification)
+    {
+    }
+
     public function index(Request $request): JsonResponse
     {
         $userId = $request->user()->id;
@@ -60,6 +66,24 @@ class ProgressController extends Controller
                     ? (int) round($last->correct_count / max($last->total_questions, 1) * 100)
                     : null,
             ] : null,
+            'gamification' => $this->gamificationFor($request),
         ]);
+    }
+
+    /** @return array<string, mixed>|null */
+    private function gamificationFor(Request $request): ?array
+    {
+        $user = $request->user();
+        if (! $user->hasGamification()) {
+            return null;
+        }
+
+        try {
+            return $this->gamification->snapshot($user);
+        } catch (Throwable $e) {
+            report($e);
+
+            return null;
+        }
     }
 }

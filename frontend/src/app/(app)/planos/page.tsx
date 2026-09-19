@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: "Planos" };
 
 const plans = [
   { key: "free", name: "Grátis", price: "R$ 0", items: ["Todas as lições", "5 questões de treino por lição", "Modo prova com cronômetro", "Tempo e acerto por tópico"] },
-  { key: "plus", name: "Plus", price: "Em breve", items: ["Tudo do Grátis", "Todas as questões de cada lição", "Mais lições a cada atualização"] },
+  { key: "plus", name: "Plus", price: "Em breve", items: ["Tudo do Grátis", "Todas as questões de cada lição", "Streak, XP e conquistas", "Mais lições a cada atualização"] },
 ] as const;
 
 export default async function Planos() {
