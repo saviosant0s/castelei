@@ -28,8 +28,8 @@
 html, body {
   overscroll-behavior-y: none;
   overscroll-behavior-x: none;
-  overflow-x: hidden;
-  background-color: #F8F9FA; /* ← isso preenche a safe-area com branco */
+  overflow-x: clip;        /* era hidden — clip esconde a barra sem travar o scroll */
+  background-color: #F8F9FA;
 }
 html {
   background: var(--color-paper);
