@@ -1,11 +1,15 @@
 import { cookies } from "next/headers";
 import { notFound, redirect } from "next/navigation";
-import { apiBase, TOKEN_COOKIE } from "@/lib/proxy";
+import { apiBase, isGuestMode, TOKEN_COOKIE } from "@/lib/proxy";
 
 /** GET autenticado na API, para Server Components. Manda para o login se a sessão caiu. */
 export async function serverGet<T>(path: string): Promise<T> {
   const token = (await cookies()).get(TOKEN_COOKIE)?.value;
-  if (!token) redirect("/entrar");
+  if (!token) {
+    // Em modo de teste não há tela de login para onde mandar a pessoa.
+    if (isGuestMode()) throw new Error("Não foi possível iniciar a sessão de teste. Recarregue a página.");
+    redirect("/entrar");
+  }
 
   let response: Response;
   try {

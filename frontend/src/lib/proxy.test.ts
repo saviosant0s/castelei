@@ -135,3 +135,38 @@ describe("logout", () => {
     expect(res.headers.get("set-cookie")).toContain(`${TOKEN_COOKIE}=;`);
   });
 });
+
+describe("modo de teste (visitante)", () => {
+  it("isGuestMode só liga com GUEST_MODE=true", async () => {
+    const { isGuestMode } = await import("./proxy");
+    vi.stubEnv("GUEST_MODE", "true");
+    expect(isGuestMode()).toBe(true);
+    vi.stubEnv("GUEST_MODE", "false");
+    expect(isGuestMode()).toBe(false);
+    vi.stubEnv("GUEST_MODE", "");
+    expect(isGuestMode()).toBe(false);
+    vi.unstubAllEnvs();
+  });
+
+  it("createGuestSession cadastra um visitante único e devolve o token", async () => {
+    const { createGuestSession } = await import("./proxy");
+    fetchMock.mockResolvedValue(jsonResponse({ user: {}, token: "9|guest" }, 201));
+
+    expect(await createGuestSession()).toBe("9|guest");
+
+    const [url, init] = fetchMock.mock.calls[0];
+    expect(url).toBe("http://api.test/api/register");
+    const body = JSON.parse(init.body);
+    expect(body.name).toBe("Visitante");
+    expect(body.email).toMatch(/^guest-[0-9a-f-]{36}@guest\.invalid$/);
+    expect(body.password.length).toBeGreaterThanOrEqual(32);
+  });
+
+  it("createGuestSession devolve null se a API falhar", async () => {
+    const { createGuestSession } = await import("./proxy");
+    fetchMock.mockResolvedValue(jsonResponse({ message: "x" }, 500));
+    expect(await createGuestSession()).toBeNull();
+    fetchMock.mockRejectedValue(new Error("fora do ar"));
+    expect(await createGuestSession()).toBeNull();
+  });
+});

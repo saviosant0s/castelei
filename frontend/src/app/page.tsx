@@ -2,7 +2,7 @@ import Link from "next/link";
 import { cookies } from "next/headers";
 import { ArrowRight, Check, Lightbulb, Target, BookOpen } from "lucide-react";
 import { Logo } from "@/components/Logo";
-import { TOKEN_COOKIE } from "@/lib/proxy";
+import { isGuestMode, TOKEN_COOKIE } from "@/lib/proxy";
 
 const layers = [
   {
@@ -26,14 +26,15 @@ const layers = [
 ];
 
 export default async function Landing() {
-  const loggedIn = Boolean((await cookies()).get(TOKEN_COOKIE)?.value);
+  const guest = isGuestMode();
+  const loggedIn = guest || Boolean((await cookies()).get(TOKEN_COOKIE)?.value);
 
   return (
     <main className="mx-auto max-w-3xl px-6 pb-20 pt-6">
       <header className="flex items-center justify-between">
         <Logo />
         <Link href={loggedIn ? "/inicio" : "/entrar"} className="btn btn-ghost min-h-11 px-4">
-          {loggedIn ? "Meu início" : "Entrar"}
+          {guest ? "Abrir o app" : loggedIn ? "Meu início" : "Entrar"}
         </Link>
       </header>
 
@@ -46,7 +47,7 @@ export default async function Landing() {
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Link href={loggedIn ? "/inicio" : "/cadastro"} className="btn btn-primary">
-            {loggedIn ? "Continuar estudando" : "Começar grátis"} <ArrowRight className="size-5" aria-hidden="true" />
+            {guest ? "Começar a estudar" : loggedIn ? "Continuar estudando" : "Começar grátis"} <ArrowRight className="size-5" aria-hidden="true" />
           </Link>
           {!loggedIn && (
             <Link href="/entrar" className="btn btn-ghost border-2 border-ink/15">
@@ -105,8 +106,8 @@ export default async function Landing() {
       </section>
 
       <footer className="mt-20 flex items-center justify-between border-t border-ink/10 pt-6 text-sm text-ink/60">
-        <span>Castelei · MVP</span>
-        <Link href="/cadastro" className="font-bold text-ink underline underline-offset-4">Criar conta</Link>
+        <span>Castelei · MVP{guest ? " · modo de teste" : ""}</span>
+        {!guest && <Link href="/cadastro" className="font-bold text-ink underline underline-offset-4">Criar conta</Link>}
       </footer>
     </main>
   );

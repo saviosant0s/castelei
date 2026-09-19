@@ -56,6 +56,7 @@ Teste: abra `https://SEU-BACKEND.up.railway.app/up` (deve responder 200) e `http
    ```
 
    Não coloque essa variável como pública: ela só é usada no servidor do Next.
+   Para testes sem login, acrescente também `GUEST_MODE=true` (veja o README).
 4. **Settings → Networking → Generate Domain.** Essa é a URL que você abre e compartilha.
 5. Faça o redeploy se as variáveis foram criadas depois do primeiro build.
 

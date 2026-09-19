@@ -4,18 +4,26 @@ import { Crown } from "lucide-react";
 import { InstallButton } from "@/components/InstallButton";
 import { LogoutButton } from "@/components/LogoutButton";
 import { serverGet } from "@/lib/backend";
+import { isGuestMode } from "@/lib/proxy";
 import type { User } from "@/lib/types";
 
 export const metadata: Metadata = { title: "Perfil" };
 
 export default async function Perfil() {
   const { user } = await serverGet<{ user: User }>("/me");
+  const guest = isGuestMode();
 
   return (
     <div className="space-y-8">
       <header>
         <h1 className="text-4xl">{user.name}</h1>
-        <p className="mt-1 text-base text-ink/70">{user.email}</p>
+        {guest ? (
+          <p className="mt-2 text-base text-ink/70">
+            Modo de teste: sem login. Seu progresso fica salvo neste navegador.
+          </p>
+        ) : (
+          <p className="mt-1 text-base text-ink/70">{user.email}</p>
+        )}
       </header>
 
       <Link href="/planos" className="flex items-center gap-4 rounded-2xl bg-white p-5 shadow-lift">
@@ -32,7 +40,7 @@ export default async function Perfil() {
         <InstallButton />
       </section>
 
-      <LogoutButton />
+      {!guest && <LogoutButton />}
     </div>
   );
 }

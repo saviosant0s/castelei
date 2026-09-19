@@ -4,6 +4,42 @@ import { NextResponse, type NextRequest } from "next/server";
 export const TOKEN_COOKIE = "castelei_token";
 const THIRTY_DAYS = 60 * 60 * 24 * 30;
 
+/** Modo de teste: sem tela de login. Cada navegador ganha uma conta de visitante automaticamente. */
+export function isGuestMode(): boolean {
+  return process.env.GUEST_MODE === "true";
+}
+
+export function sessionCookieOptions() {
+  return {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax" as const,
+    path: "/",
+    maxAge: THIRTY_DAYS,
+  };
+}
+
+/** Cria uma conta anônima na API e devolve o token (ou null se a API falhar). */
+export async function createGuestSession(): Promise<string | null> {
+  try {
+    const response = await fetch(`${apiBase()}/register`, {
+      method: "POST",
+      headers: { Accept: "application/json", "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: "Visitante",
+        email: `guest-${crypto.randomUUID()}@guest.invalid`,
+        password: `${crypto.randomUUID()}${crypto.randomUUID()}`,
+      }),
+      cache: "no-store",
+    });
+    if (!response.ok) return null;
+    const data = (await response.json().catch(() => null)) as { token?: string } | null;
+    return data?.token ?? null;
+  } catch {
+    return null;
+  }
+}
+
 export function apiBase(): string {
   return (process.env.API_URL ?? "http://localhost:8000/api").replace(/\/+$/, "");
 }
@@ -86,13 +122,7 @@ export async function authenticate(req: NextRequest, endpoint: "login" | "regist
   }
 
   const out = json({ user: data.user }, response.status);
-  out.cookies.set(TOKEN_COOKIE, data.token, {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "lax",
-    path: "/",
-    maxAge: THIRTY_DAYS,
-  });
+  out.cookies.set(TOKEN_COOKIE, data.token, sessionCookieOptions());
   return out;
 }
 

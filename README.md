@@ -60,6 +60,12 @@ cd frontend && npm test && npm run lint && npm run build
 
 O CI (`.github/workflows/ci.yml`) roda tudo isso a cada push.
 
+## Modo de teste (sem login)
+
+Com `GUEST_MODE=true` no frontend, as telas de entrar e cadastrar somem: cada navegador ganha automaticamente uma conta de visitante (progresso guardado no cookie do navegador, por até 30 dias). A API continua protegida por token. Para voltar ao login normal, remova a variável ou troque por qualquer outro valor.
+
+Limites conhecidos: limpar os cookies cria um visitante novo (o progresso antigo não volta), e o cadastro na API aceita 10 contas novas por minuto por IP, então muitos visitantes novos de uma vez podem ver a mensagem de servidor indisponível.
+
 ## Como a autenticação funciona
 
 O navegador nunca fala direto com a API. O Next guarda o token do Sanctum num cookie `httpOnly` e repassa apenas as rotas de prática (`/api/lessons/*/attempts`, `/api/attempts/*/answers`, `/api/attempts/*/finish`), colocando o token no header. Assim o token não fica exposto a JavaScript, e não há CORS para configurar.
