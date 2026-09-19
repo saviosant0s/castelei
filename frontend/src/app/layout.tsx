@@ -14,8 +14,9 @@ export const metadata: Metadata = {
   formatDetection: { telephone: false },
 };
 
+// linha ~20
 export const viewport: Viewport = {
-  themeColor: "#5BABF0",
+  themeColor: "#F8F9FA",  // era #5BABF0 — agora casa com o fundo do app
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
