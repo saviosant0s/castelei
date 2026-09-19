@@ -10,7 +10,7 @@ export default function manifest(): MetadataRoute.Manifest {
     display: "standalone",
     orientation: "portrait",
     background_color: "#F8F9FA",
-    theme_color: "#5BABF0",
+    theme_color: "#F8F9FA",  // era #5BABF0 — afeta Android nav bar também
     lang: "pt-BR",
     icons: [
       { src: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
