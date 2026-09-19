@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-paper: #f8f9fa;
+  --color-paper-2: #eef1f5;
+  --color-ink: #1c1c2e;
+  --color-sky: #5babf0;
+  --color-sky-soft: #dcebfa;
+  --color-coral: #f4845f;
+  --color-coral-soft: #fde7df;
+  --color-sage: #52b788;
+  --color-sage-soft: #ddf3e7;
+  --color-brick: #c93b3b;
+  --color-brick-soft: #fbe3e3;
+
+  --shadow-lift: 0 14px 30px -16px rgb(28 28 46 / 0.4);
+  --shadow-sky: 0 14px 26px -14px rgb(47 127 199 / 0.75);
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  background: var(--color-paper);
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  min-height: 100dvh;
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  /* grão sutil (3%) para dar textura ao fundo chapado */
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.11  0 0 0 0 0.11  0 0 0 0 0.18  0 0 0 0.03 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl px-6 font-bold transition;
+    @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink;
+    @apply active:translate-y-px disabled:cursor-not-allowed disabled:opacity-45;
+  }
+  .btn-primary {
+    @apply bg-sky text-ink shadow-sky hover:brightness-105;
+  }
+  .btn-dark {
+    @apply bg-ink text-paper hover:bg-ink/90;
+  }
+  .btn-ghost {
+    @apply bg-transparent text-ink hover:bg-ink/5;
+  }
+  .field {
+    @apply min-h-12 w-full rounded-2xl border-2 border-ink/15 bg-white px-4 text-base text-ink transition;
+    @apply placeholder:text-ink/40 focus:border-sky focus:outline-none;
+  }
+  .label-mono {
+    @apply font-mono text-sm font-medium uppercase tracking-wider text-ink/60;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes fill-bar {
+    from {
+      width: 0;
+    }
+  }
+  @keyframes rise-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  }
+  .anim-fill {
+    animation: fill-bar 900ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .anim-rise {
+    animation: rise-in 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}

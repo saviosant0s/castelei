@@ -1,0 +1,261 @@
+{
+  "slug": "matematica-basica",
+  "name": "Matemática Básica",
+  "description": "Equações e porcentagem: a base de boa parte das provas de exatas.",
+  "lessons": [
+    {
+      "slug": "equacoes-do-1o-grau",
+      "title": "Equações do 1º grau",
+      "summary": "Uma equação é uma balança em equilíbrio: o que você faz de um lado, precisa fazer do outro. O objetivo é sempre o mesmo: deixar o x sozinho.",
+      "explanation": "Pense em uma balança de dois pratos, equilibrada. Se você tirar 7 de um prato, precisa tirar 7 do outro para ela continuar equilibrada. É exatamente isso que fazemos ao resolver uma equação como 3x + 7 = 22.\n\nO caminho tem três passos. Primeiro, junte os termos com x de um lado e os números do outro (quem muda de lado, muda de sinal). Segundo, simplifique. Terceiro, divida pelo número que está grudado no x.\n\nDepois de achar o valor, substitua na equação original. Se os dois lados derem o mesmo número, você acertou. Se não, dá para descobrir o erro ali mesmo, sem depender do gabarito.",
+      "exam_style": "A prova raramente entrega a equação pronta. Ela conta uma historinha (idades, preços, quantidades) e você precisa montar a equação. Fique de olho nas palavras-chave: \"o dobro\" é 2x, \"o triplo\" é 3x, \"a mais que\" é uma soma, \"daqui a 5 anos\" soma 5 em cada idade. As alternativas costumam incluir o resultado de um passo intermediário e o resultado de quem esqueceu de trocar o sinal.",
+      "pitfalls": [
+        "Trocar de lado sem trocar o sinal.",
+        "Multiplicar o número de fora do parêntese só pelo primeiro termo.",
+        "Responder o valor de uma expressão intermediária (como o dobro ou x/3) em vez de x.",
+        "Somar denominadores em vez de calcular o MMC."
+      ],
+      "questions": [
+        {
+          "topic": "Isolar a incógnita",
+          "statement": "Resolva a equação 3x + 7 = 22 e assinale o valor de x.",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"
+          ],
+          "correct_index": 2,
+          "explanation": "Passe o 7 para o outro lado trocando o sinal: 3x = 22 − 7 = 15. Depois divida por 3: x = 5. Conferindo: 3 · 5 + 7 = 22.",
+          "pitfall": "Quem esquece de trocar o sinal do +7 monta 3x = 29 e cai numa conta que não fecha. Sempre confira substituindo o resultado."
+        },
+        {
+          "topic": "Sinais negativos",
+          "statement": "Qual é a solução da equação 5 − 2x = 11?",
+          "options": [
+            "−3",
+            "3",
+            "8",
+            "−8",
+            "1"
+          ],
+          "correct_index": 0,
+          "explanation": "Isole o termo com x: −2x = 11 − 5 = 6. Divida os dois lados por −2: x = 6 ÷ (−2) = −3. Conferindo: 5 − 2 · (−3) = 5 + 6 = 11.",
+          "pitfall": "Dividir 6 por −2 e esquecer o sinal dá x = 3, e essa alternativa está lá esperando por você."
+        },
+        {
+          "topic": "Propriedade distributiva",
+          "statement": "Resolva a equação 2(x − 3) = x + 4.",
+          "options": [
+            "7",
+            "1",
+            "14",
+            "10",
+            "−10"
+          ],
+          "correct_index": 3,
+          "explanation": "Distribua o 2 nos dois termos do parêntese: 2x − 6 = x + 4. Junte os x de um lado: 2x − x = 4 + 6, logo x = 10.",
+          "pitfall": "Multiplicar o 2 só pelo x (2x − 3 = x + 4) leva a x = 7. O número que multiplica o parêntese multiplica tudo o que está lá dentro."
+        },
+        {
+          "topic": "Equações com fração",
+          "statement": "Se x/3 + 2 = 6, qual é o valor de x?",
+          "options": [
+            "4",
+            "12",
+            "10",
+            "18",
+            "24"
+          ],
+          "correct_index": 1,
+          "explanation": "Isole a fração: x/3 = 6 − 2 = 4. Multiplique os dois lados por 3: x = 12. Conferindo: 12/3 + 2 = 4 + 2 = 6.",
+          "pitfall": "Parar em x/3 = 4 e marcar 4 é o erro clássico: 4 é o valor de x/3, não de x. Outro erro é passar o 2 sem trocar o sinal (x/3 = 8), que leva a 24."
+        },
+        {
+          "topic": "Denominadores diferentes",
+          "statement": "Resolva a equação x/2 + x/3 = 10.",
+          "options": [
+            "6",
+            "15",
+            "20",
+            "50",
+            "12"
+          ],
+          "correct_index": 4,
+          "explanation": "O MMC de 2 e 3 é 6: 3x/6 + 2x/6 = 10, então 5x/6 = 10, 5x = 60 e x = 12. Conferindo: 12/2 + 12/3 = 6 + 4 = 10.",
+          "pitfall": "Somar os denominadores (x/5 = 10) dá x = 50. Denominadores diferentes pedem MMC, nunca soma."
+        },
+        {
+          "topic": "Problemas de enunciado",
+          "statement": "Um número somado ao seu dobro resulta em 27. Qual é esse número?",
+          "options": [
+            "6",
+            "18",
+            "9",
+            "13,5",
+            "25"
+          ],
+          "correct_index": 2,
+          "explanation": "Chame o número de x. O dobro é 2x. Então x + 2x = 27, 3x = 27 e x = 9. Conferindo: 9 + 18 = 27.",
+          "pitfall": "18 é o dobro do número, e a prova adora colocá-lo entre as alternativas. Releia o que a pergunta pede: o número, não o dobro."
+        },
+        {
+          "topic": "Problemas de enunciado",
+          "statement": "Ana tem o triplo da idade de Bia. Daqui a 5 anos, a soma das idades das duas será 50 anos. Qual é a idade atual de Ana?",
+          "options": [
+            "30",
+            "10",
+            "25",
+            "35",
+            "40"
+          ],
+          "correct_index": 0,
+          "explanation": "Chame a idade de Bia de b; a de Ana é 3b. Daqui a 5 anos: (3b + 5) + (b + 5) = 50, então 4b + 10 = 50, 4b = 40 e b = 10. Ana tem 3 · 10 = 30 anos.",
+          "pitfall": "Duas pessoas envelhecem 5 anos cada, o que soma 10 anos, e não 5. E cuidado: 10 é a idade de Bia, não a de Ana."
+        },
+        {
+          "topic": "Isolar a incógnita",
+          "statement": "Resolva a equação 7x − 4 = 3x + 12.",
+          "options": [
+            "2",
+            "3",
+            "8",
+            "4",
+            "16"
+          ],
+          "correct_index": 3,
+          "explanation": "Junte os x de um lado e os números do outro: 7x − 3x = 12 + 4, então 4x = 16 e x = 4. Conferindo: 7 · 4 − 4 = 24 e 3 · 4 + 12 = 24.",
+          "pitfall": "Ao passar o −4 para o outro lado ele vira +4. Fazer 12 − 4 = 8 leva a x = 2."
+        }
+      ]
+    },
+    {
+      "slug": "porcentagem",
+      "title": "Porcentagem",
+      "summary": "Porcentagem é uma fração de denominador 100. Aumentar 20% é multiplicar por 1,20; descontar 20% é multiplicar por 0,80. E porcentagens em sequência nunca se somam.",
+      "explanation": "\"Por cento\" quer dizer \"a cada cem\". Então 15% é 15/100, ou 0,15. Calcular 15% de 240 é multiplicar 0,15 por 240.\n\nO atalho que mais poupa tempo é o fator multiplicador. Um aumento de 25% deixa o preço em 125% do que era: multiplique por 1,25. Um desconto de 20% deixa o preço em 80%: multiplique por 0,80. Com esse fator, você nem precisa calcular o valor do aumento separadamente.\n\nQuando as porcentagens vêm em sequência, multiplique os fatores em vez de somar as porcentagens. Dois descontos de 10% resultam em 0,9 × 0,9 = 0,81, ou seja, 19% de desconto no total.",
+      "exam_style": "Nas provas, porcentagem aparece em compras, salários, juros e tabelas. Três formatos se repetem: descobrir o preço final depois de um aumento ou desconto, calcular a variação percentual entre dois valores e lidar com aumentos ou descontos sucessivos. As alternativas quase sempre trazem o valor do desconto (e não o preço final) e o resultado de quem somou as porcentagens.",
+      "pitfalls": [
+        "Somar porcentagens sucessivas em vez de multiplicar os fatores.",
+        "Calcular a variação percentual dividindo pelo valor final em vez do inicial.",
+        "Marcar o valor do desconto quando a pergunta pede o preço final.",
+        "Aplicar a porcentagem sobre o preço com desconto para achar o preço original."
+      ],
+      "questions": [
+        {
+          "topic": "Porcentagem de um valor",
+          "statement": "Quanto é 15% de 240?",
+          "options": [
+            "16",
+            "24",
+            "32",
+            "36",
+            "48"
+          ],
+          "correct_index": 3,
+          "explanation": "15% é 15/100 = 0,15, e 0,15 × 240 = 36. Outro caminho: 10% de 240 é 24 e 5% é 12; somando, 36.",
+          "pitfall": "Dividir 240 por 15 dá 16, que parece razoável mas é outra conta. \"Porcentagem de\" é multiplicar por 15/100."
+        },
+        {
+          "topic": "Aumento e desconto",
+          "statement": "Um produto que custava R$ 80 sofreu um aumento de 25%. Qual é o novo preço?",
+          "options": [
+            "R$ 20",
+            "R$ 100",
+            "R$ 105",
+            "R$ 85",
+            "R$ 120"
+          ],
+          "correct_index": 1,
+          "explanation": "25% de 80 é 20, então o novo preço é 80 + 20 = R$ 100. Atalho: multiplicar por 1,25 (100% + 25%).",
+          "pitfall": "R$ 20 é o valor do aumento, não o preço novo. Releia se a pergunta pede o valor do aumento ou o preço final."
+        },
+        {
+          "topic": "Aumento e desconto",
+          "statement": "Uma camiseta de R$ 60 está com 20% de desconto. Quanto se paga por ela?",
+          "options": [
+            "R$ 12",
+            "R$ 40",
+            "R$ 52",
+            "R$ 58",
+            "R$ 48"
+          ],
+          "correct_index": 4,
+          "explanation": "20% de 60 é 12, então se paga 60 − 12 = R$ 48. Atalho: multiplicar por 0,80 (100% − 20%).",
+          "pitfall": "R$ 12 é o valor do desconto, não o preço final."
+        },
+        {
+          "topic": "Descontos sucessivos",
+          "statement": "Dois descontos sucessivos de 10% equivalem a um único desconto de quanto?",
+          "options": [
+            "19%",
+            "10%",
+            "20%",
+            "21%",
+            "1%"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada desconto multiplica o preço por 0,9. Dois descontos: 0,9 × 0,9 = 0,81. O cliente paga 81% do preço, ou seja, o desconto total é de 19%.",
+          "pitfall": "Somar 10% + 10% = 20% é a armadilha mais famosa da porcentagem. O segundo desconto incide sobre o preço já reduzido, por isso o total é menor que 20%."
+        },
+        {
+          "topic": "Achar o valor original",
+          "statement": "Depois de um desconto de 20%, um produto passou a custar R$ 120. Qual era o preço original?",
+          "options": [
+            "R$ 96",
+            "R$ 144",
+            "R$ 150",
+            "R$ 140",
+            "R$ 160"
+          ],
+          "correct_index": 2,
+          "explanation": "Pagar R$ 120 depois de 20% de desconto significa que 120 representa 80% do original. Então o original é 120 ÷ 0,8 = R$ 150. Conferindo: 20% de 150 é 30 e 150 − 30 = 120.",
+          "pitfall": "Somar 20% de 120 (R$ 24) ao preço dá R$ 144, mas está errado: os 20% foram calculados sobre o preço original, não sobre o preço com desconto."
+        },
+        {
+          "topic": "Variação percentual",
+          "statement": "O preço de um produto subiu de R$ 50 para R$ 65. Qual foi o aumento percentual?",
+          "options": [
+            "30%",
+            "15%",
+            "23%",
+            "65%",
+            "130%"
+          ],
+          "correct_index": 0,
+          "explanation": "A variação foi 65 − 50 = 15. Para achar a porcentagem, divida pelo valor inicial: 15 ÷ 50 = 0,30 = 30%.",
+          "pitfall": "A base da conta é sempre o valor inicial. Dividir por 65 (o valor final) dá cerca de 23%, e dizer 15% confunde reais com porcentagem."
+        },
+        {
+          "topic": "Porcentagem de um valor",
+          "statement": "Em uma turma de 40 alunos, 60% são meninas. Quantos meninos há na turma?",
+          "options": [
+            "24",
+            "20",
+            "4",
+            "16",
+            "60"
+          ],
+          "correct_index": 3,
+          "explanation": "Se 60% são meninas, os meninos são 100% − 60% = 40% da turma. E 40% de 40 = 16.",
+          "pitfall": "24 é o número de meninas (60% de 40). A pergunta pede os meninos: leia o que se quer antes de marcar."
+        },
+        {
+          "topic": "Descontos sucessivos",
+          "statement": "Um preço de R$ 200 sofre um aumento de 10% e, logo depois, um desconto de 10%. Qual é o preço final?",
+          "options": [
+            "R$ 200",
+            "R$ 220",
+            "R$ 198",
+            "R$ 180",
+            "R$ 190"
+          ],
+          "correct_index": 2,
+          "explanation": "Depois do aumento: 200 × 1,10 = 220. O desconto de 10% agora incide sobre 220: 220 × 0,90 = R$ 198.",
+          "pitfall": "Aumentar 10% e diminuir 10% não devolve o preço original, porque a segunda porcentagem é calculada sobre outro valor. R$ 200 é a resposta de quem soma +10% e −10% direto."
+        }
+      ]
+    }
+  ]
+}
