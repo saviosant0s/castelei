@@ -27,8 +27,9 @@
 
 html, body {
   overscroll-behavior-y: none;
-  overscroll-behavior-x: none; /* mata scroll lateral */
-  overflow-x: hidden;           /* esconde a scrollbar horizontal */
+  overscroll-behavior-x: none;
+  overflow-x: hidden;
+  background-color: #F8F9FA; /* ← isso preenche a safe-area com branco */
 }
 html {
   background: var(--color-paper);
