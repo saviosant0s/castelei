@@ -31,6 +31,15 @@ html, body {
   overflow-x: clip;        /* era hidden — clip esconde a barra sem travar o scroll */
   background-color: #F8F9FA;
 }
+/* Esconde scrollbar mantendo a rolagem */
+::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Android */
+}
+* {
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* IE/Edge */
+}
+
 html {
   background: var(--color-paper);
   -webkit-tap-highlight-color: transparent;
