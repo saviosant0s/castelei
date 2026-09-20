@@ -61,6 +61,8 @@ Projeto `castelei` com três serviços: `Postgres`, `backend` (Root Directory `/
 
 Pronto: MVP (cadastro, catálogo, prática com cronômetro, resultado com recorde e ponto fraco, progresso por tópico, planos), modo de teste, Fase 2 (streak, XP, conquistas), lições em etapas, conteúdo revisado pelo Guia Editorial (Matemática, Português) e a matéria **Sistemas Operacionais** com 5 lições (o que é um SO; componentes e funções; terminal na prática; chamadas de sistema em 2 lições).
 
+**Fase 2 fechada** (menos TWA na Play Store e expansão de módulos, adiados pelo Sávio): simulado por matéria (`ExamController`, tentativa com `kind = exam`, questões sorteadas em rodízio entre as lições) e gráfico de evolução em `/progresso` (`EvolutionChart`, acerto e tempo em gráficos separados — nunca eixo duplo). CI ativo em `.github/workflows/ci.yml`.
+
 Aguardando respostas do Sávio (plano do professor, ver `docs/sistemas-operacionais-mapa.md`):
 1. Onde entra o **escalonamento** (suposição: Processos e Threads, parte 2).
 2. Se os **estudos de caso** (Linux, Windows) ficam nos trabalhos.
@@ -70,8 +72,8 @@ Próximas lições, na ordem das aulas: 29/09 Estrutura e arquitetura de um SO; 
 
 ## Pendências e cuidados
 
-- **Os testes PHPUnit do backend nunca rodaram** no ambiente onde tudo foi escrito (o Composer estava bloqueado). Só a sintaxe foi checada com `php -l` e a lógica pura foi testada à parte. **Primeira tarefa:** rode `php artisan test` e corrija o que falhar.
-- **CI não está ativo.** O arquivo pronto está em `docs/ci.yml.pendente`. Copie para `.github/workflows/ci.yml` (precisa de credencial com permissão de workflow) e confirme que passa.
+- **`backend/composer.lock` não está versionado.** Cada deploy do Railway resolve as dependências do zero, então produção pode receber versões diferentes das testadas. Commitar o lock resolve, mas o arquivo gerado aqui veio do PHP 8.4 e o Railway não tem versão fixada (`composer.json` pede `^8.2`): confira a versão do PHP em produção antes de versionar.
+- **O simulado depende de `EXAM_FOR_ALL=true`** no serviço `backend` do Railway para aparecer fora do plano Pro. Ainda não foi ligado.
 - O Sávio **edita direto no GitHub** (já fez ajustes visuais de PWA). Sempre `git fetch` e confira antes de dar push. Nunca use force push.
 - Observações sobre ajustes manuais dele (não alterados): `BottomNav` sem `aria-label` e com padding de área segura duplicado no iPhone. Sugira, não altere sem pedir.
 - Não testado em celular real nem em máquinas Windows/Linux reais (os comandos vêm da documentação). O Sávio está testando o app.
