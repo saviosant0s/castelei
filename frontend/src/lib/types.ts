@@ -44,6 +44,8 @@ export interface LessonStep {
   figure?: { src: string; alt: string; caption?: string };
   /** trecho de código, mostrado em fonte monoespaçada */
   code?: { label?: string; text: string };
+  /** tabela (ex.: comandos no Linux e no Windows). Com mono, as colunas depois da primeira usam fonte de código */
+  table?: { label?: string; headers: string[]; rows: string[][]; mono?: boolean };
 }
 
 export interface LessonDetail {

@@ -14,7 +14,7 @@ castelei/
 ## O que o MVP já faz
 
 - Cadastro e login por e-mail e senha
-- 3 matérias, 7 lições e 56 questões originais (Matemática Básica, Português e Sistemas Operacionais; veja `docs/sistemas-operacionais-mapa.md`)
+- 3 matérias, 9 lições e 72 questões originais (Matemática Básica, Português e Sistemas Operacionais; veja `docs/sistemas-operacionais-mapa.md`)
 - Lição em etapas, uma ideia por tela: analogia, passo a passo com exemplo, como cai na prova, pegadinhas e resumo
 - Modo Prova: uma questão por tela, cronômetro crescente, confirmar ou pular, feedback com gabarito, explicação e pegadinha
 - Resultado com acerto, tempo médio por questão, recorde de tempo e ponto fraco

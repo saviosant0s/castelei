@@ -10,31 +10,77 @@
       "steps": [
         {
           "kind": "idea",
-          "title": "Um prédio com um zelador",
+          "title": "Você já usa um sistema operacional",
           "body": [
-            "Imagine um prédio com vários moradores. Todos dividem o elevador, a garagem e a lavanderia.",
-            "Sem alguém organizando, dois carros disputariam a mesma vaga. O elevador viveria lotado.",
-            "O zelador resolve isso. Ele também poupa os moradores de detalhes: ninguém precisa saber como o motor do elevador funciona."
+            "Ao ligar o computador ou o celular, aparece uma tela inicial com ícones, relógio e menus. Tudo isso vem do sistema operacional.",
+            "No computador, os mais conhecidos são o Windows, o Linux e o macOS. No celular, o Android e o iOS.",
+            "Ele existe para você usar o aparelho sem lidar com as peças por dentro."
           ],
           "terms": [
             {
               "word": "Sistema operacional (SO)",
-              "meaning": "o software que fica entre os programas e as peças do computador. Ele esconde a complexidade dessas peças e organiza quem usa o quê."
+              "meaning": "o programa principal do computador ou do celular. Ele fica entre você (e seus aplicativos) e as peças do aparelho."
+            },
+            {
+              "word": "Hardware",
+              "meaning": "as peças físicas, aquelas que você pode tocar (tela, teclado, disco e memória)."
+            },
+            {
+              "word": "Software",
+              "meaning": "os programas, que você não toca. São instruções guardadas no aparelho."
             }
           ]
         },
         {
           "kind": "explain",
-          "title": "Visão 1: esconder a complexidade",
+          "title": "As peças que o sistema precisa cuidar",
           "body": [
-            "Ler uma foto do disco exige uma lista enorme de comandos detalhados. Cada modelo de disco ainda tem os seus.",
-            "Ninguém quer programar assim. O SO oferece o arquivo: o programa pede “abrir foto.jpg” e pronto.",
-            "A tradução para o disco fica por conta de um driver."
+            "Imagine o computador como uma cozinha. O processador é o cozinheiro: executa as instruções, uma a uma.",
+            "A memória RAM é a bancada: guarda o que está em uso agora. Ao desligar, ela é limpa.",
+            "O disco é a despensa: guarda os arquivos, mesmo desligado. Teclado, tela e rede são as portas por onde entram e saem informações."
+          ],
+          "figure": {
+            "src": "/figuras/so/so-pecas.svg",
+            "alt": "Quatro peças do computador comparadas a uma cozinha: processador é o cozinheiro, memória RAM é a bancada, disco é a despensa e entrada e saída são as portas. O sistema operacional é o gerente de tudo isso.",
+            "caption": "As peças do computador e o gerente que organiza tudo."
+          },
+          "terms": [
+            {
+              "word": "Processador (CPU)",
+              "meaning": "o “cérebro” que executa as instruções dos programas."
+            },
+            {
+              "word": "Memória (RAM)",
+              "meaning": "onde ficam os programas e os dados em uso agora. Some quando o aparelho desliga."
+            },
+            {
+              "word": "Disco (SSD ou HD)",
+              "meaning": "onde os arquivos e os programas ficam guardados, mesmo com o aparelho desligado."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Sem organização, seria uma bagunça",
+          "body": [
+            "Imagine um prédio com vários moradores. Todos dividem o elevador, a garagem e a lavanderia.",
+            "Sem alguém organizando, dois carros disputariam a mesma vaga. O elevador viveria lotado.",
+            "O zelador resolve isso. Ele também poupa os moradores de detalhes: ninguém precisa saber como o motor do elevador funciona.",
+            "No computador, o zelador é o sistema operacional."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Tarefa 1: esconder a complexidade",
+          "body": [
+            "Abrir uma foto parece só um clique. Por baixo, alguém precisa achar a foto no disco, ler os pedaços e mostrar na tela.",
+            "Se cada programa fizesse isso sozinho, seria um trabalho enorme. O SO faz por todos e oferece algo simples: o arquivo.",
+            "Cada tipo de disco tem suas próprias instruções. A tradução fica por conta de um driver."
           ],
           "figure": {
             "src": "/figuras/so/so-maquina-estendida.svg",
-            "alt": "Três blocos empilhados. O programa do usuário pede “abrir foto.jpg”. O sistema operacional traduz, usando arquivos e drivers. O hardware do disco recebe comandos complicados.",
-            "caption": "O programa pede algo simples. O SO traduz para os comandos complicados do disco."
+            "alt": "Três blocos empilhados. O programa do usuário pede “abrir foto.jpg”. O sistema operacional traduz, usando arquivos e drivers. O hardware do disco recebe instruções complicadas.",
+            "caption": "O programa pede algo simples. O SO traduz para as instruções complicadas do disco."
           },
           "terms": [
             {
@@ -53,11 +99,11 @@
         },
         {
           "kind": "explain",
-          "title": "Visão 2: organizar quem usa o quê",
+          "title": "Tarefa 2: organizar quem usa o quê",
           "body": [
-            "Agora imagine três programas mandando imprimir ao mesmo tempo, em uma só impressora.",
-            "Sem organização, as linhas ficariam misturadas. O SO guarda a saída de cada programa no disco. Depois imprime uma de cada vez.",
-            "Ele faz isso com todas as peças disputadas: processador, memória, disco e impressora."
+            "Vários programas querem usar as mesmas peças ao mesmo tempo. Três deles mandam imprimir em uma só impressora.",
+            "Sem organização, as linhas se misturariam. O sistema operacional guarda cada trabalho e imprime um de cada vez.",
+            "Ele faz igual com o processador e a memória: reparte o tempo e o espaço entre os programas."
           ],
           "figure": {
             "src": "/figuras/so/so-gerenciador.svg",
@@ -77,16 +123,34 @@
         },
         {
           "kind": "explain",
-          "title": "De cima para baixo, de baixo para cima",
+          "title": "Ouvir música e escrever ao mesmo tempo",
           "body": [
-            "As duas visões são o mesmo SO visto de lados opostos.",
+            "Você ouve música, baixa um arquivo e escreve um texto. Só há um processador, mas parece que tudo roda junto.",
+            "O truque: o SO dá uma fatia do tempo do processador para cada programa, em revezamento. Cada fatia dura milésimos de segundo.",
+            "Na memória, ele dá uma parte separada para cada programa. Assim, um não invade o outro."
+          ],
+          "example": {
+            "label": "O revezamento",
+            "lines": [
+              "fatia do navegador",
+              "fatia da música",
+              "fatia do editor de texto",
+              "volta ao navegador…"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Dois pontos de vista sobre o mesmo sistema",
+          "body": [
+            "As duas tarefas são o mesmo SO visto de lados opostos.",
             "De cima, o programador enxerga abstrações simples, como o arquivo. De baixo, o hardware enxerga um gerente que reparte as peças entre os programas."
           ],
           "example": {
             "label": "Resumindo",
             "lines": [
-              "Visão de cima (top-down): máquina estendida",
-              "Visão de baixo (bottom-up): gerenciador de recursos"
+              "de cima: máquina estendida (top-down)",
+              "de baixo: gerenciador de recursos (bottom-up)"
             ]
           },
           "terms": [
@@ -126,12 +190,12 @@
           "kind": "explain",
           "title": "O que NÃO é o sistema operacional",
           "body": [
-            "Editores de texto, navegadores e jogos usam o SO. Eles não são o SO.",
-            "A área de trabalho do Windows e o prompt de comando são dois programas diferentes. Os dois rodam sobre o mesmo SO."
+            "Navegador, editor de texto, jogos e a tela com ícones usam o SO. Eles não são o SO.",
+            "A área de trabalho do Windows e a janela de texto são programas diferentes. Os dois rodam sobre o mesmo SO."
           ],
           "bullets": [
-            "É o SO: o núcleo, os drivers e o gerenciamento das peças do computador.",
-            "Não é o SO: os programas que o usam (editores, navegadores, jogos, interfaces gráficas e o shell)."
+            "É o SO: o núcleo, os drivers e o gerenciamento das peças.",
+            "Não é o SO: os programas que o usam (navegador, editor, jogos, interface gráfica e o shell)."
           ],
           "terms": [
             {
@@ -139,6 +203,48 @@
               "meaning": "o programa que lê o que você digita e pede ao SO para executar. Ele usa o SO, mas não faz parte dele."
             }
           ]
+        },
+        {
+          "kind": "explain",
+          "title": "Sistemas operacionais de hoje",
+          "body": [
+            "Cada aparelho que você usa tem um SO. Os nomes mudam, mas o trabalho é o mesmo: esconder a complexidade e organizar os recursos."
+          ],
+          "table": {
+            "label": "Os mais conhecidos",
+            "headers": [
+              "Sistema",
+              "Onde é usado",
+              "Um detalhe"
+            ],
+            "rows": [
+              [
+                "Windows",
+                "Computadores pessoais",
+                "Da Microsoft"
+              ],
+              [
+                "Linux",
+                "Servidores, computadores e muito mais",
+                "Livre, com código aberto"
+              ],
+              [
+                "macOS",
+                "Computadores Mac",
+                "Da Apple"
+              ],
+              [
+                "Android",
+                "Celulares e tablets",
+                "Usa o núcleo do Linux"
+              ],
+              [
+                "iOS",
+                "iPhones",
+                "Da Apple"
+              ]
+            ]
+          }
         },
         {
           "kind": "exam",
@@ -173,7 +279,7 @@
             "Esconde a complexidade do hardware com abstrações (máquina estendida).",
             "Organiza o uso dos recursos entre os programas (gerenciador de recursos).",
             "Roda em modo núcleo. Programas comuns rodam em modo usuário.",
-            "Shell, editores e interfaces gráficas usam o SO, mas não são o SO."
+            "Navegador, editor, interface gráfica e shell usam o SO. Eles não são o SO."
           ]
         }
       ],
@@ -208,17 +314,17 @@
         },
         {
           "topic": "Gerenciador de recursos",
-          "statement": "Três programas mandam imprimir ao mesmo tempo em uma única impressora. O SO guarda cada saída no disco e imprime uma de cada vez. Esse exemplo ilustra o SO como:",
+          "statement": "Você ouve música, baixa um arquivo e escreve um texto ao mesmo tempo. O SO reveza o processador entre esses programas e reparte a memória entre eles. Esse exemplo ilustra o SO como:",
           "options": [
             "máquina estendida",
             "compilador",
             "interface gráfica",
-            "driver de impressora",
+            "driver de vídeo",
             "gerenciador de recursos"
           ],
           "correct_index": 4,
-          "explanation": "O SO organiza o uso de uma peça disputada por vários programas. Essa é a visão de gerenciador de recursos.",
-          "pitfall": "O disco aparece no exemplo, mas o ponto é a organização da disputa pela impressora."
+          "explanation": "O SO organiza o uso de peças disputadas por vários programas: o processador e a memória. Essa é a visão de gerenciador de recursos.",
+          "pitfall": "Vários programas rodando juntos não significa vários processadores. É o SO revezando o tempo do mesmo processador."
         },
         {
           "topic": "De cima para baixo",
@@ -277,18 +383,18 @@
           "pitfall": "“Modo usuário” engana porque o SO serve ao usuário. Mas o nome se refere aos programas comuns, com poderes limitados."
         },
         {
-          "topic": "O SO e as interfaces",
-          "statement": "Uma pessoa usa a área de trabalho gráfica do Windows. Outra usa o prompt de comando. Sobre isso, é correto afirmar que:",
+          "topic": "Exemplos de SO",
+          "statement": "Qual dos itens abaixo é um sistema operacional?",
           "options": [
-            "são dois sistemas operacionais diferentes",
-            "a área de trabalho é o núcleo do Windows",
-            "só o prompt usa as abstrações do SO",
-            "ambos são programas que rodam sobre o mesmo SO, com interfaces diferentes",
-            "só a área de trabalho usa recursos de hardware"
+            "Google Chrome",
+            "Microsoft Word",
+            "Python",
+            "Android",
+            "Intel Core i7"
           ],
           "correct_index": 3,
-          "explanation": "Os dois são programas que usam as abstrações do Windows. Só a interface com o usuário é diferente.",
-          "pitfall": "Interface diferente não quer dizer SO diferente. O SO por baixo é o mesmo."
+          "explanation": "Android é um sistema operacional: gerencia as peças do celular e roda os aplicativos. Chrome e Word são aplicativos. Python é uma linguagem. O Core i7 é um processador.",
+          "pitfall": "Um programa muito conhecido não é um SO só por isso. O SO é o que gerencia as peças e roda os outros programas."
         }
       ]
     },
@@ -303,7 +409,7 @@
           "body": [
             "Pense em uma cidade. A prefeitura cuida de várias coisas: de quem mora e trabalha, dos terrenos e do cartório. Cuida também dos correios e da segurança.",
             "O SO é a prefeitura do computador. Cada repartição dele tem um nome técnico.",
-            "Vamos visitar uma por uma."
+            "Vamos visitar uma por uma, sempre com exemplos que você pode ver no seu computador."
           ],
           "figure": {
             "src": "/figuras/so/so-componentes.svg",
@@ -316,7 +422,8 @@
           "title": "Processo: o programa em ação",
           "body": [
             "Uma receita no caderno é só papel. Algo acontece quando alguém cozinha seguindo a receita.",
-            "O programa é a receita, guardada no disco. O processo é o programa sendo executado, com tudo o que ele precisa."
+            "O programa é a receita, guardada no disco. O processo é o programa sendo executado, com tudo o que ele precisa.",
+            "Abra o mesmo programa duas vezes, como duas janelas do navegador. Você tem um programa e dois processos."
           ],
           "example": {
             "label": "Comparando",
@@ -338,10 +445,49 @@
         },
         {
           "kind": "explain",
+          "title": "Veja os processos no seu computador",
+          "body": [
+            "O SO sabe quais processos estão rodando agora. Você também pode ver essa lista.",
+            "Esses programas mostram o nome de cada processo, quanta memória ele usa e o número que o identifica."
+          ],
+          "table": {
+            "label": "Como ver os processos",
+            "headers": [
+              "Onde",
+              "Como"
+            ],
+            "rows": [
+              [
+                "Windows",
+                "Gerenciador de Tarefas (Ctrl + Shift + Esc)"
+              ],
+              [
+                "Windows (texto)",
+                "tasklist (no cmd) ou Get-Process (no PowerShell)"
+              ],
+              [
+                "Linux (janela)",
+                "o Monitor do Sistema, que varia conforme a distribuição"
+              ],
+              [
+                "Linux (texto)",
+                "ps aux ou top"
+              ]
+            ]
+          },
+          "terms": [
+            {
+              "word": "Prompt de Comando (cmd) e PowerShell",
+              "meaning": "os dois programas de texto do Windows para dar ordens ao computador. Você aprende a usá-los em uma lição própria."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
           "title": "Quem criou quem: a árvore de processos",
           "body": [
             "Um processo pode criar outros. Quem cria é o pai. Quem é criado é o filho.",
-            "Ao digitar um comando, o shell cria um processo novo para executá-lo. Assim nasce uma árvore de processos.",
+            "Quando você abre um programa, outro processo o cria. Assim nasce uma árvore de processos.",
             "O SO guarda uma ficha de cada processo em uma lista chamada tabela de processos."
           ],
           "figure": {
@@ -353,10 +499,6 @@
             {
               "word": "Tabela de processos",
               "meaning": "a lista do SO com uma ficha para cada processo. A ficha guarda o que é preciso para retomá-lo de onde parou."
-            },
-            {
-              "word": "Shell",
-              "meaning": "o programa que lê o que você digita e pede ao SO para executar."
             }
           ]
         },
@@ -364,9 +506,9 @@
           "kind": "explain",
           "title": "Espaço de endereçamento: o terreno de cada processo",
           "body": [
-            "Cada processo recebe um terreno só seu de memória, com endereços que vão de zero até um máximo.",
-            "Um processo não enxerga o terreno do outro. Isso evita que um estrague o trabalho do outro.",
-            "Se o terreno for maior que a memória do computador, o SO guarda parte dele no disco."
+            "A memória é como uma rua com casas numeradas. Cada número é um endereço.",
+            "Cada processo recebe um terreno só seu, com endereços que vão de zero até um máximo.",
+            "Um processo não enxerga o terreno do outro. Isso evita que um estrague o trabalho do outro."
           ],
           "figure": {
             "src": "/figuras/so/so-espaco-enderecamento.svg",
@@ -377,25 +519,71 @@
             {
               "word": "Espaço de endereçamento",
               "meaning": "o conjunto de endereços de memória que um processo pode usar."
-            },
-            {
-              "word": "Memória virtual",
-              "meaning": "a técnica em que o SO mantém parte do espaço de endereçamento na memória e parte no disco, trocando os pedaços quando preciso."
             }
           ]
         },
         {
           "kind": "explain",
-          "title": "Arquivos e diretórios: o arquivo do escritório",
+          "title": "Memória virtual: quando a memória não basta",
+          "body": [
+            "Você abre muitos programas e o computador fica lento. Uma das causas é a memória RAM ter acabado.",
+            "O SO usa o disco como reserva. Ele guarda lá os pedaços menos usados e traz de volta quando precisa.",
+            "Isso se chama memória virtual. Ela permite que um processo tenha um espaço maior que a RAM, mas é mais lenta."
+          ],
+          "terms": [
+            {
+              "word": "Memória virtual",
+              "meaning": "a técnica em que o SO mantém parte do espaço de endereçamento na memória e parte no disco, trocando os pedaços quando preciso."
+            },
+            {
+              "word": "Memória (RAM)",
+              "meaning": "onde ficam os programas e os dados em uso agora."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Arquivos e pastas: o arquivo do escritório",
           "body": [
             "Um arquivo de escritório tem pastas dentro de pastas. Os arquivos do computador também são organizados assim.",
-            "O topo é o diretório-raiz, escrito /. O endereço de um arquivo nessa árvore é o caminho.",
-            "Antes de usar um arquivo, o programa precisa abri-lo. O SO confere se há autorização e devolve um número chamado descritor de arquivo."
+            "O topo é o diretório-raiz. O endereço de um arquivo nessa árvore é o caminho.",
+            "O Windows e o Linux escrevem o caminho de jeitos diferentes."
           ],
           "figure": {
             "src": "/figuras/so/so-arvore-arquivos.svg",
             "alt": "Árvore de diretórios. A raiz tem home e etc. Dentro de home fica ana, com notas.txt e foto.jpg. O caminho até notas.txt está destacado.",
-            "caption": "O caminho destacado é /home/ana/notas.txt."
+            "caption": "Um caminho no Linux: /home/ana/notas.txt."
+          },
+          "table": {
+            "label": "O mesmo arquivo nos dois sistemas",
+            "headers": [
+              "Item",
+              "Linux",
+              "Windows"
+            ],
+            "rows": [
+              [
+                "Topo da árvore",
+                "/",
+                "C:\\ (um por disco)"
+              ],
+              [
+                "Separador de pastas",
+                "/",
+                "\\"
+              ],
+              [
+                "Pasta pessoal da Ana",
+                "/home/ana",
+                "C:\\Users\\ana"
+              ],
+              [
+                "Caminho do arquivo",
+                "/home/ana/notas.txt",
+                "C:\\Users\\ana\\notas.txt"
+              ]
+            ],
+            "mono": true
           },
           "terms": [
             {
@@ -404,11 +592,26 @@
             },
             {
               "word": "Caminho",
-              "meaning": "o endereço de um arquivo na árvore de pastas. Exemplo: /home/ana/notas.txt."
-            },
+              "meaning": "o endereço de um arquivo na árvore de pastas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Abrir um arquivo: o descritor",
+          "body": [
+            "Antes de usar um arquivo, o programa precisa abri-lo. O SO confere se há autorização e devolve um número.",
+            "Esse número é como a senha de um atendimento. Nas operações seguintes, o programa usa a senha no lugar do nome.",
+            "No Linux, o número se chama descritor de arquivo. No Windows, a ideia é a mesma, com o nome handle."
+          ],
+          "terms": [
             {
               "word": "Descritor de arquivo",
               "meaning": "um número pequeno que o SO entrega ao abrir um arquivo. Nas operações seguintes, você usa esse número no lugar do nome."
+            },
+            {
+              "word": "Handle",
+              "meaning": "o nome que o Windows usa para esse número: um identificador do arquivo aberto."
             }
           ]
         },
@@ -417,7 +620,8 @@
           "title": "Entrada e saída: correios e portos",
           "body": [
             "Teclado, tela, disco e rede são as portas de entrada e saída do computador. Cada um funciona de um jeito.",
-            "Os programas não conversam com cada um deles direto. O SO cuida disso e usa um driver para cada dispositivo."
+            "Os programas não conversam com cada um deles direto. O SO cuida disso e usa um driver para cada dispositivo.",
+            "É por isso que a placa de vídeo nova pede um driver novo."
           ],
           "example": {
             "label": "Do teclado ao programa",
@@ -443,11 +647,11 @@
           "title": "Proteção: cada um no seu quadrado",
           "body": [
             "Em um prédio, cada morador tem a chave do próprio apartamento. No computador, o SO decide quem pode fazer o quê.",
-            "Cada arquivo tem três grupos de permissões: dono, grupo e demais pessoas. Cada grupo pode ler (r), escrever (w) ou executar (x).",
-            "Impedir que um processo invada a memória de outro também é proteção. O hardware ajuda, mas o SO controla."
+            "No Linux, cada arquivo tem três grupos de permissões: dono, grupo e demais. Cada grupo pode ler (r), escrever (w) ou executar (x).",
+            "O Windows usa outro formato: cada arquivo tem uma lista de quem pode ler, alterar ou controlar tudo."
           ],
           "example": {
-            "label": "Lendo rwxr-x--x",
+            "label": "Lendo rwxr-x--x (Linux)",
             "lines": [
               "dono: r w x (lê, escreve e executa)",
               "grupo: r – x (lê e executa)",
@@ -463,16 +667,37 @@
         },
         {
           "kind": "explain",
-          "title": "O shell: o guichê de atendimento",
+          "title": "Proteção da memória",
           "body": [
-            "O shell é o guichê onde você conversa com o SO por texto. Você digita um comando e ele pede ao SO para executá-lo.",
-            "Ele usa muito o SO, mas não faz parte dele. É só um programa, como os outros.",
-            "O comando date mostra a data. O ls lista os arquivos da pasta."
+            "A proteção também vale para a memória. Um processo não pode invadir o espaço de outro.",
+            "Quem faz isso é uma parceria: o hardware oferece o mecanismo e o SO controla o uso.",
+            "Sem isso, um programa com erro poderia derrubar todos os outros."
           ],
-          "code": {
-            "label": "No terminal",
-            "text": "$ date\n$ ls"
-          }
+          "terms": [
+            {
+              "word": "Hardware",
+              "meaning": "as peças físicas do computador."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O shell: conversar com o SO por texto",
+          "body": [
+            "Além de clicar em ícones, dá para conversar com o SO escrevendo. O programa que recebe o que você escreve é o shell.",
+            "Cada pedido escrito é um comando. O shell entrega o comando ao SO para ser executado.",
+            "O shell usa o SO, mas não faz parte dele. É só um programa, como os outros. Você aprende a usá-lo na lição seguinte."
+          ],
+          "terms": [
+            {
+              "word": "Shell",
+              "meaning": "o programa que lê o que você digita e pede ao SO para executar."
+            },
+            {
+              "word": "Comando",
+              "meaning": "uma instrução escrita que você digita para o computador executar."
+            }
+          ]
         },
         {
           "kind": "exam",
@@ -506,9 +731,9 @@
           "bullets": [
             "Processo: programa em execução. O SO guarda sua ficha na tabela de processos.",
             "Espaço de endereçamento: os endereços de memória que o processo pode usar.",
-            "Arquivos: organizados em diretórios. Ao abrir um, você recebe um descritor.",
+            "Arquivos: organizados em diretórios. Ao abrir um, você recebe um descritor (no Windows, um handle).",
             "Entrada e saída: dispositivos acessados por meio de drivers.",
-            "Proteção: permissões (r, w, x) e isolamento da memória.",
+            "Proteção: permissões e isolamento da memória.",
             "Shell: programa que usa o SO, mas não faz parte dele."
           ]
         }
@@ -586,7 +811,7 @@
         },
         {
           "topic": "Proteção com rwx",
-          "statement": "O código de proteção rwxr-x--x significa que:",
+          "statement": "No Linux, o código de proteção rwxr-x--x significa que:",
           "options": [
             "o dono pode ler, escrever e executar; o grupo pode ler e executar; os demais só podem executar",
             "todos podem ler, escrever e executar",
@@ -629,43 +854,533 @@
       ]
     },
     {
+      "slug": "terminal-na-pratica",
+      "title": "O terminal na prática (Windows e Linux)",
+      "summary": "O terminal é a janela onde você conversa com o shell por texto. Os comandos mudam entre Linux e Windows, e o PowerShell aceita muitos comandos do Linux.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Pedir por escrito em vez de apontar",
+          "body": [
+            "Em um restaurante, você pode apontar para um prato no cardápio. Ou pode escrever o pedido em um papel.",
+            "No computador é igual. Clicar em ícones é apontar. Escrever um comando é pedir por escrito.",
+            "Quem lê o seu pedido é o shell, e a janela onde você escreve é o terminal."
+          ],
+          "terms": [
+            {
+              "word": "Terminal",
+              "meaning": "a janela onde você digita e vê o resultado."
+            },
+            {
+              "word": "Shell",
+              "meaning": "o programa que lê o que você digita e pede ao SO para executar."
+            },
+            {
+              "word": "Comando",
+              "meaning": "uma instrução escrita que você digita para o computador executar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Que shell existe em cada sistema?",
+          "body": [
+            "O Windows tem dois shells principais. O Linux costuma usar o bash.",
+            "Você percebe qual é olhando o começo da linha, que se chama prompt. É a marca que diz “pode digitar”."
+          ],
+          "example": {
+            "label": "Como o prompt costuma aparecer",
+            "lines": [
+              "Windows PowerShell:  PS C:\\Users\\ana>",
+              "Windows cmd:  C:\\Users\\ana>",
+              "Linux bash:  ana@pc:~$"
+            ]
+          },
+          "terms": [
+            {
+              "word": "Prompt",
+              "meaning": "o texto que aparece antes do cursor e mostra que o shell está esperando um comando."
+            },
+            {
+              "word": "PowerShell",
+              "meaning": "o shell moderno do Windows. É o que abre por padrão no Terminal do Windows 11."
+            },
+            {
+              "word": "Prompt de Comando (cmd)",
+              "meaning": "o shell clássico do Windows. É mais simples e mais antigo."
+            },
+            {
+              "word": "bash",
+              "meaning": "o shell mais comum no Linux."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Como abrir o terminal",
+          "body": [
+            "Cada sistema tem seu jeito. Escolha o seu:"
+          ],
+          "table": {
+            "label": "Abrir o terminal",
+            "headers": [
+              "Sistema",
+              "Como abrir"
+            ],
+            "rows": [
+              [
+                "Windows 11",
+                "Clique com o botão direito no Iniciar (ou Win + X) e escolha Terminal"
+              ],
+              [
+                "Windows (qualquer versão)",
+                "Win + R, digite cmd ou powershell e aperte Enter"
+              ],
+              [
+                "Linux (Ubuntu e outros)",
+                "Ctrl + Alt + T, ou procure Terminal no menu de aplicativos"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Onde estou? O que tem aqui?",
+          "body": [
+            "Os primeiros comandos servem para se localizar: ver a pasta atual, listar os arquivos e mudar de pasta.",
+            "O PowerShell aceita vários comandos do Linux porque tem apelidos para eles. Já o cmd não."
+          ],
+          "table": {
+            "label": "Se localizando",
+            "headers": [
+              "O que você quer",
+              "Linux (bash)",
+              "Windows PowerShell",
+              "Windows cmd"
+            ],
+            "rows": [
+              [
+                "Ver a pasta atual",
+                "pwd",
+                "pwd",
+                "cd"
+              ],
+              [
+                "Listar os arquivos",
+                "ls",
+                "ls ou dir",
+                "dir"
+              ],
+              [
+                "Entrar em uma pasta",
+                "cd docs",
+                "cd docs",
+                "cd docs"
+              ],
+              [
+                "Voltar uma pasta",
+                "cd ..",
+                "cd ..",
+                "cd .."
+              ]
+            ],
+            "mono": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Criar, ler, copiar e apagar",
+          "body": [
+            "Estes comandos mexem em pastas e arquivos. Repare que alguns são iguais nos três shells."
+          ],
+          "table": {
+            "label": "Mexendo em arquivos",
+            "headers": [
+              "O que você quer",
+              "Linux (bash)",
+              "Windows PowerShell",
+              "Windows cmd"
+            ],
+            "rows": [
+              [
+                "Criar uma pasta",
+                "mkdir docs",
+                "mkdir docs",
+                "mkdir docs"
+              ],
+              [
+                "Mostrar um arquivo de texto",
+                "cat notas.txt",
+                "cat notas.txt ou type notas.txt",
+                "type notas.txt"
+              ],
+              [
+                "Copiar um arquivo",
+                "cp a.txt b.txt",
+                "cp a.txt b.txt ou copy a.txt b.txt",
+                "copy a.txt b.txt"
+              ],
+              [
+                "Apagar um arquivo",
+                "rm a.txt",
+                "rm a.txt ou del a.txt",
+                "del a.txt"
+              ],
+              [
+                "Limpar a tela",
+                "clear",
+                "clear ou cls",
+                "cls"
+              ]
+            ],
+            "mono": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Ver a data e os processos",
+          "body": [
+            "Aqui os nomes já mudam bastante entre os sistemas. Guarde esta tabela para consultar."
+          ],
+          "table": {
+            "label": "Data e processos",
+            "headers": [
+              "O que você quer",
+              "Linux (bash)",
+              "Windows PowerShell",
+              "Windows cmd"
+            ],
+            "rows": [
+              [
+                "Ver a data",
+                "date",
+                "Get-Date",
+                "date /t"
+              ],
+              [
+                "Listar os processos",
+                "ps",
+                "Get-Process",
+                "tasklist"
+              ],
+              [
+                "Encerrar um processo",
+                "kill 1234",
+                "Stop-Process -Id 1234",
+                "taskkill /PID 1234"
+              ]
+            ],
+            "mono": true
+          },
+          "terms": [
+            {
+              "word": "Processo",
+              "meaning": "um programa em execução. O número (1234, no exemplo) é o que identifica cada um."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Pedir ajuda e ganhar tempo",
+          "body": [
+            "Ninguém decora todos os comandos. Os shells têm ajuda embutida.",
+            "E há dois atalhos que funcionam nos três: a seta para cima repete o comando anterior, e a tecla Tab completa nomes de arquivos."
+          ],
+          "table": {
+            "label": "Pedindo ajuda",
+            "headers": [
+              "Sistema",
+              "Como"
+            ],
+            "rows": [
+              [
+                "Linux (bash)",
+                "man ls (manual) ou ls --help"
+              ],
+              [
+                "Windows PowerShell",
+                "Get-Help ls"
+              ],
+              [
+                "Windows cmd",
+                "help dir ou dir /?"
+              ]
+            ],
+            "mono": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Comandos de um lado só",
+          "body": [
+            "Alguns comandos existem só em um dos mundos. Se você digitar no lugar errado, vai aparecer erro. Isso é normal."
+          ],
+          "table": {
+            "label": "Só em um sistema",
+            "headers": [
+              "O que você quer",
+              "Linux (Ubuntu e Debian)",
+              "Windows"
+            ],
+            "rows": [
+              [
+                "Rodar como administrador",
+                "sudo comando",
+                "Abrir o Terminal como administrador"
+              ],
+              [
+                "Instalar um programa",
+                "sudo apt install nome",
+                "winget install nome"
+              ],
+              [
+                "Ver o endereço de rede",
+                "ip a",
+                "ipconfig"
+              ]
+            ],
+            "mono": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Linux dentro do Windows (WSL)",
+          "body": [
+            "Quer praticar comandos do Linux sem instalar outro sistema? O Windows pode rodar o Linux por dentro, com o WSL.",
+            "Abra o PowerShell como administrador, escreva o comando abaixo e reinicie o computador. Depois abra o Ubuntu e crie seu usuário."
+          ],
+          "code": {
+            "label": "Windows PowerShell (como administrador)",
+            "text": "wsl --install"
+          },
+          "terms": [
+            {
+              "word": "WSL",
+              "meaning": "uma parte do Windows que roda o Linux dentro dele, sem precisar de outro computador."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Na prova, o shell aparece como “interpretador de comandos”. A pergunta clássica é se ele faz parte do SO. Não faz.",
+            "Também pedem o que um comando faz, como listar arquivos ou processos. Pode aparecer o comando do Linux ou o do Windows.",
+            "Atenção: uma resposta certa no Linux pode estar errada no Windows."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os tropeços mais comuns:"
+          ],
+          "bullets": [
+            "Digitar ls no Prompt de Comando (cmd). Lá o comando é dir.",
+            "Usar o caminho com barra errada: o Linux usa / e o Windows usa \\.",
+            "Achar que rm e del mandam para a lixeira. Eles apagam de vez.",
+            "Copiar um comando da internet sem saber para qual sistema ele serve.",
+            "Achar que o terminal e o shell são a mesma coisa. O terminal é a janela, o shell é o programa que entende o comando."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O terminal é a janela, o shell é quem entende o que você escreve."
+          ],
+          "bullets": [
+            "Windows 11: botão direito no Iniciar e Terminal. Linux: Ctrl + Alt + T.",
+            "O Windows tem PowerShell e cmd. O Linux costuma ter o bash.",
+            "Listar arquivos: ls (Linux e PowerShell) ou dir (PowerShell e cmd).",
+            "O PowerShell aceita vários comandos do Linux. O cmd não.",
+            "Para praticar Linux no Windows, use o WSL.",
+            "Cuidado: rm e del apagam de vez."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Terminal e shell",
+          "statement": "Qual é a diferença entre terminal e shell?",
+          "options": [
+            "São o mesmo programa com dois nomes",
+            "O terminal faz parte do núcleo; o shell é um driver",
+            "O terminal é a janela onde você digita; o shell é o programa que entende os comandos",
+            "O shell é a janela; o terminal é o comando",
+            "O terminal só existe no Linux"
+          ],
+          "correct_index": 2,
+          "explanation": "O terminal mostra o texto e recebe o que você digita. O shell lê o comando e pede ao SO para executá-lo.",
+          "pitfall": "No dia a dia as pessoas usam as duas palavras como sinônimos. Em provas, a diferença importa."
+        },
+        {
+          "topic": "Abrir o terminal",
+          "statement": "Qual é um jeito de abrir o terminal em muitas distribuições Linux, como o Ubuntu?",
+          "options": [
+            "Apertar Ctrl + Alt + T",
+            "Apertar Win + R e digitar cmd",
+            "Apertar Ctrl + Shift + Esc",
+            "Digitar wsl --install",
+            "Apertar Alt + F4"
+          ],
+          "correct_index": 0,
+          "explanation": "Ctrl + Alt + T abre o terminal em muitas distribuições. Você também pode procurar Terminal no menu.",
+          "pitfall": "Win + R e cmd são do Windows. Ctrl + Shift + Esc abre o Gerenciador de Tarefas do Windows."
+        },
+        {
+          "topic": "Listar arquivos",
+          "statement": "Qual comando lista os arquivos da pasta atual tanto no Linux (bash) quanto no Windows PowerShell?",
+          "options": [
+            "dir /w",
+            "ls",
+            "type",
+            "tasklist",
+            "Get-Date"
+          ],
+          "correct_index": 1,
+          "explanation": "O ls existe no bash e, por apelido, no PowerShell. O dir existe no PowerShell e no cmd, mas não no bash.",
+          "pitfall": "Cuidado com a pergunta: “nos dois” pede o comando comum. Aqui, esse comando é o ls."
+        },
+        {
+          "topic": "Pasta atual no cmd",
+          "statement": "Qual comando mostra a pasta atual no Prompt de Comando (cmd) do Windows?",
+          "options": [
+            "pwd",
+            "ls",
+            "cat",
+            "cd, sem nada depois",
+            "man"
+          ],
+          "correct_index": 3,
+          "explanation": "No cmd, o cd sozinho mostra a pasta atual. O pwd funciona no Linux e no PowerShell, mas não no cmd.",
+          "pitfall": "O pwd é famoso no Linux, mas não existe no cmd."
+        },
+        {
+          "topic": "Mostrar um arquivo",
+          "statement": "Qual comando mostra o conteúdo de um arquivo de texto no Prompt de Comando (cmd) do Windows?",
+          "options": [
+            "cat notas.txt",
+            "open notas.txt",
+            "show notas.txt",
+            "less notas.txt",
+            "type notas.txt"
+          ],
+          "correct_index": 4,
+          "explanation": "No cmd, o comando é type. O cat é do Linux (e funciona no PowerShell por apelido).",
+          "pitfall": "Muita gente digita cat no cmd por hábito. O cmd não conhece esse comando."
+        },
+        {
+          "topic": "Listar processos",
+          "statement": "Qual comando lista os processos em execução no Linux?",
+          "options": [
+            "tasklist",
+            "Get-Process",
+            "ps",
+            "dir",
+            "date"
+          ],
+          "correct_index": 2,
+          "explanation": "No Linux, é o ps (ou top). No Windows, o tasklist é do cmd e o Get-Process é do PowerShell.",
+          "pitfall": "Tasklist e Get-Process fazem o mesmo trabalho, mas só no Windows."
+        },
+        {
+          "topic": "WSL",
+          "statement": "Qual comando instala o Linux dentro do Windows, com o WSL?",
+          "options": [
+            "wsl --install",
+            "sudo apt install wsl",
+            "winget install linux",
+            "linux --start",
+            "cmd /linux"
+          ],
+          "correct_index": 0,
+          "explanation": "O wsl --install, dado no PowerShell como administrador, instala o WSL e o Ubuntu. Depois é preciso reiniciar.",
+          "pitfall": "O sudo apt é do Linux. O comando do WSL roda no Windows."
+        },
+        {
+          "topic": "Erro do ls no cmd",
+          "statement": "Você digitou ls no Prompt de Comando (cmd) do Windows e apareceu um erro. Por quê?",
+          "options": [
+            "Porque o Windows não consegue listar arquivos",
+            "Porque você precisa ser administrador para usar o ls",
+            "Porque o ls só funciona em pastas vazias",
+            "Porque ls é um comando do Linux; no cmd, o comando para listar é o dir",
+            "Porque o cmd exige que o comando seja em letras maiúsculas"
+          ],
+          "correct_index": 3,
+          "explanation": "O ls não existe no cmd. O PowerShell aceita o ls porque tem um apelido para o Get-ChildItem, mas o cmd não tem.",
+          "pitfall": "Ver um erro não quer dizer que o computador está com defeito. Muitas vezes é só o comando do sistema errado."
+        }
+      ]
+    },
+    {
       "slug": "chamadas-de-sistema",
-      "title": "Chamadas de sistema",
-      "summary": "Uma chamada de sistema é o pedido do programa ao SO. Ela usa a instrução TRAP para passar do modo usuário ao modo núcleo.",
+      "title": "Chamadas de sistema: como funcionam",
+      "summary": "Uma chamada de sistema é o pedido do programa ao SO. O programa não mexe direto nas peças: ele usa uma instrução especial que troca do modo usuário para o modo núcleo.",
       "steps": [
         {
           "kind": "idea",
           "title": "O guichê do banco",
           "body": [
-            "Você não entra no cofre do banco para guardar seu dinheiro. Vai ao guichê e faz um pedido.",
-            "O atendente entra no cofre por você e traz a resposta.",
-            "Os programas fazem igual com o sistema operacional. Cada pedido se chama chamada de sistema."
+            "Pense em um banco. Os clientes não entram no cofre. Eles vão ao guichê e fazem um pedido.",
+            "O atendente entra no cofre, resolve o pedido e volta com a resposta.",
+            "Os programas fazem o mesmo. Eles não mexem direto nas peças do computador. Eles pedem ao sistema operacional.",
+            "Cada pedido desses tem um nome: chamada de sistema."
           ],
           "terms": [
             {
               "word": "Chamada de sistema",
-              "meaning": "um pedido que um programa faz ao SO para usar algo que só o SO pode fazer, como ler um arquivo ou criar um processo."
+              "meaning": "um pedido que um programa faz ao SO para usar algo que só o SO pode fazer, como ler um arquivo."
             },
             {
-              "word": "Processo",
-              "meaning": "um programa em execução."
+              "word": "Hardware",
+              "meaning": "as peças físicas do computador (tela, teclado, disco e memória)."
             }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Você já faz isso todo dia",
+          "body": [
+            "Toda vez que você usa um programa, ele faz chamadas de sistema por você. Você não vê, mas elas acontecem o tempo todo.",
+            "Veja alguns pedidos comuns:"
+          ],
+          "bullets": [
+            "Abrir ou salvar um arquivo",
+            "Abrir um site (usar a rede)",
+            "Tocar um som",
+            "Abrir outro programa",
+            "Ler o que você digitou no teclado"
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Por que o programa não faz sozinho?",
+          "body": [
+            "Imagine que cada programa pudesse mexer direto no disco. Um poderia apagar o arquivo do outro.",
+            "Um programa com erro poderia travar o computador inteiro.",
+            "Por isso os programas só mexem nas peças por meio do SO. Ele confere se o pedido é permitido antes de executar."
           ]
         },
         {
           "kind": "explain",
           "title": "Dois modos do processador",
           "body": [
-            "O processador funciona em dois modos. No modo núcleo, tudo é permitido. No modo usuário, mexer direto no hardware é proibido.",
-            "Programas comuns rodam em modo usuário. Assim, um programa com erro não derruba os outros.",
-            "Só o SO roda em modo núcleo. Por isso o pedido precisa passar por ele."
+            "Para impor essa regra, o processador tem dois modos, como dois tipos de crachá.",
+            "No modo usuário, o crachá é de visitante: mexer direto nas peças é proibido. Os programas comuns rodam assim.",
+            "No modo núcleo, o crachá abre tudo. Só o SO roda assim."
           ],
           "figure": {
             "src": "/figuras/so/so-modos.svg",
-            "alt": "Duas faixas. Em cima, o modo usuário, com programas comuns. Embaixo, o modo núcleo, com o sistema operacional. Uma seta de pedido desce, com TRAP, e outra de resposta sobe. Abaixo fica o hardware.",
+            "alt": "Duas faixas. Em cima, o modo usuário, com programas comuns. Embaixo, o modo núcleo, com o sistema operacional. Uma seta de pedido desce e outra de resposta sobe. Abaixo fica o hardware.",
             "caption": "O programa pede. O SO responde."
           },
           "terms": [
+            {
+              "word": "Processador (CPU)",
+              "meaning": "o “cérebro” do computador, que executa as instruções dos programas."
+            },
             {
               "word": "Modo núcleo",
               "meaning": "o modo do processador em que tudo é permitido. É onde o SO roda."
@@ -678,109 +1393,143 @@
         },
         {
           "kind": "explain",
-          "title": "Como uma chamada acontece",
+          "title": "O caminho de um pedido",
           "body": [
-            "O programa chama uma função da biblioteca, como read. Ela prepara o pedido e executa uma instrução especial chamada TRAP.",
-            "O TRAP lembra uma chamada de função comum. Mas ele troca o modo e só salta para um lugar fixo do SO.",
-            "O SO faz o serviço e devolve o resultado."
+            "Um pedido percorre seis passos: vai do programa até o SO e volta.",
+            "Vamos ver cada um com calma, usando o exemplo de salvar um arquivo."
           ],
           "figure": {
             "src": "/figuras/so/so-fluxo-chamada.svg",
             "alt": "Três colunas: programa, biblioteca e núcleo. 1: o programa chama read. 2: a biblioteca põe o número da chamada num registrador. 3: executa TRAP e passa ao modo núcleo. 4: o núcleo faz o serviço. 5: volta ao modo usuário. 6: o resultado volta ao programa.",
             "caption": "Os seis passos de uma chamada de sistema."
           },
+          "example": {
+            "label": "Salvar um arquivo",
+            "lines": [
+              "1. o programa pede: escrever no arquivo",
+              "2. uma função pronta prepara o pedido",
+              "3. uma instrução especial entrega o pedido ao SO",
+              "4. o SO faz o serviço",
+              "5. o processador volta ao modo usuário",
+              "6. o programa recebe o resultado"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Passos 1 e 2: a função pronta prepara o pedido",
+          "body": [
+            "O programa não fala com o SO em uma língua difícil. Ele chama uma função pronta, como se pedisse a uma recepcionista.",
+            "Essa função fica em uma biblioteca. Ela preenche o formulário: anota o número do serviço pedido e guarda os dados.",
+            "Por isso, quem programa só escreve algo simples, como read ou write."
+          ],
           "terms": [
             {
               "word": "Biblioteca",
-              "meaning": "código pronto que o programa usa. Aqui, é a parte que prepara o pedido ao SO."
-            },
+              "meaning": "código pronto que os programas usam. Aqui, é a parte que prepara o pedido ao SO."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Passo 3: a instrução especial",
+          "body": [
+            "Agora a biblioteca precisa chamar o SO. Ela usa uma instrução especial do processador, o TRAP.",
+            "Pense em uma campainha que só toca na sala do zelador. O programa não escolhe para onde vai: o TRAP sempre leva ao mesmo lugar do SO.",
+            "Ao tocar, o processador passa para o modo núcleo."
+          ],
+          "terms": [
             {
               "word": "TRAP",
               "meaning": "uma instrução especial do processador. Ela troca para o modo núcleo e salta para um endereço fixo dentro do SO."
-            }
-          ]
-        },
-        {
-          "kind": "explain",
-          "title": "Chamadas para processos",
-          "body": [
-            "O shell usa três chamadas para rodar um comando: fork, execve e waitpid.",
-            "O fork cria um filho idêntico ao pai. O filho usa execve para trocar seu programa pelo comando. O pai usa waitpid para esperar o filho terminar."
-          ],
-          "code": {
-            "label": "Em C (simplificado)",
-            "text": "pid = fork();      // cria o filho\nexecve(nome, ...); // troca o programa\nwaitpid(pid, ...); // o pai espera\nexit(status);      // termina"
-          },
-          "terms": [
-            {
-              "word": "Pai e filho",
-              "meaning": "o processo criado é o filho. Quem o criou é o pai."
             },
             {
-              "word": "Shell",
-              "meaning": "o programa que lê o que você digita e pede ao SO para executar."
+              "word": "SYSCALL e SVC",
+              "meaning": "os nomes dessa instrução nos processadores de hoje. SYSCALL nos x86-64 (a maioria dos PCs) e SVC nos ARM (celulares e outros). TRAP é o nome geral."
             }
           ]
         },
         {
           "kind": "explain",
-          "title": "Chamadas para arquivos",
+          "title": "Passos 4 a 6: o SO trabalha e devolve",
           "body": [
-            "Para ler um arquivo, o programa abre, lê e fecha.",
-            "O open devolve o descritor de arquivo. O read usa esse número para saber de onde ler. Os dados vão para o buffer."
+            "No modo núcleo, o SO olha o número do pedido e vê qual serviço executar.",
+            "Antes de agir, ele confere se o programa tem permissão. Depois faz o serviço, como gravar no disco.",
+            "Por fim, o processador volta ao modo usuário. O programa recebe a resposta e continua de onde parou."
+          ],
+          "terms": [
+            {
+              "word": "Permissão",
+              "meaning": "a autorização para fazer algo, como ler ou escrever um arquivo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Diferente de uma função comum",
+          "body": [
+            "Uma função comum só chama outro pedaço do próprio programa. Nada muda no processador.",
+            "Uma chamada de sistema faz o processador trocar de modo e pular para um lugar fixo do SO. Essa troca é o que protege o computador."
+          ],
+          "table": {
+            "label": "Comparando",
+            "headers": [
+              "",
+              "Função comum",
+              "Chamada de sistema"
+            ],
+            "rows": [
+              [
+                "Quem executa",
+                "o próprio programa",
+                "o SO"
+              ],
+              [
+                "Modo do processador",
+                "não muda",
+                "muda para o modo núcleo"
+              ],
+              [
+                "Para onde salta",
+                "onde o programa quiser",
+                "sempre um lugar fixo do SO"
+              ],
+              [
+                "Exemplo",
+                "calcular uma média",
+                "gravar um arquivo"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Veja ao vivo (opcional)",
+          "body": [
+            "No Linux, o programa strace mostra as chamadas de sistema de outro programa. É como ver os pedidos passando pelo guichê.",
+            "Se o programa não existir, instale com sudo apt install strace (Ubuntu e Debian). No Windows, existe o Process Monitor, da Microsoft. Ele mostra a atividade de arquivos de um programa."
           ],
           "code": {
-            "label": "Em C (simplificado)",
-            "text": "fd = open(\"notas.txt\", ...);\nn = read(fd, buffer, nbytes);\nn = write(fd, buffer, nbytes);\nclose(fd);"
+            "label": "Linux (terminal)",
+            "text": "strace cat notas.txt"
+          },
+          "example": {
+            "label": "Trecho do que aparece (simplificado)",
+            "lines": [
+              "openat(AT_FDCWD, \"notas.txt\", O_RDONLY) = 3",
+              "read(3, \"ola\\n\", 131072) = 4",
+              "write(1, \"ola\\n\", 4) = 4",
+              "close(3) = 0"
+            ]
           },
           "terms": [
+            {
+              "word": "strace",
+              "meaning": "um programa do Linux que mostra as chamadas de sistema feitas por outro programa."
+            },
             {
               "word": "Descritor de arquivo",
-              "meaning": "um número pequeno que o open devolve. Ele identifica o arquivo aberto."
-            },
-            {
-              "word": "Buffer",
-              "meaning": "uma área de memória que guarda dados por um tempo. No read, é onde os dados lidos são colocados."
-            }
-          ]
-        },
-        {
-          "kind": "explain",
-          "title": "Outras chamadas do dia a dia",
-          "body": [
-            "Além de processos e arquivos, há chamadas para pastas e para sinais entre processos."
-          ],
-          "bullets": [
-            "mkdir: cria uma pasta",
-            "rmdir: remove uma pasta vazia",
-            "chdir: muda a pasta de trabalho",
-            "chmod: muda quem pode ler, escrever ou executar um arquivo",
-            "kill: envia um sinal a um processo",
-            "time: informa os segundos passados desde 1º de janeiro de 1970"
-          ],
-          "terms": [
-            {
-              "word": "Sinal",
-              "meaning": "uma mensagem curta que o SO ou outro processo envia a um processo."
-            }
-          ]
-        },
-        {
-          "kind": "explain",
-          "title": "POSIX e Windows: a API",
-          "body": [
-            "Na prática, você usa as funções de uma API. É a lista de funções que o SO oferece aos programas.",
-            "No UNIX e no Linux, o padrão POSIX define cerca de 100 funções. Elas usam as chamadas de sistema por trás.",
-            "No Windows, a API se chama Win32. Lá, um programa costuma esperar por eventos e chamar a função certa quando um acontece."
-          ],
-          "terms": [
-            {
-              "word": "API",
-              "meaning": "o conjunto de funções que um SO oferece aos programas."
-            },
-            {
-              "word": "POSIX",
-              "meaning": "o padrão que define essas funções para sistemas tipo UNIX, para que os programas funcionem em vários deles."
+              "meaning": "o número que o SO entrega ao abrir um arquivo. Aqui, o 3 é o arquivo e o 1 é a tela."
             }
           ]
         },
@@ -788,9 +1537,9 @@
           "kind": "exam",
           "title": "Como cai na prova",
           "body": [
-            "Na prova, aparecem perguntas como “o que é uma chamada de sistema” e “qual chamada cria um processo”.",
-            "Também cobram a diferença entre uma chamada de rotina comum e o TRAP. O TRAP muda para o modo núcleo e salta para um endereço fixo.",
-            "Outra pergunta comum é a ordem do que acontece em uma chamada."
+            "Perguntas comuns: “o que é uma chamada de sistema”, “por que ela é necessária” e “qual é a ordem dos passos”.",
+            "Também cobram a diferença entre uma chamada de rotina comum e o TRAP: o TRAP muda para o modo núcleo e salta para um endereço fixo.",
+            "As alternativas erradas costumam dizer que o programa acessa o disco direto, ou que o TRAP não muda de modo."
           ]
         },
         {
@@ -800,11 +1549,11 @@
             "Estes são os erros que a prova espera de você:"
           ],
           "bullets": [
+            "Achar que o programa comum mexe direto no disco ou na tela.",
             "Achar que uma chamada de sistema é igual a uma chamada de função comum. Ela troca de modo.",
-            "Trocar as funções: fork cria um filho, execve troca o programa e waitpid espera.",
-            "Achar que o shell usa execve sozinho. Ele seria trocado pelo comando e sumiria.",
             "Achar que o programa comum executa o TRAP direto. Em geral, é a função da biblioteca que faz isso.",
-            "Confundir POSIX (padrão para UNIX e Linux) com Win32 (API do Windows)."
+            "Achar que a biblioteca faz o serviço. Ela só prepara o pedido. Quem faz é o núcleo.",
+            "Esquecer que o TRAP salta para um endereço fixo, e não para onde o programa quiser."
           ]
         },
         {
@@ -817,9 +1566,8 @@
             "O programa roda em modo usuário e não mexe direto no hardware.",
             "A função da biblioteca prepara o pedido e executa o TRAP.",
             "O TRAP troca para o modo núcleo e salta para um endereço fixo do SO.",
-            "O SO faz o serviço e volta para o modo usuário.",
-            "fork cria, execve troca o programa, waitpid espera e exit termina.",
-            "open, read, write e close cuidam dos arquivos."
+            "O SO confere a permissão, faz o serviço e volta para o modo usuário.",
+            "Nos PCs atuais, a instrução se chama SYSCALL. Nos ARM, SVC."
           ]
         }
       ],
@@ -839,6 +1587,20 @@
           "pitfall": "Nem toda função é uma chamada de sistema. Só as que pedem um serviço ao SO."
         },
         {
+          "topic": "Modo usuário",
+          "statement": "Um programa comum executando em modo usuário:",
+          "options": [
+            "não pode acessar diretamente os dispositivos e precisa pedir ao SO",
+            "pode executar qualquer instrução do processador",
+            "tem prioridade sobre o SO",
+            "roda sem usar memória",
+            "só funciona se o SO estiver desligado"
+          ],
+          "correct_index": 0,
+          "explanation": "O modo usuário limita o programa. Assim, um erro dele não derruba o sistema nem os outros programas.",
+          "pitfall": "Modo usuário não quer dizer que só uma pessoa usa. Quer dizer que o programa tem poderes limitados."
+        },
+        {
           "topic": "A instrução TRAP",
           "statement": "A instrução TRAP difere de uma chamada de rotina comum porque:",
           "options": [
@@ -853,19 +1615,367 @@
           "pitfall": "Como uma chamada comum, o TRAP guarda o endereço de retorno. A diferença está no modo e no destino fixo."
         },
         {
-          "topic": "Modo usuário",
-          "statement": "Um programa comum executando em modo usuário:",
+          "topic": "Ordem dos passos",
+          "statement": "Qual é a ordem correta dos acontecimentos em uma chamada de sistema?",
           "options": [
-            "não pode acessar diretamente os dispositivos e precisa pedir ao SO",
-            "pode executar qualquer instrução do processador",
-            "tem prioridade sobre o SO",
-            "roda sem usar memória",
-            "só funciona se o SO estiver desligado"
+            "O SO faz o serviço; o programa chama a biblioteca; a biblioteca executa o TRAP; o programa recebe o resultado",
+            "A biblioteca executa o TRAP; o programa chama a biblioteca; o SO faz o serviço; o processador volta ao modo usuário",
+            "O programa chama a função da biblioteca; a biblioteca executa o TRAP; o SO faz o serviço; o processador volta ao modo usuário; o programa recebe o resultado",
+            "O programa executa o TRAP; o SO chama a biblioteca; o processador volta ao modo usuário; o SO faz o serviço",
+            "O processador volta ao modo usuário; o SO faz o serviço; o programa chama a biblioteca; a biblioteca executa o TRAP"
+          ],
+          "correct_index": 2,
+          "explanation": "O pedido vai do programa para a biblioteca, depois ao SO pelo TRAP. O SO trabalha e o resultado volta pelo mesmo caminho.",
+          "pitfall": "Guarde a ideia (pedir, preparar, trocar de modo, fazer o serviço, voltar). O serviço nunca vem antes do pedido."
+        },
+        {
+          "topic": "A biblioteca",
+          "statement": "Por que o programador chama uma função de biblioteca, como read, em vez de executar o TRAP diretamente?",
+          "options": [
+            "Porque o TRAP só funciona em modo usuário",
+            "Porque a biblioteca prepara o pedido e executa o TRAP, escondendo esses detalhes",
+            "Porque a biblioteca é mais rápida que o núcleo",
+            "Porque o SO proíbe programas de usar TRAP",
+            "Porque a biblioteca substitui o núcleo"
+          ],
+          "correct_index": 1,
+          "explanation": "A função da biblioteca coloca o número da chamada onde o SO espera e executa o TRAP. O programador só vê uma chamada de função.",
+          "pitfall": "A biblioteca não faz o serviço. Ela só prepara o pedido. Quem faz o serviço é o núcleo."
+        },
+        {
+          "topic": "A permissão",
+          "statement": "Depois que o processador passa para o modo núcleo, o que o SO faz antes de executar o serviço pedido?",
+          "options": [
+            "Apaga a memória do programa",
+            "Reinicia o computador",
+            "Copia o programa para o disco",
+            "Troca o processador por outro",
+            "Confere qual serviço foi pedido e se o programa tem permissão para ele"
+          ],
+          "correct_index": 4,
+          "explanation": "O SO lê o número do pedido, confere a permissão e só então faz o serviço. Isso evita que um programa faça o que não pode.",
+          "pitfall": "O SO não obedece a todo pedido. Ele confere antes."
+        },
+        {
+          "topic": "O strace",
+          "statement": "No Linux atual, ao usar o strace em um programa que abre um arquivo, qual chamada de sistema costuma aparecer?",
+          "options": [
+            "openat",
+            "fopen",
+            "CreateFile",
+            "fork",
+            "openfile"
           ],
           "correct_index": 0,
-          "explanation": "O modo usuário limita o programa. Assim, um erro dele não derruba o sistema nem os outros programas.",
-          "pitfall": "Modo usuário não quer dizer que só uma pessoa usa. Quer dizer que o programa tem poderes limitados."
+          "explanation": "A função open, da biblioteca, chega ao núcleo como a chamada openat nos Linux atuais. O strace mostra o que chegou ao núcleo.",
+          "pitfall": "CreateFile é do Windows. O fopen é uma função de biblioteca, e não uma chamada de sistema."
         },
+        {
+          "topic": "SYSCALL",
+          "statement": "Nos processadores x86-64, como a maioria dos PCs, qual instrução é usada para fazer a passagem ao modo núcleo em uma chamada de sistema?",
+          "options": [
+            "CALL",
+            "MOV",
+            "RET",
+            "SYSCALL",
+            "NOP"
+          ],
+          "correct_index": 3,
+          "explanation": "SYSCALL é a versão atual do TRAP nos x86-64. Nos processadores ARM, o nome é SVC.",
+          "pitfall": "CALL parece o certo, mas é a chamada de função comum e não troca de modo."
+        }
+      ]
+    },
+    {
+      "slug": "chamadas-de-sistema-arquivos-e-processos",
+      "title": "Chamadas de sistema: arquivos e processos",
+      "summary": "As chamadas mais usadas mexem em arquivos (open, read, write, close) e em processos (fork, execve, waitpid). O Windows usa outros nomes.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Os dois pedidos mais comuns",
+          "body": [
+            "Uma chamada de sistema é um pedido do programa ao SO. Aqui vamos ver os pedidos mais usados.",
+            "Quase todos se dividem em dois grupos: os que mexem em arquivos e os que cuidam de processos."
+          ],
+          "terms": [
+            {
+              "word": "Chamada de sistema",
+              "meaning": "um pedido que um programa faz ao SO para usar algo que só o SO pode fazer."
+            },
+            {
+              "word": "Processo",
+              "meaning": "um programa em execução, com tudo o que ele precisa para rodar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Arquivos: abrir, ler, escrever e fechar",
+          "body": [
+            "Pense em pegar um documento em um arquivo de escritório. Você pede o documento e recebe uma senha. Você lê, escreve e devolve no fim.",
+            "Com arquivos é igual. São quatro pedidos básicos."
+          ],
+          "example": {
+            "label": "Os quatro pedidos (Linux)",
+            "lines": [
+              "open: abre o arquivo e devolve o descritor",
+              "read: lê dados do arquivo",
+              "write: escreve dados no arquivo",
+              "close: fecha o arquivo"
+            ]
+          },
+          "terms": [
+            {
+              "word": "Descritor de arquivo",
+              "meaning": "um número pequeno que o SO entrega ao abrir um arquivo. Nas operações seguintes, você usa esse número no lugar do nome."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Um exemplo em Python",
+          "body": [
+            "Este programa em Python funciona no Windows e no Linux. Ele abre um arquivo, lê o texto, mostra na tela e fecha.",
+            "Você escreve algo simples. Por trás, o Python faz chamadas de sistema para abrir, ler e fechar o arquivo."
+          ],
+          "code": {
+            "label": "Python (Windows e Linux)",
+            "text": "arquivo = open(\"notas.txt\")\ntexto = arquivo.read()\nprint(texto)\narquivo.close()"
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O mesmo em C, no Linux",
+          "body": [
+            "Em C, você chama as funções direto. O descritor volta em fd. Os dados lidos vão para o buffer, e o n diz quantos bytes vieram.",
+            "Todo programa já começa com três descritores abertos: 0 é o teclado, 1 é a tela e 2 mostra as mensagens de erro."
+          ],
+          "code": {
+            "label": "C (Linux)",
+            "text": "fd = open(\"notas.txt\", O_RDONLY);\nn = read(fd, buffer, 100);\nwrite(1, buffer, n);\nclose(fd);"
+          },
+          "terms": [
+            {
+              "word": "Buffer",
+              "meaning": "uma área de memória que guarda dados por um tempo. No read, é onde os dados lidos são colocados."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Processos: clonar, trocar e esperar",
+          "body": [
+            "Pense em uma fotocopiadora. O fork tira uma cópia idêntica do processo. A cópia é o filho, e o original é o pai.",
+            "O execve apaga o conteúdo da cópia e escreve outro programa no lugar. O waitpid faz o pai esperar o filho terminar. O exit encerra o processo."
+          ],
+          "code": {
+            "label": "C (Linux), simplificado",
+            "text": "pid = fork();       // cria o filho\nexecve(nome, ...);  // o filho troca de programa\nwaitpid(pid, ...);  // o pai espera\nexit(status);       // termina"
+          },
+          "terms": [
+            {
+              "word": "Pai e filho",
+              "meaning": "o processo criado é o filho. Quem o criou é o pai."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que acontece quando você roda um programa no terminal",
+          "body": [
+            "O shell é um processo. Para rodar um programa, ele usa fork e cria um filho idêntico a ele.",
+            "O filho usa execve e vira o programa pedido. O pai usa waitpid e espera.",
+            "Se o shell usasse execve sozinho, ele seria trocado pelo programa e sumiria."
+          ],
+          "example": {
+            "label": "Passo a passo",
+            "lines": [
+              "o shell usa fork: agora há um pai e um filho",
+              "o filho usa execve: vira o programa",
+              "o pai usa waitpid: espera o filho terminar"
+            ]
+          },
+          "terms": [
+            {
+              "word": "Shell",
+              "meaning": "o programa que lê o que você digita e pede ao SO para executar."
+            },
+            {
+              "word": "Terminal",
+              "meaning": "a janela onde você digita e vê o resultado."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "E no Windows?",
+          "body": [
+            "As ideias são as mesmas, mas os nomes mudam. O Windows, sem o WSL, não tem fork. Uma só chamada, a CreateProcess, cria o processo e já carrega o programa."
+          ],
+          "table": {
+            "label": "Linux e Windows lado a lado",
+            "headers": [
+              "O que você quer",
+              "Linux (POSIX)",
+              "Windows"
+            ],
+            "rows": [
+              [
+                "Abrir um arquivo",
+                "open",
+                "CreateFile"
+              ],
+              [
+                "Ler",
+                "read",
+                "ReadFile"
+              ],
+              [
+                "Escrever",
+                "write",
+                "WriteFile"
+              ],
+              [
+                "Fechar",
+                "close",
+                "CloseHandle"
+              ],
+              [
+                "Criar um processo",
+                "fork + execve",
+                "CreateProcess"
+              ],
+              [
+                "Esperar um processo",
+                "waitpid",
+                "WaitForSingleObject"
+              ],
+              [
+                "Terminar o processo",
+                "exit",
+                "ExitProcess"
+              ]
+            ],
+            "mono": true
+          },
+          "terms": [
+            {
+              "word": "WSL",
+              "meaning": "uma parte do Windows que roda o Linux dentro dele."
+            },
+            {
+              "word": "POSIX",
+              "meaning": "o padrão que define essas funções para sistemas tipo UNIX, como o Linux."
+            },
+            {
+              "word": "Handle",
+              "meaning": "o nome que o Windows usa para o número que identifica um arquivo aberto."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Outras chamadas úteis",
+          "body": [
+            "Além de arquivos e processos, há chamadas para pastas e para sinais. Um sinal é uma mensagem curta enviada a um processo, muitas vezes para encerrá-lo."
+          ],
+          "table": {
+            "label": "Outros pedidos",
+            "headers": [
+              "O que você quer",
+              "Linux (POSIX)",
+              "Windows"
+            ],
+            "rows": [
+              [
+                "Criar uma pasta",
+                "mkdir",
+                "CreateDirectory"
+              ],
+              [
+                "Mudar a pasta de trabalho",
+                "chdir",
+                "SetCurrentDirectory"
+              ],
+              [
+                "Encerrar outro processo",
+                "kill",
+                "TerminateProcess"
+              ]
+            ],
+            "mono": true
+          },
+          "terms": [
+            {
+              "word": "Sinal",
+              "meaning": "uma mensagem curta que o SO ou outro processo envia a um processo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "API: o cardápio de funções",
+          "body": [
+            "Na prática, você não chama o SO direto. Você usa as funções de uma API.",
+            "No Linux e no UNIX, o padrão POSIX define essas funções. No Windows, elas formam a API do Windows.",
+            "Por baixo, o Windows tem chamadas internas cujos números mudam de uma versão para outra. Por isso os programas usam a API, que se mantém estável."
+          ],
+          "terms": [
+            {
+              "word": "API",
+              "meaning": "o conjunto de funções que um SO oferece aos programas."
+            },
+            {
+              "word": "POSIX",
+              "meaning": "o padrão que define essas funções para sistemas tipo UNIX, para que os programas funcionem em vários deles."
+            },
+            {
+              "word": "API do Windows (Win32)",
+              "meaning": "o conjunto de funções que o Windows oferece aos programas."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Na prova, pedem “qual chamada cria um processo” (fork) e “o que faz o execve”. Também cobram a ordem fork, execve e waitpid no shell.",
+            "Sobre arquivos, cobram o que é o descritor e o papel do read e do write.",
+            "Cuidado: a prova pode usar os nomes do Linux (POSIX) ou os do Windows (Win32)."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os erros que a prova espera de você:"
+          ],
+          "bullets": [
+            "Trocar as funções: fork cria um filho, execve troca o programa e waitpid espera.",
+            "Achar que o shell usa execve sozinho. Ele seria trocado pelo programa e sumiria.",
+            "Achar que o Windows tem fork. Lá, a criação é feita com CreateProcess.",
+            "Confundir o descritor 1 (a tela) com o 3, que costuma ser o primeiro arquivo aberto.",
+            "Confundir POSIX (padrão do Linux e UNIX) com Win32 (API do Windows)."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Os pedidos mais comuns mexem em arquivos e em processos."
+          ],
+          "bullets": [
+            "Arquivos no Linux: open, read, write e close. No Windows: CreateFile, ReadFile, WriteFile e CloseHandle.",
+            "O open devolve um descritor. Os descritores 0, 1 e 2 são teclado, tela e erros.",
+            "Processos no Linux: fork cria, execve troca o programa, waitpid espera e exit termina.",
+            "O shell usa fork, depois execve no filho e waitpid no pai.",
+            "No Windows, CreateProcess cria o processo e já carrega o programa.",
+            "Os programas usam uma API (POSIX ou Windows), e não as chamadas internas."
+          ]
+        }
+      ],
+      "questions": [
         {
           "topic": "Criar processos",
           "statement": "Qual chamada de sistema POSIX cria um processo filho idêntico ao pai?",
@@ -882,16 +1992,16 @@
         },
         {
           "topic": "O shell e o fork",
-          "statement": "Quando você digita um comando no shell, o que costuma acontecer?",
+          "statement": "Quando você roda um programa no terminal, o que costuma acontecer?",
           "options": [
             "O shell chama execve diretamente, sem criar filho",
-            "O shell chama exit e o comando roda sozinho",
-            "O shell chama open para abrir o comando como arquivo de texto",
-            "O shell chama read e espera o núcleo executar o comando",
-            "O shell chama fork; o filho usa execve para rodar o comando; o pai usa waitpid para esperar"
+            "O shell chama exit e o programa roda sozinho",
+            "O shell chama open para abrir o programa como arquivo de texto",
+            "O shell chama read e espera o núcleo executar o programa",
+            "O shell chama fork; o filho usa execve para virar o programa; o pai usa waitpid para esperar"
           ],
           "correct_index": 4,
-          "explanation": "Se o shell usasse execve sozinho, ele mesmo seria trocado pelo comando e sumiria. Por isso ele cria um filho antes.",
+          "explanation": "Se o shell usasse execve sozinho, ele mesmo seria trocado pelo programa e sumiria. Por isso ele cria um filho antes.",
           "pitfall": "O execve não cria processo: ele troca o programa do processo que o chama."
         },
         {
@@ -909,25 +2019,53 @@
           "pitfall": "O nome do arquivo só aparece no open. Depois disso, você usa o descritor."
         },
         {
-          "topic": "A biblioteca",
-          "statement": "Por que o programador chama uma função de biblioteca, como read, em vez de executar o TRAP diretamente?",
+          "topic": "A tela é o 1",
+          "statement": "Em um programa no Linux, qual número de descritor representa a tela?",
           "options": [
-            "Porque o TRAP só funciona em modo usuário",
-            "Porque a biblioteca é mais rápida que o núcleo",
-            "Porque a biblioteca prepara o pedido e executa o TRAP, escondendo esses detalhes",
-            "Porque o SO proíbe programas de usar TRAP",
-            "Porque a biblioteca substitui o núcleo"
+            "1",
+            "0",
+            "2",
+            "3",
+            "4"
           ],
-          "correct_index": 2,
-          "explanation": "A função da biblioteca coloca o número da chamada onde o SO espera e executa o TRAP. O programador só vê uma chamada de função.",
-          "pitfall": "A biblioteca não faz o serviço. Ela só prepara o pedido. Quem faz o serviço é o núcleo."
+          "correct_index": 0,
+          "explanation": "Todo programa começa com 0 (teclado), 1 (tela) e 2 (mensagens de erro). Por isso write(1, ...) escreve na tela.",
+          "pitfall": "O 3 é o primeiro arquivo que o programa abre, e não a tela."
+        },
+        {
+          "topic": "Abrir no Windows",
+          "statement": "Qual chamada da API do Windows corresponde, de forma geral, ao open do Linux?",
+          "options": [
+            "ReadFile",
+            "CloseHandle",
+            "CreateProcess",
+            "CreateFile",
+            "WriteFile"
+          ],
+          "correct_index": 3,
+          "explanation": "CreateFile abre (ou cria) um arquivo e devolve um handle. É o parente do open.",
+          "pitfall": "O nome CreateFile engana: ela também serve para abrir arquivos que já existem."
+        },
+        {
+          "topic": "Criar processo no Windows",
+          "statement": "Qual chamada cria um novo processo na API do Windows?",
+          "options": [
+            "fork",
+            "CreateProcess",
+            "execve",
+            "WaitForSingleObject",
+            "CreateFile"
+          ],
+          "correct_index": 1,
+          "explanation": "No Windows, uma só chamada cria o processo e carrega o programa. O fork é do Linux e UNIX.",
+          "pitfall": "O Windows, sem o WSL, não tem fork."
         },
         {
           "topic": "Pasta de trabalho",
           "statement": "A chamada s = chdir(dirname) serve para:",
           "options": [
             "mudar o diretório de trabalho do processo",
-            "mudar as permissões de um arquivo",
+            "mudar quem pode ler, escrever ou executar um arquivo",
             "criar um novo diretório",
             "enviar um sinal a um processo",
             "montar um sistema de arquivos"
@@ -935,6 +2073,20 @@
           "correct_index": 0,
           "explanation": "chdir muda a pasta de trabalho. chmod muda quem pode ler, escrever ou executar. kill envia um sinal.",
           "pitfall": "Não confunda chdir (muda de pasta) com chmod (muda quem pode acessar o arquivo)."
+        },
+        {
+          "topic": "Por que usar a API",
+          "statement": "Por que os programas usam a API do sistema, em vez de chamar direto as chamadas internas do Windows?",
+          "options": [
+            "Porque as chamadas internas não existem",
+            "Porque a API é sempre mais rápida",
+            "Porque a API se mantém estável, enquanto os números das chamadas internas mudam entre versões",
+            "Porque o SO proíbe qualquer chamada interna",
+            "Porque as chamadas internas só funcionam no Linux"
+          ],
+          "correct_index": 2,
+          "explanation": "A Microsoft não garante que os números das chamadas internas continuem os mesmos. A API continua funcionando entre versões.",
+          "pitfall": "Chamada interna existe, mas não é uma boa ideia depender dela."
         }
       ]
     }

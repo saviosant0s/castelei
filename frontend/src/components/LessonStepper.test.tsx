@@ -131,4 +131,21 @@ describe("LessonStepper", () => {
     const code = document.querySelector("pre code");
     expect(code?.textContent).toBe("pid = fork();\nwaitpid(pid, ...);");
   });
+
+  it("mostra a tabela com cabeçalhos e as células em fonte de código", async () => {
+    const user = userEvent.setup();
+    const withTable: LessonDetail = {
+      ...lesson,
+      steps: [{ kind: "explain", title: "Comandos", body: ["Compare."], table: { label: "Linux e Windows", headers: ["O que você quer", "Linux", "Windows"], rows: [["Listar arquivos", "ls", "dir"], ["Ver a pasta", "pwd", "cd"]], mono: true } }, lesson.steps[3]],
+    };
+    render(<LessonStepper lesson={withTable} />);
+
+    expect(screen.getByText("Linux e Windows")).toBeTruthy();
+    expect(screen.getByRole("columnheader", { name: "Windows" })).toBeTruthy();
+    expect(screen.getByRole("cell", { name: "Listar arquivos" }).className).not.toContain("font-mono");
+    expect(screen.getByRole("cell", { name: "dir" }).className).toContain("font-mono");
+    expect(screen.getAllByRole("row")).toHaveLength(3);
+    await user.keyboard("{ArrowRight}");
+    expect(screen.queryByRole("table")).toBeNull();
+  });
 });

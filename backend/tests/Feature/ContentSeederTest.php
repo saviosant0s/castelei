@@ -18,8 +18,8 @@ class ContentSeederTest extends TestCase
         $this->seed(DatabaseSeeder::class);
 
         $this->assertSame(3, Subject::count());
-        $this->assertSame(7, Lesson::count());
-        $this->assertSame(56, Question::count());
+        $this->assertSame(9, Lesson::count());
+        $this->assertSame(72, Question::count());
 
         foreach (Lesson::withCount('questions')->get() as $lesson) {
             $this->assertSame(8, $lesson->questions_count, "Lição {$lesson->slug} deve ter 8 questões");
@@ -56,7 +56,7 @@ class ContentSeederTest extends TestCase
         $this->seed(DatabaseSeeder::class);
 
         $lessons = Lesson::whereHas('subject', fn ($q) => $q->where('slug', 'sistemas-operacionais'))->get();
-        $this->assertCount(3, $lessons);
+        $this->assertCount(5, $lessons);
 
         $publicDir = base_path('../frontend/public');
         foreach ($lessons as $lesson) {
@@ -122,14 +122,14 @@ class ContentSeederTest extends TestCase
         $this->seed(DatabaseSeeder::class);
 
         $this->assertSame(3, Subject::count());
-        $this->assertSame(7, Lesson::count());
-        $this->assertSame(56, Question::count());
+        $this->assertSame(9, Lesson::count());
+        $this->assertSame(72, Question::count());
     }
 
     public function test_comando_setup_roda_migrations_e_carrega_o_conteudo(): void
     {
         $this->artisan('castelei:setup')->assertSuccessful();
 
-        $this->assertSame(56, Question::count());
+        $this->assertSame(72, Question::count());
     }
 }

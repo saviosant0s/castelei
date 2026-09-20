@@ -8,12 +8,15 @@ A coluna "Base de estudo" indica a parte do livro-base da disciplina usada apena
 Regras do conteúdo no app:
 - O Castelei é **independente**: as lições não citam livros, autores, capítulos nem páginas.
 - Texto e figuras são **originais** (figuras em SVG, em `frontend/public/figuras/so/`), e podem usar conhecimento de qualquer boa fonte.
+- **Escrito para quem parte do zero.** Peças do computador, "o que é um programa" e "o que é um shell" são explicados antes de usados. Cada ideia tem um exemplo do dia a dia.
+- **Comandos sempre dizem onde funcionam.** Tabelas mostram Linux (bash), Windows PowerShell e Windows cmd lado a lado, e avisam quando um comando existe nos três ou só em um.
+- **Informação atualizada** (ex.: Terminal do Windows 11, WSL, `openat` e `syscall` no Linux atual). Quando algo do livro-base estiver defasado, vale o que é atual.
 - Termos técnicos só aparecem depois de explicados (o verificador `node scripts/lint-content.mjs` confere, e também reprova referências a fontes).
 
 | Aula | Tópico do plano | Base de estudo (interna) | Lições no Castelei | Situação |
 |---|---|---|---|---|
-| 15/09 | Plano de aula e introdução | §1.1 (p. 3 a 5) | O que é um sistema operacional? | **Pronta** |
-| 22/09 | Componentes e funções: processos, memória, arquivos, E/S, proteção, chamadas de sistema | §1.5 (p. 27 a 32) e §1.6 (p. 35 a 43) | Componentes e funções de um SO; Chamadas de sistema | **Prontas** |
+| 15/09 | Plano de aula e introdução | §1.1 | O que é um sistema operacional? | **Pronta** |
+| 22/09 | Componentes e funções: processos, memória, arquivos, E/S, proteção, chamadas de sistema | §1.5 e §1.6 | Componentes e funções de um SO; O terminal na prática (Windows e Linux); Chamadas de sistema: como funcionam; Chamadas de sistema: arquivos e processos | **Prontas** |
 | 29/09 | Estrutura e arquitetura de um SO | §1.7 (p. 43 a 51) | 2 lições: monolítico, camadas e micronúcleo; cliente-servidor, máquinas virtuais e exonúcleo | A fazer |
 | 06/10 | Processos e threads, parte 1 | §2.1 (p. 59 a 67) | 2 lições: modelo de processo; estados e transições | A fazer |
 | 13/10 | Processos e threads, parte 2 | §2.2 (p. 67 a 82) e §2.4 (p. 103 a 115) | Threads (2 lições) e escalonamento (2 lições) | A fazer, **confirmar** onde entra o escalonamento |

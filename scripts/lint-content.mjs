@@ -10,6 +10,7 @@
  *  - termo técnico usado sem ter sido explicado antes (na própria etapa ou em etapa anterior).
  *    O jargão só é livre na etapa "Como cai na prova".
  * Regras estruturais: primeira etapa "idea", última "recap", uma "exam" e uma "pitfall".
+ * Tabelas: todas as linhas com o mesmo número de colunas do cabeçalho.
  * Figuras: precisam de texto alternativo, legenda e de um arquivo existente em frontend/public.
  * Independência: o conteúdo nunca cita livros, autores, capítulos ou páginas (o app não depende de fonte nenhuma).
  * Avisos (não reprovam): frases com mais de 28 palavras e etapas com mais de 60 palavras.
@@ -49,6 +50,10 @@ const JARGON = [
   ["API", /\bAPI\b/], ["POSIX", /\bPOSIX\b/], ["sinal", /\bsinais\b|\bsinal\b/i, "s"], ["recurso", /\brecursos?\b/i, "s"],
   ["top-down", /\btop-down\b/i, "s"], ["bottom-up", /\bbottom-up\b/i, "s"], ["permissão", /\bpermiss(ão|ões)\b/i, "s"],
   ["máquina estendida", /\bmáquina estendida\b/i, "s"], ["gerenciador de recursos", /\bgerenciador de recursos\b/i, "s"],
+  ["hardware", /\bhardware\b/i, "s"], ["software", /\bsoftware\b/i, "s"], ["processador", /\bprocessador(es)?\b/i, "s"],
+  ["terminal", /\bterminal\b/i, "s"], ["comando", /\bcomandos?\b/i, "s"], ["prompt", /\bprompt\b/i, "s"],
+  ["PowerShell", /\bpowershell\b/i, "s"], ["bash", /\bbash\b/i, "s"], ["cmd", /\bcmd\b/i, "s"], ["WSL", /\bWSL\b/, "s"],
+  ["handle", /\bhandle\b/i, "s"], ["Win32", /\bwin32\b/i, "s"], ["strace", /\bstrace\b/i, "s"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
 const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s" };
@@ -129,13 +134,25 @@ for (const file of readdirSync(dir).filter((f) => f.endsWith(".json")).sort()) {
         if (SOURCE_REF.test(f.alt ?? "")) fail(W, "o texto alternativo cita livro ou fonte");
       }
       if (step.code && !String(step.code.text ?? "").trim()) fail(W, "bloco de código vazio");
+      let tableText = "";
+      if (step.table) {
+        const t = step.table;
+        if (!t.headers?.length || !t.rows?.length) fail(W, "a tabela precisa de cabeçalhos e de linhas");
+        (t.rows ?? []).forEach((row, i) => {
+          if (row.length !== (t.headers ?? []).length) fail(W, `linha ${i + 1} da tabela tem ${row.length} colunas; o cabeçalho tem ${(t.headers ?? []).length}`);
+        });
+        const allCells = [t.label ?? "", ...(t.headers ?? []), ...(t.rows ?? []).flat()].join(" \n ");
+        if (SOURCE_REF.test(allCells)) fail(W, "a tabela cita livro ou fonte");
+        // Em tabelas de comandos, as colunas de código não entram na conferência de jargão.
+        tableText = [t.label ?? "", ...(t.headers ?? []), ...(t.rows ?? []).map((r) => (t.mono ? r[0] : r.join(" ")))].join(" \n ");
+      }
 
       const bodyWords = (step.body ?? []).reduce((n, p) => n + words(p), 0);
       if (bodyWords > 75) fail(W, `texto corrido demais (${bodyWords} palavras; máximo 75)`);
       else if (bodyWords > 60) warn(W, `texto corrido longo (${bodyWords} palavras)`);
 
       if (step.kind !== "exam") {
-        const all = [step.title, ...prose, step.example?.label ?? "", ...(step.example?.lines ?? []), step.figure?.caption ?? ""].join(" \n ");
+        const all = [step.title, ...prose, step.example?.label ?? "", ...(step.example?.lines ?? []), step.figure?.caption ?? "", tableText].join(" \n ");
         checkJargon(W, all, defined, jargon);
       }
     });

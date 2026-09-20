@@ -111,6 +111,36 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
           </div>
         )}
 
+        {step.table && (
+          <div className="mt-6 overflow-hidden rounded-2xl bg-white shadow-lift">
+            {step.table.label && <p className="label-mono px-4 pt-4">{step.table.label}</p>}
+            <div className="overflow-x-auto">
+              <table className="mt-2 w-full min-w-[26rem] text-left text-sm">
+                <thead>
+                  <tr className="border-b-2 border-ink/15">
+                    {step.table.headers.map((header) => (
+                      <th key={header} scope="col" className="px-4 py-2.5 font-bold">
+                        {header}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {step.table.rows.map((row, r) => (
+                    <tr key={r} className="border-t border-ink/10">
+                      {row.map((cell, c) => (
+                        <td key={c} className={`break-words px-4 py-2.5 align-top ${step.table!.mono && c > 0 ? "font-mono" : ""}`}>
+                          {cell}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+
         {step.code && (
           <div className="mt-6">
             {step.code.label && <p className="label-mono mb-2">{step.code.label}</p>}
