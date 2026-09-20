@@ -70,6 +70,7 @@ class ContentSeeder extends Seeder
                         'title' => $lessonData['title'],
                         'position' => $lessonIndex + 1,
                         'summary' => $lessonData['summary'],
+                        'source' => $lessonData['source'] ?? null,
                         'steps' => $lessonData['steps'],
                     ] + $this->legacyFields($lessonData['steps']),
                 );

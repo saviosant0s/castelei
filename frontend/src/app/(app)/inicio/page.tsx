@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BookOpen, Calculator, Flame, Languages, Star } from "lucide-react";
+import { ArrowRight, BookOpen, Calculator, Cpu, Flame, Languages, Star } from "lucide-react";
 import { serverGet } from "@/lib/backend";
 import { firstName, formatNumber, pluralize } from "@/lib/format";
 import type { ProgressResponse, Subject, User } from "@/lib/types";
@@ -10,6 +10,7 @@ export const metadata: Metadata = { title: "Início" };
 const subjectIcons: Record<string, typeof BookOpen> = {
   "matematica-basica": Calculator,
   portugues: Languages,
+  "sistemas-operacionais": Cpu,
 };
 
 export default async function Inicio() {

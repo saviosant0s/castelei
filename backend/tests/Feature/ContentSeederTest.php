@@ -17,9 +17,9 @@ class ContentSeederTest extends TestCase
     {
         $this->seed(DatabaseSeeder::class);
 
-        $this->assertSame(2, Subject::count());
-        $this->assertSame(4, Lesson::count());
-        $this->assertSame(32, Question::count());
+        $this->assertSame(3, Subject::count());
+        $this->assertSame(7, Lesson::count());
+        $this->assertSame(56, Question::count());
 
         foreach (Lesson::withCount('questions')->get() as $lesson) {
             $this->assertSame(8, $lesson->questions_count, "Lição {$lesson->slug} deve ter 8 questões");
@@ -47,6 +47,29 @@ class ContentSeederTest extends TestCase
                 $this->assertContains($step['kind'], ['idea', 'explain', 'exam', 'pitfall', 'recap']);
                 $this->assertNotEmpty($step['title'], "{$lesson->slug} etapa {$i}");
                 $this->assertNotEmpty($step['body'], "{$lesson->slug} etapa {$i}");
+            }
+        }
+    }
+
+    public function test_licoes_de_sistemas_operacionais_citam_o_livro_e_as_figuras_existem(): void
+    {
+        $this->seed(DatabaseSeeder::class);
+
+        $lessons = Lesson::whereHas('subject', fn ($q) => $q->where('slug', 'sistemas-operacionais'))->get();
+        $this->assertCount(3, $lessons);
+
+        $publicDir = base_path('../frontend/public');
+        foreach ($lessons as $lesson) {
+            $this->assertStringContainsString('Tanenbaum', $lesson->source, "Lição {$lesson->slug}");
+
+            foreach ($lesson->steps as $step) {
+                if (! isset($step['figure'])) {
+                    continue;
+                }
+                $this->assertNotEmpty($step['figure']['alt'], "{$lesson->slug}: figura sem texto alternativo");
+                if (is_dir($publicDir)) {
+                    $this->assertFileExists($publicDir.$step['figure']['src']);
+                }
             }
         }
     }
@@ -83,15 +106,15 @@ class ContentSeederTest extends TestCase
         $this->seed(DatabaseSeeder::class);
         $this->seed(DatabaseSeeder::class);
 
-        $this->assertSame(2, Subject::count());
-        $this->assertSame(4, Lesson::count());
-        $this->assertSame(32, Question::count());
+        $this->assertSame(3, Subject::count());
+        $this->assertSame(7, Lesson::count());
+        $this->assertSame(56, Question::count());
     }
 
     public function test_comando_setup_roda_migrations_e_carrega_o_conteudo(): void
     {
         $this->artisan('castelei:setup')->assertSuccessful();
 
-        $this->assertSame(32, Question::count());
+        $this->assertSame(56, Question::count());
     }
 }

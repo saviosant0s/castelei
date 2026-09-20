@@ -1,0 +1,945 @@
+{
+  "slug": "sistemas-operacionais",
+  "name": "Sistemas Operacionais",
+  "description": "Conteúdo do semestre, na ordem das aulas. Texto original, baseado no livro de Tanenbaum.",
+  "lessons": [
+    {
+      "slug": "o-que-e-um-sistema-operacional",
+      "title": "O que é um sistema operacional?",
+      "summary": "O sistema operacional esconde a complexidade do hardware e organiza quem usa o quê. É o software que roda em modo núcleo.",
+      "source": "Tanenbaum, Sistemas Operacionais Modernos, 4ª ed., cap. 1, seção 1.1 (p. 3 a 5).",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Um prédio com um zelador",
+          "body": [
+            "Imagine um prédio com vários moradores. Todos dividem o elevador, a garagem e a lavanderia.",
+            "Sem alguém organizando, dois carros disputariam a mesma vaga. O elevador viveria lotado.",
+            "O zelador resolve isso. Ele também poupa os moradores de detalhes: ninguém precisa saber como o motor do elevador funciona."
+          ],
+          "terms": [
+            {
+              "word": "Sistema operacional (SO)",
+              "meaning": "o software que fica entre os programas e as peças do computador. Ele esconde a complexidade dessas peças e organiza quem usa o quê."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Visão 1: esconder a complexidade",
+          "body": [
+            "Ler uma foto do disco exige comandos muito detalhados. O livro conta que só a descrição da interface de um disco moderno, numa versão antiga, tinha mais de 450 páginas.",
+            "Ninguém quer programar assim. O SO oferece o arquivo: o programa pede “abrir foto.jpg” e pronto.",
+            "A tradução para o disco fica por conta de um driver."
+          ],
+          "figure": {
+            "src": "/figuras/so/so-maquina-estendida.svg",
+            "alt": "Três blocos empilhados. O programa do usuário pede “abrir foto.jpg”. O sistema operacional traduz, usando arquivos e drivers. O hardware do disco recebe comandos complicados.",
+            "caption": "O programa pede algo simples. O SO traduz para os comandos complicados do disco."
+          },
+          "terms": [
+            {
+              "word": "Abstração",
+              "meaning": "uma versão simplificada de algo complicado. O arquivo é uma abstração do disco."
+            },
+            {
+              "word": "Driver",
+              "meaning": "o pequeno programa que sabe conversar com um dispositivo específico, como um disco."
+            },
+            {
+              "word": "Máquina estendida",
+              "meaning": "o nome que o livro dá a essa visão: o SO como uma máquina mais fácil de usar do que o hardware puro."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Visão 2: organizar quem usa o quê",
+          "body": [
+            "Agora imagine três programas mandando imprimir ao mesmo tempo, em uma só impressora.",
+            "Sem organização, as linhas ficariam misturadas. O SO guarda a saída de cada programa no disco. Depois imprime uma de cada vez.",
+            "Ele faz isso com todas as peças disputadas: processador, memória, disco e impressora."
+          ],
+          "figure": {
+            "src": "/figuras/so/so-gerenciador.svg",
+            "alt": "Três programas, A, B e C, mandam seus pedidos para o sistema operacional, que organiza a fila e envia um de cada vez para a única impressora.",
+            "caption": "Três programas, uma impressora: o SO organiza a fila."
+          },
+          "terms": [
+            {
+              "word": "Recurso",
+              "meaning": "qualquer peça que os programas disputam (processador, memória, disco, impressora)."
+            },
+            {
+              "word": "Gerenciador de recursos",
+              "meaning": "o nome que o livro dá a essa visão: o SO repartindo as peças de forma ordenada e controlada."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "De cima para baixo, de baixo para cima",
+          "body": [
+            "As duas visões são o mesmo SO visto de lados opostos.",
+            "De cima, o programador enxerga abstrações simples, como o arquivo. De baixo, o hardware enxerga um gerente que reparte as peças entre os programas."
+          ],
+          "example": {
+            "label": "Resumindo",
+            "lines": [
+              "Visão de cima (top-down): máquina estendida",
+              "Visão de baixo (bottom-up): gerenciador de recursos"
+            ]
+          },
+          "terms": [
+            {
+              "word": "Top-down",
+              "meaning": "“de cima para baixo”: começar pelo que o programador vê."
+            },
+            {
+              "word": "Bottom-up",
+              "meaning": "“de baixo para cima”: começar pelas peças que precisam ser repartidas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Onde o SO roda: o modo núcleo",
+          "body": [
+            "O prédio tem uma sala do cofre. Só o zelador tem a chave.",
+            "No computador é parecido: o processador tem dois modos de funcionamento. O SO roda no mais poderoso. Os programas comuns rodam no mais limitado."
+          ],
+          "terms": [
+            {
+              "word": "Modo núcleo",
+              "meaning": "o modo do processador em que tudo é permitido, inclusive mexer direto no hardware. É onde o SO roda."
+            },
+            {
+              "word": "Modo usuário",
+              "meaning": "o modo restrito dos programas comuns. Para mexer no hardware, eles precisam pedir ao SO."
+            },
+            {
+              "word": "Núcleo (kernel)",
+              "meaning": "a parte principal do SO, a que sempre roda em modo núcleo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que NÃO é o sistema operacional",
+          "body": [
+            "Editores de texto, navegadores e jogos usam o SO. Eles não são o SO.",
+            "A área de trabalho do Windows e o prompt de comando são dois programas diferentes. Os dois rodam sobre o mesmo SO."
+          ],
+          "bullets": [
+            "É o SO: o núcleo, os drivers e o gerenciamento das peças do computador.",
+            "Não é o SO: os programas que o usam (editores, navegadores, jogos, interfaces gráficas e o shell)."
+          ],
+          "terms": [
+            {
+              "word": "Shell",
+              "meaning": "o programa que lê o que você digita e pede ao SO para executar. Ele usa o SO, mas não faz parte dele."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Nas provas de Sistemas Operacionais, a definição de SO costuma ser cobrada pelas duas funções.",
+            "As palavras da banca são “máquina estendida” e “gerenciador de recursos”. Também aparecem “abstração”, “top-down” e “bottom-up”.",
+            "As alternativas erradas costumam misturar o SO com a interface gráfica, ou trazer só uma das duas funções."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os erros que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que o SO é a interface gráfica ou o shell.",
+            "Descrever só uma das duas funções.",
+            "Confundir top-down (o que o programador vê) com bottom-up (o que o hardware precisa).",
+            "Achar que abstração é falta de detalhe por descuido. Ela esconde detalhes de propósito.",
+            "Achar que o modo núcleo é o modo do usuário humano. O nome se refere ao SO."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O SO é o software que roda em modo núcleo e faz duas coisas."
+          ],
+          "bullets": [
+            "Esconde a complexidade do hardware com abstrações (máquina estendida).",
+            "Organiza o uso dos recursos entre os programas (gerenciador de recursos).",
+            "Roda em modo núcleo. Programas comuns rodam em modo usuário.",
+            "Shell, editores e interfaces gráficas usam o SO, mas não são o SO."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "As duas funções",
+          "statement": "Segundo o livro de Tanenbaum, quais são as duas funções essenciais de um sistema operacional?",
+          "options": [
+            "Compilar programas e gerenciar redes",
+            "Oferecer uma interface gráfica e proteger contra vírus",
+            "Executar aplicativos e armazenar arquivos do usuário",
+            "Oferecer abstrações limpas aos programas e gerenciar os recursos de hardware",
+            "Controlar apenas o teclado e o monitor"
+          ],
+          "correct_index": 3,
+          "explanation": "O SO faz duas coisas: esconde a complexidade do hardware com abstrações e reparte os recursos entre os programas. O livro observa que essas duas funções quase não têm relação entre si.",
+          "pitfall": "Interface gráfica e antivírus são programas que rodam sobre o SO. Não são as duas funções essenciais."
+        },
+        {
+          "topic": "Máquina estendida",
+          "statement": "Quando dizemos que o SO atua como uma “máquina estendida”, queremos dizer que ele:",
+          "options": [
+            "apresenta ao programador uma máquina mais simples de usar do que o hardware puro",
+            "aumenta a velocidade do processador",
+            "adiciona memória física ao computador",
+            "substitui o hardware por software",
+            "prolonga a vida útil dos discos"
+          ],
+          "correct_index": 0,
+          "explanation": "Máquina estendida é a visão de cima para baixo. O SO esconde os detalhes do hardware e oferece abstrações, como o arquivo.",
+          "pitfall": "“Estendida” não quer dizer mais rápida nem com mais peças. Quer dizer mais fácil de usar."
+        },
+        {
+          "topic": "Gerenciador de recursos",
+          "statement": "Três programas mandam imprimir ao mesmo tempo em uma única impressora. O SO guarda cada saída no disco e imprime uma de cada vez. Esse exemplo ilustra o SO como:",
+          "options": [
+            "máquina estendida",
+            "compilador",
+            "interface gráfica",
+            "driver de impressora",
+            "gerenciador de recursos"
+          ],
+          "correct_index": 4,
+          "explanation": "O SO organiza o uso de uma peça disputada por vários programas. Essa é a visão de gerenciador de recursos.",
+          "pitfall": "O disco aparece no exemplo, mas o ponto é a organização da disputa pela impressora."
+        },
+        {
+          "topic": "De cima para baixo",
+          "statement": "No livro-texto, a visão do SO como máquina estendida é chamada de top-down. A visão do SO como gerenciador de recursos é chamada de:",
+          "options": [
+            "bottom-up",
+            "top-down também",
+            "peer-to-peer",
+            "cliente-servidor",
+            "multinível"
+          ],
+          "correct_index": 0,
+          "explanation": "Top-down parte do que o programador vê. Bottom-up parte das peças de hardware que precisam ser repartidas.",
+          "pitfall": "As duas palavras descrevem o ponto de partida da explicação, não dois sistemas diferentes."
+        },
+        {
+          "topic": "Abstração",
+          "statement": "Em Sistemas Operacionais, uma abstração é:",
+          "options": [
+            "uma cópia de segurança de um dispositivo",
+            "um erro de projeto do hardware",
+            "uma versão simplificada de algo complexo, que esconde detalhes de baixo nível",
+            "um tipo de memória muito rápida",
+            "um programa instalado por terceiros"
+          ],
+          "correct_index": 2,
+          "explanation": "O arquivo é o exemplo clássico: esconde os detalhes do disco. Boas abstrações transformam uma tarefa quase impossível em tarefas que dá para resolver.",
+          "pitfall": "Abstrair não é esquecer detalhes por descuido. É esconder de propósito o que o programador não precisa ver."
+        },
+        {
+          "topic": "O que não é o SO",
+          "statement": "Segundo o livro, qual dos itens abaixo NÃO faz parte do sistema operacional?",
+          "options": [
+            "O driver de um disco",
+            "O núcleo (kernel)",
+            "O interpretador de comandos (shell)",
+            "O código que controla a proteção da memória",
+            "O gerenciamento dos recursos de hardware"
+          ],
+          "correct_index": 2,
+          "explanation": "Shell, editores, compiladores e utilitários usam o SO. Eles não fazem parte dele. O núcleo e os drivers fazem.",
+          "pitfall": "O shell é a porta de entrada mais visível do SO, e por isso muita gente acha que ele faz parte."
+        },
+        {
+          "topic": "Modo núcleo",
+          "statement": "Em geral, o sistema operacional é o software que executa em qual modo do processador?",
+          "options": [
+            "Modo usuário",
+            "Modo núcleo",
+            "Modo de espera",
+            "Modo virtual",
+            "Modo seguro"
+          ],
+          "correct_index": 1,
+          "explanation": "O SO roda em modo núcleo, onde tudo é permitido. Programas comuns rodam em modo usuário. O livro lembra que essa definição nem sempre vale.",
+          "pitfall": "“Modo usuário” engana porque o SO serve ao usuário. Mas o nome se refere aos programas comuns, com poderes limitados."
+        },
+        {
+          "topic": "O SO e as interfaces",
+          "statement": "Uma pessoa usa a área de trabalho gráfica do Windows. Outra usa o prompt de comando. Sobre isso, é correto afirmar que:",
+          "options": [
+            "são dois sistemas operacionais diferentes",
+            "a área de trabalho é o núcleo do Windows",
+            "só o prompt usa as abstrações do SO",
+            "ambos são programas que rodam sobre o mesmo SO, com interfaces diferentes",
+            "só a área de trabalho usa recursos de hardware"
+          ],
+          "correct_index": 3,
+          "explanation": "Os dois são programas que usam as abstrações do Windows. Só a interface com o usuário é diferente.",
+          "pitfall": "Interface diferente não quer dizer SO diferente. O SO por baixo é o mesmo."
+        }
+      ]
+    },
+    {
+      "slug": "componentes-e-funcoes-do-so",
+      "title": "Componentes e funções de um SO",
+      "summary": "O SO cuida de cinco áreas (processos, espaços de endereçamento, arquivos, entrada e saída e proteção). O shell fica de fora.",
+      "source": "Tanenbaum, Sistemas Operacionais Modernos, 4ª ed., cap. 1, seção 1.5 (p. 27 a 32).",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Uma cidade com repartições",
+          "body": [
+            "Pense em uma cidade. A prefeitura cuida de várias coisas: de quem mora e trabalha, dos terrenos e do cartório. Cuida também dos correios e da segurança.",
+            "O SO é a prefeitura do computador. Cada repartição dele tem um nome técnico.",
+            "Vamos visitar uma por uma."
+          ],
+          "figure": {
+            "src": "/figuras/so/so-componentes.svg",
+            "alt": "Mapa com o sistema operacional no centro, ligado a cinco blocos: processos, espaços de endereçamento, arquivos, entrada e saída e proteção. O shell aparece fora, em uma caixa tracejada.",
+            "caption": "As cinco repartições do SO. A caixa tracejada é um programa que fica de fora dele."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Processo: o programa em ação",
+          "body": [
+            "Uma receita no livro é só papel. Algo acontece quando alguém cozinha seguindo a receita.",
+            "O programa é a receita, guardada no disco. O processo é o programa sendo executado, com tudo o que ele precisa."
+          ],
+          "example": {
+            "label": "Comparando",
+            "lines": [
+              "programa = receita no livro (parada)",
+              "processo = alguém cozinhando com ela (em execução)"
+            ]
+          },
+          "terms": [
+            {
+              "word": "Programa",
+              "meaning": "o conjunto de instruções guardado em um arquivo. Ele fica parado no disco."
+            },
+            {
+              "word": "Processo",
+              "meaning": "um programa em execução, com tudo o que ele precisa para rodar: memória, arquivos abertos e a posição em que parou."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quem criou quem: a árvore de processos",
+          "body": [
+            "Um processo pode criar outros. Quem cria é o pai. Quem é criado é o filho.",
+            "Ao digitar um comando, o shell cria um processo novo para executá-lo. Assim nasce uma árvore de processos.",
+            "O SO guarda uma ficha de cada processo em uma lista chamada tabela de processos."
+          ],
+          "figure": {
+            "src": "/figuras/so/so-arvore-processos.svg",
+            "alt": "Árvore de processos. O bash criou o firefox e o gcc. O gcc criou o cc1 e o as.",
+            "caption": "Cada seta quer dizer “criou”."
+          },
+          "terms": [
+            {
+              "word": "Tabela de processos",
+              "meaning": "a lista do SO com uma ficha para cada processo. A ficha guarda o que é preciso para retomá-lo de onde parou."
+            },
+            {
+              "word": "Shell",
+              "meaning": "o programa que lê o que você digita e pede ao SO para executar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Espaço de endereçamento: o terreno de cada processo",
+          "body": [
+            "Cada processo recebe um terreno só seu de memória, com endereços que vão de zero até um máximo.",
+            "Um processo não enxerga o terreno do outro. Isso evita que um estrague o trabalho do outro.",
+            "Se o terreno for maior que a memória do computador, o SO guarda parte dele no disco."
+          ],
+          "figure": {
+            "src": "/figuras/so/so-espaco-enderecamento.svg",
+            "alt": "Dois processos, A e B, cada um com seu espaço de endereços de zero ao máximo. O sistema leva cada espaço para a memória principal e usa o disco para o que não cabe.",
+            "caption": "Cada processo tem o seu terreno. O que não cabe na RAM vai para o disco."
+          },
+          "terms": [
+            {
+              "word": "Espaço de endereçamento",
+              "meaning": "o conjunto de endereços de memória que um processo pode usar."
+            },
+            {
+              "word": "Memória virtual",
+              "meaning": "a técnica em que o SO mantém parte do espaço de endereçamento na memória e parte no disco, trocando os pedaços quando preciso."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Arquivos e diretórios: o arquivo do escritório",
+          "body": [
+            "Um arquivo de escritório tem pastas dentro de pastas. Os arquivos do computador também são organizados assim.",
+            "O topo é o diretório-raiz, escrito /. O endereço de um arquivo nessa árvore é o caminho.",
+            "Antes de usar um arquivo, o programa precisa abri-lo. O SO confere se há autorização e devolve um número chamado descritor de arquivo."
+          ],
+          "figure": {
+            "src": "/figuras/so/so-arvore-arquivos.svg",
+            "alt": "Árvore de diretórios. A raiz tem home e etc. Dentro de home fica ana, com notas.txt e foto.jpg. O caminho até notas.txt está destacado.",
+            "caption": "O caminho destacado é /home/ana/notas.txt."
+          },
+          "terms": [
+            {
+              "word": "Diretório",
+              "meaning": "uma pasta que guarda arquivos e outras pastas."
+            },
+            {
+              "word": "Caminho",
+              "meaning": "o endereço de um arquivo na árvore de pastas. Exemplo: /home/ana/notas.txt."
+            },
+            {
+              "word": "Descritor de arquivo",
+              "meaning": "um número pequeno que o SO entrega ao abrir um arquivo. Nas operações seguintes, você usa esse número no lugar do nome."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Entrada e saída: correios e portos",
+          "body": [
+            "Teclado, tela, disco e rede são as portas de entrada e saída do computador. Cada um funciona de um jeito.",
+            "Os programas não conversam com cada um deles direto. O SO cuida disso e usa um driver para cada dispositivo."
+          ],
+          "example": {
+            "label": "Do teclado ao programa",
+            "lines": [
+              "você aperta uma tecla",
+              "o driver do teclado avisa o SO",
+              "o SO entrega a tecla ao programa certo"
+            ]
+          },
+          "terms": [
+            {
+              "word": "Entrada e saída (E/S)",
+              "meaning": "tudo o que leva informação para dentro ou para fora do computador (teclado, tela, disco e rede)."
+            },
+            {
+              "word": "Driver",
+              "meaning": "o pequeno programa que sabe conversar com um dispositivo específico."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Proteção: cada um no seu quadrado",
+          "body": [
+            "Em um prédio, cada morador tem a chave do próprio apartamento. No computador, o SO decide quem pode fazer o quê.",
+            "Cada arquivo tem três grupos de permissões: dono, grupo e demais pessoas. Cada grupo pode ler (r), escrever (w) ou executar (x).",
+            "Impedir que um processo invada a memória de outro também é proteção. O hardware ajuda, mas o SO controla."
+          ],
+          "example": {
+            "label": "Lendo rwxr-x--x",
+            "lines": [
+              "dono: r w x (lê, escreve e executa)",
+              "grupo: r – x (lê e executa)",
+              "demais: – – x (só executa)"
+            ]
+          },
+          "terms": [
+            {
+              "word": "Permissão",
+              "meaning": "o que alguém pode fazer com um arquivo: ler, escrever ou executar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O shell: o guichê de atendimento",
+          "body": [
+            "O shell é o guichê onde você conversa com o SO por texto. Você digita um comando e ele pede ao SO para executá-lo.",
+            "Ele usa muito o SO, mas não faz parte dele. É só um programa, como os outros.",
+            "O comando date mostra a data. O ls lista os arquivos da pasta."
+          ],
+          "code": {
+            "label": "No terminal",
+            "text": "$ date\n$ ls"
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Na prova, os cinco componentes aparecem com estes nomes: “processos”, “espaços de endereçamento” e “arquivos”. Também “entrada e saída” e “proteção”.",
+            "Pedem definições, como “o que é a tabela de processos” ou “o que é um descritor de arquivo”.",
+            "Também cobram o que fica fora do SO. O shell, os editores e os compiladores não fazem parte dele."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os erros que a prova espera de você:"
+          ],
+          "bullets": [
+            "Confundir programa (parado no disco) com processo (em execução).",
+            "Achar que o shell faz parte do SO.",
+            "Achar que o espaço de endereçamento é o disco ou a memória inteira. É o conjunto de endereços que o processo pode usar.",
+            "Achar que o descritor de arquivo é o conteúdo do arquivo. Ele é só um número.",
+            "Ler rwxr-x--x de uma vez só. São três blocos de três letras: dono, grupo e demais."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O SO é uma prefeitura com cinco repartições."
+          ],
+          "bullets": [
+            "Processo: programa em execução. O SO guarda sua ficha na tabela de processos.",
+            "Espaço de endereçamento: os endereços de memória que o processo pode usar.",
+            "Arquivos: organizados em diretórios. Ao abrir um, você recebe um descritor.",
+            "Entrada e saída: dispositivos acessados por meio de drivers.",
+            "Proteção: permissões (r, w, x) e isolamento da memória.",
+            "Shell: programa que usa o SO, mas não faz parte dele."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Programa e processo",
+          "statement": "Qual é a diferença entre programa e processo?",
+          "options": [
+            "Não há diferença: são sinônimos",
+            "O programa fica sempre na memória e o processo sempre no disco",
+            "O programa fica guardado, parado, em um arquivo; o processo é o programa em execução",
+            "O processo é mais rápido que o programa",
+            "O programa só existe enquanto o computador está desligado"
+          ],
+          "correct_index": 2,
+          "explanation": "Programa é a receita. Processo é a receita sendo cozinhada. O mesmo programa pode gerar vários processos.",
+          "pitfall": "Executar duas vezes o mesmo programa cria dois processos, mas continua existindo um só programa."
+        },
+        {
+          "topic": "Tabela de processos",
+          "statement": "Para que serve a tabela de processos mantida pelo sistema operacional?",
+          "options": [
+            "Guardar uma ficha de cada processo, com o que é preciso para retomá-lo de onde parou",
+            "Listar os arquivos de cada diretório",
+            "Guardar as senhas dos usuários",
+            "Registrar os dispositivos de entrada e saída",
+            "Armazenar o código-fonte dos programas"
+          ],
+          "correct_index": 0,
+          "explanation": "A ficha guarda, por exemplo, o conteúdo dos registradores. Sem ela, um processo parado não voltaria de onde parou.",
+          "pitfall": "Não confunda com a lista de arquivos de um diretório. Cada tabela guarda um tipo de informação."
+        },
+        {
+          "topic": "Espaço de endereçamento",
+          "statement": "O espaço de endereçamento de um processo é:",
+          "options": [
+            "o espaço livre no disco rígido",
+            "o conjunto de endereços de memória que o processo pode usar",
+            "a lista de arquivos abertos pelo processo",
+            "a quantidade de processos que ele pode criar",
+            "o cache do processador"
+          ],
+          "correct_index": 1,
+          "explanation": "Cada processo tem o seu, com endereços de zero até um máximo. Um processo não enxerga o espaço do outro.",
+          "pitfall": "Espaço de endereçamento não é o mesmo que memória física. Ele pode ser maior ou menor que ela."
+        },
+        {
+          "topic": "Memória virtual",
+          "statement": "Que técnica permite que um processo tenha um espaço de endereçamento maior do que a memória principal disponível?",
+          "options": [
+            "Escalonamento",
+            "Pipes",
+            "Memória virtual",
+            "Descritores de arquivo",
+            "Montagem de sistemas de arquivos"
+          ],
+          "correct_index": 2,
+          "explanation": "Com a memória virtual, o SO mantém parte do espaço no disco e parte na memória, trocando os pedaços conforme a necessidade.",
+          "pitfall": "Memória virtual não é uma memória extra do hardware. É uma técnica do SO que usa o disco como apoio."
+        },
+        {
+          "topic": "Descritor de arquivo",
+          "statement": "Quando um programa abre um arquivo com sucesso, o SO devolve:",
+          "options": [
+            "todo o conteúdo do arquivo",
+            "o endereço físico do arquivo no disco",
+            "o nome do dono do arquivo",
+            "um descritor de arquivo: um número inteiro pequeno",
+            "um novo processo para cuidar do arquivo"
+          ],
+          "correct_index": 3,
+          "explanation": "O descritor é como o número da senha do atendimento. Nas operações seguintes, o programa usa o número no lugar do nome.",
+          "pitfall": "O descritor não traz os dados. Para ler o conteúdo, o programa ainda precisa fazer uma leitura."
+        },
+        {
+          "topic": "Proteção com rwx",
+          "statement": "O código de proteção rwxr-x--x significa que:",
+          "options": [
+            "o dono pode ler, escrever e executar; o grupo pode ler e executar; os demais só podem executar",
+            "todos podem ler, escrever e executar",
+            "o dono só pode executar, e o grupo pode tudo",
+            "o dono pode ler e escrever; o grupo e os demais não podem nada",
+            "o dono e o grupo podem tudo, e os demais só podem ler"
+          ],
+          "correct_index": 0,
+          "explanation": "Leia em três blocos de três letras: dono (rwx), grupo (r-x) e demais (--x). O traço quer dizer permissão ausente.",
+          "pitfall": "Ler as nove letras de uma vez confunde. Separe em três blocos: dono, grupo e demais."
+        },
+        {
+          "topic": "O shell",
+          "statement": "Sobre o interpretador de comandos (shell), é correto afirmar que:",
+          "options": [
+            "ele faz parte do núcleo do SO",
+            "ele é um tipo de driver de dispositivo",
+            "ele existe apenas no Windows",
+            "ele gerencia a tabela de processos",
+            "ele lê comandos do usuário e pede ao SO para executá-los, mas não faz parte do SO"
+          ],
+          "correct_index": 4,
+          "explanation": "O shell é um programa comum que usa muitos serviços do SO. Ele é a principal interface de texto, mas não faz parte do SO.",
+          "pitfall": "O shell é só a porta de entrada. Quem executa o pedido é o SO."
+        },
+        {
+          "topic": "Proteção da memória",
+          "statement": "Sobre impedir que um processo invada a memória de outro, é correto afirmar que:",
+          "options": [
+            "depende só do hardware, sem participação do SO",
+            "o mecanismo precisa estar no hardware, mas quem o controla é o SO",
+            "depende só do SO, sem ajuda do hardware",
+            "não é necessário, pois os processos nunca interferem entre si",
+            "é feito pelo shell"
+          ],
+          "correct_index": 1,
+          "explanation": "O hardware fornece o mecanismo e o SO o controla. Juntos, eles mantêm cada processo no seu espaço.",
+          "pitfall": "Proteger a memória não é trabalho do shell nem só do SO. Hardware e SO trabalham juntos."
+        }
+      ]
+    },
+    {
+      "slug": "chamadas-de-sistema",
+      "title": "Chamadas de sistema",
+      "summary": "Uma chamada de sistema é o pedido do programa ao SO. Ela usa a instrução TRAP para passar do modo usuário ao modo núcleo.",
+      "source": "Tanenbaum, Sistemas Operacionais Modernos, 4ª ed., cap. 1, seção 1.6 (p. 35 a 43).",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O guichê do banco",
+          "body": [
+            "Você não entra no cofre do banco para guardar seu dinheiro. Vai ao guichê e faz um pedido.",
+            "O atendente entra no cofre por você e traz a resposta.",
+            "Os programas fazem igual com o sistema operacional. Cada pedido se chama chamada de sistema."
+          ],
+          "terms": [
+            {
+              "word": "Chamada de sistema",
+              "meaning": "um pedido que um programa faz ao SO para usar algo que só o SO pode fazer, como ler um arquivo ou criar um processo."
+            },
+            {
+              "word": "Processo",
+              "meaning": "um programa em execução."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Dois modos do processador",
+          "body": [
+            "O processador funciona em dois modos. No modo núcleo, tudo é permitido. No modo usuário, mexer direto no hardware é proibido.",
+            "Programas comuns rodam em modo usuário. Assim, um programa com erro não derruba os outros.",
+            "Só o SO roda em modo núcleo. Por isso o pedido precisa passar por ele."
+          ],
+          "figure": {
+            "src": "/figuras/so/so-modos.svg",
+            "alt": "Duas faixas. Em cima, o modo usuário, com programas comuns. Embaixo, o modo núcleo, com o sistema operacional. Uma seta de pedido desce, com TRAP, e outra de resposta sobe. Abaixo fica o hardware.",
+            "caption": "O programa pede. O SO responde."
+          },
+          "terms": [
+            {
+              "word": "Modo núcleo",
+              "meaning": "o modo do processador em que tudo é permitido. É onde o SO roda."
+            },
+            {
+              "word": "Modo usuário",
+              "meaning": "o modo restrito dos programas comuns."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Como uma chamada acontece",
+          "body": [
+            "O programa chama uma função da biblioteca, como read. Ela prepara o pedido e executa uma instrução especial chamada TRAP.",
+            "O TRAP lembra uma chamada de função comum. Mas ele troca o modo e só salta para um lugar fixo do SO.",
+            "O SO faz o serviço e devolve o resultado."
+          ],
+          "figure": {
+            "src": "/figuras/so/so-fluxo-chamada.svg",
+            "alt": "Três colunas: programa, biblioteca e núcleo. 1: o programa chama read. 2: a biblioteca põe o número da chamada num registrador. 3: executa TRAP e passa ao modo núcleo. 4: o núcleo faz o serviço. 5: volta ao modo usuário. 6: o resultado volta ao programa.",
+            "caption": "Os seis passos de uma chamada de sistema."
+          },
+          "terms": [
+            {
+              "word": "Biblioteca",
+              "meaning": "código pronto que o programa usa. Aqui, é a parte que prepara o pedido ao SO."
+            },
+            {
+              "word": "TRAP",
+              "meaning": "uma instrução especial do processador. Ela troca para o modo núcleo e salta para um endereço fixo dentro do SO."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Chamadas para processos",
+          "body": [
+            "O shell usa três chamadas para rodar um comando: fork, execve e waitpid.",
+            "O fork cria um filho idêntico ao pai. O filho usa execve para trocar seu programa pelo comando. O pai usa waitpid para esperar o filho terminar."
+          ],
+          "code": {
+            "label": "Em C (simplificado)",
+            "text": "pid = fork();      // cria o filho\nexecve(nome, ...); // troca o programa\nwaitpid(pid, ...); // o pai espera\nexit(status);      // termina"
+          },
+          "terms": [
+            {
+              "word": "Pai e filho",
+              "meaning": "o processo criado é o filho. Quem o criou é o pai."
+            },
+            {
+              "word": "Shell",
+              "meaning": "o programa que lê o que você digita e pede ao SO para executar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Chamadas para arquivos",
+          "body": [
+            "Para ler um arquivo, o programa abre, lê e fecha.",
+            "O open devolve o descritor de arquivo. O read usa esse número para saber de onde ler. Os dados vão para o buffer."
+          ],
+          "code": {
+            "label": "Em C (simplificado)",
+            "text": "fd = open(\"notas.txt\", ...);\nn = read(fd, buffer, nbytes);\nn = write(fd, buffer, nbytes);\nclose(fd);"
+          },
+          "terms": [
+            {
+              "word": "Descritor de arquivo",
+              "meaning": "um número pequeno que o open devolve. Ele identifica o arquivo aberto."
+            },
+            {
+              "word": "Buffer",
+              "meaning": "uma área de memória que guarda dados por um tempo. No read, é onde os dados lidos são colocados."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Outras chamadas do dia a dia",
+          "body": [
+            "Além de processos e arquivos, há chamadas para pastas e para sinais entre processos."
+          ],
+          "bullets": [
+            "mkdir: cria uma pasta",
+            "rmdir: remove uma pasta vazia",
+            "chdir: muda a pasta de trabalho",
+            "chmod: muda quem pode ler, escrever ou executar um arquivo",
+            "kill: envia um sinal a um processo",
+            "time: informa os segundos passados desde 1º de janeiro de 1970"
+          ],
+          "terms": [
+            {
+              "word": "Sinal",
+              "meaning": "uma mensagem curta que o SO ou outro processo envia a um processo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "POSIX e Windows: a API",
+          "body": [
+            "Na prática, você usa as funções de uma API. É a lista de funções que o SO oferece aos programas.",
+            "No UNIX e no Linux, o padrão POSIX define cerca de 100 funções. Elas usam as chamadas de sistema por trás.",
+            "No Windows, a API se chama Win32. Lá, um programa costuma esperar por eventos e chamar a função certa quando um acontece."
+          ],
+          "terms": [
+            {
+              "word": "API",
+              "meaning": "o conjunto de funções que um SO oferece aos programas."
+            },
+            {
+              "word": "POSIX",
+              "meaning": "o padrão que define essas funções para sistemas tipo UNIX, para que os programas funcionem em vários deles."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Na prova, aparecem perguntas como “o que é uma chamada de sistema” e “qual chamada cria um processo”.",
+            "Também cobram a diferença entre uma chamada de rotina comum e o TRAP. O TRAP muda para o modo núcleo e salta para um endereço fixo.",
+            "Outra pergunta comum é a ordem do que acontece em uma chamada."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os erros que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que uma chamada de sistema é igual a uma chamada de função comum. Ela troca de modo.",
+            "Trocar as funções: fork cria um filho, execve troca o programa e waitpid espera.",
+            "Achar que o shell usa execve sozinho. Ele seria trocado pelo comando e sumiria.",
+            "Achar que o programa comum executa o TRAP direto. Em geral, é a função da biblioteca que faz isso.",
+            "Confundir POSIX (padrão para UNIX e Linux) com Win32 (API do Windows)."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Chamada de sistema é o pedido do programa ao SO."
+          ],
+          "bullets": [
+            "O programa roda em modo usuário e não mexe direto no hardware.",
+            "A função da biblioteca prepara o pedido e executa o TRAP.",
+            "O TRAP troca para o modo núcleo e salta para um endereço fixo do SO.",
+            "O SO faz o serviço e volta para o modo usuário.",
+            "fork cria, execve troca o programa, waitpid espera e exit termina.",
+            "open, read, write e close cuidam dos arquivos."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "O que é",
+          "statement": "O que é uma chamada de sistema?",
+          "options": [
+            "Qualquer função escrita em linguagem C",
+            "Um pedido que um programa faz ao SO para usar um serviço que só o SO pode realizar",
+            "Uma ligação telefônica ao suporte técnico",
+            "A troca de mensagens entre dois computadores",
+            "O reinício do computador pelo usuário"
+          ],
+          "correct_index": 1,
+          "explanation": "Programas comuns não podem mexer direto no hardware. Eles pedem ao SO por meio de chamadas de sistema.",
+          "pitfall": "Nem toda função é uma chamada de sistema. Só as que pedem um serviço ao SO."
+        },
+        {
+          "topic": "A instrução TRAP",
+          "statement": "A instrução TRAP difere de uma chamada de rotina comum porque:",
+          "options": [
+            "apaga a memória antes de executar",
+            "não guarda o endereço de retorno",
+            "só pode ser executada em modo núcleo",
+            "troca o processador para o modo núcleo e salta para um endereço fixo do SO",
+            "é sempre mais lenta que uma chamada de rotina"
+          ],
+          "correct_index": 3,
+          "explanation": "O TRAP muda o modo e não deixa o programa escolher o destino: o salto vai para um lugar fixo do SO. Isso protege o sistema.",
+          "pitfall": "Como uma chamada comum, o TRAP guarda o endereço de retorno. A diferença está no modo e no destino fixo."
+        },
+        {
+          "topic": "Modo usuário",
+          "statement": "Um programa comum executando em modo usuário:",
+          "options": [
+            "não pode acessar diretamente os dispositivos e precisa pedir ao SO",
+            "pode executar qualquer instrução do processador",
+            "tem prioridade sobre o SO",
+            "roda sem usar memória",
+            "só funciona se o SO estiver desligado"
+          ],
+          "correct_index": 0,
+          "explanation": "O modo usuário limita o programa. Assim, um erro dele não derruba o sistema nem os outros programas.",
+          "pitfall": "Modo usuário não quer dizer que só uma pessoa usa. Quer dizer que o programa tem poderes limitados."
+        },
+        {
+          "topic": "Criar processos",
+          "statement": "Qual chamada de sistema POSIX cria um processo filho idêntico ao pai?",
+          "options": [
+            "execve",
+            "waitpid",
+            "fork",
+            "exit",
+            "open"
+          ],
+          "correct_index": 2,
+          "explanation": "fork cria o filho. execve troca o programa. waitpid espera. exit termina.",
+          "pitfall": "O nome execve engana: ele executa outro programa, mas não cria um processo novo."
+        },
+        {
+          "topic": "O shell e o fork",
+          "statement": "Quando você digita um comando no shell, o que costuma acontecer?",
+          "options": [
+            "O shell chama execve diretamente, sem criar filho",
+            "O shell chama exit e o comando roda sozinho",
+            "O shell chama open para abrir o comando como arquivo de texto",
+            "O shell chama read e espera o núcleo executar o comando",
+            "O shell chama fork; o filho usa execve para rodar o comando; o pai usa waitpid para esperar"
+          ],
+          "correct_index": 4,
+          "explanation": "Se o shell usasse execve sozinho, ele mesmo seria trocado pelo comando e sumiria. Por isso ele cria um filho antes.",
+          "pitfall": "O execve não cria processo: ele troca o programa do processo que o chama."
+        },
+        {
+          "topic": "O descritor no read",
+          "statement": "Em n = read(fd, buffer, nbytes), o que é fd?",
+          "options": [
+            "o nome do arquivo em texto",
+            "o descritor do arquivo, obtido ao abri-lo",
+            "o tamanho do buffer",
+            "o endereço do arquivo no disco",
+            "o número do processo que lê"
+          ],
+          "correct_index": 1,
+          "explanation": "O read usa o descritor devolvido pelo open. Os dados lidos vão para o buffer, e o retorno n diz quantos bytes vieram.",
+          "pitfall": "O nome do arquivo só aparece no open. Depois disso, você usa o descritor."
+        },
+        {
+          "topic": "A biblioteca",
+          "statement": "Por que o programador chama uma função de biblioteca, como read, em vez de executar o TRAP diretamente?",
+          "options": [
+            "Porque o TRAP só funciona em modo usuário",
+            "Porque a biblioteca é mais rápida que o núcleo",
+            "Porque a biblioteca prepara o pedido e executa o TRAP, escondendo esses detalhes",
+            "Porque o SO proíbe programas de usar TRAP",
+            "Porque a biblioteca substitui o núcleo"
+          ],
+          "correct_index": 2,
+          "explanation": "A função da biblioteca coloca o número da chamada onde o SO espera e executa o TRAP. O programador só vê uma chamada de função.",
+          "pitfall": "A biblioteca não faz o serviço. Ela só prepara o pedido. Quem faz o serviço é o núcleo."
+        },
+        {
+          "topic": "Pasta de trabalho",
+          "statement": "A chamada s = chdir(dirname) serve para:",
+          "options": [
+            "mudar o diretório de trabalho do processo",
+            "mudar as permissões de um arquivo",
+            "criar um novo diretório",
+            "enviar um sinal a um processo",
+            "montar um sistema de arquivos"
+          ],
+          "correct_index": 0,
+          "explanation": "chdir muda a pasta de trabalho. chmod muda quem pode ler, escrever ou executar. kill envia um sinal.",
+          "pitfall": "Não confunda chdir (muda de pasta) com chmod (muda quem pode acessar o arquivo)."
+        }
+      ]
+    }
+  ]
+}

@@ -14,7 +14,7 @@ castelei/
 ## O que o MVP já faz
 
 - Cadastro e login por e-mail e senha
-- 2 matérias, 4 lições e 32 questões originais (Matemática Básica: equações do 1º grau e porcentagem; Português: crase e concordância verbal)
+- 3 matérias, 7 lições e 56 questões originais (Matemática Básica, Português e Sistemas Operacionais; veja `docs/sistemas-operacionais-mapa.md`)
 - Lição em etapas, uma ideia por tela: analogia, passo a passo com exemplo, como cai na prova, pegadinhas e resumo
 - Modo Prova: uma questão por tela, cronômetro crescente, confirmar ou pular, feedback com gabarito, explicação e pegadinha
 - Resultado com acerto, tempo médio por questão, recorde de tempo e ponto fraco
@@ -71,6 +71,10 @@ As lições ficam em `backend/database/seeders/content/*.json`. Cada lição tem
 | `example` | exemplo resolvido: `label` e `lines` (uma linha por passo) |
 | `bullets` | lista de itens |
 | `terms` | palavras novas explicadas nesta etapa (`word`, `meaning`) |
+| `figure` | figura SVG do app: `src` (em `frontend/public/figuras/`), `alt` (texto alternativo descritivo) e `caption` |
+| `code` | trecho de código: `label` e `text` (linhas curtas, até uns 36 caracteres) |
+
+Cada lição também pode ter `source`, indicando onde ler mais (obrigatório nas lições de Sistemas Operacionais).
 
 Antes de enviar, rode o verificador do Guia Editorial (o CI também roda):
 

@@ -89,6 +89,15 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
           ))}
         </div>
 
+        {step.figure && (
+          <figure className="mt-6 overflow-hidden rounded-2xl bg-white p-3 shadow-lift">
+            {/* SVG estático do próprio app: o next/image não agrega nada aqui */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={step.figure.src} alt={step.figure.alt} className="h-auto w-full" loading="lazy" />
+            {step.figure.caption && <figcaption className="mt-2 px-2 pb-1 text-sm text-ink/70">{step.figure.caption}</figcaption>}
+          </figure>
+        )}
+
         {step.example && (
           <div className="mt-6 rounded-2xl bg-white p-5 shadow-lift">
             <p className="label-mono">{step.example.label}</p>
@@ -99,6 +108,15 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
                 </li>
               ))}
             </ol>
+          </div>
+        )}
+
+        {step.code && (
+          <div className="mt-6">
+            {step.code.label && <p className="label-mono mb-2">{step.code.label}</p>}
+            <pre className="overflow-x-auto rounded-2xl bg-ink p-4 font-mono text-sm leading-relaxed text-paper">
+              <code>{step.code.text}</code>
+            </pre>
           </div>
         )}
 
@@ -123,6 +141,12 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
                 </p>
               </div>
             ))}
+          </div>
+        )}
+        {isLast && lesson.source && (
+          <div className="mt-6 rounded-2xl border-2 border-dashed border-ink/20 px-5 py-4">
+            <p className="label-mono">Para ler no livro</p>
+            <p className="mt-1 text-base">{lesson.source}</p>
           </div>
         )}
       </article>

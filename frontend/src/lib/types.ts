@@ -40,12 +40,18 @@ export interface LessonStep {
   example?: { label: string; lines: string[] };
   /** palavras novas explicadas nesta etapa */
   terms?: { word: string; meaning: string }[];
+  /** figura (SVG do próprio app), com texto alternativo e legenda */
+  figure?: { src: string; alt: string; caption?: string };
+  /** trecho de código, mostrado em fonte monoespaçada */
+  code?: { label?: string; text: string };
 }
 
 export interface LessonDetail {
   id: number;
   title: string;
   summary: string;
+  /** onde ler mais (ex.: capítulo e seção do livro) */
+  source: string | null;
   steps: LessonStep[];
   subject: { id: number; slug: string; name: string };
   questions_total: number;

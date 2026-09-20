@@ -27,6 +27,7 @@ trait MakesLessons
             'title' => 'Lição '.$lessonPosition,
             'position' => $lessonPosition,
             'summary' => 'Resumo',
+            'source' => 'Livro de teste, cap. 1 (p. 1 a 9).',
             'explanation' => 'Explicação',
             'exam_style' => 'Como cai na prova',
             'pitfalls' => ['Pegadinha 1'],

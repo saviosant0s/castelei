@@ -9,13 +9,14 @@ const lesson: LessonDetail = {
   id: 7,
   title: "Equações do 1º grau",
   summary: "Resumo",
+  source: "Livro de teste, cap. 1 (p. 1 a 9).",
   subject: { id: 1, slug: "matematica-basica", name: "Matemática Básica" },
   questions_total: 8,
   questions_available: 5,
   limited_by_plan: true,
   steps: [
     { kind: "idea", title: "Uma balança em equilíbrio", body: ["Imagine uma balança."], terms: [{ word: "Equação", meaning: "uma conta com um valor escondido." }] },
-    { kind: "explain", title: "Da história para a conta", body: ["Você comprou 3 pizzas."], example: { label: "Traduzindo", lines: ["3 · x + 7 = 22", "3x + 7 = 22"] } },
+    { kind: "explain", title: "Da história para a conta", body: ["Você comprou 3 pizzas."], example: { label: "Traduzindo", lines: ["3 · x + 7 = 22", "3x + 7 = 22"] }, figure: { src: "/figuras/so/so-modos.svg", alt: "Duas faixas: modo usuário e modo núcleo.", caption: "O programa pede. O SO responde." }, code: { label: "Em C", text: "pid = fork();\nwaitpid(pid, ...);" } },
     { kind: "exam", title: "Como cai na prova", body: ["A prova pede o valor de x."], bullets: ["esqueceu de trocar o sinal"] },
     { kind: "recap", title: "Resumo em 1 minuto", body: ["Mexa nos dois lados do mesmo jeito."] },
   ],
@@ -108,5 +109,47 @@ describe("LessonStepper", () => {
     await user.keyboard("{ArrowRight}{ArrowRight}");
 
     expect(screen.getByText("esqueceu de trocar o sinal")).toBeTruthy();
+  });
+
+  it("mostra a figura com texto alternativo e legenda", async () => {
+    const user = userEvent.setup();
+    render(<LessonStepper lesson={lesson} />);
+
+    await user.click(screen.getByRole("button", { name: /continuar/i }));
+
+    const image = screen.getByRole("img", { name: "Duas faixas: modo usuário e modo núcleo." });
+    expect(image.getAttribute("src")).toBe("/figuras/so/so-modos.svg");
+    expect(screen.getByText("O programa pede. O SO responde.")).toBeTruthy();
+  });
+
+  it("mostra o bloco de código com rótulo", async () => {
+    const user = userEvent.setup();
+    render(<LessonStepper lesson={lesson} />);
+
+    await user.click(screen.getByRole("button", { name: /continuar/i }));
+
+    expect(screen.getByText("Em C")).toBeTruthy();
+    const code = document.querySelector("pre code");
+    expect(code?.textContent).toBe("pid = fork();\nwaitpid(pid, ...);");
+  });
+
+  it("mostra onde ler no livro só na última etapa", async () => {
+    const user = userEvent.setup();
+    render(<LessonStepper lesson={lesson} />);
+
+    expect(screen.queryByText("Para ler no livro")).toBeNull();
+    await user.keyboard("{ArrowRight}{ArrowRight}{ArrowRight}");
+
+    expect(screen.getByText("Para ler no livro")).toBeTruthy();
+    expect(screen.getByText("Livro de teste, cap. 1 (p. 1 a 9).")).toBeTruthy();
+  });
+
+  it("não mostra o quadro do livro quando a lição não tem fonte", async () => {
+    const user = userEvent.setup();
+    render(<LessonStepper lesson={{ ...lesson, source: null }} />);
+
+    await user.keyboard("{ArrowRight}{ArrowRight}{ArrowRight}");
+
+    expect(screen.queryByText("Para ler no livro")).toBeNull();
   });
 });

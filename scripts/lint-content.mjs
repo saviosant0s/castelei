@@ -10,28 +10,49 @@
  *  - termo técnico usado sem ter sido explicado antes (na própria etapa ou em etapa anterior).
  *    O jargão só é livre na etapa "Como cai na prova".
  * Regras estruturais: primeira etapa "idea", última "recap", uma "exam" e uma "pitfall".
+ * Figuras: precisam de texto alternativo, legenda e de um arquivo existente em frontend/public.
+ * Lições de matérias baseadas em livro precisam citar a fonte (campo "source").
  * Avisos (não reprovam): frases com mais de 28 palavras e etapas com mais de 60 palavras.
  */
-import { readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const dir = join(dirname(fileURLToPath(import.meta.url)), "..", "backend", "database", "seeders", "content");
+const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+const dir = join(root, "backend", "database", "seeders", "content");
+const publicDir = join(root, "frontend", "public");
 
-// [nome legível, expressão que reconhece o termo no texto]
+// [nome legível, expressão que reconhece o termo no texto, matéria]
+// m = Matemática, p = Português, s = Sistemas Operacionais
 const JARGON = [
-  ["equação", /\bequa(ç|c)(ão|ões)\b/i], ["incógnita", /\bincógnitas?\b/i], ["MMC", /\bMMC\b/],
-  ["denominador", /\bdenominad(or|ores)\b/i], ["numerador", /\bnumerad(or|ores)\b/i], ["fator", /\bfato(r|res)\b/i],
-  ["distributiva", /\bdistributiva\b/i], ["preposição", /\bpreposi(ç|c)(ão|ões)\b/i], ["artigo", /\bartigos?\b/i],
-  ["verbo", /\bverbos?\b/i], ["sujeito", /\bsujeitos?\b/i], ["núcleo", /\bnúcleos?\b/i], ["pronome", /\bpronomes?\b/i],
-  ["substantivo", /\bsubstantivos?\b/i], ["adjetivo", /\badjetivos?\b/i], ["crase", /\bcrases?\b/i],
-  ["acento grave", /\bacento grave\b/i], ["concordância", /\bconcord(â|a)ncia\b/i], ["locução", /\bloc(u|ú)(ç|c)(ão|ões)\b/i],
-  ["adverbial", /\badverbial\b/i], ["impessoal", /\bimpessoa(l|is)\b/i], ["apassivador", /\bapassivador\b/i],
-  ["paciente", /\bpaciente\b/i], ["posposto", /\bposposto\b/i], ["coletivo", /\bcoletivos?\b/i],
-  ["transitivo", /\btransitivos?\b/i], ["numeral", /\bnumerais?\b/i], ["porcentagem", /\bporcentage(m|ns)\b/i],
-  ["variação percentual", /\bvaria(ç|c)ão percentual\b/i], ["acréscimo", /\bacréscimos?\b/i], ["decréscimo", /\bdecréscimos?\b/i],
-  ["sucessivos", /\bsucessivos?\b/i], ["singular", /\bsingular\b/i], ["plural", /\bplural\b/i], ["norma-padrão", /\bnorma-padrão\b/i],
-];
+  ["equação", /\bequa(ç|c)(ão|ões)\b/i, "m"], ["incógnita", /\bincógnitas?\b/i, "m"], ["MMC", /\bMMC\b/, "m"],
+  ["denominador", /\bdenominad(or|ores)\b/i, "m"], ["numerador", /\bnumerad(or|ores)\b/i, "m"], ["fator", /\bfato(r|res)\b/i, "m"],
+  ["distributiva", /\bdistributiva\b/i, "m"], ["porcentagem", /\bporcentage(m|ns)\b/i, "m"],
+  ["variação percentual", /\bvaria(ç|c)ão percentual\b/i, "m"], ["acréscimo", /\bacréscimos?\b/i, "m"],
+  ["decréscimo", /\bdecréscimos?\b/i, "m"], ["sucessivos", /\bsucessivos?\b/i, "m"],
+
+  ["preposição", /\bpreposi(ç|c)(ão|ões)\b/i, "p"], ["artigo", /\bartigos?\b/i, "p"],
+  ["verbo", /\bverbos?\b/i, "p"], ["sujeito", /\bsujeitos?\b/i, "p"], ["núcleo", /\bnúcleos?\b/i, "p"], ["pronome", /\bpronomes?\b/i, "p"],
+  ["substantivo", /\bsubstantivos?\b/i, "p"], ["adjetivo", /\badjetivos?\b/i, "p"], ["crase", /\bcrases?\b/i, "p"],
+  ["acento grave", /\bacento grave\b/i, "p"], ["concordância", /\bconcord(â|a)ncia\b/i, "p"], ["locução", /\bloc(u|ú)(ç|c)(ão|ões)\b/i, "p"],
+  ["adverbial", /\badverbial\b/i, "p"], ["impessoal", /\bimpessoa(l|is)\b/i, "p"], ["apassivador", /\bapassivador\b/i, "p"],
+  ["paciente", /\bpaciente\b/i, "p"], ["posposto", /\bposposto\b/i, "p"], ["coletivo", /\bcoletivos?\b/i, "p"],
+  ["transitivo", /\btransitivos?\b/i, "p"], ["numeral", /\bnumerais?\b/i, "p"], ["singular", /\bsingular\b/i, "p"],
+  ["plural", /\bplural\b/i, "p"], ["norma-padrão", /\bnorma-padrão\b/i, "p"],
+
+  ["processo", /\bprocessos?\b/i, "s"], ["espaço de endereçamento", /\bespa(ç|c)os? de endere(ç|c)amento\b/i, "s"],
+  ["chamada de sistema", /\bchamadas? de sistema\b/i, "s"], ["núcleo (kernel)", /\bn(ú|u)cleo\b|\bkernel\b/i, "s"],
+  ["modo usuário", /\bmodo usu(á|a)rio\b/i, "s"], ["TRAP", /\bTRAP\b/, "s"], ["driver", /\bdrivers?\b/i, "s"],
+  ["abstração", /\babstra(ç|c)(ão|ões)\b/i, "s"], ["shell", /\bshell\b/i, "s"], ["diretório", /\bdiret(ó|o)rios?\b/i, "s"],
+  ["descritor de arquivo", /\bdescritor(es)? de arquivo\b/i, "s"], ["tabela de processos", /\btabelas? de processos\b/i, "s"],
+  ["memória virtual", /\bmem(ó|o)ria virtual\b/i, "s"], ["buffer", /\bbuffers?\b/i, "s"], ["biblioteca", /\bbibliotecas?\b/i, "s"],
+  ["API", /\bAPI\b/], ["POSIX", /\bPOSIX\b/], ["sinal", /\bsinais\b|\bsinal\b/i, "s"], ["recurso", /\brecursos?\b/i, "s"],
+  ["top-down", /\btop-down\b/i, "s"], ["bottom-up", /\bbottom-up\b/i, "s"], ["permissão", /\bpermiss(ão|ões)\b/i, "s"],
+  ["máquina estendida", /\bmáquina estendida\b/i, "s"], ["gerenciador de recursos", /\bgerenciador de recursos\b/i, "s"],
+].map(([name, re, scope]) => [name, re, scope ?? "s"]);
+
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s" };
+const REQUIRE_SOURCE = new Set(["sistemas-operacionais"]);
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;
 const KINDS = new Set(["idea", "explain", "exam", "pitfall", "recap"]);
 
@@ -53,14 +74,14 @@ function checkProse(where, text) {
 }
 
 /** Marca como explicados os termos técnicos que aparecem numa definição. */
-function defineTerms(terms, defined) {
+function defineTerms(terms, defined, jargon) {
   for (const t of terms ?? []) {
-    for (const [name, re] of JARGON) if (re.test(t.word)) defined.add(name);
+    for (const [name, re] of jargon) if (re.test(t.word)) defined.add(name);
   }
 }
 
-function checkJargon(where, text, defined) {
-  for (const [name, re] of JARGON) {
+function checkJargon(where, text, defined, jargon) {
+  for (const [name, re] of jargon) {
     if (re.test(text) && !defined.has(name)) fail(where, `usa “${name}” sem explicar antes`);
   }
 }
@@ -69,6 +90,7 @@ let lessonCount = 0, stepCount = 0, questionCount = 0;
 
 for (const file of readdirSync(dir).filter((f) => f.endsWith(".json")).sort()) {
   const subject = JSON.parse(readFileSync(join(dir, file), "utf8"));
+  const jargon = JARGON.filter(([, , scope]) => scope === SCOPE_BY_SUBJECT[subject.slug]);
   for (const lesson of subject.lessons) {
     lessonCount++;
     const L = `${subject.name} › ${lesson.title}`;
@@ -80,29 +102,39 @@ for (const file of readdirSync(dir).filter((f) => f.endsWith(".json")).sort()) {
       if (steps.filter((s) => s.kind === k).length !== 1) fail(L, `deve haver exatamente uma etapa “${k}”`);
     }
     checkProse(`${L} › resumo`, lesson.summary ?? "");
+    if (REQUIRE_SOURCE.has(subject.slug) && !lesson.source) fail(L, "faltou o campo “source” (onde ler no livro)");
 
     const defined = new Set();
     // glossário da lição inteira: vale para as explicações das questões
     const lessonTerms = new Set();
-    steps.forEach((s) => defineTerms(s.terms, lessonTerms));
+    steps.forEach((s) => defineTerms(s.terms, lessonTerms, jargon));
 
     steps.forEach((step, i) => {
       stepCount++;
       const W = `${L} › etapa ${i + 1} “${step.title}”`;
       if (!KINDS.has(step.kind)) fail(W, `tipo inválido “${step.kind}”`);
       if (!step.title || !step.body?.length) fail(W, "precisa de título e de pelo menos um parágrafo");
-      defineTerms(step.terms, defined);
+      defineTerms(step.terms, defined, jargon);
 
       const prose = [...(step.body ?? []), ...(step.bullets ?? []), ...(step.terms ?? []).map((t) => t.meaning)];
       prose.forEach((p) => checkProse(W, p));
+
+      if (step.figure) {
+        const f = step.figure;
+        if (!f.alt || f.alt.length < 20) fail(W, "a figura precisa de texto alternativo descritivo (mínimo 20 caracteres)");
+        if (!f.caption) warn(W, "figura sem legenda");
+        if (!f.src?.startsWith("/figuras/") || !existsSync(join(publicDir, f.src))) fail(W, `arquivo da figura não encontrado: ${f.src}`);
+        if (f.caption) checkProse(`${W} (legenda)`, f.caption);
+      }
+      if (step.code && !String(step.code.text ?? "").trim()) fail(W, "bloco de código vazio");
 
       const bodyWords = (step.body ?? []).reduce((n, p) => n + words(p), 0);
       if (bodyWords > 75) fail(W, `texto corrido demais (${bodyWords} palavras; máximo 75)`);
       else if (bodyWords > 60) warn(W, `texto corrido longo (${bodyWords} palavras)`);
 
       if (step.kind !== "exam") {
-        const all = [step.title, ...prose, step.example?.label ?? "", ...(step.example?.lines ?? [])].join(" \n ");
-        checkJargon(W, all, defined);
+        const all = [step.title, ...prose, step.example?.label ?? "", ...(step.example?.lines ?? []), step.figure?.caption ?? ""].join(" \n ");
+        checkJargon(W, all, defined, jargon);
       }
     });
 
@@ -111,7 +143,7 @@ for (const file of readdirSync(dir).filter((f) => f.endsWith(".json")).sort()) {
       const W = `${L} › questão ${i + 1}`;
       for (const field of ["explanation", "pitfall"]) {
         checkProse(`${W} (${field})`, q[field] ?? "");
-        checkJargon(`${W} (${field})`, q[field] ?? "", lessonTerms);
+        checkJargon(`${W} (${field})`, q[field] ?? "", lessonTerms, jargon);
       }
     });
   }
