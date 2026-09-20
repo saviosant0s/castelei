@@ -15,7 +15,7 @@ castelei/
 
 - Cadastro e login por e-mail e senha
 - 2 matérias, 4 lições e 32 questões originais (Matemática Básica: equações do 1º grau e porcentagem; Português: crase e concordância verbal)
-- Lição em 3 camadas (resumo, explicação humana, como cai na prova, pegadinhas)
+- Lição em etapas, uma ideia por tela: analogia, passo a passo com exemplo, como cai na prova, pegadinhas e resumo
 - Modo Prova: uma questão por tela, cronômetro crescente, confirmar ou pular, feedback com gabarito, explicação e pegadinha
 - Resultado com acerto, tempo médio por questão, recorde de tempo e ponto fraco
 - Progresso por tópico (dominado, evoluindo, revisar)
@@ -59,6 +59,26 @@ cd frontend && npm test && npm run lint && npm run build
 ```
 
 O CI (`.github/workflows/ci.yml`) roda tudo isso a cada push.
+
+## Escrevendo conteúdo
+
+As lições ficam em `backend/database/seeders/content/*.json`. Cada lição tem `summary`, `steps` (as etapas, uma ideia por tela) e `questions`. Uma etapa tem:
+
+| Campo | Para quê |
+|---|---|
+| `kind` | `idea` (analogia inicial, sempre a 1ª), `explain`, `exam` (uma só), `pitfall` (uma só), `recap` (sempre a última) |
+| `title`, `body` | título curto e parágrafos curtos (no máximo 75 palavras somadas) |
+| `example` | exemplo resolvido: `label` e `lines` (uma linha por passo) |
+| `bullets` | lista de itens |
+| `terms` | palavras novas explicadas nesta etapa (`word`, `meaning`) |
+
+Antes de enviar, rode o verificador do Guia Editorial (o CI também roda):
+
+```bash
+node scripts/lint-content.mjs
+```
+
+Ele reprova frases com mais de 2 vírgulas, "como vimos anteriormente", etapas longas demais e termos técnicos usados sem explicação prévia.
 
 ## Modo de teste (sem login)
 

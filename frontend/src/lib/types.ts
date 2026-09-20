@@ -28,13 +28,25 @@ export interface Subject {
   lessons: LessonSummary[];
 }
 
+export type StepKind = "idea" | "explain" | "exam" | "pitfall" | "recap";
+
+export interface LessonStep {
+  kind: StepKind;
+  title: string;
+  /** parágrafos curtos, um por item */
+  body: string[];
+  bullets?: string[];
+  /** exemplo resolvido, uma linha por passo */
+  example?: { label: string; lines: string[] };
+  /** palavras novas explicadas nesta etapa */
+  terms?: { word: string; meaning: string }[];
+}
+
 export interface LessonDetail {
   id: number;
   title: string;
   summary: string;
-  explanation: string;
-  exam_style: string;
-  pitfalls: string[];
+  steps: LessonStep[];
   subject: { id: number; slug: string; name: string };
   questions_total: number;
   questions_available: number;

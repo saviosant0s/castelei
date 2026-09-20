@@ -49,6 +49,30 @@ class CatalogTest extends TestCase
             ->assertJsonPath('lesson.limited_by_plan', true);
     }
 
+    public function test_licao_entrega_as_etapas_na_ordem(): void
+    {
+        $lesson = $this->makeLesson(8);
+        Sanctum::actingAs(User::factory()->create());
+
+        $response = $this->getJson("/api/lessons/{$lesson->id}")->assertOk();
+
+        $response->assertJsonCount(5, 'lesson.steps')
+            ->assertJsonPath('lesson.steps.0.kind', 'idea')
+            ->assertJsonPath('lesson.steps.1.example.lines.0', '1 + 1 = 2')
+            ->assertJsonPath('lesson.steps.4.kind', 'recap');
+    }
+
+    public function test_licao_sem_etapas_ganha_etapas_montadas_dos_campos_antigos(): void
+    {
+        $lesson = $this->makeLesson(8);
+        $lesson->update(['steps' => null]);
+        Sanctum::actingAs(User::factory()->create());
+
+        $kinds = array_column($this->getJson("/api/lessons/{$lesson->id}")->assertOk()->json('lesson.steps'), 'kind');
+
+        $this->assertSame(['idea', 'explain', 'exam', 'pitfall'], $kinds);
+    }
+
     public function test_licao_inexistente_devolve_404(): void
     {
         Sanctum::actingAs(User::factory()->create());

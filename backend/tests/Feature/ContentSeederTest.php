@@ -30,6 +30,39 @@ class ContentSeederTest extends TestCase
         }
     }
 
+    public function test_toda_licao_tem_etapas_completas_e_ordenadas(): void
+    {
+        $this->seed(DatabaseSeeder::class);
+
+        foreach (Lesson::all() as $lesson) {
+            $steps = $lesson->steps;
+            $this->assertGreaterThanOrEqual(6, count($steps), "Lição {$lesson->slug}");
+            $this->assertSame('idea', $steps[0]['kind'], 'começa com a analogia');
+            $this->assertSame('recap', end($steps)['kind'], 'termina com o resumo');
+            $kinds = array_column($steps, 'kind');
+            $this->assertSame(1, count(array_keys($kinds, 'exam')));
+            $this->assertSame(1, count(array_keys($kinds, 'pitfall')));
+
+            foreach ($steps as $i => $step) {
+                $this->assertContains($step['kind'], ['idea', 'explain', 'exam', 'pitfall', 'recap']);
+                $this->assertNotEmpty($step['title'], "{$lesson->slug} etapa {$i}");
+                $this->assertNotEmpty($step['body'], "{$lesson->slug} etapa {$i}");
+            }
+        }
+    }
+
+    public function test_seeder_preenche_as_colunas_antigas_a_partir_das_etapas(): void
+    {
+        $this->seed(DatabaseSeeder::class);
+
+        $lesson = Lesson::where('slug', 'crase')->firstOrFail();
+
+        $this->assertNotEmpty($lesson->explanation);
+        $this->assertNotEmpty($lesson->exam_style);
+        $this->assertNotEmpty($lesson->pitfalls);
+        $this->assertStringContainsString('à', $lesson->explanation);
+    }
+
     public function test_toda_questao_tem_5_alternativas_gabarito_valido_e_explicacao(): void
     {
         $this->seed(DatabaseSeeder::class);

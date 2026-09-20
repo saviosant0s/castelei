@@ -30,6 +30,13 @@ trait MakesLessons
             'explanation' => 'Explicação',
             'exam_style' => 'Como cai na prova',
             'pitfalls' => ['Pegadinha 1'],
+            'steps' => [
+                ['kind' => 'idea', 'title' => 'Ideia', 'body' => ['Uma analogia.']],
+                ['kind' => 'explain', 'title' => 'Explicando', 'body' => ['Um passo.'], 'example' => ['label' => 'Exemplo', 'lines' => ['1 + 1 = 2']]],
+                ['kind' => 'exam', 'title' => 'Como cai na prova', 'body' => ['Assim.']],
+                ['kind' => 'pitfall', 'title' => 'Pegadinhas', 'body' => ['Cuidado:'], 'bullets' => ['Pegadinha 1']],
+                ['kind' => 'recap', 'title' => 'Resumo', 'body' => ['Resumindo.']],
+            ],
         ]);
 
         for ($i = 1; $i <= $questions; $i++) {

@@ -14,6 +14,38 @@ use Illuminate\Database\Seeder;
  */
 class ContentSeeder extends Seeder
 {
+    /**
+     * As colunas antigas continuam preenchidas (derivadas das etapas) enquanto o app antigo
+     * ainda pode estar no ar durante um deploy.
+     *
+     * @param  list<array<string, mixed>>  $steps
+     * @return array{explanation: string, exam_style: string, pitfalls: list<string>}
+     */
+    private function legacyFields(array $steps): array
+    {
+        $explanation = [];
+        $exam = [];
+        $pitfalls = [];
+
+        foreach ($steps as $step) {
+            $body = $step['body'] ?? [];
+            $bullets = $step['bullets'] ?? [];
+
+            match ($step['kind']) {
+                'exam' => $exam = [...$exam, ...$body, ...$bullets],
+                'pitfall' => $pitfalls = [...$pitfalls, ...$bullets],
+                'recap' => null,
+                default => $explanation = [...$explanation, ...$body],
+            };
+        }
+
+        return [
+            'explanation' => implode("\n\n", $explanation),
+            'exam_style' => implode("\n\n", $exam),
+            'pitfalls' => $pitfalls,
+        ];
+    }
+
     public function run(): void
     {
         $files = glob(__DIR__.'/content/*.json') ?: [];
@@ -38,10 +70,8 @@ class ContentSeeder extends Seeder
                         'title' => $lessonData['title'],
                         'position' => $lessonIndex + 1,
                         'summary' => $lessonData['summary'],
-                        'explanation' => $lessonData['explanation'],
-                        'exam_style' => $lessonData['exam_style'],
-                        'pitfalls' => $lessonData['pitfalls'],
-                    ],
+                        'steps' => $lessonData['steps'],
+                    ] + $this->legacyFields($lessonData['steps']),
                 );
 
                 foreach ($lessonData['questions'] as $questionIndex => $questionData) {

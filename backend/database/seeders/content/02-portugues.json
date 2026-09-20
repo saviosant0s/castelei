@@ -6,18 +6,196 @@
     {
       "slug": "crase",
       "title": "Crase",
-      "summary": "Crase é a fusão da preposição \"a\" com o artigo \"a(s)\". Se você não consegue encaixar esses dois \"a\" na frase, não há crase.",
-      "explanation": "Crase não é um acento decorativo: é o registro na escrita de dois \"a\" que se encontram e se fundem. Um deles é a preposição, exigida por um verbo ou nome (ir a, chegar a, referente a). O outro é o artigo feminino que acompanha a palavra seguinte (a escola, as horas).\n\nPor isso, se a palavra seguinte não aceita o artigo (verbo, pronome pessoal, palavra masculina), a crase é impossível. Você não diz \"a começar\" com artigo, muito menos \"à começar\".\n\nDois testes salvam muita prova. O primeiro é o \"volto da / volto de\", para lugares: volto DA Itália (há crase), volto DE Paris (não há). O segundo é a troca por uma palavra masculina: pediu ajuda ao vizinho, logo pediu ajuda à vizinha.",
-      "exam_style": "As provas costumam perguntar em qual frase a crase está correta (ou incorreta). As alternativas misturam cinco situações: antes de verbo, antes de pronome, entre palavras repetidas, com nomes de lugar e com horas. Leia o enunciado com atenção: muitas questões pedem a alternativa INCORRETA.",
-      "pitfalls": [
-        "Usar crase antes de verbo ou de palavra masculina.",
-        "Usar crase entre palavras repetidas (cara a cara, gota a gota).",
-        "Assumir que todo nome de cidade leva crase.",
-        "Escrever \"à\" antes de palavra no plural, em vez de \"às\"."
+      "summary": "Crase é o encontro de dois “a” que viram um só (à). Sem os dois “a”, não há crase.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Dois “a” que viram um",
+          "body": [
+            "Imagine duas pessoas passando juntas por uma porta estreita. Elas ficam coladas, quase viram uma só.",
+            "Na escrita, dois “a” que se encontram também ficam colados. Escrevemos um só, com um acento em cima: à.",
+            "Exemplo: “Fui à escola.” Aqui existem dois “a” escondidos."
+          ],
+          "terms": [
+            {
+              "word": "Crase",
+              "meaning": "o encontro de dois “a” que se juntam em um só. Ela é marcada com um sinal chamado acento grave."
+            },
+            {
+              "word": "Acento grave",
+              "meaning": "o risquinho inclinado que aparece sobre o “a”: à."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "De onde vêm os dois “a”",
+          "body": [
+            "O primeiro “a” liga uma ação ao lugar ou à pessoa: “Fui a…”, “Cheguei a…”, “Dei o livro a…”.",
+            "O segundo “a” vem antes de palavras femininas: a escola, a casa, as horas."
+          ],
+          "example": {
+            "label": "Juntando",
+            "lines": [
+              "Fui a + a escola",
+              "Fui à escola"
+            ]
+          },
+          "terms": [
+            {
+              "word": "Preposição",
+              "meaning": "uma palavrinha que liga duas partes da frase. São exemplos: a, de, em e para. Aqui vamos falar do “a”."
+            },
+            {
+              "word": "Artigo",
+              "meaning": "o “a” (ou “as”) que aparece antes de uma palavra feminina. Em “a escola”, o artigo é o “a”."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O teste do “ao”",
+          "body": [
+            "Não sabe se tem crase? Troque a palavra feminina por uma masculina.",
+            "Se aparecer “ao” (a + o), então no feminino há crase."
+          ],
+          "example": {
+            "label": "Testando",
+            "lines": [
+              "Fui à escola → Fui ao colégio ✓ (tem crase)",
+              "Falei a ela → Falei ao ele ✗ (não tem crase)"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Onde a crase nunca aparece",
+          "body": [
+            "Só existe crase se o segundo “a” existir. Estas palavras não aceitam o “a” na frente:"
+          ],
+          "bullets": [
+            "Ações: “começou a chorar”, nunca “à chorar”",
+            "Palavras masculinas: “a pé”, “a cavalo”",
+            "Pronomes como ela e cada: “falei a ela”, “a cada dia”",
+            "Vossa Senhoria e Vossa Excelência: “enviei a Vossa Senhoria”",
+            "A palavra uma: “dei o recado a uma amiga”"
+          ],
+          "terms": [
+            {
+              "word": "Verbo",
+              "meaning": "a palavra que diz uma ação, como correr, chorar e estudar."
+            },
+            {
+              "word": "Pronome",
+              "meaning": "a palavra que ocupa o lugar de um nome ou o aponta (ela, você, esta, cada, qualquer)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Palavras repetidas e frases prontas",
+          "body": [
+            "Quando a mesma palavra se repete, não há crase (cara a cara, gota a gota, dia a dia).",
+            "Já as frases prontas femininas pedem crase (à vista, à noite, às pressas, à toa)."
+          ],
+          "example": {
+            "label": "Comparando",
+            "lines": [
+              "Ficaram cara a cara. (sem crase)",
+              "Pagou à vista. (com crase)"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Nomes de lugares: o truque do “volto da”",
+          "body": [
+            "Para saber se o lugar aceita artigo, troque “vou” por “volto”.",
+            "Se der “volto DA”, há crase. Se der “volto DE”, não há.",
+            "A maioria das cidades não usa artigo (Paris, Roma, Lisboa). Há exceções, como o Rio de Janeiro."
+          ],
+          "example": {
+            "label": "Testando",
+            "lines": [
+              "Vou à Itália → volto da Itália ✓ crase",
+              "Vou a Paris → volto de Paris ✗ sem crase"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A palavra casa",
+          "body": [
+            "Casa sozinha, no sentido de lar, não tem artigo: volto de casa. Então: “cheguei a casa”, sem crase.",
+            "Casa acompanhada de uma explicação, como “dos avós”, tem artigo: volto da casa dos avós. Então: “cheguei à casa dos avós”, com crase."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Horas",
+          "body": [
+            "Horário pede crase: “Chegamos às sete horas.” O “às” junta o “a” com o “as” de “as sete horas”.",
+            "Se for uma hora só, o “a” fica sozinho: “à uma hora”, “à meia-noite”."
+          ],
+          "example": {
+            "label": "Exemplos",
+            "lines": [
+              "das 8h às 17h",
+              "às 7h",
+              "à uma hora"
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Nas provas, o comando costuma ser “assinale a alternativa em que o acento grave está corretamente empregado”. Muitas vezes o pedido é o contrário: a alternativa INCORRETA.",
+            "As alternativas misturam os casos que você viu:"
+          ],
+          "bullets": [
+            "antes de verbo",
+            "antes de pronome",
+            "entre palavras repetidas",
+            "com nomes de lugar",
+            "com horas",
+            "com a palavra casa",
+            "Leia o comando com calma: pedem a certa ou a errada?"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os erros que a prova espera de você:"
+          ],
+          "bullets": [
+            "Usar crase antes de ação ou de palavra masculina.",
+            "Usar crase entre palavras repetidas.",
+            "Achar que toda cidade leva crase.",
+            "Escrever “à” antes de palavras como “pessoas” ou “ordens”: o certo seria “às”.",
+            "Marcar a alternativa certa quando o comando pedia a errada."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Crase são dois “a” juntos: o que liga e o que acompanha a palavra feminina."
+          ],
+          "bullets": [
+            "Teste do “ao”: se der “ao” no masculino, há crase.",
+            "Sem crase: antes de ações, palavras masculinas, pronomes e “uma”.",
+            "Palavras repetidas: sem crase. Frases prontas femininas: com crase.",
+            "Lugares: “volto da” tem crase, “volto de” não tem.",
+            "Horas: “às sete”, mas “à uma hora”.",
+            "Casa sozinha: sem crase. Casa dos avós: com crase."
+          ]
+        }
       ],
       "questions": [
         {
-          "topic": "Crase antes de feminino",
+          "topic": "Antes de palavra feminina",
           "statement": "Assinale a alternativa em que o sinal indicativo de crase está empregado corretamente.",
           "options": [
             "Ela começou à chorar quando ouviu a notícia.",
@@ -27,8 +205,8 @@
             "Chegamos à pé até a igreja."
           ],
           "correct_index": 1,
-          "explanation": "Há crase quando a preposição \"a\" (de \"ir a\") se junta ao artigo \"a\" de uma palavra feminina: ir + a escola = à escola. Nas outras frases, o \"a\" vem antes de verbo (chorar), pronome pessoal (ela), pronome indefinido plural (todos) ou palavra masculina (pé).",
-          "pitfall": "Crase é a fusão de dois \"a\". Se a palavra seguinte não aceita o artigo \"a\" (verbo, pronome, palavra masculina), não há crase."
+          "explanation": "Há crase quando o “a” de “ir a” encontra o “a” de uma palavra feminina: ir a + a escola = à escola. Nas outras frases, o “a” vem antes de uma ação (chorar). Ou vem antes de ela, de todos ou de uma palavra masculina (pé). Nesses casos não existe o segundo “a”.",
+          "pitfall": "Crase é o encontro de dois “a”. Se a palavra seguinte não aceita o “a” na frente, não há crase."
         },
         {
           "topic": "Nomes de lugares",
@@ -41,11 +219,11 @@
             "Viajaremos à Itália no fim do ano."
           ],
           "correct_index": 4,
-          "explanation": "Use o macete: \"vou A, volto DA → crase; volto DE → sem crase\". Voltamos DA Itália, então há crase: à Itália. Já Paris, Roma, Lisboa e Curitiba não recebem artigo (volto DE Paris), portanto \"a Paris\", sem crase.",
-          "pitfall": "Nem todo nome de lugar pede crase. Cidades, em geral, não recebem artigo (há exceções, como o Rio de Janeiro). O teste do \"volto da / volto de\" resolve."
+          "explanation": "Use o truque: “vou A, volto DA” é crase. “Volto DE” não é. Voltamos DA Itália, então: à Itália. Já para Paris, Roma, Lisboa e Curitiba dizemos “volto DE”. Por isso é “a Paris”, sem crase.",
+          "pitfall": "Nem todo lugar pede crase. As cidades, em geral, não usam artigo (há exceções, como o Rio de Janeiro). O teste “volto da / volto de” resolve."
         },
         {
-          "topic": "Palavras repetidas e locuções",
+          "topic": "Palavras repetidas e frases prontas",
           "statement": "Assinale a alternativa em que o emprego da crase está correto.",
           "options": [
             "Comprou o carro à vista, sem financiamento.",
@@ -55,11 +233,11 @@
             "O convite foi enviado à Vossa Senhoria."
           ],
           "correct_index": 0,
-          "explanation": "\"À vista\" é locução adverbial feminina, e por isso a crase é obrigatória. Não há crase entre palavras repetidas (cara a cara, gota a gota), antes de pronome indefinido como \"qualquer\" nem antes de \"Vossa Senhoria\" (pronome de tratamento).",
+          "explanation": "“À vista” é uma frase pronta feminina, por isso leva crase. Não há crase entre palavras repetidas (cara a cara, gota a gota). Também não há antes de “qualquer” nem antes de “Vossa Senhoria”.",
           "pitfall": "Palavras repetidas (frente a frente, dia a dia) nunca têm crase, mesmo sendo femininas."
         },
         {
-          "topic": "Antes de verbo",
+          "topic": "Antes de ações",
           "statement": "Em qual das frases o acento grave foi empregado de forma INCORRETA?",
           "options": [
             "Entreguei o relatório à diretora.",
@@ -69,11 +247,11 @@
             "Fui à feira ontem de manhã."
           ],
           "correct_index": 2,
-          "explanation": "Crase nunca aparece antes de verbo, pois verbo não aceita artigo: \"começou a estudar\". As demais frases juntam a preposição \"a\" ao artigo \"a(s)\" de palavras femininas (diretora, horas, peça, feira).",
-          "pitfall": "A pergunta pede a INCORRETA. Muita gente lê o enunciado de pressa e marca a primeira frase certa que encontra."
+          "explanation": "Crase nunca aparece antes de uma ação (verbo), porque a ação não aceita o “a” na frente: “começou a estudar”. As outras frases juntam o “a” que alguns verbos pedem com o “a” de uma palavra feminina (diretora, horas, peça, feira).",
+          "pitfall": "A pergunta pede a INCORRETA. Muita gente lê de pressa e marca a primeira frase certa que encontra."
         },
         {
-          "topic": "Artigo indefinido e pronomes",
+          "topic": "Pronomes e “uma”",
           "statement": "Assinale a única alternativa sem erro de crase.",
           "options": [
             "Disse à uma amiga que chegaria tarde.",
@@ -83,11 +261,11 @@
             "Entreguei o prêmio à cada participante."
           ],
           "correct_index": 3,
-          "explanation": "Antes de artigo indefinido (uma), pronome pessoal (ela), pronome demonstrativo (esta) e pronome indefinido (cada) não se usa crase, porque essas palavras não aceitam o artigo \"a\". A frase correta é \"a uma colega\".",
-          "pitfall": "\"À uma\" é um erro frequente. A única exceção é o horário: \"à uma hora\"."
+          "explanation": "Antes de “uma”, de ela, de esta e de cada não se usa crase. Essas palavras não aceitam o “a” na frente. A frase certa é “a uma colega”.",
+          "pitfall": "“À uma” é um erro frequente. A única exceção é a hora: “à uma hora”."
         },
         {
-          "topic": "Teste do \"ao\"",
+          "topic": "O teste do “ao”",
           "statement": "Um bom teste para confirmar a crase antes de palavra feminina é trocá-la por uma masculina: se der \"ao\", há crase. Assinale a alternativa em que esse teste confirma a crase.",
           "options": [
             "Pediu ajuda à vizinha do andar de cima.",
@@ -97,8 +275,8 @@
             "Obedeceu à ordens sem questionar."
           ],
           "correct_index": 0,
-          "explanation": "\"Pediu ajuda ao vizinho\" funciona, então \"à vizinha\" leva crase. As outras alternativas falham: \"ao você\" e \"ao ele\" não existem, e \"à\" antes de palavra no plural (pessoas, ordens) deveria ser \"às\".",
-          "pitfall": "Se a palavra seguinte está no plural, o correto seria \"às\", não \"à\". A crase precisa concordar com o substantivo."
+          "explanation": "“Pediu ajuda ao vizinho” funciona, então “à vizinha” leva crase. Nas outras, não existem “ao você” nem “ao ele”. E “à” antes de palavras como pessoas e ordens deveria ser “às”.",
+          "pitfall": "Se a palavra indica várias coisas, o certo seria “às”, não “à”. A crase precisa combinar com a palavra."
         },
         {
           "topic": "Horas",
@@ -111,8 +289,8 @@
             "Almoçamos as 12h todos os dias."
           ],
           "correct_index": 3,
-          "explanation": "Horas determinadas pedem \"a\" + \"as\": às 17h, às 7h. O \"a\" é a preposição e o \"as\" é o artigo plural de \"as sete horas\".",
-          "pitfall": "Só se usa \"à\" no singular, quando o horário é \"uma hora\" ou \"meia-noite\": \"à uma hora\", \"à meia-noite\". Para os demais, é \"às\"."
+          "explanation": "Horas pedem “a” + “as”: às 17h, às 7h. O “a” é o de “chegar a” e o “as” é o de “as sete horas”.",
+          "pitfall": "Só se usa “à” quando é uma hora só: “à uma hora”, “à meia-noite”. Para as outras, é “às”."
         },
         {
           "topic": "A palavra casa",
@@ -125,26 +303,197 @@
             "Ele chegou à casa cansado do trabalho."
           ],
           "correct_index": 1,
-          "explanation": "\"Casa\" no sentido de lar dispensa o artigo quando vem sozinha (chego A casa, volto DE casa). Mas, com um complemento como \"dos avós\", o artigo aparece (volto DA casa dos avós) e a crase é obrigatória.",
-          "pitfall": "Teste sempre \"volto de\" / \"volto da\". \"Volto de casa\" leva a \"a casa\", sem crase. \"Volto da casa dos avós\" leva a \"à casa dos avós\", com crase."
+          "explanation": "Casa sozinha, no sentido de lar, não tem artigo: volto DE casa. Mas “a casa dos avós” tem artigo: volto DA casa dos avós. Então: “voltou à casa dos avós”, com crase.",
+          "pitfall": "Teste sempre “volto de” e “volto da”. “Volto de casa” leva a “a casa”, sem crase. “Volto da casa dos avós” leva a “à casa dos avós”, com crase."
         }
       ]
     },
     {
       "slug": "concordancia-verbal",
       "title": "Concordância verbal",
-      "summary": "O verbo concorda com o sujeito em número e pessoa. O truque é encontrar o sujeito de verdade, principalmente quando ele vem depois do verbo ou nem existe.",
-      "explanation": "Concordância verbal é combinar o verbo com o sujeito: sujeito no plural, verbo no plural. Parece fácil, e é, até o sujeito se esconder.\n\nEle se esconde de três jeitos principais. Vem depois do verbo (chegaram os convidados). É composto, com dois núcleos (o prefeito e o vereador visitaram). Ou nem existe: os verbos haver (no sentido de existir) e fazer (indicando tempo) são impessoais e ficam no singular, mesmo com um número plural ao lado (faz dois anos, havia muitas pessoas).\n\nA dica prática é a inversão: coloque a frase na ordem sujeito–verbo. Se não houver sujeito para colocar antes do verbo, o verbo fica no singular.",
-      "exam_style": "Concordância verbal aparece em duas formas: \"assinale a frase correta\" e \"reescreva mantendo a norma-padrão\". As alternativas erradas costumam usar exatamente os verbos impessoais (haver, fazer), o sujeito posposto e a partícula se (\"vende-se casas\"). Se o verbo estiver perto de um número ou de uma lista, desconfie.",
-      "pitfalls": [
-        "Deixar o verbo no singular quando o sujeito vem depois dele.",
-        "Pluralizar haver e fazer impessoais (houveram, fazem dois anos).",
-        "Confundir \"mais de um\" (singular) com \"mais de dois\" (plural).",
-        "Esquecer que o \"se\" apassivador pede concordância com o sujeito paciente."
+      "summary": "O verbo combina com o sujeito: um só, verbo no singular; vários, verbo no plural. O truque é achar o sujeito.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Uma dupla de dança",
+          "body": [
+            "Pense em uma dupla de dança. Se entra uma pessoa, dança um. Se entram duas, dançam dois.",
+            "O verbo e quem pratica a ação formam essa dupla: o verbo acompanha o número de quem age."
+          ],
+          "terms": [
+            {
+              "word": "Verbo",
+              "meaning": "a palavra que diz a ação, como chegar, faltar e vender."
+            },
+            {
+              "word": "Sujeito",
+              "meaning": "quem pratica a ação. Você o encontra perguntando “quem?” antes do verbo."
+            },
+            {
+              "word": "Singular e plural",
+              "meaning": "singular é um só (o aluno). Plural é mais de um (os alunos)."
+            },
+            {
+              "word": "Concordância verbal",
+              "meaning": "combinar o verbo com o sujeito. Um aluno chegou. Dois alunos chegaram."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Sujeito depois do verbo",
+          "body": [
+            "Às vezes o sujeito vem depois do verbo: “Chegaram os convidados.”",
+            "Para achar o sujeito, pergunte “quem chegou?”. Resposta: os convidados. São vários, então o verbo vai para o plural.",
+            "Dica: coloque a frase na ordem normal. Fica mais fácil ver quem manda no verbo."
+          ],
+          "example": {
+            "label": "Ordem normal",
+            "lines": [
+              "Chegaram os convidados. = Os convidados chegaram.",
+              "Faltaram dois alunos. = Dois alunos faltaram."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Dois sujeitos juntos",
+          "body": [
+            "Leia: “O prefeito e o vereador visitaram a escola.”",
+            "Quem visitou? O prefeito e o vereador. São duas pessoas, então o verbo vai para o plural."
+          ],
+          "example": {
+            "label": "Contando",
+            "lines": [
+              "o prefeito + o vereador = 2 pessoas",
+              "visitaram (plural)"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Grupos contam como um só",
+          "body": [
+            "Uma equipe tem muita gente, mas é uma equipe só.",
+            "Palavras que nomeiam um grupo (equipe, turma, time, grupo, multidão) ficam no singular. Elas pedem o verbo no singular."
+          ],
+          "example": {
+            "label": "Exemplos",
+            "lines": [
+              "A equipe venceu o campeonato.",
+              "A turma chegou atrasada."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Mais de um, mais de dois",
+          "body": [
+            "“Mais de um aluno faltou.” Aqui o número que manda é o um, então o verbo fica no singular.",
+            "“Mais de dois alunos faltaram.” O número é dois ou mais, então o verbo vai para o plural.",
+            "O mesmo vale para “menos de dois”: menos de dois alunos faltaram."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Verbos que ficam sem sujeito",
+          "body": [
+            "Alguns verbos não têm ninguém que pratique a ação. Eles ficam sempre no singular.",
+            "O primeiro é haver, quando quer dizer “existir”: “Havia muitas pessoas na fila.” Mesmo com “muitas pessoas”, o verbo não muda.",
+            "O segundo é fazer, quando fala de tempo passado: “Faz dois meses que não o vejo.”",
+            "Cuidado: existir tem sujeito. Por isso: “Existem muitos problemas.”"
+          ],
+          "example": {
+            "label": "Exemplos",
+            "lines": [
+              "Há muitas pessoas na fila.",
+              "Houve reclamações ontem.",
+              "Deve haver soluções melhores.",
+              "Faz dois meses que não o vejo."
+            ]
+          },
+          "terms": [
+            {
+              "word": "Impessoal",
+              "meaning": "verbo sem sujeito. Ele não tem quem pratique a ação e fica sempre no singular."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O “se” dos anúncios",
+          "body": [
+            "Em “Vendem-se casas”, o “se” quer dizer “são vendidas”. Quem recebe a ação é “casas”, então o verbo vai para o plural.",
+            "Para conferir, troque a frase: “casas são vendidas” é o mesmo que “vendem-se casas”.",
+            "Quando o verbo pede “de”, como em “precisa-se de funcionários”, não há esse jogo. O verbo fica no singular."
+          ],
+          "example": {
+            "label": "Exemplos",
+            "lines": [
+              "Vendem-se casas. (casas são vendidas)",
+              "Alugam-se apartamentos. (apartamentos são alugados)",
+              "Precisa-se de funcionários. (singular)",
+              "Trata-se de problemas graves. (singular)"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Verbo ser e as horas",
+          "body": [
+            "Para dizer as horas, o verbo ser acompanha o número de horas.",
+            "Uma hora é singular. De duas em diante, plural. E meio-dia e meia-noite também são singulares."
+          ],
+          "example": {
+            "label": "Exemplos",
+            "lines": [
+              "É uma hora.",
+              "São duas horas.",
+              "São dez horas.",
+              "É meio-dia."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Na prova, o pedido vem como “assinale a alternativa em que a concordância verbal está de acordo com a norma-padrão”. A norma-padrão é a forma de escrever considerada correta em provas e documentos.",
+            "As alternativas erradas costumam esconder o sujeito: depois do verbo, com haver e fazer, ou no “se” dos anúncios."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os erros que a prova espera de você:"
+          ],
+          "bullets": [
+            "Deixar o verbo no singular quando o sujeito vem depois dele.",
+            "Colocar no plural os verbos haver e fazer: “houveram”, “fazem dois anos”.",
+            "Confundir “mais de um” (singular) com “mais de dois” (plural).",
+            "Esquecer que “vendem-se casas” quer dizer “casas são vendidas”."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O verbo combina com o sujeito."
+          ],
+          "bullets": [
+            "Ache o sujeito perguntando “quem?” e coloque a frase na ordem normal.",
+            "Dois sujeitos juntos: verbo no plural.",
+            "Grupo (equipe, turma): verbo no singular.",
+            "Mais de um: singular. Mais de dois: plural.",
+            "Haver e fazer (tempo): sempre no singular.",
+            "“Vendem-se casas”: o sujeito é casas."
+          ]
+        }
       ],
       "questions": [
         {
-          "topic": "Sujeito posposto",
+          "topic": "Sujeito depois do verbo",
           "statement": "Assinale a alternativa em que a concordância verbal está de acordo com a norma-padrão.",
           "options": [
             "Faltou dois alunos na aula de ontem.",
@@ -154,8 +503,8 @@
             "Houveram muitas reclamações."
           ],
           "correct_index": 1,
-          "explanation": "O sujeito pode vir depois do verbo, mas o verbo continua concordando com ele: \"chegaram os convidados\" (os convidados chegaram). As demais frases têm erros clássicos: o correto seria faltaram, existem, faz e houve.",
-          "pitfall": "Quando o sujeito vem depois do verbo, o ouvido se engana e pede o singular. Inverta a frase para achar o sujeito: \"Os convidados chegaram\"."
+          "explanation": "O sujeito pode vir depois do verbo, mas o verbo continua combinando com ele: “chegaram os convidados” (os convidados chegaram). As outras frases têm erros clássicos. O certo seria faltaram, existem, faz e houve.",
+          "pitfall": "Quando o sujeito vem depois, o ouvido pede o singular. Coloque a frase na ordem normal: “Os convidados chegaram”."
         },
         {
           "topic": "Verbo haver",
@@ -168,8 +517,8 @@
             "Podem haver imprevistos no caminho."
           ],
           "correct_index": 3,
-          "explanation": "Haver no sentido de existir não tem sujeito e fica sempre no singular. Com verbo auxiliar, o auxiliar também fica no singular: \"deve haver\".",
-          "pitfall": "\"Devem haver\" e \"podem haver\" são erros muito comuns. O auxiliar copia o singular do haver."
+          "explanation": "Haver no sentido de existir não tem sujeito e fica sempre no singular. Com outro verbo na frente, esse verbo também fica no singular: “deve haver”.",
+          "pitfall": "“Devem haver” e “podem haver” são erros comuns. O verbo da frente copia o singular do haver."
         },
         {
           "topic": "Verbo fazer (tempo)",
@@ -182,11 +531,11 @@
             "Faz dois meses que não o vejo."
           ],
           "correct_index": 4,
-          "explanation": "Fazer indicando tempo decorrido é impessoal: não tem sujeito e fica no singular. Por isso, \"faz dois meses\".",
-          "pitfall": "\"Dois meses\" parece sujeito, mas não é. A expressão \"faz dois meses\" não vai para o plural."
+          "explanation": "Fazer indicando tempo passado não tem sujeito e fica no singular. Por isso: “faz dois meses”.",
+          "pitfall": "“Dois meses” parece sujeito, mas não é. “Faz dois meses” nunca vai para o plural."
         },
         {
-          "topic": "Sujeito composto",
+          "topic": "Dois sujeitos juntos",
           "statement": "Assinale a alternativa em que a concordância verbal está correta.",
           "options": [
             "O prefeito e o vereador visitou a escola.",
@@ -196,11 +545,11 @@
             "O prefeito e o vereador foi à escola."
           ],
           "correct_index": 2,
-          "explanation": "Sujeito composto (dois núcleos ligados por \"e\") antes do verbo pede o plural: \"visitaram\".",
-          "pitfall": "Quando os sujeitos vêm um depois do outro, o cérebro lê \"o vereador\" por último e puxa o singular. Conte os núcleos: dois núcleos, verbo no plural."
+          "explanation": "Dois sujeitos ligados por “e”, antes do verbo, pedem o verbo no plural: “visitaram”.",
+          "pitfall": "Quando os sujeitos vêm um depois do outro, o ouvido lê “o vereador” por último e pede o singular. Conte quantos são: dois sujeitos, verbo no plural."
         },
         {
-          "topic": "Mais de um",
+          "topic": "Mais de um, mais de dois",
           "statement": "Assinale a alternativa correta.",
           "options": [
             "Mais de um aluno faltou à prova.",
@@ -210,11 +559,11 @@
             "Mais de dois alunos faltava à prova."
           ],
           "correct_index": 0,
-          "explanation": "\"Mais de um\" leva o verbo ao singular, pois o núcleo é \"um\". Já \"mais de dois\" e \"menos de dois\" pedem o plural: mais de dois alunos faltaram; menos de dois alunos faltaram.",
-          "pitfall": "A expressão \"mais de\" engana: quem manda é o numeral que vem depois. \"Um\" pede singular; dois ou mais pedem plural."
+          "explanation": "“Mais de um” pede o verbo no singular, porque o número que manda é o um. Já “mais de dois” e “menos de dois” pedem o plural: mais de dois alunos faltaram; menos de dois alunos faltaram.",
+          "pitfall": "A expressão “mais de” engana. Quem manda é o número que vem depois: um pede singular, dois ou mais pedem plural."
         },
         {
-          "topic": "Partícula se",
+          "topic": "O “se” dos anúncios",
           "statement": "Assinale a alternativa correta.",
           "options": [
             "Vende-se casas na praia.",
@@ -224,11 +573,11 @@
             "Aluga-se apartamentos novos."
           ],
           "correct_index": 2,
-          "explanation": "Na voz passiva sintética (verbo transitivo direto + se), o verbo concorda com o sujeito paciente: \"casas são vendidas\" vira \"vendem-se casas\". Já com verbos que pedem preposição (precisar de, tratar de), o verbo fica no singular: \"precisa-se de funcionários\", \"trata-se de problemas\".",
-          "pitfall": "Placas de rua como \"Vende-se casas\" espalham o erro. Troque por \"casas são vendidas\": o sujeito é \"casas\", logo, plural."
+          "explanation": "“Vendem-se casas” quer dizer “casas são vendidas”. O sujeito é “casas”, então o verbo vai para o plural. Com verbos que pedem “de” (precisar de, tratar de), o verbo fica no singular: “precisa-se de funcionários”, “trata-se de problemas”.",
+          "pitfall": "Placas como “Vende-se casas” espalham o erro. Troque por “casas são vendidas”: o sujeito é “casas”, logo, plural."
         },
         {
-          "topic": "Sujeito coletivo",
+          "topic": "Grupos (equipe, turma)",
           "statement": "Assinale a alternativa em que a concordância verbal está correta.",
           "options": [
             "O grupo saíram da sala em silêncio.",
@@ -238,11 +587,11 @@
             "A multidão gritaram o nome do cantor."
           ],
           "correct_index": 1,
-          "explanation": "Substantivos coletivos (grupo, turma, time, equipe, multidão) estão no singular e pedem verbo no singular: \"a equipe venceu\".",
-          "pitfall": "Pensar nas pessoas dentro do grupo puxa o plural. O sujeito gramatical, porém, é um só."
+          "explanation": "Palavras que nomeiam um grupo (grupo, turma, time, equipe, multidão) ficam no singular e pedem o verbo no singular: “a equipe venceu”.",
+          "pitfall": "Pensar nas pessoas dentro do grupo puxa o plural. Mas o sujeito da frase é um só: a equipe."
         },
         {
-          "topic": "Verbo ser (horas)",
+          "topic": "Verbo ser e as horas",
           "statement": "Assinale a alternativa correta quanto ao verbo ser.",
           "options": [
             "São duas horas da tarde.",
@@ -252,8 +601,8 @@
             "São meio-dia em ponto."
           ],
           "correct_index": 0,
-          "explanation": "Para indicar horas, o verbo ser concorda com o número de horas: \"É uma hora\", \"São duas horas\", \"É meio-dia\".",
-          "pitfall": "\"Meio-dia\" e \"meia-noite\" são singulares: \"É meio-dia\". E \"uma hora\" também: \"É uma hora\"."
+          "explanation": "Para dizer as horas, o verbo ser acompanha o número de horas. Por isso: “É uma hora”, “São duas horas”, “É meio-dia”.",
+          "pitfall": "“Meio-dia” e “meia-noite” são singulares: “É meio-dia”. E “uma hora” também: “É uma hora”."
         }
       ]
     }
