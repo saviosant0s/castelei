@@ -143,12 +143,6 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
             ))}
           </div>
         )}
-        {isLast && lesson.source && (
-          <div className="mt-6 rounded-2xl border-2 border-dashed border-ink/20 px-5 py-4">
-            <p className="label-mono">Para ler no livro</p>
-            <p className="mt-1 text-base">{lesson.source}</p>
-          </div>
-        )}
       </article>
 
       <div className="fixed inset-x-0 bottom-0 z-20 border-t border-ink/10 bg-paper/95 backdrop-blur">

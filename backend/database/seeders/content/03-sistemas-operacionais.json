@@ -1,13 +1,12 @@
 {
   "slug": "sistemas-operacionais",
   "name": "Sistemas Operacionais",
-  "description": "Conteúdo do semestre, na ordem das aulas. Texto original, baseado no livro de Tanenbaum.",
+  "description": "O conteúdo do semestre, na ordem das aulas: o que o sistema operacional faz e como os programas conversam com ele.",
   "lessons": [
     {
       "slug": "o-que-e-um-sistema-operacional",
       "title": "O que é um sistema operacional?",
       "summary": "O sistema operacional esconde a complexidade do hardware e organiza quem usa o quê. É o software que roda em modo núcleo.",
-      "source": "Tanenbaum, Sistemas Operacionais Modernos, 4ª ed., cap. 1, seção 1.1 (p. 3 a 5).",
       "steps": [
         {
           "kind": "idea",
@@ -28,7 +27,7 @@
           "kind": "explain",
           "title": "Visão 1: esconder a complexidade",
           "body": [
-            "Ler uma foto do disco exige comandos muito detalhados. O livro conta que só a descrição da interface de um disco moderno, numa versão antiga, tinha mais de 450 páginas.",
+            "Ler uma foto do disco exige uma lista enorme de comandos detalhados. Cada modelo de disco ainda tem os seus.",
             "Ninguém quer programar assim. O SO oferece o arquivo: o programa pede “abrir foto.jpg” e pronto.",
             "A tradução para o disco fica por conta de um driver."
           ],
@@ -48,7 +47,7 @@
             },
             {
               "word": "Máquina estendida",
-              "meaning": "o nome que o livro dá a essa visão: o SO como uma máquina mais fácil de usar do que o hardware puro."
+              "meaning": "o nome desta visão: o SO como uma máquina mais fácil de usar do que o hardware puro."
             }
           ]
         },
@@ -72,7 +71,7 @@
             },
             {
               "word": "Gerenciador de recursos",
-              "meaning": "o nome que o livro dá a essa visão: o SO repartindo as peças de forma ordenada e controlada."
+              "meaning": "o nome desta visão: o SO repartindo as peças de forma ordenada e controlada."
             }
           ]
         },
@@ -181,7 +180,7 @@
       "questions": [
         {
           "topic": "As duas funções",
-          "statement": "Segundo o livro de Tanenbaum, quais são as duas funções essenciais de um sistema operacional?",
+          "statement": "Quais são as duas funções essenciais de um sistema operacional?",
           "options": [
             "Compilar programas e gerenciar redes",
             "Oferecer uma interface gráfica e proteger contra vírus",
@@ -190,7 +189,7 @@
             "Controlar apenas o teclado e o monitor"
           ],
           "correct_index": 3,
-          "explanation": "O SO faz duas coisas: esconde a complexidade do hardware com abstrações e reparte os recursos entre os programas. O livro observa que essas duas funções quase não têm relação entre si.",
+          "explanation": "O SO faz duas coisas: esconde a complexidade do hardware com abstrações e reparte os recursos entre os programas. São funções bem diferentes entre si.",
           "pitfall": "Interface gráfica e antivírus são programas que rodam sobre o SO. Não são as duas funções essenciais."
         },
         {
@@ -223,7 +222,7 @@
         },
         {
           "topic": "De cima para baixo",
-          "statement": "No livro-texto, a visão do SO como máquina estendida é chamada de top-down. A visão do SO como gerenciador de recursos é chamada de:",
+          "statement": "A visão do SO como máquina estendida é chamada de top-down (de cima para baixo). A visão do SO como gerenciador de recursos é chamada de:",
           "options": [
             "bottom-up",
             "top-down também",
@@ -251,7 +250,7 @@
         },
         {
           "topic": "O que não é o SO",
-          "statement": "Segundo o livro, qual dos itens abaixo NÃO faz parte do sistema operacional?",
+          "statement": "Qual dos itens abaixo NÃO faz parte do sistema operacional?",
           "options": [
             "O driver de um disco",
             "O núcleo (kernel)",
@@ -274,7 +273,7 @@
             "Modo seguro"
           ],
           "correct_index": 1,
-          "explanation": "O SO roda em modo núcleo, onde tudo é permitido. Programas comuns rodam em modo usuário. O livro lembra que essa definição nem sempre vale.",
+          "explanation": "O SO roda em modo núcleo, onde tudo é permitido. Programas comuns rodam em modo usuário. Essa definição é uma boa aproximação, mas nem sempre vale.",
           "pitfall": "“Modo usuário” engana porque o SO serve ao usuário. Mas o nome se refere aos programas comuns, com poderes limitados."
         },
         {
@@ -297,7 +296,6 @@
       "slug": "componentes-e-funcoes-do-so",
       "title": "Componentes e funções de um SO",
       "summary": "O SO cuida de cinco áreas (processos, espaços de endereçamento, arquivos, entrada e saída e proteção). O shell fica de fora.",
-      "source": "Tanenbaum, Sistemas Operacionais Modernos, 4ª ed., cap. 1, seção 1.5 (p. 27 a 32).",
       "steps": [
         {
           "kind": "idea",
@@ -317,13 +315,13 @@
           "kind": "explain",
           "title": "Processo: o programa em ação",
           "body": [
-            "Uma receita no livro é só papel. Algo acontece quando alguém cozinha seguindo a receita.",
+            "Uma receita no caderno é só papel. Algo acontece quando alguém cozinha seguindo a receita.",
             "O programa é a receita, guardada no disco. O processo é o programa sendo executado, com tudo o que ele precisa."
           ],
           "example": {
             "label": "Comparando",
             "lines": [
-              "programa = receita no livro (parada)",
+              "programa = receita no caderno (parada)",
               "processo = alguém cozinhando com ela (em execução)"
             ]
           },
@@ -634,7 +632,6 @@
       "slug": "chamadas-de-sistema",
       "title": "Chamadas de sistema",
       "summary": "Uma chamada de sistema é o pedido do programa ao SO. Ela usa a instrução TRAP para passar do modo usuário ao modo núcleo.",
-      "source": "Tanenbaum, Sistemas Operacionais Modernos, 4ª ed., cap. 1, seção 1.6 (p. 35 a 43).",
       "steps": [
         {
           "kind": "idea",

@@ -9,7 +9,6 @@ const lesson: LessonDetail = {
   id: 7,
   title: "Equações do 1º grau",
   summary: "Resumo",
-  source: "Livro de teste, cap. 1 (p. 1 a 9).",
   subject: { id: 1, slug: "matematica-basica", name: "Matemática Básica" },
   questions_total: 8,
   questions_available: 5,
@@ -131,25 +130,5 @@ describe("LessonStepper", () => {
     expect(screen.getByText("Em C")).toBeTruthy();
     const code = document.querySelector("pre code");
     expect(code?.textContent).toBe("pid = fork();\nwaitpid(pid, ...);");
-  });
-
-  it("mostra onde ler no livro só na última etapa", async () => {
-    const user = userEvent.setup();
-    render(<LessonStepper lesson={lesson} />);
-
-    expect(screen.queryByText("Para ler no livro")).toBeNull();
-    await user.keyboard("{ArrowRight}{ArrowRight}{ArrowRight}");
-
-    expect(screen.getByText("Para ler no livro")).toBeTruthy();
-    expect(screen.getByText("Livro de teste, cap. 1 (p. 1 a 9).")).toBeTruthy();
-  });
-
-  it("não mostra o quadro do livro quando a lição não tem fonte", async () => {
-    const user = userEvent.setup();
-    render(<LessonStepper lesson={{ ...lesson, source: null }} />);
-
-    await user.keyboard("{ArrowRight}{ArrowRight}{ArrowRight}");
-
-    expect(screen.queryByText("Para ler no livro")).toBeNull();
   });
 });

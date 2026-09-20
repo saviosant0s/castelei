@@ -50,8 +50,6 @@ export interface LessonDetail {
   id: number;
   title: string;
   summary: string;
-  /** onde ler mais (ex.: capítulo e seção do livro) */
-  source: string | null;
   steps: LessonStep[];
   subject: { id: number; slug: string; name: string };
   questions_total: number;

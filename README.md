@@ -74,7 +74,7 @@ As lições ficam em `backend/database/seeders/content/*.json`. Cada lição tem
 | `figure` | figura SVG do app: `src` (em `frontend/public/figuras/`), `alt` (texto alternativo descritivo) e `caption` |
 | `code` | trecho de código: `label` e `text` (linhas curtas, até uns 36 caracteres) |
 
-Cada lição também pode ter `source`, indicando onde ler mais (obrigatório nas lições de Sistemas Operacionais).
+O Castelei é independente: **o conteúdo nunca cita livros, autores, capítulos ou páginas**. Livros e outras fontes servem só de base para estruturar os assuntos, e o verificador reprova qualquer referência.
 
 Antes de enviar, rode o verificador do Guia Editorial (o CI também roda):
 

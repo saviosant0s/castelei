@@ -1,15 +1,16 @@
 # Sistemas Operacionais: do plano do professor para o Castelei
 
-Conteúdo **só do que está no plano da disciplina** (ementa e cronograma), seguindo a ordem das aulas.
-Livro-base: Tanenbaum, *Sistemas Operacionais Modernos*, 4ª ed. As páginas abaixo são as **impressas** (no PDF, some 19).
+**Documento interno de estruturação. Nada daqui aparece no app.**
 
-Regras deste conteúdo:
-- Texto **original**, escrito com as palavras do Castelei. Nada é copiado do livro.
-- Figuras **originais** (SVG em `frontend/public/figuras/so/`). As figuras do livro não são reaproveitadas.
-- Cada lição cita a seção do livro (campo `source`), para servir de leitura prévia.
-- Termos técnicos só aparecem depois de explicados (o verificador `node scripts/lint-content.mjs` confere).
+Conteúdo **só do que está no plano da disciplina** (ementa e cronograma), na ordem das aulas.
+A coluna "Base de estudo" indica a parte do livro-base da disciplina usada apenas para organizar cada assunto (páginas impressas; no PDF, some 19).
 
-| Aula | Tópico do plano | Livro | Lições no Castelei | Situação |
+Regras do conteúdo no app:
+- O Castelei é **independente**: as lições não citam livros, autores, capítulos nem páginas.
+- Texto e figuras são **originais** (figuras em SVG, em `frontend/public/figuras/so/`), e podem usar conhecimento de qualquer boa fonte.
+- Termos técnicos só aparecem depois de explicados (o verificador `node scripts/lint-content.mjs` confere, e também reprova referências a fontes).
+
+| Aula | Tópico do plano | Base de estudo (interna) | Lições no Castelei | Situação |
 |---|---|---|---|---|
 | 15/09 | Plano de aula e introdução | §1.1 (p. 3 a 5) | O que é um sistema operacional? | **Pronta** |
 | 22/09 | Componentes e funções: processos, memória, arquivos, E/S, proteção, chamadas de sistema | §1.5 (p. 27 a 32) e §1.6 (p. 35 a 43) | Componentes e funções de um SO; Chamadas de sistema | **Prontas** |

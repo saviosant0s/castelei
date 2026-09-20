@@ -63,7 +63,6 @@ class CatalogController extends Controller
                 'id' => $lesson->id,
                 'title' => $lesson->title,
                 'summary' => $lesson->summary,
-                'source' => $lesson->source,
                 'steps' => $lesson->stepsOrFallback(),
                 'explanation' => $lesson->explanation,
                 'exam_style' => $lesson->exam_style,

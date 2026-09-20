@@ -11,7 +11,7 @@
  *    O jargão só é livre na etapa "Como cai na prova".
  * Regras estruturais: primeira etapa "idea", última "recap", uma "exam" e uma "pitfall".
  * Figuras: precisam de texto alternativo, legenda e de um arquivo existente em frontend/public.
- * Lições de matérias baseadas em livro precisam citar a fonte (campo "source").
+ * Independência: o conteúdo nunca cita livros, autores, capítulos ou páginas (o app não depende de fonte nenhuma).
  * Avisos (não reprovam): frases com mais de 28 palavras e etapas com mais de 60 palavras.
  */
 import { existsSync, readdirSync, readFileSync } from "node:fs";
@@ -52,7 +52,8 @@ const JARGON = [
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
 const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s" };
-const REQUIRE_SOURCE = new Set(["sistemas-operacionais"]);
+// O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
+const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;
 const KINDS = new Set(["idea", "explain", "exam", "pitfall", "recap"]);
 
@@ -66,6 +67,7 @@ const sentences = (text) => text.split(/(?<=[.!?…])\s+/).map((s) => s.trim()).
 const commas = (s) => (s.replace(/\([^)]*\)/g, "").replace(/(\d),(\d)/g, "$1$2").match(/,/g) ?? []).length;
 
 function checkProse(where, text) {
+  if (SOURCE_REF.test(text)) fail(where, `cita livro ou fonte (“${text.match(SOURCE_REF)[0]}”): o app é independente`);
   if (FORBIDDEN.test(text)) fail(where, `contém expressão proibida (“${text.match(FORBIDDEN)[0]}”)`);
   for (const s of sentences(text)) {
     if (commas(s) > 2) fail(where, `frase com ${commas(s)} vírgulas: “${s.slice(0, 70)}…”`);
@@ -102,7 +104,6 @@ for (const file of readdirSync(dir).filter((f) => f.endsWith(".json")).sort()) {
       if (steps.filter((s) => s.kind === k).length !== 1) fail(L, `deve haver exatamente uma etapa “${k}”`);
     }
     checkProse(`${L} › resumo`, lesson.summary ?? "");
-    if (REQUIRE_SOURCE.has(subject.slug) && !lesson.source) fail(L, "faltou o campo “source” (onde ler no livro)");
 
     const defined = new Set();
     // glossário da lição inteira: vale para as explicações das questões
@@ -125,6 +126,7 @@ for (const file of readdirSync(dir).filter((f) => f.endsWith(".json")).sort()) {
         if (!f.caption) warn(W, "figura sem legenda");
         if (!f.src?.startsWith("/figuras/") || !existsSync(join(publicDir, f.src))) fail(W, `arquivo da figura não encontrado: ${f.src}`);
         if (f.caption) checkProse(`${W} (legenda)`, f.caption);
+        if (SOURCE_REF.test(f.alt ?? "")) fail(W, "o texto alternativo cita livro ou fonte");
       }
       if (step.code && !String(step.code.text ?? "").trim()) fail(W, "bloco de código vazio");
 
@@ -141,6 +143,8 @@ for (const file of readdirSync(dir).filter((f) => f.endsWith(".json")).sort()) {
     lesson.questions.forEach((q, i) => {
       questionCount++;
       const W = `${L} › questão ${i + 1}`;
+      checkProse(`${W} (enunciado)`, q.statement ?? "");
+      (q.options ?? []).forEach((o) => checkProse(`${W} (alternativa)`, o));
       for (const field of ["explanation", "pitfall"]) {
         checkProse(`${W} (${field})`, q[field] ?? "");
         checkJargon(`${W} (${field})`, q[field] ?? "", lessonTerms, jargon);

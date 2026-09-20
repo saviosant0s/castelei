@@ -42,7 +42,6 @@ class CatalogTest extends TestCase
         $this->getJson("/api/lessons/{$lesson->id}")
             ->assertOk()
             ->assertJsonPath('lesson.summary', 'Resumo')
-            ->assertJsonPath('lesson.source', 'Livro de teste, cap. 1 (p. 1 a 9).')
             ->assertJsonPath('lesson.explanation', 'Explicação')
             ->assertJsonPath('lesson.exam_style', 'Como cai na prova')
             ->assertJsonPath('lesson.pitfalls.0', 'Pegadinha 1')

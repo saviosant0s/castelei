@@ -51,7 +51,7 @@ class ContentSeederTest extends TestCase
         }
     }
 
-    public function test_licoes_de_sistemas_operacionais_citam_o_livro_e_as_figuras_existem(): void
+    public function test_licoes_de_sistemas_operacionais_tem_figuras_com_texto_alternativo_e_arquivo(): void
     {
         $this->seed(DatabaseSeeder::class);
 
@@ -60,8 +60,6 @@ class ContentSeederTest extends TestCase
 
         $publicDir = base_path('../frontend/public');
         foreach ($lessons as $lesson) {
-            $this->assertStringContainsString('Tanenbaum', $lesson->source, "Lição {$lesson->slug}");
-
             foreach ($lesson->steps as $step) {
                 if (! isset($step['figure'])) {
                     continue;
@@ -71,6 +69,23 @@ class ContentSeederTest extends TestCase
                     $this->assertFileExists($publicDir.$step['figure']['src']);
                 }
             }
+        }
+    }
+
+    /** O Castelei é independente: o conteúdo nunca cita livros, autores, capítulos ou páginas. */
+    public function test_conteudo_nao_faz_referencia_a_livros_ou_fontes(): void
+    {
+        $this->seed(DatabaseSeeder::class);
+
+        $padrao = '/segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/iu';
+
+        foreach (Lesson::all() as $lesson) {
+            $texto = json_encode([$lesson->summary, $lesson->steps], JSON_UNESCAPED_UNICODE);
+            $this->assertDoesNotMatchRegularExpression($padrao, $texto, "Lição {$lesson->slug}");
+        }
+        foreach (Question::all() as $question) {
+            $texto = json_encode([$question->statement, $question->options, $question->explanation, $question->pitfall], JSON_UNESCAPED_UNICODE);
+            $this->assertDoesNotMatchRegularExpression($padrao, $texto, "Questão {$question->id}");
         }
     }
 
