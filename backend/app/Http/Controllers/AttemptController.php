@@ -34,13 +34,16 @@ class AttemptController extends Controller
 
         $attempt = Attempt::create([
             'user_id' => $request->user()->id,
+            'kind' => Attempt::KIND_LESSON,
             'lesson_id' => $lesson->id,
+            'subject_id' => $lesson->subject_id,
             'started_at' => now(),
             'total_questions' => $questions->count(),
+            'question_ids' => $questions->pluck('id')->all(),
         ]);
 
         return response()->json([
-            'attempt' => ['id' => $attempt->id, 'total' => $attempt->total_questions],
+            'attempt' => ['id' => $attempt->id, 'total' => $attempt->total_questions, 'kind' => $attempt->kind],
             'questions' => $questions->map(fn (Question $question) => [
                 'id' => $question->id,
                 'position' => $question->position,
@@ -64,10 +67,8 @@ class AttemptController extends Controller
         ]);
 
         // Só vale responder as questões entregues no início da tentativa.
-        $allowedIds = $attempt->lesson->questions()
-            ->limit($attempt->total_questions)
-            ->pluck('id');
-        abort_unless($allowedIds->contains($data['question_id']), 422, 'Questão inválida para esta tentativa.');
+        $allowedIds = $attempt->allowedQuestionIds();
+        abort_unless(in_array((int) $data['question_id'], $allowedIds, true), 422, 'Questão inválida para esta tentativa.');
 
         $question = Question::findOrFail($data['question_id']);
         $selected = isset($data['selected']) ? (int) $data['selected'] : null;
@@ -166,9 +167,15 @@ class AttemptController extends Controller
     /** @return array<string, mixed> */
     private function result(Attempt $attempt): array
     {
+        // O recorde compara com o mesmo desafio: a mesma lição, ou o simulado da mesma matéria.
         $previousBest = Attempt::query()
             ->where('user_id', $attempt->user_id)
-            ->where('lesson_id', $attempt->lesson_id)
+            ->where('kind', $attempt->kind)
+            ->when(
+                $attempt->isExam(),
+                fn ($query) => $query->where('subject_id', $attempt->subject_id),
+                fn ($query) => $query->where('lesson_id', $attempt->lesson_id),
+            )
             ->where('id', '!=', $attempt->id)
             ->whereNotNull('finished_at')
             ->whereNotNull('avg_seconds')
@@ -185,16 +192,21 @@ class AttemptController extends Controller
             ->orderBy('topic')
             ->value('topic');
 
+        // O simulado não tem "próxima lição": ele já atravessa a matéria toda.
         $lesson = $attempt->lesson;
-        $next = Lesson::query()
-            ->where('subject_id', $lesson->subject_id)
-            ->where('position', '>', $lesson->position)
-            ->orderBy('position')
-            ->first(['id', 'title']);
+        $next = $lesson
+            ? Lesson::query()
+                ->where('subject_id', $lesson->subject_id)
+                ->where('position', '>', $lesson->position)
+                ->orderBy('position')
+                ->first(['id', 'title'])
+            : null;
 
         return [
             'attempt_id' => $attempt->id,
+            'kind' => $attempt->kind,
             'lesson_id' => $attempt->lesson_id,
+            'subject_id' => $attempt->subject_id,
             'total' => $attempt->total_questions,
             'correct' => $attempt->correct_count,
             'percent' => (int) round($attempt->correct_count / max($attempt->total_questions, 1) * 100),
@@ -203,7 +215,7 @@ class AttemptController extends Controller
             'is_record' => $previousBest !== null && $attempt->avg_seconds !== null && $attempt->avg_seconds < $previousBest,
             'weak_topic' => $weakTopic,
             'next_lesson' => $next ? ['id' => $next->id, 'title' => $next->title] : null,
-            'limited_by_plan' => $lesson->questions()->count() > $attempt->total_questions,
+            'limited_by_plan' => $lesson !== null && $lesson->questions()->count() > $attempt->total_questions,
         ];
     }
 }

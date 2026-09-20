@@ -15,6 +15,10 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         // Atrás do proxy do Railway (TLS termina fora da aplicação).
         $middleware->trustProxies(at: '*');
+
+        // Não existe tela de login aqui: sem isso o visitante sem token recebe
+        // 500 ("Route [login] not defined") em vez do 401 em JSON.
+        $middleware->redirectGuestsTo(fn () => null);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         // A API sempre responde JSON, mesmo sem o header Accept.

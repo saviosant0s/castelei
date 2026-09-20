@@ -3,6 +3,7 @@ import Link from "next/link";
 import { serverGet } from "@/lib/backend";
 import { Flame, Lock, Star } from "lucide-react";
 import { BadgeIcon } from "@/components/BadgeIcon";
+import { EvolutionChart } from "@/components/EvolutionChart";
 import { formatNumber, formatSeconds, weekdayInitial } from "@/lib/format";
 import type { ProgressResponse } from "@/lib/types";
 
@@ -34,6 +35,8 @@ export default async function Progresso() {
   return (
     <div className="space-y-8">
       <h1 className="text-4xl">Progresso</h1>
+
+      <EvolutionChart points={progress.evolution} />
 
       {g && (
         <>

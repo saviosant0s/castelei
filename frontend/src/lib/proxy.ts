@@ -47,6 +47,7 @@ export function apiBase(): string {
 /** Só estas rotas da API podem ser chamadas pelo navegador via proxy. */
 const ALLOWED_PATHS = [
   /^lessons\/\d+\/attempts$/,
+  /^subjects\/\d+\/exams$/,
   /^attempts\/\d+\/answers$/,
   /^attempts\/\d+\/finish$/,
 ];

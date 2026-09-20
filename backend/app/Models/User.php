@@ -68,4 +68,9 @@ class User extends Authenticatable
     {
         return Plans::hasGamification($this->plan);
     }
+
+    public function hasExam(): bool
+    {
+        return Plans::hasExam($this->plan);
+    }
 }

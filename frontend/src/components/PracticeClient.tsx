@@ -11,7 +11,29 @@ import type { AnswerResult, FinishResult, PracticeQuestion, StartAttemptResponse
 
 type Phase = "loading" | "failed" | "answering" | "feedback" | "result";
 
-export function PracticeClient({ lessonId, lessonTitle }: { lessonId: number; lessonTitle: string }) {
+/**
+ * De onde vem a prática. A lição e o simulado compartilham todo o fluxo de
+ * responder: mudam só onde a tentativa começa e para onde se volta.
+ */
+export type PracticeSource =
+  | { kind: "lesson"; lessonId: number; lessonTitle: string }
+  | { kind: "exam"; subjectId: number; subjectSlug: string; subjectName: string };
+
+function startUrl(source: PracticeSource): string {
+  return source.kind === "lesson"
+    ? `/api/lessons/${source.lessonId}/attempts`
+    : `/api/subjects/${source.subjectId}/exams`;
+}
+
+function backHref(source: PracticeSource): string {
+  return source.kind === "lesson" ? `/licao/${source.lessonId}` : `/materia/${source.subjectSlug}`;
+}
+
+function sourceTitle(source: PracticeSource): string {
+  return source.kind === "lesson" ? source.lessonTitle : `Simulado · ${source.subjectName}`;
+}
+
+export function PracticeClient({ source }: { source: PracticeSource }) {
   const [phase, setPhase] = useState<Phase>("loading");
   const [error, setError] = useState<string | null>(null);
   const [attempt, setAttempt] = useState<{ id: number; total: number } | null>(null);
@@ -30,7 +52,7 @@ export function PracticeClient({ lessonId, lessonTitle }: { lessonId: number; le
   async function begin() {
     setError(null);
     try {
-      const data = await postJson<StartAttemptResponse>(`/api/lessons/${lessonId}/attempts`);
+      const data = await postJson<StartAttemptResponse>(startUrl(source));
       setAttempt(data.attempt);
       setQuestions(data.questions);
       setIndex(0);
@@ -132,7 +154,9 @@ export function PracticeClient({ lessonId, lessonTitle }: { lessonId: number; le
             <button type="button" className="btn btn-primary" onClick={() => { setPhase("loading"); void begin(); }}>
               Tentar de novo
             </button>
-            <Link href={`/licao/${lessonId}`} className="btn btn-ghost">Voltar para a lição</Link>
+            <Link href={backHref(source)} className="btn btn-ghost">
+              {source.kind === "lesson" ? "Voltar para a lição" : "Voltar para a matéria"}
+            </Link>
           </div>
         </div>
       </div>
@@ -140,7 +164,7 @@ export function PracticeClient({ lessonId, lessonTitle }: { lessonId: number; le
   }
 
   if (phase === "result" && result) {
-    return <ResultView result={result} lessonId={lessonId} onRetry={() => { setPhase("loading"); void begin(); }} />;
+    return <ResultView result={result} source={source} onRetry={() => { setPhase("loading"); void begin(); }} />;
   }
 
   if (!question || !attempt) return null;
@@ -151,10 +175,10 @@ export function PracticeClient({ lessonId, lessonTitle }: { lessonId: number; le
   return (
     <div className="mx-auto min-h-dvh max-w-md px-5 pb-40 pt-4">
       <header className="flex items-center justify-between gap-3">
-        <Link href={`/licao/${lessonId}`} aria-label="Sair da prática" className="grid size-11 place-items-center rounded-full text-ink/70 hover:bg-ink/5">
+        <Link href={backHref(source)} aria-label="Sair da prática" className="grid size-11 place-items-center rounded-full text-ink/70 hover:bg-ink/5">
           <X className="size-6" aria-hidden="true" />
         </Link>
-        <p className="truncate text-sm text-ink/60">{lessonTitle}</p>
+        <p className="truncate text-sm text-ink/60">{sourceTitle(source)}</p>
         <div className="flex min-w-[5.5rem] items-center justify-end gap-1.5 font-mono text-base font-medium" aria-label="Tempo nesta questão" role="timer">
           <Timer className="size-5 text-coral" aria-hidden="true" />
           {formatClock(elapsed)}
@@ -261,7 +285,8 @@ export function PracticeClient({ lessonId, lessonTitle }: { lessonId: number; le
   );
 }
 
-function ResultView({ result, lessonId, onRetry }: { result: FinishResult; lessonId: number; onRetry: () => void }) {
+function ResultView({ result, source, onRetry }: { result: FinishResult; source: PracticeSource; onRetry: () => void }) {
+  const isExam = source.kind === "exam";
   const headline = result.percent >= 80 ? "Mandou bem!" : result.percent >= 50 ? "Bom caminho." : "Agora você conhece as pegadinhas.";
   const g = result.gamification;
   const celebrate = result.is_record || (g?.new_badges.length ?? 0) > 0;
@@ -273,7 +298,7 @@ function ResultView({ result, lessonId, onRetry }: { result: FinishResult; lesso
     <div className="relative mx-auto min-h-dvh max-w-md px-5 pb-12 pt-8">
       {celebrate && <Confetti />}
       <Trophy className="size-10 text-coral" aria-hidden="true" />
-      <p className="label-mono mt-4">Lição concluída</p>
+      <p className="label-mono mt-4">{isExam ? "Simulado concluído" : "Lição concluída"}</p>
       <h1 className="anim-rise mt-2 text-4xl">{headline}</h1>
 
       <div className="mt-8">
@@ -309,8 +334,11 @@ function ResultView({ result, lessonId, onRetry }: { result: FinishResult; lesso
             <div>
               <dt className="text-sm text-ink/60">Ponto para reforçar</dt>
               <dd className="text-base font-bold">{result.weak_topic}</dd>
-              <Link href={`/licao/${lessonId}`} className="mt-1 inline-block text-base font-bold underline underline-offset-4">
-                Revisar a lição
+              <Link
+                href={source.kind === "lesson" ? `/licao/${source.lessonId}` : `/materia/${source.subjectSlug}`}
+                className="mt-1 inline-block text-base font-bold underline underline-offset-4"
+              >
+                {isExam ? "Ver as lições da matéria" : "Revisar a lição"}
               </Link>
             </div>
           </div>
@@ -324,7 +352,7 @@ function ResultView({ result, lessonId, onRetry }: { result: FinishResult; lesso
             <div className="flex items-center gap-3">
               <Star className="size-5 shrink-0 text-coral" aria-hidden="true" />
               <div>
-                <p className="text-sm text-ink/60">XP ganho nesta lição</p>
+                <p className="text-sm text-ink/60">{isExam ? "XP ganho neste simulado" : "XP ganho nesta lição"}</p>
                 <p className="font-mono text-2xl font-medium">+{formatNumber(g.xp_earned)} XP</p>
               </div>
             </div>
@@ -380,7 +408,7 @@ function ResultView({ result, lessonId, onRetry }: { result: FinishResult; lesso
           </Link>
         ) : null}
         <button type="button" className={`btn ${result.next_lesson ? "btn-ghost border-2 border-ink/15" : "btn-primary"}`} onClick={onRetry}>
-          <RotateCcw className="size-5" aria-hidden="true" /> Praticar de novo
+          <RotateCcw className="size-5" aria-hidden="true" /> {isExam ? "Novo simulado" : "Praticar de novo"}
         </button>
         <Link href="/inicio" className="btn btn-ghost">
           <ArrowLeft className="size-5" aria-hidden="true" /> Voltar ao início

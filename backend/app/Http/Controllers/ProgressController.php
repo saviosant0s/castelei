@@ -43,7 +43,7 @@ class ProgressController extends Controller
 
         $last = Attempt::query()
             ->where('user_id', $userId)
-            ->with('lesson.subject')
+            ->with(['lesson.subject', 'subject'])
             ->latest('id')
             ->first();
 
@@ -57,10 +57,14 @@ class ProgressController extends Controller
                     : null,
             ],
             'topics' => $topics,
+            'evolution' => $this->evolution($userId),
             'last_attempt' => $last ? [
+                'kind' => $last->kind,
                 'lesson_id' => $last->lesson_id,
-                'lesson_title' => $last->lesson->title,
-                'subject_name' => $last->lesson->subject->name,
+                // O simulado não tem lição: o título é a própria matéria.
+                'lesson_title' => $last->lesson?->title ?? 'Simulado',
+                'subject_id' => $last->subject_id,
+                'subject_name' => $last->lesson?->subject->name ?? $last->subject?->name,
                 'finished' => $last->finished_at !== null,
                 'percent' => $last->finished_at !== null
                     ? (int) round($last->correct_count / max($last->total_questions, 1) * 100)
@@ -68,6 +72,35 @@ class ProgressController extends Controller
             ] : null,
             'gamification' => $this->gamificationFor($request),
         ]);
+    }
+
+    /**
+     * Histórico para o gráfico de evolução: as últimas tentativas concluídas,
+     * da mais antiga para a mais recente, com acerto e tempo médio.
+     *
+     * @return list<array<string, mixed>>
+     */
+    private function evolution(int $userId): array
+    {
+        return Attempt::query()
+            ->where('user_id', $userId)
+            ->whereNotNull('finished_at')
+            ->with(['lesson', 'subject'])
+            ->latest('finished_at')
+            ->latest('id')
+            ->limit(30)
+            ->get()
+            ->reverse()
+            ->map(fn (Attempt $attempt) => [
+                'attempt_id' => $attempt->id,
+                'kind' => $attempt->kind,
+                'title' => $attempt->lesson?->title ?? ('Simulado — '.($attempt->subject?->name ?? 'matéria removida')),
+                'finished_at' => $attempt->finished_at?->toIso8601String(),
+                'percent' => (int) round($attempt->correct_count / max($attempt->total_questions, 1) * 100),
+                'avg_seconds' => $attempt->avg_seconds,
+            ])
+            ->values()
+            ->all();
     }
 
     /** @return array<string, mixed>|null */

@@ -20,11 +20,19 @@ export interface LessonSummary {
   best_percent: number | null;
 }
 
+/** Situação do simulado de uma matéria. `unlocked` false = existe, mas o plano não inclui. */
+export interface ExamAvailability {
+  available: boolean;
+  unlocked: boolean;
+  questions: number;
+}
+
 export interface Subject {
   id: number;
   slug: string;
   name: string;
   description: string | null;
+  exam: ExamAvailability;
   lessons: LessonSummary[];
 }
 
@@ -67,10 +75,16 @@ export interface PracticeQuestion {
   options: string[];
 }
 
+export type AttemptKind = "lesson" | "exam";
+
 export interface StartAttemptResponse {
-  attempt: { id: number; total: number };
+  attempt: { id: number; total: number; kind: AttemptKind };
   questions: PracticeQuestion[];
   limited_by_plan: boolean;
+}
+
+export interface StartExamResponse extends StartAttemptResponse {
+  subject: { id: number; slug: string; name: string };
 }
 
 export interface AnswerResult {
@@ -116,7 +130,10 @@ export interface ResultGamification {
 
 export interface FinishResult {
   attempt_id: number;
-  lesson_id: number;
+  kind: AttemptKind;
+  /** null no simulado: ele atravessa várias lições */
+  lesson_id: number | null;
+  subject_id: number | null;
   total: number;
   correct: number;
   percent: number;
@@ -138,6 +155,16 @@ export interface TopicStat {
   avg_seconds: number;
 }
 
+/** Um ponto do gráfico de evolução: uma tentativa concluída. */
+export interface EvolutionPoint {
+  attempt_id: number;
+  kind: AttemptKind;
+  title: string;
+  finished_at: string | null;
+  percent: number;
+  avg_seconds: number | null;
+}
+
 export interface ProgressResponse {
   overall: {
     attempts: number;
@@ -146,10 +173,14 @@ export interface ProgressResponse {
     avg_seconds: number | null;
   };
   topics: TopicStat[];
+  /** da tentativa mais antiga para a mais recente */
+  evolution: EvolutionPoint[];
   last_attempt: {
-    lesson_id: number;
+    kind: AttemptKind;
+    lesson_id: number | null;
     lesson_title: string;
-    subject_name: string;
+    subject_id: number | null;
+    subject_name: string | null;
     finished: boolean;
     percent: number | null;
   } | null;

@@ -171,7 +171,7 @@ class PracticeFlowTest extends TestCase
             ->assertJsonPath('total', 5)
             ->assertJsonPath('correct', 2)
             ->assertJsonPath('percent', 40)
-            ->assertJsonPath('avg_seconds', 30.0)
+            ->assertJsonPath('avg_seconds', fn ($v) => (float) $v === 30.0)
             ->assertJsonPath('weak_topic', 'Tópico A')
             ->assertJsonPath('previous_best_avg_seconds', null)
             ->assertJsonPath('is_record', false)
@@ -218,8 +218,8 @@ class PracticeFlowTest extends TestCase
         $this->answerAll($second->json('attempt.id'), $second->json('questions'), false, 20);
         $this->postJson('/api/attempts/'.$second->json('attempt.id').'/finish')
             ->assertOk()
-            ->assertJsonPath('previous_best_avg_seconds', 30.0)
-            ->assertJsonPath('avg_seconds', 20.0)
+            ->assertJsonPath('previous_best_avg_seconds', fn ($v) => (float) $v === 30.0)
+            ->assertJsonPath('avg_seconds', fn ($v) => (float) $v === 20.0)
             ->assertJsonPath('is_record', true);
     }
 
@@ -248,7 +248,7 @@ class PracticeFlowTest extends TestCase
             ->assertJsonPath('overall.attempts', 1)
             ->assertJsonPath('overall.answered', 5)
             ->assertJsonPath('overall.accuracy', 100)
-            ->assertJsonPath('overall.avg_seconds', 10.0)
+            ->assertJsonPath('overall.avg_seconds', fn ($v) => (float) $v === 10.0)
             ->assertJsonCount(2, 'topics')
             ->assertJsonPath('last_attempt.lesson_id', $lesson->id)
             ->assertJsonPath('last_attempt.finished', true)

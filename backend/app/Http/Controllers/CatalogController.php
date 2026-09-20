@@ -29,12 +29,16 @@ class CatalogController extends Controller
             ->orderBy('position')
             ->get();
 
+        $minForExam = (int) config('castelei.exam.min_questions');
+        $examTarget = (int) config('castelei.exam.questions');
+
         return response()->json([
             'subjects' => $subjects->map(fn (Subject $subject) => [
                 'id' => $subject->id,
                 'slug' => $subject->slug,
                 'name' => $subject->name,
                 'description' => $subject->description,
+                'exam' => $this->examBlock($subject, $user->hasExam(), $minForExam, $examTarget),
                 'lessons' => $subject->lessons->map(function (Lesson $lesson) use ($stats, $limit) {
                     $stat = $stats->get($lesson->id);
 
@@ -50,6 +54,23 @@ class CatalogController extends Controller
                 })->values(),
             ])->values(),
         ]);
+    }
+
+    /**
+     * Situação do simulado desta matéria: quantas questões ele teria e se o
+     * aluno pode fazer. `unlocked` false = existe, mas o plano não inclui.
+     *
+     * @return array<string, mixed>
+     */
+    private function examBlock(Subject $subject, bool $unlocked, int $min, int $target): array
+    {
+        $pool = $subject->lessons->sum('questions_count');
+
+        return [
+            'available' => $pool >= $min,
+            'unlocked' => $unlocked,
+            'questions' => min($target, $pool),
+        ];
     }
 
     public function lesson(Request $request, Lesson $lesson): JsonResponse

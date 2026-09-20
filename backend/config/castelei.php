@@ -17,9 +17,22 @@ return [
     // true = libera streak/XP/conquistas para todos os planos (útil em testes).
     'gamification_for_all' => (bool) env('GAMIFICATION_FOR_ALL', false),
 
+    // true = libera o simulado para todos os planos (útil em testes).
+    'exam_for_all' => (bool) env('EXAM_FOR_ALL', false),
+
+    /*
+    | Simulado: sorteia questões de várias lições da mesma matéria. O cronômetro
+    | é crescente, igual ao da lição — o simulado se diferencia pela mistura de
+    | assuntos, não por pressão de tempo (ver anti-padrões no planejamento).
+    */
+    'exam' => [
+        'questions' => 20,      // alvo de questões por simulado
+        'min_questions' => 5,   // abaixo disso a matéria ainda não dá simulado
+    ],
+
     'plans' => [
-        'free' => ['label' => 'Grátis', 'questions_per_lesson' => 5, 'gamification' => false],
-        'plus' => ['label' => 'Plus', 'questions_per_lesson' => 30, 'gamification' => true],
-        'pro' => ['label' => 'Pro', 'questions_per_lesson' => null, 'gamification' => true],
+        'free' => ['label' => 'Grátis', 'questions_per_lesson' => 5, 'gamification' => false, 'exam' => false],
+        'plus' => ['label' => 'Plus', 'questions_per_lesson' => 30, 'gamification' => true, 'exam' => false],
+        'pro' => ['label' => 'Pro', 'questions_per_lesson' => null, 'gamification' => true, 'exam' => true],
     ],
 ];

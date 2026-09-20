@@ -9,5 +9,5 @@ export default async function PraticarPage({ params }: { params: Promise<{ id: s
   const { id } = await params;
   const { lesson } = await serverGet<{ lesson: LessonDetail }>(`/lessons/${encodeURIComponent(id)}`);
 
-  return <PracticeClient lessonId={lesson.id} lessonTitle={lesson.title} />;
+  return <PracticeClient source={{ kind: "lesson", lessonId: lesson.id, lessonTitle: lesson.title }} />;
 }
