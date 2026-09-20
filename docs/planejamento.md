@@ -289,6 +289,35 @@ O tempo por questão é **contado pra cima**, não pra baixo. Motivo: cronômetr
 
 ---
 
+## Guia Editorial de Conteúdo
+
+A qualidade do conteúdo é o coração do Castelei. O maior risco na produção de material didático é a **"maldição do conhecimento"**: quem sabe explica assumindo que o outro já conhece os termos básicos. Isso é o exato problema que o app se propõe a resolver — e não pode acontecer dentro dele.
+
+### Regra-mãe
+
+> Escreva como se o leitor soubesse ler, mas nunca tivesse visto o assunto na vida.
+
+### Regras práticas para produção de conteúdo
+
+- **Nunca cite um termo sem explicar** — se vai usar "equação de segundo grau", antes diz em uma linha o que é. Mesmo que pareça óbvio.
+- **Proibido "como vimos anteriormente"** — cada lição deve ser autocontida. O aluno pode ter pulado a anterior, esquecido ou entrado diretamente.
+- **Teste mental da avó** — antes de aprovar qualquer explicação, pergunte: uma pessoa sem nenhuma bagagem do assunto entenderia? Se não, simplifica mais uma camada.
+- **Analogia antes de definição** — primeiro uma comparação com algo do cotidiano, depois a definição técnica. Exemplo: *"Pense no logaritmo como o inverso da potenciação, igual à divisão ser o inverso da multiplicação — só então: log₂(8) = 3 significa '2 elevado a que potência dá 8?'"*
+- **Vocabulário de banca só na camada "Como cai na prova"** — na camada de Explicação Humana, linguagem completamente informal e acessível. O jargão formal aparece apenas quando estamos ensinando *como a prova vai perguntar*.
+- **Frases curtas** — se uma frase tem mais de duas vírgulas, quebra em duas.
+- **Concreto antes de abstrato** — começa com um exemplo real, depois generaliza a regra.
+
+### Como revisar o conteúdo antes de publicar
+
+1. Leia em voz alta. Se travar, reescreve.
+2. Pergunte: tem alguma palavra aqui que eu não expliquei antes de usar?
+3. Pergunte: o exemplo é de algo que o aluno conhece do dia a dia?
+4. Pergunte: a camada "Como cai na prova" mostra o vocabulário real da banca, sem simplificar demais?
+
+> Esta diretriz vale para qualquer pessoa ou ferramenta que produza conteúdo para o Castelei — seja o fundador, redatores contratados ou geração via IA.
+
+---
+
 ## Funcionalidades de IA no App
 
 Inspirado nos 20 usos mais valiosos que estudantes têm com IA (fonte: TechTudo/2026), estas funcionalidades devem ser nativas na plataforma — não como "chat livre", mas como modos estruturados de estudo:
