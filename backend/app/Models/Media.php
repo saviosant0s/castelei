@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Support\Facades\Storage;
 
 /**
  * Um arquivo enviado pelo painel: figura ou vídeo de lição.
@@ -30,10 +29,15 @@ class Media extends Model
         return $this->belongsTo(User::class, 'uploaded_by');
     }
 
-    /** Endereço público do arquivo, do jeito que entra no `src` da etapa. */
+    /**
+     * Endereço público do arquivo, do jeito que entra no `src` da etapa.
+     *
+     * Aponta para a rota do app (ver MediaFileController), e não direto para o
+     * disco: o atalho `public/storage` não sobrevive ao deploy do Railway.
+     */
     public function url(): string
     {
-        return Storage::disk($this->disk)->url($this->path);
+        return url('/api/media/'.$this->path);
     }
 
     /** @return array<string, mixed> */

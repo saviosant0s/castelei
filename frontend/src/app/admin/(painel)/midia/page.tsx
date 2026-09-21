@@ -27,7 +27,7 @@ export default async function Midia() {
         <h2 className="text-xl">Como usar numa etapa</h2>
         <p className="text-base">Cole o endereço copiado no campo <code className="font-mono text-sm">src</code>:</p>
         <pre className="overflow-x-auto rounded-control bg-surface-raised p-4 font-mono text-sm">{`"figure": {
-  "src": "https://…/storage/midia/images/exemplo-a1b2c3.png",
+  "src": "https://…/api/media/midia/images/exemplo-a1b2c3.png",
   "alt": "O que a figura mostra, em uma frase.",
   "caption": "A legenda que aparece embaixo."
 }

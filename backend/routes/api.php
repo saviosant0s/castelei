@@ -9,6 +9,7 @@ use App\Http\Controllers\AttemptController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\ExamController;
+use App\Http\Controllers\MediaFileController;
 use App\Http\Controllers\ProgressController;
 use App\Http\Controllers\PublicCatalogController;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +21,15 @@ use Illuminate\Support\Facades\Route;
 | de divulgação. Enunciado e gabarito continuam atrás da sessão.
 */
 Route::get('/catalog', [PublicCatalogController::class, 'index']);
+
+/*
+| Imagens e vídeos das lições. Sem login porque uma tag `img` não manda token.
+|
+| A expressão limita o que pode ser pedido às pastas da biblioteca de mídia —
+| sem ela, `..%2F..%2F.env` viraria um caminho válido.
+*/
+Route::get('/media/{path}', MediaFileController::class)
+    ->where('path', 'midia/(images|videos)/[A-Za-z0-9._-]+');
 
 Route::post('/register', [AuthController::class, 'register'])->middleware('throttle:10,1');
 Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:10,1');
