@@ -116,12 +116,12 @@ Se for expandir daqui, as opções são: aprofundar o que ficou de fora da ement
 
 - **Concluída é praticada, não aprovada.** Basta uma tentativa terminada; nota não entra. Cobrar acerto aqui transformaria a trilha numa cobrança, e a qualidade da resposta já é medida em `/progresso`.
 - **A cinza continua clicável, de propósito.** O app acompanha um semestre com data marcada: quem revisa Memória na véspera da prova não pode esbarrar num cadeado por ter pulado uma lição de setembro. O cinza orienta, não tranca — por isso também não tem cadeado desenhado.
-- **O traço passa por trás dos títulos**, e o título é uma plaquinha levantada (`bg-surface-raised` + sombra) por cima dele. Antes ele tapava o traço repetindo a cor e o grão do fundo, o que prendia o fundo a ser liso — assumir a plaquinha foi o que liberou o fundo a ter textura.
+- **O traço passa por trás dos títulos**, e o título é uma plaquinha levantada (`bg-surface-raised` + sombra) por cima dele. Antes ele se disfarçava de fundo, repetindo cor e grão — o que só funcionava com fundo liso. A plaquinha não depende do fundo.
 
 **Modo escuro e fundo com profundidade** (tudo em `globals.css` + `lib/theme.ts`). Duas coisas para não desfazer sem querer:
 
 - **A rampa INVERTE no escuro.** `ink` deixa de ser "grafite" e passa a ser "a cor do texto"; `paper`, "a cor do fundo". É o que faz os quase cem `text-ink/70` e `border-ink/15` já espalhados pelas telas continuarem certos sem tocar em nenhuma. O que a inversão não resolve virou papel próprio: `surface-bold` (no escuro ele se destaca por ser mais CLARO que a página), `on-bold` (texto sobre esse bloco) e **`on-accent`** (texto sobre azul, verde ou coral cheios — não muda de tema, porque as cores da marca são claras nos dois; escrito como `text-ink` clareava junto e o botão "Confirmar" ficava ilegível).
-- **A atmosfera do fundo é um `body::before` FIXO, e o `body` precisa ser transparente.** A cor de fundo mora só no `html`. Não é capricho: na ordem de pintura do CSS, o fundo de um bloco descendente vem DEPOIS dos filhos de z-index negativo — com cor no `body`, a camada renderiza e fica invisível. Foi exatamente o que aconteceu na primeira tentativa.
+- **O fundo é liso de propósito.** Teve brilho de azul-céu e malha de pontos, e o Sávio dispensou. Não era calibragem — foram duas rodadas de força diferente, e o veredito foi sobre o degradê em si. Ficou cor chapada com grão de 3%. Se for mexer, mexa na textura, não em degradê. E lembre que **o topo da página é a barra de status do celular** (`viewport-fit=cover`): cor no alto da página vira barra de status colorida.
 
 A escolha do tema (Automático/Claro/Escuro, em `/perfil`) vive no `localStorage`, **por aparelho**, e não vai ao servidor. Sem atributo = o aparelho manda; `data-theme="light"` existe só para vencer um celular escuro. O script no `<head>` é o único script embutido do app, e está lá para a tela não piscar claro antes da hidratação.
 

@@ -26,13 +26,20 @@ function aparelho(escuro: boolean) {
 beforeEach(() => {
   window.localStorage.clear();
   delete document.documentElement.dataset.theme;
-  document.head.innerHTML = '<meta name="theme-color" content="#F8F9FA">';
+  // As duas metas do HTML de verdade, uma por media query.
+  document.head.innerHTML =
+    '<meta name="theme-color" media="(prefers-color-scheme: light)" content="#F8F9FA">' +
+    '<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#14141F">';
   aparelho(false);
 });
 
 afterEach(() => vi.unstubAllGlobals());
 
-const meta = () => document.querySelector('meta[name="theme-color"]')?.getAttribute("content");
+/** Todas as metas, porque é justamente isso que já deu errado uma vez. */
+const metas = () =>
+  [...document.querySelectorAll('meta[name="theme-color"]')].map((m) => m.getAttribute("content"));
+
+const meta = () => metas()[0];
 
 describe("leitura e gravação", () => {
   it("sem nada guardado, o aparelho manda", () => {
@@ -103,6 +110,15 @@ describe("aplicar na página", () => {
     applyTheme("light");
     expect(document.documentElement.dataset.theme).toBe("light");
     expect(meta()).toBe(THEME_COLOR.light);
+  });
+
+  it("acerta TODAS as metas, não só a primeira", () => {
+    // Com duas metas por media query, escrever só na primeira deixava quem
+    // força claro num celular escuro com a barra de status escura: o
+    // aparelho continuava casando com a meta de escuro.
+    aparelho(true);
+    applyTheme("light");
+    expect(metas()).toEqual([THEME_COLOR.light, THEME_COLOR.light]);
   });
 });
 
