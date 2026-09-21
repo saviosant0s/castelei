@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ArrowRight, BookOpen, Calculator, Cpu, Flame, Languages, Star } from "lucide-react";
-import { Card, type CardTone, Pill } from "@/components/ui";
+import { Card, type CardTone, Pill, ProgressBar } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
 import { firstName, formatNumber, pluralize } from "@/lib/format";
 import type { ProgressResponse, Subject, User } from "@/lib/types";
@@ -106,6 +106,9 @@ export default async function Inicio() {
         <ul className="mt-4 grid grid-cols-2 gap-4">
           {subjects.map((subject, i) => {
             const Icon = subjectIcons[subject.slug] ?? BookOpen;
+            const total = subject.lessons.length;
+            const practiced = subject.lessons.filter((lesson) => lesson.attempts > 0).length;
+
             return (
               <li key={subject.id} className={i % 2 === 1 ? "mt-8" : ""}>
                 <Card
@@ -124,9 +127,23 @@ export default async function Inicio() {
                     <p className="font-display text-[clamp(1rem,4.2vw,1.375rem)] font-bold leading-tight break-words">
                       {subject.name}
                     </p>
+                    {/*
+                      A barra mede lições praticadas, não acerto médio: na
+                      tela inicial a pergunta é "quanto falta", e nota média
+                      misturada com avanço não responde nenhuma das duas.
+                      O número vem escrito — barra sozinha obriga a medir a
+                      olho e some para quem enxerga pouco.
+                    */}
                     <p className="mt-1 text-sm text-content-secondary">
-                      {pluralize(subject.lessons.length, "lição", "lições")}
+                      {practiced} de {pluralize(subject.lessons.length, "lição", "lições")}
                     </p>
+                    <ProgressBar
+                      percent={total > 0 ? (practiced / total) * 100 : 0}
+                      tone="ink"
+                      size="sm"
+                      label={`${subject.name}: ${practiced} de ${total} lições praticadas`}
+                      className="mt-2"
+                    />
                   </div>
                 </Card>
               </li>

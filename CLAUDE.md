@@ -69,16 +69,25 @@ Pronto: MVP (cadastro, catálogo, prática com cronômetro, resultado com record
 
 **Site de divulgação no ar**: vitrine em `/` (com uma questão real de Sistemas Operacionais como prova do produto), `/como-funciona` (o método passo a passo) e `/materias` (catálogo com o nome de toda lição). Junto vieram `sitemap.ts`, `robots.ts` e a imagem de prévia de link (`opengraph-image.tsx`, que lê as fontes da marca de `public/fonts/*.woff` — `.woff2` não serve para gerar imagem).
 
+**Na tela inicial, cada matéria mostra uma barra de progresso** com lições praticadas sobre o total. Conta só tentativa concluída (`attempts` vem do backend com `whereNotNull('finished_at')`), e o número vem escrito ao lado da barra.
+
+**A espera antes da primeira questão é um esqueleto** (`PracticeSkeleton`, em `PracticeClient.tsx`), com a forma do cabeçalho, do enunciado e das alternativas. Era uma frase solta no branco, no instante de maior desistência da prática.
+
 **A lição retoma de onde parou** (`lib/lesson-progress.ts`, no `localStorage`): o `LessonStepper` devolve a pessoa à etapa, com aviso e saída para recomeçar, e a lista da matéria mostra "parou na etapa 4 de 11". Vale por aparelho e some se a lição mudar de número de etapas. Testes que renderizam o stepper **precisam limpar o `localStorage`** no `afterEach`, senão um teste começa no meio da lição do outro.
 
 **Progresso é dividido em abas de rota**: `/progresso` (números gerais e por tópico), `/progresso/evolucao` e `/progresso/conquistas`, com o controle segmentado em `components/ProgressTabs.tsx`. Era tudo numa tela só e ficou embolado. Ao acrescentar uma aba, mexa também no `loading.tsx` da pasta — é ele que impede o cabeçalho de piscar.
 
-Aguardando respostas do Sávio (plano do professor, ver `docs/sistemas-operacionais-mapa.md`):
-1. Onde entra o **escalonamento** (suposição: Processos e Threads, parte 2).
-2. Se os **estudos de caso** (Linux, Windows) ficam nos trabalhos.
-3. Se quer **história dos SOs e revisão de hardware** na introdução.
+**A ementa oficial resolveu as três dúvidas que estavam abertas.** Ela é a fonte de verdade da ordem do semestre:
 
-Próximas lições, na ordem das aulas: 29/09 Estrutura e arquitetura de um SO; depois Processos e Threads, Comunicação entre processos, Memória, Arquivos, Dispositivos, Virtualização. Só o que está no plano do professor (Impasses, Multiprocessadores e Segurança ficam de fora).
+> Conceitos de Sistemas Operacionais · Processos · Estados e Transições · **Escalonamento** · Comunicação e Sincronização de Processos · **Semáforos** · Gerência de Memória · Memória Virtual · Segmentação e Paginação · **Gerência de Disco** · Virtualização · **Estudos de Caso**
+
+O que ela decide: o **escalonamento é tópico próprio**, logo depois de Estados e Transições; os **estudos de caso entram na matéria**, no fim; **história dos SOs e revisão de hardware não entram**. Semáforos e Gerência de Disco são itens explícitos, e por isso ganham lição própria. Impasses, Multiprocessadores e Segurança continuam de fora.
+
+Já escritas, além das 5 primeiras: **Estrutura de um SO** (monolítico, camadas, micronúcleo, cliente-servidor, máquinas virtuais e contêineres) e **Processos: o modelo** (programa × processo, tabela de processos, PID, criação, hierarquia e término).
+
+Próximas, nesta ordem: Estados e Transições · Escalonamento · Threads · Comunicação entre processos · Semáforos · Memória · Memória Virtual · Segmentação e Paginação · Gerência de Disco · Virtualização · Estudos de Caso.
+
+**Atualizações feitas sobre o material do semestre** (a regra 4 do Guia manda corrigir o que está defasado): micronúcleo hoje é tecnologia de produção, não experimento — entrou o seL4 e o uso em carros e aviões; e contêineres entraram ao lado de máquinas virtuais, porque é o que se usa hoje e o material da disciplina não cobre.
 
 **Play Store (TWA).** O caminho está escrito em `docs/play-store.md`, com o que é do Sávio e o que é código. Pronto no código: `/privacidade` e `/excluir-conta` (páginas públicas exigidas pela loja), exclusão de conta no Perfil (`DELETE /api/me`, com confirmação em dois passos), `/.well-known/assetlinks.json` (lê `ANDROID_CERT_FINGERPRINTS`; responde 404 enquanto a variável não existir, de propósito) e o modelo do gráfico de destaque em `docs/play-store/feature-graphic.html`. Falta só o que depende do Sávio: conta de desenvolvedor, impressão digital e capturas de tela.
 

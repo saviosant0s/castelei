@@ -33,6 +33,66 @@ function sourceTitle(source: PracticeSource): string {
   return source.kind === "lesson" ? source.lessonTitle : `Simulado · ${source.subjectName}`;
 }
 
+/**
+ * A espera antes da primeira questão.
+ *
+ * Era uma frase solta no meio do branco. É o instante de maior desistência da
+ * prática — a pessoa acabou de decidir estudar e a tela parece quebrada. O
+ * esqueleto mostra a forma do que está vindo: cabeçalho, barra de progresso,
+ * enunciado e alternativas, no mesmo lugar em que vão aparecer. Quando as
+ * questões chegam, nada salta.
+ *
+ * O texto continua existindo para quem usa leitor de tela, que não enxerga
+ * forma nenhuma.
+ */
+function PracticeSkeleton({ source }: { source: PracticeSource }) {
+  // Larguras diferentes: blocos de tamanho igual parecem grade, não texto.
+  const linhas = ["w-full", "w-4/5"];
+  const alternativas = ["w-3/5", "w-2/5", "w-4/5", "w-1/2", "w-3/5"];
+
+  return (
+    <div className="mx-auto min-h-dvh max-w-md px-5 pb-40 pt-4" aria-busy="true">
+      <p className="sr-only" role="status">
+        Preparando as questões…
+      </p>
+
+      <header className="flex items-center justify-between gap-3" aria-hidden="true">
+        <Link href={backHref(source)} aria-label="Sair da prática" className="grid size-11 place-items-center rounded-full text-ink/70 hover:bg-ink/5">
+          <X className="size-6" aria-hidden="true" />
+        </Link>
+        <p className="truncate text-sm text-ink/60">{sourceTitle(source)}</p>
+        <div className="flex min-w-[5.5rem] items-center justify-end gap-1.5 font-mono text-base font-medium text-ink/40">
+          <Timer className="size-5" aria-hidden="true" /> 00:00
+        </div>
+      </header>
+
+      <div className="motion-safe:animate-pulse" aria-hidden="true">
+        <div className="mt-3 flex gap-1.5">
+          {alternativas.map((_, i) => (
+            <span key={i} className="h-1.5 flex-1 rounded-full bg-ink/15" />
+          ))}
+        </div>
+
+        <div className="mt-8 space-y-3">
+          <div className="h-4 w-2/5 rounded-pill bg-ink/10" />
+          {linhas.map((largura) => (
+            <div key={largura} className={`h-7 ${largura} rounded-pill bg-ink/10`} />
+          ))}
+        </div>
+
+        <ul className="mt-6 space-y-3">
+          {alternativas.map((largura, i) => (
+            <li key={i} className="flex min-h-14 items-center gap-3 rounded-control border-2 border-ink/10 px-4">
+              <span className="size-6 shrink-0 rounded-full bg-ink/10" />
+              <span className={`h-4 ${largura} rounded-pill bg-ink/10`} />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
 export function PracticeClient({ source }: { source: PracticeSource }) {
   const [phase, setPhase] = useState<Phase>("loading");
   const [error, setError] = useState<string | null>(null);
@@ -136,11 +196,7 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
   }
 
   if (phase === "loading") {
-    return (
-      <div className="grid min-h-dvh place-items-center px-6" aria-busy="true">
-        <p className="font-mono text-base text-ink/60">Preparando as questões…</p>
-      </div>
-    );
+    return <PracticeSkeleton source={source} />;
   }
 
   if (phase === "failed") {
