@@ -12,7 +12,7 @@ export default function ErroNoPainel({ error, reset }: { error: Error; reset: ()
       <button
         type="button"
         onClick={reset}
-        className="select-none rounded-control bg-surface-bold px-4 py-2.5 text-base font-bold text-paper shadow-lift"
+        className="select-none rounded-control bg-surface-bold px-4 py-2.5 text-base font-bold text-on-bold shadow-lift"
       >
         Tentar de novo
       </button>

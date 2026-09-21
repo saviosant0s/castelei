@@ -38,7 +38,7 @@ export function LessonVideo({ video }: Props) {
   const titulo = video.title ?? "Vídeo da lição";
 
   return (
-    <figure className="mt-6 overflow-hidden rounded-2xl bg-white p-3 shadow-lift">
+    <figure className="mt-6 overflow-hidden rounded-2xl bg-surface-raised p-3 shadow-lift">
       {id ? (
         <iframe
           // O domínio sem cookie não acompanha quem assiste. O app é de estudo,

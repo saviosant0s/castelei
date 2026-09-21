@@ -141,7 +141,7 @@ export default async function ComoFunciona() {
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <StartLink />
-          <Link href="/materias" className="btn btn-ghost border-2 border-paper/25 text-paper hover:bg-paper/10">
+          <Link href="/materias" className="btn btn-ghost border-2 border-on-bold/25 text-on-bold hover:bg-on-bold/10">
             Ver as matérias
           </Link>
         </div>

@@ -118,6 +118,13 @@ Se for expandir daqui, as opções são: aprofundar o que ficou de fora da ement
 - **A cinza continua clicável, de propósito.** O app acompanha um semestre com data marcada: quem revisa Memória na véspera da prova não pode esbarrar num cadeado por ter pulado uma lição de setembro. O cinza orienta, não tranca — por isso também não tem cadeado desenhado.
 - **O traço passa por trás dos títulos**, então o título tem fundo próprio (`.trail-mask`, em `globals.css`). Ele repete o grão do `body`: com `bg-surface` liso, o retângulo aparece como mancha clara.
 
+**Modo escuro e fundo com profundidade** (tudo em `globals.css` + `lib/theme.ts`). Duas coisas para não desfazer sem querer:
+
+- **A rampa INVERTE no escuro.** `ink` deixa de ser "grafite" e passa a ser "a cor do texto"; `paper`, "a cor do fundo". É o que faz os quase cem `text-ink/70` e `border-ink/15` já espalhados pelas telas continuarem certos sem tocar em nenhuma. O que a inversão não resolve virou papel próprio: `surface-bold` (no escuro ele se destaca por ser mais CLARO que a página), `on-bold` (texto sobre esse bloco) e **`on-accent`** (texto sobre azul, verde ou coral cheios — não muda de tema, porque as cores da marca são claras nos dois; escrito como `text-ink` clareava junto e o botão "Confirmar" ficava ilegível).
+- **O brilho do fundo termina em 560px, preso ao alto do documento.** Isso é contrato com a trilha, não gosto: o título de cada lição tapa o traço com `.trail-mask`, que é cor lisa + grão. Onde houver brilho, a máscara não bate e vira mancha. Se o brilho crescer ou virar fixo na tela, a máscara tem de crescer junto.
+
+A escolha do tema (Automático/Claro/Escuro, em `/perfil`) vive no `localStorage`, **por aparelho**, e não vai ao servidor. Sem atributo = o aparelho manda; `data-theme="light"` existe só para vencer um celular escuro. O script no `<head>` é o único script embutido do app, e está lá para a tela não piscar claro antes da hidratação.
+
 **Ao acrescentar lição, mexa em quatro lugares:** o JSON do conteúdo, a figura em `frontend/public/figuras/`, a lista de `frontend/src/lib/site-content.ts` (o teste `site-content.test.ts` reprova se esquecer) e o mapa em `docs/sistemas-operacionais-mapa.md`.
 
 **Atualizações feitas sobre o material do semestre** (a regra 4 do Guia manda corrigir o que está defasado): micronúcleo hoje é tecnologia de produção, não experimento — entrou o seL4 e o uso em carros e aviões; e contêineres entraram ao lado de máquinas virtuais, porque é o que se usa hoje e o material da disciplina não cobre.
@@ -127,7 +134,8 @@ Se for expandir daqui, as opções são: aprofundar o que ficou de fora da ement
 ## Pendências e cuidados
 
 - **`backend/composer.lock` não está versionado.** Cada deploy do Railway resolve as dependências do zero, então produção pode receber versões diferentes das testadas. Commitar o lock resolve, mas o arquivo gerado aqui veio do PHP 8.4 e o Railway não tem versão fixada (`composer.json` pede `^8.2`): confira a versão do PHP em produção antes de versionar.
-- **Ainda faltam, do plano visual:** ilustrações próprias para estados vazios e conquistas (hoje são ícones do Lucide) e modo escuro — os papéis de superfície já isolam o que mudaria.
+- **Ainda faltam, do plano visual:** ilustrações próprias para estados vazios e conquistas (hoje são ícones do Lucide).
+- **Autorização permanente do Sávio: pode subir sem perguntar.** Terminou um trabalho conferido (testes, lint, build e a tela olhada), abra o PR, mescle na `main` e acompanhe o deploy do Railway — não pare para pedir permissão. A exceção é ele dizer que naquele caso não é para subir. Isso não dispensa o resto: conferir antes, nunca subir coisa quebrada, e avisar o que foi ao ar.
 - O Sávio **edita direto no GitHub** (já fez ajustes visuais de PWA). Sempre `git fetch` e confira antes de dar push. Nunca use force push.
 - Observação sobre ajuste manual dele: `BottomNav` continua sem `aria-label`. Sugira, não altere sem pedir. (O padding de área segura duplicado foi corrigido junto com a folga da barra, a pedido dele.)
 - Não testado em celular real nem em máquinas Windows/Linux reais (os comandos vêm da documentação). O Sávio está testando o app.

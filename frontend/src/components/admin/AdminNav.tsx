@@ -25,7 +25,7 @@ export function AdminNav() {
             href={href}
             aria-current={atual ? "page" : undefined}
             className={`flex select-none items-center gap-2 rounded-pill px-4 py-2 text-base transition ${
-              atual ? "bg-surface-bold text-paper" : "bg-surface-sunken text-content-secondary hover:text-content"
+              atual ? "bg-surface-bold text-on-bold" : "bg-surface-sunken text-content-secondary hover:text-content"
             }`}
           >
             <Icon className="size-4" aria-hidden="true" />

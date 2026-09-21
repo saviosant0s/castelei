@@ -66,7 +66,7 @@ export function AdminLoginForm() {
       <button
         type="submit"
         disabled={busy}
-        className="w-full rounded-control bg-surface-bold px-4 py-3 text-base font-bold text-paper shadow-lift transition disabled:opacity-60"
+        className="w-full rounded-control bg-surface-bold px-4 py-3 text-base font-bold text-on-bold shadow-lift transition disabled:opacity-60"
       >
         {busy ? "Entrando…" : "Entrar no painel"}
       </button>

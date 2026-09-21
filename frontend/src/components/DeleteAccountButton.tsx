@@ -53,7 +53,7 @@ export function DeleteAccountButton({ guest }: { guest: boolean }) {
         <button
           type="button"
           disabled={busy}
-          className="btn w-full bg-brick text-paper hover:brightness-110"
+          className="btn w-full bg-brick text-on-bold hover:brightness-110"
           onClick={async () => {
             setBusy(true);
             setError(null);

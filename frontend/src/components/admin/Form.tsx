@@ -57,7 +57,7 @@ export function TextArea({
 type Peso = "principal" | "normal" | "perigo";
 
 const pesos: Record<Peso, string> = {
-  principal: "bg-surface-bold text-paper shadow-lift",
+  principal: "bg-surface-bold text-on-bold shadow-lift",
   normal: "bg-surface-sunken text-content",
   perigo: "bg-brick-soft text-brick",
 };

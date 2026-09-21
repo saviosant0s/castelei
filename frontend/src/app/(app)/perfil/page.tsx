@@ -4,6 +4,7 @@ import { Crown, SlidersHorizontal } from "lucide-react";
 import { DeleteAccountButton } from "@/components/DeleteAccountButton";
 import { InstallButton } from "@/components/InstallButton";
 import { LogoutButton } from "@/components/LogoutButton";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { Card } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
 import { isGuestMode } from "@/lib/proxy";
@@ -50,6 +51,14 @@ export default async function Perfil() {
           </span>
         </Card>
       )}
+
+      <section aria-labelledby="tema" className="space-y-3">
+        <h2 id="tema" className="text-2xl">Aparência</h2>
+        <ThemeToggle />
+        <p className="text-sm text-content-subtle">
+          No automático, o app acompanha o tema do seu aparelho. A escolha vale neste aparelho.
+        </p>
+      </section>
 
       <section aria-labelledby="instalar" className="space-y-3">
         <h2 id="instalar" className="text-2xl">Use como aplicativo</h2>

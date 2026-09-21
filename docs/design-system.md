@@ -56,6 +56,10 @@ precisa ser reescrita.
 **Regra:** tela nunca escreve `text-ink/60`. Pede o papel. A hierarquia é
 decidida num lugar só, em vez de a olho em cada arquivo.
 
+*(Na prática a regra não foi seguida à risca, e o modo escuro conviveu com
+isso: ver "A rampa inverte", abaixo. Mas continue pedindo o papel — quem
+escreve `bg-white` em vez de `bg-surface-raised` fura os dois temas.)*
+
 ## Escala de raio
 
 O arredondamento é assinatura visual, então é escala e não improviso:
@@ -164,6 +168,61 @@ Detalhes que valem lembrar:
 - `sitemap.ts` e `robots.ts` listam só as páginas públicas. As telas de estudo
   são bloqueadas: indexá-las só geraria resultado de busca que leva ao login.
 
+## Modo escuro
+
+Mora inteiro em `globals.css`. **Nenhuma tela muda** — é o que a separação
+entre rampa e papel sempre prometeu, e só funciona por causa de uma escolha
+que vale entender.
+
+### A rampa inverte
+
+No claro, `ink` é o grafite do texto e `paper` é o fundo. **No escuro os dois
+trocam de lado.** Com isso, os quase cem `text-ink/70` e `border-ink/15`
+espalhados pelas telas continuam certos sozinhos: viram texto claro e borda
+clara sobre fundo escuro.
+
+A alternativa seria converter todos esses usos em papéis. Seriam umas noventa
+edições, com risco em cada uma, para chegar ao mesmo resultado visual.
+
+O que a inversão **não** resolve virou papel próprio:
+
+| Papel | Por que não dava para inverter |
+|---|---|
+| `surface-bold` | No claro ele se destaca por ser escuro numa página clara. No escuro isso não existe, então passa a se destacar por **elevação**: fica mais claro que a página. |
+| `on-bold` | O texto em cima desse bloco. Era `text-paper`, e teria virado escuro sobre escuro. |
+| `on-accent` | Texto sobre azul, verde ou coral **cheios**. Não muda entre os temas: as cores da marca são claras nos dois, então o texto sobre elas é escuro sempre. Escrito como `text-ink`, clareava junto e o botão "Confirmar" ficava ilegível. |
+
+### Quem escolhe
+
+Três opções em `/perfil` (`components/ThemeToggle.tsx`): Automático, Claro,
+Escuro. O padrão é o automático — quem já pôs o celular no escuro não deve
+precisar repetir a escolha.
+
+A escolha vive no `localStorage`, **por aparelho**, e não vai ao servidor: é
+preferência de leitura, como a retomada da lição. Dois seletores em CSS fazem
+o trabalho — `@media (prefers-color-scheme: dark)` para o automático e
+`:root[data-theme="dark"]` para a escolha manual. O `data-theme="light"`
+existe só para uma coisa: vencer um aparelho no escuro quando a pessoa pediu
+claro. Por isso o automático **apaga** o atributo em vez de escrever "auto".
+
+O script no `<head>` (`THEME_SCRIPT`, em `lib/theme.ts`) é o único script
+embutido do app. Sem ele, quem pediu escuro veria a tela clara piscar antes
+da hidratação.
+
+### O fundo
+
+Um brilho de azul-céu no alto da página, mais o grão de sempre. O chapado puro
+fazia a tela parecer documento; o brilho dá profundidade sem virar assunto.
+
+**Ele termina em 560px e é preso ao alto do documento** — e isso é contrato,
+não gosto. O título de cada lição na trilha tapa o traço com `.trail-mask`,
+que é cor lisa + grão. Onde houver brilho, a máscara não bate e aparece como
+mancha clara. Se o brilho crescer ou virar fixo na tela, a máscara precisa
+crescer junto.
+
+Nada de roxo ou índigo aqui, pela regra 4: é a assinatura visual dos produtos
+de IA. Só azul-céu, a cor de ação da marca.
+
 ## Regras que valem para toda tela nova
 
 1. **Ícones em SVG, nunca emoji na interface.** Emoji muda de cara em cada
@@ -191,7 +250,8 @@ Itens do plano que o sistema ainda não cobre:
 
 - **Ilustrações próprias** para estados vazios, onboarding e conquistas. Hoje
   são ícones do Lucide — resolvem, mas não têm personalidade.
-- **Modo escuro.** Os papéis de superfície já isolam o que precisaria mudar,
-  então é trocar os valores, não caçar cor pelas telas.
 - **Textura de grão** existe só no fundo do `body`; poderia valer nos painéis
   escuros.
+- **O manifesto do PWA tem uma cor só.** `theme_color` e `background_color`
+  são estáticos, então a tela de abertura do Android instalado é sempre a
+  clara. A barra de status já acompanha os dois temas.

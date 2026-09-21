@@ -55,7 +55,7 @@ export default async function PainelInicio() {
       <div className="flex flex-wrap gap-3">
         <Link
           href="/admin/importar"
-          className="select-none rounded-control bg-surface-bold px-4 py-2.5 text-base font-bold text-paper shadow-lift"
+          className="select-none rounded-control bg-surface-bold px-4 py-2.5 text-base font-bold text-on-bold shadow-lift"
         >
           Importar matéria
         </Link>

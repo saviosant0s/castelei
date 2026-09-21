@@ -36,7 +36,7 @@ export default async function PainelLayout({ children }: { children: React.React
         <div className="flex flex-wrap gap-3">
           <Link
             href="/admin/entrar"
-            className="rounded-control bg-surface-bold px-5 py-3 text-base font-bold text-paper shadow-lift"
+            className="rounded-control bg-surface-bold px-5 py-3 text-base font-bold text-on-bold shadow-lift"
           >
             Entrar com outra conta
           </Link>

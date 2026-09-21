@@ -53,7 +53,7 @@ export default async function Conquistas() {
             <li key={day.date} className="flex flex-col items-center gap-1.5">
               <span
                 className={`grid size-9 place-items-center rounded-pill ${
-                  day.studied ? "bg-coral text-ink" : "border-2 border-ink/20"
+                  day.studied ? "bg-coral text-on-accent" : "border-2 border-ink/20"
                 } ${i === 6 ? "ring-2 ring-ink/40 ring-offset-2 ring-offset-coral-soft" : ""}`}
               >
                 {day.studied && <Flame className="size-4" aria-hidden="true" />}
@@ -90,7 +90,7 @@ export default async function Conquistas() {
               >
                 <span
                   className={`grid size-11 place-items-center rounded-pill ${
-                    badge.earned ? "bg-sage text-ink" : "bg-ink/10 text-ink/50"
+                    badge.earned ? "bg-sage text-on-accent" : "bg-ink/10 text-ink/50"
                   }`}
                 >
                   {badge.earned ? <BadgeIcon badgeKey={badge.key} /> : <Lock className="size-5" aria-hidden="true" />}
