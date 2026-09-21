@@ -65,6 +65,9 @@ class ProgressController extends Controller
                 'lesson_title' => $last->lesson?->title ?? 'Simulado',
                 'subject_id' => $last->subject_id,
                 'subject_name' => $last->lesson?->subject->name ?? $last->subject?->name,
+                // O app precisa do slug para saber para onde levar quem voltar
+                // de um simulado: ali não existe lição para onde apontar.
+                'subject_slug' => $last->lesson?->subject->slug ?? $last->subject?->slug,
                 'finished' => $last->finished_at !== null,
                 'percent' => $last->finished_at !== null
                     ? (int) round($last->correct_count / max($last->total_questions, 1) * 100)

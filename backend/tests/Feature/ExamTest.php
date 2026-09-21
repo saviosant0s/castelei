@@ -235,7 +235,25 @@ class ExamTest extends TestCase
             ->assertJsonPath('evolution.0.kind', 'exam')
             ->assertJsonPath('evolution.0.percent', 100)
             ->assertJsonPath('last_attempt.kind', 'exam')
-            ->assertJsonPath('last_attempt.subject_id', $subject->id);
+            ->assertJsonPath('last_attempt.subject_id', $subject->id)
+            // Sem lição para onde voltar, o app precisa do slug da matéria: era
+            // isto que faltava e fazia a tela inicial montar "/licao/null".
+            ->assertJsonPath('last_attempt.lesson_id', null)
+            ->assertJsonPath('last_attempt.subject_slug', $subject->slug);
+    }
+
+    public function test_id_que_nao_e_numero_da_404_em_vez_de_derrubar(): void
+    {
+        Sanctum::actingAs(User::factory()->create(['plan' => 'pro']));
+
+        /*
+        | No Postgres um id de texto explode no banco (erro 500); no SQLite do
+        | dev passa batido. A rota exige número, então o erro vira "não existe"
+        | em qualquer banco.
+        */
+        $this->getJson('/api/lessons/null')->assertNotFound();
+        $this->postJson('/api/lessons/null/attempts')->assertNotFound();
+        $this->postJson('/api/attempts/null/finish')->assertNotFound();
     }
 
     /** Responde todo o simulado corretamente, gastando $seconds por questão. */

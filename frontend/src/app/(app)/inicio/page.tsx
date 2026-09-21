@@ -28,6 +28,19 @@ export default async function Inicio() {
   const gami = progress.gamification;
   const firstLesson = subjects[0]?.lessons[0];
 
+  /*
+  | O simulado atravessa várias lições, então não tem `lesson_id` — quem volta
+  | dele vai para a matéria. Montar `/licao/${lesson_id}` às cegas gerava
+  | "/licao/null" e derrubava a tela com erro 500.
+  */
+  const continueHref = last
+    ? last.lesson_id !== null
+      ? `/licao/${last.lesson_id}`
+      : last.subject_slug !== null
+        ? `/materia/${last.subject_slug}`
+        : null
+    : null;
+
   return (
     <div className="space-y-10">
       <header className="flex items-start justify-between gap-4">
@@ -61,8 +74,8 @@ export default async function Inicio() {
 
       <section aria-labelledby="continue">
         <h2 id="continue" className="sr-only">Continuar</h2>
-        {last ? (
-          <Card tone="bold" size="lg" radius="panel" href={`/licao/${last.lesson_id}`}>
+        {last && continueHref ? (
+          <Card tone="bold" size="lg" radius="panel" href={continueHref}>
             <p className="label-mono !text-paper/60">Continue de onde parou</p>
             <p className="mt-3 font-display text-2xl font-bold">{last.lesson_title}</p>
             <p className="mt-1 text-base on-bold-secondary">
@@ -70,7 +83,8 @@ export default async function Inicio() {
               {last.percent !== null ? ` · último resultado ${last.percent}%` : " · você não terminou a última prática"}
             </p>
             <span className="mt-5 inline-flex items-center gap-2 font-bold text-sky">
-              Abrir lição <ArrowRight className="size-5" aria-hidden="true" />
+              {last.kind === "exam" ? "Abrir matéria" : "Abrir lição"}{" "}
+              <ArrowRight className="size-5" aria-hidden="true" />
             </span>
           </Card>
         ) : firstLesson ? (

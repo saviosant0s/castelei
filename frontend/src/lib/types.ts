@@ -187,6 +187,8 @@ export interface ProgressResponse {
     lesson_title: string;
     subject_id: number | null;
     subject_name: string | null;
+    /** para onde voltar quando a última prática foi um simulado (não há lição) */
+    subject_slug: string | null;
     finished: boolean;
     percent: number | null;
   } | null;

@@ -15,12 +15,19 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/me', [AuthController::class, 'me']);
 
     Route::get('/subjects', [CatalogController::class, 'subjects']);
-    Route::get('/lessons/{lesson}', [CatalogController::class, 'lesson']);
 
-    Route::post('/lessons/{lesson}/attempts', [AttemptController::class, 'store']);
-    Route::post('/subjects/{subject}/exams', [ExamController::class, 'store']);
-    Route::post('/attempts/{attempt}/answers', [AttemptController::class, 'answer']);
-    Route::post('/attempts/{attempt}/finish', [AttemptController::class, 'finish']);
+    /*
+    | `whereNumber` não é capricho: sem ele, um id que não é número (um "null"
+    | montado por engano numa URL) chega ao Postgres como texto e vira erro 500
+    | em vez de "não encontrado". No SQLite do dev isso passa batido, então o
+    | problema só aparece em produção.
+    */
+    Route::get('/lessons/{lesson}', [CatalogController::class, 'lesson'])->whereNumber('lesson');
+
+    Route::post('/lessons/{lesson}/attempts', [AttemptController::class, 'store'])->whereNumber('lesson');
+    Route::post('/subjects/{subject}/exams', [ExamController::class, 'store'])->whereNumber('subject');
+    Route::post('/attempts/{attempt}/answers', [AttemptController::class, 'answer'])->whereNumber('attempt');
+    Route::post('/attempts/{attempt}/finish', [AttemptController::class, 'finish'])->whereNumber('attempt');
 
     Route::get('/progress', [ProgressController::class, 'index']);
 });
