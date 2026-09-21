@@ -13,6 +13,7 @@ export interface AdminSubject {
   slug: string;
   name: string;
   description: string | null;
+  exam_date: string | null;
   position: number;
   origin: SubjectOrigin;
   lessons_count: number;
@@ -35,6 +36,7 @@ export interface AdminSubjectDetail {
   slug: string;
   name: string;
   description: string | null;
+  exam_date: string | null;
   position: number;
   origin: SubjectOrigin;
   lessons: AdminLessonRow[];

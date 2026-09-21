@@ -103,6 +103,8 @@ class ContentImporter
             $report->subjectCreated = ! $subject->exists;
             $subject->name = $data['name'];
             $subject->description = $data['description'] ?? null;
+            // Prazo da matéria: é dele que sai o intervalo entre revisões.
+            $subject->exam_date = $this->examDate($data['exam_date'] ?? null);
             $subject->origin = $origin;
 
             if ($position !== null) {
@@ -198,6 +200,17 @@ class ContentImporter
         $nome = trim((string) ($value ?? ''));
 
         return $nome === '' ? null : $nome;
+    }
+
+    /**
+     * Data da prova da matéria. Vazio vira nulo: matéria sem prova marcada cai
+     * no plano de revisão de longo prazo em vez de travar.
+     */
+    private function examDate(mixed $value): ?string
+    {
+        $data = trim((string) ($value ?? ''));
+
+        return $data === '' ? null : $data;
     }
 
     /** @param  list<string>  $slugs  as lições que vieram no arquivo */

@@ -38,6 +38,12 @@ class CatalogController extends Controller
                 'slug' => $subject->slug,
                 'name' => $subject->name,
                 'description' => $subject->description,
+                /*
+                | Data da prova do semestre. A tela usa para dizer quanto falta,
+                | e o agendamento de revisão usa como prazo — ver
+                | docs/revisao-espacada.md.
+                */
+                'exam_date' => $subject->exam_date?->format('Y-m-d'),
                 'exam' => $this->examBlock($subject, $user->hasExam(), $minForExam, $examTarget),
                 'lessons' => $subject->lessons->map(function (Lesson $lesson) use ($stats, $limit) {
                     $stat = $stats->get($lesson->id);

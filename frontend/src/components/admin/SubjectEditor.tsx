@@ -54,6 +54,14 @@ export function SubjectEditor({ subject }: { subject: AdminSubjectDetail }) {
             error={campos.description?.[0]}
           />
           <TextField
+            label="Data da prova"
+            name="exam_date"
+            type="date"
+            defaultValue={subject.exam_date ?? ""}
+            error={campos.exam_date?.[0]}
+            hint="Opcional, mas é ela que define o ritmo das revisões: o intervalo entre uma revisão e a próxima é uma fatia do tempo que falta até esta data. Sem ela, a matéria entra num plano de longo prazo."
+          />
+          <TextField
             label="Slug"
             value={subject.slug}
             disabled

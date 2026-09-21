@@ -9,7 +9,7 @@ O planejamento completo, com o **Guia Editorial de Conteúdo**, está em `docs/p
 - `backend/`: API Laravel 12 (Sanctum, PostgreSQL em produção, SQLite em dev e testes).
 - `frontend/`: Next.js 16 (App Router), React 19, Tailwind 4. É um PWA.
 - `scripts/lint-content.mjs`: verificador do Guia Editorial (roda no conteúdo, não no código).
-- `docs/`: planejamento, **design system (`design-system.md`)**, guia de deploy (`deploy-railway.md`), **lançamento na Play Store (`play-store.md`)**, mapa das aulas de Sistemas Operacionais (`sistemas-operacionais-mapa.md`), **painel de conteúdo (`painel-admin.md`)**.
+- `docs/`: planejamento, **design system (`design-system.md`)**, guia de deploy (`deploy-railway.md`), **lançamento na Play Store (`play-store.md`)**, mapa das aulas de Sistemas Operacionais (`sistemas-operacionais-mapa.md`), **painel de conteúdo (`painel-admin.md`)**, **revisão espaçada e a ciência por trás dela (`revisao-espacada.md`)**.
 - `frontend/src/components/ui/`: os componentes do design system (`Card`, `Callout`, `Pill`, `Stat`, `ProgressBar`, `ListRow`, `EmptyState`). **Leia `docs/design-system.md` antes de mexer em tela.**
 - Conteúdo das lições: `backend/database/seeders/content/*.json` (**fonte de verdade**). Figuras SVG: `frontend/public/figuras/`.
 
@@ -136,6 +136,18 @@ Se for expandir daqui, as opções são: aprofundar o que ficou de fora da ement
 
 A escolha do tema (Automático/Claro/Escuro, em `/perfil`) e a do som vivem no `localStorage`, **por aparelho**, e não vão ao servidor. Sem atributo = o aparelho manda; `data-theme="light"` existe só para vencer um celular escuro. O script no `<head>` é o único script embutido do app, e está lá para a tela não piscar claro antes da hidratação.
 
+**A revisão espaçada é a primeira parte do app que tem opinião sobre o que estudar** (`lib/review.ts` na tela, motor em `Support/Review/Spacing.php`). Leia `docs/revisao-espacada.md` antes de mexer em qualquer número — eles têm origem medida. O essencial:
+
+- **Não é o algoritmo do Anki, e isso é a decisão.** SM-2 e FSRS resolvem "lembrar para sempre", sem data. O Castelei tem prova marcada (15/12), e para prazo conhecido existe resultado direto: **Cepeda et al. (2008)** mediram, com 1.354 pessoas, que o intervalo ideal é uma **proporção do tempo que falta até o teste** — 10 a 20% para horizonte de semanas a meses. Usamos 15%.
+- **A consequência é o produto inteiro:** o cronograma se comprime sozinho conforme a prova chega. Faltam 90 dias, a lição volta em 14; faltam 30, em 5; faltam 3, amanhã. Nenhum app de flashcard faz isso porque nenhum sabe a data da prova.
+- **A crista é larga e assimétrica** (é o que "ridgeline" quer dizer no título do artigo): errar para mais custa bem menos que errar para menos. Por isso o cálculo arredonda para CIMA — e por isso **não precisamos de FSRS**: precisão não compra nada em cima de um platô.
+- **A lição guarda a data, a matéria guarda a prova** (`subjects.exam_date`, opcional). Sem data, a matéria cai numa escada fixa de 1, 3, 7, 16, 30 dias, que **para** no último degrau: intervalo que só cresce arquiva a lição.
+- **Os fatores de acerto são calibragem nossa, não estudo** (0,4 abaixo de 50%; 1,3 acima de 90%). Está escrito assim de propósito na documentação: se for afinar alguma coisa, afine isso, não a proporção de 15%.
+- **A revisão abre o Modo Prova, nunca a lição.** Roediger & Karpicke (2006): 61% contra 40% de retenção após uma semana para quem pratica recuperação em vez de reler. O app já fazia certo; faltava o agendamento.
+- **Só agenda na PRIMEIRA conclusão da tentativa.** Recarregar a tela de resultado é a mesma prática — reagendar ali daria um dia de folga a cada F5. Um teste trava isso.
+- **O atraso não é vermelho.** Vermelho quer dizer erro no Castelei, e estar atrasado numa revisão não é erro: é o motivo de o app existir.
+- **Nada é travado**, mesma decisão do nó cinza sem cadeado: a fila sugere, a trilha continua aberta.
+
 **Ao acrescentar lição, mexa em quatro lugares:** o JSON do conteúdo, a figura em `frontend/public/figuras/`, a lista de `frontend/src/lib/site-content.ts` (o teste `site-content.test.ts` reprova se esquecer) e o mapa em `docs/sistemas-operacionais-mapa.md`.
 
 **Atualizações feitas sobre o material do semestre** (a regra 4 do Guia manda corrigir o que está defasado): micronúcleo hoje é tecnologia de produção, não experimento — entrou o seL4 e o uso em carros e aviões; e contêineres entraram ao lado de máquinas virtuais, porque é o que se usa hoje e o material da disciplina não cobre.
@@ -146,6 +158,7 @@ A escolha do tema (Automático/Claro/Escuro, em `/perfil`) e a do som vivem no `
 
 - **`backend/composer.lock` não está versionado.** Cada deploy do Railway resolve as dependências do zero, então produção pode receber versões diferentes das testadas. Commitar o lock resolve, mas o arquivo gerado aqui veio do PHP 8.4 e o Railway não tem versão fixada (`composer.json` pede `^8.2`): confira a versão do PHP em produção antes de versionar.
 - **Ainda faltam, do plano visual:** ilustrações próprias para estados vazios e conquistas (hoje são ícones do Lucide).
+- **Ainda não funciona offline de verdade.** O `sw.js` cacheia estáticos e mostra `/offline.html`; cada resposta do Modo Prova exige rede. Para um aluno no ônibus, isso é o buraco mais caro que sobrou.
 - **Autorização permanente do Sávio: pode subir sem perguntar.** Terminou um trabalho conferido (testes, lint, build e a tela olhada), abra o PR, mescle na `main` e acompanhe o deploy do Railway — não pare para pedir permissão. A exceção é ele dizer que naquele caso não é para subir. Isso não dispensa o resto: conferir antes, nunca subir coisa quebrada, e avisar o que foi ao ar.
 - O Sávio **edita direto no GitHub** (já fez ajustes visuais de PWA). Sempre `git fetch` e confira antes de dar push. Nunca use force push.
 - Observação sobre ajuste manual dele: `BottomNav` continua sem `aria-label`. Sugira, não altere sem pedir. (O padding de área segura duplicado foi corrigido junto com a folga da barra, a pedido dele.)

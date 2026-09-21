@@ -9,6 +9,18 @@ class Subject extends Model
 {
     protected $guarded = [];
 
+    protected function casts(): array
+    {
+        return [
+            /*
+            | `date:Y-m-d` e não `date`: a prova é um dia do calendário, não um
+            | instante. Sem o formato, a API devolveria "2026-12-15T00:00:00Z" e
+            | quem lesse isso em São Paulo veria 14/12.
+            */
+            'exam_date' => 'date:Y-m-d',
+        ];
+    }
+
     public function lessons(): HasMany
     {
         return $this->hasMany(Lesson::class)->orderBy('position');
