@@ -9,7 +9,7 @@ O planejamento completo, com o **Guia Editorial de Conteúdo**, está em `docs/p
 - `backend/`: API Laravel 12 (Sanctum, PostgreSQL em produção, SQLite em dev e testes).
 - `frontend/`: Next.js 16 (App Router), React 19, Tailwind 4. É um PWA.
 - `scripts/lint-content.mjs`: verificador do Guia Editorial (roda no conteúdo, não no código).
-- `docs/`: planejamento, **design system (`design-system.md`)**, guia de deploy (`deploy-railway.md`), mapa das aulas de Sistemas Operacionais (`sistemas-operacionais-mapa.md`).
+- `docs/`: planejamento, **design system (`design-system.md`)**, guia de deploy (`deploy-railway.md`), **lançamento na Play Store (`play-store.md`)**, mapa das aulas de Sistemas Operacionais (`sistemas-operacionais-mapa.md`).
 - `frontend/src/components/ui/`: os componentes do design system (`Card`, `Callout`, `Pill`, `Stat`, `ProgressBar`, `ListRow`, `EmptyState`). **Leia `docs/design-system.md` antes de mexer em tela.**
 - Conteúdo das lições: `backend/database/seeders/content/*.json` (**fonte de verdade**). Figuras SVG: `frontend/public/figuras/`.
 
@@ -57,7 +57,7 @@ Projeto `castelei` com três serviços: `Postgres`, `backend` (Root Directory `/
 
 - Frontend: `https://frontend-production-3c7da.up.railway.app`. Backend: `https://backend-production-b5a94.up.railway.app`.
 - Variáveis do backend: `APP_KEY`, `APP_ENV=production`, `APP_DEBUG=false`, `APP_URL`, `DB_CONNECTION=pgsql`, `DB_URL=${{Postgres.DATABASE_URL}}`, `LOG_CHANNEL=stderr`, `SESSION_DRIVER=array`, `CACHE_STORE=database`, `GAMIFICATION_FOR_ALL=true`.
-- Variáveis do frontend: `API_URL` (domínio público do backend, terminando em `/api`), `GUEST_MODE=true`.
+- Variáveis do frontend: `API_URL` (domínio público do backend, terminando em `/api`), `GUEST_MODE=true`. Opcionais: `CONTACT_EMAIL` (aparece em `/privacidade`), `ANDROID_CERT_FINGERPRINTS` e `ANDROID_PACKAGE_NAME` (Play Store).
 - Nunca commite segredos. Não versione `.env`.
 
 ## Estado atual
@@ -74,6 +74,8 @@ Aguardando respostas do Sávio (plano do professor, ver `docs/sistemas-operacion
 3. Se quer **história dos SOs e revisão de hardware** na introdução.
 
 Próximas lições, na ordem das aulas: 29/09 Estrutura e arquitetura de um SO; depois Processos e Threads, Comunicação entre processos, Memória, Arquivos, Dispositivos, Virtualização. Só o que está no plano do professor (Impasses, Multiprocessadores e Segurança ficam de fora).
+
+**Play Store (TWA).** O caminho está escrito em `docs/play-store.md`, com o que é do Sávio e o que é código. Pronto no código: `/privacidade` (página pública, exigida pela loja), `/.well-known/assetlinks.json` (lê `ANDROID_CERT_FINGERPRINTS`; responde 404 enquanto a variável não existir, de propósito) e o modelo do gráfico de destaque em `docs/play-store/feature-graphic.html`. **Falta no código:** tela de excluir a conta — a Play cobra um caminho de exclusão e a política já promete o direito.
 
 ## Pendências e cuidados
 

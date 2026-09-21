@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Crown } from "lucide-react";
 import { InstallButton } from "@/components/InstallButton";
 import { LogoutButton } from "@/components/LogoutButton";
@@ -44,6 +45,13 @@ export default async function Perfil() {
       </section>
 
       {!guest && <LogoutButton />}
+
+      {/* A Play Store espera a política acessível também de dentro do app. */}
+      <footer className="pt-2">
+        <Link href="/privacidade" className="text-base text-content-subtle underline underline-offset-4">
+          Política de Privacidade
+        </Link>
+      </footer>
     </div>
   );
 }
