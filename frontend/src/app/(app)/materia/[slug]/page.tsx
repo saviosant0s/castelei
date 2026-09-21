@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ChevronRight, ClipboardCheck, Crown } from "lucide-react";
+import { LessonSpot } from "@/components/LessonSpot";
 import { Callout, Card, ListRow } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
 import { pluralize } from "@/lib/format";
@@ -56,7 +57,10 @@ export default async function MateriaPage({ params }: { params: Promise<{ slug: 
               meta={
                 <>
                   {pluralize(lesson.questions_available, "questão", "questões")}
-                  {lesson.best_percent !== null ? ` · melhor: ${lesson.best_percent}%` : " · ainda não praticada"}
+                  {lesson.best_percent !== null && ` · melhor: ${lesson.best_percent}%`}
+                  {/* "ainda não praticada" sai daqui: quem parou no meio da
+                      leitura já começou, e as duas frases se contradizem. */}
+                  <LessonSpot lessonId={lesson.id} practiced={lesson.best_percent !== null} />
                 </>
               }
             />

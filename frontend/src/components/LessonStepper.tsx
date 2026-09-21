@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, BookOpen, Check, Lightbulb, Play, Sparkles, Target, X, type LucideIcon } from "lucide-react";
 import { pluralize } from "@/lib/format";
+import { clearSpot, saveSpot, useSpot } from "@/lib/lesson-progress";
 import type { LessonDetail, StepKind } from "@/lib/types";
 
 const KIND: Record<StepKind, { label: string; icon: LucideIcon; chip: string }> = {
@@ -17,28 +18,78 @@ const KIND: Record<StepKind, { label: string; icon: LucideIcon; chip: string }> 
 /** A lição, uma ideia por tela. */
 export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
   const steps = lesson.steps;
-  const [index, setIndex] = useState(0);
+
+  /*
+  | Retomar de onde parou.
+  |
+  | A etapa salva não vira estado: ela é lida e usada como ponto de partida
+  | enquanto a pessoa não tiver escolhido nenhuma etapa nesta visita. Assim a
+  | retomada não depende de um efeito que corrige o estado depois de montar —
+  | o que causaria uma renderização em cascata e um pulo visível na tela.
+  |
+  | Só vale se a lição continua com o mesmo tamanho. Se o conteúdo foi
+  | reescrito e ganhou ou perdeu etapas, a etapa 7 de antes não é a etapa 7
+  | de agora, e devolver a pessoa ao meio do texto errado é pior do que
+  | recomeçar.
+  */
+  const saved = useSpot(lesson.id);
+  const resumeAt = saved && saved.total === steps.length ? saved.step : null;
+
+  /** A etapa escolhida nesta visita. `null` = ainda não mexeu. */
+  const [chosen, setChosen] = useState<number | null>(null);
+  const index = chosen ?? resumeAt ?? 0;
+
   const step = steps[index];
   const isFirst = index === 0;
   const isLast = index === steps.length - 1;
+  /** O aviso da retomada some assim que a pessoa avança: já não é novidade. */
+  const showResumed = chosen === null && resumeAt !== null;
 
-  const next = () => setIndex((i) => Math.min(i + 1, steps.length - 1));
-  const back = () => setIndex((i) => Math.max(i - 1, 0));
+  /*
+  | Andar pela lição.
+  |
+  | A forma funcional parte de `chosen ?? resumeAt ?? 0`, e não de `index`,
+  | porque o atalho de teclado vive dentro de um efeito: sem isso ele
+  | enxergaria o índice da renderização em que foi registrado.
+  */
+  const move = useCallback(
+    (delta: number) =>
+      setChosen((current) => {
+        const from = current ?? resumeAt ?? 0;
+        return Math.min(Math.max(from + delta, 0), steps.length - 1);
+      }),
+    [resumeAt, steps.length],
+  );
+
+  const next = () => move(1);
+  const back = () => move(-1);
 
   // Cada etapa começa no topo da tela.
   useEffect(() => {
     window.scrollTo({ top: 0 });
   }, [index]);
 
+  /*
+  | Só grava o que a pessoa realmente navegou.
+  |
+  | Gravar `index` gravaria também o zero da primeira renderização — aquela em
+  | que a etapa salva ainda não foi lida —, e o zero apaga a marca. Quem abre
+  | a lição e sai sem tocar em nada mantém onde estava.
+  */
+  useEffect(() => {
+    if (chosen === null) return;
+    saveSpot(lesson.id, chosen, steps.length);
+  }, [lesson.id, chosen, steps.length]);
+
   // Setas do teclado, para quem estuda no computador.
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
-      if (event.key === "ArrowRight") setIndex((i) => Math.min(i + 1, steps.length - 1));
-      if (event.key === "ArrowLeft") setIndex((i) => Math.max(i - 1, 0));
+      if (event.key === "ArrowRight") move(1);
+      if (event.key === "ArrowLeft") move(-1);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [steps.length]);
+  }, [move]);
 
   if (!step) return null;
   const meta = KIND[step.kind];
@@ -74,6 +125,27 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
           <span key={i} className={`h-1.5 flex-1 rounded-full transition-colors ${i < index ? "bg-ink" : i === index ? "bg-sky" : "bg-ink/15"}`} />
         ))}
       </div>
+
+      {/*
+      | Retomar sem avisar é desorientador: a pessoa abre a lição e o texto
+      | está no meio, sem explicação. O aviso conta o que aconteceu e deixa a
+      | saída à mão. Some assim que ela avança, porque aí já não é novidade.
+      */}
+      {showResumed && (
+        <p className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 rounded-control bg-sky-soft px-4 py-2.5 text-sm">
+          <span>Você tinha parado aqui.</span>
+          <button
+            type="button"
+            onClick={() => {
+              clearSpot(lesson.id);
+              setChosen(0);
+            }}
+            className="min-h-11 font-bold underline underline-offset-4"
+          >
+            Começar do início
+          </button>
+        </p>
+      )}
 
       <p className="mt-8 text-sm text-ink/60">{lesson.title}</p>
 

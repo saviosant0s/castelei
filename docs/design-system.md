@@ -107,6 +107,13 @@ navegador. O que sustenta isso hoje:
   copiar um trecho é legítimo.
 - **Atalhos no manifesto.** Segurar o ícone na tela inicial abre "Continuar
   estudando" e "Meu progresso", como em app nativo.
+- **A lição lembra onde você parou.** `lib/lesson-progress.ts` guarda a etapa
+  no `localStorage` e `LessonStepper` devolve a pessoa a ela — com aviso na
+  tela e saída para recomeçar, porque abrir a lição no meio sem explicação
+  desorienta. Na lista da matéria isso vira "parou na etapa 4 de 11"
+  (`components/LessonSpot.tsx`). É conveniência de leitura, não dado de
+  estudo: o que conta para progresso são as questões, e isso vive no servidor.
+  Vale por aparelho, e a marca é ignorada se a lição mudar de tamanho.
 - **Uma tela responde uma pergunta.** Quando uma tela começa a acumular
   assuntos, ela vira abas de rota — ver `components/ProgressTabs.tsx`. Cada aba
   é uma rota de verdade, então o botão "voltar" do Android funciona e o link

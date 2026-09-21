@@ -23,7 +23,13 @@ const lesson: LessonDetail = {
 
 
 window.scrollTo = vi.fn() as unknown as typeof window.scrollTo; // o jsdom não implementa scrollTo
-afterEach(cleanup);
+
+afterEach(() => {
+  cleanup();
+  // A lição agora guarda onde a pessoa parou. Sem limpar, um teste que avança
+  // faria o próximo começar no meio da lição.
+  window.localStorage.clear();
+});
 
 describe("LessonStepper", () => {
   it("começa na primeira etapa, com a palavra nova em destaque e sem botão de voltar", () => {
@@ -147,5 +153,64 @@ describe("LessonStepper", () => {
     expect(screen.getAllByRole("row")).toHaveLength(3);
     await user.keyboard("{ArrowRight}");
     expect(screen.queryByRole("table")).toBeNull();
+  });
+
+  describe("retomar de onde parou", () => {
+    it("guarda a etapa e devolve a pessoa a ela, avisando", async () => {
+      const user = userEvent.setup();
+      const first = render(<LessonStepper lesson={lesson} />);
+      await user.click(screen.getByRole("button", { name: /continuar/i }));
+      expect(screen.getByText("Etapa 2 de 4")).toBeTruthy();
+      first.unmount();
+
+      render(<LessonStepper lesson={lesson} />);
+
+      expect(screen.getByText("Etapa 2 de 4")).toBeTruthy();
+      expect(screen.getByText("Você tinha parado aqui.")).toBeTruthy();
+    });
+
+    it("o aviso some assim que a pessoa avança", async () => {
+      const user = userEvent.setup();
+      window.localStorage.setItem("castelei:licao:7:etapa", "1/4");
+      render(<LessonStepper lesson={lesson} />);
+      expect(screen.getByText("Você tinha parado aqui.")).toBeTruthy();
+
+      await user.click(screen.getByRole("button", { name: /continuar/i }));
+
+      expect(screen.queryByText("Você tinha parado aqui.")).toBeNull();
+    });
+
+    it("dá a saída para recomeçar, e a lição não volta a retomar", async () => {
+      const user = userEvent.setup();
+      window.localStorage.setItem("castelei:licao:7:etapa", "2/4");
+      const first = render(<LessonStepper lesson={lesson} />);
+
+      await user.click(screen.getByRole("button", { name: /começar do início/i }));
+      expect(screen.getByText("Etapa 1 de 4")).toBeTruthy();
+      first.unmount();
+
+      render(<LessonStepper lesson={lesson} />);
+      expect(screen.getByText("Etapa 1 de 4")).toBeTruthy();
+      expect(screen.queryByText("Você tinha parado aqui.")).toBeNull();
+    });
+
+    it("ignora a marca quando a lição mudou de tamanho", () => {
+      // Etapa 7 de uma lição de 11 não é etapa 7 de uma lição de 4.
+      window.localStorage.setItem("castelei:licao:7:etapa", "7/11");
+      render(<LessonStepper lesson={lesson} />);
+
+      expect(screen.getByText("Etapa 1 de 4")).toBeTruthy();
+    });
+
+    it("esquece a marca quando a pessoa chega ao fim da lição", async () => {
+      const user = userEvent.setup();
+      window.localStorage.setItem("castelei:licao:7:etapa", "2/4");
+      render(<LessonStepper lesson={lesson} />);
+
+      await user.click(screen.getByRole("button", { name: /continuar/i }));
+
+      expect(screen.getByText("Etapa 4 de 4")).toBeTruthy();
+      expect(window.localStorage.getItem("castelei:licao:7:etapa")).toBeNull();
+    });
   });
 });
