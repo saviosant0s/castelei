@@ -4,6 +4,7 @@ import { Crown, SlidersHorizontal } from "lucide-react";
 import { DeleteAccountButton } from "@/components/DeleteAccountButton";
 import { InstallButton } from "@/components/InstallButton";
 import { LogoutButton } from "@/components/LogoutButton";
+import { SoundToggle } from "@/components/SoundToggle";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Card } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
@@ -57,6 +58,14 @@ export default async function Perfil() {
         <ThemeToggle />
         <p className="text-sm text-content-subtle">
           No automático, o app acompanha o tema do seu aparelho. A escolha vale neste aparelho.
+        </p>
+      </section>
+
+      <section aria-labelledby="som" className="space-y-3">
+        <h2 id="som" className="text-2xl">Som</h2>
+        <SoundToggle />
+        <p className="text-sm text-content-subtle">
+          Um toque curto ao acertar e ao errar, no Modo Prova. Vale neste aparelho.
         </p>
       </section>
 
