@@ -60,9 +60,17 @@ export function TrailNode({ item, index }: { item: TrailLesson; index: number })
           </span>
         )}
 
-        {/* O título tapa o traço que passa por trás dele — ver .trail-mask. */}
+        {/*
+        | O título é uma plaquinha, e isso resolve um problema real.
+        |
+        | O traço da trilha passa por trás dele. Antes o título tapava o traço
+        | repetindo a cor e o grão do fundo — o que prendia o fundo a ser liso
+        | dali para baixo, senão a mancha aparecia. Como plaquinha levantada
+        | ele fica POR CIMA do traço de forma assumida, e o fundo da página
+        | ficou livre para ter textura em qualquer lugar.
+        */}
         <span
-          className={`trail-mask mt-1.5 line-clamp-3 rounded-control px-1.5 text-xs leading-tight ${
+          className={`mt-1.5 line-clamp-3 rounded-control bg-surface-raised px-2 py-1 text-xs leading-tight shadow-lift ${
             state === "adiante" ? "text-content-subtle" : "text-content-secondary"
           } ${state === "atual" ? "font-bold text-content" : ""}`}
         >

@@ -130,9 +130,11 @@ navegador. O que sustenta isso hoje:
   Dois detalhes que não são enfeite. A onda é medida em **porcentagem da
   largura**, e o traço que liga os nós é um SVG com `preserveAspectRatio="none"`
   e `vector-effect="non-scaling-stroke"`: assim o desenho acompanha qualquer
-  tela sem engrossar a linha. E o título da lição carrega `.trail-mask`, que
-  repete o grão do `body` — o traço passa por trás dele, e um `bg-surface`
-  liso apareceria como retângulo mais claro sobre o fundo texturizado.
+  tela sem engrossar a linha. E o título da lição é uma **plaquinha
+  levantada** (`bg-surface-raised` com sombra): o traço passa por trás dela.
+  Antes o título tapava o traço repetindo a cor e o grão do fundo, o que
+  prendia o fundo da página a ser liso dali para baixo — assumir a plaquinha
+  foi o que liberou o fundo a ter textura em qualquer lugar.
 - **Uma tela responde uma pergunta.** Quando uma tela começa a acumular
   assuntos, ela vira abas de rota — ver `components/ProgressTabs.tsx`. Cada aba
   é uma rota de verdade, então o botão "voltar" do Android funciona e o link
@@ -211,17 +213,30 @@ da hidratação.
 
 ### O fundo
 
-Um brilho de azul-céu no alto da página, mais o grão de sempre. O chapado puro
-fazia a tela parecer documento; o brilho dá profundidade sem virar assunto.
+Uma camada só, em `body::before`, **presa à tela e não ao documento**: role o
+quanto rolar, a atmosfera continua lá. Ela tem três coisas empilhadas:
 
-**Ele termina em 560px e é preso ao alto do documento** — e isso é contrato,
-não gosto. O título de cada lição na trilha tapa o traço com `.trail-mask`,
-que é cor lisa + grão. Onde houver brilho, a máscara não bate e aparece como
-mancha clara. Se o brilho crescer ou virar fixo na tela, a máscara precisa
-crescer junto.
+1. **dois brilhos de azul-céu** em diagonal — um no alto à esquerda, outro
+   embaixo à direita. A diagonal é o que evita a cara de "gradiente de
+   cabeçalho" e dá volume à tela inteira;
+2. **uma malha de pontos** finíssima, que é o que tira o liso de perto.
+   Sozinha seria papel milimetrado; com os brilhos por cima, vira textura;
+3. **o grão**, por último.
+
+A regra que manda em tudo isso: **ela nunca pode competir com o conteúdo.**
+Quem está lendo uma lição ou respondendo questão não deve notar que existe. Se
+um dia parecer enfeite, está forte demais.
 
 Nada de roxo ou índigo aqui, pela regra 4: é a assinatura visual dos produtos
 de IA. Só azul-céu, a cor de ação da marca.
+
+**A cor de fundo mora só no `html`; o `body` é transparente.** Isso não é
+capricho, é a ordem de pintura do CSS: dentro de um contexto de empilhamento
+vem primeiro o fundo da raiz, depois os filhos de z-index negativo, e só então
+o fundo dos blocos descendentes. Com cor no `body`, ele cobre o `::before` — a
+camada renderiza, tem as cinco sub-camadas certas, e é invisível. Foi
+exatamente o que aconteceu na primeira tentativa, e aumentar a opacidade não
+resolvia nada.
 
 ## Regras que valem para toda tela nova
 
