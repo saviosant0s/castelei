@@ -17,20 +17,21 @@ Regras do conteúdo no app:
 |---|---|---|---|---|
 | 15/09 | Plano de aula e introdução | §1.1 | O que é um sistema operacional? | **Pronta** |
 | 22/09 | Componentes e funções: processos, memória, arquivos, E/S, proteção, chamadas de sistema | §1.5 e §1.6 | Componentes e funções de um SO; O terminal na prática (Windows e Linux); Chamadas de sistema: como funcionam; Chamadas de sistema: arquivos e processos | **Prontas** |
-| 29/09 | Estrutura e arquitetura de um SO | §1.7 (p. 43 a 51) | 2 lições: monolítico, camadas e micronúcleo; cliente-servidor, máquinas virtuais e exonúcleo | A fazer |
-| 06/10 | Processos e threads, parte 1 | §2.1 (p. 59 a 67) | 2 lições: modelo de processo; estados e transições | A fazer |
-| 13/10 | Processos e threads, parte 2 | §2.2 (p. 67 a 82) e §2.4 (p. 103 a 115) | Threads (2 lições) e escalonamento (2 lições) | A fazer, **confirmar** onde entra o escalonamento |
-| 20/10 e 27/10 | Comunicação entre processos, partes 1 e 2 | §2.3 (p. 82 a 103) e §2.5 (p. 115 a 119) | ~4 lições: condições de corrida e exclusão mútua; semáforos e mutexes; monitores e mensagens; problemas clássicos | A fazer |
+| 29/09 | Estrutura e arquitetura de um SO | §1.7 (p. 43 a 51) | Estrutura de um SO: como ele é montado por dentro | **Pronta** |
+| 06/10 | Processos e threads, parte 1 | §2.1 (p. 59 a 67) | Processos: como um programa vira coisa viva; Estados de um processo | **Prontas** |
+| 13/10 | Processos e threads, parte 2 | §2.2 (p. 67 a 82) e §2.4 (p. 103 a 115) | Escalonamento; Threads: vários caminhos; Threads por dentro | **Prontas** |
+| 20/10 e 27/10 | Comunicação entre processos, partes 1 e 2 | §2.3 (p. 82 a 103) e §2.5 (p. 115 a 119) | 5 lições: condição de corrida; exclusão mútua; semáforos e mutexes; monitores e mensagens; problemas clássicos | **Prontas** |
 | 03/11 | Aula de exercícios | (revisão) | Usa as questões das lições anteriores | Depende das lições |
-| 17/11 | Gerenciamento de memória: endereçamento, paginação, memória virtual | §3.1 a §3.7 (p. 125 a 174) | ~5 lições | A fazer |
-| 24/11 e 01/12 | Gerenciamento de arquivos, partes 1 e 2 | Cap. 4, §4.1 a §4.5 (p. 182 a 228) | ~4 lições | A fazer |
-| 08/12 e 22/12 | Gerenciamento de dispositivos, partes 1 e 2 | Cap. 5, §5.1 a §5.4 (p. 233 a 269) | ~4 lições (inclui disco) | A fazer |
-| 02/02/27 | Atividade sobre virtualização | Cap. 7 (p. 325 a 355) | ~3 lições | A fazer |
+| 17/11 | Gerenciamento de memória: endereçamento, paginação, memória virtual | §3.1 a §3.7 (p. 125 a 174) | 4 lições: gerência de memória; memória virtual e paginação; substituição de páginas; segmentação | **Prontas** |
+| 24/11 e 01/12 | Gerenciamento de arquivos, partes 1 e 2 | Cap. 4, §4.1 a §4.5 (p. 182 a 228) | 3 lições: arquivos e diretórios; como o disco guarda; confiabilidade | **Prontas** |
+| 08/12 e 22/12 | Gerenciamento de dispositivos, partes 1 e 2 | Cap. 5, §5.1 a §5.4 (p. 233 a 269) | 3 lições: entrada e saída; disco e ordem dos pedidos; vários discos como um | **Prontas** |
+| 02/02/27 | Atividade sobre virtualização | Cap. 7 (p. 325 a 355) | 2 lições: virtualização; contêineres | **Prontas** |
+| 16/02 e 23/02 | Apresentação dos trabalhos 01 e 02 | Cap. 10 e 11 | 2 lições: estudo de caso Linux e Android; estudo de caso Windows | **Prontas** |
 
 ## Pontos a confirmar com o plano do professor
 
-1. **Escalonamento** está na ementa, mas não tem aula própria no cronograma. Suposição: entra em "Processos e threads, parte 2".
-2. **Estudos de caso** (ementa) não têm aula marcada. Podem ser os trabalhos 01 e 02. Se forem, o livro tem Linux/Android (cap. 10) e Windows (cap. 11).
+1. ~~**Escalonamento**~~ **Resolvido pela ementa:** é tópico próprio, logo depois de Estados e Transições, e já tem lição publicada.
+2. ~~**Estudos de caso**~~ **Resolvido:** são os trabalhos 01 e 02 (16/02 e 23/02). Viraram 2 lições prontas, Linux/Android e Windows.
 3. **Introdução:** história (§1.2) e revisão de hardware (§1.3) ficaram de fora, pois o plano só cita "introdução". Dá para acrescentar.
 
 ## Fora do plano (não incluído)
