@@ -8798,6 +8798,1209 @@
           "pitfall": "Journaling e backup resolvem problemas diferentes. Um protege contra falha no meio da operação, o outro contra perda do disco."
         }
       ]
+    },
+    {
+      "slug": "entrada-e-saida",
+      "title": "Entrada e saída: como o sistema conversa com as peças",
+      "summary": "Existem milhares de modelos de peças e nenhum programa quer conhecer os detalhes de cada um. O sistema resolve isso em camadas.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O garçom do restaurante",
+          "body": [
+            "Você senta no restaurante e pede um prato pelo nome.",
+            "Você não entra na cozinha nem conversa com o forno.",
+            "O garçom leva o pedido, e alguém lá dentro sabe qual botão apertar.",
+            "Trocar o forno não muda em nada o jeito de você pedir."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Dois tipos de peça",
+          "body": [
+            "As peças ligadas ao computador se dividem em dois grandes grupos.",
+            "Umas trabalham com pedaços de tamanho fixo, e dá para pedir qualquer um deles.",
+            "Outras entregam um fluxo de letras, uma depois da outra, sem voltar atrás."
+          ],
+          "terms": [
+            {
+              "word": "Processo",
+              "meaning": "um programa em execução, com a memória que ele usa e o ponto exato em que parou."
+            },
+            {
+              "word": "Processador",
+              "meaning": "a peça do computador que executa as instruções dos programas."
+            },
+            {
+              "word": "Bloco",
+              "meaning": "o menor pedaço que o sistema lê ou grava no disco de uma vez. Hoje costuma ter quatro mil bytes."
+            },
+            {
+              "word": "Peça de pedaços",
+              "meaning": "a que guarda dados em pedaços de tamanho fixo e deixa pedir qualquer um. Disco e pendrive são assim."
+            },
+            {
+              "word": "Peça de fluxo",
+              "meaning": "a que entrega ou recebe uma letra de cada vez, em sequência. Teclado, mouse e impressora são assim."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Ninguém fala com a peça direto",
+          "body": [
+            "Entre o computador e cada peça existe uma plaquinha de controle.",
+            "Ela recebe uma ordem simples e cuida da parte complicada.",
+            "O disco não entende ler o bloco 500. A plaquinha entende, e traduz."
+          ],
+          "terms": [
+            {
+              "word": "Controlador",
+              "meaning": "a plaquinha que fica entre o computador e a peça, e traduz ordens simples em movimentos de verdade."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Como a ordem chega à plaquinha",
+          "body": [
+            "Cada plaquinha tem algumas gavetinhas onde a ordem é deixada.",
+            "Há dois jeitos de o computador alcançar essas gavetinhas."
+          ],
+          "table": {
+            "label": "Os dois jeitos de alcançar a plaquinha",
+            "headers": [
+              "Jeito",
+              "Como é"
+            ],
+            "rows": [
+              [
+                "Numeração separada",
+                "as gavetinhas têm números próprios, fora da memória"
+              ],
+              [
+                "Dentro da memória",
+                "as gavetinhas aparecem como se fossem endereços de memória"
+              ]
+            ]
+          },
+          "bullets": [
+            "O segundo jeito é o comum hoje, porque qualquer programa sabe ler memória.",
+            "O preço é que aquele trecho de memória não pode ser guardado em cópia rápida."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Três jeitos de esperar a peça",
+          "body": [
+            "A peça é lenta e o processador é rápido. Alguém precisa esperar."
+          ],
+          "terms": [
+            {
+              "word": "Aviso da peça (interrupção)",
+              "meaning": "o aviso que a peça manda quando termina. Ele faz o processador parar o que estava fazendo e atendê-la."
+            },
+            {
+              "word": "Acesso direto à memória",
+              "meaning": "uma plaquinha que move os dados sozinha entre a peça e a memória, sem passar pelo processador."
+            }
+          ],
+          "table": {
+            "label": "Do pior para o melhor",
+            "headers": [
+              "Jeito",
+              "O que o processador faz"
+            ],
+            "rows": [
+              [
+                "Ficar perguntando",
+                "gira num laço perguntando se já acabou"
+              ],
+              [
+                "Esperar o aviso",
+                "vai fazer outra coisa e é chamado no fim"
+              ],
+              [
+                "Deixar a plaquinha mover",
+                "só é avisado quando tudo já está na memória"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "As camadas entre o programa e a peça",
+          "body": [
+            "O caminho de um pedido passa por quatro degraus antes de chegar à peça.",
+            "Cada degrau só conversa com o de cima e o de baixo."
+          ],
+          "figure": {
+            "src": "/figuras/so/so-camadas-es.svg",
+            "alt": "Cinco camadas empilhadas entre o programa e a peça, com o pedido descendo por um lado e a resposta subindo pelo outro.",
+            "caption": "Trocar a peça troca só um degrau. O resto continua igual."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O tradutor de cada modelo",
+          "body": [
+            "Cada modelo de peça tem um tradutor escrito por quem a fabricou.",
+            "Ele sabe quais gavetinhas usar e em que ordem.",
+            "E ele roda no lugar de mais poder da máquina, o que é um risco."
+          ],
+          "terms": [
+            {
+              "word": "Núcleo do sistema (kernel)",
+              "meaning": "a parte central do sistema operacional. É a única que pode mexer nas peças do computador direto."
+            },
+            {
+              "word": "Driver",
+              "meaning": "o programa que sabe conversar com um modelo específico de peça. Ele é escrito por quem fabrica a peça."
+            }
+          ],
+          "bullets": [
+            "Um tradutor com defeito derruba a máquina inteira.",
+            "A maior parte das telas azuis do Windows vem de tradutores.",
+            "Alguns sistemas põem os tradutores fora do lugar de mais poder, por segurança."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Por que existe um espaço de espera",
+          "body": [
+            "Sem um espaço de espera, cada letra digitada acordaria o programa.",
+            "Com ele, as letras se juntam e o programa é chamado uma vez só.",
+            "O mesmo vale para o disco, que prefere gravar bastante de uma vez."
+          ],
+          "terms": [
+            {
+              "word": "Espaço de espera (buffer)",
+              "meaning": "a memória onde os dados ficam guardados entre a peça e o programa."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Ver as peças da sua máquina",
+          "body": [
+            "Dá para listar tudo o que está ligado e qual tradutor está em uso."
+          ],
+          "terms": [
+            {
+              "word": "Terminal",
+              "meaning": "a janela em que você digita ordens de texto para o computador, em vez de clicar."
+            },
+            {
+              "word": "Comando",
+              "meaning": "cada ordem de texto que você digita no terminal."
+            },
+            {
+              "word": "PowerShell e Prompt de Comando (cmd)",
+              "meaning": "os dois programas do Windows em que você digita ordens de texto. O PowerShell é o mais novo dos dois."
+            }
+          ],
+          "table": {
+            "label": "Listando as peças",
+            "headers": [
+              "O que ver",
+              "Linux",
+              "Windows"
+            ],
+            "rows": [
+              [
+                "Discos e partições",
+                "lsblk",
+                "Get-Disk"
+              ],
+              [
+                "Peças ligadas por USB",
+                "lsusb",
+                "Get-PnpDevice -Class USB"
+              ],
+              [
+                "Peças internas",
+                "lspci",
+                "Gerenciador de Dispositivos"
+              ],
+              [
+                "Tradutores carregados",
+                "lsmod",
+                "Get-WindowsDriver -Online"
+              ],
+              [
+                "Avisos recentes das peças",
+                "dmesg | tail",
+                "Visualizador de Eventos"
+              ]
+            ],
+            "mono": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca cobra as camadas em ordem e a diferença entre os três modos de espera."
+          ],
+          "bullets": [
+            "Dispositivos de bloco: acesso aleatório a blocos de tamanho fixo (discos, SSD, pendrive).",
+            "Dispositivos de caractere: fluxo sequencial, sem endereçamento (teclado, mouse, impressora, porta serial).",
+            "Controlador é o hardware; driver é o software que fala com o controlador.",
+            "E/S programada (polling ou busy waiting): a CPU fica em laço testando o status; desperdiça processador.",
+            "E/S por interrupção: o dispositivo avisa a CPU ao concluir; uma interrupção por byte ou bloco.",
+            "DMA (Direct Memory Access): o controlador transfere direto para a memória e interrompe só no fim.",
+            "Camadas de E/S, de baixo para cima: hardware; tratador de interrupção; driver; software de E/S independente; software no espaço do usuário.",
+            "O software independente de dispositivo faz buffering, nomeação, proteção e alocação.",
+            "E/S mapeada em memória: registradores do controlador aparecem no espaço de endereçamento; exige desabilitar cache naquela região.",
+            "Spooling: fila de trabalhos para um dispositivo dedicado, como a impressora.",
+            "Drivers executam em modo núcleo e são a principal causa de falhas do sistema."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Cinco trocas aparecem quase toda prova."
+          ],
+          "bullets": [
+            "A plaquinha é peça física. O tradutor é programa. A banca troca os dois.",
+            "O acesso direto à memória não dispensa o aviso. Ele avisa uma vez, no fim.",
+            "Ficar perguntando pode ser melhor que esperar o aviso, quando a espera é curtíssima.",
+            "Disco é peça de pedaços mesmo sendo lento. O que define é poder pedir qualquer pedaço.",
+            "O espaço de espera não acelera a peça. Ele evita acordar o programa toda hora."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Entre o programa e a peça existem camadas, e cada uma esconde um detalhe."
+          ],
+          "bullets": [
+            "Peças de pedaços deixam pedir qualquer pedaço. Peças de fluxo, não.",
+            "A plaquinha de controle traduz ordens simples em movimento.",
+            "Três jeitos de esperar: perguntar, ser avisado ou deixar a plaquinha mover tudo.",
+            "O tradutor é o único degrau que muda quando a peça muda.",
+            "Ele roda no lugar de mais poder, e por isso derruba a máquina quando falha.",
+            "O espaço de espera junta os dados para acordar o programa menos vezes."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Tipos de dispositivo",
+          "statement": "Um teclado é classificado como dispositivo de caractere porque:",
+          "options": [
+            "entrega um fluxo sequencial de dados, sem permitir acesso a uma posição arbitrária",
+            "transmite menos de um byte por vez",
+            "não possui controlador próprio",
+            "é conectado por uma porta serial",
+            "não gera interrupções"
+          ],
+          "correct_index": 0,
+          "explanation": "Não faz sentido pedir a décima tecla digitada de forma direta. Os dados chegam em sequência e são consumidos assim.",
+          "pitfall": "O critério é o modo de acesso, e não a velocidade nem o tipo de conexão."
+        },
+        {
+          "topic": "Controlador e driver",
+          "statement": "A diferença entre controlador e driver de dispositivo é que:",
+          "options": [
+            "o controlador é o componente de hardware e o driver é o software que o comanda",
+            "o controlador é software e o driver é hardware",
+            "ambos são componentes de hardware, em camadas distintas",
+            "o driver executa em modo usuário e o controlador em modo núcleo",
+            "não há diferença: são nomes para a mesma coisa"
+          ],
+          "correct_index": 0,
+          "explanation": "O controlador é a placa acoplada ao dispositivo. O driver escreve nos registradores dessa placa para dar ordens.",
+          "pitfall": "É a troca mais cobrada do tópico, e aparece em praticamente toda prova sobre entrada e saída."
+        },
+        {
+          "topic": "DMA",
+          "statement": "A principal vantagem do DMA (acesso direto à memória) sobre a E/S por interrupção é que:",
+          "options": [
+            "a transferência ocorre sem a CPU copiar cada byte, gerando apenas uma interrupção ao final",
+            "elimina completamente o uso de interrupções",
+            "dispensa o uso de driver de dispositivo",
+            "aumenta a velocidade física do dispositivo",
+            "permite acesso a dispositivos de caractere apenas"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem DMA, a CPU é interrompida repetidamente e copia os dados ela mesma. Com DMA, ela é chamada uma única vez.",
+          "pitfall": "O DMA não elimina a interrupção. Ela continua existindo, só que uma por transferência inteira."
+        },
+        {
+          "topic": "Polling",
+          "statement": "Na E/S programada com polling, o processador:",
+          "options": [
+            "permanece em laço testando o registrador de status do dispositivo",
+            "é bloqueado até receber uma interrupção",
+            "delega a transferência ao controlador de DMA",
+            "executa outros processos enquanto aguarda",
+            "atende o dispositivo apenas no fim do quantum"
+          ],
+          "correct_index": 0,
+          "explanation": "Todo o tempo de espera é queimado no laço. Para dispositivos lentos isso é um desperdício enorme.",
+          "pitfall": "Para dispositivos muito rápidos, o polling pode compensar: o custo de tratar a interrupção seria maior que a espera."
+        },
+        {
+          "topic": "Camadas",
+          "statement": "Qual camada do subsistema de E/S é responsável por buffering, nomeação uniforme e proteção, de forma independente do dispositivo?",
+          "options": [
+            "o software de E/S independente de dispositivo",
+            "o driver de dispositivo",
+            "o tratador de interrupção",
+            "o controlador de hardware",
+            "a biblioteca de E/S no espaço do usuário"
+          ],
+          "correct_index": 0,
+          "explanation": "É a camada que oferece uma interface uniforme, para que os drivers só tratem das particularidades de cada modelo.",
+          "pitfall": "O driver cuida do que é específico daquele modelo. Tudo o que é comum sobe para a camada acima."
+        },
+        {
+          "topic": "E/S mapeada em memória",
+          "statement": "Na E/S mapeada em memória, uma exigência importante é que:",
+          "options": [
+            "a região de endereços dos registradores do controlador não seja armazenada em cache",
+            "os registradores tenham numeração separada da memória",
+            "o dispositivo seja necessariamente de bloco",
+            "todas as transferências usem DMA",
+            "o driver execute em modo usuário"
+          ],
+          "correct_index": 0,
+          "explanation": "Um valor de registrador em cache ficaria desatualizado. O programa leria um status antigo e tomaria a decisão errada.",
+          "pitfall": "Na numeração separada esse problema não existe, pois as instruções de porta não passam pela cache."
+        },
+        {
+          "topic": "Spooling",
+          "statement": "O spooling é utilizado principalmente para:",
+          "options": [
+            "enfileirar trabalhos destinados a um dispositivo dedicado, como a impressora",
+            "acelerar a leitura de blocos do disco",
+            "transferir dados diretamente para a memória",
+            "detectar falhas em drivers de dispositivo",
+            "sincronizar o relógio do sistema"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada processo escreve o trabalho em disco, e um processo dedicado envia um de cada vez ao dispositivo.",
+          "pitfall": "Sem spooling, dois processos imprimindo ao mesmo tempo misturariam páginas na impressora."
+        },
+        {
+          "topic": "Estabilidade",
+          "statement": "Por que drivers de dispositivo são apontados como a principal causa de falhas graves em sistemas operacionais?",
+          "options": [
+            "porque executam em modo núcleo, com acesso irrestrito, e são escritos por terceiros",
+            "porque consomem muita memória durante a inicialização",
+            "porque não podem ser atualizados após a instalação",
+            "porque executam em modo usuário e dependem de chamadas de sistema",
+            "porque não possuem acesso ao hardware"
+          ],
+          "correct_index": 0,
+          "explanation": "Um erro ali não fica contido no driver. Ele pode corromper qualquer estrutura do sistema.",
+          "pitfall": "É exatamente esse risco que os sistemas de micronúcleo tentam reduzir, movendo drivers para fora do núcleo."
+        }
+      ]
+    },
+    {
+      "slug": "disco-e-ordem-dos-pedidos",
+      "title": "O disco: a peça mais lenta da casa",
+      "summary": "No disco de prato, quase todo o tempo é gasto movendo o braço. Atender os pedidos numa ordem esperta muda tudo, e no disco novo isso deixou de valer.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O elevador do prédio",
+          "body": [
+            "Um prédio de vinte andares tem um elevador só.",
+            "Chamam do terceiro, do décimo oitavo, do quarto e do décimo sétimo.",
+            "Atender na ordem dos chamados faz o elevador subir e descer sem parar.",
+            "Subir atendendo todo mundo, e depois descer, roda muito menos."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Como um disco de prato funciona",
+          "body": [
+            "Dentro dele há pratos girando e um braço com uma agulha na ponta.",
+            "Os dados ficam em anéis, um dentro do outro, como uma pista de corrida.",
+            "Para ler algo, o braço vai até o anel certo e espera o dado passar."
+          ],
+          "terms": [
+            {
+              "word": "Processo",
+              "meaning": "um programa em execução, com a memória que ele usa e o ponto exato em que parou."
+            },
+            {
+              "word": "Processador",
+              "meaning": "a peça do computador que executa as instruções dos programas."
+            },
+            {
+              "word": "Bloco",
+              "meaning": "o menor pedaço que o sistema lê ou grava no disco de uma vez. Hoje costuma ter quatro mil bytes."
+            },
+            {
+              "word": "Arquivo",
+              "meaning": "uma sequência de dados guardada com um nome, que continua existindo depois de a máquina desligar."
+            },
+            {
+              "word": "Anel de dados (trilha)",
+              "meaning": "cada círculo de gravação do prato. O braço precisa parar exatamente em cima do anel certo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Onde o tempo vai embora",
+          "body": [
+            "Uma leitura tem três tempos somados, e um deles domina tudo."
+          ],
+          "table": {
+            "label": "Os três tempos de uma leitura",
+            "headers": [
+              "Tempo",
+              "O que é",
+              "Quanto costuma dar"
+            ],
+            "rows": [
+              [
+                "Mover o braço",
+                "chegar ao anel certo",
+                "de 5 a 10 milésimos de segundo"
+              ],
+              [
+                "Esperar girar",
+                "o dado passar embaixo da agulha",
+                "cerca de 4 milésimos"
+              ],
+              [
+                "Passar os dados",
+                "ler o que está ali",
+                "menos de 1 milésimo"
+              ]
+            ]
+          },
+          "bullets": [
+            "Mover o braço custa mais que todo o resto junto.",
+            "Por isso a ordem dos pedidos importa tanto."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A mesma lista, duas ordens",
+          "body": [
+            "Vários pedidos chegam ao mesmo tempo e ficam numa fila.",
+            "Atender na ordem de chegada faz o braço cruzar o disco várias vezes.",
+            "Atender no caminho, como o elevador, percorre muito menos."
+          ],
+          "figure": {
+            "src": "/figuras/so/so-ordem-disco.svg",
+            "alt": "Régua com os números dos anéis, oito pedidos marcados e a posição atual do braço, seguida das duas ordens de atendimento.",
+            "caption": "A mesma lista de pedidos. Muda só a ordem, e o braço anda bem menos."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "As regras de atendimento",
+          "body": [
+            "Três regras aparecem sempre, e cada uma tem o seu defeito."
+          ],
+          "table": {
+            "label": "Escolhendo quem é atendido agora",
+            "headers": [
+              "Regra",
+              "Como escolhe",
+              "Defeito"
+            ],
+            "rows": [
+              [
+                "Ordem de chegada",
+                "atende na ordem em que pediram",
+                "o braço cruza o disco à toa"
+              ],
+              [
+                "O mais perto primeiro",
+                "atende o pedido mais próximo do braço",
+                "quem está longe pode nunca ser atendido"
+              ],
+              [
+                "Elevador",
+                "segue numa direção atendendo o caminho",
+                "quem está atrás espera a volta"
+              ],
+              [
+                "Elevador circular",
+                "ao chegar ao fim, volta ao início sem atender",
+                "espera mais previsível para todos"
+              ]
+            ]
+          },
+          "terms": [
+            {
+              "word": "Inanição",
+              "meaning": "quando um pedido nunca é atendido, porque outros passam sempre na frente dele."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Por que o elevador ganhou",
+          "body": [
+            "A regra do mais perto primeiro parece a melhor escolha.",
+            "Mas pedidos novos perto do braço chegam o tempo todo.",
+            "Quem está na ponta do disco fica esperando para sempre."
+          ],
+          "bullets": [
+            "O elevador garante que todo pedido é atendido na próxima passada.",
+            "A espera deixa de ser sorte e passa a ter limite.",
+            "A versão circular deixa a espera parecida para todo mundo."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O disco novo mudou o jogo",
+          "body": [
+            "O disco de estado sólido não tem braço nem prato girando.",
+            "Chegar a qualquer lugar custa o mesmo, e é mil vezes mais rápido.",
+            "Ordenar os pedidos por posição deixou de fazer sentido."
+          ],
+          "terms": [
+            {
+              "word": "Disco de estado sólido",
+              "meaning": "o disco sem partes que se mexem, feito de memória. Ele guarda os dados mesmo desligado."
+            }
+          ],
+          "bullets": [
+            "O Linux usa por padrão um jeito que quase não reordena nada nesses discos.",
+            "O que importa agora é atender muitos pedidos ao mesmo tempo.",
+            "Desfragmentar disco novo não ajuda, e ainda gasta a vida dele."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que o disco novo tem de próprio",
+          "body": [
+            "Ele apaga em pedaços bem maiores do que grava.",
+            "Por isso não dá para escrever por cima do que já está lá.",
+            "E cada pedaço aguenta um número limitado de gravações."
+          ],
+          "bullets": [
+            "O disco espalha as gravações para gastar todos os pedaços por igual.",
+            "O sistema avisa quais pedaços não valem mais nada, para ele limpar antes.",
+            "Um disco muito cheio fica lento, porque falta espaço para essa dança."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Olhando o disco da sua máquina",
+          "body": [
+            "Dá para descobrir se o seu disco tem prato girando ou não."
+          ],
+          "terms": [
+            {
+              "word": "Terminal",
+              "meaning": "a janela em que você digita ordens de texto para o computador, em vez de clicar."
+            },
+            {
+              "word": "Comando",
+              "meaning": "cada ordem de texto que você digita no terminal."
+            },
+            {
+              "word": "PowerShell e Prompt de Comando (cmd)",
+              "meaning": "os dois programas do Windows em que você digita ordens de texto. O PowerShell é o mais novo dos dois."
+            }
+          ],
+          "table": {
+            "label": "Descobrindo o tipo e a saúde do disco",
+            "headers": [
+              "O que ver",
+              "Linux",
+              "Windows"
+            ],
+            "rows": [
+              [
+                "Tipo do disco",
+                "lsblk -d -o NAME,ROTA",
+                "Get-PhysicalDisk"
+              ],
+              [
+                "Regra de atendimento",
+                "cat /sys/block/sda/queue/scheduler",
+                "não é exposto"
+              ],
+              [
+                "Saúde do disco",
+                "smartctl -a /dev/sda",
+                "Get-PhysicalDisk | Select HealthStatus"
+              ],
+              [
+                "Desempenho ao vivo",
+                "iostat -x 1",
+                "Gerenciador de Tarefas → Desempenho"
+              ]
+            ],
+            "mono": true
+          },
+          "bullets": [
+            "Na primeira linha, o valor 1 quer dizer prato girando e 0 quer dizer disco novo."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca dá uma lista de cilindros e pede o deslocamento total do braço. Treine somar as distâncias."
+          ],
+          "bullets": [
+            "Tempo total = tempo de busca (seek) + latência rotacional + tempo de transferência.",
+            "O tempo de busca domina e é o que os algoritmos tentam reduzir.",
+            "FCFS: atende na ordem de chegada; justo e ineficiente.",
+            "SSTF (Shortest Seek Time First): menor deslocamento primeiro; pode causar starvation.",
+            "SCAN (elevador): varre numa direção até o fim e inverte o sentido.",
+            "C-SCAN: varre numa direção e retorna ao início sem atender, dando espera mais uniforme.",
+            "LOOK e C-LOOK: iguais ao SCAN e C-SCAN, mas invertem no último pedido, sem ir até o fim do disco.",
+            "O cálculo clássico usa a fila 98 · 183 · 37 · 122 · 14 · 124 · 65 · 67 com a cabeça em 53.",
+            "Em SSD não há busca nem latência rotacional; o escalonamento por posição perde o sentido.",
+            "SSD: escrita exige apagar blocos inteiros; daí o wear leveling e o comando TRIM.",
+            "Desfragmentar SSD é contraproducente e reduz a vida útil das células."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Cinco confusões derrubam gente nessa parte."
+          ],
+          "bullets": [
+            "O mais perto primeiro não é o melhor. Ele deixa os extremos sem atendimento.",
+            "O elevador simples vai até a ponta do disco. A versão que para no último pedido é outra.",
+            "Girar o prato não é o tempo maior. Mover o braço é.",
+            "Ordenar pedidos não ajuda em disco novo, porque a distância deixou de custar.",
+            "Desfragmentar não serve para disco novo, e ainda encurta a vida dele."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "No disco de prato, a ordem dos pedidos vale mais que tudo."
+          ],
+          "bullets": [
+            "Mover o braço custa mais que esperar girar e ler somados.",
+            "Ordem de chegada faz o braço cruzar o disco à toa.",
+            "O mais perto primeiro é rápido e deixa gente esperando para sempre.",
+            "O elevador atende no caminho e garante a vez de todos.",
+            "No disco de estado sólido nada disso vale, porque não há braço.",
+            "Lá o problema passa a ser apagar em blocos e gastar as células por igual."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Tempo de acesso",
+          "statement": "Em um disco magnético, qual componente normalmente domina o tempo total de acesso a um bloco?",
+          "options": [
+            "o tempo de busca, ou seja, o deslocamento do braço até o cilindro",
+            "a latência rotacional",
+            "o tempo de transferência dos dados",
+            "o tempo de processamento no controlador",
+            "o tempo de tradução de endereços pela MMU"
+          ],
+          "correct_index": 0,
+          "explanation": "Mover uma peça física por centímetros leva milissegundos. É uma ordem de grandeza acima dos outros tempos.",
+          "pitfall": "É justamente por isso que todos os algoritmos de escalonamento de disco tentam reduzir o deslocamento do braço."
+        },
+        {
+          "topic": "SSTF",
+          "statement": "O algoritmo SSTF (menor tempo de busca primeiro) tem como principal problema:",
+          "options": [
+            "a possibilidade de starvation para requisições nas extremidades do disco",
+            "percorrer o disco inteiro a cada requisição",
+            "não reduzir o deslocamento do braço",
+            "exigir que as requisições cheguem ordenadas",
+            "funcionar apenas em discos de estado sólido"
+          ],
+          "correct_index": 0,
+          "explanation": "Novas requisições próximas à cabeça continuam chegando e sempre têm preferência. As distantes nunca alcançam a vez.",
+          "pitfall": "Em deslocamento total, o SSTF costuma ser melhor que o FCFS. O problema dele é a justiça, não a eficiência."
+        },
+        {
+          "topic": "SCAN",
+          "statement": "No algoritmo SCAN (elevador), o braço:",
+          "options": [
+            "percorre o disco em uma direção atendendo as requisições no caminho, e então inverte o sentido",
+            "atende sempre a requisição mais próxima, em qualquer direção",
+            "atende na ordem de chegada das requisições",
+            "salta diretamente para a requisição mais antiga",
+            "permanece parado até acumular dez requisições"
+          ],
+          "correct_index": 0,
+          "explanation": "Como o braço passa por todos os cilindros a cada varredura, nenhuma requisição fica sem atendimento indefinidamente.",
+          "pitfall": "No LOOK, a diferença é que o braço inverte no último pedido, sem chegar à borda do disco."
+        },
+        {
+          "topic": "C-SCAN",
+          "statement": "A vantagem do C-SCAN sobre o SCAN é:",
+          "options": [
+            "proporcionar tempos de espera mais uniformes entre as requisições",
+            "reduzir o deslocamento total do braço",
+            "eliminar a necessidade de fila de requisições",
+            "permitir atendimento fora de ordem",
+            "funcionar sem conhecer a posição atual da cabeça"
+          ],
+          "correct_index": 0,
+          "explanation": "No SCAN, os cilindros do meio são visitados com o dobro de frequência dos extremos. O retorno sem atendimento corrige esse desequilíbrio.",
+          "pitfall": "O C-SCAN percorre mais distância que o SCAN. Ele troca eficiência por uniformidade."
+        },
+        {
+          "topic": "Cálculo de deslocamento",
+          "statement": "A cabeça está no cilindro 53 e as requisições pendentes são 98 · 183 · 37 · 122 · 14 · 124 · 65 · 67. Qual algoritmo resulta no MAIOR deslocamento total do braço?",
+          "options": [
+            "FCFS",
+            "SSTF",
+            "SCAN",
+            "C-LOOK",
+            "LOOK"
+          ],
+          "correct_index": 0,
+          "explanation": "Atender na ordem de chegada faz o braço cruzar o disco repetidas vezes, indo de 183 para 37 e de 122 para 14.",
+          "pitfall": "Esse é o exemplo numérico clássico do assunto, e costuma aparecer com esses mesmos valores."
+        },
+        {
+          "topic": "SSD",
+          "statement": "Por que o escalonamento de disco baseado na posição dos blocos perde o sentido em SSDs?",
+          "options": [
+            "porque não há partes móveis, e o tempo de acesso é praticamente igual para qualquer endereço",
+            "porque os SSDs atendem apenas uma requisição por vez",
+            "porque os SSDs não usam blocos de tamanho fixo",
+            "porque o controlador do SSD não aceita filas de requisições",
+            "porque os SSDs não sofrem com fragmentação interna"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem braço e sem rotação, não existe distância a ser economizada. Reordenar por posição não traz ganho algum.",
+          "pitfall": "Em SSD o gargalo passa a ser o paralelismo interno e o custo das operações de apagamento."
+        },
+        {
+          "topic": "Escrita em SSD",
+          "statement": "Em um SSD, a escrita é mais complexa que a leitura porque:",
+          "options": [
+            "as células só podem ser apagadas em blocos grandes, impedindo a sobrescrita direta de uma página",
+            "a leitura ocorre em paralelo e a escrita não",
+            "cada escrita exige uma verificação de paridade",
+            "o controlador não possui memória própria",
+            "a escrita depende do sistema de arquivos usado"
+          ],
+          "correct_index": 0,
+          "explanation": "Para reescrever uma página é preciso apagar o bloco inteiro que a contém. Por isso o controlador escreve em outro lugar e remapeia.",
+          "pitfall": "É daí que vêm o wear leveling e o TRIM, que avisa ao SSD quais páginas já não são necessárias."
+        },
+        {
+          "topic": "Manutenção",
+          "statement": "Executar desfragmentação em um SSD é considerado:",
+          "options": [
+            "inútil e prejudicial, pois não traz ganho e consome ciclos de escrita das células",
+            "obrigatório a cada seis meses",
+            "útil apenas quando o disco está acima de 90% de ocupação",
+            "equivalente a executar o comando TRIM",
+            "necessário para o funcionamento do wear leveling"
+          ],
+          "correct_index": 0,
+          "explanation": "Não há braço para economizar, e cada movimentação de dados gasta gravações que a célula tem em número limitado.",
+          "pitfall": "O Windows detecta SSDs e executa TRIM no lugar da desfragmentação, embora o botão tenha o mesmo nome."
+        }
+      ]
+    },
+    {
+      "slug": "varios-discos-como-um",
+      "title": "Vários discos trabalhando como um só",
+      "summary": "Juntar discos deixa o conjunto mais rápido, ou capaz de aguentar a perda de um deles. Escolher o arranjo é escolher entre velocidade, espaço e segurança.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O caderno de anotações da turma",
+          "body": [
+            "Uma turma combina de dividir as anotações entre três pessoas.",
+            "Cada uma escreve um terço da matéria, e no fim juntam tudo.",
+            "Fica bem mais rápido de escrever. Mas se uma faltar, o caderno não fecha.",
+            "Dá para combinar diferente: duas pessoas anotam a mesma coisa."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Dois problemas de um disco só",
+          "body": [
+            "Um disco sozinho tem dois problemas que não se resolvem no mesmo lugar.",
+            "Ele é lento perto do resto da máquina.",
+            "E ele um dia para de funcionar, sem avisar."
+          ],
+          "terms": [
+            {
+              "word": "Processo",
+              "meaning": "um programa em execução, com a memória que ele usa e o ponto exato em que parou."
+            },
+            {
+              "word": "Arquivo",
+              "meaning": "uma sequência de dados guardada com um nome, que continua existindo depois de a máquina desligar."
+            },
+            {
+              "word": "Bloco",
+              "meaning": "o menor pedaço que o sistema lê ou grava no disco de uma vez. Hoje costuma ter quatro mil bytes."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A ideia: muitos discos, uma cara só",
+          "body": [
+            "Vários discos são ligados e o sistema enxerga um só.",
+            "Quem distribui os dados é uma plaquinha, ou o próprio sistema.",
+            "O que muda de um arranjo para outro é como os dados são espalhados."
+          ],
+          "terms": [
+            {
+              "word": "Conjunto de discos",
+              "meaning": "vários discos apresentados ao sistema como se fossem um só."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Primeiro arranjo: dividir os dados",
+          "body": [
+            "O arquivo é cortado em tiras, e cada tira vai para um disco.",
+            "Ler o arquivo inteiro usa todos os discos ao mesmo tempo.",
+            "A velocidade multiplica, e o risco também."
+          ],
+          "bullets": [
+            "Nenhum espaço é gasto com cópia, e tudo fica disponível.",
+            "Se um disco qualquer quebrar, o arranjo inteiro se perde.",
+            "Três discos juntos quebram três vezes mais que um sozinho."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Segundo arranjo: escrever duas vezes",
+          "body": [
+            "Aqui cada dado é gravado igual em dois discos.",
+            "Se um parar, o outro continua com tudo.",
+            "A leitura fica mais rápida, porque dá para ler dos dois."
+          ],
+          "bullets": [
+            "Metade do espaço comprado vira cópia.",
+            "É o arranjo mais simples e o mais caro por gigabyte.",
+            "Trocar o disco que quebrou devolve o conjunto ao normal."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Terceiro arranjo: guardar a conferência",
+          "body": [
+            "Em vez de copiar tudo, guarda-se um resultado de conferência.",
+            "Com os outros discos e essa conferência, o que faltou é recalculado.",
+            "Assim só um disco do conjunto vira custo, e não metade."
+          ],
+          "terms": [
+            {
+              "word": "Conferência (paridade)",
+              "meaning": "um valor calculado a partir dos outros, que permite descobrir de volta o pedaço perdido."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/so/so-discos-juntos.svg",
+            "alt": "Três arranjos lado a lado: dados divididos entre discos, dados copiados em dois discos, e dois discos de dados mais um de conferência.",
+            "caption": "Dividir é rápido. Copiar é seguro. Conferir é o meio-termo."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O preço da conferência",
+          "body": [
+            "Gravar um pedaço pequeno exige ler o que estava lá antes.",
+            "Depois é preciso recalcular a conferência e gravar as duas coisas.",
+            "Por isso esse arranjo é bom para ler e ruim para escrever pouco."
+          ],
+          "bullets": [
+            "Existe a versão com duas conferências, que aguenta perder dois discos.",
+            "Ela é usada quando os discos são muitos e bem grandes.",
+            "Reconstruir um disco grande demora horas, e nesse tempo o risco é alto."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Comparando os arranjos",
+          "body": [
+            "Esta tabela é o coração do assunto. Vale decorar."
+          ],
+          "table": {
+            "label": "Os arranjos lado a lado",
+            "headers": [
+              "Arranjo",
+              "Discos mínimos",
+              "Aguenta perder",
+              "Espaço útil"
+            ],
+            "rows": [
+              [
+                "Dividido (0)",
+                "2",
+                "nenhum",
+                "tudo"
+              ],
+              [
+                "Copiado (1)",
+                "2",
+                "um disco",
+                "metade"
+              ],
+              [
+                "Com conferência (5)",
+                "3",
+                "um disco",
+                "todos menos um"
+              ],
+              [
+                "Duas conferências (6)",
+                "4",
+                "dois discos",
+                "todos menos dois"
+              ],
+              [
+                "Copiado e dividido (10)",
+                "4",
+                "um de cada par",
+                "metade"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que isso não é",
+          "body": [
+            "Esse conjunto protege contra um disco queimado. Só isso.",
+            "Apagar um arquivo sem querer apaga em todos os discos na hora.",
+            "Um vírus que embaralha arquivos embaralha em todos juntos."
+          ],
+          "bullets": [
+            "Conjunto de discos não é cópia de segurança.",
+            "Ele serve para o serviço não parar quando um disco morre.",
+            "A cópia de verdade mora em outro lugar, longe da mesma máquina."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Como isso aparece hoje",
+          "body": [
+            "Não é mais preciso comprar plaquinha para juntar discos.",
+            "O próprio sistema faz isso, e alguns sistemas de arquivos já vêm com tudo."
+          ],
+          "terms": [
+            {
+              "word": "Terminal",
+              "meaning": "a janela em que você digita ordens de texto para o computador, em vez de clicar."
+            },
+            {
+              "word": "Comando",
+              "meaning": "cada ordem de texto que você digita no terminal."
+            },
+            {
+              "word": "PowerShell e Prompt de Comando (cmd)",
+              "meaning": "os dois programas do Windows em que você digita ordens de texto. O PowerShell é o mais novo dos dois."
+            }
+          ],
+          "table": {
+            "label": "Onde isso é feito",
+            "headers": [
+              "Onde",
+              "Como"
+            ],
+            "rows": [
+              [
+                "Linux",
+                "mdadm, ou o próprio ZFS e Btrfs"
+              ],
+              [
+                "Windows",
+                "Espaços de Armazenamento"
+              ],
+              [
+                "Servidor antigo",
+                "plaquinha dedicada, com bateria"
+              ],
+              [
+                "Nuvem",
+                "já vem pronto, e você nem vê"
+              ]
+            ],
+            "mono": true
+          },
+          "bullets": [
+            "Nos serviços de nuvem, as cópias ficam em prédios diferentes.",
+            "Isso resolve o caso que nenhum conjunto de discos resolve: o prédio pegar fogo."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca cobra o número mínimo de discos, a tolerância a falhas e o espaço útil de cada nível."
+          ],
+          "bullets": [
+            "RAID 0 (striping): mínimo 2 discos; sem redundância; capacidade total e maior desempenho.",
+            "RAID 1 (mirroring): mínimo 2 discos, tolera a perda de 1, capacidade útil de 50%.",
+            "RAID 5 (paridade distribuída): mínimo 3 discos, tolera 1 falha, capacidade útil de N-1 discos.",
+            "RAID 6 (dupla paridade): mínimo 4 discos, tolera 2 falhas, capacidade útil de N-2 discos.",
+            "RAID 10 (espelhamento mais striping): mínimo 4 discos, capacidade útil de 50%.",
+            "RAID 0 NÃO é tolerante a falhas; o nome RAID engana nesse ponto.",
+            "Write penalty do RAID 5: uma escrita pequena exige ler dado e paridade antes de gravar os dois.",
+            "A paridade é calculada com o ou exclusivo (XOR) dos blocos correspondentes.",
+            "RAID 2, 3 e 4 caíram em desuso; o 4 usa disco de paridade dedicado, que vira gargalo.",
+            "RAID não substitui backup: exclusão lógica e corrupção se propagam a todos os discos.",
+            "Durante a reconstrução de um disco, o arranjo fica em estado degradado e vulnerável."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Cinco confusões caem sempre nessa parte."
+          ],
+          "bullets": [
+            "Dividir os dados não protege nada. O nome do conjunto confunde.",
+            "Conjunto de discos não é cópia de segurança, e essa troca é a mais cobrada.",
+            "A conferência não guarda uma cópia. Ela guarda como recalcular o que faltou.",
+            "Com conferência, escrever pouco é lento. Ler é rápido.",
+            "Três discos com conferência dão o espaço de dois, e não de três."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Juntar discos é escolher entre velocidade, espaço e aguentar uma perda."
+          ],
+          "bullets": [
+            "Dividido: mais rápido, sem proteção nenhuma.",
+            "Copiado: aguenta perder um, e metade do espaço vira cópia.",
+            "Com conferência: aguenta perder um, e gasta o espaço de um disco só.",
+            "Com duas conferências: aguenta perder dois.",
+            "Escrever pouco no arranjo com conferência é lento, porque exige ler antes.",
+            "Nada disso substitui a cópia guardada em outro lugar."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "RAID 0",
+          "statement": "Um arranjo RAID 0 com três discos de 2 TB cada oferece capacidade útil e tolerância a falhas de:",
+          "options": [
+            "6 TB e nenhuma tolerância a falhas",
+            "4 TB e tolerância a uma falha",
+            "2 TB e tolerância a duas falhas",
+            "6 TB e tolerância a uma falha",
+            "3 TB e nenhuma tolerância a falhas"
+          ],
+          "correct_index": 0,
+          "explanation": "Todo o espaço fica disponível porque nada é gasto com redundância. Em compensação, perder qualquer disco perde o conjunto.",
+          "pitfall": "Apesar da sigla incluir a palavra redundante, o nível 0 não tem redundância alguma."
+        },
+        {
+          "topic": "RAID 5",
+          "statement": "Em um RAID 5 com cinco discos de 4 TB, a capacidade útil é de:",
+          "options": [
+            "16 TB",
+            "20 TB",
+            "12 TB",
+            "10 TB",
+            "8 TB"
+          ],
+          "correct_index": 0,
+          "explanation": "A capacidade útil corresponde a N menos 1 discos, pois o equivalente a um disco é consumido pela paridade distribuída.",
+          "pitfall": "A paridade não fica em um disco só; ela é espalhada. O custo, porém, equivale a um disco inteiro."
+        },
+        {
+          "topic": "RAID 1",
+          "statement": "O RAID 1 (espelhamento) caracteriza-se por:",
+          "options": [
+            "gravar os mesmos dados em dois discos, com capacidade útil de 50%",
+            "dividir os dados em faixas entre os discos, sem redundância",
+            "calcular paridade e distribuí-la entre os discos",
+            "usar um disco dedicado exclusivamente para paridade",
+            "exigir no mínimo quatro discos"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada escrita vai para os dois discos. A leitura pode ser atendida por qualquer um deles, o que acelera as leituras.",
+          "pitfall": "É o nível mais caro por gigabyte útil, e também o mais simples de reconstruir."
+        },
+        {
+          "topic": "Paridade",
+          "statement": "A paridade utilizada no RAID 5 é calculada por meio da operação:",
+          "options": [
+            "ou exclusivo (XOR) entre os blocos correspondentes dos demais discos",
+            "soma aritmética dos blocos",
+            "média dos valores dos blocos",
+            "função de hash criptográfico",
+            "compressão sem perdas dos blocos"
+          ],
+          "correct_index": 0,
+          "explanation": "O ou exclusivo é reversível: aplicando-o novamente sobre os blocos restantes, o bloco perdido é reconstruído.",
+          "pitfall": "É essa reversibilidade que permite recuperar qualquer um dos blocos, e não apenas conferir se houve erro."
+        },
+        {
+          "topic": "Write penalty",
+          "statement": "A chamada penalidade de escrita do RAID 5 ocorre porque uma escrita pequena exige:",
+          "options": [
+            "ler o dado antigo e a paridade antiga antes de gravar o dado novo e a paridade nova",
+            "gravar o mesmo bloco em todos os discos do arranjo",
+            "recalcular a paridade de todo o volume",
+            "bloquear o arranjo até a conclusão da operação",
+            "mover o bloco para outro disco do conjunto"
+          ],
+          "correct_index": 0,
+          "explanation": "São duas leituras e duas escritas para alterar um único bloco. Por isso esse nível vai mal em cargas de escrita intensa.",
+          "pitfall": "Escritas grandes, que cobrem a faixa inteira, não sofrem essa penalidade."
+        },
+        {
+          "topic": "RAID 6",
+          "statement": "A principal motivação para o uso de RAID 6 em vez de RAID 5 é:",
+          "options": [
+            "tolerar a falha de um segundo disco, inclusive durante a reconstrução do primeiro",
+            "aumentar a capacidade útil do arranjo",
+            "eliminar a penalidade de escrita",
+            "reduzir o número mínimo de discos necessários",
+            "permitir discos de tamanhos diferentes"
+          ],
+          "correct_index": 0,
+          "explanation": "Reconstruir um disco grande leva horas, e nesse período o arranjo fica sem proteção. Uma segunda falha nessa janela perderia tudo.",
+          "pitfall": "O RAID 6 tem capacidade útil menor e penalidade de escrita maior. Ele troca desempenho por segurança."
+        },
+        {
+          "topic": "RAID e backup",
+          "statement": "Por que um arranjo RAID não substitui uma política de backup?",
+          "options": [
+            "porque exclusões acidentais e corrupção lógica são replicadas imediatamente em todos os discos",
+            "porque o RAID não tolera falhas de hardware",
+            "porque o RAID exige discos idênticos",
+            "porque a reconstrução apaga os dados antigos",
+            "porque o RAID só funciona com sistemas de arquivos específicos"
+          ],
+          "correct_index": 0,
+          "explanation": "O arranjo protege contra a morte de um disco, e nada mais. Um arquivo apagado por engano some de todos ao mesmo tempo.",
+          "pitfall": "É a pergunta conceitual mais cobrada sobre RAID, e a resposta errada mais comum é achar que ele é redundância suficiente."
+        },
+        {
+          "topic": "RAID 4",
+          "statement": "O RAID 4, que usa um disco dedicado para paridade, caiu em desuso porque:",
+          "options": [
+            "o disco de paridade vira gargalo, já que participa de toda operação de escrita",
+            "não tolera nenhuma falha de disco",
+            "exige no mínimo oito discos",
+            "não permite leitura paralela",
+            "consome metade da capacidade total"
+          ],
+          "correct_index": 0,
+          "explanation": "Toda escrita, em qualquer disco de dados, precisa atualizar o mesmo disco de paridade. Ele satura antes de todos os outros.",
+          "pitfall": "O RAID 5 resolve exatamente isso ao distribuir a paridade entre todos os discos do arranjo."
+        }
+      ]
     }
   ]
 }

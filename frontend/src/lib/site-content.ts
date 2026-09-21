@@ -47,6 +47,9 @@ export const SUBJECTS: SiteSubject[] = [
       "Arquivos e pastas: o que o sistema promete a você",
       "Como o disco guarda um arquivo de verdade",
       "Quando falta luz no meio da gravação",
+      "Entrada e saída: como o sistema conversa com as peças",
+      "O disco: a peça mais lenta da casa",
+      "Vários discos trabalhando como um só",
     ],
   },
   {

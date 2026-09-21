@@ -24,7 +24,7 @@ Regras do conteúdo no app:
 | 03/11 | Aula de exercícios | (revisão) | Usa as questões das lições anteriores | Depende das lições |
 | 17/11 | Gerenciamento de memória: endereçamento, paginação, memória virtual | §3.1 a §3.7 (p. 125 a 174) | 4 lições: gerência de memória; memória virtual e paginação; substituição de páginas; segmentação | **Prontas** |
 | 24/11 e 01/12 | Gerenciamento de arquivos, partes 1 e 2 | Cap. 4, §4.1 a §4.5 (p. 182 a 228) | 3 lições: arquivos e diretórios; como o disco guarda; confiabilidade | **Prontas** |
-| 08/12 e 22/12 | Gerenciamento de dispositivos, partes 1 e 2 | Cap. 5, §5.1 a §5.4 (p. 233 a 269) | ~4 lições (inclui disco) | A fazer |
+| 08/12 e 22/12 | Gerenciamento de dispositivos, partes 1 e 2 | Cap. 5, §5.1 a §5.4 (p. 233 a 269) | 3 lições: entrada e saída; disco e ordem dos pedidos; vários discos como um | **Prontas** |
 | 02/02/27 | Atividade sobre virtualização | Cap. 7 (p. 325 a 355) | ~3 lições | A fazer |
 
 ## Pontos a confirmar com o plano do professor
