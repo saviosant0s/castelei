@@ -75,7 +75,7 @@ Aguardando respostas do Sávio (plano do professor, ver `docs/sistemas-operacion
 
 Próximas lições, na ordem das aulas: 29/09 Estrutura e arquitetura de um SO; depois Processos e Threads, Comunicação entre processos, Memória, Arquivos, Dispositivos, Virtualização. Só o que está no plano do professor (Impasses, Multiprocessadores e Segurança ficam de fora).
 
-**Play Store (TWA).** O caminho está escrito em `docs/play-store.md`, com o que é do Sávio e o que é código. Pronto no código: `/privacidade` (página pública, exigida pela loja), `/.well-known/assetlinks.json` (lê `ANDROID_CERT_FINGERPRINTS`; responde 404 enquanto a variável não existir, de propósito) e o modelo do gráfico de destaque em `docs/play-store/feature-graphic.html`. **Falta no código:** tela de excluir a conta — a Play cobra um caminho de exclusão e a política já promete o direito.
+**Play Store (TWA).** O caminho está escrito em `docs/play-store.md`, com o que é do Sávio e o que é código. Pronto no código: `/privacidade` e `/excluir-conta` (páginas públicas exigidas pela loja), exclusão de conta no Perfil (`DELETE /api/me`, com confirmação em dois passos), `/.well-known/assetlinks.json` (lê `ANDROID_CERT_FINGERPRINTS`; responde 404 enquanto a variável não existir, de propósito) e o modelo do gráfico de destaque em `docs/play-store/feature-graphic.html`. Falta só o que depende do Sávio: conta de desenvolvedor, impressão digital e capturas de tela.
 
 ## Pendências e cuidados
 

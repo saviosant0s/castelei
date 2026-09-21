@@ -127,6 +127,35 @@ export async function authenticate(req: NextRequest, endpoint: "login" | "regist
   return out;
 }
 
+/**
+ * Apaga a conta na API e derruba a sessão. Diferente do logout, aqui o erro
+ * importa: se a API recusar, o cookie fica — apagá-lo daria a impressão de
+ * que a conta sumiu quando ela continua lá.
+ */
+export async function deleteAccount(req: NextRequest): Promise<NextResponse> {
+  const token = req.cookies.get(TOKEN_COOKIE)?.value;
+  if (!token) return json({ message: "Sua sessão expirou. Entre de novo." }, 401);
+
+  let response: Response;
+  try {
+    response = await fetch(`${apiBase()}/me`, {
+      method: "DELETE",
+      headers: { Accept: "application/json", Authorization: `Bearer ${token}` },
+      cache: "no-store",
+    });
+  } catch {
+    return json({ message: "Não deu para falar com o servidor. Tente de novo em instantes." }, 502);
+  }
+
+  if (!response.ok) {
+    return json({ message: "Não foi possível excluir a conta agora. Tente de novo em instantes." }, response.status);
+  }
+
+  const out = json({ ok: true }, 200);
+  out.cookies.delete(TOKEN_COOKIE);
+  return out;
+}
+
 /** Revoga o token na API (se possível) e apaga o cookie. */
 export async function logout(req: NextRequest): Promise<NextResponse> {
   const token = req.cookies.get(TOKEN_COOKIE)?.value;

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Crown } from "lucide-react";
+import { DeleteAccountButton } from "@/components/DeleteAccountButton";
 import { InstallButton } from "@/components/InstallButton";
 import { LogoutButton } from "@/components/LogoutButton";
 import { Card } from "@/components/ui";
@@ -44,7 +45,11 @@ export default async function Perfil() {
         <InstallButton />
       </section>
 
-      {!guest && <LogoutButton />}
+      <section aria-labelledby="conta" className="space-y-3">
+        <h2 id="conta" className="text-2xl">Sua conta</h2>
+        {!guest && <LogoutButton />}
+        <DeleteAccountButton guest={guest} />
+      </section>
 
       {/* A Play Store espera a política acessível também de dentro do app. */}
       <footer className="pt-2">

@@ -13,6 +13,8 @@ Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:10
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/me', [AuthController::class, 'me']);
+    // Exclusão de conta: exigida pela Google Play e prometida na política.
+    Route::delete('/me', [AuthController::class, 'destroy']);
 
     Route::get('/subjects', [CatalogController::class, 'subjects']);
 

@@ -2,13 +2,15 @@
 
 namespace Tests\Feature;
 
+use App\Models\Attempt;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\Concerns\MakesLessons;
 use Tests\TestCase;
 
 class AuthTest extends TestCase
 {
-    use RefreshDatabase;
+    use MakesLessons, RefreshDatabase;
 
     public function test_cadastro_cria_usuario_no_plano_gratis_e_devolve_token(): void
     {
@@ -91,5 +93,36 @@ class AuthTest extends TestCase
             ->assertOk();
 
         $this->assertDatabaseCount('personal_access_tokens', 0);
+    }
+
+    public function test_excluir_a_conta_apaga_o_usuario_o_historico_e_os_tokens(): void
+    {
+        $token = $this->postJson('/api/register', [
+            'name' => 'Ana', 'email' => 'ana@example.com', 'password' => 'minha-senha-1',
+        ])->json('token');
+
+        $user = User::firstWhere('email', 'ana@example.com');
+        $lesson = $this->makeLesson();
+        Attempt::create([
+            'user_id' => $user->id,
+            'lesson_id' => $lesson->id,
+            'started_at' => now(),
+            'total_questions' => 3,
+        ]);
+
+        $this->withHeader('Authorization', 'Bearer '.$token)
+            ->deleteJson('/api/me')
+            ->assertOk();
+
+        $this->assertDatabaseMissing('users', ['id' => $user->id]);
+        // O histórico cai por cascata; o token sai na mão, porque o Sanctum
+        // guarda o dono por relação polimórfica e o banco não apaga sozinho.
+        $this->assertDatabaseMissing('attempts', ['user_id' => $user->id]);
+        $this->assertDatabaseCount('personal_access_tokens', 0);
+    }
+
+    public function test_ninguem_exclui_conta_sem_estar_autenticado(): void
+    {
+        $this->deleteJson('/api/me')->assertUnauthorized();
     }
 }

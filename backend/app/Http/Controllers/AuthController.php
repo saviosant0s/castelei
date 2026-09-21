@@ -74,6 +74,25 @@ class AuthController extends Controller
         return response()->json(['ok' => true]);
     }
 
+    /**
+     * Apaga a conta e tudo que veio com ela. Não tem volta.
+     *
+     * A Google Play exige um caminho de exclusão dentro do app, e a nossa
+     * Política de Privacidade promete o mesmo. Tentativas, respostas, dias de
+     * estudo e conquistas caem por cascata no banco; os tokens saem antes,
+     * porque o Sanctum guarda o dono por relação polimórfica e o banco não
+     * apaga sozinho.
+     */
+    public function destroy(Request $request): JsonResponse
+    {
+        $user = $request->user();
+
+        $user->tokens()->delete();
+        $user->delete();
+
+        return response()->json(['ok' => true]);
+    }
+
     public function me(Request $request): JsonResponse
     {
         return response()->json(['user' => self::userPayload($request->user())]);

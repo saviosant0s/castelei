@@ -52,6 +52,8 @@ na Política de Privacidade (variável `CONTACT_EMAIL`).
 | Abertura sem tela branca | `components/AppLaunch.tsx` | ✅ |
 | Service worker e tela offline | `public/sw.js`, `public/offline.html` | ✅ |
 | Política de Privacidade pública | `/privacidade` | ✅ |
+| Excluir a conta pelo app | Perfil → Sua conta | ✅ |
+| Página pública de exclusão | `/excluir-conta` | ✅ |
 | Digital Asset Links | `/.well-known/assetlinks.json` | ✅ (falta a impressão digital) |
 
 O `assetlinks.json` lê duas variáveis de ambiente e devolve 404 enquanto elas
@@ -262,11 +264,21 @@ revisão costuma levar de alguns dias a duas semanas.
 
 ---
 
+### Exclusão de conta — onde declarar
+
+A Play cobra isso em dois lugares, e os dois já têm resposta:
+
+- **Segurança de dados → "Os usuários podem solicitar a exclusão dos dados?"**
+  → Sim. URL: `https://SEU-DOMINIO/excluir-conta`
+- **Ficha do app → URL de exclusão de conta** → a mesma URL.
+
+Dentro do app o caminho é **Perfil → Sua conta → Excluir minha conta**, com
+confirmação em dois passos. Apaga cadastro, histórico, XP, streak e conquistas.
+
+---
+
 ## O que ainda não existe e pode ser cobrado
 
-- **Excluir a conta pelo app.** A Play exige um caminho para exclusão de conta,
-  e hoje o app não tem essa tela. Se o teste fechado der tempo, vale fazer
-  antes da revisão; a política já promete o direito.
 - **Pagamento.** Quando os planos pagos entrarem, eles têm que usar o
   faturamento do Google Play (com taxa), não um gateway por fora. Isso muda a
   classificação de conteúdo e a ficha de Segurança de Dados.
