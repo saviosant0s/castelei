@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
+import { Download } from "lucide-react";
 import { Aviso, Button, TextField } from "@/components/admin/Form";
 import { ConfirmDelete } from "@/components/admin/ConfirmDelete";
 import { Card } from "@/components/ui";
@@ -72,6 +73,32 @@ export function SubjectEditor({ subject }: { subject: AdminSubjectDetail }) {
             {busy ? "Salvando…" : "Salvar"}
           </Button>
         </form>
+      </Card>
+
+      {/*
+        O caminho de volta: matéria escrita aqui fica presa no banco, sem
+        versionamento, sem passar pelo verificador do Guia Editorial e sem
+        ninguém poder revisar num editor de texto. O arquivo que sai daqui
+        entra de volta pela importação sem perda.
+
+        É um link comum, não um `fetch`: o navegador baixa direto, e o cookie
+        httpOnly viaja junto pelo proxy do Next, como já acontece no modelo.
+      */}
+      <Card className="space-y-3">
+        <h2 className="text-xl">Levar para um arquivo</h2>
+        <p className="text-base text-content-secondary">
+          Baixa a matéria inteira no formato de importação: lições, etapas e questões. Serve para guardar uma
+          cópia, editar fora do painel ou mandar para alguém revisar. Importar o arquivo de volta não duplica
+          nada.
+        </p>
+        <a
+          href={`/api/admin/subjects/${subject.id}/export`}
+          download={`${subject.slug}.json`}
+          className="inline-flex select-none items-center gap-2 rounded-control bg-surface-sunken px-4 py-2.5 text-base font-bold"
+        >
+          <Download className="size-4" aria-hidden="true" />
+          Baixar esta matéria
+        </a>
       </Card>
 
       <ConfirmDelete

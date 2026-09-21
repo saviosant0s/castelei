@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Lesson;
 use App\Models\Subject;
+use App\Support\Content\SubjectExporter;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -58,6 +60,28 @@ class SubjectController extends Controller
                     'questions_count' => $lesson->questions_count,
                 ])->values(),
             ],
+        ]);
+    }
+
+    /**
+     * A matéria inteira como arquivo de importação.
+     *
+     * Caminho de volta para o conteúdo escrito no painel: sem ele, matéria
+     * criada aqui fica presa no banco — sem versionamento, sem passar pelo
+     * verificador do Guia Editorial e sem ninguém poder revisar num editor.
+     *
+     * O que sai entra de volta pelo importador sem perda.
+     */
+    public function export(Subject $subject, SubjectExporter $exporter): Response
+    {
+        $json = json_encode(
+            $exporter->export($subject),
+            JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES,
+        );
+
+        return response($json, 200, [
+            'Content-Type' => 'application/json; charset=utf-8',
+            'Content-Disposition' => 'attachment; filename="'.$subject->slug.'.json"',
         ]);
     }
 

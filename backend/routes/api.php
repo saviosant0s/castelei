@@ -87,6 +87,9 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::get('/subjects', [AdminSubjectController::class, 'index']);
         Route::post('/subjects', [AdminSubjectController::class, 'store']);
         Route::get('/subjects/{subject}', [AdminSubjectController::class, 'show'])->whereNumber('subject');
+        // Baixa a matéria como arquivo de importação: o caminho de volta do
+        // conteúdo escrito no painel para um arquivo que dá para versionar.
+        Route::get('/subjects/{subject}/export', [AdminSubjectController::class, 'export'])->whereNumber('subject');
         Route::put('/subjects/{subject}', [AdminSubjectController::class, 'update'])->whereNumber('subject');
         Route::delete('/subjects/{subject}', [AdminSubjectController::class, 'destroy'])->whereNumber('subject');
         Route::put('/subjects/{subject}/order', [AdminSubjectController::class, 'reorder'])->whereNumber('subject');

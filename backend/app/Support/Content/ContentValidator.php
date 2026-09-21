@@ -292,6 +292,60 @@ class ContentValidator
         if (count($steps) < 6) {
             $this->warn($path, 'A lição tem '.count($steps).' etapas. Abaixo de 6 costuma ser sinal de que o assunto foi explicado rápido demais para quem parte do zero.');
         }
+
+        $this->tooMuchProse($steps, $path);
+    }
+
+    /**
+     * Lição que é só texto corrido.
+     *
+     * O aviso existe porque isto aconteceu de verdade: um curso inteiro foi
+     * escrito pelo painel e saiu sem uma figura, uma tabela ou um exemplo em
+     * nenhuma lição. O conteúdo estava certo; a tela ficava um paredão.
+     *
+     * O app se propõe a explicar para quem parte do zero, e quem parte do zero
+     * precisa de algo para olhar. Não é enfeite: é a diferença entre ler sobre
+     * uma ideia e ver a ideia.
+     *
+     * É AVISO, nunca erro. Existe lição que é legitimamente só texto, e não
+     * cabe ao verificador reprovar conteúdo por causa de forma.
+     *
+     * @param  array<int, mixed>  $steps
+     */
+    private function tooMuchProse(array $steps, string $path): void
+    {
+        /*
+        | `bullets` e `terms` contam: uma lista de itens e uma caixa de palavras
+        | novas já quebram o paredão de parágrafo, mesmo não sendo imagem.
+        */
+        $comApoio = 0;
+
+        foreach ($steps as $step) {
+            if (! is_array($step)) {
+                continue;
+            }
+
+            foreach (['figure', 'video', 'table', 'code', 'example', 'bullets', 'terms'] as $bloco) {
+                if (! empty($step[$bloco])) {
+                    $comApoio++;
+
+                    break;
+                }
+            }
+        }
+
+        $total = count($steps);
+
+        if ($comApoio === 0) {
+            $this->warn($path, "A lição é só texto corrido: nenhuma das {$total} etapas tem figura, tabela, exemplo, código, vídeo, lista ou glossário. Quem parte do zero precisa de algo para olhar.");
+
+            return;
+        }
+
+        // Um terço das etapas é o piso: abaixo disso a lição ainda lê como paredão.
+        if ($total >= 6 && $comApoio * 3 < $total) {
+            $this->warn($path, "Só {$comApoio} de {$total} etapas têm algo além de parágrafo (figura, tabela, exemplo, código, vídeo, lista ou glossário). A lição ainda lê como texto corrido.");
+        }
     }
 
     private function terms(mixed $terms, string $path): void

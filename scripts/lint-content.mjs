@@ -102,6 +102,38 @@ function checkJargon(where, text, defined, jargon) {
 | sem título, e um nome que reaparece depois de outro abre um segundo módulo
 | com o mesmo nome. Em ambos os casos a culpa é do arquivo, não da tela.
 */
+/*
+| Lição que é só texto corrido.
+|
+| A regra nasceu de um caso real: um curso inteiro escrito pelo painel saiu sem
+| uma figura, uma tabela ou um exemplo em lição nenhuma. O conteúdo estava
+| certo; a tela era um paredão de parágrafo.
+|
+| O app se propõe a explicar para quem parte do zero, e quem parte do zero
+| precisa de algo para olhar. É AVISO, não erro: existe lição legitimamente só
+| de texto, e forma não reprova conteúdo.
+|
+| `bullets` e `terms` contam — lista de itens e caixa de palavras novas já
+| quebram o paredão, mesmo não sendo imagem.
+*/
+const BLOCOS_DE_APOIO = ["figure", "video", "table", "code", "example", "bullets", "terms"];
+
+function checkVisuals(L, steps) {
+  if (steps.length === 0) return;
+
+  const comApoio = steps.filter((s) => BLOCOS_DE_APOIO.some((b) => s[b]?.length !== 0 && s[b])).length;
+
+  if (comApoio === 0) {
+    warn(L, `só texto corrido: nenhuma das ${steps.length} etapas tem figura, tabela, exemplo, código, vídeo, lista ou glossário`);
+    return;
+  }
+
+  // Um terço das etapas é o piso: abaixo disso ainda lê como paredão.
+  if (steps.length >= 6 && comApoio * 3 < steps.length) {
+    warn(L, `só ${comApoio} de ${steps.length} etapas têm algo além de parágrafo; ainda lê como texto corrido`);
+  }
+}
+
 function checkModules(subject) {
   const modules = subject.lessons.map((lesson) => lesson.module?.trim() || null);
   const named = modules.filter(Boolean);
@@ -141,6 +173,7 @@ for (const file of readdirSync(dir).filter((f) => f.endsWith(".json")).sort()) {
       if (steps.filter((s) => s.kind === k).length !== 1) fail(L, `deve haver exatamente uma etapa “${k}”`);
     }
     checkProse(`${L} › resumo`, lesson.summary ?? "");
+    checkVisuals(L, steps);
 
     const defined = new Set();
     // glossário da lição inteira: vale para as explicações das questões
