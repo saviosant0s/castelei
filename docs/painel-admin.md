@@ -266,12 +266,39 @@ Dois usos além da cópia de segurança:
   passa por cima das suas edições. Para o arquivo voltar a mandar, a coluna
   precisa voltar para `seed`.
 
-## Por que a sua lição ficou só texto
+## Escrevendo as etapas
 
-Escrever pelo painel puxa para o parágrafo: o editor de etapas é um campo de
-JSON, então pôr uma figura dá trabalho e escrever mais um parágrafo não dá.
+Cada etapa é uma tela do app. O editor mostra uma por cartão, com o tipo, o
+título, os parágrafos e os blocos.
 
-O verificador avisa quando isso acontece ("a lição é só texto corrido"), mas o
-aviso não escreve a figura. Os blocos que quebram o paredão são `figure`,
-`video`, `table`, `code`, `example`, `bullets` e `terms` — o formato de cada um
-está no `README.md` e no modelo comentado.
+**Os botões de bloco ficam sempre à vista**, embaixo de cada etapa: Figura,
+Tabela, Exemplo resolvido, Código, Lista, Palavras novas e Vídeo. Passe o mouse
+para ler o que cada um serve. Um clique acrescenta, outro tira.
+
+**O medidor no alto conta quantas etapas têm algo além de parágrafo.** Ele fica
+laranja quando a lição está virando um paredão de texto. Mire em pelo menos um
+terço — quem parte do zero precisa de algo para olhar, e é para isso que o app
+existe.
+
+Essa parte tem história: o editor já foi um campo de JSON cru, apostando que o
+conteúdo sempre chegaria pronto de uma IA. Na primeira vez que alguém escreveu
+um curso à mão por aqui, saiu tudo em texto corrido — pôr uma figura exigia
+escrever JSON, escrever mais um parágrafo não exigia nada. A ferramenta ensinou
+isso, e por isso os blocos hoje ficam na cara.
+
+**Lição nova já nasce com uma figura e uma tabela em branco.** Campo vazio à
+vista puxa para ser preenchido. Se não servir, tire em um clique — bloco vazio
+não é salvo.
+
+**O modo JSON continua disponível** ("Editar como JSON"), para colar conteúdo
+pronto de uma vez.
+
+### A figura
+
+Toda figura precisa de **texto alternativo** — a descrição para quem não
+consegue vê-la. O validador reprova sem ele, e com razão: é o único campo que
+impede alguém de entender a lição. Não repita a legenda ali; a legenda diz o que
+a figura ensina, o texto alternativo diz o que ela mostra.
+
+O endereço sai da biblioteca em `/admin/midia`, ou é um SVG do próprio app
+(`/figuras/...`). Figuras são **originais**: não copie de livro.

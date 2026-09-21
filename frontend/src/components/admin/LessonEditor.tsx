@@ -2,22 +2,28 @@
 
 import { useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
-import { Aviso, Button, TextArea, TextField } from "@/components/admin/Form";
+import { Aviso, Button, TextField } from "@/components/admin/Form";
+import { StepsEditor } from "@/components/admin/StepsEditor";
 import { ConfirmDelete } from "@/components/admin/ConfirmDelete";
 import { IssueList } from "@/components/admin/IssueList";
 import { Card } from "@/components/ui";
 import { adminFetch, ContentError } from "@/lib/admin-client";
 import { ApiError, messageOf } from "@/lib/client";
+import { limpar } from "@/lib/steps";
 import type { AdminLessonDetail, ContentIssue } from "@/lib/admin-types";
+import type { LessonStep } from "@/lib/types";
 
 /**
  * O texto da lição: título, resumo e as etapas.
  *
- * As etapas são editadas como JSON, e isso é escolha, não preguiça. Uma etapa
- * pode ter tabela, figura, vídeo, código, exemplo e palavras explicadas — um
- * formulário com todos esses campos viraria uma tela impossível de ler, e o
- * fluxo que este painel serve é outro: a IA gera o JSON, o painel confere e
- * publica. O que o painel garante é que nada entra sem conferência.
+ * As etapas já foram um campo de JSON cru, apostando que o fluxo seria sempre
+ * "a IA gera, o painel confere e publica". A aposta quebrou na primeira vez que
+ * alguém escreveu um curso à mão por aqui: pôr uma figura exigia escrever JSON,
+ * escrever mais um parágrafo não exigia nada, e saiu um curso inteiro de texto
+ * corrido. A ferramenta ensinou isso.
+ *
+ * Agora são campos, com os blocos visuais sempre à vista, e o modo JSON continua
+ * ali para quem chega com o conteúdo pronto.
  */
 export function LessonEditor({ lesson }: { lesson: AdminLessonDetail }) {
   const router = useRouter();
@@ -27,6 +33,8 @@ export function LessonEditor({ lesson }: { lesson: AdminLessonDetail }) {
   const [issues, setIssues] = useState<ContentIssue[]>([]);
   const [avisos, setAvisos] = useState<ContentIssue[]>([]);
   const [campos, setCampos] = useState<Record<string, string[]>>({});
+  const [steps, setSteps] = useState<LessonStep[]>(lesson.steps);
+  const [erroDeJson, setErroDeJson] = useState<string | null>(null);
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -39,11 +47,8 @@ export function LessonEditor({ lesson }: { lesson: AdminLessonDetail }) {
 
     const form = new FormData(event.currentTarget);
 
-    let steps: unknown;
-    try {
-      steps = JSON.parse(String(form.get("steps")));
-    } catch (parseError) {
-      setErro(`As etapas não são um JSON válido: ${(parseError as Error).message}`);
+    if (erroDeJson) {
+      setErro(`Conserte o JSON das etapas antes de salvar. ${erroDeJson}`);
       setBusy(false);
       return;
     }
@@ -51,7 +56,14 @@ export function LessonEditor({ lesson }: { lesson: AdminLessonDetail }) {
     try {
       const resposta = await adminFetch<{ warnings: ContentIssue[] }>(`/lessons/${lesson.id}`, {
         method: "PUT",
-        body: { title: form.get("title"), module: form.get("module"), summary: form.get("summary"), steps },
+        body: {
+          title: form.get("title"),
+          module: form.get("module"),
+          summary: form.get("summary"),
+          // `limpar` tira campo opcional vazio: sem isso o arquivo exportado
+          // encheria de `caption: ""` e `label: ""`, que é ruído para quem lê.
+          steps: steps.map(limpar),
+        },
       });
       setSalvo(true);
       setAvisos(resposta.warnings ?? []);
@@ -110,14 +122,9 @@ export function LessonEditor({ lesson }: { lesson: AdminLessonDetail }) {
             disabled
             hint="Identidade da lição. Trocá-lo faria a próxima importação tratá-la como lição nova."
           />
-          <TextArea
-            label={`Etapas (JSON) — ${lesson.steps.length} ${lesson.steps.length === 1 ? "etapa" : "etapas"}`}
-            name="steps"
-            rows={26}
-            mono
-            defaultValue={JSON.stringify(lesson.steps, null, 2)}
-            hint="Cada etapa é uma tela. Tipos: idea, explain, exam, pitfall, recap. Blocos opcionais: bullets, terms, example, figure, video, code, table."
-          />
+          <StepsEditor steps={steps} onChange={setSteps} onErroDeJson={setErroDeJson} />
+
+          {erroDeJson && <Aviso tipo="erro">{erroDeJson}</Aviso>}
 
           <Button type="submit" peso="principal" disabled={busy}>
             {busy ? "Salvando…" : "Salvar lição"}
