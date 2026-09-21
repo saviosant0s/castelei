@@ -3,7 +3,7 @@ import Link from "next/link";
 import { BookOpen, Lightbulb, Repeat, Target, Timer, TrendingUp } from "lucide-react";
 import { StartLink } from "@/components/site/StartLink";
 import { Card } from "@/components/ui";
-import { CATALOG } from "@/lib/site-content";
+import { getSiteCatalog } from "@/lib/site-catalog";
 
 export const metadata: Metadata = {
   title: "Como funciona",
@@ -18,40 +18,48 @@ export const metadata: Metadata = {
 | bom que desconfie — de app de estudo que promete muito. Cada passo diz o que
 | acontece na tela, na ordem em que acontece.
 */
-const steps = [
-  {
-    icon: BookOpen,
-    title: "Uma ideia por tela",
-    text: "A lição não é um texto corrido que você rola até o fim. São etapas curtas, uma ideia em cada, com analogia antes da definição e exemplo concreto antes da regra. Nenhum termo aparece sem ter sido explicado antes, na própria lição.",
-  },
-  {
-    icon: Target,
-    title: "Como o assunto cai na prova",
-    text: "Uma etapa só para isso: os formatos de pergunta que o tema costuma assumir e as palavras que denunciam cada formato. É a parte que quase nenhum material traz — e é o que separa quem entendeu de quem acerta.",
-  },
-  {
-    icon: Lightbulb,
-    title: "A pegadinha, antes do erro",
-    text: "O erro clássico aparece com nome e explicação enquanto você ainda está aprendendo. Errar no treino é barato; errar na prova, não.",
-  },
-  {
-    icon: Timer,
-    title: "Modo Prova, com cronômetro",
-    text: `Terminada a explicação, vêm ${CATALOG.questionsPerLesson} questões por lição, com o relógio correndo. Saber o assunto e resolver sob pressão são habilidades diferentes, e a segunda também se treina.`,
-  },
-  {
-    icon: TrendingUp,
-    title: "O resultado diz o que fazer",
-    text: "No fim: seu acerto, seu recorde e o tópico que mais te derrubou. O relatório guarda acerto e tempo separados — tempo e acerto contam histórias diferentes e nunca dividem o mesmo eixo.",
-  },
-  {
-    icon: Repeat,
-    title: "Repetir até virar automático",
-    text: "Dá para refazer a lição quantas vezes quiser, e fazer o simulado da matéria inteira, com questões sorteadas em rodízio entre todas as lições — misturado, como na prova.",
-  },
-];
+function steps(questionsPerLesson: number | null) {
+  return [
+    {
+      icon: BookOpen,
+      title: "Uma ideia por tela",
+      text: "A lição não é um texto corrido que você rola até o fim. São etapas curtas, uma ideia em cada, com analogia antes da definição e exemplo concreto antes da regra. Nenhum termo aparece sem ter sido explicado antes, na própria lição.",
+    },
+    {
+      icon: Target,
+      title: "Como o assunto cai na prova",
+      text: "Uma etapa só para isso: os formatos de pergunta que o tema costuma assumir e as palavras que denunciam cada formato. É a parte que quase nenhum material traz — e é o que separa quem entendeu de quem acerta.",
+    },
+    {
+      icon: Lightbulb,
+      title: "A pegadinha, antes do erro",
+      text: "O erro clássico aparece com nome e explicação enquanto você ainda está aprendendo. Errar no treino é barato; errar na prova, não.",
+    },
+    {
+      icon: Timer,
+      title: "Modo Prova, com cronômetro",
+      // O número só é dito enquanto for verdade em toda lição. Ver lib/site-catalog.ts.
+      text: `Terminada a explicação, ${
+        questionsPerLesson ? `vêm ${questionsPerLesson} questões por lição` : "vêm as questões da lição"
+      }, com o relógio correndo. Saber o assunto e resolver sob pressão são habilidades diferentes, e a segunda também se treina.`,
+    },
+    {
+      icon: TrendingUp,
+      title: "O resultado diz o que fazer",
+      text: "No fim: seu acerto, seu recorde e o tópico que mais te derrubou. O relatório guarda acerto e tempo separados — tempo e acerto contam histórias diferentes e nunca dividem o mesmo eixo.",
+    },
+    {
+      icon: Repeat,
+      title: "Repetir até virar automático",
+      text: "Dá para refazer a lição quantas vezes quiser, e fazer o simulado da matéria inteira, com questões sorteadas em rodízio entre todas as lições — misturado, como na prova.",
+    },
+  ];
+}
 
-export default function ComoFunciona() {
+export default async function ComoFunciona() {
+  const { questionsPerLesson } = await getSiteCatalog();
+  const passos = steps(questionsPerLesson);
+
   return (
     <main className="mx-auto max-w-4xl px-5 py-12 sm:px-6">
       <header>
@@ -66,7 +74,7 @@ export default function ComoFunciona() {
       </header>
 
       <ol className="mt-14 space-y-4">
-        {steps.map(({ icon: Icon, title, text }, i) => (
+        {passos.map(({ icon: Icon, title, text }, i) => (
           <li key={title}>
             <Card tone={i % 2 === 0 ? "raised" : "sunken"} size="lg" radius="panel">
               <div className="flex items-start gap-4">

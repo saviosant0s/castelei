@@ -1,13 +1,20 @@
 /*
-| O catálogo, do ponto de vista do site público.
+| O catálogo, do ponto de vista do site público — e a rede de segurança dele.
 |
-| Por que não buscar da API: o site de divulgação é a porta de entrada e a
-| página que o Google indexa. Ele não pode depender de o backend estar de pé,
-| nem exibir "não deu para carregar" para quem chega pela primeira vez.
+| A vitrine lê do backend (ver `site-catalog.ts`), para matéria criada no
+| painel aparecer sem ninguém editar código. Mas o site de divulgação é a
+| porta de entrada e a página que o Google indexa: ele não pode depender de o
+| backend estar de pé, nem exibir "não deu para carregar" para quem chega
+| pela primeira vez. Quando a API falha, demora ou responde algo estranho, é
+| esta lista que vai ao ar.
 |
-| O preço disso é duplicação, e o preço está pago em `site-content.test.ts`:
-| o teste lê os JSON de conteúdo do backend e reprova se este arquivo ficar
-| desatualizado. Acrescentou lição nova? O teste avisa antes do deploy.
+| Por isso ela precisa continuar verdadeira, e o preço está pago em
+| `site-content.test.ts`: o teste lê os JSON de conteúdo do backend e reprova
+| se este arquivo ficar desatualizado.
+|
+| A frase de vitrine (`pitch`) não tem equivalente no banco: é texto de venda,
+| escrito com capricho. Matéria que tem a sua aqui mantém a sua; matéria nova,
+| vinda do painel, se anuncia com a própria descrição.
 */
 
 export interface SiteSubject {

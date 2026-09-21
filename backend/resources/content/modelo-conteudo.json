@@ -1,0 +1,275 @@
+{
+  "_leia_me": [
+    "Este é o modelo de conteúdo do Castelei. Use-o como base e apague o que não usar.",
+    "Toda chave começada por _ é comentário: o Castelei ignora na importação, então pode deixar ou tirar.",
+    "Importar de novo o mesmo arquivo não duplica nada: a lição é reconhecida pelo slug e a questão pela posição.",
+    "Por isso, nunca troque o slug de uma lição já publicada nem mude questões de lugar: o app trataria como conteúdo novo."
+  ],
+  "_campos": {
+    "slug": "o endereço curto da matéria: só minúsculas sem acento, números e hífen.",
+    "name": "o nome que aparece na tela.",
+    "description": "uma frase sobre a matéria. Opcional.",
+    "lessons": "a lista de lições, na ordem em que devem ser estudadas."
+  },
+  "slug": "materia-de-exemplo",
+  "name": "Matéria de exemplo",
+  "description": "Troque por uma frase que diga a quem esta matéria serve.",
+  "lessons": [
+    {
+      "_campos": {
+        "slug": "identidade da lição dentro da matéria. Depois de publicada, não mude.",
+        "title": "o título que aparece na lista.",
+        "summary": "uma frase que responde 'o que eu vou aprender aqui?'.",
+        "steps": "as etapas: uma ideia por tela. Veja _tipos_de_etapa abaixo.",
+        "questions": "as questões do Modo Prova. O site público anuncia 8 por lição."
+      },
+      "_tipos_de_etapa": {
+        "idea": "a primeira etapa: a ideia central, antes de qualquer detalhe.",
+        "explain": "o corpo da lição. Pode repetir quantas vezes precisar.",
+        "exam": "'Como cai na prova': é a única etapa onde jargão de banca é bem-vindo. Uma por lição.",
+        "pitfall": "'Pegadinhas clássicas': os erros que todo mundo comete. Uma por lição.",
+        "recap": "a última etapa: o resumo que fecha."
+      },
+      "_blocos_opcionais": {
+        "bullets": "lista de itens curtos.",
+        "terms": "palavras novas explicadas ali mesmo. Nunca use um termo sem explicar antes.",
+        "example": "um exemplo resolvido, uma linha por passo.",
+        "figure": "uma imagem. O campo alt é obrigatório e precisa descrever o que se vê.",
+        "video": "um vídeo. Aceita arquivo enviado na Biblioteca de mídia ou link do YouTube.",
+        "code": "um trecho de código ou de terminal.",
+        "table": "uma tabela. Com mono: true, as colunas depois da primeira usam fonte de código."
+      },
+      "slug": "licao-de-exemplo",
+      "title": "Lição de exemplo",
+      "summary": "O que a pessoa sai sabendo depois de ler esta lição.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A ideia em uma frase",
+          "body": [
+            "Comece pela analogia, nunca pela definição.",
+            "Se um iniciante trava aqui, o texto está errado e o resto da lição não salva."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Do concreto para o abstrato",
+          "body": [
+            "Cada etapa carrega uma ideia só. Duas ideias na mesma tela viram nenhuma.",
+            "Frases curtas. Passou de duas vírgulas, quebre em duas frases."
+          ],
+          "terms": [
+            {
+              "word": "Termo novo",
+              "meaning": "a explicação vem junto da primeira vez que a palavra aparece."
+            }
+          ],
+          "bullets": [
+            "Um item por ideia.",
+            "Sem item que só repete o anterior com outras palavras."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Mostrando com figura e exemplo",
+          "body": [
+            "Apague este bloco se a sua lição não tiver figura."
+          ],
+          "figure": {
+            "src": "/figuras/so/so-estados-processo.svg",
+            "alt": "Descreva aqui o que a figura mostra, em uma frase, para quem não pode vê-la.",
+            "caption": "A legenda aparece embaixo da figura."
+          },
+          "example": {
+            "label": "Exemplo resolvido",
+            "lines": [
+              "Primeiro passo.",
+              "Segundo passo.",
+              "Resultado."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Comando, tabela e vídeo",
+          "body": [
+            "Comando sempre diz onde funciona. Quando houver dois jeitos, mostre os dois."
+          ],
+          "table": {
+            "label": "O mesmo comando nos dois sistemas",
+            "headers": [
+              "O que faz",
+              "Linux",
+              "Windows (PowerShell)"
+            ],
+            "rows": [
+              [
+                "Lista os arquivos da pasta",
+                "ls",
+                "dir"
+              ],
+              [
+                "Mostra em que pasta você está",
+                "pwd",
+                "Get-Location"
+              ]
+            ],
+            "mono": true
+          },
+          "code": {
+            "label": "No terminal",
+            "text": "ls -la"
+          },
+          "video": {
+            "_leia_me": "Envie o arquivo na Biblioteca de mídia e cole o endereço aqui, ou use um link do YouTube.",
+            "src": "https://www.youtube.com/watch?v=exemplo",
+            "title": "Título do vídeo",
+            "caption": "Uma frase dizendo o que o vídeo mostra."
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Aqui, e só aqui, entra a linguagem da banca."
+          ],
+          "bullets": [
+            "A palavra difícil que a prova usa para esta ideia.",
+            "O jeito típico de o enunciado disfarçar a pergunta."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Os erros mais comuns:"
+          ],
+          "bullets": [
+            "Confundir dois conceitos parecidos.",
+            "Decorar a definição sem entender para que serve."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo",
+          "body": [
+            "Três frases, no máximo, com o que não pode ser esquecido."
+          ]
+        }
+      ],
+      "_questions_leia_me": [
+        "correct_index começa em zero: 0 é a primeira alternativa da lista.",
+        "O padrão são 5 alternativas, como nas bancas.",
+        "topic é o que aparece no progresso do aluno como ponto forte ou fraco.",
+        "pitfall é opcional: o aviso extra que aparece quando a pessoa erra."
+      ],
+      "questions": [
+        {
+          "topic": "Tópico de exemplo",
+          "statement": "Troque pelo enunciado da primeira questão.",
+          "options": [
+            "A alternativa certa.",
+            "Uma errada que parece certa.",
+            "Outra errada.",
+            "Mais uma errada.",
+            "A última errada."
+          ],
+          "correct_index": 0,
+          "explanation": "Explique por que a certa é certa, e não só qual é.",
+          "pitfall": "O erro mais comum nesta questão."
+        },
+        {
+          "topic": "Tópico de exemplo",
+          "statement": "Enunciado da questão 2.",
+          "options": [
+            "Primeira alternativa.",
+            "Segunda alternativa.",
+            "Terceira alternativa.",
+            "Quarta alternativa.",
+            "Quinta alternativa."
+          ],
+          "correct_index": 1,
+          "explanation": "Por que esta é a certa."
+        },
+        {
+          "topic": "Tópico de exemplo",
+          "statement": "Enunciado da questão 3.",
+          "options": [
+            "Primeira alternativa.",
+            "Segunda alternativa.",
+            "Terceira alternativa.",
+            "Quarta alternativa.",
+            "Quinta alternativa."
+          ],
+          "correct_index": 2,
+          "explanation": "Por que esta é a certa."
+        },
+        {
+          "topic": "Tópico de exemplo",
+          "statement": "Enunciado da questão 4.",
+          "options": [
+            "Primeira alternativa.",
+            "Segunda alternativa.",
+            "Terceira alternativa.",
+            "Quarta alternativa.",
+            "Quinta alternativa."
+          ],
+          "correct_index": 3,
+          "explanation": "Por que esta é a certa."
+        },
+        {
+          "topic": "Tópico de exemplo",
+          "statement": "Enunciado da questão 5.",
+          "options": [
+            "Primeira alternativa.",
+            "Segunda alternativa.",
+            "Terceira alternativa.",
+            "Quarta alternativa.",
+            "Quinta alternativa."
+          ],
+          "correct_index": 4,
+          "explanation": "Por que esta é a certa."
+        },
+        {
+          "topic": "Tópico de exemplo",
+          "statement": "Enunciado da questão 6.",
+          "options": [
+            "Primeira alternativa.",
+            "Segunda alternativa.",
+            "Terceira alternativa.",
+            "Quarta alternativa.",
+            "Quinta alternativa."
+          ],
+          "correct_index": 0,
+          "explanation": "Por que esta é a certa."
+        },
+        {
+          "topic": "Tópico de exemplo",
+          "statement": "Enunciado da questão 7.",
+          "options": [
+            "Primeira alternativa.",
+            "Segunda alternativa.",
+            "Terceira alternativa.",
+            "Quarta alternativa.",
+            "Quinta alternativa."
+          ],
+          "correct_index": 1,
+          "explanation": "Por que esta é a certa."
+        },
+        {
+          "topic": "Tópico de exemplo",
+          "statement": "Enunciado da questão 8.",
+          "options": [
+            "Primeira alternativa.",
+            "Segunda alternativa.",
+            "Terceira alternativa.",
+            "Quarta alternativa.",
+            "Quinta alternativa."
+          ],
+          "correct_index": 2,
+          "explanation": "Por que esta é a certa."
+        }
+      ]
+    }
+  ]
+}

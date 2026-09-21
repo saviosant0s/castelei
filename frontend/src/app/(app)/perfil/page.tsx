@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Crown } from "lucide-react";
+import { Crown, SlidersHorizontal } from "lucide-react";
 import { DeleteAccountButton } from "@/components/DeleteAccountButton";
 import { InstallButton } from "@/components/InstallButton";
 import { LogoutButton } from "@/components/LogoutButton";
@@ -39,6 +39,17 @@ export default async function Perfil() {
         </span>
         <span className="text-base font-bold underline underline-offset-4">Ver planos</span>
       </Card>
+
+      {/* Só aparece para quem administra: o app não anuncia porta que a pessoa não pode abrir. */}
+      {user.is_admin && (
+        <Card href="/admin" tone="sunken" className="flex items-center gap-4">
+          <SlidersHorizontal className="size-6 shrink-0 text-content-secondary" aria-hidden="true" />
+          <span className="flex-1">
+            <span className="block font-display text-xl font-bold">Painel de conteúdo</span>
+            <span className="block text-sm text-content-subtle">Matérias, lições, questões e mídia</span>
+          </span>
+        </Card>
+      )}
 
       <section aria-labelledby="instalar" className="space-y-3">
         <h2 id="instalar" className="text-2xl">Use como aplicativo</h2>

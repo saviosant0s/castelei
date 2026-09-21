@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, BookOpen, Check, Lightbulb, Play, Sparkles, Target, X, type LucideIcon } from "lucide-react";
+import { LessonVideo } from "@/components/LessonVideo";
 import { pluralize } from "@/lib/format";
 import { clearSpot, saveSpot, useSpot } from "@/lib/lesson-progress";
 import type { LessonDetail, StepKind } from "@/lib/types";
@@ -169,6 +170,8 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
             {step.figure.caption && <figcaption className="mt-2 px-2 pb-1 text-sm text-ink/70">{step.figure.caption}</figcaption>}
           </figure>
         )}
+
+        {step.video && <LessonVideo video={step.video} />}
 
         {step.example && (
           <div className="mt-6 rounded-2xl bg-white p-5 shadow-lift">

@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { StartLink } from "@/components/site/StartLink";
 import { Card } from "@/components/ui";
-import { CATALOG, SUBJECTS } from "@/lib/site-content";
+import { getSiteCatalog } from "@/lib/site-catalog";
 
 /*
 | A vitrine.
@@ -95,7 +95,9 @@ const faq = [
   },
 ];
 
-export default function Landing() {
+export default async function Landing() {
+  const { subjects, totals } = await getSiteCatalog();
+
   return (
     <main className="mx-auto max-w-5xl px-5 pb-8 pt-10 sm:px-6 sm:pt-16">
       <section className="grid gap-12 lg:grid-cols-[1.05fr_1fr] lg:items-center">
@@ -116,7 +118,7 @@ export default function Landing() {
           </div>
 
           <p className="mt-6 font-mono text-sm text-content-subtle">
-            {CATALOG.subjects} matérias · {CATALOG.lessons} lições · {CATALOG.questions} questões · tudo
+            {totals.subjects} matérias · {totals.lessons} lições · {totals.questions} questões · tudo
             liberado durante os testes
           </p>
         </div>
@@ -187,7 +189,7 @@ export default function Landing() {
         </div>
 
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
-          {SUBJECTS.map((subject, i) => (
+          {subjects.map((subject, i) => (
             <Card
               key={subject.slug}
               href="/materias"

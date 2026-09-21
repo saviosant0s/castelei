@@ -4,9 +4,12 @@ import { describe, expect, it } from "vitest";
 import { CATALOG, SUBJECTS } from "./site-content";
 
 /*
-| O site de divulgação anuncia o catálogo de cabeça (ver site-content.ts).
-| Promessa de vitrine que não corresponde ao produto é o pior tipo de bug,
-| então aqui a fonte de verdade — os JSON do backend — manda.
+| A vitrine lê do backend, e cai nesta lista quando ele não responde (ver
+| site-catalog.ts). É justamente por ser a rede de segurança que ela não pode
+| envelhecer: promessa de vitrine que não corresponde ao produto é o pior tipo
+| de bug, e ela iria ao ar exatamente no dia em que a API estivesse fora.
+|
+| Aqui a fonte de verdade — os JSON do backend — manda.
 */
 const CONTENT_DIR = path.resolve(import.meta.dirname, "../../../backend/database/seeders/content");
 

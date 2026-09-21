@@ -73,6 +73,7 @@ As lições ficam em `backend/database/seeders/content/*.json`. Cada lição tem
 | `terms` | palavras novas explicadas nesta etapa (`word`, `meaning`) |
 | `figure` | figura SVG do app: `src` (em `frontend/public/figuras/`), `alt` (texto alternativo descritivo) e `caption` |
 | `code` | trecho de código: `label` e `text` (linhas curtas, até uns 36 caracteres) |
+| `video` | vídeo: `src` (arquivo enviado pelo painel ou link do YouTube), `title`, `caption` e `poster` |
 
 O Castelei é independente: **o conteúdo nunca cita livros, autores, capítulos ou páginas**. Livros e outras fontes servem só de base para estruturar os assuntos, e o verificador reprova qualquer referência.
 
@@ -83,6 +84,25 @@ node scripts/lint-content.mjs
 ```
 
 Ele reprova frases com mais de 2 vírgulas, "como vimos anteriormente", etapas longas demais e termos técnicos usados sem explicação prévia.
+
+## Painel de conteúdo (`/admin`)
+
+Dá para publicar matéria sem mexer em código: `/admin` importa um arquivo JSON
+com a matéria inteira, edita lições e questões e guarda imagens e vídeos. O
+guia completo está em [`docs/painel-admin.md`](docs/painel-admin.md).
+
+Para liberar a primeira conta, defina `ADMIN_EMAILS` no backend (lista separada
+por vírgula). Depois disso o caminho é o comando:
+
+```bash
+php artisan castelei:admin voce@exemplo.com    # --remover tira o acesso
+```
+
+Um detalhe que vale saber antes de usar: o `ContentSeeder` roda a cada deploy e
+recarrega os arquivos de `database/seeders/content/`. Para ele não desfazer o
+que foi editado no painel, cada matéria guarda de onde vem — e **a primeira
+edição feita pelo painel passa a matéria para o painel de vez**. Dali em diante
+o arquivo no repositório vira histórico.
 
 ## Modo de teste (sem login)
 
