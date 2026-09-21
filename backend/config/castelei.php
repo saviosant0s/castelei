@@ -14,6 +14,16 @@ return [
     // XP ganho por resposta certa (o wireframe mostra +20 por questão).
     'xp_per_correct_answer' => 20,
 
+    /*
+    | FASE DE TESTES: com isto ligado, todo mundo estuda como Pro — sem limite
+    | de questões, com gamificação e com simulado. O plano guardado em cada
+    | usuário não muda; só a leitura passa a ser Pro.
+    |
+    | Ao lançar de verdade, troque o padrão para false (ou defina UNLOCK_ALL=false
+    | no Railway). Nada mais precisa ser mexido: os limites voltam sozinhos.
+    */
+    'unlock_all' => (bool) env('UNLOCK_ALL', true),
+
     // true = libera streak/XP/conquistas para todos os planos (útil em testes).
     'gamification_for_all' => (bool) env('GAMIFICATION_FOR_ALL', false),
 

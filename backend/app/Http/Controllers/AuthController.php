@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Support\Plans;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -86,8 +87,11 @@ class AuthController extends Controller
             'name' => $user->name,
             'email' => $user->email,
             'plan' => $user->plan,
+            'effective_plan' => $user->effectivePlan(),
             'plan_label' => $user->planLabel(),
             'questions_per_lesson' => $user->questionLimit(),
+            // Fase de testes: tudo liberado, seja qual for o plano guardado.
+            'unlocked_for_testing' => Plans::unlockedForEveryone(),
         ];
     }
 }

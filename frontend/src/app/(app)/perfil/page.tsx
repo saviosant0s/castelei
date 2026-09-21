@@ -31,6 +31,9 @@ export default async function Perfil() {
         <span className="flex-1">
           <span className="block text-sm text-ink/60">Seu plano</span>
           <span className="block font-display text-2xl font-bold">{user.plan_label}</span>
+          {user.unlocked_for_testing && (
+            <span className="mt-0.5 block text-sm text-ink/60">Tudo liberado durante os testes</span>
+          )}
         </span>
         <span className="text-base font-bold underline underline-offset-4">Ver planos</span>
       </Link>

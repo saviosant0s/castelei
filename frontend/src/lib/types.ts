@@ -4,10 +4,16 @@ export interface User {
   id: number;
   name: string;
   email: string;
+  /** o plano guardado na conta */
   plan: Plan;
+  /** o plano que vale na prática — durante os testes, todo mundo estuda como Pro */
+  effective_plan: Plan;
+  /** rótulo do plano efetivo */
   plan_label: string;
   /** null = ilimitado */
   questions_per_lesson: number | null;
+  /** fase de testes: tudo liberado, seja qual for o plano guardado */
+  unlocked_for_testing: boolean;
 }
 
 export interface LessonSummary {

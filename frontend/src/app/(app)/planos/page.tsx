@@ -9,6 +9,7 @@ export const metadata: Metadata = { title: "Planos" };
 const plans = [
   { key: "free", name: "Grátis", price: "R$ 0", items: ["Todas as lições", "5 questões de treino por lição", "Modo prova com cronômetro", "Tempo e acerto por tópico"] },
   { key: "plus", name: "Plus", price: "Em breve", items: ["Tudo do Grátis", "Todas as questões de cada lição", "Streak, XP e conquistas", "Mais lições a cada atualização"] },
+  { key: "pro", name: "Pro", price: "Em breve", items: ["Tudo do Plus", "Questões sem limite", "Simulado por matéria", "Gráfico de evolução completo"] },
 ] as const;
 
 export default async function Planos() {
@@ -22,12 +23,20 @@ export default async function Planos() {
 
       <header>
         <h1 className="text-4xl">Planos</h1>
-        <p className="mt-3 text-base text-ink/70">Você está no plano <strong>{user.plan_label}</strong>.</p>
+        {user.unlocked_for_testing ? (
+          <p className="mt-3 rounded-2xl bg-sage-soft px-5 py-4 text-base">
+            <strong>Tudo liberado enquanto o app está em testes.</strong> Você estuda com todos os
+            recursos do Pro, sem limite de questões. Os planos abaixo mostram como vai ficar depois.
+          </p>
+        ) : (
+          <p className="mt-3 text-base text-ink/70">Você está no plano <strong>{user.plan_label}</strong>.</p>
+        )}
       </header>
 
       <div className="space-y-4">
         {plans.map((plan) => {
-          const current = user.plan === plan.key;
+          // Na fase de testes ninguém tem "plano atual": todo mundo está com tudo.
+          const current = !user.unlocked_for_testing && user.plan === plan.key;
           return (
             <section key={plan.key} className={`rounded-3xl p-6 ${plan.key === "plus" ? "border-2 border-sky bg-sky-soft/50" : "border-2 border-ink/15 bg-white"}`}>
               <div className="flex items-baseline justify-between gap-3">
@@ -42,7 +51,7 @@ export default async function Planos() {
                 ))}
               </ul>
               {current && <p className="mt-4 rounded-xl bg-white px-3 py-2 text-sm font-bold">Seu plano atual</p>}
-              {plan.key === "plus" && !current && (
+              {plan.key !== "free" && !current && (
                 <button type="button" disabled className="btn btn-primary mt-5 w-full">O pagamento chega em breve</button>
               )}
             </section>

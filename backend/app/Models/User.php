@@ -59,9 +59,15 @@ class User extends Authenticatable
         return Plans::questionLimit($this->plan);
     }
 
+    /** O plano que vale na prática (na fase de testes, todo mundo estuda como Pro). */
+    public function effectivePlan(): string
+    {
+        return Plans::effective($this->plan);
+    }
+
     public function planLabel(): string
     {
-        return Plans::label($this->plan);
+        return Plans::label($this->effectivePlan());
     }
 
     public function hasGamification(): bool
