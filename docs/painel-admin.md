@@ -124,7 +124,7 @@ A biblioteca em `/admin/midia` guarda o arquivo e devolve o endereço para
 colar dentro da etapa:
 
 ```json
-"figure": { "src": "https://…/storage/midia/images/x-a1b2c3.png", "alt": "…" }
+"figure": { "src": "https://…/api/media/midia/images/x-a1b2c3.png", "alt": "…" }
 "video":  { "src": "https://www.youtube.com/watch?v=…", "title": "…" }
 ```
 
@@ -139,22 +139,32 @@ As figuras antigas das lições continuam onde estavam, em
 `frontend/public/figuras/`. Endereço que começa com `/` é servido pelo próprio
 app e não passa por aqui.
 
-### ⚠️ Railway: sem volume, o arquivo some
+### Onde o arquivo mora
 
-O disco do contêiner do Railway **é descartado a cada deploy**. Sem um volume
-montado em `/app/storage/app/public`, tudo que for enviado pelo painel some no
-deploy seguinte — e o pior é o estado que fica: a ficha continua no banco e os
-endereços passam a dar 404.
+O disco do contêiner do Railway **é descartado a cada deploy**, então a mídia
+precisa de um lugar que sobreviva. Hoje isso é o volume `midia`, montado no
+serviço `backend` em `/app/storage/app/public`.
 
-São dois caminhos:
+Para trocar por armazenamento externo: `MEDIA_DISK=s3` e as variáveis `AWS_*`
+(vale para S3, Cloudflare R2 e compatíveis). Nada no código muda — a rota de
+entrega passa a redirecionar para o disco externo em vez de servir o arquivo.
 
-1. **Volume no Railway** (mais simples): no serviço `backend`, adicione um
-   volume montado em `/app/storage/app/public`. Nada muda no código.
-2. **Armazenamento externo**: `MEDIA_DISK=s3` e as variáveis `AWS_*` (vale
-   para S3, Cloudflare R2 e compatíveis). Nada muda no código: tudo passa por
-   `Storage::disk()`.
+### Por que a entrega é uma rota, e não `public/storage`
 
-Enquanto nenhum dos dois existir, use a biblioteca só para teste.
+O jeito normal do Laravel é um atalho em `public/storage`, criado por
+`php artisan storage:link`. Aqui ele não funciona: esse comando rodaria no
+pre-deploy do Railway, que acontece **num contêiner separado e descartável**,
+antes de o volume ser montado. O atalho morre com esse contêiner e nunca chega
+ao que atende as requisições.
+
+O sintoma seria cruel: o log do deploy diz *"link has been connected"* e toda
+imagem responde 404.
+
+Por isso a entrega é a rota `GET /api/media/{caminho}`
+(`MediaFileController`). Ela não depende de atalho, responde a pedidos de
+trecho — que é o que deixa adiantar um vídeo —, e manda o navegador guardar o
+arquivo para sempre, o que é seguro porque todo nome ganha um sufixo aleatório
+ao ser enviado.
 
 ### Limites
 

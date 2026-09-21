@@ -42,7 +42,7 @@ class AdminMediaTest extends TestCase
 
         $media = Media::firstOrFail();
         Storage::disk('public')->assertExists($media->path);
-        $this->assertStringContainsString('/storage/', $response->json('media.url'));
+        $this->assertStringContainsString('/api/media/'.$media->path, $response->json('media.url'));
     }
 
     /** Acento, espaço e maiúscula em URL dão dor de cabeça: o nome guardado é outro. */
@@ -122,6 +122,55 @@ class AdminMediaTest extends TestCase
         $this->putJson("/api/admin/media/{$media->id}", ['alt' => 'Uma descrição escrita depois.'])
             ->assertOk()
             ->assertJsonPath('media.alt', 'Uma descrição escrita depois.');
+    }
+
+    /*
+    | A entrega do arquivo.
+    |
+    | Ela é uma rota, e não o atalho public/storage do Laravel, porque o atalho
+    | é criado no pre-deploy do Railway — num contêiner descartável, antes de o
+    | volume ser montado. Ele nunca chega ao contêiner que atende as
+    | requisições, e o arquivo responderia 404 com o log dizendo que deu certo.
+    */
+    public function test_o_arquivo_enviado_e_entregue_pelo_endereco_que_o_painel_devolve(): void
+    {
+        $url = $this->post('/api/admin/media', ['file' => UploadedFile::fake()->image('figura.png')])
+            ->assertCreated()
+            ->json('media.url');
+
+        $this->get(parse_url($url, PHP_URL_PATH))
+            ->assertOk()
+            ->assertHeader('Cache-Control', 'immutable, max-age=31536000, public');
+    }
+
+    public function test_a_entrega_da_midia_nao_exige_login(): void
+    {
+        $url = $this->post('/api/admin/media', ['file' => UploadedFile::fake()->image('figura.png')])
+            ->assertCreated()
+            ->json('media.url');
+
+        // Uma tag `img` dentro da lição não tem como mandar o token da sessão.
+        app('auth')->forgetGuards();
+
+        $this->get(parse_url($url, PHP_URL_PATH))->assertOk();
+    }
+
+    public function test_arquivo_que_nao_existe_da_404(): void
+    {
+        $this->get('/api/media/midia/images/nunca-existiu.png')->assertNotFound();
+    }
+
+    /** Sem a expressão na rota, `..%2F..%2F.env` seria um caminho válido. */
+    public function test_nao_da_para_sair_da_pasta_de_midia(): void
+    {
+        foreach ([
+            '/api/media/midia/images/../../../.env',
+            '/api/media/..%2F..%2F.env',
+            '/api/media/storage/logs/laravel.log',
+            '/api/media/midia/segredos/chave.txt',
+        ] as $tentativa) {
+            $this->get($tentativa)->assertNotFound();
+        }
     }
 
     public function test_apagar_tira_o_arquivo_do_disco_tambem(): void
