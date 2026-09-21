@@ -67,13 +67,15 @@
 :root {
   color-scheme: light;
 
-  /* O grão do fundo. Fica numa variável porque quem precisa tapar o fundo
-     (ver .trail-mask) tem de repetir a MESMA textura: um retângulo liso sobre
-     fundo com grão aparece como mancha clara. */
+  /* O grão do fundo, numa variável porque o modo escuro troca a cor dele
+     (grão escuro sobre fundo escuro some). Entra na atmosfera do
+     `body::before`, por último. */
   --grain: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.11  0 0 0 0 0.11  0 0 0 0 0.18  0 0 0 0.03 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 
-  /* O brilho do alto da página (ver o fundo do body). */
-  --glow-sky: rgb(91 171 240 / 0.20);
+  /* A atmosfera do fundo (ver body::before). */
+  --glow-sky: rgb(91 171 240 / 0.34);
+  --glow-sky-2: rgb(91 171 240 / 0.22);
+  --mesh: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22'><circle cx='1' cy='1' r='1' fill='rgb(28,28,46)' fill-opacity='0.075'/></svg>");
 }
 
 /*
@@ -121,7 +123,9 @@
     --color-on-bold: #f2f3f7;
     --shadow-lift: 0 14px 30px -16px rgb(0 0 0 / 0.75);
     --shadow-sky: 0 14px 26px -14px rgb(47 127 199 / 0.55);
-    --glow-sky: rgb(111 182 242 / 0.14);
+    --glow-sky: rgb(111 182 242 / 0.26);
+    --glow-sky-2: rgb(111 182 242 / 0.16);
+    --mesh: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22'><circle cx='1' cy='1' r='1' fill='rgb(255,255,255)' fill-opacity='0.06'/></svg>");
   }
 }
 
@@ -146,15 +150,26 @@
   --color-on-bold: #f2f3f7;
   --shadow-lift: 0 14px 30px -16px rgb(0 0 0 / 0.75);
   --shadow-sky: 0 14px 26px -14px rgb(47 127 199 / 0.55);
-  --glow-sky: rgb(111 182 242 / 0.14);
+  --glow-sky: rgb(111 182 242 / 0.26);
+  --glow-sky-2: rgb(111 182 242 / 0.16);
+  --mesh: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22'><circle cx='1' cy='1' r='1' fill='rgb(255,255,255)' fill-opacity='0.06'/></svg>");
 }
 
 html, body {
   overscroll-behavior-y: none;
   overscroll-behavior-x: none;
   overflow-x: clip;        /* era hidden — clip esconde a barra sem travar o scroll */
-  /* Papel, nunca valor cru: era #F8F9FA fixo, e no modo escuro ficava branco. */
-  background-color: var(--color-surface);
+  /*
+  | A cor fica SÓ no html. Papel, nunca valor cru (era #F8F9FA fixo, e no
+  | escuro ficava branco) — e no body ela precisa ser transparente.
+  |
+  | O motivo é a ordem de pintura do CSS: dentro de um contexto de
+  | empilhamento vem primeiro o fundo da raiz, DEPOIS os filhos de z-index
+  | negativo, e só então o fundo dos blocos descendentes. Com cor no body, o
+  | fundo dele cobria o `body::before` — a atmosfera existia, renderizava e
+  | era invisível.
+  */
+  background-color: transparent;
 }
 /* Esconde scrollbar mantendo a rolagem */
 ::-webkit-scrollbar {
@@ -176,41 +191,46 @@ body {
   color: var(--color-ink);
   -webkit-font-smoothing: antialiased;
 
-  /*
-  | O fundo: um brilho de azul-céu no alto, mais o grão de sempre.
-  |
-  | O chapado puro fazia a tela parecer documento, não aplicativo. O brilho
-  | dá profundidade sem virar assunto — a regra aqui é que ele NUNCA pode
-  | competir com o conteúdo: quem está lendo lição ou respondendo questão não
-  | deve notar que existe.
-  |
-  | Ele é preso ao ALTO DO DOCUMENTO e termina em 560px, e isso não é estética
-  | e sim contrato com a trilha: o título de cada lição se apaga sobre o traço
-  | com `.trail-mask`, que é cor lisa + grão. Onde houver brilho, essa máscara
-  | não bate e aparece como mancha. A trilha começa bem abaixo de 560px em
-  | toda matéria — se algum dia o brilho crescer ou virar fixo na tela, a
-  | máscara precisa crescer junto.
-  |
-  | Nada de gradiente roxo ou índigo (regra 4 do design system): é a
-  | assinatura visual dos produtos de IA. Só azul-céu, a cor de ação da marca.
-  */
-  background-image: radial-gradient(120% 560px at 50% -80px, var(--glow-sky), transparent 70%), var(--grain);
-  background-repeat: no-repeat, repeat;
-  background-size: 100% 560px, auto;
-  background-position: top center, top left;
-  background-attachment: scroll, scroll;
 }
 
 /*
-| O fundo que tapa o traço da trilha atrás do título da lição.
+| O FUNDO
 |
-| Sem isso, a curva risca as letras. Com bg-surface puro aparece um retângulo
-| mais claro, porque o body tem grão e o retângulo não — daí repetir a mesma
-| textura aqui. O desencontro do ladrilho é invisível a 3% de opacidade.
+| Uma camada só, presa à TELA e não ao documento: role o quanto rolar, a
+| atmosfera continua lá. Antes era um brilho no alto dos primeiros 560px, e
+| da metade da página para baixo tudo voltava a ser chapado.
+|
+| O que ela tem:
+|
+| - dois brilhos de azul-céu, um no alto à esquerda e outro embaixo à
+|   direita, em diagonal. A diagonal é o que evita a cara de "gradiente de
+|   cabeçalho" e dá volume à tela inteira;
+| - uma malha de pontos finíssima, que é o que tira o liso de perto. Sozinha
+|   ela seria papel milimetrado; com os brilhos por cima, vira textura;
+| - o grão de sempre, por último.
+|
+| A regra que manda em tudo isso: ELA NUNCA PODE COMPETIR COM O CONTEÚDO.
+| Quem está lendo uma lição ou respondendo questão não deve notar que existe.
+| Se um dia parecer enfeite, está forte demais.
+|
+| Nada de roxo ou índigo (regra 4 do design system): é a assinatura visual dos
+| produtos de IA. Só azul-céu, a cor de ação da marca.
+|
+| Fica em `::before` fixo, e não no `background` do body, porque fundo de body
+| rola junto com a página. `z-index: -1` e `pointer-events: none` garantem que
+| ela nunca fique na frente nem roube um toque.
 */
-.trail-mask {
-  background-color: var(--color-surface);
-  background-image: var(--grain);
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(70% 55% at 8% 0%, var(--glow-sky), transparent 70%),
+    radial-gradient(60% 50% at 100% 100%, var(--glow-sky-2), transparent 70%),
+    var(--mesh),
+    var(--grain);
 }
 
 h1,

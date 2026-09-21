@@ -15,7 +15,7 @@ export function TrailResume({ lessonId }: { lessonId: number }) {
   if (!spot) return null;
 
   return (
-    <span className="trail-mask block rounded-control px-1.5 text-[0.6875rem] leading-tight font-bold text-content">
+    <span className="mt-1 block rounded-control bg-surface-raised px-2 py-0.5 text-[0.6875rem] leading-tight font-bold text-content shadow-lift">
       parou na etapa {spot.step + 1} de {spot.total}
     </span>
   );
