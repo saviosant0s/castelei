@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CastleMark } from "@/components/Logo";
 
 export const metadata: Metadata = {
   title: "Excluir sua conta",
@@ -16,13 +15,8 @@ const contato = process.env.CONTACT_EMAIL?.trim();
 
 export default function ExcluirConta() {
   return (
-    <main className="mx-auto max-w-2xl px-5 py-10">
-      <Link href="/inicio" className="inline-flex items-center gap-2.5">
-        <CastleMark className="size-9" />
-        <span className="font-display text-xl font-bold tracking-tight">Castelei</span>
-      </Link>
-
-      <h1 className="mt-8 text-4xl">Excluir sua conta</h1>
+    <main className="mx-auto max-w-2xl px-5 py-12 sm:px-6">
+      <h1 className="text-4xl">Excluir sua conta</h1>
 
       <div className="mt-8 space-y-8 text-base leading-relaxed">
         <section>
@@ -70,10 +64,6 @@ export default function ExcluirConta() {
           </p>
         </section>
       </div>
-
-      <Link href="/privacidade" className="mt-10 inline-block text-base text-content-subtle underline underline-offset-4">
-        Política de Privacidade
-      </Link>
     </main>
   );
 }

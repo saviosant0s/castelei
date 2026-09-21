@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CastleMark } from "@/components/Logo";
 
 export const metadata: Metadata = {
   title: "Política de Privacidade",
@@ -21,13 +20,8 @@ const contato = process.env.CONTACT_EMAIL?.trim();
 
 export default function Privacidade() {
   return (
-    <main className="mx-auto max-w-2xl px-5 py-10">
-      <Link href="/inicio" className="inline-flex items-center gap-2.5">
-        <CastleMark className="size-9" />
-        <span className="font-display text-xl font-bold tracking-tight">Castelei</span>
-      </Link>
-
-      <h1 className="mt-8 text-4xl">Política de Privacidade</h1>
+    <main className="mx-auto max-w-2xl px-5 py-12 sm:px-6">
+      <h1 className="text-4xl">Política de Privacidade</h1>
       <p className="mt-2 text-base text-content-subtle">Atualizada em {ATUALIZADA_EM}.</p>
 
       <div className="mt-8 space-y-8 text-base leading-relaxed">

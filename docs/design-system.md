@@ -113,6 +113,35 @@ navegador. O que sustenta isso hoje:
   pode ser compartilhado. Cada seção com abas ganha seu próprio `loading.tsx`,
   senão o cabeçalho pisca a cada toque.
 
+## Site público × app
+
+São duas molduras diferentes, de propósito, e elas moram em grupos de rota
+separados.
+
+- **`src/app/(site)/`** é o site de divulgação: `/`, `/como-funciona`,
+  `/materias`, `/privacidade` e `/excluir-conta`. Tem cabeçalho fixo com
+  navegação (`components/site/SiteHeader.tsx`) e rodapé completo
+  (`SiteFooter.tsx`). Abre sem login e é o que o Google indexa.
+- **`src/app/(app)/`** é o app: barra de baixo, abas, sem cabeçalho de site.
+
+A regra: **site parece site, app parece app.** Quem chega pela divulgação
+espera links e rodapé; quem está estudando espera um aplicativo. Misturar as
+duas molduras é o que faz um app parecer "site embrulhado".
+
+Detalhes que valem lembrar:
+
+- A chamada para ação nunca é escrita à mão. É `components/site/StartLink.tsx`,
+  que decide sozinho entre "Começar grátis" e "Continuar estudando" — ninguém
+  com conta deve receber convite para criar outra.
+- O catálogo anunciado no site vive em `lib/site-content.ts`, e **não** vem da
+  API: a vitrine não pode depender de o backend estar no ar. O preço da cópia
+  está pago em `site-content.test.ts`, que reprova o build se o site prometer
+  matéria ou lição que o conteúdo não tem.
+- No celular o cabeçalho esconde os links; quem garante que toda página
+  pública continue alcançável é o rodapé.
+- `sitemap.ts` e `robots.ts` listam só as páginas públicas. As telas de estudo
+  são bloqueadas: indexá-las só geraria resultado de busca que leva ao login.
+
 ## Regras que valem para toda tela nova
 
 1. **Ícones em SVG, nunca emoji na interface.** Emoji muda de cara em cada

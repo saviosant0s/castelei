@@ -279,11 +279,63 @@ confirmação em dois passos. Apaga cadastro, histórico, XP, streak e conquista
 
 ## O que ainda não existe e pode ser cobrado
 
-- **Pagamento.** Quando os planos pagos entrarem, eles têm que usar o
-  faturamento do Google Play (com taxa), não um gateway por fora. Isso muda a
-  classificação de conteúdo e a ficha de Segurança de Dados.
 - **Termos de Uso.** Não é obrigatório agora, mas passa a ser quando houver
   cobrança.
+
+---
+
+## Pagamento: decisão tomada
+
+**O Sávio decidiu usar o faturamento do próprio Google Play** — aquele pop-up
+que abre por cima do app, sem sair dele. Não é só preferência: para venda de
+conteúdo digital dentro de um app da loja, o Google **exige** o faturamento
+dele, com taxa. Gateway por fora dá remoção do app.
+
+Isso entra **depois do lançamento**, e não agora. O que fica registrado aqui é
+o que a decisão implica, para quando chegar a hora.
+
+### O detalhe que muda tudo: dentro de um TWA é diferente
+
+O Castelei na loja é um TWA — uma página web em tela cheia. O jeito normal de
+cobrar no Android (a biblioteca Play Billing, em Kotlin/Java) **não existe**
+numa página web. O caminho para TWA é outro:
+
+- **Digital Goods API + Payment Request**, que é a ponte do navegador para o
+  faturamento do Play. É oficial e funciona, mas **só dentro do app da loja**.
+- O app precisa ser gerado **com o faturamento ligado**. No Bubblewrap, são
+  duas chaves no `twa-manifest.json`: `alphaDependencies` e o recurso
+  `playBilling`, seguidas de `bubblewrap update` e `bubblewrap build`. É isso
+  que acrescenta a permissão `com.android.vending.BILLING`. Ou seja: **gerar o
+  `.aab` de novo** — mais um motivo para guardar o keystore.
+- **No site aberto no navegador não há Play Billing.** Quem entrar pelo
+  endereço web não vê botão de comprar, ou vê um aviso mandando usar o app.
+  O código vai precisar detectar isso: `'getDigitalGoodsService' in window`.
+
+### O que vai precisar ser feito, na ordem
+
+1. 🧑 Criar os produtos (assinaturas Plus e Pro) no Play Console, com preço em
+   real e o mesmo identificador que o código vai usar.
+2. Ligar o faturamento no `twa-manifest.json` e gerar um `.aab` novo.
+3. Escrever a tela de compra usando a Digital Goods API, com o caminho
+   alternativo para quem está no navegador.
+4. **Validar a compra no servidor.** O aplicativo manda o *purchase token*
+   para a API do Castelei, e o Laravel confere esse token na Google Play
+   Developer API antes de mudar o plano do usuário. Sem essa conferência, o
+   plano é liberável por qualquer um que mexa no navegador — o cliente nunca
+   é fonte de verdade para pagamento.
+5. Tratar a renovação e o cancelamento (a assinatura vence, o Google avisa por
+   *Real-time developer notifications*).
+6. 🧑 Preencher os **Termos de Uso** e refazer a **Classificação de conteúdo**
+   e a ficha de **Segurança de Dados**, que mudam quando existe compra.
+
+A parte boa do desenho atual: o plano já está guardado em cada usuário e o
+limite de questões já é decidido no servidor (`Plans::effective()`). O dia da
+cobrança não mexe nas telas de estudo — mexe em quem tem direito a quê.
+
+Documentação para consultar na hora:
+[Play Billing em TWA](https://developer.chrome.com/docs/android/trusted-web-activity/play-billing/),
+[receber pagamentos com Digital Goods API](https://developer.chrome.com/docs/android/trusted-web-activity/receive-payments-play-billing)
+e o [exemplo completo do Google](https://github.com/chromeos/pwa-play-billing).
 
 ---
 

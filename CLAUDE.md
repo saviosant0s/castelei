@@ -35,7 +35,8 @@ Plano de um usuário: `php artisan castelei:plan email@exemplo.com plus`.
 
 - **O navegador nunca fala com a API.** O Next guarda o token do Sanctum em cookie `httpOnly` (`castelei_token`) e repassa só as rotas de prática (`frontend/src/lib/proxy.ts`). `frontend/src/proxy.ts` protege as telas do app.
 - **Modo de teste sem login:** com `GUEST_MODE=true` (frontend), cada navegador ganha uma conta de visitante. A API segue protegida. Sem a variável, o login normal volta.
-- **Planos:** limite de questões por lição no servidor (Grátis 5, Plus 30, Pro sem limite) em `backend/config/castelei.php`. Pagamento **não** está integrado.
+- **Site público separado do app.** `src/app/(site)/` guarda tudo que abre sem login (`/`, `/como-funciona`, `/materias`, `/privacidade`, `/excluir-conta`), com cabeçalho e rodapé de site. O app continua em `(app)`, com a moldura de aplicativo. O catálogo anunciado no site fica em `lib/site-content.ts` — não vem da API, para a vitrine não cair junto com o backend, e um teste (`site-content.test.ts`) reprova se ele divergir do conteúdo de verdade.
+- **Planos:** limite de questões por lição no servidor (Grátis 5, Plus 30, Pro sem limite) em `backend/config/castelei.php`. Pagamento **não** está integrado. **Decisão do Sávio:** quando entrar, vai ser pelo faturamento do próprio Google Play. Dentro de um TWA isso não é a biblioteca de Android, e sim a Digital Goods API + Payment Request, com validação do *purchase token* no servidor — o caminho completo está em `docs/play-store.md`.
 - **FASE DE TESTES — tudo liberado.** `UNLOCK_ALL` (padrão **ligado**) faz todo mundo estudar como Pro. Passa por `Plans::effective()`; o plano guardado em cada usuário não muda, então trocar o padrão para `false` devolve os limites sem migração. É a chave a desligar no lançamento.
 - **Identidade visual é própria, e isso é decisão.** Nenhuma biblioteca de design de terceiros entra como base — Carbon traz a cara da IBM, Primer a do GitHub, e o padrão do shadcn/ui virou a cara dos apps de IA. O Atlassian Design System foi avaliado e descartado por licença (só vale para produtos integrados à Atlassian, e proíbe obras derivadas). Comportamento complexo, quando precisar, vem do Radix UI (MIT), sem visual junto.
 - **Gamificação** (XP 20 por acerto, streak em dias no fuso `America/Sao_Paulo`, 10 conquistas): dados guardados para todos; só Plus/Pro veem. `GAMIFICATION_FOR_ALL=true` (backend) libera para todos, e está ligado no Railway para testes. Falhas da gamificação nunca podem quebrar o estudo (tudo em `try/catch`).
@@ -57,7 +58,7 @@ Projeto `castelei` com três serviços: `Postgres`, `backend` (Root Directory `/
 
 - Frontend: `https://frontend-production-3c7da.up.railway.app`. Backend: `https://backend-production-b5a94.up.railway.app`.
 - Variáveis do backend: `APP_KEY`, `APP_ENV=production`, `APP_DEBUG=false`, `APP_URL`, `DB_CONNECTION=pgsql`, `DB_URL=${{Postgres.DATABASE_URL}}`, `LOG_CHANNEL=stderr`, `SESSION_DRIVER=array`, `CACHE_STORE=database`, `GAMIFICATION_FOR_ALL=true`.
-- Variáveis do frontend: `API_URL` (domínio público do backend, terminando em `/api`), `GUEST_MODE=true`. Opcionais: `CONTACT_EMAIL` (aparece em `/privacidade`), `ANDROID_CERT_FINGERPRINTS` e `ANDROID_PACKAGE_NAME` (Play Store).
+- Variáveis do frontend: `API_URL` (domínio público do backend, terminando em `/api`), `GUEST_MODE=true`. Opcionais: `SITE_URL` (endereço público, usado no sitemap, no robots e nas prévias de link), `CONTACT_EMAIL` (aparece em `/privacidade`), `ANDROID_CERT_FINGERPRINTS` e `ANDROID_PACKAGE_NAME` (Play Store).
 - Nunca commite segredos. Não versione `.env`.
 
 ## Estado atual
@@ -65,6 +66,8 @@ Projeto `castelei` com três serviços: `Postgres`, `backend` (Root Directory `/
 Pronto: MVP (cadastro, catálogo, prática com cronômetro, resultado com recorde e ponto fraco, progresso por tópico, planos), modo de teste, Fase 2 (streak, XP, conquistas), lições em etapas, conteúdo revisado pelo Guia Editorial (Matemática, Português) e a matéria **Sistemas Operacionais** com 5 lições (o que é um SO; componentes e funções; terminal na prática; chamadas de sistema em 2 lições).
 
 **Fase 2 fechada** (menos TWA na Play Store e expansão de módulos, adiados pelo Sávio): simulado por matéria (`ExamController`, tentativa com `kind = exam`, questões sorteadas em rodízio entre as lições) e gráfico de evolução (`EvolutionChart`, acerto e tempo em gráficos separados — nunca eixo duplo). CI ativo em `.github/workflows/ci.yml`.
+
+**Site de divulgação no ar**: vitrine em `/` (com uma questão real de Sistemas Operacionais como prova do produto), `/como-funciona` (o método passo a passo) e `/materias` (catálogo com o nome de toda lição). Junto vieram `sitemap.ts`, `robots.ts` e a imagem de prévia de link (`opengraph-image.tsx`, que lê as fontes da marca de `public/fonts/*.woff` — `.woff2` não serve para gerar imagem).
 
 **Progresso é dividido em abas de rota**: `/progresso` (números gerais e por tópico), `/progresso/evolucao` e `/progresso/conquistas`, com o controle segmentado em `components/ProgressTabs.tsx`. Era tudo numa tela só e ficou embolado. Ao acrescentar uma aba, mexa também no `loading.tsx` da pasta — é ele que impede o cabeçalho de piscar.
 
