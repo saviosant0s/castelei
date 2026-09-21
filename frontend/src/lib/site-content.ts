@@ -40,6 +40,10 @@ export const SUBJECTS: SiteSubject[] = [
       "Semáforos e mutexes: dormir em vez de girar em falso",
       "Monitores e mensagens: quando a linguagem ou a rede resolvem",
       "Os problemas clássicos que toda prova cobra",
+      "Memória: por que um programa não escolhe onde mora",
+      "Memória virtual: o endereço que o programa vê não é o de verdade",
+      "A memória encheu: quem sai da sala",
+      "Segmentação: dividir por sentido, não por tamanho",
     ],
   },
   {

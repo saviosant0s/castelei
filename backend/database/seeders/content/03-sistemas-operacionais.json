@@ -6071,6 +6071,1460 @@
           "pitfall": "Não confunda com produtor-consumidor. Aqui o foco é o servidor que dorme e os clientes que desistem."
         }
       ]
+    },
+    {
+      "slug": "gerencia-de-memoria",
+      "title": "Memória: por que um programa não escolhe onde mora",
+      "summary": "Vários programas na mesma memória precisam de faixas separadas. Sem isso, um escreve por cima do outro e ninguém percebe.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O caderno compartilhado",
+          "body": [
+            "Três pessoas dividem um caderno só, e cada uma escreve onde quer.",
+            "A primeira anota a lista de compras na página 10.",
+            "A segunda chega e anota a receita do bolo na mesma página 10.",
+            "A lista sumiu. Ninguém avisou ninguém, e o caderno agora está errado."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A memória é uma fila de caixinhas numeradas",
+          "body": [
+            "A memória principal guarda o que está sendo usado agora.",
+            "Ela é uma sequência enorme de caixinhas, e cada uma tem um número.",
+            "Esse número é o endereço, e é assim que o programa acha o que guardou."
+          ],
+          "terms": [
+            {
+              "word": "Processo",
+              "meaning": "um programa em execução, com a memória que ele usa e o ponto exato em que parou."
+            },
+            {
+              "word": "Processador",
+              "meaning": "a peça do computador que executa as instruções dos programas."
+            },
+            {
+              "word": "Memória principal",
+              "meaning": "onde ficam os programas e os dados em uso. Ela é rápida e some quando a máquina desliga."
+            },
+            {
+              "word": "Endereço",
+              "meaning": "o número que identifica cada caixinha da memória."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Antigamente era um por vez",
+          "body": [
+            "Nos primeiros computadores, um programa rodava sozinho.",
+            "Ele era dono da memória inteira e usava qualquer endereço.",
+            "Enquanto era um só, isso funcionava bem."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Com dois programas, o caderno se repete",
+          "body": [
+            "Dois programas escritos assim usam os mesmos números de endereço.",
+            "Os dois acham que o endereço 1000 é deles.",
+            "O segundo escreve por cima do primeiro, e o primeiro quebra sem entender."
+          ],
+          "example": {
+            "label": "A cena do problema",
+            "lines": [
+              "o programa A grava o saldo no endereço 1000",
+              "o programa B grava a data no endereço 1000",
+              "o programa A lê o saldo e encontra uma data"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Primeira saída: dar uma faixa a cada um",
+          "body": [
+            "A ideia é guardar dois números para cada programa em execução.",
+            "Um diz onde a faixa dele começa. O outro diz até onde ela vai.",
+            "Todo endereço que o programa usa é somado ao começo da faixa."
+          ],
+          "terms": [
+            {
+              "word": "Registrador base",
+              "meaning": "o número guardado que diz onde começa a faixa de memória de um programa."
+            },
+            {
+              "word": "Registrador limite",
+              "meaning": "o número guardado que diz o tamanho da faixa. Passar dele é erro na hora."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/so/so-base-limite.svg",
+            "alt": "Barra vertical da memória com faixas separadas para o sistema e para dois programas, e marcas indicando onde a faixa de um deles começa e que tamanho tem.",
+            "caption": "O programa diz 1000. A peça soma o começo da faixa e chega ao lugar certo."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Quando não cabe todo mundo",
+          "body": [
+            "A memória acaba antes da vontade de abrir programas.",
+            "Então o sistema tira um programa inteiro da memória e guarda no disco.",
+            "Quando ele voltar a ser preciso, é trazido de volta."
+          ],
+          "terms": [
+            {
+              "word": "Troca (swapping)",
+              "meaning": "levar um programa inteiro da memória para o disco e trazê-lo de volta depois."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os buracos que sobram",
+          "body": [
+            "Programas entram e saem, e deixam vãos de tamanhos diferentes.",
+            "Pode haver muita memória livre e nenhum vão grande o bastante.",
+            "É como estacionar: há espaço na rua, mas em pedaços pequenos demais."
+          ],
+          "terms": [
+            {
+              "word": "Fragmentação externa",
+              "meaning": "quando sobra memória livre espalhada em vãos pequenos, sem nenhum grande o bastante."
+            },
+            {
+              "word": "Compactação",
+              "meaning": "empurrar os programas para juntar os vãos num só. Resolve, e custa caro em tempo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Onde colocar o próximo programa",
+          "body": [
+            "Havendo vários vãos livres, o sistema precisa escolher um.",
+            "Três regras simples aparecem sempre."
+          ],
+          "table": {
+            "label": "Escolhendo o vão",
+            "headers": [
+              "Regra",
+              "O que faz",
+              "Efeito"
+            ],
+            "rows": [
+              [
+                "Primeiro que couber",
+                "pega o primeiro vão suficiente",
+                "rápida, e enche o começo da memória"
+              ],
+              [
+                "Melhor ajuste",
+                "procura o vão mais justo",
+                "lenta, e deixa sobras minúsculas"
+              ],
+              [
+                "Pior ajuste",
+                "pega sempre o maior vão",
+                "tenta deixar sobras aproveitáveis"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Ver a memória da sua máquina",
+          "body": [
+            "Dá para ver quanto há de memória e quanto está em uso agora."
+          ],
+          "terms": [
+            {
+              "word": "Terminal",
+              "meaning": "a janela em que você digita ordens de texto para o computador, em vez de clicar."
+            },
+            {
+              "word": "Comando",
+              "meaning": "cada ordem de texto que você digita no terminal."
+            },
+            {
+              "word": "PowerShell e Prompt de Comando (cmd)",
+              "meaning": "os dois programas do Windows em que você digita ordens de texto. O PowerShell é o mais novo dos dois."
+            }
+          ],
+          "table": {
+            "label": "Quanto de memória está em uso",
+            "headers": [
+              "Onde",
+              "Como"
+            ],
+            "rows": [
+              [
+                "Windows (janela)",
+                "Gerenciador de Tarefas → Desempenho → Memória"
+              ],
+              [
+                "Windows (PowerShell)",
+                "Get-CimInstance Win32_OperatingSystem"
+              ],
+              [
+                "Linux",
+                "free -h"
+              ],
+              [
+                "Linux (detalhado)",
+                "cat /proc/meminfo"
+              ],
+              [
+                "Linux (ao vivo)",
+                "top ou htop"
+              ]
+            ],
+            "mono": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca cobra os dois tipos de fragmentação e as regras de alocação. Os dois tipos são trocados de propósito."
+          ],
+          "bullets": [
+            "Fragmentação externa: memória livre espalhada em lacunas pequenas, típica de partições variáveis.",
+            "Fragmentação interna: espaço desperdiçado DENTRO de um bloco alocado grande demais, típica de partições fixas.",
+            "Registradores base e limite dão realocação dinâmica e proteção com uma soma e uma comparação.",
+            "Swapping: transferir um processo inteiro entre memória e disco.",
+            "First fit: primeiro espaço que couber, o mais rápido.",
+            "Best fit: menor espaço que couber; tende a gerar fragmentos minúsculos.",
+            "Worst fit: maior espaço disponível.",
+            "Compactação elimina a fragmentação externa, e exige mover processos e reescrever endereços.",
+            "Mapa de bits e lista encadeada são as duas formas de o sistema controlar o que está livre."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Quatro trocas caem quase sempre nessa parte."
+          ],
+          "bullets": [
+            "Fragmentação externa é fora dos blocos. A interna é dentro de um bloco grande demais.",
+            "Melhor ajuste não é o melhor na prática. Ele deixa restos pequenos e inúteis.",
+            "Ter memória livre não garante que o programa caiba. Ela pode estar em pedaços.",
+            "O registrador de limite não é onde a faixa termina. Ele é o tamanho dela."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Vários programas na mesma memória exigem faixas separadas e protegidas."
+          ],
+          "bullets": [
+            "Cada caixinha da memória tem um número, que é o endereço.",
+            "Sem separação, um programa escreve por cima do outro.",
+            "Base e limite resolvem com uma soma e uma comparação.",
+            "Não cabendo todo mundo, o sistema leva um programa inteiro ao disco.",
+            "Entra e sai programa, e sobram vãos pequenos espalhados.",
+            "Externa é entre os blocos. Interna é dentro de um bloco."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Fragmentação",
+          "statement": "Em um sistema com partições variáveis, há 300 MB livres espalhados em lacunas de no máximo 40 MB, e um processo de 100 MB não consegue ser carregado. Esse fenômeno é chamado de:",
+          "options": [
+            "fragmentação externa",
+            "fragmentação interna",
+            "thrashing",
+            "swapping",
+            "sobrecarga de realocação"
+          ],
+          "correct_index": 0,
+          "explanation": "A memória livre existe, mas está quebrada em pedaços pequenos demais. Nenhum deles atende sozinho.",
+          "pitfall": "Fragmentação interna é o desperdício dentro de um bloco já alocado, e não entre blocos."
+        },
+        {
+          "topic": "Fragmentação interna",
+          "statement": "Um sistema usa partições fixas de 64 MB. Um processo de 40 MB ocupa uma partição inteira. Os 24 MB não utilizados caracterizam:",
+          "options": [
+            "fragmentação interna",
+            "fragmentação externa",
+            "compactação pendente",
+            "área de swap",
+            "sobrecarga de paginação"
+          ],
+          "correct_index": 0,
+          "explanation": "O espaço está dentro de um bloco já entregue ao processo. Ninguém mais pode usá-lo.",
+          "pitfall": "Partição fixa gera fragmentação interna. Partição variável gera fragmentação externa."
+        },
+        {
+          "topic": "Base e limite",
+          "statement": "Os registradores base e limite fornecem, respectivamente:",
+          "options": [
+            "o endereço inicial da partição e o tamanho máximo permitido ao processo",
+            "o endereço final e o inicial da partição",
+            "o tamanho da página e o número de páginas",
+            "o início e o fim da área de swap",
+            "a prioridade e o quantum do processo"
+          ],
+          "correct_index": 0,
+          "explanation": "O endereço gerado pelo processo é somado à base e comparado ao limite. Passar do limite dispara erro na hora.",
+          "pitfall": "O limite é um tamanho, não um endereço final. A banca troca isso com frequência."
+        },
+        {
+          "topic": "Alocação",
+          "statement": "O algoritmo best fit (melhor ajuste) tem como principal desvantagem:",
+          "options": [
+            "deixar fragmentos muito pequenos e inaproveitáveis espalhados pela memória",
+            "ser o mais rápido e por isso impreciso",
+            "exigir compactação a cada alocação",
+            "não poder ser usado com partições variáveis",
+            "alocar sempre o maior espaço disponível"
+          ],
+          "correct_index": 0,
+          "explanation": "Ao buscar o encaixe mais justo, ele deixa sobras minúsculas. Além disso, precisa varrer a lista inteira.",
+          "pitfall": "O nome sugere que é o melhor. Na prática, o first fit costuma dar resultados melhores."
+        },
+        {
+          "topic": "Swapping",
+          "statement": "No swapping clássico, a unidade transferida entre memória e disco é:",
+          "options": [
+            "o processo inteiro",
+            "uma página de tamanho fixo",
+            "um segmento lógico",
+            "apenas a pilha do processo",
+            "um bloco do sistema de arquivos"
+          ],
+          "correct_index": 0,
+          "explanation": "Todo o processo sai da memória e depois volta inteiro. Transferir só partes é paginação, que é outra técnica.",
+          "pitfall": "Swapping e paginação costumam ser confundidos. A diferença é justamente a unidade transferida."
+        },
+        {
+          "topic": "Compactação",
+          "statement": "A compactação de memória elimina a fragmentação externa, mas é pouco usada porque:",
+          "options": [
+            "consome muito tempo de processador para mover processos e ajustar endereços",
+            "exige hardware de paginação específico",
+            "só funciona em sistemas monoprogramados",
+            "aumenta a fragmentação interna proporcionalmente",
+            "impede o uso de swapping"
+          ],
+          "correct_index": 0,
+          "explanation": "Mover gigabytes de dados para juntar as lacunas para o sistema por um tempo considerável.",
+          "pitfall": "O problema não é a correção da técnica, e sim o custo dela."
+        },
+        {
+          "topic": "Proteção",
+          "statement": "Sem mecanismo de proteção de memória, o principal risco ao executar dois processos simultaneamente é:",
+          "options": [
+            "um processo sobrescrever a área de memória do outro sem que ninguém perceba",
+            "os processos ficarem em deadlock",
+            "a ocorrência de fragmentação interna",
+            "o escalonador deixar de preemptar processos",
+            "a memória principal perder dados ao desligar"
+          ],
+          "correct_index": 0,
+          "explanation": "Os dois usam os mesmos endereços absolutos. Um grava por cima do outro, e o erro aparece muito depois.",
+          "pitfall": "O sintoma raramente aparece onde está a causa. É o que torna esse tipo de falha tão difícil de achar."
+        },
+        {
+          "topic": "Controle do espaço livre",
+          "statement": "Para controlar quais áreas da memória estão livres ou ocupadas, um sistema pode usar:",
+          "options": [
+            "mapa de bits ou lista encadeada de lacunas",
+            "tabela de páginas invertida apenas",
+            "registradores base e limite apenas",
+            "a tabela de processos",
+            "a área de swap do disco"
+          ],
+          "correct_index": 0,
+          "explanation": "No mapa de bits, cada unidade vira um bit de livre ou ocupado. Na lista, cada nó descreve um trecho contínuo.",
+          "pitfall": "O mapa de bits é compacto mas lento para achar sequências livres. A lista é o contrário."
+        }
+      ]
+    },
+    {
+      "slug": "memoria-virtual-e-paginacao",
+      "title": "Memória virtual: o endereço que o programa vê não é o de verdade",
+      "summary": "Cada programa enxerga uma memória só dele, numerada do zero. Uma peça traduz esse número para o lugar de verdade, pedaço por pedaço.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A caixa postal",
+          "body": [
+            "Você manda uma carta para a Caixa Postal 45.",
+            "Esse número não é o endereço da casa de ninguém.",
+            "Nos Correios, alguém sabe a que endereço de verdade aquele número corresponde.",
+            "A pessoa pode até mudar de casa. O número da caixa continua o mesmo."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Dois problemas de uma vez",
+          "body": [
+            "Dois problemas continuam sem resposta boa.",
+            "Um é fazer vários programas conviverem sem pisar uns nos outros.",
+            "O outro é rodar um programa maior do que a memória disponível."
+          ],
+          "terms": [
+            {
+              "word": "Processo",
+              "meaning": "um programa em execução, com a memória que ele usa e o ponto exato em que parou."
+            },
+            {
+              "word": "Processador",
+              "meaning": "a peça do computador que executa as instruções dos programas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A ideia: dois tipos de endereço",
+          "body": [
+            "Cada programa passa a enxergar uma memória inteira só dele, numerada do zero.",
+            "Esses números não são os da memória de verdade.",
+            "Eles são traduzidos no instante de cada acesso."
+          ],
+          "terms": [
+            {
+              "word": "Endereço virtual",
+              "meaning": "o número que o programa usa. Ele vale só dentro do programa que o gerou."
+            },
+            {
+              "word": "Espaço de endereçamento",
+              "meaning": "o conjunto de todos os endereços que um programa pode usar. Cada programa tem o seu."
+            },
+            {
+              "word": "Memória virtual",
+              "meaning": "a memória que o programa acha que tem, maior que a de verdade e só dele."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quem faz a tradução",
+          "body": [
+            "A tradução acontece milhões de vezes por segundo.",
+            "Fazer isso por programa seria lento demais.",
+            "Por isso existe uma peça dentro do processador só para isso."
+          ],
+          "terms": [
+            {
+              "word": "Unidade de gerência de memória",
+              "meaning": "a peça dentro do processador que traduz o endereço do programa para o endereço de verdade."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Tudo em pedaços do mesmo tamanho",
+          "body": [
+            "A tradução não é feita endereço por endereço. Isso daria uma tabela imensa.",
+            "A memória é cortada em pedaços iguais, e a tradução é por pedaço.",
+            "O tamanho comum hoje é de 4 mil bytes por pedaço."
+          ],
+          "terms": [
+            {
+              "word": "Página",
+              "meaning": "cada pedaço de tamanho fixo da memória que o programa enxerga."
+            },
+            {
+              "word": "Moldura",
+              "meaning": "cada pedaço de tamanho fixo da memória de verdade. Ela tem o mesmo tamanho de uma página."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/so/so-memoria-virtual.svg",
+            "alt": "À esquerda os pedaços que o programa enxerga, no meio a tabela que diz onde cada um está, e à direita a memória de verdade mais o disco.",
+            "caption": "Pedaços vizinhos para o programa podem estar longe um do outro na memória de verdade."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A tabela que faz o de-para",
+          "body": [
+            "Cada programa tem uma tabela própria, com uma linha por pedaço.",
+            "A linha diz em que lugar da memória de verdade aquele pedaço está.",
+            "E diz também se ele está lá, porque pode não estar."
+          ],
+          "terms": [
+            {
+              "word": "Tabela de páginas",
+              "meaning": "a lista que diz, para cada pedaço do programa, onde ele está na memória de verdade."
+            },
+            {
+              "word": "Marca de presença",
+              "meaning": "o aviso, em cada linha da tabela, dizendo se aquele pedaço está na memória ou não."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quando o pedaço não está lá",
+          "body": [
+            "Se a marca disser que o pedaço não está, a peça avisa o sistema na hora.",
+            "O sistema busca o pedaço no disco e o põe numa moldura livre.",
+            "Depois ele corrige a tabela e manda a instrução ser executada de novo."
+          ],
+          "terms": [
+            {
+              "word": "Falta de página",
+              "meaning": "o aviso de que o pedaço pedido não está na memória. O programa para até ele chegar."
+            }
+          ],
+          "bullets": [
+            "O programa não fica sabendo de nada disso.",
+            "Para ele, o acesso só demorou um pouco mais.",
+            "É assim que um programa grande roda numa memória pequena."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Como o número é partido em dois",
+          "body": [
+            "O endereço do programa é partido em duas partes.",
+            "A parte da frente diz qual pedaço. A de trás diz a posição dentro dele.",
+            "Só a parte da frente é traduzida. A de trás passa direto."
+          ],
+          "code": {
+            "label": "Um endereço de 32 bits, com pedaços de 4 mil bytes",
+            "text": "  31                   12 11            0\n +-----------------------+---------------+\n |   qual pedaço (20)    | posição (12)  |\n +-----------------------+---------------+\n\n// a parte da frente vira o número do lugar de verdade\n// a parte de trás é copiada sem mudar nada"
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A tabela também é grande demais",
+          "body": [
+            "Uma tabela com um milhão de linhas por programa não cabe em lugar nenhum.",
+            "Duas soluções resolvem isso, e as duas são usadas juntas hoje."
+          ],
+          "terms": [
+            {
+              "word": "Memória de tradução recente",
+              "meaning": "uma tabelinha rápida dentro do processador, que guarda as últimas traduções feitas."
+            }
+          ],
+          "bullets": [
+            "A tabelinha rápida responde quase sempre, sem consultar a tabela grande.",
+            "A tabela grande é quebrada em níveis, e só os pedaços usados existem de fato.",
+            "Máquinas de hoje usam quatro ou cinco níveis de tabela."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca cobra a tradução passo a passo e os nomes em inglês. Treine partir o endereço."
+          ],
+          "bullets": [
+            "Endereço lógico ou virtual → gerado pelo processo. Endereço físico → o da memória real.",
+            "Quem traduz é a MMU (Memory Management Unit), em hardware.",
+            "Página (page) é o bloco no espaço virtual; moldura ou quadro (frame) é o bloco na memória física.",
+            "Página e moldura têm sempre o mesmo tamanho, comumente 4 KB.",
+            "Endereço virtual = número da página + deslocamento (offset); só o número da página é traduzido.",
+            "Bit de presença (present/valid) indica se a página está na memória.",
+            "Page fault: a página pedida não está na memória; o sistema a traz do disco e reexecuta a instrução.",
+            "TLB (Translation Lookaside Buffer): cache de traduções dentro da MMU.",
+            "Tabelas de páginas multinível economizam memória, pois só os níveis usados são criados.",
+            "Tabela de páginas invertida: uma entrada por moldura física, e não por página virtual.",
+            "A paginação elimina a fragmentação externa, e gera fragmentação interna na última página."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Cinco trocas derrubam muita gente aqui."
+          ],
+          "bullets": [
+            "Página é do lado do programa. Moldura é do lado da memória de verdade.",
+            "A tradução é da peça do processador, e não do sistema. O sistema só entra quando falta o pedaço.",
+            "Pedaços vizinhos para o programa não ficam vizinhos na memória de verdade.",
+            "A paginação acaba com os vãos espalhados, e cria sobra na última página.",
+            "Cada programa tem a sua tabela. Ela não é uma só para todos."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O programa usa um número de mentirinha, e uma peça traduz para o de verdade."
+          ],
+          "bullets": [
+            "Cada programa enxerga uma memória só dele, numerada do zero.",
+            "Tudo é cortado em pedaços iguais, de quatro mil bytes.",
+            "A tabela diz onde cada pedaço está, e se ele está.",
+            "Não estando, há uma falta de página e o sistema busca no disco.",
+            "O endereço se parte em qual pedaço e posição dentro dele.",
+            "A tabelinha rápida do processador evita consultar a tabela grande toda vez."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Tradução",
+          "statement": "A tradução de endereços virtuais em endereços físicos é realizada por:",
+          "options": [
+            "pela MMU, uma unidade de hardware dentro do processador",
+            "pelo escalonador do sistema operacional",
+            "pelo compilador, em tempo de compilação",
+            "pelo controlador de disco",
+            "pelo carregador, no momento da carga do programa"
+          ],
+          "correct_index": 0,
+          "explanation": "A tradução acontece em todo acesso à memória. Fazê-la por programa seria lento demais.",
+          "pitfall": "O sistema operacional monta a tabela de páginas. Quem a consulta a cada acesso é a peça do processador."
+        },
+        {
+          "topic": "Página e moldura",
+          "statement": "A diferença entre página e moldura (frame) é que:",
+          "options": [
+            "página é o bloco no espaço de endereçamento virtual e moldura é o bloco na memória física",
+            "página tem tamanho fixo e moldura tem tamanho variável",
+            "página pertence ao núcleo e moldura ao processo de usuário",
+            "página fica no disco e moldura fica sempre na memória",
+            "não há diferença: são sinônimos"
+          ],
+          "correct_index": 0,
+          "explanation": "As duas têm exatamente o mesmo tamanho. O que muda é de que lado da tradução cada uma está.",
+          "pitfall": "Trocar os dois nomes é o erro mais comum do assunto."
+        },
+        {
+          "topic": "Deslocamento",
+          "statement": "Em um sistema com páginas de 4 KB e endereços virtuais de 32 bits, quantos bits são usados para o deslocamento dentro da página?",
+          "options": [
+            "12",
+            "20",
+            "10",
+            "16",
+            "32"
+          ],
+          "correct_index": 0,
+          "explanation": "4 KB são 4096 bytes, que é 2 elevado a 12. Portanto o deslocamento ocupa 12 bits e restam 20 para o número da página.",
+          "pitfall": "Os 20 bits restantes indicam o número da página, e dão até um milhão de páginas."
+        },
+        {
+          "topic": "Page fault",
+          "statement": "Ao ocorrer uma falta de página (page fault), o sistema operacional:",
+          "options": [
+            "traz a página do disco, atualiza a tabela e reexecuta a instrução que falhou",
+            "encerra o processo com erro de acesso inválido",
+            "ignora o acesso e prossegue com a próxima instrução",
+            "transfere todo o processo para o disco",
+            "aumenta o tamanho da página automaticamente"
+          ],
+          "correct_index": 0,
+          "explanation": "A instrução precisa ser executada de novo, agora com a página presente. O processo não percebe nada disso.",
+          "pitfall": "Encerrar o processo só acontece se o endereço for realmente inválido, e não apenas ausente."
+        },
+        {
+          "topic": "TLB",
+          "statement": "A TLB (Translation Lookaside Buffer) tem como função:",
+          "options": [
+            "armazenar traduções recentes de páginas para evitar consultas à tabela na memória",
+            "guardar as páginas retiradas da memória principal",
+            "controlar quais molduras estão livres",
+            "armazenar o conteúdo das páginas mais acessadas",
+            "registrar as faltas de página ocorridas"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem ela, cada acesso do programa exigiria acessos extras à memória só para ler a tabela.",
+          "pitfall": "A TLB guarda traduções, e não dados. O cache de dados é outra coisa."
+        },
+        {
+          "topic": "Tabelas multinível",
+          "statement": "A principal motivação para o uso de tabelas de páginas multinível é:",
+          "options": [
+            "evitar manter na memória a tabela inteira, criando apenas os níveis efetivamente usados",
+            "acelerar a tradução em relação à tabela de um nível",
+            "permitir páginas de tamanhos diferentes",
+            "eliminar a necessidade de TLB",
+            "reduzir a fragmentação interna"
+          ],
+          "correct_index": 0,
+          "explanation": "Um espaço de endereçamento de 32 bits exigiria mais de um milhão de entradas por processo. A maior parte nunca é usada.",
+          "pitfall": "Multinível economiza memória e torna a tradução mais lenta. É a TLB que compensa esse custo."
+        },
+        {
+          "topic": "Tabela invertida",
+          "statement": "Em uma tabela de páginas invertida, o número de entradas é proporcional:",
+          "options": [
+            "ao número de molduras da memória física",
+            "ao número de páginas virtuais de cada processo",
+            "ao número de processos em execução",
+            "ao tamanho do disco de swap",
+            "ao número de níveis da tabela"
+          ],
+          "correct_index": 0,
+          "explanation": "Existe uma entrada por moldura física, compartilhada por todo o sistema. Por isso ela não cresce com o espaço virtual.",
+          "pitfall": "A busca fica mais difícil, pois a tabela é indexada pela moldura e a consulta parte da página."
+        },
+        {
+          "topic": "Fragmentação",
+          "statement": "Em relação à fragmentação, a paginação:",
+          "options": [
+            "elimina a externa, mas ainda produz fragmentação interna na última página do processo",
+            "elimina ambas as formas de fragmentação",
+            "elimina a interna, mas mantém a externa",
+            "aumenta a fragmentação externa em relação às partições variáveis",
+            "não tem relação com fragmentação"
+          ],
+          "correct_index": 0,
+          "explanation": "Como todas as molduras têm o mesmo tamanho, não sobram lacunas inaproveitáveis. O desperdício fica só no fim da última página.",
+          "pitfall": "Em média o desperdício é de meia página por processo, o que é pouco diante do ganho."
+        }
+      ]
+    },
+    {
+      "slug": "substituicao-de-paginas",
+      "title": "A memória encheu: quem sai da sala",
+      "summary": "Quando não há lugar livre, algum pedaço precisa sair para outro entrar. Escolher mal significa buscar de novo no disco daqui a pouco.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A geladeira cheia",
+          "body": [
+            "Sua geladeira está cheia e você chegou com as compras.",
+            "Alguma coisa precisa sair para o que chegou entrar.",
+            "Tirar o leite que você toma todo dia é burrice. Ele volta amanhã.",
+            "Tirar a conserva do fundo, esquecida há meses, é a escolha certa."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O problema, em uma frase",
+          "body": [
+            "A memória guarda pedaços dos programas em uso.",
+            "Quando um pedaço novo precisa entrar e não há lugar, um antigo sai.",
+            "Escolher qual sai é uma decisão que se repete o tempo todo."
+          ],
+          "terms": [
+            {
+              "word": "Processo",
+              "meaning": "um programa em execução, com a memória que ele usa e o ponto exato em que parou."
+            },
+            {
+              "word": "Processador",
+              "meaning": "a peça do computador que executa as instruções dos programas."
+            },
+            {
+              "word": "Página",
+              "meaning": "cada pedaço de tamanho fixo da memória que um programa enxerga. O tamanho comum é de quatro mil bytes."
+            },
+            {
+              "word": "Moldura",
+              "meaning": "cada pedaço de tamanho fixo da memória de verdade, do mesmo tamanho de uma página."
+            },
+            {
+              "word": "Falta de página",
+              "meaning": "o aviso de que o pedaço pedido não está na memória. O programa para até ele ser trazido do disco."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A escolha perfeita é impossível",
+          "body": [
+            "A melhor escolha seria tirar o pedaço que vai demorar mais a ser usado.",
+            "Só que ninguém sabe o futuro de um programa.",
+            "Essa regra serve só para medir o quanto as outras são boas."
+          ],
+          "terms": [
+            {
+              "word": "Regra ideal",
+              "meaning": "tirar o pedaço que só será usado daqui a mais tempo. Não dá para usar de verdade, porque exige saber o futuro."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O mais simples: sai o mais antigo",
+          "body": [
+            "A regra mais direta é tirar quem entrou primeiro, como numa fila.",
+            "Ela é fácil de fazer e costuma escolher mal.",
+            "O pedaço mais antigo pode ser justamente o mais usado."
+          ],
+          "bullets": [
+            "Tempo de chegada não diz nada sobre uso.",
+            "Aumentar a memória pode até piorar o resultado dessa regra.",
+            "Esse efeito estranho é um clássico de prova."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Uma marca simples muda tudo",
+          "body": [
+            "A peça do processador marca cada pedaço que é usado.",
+            "Com essa marca dá para dar uma segunda chance a quem foi usado.",
+            "O pedaço vai para o fim da fila, e a marca é apagada."
+          ],
+          "terms": [
+            {
+              "word": "Marca de uso",
+              "meaning": "um aviso ligado toda vez que o pedaço é lido ou escrito. O sistema apaga de tempos em tempos."
+            },
+            {
+              "word": "Marca de alteração",
+              "meaning": "um aviso ligado quando o pedaço foi escrito. Sem ele, não é preciso gravar nada ao sair."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A fila vira um relógio",
+          "body": [
+            "Mover pedaços para o fim da fila o tempo todo é trabalhoso.",
+            "A saída é pôr todos num círculo e usar um ponteiro que gira.",
+            "É o mesmo efeito da segunda chance, e sem mexer em fila nenhuma."
+          ],
+          "figure": {
+            "src": "/figuras/so/so-relogio.svg",
+            "alt": "Oito pedaços dispostos em círculo, cada um com uma marca de usado ou não usado, e um ponteiro girando em busca do próximo a sair.",
+            "caption": "Com marca ligada, ela é apagada e o ponteiro segue. Com marca apagada, o pedaço sai."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Tirar quem não é usado há mais tempo",
+          "body": [
+            "Quem não é usado há muito tempo provavelmente não será tão cedo.",
+            "Essa regra dá resultados ótimos e é cara de fazer direito.",
+            "Exigiria anotar a hora de cada acesso, milhões de vezes por segundo."
+          ],
+          "bullets": [
+            "Os sistemas de verdade usam aproximações dela.",
+            "As marcas de uso são a aproximação mais barata que existe.",
+            "Juntar duas marcas por pedaço já separa bem os casos."
+          ],
+          "table": {
+            "label": "As quatro combinações das duas marcas",
+            "headers": [
+              "Usado",
+              "Alterado",
+              "Quem sai primeiro"
+            ],
+            "rows": [
+              [
+                "não",
+                "não",
+                "primeira escolha, sai sem gravar nada"
+              ],
+              [
+                "não",
+                "sim",
+                "segunda escolha, precisa gravar antes"
+              ],
+              [
+                "sim",
+                "não",
+                "terceira escolha"
+              ],
+              [
+                "sim",
+                "sim",
+                "última escolha"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os pedaços que o programa usa agora",
+          "body": [
+            "Um programa não usa a memória inteira o tempo todo.",
+            "Ele trabalha num punhado de pedaços por vez, e depois muda de punhado.",
+            "Se esse punhado couber na memória, quase não há busca no disco."
+          ],
+          "terms": [
+            {
+              "word": "Localidade",
+              "meaning": "a tendência de um programa acessar sempre a mesma vizinhança de dados por um tempo."
+            },
+            {
+              "word": "Conjunto de trabalho",
+              "meaning": "os pedaços que um programa vem usando nos últimos instantes."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quando tudo desanda",
+          "body": [
+            "Se o punhado em uso não couber, o sistema passa a buscar e devolver sem parar.",
+            "Ele tira um pedaço que vai ser pedido logo em seguida.",
+            "O disco fica ocupado e o trabalho útil cai quase a zero."
+          ],
+          "terms": [
+            {
+              "word": "Atropelo (thrashing)",
+              "meaning": "quando o sistema passa mais tempo buscando pedaços do que executando programas."
+            }
+          ],
+          "bullets": [
+            "Na máquina, dá para notar: o disco trabalhando muito, com tudo travado.",
+            "A saída é fechar programas, ou pôr mais memória na máquina."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Ver isso na sua máquina",
+          "body": [
+            "Dá para ver se a máquina está indo ao disco por falta de memória."
+          ],
+          "terms": [
+            {
+              "word": "Terminal",
+              "meaning": "a janela em que você digita ordens de texto para o computador, em vez de clicar."
+            },
+            {
+              "word": "Comando",
+              "meaning": "cada ordem de texto que você digita no terminal."
+            },
+            {
+              "word": "PowerShell e Prompt de Comando (cmd)",
+              "meaning": "os dois programas do Windows em que você digita ordens de texto. O PowerShell é o mais novo dos dois."
+            }
+          ],
+          "table": {
+            "label": "Conferir o uso do disco como memória",
+            "headers": [
+              "Onde",
+              "Como"
+            ],
+            "rows": [
+              [
+                "Linux (quanto existe)",
+                "swapon --show e free -h"
+              ],
+              [
+                "Linux (ao vivo)",
+                "vmstat 1, colunas si e so"
+              ],
+              [
+                "Windows (janela)",
+                "Gerenciador de Tarefas → Desempenho → Memória"
+              ],
+              [
+                "Windows (ajustar)",
+                "Propriedades do Sistema → Avançado → Memória Virtual"
+              ]
+            ],
+            "mono": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Aqui a banca dá uma sequência de páginas e pede o número de faltas. Treine simular na mão."
+          ],
+          "bullets": [
+            "Ótimo (OPT ou MIN): substitui a página que será usada mais tarde; serve só como referência.",
+            "FIFO: substitui a mais antiga; sofre da anomalia de Belady.",
+            "Anomalia de Belady: aumentar o número de molduras pode AUMENTAR o número de faltas.",
+            "Segunda chance: FIFO com bit R; se R = 1, zera R e manda a página para o fim da fila.",
+            "Relógio (clock): segunda chance em lista circular, sem mover elementos.",
+            "LRU (Least Recently Used): substitui a menos recentemente usada; ótimo desempenho, caro em hardware.",
+            "NRU (Not Recently Used): usa os bits R e M, em quatro classes, da 0 à 3.",
+            "NFU e envelhecimento (aging): aproximações de LRU por contadores deslocados.",
+            "Working set: conjunto de páginas usadas nas últimas k referências; WSClock junta working set e relógio.",
+            "Thrashing: paginação excessiva, com a CPU ociosa e o disco saturado.",
+            "Princípio da localidade é o que faz a paginação funcionar na prática.",
+            "Algoritmos de pilha, como LRU e OPT, não sofrem anomalia de Belady."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Cinco confusões aparecem quase toda prova."
+          ],
+          "bullets": [
+            "A regra ideal não é uma opção de verdade. Ela só mede as outras.",
+            "Mais memória nem sempre reduz as buscas, e a regra da fila é o caso famoso.",
+            "A marca de alteração não escolhe quem sai. Ela diz se é preciso gravar antes.",
+            "Buscar muito no disco não é defeito do disco. É falta de memória.",
+            "O relógio e a segunda chance são a mesma regra, feita de dois jeitos."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Alguém precisa sair, e a escolha define se o trabalho anda ou trava."
+          ],
+          "bullets": [
+            "A escolha ideal exige saber o futuro, e serve só de referência.",
+            "Sair o mais antigo é simples e escolhe mal.",
+            "A marca de uso dá uma segunda chance a quem foi usado.",
+            "O relógio faz isso girando um ponteiro num círculo.",
+            "Tirar quem não é usado há mais tempo é o melhor, e é caro.",
+            "Se o punhado em uso não couber, o sistema trava buscando sem parar."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Algoritmo ótimo",
+          "statement": "O algoritmo ótimo de substituição de páginas não pode ser implementado na prática porque:",
+          "options": [
+            "exigiria conhecer antecipadamente as referências futuras do processo",
+            "consome memória demais para armazenar os contadores",
+            "não funciona com tabelas de páginas multinível",
+            "provoca a anomalia de Belady",
+            "depende de hardware que não existe em processadores atuais"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele escolhe a página que só será usada mais tarde. Isso exige saber o que o programa fará depois.",
+          "pitfall": "Ele continua sendo útil como referência, para medir o quanto os algoritmos reais se aproximam do melhor possível."
+        },
+        {
+          "topic": "Anomalia de Belady",
+          "statement": "A anomalia de Belady consiste em:",
+          "options": [
+            "o número de faltas de página aumentar quando se aumenta o número de molduras",
+            "uma página ser substituída antes de ser carregada",
+            "o bit de modificação ser perdido durante a substituição",
+            "duas páginas serem mapeadas para a mesma moldura",
+            "o TLB apresentar traduções desatualizadas"
+          ],
+          "correct_index": 0,
+          "explanation": "É contraintuitivo e acontece de fato, em algoritmos como o FIFO. Mais memória deveria sempre ajudar, e nem sempre ajuda.",
+          "pitfall": "Algoritmos de pilha, como LRU e ótimo, não sofrem dessa anomalia."
+        },
+        {
+          "topic": "Segunda chance",
+          "statement": "No algoritmo da segunda chance, o que acontece quando a página mais antiga da fila está com o bit R igual a 1?",
+          "options": [
+            "o bit R é zerado e a página vai para o fim da fila",
+            "a página é substituída imediatamente",
+            "a página é gravada em disco e mantida na memória",
+            "o bit M é zerado e a busca recomeça",
+            "o processo é bloqueado até o bit ser zerado"
+          ],
+          "correct_index": 0,
+          "explanation": "Ter sido usada recentemente lhe dá uma nova oportunidade. Se voltar ao início da fila ainda com R igual a 0, aí sim ela sai.",
+          "pitfall": "Se todas as páginas estiverem com R igual a 1, o algoritmo degenera e se comporta como FIFO puro."
+        },
+        {
+          "topic": "Relógio",
+          "statement": "A principal vantagem do algoritmo do relógio (clock) sobre a segunda chance é:",
+          "options": [
+            "evitar mover páginas na lista, usando um ponteiro em uma lista circular",
+            "eliminar a necessidade do bit de referência",
+            "garantir o mesmo desempenho do algoritmo ótimo",
+            "dispensar o uso da tabela de páginas",
+            "impedir a ocorrência de thrashing"
+          ],
+          "correct_index": 0,
+          "explanation": "O resultado das escolhas é idêntico. O que muda é o custo de manter a estrutura de dados.",
+          "pitfall": "São o mesmo critério com implementações diferentes. Nenhum dos dois é melhor em número de faltas."
+        },
+        {
+          "topic": "NRU",
+          "statement": "No algoritmo NRU, que usa os bits R (referenciada) e M (modificada), a classe escolhida primeiro para substituição é:",
+          "options": [
+            "R = 0 e M = 0",
+            "R = 0 e M = 1",
+            "R = 1 e M = 0",
+            "R = 1 e M = 1",
+            "qualquer uma, de forma aleatória"
+          ],
+          "correct_index": 0,
+          "explanation": "Não foi usada recentemente e não foi alterada. Ela sai sem custo algum de gravação em disco.",
+          "pitfall": "A classe R igual a 0 e M igual a 1 existe porque o bit R é zerado periodicamente, e o M não."
+        },
+        {
+          "topic": "Bit de modificação",
+          "statement": "Qual é a função do bit M (modificada ou dirty) no contexto da substituição de páginas?",
+          "options": [
+            "indicar se a página precisa ser gravada em disco antes de ser substituída",
+            "indicar se a página foi acessada recentemente",
+            "indicar se a página está presente na memória",
+            "indicar a prioridade da página no algoritmo LRU",
+            "indicar se a página pertence ao núcleo"
+          ],
+          "correct_index": 0,
+          "explanation": "Se a página não foi alterada, a cópia em disco continua válida. Basta descartá-la da memória.",
+          "pitfall": "O bit M não decide quem sai. Ele decide se a saída custa uma escrita em disco."
+        },
+        {
+          "topic": "Working set",
+          "statement": "O conjunto de trabalho (working set) de um processo é definido como:",
+          "options": [
+            "o conjunto de páginas referenciadas nas últimas k referências de memória",
+            "o total de páginas alocadas ao processo desde sua criação",
+            "as páginas do processo que estão no disco de swap",
+            "o número de molduras livres disponíveis no sistema",
+            "as páginas compartilhadas com outros processos"
+          ],
+          "correct_index": 0,
+          "explanation": "É uma janela sobre o passado recente. Se essas páginas couberem na memória, as faltas ficam raras.",
+          "pitfall": "O conjunto muda ao longo da execução, conforme o programa passa de uma fase a outra."
+        },
+        {
+          "topic": "Thrashing",
+          "statement": "Um sistema apresenta uso de CPU muito baixo, disco constantemente ativo e altíssima taxa de faltas de página. O diagnóstico é:",
+          "options": [
+            "thrashing, causado por memória insuficiente para os conjuntos de trabalho ativos",
+            "anomalia de Belady no algoritmo de substituição",
+            "fragmentação externa da memória física",
+            "inanição dos processos de baixa prioridade",
+            "falha na TLB do processador"
+          ],
+          "correct_index": 0,
+          "explanation": "Os processos tiram páginas uns dos outros e as pedem de volta logo em seguida. Quase nada de trabalho útil é feito.",
+          "pitfall": "A solução não é trocar o algoritmo. É reduzir o número de processos ou aumentar a memória física."
+        }
+      ]
+    },
+    {
+      "slug": "segmentacao",
+      "title": "Segmentação: dividir por sentido, não por tamanho",
+      "summary": "Em vez de cortar a memória em pedaços iguais, dá para dividi-la por assunto. Cada parte cresce sozinha e tem regras próprias.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A mochila de bolso único",
+          "body": [
+            "Uma mochila de bolso único mistura caderno, lanche e guarda-chuva.",
+            "O lanche vaza no caderno, e nada tem lugar fixo.",
+            "Uma mochila com bolsos separados resolve isso.",
+            "Cada bolso tem tamanho próprio e serve para uma coisa."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O problema de um espaço só",
+          "body": [
+            "Um programa guarda coisas de naturezas diferentes na memória.",
+            "Tem o código, os dados e a anotação de onde voltar nas chamadas.",
+            "Essas partes crescem em ritmos diferentes, e uma esbarra na outra."
+          ],
+          "terms": [
+            {
+              "word": "Processo",
+              "meaning": "um programa em execução, com a memória que ele usa e o ponto exato em que parou."
+            },
+            {
+              "word": "Processador",
+              "meaning": "a peça do computador que executa as instruções dos programas."
+            },
+            {
+              "word": "Pilha de chamadas",
+              "meaning": "a anotação de quais trechos do programa chamaram quais, para saber onde voltar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A ideia: vários espaços independentes",
+          "body": [
+            "Em vez de um espaço único, o programa ganha vários blocos separados.",
+            "Cada bloco começa no zero e cresce por conta própria.",
+            "Um não invade o outro, porque eles nem se tocam."
+          ],
+          "terms": [
+            {
+              "word": "Bloco com sentido (segmento)",
+              "meaning": "uma parte independente da memória de um programa, com tamanho próprio e finalidade própria."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/so/so-segmentacao.svg",
+            "alt": "Três blocos de alturas diferentes lado a lado, para código, dados e pilha, cada um crescendo por conta própria.",
+            "caption": "Cada bloco cresce sem esbarrar nos outros, porque cada um tem o seu espaço."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O endereço vira um par",
+          "body": [
+            "Para achar algo, não basta um número. São necessários dois.",
+            "O primeiro diz em qual bloco está. O segundo diz onde dentro dele.",
+            "É como dizer o bolso da mochila e a posição dentro do bolso."
+          ],
+          "code": {
+            "label": "Como fica o endereço",
+            "text": "endereço = (bloco, posição dentro do bloco)\n\nexemplo: (2, 40)\n  bloco 2 = a pilha de chamadas\n  posição 40 = o quadragésimo byte dela"
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que isso resolve de bom",
+          "body": [
+            "Separar por sentido traz três ganhos que o corte em pedaços iguais não dá."
+          ],
+          "bullets": [
+            "Cada bloco cresce ou encolhe sem mexer nos vizinhos.",
+            "As regras de acesso podem mudar por bloco: código só para ler e executar.",
+            "Um bloco de código pode ser dividido por vários programas ao mesmo tempo."
+          ],
+          "terms": [
+            {
+              "word": "Regra de acesso",
+              "meaning": "o que é permitido fazer com um trecho de memória: ler, escrever ou executar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O problema que volta",
+          "body": [
+            "Blocos têm tamanhos diferentes, e entram e saem da memória.",
+            "Isso deixa vãos livres de tamanhos variados espalhados.",
+            "Pode haver muito espaço livre e nenhum vão grande o bastante."
+          ],
+          "terms": [
+            {
+              "word": "Fragmentação externa",
+              "meaning": "quando sobra memória livre espalhada em vãos pequenos, sem nenhum grande o bastante."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Juntar as duas ideias",
+          "body": [
+            "A saída é dividir cada bloco em pedaços de tamanho fixo.",
+            "O programa continua enxergando blocos com sentido.",
+            "E a memória continua sendo entregue em pedaços iguais, sem deixar vãos."
+          ],
+          "bullets": [
+            "O programa ganha os blocos e as regras de acesso por bloco.",
+            "A memória não sofre com vãos de tamanhos diferentes.",
+            "O preço é uma tradução com dois passos em vez de um."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Como as máquinas de hoje fazem",
+          "body": [
+            "Os processadores de computador atuais quase não usam mais blocos com sentido.",
+            "Eles oferecem um espaço único e plano, cortado em pedaços iguais.",
+            "As regras de acesso, que eram a grande vantagem, vieram junto na tradução."
+          ],
+          "bullets": [
+            "Nos processadores de 64 bits, essa divisão foi quase toda desativada.",
+            "Sobraram dois blocos especiais, usados para dados de cada caminho de execução.",
+            "A separação por sentido continua viva, e agora mora no formato dos programas."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Comparando os dois jeitos",
+          "body": [
+            "Vale guardar esta tabela inteira. Ela é cobrada quase literalmente."
+          ],
+          "table": {
+            "label": "Pedaços iguais e blocos com sentido",
+            "headers": [
+              "",
+              "Pedaços iguais",
+              "Blocos com sentido"
+            ],
+            "rows": [
+              [
+                "Tamanho",
+                "todos iguais",
+                "cada um com o seu"
+              ],
+              [
+                "Quem decide",
+                "o sistema, sozinho",
+                "o programa, ao ser montado"
+              ],
+              [
+                "O programa enxerga?",
+                "não, é um espaço só",
+                "sim, ele sabe dos blocos"
+              ],
+              [
+                "Endereço",
+                "um número só",
+                "um par de números"
+              ],
+              [
+                "Vãos espalhados",
+                "não acontece",
+                "acontece"
+              ],
+              [
+                "Sobra dentro do pedaço",
+                "acontece no último",
+                "não acontece"
+              ],
+              [
+                "Motivo de existir",
+                "caber mais na memória",
+                "organizar por sentido"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca cobra a tabela comparativa e o endereço em duas partes. Decore as diferenças."
+          ],
+          "bullets": [
+            "Paginação: blocos de tamanho fixo, transparentes ao programador, endereço linear único.",
+            "Segmentação: blocos de tamanho variável, visíveis ao programador, endereço (segmento, deslocamento).",
+            "Paginação existe para gerenciar memória; segmentação existe para organizar o programa logicamente.",
+            "Paginação sofre fragmentação interna; segmentação sofre fragmentação externa.",
+            "A tabela de segmentos guarda base, limite e bits de proteção de cada segmento.",
+            "Segmentação facilita compartilhar código e aplicar proteção por tipo de conteúdo.",
+            "Segmentação paginada (x86 clássico, MULTICS): cada segmento é dividido em páginas; combina os dois.",
+            "No x86-64, o modo flat predomina: a segmentação está praticamente desativada, restando FS e GS.",
+            "Erro de acesso além do limite do segmento gera exceção de violação (segmentation fault)."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Cinco trocas derrubam gente que decorou só metade."
+          ],
+          "bullets": [
+            "Pedaços iguais são invisíveis para quem programa. Blocos com sentido não são.",
+            "Vãos espalhados são do jeito por blocos. Sobra no último pedaço é do jeito por tamanho fixo.",
+            "Quem divide em pedaços iguais é o sistema. Quem define os blocos é o próprio programa.",
+            "Juntar os dois não elimina a tabela. Ela passa a ter dois passos.",
+            "O nome do erro famoso vem dos blocos, mesmo que hoje quase não se use mais essa divisão."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Um jeito corta por tamanho. O outro corta por sentido."
+          ],
+          "bullets": [
+            "Blocos com sentido têm tamanhos próprios e crescem sem se atrapalhar.",
+            "O endereço deixa de ser um número e vira um par.",
+            "Isso permite regras de acesso por bloco e código dividido entre programas.",
+            "O preço são os vãos livres de tamanhos variados.",
+            "Dividir cada bloco em pedaços fixos junta o melhor dos dois.",
+            "Hoje as máquinas usam um espaço plano, e a separação por sentido vive no formato dos programas."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Paginação e segmentação",
+          "statement": "Qual é a diferença central entre paginação e segmentação?",
+          "options": [
+            "páginas têm tamanho fixo e são transparentes ao programador; segmentos têm tamanho variável e são visíveis a ele",
+            "páginas são visíveis ao programador e segmentos não",
+            "páginas ficam na memória e segmentos ficam sempre no disco",
+            "segmentos têm tamanho fixo e páginas têm tamanho variável",
+            "não há diferença prática entre as duas técnicas"
+          ],
+          "correct_index": 0,
+          "explanation": "A paginação existe para gerenciar memória física. A segmentação existe para refletir a estrutura lógica do programa.",
+          "pitfall": "Inverter a visibilidade é o erro mais cobrado. O programador não escolhe páginas, mas escolhe segmentos."
+        },
+        {
+          "topic": "Endereço segmentado",
+          "statement": "Em um sistema com segmentação pura, um endereço lógico é composto por:",
+          "options": [
+            "número do segmento e deslocamento dentro do segmento",
+            "número da página e número da moldura",
+            "endereço base e registrador limite",
+            "número do segmento e número da página",
+            "um único valor linear"
+          ],
+          "correct_index": 0,
+          "explanation": "O número identifica o segmento na tabela, que fornece a base. O deslocamento é somado a ela, após a verificação do limite.",
+          "pitfall": "Na paginação o endereço também tem duas partes, mas o programa não as enxerga como entidades distintas."
+        },
+        {
+          "topic": "Fragmentação",
+          "statement": "Segmentação pura e paginação sofrem, respectivamente, de:",
+          "options": [
+            "fragmentação externa e fragmentação interna",
+            "fragmentação interna e fragmentação externa",
+            "ambas de fragmentação externa",
+            "ambas de fragmentação interna",
+            "nenhuma das duas sofre fragmentação"
+          ],
+          "correct_index": 0,
+          "explanation": "Segmentos de tamanhos variados deixam lacunas entre si. Páginas de tamanho fixo desperdiçam apenas o resto da última.",
+          "pitfall": "Essa é a comparação mais cobrada do tópico, e a ordem das alternativas costuma vir invertida."
+        },
+        {
+          "topic": "Tabela de segmentos",
+          "statement": "Uma entrada da tabela de segmentos contém tipicamente:",
+          "options": [
+            "o endereço base, o limite do segmento e os bits de proteção",
+            "o número da moldura e o bit de presença",
+            "o bit R e o bit M do segmento",
+            "o número de páginas e o tamanho da página",
+            "a prioridade do processo dono do segmento"
+          ],
+          "correct_index": 0,
+          "explanation": "Com base e limite a peça do processador traduz e confere o acesso. Os bits de proteção dizem se ele pode ler, escrever ou executar.",
+          "pitfall": "Bit de moldura é de tabela de páginas. Não confunda as duas estruturas."
+        },
+        {
+          "topic": "Vantagens",
+          "statement": "Qual vantagem é própria da segmentação e NÃO da paginação pura?",
+          "options": [
+            "permitir proteção e compartilhamento por unidade lógica, como uma biblioteca de código",
+            "eliminar a fragmentação externa da memória",
+            "permitir que o programa seja maior que a memória física",
+            "dispensar o uso de hardware de tradução de endereços",
+            "reduzir o número de faltas de página"
+          ],
+          "correct_index": 0,
+          "explanation": "O segmento corresponde a uma unidade com significado. Aplicar uma regra a ele é aplicá-la a algo inteiro e coerente.",
+          "pitfall": "Rodar programa maior que a memória é possível nas duas, desde que o sistema traga os pedaços do disco sob demanda."
+        },
+        {
+          "topic": "Segmentação paginada",
+          "statement": "Na segmentação paginada, cada segmento é:",
+          "options": [
+            "dividido em páginas de tamanho fixo, que são alocadas em molduras",
+            "carregado inteiro em uma área contígua da memória",
+            "mantido permanentemente no disco de swap",
+            "convertido em um único endereço linear pelo compilador",
+            "limitado ao tamanho de uma página"
+          ],
+          "correct_index": 0,
+          "explanation": "O programa continua vendo segmentos, e a memória física continua sendo entregue em molduras iguais. A fragmentação externa desaparece.",
+          "pitfall": "O custo é uma tradução em dois estágios: primeiro o segmento, depois a página dentro dele."
+        },
+        {
+          "topic": "Sistemas atuais",
+          "statement": "Nos processadores x86-64 atuais, o uso da segmentação:",
+          "options": [
+            "foi praticamente desativado em favor de um modelo plano, restando apenas os registradores FS e GS",
+            "substituiu completamente a paginação",
+            "é obrigatório para qualquer sistema operacional",
+            "aumentou, por causa das exigências de segurança",
+            "só existe em modo de 16 bits"
+          ],
+          "correct_index": 0,
+          "explanation": "Toda a memória passa a ser tratada como uma faixa linear única, e a proteção é feita pelos bits da tabela de páginas.",
+          "pitfall": "FS e GS sobreviveram porque são úteis para acessar dados próprios de cada thread."
+        },
+        {
+          "topic": "Violação de acesso",
+          "statement": "Um processo tenta acessar um deslocamento maior que o limite registrado para o segmento. A consequência é:",
+          "options": [
+            "uma exceção de violação de acesso, tratada pelo sistema operacional",
+            "o acesso é redirecionado para o segmento seguinte",
+            "o limite do segmento é ampliado automaticamente",
+            "a página correspondente é trazida do disco",
+            "o processo passa ao estado bloqueado até haver espaço"
+          ],
+          "correct_index": 0,
+          "explanation": "A peça do processador compara o deslocamento com o limite antes de qualquer acesso. Passar dele interrompe a instrução na hora.",
+          "pitfall": "É daí que vem o nome do erro mais conhecido dos programas em C, mesmo em sistemas que hoje usam paginação."
+        }
+      ]
     }
   ]
 }
