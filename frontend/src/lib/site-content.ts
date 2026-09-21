@@ -44,6 +44,9 @@ export const SUBJECTS: SiteSubject[] = [
       "Memória virtual: o endereço que o programa vê não é o de verdade",
       "A memória encheu: quem sai da sala",
       "Segmentação: dividir por sentido, não por tamanho",
+      "Arquivos e pastas: o que o sistema promete a você",
+      "Como o disco guarda um arquivo de verdade",
+      "Quando falta luz no meio da gravação",
     ],
   },
   {

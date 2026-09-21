@@ -7525,6 +7525,1279 @@
           "pitfall": "É daí que vem o nome do erro mais conhecido dos programas em C, mesmo em sistemas que hoje usam paginação."
         }
       ]
+    },
+    {
+      "slug": "arquivos-e-diretorios",
+      "title": "Arquivos e pastas: o que o sistema promete a você",
+      "summary": "Arquivo é a promessa de que aquilo que você gravou continua lá, com nome e dono. A pasta é só uma lista de nomes.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A gaveta de documentos",
+          "body": [
+            "Numa gaveta bem organizada, cada papel tem uma pasta.",
+            "Cada pasta tem uma etiqueta com o nome escrito.",
+            "Você não precisa saber em que lugar exato da gaveta o papel está.",
+            "Você pede pelo nome, e ele aparece."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que o sistema promete",
+          "body": [
+            "O disco guarda coisas em pedaços numerados, e ninguém quer saber disso.",
+            "O sistema esconde isso e entrega uma promessa simples.",
+            "Você grava com um nome, e depois pede pelo nome."
+          ],
+          "terms": [
+            {
+              "word": "Processo",
+              "meaning": "um programa em execução, com a memória que ele usa e o ponto exato em que parou."
+            },
+            {
+              "word": "Arquivo",
+              "meaning": "uma sequência de dados guardada com um nome, que continua existindo depois de a máquina desligar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O nome e o que vem depois do ponto",
+          "body": [
+            "Boa parte dos nomes tem um pedaço final depois de um ponto.",
+            "No Windows, esse pedaço decide que programa abre o arquivo.",
+            "No Linux, ele é só parte do nome, e quem decide é o conteúdo."
+          ],
+          "table": {
+            "label": "O pedaço depois do ponto",
+            "headers": [
+              "Sistema",
+              "Para que serve"
+            ],
+            "rows": [
+              [
+                "Windows",
+                "decide qual programa abre o arquivo"
+              ],
+              [
+                "Linux",
+                "é só parte do nome, e o conteúdo é que manda"
+              ],
+              [
+                "Os dois",
+                "ajuda a pessoa a entender o que é aquilo"
+              ]
+            ]
+          },
+          "bullets": [
+            "Renomear de .txt para .jpg não transforma texto em foto.",
+            "O Windows esconde esse pedaço final por padrão, e isso já foi usado para enganar gente."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que vem junto além do conteúdo",
+          "body": [
+            "Além do que você gravou, o sistema guarda uma ficha sobre o arquivo.",
+            "Ela é o que o Explorador de Arquivos e a lista de detalhes mostram."
+          ],
+          "terms": [
+            {
+              "word": "Permissão",
+              "meaning": "a autorização que diz quem pode fazer o quê com um arquivo. Sem ela, o pedido é recusado."
+            },
+            {
+              "word": "Ficha do arquivo",
+              "meaning": "os dados sobre o arquivo, guardados à parte do conteúdo. Ali vão tamanho, datas, dono e quem pode o quê."
+            }
+          ],
+          "bullets": [
+            "Tamanho, em bytes.",
+            "Datas de criação, de alteração e do último acesso.",
+            "Quem é o dono e de que grupo ele faz parte.",
+            "Quem pode ler, quem pode escrever e quem pode executar."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Dois jeitos de ler",
+          "body": [
+            "Ler do começo ao fim serve para um texto ou um vídeo.",
+            "Já um banco de dados precisa pular direto para o meio.",
+            "Os sistemas de hoje permitem os dois, com um marcador de posição."
+          ],
+          "terms": [
+            {
+              "word": "Marcador de posição",
+              "meaning": "o ponto do arquivo em que a próxima leitura ou gravação vai acontecer."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Pasta é um arquivo que lista nomes",
+          "body": [
+            "Uma pasta não guarda os arquivos dentro dela.",
+            "Ela guarda uma lista de nomes, e onde achar cada um.",
+            "Uma pasta pode listar outra pasta, e é daí que vem a árvore."
+          ],
+          "terms": [
+            {
+              "word": "Diretório",
+              "meaning": "o nome técnico de pasta. É uma lista de nomes com o endereço de cada um."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/so/so-arvore-arquivos.svg",
+            "alt": "Árvore de pastas partindo de uma raiz, com pastas dentro de pastas e arquivos nas pontas.",
+            "caption": "Tudo parte de um único ponto de origem, e desce em ramos."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Como dizer onde uma coisa está",
+          "body": [
+            "Há duas formas de indicar onde algo fica.",
+            "Uma começa lá de cima e diz o caminho inteiro.",
+            "A outra parte de onde você está agora."
+          ],
+          "terms": [
+            {
+              "word": "Caminho completo",
+              "meaning": "o endereço do arquivo desde o ponto de origem, sem depender de onde você está."
+            },
+            {
+              "word": "Caminho a partir daqui",
+              "meaning": "o endereço contado a partir da pasta em que você está agora."
+            }
+          ],
+          "table": {
+            "label": "O mesmo caminho nos dois sistemas",
+            "headers": [
+              "",
+              "Windows",
+              "Linux"
+            ],
+            "rows": [
+              [
+                "Separador",
+                "barra invertida",
+                "barra comum"
+              ],
+              [
+                "Ponto de origem",
+                "C:\\ e cada letra de unidade",
+                "a barra sozinha, uma só para tudo"
+              ],
+              [
+                "Exemplo completo",
+                "C:\\Users\\savio\\notas.txt",
+                "/home/savio/notas.txt"
+              ],
+              [
+                "Pasta acima",
+                "..",
+                ".."
+              ],
+              [
+                "Pasta atual",
+                ".",
+                "."
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Dois nomes para o mesmo arquivo",
+          "body": [
+            "Dá para o mesmo conteúdo aparecer com dois nomes diferentes.",
+            "Um jeito cria um segundo nome de verdade, no mesmo nível do primeiro.",
+            "O outro cria um bilhete que aponta para o nome original."
+          ],
+          "table": {
+            "label": "Os dois jeitos de apontar",
+            "headers": [
+              "Jeito",
+              "Se o original for apagado"
+            ],
+            "rows": [
+              [
+                "Segundo nome de verdade",
+                "o conteúdo continua, pelo outro nome"
+              ],
+              [
+                "Bilhete que aponta",
+                "o bilhete quebra e não abre mais"
+              ]
+            ]
+          },
+          "bullets": [
+            "O bilhete pode apontar para outro disco. O segundo nome não pode.",
+            "O bilhete pode apontar para uma pasta. O segundo nome, em geral, não."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Fazendo isso na prática",
+          "body": [
+            "Vale abrir o terminal e experimentar cada um destes."
+          ],
+          "terms": [
+            {
+              "word": "Terminal",
+              "meaning": "a janela em que você digita ordens de texto para o computador, em vez de clicar."
+            },
+            {
+              "word": "Comando",
+              "meaning": "cada ordem de texto que você digita no terminal."
+            },
+            {
+              "word": "PowerShell e Prompt de Comando (cmd)",
+              "meaning": "os dois programas do Windows em que você digita ordens de texto. O PowerShell é o mais novo dos dois."
+            }
+          ],
+          "table": {
+            "label": "O mesmo trabalho nos dois sistemas",
+            "headers": [
+              "O que fazer",
+              "Linux",
+              "Windows"
+            ],
+            "rows": [
+              [
+                "Listar com detalhes",
+                "ls -l",
+                "dir ou Get-ChildItem"
+              ],
+              [
+                "Ver onde estou",
+                "pwd",
+                "cd (sem nada) ou Get-Location"
+              ],
+              [
+                "Criar pasta",
+                "mkdir notas",
+                "mkdir notas"
+              ],
+              [
+                "Ver a ficha do arquivo",
+                "stat notas.txt",
+                "Get-Item notas.txt | Format-List"
+              ],
+              [
+                "Criar o bilhete que aponta",
+                "ln -s alvo atalho",
+                "New-Item -ItemType SymbolicLink"
+              ],
+              [
+                "Mudar quem pode o quê",
+                "chmod 644 notas.txt",
+                "icacls notas.txt"
+              ]
+            ],
+            "mono": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca cobra a diferença entre os dois tipos de link e os nomes dos atributos."
+          ],
+          "bullets": [
+            "Arquivo: abstração que oferece persistência, nomeação e independência do processo que o criou.",
+            "Metadados ou atributos: tamanho, timestamps, dono e permissões.",
+            "Em Unix, os metadados ficam no i-node; o nome fica no diretório.",
+            "Diretório é um arquivo especial que mapeia nomes para i-nodes (ou entradas equivalentes).",
+            "Hard link: nova entrada de diretório apontando para o MESMO i-node; incrementa o contador de links.",
+            "Symbolic link (soft link): arquivo cujo conteúdo é um caminho; quebra se o alvo some.",
+            "Hard link não atravessa sistemas de arquivos e normalmente não aponta para diretórios.",
+            "Caminho absoluto parte da raiz; caminho relativo parte do diretório de trabalho corrente.",
+            "Acesso sequencial × acesso direto (ou aleatório), controlado pelo ponteiro de arquivo.",
+            "Em Unix, a extensão não tem significado para o sistema; no Windows, ela determina a associação."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Cinco confusões aparecem sempre nessa parte."
+          ],
+          "bullets": [
+            "A pasta não contém o arquivo. Ela contém o nome dele e o caminho até o conteúdo.",
+            "Trocar o pedaço depois do ponto não muda o conteúdo de nada.",
+            "O bilhete que aponta quebra se o alvo some. O segundo nome de verdade não quebra.",
+            "No Linux existe uma origem só. No Windows, uma por unidade.",
+            "Apagar um arquivo com dois nomes de verdade não apaga o conteúdo. Ele some quando o último nome sai."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O arquivo é a promessa de achar pelo nome o que você gravou."
+          ],
+          "bullets": [
+            "Além do conteúdo, vem uma ficha com tamanho, datas e dono.",
+            "A pasta é uma lista de nomes, e é isso que forma a árvore.",
+            "Caminho completo parte da origem. O outro parte de onde você está.",
+            "Segundo nome de verdade sobrevive ao original. Bilhete que aponta, não.",
+            "No Windows o pedaço depois do ponto decide o programa. No Linux, não."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Hard link e symbolic link",
+          "statement": "Um arquivo possui um hard link e um symbolic link apontando para ele. O nome original é removido. O que acontece?",
+          "options": [
+            "o hard link continua acessando o conteúdo e o symbolic link fica quebrado",
+            "os dois continuam funcionando normalmente",
+            "os dois deixam de funcionar",
+            "o symbolic link passa a ser o dono do conteúdo",
+            "o conteúdo é movido para a lixeira"
+          ],
+          "correct_index": 0,
+          "explanation": "O hard link é outro nome para o mesmo i-node, e o conteúdo só é liberado quando o contador chega a zero. O symbolic link guarda apenas um caminho, que deixou de existir.",
+          "pitfall": "É a questão mais cobrada do tópico. Pense em quem aponta para o i-node e quem aponta para o nome."
+        },
+        {
+          "topic": "Diretório",
+          "statement": "Em sistemas do tipo Unix, um diretório é essencialmente:",
+          "options": [
+            "um arquivo que associa nomes a números de i-node",
+            "uma área contígua do disco onde os arquivos são gravados",
+            "uma tabela mantida apenas na memória pelo núcleo",
+            "uma lista de blocos livres do sistema de arquivos",
+            "um índice de permissões dos arquivos"
+          ],
+          "correct_index": 0,
+          "explanation": "O nome vive no diretório e os metadados vivem no i-node. Essa separação é o que torna o hard link possível.",
+          "pitfall": "O diretório não guarda tamanho nem permissões dos arquivos. Isso está no i-node de cada um."
+        },
+        {
+          "topic": "Metadados",
+          "statement": "Em um sistema Unix, onde ficam armazenados o tamanho, o dono e as permissões de um arquivo?",
+          "options": [
+            "no i-node do arquivo",
+            "na entrada de diretório que contém o nome",
+            "no primeiro bloco de dados do arquivo",
+            "no superbloco do sistema de arquivos",
+            "na tabela de processos"
+          ],
+          "correct_index": 0,
+          "explanation": "A entrada de diretório carrega apenas o nome e o número do i-node. Todo o resto está no i-node.",
+          "pitfall": "Se os metadados ficassem no diretório, dois hard links poderiam divergir entre si."
+        },
+        {
+          "topic": "Extensões",
+          "statement": "Sobre a extensão de um arquivo, é correto afirmar que:",
+          "options": [
+            "em Unix ela é apenas convenção, enquanto no Windows determina o programa associado",
+            "em ambos os sistemas ela define o formato interno do arquivo",
+            "em Unix ela é obrigatória para arquivos executáveis",
+            "alterá-la converte o arquivo para o novo formato",
+            "ela é armazenada em campo próprio no i-node"
+          ],
+          "correct_index": 0,
+          "explanation": "Em Unix a extensão faz parte do nome e nada mais. O sistema identifica o tipo pelos primeiros bytes do conteúdo.",
+          "pitfall": "Renomear não converte nada. O conteúdo continua exatamente o mesmo."
+        },
+        {
+          "topic": "Caminhos",
+          "statement": "Um caminho relativo difere de um caminho absoluto porque:",
+          "options": [
+            "é interpretado a partir do diretório de trabalho corrente do processo",
+            "não pode conter subdiretórios",
+            "só funciona em sistemas Windows",
+            "é resolvido pelo hardware de disco",
+            "aponta sempre para um symbolic link"
+          ],
+          "correct_index": 0,
+          "explanation": "O mesmo caminho relativo leva a arquivos diferentes conforme o diretório em que o processo está.",
+          "pitfall": "Cada processo tem seu próprio diretório de trabalho, e ele pode ser mudado durante a execução."
+        },
+        {
+          "topic": "Raiz",
+          "statement": "Uma diferença estrutural entre a organização de diretórios do Windows e a do Unix é que:",
+          "options": [
+            "no Unix existe uma única raiz, e no Windows há uma raiz por unidade de disco",
+            "no Windows não existem subdiretórios",
+            "no Unix os diretórios não podem ser aninhados",
+            "no Windows os caminhos não podem ser absolutos",
+            "no Unix não existe diretório de trabalho corrente"
+          ],
+          "correct_index": 0,
+          "explanation": "No Unix, outros dispositivos são montados em pontos dentro da mesma árvore. No Windows, cada um recebe sua letra.",
+          "pitfall": "Montar um disco no Unix não cria uma nova raiz. Ele passa a ocupar um galho da árvore existente."
+        },
+        {
+          "topic": "Acesso",
+          "statement": "O acesso direto (ou aleatório) a um arquivo permite:",
+          "options": [
+            "posicionar o ponteiro em qualquer offset antes de ler ou escrever",
+            "ler o arquivo apenas do início ao fim",
+            "acessar o arquivo sem passar pelo sistema operacional",
+            "gravar sem atualizar os metadados",
+            "dispensar a abertura prévia do arquivo"
+          ],
+          "correct_index": 0,
+          "explanation": "É o que permite a um banco de dados ler um registro no meio de um arquivo enorme sem percorrer tudo.",
+          "pitfall": "O acesso sequencial é um caso particular, em que o ponteiro só avança."
+        },
+        {
+          "topic": "Contador de links",
+          "statement": "Um arquivo possui três hard links. O sistema libera os blocos de dados quando:",
+          "options": [
+            "o contador de links do i-node chega a zero",
+            "o primeiro dos três nomes é removido",
+            "o dono do arquivo é excluído do sistema",
+            "o arquivo é movido para outro diretório",
+            "o último acesso ultrapassa o prazo de retenção"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada nome soma um no contador. Remover um nome apenas o decrementa, e só o zero libera o espaço.",
+          "pitfall": "Um arquivo aberto por um processo também segura a liberação, mesmo com todos os nomes removidos."
+        }
+      ]
+    },
+    {
+      "slug": "como-o-disco-guarda",
+      "title": "Como o disco guarda um arquivo de verdade",
+      "summary": "O disco é uma fila enorme de pedaços numerados. O que muda entre os sistemas é como eles anotam quais pedaços são de cada arquivo.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A estante e a coleção de livros",
+          "body": [
+            "Uma estante guarda os volumes de uma coleção em prateleiras.",
+            "Se todos ficarem lado a lado, é fácil pegar a coleção inteira.",
+            "Mas quando chega uma coleção nova e o vão não dá, começa o problema.",
+            "Ou se espalha a coleção, ou se remexe a estante inteira."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O disco é uma fila de pedaços numerados",
+          "body": [
+            "O disco não guarda arquivos. Ele guarda pedaços de tamanho fixo.",
+            "Cada pedaço tem um número, e é assim que ele é encontrado.",
+            "Um arquivo é, no fundo, uma lista de números de pedaços."
+          ],
+          "terms": [
+            {
+              "word": "Processo",
+              "meaning": "um programa em execução, com a memória que ele usa e o ponto exato em que parou."
+            },
+            {
+              "word": "Arquivo",
+              "meaning": "uma sequência de dados guardada com um nome, que continua existindo depois de a máquina desligar."
+            },
+            {
+              "word": "Diretório",
+              "meaning": "o nome técnico de pasta. É uma lista de nomes com o endereço de cada um."
+            },
+            {
+              "word": "Bloco",
+              "meaning": "o menor pedaço que o sistema lê ou grava no disco de uma vez. Hoje costuma ter quatro mil bytes."
+            }
+          ],
+          "bullets": [
+            "Pedaço grande desperdiça espaço em arquivo pequeno.",
+            "Pedaço pequeno exige listas enormes para arquivo grande.",
+            "Quatro mil bytes é o meio-termo usado quase em todo lugar."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Primeiro jeito: tudo junto",
+          "body": [
+            "O mais simples é guardar os pedaços de um arquivo lado a lado.",
+            "Basta anotar onde ele começa e quantos pedaços tem.",
+            "A leitura fica rápida, e o problema é escrever."
+          ],
+          "figure": {
+            "src": "/figuras/so/so-alocacao-blocos.svg",
+            "alt": "Três fitas de pedaços de disco mostrando três formas de guardar o mesmo arquivo: tudo junto, cada pedaço apontando para o próximo, e uma lista guardada à parte.",
+            "caption": "O mesmo arquivo, guardado de três jeitos diferentes."
+          },
+          "bullets": [
+            "Crescer o arquivo só dá se houver vão livre logo depois.",
+            "Apagar arquivos deixa vãos de tamanhos variados espalhados.",
+            "É por isso que esse jeito ficou só em disco de escrever uma vez."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Segundo jeito: cada um aponta para o próximo",
+          "body": [
+            "Aqui cada pedaço guarda, no fim dele, o número do pedaço seguinte.",
+            "Os pedaços podem estar em qualquer lugar do disco.",
+            "Sobrou o problema de pular para o meio do arquivo."
+          ],
+          "bullets": [
+            "Para chegar ao pedaço mil, é preciso passar pelos novecentos e noventa e nove antes.",
+            "Um pedaço com defeito corta o arquivo do meio para a frente.",
+            "E o espaço útil de cada pedaço deixa de ser uma potência de dois."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Terceiro jeito: a lista num lugar só",
+          "body": [
+            "A melhoria é tirar os apontamentos de dentro dos pedaços.",
+            "Todos vão para uma tabela única, guardada no começo do disco.",
+            "Com a tabela na memória, pular para o meio fica rápido."
+          ],
+          "terms": [
+            {
+              "word": "Tabela de apontamentos",
+              "meaning": "uma tabela com uma linha por pedaço do disco, dizendo qual é o pedaço seguinte daquele arquivo."
+            }
+          ],
+          "bullets": [
+            "É assim que funcionam os cartões de memória e os pendrives comuns.",
+            "O problema é o tamanho: a tabela cobre o disco inteiro.",
+            "Num disco grande, ela sozinha ocupa muita memória."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quarto jeito: uma ficha por arquivo",
+          "body": [
+            "Em vez de uma tabela do disco inteiro, cada arquivo ganha a sua ficha.",
+            "Só as fichas dos arquivos abertos precisam estar na memória.",
+            "A ficha guarda os dados do arquivo e os primeiros apontamentos."
+          ],
+          "terms": [
+            {
+              "word": "Ficha do arquivo (i-node)",
+              "meaning": "uma anotação por arquivo. Ali vão tamanho, dono, datas e os números dos pedaços dele."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/so/so-ficha-arquivo.svg",
+            "alt": "A ficha de um arquivo com dono, tamanho e datas, e abaixo os apontamentos para três pedaços de dados e para uma tabela extra com mais pedaços.",
+            "caption": "Arquivo pequeno cabe só na ficha. Arquivo grande usa as tabelas extras."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "E se não couberem os apontamentos?",
+          "body": [
+            "A ficha tem espaço para poucos apontamentos diretos.",
+            "O último deles não aponta para dados, e sim para uma tabela só de apontamentos.",
+            "Se ainda faltar, há uma tabela que aponta para tabelas."
+          ],
+          "bullets": [
+            "Arquivo pequeno resolve tudo na própria ficha, sem passo extra.",
+            "Arquivo grande paga uma leitura a mais para chegar aos pedaços.",
+            "Com três níveis, o tamanho máximo chega à casa dos terabytes."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que se usa hoje de verdade",
+          "body": [
+            "Listar pedaço por pedaço é caro num arquivo de vários gigabytes.",
+            "Os sistemas atuais anotam faixas: começo e quantidade.",
+            "Uma faixa só pode cobrir milhares de pedaços seguidos."
+          ],
+          "terms": [
+            {
+              "word": "Faixa contínua",
+              "meaning": "uma anotação de começo e tamanho, que substitui a lista de pedaços um a um."
+            }
+          ],
+          "table": {
+            "label": "Como cada sistema guarda hoje",
+            "headers": [
+              "Sistema de arquivos",
+              "Onde aparece",
+              "Como anota"
+            ],
+            "rows": [
+              [
+                "ext4",
+                "Linux",
+                "ficha por arquivo, com faixas"
+              ],
+              [
+                "NTFS",
+                "Windows",
+                "tabela central, com faixas"
+              ],
+              [
+                "APFS",
+                "Mac e iPhone",
+                "ficha por arquivo, com faixas"
+              ],
+              [
+                "exFAT e FAT32",
+                "pendrives e cartões",
+                "tabela de apontamentos"
+              ],
+              [
+                "Btrfs e ZFS",
+                "servidores",
+                "árvores, com cópia ao gravar"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Como o sistema sabe o que está livre",
+          "body": [
+            "Além de saber de quem é cada pedaço, é preciso saber o que sobrou.",
+            "Dois jeitos resolvem isso, e cada um pesa de um lado."
+          ],
+          "table": {
+            "label": "Controlando o espaço livre",
+            "headers": [
+              "Jeito",
+              "Como é",
+              "Quando é melhor"
+            ],
+            "rows": [
+              [
+                "Mapa de marcas",
+                "uma marca por pedaço do disco",
+                "quando o disco está bem cheio"
+              ],
+              [
+                "Lista de livres",
+                "lista só dos pedaços que sobraram",
+                "quando há muito espaço vago"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Olhando isso na sua máquina",
+          "body": [
+            "Dá para ver o tipo de sistema de arquivos e o espaço de cada disco."
+          ],
+          "terms": [
+            {
+              "word": "Terminal",
+              "meaning": "a janela em que você digita ordens de texto para o computador, em vez de clicar."
+            },
+            {
+              "word": "Comando",
+              "meaning": "cada ordem de texto que você digita no terminal."
+            },
+            {
+              "word": "PowerShell e Prompt de Comando (cmd)",
+              "meaning": "os dois programas do Windows em que você digita ordens de texto. O PowerShell é o mais novo dos dois."
+            }
+          ],
+          "table": {
+            "label": "Conferindo disco e arquivos",
+            "headers": [
+              "O que ver",
+              "Linux",
+              "Windows"
+            ],
+            "rows": [
+              [
+                "Espaço livre por disco",
+                "df -h",
+                "Get-Volume"
+              ],
+              [
+                "Tipo do sistema de arquivos",
+                "lsblk -f",
+                "Get-Volume | Format-Table"
+              ],
+              [
+                "Tamanho de uma pasta",
+                "du -sh pasta",
+                "Get-ChildItem -Recurse | Measure-Object"
+              ],
+              [
+                "Número da ficha do arquivo",
+                "ls -i notas.txt",
+                "fsutil file queryfileid notas.txt"
+              ]
+            ],
+            "mono": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca cobra as vantagens e desvantagens de cada método de alocação. A tabela mental é obrigatória."
+          ],
+          "bullets": [
+            "Alocação contígua: acesso direto rápido, sofre fragmentação externa e exige saber o tamanho final.",
+            "Alocação encadeada: sem fragmentação externa, péssima para acesso direto, vulnerável a bloco defeituoso.",
+            "FAT: a lista de ponteiros sai dos blocos e vai para uma tabela única em memória; acesso direto volta a ser viável.",
+            "Problema da FAT: a tabela cobre o disco inteiro, mesmo para os arquivos fechados.",
+            "I-node: uma estrutura por arquivo; só os i-nodes de arquivos abertos ficam em memória.",
+            "I-node guarda metadados e ponteiros diretos, mais indireto simples, duplo e triplo.",
+            "O nome do arquivo NÃO fica no i-node; ele fica na entrada de diretório.",
+            "Extents (ext4, NTFS, APFS): par início e comprimento, em vez de listar bloco a bloco.",
+            "Controle de espaço livre: bitmap (mapa de bits) ou lista encadeada de blocos livres.",
+            "Bloco grande gera mais fragmentação interna; bloco pequeno gera listas maiores e mais buscas.",
+            "Journaling e cópia na escrita (copy-on-write) tratam de consistência, e não de alocação."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Cinco trocas aparecem sempre nessa parte."
+          ],
+          "bullets": [
+            "A ficha não guarda o nome do arquivo. O nome está na pasta.",
+            "Guardar tudo junto é ótimo para ler e ruim para crescer.",
+            "A tabela única cobre o disco inteiro. A ficha cobre um arquivo só.",
+            "Apontar um pedaço para o próximo não gera vãos espalhados, e estraga o acesso direto.",
+            "Pedaço maior não é sempre melhor. Ele desperdiça espaço em arquivo pequeno."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O arquivo é uma lista de pedaços. Muda só onde essa lista é anotada."
+          ],
+          "bullets": [
+            "Tudo junto: rápido de ler, difícil de crescer, deixa vãos.",
+            "Cada um apontando o próximo: acaba com os vãos e estraga o acesso direto.",
+            "Tabela única: resolve o acesso direto, e ocupa memória proporcional ao disco.",
+            "Ficha por arquivo: só os arquivos abertos pesam na memória.",
+            "Tabelas extras fazem a ficha alcançar arquivos enormes.",
+            "Os sistemas de hoje anotam faixas de começo e tamanho, em vez de pedaço a pedaço."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Alocação contígua",
+          "statement": "A alocação contígua de arquivos tem como principais desvantagens:",
+          "options": [
+            "a fragmentação externa e a necessidade de conhecer o tamanho final do arquivo",
+            "a lentidão no acesso direto e a perda de blocos defeituosos",
+            "o consumo de memória proporcional ao tamanho do disco",
+            "a impossibilidade de armazenar arquivos pequenos",
+            "a necessidade de três níveis de indireção"
+          ],
+          "correct_index": 0,
+          "explanation": "Crescer exige espaço livre logo depois do arquivo. E a entrada e saída de arquivos deixa lacunas inaproveitáveis.",
+          "pitfall": "O acesso direto nesse método é o mais rápido de todos. A desvantagem está na escrita, não na leitura."
+        },
+        {
+          "topic": "Alocação encadeada",
+          "statement": "Na alocação encadeada, por que o acesso direto a um bloco no meio do arquivo é ineficiente?",
+          "options": [
+            "porque é preciso percorrer todos os blocos anteriores para encontrar o ponteiro",
+            "porque os blocos precisam estar em posições contíguas",
+            "porque a tabela de ponteiros não cabe na memória",
+            "porque cada bloco armazena dois ponteiros",
+            "porque o sistema precisa reler o diretório a cada acesso"
+          ],
+          "correct_index": 0,
+          "explanation": "O ponteiro para o bloco seguinte está dentro do bloco atual. Não há como saltar sem ler o caminho inteiro.",
+          "pitfall": "A FAT resolve exatamente isso, ao tirar os ponteiros de dentro dos blocos."
+        },
+        {
+          "topic": "FAT",
+          "statement": "A principal limitação do sistema de arquivos FAT em discos grandes é que:",
+          "options": [
+            "a tabela cobre todo o disco e precisa estar em memória para ser eficiente",
+            "não permite acesso direto aos blocos",
+            "não suporta diretórios aninhados",
+            "exige alocação contígua dos arquivos",
+            "armazena os metadados dentro dos blocos de dados"
+          ],
+          "correct_index": 0,
+          "explanation": "A tabela tem uma entrada por bloco do disco, e não por arquivo aberto. O custo cresce com o tamanho do volume.",
+          "pitfall": "O i-node resolve isso: só os arquivos efetivamente abertos ocupam memória."
+        },
+        {
+          "topic": "I-node",
+          "statement": "Qual informação NÃO está armazenada no i-node de um arquivo Unix?",
+          "options": [
+            "o nome do arquivo",
+            "o tamanho em bytes",
+            "o identificador do dono",
+            "as permissões de acesso",
+            "os ponteiros para os blocos de dados"
+          ],
+          "correct_index": 0,
+          "explanation": "O nome fica na entrada de diretório, apontando para o número do i-node. É essa separação que permite vários nomes para o mesmo arquivo.",
+          "pitfall": "Essa é a pergunta mais cobrada sobre i-nodes. Tudo menos o nome está lá."
+        },
+        {
+          "topic": "Indireção",
+          "statement": "Em um i-node com ponteiros diretos e blocos de indireção simples, duplo e triplo, o objetivo dessa estrutura é:",
+          "options": [
+            "atender arquivos pequenos sem acessos extras e ainda assim suportar arquivos muito grandes",
+            "eliminar a fragmentação interna dos blocos",
+            "permitir alocação contígua de arquivos grandes",
+            "reduzir o número de entradas de diretório",
+            "dispensar o uso de bitmap de blocos livres"
+          ],
+          "correct_index": 0,
+          "explanation": "A maior parte dos arquivos é pequena e cabe nos ponteiros diretos. Os níveis extras só são pagos por quem precisa.",
+          "pitfall": "Cada nível de indireção custa uma leitura de disco a mais para localizar o bloco desejado."
+        },
+        {
+          "topic": "Extents",
+          "statement": "O uso de extents em sistemas como ext4 e NTFS consiste em:",
+          "options": [
+            "registrar um par de bloco inicial e quantidade de blocos contíguos, em vez de listar cada bloco",
+            "armazenar o arquivo inteiro em uma área contígua obrigatória",
+            "duplicar os metadados em duas regiões do disco",
+            "manter uma tabela global de ponteiros em memória",
+            "comprimir os blocos de dados antes de gravar"
+          ],
+          "correct_index": 0,
+          "explanation": "Um único extent pode descrever milhares de blocos seguidos. Isso encolhe drasticamente os metadados de arquivos grandes.",
+          "pitfall": "Extent não obriga o arquivo a ser contíguo. Ele apenas aproveita os trechos que forem contíguos."
+        },
+        {
+          "topic": "Espaço livre",
+          "statement": "Entre bitmap e lista encadeada para controle de blocos livres, o bitmap é mais vantajoso quando:",
+          "options": [
+            "o disco está bastante ocupado, pois seu tamanho não depende da quantidade de blocos livres",
+            "o disco está quase vazio, pois a lista ficaria muito longa",
+            "os arquivos são majoritariamente pequenos",
+            "o sistema usa alocação contígua",
+            "não há suporte a journaling"
+          ],
+          "correct_index": 0,
+          "explanation": "O bitmap tem tamanho fixo, proporcional ao disco. Já a lista encadeada cresce conforme aumenta o espaço livre.",
+          "pitfall": "O bitmap também facilita achar blocos contíguos, o que a lista encadeada não oferece."
+        },
+        {
+          "topic": "Tamanho do bloco",
+          "statement": "Aumentar o tamanho do bloco de um sistema de arquivos tende a:",
+          "options": [
+            "aumentar a fragmentação interna e reduzir o número de acessos para arquivos grandes",
+            "reduzir a fragmentação interna e aumentar a externa",
+            "eliminar a necessidade de ponteiros indiretos",
+            "reduzir o desperdício em arquivos pequenos",
+            "não ter efeito algum sobre o desempenho"
+          ],
+          "correct_index": 0,
+          "explanation": "O último bloco de cada arquivo fica em média pela metade. Em compensação, menos blocos significam menos ponteiros e menos buscas.",
+          "pitfall": "É um compromisso clássico. A escolha depende do perfil de arquivos esperado no volume."
+        }
+      ]
+    },
+    {
+      "slug": "confiabilidade-de-arquivos",
+      "title": "Quando falta luz no meio da gravação",
+      "summary": "Gravar um arquivo são vários passos, e a energia pode acabar entre eles. Os sistemas de hoje anotam a intenção antes de agir.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A transferência pela metade",
+          "body": [
+            "Você transfere dinheiro de uma conta para outra.",
+            "São dois passos: tirar de uma e pôr na outra.",
+            "Imagine a luz acabar exatamente entre os dois passos.",
+            "O dinheiro sumiu de um lado e não chegou no outro."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Gravar não é um passo só",
+          "body": [
+            "Criar um arquivo parece uma coisa só, e são várias.",
+            "O sistema precisa marcar pedaços como usados e anotar o nome na pasta.",
+            "E ainda precisa atualizar a ficha com o tamanho e a data."
+          ],
+          "terms": [
+            {
+              "word": "Processo",
+              "meaning": "um programa em execução, com a memória que ele usa e o ponto exato em que parou."
+            },
+            {
+              "word": "Arquivo",
+              "meaning": "uma sequência de dados guardada com um nome, que continua existindo depois de a máquina desligar."
+            },
+            {
+              "word": "Diretório",
+              "meaning": "o nome técnico de pasta. É uma lista de nomes com o endereço de cada um."
+            },
+            {
+              "word": "Bloco",
+              "meaning": "o menor pedaço que o sistema lê ou grava no disco de uma vez. Hoje costuma ter quatro mil bytes."
+            }
+          ],
+          "example": {
+            "label": "Os passos de apagar um arquivo",
+            "lines": [
+              "tirar o nome da pasta",
+              "liberar a ficha do arquivo",
+              "marcar os pedaços dele como livres"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O estado que não deveria existir",
+          "body": [
+            "Se a luz acabar no meio, o disco fica num estado impossível.",
+            "Pedaços podem estar marcados como usados sem pertencer a ninguém.",
+            "Ou pior: um pedaço pode aparecer em dois arquivos ao mesmo tempo."
+          ],
+          "terms": [
+            {
+              "word": "Estado inconsistente",
+              "meaning": "quando as anotações do disco se contradizem. O sistema não sabe mais o que é verdade."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A saída antiga: conferir tudo",
+          "body": [
+            "Antes, o sistema conferia o disco inteiro ao ligar depois de um susto.",
+            "Ele lia todas as fichas e montava uma conta de quem usa o quê.",
+            "Depois comparava com o mapa de livres e corrigia o que não batia."
+          ],
+          "bullets": [
+            "Num disco grande, isso levava horas.",
+            "E em alguns casos a correção perdia dados de verdade.",
+            "É a tela de espera que aparecia depois de uma queda de energia."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A ideia que resolveu: anotar antes de fazer",
+          "body": [
+            "Antes de mexer no disco, o sistema escreve o que pretende fazer.",
+            "Essa anotação vai para uma área reservada, em sequência.",
+            "Só depois de ela estar gravada é que as mudanças de verdade acontecem."
+          ],
+          "terms": [
+            {
+              "word": "Caderno de intenções",
+              "meaning": "uma área do disco onde o sistema anota o que vai fazer, antes de fazer."
+            }
+          ],
+          "bullets": [
+            "Deu tudo certo? A anotação é apagada.",
+            "Faltou luz no meio? Ao ligar, o sistema lê o caderno e refaz o que faltava.",
+            "A conferência passa a durar segundos, em vez de horas."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Anotar só as fichas, ou anotar tudo",
+          "body": [
+            "Anotar o conteúdo inteiro no caderno significa gravar duas vezes.",
+            "Por isso quase todo sistema anota só as fichas e os nomes.",
+            "O arquivo não fica pela metade, e o conteúdo pode ficar velho."
+          ],
+          "table": {
+            "label": "O que vai para o caderno",
+            "headers": [
+              "Modo",
+              "O que é anotado",
+              "Custo"
+            ],
+            "rows": [
+              [
+                "Só as fichas",
+                "quem aponta para quê",
+                "baixo, e é o padrão"
+              ],
+              [
+                "Fichas e conteúdo",
+                "tudo o que muda",
+                "alto, grava duas vezes"
+              ],
+              [
+                "Ordenado",
+                "fichas, e o conteúdo vai primeiro",
+                "meio-termo, o mais usado"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Outro caminho: nunca escrever por cima",
+          "body": [
+            "Alguns sistemas nem tentam corrigir o que foi escrito.",
+            "Eles gravam a versão nova num lugar vazio e só então trocam o apontamento.",
+            "Se faltar luz antes da troca, a versão antiga continua inteira."
+          ],
+          "terms": [
+            {
+              "word": "Cópia ao gravar",
+              "meaning": "escrever a versão nova em outro lugar e só depois apontar para ela. A antiga nunca é estragada."
+            }
+          ],
+          "bullets": [
+            "Isso é usado no ZFS, no Btrfs e no APFS dos aparelhos da Apple.",
+            "Como a versão antiga continua lá, fica fácil guardar fotografias do passado.",
+            "É o que faz o iPhone ter cópia de segurança quase instantânea."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que o sistema segura na memória",
+          "body": [
+            "O disco é lento, então o sistema guarda as gravações na memória por um tempo.",
+            "Ele avisa ao programa que gravou antes de gravar de verdade.",
+            "É por isso que tirar o pendrive na hora errada perde arquivo."
+          ],
+          "terms": [
+            {
+              "word": "Guarda temporária",
+              "meaning": "a memória onde as gravações ficam esperando antes de irem para o disco."
+            }
+          ],
+          "bullets": [
+            "O sistema descarrega essa memória de tempos em tempos.",
+            "Um programa que não pode perder nada pede a gravação imediata.",
+            "É por isso que existe o botão de remover o dispositivo com segurança."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Nada disso substitui a cópia de segurança",
+          "body": [
+            "O caderno de intenções protege contra queda de energia. Só isso.",
+            "Ele não protege contra apagar sem querer, nem contra disco queimado.",
+            "Para isso existe a cópia guardada em outro lugar."
+          ],
+          "bullets": [
+            "Copiar tudo toda vez é lento. Copiar só o que mudou é o normal.",
+            "A regra mais usada hoje: três cópias, em dois tipos de lugar, uma fora de casa.",
+            "Cópia que nunca foi testada não conta como cópia."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Mexendo nisso na prática",
+          "body": [
+            "Estes são os comandos que aparecem quando algo dá errado com o disco."
+          ],
+          "terms": [
+            {
+              "word": "Terminal",
+              "meaning": "a janela em que você digita ordens de texto para o computador, em vez de clicar."
+            },
+            {
+              "word": "Comando",
+              "meaning": "cada ordem de texto que você digita no terminal."
+            },
+            {
+              "word": "PowerShell e Prompt de Comando (cmd)",
+              "meaning": "os dois programas do Windows em que você digita ordens de texto. O PowerShell é o mais novo dos dois."
+            }
+          ],
+          "table": {
+            "label": "Conferir e forçar gravação",
+            "headers": [
+              "O que fazer",
+              "Linux",
+              "Windows"
+            ],
+            "rows": [
+              [
+                "Forçar gravação agora",
+                "sync",
+                "Write-VolumeCache C"
+              ],
+              [
+                "Conferir o disco",
+                "fsck /dev/sda1",
+                "chkdsk C: /f"
+              ],
+              [
+                "Ver se há caderno de intenções",
+                "tune2fs -l /dev/sda1",
+                "fsutil fsinfo ntfsinfo C:"
+              ],
+              [
+                "Ver erros do disco",
+                "dmesg | grep -i error",
+                "Visualizador de Eventos"
+              ]
+            ],
+            "mono": true
+          },
+          "bullets": [
+            "Nunca rode a conferência num disco que está sendo usado."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca cobra o que o journaling garante e o que ele não garante. É aí que a maioria erra."
+          ],
+          "bullets": [
+            "Journaling: registra as operações em um log antes de aplicá-las ao sistema de arquivos.",
+            "Após uma falha, o sistema faz replay do journal em segundos, sem varrer o disco inteiro.",
+            "Journaling garante consistência dos metadados, e NÃO garante que nenhum dado seja perdido.",
+            "Modos do ext4: journal (dados e metadados), ordered (padrão) e writeback (só metadados).",
+            "Uma operação registrada precisa ser idempotente: refazê-la duas vezes dá o mesmo resultado.",
+            "Copy-on-write (ZFS, Btrfs, APFS): grava em novo local e troca o ponteiro; dispensa journal de dados.",
+            "Snapshots são consequência natural do copy-on-write.",
+            "fsck e chkdsk: verificadores de consistência; comparam i-nodes e bitmap de blocos livres.",
+            "Blocos marcados como ocupados sem dono, ou compartilhados por dois arquivos, são os defeitos típicos.",
+            "Write-back cache: a escrita é confirmada ao processo antes de chegar ao disco.",
+            "sync e fsync forçam a descarga do cache para o disco.",
+            "Backup incremental copia apenas o que mudou desde a última cópia."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Cinco confusões derrubam gente nessa parte."
+          ],
+          "bullets": [
+            "O caderno de intenções protege as anotações, e não o conteúdo do arquivo.",
+            "Sistema com caderno de intenções não dispensa cópia de segurança.",
+            "Gravar não é instantâneo. O programa é avisado antes de o dado chegar ao disco.",
+            "A conferência completa não sumiu. Ela ficou rara, e ainda existe.",
+            "Cópia ao gravar não é o mesmo que caderno de intenções. Uma troca o apontamento, a outra anota antes."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Gravar são vários passos, e a luz pode acabar entre eles."
+          ],
+          "bullets": [
+            "Parando no meio, as anotações do disco passam a se contradizer.",
+            "Antes, o conserto era conferir o disco inteiro, e levava horas.",
+            "Hoje o sistema anota o que vai fazer antes de fazer.",
+            "Ao ligar, ele lê a anotação e termina o serviço em segundos.",
+            "Quase sempre só as fichas são anotadas, e não o conteúdo.",
+            "Outro caminho é nunca escrever por cima, e só trocar o apontamento no fim."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Journaling",
+          "statement": "O journaling em sistemas de arquivos funciona da seguinte forma:",
+          "options": [
+            "as operações são registradas em um log antes de serem aplicadas ao sistema de arquivos",
+            "todos os arquivos são duplicados em uma segunda partição",
+            "o disco é verificado integralmente a cada inicialização",
+            "os blocos livres são reorganizados periodicamente",
+            "cada arquivo recebe uma soma de verificação"
+          ],
+          "correct_index": 0,
+          "explanation": "Com a intenção já gravada, o sistema sabe exatamente o que ficou pela metade e pode concluir a operação.",
+          "pitfall": "O log é gravado sequencialmente, o que é rápido mesmo em disco mecânico."
+        },
+        {
+          "topic": "Garantias",
+          "statement": "O que o journaling de metadados garante após uma queda de energia?",
+          "options": [
+            "a consistência das estruturas do sistema de arquivos, mas não a preservação de todos os dados gravados",
+            "que nenhum dado gravado nos últimos segundos será perdido",
+            "que o disco não sofrerá danos físicos",
+            "que os arquivos abertos serão fechados corretamente",
+            "que não será necessário nenhum tipo de backup"
+          ],
+          "correct_index": 0,
+          "explanation": "As estruturas voltam a fazer sentido entre si. O conteúdo que ainda estava em cache pode ter se perdido.",
+          "pitfall": "É a diferença mais cobrada do tópico: consistência não é o mesmo que durabilidade dos dados."
+        },
+        {
+          "topic": "Inconsistência",
+          "statement": "Após uma falha durante a exclusão de um arquivo, um verificador como o fsck pode encontrar:",
+          "options": [
+            "blocos marcados como ocupados no bitmap, mas não referenciados por nenhum i-node",
+            "arquivos com nomes duplicados no mesmo diretório",
+            "i-nodes com tamanho maior que a capacidade do disco",
+            "diretórios convertidos em arquivos comuns",
+            "permissões alteradas aleatoriamente"
+          ],
+          "correct_index": 0,
+          "explanation": "O nome saiu do diretório, mas os blocos ainda não foram liberados. O espaço fica perdido até a verificação.",
+          "pitfall": "O caso mais grave é o oposto: um bloco listado por dois arquivos diferentes, que corrompe os dois."
+        },
+        {
+          "topic": "Modos do ext4",
+          "statement": "No modo writeback do ext4, o journal registra:",
+          "options": [
+            "apenas os metadados, sem garantir a ordem de gravação dos dados",
+            "os metadados e todo o conteúdo dos arquivos",
+            "somente os blocos de dados",
+            "apenas as entradas de diretório",
+            "nada, pois o journaling fica desativado"
+          ],
+          "correct_index": 0,
+          "explanation": "É o modo mais rápido e o menos seguro. Um arquivo pode ficar com metadados novos apontando para dados antigos.",
+          "pitfall": "O modo ordered é o padrão porque garante que os dados cheguem ao disco antes dos metadados correspondentes."
+        },
+        {
+          "topic": "Copy-on-write",
+          "statement": "Em sistemas de arquivos com copy-on-write, como ZFS e Btrfs, uma alteração em um arquivo:",
+          "options": [
+            "é gravada em novos blocos, e só depois o ponteiro passa a apontar para eles",
+            "sobrescreve os blocos originais após registrá-los no journal",
+            "é mantida apenas em memória até o desligamento",
+            "exige bloqueio exclusivo de todo o sistema de arquivos",
+            "duplica o arquivo inteiro a cada escrita"
+          ],
+          "correct_index": 0,
+          "explanation": "A versão antiga permanece intacta até a troca do ponteiro. Se a falha ocorrer antes disso, nada foi corrompido.",
+          "pitfall": "Isso torna os snapshots quase gratuitos, já que as versões antigas continuam no disco."
+        },
+        {
+          "topic": "Cache de escrita",
+          "statement": "Por que remover um pendrive sem usar a opção de ejeção segura pode corromper arquivos?",
+          "options": [
+            "porque gravações confirmadas ao processo ainda podem estar no cache, sem ter chegado ao dispositivo",
+            "porque o sistema apaga os metadados durante a remoção",
+            "porque a energia do dispositivo é cortada antes da leitura",
+            "porque o sistema de arquivos precisa ser desmontado para ser lido",
+            "porque o cache do dispositivo é limpo ao ser conectado"
+          ],
+          "correct_index": 0,
+          "explanation": "O sistema confirma a escrita cedo, por desempenho, e descarrega o cache depois. Remover antes disso perde o que estava pendente.",
+          "pitfall": "A ejeção segura basicamente força a descarga do cache e desmonta o sistema de arquivos."
+        },
+        {
+          "topic": "Forçar gravação",
+          "statement": "A chamada de sistema fsync tem como função:",
+          "options": [
+            "forçar a gravação em disco dos dados pendentes de um arquivo específico",
+            "verificar a integridade do sistema de arquivos",
+            "criar um snapshot do estado atual do volume",
+            "liberar os blocos não utilizados do disco",
+            "sincronizar os relógios de acesso e modificação"
+          ],
+          "correct_index": 0,
+          "explanation": "Bancos de dados a usam antes de confirmar uma transação. Sem ela, não há garantia de que o dado sobreviva a uma queda.",
+          "pitfall": "O comando sync faz o mesmo para o sistema inteiro, e não para um arquivo específico."
+        },
+        {
+          "topic": "Backup",
+          "statement": "Um backup incremental caracteriza-se por:",
+          "options": [
+            "copiar apenas o que foi alterado desde a cópia anterior",
+            "copiar todo o conteúdo do volume a cada execução",
+            "manter os dados apenas na mesma máquina de origem",
+            "substituir a necessidade de journaling no sistema de arquivos",
+            "duplicar os blocos dentro do mesmo disco"
+          ],
+          "correct_index": 0,
+          "explanation": "Isso reduz muito o tempo e o espaço necessários. A restauração precisa da cópia completa mais os incrementos.",
+          "pitfall": "Journaling e backup resolvem problemas diferentes. Um protege contra falha no meio da operação, o outro contra perda do disco."
+        }
+      ]
     }
   ]
 }
