@@ -1,4 +1,4 @@
-import { Trophy } from "lucide-react";
+import { Flag } from "lucide-react";
 import { NODE, ROW, type TrailAccent } from "@/lib/lesson-trail";
 
 /*
@@ -10,7 +10,7 @@ import { NODE, ROW, type TrailAccent } from "@/lib/lesson-trail";
 | NÃO É LINK, de propósito: não há para onde ir, e um alvo que responde ao
 | toque sem levar a lugar nenhum frustra mais do que enfeita. Ele só acende.
 |
-| Apagado ele também não tem degrau — não é tecla, é troféu na prateleira.
+| Apagado ele também não tem degrau — não é tecla, é bandeira fincada.
 */
 const cores: Record<TrailAccent, string> = {
   sky: "node-sky",
@@ -55,7 +55,7 @@ export function TrailMilestone({
         className={`node grid place-items-center rounded-pill ${completo ? cores[accent] : "node-adiante"}`}
         style={{ width: NODE, height: NODE }}
       >
-        <Trophy className="size-7" strokeWidth={2.5} />
+        <Flag className="size-7" strokeWidth={2.5} />
       </span>
 
       <span

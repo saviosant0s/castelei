@@ -140,7 +140,7 @@ describe("geometria do ziguezague", () => {
 
   it("a cauda é menor que o vão entre dois nós", () => {
     // O último nó é sempre o marco, de rótulo curto. Dimensionar pela lição
-    // de título mais longo abria um buraco entre o troféu e o módulo seguinte.
+    // de título mais longo abria um buraco entre o marco e o módulo seguinte.
     expect(TAIL).toBeLessThan(ROW - NODE);
   });
 

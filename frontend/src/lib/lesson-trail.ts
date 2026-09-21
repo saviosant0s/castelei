@@ -104,7 +104,7 @@ export function waveX(index: number): number {
  * É menor que o vão entre dois nós porque o último nó é sempre o MARCO, cujo
  * rótulo tem no máximo duas linhas curtas — não o título de uma lição, que
  * pode ter três. Dimensionar pelo pior caso deixava um buraco visível entre o
- * troféu e o módulo seguinte.
+ * marco e o módulo seguinte.
  */
 export const TAIL = 64;
 
