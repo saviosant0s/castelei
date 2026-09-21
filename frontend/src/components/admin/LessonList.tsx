@@ -94,6 +94,11 @@ export function LessonList({ subjectId, lessons }: { subjectId: number; lessons:
 
               <Link href={`/admin/licao/${lesson.id}`} className="min-w-0 flex-1">
                 <span className="block text-base font-bold">{lesson.title}</span>
+                {/* O módulo vem antes dos números: é o que agrupa a lição na
+                    trilha, e quem reordena precisa ver onde cada bloco começa. */}
+                {lesson.module && (
+                  <span className="mt-0.5 block text-sm font-bold text-content-secondary">{lesson.module}</span>
+                )}
                 <span className="mt-0.5 block text-sm text-content-secondary">
                   {lesson.steps_count} {lesson.steps_count === 1 ? "etapa" : "etapas"} · {lesson.questions_count}{" "}
                   {lesson.questions_count === 1 ? "questão" : "questões"} ·{" "}

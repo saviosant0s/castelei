@@ -22,6 +22,8 @@ export interface LessonSummary {
   id: number;
   title: string;
   position: number;
+  /** o assunto que agrupa a lição na trilha. null = matéria sem módulos */
+  module: string | null;
   questions_total: number;
   questions_available: number;
   attempts: number;

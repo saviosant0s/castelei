@@ -6,6 +6,7 @@
     {
       "slug": "o-que-e-um-sistema-operacional",
       "title": "O que é um sistema operacional?",
+      "module": "Fundamentos",
       "summary": "O sistema operacional esconde a complexidade do hardware e organiza quem usa o quê. É o software que roda em modo núcleo.",
       "steps": [
         {
@@ -401,6 +402,7 @@
     {
       "slug": "componentes-e-funcoes-do-so",
       "title": "Componentes e funções de um SO",
+      "module": "Fundamentos",
       "summary": "O SO cuida de cinco áreas (processos, espaços de endereçamento, arquivos, entrada e saída e proteção). O shell fica de fora.",
       "steps": [
         {
@@ -856,6 +858,7 @@
     {
       "slug": "terminal-na-pratica",
       "title": "O terminal na prática (Windows e Linux)",
+      "module": "Fundamentos",
       "summary": "O terminal é a janela onde você conversa com o shell por texto. Os comandos mudam entre Linux e Windows, e o PowerShell aceita muitos comandos do Linux.",
       "steps": [
         {
@@ -1317,6 +1320,7 @@
     {
       "slug": "chamadas-de-sistema",
       "title": "Chamadas de sistema: como funcionam",
+      "module": "Fundamentos",
       "summary": "Uma chamada de sistema é o pedido do programa ao SO. O programa não mexe direto nas peças: ele usa uma instrução especial que troca do modo usuário para o modo núcleo.",
       "steps": [
         {
@@ -1689,6 +1693,7 @@
     {
       "slug": "chamadas-de-sistema-arquivos-e-processos",
       "title": "Chamadas de sistema: arquivos e processos",
+      "module": "Fundamentos",
       "summary": "As chamadas mais usadas mexem em arquivos (open, read, write, close) e em processos (fork, execve, waitpid). O Windows usa outros nomes.",
       "steps": [
         {
@@ -2093,6 +2098,7 @@
     {
       "slug": "estrutura-de-um-so",
       "title": "Estrutura de um SO: como ele é montado por dentro",
+      "module": "Fundamentos",
       "summary": "Monolítico, camadas, micronúcleo e cliente-servidor são arranjos diferentes para o mesmo trabalho. Máquinas virtuais e contêineres partem uma máquina em várias.",
       "steps": [
         {
@@ -2465,6 +2471,7 @@
     {
       "slug": "processos-o-modelo",
       "title": "Processos: como um programa vira coisa viva",
+      "module": "Processos",
       "summary": "Processo é o programa em execução, com tudo o que ele precisa. Ele nasce de outro processo, recebe um número e morre de quatro jeitos possíveis.",
       "steps": [
         {
@@ -2844,6 +2851,7 @@
     {
       "slug": "estados-e-transicoes",
       "title": "Estados de um processo: correndo, pronto ou parado",
+      "module": "Processos",
       "summary": "Um programa em execução nem sempre está usando o processador. Ele reveza entre três situações, e as mudanças entre elas seguem regras fixas.",
       "steps": [
         {
@@ -3220,6 +3228,7 @@
     {
       "slug": "escalonamento",
       "title": "Escalonamento: quem usa o processador agora",
+      "module": "Processos",
       "summary": "Quando vários programas querem executar juntos, alguém precisa escolher a ordem. Cada regra de escolha serve a um objetivo diferente.",
       "steps": [
         {
@@ -3692,6 +3701,7 @@
     {
       "slug": "threads",
       "title": "Threads: vários caminhos dentro do mesmo programa",
+      "module": "Threads",
       "summary": "Um programa pode seguir mais de um caminho ao mesmo tempo. Os caminhos dividem a memória do programa, e cada um guarda só onde parou.",
       "steps": [
         {
@@ -4047,6 +4057,7 @@
     {
       "slug": "threads-por-dentro",
       "title": "Threads por dentro: quem cuida da troca",
+      "module": "Threads",
       "summary": "Os caminhos de um programa podem ser controlados pelo próprio programa ou pelo núcleo do sistema. A escolha muda o que é rápido e o que trava.",
       "steps": [
         {
@@ -4382,6 +4393,7 @@
     {
       "slug": "condicao-de-corrida",
       "title": "Condição de corrida: quando dois caminhos brigam pelo mesmo dado",
+      "module": "Comunicação e sincronização",
       "summary": "Dois caminhos que mexem no mesmo dado ao mesmo tempo podem se atrapalhar. O resultado passa a depender de quem chegou primeiro.",
       "steps": [
         {
@@ -4667,6 +4679,7 @@
     {
       "slug": "exclusao-mutua",
       "title": "Exclusão mútua: só um por vez no trecho perigoso",
+      "module": "Comunicação e sincronização",
       "summary": "Garantir um de cada vez parece simples e não é. Cada tentativa ingênua tem um furo, até chegar às soluções que funcionam.",
       "steps": [
         {
@@ -4993,6 +5006,7 @@
     {
       "slug": "semaforos-e-mutexes",
       "title": "Semáforos e mutexes: dormir em vez de girar em falso",
+      "module": "Comunicação e sincronização",
       "summary": "O semáforo é um contador que não deixa avisos se perderem. O mutex é a versão simples dele, para trancar um trecho por vez.",
       "steps": [
         {
@@ -5366,6 +5380,7 @@
     {
       "slug": "monitores-e-mensagens",
       "title": "Monitores e mensagens: quando a linguagem ou a rede resolvem",
+      "module": "Comunicação e sincronização",
       "summary": "Semáforo é poderoso e fácil de errar. O monitor deixa a tranca a cargo da linguagem, e a troca de mensagens serve quando não há memória em comum.",
       "steps": [
         {
@@ -5725,6 +5740,7 @@
     {
       "slug": "problemas-classicos",
       "title": "Os problemas clássicos que toda prova cobra",
+      "module": "Comunicação e sincronização",
       "summary": "Três situações resumem quase tudo que pode dar errado entre programas que dividem coisas. Quem entende as três reconhece o resto.",
       "steps": [
         {
@@ -6075,6 +6091,7 @@
     {
       "slug": "gerencia-de-memoria",
       "title": "Memória: por que um programa não escolhe onde mora",
+      "module": "Memória",
       "summary": "Vários programas na mesma memória precisam de faixas separadas. Sem isso, um escreve por cima do outro e ninguém percebe.",
       "steps": [
         {
@@ -6447,6 +6464,7 @@
     {
       "slug": "memoria-virtual-e-paginacao",
       "title": "Memória virtual: o endereço que o programa vê não é o de verdade",
+      "module": "Memória",
       "summary": "Cada programa enxerga uma memória só dele, numerada do zero. Uma peça traduz esse número para o lugar de verdade, pedaço por pedaço.",
       "steps": [
         {
@@ -6779,6 +6797,7 @@
     {
       "slug": "substituicao-de-paginas",
       "title": "A memória encheu: quem sai da sala",
+      "module": "Memória",
       "summary": "Quando não há lugar livre, algum pedaço precisa sair para outro entrar. Escolher mal significa buscar de novo no disco daqui a pouco.",
       "steps": [
         {
@@ -7182,6 +7201,7 @@
     {
       "slug": "segmentacao",
       "title": "Segmentação: dividir por sentido, não por tamanho",
+      "module": "Memória",
       "summary": "Em vez de cortar a memória em pedaços iguais, dá para dividi-la por assunto. Cada parte cresce sozinha e tem regras próprias.",
       "steps": [
         {
@@ -7529,6 +7549,7 @@
     {
       "slug": "arquivos-e-diretorios",
       "title": "Arquivos e pastas: o que o sistema promete a você",
+      "module": "Arquivos",
       "summary": "Arquivo é a promessa de que aquilo que você gravou continua lá, com nome e dono. A pasta é só uma lista de nomes.",
       "steps": [
         {
@@ -7965,6 +7986,7 @@
     {
       "slug": "como-o-disco-guarda",
       "title": "Como o disco guarda um arquivo de verdade",
+      "module": "Arquivos",
       "summary": "O disco é uma fila enorme de pedaços numerados. O que muda entre os sistemas é como eles anotam quais pedaços são de cada arquivo.",
       "steps": [
         {
@@ -8394,6 +8416,7 @@
     {
       "slug": "confiabilidade-de-arquivos",
       "title": "Quando falta luz no meio da gravação",
+      "module": "Arquivos",
       "summary": "Gravar um arquivo são vários passos, e a energia pode acabar entre eles. Os sistemas de hoje anotam a intenção antes de agir.",
       "steps": [
         {
@@ -8802,6 +8825,7 @@
     {
       "slug": "entrada-e-saida",
       "title": "Entrada e saída: como o sistema conversa com as peças",
+      "module": "Entrada e saída",
       "summary": "Existem milhares de modelos de peças e nenhum programa quer conhecer os detalhes de cada um. O sistema resolve isso em camadas.",
       "steps": [
         {
@@ -9204,6 +9228,7 @@
     {
       "slug": "disco-e-ordem-dos-pedidos",
       "title": "O disco: a peça mais lenta da casa",
+      "module": "Entrada e saída",
       "summary": "No disco de prato, quase todo o tempo é gasto movendo o braço. Atender os pedidos numa ordem esperta muda tudo, e no disco novo isso deixou de valer.",
       "steps": [
         {
@@ -9611,6 +9636,7 @@
     {
       "slug": "varios-discos-como-um",
       "title": "Vários discos trabalhando como um só",
+      "module": "Entrada e saída",
       "summary": "Juntar discos deixa o conjunto mais rápido, ou capaz de aguentar a perda de um deles. Escolher o arranjo é escolher entre velocidade, espaço e segurança.",
       "steps": [
         {
@@ -10005,6 +10031,7 @@
     {
       "slug": "virtualizacao",
       "title": "Virtualização: uma máquina fingindo ser várias",
+      "module": "Virtualização",
       "summary": "Um programa convence vários sistemas de que cada um tem um computador só para si. Isso é o que faz a nuvem existir.",
       "steps": [
         {
@@ -10379,6 +10406,7 @@
     {
       "slug": "conteineres",
       "title": "Contêineres: dividir sem duplicar o sistema",
+      "module": "Virtualização",
       "summary": "Em vez de fingir um computador inteiro, dá para dividir um sistema só em mundos separados. Fica muito mais leve, e isola um pouco menos.",
       "steps": [
         {
@@ -10764,6 +10792,7 @@
     {
       "slug": "estudo-de-caso-linux",
       "title": "Estudo de caso: Linux e Android",
+      "module": "Estudos de caso",
       "summary": "O Linux é um núcleo só, usado de servidor a celular. O que muda de um lugar para outro é tudo o que fica em cima dele.",
       "steps": [
         {
@@ -11164,6 +11193,7 @@
     {
       "slug": "estudo-de-caso-windows",
       "title": "Estudo de caso: Windows",
+      "module": "Estudos de caso",
       "summary": "O Windows de hoje não descende do sistema de disco dos anos 80. Ele veio de um projeto novo, feito para durar e para rodar em várias máquinas.",
       "steps": [
         {

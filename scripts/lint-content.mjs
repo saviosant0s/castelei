@@ -93,11 +93,43 @@ function checkJargon(where, text, defined, jargon) {
   }
 }
 
+/*
+| Os módulos da trilha (o campo `module` da lição).
+|
+| A tela da matéria agrupa lições SEGUIDAS com o mesmo nome. Duas coisas
+| estragam isso, e nenhuma quebra o app — por isso são avisos, não erros:
+| uma lição sem módulo no meio de uma matéria que usa módulos abre um bloco
+| sem título, e um nome que reaparece depois de outro abre um segundo módulo
+| com o mesmo nome. Em ambos os casos a culpa é do arquivo, não da tela.
+*/
+function checkModules(subject) {
+  const modules = subject.lessons.map((lesson) => lesson.module?.trim() || null);
+  const named = modules.filter(Boolean);
+
+  if (named.length === 0) return; // matéria curta sem módulos: combinado
+
+  const S = subject.name;
+
+  if (named.length < modules.length) {
+    const soltas = subject.lessons.filter((l) => !(l.module?.trim())).map((l) => l.slug);
+    warn(S, `usa módulos, mas ${soltas.length} lição(ões) estão sem: ${soltas.join(", ")}`);
+  }
+
+  // Blocos: onde o nome muda, começa outro módulo.
+  const blocos = modules.filter((nome, i) => i === 0 || nome !== modules[i - 1]);
+  const repetidos = blocos.filter((nome, i) => nome && blocos.indexOf(nome) !== i);
+
+  for (const nome of new Set(repetidos)) {
+    warn(S, `o módulo “${nome}” aparece em dois trechos separados; junte as lições ou troque um dos nomes`);
+  }
+}
+
 let lessonCount = 0, stepCount = 0, questionCount = 0;
 
 for (const file of readdirSync(dir).filter((f) => f.endsWith(".json")).sort()) {
   const subject = JSON.parse(readFileSync(join(dir, file), "utf8"));
   const jargon = JARGON.filter(([, , scope]) => scope === SCOPE_BY_SUBJECT[subject.slug]);
+  checkModules(subject);
   for (const lesson of subject.lessons) {
     lessonCount++;
     const L = `${subject.name} › ${lesson.title}`;

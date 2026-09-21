@@ -46,6 +46,8 @@ class CatalogController extends Controller
                         'id' => $lesson->id,
                         'title' => $lesson->title,
                         'position' => $lesson->position,
+                        // Nome do módulo, sem número: a trilha numera pela ordem.
+                        'module' => $lesson->module,
                         'questions_total' => $lesson->questions_count,
                         'questions_available' => $limit === null ? $lesson->questions_count : min($limit, $lesson->questions_count),
                         'attempts' => $stat ? (int) $stat->attempts : 0,

@@ -19,6 +19,7 @@
       "_campos": {
         "slug": "identidade da lição dentro da matéria. Depois de publicada, não mude.",
         "title": "o título que aparece na lista.",
+        "module": "o assunto que agrupa esta lição na trilha, ex.: \"Processos\". Lições seguidas com o mesmo nome viram um módulo. Opcional: matéria curta pode ficar sem.",
         "summary": "uma frase que responde 'o que eu vou aprender aqui?'.",
         "steps": "as etapas: uma ideia por tela. Veja _tipos_de_etapa abaixo.",
         "questions": "as questões do Modo Prova. O site público anuncia 8 por lição."
@@ -41,6 +42,7 @@
       },
       "slug": "licao-de-exemplo",
       "title": "Lição de exemplo",
+      "module": "Primeiros passos",
       "summary": "O que a pessoa sai sabendo depois de ler esta lição.",
       "steps": [
         {

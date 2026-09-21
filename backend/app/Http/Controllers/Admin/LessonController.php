@@ -23,6 +23,7 @@ class LessonController extends Controller
                 'slug' => $lesson->slug,
                 'title' => $lesson->title,
                 'position' => $lesson->position,
+                'module' => $lesson->module,
                 'summary' => $lesson->summary,
                 'steps' => $lesson->steps ?? [],
                 'subject' => [
@@ -50,6 +51,7 @@ class LessonController extends Controller
         $data = $request->validate([
             'slug' => ['required', 'string', 'max:80', 'regex:/^[a-z0-9]+(?:-[a-z0-9]+)*$/'],
             'title' => ['required', 'string', 'max:160'],
+            'module' => ['nullable', 'string', 'max:60'],
             'summary' => ['required', 'string'],
             'steps' => ['required', 'array', 'min:1'],
         ], self::messages());
@@ -69,6 +71,7 @@ class LessonController extends Controller
             'subject_id' => $subject->id,
             'slug' => $data['slug'],
             'title' => $data['title'],
+            'module' => self::module($data['module'] ?? null),
             'summary' => $data['summary'],
             'steps' => $data['steps'],
             'position' => (int) $subject->lessons()->max('position') + 1,
@@ -88,6 +91,7 @@ class LessonController extends Controller
     {
         $data = $request->validate([
             'title' => ['required', 'string', 'max:160'],
+            'module' => ['nullable', 'string', 'max:60'],
             'summary' => ['required', 'string'],
             'steps' => ['required', 'array', 'min:1'],
         ], self::messages());
@@ -98,6 +102,7 @@ class LessonController extends Controller
 
         $lesson->fill([
             'title' => $data['title'],
+            'module' => self::module($data['module'] ?? null),
             'summary' => $data['summary'],
             'steps' => $data['steps'],
         ] + ContentImporter::legacyFields($data['steps']));
@@ -225,6 +230,17 @@ class LessonController extends Controller
         ));
     }
 
+    /**
+     * Campo em branco vira null: quem limpou o campo tirou a lição do módulo,
+     * e "" abriria um grupo sem nome no meio da trilha.
+     */
+    private static function module(?string $value): ?string
+    {
+        $nome = trim((string) $value);
+
+        return $nome === '' ? null : $nome;
+    }
+
     /** @return array<string, string> */
     public static function messages(): array
     {
@@ -232,6 +248,7 @@ class LessonController extends Controller
             'slug.required' => 'Informe o slug da lição.',
             'slug.regex' => 'O slug só aceita letras minúsculas sem acento, números e hífen. Exemplo: memoria-virtual.',
             'title.required' => 'Informe o título da lição.',
+            'module.max' => 'O nome do módulo tem no máximo 60 caracteres.',
             'summary.required' => 'Escreva o resumo de uma frase da lição.',
             'steps.required' => 'A lição precisa de pelo menos uma etapa.',
             'steps.array' => 'As etapas precisam ser uma lista.',

@@ -43,6 +43,7 @@ Plano de um usuário: `php artisan castelei:plan email@exemplo.com plus`.
 - **Gamificação** (XP 20 por acerto, streak em dias no fuso `America/Sao_Paulo`, 10 conquistas): dados guardados para todos; só Plus/Pro veem. `GAMIFICATION_FOR_ALL=true` (backend) libera para todos, e está ligado no Railway para testes. Falhas da gamificação nunca podem quebrar o estudo (tudo em `try/catch`).
 - **Etapas de lição** (`lessons.steps`, JSON): `kind` (`idea` primeira, `recap` última, uma `exam`, uma `pitfall`), `title`, `body`, e opcionais `example`, `bullets`, `terms`, `figure`, `video`, `code`, `table`. Formato completo no `README.md`. Colunas antigas (`explanation`, `exam_style`, `pitfalls`) são derivadas das etapas pelo `ContentSeeder`.
 - Lições são identificadas por `(matéria, slug)` e questões por `(lição, posição)`: **não reordene questões já publicadas**. Por isso o painel não deixa editar slug depois de criado.
+- **A lição guarda o nome do módulo, nunca o número** (`lessons.module`, opcional). A tela da matéria agrupa lições **seguidas** com o mesmo nome e numera pela ordem. Se o número morasse no conteúdo, reordenar a matéria deixaria um "Módulo 5" antes do 4. Nome vazio vira nulo: matéria sem módulos vira uma trilha só.
 - **Só existe um caminho de escrita em massa de conteúdo:** `App\Support\Content\ContentImporter`. O `ContentSeeder` do deploy e o painel usam o mesmo código, inclusive para derivar as colunas antigas. Dois caminhos para a mesma tabela viram duas regras diferentes na primeira correção feita em um só.
 - **Toda matéria guarda de onde vem** (`subjects.origin`): `seed` = os arquivos de `database/seeders/content/` ainda mandam; `painel` = foi editada em `/admin` e o `ContentSeeder` pula ela. A troca acontece na primeira escrita do painel, inclusive numa lição ou questão dela. Sem isso, o pre-deploy do Railway recarregaria o arquivo antigo por cima de toda edição — sem erro e sem aviso. O teste que trava isso é `ContentImportTest::test_o_seeder_nao_desfaz_o_que_o_painel_editou`.
 
@@ -110,6 +111,12 @@ Se for expandir daqui, as opções são: aprofundar o que ficou de fora da ement
 **Impasse entrou pela porta dos fundos.** A ementa o deixa de fora, mas ele é inevitável no jantar dos filósofos e na ordem errada de duas trancas. Está explicado onde aparece, sem lição própria.
 
 **Painel de conteúdo no ar** (`/admin`, ver `docs/painel-admin.md`): importação de matéria por arquivo JSON com conferência antes de publicar e relatório do que entrou, edição de matéria, lição e questão, ordenação de lições, exclusão com o nome digitado, e biblioteca de imagem e vídeo. As etapas ganharam o bloco `video`, que aceita arquivo enviado ou link do YouTube (incorporado no domínio sem cookie de rastreio).
+
+**A tela da matéria é uma trilha, não uma lista** (`components/trail/`, lógica em `lib/lesson-trail.ts`). Trinta lições em fileira não mostram onde você está nem quanto falta. Agora são módulos com barra de progresso, e dentro de cada um as lições formam uma onda de nós com três estados: concluída (verde, com certo), atual (azul, anel pulsando, selo "Agora") e ainda não praticada (cinza). Três coisas que valem saber antes de mexer:
+
+- **Concluída é praticada, não aprovada.** Basta uma tentativa terminada; nota não entra. Cobrar acerto aqui transformaria a trilha numa cobrança, e a qualidade da resposta já é medida em `/progresso`.
+- **A cinza continua clicável, de propósito.** O app acompanha um semestre com data marcada: quem revisa Memória na véspera da prova não pode esbarrar num cadeado por ter pulado uma lição de setembro. O cinza orienta, não tranca — por isso também não tem cadeado desenhado.
+- **O traço passa por trás dos títulos**, então o título tem fundo próprio (`.trail-mask`, em `globals.css`). Ele repete o grão do `body`: com `bg-surface` liso, o retângulo aparece como mancha clara.
 
 **Ao acrescentar lição, mexa em quatro lugares:** o JSON do conteúdo, a figura em `frontend/public/figuras/`, a lista de `frontend/src/lib/site-content.ts` (o teste `site-content.test.ts` reprova se esquecer) e o mapa em `docs/sistemas-operacionais-mapa.md`.
 

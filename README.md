@@ -62,7 +62,11 @@ O CI (`.github/workflows/ci.yml`) roda tudo isso a cada push.
 
 ## Escrevendo conteúdo
 
-As lições ficam em `backend/database/seeders/content/*.json`. Cada lição tem `summary`, `steps` (as etapas, uma ideia por tela) e `questions`. Uma etapa tem:
+As lições ficam em `backend/database/seeders/content/*.json`. Cada lição tem `summary`, `steps` (as etapas, uma ideia por tela) e `questions`.
+
+Tem também `module`, opcional: o assunto que agrupa a lição na trilha da matéria (`"Processos"`, `"Memória"`). Lições **seguidas** com o mesmo nome formam um módulo, e o número ("Módulo 3") sai da ordem — não escreva o número no arquivo. Matéria curta pode ficar sem: ela vira uma trilha só. O verificador avisa se uma matéria usa módulos e esquece uma lição, ou se o mesmo nome reaparece em dois trechos separados.
+
+Uma etapa tem:
 
 | Campo | Para quê |
 |---|---|

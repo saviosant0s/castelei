@@ -110,10 +110,25 @@ navegador. O que sustenta isso hoje:
 - **A lição lembra onde você parou.** `lib/lesson-progress.ts` guarda a etapa
   no `localStorage` e `LessonStepper` devolve a pessoa a ela — com aviso na
   tela e saída para recomeçar, porque abrir a lição no meio sem explicação
-  desorienta. Na lista da matéria isso vira "parou na etapa 4 de 11"
-  (`components/LessonSpot.tsx`). É conveniência de leitura, não dado de
+  desorienta. Na trilha da matéria isso vira "parou na etapa 4 de 11"
+  (`components/trail/TrailResume.tsx`). É conveniência de leitura, não dado de
   estudo: o que conta para progresso são as questões, e isso vive no servidor.
   Vale por aparelho, e a marca é ignorada se a lição mudar de tamanho.
+- **A matéria é uma trilha, não uma lista** (`components/trail/`, com a
+  matemática em `lib/lesson-trail.ts`). As lições se agrupam em módulos, cada
+  um com barra de progresso, e dentro do módulo viram nós numa onda vertical.
+  Três estados, e cor nunca é o único sinal de nenhum: concluída tem o ícone
+  de certo, a atual tem o anel que pulsa e o selo "Agora", a que falta é lisa
+  — e o estado entra no rótulo acessível de todo nó. A que falta **continua
+  clicável**: o cinza orienta, não tranca, porque revisar fora de ordem é uso
+  legítimo num app que acompanha um semestre.
+
+  Dois detalhes que não são enfeite. A onda é medida em **porcentagem da
+  largura**, e o traço que liga os nós é um SVG com `preserveAspectRatio="none"`
+  e `vector-effect="non-scaling-stroke"`: assim o desenho acompanha qualquer
+  tela sem engrossar a linha. E o título da lição carrega `.trail-mask`, que
+  repete o grão do `body` — o traço passa por trás dele, e um `bg-surface`
+  liso apareceria como retângulo mais claro sobre o fundo texturizado.
 - **Uma tela responde uma pergunta.** Quando uma tela começa a acumular
   assuntos, ela vira abas de rota — ver `components/ProgressTabs.tsx`. Cada aba
   é uma rota de verdade, então o botão "voltar" do Android funciona e o link
@@ -162,7 +177,10 @@ Detalhes que valem lembrar:
    IA. Se usar gradiente, só de azul céu para um azul um pouco mais escuro.
 5. **Sombra com a cor do fundo**, nunca cinza puro (`--shadow-lift`, `--shadow-sky`).
 6. **Animação com propósito.** Confete ao bater recorde, sim; animação ao
-   carregar lista, não. Tudo dentro de `prefers-reduced-motion`.
+   carregar lista, não. Tudo dentro de `prefers-reduced-motion`. A única
+   animação permanente é o anel da lição atual na trilha (`.trail-pulse`), que
+   responde "onde eu paro?" sem obrigar a ler — e o destaque não depende dela:
+   sem movimento, o anel fica lá, parado.
 7. **Estado vazio sempre oferece uma ação.** Use `EmptyState`.
 8. **Microcopy de gente.** "Não deu para falar com o servidor" em vez de
    "ocorreu um erro inesperado".
