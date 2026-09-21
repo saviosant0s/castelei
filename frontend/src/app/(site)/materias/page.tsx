@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ListChecks } from "lucide-react";
 import { StartLink } from "@/components/site/StartLink";
 import { Card } from "@/components/ui";
-import { CATALOG, SUBJECTS } from "@/lib/site-content";
+import { getSiteCatalog } from "@/lib/site-catalog";
 
 export const metadata: Metadata = {
   title: "Matérias",
@@ -13,10 +13,13 @@ export const metadata: Metadata = {
 | A vitrine do catálogo — a página que responde "tem o que eu preciso?".
 |
 | Ela mostra o nome de toda lição, e não só a contagem: quem procura um assunto
-| específico decide em cinco segundos olhando a lista. Os dados vêm de
-| lib/site-content.ts, que um teste mantém igual ao conteúdo de verdade.
+| específico decide em cinco segundos olhando a lista. Os dados vêm do backend
+| (lib/site-catalog.ts), para matéria criada no painel aparecer aqui sozinha —
+| e caem na lista escrita à mão se a API não responder a tempo.
 */
-export default function Materias() {
+export default async function Materias() {
+  const { subjects, totals, questionsPerLesson } = await getSiteCatalog();
+
   return (
     <main className="mx-auto max-w-4xl px-5 py-12 sm:px-6">
       <header>
@@ -24,15 +27,17 @@ export default function Materias() {
         <h1 className="mt-4 text-4xl sm:text-5xl">As matérias disponíveis hoje</h1>
         <p className="mt-5 max-w-xl text-base leading-relaxed text-content-secondary">
           Toda lição segue a mesma receita: explicação humana, como o assunto cai na prova e as pegadinhas
-          mais comuns — e termina com {CATALOG.questionsPerLesson} questões em modo prova.
+          mais comuns
+          {/* O número só é dito enquanto for verdade em toda lição. */}
+          {questionsPerLesson ? ` — e termina com ${questionsPerLesson} questões em modo prova.` : ", e termina em modo prova, com cronômetro."}
         </p>
         <p className="mt-6 font-mono text-sm text-content-subtle">
-          {CATALOG.subjects} matérias · {CATALOG.lessons} lições · {CATALOG.questions} questões
+          {totals.subjects} matérias · {totals.lessons} lições · {totals.questions} questões
         </p>
       </header>
 
       <div className="mt-12 space-y-6">
-        {SUBJECTS.map((subject) => (
+        {subjects.map((subject) => (
           <Card key={subject.slug} tone="raised" size="lg" radius="panel">
             <h2 className="text-2xl leading-tight break-words">{subject.name}</h2>
             <p className="mt-2 max-w-2xl text-base text-content-secondary">{subject.pitch}</p>

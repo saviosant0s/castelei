@@ -167,15 +167,33 @@ Vídeo maior que isso: hospede no YouTube e cole o link. Hospedar aula inteira
 sairia caro e ainda teria que resolver sozinho legenda, qualidade e conexão
 ruim.
 
-## Limite conhecido: o site público não enxerga o painel
+## A vitrine se anuncia sozinha
 
-A vitrine em `/materias` lê `frontend/src/lib/site-content.ts`, que é escrito à
-mão de propósito — assim a página de divulgação não cai junto com o backend.
+Matéria criada pelo painel aparece em `/materias` e na home sem ninguém editar
+código. A vitrine lê de `GET /api/catalog`, uma rota pública que devolve só
+nome de matéria e título de lição — enunciado e gabarito continuam atrás da
+sessão.
 
-Uma matéria criada pelo painel **entra no app e não aparece na vitrine**. Para
-anunciá-la, ainda é preciso mexer nesse arquivo e publicar. O teste
-`site-content.test.ts` continua valendo contra os arquivos do repositório, e
-não reclama disso.
+Leva **até um minuto** para aparecer: a página guarda a resposta em cache por
+esse tempo, para não bater no backend a cada visita.
+
+Duas coisas continuam vindo do arquivo `frontend/src/lib/site-content.ts`:
+
+- **A frase de vitrine** (`pitch`). É texto de venda, escrito com capricho, e
+  não existe no banco: *"A base que volta em toda prova de exatas, explicada do
+  começo — inclusive o passo que todo mundo pula"*. Matéria que já tem a sua
+  mantém a sua. Matéria nova se anuncia com a própria descrição — então vale
+  caprichar na descrição ao criar.
+- **A lista inteira, como rede de segurança.** Se a API falhar, demorar mais de
+  2,5 s ou responder algo estranho, a página vai ao ar com ela em vez de mostrar
+  erro. A vitrine é a porta de entrada e a página que o Google indexa: ela não
+  pode depender de o backend estar de pé. Por isso o teste `site-content.test.ts`
+  continua exigindo que a lista fique igual aos arquivos do repositório — ela
+  iria ao ar exatamente no dia em que a API estivesse fora.
+
+O número "8 questões por lição" também deixou de ser fixo: a rota diz quantas
+são, e responde nulo quando não é o mesmo número em toda lição. Aí a vitrine
+para de prometer um número, em vez de mentir.
 
 ## Como o acesso é barrado
 

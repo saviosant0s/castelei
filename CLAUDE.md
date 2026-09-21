@@ -33,6 +33,7 @@ Plano de um usuário: `php artisan castelei:plan email@exemplo.com plus`.
 
 ## Decisões de arquitetura
 
+- **A vitrine é a única parte que lê o backend sem sessão**, por `GET /api/catalog`. Ela nunca pode cair junto com ele: qualquer falha vira a lista de reserva de `site-content.ts`, e o pedido tem prazo de 2,5 s para não pendurar a página.
 - **O navegador nunca fala com a API.** O Next guarda o token do Sanctum em cookie `httpOnly` (`castelei_token`) e repassa só as rotas de prática (`frontend/src/lib/proxy.ts`). `frontend/src/proxy.ts` protege as telas do app.
 - **Modo de teste sem login:** com `GUEST_MODE=true` (frontend), cada navegador ganha uma conta de visitante. A API segue protegida. Sem a variável, o login normal volta.
 - **Site público separado do app.** `src/app/(site)/` guarda tudo que abre sem login (`/`, `/como-funciona`, `/materias`, `/privacidade`, `/excluir-conta`), com cabeçalho e rodapé de site. O app continua em `(app)`, com a moldura de aplicativo. O catálogo anunciado no site fica em `lib/site-content.ts` — não vem da API, para a vitrine não cair junto com o backend, e um teste (`site-content.test.ts`) reprova se ele divergir do conteúdo de verdade.
@@ -55,7 +56,7 @@ Publicar matéria sem mexer em código nem esperar deploy. O guia completo está
 - **O importador nunca apaga sozinho.** Arquivo que encolheu gera `orphan_lessons`/`orphan_questions` no relatório; só some com `prune` ligado, e a tela diz o que vai junto (respostas e tentativas de quem já estudou).
 - **Modelo comentado** em `backend/resources/content/modelo-conteudo.json`. Chaves começadas por `_` são comentário e saem na importação (`ContentImporter::stripComments`). Um teste garante que o modelo passa na própria conferência sem erro nem aviso — se mudar o validador, o modelo tem que acompanhar.
 - **Mídia:** `/admin/midia` guarda imagem e vídeo no disco de `castelei.media.disk` e devolve o endereço para colar na etapa. **No Railway, sem volume em `/app/storage/app/public` o arquivo some a cada deploy** e a ficha fica no banco apontando para o vazio. Trocar para externo é `MEDIA_DISK=s3` — nada no código muda.
-- **A vitrine não enxerga o painel.** `/materias` lê `frontend/src/lib/site-content.ts`, escrito à mão para a página de divulgação não cair junto com o backend. Matéria criada pelo painel entra no app e **não** aparece lá.
+- **A vitrine se anuncia sozinha.** `/materias`, `/` e `/como-funciona` leem `GET /api/catalog` (rota pública, só nome de matéria e título de lição) por `frontend/src/lib/site-catalog.ts`, com cache de 1 minuto. Matéria criada no painel aparece sem deploy. `site-content.ts` virou **rede de segurança**: vai ao ar quando a API falha, demora mais de 2,5 s ou responde fora do formato — por isso `site-content.test.ts` continua exigindo que ela fique igual aos arquivos. O `pitch` não existe no banco (é texto de venda): matéria nova se anuncia com a `description`. E "8 questões por lição" deixou de ser fixo: a rota devolve nulo quando o número varia, e a vitrine para de prometer em vez de mentir.
 
 ## Regras de conteúdo (do Sávio, valem sempre)
 

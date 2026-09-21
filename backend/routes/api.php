@@ -10,7 +10,16 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\ProgressController;
+use App\Http\Controllers\PublicCatalogController;
 use Illuminate\Support\Facades\Route;
+
+/*
+| Sem login: a vitrine do site público lê daqui.
+|
+| Só nome de matéria e título de lição — o mesmo que já está escrito na página
+| de divulgação. Enunciado e gabarito continuam atrás da sessão.
+*/
+Route::get('/catalog', [PublicCatalogController::class, 'index']);
 
 Route::post('/register', [AuthController::class, 'register'])->middleware('throttle:10,1');
 Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:10,1');
