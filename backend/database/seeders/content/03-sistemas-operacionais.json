@@ -3688,6 +3688,696 @@
           "pitfall": "A preferência não é por serem mais importantes. É porque devolvem a vez rápido e mantêm tudo ocupado."
         }
       ]
+    },
+    {
+      "slug": "threads",
+      "title": "Threads: vários caminhos dentro do mesmo programa",
+      "summary": "Um programa pode seguir mais de um caminho ao mesmo tempo. Os caminhos dividem a memória do programa, e cada um guarda só onde parou.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A lanchonete com um atendente só",
+          "body": [
+            "Imagine uma lanchonete com um atendente só.",
+            "Ele anota o pedido, frita o pastel, serve e só então chama o próximo.",
+            "Enquanto o pastel frita, a fila inteira fica parada.",
+            "Agora ponha três atendentes no mesmo balcão. Mesma chapa, mesmo caixa, mesma cozinha."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Um caminho só, e tudo espera junto",
+          "body": [
+            "Um programa comum segue um caminho só. Ele faz uma coisa de cada vez.",
+            "Se ele fica esperando um arquivo grande ser salvo, o resto espera junto.",
+            "É por isso que uma janela às vezes congela e fica branca."
+          ],
+          "terms": [
+            {
+              "word": "Processo",
+              "meaning": "um programa em execução, com a memória que ele usa e o ponto exato em que parou."
+            },
+            {
+              "word": "Caminho de execução",
+              "meaning": "a sequência que o programa vai seguindo, uma instrução depois da outra."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Vários caminhos no mesmo trabalho",
+          "body": [
+            "A saída é ter mais de um caminho dentro do mesmo programa.",
+            "Um cuida da tela. Outro salva o arquivo. Outro busca dados na rede.",
+            "Todos continuam sendo o mesmo programa, com as mesmas coisas à mão."
+          ],
+          "terms": [
+            {
+              "word": "Thread",
+              "meaning": "cada caminho de execução dentro de um mesmo processo. Em português se diz também linha de execução."
+            }
+          ],
+          "example": {
+            "label": "Num editor de texto",
+            "lines": [
+              "um caminho recebe o que você digita",
+              "outro marca os erros de ortografia",
+              "outro salva sozinho de tempos em tempos"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que é de todos e o que é de cada um",
+          "body": [
+            "Os caminhos dividem quase tudo dentro do programa.",
+            "Só três coisas pertencem a cada um em separado."
+          ],
+          "terms": [
+            {
+              "word": "Processador",
+              "meaning": "a peça do computador que executa as instruções dos programas."
+            },
+            {
+              "word": "Pilha de chamadas",
+              "meaning": "a anotação de quais trechos do programa chamaram quais, para o caminho saber onde voltar."
+            }
+          ],
+          "table": {
+            "label": "Dentro de um processo",
+            "headers": [
+              "O que",
+              "De quem é"
+            ],
+            "rows": [
+              [
+                "Memória do programa e variáveis",
+                "de todos os caminhos"
+              ],
+              [
+                "Arquivos abertos",
+                "de todos os caminhos"
+              ],
+              [
+                "Pilha de chamadas",
+                "de cada caminho"
+              ],
+              [
+                "O ponto onde parou",
+                "de cada caminho"
+              ],
+              [
+                "Valores em uso no processador",
+                "de cada caminho"
+              ]
+            ]
+          },
+          "figure": {
+            "src": "/figuras/so/so-threads-processo.svg",
+            "alt": "Uma caixa grande de processo, com uma faixa compartilhada no topo e três caixas menores embaixo, uma para cada caminho de execução.",
+            "caption": "A parte de cima é de todos. As três caixas de baixo são de cada um."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Por que não abrir outro processo",
+          "body": [
+            "Dá para abrir outro processo em vez de outro caminho. Só que sai caro.",
+            "Criar um processo exige montar uma memória nova inteira para ele.",
+            "Criar um caminho a mais é bem mais rápido, porque a memória já existe."
+          ],
+          "bullets": [
+            "Criar custa pouco, já que nada de memória nova é montado.",
+            "Trocar entre caminhos custa menos que trocar de processo.",
+            "Dividir dados é direto: a memória é a mesma para todos.",
+            "Enquanto um espera a rede, outro segue trabalhando."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Ver isso na sua máquina",
+          "body": [
+            "Quase todo programa aberto agora usa mais de um caminho.",
+            "O navegador desenha a página em um e baixa imagens em outros.",
+            "Dá para contar quantos cada programa tem."
+          ],
+          "terms": [
+            {
+              "word": "Terminal",
+              "meaning": "a janela em que você digita ordens de texto para o computador, em vez de clicar."
+            },
+            {
+              "word": "Comando",
+              "meaning": "cada ordem de texto que você digita no terminal."
+            },
+            {
+              "word": "PowerShell e Prompt de Comando (cmd)",
+              "meaning": "os dois programas do Windows em que você digita ordens de texto. O PowerShell é o mais novo dos dois."
+            }
+          ],
+          "table": {
+            "label": "Contar os caminhos de um programa",
+            "headers": [
+              "Onde",
+              "Como"
+            ],
+            "rows": [
+              [
+                "Windows (janela)",
+                "Gerenciador de Tarefas → Detalhes → coluna Threads"
+              ],
+              [
+                "Windows (PowerShell)",
+                "(Get-Process nome).Threads.Count"
+              ],
+              [
+                "Linux",
+                "ps -o nlwp= -p 1234"
+              ],
+              [
+                "Linux (ao vivo)",
+                "htop, com a tecla H ligada"
+              ]
+            ],
+            "mono": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O preço de dividir tudo",
+          "body": [
+            "Dividir a mesma memória é a vantagem e também o problema.",
+            "Dois caminhos podem mexer no mesmo valor ao mesmo tempo.",
+            "Aí o resultado depende de quem chegou primeiro, e muda a cada execução."
+          ],
+          "terms": [
+            {
+              "word": "Condição de corrida",
+              "meaning": "quando o resultado depende de qual caminho chegou primeiro. O programa acerta hoje e erra amanhã."
+            }
+          ],
+          "example": {
+            "label": "Dois caminhos somando 1 ao mesmo contador",
+            "lines": [
+              "o caminho A lê o valor 10",
+              "o caminho B lê o valor 10 também",
+              "os dois gravam 11, e uma das somas se perde"
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca cobra a divisão entre o que é próprio e o que é compartilhado. É quase sempre a mesma pergunta."
+          ],
+          "bullets": [
+            "\"Menor unidade de execução escalonável pelo sistema\" → thread.",
+            "\"Processo leve\" (lightweight process) é outro nome para thread.",
+            "Próprios de cada thread: pilha, contador de programa e registradores.",
+            "Compartilhados entre as threads: código, dados globais, arquivos abertos e sinais.",
+            "\"Threads de um mesmo processo compartilham o espaço de endereçamento\" → verdadeiro.",
+            "Criar uma thread é mais barato que criar um processo, e a troca de contexto também.",
+            "Acesso simultâneo à mesma variável sem controle → condição de corrida (race condition)."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Quatro ideias erradas aparecem sempre nesse assunto."
+          ],
+          "bullets": [
+            "Mais caminhos não deixam tudo mais rápido. Trabalho que não se divide não ganha nada.",
+            "Caminhos do mesmo programa não têm memória separada. Quem precisa de separação usa processos.",
+            "Um caminho que quebra feio derruba o programa inteiro, e leva os outros junto.",
+            "Abrir mais caminhos do que o processador aguenta não multiplica nada. Eles passam a revezar."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Um programa, vários caminhos, uma memória só. É essa a ideia inteira."
+          ],
+          "bullets": [
+            "Cada caminho tem pilha própria e sabe onde parou.",
+            "Memória, variáveis e arquivos abertos são de todos.",
+            "Criar e trocar caminho custa menos que criar e trocar processo.",
+            "Enquanto um espera algo de fora, os outros seguem.",
+            "Dividir a memória traz o risco de dois mexerem no mesmo valor."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Thread e processo",
+          "statement": "Threads de um mesmo processo compartilham entre si:",
+          "options": [
+            "o espaço de endereçamento e os arquivos abertos",
+            "a pilha de execução e os registradores",
+            "o contador de programa de cada uma",
+            "nada, pois são totalmente independentes",
+            "apenas o identificador do processo"
+          ],
+          "correct_index": 0,
+          "explanation": "Tudo o que é do programa é de todas: memória, variáveis globais e arquivos abertos. O que é de cada uma é só o ponto em que ela está.",
+          "pitfall": "Pilha, contador de programa e registradores são individuais. É justamente o que a banca troca de lugar."
+        },
+        {
+          "topic": "Custo",
+          "statement": "Por que criar uma thread costuma ser mais barato do que criar um processo?",
+          "options": [
+            "porque não é preciso montar um novo espaço de endereçamento",
+            "porque a thread não precisa de pilha própria",
+            "porque a thread não é escalonada pelo sistema",
+            "porque o processo já reservou o processador inteiro",
+            "porque threads não aparecem na tabela do sistema"
+          ],
+          "correct_index": 0,
+          "explanation": "A memória do programa já existe e vai ser reaproveitada. Criar processo exige montar tudo do zero.",
+          "pitfall": "A thread tem sim pilha própria. O que ela não monta é uma memória de programa nova."
+        },
+        {
+          "topic": "Concorrência",
+          "statement": "Duas threads somam 1 à mesma variável, sem nenhum controle de acesso. O valor final pode ficar errado. Esse problema é chamado de:",
+          "options": [
+            "condição de corrida",
+            "impasse",
+            "inanição",
+            "troca de contexto",
+            "preempção"
+          ],
+          "correct_index": 0,
+          "explanation": "As duas leem o mesmo valor antigo e gravam o mesmo valor novo. Uma das somas desaparece.",
+          "pitfall": "O erro não acontece toda vez. Por isso esse tipo de defeito é tão difícil de encontrar."
+        },
+        {
+          "topic": "Falhas",
+          "statement": "O que acontece com as demais threads quando uma delas provoca um erro fatal que derruba o processo?",
+          "options": [
+            "todas terminam junto, pois pertencem ao mesmo processo",
+            "apenas a thread com erro termina",
+            "as demais são movidas para outro processo",
+            "o sistema reinicia somente a thread com erro",
+            "as demais passam ao estado suspenso"
+          ],
+          "correct_index": 0,
+          "explanation": "As threads vivem dentro do mesmo processo e dividem a mesma memória. Derrubar o processo derruba todas.",
+          "pitfall": "É exatamente essa a vantagem de usar processos separados: o isolamento que as threads não têm."
+        },
+        {
+          "topic": "Quando usar",
+          "statement": "Em qual situação o uso de múltiplas threads NÃO traz ganho de desempenho?",
+          "options": [
+            "quando a tarefa é uma sequência de cálculos que dependem uns dos outros",
+            "quando o programa atende várias requisições de rede",
+            "quando a interface precisa responder enquanto um arquivo é salvo",
+            "quando há vários núcleos disponíveis e trabalho independente",
+            "quando o programa espera muito por disco"
+          ],
+          "correct_index": 0,
+          "explanation": "Se cada passo depende do resultado do anterior, não há o que executar em paralelo.",
+          "pitfall": "Thread resolve espera e trabalho independente. Não resolve dependência entre passos."
+        },
+        {
+          "topic": "Terminologia",
+          "statement": "Thread também é conhecida na literatura como:",
+          "options": [
+            "processo leve (lightweight process)",
+            "processo zumbi",
+            "processo órfão",
+            "tarefa em lote",
+            "monitor"
+          ],
+          "correct_index": 0,
+          "explanation": "O nome vem justamente do custo baixo de criar e trocar, comparado ao de um processo completo.",
+          "pitfall": "Leve não quer dizer menos capaz. Quer dizer que carrega menos bagagem própria."
+        },
+        {
+          "topic": "Estrutura",
+          "statement": "Qual destes elementos é próprio de cada thread e NÃO compartilhado com as demais do mesmo processo?",
+          "options": [
+            "a pilha de execução",
+            "as variáveis globais",
+            "os arquivos abertos",
+            "o código do programa",
+            "o espaço de endereçamento"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada thread chama funções por conta própria e precisa saber onde voltar. Por isso a pilha é individual.",
+          "pitfall": "Variável local vive na pilha e é individual. Variável global vive na memória do programa e é de todas."
+        },
+        {
+          "topic": "Paralelismo",
+          "statement": "Um programa com oito threads executa em um processador de dois núcleos. O que acontece?",
+          "options": [
+            "duas executam de fato ao mesmo tempo e as demais revezam",
+            "as oito executam simultaneamente",
+            "seis threads são encerradas pelo sistema",
+            "o programa passa a usar oito processos",
+            "as threads são convertidas em processos leves"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada unidade de execução do processador atende uma linha por vez. O resto fica pronto, esperando a vez.",
+          "pitfall": "Abrir muitas threads não cria capacidade de cálculo. Ela é limitada pelos núcleos que existem."
+        }
+      ]
+    },
+    {
+      "slug": "threads-por-dentro",
+      "title": "Threads por dentro: quem cuida da troca",
+      "summary": "Os caminhos de um programa podem ser controlados pelo próprio programa ou pelo núcleo do sistema. A escolha muda o que é rápido e o que trava.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Quem monta a escala do plantão",
+          "body": [
+            "Uma rede de lojas precisa de escala de plantão.",
+            "A escala pode ser montada pelo gerente de cada loja, que conhece a equipe dele.",
+            "Ou pode ser montada pela matriz, que enxerga todas as lojas de uma vez.",
+            "Quem monta a escala muda o que funciona bem e o que dá errado."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Retomando: vários caminhos, uma memória",
+          "body": [
+            "Um programa em execução pode ter vários caminhos ao mesmo tempo.",
+            "Todos dividem a mesma memória e os mesmos arquivos abertos.",
+            "Falta responder uma pergunta. Quem controla a troca entre esses caminhos?"
+          ],
+          "terms": [
+            {
+              "word": "Processo",
+              "meaning": "um programa em execução, com a memória que ele usa e o ponto exato em que parou."
+            },
+            {
+              "word": "Processador",
+              "meaning": "a peça do computador que executa as instruções dos programas."
+            },
+            {
+              "word": "Thread",
+              "meaning": "cada caminho de execução dentro de um mesmo processo. Em português se diz também linha de execução."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os dois níveis de poder da máquina",
+          "body": [
+            "O computador trabalha em dois níveis de poder.",
+            "Programas comuns ficam no nível de baixo, sem tocar nas peças direto.",
+            "A parte central do sistema fica no nível de cima. Passar de um para o outro custa tempo."
+          ],
+          "terms": [
+            {
+              "word": "Núcleo do sistema (kernel)",
+              "meaning": "a parte central do sistema operacional. É a única que pode mexer nas peças do computador direto."
+            },
+            {
+              "word": "Modo usuário",
+              "meaning": "a situação em que um programa comum executa, sem poder tocar nas peças por conta própria."
+            },
+            {
+              "word": "Chamada de sistema",
+              "meaning": "o pedido que um programa faz ao núcleo quando precisa de algo que não pode fazer sozinho."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Primeiro jeito: a escala fica dentro do programa",
+          "body": [
+            "Aqui quem controla a troca é um pacote de código dentro do próprio programa.",
+            "O núcleo não sabe que existem vários caminhos ali. Ele enxerga um processo só.",
+            "A anotação do estado de cada caminho fica guardada dentro do programa."
+          ],
+          "terms": [
+            {
+              "word": "Biblioteca",
+              "meaning": "um pacote de código pronto que um programa usa sem precisar escrever tudo de novo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Rápido, mas com um buraco no meio",
+          "body": [
+            "A troca não precisa avisar ninguém. Por isso ela é muito rápida.",
+            "O problema aparece quando um caminho faz um pedido demorado.",
+            "Como o núcleo enxerga um processo só, ele para o programa inteiro."
+          ],
+          "table": {
+            "label": "Escala dentro do programa",
+            "headers": [
+              "Vantagem",
+              "Preço"
+            ],
+            "rows": [
+              [
+                "a troca é rápida, sem pedido ao núcleo",
+                "um pedido demorado trava todos os caminhos"
+              ],
+              [
+                "funciona até onde o sistema não ajuda",
+                "não aproveita mais de um processador"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Segundo jeito: a escala é do núcleo",
+          "body": [
+            "Aqui o núcleo conhece cada caminho separadamente.",
+            "A anotação de estados fica com ele, e não dentro do programa.",
+            "Assim ele consegue parar um caminho e deixar os outros seguirem."
+          ],
+          "figure": {
+            "src": "/figuras/so/so-threads-usuario-nucleo.svg",
+            "alt": "Duas colunas lado a lado: na esquerda a anotação dos caminhos fica dentro do programa e o núcleo enxerga um só; na direita ela fica no núcleo, que enxerga os três.",
+            "caption": "O que muda é onde fica a anotação, e por isso o que o núcleo consegue enxergar."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Mais firme, e mais caro",
+          "body": [
+            "Esse jeito resolve o buraco do anterior. Mas cada troca passa pelo nível de cima.",
+            "E passar de nível custa tempo toda vez."
+          ],
+          "table": {
+            "label": "Escala feita pelo núcleo",
+            "headers": [
+              "Vantagem",
+              "Preço"
+            ],
+            "rows": [
+              [
+                "um pedido demorado para só quem pediu",
+                "cada troca passa pelo núcleo e custa mais"
+              ],
+              [
+                "dois caminhos usam dois processadores de verdade",
+                "criar e encerrar sai mais caro"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que os sistemas de hoje fazem",
+          "body": [
+            "Windows e Linux de hoje usam o segundo jeito, um caminho para cada anotação no núcleo.",
+            "Isso vale desde o começo dos anos 2000.",
+            "O primeiro jeito voltou por cima, agora dentro das linguagens de programação."
+          ],
+          "bullets": [
+            "A linguagem Go tem as goroutines: milhares de caminhos em cima de poucos do núcleo.",
+            "O Java tem as virtual threads, estáveis desde a versão 21, de 2023.",
+            "JavaScript, Python e C# fazem algo parecido com as palavras async e await.",
+            "A ideia é a mesma de sempre: trocar barato, sem incomodar o núcleo."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Cuidados ao abrir caminhos num programa antigo",
+          "body": [
+            "Pegar um programa de caminho único e abrir vários não é só repartir tarefas."
+          ],
+          "bullets": [
+            "Variável global vira briga: dois caminhos gravando no mesmo lugar.",
+            "Pacote de código antigo pode não aguentar dois caminhos ao mesmo tempo.",
+            "Cada caminho quer a própria pilha, e pilha ocupa memória.",
+            "Aviso vindo do sistema precisa ter dono definido, senão ninguém trata."
+          ],
+          "terms": [
+            {
+              "word": "Reentrante",
+              "meaning": "o código que aguenta ser executado por dois caminhos ao mesmo tempo sem se embaralhar."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Aqui a banca cobra os três modelos pelo nome e pelas proporções. Decore as proporções."
+          ],
+          "bullets": [
+            "\"Threads de usuário\" → gerenciadas por biblioteca; o kernel não as enxerga.",
+            "\"Threads de kernel\" → o núcleo mantém a tabela e escalona cada uma.",
+            "Modelo N:1 (muitos para um) → threads de usuário; uma chamada bloqueante bloqueia o processo inteiro.",
+            "Modelo 1:1 (um para um) → threads de kernel; é o que Linux (NPTL) e Windows usam hoje.",
+            "Modelo M:N (híbrido) → mistura os dois; scheduler activations e upcalls aparecem aqui.",
+            "Threads de usuário não aproveitam multiprocessadores de verdade.",
+            "\"Código que pode ser executado por várias threads ao mesmo tempo\" → reentrante.",
+            "Pop-up thread: criada na hora em que uma mensagem chega, e descartada depois."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Quatro trocas aparecem toda hora nessa parte."
+          ],
+          "bullets": [
+            "A escala dentro do programa não é sempre pior. Ela troca mais rápido, e voltou nas linguagens novas.",
+            "A escala do núcleo não é sempre melhor. Cada troca paga a passagem de nível.",
+            "Só a escala do núcleo aproveita dois processadores ao mesmo tempo.",
+            "Um pedido demorado no primeiro jeito para o programa todo, e não só quem pediu."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A pergunta é uma só: quem guarda a anotação de cada caminho?"
+          ],
+          "bullets": [
+            "Dentro do programa: troca rápida, mas um pedido demorado para tudo.",
+            "No núcleo: cada caminho é enxergado sozinho, e a troca custa mais.",
+            "Só o segundo jeito usa dois processadores ao mesmo tempo de verdade.",
+            "Windows e Linux de hoje usam o segundo, um para um.",
+            "O primeiro voltou dentro das linguagens, com outros nomes."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Threads de usuário",
+          "statement": "Em um sistema com threads de usuário puras (modelo N:1), o que acontece quando uma thread executa uma chamada de sistema bloqueante?",
+          "options": [
+            "todo o processo é bloqueado, inclusive as demais threads",
+            "apenas a thread que fez a chamada é bloqueada",
+            "o núcleo migra as demais threads para outro processo",
+            "a chamada é convertida automaticamente em não bloqueante",
+            "as demais threads passam a executar em modo núcleo"
+          ],
+          "correct_index": 0,
+          "explanation": "O núcleo não sabe que existem várias threads ali. Para ele existe um processo só, e é o processo que ele bloqueia.",
+          "pitfall": "Essa é a limitação central do modelo N:1, e a razão de ele ter saído de uso nos sistemas grandes."
+        },
+        {
+          "topic": "Modelos",
+          "statement": "O modelo em que cada thread do programa corresponde a uma thread conhecida pelo núcleo é chamado de:",
+          "options": [
+            "um para um (1:1)",
+            "muitos para um (N:1)",
+            "muitos para muitos (M:N)",
+            "modelo cooperativo",
+            "modelo de duas camadas"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada linha de execução do programa tem a sua entrada na tabela do núcleo. É o modelo usado por Linux e Windows atuais.",
+          "pitfall": "Muitos para um é o oposto: várias threads do programa para uma única entrada no núcleo."
+        },
+        {
+          "topic": "Desempenho",
+          "statement": "Qual é a principal vantagem das threads de usuário sobre as threads de núcleo?",
+          "options": [
+            "a troca entre elas é muito mais rápida, pois não envolve o núcleo",
+            "elas aproveitam melhor vários processadores",
+            "elas não podem ser bloqueadas por operações de entrada e saída",
+            "elas dispensam pilha própria",
+            "elas são imunes a condições de corrida"
+          ],
+          "correct_index": 0,
+          "explanation": "A troca acontece inteira dentro do programa. Não há mudança de nível de poder, que é o que custa caro.",
+          "pitfall": "Aproveitar vários processadores é justamente o que as threads de usuário puras não conseguem."
+        },
+        {
+          "topic": "Multiprocessamento",
+          "statement": "Por que threads de usuário puras não conseguem explorar um processador com vários núcleos?",
+          "options": [
+            "porque o núcleo escalona o processo como uma única unidade",
+            "porque elas não possuem contador de programa próprio",
+            "porque a biblioteca as executa sempre em ordem alfabética",
+            "porque o hardware não permite mais de uma thread por processo",
+            "porque elas compartilham a mesma pilha"
+          ],
+          "correct_index": 0,
+          "explanation": "Quem distribui trabalho entre os núcleos é o núcleo do sistema. Se ele vê um processo só, dá um núcleo só.",
+          "pitfall": "O problema não está na peça física. Está no núcleo não ter como enxergar as threads separadamente."
+        },
+        {
+          "topic": "Modelo híbrido",
+          "statement": "No modelo híbrido (M:N), várias threads de usuário são mapeadas sobre um número menor de threads de núcleo. O mecanismo pelo qual o núcleo avisa a biblioteca de um evento é conhecido como:",
+          "options": [
+            "ativação do escalonador, com chamadas upcall",
+            "chamada de sistema bloqueante",
+            "interrupção de relógio",
+            "troca de contexto cooperativa",
+            "sinal de término"
+          ],
+          "correct_index": 0,
+          "explanation": "O núcleo chama a biblioteca de volta para avisar do evento. Assim a biblioteca decide qual thread executa em seguida.",
+          "pitfall": "A chamada vai do núcleo para o programa, ao contrário da chamada de sistema comum."
+        },
+        {
+          "topic": "Reentrância",
+          "statement": "Ao transformar um programa de thread única em multithread, uma biblioteca antiga que guarda resultados em variáveis internas fixas pode falhar. O nome da propriedade que falta a esse código é:",
+          "options": [
+            "reentrância",
+            "preempção",
+            "atomicidade de escrita",
+            "isolamento de memória",
+            "paralelismo"
+          ],
+          "correct_index": 0,
+          "explanation": "Duas threads chamando a mesma função sobrescrevem o mesmo espaço interno. Código reentrante não guarda estado assim.",
+          "pitfall": "O erro não está no programa que chama. Está na biblioteca que não foi escrita para isso."
+        },
+        {
+          "topic": "Sistemas atuais",
+          "statement": "As goroutines do Go e as virtual threads do Java são, em essência, uma retomada de qual ideia?",
+          "options": [
+            "threads gerenciadas no espaço de usuário, sobre poucas threads de núcleo",
+            "processos independentes com memória isolada",
+            "escalonamento em lote sem preempção",
+            "threads de núcleo no modelo um para um",
+            "processos leves criados por fork"
+          ],
+          "correct_index": 0,
+          "explanation": "Milhares de linhas de execução são controladas pela própria linguagem, em cima de poucas threads do sistema. É o modelo híbrido com outro nome.",
+          "pitfall": "Não são processos nem threads de núcleo. O ganho vem exatamente de o núcleo não se envolver na troca."
+        },
+        {
+          "topic": "Pop-up threads",
+          "statement": "Como se chama a thread criada no instante em que uma mensagem chega, só para tratá-la, e encerrada logo depois?",
+          "options": [
+            "pop-up thread",
+            "thread daemon",
+            "thread de núcleo",
+            "thread reentrante",
+            "thread zumbi"
+          ],
+          "correct_index": 0,
+          "explanation": "Como não existe thread esperando a mensagem, nada precisa ser restaurado. A resposta sai mais rápido.",
+          "pitfall": "A vantagem é não haver contexto anterior para recuperar. O custo é criar uma thread a cada mensagem."
+        }
+      ]
     }
   ]
 }

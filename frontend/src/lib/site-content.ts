@@ -33,6 +33,8 @@ export const SUBJECTS: SiteSubject[] = [
       "Processos: como um programa vira coisa viva",
       "Estados de um processo: correndo, pronto ou parado",
       "Escalonamento: quem usa o processador agora",
+      "Threads: vários caminhos dentro do mesmo programa",
+      "Threads por dentro: quem cuida da troca",
     ],
   },
   {

@@ -19,11 +19,11 @@ Regras do conteúdo no app:
 | 22/09 | Componentes e funções: processos, memória, arquivos, E/S, proteção, chamadas de sistema | §1.5 e §1.6 | Componentes e funções de um SO; O terminal na prática (Windows e Linux); Chamadas de sistema: como funcionam; Chamadas de sistema: arquivos e processos | **Prontas** |
 | 29/09 | Estrutura e arquitetura de um SO | §1.7 (p. 43 a 51) | Estrutura de um SO: como ele é montado por dentro | **Pronta** |
 | 06/10 | Processos e threads, parte 1 | §2.1 (p. 59 a 67) | Processos: como um programa vira coisa viva; Estados de um processo | **Prontas** |
-| 13/10 | Processos e threads, parte 2 | §2.2 (p. 67 a 82) e §2.4 (p. 103 a 115) | Escalonamento: quem usa o processador agora (**pronta**); Threads (a fazer) | Parcial |
+| 13/10 | Processos e threads, parte 2 | §2.2 (p. 67 a 82) e §2.4 (p. 103 a 115) | Escalonamento; Threads: vários caminhos; Threads por dentro | **Prontas** |
 | 20/10 e 27/10 | Comunicação entre processos, partes 1 e 2 | §2.3 (p. 82 a 103) e §2.5 (p. 115 a 119) | ~4 lições: condições de corrida e exclusão mútua; semáforos e mutexes; monitores e mensagens; problemas clássicos | A fazer |
 | 03/11 | Aula de exercícios | (revisão) | Usa as questões das lições anteriores | Depende das lições |
 | 17/11 | Gerenciamento de memória: endereçamento, paginação, memória virtual | §3.1 a §3.7 (p. 125 a 174) | ~5 lições | A fazer |
-| 24/11 e 01/12 | Gerenciamento de arquivos, partes 1 e 2 | Cap. 4, §4.1 a §4.5 (p. 182 a 228) | ~4 lições | A fazer |
+| 24/11 e 01/12 | Gerenciamento de arquivos, partes 1 e 2 | Cap. 4, §4.1 a §4.5 (p. 182 a 228) | ~3 lições: arquivos e diretórios; como o disco guarda; confiabilidade | A fazer |
 | 08/12 e 22/12 | Gerenciamento de dispositivos, partes 1 e 2 | Cap. 5, §5.1 a §5.4 (p. 233 a 269) | ~4 lições (inclui disco) | A fazer |
 | 02/02/27 | Atividade sobre virtualização | Cap. 7 (p. 325 a 355) | ~3 lições | A fazer |
 
