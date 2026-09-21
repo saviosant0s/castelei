@@ -117,6 +117,10 @@ Se for expandir daqui, as opções são: aprofundar o que ficou de fora da ement
 - **Concluída é praticada, não aprovada.** Basta uma tentativa terminada; nota não entra. Cobrar acerto aqui transformaria a trilha numa cobrança, e a qualidade da resposta já é medida em `/progresso`.
 - **A cinza continua clicável, de propósito.** O app acompanha um semestre com data marcada: quem revisa Memória na véspera da prova não pode esbarrar num cadeado por ter pulado uma lição de setembro. O cinza orienta, não tranca — por isso também não tem cadeado desenhado.
 - **O traço passa por trás dos títulos**, e o título é uma plaquinha levantada (`bg-surface-raised` + sombra) por cima dele. Antes ele se disfarçava de fundo, repetindo cor e grão — o que só funcionava com fundo liso. A plaquinha não depende do fundo.
+- **O módulo escolhe a COR, o estado escolhe a FORMA.** Cada módulo recebe sky, sage ou coral em rodízio pela ordem (nunca do conteúdo, e nunca `brick`: vermelho quer dizer erro). Assim cor diz "em que trecho da matéria você está", e quem carrega o estado é o ícone de certo, o anel com "Agora" e o cinza-cavidade. Foi o que resolveu a queixa de que a trilha era "trinta círculos cinza iguais".
+- **O nó é uma tecla, não um adesivo** (`.node` + `.node-sky` e irmãs, em `globals.css`). Degrau de sombra sólida embaixo, que some quando o dedo aperta. As cores `*-deep` existem só para isso.
+- **Cada módulo fecha num marco** (`TrailMilestone`), que só acende completo. Não é link de propósito: não há para onde ir, e alvo que responde ao toque sem levar a lugar nenhum frustra.
+- **As estrelas não cobram nota.** Terminar já vale uma, sempre (`stars()` devolve 1 até para 40% e para tentativa sem nota); a segunda e a terceira dependem do acerto. O convite é voltar e melhorar, nunca "você não concluiu".
 
 **Modo escuro e fundo com profundidade** (tudo em `globals.css` + `lib/theme.ts`). Duas coisas para não desfazer sem querer:
 
