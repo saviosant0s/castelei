@@ -25,12 +25,13 @@ Regras do conteúdo no app:
 | 17/11 | Gerenciamento de memória: endereçamento, paginação, memória virtual | §3.1 a §3.7 (p. 125 a 174) | 4 lições: gerência de memória; memória virtual e paginação; substituição de páginas; segmentação | **Prontas** |
 | 24/11 e 01/12 | Gerenciamento de arquivos, partes 1 e 2 | Cap. 4, §4.1 a §4.5 (p. 182 a 228) | 3 lições: arquivos e diretórios; como o disco guarda; confiabilidade | **Prontas** |
 | 08/12 e 22/12 | Gerenciamento de dispositivos, partes 1 e 2 | Cap. 5, §5.1 a §5.4 (p. 233 a 269) | 3 lições: entrada e saída; disco e ordem dos pedidos; vários discos como um | **Prontas** |
-| 02/02/27 | Atividade sobre virtualização | Cap. 7 (p. 325 a 355) | ~3 lições | A fazer |
+| 02/02/27 | Atividade sobre virtualização | Cap. 7 (p. 325 a 355) | 2 lições: virtualização; contêineres | **Prontas** |
+| 16/02 e 23/02 | Apresentação dos trabalhos 01 e 02 | Cap. 10 e 11 | 2 lições: estudo de caso Linux e Android; estudo de caso Windows | **Prontas** |
 
 ## Pontos a confirmar com o plano do professor
 
 1. ~~**Escalonamento**~~ **Resolvido pela ementa:** é tópico próprio, logo depois de Estados e Transições, e já tem lição publicada.
-2. **Estudos de caso** (ementa) não têm aula marcada. Podem ser os trabalhos 01 e 02. Se forem, o livro tem Linux/Android (cap. 10) e Windows (cap. 11).
+2. ~~**Estudos de caso**~~ **Resolvido:** são os trabalhos 01 e 02 (16/02 e 23/02). Viraram 2 lições prontas, Linux/Android e Windows.
 3. **Introdução:** história (§1.2) e revisão de hardware (§1.3) ficaram de fora, pois o plano só cita "introdução". Dá para acrescentar.
 
 ## Fora do plano (não incluído)

@@ -10001,6 +10001,1545 @@
           "pitfall": "O RAID 5 resolve exatamente isso ao distribuir a paridade entre todos os discos do arranjo."
         }
       ]
+    },
+    {
+      "slug": "virtualizacao",
+      "title": "Virtualização: uma máquina fingindo ser várias",
+      "summary": "Um programa convence vários sistemas de que cada um tem um computador só para si. Isso é o que faz a nuvem existir.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O sobrado que virou três apartamentos",
+          "body": [
+            "Um sobrado grande abriga uma família só, e sobra espaço em quase todo cômodo.",
+            "O dono resolve dividir o sobrado em três apartamentos.",
+            "Cada morador tem porta própria, chave própria e não entra na casa do outro.",
+            "O prédio é o mesmo. O que mudou foi a divisão."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O problema do computador ocioso",
+          "body": [
+            "Um computador de serviço passa a maior parte do tempo sem fazer nada.",
+            "Juntar vários serviços na mesma máquina parece a saída.",
+            "Só que aí um serviço derruba o outro, e atualizar um mexe com todos."
+          ],
+          "terms": [
+            {
+              "word": "Recurso",
+              "meaning": "qualquer coisa que os programas disputam: o processador, a memória, um arquivo ou uma peça do computador."
+            },
+            {
+              "word": "Processo",
+              "meaning": "um programa em execução, com a memória que ele usa e o ponto exato em que parou."
+            },
+            {
+              "word": "Processador",
+              "meaning": "a peça do computador que executa as instruções dos programas."
+            },
+            {
+              "word": "Núcleo do sistema (kernel)",
+              "meaning": "a parte central do sistema operacional. É a única que pode mexer nas peças do computador direto."
+            },
+            {
+              "word": "Modo usuário",
+              "meaning": "a situação em que um programa comum executa, sem poder tocar nas peças por conta própria."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A ideia: fingir que existem vários computadores",
+          "body": [
+            "Um programa se coloca entre as peças e os sistemas.",
+            "Ele entrega a cada sistema o que parece ser uma máquina inteira.",
+            "Cada um acha que é dono de tudo, e nenhum sabe dos outros."
+          ],
+          "terms": [
+            {
+              "word": "Máquina fingida",
+              "meaning": "um computador que existe só como programa, com processador, memória e disco de mentirinha."
+            },
+            {
+              "word": "O programa que finge (hipervisor)",
+              "meaning": "o programa que divide uma máquina de verdade entre vários sistemas, e engana cada um deles."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os dois lugares onde ele pode morar",
+          "body": [
+            "Esse programa pode falar com as peças direto, sem nada embaixo.",
+            "Ou pode rodar como um programa comum, em cima de um sistema já instalado.",
+            "O primeiro é o de servidor. O segundo é o que você instala no seu computador."
+          ],
+          "figure": {
+            "src": "/figuras/so/so-virtualizacao.svg",
+            "alt": "Dois arranjos empilhados lado a lado: à esquerda o programa roda direto sobre as peças, e à direita ele roda em cima de um sistema comum.",
+            "caption": "Um degrau a mais do lado direito, e é por isso que ele é mais lento."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Por que isso é difícil de fazer",
+          "body": [
+            "O sistema hóspede acha que pode mandar nas peças, e não pode.",
+            "Quando ele tenta, o programa de baixo precisa perceber e fingir a resposta.",
+            "Por muito tempo os processadores não deixavam perceber todas as tentativas."
+          ],
+          "bullets": [
+            "Algumas ordens falhavam em silêncio, em vez de avisar.",
+            "Sem aviso, não havia como fingir a resposta certa.",
+            "Era considerado impossível virtualizar aquele tipo de processador."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os três jeitos de resolver isso",
+          "body": [
+            "Três caminhos foram tentados, e o último acabou vencendo."
+          ],
+          "table": {
+            "label": "Como fazer o hóspede se comportar",
+            "headers": [
+              "Jeito",
+              "Como funciona",
+              "Preço"
+            ],
+            "rows": [
+              [
+                "Reescrever na hora",
+                "as ordens perigosas são trocadas antes de executar",
+                "trabalhoso e lento"
+              ],
+              [
+                "Avisar o hóspede",
+                "o sistema hóspede é alterado para pedir em vez de mandar",
+                "exige mexer no hóspede"
+              ],
+              [
+                "Ajuda do processador",
+                "o processador ganhou um modo próprio para isso",
+                "precisa de peça nova, e é o padrão hoje"
+              ]
+            ]
+          },
+          "bullets": [
+            "Desde meados dos anos 2000 todo processador de computador traz essa ajuda.",
+            "É preciso ligá-la na configuração da placa-mãe, e às vezes ela vem desligada."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Memória e peças também são fingidas",
+          "body": [
+            "O hóspede monta a tradução de endereços dele, achando que manda na memória.",
+            "Então a tradução passa a ter dois andares, um do hóspede e outro de baixo.",
+            "Os processadores de hoje fazem os dois andares de uma vez."
+          ],
+          "bullets": [
+            "As peças são imitadas por programa: uma placa de rede que não existe.",
+            "Para ganhar velocidade, o hóspede pode receber uma peça de verdade só para ele.",
+            "Disco virtual costuma ser um arquivo grande dentro do disco real."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Para que isso serve na prática",
+          "body": [
+            "Virtualizar deixou de ser assunto de servidor e virou ferramenta de todo dia."
+          ],
+          "bullets": [
+            "Alugar um pedaço de computador pela internet, em vez de comprar um inteiro.",
+            "Testar um sistema diferente sem formatar a sua máquina.",
+            "Guardar uma fotografia da máquina antes de mexer, e voltar se der errado.",
+            "Mover um serviço inteiro para outra máquina sem desligar nada."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Experimentando na sua máquina",
+          "body": [
+            "Dá para conferir se o seu processador tem a ajuda, e se ela está ligada."
+          ],
+          "terms": [
+            {
+              "word": "Terminal",
+              "meaning": "a janela em que você digita ordens de texto para o computador, em vez de clicar."
+            },
+            {
+              "word": "Comando",
+              "meaning": "cada ordem de texto que você digita no terminal."
+            },
+            {
+              "word": "PowerShell e Prompt de Comando (cmd)",
+              "meaning": "os dois programas do Windows em que você digita ordens de texto. O PowerShell é o mais novo dos dois."
+            }
+          ],
+          "table": {
+            "label": "Conferindo e usando",
+            "headers": [
+              "O que fazer",
+              "Linux",
+              "Windows"
+            ],
+            "rows": [
+              [
+                "Ver se a ajuda existe",
+                "grep -E 'vmx|svm' /proc/cpuinfo",
+                "Gerenciador de Tarefas → Desempenho → CPU"
+              ],
+              [
+                "Criar máquina fingida",
+                "virt-manager, ou VirtualBox",
+                "Hyper-V, ou VirtualBox"
+              ],
+              [
+                "Listar as que existem",
+                "virsh list --all",
+                "Get-VM"
+              ],
+              [
+                "Sistema Linux dentro do Windows",
+                "não se aplica",
+                "wsl --install"
+              ]
+            ],
+            "mono": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca cobra os dois tipos de hipervisor e os critérios de Popek e Goldberg."
+          ],
+          "bullets": [
+            "Hipervisor tipo 1 (bare metal ou nativo): executa direto sobre o hardware. Exemplos: VMware ESXi · Xen · Hyper-V · KVM.",
+            "Hipervisor tipo 2 (hosted): executa como aplicação sobre um SO hospedeiro. Exemplos: VirtualBox, VMware Workstation.",
+            "Tipo 1 tem melhor desempenho; tipo 2 é mais prático para uso pessoal.",
+            "Critérios de Popek e Goldberg: equivalência, controle de recursos e eficiência.",
+            "Uma arquitetura é virtualizável se toda instrução sensível for também privilegiada.",
+            "O x86 original não atendia isso: instruções sensíveis falhavam silenciosamente em modo usuário.",
+            "Tradução binária: reescreve em tempo de execução os trechos problemáticos.",
+            "Paravirtualização: o SO hóspede é modificado e faz hypercalls ao hipervisor.",
+            "Virtualização assistida por hardware: Intel VT-x e AMD-V; criam um modo de execução para o hóspede.",
+            "EPT e NPT (tabelas de páginas aninhadas) resolvem a tradução de dois níveis em hardware.",
+            "Migração ao vivo (live migration): mover uma VM em execução entre hospedeiros.",
+            "Snapshot: estado congelado da VM, para retorno posterior."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Cinco confusões caem sempre nessa parte."
+          ],
+          "bullets": [
+            "O tipo 1 não roda em cima de um sistema. Ele é o sistema daquela máquina.",
+            "O tipo 2 não é pior, é diferente. Ele ganha em praticidade e perde em velocidade.",
+            "A ajuda do processador não dispensa o programa que finge. Ela só o torna viável.",
+            "Alterar o sistema hóspede é o segundo jeito, e não o terceiro.",
+            "Fotografia da máquina não é cópia de segurança. Ela vive no mesmo disco."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Um programa divide uma máquina e engana vários sistemas ao mesmo tempo."
+          ],
+          "bullets": [
+            "Ele pode morar direto nas peças, ou em cima de um sistema já instalado.",
+            "O difícil é perceber quando o hóspede tenta mandar nas peças.",
+            "Três saídas: reescrever as ordens, alterar o hóspede ou pedir ajuda ao processador.",
+            "A ajuda do processador virou o padrão, e está em toda máquina desde os anos 2000.",
+            "A tradução de endereços passa a ter dois andares, feitos de uma vez.",
+            "É isso que permite alugar um pedaço de computador pela internet."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Tipos de hipervisor",
+          "statement": "Um hipervisor do tipo 1 diferencia-se do tipo 2 por:",
+          "options": [
+            "executar diretamente sobre o hardware, sem um sistema operacional hospedeiro",
+            "exigir modificação do sistema operacional hóspede",
+            "não permitir mais de uma máquina virtual simultânea",
+            "dispensar suporte de virtualização no processador",
+            "executar apenas sistemas operacionais idênticos ao hospedeiro"
+          ],
+          "correct_index": 0,
+          "explanation": "O tipo 1 é o próprio sistema daquela máquina. O tipo 2 é um programa executando sobre Windows, Linux ou macOS.",
+          "pitfall": "VirtualBox e VMware Workstation são tipo 2. ESXi, Xen e Hyper-V são tipo 1."
+        },
+        {
+          "topic": "Popek e Goldberg",
+          "statement": "Segundo os critérios de Popek e Goldberg, uma arquitetura é virtualizável quando:",
+          "options": [
+            "toda instrução sensível é também privilegiada, gerando exceção em modo usuário",
+            "o processador possui pelo menos dois núcleos",
+            "o sistema hóspede é idêntico ao hospedeiro",
+            "o hipervisor executa em modo usuário",
+            "a memória é gerenciada por segmentação"
+          ],
+          "correct_index": 0,
+          "explanation": "Se toda tentativa perigosa gerar exceção, o hipervisor é chamado e pode simular o efeito esperado.",
+          "pitfall": "O problema do x86 original era exatamente esse: havia instruções sensíveis que não eram privilegiadas."
+        },
+        {
+          "topic": "Critérios",
+          "statement": "Os três requisitos de Popek e Goldberg para um monitor de máquina virtual são:",
+          "options": [
+            "equivalência, controle de recursos e eficiência",
+            "isolamento, replicação e persistência",
+            "atomicidade, consistência e durabilidade",
+            "exclusão mútua, progresso e espera limitada",
+            "portabilidade, escalabilidade e segurança"
+          ],
+          "correct_index": 0,
+          "explanation": "Equivalência é o hóspede se comportar como em máquina real; controle é o hipervisor mandar nos recursos; eficiência é a maioria das instruções rodar direto no processador.",
+          "pitfall": "Não confunda com as propriedades de transações de banco de dados nem com as condições de exclusão mútua."
+        },
+        {
+          "topic": "Paravirtualização",
+          "statement": "Na paravirtualização, o ganho de desempenho é obtido porque:",
+          "options": [
+            "o sistema hóspede é modificado para fazer chamadas explícitas ao hipervisor",
+            "o hipervisor traduz as instruções em tempo de execução",
+            "o processador executa o hóspede em modo privilegiado",
+            "cada máquina virtual recebe um núcleo exclusivo",
+            "a memória do hóspede não é traduzida"
+          ],
+          "correct_index": 0,
+          "explanation": "Em vez de tentar mandar nas peças e ser interceptado, o hóspede pede direto. Isso evita o custo das interrupções de exceção.",
+          "pitfall": "A desvantagem é precisar de um sistema hóspede alterado, o que não é possível com sistemas fechados."
+        },
+        {
+          "topic": "Tradução binária",
+          "statement": "A técnica de tradução binária, usada pelos primeiros VMwares em x86, consiste em:",
+          "options": [
+            "reescrever em tempo de execução os trechos de código com instruções problemáticas",
+            "compilar o sistema hóspede novamente antes de executá-lo",
+            "executar o hóspede em um interpretador, instrução por instrução",
+            "traduzir os endereços virtuais do hóspede em hardware",
+            "converter o sistema hóspede para outra arquitetura de processador"
+          ],
+          "correct_index": 0,
+          "explanation": "Só os trechos com instruções sensíveis eram reescritos. O restante executava nativamente, para não perder desempenho.",
+          "pitfall": "Não é interpretação. A maior parte do código roda direto no processador, sem tradução."
+        },
+        {
+          "topic": "Memória",
+          "statement": "As tabelas de páginas aninhadas (EPT na Intel, NPT na AMD) resolvem qual problema da virtualização?",
+          "options": [
+            "a tradução em dois níveis, do endereço do hóspede até o endereço físico real",
+            "a interceptação de instruções sensíveis",
+            "a emulação de dispositivos de entrada e saída",
+            "a migração de máquinas virtuais entre hospedeiros",
+            "o isolamento entre processos do mesmo hóspede"
+          ],
+          "correct_index": 0,
+          "explanation": "O hóspede mantém a tabela dele, achando que gera endereços de verdade. A peça do processador aplica as duas traduções de uma vez.",
+          "pitfall": "Antes disso, o programa que finge mantinha tabelas espelho por conta própria, o que era caro e complicado."
+        },
+        {
+          "topic": "Migração ao vivo",
+          "statement": "A migração ao vivo (live migration) de uma máquina virtual consiste em:",
+          "options": [
+            "transferir uma VM em execução para outro hospedeiro sem interrupção perceptível do serviço",
+            "criar uma cópia de segurança do disco virtual",
+            "converter uma VM do tipo 2 para o tipo 1",
+            "mover a VM para um disco mais rápido do mesmo servidor",
+            "reiniciar a VM em outro hospedeiro após desligá-la"
+          ],
+          "correct_index": 0,
+          "explanation": "A memória é copiada em rodadas enquanto a VM continua rodando. A parada final dura milissegundos.",
+          "pitfall": "É o que permite manutenção em servidores de nuvem sem derrubar os serviços dos clientes."
+        },
+        {
+          "topic": "Snapshot",
+          "statement": "Sobre snapshots de máquinas virtuais, é correto afirmar que:",
+          "options": [
+            "registram o estado da VM para retorno posterior, mas não substituem backup",
+            "são equivalentes a um backup completo fora do servidor",
+            "só podem ser criados com a VM desligada",
+            "eliminam a necessidade de tabelas de páginas aninhadas",
+            "aumentam o desempenho da máquina virtual"
+          ],
+          "correct_index": 0,
+          "explanation": "O snapshot costuma viver no mesmo armazenamento da VM. Se o disco físico falhar, ele se perde junto.",
+          "pitfall": "Manter muitos snapshots por muito tempo também degrada o desempenho, porque as escritas vão se acumulando em camadas."
+        }
+      ]
+    },
+    {
+      "slug": "conteineres",
+      "title": "Contêineres: dividir sem duplicar o sistema",
+      "summary": "Em vez de fingir um computador inteiro, dá para dividir um sistema só em mundos separados. Fica muito mais leve, e isola um pouco menos.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Casas separadas ou quartos na mesma casa",
+          "body": [
+            "Três pessoas podem morar em três casas, cada uma com cozinha e caixa d'água.",
+            "Ou podem morar em três quartos da mesma casa, com chave em cada porta.",
+            "Os quartos são muito mais baratos e sobem muito mais rápido.",
+            "Em compensação, o encanamento é o mesmo para todo mundo."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O peso de fingir um computador inteiro",
+          "body": [
+            "Uma máquina fingida carrega um sistema inteiro dentro dela.",
+            "São gigabytes de disco e centenas de megabytes de memória, só para começar.",
+            "E ela demora dezenas de segundos para subir, como qualquer computador."
+          ],
+          "terms": [
+            {
+              "word": "Processo",
+              "meaning": "um programa em execução, com a memória que ele usa e o ponto exato em que parou."
+            },
+            {
+              "word": "Processador",
+              "meaning": "a peça do computador que executa as instruções dos programas."
+            },
+            {
+              "word": "Núcleo do sistema (kernel)",
+              "meaning": "a parte central do sistema operacional. É a única que pode mexer nas peças do computador direto."
+            },
+            {
+              "word": "Arquivo",
+              "meaning": "uma sequência de dados guardada com um nome, que continua existindo depois de a máquina desligar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A ideia: um núcleo só, vários mundos",
+          "body": [
+            "Em vez de vários sistemas, existe um só, e ele mente para os programas.",
+            "Cada programa enxerga uma lista de arquivos e de vizinhos só dele.",
+            "Ele acha que está sozinho na máquina, e está dividindo tudo."
+          ],
+          "terms": [
+            {
+              "word": "Contêiner",
+              "meaning": "um programa isolado dos outros pelo próprio sistema, sem um sistema inteiro só para ele."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/so/so-vm-vs-conteiner.svg",
+            "alt": "À esquerda duas máquinas fingidas, cada uma com um sistema inteiro dentro; à direita três programas isolados dividindo um único núcleo.",
+            "caption": "Dividir o núcleo é o que deixa leve, e também o que isola menos."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "As duas peças que fazem isso funcionar",
+          "body": [
+            "O Linux tem dois recursos que, juntos, criam esse isolamento.",
+            "Um separa o que cada programa consegue enxergar.",
+            "O outro limita quanto de máquina cada um pode consumir."
+          ],
+          "terms": [
+            {
+              "word": "Recurso",
+              "meaning": "qualquer coisa que os programas disputam: o processador, a memória, um arquivo ou uma peça do computador."
+            },
+            {
+              "word": "Diretório",
+              "meaning": "o nome técnico de pasta. É uma lista de nomes com o endereço de cada um."
+            },
+            {
+              "word": "Separação de visão",
+              "meaning": "o recurso que dá a um programa a sua própria lista de vizinhos, de arquivos e de rede."
+            },
+            {
+              "word": "Limite de consumo",
+              "meaning": "o recurso que define quanto de processador e de memória um grupo de programas pode usar."
+            }
+          ],
+          "bullets": [
+            "Separar a visão é o que faz o programa se achar sozinho.",
+            "Limitar o consumo é o que impede um deles de derrubar a máquina.",
+            "Nada disso é um programa novo: é o próprio núcleo fazendo."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A imagem, montada em camadas",
+          "body": [
+            "Junto com o programa vai uma pilha de arquivos, chamada de imagem.",
+            "Ela é montada em camadas, e as camadas são compartilhadas.",
+            "Dez programas baseados na mesma camada guardam essa camada uma vez só."
+          ],
+          "bullets": [
+            "É por isso que baixar o segundo programa é muito mais rápido que o primeiro.",
+            "A imagem é sempre a mesma, o que faz o programa rodar igual em qualquer máquina.",
+            "Era esse o problema que se resolvia antes com uma lista de instruções de instalação."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Comparando os dois",
+          "body": [
+            "Esta tabela é o coração do assunto, e cai quase literalmente."
+          ],
+          "table": {
+            "label": "Máquina fingida e contêiner",
+            "headers": [
+              "",
+              "Máquina fingida",
+              "Contêiner"
+            ],
+            "rows": [
+              [
+                "Núcleo do sistema",
+                "um por máquina fingida",
+                "um só, dividido por todos"
+              ],
+              [
+                "Tamanho",
+                "gigabytes",
+                "megabytes"
+              ],
+              [
+                "Tempo para subir",
+                "dezenas de segundos",
+                "menos de um segundo"
+              ],
+              [
+                "Isolamento",
+                "forte",
+                "bom, e menor"
+              ],
+              [
+                "Sistema diferente do hospedeiro",
+                "pode",
+                "não pode"
+              ],
+              [
+                "Quantos cabem numa máquina",
+                "dezenas",
+                "centenas"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Quando escolher cada um",
+          "body": [
+            "Nenhum dos dois substitui o outro. Eles resolvem coisas diferentes."
+          ],
+          "bullets": [
+            "Rodar Windows dentro do Linux exige máquina fingida.",
+            "Separar clientes diferentes com segurança pede máquina fingida.",
+            "Subir cem cópias do mesmo serviço pede contêiner.",
+            "Entregar um programa que roda igual em qualquer lugar pede contêiner.",
+            "Na nuvem, é comum usar os dois juntos: contêineres dentro de máquinas fingidas."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Como isso aparece hoje",
+          "body": [
+            "Essa forma de empacotar virou o jeito padrão de publicar programas de serviço.",
+            "No Windows e no Mac, existe um Linux fingido por baixo para isso funcionar."
+          ],
+          "terms": [
+            {
+              "word": "Terminal",
+              "meaning": "a janela em que você digita ordens de texto para o computador, em vez de clicar."
+            },
+            {
+              "word": "Comando",
+              "meaning": "cada ordem de texto que você digita no terminal."
+            },
+            {
+              "word": "PowerShell e Prompt de Comando (cmd)",
+              "meaning": "os dois programas do Windows em que você digita ordens de texto. O PowerShell é o mais novo dos dois."
+            }
+          ],
+          "table": {
+            "label": "Experimentando",
+            "headers": [
+              "O que fazer",
+              "Como"
+            ],
+            "rows": [
+              [
+                "Subir um serviço pronto",
+                "docker run -d -p 8080:80 nginx"
+              ],
+              [
+                "Ver o que está rodando",
+                "docker ps"
+              ],
+              [
+                "Entrar dentro de um deles",
+                "docker exec -it nome bash"
+              ],
+              [
+                "Ver quanto cada um consome",
+                "docker stats"
+              ],
+              [
+                "No Windows",
+                "instale o Docker Desktop, que usa o wsl --install"
+              ]
+            ],
+            "mono": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca cobra a diferença para máquina virtual e o nome dos dois recursos do Linux."
+          ],
+          "bullets": [
+            "Contêiner: virtualização em nível de sistema operacional; compartilha o kernel do hospedeiro.",
+            "Máquina virtual: virtualização de hardware; cada VM tem seu próprio kernel.",
+            "Namespaces: isolam a visão de PIDs; sistema de arquivos; rede; usuários e hostname.",
+            "Cgroups (control groups): limitam CPU, memória, E/S e número de processos.",
+            "Contêineres NÃO permitem executar um SO com kernel diferente do hospedeiro.",
+            "Imagens em camadas com sistema de arquivos de união; camadas são compartilhadas entre imagens.",
+            "Docker e Podman são runtimes; Kubernetes é orquestrador, e não runtime.",
+            "Podman executa sem daemon e sem privilégios de root, ao contrário do Docker clássico.",
+            "Isolamento de contêiner é menor que o de VM: uma falha do kernel afeta todos.",
+            "Chroot é o antecessor histórico, e isola apenas o sistema de arquivos."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Cinco trocas derrubam gente nessa parte."
+          ],
+          "bullets": [
+            "Contêiner não é máquina fingida pequena. Ele não tem núcleo próprio.",
+            "Não dá para rodar Windows num contêiner de Linux, por mais potente que seja a máquina.",
+            "Leve não quer dizer mais seguro. O isolamento é menor, e não maior.",
+            "O orquestrador não é quem roda o contêiner. Ele decide onde cada um roda.",
+            "No Windows, contêiner de Linux só funciona porque existe um Linux fingido por baixo."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Um núcleo só, vários mundos separados. É essa a ideia inteira."
+          ],
+          "bullets": [
+            "A máquina fingida carrega um sistema inteiro. O contêiner não.",
+            "Separar a visão faz o programa se achar sozinho na máquina.",
+            "Limitar o consumo impede um deles de derrubar os outros.",
+            "A imagem em camadas faz o programa rodar igual em qualquer lugar.",
+            "Sobe em menos de um segundo, e cabem centenas numa máquina.",
+            "O preço é dividir o núcleo, o que isola menos que uma máquina fingida."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Contêiner e VM",
+          "statement": "A diferença fundamental entre um contêiner e uma máquina virtual é que o contêiner:",
+          "options": [
+            "compartilha o kernel do sistema hospedeiro, em vez de executar um kernel próprio",
+            "não pode ser limitado em uso de memória",
+            "executa sempre com privilégios de administrador",
+            "exige suporte de virtualização no processador",
+            "isola melhor as aplicações que uma máquina virtual"
+          ],
+          "correct_index": 0,
+          "explanation": "Não há um sistema operacional inteiro dentro do contêiner. Existe apenas o programa e os arquivos de que ele precisa.",
+          "pitfall": "É justamente por compartilhar o kernel que o contêiner é leve e, ao mesmo tempo, isola menos."
+        },
+        {
+          "topic": "Namespaces",
+          "statement": "No Linux, o recurso responsável por fazer um processo enxergar apenas seus próprios PIDs, sua própria rede e seu próprio sistema de arquivos é:",
+          "options": [
+            "namespaces",
+            "cgroups",
+            "seccomp",
+            "chroot jail",
+            "SELinux"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada namespace isola um tipo de recurso visível. É o que cria a ilusão de estar sozinho na máquina.",
+          "pitfall": "Cgroups fazem o outro lado do trabalho: limitam quanto o processo pode consumir, e não o que ele enxerga."
+        },
+        {
+          "topic": "Cgroups",
+          "statement": "Os cgroups (control groups) do Linux têm como função:",
+          "options": [
+            "limitar e contabilizar o uso de CPU, memória e E/S por grupos de processos",
+            "isolar a visão do sistema de arquivos de cada processo",
+            "criptografar o conteúdo dos contêineres",
+            "distribuir contêineres entre vários servidores",
+            "montar imagens em camadas"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem eles, um contêiner consumiria toda a memória da máquina e derrubaria os demais.",
+          "pitfall": "Isolar visão e limitar consumo são problemas diferentes, resolvidos por recursos diferentes."
+        },
+        {
+          "topic": "Limitação",
+          "statement": "É possível executar um contêiner com Windows Server sobre um hospedeiro Linux?",
+          "options": [
+            "não, pois o contêiner depende do kernel do hospedeiro",
+            "sim, desde que o processador tenha suporte a VT-x",
+            "sim, usando tradução binária",
+            "sim, desde que se use um orquestrador",
+            "não, mas é possível o contrário"
+          ],
+          "correct_index": 0,
+          "explanation": "O contêiner não traz um kernel próprio. Ele precisa que o kernel do hospedeiro seja o do sistema esperado.",
+          "pitfall": "Rodar contêineres Linux no Windows funciona porque existe uma máquina virtual Linux por baixo, via WSL2."
+        },
+        {
+          "topic": "Imagens em camadas",
+          "statement": "A organização de imagens de contêiner em camadas permite principalmente:",
+          "options": [
+            "compartilhar camadas comuns entre várias imagens, economizando espaço e tempo de download",
+            "executar imagens de arquiteturas diferentes",
+            "criptografar cada camada separadamente",
+            "isolar a rede de cada contêiner",
+            "distribuir camadas entre vários servidores"
+          ],
+          "correct_index": 0,
+          "explanation": "Se dez imagens partem da mesma base, essa base é armazenada uma única vez no disco.",
+          "pitfall": "As camadas são somente leitura. As alterações do contêiner em execução vão para uma camada gravável no topo."
+        },
+        {
+          "topic": "Orquestração",
+          "statement": "No ecossistema de contêineres, o Kubernetes atua como:",
+          "options": [
+            "orquestrador, decidindo onde e quantas réplicas de cada contêiner executam",
+            "runtime, sendo responsável por iniciar os contêineres no kernel",
+            "hipervisor de tipo 1",
+            "sistema de arquivos em camadas",
+            "substituto dos namespaces do Linux"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele agenda contêineres em um conjunto de máquinas, reinicia o que cai e ajusta a quantidade conforme a carga.",
+          "pitfall": "Quem efetivamente executa o contêiner é o runtime, como o containerd. O orquestrador fica acima dele."
+        },
+        {
+          "topic": "Isolamento",
+          "statement": "Em termos de segurança, os contêineres oferecem isolamento menor que as máquinas virtuais porque:",
+          "options": [
+            "uma vulnerabilidade no kernel compartilhado pode afetar todos os contêineres da máquina",
+            "não é possível limitar seu consumo de recursos",
+            "eles executam sempre em modo núcleo",
+            "não podem usar namespaces de rede",
+            "compartilham o mesmo sistema de arquivos gravável"
+          ],
+          "correct_index": 0,
+          "explanation": "Existe uma única superfície de kernel para todos. Na máquina virtual, cada hóspede tem a sua.",
+          "pitfall": "É por isso que provedores de nuvem costumam colocar contêineres de clientes diferentes dentro de VMs separadas."
+        },
+        {
+          "topic": "Histórico",
+          "statement": "O mecanismo considerado antecessor histórico dos contêineres, por isolar apenas o sistema de arquivos visível a um processo, é:",
+          "options": [
+            "o chroot",
+            "o fork",
+            "o mmap",
+            "o systemd",
+            "o swap"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele muda qual diretório o processo enxerga como raiz. É um isolamento parcial, e serviu de ponto de partida.",
+          "pitfall": "O chroot sozinho não isola processos, rede nem consumo de recursos, e por isso não é considerado seguro."
+        }
+      ]
+    },
+    {
+      "slug": "estudo-de-caso-linux",
+      "title": "Estudo de caso: Linux e Android",
+      "summary": "O Linux é um núcleo só, usado de servidor a celular. O que muda de um lugar para outro é tudo o que fica em cima dele.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O mesmo motor em veículos diferentes",
+          "body": [
+            "Um mesmo motor pode estar num carro de passeio e num barco pequeno.",
+            "O motor é igual, e a volta dele é completamente diferente.",
+            "Ninguém diz que o carro e o barco são a mesma coisa.",
+            "Mas quem entende do motor entende os dois."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O núcleo não é o sistema inteiro",
+          "body": [
+            "O nome Linux se refere, com rigor, só à parte central.",
+            "Em volta dela vêm o interpretador de ordens, os programas e o instalador.",
+            "Esse conjunto montado por alguém é o que se chama de distribuição."
+          ],
+          "terms": [
+            {
+              "word": "Permissão",
+              "meaning": "a autorização que diz quem pode fazer o quê. Sem ela, o pedido é recusado pelo sistema."
+            },
+            {
+              "word": "Processo",
+              "meaning": "um programa em execução, com a memória que ele usa e o ponto exato em que parou."
+            },
+            {
+              "word": "Processador",
+              "meaning": "a peça do computador que executa as instruções dos programas."
+            },
+            {
+              "word": "Núcleo do sistema (kernel)",
+              "meaning": "a parte central do sistema operacional. É a única que pode mexer nas peças do computador direto."
+            },
+            {
+              "word": "Arquivo",
+              "meaning": "uma sequência de dados guardada com um nome, que continua existindo depois de a máquina desligar."
+            },
+            {
+              "word": "Diretório",
+              "meaning": "o nome técnico de pasta. É uma lista de nomes com o endereço de cada um."
+            },
+            {
+              "word": "Chamada de sistema",
+              "meaning": "o pedido que um programa faz ao núcleo quando precisa de algo que não pode fazer sozinho."
+            },
+            {
+              "word": "Distribuição",
+              "meaning": "o núcleo mais tudo o que vem em volta, montado e empacotado por um grupo ou empresa."
+            }
+          ],
+          "bullets": [
+            "Ubuntu, Debian, Fedora e Arch são distribuições diferentes do mesmo núcleo.",
+            "O Android também usa esse núcleo, e quase nada do resto."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Como o núcleo é montado por dentro",
+          "body": [
+            "Tudo roda junto, num bloco só, sem fronteiras internas de proteção.",
+            "Mas pedaços podem ser carregados e retirados com a máquina ligada.",
+            "É isso que evita recompilar o núcleo para cada peça nova."
+          ],
+          "terms": [
+            {
+              "word": "Driver",
+              "meaning": "o programa que sabe conversar com um modelo específico de peça. Ele é escrito por quem fabrica a peça."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/so/so-camadas-linux.svg",
+            "alt": "As camadas de um sistema Linux, dos programas até as peças, com uma coluna ao lado mostrando o que o Android acrescenta.",
+            "caption": "O núcleo é o mesmo. Muda tudo o que fica acima dele."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Aqui não se separa processo de caminho de execução",
+          "body": [
+            "O núcleo trata os dois como a mesma coisa, chamada de tarefa.",
+            "O que muda é o quanto cada tarefa nova divide com quem a criou.",
+            "Dividir tudo dá um caminho de execução. Dividir nada dá um processo."
+          ],
+          "terms": [
+            {
+              "word": "Thread",
+              "meaning": "cada caminho de execução dentro de um mesmo processo. Em português se diz também linha de execução."
+            }
+          ],
+          "code": {
+            "label": "Uma ordem só, com opções diferentes",
+            "text": "clone(SEM_DIVIDIR_NADA)      // resultado: um processo novo\nclone(DIVIDIR_MEMORIA |\n      DIVIDIR_ARQUIVOS)      // resultado: um caminho de execução"
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Quem decide a vez de cada um",
+          "body": [
+            "A regra de escolha não conta fatias fixas de tempo.",
+            "Ela anota quanto cada tarefa já usou e atende quem está mais atrasado.",
+            "A ideia é que, no fim, todos tenham recebido a parte justa."
+          ],
+          "bullets": [
+            "Tarefas mais importantes acumulam o tempo usado mais devagar.",
+            "Quem acaba de acordar tem pouco tempo acumulado, e entra logo.",
+            "É por isso que o computador responde rápido enquanto compila algo pesado."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Memória e arquivos",
+          "body": [
+            "A memória livre não fica parada. Ela é usada para guardar cópias do disco.",
+            "Por isso a memória sempre parece cheia, e isso é bom.",
+            "Os arquivos ficam atrás de uma camada que fala a mesma língua com todos."
+          ],
+          "terms": [
+            {
+              "word": "Memória virtual",
+              "meaning": "a memória que o programa acha que tem, maior que a de verdade e só dele."
+            },
+            {
+              "word": "Camada comum de arquivos",
+              "meaning": "a parte do núcleo que faz todos os tipos de disco responderem aos mesmos pedidos."
+            }
+          ],
+          "bullets": [
+            "Quase tudo aparece como arquivo: discos, teclado e até dados do próprio núcleo.",
+            "A pasta /proc não existe no disco. Ela é montada na hora pelo núcleo.",
+            "Ler um arquivo de lá é perguntar algo ao sistema."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O Android é outro andar",
+          "body": [
+            "Ele usa o mesmo núcleo, com alguns acréscimos próprios.",
+            "Acima disso, quase nada é igual a uma distribuição comum.",
+            "Cada aplicativo roda isolado, como se fosse um usuário diferente."
+          ],
+          "table": {
+            "label": "O que o Android troca",
+            "headers": [
+              "Peça",
+              "Numa distribuição comum",
+              "No Android"
+            ],
+            "rows": [
+              [
+                "Conversa entre programas",
+                "pedidos e arquivos especiais",
+                "um jeito próprio, feito para economizar bateria"
+              ],
+              [
+                "Pacotes de código básicos",
+                "os padrão do mundo Linux",
+                "uma versão enxuta, feita para celular"
+              ],
+              [
+                "Como o aplicativo roda",
+                "programa compilado direto",
+                "uma máquina que executa o formato do Android"
+              ],
+              [
+                "Separação entre programas",
+                "por usuário da máquina",
+                "cada aplicativo é um usuário diferente"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Olhando isso na prática",
+          "body": [
+            "Se você tem Linux, ou o Linux de dentro do Windows, dá para conferir tudo."
+          ],
+          "terms": [
+            {
+              "word": "Terminal",
+              "meaning": "a janela em que você digita ordens de texto para o computador, em vez de clicar."
+            },
+            {
+              "word": "Comando",
+              "meaning": "cada ordem de texto que você digita no terminal."
+            },
+            {
+              "word": "PowerShell e Prompt de Comando (cmd)",
+              "meaning": "os dois programas do Windows em que você digita ordens de texto. O PowerShell é o mais novo dos dois."
+            }
+          ],
+          "table": {
+            "label": "Conferindo o sistema",
+            "headers": [
+              "O que ver",
+              "Como"
+            ],
+            "rows": [
+              [
+                "Versão do núcleo",
+                "uname -r"
+              ],
+              [
+                "Qual distribuição é",
+                "cat /etc/os-release"
+              ],
+              [
+                "Pedaços carregados agora",
+                "lsmod"
+              ],
+              [
+                "Dados de um processo",
+                "ls /proc/1"
+              ],
+              [
+                "Serviços em andamento",
+                "systemctl list-units --type=service"
+              ],
+              [
+                "No Windows, para ter um Linux",
+                "wsl --install"
+              ]
+            ],
+            "mono": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca cobra a estrutura do kernel e o fato de threads e processos serem a mesma estrutura."
+          ],
+          "bullets": [
+            "O Linux é monolítico, mas modular: módulos podem ser carregados e removidos em tempo de execução.",
+            "Kernel é apenas o núcleo; distribuição é o kernel mais userland, shell e gerenciador de pacotes.",
+            "No Linux, processos e threads são a mesma estrutura: task_struct.",
+            "A chamada clone() cria ambos; o que muda são as flags de compartilhamento.",
+            "fork() é implementado sobre clone(), sem flags de compartilhamento.",
+            "Escalonador CFS (Completely Fair Scheduler): usa tempo virtual de execução, não quantum fixo.",
+            "Desde o kernel 6.6 (2023), o CFS foi substituído pelo EEVDF como escalonador padrão.",
+            "VFS (Virtual File System): camada que uniformiza o acesso a ext4 · XFS · Btrfs · NTFS e outros.",
+            "Tudo é arquivo: dispositivos em /dev; informações do kernel em /proc e /sys.",
+            "/proc é um sistema de arquivos virtual, gerado em memória, sem existir no disco.",
+            "Android usa o kernel Linux, com Binder para IPC, Bionic no lugar da glibc e ART para executar aplicativos.",
+            "No Android, cada aplicativo recebe um UID próprio, o que cria o isolamento entre eles.",
+            "systemd é o init moderno da maioria das distribuições; o processo de PID 1."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Cinco trocas aparecem sempre nessa parte."
+          ],
+          "bullets": [
+            "Linux é o núcleo, e não o sistema inteiro. A distribuição é o conjunto.",
+            "Ser um bloco só não impede carregar pedaços com a máquina ligada.",
+            "Aqui não existe estrutura separada para caminho de execução. É a mesma de processo.",
+            "Memória cheia no Linux não é problema. É cópia de disco, e ela é liberada quando precisa.",
+            "Android usar o mesmo núcleo não faz dele uma distribuição comum."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Um núcleo só, e muitos sistemas diferentes montados em cima dele."
+          ],
+          "bullets": [
+            "O núcleo é um bloco só, com pedaços que entram e saem em tempo de execução.",
+            "Processo e caminho de execução são a mesma estrutura, criada pela mesma ordem.",
+            "A escolha da vez conta o tempo já usado, e não fatias fixas.",
+            "A memória livre vira cópia de disco, e por isso parece sempre cheia.",
+            "Quase tudo aparece como arquivo, inclusive dados do próprio núcleo.",
+            "O Android usa esse núcleo e troca quase tudo o que fica acima."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Estrutura do kernel",
+          "statement": "O kernel do Linux é classificado como:",
+          "options": [
+            "monolítico com suporte a módulos carregáveis",
+            "micronúcleo puro",
+            "sistema em camadas estritas",
+            "exonúcleo",
+            "híbrido, com drivers em modo usuário"
+          ],
+          "correct_index": 0,
+          "explanation": "Todos os serviços executam juntos, no mesmo lugar de muito poder. Os módulos permitem estender o núcleo sem recompilá-lo.",
+          "pitfall": "Ser modular não o torna micronúcleo. Os módulos continuam executando dentro do kernel, com todos os privilégios."
+        },
+        {
+          "topic": "Processos e threads",
+          "statement": "No kernel Linux, processos e threads:",
+          "options": [
+            "são representados pela mesma estrutura, a task_struct, e criados pela mesma chamada clone()",
+            "usam estruturas completamente distintas, com escalonadores separados",
+            "não podem coexistir no mesmo sistema",
+            "são ambos criados exclusivamente por fork()",
+            "diferem apenas pela prioridade atribuída"
+          ],
+          "correct_index": 0,
+          "explanation": "O que define se o resultado é um processo ou uma thread são as flags de compartilhamento passadas ao clone().",
+          "pitfall": "Essa unificação é uma característica marcante do Linux, e a banca gosta de contrastá-la com outros sistemas."
+        },
+        {
+          "topic": "Distribuição",
+          "statement": "A diferença entre kernel Linux e distribuição Linux é que:",
+          "options": [
+            "o kernel é apenas o núcleo, e a distribuição acrescenta shell, utilitários e gerenciador de pacotes",
+            "o kernel é comercial e a distribuição é livre",
+            "a distribuição é uma versão reduzida do kernel",
+            "o kernel roda em modo usuário e a distribuição em modo núcleo",
+            "não há diferença prática entre os termos"
+          ],
+          "correct_index": 0,
+          "explanation": "Ubuntu, Fedora e Arch usam o mesmo kernel. O que as distingue é tudo o que foi montado em volta dele.",
+          "pitfall": "Por isso o Android pode usar o kernel Linux sem ser uma distribuição Linux no sentido usual."
+        },
+        {
+          "topic": "Escalonador",
+          "statement": "O escalonador CFS do Linux difere do round-robin clássico porque:",
+          "options": [
+            "baseia a escolha no tempo virtual já consumido por cada tarefa, buscando equidade, em vez de quantum fixo",
+            "atende sempre a tarefa de menor PID",
+            "não permite preempção de tarefas",
+            "usa filas múltiplas com prioridades estáticas",
+            "escalona apenas processos, ignorando threads"
+          ],
+          "correct_index": 0,
+          "explanation": "A tarefa que acumulou menos tempo virtual é escolhida. Tarefas de prioridade alta acumulam esse tempo mais lentamente.",
+          "pitfall": "Desde o kernel 6.6 (de 2023) o escalonador padrão passou a ser o EEVDF, que refina essa mesma ideia."
+        },
+        {
+          "topic": "VFS",
+          "statement": "A camada VFS (Virtual File System) do Linux tem como função:",
+          "options": [
+            "oferecer uma interface única para diferentes sistemas de arquivos, como ext4, XFS e NTFS",
+            "manter uma cópia dos arquivos em memória virtual",
+            "virtualizar discos para máquinas virtuais",
+            "gerenciar a área de swap do sistema",
+            "controlar as permissões de acesso aos arquivos"
+          ],
+          "correct_index": 0,
+          "explanation": "As chamadas open, read e write funcionam igual em qualquer tipo de disco montado. A VFS traduz cada uma para o sistema de arquivos correspondente.",
+          "pitfall": "Apesar do nome, a VFS não tem relação com memória virtual nem com máquinas virtuais."
+        },
+        {
+          "topic": "Sistema de arquivos /proc",
+          "statement": "O diretório /proc em sistemas Linux caracteriza-se por:",
+          "options": [
+            "ser um sistema de arquivos virtual, gerado em memória pelo kernel, sem existir no disco",
+            "armazenar os arquivos temporários dos processos em disco",
+            "conter os executáveis de todos os processos em execução",
+            "guardar os logs do sistema",
+            "ser a área de swap usada pelo kernel"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada leitura ali é, na prática, uma consulta ao kernel. O conteúdo é produzido no instante em que se lê.",
+          "pitfall": "É a concretização do princípio de que tudo é arquivo: até o estado interno do kernel se lê com cat."
+        },
+        {
+          "topic": "Android",
+          "statement": "Em relação a uma distribuição Linux convencional, o Android substitui:",
+          "options": [
+            "a glibc pela Bionic, o IPC tradicional pelo Binder e a execução nativa pela ART",
+            "o kernel Linux por um micronúcleo próprio",
+            "o modelo de processos pelo modelo de máquinas virtuais",
+            "o sistema de arquivos por um banco de dados",
+            "o escalonador por um algoritmo cooperativo"
+          ],
+          "correct_index": 0,
+          "explanation": "O kernel permanece o mesmo, com alguns acréscimos. Praticamente toda a pilha acima dele é diferente.",
+          "pitfall": "É por isso que binários de uma distribuição comum não executam diretamente no Android."
+        },
+        {
+          "topic": "Isolamento no Android",
+          "statement": "O isolamento entre aplicativos no Android é obtido principalmente por meio de:",
+          "options": [
+            "atribuição de um UID distinto a cada aplicativo instalado",
+            "execução de cada aplicativo em uma máquina virtual completa",
+            "um hipervisor de tipo 1 embarcado",
+            "criptografia individual de cada processo",
+            "namespaces de rede separados por aplicativo"
+          ],
+          "correct_index": 0,
+          "explanation": "O Android reaproveita o modelo de permissões por usuário do Unix. Cada aplicativo vira um usuário diferente do sistema.",
+          "pitfall": "É um mecanismo antigo do Unix usado de forma nova, e não uma invenção do Android."
+        }
+      ]
+    },
+    {
+      "slug": "estudo-de-caso-windows",
+      "title": "Estudo de caso: Windows",
+      "summary": "O Windows de hoje não descende do sistema de disco dos anos 80. Ele veio de um projeto novo, feito para durar e para rodar em várias máquinas.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A loja que não pode perder freguês antigo",
+          "body": [
+            "Uma loja muda de dono e reforma tudo por dentro.",
+            "Mas ela não pode perder os clientes de trinta anos atrás.",
+            "Então mantém a vitrine parecida e aceita as fichas antigas.",
+            "Por fora parece a mesma loja. Por dentro, não sobrou quase nada."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Duas linhagens, não uma",
+          "body": [
+            "A linha antiga terminou no Windows Millennium, no ano 2000.",
+            "Em paralelo existia outro projeto, começado do zero no fim dos anos 80.",
+            "Todo Windows desde o XP vem dessa segunda linha."
+          ],
+          "terms": [
+            {
+              "word": "Permissão",
+              "meaning": "a autorização que diz quem pode fazer o quê. Sem ela, o pedido é recusado pelo sistema."
+            },
+            {
+              "word": "Processo",
+              "meaning": "um programa em execução, com a memória que ele usa e o ponto exato em que parou."
+            },
+            {
+              "word": "Processador",
+              "meaning": "a peça do computador que executa as instruções dos programas."
+            },
+            {
+              "word": "Núcleo do sistema (kernel)",
+              "meaning": "a parte central do sistema operacional. É a única que pode mexer nas peças do computador direto."
+            },
+            {
+              "word": "Arquivo",
+              "meaning": "uma sequência de dados guardada com um nome, que continua existindo depois de a máquina desligar."
+            },
+            {
+              "word": "Diretório",
+              "meaning": "o nome técnico de pasta. É uma lista de nomes com o endereço de cada um."
+            },
+            {
+              "word": "Chamada de sistema",
+              "meaning": "o pedido que um programa faz ao núcleo quando precisa de algo que não pode fazer sozinho."
+            }
+          ],
+          "bullets": [
+            "A segunda linha foi feita para rodar em processadores diferentes.",
+            "Ela nasceu com separação de poderes e contas de usuário de verdade.",
+            "A compatibilidade com os programas antigos foi o que uniu as duas histórias."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As camadas por dentro",
+          "body": [
+            "Na base há um tradutor que esconde as diferenças de cada placa-mãe.",
+            "Acima dele fica a parte grande do sistema, que faz o trabalho pesado.",
+            "E os programas não falam com ela direto: falam com pacotes de código."
+          ],
+          "terms": [
+            {
+              "word": "Driver",
+              "meaning": "o programa que sabe conversar com um modelo específico de peça. Ele é escrito por quem fabrica a peça."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/so/so-camadas-windows.svg",
+            "alt": "As camadas do Windows, dos programas até as peças, com a linha que separa o lado de pouco poder do lado de muito poder.",
+            "caption": "O tradutor da base é o que permitiu o mesmo sistema rodar em máquinas diferentes."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Aqui o processo é uma caixa, e não um executor",
+          "body": [
+            "No Windows, o processo é só o lugar: memória, arquivos abertos e limites.",
+            "Quem executa é sempre o caminho de execução dentro dele.",
+            "Um processo sem nenhum caminho dentro não faz nada e termina."
+          ],
+          "terms": [
+            {
+              "word": "Thread",
+              "meaning": "cada caminho de execução dentro de um mesmo processo. Em português se diz também linha de execução."
+            }
+          ],
+          "bullets": [
+            "Criar um processo é uma ordem só, que já monta tudo pronto.",
+            "Não existe aqui aquela cópia do processo atual que o Linux faz.",
+            "Cada caminho de execução é conhecido pelo núcleo, um para um."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Tudo é um objeto com nome",
+          "body": [
+            "Arquivos, processos, trancas e janelas são tratados do mesmo jeito.",
+            "Cada um é um objeto, com nome, dono e regras de acesso.",
+            "O programa recebe uma etiqueta para usar o objeto, e não o objeto em si."
+          ],
+          "terms": [
+            {
+              "word": "Etiqueta de acesso",
+              "meaning": "um número que o programa guarda para se referir a algo do sistema. Ele não enxerga o conteúdo por trás."
+            }
+          ],
+          "bullets": [
+            "A mesma etiqueta serve para arquivo, tranca e processo.",
+            "O sistema conta quantas etiquetas existem e só libera o objeto no fim.",
+            "É por isso que o Windows avisa que o arquivo está em uso por outro programa."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Memória e o arquivo de troca",
+          "body": [
+            "Cada processo tem a memória que ele acha que tem, traduzida por peça.",
+            "O que não cabe vai para um arquivo grande dentro do disco.",
+            "O sistema controla quanto de memória de verdade cada processo segura."
+          ],
+          "terms": [
+            {
+              "word": "Memória virtual",
+              "meaning": "a memória que o programa acha que tem, maior que a de verdade e só dele."
+            },
+            {
+              "word": "Parte guardada na memória",
+              "meaning": "a fatia de memória de verdade que um processo tem naquele momento. O sistema aumenta e diminui conforme a disputa."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O baú de configurações",
+          "body": [
+            "Em vez de espalhar arquivos de configuração, o Windows guarda tudo num só lugar.",
+            "É uma árvore de chaves e valores, usada por todo o sistema.",
+            "Isso centraliza, e também cria um ponto único de estrago."
+          ],
+          "bullets": [
+            "Programas, peças e contas guardam preferências ali.",
+            "Uma alteração errada pode impedir a máquina de ligar.",
+            "É por isso que existe a opção de voltar a máquina a um ponto anterior."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Como ele está hoje",
+          "body": [
+            "As mudanças recentes vieram mais de fora do que de dentro.",
+            "O sistema aprendeu a rodar o Linux por baixo, sem sair do Windows."
+          ],
+          "terms": [
+            {
+              "word": "Terminal",
+              "meaning": "a janela em que você digita ordens de texto para o computador, em vez de clicar."
+            },
+            {
+              "word": "Comando",
+              "meaning": "cada ordem de texto que você digita no terminal."
+            },
+            {
+              "word": "PowerShell e Prompt de Comando (cmd)",
+              "meaning": "os dois programas do Windows em que você digita ordens de texto. O PowerShell é o mais novo dos dois."
+            }
+          ],
+          "table": {
+            "label": "Olhando o sistema por dentro",
+            "headers": [
+              "O que ver",
+              "Como"
+            ],
+            "rows": [
+              [
+                "Versão do sistema",
+                "winver, ou Get-ComputerInfo"
+              ],
+              [
+                "Processos e caminhos de execução",
+                "Get-Process"
+              ],
+              [
+                "Serviços em andamento",
+                "Get-Service"
+              ],
+              [
+                "Baú de configurações",
+                "regedit (cuidado ao alterar)"
+              ],
+              [
+                "Arquivo de troca",
+                "Propriedades do Sistema → Avançado"
+              ],
+              [
+                "Linux dentro do Windows",
+                "wsl --install"
+              ]
+            ],
+            "mono": true
+          },
+          "bullets": [
+            "Essa forma de rodar o Linux por dentro usa uma máquina fingida enxuta.",
+            "Por isso os dois sistemas dividem arquivos e rede sem reiniciar nada."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca cobra a arquitetura em camadas e o contraste com o modelo do Unix."
+          ],
+          "bullets": [
+            "O Windows moderno descende da linhagem NT, e não do MS-DOS nem do Windows 9x.",
+            "Arquitetura híbrida: monolítica no desempenho, com elementos de micronúcleo na organização.",
+            "HAL (Hardware Abstraction Layer): isola o kernel das diferenças de placa-mãe e de arquitetura.",
+            "Executivo: camada que implementa processos · memória · E/S · segurança e objetos.",
+            "Subsistemas de ambiente, como o Win32, ficam em modo usuário.",
+            "Aplicações não chamam o executivo diretamente; passam por DLLs como a kernel32 e a ntdll.",
+            "No Windows, o processo é apenas contêiner de recursos; a unidade de execução é a thread.",
+            "CreateProcess() cria processo e thread inicial em uma única chamada; não há equivalente a fork().",
+            "Tudo é objeto: arquivos · processos · threads · mutexes e eventos, acessados por handles.",
+            "O gerenciador de objetos controla nomes, permissões e contagem de referências.",
+            "Working set: conjunto de páginas de um processo residentes em memória física.",
+            "Registro (registry): base hierárquica central de configurações do sistema e dos aplicativos.",
+            "NTFS: journaling · ACLs · compressão · criptografia (EFS) e fluxos alternativos de dados.",
+            "WSL2 executa um kernel Linux real dentro de uma máquina virtual leve sobre o Hyper-V."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Cinco trocas aparecem sempre nessa parte."
+          ],
+          "bullets": [
+            "O Windows de hoje não vem do sistema de disco dos anos 80. Ele vem de outro projeto.",
+            "Aqui o processo não executa nada. Quem executa é o caminho de execução dentro dele.",
+            "Não existe aqui a cópia do processo atual que o Unix faz. A criação é uma ordem só.",
+            "O tradutor da base não é um driver de peça. Ele esconde a arquitetura inteira.",
+            "A versão nova do Linux dentro do Windows não é imitação. É um núcleo Linux de verdade."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Por fora parece o mesmo Windows de sempre. Por dentro, é outro projeto."
+          ],
+          "bullets": [
+            "A linhagem atual começou do zero no fim dos anos 80.",
+            "Na base há um tradutor que esconde as diferenças de cada máquina.",
+            "Os programas falam com pacotes de código, e não com o sistema direto.",
+            "Processo é a caixa. Caminho de execução é quem trabalha.",
+            "Tudo é objeto com nome, acessado por etiqueta.",
+            "As configurações moram todas num baú central, e isso concentra o risco."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Linhagem",
+          "statement": "O Windows 11 descende diretamente de qual linhagem?",
+          "options": [
+            "da linhagem NT, iniciada no fim dos anos 1980",
+            "do MS-DOS, por meio do Windows 3.1",
+            "do Windows 95 e 98",
+            "do OS/2 Warp",
+            "do Windows Millennium Edition"
+          ],
+          "correct_index": 0,
+          "explanation": "A linha baseada no MS-DOS terminou no Windows Me, em 2000. A linha NT nasceu como projeto independente e é a que sobreviveu.",
+          "pitfall": "A aparência e a compatibilidade com programas antigos escondem essa ruptura técnica."
+        },
+        {
+          "topic": "HAL",
+          "statement": "A HAL (Hardware Abstraction Layer) do Windows tem como objetivo:",
+          "options": [
+            "isolar as camadas superiores das diferenças de hardware e arquitetura de cada máquina",
+            "traduzir endereços virtuais em endereços físicos",
+            "gerenciar o registro do sistema",
+            "executar drivers em modo usuário",
+            "controlar o acesso aos objetos do sistema"
+          ],
+          "correct_index": 0,
+          "explanation": "Com ela, o mesmo kernel roda em placas e arquiteturas diferentes. Só a HAL precisa ser adaptada.",
+          "pitfall": "A tradução de endereços é da MMU, e não da HAL. São camadas com funções distintas."
+        },
+        {
+          "topic": "Processo e thread",
+          "statement": "No modelo do Windows, o processo é descrito como:",
+          "options": [
+            "um contêiner de recursos, sendo a thread a unidade de execução escalonada",
+            "a unidade de execução escalonada pelo sistema",
+            "um sinônimo de thread, como no Linux",
+            "uma máquina virtual leve",
+            "um agrupamento de objetos do registro"
+          ],
+          "correct_index": 0,
+          "explanation": "O processo reúne memória, handles e limites. Quem recebe tempo de processador é sempre a thread.",
+          "pitfall": "Um processo sem threads não executa nada e é encerrado pelo sistema."
+        },
+        {
+          "topic": "Criação de processos",
+          "statement": "Uma diferença marcante entre Windows e Unix na criação de processos é que o Windows:",
+          "options": [
+            "cria o processo e a thread inicial em uma única chamada, sem equivalente ao fork()",
+            "exige duas chamadas: uma para duplicar e outra para carregar o programa",
+            "não permite que um processo crie outro",
+            "cria processos apenas na inicialização do sistema",
+            "usa clone() com flags de compartilhamento"
+          ],
+          "correct_index": 0,
+          "explanation": "O CreateProcess recebe o caminho do programa e monta tudo de uma vez. Não existe a etapa de duplicar o processo atual.",
+          "pitfall": "No Unix, fork duplica e exec substitui o programa. São dois passos, e o Windows não tem essa separação."
+        },
+        {
+          "topic": "Objetos e handles",
+          "statement": "No Windows, arquivos e processos são acessados pelos programas por meio de:",
+          "options": [
+            "handles, que são referências controladas pelo gerenciador de objetos",
+            "ponteiros diretos para as estruturas do kernel",
+            "números de i-node",
+            "descritores de arquivo exclusivamente numéricos e sequenciais",
+            "chaves do registro"
+          ],
+          "correct_index": 0,
+          "explanation": "O programa nunca acessa a estrutura interna. O gerenciador de objetos confere a permissão e conta quantas referências existem.",
+          "pitfall": "É essa contagem que faz o Windows avisar que um arquivo está em uso por outro processo."
+        },
+        {
+          "topic": "Working set",
+          "statement": "O working set de um processo no Windows corresponde:",
+          "options": [
+            "ao conjunto de páginas do processo atualmente residentes na memória física",
+            "ao total de memória virtual reservada pelo processo",
+            "ao espaço ocupado por ele no arquivo de paginação",
+            "ao número de threads ativas do processo",
+            "ao conjunto de handles abertos pelo processo"
+          ],
+          "correct_index": 0,
+          "explanation": "O sistema aumenta ou reduz esse conjunto conforme a disputa por memória entre os processos.",
+          "pitfall": "Memória reservada e memória residente são coisas diferentes, e a banca costuma trocar uma pela outra."
+        },
+        {
+          "topic": "Registro",
+          "statement": "O registro (registry) do Windows é:",
+          "options": [
+            "uma base hierárquica centralizada de configurações do sistema e dos aplicativos",
+            "o log de eventos e erros do sistema",
+            "a tabela de alocação de arquivos do NTFS",
+            "a área de memória usada pelo kernel",
+            "o cadastro de usuários e senhas apenas"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele substitui os arquivos de configuração espalhados por diretórios, adotados em sistemas do tipo Unix.",
+          "pitfall": "A centralização facilita a administração e cria um ponto único de falha, capaz de impedir a inicialização."
+        },
+        {
+          "topic": "WSL2",
+          "statement": "O WSL2 (Windows Subsystem for Linux, versão 2) funciona por meio de:",
+          "options": [
+            "um kernel Linux real executando em uma máquina virtual leve sobre o Hyper-V",
+            "tradução das chamadas de sistema do Linux para chamadas do Windows",
+            "emulação de instruções da arquitetura x86 em software",
+            "um contêiner compartilhando o kernel do Windows",
+            "um subsistema de ambiente como o Win32"
+          ],
+          "correct_index": 0,
+          "explanation": "A primeira versão traduzia chamadas de sistema. A segunda passou a executar um kernel Linux de verdade, o que melhorou muito a compatibilidade.",
+          "pitfall": "Contêineres Linux não podem compartilhar o kernel do Windows. É por isso que o Docker Desktop depende do WSL2."
+        }
+      ]
     }
   ]
 }

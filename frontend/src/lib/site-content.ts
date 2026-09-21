@@ -50,6 +50,10 @@ export const SUBJECTS: SiteSubject[] = [
       "Entrada e saída: como o sistema conversa com as peças",
       "O disco: a peça mais lenta da casa",
       "Vários discos trabalhando como um só",
+      "Virtualização: uma máquina fingindo ser várias",
+      "Contêineres: dividir sem duplicar o sistema",
+      "Estudo de caso: Linux e Android",
+      "Estudo de caso: Windows",
     ],
   },
   {
