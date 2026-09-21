@@ -7,6 +7,7 @@ use App\Models\Lesson;
 use App\Models\Question;
 use App\Models\User;
 use App\Services\GamificationService;
+use App\Services\ReviewService;
 use Illuminate\Database\UniqueConstraintViolationException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -15,8 +16,10 @@ use Throwable;
 
 class AttemptController extends Controller
 {
-    public function __construct(private GamificationService $gamification)
-    {
+    public function __construct(
+        private GamificationService $gamification,
+        private ReviewService $reviews,
+    ) {
     }
 
     /** Inicia uma tentativa e devolve as questões SEM gabarito nem explicação. */
@@ -125,8 +128,49 @@ class AttemptController extends Controller
         $attempt = $attempt->fresh();
         $result = $this->result($attempt);
         $result['gamification'] = $this->gamificationBlock($request->user(), $attempt, $result['is_record'], $firstFinish);
+        $result['review'] = $this->reviewBlock($request->user(), $attempt, $firstFinish);
 
         return response()->json($result);
+    }
+
+    /**
+     * Marca a volta desta lição e devolve quando ela é.
+     *
+     * Vai junto do resultado porque é ali que a informação vale: a pessoa
+     * acabou de ver a nota e é o único momento em que "volte daqui a 13 dias"
+     * quer dizer alguma coisa.
+     *
+     * Só agenda na PRIMEIRA conclusão da tentativa. Recarregar a tela de
+     * resultado é a mesma prática, e reagendar ali empurraria a revisão para a
+     * frente toda vez que alguém desse F5 — quem revisasse a página três vezes
+     * ganharia três dias de folga. Praticar de novo continua reagendando, porque
+     * aí a tentativa é outra.
+     *
+     * Como a gamificação, falha em silêncio: o resultado da lição vale mais que
+     * o agendamento.
+     *
+     * @return array<string, mixed>|null
+     */
+    private function reviewBlock(User $user, Attempt $attempt, bool $firstFinish): ?array
+    {
+        try {
+            $review = $firstFinish
+                ? $this->reviews->schedule($user, $attempt)
+                : $this->reviews->for($user, $attempt);
+
+            if ($review === null) {
+                return null;
+            }
+
+            return [
+                'due_at' => $review->due_at->toIso8601String(),
+                'interval_days' => $review->interval_days,
+            ];
+        } catch (Throwable $e) {
+            report($e);
+
+            return null;
+        }
     }
 
     /**

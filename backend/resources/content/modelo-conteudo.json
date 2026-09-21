@@ -9,11 +9,13 @@
     "slug": "o endereço curto da matéria: só minúsculas sem acento, números e hífen.",
     "name": "o nome que aparece na tela.",
     "description": "uma frase sobre a matéria. Opcional.",
+    "exam_date": "a data da prova, no formato AAAA-MM-DD. Opcional, mas é ela que define o ritmo das revisões: o intervalo entre uma revisão e a próxima é uma fatia do tempo que falta até esta data, então o calendário se aperta sozinho conforme a prova chega. Sem ela, a matéria cai num plano de revisão de longo prazo.",
     "lessons": "a lista de lições, na ordem em que devem ser estudadas."
   },
   "slug": "materia-de-exemplo",
   "name": "Matéria de exemplo",
   "description": "Troque por uma frase que diga a quem esta matéria serve.",
+  "exam_date": "2026-12-15",
   "lessons": [
     {
       "_campos": {

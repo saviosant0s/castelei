@@ -42,6 +42,8 @@ export interface Subject {
   slug: string;
   name: string;
   description: string | null;
+  /** Data da prova do semestre (AAAA-MM-DD), ou null. É o prazo de onde sai o ritmo das revisões. */
+  exam_date: string | null;
   exam: ExamAvailability;
   lessons: LessonSummary[];
 }
@@ -199,4 +201,29 @@ export interface ProgressResponse {
     percent: number | null;
   } | null;
   gamification: GamificationSnapshot | null;
+}
+
+/**
+ * Uma lição esperando revisão.
+ *
+ * O intervalo entre revisões é uma fatia do tempo que falta até a prova
+ * (Cepeda et al., 2008) — ver docs/revisao-espacada.md.
+ */
+export interface ReviewItem {
+  lesson_id: number | null;
+  lesson_title: string | null;
+  subject_name: string | null;
+  subject_slug: string | null;
+  due_at: string;
+  /** Positivo = atrasada; negativo = ainda vai vencer. Em dias de calendário. */
+  days_late: number;
+  last_percent: number | null;
+  interval_days: number;
+  days_to_exam: number | null;
+}
+
+export interface ReviewResponse {
+  due: ReviewItem[];
+  /** A próxima marcada, quando não há nenhuma vencida. Serve para a tela não dizer "acabou". */
+  next: ReviewItem | null;
 }

@@ -21,13 +21,15 @@ castelei/
 - Progresso por tópico (dominado, evoluindo, revisar)
 - Plano Grátis (5 questões por lição) e Plus (todas), aplicado no servidor
 - PWA instalável (manifest, ícones, service worker que só guarda arquivos estáticos)
+- Revisão espaçada com data de prova: o intervalo entre revisões é uma fatia do tempo que falta até a prova da matéria, então o calendário se aperta sozinho conforme ela chega (`docs/revisao-espacada.md`)
+- Lembrete de revisão por notificação (Web Push), desligado por padrão e no máximo um por dia. Precisa das chaves VAPID e de um processo de cron: veja `docs/deploy-railway.md`, passo 5
 
 ## O que ficou de fora (fases seguintes do planejamento)
 
 - Login com Google e pagamento. Por enquanto o plano se troca com `php artisan castelei:plan email plus`
 - Streak, XP, ranking e conquistas (Fase 2)
 - Matérias rotativas no plano grátis (só há 2 matérias)
-- IA, revisão espaçada e simulados
+- IA e login com Google
 
 Decisão de conteúdo: as questões são **originais**, escritas no estilo de prova, e não trazem a informação "apareceu N vezes no ENEM" do wireframe. Essa estatística exigiria uma base verificada de provas reais, que ainda não existe.
 
@@ -63,6 +65,8 @@ O CI (`.github/workflows/ci.yml`) roda tudo isso a cada push.
 ## Escrevendo conteúdo
 
 As lições ficam em `backend/database/seeders/content/*.json`. Cada lição tem `summary`, `steps` (as etapas, uma ideia por tela) e `questions`.
+
+A matéria aceita `exam_date` (`"2026-12-15"`), opcional. Não é enfeite de calendário: é o prazo de onde sai todo intervalo de revisão — quanto mais perto a prova, mais juntas as revisões. Matéria sem data cai num plano de longo prazo. Detalhes e as fontes em `docs/revisao-espacada.md`.
 
 Tem também `module`, opcional: o assunto que agrupa a lição na trilha da matéria (`"Processos"`, `"Memória"`). Lições **seguidas** com o mesmo nome formam um módulo, e o número ("Módulo 3") sai da ordem — não escreva o número no arquivo. Matéria curta pode ficar sem: ela vira uma trilha só. O verificador avisa se uma matéria usa módulos e esquece uma lição, ou se o mesmo nome reaparece em dois trechos separados.
 

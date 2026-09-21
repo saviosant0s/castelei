@@ -11,6 +11,8 @@ use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\MediaFileController;
 use App\Http\Controllers\ProgressController;
+use App\Http\Controllers\PushController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\PublicCatalogController;
 use Illuminate\Support\Facades\Route;
 
@@ -56,6 +58,22 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/attempts/{attempt}/finish', [AttemptController::class, 'finish'])->whereNumber('attempt');
 
     Route::get('/progress', [ProgressController::class, 'index']);
+
+    /*
+    | O que revisar hoje. O intervalo entre revisões é uma proporção do tempo
+    | que falta até a prova da matéria (Cepeda et al., 2008) — ver
+    | docs/revisao-espacada.md e a configuração em config/castelei.php.
+    */
+    Route::get('/review', [ReviewController::class, 'index']);
+
+    /*
+    | Lembrete de revisão (Web Push). Uma assinatura por APARELHO, não por conta.
+    | Sem chaves VAPID no servidor, `key` avisa que está desligado e `store`
+    | responde 503 — de propósito, para a tela não oferecer o que não funciona.
+    */
+    Route::get('/push/key', [PushController::class, 'key']);
+    Route::post('/push/subscriptions', [PushController::class, 'store']);
+    Route::delete('/push/subscriptions', [PushController::class, 'destroy']);
 
     /*
     | Painel de conteúdo. Tudo aqui exige `is_admin` (ou o e-mail em

@@ -66,7 +66,61 @@ Abra a URL do frontend, crie uma conta e faça uma lição de ponta a ponta.
 
 No serviço do **frontend**: Settings → Networking → Custom Domain. Aponte o DNS como o Railway indicar. O backend não precisa de domínio próprio.
 
-## 5. Mudando o plano de alguém (enquanto não há pagamento)
+## 5. Lembretes de revisão (Web Push)
+
+Duas coisas, e **as duas precisam existir** — só uma delas não manda nada.
+
+### 5.1 As chaves VAPID
+
+Rode uma vez, em qualquer máquina com o projeto:
+
+```bash
+cd backend && php artisan castelei:vapid
+```
+
+Ponha as duas variáveis no serviço **`backend`**. A pública vai parar no
+JavaScript de qualquer jeito; a **privada é segredo** — quem a tiver manda
+notificação em nome do Castelei. Nunca commite, nunca cole em chat.
+
+**Gere o par no seu computador, não reaproveite nenhum que tenha aparecido numa
+conversa.** E saiba que **trocar o par depois derruba todas as assinaturas**:
+cada aparelho teria que aceitar o lembrete de novo.
+
+Enquanto as variáveis não existirem, o recurso fica inerte de propósito: a rota
+se declara desligada e o botão nem aparece no Perfil. É melhor a função não
+existir do que existir quebrada.
+
+### 5.2 O processo que dispara (isto falta)
+
+O horário está agendado em `backend/routes/console.php` (18h no fuso do aluno),
+mas o agendador do Laravel **não roda sozinho**: alguém precisa chamar
+
+```bash
+php artisan schedule:run
+```
+
+**a cada minuto**. O serviço `backend` atende requisições HTTP e não tem cron.
+
+Sem esse processo, **nenhum lembrete sai — e não aparece erro em lugar nenhum**,
+porque não há erro: o comando simplesmente nunca é chamado. É o tipo de falha
+que só se descobre perguntando "por que ninguém recebeu?".
+
+Dois caminhos no Railway:
+
+1. **Serviço com cron** (o mais simples): duplique o serviço do backend, ponha
+   o agendamento do Railway (Settings → Cron Schedule) em `* * * * *` e o
+   comando de start como `php artisan schedule:run`.
+2. **Worker separado** rodando `php artisan schedule:work`, que é um processo
+   que fica de pé chamando o agendador sozinho.
+
+Para conferir sem esperar as 18h:
+
+```bash
+php artisan castelei:lembretes --seco   # mostra quem receberia, sem enviar
+php artisan castelei:lembretes          # envia de verdade
+```
+
+## 6. Mudando o plano de alguém (enquanto não há pagamento)
 
 No serviço do backend, abra um shell (Railway CLI: `railway ssh`, ou o comando "Run" do painel) e rode:
 
@@ -83,6 +137,8 @@ php artisan castelei:plan email@exemplo.com plus
 | Backend responde 500 | `APP_KEY` vazia ou inválida; veja os logs (`LOG_CHANNEL=stderr` joga tudo neles) |
 | Frontend abre, mas login dá "Não deu para falar com o servidor" | `API_URL` errada (precisa terminar em `/api`) ou backend fora do ar |
 | Deu certo localmente e não no Railway | Compare as variáveis; o app lê `API_URL` só no servidor |
+| O botão de lembrete não aparece no Perfil | Faltam `VAPID_PUBLIC_KEY`/`VAPID_PRIVATE_KEY` no backend (passo 5.1). É de propósito: sem elas o recurso se declara desligado |
+| Ninguém recebe lembrete, e não há erro nenhum | Falta o processo que chama `schedule:run` a cada minuto (passo 5.2). Confirme com `php artisan castelei:lembretes --seco` |
 
 ## Segurança
 

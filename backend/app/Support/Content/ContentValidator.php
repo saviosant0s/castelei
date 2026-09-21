@@ -56,6 +56,7 @@ class ContentValidator
         $this->slug($data['slug'] ?? null, 'slug');
         $this->text($data['name'] ?? null, 'name', max: 120);
         $this->optionalText($data['description'] ?? null, 'description', max: 500);
+        $this->optionalDate($data['exam_date'] ?? null, 'exam_date');
 
         $lessons = $data['lessons'] ?? null;
 
@@ -138,6 +139,34 @@ class ContentValidator
         }
 
         $this->text($value, $path, $max);
+    }
+
+    /**
+     * Data opcional no formato AAAA-MM-DD.
+     *
+     * É a data da prova da matéria, e o agendamento de revisão calcula o
+     * intervalo como uma fatia do tempo que falta até ela. Por isso o formato é
+     * exigido em vez de adivinhado: "15/12/2026" lido como mês 15 mandaria toda
+     * revisão da matéria para um ponto errado do calendário, sem erro nenhum na
+     * tela.
+     */
+    private function optionalDate(mixed $value, string $path): void
+    {
+        if ($value === null || $value === '') {
+            return;
+        }
+
+        if (! is_string($value) || ! preg_match('/^\d{4}-\d{2}-\d{2}$/', $value)) {
+            $this->error($path, 'A data da prova precisa ser um texto no formato AAAA-MM-DD. Exemplo: 2026-12-15.');
+
+            return;
+        }
+
+        [$ano, $mes, $dia] = array_map('intval', explode('-', $value));
+
+        if (! checkdate($mes, $dia, $ano)) {
+            $this->error($path, "A data da prova \"{$value}\" não existe no calendário.");
+        }
     }
 
     private function slug(mixed $value, string $path): bool

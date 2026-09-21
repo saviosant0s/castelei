@@ -25,6 +25,7 @@ class SubjectController extends Controller
                 'slug' => $subject->slug,
                 'name' => $subject->name,
                 'description' => $subject->description,
+                'exam_date' => $subject->exam_date?->format('Y-m-d'),
                 'position' => $subject->position,
                 'origin' => $subject->origin,
                 'lessons_count' => $subject->lessons_count,
@@ -43,6 +44,7 @@ class SubjectController extends Controller
                 'slug' => $subject->slug,
                 'name' => $subject->name,
                 'description' => $subject->description,
+                'exam_date' => $subject->exam_date?->format('Y-m-d'),
                 'position' => $subject->position,
                 'origin' => $subject->origin,
                 'lessons' => $subject->lessons->map(fn (Lesson $lesson) => [
@@ -65,6 +67,7 @@ class SubjectController extends Controller
             'slug' => ['required', 'string', 'max:80', 'regex:/^[a-z0-9]+(?:-[a-z0-9]+)*$/', 'unique:subjects,slug'],
             'name' => ['required', 'string', 'max:120'],
             'description' => ['nullable', 'string', 'max:500'],
+            'exam_date' => ['nullable', 'date_format:Y-m-d'],
         ], self::messages());
 
         $subject = Subject::create($data + [
@@ -88,6 +91,12 @@ class SubjectController extends Controller
         $data = $request->validate([
             'name' => ['required', 'string', 'max:120'],
             'description' => ['nullable', 'string', 'max:500'],
+            /*
+            | Data da prova: o agendamento de revisão calcula o intervalo como
+            | uma fatia do tempo que falta até ela. Mexer aqui muda o calendário
+            | de estudo de todo mundo que faz a matéria.
+            */
+            'exam_date' => ['nullable', 'date_format:Y-m-d'],
         ], self::messages());
 
         $subject->fill($data);
@@ -158,6 +167,7 @@ class SubjectController extends Controller
             'slug' => $subject->slug,
             'name' => $subject->name,
             'description' => $subject->description,
+            'exam_date' => $subject->exam_date?->format('Y-m-d'),
             'position' => $subject->position,
             'origin' => $subject->origin,
         ];
@@ -172,6 +182,7 @@ class SubjectController extends Controller
             'slug.unique' => 'Já existe uma matéria com este slug.',
             'name.required' => 'Informe o nome da matéria.',
             'name.max' => 'O nome ficou longo demais.',
+            'exam_date.date_format' => 'A data da prova precisa estar no formato AAAA-MM-DD. Exemplo: 2026-12-15.',
         ];
     }
 }
