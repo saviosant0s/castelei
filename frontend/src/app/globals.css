@@ -33,6 +33,17 @@
   --color-brick: #c93b3b;
   --color-brick-soft: #fbe3e3;
 
+  /*
+  | O degrau de baixo do nó da trilha.
+  |
+  | É a mesma cor, mais funda. Não sai de `color-mix` com preto porque isso
+  | apaga a matiz e deixa o degrau sujo: cada uma foi escurecida à mão,
+  | puxando um pouco para o frio, que é como a luz cai numa tecla de verdade.
+  */
+  --color-sky-deep: #3a86c9;
+  --color-sage-deep: #3d8e69;
+  --color-coral-deep: #cf6544;
+
   /* --- Papéis de superfície: o fundo de cada camada --- */
   --color-surface: #f8f9fa;          /* o fundo da página */
   --color-surface-raised: #ffffff;   /* cartão que sobe da página */
@@ -105,11 +116,14 @@
     --color-sky: #6fb6f2;
     --color-sky-soft: #1c2e42;
     --color-coral: #f4926f;
-    --color-coral-soft: #3a261d;
+    --color-coral-soft: #452a2c;
     --color-sage: #63c197;
     --color-sage-soft: #16301f;
     --color-brick: #e0625f;
     --color-brick-soft: #3a1d1d;
+    --color-sky-deep: #3f7ead;
+    --color-sage-deep: #3d8e69;
+    --color-coral-deep: #c06a4e;
     --color-surface: #14141f;
     --color-surface-raised: #1e1e2d;
     --color-surface-sunken: #0e0e16;
@@ -129,11 +143,14 @@
   --color-sky: #6fb6f2;
   --color-sky-soft: #1c2e42;
   --color-coral: #f4926f;
-  --color-coral-soft: #3a261d;
+  --color-coral-soft: #452a2c;
   --color-sage: #63c197;
   --color-sage-soft: #16301f;
   --color-brick: #e0625f;
   --color-brick-soft: #3a1d1d;
+  --color-sky-deep: #3f7ead;
+  --color-sage-deep: #3d8e69;
+  --color-coral-deep: #c06a4e;
   --color-surface: #14141f;
   --color-surface-raised: #1e1e2d;
   --color-surface-sunken: #0e0e16;
@@ -317,6 +334,64 @@ h3,
 
 .confetti-piece {
   opacity: 0;
+}
+
+@layer components {
+/*
+| O NÓ DA TRILHA COMO TECLA.
+|
+| Um círculo chapado é um adesivo; com um degrau embaixo vira coisa que se
+| aperta. É o que dá cara de jogo à tela, e o barato é que não encosta no
+| fundo da página — o Sávio já dispensou enfeite de fundo uma vez.
+|
+| O degrau é sombra sólida (raio zero), não desfoque: desfoque vira
+| "flutuando", sólido vira "apoiado". Ao tocar, o nó desce a mesma altura
+| que o degrau tem e ele some — o dedo empurrou a tecla até o fim.
+|
+| Quem define a cor é a classe de cor que vem junto (.node-sky e irmãs),
+| via a variável. Assim o estado escolhe a forma e o módulo escolhe a cor,
+| sem uma classe por combinação.
+*/
+.node {
+  --lip: transparent;
+  box-shadow: 0 5px 0 0 var(--lip);
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease;
+}
+.node-sky {
+  --lip: var(--color-sky-deep);
+  @apply bg-sky text-on-accent;
+}
+.node-sage {
+  --lip: var(--color-sage-deep);
+  @apply bg-sage text-on-accent;
+}
+.node-coral {
+  --lip: var(--color-coral-deep);
+  @apply bg-coral text-on-accent;
+}
+/*
+| A que ainda não chegou: cavidade, sem degrau. Nada a apertar ainda.
+|
+| `text-ink/60` e não `text-content-subtle`: o @apply do Tailwind só aceita
+| utilitário, e o papel é classe de componente. O nível de cor é o mesmo.
+*/
+.node-adiante {
+  @apply bg-surface-sunken text-ink/60;
+}
+
+/*
+| A tecla afundando.
+|
+| `:active` vale para toque e clique; o grupo é o link em volta, que é quem
+| recebe o toque. Fora de `prefers-reduced-motion` a transição some e o
+| movimento vira um salto — continua funcionando, só não desliza.
+*/
+.group:active .node:not(.node-adiante) {
+  transform: translateY(5px);
+  box-shadow: 0 0 0 0 var(--lip);
+}
 }
 
 @media (prefers-reduced-motion: no-preference) {

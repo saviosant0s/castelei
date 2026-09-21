@@ -121,11 +121,29 @@ navegador. O que sustenta isso hoje:
 - **A matéria é uma trilha, não uma lista** (`components/trail/`, com a
   matemática em `lib/lesson-trail.ts`). As lições se agrupam em módulos, cada
   um com barra de progresso, e dentro do módulo viram nós numa onda vertical.
-  Três estados, e cor nunca é o único sinal de nenhum: concluída tem o ícone
-  de certo, a atual tem o anel que pulsa e o selo "Agora", a que falta é lisa
-  — e o estado entra no rótulo acessível de todo nó. A que falta **continua
-  clicável**: o cinza orienta, não tranca, porque revisar fora de ordem é uso
-  legítimo num app que acompanha um semestre.
+  **O módulo escolhe a cor, o estado escolhe a forma**, e essa separação é o
+  coração da tela: cada módulo recebe sky, sage ou coral em rodízio pela
+  ordem, então cor diz *em que trecho da matéria você está*, não *como você
+  está*. Quem carrega o estado é o ícone de certo (concluída), o anel que
+  pulsa com o selo "Agora" (atual) e o cinza-cavidade (a que falta) — e o
+  estado entra no rótulo acessível de todo nó. `brick` fica de fora do
+  rodízio: vermelho no app quer dizer erro.
+
+  A que falta **continua clicável**: o cinza orienta, não tranca, porque
+  revisar fora de ordem é uso legítimo num app que acompanha um semestre.
+
+  Três coisas dão a vida que a primeira versão não tinha, e nenhuma delas
+  encosta no fundo da página:
+
+  - **O nó é uma tecla.** Degrau de sombra sólida embaixo (raio zero:
+    desfoque vira "flutuando", sólido vira "apoiado"), e ao tocar o nó desce
+    a altura exata do degrau. As cores `--color-*-deep` existem só para isso.
+  - **Cada módulo fecha num marco** (`TrailMilestone`), que só acende
+    completo. "Faltam 22 lições" não move ninguém; "falta 1 para fechar
+    Threads" move. Não é link de propósito — não há para onde ir.
+  - **Estrelas no nó concluído**, e elas **não cobram nota**: terminar já
+    vale uma, sempre. A segunda e a terceira dependem do acerto. O convite é
+    voltar e melhorar, nunca dizer que não acabou.
 
   Dois detalhes que não são enfeite. A onda é medida em **porcentagem da
   largura**, e o traço que liga os nós é um SVG com `preserveAspectRatio="none"`

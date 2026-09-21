@@ -132,10 +132,16 @@ describe("geometria do ziguezague", () => {
     expect(trailHeight(3)).toBe(NODE + 2 * ROW + TAIL);
   });
 
-  it("sobra espaço embaixo do último nó para o título não ser coberto", () => {
-    // Sem a cauda, o cabeçalho do módulo seguinte sobe por cima do título da
-    // última lição deste.
+  it("sobra espaço embaixo do último nó para o rótulo não ser coberto", () => {
+    // Sem a cauda, o cabeçalho do módulo seguinte sobe por cima do rótulo do
+    // marco que fecha este.
     expect(trailHeight(4) - (NODE + 3 * ROW)).toBeGreaterThan(0);
+  });
+
+  it("a cauda é menor que o vão entre dois nós", () => {
+    // O último nó é sempre o marco, de rótulo curto. Dimensionar pela lição
+    // de título mais longo abria um buraco entre o troféu e o módulo seguinte.
+    expect(TAIL).toBeLessThan(ROW - NODE);
   });
 
   it("não desenha caminho para um módulo de uma lição só", () => {
