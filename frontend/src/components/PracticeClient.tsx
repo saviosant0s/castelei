@@ -7,6 +7,7 @@ import { BadgeIcon } from "@/components/BadgeIcon";
 import { Confetti } from "@/components/Confetti";
 import { messageOf, postJson } from "@/lib/client";
 import { formatClock, formatNumber, formatSeconds, optionLetter, pluralize, streakMessage } from "@/lib/format";
+import { playSound, primeSound } from "@/lib/sound";
 import type { AnswerResult, FinishResult, PracticeQuestion, StartAttemptResponse } from "@/lib/types";
 
 type Phase = "loading" | "failed" | "answering" | "feedback" | "result";
@@ -153,6 +154,9 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
 
   async function submit(choice: number | null) {
     if (!attempt || !question || busy) return;
+    // Acorda o áudio AQUI, ainda dentro do gesto: a resposta só chega depois
+    // do await, quando o iPhone já não libera som. Ver lib/sound.ts.
+    primeSound();
     const seconds = Math.max(0, Math.round((Date.now() - questionStart.current) / 1000));
     setBusy(true);
     setError(null);
@@ -165,6 +169,8 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
       setSelected(choice);
       setFeedback(data);
       setPhase("feedback");
+      // Quem pulou não acertou nem errou: nada a comemorar nem a lamentar.
+      if (choice !== null) playSound(data.is_correct ? "acerto" : "erro");
     } catch (e) {
       setError(messageOf(e));
     } finally {

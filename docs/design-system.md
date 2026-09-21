@@ -250,6 +250,34 @@ Duas coisas que ficaram da tentativa e valem guardar:
   `body`, a camada renderiza e fica invisível, e aumentar a opacidade não
   resolve nada.
 
+## Som
+
+Existe em um lugar só: **acerto e erro no Modo Prova** (`lib/sound.ts`).
+
+Os dois sons são **gerados pela Web Audio, sem arquivo de áudio**. Isso resolve
+três coisas de uma vez: nada a baixar, funciona offline no PWA instalado, e o
+som é nosso — sem licença de banco de efeitos e sem a cara de app genérico.
+
+O tom foi escolhido, não sorteado:
+
+| Som | O que é | Por quê |
+|---|---|---|
+| Acerto | duas notas subindo, curtas e suaves | resposta imediata, sem fanfarra |
+| Erro | uma nota grave que desce um pouco | **erro se mostra sem gritar**, como a cor `brick`. Quem estuda erra o tempo todo; som humilhante faz fechar o app |
+
+Volume em 12%, porque isso toca em sala de aula e em ônibus. E **sempre com
+interruptor** (`/perfil`, ligado por padrão): som sem como desligar, num app
+de estudo, é motivo para desinstalar.
+
+Duas armadilhas de navegador estão tratadas no módulo, e vale saber que
+existem antes de mexer:
+
+- **O iPhone só libera áudio dentro de um gesto.** A resposta chega do
+  servidor *depois* do toque, quando o gesto já passou — por isso
+  `primeSound()` é chamada no começo do clique, antes do `await`.
+- **Navegador sem Web Audio, ou com áudio bloqueado, não pode derrubar a
+  prática.** Tudo falha em silêncio.
+
 ## Regras que valem para toda tela nova
 
 1. **Ícones em SVG, nunca emoji na interface.** Emoji muda de cara em cada
@@ -262,8 +290,9 @@ Duas coisas que ficaram da tentativa e valem guardar:
 4. **Nada de gradiente roxo ou índigo.** É a assinatura visual dos produtos de
    IA. Se usar gradiente, só de azul céu para um azul um pouco mais escuro.
 5. **Sombra com a cor do fundo**, nunca cinza puro (`--shadow-lift`, `--shadow-sky`).
-6. **Animação com propósito.** Confete ao bater recorde, sim; animação ao
-   carregar lista, não. Tudo dentro de `prefers-reduced-motion`. A única
+6. **Animação e som com propósito.** Confete ao bater recorde, sim; animação
+   ao carregar lista, não. O som existe só no acerto e no erro da prática, e
+   sempre com interruptor. Tudo dentro de `prefers-reduced-motion`. A única
    animação permanente é o anel da lição atual na trilha (`.trail-pulse`), que
    responde "onde eu paro?" sem obrigar a ler — e o destaque não depende dela:
    sem movimento, o anel fica lá, parado.

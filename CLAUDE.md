@@ -127,7 +127,14 @@ Se for expandir daqui, as opções são: aprofundar o que ficou de fora da ement
 - **A rampa INVERTE no escuro.** `ink` deixa de ser "grafite" e passa a ser "a cor do texto"; `paper`, "a cor do fundo". É o que faz os quase cem `text-ink/70` e `border-ink/15` já espalhados pelas telas continuarem certos sem tocar em nenhuma. O que a inversão não resolve virou papel próprio: `surface-bold` (no escuro ele se destaca por ser mais CLARO que a página), `on-bold` (texto sobre esse bloco) e **`on-accent`** (texto sobre azul, verde ou coral cheios — não muda de tema, porque as cores da marca são claras nos dois; escrito como `text-ink` clareava junto e o botão "Confirmar" ficava ilegível).
 - **O fundo é liso de propósito.** Teve brilho de azul-céu e malha de pontos, e o Sávio dispensou. Não era calibragem — foram duas rodadas de força diferente, e o veredito foi sobre o degradê em si. Ficou cor chapada com grão de 3%. Se for mexer, mexa na textura, não em degradê. E lembre que **o topo da página é a barra de status do celular** (`viewport-fit=cover`): cor no alto da página vira barra de status colorida.
 
-A escolha do tema (Automático/Claro/Escuro, em `/perfil`) vive no `localStorage`, **por aparelho**, e não vai ao servidor. Sem atributo = o aparelho manda; `data-theme="light"` existe só para vencer um celular escuro. O script no `<head>` é o único script embutido do app, e está lá para a tela não piscar claro antes da hidratação.
+**Som ao acertar e ao errar** (`lib/sound.ts`, no Modo Prova). Quatro coisas:
+
+- **Não há arquivo de áudio.** Os dois sons são gerados na hora pela Web Audio: nada a baixar, funciona offline no PWA e o som é nosso, sem licença de banco de efeitos.
+- **O erro não grita.** Uma nota grave que desce, e não o "errou!" de auditório. Quem estuda erra o tempo todo — é assim que se aprende. O acerto são duas notas subindo. Volume em 12%, porque isso toca em sala de aula.
+- **`primeSound()` é chamada no começo do clique, ANTES do await.** O iPhone só libera áudio dentro de um gesto, e a resposta do servidor chega quando o gesto já passou. Sem isso, o primeiro som de toda sessão é engolido.
+- **Interruptor em `/perfil`**, ligado por padrão. Ligar toca o som na hora — é a forma honesta de mostrar o que está sendo ligado, e de quebra libera o áudio no iPhone. Som sem interruptor em app de estudo é motivo para fechar o app.
+
+A escolha do tema (Automático/Claro/Escuro, em `/perfil`) e a do som vivem no `localStorage`, **por aparelho**, e não vão ao servidor. Sem atributo = o aparelho manda; `data-theme="light"` existe só para vencer um celular escuro. O script no `<head>` é o único script embutido do app, e está lá para a tela não piscar claro antes da hidratação.
 
 **Ao acrescentar lição, mexa em quatro lugares:** o JSON do conteúdo, a figura em `frontend/public/figuras/`, a lista de `frontend/src/lib/site-content.ts` (o teste `site-content.test.ts` reprova se esquecer) e o mapa em `docs/sistemas-operacionais-mapa.md`.
 
@@ -143,5 +150,5 @@ A escolha do tema (Automático/Claro/Escuro, em `/perfil`) vive no `localStorage
 - O Sávio **edita direto no GitHub** (já fez ajustes visuais de PWA). Sempre `git fetch` e confira antes de dar push. Nunca use force push.
 - Observação sobre ajuste manual dele: `BottomNav` continua sem `aria-label`. Sugira, não altere sem pedir. (O padding de área segura duplicado foi corrigido junto com a folga da barra, a pedido dele.)
 - Não testado em celular real nem em máquinas Windows/Linux reais (os comandos vêm da documentação). O Sávio está testando o app.
-- Ainda não existem: login com Google, pagamento, ranking, simuladores interativos, vídeos.
+- Ainda não existem: login com Google, pagamento, ranking, simuladores interativos.
 - Ao terminar de usar tokens pessoais de GitHub que foram colados em chats, revogue-os.
