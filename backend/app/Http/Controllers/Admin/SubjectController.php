@@ -50,6 +50,7 @@ class SubjectController extends Controller
                     'slug' => $lesson->slug,
                     'title' => $lesson->title,
                     'position' => $lesson->position,
+                    'module' => $lesson->module,
                     'summary' => $lesson->summary,
                     'steps_count' => count($lesson->steps ?? []),
                     'questions_count' => $lesson->questions_count,

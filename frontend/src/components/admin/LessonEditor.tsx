@@ -51,7 +51,7 @@ export function LessonEditor({ lesson }: { lesson: AdminLessonDetail }) {
     try {
       const resposta = await adminFetch<{ warnings: ContentIssue[] }>(`/lessons/${lesson.id}`, {
         method: "PUT",
-        body: { title: form.get("title"), summary: form.get("summary"), steps },
+        body: { title: form.get("title"), module: form.get("module"), summary: form.get("summary"), steps },
       });
       setSalvo(true);
       setAvisos(resposta.warnings ?? []);
@@ -89,6 +89,13 @@ export function LessonEditor({ lesson }: { lesson: AdminLessonDetail }) {
           )}
 
           <TextField label="Título" name="title" defaultValue={lesson.title} required error={campos.title?.[0]} />
+          <TextField
+            label="Módulo"
+            name="module"
+            defaultValue={lesson.module ?? ""}
+            hint="O assunto que agrupa a lição na trilha, ex.: Processos. Lições seguidas com o mesmo nome viram um módulo. Deixe em branco para ficar fora."
+            error={campos.module?.[0]}
+          />
           <TextField
             label="Resumo"
             name="summary"

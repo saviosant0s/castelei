@@ -87,6 +87,9 @@ class ContentValidator
             }
 
             $this->text($lesson['title'] ?? null, "{$path}.title", max: 160);
+            // Opcional: matéria curta não precisa de módulo. Quando existe, é
+            // o nome do assunto ("Processos") — o número sai da ordem na tela.
+            $this->optionalText($lesson['module'] ?? null, "{$path}.module", max: 60);
             $this->text($lesson['summary'] ?? null, "{$path}.summary");
             $this->steps($lesson['steps'] ?? null, "{$path}.steps");
             $this->questions($lesson['questions'] ?? null, "{$path}.questions");

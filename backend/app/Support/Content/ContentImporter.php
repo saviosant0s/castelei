@@ -139,6 +139,7 @@ class ContentImporter
         $lesson->fill([
             'title' => $data['title'],
             'position' => $position,
+            'module' => $this->module($data['module'] ?? null),
             'summary' => $data['summary'],
             'steps' => $data['steps'],
         ] + self::legacyFields($data['steps']));
@@ -183,6 +184,20 @@ class ContentImporter
             'slug' => $lesson->slug,
             'count' => $sobrando,
         ];
+    }
+
+    /**
+     * O nome do módulo, ou null.
+     *
+     * Texto em branco vira null de propósito: quem apagou o campo no painel
+     * quis tirar a lição do módulo, e "" no banco faria a tela abrir um grupo
+     * sem nome no meio da trilha.
+     */
+    private function module(mixed $value): ?string
+    {
+        $nome = trim((string) ($value ?? ''));
+
+        return $nome === '' ? null : $nome;
     }
 
     /** @param  list<string>  $slugs  as lições que vieram no arquivo */

@@ -24,6 +24,7 @@ export interface AdminLessonRow {
   slug: string;
   title: string;
   position: number;
+  module: string | null;
   summary: string;
   steps_count: number;
   questions_count: number;
@@ -55,6 +56,8 @@ export interface AdminLessonDetail {
   slug: string;
   title: string;
   position: number;
+  /** o assunto que agrupa a lição na trilha da matéria */
+  module: string | null;
   summary: string;
   steps: LessonStep[];
   subject: { id: number; slug: string; name: string; origin: SubjectOrigin };

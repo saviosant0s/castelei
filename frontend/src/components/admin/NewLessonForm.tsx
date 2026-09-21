@@ -55,6 +55,7 @@ export function NewLessonForm({ subjectId }: { subjectId: number }) {
         body: {
           slug: form.get("slug"),
           title: form.get("title"),
+          module: form.get("module"),
           summary: form.get("summary"),
           steps,
         },
@@ -101,6 +102,7 @@ export function NewLessonForm({ subjectId }: { subjectId: number }) {
           hint="Minúsculas sem acento e hífen. Depois de publicada, não mude: é por ele que a importação reconhece a lição."
           error={campos.slug?.[0]}
         />
+        <TextField label="Módulo" name="module" hint="O assunto que agrupa a lição na trilha, ex.: Processos. Lições seguidas com o mesmo nome viram um módulo. Deixe em branco para ficar fora." error={campos.module?.[0]} />
         <TextField
           label="Resumo"
           name="summary"

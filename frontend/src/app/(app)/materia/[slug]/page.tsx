@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ChevronRight, ClipboardCheck, Crown } from "lucide-react";
-import { LessonSpot } from "@/components/LessonSpot";
-import { Callout, Card, ListRow } from "@/components/ui";
+import { SubjectTrail } from "@/components/trail/SubjectTrail";
+import { Callout, Card } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
 import { pluralize } from "@/lib/format";
 import type { Subject } from "@/lib/types";
@@ -47,26 +47,9 @@ export default async function MateriaPage({ params }: { params: Promise<{ slug: 
           </Callout>
         ))}
 
-      <ol className="space-y-3">
-        {subject.lessons.map((lesson) => (
-          <li key={lesson.id}>
-            <ListRow
-              href={`/licao/${lesson.id}`}
-              leading={lesson.position}
-              title={lesson.title}
-              meta={
-                <>
-                  {pluralize(lesson.questions_available, "questão", "questões")}
-                  {lesson.best_percent !== null && ` · melhor: ${lesson.best_percent}%`}
-                  {/* "ainda não praticada" sai daqui: quem parou no meio da
-                      leitura já começou, e as duas frases se contradizem. */}
-                  <LessonSpot lessonId={lesson.id} practiced={lesson.best_percent !== null} />
-                </>
-              }
-            />
-          </li>
-        ))}
-      </ol>
+      {/* A trilha no lugar da lista: com 30 lições, uma fileira de linhas
+          iguais não mostra onde você está nem quanto falta. */}
+      <SubjectTrail lessons={subject.lessons} />
 
       {limited && (
         <Callout role="bloqueado" icon={Crown} href="/planos">

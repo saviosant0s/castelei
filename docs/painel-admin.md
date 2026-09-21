@@ -106,6 +106,30 @@ por isso o slug não é editável depois de criado: trocá-lo não renomearia na
 criaria outra coisa e deixaria a antiga para trás com as tentativas dos alunos
 presas nela.
 
+### Módulos: como a matéria vira trilha
+
+A tela da matéria agrupa as lições em módulos e desenha cada um como uma
+trilha em ziguezague. Quem decide o agrupamento é quem escreve o conteúdo,
+pelo campo `module` da lição — no arquivo JSON ou no campo "Módulo" do painel.
+
+Três regras, e todas existem para o mesmo fim: o arquivo não pode mentir sobre
+a ordem do estudo.
+
+- **Guarde o nome, nunca o número.** Escreva `"Processos"`, não
+  `"Módulo 2 — Processos"`. O número sai da ordem das lições na hora de
+  mostrar. Se ele morasse no arquivo, reordenar a matéria deixaria um
+  "Módulo 5" antes do 4.
+- **Módulo é trecho, não etiqueta.** Lições **seguidas** com o mesmo nome
+  formam um módulo. O mesmo nome reaparecendo lá na frente abre outro grupo,
+  em vez de puxar a lição de volta para cima — a trilha segue a ordem de
+  estudo, e nenhuma lição pode aparecer fora dela.
+- **O campo é opcional.** Matéria de duas lições não precisa de módulo: ela
+  vira uma trilha só, sem cabeçalho. Mas, se a matéria usa módulos, use em
+  todas — uma lição sem módulo no meio abre um bloco sem título.
+
+As duas últimas são convenção editorial, não regra de banco: o app funciona
+igual. Quem reclama delas é o `scripts/lint-content.mjs`, com aviso.
+
 ### Quando o arquivo encolhe
 
 Nada é apagado por conta própria. Se o arquivo tem menos lições ou menos
