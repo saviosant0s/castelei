@@ -144,6 +144,74 @@ h3 {
   }
 }
 
+/*
+| Cara de app, não de página.
+|
+| Segurar o dedo num texto e ver a seleção azul aparecer é o que mais denuncia
+| um site dentro de um app. A navegação, os botões e os títulos deixam de ser
+| selecionáveis; o conteúdo das lições continua, porque copiar um trecho para
+| o caderno é legítimo.
+*/
+nav,
+button,
+[role="button"],
+.btn,
+h1,
+h2,
+h3,
+.label-mono {
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+/*
+| Abertura do app instalado (ver components/AppLaunch.tsx). Fora do app
+| instalado ela simplesmente não existe.
+*/
+.app-launch {
+  display: none;
+}
+
+@media (display-mode: standalone), (display-mode: fullscreen) {
+  .app-launch {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: grid;
+    place-items: center;
+    /* Nunca captura toque: se algo travar a animação, a tela segue usável. */
+    pointer-events: none;
+    background: var(--color-paper);
+    animation: launch-out 380ms ease-in 520ms both;
+  }
+
+  .app-launch-mark {
+    display: grid;
+    justify-items: center;
+    gap: 0.75rem;
+  }
+
+  @keyframes launch-out {
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .app-launch-mark {
+      animation: launch-mark 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    @keyframes launch-mark {
+      from {
+        transform: scale(0.92);
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
 .confetti-piece {
   opacity: 0;
 }

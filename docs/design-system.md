@@ -91,6 +91,28 @@ mesma especificidade é a ordem no CSS gerado, não a ordem no atributo: um
 `className="bg-sky-soft"` sobre o tom padrão às vezes vence e às vezes não.
 Use `tone`.
 
+## Cara de app, não de site
+
+O alvo é a Play Store: o app tem que parecer app, não página aberta no
+navegador. O que sustenta isso hoje:
+
+- **Abertura contínua** (`components/AppLaunch.tsx`). O Android mostra a tela
+  do manifesto (fundo + ícone) e entrega a página — e é aí que aparece o
+  branco vazio. Esta camada repete a mesma composição e sai animada, então a
+  marca não pisca. É CSS puro: não depende de hidratação e nunca captura
+  toque. Só existe dentro do app instalado (`display-mode: standalone`).
+- **Nada de seleção de texto na moldura.** Segurar o dedo e ver a seleção azul
+  na navegação ou num título entrega o site na hora. Navegação, botões e
+  títulos não são selecionáveis; o texto das lições continua sendo, porque
+  copiar um trecho é legítimo.
+- **Atalhos no manifesto.** Segurar o ícone na tela inicial abre "Continuar
+  estudando" e "Meu progresso", como em app nativo.
+- **Uma tela responde uma pergunta.** Quando uma tela começa a acumular
+  assuntos, ela vira abas de rota — ver `components/ProgressTabs.tsx`. Cada aba
+  é uma rota de verdade, então o botão "voltar" do Android funciona e o link
+  pode ser compartilhado. Cada seção com abas ganha seu próprio `loading.tsx`,
+  senão o cabeçalho pisca a cada toque.
+
 ## Regras que valem para toda tela nova
 
 1. **Ícones em SVG, nunca emoji na interface.** Emoji muda de cara em cada

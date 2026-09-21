@@ -102,4 +102,11 @@ describe("EmptyState", () => {
 
     expect(screen.getByRole("link", { name: "Fazer minha primeira lição" })).toBeTruthy();
   });
+
+  it("desce para h2 quando a tela já tem um título acima", () => {
+    render(<EmptyState level="h2" title="Nenhuma conquista ainda" description="Pratique para começar." />);
+
+    // Dentro das abas do progresso o h1 é "Progresso": dois h1 quebram a leitura por títulos.
+    expect(screen.getByRole("heading", { level: 2, name: "Nenhuma conquista ainda" })).toBeTruthy();
+  });
 });

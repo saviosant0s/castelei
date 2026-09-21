@@ -4,6 +4,7 @@ import "@fontsource/dm-sans/latin-400.css";
 import "@fontsource/dm-sans/latin-700.css";
 import "@fontsource/jetbrains-mono/latin-500.css";
 import "./globals.css";
+import { AppLaunch } from "@/components/AppLaunch";
 import { ServiceWorkerRegister } from "@/components/ServiceWorkerRegister";
 
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="pt-BR">
       <body>
         {children}
+        <AppLaunch />
         <ServiceWorkerRegister />
       </body>
     </html>

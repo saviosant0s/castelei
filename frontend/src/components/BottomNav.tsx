@@ -16,17 +16,26 @@ export function BottomNav() {
   return (
     <nav
       className="fixed inset-x-0 bottom-0 z-20 border-t border-ink/10 bg-paper"
-      style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
+      style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
-      <ul className="mx-auto flex max-w-md items-stretch justify-around px-2 pb-[env(safe-area-inset-bottom)]">
+      {/*
+        A folga de cima é o que separa a barra do conteúdo: sem ela os ícones
+        encostam na linha divisória e a barra parece colada na tela.
+        O respiro de baixo fica só no <nav> — duplicar aqui empurrava a barra
+        inteira no iPhone.
+      */}
+      <ul className="mx-auto flex max-w-md items-stretch justify-around px-2 pt-2.5 pb-1">
         {items.map(({ href, label, icon: Icon }) => {
-          const active = pathname === href || (href === "/inicio" && (pathname.startsWith("/materia") || pathname.startsWith("/licao")));
+          const active =
+            pathname === href ||
+            pathname.startsWith(`${href}/`) ||
+            (href === "/inicio" && (pathname.startsWith("/materia") || pathname.startsWith("/licao")));
           return (
             <li key={href} className="flex-1">
               <Link
                 href={href}
                 aria-current={active ? "page" : undefined}
-                className="flex min-h-16 flex-col items-center justify-center gap-1 text-sm"
+                className="flex min-h-16 select-none flex-col items-center justify-start gap-1.5 text-sm"
               >
                 <span className={`grid h-8 w-14 place-items-center rounded-full transition ${active ? "bg-ink text-paper" : "text-ink/70"}`}>
                   <Icon className="size-5" aria-hidden="true" />

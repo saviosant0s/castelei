@@ -17,28 +17,40 @@ const PAD_X = 10;
 const PAD_TOP = 14;
 const PAD_BOTTOM = 18;
 
-export function EvolutionChart({ points }: { points: EvolutionPoint[] }) {
+/**
+ * `showHeading` fica de fora quando a própria tela já se chama "Evolução":
+ * repetir o título é o tipo de acúmulo que deixa a tela embolada.
+ */
+export function EvolutionChart({
+  points,
+  showHeading = true,
+}: {
+  points: EvolutionPoint[];
+  showHeading?: boolean;
+}) {
   // Uma tentativa sozinha não desenha evolução nenhuma.
   if (points.length < 2) return null;
 
   return (
-    <section aria-labelledby="evolucao" className="space-y-4">
-      <div>
-        <h2 id="evolucao" className="text-2xl">Sua evolução</h2>
-        <p className="mt-1 text-sm text-ink/60">
-          Suas últimas {points.length} práticas, da mais antiga para a mais recente.
-        </p>
-      </div>
+    <section aria-labelledby={showHeading ? "evolucao" : undefined} className="space-y-4">
+      {showHeading && (
+        <div>
+          <h2 id="evolucao" className="text-2xl">Sua evolução</h2>
+          <p className="mt-1 text-sm text-content-subtle">
+            Suas últimas {points.length} práticas, da mais antiga para a mais recente.
+          </p>
+        </div>
+      )}
 
       <Chart points={points} measure="accuracy" />
       <Chart points={points} measure="time" />
 
-      <details className="rounded-2xl bg-white px-5 py-4 shadow-lift">
+      <details className="rounded-card bg-surface-raised px-5 py-4 shadow-lift">
         <summary className="min-h-11 cursor-pointer text-base font-bold">Ver os números</summary>
         <div className="mt-3 overflow-x-auto">
           <table className="w-full text-left text-sm">
             <thead>
-              <tr className="text-ink/60">
+              <tr className="text-content-subtle">
                 <th scope="col" className="py-1.5 pr-3 font-medium">Prática</th>
                 <th scope="col" className="py-1.5 pr-3 font-medium">Acerto</th>
                 <th scope="col" className="py-1.5 font-medium">Tempo médio</th>
@@ -98,9 +110,9 @@ function Chart({ points, measure }: { points: EvolutionPoint[]; measure: Measure
   const same = last === first;
 
   return (
-    <figure className="rounded-2xl bg-white px-5 py-4 shadow-lift">
+    <figure className="rounded-card bg-surface-raised px-5 py-4 shadow-lift">
       <figcaption className="flex items-baseline justify-between gap-3">
-        <span className="text-sm text-ink/60">{label}</span>
+        <span className="text-sm text-content-subtle">{label}</span>
         <span className="font-mono text-2xl font-medium">{reading}</span>
       </figcaption>
 
@@ -165,12 +177,12 @@ function Chart({ points, measure }: { points: EvolutionPoint[]; measure: Measure
         ))}
       </svg>
 
-      <p className="mt-1 truncate text-sm text-ink/60" aria-live="polite">
+      <p className="mt-1 truncate text-sm text-content-subtle" aria-live="polite">
         {point.title}
       </p>
 
       {!same && (
-        <p className={`mt-1 text-sm font-bold ${better ? "text-sage" : "text-ink/60"}`}>
+        <p className={`mt-1 text-sm font-bold ${better ? "text-sage" : "text-content-subtle"}`}>
           {isAccuracy
             ? better
               ? "Seu acerto subiu desde a primeira destas práticas."

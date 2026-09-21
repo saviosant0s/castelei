@@ -98,11 +98,18 @@ export default async function Inicio() {
                   href={`/materia/${subject.slug}`}
                   tone={subjectTones[i % 2]}
                   radius="panel"
-                  className="flex h-full min-h-44 flex-col justify-between"
+                  className="flex h-full min-h-44 min-w-0 flex-col justify-between"
                 >
                   <Icon className="size-8" aria-hidden="true" />
-                  <div>
-                    <p className="font-display text-2xl font-bold leading-tight">{subject.name}</p>
+                  <div className="min-w-0">
+                    {/*
+                      "Operacionais" sozinha não cabe em meia tela de celular a 24px:
+                      o nome vazava do cartão. O tamanho acompanha a largura da tela
+                      e `break-words` é a rede de segurança para nomes ainda maiores.
+                    */}
+                    <p className="font-display text-[clamp(1rem,4.2vw,1.375rem)] font-bold leading-tight break-words">
+                      {subject.name}
+                    </p>
                     <p className="mt-1 text-sm text-content-secondary">
                       {pluralize(subject.lessons.length, "lição", "lições")}
                     </p>
