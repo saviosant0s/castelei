@@ -4378,6 +4378,1699 @@
           "pitfall": "A vantagem é não haver contexto anterior para recuperar. O custo é criar uma thread a cada mensagem."
         }
       ]
+    },
+    {
+      "slug": "condicao-de-corrida",
+      "title": "Condição de corrida: quando dois caminhos brigam pelo mesmo dado",
+      "summary": "Dois caminhos que mexem no mesmo dado ao mesmo tempo podem se atrapalhar. O resultado passa a depender de quem chegou primeiro.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Dois cartões, uma conta só",
+          "body": [
+            "Você e sua irmã têm cartão da mesma conta. Nela há 100 reais.",
+            "No mesmo instante, cada um tira 100 em caixas diferentes.",
+            "Os dois caixas consultam o saldo e veem 100. Os dois liberam o dinheiro.",
+            "Saíram 200 reais de uma conta que tinha 100."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Dentro do computador é igual",
+          "body": [
+            "Dois caminhos de execução podem dividir a mesma memória.",
+            "Quando os dois mexem no mesmo valor, acontece a mesma confusão dos caixas.",
+            "E ninguém avisa que deu errado. O número simplesmente fica errado."
+          ],
+          "terms": [
+            {
+              "word": "Processo",
+              "meaning": "um programa em execução, com a memória que ele usa e o ponto exato em que parou."
+            },
+            {
+              "word": "Thread",
+              "meaning": "cada caminho de execução dentro de um mesmo processo. Em português se diz também linha de execução."
+            },
+            {
+              "word": "Processador",
+              "meaning": "a peça do computador que executa as instruções dos programas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Somar 1 não é um passo só",
+          "body": [
+            "Parece que somar 1 a um valor é uma coisa só. Não é.",
+            "O processador faz isso em três passos separados.",
+            "E ele pode ser interrompido entre um passo e outro."
+          ],
+          "code": {
+            "label": "O que uma linha esconde",
+            "text": "contador = contador + 1\n\n// para o processador, são três passos:\n//   1. ler o valor de contador\n//   2. somar 1 ao que leu\n//   3. gravar o resultado de volta"
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A soma que some",
+          "body": [
+            "Veja o que acontece quando a troca cai bem no meio dos três passos."
+          ],
+          "example": {
+            "label": "Dois caminhos somando 1 a um contador que vale 10",
+            "lines": [
+              "A lê 10 e é interrompido antes de gravar",
+              "B lê 10, soma e grava 11",
+              "A volta, soma no valor que já tinha lido e grava 11",
+              "duas somas foram feitas, e o contador só andou uma"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O nome disso",
+          "body": [
+            "Esse defeito tem nome, e é um dos mais difíceis de achar.",
+            "Ele não aparece toda vez. Depende do instante exato da troca.",
+            "O programa pode rodar mil vezes certo e errar na milésima primeira."
+          ],
+          "terms": [
+            {
+              "word": "Condição de corrida",
+              "meaning": "quando o resultado depende de quem chegou primeiro. O programa acerta hoje e erra amanhã."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O trecho perigoso também tem nome",
+          "body": [
+            "Nem todo o programa é perigoso. Só o pedaço que mexe no dado dividido.",
+            "A regra é simples de dizer e difícil de cumprir. Um de cada vez lá dentro."
+          ],
+          "terms": [
+            {
+              "word": "Região crítica",
+              "meaning": "o trecho do programa que mexe num dado dividido com outros. É o trecho que não pode ter dois lá dentro."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/so/so-regiao-critica.svg",
+            "alt": "Uma sala chamada trecho perigoso com tranca na porta, um caminho de execução dentro e dois esperando em fila do lado de fora.",
+            "caption": "O resto do programa corre livre. Só o trecho perigoso tem tranca."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que uma boa solução precisa ter",
+          "body": [
+            "Qualquer jeito de resolver isso precisa cumprir quatro exigências."
+          ],
+          "bullets": [
+            "Nunca dois lá dentro ao mesmo tempo.",
+            "Não pode supor nada sobre a velocidade de cada caminho.",
+            "Quem está fora do trecho perigoso não pode travar os outros.",
+            "Ninguém pode ficar esperando para sempre."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Onde isso aparece de verdade",
+          "body": [
+            "Não é assunto só de prova. Isso quebra sistema de verdade todo dia."
+          ],
+          "bullets": [
+            "Estoque de loja: dois pedidos levam a última peça.",
+            "Venda de ingresso: a mesma poltrona sai duas vezes.",
+            "Contador de curtidas: o número anda menos do que os cliques.",
+            "Dois programas gravando no mesmo arquivo deixam o conteúdo picado."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Aqui a banca cobra os nomes e as quatro condições. A lista de quatro é a favorita."
+          ],
+          "bullets": [
+            "\"Situação em que o resultado depende da ordem de execução\" → condição de corrida (race condition).",
+            "\"Trecho de código que acessa recurso compartilhado\" → região crítica (seção crítica).",
+            "As quatro condições: exclusão mútua; nenhuma suposição sobre velocidade ou número de CPUs; nenhum processo fora da região crítica pode bloquear outro; nenhum processo espera indefinidamente.",
+            "Operação atômica é a que não pode ser interrompida no meio.",
+            "\"contador++\" NÃO é atômico: são leitura, incremento e escrita.",
+            "Exclusão mútua é a garantia de um por vez na região crítica."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Quatro ideias erradas derrubam gente que entendeu a teoria."
+          ],
+          "bullets": [
+            "O erro não aparece sempre. Testar dez vezes e dar certo não prova nada.",
+            "Uma linha curta de código não é segura por ser curta.",
+            "O problema não é dividir memória. É dividir sem controlar a ordem.",
+            "Região crítica não é o dado. É o trecho de código que mexe nele."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Dois caminhos, um dado, nenhuma ordem garantida. É a receita do problema."
+          ],
+          "bullets": [
+            "Somar 1 são três passos, e a troca pode cair no meio.",
+            "Quando o resultado depende da ordem, há condição de corrida.",
+            "O trecho que mexe no dado dividido é a região crítica.",
+            "A regra é um por vez lá dentro.",
+            "Quatro exigências: um por vez, nada suposto sobre velocidade, ninguém de fora travando e ninguém esperando para sempre."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Condição de corrida",
+          "statement": "Dois processos incrementam a mesma variável compartilhada, inicialmente com valor 5, sem nenhum controle de acesso. Qual é o menor valor final possível?",
+          "options": [
+            "6",
+            "5",
+            "7",
+            "4",
+            "sempre 7"
+          ],
+          "correct_index": 0,
+          "explanation": "Se os dois leem 5 antes de qualquer gravação, os dois gravam 6. Uma das somas se perde.",
+          "pitfall": "O valor 7 também é possível. A questão pede o menor, e é justamente aí que a banca pega."
+        },
+        {
+          "topic": "Região crítica",
+          "statement": "Região crítica é definida como:",
+          "options": [
+            "o trecho de código que acessa um recurso compartilhado",
+            "a área de memória compartilhada entre processos",
+            "o processo de maior prioridade do sistema",
+            "o intervalo de tempo em que o processador fica ocioso",
+            "a parte do núcleo que trata interrupções"
+          ],
+          "correct_index": 0,
+          "explanation": "É um pedaço de programa, não um pedaço de memória. O dado compartilhado é o que ela acessa.",
+          "pitfall": "Confundir a região crítica com o dado compartilhado é o erro mais cobrado nesse tópico."
+        },
+        {
+          "topic": "Atomicidade",
+          "statement": "Uma operação é chamada de atômica quando:",
+          "options": [
+            "é executada por inteiro, sem possibilidade de interrupção no meio",
+            "executa em menos de um ciclo de relógio",
+            "é executada apenas em modo núcleo",
+            "não utiliza memória compartilhada",
+            "é executada por uma única thread do programa"
+          ],
+          "correct_index": 0,
+          "explanation": "Ou ela acontece inteira, ou não acontece. Não existe estado pela metade visível para os outros.",
+          "pitfall": "Atômico não quer dizer rápido. Quer dizer indivisível."
+        },
+        {
+          "topic": "Quatro condições",
+          "statement": "Entre as condições para uma boa solução de exclusão mútua, NÃO está:",
+          "options": [
+            "todos os processos devem ter a mesma prioridade",
+            "nunca dois processos simultaneamente dentro da região crítica",
+            "nada pode ser suposto sobre velocidades ou número de processadores",
+            "nenhum processo fora da região crítica pode bloquear outro",
+            "nenhum processo deve esperar indefinidamente para entrar na região crítica"
+          ],
+          "correct_index": 0,
+          "explanation": "Prioridade não entra nas quatro condições clássicas. A solução precisa funcionar com qualquer prioridade.",
+          "pitfall": "A quarta condição, que às vezes some das alternativas, é que ninguém pode esperar indefinidamente."
+        },
+        {
+          "topic": "Incremento",
+          "statement": "Por que a instrução de alto nível \"contador = contador + 1\" não é atômica?",
+          "options": [
+            "porque o processador a executa como ler, somar e gravar, podendo ser interrompido entre os passos",
+            "porque ela sempre exige uma chamada de sistema",
+            "porque o compilador a transforma em uma chamada de biblioteca",
+            "porque variáveis compartilhadas ficam em disco",
+            "porque ela depende do escalonador para ser executada"
+          ],
+          "correct_index": 0,
+          "explanation": "São três acessos separados. Uma preempção entre a leitura e a gravação já basta para perder a soma.",
+          "pitfall": "Ser uma linha só no código não tem relação com ser um passo só para o processador."
+        },
+        {
+          "topic": "Reprodutibilidade",
+          "statement": "Qual característica torna as condições de corrida especialmente difíceis de depurar?",
+          "options": [
+            "elas se manifestam de forma intermitente, dependendo do instante das trocas de contexto",
+            "elas sempre travam o sistema por completo",
+            "elas só ocorrem em sistemas com um único núcleo",
+            "elas geram mensagens de erro detalhadas no console",
+            "elas ocorrem apenas na primeira execução do programa"
+          ],
+          "correct_index": 0,
+          "explanation": "O defeito depende do momento exato da preempção. Em outra execução, a troca cai em outro ponto e nada aparece.",
+          "pitfall": "Um teste que passa não prova ausência de corrida. Prova apenas que a troca não caiu no ponto ruim."
+        },
+        {
+          "topic": "Exclusão mútua",
+          "statement": "Exclusão mútua significa garantir que:",
+          "options": [
+            "apenas um processo por vez execute a região crítica",
+            "processos nunca compartilhem memória",
+            "todo processo tenha acesso igual ao processador",
+            "processos bloqueados sejam sempre atendidos primeiro",
+            "cada processo execute em um núcleo diferente"
+          ],
+          "correct_index": 0,
+          "explanation": "É exatamente a primeira das quatro condições. Um lá dentro, os outros esperam.",
+          "pitfall": "Exclusão mútua não impede o compartilhamento. Ela organiza o acesso ao que é compartilhado."
+        },
+        {
+          "topic": "Aplicação",
+          "statement": "Um sistema de venda de ingressos vendeu duas vezes a mesma poltrona. Dois processos verificaram a disponibilidade antes de qualquer um deles registrar a venda. O problema é:",
+          "options": [
+            "uma condição de corrida na verificação e atualização do assento",
+            "falta de memória no servidor",
+            "inanição do processo de venda",
+            "um impasse entre os dois processos",
+            "escalonamento não preemptivo"
+          ],
+          "correct_index": 0,
+          "explanation": "Verificar e depois atualizar são dois passos. Entre eles, o outro processo passou e viu a poltrona ainda livre.",
+          "pitfall": "Impasse é quando os dois travam esperando um ao outro. Aqui ninguém travou: os dois seguiram e deu errado."
+        }
+      ]
+    },
+    {
+      "slug": "exclusao-mutua",
+      "title": "Exclusão mútua: só um por vez no trecho perigoso",
+      "summary": "Garantir um de cada vez parece simples e não é. Cada tentativa ingênua tem um furo, até chegar às soluções que funcionam.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O banheiro do restaurante",
+          "body": [
+            "Um restaurante tem um banheiro só, com uma porta.",
+            "Se não houver tranca, alguém entra por cima do outro.",
+            "A tranca resolve, desde que todo mundo lembre de trancar e destrancar.",
+            "E desde que ninguém tranque por dentro e vá embora pela janela."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O problema a resolver",
+          "body": [
+            "Dois caminhos de execução dividem a mesma memória.",
+            "O trecho que mexe no dado dividido não pode ter dois lá dentro.",
+            "A pergunta é como garantir isso sem quebrar o resto do programa."
+          ],
+          "terms": [
+            {
+              "word": "Processo",
+              "meaning": "um programa em execução, com a memória que ele usa e o ponto exato em que parou."
+            },
+            {
+              "word": "Processador",
+              "meaning": "a peça do computador que executa as instruções dos programas."
+            },
+            {
+              "word": "Thread",
+              "meaning": "cada caminho de execução dentro de um mesmo processo. Em português se diz também linha de execução."
+            },
+            {
+              "word": "Região crítica",
+              "meaning": "o trecho do programa que mexe num dado dividido com outros. É o trecho que não pode ter dois lá dentro."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Tentativa 1: desligar as interrupções",
+          "body": [
+            "O sistema só troca de caminho porque uma interrupção avisa que é hora.",
+            "Se o programa desligar as interrupções, ninguém o interrompe.",
+            "Funciona, e é péssimo."
+          ],
+          "terms": [
+            {
+              "word": "Interrupção",
+              "meaning": "um aviso que faz o processador parar o que está fazendo e atender outra coisa."
+            },
+            {
+              "word": "Recurso",
+              "meaning": "qualquer coisa que os programas disputam: o processador, a memória, um arquivo ou uma peça do computador."
+            }
+          ],
+          "bullets": [
+            "Um programa comum que desligue isso pode travar a máquina inteira.",
+            "Com mais de um processador, desligar em um não impede o outro.",
+            "Só o próprio sistema pode usar esse recurso, e por pouquíssimo tempo."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Tentativa 2: uma variável de tranca",
+          "body": [
+            "A ideia é guardar um valor que diz se a porta está livre.",
+            "Cada caminho olha o valor, e entra se estiver livre.",
+            "O furo é que olhar e marcar são dois passos separados."
+          ],
+          "code": {
+            "label": "Por que não funciona",
+            "text": "while (tranca == 1)   // A vê 0 e sai do laço\n    ;\ntranca = 1;           // ...mas B também viu 0 antes daqui\n// trecho perigoso — os dois entraram\ntranca = 0;"
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Tentativa 3: revezar na marra",
+          "body": [
+            "Outra ideia é guardar de quem é a vez, e obrigar o revezamento.",
+            "Isso garante um por vez. Mas cria um problema novo.",
+            "Se um é rápido e o outro é lento, o rápido fica preso esperando a vez."
+          ],
+          "bullets": [
+            "Quebra a terceira exigência: quem está fora do trecho perigoso trava o outro.",
+            "Serve só para dois, e sempre na mesma ordem de revezamento."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O custo de ficar tentando",
+          "body": [
+            "Nessas tentativas, quem não consegue entrar fica girando num laço.",
+            "Ele usa o processador inteiro só para perguntar de novo.",
+            "É como ficar batendo na porta do banheiro sem parar."
+          ],
+          "terms": [
+            {
+              "word": "Espera ocupada",
+              "meaning": "ficar num laço perguntando se já pode entrar, gastando processador sem fazer nada útil."
+            },
+            {
+              "word": "Inversão de prioridade",
+              "meaning": "quando quem é mais importante fica girando à espera de quem é menos importante, e trava os dois."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A solução de Peterson",
+          "body": [
+            "Ela junta as duas ideias anteriores e conserta as duas.",
+            "Cada um avisa que quer entrar e, por educação, cede a vez ao outro.",
+            "Quem cedeu por último é quem espera."
+          ],
+          "code": {
+            "label": "Antes de entrar no trecho perigoso",
+            "text": "quero[eu] = true;        // avisa que quer entrar\nvez = outro;             // cede a vez, por educação\nwhile (quero[outro] && vez == outro)\n    ;                    // espera aqui\n\n// ... trecho perigoso ...\n\nquero[eu] = false;       // libera"
+          },
+          "bullets": [
+            "Cumpre as quatro exigências, sem ajuda nenhuma do sistema.",
+            "O preço continua sendo a espera ocupada."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A ajuda que vem do processador",
+          "body": [
+            "O furo da tentativa 2 era olhar e marcar em passos separados.",
+            "Os processadores têm uma instrução que faz os dois de uma vez.",
+            "Ninguém consegue se meter no meio dela."
+          ],
+          "code": {
+            "label": "Uma instrução indivisível",
+            "text": "entrar:\n    TSL registrador, tranca  ; lê a tranca e já marca ocupado\n    CMP registrador, 0       ; ela estava livre?\n    JNE entrar               ; não estava: tenta de novo\n    RET                      ; estava: pode entrar\n\nsair:\n    MOV tranca, 0            ; devolve livre\n    RET"
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Dormir em vez de girar",
+          "body": [
+            "Girar num laço desperdiça processador. Melhor é dormir e ser acordado.",
+            "Dois pedidos resolvem: um para dormir, outro para acordar alguém.",
+            "Só que aparece um furo novo, e ele é famoso."
+          ],
+          "terms": [
+            {
+              "word": "Aviso perdido",
+              "meaning": "quando o pedido de acordar chega antes de o outro conseguir dormir. O aviso some, e ele dorme para sempre."
+            }
+          ],
+          "example": {
+            "label": "Como o aviso se perde",
+            "lines": [
+              "A confere e vê que precisa dormir",
+              "A é interrompido antes de dormir de fato",
+              "B manda acordar A, que ainda não dormiu",
+              "A volta, dorme, e não há mais ninguém para acordá-lo"
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca cobra por que cada tentativa falha. Guarde o furo de cada uma."
+          ],
+          "bullets": [
+            "Desabilitar interrupções: inviável em modo usuário e inútil em multiprocessador.",
+            "Variável de lock simples: o teste e a atribuição não são atômicos.",
+            "Alternância estrita (strict alternation): viola a condição de que um processo fora da região crítica não pode bloquear outro.",
+            "Solução de Peterson: por software, satisfaz as quatro condições, com espera ocupada.",
+            "TSL (Test and Set Lock) e XCHG: instruções atômicas do hardware que leem e escrevem em um único passo.",
+            "Espera ocupada (busy waiting) e spin lock são a mesma ideia: laço consumindo CPU.",
+            "Problema da inversão de prioridade: processo de alta prioridade gira esperando um de baixa que nunca é escalonado.",
+            "Sleep e wakeup evitam a espera ocupada, mas sofrem do problema do sinal de acordar perdido."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Quatro trocas caem sempre nessa parte."
+          ],
+          "bullets": [
+            "A solução de Peterson não é do sistema. Ela é escrita no próprio programa.",
+            "A instrução do processador não elimina a espera ocupada. Ela só torna a marcação segura.",
+            "Desligar interrupções não serve em máquina com vários processadores.",
+            "O revezamento obrigatório garante um por vez, e mesmo assim é solução ruim."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Cada tentativa ingênua tem um furo. Saber o furo vale mais que decorar o nome."
+          ],
+          "bullets": [
+            "Desligar interrupções: perigoso e inútil com vários processadores.",
+            "Variável de tranca sozinha: olhar e marcar são dois passos.",
+            "Revezar na marra: quem está de fora acaba travando o outro.",
+            "Peterson: funciona só com código comum, e a espera continua ocupada.",
+            "Instrução indivisível do processador: resolve a marcação, e a espera continua ocupada.",
+            "Dormir e acordar economiza processador, mas o aviso pode se perder."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Desabilitar interrupções",
+          "statement": "Por que desabilitar interrupções é considerada uma solução inadequada de exclusão mútua para processos de usuário?",
+          "options": [
+            "porque daria a um programa comum o poder de travar a máquina, e não funciona com vários processadores",
+            "porque exige hardware específico não disponível em PCs",
+            "porque torna a região crítica mais lenta",
+            "porque impede o uso de memória compartilhada",
+            "porque só funciona em sistemas não preemptivos"
+          ],
+          "correct_index": 0,
+          "explanation": "Um programa que esquecesse de religar deixaria a máquina morta. E desligar em um processador não impede outro de executar a mesma região.",
+          "pitfall": "O próprio sistema usa essa técnica por dentro, por pouquíssimas instruções. O proibido é entregá-la a um programa comum."
+        },
+        {
+          "topic": "Lock simples",
+          "statement": "A solução que usa uma variável de trava compartilhada, testada em um laço e depois marcada como ocupada, falha porque:",
+          "options": [
+            "o teste e a atribuição não formam uma operação atômica",
+            "a variável não cabe em um registrador",
+            "o escalonador ignora variáveis compartilhadas",
+            "o laço consome muita memória",
+            "a variável precisa ser mantida no núcleo"
+          ],
+          "correct_index": 0,
+          "explanation": "Entre ver que está livre e marcar como ocupada, o outro processo pode ser escalonado e ver a trava ainda livre.",
+          "pitfall": "É o mesmo defeito do incremento de contador, só que agora na própria trava."
+        },
+        {
+          "topic": "Alternância estrita",
+          "statement": "A alternância estrita (strict alternation) garante exclusão mútua, mas viola qual das quatro condições?",
+          "options": [
+            "um processo fora de sua região crítica não pode bloquear outro processo",
+            "nunca dois processos dentro da região crítica ao mesmo tempo",
+            "nada pode ser suposto sobre a velocidade dos processos",
+            "nenhum processo deve esperar indefinidamente para entrar",
+            "a solução deve funcionar com qualquer número de processadores"
+          ],
+          "correct_index": 0,
+          "explanation": "Se o processo rápido termina e quer entrar de novo, ele precisa esperar o lento entrar e sair antes.",
+          "pitfall": "A exclusão mútua ela garante. O erro está em outra condição, e é aí que a banca pega."
+        },
+        {
+          "topic": "Peterson",
+          "statement": "A solução de Peterson é classificada como uma solução:",
+          "options": [
+            "de software, que satisfaz as quatro condições mas usa espera ocupada",
+            "de hardware, baseada em instrução atômica",
+            "do núcleo, baseada em chamadas de sistema",
+            "que elimina completamente a espera ocupada",
+            "aplicável somente a sistemas monoprocessados"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela usa apenas variáveis comuns e é escrita no próprio programa. O custo é o laço de espera.",
+          "pitfall": "Peterson resolve a correção, não o desperdício. Quem espera continua queimando processador."
+        },
+        {
+          "topic": "TSL",
+          "statement": "A instrução TSL (Test and Set Lock) resolve o problema da variável de trava porque:",
+          "options": [
+            "lê o valor e grava o novo em uma única operação indivisível",
+            "desabilita as interrupções enquanto executa a região crítica",
+            "coloca o processo em estado bloqueado automaticamente",
+            "garante que o processo não será preemptado",
+            "elimina a necessidade de uma variável compartilhada"
+          ],
+          "correct_index": 0,
+          "explanation": "Nenhum outro processador consegue acessar a memória no meio dela. O teste e a marcação viram um passo só.",
+          "pitfall": "Ela torna a trava correta, mas quem não entra continua em espera ocupada."
+        },
+        {
+          "topic": "Espera ocupada",
+          "statement": "O principal problema da espera ocupada (busy waiting) é:",
+          "options": [
+            "desperdiçar tempo de processador em um laço improdutivo",
+            "permitir que dois processos entrem na região crítica",
+            "impedir o uso de instruções atômicas",
+            "exigir memória adicional proporcional ao número de processos",
+            "tornar o sistema não preemptivo"
+          ],
+          "correct_index": 0,
+          "explanation": "O processo está pronto e ocupando a vez, sem produzir nada. Outro processo poderia usar esse tempo.",
+          "pitfall": "Em espera curta, o spin lock é até vantajoso. O desperdício pesa quando a espera é longa."
+        },
+        {
+          "topic": "Inversão de prioridade",
+          "statement": "Um processo de alta prioridade entra em espera ocupada aguardando a região crítica, ocupada por um processo de baixa prioridade que nunca é escalonado. Esse problema é conhecido como:",
+          "options": [
+            "inversão de prioridade",
+            "inanição do escalonador",
+            "impasse circular",
+            "sinal de acordar perdido",
+            "preempção cooperativa"
+          ],
+          "correct_index": 0,
+          "explanation": "O de baixa prioridade não roda porque o de alta ocupa o processador. E o de alta não sai porque depende do de baixa.",
+          "pitfall": "Não é impasse. Nenhum dos dois está bloqueado: um está girando e o outro está pronto."
+        },
+        {
+          "topic": "Sleep e wakeup",
+          "statement": "O problema do sinal de acordar perdido, nas primitivas sleep e wakeup, ocorre quando:",
+          "options": [
+            "o wakeup é enviado a um processo que ainda não conseguiu executar o sleep",
+            "dois processos executam sleep ao mesmo tempo",
+            "o processo acordado tem prioridade menor que o que o acordou",
+            "o núcleo esgota a tabela de processos",
+            "a região crítica é maior que o quantum"
+          ],
+          "correct_index": 0,
+          "explanation": "O aviso não fica guardado em lugar nenhum. Chegou antes da hora, ele se perde, e o processo dorme para sempre.",
+          "pitfall": "É esse furo que motiva o semáforo, que guarda o aviso em um contador."
+        }
+      ]
+    },
+    {
+      "slug": "semaforos-e-mutexes",
+      "title": "Semáforos e mutexes: dormir em vez de girar em falso",
+      "summary": "O semáforo é um contador que não deixa avisos se perderem. O mutex é a versão simples dele, para trancar um trecho por vez.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O painel de vagas do estacionamento",
+          "body": [
+            "Na entrada do estacionamento há um painel: RESTAM 12 VAGAS.",
+            "Cada carro que entra diminui o número. Cada um que sai aumenta.",
+            "Quando chega a zero, a cancela não abre e você espera na fila.",
+            "Ninguém fica dando voltas no quarteirão. Você espera parado, e a vaga chega."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que ficou faltando resolver",
+          "body": [
+            "Existe um jeito de economizar processador: mandar o caminho dormir.",
+            "O problema é que o aviso de acordar pode chegar cedo demais.",
+            "Se ele chegar antes de o outro dormir, o aviso se perde no ar."
+          ],
+          "terms": [
+            {
+              "word": "Processo",
+              "meaning": "um programa em execução, com a memória que ele usa e o ponto exato em que parou."
+            },
+            {
+              "word": "Processador",
+              "meaning": "a peça do computador que executa as instruções dos programas."
+            },
+            {
+              "word": "Thread",
+              "meaning": "cada caminho de execução dentro de um mesmo processo. Em português se diz também linha de execução."
+            },
+            {
+              "word": "Região crítica",
+              "meaning": "o trecho do programa que mexe num dado dividido com outros. Dois lá dentro ao mesmo tempo estragam o dado."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Um contador que guarda os avisos",
+          "body": [
+            "A saída é guardar o aviso em vez de gritar no ar.",
+            "Em vez de só acordar alguém, soma-se 1 num contador.",
+            "Se ninguém estiver dormindo, o aviso fica guardado ali para depois."
+          ],
+          "terms": [
+            {
+              "word": "Semáforo",
+              "meaning": "um contador com duas operações, usado para controlar quem passa. Ele nunca fica negativo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As duas operações",
+          "body": [
+            "O semáforo só aceita duas ordens, e as duas são indivisíveis.",
+            "Uma tenta passar. A outra avisa que liberou."
+          ],
+          "code": {
+            "label": "O que cada uma faz",
+            "text": "down(s)   // também chamada de P ou wait\n  se s > 0:  s = s - 1  e passa\n  senão:     dorme aqui\n\nup(s)     // também chamada de V ou signal\n  s = s + 1\n  se alguém dormia:  acorda um deles"
+          },
+          "bullets": [
+            "Indivisível quer dizer que ninguém entra no meio da operação.",
+            "É o sistema que garante isso, e não o programa."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Por que o aviso não se perde mais",
+          "body": [
+            "O aviso agora vira um número guardado.",
+            "Se o up chega antes de alguém dormir, o contador sobe.",
+            "Quando o outro chegar e fizer down, ele vê o valor e passa direto."
+          ],
+          "example": {
+            "label": "A cena que dava errado antes",
+            "lines": [
+              "B faz up e ninguém está dormindo",
+              "o contador vai de 0 para 1",
+              "A chega depois e faz down",
+              "A vê 1, passa direto e não dorme"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O caso mais comum: contar até um",
+          "body": [
+            "Muita vez não é preciso contar nada. Basta trancar e destrancar.",
+            "Para isso existe a versão simplificada, com dois valores só.",
+            "Ela é mais rápida e mais fácil de usar certo."
+          ],
+          "terms": [
+            {
+              "word": "Mutex",
+              "meaning": "uma tranca de dois estados, livre ou ocupada. O nome vem de exclusão mútua, em inglês."
+            }
+          ],
+          "table": {
+            "label": "Semáforo e mutex",
+            "headers": [
+              "",
+              "Semáforo",
+              "Mutex"
+            ],
+            "rows": [
+              [
+                "Valores",
+                "de zero para cima",
+                "livre ou ocupado"
+              ],
+              [
+                "Serve para",
+                "contar quantos cabem",
+                "deixar um por vez"
+              ],
+              [
+                "Quem libera",
+                "qualquer um",
+                "quem trancou"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Como isso aparece no código",
+          "body": [
+            "Todo sistema e toda linguagem oferece isso pronto.",
+            "Os nomes mudam, e a ideia é sempre a mesma."
+          ],
+          "terms": [
+            {
+              "word": "Biblioteca",
+              "meaning": "um pacote de código pronto que um programa usa sem precisar escrever tudo de novo."
+            }
+          ],
+          "table": {
+            "label": "Onde encontrar a tranca pronta",
+            "headers": [
+              "Onde",
+              "Como se chama"
+            ],
+            "rows": [
+              [
+                "Linux e outros sistemas Unix",
+                "pthread_mutex_lock e pthread_mutex_unlock"
+              ],
+              [
+                "Windows",
+                "EnterCriticalSection e LeaveCriticalSection"
+              ],
+              [
+                "Java",
+                "synchronized ou ReentrantLock"
+              ],
+              [
+                "Python",
+                "with threading.Lock()"
+              ],
+              [
+                "C#",
+                "lock (objeto) { ... }"
+              ]
+            ],
+            "mono": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Contar vagas, não só trancar",
+          "body": [
+            "O contador serve quando há vários lugares iguais disponíveis.",
+            "Um sistema pode permitir dez acessos ao banco de dados ao mesmo tempo.",
+            "O semáforo começa em dez, e o décimo primeiro pedido espera."
+          ],
+          "terms": [
+            {
+              "word": "Recurso",
+              "meaning": "qualquer coisa que os programas disputam: o processador, a memória, um arquivo ou uma peça do computador."
+            }
+          ],
+          "bullets": [
+            "Três impressoras iguais: o semáforo começa em três.",
+            "Um servidor que aguenta cem pedidos juntos: começa em cem.",
+            "Uma tranca simples: começa em um, e aí é o mesmo que um mutex."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A ordem das trancas importa",
+          "body": [
+            "Usar duas trancas ao mesmo tempo exige cuidado com a ordem.",
+            "Se um caminho pega a tranca A e depois a B, todos devem fazer igual.",
+            "Se outro pegar na ordem contrária, os dois travam esperando um ao outro."
+          ],
+          "terms": [
+            {
+              "word": "Impasse",
+              "meaning": "quando cada um segura o que o outro precisa, e nenhum dos dois solta. Os dois ficam parados para sempre."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca cobra os nomes alternativos das operações e a diferença entre semáforo e mutex."
+          ],
+          "bullets": [
+            "down = P = wait = proberen. up = V = signal = verhogen.",
+            "As operações são atômicas, garantidas pelo sistema operacional.",
+            "Semáforo contador: valor inteiro não negativo, controla N recursos iguais.",
+            "Semáforo binário (valor 0 ou 1) é usado para exclusão mútua.",
+            "Mutex: só dois estados, e deve ser liberado pela mesma thread que travou.",
+            "Semáforo pode ser liberado por qualquer processo, inclusive outro.",
+            "Semáforo resolve o problema do sinal de acordar perdido, porque o contador armazena o sinal.",
+            "Inverter a ordem de aquisição de dois semáforos leva a deadlock (impasse).",
+            "Futex (fast user-space mutex) no Linux: evita chamar o núcleo quando não há disputa."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Cinco confusões aparecem quase toda prova."
+          ],
+          "bullets": [
+            "Semáforo não elimina o erro do programador. Esquecer de liberar trava todo mundo.",
+            "Mutex não é a mesma coisa que semáforo binário. A diferença é quem pode liberar.",
+            "O contador nunca fica negativo. Quem não pode passar fica dormindo.",
+            "Dormir não é espera ocupada. Quem dorme sai da fila e não gasta processador.",
+            "Trocar a ordem de duas trancas é o caminho mais curto para travar tudo."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O semáforo é um contador que guarda avisos. O mutex é a tranca simples."
+          ],
+          "bullets": [
+            "down tenta passar e dorme se não der. up libera e acorda alguém.",
+            "As duas operações são indivisíveis, garantidas pelo sistema.",
+            "O contador guardado é o que impede o aviso de se perder.",
+            "Mutex tem dois estados e deve ser liberado por quem trancou.",
+            "Semáforo contador serve para N lugares iguais.",
+            "Ordem diferente na hora de pegar duas trancas leva ao impasse."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Operações",
+          "statement": "As operações down e up sobre um semáforo também são conhecidas, respectivamente, como:",
+          "options": [
+            "P e V",
+            "V e P",
+            "lock e trylock",
+            "wait e wait",
+            "send e receive"
+          ],
+          "correct_index": 0,
+          "explanation": "Os nomes vêm do holandês. Proberen quer dizer testar e verhogen quer dizer incrementar.",
+          "pitfall": "A ordem importa na alternativa. P é down e V é up, nunca o contrário."
+        },
+        {
+          "topic": "Sinal perdido",
+          "statement": "Por que o semáforo resolve o problema do sinal de acordar perdido, que ocorria com sleep e wakeup?",
+          "options": [
+            "porque o valor do contador armazena o sinal para uso posterior",
+            "porque as operações desabilitam as interrupções",
+            "porque o processo nunca chega a dormir",
+            "porque o escalonador passa a ser não preemptivo",
+            "porque o sinal é enviado duas vezes por segurança"
+          ],
+          "correct_index": 0,
+          "explanation": "O up incrementa o contador mesmo sem ninguém dormindo. O próximo down encontra o valor e passa direto.",
+          "pitfall": "O aviso não é guardado numa fila de mensagens. Ele vira um número no contador."
+        },
+        {
+          "topic": "Atomicidade",
+          "statement": "As operações sobre semáforos precisam ser atômicas. Quem garante essa atomicidade?",
+          "options": [
+            "o sistema operacional, geralmente desabilitando interrupções ou usando instruções do processador",
+            "o compilador da linguagem usada",
+            "o próprio programador, com um laço de espera",
+            "o escalonador, ao evitar preempções",
+            "o hardware de disco"
+          ],
+          "correct_index": 0,
+          "explanation": "Se o down pudesse ser interrompido no meio, o próprio semáforo sofreria condição de corrida.",
+          "pitfall": "Semáforo é uma construção do sistema, não um truque escrito no programa de usuário."
+        },
+        {
+          "topic": "Semáforo e mutex",
+          "statement": "Qual é a diferença central entre um mutex e um semáforo binário?",
+          "options": [
+            "o mutex deve ser liberado pela mesma thread que o adquiriu",
+            "o mutex pode assumir valores maiores que um",
+            "o semáforo binário não permite exclusão mútua",
+            "o mutex não pode ser usado entre processos distintos",
+            "o semáforo binário sempre usa espera ocupada"
+          ],
+          "correct_index": 0,
+          "explanation": "O mutex tem dono. O semáforo binário pode ser liberado por qualquer um, o que serve para sinalização entre partes diferentes.",
+          "pitfall": "Os dois assumem só dois valores. A diferença está na propriedade, não no valor."
+        },
+        {
+          "topic": "Semáforo contador",
+          "statement": "Um sistema possui quatro impressoras idênticas. O semáforo que controla o acesso a elas deve ser inicializado com o valor:",
+          "options": [
+            "4",
+            "1",
+            "0",
+            "3",
+            "o número de processos do sistema"
+          ],
+          "correct_index": 0,
+          "explanation": "O valor inicial é a quantidade de recursos disponíveis. O quinto pedido encontra zero e dorme.",
+          "pitfall": "Inicializar com 1 transformaria o semáforo em exclusão mútua, e três impressoras ficariam paradas."
+        },
+        {
+          "topic": "Valor do semáforo",
+          "statement": "Em um semáforo, o que acontece quando um processo executa down e o valor atual é zero?",
+          "options": [
+            "o processo é bloqueado e colocado na fila do semáforo",
+            "o valor passa a menos um e o processo continua",
+            "o processo entra em espera ocupada",
+            "o processo é encerrado com erro",
+            "o valor é reiniciado automaticamente"
+          ],
+          "correct_index": 0,
+          "explanation": "O contador não vai abaixo de zero. Quem não consegue passar dorme, e não ocupa o processador.",
+          "pitfall": "Em algumas implementações o valor é mantido negativo para contar quem espera. Na definição clássica ele para em zero."
+        },
+        {
+          "topic": "Impasse",
+          "statement": "Duas threads usam dois mutexes, A e B. A primeira adquire A e depois B; a segunda adquire B e depois A. O resultado provável é:",
+          "options": [
+            "impasse, com cada thread segurando o que a outra precisa",
+            "inanição da thread de menor prioridade",
+            "condição de corrida na variável compartilhada",
+            "inversão de prioridade",
+            "espera ocupada indefinida"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada uma já tem metade do que precisa e espera pela outra metade. Nenhuma das duas solta o que já tem.",
+          "pitfall": "A prevenção mais simples é definir uma ordem única de aquisição e obrigar todo o código a segui-la."
+        },
+        {
+          "topic": "Uso correto",
+          "statement": "Um programador esquece de executar up após sair da região crítica protegida por um semáforo binário. A consequência é:",
+          "options": [
+            "todos os demais processos ficam bloqueados indefinidamente nesse semáforo",
+            "o semáforo é liberado automaticamente ao fim do processo",
+            "ocorre uma condição de corrida na região crítica",
+            "o valor do semáforo passa a ser negativo",
+            "o escalonador detecta e corrige o erro"
+          ],
+          "correct_index": 0,
+          "explanation": "O contador fica em zero para sempre. Todo down seguinte encontra zero e dorme.",
+          "pitfall": "O sistema não desfaz esse erro. É justamente por isso que monitores e blocos de linguagem foram criados."
+        }
+      ]
+    },
+    {
+      "slug": "monitores-e-mensagens",
+      "title": "Monitores e mensagens: quando a linguagem ou a rede resolvem",
+      "summary": "Semáforo é poderoso e fácil de errar. O monitor deixa a tranca a cargo da linguagem, e a troca de mensagens serve quando não há memória em comum.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A recepção do consultório",
+          "body": [
+            "Num consultório, você não controla a fila. Quem controla é a recepção.",
+            "Você chega, dá seu nome e senta. O resto não é problema seu.",
+            "Se você mesmo tivesse que organizar a ordem, ia dar confusão.",
+            "Alguém entraria na frente, e alguém seria esquecido."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O problema de deixar na mão do programador",
+          "body": [
+            "O contador de passagem funciona bem quando é usado certo.",
+            "Errar a ordem de duas trancas trava tudo. Esquecer de liberar também.",
+            "E o erro aparece só às vezes, o que torna a procura dolorosa."
+          ],
+          "terms": [
+            {
+              "word": "Processo",
+              "meaning": "um programa em execução, com a memória que ele usa e o ponto exato em que parou."
+            },
+            {
+              "word": "Processador",
+              "meaning": "a peça do computador que executa as instruções dos programas."
+            },
+            {
+              "word": "Thread",
+              "meaning": "cada caminho de execução dentro de um mesmo processo. Em português se diz também linha de execução."
+            },
+            {
+              "word": "Região crítica",
+              "meaning": "o trecho do programa que mexe num dado dividido com outros. Dois lá dentro ao mesmo tempo estragam o dado."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "E se a linguagem trancasse sozinha?",
+          "body": [
+            "A ideia é juntar o dado e as funções que mexem nele numa caixa só.",
+            "A caixa garante que só um caminho está lá dentro por vez.",
+            "Quem escreve o programa não tranca nada à mão."
+          ],
+          "terms": [
+            {
+              "word": "Monitor",
+              "meaning": "uma caixa que junta um dado e as funções que mexem nele, deixando só um caminho entrar por vez."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Esperar sem bloquear a caixa",
+          "body": [
+            "Às vezes o caminho entra e descobre que ainda não dá para seguir.",
+            "Se ele ficar parado lá dentro, ninguém mais entra e tudo trava.",
+            "Então ele sai de lado, libera a entrada e fica esperando um aviso."
+          ],
+          "terms": [
+            {
+              "word": "Variável de condição",
+              "meaning": "o lugar onde um caminho espera por um aviso, liberando a entrada enquanto espera."
+            }
+          ],
+          "code": {
+            "label": "O par que sempre aparece junto",
+            "text": "wait(pode_seguir)    // sai de lado e libera a entrada\nsignal(pode_seguir)  // avisa quem estava esperando"
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Onde isso existe hoje",
+          "body": [
+            "Essa caixa não ficou na teoria. Ela está nas linguagens que você usa.",
+            "Os nomes mudam, e o comportamento é o mesmo."
+          ],
+          "table": {
+            "label": "A caixa que tranca sozinha, por linguagem",
+            "headers": [
+              "Linguagem",
+              "Como aparece"
+            ],
+            "rows": [
+              [
+                "Java",
+                "synchronized, com wait() e notify()"
+              ],
+              [
+                "C#",
+                "lock (objeto), com Monitor.Wait e Monitor.Pulse"
+              ],
+              [
+                "Python",
+                "with threading.Condition()"
+              ],
+              [
+                "Go",
+                "sync.Cond, além dos canais"
+              ]
+            ],
+            "mono": true
+          },
+          "terms": [
+            {
+              "word": "Recurso",
+              "meaning": "qualquer coisa que os programas disputam: o processador, a memória, um arquivo ou uma peça do computador."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "E quando não há memória em comum?",
+          "body": [
+            "Tudo isso supõe que os dois lados dividem a mesma memória.",
+            "Dois programas em máquinas diferentes não dividem nada.",
+            "Aí a conversa passa a ser por envio e recebimento de recado."
+          ],
+          "code": {
+            "label": "As duas operações",
+            "text": "send(destino, mensagem)    // envia e segue\nreceive(origem, &mensagem) // espera até chegar algo"
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os problemas que a rede traz",
+          "body": [
+            "Mandar recado por rede tem riscos que a memória comum não tem."
+          ],
+          "bullets": [
+            "O recado pode se perder no caminho, e ninguém avisa.",
+            "Por isso quem recebe manda uma confirmação de volta.",
+            "Se a confirmação some, o recado é enviado de novo e chega duas vezes.",
+            "Cada recado precisa de um número, para o repetido ser descartado.",
+            "Ainda é preciso saber o nome ou o endereço de quem recebe."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Esperar todo mundo chegar",
+          "body": [
+            "Às vezes o problema não é disputa, e sim sincronia.",
+            "Um cálculo em etapas só avança quando todas as partes terminam a etapa.",
+            "Para isso existe um ponto de encontro obrigatório."
+          ],
+          "terms": [
+            {
+              "word": "Barreira",
+              "meaning": "um ponto em que cada caminho para e espera. Todos só seguem quando o último chega."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que se usa na prática",
+          "body": [
+            "Na vida real, quase ninguém escreve controle de passagem à mão.",
+            "Usa-se o que a linguagem oferece, ou uma fila pronta."
+          ],
+          "table": {
+            "label": "Escolhendo a ferramenta",
+            "headers": [
+              "Situação",
+              "O que se usa"
+            ],
+            "rows": [
+              [
+                "Trancar um trecho curto",
+                "mutex"
+              ],
+              [
+                "Limitar quantos entram ao mesmo tempo",
+                "semáforo contador"
+              ],
+              [
+                "Dado com regras próprias de acesso",
+                "monitor da linguagem"
+              ],
+              [
+                "Partes em máquinas diferentes",
+                "troca de mensagens"
+              ],
+              [
+                "Etapas que precisam terminar juntas",
+                "barreira"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Aqui a banca cobra a diferença entre monitor e semáforo, e as duas disciplinas de sinalização."
+          ],
+          "bullets": [
+            "Monitor é construção de linguagem; semáforo é do sistema operacional.",
+            "No monitor, a exclusão mútua é automática: o compilador insere o lock.",
+            "Variáveis de condição têm wait e signal, e NÃO acumulam sinal: signal sem ninguém esperando se perde.",
+            "É essa a diferença central para o semáforo, cujo contador guarda o sinal.",
+            "Signal and wait (Hoare): quem sinaliza cede o monitor a quem foi acordado.",
+            "Signal and continue (Mesa): quem sinaliza segue, e o acordado reavalia a condição depois.",
+            "Por causa do Mesa, wait sempre vem dentro de while, nunca de if.",
+            "Troca de mensagens: send e receive; funciona sem memória compartilhada.",
+            "Rendezvous: o send fica bloqueado até o receive acontecer.",
+            "Problemas de mensagem: perda, duplicação, autenticação e endereçamento.",
+            "Barreira: todos os processos param no ponto e só seguem quando o último chega."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Quatro trocas derrubam gente nessa parte."
+          ],
+          "bullets": [
+            "O aviso da variável de condição não fica guardado. Se ninguém espera, ele some.",
+            "Monitor não é do sistema operacional. É da linguagem que o programa usa.",
+            "Entrar na caixa é automático, e esperar lá dentro continua sendo trabalho do programador.",
+            "Troca de mensagens não precisa de memória comum, e é por isso que serve em rede."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Monitor tranca por você. Mensagem serve quando não há memória em comum."
+          ],
+          "bullets": [
+            "O monitor junta o dado e as funções, e deixa um por vez entrar.",
+            "A variável de condição serve para esperar sem travar a entrada.",
+            "O aviso dela não se acumula, ao contrário do contador do semáforo.",
+            "Por isso a espera fica dentro de um laço, e não de um teste simples.",
+            "Enviar e receber recado funciona entre máquinas diferentes.",
+            "A barreira segura todo mundo até o último chegar."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Monitor",
+          "statement": "Qual é a diferença fundamental entre um monitor e um semáforo?",
+          "options": [
+            "o monitor é uma construção de linguagem de programação, com exclusão mútua automática",
+            "o monitor é implementado no núcleo e o semáforo no programa",
+            "o monitor permite vários processos simultâneos em seu interior",
+            "o semáforo não garante exclusão mútua",
+            "o monitor só funciona em sistemas distribuídos"
+          ],
+          "correct_index": 0,
+          "explanation": "O compilador insere a trava na entrada e a liberação na saída. O programador não escreve isso.",
+          "pitfall": "Linguagem sem suporte a monitor não ganha um só porque o sistema tem semáforos."
+        },
+        {
+          "topic": "Variável de condição",
+          "statement": "Uma diferença importante entre a operação signal de uma variável de condição e a operação up de um semáforo é que:",
+          "options": [
+            "o signal se perde se não houver ninguém esperando, enquanto o up incrementa o contador",
+            "o signal acorda todos os processos e o up acorda apenas um",
+            "o signal só pode ser usado dentro do núcleo",
+            "o up nunca bloqueia e o signal sempre bloqueia",
+            "o signal exige espera ocupada"
+          ],
+          "correct_index": 0,
+          "explanation": "A variável de condição não tem memória. Já o semáforo guarda o aviso no valor do contador.",
+          "pitfall": "É por isso que o teste da condição vai dentro de um while, e não de um if."
+        },
+        {
+          "topic": "Disciplinas de sinalização",
+          "statement": "Na semântica de Hoare (signal and wait), o que acontece com o processo que executa signal?",
+          "options": [
+            "ele cede imediatamente o monitor ao processo que foi acordado",
+            "ele continua executando dentro do monitor",
+            "ele é encerrado ao fim da operação",
+            "ele passa a executar em espera ocupada",
+            "ele libera o monitor para qualquer processo da fila de entrada"
+          ],
+          "correct_index": 0,
+          "explanation": "Quem sinaliza sai de cena na hora, para o acordado encontrar a condição exatamente como ela foi sinalizada.",
+          "pitfall": "Na semântica de Mesa é o contrário: quem sinaliza continua, e o acordado precisa reavaliar a condição."
+        },
+        {
+          "topic": "Padrão de uso",
+          "statement": "Na semântica de Mesa (signal and continue), por que a espera em variável de condição fica dentro de um laço while, e não de um if?",
+          "options": [
+            "porque a condição pode ter deixado de ser verdadeira entre o signal e a retomada do processo",
+            "porque o while é mais eficiente que o if nesse contexto",
+            "porque o if não é permitido dentro de monitores",
+            "porque o laço evita a espera ocupada",
+            "porque o compilador exige essa forma"
+          ],
+          "correct_index": 0,
+          "explanation": "Quem sinalizou continuou executando e pode ter mudado o estado. Ao acordar, é preciso conferir tudo de novo.",
+          "pitfall": "Esse detalhe é cobrado como boa prática de programação concorrente, e não só como teoria."
+        },
+        {
+          "topic": "Troca de mensagens",
+          "statement": "A principal vantagem da troca de mensagens sobre semáforos e monitores é que ela:",
+          "options": [
+            "funciona entre processos que não compartilham memória, inclusive em máquinas distintas",
+            "elimina a necessidade de exclusão mútua no receptor",
+            "garante que nenhuma mensagem se perca",
+            "é sempre mais rápida que memória compartilhada",
+            "dispensa o uso do sistema operacional"
+          ],
+          "correct_index": 0,
+          "explanation": "Send e receive não supõem memória comum. É o que permite usá-los em rede.",
+          "pitfall": "Ela não é mais rápida. Em uma mesma máquina, a memória compartilhada costuma ganhar com folga."
+        },
+        {
+          "topic": "Problemas de mensagem",
+          "statement": "Em troca de mensagens sobre rede, mensagens de confirmação podem se perder, fazendo o emissor reenviar a mensagem original. Para o receptor descartar a repetição, usa-se:",
+          "options": [
+            "números de sequência em cada mensagem",
+            "aumento do tamanho do buffer de recepção",
+            "prioridade mais alta para o processo emissor",
+            "troca do protocolo para um sem confirmação",
+            "uma barreira entre emissor e receptor"
+          ],
+          "correct_index": 0,
+          "explanation": "Com o número, o receptor reconhece que aquela mensagem já foi tratada e simplesmente a ignora.",
+          "pitfall": "O reenvio é necessário e correto. O que precisa ser tratado é a chegada duplicada."
+        },
+        {
+          "topic": "Rendezvous",
+          "statement": "No modelo de rendezvous, o que acontece com o processo que executa send antes de o receptor executar receive?",
+          "options": [
+            "ele fica bloqueado até que o receive seja executado",
+            "ele segue imediatamente, pois a mensagem vai para um buffer",
+            "ele recebe um erro de envio",
+            "ele passa a fazer espera ocupada",
+            "a mensagem é descartada silenciosamente"
+          ],
+          "correct_index": 0,
+          "explanation": "Não há armazenamento intermediário. O encontro entre os dois é o próprio ponto de sincronização.",
+          "pitfall": "Com um espaço de espera no meio, o send não bloqueia. A pergunta trata do caso sem esse espaço."
+        },
+        {
+          "topic": "Barreira",
+          "statement": "Uma barreira é usada para:",
+          "options": [
+            "impedir que qualquer processo avance de fase antes que todos cheguem ao ponto",
+            "garantir exclusão mútua em uma região crítica",
+            "impedir que processos compartilhem memória",
+            "ordenar processos por prioridade de escalonamento",
+            "evitar o problema do sinal perdido"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela é típica de cálculos por etapas, em que a etapa seguinte usa os resultados de todos.",
+          "pitfall": "Barreira é sincronização de fase, não exclusão mútua. São problemas diferentes."
+        }
+      ]
+    },
+    {
+      "slug": "problemas-classicos",
+      "title": "Os problemas clássicos que toda prova cobra",
+      "summary": "Três situações resumem quase tudo que pode dar errado entre programas que dividem coisas. Quem entende as três reconhece o resto.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Três cenas de padaria",
+          "body": [
+            "Na padaria, o padeiro põe pão na prateleira e o cliente tira.",
+            "Se a prateleira enche, o padeiro para. Se esvazia, o cliente espera.",
+            "Na mesa dos fundos, cinco funcionários dividem cinco facas.",
+            "E no caderno de encomendas, muita gente lê e uma pessoa escreve."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Por que estudar problemas com nome",
+          "body": [
+            "Esses três casos viraram exemplos padrão do assunto.",
+            "Cada um mostra um jeito diferente de dar errado.",
+            "Quem reconhece o padrão resolve casos novos que nunca viu."
+          ],
+          "terms": [
+            {
+              "word": "Processo",
+              "meaning": "um programa em execução, com a memória que ele usa e o ponto exato em que parou."
+            },
+            {
+              "word": "Processador",
+              "meaning": "a peça do computador que executa as instruções dos programas."
+            },
+            {
+              "word": "Thread",
+              "meaning": "cada caminho de execução dentro de um mesmo processo. Em português se diz também linha de execução."
+            },
+            {
+              "word": "Região crítica",
+              "meaning": "o trecho do programa que mexe num dado dividido com outros. Dois lá dentro ao mesmo tempo estragam o dado."
+            },
+            {
+              "word": "Recurso",
+              "meaning": "qualquer coisa que os programas disputam: o processador, a memória, um arquivo ou uma peça do computador."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Primeiro: quem produz e quem consome",
+          "body": [
+            "Um lado gera itens. O outro lado consome esses itens.",
+            "Entre os dois existe um espaço de guarda, com lugares contados.",
+            "Dois cuidados aparecem, e eles são opostos."
+          ],
+          "terms": [
+            {
+              "word": "Espaço de guarda (buffer)",
+              "meaning": "um lugar com tamanho fixo onde as coisas ficam entre quem produz e quem consome."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/so/so-produtor-consumidor.svg",
+            "alt": "Um produtor colocando itens num depósito de cinco lugares com três ocupados, e um consumidor retirando itens do mesmo depósito.",
+            "caption": "Cheio segura quem produz. Vazio segura quem consome."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Como se resolve esse primeiro",
+          "body": [
+            "São três controles, e cada um cuida de uma coisa.",
+            "Dois deles contam. O terceiro só tranca."
+          ],
+          "bullets": [
+            "Um conta os lugares vazios, e começa no tamanho do espaço.",
+            "Outro conta os lugares cheios, e começa em zero.",
+            "O terceiro garante um por vez mexendo no espaço de guarda.",
+            "Quem produz espera o contador de vazios. Quem consome espera o de cheios."
+          ],
+          "code": {
+            "label": "A ordem que não pode inverter",
+            "text": "// quem produz\ndown(vazios);    // primeiro: tem lugar?\ndown(tranca);    // depois: posso mexer?\n... põe o item ...\nup(tranca);\nup(cheios);"
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O erro de ordem que trava tudo",
+          "body": [
+            "Se a tranca for pedida antes da contagem, o problema aparece.",
+            "Quem produz tranca o espaço e descobre que está cheio. Aí ele dorme trancado.",
+            "Quem consome não consegue entrar para tirar nada, e ninguém mais anda."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Segundo: cinco pessoas e cinco garfos",
+          "body": [
+            "Cinco pessoas sentam numa mesa redonda para comer.",
+            "Entre cada duas pessoas existe um garfo, e só um.",
+            "Para comer, cada pessoa precisa dos dois garfos ao seu lado."
+          ],
+          "figure": {
+            "src": "/figuras/so/so-filosofos.svg",
+            "alt": "Mesa redonda com cinco pessoas sentadas em volta e cinco garfos, um entre cada par de vizinhos.",
+            "caption": "Cinco garfos para cinco pessoas. Cada uma precisa de dois."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A solução óbvia que trava",
+          "body": [
+            "A ideia natural é pegar o garfo da esquerda e depois o da direita.",
+            "Se todos fizerem isso ao mesmo tempo, cada um fica com um garfo.",
+            "Ninguém consegue o segundo, e ninguém solta o primeiro."
+          ],
+          "terms": [
+            {
+              "word": "Impasse",
+              "meaning": "quando cada um segura o que o outro precisa e não solta. Todos param para sempre."
+            },
+            {
+              "word": "Inanição",
+              "meaning": "quando alguém nunca consegue a vez, mesmo sem ninguém estar travado."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os jeitos de consertar a mesa",
+          "body": [
+            "Existem várias saídas, e todas quebram a simetria do problema."
+          ],
+          "table": {
+            "label": "Saídas para a mesa travada",
+            "headers": [
+              "Ideia",
+              "Como funciona"
+            ],
+            "rows": [
+              [
+                "Quebrar a simetria",
+                "os de número par pegam a direita primeiro"
+              ],
+              [
+                "Tudo ou nada",
+                "só pega se os dois estiverem livres"
+              ],
+              [
+                "Limitar a mesa",
+                "no máximo quatro sentados de cada vez"
+              ],
+              [
+                "Pedir autorização",
+                "um controlador decide quem pode pegar"
+              ]
+            ]
+          },
+          "bullets": [
+            "Soltar o garfo e tentar de novo depois não resolve sozinho.",
+            "Se todos esperarem o mesmo tempo, a cena se repete igual."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Terceiro: muitos leem, um escreve",
+          "body": [
+            "Pense num cadastro consultado o tempo todo e alterado de vez em quando.",
+            "Várias consultas ao mesmo tempo não atrapalham ninguém.",
+            "Mas quem altera precisa do cadastro só para si."
+          ],
+          "bullets": [
+            "Vários leitores juntos: pode.",
+            "Um escritor: sozinho, sem nenhum leitor junto.",
+            "Dois escritores ao mesmo tempo: nunca."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O escritor que nunca entra",
+          "body": [
+            "Se todo leitor que chega entra na hora, o escritor pode não entrar nunca.",
+            "Basta haver sempre alguém lendo para ele ficar de fora.",
+            "A correção é segurar os leitores novos quando há escritor esperando."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca cobra os nomes dos problemas e a falha de cada solução ingênua."
+          ],
+          "bullets": [
+            "Produtor-consumidor (bounded buffer): dois semáforos contadores (empty e full) e um mutex.",
+            "empty começa em N, full começa em 0, mutex começa em 1.",
+            "Adquirir o mutex antes do semáforo contador causa deadlock.",
+            "Jantar dos filósofos: 5 filósofos, 5 garfos, cada um precisa de dois adjacentes.",
+            "Todos pegando o garfo da esquerda ao mesmo tempo → deadlock.",
+            "Todos soltando e tentando de novo em sincronia → livelock, e não deadlock.",
+            "Soluções: assimetria por paridade, permitir no máximo N-1 à mesa, ou pegar os dois de forma atômica.",
+            "Leitores e escritores: leituras concorrentes são permitidas; escrita é exclusiva.",
+            "Prioridade ao leitor → possível starvation do escritor.",
+            "Prioridade ao escritor → possível starvation dos leitores.",
+            "Barbeiro dorminhoco: sincroniza um servidor com N clientes e uma sala de espera limitada."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Cinco confusões aparecem sempre nessa parte."
+          ],
+          "bullets": [
+            "Impasse e inanição não são a mesma coisa. No impasse ninguém anda, e na inanição os outros andam.",
+            "Todos soltando e tentando de novo juntos não é impasse. Todos se mexem e nada avança.",
+            "No problema da mesa, aumentar o número de garfos não é a solução estudada.",
+            "Dar preferência ao leitor resolve um problema e cria outro.",
+            "A ordem dos pedidos importa mais que a quantidade deles."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Três problemas, três falhas diferentes. É esse o mapa."
+          ],
+          "bullets": [
+            "Produzir e consumir: conte vazios e cheios, e tranque só depois de contar.",
+            "Inverter a ordem trava os dois lados de uma vez.",
+            "A mesa dos garfos mostra o impasse: cada um com metade do que precisa.",
+            "A saída é quebrar a simetria, ou pegar os dois de uma vez.",
+            "Leitores e escritores: vários leem juntos, e quem escreve fica sozinho.",
+            "Preferir sempre o leitor deixa o escritor de fora para sempre."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Produtor-consumidor",
+          "statement": "Na solução clássica do produtor-consumidor com buffer de N posições, quais são os valores iniciais dos semáforos empty, full e mutex?",
+          "options": [
+            "N, 0 e 1",
+            "0, N e 1",
+            "N, N e 1",
+            "1, 1 e N",
+            "0, 0 e N"
+          ],
+          "correct_index": 0,
+          "explanation": "No início tudo está vazio: N posições livres e nenhuma ocupada. O mutex começa livre, com valor 1.",
+          "pitfall": "Trocar empty por full é o erro mais cobrado. Pense no estado inicial do buffer."
+        },
+        {
+          "topic": "Ordem de aquisição",
+          "statement": "No produtor-consumidor, o que acontece se o produtor executar down(mutex) antes de down(empty)?",
+          "options": [
+            "pode ocorrer deadlock, pois ele dorme com o buffer trancado",
+            "o buffer passa a aceitar mais de N itens",
+            "o consumidor passa a ler itens repetidos",
+            "ocorre inversão de prioridade entre os processos",
+            "nada muda, pois a ordem é irrelevante"
+          ],
+          "correct_index": 0,
+          "explanation": "Com o buffer cheio, ele trava dentro da região crítica. O consumidor não consegue entrar para liberar espaço.",
+          "pitfall": "A regra geral é pedir primeiro o semáforo contador e só depois o mutex."
+        },
+        {
+          "topic": "Jantar dos filósofos",
+          "statement": "No jantar dos filósofos, se todos pegarem simultaneamente o garfo da esquerda e aguardarem o da direita, ocorre:",
+          "options": [
+            "deadlock, pois cada um segura um garfo e espera outro que nunca é liberado",
+            "starvation apenas do filósofo de menor índice",
+            "livelock, com todos alternando indefinidamente",
+            "condição de corrida sobre os garfos",
+            "inversão de prioridade"
+          ],
+          "correct_index": 0,
+          "explanation": "Forma-se uma espera circular: cada filósofo depende do vizinho, e ninguém solta o que já tem.",
+          "pitfall": "Livelock é quando todos soltam e tentam de novo em sincronia. Aí há movimento, mas nenhum progresso."
+        },
+        {
+          "topic": "Soluções para os filósofos",
+          "statement": "Qual destas NÃO é uma solução válida para evitar o deadlock no jantar dos filósofos?",
+          "options": [
+            "aumentar o quantum do escalonador para os filósofos",
+            "permitir no máximo quatro filósofos à mesa simultaneamente",
+            "fazer filósofos de índice par pegarem primeiro o garfo da direita",
+            "só pegar os dois garfos se ambos estiverem livres, de forma atômica",
+            "usar um controlador que autoriza cada filósofo a pegar os garfos"
+          ],
+          "correct_index": 0,
+          "explanation": "Mudar o tempo de cada um não quebra a espera circular. O deadlock volta na primeira coincidência.",
+          "pitfall": "As três outras alternativas funcionam porque quebram a simetria ou a espera circular."
+        },
+        {
+          "topic": "Livelock",
+          "statement": "Todos os filósofos soltam o garfo da esquerda quando o da direita está ocupado, esperam o mesmo tempo e tentam de novo. Essa situação é chamada de:",
+          "options": [
+            "livelock",
+            "deadlock",
+            "starvation",
+            "condição de corrida",
+            "exclusão mútua"
+          ],
+          "correct_index": 0,
+          "explanation": "Todos os processos continuam executando e mudando de estado, mas nenhum consegue avançar de verdade.",
+          "pitfall": "A diferença para o deadlock é o movimento. No deadlock todos param; no livelock todos se agitam à toa."
+        },
+        {
+          "topic": "Leitores e escritores",
+          "statement": "No problema dos leitores e escritores, qual combinação de acessos simultâneos é permitida?",
+          "options": [
+            "vários leitores ao mesmo tempo, sem nenhum escritor",
+            "um leitor e um escritor ao mesmo tempo",
+            "vários escritores ao mesmo tempo, sem leitores",
+            "um escritor e vários leitores ao mesmo tempo",
+            "qualquer combinação, desde que haja mutex"
+          ],
+          "correct_index": 0,
+          "explanation": "Ler não altera nada, então leituras simultâneas são seguras. Escrever exige acesso exclusivo.",
+          "pitfall": "Basta um escritor presente para que nenhum leitor possa estar junto."
+        },
+        {
+          "topic": "Starvation",
+          "statement": "Na solução dos leitores e escritores com prioridade para leitores, o risco é que:",
+          "options": [
+            "o escritor sofra starvation, nunca conseguindo acesso enquanto houver leitores chegando",
+            "ocorra deadlock entre dois leitores",
+            "os leitores leiam dados parcialmente escritos",
+            "o mutex seja liberado pelo processo errado",
+            "ocorra livelock entre leitores e escritores"
+          ],
+          "correct_index": 0,
+          "explanation": "Se todo leitor que chega entra na hora, sempre haverá alguém lendo. O escritor fica esperando indefinidamente.",
+          "pitfall": "A correção é bloquear leitores novos assim que um escritor entra na fila."
+        },
+        {
+          "topic": "Barbeiro dorminhoco",
+          "statement": "O problema do barbeiro dorminhoco modela principalmente qual situação?",
+          "options": [
+            "um servidor que dorme quando não há trabalho, com uma fila de espera de tamanho limitado",
+            "dois processos disputando dois recursos em ordens opostas",
+            "vários processos lendo e um escrevendo o mesmo dado",
+            "um processo de alta prioridade bloqueado por um de baixa",
+            "a divisão de um cálculo em fases sincronizadas"
+          ],
+          "correct_index": 0,
+          "explanation": "O barbeiro dorme sem clientes e é acordado quando chega alguém. Quem chega com a sala cheia vai embora.",
+          "pitfall": "Não confunda com produtor-consumidor. Aqui o foco é o servidor que dorme e os clientes que desistem."
+        }
+      ]
     }
   ]
 }

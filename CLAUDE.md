@@ -63,7 +63,7 @@ Projeto `castelei` com três serviços: `Postgres`, `backend` (Root Directory `/
 
 ## Estado atual
 
-Pronto: MVP (cadastro, catálogo, prática com cronômetro, resultado com recorde e ponto fraco, progresso por tópico, planos), modo de teste, Fase 2 (streak, XP, conquistas), lições em etapas, conteúdo revisado pelo Guia Editorial (Matemática, Português) e a matéria **Sistemas Operacionais** com 11 lições (o que é um SO; componentes e funções; terminal na prática; chamadas de sistema em 2 lições; estrutura de um SO; processos; estados e transições; escalonamento; threads em 2 lições).
+Pronto: MVP (cadastro, catálogo, prática com cronômetro, resultado com recorde e ponto fraco, progresso por tópico, planos), modo de teste, Fase 2 (streak, XP, conquistas), lições em etapas, conteúdo revisado pelo Guia Editorial (Matemática, Português) e a matéria **Sistemas Operacionais** com 16 lições (o que é um SO; componentes e funções; terminal na prática; chamadas de sistema em 2 lições; estrutura de um SO; processos; estados e transições; escalonamento; threads em 2 lições; comunicação entre processos em 5 lições).
 
 **Fase 2 fechada** (menos TWA na Play Store e expansão de módulos, adiados pelo Sávio): simulado por matéria (`ExamController`, tentativa com `kind = exam`, questões sorteadas em rodízio entre as lições) e gráfico de evolução (`EvolutionChart`, acerto e tempo em gráficos separados — nunca eixo duplo). CI ativo em `.github/workflows/ci.yml`.
 
@@ -83,11 +83,13 @@ Pronto: MVP (cadastro, catálogo, prática com cronômetro, resultado com record
 
 O que ela decide: o **escalonamento é tópico próprio**, logo depois de Estados e Transições; os **estudos de caso entram na matéria**, no fim; **história dos SOs e revisão de hardware não entram**. Semáforos e Gerência de Disco são itens explícitos, e por isso ganham lição própria. Impasses, Multiprocessadores e Segurança continuam de fora.
 
-Já escritas, além das 5 primeiras: **Estrutura de um SO** (monolítico, camadas, micronúcleo, cliente-servidor, máquinas virtuais e contêineres), **Processos: o modelo** (programa × processo, tabela de processos, PID, criação, hierarquia e término), **Estados e Transições** (executando, pronto e bloqueado, as quatro transições, quem provoca cada uma, zumbi e suspenso) **Escalonamento** (com e sem preempção, objetivos, tipos de processo, regras de lote e interativas, fatia de tempo, prioridade, inanição e envelhecimento) e **Threads** em 2 lições (o que compartilham e o que é próprio; escala no usuário × no núcleo, com goroutines e virtual threads como atualização).
+Já escritas, além das 5 primeiras: **Estrutura de um SO** (monolítico, camadas, micronúcleo, cliente-servidor, máquinas virtuais e contêineres), **Processos: o modelo** (programa × processo, tabela de processos, PID, criação, hierarquia e término), **Estados e Transições** (executando, pronto e bloqueado, as quatro transições, quem provoca cada uma, zumbi e suspenso) **Escalonamento** (com e sem preempção, objetivos, tipos de processo, regras de lote e interativas, fatia de tempo, prioridade, inanição e envelhecimento) **Threads** em 2 lições (o que compartilham e o que é próprio; escala no usuário × no núcleo, com goroutines e virtual threads como atualização) e **Comunicação entre processos** em 5 lições (condição de corrida; exclusão mútua, das tentativas ingênuas a Peterson e à instrução indivisível; semáforos e mutexes; monitores, mensagens e barreira; os três problemas clássicos).
 
 **O plano de aula oficial (`Aula 00`) é a fonte de verdade do cronograma**, e o mapa em `docs/sistemas-operacionais-mapa.md` reproduz a tabela dele. Duas coisas que ele decide e a ementa sozinha não mostrava: **Gerenciamento de Arquivos tem duas aulas inteiras** (24/11 e 01/12) e **a prova é em 15/12** — tudo até Dispositivos Parte 1 cai nela.
 
-Próximas, nesta ordem: Comunicação entre processos (2 aulas: condições de corrida e exclusão mútua; semáforos, monitores e mensagens) · Gerenciamento de Memória · **Gerenciamento de Arquivos** · Gerenciamento de Dispositivos (inclui disco) · Virtualização · Estudos de Caso (os trabalhos 01 e 02).
+Próximas, nesta ordem: Gerenciamento de Memória (aula de 17/11, ~4 lições) · **Gerenciamento de Arquivos** (24/11 e 01/12) · Gerenciamento de Dispositivos, inclui disco (08/12 e 22/12) · Virtualização (02/02/27) · Estudos de Caso (os trabalhos 01 e 02).
+
+**Impasse entrou pela porta dos fundos.** A ementa o deixa de fora, mas ele é inevitável no jantar dos filósofos e na ordem errada de duas trancas. Está explicado onde aparece, sem lição própria.
 
 **Ao acrescentar lição, mexa em quatro lugares:** o JSON do conteúdo, a figura em `frontend/public/figuras/`, a lista de `frontend/src/lib/site-content.ts` (o teste `site-content.test.ts` reprova se esquecer) e o mapa em `docs/sistemas-operacionais-mapa.md`.
 

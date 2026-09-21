@@ -35,6 +35,11 @@ export const SUBJECTS: SiteSubject[] = [
       "Escalonamento: quem usa o processador agora",
       "Threads: vários caminhos dentro do mesmo programa",
       "Threads por dentro: quem cuida da troca",
+      "Condição de corrida: quando dois caminhos brigam pelo mesmo dado",
+      "Exclusão mútua: só um por vez no trecho perigoso",
+      "Semáforos e mutexes: dormir em vez de girar em falso",
+      "Monitores e mensagens: quando a linguagem ou a rede resolvem",
+      "Os problemas clássicos que toda prova cobra",
     ],
   },
   {
