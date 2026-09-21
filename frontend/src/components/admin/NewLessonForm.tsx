@@ -3,31 +3,51 @@
 import { useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { Plus } from "lucide-react";
-import { Aviso, Button, TextArea, TextField } from "@/components/admin/Form";
+import { Aviso, Button, TextField } from "@/components/admin/Form";
+import { StepsEditor } from "@/components/admin/StepsEditor";
 import { IssueList } from "@/components/admin/IssueList";
 import { Card } from "@/components/ui";
 import { adminFetch, ContentError } from "@/lib/admin-client";
 import { ApiError, messageOf } from "@/lib/client";
+import { limpar } from "@/lib/steps";
 import type { ContentIssue } from "@/lib/admin-types";
+import type { LessonStep } from "@/lib/types";
 
-/** As etapas de uma lição recém-criada: o mínimo que o Guia Editorial pede. */
-const ETAPAS_INICIAIS = JSON.stringify(
-  [
-    { kind: "idea", title: "A ideia em uma frase", body: ["Comece pela analogia, nunca pela definição."] },
-    { kind: "explain", title: "Explicando", body: ["Uma ideia por etapa."] },
-    { kind: "exam", title: "Como cai na prova", body: ["Aqui, e só aqui, entra a linguagem da banca."] },
-    { kind: "pitfall", title: "Pegadinhas clássicas", body: ["Os erros mais comuns:"], bullets: ["O primeiro."] },
-    { kind: "recap", title: "Resumo", body: ["O que não pode ser esquecido."] },
-  ],
-  null,
-  2,
-);
+/**
+ * As etapas de uma lição recém-criada: o mínimo que o Guia Editorial pede.
+ *
+ * A etapa de explicação já nasce COM uma figura e uma tabela em branco, e isso
+ * é de propósito. Campo vazio à vista puxa para ser preenchido; bloco que
+ * precisa ser acrescentado é bloco que se esquece — foi assim que um curso
+ * inteiro saiu só de parágrafo. Quem não quiser, tira em um clique, e `limpar`
+ * descarta o que ficou vazio antes de salvar.
+ */
+const ETAPAS_INICIAIS: LessonStep[] = [
+  { kind: "idea", title: "A ideia em uma frase", body: ["Comece pela analogia, nunca pela definição."] },
+  {
+    kind: "explain",
+    title: "Explicando",
+    body: ["Uma ideia por etapa."],
+    figure: { src: "", alt: "", caption: "" },
+  },
+  {
+    kind: "explain",
+    title: "Na prática",
+    body: ["Mostre o passo a passo."],
+    table: { label: "", headers: ["", ""], rows: [["", ""]], mono: false },
+  },
+  { kind: "exam", title: "Como cai na prova", body: ["Aqui, e só aqui, entra a linguagem da banca."] },
+  { kind: "pitfall", title: "Pegadinhas clássicas", body: ["Os erros mais comuns:"], bullets: ["O primeiro."] },
+  { kind: "recap", title: "Resumo", body: ["O que não pode ser esquecido."] },
+];
 
 export function NewLessonForm({ subjectId }: { subjectId: number }) {
   const router = useRouter();
   const [aberto, setAberto] = useState(false);
   const [busy, setBusy] = useState(false);
   const [erro, setErro] = useState<string | null>(null);
+  const [steps, setSteps] = useState<LessonStep[]>(ETAPAS_INICIAIS);
+  const [erroDeJson, setErroDeJson] = useState<string | null>(null);
   const [issues, setIssues] = useState<ContentIssue[]>([]);
   const [campos, setCampos] = useState<Record<string, string[]>>({});
 
@@ -40,11 +60,8 @@ export function NewLessonForm({ subjectId }: { subjectId: number }) {
 
     const form = new FormData(event.currentTarget);
 
-    let steps: unknown;
-    try {
-      steps = JSON.parse(String(form.get("steps")));
-    } catch {
-      setErro("As etapas não são um JSON válido. Confira as vírgulas e as chaves.");
+    if (erroDeJson) {
+      setErro(`Conserte o JSON das etapas antes de criar. ${erroDeJson}`);
       setBusy(false);
       return;
     }
@@ -57,7 +74,7 @@ export function NewLessonForm({ subjectId }: { subjectId: number }) {
           title: form.get("title"),
           module: form.get("module"),
           summary: form.get("summary"),
-          steps,
+          steps: steps.map(limpar),
         },
       });
       router.push(`/admin/licao/${lesson.id}`);
@@ -110,7 +127,9 @@ export function NewLessonForm({ subjectId }: { subjectId: number }) {
           hint="Uma frase que responde: o que eu vou aprender aqui?"
           error={campos.summary?.[0]}
         />
-        <TextArea label="Etapas (JSON)" name="steps" rows={14} mono defaultValue={ETAPAS_INICIAIS} />
+        <StepsEditor steps={steps} onChange={setSteps} onErroDeJson={setErroDeJson} />
+
+        {erroDeJson && <Aviso tipo="erro">{erroDeJson}</Aviso>}
 
         <div className="flex gap-3">
           <Button type="submit" peso="principal" disabled={busy}>
