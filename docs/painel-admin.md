@@ -242,3 +242,36 @@ Em camadas, e a que conta é a de baixo:
 3. **A tela** (`(painel)/layout.tsx`) — decide entre mandar para o login e
    explicar que a conta não tem permissão. É conforto, não tranca: sem ela a
    pessoa veria um 403 no meio de uma tela em branco.
+
+## Levar uma matéria para um arquivo
+
+Na tela da matéria, **Baixar esta matéria** entrega o conteúdo inteiro no mesmo
+formato da importação: lições, etapas, questões, módulos e data da prova.
+
+É o caminho de volta. Sem ele, matéria escrita aqui fica presa no banco — não dá
+para versionar no Git, não passa pelo `scripts/lint-content.mjs` e ninguém
+consegue revisar num editor de texto.
+
+O arquivo **entra de volta pela importação sem perda**, e reimportar não duplica
+nada (a lição é reconhecida pelo slug, a questão pela posição). Um teste
+(`SubjectExportTest`) garante isso comparando exportar → reimportar → exportar.
+
+Dois usos além da cópia de segurança:
+
+- **Editar fora do painel.** Para mexer em muita coisa de uma vez, ou para pôr
+  figuras e tabelas em várias lições, é mais rápido no arquivo.
+- **Trazer para o repositório.** Uma matéria boa merece virar arquivo em
+  `backend/database/seeders/content/`. Atenção: a matéria fica com
+  `origin = painel` e o `ContentSeeder` **pula** ela — é assim que o deploy não
+  passa por cima das suas edições. Para o arquivo voltar a mandar, a coluna
+  precisa voltar para `seed`.
+
+## Por que a sua lição ficou só texto
+
+Escrever pelo painel puxa para o parágrafo: o editor de etapas é um campo de
+JSON, então pôr uma figura dá trabalho e escrever mais um parágrafo não dá.
+
+O verificador avisa quando isso acontece ("a lição é só texto corrido"), mas o
+aviso não escreve a figura. Os blocos que quebram o paredão são `figure`,
+`video`, `table`, `code`, `example`, `bullets` e `terms` — o formato de cada um
+está no `README.md` e no modelo comentado.
