@@ -67,7 +67,7 @@ export function MediaLibrary({ media, limits }: Props) {
             type="file"
             accept="image/png,image/jpeg,image/webp,image/gif,image/svg+xml,video/mp4,video/webm,video/ogg"
             onChange={escolher}
-            className="block w-full cursor-pointer rounded-control bg-surface-sunken px-4 py-3 text-base file:mr-4 file:cursor-pointer file:rounded-pill file:border-0 file:bg-surface-bold file:px-4 file:py-2 file:text-sm file:font-bold file:text-paper"
+            className="block w-full cursor-pointer rounded-control bg-surface-sunken px-4 py-3 text-base file:mr-4 file:cursor-pointer file:rounded-pill file:border-0 file:bg-surface-bold file:px-4 file:py-2 file:text-sm file:font-bold file:text-on-bold"
           />
           <span className="block text-sm text-content-subtle">
             Imagens até {Math.round(limits.max_image_kb / 1024)} MB (PNG, JPEG, WebP, GIF, SVG). Vídeos até{" "}

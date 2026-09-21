@@ -12,7 +12,7 @@ export type CardTone = "raised" | "bold" | "sky" | "coral" | "sage" | "outline" 
 
 const tones: Record<CardTone, string> = {
   raised: "bg-surface-raised shadow-lift",
-  bold: "bg-surface-bold text-paper shadow-lift",
+  bold: "bg-surface-bold text-on-bold shadow-lift",
   sky: "bg-sky-soft",
   coral: "bg-coral-soft",
   sage: "bg-sage-soft",

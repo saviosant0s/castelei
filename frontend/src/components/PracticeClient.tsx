@@ -260,11 +260,11 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
             const isCorrect = showing && feedback.correct_index === i;
             const isWrongPick = showing && isSelected && !feedback.is_correct;
 
-            let style = "border-ink/15 bg-white hover:border-ink/40";
+            let style = "border-ink/15 bg-surface-raised hover:border-ink/40";
             if (phase === "answering" && isSelected) style = "border-sky bg-sky-soft";
             if (isCorrect) style = "border-sage bg-sage-soft";
             if (isWrongPick) style = "border-brick bg-brick-soft";
-            if (showing && !isCorrect && !isWrongPick) style = "border-ink/10 bg-white opacity-60";
+            if (showing && !isCorrect && !isWrongPick) style = "border-ink/10 bg-surface-raised opacity-60";
 
             return (
               <li key={i}>
@@ -275,7 +275,7 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
                   onClick={() => setSelected(i)}
                   className={`flex min-h-14 w-full items-center gap-3 rounded-2xl border-2 px-4 py-3 text-left text-base transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink ${style}`}
                 >
-                  <span className={`grid size-8 shrink-0 place-items-center rounded-full font-mono text-sm font-medium ${isCorrect ? "bg-sage text-ink" : isWrongPick ? "bg-brick text-white" : "bg-ink/8"}`}>
+                  <span className={`grid size-8 shrink-0 place-items-center rounded-full font-mono text-sm font-medium ${isCorrect ? "bg-sage text-on-accent" : isWrongPick ? "bg-brick text-white" : "bg-ink/8"}`}>
                     {isCorrect ? <Check className="size-4" aria-hidden="true" /> : isWrongPick ? <X className="size-4" aria-hidden="true" /> : optionLetter(i)}
                   </span>
                   <span>{option}</span>
@@ -295,7 +295,7 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
                   {feedback.is_correct ? "Acertou!" : selected === null ? "Você pulou esta" : "Não foi dessa vez"}
                 </p>
                 {feedback.xp ? (
-                  <span className="anim-pop inline-flex shrink-0 items-center gap-1 rounded-full bg-white px-3 py-1 font-mono text-base font-medium">
+                  <span className="anim-pop inline-flex shrink-0 items-center gap-1 rounded-full bg-surface-raised px-3 py-1 font-mono text-base font-medium">
                     <Star className="size-4 text-coral" aria-hidden="true" /> +{feedback.xp} XP
                   </span>
                 ) : null}
@@ -319,7 +319,7 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
         )}
       </section>
 
-      <div className="fixed inset-x-0 bottom-0 z-20 border-t border-ink/10 bg-paper/95 backdrop-blur">
+      <div className="fixed inset-x-0 bottom-0 z-20 border-t border-ink/10 bg-surface/95 backdrop-blur">
         <div className="mx-auto flex max-w-md gap-3 px-5 pb-[max(1rem,env(safe-area-inset-bottom))] pt-3">
           {phase === "answering" ? (
             <>
@@ -369,7 +369,7 @@ function ResultView({ result, source, onRetry }: { result: FinishResult; source:
 
       <dl className="mt-8 space-y-4">
         {result.avg_seconds !== null && (
-          <div className="flex items-start gap-3 rounded-2xl bg-white px-5 py-4 shadow-lift">
+          <div className="flex items-start gap-3 rounded-2xl bg-surface-raised px-5 py-4 shadow-lift">
             <Timer className="mt-0.5 size-5 shrink-0 text-coral" aria-hidden="true" />
             <div>
               <dt className="text-sm text-ink/60">Tempo médio por questão</dt>
@@ -404,7 +404,7 @@ function ResultView({ result, source, onRetry }: { result: FinishResult; source:
       {g && (
         <section aria-labelledby="pontos" className="mt-6 space-y-4">
           <h2 id="pontos" className="sr-only">Pontos e conquistas</h2>
-          <div className="flex items-center justify-between gap-4 rounded-2xl bg-white px-5 py-4 shadow-lift">
+          <div className="flex items-center justify-between gap-4 rounded-2xl bg-surface-raised px-5 py-4 shadow-lift">
             <div className="flex items-center gap-3">
               <Star className="size-5 shrink-0 text-coral" aria-hidden="true" />
               <div>

@@ -163,7 +163,7 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
         </div>
 
         {step.figure && (
-          <figure className="mt-6 overflow-hidden rounded-2xl bg-white p-3 shadow-lift">
+          <figure className="mt-6 overflow-hidden rounded-2xl bg-surface-raised p-3 shadow-lift">
             {/* SVG estático do próprio app: o next/image não agrega nada aqui */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={step.figure.src} alt={step.figure.alt} className="h-auto w-full" loading="lazy" />
@@ -174,7 +174,7 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
         {step.video && <LessonVideo video={step.video} />}
 
         {step.example && (
-          <div className="mt-6 rounded-2xl bg-white p-5 shadow-lift">
+          <div className="mt-6 rounded-2xl bg-surface-raised p-5 shadow-lift">
             <p className="label-mono">{step.example.label}</p>
             <ol className="mt-3 space-y-2 font-mono text-base">
               {step.example.lines.map((line, i) => (
@@ -187,7 +187,7 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
         )}
 
         {step.table && (
-          <div className="mt-6 overflow-hidden rounded-2xl bg-white shadow-lift">
+          <div className="mt-6 overflow-hidden rounded-2xl bg-surface-raised shadow-lift">
             {step.table.label && <p className="label-mono px-4 pt-4">{step.table.label}</p>}
             <div className="overflow-x-auto">
               <table className="mt-2 w-full min-w-[26rem] text-left text-sm">
@@ -219,7 +219,7 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
         {step.code && (
           <div className="mt-6">
             {step.code.label && <p className="label-mono mb-2">{step.code.label}</p>}
-            <pre className="overflow-x-auto rounded-2xl bg-ink p-4 font-mono text-sm leading-relaxed text-paper">
+            <pre className="overflow-x-auto rounded-2xl bg-surface-bold p-4 font-mono text-sm leading-relaxed text-on-bold">
               <code>{step.code.text}</code>
             </pre>
           </div>
@@ -250,7 +250,7 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
         )}
       </article>
 
-      <div className="fixed inset-x-0 bottom-0 z-20 border-t border-ink/10 bg-paper/95 backdrop-blur">
+      <div className="fixed inset-x-0 bottom-0 z-20 border-t border-ink/10 bg-surface/95 backdrop-blur">
         <div className="mx-auto max-w-md px-5 pb-[max(1rem,env(safe-area-inset-bottom))] pt-3">
           {isLast && lesson.limited_by_plan && (
             <p className="mb-2 text-center text-sm text-ink/60">

@@ -37,7 +37,7 @@ export function BottomNav() {
                 aria-current={active ? "page" : undefined}
                 className="flex min-h-16 select-none flex-col items-center justify-start gap-1.5 text-sm"
               >
-                <span className={`grid h-8 w-14 place-items-center rounded-full transition ${active ? "bg-ink text-paper" : "text-ink/70"}`}>
+                <span className={`grid h-8 w-14 place-items-center rounded-full transition ${active ? "bg-surface-bold text-on-bold" : "text-ink/70"}`}>
                   <Icon className="size-5" aria-hidden="true" />
                 </span>
                 <span className={active ? "font-bold" : "text-ink/70"}>{label}</span>

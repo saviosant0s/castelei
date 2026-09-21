@@ -78,7 +78,7 @@ export function ImportForm() {
             type="file"
             accept="application/json,.json"
             onChange={escolher}
-            className="block w-full cursor-pointer rounded-control bg-surface-sunken px-4 py-3 text-base file:mr-4 file:cursor-pointer file:rounded-pill file:border-0 file:bg-surface-bold file:px-4 file:py-2 file:text-sm file:font-bold file:text-paper"
+            className="block w-full cursor-pointer rounded-control bg-surface-sunken px-4 py-3 text-base file:mr-4 file:cursor-pointer file:rounded-pill file:border-0 file:bg-surface-bold file:px-4 file:py-2 file:text-sm file:font-bold file:text-on-bold"
           />
         </label>
 
@@ -197,7 +197,7 @@ function Relatorio({ report }: { report: ImportReport }) {
 
       <Link
         href={`/admin/materia/${report.subject.id}`}
-        className="inline-block select-none rounded-control bg-surface-bold px-4 py-2.5 text-base font-bold text-paper shadow-lift"
+        className="inline-block select-none rounded-control bg-surface-bold px-4 py-2.5 text-base font-bold text-on-bold shadow-lift"
       >
         Abrir {report.subject.name}
       </Link>

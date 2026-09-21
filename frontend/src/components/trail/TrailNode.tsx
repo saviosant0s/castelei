@@ -20,7 +20,7 @@ import { NODE, ROW, type TrailLesson } from "@/lib/lesson-trail";
 */
 const shapes = {
   concluida: "bg-sage text-white shadow-lift",
-  atual: "bg-sky text-ink shadow-sky",
+  atual: "bg-sky text-on-accent shadow-sky",
   adiante: "bg-surface-sunken text-content-subtle",
 } as const;
 
@@ -55,7 +55,7 @@ export function TrailNode({ item, index }: { item: TrailLesson; index: number })
         </span>
 
         {state === "atual" && (
-          <span className="mt-2 rounded-pill bg-ink px-2.5 py-0.5 text-[0.625rem] font-bold tracking-wide text-paper uppercase">
+          <span className="mt-2 rounded-pill bg-surface-bold px-2.5 py-0.5 text-[0.625rem] font-bold tracking-wide text-on-bold uppercase">
             Agora
           </span>
         )}

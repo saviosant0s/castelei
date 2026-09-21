@@ -76,7 +76,7 @@ export default async function Inicio() {
         <h2 id="continue" className="sr-only">Continuar</h2>
         {last && continueHref ? (
           <Card tone="bold" size="lg" radius="panel" href={continueHref}>
-            <p className="label-mono !text-paper/60">Continue de onde parou</p>
+            <p className="label-mono !text-on-bold/60">Continue de onde parou</p>
             <p className="mt-3 font-display text-2xl font-bold">{last.lesson_title}</p>
             <p className="mt-1 text-base on-bold-secondary">
               {last.subject_name}
@@ -89,7 +89,7 @@ export default async function Inicio() {
           </Card>
         ) : firstLesson ? (
           <Card tone="bold" size="lg" radius="panel" href={`/licao/${firstLesson.id}`}>
-            <p className="label-mono !text-paper/60">Comece por aqui</p>
+            <p className="label-mono !text-on-bold/60">Comece por aqui</p>
             <p className="mt-3 font-display text-2xl font-bold">{firstLesson.title}</p>
             <p className="mt-1 text-base on-bold-secondary">
               Leva poucos minutos: leia a lição e treine {pluralize(firstLesson.questions_available, "questão", "questões")}.
