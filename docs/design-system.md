@@ -138,7 +138,7 @@ navegador. O que sustenta isso hoje:
   - **O nó é uma tecla.** Degrau de sombra sólida embaixo (raio zero:
     desfoque vira "flutuando", sólido vira "apoiado"), e ao tocar o nó desce
     a altura exata do degrau. As cores `--color-*-deep` existem só para isso.
-  - **Cada módulo fecha num marco** (`TrailMilestone`), que só acende
+  - **Cada módulo fecha num marco** (`TrailMilestone`, uma bandeira), que só acende
     completo. "Faltam 22 lições" não move ninguém; "falta 1 para fechar
     Threads" move. Não é link de propósito — não há para onde ir.
   - **Estrelas no nó concluído**, e elas **não cobram nota**: terminar já
