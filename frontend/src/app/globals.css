@@ -1,10 +1,26 @@
 @import "tailwindcss";
 
+/*
+| Design system do Castelei. Duas camadas, e a ordem importa:
+|
+| 1. A RAMPA diz o que a cor é (paper, ink, sky, coral...). Só o design
+|    system fala essa língua.
+| 2. Os PAPÉIS dizem o que a cor faz (surface, content, border...). É isso
+|    que as telas usam.
+|
+| Trocar a marca vira trocar a rampa: os papéis seguem junto e nenhuma tela
+| precisa ser reescrita.
+|
+| A identidade é própria de propósito — ver "Fugindo da Cara de IA" em
+| docs/planejamento.md e o guia em docs/design-system.md.
+*/
 @theme {
+  /* --- Tipografia: nunca Inter, Roboto ou Open Sans --- */
   --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
+  /* --- A rampa: o que a cor é --- */
   --color-paper: #f8f9fa;
   --color-paper-2: #eef1f5;
   --color-ink: #1c1c2e;
@@ -17,8 +33,24 @@
   --color-brick: #c93b3b;
   --color-brick-soft: #fbe3e3;
 
+  /* --- Papéis de superfície: o fundo de cada camada --- */
+  --color-surface: #f8f9fa;          /* o fundo da página */
+  --color-surface-raised: #ffffff;   /* cartão que sobe da página */
+  --color-surface-sunken: #eef1f5;   /* cavidade: campo, selo, degrau */
+  --color-surface-bold: #1c1c2e;     /* bloco escuro de destaque */
+
+  /*
+  | Elevação com a cor do próprio fundo, não cinza puro: sombra cinza sobre
+  | fundo colorido denuncia falta de cuidado (ver anti-padrões do plano).
+  */
   --shadow-lift: 0 14px 30px -16px rgb(28 28 46 / 0.4);
   --shadow-sky: 0 14px 26px -14px rgb(47 127 199 / 0.75);
+
+  /* --- Raio: a curva é assinatura, então é escala, não improviso --- */
+  --radius-pill: 9999px;
+  --radius-control: 1rem;  /* botão, campo */
+  --radius-card: 1.5rem;   /* cartão */
+  --radius-panel: 1.75rem; /* painel grande */
 }
 
 :root {
@@ -84,6 +116,31 @@ h3 {
   }
   .label-mono {
     @apply font-mono text-sm font-medium uppercase tracking-wider text-ink/60;
+  }
+
+  /*
+  | Níveis de texto. As telas pedem o papel ("secundário"), não a opacidade:
+  | assim a hierarquia é decidida num lugar só, e não a olho em cada tela.
+  */
+  .text-content {
+    @apply text-ink;
+  }
+  .text-content-secondary {
+    @apply text-ink/70;
+  }
+  .text-content-subtle {
+    @apply text-ink/60;
+  }
+  .text-content-faint {
+    @apply text-ink/40;
+  }
+
+  /* Os mesmos níveis sobre fundo escuro. */
+  .on-bold-secondary {
+    @apply text-paper/70;
+  }
+  .on-bold-subtle {
+    @apply text-paper/60;
   }
 }
 

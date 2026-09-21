@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ChevronRight, ClipboardCheck, Crown } from "lucide-react";
+import { Callout, Card, ListRow } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
 import { pluralize } from "@/lib/format";
 import type { Subject } from "@/lib/types";
@@ -18,72 +19,55 @@ export default async function MateriaPage({ params }: { params: Promise<{ slug: 
 
   return (
     <div className="space-y-8">
-      <Link href="/inicio" className="inline-flex min-h-11 items-center gap-2 text-base text-ink/70 hover:text-ink">
+      <Link href="/inicio" className="inline-flex min-h-11 items-center gap-2 text-base text-content-secondary hover:text-ink">
         <ArrowLeft className="size-5" aria-hidden="true" /> Início
       </Link>
 
       <header>
         <h1 className="text-4xl">{subject.name}</h1>
-        {subject.description && <p className="mt-3 text-base text-ink/70">{subject.description}</p>}
+        {subject.description && <p className="mt-3 text-base text-content-secondary">{subject.description}</p>}
       </header>
 
       {subject.exam.available &&
         (subject.exam.unlocked ? (
-          <Link
-            href={`/simulado/${subject.slug}`}
-            className="flex items-center gap-4 rounded-2xl bg-ink p-5 text-paper shadow-lift transition hover:-translate-y-0.5"
-          >
+          <Card tone="bold" size="lg" href={`/simulado/${subject.slug}`} className="flex items-center gap-4">
             <ClipboardCheck className="size-6 shrink-0 text-sky" aria-hidden="true" />
             <span className="min-w-0 flex-1">
               <span className="block text-base font-bold">Simulado da matéria</span>
-              <span className="block text-sm text-paper/70">
+              <span className="block text-sm on-bold-secondary">
                 {pluralize(subject.exam.questions, "questão sorteada", "questões sorteadas")} de todas as lições
               </span>
             </span>
-            <ChevronRight className="size-5 shrink-0 text-paper/50" aria-hidden="true" />
-          </Link>
+            <ChevronRight className="size-5 shrink-0 on-bold-subtle" aria-hidden="true" />
+          </Card>
         ) : (
-          <Link
-            href="/planos"
-            className="flex items-center gap-4 rounded-2xl border-2 border-dashed border-ink/25 px-5 py-4 hover:border-ink/50"
-          >
-            <ClipboardCheck className="size-6 shrink-0 text-ink/40" aria-hidden="true" />
-            <span className="min-w-0 flex-1 text-base">
-              <strong>Simulado da matéria.</strong> Mistura questões de todas as lições — faz parte do plano Pro.
-            </span>
-          </Link>
+          <Callout role="bloqueado" icon={ClipboardCheck} href="/planos">
+            <strong>Simulado da matéria.</strong> Mistura questões de todas as lições — faz parte do plano Pro.
+          </Callout>
         ))}
 
       <ol className="space-y-3">
         {subject.lessons.map((lesson) => (
           <li key={lesson.id}>
-            <Link
+            <ListRow
               href={`/licao/${lesson.id}`}
-              className="flex items-center gap-4 rounded-2xl bg-white p-4 shadow-lift transition hover:-translate-y-0.5"
-            >
-              <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-paper-2 font-mono text-base font-medium">
-                {lesson.position}
-              </span>
-              <span className="min-w-0 flex-1">
-                <span className="block truncate text-base font-bold">{lesson.title}</span>
-                <span className="block text-sm text-ink/60">
+              leading={lesson.position}
+              title={lesson.title}
+              meta={
+                <>
                   {pluralize(lesson.questions_available, "questão", "questões")}
                   {lesson.best_percent !== null ? ` · melhor: ${lesson.best_percent}%` : " · ainda não praticada"}
-                </span>
-              </span>
-              <ChevronRight className="size-5 shrink-0 text-ink/40" aria-hidden="true" />
-            </Link>
+                </>
+              }
+            />
           </li>
         ))}
       </ol>
 
       {limited && (
-        <Link href="/planos" className="flex items-center gap-3 rounded-2xl border-2 border-dashed border-ink/25 px-5 py-4 hover:border-ink/50">
-          <Crown className="size-5 shrink-0 text-sky" aria-hidden="true" />
-          <span className="text-base">
-            No plano grátis cada lição traz parte das questões. <strong>Veja o que o Plus libera.</strong>
-          </span>
-        </Link>
+        <Callout role="bloqueado" icon={Crown} href="/planos">
+          No plano grátis cada lição traz parte das questões. <strong>Veja o que o Plus libera.</strong>
+        </Callout>
       )}
     </div>
   );

@@ -9,7 +9,8 @@ O planejamento completo, com o **Guia Editorial de Conteúdo**, está em `docs/p
 - `backend/`: API Laravel 12 (Sanctum, PostgreSQL em produção, SQLite em dev e testes).
 - `frontend/`: Next.js 16 (App Router), React 19, Tailwind 4. É um PWA.
 - `scripts/lint-content.mjs`: verificador do Guia Editorial (roda no conteúdo, não no código).
-- `docs/`: planejamento, guia de deploy (`deploy-railway.md`), mapa das aulas de Sistemas Operacionais (`sistemas-operacionais-mapa.md`).
+- `docs/`: planejamento, **design system (`design-system.md`)**, guia de deploy (`deploy-railway.md`), mapa das aulas de Sistemas Operacionais (`sistemas-operacionais-mapa.md`).
+- `frontend/src/components/ui/`: os componentes do design system (`Card`, `Callout`, `Pill`, `Stat`, `ProgressBar`, `ListRow`, `EmptyState`). **Leia `docs/design-system.md` antes de mexer em tela.**
 - Conteúdo das lições: `backend/database/seeders/content/*.json` (**fonte de verdade**). Figuras SVG: `frontend/public/figuras/`.
 
 ## Como rodar e testar
@@ -35,6 +36,8 @@ Plano de um usuário: `php artisan castelei:plan email@exemplo.com plus`.
 - **O navegador nunca fala com a API.** O Next guarda o token do Sanctum em cookie `httpOnly` (`castelei_token`) e repassa só as rotas de prática (`frontend/src/lib/proxy.ts`). `frontend/src/proxy.ts` protege as telas do app.
 - **Modo de teste sem login:** com `GUEST_MODE=true` (frontend), cada navegador ganha uma conta de visitante. A API segue protegida. Sem a variável, o login normal volta.
 - **Planos:** limite de questões por lição no servidor (Grátis 5, Plus 30, Pro sem limite) em `backend/config/castelei.php`. Pagamento **não** está integrado.
+- **FASE DE TESTES — tudo liberado.** `UNLOCK_ALL` (padrão **ligado**) faz todo mundo estudar como Pro. Passa por `Plans::effective()`; o plano guardado em cada usuário não muda, então trocar o padrão para `false` devolve os limites sem migração. É a chave a desligar no lançamento.
+- **Identidade visual é própria, e isso é decisão.** Nenhuma biblioteca de design de terceiros entra como base — Carbon traz a cara da IBM, Primer a do GitHub, e o padrão do shadcn/ui virou a cara dos apps de IA. O Atlassian Design System foi avaliado e descartado por licença (só vale para produtos integrados à Atlassian, e proíbe obras derivadas). Comportamento complexo, quando precisar, vem do Radix UI (MIT), sem visual junto.
 - **Gamificação** (XP 20 por acerto, streak em dias no fuso `America/Sao_Paulo`, 10 conquistas): dados guardados para todos; só Plus/Pro veem. `GAMIFICATION_FOR_ALL=true` (backend) libera para todos, e está ligado no Railway para testes. Falhas da gamificação nunca podem quebrar o estudo (tudo em `try/catch`).
 - **Etapas de lição** (`lessons.steps`, JSON): `kind` (`idea` primeira, `recap` última, uma `exam`, uma `pitfall`), `title`, `body`, e opcionais `example`, `bullets`, `terms`, `figure`, `code`, `table`. Formato completo no `README.md`. Colunas antigas (`explanation`, `exam_style`, `pitfalls`) são derivadas das etapas pelo `ContentSeeder`.
 - Lições são identificadas por `(matéria, slug)` e questões por `(lição, posição)`: **não reordene questões já publicadas**.
@@ -73,7 +76,7 @@ Próximas lições, na ordem das aulas: 29/09 Estrutura e arquitetura de um SO; 
 ## Pendências e cuidados
 
 - **`backend/composer.lock` não está versionado.** Cada deploy do Railway resolve as dependências do zero, então produção pode receber versões diferentes das testadas. Commitar o lock resolve, mas o arquivo gerado aqui veio do PHP 8.4 e o Railway não tem versão fixada (`composer.json` pede `^8.2`): confira a versão do PHP em produção antes de versionar.
-- **O simulado depende de `EXAM_FOR_ALL=true`** no serviço `backend` do Railway para aparecer fora do plano Pro. Ainda não foi ligado.
+- **Ainda faltam, do plano visual:** ilustrações próprias para estados vazios e conquistas (hoje são ícones do Lucide) e modo escuro — os papéis de superfície já isolam o que mudaria.
 - O Sávio **edita direto no GitHub** (já fez ajustes visuais de PWA). Sempre `git fetch` e confira antes de dar push. Nunca use force push.
 - Observações sobre ajustes manuais dele (não alterados): `BottomNav` sem `aria-label` e com padding de área segura duplicado no iPhone. Sugira, não altere sem pedir.
 - Não testado em celular real nem em máquinas Windows/Linux reais (os comandos vêm da documentação). O Sávio está testando o app.
