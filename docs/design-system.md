@@ -132,9 +132,10 @@ navegador. O que sustenta isso hoje:
   e `vector-effect="non-scaling-stroke"`: assim o desenho acompanha qualquer
   tela sem engrossar a linha. E o título da lição é uma **plaquinha
   levantada** (`bg-surface-raised` com sombra): o traço passa por trás dela.
-  Antes o título tapava o traço repetindo a cor e o grão do fundo, o que
-  prendia o fundo da página a ser liso dali para baixo — assumir a plaquinha
-  foi o que liberou o fundo a ter textura em qualquer lugar.
+  Antes o título se disfarçava de fundo, repetindo cor e grão para tapar o
+  traço — o que só funcionava enquanto o fundo fosse liso. A plaquinha é mais
+  honesta e não depende de nada: continuou certa quando o fundo ganhou
+  textura, e continuou certa quando ele voltou a ser liso.
 - **Uma tela responde uma pergunta.** Quando uma tela começa a acumular
   assuntos, ela vira abas de rota — ver `components/ProgressTabs.tsx`. Cada aba
   é uma rota de verdade, então o botão "voltar" do Android funciona e o link
@@ -211,32 +212,25 @@ O script no `<head>` (`THEME_SCRIPT`, em `lib/theme.ts`) é o único script
 embutido do app. Sem ele, quem pediu escuro veria a tela clara piscar antes
 da hidratação.
 
-### O fundo
+### O fundo é liso, e isso é decisão
 
-Uma camada só, em `body::before`, **presa à tela e não ao documento**: role o
-quanto rolar, a atmosfera continua lá. Ela tem três coisas empilhadas:
+Cor chapada com um grão de 3%. Nada mais.
 
-1. **dois brilhos de azul-céu** em diagonal — um no alto à esquerda, outro
-   embaixo à direita. A diagonal é o que evita a cara de "gradiente de
-   cabeçalho" e dá volume à tela inteira;
-2. **uma malha de pontos** finíssima, que é o que tira o liso de perto.
-   Sozinha seria papel milimetrado; com os brilhos por cima, vira textura;
-3. **o grão**, por último.
+Já teve brilho de azul-céu e malha de pontos aqui, e foi retirado: **o Sávio
+olhou e dispensou o gradiente.** Antes de propor de novo, saiba que o problema
+não era calibragem — houve duas rodadas de força diferente, e o veredito foi
+sobre o degradê em si. Se for mexer no fundo, mexa na textura, não em degradê.
 
-A regra que manda em tudo isso: **ela nunca pode competir com o conteúdo.**
-Quem está lendo uma lição ou respondendo questão não deve notar que existe. Se
-um dia parecer enfeite, está forte demais.
+Duas coisas que ficaram da tentativa e valem guardar:
 
-Nada de roxo ou índigo aqui, pela regra 4: é a assinatura visual dos produtos
-de IA. Só azul-céu, a cor de ação da marca.
-
-**A cor de fundo mora só no `html`; o `body` é transparente.** Isso não é
-capricho, é a ordem de pintura do CSS: dentro de um contexto de empilhamento
-vem primeiro o fundo da raiz, depois os filhos de z-index negativo, e só então
-o fundo dos blocos descendentes. Com cor no `body`, ele cobre o `::before` — a
-camada renderiza, tem as cinco sub-camadas certas, e é invisível. Foi
-exatamente o que aconteceu na primeira tentativa, e aumentar a opacidade não
-resolvia nada.
+- **O topo da página é a barra de status do celular.** Com `viewport-fit=cover`
+  a tela vai até embaixo dela, então qualquer cor no alto da página aparece ali.
+  O brilho azul virou barra de status azul num app que deveria ser branco.
+- **Se um dia algo voltar para trás do conteúdo**, a cor de fundo tem de sair
+  do `body` e ficar só no `html`. Na ordem de pintura do CSS, o fundo de um
+  bloco descendente vem depois dos filhos de z-index negativo: com cor no
+  `body`, a camada renderiza e fica invisível, e aumentar a opacidade não
+  resolve nada.
 
 ## Regras que valem para toda tela nova
 

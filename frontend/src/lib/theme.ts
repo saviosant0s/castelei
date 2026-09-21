@@ -62,10 +62,18 @@ export function applyTheme(theme: Theme): void {
   }
 
   const efetivo = resolveTheme(theme);
-  // A meta é estática no HTML e segue só o aparelho. Sem esta linha, quem
-  // força claro num celular escuro fica com a barra de status escura em cima
-  // de uma tela clara.
-  document.querySelector('meta[name="theme-color"]')?.setAttribute("content", THEME_COLOR[efetivo]);
+
+  /*
+  | A barra de status do celular.
+  |
+  | São DUAS metas no HTML, uma por media query, e as duas recebem a mesma
+  | cor aqui. Escrever só na primeira não bastava: quem força claro num
+  | celular escuro continua casando com a meta de escuro, e ficava com a
+  | barra de status escura em cima de uma tela clara.
+  */
+  document
+    .querySelectorAll('meta[name="theme-color"]')
+    .forEach((meta) => meta.setAttribute("content", THEME_COLOR[efetivo]));
 }
 
 /*
