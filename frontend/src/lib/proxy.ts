@@ -50,6 +50,9 @@ const ALLOWED_PATHS = [
   /^subjects\/\d+\/exams$/,
   /^attempts\/\d+\/answers$/,
   /^attempts\/\d+\/finish$/,
+  // Lembretes: o interruptor do Perfil assina e desassina o aparelho daqui.
+  /^push\/key$/,
+  /^push\/subscriptions$/,
 ];
 
 export function isAllowedPath(path: string): boolean {
@@ -127,18 +130,26 @@ export async function forwardToBackend(req: NextRequest, segments: string[]): Pr
   const token = req.cookies.get(TOKEN_COOKIE)?.value;
   if (!token) return json({ message: "Sua sessão expirou. Entre de novo." }, 401);
 
-  const rawBody = await req.text();
+  /*
+  | GET não leva corpo, e isso não é detalhe de estilo: o `fetch` do Node
+  | RECUSA um GET com corpo, então mandar "{}" às cegas derrubaria a chamada
+  | com um erro que chega aqui como 502 e parece problema de rede.
+  */
+  const semCorpo = req.method === "GET" || req.method === "HEAD";
+  const rawBody = semCorpo ? "" : await req.text();
+
+  const headers: Record<string, string> = {
+    Accept: "application/json",
+    Authorization: `Bearer ${token}`,
+  };
+  if (!semCorpo) headers["Content-Type"] = "application/json";
 
   let response: Response;
   try {
     response = await fetch(`${apiBase()}/${path}`, {
       method: req.method,
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: rawBody === "" ? "{}" : rawBody,
+      headers,
+      body: semCorpo ? undefined : rawBody === "" ? "{}" : rawBody,
       cache: "no-store",
     });
   } catch {

@@ -138,6 +138,49 @@ return [
 
         // Nunca marcar revisão para depois da prova, nem no próprio dia dela.
         'days_before_exam' => 1,
+
+        /*
+        | LEMBRETE.
+        |
+        | O agendamento só funciona se a pessoa voltar. Um intervalo calculado
+        | com 1.354 participantes não vale nada se o app espera em silêncio.
+        |
+        | `hour` é 18h no fuso do aluno, e isto é ESCOLHA DE PRODUTO, não achado
+        | científico — não existe medida séria de "melhor hora para avisar", e
+        | inventar uma seria mentir. O raciocínio é banal: fim de tarde é quando
+        | um estudante de ADS está saindo da aula ou chegando em casa.
+        |
+        | No máximo UM por dia, e só quando há algo vencido. A crista de Cepeda é
+        | assimétrica — chegar um pouco atrasado à revisão custa pouco —, então
+        | não há motivo nenhum para insistir. App de estudo que cutuca duas vezes
+        | vira app desinstalado, e aí o intervalo ideal vira zero.
+        */
+        'reminder' => [
+            'hour' => (int) env('CASTELEI_REMINDER_HOUR', 18),
+            // Acima disto o aviso para de listar lições e passa a dizer só o número.
+            'max_titles' => 2,
+        ],
+    ],
+
+    /*
+    | Web Push (VAPID).
+    |
+    | Gere o par com: php artisan castelei:vapid
+    |
+    | Sem as chaves, o sistema de lembrete fica INERTE de propósito: a rota de
+    | assinatura responde 503, o botão não aparece e o comando diário não manda
+    | nada. Mesmo padrão de /.well-known/assetlinks.json, que responde 404
+    | enquanto a variável não existe — é melhor a coisa não existir do que
+    | existir quebrada.
+    |
+    | A chave privada é SEGREDO: quem a tiver manda notificação em nome do
+    | Castelei. Vai em variável de ambiente, nunca no repositório.
+    */
+    'push' => [
+        'public_key' => env('VAPID_PUBLIC_KEY', ''),
+        'private_key' => env('VAPID_PRIVATE_KEY', ''),
+        // Contato exigido pelo padrão: é a quem o serviço de push reclama.
+        'subject' => env('VAPID_SUBJECT', 'mailto:contato@castelei.com.br'),
     ],
 
     'plans' => [

@@ -4,6 +4,7 @@ import { Crown, SlidersHorizontal } from "lucide-react";
 import { DeleteAccountButton } from "@/components/DeleteAccountButton";
 import { InstallButton } from "@/components/InstallButton";
 import { LogoutButton } from "@/components/LogoutButton";
+import { PushToggle } from "@/components/PushToggle";
 import { SoundToggle } from "@/components/SoundToggle";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Card } from "@/components/ui";
@@ -67,6 +68,11 @@ export default async function Perfil() {
         <p className="text-sm text-content-subtle">
           Um toque curto ao acertar e ao errar, no Modo Prova. Vale neste aparelho.
         </p>
+      </section>
+
+      <section aria-labelledby="lembretes" className="space-y-3">
+        <h2 id="lembretes" className="text-2xl">Lembretes</h2>
+        <PushToggle />
       </section>
 
       <section aria-labelledby="instalar" className="space-y-3">

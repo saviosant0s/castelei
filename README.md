@@ -22,13 +22,14 @@ castelei/
 - Plano Grátis (5 questões por lição) e Plus (todas), aplicado no servidor
 - PWA instalável (manifest, ícones, service worker que só guarda arquivos estáticos)
 - Revisão espaçada com data de prova: o intervalo entre revisões é uma fatia do tempo que falta até a prova da matéria, então o calendário se aperta sozinho conforme ela chega (`docs/revisao-espacada.md`)
+- Lembrete de revisão por notificação (Web Push), desligado por padrão e no máximo um por dia. Precisa das chaves VAPID e de um processo de cron: veja `docs/deploy-railway.md`, passo 5
 
 ## O que ficou de fora (fases seguintes do planejamento)
 
 - Login com Google e pagamento. Por enquanto o plano se troca com `php artisan castelei:plan email plus`
 - Streak, XP, ranking e conquistas (Fase 2)
 - Matérias rotativas no plano grátis (só há 2 matérias)
-- IA e lembretes por notificação
+- IA e login com Google
 
 Decisão de conteúdo: as questões são **originais**, escritas no estilo de prova, e não trazem a informação "apareceu N vezes no ENEM" do wireframe. Essa estatística exigiria uma base verificada de provas reais, que ainda não existe.
 

@@ -148,6 +148,14 @@ A escolha do tema (Automático/Claro/Escuro, em `/perfil`) e a do som vivem no `
 - **O atraso não é vermelho.** Vermelho quer dizer erro no Castelei, e estar atrasado numa revisão não é erro: é o motivo de o app existir.
 - **Nada é travado**, mesma decisão do nó cinza sem cadeado: a fila sugere, a trilha continua aberta.
 
+**Lembrete de revisão** (`lib/push.ts` + `PushToggle`, backend em `PushService` e `castelei:lembretes`). O agendamento só vale se a pessoa voltar: um intervalo calculado com 1.354 participantes não serve para nada se o app espera em silêncio. Cinco coisas:
+
+- **Sem chaves VAPID, a função não existe** — e diz que não existe. `GET /api/push/key` responde `enabled: false`, a assinatura responde 503 e o botão some. Mesmo padrão de `/.well-known/assetlinks.json`. Gere com `php artisan castelei:vapid` e ponha `VAPID_PUBLIC_KEY`/`VAPID_PRIVATE_KEY` no serviço `backend`. **Trocar o par depois derruba todas as assinaturas.**
+- **RAILWAY: falta o cron.** `Schedule::command('castelei:lembretes')` está em `routes/console.php` às 18h no fuso do aluno, mas **só dispara se alguém rodar `php artisan schedule:run` a cada minuto**. O serviço `backend` atende requisições e não tem cron — enquanto não existir esse processo, nenhum lembrete sai, sem erro nenhum. Ver `docs/deploy-railway.md`.
+- **Quem assina é o APARELHO, não a conta.** `push_subscriptions` tem uma linha por navegador, com unicidade pelo resumo do endpoint (ele é longo demais para índice único). A mesma pessoa no celular e no PC tem duas linhas, e desligar num não desliga no outro.
+- **`navigator.serviceWorker.ready` nunca rejeita.** Sem service worker ativo ela fica pendurada para sempre — não expira, não dá erro. Por isso existe `registroPronto()`, com prazo: sem ele o Perfil ficava em "Verificando…" eternamente, e foi assim que o problema apareceu (em desenvolvimento o registro nem roda, só em produção).
+- **No máximo um por dia, e só com lição vencida.** A crista de Cepeda é assimétrica — chegar um pouco atrasado custa pouco —, então insistir não compra retenção, compra desinstalação. A etiqueta `castelei-revisao` é a mesma todo dia, para o aviso de hoje substituir o de ontem em vez de empilhar. Desligado por padrão: pedir permissão sozinho é o caminho mais curto para um "bloquear" que o app **não consegue** reverter.
+
 **Ao acrescentar lição, mexa em quatro lugares:** o JSON do conteúdo, a figura em `frontend/public/figuras/`, a lista de `frontend/src/lib/site-content.ts` (o teste `site-content.test.ts` reprova se esquecer) e o mapa em `docs/sistemas-operacionais-mapa.md`.
 
 **Atualizações feitas sobre o material do semestre** (a regra 4 do Guia manda corrigir o que está defasado): micronúcleo hoje é tecnologia de produção, não experimento — entrou o seL4 e o uso em carros e aviões; e contêineres entraram ao lado de máquinas virtuais, porque é o que se usa hoje e o material da disciplina não cobre.
@@ -158,6 +166,7 @@ A escolha do tema (Automático/Claro/Escuro, em `/perfil`) e a do som vivem no `
 
 - **`backend/composer.lock` não está versionado.** Cada deploy do Railway resolve as dependências do zero, então produção pode receber versões diferentes das testadas. Commitar o lock resolve, mas o arquivo gerado aqui veio do PHP 8.4 e o Railway não tem versão fixada (`composer.json` pede `^8.2`): confira a versão do PHP em produção antes de versionar.
 - **Ainda faltam, do plano visual:** ilustrações próprias para estados vazios e conquistas (hoje são ícones do Lucide).
+- **O lembrete não sai enquanto o Railway não tiver um processo de cron.** Todo o código está pronto e testado; falta só alguém chamando `php artisan schedule:run` a cada minuto. Sem isso o silêncio é total e não aparece em log nenhum.
 - **Ainda não funciona offline de verdade.** O `sw.js` cacheia estáticos e mostra `/offline.html`; cada resposta do Modo Prova exige rede. Para um aluno no ônibus, isso é o buraco mais caro que sobrou.
 - **Autorização permanente do Sávio: pode subir sem perguntar.** Terminou um trabalho conferido (testes, lint, build e a tela olhada), abra o PR, mescle na `main` e acompanhe o deploy do Railway — não pare para pedir permissão. A exceção é ele dizer que naquele caso não é para subir. Isso não dispensa o resto: conferir antes, nunca subir coisa quebrada, e avisar o que foi ao ar.
 - O Sávio **edita direto no GitHub** (já fez ajustes visuais de PWA). Sempre `git fetch` e confira antes de dar push. Nunca use force push.
