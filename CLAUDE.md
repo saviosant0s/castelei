@@ -63,7 +63,7 @@ Projeto `castelei` com três serviços: `Postgres`, `backend` (Root Directory `/
 
 ## Estado atual
 
-Pronto: MVP (cadastro, catálogo, prática com cronômetro, resultado com recorde e ponto fraco, progresso por tópico, planos), modo de teste, Fase 2 (streak, XP, conquistas), lições em etapas, conteúdo revisado pelo Guia Editorial (Matemática, Português) e a matéria **Sistemas Operacionais** com 5 lições (o que é um SO; componentes e funções; terminal na prática; chamadas de sistema em 2 lições).
+Pronto: MVP (cadastro, catálogo, prática com cronômetro, resultado com recorde e ponto fraco, progresso por tópico, planos), modo de teste, Fase 2 (streak, XP, conquistas), lições em etapas, conteúdo revisado pelo Guia Editorial (Matemática, Português) e a matéria **Sistemas Operacionais** com 9 lições (o que é um SO; componentes e funções; terminal na prática; chamadas de sistema em 2 lições; estrutura de um SO; processos; estados e transições; escalonamento).
 
 **Fase 2 fechada** (menos TWA na Play Store e expansão de módulos, adiados pelo Sávio): simulado por matéria (`ExamController`, tentativa com `kind = exam`, questões sorteadas em rodízio entre as lições) e gráfico de evolução (`EvolutionChart`, acerto e tempo em gráficos separados — nunca eixo duplo). CI ativo em `.github/workflows/ci.yml`.
 
@@ -83,9 +83,11 @@ Pronto: MVP (cadastro, catálogo, prática com cronômetro, resultado com record
 
 O que ela decide: o **escalonamento é tópico próprio**, logo depois de Estados e Transições; os **estudos de caso entram na matéria**, no fim; **história dos SOs e revisão de hardware não entram**. Semáforos e Gerência de Disco são itens explícitos, e por isso ganham lição própria. Impasses, Multiprocessadores e Segurança continuam de fora.
 
-Já escritas, além das 5 primeiras: **Estrutura de um SO** (monolítico, camadas, micronúcleo, cliente-servidor, máquinas virtuais e contêineres) e **Processos: o modelo** (programa × processo, tabela de processos, PID, criação, hierarquia e término).
+Já escritas, além das 5 primeiras: **Estrutura de um SO** (monolítico, camadas, micronúcleo, cliente-servidor, máquinas virtuais e contêineres), **Processos: o modelo** (programa × processo, tabela de processos, PID, criação, hierarquia e término), **Estados e Transições** (executando, pronto e bloqueado, as quatro transições, quem provoca cada uma, zumbi e suspenso) e **Escalonamento** (com e sem preempção, objetivos, tipos de processo, regras de lote e interativas, fatia de tempo, prioridade, inanição e envelhecimento).
 
-Próximas, nesta ordem: Estados e Transições · Escalonamento · Threads · Comunicação entre processos · Semáforos · Memória · Memória Virtual · Segmentação e Paginação · Gerência de Disco · Virtualização · Estudos de Caso.
+Próximas, nesta ordem: Threads · Comunicação entre processos · Semáforos · Memória · Memória Virtual · Segmentação e Paginação · Gerência de Disco · Virtualização · Estudos de Caso.
+
+**Ao acrescentar lição, mexa em quatro lugares:** o JSON do conteúdo, a figura em `frontend/public/figuras/`, a lista de `frontend/src/lib/site-content.ts` (o teste `site-content.test.ts` reprova se esquecer) e o mapa em `docs/sistemas-operacionais-mapa.md`.
 
 **Atualizações feitas sobre o material do semestre** (a regra 4 do Guia manda corrigir o que está defasado): micronúcleo hoje é tecnologia de produção, não experimento — entrou o seL4 e o uso em carros e aviões; e contêineres entraram ao lado de máquinas virtuais, porque é o que se usa hoje e o material da disciplina não cobre.
 

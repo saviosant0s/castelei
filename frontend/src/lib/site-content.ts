@@ -31,6 +31,8 @@ export const SUBJECTS: SiteSubject[] = [
       "Chamadas de sistema: arquivos e processos",
       "Estrutura de um SO: como ele é montado por dentro",
       "Processos: como um programa vira coisa viva",
+      "Estados de um processo: correndo, pronto ou parado",
+      "Escalonamento: quem usa o processador agora",
     ],
   },
   {

@@ -2840,6 +2840,854 @@
           "pitfall": "Erro tratado e erro fatal parecem iguais, mas diferem em quem decide. No tratado, o processo percebe e sai; no fatal, ele é encerrado."
         }
       ]
+    },
+    {
+      "slug": "estados-e-transicoes",
+      "title": "Estados de um processo: correndo, pronto ou parado",
+      "summary": "Um programa em execução nem sempre está usando o processador. Ele reveza entre três situações, e as mudanças entre elas seguem regras fixas.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A fila do caixa e o cliente que sumiu",
+          "body": [
+            "Você está na fila do caixa do mercado. Chega a sua vez e o atendimento começa.",
+            "No meio dele você lembra que esqueceu o pão.",
+            "Você sai e vai buscar. Enquanto procura, não está sendo atendido nem esperando na fila.",
+            "Voltou com o pão? Então entra de novo na fila."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Três situações, não duas",
+          "body": [
+            "Um programa guardado no disco está parado. Quando você manda executar, nasce algo vivo.",
+            "Esse algo vivo passa a vida em uma de três situações.",
+            "Ele pode estar sendo atendido, esperando a vez, ou parado à espera de algo."
+          ],
+          "terms": [
+            {
+              "word": "Processo",
+              "meaning": "um programa em execução, com a memória que ele usa e o ponto exato em que parou."
+            },
+            {
+              "word": "Processador",
+              "meaning": "a peça do computador que executa as instruções dos programas."
+            }
+          ],
+          "example": {
+            "label": "As três situações",
+            "lines": [
+              "executando = está sendo atendido agora",
+              "pronto = está na fila, esperando a vez",
+              "bloqueado = saiu da fila para buscar algo"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Executando: é a vez dele",
+          "body": [
+            "Executando é quando o processo está de fato usando o processador.",
+            "Só um processo por núcleo fica nessa situação por vez.",
+            "Uma máquina com quatro deles executa quatro processos de verdade ao mesmo tempo."
+          ],
+          "terms": [
+            {
+              "word": "Núcleo do processador",
+              "meaning": "cada unidade de execução dentro do processador. Ele atende um processo por vez."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Pronto: só falta a vez",
+          "body": [
+            "Pronto é quando o processo tem tudo o que precisa e só espera o processador.",
+            "Ele não está travado nem com defeito. Ele está na fila.",
+            "Numa máquina comum, dezenas de processos ficam nessa situação o tempo todo."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Bloqueado: esperando algo de fora",
+          "body": [
+            "Bloqueado é quando o processo não consegue seguir nem com o processador livre.",
+            "Ele depende de algo que ainda não chegou."
+          ],
+          "bullets": [
+            "Um arquivo que ainda está sendo lido do disco.",
+            "Uma resposta que vem pela rede.",
+            "Uma tecla que você ainda não apertou."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As quatro mudanças possíveis",
+          "body": [
+            "Entre as três situações existem quatro caminhos. Um caminho que parece existir não existe."
+          ],
+          "bullets": [
+            "Executando para bloqueado: o processo pediu algo e vai ter que esperar.",
+            "Executando para pronto: acabou o tempo dele e outro entra.",
+            "Pronto para executando: chegou a vez dele.",
+            "Bloqueado para pronto: o que ele esperava chegou."
+          ],
+          "figure": {
+            "src": "/figuras/so/so-estados-processo.svg",
+            "alt": "Três caixas ligadas por setas: executando no topo, bloqueado à esquerda e pronto à direita, com quatro setas numeradas entre elas.",
+            "caption": "Não existe caminho de pronto para bloqueado. Quem está na fila não pede nada."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Quem provoca cada mudança",
+          "body": [
+            "Duas dessas mudanças partem do próprio processo.",
+            "As outras duas são decisão de uma parte do sistema operacional."
+          ],
+          "terms": [
+            {
+              "word": "Escalonador",
+              "meaning": "a parte do sistema operacional que escolhe qual processo usa o processador agora."
+            }
+          ],
+          "table": {
+            "label": "Quem provoca cada mudança",
+            "headers": [
+              "Mudança",
+              "Quem provoca"
+            ],
+            "rows": [
+              [
+                "Executando → bloqueado",
+                "o próprio processo, ao pedir algo"
+              ],
+              [
+                "Bloqueado → pronto",
+                "o sistema, quando o pedido é atendido"
+              ],
+              [
+                "Pronto → executando",
+                "o escalonador"
+              ],
+              [
+                "Executando → pronto",
+                "o escalonador"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Ver isso no seu computador",
+          "body": [
+            "Dá para ver a situação de cada processo na sua própria máquina.",
+            "O Windows tem uma janela pronta para isso. No Linux, uma ordem de texto mostra o mesmo."
+          ],
+          "terms": [
+            {
+              "word": "Terminal",
+              "meaning": "a janela em que você digita ordens de texto para o computador, em vez de clicar."
+            },
+            {
+              "word": "Comando",
+              "meaning": "cada ordem de texto que você digita no terminal."
+            },
+            {
+              "word": "PowerShell e Prompt de Comando (cmd)",
+              "meaning": "os dois programas do Windows em que você digita ordens de texto. O PowerShell é o mais novo dos dois."
+            }
+          ],
+          "table": {
+            "label": "Ver a situação dos processos",
+            "headers": [
+              "Onde",
+              "Como"
+            ],
+            "rows": [
+              [
+                "Windows (janela)",
+                "Gerenciador de Tarefas, aba Detalhes"
+              ],
+              [
+                "Windows (PowerShell)",
+                "Get-Process"
+              ],
+              [
+                "Linux",
+                "ps -eo pid,stat,comm"
+              ],
+              [
+                "Linux (ao vivo)",
+                "top"
+              ]
+            ],
+            "mono": true
+          },
+          "example": {
+            "label": "As letras que o Linux mostra na coluna STAT",
+            "lines": [
+              "R = executando ou pronto para executar",
+              "S = bloqueado, esperando algo chegar",
+              "D = bloqueado e sem poder ser interrompido",
+              "Z = já terminou e a ficha ainda não foi retirada"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Nascer e morrer também contam",
+          "body": [
+            "Além das três situações, existem as duas pontas do caminho.",
+            "Uma é o instante em que o processo acabou de ser criado.",
+            "A outra é o instante em que ele terminou e ainda não foi retirado da lista."
+          ],
+          "terms": [
+            {
+              "word": "Tabela de processos",
+              "meaning": "a lista que o sistema mantém, com uma ficha para cada processo em andamento."
+            },
+            {
+              "word": "Zumbi",
+              "meaning": "o processo que já terminou, mas cuja ficha continua na lista até o pai ler o resultado."
+            }
+          ],
+          "bullets": [
+            "Novo: foi criado e ainda não entrou na fila.",
+            "Terminado: acabou e a ficha dele ainda vai ser retirada.",
+            "Suspenso: foi guardado fora da memória principal, para liberar espaço."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Esse assunto cai de três formas. Uma pede o nome do estado, outra pede a transição e a terceira dá um caso concreto."
+          ],
+          "bullets": [
+            "\"Processo em posse do processador\" → estado executando (running).",
+            "\"Processo apto a executar, aguardando apenas a CPU\" → estado pronto (ready).",
+            "\"Processo aguardando a ocorrência de um evento externo\" → estado bloqueado (waiting ou blocked).",
+            "A transição que NÃO existe é pronto → bloqueado.",
+            "Executando → pronto é chamada de preempção.",
+            "Bloqueado → pronto acontece quando o evento esperado ocorre, e não quando a CPU fica livre.",
+            "\"Processo encerrado cuja entrada permanece na tabela de processos\" → zumbi."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Três confusões derrubam quem estudou só a lista de nomes."
+          ],
+          "bullets": [
+            "Pronto não é bloqueado. Quem está pronto seguiria agora mesmo se recebesse a vez.",
+            "Um processo bloqueado não volta direto para o processador. Ele passa pela fila antes.",
+            "Perder a vez não é erro nem castigo. É o revezamento normal do sistema.",
+            "Liberar o processador não desbloqueia ninguém. Só o evento esperado desbloqueia."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Três situações e quatro caminhos entre elas. É isso que a prova quer."
+          ],
+          "bullets": [
+            "Executando: está usando o processador agora.",
+            "Pronto: tem tudo o que precisa e só espera a vez.",
+            "Bloqueado: espera algo de fora, e liberar o processador não adianta.",
+            "Não existe caminho de pronto para bloqueado.",
+            "O escalonador manda nas trocas com a fila. O próprio processo manda no bloqueio."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Estados de um processo",
+          "statement": "Um processo terminou de executar sua fatia de tempo e foi retirado do processador, embora ainda tivesse trabalho a fazer. Em que estado ele fica?",
+          "options": [
+            "bloqueado",
+            "pronto",
+            "suspenso",
+            "terminado",
+            "zumbi"
+          ],
+          "correct_index": 1,
+          "explanation": "Ele continua apto a executar e só precisa da vez. Isso é exatamente o estado pronto.",
+          "pitfall": "Ser retirado do processador não é bloqueio. Bloqueio depende de esperar algo de fora."
+        },
+        {
+          "topic": "Transições",
+          "statement": "Qual transição de estado NÃO existe no modelo de três estados?",
+          "options": [
+            "executando → pronto",
+            "executando → bloqueado",
+            "pronto → bloqueado",
+            "bloqueado → pronto",
+            "pronto → executando"
+          ],
+          "correct_index": 2,
+          "explanation": "Para bloquear, o processo precisa estar executando e fazer um pedido. Quem está na fila não executa nada e por isso não pede nada.",
+          "pitfall": "A banca gosta de inverter a ordem e escrever bloqueado → executando, que também não existe."
+        },
+        {
+          "topic": "Bloqueio",
+          "statement": "Um processo pede a leitura de um arquivo grande no disco. Enquanto os dados não chegam, ele fica:",
+          "options": [
+            "bloqueado, sem concorrer pelo processador",
+            "pronto, concorrendo pelo processador",
+            "executando em segundo plano",
+            "suspenso pelo escalonador",
+            "terminado com erro"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele depende de um evento externo. Enquanto esse evento não acontece, colocá-lo no processador seria desperdício.",
+          "pitfall": "Processo bloqueado não entra na disputa pela vez. Ele nem está na fila de prontos."
+        },
+        {
+          "topic": "Quem provoca a transição",
+          "statement": "A transição de pronto para executando é provocada por:",
+          "options": [
+            "pelo escalonador do sistema operacional",
+            "pelo próprio processo, por chamada de sistema",
+            "pelo término da operação de entrada e saída",
+            "pelo usuário, ao clicar na janela",
+            "pelo processo pai"
+          ],
+          "correct_index": 0,
+          "explanation": "Escolher quem usa o processador é decisão do escalonador. O processo não escolhe a própria vez.",
+          "pitfall": "As transições que envolvem a fila são do escalonador. As que envolvem espera são do próprio processo."
+        },
+        {
+          "topic": "Desbloqueio",
+          "statement": "Um processo está bloqueado esperando um dado da rede. O dado chega. O que acontece com ele?",
+          "options": [
+            "vai para pronto e aguarda a vez",
+            "volta a executar imediatamente",
+            "é encerrado e recriado",
+            "permanece bloqueado até o próximo pedido",
+            "passa para o estado suspenso"
+          ],
+          "correct_index": 0,
+          "explanation": "O evento esperado só o devolve à fila. Quem decide quando ele executa de novo é o escalonador.",
+          "pitfall": "Desbloquear não é a mesma coisa que ganhar o processador."
+        },
+        {
+          "topic": "Estados adicionais",
+          "statement": "Em sistemas do tipo Unix, como se chama o processo que já terminou e cuja entrada continua na tabela de processos à espera de o pai ler o código de saída?",
+          "options": [
+            "zumbi",
+            "órfão",
+            "suspenso",
+            "daemon",
+            "preemptado"
+          ],
+          "correct_index": 0,
+          "explanation": "A ficha fica guardada para que o pai possa ler como o filho terminou. Enquanto ninguém lê, o processo aparece nessa condição.",
+          "pitfall": "Órfão é outra coisa: é o processo cujo pai morreu antes dele."
+        },
+        {
+          "topic": "Paralelismo",
+          "statement": "Em um processador com dois núcleos, quantos processos podem estar no estado executando ao mesmo tempo?",
+          "options": [
+            "dois",
+            "um",
+            "quatro",
+            "quantos couberem na memória",
+            "depende do tamanho da fatia de tempo"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada núcleo atende um processo por vez. Dois núcleos atendem dois processos de verdade ao mesmo tempo.",
+          "pitfall": "Vários processos abertos não significam vários em execução. O resto está pronto ou bloqueado."
+        },
+        {
+          "topic": "Preempção",
+          "statement": "O nome dado à retirada do processador de um processo que ainda poderia continuar executando é:",
+          "options": [
+            "preempção",
+            "bloqueio",
+            "escalonamento cooperativo",
+            "troca de modo",
+            "inanição"
+          ],
+          "correct_index": 0,
+          "explanation": "Interromper quem ainda podia seguir, para dar a vez a outro, é o que se chama de preempção.",
+          "pitfall": "Bloqueio parte do próprio processo. Preempção é imposta pelo sistema."
+        }
+      ]
+    },
+    {
+      "slug": "escalonamento",
+      "title": "Escalonamento: quem usa o processador agora",
+      "summary": "Quando vários programas querem executar juntos, alguém precisa escolher a ordem. Cada regra de escolha serve a um objetivo diferente.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A fila do pronto-socorro",
+          "body": [
+            "Dez pessoas chegam ao pronto-socorro na mesma hora.",
+            "Atender por ordem de chegada parece justo. Mas quem tem dor no peito não pode esperar.",
+            "Atender primeiro os casos rápidos esvazia a sala depressa. Só que os casos longos ficam para sempre.",
+            "Toda regra de ordem tem uma vantagem e um custo."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Escolher a ordem tem nome",
+          "body": [
+            "Numa máquina comum existem dezenas de programas em execução ao mesmo tempo.",
+            "A peça que executa instruções é uma só, e ela atende um por vez.",
+            "Então alguém precisa escolher quem vai agora."
+          ],
+          "terms": [
+            {
+              "word": "Processo",
+              "meaning": "um programa em execução, com a memória que ele usa e o ponto exato em que parou."
+            },
+            {
+              "word": "Processador",
+              "meaning": "a peça do computador que executa as instruções dos programas."
+            },
+            {
+              "word": "Escalonador",
+              "meaning": "a parte do sistema operacional que escolhe qual processo usa o processador agora."
+            },
+            {
+              "word": "Escalonamento",
+              "meaning": "a decisão de qual processo executa agora e por quanto tempo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quando a decisão acontece",
+          "body": [
+            "O escalonador não fica decidindo o tempo todo. Ele decide em momentos certos."
+          ],
+          "bullets": [
+            "Um processo novo foi criado.",
+            "Um processo terminou e liberou a vez.",
+            "Um processo parou para esperar algo de fora.",
+            "Chegou algo que um processo esperava.",
+            "O relógio da máquina avisou que passou um tempo."
+          ],
+          "terms": [
+            {
+              "word": "Relógio da máquina",
+              "meaning": "uma peça que interrompe o processador muitas vezes por segundo, para o sistema retomar o controle."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Deixar terminar ou interromper",
+          "body": [
+            "Existem dois jeitos de tratar quem está executando.",
+            "Um deixa o programa seguir até ele parar por conta própria.",
+            "O outro tira o programa no meio, quando o tempo dele acaba."
+          ],
+          "terms": [
+            {
+              "word": "Preempção",
+              "meaning": "tirar o processador de um processo que ainda podia continuar, para dar a vez a outro."
+            }
+          ],
+          "table": {
+            "label": "Os dois jeitos",
+            "headers": [
+              "Jeito",
+              "Como funciona",
+              "Onde aparece"
+            ],
+            "rows": [
+              [
+                "Sem preempção",
+                "o processo executa até parar ou terminar",
+                "serviços sem ninguém esperando"
+              ],
+              [
+                "Com preempção",
+                "o processo executa até o tempo dele acabar",
+                "qualquer sistema com tela e gente usando"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que é um bom escalonamento",
+          "body": [
+            "Não existe uma ordem melhor para tudo. Depende do que se quer ganhar."
+          ],
+          "bullets": [
+            "Justiça: cada processo recebe uma fatia do processador.",
+            "Vazão: terminar o maior número de trabalhos por hora.",
+            "Tempo de resposta: reagir rápido a quem está na frente da tela.",
+            "Tempo de retorno: o tempo total entre pedir e receber o resultado.",
+            "Uso do processador: não deixar a peça parada à toa."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Dois tipos de programa",
+          "body": [
+            "Uns passam a vida calculando. Outros passam a vida esperando.",
+            "Um vídeo sendo convertido calcula quase o tempo todo.",
+            "Um editor de texto espera você digitar quase o tempo todo."
+          ],
+          "terms": [
+            {
+              "word": "Orientado a processamento",
+              "meaning": "o processo que usa longos períodos de processador entre uma espera e outra."
+            },
+            {
+              "word": "Orientado a entrada e saída",
+              "meaning": "o processo que usa o processador em rajadas curtas e passa quase todo o tempo esperando."
+            }
+          ],
+          "example": {
+            "label": "Por que isso importa",
+            "lines": [
+              "quem espera muito devolve a vez rápido",
+              "dar a vez a ele primeiro costuma render mais",
+              "quem calcula muito segura a vez até o fim"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Regras para trabalho sem ninguém esperando",
+          "body": [
+            "Alguns trabalhos rodam de madrugada, sem gente na frente da tela.",
+            "Aí não importa responder rápido. Importa terminar tudo."
+          ],
+          "table": {
+            "label": "Três regras clássicas",
+            "headers": [
+              "Nome",
+              "Regra",
+              "Problema"
+            ],
+            "rows": [
+              [
+                "Primeiro a chegar, primeiro a ser servido",
+                "atende na ordem de chegada",
+                "um trabalho longo segura todos os outros"
+              ],
+              [
+                "Trabalho mais curto primeiro",
+                "atende quem vai demorar menos",
+                "é preciso saber a duração de antemão"
+              ],
+              [
+                "Menor tempo restante",
+                "interrompe quando chega um mais curto",
+                "trabalho longo pode nunca executar"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Regra para quem está na frente da tela",
+          "body": [
+            "Com gente esperando, o que importa é responder rápido.",
+            "A regra mais comum dá a cada processo uma fatia igual de tempo.",
+            "Acabou a fatia, o processo vai para o fim da fila e o próximo entra."
+          ],
+          "terms": [
+            {
+              "word": "Fatia de tempo",
+              "meaning": "o pedaço de tempo que um processo recebe antes de ser interrompido. Costuma valer alguns milésimos de segundo."
+            },
+            {
+              "word": "Revezamento circular",
+              "meaning": "a regra que dá a mesma fatia a cada processo, em roda, sem preferência por ninguém."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/so/so-escalonamento-revezamento.svg",
+            "alt": "Uma fila de quatro processos prontos, o primeiro entrando no processador e uma seta tracejada levando de volta ao fim da fila.",
+            "caption": "Cada um recebe a mesma fatia. Quando ela acaba, volta para o fim da fila."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Quando alguns valem mais que outros",
+          "body": [
+            "Nem todo programa tem a mesma urgência. Tocar música não pode falhar.",
+            "Uma cópia de segurança pode esperar sem problema nenhum.",
+            "Por isso muitos sistemas dão um número de importância a cada processo."
+          ],
+          "terms": [
+            {
+              "word": "Prioridade",
+              "meaning": "o número que diz a importância de um processo na hora da escolha."
+            },
+            {
+              "word": "Inanição",
+              "meaning": "o que acontece quando um processo de importância baixa nunca recebe a vez."
+            }
+          ],
+          "table": {
+            "label": "Regras comuns em sistemas com gente usando",
+            "headers": [
+              "Nome",
+              "Regra"
+            ],
+            "rows": [
+              [
+                "Revezamento circular",
+                "fatia igual para todos, em roda"
+              ],
+              [
+                "Por prioridade",
+                "executa primeiro quem tem a importância maior"
+              ],
+              [
+                "Múltiplas filas",
+                "filas separadas por importância, com fatias de tamanhos diferentes"
+              ],
+              [
+                "Sorteio",
+                "cada processo recebe bilhetes e um bilhete é sorteado"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O tamanho da fatia muda tudo",
+          "body": [
+            "A fatia curta responde rápido. Mas trocar de programa custa tempo.",
+            "A fatia longa desperdiça menos com trocas. Só que a espera aparece na tela.",
+            "Os sistemas de hoje usam algo entre poucos e algumas dezenas de milésimos de segundo."
+          ],
+          "terms": [
+            {
+              "word": "Troca de contexto",
+              "meaning": "o trabalho de guardar onde um processo parou e carregar o ponto onde o próximo estava."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Mexer nisso na prática",
+          "body": [
+            "Dá para avisar ao sistema que um programa é menos urgente que os outros.",
+            "O Linux tem uma ordem de texto para isso. No Windows, dá para mudar pela janela de tarefas."
+          ],
+          "terms": [
+            {
+              "word": "Terminal",
+              "meaning": "a janela em que você digita ordens de texto para o computador, em vez de clicar."
+            },
+            {
+              "word": "Comando",
+              "meaning": "cada ordem de texto que você digita no terminal."
+            },
+            {
+              "word": "PowerShell e Prompt de Comando (cmd)",
+              "meaning": "os dois programas do Windows em que você digita ordens de texto. O PowerShell é o mais novo dos dois."
+            }
+          ],
+          "table": {
+            "label": "Mudar a importância de um programa",
+            "headers": [
+              "Onde",
+              "Como"
+            ],
+            "rows": [
+              [
+                "Linux (ao iniciar)",
+                "nice -n 10 nome-do-programa"
+              ],
+              [
+                "Linux (já rodando)",
+                "renice -n 10 -p 1234"
+              ],
+              [
+                "Windows (janela)",
+                "Gerenciador de Tarefas → Detalhes → Definir prioridade"
+              ],
+              [
+                "Windows (PowerShell)",
+                "(Get-Process bloco).PriorityClass = 'BelowNormal'"
+              ]
+            ],
+            "mono": true
+          },
+          "example": {
+            "label": "Os valores do nice no Linux",
+            "lines": [
+              "-20 = o mais urgente (só o administrador consegue)",
+              "0 = o valor padrão de todo programa",
+              "19 = o menos urgente de todos"
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Aqui a banca cobra nome de algoritmo e conta de tempo. Os nomes costumam vir em inglês."
+          ],
+          "bullets": [
+            "\"Primeiro a chegar, primeiro a ser servido\" → FCFS ou FIFO, não preemptivo.",
+            "\"Menor job primeiro\" → SJF, ótimo só quando todos chegam juntos e a duração é conhecida.",
+            "\"Menor tempo restante\" → SRTN ou SRTF, a versão preemptiva do SJF.",
+            "\"Fatia de tempo fixa com fila circular\" → round-robin, e a fatia se chama quantum.",
+            "\"Processo de baixa prioridade que nunca executa\" → inanição, ou starvation.",
+            "\"Salvar os registradores e carregar os do próximo processo\" → troca de contexto, ou context switch.",
+            "Tempo de retorno = instante de término menos instante de chegada.",
+            "Tempo de espera = tempo de retorno menos tempo de execução.",
+            "Envelhecimento (aging) é aumentar a prioridade de quem espera há muito tempo."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Quatro armadilhas aparecem quase sempre nesse assunto."
+          ],
+          "bullets": [
+            "O revezamento circular puro não é injusto. Ele é igual demais, e por isso atende mal quem é urgente.",
+            "Fatia menor não é sempre melhor. Cada troca custa tempo do processador.",
+            "Importância alta não garante execução imediata. Sem preempção, quem já está executando continua.",
+            "Trabalho mais curto primeiro só é ótimo se a duração for conhecida antes.",
+            "Trocar de processo não é de graça. É por isso que a fatia não pode ser minúscula."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Escalonar é escolher quem usa o processador agora e por quanto tempo."
+          ],
+          "bullets": [
+            "Com preempção o sistema interrompe. Sem preempção ele espera o programa parar.",
+            "Sem gente esperando: ordem de chegada, mais curto primeiro, menor tempo restante.",
+            "Com gente esperando: revezamento circular, importância e múltiplas filas.",
+            "A fatia curta responde melhor. A fatia longa desperdiça menos com trocas.",
+            "Importância baixa demais, para sempre, vira inanição."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Preempção",
+          "statement": "Em um algoritmo de escalonamento preemptivo, o processo em execução pode perder o processador:",
+          "options": [
+            "ao esgotar sua fatia de tempo, mesmo sem ter terminado",
+            "somente quando termina sua execução",
+            "somente quando solicita uma operação de entrada e saída",
+            "apenas quando o usuário encerra o programa",
+            "apenas quando falta memória"
+          ],
+          "correct_index": 0,
+          "explanation": "Interromper quem ainda poderia seguir é exatamente o que caracteriza a preempção.",
+          "pitfall": "Nos algoritmos sem preempção, o processo só sai quando bloqueia ou termina."
+        },
+        {
+          "topic": "Round-robin",
+          "statement": "No escalonamento round-robin, o que acontece com o processo cujo quantum se esgota antes de ele terminar?",
+          "options": [
+            "volta para o fim da fila de prontos",
+            "é encerrado pelo sistema",
+            "vai para o estado bloqueado",
+            "recebe automaticamente um quantum maior",
+            "passa à frente da fila na próxima rodada"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele continua apto a executar e só perdeu a vez. Por isso volta à fila de prontos, no fim dela.",
+          "pitfall": "Perder o quantum não bloqueia ninguém. Bloqueio depende de esperar um evento externo."
+        },
+        {
+          "topic": "SJF",
+          "statement": "O algoritmo shortest job first (menor job primeiro) minimiza o tempo médio de espera, mas tem uma limitação prática central:",
+          "options": [
+            "exige conhecer antecipadamente a duração de cada processo",
+            "não pode ser usado em sistemas com mais de um núcleo",
+            "consome mais memória que os demais algoritmos",
+            "só funciona com processos de mesma prioridade",
+            "impede qualquer tipo de preempção"
+          ],
+          "correct_index": 0,
+          "explanation": "A escolha depende de saber quanto tempo cada trabalho vai levar. Na prática esse valor só pode ser estimado.",
+          "pitfall": "A otimalidade do menor job primeiro vale quando todos os trabalhos já estão disponíveis no início."
+        },
+        {
+          "topic": "Inanição",
+          "statement": "Em um escalonamento por prioridades sem nenhum ajuste, processos de baixa prioridade podem nunca executar. Esse problema é chamado de:",
+          "options": [
+            "inanição (starvation)",
+            "impasse (deadlock)",
+            "preempção",
+            "inversão de prioridade",
+            "troca de contexto"
+          ],
+          "correct_index": 0,
+          "explanation": "Sempre que chega alguém mais importante, o processo de baixa prioridade é ultrapassado de novo.",
+          "pitfall": "Impasse é quando os processos travam esperando uns aos outros. Inanição é ser sempre passado para trás."
+        },
+        {
+          "topic": "Envelhecimento",
+          "statement": "A técnica que aumenta gradualmente a prioridade de processos que esperam há muito tempo na fila é conhecida como:",
+          "options": [
+            "envelhecimento (aging)",
+            "preempção",
+            "multiprogramação",
+            "escalonamento cooperativo",
+            "balanceamento de carga"
+          ],
+          "correct_index": 0,
+          "explanation": "Quanto mais tempo o processo espera, mais a sua importância sobe. Assim ele acaba recebendo a vez.",
+          "pitfall": "O envelhecimento não muda o algoritmo. Ele corrige o efeito colateral das prioridades fixas."
+        },
+        {
+          "topic": "Quantum",
+          "statement": "Qual é a consequência de escolher um quantum muito pequeno no round-robin?",
+          "options": [
+            "o tempo gasto com trocas de contexto cresce e desperdiça processador",
+            "os processos passam a executar em ordem de chegada",
+            "os processos de entrada e saída deixam de ser atendidos",
+            "o sistema deixa de ser preemptivo",
+            "o tempo de resposta piora para todos"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada troca exige salvar e restaurar o estado do processo. Com fatias minúsculas, boa parte do tempo vai nisso.",
+          "pitfall": "Quantum grande demais tem o problema oposto: o sistema demora a responder a quem está na tela."
+        },
+        {
+          "topic": "Tempo de retorno",
+          "statement": "Um processo chega no instante 0, espera na fila até o instante 4 e termina no instante 10. Qual é o seu tempo de retorno (turnaround)?",
+          "options": [
+            "10",
+            "6",
+            "4",
+            "14",
+            "depende do quantum"
+          ],
+          "correct_index": 0,
+          "explanation": "Tempo de retorno é o término menos a chegada. Aqui, 10 menos 0.",
+          "pitfall": "Não confunda com o tempo de espera, que aqui seria 4."
+        },
+        {
+          "topic": "Tipos de processo",
+          "statement": "Por que muitos escalonadores dão preferência aos processos orientados a entrada e saída?",
+          "options": [
+            "porque eles usam o processador em rajadas curtas e logo liberam a vez",
+            "porque eles consomem menos memória que os demais",
+            "porque eles nunca podem ser interrompidos",
+            "porque eles têm sempre a maior prioridade fixa do sistema",
+            "porque eles dispensam troca de contexto"
+          ],
+          "correct_index": 0,
+          "explanation": "Atendê-los primeiro faz o pedido externo começar mais cedo. Enquanto ele espera, outro processo usa o processador.",
+          "pitfall": "A preferência não é por serem mais importantes. É porque devolvem a vez rápido e mantêm tudo ocupado."
+        }
+      ]
     }
   ]
 }
