@@ -135,6 +135,7 @@ A escolha do tema (Automático/Claro/Escuro, em `/perfil`) vive no `localStorage
 
 - **`backend/composer.lock` não está versionado.** Cada deploy do Railway resolve as dependências do zero, então produção pode receber versões diferentes das testadas. Commitar o lock resolve, mas o arquivo gerado aqui veio do PHP 8.4 e o Railway não tem versão fixada (`composer.json` pede `^8.2`): confira a versão do PHP em produção antes de versionar.
 - **Ainda faltam, do plano visual:** ilustrações próprias para estados vazios e conquistas (hoje são ícones do Lucide).
+- **Autorização permanente do Sávio: pode subir sem perguntar.** Terminou um trabalho conferido (testes, lint, build e a tela olhada), abra o PR, mescle na `main` e acompanhe o deploy do Railway — não pare para pedir permissão. A exceção é ele dizer que naquele caso não é para subir. Isso não dispensa o resto: conferir antes, nunca subir coisa quebrada, e avisar o que foi ao ar.
 - O Sávio **edita direto no GitHub** (já fez ajustes visuais de PWA). Sempre `git fetch` e confira antes de dar push. Nunca use force push.
 - Observação sobre ajuste manual dele: `BottomNav` continua sem `aria-label`. Sugira, não altere sem pedir. (O padding de área segura duplicado foi corrigido junto com a folga da barra, a pedido dele.)
 - Não testado em celular real nem em máquinas Windows/Linux reais (os comandos vêm da documentação). O Sávio está testando o app.
