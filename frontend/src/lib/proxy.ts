@@ -60,6 +60,65 @@ function json(body: unknown, status: number): NextResponse {
   return NextResponse.json(body, { status });
 }
 
+/**
+ * Repassa as chamadas do painel de conteúdo (`/api/admin/...`).
+ *
+ * Separado do `forwardToBackend` de propósito, porque a natureza do tráfego é
+ * outra: aqui passam PUT e DELETE, e o corpo pode ser um arquivo de vídeo em
+ * vez de JSON. O que não muda é o essencial — o token continua só no cookie
+ * httpOnly, e o navegador continua sem nunca falar com a API direto.
+ *
+ * Quem barra de verdade é a API (middleware `admin`). Este caminho é o
+ * encanamento, não a tranca: repassar não é autorizar.
+ */
+export async function forwardAdmin(req: NextRequest, segments: string[]): Promise<NextResponse> {
+  const token = req.cookies.get(TOKEN_COOKIE)?.value;
+  if (!token) return json({ message: "Sua sessão expirou. Entre de novo." }, 401);
+
+  const path = segments.join("/");
+  const search = new URL(req.url).search;
+
+  const headers: Record<string, string> = { Accept: "application/json", Authorization: `Bearer ${token}` };
+
+  /*
+  | O content-type original é repassado tal e qual, e nunca inventado aqui.
+  | Num envio de arquivo ele carrega a fronteira entre as partes
+  | (`boundary=...`); reescrever o cabeçalho deixaria o PHP sem saber onde um
+  | arquivo termina e o próximo começa.
+  */
+  const contentType = req.headers.get("content-type");
+  if (contentType) headers["Content-Type"] = contentType;
+
+  const hasBody = req.method !== "GET" && req.method !== "HEAD";
+
+  let response: Response;
+  try {
+    response = await fetch(`${apiBase()}/admin/${path}${search}`, {
+      method: req.method,
+      headers,
+      body: hasBody ? Buffer.from(await req.arrayBuffer()) : undefined,
+      cache: "no-store",
+    });
+  } catch {
+    return json({ message: "Não deu para falar com o servidor. Tente de novo em instantes." }, 502);
+  }
+
+  // O modelo de conteúdo vem como download, não como JSON: o corpo passa
+  // inteiro, junto com o cabeçalho que dá nome ao arquivo.
+  const out = new NextResponse(response.body, {
+    status: response.status,
+    headers: {
+      "Content-Type": response.headers.get("content-type") ?? "application/json",
+      ...(response.headers.get("content-disposition")
+        ? { "Content-Disposition": response.headers.get("content-disposition") as string }
+        : {}),
+    },
+  });
+
+  if (response.status === 401) out.cookies.delete(TOKEN_COOKIE);
+  return out;
+}
+
 /** Repassa a chamada do navegador para a API, colocando o token do cookie no header. */
 export async function forwardToBackend(req: NextRequest, segments: string[]): Promise<NextResponse> {
   const path = segments.join("/");

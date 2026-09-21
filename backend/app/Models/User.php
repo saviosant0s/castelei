@@ -3,12 +3,13 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Support\Admins;
+use App\Support\Plans;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use App\Support\Plans;
 
 class User extends Authenticatable
 {
@@ -18,6 +19,7 @@ class User extends Authenticatable
     /** Valores padrão em memória (o banco também tem default). */
     protected $attributes = [
         'plan' => 'free',
+        'is_admin' => false,
     ];
 
     /**
@@ -51,7 +53,25 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'is_admin' => 'boolean',
         ];
+    }
+
+    /**
+     * Pode entrar no painel de conteúdo?
+     *
+     * Duas portas de propósito. A coluna é o caminho normal, ligada pelo
+     * comando `castelei:admin`. A lista em ADMIN_EMAILS existe para o primeiro
+     * acesso: no Railway dá para criar uma variável pelo navegador, mas rodar
+     * um comando exige CLI — sem ela, ninguém entraria na primeira vez.
+     */
+    public function isAdmin(): bool
+    {
+        if ($this->is_admin) {
+            return true;
+        }
+
+        return Admins::allows($this->email);
     }
 
     public function questionLimit(): ?int

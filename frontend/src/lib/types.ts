@@ -6,6 +6,8 @@ export interface User {
   email: string;
   /** o plano guardado na conta */
   plan: Plan;
+  /** administra o conteúdo em /admin. Nada a ver com plano. */
+  is_admin: boolean;
   /** o plano que vale na prática — durante os testes, todo mundo estuda como Pro */
   effective_plan: Plan;
   /** rótulo do plano efetivo */
@@ -58,6 +60,8 @@ export interface LessonStep {
   figure?: { src: string; alt: string; caption?: string };
   /** trecho de código, mostrado em fonte monoespaçada */
   code?: { label?: string; text: string };
+  /** vídeo: arquivo enviado pelo painel ou link do YouTube */
+  video?: { src: string; title?: string; caption?: string; poster?: string };
   /** tabela (ex.: comandos no Linux e no Windows). Com mono, as colunas depois da primeira usam fonte de código */
   table?: { label?: string; headers: string[]; rows: string[][]; mono?: boolean };
 }

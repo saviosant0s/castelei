@@ -1,0 +1,112 @@
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
+use App\Models\Lesson;
+use App\Models\Question;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
+
+class QuestionController extends Controller
+{
+    public function store(Request $request, Lesson $lesson): JsonResponse
+    {
+        $data = $this->validated($request);
+
+        $question = Question::create($data + [
+            'lesson_id' => $lesson->id,
+            'position' => (int) $lesson->questions()->max('position') + 1,
+        ]);
+
+        $lesson->subject->takeOverByPanel();
+
+        return response()->json(['question' => $this->payload($question)], 201);
+    }
+
+    public function update(Request $request, Question $question): JsonResponse
+    {
+        $question->fill($this->validated($request));
+        $question->save();
+
+        $question->lesson->subject->takeOverByPanel();
+
+        return response()->json(['question' => $this->payload($question)]);
+    }
+
+    /**
+     * Apaga a questão e fecha o buraco na numeração.
+     *
+     * Renumerar aqui é seguro: as respostas já dadas apontam para o id da
+     * questão, não para a posição. Sem renumerar, a próxima importação —
+     * que numera de 1 a N — gravaria a questão seguinte por cima do buraco.
+     */
+    public function destroy(Question $question): JsonResponse
+    {
+        $lesson = $question->lesson;
+        $question->delete();
+
+        foreach ($lesson->questions()->orderBy('position')->get() as $index => $restante) {
+            $restante->update(['position' => $index + 1]);
+        }
+
+        $lesson->subject->takeOverByPanel();
+
+        return response()->json(['ok' => true]);
+    }
+
+    /** @return array<string, mixed> */
+    private function validated(Request $request): array
+    {
+        $data = $request->validate([
+            'topic' => ['required', 'string', 'max:120'],
+            'statement' => ['required', 'string'],
+            'options' => ['required', 'array', 'min:2', 'max:8'],
+            'options.*' => ['required', 'string'],
+            'correct_index' => ['required', 'integer', 'min:0'],
+            'explanation' => ['required', 'string'],
+            'pitfall' => ['nullable', 'string'],
+        ], [
+            'topic.required' => 'Informe o tópico da questão (é o que aparece no seu progresso).',
+            'statement.required' => 'Escreva o enunciado.',
+            'options.required' => 'A questão precisa de alternativas.',
+            'options.min' => 'A questão precisa de pelo menos duas alternativas.',
+            'options.*.required' => 'Nenhuma alternativa pode ficar em branco.',
+            'correct_index.required' => 'Marque qual alternativa é a certa.',
+            'explanation.required' => 'Escreva a explicação que aparece depois da resposta.',
+        ]);
+
+        $limpas = array_map(fn (string $option) => trim($option), $data['options']);
+
+        if (count(array_unique($limpas)) !== count($limpas)) {
+            abort(response()->json([
+                'message' => 'Há alternativas repetidas. Cada uma precisa dizer algo diferente.',
+                'errors' => ['options' => ['Há alternativas repetidas.']],
+            ], 422));
+        }
+
+        if ($data['correct_index'] >= count($data['options'])) {
+            abort(response()->json([
+                'message' => 'A alternativa marcada como certa não existe nesta questão.',
+                'errors' => ['correct_index' => ['Escolha uma das alternativas da lista.']],
+            ], 422));
+        }
+
+        return $data;
+    }
+
+    /** @return array<string, mixed> */
+    private function payload(Question $question): array
+    {
+        return [
+            'id' => $question->id,
+            'position' => $question->position,
+            'topic' => $question->topic,
+            'statement' => $question->statement,
+            'options' => $question->options,
+            'correct_index' => $question->correct_index,
+            'explanation' => $question->explanation,
+            'pitfall' => $question->pitfall,
+        ];
+    }
+}

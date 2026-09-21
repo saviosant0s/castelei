@@ -9,7 +9,7 @@ O planejamento completo, com o **Guia Editorial de Conteúdo**, está em `docs/p
 - `backend/`: API Laravel 12 (Sanctum, PostgreSQL em produção, SQLite em dev e testes).
 - `frontend/`: Next.js 16 (App Router), React 19, Tailwind 4. É um PWA.
 - `scripts/lint-content.mjs`: verificador do Guia Editorial (roda no conteúdo, não no código).
-- `docs/`: planejamento, **design system (`design-system.md`)**, guia de deploy (`deploy-railway.md`), **lançamento na Play Store (`play-store.md`)**, mapa das aulas de Sistemas Operacionais (`sistemas-operacionais-mapa.md`).
+- `docs/`: planejamento, **design system (`design-system.md`)**, guia de deploy (`deploy-railway.md`), **lançamento na Play Store (`play-store.md`)**, mapa das aulas de Sistemas Operacionais (`sistemas-operacionais-mapa.md`), **painel de conteúdo (`painel-admin.md`)**.
 - `frontend/src/components/ui/`: os componentes do design system (`Card`, `Callout`, `Pill`, `Stat`, `ProgressBar`, `ListRow`, `EmptyState`). **Leia `docs/design-system.md` antes de mexer em tela.**
 - Conteúdo das lições: `backend/database/seeders/content/*.json` (**fonte de verdade**). Figuras SVG: `frontend/public/figuras/`.
 
@@ -40,8 +40,22 @@ Plano de um usuário: `php artisan castelei:plan email@exemplo.com plus`.
 - **FASE DE TESTES — tudo liberado.** `UNLOCK_ALL` (padrão **ligado**) faz todo mundo estudar como Pro. Passa por `Plans::effective()`; o plano guardado em cada usuário não muda, então trocar o padrão para `false` devolve os limites sem migração. É a chave a desligar no lançamento.
 - **Identidade visual é própria, e isso é decisão.** Nenhuma biblioteca de design de terceiros entra como base — Carbon traz a cara da IBM, Primer a do GitHub, e o padrão do shadcn/ui virou a cara dos apps de IA. O Atlassian Design System foi avaliado e descartado por licença (só vale para produtos integrados à Atlassian, e proíbe obras derivadas). Comportamento complexo, quando precisar, vem do Radix UI (MIT), sem visual junto.
 - **Gamificação** (XP 20 por acerto, streak em dias no fuso `America/Sao_Paulo`, 10 conquistas): dados guardados para todos; só Plus/Pro veem. `GAMIFICATION_FOR_ALL=true` (backend) libera para todos, e está ligado no Railway para testes. Falhas da gamificação nunca podem quebrar o estudo (tudo em `try/catch`).
-- **Etapas de lição** (`lessons.steps`, JSON): `kind` (`idea` primeira, `recap` última, uma `exam`, uma `pitfall`), `title`, `body`, e opcionais `example`, `bullets`, `terms`, `figure`, `code`, `table`. Formato completo no `README.md`. Colunas antigas (`explanation`, `exam_style`, `pitfalls`) são derivadas das etapas pelo `ContentSeeder`.
-- Lições são identificadas por `(matéria, slug)` e questões por `(lição, posição)`: **não reordene questões já publicadas**.
+- **Etapas de lição** (`lessons.steps`, JSON): `kind` (`idea` primeira, `recap` última, uma `exam`, uma `pitfall`), `title`, `body`, e opcionais `example`, `bullets`, `terms`, `figure`, `video`, `code`, `table`. Formato completo no `README.md`. Colunas antigas (`explanation`, `exam_style`, `pitfalls`) são derivadas das etapas pelo `ContentSeeder`.
+- Lições são identificadas por `(matéria, slug)` e questões por `(lição, posição)`: **não reordene questões já publicadas**. Por isso o painel não deixa editar slug depois de criado.
+- **Só existe um caminho de escrita em massa de conteúdo:** `App\Support\Content\ContentImporter`. O `ContentSeeder` do deploy e o painel usam o mesmo código, inclusive para derivar as colunas antigas. Dois caminhos para a mesma tabela viram duas regras diferentes na primeira correção feita em um só.
+- **Toda matéria guarda de onde vem** (`subjects.origin`): `seed` = os arquivos de `database/seeders/content/` ainda mandam; `painel` = foi editada em `/admin` e o `ContentSeeder` pula ela. A troca acontece na primeira escrita do painel, inclusive numa lição ou questão dela. Sem isso, o pre-deploy do Railway recarregaria o arquivo antigo por cima de toda edição — sem erro e sem aviso. O teste que trava isso é `ContentImportTest::test_o_seeder_nao_desfaz_o_que_o_painel_editou`.
+
+## Painel de conteúdo (`/admin`)
+
+Publicar matéria sem mexer em código nem esperar deploy. O guia completo está em `docs/painel-admin.md`; o essencial:
+
+- **A mesma conta do app**, com uma permissão a mais. `ADMIN_EMAILS` (lista por vírgula) é a porta de entrada — no Railway dá para criar variável pelo navegador, mas rodar comando exige CLI. Depois disso, `php artisan castelei:admin email` (`--remover` tira). Plano Pro **não** dá acesso: plano é sobre estudar, permissão é sobre publicar. Conta de visitante do `GUEST_MODE` nunca entra.
+- **Três camadas de barreira, e a que conta é a de baixo:** o middleware `admin` na API é a tranca; o proxy do Next (`/api/admin/[...path]`) é só encanamento, que põe o token do cookie `httpOnly` no header; a guarda em `(painel)/layout.tsx` é conforto, para a pessoa ler uma explicação em vez de um 403 numa tela branca.
+- **Duas réguas diferentes, de propósito.** `App\Support\Content\ContentValidator` separa **erro** (quebra o app: campo faltando, `correct_index` fora da lista, slug repetido, figura sem `alt` útil) de **aviso** (Guia Editorial: falta `idea`/`recap`, número de alternativas ≠ 5, de questões ≠ 8). O verificador completo continua sendo `scripts/lint-content.mjs`, que roda na máquina de quem escreve — o painel existe justamente para publicar sem esse ambiente montado.
+- **O importador nunca apaga sozinho.** Arquivo que encolheu gera `orphan_lessons`/`orphan_questions` no relatório; só some com `prune` ligado, e a tela diz o que vai junto (respostas e tentativas de quem já estudou).
+- **Modelo comentado** em `backend/resources/content/modelo-conteudo.json`. Chaves começadas por `_` são comentário e saem na importação (`ContentImporter::stripComments`). Um teste garante que o modelo passa na própria conferência sem erro nem aviso — se mudar o validador, o modelo tem que acompanhar.
+- **Mídia:** `/admin/midia` guarda imagem e vídeo no disco de `castelei.media.disk` e devolve o endereço para colar na etapa. **No Railway, sem volume em `/app/storage/app/public` o arquivo some a cada deploy** e a ficha fica no banco apontando para o vazio. Trocar para externo é `MEDIA_DISK=s3` — nada no código muda.
+- **A vitrine não enxerga o painel.** `/materias` lê `frontend/src/lib/site-content.ts`, escrito à mão para a página de divulgação não cair junto com o backend. Matéria criada pelo painel entra no app e **não** aparece lá.
 
 ## Regras de conteúdo (do Sávio, valem sempre)
 
@@ -93,6 +107,8 @@ Se for expandir daqui, as opções são: aprofundar o que ficou de fora da ement
 
 **Impasse entrou pela porta dos fundos.** A ementa o deixa de fora, mas ele é inevitável no jantar dos filósofos e na ordem errada de duas trancas. Está explicado onde aparece, sem lição própria.
 
+**Painel de conteúdo no ar** (`/admin`, ver `docs/painel-admin.md`): importação de matéria por arquivo JSON com conferência antes de publicar e relatório do que entrou, edição de matéria, lição e questão, ordenação de lições, exclusão com o nome digitado, e biblioteca de imagem e vídeo. As etapas ganharam o bloco `video`, que aceita arquivo enviado ou link do YouTube (incorporado no domínio sem cookie de rastreio).
+
 **Ao acrescentar lição, mexa em quatro lugares:** o JSON do conteúdo, a figura em `frontend/public/figuras/`, a lista de `frontend/src/lib/site-content.ts` (o teste `site-content.test.ts` reprova se esquecer) e o mapa em `docs/sistemas-operacionais-mapa.md`.
 
 **Atualizações feitas sobre o material do semestre** (a regra 4 do Guia manda corrigir o que está defasado): micronúcleo hoje é tecnologia de produção, não experimento — entrou o seL4 e o uso em carros e aviões; e contêineres entraram ao lado de máquinas virtuais, porque é o que se usa hoje e o material da disciplina não cobre.
@@ -101,6 +117,7 @@ Se for expandir daqui, as opções são: aprofundar o que ficou de fora da ement
 
 ## Pendências e cuidados
 
+- **O volume de mídia no Railway ainda não existe.** Enquanto não existir, imagem e vídeo enviados pelo painel somem no deploy seguinte e os endereços viram 404 — ver `docs/painel-admin.md`. As figuras antigas, em `frontend/public/figuras/`, não são afetadas.
 - **`backend/composer.lock` não está versionado.** Cada deploy do Railway resolve as dependências do zero, então produção pode receber versões diferentes das testadas. Commitar o lock resolve, mas o arquivo gerado aqui veio do PHP 8.4 e o Railway não tem versão fixada (`composer.json` pede `^8.2`): confira a versão do PHP em produção antes de versionar.
 - **Ainda faltam, do plano visual:** ilustrações próprias para estados vazios e conquistas (hoje são ícones do Lucide) e modo escuro — os papéis de superfície já isolam o que mudaria.
 - O Sávio **edita direto no GitHub** (já fez ajustes visuais de PWA). Sempre `git fetch` e confira antes de dar push. Nunca use force push.

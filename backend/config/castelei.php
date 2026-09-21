@@ -8,6 +8,36 @@
 return [
     'default_plan' => 'free',
 
+    /*
+    | Painel de conteúdo (/admin).
+    |
+    | `admin_emails` é uma lista separada por vírgula. Ela é a porta de entrada:
+    | quem está nela administra mesmo sem a coluna `is_admin` ligada. Depois do
+    | primeiro acesso, o caminho normal é `php artisan castelei:admin e-mail`.
+    */
+    'admin_emails' => env('ADMIN_EMAILS', ''),
+
+    /*
+    | Figuras e vídeos enviados pelo painel.
+    |
+    | ATENÇÃO, RAILWAY: o disco do contêiner é descartado a cada deploy. Sem um
+    | volume montado em /app/storage/app/public, tudo que for enviado pelo
+    | painel some no deploy seguinte. As fichas continuam no banco e os
+    | endereços passam a dar 404 — o pior dos dois mundos.
+    |
+    | Trocar para armazenamento externo é só mudar MEDIA_DISK=s3 e preencher as
+    | variáveis AWS_* (vale para S3, Cloudflare R2 e compatíveis). Nada no
+    | código muda: tudo passa por Storage::disk().
+    */
+    'media' => [
+        'disk' => env('MEDIA_DISK', 'public'),
+        // Limites em kB, do jeito que a validação do Laravel espera.
+        'max_image_kb' => (int) env('MEDIA_MAX_IMAGE_KB', 4096),
+        'max_video_kb' => (int) env('MEDIA_MAX_VIDEO_KB', 51200),
+        'image_mimes' => ['image/png', 'image/jpeg', 'image/webp', 'image/gif', 'image/svg+xml'],
+        'video_mimes' => ['video/mp4', 'video/webm', 'video/ogg'],
+    ],
+
     // Fuso usado para decidir "que dia é hoje" no streak. O Brasil não tem horário de verão desde 2019.
     'timezone' => env('CASTELEI_TIMEZONE', 'America/Sao_Paulo'),
 

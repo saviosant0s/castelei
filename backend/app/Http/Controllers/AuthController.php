@@ -106,6 +106,7 @@ class AuthController extends Controller
             'name' => $user->name,
             'email' => $user->email,
             'plan' => $user->plan,
+            'is_admin' => $user->isAdmin(),
             'effective_plan' => $user->effectivePlan(),
             'plan_label' => $user->planLabel(),
             'questions_per_lesson' => $user->questionLimit(),
