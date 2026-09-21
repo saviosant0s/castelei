@@ -29,6 +29,8 @@ export const SUBJECTS: SiteSubject[] = [
       "O terminal na prática (Windows e Linux)",
       "Chamadas de sistema: como funcionam",
       "Chamadas de sistema: arquivos e processos",
+      "Estrutura de um SO: como ele é montado por dentro",
+      "Processos: como um programa vira coisa viva",
     ],
   },
   {

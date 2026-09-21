@@ -13,13 +13,61 @@ class ContentSeederTest extends TestCase
 {
     use RefreshDatabase;
 
+    /**
+     * O que os arquivos de conteúdo prometem.
+     *
+     * Os números saem da fonte de verdade, e não ficam escritos aqui: número
+     * fixo no teste faz toda lição nova quebrar a suíte, e o que importa não
+     * é quantas lições existem — é o banco terminar com exatamente o que os
+     * arquivos têm.
+     *
+     * @return array{subjects: int, lessons: int, questions: int}
+     */
+    private function esperado(): array
+    {
+        $subjects = 0;
+        $lessons = 0;
+        $questions = 0;
+
+        foreach (glob(database_path('seeders/content/*.json')) as $file) {
+            $data = json_decode(file_get_contents($file), true);
+            $subjects++;
+            $lessons += count($data['lessons']);
+            foreach ($data['lessons'] as $lesson) {
+                $questions += count($lesson['questions']);
+            }
+        }
+
+        return ['subjects' => $subjects, 'lessons' => $lessons, 'questions' => $questions];
+    }
+
+    /** Quantas lições um arquivo de matéria traz. */
+    private function licoesDe(string $slug): int
+    {
+        $data = json_decode(file_get_contents($this->arquivoDaMateria($slug)), true);
+
+        return count($data['lessons']);
+    }
+
+    private function arquivoDaMateria(string $slug): string
+    {
+        foreach (glob(database_path('seeders/content/*.json')) as $file) {
+            if (json_decode(file_get_contents($file), true)['slug'] === $slug) {
+                return $file;
+            }
+        }
+
+        $this->fail("Não há arquivo de conteúdo para a matéria {$slug}.");
+    }
+
     public function test_conteudo_do_mvp_e_carregado_completo(): void
     {
         $this->seed(DatabaseSeeder::class);
+        $esperado = $this->esperado();
 
-        $this->assertSame(3, Subject::count());
-        $this->assertSame(9, Lesson::count());
-        $this->assertSame(72, Question::count());
+        $this->assertSame($esperado['subjects'], Subject::count());
+        $this->assertSame($esperado['lessons'], Lesson::count());
+        $this->assertSame($esperado['questions'], Question::count());
 
         foreach (Lesson::withCount('questions')->get() as $lesson) {
             $this->assertSame(8, $lesson->questions_count, "Lição {$lesson->slug} deve ter 8 questões");
@@ -56,7 +104,7 @@ class ContentSeederTest extends TestCase
         $this->seed(DatabaseSeeder::class);
 
         $lessons = Lesson::whereHas('subject', fn ($q) => $q->where('slug', 'sistemas-operacionais'))->get();
-        $this->assertCount(5, $lessons);
+        $this->assertCount($this->licoesDe('sistemas-operacionais'), $lessons);
 
         $publicDir = base_path('../frontend/public');
         foreach ($lessons as $lesson) {
@@ -120,16 +168,17 @@ class ContentSeederTest extends TestCase
     {
         $this->seed(DatabaseSeeder::class);
         $this->seed(DatabaseSeeder::class);
+        $esperado = $this->esperado();
 
-        $this->assertSame(3, Subject::count());
-        $this->assertSame(9, Lesson::count());
-        $this->assertSame(72, Question::count());
+        $this->assertSame($esperado['subjects'], Subject::count());
+        $this->assertSame($esperado['lessons'], Lesson::count());
+        $this->assertSame($esperado['questions'], Question::count());
     }
 
     public function test_comando_setup_roda_migrations_e_carrega_o_conteudo(): void
     {
         $this->artisan('castelei:setup')->assertSuccessful();
 
-        $this->assertSame(72, Question::count());
+        $this->assertSame($this->esperado()['questions'], Question::count());
     }
 }

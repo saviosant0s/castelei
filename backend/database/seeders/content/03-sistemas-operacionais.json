@@ -2089,6 +2089,757 @@
           "pitfall": "Chamada interna existe, mas não é uma boa ideia depender dela."
         }
       ]
+    },
+    {
+      "slug": "estrutura-de-um-so",
+      "title": "Estrutura de um SO: como ele é montado por dentro",
+      "summary": "Monolítico, camadas, micronúcleo e cliente-servidor são arranjos diferentes para o mesmo trabalho. Máquinas virtuais e contêineres partem uma máquina em várias.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Duas oficinas, o mesmo serviço",
+          "body": [
+            "Imagine duas oficinas que trocam o motor de um carro.",
+            "Na primeira, um mecânico faz tudo sozinho. Ele é rápido, porque não precisa combinar nada com ninguém.",
+            "Na segunda, cada pessoa cuida de uma parte e passa o carro adiante.",
+            "O serviço entregue é o mesmo. O arranjo muda o que acontece quando alguém erra."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O sistema operacional também tem arranjo",
+          "body": [
+            "O sistema operacional faz sempre o mesmo trabalho: cuidar da máquina e atender os programas.",
+            "Mas ele pode ser montado por dentro de jeitos bem diferentes.",
+            "Cada arranjo troca uma coisa por outra. Velocidade, segurança e facilidade de manutenção puxam para lados opostos."
+          ],
+          "terms": [
+            {
+              "word": "Núcleo",
+              "meaning": "a parte do sistema operacional que tem acesso total à máquina. É ela que manda de verdade."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Monolítico: tudo numa peça só",
+          "body": [
+            "O arranjo mais comum junta tudo num programa grande, que roda inteiro com acesso total.",
+            "Quem precisa de algo simplesmente chama uma função lá dentro.",
+            "Não existe barreira entre as partes. Por isso é rápido: nada precisa pedir licença para nada."
+          ],
+          "terms": [
+            {
+              "word": "Monolítico",
+              "meaning": "o arranjo em que o núcleo é um programa só, com todas as partes juntas e sem barreira entre elas."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/so/so-estrutura-monolitico.svg",
+            "alt": "Um bloco único chamado núcleo monolítico, com as partes de arquivos, memória e dispositivos coladas dentro dele; acima, os programas do usuário.",
+            "caption": "No monolítico tudo mora no mesmo bloco, sem parede entre as partes."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O preço de não ter barreira",
+          "body": [
+            "Velocidade tem custo. Sem barreira, um erro em qualquer parte derruba a máquina inteira.",
+            "É a tela azul do Windows e a mensagem de pânico do Linux.",
+            "Um programa comum que trava apenas fecha. Um erro dentro do núcleo não tem para onde correr."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Módulos: o monolítico de hoje",
+          "body": [
+            "Windows e Linux são monolíticos. Mas nenhum dos dois é um bloco fechado.",
+            "Os dois carregam pedaços sob demanda. Espetar uma impressora nova carrega o pedaço dela na hora.",
+            "Sem isso, trocar uma peça exigiria montar o sistema inteiro de novo."
+          ],
+          "terms": [
+            {
+              "word": "Módulo",
+              "meaning": "um pedaço do núcleo que pode ser carregado e descarregado com a máquina ligada."
+            },
+            {
+              "word": "PowerShell e Prompt de Comando (cmd)",
+              "meaning": "os dois programas do Windows em que você digita ordens de texto. O PowerShell é o mais novo dos dois."
+            }
+          ],
+          "table": {
+            "label": "Ver os módulos carregados agora",
+            "headers": [
+              "Onde",
+              "Como"
+            ],
+            "rows": [
+              [
+                "Linux",
+                "lsmod"
+              ],
+              [
+                "Windows (PowerShell)",
+                "Get-WindowsDriver -Online"
+              ],
+              [
+                "Windows (cmd)",
+                "driverquery"
+              ]
+            ],
+            "mono": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Camadas: cada andar usa só o de baixo",
+          "body": [
+            "Outro arranjo empilha o sistema em andares.",
+            "Cada andar oferece serviços ao andar de cima e só enxerga o de baixo.",
+            "Fica organizado e fácil de testar em partes. Em troca, um pedido desce vários degraus antes de ser atendido."
+          ],
+          "terms": [
+            {
+              "word": "Camada",
+              "meaning": "um andar do sistema, que só conversa com o andar imediatamente abaixo dele."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Micronúcleo: quase nada lá dentro",
+          "body": [
+            "Aqui a ideia se inverte. Dentro do núcleo fica só o essencial.",
+            "Cuidar de tela, de disco e de rede vira programa comum, rodando do lado de fora.",
+            "Se o pedaço da impressora travar, ele reinicia sozinho. A máquina continua de pé."
+          ],
+          "terms": [
+            {
+              "word": "Micronúcleo",
+              "meaning": "o arranjo que deixa o mínimo possível dentro do núcleo e empurra o resto para fora dele."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/so/so-estrutura-micronucleo.svg",
+            "alt": "Caixas isoladas para programas e para os serviços de arquivos, memória e impressora, todas sobre uma faixa fina de micronúcleo, que fica sobre o hardware.",
+            "caption": "No micronúcleo cada pedaço fica isolado. Um deles cair não derruba os outros."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Micronúcleo não é coisa de laboratório",
+          "body": [
+            "Durante anos esse arranjo foi tratado como lento demais para valer a pena.",
+            "Hoje ele está em centrais de carro, em aviões e dentro de celulares.",
+            "Um deles, o seL4, teve o funcionamento provado matematicamente. Ele aparece justamente onde travar custa vidas."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Cliente-servidor: pedir e responder",
+          "body": [
+            "Com o miolo pequeno, as partes de fora precisam conversar entre si.",
+            "Uma parte pede e outra responde. Quem pede é o cliente e quem responde é o servidor.",
+            "As duas podem estar na mesma máquina ou em máquinas distantes. O jeito de pedir é igual nos dois casos."
+          ],
+          "terms": [
+            {
+              "word": "Cliente-servidor",
+              "meaning": "o arranjo em que uma parte pede um serviço e outra responde, sem precisar saber onde a outra está."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Máquina virtual: uma máquina dentro da outra",
+          "body": [
+            "Dá para fazer um computador inteiro caber dentro de outro.",
+            "Um programa imita a máquina de verdade. Cada cópia acha que tem o computador só para ela.",
+            "É assim que um servidor único hospeda vários sistemas ao mesmo tempo. Toda nuvem funciona assim."
+          ],
+          "terms": [
+            {
+              "word": "Máquina virtual",
+              "meaning": "um computador imitado por um programa, que roda dentro de um computador de verdade."
+            },
+            {
+              "word": "Hipervisor",
+              "meaning": "o programa que cria as máquinas virtuais e reparte a máquina real entre elas."
+            }
+          ],
+          "table": {
+            "label": "Os dois tipos de hipervisor",
+            "headers": [
+              "Tipo",
+              "Onde ele roda",
+              "Exemplo de uso"
+            ],
+            "rows": [
+              [
+                "Tipo 1",
+                "direto sobre a máquina, sem sistema embaixo",
+                "servidores de nuvem"
+              ],
+              [
+                "Tipo 2",
+                "dentro de um sistema comum, como um programa",
+                "testar outro sistema no seu PC"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Contêiner: mais leve que a máquina virtual",
+          "body": [
+            "A máquina virtual carrega um sistema inteiro dentro dela. Isso pesa e demora a subir.",
+            "O contêiner é outro caminho. Várias caixas isoladas dividem o mesmo núcleo.",
+            "Sobe em segundos e ocupa pouco. Em compensação, a parede entre as caixas é mais fina."
+          ],
+          "terms": [
+            {
+              "word": "Contêiner",
+              "meaning": "uma caixa isolada para programas, que divide o núcleo com as outras caixas em vez de ter o seu."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "As questões quase sempre pedem para ligar o nome do arranjo à sua característica marcante.",
+            "Decore o par: cada arranjo tem uma vantagem e um preço."
+          ],
+          "bullets": [
+            "\"Todos os serviços executam em modo núcleo, sem isolamento entre eles\" → monolítico.",
+            "\"Serviços executam em modo usuário e se comunicam por troca de mensagens\" → micronúcleo.",
+            "\"Cada nível utiliza apenas os serviços do nível imediatamente inferior\" → camadas.",
+            "\"Maior robustez e tolerância a falhas, com perda de desempenho\" → micronúcleo.",
+            "\"Melhor desempenho, porém uma falha compromete todo o sistema\" → monolítico.",
+            "\"Permite executar vários sistemas operacionais sobre o mesmo hardware\" → máquina virtual."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Três trocas derrubam muita gente nessa parte."
+          ],
+          "bullets": [
+            "Micronúcleo não é núcleo pequeno em tamanho de arquivo. É pouca coisa com acesso total.",
+            "Linux e Windows são monolíticos, mesmo carregando módulos. Módulo não transforma o arranjo em micronúcleo.",
+            "Contêiner não é máquina virtual. A máquina virtual traz o próprio núcleo; o contêiner divide o núcleo de quem o hospeda."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O trabalho é sempre o mesmo. O que muda é quanta coisa fica com acesso total à máquina."
+          ],
+          "bullets": [
+            "Monolítico: tudo junto, rápido, e um erro derruba tudo.",
+            "Camadas: cada andar usa só o de baixo. Organizado, porém mais lento.",
+            "Micronúcleo: quase nada lá dentro. Aguenta falha, e paga em desempenho.",
+            "Cliente-servidor: um pede, outro responde, na mesma máquina ou longe.",
+            "Máquina virtual: um computador imitado dentro de outro, com núcleo próprio.",
+            "Contêiner: caixas isoladas dividindo o mesmo núcleo. Leve e rápido de subir."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Monolítico",
+          "statement": "Em um sistema operacional monolítico, a principal consequência de não haver isolamento entre as partes do núcleo é:",
+          "options": [
+            "o sistema não conseguir carregar novos dispositivos",
+            "uma falha em qualquer parte poder derrubar o sistema inteiro",
+            "cada serviço precisar de uma máquina virtual própria",
+            "a comunicação entre as partes ficar mais lenta",
+            "o sistema só funcionar com um programa por vez"
+          ],
+          "correct_index": 1,
+          "explanation": "Tudo roda com acesso total e no mesmo espaço. Um erro em qualquer ponto atinge o sistema inteiro, e é daí que vem a tela de erro fatal.",
+          "pitfall": "Falta de isolamento deixa a comunicação mais rápida, não mais lenta. O que se perde é robustez."
+        },
+        {
+          "topic": "Micronúcleo",
+          "statement": "A característica que define o arranjo micronúcleo é:",
+          "options": [
+            "ter um arquivo de núcleo pequeno em megabytes",
+            "manter no núcleo apenas o essencial e executar os demais serviços fora dele",
+            "dispensar o uso de qualquer driver",
+            "executar todos os serviços com acesso total à máquina",
+            "rodar sempre sobre um hipervisor"
+          ],
+          "correct_index": 1,
+          "explanation": "O que define é quanta coisa tem acesso total, e não o tamanho do arquivo. Serviços como disco e rede viram programas comuns, isolados uns dos outros.",
+          "pitfall": "\"Micro\" não se refere ao tamanho em disco. Um micronúcleo pode até ocupar bastante espaço."
+        },
+        {
+          "topic": "Micronúcleo",
+          "statement": "Qual é a principal vantagem do micronúcleo em relação ao monolítico?",
+          "options": [
+            "maior desempenho nas chamadas de sistema",
+            "maior robustez, porque a falha de um serviço não derruba os demais",
+            "menor consumo de memória em qualquer situação",
+            "dispensar o uso de modo usuário",
+            "permitir mais programas abertos ao mesmo tempo"
+          ],
+          "correct_index": 1,
+          "explanation": "Cada serviço fica isolado, então um pode reiniciar sem levar o resto junto. É por isso que esse arranjo aparece onde a falha custa caro.",
+          "pitfall": "O micronúcleo troca desempenho por robustez. Ele costuma ser mais lento, porque há troca de mensagens onde antes bastava chamar uma função."
+        },
+        {
+          "topic": "Camadas",
+          "statement": "Em um sistema estruturado em camadas, cada camada:",
+          "options": [
+            "utiliza apenas os serviços da camada imediatamente inferior",
+            "pode chamar qualquer outra camada diretamente",
+            "executa em uma máquina virtual separada",
+            "é carregada e descarregada durante a execução",
+            "substitui completamente a camada anterior"
+          ],
+          "correct_index": 0,
+          "explanation": "A regra do arranjo é essa: cada andar só enxerga o de baixo. Isso deixa o sistema fácil de testar em partes.",
+          "pitfall": "Se qualquer camada pudesse chamar qualquer outra, a hierarquia deixaria de existir e a vantagem se perderia."
+        },
+        {
+          "topic": "Módulos",
+          "statement": "O Linux carrega e descarrega módulos com o sistema em funcionamento. Isso significa que ele:",
+          "options": [
+            "deixou de ser monolítico e passou a ser micronúcleo",
+            "continua monolítico, com a facilidade de carregar partes sob demanda",
+            "usa o modelo cliente-servidor internamente",
+            "executa cada módulo em uma máquina virtual",
+            "não possui mais núcleo"
+          ],
+          "correct_index": 1,
+          "explanation": "O módulo é carregado para dentro do núcleo e roda com acesso total, junto do resto. O arranjo continua monolítico.",
+          "pitfall": "Carregar partes sob demanda é comodidade de manutenção. Isolamento é outra coisa, e o módulo não tem."
+        },
+        {
+          "topic": "Cliente-servidor",
+          "statement": "No modelo cliente-servidor aplicado a sistemas operacionais, a troca de mensagens entre quem pede e quem atende permite que:",
+          "options": [
+            "os dois estejam na mesma máquina ou em máquinas diferentes, sem mudar a forma do pedido",
+            "o cliente execute com acesso total à máquina",
+            "o servidor dispense o sistema operacional",
+            "apenas um pedido seja atendido por vez em todo o sistema",
+            "o núcleo seja eliminado completamente"
+          ],
+          "correct_index": 0,
+          "explanation": "Quem pede não precisa saber onde está quem responde. A mesma forma de pedido serve para a máquina local e para a máquina remota.",
+          "pitfall": "O modelo não elimina o núcleo. Alguém ainda precisa entregar as mensagens de um lado para o outro."
+        },
+        {
+          "topic": "Máquinas virtuais",
+          "statement": "Um hipervisor de tipo 1 se distingue de um de tipo 2 porque:",
+          "options": [
+            "executa diretamente sobre o hardware, sem um sistema operacional por baixo",
+            "só funciona com sistemas operacionais de código aberto",
+            "não permite mais de uma máquina virtual",
+            "executa como um aplicativo comum dentro de outro sistema",
+            "dispensa o uso de memória virtual"
+          ],
+          "correct_index": 0,
+          "explanation": "O tipo 1 fica na base, direto sobre a máquina, e é o arranjo dos servidores de nuvem. O tipo 2 é um programa dentro de um sistema comum.",
+          "pitfall": "A alternativa que descreve um aplicativo comum é a definição do tipo 2, não do tipo 1."
+        },
+        {
+          "topic": "Contêineres",
+          "statement": "A diferença central entre um contêiner e uma máquina virtual é que o contêiner:",
+          "options": [
+            "compartilha o núcleo do sistema que o hospeda, em vez de trazer o seu próprio",
+            "executa apenas programas escritos na mesma linguagem",
+            "precisa sempre de um hipervisor de tipo 1",
+            "não consegue isolar processos de forma alguma",
+            "substitui o sistema operacional da máquina"
+          ],
+          "correct_index": 0,
+          "explanation": "A máquina virtual carrega um sistema inteiro, com núcleo próprio. O contêiner divide o núcleo de quem o hospeda, então sobe rápido e ocupa pouco.",
+          "pitfall": "Contêiner isola, sim. O isolamento é apenas mais fino do que o de uma máquina virtual, porque o núcleo é o mesmo."
+        }
+      ]
+    },
+    {
+      "slug": "processos-o-modelo",
+      "title": "Processos: como um programa vira coisa viva",
+      "summary": "Processo é o programa em execução, com tudo o que ele precisa. Ele nasce de outro processo, recebe um número e morre de quatro jeitos possíveis.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O texto da peça e a apresentação de hoje",
+          "body": [
+            "Uma peça de teatro tem um texto. O texto fica guardado, parado, numa gaveta.",
+            "A apresentação de hoje à noite é outra coisa. Ela tem atores no palco, uma cena atual e um ponto onde parou.",
+            "O mesmo texto pode virar duas apresentações ao mesmo tempo, em cidades diferentes.",
+            "Um texto, duas apresentações. Essa é a diferença que vem agora."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Programa é o texto. Processo é a apresentação",
+          "body": [
+            "O programa fica guardado no disco, parado. Ele é só um arquivo.",
+            "Quando você manda executar, o sistema cria um processo.",
+            "Abra a calculadora duas vezes. Existe um programa no disco e dois processos rodando."
+          ],
+          "terms": [
+            {
+              "word": "Processo",
+              "meaning": "um programa em execução, com a memória que ele usa, os arquivos que abriu e o ponto exato em que parou."
+            }
+          ],
+          "example": {
+            "label": "Comparando",
+            "lines": [
+              "programa = texto da peça, guardado na gaveta",
+              "processo = a apresentação de hoje, com cena atual"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A ilusão de fazer tudo ao mesmo tempo",
+          "body": [
+            "Você escuta música e baixa um arquivo ao mesmo tempo. Parece que tudo roda junto.",
+            "Cada núcleo do processador executa um processo por vez.",
+            "O sistema troca de processo dezenas de vezes por segundo. É rápido demais para você perceber."
+          ],
+          "terms": [
+            {
+              "word": "Processador",
+              "meaning": "a peça que executa as instruções dos programas."
+            },
+            {
+              "word": "Núcleo do processador",
+              "meaning": "cada unidade de execução dentro do processador. Uma peça com quatro deles atende quatro processos de verdade ao mesmo tempo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Para revezar, é preciso anotar",
+          "body": [
+            "Trocar de processo só funciona se der para voltar depois, do ponto exato.",
+            "Por isso o sistema guarda uma ficha de cada processo.",
+            "Na ficha vai a posição em que ele parou, a memória que usa e os arquivos abertos."
+          ],
+          "terms": [
+            {
+              "word": "Tabela de processos",
+              "meaning": "a lista de fichas que o sistema mantém, com uma ficha para cada processo em andamento."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Todo processo tem um número",
+          "body": [
+            "Dois processos podem ter o mesmo nome, como duas janelas do navegador.",
+            "Então o nome não serve para identificar. O sistema dá um número único a cada processo.",
+            "Esse número é o que você usa para falar sobre um processo específico."
+          ],
+          "terms": [
+            {
+              "word": "PID",
+              "meaning": "o número que identifica um processo enquanto ele existe. Vem de identificador de processo, em inglês."
+            },
+            {
+              "word": "PowerShell e Prompt de Comando (cmd)",
+              "meaning": "os dois programas do Windows em que você digita ordens de texto. O PowerShell é o mais novo dos dois."
+            }
+          ],
+          "table": {
+            "label": "Ver os processos e seus números",
+            "headers": [
+              "Onde",
+              "Como"
+            ],
+            "rows": [
+              [
+                "Windows (janela)",
+                "Gerenciador de Tarefas, aba Detalhes"
+              ],
+              [
+                "Windows (PowerShell)",
+                "Get-Process"
+              ],
+              [
+                "Windows (cmd)",
+                "tasklist"
+              ],
+              [
+                "Linux",
+                "ps aux"
+              ]
+            ],
+            "mono": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "De onde vem um processo novo",
+          "body": [
+            "Processo não aparece do nada. Ele é sempre criado por alguém.",
+            "Quatro situações criam processos, e todas passam por um pedido ao sistema."
+          ],
+          "bullets": [
+            "A máquina ligou e o sistema subiu os processos iniciais.",
+            "Um processo em andamento pediu para criar outro.",
+            "Você abriu um programa, com um duplo clique ou pelo terminal.",
+            "Uma tarefa agendada chegou na hora marcada."
+          ],
+          "terms": [
+            {
+              "word": "Terminal",
+              "meaning": "a janela em que você digita ordens de texto para o computador, em vez de clicar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Dois jeitos de criar, duas filosofias",
+          "body": [
+            "O Linux cria um processo em dois tempos. Primeiro faz uma cópia de si mesmo e depois troca o conteúdo dessa cópia.",
+            "O Windows faz tudo num passo só. Ele monta o processo novo já com o programa certo dentro."
+          ],
+          "code": {
+            "label": "No Linux, em C",
+            "text": "pid = fork();          // cria uma cópia deste processo\nif (pid == 0) {\n    execvp(\"gedit\", args);  // a cópia vira outro programa\n}"
+          },
+          "table": {
+            "label": "A mesma tarefa nos dois sistemas",
+            "headers": [
+              "Sistema",
+              "Como cria"
+            ],
+            "rows": [
+              [
+                "Linux",
+                "fork() e depois exec()"
+              ],
+              [
+                "Windows",
+                "CreateProcess()"
+              ]
+            ],
+            "mono": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Pai, filho e a árvore",
+          "body": [
+            "Quem cria é o pai. Quem nasce é o filho.",
+            "No Linux isso forma uma árvore de verdade, com um processo na raiz que dá origem a todos.",
+            "O Windows não mantém essa hierarquia. Lá o pai pode passar o controle do filho para outro processo."
+          ],
+          "figure": {
+            "src": "/figuras/so/so-arvore-processos.svg",
+            "alt": "Árvore de processos: um processo no topo cria dois outros, e um deles cria mais dois abaixo de si.",
+            "caption": "Cada processo aponta para quem o criou. No Linux isso forma uma árvore."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Quatro jeitos de morrer",
+          "body": [
+            "Um processo termina de quatro maneiras. Duas são combinadas e duas não são."
+          ],
+          "bullets": [
+            "Saída normal: o trabalho acabou e ele avisa que terminou.",
+            "Saída com erro tratado: ele percebeu um problema e decidiu sair.",
+            "Erro fatal: ele fez algo inválido, como dividir por zero, e o sistema o encerra.",
+            "Morto por outro: alguém mandou encerrá-lo, e para isso é preciso ter permissão."
+          ],
+          "terms": [
+            {
+              "word": "Permissão",
+              "meaning": "a autorização que diz quem pode fazer o quê. Sem ela, o pedido é recusado pelo sistema."
+            }
+          ],
+          "table": {
+            "label": "Encerrar um processo pelo número",
+            "headers": [
+              "Onde",
+              "Como"
+            ],
+            "rows": [
+              [
+                "Linux",
+                "kill 1234"
+              ],
+              [
+                "Windows (PowerShell)",
+                "Stop-Process -Id 1234"
+              ],
+              [
+                "Windows (cmd)",
+                "taskkill /PID 1234"
+              ]
+            ],
+            "mono": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Essa parte cai quase sempre em dois formatos. Um pede a definição e o outro pede a lista.",
+            "As listas de quatro itens são as favoritas das bancas."
+          ],
+          "bullets": [
+            "\"Programa em execução\" ou \"instância de um programa\" → processo.",
+            "\"Estrutura que armazena o contexto de cada processo\" → tabela de processos, também chamada de bloco de controle.",
+            "Criação: início do sistema, chamada por outro processo, pedido do usuário e início de um job em lote.",
+            "Término: saída normal, saída por erro, erro fatal e morto por outro processo.",
+            "\"Chamada que duplica o processo que a executou\" → fork, no mundo Unix e Linux.",
+            "\"Identificador único de um processo\" → PID."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Três trocas aparecem toda hora nessa parte."
+          ],
+          "bullets": [
+            "Executar o mesmo programa duas vezes cria dois processos. O programa continua sendo um só.",
+            "O fork não carrega um programa novo. Ele duplica o processo atual, e quem carrega outro programa é o exec.",
+            "Vários programas rodando juntos não significam vários processadores. Na maior parte do tempo é revezamento."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Processo é programa em execução. Tudo o que vem depois depende de entender isso."
+          ],
+          "bullets": [
+            "Programa fica parado no disco. Processo está vivo, com memória e um ponto onde parou.",
+            "O sistema reveza processos rápido demais para você notar.",
+            "A ficha de cada processo fica na tabela de processos, e o PID é o número dele.",
+            "Nasce de quatro jeitos e morre de quatro jeitos.",
+            "No Linux, fork duplica e exec troca o programa. No Windows, CreateProcess faz os dois de uma vez."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Programa e processo",
+          "statement": "Um usuário abre o mesmo editor de texto três vezes. Quantos programas e quantos processos existem?",
+          "options": [
+            "três programas e três processos",
+            "um programa e um processo",
+            "um programa e três processos",
+            "três programas e um processo",
+            "depende da quantidade de memória livre"
+          ],
+          "correct_index": 2,
+          "explanation": "O programa é o arquivo guardado no disco, e ele continua sendo um só. Cada execução cria um processo independente, com memória própria.",
+          "pitfall": "Abrir várias janelas não multiplica o arquivo no disco. O que se multiplica são as execuções."
+        },
+        {
+          "topic": "Multiprogramação",
+          "statement": "Em uma máquina com um único núcleo de processador, vários programas parecem executar simultaneamente porque:",
+          "options": [
+            "o sistema operacional reveza o processador entre eles muito rapidamente",
+            "cada programa recebe um núcleo virtual exclusivo",
+            "os programas executam em máquinas virtuais separadas",
+            "o processador executa várias instruções de programas diferentes no mesmo ciclo",
+            "a memória é dividida igualmente entre eles"
+          ],
+          "correct_index": 0,
+          "explanation": "Um núcleo atende um processo por vez. A troca acontece muitas vezes por segundo, e é isso que cria a impressão de paralelismo.",
+          "pitfall": "Paralelismo de verdade exige mais de um núcleo. Com um só, o que existe é revezamento."
+        },
+        {
+          "topic": "Tabela de processos",
+          "statement": "Qual é a função da tabela de processos mantida pelo sistema operacional?",
+          "options": [
+            "listar os arquivos abertos em cada diretório",
+            "guardar o contexto de cada processo, para que ele possa ser retomado do ponto em que parou",
+            "armazenar o código-fonte dos programas em execução",
+            "registrar as senhas dos usuários conectados",
+            "controlar o espaço livre no disco"
+          ],
+          "correct_index": 1,
+          "explanation": "Sem a ficha de cada processo, o revezamento seria impossível: não haveria como voltar ao ponto exato em que a execução parou.",
+          "pitfall": "Não confunda com a lista de arquivos de uma pasta. São estruturas diferentes, para finalidades diferentes."
+        },
+        {
+          "topic": "PID",
+          "statement": "O PID de um processo serve para:",
+          "options": [
+            "indicar a prioridade dele na fila de execução",
+            "identificá-lo de forma única enquanto ele existir",
+            "informar quanta memória ele pode usar",
+            "definir qual usuário o iniciou",
+            "marcar em qual núcleo ele será executado"
+          ],
+          "correct_index": 1,
+          "explanation": "Dois processos podem ter o mesmo nome, então o nome não identifica. O número identifica, e é por ele que se encerra ou se consulta um processo específico.",
+          "pitfall": "PID não é prioridade. Um número maior não significa que o processo é mais ou menos importante."
+        },
+        {
+          "topic": "Criação de processos",
+          "statement": "Qual das situações abaixo NÃO é um dos eventos que provocam a criação de um processo?",
+          "options": [
+            "o início do sistema operacional",
+            "uma chamada de sistema feita por um processo em execução",
+            "um pedido de um usuário para executar um programa",
+            "o início de um job em lote",
+            "o esgotamento da memória principal da máquina"
+          ],
+          "correct_index": 4,
+          "explanation": "Ficar sem memória não cria processo nenhum. Os quatro eventos clássicos são o início do sistema, a chamada por outro processo, o pedido do usuário e o job em lote.",
+          "pitfall": "Questão com NÃO no enunciado costuma ser lida com pressa. Marque o que destoa da lista."
+        },
+        {
+          "topic": "fork e exec",
+          "statement": "No Linux, a chamada fork() tem como efeito:",
+          "options": [
+            "carregar um novo programa no lugar do atual",
+            "criar um processo que é uma cópia do processo que a executou",
+            "encerrar o processo que a executou",
+            "transformar o processo em uma thread",
+            "transferir o processo para outro núcleo do processador"
+          ],
+          "correct_index": 1,
+          "explanation": "O fork duplica o processo. Quem carrega outro programa dentro da cópia é a chamada exec, executada logo em seguida.",
+          "pitfall": "Trocar fork por exec é o erro mais comum aqui. Um duplica, o outro substitui o conteúdo."
+        },
+        {
+          "topic": "Hierarquia de processos",
+          "statement": "Sobre a relação entre processo pai e processo filho, é correto afirmar que:",
+          "options": [
+            "no Unix os processos formam uma hierarquia em árvore, e no Windows não há essa hierarquia rígida",
+            "em todos os sistemas operacionais a hierarquia é idêntica",
+            "o processo filho sempre termina antes do pai",
+            "um processo pai não pode criar mais de um filho",
+            "o processo filho executa sempre no mesmo núcleo do pai"
+          ],
+          "correct_index": 0,
+          "explanation": "No mundo Unix todo processo desce de um ancestral comum, o que forma uma árvore. No Windows o controle de um processo criado pode ser passado adiante, e a hierarquia se desfaz.",
+          "pitfall": "O filho pode continuar vivo depois do pai. Quando isso acontece, outro processo passa a cuidar dele."
+        },
+        {
+          "topic": "Término de processos",
+          "statement": "Um processo executa uma divisão por zero e é encerrado pelo sistema operacional. Esse término se classifica como:",
+          "options": [
+            "saída normal",
+            "saída por erro tratado pelo próprio processo",
+            "erro fatal",
+            "término causado por outro processo",
+            "suspensão temporária"
+          ],
+          "correct_index": 2,
+          "explanation": "O erro fatal é involuntário: o processo fez algo inválido e quem decide encerrá-lo é o sistema. Nos dois primeiros casos, quem decide sair é o próprio processo.",
+          "pitfall": "Erro tratado e erro fatal parecem iguais, mas diferem em quem decide. No tratado, o processo percebe e sai; no fatal, ele é encerrado."
+        }
+      ]
     }
   ]
 }
