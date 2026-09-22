@@ -163,14 +163,14 @@ export function trailPath(xs: number[]): string {
  * ponto fraco, evolução) — misturar as duas coisas transformaria a trilha
  * numa cobrança.
  */
-function done(lesson: LessonSummary): boolean {
+export function concluida(lesson: LessonSummary): boolean {
   return lesson.attempts > 0;
 }
 
 export function buildTrail(lessons: LessonSummary[]): TrailModule[] {
   // A atual é a primeira ainda não praticada, na ordem da matéria. Quem pulou
   // a 2 e fez a 5 é levado de volta à 2 — é o buraco no caminho.
-  const currentIndex = lessons.findIndex((lesson) => !done(lesson));
+  const currentIndex = lessons.findIndex((lesson) => !concluida(lesson));
 
   const modules: TrailModule[] = [];
   let currentModule = -1;
@@ -196,7 +196,7 @@ export function buildTrail(lessons: LessonSummary[]): TrailModule[] {
       modules.push(bloco);
     }
 
-    const state: TrailState = done(lesson) ? "concluida" : index === currentIndex ? "atual" : "adiante";
+    const state: TrailState = concluida(lesson) ? "concluida" : index === currentIndex ? "atual" : "adiante";
 
     if (state === "atual") currentModule = modules.length - 1;
 

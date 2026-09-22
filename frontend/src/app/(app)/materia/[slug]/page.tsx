@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ChevronRight, ClipboardCheck, Crown } from "lucide-react";
+import { SubjectSummary } from "@/components/trail/SubjectSummary";
 import { SubjectTrail } from "@/components/trail/SubjectTrail";
 import { Callout, Card } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
@@ -28,6 +29,11 @@ export default async function MateriaPage({ params }: { params: Promise<{ slug: 
         <h1 className="text-4xl">{subject.name}</h1>
         {subject.description && <p className="mt-3 text-base text-content-secondary">{subject.description}</p>}
       </header>
+
+      {/* Quanto falta para a prova e quanto do caminho já andou: as duas
+          perguntas que a pessoa faz ao abrir a matéria, e que a trilha
+          sozinha não responde. */}
+      <SubjectSummary lessons={subject.lessons} examDate={subject.exam_date} />
 
       {subject.exam.available &&
         (subject.exam.unlocked ? (

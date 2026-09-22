@@ -98,6 +98,37 @@ describe("SubjectTrail", () => {
     expect(screen.getByLabelText(/^Lição 5:/)).toBeTruthy();
   });
 
+  it("o cabeçalho do módulo gruda no topo ao rolar", () => {
+    render(<SubjectTrail lessons={materia} />);
+
+    const cabecalho = screen.getByText("Módulo 1").closest("div.sticky");
+
+    expect(cabecalho).toBeTruthy();
+    expect(cabecalho!.className).toContain("top-0");
+  });
+
+  it("os módulos ficam colados, para um cabeçalho entregar o topo ao outro", () => {
+    /*
+    | O teste é de classe porque o defeito é INVISÍVEL em jsdom e em teste de
+    | comportamento: com folga em MARGEM entre as seções, a seção termina
+    | antes da folga, o cabeçalho desgruda e a tela fica alguns pixels sem
+    | cabeçalho nenhum a cada virada de módulo. Nada quebra, nada avisa — só
+    | pisca. Por isso a folga mora no padding da própria seção.
+    */
+    const { container } = render(<SubjectTrail lessons={materia} />);
+    const secoes = container.querySelectorAll("section");
+    const lista = secoes[0].parentElement!;
+
+    expect(lista.className).not.toMatch(/space-y-/);
+    expect(secoes[0].className).not.toMatch(/\b[mp][bty]-/);
+
+    // E o respiro está DENTRO da seção, irmão do cabeçalho.
+    const faixa = secoes[0].querySelector("div.sticky")!;
+
+    expect(faixa.className).not.toMatch(/\bmb-/);
+    expect(faixa.nextElementSibling!.className).toContain("pb-14");
+  });
+
   it("matéria sem módulos vira uma trilha só, sem cabeçalho", () => {
     render(<SubjectTrail lessons={[licao(1, null), licao(2, null)]} />);
 
