@@ -269,6 +269,12 @@
             "Confundir top-down (o que o programador vê) com bottom-up (o que o hardware precisa).",
             "Achar que abstração é falta de detalhe por descuido. Ela esconde detalhes de propósito.",
             "Achar que o modo núcleo é o modo do usuário humano. O nome se refere ao SO."
+          ],
+          "terms": [
+            {
+              "word": "Função",
+              "meaning": "um pedaço de programa com nome, que faz uma tarefa e devolve o resultado."
+            }
           ]
         },
         {
@@ -1155,7 +1161,10 @@
           ],
           "code": {
             "label": "Windows PowerShell (como administrador)",
-            "text": "wsl --install"
+            "text": "wsl --install",
+            "notes": [
+              "Instala o Linux dentro do Windows. Depois de reiniciar, o Ubuntu aparece como qualquer outro programa."
+            ]
           },
           "terms": [
             {
@@ -1418,7 +1427,13 @@
               "5. o processador volta ao modo usuário",
               "6. o programa recebe o resultado"
             ]
-          }
+          },
+          "terms": [
+            {
+              "word": "Função",
+              "meaning": "um pedaço de programa com nome, que faz uma tarefa e devolve o resultado. Quem escreve o programa só diz o nome dela."
+            }
+          ]
         },
         {
           "kind": "explain",
@@ -1432,6 +1447,10 @@
             {
               "word": "Biblioteca",
               "meaning": "código pronto que os programas usam. Aqui, é a parte que prepara o pedido ao SO."
+            },
+            {
+              "word": "read e write",
+              "meaning": "os nomes das funções prontas que leem e escrevem. Quem programa escreve só isso, e elas cuidam do pedido ao SO."
             }
           ]
         },
@@ -1512,31 +1531,61 @@
           "title": "Veja ao vivo (opcional)",
           "body": [
             "No Linux, o programa strace mostra as chamadas de sistema de outro programa. É como ver os pedidos passando pelo guichê.",
-            "Se o programa não existir, instale com sudo apt install strace (Ubuntu e Debian). No Windows, existe o Process Monitor, da Microsoft. Ele mostra a atividade de arquivos de um programa."
+            "Se ele não existir, instale com sudo apt install strace. No Windows existe o Process Monitor, da Microsoft."
           ],
-          "code": {
-            "label": "Linux (terminal)",
-            "text": "strace cat notas.txt"
-          },
-          "example": {
-            "label": "Trecho do que aparece (simplificado)",
-            "lines": [
-              "openat(AT_FDCWD, \"notas.txt\", O_RDONLY) = 3",
-              "read(3, \"ola\\n\", 131072) = 4",
-              "write(1, \"ola\\n\", 4) = 4",
-              "close(3) = 0"
-            ]
-          },
           "terms": [
             {
               "word": "strace",
               "meaning": "um programa do Linux que mostra as chamadas de sistema feitas por outro programa."
             },
             {
-              "word": "Descritor de arquivo",
-              "meaning": "o número que o SO entrega ao abrir um arquivo. Aqui, o 3 é o arquivo e o 1 é a tela."
+              "word": "Terminal",
+              "meaning": "a janela onde você digita e vê a resposta em texto."
             }
-          ]
+          ],
+          "code": {
+            "label": "Linux (terminal)",
+            "text": "strace cat notas.txt",
+            "notes": [
+              "Manda o strace acompanhar o cat, que é o programa que mostra um arquivo na tela. Em vez do conteúdo, você vê os pedidos que ele faz ao SO."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Lendo o que o strace mostra",
+          "body": [
+            "Cada linha é um pedido. O nome vem primeiro, os dados do pedido vêm entre parênteses e a resposta do SO vem depois do igual.",
+            "São as mesmas quatro etapas de sempre: abrir, ler, escrever e fechar."
+          ],
+          "terms": [
+            {
+              "word": "open e close",
+              "meaning": "as funções que abrem e fecham um arquivo. No Linux de hoje, o open chega ao núcleo com o nome openat."
+            },
+            {
+              "word": "Descritor de arquivo",
+              "meaning": "o número que o SO entrega ao abrir um arquivo. Depois disso, você usa o número no lugar do nome."
+            },
+            {
+              "word": "O_RDONLY",
+              "meaning": "a opção que diz ao open para abrir só para leitura. O nome vem de read only, que é somente leitura em inglês."
+            },
+            {
+              "word": "CreateFile",
+              "meaning": "o nome que o Windows dá à mesma coisa. As ideias são iguais, os nomes é que mudam."
+            }
+          ],
+          "code": {
+            "label": "O que aparece na tela (simplificado)",
+            "text": "openat(\"notas.txt\", O_RDONLY) = 3\nread(3, \"ola\\n\", 131072) = 4\nwrite(1, \"ola\\n\", 4) = 4\nclose(3) = 0",
+            "notes": [
+              "Abriu o arquivo só para leitura. O SO respondeu 3: é esse o número do arquivo daqui para a frente.",
+              "Pediu para ler do arquivo 3 e cabia até 131072 letras. Vieram 4: as três letras de ola mais a quebra de linha.",
+              "Escreveu essas 4 letras no destino de número 1, que é a tela. A resposta 4 quer dizer que escreveu tudo.",
+              "Fechou o arquivo 3. A resposta 0 quer dizer que deu certo."
+            ]
+          }
         },
         {
           "kind": "exam",
@@ -1735,6 +1784,10 @@
             {
               "word": "Descritor de arquivo",
               "meaning": "um número pequeno que o SO entrega ao abrir um arquivo. Nas operações seguintes, você usa esse número no lugar do nome."
+            },
+            {
+              "word": "open, read, write e close",
+              "meaning": "os nomes dos quatro pedidos em inglês: abrir, ler, escrever e fechar. Eles são iguais em quase todo sistema."
             }
           ]
         },
@@ -1743,48 +1796,120 @@
           "title": "Um exemplo em Python",
           "body": [
             "Este programa em Python funciona no Windows e no Linux. Ele abre um arquivo, lê o texto, mostra na tela e fecha.",
-            "Você escreve algo simples. Por trás, o Python faz chamadas de sistema para abrir, ler e fechar o arquivo."
+            "São quatro linhas. Por trás de cada uma, o Python faz um pedido ao SO."
           ],
           "code": {
             "label": "Python (Windows e Linux)",
-            "text": "arquivo = open(\"notas.txt\")\ntexto = arquivo.read()\nprint(texto)\narquivo.close()"
-          }
+            "text": "arquivo = open(\"notas.txt\")\ntexto = arquivo.read()\nprint(texto)\narquivo.close()",
+            "notes": [
+              "Pede ao SO para abrir o arquivo. O que volta fica guardado numa caixinha de nome arquivo, e o igual é o que guarda.",
+              "Pede para ler tudo o que está dentro. O ponto quer dizer “desta caixinha, faça isto”.",
+              "Manda mostrar na tela o que foi lido.",
+              "Devolve o arquivo ao SO. Programa que não fecha vai deixando arquivos abertos à toa."
+            ]
+          },
+          "terms": [
+            {
+              "word": "Python",
+              "meaning": "uma linguagem de programação conhecida por ser curta e fácil de ler."
+            }
+          ]
         },
         {
           "kind": "explain",
           "title": "O mesmo em C, no Linux",
           "body": [
-            "Em C, você chama as funções direto. O descritor volta em fd. Os dados lidos vão para o buffer, e o n diz quantos bytes vieram.",
-            "Todo programa já começa com três descritores abertos: 0 é o teclado, 1 é a tela e 2 mostra as mensagens de erro."
+            "Em C, você faz cada pedido na mão, um por linha. Dá mais trabalho que em Python, e é por isso que se enxerga melhor o que acontece.",
+            "Todo programa já nasce com três números prontos. O 0 é o teclado, o 1 é a tela e o 2 é por onde saem os erros."
           ],
           "code": {
             "label": "C (Linux)",
-            "text": "fd = open(\"notas.txt\", O_RDONLY);\nn = read(fd, buffer, 100);\nwrite(1, buffer, n);\nclose(fd);"
+            "text": "fd = open(\"notas.txt\", O_RDONLY);\nn = read(fd, buffer, 100);\nwrite(1, buffer, n);\nclose(fd);",
+            "notes": [
+              "Abre o arquivo só para leitura. O número que volta fica guardado em fd, de file descriptor, que é o descritor do arquivo.",
+              "Lê do arquivo fd no máximo 100 bytes e põe em buffer. Em n fica quanto veio de verdade.",
+              "Escreve no destino 1, que é a tela, os n bytes que estão no buffer.",
+              "Fecha o arquivo. O ponto e vírgula no fim de cada linha é o jeito de C dizer que a ordem acabou."
+            ]
           },
           "terms": [
             {
               "word": "Buffer",
               "meaning": "uma área de memória que guarda dados por um tempo. No read, é onde os dados lidos são colocados."
+            },
+            {
+              "word": "C",
+              "meaning": "uma linguagem de programação antiga e ainda muito usada. Boa parte dos sistemas operacionais é escrita nela."
+            },
+            {
+              "word": "Byte",
+              "meaning": "o pedacinho de informação que guarda uma letra comum. Mil bytes dão mais ou menos uma página de texto."
+            },
+            {
+              "word": "O_RDONLY",
+              "meaning": "a opção que manda abrir só para leitura. O nome vem de read only, que é somente leitura em inglês."
             }
           ]
         },
         {
           "kind": "explain",
-          "title": "Processos: clonar, trocar e esperar",
+          "title": "Processos: tirar uma cópia",
           "body": [
-            "Pense em uma fotocopiadora. O fork tira uma cópia idêntica do processo. A cópia é o filho, e o original é o pai.",
-            "O execve apaga o conteúdo da cópia e escreve outro programa no lugar. O waitpid faz o pai esperar o filho terminar. O exit encerra o processo."
+            "Pense em uma fotocopiadora. O fork tira uma cópia idêntica do processo que está rodando.",
+            "A cópia é o filho, e o original é o pai. Os dois seguem do mesmo ponto, lado a lado."
           ],
-          "code": {
-            "label": "C (Linux), simplificado",
-            "text": "pid = fork();       // cria o filho\nexecve(nome, ...);  // o filho troca de programa\nwaitpid(pid, ...);  // o pai espera\nexit(status);       // termina"
-          },
           "terms": [
+            {
+              "word": "fork",
+              "meaning": "o pedido que tira uma cópia do processo. É o único jeito de nascer um processo novo no Linux."
+            },
             {
               "word": "Pai e filho",
               "meaning": "o processo criado é o filho. Quem o criou é o pai."
+            },
+            {
+              "word": "PID",
+              "meaning": "o número que o SO dá a cada processo. É por ele que se fala de um processo específico."
             }
-          ]
+          ],
+          "code": {
+            "label": "C (Linux), simplificado",
+            "text": "pid = fork();",
+            "notes": [
+              "Tira uma cópia deste processo. O número do filho fica guardado em pid."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Trocar de programa, esperar e terminar",
+          "body": [
+            "A cópia não serve de nada sendo igual ao pai. O execve apaga o conteúdo dela e põe outro programa no lugar.",
+            "O waitpid faz o pai esperar o filho terminar. O exit encerra um processo."
+          ],
+          "terms": [
+            {
+              "word": "execve",
+              "meaning": "o pedido que troca o programa de um processo. O processo continua o mesmo; o que roda dentro dele é que muda."
+            },
+            {
+              "word": "waitpid",
+              "meaning": "o pedido que faz um processo parar até um filho dele terminar."
+            },
+            {
+              "word": "exit",
+              "meaning": "o pedido que encerra o processo e devolve um número dizendo como foi."
+            }
+          ],
+          "code": {
+            "label": "C (Linux), simplificado",
+            "text": "execve(nome, ...);\nwaitpid(pid, ...);\nexit(status);",
+            "notes": [
+              "Aqui o filho troca de programa. O nome diz qual programa entra no lugar dele.",
+              "O pai para nesta linha e só segue quando o filho de número pid terminar.",
+              "Encerra o processo. O status é um número que diz se deu tudo certo."
+            ]
+          }
         },
         {
           "kind": "explain",
@@ -1877,6 +2002,14 @@
             {
               "word": "Handle",
               "meaning": "o nome que o Windows usa para o número que identifica um arquivo aberto."
+            },
+            {
+              "word": "CreateProcess e as irmãs",
+              "meaning": "o jeito do Windows de nomear os mesmos pedidos. É sempre um verbo colado num substantivo: CreateFile abre um arquivo e CreateProcess cria um processo."
+            },
+            {
+              "word": "Função",
+              "meaning": "um pedaço de programa com nome, que faz uma tarefa e devolve o resultado."
             }
           ]
         },
@@ -2139,6 +2272,10 @@
             {
               "word": "Monolítico",
               "meaning": "o arranjo em que o núcleo é um programa só, com todas as partes juntas e sem barreira entre elas."
+            },
+            {
+              "word": "Função",
+              "meaning": "um pedaço de programa com nome, que faz uma tarefa e devolve o resultado."
             }
           ],
           "figure": {
@@ -2615,7 +2752,13 @@
           ],
           "code": {
             "label": "No Linux, em C",
-            "text": "pid = fork();          // cria uma cópia deste processo\nif (pid == 0) {\n    execvp(\"gedit\", args);  // a cópia vira outro programa\n}"
+            "text": "pid = fork();\nif (pid == 0) {\n    execvp(\"gedit\", args);\n}",
+            "notes": [
+              "Tira uma cópia deste processo. Agora existem dois, e cada um recebe um valor diferente em pid.",
+              "O filho é o único que recebe zero. Esta linha é o jeito de perguntar “eu sou o filho?”.",
+              "Só o filho entra aqui e troca de programa. O pai segue a vida dele.",
+              "Fecha o trecho que só o filho executa."
+            ]
           },
           "table": {
             "label": "A mesma tarefa nos dois sistemas",
@@ -2634,7 +2777,17 @@
               ]
             ],
             "mono": true
-          }
+          },
+          "terms": [
+            {
+              "word": "fork",
+              "meaning": "o pedido que tira uma cópia do processo. É assim que nasce um processo novo no Linux."
+            },
+            {
+              "word": "execve",
+              "meaning": "o pedido que troca o programa de um processo. O processo continua o mesmo; o que roda dentro dele é que muda."
+            }
+          ]
         },
         {
           "kind": "explain",
@@ -2731,6 +2884,12 @@
             "A ficha de cada processo fica na tabela de processos, e o PID é o número dele.",
             "Nasce de quatro jeitos e morre de quatro jeitos.",
             "No Linux, fork duplica e exec troca o programa. No Windows, CreateProcess faz os dois de uma vez."
+          ],
+          "terms": [
+            {
+              "word": "CreateProcess e as irmãs",
+              "meaning": "o jeito do Windows de nomear os mesmos pedidos. É sempre um verbo colado num substantivo: CreateFile abre um arquivo e CreateProcess cria um processo."
+            }
           ]
         }
       ],
@@ -3772,6 +3931,14 @@
             {
               "word": "Pilha de chamadas",
               "meaning": "a anotação de quais trechos do programa chamaram quais, para o caminho saber onde voltar."
+            },
+            {
+              "word": "Variável",
+              "meaning": "uma caixinha com nome, onde o programa guarda um valor que pode mudar."
+            },
+            {
+              "word": "Função",
+              "meaning": "um pedaço de programa com nome, que faz uma tarefa e devolve o resultado."
             }
           ],
           "table": {
@@ -4228,6 +4395,14 @@
             {
               "word": "Reentrante",
               "meaning": "o código que aguenta ser executado por dois caminhos ao mesmo tempo sem se embaralhar."
+            },
+            {
+              "word": "Variável",
+              "meaning": "uma caixinha com nome, onde o programa guarda um valor que pode mudar."
+            },
+            {
+              "word": "Função",
+              "meaning": "um pedaço de programa com nome, que faz uma tarefa e devolve o resultado."
             }
           ]
         },
@@ -4439,8 +4614,19 @@
             "E ele pode ser interrompido entre um passo e outro."
           ],
           "code": {
-            "label": "O que uma linha esconde",
-            "text": "contador = contador + 1\n\n// para o processador, são três passos:\n//   1. ler o valor de contador\n//   2. somar 1 ao que leu\n//   3. gravar o resultado de volta"
+            "label": "Uma linha só, no seu programa",
+            "text": "contador = contador + 1",
+            "notes": [
+              "Some 1 ao que está guardado em contador. Parece uma coisa só, e é aí que mora o problema."
+            ]
+          },
+          "example": {
+            "label": "O que o processador faz de verdade",
+            "lines": [
+              "1. ler o valor que está em contador",
+              "2. somar 1 ao que leu",
+              "3. gravar o resultado de volta"
+            ]
           }
         },
         {
@@ -4754,8 +4940,24 @@
           ],
           "code": {
             "label": "Por que não funciona",
-            "text": "while (tranca == 1)   // A vê 0 e sai do laço\n    ;\ntranca = 1;           // ...mas B também viu 0 antes daqui\n// trecho perigoso — os dois entraram\ntranca = 0;"
-          }
+            "text": "while (tranca == 1)\n    ;\ntranca = 1;\n\ntranca = 0;",
+            "notes": [
+              "Enquanto a tranca estiver marcada, fique rodando aqui. O A vê zero e sai do laço.",
+              "O ponto e vírgula sozinho quer dizer “não faça nada”: é a espera em si.",
+              "Marca a tranca e entra. O furo está aqui: o B também viu zero antes desta linha, e entrou junto.",
+              "Devolve a tranca ao sair. Entre a linha de cima e esta fica o trecho perigoso."
+            ]
+          },
+          "terms": [
+            {
+              "word": "Variável",
+              "meaning": "uma caixinha com nome, onde o programa guarda um valor que pode mudar."
+            },
+            {
+              "word": "Laço",
+              "meaning": "um trecho do programa que se repete até alguma condição mudar."
+            }
+          ]
         },
         {
           "kind": "explain",
@@ -4799,7 +5001,14 @@
           ],
           "code": {
             "label": "Antes de entrar no trecho perigoso",
-            "text": "quero[eu] = true;        // avisa que quer entrar\nvez = outro;             // cede a vez, por educação\nwhile (quero[outro] && vez == outro)\n    ;                    // espera aqui\n\n// ... trecho perigoso ...\n\nquero[eu] = false;       // libera"
+            "text": "quero[eu] = true;\nvez = outro;\nwhile (quero[outro] && vez == outro)\n    ;\n\nquero[eu] = false;",
+            "notes": [
+              "Avisa que quer entrar.",
+              "Cede a vez ao outro, por educação. É esta linha que desempata.",
+              "Espera enquanto o outro também quiser entrar e a vez for dele.",
+              "A espera em si. Passando daqui, o trecho perigoso é seu.",
+              "Ao sair, avisa que não quer mais. O outro para de esperar."
+            ]
           },
           "bullets": [
             "Cumpre as quatro exigências, sem ajuda nenhuma do sistema.",
@@ -4816,8 +5025,24 @@
           ],
           "code": {
             "label": "Uma instrução indivisível",
-            "text": "entrar:\n    TSL registrador, tranca  ; lê a tranca e já marca ocupado\n    CMP registrador, 0       ; ela estava livre?\n    JNE entrar               ; não estava: tenta de novo\n    RET                      ; estava: pode entrar\n\nsair:\n    MOV tranca, 0            ; devolve livre\n    RET"
-          }
+            "text": "entrar:\n    TSL registrador, tranca\n    CMP registrador, 0\n    JNE entrar\n    RET\n\nsair:\n    MOV tranca, 0\n    RET",
+            "notes": [
+              "O começo do trecho que tenta entrar.",
+              "Lê a tranca e já a marca como ocupada, numa ordem só. Ninguém se mete no meio.",
+              "Compara o que veio com zero, que quer dizer livre.",
+              "Se não era zero, volta ao começo e tenta de novo.",
+              "Era zero: pode entrar.",
+              "O começo do trecho de saída.",
+              "Devolve a tranca livre.",
+              "E volta para o programa."
+            ]
+          },
+          "terms": [
+            {
+              "word": "TSL",
+              "meaning": "uma ordem do processador que lê um valor e já o marca como ocupado, sem que ninguém consiga entrar no meio."
+            }
+          ]
         },
         {
           "kind": "explain",
@@ -5071,11 +5296,25 @@
           ],
           "code": {
             "label": "O que cada uma faz",
-            "text": "down(s)   // também chamada de P ou wait\n  se s > 0:  s = s - 1  e passa\n  senão:     dorme aqui\n\nup(s)     // também chamada de V ou signal\n  s = s + 1\n  se alguém dormia:  acorda um deles"
+            "text": "down(s)\n  se s > 0:  s = s - 1  e passa\n  senão:     dorme aqui\n\nup(s)\n  s = s + 1\n  se alguém dormia:  acorda um deles",
+            "notes": [
+              "A ordem de tentar passar. Em outros textos ela aparece como P ou wait.",
+              "Se ainda há vaga, ele gasta uma e segue.",
+              "Se não há, ele dorme ali mesmo, sem gastar processador.",
+              "A ordem de liberar. Em outros textos ela aparece como V ou signal.",
+              "Devolve uma vaga.",
+              "E acorda alguém que estava dormindo, se houver."
+            ]
           },
           "bullets": [
             "Indivisível quer dizer que ninguém entra no meio da operação.",
             "É o sistema que garante isso, e não o programa."
+          ],
+          "terms": [
+            {
+              "word": "down e up",
+              "meaning": "os dois pedidos de um semáforo: o down tenta passar e o up libera uma vaga."
+            }
           ]
         },
         {
@@ -5433,6 +5672,10 @@
             {
               "word": "Monitor",
               "meaning": "uma caixa que junta um dado e as funções que mexem nele, deixando só um caminho entrar por vez."
+            },
+            {
+              "word": "Função",
+              "meaning": "um pedaço de programa com nome, que faz uma tarefa e devolve o resultado."
             }
           ]
         },
@@ -5448,11 +5691,19 @@
             {
               "word": "Variável de condição",
               "meaning": "o lugar onde um caminho espera por um aviso, liberando a entrada enquanto espera."
+            },
+            {
+              "word": "wait e signal",
+              "meaning": "o par que sempre anda junto: o wait sai de lado e espera, e o signal avisa quem esperava."
             }
           ],
           "code": {
             "label": "O par que sempre aparece junto",
-            "text": "wait(pode_seguir)    // sai de lado e libera a entrada\nsignal(pode_seguir)  // avisa quem estava esperando"
+            "text": "wait(pode_seguir)\nsignal(pode_seguir)",
+            "notes": [
+              "Sai de lado e espera. Ao sair, libera a entrada para outro caminho usar.",
+              "Avisa quem estava esperando que agora dá para seguir."
+            ]
           }
         },
         {
@@ -5505,8 +5756,18 @@
           ],
           "code": {
             "label": "As duas operações",
-            "text": "send(destino, mensagem)    // envia e segue\nreceive(origem, &mensagem) // espera até chegar algo"
-          }
+            "text": "send(destino, mensagem)\nreceive(origem, &mensagem)",
+            "notes": [
+              "Manda o recado a quem for o destino e segue a vida.",
+              "Espera até chegar algo da origem. O que chegar fica guardado em mensagem."
+            ]
+          },
+          "terms": [
+            {
+              "word": "send e receive",
+              "meaning": "os dois pedidos de troca de mensagem: o send envia e o receive espera chegar."
+            }
+          ]
         },
         {
           "kind": "explain",
@@ -5620,6 +5881,12 @@
             "Por isso a espera fica dentro de um laço, e não de um teste simples.",
             "Enviar e receber recado funciona entre máquinas diferentes.",
             "A barreira segura todo mundo até o último chegar."
+          ],
+          "terms": [
+            {
+              "word": "Laço",
+              "meaning": "um trecho do programa que se repete até alguma condição mudar."
+            }
           ]
         }
       ],
@@ -5819,9 +6086,22 @@
             "Quem produz espera o contador de vazios. Quem consome espera o de cheios."
           ],
           "code": {
-            "label": "A ordem que não pode inverter",
-            "text": "// quem produz\ndown(vazios);    // primeiro: tem lugar?\ndown(tranca);    // depois: posso mexer?\n... põe o item ...\nup(tranca);\nup(cheios);"
-          }
+            "label": "A ordem que não pode inverter, do lado de quem produz",
+            "text": "down(vazios);\ndown(tranca);\n... põe o item ...\nup(tranca);\nup(cheios);",
+            "notes": [
+              "Quem produz espera primeiro por um lugar vazio.",
+              "Só depois pede a tranca do espaço de guarda. Inverter estas duas linhas trava tudo para sempre.",
+              "Põe o item no espaço.",
+              "Devolve a tranca.",
+              "E avisa que agora há um lugar cheio a mais."
+            ]
+          },
+          "terms": [
+            {
+              "word": "down e up",
+              "meaning": "os dois pedidos de um semáforo: o down tenta passar e o up libera uma vaga."
+            }
+          ]
         },
         {
           "kind": "explain",
@@ -6129,6 +6409,14 @@
             {
               "word": "Endereço",
               "meaning": "o número que identifica cada caixinha da memória."
+            },
+            {
+              "word": "Variável",
+              "meaning": "uma caixinha com nome, onde o programa guarda um valor que pode mudar."
+            },
+            {
+              "word": "Bit",
+              "meaning": "a menor informação que existe. Só pode ser 0 ou 1."
             }
           ]
         },
@@ -6551,6 +6839,14 @@
             {
               "word": "Moldura",
               "meaning": "cada pedaço de tamanho fixo da memória de verdade. Ela tem o mesmo tamanho de uma página."
+            },
+            {
+              "word": "Byte",
+              "meaning": "o pedacinho que guarda uma letra comum. São oito bits juntos."
+            },
+            {
+              "word": "Bit",
+              "meaning": "a menor informação que existe. Só pode ser 0 ou 1."
             }
           ],
           "figure": {
@@ -6606,9 +6902,16 @@
             "A parte da frente diz qual pedaço. A de trás diz a posição dentro dele.",
             "Só a parte da frente é traduzida. A de trás passa direto."
           ],
-          "code": {
-            "label": "Um endereço de 32 bits, com pedaços de 4 mil bytes",
-            "text": "  31                   12 11            0\n +-----------------------+---------------+\n |   qual pedaço (20)    | posição (12)  |\n +-----------------------+---------------+\n\n// a parte da frente vira o número do lugar de verdade\n// a parte de trás é copiada sem mudar nada"
+          "terms": [
+            {
+              "word": "Bit",
+              "meaning": "a menor informação que existe. Só pode ser 0 ou 1."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/so/so-endereco-partido.svg",
+            "alt": "Uma barra representando um endereço de 32 bits, partida em duas. A parte da esquerda, de 20 bits, diz qual pedaço. A parte da direita, de 12 bits, diz a posição dentro do pedaço. Uma seta mostra que só a parte da esquerda é traduzida, e a da direita passa direto.",
+            "caption": "Só a parte da frente é traduzida. A de trás passa direto."
           }
         },
         {
@@ -6839,6 +7142,14 @@
             {
               "word": "Falta de página",
               "meaning": "o aviso de que o pedaço pedido não está na memória. O programa para até ele ser trazido do disco."
+            },
+            {
+              "word": "Byte",
+              "meaning": "o pedacinho que guarda uma letra comum. São oito bits juntos."
+            },
+            {
+              "word": "Bit",
+              "meaning": "a menor informação que existe. Só pode ser 0 ou 1."
             }
           ]
         },
@@ -7266,9 +7577,24 @@
             "O primeiro diz em qual bloco está. O segundo diz onde dentro dele.",
             "É como dizer o bolso da mochila e a posição dentro do bolso."
           ],
-          "code": {
+          "terms": [
+            {
+              "word": "Byte",
+              "meaning": "o pedacinho que guarda uma letra comum. São oito bits juntos."
+            },
+            {
+              "word": "Bit",
+              "meaning": "a menor informação que existe. Só pode ser 0 ou 1."
+            }
+          ],
+          "example": {
             "label": "Como fica o endereço",
-            "text": "endereço = (bloco, posição dentro do bloco)\n\nexemplo: (2, 40)\n  bloco 2 = a pilha de chamadas\n  posição 40 = o quadragésimo byte dela"
+            "lines": [
+              "endereço = (bloco, posição dentro do bloco)",
+              "exemplo: (2, 40)",
+              "bloco 2 = a pilha de chamadas",
+              "posição 40 = o quadragésimo byte dela"
+            ]
           }
         },
         {
@@ -7330,6 +7656,12 @@
             "Nos processadores de 64 bits, essa divisão foi quase toda desativada.",
             "Sobraram dois blocos especiais, usados para dados de cada caminho de execução.",
             "A separação por sentido continua viva, e agora mora no formato dos programas."
+          ],
+          "terms": [
+            {
+              "word": "Bit",
+              "meaning": "a menor informação que existe. Só pode ser 0 ou 1."
+            }
           ]
         },
         {
@@ -7631,6 +7963,14 @@
             {
               "word": "Ficha do arquivo",
               "meaning": "os dados sobre o arquivo, guardados à parte do conteúdo. Ali vão tamanho, datas, dono e quem pode o quê."
+            },
+            {
+              "word": "Byte",
+              "meaning": "o pedacinho que guarda uma letra comum. São oito bits juntos."
+            },
+            {
+              "word": "Bit",
+              "meaning": "a menor informação que existe. Só pode ser 0 ou 1."
             }
           ],
           "bullets": [
@@ -8024,6 +8364,14 @@
             {
               "word": "Bloco",
               "meaning": "o menor pedaço que o sistema lê ou grava no disco de uma vez. Hoje costuma ter quatro mil bytes."
+            },
+            {
+              "word": "Byte",
+              "meaning": "o pedacinho que guarda uma letra comum. São oito bits juntos."
+            },
+            {
+              "word": "Bit",
+              "meaning": "a menor informação que existe. Só pode ser 0 ou 1."
             }
           ],
           "bullets": [
@@ -8454,6 +8802,14 @@
             {
               "word": "Bloco",
               "meaning": "o menor pedaço que o sistema lê ou grava no disco de uma vez. Hoje costuma ter quatro mil bytes."
+            },
+            {
+              "word": "Byte",
+              "meaning": "o pedacinho que guarda uma letra comum. São oito bits juntos."
+            },
+            {
+              "word": "Bit",
+              "meaning": "a menor informação que existe. Só pode ser 0 ou 1."
             }
           ],
           "example": {
@@ -8867,6 +9223,14 @@
             {
               "word": "Peça de fluxo",
               "meaning": "a que entrega ou recebe uma letra de cada vez, em sequência. Teclado, mouse e impressora são assim."
+            },
+            {
+              "word": "Byte",
+              "meaning": "o pedacinho que guarda uma letra comum. São oito bits juntos."
+            },
+            {
+              "word": "Bit",
+              "meaning": "a menor informação que existe. Só pode ser 0 ou 1."
             }
           ]
         },
@@ -8928,6 +9292,10 @@
             {
               "word": "Acesso direto à memória",
               "meaning": "uma plaquinha que move os dados sozinha entre a peça e a memória, sem passar pelo processador."
+            },
+            {
+              "word": "Laço",
+              "meaning": "um trecho do programa que se repete até alguma condição mudar."
             }
           ],
           "table": {
@@ -9270,6 +9638,14 @@
             {
               "word": "Anel de dados (trilha)",
               "meaning": "cada círculo de gravação do prato. O braço precisa parar exatamente em cima do anel certo."
+            },
+            {
+              "word": "Byte",
+              "meaning": "o pedacinho que guarda uma letra comum. São oito bits juntos."
+            },
+            {
+              "word": "Bit",
+              "meaning": "a menor informação que existe. Só pode ser 0 ou 1."
             }
           ]
         },
@@ -9670,6 +10046,14 @@
             {
               "word": "Bloco",
               "meaning": "o menor pedaço que o sistema lê ou grava no disco de uma vez. Hoje costuma ter quatro mil bytes."
+            },
+            {
+              "word": "Byte",
+              "meaning": "o pedacinho que guarda uma letra comum. São oito bits juntos."
+            },
+            {
+              "word": "Bit",
+              "meaning": "a menor informação que existe. Só pode ser 0 ou 1."
             }
           ]
         },
@@ -10885,11 +11269,20 @@
             {
               "word": "Thread",
               "meaning": "cada caminho de execução dentro de um mesmo processo. Em português se diz também linha de execução."
+            },
+            {
+              "word": "clone",
+              "meaning": "o pedido do Linux que cria um caminho de execução novo. Você escolhe o que ele divide com quem o criou."
             }
           ],
           "code": {
             "label": "Uma ordem só, com opções diferentes",
-            "text": "clone(SEM_DIVIDIR_NADA)      // resultado: um processo novo\nclone(DIVIDIR_MEMORIA |\n      DIVIDIR_ARQUIVOS)      // resultado: um caminho de execução"
+            "text": "clone(SEM_DIVIDIR_NADA)\nclone(DIVIDIR_MEMORIA |\n      DIVIDIR_ARQUIVOS)",
+            "notes": [
+              "Pede uma tarefa nova que não divide nada com quem a criou. O resultado é um processo novo.",
+              "Pede uma tarefa nova dizendo o que ela divide. O risco na vertical quer dizer “e também”.",
+              "Dividindo memória e arquivos, o resultado é um caminho de execução dentro do mesmo processo."
+            ]
           }
         },
         {
@@ -10922,6 +11315,10 @@
             {
               "word": "Camada comum de arquivos",
               "meaning": "a parte do núcleo que faz todos os tipos de disco responderem aos mesmos pedidos."
+            },
+            {
+              "word": "open, read, write e close",
+              "meaning": "os nomes dos quatro pedidos em inglês: abrir, ler, escrever e fechar."
             }
           ],
           "bullets": [
@@ -11243,6 +11640,10 @@
             {
               "word": "Chamada de sistema",
               "meaning": "o pedido que um programa faz ao núcleo quando precisa de algo que não pode fazer sozinho."
+            },
+            {
+              "word": "Função",
+              "meaning": "um pedaço de programa com nome, que faz uma tarefa e devolve o resultado."
             }
           ],
           "bullets": [
@@ -11283,6 +11684,14 @@
             {
               "word": "Thread",
               "meaning": "cada caminho de execução dentro de um mesmo processo. Em português se diz também linha de execução."
+            },
+            {
+              "word": "fork",
+              "meaning": "o pedido que tira uma cópia do processo. É assim que nasce um processo novo no Linux."
+            },
+            {
+              "word": "CreateProcess e as irmãs",
+              "meaning": "o jeito do Windows de nomear os mesmos pedidos. É sempre um verbo colado num substantivo: CreateFile abre um arquivo e CreateProcess cria um processo."
             }
           ],
           "bullets": [

@@ -64,6 +64,16 @@ export function contagem(quantas: number): string {
 }
 
 /**
+ * Quantas palavras já apareceram nas lições praticadas.
+ *
+ * O número só é dito quando há o que dizer: "0 de 74" na primeira visita é
+ * uma cobrança, e a página existe para socorrer quem travou numa palavra.
+ */
+export function jaVistas(termos: VocabularyTerm[]): number {
+  return termos.filter((t) => t.seen).length;
+}
+
+/**
  * A explicação de para que a página serve.
  *
  * Escrita para quem chegou aqui travado numa palavra, não para quem quer
@@ -71,3 +81,16 @@ export function contagem(quantas: number): string {
  */
 export const PARA_QUE_SERVE =
   "Toda palavra nova da matéria, com o significado em uma frase. Tocando numa delas você vai para a lição em que ela é explicada por inteiro.";
+
+/*
+| Por que a palavra de lição não praticada fica apagada, e não escondida.
+|
+| A matéria inteira precisa estar aqui: quem chega travado numa palavra veio
+| procurá-la, e esconder o que ainda não foi estudado transformaria a página
+| numa tranca. Mas a lista completa, na primeira semana, é uma parede de
+| palavras que a pessoa nunca viu — e não dá para saber o que já é seu.
+|
+| Apagado resolve os dois: continua legível e continua clicável, só que o olho
+| passa por cima. É a mesma decisão do nó cinza da trilha: orienta, não tranca.
+*/
+export const AINDA_NAO_VISTAS = "As mais apagadas são de lições que você ainda não praticou.";

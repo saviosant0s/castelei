@@ -95,9 +95,39 @@ class CatalogController extends Controller
      * Vem do bloco `terms` das etapas, não de uma tabela — ver
      * App\Support\Content\Vocabulary para o porquê.
      */
-    public function vocabulary(Subject $subject): JsonResponse
+    public function vocabulary(Request $request, Subject $subject): JsonResponse
     {
         $subject->load('lessons');
+
+        /*
+        | Quais lições esta pessoa já praticou.
+        |
+        | O vocabulário mostra a matéria INTEIRA, de propósito: quem está
+        | perdido numa palavra precisa encontrá-la, e não descobrir que ela
+        | está trancada. Mas a lista completa, logo na primeira lição, é uma
+        | parede de palavras que a pessoa nunca viu — e não dá para saber o
+        | que já se estudou.
+        |
+        | Então a palavra de lição não praticada continua lá, legível, só que
+        | mais apagada. Mesma decisão do nó cinza da trilha: orienta, não
+        | tranca.
+        |
+        | "Praticada" é o mesmo critério da trilha e da barra da matéria: uma
+        | tentativa CONCLUÍDA, sem cobrar nota.
+        */
+        $praticadas = Attempt::query()
+            ->where('user_id', $request->user()->id)
+            ->whereNotNull('finished_at')
+            ->distinct()
+            ->pluck('lesson_id')
+            ->filter()
+            ->all();
+        $praticadas = array_flip($praticadas);
+
+        $terms = array_map(
+            fn (array $term) => $term + ['seen' => isset($praticadas[$term['lesson']['id']])],
+            Vocabulary::fromLessons($subject->lessons),
+        );
 
         return response()->json([
             'subject' => [
@@ -105,7 +135,7 @@ class CatalogController extends Controller
                 'slug' => $subject->slug,
                 'name' => $subject->name,
             ],
-            'terms' => Vocabulary::fromLessons($subject->lessons),
+            'terms' => $terms,
         ]);
     }
 

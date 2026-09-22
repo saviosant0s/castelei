@@ -61,7 +61,7 @@ export function blocoVazio(bloco: Bloco): NonNullable<LessonStep[Bloco]> {
     case "example":
       return { label: "Exemplo", lines: [""] };
     case "code":
-      return { label: "", text: "" };
+      return { label: "", text: "", notes: [""] };
     case "bullets":
       return [""];
     case "terms":
@@ -183,7 +183,12 @@ export function limpar(step: LessonStep): LessonStep {
     };
   }
   if (step.code?.text) {
-    saida.code = { ...(step.code.label ? { label: step.code.label } : {}), text: step.code.text };
+    const notes = (step.code.notes ?? []).filter((n) => n.trim());
+    saida.code = {
+      ...(step.code.label ? { label: step.code.label } : {}),
+      text: step.code.text,
+      ...(notes.length ? { notes } : {}),
+    };
   }
   if (step.video?.src) {
     saida.video = {
