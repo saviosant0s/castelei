@@ -40,5 +40,13 @@
         <env name="PULSE_ENABLED" value="false"/>
         <env name="TELESCOPE_ENABLED" value="false"/>
         <env name="NIGHTWATCH_ENABLED" value="false"/>
+        <!--
+            Nenhum teste pode mandar notificação de verdade nem disparar tarefa
+            agendada. Sem estas linhas, a suíte de quem tem as chaves no .env
+            local sai falando com o serviço de push do Google.
+        -->
+        <env name="VAPID_PUBLIC_KEY" value=""/>
+        <env name="VAPID_PRIVATE_KEY" value=""/>
+        <env name="CRON_SECRET" value=""/>
     </php>
 </phpunit>

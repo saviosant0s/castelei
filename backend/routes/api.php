@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\SubjectController as AdminSubjectController;
 use App\Http\Controllers\AttemptController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CatalogController;
+use App\Http\Controllers\CronController;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\MediaFileController;
 use App\Http\Controllers\ProgressController;
@@ -32,6 +33,18 @@ Route::get('/catalog', [PublicCatalogController::class, 'index']);
 */
 Route::get('/media/{path}', MediaFileController::class)
     ->where('path', 'midia/(images|videos)/[A-Za-z0-9._-]+');
+
+/*
+| Gatilho de tarefa agendada, puxado de fora.
+|
+| Fica ANTES do grupo de sessão porque quem chama é uma máquina, não um aluno:
+| a autorização é o segredo em `X-Castelei-Cron`, não um token de Sanctum.
+|
+| `throttle` porque é uma rota sem login que faz trabalho de verdade. O limite é
+| folgado para o uso legítimo (uma chamada por dia) e apertado o bastante para
+| ninguém ficar martelando segredo.
+*/
+Route::post('/cron/lembretes', [CronController::class, 'reminders'])->middleware('throttle:6,1');
 
 Route::post('/register', [AuthController::class, 'register'])->middleware('throttle:10,1');
 Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:10,1');

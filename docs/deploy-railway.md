@@ -90,35 +90,64 @@ Enquanto as variáveis não existirem, o recurso fica inerte de propósito: a ro
 se declara desligada e o botão nem aparece no Perfil. É melhor a função não
 existir do que existir quebrada.
 
-### 5.2 O processo que dispara (isto falta)
+### 5.2 O processo que dispara
 
-O horário está agendado em `backend/routes/console.php` (18h no fuso do aluno),
-mas o agendador do Laravel **não roda sozinho**: alguém precisa chamar
+O horário está agendado em `backend/routes/console.php`, mas o agendador do
+Laravel **não roda sozinho**: alguém precisa chamar `php artisan schedule:run` a
+cada minuto. O serviço `backend` atende requisições HTTP e não tem cron.
 
-```bash
-php artisan schedule:run
+**Duas portas fechadas no plano em uso:** o Railway só aceita cron com intervalo
+mínimo de 5 minutos (então `* * * * *` está fora), e criar um serviço só de cron
+esbarra no limite de serviços do plano gratuito.
+
+**A porta aberta é o GitHub Actions**, que tem agendamento e não custa nada.
+Quem puxa o cordão é `.github/workflows/lembretes.yml`, às 21:00 UTC (18:00 em
+São Paulo), chamando uma rota protegida:
+
+```
+POST /api/cron/lembretes
+X-Castelei-Cron: <o segredo>
 ```
 
-**a cada minuto**. O serviço `backend` atende requisições HTTP e não tem cron.
+Sem `CRON_SECRET` no backend, ou com segredo errado, a rota responde **404** —
+não 403. A diferença é de propósito: 403 confirmaria que a rota existe e
+convidaria a tentar de novo com outro segredo.
 
-Sem esse processo, **nenhum lembrete sai — e não aparece erro em lugar nenhum**,
-porque não há erro: o comando simplesmente nunca é chamado. É o tipo de falha
-que só se descobre perguntando "por que ninguém recebeu?".
+**O atraso do GitHub Actions não é problema aqui, e isso não é conformismo:** o
+agendamento dele atrasa minutos quando a fila está cheia, e o intervalo ideal de
+revisão é um platô largo (Cepeda et al., 2008). Chegar uma hora depois da hora
+não muda a retenção em nada. Ver `docs/revisao-espacada.md`.
 
-Dois caminhos no Railway:
+**O que ATRAPALHA de verdade:** o GitHub **desliga** agendamento em repositório
+sem atividade por 60 dias. Se os lembretes pararem do nada, é o primeiro lugar
+para olhar.
 
-1. **Serviço com cron** (o mais simples): duplique o serviço do backend, ponha
-   o agendamento do Railway (Settings → Cron Schedule) em `* * * * *` e o
-   comando de start como `php artisan schedule:run`.
-2. **Worker separado** rodando `php artisan schedule:work`, que é um processo
-   que fica de pé chamando o agendador sozinho.
+Para montar, são dois lugares com o mesmo segredo:
 
-Para conferir sem esperar as 18h:
+1. **No Railway**, serviço `backend`: variável `CRON_SECRET`.
+2. **No GitHub**, no repositório: Settings → Secrets and variables → Actions →
+   New repository secret, com o nome `CASTELEI_CRON_SECRET` e o mesmo valor.
+
+Se o endereço do backend mudar, crie também a *variable* (não secret)
+`CASTELEI_API_URL` apontando para o novo, terminando em `/api`. Sem ela, o
+workflow usa o endereço atual, que está escrito nele.
+
+Para conferir sem esperar as 18h: no GitHub, aba **Actions** → *Lembretes de
+revisão* → **Run workflow**. Ou, com acesso a um terminal do backend:
 
 ```bash
 php artisan castelei:lembretes --seco   # mostra quem receberia, sem enviar
 php artisan castelei:lembretes          # envia de verdade
 ```
+
+### 5.3 Se um dia o plano do Railway mudar
+
+Com um serviço a mais disponível, o caminho nativo fica melhor (menos peças, sem
+depender do GitHub): crie um serviço a partir do mesmo repositório, Root
+Directory `/backend`, start command `php artisan castelei:lembretes`, Cron
+Schedule `0 21 * * *` e restart policy **never**. As variáveis podem referenciar
+as do backend (`${{backend.APP_KEY}}`, `${{Postgres.DATABASE_URL}}` e as
+`VAPID_*`), sem copiar segredo nenhum. Aí é só apagar o workflow.
 
 ## 6. Mudando o plano de alguém (enquanto não há pagamento)
 
@@ -138,7 +167,7 @@ php artisan castelei:plan email@exemplo.com plus
 | Frontend abre, mas login dá "Não deu para falar com o servidor" | `API_URL` errada (precisa terminar em `/api`) ou backend fora do ar |
 | Deu certo localmente e não no Railway | Compare as variáveis; o app lê `API_URL` só no servidor |
 | O botão de lembrete não aparece no Perfil | Faltam `VAPID_PUBLIC_KEY`/`VAPID_PRIVATE_KEY` no backend (passo 5.1). É de propósito: sem elas o recurso se declara desligado |
-| Ninguém recebe lembrete, e não há erro nenhum | Falta o processo que chama `schedule:run` a cada minuto (passo 5.2). Confirme com `php artisan castelei:lembretes --seco` |
+| Ninguém recebe lembrete, e não há erro nenhum | Olhe a aba **Actions** do GitHub. Workflow agendado some depois de 60 dias sem atividade no repositório; e um 404 no log quer dizer segredo diferente entre Railway e GitHub (passo 5.2) |
 
 ## Segurança
 

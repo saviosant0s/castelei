@@ -163,6 +163,28 @@ return [
     ],
 
     /*
+    | GATILHO DE CRON POR HTTP.
+    |
+    | O Railway não tem cron no plano em uso: o serviço `backend` atende
+    | requisições e nada chama `schedule:run`. Um serviço só de cron esbarra no
+    | limite de serviços do plano gratuito.
+    |
+    | A saída é deixar alguém de fora puxar o cordão — hoje é o GitHub Actions
+    | (`.github/workflows/lembretes.yml`), que tem agendamento e não custa nada.
+    |
+    | O segredo é o que separa isso de um endereço público que qualquer um
+    | dispara. Sem ele a rota responde 404, como se não existisse: é melhor a
+    | função não existir do que existir aberta.
+    |
+    | Atraso não é problema aqui, e isso não é conformismo: o agendamento do
+    | GitHub Actions costuma atrasar minutos, e a crista de Cepeda é larga —
+    | chegar uma hora depois da hora não muda a retenção em nada.
+    */
+    'cron' => [
+        'secret' => env('CRON_SECRET', ''),
+    ],
+
+    /*
     | Web Push (VAPID).
     |
     | Gere o par com: php artisan castelei:vapid

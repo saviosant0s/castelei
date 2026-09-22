@@ -18,11 +18,17 @@ Artisan::command('inspire', function () {
 | `withoutOverlapping` porque o envio fala com serviços de push externos e pode
 | demorar: duas execuções ao mesmo tempo mandariam dois avisos.
 |
-| ATENÇÃO, RAILWAY: isto só roda se houver um processo chamando
-| `php artisan schedule:run` a cada minuto. O serviço `backend` atende
-| requisições e não tem cron — enquanto não existir esse processo (um serviço de
-| cron do Railway ou um worker separado), o comando precisa ser chamado de fora.
-| Ver docs/deploy-railway.md.
+| ATENÇÃO: isto NÃO é o que dispara os lembretes em produção hoje.
+|
+| O agendador do Laravel só roda se alguém chamar `schedule:run` a cada minuto,
+| e o plano do Railway em uso não dá isso (cron nativo tem intervalo mínimo de 5
+| minutos, e um serviço só de cron esbarra no limite de serviços). Quem puxa o
+| cordão hoje é o GitHub Actions, em POST /api/cron/lembretes.
+|
+| Esta definição fica porque em qualquer host com cron de verdade ela é o
+| caminho certo, e porque é aqui que o horário está escrito uma vez só. Rodar
+| pelos dois caminhos não manda aviso dobrado: o limite de um por dia mora no
+| próprio comando. Ver docs/deploy-railway.md, passo 5.2.
 */
 Schedule::command('castelei:lembretes')
     ->dailyAt(sprintf('%02d:00', (int) config('castelei.review.reminder.hour')))
