@@ -2,7 +2,8 @@
  "_leia_me": [
   "Curso de Servidores, VPS e Infraestrutura do Castelei.",
   "Chaves começadas por _ são comentário e somem na importação.",
-  "ANTES DE IMPORTAR, confira o endereço da matéria em /admin. O campo slug abaixo precisa ser o MESMO da matéria já publicada — com slug diferente o Castelei cria uma matéria nova em vez de atualizar a que existe."
+  "Este arquivo é a fonte de verdade da matéria: o pre-deploy o recarrega a cada push.",
+  "Editar esta matéria pelo painel passa a posse para lá, e o seeder deixa de mexer nela."
  ],
  "slug": "servidores-vps",
  "name": "Servidores, VPS e Infraestrutura",
@@ -5090,6 +5091,2292 @@
      "correct_index": 0,
      "explanation": "Tudo o mais pode ser reinstalado ou reescrito, com trabalho. Os dados das pessoas não têm origem alternativa: perdidos, acabou.",
      "pitfall": "Os certificados parecem insubstituíveis, mas são emitidos de novo em minutos e de graça."
+    }
+   ]
+  },
+  {
+   "slug": "git-cicd-automacao",
+   "title": "Git, CI/CD e automação de infraestrutura",
+   "module": "Mantendo no ar",
+   "summary": "Tirar a publicação das suas mãos, para ela parar de depender de você lembrar.",
+   "steps": [
+    {
+     "kind": "idea",
+     "title": "A máquina não esquece; você esquece",
+     "body": [
+      "Publicar à mão funciona nas primeiras vezes. Depois vem o dia corrido.",
+      "Alguém pula o teste, esquece um passo ou publica de uma pasta desatualizada.",
+      "Automatizar não é luxo de equipe grande. É a única forma de o quinto passo acontecer sempre."
+     ],
+     "terms": [
+      {
+       "word": "Servidor",
+       "meaning": "o computador que fica esperando pedidos e devolve respostas."
+      },
+      {
+       "word": "Deploy",
+       "meaning": "o ato de colocar uma versão nova do sistema no ar."
+      },
+      {
+       "word": "Terminal",
+       "meaning": "a janela onde se escreve ordens em texto e se lê a resposta."
+      },
+      {
+       "word": "Serviço",
+       "meaning": "um programa que fica ligado atendendo pedidos, sem ninguém abrir nada."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "O histórico é a memória do projeto",
+     "body": [
+      "Antes de automatizar, o código precisa estar num lugar com histórico.",
+      "Esse histórico responde três perguntas que nenhuma pasta zipada responde.",
+      "O que mudou, quando mudou e por quê."
+     ],
+     "terms": [
+      {
+       "word": "Git",
+       "meaning": "a ferramenta que guarda o histórico do código, mudança por mudança."
+      },
+      {
+       "word": "Repositório",
+       "meaning": "o lugar onde esse histórico fica guardado e compartilhado."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "A esteira que roda sozinha",
+     "body": [
+      "A cada envio de código, uma sequência de passos roda numa máquina que não é a sua.",
+      "Ela testa, monta e publica. E para na primeira etapa que falhar.",
+      "Esse é o ponto: nada do que vem depois de uma falha acontece."
+     ],
+     "terms": [
+      {
+       "word": "CI/CD",
+       "meaning": "a esteira automática que testa, monta e publica a cada mudança no código."
+      }
+     ],
+     "figure": {
+      "src": "/figuras/servidores/srv-esteira.svg",
+      "alt": "Uma esteira automática em quatro etapas que parte do envio do código, roda os testes, monta a versão e publica, parando em qualquer etapa que falhar",
+      "caption": "A esteira não deixa o código melhor. Ela impede que o pior chegue no ar."
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Uma esteira mínima, de verdade",
+     "body": [
+      "Não precisa ser complicada para valer a pena. Quinze linhas já mudam o jogo.",
+      "Repare na ordem: publicar só acontece depois de o teste passar."
+     ],
+     "code": {
+      "label": ".github/workflows/deploy.yml",
+      "text": "on:\n  push:\n    branches: [main]\njobs:\n  publicar:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - run: npm ci && npm test\n      - run: ssh deploy@servidor '/usr/local/bin/deploy.sh'"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "A esteira precisa de uma chave própria",
+     "body": [
+      "Ela vai entrar na máquina sozinha, e não pode usar a sua chave pessoal.",
+      "Crie uma conta e um par de chaves só para ela, com permissão para rodar o script de publicação e nada além.",
+      "A metade secreta fica guardada no cofre do serviço, nunca no código."
+     ],
+     "terms": [
+      {
+       "word": "SSH",
+       "meaning": "o jeito seguro de abrir um terminal numa máquina distante."
+      },
+      {
+       "word": "Chave privada",
+       "meaning": "o arquivo secreto que prova quem você é ao entrar numa máquina."
+      },
+      {
+       "word": "Permissão",
+       "meaning": "a regra que diz o que cada conta pode fazer, e onde."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Os dois nomes que a sigla esconde",
+     "body": [
+      "A sigla junta duas ideias diferentes, e vale separar.",
+      "A primeira é juntar o trabalho de todo mundo cedo e testar a cada junção.",
+      "A segunda é deixar cada mudança aprovada pronta para ir ao ar sem intervenção."
+     ],
+     "table": {
+      "label": "As duas metades, separadas",
+      "headers": [
+       "Nome",
+       "O que resolve",
+       "Sintoma de quem não tem"
+      ],
+      "rows": [
+       [
+        "integração contínua",
+        "juntar cedo e testar sempre",
+        "junções gigantes e dolorosas"
+       ],
+       [
+        "entrega contínua",
+        "estar sempre pronto para subir",
+        "publicações raras e assustadoras"
+       ]
+      ],
+      "mono": false
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Descrever a máquina em texto",
+     "body": [
+      "A máquina montada à mão vira um mistério em seis meses. Ninguém lembra o que foi instalado.",
+      "Escrever a montagem em texto resolve. O texto vira documentação que não mente.",
+      "E permite montar uma máquina idêntica quando a primeira morrer."
+     ],
+     "terms": [
+      {
+       "word": "Serviço",
+       "meaning": "um programa que fica ligado atendendo pedidos, sem ninguém abrir nada."
+      }
+     ],
+     "example": {
+      "label": "Exemplo: o mínimo que já vale",
+      "lines": [
+       "Um arquivo com a lista de programas a instalar.",
+       "Os arquivos de configuração versionados junto com o código.",
+       "Um script que aplica tudo numa máquina nova.",
+       "Isso já é infraestrutura descrita em texto."
+      ]
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Automatizar o que você faria errado",
+     "body": [
+      "Nem tudo precisa virar esteira. Comece pelo passo em que você já errou.",
+      "Se você esquece de rodar o teste, automatize o teste. Se esquece de limpar o registro, automatize isso.",
+      "Automação sem dor de origem vira mais uma coisa para manter."
+     ]
+    },
+    {
+     "kind": "exam",
+     "title": "Como cai na prova",
+     "body": [
+      "Integração contínua consiste em integrar alterações com frequência e validá-las por build e testes automatizados.",
+      "Entrega contínua mantém o artefato sempre apto à publicação, com a implantação podendo exigir aprovação.",
+      "Infraestrutura como código torna o provisionamento reprodutível e versionado."
+     ]
+    },
+    {
+     "kind": "pitfall",
+     "title": "Pegadinhas clássicas",
+     "body": [
+      "O que transforma automação em problema novo:"
+     ],
+     "bullets": [
+      "Guardar a chave de acesso dentro do código, em vez do cofre do serviço.",
+      "Dar à esteira uma conta com poder total na máquina.",
+      "Publicar antes de o teste terminar, ou sem teste nenhum.",
+      "Automatizar coisas que nunca deram problema, e deixar de fora a que dá."
+     ]
+    },
+    {
+     "kind": "recap",
+     "title": "Resumo",
+     "body": [
+      "A esteira roda a cada mudança e para na primeira falha.",
+      "Ela entra na máquina com conta e chave próprias, com o mínimo de poder.",
+      "Descreva a montagem da máquina em texto, e comece automatizando o passo que você já errou."
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "topic": "Ordem da esteira",
+     "statement": "Numa esteira automática de publicação, a ordem correta das etapas é:",
+     "options": [
+      "Testar, montar e só então publicar",
+      "Publicar, testar e reverter se falhar",
+      "Montar, publicar e testar em produção",
+      "Testar e publicar em paralelo, para ganhar tempo",
+      "Publicar primeiro, já que os testes rodam localmente"
+     ],
+     "correct_index": 0,
+     "explanation": "O valor da esteira está em interromper antes do estrago. Publicar antes de testar devolve exatamente o problema que ela deveria evitar.",
+     "pitfall": "Rodar em paralelo parece uma otimização e elimina a condição que faz o teste servir de barreira."
+    },
+    {
+     "topic": "Credenciais da esteira",
+     "statement": "A chave usada pela esteira para acessar o servidor deve:",
+     "options": [
+      "Pertencer a uma conta própria, com poder limitado ao necessário",
+      "Ser a chave pessoal de quem configurou a esteira",
+      "Ficar versionada no repositório, junto com o código",
+      "Ser a chave da conta que pode tudo na máquina",
+      "Ser gerada novamente a cada execução"
+     ],
+     "correct_index": 0,
+     "explanation": "Conta própria com poder mínimo limita o estrago caso a esteira seja comprometida, e permite revogar o acesso dela sem afetar ninguém.",
+     "pitfall": "Usar a chave pessoal funciona no primeiro dia e mistura a identidade de uma pessoa com a de um robô."
+    },
+    {
+     "topic": "Integração contínua",
+     "statement": "O problema que a integração contínua resolve é:",
+     "options": [
+      "Junções raras e grandes, difíceis de resolver quando dão conflito",
+      "A lentidão da aplicação em produção",
+      "A falta de cópias de segurança",
+      "O crescimento dos arquivos de registro",
+      "A exposição de portas desnecessárias"
+     ],
+     "correct_index": 0,
+     "explanation": "Integrar cedo e com frequência mantém cada junção pequena. O custo de resolver conflitos cresce muito mais que linearmente com o tamanho.",
+     "pitfall": "As outras alternativas são problemas reais de operação, e nenhum deles é resolvido por frequência de integração."
+    },
+    {
+     "topic": "Histórico de código",
+     "statement": "Manter o código num repositório com histórico permite responder:",
+     "options": [
+      "O que mudou, quando mudou e por que mudou",
+      "Quantos usuários acessaram o sistema",
+      "Qual o consumo de memória da aplicação",
+      "Quais portas estão abertas na máquina",
+      "Quando foi feita a última cópia de segurança"
+     ],
+     "correct_index": 0,
+     "explanation": "O histórico guarda a sequência de mudanças com autor, data e justificativa. É a memória do projeto quando ninguém lembra mais.",
+     "pitfall": "As demais perguntas pertencem ao monitoramento e à operação, não ao versionamento."
+    },
+    {
+     "topic": "Infraestrutura em texto",
+     "statement": "Descrever a montagem do servidor em arquivos versionados tem como principal ganho:",
+     "options": [
+      "Poder recriar uma máquina idêntica, com a montagem documentada",
+      "Reduzir o consumo de memória do servidor",
+      "Dispensar a necessidade de cópia de segurança dos dados",
+      "Aumentar a velocidade da aplicação",
+      "Eliminar a necessidade de monitoramento"
+     ],
+     "correct_index": 0,
+     "explanation": "A descrição em texto é reprodutível e não envelhece em silêncio como a memória de quem montou. Ela vira documentação que se pode executar.",
+     "pitfall": "Nada disso substitui a cópia dos dados: a montagem se refaz, e os dados das pessoas não."
+    },
+    {
+     "topic": "Por onde começar",
+     "statement": "Ao começar a automatizar, a primeira coisa a automatizar deve ser:",
+     "options": [
+      "O passo em que já houve erro humano",
+      "O passo mais demorado do processo",
+      "O passo mais fácil de escrever em script",
+      "Todos os passos, de uma vez",
+      "Nenhum, até que a equipe cresça"
+     ],
+     "correct_index": 0,
+     "explanation": "Automação tem custo de manutenção. Investir onde já houve estrago garante retorno, enquanto automatizar o que nunca falhou vira peso morto.",
+     "pitfall": "O passo mais demorado é tentador e pode ser justamente o mais estável de todos."
+    },
+    {
+     "topic": "Entrega contínua",
+     "statement": "Entrega contínua significa que:",
+     "options": [
+      "Cada mudança aprovada fica pronta para ir ao ar a qualquer momento",
+      "Toda mudança vai ao ar automaticamente, sem exceção",
+      "As publicações acontecem em horário fixo",
+      "O código é integrado uma vez por semana",
+      "Os testes rodam apenas antes de cada publicação"
+     ],
+     "correct_index": 0,
+     "explanation": "O artefato fica sempre apto a subir. Se a subida em si é automática ou depende de aprovação é uma decisão separada.",
+     "pitfall": "Confundir estar pronto para subir com subir sozinho é a distinção que a prova costuma cobrar."
+    },
+    {
+     "topic": "Falha na esteira",
+     "statement": "Uma etapa de teste falha no meio da esteira. O comportamento esperado é:",
+     "options": [
+      "A execução para, e nenhuma etapa seguinte acontece",
+      "A esteira segue e registra o aviso no fim",
+      "A publicação ocorre, e o teste é repetido depois",
+      "A esteira reinicia do zero automaticamente",
+      "A etapa é pulada e as demais continuam"
+     ],
+     "correct_index": 0,
+     "explanation": "Parar na primeira falha é o que impede uma versão quebrada de ser montada e publicada. Sem isso a esteira vira apenas um relatório.",
+     "pitfall": "Continuar e avisar no fim parece informativo, e é exatamente o comportamento que deixa o erro chegar em produção."
+    }
+   ]
+  },
+  {
+   "slug": "performance-capacidade",
+   "title": "Performance, capacidade e otimização",
+   "module": "Mantendo no ar",
+   "summary": "Achar o trecho mais estreito antes de comprar máquina maior.",
+   "steps": [
+    {
+     "kind": "idea",
+     "title": "O cano mais fino decide a vazão",
+     "body": [
+      "Um cano grosso com um trecho fino no meio entrega o tanto que o trecho fino deixa passar.",
+      "Trocar o resto do cano por um mais grosso não muda nada.",
+      "Sistema funciona igual. Existe sempre um trecho que segura o conjunto."
+     ],
+     "terms": [
+      {
+       "word": "Servidor",
+       "meaning": "o computador que fica esperando pedidos e devolve respostas."
+      },
+      {
+       "word": "Latência",
+       "meaning": "quanto tempo uma resposta leva para ficar pronta."
+      },
+      {
+       "word": "Cliente",
+       "meaning": "quem usa o sistema e faz os pedidos que ele atende."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Medir antes de comprar",
+     "body": [
+      "O reflexo é contratar uma máquina maior. Às vezes resolve, e quase sempre esconde.",
+      "O trecho estreito raramente é o que a intuição aponta primeiro.",
+      "Meça os quatro recursos. Um deles vai estar no talo enquanto os outros passeiam."
+     ],
+     "figure": {
+      "src": "/figuras/servidores/srv-gargalo.svg",
+      "alt": "Quatro recursos de uma máquina em fila, com o mais estreito deles determinando a velocidade de todo o conjunto, como o trecho mais fino de um cano",
+      "caption": "Resolveu um? O trecho estreito muda de lugar. Meça de novo."
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Os quatro suspeitos, e como olhar cada um",
+     "body": [
+      "Cada recurso tem um comando que responde em segundos.",
+      "Rode os quatro com o sistema sob carga de verdade, não parado de madrugada."
+     ],
+     "table": {
+      "label": "O suspeito e o comando que o interroga",
+      "headers": [
+       "Recurso",
+       "Comando",
+       "Sinal de aperto"
+      ],
+      "rows": [
+       [
+        "processador",
+        "top",
+        "fila de espera acima do nº de núcleos"
+       ],
+       [
+        "memória",
+        "free -h",
+        "memória de emergência em uso"
+       ],
+       [
+        "disco",
+        "iostat -x 1",
+        "espera de entrada e saída alta"
+       ],
+       [
+        "rede",
+        "ss -s",
+        "muitas conexões presas esperando"
+       ]
+      ],
+      "mono": true
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Quase sempre é o banco",
+     "body": [
+      "Numa aplicação comum, a causa mais frequente de lentidão não está na máquina.",
+      "Está numa consulta que lê a tabela inteira, ou numa tela que faz cem consultas onde cabia uma.",
+      "Antes de olhar a máquina, olhe o que a aplicação está pedindo ao banco."
+     ],
+     "terms": [
+      {
+       "word": "Banco de dados",
+       "meaning": "o programa que guarda os dados em ordem e sabe buscá-los depressa."
+      },
+      {
+       "word": "Índice do banco",
+       "meaning": "uma cópia ordenada de uma coluna, que evita ler a tabela toda."
+      }
+     ],
+     "example": {
+      "label": "Exemplo: a tela de lista está lenta",
+      "lines": [
+       "Uma consulta traz 50 pedidos.",
+       "Depois, para cada pedido, outra consulta busca o cliente.",
+       "São 51 idas ao banco no lugar de uma.",
+       "Juntar tudo numa consulta só resolve sem trocar nada de máquina."
+      ]
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Guardar a resposta em vez de refazê-la",
+     "body": [
+      "Se a mesma resposta é montada mil vezes por minuto, guarde-a pronta.",
+      "Isso vale para página, consulta e cálculo. Ganha-se ordem de grandeza, não porcentagem.",
+      "O preço é que a cópia guardada pode ficar velha. Decida por quanto tempo isso é aceitável."
+     ],
+     "terms": [
+      {
+       "word": "Cache",
+       "meaning": "a cópia guardada de uma resposta, para não precisar montá-la de novo."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Medir com gente de verdade, não com um clique",
+     "body": [
+      "Abrir a página uma vez não diz nada sobre cem pessoas ao mesmo tempo.",
+      "Existem ferramentas que simulam carga. Rode contra um ambiente de teste, nunca contra produção.",
+      "Olhe o que acontece com a fatia que sofre conforme o número de pessoas sobe."
+     ],
+     "code": {
+      "label": "Simulando 50 pessoas por 30 segundos",
+      "text": "# em um ambiente de teste, nunca em produção\nhey -z 30s -c 50 https://teste.meusite.com.br/\n# olhe o valor de 95 e de 99 de cada 100, não a média"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Crescer para cima e crescer para o lado",
+     "body": [
+      "Existem duas formas de aguentar mais gente, e elas têm limites diferentes.",
+      "Uma é trocar por uma máquina maior. Simples, e um dia acaba a máquina maior.",
+      "A outra é pôr mais máquinas iguais atrás de um distribuidor. Exige que a aplicação não guarde estado."
+     ],
+     "terms": [
+      {
+       "word": "Balanceador de carga",
+       "meaning": "o programa que reparte os pedidos entre várias cópias da aplicação."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Otimizar cedo demais custa caro",
+     "body": [
+      "Código torcido para ser rápido é difícil de ler e de corrigir.",
+      "E costuma otimizar o trecho errado, porque ninguém mediu antes.",
+      "Escreva simples, meça sob carga, otimize o que apareceu na medição."
+     ]
+    },
+    {
+     "kind": "exam",
+     "title": "Como cai na prova",
+     "body": [
+      "O desempenho de um sistema é limitado pelo recurso saturado, e otimizar recursos ociosos não produz ganho.",
+      "Escalabilidade vertical amplia a capacidade de uma instância; a horizontal acrescenta instâncias e exige ausência de estado local.",
+      "Consultas do tipo N+1 geram uma consulta adicional por item retornado e degradam a latência de forma não linear."
+     ]
+    },
+    {
+     "kind": "pitfall",
+     "title": "Pegadinhas clássicas",
+     "body": [
+      "Onde o dinheiro é gasto à toa:"
+     ],
+     "bullets": [
+      "Contratar máquina maior sem ter medido qual recurso está no talo.",
+      "Otimizar código antes de saber onde está a lentidão.",
+      "Medir com um único acesso e concluir que aguenta carga.",
+      "Rodar teste de carga contra o ambiente de produção."
+     ]
+    },
+    {
+     "kind": "recap",
+     "title": "Resumo",
+     "body": [
+      "O recurso saturado decide a velocidade. Meça os quatro antes de comprar.",
+      "Em aplicação comum, a lentidão costuma estar no banco, não na máquina.",
+      "Resolveu um trecho estreito? Ele muda de lugar. Meça de novo."
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "topic": "Gargalo",
+     "statement": "Numa máquina, o processador está em 40%, a memória em 55% e o disco em espera constante. Aumentar o número de núcleos:",
+     "options": [
+      "Não produzirá ganho, porque o recurso saturado é outro",
+      "Resolverá o problema, por aumentar a capacidade total",
+      "Reduzirá o uso de disco automaticamente",
+      "Aumentará a memória disponível",
+      "Piorará a situação do disco"
+     ],
+     "correct_index": 0,
+     "explanation": "O conjunto anda na velocidade do recurso saturado. Ampliar um recurso ocioso apenas o deixa mais ocioso.",
+     "pitfall": "Aumentar capacidade parece sempre ajudar, e é por isso que a fatura cresce sem o sistema melhorar."
+    },
+    {
+     "topic": "Consulta N+1",
+     "statement": "Uma tela lista 50 itens e, para cada item, consulta o banco outra vez. Esse padrão:",
+     "options": [
+      "Gera 51 consultas onde bastaria uma, degradando o tempo de resposta",
+      "É a forma recomendada de buscar dados relacionados",
+      "Só causa problema quando a tabela não tem índice",
+      "Reduz o uso de memória da aplicação",
+      "É resolvido aumentando a memória do banco"
+     ],
+     "correct_index": 0,
+     "explanation": "Uma consulta traz a lista e cada item dispara outra. O custo cresce com o número de itens, e nenhuma máquina maior conserta o desenho.",
+     "pitfall": "A alternativa sobre índice é sedutora: índice ajuda cada consulta, e o problema aqui é a quantidade delas."
+    },
+    {
+     "topic": "Escalabilidade",
+     "statement": "Acrescentar mais máquinas iguais atrás de um distribuidor exige que a aplicação:",
+     "options": [
+      "Não guarde estado localmente em cada máquina",
+      "Rode num sistema operacional específico",
+      "Tenha o banco de dados replicado em cada máquina",
+      "Use sempre contêineres",
+      "Seja reescrita em outra linguagem"
+     ],
+     "correct_index": 0,
+     "explanation": "Se cada máquina guardar sessão ou arquivo localmente, o mesmo usuário terá experiências diferentes conforme a máquina que o atender.",
+     "pitfall": "Replicar o banco em cada máquina cria o problema oposto: várias fontes de verdade divergindo entre si."
+    },
+    {
+     "topic": "Teste de carga",
+     "statement": "Sobre a execução de testes de carga, a prática correta é:",
+     "options": [
+      "Executá-los contra um ambiente de teste, e não contra produção",
+      "Executá-los em produção, para obter números realistas",
+      "Executá-los apenas de madrugada, em produção",
+      "Executá-los com um único acesso por vez",
+      "Dispensá-los, bastando acompanhar as métricas normais"
+     ],
+     "correct_index": 0,
+     "explanation": "O teste de carga é, por definição, uma tentativa de saturar o sistema. Fazer isso contra produção é provocar a queda que se quer evitar.",
+     "pitfall": "Rodar de madrugada reduz o impacto e não o elimina, e ainda mede um sistema em condições que não são as reais."
+    },
+    {
+     "topic": "Ordem da investigação",
+     "statement": "Diante de uma aplicação lenta, a ordem mais produtiva de investigação é:",
+     "options": [
+      "Medir os recursos e as consultas antes de alterar a infraestrutura",
+      "Aumentar a máquina e observar se melhora",
+      "Reescrever as partes do código que parecem mais complexas",
+      "Adicionar cache em todas as respostas",
+      "Trocar o banco de dados por outro produto"
+     ],
+     "correct_index": 0,
+     "explanation": "Medição transforma palpite em causa. Sem ela, qualquer alteração é aposta, e a melhora aparente pode durar só até o próximo crescimento.",
+     "pitfall": "Aumentar a máquina costuma melhorar de fato por um tempo, o que reforça a conclusão errada."
+    },
+    {
+     "topic": "Cache",
+     "statement": "Guardar respostas prontas para reaproveitamento tem como contrapartida principal:",
+     "options": [
+      "A resposta guardada pode ficar desatualizada",
+      "O aumento do uso de processador",
+      "A necessidade de trocar o banco de dados",
+      "A impossibilidade de escalar horizontalmente",
+      "A perda dos registros de acesso"
+     ],
+     "correct_index": 0,
+     "explanation": "Toda cópia guardada envelhece. Decidir por quanto tempo a informação antiga é aceitável é a parte difícil da técnica.",
+     "pitfall": "O consumo de processador cai, e não sobe: o ganho vem justamente de não refazer o trabalho."
+    },
+    {
+     "topic": "Medição sob carga",
+     "statement": "Medir o tempo de resposta abrindo a página uma única vez é insuficiente porque:",
+     "options": [
+      "Não revela o comportamento com muitos acessos simultâneos",
+      "O navegador altera o resultado da medição",
+      "A primeira medição é sempre imprecisa",
+      "O servidor responde mais rápido para acessos isolados apenas de madrugada",
+      "A medição depende da velocidade da internet de quem testa"
+     ],
+     "correct_index": 0,
+     "explanation": "Filas e disputa por recursos só aparecem sob concorrência. Um acesso isolado mede o melhor caso, que não é o caso que derruba o sistema.",
+     "pitfall": "A velocidade da internet interfere sim, e ainda assim o ponto central é a ausência de concorrência."
+    },
+    {
+     "topic": "Gargalo móvel",
+     "statement": "Após resolver o recurso saturado de um sistema, o comportamento esperado é:",
+     "options": [
+      "Outro recurso passa a ser o limitante, e a medição precisa ser refeita",
+      "O sistema deixa de ter limite de capacidade",
+      "Todos os recursos passam a ser usados igualmente",
+      "O ganho obtido é permanente, sem novas medições",
+      "A aplicação passa a escalar horizontalmente sozinha"
+     ],
+     "correct_index": 0,
+     "explanation": "Removido o estreitamento, a vazão sobe até encontrar o próximo. Otimização é um ciclo de medir, corrigir e medir de novo.",
+     "pitfall": "A melhora costuma ser grande o bastante para dar a impressão de que o assunto foi encerrado."
+    }
+   ]
+  },
+  {
+   "slug": "arquitetura-producao",
+   "title": "Arquitetura de produção e alta disponibilidade",
+   "module": "Quando cresce e quando cai",
+   "summary": "Tirar as peças únicas do caminho, e saber quais valem o custo de duplicar.",
+   "steps": [
+    {
+     "kind": "idea",
+     "title": "Uma peça sozinha derruba tudo",
+     "body": [
+      "Desenhe o caminho de um acesso e circule cada peça que existe só uma vez.",
+      "Cada círculo é uma peça cuja falha derruba o sistema inteiro.",
+      "Numa máquina só, tudo está circulado. Isso não é errado: é uma escolha, e precisa ser consciente."
+     ],
+     "terms": [
+      {
+       "word": "Servidor",
+       "meaning": "o computador que fica esperando pedidos e devolve respostas."
+      },
+      {
+       "word": "Alta disponibilidade",
+       "meaning": "o sistema continuar de pé mesmo quando uma peça falha."
+      },
+      {
+       "word": "Serviço",
+       "meaning": "um programa que fica ligado atendendo pedidos, sem ninguém abrir nada."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Duplicar custa, e nem tudo vale",
+     "body": [
+      "Cada peça duplicada dobra a conta e acrescenta complexidade para manter.",
+      "A pergunta não é se dá para duplicar. É quanto custa cada hora fora do ar.",
+      "Para muitos sistemas, quatro horas por ano de queda sai muito mais barato que a duplicação."
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "O desenho que resolve a maioria dos casos",
+     "body": [
+      "Um distribuidor na frente, duas cópias da aplicação, e o banco com uma réplica que acompanha.",
+      "Cai uma cópia? O distribuidor manda tudo para a outra e ninguém percebe."
+     ],
+     "terms": [
+      {
+       "word": "Balanceador de carga",
+       "meaning": "o programa que reparte os pedidos entre várias cópias da aplicação."
+      },
+      {
+       "word": "Banco de dados",
+       "meaning": "o programa que guarda os dados em ordem e sabe buscá-los depressa."
+      }
+     ],
+     "figure": {
+      "src": "/figuras/servidores/srv-alta-disponibilidade.svg",
+      "alt": "Um distribuidor na frente repassa os pedidos para duas cópias da aplicação, e o banco tem uma réplica que acompanha, de modo que nenhuma peça sozinha derrube o conjunto",
+      "caption": "O banco ainda é peça única até ganhar réplica. É o ponto que mais fica esquecido."
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "O distribuidor precisa saber quem está vivo",
+     "body": [
+      "Mandar pedido para uma cópia morta é pior que ter uma cópia só.",
+      "Por isso ele pergunta de tempos em tempos se cada cópia está bem, e tira do rodízio quem não responde.",
+      "A resposta a essa pergunta precisa ser honesta: ela deve conferir o banco também."
+     ],
+     "code": {
+      "label": "A resposta honesta a 'você está bem?'",
+      "text": "GET /saude\n-> 200 se o banco respondeu e as dependências estão ok\n-> 503 se algo essencial falhou\n# devolver 200 sempre esconde a queda do distribuidor"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "A aplicação não pode guardar nada local",
+     "body": [
+      "Com duas cópias, o mesmo usuário cai ora numa, ora noutra.",
+      "Se a sessão dele mora na memória de uma delas, ele é deslogado a cada outro pedido.",
+      "Sessão e arquivo enviado precisam morar num lugar que as duas enxergam."
+     ],
+     "terms": [
+      {
+       "word": "Cache",
+       "meaning": "a cópia guardada de uma resposta, para não precisar montá-la de novo."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Réplica de banco não é cópia de segurança",
+     "body": [
+      "A réplica acompanha o banco principal em tempo quase real. Ela protege contra a máquina morrer.",
+      "Ela não protege contra alguém apagar uma tabela: o comando de apagar é replicado na hora.",
+      "São defesas para problemas diferentes, e você precisa das duas."
+     ],
+     "terms": [
+      {
+       "word": "Backup",
+       "meaning": "a cópia dos dados guardada fora da máquina, com versões de dias anteriores."
+      }
+     ],
+     "table": {
+      "label": "Réplica e cópia, lado a lado",
+      "headers": [
+       "Situação",
+       "Réplica salva?",
+       "Cópia salva?"
+      ],
+      "rows": [
+       [
+        "a máquina do banco morre",
+        "sim",
+        "sim, com mais trabalho"
+       ],
+       [
+        "alguém apaga uma tabela",
+        "não",
+        "sim"
+       ],
+       [
+        "ataque embaralha os dados",
+        "não",
+        "sim, se estiver fora do alcance"
+       ]
+      ],
+      "mono": false
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Degradar em vez de cair",
+     "body": [
+      "Nem toda falha precisa virar página de erro. Parte do sistema pode continuar servindo.",
+      "Se o serviço de recomendação caiu, mostre a página sem recomendações.",
+      "Um sistema que perde uma função é muito melhor que um sistema que some."
+     ],
+     "example": {
+      "label": "Exemplo: o que cai e o que continua",
+      "lines": [
+       "O banco caiu: não há como continuar. Página de erro honesta.",
+       "O serviço de busca caiu: esconda a busca, mantenha o resto.",
+       "O envio de e-mail caiu: aceite o cadastro e envie depois.",
+       "Decida isso antes, no desenho, não durante o incidente."
+      ]
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Comece simples, e cresça por medida",
+     "body": [
+      "Sistema distribuído tem problemas que uma máquina só não tem.",
+      "Comece com uma máquina bem cuidada, com cópia testada e monitoramento.",
+      "Duplique quando a conta da queda ficar maior que a conta da duplicação."
+     ]
+    },
+    {
+     "kind": "exam",
+     "title": "Como cai na prova",
+     "body": [
+      "Ponto único de falha é o componente cuja indisponibilidade interrompe o serviço inteiro.",
+      "Balanceadores exigem verificações de saúde para retirar instâncias indisponíveis do conjunto.",
+      "Replicação protege contra falha de infraestrutura, mas não contra exclusão lógica de dados."
+     ]
+    },
+    {
+     "kind": "pitfall",
+     "title": "Pegadinhas clássicas",
+     "body": [
+      "Onde o desenho de alta disponibilidade costuma furar:"
+     ],
+     "bullets": [
+      "Duplicar a aplicação e deixar o banco como peça única.",
+      "Tratar réplica de banco como se fosse cópia de segurança.",
+      "Guardar sessão na memória da máquina, com duas cópias no ar.",
+      "Fazer a verificação de saúde responder sempre que está tudo bem."
+     ]
+    },
+    {
+     "kind": "recap",
+     "title": "Resumo",
+     "body": [
+      "Circule as peças que existem só uma vez: cada uma derruba o sistema sozinha.",
+      "Duplicar custa. Decida pelo preço da hora fora do ar, não pelo desenho bonito.",
+      "Réplica e cópia resolvem problemas diferentes. Você precisa das duas."
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "topic": "Ponto único de falha",
+     "statement": "Numa arquitetura com duas cópias da aplicação atrás de um distribuidor e um único banco, o ponto único de falha é:",
+     "options": [
+      "O banco de dados",
+      "O distribuidor de carga",
+      "Uma das cópias da aplicação",
+      "O sistema operacional das máquinas",
+      "Não há ponto único nessa arquitetura"
+     ],
+     "correct_index": 0,
+     "explanation": "As cópias da aplicação se cobrem. O banco existe uma vez só, e a falha dele interrompe tudo, independentemente de quantas cópias haja na frente.",
+     "pitfall": "Duplicar a camada visível dá a sensação de que o conjunto ficou redundante, e o banco segue sozinho atrás."
+    },
+    {
+     "topic": "Verificação de saúde",
+     "statement": "A resposta de uma verificação de saúde usada por um distribuidor deve:",
+     "options": [
+      "Refletir de fato as dependências essenciais da aplicação",
+      "Responder sempre que está tudo bem, para evitar remoções indevidas",
+      "Ser desativada em produção, por consumir recursos",
+      "Verificar apenas se o processo está em execução",
+      "Ser respondida apenas uma vez, na inicialização"
+     ],
+     "correct_index": 0,
+     "explanation": "O distribuidor age a partir dessa resposta. Se ela mente, pedidos continuam sendo enviados para uma cópia que não consegue atendê-los.",
+     "pitfall": "Responder sempre que está bem evita remoções indevidas e garante o pior cenário: todo mundo recebendo erro."
+    },
+    {
+     "topic": "Estado local",
+     "statement": "Ao colocar duas cópias da aplicação em produção, sessões guardadas na memória de cada máquina causam:",
+     "options": [
+      "Usuários perdendo a sessão ao serem atendidos pela outra cópia",
+      "Aumento no consumo de disco das máquinas",
+      "Falha na verificação de saúde",
+      "Lentidão no banco de dados",
+      "Nenhum problema, pois o distribuidor mantém a mesma cópia"
+     ],
+     "correct_index": 0,
+     "explanation": "Cada pedido pode cair numa cópia diferente. Se a sessão só existe na memória de uma delas, ela desaparece para a outra.",
+     "pitfall": "Alguns distribuidores conseguem fixar o usuário numa cópia, e isso mascara o problema até essa cópia cair."
+    },
+    {
+     "topic": "Réplica e cópia",
+     "statement": "Uma tabela foi apagada por engano num banco que possui réplica em tempo real. A réplica:",
+     "options": [
+      "Não ajuda, porque a exclusão foi replicada imediatamente",
+      "Permite restaurar a tabela, pois mantém versões anteriores",
+      "Interrompe a replicação automaticamente ao detectar exclusões",
+      "Mantém a tabela por 24 horas antes de replicar",
+      "Reverte a operação quando ela afeta muitos registros"
+     ],
+     "correct_index": 0,
+     "explanation": "A réplica copia fielmente o que acontece no principal, inclusive comandos destrutivos. Contra engano, só a cópia com versões anteriores serve.",
+     "pitfall": "A presença da réplica passa exatamente a sensação de proteção que faz a equipe relaxar com as cópias."
+    },
+    {
+     "topic": "Custo da redundância",
+     "statement": "A decisão de duplicar componentes de uma arquitetura deve se basear principalmente em:",
+     "options": [
+      "Quanto custa cada hora de indisponibilidade para o negócio",
+      "A quantidade de usuários cadastrados",
+      "O tamanho do banco de dados",
+      "A linguagem de programação usada",
+      "A recomendação padrão da empresa de hospedagem"
+     ],
+     "correct_index": 0,
+     "explanation": "Redundância dobra custo e complexidade. Só a conta da queda diz se esse investimento se paga, e para muitos sistemas ele não se paga.",
+     "pitfall": "O número de usuários influencia a conta e não a substitui: um sistema pequeno pode ter hora de queda cara."
+    },
+    {
+     "topic": "Degradação",
+     "statement": "Quando um serviço secundário de recomendações fica indisponível, o comportamento desejável da aplicação é:",
+     "options": [
+      "Continuar servindo a página, sem as recomendações",
+      "Exibir página de erro até o serviço voltar",
+      "Reiniciar a aplicação automaticamente",
+      "Remover a máquina do distribuidor",
+      "Bloquear novos acessos até a recuperação"
+     ],
+     "correct_index": 0,
+     "explanation": "Perder uma função é muito melhor que sumir. A decisão sobre o que é essencial e o que é acessório deve ser tomada no desenho, e não no incidente.",
+     "pitfall": "Remover a máquina do rodízio seria correto se a falha fosse dela, e aqui o problema está num serviço externo."
+    },
+    {
+     "topic": "Início simples",
+     "statement": "Para um sistema em início de operação, a recomendação mais sensata é:",
+     "options": [
+      "Uma máquina bem cuidada, com cópia testada e monitoramento",
+      "Arquitetura distribuída desde o primeiro dia",
+      "Três máquinas idênticas, para garantir disponibilidade",
+      "Banco de dados replicado em quatro regiões",
+      "Dispensar monitoramento até haver usuários suficientes"
+     ],
+     "correct_index": 0,
+     "explanation": "Sistema distribuído traz uma classe inteira de problemas novos. Começar simples e bem operado entrega mais disponibilidade real do que complexidade prematura.",
+     "pitfall": "Dispensar monitoramento no início é o oposto: é justamente quando se aprende como o sistema se comporta."
+    },
+    {
+     "topic": "Papel do distribuidor",
+     "statement": "O distribuidor de carga contribui para a disponibilidade porque:",
+     "options": [
+      "Retira do rodízio as cópias que deixam de responder",
+      "Aumenta a velocidade de cada resposta individual",
+      "Substitui a necessidade de cópias de segurança",
+      "Replica automaticamente o banco de dados",
+      "Impede que as cópias da aplicação falhem"
+     ],
+     "correct_index": 0,
+     "explanation": "Ele não evita falhas: ele evita que a falha de uma cópia chegue ao usuário, encaminhando os pedidos apenas para quem está respondendo.",
+     "pitfall": "Distribuir carga melhora a capacidade total, e a resposta individual pode até ficar um pouco mais lenta."
+    }
+   ]
+  },
+  {
+   "slug": "troubleshooting-avancado",
+   "title": "Troubleshooting avançado",
+   "module": "Quando cresce e quando cai",
+   "summary": "Um método para achar a causa, em vez de mexer em tudo até funcionar.",
+   "steps": [
+    {
+     "kind": "idea",
+     "title": "Mexer em tudo é o jeito mais lento",
+     "body": [
+      "Sob pressão, a tentação é mudar várias coisas ao mesmo tempo e ver se melhora.",
+      "Se melhorar, você não sabe o que resolveu. Se piorar, agora há dois problemas.",
+      "Existe um método, e ele é mais rápido justamente por ser mais lento no começo."
+     ],
+     "terms": [
+      {
+       "word": "Servidor",
+       "meaning": "o computador que fica esperando pedidos e devolve respostas."
+      },
+      {
+       "word": "Serviço",
+       "meaning": "um programa que fica ligado atendendo pedidos, sem ninguém abrir nada."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Primeiro, o que mudou",
+     "body": [
+      "Sistema que funcionava e parou quase sempre mudou de alguma forma.",
+      "Uma publicação. Uma atualização de pacote. Uma configuração alterada. Ou o simples passar do tempo.",
+      "Essa pergunta sozinha resolve metade dos casos, e leva trinta segundos."
+     ],
+     "terms": [
+      {
+       "word": "Deploy",
+       "meaning": "o ato de colocar uma versão nova do sistema no ar."
+      },
+      {
+       "word": "Log",
+       "meaning": "o caderno em que cada programa anota o que fez e o que deu errado."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Corte o caminho pela metade",
+     "body": [
+      "O caminho de um pedido tem etapas. Não teste uma por uma, do começo.",
+      "Teste no meio. Se passou, o problema está depois; se não, está antes.",
+      "Cinco pontos testados um a um dão cinco rodadas. Cortando ao meio, dão três."
+     ],
+     "figure": {
+      "src": "/figuras/servidores/srv-caminho-investigacao.svg",
+      "alt": "Cinco pontos do caminho de um pedido usados como etapas de investigação, com a orientação de cortar o caminho pela metade em vez de testar um por um",
+      "caption": "Comece pelo meio do caminho, não pela primeira etapa."
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "As perguntas, com o comando de cada uma",
+     "body": [
+      "Cada etapa tem um comando que a responde em segundos.",
+      "Guarde esta tabela. Ela é o roteiro que substitui o chute."
+     ],
+     "terms": [
+      {
+       "word": "DNS",
+       "meaning": "a agenda compartilhada que troca o nome do site pelo número da máquina."
+      },
+      {
+       "word": "Porta",
+       "meaning": "o número que diz qual programa da máquina deve receber a conexão."
+      }
+     ],
+     "table": {
+      "label": "A pergunta, e o comando que responde",
+      "headers": [
+       "Pergunta",
+       "Comando"
+      ],
+      "rows": [
+       [
+        "O nome vira número?",
+        "dig meusite.com.br"
+       ],
+       [
+        "A máquina responde?",
+        "ping 203.0.113.10"
+       ],
+       [
+        "A porta aceita conexão?",
+        "nc -zv 203.0.113.10 443"
+       ],
+       [
+        "O programa está escutando?",
+        "ss -tlnp"
+       ],
+       [
+        "O que o programa disse?",
+        "journalctl -u minhaapp -n 80"
+       ]
+      ],
+      "mono": true
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Mude uma coisa de cada vez",
+     "body": [
+      "Depois de localizar a etapa, mude uma variável por vez e observe.",
+      "Anote cada mudança e o resultado, mesmo quando não resolver.",
+      "Sem esse registro, meia hora depois ninguém lembra o que já foi tentado."
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "As causas mais comuns, em ordem",
+     "body": [
+      "Depois de muitos incidentes, a mesma lista curta aparece.",
+      "Comece por ela antes de procurar explicações elaboradas."
+     ],
+     "terms": [
+      {
+       "word": "Certificado",
+       "meaning": "o documento que faz o cadeado do site acender, e que vence."
+      },
+      {
+       "word": "Permissão",
+       "meaning": "a regra que diz quem pode ler, gravar ou executar cada arquivo."
+      }
+     ],
+     "bullets": [
+      "Disco cheio, muitas vezes por registro que ninguém corta.",
+      "Certificado vencido porque a renovação parou.",
+      "Serviço que não voltou depois de um reinício.",
+      "Permissão errada depois de alguém copiar arquivo como administrador."
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "O caso difícil: funciona às vezes",
+     "body": [
+      "Falha intermitente é a mais cara, porque o teste passa e a queixa continua.",
+      "Procure o que varia: uma cópia entre várias, um horário, um tipo de dado.",
+      "Aqui o código comum por pedido vale mais que qualquer comando."
+     ],
+     "example": {
+      "label": "Exemplo: erro em uma parte dos acessos",
+      "lines": [
+       "Duas cópias da aplicação no ar, uma delas com versão antiga.",
+       "Metade dos acessos falha, e a outra metade funciona.",
+       "Teste cada cópia diretamente, sem passar pelo distribuidor.",
+       "O padrão aparece quando você para de olhar a média."
+      ]
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Escreva o que aconteceu",
+     "body": [
+      "Depois que o sistema volta, o trabalho ainda não acabou.",
+      "Escreva o que falhou, o que foi feito e o que evita a repetição.",
+      "Sem isso o mesmo incidente volta daqui a três meses, com outra pessoa investigando do zero."
+     ]
+    },
+    {
+     "kind": "exam",
+     "title": "Como cai na prova",
+     "body": [
+      "A abordagem por bisseção reduz o espaço de busca pela metade a cada verificação.",
+      "A correlação temporal com mudanças recentes é a primeira hipótese a ser investigada.",
+      "Alterar múltiplas variáveis simultaneamente impede a identificação da causa raiz."
+     ]
+    },
+    {
+     "kind": "pitfall",
+     "title": "Pegadinhas clássicas",
+     "body": [
+      "O que faz a investigação demorar mais do que precisava:"
+     ],
+     "bullets": [
+      "Mudar várias coisas ao mesmo tempo, sem saber o que resolveu.",
+      "Reiniciar tudo logo de início, apagando as pistas.",
+      "Começar pela primeira etapa do caminho em vez do meio.",
+      "Resolver o incidente e não escrever o que aconteceu."
+     ]
+    },
+    {
+     "kind": "recap",
+     "title": "Resumo",
+     "body": [
+      "Pergunte primeiro o que mudou. Isso resolve metade dos casos.",
+      "Corte o caminho pela metade, e mude uma variável por vez.",
+      "Depois que voltar, escreva o que houve. Senão o incidente volta inteiro."
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "topic": "Primeira pergunta",
+     "statement": "Um sistema que funcionava parou de funcionar. A primeira pergunta a fazer é:",
+     "options": [
+      "O que mudou recentemente no ambiente",
+      "Qual o consumo atual de memória",
+      "Quantos usuários estão conectados",
+      "Qual a versão do sistema operacional",
+      "Se a hospedagem tem incidentes abertos"
+     ],
+     "correct_index": 0,
+     "explanation": "Sistema estável que quebra quase sempre mudou de alguma forma. Essa pergunta custa segundos e frequentemente entrega a causa direto.",
+     "pitfall": "As demais são medições úteis e nenhuma delas explica por que algo que funcionava deixou de funcionar."
+    },
+    {
+     "topic": "Estratégia de busca",
+     "statement": "Para localizar em qual etapa de um caminho de cinco pontos um pedido está falhando, a estratégia mais eficiente é:",
+     "options": [
+      "Testar um ponto no meio e descartar metade do caminho",
+      "Testar cada ponto em ordem, do primeiro ao último",
+      "Testar o último ponto e voltar",
+      "Reiniciar todos os componentes e observar",
+      "Testar todos os pontos simultaneamente"
+     ],
+     "correct_index": 0,
+     "explanation": "Cada teste no meio elimina metade das possibilidades. Cinco pontos exigem três verificações em vez de cinco no pior caso.",
+     "pitfall": "Testar em ordem parece mais organizado e desperdiça verificações em etapas que já estariam descartadas."
+    },
+    {
+     "topic": "Uma variável por vez",
+     "statement": "Durante a investigação, alterar várias configurações ao mesmo tempo:",
+     "options": [
+      "Impede saber qual alteração produziu o efeito observado",
+      "Acelera a resolução, por cobrir mais hipóteses",
+      "É recomendável quando há pressão de tempo",
+      "Não afeta a capacidade de identificar a causa",
+      "Só é problemático em ambientes distribuídos"
+     ],
+     "correct_index": 0,
+     "explanation": "Se o sistema volta, não se sabe o que resolveu, e as demais alterações ficam no ambiente sem ninguém saber por quê.",
+     "pitfall": "Sob pressão, cobrir mais hipóteses de uma vez parece economia de tempo, e costuma criar um segundo problema."
+    },
+    {
+     "topic": "Reinício precoce",
+     "statement": "Reiniciar todos os serviços logo no início de um incidente tem como principal desvantagem:",
+     "options": [
+      "Apagar o estado que permitiria identificar a causa",
+      "Consumir muito tempo de indisponibilidade",
+      "Exigir acesso administrativo à máquina",
+      "Invalidar as cópias de segurança",
+      "Interromper a coleta de métricas permanentemente"
+     ],
+     "correct_index": 0,
+     "explanation": "O estado do momento da falha é a evidência. Reiniciar costuma restaurar o serviço e garante que o mesmo problema volte sem pistas.",
+     "pitfall": "Funciona com frequência suficiente para virar hábito, e é isso que impede a causa de ser encontrada."
+    },
+    {
+     "topic": "Falha intermitente",
+     "statement": "Metade dos acessos a um sistema falha e a outra metade funciona, com duas cópias da aplicação no ar. A investigação deve:",
+     "options": [
+      "Testar cada cópia diretamente, fora do distribuidor",
+      "Reiniciar o distribuidor de carga",
+      "Aumentar o número de cópias da aplicação",
+      "Concluir que o problema está na rede dos usuários",
+      "Analisar apenas a média dos tempos de resposta"
+     ],
+     "correct_index": 0,
+     "explanation": "A proporção exata de metade aponta para uma diferença entre as cópias. Testá-las separadamente isola qual delas está com problema.",
+     "pitfall": "Olhar a média mistura as duas cópias e produz um número intermediário que não descreve nenhuma delas."
+    },
+    {
+     "topic": "Causas frequentes",
+     "statement": "Entre as causas mais comuns de indisponibilidade em servidores pequenos está:",
+     "options": [
+      "Disco cheio por arquivos de registro sem rotação",
+      "Falha simultânea de processador e memória",
+      "Incompatibilidade entre versões do sistema operacional",
+      "Ataque coordenado de negação de serviço",
+      "Erro no compilador da linguagem usada"
+     ],
+     "correct_index": 0,
+     "explanation": "Registro sem corte é a causa banal que derruba sistemas reais o tempo todo, e a mensagem de erro raramente aponta para o disco.",
+     "pitfall": "As alternativas descrevem falhas dramáticas e raras, que atraem a atenção justamente por serem interessantes."
+    },
+    {
+     "topic": "Registro do incidente",
+     "statement": "Depois que o sistema volta ao normal, escrever o que aconteceu serve para:",
+     "options": [
+      "Evitar que o mesmo incidente seja investigado do zero mais tarde",
+      "Cumprir exigência formal da empresa de hospedagem",
+      "Justificar o tempo de indisponibilidade aos usuários",
+      "Reduzir o tempo de resposta do sistema",
+      "Substituir o monitoramento contínuo"
+     ],
+     "correct_index": 0,
+     "explanation": "Sem o registro, o mesmo problema volta em meses e outra pessoa recomeça a investigação inteira, repetindo o custo.",
+     "pitfall": "A justificativa para usuários é um subproduto, e não o motivo pelo qual o registro se paga."
+    },
+    {
+     "topic": "Correlação com mudanças",
+     "statement": "Um erro começou a ocorrer trinta minutos após uma publicação. A conduta mais eficiente é:",
+     "options": [
+      "Voltar à versão anterior e observar se o erro cessa",
+      "Analisar todos os registros dos últimos sete dias",
+      "Aumentar os recursos da máquina",
+      "Aguardar para confirmar que o padrão se mantém",
+      "Investigar a configuração de rede da hospedagem"
+     ],
+     "correct_index": 0,
+     "explanation": "Voltar atrás é um teste rápido e reversível que separa causa de coincidência em minutos, sem depender de entender o erro antes.",
+     "pitfall": "Aguardar para confirmar o padrão custa indisponibilidade e não traz informação que a volta já não traria."
+    }
+   ]
+  },
+  {
+   "slug": "seguranca-avancada",
+   "title": "Segurança de servidores em nível avançado",
+   "module": "Quando cresce e quando cai",
+   "summary": "Camadas, e o que fazer no dia em que uma delas falhar.",
+   "steps": [
+    {
+     "kind": "idea",
+     "title": "Nenhuma trava sozinha basta",
+     "body": [
+      "Segurança não é uma parede alta. É uma sequência de portas, cada uma com a sua trava.",
+      "Cada camada existe para o dia em que a anterior falhar. E uma delas vai falhar.",
+      "Quem aposta tudo numa trava só descobre isso da pior forma."
+     ],
+     "terms": [
+      {
+       "word": "Servidor",
+       "meaning": "o computador que fica esperando pedidos e devolve respostas."
+      },
+      {
+       "word": "Superfície de ataque",
+       "meaning": "a soma de tudo que pode ser alcançado de fora. Quanto menor, melhor."
+      },
+      {
+       "word": "Porta",
+       "meaning": "o número que diz qual programa da máquina deve receber a conexão."
+      },
+      {
+       "word": "Terminal",
+       "meaning": "a janela onde se escreve ordens em texto e se lê a resposta."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "As cinco camadas, de fora para dentro",
+     "body": [
+      "Cada camada segura um tipo diferente de ataque.",
+      "A de baixo é a única que ainda funciona depois de o atacante já estar dentro."
+     ],
+     "terms": [
+      {
+       "word": "Firewall",
+       "meaning": "a portaria da máquina. Ela decide qual conexão entra e qual nem chega."
+      },
+      {
+       "word": "Backup",
+       "meaning": "a cópia dos dados guardada fora da máquina, com versões de dias anteriores."
+      }
+     ],
+     "figure": {
+      "src": "/figuras/servidores/srv-camadas-seguranca.svg",
+      "alt": "Cinco camadas de proteção em profundidade, da portaria de rede até a cópia de segurança, com a observação de que cada camada existe para o dia em que a anterior falhar",
+      "caption": "A cópia intocável é a única camada que funciona com o atacante já dentro."
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Atualizar é a defesa mais barata que existe",
+     "body": [
+      "A maioria dos ataques bem sucedidos usa falha conhecida e já corrigida.",
+      "Quem ataca varre a internet procurando quem ainda não atualizou. Não é pessoal.",
+      "Ligue a atualização automática das correções de segurança. É uma linha de configuração."
+     ],
+     "terms": [
+      {
+       "word": "Gerenciador de pacotes",
+       "meaning": "o programa que busca, confere e instala a partir da coleção do sistema."
+      }
+     ],
+     "code": {
+      "label": "Atualização automática de segurança, no Ubuntu",
+      "text": "sudo apt install unattended-upgrades\nsudo dpkg-reconfigure --priority=low unattended-upgrades"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Cada conta com o mínimo",
+     "body": [
+      "Se um programa for invadido, o atacante herda exatamente o que aquela conta podia fazer.",
+      "Aplicação com conta própria e sem poder de administrador limita o estrago a ela mesma.",
+      "Vale para a conta do banco, a da esteira de publicação e a de cada serviço."
+     ],
+     "terms": [
+      {
+       "word": "Permissão",
+       "meaning": "a regra que diz o que cada conta pode fazer, e onde."
+      },
+      {
+       "word": "Serviço",
+       "meaning": "um programa que fica ligado atendendo pedidos, sem ninguém abrir nada."
+      },
+      {
+       "word": "root",
+       "meaning": "a conta que pode tudo na máquina, sem nenhuma trava."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Barrar a insistência",
+     "body": [
+      "Toda máquina na internet recebe milhares de tentativas de entrada por dia, o tempo todo.",
+      "Existe um programa que lê o registro e bloqueia por um tempo quem erra demais.",
+      "Ele não substitui a entrada por chave. Ele reduz o barulho e o custo dessas tentativas."
+     ],
+     "terms": [
+      {
+       "word": "SSH",
+       "meaning": "o jeito seguro de abrir um terminal numa máquina distante."
+      },
+      {
+       "word": "Log",
+       "meaning": "o caderno em que cada programa anota o que fez e o que deu errado."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "A aplicação é a porta mais usada hoje",
+     "body": [
+      "A portaria de rede não olha o conteúdo do que passa por uma porta aberta.",
+      "Falha na sua aplicação chega pela porta do site, que está aberta de propósito.",
+      "Três cuidados cobrem a maior parte disso, e nenhum deles é de infraestrutura."
+     ],
+     "bullets": [
+      "Nunca monte consulta ao banco juntando texto: use parâmetros.",
+      "Trate tudo que vem de fora como suspeito, inclusive nome de arquivo.",
+      "Mantenha as bibliotecas do projeto atualizadas, não só o sistema."
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "A cópia precisa estar fora do alcance",
+     "body": [
+      "Quem toma a máquina alcança tudo que a máquina alcança, inclusive a pasta de cópias.",
+      "A cópia que salva é a que a máquina não consegue apagar nem sobrescrever.",
+      "Guarde em lugar com credencial só de escrita, ou com versões que não podem ser removidas."
+     ],
+     "terms": [
+      {
+       "word": "Criptografia",
+       "meaning": "embaralhar o conteúdo de modo que só quem tem a chave consiga ler."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Um plano para o dia em que acontecer",
+     "body": [
+      "Se você suspeitar de invasão, a ordem dos passos importa, e ela não é intuitiva.",
+      "Desligar a máquina apaga a memória, que é onde estão as melhores pistas.",
+      "Isolar da rede preserva tudo e para o estrago ao mesmo tempo."
+     ],
+     "example": {
+      "label": "Exemplo: a ordem de resposta a uma suspeita",
+      "lines": [
+       "1. Tire a máquina da rede, sem desligá-la.",
+       "2. Copie o estado atual e os registros para outro lugar.",
+       "3. Troque todas as senhas e chaves que passaram por ela.",
+       "4. Reconstrua do zero. Nunca limpe e reaproveite."
+      ]
+     }
+    },
+    {
+     "kind": "exam",
+     "title": "Como cai na prova",
+     "body": [
+      "Defesa em profundidade pressupõe múltiplas camadas independentes de controle.",
+      "O princípio do menor privilégio limita cada identidade ao mínimo necessário para sua função.",
+      "Consultas parametrizadas previnem injeção, pois separam comando de dado."
+     ]
+    },
+    {
+     "kind": "pitfall",
+     "title": "Pegadinhas clássicas",
+     "body": [
+      "As suposições que custam caro:"
+     ],
+     "bullets": [
+      "Achar que a portaria de rede protege contra falha na aplicação.",
+      "Adiar atualização de segurança por medo de quebrar algo.",
+      "Deixar a cópia de segurança ao alcance da máquina invadida.",
+      "Desligar a máquina ao suspeitar de invasão, apagando as pistas."
+     ]
+    },
+    {
+     "kind": "recap",
+     "title": "Resumo",
+     "body": [
+      "Camadas independentes, cada uma para o dia em que a anterior falhar.",
+      "Atualize automaticamente, dê o mínimo a cada conta e trate a aplicação como porta principal.",
+      "A cópia intocável é a última defesa. Isole antes de desligar."
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "topic": "Defesa em profundidade",
+     "statement": "O princípio de defesa em profundidade estabelece que:",
+     "options": [
+      "Várias camadas independentes protegem, cada uma cobrindo a falha da anterior",
+      "A camada mais externa deve ser a mais forte possível",
+      "Uma única proteção bem configurada é suficiente",
+      "A segurança deve concentrar-se apenas na aplicação",
+      "Cada camada substitui a necessidade da seguinte"
+     ],
+     "correct_index": 0,
+     "explanation": "Nenhum controle é infalível. Camadas independentes garantem que a falha de uma não signifique acesso livre ao sistema inteiro.",
+     "pitfall": "Reforçar apenas a camada externa é a estratégia intuitiva, e ela falha inteira no dia em que essa camada é contornada."
+    },
+    {
+     "topic": "Atualizações",
+     "statement": "A maioria dos comprometimentos bem sucedidos em servidores explora:",
+     "options": [
+      "Falhas conhecidas e já corrigidas, em sistemas não atualizados",
+      "Falhas inéditas, desconhecidas dos fabricantes",
+      "Senhas obtidas por engenharia social",
+      "Acesso físico ao equipamento no datacenter",
+      "Falhas no protocolo de rede em si"
+     ],
+     "correct_index": 0,
+     "explanation": "Varreduras automatizadas procuram versões vulneráveis conhecidas. Atualizar é a defesa mais barata e a que mais reduz risco real.",
+     "pitfall": "Falhas inéditas são as que aparecem em notícia, e respondem por uma fatia pequena dos casos reais."
+    },
+    {
+     "topic": "Menor privilégio",
+     "statement": "Executar a aplicação com uma conta dedicada e sem poder administrativo garante que:",
+     "options": [
+      "O estrago de um comprometimento fica limitado ao que essa conta pode",
+      "A aplicação não pode ser comprometida",
+      "As falhas de programação deixam de existir",
+      "A portaria de rede se torna desnecessária",
+      "As atualizações passam a ser opcionais"
+     ],
+     "correct_index": 0,
+     "explanation": "O atacante herda exatamente os poderes da conta comprometida. Restringi-la é o que transforma um incidente grave num incidente contido.",
+     "pitfall": "Nenhuma configuração de conta impede o comprometimento em si: ela limita o que acontece depois dele."
+    },
+    {
+     "topic": "Limite da portaria",
+     "statement": "Uma falha de injeção na aplicação web é explorada através da porta 443. Isso ocorre porque:",
+     "options": [
+      "A portaria libera essa porta e não inspeciona o conteúdo que passa",
+      "A portaria estava desativada",
+      "A porta 443 não deveria estar aberta",
+      "O certificado do site estava vencido",
+      "A aplicação rodava com conta administrativa"
+     ],
+     "correct_index": 0,
+     "explanation": "A filtragem de entrada decide quem passa, não o que cada um faz. Falha na aplicação se corrige na aplicação.",
+     "pitfall": "Fechar a porta 443 resolveria o ataque e derrubaria o site, que é o serviço que a máquina existe para entregar."
+    },
+    {
+     "topic": "Cópias contra sequestro",
+     "statement": "Para que uma cópia de segurança resista a um ataque que toma a máquina, ela precisa:",
+     "options": [
+      "Estar fora do alcance de escrita da máquina comprometida",
+      "Ser gerada com maior frequência",
+      "Estar cifrada com senha forte",
+      "Ser armazenada em disco separado na mesma máquina",
+      "Ser copiada para todas as máquinas do ambiente"
+     ],
+     "correct_index": 0,
+     "explanation": "Quem controla a máquina alcança o que ela alcança. Só a cópia que a máquina não pode apagar nem sobrescrever sobrevive.",
+     "pitfall": "Cifrar protege contra leitura indevida e não impede que o arquivo seja destruído pelo atacante."
+    },
+    {
+     "topic": "Resposta a incidente",
+     "statement": "Ao suspeitar de invasão num servidor, a primeira ação recomendada é:",
+     "options": [
+      "Isolar a máquina da rede, mantendo-a ligada",
+      "Desligar a máquina imediatamente",
+      "Reinstalar o sistema operacional",
+      "Trocar as senhas e continuar operando",
+      "Apagar os registros para impedir rastreamento"
+     ],
+     "correct_index": 0,
+     "explanation": "Isolar interrompe o estrago e preserva a memória, que guarda as melhores evidências. Desligar apaga exatamente essa parte.",
+     "pitfall": "Desligar parece a atitude mais decisiva, e destrói a informação que explicaria como o atacante entrou."
+    },
+    {
+     "topic": "Após o incidente",
+     "statement": "Depois de um comprometimento confirmado, a máquina afetada deve ser:",
+     "options": [
+      "Reconstruída do zero, e não limpa e reaproveitada",
+      "Limpa com ferramenta de remoção e devolvida ao ar",
+      "Mantida isolada indefinidamente, sem substituição",
+      "Devolvida ao ar após troca de senhas",
+      "Restaurada a partir de uma cópia feita após o incidente"
+     ],
+     "correct_index": 0,
+     "explanation": "Não há como provar que nada ficou para trás. Reconstruir a partir de fontes confiáveis é a única forma de retomar com certeza.",
+     "pitfall": "Restaurar de cópia posterior ao incidente é o erro que traz o comprometimento de volta junto com os dados."
+    },
+    {
+     "topic": "Ataques automatizados",
+     "statement": "As milhares de tentativas diárias de acesso que um servidor público recebe são, em geral:",
+     "options": [
+      "Varreduras automatizadas, sem alvo específico",
+      "Ataques dirigidos contra aquele sistema",
+      "Falhas de configuração da própria máquina",
+      "Tráfego legítimo de mecanismos de busca",
+      "Sinal de que a máquina já foi comprometida"
+     ],
+     "correct_index": 0,
+     "explanation": "Programas varrem faixas inteiras da internet testando combinações comuns. Não é pessoal, e é por isso que a exposição mínima importa tanto.",
+     "pitfall": "Interpretar as tentativas como ataque dirigido leva a subestimar o risco de estar apenas exposto como todo mundo."
+    }
+   ]
+  },
+  {
+   "slug": "cloud-escalabilidade",
+   "title": "Cloud, VPS e serviços gerenciados",
+   "module": "Quando cresce e quando cai",
+   "summary": "O que você deixa de administrar quando paga mais, e quando isso vale a pena.",
+   "steps": [
+    {
+     "kind": "idea",
+     "title": "Você paga para não acordar de madrugada",
+     "body": [
+      "Toda escolha aqui é a mesma troca, em doses diferentes.",
+      "Quanto mais você paga, menos coisa sobra para você cuidar.",
+      "A conta não é só dinheiro: o seu tempo e o seu sono entram nela."
+     ],
+     "terms": [
+      {
+       "word": "Servidor",
+       "meaning": "o computador que fica esperando pedidos e devolve respostas."
+      },
+      {
+       "word": "VPS",
+       "meaning": "uma máquina virtual alugada, com sistema próprio e acesso de dono para você."
+      },
+      {
+       "word": "Hospedagem",
+       "meaning": "a empresa que mantém as máquinas ligadas e aluga o acesso a elas."
+      },
+      {
+       "word": "Máquina virtual",
+       "meaning": "uma fatia independente de um computador de verdade, com sistema próprio."
+      },
+      {
+       "word": "Cliente",
+       "meaning": "quem contrata o serviço e responde pelos próprios dados."
+      },
+      {
+       "word": "Porta",
+       "meaning": "o número que diz qual programa da máquina deve receber a conexão."
+      },
+      {
+       "word": "Volume",
+       "meaning": "a quantidade de dados guardada ou transferida, medida em gigabytes."
+      },
+      {
+       "word": "Serviço",
+       "meaning": "um programa que fica ligado atendendo pedidos, sem ninguém abrir nada."
+      },
+      {
+       "word": "Banco de dados",
+       "meaning": "o programa que guarda os dados em ordem e sabe buscá-los depressa."
+      },
+      {
+       "word": "PostgreSQL",
+       "meaning": "um banco de dados muito usado, de tecnologia aberta e padrão."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Os quatro degraus",
+     "body": [
+      "Existe uma escada, e cada degrau tira uma camada das suas mãos.",
+      "Repare que o código continua sendo seu em todos eles."
+     ],
+     "terms": [
+      {
+       "word": "Serviço",
+       "meaning": "um programa que fica ligado atendendo pedidos, sem ninguém abrir nada."
+      }
+     ],
+     "table": {
+      "label": "O que é seu, em cada degrau",
+      "headers": [
+       "Degrau",
+       "Você cuida de",
+       "Eles cuidam de"
+      ],
+      "rows": [
+       [
+        "máquina sua num prédio",
+        "tudo, menos energia e rede",
+        "o prédio"
+       ],
+       [
+        "VPS",
+        "sistema, programas e dados",
+        "o equipamento"
+       ],
+       [
+        "serviço gerenciado",
+        "só os seus dados",
+        "sistema e programa"
+       ],
+       [
+        "plataforma de aplicação",
+        "só o código",
+        "todo o resto"
+       ]
+      ],
+      "mono": false
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "O caso do banco gerenciado",
+     "body": [
+      "É o degrau que mais compensa cedo, e o primeiro que vale considerar.",
+      "Cópia automática, réplica, atualização e monitoramento vêm prontos.",
+      "São justamente as quatro coisas que dão trabalho e que ninguém faz direito no começo."
+     ],
+     "terms": [
+      {
+       "word": "Banco de dados",
+       "meaning": "o programa que guarda os dados em ordem e sabe buscá-los depressa."
+      },
+      {
+       "word": "Backup",
+       "meaning": "a cópia dos dados guardada fora da máquina, com versões de dias anteriores."
+      }
+     ],
+     "figure": {
+      "src": "/figuras/servidores/srv-gerenciado-vs-proprio.svg",
+      "alt": "Comparação entre administrar a própria máquina e contratar serviço gerenciado, mostrando quantas camadas ficam sob responsabilidade de cada lado",
+      "caption": "Migre primeiro o que já te acordou de madrugada."
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Elástico não quer dizer barato",
+     "body": [
+      "A promessa é pagar pelo que usar, e crescer sozinho na hora do pico.",
+      "Funciona. E a conta de quem deixa tudo ligado sem olhar é lendária.",
+      "Ponha limite de gasto e aviso de valor no primeiro dia, antes de subir qualquer coisa."
+     ],
+     "terms": [
+      {
+       "word": "Balanceador de carga",
+       "meaning": "o programa que reparte os pedidos entre várias cópias da aplicação."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "A conta que ninguém mostra na página de preços",
+     "body": [
+      "Transferir dados para fora costuma ser cobrado, e cobrado caro.",
+      "Guardar é barato, tirar é caro. Isso molda decisões inteiras de arquitetura.",
+      "Antes de escolher, simule o custo do seu volume real de saída, não só o de armazenamento."
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Ficar preso a um fornecedor",
+     "body": [
+      "Quanto mais serviço próprio do fornecedor você usa, mais caro fica sair dele.",
+      "Banco e fila padrão são fáceis de mover. Serviço exclusivo daquela empresa, não.",
+      "Não é motivo para evitar tudo. É motivo para saber o preço da saída antes de entrar."
+     ],
+     "example": {
+      "label": "Exemplo: duas escolhas, dois custos de saída",
+      "lines": [
+       "PostgreSQL gerenciado: é PostgreSQL. Você leva a cópia e sobe em qualquer lugar.",
+       "Banco exclusivo do fornecedor: a migração vira um projeto.",
+       "Os dois resolvem o problema de hoje.",
+       "Só um deles deixa a porta aberta."
+      ]
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Comece pela máquina, e migre por dor",
+     "body": [
+      "A máquina própria é onde se aprende. Ela ensina o que cada camada faz.",
+      "E ela é muito mais barata do que quase todo mundo supõe, no começo.",
+      "Migre a peça que já te deu prejuízo ou noite perdida. Essa você sabe quanto vale."
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "O que nunca deixa de ser seu",
+     "body": [
+      "Nenhum degrau da escada assume o seu código, os seus dados nem as suas contas.",
+      "Serviço gerenciado guarda cópia por você e não impede que você apague a tabela errada.",
+      "A responsabilidade é dividida, e a parte de cima é sempre sua."
+     ],
+     "terms": [
+      {
+       "word": "Permissão",
+       "meaning": "a regra que diz o que cada conta pode fazer, e onde."
+      }
+     ]
+    },
+    {
+     "kind": "exam",
+     "title": "Como cai na prova",
+     "body": [
+      "No modelo de responsabilidade compartilhada, o provedor responde pela infraestrutura e o cliente pelos dados e acessos.",
+      "Elasticidade é a capacidade de ajustar recursos conforme a demanda, o que não implica menor custo total.",
+      "O aprisionamento tecnológico cresce com o uso de serviços proprietários sem equivalente aberto."
+     ]
+    },
+    {
+     "kind": "pitfall",
+     "title": "Pegadinhas clássicas",
+     "body": [
+      "Onde a conta e a liberdade escapam:"
+     ],
+     "bullets": [
+      "Subir recursos sem limite de gasto nem aviso de valor configurados.",
+      "Comparar preços olhando só armazenamento, e esquecer a saída de dados.",
+      "Achar que serviço gerenciado dispensa você de cuidar dos seus dados.",
+      "Adotar serviço exclusivo do fornecedor sem saber o custo de sair."
+     ]
+    },
+    {
+     "kind": "recap",
+     "title": "Resumo",
+     "body": [
+      "Cada degrau tira uma camada das suas mãos, e cobra por isso.",
+      "Comece pela máquina própria, e migre a peça que já te custou caro.",
+      "Código, dados e contas nunca deixam de ser responsabilidade sua."
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "topic": "Responsabilidade compartilhada",
+     "statement": "Ao contratar um banco de dados gerenciado, continua sendo responsabilidade do cliente:",
+     "options": [
+      "Os dados, o modelo e o controle de quem acessa",
+      "A aplicação de correções no sistema operacional do banco",
+      "A configuração da réplica de alta disponibilidade",
+      "A geração das cópias automáticas do serviço",
+      "A manutenção do equipamento físico"
+     ],
+     "correct_index": 0,
+     "explanation": "O provedor assume a infraestrutura e a operação do produto. O conteúdo, a modelagem e quem tem acesso continuam sendo decisão e risco do cliente.",
+     "pitfall": "A comodidade das cópias automáticas passa a sensação de que os dados também viraram responsabilidade deles."
+    },
+    {
+     "topic": "Custo de saída",
+     "statement": "Ao comparar provedores de armazenamento, um custo frequentemente esquecido é:",
+     "options": [
+      "A transferência de dados para fora do provedor",
+      "O espaço ocupado pelos arquivos",
+      "O número de arquivos armazenados",
+      "A quantidade de cópias mantidas",
+      "O tempo de retenção configurado"
+     ],
+     "correct_index": 0,
+     "explanation": "Guardar costuma ser barato e retirar costuma ser caro. Esse assimetria influencia arquitetura, migração e o custo real de sair um dia.",
+     "pitfall": "As páginas de preço destacam o armazenamento, que é o número mais favorável de todos."
+    },
+    {
+     "topic": "Elasticidade",
+     "statement": "A capacidade de ajustar recursos automaticamente conforme a demanda:",
+     "options": [
+      "Não implica, por si só, custo total menor",
+      "Garante redução de custos em qualquer cenário",
+      "Elimina a necessidade de monitoramento",
+      "Substitui a necessidade de cópias de segurança",
+      "Só existe em serviços gerenciados de banco"
+     ],
+     "correct_index": 0,
+     "explanation": "Elasticidade otimiza o uso, e a conta depende de como ela é configurada. Sem limites e alertas, ela também cresce sozinha.",
+     "pitfall": "A promessa de pagar pelo que usa é verdadeira e não diz nada sobre quanto se vai usar."
+    },
+    {
+     "topic": "Por onde começar",
+     "statement": "Para quem está aprendendo administração de servidores, a recomendação mais formativa é:",
+     "options": [
+      "Começar por uma máquina própria e migrar peças conforme a dor aparecer",
+      "Começar direto por uma plataforma que abstrai toda a infraestrutura",
+      "Contratar todos os serviços gerenciados disponíveis",
+      "Montar um servidor físico em casa",
+      "Usar apenas hospedagem compartilhada"
+     ],
+     "correct_index": 0,
+     "explanation": "A máquina própria expõe cada camada e ensina o que ela faz. Migrar por dor garante que cada serviço contratado resolva um problema já sentido.",
+     "pitfall": "Começar pela plataforma que esconde tudo é confortável e deixa a pessoa sem repertório quando algo falha."
+    },
+    {
+     "topic": "Aprisionamento",
+     "statement": "O risco de aprisionamento tecnológico aumenta principalmente quando:",
+     "options": [
+      "Se adotam serviços proprietários sem equivalente aberto",
+      "Se usa mais de um provedor ao mesmo tempo",
+      "Se contrata banco de dados gerenciado de tecnologia padrão",
+      "Se aumenta o volume de dados armazenados",
+      "Se configura escalabilidade automática"
+     ],
+     "correct_index": 0,
+     "explanation": "Produto sem equivalente fora daquele fornecedor transforma a migração em reescrita. Tecnologia padrão gerenciada mantém a porta aberta.",
+     "pitfall": "Volume de dados encarece a saída e não impede a migração, que é o que caracteriza o aprisionamento."
+    },
+    {
+     "topic": "Banco gerenciado",
+     "statement": "O serviço gerenciado que costuma compensar mais cedo em projetos pequenos é o de:",
+     "options": [
+      "Banco de dados",
+      "Envio de e-mail",
+      "Balanceamento de carga",
+      "Rede privada",
+      "Registro de domínios"
+     ],
+     "correct_index": 0,
+     "explanation": "Cópia, réplica, atualização e monitoramento do banco são justamente as tarefas trabalhosas que raramente são bem feitas no começo.",
+     "pitfall": "Os outros serviços também economizam trabalho, e nenhum deles concentra tanto risco de perda definitiva."
+    },
+    {
+     "topic": "Controle de gastos",
+     "statement": "Antes de subir recursos num provedor com cobrança por uso, a primeira providência é:",
+     "options": [
+      "Configurar limite de gasto e aviso de valor",
+      "Contratar o plano anual com desconto",
+      "Escolher a região mais próxima dos usuários",
+      "Dimensionar a máquina pelo pico esperado",
+      "Ativar a escalabilidade automática"
+     ],
+     "correct_index": 0,
+     "explanation": "A cobrança por uso não tem teto natural. Limite e aviso são o que transforma uma configuração errada num susto pequeno em vez de uma fatura impagável.",
+     "pitfall": "Dimensionar pelo pico é boa prática de capacidade e não impede que um erro de configuração gere consumo inesperado."
+    },
+    {
+     "topic": "Escada de serviços",
+     "statement": "Ao subir da VPS para um serviço gerenciado equivalente, o que deixa de ser trabalho do cliente é:",
+     "options": [
+      "A instalação, a atualização e a operação daquele programa",
+      "A modelagem dos dados guardados nele",
+      "A definição de quem pode acessá-lo",
+      "A escolha das consultas feitas pela aplicação",
+      "O custo mensal do serviço"
+     ],
+     "correct_index": 0,
+     "explanation": "O provedor assume o ciclo de vida do software. Tudo que é decisão sobre o conteúdo e o acesso continua do lado do cliente.",
+     "pitfall": "Modelagem e consultas continuam determinando o desempenho, e nenhum serviço gerenciado as corrige por você."
+    }
+   ]
+  },
+  {
+   "slug": "projeto-final-vps",
+   "title": "Projeto final: colocar uma aplicação em produção",
+   "module": "Projeto final",
+   "summary": "Juntar as vinte e uma lições num roteiro só, do aluguel da máquina ao primeiro acesso.",
+   "steps": [
+    {
+     "kind": "idea",
+     "title": "Tudo que veio antes cabe num roteiro",
+     "body": [
+      "Cada lição deste curso resolveu uma peça. Agora elas viram uma sequência.",
+      "O roteiro tem oito passos, e a ordem importa: cada um depende do anterior.",
+      "Faça uma vez seguindo à risca. Na segunda você já entende por que cada passo existe."
+     ],
+     "terms": [
+      {
+       "word": "Servidor",
+       "meaning": "o computador que fica esperando pedidos e devolve respostas."
+      },
+      {
+       "word": "VPS",
+       "meaning": "uma máquina virtual alugada, com sistema próprio e acesso de dono para você."
+      },
+      {
+       "word": "Deploy",
+       "meaning": "o ato de colocar uma versão nova do sistema no ar."
+      },
+      {
+       "word": "Máquina virtual",
+       "meaning": "uma fatia independente de um computador de verdade, com sistema próprio."
+      },
+      {
+       "word": "Terminal",
+       "meaning": "a janela onde se escreve ordens em texto e se lê a resposta."
+      },
+      {
+       "word": "Servidor web",
+       "meaning": "o programa que recebe os pedidos de página e devolve a resposta."
+      },
+      {
+       "word": "sudo",
+       "meaning": "o jeito de rodar um comando com poder de administrador, sem viver com ele."
+      },
+      {
+       "word": "Permissão",
+       "meaning": "a regra que diz o que cada conta pode fazer, e onde."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "O conjunto montado",
+     "body": [
+      "Seis peças, e cada uma foi uma lição. Guarde este desenho.",
+      "Ele também é o roteiro de investigação: quando algo cair, percorra as seis na ordem."
+     ],
+     "figure": {
+      "src": "/figuras/servidores/srv-projeto-final.svg",
+      "alt": "O conjunto completo de uma aplicação em produção: o nome que vira número, a portaria, o porteiro com o cadeado, a aplicação como serviço, o banco fechado e a cópia saindo para fora",
+      "caption": "Caiu alguma coisa? Percorra as seis e pare na primeira que não responder."
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Passos 1 e 2: a máquina e o acesso",
+     "body": [
+      "Alugue a menor máquina que serve. Você aumenta depois, e é rápido.",
+      "Antes de qualquer outra coisa, troque a entrada por senha pela entrada por chave.",
+      "Teste numa janela nova antes de fechar a primeira. Sempre."
+     ],
+     "terms": [
+      {
+       "word": "SSH",
+       "meaning": "o jeito seguro de abrir um terminal numa máquina distante."
+      },
+      {
+       "word": "Chave privada",
+       "meaning": "o arquivo secreto que fica com você e prova quem você é."
+      },
+      {
+       "word": "root",
+       "meaning": "a conta que pode tudo na máquina, sem nenhuma trava."
+      }
+     ],
+     "code": {
+      "label": "Passo 2, na ordem que não tranca ninguém",
+      "text": "adduser app && usermod -aG sudo app\nssh-copy-id app@203.0.113.10\n# teste numa janela NOVA, e só então:\nsudo sed -i 's/^#*PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/sshd_config\nsudo systemctl reload ssh"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Passos 3 e 4: a portaria e os programas",
+     "body": [
+      "Feche tudo, abra três. Libere a sua entrada antes de ligar a portaria.",
+      "Depois instale o porteiro da web, o banco e o que a sua aplicação precisar."
+     ],
+     "terms": [
+      {
+       "word": "Firewall",
+       "meaning": "a portaria da máquina, que decide qual conexão entra."
+      },
+      {
+       "word": "Porta",
+       "meaning": "o número que diz qual programa da máquina deve receber a conexão."
+      },
+      {
+       "word": "Nginx",
+       "meaning": "o servidor web que fica na frente e repassa para a aplicação."
+      },
+      {
+       "word": "Banco de dados",
+       "meaning": "o programa que guarda os dados em ordem e sabe buscá-los depressa."
+      }
+     ],
+     "code": {
+      "label": "Passo 3, sempre nesta ordem",
+      "text": "sudo ufw allow OpenSSH\nsudo ufw allow 80/tcp && sudo ufw allow 443/tcp\nsudo ufw enable   # por último, nunca antes"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Passos 5 e 6: a aplicação e o nome",
+     "body": [
+      "Transforme a aplicação em algo que sobe sozinha e volta depois de reiniciar.",
+      "Aponte o nome para o número da máquina, e crie o bloco do porteiro para esse nome.",
+      "Confira a consulta ao nome antes de culpar qualquer outra coisa."
+     ],
+     "terms": [
+      {
+       "word": "Serviço",
+       "meaning": "um programa que fica ligado atendendo pedidos, sem ninguém abrir nada."
+      },
+      {
+       "word": "systemd",
+       "meaning": "o programa que liga, vigia e desliga os serviços da máquina."
+      },
+      {
+       "word": "DNS",
+       "meaning": "a agenda compartilhada que troca o nome do site pelo número da máquina."
+      },
+      {
+       "word": "Domínio",
+       "meaning": "o nome que as pessoas digitam para chegar ao site."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Passos 7 e 8: o cadeado e a cópia",
+     "body": [
+      "Um comando resolve o cadeado e já agenda a renovação. Ensaie a renovação no mesmo dia.",
+      "E antes de anunciar o endereço para alguém, tenha a cópia rodando e já restaurada uma vez."
+     ],
+     "terms": [
+      {
+       "word": "TLS",
+       "meaning": "a camada que embaralha a conversa do site. É ela que acende o cadeado."
+      },
+      {
+       "word": "Certificado",
+       "meaning": "o documento que prova o nome do site e faz o cadeado acender."
+      },
+      {
+       "word": "Backup",
+       "meaning": "a cópia dos dados guardada fora da máquina, com versões de dias anteriores."
+      }
+     ],
+     "code": {
+      "label": "Passos 7 e 8",
+      "text": "sudo certbot --nginx -d meusite.com.br\nsudo certbot renew --dry-run     # ensaie hoje, não daqui a 90 dias\n# e a cópia, saindo da máquina:\n0 3 * * * /usr/local/bin/backup.sh || curl -fsS https://avisa.me/falhou"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "A lista de conferência antes de anunciar",
+     "body": [
+      "Antes de mandar o endereço para alguém, passe por estas oito perguntas.",
+      "Se alguma resposta for não, o sistema ainda não está pronto para ter gente dentro."
+     ],
+     "terms": [
+      {
+       "word": "Log",
+       "meaning": "o caderno em que cada programa anota o que fez e o que deu errado."
+      }
+     ],
+     "table": {
+      "label": "Oito perguntas, oito lições",
+      "headers": [
+       "Pergunta",
+       "Lição"
+      ],
+      "rows": [
+       [
+        "A entrada por senha está desligada?",
+        "acesso remoto"
+       ],
+       [
+        "A portaria está ligada, com três portas?",
+        "firewall"
+       ],
+       [
+        "O banco escuta só por dentro?",
+        "redes e banco"
+       ],
+       [
+        "A aplicação volta sozinha ao reiniciar?",
+        "serviços"
+       ],
+       [
+        "O cadeado acende, e a renovação foi ensaiada?",
+        "cadeado"
+       ],
+       [
+        "A cópia sai da máquina e já foi restaurada?",
+        "cópia de segurança"
+       ],
+       [
+        "O registro tem corte configurado?",
+        "monitoramento"
+       ],
+       [
+        "Existe aviso se o site cair?",
+        "monitoramento"
+       ]
+      ],
+      "mono": false
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "O teste final: reinicie a máquina",
+     "body": [
+      "É o teste mais honesto que existe, e quase ninguém faz antes de anunciar.",
+      "Reinicie e espere. Tudo precisa voltar sozinho, sem você digitar nada.",
+      "O que não voltar é exatamente o que ia te acordar numa madrugada qualquer."
+     ],
+     "example": {
+      "label": "Exemplo: o teste de reinício",
+      "lines": [
+       "sudo reboot",
+       "Espere dois minutos e abra o site no navegador.",
+       "Abriu com cadeado, sem você fazer nada? Está pronto.",
+       "Faltou alguma coisa? Faltou um enable em algum serviço."
+      ]
+     }
+    },
+    {
+     "kind": "exam",
+     "title": "Como cai na prova",
+     "body": [
+      "O endurecimento inicial envolve criar usuário não privilegiado, desabilitar autenticação por senha e restringir portas.",
+      "A publicação segura pressupõe artefato versionado, troca atômica e procedimento de reversão testado.",
+      "A checagem de recuperação após reinicialização valida a persistência da configuração dos serviços."
+     ]
+    },
+    {
+     "kind": "pitfall",
+     "title": "Pegadinhas clássicas",
+     "body": [
+      "Os quatro erros que aparecem no primeiro projeto de todo mundo:"
+     ],
+     "bullets": [
+      "Ligar a portaria antes de liberar a própria entrada.",
+      "Anunciar o endereço antes de ter cópia de segurança funcionando.",
+      "Não reiniciar a máquina para conferir que tudo volta sozinho.",
+      "Deixar o banco escutando para fora enquanto testa a conexão."
+     ]
+    },
+    {
+     "kind": "recap",
+     "title": "Resumo",
+     "body": [
+      "São oito passos, sempre na mesma ordem. Máquina e acesso. Portaria e programas. Aplicação e nome. Cadeado e cópia.",
+      "A lista de conferência é o que separa um sistema pronto de um sistema que parece pronto.",
+      "Reinicie a máquina antes de anunciar. O que não voltar sozinho é dívida marcada para a madrugada."
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "topic": "Ordem do endurecimento",
+     "statement": "Ao preparar uma máquina recém-alugada, a ordem correta das primeiras ações é:",
+     "options": [
+      "Criar usuário comum, instalar a chave, testar e só então desligar a senha",
+      "Desligar a autenticação por senha e depois criar o usuário",
+      "Ligar a portaria de rede antes de configurar o acesso",
+      "Instalar a aplicação antes de qualquer configuração de acesso",
+      "Reiniciar a máquina antes de qualquer alteração"
+     ],
+     "correct_index": 0,
+     "explanation": "Cada passo depende do anterior ter sido validado. Desligar a senha antes de confirmar que a chave funciona tranca o administrador do lado de fora.",
+     "pitfall": "Ligar a portaria cedo parece prudente e produz exatamente o mesmo tipo de trancamento."
+    },
+    {
+     "topic": "Lista de conferência",
+     "statement": "Antes de divulgar o endereço de um sistema recém-publicado, o item indispensável é:",
+     "options": [
+      "A cópia de segurança funcionando e já restaurada uma vez",
+      "O domínio registrado em nome da empresa",
+      "O desempenho otimizado para o pico esperado",
+      "O código revisado por outra pessoa",
+      "A documentação da aplicação publicada"
+     ],
+     "correct_index": 0,
+     "explanation": "A partir do momento em que há gente usando, existem dados que não podem ser refeitos. Essa é a única proteção contra perdê-los.",
+     "pitfall": "Os demais itens melhoram o produto, e nenhum deles protege contra a perda definitiva dos dados."
+    },
+    {
+     "topic": "Teste de reinício",
+     "statement": "Reiniciar a máquina antes de colocar um sistema em uso serve para verificar:",
+     "options": [
+      "Se todos os serviços voltam sozinhos, sem intervenção manual",
+      "Se o desempenho melhora após a reinicialização",
+      "Se a memória está sendo liberada corretamente",
+      "Se o disco tem espaço suficiente",
+      "Se as cópias de segurança foram geradas"
+     ],
+     "correct_index": 0,
+     "explanation": "Serviço iniciado à mão funciona até o primeiro reinício. O teste revela exatamente as configurações que não foram persistidas.",
+     "pitfall": "A reinicialização de fato libera memória, e esse efeito colateral não é o motivo do teste."
+    },
+    {
+     "topic": "Banco na entrega",
+     "statement": "Num projeto com aplicação e banco na mesma máquina, a configuração correta do banco na entrega é:",
+     "options": [
+      "Escutando apenas no endereço interno, com porta fechada na portaria",
+      "Escutando em todos os endereços, com senha forte",
+      "Escutando em todos os endereços, com porta não padrão",
+      "Desligado, sendo iniciado apenas quando houver acesso",
+      "Escutando em todos os endereços apenas durante o horário comercial"
+     ],
+     "correct_index": 0,
+     "explanation": "A aplicação alcança o banco por dentro da máquina. Qualquer exposição externa cria alvo sem oferecer funcionalidade alguma.",
+     "pitfall": "Senha forte e porta trocada apenas atrasam a varredura automatizada, e o banco continua alcançável."
+    },
+    {
+     "topic": "Renovação do cadeado",
+     "statement": "Logo após emitir o certificado do site, a providência recomendada é:",
+     "options": [
+      "Ensaiar a renovação automática no mesmo dia",
+      "Anotar a data de vencimento no calendário",
+      "Emitir um segundo certificado de reserva",
+      "Aumentar a validade do certificado",
+      "Aguardar 90 dias para verificar se renovou"
+     ],
+     "correct_index": 0,
+     "explanation": "O ensaio confirma que o mecanismo funciona enquanto ainda há tempo. Descobrir a falha no dia do vencimento é descobrir com o site quebrado.",
+     "pitfall": "Anotar no calendário transfere para uma pessoa a responsabilidade que a automação deveria ter."
+    },
+    {
+     "topic": "Aplicação como serviço",
+     "statement": "Transformar a aplicação num serviço do sistema garante principalmente que ela:",
+     "options": [
+      "Suba sozinha no boot e seja religada se cair",
+      "Consuma menos memória durante a execução",
+      "Responda mais rápido aos pedidos",
+      "Fique isolada das demais aplicações da máquina",
+      "Dispense o servidor web na frente"
+     ],
+     "correct_index": 0,
+     "explanation": "Sem isso, a aplicação depende de alguém tê-la iniciado à mão, e desaparece no primeiro reinício sem que ninguém perceba.",
+     "pitfall": "O isolamento entre aplicações vem de contas e permissões, e não do mecanismo de inicialização."
+    },
+    {
+     "topic": "Investigação com o desenho",
+     "statement": "Com o conjunto em produção, um acesso deixa de funcionar. O procedimento recomendado é:",
+     "options": [
+      "Percorrer as peças na ordem do caminho e parar na primeira que falhar",
+      "Reiniciar a máquina e verificar se resolve",
+      "Recriar o certificado do site",
+      "Aumentar os recursos contratados da máquina",
+      "Reinstalar o servidor web"
+     ],
+     "correct_index": 0,
+     "explanation": "O caminho tem ordem, e cada peça falha de um jeito distinto. Localizar a peça antes de agir evita quebrar o que estava funcionando.",
+     "pitfall": "Reiniciar às vezes resolve, apaga as pistas e garante que o mesmo problema volte sem explicação."
+    },
+    {
+     "topic": "Dimensionamento inicial",
+     "statement": "Ao alugar a máquina para um projeto novo, a escolha mais sensata é:",
+     "options": [
+      "A menor que atenda, já que aumentar depois é rápido",
+      "A maior que o orçamento permitir, para evitar problemas",
+      "Uma máquina física dedicada",
+      "Duas máquinas, para garantir disponibilidade desde o início",
+      "A mesma configuração usada no ambiente de desenvolvimento"
+     ],
+     "correct_index": 0,
+     "explanation": "Aumentar recursos é um procedimento rápido e reversível. Começar grande paga por capacidade ociosa e esconde problemas de desempenho reais.",
+     "pitfall": "Contratar folga parece prudente e mascara consultas ruins que só apareceriam sob restrição."
     }
    ]
   }
