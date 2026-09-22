@@ -56,6 +56,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete('/me', [AuthController::class, 'destroy']);
 
     Route::get('/subjects', [CatalogController::class, 'subjects']);
+    // O vocabulário da matéria, montado das etapas das lições.
+    Route::get('/subjects/{subject}/vocabulario', [CatalogController::class, 'vocabulary'])->whereNumber('subject');
 
     /*
     | `whereNumber` não é capricho: sem ele, um id que não é número (um "null"

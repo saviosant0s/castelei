@@ -45,7 +45,21 @@ export interface Subject {
   /** Data da prova do semestre (AAAA-MM-DD), ou null. É o prazo de onde sai o ritmo das revisões. */
   exam_date: string | null;
   exam: ExamAvailability;
+  /** Quantas palavras o vocabulário da matéria tem. 0 = a tela não oferece a página. */
+  vocabulary_terms: number;
   lessons: LessonSummary[];
+}
+
+/** Uma palavra nova da matéria, com a lição em que ela estreia. */
+export interface VocabularyTerm {
+  word: string;
+  meaning: string;
+  lesson: { id: number; title: string; position: number };
+}
+
+export interface VocabularyResponse {
+  subject: { id: number; slug: string; name: string };
+  terms: VocabularyTerm[];
 }
 
 export type StepKind = "idea" | "explain" | "exam" | "pitfall" | "recap";

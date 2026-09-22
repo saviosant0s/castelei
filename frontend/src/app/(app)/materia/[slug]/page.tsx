@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ChevronRight, ClipboardCheck, Crown } from "lucide-react";
+import { ArrowLeft, BookA, ChevronRight, ClipboardCheck, Crown } from "lucide-react";
 import { SubjectSummary } from "@/components/trail/SubjectSummary";
 import { SubjectTrail } from "@/components/trail/SubjectTrail";
 import { Callout, Card } from "@/components/ui";
@@ -52,6 +52,25 @@ export default async function MateriaPage({ params }: { params: Promise<{ slug: 
             <strong>Simulado da matéria.</strong> Mistura questões de todas as lições — faz parte do plano Pro.
           </Callout>
         ))}
+
+      {/*
+      | O vocabulário só aparece quando a matéria tem palavras — link para
+      | página vazia é pior que link nenhum. A lista é montada das etapas das
+      | lições, então ela cresce sozinha conforme o conteúdo explica termos.
+      */}
+      {subject.vocabulary_terms > 0 && (
+        <Card href={`/materia/${subject.slug}/vocabulario`} size="sm" className="flex items-center gap-4">
+          <BookA className="size-6 shrink-0 text-sky" aria-hidden="true" />
+          <span className="min-w-0 flex-1">
+            <span className="block text-base font-bold">Vocabulário da matéria</span>
+            <span className="block text-sm text-content-subtle">
+              {pluralize(subject.vocabulary_terms, "palavra desta matéria", "palavras desta matéria")}, com o
+              significado de cada uma
+            </span>
+          </span>
+          <ChevronRight className="size-5 shrink-0 text-content-faint" aria-hidden="true" />
+        </Card>
+      )}
 
       {/* A trilha no lugar da lista: com 30 lições, uma fileira de linhas
           iguais não mostra onde você está nem quanto falta. */}
