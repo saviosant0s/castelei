@@ -4122,6 +4122,976 @@
      "pitfall": "Nenhuma aplicação percebe sozinha a troca do atalho: o código já carregado continua sendo o antigo."
     }
    ]
+  },
+  {
+   "slug": "docker",
+   "title": "Containers e Docker",
+   "module": "Colocando no ar",
+   "summary": "Empacotar o programa com tudo de que ele precisa, para funcionar igual em qualquer máquina.",
+   "steps": [
+    {
+     "kind": "idea",
+     "title": "Na minha máquina funcionava",
+     "body": [
+      "A frase mais repetida da profissão nasce de um detalhe. A sua máquina não é igual à do servidor.",
+      "Versão de linguagem, biblioteca do sistema, variável de ambiente. Basta uma diferença.",
+      "A saída é empacotar o programa com tudo de que ele precisa, e mandar o pacote inteiro."
+     ],
+     "terms": [
+      {
+       "word": "Servidor",
+       "meaning": "o computador que fica esperando pedidos e devolve respostas."
+      },
+      {
+       "word": "Contêiner",
+       "meaning": "o programa empacotado com tudo de que ele precisa para rodar."
+      },
+      {
+       "word": "Docker",
+       "meaning": "a ferramenta mais usada para montar e rodar esses pacotes."
+      },
+      {
+       "word": "Serviço",
+       "meaning": "um programa que fica ligado atendendo pedidos, sem ninguém abrir nada."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Não é uma máquina virtual pequena",
+     "body": [
+      "A comparação é inevitável, e o ponto é onde elas param.",
+      "Uma fatia virtual carrega um sistema inteiro dentro. O pacote não: ele usa o sistema da máquina.",
+      "Por isso sobe em segundos e ocupa megabytes. Em troca, o isolamento é menor."
+     ],
+     "terms": [
+      {
+       "word": "Máquina virtual",
+       "meaning": "uma fatia independente de um computador de verdade, com sistema próprio."
+      }
+     ],
+     "figure": {
+      "src": "/figuras/servidores/srv-conteiner-vs-vm.svg",
+      "alt": "Comparação entre máquinas virtuais, que carregam um sistema operacional inteiro cada uma, e contêineres, que dividem o mesmo sistema da máquina e carregam só o programa",
+      "caption": "O pacote não carrega sistema. Ele usa o da máquina, e por isso é leve."
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Receita, pacote pronto e pacote rodando",
+     "body": [
+      "Três palavras diferentes que quase todo iniciante mistura.",
+      "Uma é o texto com as instruções. A outra é o resultado de seguir esse texto. A terceira é isso em execução.",
+      "É a mesma relação entre receita, bolo assado e bolo sendo comido."
+     ],
+     "terms": [
+      {
+       "word": "Imagem de contêiner",
+       "meaning": "o pacote pronto, congelado. Ele não roda: ele é copiado e iniciado."
+      },
+      {
+       "word": "Repositório",
+       "meaning": "o lugar de onde os pacotes prontos são baixados."
+      }
+     ],
+     "table": {
+      "label": "Os três nomes, lado a lado",
+      "headers": [
+       "Nome",
+       "O que é",
+       "Analogia"
+      ],
+      "rows": [
+       [
+        "Dockerfile",
+        "o texto com as instruções",
+        "a receita"
+       ],
+       [
+        "imagem",
+        "o resultado congelado",
+        "o bolo assado"
+       ],
+       [
+        "contêiner",
+        "a imagem em execução",
+        "o bolo sendo comido"
+       ]
+      ],
+      "mono": false
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "A receita, linha por linha",
+     "body": [
+      "Uma receita comum tem cinco linhas. Cada uma faz uma coisa só.",
+      "A ordem importa: o que muda menos vem primeiro, para o resto ser reaproveitado."
+     ],
+     "code": {
+      "label": "Dockerfile de uma aplicação Node",
+      "text": "FROM node:22-alpine\nWORKDIR /app\nCOPY package*.json ./\nRUN npm ci --omit=dev\nCOPY . .\nCMD [\"node\", \"server.js\"]"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Tudo que ele escreve some quando ele morre",
+     "body": [
+      "O pacote em execução é descartável de propósito. Ao ser trocado, o que estava dentro dele some.",
+      "Arquivo enviado por quem usa não pode morar ali dentro.",
+      "Para o que precisa sobreviver, existe uma pasta da máquina pendurada dentro do pacote."
+     ],
+     "terms": [
+      {
+       "word": "Volume",
+       "meaning": "a pasta da máquina pendurada dentro do pacote, para o dado sobreviver à troca."
+      }
+     ],
+     "code": {
+      "label": "Rodando com pasta que sobrevive",
+      "text": "docker run -d --name app \\\n  -p 127.0.0.1:3000:3000 \\\n  -v /var/app/uploads:/app/uploads \\\n  minhaapp:2026-09-22"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "A porta de dentro e a porta de fora",
+     "body": [
+      "O pacote tem o próprio conjunto de números de porta, separado do da máquina.",
+      "Você escolhe qual número da máquina leva a qual número de dentro.",
+      "Prenda ao endereço interno da máquina. Senão o pacote fica aberto para a internet, passando por cima da portaria."
+     ],
+     "terms": [
+      {
+       "word": "Porta",
+       "meaning": "o número que diz qual programa deve receber a conexão."
+      },
+      {
+       "word": "Firewall",
+       "meaning": "a portaria da máquina, que decide qual conexão entra."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Vários pacotes que se conhecem",
+     "body": [
+      "Aplicação, banco e porteiro viram três pacotes que precisam se enxergar.",
+      "Existe um arquivo que descreve os três e a ligação entre eles. Um comando sobe tudo.",
+      "Dentro desse arranjo, um pacote chama o outro pelo nome, sem precisar de endereço numérico."
+     ],
+     "terms": [
+      {
+       "word": "Banco de dados",
+       "meaning": "o programa que guarda os dados em ordem e sabe buscá-los depressa."
+      }
+     ],
+     "code": {
+      "label": "docker-compose.yml, o essencial",
+      "text": "services:\n  app:\n    build: .\n    environment:\n      DB_HOST: banco\n  banco:\n    image: postgres:17\n    volumes:\n      - ./dados:/var/lib/postgresql/data"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Quando não usar",
+     "body": [
+      "Pacote não conserta arquitetura ruim, e acrescenta uma camada a aprender.",
+      "Para um site simples numa máquina só, instalar direto continua sendo uma escolha honesta.",
+      "Ele brilha quando há várias versões, várias máquinas ou várias pessoas mexendo."
+     ],
+     "example": {
+      "label": "Exemplo: vale a pena?",
+      "lines": [
+       "Um site, uma máquina, uma pessoa: provavelmente não.",
+       "Três serviços que precisam subir juntos: sim.",
+       "A mesma aplicação em teste e em produção: sim.",
+       "Precisa voltar de versão em segundos: sim."
+      ]
+     }
+    },
+    {
+     "kind": "exam",
+     "title": "Como cai na prova",
+     "body": [
+      "Contêineres compartilham o núcleo do sistema hospedeiro, enquanto máquinas virtuais emulam hardware e executam um sistema completo.",
+      "A imagem é um artefato imutável, e o contêiner é uma instância em execução dessa imagem.",
+      "Volumes desacoplam dados persistentes do ciclo de vida do contêiner."
+     ]
+    },
+    {
+     "kind": "pitfall",
+     "title": "Pegadinhas clássicas",
+     "body": [
+      "Os erros que aparecem na primeira semana com pacotes:"
+     ],
+     "bullets": [
+      "Guardar dado importante dentro do pacote, e perdê-lo na primeira troca.",
+      "Publicar a porta em todos os endereços, furando a portaria da máquina.",
+      "Confundir a receita, o pacote pronto e o pacote em execução.",
+      "Copiar o código antes de instalar as dependências, e refazer tudo a cada mudança."
+     ]
+    },
+    {
+     "kind": "recap",
+     "title": "Resumo",
+     "body": [
+      "O pacote leva o programa e tudo de que ele precisa, usando o sistema da máquina.",
+      "Receita, pacote pronto e pacote em execução são três coisas distintas.",
+      "O que precisa sobreviver mora numa pasta da máquina, nunca dentro do pacote."
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "topic": "Contêiner e máquina virtual",
+     "statement": "A diferença central entre um contêiner e uma máquina virtual é que o contêiner:",
+     "options": [
+      "Usa o sistema da máquina hospedeira em vez de carregar um próprio",
+      "Ocupa mais espaço em disco por incluir mais programas",
+      "Não pode ser executado em servidores Linux",
+      "Oferece isolamento maior que o de uma máquina virtual",
+      "Precisa de um sistema operacional diferente do hospedeiro"
+     ],
+     "correct_index": 0,
+     "explanation": "Não carregar um sistema inteiro é o que torna o contêiner leve e rápido de subir. O preço é um isolamento menor que o da máquina virtual.",
+     "pitfall": "A alternativa sobre isolamento maior inverte exatamente o compromisso que se faz ao escolher contêiner."
+    },
+    {
+     "topic": "Imagem e contêiner",
+     "statement": "Sobre imagem e contêiner, é correto afirmar que:",
+     "options": [
+      "A imagem é o pacote congelado e o contêiner é ela em execução",
+      "São dois nomes para a mesma coisa",
+      "O contêiner é gerado a partir de outro contêiner",
+      "A imagem é o contêiner depois de parado",
+      "A imagem só existe durante a execução"
+     ],
+     "correct_index": 0,
+     "explanation": "A imagem é o artefato imutável, construído uma vez e reutilizado. Cada execução dela cria um contêiner novo e descartável.",
+     "pitfall": "Tratar os dois como sinônimo leva a procurar dados dentro da imagem, onde eles nunca estiveram."
+    },
+    {
+     "topic": "Dados persistentes",
+     "statement": "Arquivos enviados por usuários numa aplicação em contêiner devem ser gravados:",
+     "options": [
+      "Numa pasta da máquina pendurada dentro do contêiner",
+      "Dentro do próprio contêiner, na pasta da aplicação",
+      "Dentro da imagem, antes de ela ser construída",
+      "Na memória, para maior velocidade",
+      "Em qualquer pasta, já que o contêiner preserva o conteúdo"
+     ],
+     "correct_index": 0,
+     "explanation": "O contêiner é descartável por desenho. O que precisa sobreviver a uma troca de versão tem de estar fora dele, numa pasta da máquina.",
+     "pitfall": "Funciona perfeitamente até a primeira atualização, quando todos os arquivos enviados desaparecem de uma vez."
+    },
+    {
+     "topic": "Publicação de porta",
+     "statement": "Ao publicar a porta de um contêiner numa máquina exposta à internet, a forma mais segura é:",
+     "options": [
+      "Prender a publicação ao endereço interno da própria máquina",
+      "Publicar em todos os endereços, e proteger pela portaria",
+      "Publicar numa porta acima de 30000",
+      "Publicar apenas durante o horário de uso",
+      "Não publicar porta alguma, usando só a rede interna do contêiner"
+     ],
+     "correct_index": 0,
+     "explanation": "A publicação de porta costuma criar regras próprias que passam por cima da portaria da máquina. Prender ao endereço interno evita essa surpresa.",
+     "pitfall": "Confiar na portaria é o raciocínio natural, e é justamente o que essa publicação contorna sem avisar."
+    },
+    {
+     "topic": "Ordem no Dockerfile",
+     "statement": "Num Dockerfile, copiar o arquivo de dependências e instalá-las antes de copiar o restante do código serve para:",
+     "options": [
+      "Reaproveitar a instalação quando só o código muda",
+      "Reduzir o tamanho final da imagem",
+      "Permitir que a aplicação rode sem dependências",
+      "Evitar a necessidade de volumes",
+      "Tornar o contêiner mais isolado"
+     ],
+     "correct_index": 0,
+     "explanation": "Cada instrução gera uma camada reaproveitável. Com as dependências antes do código, mudar uma linha da aplicação não refaz a instalação inteira.",
+     "pitfall": "A economia é de tempo de construção, e não de tamanho: as camadas continuam todas na imagem."
+    },
+    {
+     "topic": "Vários serviços",
+     "statement": "Numa configuração com aplicação e banco em contêineres do mesmo arranjo, a aplicação alcança o banco:",
+     "options": [
+      "Pelo nome do serviço definido no arquivo do arranjo",
+      "Pelo endereço numérico da máquina hospedeira",
+      "Apenas se o banco publicar porta para fora",
+      "Somente através do servidor web",
+      "Usando o endereço da própria máquina, 127.0.0.1"
+     ],
+     "correct_index": 0,
+     "explanation": "O arranjo cria uma rede interna em que cada serviço é alcançável pelo nome. Nada disso precisa sair da máquina.",
+     "pitfall": "O endereço 127.0.0.1 dentro de um contêiner aponta para ele mesmo, e não para os vizinhos."
+    },
+    {
+     "topic": "Quando adotar",
+     "statement": "Um site simples roda numa máquina só e é mantido por uma pessoa. Nesse caso, adotar contêineres:",
+     "options": [
+      "Não é obrigatório, e instalar direto continua sendo razoável",
+      "É sempre a melhor escolha, sem exceções",
+      "É impossível, por limitação da ferramenta",
+      "Dispensa a necessidade de cópia de segurança",
+      "Elimina a necessidade de servidor web"
+     ],
+     "correct_index": 0,
+     "explanation": "A ferramenta resolve problemas de repetição e de múltiplos ambientes. Sem esses problemas, ela acrescenta uma camada a aprender e manter.",
+     "pitfall": "O entusiasmo com a ferramenta costuma transformar uma boa solução para certos casos em regra para todos."
+    },
+    {
+     "topic": "Ciclo de vida",
+     "statement": "Um contêiner foi parado e removido, e um novo foi criado a partir da mesma imagem. Os arquivos gravados dentro do contêiner anterior:",
+     "options": [
+      "Foram perdidos, exceto o que estava em pasta pendurada da máquina",
+      "Continuam disponíveis no novo contêiner",
+      "Foram salvos automaticamente na imagem",
+      "Foram enviados para o repositório de imagens",
+      "Podem ser recuperados reiniciando o contêiner antigo"
+     ],
+     "correct_index": 0,
+     "explanation": "A camada de escrita do contêiner morre com ele. Só sobrevive o que estava numa pasta da máquina pendurada dentro dele.",
+     "pitfall": "A imagem não é alterada pela execução, então nada do que foi gravado durante o uso chega até ela."
+    }
+   ]
+  },
+  {
+   "slug": "monitoramento-logs",
+   "title": "Monitoramento, métricas e logs",
+   "module": "Mantendo no ar",
+   "summary": "Saber que caiu antes de alguém avisar, e ter como descobrir por quê.",
+   "steps": [
+    {
+     "kind": "idea",
+     "title": "Descobrir pelo cliente é tarde demais",
+     "body": [
+      "Existe um jeito ruim de saber que o sistema caiu: alguém liga reclamando.",
+      "Nessa hora o prejuízo já aconteceu, e você ainda vai começar a investigar.",
+      "Monitorar é trocar essa ligação por um aviso que chega antes."
+     ],
+     "terms": [
+      {
+       "word": "Servidor",
+       "meaning": "o computador que fica esperando pedidos e devolve respostas."
+      },
+      {
+       "word": "Métrica",
+       "meaning": "um número medido de tempos em tempos, como uso de disco ou pedidos por segundo."
+      },
+      {
+       "word": "Log",
+       "meaning": "o caderno em que cada programa anota o que fez e o que deu errado."
+      },
+      {
+       "word": "Cliente",
+       "meaning": "quem usa o sistema e faz os pedidos que ele atende."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Número e frase servem para coisas diferentes",
+     "body": [
+      "O número responde quanto e quando. Ele cabe num gráfico e aceita alarme.",
+      "A frase responde por quê. Ela é lida depois, quando o número já apontou a hora.",
+      "Você precisa dos dois. Só número não explica, e só frase não avisa."
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Quatro sinais respondem quase tudo",
+     "body": [
+      "Não comece medindo cinquenta coisas. Comece medindo quatro.",
+      "Estes quatro cobrem a esmagadora maioria das perguntas sobre saúde de um sistema."
+     ],
+     "figure": {
+      "src": "/figuras/servidores/srv-quatro-sinais.svg",
+      "alt": "Os quatro sinais que dizem a saúde de um sistema: quanto tempo cada resposta leva, quantos pedidos chegam, quantos falham e o quanto a máquina está no limite",
+      "caption": "Demora, movimento, erro e limite. Comece por estes quatro."
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "A média mente",
+     "body": [
+      "Se noventa e nove pedidos levam 50 milésimos e um leva 10 segundos, a média fica ótima.",
+      "E a pessoa daquele um pedido fechou o app.",
+      "Olhe a fatia que sofre: o valor abaixo do qual ficam 95 ou 99 de cada cem pedidos."
+     ],
+     "terms": [
+      {
+       "word": "Latência",
+       "meaning": "quanto tempo uma resposta leva para ficar pronta."
+      }
+     ],
+     "table": {
+      "label": "A mesma medição, lida de três jeitos",
+      "headers": [
+       "Leitura",
+       "Valor",
+       "O que ela esconde"
+      ],
+      "rows": [
+       [
+        "média",
+        "150 ms",
+        "a minoria que está sofrendo"
+       ],
+       [
+        "95 de cada 100",
+        "400 ms",
+        "o 1% pior"
+       ],
+       [
+        "99 de cada 100",
+        "9 s",
+        "nada: é aqui que o problema aparece"
+       ]
+      ],
+      "mono": false
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "O mínimo que cabe numa máquina só",
+     "body": [
+      "Você não precisa de uma torre de ferramentas para começar.",
+      "Um aviso externo de que o site responde, mais três comandos na máquina, já cobrem muita coisa."
+     ],
+     "code": {
+      "label": "Os três comandos que dizem como ela está",
+      "text": "uptime          # carga média: 1, 5 e 15 minutos\nfree -h         # memória livre e de emergência\ndf -h           # espaço em cada disco"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "O caderno precisa parar de crescer",
+     "body": [
+      "Caderno que ninguém corta enche o disco, e disco cheio derruba o sistema.",
+      "Existe um mecanismo pronto: ele fecha o arquivo do dia, comprime e apaga os antigos.",
+      "Configure isso no mesmo dia em que a aplicação subir, não depois do primeiro susto."
+     ],
+     "terms": [
+      {
+       "word": "Serviço",
+       "meaning": "um programa que fica ligado atendendo pedidos, sem ninguém abrir nada."
+      }
+     ],
+     "code": {
+      "label": "/etc/logrotate.d/minhaapp",
+      "text": "/var/log/minhaapp/*.log {\n  daily\n  rotate 14\n  compress\n  missingok\n  copytruncate\n}"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Alarme que não vira ação vira ruído",
+     "body": [
+      "Alarme que dispara toda semana e ninguém faz nada ensina a equipe a ignorar alarme.",
+      "Para cada aviso, escreva antes o que a pessoa vai fazer ao receber.",
+      "Se não houver resposta para isso, não crie o alarme. Crie um gráfico."
+     ],
+     "bullets": [
+      "Disco acima de 85%: apagar registros antigos ou aumentar o disco.",
+      "Site sem responder por 2 minutos: abrir e investigar agora.",
+      "Erros acima de 1% por 5 minutos: olhar a última publicação.",
+      "Processador em 90% por um minuto: não avisar. Só gráfico."
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Uma marca para juntar as pontas",
+     "body": [
+      "Um pedido passa por vários programas, e cada um escreve no próprio caderno.",
+      "Sem uma marca comum, ligar as anotações de um mesmo pedido é impossível.",
+      "Gere um código por pedido na entrada e repasse. Depois basta procurar por ele."
+     ],
+     "example": {
+      "label": "Exemplo: seguindo um pedido que falhou",
+      "lines": [
+       "O porteiro registrou o código a1b2c3 com erro 500.",
+       "grep a1b2c3 /var/log/minhaapp/app.log",
+       "A aplicação mostra tempo esgotado ao falar com o banco.",
+       "Agora a investigação começa no banco, e não no chute."
+      ]
+     }
+    },
+    {
+     "kind": "exam",
+     "title": "Como cai na prova",
+     "body": [
+      "Métricas são séries numéricas agregáveis, adequadas a alertas, e logs são registros textuais de eventos.",
+      "Percentis revelam a cauda da distribuição, que a média oculta.",
+      "A rotação de logs previne exaustão de disco por crescimento indefinido dos arquivos."
+     ]
+    },
+    {
+     "kind": "pitfall",
+     "title": "Pegadinhas clássicas",
+     "body": [
+      "O que torna o monitoramento inútil:"
+     ],
+     "bullets": [
+      "Olhar a média e concluir que está tudo bem.",
+      "Criar alarme sem definir antes o que fazer quando ele tocar.",
+      "Deixar o caderno crescer sem corte, até o disco encher.",
+      "Monitorar só de dentro da máquina, sem um aviso externo de que ela responde."
+     ]
+    },
+    {
+     "kind": "recap",
+     "title": "Resumo",
+     "body": [
+      "Número avisa e frase explica. Você precisa dos dois.",
+      "Comece por quatro sinais: demora, movimento, erro e limite.",
+      "Leia a fatia que sofre, não a média, e só crie alarme que vira ação."
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "topic": "Métricas e logs",
+     "statement": "A diferença de uso entre métricas e registros textuais é que as métricas:",
+     "options": [
+      "São números agregáveis, adequados a gráficos e alarmes",
+      "Contêm mais detalhe sobre cada evento individual",
+      "Substituem os registros textuais por completo",
+      "Só podem ser coletadas manualmente",
+      "São geradas apenas quando ocorre uma falha"
+     ],
+     "correct_index": 0,
+     "explanation": "Número agrega bem e dispara alarme. Frase carrega o detalhe que explica, mas não serve para acompanhar tendência nem para alarmar.",
+     "pitfall": "O detalhe por evento é justamente a força do registro textual, e não da métrica."
+    },
+    {
+     "topic": "Percentis",
+     "statement": "Num sistema, a média de tempo de resposta é 150 ms e o valor que cobre 99 de cada 100 pedidos é 9 s. Isso indica que:",
+     "options": [
+      "Uma minoria de pedidos está muito lenta e a média esconde isso",
+      "O sistema está uniformemente lento",
+      "A medição está com defeito",
+      "A média é a leitura mais confiável nesse caso",
+      "Todos os pedidos levam entre 150 ms e 9 s"
+     ],
+     "correct_index": 0,
+     "explanation": "A média fica boa porque a maioria é rápida. A cauda longa mostra que uma fatia real de pessoas espera segundos, e são elas que desistem.",
+     "pitfall": "A média parece tranquilizadora exatamente nos casos em que a cauda é o problema."
+    },
+    {
+     "topic": "Rotação de registros",
+     "statement": "A configuração de rotação dos arquivos de registro serve principalmente para:",
+     "options": [
+      "Impedir que eles cresçam até encher o disco",
+      "Tornar a leitura dos registros mais rápida",
+      "Aumentar a quantidade de detalhes gravados",
+      "Enviar os registros para fora da máquina",
+      "Reduzir o tempo de resposta da aplicação"
+     ],
+     "correct_index": 0,
+     "explanation": "Registro sem corte cresce sem limite. Disco cheio derruba serviços de um jeito que raramente aponta para a causa real.",
+     "pitfall": "O ganho de leitura é colateral: o objetivo é evitar a queda por falta de espaço."
+    },
+    {
+     "topic": "Alarmes",
+     "statement": "Um alarme dispara semanalmente e a equipe nunca toma nenhuma ação ao recebê-lo. A providência correta é:",
+     "options": [
+      "Remover o alarme ou redefinir o critério, transformando-o em gráfico",
+      "Aumentar a frequência das notificações",
+      "Enviar o alarme para mais pessoas",
+      "Ignorar, já que o sistema segue funcionando",
+      "Elevar o limite para o dobro do valor atual"
+     ],
+     "correct_index": 0,
+     "explanation": "Alarme que nunca vira ação treina a equipe a ignorar alarmes, inclusive os que importam. Sem ação definida, o dado pertence a um gráfico.",
+     "pitfall": "Mandar para mais gente aumenta o ruído e espalha o hábito de ignorar."
+    },
+    {
+     "topic": "Correlação",
+     "statement": "Para acompanhar um mesmo pedido através de vários programas diferentes, a técnica adequada é:",
+     "options": [
+      "Gerar um código único na entrada e repassá-lo adiante",
+      "Comparar os horários registrados em cada programa",
+      "Consultar apenas o registro do programa da frente",
+      "Aumentar o nível de detalhe de todos os registros",
+      "Concentrar todos os programas num único arquivo de registro"
+     ],
+     "correct_index": 0,
+     "explanation": "O código comum é o que permite recuperar todas as anotações de um mesmo pedido, mesmo com vários programas escrevendo em lugares distintos.",
+     "pitfall": "Comparar horários funciona com pouco movimento e falha justamente quando há muitos pedidos simultâneos."
+    },
+    {
+     "topic": "Monitoramento externo",
+     "statement": "Monitorar a disponibilidade de um site apenas por dentro da própria máquina é insuficiente porque:",
+     "options": [
+      "Falhas de rede e de portaria não são percebidas de dentro",
+      "A máquina não consegue medir o próprio tempo de resposta",
+      "Os registros de dentro não são confiáveis",
+      "A medição interna consome muitos recursos",
+      "Só ferramentas pagas conseguem medir de dentro"
+     ],
+     "correct_index": 0,
+     "explanation": "De dentro, a conexão não passa pela rede nem pela portaria. Exatamente as camadas que mais derrubam o acesso ficam invisíveis.",
+     "pitfall": "A checagem interna funciona e responde certo, o que dá a sensação enganosa de cobertura."
+    },
+    {
+     "topic": "Quatro sinais",
+     "statement": "Ao iniciar o monitoramento de um sistema, um conjunto inicial adequado de medições é:",
+     "options": [
+      "Tempo de resposta, volume de pedidos, taxa de erro e uso de recursos",
+      "Apenas o uso de processador e de memória",
+      "Apenas a quantidade de registros gerados por hora",
+      "Todas as métricas disponíveis no sistema operacional",
+      "O número de usuários cadastrados no sistema"
+     ],
+     "correct_index": 0,
+     "explanation": "Esses quatro cobrem a maioria das perguntas sobre saúde. Começar por eles evita afogar a equipe em painéis que ninguém lê.",
+     "pitfall": "Coletar tudo parece mais seguro e produz painéis onde o sinal importante fica indistinguível do resto."
+    },
+    {
+     "topic": "Ordem da investigação",
+     "statement": "Um aviso indica aumento de erros logo após uma publicação. A primeira hipótese a investigar é:",
+     "options": [
+      "A versão publicada, voltando atrás se necessário",
+      "A capacidade de memória da máquina",
+      "A configuração da portaria de rede",
+      "O certificado do site",
+      "O provedor de internet dos usuários"
+     ],
+     "correct_index": 0,
+     "explanation": "Coincidência temporal com uma mudança é a pista mais forte que existe. Voltar à versão anterior separa em minutos causa de coincidência.",
+     "pitfall": "As outras hipóteses são plausíveis em geral e ignoram o fato de que algo acabou de mudar."
+    }
+   ]
+  },
+  {
+   "slug": "backup-recuperacao",
+   "title": "Backups, restauração e recuperação de desastre",
+   "module": "Mantendo no ar",
+   "summary": "A única parte do trabalho em que errar significa perder tudo, sem volta.",
+   "steps": [
+    {
+     "kind": "idea",
+     "title": "Tudo pode ser refeito, menos os dados",
+     "body": [
+      "Máquina queimou? Você aluga outra. Configuração perdida? Você escreve de novo.",
+      "Os dados das pessoas não têm de onde ser refeitos. Uma vez perdidos, acabou.",
+      "Por isso esta é a única parte do trabalho que não aceita improviso."
+     ],
+     "terms": [
+      {
+       "word": "Servidor",
+       "meaning": "o computador que fica esperando pedidos e devolve respostas."
+      },
+      {
+       "word": "Backup",
+       "meaning": "a cópia dos dados guardada fora da máquina, para o dia em que algo se perder."
+      },
+      {
+       "word": "Certificado",
+       "meaning": "o documento que faz o cadeado do site acender. Ele é emitido de novo em minutos."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "As três formas de perder",
+     "body": [
+      "Uma é o equipamento falhar. Outra é alguém apagar por engano.",
+      "A terceira é ataque, em que alguém embaralha seus dados de propósito e cobra para devolver.",
+      "As três exigem coisas diferentes da sua cópia. Só a primeira é resolvida por disco extra."
+     ],
+     "table": {
+      "label": "O que cada tipo de perda exige da cópia",
+      "headers": [
+       "Como se perde",
+       "O que a cópia precisa ter"
+      ],
+      "rows": [
+       [
+        "o disco morre",
+        "estar em outro disco"
+       ],
+       [
+        "alguém apaga sem querer",
+        "ter versões de dias anteriores"
+       ],
+       [
+        "ataque embaralha tudo",
+        "estar fora do alcance da máquina"
+       ]
+      ],
+      "mono": false
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Três, dois, um",
+     "body": [
+      "Existe uma regra antiga que resolve os três casos de uma vez.",
+      "Três cópias dos dados. Em dois tipos de lugar diferentes. Uma delas fora do prédio.",
+      "E uma quarta exigência, que não está no nome e é a que mais falta."
+     ],
+     "figure": {
+      "src": "/figuras/servidores/srv-regra-321.svg",
+      "alt": "A regra de três cópias em dois tipos de lugar com uma delas fora do prédio, e o teste de restauração que transforma arquivo em garantia",
+      "caption": "A quarta exigência é a restauração já feita de verdade, pelo menos uma vez."
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Cópia nunca restaurada não é cópia",
+     "body": [
+      "Arquivo gerado todo dia dá uma sensação de segurança que não corresponde a nada.",
+      "O arquivo pode estar truncado, o comando pode ter falhado em silêncio, a senha pode ter se perdido.",
+      "Você só descobre restaurando. Faça isso uma vez por mês, num ambiente separado."
+     ],
+     "terms": [
+      {
+       "word": "Banco de dados",
+       "meaning": "o programa que guarda os dados em ordem e sabe buscá-los depressa."
+      }
+     ],
+     "code": {
+      "label": "O teste que transforma arquivo em garantia",
+      "text": "createdb teste_restauracao\ngunzip -c backup-2026-09-22.sql.gz | psql teste_restauracao\npsql teste_restauracao -c 'SELECT count(*) FROM pedidos;'\n# o número bate com produção? então a cópia presta"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Duas perguntas que definem o plano",
+     "body": [
+      "Antes de escolher ferramenta, responda duas coisas com quem é dono do sistema.",
+      "Quanto tempo o sistema pode ficar fora? E quanto de dado dá para perder?",
+      "As duas respostas decidem tudo o mais, e custam dinheiro proporcional."
+     ],
+     "table": {
+      "label": "As duas perguntas, e o que cada resposta custa",
+      "headers": [
+       "Pergunta",
+       "Resposta modesta",
+       "Resposta cara"
+      ],
+      "rows": [
+       [
+        "Quanto tempo fora?",
+        "4 horas",
+        "5 minutos"
+       ],
+       [
+        "Quanto dado perder?",
+        "1 dia",
+        "1 minuto"
+       ],
+       [
+        "O que isso exige",
+        "cópia diária",
+        "cópia contínua e máquina de reserva"
+       ]
+      ],
+      "mono": false
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Automatizar, e conferir que automatizou",
+     "body": [
+      "Cópia manual é esquecida na primeira semana corrida.",
+      "Agende. E depois confira que o agendamento roda, porque tarefa agendada morre em silêncio.",
+      "Um aviso quando a cópia não acontece vale mais que a própria cópia."
+     ],
+     "terms": [
+      {
+       "word": "Serviço",
+       "meaning": "um programa que fica ligado atendendo pedidos, sem ninguém abrir nada."
+      }
+     ],
+     "code": {
+      "label": "Agendando, e avisando se falhar",
+      "text": "0 3 * * * /usr/local/bin/backup.sh || curl -fsS https://avisa.me/falhou\n# conferindo se a tarefa rodou mesmo:\nsystemctl list-timers | grep backup"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "A cópia também é segredo",
+     "body": [
+      "O arquivo de cópia tem todos os dados das pessoas, num pacote só e fácil de carregar.",
+      "Ele precisa de embaralhamento e de permissão fechada, igual ao banco de onde saiu.",
+      "Cópia guardada aberta num serviço de arquivos é um vazamento esperando acontecer."
+     ],
+     "terms": [
+      {
+       "word": "Criptografia",
+       "meaning": "embaralhar o conteúdo de modo que só quem tem a chave consiga ler."
+      },
+      {
+       "word": "Permissão",
+       "meaning": "a regra que diz quem pode ler, gravar ou executar cada arquivo."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Escreva o roteiro antes de precisar dele",
+     "body": [
+      "No dia do desastre ninguém raciocina bem, e costuma ser de madrugada.",
+      "Tenha um texto curto com a ordem dos passos e onde estão as chaves.",
+      "E guarde esse texto fora da máquina que pode cair."
+     ],
+     "example": {
+      "label": "Exemplo: o roteiro mínimo",
+      "lines": [
+       "1. Onde está a cópia mais recente, e como abri-la.",
+       "2. Como subir uma máquina nova do zero.",
+       "3. Como restaurar o banco e conferir que os números batem.",
+       "4. Como apontar o nome do site para a máquina nova."
+      ]
+     }
+    },
+    {
+     "kind": "exam",
+     "title": "Como cai na prova",
+     "body": [
+      "A regra 3-2-1 prescreve três cópias, em dois tipos de mídia, com uma delas fora do local.",
+      "RTO é o tempo tolerável de indisponibilidade e RPO é a perda de dados tolerável.",
+      "Backups devem ser testados por restauração periódica, e armazenados de forma cifrada."
+     ]
+    },
+    {
+     "kind": "pitfall",
+     "title": "Pegadinhas clássicas",
+     "body": [
+      "Os quatro jeitos de ter cópia e perder os dados assim mesmo:"
+     ],
+     "bullets": [
+      "Guardar a cópia no mesmo disco da máquina.",
+      "Nunca ter restaurado a cópia em lugar nenhum.",
+      "Manter só a cópia de ontem, sem versões anteriores.",
+      "Deixar a cópia acessível pela própria máquina, ao alcance de um ataque."
+     ]
+    },
+    {
+     "kind": "recap",
+     "title": "Resumo",
+     "body": [
+      "Três cópias em dois tipos de lugar. Uma fora do prédio. E uma restauração já feita.",
+      "Defina quanto tempo fora e quanto dado perder antes de escolher ferramenta.",
+      "Agende, avise quando falhar, embaralhe o arquivo e tenha o roteiro escrito."
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "topic": "Regra de cópias",
+     "statement": "A regra 3-2-1 de cópias de segurança estabelece:",
+     "options": [
+      "Três cópias, em dois tipos de lugar, com uma fora do local",
+      "Três cópias diárias, duas semanais e uma mensal",
+      "Três discos, dois servidores e uma máquina virtual",
+      "Três testes de restauração por ano, dois automáticos e um manual",
+      "Três dias de retenção, dois de compressão e um de arquivamento"
+     ],
+     "correct_index": 0,
+     "explanation": "Os três números descrevem quantidade, diversidade de mídia e distância. Juntos, eles cobrem falha de equipamento, engano e desastre local.",
+     "pitfall": "As alternativas com calendário soam plausíveis porque rotinas de cópia costumam mesmo ter periodicidades diferentes."
+    },
+    {
+     "topic": "Teste de restauração",
+     "statement": "Uma rotina gera cópias diárias há dois anos, sem nenhuma restauração ter sido feita. O risco principal é:",
+     "options": [
+      "As cópias podem estar inválidas, e ninguém saberá até precisar",
+      "As cópias ocupam espaço demais",
+      "A geração diária desgasta o disco",
+      "As cópias mais antigas deixam de ser compatíveis",
+      "A rotina pode afetar o desempenho da aplicação"
+     ],
+     "correct_index": 0,
+     "explanation": "Só a restauração prova que o arquivo está íntegro e que o procedimento funciona. Sem ela, existem dois anos de arquivos e nenhuma garantia.",
+     "pitfall": "A regularidade da rotina passa exatamente a sensação de segurança que o teste deveria confirmar."
+    },
+    {
+     "topic": "Ataque com sequestro de dados",
+     "statement": "Contra um ataque que embaralha os dados e exige pagamento, a característica indispensável da cópia é:",
+     "options": [
+      "Estar fora do alcance de quem controla a máquina atacada",
+      "Ser gerada com maior frequência",
+      "Ocupar menos espaço após compressão",
+      "Estar no mesmo prédio, para restauração rápida",
+      "Ser gravada no mesmo disco, em pasta separada"
+     ],
+     "correct_index": 0,
+     "explanation": "Quem tomou a máquina alcança tudo que a máquina alcança. Se a cópia estiver no raio dela, será embaralhada junto.",
+     "pitfall": "Frequência maior não ajuda quando o ataque alcança todas as versões guardadas ao mesmo tempo."
+    },
+    {
+     "topic": "Definição do plano",
+     "statement": "As duas perguntas que devem anteceder a escolha da ferramenta de cópia são:",
+     "options": [
+      "Quanto tempo o sistema pode ficar fora e quanto dado pode ser perdido",
+      "Qual o tamanho do banco e qual o espaço disponível",
+      "Qual a linguagem da aplicação e qual o banco usado",
+      "Qual o custo da hospedagem e qual o número de usuários",
+      "Com que frequência há publicações e quantas pessoas administram"
+     ],
+     "correct_index": 0,
+     "explanation": "As duas tolerâncias definem a arquitetura inteira e o custo. Escolher ferramenta antes disso é escolher resposta antes da pergunta.",
+     "pitfall": "Tamanho e espaço são restrições reais de execução, mas elas vêm depois de saber o que precisa ser garantido."
+    },
+    {
+     "topic": "Retenção",
+     "statement": "Uma rotina mantém apenas a cópia do dia anterior, sobrescrevendo a anterior. A falha que isso não cobre é:",
+     "options": [
+      "Um dado apagado por engano e percebido dias depois",
+      "A falha física do disco principal",
+      "A perda total da máquina",
+      "A corrupção do arquivo de cópia mais recente",
+      "A indisponibilidade temporária da rede"
+     ],
+     "correct_index": 0,
+     "explanation": "Com uma versão só, o engano de ontem já foi copiado por cima da última versão boa. Perceber depois de um dia significa não ter para onde voltar.",
+     "pitfall": "A cópia diária resolve bem a falha de equipamento, e é isso que faz a rotina parecer completa."
+    },
+    {
+     "topic": "Proteção da cópia",
+     "statement": "Sobre o armazenamento dos arquivos de cópia, a prática correta é:",
+     "options": [
+      "Mantê-los cifrados e com permissão restrita",
+      "Mantê-los acessíveis para facilitar restaurações rápidas",
+      "Guardá-los em serviço público de arquivos, sem senha",
+      "Deixá-los no mesmo local do banco, por conveniência",
+      "Compartilhá-los com toda a equipe técnica"
+     ],
+     "correct_index": 0,
+     "explanation": "O arquivo de cópia concentra todos os dados num pacote só e portátil. Ele merece a mesma proteção do banco de onde saiu, ou mais.",
+     "pitfall": "A conveniência do acesso rápido é real, e é o argumento que costuma vencer até o dia do vazamento."
+    },
+    {
+     "topic": "Automação",
+     "statement": "Sobre a automação da rotina de cópias, o cuidado mais frequentemente esquecido é:",
+     "options": [
+      "Avisar alguém quando a rotina falhar",
+      "Executar a rotina em horário de menor movimento",
+      "Comprimir os arquivos gerados",
+      "Nomear os arquivos com a data",
+      "Registrar o tempo de execução"
+     ],
+     "correct_index": 0,
+     "explanation": "Tarefa agendada falha em silêncio. Sem aviso de falha, a rotina pode estar parada há meses e ninguém percebe até o dia da restauração.",
+     "pitfall": "Os demais cuidados melhoram a rotina, e nenhum deles avisa quando ela para de acontecer."
+    },
+    {
+     "topic": "Prioridade",
+     "statement": "Numa recuperação após perda total da máquina, o item que não pode ser refeito a partir do zero é:",
+     "options": [
+      "Os dados dos usuários",
+      "A configuração do servidor web",
+      "O sistema operacional instalado",
+      "Os certificados do site",
+      "Os programas instalados na máquina"
+     ],
+     "correct_index": 0,
+     "explanation": "Tudo o mais pode ser reinstalado ou reescrito, com trabalho. Os dados das pessoas não têm origem alternativa: perdidos, acabou.",
+     "pitfall": "Os certificados parecem insubstituíveis, mas são emitidos de novo em minutos e de graça."
+    }
+   ]
   }
  ]
 }
