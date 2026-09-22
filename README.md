@@ -1,39 +1,69 @@
-# Castelei
+<h1 align="center">Castelei</h1>
 
-Plataforma de estudos que ensina o conteúdo **e** a linguagem da prova. Cada lição tem três camadas: explicação humana, como o assunto cai na prova e as pegadinhas mais comuns. Depois vem o treino em Modo Prova, com cronômetro.
+<p align="center">
+  Plataforma de estudos que ensina o conteúdo <strong>e</strong> a linguagem da prova.<br>
+  Lição em etapas, uma ideia por tela, seguida de treino cronometrado em Modo Prova.
+</p>
 
-O planejamento completo está em [`docs/planejamento.md`](docs/planejamento.md).
+<p align="center">
+  <a href="https://github.com/saviosant0s/castelei/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/saviosant0s/castelei/actions/workflows/ci.yml/badge.svg"></a>
+  <img alt="Laravel 12" src="https://img.shields.io/badge/Laravel-12-FF2D20?logo=laravel&logoColor=white">
+  <img alt="Next.js 16" src="https://img.shields.io/badge/Next.js-16-000000?logo=nextdotjs&logoColor=white">
+  <img alt="React 19" src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black">
+  <img alt="Tailwind 4" src="https://img.shields.io/badge/Tailwind-4-38BDF8?logo=tailwindcss&logoColor=white">
+  <img alt="PWA" src="https://img.shields.io/badge/PWA-instalável-5A0FC8?logo=pwa&logoColor=white">
+</p>
+
+<p align="center"><strong>App no ar:</strong> <a href="https://frontend-production-3c7da.up.railway.app">frontend-production-3c7da.up.railway.app</a> — entra sem cadastro, em modo visitante.</p>
+
+---
+
+| A trilha da matéria | Código explicado linha a linha | Pôr os passos na ordem |
+|---|---|---|
+| ![Trilha de lições com nós concluídos, o nó atual em destaque e estrelas por lição](docs/imagens/trilha.png) | ![Bloco de código em C com uma explicação numerada para cada linha](docs/imagens/licao-codigo.png) | ![Questão em que a pessoa toca nos passos para montar a sequência certa](docs/imagens/questao-ordenar.png) |
+
+| Ligar os pares | Passos numerados, no escuro | O resultado da prática |
+|---|---|---|
+| ![Questão de associar chamadas do Linux aos nomes equivalentes no Windows](docs/imagens/questao-ligar-pares.png) | ![Etapa de lição no tema escuro com uma escada de passos numerados](docs/imagens/licao-passos-escuro.png) | ![Tela de resultado com o acerto em destaque e a barra de ação fixa embaixo](docs/imagens/resultado.png) |
+
+## O problema
+
+Material de faculdade explica o assunto, mas não explica **como ele é cobrado**. O aluno entende a aula e erra a prova, porque a prova fala outra língua: "assinale a alternativa **incorreta**", "considerando o exposto", jargão de banca. E o que ele estudou em setembro já foi embora quando a prova chega, em dezembro.
+
+O Castelei ataca os dois lados:
+
+- **Cada lição tem três camadas** — a explicação humana, como o assunto cai na prova e as pegadinhas mais comuns. Uma ideia por tela, nunca um paredão de texto.
+- **A revisão se agenda sozinha em função da data da prova.** O intervalo é uma fatia do tempo que falta, então o calendário se aperta conforme dezembro chega. Faltam 90 dias, a lição volta em 14; faltam 3, ela volta amanhã. A base científica, com as fontes, está em [`docs/revisao-espacada.md`](docs/revisao-espacada.md).
+- **O conteúdo tem verificador automático**, que roda no CI como se fosse teste. Escrever lição aqui é uma disciplina de engenharia, não um campo de texto livre.
+
+## Em números
+
+| | |
+|---|---|
+| Matérias | 4 (Sistemas Operacionais, Servidores e VPS, Matemática, Português) |
+| Lições | 56, em etapas — o semestre inteiro de duas disciplinas |
+| Questões originais | 448, em três formatos |
+| Figuras SVG próprias | 58 |
+| Testes | 253 no backend (PHPUnit) e 285 no frontend (Vitest) |
+| Verificador de conteúdo | `scripts/lint-content.mjs`, roda no CI |
+
+## Stack e desenho
 
 ```
 castelei/
-├── backend/    API Laravel 12 (Sanctum, PostgreSQL em produção, SQLite em dev/testes)
-├── frontend/   App Next.js 16 + Tailwind 4, instalável como PWA
-└── docs/       Planejamento e guia de deploy no Railway
+├── backend/    API Laravel 12 · Sanctum · PostgreSQL em produção, SQLite em dev e testes
+├── frontend/   Next.js 16 (App Router) · React 19 · Tailwind 4 · PWA instalável
+├── scripts/    verificador do Guia Editorial de conteúdo
+└── docs/       planejamento, design system, decisões, deploy e guias
 ```
 
-## O que o MVP já faz
+Três coisas que definem a arquitetura:
 
-- Cadastro e login por e-mail e senha
-- 3 matérias, 9 lições e 72 questões originais (Matemática Básica, Português e Sistemas Operacionais; veja `docs/sistemas-operacionais-mapa.md`)
-- Lição em etapas, uma ideia por tela: analogia, passo a passo com exemplo, como cai na prova, pegadinhas e resumo
-- Modo Prova: uma questão por tela, cronômetro crescente, confirmar ou pular, feedback com gabarito, explicação e pegadinha
-- Resultado com acerto, tempo médio por questão, recorde de tempo e ponto fraco
-- Progresso por tópico (dominado, evoluindo, revisar)
-- Plano Grátis (5 questões por lição) e Plus (todas), aplicado no servidor
-- PWA instalável (manifest, ícones, service worker que só guarda arquivos estáticos)
-- Revisão espaçada com data de prova: o intervalo entre revisões é uma fatia do tempo que falta até a prova da matéria, então o calendário se aperta sozinho conforme ela chega (`docs/revisao-espacada.md`)
-- Lembrete de revisão por notificação (Web Push), desligado por padrão e no máximo um por dia. Precisa das chaves VAPID e de um processo de cron: veja `docs/deploy-railway.md`, passo 5
+- **O navegador nunca fala com a API.** O Next guarda o token do Sanctum num cookie `httpOnly` e repassa só as rotas de prática. O token não fica exposto a JavaScript, e não há CORS para configurar.
+- **A vitrine pública não cai junto com o backend.** `/`, `/materias` e `/como-funciona` leem o catálogo com prazo de 2,5 s; se a API falhar ou demorar, entra uma lista de reserva versionada — e um teste reprova se ela divergir do conteúdo de verdade.
+- **Existe um único caminho de escrita em massa de conteúdo** (`ContentImporter`), usado tanto pelo seeder do deploy quanto pelo painel `/admin`. Dois caminhos para a mesma tabela viram duas regras diferentes na primeira correção feita em um só.
 
-## O que ficou de fora (fases seguintes do planejamento)
-
-- Login com Google e pagamento. Por enquanto o plano se troca com `php artisan castelei:plan email plus`
-- Streak, XP, ranking e conquistas (Fase 2)
-- Matérias rotativas no plano grátis (só há 2 matérias)
-- IA e login com Google
-
-As questões têm três formatos. O padrão é `choice`: cinco alternativas e um `correct_index`. `format: "order"` é pôr os passos na ordem, onde as `options` são os passos **escritos na ordem certa** (o app embaralha ao mostrar) e não existe `correct_index`; use de três a seis passos. `format: "match"` é ligar os pares: em vez de `options`, traz `pairs` com `{left, right}` (de três a cinco duplas), e o app embaralha a coluna da direita.
-
-Decisão de conteúdo: as questões são **originais**, escritas no estilo de prova, e não trazem a informação "apareceu N vezes no ENEM" do wireframe. Essa estatística exigiria uma base verificada de provas reais, que ainda não existe.
+As decisões de engenharia mais interessantes — e o que cada uma custou — estão em **[`docs/decisoes.md`](docs/decisoes.md)**.
 
 ## Rodando localmente
 
@@ -45,7 +75,7 @@ cd backend
 composer install
 cp .env.example .env && php artisan key:generate
 touch database/database.sqlite
-php artisan castelei:setup      # migrations + conteúdo
+php artisan castelei:setup      # migrations + carga do conteúdo
 php artisan serve               # http://localhost:8000
 
 # 2) App (outro terminal)
@@ -55,22 +85,30 @@ cp .env.example .env.local      # API_URL=http://localhost:8000/api
 npm run dev                     # http://localhost:3000
 ```
 
+Com `GUEST_MODE=true` no frontend, as telas de entrar e cadastrar somem e cada navegador ganha uma conta de visitante. A API continua protegida por token.
+
 ## Testes
 
 ```bash
 cd backend  && php artisan test
 cd frontend && npm test && npm run lint && npm run build
+node scripts/lint-content.mjs   # o verificador do conteúdo
 ```
 
-O CI (`.github/workflows/ci.yml`) roda tudo isso a cada push.
+O CI ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)) roda os quatro a cada push.
+
+## Os três formatos de questão
+
+O padrão é `choice`: cinco alternativas e um `correct_index`. Continua sendo o principal, porque é o formato da prova que o aluno vai fazer. Os outros dois existem porque múltipla escolha só mede **reconhecer**:
+
+- **`order` — pôr os passos na ordem.** `fork` vem antes de `execve`, liberar o SSH vem antes de ligar o firewall. Quem troca a ordem quebra a máquina, e a alternativa nunca cobra isso. As `options` são os passos escritos na ordem certa; não existe `correct_index`.
+- **`match` — ligar os pares.** Em vez de `options`, traz `pairs` com `{left, right}`. Usar um par errado tira a opção certa de outro, então a pessoa precisa saber os quatro ao mesmo tempo.
+
+Nos dois casos **o gabarito é a própria estrutura da questão**, então o servidor embaralha antes de entregar, com semente derivada de `(tentativa, questão)`: a ordem é reproduzível nas duas pontas sem guardar estado, e duas pessoas na mesma questão veem ordens diferentes. Um teste garante que o sorteio nunca devolve a ordem certa.
 
 ## Escrevendo conteúdo
 
-As lições ficam em `backend/database/seeders/content/*.json`. Cada lição tem `summary`, `steps` (as etapas, uma ideia por tela) e `questions`.
-
-A matéria aceita `exam_date` (`"2026-12-15"`), opcional. Não é enfeite de calendário: é o prazo de onde sai todo intervalo de revisão — quanto mais perto a prova, mais juntas as revisões. Matéria sem data cai num plano de longo prazo. Detalhes e as fontes em `docs/revisao-espacada.md`.
-
-Tem também `module`, opcional: o assunto que agrupa a lição na trilha da matéria (`"Processos"`, `"Memória"`). Lições **seguidas** com o mesmo nome formam um módulo, e o número ("Módulo 3") sai da ordem — não escreva o número no arquivo. Matéria curta pode ficar sem: ela vira uma trilha só. O verificador avisa se uma matéria usa módulos e esquece uma lição, ou se o mesmo nome reaparece em dois trechos separados.
+As lições ficam em `backend/database/seeders/content/*.json` — essa é a fonte de verdade. Cada lição tem `summary`, `steps` (as etapas, uma ideia por tela) e `questions`.
 
 Uma etapa tem:
 
@@ -78,52 +116,49 @@ Uma etapa tem:
 |---|---|
 | `kind` | `idea` (analogia inicial, sempre a 1ª), `explain`, `exam` (uma só), `pitfall` (uma só), `recap` (sempre a última) |
 | `title`, `body` | título curto e parágrafos curtos (no máximo 75 palavras somadas) |
-| `example` | exemplo resolvido: `label`, `lines` (uma por passo) e `ordered` — marque quando trocar duas linhas de lugar estragaria o exemplo, e a tela desenha os passos numerados |
+| `example` | exemplo resolvido: `label`, `lines` e `ordered` — marque quando trocar duas linhas de lugar estragaria o exemplo, e a tela desenha os passos numerados |
 | `bullets` | lista de itens |
-| `terms` | palavras novas explicadas nesta etapa (`word`, `meaning`) |
-| `figure` | figura SVG do app: `src` (em `frontend/public/figuras/`), `alt` (texto alternativo descritivo) e `caption` |
-| `code` | trecho de código: `label`, `text` (linhas curtas, até uns 36 caracteres) e `notes`, uma frase por linha de código dizendo o que ela faz (obrigatório: quem lê a lição pode nunca ter visto código) |
+| `terms` | palavras novas explicadas nesta etapa (`word`, `meaning`) — é daqui que sai o vocabulário da matéria |
+| `figure` | figura SVG do app: `src`, `alt` descritivo e `caption` |
+| `code` | trecho de código: `label`, `text` e `notes` — uma frase por linha dizendo o que ela faz, **obrigatório**: quem lê a lição pode nunca ter visto código |
 | `video` | vídeo: `src` (arquivo enviado pelo painel ou link do YouTube), `title`, `caption` e `poster` |
 
-O Castelei é independente: **o conteúdo nunca cita livros, autores, capítulos ou páginas**. Livros e outras fontes servem só de base para estruturar os assuntos, e o verificador reprova qualquer referência.
+A matéria aceita `exam_date` (`"2026-12-15"`), que é o prazo de onde sai todo intervalo de revisão, e `module`, o assunto que agrupa a lição na trilha.
 
-Antes de enviar, rode o verificador do Guia Editorial (o CI também roda):
+Antes de enviar, rode o verificador:
 
 ```bash
-node scripts/lint-content.mjs
+node scripts/lint-content.mjs                  # tudo que já está publicado
+node scripts/lint-content.mjs caminho/para.json  # um arquivo ainda não importado
 ```
 
-Ele reprova frases com mais de 2 vírgulas, "como vimos anteriormente", etapas longas demais e termos técnicos usados sem explicação prévia.
+Ele reprova frases com mais de duas vírgulas, "como vimos anteriormente", etapas longas demais, linha de código sem explicação, citação de livro ou autor e — o mais útil — **termo técnico usado antes de ser explicado**. Rodado pela primeira vez contra a matéria de Servidores, escrita à mão, ele acusou 499 usos de jargão sem definição anterior; a régua de explicar código acusou outros 205.
+
+O Castelei é independente: **o conteúdo nunca cita livros, autores, capítulos ou páginas.**
 
 ## Painel de conteúdo (`/admin`)
 
-Dá para publicar matéria sem mexer em código: `/admin` importa um arquivo JSON
-com a matéria inteira, edita lições e questões e guarda imagens e vídeos. O
-guia completo está em [`docs/painel-admin.md`](docs/painel-admin.md).
+Publicar matéria sem mexer em código nem esperar deploy: importar um JSON com a matéria inteira, editar lição e questão em um editor de blocos, ordenar lições e guardar imagem e vídeo. O guia completo está em [`docs/painel-admin.md`](docs/painel-admin.md).
 
-Para liberar a primeira conta, defina `ADMIN_EMAILS` no backend (lista separada
-por vírgula). Depois disso o caminho é o comando:
+Para liberar a primeira conta, defina `ADMIN_EMAILS` no backend; depois disso o caminho é `php artisan castelei:admin voce@exemplo.com`. Plano Pro **não** dá acesso: plano é sobre estudar, permissão é sobre publicar.
 
-```bash
-php artisan castelei:admin voce@exemplo.com    # --remover tira o acesso
-```
+## Documentação
 
-Um detalhe que vale saber antes de usar: o `ContentSeeder` roda a cada deploy e
-recarrega os arquivos de `database/seeders/content/`. Para ele não desfazer o
-que foi editado no painel, cada matéria guarda de onde vem — e **a primeira
-edição feita pelo painel passa a matéria para o painel de vez**. Dali em diante
-o arquivo no repositório vira histórico.
+| | |
+|---|---|
+| [`docs/decisoes.md`](docs/decisoes.md) | as decisões de engenharia e o que cada uma custou |
+| [`docs/planejamento.md`](docs/planejamento.md) | o planejamento e o Guia Editorial de Conteúdo |
+| [`docs/design-system.md`](docs/design-system.md) | o design system próprio (sem biblioteca de terceiros) |
+| [`docs/revisao-espacada.md`](docs/revisao-espacada.md) | a revisão espaçada e a ciência por trás dos números |
+| [`docs/painel-admin.md`](docs/painel-admin.md) | o painel de conteúdo |
+| [`docs/deploy-railway.md`](docs/deploy-railway.md) | o deploy (Railway, três serviços, deploy automático na `main`) |
+| [`docs/play-store.md`](docs/play-store.md) | o caminho para a Play Store, via TWA |
+| [`docs/sistemas-operacionais-mapa.md`](docs/sistemas-operacionais-mapa.md) | o mapa das 30 aulas do semestre |
 
-## Modo de teste (sem login)
+## O que ainda não existe
 
-Com `GUEST_MODE=true` no frontend, as telas de entrar e cadastrar somem: cada navegador ganha automaticamente uma conta de visitante (progresso guardado no cookie do navegador, por até 30 dias). A API continua protegida por token. Para voltar ao login normal, remova a variável ou troque por qualquer outro valor.
+Login com Google, pagamento (quando entrar, será pelo faturamento do Google Play), funcionamento offline de verdade e ranking. O corte entre grátis e pago já está decidido, e ainda não implementado: tudo que existe hoje fica no grátis, e o Pro ganha o simulado por matéria e níveis de dificuldade nas questões.
 
-Limites conhecidos: limpar os cookies cria um visitante novo (o progresso antigo não volta), e o cadastro na API aceita 10 contas novas por minuto por IP, então muitos visitantes novos de uma vez podem ver a mensagem de servidor indisponível.
+## Licença
 
-## Como a autenticação funciona
-
-O navegador nunca fala direto com a API. O Next guarda o token do Sanctum num cookie `httpOnly` e repassa apenas as rotas de prática (`/api/lessons/*/attempts`, `/api/attempts/*/answers`, `/api/attempts/*/finish`), colocando o token no header. Assim o token não fica exposto a JavaScript, e não há CORS para configurar.
-
-## Deploy
-
-Veja [`docs/deploy-railway.md`](docs/deploy-railway.md).
+[MIT](LICENSE). O código é livre; o conteúdo das lições é autoral.
