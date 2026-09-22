@@ -39,10 +39,3 @@ export function weekdayInitial(isoDate: string): string {
   // meio-dia UTC evita virar o dia por causa de fuso
   return initials[new Date(`${isoDate}T12:00:00Z`).getUTCDay()];
 }
-
-/** Texto do streak para a tela de resultado. */
-export function streakMessage(current: number): string {
-  if (current <= 0) return "Estude hoje para começar seu streak.";
-  if (current === 1) return "Streak iniciado: 1 dia.";
-  return `Streak mantido! ${current} dias seguidos.`;
-}
