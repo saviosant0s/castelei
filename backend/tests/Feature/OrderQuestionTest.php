@@ -126,6 +126,47 @@ class OrderQuestionTest extends TestCase
         ])->assertOk()->assertJsonPath('is_correct', false);
     }
 
+    public function test_a_questao_de_associar_entrega_a_direita_embaralhada(): void
+    {
+        /*
+        | Mesma armadilha da questão de ordenar: o gabarito é o alinhamento
+        | entre as duas colunas. Entregar a direita na ordem em que foi
+        | escrita mostraria os pares prontos.
+        */
+        $lesson = $this->makeLesson(8);
+        $question = $lesson->questions()->where('position', 1)->first();
+        $question->update([
+            'format' => Question::FORMAT_MATCH,
+            'options' => [],
+            'pairs' => [
+                ['left' => 'open', 'right' => 'CreateFile'],
+                ['left' => 'read', 'right' => 'ReadFile'],
+                ['left' => 'close', 'right' => 'CloseHandle'],
+            ],
+        ]);
+
+        Sanctum::actingAs(User::factory()->create(['plan' => 'pro']));
+        $resposta = $this->postJson("/api/lessons/{$lesson->id}/attempts")->assertCreated();
+
+        $direita = ['CreateFile', 'ReadFile', 'CloseHandle'];
+
+        $this->assertSame(['open', 'read', 'close'], $resposta->json('questions.0.prompts'));
+        $this->assertEqualsCanonicalizing($direita, $resposta->json('questions.0.options'));
+        $this->assertNotSame($direita, $resposta->json('questions.0.options'));
+
+        // Ligar cada esquerda ao seu par acerta.
+        $entregues = $resposta->json('questions.0.options');
+        $certa = array_map(fn (string $par) => array_search($par, $entregues, true), $direita);
+
+        $this->postJson("/api/attempts/{$resposta->json('attempt.id')}/answers", [
+            'question_id' => $question->id,
+            'ordering' => $certa,
+            'seconds' => 12,
+        ])->assertOk()
+            ->assertJsonPath('is_correct', true)
+            ->assertJsonPath('correct_pairs.0.right', 'CreateFile');
+    }
+
     public function test_o_embaralhamento_nunca_devolve_a_ordem_certa(): void
     {
         // 1 em 24 dos sorteios de quatro passos cai na ordem certa. Sem a

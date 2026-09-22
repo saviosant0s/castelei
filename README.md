@@ -31,7 +31,7 @@ castelei/
 - Matérias rotativas no plano grátis (só há 2 matérias)
 - IA e login com Google
 
-As questões têm dois formatos. O padrão é `choice`: cinco alternativas e um `correct_index`. O outro é `format: "order"` — pôr os passos na ordem, onde as `options` são os passos **escritos na ordem certa** (o app embaralha ao mostrar) e não existe `correct_index`. Use `order` onde a lição ensina uma sequência, com três a seis passos.
+As questões têm três formatos. O padrão é `choice`: cinco alternativas e um `correct_index`. `format: "order"` é pôr os passos na ordem, onde as `options` são os passos **escritos na ordem certa** (o app embaralha ao mostrar) e não existe `correct_index`; use de três a seis passos. `format: "match"` é ligar os pares: em vez de `options`, traz `pairs` com `{left, right}` (de três a cinco duplas), e o app embaralha a coluna da direita.
 
 Decisão de conteúdo: as questões são **originais**, escritas no estilo de prova, e não trazem a informação "apareceu N vezes no ENEM" do wireframe. Essa estatística exigiria uma base verificada de provas reais, que ainda não existe.
 
@@ -78,7 +78,7 @@ Uma etapa tem:
 |---|---|
 | `kind` | `idea` (analogia inicial, sempre a 1ª), `explain`, `exam` (uma só), `pitfall` (uma só), `recap` (sempre a última) |
 | `title`, `body` | título curto e parágrafos curtos (no máximo 75 palavras somadas) |
-| `example` | exemplo resolvido: `label` e `lines` (uma linha por passo) |
+| `example` | exemplo resolvido: `label`, `lines` (uma por passo) e `ordered` — marque quando trocar duas linhas de lugar estragaria o exemplo, e a tela desenha os passos numerados |
 | `bullets` | lista de itens |
 | `terms` | palavras novas explicadas nesta etapa (`word`, `meaning`) |
 | `figure` | figura SVG do app: `src` (em `frontend/public/figuras/`), `alt` (texto alternativo descritivo) e `caption` |

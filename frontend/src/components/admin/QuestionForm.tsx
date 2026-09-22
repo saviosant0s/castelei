@@ -8,12 +8,14 @@ import { Card } from "@/components/ui";
 import { adminFetch } from "@/lib/admin-client";
 import { ApiError, messageOf } from "@/lib/client";
 import type { AdminQuestion } from "@/lib/admin-types";
+import type { QuestionFormat } from "@/lib/types";
 
 const VAZIA = {
   topic: "",
   format: "choice" as const,
   statement: "",
   options: ["", "", "", "", ""],
+  pairs: null,
   correct_index: 0,
   explanation: "",
   pitfall: "",
@@ -43,8 +45,16 @@ export function QuestionForm({ question, lessonId, onDone, onCancel }: Props) {
   const [statement, setStatement] = useState(inicial.statement);
   const [options, setOptions] = useState<string[]>([...inicial.options]);
   const [correct, setCorrect] = useState(inicial.correct_index);
-  const [format, setFormat] = useState<"choice" | "order">(inicial.format ?? "choice");
+  const [format, setFormat] = useState<QuestionFormat>(inicial.format ?? "choice");
+  const [pairs, setPairs] = useState<{ left: string; right: string }[]>(
+    inicial.pairs ?? [
+      { left: "", right: "" },
+      { left: "", right: "" },
+      { left: "", right: "" },
+    ],
+  );
   const ordenar = format === "order";
+  const associar = format === "match";
   const [explanation, setExplanation] = useState(inicial.explanation);
   const [pitfall, setPitfall] = useState(inicial.pitfall ?? "");
 
@@ -71,8 +81,7 @@ export function QuestionForm({ question, lessonId, onDone, onCancel }: Props) {
       topic,
       format,
       statement,
-      options,
-      correct_index: correct,
+      ...(associar ? { pairs } : { options, correct_index: correct }),
       explanation,
       pitfall: pitfall.trim() === "" ? null : pitfall,
     };
@@ -123,6 +132,7 @@ export function QuestionForm({ question, lessonId, onDone, onCancel }: Props) {
           {([
             ["choice", "Escolher uma alternativa", "Cinco opções, uma certa. É o formato da prova."],
             ["order", "Pôr os passos na ordem", "O app embaralha. Escreva na ordem CERTA."],
+            ["match", "Ligar os pares", "Cada item da esquerda com o seu par."],
           ] as const).map(([valor, rotulo, dica]) => (
             <label
               key={valor}
@@ -144,7 +154,61 @@ export function QuestionForm({ question, lessonId, onDone, onCancel }: Props) {
         </div>
       </fieldset>
 
-      <fieldset className="space-y-2">
+      {associar && (
+        <fieldset className="space-y-2">
+          <legend className="text-sm text-content-subtle">
+            Os pares — a coluna da direita é embaralhada na tela
+          </legend>
+
+          {campos.pairs?.[0] && <p className="text-sm text-brick">{campos.pairs[0]}</p>}
+
+          {pairs.map((par, index) => (
+            <div key={index} className="flex items-center gap-2">
+              <input
+                value={par.left}
+                onChange={(event) =>
+                  setPairs((atuais) => atuais.map((p, i) => (i === index ? { ...p, left: event.target.value } : p)))
+                }
+                placeholder={`Esquerda ${index + 1}`}
+                className="field min-w-0 flex-1"
+              />
+              <span aria-hidden="true" className="shrink-0 text-content-subtle">
+                →
+              </span>
+              <input
+                value={par.right}
+                onChange={(event) =>
+                  setPairs((atuais) => atuais.map((p, i) => (i === index ? { ...p, right: event.target.value } : p)))
+                }
+                placeholder={`Direita ${index + 1}`}
+                className="field min-w-0 flex-1"
+              />
+              {pairs.length > 3 && (
+                <button
+                  type="button"
+                  onClick={() => setPairs((atuais) => atuais.filter((_, i) => i !== index))}
+                  aria-label={`Apagar o par ${index + 1}`}
+                  className="shrink-0 rounded p-2 text-content-faint transition hover:text-brick"
+                >
+                  <Trash2 className="size-4" aria-hidden="true" />
+                </button>
+              )}
+            </div>
+          ))}
+
+          {pairs.length < 5 && (
+            <button
+              type="button"
+              onClick={() => setPairs((atuais) => [...atuais, { left: "", right: "" }])}
+              className="inline-flex items-center gap-2 text-base font-bold underline underline-offset-4"
+            >
+              <Plus className="size-4" aria-hidden="true" /> Mais um par
+            </button>
+          )}
+        </fieldset>
+      )}
+
+      <fieldset className={`space-y-2 ${associar ? "hidden" : ""}`}>
         <legend className="text-sm text-content-subtle">
           {ordenar ? "Os passos, NA ORDEM CERTA — o app embaralha na tela" : "Alternativas — marque a certa"}
         </legend>

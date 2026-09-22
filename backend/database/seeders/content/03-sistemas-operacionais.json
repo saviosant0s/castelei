@@ -638,7 +638,8 @@
               "você aperta uma tecla",
               "o driver do teclado avisa o SO",
               "o SO entrega a tecla ao programa certo"
-            ]
+            ],
+            "ordered": true
           },
           "terms": [
             {
@@ -1420,13 +1421,14 @@
           "example": {
             "label": "Salvar um arquivo",
             "lines": [
-              "1. o programa pede: escrever no arquivo",
-              "2. uma função pronta prepara o pedido",
-              "3. uma instrução especial entrega o pedido ao SO",
-              "4. o SO faz o serviço",
-              "5. o processador volta ao modo usuário",
-              "6. o programa recebe o resultado"
-            ]
+              "o programa pede: escrever no arquivo",
+              "uma função pronta prepara o pedido",
+              "uma instrução especial entrega o pedido ao SO",
+              "o SO faz o serviço",
+              "o processador volta ao modo usuário",
+              "o programa recebe o resultado"
+            ],
+            "ordered": true
           },
           "terms": [
             {
@@ -1925,7 +1927,8 @@
               "o shell usa fork: agora há um pai e um filho",
               "o filho usa execve: vira o programa",
               "o pai usa waitpid: espera o filho terminar"
-            ]
+            ],
+            "ordered": true
           },
           "terms": [
             {
@@ -2171,18 +2174,29 @@
           "pitfall": "O 3 é o primeiro arquivo que o programa abre, e não a tela."
         },
         {
-          "topic": "Abrir no Windows",
-          "statement": "Qual chamada da API do Windows corresponde, de forma geral, ao open do Linux?",
-          "options": [
-            "ReadFile",
-            "CloseHandle",
-            "CreateProcess",
-            "CreateFile",
-            "WriteFile"
+          "topic": "Os nomes no Windows",
+          "format": "match",
+          "statement": "Ligue cada pedido do Linux ao nome que o Windows dá a ele.",
+          "pairs": [
+            {
+              "left": "open",
+              "right": "CreateFile"
+            },
+            {
+              "left": "read",
+              "right": "ReadFile"
+            },
+            {
+              "left": "close",
+              "right": "CloseHandle"
+            },
+            {
+              "left": "fork + execve",
+              "right": "CreateProcess"
+            }
           ],
-          "correct_index": 3,
-          "explanation": "CreateFile abre (ou cria) um arquivo e devolve um handle. É o parente do open.",
-          "pitfall": "O nome CreateFile engana: ela também serve para abrir arquivos que já existem."
+          "explanation": "As ideias são as mesmas nos dois sistemas. O que muda é o nome, e o Windows sempre junta um verbo a um substantivo.",
+          "pitfall": "O nome CreateFile engana. Ela também serve para abrir arquivo que já existe."
         },
         {
           "topic": "Criar processo no Windows",
@@ -4059,7 +4073,8 @@
               "o caminho A lê o valor 10",
               "o caminho B lê o valor 10 também",
               "os dois gravam 11, e uma das somas se perde"
-            ]
+            ],
+            "ordered": true
           }
         },
         {
@@ -4622,10 +4637,11 @@
           "example": {
             "label": "O que o processador faz de verdade",
             "lines": [
-              "1. ler o valor que está em contador",
-              "2. somar 1 ao que leu",
-              "3. gravar o resultado de volta"
-            ]
+              "ler o valor que está em contador",
+              "somar 1 ao que leu",
+              "gravar o resultado de volta"
+            ],
+            "ordered": true
           }
         },
         {
@@ -4641,7 +4657,8 @@
               "B lê 10, soma e grava 11",
               "A volta, soma no valor que já tinha lido e grava 11",
               "duas somas foram feitas, e o contador só andou uma"
-            ]
+            ],
+            "ordered": true
           }
         },
         {
@@ -5064,7 +5081,8 @@
               "A é interrompido antes de dormir de fato",
               "B manda acordar A, que ainda não dormiu",
               "A volta, dorme, e não há mais ninguém para acordá-lo"
-            ]
+            ],
+            "ordered": true
           }
         },
         {
@@ -5331,7 +5349,8 @@
               "o contador vai de 0 para 1",
               "A chega depois e faz down",
               "A vê 1, passa direto e não dorme"
-            ]
+            ],
+            "ordered": true
           }
         },
         {
@@ -6442,7 +6461,8 @@
               "o programa A grava o saldo no endereço 1000",
               "o programa B grava a data no endereço 1000",
               "o programa A lê o saldo e encontra uma data"
-            ]
+            ],
+            "ordered": true
           }
         },
         {
@@ -8817,7 +8837,8 @@
               "tirar o nome da pasta",
               "liberar a ficha do arquivo",
               "marcar os pedaços dele como livres"
-            ]
+            ],
+            "ordered": true
           }
         },
         {

@@ -158,7 +158,10 @@ class ContentImporter
                 'topic' => $questionData['topic'],
                 'format' => $questionData['format'] ?? Question::FORMAT_CHOICE,
                 'statement' => $questionData['statement'],
-                'options' => $questionData['options'],
+                // Na questão de associar não há alternativas: os pares é que
+                // são o conteúdo, e `options` fica vazia de propósito.
+                'options' => $questionData['options'] ?? [],
+                'pairs' => $questionData['pairs'] ?? null,
                 // Na questão de ordenar não existe alternativa certa: o
                 // gabarito é a própria ordem das opções. A coluna não aceita
                 // nulo, então fica em zero e ninguém a lê.

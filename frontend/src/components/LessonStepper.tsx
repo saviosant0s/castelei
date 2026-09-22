@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { LessonVideo } from "@/components/LessonVideo";
 import { StepCode } from "@/components/StepCode";
+import { StepExample } from "@/components/StepExample";
 import { StepTable } from "@/components/StepTable";
 import { pluralize } from "@/lib/format";
 import { clearSpot, saveSpot, useSpot } from "@/lib/lesson-progress";
@@ -206,25 +207,7 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
 
         {step.video && <LessonVideo video={step.video} />}
 
-        {step.example && (
-          <div className="mt-6 rounded-2xl bg-surface-raised p-5 shadow-lift">
-            <p className="label-mono">{step.example.label}</p>
-            <ol className="mt-3 space-y-2 font-mono text-base">
-              {step.example.lines.map((line, i) => (
-                <li
-                  key={i}
-                  className={
-                    i === step.example!.lines.length - 1
-                      ? "font-medium"
-                      : "text-ink/80"
-                  }
-                >
-                  {line}
-                </li>
-              ))}
-            </ol>
-          </div>
-        )}
+        {step.example && <StepExample example={step.example} />}
 
         {step.table && <StepTable table={step.table} />}
 

@@ -73,7 +73,17 @@ export interface LessonStep {
   body: string[];
   bullets?: string[];
   /** exemplo resolvido, uma linha por passo */
-  example?: { label: string; lines: string[] };
+  example?: {
+    label: string;
+    lines: string[];
+    /**
+     * As linhas são uma SEQUÊNCIA, e não uma lista.
+     *
+     * Trocar duas de lugar estragaria o exemplo? Então é `ordered`, e a tela
+     * desenha a escada numerada em vez de linhas soltas. Ver `StepExample`.
+     */
+    ordered?: boolean;
+  };
   /** palavras novas explicadas nesta etapa */
   terms?: { word: string; meaning: string }[];
   /** figura (SVG do próprio app), com texto alternativo e legenda */
@@ -102,8 +112,10 @@ export interface LessonDetail {
  * `choice`: cinco alternativas, uma certa. O formato da prova.
  * `order`: pôr os passos na ordem. As opções chegam EMBARALHADAS pelo
  * servidor — a ordem certa é o gabarito, e não pode viajar até o navegador.
+ * `match`: ligar cada item de `prompts` ao seu par em `options`, que também
+ * chega embaralhado.
  */
-export type QuestionFormat = "choice" | "order";
+export type QuestionFormat = "choice" | "order" | "match";
 
 export interface PracticeQuestion {
   id: number;
@@ -112,6 +124,8 @@ export interface PracticeQuestion {
   topic: string;
   statement: string;
   options: string[];
+  /** Só na questão de associar: a coluna da esquerda, na ordem escrita. */
+  prompts?: string[];
 }
 
 export type AttemptKind = "lesson" | "exam";
@@ -131,6 +145,8 @@ export interface AnswerResult {
   correct_index: number;
   /** Na questão de ordenar, a sequência certa por extenso. Null nas outras. */
   correct_order: string[] | null;
+  /** Na questão de associar, os pares certos. Null nas outras. */
+  correct_pairs: { left: string; right: string }[] | null;
   explanation: string;
   pitfall: string | null;
   /** XP ganho nesta resposta; null quando o plano não mostra gamificação */

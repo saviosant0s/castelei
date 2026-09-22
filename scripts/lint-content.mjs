@@ -356,14 +356,36 @@ for (const file of arquivos) {
       | resposta é uma alternativa), e escrever a ordem já embaralhada,
       | achando que o arquivo é o que a pessoa vai ver.
       */
-      if (q.format && q.format !== "choice" && q.format !== "order") {
-        fail(W, `formato inválido “${q.format}”: use “choice” ou “order”`);
+      if (q.format && !["choice", "order", "match"].includes(q.format)) {
+        fail(W, `formato inválido “${q.format}”: use “choice”, “order” ou “match”`);
+      }
+      /*
+      | A questão de associar.
+      |
+      | Ela não tem alternativas: tem DUPLAS, e o app embaralha a coluna da
+      | direita. Item repetido de um lado torna a questão impossível de
+      | acertar com certeza, porque o app só conhece um gabarito.
+      */
+      if (q.format === "match") {
+        const pares = q.pairs ?? [];
+        if (q.options) fail(W, "questão de associar não tem alternativas: tire o options");
+        if (q.correct_index !== undefined) fail(W, "questão de associar não tem alternativa certa: tire o correct_index");
+        if (pares.length < 3) fail(W, "questão de associar precisa de pelo menos três pares");
+        if (pares.length > 5) warn(W, `questão de associar com ${pares.length} pares: acima de cinco não cabe na tela`);
+        for (const lado of ["left", "right"]) {
+          const valores = pares.map((p) => (p[lado] ?? "").trim());
+          if (new Set(valores).size !== valores.length) fail(W, `há itens repetidos na coluna da ${lado === "left" ? "esquerda" : "direita"}`);
+          valores.forEach((v) => checkProse(`${W} (par)`, v));
+        }
       }
       if (q.format === "order") {
         if (q.correct_index !== undefined) fail(W, "questão de ordenar não tem alternativa certa: tire o correct_index");
         if ((q.options ?? []).length < 3) fail(W, "questão de ordenar precisa de pelo menos três passos");
         if ((q.options ?? []).length > 6) warn(W, `questão de ordenar com ${q.options.length} passos: acima de seis vira paciência`);
       }
+      const pares = (q.pairs ?? []).flatMap((p) => [p.left ?? "", p.right ?? ""]).join(" \n ");
+      if (pares) checkJargon(`${W} (par)`, pares, lessonTerms, jargon);
+
       for (const field of ["explanation", "pitfall"]) {
         checkProse(`${W} (${field})`, q[field] ?? "");
         checkJargon(`${W} (${field})`, q[field] ?? "", lessonTerms, jargon);

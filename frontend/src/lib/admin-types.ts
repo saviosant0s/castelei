@@ -50,6 +50,8 @@ export interface AdminQuestion {
   topic: string;
   statement: string;
   options: string[];
+  /** Só na questão de associar: as duplas. Null nos outros formatos. */
+  pairs: { left: string; right: string }[] | null;
   correct_index: number;
   explanation: string;
   pitfall: string | null;

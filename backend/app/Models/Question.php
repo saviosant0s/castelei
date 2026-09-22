@@ -13,7 +13,10 @@ class Question extends Model
     /** Pôr os passos na ordem. Mede sequência, que a múltipla escolha não mede. */
     public const FORMAT_ORDER = 'order';
 
-    public const FORMATS = [self::FORMAT_CHOICE, self::FORMAT_ORDER];
+    /** Ligar cada item da esquerda ao seu par na direita. */
+    public const FORMAT_MATCH = 'match';
+
+    public const FORMATS = [self::FORMAT_CHOICE, self::FORMAT_ORDER, self::FORMAT_MATCH];
 
     protected $guarded = [];
 
@@ -21,6 +24,7 @@ class Question extends Model
     {
         return [
             'options' => 'array',
+            'pairs' => 'array',
             'correct_index' => 'integer',
         ];
     }

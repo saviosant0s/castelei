@@ -190,6 +190,26 @@ export function ExampleFields({ valor, onChange }: Props<"example">) {
         onChange={(e) => onChange({ ...valor, lines: paraLinhas(e.target.value) })}
         hint="Uma linha por passo. A última costuma ser o resultado."
       />
+      {/*
+        A pergunta é feita do jeito que se responde sem pensar: trocar duas
+        linhas de lugar estragaria o exemplo? Perguntar "é ordenado?" faria
+        parar para decidir o que a palavra quer dizer.
+      */}
+      <label className="flex items-start gap-3">
+        <input
+          type="checkbox"
+          checked={valor.ordered ?? false}
+          onChange={(e) => onChange({ ...valor, ordered: e.target.checked })}
+          className="mt-1 size-5 shrink-0 accent-[color:var(--color-sky)]"
+        />
+        <span>
+          <span className="block text-base font-bold">É uma sequência</span>
+          <span className="block text-sm text-content-secondary">
+            Marque se trocar duas linhas de lugar estragaria o exemplo. A tela desenha os passos numerados, ligados
+            por um traço.
+          </span>
+        </span>
+      </label>
     </div>
   );
 }
