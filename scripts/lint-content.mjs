@@ -116,7 +116,7 @@ const JARGON = [
   ["daemon", /\bdaemons?\b/i, "v"], ["systemd", /\bsystemd\b|\bsystemctl\b/i, "v"],
   ["log", /\blogs?\b/i, "v"], ["métrica", /\bm(é|e)tricas?\b/i, "v"],
 
-  ["partição", /\bparti(ç|c)(ão|ões)\b/i, "v"], ["montar (disco)", /\bmontad(o|a)s?\b|\bponto de montagem\b/i, "v"],
+  ["partição", /\bparti(ç|c)(ão|ões)\b/i, "v"], ["ponto de montagem", /\bponto de montagem\b/i, "v"],  // o verbo "montar" é comum demais: "a página é montada" não é disco
   ["swap", /\bswap\b/i, "v"], ["inode", /\bi-?nodes?\b/i, "v"],
 
   ["servidor web", /\bservidor(es)? web\b/i, "v"], ["Nginx", /\bnginx\b/i, "v"], ["Apache", /\bapache\b/i, "v"],

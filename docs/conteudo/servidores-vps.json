@@ -2125,6 +2125,2003 @@
      "pitfall": "Fechar de vez tranca você junto, e mudar de porta apenas atrasa uma varredura, sem impedi-la."
     }
    ]
+  },
+  {
+   "slug": "processos-servicos-systemd",
+   "title": "Processos, serviços e systemd",
+   "module": "A máquina por dentro",
+   "summary": "Como um programa fica ligado sozinho, volta depois de reiniciar e conta o que aconteceu.",
+   "steps": [
+    {
+     "kind": "idea",
+     "title": "Programa que você abre e programa que fica",
+     "body": [
+      "No seu computador você abre o programa, usa e fecha. Ele depende de você.",
+      "Numa máquina que atende pedidos, ninguém abre nada. O programa precisa estar ligado antes de o primeiro pedido chegar.",
+      "E precisa voltar sozinho se a máquina reiniciar de madrugada."
+     ],
+     "terms": [
+      {
+       "word": "Servidor",
+       "meaning": "o computador que fica esperando pedidos e devolve respostas."
+      },
+      {
+       "word": "Processo",
+       "meaning": "um programa em execução. Ele tem um número e ocupa memória."
+      },
+      {
+       "word": "Serviço",
+       "meaning": "um programa que fica ligado atendendo pedidos, sem ninguém abrir nada."
+      },
+      {
+       "word": "Permissão",
+       "meaning": "a regra que diz quem pode ler, gravar ou executar cada arquivo."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Quem liga todo o resto",
+     "body": [
+      "Quando a máquina liga, um programa nasce primeiro e ele acorda todos os outros.",
+      "Ele também vigia: se um serviço morre, ele religa. E guarda o que cada um escreveu.",
+      "Nos sistemas de hoje esse programa tem um nome só, e um comando para conversar com ele."
+     ],
+     "terms": [
+      {
+       "word": "systemd",
+       "meaning": "o programa que liga, vigia e desliga os serviços da máquina."
+      },
+      {
+       "word": "Daemon",
+       "meaning": "o nome antigo de um serviço. É o d no fim de nomes como sshd."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Duas perguntas, e as duas precisam de sim",
+     "body": [
+      "Existem duas coisas diferentes, e confundi-las é o erro mais comum aqui.",
+      "Uma é se o programa está rodando agora. A outra é se ele volta sozinho quando a máquina reinicia.",
+      "Dá para ter uma sem a outra, e é aí que o serviço some de madrugada."
+     ],
+     "figure": {
+      "src": "/figuras/servidores/srv-servico-systemd.svg",
+      "alt": "Duas perguntas independentes sobre um serviço: se ele está rodando agora e se ele volta sozinho quando a máquina reinicia, formando quatro combinações possíveis",
+      "caption": "Serviço que some depois de reiniciar esqueceu de ser marcado para voltar."
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Os cinco comandos do dia a dia",
+     "body": [
+      "Você vai usar estes cinco o tempo todo. Vale decorar agora.",
+      "O primeiro deles é o único que você roda antes de qualquer outro."
+     ],
+     "terms": [
+      {
+       "word": "sudo",
+       "meaning": "o jeito de rodar um comando com poder de administrador, sem viver com ele."
+      }
+     ],
+     "table": {
+      "label": "O que você vai digitar toda semana",
+      "headers": [
+       "O que faz",
+       "Comando"
+      ],
+      "rows": [
+       [
+        "Ver como está",
+        "sudo systemctl status nginx"
+       ],
+       [
+        "Ligar agora",
+        "sudo systemctl start nginx"
+       ],
+       [
+        "Desligar agora",
+        "sudo systemctl stop nginx"
+       ],
+       [
+        "Fazer voltar no boot",
+        "sudo systemctl enable nginx"
+       ],
+       [
+        "Reler a configuração sem cair",
+        "sudo systemctl reload nginx"
+       ]
+      ],
+      "mono": true
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Recarregar e reiniciar não são a mesma coisa",
+     "body": [
+      "Reiniciar mata o programa e sobe outro. Quem estava sendo atendido perde a conexão.",
+      "Recarregar pede para o programa reler a configuração sem sair do ar.",
+      "Nem todo programa aceita recarregar. Quando aceita, é sempre a escolha melhor."
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Tudo que o programa escreve vai para um lugar só",
+     "body": [
+      "Você não precisa caçar arquivo de registro por pasta nenhuma.",
+      "Quem liga os serviços também guarda o que cada um escreveu, e devolve isso filtrado.",
+      "É a primeira coisa a olhar quando algo não sobe."
+     ],
+     "terms": [
+      {
+       "word": "Log",
+       "meaning": "o caderno em que cada programa anota o que fez e o que deu errado."
+      }
+     ],
+     "code": {
+      "label": "Lendo o caderno de um serviço",
+      "text": "journalctl -u nginx -n 50      # as 50 últimas linhas\njournalctl -u nginx -f         # acompanhando ao vivo\njournalctl -u nginx --since '10 min ago'"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Transformando o seu programa em serviço",
+     "body": [
+      "Seu próprio programa vira serviço com um arquivo curto de texto.",
+      "Três linhas importam: o que executar, com qual conta e o que fazer se ele morrer.",
+      "Nunca rode a sua aplicação com poder de administrador. Crie uma conta só para ela."
+     ],
+     "code": {
+      "label": "/etc/systemd/system/minhaapp.service",
+      "text": "[Service]\nExecStart=/usr/bin/node /var/app/server.js\nUser=app\nRestart=always\n\n[Install]\nWantedBy=multi-user.target"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Quando ele reinicia sem parar",
+     "body": [
+      "Marcar para religar sempre tem um efeito colateral. Se o programa quebra ao subir, ele quebra em laço.",
+      "O caderno enche de tentativas, e o disco pode encher junto.",
+      "Por isso existe um limite de tentativas por janela de tempo."
+     ],
+     "example": {
+      "label": "Exemplo: o serviço não sobe",
+      "lines": [
+       "sudo systemctl status minhaapp  -> mostra o estado e as últimas linhas.",
+       "journalctl -u minhaapp -n 80    -> mostra o erro de verdade.",
+       "Leia a primeira falha, não a última.",
+       "As seguintes costumam ser consequência dela."
+      ]
+     }
+    },
+    {
+     "kind": "exam",
+     "title": "Como cai na prova",
+     "body": [
+      "O systemd é o gerenciador de inicialização e de serviços das distribuições atuais, e usa unidades para descrevê-los.",
+      "O comando start altera o estado atual, enquanto enable altera o comportamento na inicialização do sistema.",
+      "O reload solicita releitura de configuração sem encerrar o processo, ao contrário do restart."
+     ]
+    },
+    {
+     "kind": "pitfall",
+     "title": "Pegadinhas clássicas",
+     "body": [
+      "Onde quase todo mundo tropeça pelo menos uma vez:"
+     ],
+     "bullets": [
+      "Ligar o serviço e esquecer de marcá-lo para voltar no boot.",
+      "Reiniciar quando bastava recarregar, derrubando quem estava conectado.",
+      "Rodar a própria aplicação com poder de administrador.",
+      "Ler a última linha do caderno em vez da primeira falha."
+     ]
+    },
+    {
+     "kind": "recap",
+     "title": "Resumo",
+     "body": [
+      "Serviço é programa que fica ligado sem ninguém abrir, e que volta sozinho depois de reiniciar.",
+      "Ligar agora e voltar no boot são duas ordens diferentes. Faltando a segunda, ele some de madrugada.",
+      "Tudo que ele escreve fica num lugar só, e é por ali que a investigação começa."
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "topic": "Serviço e boot",
+     "statement": "Um serviço foi iniciado e funcionava bem. Depois de um reinício da máquina, ele não subiu. A causa mais provável é:",
+     "options": [
+      "Ele foi iniciado, mas não foi marcado para voltar no boot",
+      "O arquivo do programa foi apagado durante o reinício",
+      "O sistema não permite serviços em máquinas virtuais",
+      "A configuração precisa ser recarregada a cada acesso",
+      "O disco foi remontado em outro ponto da árvore"
+     ],
+     "correct_index": 0,
+     "explanation": "Iniciar muda apenas o estado de agora. Voltar sozinho depois de reiniciar é uma segunda ordem, e sem ela o serviço não é chamado no boot.",
+     "pitfall": "Como o serviço funcionou perfeitamente por dias, a investigação procura causa no reinício em si."
+    },
+    {
+     "topic": "Reload e restart",
+     "statement": "Uma mudança foi feita no arquivo de configuração de um servidor web com visitantes conectados. A ação que aplica a mudança sem derrubá-los é:",
+     "options": [
+      "Recarregar o serviço",
+      "Reiniciar o serviço",
+      "Reiniciar a máquina",
+      "Parar e iniciar o serviço",
+      "Desabilitar e habilitar o serviço"
+     ],
+     "correct_index": 0,
+     "explanation": "Recarregar pede ao programa que releia a configuração mantendo-se no ar. Reiniciar encerra o processo, e toda conexão em andamento cai junto.",
+     "pitfall": "Parar e iniciar é exatamente um reinício escrito em dois passos, com o mesmo efeito sobre quem está conectado."
+    },
+    {
+     "topic": "Investigação de falha",
+     "statement": "Um serviço próprio não sobe. O primeiro lugar a olhar é:",
+     "options": [
+      "O registro daquele serviço, pela ferramenta que o sistema oferece",
+      "O arquivo de configuração do servidor web",
+      "O espaço livre em memória",
+      "A lista de portas abertas na portaria",
+      "O histórico de comandos do administrador"
+     ],
+     "correct_index": 0,
+     "explanation": "Quem gerencia os serviços também guarda tudo que cada um escreveu. É ali que a mensagem de erro real aparece, em vez de um aviso genérico.",
+     "pitfall": "As outras alternativas são checagens válidas, mas todas vêm depois de ler o que o programa tentou dizer."
+    },
+    {
+     "topic": "Conta de execução",
+     "statement": "Ao transformar uma aplicação própria em serviço, a conta usada para executá-la deve ser:",
+     "options": [
+      "Uma conta comum criada especificamente para a aplicação",
+      "A conta que pode tudo, para evitar problemas de permissão",
+      "A conta pessoal do administrador",
+      "Uma conta diferente a cada reinício",
+      "Qualquer conta, já que o sistema isola serviços automaticamente"
+     ],
+     "correct_index": 0,
+     "explanation": "Se a aplicação for invadida, o atacante herda exatamente o poder da conta que a executa. Uma conta dedicada e sem privilégios limita o estrago.",
+     "pitfall": "Usar a conta total resolve todo erro de permissão de imediato, e é por isso que essa escolha errada é tão comum."
+    },
+    {
+     "topic": "Reinício em laço",
+     "statement": "Um serviço marcado para religar sempre quebra logo ao subir. O efeito colateral esperado é:",
+     "options": [
+      "Tentativas repetidas que enchem o registro e podem encher o disco",
+      "O sistema desabilita todos os outros serviços",
+      "A máquina reinicia sozinha",
+      "A configuração volta automaticamente à versão anterior",
+      "O serviço passa a rodar com poder de administrador"
+     ],
+     "correct_index": 0,
+     "explanation": "Religar sempre faz exatamente isso: cada morte gera uma nova tentativa, e cada tentativa escreve no registro. Daí existir limite por janela de tempo.",
+     "pitfall": "A ideia de reversão automática não existe aqui: o sistema religa a mesma versão quebrada indefinidamente."
+    },
+    {
+     "topic": "Processo e serviço",
+     "statement": "A diferença entre um processo comum e um serviço está em que o serviço:",
+     "options": [
+      "Fica ligado sem ninguém abri-lo e é gerenciado pelo sistema",
+      "Ocupa menos memória que um processo comum",
+      "Não aparece na lista de processos da máquina",
+      "Só pode ser executado pela conta que pode tudo",
+      "Roda em uma máquina virtual separada"
+     ],
+     "correct_index": 0,
+     "explanation": "Serviço é um processo com uma diferença de ciclo de vida: ele é iniciado pelo sistema, vigiado por ele e pensado para não depender de sessão humana.",
+     "pitfall": "Um serviço aparece sim na lista de processos, porque continua sendo um processo comum por dentro."
+    },
+    {
+     "topic": "Comandos",
+     "statement": "Para garantir que um serviço esteja rodando agora e também depois do próximo reinício, é necessário:",
+     "options": [
+      "Executar as duas ordens: a que inicia e a que habilita no boot",
+      "Executar apenas a ordem que inicia",
+      "Executar apenas a ordem que habilita no boot",
+      "Reiniciar a máquina após instalar o programa",
+      "Editar manualmente a lista de programas do boot"
+     ],
+     "correct_index": 0,
+     "explanation": "As duas ordens atuam em momentos diferentes. Uma resolve o agora e a outra resolve o futuro, e nenhuma implica a outra.",
+     "pitfall": "Habilitar sozinho não liga nada agora, o que faz muita gente concluir que o comando falhou."
+    },
+    {
+     "topic": "Leitura de registro",
+     "statement": "Ao investigar uma falha num registro com dezenas de linhas de erro, a linha mais informativa costuma ser:",
+     "options": [
+      "A primeira falha da sequência",
+      "A última linha escrita",
+      "A linha com a palavra mais técnica",
+      "A linha de maior comprimento",
+      "A primeira linha do arquivo inteiro"
+     ],
+     "correct_index": 0,
+     "explanation": "Falhas em cadeia são comuns: a primeira quebra e as seguintes são consequência dela. Corrigir a origem apaga toda a sequência de uma vez.",
+     "pitfall": "A última linha é a que está visível na tela e por isso vira o foco natural, mesmo sendo a mais derivada."
+    }
+   ]
+  },
+  {
+   "slug": "armazenamento-permissoes",
+   "title": "Discos, armazenamento, usuários e permissões",
+   "module": "A máquina por dentro",
+   "summary": "Quem pode ler o quê, onde o espaço acaba, e por que 777 nunca é a resposta.",
+   "steps": [
+    {
+     "kind": "idea",
+     "title": "Uma máquina com várias pessoas dentro",
+     "body": [
+      "Uma máquina que atende pedidos tem várias contas. Você, o programa do site, o banco de dados.",
+      "Cada uma precisa enxergar só o que é dela. O programa do site não tem por que ler a sua pasta.",
+      "Esse recorte é escrito em cada arquivo, em nove letras."
+     ],
+     "terms": [
+      {
+       "word": "Servidor",
+       "meaning": "o computador que fica esperando pedidos e devolve respostas."
+      },
+      {
+       "word": "Permissão",
+       "meaning": "a regra que diz quem pode ler, gravar ou executar cada arquivo."
+      },
+      {
+       "word": "sudo",
+       "meaning": "o jeito de rodar um comando com poder de administrador, sem viver com ele."
+      },
+      {
+       "word": "Serviço",
+       "meaning": "um programa que fica ligado atendendo pedidos, sem ninguém abrir nada."
+      },
+      {
+       "word": "Banco de dados",
+       "meaning": "o programa que guarda os dados em ordem e sabe buscá-los depressa."
+      },
+      {
+       "word": "Chave privada",
+       "meaning": "o arquivo secreto que prova quem você é ao entrar numa máquina."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Três grupos de três letras",
+     "body": [
+      "As nove letras são três blocos. O dono, o grupo e todo o resto.",
+      "Em cada bloco, três direitos: ler, gravar e executar.",
+      "Em pasta o terceiro direito muda de sentido. Ele não executa nada: ele deixa entrar."
+     ],
+     "figure": {
+      "src": "/figuras/servidores/srv-permissoes.svg",
+      "alt": "As nove letras de permissão de um arquivo divididas em três grupos de três: dono, grupo e todos os outros, cada grupo com direito de ler, gravar e executar",
+      "caption": "Em pasta, o terceiro direito deixa entrar, e não executa."
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Os números que você vai ver por aí",
+     "body": [
+      "Cada bloco de três letras também é escrito como um número de 0 a 7.",
+      "Ler vale 4, gravar vale 2, executar vale 1. Some os que você quer.",
+      "Três números, um por bloco, e está escrita a regra inteira."
+     ],
+     "table": {
+      "label": "Os valores que resolvem quase tudo",
+      "headers": [
+       "Número",
+       "Letras",
+       "Quando usar"
+      ],
+      "rows": [
+       [
+        "644",
+        "rw-r--r--",
+        "arquivo comum de configuração"
+       ],
+       [
+        "600",
+        "rw-------",
+        "segredo: senha, chave privada"
+       ],
+       [
+        "755",
+        "rwxr-xr-x",
+        "pasta, ou programa que roda"
+       ],
+       [
+        "700",
+        "rwx------",
+        "pasta que só o dono abre"
+       ],
+       [
+        "777",
+        "rwxrwxrwx",
+        "nunca"
+       ]
+      ],
+      "mono": false
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Por que 777 nunca resolve",
+     "body": [
+      "Abrir tudo para todos faz o erro sumir na hora. É por isso que a tentação é grande.",
+      "Só que o problema real quase sempre era outro: o dono do arquivo estava errado.",
+      "E agora qualquer programa invadido na máquina grava ali."
+     ],
+     "example": {
+      "label": "Exemplo: a aplicação não grava na pasta de envios",
+      "lines": [
+       "Errado: sudo chmod 777 /var/app/uploads",
+       "Certo: descubra com qual conta a aplicação roda.",
+       "sudo chown -R app:app /var/app/uploads",
+       "sudo chmod 755 /var/app/uploads"
+      ]
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Onde o espaço acaba",
+     "body": [
+      "Disco cheio derruba serviço, e a mensagem raramente diz isso.",
+      "Dois lugares enchem sozinhos: o que os programas escrevem e o que o gerenciador de pacotes guarda.",
+      "Existe um segundo jeito de encher que o espaço livre não mostra."
+     ],
+     "terms": [
+      {
+       "word": "Inode",
+       "meaning": "a ficha de um arquivo. Cada arquivo gasta uma, e elas também acabam."
+      },
+      {
+       "word": "Gerenciador de pacotes",
+       "meaning": "o programa que busca, confere e instala a partir da coleção do sistema."
+      }
+     ],
+     "code": {
+      "label": "As duas contas de espaço",
+      "text": "df -h       # espaço livre em cada disco\ndf -i       # fichas livres: pode acabar antes do espaço\ndu -sh /var/* | sort -h   # quem está ocupando"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Disco novo não aparece sozinho",
+     "body": [
+      "Um disco acrescentado à máquina não vira pasta automaticamente.",
+      "Ele precisa ser formatado e pendurado num ponto da árvore. E precisa ser anotado para voltar no boot.",
+      "Sem a anotação, tudo funciona até o próximo reinício. Depois a pasta aparece vazia."
+     ],
+     "terms": [
+      {
+       "word": "Partição",
+       "meaning": "uma divisão do disco. Cada uma pode ser formatada de um jeito."
+      },
+      {
+       "word": "Ponto de montagem",
+       "meaning": "a pasta onde o disco fica pendurado na árvore."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "A memória de emergência que mora no disco",
+     "body": [
+      "Quando a memória acaba, o sistema empurra para o disco o que está parado.",
+      "Isso evita que programas sejam mortos. Em troca, tudo fica muito mais lento.",
+      "Usar bastante dessa reserva é sinal de que falta memória, não de que ela está funcionando."
+     ],
+     "terms": [
+      {
+       "word": "Swap",
+       "meaning": "o pedaço de disco usado como memória de emergência quando a de verdade acaba."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "O grupo resolve o que a conta sozinha não resolve",
+     "body": [
+      "Quando duas contas precisam do mesmo arquivo, não copie o arquivo nem abra para todos.",
+      "Coloque as duas num grupo e dê o direito ao grupo.",
+      "É assim que a aplicação e o porteiro dividem a pasta de arquivos do site."
+     ],
+     "code": {
+      "label": "Duas contas dividindo uma pasta",
+      "text": "sudo groupadd site\nsudo usermod -aG site app\nsudo usermod -aG site www-data\nsudo chgrp -R site /var/www && sudo chmod -R 750 /var/www"
+     }
+    },
+    {
+     "kind": "exam",
+     "title": "Como cai na prova",
+     "body": [
+      "As permissões dividem-se em três classes: proprietário, grupo e outros. Cada uma tem os bits de leitura, escrita e execução.",
+      "Em diretórios, o bit de execução autoriza a travessia, e não a execução de conteúdo.",
+      "O esgotamento de inodes provoca erro de disco cheio mesmo havendo espaço livre disponível."
+     ]
+    },
+    {
+     "kind": "pitfall",
+     "title": "Pegadinhas clássicas",
+     "body": [
+      "Os erros que mais aparecem em máquina de produção:"
+     ],
+     "bullets": [
+      "Resolver problema de gravação abrindo o arquivo para todo mundo.",
+      "Pendurar um disco e esquecer de anotá-lo para voltar no boot.",
+      "Olhar só o espaço livre quando as fichas de arquivo é que acabaram.",
+      "Copiar o mesmo arquivo para duas contas em vez de usar um grupo."
+     ]
+    },
+    {
+     "kind": "recap",
+     "title": "Resumo",
+     "body": [
+      "Permissão é três blocos de três. Dono, grupo e o resto; ler, gravar e executar.",
+      "Antes de abrir permissão, confira o dono. Quase sempre o dono é que estava errado.",
+      "Disco enche por espaço e por número de arquivos. Olhe as duas contas."
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "topic": "Leitura das permissões",
+     "statement": "Um arquivo tem permissões rw-r-----. Isso significa que:",
+     "options": [
+      "O dono lê e grava, o grupo apenas lê, e os demais não acessam",
+      "Todos podem ler e gravar",
+      "O dono lê, e todos os outros gravam",
+      "Ninguém pode ler o arquivo",
+      "Somente o grupo tem acesso ao arquivo"
+     ],
+     "correct_index": 0,
+     "explanation": "Os três blocos são lidos em ordem fixa. O primeiro descreve o dono, o segundo o grupo e o terceiro todos os demais.",
+     "pitfall": "Ler os blocos fora de ordem é o erro clássico, e produz respostas que parecem plausíveis."
+    },
+    {
+     "topic": "Permissão em diretório",
+     "statement": "O bit de execução aplicado a um diretório significa que:",
+     "options": [
+      "É permitido entrar nele e alcançar o que está dentro",
+      "Os arquivos dentro dele podem ser executados",
+      "O diretório pode ser apagado",
+      "O diretório é executado durante o boot",
+      "O conteúdo do diretório pode ser listado"
+     ],
+     "correct_index": 0,
+     "explanation": "Em diretório o significado muda: esse bit autoriza a travessia. Listar o conteúdo é o bit de leitura, que é outro.",
+     "pitfall": "A confusão entre entrar e listar produz o caso estranho em que se lê o nome dos arquivos mas não se abre nenhum."
+    },
+    {
+     "topic": "Uso de 777",
+     "statement": "Uma aplicação não consegue gravar numa pasta. A solução correta é:",
+     "options": [
+      "Ajustar o dono da pasta para a conta que executa a aplicação",
+      "Aplicar 777 à pasta, resolvendo o acesso de uma vez",
+      "Executar a aplicação com poder de administrador",
+      "Copiar a pasta para dentro do diretório da aplicação",
+      "Desativar temporariamente as permissões do sistema"
+     ],
+     "correct_index": 0,
+     "explanation": "O sintoma é de permissão, mas a causa quase sempre é de propriedade. Corrigir o dono resolve sem abrir a pasta para o resto da máquina.",
+     "pitfall": "Abrir para todos faz o erro sumir imediatamente, e é justamente por isso que vira hábito."
+    },
+    {
+     "topic": "Disco cheio",
+     "statement": "Um servidor acusa disco cheio, mas o espaço livre indica vários gigabytes disponíveis. A causa provável é:",
+     "options": [
+      "As fichas de arquivo acabaram, mesmo com espaço sobrando",
+      "A leitura de espaço livre está incorreta",
+      "A memória de emergência ocupou todo o disco",
+      "O disco foi desmontado da árvore",
+      "As permissões da pasta impedem a gravação"
+     ],
+     "correct_index": 0,
+     "explanation": "Cada arquivo consome uma ficha, e o total delas é fixado na formatação. Milhares de arquivos minúsculos esgotam as fichas antes do espaço.",
+     "pitfall": "Como o espaço livre é a primeira coisa checada e ele está normal, a investigação costuma seguir para o lado errado."
+    },
+    {
+     "topic": "Disco novo",
+     "statement": "Um disco foi formatado e pendurado numa pasta da árvore, e tudo funcionou. Após o reinício, a pasta apareceu vazia. Faltou:",
+     "options": [
+      "Anotar o disco para que ele seja pendurado de novo no boot",
+      "Formatar o disco em outro formato",
+      "Ajustar as permissões da pasta",
+      "Reiniciar o serviço que usa a pasta",
+      "Criar uma segunda partição no disco"
+     ],
+     "correct_index": 0,
+     "explanation": "Pendurar o disco vale só até o desligamento. Sem o registro permanente, o sistema sobe sem ele e a pasta volta a ser a pasta vazia original.",
+     "pitfall": "O detalhe cruel é que os dados não sumiram: eles continuam no disco, só que ele não está mais pendurado ali."
+    },
+    {
+     "topic": "Memória de emergência",
+     "statement": "Um servidor apresenta uso alto da memória de emergência em disco. Isso indica que:",
+     "options": [
+      "A memória de verdade está insuficiente para a carga atual",
+      "O disco está com defeito",
+      "O sistema está otimizando o desempenho",
+      "Há arquivos demais na máquina",
+      "O serviço principal está desligado"
+     ],
+     "correct_index": 0,
+     "explanation": "Essa reserva existe para evitar que programas sejam mortos quando a memória acaba. Usá-la bastante é sintoma de falta, não sinal de saúde.",
+     "pitfall": "Por evitar quedas, o mecanismo parece estar ajudando, e o problema real de dimensionamento fica escondido."
+    },
+    {
+     "topic": "Grupos",
+     "statement": "Duas contas diferentes precisam gravar na mesma pasta. A solução mais adequada é:",
+     "options": [
+      "Colocar as duas num grupo comum e dar o direito ao grupo",
+      "Aplicar 777 na pasta",
+      "Duplicar a pasta, uma para cada conta",
+      "Fazer as duas contas usarem o mesmo nome de usuário",
+      "Executar ambas como a conta que pode tudo"
+     ],
+     "correct_index": 0,
+     "explanation": "O grupo existe exatamente para esse caso: compartilhamento controlado entre contas específicas, sem abrir nada para o resto da máquina.",
+     "pitfall": "Duplicar a pasta funciona no primeiro dia e cria dois conteúdos que divergem a partir do segundo."
+    },
+    {
+     "topic": "Valor numérico",
+     "statement": "A permissão 600 aplicada a um arquivo corresponde a:",
+     "options": [
+      "Dono lê e grava, e mais ninguém acessa",
+      "Todos leem, e só o dono grava",
+      "Dono lê, grava e executa",
+      "Ninguém tem acesso algum",
+      "Dono e grupo leem e gravam"
+     ],
+     "correct_index": 0,
+     "explanation": "O 6 soma leitura e escrita, e os dois zeros zeram grupo e demais. É o valor indicado para chave privada e arquivo com senha.",
+     "pitfall": "Trocar 600 por 644 é o deslize que deixa um segredo legível por qualquer conta da máquina."
+    }
+   ]
+  },
+  {
+   "slug": "https-tls",
+   "title": "HTTPS, TLS e certificados",
+   "module": "Colocando no ar",
+   "summary": "O que o cadeado promete, quem assina por você e por que ele quebra sempre no mesmo dia.",
+   "steps": [
+    {
+     "kind": "idea",
+     "title": "Um envelope lacrado, e um selo de quem enviou",
+     "body": [
+      "Carta aberta pode ser lida por qualquer um que a manuseie. Carta lacrada, não.",
+      "Mas lacrar não basta: você também quer saber que quem escreveu é quem diz ser.",
+      "O cadeado do navegador promete as duas coisas ao mesmo tempo."
+     ],
+     "terms": [
+      {
+       "word": "HTTP",
+       "meaning": "o protocolo dos sites, que carrega o pedido da página e a resposta."
+      },
+      {
+       "word": "Criptografia",
+       "meaning": "embaralhar a mensagem de um jeito que só o destino desembaralha."
+      },
+      {
+       "word": "TLS",
+       "meaning": "a camada que embaralha a conversa de um site. É ela que acende o cadeado."
+      },
+      {
+       "word": "Protocolo",
+       "meaning": "o combinado de como conversar, para os dois lados se entenderem."
+      },
+      {
+       "word": "Servidor web",
+       "meaning": "o programa que recebe os pedidos de página e devolve a resposta."
+      },
+      {
+       "word": "sudo",
+       "meaning": "o jeito de rodar um comando com poder de administrador, sem viver com ele."
+      },
+      {
+       "word": "Serviço",
+       "meaning": "um programa que fica ligado atendendo pedidos, sem ninguém abrir nada."
+      },
+      {
+       "word": "systemd",
+       "meaning": "o programa que liga, vigia e desliga os serviços da máquina."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Sem cadeado, a rede toda lê",
+     "body": [
+      "Entre você e o site existem muitas máquinas. Provedor, roteador de cafeteria, rede da faculdade.",
+      "Sem o lacre, qualquer uma delas lê a senha que você digitou e pode trocar a página no caminho.",
+      "Hoje o navegador avisa em vermelho quando o lacre não existe."
+     ],
+     "terms": [
+      {
+       "word": "Servidor",
+       "meaning": "o computador que fica esperando pedidos e devolve respostas."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "O documento que prova quem você é",
+     "body": [
+      "Lacrar é fácil: qualquer um lacra. O difícil é provar que o lacre é do dono do site.",
+      "Por isso existe um documento assinado por alguém em quem o navegador já confia.",
+      "Esse documento vale para um nome específico e tem data para vencer."
+     ],
+     "terms": [
+      {
+       "word": "Certificado",
+       "meaning": "o documento que liga um nome de site a uma chave, com assinatura e prazo."
+      },
+      {
+       "word": "Autoridade certificadora",
+       "meaning": "quem assina esse documento e responde por ele."
+      },
+      {
+       "word": "Domínio",
+       "meaning": "o nome que as pessoas digitam para chegar ao site."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "A corrente precisa fechar inteira",
+     "body": [
+      "O navegador não confia no seu documento direto. Ele confia numa raiz que já vem dentro dele.",
+      "Entre a raiz e você existe pelo menos um elo do meio, e o servidor precisa entregar esse elo junto.",
+      "Faltando o elo, uns navegadores abrem e outros não. É o defeito mais confuso desta lição."
+     ],
+     "figure": {
+      "src": "/figuras/servidores/srv-tls-cadeado.svg",
+      "alt": "Uma corrente de confiança em três elos: a raiz que o navegador já confia, o intermediário assinado por ela e o certificado do site assinado pelo intermediário",
+      "caption": "O cadeado só acende quando a corrente inteira fecha até uma raiz conhecida."
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Hoje isso é de graça e automático",
+     "body": [
+      "Documento assinado já custou caro e exigia papelada. Não custa mais.",
+      "Existe um emissor gratuito que confere se o nome é seu de um jeito automático.",
+      "Um comando instala tudo, configura o porteiro e agenda a renovação."
+     ],
+     "terms": [
+      {
+       "word": "Porta",
+       "meaning": "o número que diz qual programa da máquina deve receber a conexão."
+      },
+      {
+       "word": "Nginx",
+       "meaning": "o servidor web que costuma ficar na frente e guardar o cadeado."
+      }
+     ],
+     "code": {
+      "label": "Cadeado em um comando, no Ubuntu",
+      "text": "sudo apt install certbot python3-certbot-nginx\nsudo certbot --nginx -d meusite.com.br -d www.meusite.com.br"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Ele vence em 90 dias, e é de propósito",
+     "body": [
+      "O documento gratuito vale três meses. Parece pouco e é uma escolha deliberada.",
+      "Prazo curto obriga a renovação a ser automática, e automática ela não é esquecida.",
+      "O que quebra não é o prazo: é a renovação que parou de rodar e ninguém notou."
+     ],
+     "example": {
+      "label": "Exemplo: conferindo que a renovação funciona",
+      "lines": [
+       "sudo certbot renew --dry-run",
+       "Isso ensaia a renovação sem gastar o pedido de verdade.",
+       "systemctl list-timers | grep certbot",
+       "Confirma que o agendamento ainda existe."
+      ]
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Mandar todo mundo para o lado lacrado",
+     "body": [
+      "Depois do cadeado pronto, o endereço sem lacre continua funcionando.",
+      "Quem digita o nome sem indicar nada cai no lado aberto. Deixe o porteiro empurrar para o lacrado.",
+      "É uma linha na configuração, e ela fecha a porta sem fechar a porta."
+     ],
+     "code": {
+      "label": "Empurrando o acesso aberto para o lacrado",
+      "text": "server {\n  listen 80;\n  server_name meusite.com.br;\n  return 301 https://$host$request_uri;\n}"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Os três avisos que o navegador dá",
+     "body": [
+      "Quando algo está errado, a mensagem é genérica e a causa é quase sempre uma destas três.",
+      "Saber distinguir economiza horas."
+     ],
+     "table": {
+      "label": "O aviso, e o que ele quer dizer",
+      "headers": [
+       "O aviso fala de",
+       "O que aconteceu",
+       "O que fazer"
+      ],
+      "rows": [
+       [
+        "data",
+        "o documento venceu",
+        "renovar e conferir o agendamento"
+       ],
+       [
+        "nome",
+        "vale para outro nome",
+        "emitir incluindo o nome usado"
+       ],
+       [
+        "confiança",
+        "falta o elo do meio",
+        "entregar a corrente completa"
+       ]
+      ],
+      "mono": false
+     }
+    },
+    {
+     "kind": "exam",
+     "title": "Como cai na prova",
+     "body": [
+      "O HTTPS é o HTTP transportado sobre TLS, que fornece confidencialidade, integridade e autenticação do servidor.",
+      "A cadeia de confiança vai do certificado da entidade final até uma âncora de confiança instalada no cliente.",
+      "O certificado vincula um nome de domínio a uma chave pública e possui período de validade determinado."
+     ]
+    },
+    {
+     "kind": "pitfall",
+     "title": "Pegadinhas clássicas",
+     "body": [
+      "As quatro causas de cadeado quebrado:"
+     ],
+     "bullets": [
+      "Confiar que a renovação automática está rodando sem nunca ter conferido.",
+      "Emitir para o nome sem www e esquecer o com www, ou o contrário.",
+      "Entregar só o seu documento, sem o elo do meio.",
+      "Deixar o acesso sem lacre funcionando em paralelo, sem empurrar para o lacrado."
+     ]
+    },
+    {
+     "kind": "recap",
+     "title": "Resumo",
+     "body": [
+      "O cadeado promete duas coisas: ninguém lê no caminho e o site é quem diz ser.",
+      "A corrente precisa fechar até uma raiz conhecida, e o elo do meio é sua responsabilidade.",
+      "O prazo curto é de propósito. Confira o ensaio da renovação, não confie nela."
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "topic": "O que o cadeado garante",
+     "statement": "Um site acessado com cadeado garante que:",
+     "options": [
+      "O conteúdo não é lido nem alterado no caminho, e o servidor é quem diz ser",
+      "O site não contém código malicioso",
+      "Os dados ficam protegidos depois de armazenados no servidor",
+      "O site pertence a uma empresa registrada",
+      "O servidor está livre de invasão"
+     ],
+     "correct_index": 0,
+     "explanation": "A promessa é sobre o transporte e sobre a identidade do destino. O que acontece com o dado depois de chegar não faz parte dela.",
+     "pitfall": "Confundir transporte com segurança total é o erro mais cobrado. Site com cadeado pode ser um site falso, desde que o nome seja dele."
+    },
+    {
+     "topic": "Cadeia de confiança",
+     "statement": "Um site abre normalmente num navegador e apresenta erro de confiança em outro. A causa mais provável é:",
+     "options": [
+      "O servidor não está entregando o certificado intermediário",
+      "O certificado venceu",
+      "O nome do domínio está errado no certificado",
+      "A porta configurada está incorreta",
+      "O navegador com erro está desatualizado demais"
+     ],
+     "correct_index": 0,
+     "explanation": "Alguns navegadores conseguem buscar o elo faltante por conta própria e outros não. Daí o mesmo site funcionar num e falhar no outro.",
+     "pitfall": "Por abrir em algum lugar, a configuração parece correta, e a investigação vai para o lado do navegador."
+    },
+    {
+     "topic": "Validade",
+     "statement": "Certificados gratuitos costumam ter validade de 90 dias. Essa escolha existe principalmente para:",
+     "options": [
+      "Obrigar que a renovação seja automatizada",
+      "Reduzir o custo de emissão",
+      "Aumentar a força da criptografia usada",
+      "Limitar o número de domínios por certificado",
+      "Facilitar a revogação manual"
+     ],
+     "correct_index": 0,
+     "explanation": "Prazo curto torna a renovação manual inviável na prática. Automatizada, ela deixa de depender de alguém lembrar uma vez por ano.",
+     "pitfall": "A intuição diz que prazo curto é limitação do produto gratuito, quando é decisão de segurança."
+    },
+    {
+     "topic": "Certificado vencido",
+     "statement": "O cadeado de um site quebrou e o aviso menciona a data. O problema de fundo, na maioria dos casos, é:",
+     "options": [
+      "A renovação automática parou de rodar e ninguém percebeu",
+      "O domínio expirou",
+      "O servidor web foi atualizado",
+      "A autoridade certificadora deixou de existir",
+      "A porta 443 foi fechada na portaria"
+     ],
+     "correct_index": 0,
+     "explanation": "O vencimento é a consequência, não a causa. A causa é a tarefa agendada que falhou silenciosamente ao longo dos meses anteriores.",
+     "pitfall": "Renovar na hora resolve o sintoma e deixa o problema intacto para voltar exatamente daqui a 90 dias."
+    },
+    {
+     "topic": "Nome no certificado",
+     "statement": "Um certificado foi emitido apenas para meusite.com.br. Ao acessar www.meusite.com.br, o resultado é:",
+     "options": [
+      "Aviso de que o certificado não vale para esse nome",
+      "O acesso funciona normalmente",
+      "Aviso de certificado vencido",
+      "Erro de conexão recusada",
+      "Redirecionamento automático para o nome sem www"
+     ],
+     "correct_index": 0,
+     "explanation": "O documento vale para os nomes listados nele. Um nome de fora da lista produz aviso de incompatibilidade, mesmo apontando para a mesma máquina.",
+     "pitfall": "Como os dois nomes chegam ao mesmo servidor, parece que deveriam compartilhar o mesmo documento."
+    },
+    {
+     "topic": "Acesso sem cadeado",
+     "statement": "Depois de instalar o cadeado, o acesso pela via sem lacre continua funcionando. A providência recomendada é:",
+     "options": [
+      "Configurar o redirecionamento para a via lacrada",
+      "Fechar a porta 80 na portaria",
+      "Remover o domínio do certificado",
+      "Desinstalar o servidor web e reinstalar",
+      "Deixar como está, já que o cadeado existe"
+     ],
+     "correct_index": 0,
+     "explanation": "Quem digita o nome sem indicar nada cai na via aberta. O redirecionamento leva todo mundo para a via lacrada sem que ninguém precise saber disso.",
+     "pitfall": "Fechar a porta 80 quebra a renovação automática, que costuma usá-la para provar o controle do domínio."
+    },
+    {
+     "topic": "Camadas",
+     "statement": "A relação entre HTTP e TLS pode ser descrita como:",
+     "options": [
+      "O HTTP continua o mesmo, transportado dentro de um canal embaralhado",
+      "O TLS substitui o HTTP por outro protocolo de páginas",
+      "O HTTP embaralha os dados e o TLS os transporta",
+      "Os dois são nomes diferentes para o mesmo protocolo",
+      "O TLS só atua na autenticação, sem embaralhar nada"
+     ],
+     "correct_index": 0,
+     "explanation": "O protocolo de páginas não muda. Ele passa a viajar dentro de um canal protegido, e é essa combinação que recebe o nome com S no fim.",
+     "pitfall": "A alternativa que inverte os papéis é plausível para quem só viu as siglas juntas, sem saber qual envolve qual."
+    },
+    {
+     "topic": "Diagnóstico",
+     "statement": "O aviso do navegador menciona incompatibilidade de nome. A ação correta é:",
+     "options": [
+      "Emitir um certificado que inclua o nome efetivamente acessado",
+      "Renovar o certificado atual",
+      "Instalar o certificado intermediário",
+      "Ajustar o relógio do servidor",
+      "Trocar a porta do site"
+     ],
+     "correct_index": 0,
+     "explanation": "Cada aviso aponta para uma causa distinta. Nome pede emissão incluindo o nome certo, data pede renovação e confiança pede a corrente completa.",
+     "pitfall": "Renovar é a reação automática a qualquer aviso de cadeado, e aqui ela devolve o mesmo problema com data nova."
+    }
+   ]
+  },
+  {
+   "slug": "servidor-web-nginx",
+   "title": "Servidor web com Nginx",
+   "module": "Colocando no ar",
+   "summary": "O porteiro que recebe todo mundo na frente e decide para onde cada pedido vai.",
+   "steps": [
+    {
+     "kind": "idea",
+     "title": "Alguém precisa atender a porta",
+     "body": [
+      "Sua aplicação sabe montar páginas. Ela não sabe, e não deveria saber, lidar com o resto.",
+      "Conexões lentas às milhares. Imagem e folha de estilo. Cadeado. Vários sites na mesma máquina.",
+      "Existe um programa especializado nisso. Ele fica na frente e atende primeiro."
+     ],
+     "terms": [
+      {
+       "word": "Servidor",
+       "meaning": "o computador que fica esperando pedidos e devolve respostas."
+      },
+      {
+       "word": "Servidor web",
+       "meaning": "o programa que recebe os pedidos de página e devolve a resposta."
+      },
+      {
+       "word": "Nginx",
+       "meaning": "o servidor web mais usado hoje para ficar nessa posição de frente."
+      },
+      {
+       "word": "Porta",
+       "meaning": "o número que diz qual programa da máquina deve receber a conexão."
+      },
+      {
+       "word": "Protocolo",
+       "meaning": "o combinado de como conversar, para os dois lados se entenderem."
+      },
+      {
+       "word": "Processo",
+       "meaning": "um programa em execução. Ele tem um número e ocupa memória."
+      },
+      {
+       "word": "Serviço",
+       "meaning": "um programa que fica ligado atendendo pedidos, sem ninguém abrir nada."
+      },
+      {
+       "word": "systemd",
+       "meaning": "o programa que liga, vigia e desliga os serviços da máquina."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Ele guarda os arquivos que não mudam",
+     "body": [
+      "Imagem, folha de estilo e script não mudam a cada pedido. Não faz sentido a aplicação montá-los.",
+      "O porteiro lê esses arquivos direto do disco e devolve, sem acordar mais ninguém.",
+      "Isso tira a maior parte do trabalho da aplicação."
+     ],
+     "terms": [
+      {
+       "word": "Arquivo estático",
+       "meaning": "o arquivo que é sempre igual: imagem, folha de estilo, script."
+      },
+      {
+       "word": "Cache",
+       "meaning": "a cópia guardada de uma resposta, para não precisar montá-la de novo."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "E repassa o resto para quem sabe",
+     "body": [
+      "O que precisa ser montado na hora ele repassa para a sua aplicação.",
+      "A aplicação fica escondida dentro da máquina, sem ser alcançada de fora.",
+      "Quem faz isso tem nome: é o programa que recebe no lugar de outro e devolve a resposta dele."
+     ],
+     "terms": [
+      {
+       "word": "Proxy reverso",
+       "meaning": "o programa da frente que recebe por outro e repassa o pedido para ele."
+      },
+      {
+       "word": "Porta",
+       "meaning": "o número que diz qual programa da máquina deve receber a conexão."
+      }
+     ],
+     "figure": {
+      "src": "/figuras/servidores/srv-proxy-reverso.svg",
+      "alt": "Um programa na frente recebe todas as conexões da internet e repassa para as aplicações que rodam escondidas dentro da máquina, sem que elas sejam alcançadas diretamente",
+      "caption": "Só o porteiro fica exposto. As aplicações conversam por dentro."
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Vários sites, um endereço só",
+     "body": [
+      "Dez sites podem morar na mesma máquina e no mesmo número de rede.",
+      "O pedido carrega o nome que a pessoa digitou. O porteiro lê esse nome e escolhe o bloco certo.",
+      "É por isso que um nome novo precisa de um bloco novo, além do apontamento."
+     ],
+     "terms": [
+      {
+       "word": "HTTP",
+       "meaning": "o protocolo dos sites, que carrega o pedido da página e a resposta."
+      },
+      {
+       "word": "Host virtual",
+       "meaning": "o bloco de configuração que atende um nome específico."
+      },
+      {
+       "word": "Domínio",
+       "meaning": "o nome que as pessoas digitam para chegar ao site."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Um bloco de configuração por inteiro",
+     "body": [
+      "Um bloco tem quatro partes. Em que porta escutar, para qual nome, onde estão os arquivos e para onde repassar.",
+      "Guarde este formato. Ele quase não muda de um site para outro."
+     ],
+     "code": {
+      "label": "/etc/nginx/sites-available/meusite",
+      "text": "server {\n  listen 80;\n  server_name meusite.com.br;\n\n  root /var/www/meusite;\n\n  location /api/ {\n    proxy_pass http://127.0.0.1:3000;\n  }\n}"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Testar antes de aplicar",
+     "body": [
+      "Um erro de digitação na configuração impede o porteiro de subir. E aí o site inteiro cai.",
+      "Existe um comando que confere a configuração sem aplicar nada.",
+      "Rode ele sempre. Só depois peça para reler."
+     ],
+     "terms": [
+      {
+       "word": "sudo",
+       "meaning": "o jeito de rodar um comando com poder de administrador, sem viver com ele."
+      },
+      {
+       "word": "Serviço",
+       "meaning": "um programa que fica ligado atendendo pedidos, sem ninguém abrir nada."
+      }
+     ],
+     "code": {
+      "label": "A ordem que não derruba o site",
+      "text": "sudo nginx -t                    # confere a configuração\nsudo systemctl reload nginx      # relê sem derrubar ninguém"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Os dois cadernos que ele escreve",
+     "body": [
+      "O porteiro anota tudo em dois lugares. Um guarda os acessos e o outro guarda as falhas.",
+      "Quase todo problema de site aparece num dos dois, com o horário e o endereço."
+     ],
+     "terms": [
+      {
+       "word": "Log",
+       "meaning": "o caderno em que cada programa anota o que fez e o que deu errado."
+      }
+     ],
+     "table": {
+      "label": "Onde olhar, conforme o sintoma",
+      "headers": [
+       "Sintoma",
+       "Onde olhar"
+      ],
+      "rows": [
+       [
+        "A página não abre de jeito nenhum",
+        "sudo nginx -t"
+       ],
+       [
+        "Erro 502 na tela",
+        "/var/log/nginx/error.log"
+       ],
+       [
+        "Erro 404 em arquivo que existe",
+        "/var/log/nginx/error.log"
+       ],
+       [
+        "Quero ver quem está acessando",
+        "/var/log/nginx/access.log"
+       ]
+      ],
+      "mono": true
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "O 502 quer dizer uma coisa só",
+     "body": [
+      "Esse número aparece quando o porteiro repassou o pedido e ninguém respondeu do outro lado.",
+      "Quer dizer que o porteiro está bem. Quem não está é a aplicação atrás dele.",
+      "Ele economiza metade da investigação, e quase todo mundo ignora isso."
+     ],
+     "example": {
+      "label": "Exemplo: caiu com 502",
+      "lines": [
+       "A aplicação está rodando? systemctl status minhaapp",
+       "Ela escuta na porta que o porteiro procura? ss -tlnp",
+       "O endereço do repasse bate com essa porta?",
+       "Quase sempre a resposta está numa dessas três."
+      ]
+     }
+    },
+    {
+     "kind": "exam",
+     "title": "Como cai na prova",
+     "body": [
+      "Em proxy reverso, o servidor web recebe a requisição do cliente e a encaminha a um servidor de aplicação interno.",
+      "Hosts virtuais permitem servir múltiplos domínios no mesmo endereço IP, diferenciados pelo cabeçalho Host.",
+      "O código 502 Bad Gateway indica falha na comunicação com o servidor de aplicação, e não erro do proxy em si."
+     ]
+    },
+    {
+     "kind": "pitfall",
+     "title": "Pegadinhas clássicas",
+     "body": [
+      "O que costuma derrubar o site aqui:"
+     ],
+     "bullets": [
+      "Aplicar a configuração sem conferir antes, e derrubar o porteiro inteiro.",
+      "Apontar o nome novo e esquecer de criar o bloco para ele.",
+      "Procurar erro na aplicação quando o porteiro nem subiu.",
+      "Deixar a aplicação escutando para fora, ao lado do porteiro."
+     ]
+    },
+    {
+     "kind": "recap",
+     "title": "Resumo",
+     "body": [
+      "O porteiro atende primeiro, entrega o que não muda e repassa o resto para a aplicação.",
+      "Um bloco por nome permite vários sites numa máquina só.",
+      "Confira a configuração antes de aplicar, e leia o 502 como aviso sobre quem está atrás."
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "topic": "Proxy reverso",
+     "statement": "Numa arquitetura com servidor web na frente e aplicação atrás, a aplicação deve escutar:",
+     "options": [
+      "Apenas no endereço interno da própria máquina",
+      "Em todos os endereços, para aceitar acesso direto",
+      "Na mesma porta do servidor web",
+      "Em uma porta abaixo de 1024",
+      "Em nenhuma porta, já que o servidor web a executa"
+     ],
+     "correct_index": 0,
+     "explanation": "Escondida atrás do porteiro, a aplicação só precisa ser alcançada por ele, que roda na mesma máquina. Escutar para fora cria um caminho que ignora o porteiro.",
+     "pitfall": "A aplicação funciona nos dois casos, e é isso que faz a exposição desnecessária passar despercebida."
+    },
+    {
+     "topic": "Hosts virtuais",
+     "statement": "Três sites diferentes rodam na mesma máquina, com o mesmo endereço numérico. O que permite ao servidor web escolher o site certo é:",
+     "options": [
+      "O nome que o navegador envia junto com o pedido",
+      "A porta usada por cada site",
+      "O endereço de origem de quem acessa",
+      "A ordem dos blocos no arquivo de configuração",
+      "O tipo de arquivo solicitado"
+     ],
+     "correct_index": 0,
+     "explanation": "O pedido carrega o nome digitado. O servidor web compara esse nome com os blocos configurados e entrega o site correspondente.",
+     "pitfall": "A ordem dos blocos importa apenas para decidir o padrão quando nenhum nome bate."
+    },
+    {
+     "topic": "Erro 502",
+     "statement": "Um site passou a responder 502. Isso indica, com mais probabilidade, que:",
+     "options": [
+      "A aplicação atrás do servidor web não respondeu",
+      "O servidor web não conseguiu iniciar",
+      "O nome do domínio não está apontando corretamente",
+      "O certificado do site expirou",
+      "A pasta dos arquivos do site foi apagada"
+     ],
+     "correct_index": 0,
+     "explanation": "Para responder 502, o servidor web precisa estar de pé: ele tentou repassar e não obteve resposta. O problema está atrás dele.",
+     "pitfall": "A investigação costuma começar pelo servidor web, que é o único que mandou mensagem, e é justamente o que está funcionando."
+    },
+    {
+     "topic": "Aplicar configuração",
+     "statement": "Antes de aplicar uma mudança na configuração do servidor web de um site em produção, deve-se:",
+     "options": [
+      "Conferir a sintaxe com o comando de teste, que não aplica nada",
+      "Reiniciar o serviço para validar a mudança",
+      "Reiniciar a máquina",
+      "Fazer cópia do arquivo e aplicar direto",
+      "Desligar o site durante a alteração"
+     ],
+     "correct_index": 0,
+     "explanation": "Um erro de digitação impede o serviço de subir, e o site inteiro cai junto. O teste de sintaxe encontra o erro sem tocar no que está no ar.",
+     "pitfall": "Cópia do arquivo protege o texto anterior, mas não evita a queda entre aplicar e perceber o erro."
+    },
+    {
+     "topic": "Arquivos estáticos",
+     "statement": "Entregar imagens e folhas de estilo diretamente pelo servidor web, sem passar pela aplicação, tem como principal vantagem:",
+     "options": [
+      "Tirar da aplicação um trabalho que ela não precisa fazer",
+      "Reduzir o espaço ocupado em disco",
+      "Dispensar a necessidade de cadeado no site",
+      "Permitir que o site funcione sem domínio",
+      "Eliminar a necessidade de registros de acesso"
+     ],
+     "correct_index": 0,
+     "explanation": "Esses arquivos são sempre iguais. Entregá-los direto do disco é muito mais barato do que acordar a aplicação a cada pedido de imagem.",
+     "pitfall": "A economia é de trabalho e de memória, e não de espaço: os arquivos continuam ocupando o mesmo disco."
+    },
+    {
+     "topic": "Domínio novo",
+     "statement": "Um segundo domínio foi apontado para a máquina, mas o navegador mostra o primeiro site. Falta:",
+     "options": [
+      "Criar o bloco de configuração para o novo nome",
+      "Aguardar a propagação do apontamento",
+      "Reiniciar a máquina",
+      "Contratar um segundo endereço numérico",
+      "Instalar um segundo servidor web"
+     ],
+     "correct_index": 0,
+     "explanation": "Sem bloco correspondente ao nome novo, o servidor web cai no bloco padrão, que é o do primeiro site configurado.",
+     "pitfall": "Como o sintoma aparece logo após mexer no domínio, a suspeita recai sobre o apontamento, que já está correto."
+    },
+    {
+     "topic": "Recarga",
+     "statement": "Após conferir a sintaxe com sucesso, a forma de aplicar a nova configuração sem derrubar visitantes é:",
+     "options": [
+      "Pedir ao serviço que releia a configuração",
+      "Reiniciar o serviço",
+      "Reiniciar a máquina",
+      "Parar e iniciar o serviço",
+      "Aguardar a releitura automática"
+     ],
+     "correct_index": 0,
+     "explanation": "A releitura mantém o processo no ar e troca a configuração. Nenhuma conexão em andamento é encerrada.",
+     "pitfall": "Não existe releitura automática: sem o pedido explícito, a configuração antiga continua valendo indefinidamente."
+    },
+    {
+     "topic": "Papel do servidor web",
+     "statement": "A razão principal de colocar um servidor web na frente de uma aplicação é:",
+     "options": [
+      "Concentrar nele conexões, arquivos fixos e cadeado, liberando a aplicação",
+      "Aumentar a memória disponível para a aplicação",
+      "Permitir que a aplicação rode sem sistema operacional",
+      "Dispensar a necessidade de domínio",
+      "Substituir a portaria de rede da máquina"
+     ],
+     "correct_index": 0,
+     "explanation": "Ele resolve um conjunto de problemas repetitivos que toda aplicação teria de resolver sozinha, e resolve bem porque é especializado nisso.",
+     "pitfall": "Ele não substitui a portaria de rede: as duas coisas atuam em camadas diferentes e ambas continuam necessárias."
+    }
+   ]
+  },
+  {
+   "slug": "banco-dados-producao",
+   "title": "Bancos de dados em servidores",
+   "module": "Colocando no ar",
+   "summary": "Onde os dados moram, por que a consulta fica lenta e o que nunca pode ser exposto.",
+   "steps": [
+    {
+     "kind": "idea",
+     "title": "O arquivo não dá conta sozinho",
+     "body": [
+      "Guardar cem cadastros num arquivo de texto funciona. Cem mil, não.",
+      "Duas pessoas gravando ao mesmo tempo estragam o arquivo. Procurar um nome exige ler tudo.",
+      "Existe um programa especializado em guardar e achar. Ele resolve os dois problemas."
+     ],
+     "terms": [
+      {
+       "word": "Servidor",
+       "meaning": "o computador que fica esperando pedidos e devolve respostas."
+      },
+      {
+       "word": "Banco de dados",
+       "meaning": "o programa que guarda os dados em ordem e sabe buscá-los depressa."
+      },
+      {
+       "word": "SQL",
+       "meaning": "a língua em que se pede e se grava nesses bancos."
+      },
+      {
+       "word": "Porta",
+       "meaning": "o número que diz qual programa da máquina deve receber a conexão."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Os dois que você vai encontrar",
+     "body": [
+      "Dois nomes dominam em máquinas alugadas, e os dois falam a mesma língua básica.",
+      "A escolha entre eles raramente é o que decide o desempenho do seu sistema."
+     ],
+     "terms": [
+      {
+       "word": "PostgreSQL",
+       "meaning": "um banco muito usado, conhecido por seguir o padrão à risca."
+      },
+      {
+       "word": "MySQL",
+       "meaning": "outro banco muito usado. O MariaDB é um parente próximo dele."
+      }
+     ],
+     "table": {
+      "label": "As portas e as ferramentas de linha de comando",
+      "headers": [
+       "Banco",
+       "Porta",
+       "Como entrar"
+      ],
+      "rows": [
+       [
+        "PostgreSQL",
+        "5432",
+        "psql -U app -d meubanco"
+       ],
+       [
+        "MySQL ou MariaDB",
+        "3306",
+        "mysql -u app -p meubanco"
+       ]
+      ],
+      "mono": false
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Ele nunca fala com a internet",
+     "body": [
+      "Esta é a regra mais importante da lição, e a mais desobedecida.",
+      "O banco conversa com a aplicação, e as duas moram dentro da mesma máquina ou da mesma rede fechada.",
+      "Se ele escuta para fora, ele vira alvo de tentativa automatizada em horas."
+     ],
+     "terms": [
+      {
+       "word": "Porta",
+       "meaning": "o número que diz qual programa da máquina deve receber a conexão."
+      },
+      {
+       "word": "Firewall",
+       "meaning": "a portaria da máquina. Ela decide qual conexão entra e qual nem chega."
+      }
+     ],
+     "code": {
+      "label": "Conferindo que ele só escuta por dentro",
+      "text": "ss -tlnp | grep 5432\n# 127.0.0.1:5432  -> certo\n# 0.0.0.0:5432    -> exposto, corrija hoje"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Por que a consulta fica lenta",
+     "body": [
+      "Sem atalho, achar uma linha exige ler a tabela inteira. Com mil linhas ninguém nota.",
+      "Com um milhão, cada consulta vira uma varredura, e a máquina fica de joelhos.",
+      "O atalho é uma cópia ordenada só da coluna procurada."
+     ],
+     "figure": {
+      "src": "/figuras/servidores/srv-indice-banco.svg",
+      "alt": "Comparação entre procurar lendo todas as linhas de uma tabela e procurar por um atalho ordenado que leva direto à linha certa",
+      "caption": "O atalho troca uma varredura inteira por cerca de vinte passos."
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Perguntar ao banco por onde ele passou",
+     "body": [
+      "Você não precisa adivinhar se a consulta usou o atalho. O banco conta.",
+      "Basta pedir o plano antes de rodar. Ele diz se houve varredura ou salto direto.",
+      "É a primeira coisa a fazer quando alguém diz que o sistema está lento."
+     ],
+     "code": {
+      "label": "Pedindo o plano da consulta",
+      "text": "EXPLAIN ANALYZE SELECT * FROM pedidos WHERE email = 'ana@exemplo.com';\n-- Seq Scan   -> leu tudo\n-- Index Scan -> usou o atalho"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "O atalho não é de graça",
+     "body": [
+      "Cada atalho ocupa espaço e deixa a gravação um pouco mais lenta.",
+      "Criar atalho em toda coluna é tão ruim quanto não criar nenhum.",
+      "Crie onde você filtra e onde você ordena. Comece pelas consultas que aparecem no plano como varredura."
+     ],
+     "example": {
+      "label": "Exemplo: a tela de busca por e-mail está lenta",
+      "lines": [
+       "EXPLAIN mostra Seq Scan em uma tabela de 800 mil linhas.",
+       "CREATE INDEX idx_pedidos_email ON pedidos (email);",
+       "Rode o EXPLAIN de novo e confirme que virou Index Scan.",
+       "Se não virou, o filtro da consulta não bate com a coluna do atalho."
+      ]
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Cópia de segurança é a única coisa que não pode falhar",
+     "body": [
+      "Máquina queima, disco morre e comando errado apaga tabela. As três acontecem.",
+      "A cópia precisa sair da máquina. Cópia guardada no mesmo disco morre junto com ele.",
+      "E ela precisa ser testada, senão você tem um arquivo e não uma garantia."
+     ],
+     "terms": [
+      {
+       "word": "Backup",
+       "meaning": "a cópia dos dados guardada fora da máquina, para o dia em que algo se perder."
+      }
+     ],
+     "code": {
+      "label": "Gerando e restaurando, no PostgreSQL",
+      "text": "pg_dump -U app meubanco | gzip > backup-2026-09-22.sql.gz\n# restaurando em outra máquina, para testar:\ngunzip -c backup-2026-09-22.sql.gz | psql -U app meubanco_teste"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "A conta da aplicação não é a conta do dono",
+     "body": [
+      "O banco nasce com uma conta que pode tudo, inclusive apagar bancos inteiros.",
+      "A aplicação não precisa disso. Crie uma conta só para ela, com acesso a um banco só.",
+      "Se a aplicação for invadida, o estrago para no limite dessa conta."
+     ],
+     "terms": [
+      {
+       "word": "Permissão",
+       "meaning": "a regra que diz o que cada conta pode fazer, e onde."
+      }
+     ]
+    },
+    {
+     "kind": "exam",
+     "title": "Como cai na prova",
+     "body": [
+      "Índices aceleram leituras seletivas ao custo de espaço e de escrita mais lenta.",
+      "Uma varredura sequencial percorre toda a tabela, enquanto a busca por índice acessa diretamente as linhas candidatas.",
+      "O princípio do menor privilégio recomenda contas de aplicação restritas ao banco e às operações necessárias."
+     ]
+    },
+    {
+     "kind": "pitfall",
+     "title": "Pegadinhas clássicas",
+     "body": [
+      "Os erros que mais custam caro com banco de dados:"
+     ],
+     "bullets": [
+      "Abrir a porta do banco para a internet para resolver um erro de conexão.",
+      "Trocar a máquina por uma maior antes de olhar o plano da consulta.",
+      "Criar atalho em toda coluna, e deixar a gravação lenta em troca de nada.",
+      "Ter cópia de segurança que nunca foi restaurada em lugar nenhum."
+     ]
+    },
+    {
+     "kind": "recap",
+     "title": "Resumo",
+     "body": [
+      "O banco conversa com a aplicação, nunca com a internet.",
+      "Consulta lenta quase sempre é falta de atalho. Peça o plano antes de trocar qualquer coisa.",
+      "Cópia de segurança só vale se sair da máquina e se alguém já a tiver restaurado."
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "topic": "Exposição do banco",
+     "statement": "Uma aplicação e seu banco rodam na mesma máquina. A configuração correta para o banco é:",
+     "options": [
+      "Escutar apenas no endereço interno da própria máquina",
+      "Escutar em todos os endereços, com senha forte",
+      "Escutar em todos os endereços, mas numa porta diferente da padrão",
+      "Escutar apenas durante o horário de uso do sistema",
+      "Escutar em todos os endereços, protegido apenas pela portaria da hospedagem"
+     ],
+     "correct_index": 0,
+     "explanation": "Se os dois programas estão na mesma máquina, a conversa nunca precisa sair dela. Escutar para fora cria um alvo sem oferecer nenhum ganho.",
+     "pitfall": "Senha forte e porta trocada apenas atrasam uma varredura automatizada, sem impedi-la."
+    },
+    {
+     "topic": "Consulta lenta",
+     "statement": "Uma consulta ficou lenta conforme a tabela cresceu. A primeira providência é:",
+     "options": [
+      "Pedir o plano de execução da consulta",
+      "Contratar uma máquina com mais memória",
+      "Criar índices em todas as colunas da tabela",
+      "Apagar registros antigos da tabela",
+      "Reiniciar o serviço do banco"
+     ],
+     "correct_index": 0,
+     "explanation": "O plano mostra se houve varredura ou salto direto. Ele transforma um palpite sobre lentidão numa causa localizada.",
+     "pitfall": "Trocar a máquina costuma esconder o problema por alguns meses, até a tabela crescer de novo."
+    },
+    {
+     "topic": "Custo do índice",
+     "statement": "Criar índices em todas as colunas de uma tabela tem como consequência:",
+     "options": [
+      "Gravações mais lentas e mais espaço ocupado, sem ganho garantido",
+      "Consultas mais rápidas em todos os casos",
+      "Redução do espaço em disco usado pela tabela",
+      "Eliminação da necessidade de cópia de segurança",
+      "Aumento automático da memória disponível"
+     ],
+     "correct_index": 0,
+     "explanation": "Todo índice precisa ser atualizado a cada gravação e ocupa espaço próprio. Índice que nenhuma consulta usa é só custo.",
+     "pitfall": "A intuição de que mais índices é sempre melhor vem de olhar apenas o lado da leitura."
+    },
+    {
+     "topic": "Cópia de segurança",
+     "statement": "Uma cópia de segurança do banco é gerada diariamente e guardada no mesmo disco da máquina. O principal problema é:",
+     "options": [
+      "Se o disco falhar, a cópia se perde junto com os dados",
+      "O arquivo ocupa espaço desnecessário",
+      "A geração diária é frequente demais",
+      "O formato usado não permite restauração",
+      "A cópia deixa o banco mais lento"
+     ],
+     "correct_index": 0,
+     "explanation": "Cópia serve para o caso em que o original se perde. No mesmo disco, ela morre exatamente no cenário em que precisaria existir.",
+     "pitfall": "A rotina funciona e gera arquivos todos os dias, o que dá a sensação de que o risco está coberto."
+    },
+    {
+     "topic": "Teste de restauração",
+     "statement": "Sobre uma rotina de cópia de segurança, a prática que transforma arquivo em garantia é:",
+     "options": [
+      "Restaurar a cópia em outro ambiente e conferir os dados",
+      "Gerar a cópia mais vezes por dia",
+      "Comprimir a cópia para ocupar menos espaço",
+      "Guardar cópias de mais dias",
+      "Registrar o horário de cada cópia num relatório"
+     ],
+     "correct_index": 0,
+     "explanation": "Só a restauração prova que o arquivo está íntegro, que o procedimento funciona e que alguém sabe executá-lo sob pressão.",
+     "pitfall": "Todas as outras melhoram a rotina e nenhuma responde à única pergunta que importa no dia do desastre."
+    },
+    {
+     "topic": "Conta da aplicação",
+     "statement": "A conta usada pela aplicação para acessar o banco deve:",
+     "options": [
+      "Ter acesso apenas ao banco e às operações de que precisa",
+      "Ser a conta administrativa do banco, por simplicidade",
+      "Ser criada nova a cada implantação",
+      "Ser compartilhada com a equipe de desenvolvimento",
+      "Ter permissão de criar e apagar bancos"
+     ],
+     "correct_index": 0,
+     "explanation": "Se a aplicação for comprometida, o atacante herda exatamente os poderes dessa conta. Restringi-la limita o estrago ao que ela já podia fazer.",
+     "pitfall": "A conta administrativa evita todo erro de permissão durante o desenvolvimento, e por isso costuma sobreviver até a produção."
+    },
+    {
+     "topic": "Varredura",
+     "statement": "No plano de execução, a indicação de varredura sequencial numa tabela grande significa que:",
+     "options": [
+      "O banco leu todas as linhas para encontrar o resultado",
+      "O banco usou um índice existente",
+      "A consulta foi cancelada por demora",
+      "A tabela está sem dados",
+      "O banco leu os dados a partir da cópia de segurança"
+     ],
+     "correct_index": 0,
+     "explanation": "Varredura sequencial é exatamente ler tudo. Em tabela pequena é irrelevante, e em tabela grande é a causa mais comum de lentidão.",
+     "pitfall": "Em tabelas pequenas o banco escolhe varredura de propósito, por ser mais rápida, e isso confunde quem generaliza a regra."
+    },
+    {
+     "topic": "Escolha do banco",
+     "statement": "Entre os dois bancos mais comuns em máquinas alugadas, a escolha:",
+     "options": [
+      "Raramente é o fator que decide o desempenho do sistema",
+      "Determina sozinha a velocidade das consultas",
+      "Define se será necessário usar índices",
+      "Muda a linguagem usada para consultar, que é incompatível entre eles",
+      "Elimina a necessidade de cópia de segurança em um dos casos"
+     ],
+     "correct_index": 0,
+     "explanation": "Modelagem, índices e consultas pesam muito mais que a escolha do produto. Os dois atendem bem à enorme maioria dos sistemas.",
+     "pitfall": "A linguagem básica é a mesma nos dois, com diferenças que só aparecem em recursos avançados."
+    }
+   ]
+  },
+  {
+   "slug": "deploy-aplicacao",
+   "title": "Deploy de aplicações em uma VPS",
+   "module": "Colocando no ar",
+   "summary": "Colocar a versão nova no ar sem derrubar ninguém, e voltar atrás em segundos.",
+   "steps": [
+    {
+     "kind": "idea",
+     "title": "Trocar o motor com o carro andando",
+     "body": [
+      "Publicar uma versão nova é trocar o que está funcionando por outra coisa.",
+      "Enquanto a troca acontece, gente está usando o sistema.",
+      "A pergunta certa não é como publicar. É como publicar sem que ninguém veja o site pela metade."
+     ],
+     "terms": [
+      {
+       "word": "Servidor",
+       "meaning": "o computador que fica esperando pedidos e devolve respostas."
+      },
+      {
+       "word": "Deploy",
+       "meaning": "o ato de colocar uma versão nova do sistema no ar."
+      },
+      {
+       "word": "Máquina virtual",
+       "meaning": "uma fatia independente de um computador de verdade."
+      },
+      {
+       "word": "VPS",
+       "meaning": "uma máquina virtual alugada, com sistema próprio e acesso de dono para você."
+      },
+      {
+       "word": "Serviço",
+       "meaning": "um programa que fica ligado atendendo pedidos, sem ninguém abrir nada."
+      },
+      {
+       "word": "Processo",
+       "meaning": "um programa em execução. Ele tem um número e ocupa memória."
+      },
+      {
+       "word": "Porta",
+       "meaning": "o número que diz qual programa da máquina deve receber a conexão."
+      },
+      {
+       "word": "sudo",
+       "meaning": "o jeito de rodar um comando com poder de administrador, sem viver com ele."
+      },
+      {
+       "word": "systemd",
+       "meaning": "o programa que liga, vigia e desliga os serviços da máquina."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "O jeito errado que todo mundo tenta primeiro",
+     "body": [
+      "Copiar arquivo por cima da pasta que está no ar parece simples.",
+      "Durante a cópia o sistema está meio antigo e meio novo. E não existe volta.",
+      "Se a versão nova quebrar, você descobre com o site fora do ar."
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Montar de lado e trocar de uma vez",
+     "body": [
+      "A versão nova é montada numa pasta ao lado, sem ninguém usando.",
+      "Só quando ela está inteira você aponta o atalho para ela. A troca é instantânea.",
+      "E a pasta anterior continua ali, pronta para receber o atalho de volta."
+     ],
+     "figure": {
+      "src": "/figuras/servidores/srv-deploy-passos.svg",
+      "alt": "Quatro passos de uma publicação: montar a versão nova, enviá-la para a máquina, apontar o atalho para ela e manter a anterior guardada para voltar atrás",
+      "caption": "Voltar atrás é mover o atalho para a pasta anterior. Leva segundos."
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "O desenho de pastas que sustenta isso",
+     "body": [
+      "Três pastas resolvem: uma com as versões, um atalho apontando para a atual e uma para o que não pode mudar.",
+      "A terceira guarda o que precisa sobreviver à troca: arquivos enviados por quem usa, e o arquivo de segredos."
+     ],
+     "code": {
+      "label": "/var/app",
+      "text": "releases/2026-09-22-1430/\nreleases/2026-09-15-0910/\ncurrent -> releases/2026-09-22-1430\nshared/uploads/\nshared/.env"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Segredo não mora no código",
+     "body": [
+      "Senha de banco e chave de pagamento nunca entram no repositório de código.",
+      "Elas moram num arquivo da máquina, com permissão fechada, fora da pasta que é trocada.",
+      "Quem clonar o código não leva os segredos junto."
+     ],
+     "terms": [
+      {
+       "word": "Repositório",
+       "meaning": "o lugar onde o código do projeto fica versionado e compartilhado."
+      },
+      {
+       "word": "Permissão",
+       "meaning": "a regra que diz quem pode ler, gravar ou executar cada arquivo."
+      }
+     ],
+     "code": {
+      "label": "O arquivo de segredos, fechado",
+      "text": "sudo chown app:app /var/app/shared/.env\nsudo chmod 600 /var/app/shared/.env"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "A ordem dos passos importa",
+     "body": [
+      "Mudança no banco vem antes da troca do atalho, e precisa servir às duas versões.",
+      "Se a versão antiga quebrar com a mudança nova, voltar atrás deixa de ser possível.",
+      "É a regra que separa quem consegue voltar de quem só consegue seguir em frente."
+     ],
+     "terms": [
+      {
+       "word": "Banco de dados",
+       "meaning": "o programa que guarda os dados em ordem e sabe buscá-los depressa."
+      }
+     ],
+     "table": {
+      "label": "Uma publicação, na ordem",
+      "headers": [
+       "Passo",
+       "O que acontece"
+      ],
+      "rows": [
+       [
+        "1",
+        "monta a versão nova numa pasta ao lado"
+       ],
+       [
+        "2",
+        "aplica mudanças de banco compatíveis com as duas versões"
+       ],
+       [
+        "3",
+        "aponta o atalho para a pasta nova"
+       ],
+       [
+        "4",
+        "pede ao serviço que releia, sem derrubar ninguém"
+       ],
+       [
+        "5",
+        "confere o site e o registro de erros"
+       ]
+      ],
+      "mono": false
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Um script curto faz tudo isso",
+     "body": [
+      "Publicação feita à mão erra em algum passo, sempre num dia ruim.",
+      "Os passos cabem num arquivo de texto de vinte linhas.",
+      "O que importa é ele parar no primeiro erro, em vez de seguir com a troca pela metade."
+     ],
+     "code": {
+      "label": "deploy.sh, o essencial",
+      "text": "set -euo pipefail   # para no primeiro erro\nNOVA=/var/app/releases/$(date +%F-%H%M)\ngit clone --depth 1 URL $NOVA && cd $NOVA && npm ci && npm run build\nln -sfn $NOVA /var/app/current\nsudo systemctl reload minhaapp"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Ensaie a volta antes de precisar dela",
+     "body": [
+      "Ninguém descobre que a volta não funciona num dia tranquilo.",
+      "Faça a volta de propósito uma vez, com o site no ar, e cronometre.",
+      "Se levou mais de um minuto, o desenho está errado."
+     ],
+     "example": {
+      "label": "Exemplo: voltando para a versão anterior",
+      "lines": [
+       "ls -1t /var/app/releases | head -3",
+       "ln -sfn /var/app/releases/2026-09-15-0910 /var/app/current",
+       "sudo systemctl reload minhaapp",
+       "Confira o site. Depois investigue o que quebrou, com calma."
+      ]
+     }
+    },
+    {
+     "kind": "exam",
+     "title": "Como cai na prova",
+     "body": [
+      "A troca atômica por link simbólico permite alternar versões sem estado intermediário visível ao usuário.",
+      "Migrações de banco devem ser retrocompatíveis para viabilizar rollback sem perda de dados.",
+      "Segredos de configuração devem residir fora do controle de versão, em arquivo com permissão restrita."
+     ]
+    },
+    {
+     "kind": "pitfall",
+     "title": "Pegadinhas clássicas",
+     "body": [
+      "O que transforma uma publicação em noite mal dormida:"
+     ],
+     "bullets": [
+      "Copiar por cima da pasta que está no ar, sem ter para onde voltar.",
+      "Versionar o arquivo de segredos junto com o código.",
+      "Aplicar mudança de banco que a versão antiga não aguenta.",
+      "Nunca ter ensaiado a volta, e descobrir isso com o site fora do ar."
+     ]
+    },
+    {
+     "kind": "recap",
+     "title": "Resumo",
+     "body": [
+      "Monte a versão nova de lado e troque o atalho de uma vez só.",
+      "Guarde as versões anteriores e o que não pode mudar em pastas separadas.",
+      "Mudança de banco precisa servir às duas versões, senão a volta deixa de existir."
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "topic": "Troca de versão",
+     "statement": "A vantagem de montar a versão nova numa pasta separada e depois apontar um atalho para ela é que:",
+     "options": [
+      "A troca é instantânea e a versão anterior continua disponível",
+      "O sistema ocupa menos espaço em disco",
+      "Dispensa a necessidade de reiniciar ou recarregar o serviço",
+      "Elimina a necessidade de cópia de segurança do banco",
+      "Permite rodar as duas versões ao mesmo tempo indefinidamente"
+     ],
+     "correct_index": 0,
+     "explanation": "Enquanto a pasta nova é montada, ninguém a usa. O atalho muda de uma vez, sem estado intermediário, e a pasta antiga vira o caminho de volta.",
+     "pitfall": "A economia de espaço é o oposto: guardar versões anteriores ocupa mais disco, e vale a pena."
+    },
+    {
+     "topic": "Segredos",
+     "statement": "Senhas de banco e chaves de serviços externos usadas pela aplicação devem ficar:",
+     "options": [
+      "Num arquivo da máquina, fora do repositório e com permissão restrita",
+      "No repositório de código, junto com a aplicação",
+      "Dentro do próprio código-fonte, como constantes",
+      "Numa tabela do banco de dados da aplicação",
+      "Em variáveis criadas manualmente a cada reinício"
+     ],
+     "correct_index": 0,
+     "explanation": "Fora do repositório, quem clona o código não leva os segredos. Com permissão restrita, nem toda conta da máquina consegue lê-los.",
+     "pitfall": "Guardar no banco cria uma dependência circular: a aplicação precisa da senha do banco para ler a senha do banco."
+    },
+    {
+     "topic": "Mudança de banco",
+     "statement": "Numa publicação com possibilidade de volta atrás, as mudanças de estrutura do banco devem:",
+     "options": [
+      "Funcionar tanto com a versão nova quanto com a anterior",
+      "Ser aplicadas depois de apontar o atalho para a versão nova",
+      "Ser aplicadas somente em caso de erro",
+      "Remover imediatamente as colunas que deixaram de ser usadas",
+      "Ser feitas com o serviço parado, sempre"
+     ],
+     "correct_index": 0,
+     "explanation": "Se a mudança quebra a versão antiga, voltar atrás deixa de ser possível. Compatibilidade nos dois sentidos é o que mantém a volta disponível.",
+     "pitfall": "Remover a coluna antiga no mesmo passo é o erro clássico: funciona e fecha a porta de saída."
+    },
+    {
+     "topic": "Publicação por cópia",
+     "statement": "Copiar os arquivos da versão nova por cima da pasta em uso tem como principal risco:",
+     "options": [
+      "Durante a cópia o sistema fica misturado, e não há como voltar",
+      "A cópia consome muita memória da máquina",
+      "Os arquivos podem perder as permissões originais",
+      "O servidor web precisa ser reinstalado",
+      "O banco de dados fica inacessível durante a cópia"
+     ],
+     "correct_index": 0,
+     "explanation": "Enquanto a cópia acontece, parte do sistema é nova e parte é antiga. E como a versão anterior foi sobrescrita, não sobrou para onde voltar.",
+     "pitfall": "A perda de permissões é um incômodo real, mas o problema grave é a ausência de caminho de volta."
+    },
+    {
+     "topic": "Ensaio de volta",
+     "statement": "Sobre o procedimento de voltar para a versão anterior, a prática recomendada é:",
+     "options": [
+      "Executá-lo de propósito ao menos uma vez, fora de emergência",
+      "Documentá-lo detalhadamente e guardar o documento",
+      "Executá-lo apenas quando houver falha real",
+      "Delegá-lo à empresa de hospedagem",
+      "Substituí-lo por uma cópia de segurança completa"
+     ],
+     "correct_index": 0,
+     "explanation": "Procedimento nunca executado é hipótese. O ensaio revela o passo esquecido enquanto ainda dá para corrigir com calma.",
+     "pitfall": "Documentar é útil e não prova nada: o documento pode descrever um procedimento que não funciona mais."
+    },
+    {
+     "topic": "Dados que sobrevivem",
+     "statement": "Arquivos enviados pelos usuários devem ficar armazenados:",
+     "options": [
+      "Numa pasta compartilhada, fora das pastas de versão",
+      "Dentro da pasta da versão atual",
+      "No repositório de código",
+      "No banco de dados, sempre",
+      "Numa pasta nova a cada publicação"
+     ],
+     "correct_index": 0,
+     "explanation": "Se eles morassem dentro da versão, cada publicação criaria uma pasta vazia e os arquivos antigos ficariam presos numa versão que ninguém usa mais.",
+     "pitfall": "Como funciona perfeitamente até a segunda publicação, o problema só aparece depois de o desenho já estar em produção."
+    },
+    {
+     "topic": "Script de publicação",
+     "statement": "Num script que automatiza a publicação, a configuração que mais evita estragos é:",
+     "options": [
+      "Interromper a execução no primeiro comando que falhar",
+      "Registrar a saída de todos os comandos num arquivo",
+      "Executar os passos em ordem alfabética",
+      "Rodar o script como a conta que pode tudo",
+      "Repetir automaticamente cada comando que falhar"
+     ],
+     "correct_index": 0,
+     "explanation": "Sem essa parada, um passo que falha não impede os seguintes, e o atalho acaba apontando para uma versão montada pela metade.",
+     "pitfall": "Repetir automaticamente parece robusto e costuma apenas repetir o mesmo erro mais depressa."
+    },
+    {
+     "topic": "Recarga após a troca",
+     "statement": "Depois de apontar o atalho para a versão nova, a forma de fazer a aplicação usá-la sem derrubar usuários é:",
+     "options": [
+      "Pedir ao serviço que releia, quando ele suporta isso",
+      "Reiniciar a máquina",
+      "Aguardar que a aplicação perceba sozinha",
+      "Parar e iniciar o serviço",
+      "Reinstalar a aplicação"
+     ],
+     "correct_index": 0,
+     "explanation": "A releitura substitui a configuração e o código carregado mantendo o processo no ar, sem encerrar conexões em andamento.",
+     "pitfall": "Nenhuma aplicação percebe sozinha a troca do atalho: o código já carregado continua sendo o antigo."
+    }
+   ]
   }
  ]
 }
