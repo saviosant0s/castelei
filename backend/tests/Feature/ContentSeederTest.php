@@ -149,18 +149,37 @@ class ContentSeederTest extends TestCase
         $this->assertStringContainsString('à', $lesson->explanation);
     }
 
-    public function test_toda_questao_tem_5_alternativas_gabarito_valido_e_explicacao(): void
+    public function test_toda_questao_esta_completa_no_formato_dela(): void
     {
         $this->seed(DatabaseSeeder::class);
 
         foreach (Question::all() as $question) {
-            $this->assertCount(5, $question->options, "Questão {$question->id}");
-            $this->assertCount(5, array_unique($question->options), "Questão {$question->id} tem alternativas repetidas");
-            $this->assertGreaterThanOrEqual(0, $question->correct_index);
-            $this->assertLessThan(5, $question->correct_index);
-            $this->assertNotEmpty($question->explanation);
-            $this->assertNotEmpty($question->pitfall);
-            $this->assertNotEmpty($question->topic);
+            $onde = "Questão {$question->id}";
+
+            $this->assertNotEmpty($question->explanation, $onde);
+            $this->assertNotEmpty($question->pitfall, $onde);
+            $this->assertNotEmpty($question->topic, $onde);
+            $this->assertCount(
+                count($question->options),
+                array_unique($question->options),
+                "{$onde} tem opções repetidas",
+            );
+
+            if ($question->format === Question::FORMAT_ORDER) {
+                /*
+                | A questão de ordenar não tem cinco alternativas nem gabarito:
+                | são de três a seis passos, e o gabarito é a ordem em que
+                | estão escritos. Menos de três, metade acerta no chute.
+                */
+                $this->assertGreaterThanOrEqual(3, count($question->options), $onde);
+                $this->assertLessThanOrEqual(6, count($question->options), $onde);
+
+                continue;
+            }
+
+            $this->assertCount(5, $question->options, $onde);
+            $this->assertGreaterThanOrEqual(0, $question->correct_index, $onde);
+            $this->assertLessThan(5, $question->correct_index, $onde);
         }
     }
 

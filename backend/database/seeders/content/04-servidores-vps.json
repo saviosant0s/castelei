@@ -2050,17 +2050,16 @@
         },
         {
           "topic": "Ordem de ativação",
-          "statement": "Ao ativar a portaria numa máquina acessada apenas à distância, a ordem correta é:",
+          "format": "order",
+          "statement": "Ponha na ordem os passos de ligar a portaria numa máquina que só se acessa à distância.",
           "options": [
-            "Liberar o acesso administrativo primeiro e ativar por último",
-            "Ativar primeiro e liberar os acessos depois",
-            "Ativar e liberar ao mesmo tempo, num único comando",
-            "Liberar tudo, ativar, e depois ir fechando",
-            "Reiniciar a máquina antes de qualquer liberação"
+            "liberar a porta do acesso administrativo",
+            "liberar as portas do site",
+            "ligar a portaria",
+            "conferir de fora que só o liberado responde"
           ],
-          "correct_index": 0,
           "explanation": "A regra entra em vigor no instante da ativação. Sem a própria entrada liberada antes, a sessão cai e não há como reconectar.",
-          "pitfall": "Ativar primeiro parece mais seguro, e é exatamente o que tranca a pessoa do lado de fora."
+          "pitfall": "Ligar primeiro parece mais seguro. É exatamente o que tranca a pessoa do lado de fora."
         },
         {
           "topic": "Banco de dados exposto",
@@ -7487,17 +7486,16 @@
       "questions": [
         {
           "topic": "Ordem do endurecimento",
-          "statement": "Ao preparar uma máquina recém-alugada, a ordem correta das primeiras ações é:",
+          "format": "order",
+          "statement": "Ponha na ordem as primeiras ações numa máquina recém-alugada.",
           "options": [
-            "Criar usuário comum, instalar a chave, testar e só então desligar a senha",
-            "Desligar a autenticação por senha e depois criar o usuário",
-            "Ligar a portaria de rede antes de configurar o acesso",
-            "Instalar a aplicação antes de qualquer configuração de acesso",
-            "Reiniciar a máquina antes de qualquer alteração"
+            "criar a conta de trabalho",
+            "instalar a sua chave nessa conta",
+            "testar o acesso por chave numa janela nova",
+            "desligar a entrada por senha"
           ],
-          "correct_index": 0,
-          "explanation": "Cada passo depende do anterior ter sido validado. Desligar a senha antes de confirmar que a chave funciona tranca o administrador do lado de fora.",
-          "pitfall": "Ligar a portaria cedo parece prudente e produz exatamente o mesmo tipo de trancamento."
+          "explanation": "Cada passo depende de o anterior ter sido conferido. Desligar a senha antes de saber que a chave funciona tranca você do lado de fora.",
+          "pitfall": "Testar na mesma janela que já está aberta não vale. Ela continua funcionando mesmo se a chave estiver errada."
         },
         {
           "topic": "Lista de conferência",

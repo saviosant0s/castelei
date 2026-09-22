@@ -97,6 +97,37 @@ class SubjectExportTest extends TestCase
         $this->assertSame(0, $exportado['lessons'][0]['questions'][0]['correct_index']);
     }
 
+    /**
+     * A questão de ordenar sai e volta inteira.
+     *
+     * Ela não tem alternativa certa: o gabarito É a ordem das opções. Um
+     * exportador desatento escreveria `correct_index: 0` no arquivo, e a
+     * reimportação criaria uma questão de múltipla escolha cuja resposta
+     * certa é o primeiro passo — sem erro nenhum, e sem ninguém perceber.
+     */
+    public function test_a_questao_de_ordenar_sobrevive_a_ida_e_volta(): void
+    {
+        $arquivo = $this->arquivo();
+        $arquivo['lessons'][0]['questions'][0] = [
+            'topic' => 'Ordem',
+            'format' => 'order',
+            'statement' => 'Ponha na ordem.',
+            'options' => ['primeiro', 'segundo', 'terceiro'],
+            'explanation' => 'Assim.',
+        ];
+
+        app(ContentImporter::class)->import($arquivo, origin: 'seed');
+        $exportado = app(SubjectExporter::class)->export(Subject::firstWhere('slug', 'servidores'));
+        $questao = $exportado['lessons'][0]['questions'][0];
+
+        $this->assertSame('order', $questao['format']);
+        $this->assertSame(['primeiro', 'segundo', 'terceiro'], $questao['options']);
+        $this->assertArrayNotHasKey('correct_index', $questao);
+
+        // E o arquivo que saiu continua entrando.
+        $this->assertSame([], app(ContentValidator::class)->validate($exportado)['errors']);
+    }
+
     /** Blocos visuais são justamente o que não pode se perder no caminho. */
     public function test_os_blocos_visuais_sobrevivem(): void
     {

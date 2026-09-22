@@ -98,9 +98,17 @@ export interface LessonDetail {
   limited_by_plan: boolean;
 }
 
+/**
+ * `choice`: cinco alternativas, uma certa. O formato da prova.
+ * `order`: pôr os passos na ordem. As opções chegam EMBARALHADAS pelo
+ * servidor — a ordem certa é o gabarito, e não pode viajar até o navegador.
+ */
+export type QuestionFormat = "choice" | "order";
+
 export interface PracticeQuestion {
   id: number;
   position: number;
+  format: QuestionFormat;
   topic: string;
   statement: string;
   options: string[];
@@ -121,6 +129,8 @@ export interface StartExamResponse extends StartAttemptResponse {
 export interface AnswerResult {
   is_correct: boolean;
   correct_index: number;
+  /** Na questão de ordenar, a sequência certa por extenso. Null nas outras. */
+  correct_order: string[] | null;
   explanation: string;
   pitfall: string | null;
   /** XP ganho nesta resposta; null quando o plano não mostra gamificação */

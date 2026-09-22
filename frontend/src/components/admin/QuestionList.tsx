@@ -59,12 +59,24 @@ export function QuestionList({ lessonId, questions }: { lessonId: number; questi
 
                 <span className="min-w-0 flex-1">
                   <span className="block text-base">{question.statement}</span>
+                  {/*
+                    Na questão de ordenar não existe "a certa": o gabarito é a
+                    sequência inteira, e mostrar a primeira opção com um certo
+                    verde ao lado diria uma coisa que não é verdade.
+                  */}
                   <span className="mt-1 flex items-start gap-1.5 text-sm text-content-secondary">
                     <Check className="size-4 shrink-0 text-sage" aria-hidden="true" />
-                    <span>{question.options[question.correct_index]}</span>
+                    <span>
+                      {question.format === "order"
+                        ? question.options.join(" → ")
+                        : question.options[question.correct_index]}
+                    </span>
                   </span>
                   <span className="mt-1 block text-sm text-content-subtle">
-                    {question.topic} · {question.options.length} alternativas
+                    {question.topic} ·{" "}
+                    {question.format === "order"
+                      ? `${question.options.length} passos para ordenar`
+                      : `${question.options.length} alternativas`}
                   </span>
                 </span>
 

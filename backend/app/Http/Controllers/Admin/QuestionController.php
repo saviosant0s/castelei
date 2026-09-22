@@ -63,7 +63,10 @@ class QuestionController extends Controller
             'statement' => ['required', 'string'],
             'options' => ['required', 'array', 'min:2', 'max:8'],
             'options.*' => ['required', 'string'],
-            'correct_index' => ['required', 'integer', 'min:0'],
+            'format' => ['nullable', 'string', 'in:choice,order'],
+            // Na questão de ordenar não existe alternativa certa: o gabarito
+            // é a ordem em que as opções foram escritas.
+            'correct_index' => ['required_unless:format,order', 'integer', 'min:0'],
             'explanation' => ['required', 'string'],
             'pitfall' => ['nullable', 'string'],
         ], [
@@ -76,6 +79,8 @@ class QuestionController extends Controller
             'explanation.required' => 'Escreva a explicação que aparece depois da resposta.',
         ]);
 
+        $data['format'] = $data['format'] ?? Question::FORMAT_CHOICE;
+
         $limpas = array_map(fn (string $option) => trim($option), $data['options']);
 
         if (count(array_unique($limpas)) !== count($limpas)) {
@@ -83,6 +88,21 @@ class QuestionController extends Controller
                 'message' => 'Há alternativas repetidas. Cada uma precisa dizer algo diferente.',
                 'errors' => ['options' => ['Há alternativas repetidas.']],
             ], 422));
+        }
+
+        if ($data['format'] === Question::FORMAT_ORDER) {
+            if (count($data['options']) < 3) {
+                abort(response()->json([
+                    'message' => 'Uma questão de ordenar precisa de pelo menos três passos. Com dois, metade acerta no chute.',
+                    'errors' => ['options' => ['Pelo menos três passos.']],
+                ], 422));
+            }
+
+            // A coluna não aceita nulo, e ninguém lê este valor numa questão
+            // de ordenar. Zero é o menos enganoso.
+            $data['correct_index'] = 0;
+
+            return $data;
         }
 
         if ($data['correct_index'] >= count($data['options'])) {
@@ -102,6 +122,7 @@ class QuestionController extends Controller
             'id' => $question->id,
             'position' => $question->position,
             'topic' => $question->topic,
+            'format' => $question->format,
             'statement' => $question->statement,
             'options' => $question->options,
             'correct_index' => $question->correct_index,

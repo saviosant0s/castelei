@@ -555,13 +555,51 @@ class ContentValidator
                 continue;
             }
 
-            $this->options($options, $question['correct_index'] ?? null, $qPath);
+            $formato = $question['format'] ?? 'choice';
+
+            if (! in_array($formato, ['choice', 'order'], true)) {
+                $this->error("{$qPath}.format", 'O formato da questão precisa ser "choice" (cinco alternativas) ou "order" (pôr os passos na ordem).');
+
+                continue;
+            }
+
+            $formato === 'order'
+                ? $this->ordering($options, $qPath)
+                : $this->options($options, $question['correct_index'] ?? null, $qPath);
         }
 
         $total = count($questions);
 
         if ($total !== self::QUESTIONS_PER_LESSON) {
             $this->warn($path, "A lição tem {$total} questões. O site público anuncia ".self::QUESTIONS_PER_LESSON.' por lição, então fora desse número a vitrine passa a prometer o que o app não entrega.');
+        }
+    }
+
+    /**
+     * A questão de ordenar.
+     *
+     * O gabarito não é um número: são os próprios passos, escritos na ordem
+     * certa. Quem escreve a questão escreve a sequência, e o app embaralha na
+     * hora de mostrar (ver App\Support\Practice\StepShuffle).
+     *
+     * @param  list<string>  $options
+     */
+    private function ordering(array $options, string $path): void
+    {
+        if (count($options) < 3) {
+            $this->error("{$path}.options", 'Uma questão de ordenar precisa de pelo menos três passos. Com dois, metade das pessoas acerta no chute.');
+
+            return;
+        }
+
+        if (count($options) > 6) {
+            $this->warn("{$path}.options", 'A questão tem '.count($options).' passos. Acima de seis, ordenar vira paciência em vez de conhecimento — e não cabe na tela do celular.');
+        }
+
+        $limpos = array_map(fn (string $option) => trim($option), $options);
+
+        if (count(array_unique($limpos)) !== count($limpos)) {
+            $this->error("{$path}.options", 'Há passos repetidos. Dois passos iguais tornam a ordem impossível de acertar.');
         }
     }
 

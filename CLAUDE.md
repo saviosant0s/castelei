@@ -101,6 +101,16 @@ Pronto: MVP (cadastro, catálogo, prática com cronômetro, resultado com record
 
 **Na tela inicial, cada matéria mostra uma barra de progresso** com lições praticadas sobre o total. Conta só tentativa concluída (`attempts` vem do backend com `whereNotNull('finished_at')`), e o número vem escrito ao lado da barra.
 
+**Existem dois formatos de questão** (`questions.format`). O primeiro é o de sempre: cinco alternativas, uma certa — e continua sendo o principal, porque é o formato da prova que o aluno vai fazer. O segundo é **pôr os passos na ordem** (`order`), e ele existe porque a múltipla escolha só mede RECONHECER. Boa parte da matéria não é sobre reconhecer: `fork` vem antes de `execve`, o pedido vem antes do TRAP, liberar o SSH vem antes de ligar o firewall. Quem troca a ordem quebra a máquina, e a alternativa nunca cobra isso. Cinco coisas:
+
+- **O gabarito é a PRÓPRIA lista de opções**, escrita na ordem certa. Não existe `correct_index` — ele fica em zero só porque a coluna não aceita nulo, e ninguém o lê.
+- **Por isso o servidor embaralha antes de entregar** (`Support\Practice\StepShuffle`). Mandar a lista como está entregaria a resposta a quem abrisse as ferramentas do desenvolvedor — o mesmo cuidado que a múltipla escolha já toma com o `correct_index`. A semente é `tentativa + questão`, então a ordem é reproduzível nas duas pontas **sem guardar nada**, e duas pessoas na mesma questão veem ordens diferentes. Um teste garante que o sorteio nunca cai na ordem certa.
+- **Não se arrasta, se toca.** Arrastar dentro de uma página que rola é o gesto que mais erra no celular: o dedo ora arrasta o item, ora rola a tela. Tocar sobe o passo para "sua ordem"; tocar de novo o devolve **ao lugar de onde saiu**, não para o fim da fila.
+- **Confirmar só acende com tudo posicionado** — até lá o botão conta quantos faltam. Ordem pela metade não é resposta errada, é resposta incompleta, e mandá-la gastaria a questão.
+- **Errar mostra a ordem certa com um certo em cada passo que ficou no lugar.** Só "errou" não ensina nada aqui: o que falta saber é ONDE a sequência saiu do trilho.
+
+Ao escrever conteúdo: use `order` onde a lição ensina uma sequência, e múltipla escolha no resto. De três a seis passos (menos de três, metade acerta no chute; mais de seis, vira paciência e não cabe na tela). O verificador reprova `correct_index` numa questão de ordenar, e o painel oferece os dois formatos lado a lado.
+
 **A tela de resultado cabe numa tela, e o que fazer em seguida fica fixo embaixo** (`ResultView`, em `PracticeClient.tsx`). Duas queixas do Sávio, que eram a mesma vista de dois ângulos: os botões de continuar ficavam no fim de uma rolagem, e a tela tinha "cara de IA". Ela era uma pilha de cartões arredondados do mesmo tamanho — tempo, XP, streak, conquista —, cada um com ícone, rótulo cinza e número grande. Pilha sem hierarquia é o que denuncia tela gerada, e é também o que obrigava a rolar. Três decisões:
 
 - **Um número é a notícia** (o acerto). O resto virou uma faixa de três colunas numa linha só, e o que sobra é frase, não cartão. Coluna sem dado some, em vez de mostrar traço.
@@ -118,6 +128,8 @@ Pronto: MVP (cadastro, catálogo, prática com cronômetro, resultado com record
 **Desenho em fonte de máquina não é código.** O endereço partido em dois da lição de memória virtual era um quadro de `+---+` dentro do bloco preto. Virou figura (`so-endereco-partido.svg`). O par `(bloco, posição)` da segmentação virou bloco `example`, que já era português.
 
 **As palavras novas moram num cartão só.** A regra de explicar todo termo na estreia é boa, e a conferência a tornou obrigatória — o efeito colateral foi uma etapa com cinco caixas azuis iguais, cada uma repetindo o rótulo "palavra nova". Trocamos um paredão de parágrafo por um paredão azul. O rótulo aparece uma vez, e as palavras são linhas separadas por um traço fino.
+
+**A explicação vem até a pessoa, não o contrário.** Depois de responder, o bloco de feedback rola para o MEIO da tela (`block: "center"`). Era `"nearest"`, que rola o mínimo possível — e o mínimo deixava a explicação encostada na barra fixa de baixo, com a pegadinha cortada. Quem acabou de responder quer ler o porquê, e estava tendo que rolar para isso.
 
 **A espera antes da primeira questão é um esqueleto** (`PracticeSkeleton`, em `PracticeClient.tsx`), com a forma do cabeçalho, do enunciado e das alternativas. Era uma frase solta no branco, no instante de maior desistência da prática.
 
