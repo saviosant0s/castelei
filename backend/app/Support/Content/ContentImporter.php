@@ -156,9 +156,13 @@ class ContentImporter
 
             $question->fill([
                 'topic' => $questionData['topic'],
+                'format' => $questionData['format'] ?? Question::FORMAT_CHOICE,
                 'statement' => $questionData['statement'],
                 'options' => $questionData['options'],
-                'correct_index' => $questionData['correct_index'],
+                // Na questão de ordenar não existe alternativa certa: o
+                // gabarito é a própria ordem das opções. A coluna não aceita
+                // nulo, então fica em zero e ninguém a lê.
+                'correct_index' => $questionData['correct_index'] ?? 0,
                 'explanation' => $questionData['explanation'],
                 'pitfall' => $questionData['pitfall'] ?? null,
             ]);

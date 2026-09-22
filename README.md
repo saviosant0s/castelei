@@ -31,6 +31,8 @@ castelei/
 - Matérias rotativas no plano grátis (só há 2 matérias)
 - IA e login com Google
 
+As questões têm dois formatos. O padrão é `choice`: cinco alternativas e um `correct_index`. O outro é `format: "order"` — pôr os passos na ordem, onde as `options` são os passos **escritos na ordem certa** (o app embaralha ao mostrar) e não existe `correct_index`. Use `order` onde a lição ensina uma sequência, com três a seis passos.
+
 Decisão de conteúdo: as questões são **originais**, escritas no estilo de prova, e não trazem a informação "apareceu N vezes no ENEM" do wireframe. Essa estatística exigiria uma base verificada de provas reais, que ainda não existe.
 
 ## Rodando localmente

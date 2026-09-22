@@ -346,6 +346,24 @@ for (const file of arquivos) {
       const W = `${L} › questão ${i + 1}`;
       checkProse(`${W} (enunciado)`, q.statement ?? "");
       (q.options ?? []).forEach((o) => checkProse(`${W} (alternativa)`, o));
+
+      /*
+      | A questão de ordenar.
+      |
+      | O gabarito dela é a PRÓPRIA lista de opções, escrita na ordem certa —
+      | o app embaralha na hora de mostrar. Duas armadilhas de quem escreve:
+      | pôr um `correct_index` (que não quer dizer nada aqui, e sugere que a
+      | resposta é uma alternativa), e escrever a ordem já embaralhada,
+      | achando que o arquivo é o que a pessoa vai ver.
+      */
+      if (q.format && q.format !== "choice" && q.format !== "order") {
+        fail(W, `formato inválido “${q.format}”: use “choice” ou “order”`);
+      }
+      if (q.format === "order") {
+        if (q.correct_index !== undefined) fail(W, "questão de ordenar não tem alternativa certa: tire o correct_index");
+        if ((q.options ?? []).length < 3) fail(W, "questão de ordenar precisa de pelo menos três passos");
+        if ((q.options ?? []).length > 6) warn(W, `questão de ordenar com ${q.options.length} passos: acima de seis vira paciência`);
+      }
       for (const field of ["explanation", "pitfall"]) {
         checkProse(`${W} (${field})`, q[field] ?? "");
         checkJargon(`${W} (${field})`, q[field] ?? "", lessonTerms, jargon);

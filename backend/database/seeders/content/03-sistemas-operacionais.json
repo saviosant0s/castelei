@@ -1670,17 +1670,17 @@
         },
         {
           "topic": "Ordem dos passos",
-          "statement": "Qual é a ordem correta dos acontecimentos em uma chamada de sistema?",
+          "format": "order",
+          "statement": "Ponha na ordem o caminho de um pedido, do programa até a resposta.",
           "options": [
-            "O SO faz o serviço; o programa chama a biblioteca; a biblioteca executa o TRAP; o programa recebe o resultado",
-            "A biblioteca executa o TRAP; o programa chama a biblioteca; o SO faz o serviço; o processador volta ao modo usuário",
-            "O programa chama a função da biblioteca; a biblioteca executa o TRAP; o SO faz o serviço; o processador volta ao modo usuário; o programa recebe o resultado",
-            "O programa executa o TRAP; o SO chama a biblioteca; o processador volta ao modo usuário; o SO faz o serviço",
-            "O processador volta ao modo usuário; o SO faz o serviço; o programa chama a biblioteca; a biblioteca executa o TRAP"
+            "o programa chama a função da biblioteca",
+            "a biblioteca executa o TRAP",
+            "o SO faz o serviço",
+            "o processador volta ao modo usuário",
+            "o programa recebe o resultado"
           ],
-          "correct_index": 2,
           "explanation": "O pedido vai do programa para a biblioteca, depois ao SO pelo TRAP. O SO trabalha e o resultado volta pelo mesmo caminho.",
-          "pitfall": "Guarde a ideia (pedir, preparar, trocar de modo, fazer o serviço, voltar). O serviço nunca vem antes do pedido."
+          "pitfall": "A ideia é pedir, preparar e trocar de modo. Só então o SO faz o serviço. O serviço nunca vem antes do pedido."
         },
         {
           "topic": "A biblioteca",
@@ -2131,17 +2131,16 @@
         },
         {
           "topic": "O shell e o fork",
-          "statement": "Quando você roda um programa no terminal, o que costuma acontecer?",
+          "format": "order",
+          "statement": "Ponha na ordem o que o shell faz quando você manda rodar um programa.",
           "options": [
-            "O shell chama execve diretamente, sem criar filho",
-            "O shell chama exit e o programa roda sozinho",
-            "O shell chama open para abrir o programa como arquivo de texto",
-            "O shell chama read e espera o núcleo executar o programa",
-            "O shell chama fork; o filho usa execve para virar o programa; o pai usa waitpid para esperar"
+            "o shell chama fork e ganha um filho",
+            "o filho chama execve e vira o programa pedido",
+            "o pai chama waitpid e espera",
+            "o filho chama exit e o pai volta ao prompt"
           ],
-          "correct_index": 4,
           "explanation": "Se o shell usasse execve sozinho, ele mesmo seria trocado pelo programa e sumiria. Por isso ele cria um filho antes.",
-          "pitfall": "O execve não cria processo: ele troca o programa do processo que o chama."
+          "pitfall": "O execve não cria processo. Ele troca o programa do processo que o chamou."
         },
         {
           "topic": "O descritor no read",

@@ -14,6 +14,7 @@ class Answer extends Model
         return [
             'is_correct' => 'boolean',
             'selected_index' => 'integer',
+            'selected_order' => 'array',
             'seconds' => 'integer',
         ];
     }

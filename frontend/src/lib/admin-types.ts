@@ -1,4 +1,4 @@
-import type { LessonStep } from "@/lib/types";
+import type { LessonStep, QuestionFormat } from "@/lib/types";
 
 /**
  * De onde vem o conteúdo de uma matéria.
@@ -45,6 +45,8 @@ export interface AdminSubjectDetail {
 export interface AdminQuestion {
   id: number;
   position: number;
+  /** `choice` (alternativas) ou `order` (pôr os passos na ordem). */
+  format: QuestionFormat;
   topic: string;
   statement: string;
   options: string[];

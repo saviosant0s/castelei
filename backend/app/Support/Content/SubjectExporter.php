@@ -56,6 +56,8 @@ class SubjectExporter
     {
         $dados = [
             'topic' => $question->topic,
+            // "choice" é o padrão: escrevê-lo em toda questão só polui o arquivo.
+            'format' => $question->format === Question::FORMAT_CHOICE ? null : $question->format,
             'statement' => $question->statement,
             'options' => $question->options,
             /*
@@ -66,7 +68,9 @@ class SubjectExporter
             | gabarito, e a reimportação recusaria a matéria inteira. Por isso a
             | comparação abaixo é explicitamente com `null`.
             */
-            'correct_index' => $question->correct_index,
+            // Questão de ordenar não tem alternativa certa: o gabarito é a
+            // ordem das opções, e um `correct_index` aqui só confundiria.
+            'correct_index' => $question->format === Question::FORMAT_ORDER ? null : $question->correct_index,
             'explanation' => $question->explanation,
             'pitfall' => $question->pitfall,
         ];

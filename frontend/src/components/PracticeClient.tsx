@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, Check, Crown, Lightbulb, RotateCcw, SkipForward, Star, Timer, TriangleAlert, X } from "lucide-react";
 import { BadgeIcon } from "@/components/BadgeIcon";
 import { Confetti } from "@/components/Confetti";
+import { OrderQuestion } from "@/components/OrderQuestion";
 import { ProgressBar } from "@/components/ui";
 import { messageOf, postJson } from "@/lib/client";
 import { formatClock, formatNumber, formatSeconds, optionLetter, pluralize } from "@/lib/format";
@@ -102,6 +103,8 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
   const [questions, setQuestions] = useState<PracticeQuestion[]>([]);
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
+  /** A sequência montada numa questão de ordenar: índices do que está na tela. */
+  const [ordering, setOrdering] = useState<number[]>([]);
   const [feedback, setFeedback] = useState<AnswerResult | null>(null);
   const [result, setResult] = useState<FinishResult | null>(null);
   const [elapsed, setElapsed] = useState(0);
@@ -119,6 +122,7 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
       setQuestions(data.questions);
       setIndex(0);
       setSelected(null);
+      setOrdering([]);
       setFeedback(null);
       setResult(null);
       setElapsed(0);
@@ -147,31 +151,45 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
     return () => window.clearInterval(id);
   }, [phase, index]);
 
+  /*
+  | A explicação vem até a pessoa, não o contrário.
+  |
+  | Era `block: "nearest"`, que rola o mínimo possível — e o mínimo deixava a
+  | explicação encostada na barra fixa de baixo, com a pegadinha cortada. Quem
+  | acabou de responder quer ler o porquê, e estava tendo que rolar para isso.
+  | `"center"` põe o bloco no meio da tela, longe das duas bordas.
+  */
   useEffect(() => {
-    if (phase === "feedback") feedbackRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    if (phase === "feedback") feedbackRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
   }, [phase]);
 
   const question = questions[index];
 
-  async function submit(choice: number | null) {
+  /**
+   * Manda a resposta. `choice` é a alternativa; `sequencia` é a ordem.
+   * Pular é mandar os dois vazios, em qualquer formato.
+   */
+  async function submit(choice: number | null, sequencia: number[] = []) {
     if (!attempt || !question || busy) return;
     // Acorda o áudio AQUI, ainda dentro do gesto: a resposta só chega depois
     // do await, quando o iPhone já não libera som. Ver lib/sound.ts.
     primeSound();
     const seconds = Math.max(0, Math.round((Date.now() - questionStart.current) / 1000));
+    const respondeu = choice !== null || sequencia.length > 0;
     setBusy(true);
     setError(null);
     try {
       const data = await postJson<AnswerResult>(`/api/attempts/${attempt.id}/answers`, {
         question_id: question.id,
         selected: choice,
+        ordering: sequencia,
         seconds,
       });
       setSelected(choice);
       setFeedback(data);
       setPhase("feedback");
       // Quem pulou não acertou nem errou: nada a comemorar nem a lamentar.
-      if (choice !== null) playSound(data.is_correct ? "acerto" : "erro");
+      if (respondeu) playSound(data.is_correct ? "acerto" : "erro");
     } catch (e) {
       setError(messageOf(e));
     } finally {
@@ -184,6 +202,7 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
     if (index + 1 < questions.length) {
       setIndex((i) => i + 1);
       setSelected(null);
+      setOrdering([]);
       setFeedback(null);
       setElapsed(0);
       questionStart.current = Date.now();
@@ -234,6 +253,8 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
 
   const answeredCount = index + (phase === "feedback" ? 1 : 0);
   const isLast = index + 1 === questions.length;
+  // Pular é não ter escolhido nada, no formato que for.
+  const pulou = question.format === "order" ? ordering.length === 0 : selected === null;
 
   return (
     <div className="mx-auto min-h-dvh max-w-md px-5 pb-40 pt-4">
@@ -260,46 +281,64 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
         </p>
         <h1 className="mt-3 text-2xl">{question.statement}</h1>
 
-        <ul className="mt-6 space-y-3">
-          {question.options.map((option, i) => {
-            const isSelected = selected === i;
-            const showing = phase === "feedback" && feedback;
-            const isCorrect = showing && feedback.correct_index === i;
-            const isWrongPick = showing && isSelected && !feedback.is_correct;
+        {question.format === "order" ? (
+          <OrderQuestion
+            options={question.options}
+            ordering={ordering}
+            onChange={setOrdering}
+            disabled={phase !== "answering" || busy}
+            correctOrder={phase === "feedback" ? (feedback?.correct_order ?? null) : null}
+          />
+        ) : (
+          <ul className="mt-6 space-y-3">
+            {question.options.map((option, i) => {
+              const isSelected = selected === i;
+              const showing = phase === "feedback" && feedback;
+              const isCorrect = showing && feedback.correct_index === i;
+              const isWrongPick = showing && isSelected && !feedback.is_correct;
 
-            let style = "border-ink/15 bg-surface-raised hover:border-ink/40";
-            if (phase === "answering" && isSelected) style = "border-sky bg-sky-soft";
-            if (isCorrect) style = "border-sage bg-sage-soft";
-            if (isWrongPick) style = "border-brick bg-brick-soft";
-            if (showing && !isCorrect && !isWrongPick) style = "border-ink/10 bg-surface-raised opacity-60";
+              let style = "border-ink/15 bg-surface-raised hover:border-ink/40";
+              if (phase === "answering" && isSelected) style = "border-sky bg-sky-soft";
+              if (isCorrect) style = "border-sage bg-sage-soft";
+              if (isWrongPick) style = "border-brick bg-brick-soft";
+              if (showing && !isCorrect && !isWrongPick) style = "border-ink/10 bg-surface-raised opacity-60";
 
-            return (
-              <li key={i}>
-                <button
-                  type="button"
-                  disabled={phase !== "answering" || busy}
-                  aria-pressed={isSelected}
-                  onClick={() => setSelected(i)}
-                  className={`flex min-h-14 w-full items-center gap-3 rounded-2xl border-2 px-4 py-3 text-left text-base transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink ${style}`}
-                >
-                  <span className={`grid size-8 shrink-0 place-items-center rounded-full font-mono text-sm font-medium ${isCorrect ? "bg-sage text-on-accent" : isWrongPick ? "bg-brick text-white" : "bg-ink/8"}`}>
-                    {isCorrect ? <Check className="size-4" aria-hidden="true" /> : isWrongPick ? <X className="size-4" aria-hidden="true" /> : optionLetter(i)}
-                  </span>
-                  <span>{option}</span>
-                </button>
-              </li>
-            );
-          })}
-        </ul>
+              return (
+                <li key={i}>
+                  <button
+                    type="button"
+                    disabled={phase !== "answering" || busy}
+                    aria-pressed={isSelected}
+                    onClick={() => setSelected(i)}
+                    className={`flex min-h-14 w-full items-center gap-3 rounded-2xl border-2 px-4 py-3 text-left text-base transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink ${style}`}
+                  >
+                    <span className={`grid size-8 shrink-0 place-items-center rounded-full font-mono text-sm font-medium ${isCorrect ? "bg-sage text-on-accent" : isWrongPick ? "bg-brick text-white" : "bg-ink/8"}`}>
+                      {isCorrect ? <Check className="size-4" aria-hidden="true" /> : isWrongPick ? <X className="size-4" aria-hidden="true" /> : optionLetter(i)}
+                    </span>
+                    <span>{option}</span>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        )}
 
         {error && <p role="alert" className="mt-4 rounded-2xl bg-brick-soft px-4 py-3 text-base text-brick">{error}</p>}
 
         {phase === "feedback" && feedback && (
           <div ref={feedbackRef} className="anim-rise mt-6 space-y-4">
-            <div className={`rounded-2xl px-5 py-4 ${feedback.is_correct ? "bg-sage-soft" : selected === null ? "bg-paper-2" : "bg-brick-soft"}`}>
+            <div className={`rounded-2xl px-5 py-4 ${feedback.is_correct ? "bg-sage-soft" : pulou ? "bg-paper-2" : "bg-brick-soft"}`}>
               <div className="flex items-center justify-between gap-3">
                 <p className="font-display text-2xl font-bold">
-                  {feedback.is_correct ? "Acertou!" : selected === null ? "Você pulou esta" : "Não foi dessa vez"}
+                  {feedback.is_correct
+                    ? "Acertou!"
+                    : feedback.correct_order
+                      ? ordering.length === 0
+                        ? "Você pulou esta"
+                        : "A ordem não era essa"
+                      : selected === null
+                        ? "Você pulou esta"
+                        : "Não foi dessa vez"}
                 </p>
                 {feedback.xp ? (
                   <span className="anim-pop inline-flex shrink-0 items-center gap-1 rounded-full bg-surface-raised px-3 py-1 font-mono text-base font-medium">
@@ -307,7 +346,7 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
                   </span>
                 ) : null}
               </div>
-              {!feedback.is_correct && (
+              {!feedback.is_correct && !feedback.correct_order && (
                 <p className="mt-1 text-base">
                   Gabarito: <strong>{optionLetter(feedback.correct_index)}) {question.options[feedback.correct_index]}</strong>
                 </p>
@@ -333,9 +372,24 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
               <button type="button" className="btn btn-ghost border-2 border-ink/15" disabled={busy} onClick={() => submit(null)}>
                 <SkipForward className="size-5" aria-hidden="true" /> Pular
               </button>
-              <button type="button" className="btn btn-primary flex-1" disabled={selected === null || busy} onClick={() => submit(selected)}>
-                {busy ? "Enviando…" : "Confirmar"}
-              </button>
+              {question.format === "order" ? (
+                <button
+                  type="button"
+                  className="btn btn-primary flex-1"
+                  disabled={ordering.length !== question.options.length || busy}
+                  onClick={() => submit(null, ordering)}
+                >
+                  {busy
+                    ? "Enviando…"
+                    : ordering.length === question.options.length
+                      ? "Confirmar"
+                      : `Faltam ${question.options.length - ordering.length}`}
+                </button>
+              ) : (
+                <button type="button" className="btn btn-primary flex-1" disabled={selected === null || busy} onClick={() => submit(selected)}>
+                  {busy ? "Enviando…" : "Confirmar"}
+                </button>
+              )}
             </>
           ) : (
             <button type="button" className="btn btn-dark flex-1" disabled={busy} onClick={next}>

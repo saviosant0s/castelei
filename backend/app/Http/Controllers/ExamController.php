@@ -40,13 +40,7 @@ class ExamController extends Controller
                 'kind' => $attempt->kind,
             ],
             'subject' => ['id' => $subject->id, 'slug' => $subject->slug, 'name' => $subject->name],
-            'questions' => $questions->map(fn (Question $question) => [
-                'id' => $question->id,
-                'position' => $question->position,
-                'topic' => $question->topic,
-                'statement' => $question->statement,
-                'options' => $question->options,
-            ])->values(),
+            'questions' => $questions->map(fn (Question $question) => AttemptController::payload($question, $attempt->id))->values(),
             'limited_by_plan' => false,
         ], 201);
     }

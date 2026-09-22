@@ -8,6 +8,7 @@ use App\Models\Question;
 use App\Models\User;
 use App\Services\GamificationService;
 use App\Services\ReviewService;
+use App\Support\Practice\StepShuffle;
 use Illuminate\Database\UniqueConstraintViolationException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -47,15 +48,36 @@ class AttemptController extends Controller
 
         return response()->json([
             'attempt' => ['id' => $attempt->id, 'total' => $attempt->total_questions, 'kind' => $attempt->kind],
-            'questions' => $questions->map(fn (Question $question) => [
-                'id' => $question->id,
-                'position' => $question->position,
-                'topic' => $question->topic,
-                'statement' => $question->statement,
-                'options' => $question->options,
-            ])->values(),
+            'questions' => $questions->map(fn (Question $question) => self::payload($question, $attempt->id))->values(),
             'limited_by_plan' => $lesson->questions()->count() > $questions->count(),
         ], 201);
+    }
+
+    /**
+     * A questão como ela vai para a tela: sem gabarito, sem explicação.
+     *
+     * Na questão de ordenar, "sem gabarito" quer dizer embaralhada: a ordem
+     * certa é a própria lista de passos. Ver StepShuffle.
+     *
+     * @return array<string, mixed>
+     */
+    public static function payload(Question $question, int $attemptId): array
+    {
+        $options = $question->options;
+
+        if ($question->format === Question::FORMAT_ORDER) {
+            $mostrados = StepShuffle::display($attemptId, $question->id, count($options));
+            $options = array_map(fn (int $original) => $options[$original], $mostrados);
+        }
+
+        return [
+            'id' => $question->id,
+            'position' => $question->position,
+            'format' => $question->format,
+            'topic' => $question->topic,
+            'statement' => $question->statement,
+            'options' => $options,
+        ];
     }
 
     public function answer(Request $request, Attempt $attempt): JsonResponse
@@ -66,6 +88,10 @@ class AttemptController extends Controller
         $data = $request->validate([
             'question_id' => ['required', 'integer'],
             'selected' => ['nullable', 'integer', 'min:0', 'max:4'],
+            // A resposta de uma questão de ordenar: os índices DO QUE ESTÁ NA
+            // TELA, na ordem em que a pessoa pôs.
+            'ordering' => ['nullable', 'array', 'max:8'],
+            'ordering.*' => ['integer', 'min:0', 'max:7'],
             'seconds' => ['required', 'integer', 'min:0', 'max:7200'],
         ]);
 
@@ -74,16 +100,30 @@ class AttemptController extends Controller
         abort_unless(in_array((int) $data['question_id'], $allowedIds, true), 422, 'Questão inválida para esta tentativa.');
 
         $question = Question::findOrFail($data['question_id']);
-        $selected = isset($data['selected']) ? (int) $data['selected'] : null;
+        $ordenar = $question->format === Question::FORMAT_ORDER;
+
+        $selected = ! $ordenar && isset($data['selected']) ? (int) $data['selected'] : null;
         abort_if($selected !== null && $selected >= count($question->options), 422, 'Alternativa inválida.');
 
-        $isCorrect = $selected !== null && $selected === $question->correct_index;
+        /*
+        | Lista vazia é "pulei", e não uma sequência errada. A pessoa que
+        | desiste e a que arrisca não merecem o mesmo registro.
+        */
+        $ordering = $ordenar && ! empty($data['ordering'])
+            ? array_map('intval', array_values($data['ordering']))
+            : null;
+
+        $isCorrect = $ordenar
+            ? $ordering !== null && StepShuffle::isCorrect($ordering, $attempt->id, $question->id, count($question->options))
+            : $selected !== null && $selected === $question->correct_index;
+
         $xp = $isCorrect ? (int) config('castelei.xp_per_correct_answer') : 0;
 
         try {
             $attempt->answers()->create([
                 'question_id' => $question->id,
                 'selected_index' => $selected,
+                'selected_order' => $ordering,
                 'is_correct' => $isCorrect,
                 'seconds' => (int) $data['seconds'],
                 'xp' => $xp,
@@ -102,6 +142,12 @@ class AttemptController extends Controller
         return response()->json([
             'is_correct' => $isCorrect,
             'correct_index' => $question->correct_index,
+            /*
+            | Na questão de ordenar, o gabarito é a sequência certa, escrita
+            | por extenso. Mostrar "o índice 2 vinha antes do 0" não ensina
+            | nada a quem errou a ordem.
+            */
+            'correct_order' => $ordenar ? $question->options : null,
             'explanation' => $question->explanation,
             'pitfall' => $question->pitfall,
             // Só aparece para planos com gamificação (o XP é guardado para todos).
