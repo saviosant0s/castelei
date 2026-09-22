@@ -390,6 +390,18 @@ class ContentValidator
         if ($lines === []) {
             $this->error("{$path}.lines", 'O exemplo precisa de pelo menos uma linha.');
         }
+
+        /*
+        | `ordered` diz que as linhas são uma SEQUÊNCIA, e a tela desenha a
+        | escada numerada. Com uma linha só não há ordem nenhuma a mostrar.
+        */
+        if (isset($example['ordered']) && ! is_bool($example['ordered'])) {
+            $this->error("{$path}.ordered", 'O campo "ordered" é verdadeiro ou falso: ele diz se as linhas são uma sequência.');
+        }
+
+        if (($example['ordered'] ?? false) === true && count($lines ?? []) < 2) {
+            $this->warn("{$path}.ordered", 'Um exemplo em sequência com uma linha só não tem sequência para mostrar.');
+        }
     }
 
     private function figure(mixed $figure, string $path): void
@@ -549,17 +561,24 @@ class ContentValidator
             $this->text($question['explanation'] ?? null, "{$qPath}.explanation");
             $this->optionalText($question['pitfall'] ?? null, "{$qPath}.pitfall");
 
-            $options = $this->textList($question['options'] ?? null, "{$qPath}.options", required: true);
+            $formato = $question['format'] ?? 'choice';
 
-            if ($options === null) {
+            if (! in_array($formato, ['choice', 'order', 'match'], true)) {
+                $this->error("{$qPath}.format", 'O formato da questão precisa ser "choice" (alternativas), "order" (pôr na ordem) ou "match" (ligar os pares).');
+
                 continue;
             }
 
-            $formato = $question['format'] ?? 'choice';
+            // A questão de associar não tem alternativas: tem duplas.
+            if ($formato === 'match') {
+                $this->matching($question['pairs'] ?? null, $qPath);
 
-            if (! in_array($formato, ['choice', 'order'], true)) {
-                $this->error("{$qPath}.format", 'O formato da questão precisa ser "choice" (cinco alternativas) ou "order" (pôr os passos na ordem).');
+                continue;
+            }
 
+            $options = $this->textList($question['options'] ?? null, "{$qPath}.options", required: true);
+
+            if ($options === null) {
                 continue;
             }
 
@@ -572,6 +591,60 @@ class ContentValidator
 
         if ($total !== self::QUESTIONS_PER_LESSON) {
             $this->warn($path, "A lição tem {$total} questões. O site público anuncia ".self::QUESTIONS_PER_LESSON.' por lição, então fora desse número a vitrine passa a prometer o que o app não entrega.');
+        }
+    }
+
+    /**
+     * A questão de associar.
+     *
+     * Os pares são duplas, e não duas listas paralelas: duas listas alinhadas
+     * por posição desalinham na primeira edição feita numa só, e o gabarito
+     * troca sem que nada reclame.
+     */
+    private function matching(mixed $pairs, string $path): void
+    {
+        if (! is_array($pairs) || ! array_is_list($pairs) || $pairs === []) {
+            $this->error("{$path}.pairs", 'A questão de associar precisa de uma lista de pares, cada um com "left" e "right".');
+
+            return;
+        }
+
+        if (count($pairs) < 3) {
+            $this->error("{$path}.pairs", 'Uma questão de associar precisa de pelo menos três pares. Com dois, acertar um entrega o outro.');
+        }
+
+        if (count($pairs) > 5) {
+            $this->warn("{$path}.pairs", 'A questão tem '.count($pairs).' pares. Acima de cinco, a tela do celular não mostra os dois lados de uma vez.');
+        }
+
+        $esquerda = [];
+        $direita = [];
+
+        foreach ($pairs as $i => $par) {
+            if (! is_array($par) || array_is_list($par)) {
+                $this->error("{$path}.pairs[{$i}]", 'Cada par precisa ser um objeto com "left" e "right".');
+
+                continue;
+            }
+
+            $this->text($par['left'] ?? null, "{$path}.pairs[{$i}].left", max: 120);
+            $this->text($par['right'] ?? null, "{$path}.pairs[{$i}].right", max: 120);
+
+            $esquerda[] = trim((string) ($par['left'] ?? ''));
+            $direita[] = trim((string) ($par['right'] ?? ''));
+        }
+
+        /*
+        | Item repetido de um lado torna a questão impossível de acertar com
+        | certeza: dois itens iguais à esquerda aceitam qualquer um dos dois
+        | pares, e o app só conhece um gabarito.
+        */
+        if (count(array_unique($esquerda)) !== count($esquerda)) {
+            $this->error("{$path}.pairs", 'Há itens repetidos na coluna da esquerda.');
+        }
+
+        if (count(array_unique($direita)) !== count($direita)) {
+            $this->error("{$path}.pairs", 'Há itens repetidos na coluna da direita.');
         }
     }
 

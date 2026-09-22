@@ -194,7 +194,8 @@
               "A conexão chegou na máquina? Se não, é de rede.",
               "O programa estava ligado? Se não, é de serviço.",
               "Só depois disso mexa em configuração."
-            ]
+            ],
+            "ordered": true
           }
         },
         {
@@ -815,7 +816,8 @@
               "Isso cria dois arquivos dentro da pasta .ssh.",
               "ssh-copy-id usuario@203.0.113.10",
               "Agora entre com: ssh usuario@203.0.113.10"
-            ]
+            ],
+            "ordered": true
           }
         },
         {
@@ -899,7 +901,8 @@
               "Abra uma segunda janela e entre pela conta nova.",
               "Conseguiu? Só agora aplique a mudança e recarregue o serviço.",
               "Teste numa terceira janela antes de fechar a primeira."
-            ]
+            ],
+            "ordered": true
           }
         },
         {
@@ -1303,7 +1306,8 @@
               "A porta aceita conexão? Teste: nc -zv 203.0.113.10 443",
               "O programa está escutando lá dentro? Teste: ss -tlnp",
               "Parou numa delas? O problema mora ali."
-            ]
+            ],
+            "ordered": true
           }
         },
         {
@@ -1438,18 +1442,29 @@
           "pitfall": "Trocar recursos ou reinstalar ignora que o problema ainda não foi localizado no caminho."
         },
         {
-          "topic": "Combinado de portas",
-          "statement": "O navegador abre um endereço sem que ninguém digite número de porta. Isso acontece porque:",
-          "options": [
-            "Existem números combinados por padrão para cada protocolo",
-            "O navegador testa todas as portas até achar uma aberta",
-            "A porta é escolhida ao acaso pela máquina de destino",
-            "O nome do domínio carrega o número da porta",
-            "A porta não é necessária em conexões de site"
+          "topic": "As portas combinadas",
+          "format": "match",
+          "statement": "Ligue cada serviço ao número de porta que se usa por combinação.",
+          "pairs": [
+            {
+              "left": "Site sem cadeado",
+              "right": "80"
+            },
+            {
+              "left": "Site com cadeado",
+              "right": "443"
+            },
+            {
+              "left": "Acesso remoto à máquina",
+              "right": "22"
+            },
+            {
+              "left": "PostgreSQL",
+              "right": "5432"
+            }
           ],
-          "correct_index": 0,
-          "explanation": "O navegador assume o número combinado do protocolo usado, 80 sem cadeado e 443 com cadeado, e só por isso você não precisa digitá-lo.",
-          "pitfall": "Testar todas as portas é o que faz uma varredura de ataque, e não um navegador."
+          "explanation": "São combinações, e não regras do sistema. O navegador completa o número sozinho porque todo mundo concordou em usar esses.",
+          "pitfall": "Mudar a porta de um programa funciona. Só que aí quem chega precisa dizer o número na mão."
         }
       ]
     },
@@ -1597,7 +1612,8 @@
               "Espere o prazo antigo terminar de correr por aí.",
               "Troque o número. Agora a mudança se espalha em minutos.",
               "Depois de tudo estável, devolva o prazo para algo maior."
-            ]
+            ],
+            "ordered": true
           }
         },
         {
@@ -1953,7 +1969,8 @@
               "sudo ufw allow 80/tcp",
               "sudo ufw allow 443/tcp",
               "Só agora: sudo ufw enable"
-            ]
+            ],
+            "ordered": true
           }
         },
         {
@@ -2326,7 +2343,8 @@
               "journalctl -u minhaapp -n 80    -> mostra o erro de verdade.",
               "Leia a primeira falha, não a última.",
               "As seguintes costumam ser consequência dela."
-            ]
+            ],
+            "ordered": true
           }
         },
         {
@@ -2591,7 +2609,8 @@
               "Certo: descubra com qual conta a aplicação roda.",
               "sudo chown -R app:app /var/app/uploads",
               "sudo chmod 755 /var/app/uploads"
-            ]
+            ],
+            "ordered": true
           }
         },
         {
@@ -2965,7 +2984,8 @@
               "Isso ensaia a renovação sem gastar o pedido de verdade.",
               "systemctl list-timers | grep certbot",
               "Confirma que o agendamento ainda existe."
-            ]
+            ],
+            "ordered": true
           }
         },
         {
@@ -3394,7 +3414,8 @@
               "Ela escuta na porta que o porteiro procura? ss -tlnp",
               "O endereço do repasse bate com essa porta?",
               "Quase sempre a resposta está numa dessas três."
-            ]
+            ],
+            "ordered": true
           }
         },
         {
@@ -3689,7 +3710,8 @@
               "CREATE INDEX idx_pedidos_email ON pedidos (email);",
               "Rode o EXPLAIN de novo e confirme que virou Index Scan.",
               "Se não virou, o filtro da consulta não bate com a coluna do atalho."
-            ]
+            ],
+            "ordered": true
           }
         },
         {
@@ -4086,7 +4108,8 @@
               "ln -sfn /var/app/releases/2026-09-15-0910 /var/app/current",
               "sudo systemctl reload minhaapp",
               "Confira o site. Depois investigue o que quebrou, com calma."
-            ]
+            ],
+            "ordered": true
           }
         },
         {
@@ -4772,7 +4795,8 @@
               "grep a1b2c3 /var/log/minhaapp/app.log",
               "A aplicação mostra tempo esgotado ao falar com o banco.",
               "Agora a investigação começa no banco, e não no chute."
-            ]
+            ],
+            "ordered": true
           }
         },
         {
@@ -5112,11 +5136,12 @@
           "example": {
             "label": "Exemplo: o roteiro mínimo",
             "lines": [
-              "1. Onde está a cópia mais recente, e como abri-la.",
-              "2. Como subir uma máquina nova do zero.",
-              "3. Como restaurar o banco e conferir que os números batem.",
-              "4. Como apontar o nome do site para a máquina nova."
-            ]
+              "Onde está a cópia mais recente, e como abri-la.",
+              "Como subir uma máquina nova do zero.",
+              "Como restaurar o banco e conferir que os números batem.",
+              "Como apontar o nome do site para a máquina nova."
+            ],
+            "ordered": true
           }
         },
         {
@@ -6692,11 +6717,12 @@
           "example": {
             "label": "Exemplo: a ordem de resposta a uma suspeita",
             "lines": [
-              "1. Tire a máquina da rede, sem desligá-la.",
-              "2. Copie o estado atual e os registros para outro lugar.",
-              "3. Troque todas as senhas e chaves que passaram por ela.",
-              "4. Reconstrua do zero. Nunca limpe e reaproveite."
-            ]
+              "Tire a máquina da rede, sem desligá-la.",
+              "Copie o estado atual e os registros para outro lugar.",
+              "Troque todas as senhas e chaves que passaram por ela.",
+              "Reconstrua do zero. Nunca limpe e reaproveite."
+            ],
+            "ordered": true
           }
         },
         {
@@ -7448,7 +7474,8 @@
               "Espere dois minutos e abra o site no navegador.",
               "Abriu com cadeado, sem você fazer nada? Está pronto.",
               "Faltou alguma coisa? Faltou um enable em algum serviço."
-            ]
+            ],
+            "ordered": true
           }
         },
         {

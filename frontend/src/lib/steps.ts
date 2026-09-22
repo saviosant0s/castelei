@@ -35,7 +35,7 @@ export const NOME_DO_BLOCO: Record<Bloco, string> = {
 export const PARA_QUE_SERVE: Record<Bloco, string> = {
   figure: "Um desenho do app. Toda figura precisa de texto alternativo e legenda.",
   table: "Comparar lado a lado — Windows e Linux, antes e depois.",
-  example: "Um caso resolvido passo a passo, uma linha por passo.",
+  example: "Um caso resolvido, uma linha por passo. Marque “é uma sequência” e vira escada numerada.",
   code: "Um comando ou trecho de código, em fonte de máquina de escrever.",
   bullets: "Itens soltos que não formam parágrafo.",
   terms: "Palavras novas explicadas aqui mesmo, antes de serem usadas.",
@@ -59,7 +59,7 @@ export function blocoVazio(bloco: Bloco): NonNullable<LessonStep[Bloco]> {
       // Duas colunas e uma linha: a menor tabela que ainda é uma tabela.
       return { label: "", headers: ["", ""], rows: [["", ""]], mono: false };
     case "example":
-      return { label: "Exemplo", lines: [""] };
+      return { label: "Exemplo", lines: [""], ordered: false };
     case "code":
       return { label: "", text: "", notes: [""] };
     case "bullets":
@@ -173,7 +173,11 @@ export function limpar(step: LessonStep): LessonStep {
   if (step.bullets?.some(Boolean)) saida.bullets = step.bullets.filter(Boolean);
   if (step.terms?.some((t) => t.word || t.meaning)) saida.terms = step.terms.filter((t) => t.word || t.meaning);
   if (step.example && step.example.lines.some(Boolean)) {
-    saida.example = { label: step.example.label, lines: step.example.lines.filter(Boolean) };
+    saida.example = {
+      label: step.example.label,
+      lines: step.example.lines.filter(Boolean),
+      ...(step.example.ordered ? { ordered: true } : {}),
+    };
   }
   if (step.figure?.src) {
     saida.figure = {

@@ -165,6 +165,27 @@ class ContentSeederTest extends TestCase
                 "{$onde} tem opções repetidas",
             );
 
+            if ($question->format === Question::FORMAT_MATCH) {
+                /*
+                | A questão de associar não tem alternativas: tem duplas. De
+                | três a cinco — com duas, acertar uma entrega a outra; acima
+                | de cinco, os dois lados não cabem juntos na tela.
+                */
+                $pares = $question->pairs ?? [];
+
+                $this->assertSame([], $question->options, $onde);
+                $this->assertGreaterThanOrEqual(3, count($pares), $onde);
+                $this->assertLessThanOrEqual(5, count($pares), $onde);
+
+                foreach (['left', 'right'] as $lado) {
+                    $valores = array_column($pares, $lado);
+                    $this->assertCount(count($pares), array_filter($valores), "{$onde}: par sem {$lado}");
+                    $this->assertCount(count($valores), array_unique($valores), "{$onde}: repetido em {$lado}");
+                }
+
+                continue;
+            }
+
             if ($question->format === Question::FORMAT_ORDER) {
                 /*
                 | A questão de ordenar não tem cinco alternativas nem gabarito:

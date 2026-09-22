@@ -59,7 +59,8 @@ class SubjectExporter
             // "choice" é o padrão: escrevê-lo em toda questão só polui o arquivo.
             'format' => $question->format === Question::FORMAT_CHOICE ? null : $question->format,
             'statement' => $question->statement,
-            'options' => $question->options,
+            'options' => $question->format === Question::FORMAT_MATCH ? null : $question->options,
+            'pairs' => $question->pairs,
             /*
             | O gabarito sai SEMPRE, mesmo valendo 0.
             |

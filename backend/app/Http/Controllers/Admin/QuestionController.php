@@ -61,9 +61,12 @@ class QuestionController extends Controller
         $data = $request->validate([
             'topic' => ['required', 'string', 'max:120'],
             'statement' => ['required', 'string'],
-            'options' => ['required', 'array', 'min:2', 'max:8'],
+            'options' => ['required_unless:format,match', 'array', 'min:2', 'max:8'],
             'options.*' => ['required', 'string'],
-            'format' => ['nullable', 'string', 'in:choice,order'],
+            'format' => ['nullable', 'string', 'in:choice,order,match'],
+            'pairs' => ['required_if:format,match', 'array', 'min:3', 'max:5'],
+            'pairs.*.left' => ['required', 'string', 'max:120'],
+            'pairs.*.right' => ['required', 'string', 'max:120'],
             // Na questão de ordenar não existe alternativa certa: o gabarito
             // é a ordem em que as opções foram escritas.
             'correct_index' => ['required_unless:format,order', 'integer', 'min:0'],
@@ -80,6 +83,26 @@ class QuestionController extends Controller
         ]);
 
         $data['format'] = $data['format'] ?? Question::FORMAT_CHOICE;
+
+        if ($data['format'] === Question::FORMAT_MATCH) {
+            $esquerda = array_map(fn (array $par) => trim($par['left']), $data['pairs']);
+            $direita = array_map(fn (array $par) => trim($par['right']), $data['pairs']);
+
+            if (count(array_unique($esquerda)) !== count($esquerda) || count(array_unique($direita)) !== count($direita)) {
+                abort(response()->json([
+                    'message' => 'Há itens repetidos numa das colunas. Com repetidos, a questão fica impossível de acertar com certeza.',
+                    'errors' => ['pairs' => ['Itens repetidos.']],
+                ], 422));
+            }
+
+            // A questão de associar não tem alternativas nem gabarito único.
+            $data['options'] = [];
+            $data['correct_index'] = 0;
+
+            return $data;
+        }
+
+        $data['pairs'] = null;
 
         $limpas = array_map(fn (string $option) => trim($option), $data['options']);
 
@@ -125,6 +148,7 @@ class QuestionController extends Controller
             'format' => $question->format,
             'statement' => $question->statement,
             'options' => $question->options,
+            'pairs' => $question->pairs,
             'correct_index' => $question->correct_index,
             'explanation' => $question->explanation,
             'pitfall' => $question->pitfall,

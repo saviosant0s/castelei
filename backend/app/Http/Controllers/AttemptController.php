@@ -64,20 +64,36 @@ class AttemptController extends Controller
     public static function payload(Question $question, int $attemptId): array
     {
         $options = $question->options;
+        $prompts = null;
+
+        if ($question->format === Question::FORMAT_MATCH) {
+            /*
+            | A esquerda vai na ordem escrita; a direita vai embaralhada. É
+            | ela que a pessoa arrasta com o dedo, e entregá-la alinhada com
+            | a esquerda seria entregar o gabarito.
+            */
+            $pares = $question->pairs ?? [];
+            $prompts = array_map(fn (array $par) => $par['left'], $pares);
+            $direita = array_map(fn (array $par) => $par['right'], $pares);
+            $mostrados = StepShuffle::display($attemptId, $question->id, count($direita));
+            $options = array_map(fn (int $original) => $direita[$original], $mostrados);
+        }
 
         if ($question->format === Question::FORMAT_ORDER) {
             $mostrados = StepShuffle::display($attemptId, $question->id, count($options));
             $options = array_map(fn (int $original) => $options[$original], $mostrados);
         }
 
-        return [
+        return array_filter([
             'id' => $question->id,
             'position' => $question->position,
             'format' => $question->format,
             'topic' => $question->topic,
             'statement' => $question->statement,
             'options' => $options,
-        ];
+            // Só a questão de associar tem coluna da esquerda.
+            'prompts' => $prompts,
+        ], fn ($valor) => $valor !== null);
     }
 
     public function answer(Request $request, Attempt $attempt): JsonResponse
@@ -100,21 +116,31 @@ class AttemptController extends Controller
         abort_unless(in_array((int) $data['question_id'], $allowedIds, true), 422, 'Questão inválida para esta tentativa.');
 
         $question = Question::findOrFail($data['question_id']);
-        $ordenar = $question->format === Question::FORMAT_ORDER;
 
-        $selected = ! $ordenar && isset($data['selected']) ? (int) $data['selected'] : null;
+        /*
+        | Ordenar e associar respondem a mesma coisa: uma permutação do que
+        | está na tela. Na de ordenar, a posição i quer dizer "o i-ésimo
+        | passo"; na de associar, "o par do i-ésimo item da esquerda". A
+        | conta é idêntica, então o campo é o mesmo.
+        */
+        $sequencia = in_array($question->format, [Question::FORMAT_ORDER, Question::FORMAT_MATCH], true);
+        $total = $question->format === Question::FORMAT_MATCH
+            ? count($question->pairs ?? [])
+            : count($question->options);
+
+        $selected = ! $sequencia && isset($data['selected']) ? (int) $data['selected'] : null;
         abort_if($selected !== null && $selected >= count($question->options), 422, 'Alternativa inválida.');
 
         /*
         | Lista vazia é "pulei", e não uma sequência errada. A pessoa que
         | desiste e a que arrisca não merecem o mesmo registro.
         */
-        $ordering = $ordenar && ! empty($data['ordering'])
+        $ordering = $sequencia && ! empty($data['ordering'])
             ? array_map('intval', array_values($data['ordering']))
             : null;
 
-        $isCorrect = $ordenar
-            ? $ordering !== null && StepShuffle::isCorrect($ordering, $attempt->id, $question->id, count($question->options))
+        $isCorrect = $sequencia
+            ? $ordering !== null && StepShuffle::isCorrect($ordering, $attempt->id, $question->id, $total)
             : $selected !== null && $selected === $question->correct_index;
 
         $xp = $isCorrect ? (int) config('castelei.xp_per_correct_answer') : 0;
@@ -147,7 +173,12 @@ class AttemptController extends Controller
             | por extenso. Mostrar "o índice 2 vinha antes do 0" não ensina
             | nada a quem errou a ordem.
             */
-            'correct_order' => $ordenar ? $question->options : null,
+            'correct_order' => $question->format === Question::FORMAT_ORDER ? $question->options : null,
+            /*
+            | Na questão de associar, o gabarito são os pares por extenso.
+            | Dizer "o índice 2 era o par do 0" não ensina nada.
+            */
+            'correct_pairs' => $question->format === Question::FORMAT_MATCH ? $question->pairs : null,
             'explanation' => $question->explanation,
             'pitfall' => $question->pitfall,
             // Só aparece para planos com gamificação (o XP é guardado para todos).

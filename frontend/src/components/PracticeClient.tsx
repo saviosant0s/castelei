@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, Check, Crown, Lightbulb, RotateCcw, SkipForward, Star, Timer, TriangleAlert, X } from "lucide-react";
 import { BadgeIcon } from "@/components/BadgeIcon";
 import { Confetti } from "@/components/Confetti";
+import { MatchQuestion } from "@/components/MatchQuestion";
 import { OrderQuestion } from "@/components/OrderQuestion";
 import { ProgressBar } from "@/components/ui";
 import { messageOf, postJson } from "@/lib/client";
@@ -105,6 +106,8 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
   const [selected, setSelected] = useState<number | null>(null);
   /** A sequência montada numa questão de ordenar: índices do que está na tela. */
   const [ordering, setOrdering] = useState<number[]>([]);
+  /** Na questão de associar: para cada item da esquerda, a resposta escolhida. */
+  const [matching, setMatching] = useState<(number | null)[]>([]);
   const [feedback, setFeedback] = useState<AnswerResult | null>(null);
   const [result, setResult] = useState<FinishResult | null>(null);
   const [elapsed, setElapsed] = useState(0);
@@ -123,6 +126,7 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
       setIndex(0);
       setSelected(null);
       setOrdering([]);
+      setMatching([]);
       setFeedback(null);
       setResult(null);
       setElapsed(0);
@@ -165,6 +169,7 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
 
   const question = questions[index];
 
+
   /**
    * Manda a resposta. `choice` é a alternativa; `sequencia` é a ordem.
    * Pular é mandar os dois vazios, em qualquer formato.
@@ -203,6 +208,7 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
       setIndex((i) => i + 1);
       setSelected(null);
       setOrdering([]);
+      setMatching([]);
       setFeedback(null);
       setElapsed(0);
       questionStart.current = Date.now();
@@ -253,8 +259,24 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
 
   const answeredCount = index + (phase === "feedback" ? 1 : 0);
   const isLast = index + 1 === questions.length;
+
+  /*
+  | As vagas da questão de associar, uma por item da esquerda.
+  |
+  | São DERIVADAS da questão, e não guardadas por um efeito: o estado começa
+  | vazio a cada questão, e aqui ele ganha o tamanho certo. Sincronizar array
+  | com questão num `useEffect` é o caminho curto para a pessoa ver as vagas
+  | da questão anterior por um quadro.
+  */
+  const vagas = question.prompts?.length ?? 0;
+  const pares = matching.length === vagas ? matching : new Array<number | null>(vagas).fill(null);
   // Pular é não ter escolhido nada, no formato que for.
-  const pulou = question.format === "order" ? ordering.length === 0 : selected === null;
+  const pulou =
+    question.format === "order"
+      ? ordering.length === 0
+      : question.format === "match"
+        ? pares.every((v) => v === null)
+        : selected === null;
 
   return (
     <div className="mx-auto min-h-dvh max-w-md px-5 pb-40 pt-4">
@@ -281,7 +303,16 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
         </p>
         <h1 className="mt-3 text-2xl">{question.statement}</h1>
 
-        {question.format === "order" ? (
+        {question.format === "match" ? (
+          <MatchQuestion
+            prompts={question.prompts ?? []}
+            options={question.options}
+            matching={pares}
+            onChange={setMatching}
+            disabled={phase !== "answering" || busy}
+            correctPairs={phase === "feedback" ? (feedback?.correct_pairs ?? null) : null}
+          />
+        ) : question.format === "order" ? (
           <OrderQuestion
             options={question.options}
             ordering={ordering}
@@ -332,12 +363,10 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
                 <p className="font-display text-2xl font-bold">
                   {feedback.is_correct
                     ? "Acertou!"
-                    : feedback.correct_order
-                      ? ordering.length === 0
-                        ? "Você pulou esta"
-                        : "A ordem não era essa"
-                      : selected === null
-                        ? "Você pulou esta"
+                    : pulou
+                      ? "Você pulou esta"
+                      : feedback.correct_order
+                        ? "A ordem não era essa"
                         : "Não foi dessa vez"}
                 </p>
                 {feedback.xp ? (
@@ -346,7 +375,7 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
                   </span>
                 ) : null}
               </div>
-              {!feedback.is_correct && !feedback.correct_order && (
+              {!feedback.is_correct && !feedback.correct_order && !feedback.correct_pairs && (
                 <p className="mt-1 text-base">
                   Gabarito: <strong>{optionLetter(feedback.correct_index)}) {question.options[feedback.correct_index]}</strong>
                 </p>
@@ -372,7 +401,20 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
               <button type="button" className="btn btn-ghost border-2 border-ink/15" disabled={busy} onClick={() => submit(null)}>
                 <SkipForward className="size-5" aria-hidden="true" /> Pular
               </button>
-              {question.format === "order" ? (
+              {question.format === "match" ? (
+                <button
+                  type="button"
+                  className="btn btn-primary flex-1"
+                  disabled={pares.some((v) => v === null) || busy}
+                  onClick={() => submit(null, pares.filter((v): v is number => v !== null))}
+                >
+                  {busy
+                    ? "Enviando…"
+                    : pares.some((v) => v === null)
+                      ? `Faltam ${pares.filter((v) => v === null).length}`
+                      : "Confirmar"}
+                </button>
+              ) : question.format === "order" ? (
                 <button
                   type="button"
                   className="btn btn-primary flex-1"
