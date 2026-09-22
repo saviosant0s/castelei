@@ -1,0 +1,2130 @@
+{
+ "_leia_me": [
+  "Curso de Servidores, VPS e Infraestrutura do Castelei.",
+  "Chaves começadas por _ são comentário e somem na importação.",
+  "ANTES DE IMPORTAR, confira o endereço da matéria em /admin. O campo slug abaixo precisa ser o MESMO da matéria já publicada — com slug diferente o Castelei cria uma matéria nova em vez de atualizar a que existe."
+ ],
+ "slug": "servidores-vps",
+ "name": "Servidores, VPS e Infraestrutura",
+ "description": "Do zero até colocar uma aplicação no ar: o caminho de um acesso, a máquina, a rede e o que fazer quando cai.",
+ "lessons": [
+  {
+   "slug": "fundamentos-de-servidores",
+   "title": "O que é um servidor e o que é uma VPS",
+   "module": "Fundamentos",
+   "summary": "A ideia de servidor sem jargão: quem pede, quem responde e o caminho entre os dois.",
+   "steps": [
+    {
+     "kind": "idea",
+     "title": "Um computador que só existe para atender pedidos",
+     "body": [
+      "Pense numa cozinha de restaurante. Você não entra nela. Você pede, e a cozinha devolve o prato pronto.",
+      "Um computador pode trabalhar assim. Ele fica ligado, esperando pedidos, e devolve respostas.",
+      "É isso. Nada de máquina gigante e misteriosa: é um computador com um trabalho combinado."
+     ],
+     "terms": [
+      {
+       "word": "Servidor",
+       "meaning": "o computador que fica esperando pedidos e devolve respostas."
+      },
+      {
+       "word": "Serviço",
+       "meaning": "o trabalho que esse computador se comprometeu a fazer. Entregar um site é um serviço."
+      },
+      {
+       "word": "Cliente",
+       "meaning": "quem faz o pedido. Seu navegador e seu aplicativo de celular são clientes."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "O mesmo computador pode ser os dois",
+     "body": [
+      "Servidor e cliente são papéis, não tipos de máquina.",
+      "Seu notebook é cliente quando você abre um site. O mesmo notebook vira servidor se você ligar um programa que atende pedidos nele.",
+      "O que define o papel é quem fala primeiro. Quem pede é cliente. Quem responde é servidor."
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "O caminho completo de um acesso",
+     "body": [
+      "Entre o seu dedo na tela e a página que aparece existe um caminho com etapas.",
+      "Guarde esse caminho. Ele é o mapa que você vai usar o curso inteiro para descobrir onde um problema mora."
+     ],
+     "figure": {
+      "src": "/figuras/servidores/srv-caminho-do-pedido.svg",
+      "alt": "Caminho de um acesso em quatro caixas ligadas por setas: o navegador de quem acessa, a internet, o servidor e o disco onde ficam os dados, com a resposta voltando pelo mesmo caminho",
+      "caption": "Quando algo falha, a primeira pergunta é em qual caixa o problema está."
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "O combinado que os dois lados seguem",
+     "body": [
+      "Para pedido e resposta se entenderem, os dois lados seguem um combinado escrito.",
+      "O combinado diz o formato do pedido e o formato da resposta. Sem ele, cada programa falaria de um jeito.",
+      "A resposta vem com um número curto que diz como foi. O 200 quer dizer deu certo. O 404 quer dizer não achei."
+     ],
+     "terms": [
+      {
+       "word": "Protocolo",
+       "meaning": "o combinado de como conversar. Igual a uma ligação em que os dois falam a mesma língua."
+      },
+      {
+       "word": "HTTP",
+       "meaning": "o protocolo dos sites. É ele que carrega o pedido de uma página e a resposta."
+      }
+     ],
+     "table": {
+      "label": "Os números de resposta que você mais vai ver",
+      "headers": [
+       "Número",
+       "O que quer dizer",
+       "De quem costuma ser a culpa"
+      ],
+      "rows": [
+       [
+        "200",
+        "Deu certo",
+        "de ninguém"
+       ],
+       [
+        "404",
+        "Não achei isso aqui",
+        "do endereço digitado"
+       ],
+       [
+        "500",
+        "Quebrei ao tentar montar",
+        "do programa no servidor"
+       ],
+       [
+        "502",
+        "Perguntei e não me responderam",
+        "do programa que estava atrás"
+       ]
+      ]
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "O que existe dentro da máquina",
+     "body": [
+      "Um servidor tem as mesmas peças do seu computador. Três importam para este curso.",
+      "O processador faz as contas. A memória guarda o que está em uso agora. O disco guarda o que precisa sobreviver ao desligamento.",
+      "Memória cheia derruba programa. Disco cheio impede gravar. São causas diferentes de problemas parecidos."
+     ],
+     "bullets": [
+      "Processador: faz as contas, medido em núcleos.",
+      "Memória: rápida, some quando desliga, medida em GB.",
+      "Disco: lento, sobrevive ao desligamento, medido em GB."
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Uma máquina de verdade dividida em várias",
+     "body": [
+      "Alugar um computador inteiro é caro. Existe um jeito de dividir um computador grande em vários menores.",
+      "Cada pedaço se comporta como um computador separado. Ele tem sua fatia de processador e de memória.",
+      "Um pedaço não enxerga o outro. Reiniciar um não desliga os vizinhos."
+     ],
+     "terms": [
+      {
+       "word": "Virtualização",
+       "meaning": "a técnica de dividir um computador de verdade em vários independentes."
+      },
+      {
+       "word": "Máquina virtual",
+       "meaning": "cada um desses pedaços. Ela se comporta como um computador inteiro."
+      },
+      {
+       "word": "Hospedagem",
+       "meaning": "a empresa que mantém esses computadores ligados e aluga pedaços deles."
+      },
+      {
+       "word": "Datacenter",
+       "meaning": "o prédio onde essas máquinas ficam, com energia e refrigeração de sobra."
+      }
+     ],
+     "figure": {
+      "src": "/figuras/servidores/srv-fisico-virtual.svg",
+      "alt": "Um computador de verdade dividido em três caixas menores e independentes, cada uma com sua fatia de processador e de memória e com seu próprio sistema",
+      "caption": "Cada caixa recebe uma fatia da máquina e não enxerga as outras."
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "VPS é uma dessas fatias, alugada para você",
+     "body": [
+      "Quando você aluga uma dessas fatias, ela ganha um nome comercial.",
+      "Você recebe acesso de dono. Instala o que quiser, abre o que quiser e assume o que der errado.",
+      "É a diferença para a hospedagem pronta, em que você só envia arquivos e não manda no resto."
+     ],
+     "terms": [
+      {
+       "word": "VPS",
+       "meaning": "uma máquina virtual alugada, com sistema próprio e acesso de dono para você."
+      }
+     ],
+     "example": {
+      "label": "Exemplo: o mesmo site nas duas opções",
+      "lines": [
+       "Na hospedagem pronta: você envia os arquivos e pronto.",
+       "Não dá para escolher a versão da linguagem nem instalar programa.",
+       "Na VPS: você instala tudo e escolhe cada versão.",
+       "Em troca, atualizar e proteger a máquina virou trabalho seu."
+      ]
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "O modelo mental que resolve problema",
+     "body": [
+      "Quem começa tende a mexer em configuração até funcionar. Isso quebra outras coisas pelo caminho.",
+      "O jeito que funciona é outro: descubra primeiro em que ponto do caminho o pedido parou.",
+      "Cada etapa deste curso é uma dessas caixas. No fim você monta o caminho inteiro."
+     ],
+     "example": {
+      "label": "Exemplo: o site não abre",
+      "lines": [
+       "O nome virou número? Se não, o problema é de nome.",
+       "A conexão chegou na máquina? Se não, é de rede.",
+       "O programa estava ligado? Se não, é de serviço.",
+       "Só depois disso mexa em configuração."
+      ]
+     }
+    },
+    {
+     "kind": "exam",
+     "title": "Como cai na prova",
+     "body": [
+      "VPS é uma máquina virtual com sistema operacional próprio e recursos dedicados, entregue como servidor.",
+      "Cliente e servidor são papéis em uma comunicação, e a mesma máquina pode exercer os dois em momentos diferentes.",
+      "A banca gosta de opor VPS a hospedagem compartilhada pelo nível de controle administrativo."
+     ]
+    },
+    {
+     "kind": "pitfall",
+     "title": "Pegadinhas clássicas",
+     "body": [
+      "Os quatro enganos mais comuns de quem está começando:"
+     ],
+     "bullets": [
+      "Achar que servidor é sempre uma máquina enorme.",
+      "Tratar VPS como se fosse um sistema operacional.",
+      "Misturar nome do site, máquina e programa como se fossem a mesma coisa.",
+      "Sair mexendo em configuração antes de achar onde o pedido parou."
+     ]
+    },
+    {
+     "kind": "recap",
+     "title": "Resumo",
+     "body": [
+      "Servidor é um computador que espera pedidos e devolve respostas.",
+      "VPS é uma fatia alugada de um computador de verdade, com sistema próprio.",
+      "O caminho do pedido é o mapa. Achar a caixa que falhou vem antes de mexer em qualquer coisa."
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "topic": "Conceito de servidor",
+     "statement": "Um notebook doméstico roda um programa que fica ligado recebendo pedidos de outros computadores da casa. Nessa situação, esse notebook:",
+     "options": [
+      "Exerce o papel de servidor, porque atende pedidos",
+      "Não pode ser servidor, porque não fica num prédio próprio",
+      "Só seria servidor com um sistema operacional específico",
+      "Só seria servidor se tivesse mais de oito núcleos",
+      "Deixa de ser um computador comum e vira outro tipo de máquina"
+     ],
+     "correct_index": 0,
+     "explanation": "Servidor é papel, não porte. Quem espera pedidos e devolve respostas está exercendo esse papel, independentemente do tamanho da máquina.",
+     "pitfall": "A banca aposta na imagem de armário cheio de luzes. Porte e lugar não entram na definição."
+    },
+    {
+     "topic": "Cliente e servidor",
+     "statement": "Sobre os papéis numa comunicação entre dois computadores, é correto afirmar que:",
+     "options": [
+      "A mesma máquina pode ser cliente numa troca e servidor em outra",
+      "Uma máquina nasce cliente ou servidor e não muda mais",
+      "Quem tem mais memória é sempre o servidor",
+      "O servidor é sempre quem inicia a conversa",
+      "Os dois papéis exigem sistemas operacionais diferentes"
+     ],
+     "correct_index": 0,
+     "explanation": "O papel vem de quem fala primeiro na troca. Quem pede é cliente, quem responde é servidor, e isso muda de uma comunicação para outra.",
+     "pitfall": "A alternativa sobre quem inicia inverte a regra de propósito: é o cliente que começa."
+    },
+    {
+     "topic": "Máquina virtual e VPS",
+     "statement": "Qual afirmação descreve corretamente uma VPS?",
+     "options": [
+      "É uma máquina virtual alugada, com sistema próprio e acesso administrativo",
+      "É um sistema operacional feito para servidores",
+      "É um tipo de disco usado em datacenters",
+      "É um programa que entrega páginas de sites",
+      "É o prédio onde ficam as máquinas da empresa de hospedagem"
+     ],
+     "correct_index": 0,
+     "explanation": "VPS é um produto: uma fatia virtual de um computador de verdade, entregue com sistema próprio e com acesso de dono.",
+     "pitfall": "Confundir VPS com sistema operacional é o erro mais cobrado. Ela é a máquina, não o sistema."
+    },
+    {
+     "topic": "Virtualização",
+     "statement": "Um computador de verdade foi dividido em quatro máquinas virtuais. Reiniciar a segunda delas:",
+     "options": [
+      "Não desliga as outras três, que seguem funcionando",
+      "Desliga todas, porque o computador é o mesmo",
+      "Apaga os dados das outras três",
+      "Obriga a reinstalar o sistema das outras",
+      "Junta as quatro numa máquina só"
+     ],
+     "correct_index": 0,
+     "explanation": "Cada máquina virtual é isolada das vizinhas. Ela tem sua fatia de recursos e seu próprio sistema, então reiniciar uma não afeta as outras.",
+     "pitfall": "O enunciado apela para a intuição de que dividir é compartilhar tudo. O isolamento é justamente o que se compra aqui."
+    },
+    {
+     "topic": "Peças da máquina",
+     "statement": "Um programa parou de subir depois de uma atualização, e a mensagem diz que não há espaço para gravar. O problema mais provável está:",
+     "options": [
+      "No disco, que guarda o que sobrevive ao desligamento",
+      "Na memória, que guarda o que está em uso agora",
+      "No processador, que faz as contas",
+      "Na quantidade de núcleos contratada",
+      "Na velocidade da conexão de rede"
+     ],
+     "correct_index": 0,
+     "explanation": "Gravar arquivo é trabalho de disco. Falta de memória derruba o programa em execução, mas não produz esse aviso de espaço para gravar.",
+     "pitfall": "Memória e disco são confundidos porque os dois são medidos em GB. Um some ao desligar, o outro não."
+    },
+    {
+     "topic": "Protocolo e resposta",
+     "statement": "Ao abrir um endereço, o navegador recebeu o número 404. Isso significa que:",
+     "options": [
+      "A máquina respondeu, mas não encontrou o que foi pedido",
+      "A máquina está desligada",
+      "O programa quebrou ao montar a resposta",
+      "A conexão foi recusada antes de chegar ao programa",
+      "O nome do site não virou número"
+     ],
+     "correct_index": 0,
+     "explanation": "Receber 404 já prova que houve resposta. A máquina estava de pé e o programa respondeu, apenas dizendo que aquele caminho não existe.",
+     "pitfall": "A pegadinha é tratar 404 como máquina fora do ar. Quem está fora do ar não responde número nenhum."
+    },
+    {
+     "topic": "Hospedagem pronta e VPS",
+     "statement": "A principal diferença entre uma hospedagem pronta e uma VPS está:",
+     "options": [
+      "No nível de controle: na VPS você instala e configura o que quiser",
+      "Na velocidade da internet contratada",
+      "Na quantidade de sites que cada uma aceita",
+      "No fato de a hospedagem pronta não usar computadores de verdade",
+      "No tipo de arquivo que cada uma aceita receber"
+     ],
+     "correct_index": 0,
+     "explanation": "As duas hospedam sites. O que muda é quanto da máquina é seu: a VPS entrega acesso de dono, com a manutenção junto.",
+     "pitfall": "Trocar controle por velocidade é o desvio mais comum. O ganho da VPS é administrativo, não de banda."
+    },
+    {
+     "topic": "Investigação de problemas",
+     "statement": "Um site parou de abrir. Qual é a primeira atitude mais produtiva?",
+     "options": [
+      "Descobrir em que ponto do caminho o pedido parou",
+      "Reiniciar a máquina inteira",
+      "Trocar a configuração do programa que entrega o site",
+      "Contratar mais memória",
+      "Reinstalar o sistema operacional"
+     ],
+     "correct_index": 0,
+     "explanation": "O caminho tem etapas, e cada uma falha de um jeito. Localizar a etapa antes de agir evita quebrar o que estava funcionando.",
+     "pitfall": "Reiniciar às vezes resolve e esconde a causa. O problema volta, e agora sem pista nenhuma."
+    }
+   ]
+  },
+  {
+   "slug": "linux-para-servidores",
+   "title": "Linux para servidores",
+   "module": "Fundamentos",
+   "summary": "Por que quase todo servidor usa Linux, e como achar as coisas dentro dele.",
+   "steps": [
+    {
+     "kind": "idea",
+     "title": "Um sistema que trabalha sem ninguém olhando",
+     "body": [
+      "O sistema do seu computador foi feito para alguém sentado na frente da tela.",
+      "Uma máquina que atende pedidos passa anos sem ninguém olhando para ela. Tela nenhuma, mouse nenhum.",
+      "Linux é um sistema feito para funcionar assim. Ele não precisa de tela para trabalhar."
+     ],
+     "terms": [
+      {
+       "word": "Linux",
+       "meaning": "a família de sistemas operacionais mais usada em máquinas que atendem pedidos."
+      },
+      {
+       "word": "Servidor",
+       "meaning": "o computador que fica esperando pedidos e devolve respostas."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Distribuição é a montagem pronta",
+     "body": [
+      "Linux sozinho é só a peça central. Quem monta o sistema completo são empresas e comunidades.",
+      "Cada montagem escolhe quais programas vêm juntos e como instalar os que faltam.",
+      "Para servidores, duas famílias dominam. Elas diferem quase só no comando de instalar."
+     ],
+     "terms": [
+      {
+       "word": "Distribuição",
+       "meaning": "uma montagem pronta do sistema, com programas escolhidos e um jeito próprio de instalar."
+      }
+     ],
+     "table": {
+      "label": "As duas famílias que você vai encontrar",
+      "headers": [
+       "Família",
+       "Nomes comuns",
+       "Comando de instalar"
+      ],
+      "rows": [
+       [
+        "Debian",
+        "Debian, Ubuntu",
+        "apt install"
+       ],
+       [
+        "Red Hat",
+        "Rocky, AlmaLinux, Fedora",
+        "dnf install"
+       ]
+      ],
+      "mono": false
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Onde os programas vêm de",
+     "body": [
+      "Você não baixa instalador de site nenhum. O sistema tem uma lista de fontes confiáveis.",
+      "Você pede o nome do programa e o sistema busca, confere a assinatura e instala.",
+      "É a mesma ideia da loja de aplicativos do celular, só que por texto."
+     ],
+     "terms": [
+      {
+       "word": "Repositório",
+       "meaning": "a coleção de programas confiáveis de onde o sistema baixa o que você pedir."
+      },
+      {
+       "word": "Gerenciador de pacotes",
+       "meaning": "o programa que busca, confere e instala a partir dessa coleção."
+      },
+      {
+       "word": "Terminal",
+       "meaning": "a janela preta onde você escreve ordens em texto e lê a resposta."
+      },
+      {
+       "word": "Shell",
+       "meaning": "o programa que roda dentro dessa janela e entende o que você escreveu."
+      },
+      {
+       "word": "bash",
+       "meaning": "o shell mais comum no Linux."
+      },
+      {
+       "word": "PowerShell",
+       "meaning": "o shell moderno do Windows. Faz o mesmo papel do bash por lá."
+      }
+     ],
+     "code": {
+      "label": "Instalando um programa no Ubuntu",
+      "text": "sudo apt update\nsudo apt install nginx"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Uma árvore só, sem letras de unidade",
+     "body": [
+      "No Windows cada disco ganha uma letra. No Linux não existe letra de unidade.",
+      "Tudo pendura numa árvore única que começa numa barra. Disco novo é pendurado em algum galho dela.",
+      "Quatro galhos resolvem quase tudo no dia a dia."
+     ],
+     "figure": {
+      "src": "/figuras/servidores/srv-arvore-linux.svg",
+      "alt": "Árvore de pastas do Linux partindo de uma barra no topo, com quatro ramos: etc para configuração, var para arquivos que crescem, home para as pastas das pessoas e usr para os programas",
+      "caption": "Mexeu em configuração? Olhe /etc. Encheu o disco? Olhe /var."
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Quem manda e quem não manda",
+     "body": [
+      "Existe uma conta que pode tudo, inclusive apagar o sistema inteiro sem perguntar.",
+      "Você não trabalha logado nela. Você trabalha numa conta comum e pede permissão quando precisa.",
+      "Esse pedido deixa registro. É assim que se descobre depois quem fez o quê."
+     ],
+     "terms": [
+      {
+       "word": "root",
+       "meaning": "a conta que pode tudo na máquina, sem nenhuma trava."
+      },
+      {
+       "word": "sudo",
+       "meaning": "o jeito de rodar um comando com o poder dessa conta, sem viver dentro dela."
+      },
+      {
+       "word": "Permissão",
+       "meaning": "a regra que diz quem pode ler, gravar ou executar cada arquivo."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Os mesmos comandos nos dois mundos",
+     "body": [
+      "Se você já usa o Windows, boa parte do que você sabe tem equivalente.",
+      "O nome muda, a ideia não. Vale decorar esta tabela nas primeiras semanas."
+     ],
+     "table": {
+      "label": "O que fazer, e como se chama em cada lado",
+      "headers": [
+       "O que faz",
+       "Linux",
+       "Windows (PowerShell)"
+      ],
+      "rows": [
+       [
+        "Lista o que tem na pasta",
+        "ls -la",
+        "Get-ChildItem"
+       ],
+       [
+        "Mostra em que pasta você está",
+        "pwd",
+        "Get-Location"
+       ],
+       [
+        "Entra numa pasta",
+        "cd /var/log",
+        "cd C:\\Logs"
+       ],
+       [
+        "Mostra o conteúdo do arquivo",
+        "cat arquivo.txt",
+        "Get-Content arquivo.txt"
+       ],
+       [
+        "Procura texto dentro de arquivos",
+        "grep erro arquivo.txt",
+        "Select-String erro arquivo.txt"
+       ],
+       [
+        "Copia um arquivo",
+        "cp a.txt b.txt",
+        "Copy-Item a.txt b.txt"
+       ]
+      ],
+      "mono": true
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Testar Linux sem alugar nada",
+     "body": [
+      "Dá para praticar antes de pagar por qualquer coisa.",
+      "No Windows existe um recurso que roda Linux dentro dele, sem apagar nada. Ele se instala com um comando.",
+      "No Mac o terminal já é parecido, mas os comandos de instalar programas são diferentes."
+     ],
+     "code": {
+      "label": "No Windows, no PowerShell como administrador",
+      "text": "wsl --install -d Ubuntu"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Ler antes de escrever",
+     "body": [
+      "Quase todo comando que muda alguma coisa tem um irmão que só mostra.",
+      "Comece sempre pelo irmão que só mostra. É assim que se aprende sem estragar."
+     ],
+     "terms": [
+      {
+       "word": "Log",
+       "meaning": "o caderno em que cada programa anota o que fez e o que deu errado."
+      }
+     ],
+     "example": {
+      "label": "Exemplo: apagar arquivos antigos com segurança",
+      "lines": [
+       "Primeiro liste o que seria apagado.",
+       "find /var/log -name '*.gz' -mtime +30",
+       "Leia a lista inteira e confirme que é o que você quer.",
+       "Só então acrescente a ordem de apagar no fim."
+      ]
+     }
+    },
+    {
+     "kind": "exam",
+     "title": "Como cai na prova",
+     "body": [
+      "A hierarquia do sistema de arquivos é única e inicia na raiz, sem letras de unidade.",
+      "O diretório /etc concentra arquivos de configuração e o /var abriga dados variáveis, como logs e filas.",
+      "A banca costuma opor gerenciadores de pacotes por família, apt na linha Debian e dnf na linha Red Hat."
+     ]
+    },
+    {
+     "kind": "pitfall",
+     "title": "Pegadinhas clássicas",
+     "body": [
+      "O que mais derruba iniciante nas primeiras semanas:"
+     ],
+     "bullets": [
+      "Trabalhar logado como a conta que pode tudo, o tempo todo.",
+      "Procurar letra de unidade numa árvore que não tem letras.",
+      "Achar que maiúscula e minúscula dão no mesmo em nome de arquivo.",
+      "Rodar comando que apaga sem antes listar o que seria apagado."
+     ]
+    },
+    {
+     "kind": "recap",
+     "title": "Resumo",
+     "body": [
+      "Linux domina em máquinas que atendem pedidos porque funciona sem tela e sem ninguém olhando.",
+      "Tudo mora numa árvore só. Configuração em /etc, o que cresce em /var, pessoas em /home.",
+      "Use conta comum e peça poder só quando precisar. Liste antes de apagar."
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "topic": "Distribuições",
+     "statement": "Duas máquinas rodam Linux, uma com Ubuntu e outra com Rocky. A diferença prática mais imediata para quem administra é:",
+     "options": [
+      "O comando usado para instalar programas",
+      "O fato de uma delas não aceitar acesso remoto",
+      "A existência de letras de unidade em apenas uma",
+      "A ausência de pastas de configuração numa delas",
+      "O idioma obrigatório dos comandos"
+     ],
+     "correct_index": 0,
+     "explanation": "As duas famílias organizam o sistema do mesmo jeito. O que mais muda no dia a dia é o gerenciador de pacotes, apt de um lado e dnf do outro.",
+     "pitfall": "A banca sugere diferenças estruturais que não existem. A árvore de pastas é a mesma nas duas."
+    },
+    {
+     "topic": "Árvore de arquivos",
+     "statement": "Um disco novo foi acrescentado a um servidor Linux. Para que ele possa ser usado, esse disco:",
+     "options": [
+      "É pendurado em algum ponto da árvore única do sistema",
+      "Recebe automaticamente a próxima letra de unidade livre",
+      "Passa a ser a nova raiz do sistema",
+      "Só funciona depois de reinstalar a distribuição",
+      "Fica acessível apenas pela conta que pode tudo"
+     ],
+     "correct_index": 0,
+     "explanation": "No Linux não existem letras de unidade. Todo dispositivo de armazenamento é ligado a um ponto da hierarquia que começa na raiz.",
+     "pitfall": "Quem vem do Windows procura a letra e conclui que o disco não foi reconhecido."
+    },
+    {
+     "topic": "Diretórios do sistema",
+     "statement": "O disco de um servidor encheu e ninguém instalou nada de novo. O diretório mais provável de estar crescendo é:",
+     "options": [
+      "/var",
+      "/etc",
+      "/home",
+      "/usr",
+      "/bin"
+     ],
+     "correct_index": 0,
+     "explanation": "O /var guarda justamente o que varia de tamanho com o tempo, como registros de funcionamento e filas de trabalho.",
+     "pitfall": "O /etc guarda configuração, que é pequena e quase não cresce sozinha."
+    },
+    {
+     "topic": "Conta administrativa",
+     "statement": "Sobre trabalhar numa máquina Linux de produção, a prática recomendada é:",
+     "options": [
+      "Usar conta comum e pedir poder administrativo apenas quando necessário",
+      "Ficar sempre logado na conta que pode tudo, por praticidade",
+      "Criar uma conta nova para cada comando executado",
+      "Desativar todas as contas comuns da máquina",
+      "Compartilhar a senha administrativa com toda a equipe"
+     ],
+     "correct_index": 0,
+     "explanation": "Trabalhar sempre com poder total transforma qualquer erro de digitação em estrago grande, e apaga o registro de quem fez o quê.",
+     "pitfall": "A alternativa da praticidade é a que mais aparece na vida real, e é exatamente a que a prova cobra como errada."
+    },
+    {
+     "topic": "Instalação de programas",
+     "statement": "Ao instalar um programa numa distribuição Linux de servidor, o caminho normal é:",
+     "options": [
+      "Pedir o programa ao gerenciador de pacotes, que busca na coleção confiável",
+      "Baixar um instalador do site do fabricante e executar",
+      "Copiar os arquivos de outra máquina igual",
+      "Compilar o programa a partir do código em todos os casos",
+      "Pedir à empresa de hospedagem que instale por você"
+     ],
+     "correct_index": 0,
+     "explanation": "A coleção confiável traz o programa já conferido, com assinatura verificada e com as dependências resolvidas pelo próprio sistema.",
+     "pitfall": "Baixar instalador avulso é hábito de outro sistema, e é por onde entra software adulterado."
+    },
+    {
+     "topic": "Sensibilidade a maiúsculas",
+     "statement": "Num servidor Linux existe o arquivo Config.yml. Um programa procura por config.yml e falha. A causa é:",
+     "options": [
+      "Nomes de arquivo diferenciam maiúsculas de minúsculas",
+      "O arquivo está corrompido",
+      "Falta permissão de leitura no arquivo",
+      "O disco está cheio",
+      "A extensão yml não é reconhecida pelo sistema"
+     ],
+     "correct_index": 0,
+     "explanation": "No Linux o nome do arquivo é comparado letra a letra, e a caixa faz parte do nome. Config.yml e config.yml são dois arquivos distintos.",
+     "pitfall": "Esse erro passa despercebido em quem desenvolve no Windows e só aparece quando o código chega no servidor."
+    },
+    {
+     "topic": "Antes de apagar",
+     "statement": "Antes de rodar um comando que apaga vários arquivos de uma vez, a atitude mais segura é:",
+     "options": [
+      "Rodar primeiro a versão que apenas lista o que seria apagado",
+      "Fazer o comando rodar duas vezes para confirmar",
+      "Executar como a conta que pode tudo, para evitar erro de permissão",
+      "Apagar em horário de menor movimento",
+      "Desligar a máquina antes de executar"
+     ],
+     "correct_index": 0,
+     "explanation": "Listar antes transforma um comando destrutivo em leitura. Você confere a lista inteira e só depois autoriza a remoção.",
+     "pitfall": "Executar com poder total remove a única trava que ainda existia contra o comando errado."
+    },
+    {
+     "topic": "Por que Linux em servidores",
+     "statement": "A razão mais direta de o Linux dominar em máquinas que atendem pedidos é:",
+     "options": [
+      "Ele funciona por texto, sem depender de tela nem de alguém presente",
+      "Ele é o único sistema capaz de atender vários pedidos ao mesmo tempo",
+      "Ele dispensa qualquer tipo de manutenção",
+      "Ele impede que programas apresentem falhas",
+      "Ele não aceita acesso a partir de outras máquinas"
+     ],
+     "correct_index": 0,
+     "explanation": "Uma máquina que fica ligada anos a fio precisa ser operada à distância e por texto. É para esse uso que o sistema foi desenhado.",
+     "pitfall": "As alternativas prometem imunidade a falhas e manutenção zero, que nenhum sistema entrega."
+    }
+   ]
+  },
+  {
+   "slug": "acesso-ssh",
+   "title": "Acesso remoto com SSH",
+   "module": "Fundamentos",
+   "summary": "Como entrar numa máquina que está longe, por texto, sem entregar senha para ninguém.",
+   "steps": [
+    {
+     "kind": "idea",
+     "title": "Uma máquina sem teclado precisa de outro jeito de entrar",
+     "body": [
+      "A máquina que você aluga está num prédio a centenas de quilômetros. Não há tela nem teclado para você.",
+      "Existe um jeito de abrir uma janela de texto nela, como se você estivesse sentado na frente.",
+      "Você digita aqui, o comando roda lá, e a resposta volta para a sua tela."
+     ],
+     "terms": [
+      {
+       "word": "Terminal",
+       "meaning": "a janela onde você escreve ordens em texto e lê a resposta."
+      },
+      {
+       "word": "Shell",
+       "meaning": "o programa que roda dentro dessa janela e entende o que você escreveu."
+      },
+      {
+       "word": "SSH",
+       "meaning": "o jeito seguro de abrir esse terminal numa máquina distante."
+      },
+      {
+       "word": "Servidor",
+       "meaning": "o computador que fica esperando pedidos e devolve respostas."
+      },
+      {
+       "word": "Serviço",
+       "meaning": "um programa que fica ligado atendendo pedidos, sem ninguém abrir nada."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Tudo que passa vai embaralhado",
+     "body": [
+      "Entre o seu teclado e a máquina existe muita gente no caminho. Roteadores, provedores e redes públicas.",
+      "Se o texto viajasse aberto, qualquer um nesse caminho leria a sua senha.",
+      "Por isso o conteúdo é embaralhado antes de sair. Quem intercepta vê ruído."
+     ],
+     "terms": [
+      {
+       "word": "Criptografia",
+       "meaning": "embaralhar a mensagem de um jeito que só o destino consegue desembaralhar."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Duas chaves que nasceram juntas",
+     "body": [
+      "Senha é ruim: dá para adivinhar, e ela atravessa a rede toda vez.",
+      "O jeito melhor usa duas peças geradas de uma vez. Uma fica com você e nunca sai do seu computador.",
+      "A outra pode ser copiada para onde você quiser. Sozinha, ela não abre nada."
+     ],
+     "terms": [
+      {
+       "word": "Chave privada",
+       "meaning": "o arquivo que fica só com você. Quem tem ele entra. Nunca copie para lugar nenhum."
+      },
+      {
+       "word": "Chave pública",
+       "meaning": "a metade que pode ser vista por todos. Ela só funciona como fechadura."
+      }
+     ],
+     "figure": {
+      "src": "/figuras/servidores/srv-ssh-chaves.svg",
+      "alt": "Duas caixas lado a lado: no seu computador fica a chave privada, que nunca sai dali, e no servidor fica a chave pública, com uma seta mostrando que só a cópia pública viaja",
+      "caption": "Só a metade pública viaja. O segredo nunca atravessa a internet."
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Como o encontro funciona na prática",
+     "body": [
+      "A máquina distante guarda a sua metade pública numa lista de quem pode entrar.",
+      "Quando você tenta entrar, ela monta um desafio que só a outra metade resolve.",
+      "Seu computador resolve e devolve. Nada de senha, e nenhum segredo saiu do lugar."
+     ],
+     "example": {
+      "label": "Exemplo: criando o par e mandando a metade pública",
+      "lines": [
+       "ssh-keygen -t ed25519 -C 'meu notebook'",
+       "Isso cria dois arquivos dentro da pasta .ssh.",
+       "ssh-copy-id usuario@203.0.113.10",
+       "Agora entre com: ssh usuario@203.0.113.10"
+      ]
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Funciona nos três sistemas",
+     "body": [
+      "Não é preciso instalar nada exótico. Windows, Mac e Linux já vêm com isso.",
+      "No Windows use o PowerShell. Nos outros dois, o terminal que já existe."
+     ],
+     "terms": [
+      {
+       "word": "PowerShell",
+       "meaning": "o shell moderno do Windows, onde você digita comandos por lá."
+      }
+     ],
+     "table": {
+      "label": "Onde digitar, em cada sistema",
+      "headers": [
+       "Sistema",
+       "Onde abrir",
+       "Onde ficam as chaves"
+      ],
+      "rows": [
+       [
+        "Windows",
+        "PowerShell",
+        "C:\\Users\\voce\\.ssh"
+       ],
+       [
+        "Mac",
+        "Terminal",
+        "/Users/voce/.ssh"
+       ],
+       [
+        "Linux",
+        "Terminal",
+        "/home/voce/.ssh"
+       ]
+      ],
+      "mono": true
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "A primeira coisa a fazer numa máquina nova",
+     "body": [
+      "Toda máquina nova chega com a conta que pode tudo aberta para senha. É o primeiro alvo de quem ataca.",
+      "São três mudanças, sempre na mesma ordem. Nunca feche a janela atual antes de testar numa nova."
+     ],
+     "terms": [
+      {
+       "word": "root",
+       "meaning": "a conta que pode tudo na máquina, sem nenhuma trava."
+      },
+      {
+       "word": "sudo",
+       "meaning": "o jeito de rodar um comando com o poder dessa conta, sem viver dentro dela."
+      },
+      {
+       "word": "Porta",
+       "meaning": "o número que diz qual programa da máquina deve receber a conexão."
+      }
+     ],
+     "bullets": [
+      "Crie uma conta comum para você e dê a ela o direito de pedir poder.",
+      "Mande a sua metade pública para essa conta nova.",
+      "Desligue a entrada por senha e a entrada direta na conta que pode tudo."
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "O teste que salva de ficar do lado de fora",
+     "body": [
+      "O erro que mais tranca gente do lado de fora é desligar a senha e fechar a janela sem testar.",
+      "Se a chave não estiver certa, você não entra mais. E não há teclado do outro lado para consertar."
+     ],
+     "example": {
+      "label": "Exemplo: a ordem segura de endurecer o acesso",
+      "lines": [
+       "Deixe a janela atual aberta, sem fechar.",
+       "Abra uma segunda janela e entre pela conta nova.",
+       "Conseguiu? Só agora aplique a mudança e recarregue o serviço.",
+       "Teste numa terceira janela antes de fechar a primeira."
+      ]
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "O aviso de chave trocada",
+     "body": [
+      "Seu computador guarda a identidade de cada máquina em que você já entrou.",
+      "Se a identidade mudar, ele para tudo e avisa em letras grandes.",
+      "Isso costuma ser reinstalação da máquina. Mas também é exatamente o que um ataque pareceria."
+     ],
+     "terms": [
+      {
+       "word": "Log",
+       "meaning": "o caderno em que cada programa anota o que fez e o que deu errado."
+      }
+     ]
+    },
+    {
+     "kind": "exam",
+     "title": "Como cai na prova",
+     "body": [
+      "SSH provê canal criptografado para administração remota, e opera por padrão na porta TCP 22.",
+      "Na autenticação por chaves, a privada permanece no cliente e a pública é instalada no servidor, em authorized_keys.",
+      "Desabilitar PermitRootLogin e PasswordAuthentication é a recomendação clássica de endurecimento."
+     ]
+    },
+    {
+     "kind": "pitfall",
+     "title": "Pegadinhas clássicas",
+     "body": [
+      "Os quatro jeitos mais comuns de se dar mal aqui:"
+     ],
+     "bullets": [
+      "Copiar a metade privada para o servidor, achando que é ela que vai lá.",
+      "Desligar a senha e fechar a janela sem testar antes numa nova.",
+      "Ignorar o aviso de identidade trocada e apagar o registro sem pensar.",
+      "Deixar a metade privada sem senha num computador compartilhado."
+     ]
+    },
+    {
+     "kind": "recap",
+     "title": "Resumo",
+     "body": [
+      "SSH abre um terminal numa máquina distante, com tudo embaralhado no caminho.",
+      "O par de chaves troca senha por prova: a privada fica com você, a pública mora no servidor.",
+      "Endureça o acesso em três passos, e teste numa janela nova antes de fechar a antiga."
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "topic": "Par de chaves",
+     "statement": "Na autenticação por chaves, o arquivo que deve ser copiado para a máquina remota é:",
+     "options": [
+      "A chave pública",
+      "A chave privada",
+      "Os dois arquivos",
+      "Nenhum dos dois",
+      "A chave privada, desde que protegida por senha"
+     ],
+     "correct_index": 0,
+     "explanation": "A metade pública funciona como fechadura e pode ser vista por qualquer um. A privada é a prova de identidade e nunca sai do seu computador.",
+     "pitfall": "Copiar a privada é o erro mais grave e mais frequente. Quem tem esse arquivo entra como você em toda máquina."
+    },
+    {
+     "topic": "Senha e chave",
+     "statement": "A vantagem prática de entrar por chave em vez de senha é que:",
+     "options": [
+      "Nenhum segredo atravessa a rede durante a entrada",
+      "A chave é mais curta e mais fácil de digitar",
+      "A chave dispensa qualquer tipo de embaralhamento",
+      "A chave funciona mesmo com a máquina desligada",
+      "A chave elimina a necessidade de criar contas"
+     ],
+     "correct_index": 0,
+     "explanation": "O servidor propõe um desafio que só a metade privada resolve. A resposta prova quem você é sem que o segredo em si seja transmitido.",
+     "pitfall": "Senha viaja embaralhada, mas ainda assim viaja, e ainda pode ser adivinhada por tentativa."
+    },
+    {
+     "topic": "Endurecimento do acesso",
+     "statement": "Depois de configurar a entrada por chave numa máquina nova, a mudança recomendada é:",
+     "options": [
+      "Desligar a entrada por senha e a entrada direta na conta que pode tudo",
+      "Apagar todas as contas comuns da máquina",
+      "Deixar a entrada por senha ligada como reserva",
+      "Compartilhar a chave privada com a equipe",
+      "Desligar o serviço de acesso remoto por completo"
+     ],
+     "correct_index": 0,
+     "explanation": "Com a chave funcionando, a senha vira apenas uma porta extra para tentativa automatizada. Fechar essa porta remove o alvo mais fácil.",
+     "pitfall": "Deixar a senha como reserva parece prudente e é justamente o que anula o ganho da chave."
+    },
+    {
+     "topic": "Ordem segura",
+     "statement": "Ao aplicar mudanças na configuração de acesso remoto de uma máquina distante, a prática segura é:",
+     "options": [
+      "Testar numa segunda janela antes de fechar a que já está aberta",
+      "Fechar tudo e reconectar do zero para validar",
+      "Reiniciar a máquina logo após salvar a configuração",
+      "Aplicar todas as mudanças de uma vez e conferir no dia seguinte",
+      "Desligar a rede durante a alteração"
+     ],
+     "correct_index": 0,
+     "explanation": "A janela aberta é a sua única saída de emergência. Enquanto ela existir, dá para desfazer um erro de configuração.",
+     "pitfall": "Fechar e reconectar parece o teste natural, mas remove a saída de emergência justamente antes de precisar dela."
+    },
+    {
+     "topic": "Aviso de identidade",
+     "statement": "Ao tentar entrar numa máquina conhecida, o programa avisa que a identidade dela mudou. Isso pode indicar:",
+     "options": [
+      "Reinstalação da máquina, ou alguém se passando por ela",
+      "Apenas que a senha expirou",
+      "Que o disco da máquina encheu",
+      "Que a sua chave privada foi apagada",
+      "Que o programa precisa ser atualizado"
+     ],
+     "correct_index": 0,
+     "explanation": "A identidade guardada serve para detectar troca de máquina. Reinstalação gera identidade nova, e um ataque de interceptação produziria o mesmo aviso.",
+     "pitfall": "Apagar o registro antigo sem investigar é o reflexo comum, e é o que um ataque precisaria que você fizesse."
+    },
+    {
+     "topic": "Papel do acesso remoto",
+     "statement": "Um servidor alugado não tem tela nem teclado disponíveis. O acesso administrativo a ele se dá:",
+     "options": [
+      "Por um terminal aberto à distância sobre um canal embaralhado",
+      "Apenas presencialmente, no prédio da empresa de hospedagem",
+      "Por arquivos enviados ao suporte da empresa",
+      "Somente pelo painel do navegador, sem linha de comando",
+      "Por conexão direta de vídeo com a máquina"
+     ],
+     "correct_index": 0,
+     "explanation": "Esse é o uso central do acesso remoto por texto: operar uma máquina sem periféricos e sem presença física, com o conteúdo protegido no caminho.",
+     "pitfall": "Painéis de navegador existem, mas são conveniência. A administração de verdade acontece por texto."
+    },
+    {
+     "topic": "Chave privada",
+     "statement": "A chave privada de um administrador vazou para fora da empresa. A providência correta é:",
+     "options": [
+      "Gerar um par novo e remover a metade pública antiga dos servidores",
+      "Trocar apenas a senha das contas",
+      "Reiniciar os servidores afetados",
+      "Apagar os registros de acesso das máquinas",
+      "Aguardar, porque a chave sozinha não abre nada"
+     ],
+     "correct_index": 0,
+     "explanation": "A metade privada é a prova de identidade. Enquanto a pública correspondente estiver instalada, quem tem o arquivo vazado continua entrando.",
+     "pitfall": "A última alternativa inverte a regra: é justamente a privada que abre, e a pública que apenas confere."
+    },
+    {
+     "topic": "Porta do serviço",
+     "statement": "O acesso remoto por texto costuma atender, por combinado, na porta:",
+     "options": [
+      "22",
+      "80",
+      "443",
+      "3306",
+      "5432"
+     ],
+     "correct_index": 0,
+     "explanation": "Cada serviço tem um número combinado, e o 22 é o desse. É por isso que ele aparece como primeira regra liberada na maioria das máquinas.",
+     "pitfall": "As outras alternativas são portas de outros serviços comuns, e a prova mistura as quatro de propósito."
+    }
+   ]
+  },
+  {
+   "slug": "rede-ip-portas",
+   "title": "Redes, IPs, portas e sockets",
+   "module": "Fundamentos",
+   "summary": "Como um pedido encontra a máquina certa e, dentro dela, o programa certo.",
+   "steps": [
+    {
+     "kind": "idea",
+     "title": "Um prédio e seus apartamentos",
+     "body": [
+      "Para entregar uma carta você precisa de duas coisas. O endereço do prédio e o número do apartamento.",
+      "Na internet funciona igual. Um número acha a máquina, outro número acha o programa dentro dela.",
+      "Errar o primeiro é bater no prédio errado. Errar o segundo é bater na porta de quem não espera visita."
+     ],
+     "terms": [
+      {
+       "word": "IP",
+       "meaning": "o número que identifica uma máquina na rede. É o endereço do prédio."
+      },
+      {
+       "word": "Porta",
+       "meaning": "o número que diz qual programa da máquina deve receber a conexão."
+      },
+      {
+       "word": "Servidor",
+       "meaning": "o computador que fica esperando pedidos e devolve respostas."
+      },
+      {
+       "word": "Cliente",
+       "meaning": "quem faz o pedido e espera a resposta."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Vários programas, uma máquina só",
+     "body": [
+      "Uma máquina costuma rodar vários programas atendendo ao mesmo tempo.",
+      "O número da porta é o que separa um do outro. Cada programa fica escutando o seu número.",
+      "Dois programas não podem escutar o mesmo número na mesma máquina."
+     ],
+     "figure": {
+      "src": "/figuras/servidores/srv-ip-porta.svg",
+      "alt": "Um prédio representa o endereço numérico da máquina e cada apartamento representa uma porta, com três programas diferentes atendendo em portas diferentes na mesma máquina",
+      "caption": "O endereço é o prédio. A porta é o apartamento."
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Os números que todo mundo combinou",
+     "body": [
+      "Alguns números viraram combinado mundial. Você não precisa dizer qual é o do site.",
+      "É por isso que o navegador acha o site sem você digitar número nenhum."
+     ],
+     "terms": [
+      {
+       "word": "Protocolo",
+       "meaning": "o combinado de como conversar, para os dois lados se entenderem."
+      },
+      {
+       "word": "HTTP",
+       "meaning": "o protocolo dos sites, que carrega o pedido da página e a resposta."
+      },
+      {
+       "word": "TLS",
+       "meaning": "a camada que embaralha essa conversa. É ela que acende o cadeado."
+      },
+      {
+       "word": "Banco de dados",
+       "meaning": "o programa que guarda os dados em ordem e sabe buscá-los depressa."
+      },
+      {
+       "word": "MySQL",
+       "meaning": "um dos bancos de dados mais usados. O MariaDB é um parente próximo dele."
+      },
+      {
+       "word": "PostgreSQL",
+       "meaning": "outro banco muito usado, conhecido por seguir o padrão à risca."
+      }
+     ],
+     "table": {
+      "label": "Os números combinados que mais aparecem",
+      "headers": [
+       "Porta",
+       "Quem atende ali",
+       "Para que serve"
+      ],
+      "rows": [
+       [
+        "22",
+        "acesso remoto por texto",
+        "administrar a máquina"
+       ],
+       [
+        "80",
+        "site sem cadeado",
+        "páginas em texto aberto"
+       ],
+       [
+        "443",
+        "site com cadeado",
+        "páginas embaralhadas"
+       ],
+       [
+        "3306",
+        "banco MySQL",
+        "guardar e buscar dados"
+       ],
+       [
+        "5432",
+        "banco PostgreSQL",
+        "guardar e buscar dados"
+       ]
+      ],
+      "mono": false
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Dois jeitos de entregar",
+     "body": [
+      "Existem dois estilos de entrega, e a diferença aparece quando algo se perde.",
+      "Um confere tudo e reenvia o que sumiu. O outro dispara e segue em frente.",
+      "Sites e bancos usam o primeiro. Chamada de voz e jogo costumam usar o segundo."
+     ],
+     "terms": [
+      {
+       "word": "Pacote de rede",
+       "meaning": "o pedaço em que a mensagem é picada para viajar."
+      },
+      {
+       "word": "TCP",
+       "meaning": "a entrega conferida: ela avisa o que chegou e reenvia o que sumiu."
+      },
+      {
+       "word": "UDP",
+       "meaning": "a entrega rápida: dispara e não confere. Perdeu, perdeu."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "A conversa inteira em quatro números",
+     "body": [
+      "Uma conexão é identificada por quatro coisas juntas.",
+      "O endereço e a porta de quem pede, mais o endereço e a porta de quem atende.",
+      "É por isso que mil pessoas abrem o mesmo site ao mesmo tempo sem se misturarem."
+     ],
+     "terms": [
+      {
+       "word": "Socket",
+       "meaning": "a ponta de uma conversa dentro de um programa, identificada por endereço e porta."
+      }
+     ],
+     "example": {
+      "label": "Exemplo: duas pessoas no mesmo site",
+      "lines": [
+       "Ana: 189.0.2.7 porta 51022 fala com 203.0.113.10 porta 443.",
+       "Bia: 189.0.2.9 porta 60113 fala com 203.0.113.10 porta 443.",
+       "O destino é idêntico nas duas.",
+       "A origem é diferente, e é isso que separa as conversas."
+      ]
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "O endereço de dentro e o de fora",
+     "body": [
+      "Sua máquina em casa tem um endereço que só vale dentro da sua rede.",
+      "O mundo lá fora enxerga só o endereço do seu roteador. Ele traduz um no outro.",
+      "Uma máquina alugada é diferente: ela costuma ter um endereço que o mundo todo alcança."
+     ],
+     "table": {
+      "label": "Como saber se um endereço é de rede interna",
+      "headers": [
+       "Começa com",
+       "Onde vive",
+       "Alcançável de fora"
+      ],
+      "rows": [
+       [
+        "10.",
+        "rede interna",
+        "não"
+       ],
+       [
+        "192.168.",
+        "rede interna",
+        "não"
+       ],
+       [
+        "172.16 a 172.31",
+        "rede interna",
+        "não"
+       ],
+       [
+        "127.0.0.1",
+        "a própria máquina",
+        "não"
+       ],
+       [
+        "qualquer outro",
+        "internet",
+        "sim"
+       ]
+      ],
+      "mono": false
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Escutar só de dentro ou de fora também",
+     "body": [
+      "Ao subir um programa, você escolhe quem pode alcançá-lo.",
+      "Se ele escutar só o endereço da própria máquina, ninguém de fora chega nele. É o certo para banco de dados.",
+      "Se escutar em tudo, qualquer um na internet alcança. É o certo para o site, e é perigoso para o resto."
+     ],
+     "code": {
+      "label": "Vendo quem está escutando o quê",
+      "text": "ss -tlnp\n# 127.0.0.1:5432 -> só de dentro\n# 0.0.0.0:443   -> de qualquer lugar"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Três perguntas que resolvem quase tudo",
+     "body": [
+      "Quando algo de rede não funciona, siga do endereço para o programa.",
+      "Cada pergunta elimina uma etapa. Você para na primeira que der errado."
+     ],
+     "example": {
+      "label": "Exemplo: o site não responde",
+      "lines": [
+       "A máquina responde? Teste: ping 203.0.113.10",
+       "A porta aceita conexão? Teste: nc -zv 203.0.113.10 443",
+       "O programa está escutando lá dentro? Teste: ss -tlnp",
+       "Parou numa delas? O problema mora ali."
+      ]
+     }
+    },
+    {
+     "kind": "exam",
+     "title": "Como cai na prova",
+     "body": [
+      "O endereço IP identifica o host e a porta identifica o processo, formando o par que o socket representa.",
+      "TCP é orientado a conexão e confiável, com retransmissão. UDP não estabelece conexão e não garante entrega.",
+      "As faixas 10.0.0.0/8, 172.16.0.0/12 e 192.168.0.0/16 são reservadas para uso privado e não roteadas na internet."
+     ]
+    },
+    {
+     "kind": "pitfall",
+     "title": "Pegadinhas clássicas",
+     "body": [
+      "Onde a confusão costuma aparecer:"
+     ],
+     "bullets": [
+      "Achar que a máquina estar no ar garante que o programa está atendendo.",
+      "Deixar o banco de dados escutando em tudo em vez de só na própria máquina.",
+      "Tentar subir dois programas no mesmo número de porta.",
+      "Confundir o endereço interno com o que o mundo enxerga."
+     ]
+    },
+    {
+     "kind": "recap",
+     "title": "Resumo",
+     "body": [
+      "O endereço acha a máquina e a porta acha o programa dentro dela.",
+      "A conversa é identificada pelos quatro números das duas pontas, e por isso não se mistura.",
+      "Ao investigar, vá do endereço para a porta e da porta para o programa."
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "topic": "Endereço e porta",
+     "statement": "Numa mesma máquina rodam um site e um banco de dados. O que permite que cada pedido chegue ao programa certo é:",
+     "options": [
+      "O número da porta usado na conexão",
+      "O endereço numérico da máquina",
+      "O nome do domínio digitado",
+      "A quantidade de memória disponível",
+      "A ordem em que os programas foram iniciados"
+     ],
+     "correct_index": 0,
+     "explanation": "O endereço leva até a máquina, e ali param todos os pedidos. É a porta que separa qual programa recebe cada conexão.",
+     "pitfall": "O endereço é o mesmo para os dois programas, então ele não pode ser o que os distingue."
+    },
+    {
+     "topic": "TCP e UDP",
+     "statement": "Uma aplicação precisa garantir que nenhum pedaço da mensagem se perca no caminho. O estilo de entrega adequado é:",
+     "options": [
+      "TCP, que confere o que chegou e reenvia o que faltou",
+      "UDP, que é mais rápido por não conferir",
+      "Qualquer um dos dois, porque ambos garantem entrega",
+      "Nenhum dos dois, porque garantia é tarefa do programa",
+      "UDP, desde que a rede seja de boa qualidade"
+     ],
+     "correct_index": 0,
+     "explanation": "A entrega conferida numera os pedaços, cobra confirmação e reenvia o que não chegou. É o que sites e bancos de dados usam.",
+     "pitfall": "A alternativa sobre rede de boa qualidade sugere que a garantia viria da infraestrutura, e não do protocolo."
+    },
+    {
+     "topic": "Endereços privados",
+     "statement": "Um servidor foi configurado com o endereço 192.168.1.50. Sobre esse endereço, é correto afirmar:",
+     "options": [
+      "Ele pertence a uma faixa privada e não é alcançável pela internet",
+      "Ele é um endereço público como qualquer outro",
+      "Ele aponta sempre para a própria máquina",
+      "Ele só funciona em sistemas Windows",
+      "Ele indica que a máquina está com defeito de rede"
+     ],
+     "correct_index": 0,
+     "explanation": "Essa faixa é reservada para redes internas. Ela funciona dentro da casa ou da empresa, mas nenhum roteador da internet a encaminha.",
+     "pitfall": "A alternativa que aponta para a própria máquina descreve o 127.0.0.1, que é outra coisa."
+    },
+    {
+     "topic": "Quem está escutando",
+     "statement": "Um banco de dados aparece escutando em 127.0.0.1 na porta 5432. Isso significa que ele:",
+     "options": [
+      "Só aceita conexões vindas da própria máquina",
+      "Aceita conexões de qualquer lugar da internet",
+      "Está desligado no momento",
+      "Está escutando em todas as portas ao mesmo tempo",
+      "Perdeu a configuração de rede"
+     ],
+     "correct_index": 0,
+     "explanation": "Esse endereço representa a própria máquina. Um programa preso a ele fica invisível para a rede, o que é a configuração correta para um banco.",
+     "pitfall": "Escutar em 0.0.0.0 é o oposto, e é esse o engano que expõe bancos de dados à internet."
+    },
+    {
+     "topic": "Identificação da conexão",
+     "statement": "Mil pessoas acessam o mesmo site ao mesmo tempo. As conversas não se misturam porque cada conexão é identificada por:",
+     "options": [
+      "Endereço e porta de origem somados a endereço e porta de destino",
+      "Apenas o endereço de destino",
+      "Apenas a porta de destino",
+      "O nome do domínio digitado por cada pessoa",
+      "A ordem de chegada dos pedidos"
+     ],
+     "correct_index": 0,
+     "explanation": "O destino é idêntico para todo mundo. O que diferencia as conversas é o par de origem, que muda de pessoa para pessoa e de conexão para conexão.",
+     "pitfall": "Quem olha só o destino conclui que haveria colisão, porque de fato os dois números de destino se repetem."
+    },
+    {
+     "topic": "Portas em uso",
+     "statement": "Ao tentar subir um segundo programa na porta 443 da mesma máquina, o resultado esperado é:",
+     "options": [
+      "Erro, porque a porta já está ocupada pelo primeiro",
+      "Os dois programas passam a dividir os pedidos igualmente",
+      "O segundo substitui o primeiro automaticamente",
+      "A máquina escolhe outra porta sozinha",
+      "Os dois funcionam, alternando a cada pedido"
+     ],
+     "correct_index": 0,
+     "explanation": "Um número de porta pertence a um programa por vez na mesma máquina. O segundo recebe erro dizendo que o endereço já está em uso.",
+     "pitfall": "A ideia de dividir pedidos existe, mas ela depende de um programa na frente distribuindo, e não de dois na mesma porta."
+    },
+    {
+     "topic": "Investigação de rede",
+     "statement": "Um site hospedado numa máquina alugada parou de responder. A máquina responde ao teste de alcance. O próximo passo mais útil é:",
+     "options": [
+      "Verificar se a porta do site aceita conexão",
+      "Trocar o endereço numérico da máquina",
+      "Reinstalar o sistema operacional",
+      "Aumentar a memória contratada",
+      "Recriar a conta de acesso remoto"
+     ],
+     "correct_index": 0,
+     "explanation": "O alcance provou que a máquina está de pé. A etapa seguinte do caminho é a porta, e só depois dela o programa que deveria atender.",
+     "pitfall": "Trocar recursos ou reinstalar ignora que o problema ainda não foi localizado no caminho."
+    },
+    {
+     "topic": "Combinado de portas",
+     "statement": "O navegador abre um endereço sem que ninguém digite número de porta. Isso acontece porque:",
+     "options": [
+      "Existem números combinados por padrão para cada protocolo",
+      "O navegador testa todas as portas até achar uma aberta",
+      "A porta é escolhida ao acaso pela máquina de destino",
+      "O nome do domínio carrega o número da porta",
+      "A porta não é necessária em conexões de site"
+     ],
+     "correct_index": 0,
+     "explanation": "O navegador assume o número combinado do protocolo usado, 80 sem cadeado e 443 com cadeado, e só por isso você não precisa digitá-lo.",
+     "pitfall": "Testar todas as portas é o que faz uma varredura de ataque, e não um navegador."
+    }
+   ]
+  },
+  {
+   "slug": "dns",
+   "title": "DNS e domínios",
+   "module": "Fundamentos",
+   "summary": "Como um nome que uma pessoa consegue decorar vira o número que a máquina precisa.",
+   "steps": [
+    {
+     "kind": "idea",
+     "title": "Ninguém decora número de telefone hoje",
+     "body": [
+      "Você não digita o número de ninguém. Você procura o nome na agenda e ela cuida do resto.",
+      "A internet funciona pela mesma ideia. Computador só sabe achar número.",
+      "Existe uma agenda gigante e compartilhada que troca nome por número."
+     ],
+     "terms": [
+      {
+       "word": "IP",
+       "meaning": "o número que identifica uma máquina na rede."
+      },
+      {
+       "word": "Domínio",
+       "meaning": "o nome que as pessoas digitam. Foi inventado para ninguém decorar número."
+      },
+      {
+       "word": "DNS",
+       "meaning": "a agenda compartilhada que troca esse nome pelo número da máquina."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "A pergunta antes do pedido",
+     "body": [
+      "Quando você digita um nome, nada acontece com o site ainda.",
+      "Primeiro o navegador pergunta qual é o número daquele nome. Só com a resposta ele fala com a máquina.",
+      "Essa consulta acontece toda vez, e é rápida demais para você notar."
+     ],
+     "figure": {
+      "src": "/figuras/servidores/srv-dns-agenda.svg",
+      "alt": "Três passos em sequência: a pessoa digita um nome, um serviço de consulta devolve o endereço numérico correspondente e só então o navegador fala com a máquina certa",
+      "caption": "A consulta vem antes do pedido. Sem número, o navegador não sai do lugar."
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "O nome é lido de trás para frente",
+     "body": [
+      "Um nome tem partes separadas por ponto, e a leitura começa pela última.",
+      "A última parte diz a família do nome. A do meio é o que você registrou. A primeira costuma ser o serviço.",
+      "É essa divisão que permite muitos endereços sob um registro só."
+     ],
+     "terms": [
+      {
+       "word": "Servidor",
+       "meaning": "o computador que fica esperando pedidos e devolve respostas."
+      },
+      {
+       "word": "Serviço",
+       "meaning": "um programa que fica ligado atendendo pedidos, sem ninguém abrir nada."
+      }
+     ],
+     "table": {
+      "label": "As partes de loja.meusite.com.br",
+      "headers": [
+       "Parte",
+       "Nome disso",
+       "Quem controla"
+      ],
+      "rows": [
+       [
+        "br",
+        "a família do país",
+        "o registro brasileiro"
+       ],
+       [
+        "com.br",
+        "a categoria",
+        "o registro brasileiro"
+       ],
+       [
+        "meusite",
+        "o que você registrou",
+        "você"
+       ],
+       [
+        "loja",
+        "o apelido do serviço",
+        "você"
+       ]
+      ],
+      "mono": false
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Cada linha da agenda tem um tipo",
+     "body": [
+      "A agenda não guarda só números. Cada linha tem um tipo, e o tipo diz o que aquela linha responde.",
+      "Quatro tipos resolvem quase tudo no começo."
+     ],
+     "terms": [
+      {
+       "word": "Registro A",
+       "meaning": "a linha que aponta um nome direto para um número de máquina."
+      },
+      {
+       "word": "Registro CNAME",
+       "meaning": "a linha que diz que um nome é apelido de outro nome."
+      },
+      {
+       "word": "Registro MX",
+       "meaning": "a linha que diz quem recebe o e-mail daquele nome."
+      },
+      {
+       "word": "Registro TXT",
+       "meaning": "a linha de texto livre. Serve para provar que o nome é seu."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Por que a mudança demora a valer",
+     "body": [
+      "Perguntar a agenda toda vez seria lento. Então cada resposta vem com um prazo de validade.",
+      "Durante esse prazo, quem já perguntou usa a resposta guardada. Ninguém pergunta de novo.",
+      "É por isso que você troca o número e um amigo ainda cai no lugar antigo."
+     ],
+     "terms": [
+      {
+       "word": "Cache",
+       "meaning": "a cópia guardada de uma resposta, para não precisar perguntar de novo."
+      },
+      {
+       "word": "TTL",
+       "meaning": "o prazo de validade dessa cópia, em segundos."
+      }
+     ],
+     "example": {
+      "label": "Exemplo: planejando uma troca de endereço",
+      "lines": [
+       "Um dia antes, baixe o prazo de validade para 300 segundos.",
+       "Espere o prazo antigo terminar de correr por aí.",
+       "Troque o número. Agora a mudança se espalha em minutos.",
+       "Depois de tudo estável, devolva o prazo para algo maior."
+      ]
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Conferindo com as próprias mãos",
+     "body": [
+      "Dá para perguntar à agenda sem navegador nenhum. Isso separa problema de nome de problema de máquina.",
+      "Se a consulta devolve o número certo, o nome está resolvido. O problema mora adiante."
+     ],
+     "table": {
+      "label": "Perguntando à agenda em cada sistema",
+      "headers": [
+       "O que faz",
+       "Linux e Mac",
+       "Windows"
+      ],
+      "rows": [
+       [
+        "Pergunta o número do nome",
+        "dig meusite.com.br",
+        "Resolve-DnsName meusite.com.br"
+       ],
+       [
+        "Pergunta quem recebe o e-mail",
+        "dig MX meusite.com.br",
+        "Resolve-DnsName meusite.com.br -Type MX"
+       ],
+       [
+        "Pergunta sem usar cópia guardada",
+        "dig @1.1.1.1 meusite.com.br",
+        "Resolve-DnsName meusite.com.br -Server 1.1.1.1"
+       ]
+      ],
+      "mono": true
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Onde o nome é registrado e onde ele é respondido",
+     "body": [
+      "São dois lugares diferentes, e confundir os dois trava muita gente.",
+      "Num lugar você aluga o nome por ano. No outro ficam as linhas da agenda.",
+      "Podem ser a mesma empresa. Não precisam ser."
+     ],
+     "bullets": [
+      "Onde você aluga o nome: cobra a anuidade e é quem pode transferi-lo.",
+      "Quem responde pelo nome: guarda as linhas e responde às consultas.",
+      "Se você aponta o nome para outro respondedor, as linhas antigas param de valer."
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "O nome sozinho não coloca nada no ar",
+     "body": [
+      "Apontar o nome para a máquina é só a primeira metade.",
+      "Do outro lado, o programa ainda precisa saber que aquele nome é com ele.",
+      "Nome certo mais programa que não reconhece o nome dá página errada, não erro de nome."
+     ]
+    },
+    {
+     "kind": "exam",
+     "title": "Como cai na prova",
+     "body": [
+      "O DNS resolve nomes em endereços IP, e a consulta precede a conexão com o servidor de destino.",
+      "O registro A aponta para um IPv4, o CNAME cria alias para outro nome e o MX define os servidores de e-mail.",
+      "O TTL controla por quanto tempo a resposta pode ser reaproveitada em cache pelos resolvedores."
+     ]
+    },
+    {
+     "kind": "pitfall",
+     "title": "Pegadinhas clássicas",
+     "body": [
+      "As confusões que mais aparecem:"
+     ],
+     "bullets": [
+      "Trocar o número e esperar que valha para todo mundo na mesma hora.",
+      "Misturar quem aluga o nome com quem responde pelas linhas da agenda.",
+      "Achar que apontar o nome já coloca o site no ar.",
+      "Testar sempre do mesmo computador, que já tem a resposta antiga guardada."
+     ]
+    },
+    {
+     "kind": "recap",
+     "title": "Resumo",
+     "body": [
+      "O DNS troca um nome por um número, e essa pergunta vem antes de qualquer pedido.",
+      "Cada linha tem um tipo, e cada resposta tem prazo de validade.",
+      "Baixe o prazo antes de mudar de endereço, e confira a consulta direto, sem navegador."
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "topic": "Função do DNS",
+     "statement": "Ao digitar um endereço no navegador, a primeira coisa que acontece é:",
+     "options": [
+      "Uma consulta que transforma o nome em número",
+      "A abertura da conexão com a máquina de destino",
+      "O envio do pedido da página",
+      "A verificação do cadeado de segurança",
+      "O carregamento das imagens da página"
+     ],
+     "correct_index": 0,
+     "explanation": "Máquinas se encontram por número. Sem descobrir o número do nome digitado, o navegador não tem para onde abrir conexão.",
+     "pitfall": "As demais alternativas são etapas reais, mas todas vêm depois da resolução do nome."
+    },
+    {
+     "topic": "Tipos de registro",
+     "statement": "Para apontar um nome diretamente para o endereço numérico de uma máquina, usa-se o registro do tipo:",
+     "options": [
+      "A",
+      "CNAME",
+      "MX",
+      "TXT",
+      "TTL"
+     ],
+     "correct_index": 0,
+     "explanation": "O registro A é justamente a linha que liga um nome a um número de máquina. Os outros tipos respondem a perguntas diferentes.",
+     "pitfall": "O CNAME parece servir, mas ele aponta para outro nome, e não para um número."
+    },
+    {
+     "topic": "Propagação",
+     "statement": "O endereço numérico de um site foi alterado, mas parte das pessoas continua caindo no servidor antigo. A explicação é:",
+     "options": [
+      "As respostas antigas ainda estão dentro do prazo de validade em cache",
+      "O registro novo foi criado com o tipo errado",
+      "O nome foi transferido para outra empresa",
+      "O servidor antigo continua respondendo pelo nome",
+      "A conexão dessas pessoas está mais lenta"
+     ],
+     "correct_index": 0,
+     "explanation": "Cada resposta carrega um prazo. Enquanto ele não expira, quem já perguntou reaproveita a cópia guardada em vez de consultar de novo.",
+     "pitfall": "A ideia de que o servidor antigo responde pelo nome inverte os papéis: quem responde pelo nome é a agenda, não a máquina."
+    },
+    {
+     "topic": "Planejamento de mudança",
+     "statement": "Antes de trocar o endereço numérico de um site, a providência que reduz o tempo de transição é:",
+     "options": [
+      "Baixar o prazo de validade do registro com antecedência",
+      "Aumentar o prazo de validade do registro",
+      "Trocar o tipo do registro de A para CNAME",
+      "Transferir o nome para outra empresa",
+      "Desligar o servidor antigo antes da mudança"
+     ],
+     "correct_index": 0,
+     "explanation": "Com prazo curto, as cópias guardadas expiram depressa e a mudança se espalha em minutos em vez de horas.",
+     "pitfall": "Aumentar o prazo faz o oposto, e é o erro que prolonga a transição por até um dia inteiro."
+    },
+    {
+     "topic": "Registro e resposta",
+     "statement": "A empresa onde o nome foi alugado e a empresa que responde pelas consultas daquele nome:",
+     "options": [
+      "Podem ser diferentes, e essa separação é comum",
+      "São obrigatoriamente a mesma empresa",
+      "Só podem ser diferentes em domínios internacionais",
+      "São definidas pelo tipo do registro usado",
+      "Mudam automaticamente a cada renovação"
+     ],
+     "correct_index": 0,
+     "explanation": "Alugar o nome e responder pelas consultas são funções distintas. É normal registrar num lugar e apontar a resposta para outro.",
+     "pitfall": "Quem acha que é sempre a mesma empresa procura as linhas da agenda no lugar errado e conclui que sumiram."
+    },
+    {
+     "topic": "Diagnóstico",
+     "statement": "Um site não abre. A consulta ao nome devolve corretamente o endereço numérico esperado. Isso indica que:",
+     "options": [
+      "O problema está adiante, na máquina ou no programa",
+      "O problema está na resolução do nome",
+      "O nome expirou e precisa ser renovado",
+      "O registro foi criado com o tipo errado",
+      "A empresa que responde pelo nome está fora do ar"
+     ],
+     "correct_index": 0,
+     "explanation": "A consulta bem sucedida elimina toda a etapa de nomes. O que falha está depois dela, no caminho até a máquina ou dentro dela.",
+     "pitfall": "A tentação é continuar mexendo nos registros justamente porque é a parte que a pessoa acabou de olhar."
+    },
+    {
+     "topic": "Nome e conteúdo",
+     "statement": "Um nome novo foi apontado corretamente para a máquina, mas o navegador mostra um site diferente do esperado. A causa mais provável é:",
+     "options": [
+      "O programa da máquina ainda não reconhece aquele nome",
+      "O registro foi criado com o número errado",
+      "A consulta ao nome falhou",
+      "O prazo de validade do registro é muito curto",
+      "O nome ainda não foi pago"
+     ],
+     "correct_index": 0,
+     "explanation": "A mesma máquina costuma atender vários nomes. Se o programa não tem regra para o nome novo, ele responde com o site padrão dele.",
+     "pitfall": "Como o sintoma aparece logo após mexer no nome, a investigação volta para a agenda, que já está certa."
+    },
+    {
+     "topic": "Leitura do nome",
+     "statement": "No endereço loja.meusite.com.br, a parte que foi efetivamente registrada e paga é:",
+     "options": [
+      "meusite.com.br",
+      "loja",
+      "br",
+      "com",
+      "loja.meusite"
+     ],
+     "correct_index": 0,
+     "explanation": "O registro acontece no nível logo abaixo da categoria. A partir dele, quem registrou cria quantos apelidos quiser à esquerda.",
+     "pitfall": "A parte da esquerda parece a mais importante por ser a primeira lida, mas ela é criada de graça por quem já tem o registro."
+    }
+   ]
+  },
+  {
+   "slug": "firewall-seguranca",
+   "title": "Firewall e superfície de ataque",
+   "module": "Fundamentos",
+   "summary": "Fechar tudo e abrir só o necessário: a decisão que mais protege uma máquina nova.",
+   "steps": [
+    {
+     "kind": "idea",
+     "title": "Uma portaria com lista de convidados",
+     "body": [
+      "Prédio bom não tem portaria que barra suspeito. Tem portaria que só deixa entrar quem está na lista.",
+      "A diferença é enorme. Barrar suspeito exige adivinhar quem é suspeito.",
+      "Numa máquina ligada à internet, a lista é curta. Quase tudo fica de fora."
+     ],
+     "terms": [
+      {
+       "word": "Servidor",
+       "meaning": "o computador que fica esperando pedidos e devolve respostas."
+      },
+      {
+       "word": "Porta",
+       "meaning": "o número que diz qual programa da máquina deve receber a conexão."
+      },
+      {
+       "word": "Firewall",
+       "meaning": "a portaria da máquina. Ela decide qual conexão entra e qual nem chega."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Negar por padrão, liberar por exceção",
+     "body": [
+      "Existem duas posturas possíveis, e só uma funciona.",
+      "Liberar tudo e ir fechando o que der problema é uma corrida que você perde.",
+      "Fechar tudo e abrir o que você mesmo precisa é uma lista de três ou quatro linhas."
+     ],
+     "figure": {
+      "src": "/figuras/servidores/srv-firewall-portaria.svg",
+      "alt": "Uma portaria filtrando quatro tentativas de entrada: três portas liberadas passam e uma porta fechada é barrada antes de chegar ao servidor",
+      "caption": "O que não está na lista nem chega ao programa que estaria escutando."
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "O tamanho do alvo",
+     "body": [
+      "Cada programa que atende de fora é uma entrada a mais para quem tenta invadir.",
+      "Fechar uma delas é apagar uma entrada inteira do mapa de quem ataca.",
+      "Máquina nova costuma vir com programas atendendo que você nem pediu."
+     ],
+     "terms": [
+      {
+       "word": "Serviço",
+       "meaning": "um programa que fica ligado atendendo pedidos, sem ninguém abrir nada."
+      },
+      {
+       "word": "Superfície de ataque",
+       "meaning": "a soma de tudo que pode ser alcançado de fora. Quanto menor, melhor."
+      },
+      {
+       "word": "root",
+       "meaning": "a conta que pode tudo na máquina, sem nenhuma trava."
+      },
+      {
+       "word": "sudo",
+       "meaning": "o jeito de rodar um comando com o poder dessa conta, sem viver dentro dela."
+      }
+     ],
+     "code": {
+      "label": "Vendo o que está atendendo agora",
+      "text": "sudo ss -tlnp\n# uma linha por programa escutando\n# cada linha aberta para fora é uma entrada a mais"
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "A lista mínima de uma máquina de site",
+     "body": [
+      "Quase toda máquina que entrega um site precisa de três entradas. Só três.",
+      "Tudo o mais, inclusive banco de dados, conversa por dentro e não precisa de entrada nenhuma."
+     ],
+     "terms": [
+      {
+       "word": "Banco de dados",
+       "meaning": "o programa que guarda os dados em ordem e sabe buscá-los depressa."
+      },
+      {
+       "word": "Terminal",
+       "meaning": "a janela onde você escreve ordens em texto e lê a resposta."
+      },
+      {
+       "word": "SSH",
+       "meaning": "o jeito seguro de abrir esse terminal numa máquina distante."
+      }
+     ],
+     "table": {
+      "label": "O que abrir, e o que nunca abrir",
+      "headers": [
+       "Porta",
+       "Quem usa",
+       "Abrir para a internet?"
+      ],
+      "rows": [
+       [
+        "22",
+        "você, para administrar",
+        "sim, de preferência só do seu endereço"
+       ],
+       [
+        "80",
+        "quem digita o site sem cadeado",
+        "sim"
+       ],
+       [
+        "443",
+        "quem digita o site com cadeado",
+        "sim"
+       ],
+       [
+        "5432",
+        "o banco de dados",
+        "nunca"
+       ],
+       [
+        "6379",
+        "o guardador de respostas rápidas",
+        "nunca"
+       ]
+      ],
+      "mono": false
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Ligando a portaria sem se trancar fora",
+     "body": [
+      "A portaria entra em vigor no instante em que você liga. Se a sua entrada não estiver na lista, você fica do lado de fora.",
+      "A ordem correta é sempre a mesma: primeiro a sua entrada, depois o resto, e ligar por último."
+     ],
+     "example": {
+      "label": "Exemplo: a ordem que não tranca ninguém do lado de fora",
+      "lines": [
+       "sudo ufw allow OpenSSH",
+       "sudo ufw allow 80/tcp",
+       "sudo ufw allow 443/tcp",
+       "Só agora: sudo ufw enable"
+      ]
+     }
+    },
+    {
+     "kind": "explain",
+     "title": "Duas portarias, e as duas valem",
+     "body": [
+      "A empresa de hospedagem costuma ter uma portaria antes da sua máquina.",
+      "A sua máquina tem a dela. Uma conexão precisa passar pelas duas.",
+      "Abrir só numa delas não abre nada. É a causa mais comum de porta que parece aberta e não é."
+     ],
+     "terms": [
+      {
+       "word": "Hospedagem",
+       "meaning": "a empresa que mantém a máquina ligada e aluga o acesso a ela."
+      }
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "O que a portaria não resolve",
+     "body": [
+      "A portaria decide quem entra pela porta. Ela não olha o que a pessoa faz depois de entrar.",
+      "Se o seu site tem falha, o ataque chega pela porta 443, que está aberta de propósito.",
+      "Por isso ela é a primeira camada, nunca a única."
+     ],
+     "bullets": [
+      "Mantenha o sistema e os programas atualizados.",
+      "Não deixe senha padrão em programa nenhum.",
+      "Tenha cópia de segurança testada, para o dia em que algo passar."
+     ]
+    },
+    {
+     "kind": "explain",
+     "title": "Como saber se está mesmo fechado",
+     "body": [
+      "Testar da própria máquina não prova nada. De dentro tudo parece aberto.",
+      "Teste sempre de outro lugar, que é de onde o ataque viria."
+     ],
+     "code": {
+      "label": "Testando de outro computador",
+      "text": "nc -zv 203.0.113.10 443   # deve conectar\nnc -zv 203.0.113.10 5432  # deve falhar"
+     }
+    },
+    {
+     "kind": "exam",
+     "title": "Como cai na prova",
+     "body": [
+      "A política padrão recomendada é negar tudo na entrada e liberar apenas os serviços necessários, por exceção.",
+      "Reduzir superfície de ataque significa desabilitar serviços desnecessários e restringir portas expostas.",
+      "Filtragem de pacotes atua na camada de rede e transporte, e não substitui correções de falhas na aplicação."
+     ]
+    },
+    {
+     "kind": "pitfall",
+     "title": "Pegadinhas clássicas",
+     "body": [
+      "Os erros que mais custam caro aqui:"
+     ],
+     "bullets": [
+      "Ligar a portaria antes de liberar a sua própria entrada.",
+      "Abrir o banco de dados para a internet para resolver um problema de conexão.",
+      "Abrir só na portaria da hospedagem e achar que a da máquina não conta.",
+      "Testar da própria máquina, onde tudo sempre parece aberto."
+     ]
+    },
+    {
+     "kind": "recap",
+     "title": "Resumo",
+     "body": [
+      "Feche tudo e abra por exceção. A lista de uma máquina de site tem três linhas.",
+      "Banco de dados nunca vai para a internet: ele conversa por dentro da máquina.",
+      "Libere a sua entrada antes de ligar a portaria, e teste sempre de fora."
+     ]
+    }
+   ],
+   "questions": [
+    {
+     "topic": "Política padrão",
+     "statement": "A configuração recomendada para a portaria de uma máquina exposta à internet é:",
+     "options": [
+      "Negar tudo por padrão e liberar apenas o necessário",
+      "Liberar tudo por padrão e bloquear o que der problema",
+      "Liberar tudo, já que o programa se protege sozinho",
+      "Bloquear tudo, inclusive o acesso administrativo",
+      "Alternar entre as duas posturas conforme o horário"
+     ],
+     "correct_index": 0,
+     "explanation": "Negar por padrão produz uma lista curta e conhecida. Liberar por padrão exige prever todos os ataques possíveis, o que não é viável.",
+     "pitfall": "Bloquear tudo, inclusive o acesso administrativo, é o exagero que tranca o administrador do lado de fora."
+    },
+    {
+     "topic": "Ordem de ativação",
+     "statement": "Ao ativar a portaria numa máquina acessada apenas à distância, a ordem correta é:",
+     "options": [
+      "Liberar o acesso administrativo primeiro e ativar por último",
+      "Ativar primeiro e liberar os acessos depois",
+      "Ativar e liberar ao mesmo tempo, num único comando",
+      "Liberar tudo, ativar, e depois ir fechando",
+      "Reiniciar a máquina antes de qualquer liberação"
+     ],
+     "correct_index": 0,
+     "explanation": "A regra entra em vigor no instante da ativação. Sem a própria entrada liberada antes, a sessão cai e não há como reconectar.",
+     "pitfall": "Ativar primeiro parece mais seguro, e é exatamente o que tranca a pessoa do lado de fora."
+    },
+    {
+     "topic": "Banco de dados exposto",
+     "statement": "Uma aplicação e seu banco de dados rodam na mesma máquina. A porta do banco deve:",
+     "options": [
+      "Permanecer fechada para a internet, já que a conversa é interna",
+      "Ser aberta para a internet, para facilitar a manutenção",
+      "Ser aberta apenas durante o horário comercial",
+      "Ser aberta com senha forte, o que basta como proteção",
+      "Ser movida para a porta 443, que já está aberta"
+     ],
+     "correct_index": 0,
+     "explanation": "Se os dois programas estão na mesma máquina, a conversa nunca sai dela. Abrir a porta só cria uma entrada que ninguém legítimo usa.",
+     "pitfall": "Senha forte não substitui fechamento: ela continua sendo alvo de tentativa automatizada dia e noite."
+    },
+    {
+     "topic": "Duas camadas",
+     "statement": "Uma porta foi liberada na portaria da empresa de hospedagem, mas o serviço continua inacessível. A causa mais provável é:",
+     "options": [
+      "A portaria da própria máquina ainda bloqueia essa porta",
+      "A empresa de hospedagem aplicou a regra com atraso",
+      "O endereço numérico da máquina mudou",
+      "O nome do domínio não foi atualizado",
+      "A porta escolhida não existe"
+     ],
+     "correct_index": 0,
+     "explanation": "A conexão atravessa as duas portarias em sequência. Basta uma delas bloquear para o pedido não chegar ao programa.",
+     "pitfall": "Quem acabou de mexer numa das camadas tende a concluir que o problema está nela, e não na outra."
+    },
+    {
+     "topic": "Superfície de ataque",
+     "statement": "Desligar um serviço que não é usado numa máquina de produção tem como efeito principal:",
+     "options": [
+      "Remover uma entrada inteira do alcance de quem ataca",
+      "Aumentar a velocidade da conexão de rede",
+      "Liberar espaço em disco de forma significativa",
+      "Dispensar a necessidade de atualizações",
+      "Substituir a necessidade da portaria"
+     ],
+     "correct_index": 0,
+     "explanation": "Serviço que não existe não pode ser explorado. É a forma mais barata e mais definitiva de reduzir o que pode ser atacado.",
+     "pitfall": "As alternativas confundem redução de alvo com ganho de desempenho, que é efeito colateral e pequeno."
+    },
+    {
+     "topic": "Limites da portaria",
+     "statement": "Um site com falha de programação é invadido por pedidos que chegam pela porta 443, aberta normalmente. Isso mostra que:",
+     "options": [
+      "A portaria não avalia o conteúdo do que passa por uma porta liberada",
+      "A portaria estava mal configurada",
+      "A porta 443 nunca deveria ser aberta",
+      "O ataque veio de dentro da máquina",
+      "A portaria só funciona com o sistema atualizado"
+     ],
+     "correct_index": 0,
+     "explanation": "Filtrar entrada é decidir quem passa, não inspecionar o que cada um faz depois. Falha na aplicação se corrige na aplicação.",
+     "pitfall": "Fechar a 443 resolveria o ataque e derrubaria o site junto, que é o serviço que a máquina existe para entregar."
+    },
+    {
+     "topic": "Teste de fechamento",
+     "statement": "Para confirmar que uma porta está realmente fechada para a internet, o teste válido é feito:",
+     "options": [
+      "De outro computador, fora da rede da máquina",
+      "Da própria máquina, contra ela mesma",
+      "Pelo painel da empresa de hospedagem apenas",
+      "Lendo o arquivo de configuração da portaria",
+      "Reiniciando a máquina e observando os registros"
+     ],
+     "correct_index": 0,
+     "explanation": "De dentro, a conexão nem passa pela portaria de entrada. Só um teste vindo de fora reproduz o caminho que um ataque faria.",
+     "pitfall": "Ler a configuração mostra a intenção, e não o efeito: a outra camada pode estar desfazendo a regra."
+    },
+    {
+     "topic": "Acesso administrativo",
+     "statement": "A recomendação mais segura para a porta de acesso administrativo de uma máquina é:",
+     "options": [
+      "Liberá-la apenas para endereços conhecidos, quando possível",
+      "Deixá-la aberta para qualquer endereço da internet",
+      "Fechá-la completamente, inclusive para você",
+      "Movê-la para a porta 80, que já está aberta",
+      "Abri-la apenas quando alguém reclamar de acesso"
+     ],
+     "correct_index": 0,
+     "explanation": "Restringir a origem reduz as tentativas automatizadas a zero, sem tirar o seu acesso. É o melhor dos dois lados quando o seu endereço é estável.",
+     "pitfall": "Fechar de vez tranca você junto, e mudar de porta apenas atrasa uma varredura, sem impedi-la."
+    }
+   ]
+  }
+ ]
+}
