@@ -16,12 +16,30 @@
  * Avisos (não reprovam): frases com mais de 28 palavras e etapas com mais de 60 palavras.
  */
 import { existsSync, readdirSync, readFileSync } from "node:fs";
-import { dirname, join } from "node:path";
+import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const dir = join(root, "backend", "database", "seeders", "content");
 const publicDir = join(root, "frontend", "public");
+
+/*
+| Sem argumento, confere o conteúdo publicado. Com um ou mais caminhos,
+| confere só esses arquivos.
+|
+| Isso existe para o arquivo que AINDA NÃO foi importado. O painel tem a régua
+| curta de propósito (erro × aviso), e a régua completa é esta aqui — mas ela
+| só sabia olhar a pasta do seeder, ou seja, só o que já está publicado. Quem
+| escreve uma matéria nova para importar pelo painel ficava sem conferência
+| justamente no momento em que ela vale mais: antes de publicar.
+*/
+const alvos = process.argv.slice(2).filter((arg) => !arg.startsWith("-"));
+const arquivos = alvos.length
+  ? alvos.map((arg) => resolve(process.cwd(), arg))
+  : readdirSync(dir)
+      .filter((f) => f.endsWith(".json"))
+      .sort()
+      .map((f) => join(dir, f));
 
 // [nome legível, expressão que reconhece o termo no texto, matéria]
 // m = Matemática, p = Português, s = Sistemas Operacionais
@@ -54,9 +72,70 @@ const JARGON = [
   ["terminal", /\bterminal\b/i, "s"], ["comando", /\bcomandos?\b/i, "s"], ["prompt", /\bprompt\b/i, "s"],
   ["PowerShell", /\bpowershell\b/i, "s"], ["bash", /\bbash\b/i, "s"], ["cmd", /\bcmd\b/i, "s"], ["WSL", /\bWSL\b/, "s"],
   ["handle", /\bhandle\b/i, "s"], ["Win32", /\bwin32\b/i, "s"], ["strace", /\bstrace\b/i, "s"],
+
+  /*
+  | Servidores e infraestrutura (escopo "v").
+  |
+  | Esta lista nasceu de uma queixa concreta: a primeira lição do curso falava
+  | de "requisição HTTP" e de "API" na etapa 3, e de DNS na etapa 5 — sendo que
+  | DNS só seria explicado na lição 5. A regra de explicar todo termo na
+  | estreia já existia; o que faltava era alguém conferir.
+  |
+  | O corte é "uma pessoa que nunca administrou um servidor saberia?". Por isso
+  | entra "porta" (no sentido de rede, que não é o da porta de casa) e não
+  | entra "recurso", que é palavra comum. Termo que entra aqui vira exigência:
+  | ou tem bloco `terms` explicando antes, ou o curso não passa.
+  */
+  ["servidor", /\bservidor(es)?\b/i, "v"], ["VPS", /\bVPS\b/, "v"],
+  ["cliente", /\bclientes?\b/i, "v"], ["requisição", /\brequisi(ç|c)(ão|ões)\b/i, "v"],
+  ["hospedagem", /\bhospedage(m|ns)\b/i, "v"], ["datacenter", /\bdatacenters?\b/i, "v"],
+  ["máquina virtual", /\bm(á|a)quinas? virtua(l|is)\b/i, "v"], ["virtualização", /\bvirtualiza(ç|c)ão\b/i, "v"],
+  ["hipervisor", /\bhipervisor(es)?\b/i, "v"],
+
+  ["protocolo", /\bprotocolos?\b/i, "v"], ["HTTP", /\bHTTPS?\b/, "v"],
+  ["API", /\bAPIs?\b/, "v"], ["JSON", /\bJSON\b/, "v"],
+  ["IP", /\bIPv?[46]?\b/, "v"], ["porta", /\bportas?\b/i, "v"], ["socket", /\bsockets?\b/i, "v"],
+  ["pacote", /\bpacotes? de rede\b/i, "v"], ["TCP", /\bTCP\b/, "v"], ["UDP", /\bUDP\b/, "v"],
+  ["DNS", /\bDNS\b/, "v"], ["domínio", /\bdom(í|i)nios?\b/i, "v"], ["registro DNS", /\b[Rr]egistros? (A|CNAME|MX|TXT)\b/, "v"],  // sem /i: "registro a partir de" não é registro A
+  ["TTL", /\bTTL\b/, "v"], ["firewall", /\bfirewalls?\b/i, "v"],
+  ["proxy reverso", /\bprox(y|ies) revers(o|os)\b/i, "v"], ["balanceador de carga", /\bbalanceador(es)? de carga\b/i, "v"],
+  ["CDN", /\bCDN\b/, "v"], ["latência", /\blat(ê|e)ncia\b/i, "v"],
+
+  ["TLS", /\bTLS\b|\bSSL\b/, "v"], ["certificado", /\bcertificados?\b/i, "v"],
+  ["criptografia", /\bcriptografia\b|\bcriptografad(o|a)s?\b/i, "v"],
+  ["chave pública", /\bchaves? p(ú|u)blicas?\b/i, "v"], ["chave privada", /\bchaves? privadas?\b/i, "v"],
+  ["autoridade certificadora", /\bautoridades? certificadoras?\b/i, "v"],
+
+  ["SSH", /\bSSH\b/, "v"], ["terminal", /\bterminal\b/i, "v"], ["shell", /\bshell\b/i, "v"],
+  ["bash", /\bbash\b/i, "v"], ["PowerShell", /\bpowershell\b/i, "v"],
+  ["root", /\broot\b/i, "v"], ["sudo", /\bsudo\b/i, "v"], ["permissão", /\bpermiss(ão|ões)\b/i, "v"],
+  ["distribuição", /\bdistribui(ç|c)(ão|ões)\b/i, "v"], ["pacote (programa)", /\bgerenciador de pacotes\b/i, "v"],
+  ["repositório", /\breposit(ó|o)rios?\b/i, "v"],
+
+  ["processo", /\bprocessos?\b/i, "v"], ["serviço", /\bservi(ç|c)os?\b/i, "v"],
+  ["daemon", /\bdaemons?\b/i, "v"], ["systemd", /\bsystemd\b|\bsystemctl\b/i, "v"],
+  ["log", /\blogs?\b/i, "v"], ["métrica", /\bm(é|e)tricas?\b/i, "v"],
+
+  ["partição", /\bparti(ç|c)(ão|ões)\b/i, "v"], ["ponto de montagem", /\bponto de montagem\b/i, "v"],  // o verbo "montar" é comum demais: "a página é montada" não é disco
+  ["swap", /\bswap\b/i, "v"], ["inode", /\bi-?nodes?\b/i, "v"],
+
+  ["servidor web", /\bservidor(es)? web\b/i, "v"], ["Nginx", /\bnginx\b/i, "v"], ["Apache", /\bapache\b/i, "v"],
+  ["arquivo estático", /\barquivos? est(á|a)ticos?\b/i, "v"], ["host virtual", /\bhosts? virtua(l|is)\b|\bserver block\b/i, "v"],
+
+  ["banco de dados", /\bbancos? de dados\b/i, "v"], ["SQL", /\bSQL\b/, "v"],
+  ["PostgreSQL", /\bpostgres(ql)?\b/i, "v"], ["MySQL", /\bmysql\b|\bmariadb\b/i, "v"],
+  ["índice (banco)", /\b(í|i)ndices? do banco\b/i, "v"],
+
+  ["deploy", /\bdeploys?\b/i, "v"], ["contêiner", /\bcont(ê|e)iner(es)?\b|\bcontainers?\b/i, "v"],
+  ["Docker", /\bdocker\b/i, "v"], ["imagem (contêiner)", /\bimagens? de cont(ê|e)iner\b/i, "v"],
+  ["volume", /\bvolumes?\b/i, "v"], ["orquestrador", /\borquestrador(es)?\b|\bkubernetes\b/i, "v"],
+
+  ["Git", /\bgit\b/i, "v"], ["CI/CD", /\bCI\/CD\b|\bintegra(ç|c)ão cont(í|i)nua\b/i, "v"],
+  ["backup", /\bbackups?\b/i, "v"], ["cache", /\bcaches?\b/i, "v"],
+  ["alta disponibilidade", /\balta disponibilidade\b/i, "v"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;
@@ -158,8 +237,8 @@ function checkModules(subject) {
 
 let lessonCount = 0, stepCount = 0, questionCount = 0;
 
-for (const file of readdirSync(dir).filter((f) => f.endsWith(".json")).sort()) {
-  const subject = JSON.parse(readFileSync(join(dir, file), "utf8"));
+for (const file of arquivos) {
+  const subject = JSON.parse(readFileSync(file, "utf8"));
   const jargon = JARGON.filter(([, , scope]) => scope === SCOPE_BY_SUBJECT[subject.slug]);
   checkModules(subject);
   for (const lesson of subject.lessons) {

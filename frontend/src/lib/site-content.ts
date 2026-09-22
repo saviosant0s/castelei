@@ -29,7 +29,8 @@ export const SUBJECTS: SiteSubject[] = [
   {
     slug: "sistemas-operacionais",
     name: "Sistemas Operacionais",
-    pitch: "O conteúdo do semestre na ordem das aulas, do que o sistema faz até como um programa pede algo a ele.",
+    pitch:
+      "O conteúdo do semestre na ordem das aulas, do que o sistema faz até como um programa pede algo a ele.",
     lessons: [
       "O que é um sistema operacional?",
       "Componentes e funções de um SO",
@@ -66,21 +67,56 @@ export const SUBJECTS: SiteSubject[] = [
   {
     slug: "matematica-basica",
     name: "Matemática Básica",
-    pitch: "A base que volta em toda prova de exatas, explicada do começo — inclusive o passo que todo mundo pula.",
+    pitch:
+      "A base que volta em toda prova de exatas, explicada do começo — inclusive o passo que todo mundo pula.",
     lessons: ["Equações do 1º grau", "Porcentagem"],
   },
   {
     slug: "portugues",
     name: "Português",
-    pitch: "As duas regras que as bancas mais adoram, com as pegadinhas mapeadas uma a uma.",
+    pitch:
+      "As duas regras que as bancas mais adoram, com as pegadinhas mapeadas uma a uma.",
     lessons: ["Crase", "Concordância verbal"],
+  },
+  {
+    slug: "servidores-vps",
+    name: "Servidores, VPS e Infraestrutura",
+    pitch:
+      "Do zero até colocar uma aplicação no ar: o caminho de um acesso, a máquina, a rede e o que fazer quando cai.",
+    lessons: [
+      "O que é um servidor e o que é uma VPS",
+      "Linux para servidores",
+      "Acesso remoto com SSH",
+      "Redes, IPs, portas e sockets",
+      "DNS e domínios",
+      "Firewall e superfície de ataque",
+      "Processos, serviços e systemd",
+      "Discos, armazenamento, usuários e permissões",
+      "HTTPS, TLS e certificados",
+      "Servidor web com Nginx",
+      "Bancos de dados em servidores",
+      "Deploy de aplicações em uma VPS",
+      "Containers e Docker",
+      "Monitoramento, métricas e logs",
+      "Backups, restauração e recuperação de desastre",
+      "Git, CI/CD e automação de infraestrutura",
+      "Performance, capacidade e otimização",
+      "Arquitetura de produção e alta disponibilidade",
+      "Troubleshooting avançado",
+      "Segurança de servidores em nível avançado",
+      "Cloud, VPS e serviços gerenciados",
+      "Projeto final: colocar uma aplicação em produção",
+    ],
   },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
 export const CATALOG = {
   subjects: SUBJECTS.length,
-  lessons: SUBJECTS.reduce((total, subject) => total + subject.lessons.length, 0),
+  lessons: SUBJECTS.reduce(
+    (total, subject) => total + subject.lessons.length,
+    0,
+  ),
   /** Cada lição publicada tem 8 questões. O teste confere. */
   questionsPerLesson: 8,
   get questions() {
