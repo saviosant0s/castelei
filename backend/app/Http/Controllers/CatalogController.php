@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Attempt;
 use App\Models\Lesson;
 use App\Models\Subject;
+use App\Support\Content\Vocabulary;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -45,6 +46,13 @@ class CatalogController extends Controller
                 */
                 'exam_date' => $subject->exam_date?->format('Y-m-d'),
                 'exam' => $this->examBlock($subject, $user->hasExam(), $minForExam, $examTarget),
+                /*
+                | Quantas palavras o vocabulário da matéria tem. Vem de graça:
+                | as lições já estão carregadas com as etapas, e é a contagem
+                | que decide se a tela da matéria oferece a página ou fica
+                | calada. Link para uma página vazia é pior que link nenhum.
+                */
+                'vocabulary_terms' => count(Vocabulary::fromLessons($subject->lessons)),
                 'lessons' => $subject->lessons->map(function (Lesson $lesson) use ($stats, $limit) {
                     $stat = $stats->get($lesson->id);
 
@@ -79,6 +87,26 @@ class CatalogController extends Controller
             'unlocked' => $unlocked,
             'questions' => min($target, $pool),
         ];
+    }
+
+    /**
+     * O vocabulário da matéria: as palavras novas de todas as lições.
+     *
+     * Vem do bloco `terms` das etapas, não de uma tabela — ver
+     * App\Support\Content\Vocabulary para o porquê.
+     */
+    public function vocabulary(Subject $subject): JsonResponse
+    {
+        $subject->load('lessons');
+
+        return response()->json([
+            'subject' => [
+                'id' => $subject->id,
+                'slug' => $subject->slug,
+                'name' => $subject->name,
+            ],
+            'terms' => Vocabulary::fromLessons($subject->lessons),
+        ]);
     }
 
     public function lesson(Request $request, Lesson $lesson): JsonResponse
