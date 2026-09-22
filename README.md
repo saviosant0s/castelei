@@ -80,7 +80,7 @@ Uma etapa tem:
 | `bullets` | lista de itens |
 | `terms` | palavras novas explicadas nesta etapa (`word`, `meaning`) |
 | `figure` | figura SVG do app: `src` (em `frontend/public/figuras/`), `alt` (texto alternativo descritivo) e `caption` |
-| `code` | trecho de código: `label` e `text` (linhas curtas, até uns 36 caracteres) |
+| `code` | trecho de código: `label`, `text` (linhas curtas, até uns 36 caracteres) e `notes`, uma frase por linha de código dizendo o que ela faz (obrigatório: quem lê a lição pode nunca ter visto código) |
 | `video` | vídeo: `src` (arquivo enviado pelo painel ou link do YouTube), `title`, `caption` e `poster` |
 
 O Castelei é independente: **o conteúdo nunca cita livros, autores, capítulos ou páginas**. Livros e outras fontes servem só de base para estruturar os assuntos, e o verificador reprova qualquer referência.

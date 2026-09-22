@@ -211,8 +211,25 @@ export function CodeFields({ valor, onChange }: Props<"code">) {
         onChange={(e) => onChange({ ...valor, text: e.target.value })}
         hint="Linhas curtas, até uns 36 caracteres: a tela do celular é estreita."
       />
+      {/*
+        A tradução fica AQUI, e não como comentário dentro do código:
+        comentário sai em fonte de máquina, foge junto com a linha na rolagem
+        lateral e não passa pela conferência do Guia Editorial.
+      */}
+      <TextArea
+        label="O que cada linha faz"
+        rows={4}
+        value={deLinhas(valor.notes ?? [])}
+        onChange={(e) => onChange({ ...valor, notes: paraLinhas(e.target.value) })}
+        hint={`Uma frase por linha de código, na ordem. ${contarLinhas(valor.text)} linha(s) de código aqui; escreva o mesmo tanto de frases. Quem lê a lição pode nunca ter visto código.`}
+      />
     </div>
   );
+}
+
+/** Linhas de verdade do bloco: a linha em branco é respiro, não instrução. */
+function contarLinhas(texto: string): number {
+  return texto.split("\n").filter((l) => l.trim()).length;
 }
 
 export function BulletsFields({ valor, onChange }: Props<"bullets">) {

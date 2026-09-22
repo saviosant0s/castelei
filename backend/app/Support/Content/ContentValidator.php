@@ -452,6 +452,35 @@ class ContentValidator
 
         $this->text($code['text'] ?? null, "{$path}.text");
         $this->optionalText($code['label'] ?? null, "{$path}.label", max: 160);
+
+        /*
+        | A tradução linha a linha.
+        |
+        | Nasceu de uma queixa real de quem estava estudando: "as linhas de
+        | código, você parte do pressuposto que eu já entendo de código". O
+        | bloco entrava na tela em fonte de máquina, sem uma palavra sobre o
+        | que cada linha faz.
+        |
+        | É AVISO, não erro: código sem tradução não quebra o app, e existe
+        | bloco de uma linha que o texto ao redor já explicou. O verificador
+        | completo (`scripts/lint-content.mjs`) reprova — o painel avisa.
+        | Linha em branco não conta: ela é respiro, não instrução.
+        */
+        $notes = $this->textList($code['notes'] ?? null, "{$path}.notes", required: false) ?? [];
+        $linhas = count(array_filter(
+            preg_split('/\R/', (string) ($code['text'] ?? '')) ?: [],
+            static fn (string $linha): bool => trim($linha) !== '',
+        ));
+
+        if ($notes === []) {
+            $this->warn($path, 'O código não diz o que cada linha faz. Quem lê a lição pode nunca ter visto código.');
+        } elseif (count($notes) !== $linhas) {
+            $this->warn($path, sprintf(
+                'O código tem %d linha(s) e %d tradução(ões). Escreva uma frase por linha, na ordem.',
+                $linhas,
+                count($notes),
+            ));
+        }
     }
 
     private function table(mixed $table, string $path): void

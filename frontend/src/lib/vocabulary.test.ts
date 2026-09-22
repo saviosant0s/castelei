@@ -1,9 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { agrupar, contagem, letraDe } from "./vocabulary";
+import { agrupar, contagem, jaVistas, letraDe } from "./vocabulary";
 import type { VocabularyTerm } from "./types";
 
-function termo(word: string): VocabularyTerm {
-  return { word, meaning: "significado", lesson: { id: 1, title: "Lição", position: 1 } };
+function termo(word: string, seen = true): VocabularyTerm {
+  return { word, meaning: "significado", lesson: { id: 1, title: "Lição", position: 1 }, seen };
 }
 
 describe("letra de dicionário", () => {
@@ -44,5 +44,17 @@ describe("contagem", () => {
     expect(contagem(0)).toBe("Nenhuma palavra ainda");
     expect(contagem(1)).toBe("1 palavra");
     expect(contagem(12)).toBe("12 palavras");
+  });
+});
+
+describe("palavras já vistas", () => {
+  it("conta só as de lição praticada", () => {
+    /*
+    | O número existe para quem já estudou alguma coisa. Na primeira visita
+    | ele dá zero, e a tela cala a boca em vez de dizer "0 de 74" — ver
+    | AINDA_NAO_VISTAS.
+    */
+    expect(jaVistas([termo("Kernel"), termo("Porta", false), termo("Shell")])).toBe(2);
+    expect(jaVistas([termo("Porta", false)])).toBe(0);
   });
 });

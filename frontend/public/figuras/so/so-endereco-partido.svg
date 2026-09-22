@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="Uma barra representando um endereço de 32 bits, partida em duas. A parte da esquerda, de 20 bits, diz qual pedaço. A parte da direita, de 12 bits, diz a posição dentro do pedaço. Uma seta mostra que só a parte da esquerda é traduzida, e a da direita passa direto."><title>Uma barra representando um endereço de 32 bits, partida em duas. A parte da esquerda, de 20 bits, diz qual pedaço. A parte da direita, de 12 bits, diz a posição dentro do pedaço. Uma seta mostra que só a parte da esquerda é traduzida, e a da direita passa direto.</title><defs><marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#1C1C2E"/></marker></defs>
+<text font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="12" fill="#1C1C2E" text-anchor="middle"><tspan x="200" y="22">O endereço que o programa usa (32 bits)</tspan></text>
+<rect x="24" y="36" width="232" height="52" rx="8" fill="#DCEBFA" stroke="#1C1C2E" stroke-width="1.6"/>
+<rect x="256" y="36" width="120" height="52" rx="8" fill="#FDE7DF" stroke="#1C1C2E" stroke-width="1.6"/>
+<text font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="12.5" fill="#1C1C2E" text-anchor="middle"><tspan x="140" y="58">qual pedaço</tspan><tspan x="140" y="76">20 bits</tspan></text>
+<text font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="12.5" fill="#1C1C2E" text-anchor="middle"><tspan x="316" y="58">posição</tspan><tspan x="316" y="76">12 bits</tspan></text>
+<text font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11" fill="#1C1C2E"><tspan x="24" y="104">bit 31</tspan><tspan x="228" y="104">bit 12</tspan><tspan x="256" y="104">bit 11</tspan><tspan x="358" y="104">bit 0</tspan></text>
+<line x1="140" y1="112" x2="140" y2="178" stroke="#1C1C2E" stroke-width="1.6" marker-end="url(#s)"/>
+<text font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11.5" fill="#1C1C2E" text-anchor="start"><tspan x="148" y="148">traduzido pela tabela</tspan></text>
+<line x1="316" y1="112" x2="316" y2="216" stroke="#1C1C2E" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#s)"/>
+<rect x="24" y="178" width="232" height="38" rx="8" fill="#DDF3E7" stroke="#1C1C2E" stroke-width="1.6"/>
+<text font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="12.5" fill="#1C1C2E" text-anchor="middle"><tspan x="140" y="202">o lugar de verdade na memória</tspan></text>
+<text font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11.5" fill="#1C1C2E" text-anchor="end"><tspan x="308" y="172">passa direto</tspan></text>
+<rect x="24" y="230" width="352" height="46" rx="8" fill="#FFFFFF" stroke="#1C1C2E" stroke-width="1.6"/>
+<text font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="12.5" fill="#1C1C2E" text-anchor="middle"><tspan x="200" y="248">endereço de verdade</tspan><tspan x="200" y="266">o lugar achado + a mesma posição</tspan></text>
+</svg>

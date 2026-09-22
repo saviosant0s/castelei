@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Attempt;
 use App\Models\Lesson;
 use App\Models\Subject;
 use App\Models\User;
@@ -121,6 +122,58 @@ class VocabularyTest extends TestCase
 
         $this->assertSame(2, $termos->firstWhere('word', 'SSH')['lesson']['position']);
         $this->assertSame(1, $termos->firstWhere('word', 'Zona')['lesson']['position']);
+    }
+
+    public function test_a_palavra_sabe_se_a_licao_dela_ja_foi_praticada(): void
+    {
+        /*
+        | A página mostra a matéria INTEIRA, e marca o que ainda não foi
+        | estudado para a tela apagar. Esconder seria transformar o glossário
+        | numa tranca, logo para quem chegou aqui travado numa palavra.
+        |
+        | "Praticada" é o mesmo critério da trilha: tentativa CONCLUÍDA, sem
+        | cobrar nota. Tentativa aberta e abandonada não conta.
+        */
+        $subject = $this->materia();
+        $user = User::factory()->create();
+        Sanctum::actingAs($user);
+
+        $primeira = $subject->lessons()->where('position', 1)->first();
+        $segunda = $subject->lessons()->where('position', 2)->first();
+
+        Attempt::create([
+            'user_id' => $user->id,
+            'lesson_id' => $primeira->id,
+            'total_questions' => 8,
+            'correct_count' => 4,
+            'started_at' => now()->subMinutes(5),
+            'finished_at' => now(),
+        ]);
+        Attempt::create([
+            'user_id' => $user->id,
+            'lesson_id' => $segunda->id,
+            'total_questions' => 8,
+            'correct_count' => 0,
+            'started_at' => now(),
+        ]);
+
+        $termos = collect($this->getJson("/api/subjects/{$subject->id}/vocabulario")->json('terms'));
+
+        $this->assertTrue($termos->firstWhere('word', 'Servidor')['seen']);
+        $this->assertTrue($termos->firstWhere('word', 'Zona')['seen']);
+        // A lição 2 ficou pela metade: a palavra dela continua apagada.
+        $this->assertFalse($termos->firstWhere('word', 'SSH')['seen']);
+    }
+
+    public function test_quem_nao_praticou_nada_ve_tudo_como_nao_visto(): void
+    {
+        $subject = $this->materia();
+        Sanctum::actingAs(User::factory()->create());
+
+        $termos = $this->getJson("/api/subjects/{$subject->id}/vocabulario")->json('terms');
+
+        $this->assertNotEmpty($termos);
+        $this->assertEmpty(array_filter(array_column($termos, 'seen')));
     }
 
     public function test_termo_sem_palavra_ou_sem_significado_nao_entra(): void

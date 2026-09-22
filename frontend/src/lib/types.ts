@@ -55,6 +55,8 @@ export interface VocabularyTerm {
   word: string;
   meaning: string;
   lesson: { id: number; title: string; position: number };
+  /** A lição que explica esta palavra já foi praticada por quem está lendo. */
+  seen: boolean;
 }
 
 export interface VocabularyResponse {
@@ -77,7 +79,8 @@ export interface LessonStep {
   /** figura (SVG do próprio app), com texto alternativo e legenda */
   figure?: { src: string; alt: string; caption?: string };
   /** trecho de código, mostrado em fonte monoespaçada */
-  code?: { label?: string; text: string };
+  /** `notes`: uma tradução por linha de código, na ordem. Ver `StepCode`. */
+  code?: { label?: string; text: string; notes?: string[] };
   /** vídeo: arquivo enviado pelo painel ou link do YouTube */
   video?: { src: string; title?: string; caption?: string; poster?: string };
   /** tabela (ex.: comandos no Linux e no Windows). Com mono, as colunas depois da primeira usam fonte de código */

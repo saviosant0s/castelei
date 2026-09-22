@@ -5,7 +5,7 @@ import { ArrowLeft, BookA } from "lucide-react";
 import { Card, EmptyState } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
 import type { Subject, VocabularyResponse } from "@/lib/types";
-import { agrupar, contagem, PARA_QUE_SERVE } from "@/lib/vocabulary";
+import { agrupar, AINDA_NAO_VISTAS, contagem, jaVistas, PARA_QUE_SERVE } from "@/lib/vocabulary";
 
 export const metadata: Metadata = { title: "Vocabulário" };
 
@@ -36,6 +36,7 @@ export default async function VocabularioPage({
     `/subjects/${subject.id}/vocabulario`,
   );
   const grupos = agrupar(terms);
+  const vistas = jaVistas(terms);
 
   return (
     <div className="space-y-8">
@@ -54,7 +55,16 @@ export default async function VocabularioPage({
         </p>
         <p className="mt-2 font-mono text-sm text-content-subtle">
           {contagem(terms.length)}
+          {vistas > 0 && terms.length > 0 && ` · ${vistas} já apareceram`}
         </p>
+        {/*
+          A legenda só existe quando há duas aparências na tela. Antes da
+          primeira lição está tudo apagado, e explicar o apagado ali seria
+          dizer "você não estudou nada" na cara de quem acabou de chegar.
+        */}
+        {vistas > 0 && vistas < terms.length && (
+          <p className="mt-1 text-sm text-content-subtle">{AINDA_NAO_VISTAS}</p>
+        )}
       </header>
 
       {terms.length === 0 ? (
@@ -122,8 +132,17 @@ export default async function VocabularioPage({
                     | O cartão inteiro leva à lição. A palavra sozinha não
                     | resolve quem travou: ele precisa do lugar onde ela é
                     | explicada por inteiro, com analogia e exemplo.
+                    |
+                    | Palavra de lição ainda não praticada vem apagada e sem
+                    | o cartão levantado — legível e clicável do mesmo jeito.
+                    | Ver AINDA_NAO_VISTAS, em lib/vocabulary.ts.
                     */}
-                    <Card href={`/licao/${termo.lesson.id}`} size="sm">
+                    <Card
+                      href={`/licao/${termo.lesson.id}`}
+                      size="sm"
+                      tone={termo.seen ? "raised" : "sunken"}
+                      className={termo.seen ? "" : "opacity-65"}
+                    >
                       <p className="text-base font-bold">{termo.word}</p>
                       <p className="mt-1 text-base leading-relaxed text-content-secondary">
                         {termo.meaning}

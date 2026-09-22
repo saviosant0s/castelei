@@ -74,6 +74,27 @@ const JARGON = [
   ["handle", /\bhandle\b/i, "s"], ["Win32", /\bwin32\b/i, "s"], ["strace", /\bstrace\b/i, "s"],
 
   /*
+  | Os nomes que aparecem DENTRO do código (escopo "s").
+  |
+  | Queixa do Sávio, estudando a lição de chamadas de sistema: "você parte do
+  | pressuposto que eu já entendo de código". Ele tinha razão, e o furo era
+  | do verificador: `code.text` nunca passava por conferência nenhuma, então
+  | `waitpid(pid, ...)` podia aparecer sem uma linha explicando o que é.
+  |
+  | Agora o código é conferido como qualquer outro texto. São nomes em inglês,
+  | então a expressão não corre risco de casar com português comum.
+  */
+  ["fork", /\bfork\b/i, "s"], ["execve", /\bexecv[ep]?\b/i, "s"], ["waitpid", /\bwaitpid\b/i, "s"],
+  ["exit", /\bexit\b/i, "s"], ["open", /\bopen\b/i, "s"], ["read", /\bread\b/i, "s"],
+  ["write", /\bwrite\b/i, "s"], ["close", /\bclose\b/i, "s"], ["clone", /\bclone\b/i, "s"],
+  ["PID", /\bPID\b|\bpid\b/, "s"], ["opção do open", /\bO_[A-Z]+\b/, "s"],
+  ["chamada do Windows", /\b(CreateFile|ReadFile|WriteFile|CloseHandle|CreateProcess|WaitForSingleObject|ExitProcess|TerminateProcess|CreateDirectory|SetCurrentDirectory)\b/, "s"],
+  ["down e up", /\bdown\(|\bup\(|\bdown e up\b/i, "s"], ["wait e signal", /\bwait\(|\bsignal\(|\bwait e signal\b/i, "s"],
+  ["send e receive", /\bsend\(|\breceive\(|\bsend e receive\b/i, "s"], ["TSL", /\bTSL\b/, "s"],
+  ["bit", /\bbits?\b/i, "s"], ["byte", /\bbytes?\b/i, "s"], ["variável", /\bvari(á|a)ve(l|is)\b/i, "s"],
+  ["função", /\bfun(ç|c)(ão|ões)\b/i, "s"], ["laço", /\bla(ç|c)os?\b/i, "s"],
+
+  /*
   | Servidores e infraestrutura (escopo "v").
   |
   | Esta lista nasceu de uma queixa concreta: a primeira lição do curso falava
@@ -266,7 +287,7 @@ for (const file of arquivos) {
       if (!step.title || !step.body?.length) fail(W, "precisa de título e de pelo menos um parágrafo");
       defineTerms(step.terms, defined, jargon);
 
-      const prose = [...(step.body ?? []), ...(step.bullets ?? []), ...(step.terms ?? []).map((t) => t.meaning)];
+      const prose = [...(step.body ?? []), ...(step.bullets ?? []), ...(step.terms ?? []).map((t) => t.meaning), ...(step.code?.notes ?? [])];
       prose.forEach((p) => checkProse(W, p));
 
       if (step.figure) {
@@ -278,6 +299,25 @@ for (const file of arquivos) {
         if (SOURCE_REF.test(f.alt ?? "")) fail(W, "o texto alternativo cita livro ou fonte");
       }
       if (step.code && !String(step.code.text ?? "").trim()) fail(W, "bloco de código vazio");
+      /*
+      | Uma tradução por linha de código.
+      |
+      | "As linhas de código, você parte do pressuposto que eu já entendo de
+      | código" — e estava certo: o bloco entrava na tela em fonte de máquina,
+      | sem uma palavra sobre o que cada linha faz. Quem já programa lê; quem
+      | não programa vê um paredão preto e pula.
+      |
+      | A nota não é comentário DENTRO do código: comentário sai em fonte de
+      | máquina, some na rolagem lateral e não passa por conferência nenhuma.
+      | Linha em branco não conta — ela é respiro, não instrução.
+      */
+      if (step.code && String(step.code.text ?? "").trim()) {
+        const linhas = String(step.code.text).split("\n").filter((l) => l.trim());
+        const notas = step.code.notes ?? [];
+        if (notas.length !== linhas.length) {
+          fail(W, `o código tem ${linhas.length} linha(s) e ${notas.length} nota(s): escreva uma tradução por linha`);
+        }
+      }
       let tableText = "";
       if (step.table) {
         const t = step.table;
@@ -296,7 +336,7 @@ for (const file of arquivos) {
       else if (bodyWords > 60) warn(W, `texto corrido longo (${bodyWords} palavras)`);
 
       if (step.kind !== "exam") {
-        const all = [step.title, ...prose, step.example?.label ?? "", ...(step.example?.lines ?? []), step.figure?.caption ?? "", tableText].join(" \n ");
+        const all = [step.title, ...prose, step.example?.label ?? "", ...(step.example?.lines ?? []), step.figure?.caption ?? "", tableText, step.code?.label ?? "", step.code?.text ?? ""].join(" \n ");
         checkJargon(W, all, defined, jargon);
       }
     });

@@ -121,8 +121,10 @@
             "mono": true
           },
           "code": {
+            "_leia_me": "Uma frase em \"notes\" por linha de código, na ordem. Quem lê a lição pode nunca ter visto código.",
             "label": "No terminal",
-            "text": "ls -la"
+            "text": "ls -la",
+            "notes": ["Lista os arquivos da pasta, inclusive os escondidos."]
           },
           "video": {
             "_leia_me": "Envie o arquivo na Biblioteca de mídia e cole o endereço aqui, ou use um link do YouTube.",

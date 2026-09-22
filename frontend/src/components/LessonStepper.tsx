@@ -15,6 +15,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { LessonVideo } from "@/components/LessonVideo";
+import { StepCode } from "@/components/StepCode";
 import { StepTable } from "@/components/StepTable";
 import { pluralize } from "@/lib/format";
 import { clearSpot, saveSpot, useSpot } from "@/lib/lesson-progress";
@@ -227,16 +228,7 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
 
         {step.table && <StepTable table={step.table} />}
 
-        {step.code && (
-          <div className="mt-6">
-            {step.code.label && (
-              <p className="label-mono mb-2">{step.code.label}</p>
-            )}
-            <pre className="overflow-x-auto rounded-2xl bg-surface-bold p-4 font-mono text-sm leading-relaxed text-on-bold">
-              <code>{step.code.text}</code>
-            </pre>
-          </div>
-        )}
+        {step.code && <StepCode code={step.code} />}
 
         {step.bullets && (
           <ul className="mt-6 space-y-3 text-base leading-relaxed">
@@ -252,19 +244,29 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
           </ul>
         )}
 
-        {step.terms && (
-          <div className="mt-6 space-y-3">
-            {step.terms.map((term) => (
-              <div
-                key={term.word}
-                className="rounded-2xl bg-sky-soft px-5 py-4"
-              >
-                <p className="label-mono">Palavra nova</p>
-                <p className="mt-1 text-base leading-relaxed">
-                  <strong>{term.word}:</strong> {term.meaning}
-                </p>
-              </div>
-            ))}
+        {/*
+          As palavras novas moram num cartão só.
+          
+          A regra de explicar todo termo na estreia é boa, e a conferência do
+          Guia Editorial a tornou obrigatória — o efeito colateral foi uma
+          etapa com cinco caixas azuis iguais, cada uma repetindo o rótulo
+          "palavra nova". Trocamos um paredão de parágrafo por um paredão
+          azul. Agora o rótulo aparece uma vez, e as palavras são linhas
+          separadas por um traço fino.
+        */}
+        {step.terms && step.terms.length > 0 && (
+          <div className="mt-6 rounded-2xl bg-sky-soft px-5 py-4">
+            <p className="label-mono">
+              {step.terms.length === 1 ? "Palavra nova" : "Palavras novas"}
+            </p>
+            <dl className="mt-1 divide-y divide-ink/10">
+              {step.terms.map((term) => (
+                <div key={term.word} className="py-2 first:pt-0 last:pb-0">
+                  <dt className="inline font-bold">{term.word}: </dt>
+                  <dd className="inline text-base leading-relaxed">{term.meaning}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         )}
       </article>
