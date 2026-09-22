@@ -96,6 +96,12 @@ Pronto: MVP (cadastro, catálogo, prática com cronômetro, resultado com record
 
 **Na tela inicial, cada matéria mostra uma barra de progresso** com lições praticadas sobre o total. Conta só tentativa concluída (`attempts` vem do backend com `whereNotNull('finished_at')`), e o número vem escrito ao lado da barra.
 
+**A tela de resultado cabe numa tela, e o que fazer em seguida fica fixo embaixo** (`ResultView`, em `PracticeClient.tsx`). Duas queixas do Sávio, que eram a mesma vista de dois ângulos: os botões de continuar ficavam no fim de uma rolagem, e a tela tinha "cara de IA". Ela era uma pilha de cartões arredondados do mesmo tamanho — tempo, XP, streak, conquista —, cada um com ícone, rótulo cinza e número grande. Pilha sem hierarquia é o que denuncia tela gerada, e é também o que obrigava a rolar. Três decisões:
+
+- **Um número é a notícia** (o acerto). O resto virou uma faixa de três colunas numa linha só, e o que sobra é frase, não cartão. Coluna sem dado some, em vez de mostrar traço.
+- **Sobre o tempo, uma frase só**: recorde novo, recorde a bater ou o convite da primeira vez — nunca os três.
+- **A barra de ação é fixa, na mesma altura em que esteve "Confirmar"** a tentativa inteira: o dedo não muda de lugar entre responder a última questão e ir para a próxima lição. O nome da próxima lição fica ACIMA do botão, cortado com reticências — dentro dele, título longo virava duas linhas e mudava a altura da barra. Cartão ficou só onde há o que comemorar: a conquista nova.
+
 **A espera antes da primeira questão é um esqueleto** (`PracticeSkeleton`, em `PracticeClient.tsx`), com a forma do cabeçalho, do enunciado e das alternativas. Era uma frase solta no branco, no instante de maior desistência da prática.
 
 **A lição retoma de onde parou** (`lib/lesson-progress.ts`, no `localStorage`): o `LessonStepper` devolve a pessoa à etapa, com aviso e saída para recomeçar, e a lista da matéria mostra "parou na etapa 4 de 11". Vale por aparelho e some se a lição mudar de número de etapas. Testes que renderizam o stepper **precisam limpar o `localStorage`** no `afterEach`, senão um teste começa no meio da lição do outro.

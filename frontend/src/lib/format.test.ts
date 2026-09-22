@@ -40,7 +40,7 @@ describe("helpers", () => {
   });
 });
 
-import { formatNumber, streakMessage, weekdayInitial } from "./format";
+import { formatNumber, weekdayInitial } from "./format";
 
 describe("gamificação", () => {
   it("formatNumber usa ponto de milhar", () => {
@@ -52,10 +52,5 @@ describe("gamificação", () => {
     expect(weekdayInitial("2026-09-20")).toBe("D"); // domingo
     expect(weekdayInitial("2026-09-21")).toBe("S"); // segunda
     expect(weekdayInitial("2026-09-22")).toBe("T"); // terça
-  });
-  it("streakMessage", () => {
-    expect(streakMessage(0)).toContain("começar");
-    expect(streakMessage(1)).toBe("Streak iniciado: 1 dia.");
-    expect(streakMessage(7)).toBe("Streak mantido! 7 dias seguidos.");
   });
 });

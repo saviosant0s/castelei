@@ -2,11 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Check, Crown, Flame, Lightbulb, RotateCcw, SkipForward, Star, Target, Timer, Trophy, TriangleAlert, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Crown, Lightbulb, RotateCcw, SkipForward, Star, Timer, TriangleAlert, X } from "lucide-react";
 import { BadgeIcon } from "@/components/BadgeIcon";
 import { Confetti } from "@/components/Confetti";
+import { ProgressBar } from "@/components/ui";
 import { messageOf, postJson } from "@/lib/client";
-import { formatClock, formatNumber, formatSeconds, optionLetter, pluralize, streakMessage } from "@/lib/format";
+import { formatClock, formatNumber, formatSeconds, optionLetter, pluralize } from "@/lib/format";
 import { playSound, primeSound } from "@/lib/sound";
 import type { AnswerResult, FinishResult, PracticeQuestion, StartAttemptResponse } from "@/lib/types";
 
@@ -347,7 +348,27 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
   );
 }
 
-function ResultView({ result, source, onRetry }: { result: FinishResult; source: PracticeSource; onRetry: () => void }) {
+/*
+| A tela de resultado.
+|
+| Duas queixas do Sávio a desenharam, e as duas são a mesma queixa vista de
+| ângulos diferentes.
+|
+| A primeira: os botões de continuar ficavam no fim de uma rolagem. O que a
+| pessoa quer aqui é seguir — ela acabou de terminar e o próximo passo estava
+| escondido embaixo de tudo. Agora ele mora numa barra fixa, o mesmo lugar em
+| que "Confirmar" esteve a tentativa inteira: o dedo não muda de posição entre
+| responder a última questão e ir para a próxima lição.
+|
+| A segunda: a tela tinha "cara de IA". Ela era uma pilha de cartões
+| arredondados do mesmo tamanho, cada um com seu ícone, seu rótulo cinza e seu
+| número grande — tempo, XP, streak, conquista, todos com o mesmo peso. Pilha
+| sem hierarquia é o que denuncia tela gerada, e também é o que obrigava a
+| rolar. A correção é uma só: UM número é a notícia (o acerto), o resto vira
+| uma faixa de apoio em três colunas, e o que sobra é frase, não cartão.
+| Cartão ficou só onde há o que comemorar de verdade — a conquista nova.
+*/
+export function ResultView({ result, source, onRetry }: { result: FinishResult; source: PracticeSource; onRetry: () => void }) {
   const isExam = source.kind === "exam";
   const headline = result.percent >= 80 ? "Mandou bem!" : result.percent >= 50 ? "Bom caminho." : "Agora você conhece as pegadinhas.";
   const g = result.gamification;
@@ -356,101 +377,109 @@ function ResultView({ result, source, onRetry }: { result: FinishResult; source:
     ? result.previous_best_avg_seconds - result.avg_seconds
     : null;
 
-  return (
-    <div className="relative mx-auto min-h-dvh max-w-md px-5 pb-12 pt-8">
-      {celebrate && <Confetti />}
-      <Trophy className="size-10 text-coral" aria-hidden="true" />
-      <p className="label-mono mt-4">{isExam ? "Simulado concluído" : "Lição concluída"}</p>
-      <h1 className="anim-rise mt-2 text-4xl">{headline}</h1>
+  /*
+  | A faixa de apoio. Tudo que não é o acerto cabe aqui, em três colunas de
+  | uma linha cada — antes eram três cartões empilhados, e a tela inteira de
+  | rolagem saía daí. Some a coluna que não tem dado, em vez de mostrar
+  | traço: simulado sem gamificação liberada fica com a faixa mais estreita,
+  | não com buracos.
+  */
+  const resumo: { label: string; value: string }[] = [];
+  if (result.avg_seconds !== null) resumo.push({ label: "Por questão", value: formatSeconds(result.avg_seconds) });
+  if (g) resumo.push({ label: "XP ganho", value: `+${formatNumber(g.xp_earned)}` });
+  if (g && g.streak.current > 0) resumo.push({ label: "Sequência", value: pluralize(g.streak.current, "dia", "dias") });
 
-      <div className="mt-8">
-        <div className="flex items-end justify-between">
-          <p className="font-mono text-4xl font-medium">{result.percent}%</p>
-          <p className="text-base text-ink/70">{result.correct} de {pluralize(result.total, "questão", "questões")}</p>
+  /*
+  | Uma frase, não três. O recorde é a única coisa sobre tempo que vale
+  | interromper a leitura; na primeira vez não há recorde, e aí o convite é
+  | criar um.
+  */
+  const sobreOTempo = result.avg_seconds === null
+    ? null
+    : diff !== null
+      ? `Novo recorde: ${formatSeconds(diff)} mais rápido que antes.`
+      : result.previous_best_avg_seconds !== null
+        ? `Seu recorde continua em ${formatSeconds(result.previous_best_avg_seconds)} por questão.`
+        : "Esse é o tempo para bater na próxima vez.";
+
+  return (
+    <div className="relative mx-auto min-h-dvh max-w-md px-5 pb-44 pt-10">
+      {celebrate && <Confetti />}
+
+      <p className="label-mono">{isExam ? "Simulado concluído" : "Lição concluída"}</p>
+      <h1 className="anim-rise mt-1.5 text-3xl">{headline}</h1>
+
+      <div className="mt-7">
+        <div className="flex items-baseline justify-between gap-3">
+          <p className="font-mono text-5xl font-medium tabular-nums">
+            {result.percent}
+            <span className="text-2xl">%</span>
+          </p>
+          <p className="text-base text-content-secondary">
+            {result.correct} de {pluralize(result.total, "questão", "questões")}
+          </p>
         </div>
-        <div className="mt-3 h-3 overflow-hidden rounded-full bg-ink/10">
-          <div className="anim-fill h-full rounded-full bg-sage" style={{ width: `${result.percent}%` }} />
-        </div>
+        <ProgressBar
+          percent={result.percent}
+          label={`${result.percent}% de acerto`}
+          animate
+          className="mt-3"
+        />
       </div>
 
-      <dl className="mt-8 space-y-4">
-        {result.avg_seconds !== null && (
-          <div className="flex items-start gap-3 rounded-2xl bg-surface-raised px-5 py-4 shadow-lift">
-            <Timer className="mt-0.5 size-5 shrink-0 text-coral" aria-hidden="true" />
-            <div>
-              <dt className="text-sm text-ink/60">Tempo médio por questão</dt>
-              <dd className="font-mono text-2xl font-medium">{formatSeconds(result.avg_seconds)}</dd>
-              {result.is_record && diff !== null ? (
-                <p className="mt-1 text-base font-bold text-sage">Novo recorde: {formatSeconds(diff)} mais rápido que o anterior.</p>
-              ) : result.previous_best_avg_seconds !== null ? (
-                <p className="mt-1 text-base text-ink/70">Seu recorde: {formatSeconds(result.previous_best_avg_seconds)}.</p>
-              ) : (
-                <p className="mt-1 text-base text-ink/70">Esse é o tempo para bater na próxima vez.</p>
-              )}
+      {resumo.length > 0 && (
+        <dl className="mt-6 flex divide-x divide-ink/10 rounded-2xl bg-surface-raised shadow-lift">
+          {resumo.map((item) => (
+            <div key={item.label} className="min-w-0 flex-1 px-4 py-3">
+              <dt className="truncate text-sm text-content-subtle">{item.label}</dt>
+              <dd className="font-mono text-xl font-medium tabular-nums">{item.value}</dd>
             </div>
-          </div>
-        )}
-        {result.weak_topic && (
-          <div className="flex items-start gap-3 rounded-2xl bg-coral-soft px-5 py-4">
-            <Target className="mt-0.5 size-5 shrink-0 text-coral" aria-hidden="true" />
-            <div>
-              <dt className="text-sm text-ink/60">Ponto para reforçar</dt>
-              <dd className="text-base font-bold">{result.weak_topic}</dd>
-              <Link
-                href={source.kind === "lesson" ? `/licao/${source.lessonId}` : `/materia/${source.subjectSlug}`}
-                className="mt-1 inline-block text-base font-bold underline underline-offset-4"
+          ))}
+        </dl>
+      )}
+
+      {sobreOTempo && (
+        <p className={`mt-3 text-base ${diff !== null ? "font-bold text-sage" : "text-content-secondary"}`}>
+          {sobreOTempo}
+        </p>
+      )}
+
+      {result.weak_topic && (
+        <div className="mt-5 text-base">
+          <p>
+            Ponto para reforçar: <strong>{result.weak_topic}</strong>.
+          </p>
+          <Link
+            href={source.kind === "lesson" ? `/licao/${source.lessonId}` : `/materia/${source.subjectSlug}`}
+            className="mt-0.5 inline-block font-bold underline underline-offset-4"
+          >
+            {isExam ? "Ver as lições da matéria" : "Revisar a lição"}
+          </Link>
+        </div>
+      )}
+
+      {g && g.new_badges.length > 0 && (
+        <section aria-labelledby="conquistas" className="mt-7">
+          <h2 id="conquistas" className="text-xl">
+            {g.new_badges.length === 1 ? "Conquista nova" : "Conquistas novas"}
+          </h2>
+          <ul className="mt-3 space-y-2">
+            {g.new_badges.map((badge, i) => (
+              <li
+                key={badge.key}
+                className="anim-pop flex items-center gap-3 rounded-2xl bg-sage-soft px-4 py-3"
+                style={{ animationDelay: `${i * 140}ms` }}
               >
-                {isExam ? "Ver as lições da matéria" : "Revisar a lição"}
-              </Link>
-            </div>
-          </div>
-        )}
-      </dl>
-
-      {g && (
-        <section aria-labelledby="pontos" className="mt-6 space-y-4">
-          <h2 id="pontos" className="sr-only">Pontos e conquistas</h2>
-          <div className="flex items-center justify-between gap-4 rounded-2xl bg-surface-raised px-5 py-4 shadow-lift">
-            <div className="flex items-center gap-3">
-              <Star className="size-5 shrink-0 text-coral" aria-hidden="true" />
-              <div>
-                <p className="text-sm text-ink/60">{isExam ? "XP ganho neste simulado" : "XP ganho nesta lição"}</p>
-                <p className="font-mono text-2xl font-medium">+{formatNumber(g.xp_earned)} XP</p>
-              </div>
-            </div>
-            <p className="text-right text-sm text-ink/60">
-              Total
-              <span className="block font-mono text-base font-medium text-ink">{formatNumber(g.xp_total)}</span>
-            </p>
-          </div>
-
-          <div className="flex items-center gap-3 rounded-2xl bg-coral-soft px-5 py-4">
-            <Flame className="size-5 shrink-0 text-coral" aria-hidden="true" />
-            <p className="text-base font-bold">{streakMessage(g.streak.current)}</p>
-          </div>
-
-          {g.new_badges.length > 0 && (
-            <div>
-              <h3 className="text-2xl">{g.new_badges.length === 1 ? "Nova conquista!" : "Novas conquistas!"}</h3>
-              <ul className="mt-3 space-y-3">
-                {g.new_badges.map((badge, i) => (
-                  <li
-                    key={badge.key}
-                    className="anim-pop flex items-center gap-4 rounded-2xl border-2 border-sage bg-sage-soft px-5 py-4"
-                    style={{ animationDelay: `${i * 140}ms` }}
-                  >
-                    <span className="grid size-12 shrink-0 place-items-center rounded-full bg-sage">
-                      <BadgeIcon badgeKey={badge.key} className="size-6" />
-                    </span>
-                    <span>
-                      <span className="block text-base font-bold">{badge.name}</span>
-                      <span className="block text-sm text-ink/70">{badge.description}</span>
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+                <span className="grid size-10 shrink-0 place-items-center rounded-full bg-sage">
+                  <BadgeIcon badgeKey={badge.key} className="size-5" />
+                </span>
+                <span className="min-w-0">
+                  <span className="block text-base font-bold">{badge.name}</span>
+                  <span className="block text-sm text-content-secondary">{badge.description}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
         </section>
       )}
 
@@ -463,18 +492,41 @@ function ResultView({ result, source, onRetry }: { result: FinishResult; source:
         </Link>
       )}
 
-      <div className="mt-8 flex flex-col gap-3">
-        {result.next_lesson ? (
-          <Link href={`/licao/${result.next_lesson.id}`} className="btn btn-primary">
-            Próxima: {result.next_lesson.title} <ArrowRight className="size-5" aria-hidden="true" />
-          </Link>
-        ) : null}
-        <button type="button" className={`btn ${result.next_lesson ? "btn-ghost border-2 border-ink/15" : "btn-primary"}`} onClick={onRetry}>
-          <RotateCcw className="size-5" aria-hidden="true" /> {isExam ? "Novo simulado" : "Praticar de novo"}
-        </button>
-        <Link href="/inicio" className="btn btn-ghost">
+      <div className="mt-8">
+        <Link href="/inicio" className="inline-flex items-center gap-2 text-base font-bold text-content-secondary underline underline-offset-4">
           <ArrowLeft className="size-5" aria-hidden="true" /> Voltar ao início
         </Link>
+      </div>
+
+      {/*
+        A mesma barra da prática, na mesma altura: quem apertou "Confirmar"
+        oito vezes aperta "Continuar" sem procurar. O nome da próxima lição
+        fica ACIMA do botão, cortado com reticências se for longo — dentro do
+        botão ele empurrava o texto para duas linhas e mudava a altura da
+        barra conforme o título.
+      */}
+      <div className="fixed inset-x-0 bottom-0 z-20 border-t border-ink/10 bg-surface/95 backdrop-blur">
+        <div className="mx-auto max-w-md px-5 pb-[max(1rem,env(safe-area-inset-bottom))] pt-3">
+          {result.next_lesson && (
+            <p className="mb-2 truncate text-sm text-content-subtle">A seguir: {result.next_lesson.title}</p>
+          )}
+          <div className="flex gap-3">
+            <button
+              type="button"
+              className={`btn ${result.next_lesson ? "btn-ghost border-2 border-ink/15 px-4" : "btn-primary flex-1"}`}
+              onClick={onRetry}
+              aria-label={isExam ? "Fazer um novo simulado" : "Praticar esta lição de novo"}
+            >
+              <RotateCcw className="size-5" aria-hidden="true" />
+              {result.next_lesson ? "" : isExam ? "Novo simulado" : "Praticar de novo"}
+            </button>
+            {result.next_lesson && (
+              <Link href={`/licao/${result.next_lesson.id}`} className="btn btn-primary flex-1">
+                Continuar <ArrowRight className="size-5" aria-hidden="true" />
+              </Link>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
