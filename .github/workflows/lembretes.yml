@@ -1,0 +1,59 @@
+# O cron que o Railway não tem.
+#
+# O plano em uso não roda `schedule:run`, e um serviço só de cron esbarra no
+# limite de serviços. Então quem puxa o cordão é daqui: o GitHub Actions tem
+# agendamento e não custa nada.
+#
+# ATENÇÃO: o agendamento do GitHub Actions ATRASA — às vezes minutos, às vezes
+# mais, quando a fila está cheia. Aqui isso não importa, e não é conformismo: o
+# intervalo ideal de revisão é um platô largo (Cepeda et al., 2008), então
+# chegar uma hora depois da hora não muda a retenção em nada. Ver
+# docs/revisao-espacada.md.
+#
+# A outra pegadinha é real: o GitHub DESLIGA agendamento em repositório sem
+# atividade por 60 dias. Se os lembretes pararem do nada, é o primeiro lugar
+# para olhar.
+name: Lembretes de revisão
+
+on:
+  schedule:
+    # 21:00 UTC = 18:00 em São Paulo. O Brasil não tem horário de verão desde 2019.
+    - cron: "0 21 * * *"
+  # Para conferir sem esperar o horário.
+  workflow_dispatch:
+
+jobs:
+  avisar:
+    name: Avisar quem tem lição vencida
+    runs-on: ubuntu-latest
+    steps:
+      - name: Puxar o gatilho
+        env:
+          CRON_SECRET: ${{ secrets.CASTELEI_CRON_SECRET }}
+          API: ${{ vars.CASTELEI_API_URL || 'https://backend-production-b5a94.up.railway.app/api' }}
+        run: |
+          if [ -z "$CRON_SECRET" ]; then
+            echo "::error::Falta o segredo CASTELEI_CRON_SECRET nas Secrets do repositório."
+            echo "Veja docs/deploy-railway.md, passo 5.2."
+            exit 1
+          fi
+
+          # -S mostra o erro, -f falha em status >= 400, -o separa corpo de status.
+          codigo=$(curl -sS -o /tmp/resposta.json -w "%{http_code}" \
+            --max-time 120 \
+            -X POST "$API/cron/lembretes" \
+            -H "X-Castelei-Cron: $CRON_SECRET" \
+            -H "Accept: application/json")
+
+          echo "HTTP $codigo"
+          cat /tmp/resposta.json
+
+          if [ "$codigo" = "404" ]; then
+            echo "::error::404. Ou o segredo está errado, ou CRON_SECRET não está no serviço backend do Railway."
+            exit 1
+          fi
+
+          if [ "$codigo" != "200" ]; then
+            echo "::error::O gatilho respondeu $codigo."
+            exit 1
+          fi
