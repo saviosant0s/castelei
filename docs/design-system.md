@@ -311,3 +311,24 @@ Itens do plano que o sistema ainda não cobre:
 - **O manifesto do PWA tem uma cor só.** `theme_color` e `background_color`
   são estáticos, então a tela de abertura do Android instalado é sempre a
   clara. A barra de status já acompanha os dois temas.
+
+## A figura fica numa folha branca, nos dois temas
+
+As figuras do app são SVG desenhados a tinta escura (`#1C1C2E`) sobre papel:
+traço de caixa, seta e texto solto usam essa mesma cor. Coladas direto no
+cartão (`surface-raised`), no modo escuro só sobrevivia o que tinha
+preenchimento claro por baixo — as caixas coloridas apareciam, e a borda
+delas, as setas, os rótulos de eixo e as caixas sem preenchimento sumiam.
+
+Não quebrava nada e não emitia aviso: a figura continuava lá, com metade do
+desenho invisível. Apareceu olhando a lição de hardware no escuro, e não num
+teste.
+
+A saída é o token `sheet`, que **não inverte** — mesma família de `on-accent`
+e `on-bold`. A imagem ganha `bg-sheet` e vira uma página impressa colada na
+tela; a legenda continua no cartão, onde o texto acompanha o tema. Um teste
+em `LessonStepper.test.tsx` trava isso.
+
+Se um dia as figuras forem redesenhadas para os dois temas, o caminho é outro:
+trocar as cores fixas do SVG por `currentColor` e variáveis. Enquanto forem
+desenhos a tinta, a folha é a resposta certa.

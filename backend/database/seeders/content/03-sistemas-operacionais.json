@@ -128,8 +128,9 @@
           "title": "Ouvir música e escrever ao mesmo tempo",
           "body": [
             "Você ouve música, baixa um arquivo e escreve um texto. Só há um processador, mas parece que tudo roda junto.",
-            "O truque: o SO dá uma fatia do tempo do processador para cada programa, em revezamento. Cada fatia dura milésimos de segundo.",
-            "Na memória, ele dá uma parte separada para cada programa. Assim, um não invade o outro."
+            "O truque: o SO dá uma fatia do tempo do processador a cada programa, em rodízio.",
+            "Na memória é diferente. Cada programa recebe um pedaço só dele, e todos ficam lá ao mesmo tempo.",
+            "Repartir o tempo e repartir o espaço são as duas formas, e cada uma tem nome."
           ],
           "example": {
             "label": "O revezamento",
@@ -139,7 +140,17 @@
               "fatia do editor de texto",
               "volta ao navegador…"
             ]
-          }
+          },
+          "terms": [
+            {
+              "word": "Multiplexação no tempo",
+              "meaning": "repartir uma peça dando-a a um programa de cada vez, em rodízio. É assim com o processador."
+            },
+            {
+              "word": "Multiplexação no espaço",
+              "meaning": "repartir uma peça dando um pedaço a cada programa, ao mesmo tempo. É assim com a memória e o disco."
+            }
+          ]
         },
         {
           "kind": "explain",
@@ -210,7 +221,8 @@
           "kind": "explain",
           "title": "Sistemas operacionais de hoje",
           "body": [
-            "Cada aparelho que você usa tem um SO. Os nomes mudam, mas o trabalho é o mesmo: esconder a complexidade e organizar os recursos."
+            "Cada aparelho que você usa tem um SO. Os nomes mudam, e o trabalho é o mesmo: esconder a complexidade e organizar os recursos.",
+            "Todos eles são gigantes. Nenhum foi escrito de uma vez: eles crescem há décadas, um remendo por cima do outro."
           ],
           "table": {
             "label": "Os mais conhecidos",
@@ -246,7 +258,12 @@
                 "Da Apple"
               ]
             ]
-          }
+          },
+          "bullets": [
+            "Só a parte central do Linux e a do Windows passam de cinco milhões de linhas de código.",
+            "Contando os programas que vêm junto, o Windows ultrapassa setenta milhões de linhas.",
+            "Por isso um sistema não é refeito do zero. Sai mais barato remendar do que recomeçar."
+          ]
         },
         {
           "kind": "exam",
@@ -403,6 +420,937 @@
           "correct_index": 3,
           "explanation": "Android é um sistema operacional: gerencia as peças do celular e roda os aplicativos. Chrome e Word são aplicativos. Python é uma linguagem. O Core i7 é um processador.",
           "pitfall": "Um programa muito conhecido não é um SO só por isso. O SO é o que gerencia as peças e roda os outros programas."
+        }
+      ]
+    },
+    {
+      "slug": "historia-dos-sistemas-operacionais",
+      "title": "De onde vieram os sistemas operacionais",
+      "module": "Fundamentos",
+      "summary": "Cinco gerações de máquinas, e um sistema operacional que cresceu a cada desperdício resolvido. Nada aqui foi planejado de uma vez.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Ligar o computador já foi trabalho braçal",
+          "body": [
+            "Hoje você aperta um botão e a tela inicial aparece sozinha.",
+            "Em 1950 era outra coisa. A pessoa reservava horas na sala da máquina e ligava cabos com a própria mão.",
+            "Não havia nenhum programa tomando conta do aparelho. Tudo o que existe hoje foi inventado aos poucos, sempre para acabar com um desperdício."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Primeira geração: válvulas e painéis de cabo",
+          "body": [
+            "De 1945 a 1955 os computadores eram feitos de válvulas. Ocupavam salas inteiras.",
+            "Programar era ligar fios num painel. Cada fio dizia à máquina uma operação a fazer.",
+            "Não existia sistema operacional nem linguagem de programação. Quem projetou a máquina era quem a usava."
+          ],
+          "terms": [
+            {
+              "word": "Válvula",
+              "meaning": "peça de vidro que fazia, de forma enorme, o papel do transistor de hoje. Esquentava muito e queimava sozinha."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O cartão perfurado melhorou pouco",
+          "body": [
+            "No começo dos anos 1950 chegaram os cartões perfurados. Em vez de ligar fios, a pessoa furava cartões de papel.",
+            "Cada furo valia um pedaço de instrução. A pilha de cartões entrava por um leitor.",
+            "Foi um alívio para quem escrevia. O desperdício continuou igual: a máquina ficava parada enquanto alguém trocava a pilha."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Segunda geração: o transistor e o trabalho em lote",
+          "body": [
+            "Entre 1955 e 1965 o transistor substituiu a válvula. A máquina virou confiável o bastante para ser vendida.",
+            "Eram aparelhos enormes e caríssimos. Cada minuto parado custava uma fortuna.",
+            "Daí veio a ideia que dá nome à época: juntar vários trabalhos numa fita e rodar todos de uma vez, sem ninguém olhando."
+          ],
+          "terms": [
+            {
+              "word": "Computador de grande porte (mainframe)",
+              "meaning": "máquina gigante e cara. Uma empresa inteira dividia uma só, guardada numa sala refrigerada."
+            },
+            {
+              "word": "Processamento em lote",
+              "meaning": "juntar vários trabalhos e rodar um atrás do outro. Ninguém acompanha enquanto roda."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A volta que um programa dava",
+          "body": [
+            "A pessoa entregava a pilha de cartões num balcão. Dali em diante não tocava mais na máquina.",
+            "Uma máquina barata copiava os cartões para uma fita. A fita era levada à máquina cara, que só sabia calcular."
+          ],
+          "example": {
+            "label": "Um trabalho, do balcão à impressora",
+            "ordered": true,
+            "lines": [
+              "você entrega a pilha de cartões ao operador",
+              "uma máquina barata copia os cartões para uma fita",
+              "alguém carrega a fita até o computador principal",
+              "o computador roda um trabalho atrás do outro",
+              "a fita de saída volta para a impressora",
+              "horas depois você busca a folha impressa"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os cartões que mandavam no trabalho",
+          "body": [
+            "Como ninguém acompanhava a máquina, o próprio trabalho precisava dizer o que fazer.",
+            "Para isso havia cartões especiais, marcados com um cifrão. Eles não traziam cálculo: traziam ordens para o sistema.",
+            "A ideia não morreu. É a avó dos arquivos que hoje automatizam tarefas repetidas."
+          ],
+          "code": {
+            "label": "Cartões de controle",
+            "text": "$JOB\n$FORTRAN\n$LOAD\n$RUN\n$END",
+            "notes": [
+              "Abre o trabalho e diz de quem ele é.",
+              "Manda traduzir o programa para a língua da máquina.",
+              "Põe na memória o programa já traduzido.",
+              "Manda executar o que acabou de ser carregado.",
+              "Fecha o trabalho e libera a máquina para o próximo."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Terceira geração: vários trabalhos na memória",
+          "body": [
+            "Em 1965 chegaram os circuitos integrados. Um mesmo desenho de máquina passou a ter modelos pequenos e grandes.",
+            "Veio junto a maior ideia da época. A memória foi dividida em pedaços, e cada pedaço guardou um trabalho diferente.",
+            "Quando um trabalho parava para ler a fita, a máquina passava para outro. Tempo parado virou tempo útil."
+          ],
+          "figure": {
+            "src": "/figuras/so/so-multiprogramacao.svg",
+            "alt": "A memória dividida em quatro faixas: a de baixo guarda o sistema operacional e as três de cima guardam um trabalho cada. Enquanto o trabalho do meio espera a fita, a máquina passa a trabalhar no de cima.",
+            "caption": "Com a memória repartida, a espera de um vira trabalho do outro."
+          },
+          "terms": [
+            {
+              "word": "Multiprogramação",
+              "meaning": "manter vários trabalhos na memória ao mesmo tempo. Enquanto um espera, outro usa a máquina."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O disco acabou com o vai-e-vem de fitas",
+          "body": [
+            "Mesmo com a memória repartida, alguém ainda levava fitas de um lado para o outro.",
+            "A saída foi guardar os trabalhos num disco. A máquina passou a buscar o próximo sozinha.",
+            "Esse truque tem nome próprio e continua vivo. É o que acontece toda vez que você manda imprimir."
+          ],
+          "terms": [
+            {
+              "word": "Spool",
+              "meaning": "pôr o trabalho numa fila em disco, para o aparelho ir buscando quando puder. A fila de impressão funciona assim."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Tempo compartilhado: a máquina só para você",
+          "body": [
+            "O trabalho em lote tinha um defeito cruel. Um erro de digitação custava horas de espera pela folha impressa.",
+            "A saída foi dar a cada pessoa um teclado e uma tela ligados à máquina grande. Ela revezava entre todas, muito depressa.",
+            "Cada uma sentia que a máquina era só dela. O primeiro sistema assim funcionou em 1962."
+          ],
+          "terms": [
+            {
+              "word": "Terminal",
+              "meaning": "um teclado e uma tela ligados ao computador principal. Não calcula nada: a conta acontece do outro lado do fio."
+            },
+            {
+              "word": "Tempo compartilhado",
+              "meaning": "revezar a máquina entre várias pessoas tão rápido que cada uma parece ter a máquina inteira."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O projeto ambicioso que não vingou",
+          "body": [
+            "No fim dos anos 1960 três organizações se juntaram para criar um sistema gigante. A promessa era servir uma cidade inteira de uma vez.",
+            "Ele se chamava MULTICS. Atrasou, custou caro e nunca virou sucesso de venda.",
+            "As ideias dele, porém, não morreram. Quase tudo que se usa hoje descende delas."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "UNIX, e a bagunça que a norma arrumou",
+          "body": [
+            "Em 1969 um programador que tinha trabalhado naquele projeto fez uma versão enxuta. Rodou num computador abandonado do laboratório.",
+            "Nasceu o UNIX. Ele se espalhou pelas universidades e virou dezenas de versões parecidas, mas incompatíveis entre si."
+          ],
+          "bullets": [
+            "1969 — UNIX, escrito por Ken Thompson nos Laboratórios Bell.",
+            "1988 — POSIX, a norma que fez as versões voltarem a se entender.",
+            "1991 — Linux, escrito por Linus Torvalds e inspirado num sistema pequeno de ensino."
+          ],
+          "terms": [
+            {
+              "word": "POSIX",
+              "meaning": "norma que diz como o sistema deve responder aos programas. Escrito uma vez, o programa roda em qualquer sistema que a siga."
+            },
+            {
+              "word": "Núcleo (kernel)",
+              "meaning": "a parte do sistema com acesso total à máquina. É ela que decide quem usa o quê."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quarta geração: o computador na sua mesa",
+          "body": [
+            "Nos anos 1970 os chips ficaram pequenos e baratos. Deu para pôr um processador inteiro numa pastilha.",
+            "O computador saiu da sala refrigerada e foi para a mesa das pessoas.",
+            "O primeiro sistema popular foi o CP/M. Ele mandou no mercado por cinco anos."
+          ],
+          "terms": [
+            {
+              "word": "Processador",
+              "meaning": "a peça que executa as instruções dos programas, uma de cada vez."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A decisão que valeu um império",
+          "body": [
+            "Em 1980 a IBM precisava de um sistema para o computador pessoal dela. Procurou uma empresa pequena, a Microsoft.",
+            "A Microsoft não tinha nada pronto. Comprou um sistema de terceiros por cerca de setenta e cinco mil dólares e o rebatizou de MS-DOS.",
+            "O império não veio do programa. Veio do contrato, que a deixou vender o mesmo sistema a qualquer fabricante."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A revolução da interface gráfica",
+          "body": [
+            "Faltava a parte que você vê. Nos anos 1960 Doug Engelbart inventou as janelas, os ícones, os menus e o mouse.",
+            "A ideia ficou guardada num laboratório até 1984. Nesse ano o Macintosh chegou às lojas com tudo isso pronto.",
+            "A resposta da Microsoft foi o Windows. Até 1995 ele era só uma casca desenhada por cima do MS-DOS."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quinta geração: o computador no bolso",
+          "body": [
+            "Nos anos 1990 o telefone e a agenda eletrônica viraram um aparelho só.",
+            "Depois de 2007 sobraram dois nomes. O iOS é fechado e roda só em aparelhos de quem o escreveu.",
+            "O Android é aberto e foi construído sobre o Linux. Por isso roda em telefones de centenas de fabricantes."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca quase sempre pede para ligar a geração à tecnologia, ou o sistema à novidade que ele trouxe.",
+            "Guarde os pares abaixo e você resolve a maioria das questões dessa parte."
+          ],
+          "bullets": [
+            "\"Válvulas, painéis de ligação e ausência de sistema operacional\" → primeira geração.",
+            "\"Transistores, cartões perfurados e processamento em lote\" → segunda geração.",
+            "\"Circuitos integrados, multiprogramação e spooling\" → terceira geração.",
+            "\"Circuitos LSI e microcomputadores pessoais\" → quarta geração.",
+            "\"Sistema desenvolvido para substituir o MULTICS, de forma simplificada\" → UNIX.",
+            "\"Padrão IEEE para portabilidade entre versões do UNIX\" → POSIX."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Quatro trocas derrubam muita gente nessa parte."
+          ],
+          "bullets": [
+            "Multiprogramação e tempo compartilhado não são a mesma coisa. Compartilhar tempo é multiprogramação com gente digitando do outro lado.",
+            "Linux é só o núcleo. O sistema que você instala junta esse núcleo com milhares de programas de fora.",
+            "O MS-DOS não foi escrito pela Microsoft. Ela comprou pronto e rebatizou.",
+            "O MULTICS fracassou comercialmente e mesmo assim é o mais influente da lista. Fracasso de venda não é fracasso de ideia."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Cada geração resolveu o desperdício que a anterior deixou."
+          ],
+          "table": {
+            "label": "As cinco gerações",
+            "headers": [
+              "Geração",
+              "Tecnologia",
+              "O que ela trouxe"
+            ],
+            "rows": [
+              [
+                "1945–1955",
+                "Válvula",
+                "Nenhum sistema operacional"
+              ],
+              [
+                "1955–1965",
+                "Transistor",
+                "Trabalho em lote"
+              ],
+              [
+                "1965–1980",
+                "Circuito integrado",
+                "Multiprogramação e tempo compartilhado"
+              ],
+              [
+                "1980–hoje",
+                "Chip pequeno",
+                "Computador pessoal e janelas"
+              ],
+              [
+                "1990–hoje",
+                "Telefone esperto",
+                "iOS e Android"
+              ]
+            ]
+          }
+        }
+      ],
+      "questions": [
+        {
+          "topic": "A primeira geração",
+          "statement": "O que NÃO existia nos computadores da primeira geração?",
+          "options": [
+            "Válvulas eletrônicas",
+            "Sistema operacional",
+            "Painéis de ligação com cabos",
+            "Salas dedicadas à máquina",
+            "Pessoas reservando horário de uso"
+          ],
+          "correct_index": 1,
+          "explanation": "Na primeira geração a pessoa operava a máquina diretamente. Não havia nenhum programa intermediário tomando conta dela.",
+          "pitfall": "Válvula, painel e sala refrigerada existiam sim. O que faltava era justamente o sistema operacional."
+        },
+        {
+          "topic": "A ordem das invenções",
+          "format": "order",
+          "statement": "Ponha na ordem em que apareceram as saídas encontradas para o desperdício de tempo da máquina.",
+          "options": [
+            "o cartão perfurado substitui o painel de cabos",
+            "o trabalho em lote junta vários programas numa fita",
+            "a multiprogramação põe vários trabalhos na memória",
+            "o tempo compartilhado dá um terminal a cada pessoa",
+            "a interface gráfica leva o computador a quem não programa"
+          ],
+          "explanation": "Cada passo nasceu do incômodo deixado pelo anterior. O lote acabou com a troca manual de pilhas, e a multiprogramação acabou com a espera pela fita.",
+          "pitfall": "O tempo compartilhado veio depois da multiprogramação, não antes. Ele é a multiprogramação com uma pessoa digitando do outro lado."
+        },
+        {
+          "topic": "Multiprogramação",
+          "statement": "Qual é o ganho direto da multiprogramação?",
+          "options": [
+            "O programa passa a rodar mais rápido do que rodaria sozinho",
+            "Cada pessoa ganha um terminal próprio para digitar",
+            "O processador aproveita a espera de um trabalho para avançar em outro",
+            "A memória passa a caber mais dados por pedaço",
+            "Os cartões perfurados deixam de ser necessários"
+          ],
+          "correct_index": 2,
+          "explanation": "Com vários trabalhos na memória, a máquina troca de trabalho quando o primeiro para para ler ou gravar. O tempo ocioso vira tempo útil.",
+          "pitfall": "Nenhum programa fica mais rápido sozinho. O que melhora é o uso do processador ao longo do dia."
+        },
+        {
+          "topic": "Spooling",
+          "statement": "O spooling resolveu qual problema da terceira geração?",
+          "options": [
+            "A falta de memória para guardar vários trabalhos",
+            "O transporte manual de fitas entre máquinas",
+            "A ausência de terminais interativos",
+            "A incompatibilidade entre modelos de computador",
+            "O tempo gasto para traduzir programas"
+          ],
+          "correct_index": 1,
+          "explanation": "Com os trabalhos guardados em disco, a máquina passou a buscar o próximo sozinha. Ninguém mais precisava carregar fita de um lado para o outro.",
+          "pitfall": "Spooling não é sobre memória. É sobre pôr o trabalho numa fila em disco, como a fila de impressão faz até hoje."
+        },
+        {
+          "topic": "Geração e tecnologia",
+          "format": "match",
+          "statement": "Ligue cada geração de computadores à tecnologia que a define.",
+          "pairs": [
+            {
+              "left": "Primeira geração",
+              "right": "Válvula"
+            },
+            {
+              "left": "Segunda geração",
+              "right": "Transistor"
+            },
+            {
+              "left": "Terceira geração",
+              "right": "Circuito integrado"
+            },
+            {
+              "left": "Quarta geração",
+              "right": "Chip pequeno e barato"
+            }
+          ],
+          "explanation": "A tecnologia de cada época define o tamanho e o preço da máquina. E isso, por sua vez, define quem consegue usá-la.",
+          "pitfall": "O circuito integrado é da terceira geração, não da quarta. A quarta é a do chip pequeno que coube na mesa de casa."
+        },
+        {
+          "topic": "Lote e tempo compartilhado",
+          "statement": "Qual é a diferença entre processamento em lote e tempo compartilhado?",
+          "options": [
+            "O lote usa disco e o tempo compartilhado usa fita",
+            "No lote ninguém acompanha a execução; no tempo compartilhado cada pessoa interage por um terminal",
+            "O lote só existiu na segunda geração e sumiu depois",
+            "O tempo compartilhado dispensa a multiprogramação",
+            "O lote roda um programa por vez e o tempo compartilhado roda dois"
+          ],
+          "correct_index": 1,
+          "explanation": "A diferença é a presença de alguém do outro lado. No lote o trabalho é entregue e buscado depois; no tempo compartilhado a resposta vem na hora.",
+          "pitfall": "O tempo compartilhado depende da multiprogramação, não a dispensa. É ela que permite revezar entre as pessoas."
+        },
+        {
+          "topic": "Linux",
+          "statement": "Quando alguém diz que instalou o Linux, o que foi instalado de fato?",
+          "options": [
+            "Apenas o núcleo escrito em 1991",
+            "Um sistema completo, formado pelo núcleo Linux mais milhares de programas de fora",
+            "Uma versão comercial do UNIX de 1969",
+            "Uma camada gráfica que roda sobre o MS-DOS",
+            "O próprio MULTICS, em versão gratuita"
+          ],
+          "correct_index": 1,
+          "explanation": "Linux é o nome do núcleo. O que se instala é uma distribuição, que reúne esse núcleo com programas de muitas origens.",
+          "pitfall": "Dizer que o Linux é um sistema completo é atalho de conversa. Em prova, a distinção entre núcleo e distribuição costuma valer ponto."
+        },
+        {
+          "topic": "Questão de banca",
+          "statement": "Assinale a alternativa INCORRETA sobre a história dos sistemas operacionais.",
+          "options": [
+            "O MULTICS influenciou sistemas posteriores apesar do insucesso comercial",
+            "O POSIX surgiu para padronizar a interface entre programas e sistemas do tipo UNIX",
+            "O MS-DOS foi desenvolvido internamente pela Microsoft antes do contrato com a IBM",
+            "A interface gráfica com janelas e mouse foi concebida antes do lançamento do Macintosh",
+            "O spooling permitiu carregar trabalhos do disco sem intervenção manual"
+          ],
+          "correct_index": 2,
+          "explanation": "A Microsoft comprou o sistema de terceiros e o rebatizou. O contrato de licenciamento, e não o programa em si, foi o que sustentou o negócio.",
+          "pitfall": "A palavra INCORRETA muda tudo. Aqui quatro alternativas estão certas, e a tarefa é achar a única errada."
+        }
+      ]
+    },
+    {
+      "slug": "o-hardware-que-o-so-comanda",
+      "title": "O hardware que o sistema operacional comanda",
+      "module": "Fundamentos",
+      "summary": "Barramento, processador, memória e controladores. Para repartir as peças, o sistema precisa saber como cada uma se comporta.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Quem rege precisa conhecer os instrumentos",
+          "body": [
+            "Um maestro não toca nenhum instrumento durante o concerto. Ainda assim sabe o que cada um consegue e o que não consegue.",
+            "É por isso que ele decide quem entra, quando e por quanto tempo.",
+            "O sistema operacional faz o mesmo com as peças do computador. Este é o passeio pelos instrumentos."
+          ],
+          "terms": [
+            {
+              "word": "Hardware",
+              "meaning": "as peças físicas do aparelho. São as que você pode tocar: tela, teclado, memória e disco."
+            },
+            {
+              "word": "Software",
+              "meaning": "os programas, que você não toca. São instruções guardadas no aparelho."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O barramento liga tudo",
+          "body": [
+            "As peças não conversam direto umas com as outras. Todas se ligam a uma via comum.",
+            "Essa via é o barramento. Por ela passam os dados, os endereços e os avisos de quem quer falar.",
+            "Quem está na via precisa esperar a vez. Duas peças falando ao mesmo tempo embaralham a conversa."
+          ],
+          "figure": {
+            "src": "/figuras/so/so-barramento.svg",
+            "alt": "Processador, memória e quatro controladores de dispositivo, todos pendurados numa mesma linha horizontal chamada barramento. Acima de cada controlador está o aparelho que ele comanda: monitor, teclado, impressora e disco.",
+            "caption": "Todas as peças penduradas na mesma via."
+          },
+          "terms": [
+            {
+              "word": "Barramento",
+              "meaning": "o conjunto de fios que liga as peças do computador. É a via por onde tudo passa."
+            },
+            {
+              "word": "Processador",
+              "meaning": "a peça que executa as instruções dos programas, uma de cada vez."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O processador só sabe fazer três coisas",
+          "body": [
+            "Por dentro, o processador repete um ciclo curtíssimo, bilhões de vezes por segundo.",
+            "Ele busca a próxima instrução na memória, descobre o que ela manda fazer e faz."
+          ],
+          "example": {
+            "label": "O ciclo, do começo ao fim",
+            "ordered": true,
+            "lines": [
+              "buscar: pega na memória a instrução da vez",
+              "decodificar: descobre qual operação é aquela",
+              "executar: faz a conta ou move o dado",
+              "e volta ao começo, para a instrução seguinte"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Três marcadores guiam o ciclo",
+          "body": [
+            "O processador tem gavetinhas internas, bem rápidas, chamadas registradores. Três delas mandam no ciclo.",
+            "Uma guarda o endereço da próxima instrução. Outra aponta onde termina a pilha de chamadas.",
+            "A terceira guarda o estado do processador, inclusive em que modo ele está rodando."
+          ],
+          "table": {
+            "label": "Os registradores que o sistema precisa salvar",
+            "headers": [
+              "Registrador",
+              "O que guarda"
+            ],
+            "rows": [
+              [
+                "Contador de programa",
+                "o endereço da próxima instrução"
+              ],
+              [
+                "Ponteiro de pilha",
+                "o topo da pilha de chamadas do programa"
+              ],
+              [
+                "Palavra de estado (PSW)",
+                "o modo atual e o resultado da última conta"
+              ]
+            ]
+          },
+          "terms": [
+            {
+              "word": "Registrador",
+              "meaning": "gaveta minúscula dentro do processador. Guarda pouquíssimo e é a memória mais rápida que existe."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Nem toda instrução é para todo mundo",
+          "body": [
+            "Algumas instruções mexem no computador inteiro. Desligar as interrupções é uma delas.",
+            "O processador separa essas instruções das outras e só as aceita num modo especial.",
+            "É esse detalhe do hardware que sustenta toda a proteção do sistema. Sem ele, qualquer programa desligaria o computador."
+          ],
+          "terms": [
+            {
+              "word": "Modo núcleo",
+              "meaning": "o modo em que o processador aceita qualquer instrução. Só o sistema operacional roda assim."
+            },
+            {
+              "word": "Modo usuário",
+              "meaning": "o modo dos programas comuns. Nele boa parte das instruções é recusada pelo próprio processador."
+            },
+            {
+              "word": "Instrução privilegiada",
+              "meaning": "instrução que o processador só executa em modo núcleo. Em modo usuário ela vira erro."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Não se espera uma instrução acabar",
+          "body": [
+            "Buscar, decodificar e executar são feitos por partes diferentes do processador.",
+            "Se cada parte esperasse a instrução inteira terminar, duas delas ficariam paradas o tempo todo.",
+            "Então elas trabalham em fila: enquanto uma executa a primeira instrução, outra já decodifica a segunda."
+          ],
+          "figure": {
+            "src": "/figuras/so/so-pipeline.svg",
+            "alt": "Uma grade de três ciclos de tempo. No primeiro ciclo só a busca trabalha; no segundo a busca pega a instrução dois enquanto a decodificação cuida da um; no terceiro as três partes estão ocupadas ao mesmo tempo.",
+            "caption": "Em três tempos a linha fica cheia, e sai uma instrução por ciclo."
+          },
+          "terms": [
+            {
+              "word": "Linha de montagem (pipeline)",
+              "meaning": "dividir o trabalho em etapas que rodam ao mesmo tempo, cada uma cuidando de uma instrução diferente."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Várias linhas de montagem lado a lado",
+          "body": [
+            "O passo seguinte foi repetir a linha inteira. O processador passou a ter várias em paralelo.",
+            "Instruções que não dependem umas das outras seguem por linhas diferentes e terminam juntas.",
+            "Para o sistema operacional isso cobra um preço. Salvar o estado de uma máquina assim é bem mais trabalhoso."
+          ],
+          "terms": [
+            {
+              "word": "Superescalar",
+              "meaning": "processador com mais de uma linha de montagem. Ele conclui várias instruções no mesmo ciclo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Cuidado: núcleo do chip não é o núcleo do sistema",
+          "body": [
+            "A mesma palavra faz dois trabalhos diferentes, e a confusão custa questão em prova.",
+            "Um chip multinúcleo traz vários processadores completos na mesma pastilha. Cada um executa o seu próprio fluxo.",
+            "Já o modo núcleo é sobre privilégio, não sobre quantidade. Ele existe igual num chip de um só núcleo."
+          ],
+          "terms": [
+            {
+              "word": "Núcleo do processador (core)",
+              "meaning": "um processador completo dentro da pastilha. Um chip de quatro deles executa quatro fluxos ao mesmo tempo."
+            },
+            {
+              "word": "Coerência de cache",
+              "meaning": "manter iguais as cópias de um mesmo dado guardadas perto de cada núcleo do chip. É trabalho do hardware."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Memória: quanto mais rápida, menos cabe",
+          "body": [
+            "Não existe memória que seja rápida, grande e barata ao mesmo tempo.",
+            "A saída foi montar uma escada. No topo, pouquíssimo espaço e resposta imediata; embaixo, muito espaço e resposta lenta.",
+            "O sistema operacional vive movendo dados entre os degraus dessa escada."
+          ],
+          "table": {
+            "label": "A escada da memória",
+            "headers": [
+              "Degrau",
+              "Tempo de acesso",
+              "Quanto cabe"
+            ],
+            "rows": [
+              [
+                "Registrador",
+                "1 nanossegundo",
+                "menos de 1 KB"
+              ],
+              [
+                "Memória de apoio",
+                "2 nanossegundos",
+                "alguns megabytes"
+              ],
+              [
+                "Memória principal",
+                "10 nanossegundos",
+                "gigabytes"
+              ],
+              [
+                "Disco giratório",
+                "10 milissegundos",
+                "terabytes"
+              ]
+            ]
+          },
+          "terms": [
+            {
+              "word": "Nanossegundo",
+              "meaning": "um bilionésimo de segundo. Um milissegundo, que aparece no disco, é um milhão de vezes maior."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A memória principal esquece tudo",
+          "body": [
+            "A memória principal perde o conteúdo assim que falta energia. Por isso ela é chamada de volátil.",
+            "É daí que vem a necessidade do disco, e o susto de perder o texto não salvo na queda de luz.",
+            "O sistema também usa essa memória para separar os programas. Um não pode ler o pedaço do outro."
+          ],
+          "terms": [
+            {
+              "word": "Volátil",
+              "meaning": "que se apaga ao desligar. A memória principal é volátil; o disco não é."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O disco é um milhão de vezes mais lento",
+          "body": [
+            "No disco giratório o dado não está à mão. Ele precisa ser alcançado fisicamente.",
+            "Primeiro o braço se move até o anel certo. Depois o prato gira até o pedaço desejado passar sob a cabeça.",
+            "Só então os dados são lidos. Esses três tempos somados explicam a distância enorme para a memória principal."
+          ],
+          "bullets": [
+            "Tempo de busca: mover o braço até o anel de gravação certo.",
+            "Espera do giro: aguardar o prato levar o dado até a cabeça de leitura.",
+            "Tempo de transferência: ler ou gravar o dado de fato."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Entre o sistema e a peça há dois intermediários",
+          "body": [
+            "O sistema operacional não fala com o teclado nem com o disco. Fala com um chip que vem junto de cada um.",
+            "Esse chip recebe ordens simples e cuida da parte elétrica sozinho.",
+            "Do lado do sistema, quem conhece as ordens de cada modelo é um programa à parte."
+          ],
+          "terms": [
+            {
+              "word": "Controlador",
+              "meaning": "chip que acompanha o aparelho e traduz ordens simples em movimento elétrico."
+            },
+            {
+              "word": "Driver",
+              "meaning": "programa do sistema que sabe conversar com um modelo de controlador. Cada peça diferente pede o seu."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A interrupção é a peça chamando de volta",
+          "body": [
+            "Quando o sistema manda o disco ler, ele não fica olhando. Vai cuidar de outra coisa.",
+            "Terminada a leitura, o controlador avisa. Esse aviso chega por um fio e força o processador a largar o que fazia."
+          ],
+          "example": {
+            "label": "O que acontece no aviso",
+            "ordered": true,
+            "lines": [
+              "o controlador avisa que terminou",
+              "o processador guarda onde estava",
+              "ele passa para o modo núcleo",
+              "o sistema atende quem chamou",
+              "o programa interrompido volta do ponto exato"
+            ]
+          },
+          "terms": [
+            {
+              "word": "Interrupção",
+              "meaning": "aviso elétrico de que um aparelho terminou o serviço. Ele desvia o processador na hora."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Hoje são vários barramentos, não um só",
+          "body": [
+            "Um único caminho para todas as peças virou gargalo faz tempo.",
+            "A máquina moderna tem vias separadas, cada uma com a velocidade que o aparelho dela pede."
+          ],
+          "table": {
+            "label": "As vias de uma máquina atual",
+            "headers": [
+              "Via",
+              "O que liga"
+            ],
+            "rows": [
+              [
+                "PCIe",
+                "placa de vídeo e discos rápidos"
+              ],
+              [
+                "SATA",
+                "discos giratórios e discos internos comuns"
+              ],
+              [
+                "USB",
+                "teclado, mouse e o que você espeta por fora"
+              ],
+              [
+                "DMI",
+                "o processador e o chip que cuida do resto"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca costuma cobrar o nome do registrador, a ordem do ciclo e a diferença entre controlador e driver.",
+            "Guarde os pares abaixo."
+          ],
+          "bullets": [
+            "\"Armazena o endereço da próxima instrução a ser executada\" → contador de programa.",
+            "\"Contém o modo de execução e os bits de estado da última operação\" → PSW.",
+            "\"Somente pode ser executada em modo supervisor\" → instrução privilegiada.",
+            "\"Sobreposição das fases de busca, decodificação e execução\" → pipeline.",
+            "\"Dispositivo avisa a CPU do término da operação\" → interrupção.",
+            "\"Software que conhece os registradores de um modelo de dispositivo\" → driver."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Quatro confusões aparecem sempre nessa parte."
+          ],
+          "bullets": [
+            "Núcleo do processador e modo núcleo são coisas diferentes. Um é quantidade de processadores; o outro é nível de privilégio.",
+            "Pipeline não é a mesma coisa que superescalar. Pipeline é uma linha dividida em etapas; superescalar são várias linhas.",
+            "Controlador é peça física e driver é programa. A prova troca os dois de propósito.",
+            "A interrupção parte do aparelho para o processador. Quem parte do programa para o sistema é a chamada de sistema."
+          ],
+          "terms": [
+            {
+              "word": "Chamada de sistema",
+              "meaning": "pedido que um programa faz ao sistema operacional para ele fazer algo privilegiado."
+            }
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Toda decisão do sistema operacional nasce de um limite do hardware."
+          ],
+          "bullets": [
+            "Barramento: a via comum. Quem quer falar espera a vez.",
+            "Processador: busca, decodifica e executa, em ciclo sem fim.",
+            "Contador de programa, ponteiro de pilha e PSW: o mínimo a salvar numa troca.",
+            "Instrução privilegiada: o que sustenta a proteção, e vem do hardware.",
+            "Escada da memória: do registrador ao disco, um milhão de vezes mais lento.",
+            "Interrupção: a peça avisando que terminou, para o processador não ficar esperando."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "O ciclo do processador",
+          "format": "order",
+          "statement": "Ponha na ordem as fases do ciclo de instrução do processador.",
+          "options": [
+            "buscar a instrução na memória",
+            "decodificar e descobrir qual operação é",
+            "executar a operação",
+            "avançar para a próxima instrução"
+          ],
+          "explanation": "O ciclo é sempre o mesmo e se repete bilhões de vezes por segundo. Só depois de executar é que o contador de programa aponta para a instrução seguinte.",
+          "pitfall": "Decodificar vem antes de executar. Sem saber qual é a operação, não há o que executar."
+        },
+        {
+          "topic": "Contador de programa",
+          "statement": "O que o contador de programa guarda?",
+          "options": [
+            "A quantidade de instruções já executadas pelo programa",
+            "O endereço da próxima instrução a ser executada",
+            "O resultado da última operação aritmética",
+            "O endereço do topo da pilha de chamadas",
+            "O tempo de processador já consumido pelo programa"
+          ],
+          "correct_index": 1,
+          "explanation": "O nome engana: ele não conta nada. Guarda o endereço de onde o processador vai buscar a instrução seguinte.",
+          "pitfall": "Quem guarda o topo da pilha é o ponteiro de pilha. Quem guarda o resultado da última conta é a palavra de estado."
+        },
+        {
+          "topic": "Instrução privilegiada",
+          "statement": "Por que existem instruções que só rodam em modo núcleo?",
+          "options": [
+            "Porque são lentas demais para programas comuns",
+            "Porque exigem mais memória do que o programa costuma ter",
+            "Porque afetam a máquina inteira e um programa qualquer não pode executá-las",
+            "Porque foram criadas depois dos programas de usuário",
+            "Porque só funcionam em processadores com vários núcleos"
+          ],
+          "correct_index": 2,
+          "explanation": "Desligar interrupções ou trocar a tabela de memória afeta todos os programas. O processador recusa essas instruções fora do modo núcleo.",
+          "pitfall": "Não é questão de velocidade nem de memória. É de privilégio, e quem faz valer é o próprio hardware."
+        },
+        {
+          "topic": "Pipeline e superescalar",
+          "statement": "Qual é a diferença entre um processador com pipeline e um superescalar?",
+          "options": [
+            "O pipeline divide uma linha em etapas simultâneas; o superescalar tem várias linhas em paralelo",
+            "O pipeline é mais moderno que o superescalar",
+            "O superescalar executa uma instrução por vez, com mais cuidado",
+            "O pipeline só funciona em chips com vários núcleos",
+            "São nomes diferentes para a mesma técnica"
+          ],
+          "correct_index": 0,
+          "explanation": "No pipeline as fases de instruções diferentes acontecem ao mesmo tempo. No superescalar há mais de uma linha dessas trabalhando junto.",
+          "pitfall": "Um não substitui o outro. Um processador superescalar tem pipeline em cada uma das suas linhas."
+        },
+        {
+          "topic": "A escada da memória",
+          "format": "match",
+          "statement": "Ligue cada degrau da memória ao tempo de acesso típico dele.",
+          "pairs": [
+            {
+              "left": "Registrador",
+              "right": "1 nanossegundo"
+            },
+            {
+              "left": "Memória de apoio",
+              "right": "2 nanossegundos"
+            },
+            {
+              "left": "Memória principal",
+              "right": "10 nanossegundos"
+            },
+            {
+              "left": "Disco giratório",
+              "right": "10 milissegundos"
+            }
+          ],
+          "explanation": "Do registrador ao disco o salto é de um milhão de vezes. Boa parte do trabalho do sistema existe para esconder essa diferença.",
+          "pitfall": "Repare na unidade: o disco está em milissegundos, e o resto em nanossegundos. Trocar a unidade troca o resultado por um milhão."
+        },
+        {
+          "topic": "Controlador e driver",
+          "statement": "Qual é a diferença entre controlador e driver?",
+          "options": [
+            "Controlador é o chip que acompanha a peça; driver é o programa que sabe comandá-lo",
+            "Controlador é programa e driver é peça física",
+            "São o mesmo componente, com nomes de fabricantes diferentes",
+            "Controlador roda em modo usuário e driver em modo núcleo",
+            "O driver existe só em sistemas do tipo UNIX"
+          ],
+          "correct_index": 0,
+          "explanation": "O controlador é hardware e vem junto do aparelho. O driver é software e faz parte do sistema operacional.",
+          "pitfall": "A troca entre os dois é a pegadinha mais comum aqui. Guarde pela palavra: driver é quem dirige, e quem dirige é programa."
+        },
+        {
+          "topic": "Interrupção",
+          "statement": "O que caracteriza uma interrupção?",
+          "options": [
+            "Um pedido do programa ao sistema operacional para abrir um arquivo",
+            "Um aviso do dispositivo ao processador de que a operação terminou",
+            "Uma pausa programada pelo escalonador a cada fatia de tempo",
+            "Um erro que encerra o programa em execução",
+            "Uma instrução privilegiada executada em modo usuário"
+          ],
+          "correct_index": 1,
+          "explanation": "A interrupção nasce no aparelho e desvia o processador do que ele fazia. Ela é o que permite não ficar olhando o disco trabalhar.",
+          "pitfall": "Pedido do programa para o sistema é chamada de sistema, que vai no sentido contrário. Em prova os dois aparecem juntos de propósito."
+        },
+        {
+          "topic": "Questão de banca",
+          "statement": "Assinale a alternativa INCORRETA sobre o hardware que o sistema operacional gerencia.",
+          "options": [
+            "A memória principal é volátil e perde o conteúdo ao faltar energia",
+            "O barramento é a via compartilhada por onde trafegam dados e endereços",
+            "Cada núcleo de um processador multinúcleo executa um fluxo de instruções próprio",
+            "O tempo de acesso ao disco giratório é da mesma ordem do acesso à memória principal",
+            "O ponteiro de pilha indica o topo da pilha de chamadas do programa"
+          ],
+          "correct_index": 3,
+          "explanation": "O disco giratório responde em milissegundos e a memória principal em nanossegundos. A diferença é de cerca de um milhão de vezes.",
+          "pitfall": "As outras quatro afirmações estão corretas. A palavra INCORRETA inverte o que a questão pede."
         }
       ]
     },
@@ -2041,6 +2989,26 @@
                 "SetCurrentDirectory"
               ],
               [
+                "Ver o tamanho e a data de um arquivo",
+                "stat",
+                "GetFileAttributesEx"
+              ],
+              [
+                "Dar um segundo nome ao mesmo arquivo",
+                "link",
+                "CreateHardLink"
+              ],
+              [
+                "Apagar um nome do arquivo",
+                "unlink",
+                "DeleteFile"
+              ],
+              [
+                "Mudar quem pode abrir o arquivo",
+                "chmod",
+                "SetFileSecurity"
+              ],
+              [
                 "Encerrar outro processo",
                 "kill",
                 "TerminateProcess"
@@ -2353,14 +3321,47 @@
           "body": [
             "Outro arranjo empilha o sistema em andares.",
             "Cada andar oferece serviços ao andar de cima e só enxerga o de baixo.",
-            "Fica organizado e fácil de testar em partes. Em troca, um pedido desce vários degraus antes de ser atendido."
+            "O primeiro sistema assim ficou pronto em 1968 e tinha seis andares. Do mais baixo ao mais alto, a responsabilidade cresce."
           ],
           "terms": [
             {
               "word": "Camada",
               "meaning": "um andar do sistema, que só conversa com o andar imediatamente abaixo dele."
             }
-          ]
+          ],
+          "table": {
+            "label": "Os seis andares do primeiro sistema em camadas",
+            "headers": [
+              "Andar",
+              "De que cuida"
+            ],
+            "rows": [
+              [
+                "5",
+                "os programas de quem usa a máquina"
+              ],
+              [
+                "4",
+                "a conversa com as peças de entrada e saída"
+              ],
+              [
+                "3",
+                "a conversa com quem opera a máquina"
+              ],
+              [
+                "2",
+                "a divisão da memória"
+              ],
+              [
+                "1",
+                "o rodízio de quem executa as instruções"
+              ],
+              [
+                "0",
+                "as peças, sem intermediário"
+              ]
+            ]
+          }
         },
         {
           "kind": "explain",
@@ -2388,7 +3389,8 @@
           "body": [
             "Durante anos esse arranjo foi tratado como lento demais para valer a pena.",
             "Hoje ele está em centrais de carro, em aviões e dentro de celulares.",
-            "Um deles, o seL4, teve o funcionamento provado matematicamente. Ele aparece justamente onde travar custa vidas."
+            "Um deles, o seL4, teve o funcionamento provado matematicamente. Ele aparece justamente onde travar custa vidas.",
+            "Outro, o MINIX 3, percebe quando um pedaço para de responder e o substitui sem reiniciar a máquina."
           ]
         },
         {
@@ -2620,6 +3622,376 @@
       ]
     },
     {
+      "slug": "tipos-de-sistema-operacional",
+      "title": "Tipos de sistema operacional",
+      "module": "Fundamentos",
+      "summary": "Do computador de banco ao marca-passo. O trabalho é o mesmo em todos, e o que muda é o que cada um precisa garantir.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O mesmo ofício, exigências diferentes",
+          "body": [
+            "Um cozinheiro de restaurante e um cozinheiro de hospital fazem a mesma coisa: comida.",
+            "Mas um precisa de pratos bonitos e o outro precisa acertar a dieta de cada paciente, sem falhar nunca.",
+            "Com sistema operacional é igual. O trabalho não muda; o que aperta em cada lugar, sim."
+          ],
+          "terms": [
+            {
+              "word": "Hardware",
+              "meaning": "as peças físicas do aparelho. São as que você pode tocar: tela, teclado, memória e disco."
+            },
+            {
+              "word": "Processador",
+              "meaning": "a peça que executa as instruções dos programas, uma de cada vez."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Computador de grande porte: volume acima de tudo",
+          "body": [
+            "Bancos e companhias aéreas ainda usam máquinas enormes, guardadas em salas refrigeradas.",
+            "O que se cobra delas não é velocidade num programa só. É atender milhares de pedidos por segundo sem cair.",
+            "Elas fazem três trabalhos ao mesmo tempo: rodar lotes, atender consultas e servir pessoas conectadas."
+          ],
+          "terms": [
+            {
+              "word": "Computador de grande porte (mainframe)",
+              "meaning": "máquina muito grande e cara, usada por uma empresa inteira. Vive numa sala com refrigeração e equipe própria."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Servidor: muita gente ao mesmo tempo",
+          "body": [
+            "O servidor é uma máquina cujo trabalho é responder a pedidos que chegam de fora.",
+            "Pode entregar páginas, guardar arquivos, cuidar de um banco de dados ou controlar a fila de impressão.",
+            "Aqui o aperto é aguentar muita gente junto e não parar. Linux e Windows Server dominam essa vaga."
+          ],
+          "terms": [
+            {
+              "word": "Servidor",
+              "meaning": "computador cujo trabalho é responder a pedidos de outras máquinas, sem ninguém sentado na frente dele."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Computador pessoal: a pessoa em primeiro lugar",
+          "body": [
+            "No seu computador ou no seu celular só existe uma pessoa que importa: você.",
+            "Por isso o sistema é feito para responder rápido ao toque e ser fácil de usar.",
+            "Ele também precisa aceitar de tudo: jogos, editores, programas de qualquer origem. Windows, macOS e Linux vivem aqui."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Celular: bateria e toque mandam no projeto",
+          "body": [
+            "O telefone tem as mesmas peças de um computador, só que menores e com energia contada.",
+            "Duas coisas mudam o projeto do sistema: a tela é tocada com o dedo, e a bateria acaba.",
+            "Por isso o sistema mata programas parados de fundo. No computador isso seria grosseria; aqui é sobrevivência."
+          ],
+          "table": {
+            "label": "Os dois do bolso",
+            "headers": [
+              "Sistema",
+              "Base",
+              "Modelo"
+            ],
+            "rows": [
+              [
+                "Android",
+                "Linux",
+                "aberto, em aparelhos de muitos fabricantes"
+              ],
+              [
+                "iOS",
+                "BSD e Mach",
+                "fechado, só em aparelhos de quem o escreveu"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Tempo real: o prazo é parte da resposta",
+          "body": [
+            "Num sistema comum, dar a resposta certa basta. Num sistema de tempo real, a resposta certa fora do prazo é resposta errada.",
+            "O airbag que infla meio segundo tarde demais não serve para nada.",
+            "Por isso esses sistemas trocam velocidade média por previsibilidade. Importa saber o pior caso, não o caso comum."
+          ],
+          "terms": [
+            {
+              "word": "Prazo (deadline)",
+              "meaning": "o instante limite para uma tarefa terminar. Depois dele o trabalho perde a serventia."
+            },
+            {
+              "word": "Previsibilidade",
+              "meaning": "garantir o tempo máximo de uma resposta, e não só a média. É o que o tempo real vende."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Tempo real rígido e tempo real flexível",
+          "body": [
+            "A diferença entre os dois é o que acontece quando o prazo estoura.",
+            "No rígido, estourar é inaceitável: alguém se machuca ou a máquina quebra.",
+            "No flexível, um atraso de vez em quando incomoda e passa. O vídeo trava um instante e a vida segue."
+          ],
+          "figure": {
+            "src": "/figuras/so/so-tempo-real.svg",
+            "alt": "Dois grupos lado a lado. À esquerda, o tempo real rígido, com controle de aeronave, marca-passo e airbag, e a frase de que perder o prazo é inaceitável. À direita, o tempo real flexível, com vídeo, chamada de voz e jogo em rede, onde um atraso ocasional é tolerado.",
+            "caption": "O que muda é o preço de estourar o prazo."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Embarcado: um só trabalho, para sempre",
+          "body": [
+            "A máquina de lavar, o roteador e a injeção do carro têm sistema operacional dentro.",
+            "Eles rodam um conjunto fixo de programas, escolhido na fábrica. Ninguém instala nada depois.",
+            "Como o programa é conhecido e confiável, muitos deles nem separam os modos do processador. Tudo roda com privilégio total."
+          ],
+          "bullets": [
+            "QNX: carros, painéis e centrais multimídia.",
+            "FreeRTOS: aparelhos pequenos, de sensor a brinquedo eletrônico.",
+            "Linux embarcado: roteadores, televisões e câmeras."
+          ],
+          "terms": [
+            {
+              "word": "Sistema embarcado",
+              "meaning": "computador escondido dentro de um aparelho que não parece computador. A lista de programas dele é fixa de fábrica."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Distribuído: muitas máquinas, uma cara só",
+          "body": [
+            "Aqui vários computadores ligados em rede se apresentam como se fossem um.",
+            "Quem usa não escolhe em qual máquina o programa roda, nem em qual disco o arquivo ficou.",
+            "O preço é alto: a rede atrasa e às vezes mente. Decidir com informação velha é o problema central desses sistemas."
+          ],
+          "terms": [
+            {
+              "word": "Rede",
+              "meaning": "ligação entre computadores que permite a eles trocar dados. Pode ser um cabo na sala ou o mundo inteiro."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que não muda em nenhum deles",
+          "body": [
+            "Por mais diferentes que pareçam, todos fazem as mesmas três coisas.",
+            "Escondem a complexidade das peças, repartem o que existe entre os programas e impedem que um atrapalhe o outro.",
+            "Muda o peso de cada uma. No marca-passo pesa a garantia de prazo; no servidor, a repartição justa."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca descreve a exigência e pede o tipo. Quase sempre a palavra-chave está no enunciado.",
+            "Guarde os pares abaixo."
+          ],
+          "bullets": [
+            "\"Garantia de resposta dentro de prazos rígidos, sob pena de falha catastrófica\" → tempo real rígido.",
+            "\"Tolera atrasos ocasionais sem comprometer o funcionamento\" → tempo real flexível.",
+            "\"Executado em dispositivo com recursos limitados e conjunto fixo de aplicações\" → embarcado.",
+            "\"Conjunto de máquinas em rede que se apresenta ao usuário como um sistema único\" → distribuído.",
+            "\"Elevada capacidade de entrada e saída e processamento em lote de grandes volumes\" → grande porte.",
+            "\"Atendimento simultâneo a múltiplos clientes remotos\" → servidor."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Quatro trocas aparecem sempre."
+          ],
+          "bullets": [
+            "Tempo real não quer dizer rápido. Quer dizer pontual, com prazo máximo garantido.",
+            "Um sistema distribuído não é o mesmo que uma rede de computadores. Na rede você sabe em qual máquina está; no distribuído, não.",
+            "Android não é um tipo à parte de sistema. É um sistema de celular construído sobre o Linux.",
+            "Sistema embarcado não é sistema pequeno por acaso. Ele é pequeno porque a lista de programas dele é fechada."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Todos escondem peças, repartem e protegem. O que muda é qual dessas três aperta mais."
+          ],
+          "table": {
+            "label": "Cada tipo e o que ele garante",
+            "headers": [
+              "Tipo",
+              "O que aperta"
+            ],
+            "rows": [
+              [
+                "Grande porte",
+                "volume de entrada e saída, sem cair"
+              ],
+              [
+                "Servidor",
+                "muita gente ao mesmo tempo"
+              ],
+              [
+                "Computador pessoal",
+                "resposta rápida e facilidade de uso"
+              ],
+              [
+                "Celular",
+                "bateria e toque na tela"
+              ],
+              [
+                "Tempo real",
+                "cumprir o prazo, sempre"
+              ],
+              [
+                "Embarcado",
+                "caber em pouca memória e nunca travar"
+              ],
+              [
+                "Distribuído",
+                "parecer uma máquina só"
+              ]
+            ]
+          }
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Tempo real",
+          "statement": "O que define um sistema operacional de tempo real?",
+          "options": [
+            "Executar programas mais rápido que os sistemas comuns",
+            "Garantir que tarefas críticas terminem dentro de prazos determinados",
+            "Atender vários usuários interativos ao mesmo tempo",
+            "Funcionar sem precisar de disco rígido",
+            "Rodar apenas em processadores com vários núcleos"
+          ],
+          "correct_index": 1,
+          "explanation": "Tempo real é sobre pontualidade, não sobre velocidade média. O que se garante é o pior caso, e não o caso comum.",
+          "pitfall": "Confundir tempo real com desempenho é o erro mais frequente aqui. Um sistema de tempo real pode ser lento, desde que seja pontual."
+        },
+        {
+          "topic": "Rígido e flexível",
+          "format": "match",
+          "statement": "Ligue cada exemplo ao tipo de tempo real que ele exige.",
+          "pairs": [
+            {
+              "left": "Marca-passo",
+              "right": "Tempo real rígido"
+            },
+            {
+              "left": "Airbag de automóvel",
+              "right": "Perder o prazo custa vidas"
+            },
+            {
+              "left": "Streaming de vídeo",
+              "right": "Tempo real flexível"
+            },
+            {
+              "left": "Jogo em rede",
+              "right": "Atraso ocasional é tolerado"
+            }
+          ],
+          "explanation": "No rígido o prazo perdido é falha grave. No flexível o atraso incomoda e o sistema continua útil.",
+          "pitfall": "O critério não é a importância do aparelho. É o que acontece quando o prazo estoura."
+        },
+        {
+          "topic": "Embarcado",
+          "statement": "Por que muitos sistemas embarcados dispensam a separação entre modo núcleo e modo usuário?",
+          "options": [
+            "Porque seus processadores não oferecem essa separação em hardware",
+            "Porque todos os programas são conhecidos e escolhidos na fábrica",
+            "Porque não possuem memória suficiente para executar programas",
+            "Porque não realizam operações de entrada e saída",
+            "Porque a separação foi abandonada nos sistemas modernos"
+          ],
+          "correct_index": 1,
+          "explanation": "A separação existe para proteger o sistema de programas desconhecidos. Se nada de fora é instalado, o risco que ela evita não existe.",
+          "pitfall": "Não é falta de capacidade do processador. É uma escolha de projeto, feita porque a lista de programas é fechada."
+        },
+        {
+          "topic": "Distribuído",
+          "statement": "O que caracteriza um sistema operacional distribuído?",
+          "options": [
+            "Vários programas rodando ao mesmo tempo numa única máquina",
+            "Um conjunto de máquinas em rede que se apresenta como um sistema único",
+            "Um sistema instalado em vários computadores da mesma empresa",
+            "Um servidor que atende clientes espalhados pela internet",
+            "Um sistema que distribui atualizações automaticamente"
+          ],
+          "correct_index": 1,
+          "explanation": "O ponto é a transparência: quem usa não sabe, e não precisa saber, em qual máquina o trabalho está rodando.",
+          "pitfall": "Instalar o mesmo sistema em dez computadores não cria um sistema distribuído. Numa rede comum você sempre sabe em qual máquina está."
+        },
+        {
+          "topic": "Grande porte",
+          "statement": "Qual característica é mais valorizada num sistema para computador de grande porte?",
+          "options": [
+            "Interface gráfica agradável e fácil de aprender",
+            "Consumo mínimo de bateria",
+            "Alta capacidade de entrada e saída, com muitos trabalhos em paralelo",
+            "Garantia de resposta dentro de prazos rígidos",
+            "Tamanho reduzido para caber em pouca memória"
+          ],
+          "correct_index": 2,
+          "explanation": "Essas máquinas existem para mover volumes enormes de dados. Bancos e companhias aéreas medem a utilidade delas em pedidos por segundo.",
+          "pitfall": "Prazo rígido é tempo real, e memória apertada é embarcado. Cada tipo tem a sua exigência típica, e a prova mistura as três."
+        },
+        {
+          "topic": "Celular",
+          "statement": "Por que um sistema de celular encerra programas que ficaram parados em segundo plano?",
+          "options": [
+            "Porque o processador do celular não executa mais de um programa",
+            "Porque a memória e a bateria são limitadas e precisam ser preservadas",
+            "Porque programas em segundo plano são considerados inseguros",
+            "Porque o sistema não sabe restaurar um programa depois",
+            "Porque a tela sensível ao toque não permite trocar de programa"
+          ],
+          "correct_index": 1,
+          "explanation": "No celular a energia é contada e a memória é pequena. Encerrar o que ninguém está olhando é o preço de manter rápido o que está na tela.",
+          "pitfall": "No computador esse comportamento seria um defeito. No celular é projeto, e vem da restrição de energia."
+        },
+        {
+          "topic": "O que todos fazem",
+          "statement": "O que os sistemas operacionais de todos esses tipos têm em comum?",
+          "options": [
+            "Todos oferecem interface gráfica ao usuário final",
+            "Todos separam modo núcleo e modo usuário",
+            "Todos escondem a complexidade das peças, repartem o que existe e protegem um programa do outro",
+            "Todos executam vários programas ao mesmo tempo",
+            "Todos precisam de disco para funcionar"
+          ],
+          "correct_index": 2,
+          "explanation": "As três tarefas são o próprio ofício do sistema operacional. O que muda de um tipo para outro é apenas o peso de cada uma.",
+          "pitfall": "Interface gráfica e disco não são obrigatórios. Um sistema embarcado pode não ter nenhum dos dois, e continua sendo sistema operacional."
+        },
+        {
+          "topic": "Questão de banca",
+          "statement": "Assinale a alternativa INCORRETA sobre os tipos de sistema operacional.",
+          "options": [
+            "Sistemas de tempo real flexível toleram atrasos ocasionais",
+            "Sistemas embarcados executam um conjunto fixo de aplicações",
+            "Sistemas distribuídos escondem do usuário a localização dos programas e arquivos",
+            "Sistemas de tempo real são, por definição, mais rápidos que os de uso geral",
+            "Sistemas para grande porte privilegiam a capacidade de entrada e saída"
+          ],
+          "correct_index": 3,
+          "explanation": "Tempo real garante prazo, não velocidade. Um sistema de uso geral pode ter média melhor e ainda assim falhar no pior caso.",
+          "pitfall": "As outras quatro estão corretas. Leia a palavra INCORRETA antes de escolher, porque ela inverte o pedido."
+        }
+      ]
+    },
+    {
       "slug": "processos-o-modelo",
       "title": "Processos: como um programa vira coisa viva",
       "module": "Processos",
@@ -2735,6 +4107,34 @@
             ],
             "mono": true
           }
+        },
+        {
+          "kind": "explain",
+          "title": "O que ocupa a memória de um processo",
+          "body": [
+            "A memória de um processo não é um bloco liso. Ela vem dividida em três pedaços com papéis diferentes.",
+            "Embaixo fica o código, que não muda durante a execução. Acima dele ficam os valores que valem para o programa inteiro.",
+            "No alto fica a pilha, com os valores de cada chamada. Ela cresce para baixo, e o pedaço do meio cresce para cima."
+          ],
+          "figure": {
+            "src": "/figuras/so/so-segmentos-processo.svg",
+            "alt": "A memória de um processo desenhada como uma coluna. Embaixo fica o texto, com o código do programa; acima dele os dados, que crescem para cima; no topo a pilha, que cresce para baixo; e no meio a lacuna vazia que os dois disputam.",
+            "caption": "Dois pedaços crescem um contra o outro, e a lacuna some no meio."
+          },
+          "terms": [
+            {
+              "word": "Segmento de texto",
+              "meaning": "o pedaço que guarda o código do programa. É só de leitura, e dois processos do mesmo programa podem dividi-lo."
+            },
+            {
+              "word": "Segmento de dados",
+              "meaning": "o pedaço dos valores que existem do começo ao fim do programa. Ele cresce para cima quando o programa pede mais espaço."
+            },
+            {
+              "word": "Pilha",
+              "meaning": "o pedaço onde cada chamada guarda os valores dela e o endereço de volta. Cresce para baixo, do fim da memória em direção ao meio."
+            }
+          ]
         },
         {
           "kind": "explain",
@@ -5789,6 +7189,30 @@
         },
         {
           "kind": "explain",
+          "title": "O cano que liga a saída de um à entrada do outro",
+          "body": [
+            "Na mesma máquina existe um jeito bem mais simples de dois processos conversarem.",
+            "O sistema cria um cano entre eles. O que o primeiro escreve, o segundo lê, na mesma ordem.",
+            "A graça é que nenhum dos dois precisa saber disso. Eles só escrevem e leem como fariam com um arquivo comum."
+          ],
+          "example": {
+            "label": "Dois programas ligados por um cano",
+            "ordered": true,
+            "lines": [
+              "o programa da esquerda escreve a lista de arquivos",
+              "o cano leva o que saiu, sem passar por disco",
+              "o programa da direita lê e filtra só o que interessa"
+            ]
+          },
+          "terms": [
+            {
+              "word": "Cano (pipe)",
+              "meaning": "canal de mão única entre dois processos da mesma máquina. Um escreve de um lado e o outro lê do outro."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
           "title": "Os problemas que a rede traz",
           "body": [
             "Mandar recado por rede tem riscos que a memória comum não tem."
@@ -8087,6 +9511,30 @@
               ]
             ]
           }
+        },
+        {
+          "kind": "explain",
+          "title": "Encaixar outro disco na mesma árvore",
+          "body": [
+            "Você espeta um pendrive. Ele traz a própria árvore de pastas, separada da sua.",
+            "No Windows essa árvore ganha uma letra e vive à parte. Em sistemas do tipo Unix a saída é outra.",
+            "A árvore do pendrive é pendurada dentro de uma pasta da árvore principal. Dali em diante tudo se alcança pelo mesmo caminho."
+          ],
+          "figure": {
+            "src": "/figuras/so/so-montagem.svg",
+            "alt": "Antes da montagem há duas árvores separadas: a do disco principal e a do pendrive. Depois da montagem a árvore do pendrive aparece pendurada numa pasta da árvore principal, e tudo é alcançado por um caminho só.",
+            "caption": "Montado, o pendrive vira uma pasta como qualquer outra."
+          },
+          "terms": [
+            {
+              "word": "Montar",
+              "meaning": "pendurar a árvore de outro disco dentro de uma pasta da árvore principal, para alcançar tudo pelo mesmo caminho."
+            },
+            {
+              "word": "Ponto de montagem",
+              "meaning": "a pasta escolhida para receber a árvore do outro disco. O que estava nela some de vista enquanto durar a montagem."
+            }
+          ]
         },
         {
           "kind": "explain",
@@ -10497,6 +11945,15 @@
               "word": "O programa que finge (hipervisor)",
               "meaning": "o programa que divide uma máquina de verdade entre vários sistemas, e engana cada um deles."
             }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A ideia tem mais de cinquenta anos",
+          "body": [
+            "Isso não nasceu na nuvem. Em 1972 um sistema da IBM, o VM/370, já fazia exatamente isso.",
+            "Ele dava a cada pessoa uma cópia completa da máquina. Dentro da cópia rodava um sistema pequeno, de um usuário só.",
+            "Quando esse sistema pequeno pedia algo à máquina, quem atendia era o VM/370. Era o mesmo truque que se usa hoje."
           ]
         },
         {

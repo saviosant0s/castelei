@@ -15,7 +15,7 @@ Regras do conteúdo no app:
 
 | Aula | Tópico do plano | Base de estudo (interna) | Lições no Castelei | Situação |
 |---|---|---|---|---|
-| 15/09 | Plano de aula e introdução | §1.1 | O que é um sistema operacional? | **Pronta** |
+| 15/09 | Plano de aula e introdução (visão geral, história, hardware e tipos de SO) | §1.1 a §1.4 | O que é um sistema operacional?; De onde vieram os sistemas operacionais; O hardware que o sistema operacional comanda; Tipos de sistema operacional | **Prontas** |
 | 22/09 | Componentes e funções: processos, memória, arquivos, E/S, proteção, chamadas de sistema | §1.5 e §1.6 | Componentes e funções de um SO; O terminal na prática (Windows e Linux); Chamadas de sistema: como funcionam; Chamadas de sistema: arquivos e processos | **Prontas** |
 | 29/09 | Estrutura e arquitetura de um SO | §1.7 (p. 43 a 51) | Estrutura de um SO: como ele é montado por dentro | **Pronta** |
 | 06/10 | Processos e threads, parte 1 | §2.1 (p. 59 a 67) | Processos: como um programa vira coisa viva; Estados de um processo | **Prontas** |
@@ -32,8 +32,36 @@ Regras do conteúdo no app:
 
 1. ~~**Escalonamento**~~ **Resolvido pela ementa:** é tópico próprio, logo depois de Estados e Transições, e já tem lição publicada.
 2. ~~**Estudos de caso**~~ **Resolvido:** são os trabalhos 01 e 02 (16/02 e 23/02). Viraram 2 lições prontas, Linux/Android e Windows.
-3. **Introdução:** história (§1.2) e revisão de hardware (§1.3) ficaram de fora, pois o plano só cita "introdução". Dá para acrescentar.
+3. ~~**Introdução:** história e revisão de hardware ficaram de fora~~ **Resolvido pelo slide da aula 01:** o professor deu as duas na primeira aula, junto com os tipos de sistema. Viraram três lições novas, todas no módulo Fundamentos — `historia-dos-sistemas-operacionais`, `o-hardware-que-o-so-comanda` e `tipos-de-sistema-operacional`.
 
 ## Fora do plano (não incluído)
 
 Impasses (cap. 6), sistemas com múltiplos processadores (cap. 8) e segurança (cap. 9) não aparecem na ementa nem no cronograma.
+
+## O slide de cada aula é a fonte da vez
+
+A ementa e o cronograma dizem **o que** entra. O slide que o professor apresenta diz
+**com que profundidade** ele vai cobrar, e às vezes contradiz o recorte anterior — foi o
+que aconteceu na aula 01, que trouxe história e hardware depois de os dois terem sido
+descartados aqui.
+
+O trabalho, a cada aula, é o mesmo:
+
+1. comparar o slide com a lição correspondente e anotar o que falta;
+2. acrescentar o que falta **e aprofundar** o que o slide explica mal, que costuma ser a maior parte;
+3. rodar `node scripts/lint-content.mjs` e conferir a tela.
+
+Profundidade não é complicação: é dizer por que a coisa é assim e mostrar o mecanismo.
+Se a etapa ficou mais difícil de ler, foi para o lado errado.
+
+### O que a aula 01 acrescentou às lições já prontas
+
+| Lição | O que entrou |
+|---|---|
+| O que é um sistema operacional? | multiplexação no tempo e no espaço; o tamanho de um sistema, em milhões de linhas |
+| Processos: como um programa vira coisa viva | os três segmentos de memória de um processo (texto, dados e pilha) |
+| Estrutura de um SO | os seis andares do primeiro sistema em camadas; o micronúcleo que troca peça sem reiniciar |
+| Chamadas de sistema: arquivos e processos | `stat`, `link`, `unlink` e `chmod`, com o equivalente no Windows |
+| Arquivos e diretórios | montagem e ponto de montagem |
+| Monitores e mensagens | o cano (pipe) entre dois processos da mesma máquina |
+| Virtualização | o VM/370, de 1972, como origem direta do que a nuvem faz hoje |

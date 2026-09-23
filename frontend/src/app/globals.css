@@ -49,6 +49,7 @@
   --color-surface-raised: #ffffff;   /* cartão que sobe da página */
   --color-surface-sunken: #eef1f5;   /* cavidade: campo, selo, degrau */
   --color-surface-bold: #1c1c2e;     /* bloco de destaque */
+  --color-sheet: #ffffff;            /* a folha em que as figuras são desenhadas */
   --color-on-bold: #f8f9fa;          /* texto sobre o bloco de destaque */
 
   /*
@@ -101,6 +102,11 @@
 |   se destacar por ELEVAÇÃO: fica mais claro que a página.
 | - `on-bold`, o texto em cima desse bloco, que precisa ficar claro nos dois
 |   modos. Antes era `text-paper`, e teria virado escuro sobre escuro.
+| - `sheet`, a folha das figuras. As figuras são desenhadas a tinta escura
+|   sobre papel, e só a parte com preenchimento claro sobrevivia no escuro:
+|   traço de caixa e texto solto sumiam, sem quebrar nada e sem aviso. A
+|   folha fica branca nos dois modos, como uma página impressa colada na
+|   tela. Medido olhando a lição de hardware no escuro, não deduzido.
 |
 | Dois seletores, de propósito: o de mídia atende quem deixou no automático
 | (a maioria), e o de atributo atende quem escolheu à mão no Perfil. O
