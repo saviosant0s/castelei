@@ -3,7 +3,13 @@
 namespace App\Support\Practice;
 
 /**
- * A ordem em que os passos de uma questão de ordenar aparecem na tela.
+ * A ordem em que os passos de uma questão de ordenar aparecem na tela — e,
+ * pela mesma conta, as alternativas da múltipla escolha e a coluna da
+ * direita da questão de associar.
+ *
+ * Na múltipla escolha o motivo é outro: quem escreve costuma pôr a certa
+ * primeiro, e sem embaralhar a letra A acertava sozinha a maior parte das
+ * questões. A API recebe a posição tocada NA TELA e grava a do conteúdo.
  *
  * DOIS PROBLEMAS, UMA SOLUÇÃO. O primeiro: o gabarito de uma questão de
  * ordenar é a própria lista de passos, na ordem certa. Mandá-la ao navegador

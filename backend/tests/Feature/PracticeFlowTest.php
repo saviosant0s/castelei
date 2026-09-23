@@ -30,7 +30,7 @@ class PracticeFlowTest extends TestCase
 
             $this->postJson("/api/attempts/{$attemptId}/answers", [
                 'question_id' => $question['id'],
-                'selected' => $selected,
+                'selected' => $this->naTela($attemptId, $question['id'], $selected),
                 'seconds' => $seconds,
             ])->assertOk();
         }
@@ -60,6 +60,60 @@ class PracticeFlowTest extends TestCase
             ->assertJsonPath('limited_by_plan', false);
     }
 
+    public function test_alternativas_chegam_embaralhadas_e_sem_perder_nenhuma(): void
+    {
+        $lesson = $this->makeLesson(8);
+        $start = $this->start(User::factory()->create(), $lesson);
+
+        foreach ($start->json('questions') as $question) {
+            $original = \App\Models\Question::find($question['id'])->options;
+
+            $this->assertNotSame($original, $question['options'], 'a ordem escrita entregaria a letra A de graça');
+            $this->assertEqualsCanonicalizing($original, $question['options']);
+        }
+    }
+
+    public function test_a_certa_nao_mora_sempre_na_mesma_letra(): void
+    {
+        /*
+        | O motivo de embaralhar. Nas matérias antigas a certa era a primeira
+        | em quase todas as questões. Aqui o conteúdo põe a certa sempre na
+        | posição 0, e a tela tem que espalhar essa posição.
+        */
+        $lesson = $this->makeLesson(8);
+        $lesson->questions()->update(['correct_index' => 0]);
+        $user = User::factory()->create();
+
+        $posicoes = [];
+        for ($n = 0; $n < 6; $n++) {
+            $start = $this->start($user, $lesson);
+            foreach ($start->json('questions') as $question) {
+                $posicoes[] = $this->naTela($start->json('attempt.id'), $question['id'], 0);
+            }
+        }
+
+        $this->assertGreaterThanOrEqual(4, count(array_unique($posicoes)));
+    }
+
+    public function test_a_resposta_gravada_e_a_alternativa_do_conteudo(): void
+    {
+        $lesson = $this->makeLesson(8);
+        $start = $this->start(User::factory()->create(), $lesson);
+        $attemptId = $start->json('attempt.id');
+        $question = $start->json('questions.0');
+        $tocada = $this->naTela($attemptId, $question['id'], 3);
+
+        // A pessoa tocou na alternativa que, na tela, mostra o texto "D".
+        $this->assertSame('D', $question['options'][$tocada]);
+
+        $this->postJson("/api/attempts/{$attemptId}/answers", [
+            'question_id' => $question['id'], 'selected' => $tocada, 'seconds' => 5,
+        ])->assertOk();
+
+        // Guarda o índice do conteúdo: a resposta continua certa se a tela mudar.
+        $this->assertSame(3, \App\Models\Answer::where('question_id', $question['id'])->value('selected_index'));
+    }
+
     public function test_licao_sem_questoes_devolve_422(): void
     {
         $lesson = $this->makeLesson(0);
@@ -72,12 +126,14 @@ class PracticeFlowTest extends TestCase
         $lesson = $this->makeLesson(8);
         $start = $this->start(User::factory()->create(), $lesson);
         $question = $start->json('questions.0'); // posição 1 → gabarito 1
+        $attemptId = $start->json('attempt.id');
 
-        $this->postJson('/api/attempts/'.$start->json('attempt.id').'/answers', [
-            'question_id' => $question['id'], 'selected' => 1, 'seconds' => 12,
+        $this->postJson("/api/attempts/{$attemptId}/answers", [
+            'question_id' => $question['id'], 'selected' => $this->naTela($attemptId, $question['id'], 1), 'seconds' => 12,
         ])->assertOk()
             ->assertJsonPath('is_correct', true)
-            ->assertJsonPath('correct_index', 1)
+            // O gabarito volta na posição da tela, que é a que o app destaca.
+            ->assertJsonPath('correct_index', $this->naTela($attemptId, $question['id'], 1))
             ->assertJsonPath('explanation', 'Explicação 1')
             ->assertJsonPath('pitfall', 'Pegadinha 1');
     }
@@ -88,13 +144,16 @@ class PracticeFlowTest extends TestCase
         $start = $this->start(User::factory()->create(), $lesson);
         $attemptId = $start->json('attempt.id');
 
-        $this->postJson("/api/attempts/{$attemptId}/answers", [
-            'question_id' => $start->json('questions.0.id'), 'selected' => 0, 'seconds' => 5,
-        ])->assertOk()->assertJsonPath('is_correct', false)->assertJsonPath('correct_index', 1);
+        $q1 = $start->json('questions.0.id');
+        $q2 = $start->json('questions.1.id');
 
         $this->postJson("/api/attempts/{$attemptId}/answers", [
-            'question_id' => $start->json('questions.1.id'), 'selected' => null, 'seconds' => 5,
-        ])->assertOk()->assertJsonPath('is_correct', false)->assertJsonPath('correct_index', 2);
+            'question_id' => $q1, 'selected' => $this->naTela($attemptId, $q1, 0), 'seconds' => 5,
+        ])->assertOk()->assertJsonPath('is_correct', false)->assertJsonPath('correct_index', $this->naTela($attemptId, $q1, 1));
+
+        $this->postJson("/api/attempts/{$attemptId}/answers", [
+            'question_id' => $q2, 'selected' => null, 'seconds' => 5,
+        ])->assertOk()->assertJsonPath('is_correct', false)->assertJsonPath('correct_index', $this->naTela($attemptId, $q2, 2));
     }
 
     public function test_nao_da_para_responder_questao_alem_do_limite_do_plano(): void
@@ -162,7 +221,7 @@ class PracticeFlowTest extends TestCase
         ];
         foreach ($answers as [$index, $selected, $seconds]) {
             $this->postJson("/api/attempts/{$attemptId}/answers", [
-                'question_id' => $questions[$index]['id'], 'selected' => $selected, 'seconds' => $seconds,
+                'question_id' => $questions[$index]['id'], 'selected' => $this->naTela($attemptId, $questions[$index]['id'], $selected), 'seconds' => $seconds,
             ])->assertOk();
         }
 

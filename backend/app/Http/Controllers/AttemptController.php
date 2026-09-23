@@ -79,7 +79,15 @@ class AttemptController extends Controller
             $options = array_map(fn (int $original) => $direita[$original], $mostrados);
         }
 
-        if ($question->format === Question::FORMAT_ORDER) {
+        /*
+        | A de ordenar e a de múltipla escolha vão embaralhadas, pela mesma
+        | conta. Na de ordenar, a ordem escrita É o gabarito. Na de múltipla
+        | escolha, quem escreve costuma pôr a certa primeiro: em Sistemas
+        | Operacionais ela era a A em 200 de 256 questões, e dava para acertar
+        | sem saber. Embaralhar aqui corrige todas as matérias de uma vez,
+        | inclusive as escritas no painel, sem tocar no conteúdo.
+        */
+        if ($question->format === Question::FORMAT_ORDER || $question->format === Question::FORMAT_CHOICE) {
             $mostrados = StepShuffle::display($attemptId, $question->id, count($options));
             $options = array_map(fn (int $original) => $options[$original], $mostrados);
         }
@@ -139,6 +147,16 @@ class AttemptController extends Controller
             ? array_map('intval', array_values($data['ordering']))
             : null;
 
+        /*
+        | A alternativa chega como posição NA TELA, que foi embaralhada.
+        | Guardamos e conferimos a posição ORIGINAL, a do conteúdo — assim a
+        | resposta gravada continua valendo se a ordem na tela mudar.
+        */
+        $mostradas = $sequencia ? [] : StepShuffle::display($attempt->id, $question->id, count($question->options));
+        if ($selected !== null) {
+            $selected = $mostradas[$selected];
+        }
+
         $isCorrect = $sequencia
             ? $ordering !== null && StepShuffle::isCorrect($ordering, $attempt->id, $question->id, $total)
             : $selected !== null && $selected === $question->correct_index;
@@ -167,7 +185,8 @@ class AttemptController extends Controller
 
         return response()->json([
             'is_correct' => $isCorrect,
-            'correct_index' => $question->correct_index,
+            // A posição da certa NA TELA, que é a que o app sabe destacar.
+            'correct_index' => $sequencia ? $question->correct_index : array_search($question->correct_index, $mostradas, true),
             /*
             | Na questão de ordenar, o gabarito é a sequência certa, escrita
             | por extenso. Mostrar "o índice 2 vinha antes do 0" não ensina

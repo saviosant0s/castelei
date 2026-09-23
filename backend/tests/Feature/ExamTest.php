@@ -131,7 +131,7 @@ class ExamTest extends TestCase
             $model = Question::find($question['id']);
             $this->postJson("/api/attempts/{$attemptId}/answers", [
                 'question_id' => $question['id'],
-                'selected' => $model->correct_index,
+                'selected' => $this->naTela($attemptId, $model->id, $model->correct_index),
                 'seconds' => 15,
             ])->assertOk();
         }
@@ -263,7 +263,7 @@ class ExamTest extends TestCase
             $model = Question::find($question['id']);
             $this->postJson("/api/attempts/{$attemptId}/answers", [
                 'question_id' => $question['id'],
-                'selected' => $model->correct_index,
+                'selected' => $this->naTela($attemptId, $model->id, $model->correct_index),
                 'seconds' => $seconds,
             ])->assertOk();
         }

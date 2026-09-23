@@ -36,7 +36,7 @@ class GamificationTest extends TestCase
             $model = Question::find($question['id']);
             $this->postJson("/api/attempts/{$attemptId}/answers", [
                 'question_id' => $question['id'],
-                'selected' => $correct ? $model->correct_index : ($model->correct_index + 1) % 5,
+                'selected' => $this->naTela($attemptId, $model->id, $correct ? $model->correct_index : ($model->correct_index + 1) % 5),
                 'seconds' => $seconds,
             ])->assertOk();
         }
@@ -57,9 +57,11 @@ class GamificationTest extends TestCase
         $id = $start->json('attempt.id');
 
         // questão 1 tem gabarito 1; questão 2 tem gabarito 2
-        $this->postJson("/api/attempts/{$id}/answers", ['question_id' => $start->json('questions.0.id'), 'selected' => 1, 'seconds' => 5])
+        $q1 = $start->json('questions.0.id');
+        $q2 = $start->json('questions.1.id');
+        $this->postJson("/api/attempts/{$id}/answers", ['question_id' => $q1, 'selected' => $this->naTela($id, $q1, 1), 'seconds' => 5])
             ->assertJsonPath('xp', 20);
-        $this->postJson("/api/attempts/{$id}/answers", ['question_id' => $start->json('questions.1.id'), 'selected' => 0, 'seconds' => 5])
+        $this->postJson("/api/attempts/{$id}/answers", ['question_id' => $q2, 'selected' => $this->naTela($id, $q2, 0), 'seconds' => 5])
             ->assertJsonPath('xp', 0);
     }
 
