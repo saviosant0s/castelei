@@ -80,6 +80,9 @@ Publicar matéria sem mexer em código nem esperar deploy. O guia completo está
 4. **Informação atualizada:** se algo da fonte estiver defasado, corrija com conhecimento atual (confira na internet).
 5. Guia Editorial: analogia antes de definição, concreto antes de abstrato, nunca use um termo sem explicá-lo antes (na própria lição), sem "como vimos anteriormente", frases curtas (mais de 2 vírgulas, quebre), jargão de banca só na etapa "Como cai na prova".
 6. Toda figura precisa de `alt` descritivo e legenda. Figuras são **originais** (não copie figuras de livros).
+7. **O slide da aula é base, não teto.** A cada aula o Sávio manda o slide do professor. O trabalho é comparar com a lição correspondente, acrescentar o que faltar e **aprofundar** — inclusive o que o slide explica mal, que é a maior parte do valor. Duas balizas:
+   - **Profundidade não é complicação.** Aprofundar é dizer por que a coisa é assim, mostrar o mecanismo e dar o exemplo concreto; não é encher de termo novo nem escrever mais denso. Se a etapa ficou mais difícil de ler, foi para o lado errado.
+   - **O slide não manda no recorte.** Ele diz o que o professor vai cobrar, e isso entra. Mas a ordem, a analogia e a divisão em etapas continuam sendo as do Guia Editorial — não copie a estrutura do slide, e nunca copie a figura dele.
 
 ## Deploy (Railway)
 
