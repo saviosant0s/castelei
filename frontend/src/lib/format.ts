@@ -24,6 +24,16 @@ export function firstName(fullName: string): string {
   return fullName.trim().split(/\s+/)[0] ?? "";
 }
 
+/** As iniciais do avatar: primeira e última palavra do nome ("Sávio Santos Rocha" → "SR"). */
+export function initials(fullName: string): string {
+  const partes = fullName.trim().split(/\s+/).filter(Boolean);
+  if (partes.length === 0) return "?";
+  const primeira = partes[0][0];
+  const ultima = partes.length > 1 ? partes[partes.length - 1][0] : "";
+
+  return (primeira + ultima).toUpperCase();
+}
+
 export function pluralize(count: number, singular: string, plural: string): string {
   return `${count} ${count === 1 ? singular : plural}`;
 }

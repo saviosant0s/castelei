@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Trash2 } from "lucide-react";
-import { Card } from "@/components/ui";
+import { SettingsRow } from "@/components/ui";
 import { postJson } from "@/lib/client";
 
 /**
@@ -21,19 +21,11 @@ export function DeleteAccountButton({ guest }: { guest: boolean }) {
   const [error, setError] = useState<string | null>(null);
 
   if (!confirming) {
-    return (
-      <button
-        type="button"
-        className="btn btn-ghost w-full border-2 border-ink/15 text-content-secondary"
-        onClick={() => setConfirming(true)}
-      >
-        <Trash2 className="size-5" aria-hidden="true" /> Excluir minha conta
-      </button>
-    );
+    return <SettingsRow icon={Trash2} iconTone="danger" title="Excluir minha conta" danger onClick={() => setConfirming(true)} />;
   }
 
   return (
-    <Card tone="outline" aria-labelledby="excluir-aviso">
+    <div className="bg-brick-soft/40 px-4 py-4" aria-labelledby="excluir-aviso">
       <p id="excluir-aviso" className="text-base font-bold">Excluir a conta apaga tudo.</p>
       <p className="mt-2 text-base text-content-secondary">
         Some o seu histórico de estudo, o acerto por tópico, o XP, os dias seguidos e as conquistas.
@@ -49,11 +41,22 @@ export function DeleteAccountButton({ guest }: { guest: boolean }) {
         </p>
       )}
 
-      <div className="mt-5 flex flex-col gap-2">
+      <div className="mt-4 flex gap-2">
         <button
           type="button"
           disabled={busy}
-          className="btn w-full bg-brick text-on-bold hover:brightness-110"
+          className="btn btn-ghost flex-1 border-2 border-ink/15"
+          onClick={() => {
+            setConfirming(false);
+            setError(null);
+          }}
+        >
+          Cancelar
+        </button>
+        <button
+          type="button"
+          disabled={busy}
+          className="btn flex-1 bg-brick text-on-bold hover:brightness-110"
           onClick={async () => {
             setBusy(true);
             setError(null);
@@ -67,20 +70,9 @@ export function DeleteAccountButton({ guest }: { guest: boolean }) {
             }
           }}
         >
-          {busy ? "Excluindo..." : "Sim, excluir tudo"}
-        </button>
-        <button
-          type="button"
-          disabled={busy}
-          className="btn btn-ghost w-full"
-          onClick={() => {
-            setConfirming(false);
-            setError(null);
-          }}
-        >
-          Cancelar
+          {busy ? "Excluindo…" : "Excluir tudo"}
         </button>
       </div>
-    </Card>
+    </div>
   );
 }

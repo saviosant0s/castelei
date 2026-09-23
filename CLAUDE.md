@@ -149,6 +149,8 @@ Ao escrever conteúdo: use `order` onde a lição ensina uma sequência, e múlt
 
 **A lição retoma de onde parou** (`lib/lesson-progress.ts`, no `localStorage`): o `LessonStepper` devolve a pessoa à etapa, com aviso e saída para recomeçar, e a lista da matéria mostra "parou na etapa 4 de 11". Vale por aparelho e some se a lição mudar de número de etapas. Testes que renderizam o stepper **precisam limpar o `localStorage`** no `afterEach`, senão um teste começa no meio da lição do outro.
 
+**O Perfil é uma lista de ajustes, e o Resumo do Progresso agrupa por lição** (`components/ui/Settings.tsx`, `lib/progress-groups.ts`). Queixa do Sávio: o Perfil estava "muito bagunçado" — seis seções de título grande e igual peso. Virou grupos (Aparência e som, Estudo, Conta) com uma linha por ajuste, e o som virou interruptor. No Progresso, um cartão por tópico dava 10 mil pixels de rolagem com oito lições feitas; agora é um cartão por lição, com os tópicos recolhidos. A API passou a mandar `lesson_id` e `subject_name` em cada tópico para isso. A Revisão vazia ganhou o mesmo cabeçalho da cheia, e a próxima revisão marcada virou a notícia da tela.
+
 **Progresso é dividido em abas de rota**: `/progresso` (números gerais e por tópico), `/progresso/evolucao` e `/progresso/conquistas`, com o controle segmentado em `components/ProgressTabs.tsx`. Era tudo numa tela só e ficou embolado. Ao acrescentar uma aba, mexa também no `loading.tsx` da pasta — é ele que impede o cabeçalho de piscar.
 
 **A ementa oficial resolveu as três dúvidas que estavam abertas.** Ela é a fonte de verdade da ordem do semestre:

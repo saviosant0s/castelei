@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { firstName, formatClock, formatSeconds, optionLetter, pluralize } from "./format";
+import { firstName, formatClock, initials, formatSeconds, optionLetter, pluralize } from "./format";
 
 describe("formatClock", () => {
   it("formata segundos como mm:ss", () => {
@@ -52,5 +52,17 @@ describe("gamificação", () => {
     expect(weekdayInitial("2026-09-20")).toBe("D"); // domingo
     expect(weekdayInitial("2026-09-21")).toBe("S"); // segunda
     expect(weekdayInitial("2026-09-22")).toBe("T"); // terça
+  });
+});
+
+describe("initials", () => {
+  it("usa a primeira e a última palavra", () => {
+    expect(initials("Sávio Santos Rocha")).toBe("SR");
+  });
+  it("nome de uma palavra só vira uma letra", () => {
+    expect(initials("visitante")).toBe("V");
+  });
+  it("nome vazio não quebra", () => {
+    expect(initials("   ")).toBe("?");
   });
 });

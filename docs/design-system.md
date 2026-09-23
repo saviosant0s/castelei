@@ -79,6 +79,7 @@ Ficam em `frontend/src/components/ui/`, com testes em `ui.test.tsx`.
 | `ProgressBar` | barra de progresso, sempre com o número em texto junto |
 | `ListRow` | linha de lista navegável, área de toque bem acima do mínimo |
 | `EmptyState` | tela vazia que sempre oferece uma saída |
+| `SettingsGroup`, `SettingsRow`, `Switch` | lista de ajustes: grupo com título curto, uma linha por ajuste, interruptor de liga-desliga |
 
 ### Tons do `Card`
 
@@ -332,3 +333,29 @@ em `LessonStepper.test.tsx` trava isso.
 Se um dia as figuras forem redesenhadas para os dois temas, o caminho é outro:
 trocar as cores fixas do SVG por `currentColor` e variáveis. Enquanto forem
 desenhos a tinta, a folha é a resposta certa.
+
+## Ajustes têm cara de ajustes
+
+O Perfil era seis seções, cada uma com um título do tamanho de um título de
+página, um controle e uma frase solta embaixo. Seis títulos de igual peso não
+dizem o que importa, e a tela rolava para mostrar o que cabe em meia. Agora
+ele segue o desenho que a pessoa já conhece dos ajustes do celular
+(`components/ui/Settings.tsx`):
+
+- **Um grupo por assunto** (Aparência e som, Estudo, Conta), com título em
+  `label-mono`, e **uma linha por ajuste** dentro dele: ícone num quadrado de
+  cor suave, nome, uma frase, e o controle à direita.
+- **Liga-desliga é `Switch`**, não um par de botões "Ligado | Desligado". O
+  interruptor diz o estado sem palavras e cabe na linha.
+- **O que é perigoso fica no fim do último grupo**, com o nome em vermelho, e
+  a confirmação abre dentro da própria linha — sem pular para outra tela.
+
+## Lista longa agrupa antes de rolar
+
+O Resumo do Progresso tinha um cartão por tópico. Com oito lições praticadas
+eram 64 cartões e dez mil pixels de rolagem — e "0/1 certas" num tópico solto
+não diz nada: uma questão errada não é ponto fraco. Agora é **um cartão por
+lição**, a mais fraca primeiro, e os tópicos ficam recolhidos dentro dela
+(`<details>` nativo, sem JavaScript). Regra geral: quando uma lista cresce
+com o uso, agrupe pelo que a pessoa reconhece (a lição) e deixe o detalhe a
+um toque.

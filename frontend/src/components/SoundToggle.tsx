@@ -1,7 +1,7 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
-import { Volume2, VolumeX } from "lucide-react";
+import { Switch } from "@/components/ui";
 import { playSound, primeSound, setSoundOn, soundOn, subscribeSound } from "@/lib/sound";
 
 /*
@@ -9,7 +9,9 @@ import { playSound, primeSound, setSoundOn, soundOn, subscribeSound } from "@/li
 |
 | Existe porque o app é usado em sala de aula, em ônibus e em biblioteca. Som
 | sem interruptor num app de estudo é motivo para fechar o app, não para
-| gostar dele.
+| gostar dele. Era um par de botões "Ligado | Desligado"; virou interruptor
+| porque liga-desliga é exatamente o que um interruptor diz sem palavras, e
+| cabe na linha do ajuste em vez de ocupar uma linha inteira.
 |
 | Ligar TOCA O SOM DE ACERTO na hora. É a única forma honesta de mostrar o que
 | a pessoa está ligando — e, de quebra, é o gesto que libera o áudio no
@@ -32,30 +34,5 @@ export function SoundToggle() {
     }
   }
 
-  return (
-    <div role="radiogroup" aria-label="Som ao responder" className="flex gap-1 rounded-pill bg-surface-sunken p-1">
-      {[
-        { valor: true, label: "Ligado", icon: Volume2 },
-        { valor: false, label: "Desligado", icon: VolumeX },
-      ].map(({ valor, label, icon: Icon }) => {
-        const atual = ligado === valor;
-
-        return (
-          <button
-            key={label}
-            type="button"
-            role="radio"
-            aria-checked={atual}
-            onClick={() => escolher(valor)}
-            className={`flex min-h-11 flex-1 items-center justify-center gap-2 rounded-pill px-2 text-base transition select-none ${
-              atual ? "bg-surface-raised font-bold shadow-lift" : "text-content-secondary"
-            }`}
-          >
-            <Icon className="size-4 shrink-0" aria-hidden="true" />
-            {label}
-          </button>
-        );
-      })}
-    </div>
-  );
+  return <Switch checked={ligado} onChange={escolher} label="Som ao responder" />;
 }

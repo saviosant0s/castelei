@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Download } from "lucide-react";
+import { Download, Smartphone } from "lucide-react";
+import { SettingsRow } from "@/components/ui";
 
 type InstallPromptEvent = Event & { prompt: () => Promise<void> };
 
@@ -17,25 +18,30 @@ export function InstallButton() {
     return () => window.removeEventListener("beforeinstallprompt", onPrompt);
   }, []);
 
-  if (!promptEvent) {
-    return (
-      <p className="text-sm text-ink/70">
-        Para instalar no iPhone: toque em Compartilhar e depois em &quot;Adicionar à Tela de Início&quot;. No Android e no
-        computador, o botão de instalar aparece aqui quando o navegador permitir.
-      </p>
-    );
-  }
-
   return (
-    <button
-      type="button"
-      className="btn btn-dark w-full"
-      onClick={async () => {
-        await promptEvent.prompt();
-        setPromptEvent(null);
-      }}
-    >
-      <Download className="size-5" aria-hidden="true" /> Instalar o Castelei no aparelho
-    </button>
+    <SettingsRow
+      icon={Smartphone}
+      iconTone="sky"
+      title="Instalar no aparelho"
+      description={
+        promptEvent
+          ? "Abre como aplicativo, com ícone na tela de início."
+          : "No iPhone: Compartilhar e depois \u201cAdicionar à Tela de Início\u201d. No Android e no computador, o botão aparece aqui quando o navegador permitir."
+      }
+      trailing={
+        promptEvent && (
+          <button
+            type="button"
+            className="btn btn-dark min-h-10 shrink-0 px-4 text-sm"
+            onClick={async () => {
+              await promptEvent.prompt();
+              setPromptEvent(null);
+            }}
+          >
+            <Download className="size-4" aria-hidden="true" /> Instalar
+          </button>
+        )
+      }
+    />
   );
 }

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { LogOut } from "lucide-react";
+import { SettingsRow } from "@/components/ui";
 import { postJson } from "@/lib/client";
 
 export function LogoutButton() {
@@ -10,10 +11,10 @@ export function LogoutButton() {
   const [busy, setBusy] = useState(false);
 
   return (
-    <button
-      type="button"
+    <SettingsRow
+      icon={LogOut}
+      title={busy ? "Saindo…" : "Sair da conta"}
       disabled={busy}
-      className="btn btn-ghost w-full border-2 border-ink/15"
       onClick={async () => {
         setBusy(true);
         try {
@@ -23,8 +24,6 @@ export function LogoutButton() {
           router.refresh();
         }
       }}
-    >
-      <LogOut className="size-5" aria-hidden="true" /> Sair da conta
-    </button>
+    />
   );
 }

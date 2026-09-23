@@ -15,3 +15,4 @@ export { ListRow } from "./ListRow";
 export { Pill, type PillTone } from "./Pill";
 export { ProgressBar } from "./ProgressBar";
 export { Stat } from "./Stat";
+export { SettingsGroup, SettingsRow, Switch, type SettingsIconTone } from "./Settings";

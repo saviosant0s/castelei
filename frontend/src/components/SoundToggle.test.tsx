@@ -41,35 +41,35 @@ afterEach(() => {
   vi.unstubAllGlobals();
 });
 
-const opcao = (nome: string) => screen.getByRole("radio", { name: new RegExp(nome) });
+const chave = () => screen.getByRole("switch", { name: "Som ao responder" });
 
 describe("SoundToggle", () => {
   it("começa ligado", () => {
     render(<SoundToggle />);
-    expect(opcao("Ligado").getAttribute("aria-checked")).toBe("true");
+    expect(chave().getAttribute("aria-checked")).toBe("true");
   });
 
   it("desligar guarda a escolha e emudece", () => {
     render(<SoundToggle />);
-    fireEvent.click(opcao("Desligado"));
+    fireEvent.click(chave());
 
     expect(window.localStorage.getItem(SOUND_KEY)).toBe("0");
-    expect(opcao("Desligado").getAttribute("aria-checked")).toBe("true");
+    expect(chave().getAttribute("aria-checked")).toBe("false");
   });
 
   it("religar toca o som na hora, que é como se mostra o que foi ligado", () => {
     render(<SoundToggle />);
-    fireEvent.click(opcao("Desligado"));
+    fireEvent.click(chave());
     iniciadas = 0;
 
-    fireEvent.click(opcao("Ligado"));
+    fireEvent.click(chave());
     // O acerto são duas notas.
     expect(iniciadas).toBe(2);
   });
 
   it("desligar não toca nada", () => {
     render(<SoundToggle />);
-    fireEvent.click(opcao("Desligado"));
+    fireEvent.click(chave());
 
     expect(iniciadas).toBe(0);
   });

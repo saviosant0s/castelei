@@ -23,15 +23,20 @@ class ProgressController extends Controller
             ->join('attempts', 'attempts.id', '=', 'answers.attempt_id')
             ->join('questions', 'questions.id', '=', 'answers.question_id')
             ->join('lessons', 'lessons.id', '=', 'questions.lesson_id')
+            ->join('subjects', 'subjects.id', '=', 'lessons.subject_id')
             ->where('attempts.user_id', $userId)
             ->whereNotNull('attempts.finished_at')
-            ->selectRaw('questions.topic as topic, lessons.title as lesson_title, COUNT(*) as answered, SUM(CASE WHEN answers.is_correct THEN 1 ELSE 0 END) as correct, AVG(answers.seconds) as avg_seconds')
-            ->groupBy('questions.topic', 'lessons.title')
+            ->selectRaw('questions.topic as topic, lessons.id as lesson_id, lessons.title as lesson_title, subjects.name as subject_name, COUNT(*) as answered, SUM(CASE WHEN answers.is_correct THEN 1 ELSE 0 END) as correct, AVG(answers.seconds) as avg_seconds')
+            ->groupBy('questions.topic', 'lessons.id', 'lessons.title', 'subjects.name')
             ->get();
 
         $topics = $rows->map(fn ($row) => [
             'topic' => $row->topic,
+            // A tela agrupa os tópicos pela lição: um tópico solto, com uma
+            // questão só, não diz nada — a lição inteira diz.
+            'lesson_id' => (int) $row->lesson_id,
             'lesson_title' => $row->lesson_title,
+            'subject_name' => $row->subject_name,
             'answered' => (int) $row->answered,
             'correct' => (int) $row->correct,
             'accuracy' => (int) round(((int) $row->correct) / max((int) $row->answered, 1) * 100),
