@@ -111,6 +111,31 @@ export const SUBJECTS: SiteSubject[] = [
       "Projeto final: colocar uma aplicação em produção",
     ],
   },
+  {
+    slug: "refatoracao",
+    name: "Refatoração",
+    pitch:
+      "Mexer num código antigo sem quebrar nada: testes antes, passos pequenos, os cheiros que pedem arrumação e como dirigir uma IA que refatora por você.",
+    lessons: [
+      "Refatorar: mudar por dentro sem mudar por fora",
+      "Por que o código fica difícil de mexer",
+      "A rede de segurança: testes antes de mexer",
+      "Passos pequenos, um commit por vez",
+      "Método longo e classe que faz tudo",
+      "Código repetido, números mágicos e nomes ruins",
+      "Switch por tipo, parâmetros demais e estado global",
+      "Renomear e extrair método",
+      "Extrair classe, mover e encapsular",
+      "Trocar o switch por polimorfismo",
+      "O laço do jogo: atualizar e desenhar separados",
+      "Telas como estados e o tempo que não depende do FPS",
+      "Melhorar o visual sem mexer nas regras",
+      "Medir antes de otimizar",
+      "Os vilões do desempenho num jogo Java",
+      "Refatorar sem abrir brecha de segurança",
+      "Refatorar com IA sem quebrar o jogo",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */

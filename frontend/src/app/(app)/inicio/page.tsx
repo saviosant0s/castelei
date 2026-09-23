@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BookOpen, Calculator, Cpu, Flame, Languages, RotateCcw, Star } from "lucide-react";
+import { ArrowRight, BookOpen, Calculator, Cpu, Flame, Languages, RotateCcw, Star, Wrench } from "lucide-react";
 import { Card, type CardTone, Pill, ProgressBar } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
 import { firstName, formatNumber, pluralize } from "@/lib/format";
@@ -14,6 +14,7 @@ const subjectIcons: Record<string, typeof BookOpen> = {
   "matematica-basica": Calculator,
   portugues: Languages,
   "sistemas-operacionais": Cpu,
+  refatoracao: Wrench,
 };
 
 // As matérias alternam entre céu e coral, e a coluna da direita desce um degrau:
