@@ -135,17 +135,17 @@ export function TrailModule({
       {/*
       | O respiro do módulo mora NESTE invólucro, e isso tem duas razões.
       |
-      | `mt-6`/`pb-14` ficam dentro da caixa de conteúdo da seção — que é
+      | `mt-6`/`pb-10` ficam dentro da caixa de conteúdo da seção — que é
       | exatamente o retângulo que prende o cabeçalho grudado. Margem entre as
       | seções, ou padding NA seção, ficam fora dele: aí o cabeçalho desgruda
       | antes do fim do módulo e o topo da tela fica sem cabeçalho a cada
       | virada. Foi medido rolando a tela, não deduzido.
       |
       | E é um invólucro, não a própria div do caminho, porque aquela tem
-      | altura fixa em pixels: com `box-sizing: border-box`, um `pb-14` lá
+      | altura fixa em pixels: com `box-sizing: border-box`, um `pb-10` lá
       | dentro comeria a sobra embaixo do marco em vez de somar a ela.
       */}
-      <div className="mt-6 pb-14">
+      <div className="mt-6 pb-10">
         {/* Apagado o bastante para dizer "você ainda não chegou aqui", claro
             o bastante para continuar legível: quem abre o app pela primeira
             vez tem a matéria inteira à frente, e um cinza forte apagaria a
