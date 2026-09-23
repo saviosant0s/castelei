@@ -205,7 +205,9 @@ export interface FinishResult {
 
 export interface TopicStat {
   topic: string;
+  lesson_id: number;
   lesson_title: string;
+  subject_name: string;
   answered: number;
   correct: number;
   accuracy: number;

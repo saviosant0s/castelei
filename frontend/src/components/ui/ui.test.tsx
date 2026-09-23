@@ -1,8 +1,8 @@
 // @vitest-environment jsdom
-import { afterEach, describe, expect, it } from "vitest";
-import { cleanup, render, screen } from "@testing-library/react";
+import { afterEach, describe, expect, it, vi } from "vitest";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { Flame } from "lucide-react";
-import { Callout, Card, EmptyState, ListRow, Pill, ProgressBar, Stat } from "./index";
+import { Callout, Card, EmptyState, ListRow, Pill, ProgressBar, SettingsGroup, SettingsRow, Stat, Switch } from "./index";
 
 afterEach(cleanup);
 
@@ -108,5 +108,36 @@ describe("EmptyState", () => {
 
     // Dentro das abas do progresso o h1 é "Progresso": dois h1 quebram a leitura por títulos.
     expect(screen.getByRole("heading", { level: 2, name: "Nenhuma conquista ainda" })).toBeTruthy();
+  });
+});
+
+describe("Ajustes", () => {
+  it("o grupo tem nome, e a linha com href vira link", () => {
+    render(
+      <SettingsGroup id="conta" title="Conta">
+        <SettingsRow icon={Flame} title="Política de Privacidade" href="/privacidade" />
+      </SettingsGroup>,
+    );
+
+    expect(screen.getByRole("region", { name: "Conta" })).toBeTruthy();
+    expect(screen.getByRole("link", { name: /Política de Privacidade/ }).getAttribute("href")).toBe("/privacidade");
+  });
+
+  it("a linha com onClick vira botão", () => {
+    const clicou = vi.fn();
+    render(<SettingsRow icon={Flame} title="Sair da conta" onClick={clicou} />);
+    fireEvent.click(screen.getByRole("button", { name: /Sair da conta/ }));
+
+    expect(clicou).toHaveBeenCalledOnce();
+  });
+
+  it("o interruptor anuncia o estado e devolve o contrário ao tocar", () => {
+    const mudou = vi.fn();
+    render(<Switch checked={false} onChange={mudou} label="Som ao responder" />);
+    const chave = screen.getByRole("switch", { name: "Som ao responder" });
+
+    expect(chave.getAttribute("aria-checked")).toBe("false");
+    fireEvent.click(chave);
+    expect(mudou).toHaveBeenCalledWith(true);
   });
 });

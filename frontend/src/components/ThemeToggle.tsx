@@ -51,7 +51,7 @@ export function ThemeToggle() {
             role="radio"
             aria-checked={atual}
             onClick={() => escolher(value)}
-            className={`flex min-h-11 flex-1 items-center justify-center gap-2 rounded-pill px-2 text-base transition select-none ${
+            className={`flex min-h-10 flex-1 items-center justify-center gap-1.5 rounded-pill px-2 text-sm transition select-none ${
               atual ? "bg-surface-raised font-bold shadow-lift" : "text-content-secondary"
             }`}
           >

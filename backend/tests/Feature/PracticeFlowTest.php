@@ -250,6 +250,8 @@ class PracticeFlowTest extends TestCase
             ->assertJsonPath('overall.accuracy', 100)
             ->assertJsonPath('overall.avg_seconds', fn ($v) => (float) $v === 10.0)
             ->assertJsonCount(2, 'topics')
+            ->assertJsonPath('topics.0.lesson_id', $lesson->id)
+            ->assertJsonPath('topics.0.subject_name', $lesson->subject->name)
             ->assertJsonPath('last_attempt.lesson_id', $lesson->id)
             ->assertJsonPath('last_attempt.finished', true)
             ->assertJsonPath('last_attempt.percent', 100);

@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { Bell, BellOff, Loader2 } from "lucide-react";
+import { SettingsRow, Switch } from "@/components/ui";
 import { chaveParaBytes, explicacao, registroPronto, suportado, type PushEstado } from "@/lib/push";
 
 /*
@@ -177,30 +178,31 @@ export function PushToggle() {
   const podeMexer = estado === "ligado" || estado === "desligado";
 
   return (
-    <div className="space-y-2">
-      {podeMexer && (
-        <button
-          type="button"
-          role="switch"
-          aria-checked={estado === "ligado"}
-          aria-label="Lembrete de revisão"
-          disabled={ocupado}
-          onClick={() => void (estado === "ligado" ? desligar() : ligar())}
-          className="btn btn-ghost w-full border-2 border-ink/15"
-        >
-          {ocupado ? (
-            <Loader2 className="size-5 animate-spin" aria-hidden="true" />
-          ) : estado === "ligado" ? (
-            <BellOff className="size-5" aria-hidden="true" />
-          ) : (
-            <Bell className="size-5" aria-hidden="true" />
+    <SettingsRow
+      icon={estado === "negado" ? BellOff : Bell}
+      iconTone="coral"
+      title="Lembrete de revisão"
+      description={
+        <>
+          {explicacao(estado)}
+          {erro && (
+            <span role="alert" className="mt-1 block text-brick">
+              {erro}
+            </span>
           )}
-          {ocupado ? "Um instante…" : estado === "ligado" ? "Desligar lembretes" : "Ligar lembretes"}
-        </button>
-      )}
-
-      <p className="text-sm text-content-secondary">{explicacao(estado)}</p>
-      {erro && <p role="alert" className="text-sm text-brick">{erro}</p>}
-    </div>
+        </>
+      }
+      trailing={
+        ocupado ? (
+          <Loader2 className="size-6 shrink-0 animate-spin text-content-subtle" aria-label="Um instante" />
+        ) : podeMexer ? (
+          <Switch
+            checked={estado === "ligado"}
+            onChange={(ligar_) => void (ligar_ ? ligar() : desligar())}
+            label="Lembrete de revisão"
+          />
+        ) : null
+      }
+    />
   );
 }
