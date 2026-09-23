@@ -146,6 +146,11 @@ navegador. O que sustenta isso hoje:
     vale uma, sempre. A segunda e a terceira dependem do acerto. O convite é
     voltar e melhorar, nunca dizer que não acabou.
 
+  **O título fica ao lado do nó, no lado largo**, e a onda nunca passa pelo
+  eixo para o título nunca ficar espremido. Embaixo do nó, em letra miúda,
+  ele custava 164px por lição e era a coisa menos legível da tela. A linha
+  inteira é o link.
+
   Dois detalhes que não são enfeite. A onda é medida em **porcentagem da
   largura**, e o traço que liga os nós é um SVG com `preserveAspectRatio="none"`
   e `vector-effect="non-scaling-stroke"`: assim o desenho acompanha qualquer

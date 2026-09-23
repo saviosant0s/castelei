@@ -1,5 +1,6 @@
 import { Flag } from "lucide-react";
-import { NODE, ROW, type TrailAccent } from "@/lib/lesson-trail";
+import { TrailLabel } from "./TrailLabel";
+import { NODE, ROW, type TrailAccent, labelSide } from "@/lib/lesson-trail";
 
 /*
 | O marco que fecha um trecho da trilha.
@@ -41,8 +42,8 @@ export function TrailMilestone({
 
   return (
     <div
-      className="absolute flex flex-col items-center text-center"
-      style={{ left: `${x}%`, top: index * ROW, width: "min(10rem, 48%)", transform: "translateX(-50%)" }}
+      className="absolute inset-x-0"
+      style={{ top: index * ROW, height: NODE }}
       role="img"
       aria-label={
         completo
@@ -52,19 +53,17 @@ export function TrailMilestone({
     >
       <span
         aria-hidden="true"
-        className={`node grid place-items-center rounded-pill ${completo ? cores[accent] : "node-adiante"}`}
-        style={{ width: NODE, height: NODE }}
+        className={`node absolute top-0 grid -translate-x-1/2 place-items-center rounded-pill ${completo ? cores[accent] : "node-adiante"}`}
+        style={{ left: `${x}%`, width: NODE, height: NODE }}
       >
         <Flag className="size-7" strokeWidth={2.5} />
       </span>
 
-      <span
-        className={`mt-2.5 line-clamp-2 rounded-control bg-surface-raised px-2 py-1 text-xs leading-tight shadow-lift ${
-          completo ? "font-bold text-content" : "text-content-subtle"
-        }`}
-      >
-        {completo ? "Módulo completo" : pendencia}
-      </span>
+      <TrailLabel x={x} side={labelSide(index)}>
+        <span aria-hidden="true" className={`block text-sm ${completo ? "font-bold text-content" : "text-content-subtle"}`}>
+          {completo ? "Módulo completo" : pendencia}
+        </span>
+      </TrailLabel>
     </div>
   );
 }

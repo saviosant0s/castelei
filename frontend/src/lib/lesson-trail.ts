@@ -69,44 +69,59 @@ export interface TrailModule {
 | que se estica junto. O ciclo de 8 passos desenha uma onda inteira — com 4
 | passos o caminho vira zigue-zague de serrote, que cansa a vista na vertical.
 |
-| A amplitude é contida (16%) porque embaixo de cada nó mora o título da
-| lição. Onda mais aberta joga o texto para fora da coluna no celular.
+| O título da lição mora AO LADO do nó, no lado para onde o caminho não vai.
+| Antes ele morava embaixo, numa plaquinha de letra 12px: cada lição pedia
+| 164px de altura (nó, estrelas, três linhas de título, folga), trinta e três
+| lições davam nove telas de rolagem, e o texto — que é o que a pessoa lê —
+| era a menor coisa da tela. Ao lado, a linha cabe em 108px e o título ganha
+| a largura que sobra da onda.
+|
+| POR ISSO O NÓ NUNCA PARA NO EIXO. Com o nó no meio, o título tinha metade
+| da tela menos o círculo — uns 130px, e "Chamadas de sistema: arquivos e
+| processos" virava quatro linhas cortadas. A onda agora anda só pelas duas
+| faixas laterais (30% a 36% e 64% a 70%), atravessando o meio entre um nó e
+| outro: o título sempre fica com o lado largo.
 */
-const WAVE = [0, 10, 16, 10, 0, -10, -16, -10];
+const WAVE = [-20, -14, 14, 20, 20, 14, -14, -20];
 
 /** o eixo da trilha, em % */
 export const CENTER = 50;
 
 /** diâmetro do nó, em px */
-export const NODE = 64;
+export const NODE = 60;
 
 /**
  * Distância vertical entre dois centros, em px.
  *
- * Precisa caber o nó inteiro, o selo "Agora", até três linhas de título e o
- * aviso de onde a pessoa parou — com folga. Apertar isso faz o título de uma
- * lição encostar no nó da seguinte, e aí a trilha vira bagunça em vez de
- * caminho.
+ * O rótulo fica ao lado do nó, centrado nele. Precisa caber o mais alto que
+ * ele fica — três linhas de título e a linha de baixo (estrelas, "Agora" ou
+ * onde a pessoa parou) —, com folga para não encostar no rótulo vizinho.
  */
-export const ROW = 164;
+export const ROW = 108;
+
+/** Folga entre a borda do nó e o rótulo, em px. */
+export const GAP = 10;
 
 export function waveX(index: number): number {
   return CENTER + WAVE[index % WAVE.length];
 }
 
 /**
+ * De que lado do nó fica o rótulo: o lado largo, que é o oposto ao do nó.
+ * Nó à direita do eixo, rótulo à esquerda, e vice-versa.
+ */
+export function labelSide(index: number): "left" | "right" {
+  return WAVE[index % WAVE.length] > 0 ? "left" : "right";
+}
+
+/**
  * Espaço embaixo do último nó, em px.
  *
- * O rótulo mora ABAIXO do nó. Sem esta sobra, a altura da trilha terminava no
- * círculo e o cabeçalho do módulo seguinte subia por cima do rótulo do
- * anterior.
- *
- * É menor que o vão entre dois nós porque o último nó é sempre o MARCO, cujo
- * rótulo tem no máximo duas linhas curtas — não o título de uma lição, que
- * pode ter três. Dimensionar pelo pior caso deixava um buraco visível entre o
- * marco e o módulo seguinte.
+ * Com o rótulo ao lado, ele não passa da altura do nó por muito: sobra só a
+ * metade do rótulo que excede o círculo. Sem esta sobra, o cabeçalho do
+ * módulo seguinte encostaria no marco.
  */
-export const TAIL = 64;
+export const TAIL = 24;
 
 /**
  * Quantas estrelas a lição concluída mostra.

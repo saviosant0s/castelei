@@ -126,7 +126,7 @@ describe("SubjectTrail", () => {
     const faixa = secoes[0].querySelector("div.sticky")!;
 
     expect(faixa.className).not.toMatch(/\bmb-/);
-    expect(faixa.nextElementSibling!.className).toContain("pb-14");
+    expect(faixa.nextElementSibling!.className).toContain("pb-10");
   });
 
   it("matéria sem módulos vira uma trilha só, sem cabeçalho", () => {

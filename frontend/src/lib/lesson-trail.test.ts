@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { CENTER, NODE, ROW, TAIL, buildTrail, trailHeight, trailPath, waveX } from "./lesson-trail";
+import { CENTER, NODE, ROW, TAIL, buildTrail, labelSide, trailHeight, trailPath, waveX } from "./lesson-trail";
 import type { LessonSummary } from "./types";
 
 function licao(position: number, module: string | null, attempts = 0): LessonSummary {
@@ -111,15 +111,15 @@ describe("buildTrail — estados", () => {
 });
 
 describe("geometria do ziguezague", () => {
-  it("a onda começa no eixo e volta a ele, sem repetir o mesmo lado seguido", () => {
+  it("a onda nunca para no eixo, e passa metade do tempo de cada lado", () => {
     const onda = Array.from({ length: 8 }, (_, i) => waveX(i));
 
-    expect(onda[0]).toBe(CENTER);
+    // No eixo, o título ficaria com metade da tela menos o círculo.
+    expect(onda).not.toContain(CENTER);
     expect(Math.max(...onda)).toBeLessThanOrEqual(100);
     expect(Math.min(...onda)).toBeGreaterThanOrEqual(0);
-    // Uma onda inteira: metade de um lado, metade do outro.
-    expect(onda.filter((x) => x > CENTER)).toHaveLength(3);
-    expect(onda.filter((x) => x < CENTER)).toHaveLength(3);
+    expect(onda.filter((x) => x > CENTER)).toHaveLength(4);
+    expect(onda.filter((x) => x < CENTER)).toHaveLength(4);
   });
 
   it("a onda se repete a cada 8 nós, então o módulo pode ter o tamanho que for", () => {
@@ -144,14 +144,20 @@ describe("geometria do ziguezague", () => {
     expect(TAIL).toBeLessThan(ROW - NODE);
   });
 
+  it("o rótulo fica sempre do lado largo, oposto ao do nó", () => {
+    for (let i = 0; i < 8; i++) {
+      expect(labelSide(i)).toBe(waveX(i) > CENTER ? "left" : "right");
+    }
+  });
+
   it("não desenha caminho para um módulo de uma lição só", () => {
     expect(trailPath([50])).toBe("");
   });
 
   it("liga os nós com curvas, começando no centro do primeiro", () => {
-    const d = trailPath([50, 64]);
+    const d = trailPath([30, 64]);
 
-    expect(d.startsWith(`M 50 ${NODE / 2}`)).toBe(true);
+    expect(d.startsWith(`M 30 ${NODE / 2}`)).toBe(true);
     expect(d).toContain("C");
     // Uma curva a menos que nós: o traço liga pares.
     expect(d.match(/C/g)).toHaveLength(1);
