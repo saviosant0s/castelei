@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowRight, BookOpen, Calculator, Cpu, Flame, Languages, RotateCcw, Star, Wrench } from "lucide-react";
+import { ArrowRight, BookOpen, Calculator, Cpu, Flame, Languages, Star, Wrench } from "lucide-react";
 import { Card, type CardTone, Pill, ProgressBar } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
 import { firstName, formatNumber, pluralize } from "@/lib/format";
-import { ReviewList } from "@/components/review/ReviewRow";
-import { COMO_FUNCIONA, tituloDaFila } from "@/lib/review";
+import { ReviewBell } from "@/components/review/ReviewBell";
 import type { ProgressResponse, ReviewResponse, Subject, User } from "@/lib/types";
 
 export const metadata: Metadata = { title: "Início" };
@@ -28,7 +26,7 @@ export default async function Inicio() {
     serverGet<ProgressResponse>("/progress"),
     /*
       A fila de revisão nunca pode derrubar a tela inicial: ela é o extra, e
-      as matérias são o essencial. Falhou, a tela abre sem o bloco.
+      as matérias são o essencial. Falhou, o sininho abre sem número.
     */
     serverGet<ReviewResponse>("/review").catch(() => ({ due: [], next: null }) as ReviewResponse),
   ]);
@@ -76,9 +74,13 @@ export default async function Inicio() {
             </>
           )}
         </div>
-        <Pill tone="sky" href="/planos">
-          {user.plan_label}
-        </Pill>
+        {/* A fila de revisão mora em /revisar; aqui fica só o aviso, no sininho. */}
+        <div className="flex shrink-0 items-center gap-2">
+          <Pill tone="sky" href="/planos">
+            {user.plan_label}
+          </Pill>
+          <ReviewBell vencidas={revisao.due.length} />
+        </div>
       </header>
 
       <section aria-labelledby="continue">
@@ -109,35 +111,6 @@ export default async function Inicio() {
           </Card>
         ) : null}
       </section>
-
-      {/*
-        O bloco que responde "o que eu estudo hoje?".
-        Fica ACIMA das matérias de propósito: quem abre o app sem plano cai na
-        grade de matérias e escolhe no chute. A revisão é a única parte do app
-        que tem opinião sobre isso, e opinião escondida embaixo da dobra não
-        vale nada.
-        Só aparece quando há algo vencido — bloco vazio todo dia vira ruído,
-        e o lugar de "está tudo em dia" é a tela de revisão, não esta.
-      */}
-      {revisao.due.length > 0 && (
-        <section aria-labelledby="revisar">
-          <div className="flex items-baseline justify-between gap-4">
-            <h2 id="revisar" className="flex items-center gap-2 text-2xl">
-              <RotateCcw className="size-5 text-sky" aria-hidden="true" />
-              {tituloDaFila(revisao.due.length)}
-            </h2>
-            {revisao.due.length > 3 && (
-              <Link href="/revisar" className="shrink-0 text-base font-bold text-sky">
-                Ver todas
-              </Link>
-            )}
-          </div>
-          <p className="mt-1 text-sm text-content-secondary">{COMO_FUNCIONA}</p>
-          <div className="mt-4">
-            <ReviewList itens={revisao.due} limite={3} />
-          </div>
-        </section>
-      )}
 
       <section aria-labelledby="materias">
         <h2 id="materias" className="text-2xl">Matérias</h2>

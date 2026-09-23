@@ -46,7 +46,7 @@ export function ReviewRow({ item }: { item: ReviewItem }) {
   );
 }
 
-/** A fila inteira. `limite` corta a lista na tela inicial, que não é a tela da revisão. */
+/** A fila inteira. `limite` corta a lista quando ela aparece fora da tela da revisão. */
 export function ReviewList({ itens, limite }: { itens: ReviewItem[]; limite?: number }) {
   const mostrados = limite ? itens.slice(0, limite) : itens;
   const restantes = itens.length - mostrados.length;

@@ -230,6 +230,7 @@ A escolha do tema (Automático/Claro/Escuro, em `/perfil`) e a do som vivem no `
 - **Só agenda na PRIMEIRA conclusão da tentativa.** Recarregar a tela de resultado é a mesma prática — reagendar ali daria um dia de folga a cada F5. Um teste trava isso.
 - **O atraso não é vermelho.** Vermelho quer dizer erro no Castelei, e estar atrasado numa revisão não é erro: é o motivo de o app existir.
 - **Nada é travado**, mesma decisão do nó cinza sem cadeado: a fila sugere, a trilha continua aberta.
+- **Na tela inicial, a revisão é um sininho, não uma lista** (`ReviewBell`). A fila inteira morava lá, entre "continue de onde parou" e as matérias, e o Sávio pediu para tirar: duas perguntas disputavam a mesma tela. O sininho leva a `/revisar` e mostra o número de vencidas em coral (nunca vermelho). Em `/revisar` a barra de baixo acende Início, que é de onde se chega.
 
 **Lembrete de revisão** (`lib/push.ts` + `PushToggle`, backend em `PushService` e `castelei:lembretes`). O agendamento só vale se a pessoa voltar: um intervalo calculado com 1.354 participantes não serve para nada se o app espera em silêncio. Cinco coisas:
 
