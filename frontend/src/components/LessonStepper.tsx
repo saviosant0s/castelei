@@ -190,11 +190,13 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
         {step.figure && (
           <figure className="mt-6 overflow-hidden rounded-2xl bg-surface-raised p-3 shadow-lift">
             {/* SVG estático do próprio app: o next/image não agrega nada aqui */}
+            {/* A folha é branca nos dois temas: a figura é desenhada a tinta
+                escura, e no escuro traço e texto solto sumiriam no cartão. */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={step.figure.src}
               alt={step.figure.alt}
-              className="h-auto w-full"
+              className="h-auto w-full rounded-xl bg-sheet"
               loading="lazy"
             />
             {step.figure.caption && (

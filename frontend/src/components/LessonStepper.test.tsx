@@ -127,6 +127,24 @@ describe("LessonStepper", () => {
     expect(screen.getByText("O programa pede. O SO responde.")).toBeTruthy();
   });
 
+  /*
+  | A folha branca da figura.
+  |
+  | As figuras são desenhadas a tinta escura sobre papel. Direto no cartão,
+  | no modo escuro só sobrevivia a parte com preenchimento claro: traço de
+  | caixa e texto solto sumiam, sem quebrar nada e sem aviso nenhum. O
+  | problema apareceu olhando a lição de hardware no escuro, e não num teste.
+  */
+  it("desenha a figura sobre uma folha que não muda com o tema", async () => {
+    const user = userEvent.setup();
+    render(<LessonStepper lesson={lesson} />);
+
+    await user.click(screen.getByRole("button", { name: /continuar/i }));
+
+    const image = screen.getByRole("img", { name: "Duas faixas: modo usuário e modo núcleo." });
+    expect(image.className).toContain("bg-sheet");
+  });
+
   it("mostra o bloco de código com rótulo", async () => {
     const user = userEvent.setup();
     render(<LessonStepper lesson={lesson} />);
