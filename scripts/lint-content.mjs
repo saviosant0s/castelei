@@ -154,9 +154,36 @@ const JARGON = [
   ["Git", /\bgit\b/i, "v"], ["CI/CD", /\bCI\/CD\b|\bintegra(ç|c)ão cont(í|i)nua\b/i, "v"],
   ["backup", /\bbackups?\b/i, "v"], ["cache", /\bcaches?\b/i, "v"],
   ["alta disponibilidade", /\balta disponibilidade\b/i, "v"],
+
+  /*
+  | Refatoração (escopo "r").
+  |
+  | A matéria nasceu para quem vai DIRIGIR uma refatoração feita por IA sem
+  | escrever o código: precisa entender o que está pedindo e o que está
+  | aprovando. O corte é "quem nunca programou em Java saberia?". Por isso
+  | entram "método", "classe" e "commit", e não entra "código", que a pessoa
+  | já usa no dia a dia do curso. "Refatorar" entra de propósito: é a palavra
+  | que dá nome a tudo, e a lição que a usa diz o que ela é.
+  */
+  ["refatorar", /\brefator(ar|a|ação|ações|ado|ada|ando)\b/i, "r"],
+  ["dívida técnica", /\bd(í|i)vidas? t(é|e)cnicas?\b/i, "r"], ["cheiro de código", /\bcheiros? de c(ó|o)digo\b/i, "r"],
+  ["método", /\bm(é|e)todos?\b/i, "r"], ["classe", /\bclasses?\b/i, "r"], ["objeto", /\bobjetos?\b/i, "r"],
+  ["atributo", /\batributos?\b/i, "r"], ["parâmetro", /\bpar(â|a)metros?\b/i, "r"],
+  ["constante", /\bconstantes?\b/i, "r"], ["variável", /\bvari(á|a)ve(l|is)\b/i, "r"],
+  ["herança", /\bheran(ç|c)a\b/i, "r"], ["polimorfismo", /\bpolimorfismo\b/i, "r"],
+  ["encapsular", /\bencapsula(r|mento|do|da)\b/i, "r"], ["compilar", /\bcompila(r|dor|ção|do|da)\b/i, "r"],
+  ["teste automatizado", /\btestes? automatizados?\b/i, "r"], ["teste de caracterização", /\btestes? de caracteriza(ç|c)(ão|ões)\b/i, "r"],
+  ["Git", /\bgit\b/i, "r"], ["commit", /\bcommits?\b/i, "r"], ["branch", /\bbranch(es)?\b/i, "r"],
+  ["diff", /\bdiffs?\b/i, "r"], ["pull request", /\bpull requests?\b/i, "r"],
+  ["laço do jogo", /\bla(ç|c)o do jogo\b|\bgame loop\b/i, "r"], ["frame", /\bframes?\b/i, "r"], ["FPS", /\bFPS\b/, "r"],
+  ["profiler", /\bprofilers?\b/i, "r"], ["coletor de lixo", /\bcoletor de lixo\b|\bgarbage collector\b/i, "r"],
+  ["thread", /\bthreads?\b/i, "r"], ["JVM", /\bJVM\b/, "r"], ["static", /\bstatic\b/, "r"], ["switch", /\bswitch\b/, "r"],
+  ["desserialização", /\b(des)?serializa(r|ção|ções|do|da)\b/i, "r"], ["biblioteca", /\bbibliotecas?\b/i, "r"],
+  ["vulnerabilidade", /\bvulnerabilidades?\b/i, "r"], ["exceção", /\bexce(ç|c)(ão|ões)\b/i, "r"],
+  ["sprite", /\bsprites?\b/i, "r"], ["JSON", /\bJSON\b/, "r"], ["máquina de estados", /\bm(á|a)quinas? de estados?\b/i, "r"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;
