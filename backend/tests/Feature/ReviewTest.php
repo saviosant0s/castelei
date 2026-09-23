@@ -29,7 +29,7 @@ class ReviewTest extends TestCase
             $model = Question::find($question['id']);
             $this->postJson("/api/attempts/{$attemptId}/answers", [
                 'question_id' => $question['id'],
-                'selected' => $correct ? $model->correct_index : ($model->correct_index + 1) % 5,
+                'selected' => $this->naTela($attemptId, $model->id, $correct ? $model->correct_index : ($model->correct_index + 1) % 5),
                 'seconds' => 20,
             ])->assertOk();
         }
@@ -113,7 +113,7 @@ class ReviewTest extends TestCase
             $model = Question::find($question['id']);
             $this->postJson("/api/attempts/{$attemptId}/answers", [
                 'question_id' => $question['id'],
-                'selected' => $model->correct_index,
+                'selected' => $this->naTela($attemptId, $model->id, $model->correct_index),
                 'seconds' => 20,
             ])->assertOk();
         }
