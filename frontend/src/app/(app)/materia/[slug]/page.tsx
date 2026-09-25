@@ -10,15 +10,19 @@ import { Callout, Card } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
 import { pluralize } from "@/lib/format";
 import { concluida } from "@/lib/lesson-trail";
-import type { Subject } from "@/lib/types";
+import type { SubjectsResponse } from "@/lib/types";
+import { OUTRAS } from "@/lib/areas";
 
 export const metadata: Metadata = { title: "Matéria" };
 
 export default async function MateriaPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const { subjects } = await serverGet<{ subjects: Subject[] }>("/subjects");
+  const { areas, subjects } = await serverGet<SubjectsResponse>("/subjects");
   const subject = subjects.find((s) => s.slug === slug);
   if (!subject) notFound();
+
+  // Volta para a área de onde a pessoa veio; sem área conhecida, "Outras matérias".
+  const area = (areas ?? []).find((a) => a.slug === subject.area) ?? OUTRAS;
 
   const limited = subject.lessons.some((l) => l.questions_available < l.questions_total);
   // A mesma regra da trilha: a próxima é a primeira ainda não praticada.
@@ -29,8 +33,8 @@ export default async function MateriaPage({ params }: { params: Promise<{ slug: 
 
   return (
     <div className="space-y-6">
-      <Link href="/inicio" className="inline-flex min-h-11 items-center gap-2 text-base text-content-secondary hover:text-ink">
-        <ArrowLeft className="size-5" aria-hidden="true" /> Início
+      <Link href={`/area/${area.slug}`} className="inline-flex min-h-11 items-center gap-2 text-base text-content-secondary hover:text-ink">
+        <ArrowLeft className="size-5" aria-hidden="true" /> {area.name}
       </Link>
 
       <header>
@@ -119,6 +123,7 @@ export default async function MateriaPage({ params }: { params: Promise<{ slug: 
           subject.slug,
           subject.lessons.map((l) => l.id),
           subject.vocabulary_terms > 0,
+          area.slug,
         )}
       />
 

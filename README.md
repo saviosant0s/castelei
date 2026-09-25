@@ -123,7 +123,7 @@ Uma etapa tem:
 | `code` | trecho de código: `label`, `text` e `notes` — uma frase por linha dizendo o que ela faz, **obrigatório**: quem lê a lição pode nunca ter visto código |
 | `video` | vídeo: `src` (arquivo enviado pelo painel ou link do YouTube), `title`, `caption` e `poster` |
 
-A matéria aceita `exam_date` (`"2026-12-15"`), que é o prazo de onde sai todo intervalo de revisão, e `module`, o assunto que agrupa a lição na trilha.
+A matéria aceita `area` (a área do conhecimento onde ela aparece na tela inicial: `portugues`, `matematica`, `informatica`… — a lista está em `backend/config/castelei.php`), `exam_date` (`"2026-12-15"`), que é o prazo de onde sai todo intervalo de revisão, e a lição aceita `module`, o assunto que a agrupa na trilha.
 
 Antes de enviar, rode o verificador:
 

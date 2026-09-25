@@ -7,6 +7,7 @@ describe("offline", () => {
   it("monta as páginas da matéria", () => {
     expect(paginasDaMateria("so", [3, 4], true)).toEqual(["/materia/so", "/materia/so/vocabulario", "/licao/3", "/licao/4"]);
     expect(paginasDaMateria("so", [3], false)).toEqual(["/materia/so", "/licao/3"]);
+    expect(paginasDaMateria("so", [3], false, "informatica")).toEqual(["/area/informatica", "/materia/so", "/licao/3"]);
   });
 
   it("usa o mesmo nome de cache que o service worker", () => {
@@ -20,6 +21,7 @@ describe("offline", () => {
     const padrao = new RegExp(sw.match(/const GUARDAVEL = \/(.+)\/;/)![1]);
     expect(padrao.test("/licao/12")).toBe(true);
     expect(padrao.test("/materia/sistemas-operacionais")).toBe(true);
+    expect(padrao.test("/area/informatica")).toBe(true);
     expect(padrao.test("/licao/12/praticar")).toBe(false);
     expect(padrao.test("/perfil")).toBe(false);
     expect(padrao.test("/admin")).toBe(false);

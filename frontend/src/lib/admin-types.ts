@@ -13,6 +13,8 @@ export interface AdminSubject {
   slug: string;
   name: string;
   description: string | null;
+  /** Slug da área do conhecimento, ou null (vai para "Outras matérias"). */
+  area: string | null;
   exam_date: string | null;
   position: number;
   origin: SubjectOrigin;
@@ -36,6 +38,8 @@ export interface AdminSubjectDetail {
   slug: string;
   name: string;
   description: string | null;
+  /** Slug da área do conhecimento, ou null (vai para "Outras matérias"). */
+  area: string | null;
   exam_date: string | null;
   position: number;
   origin: SubjectOrigin;

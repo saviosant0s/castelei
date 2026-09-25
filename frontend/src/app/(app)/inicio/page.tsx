@@ -1,31 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BookOpen, ChevronRight, CloudUpload, Calculator, Cpu, Flame, Languages, PenLine, Search, Server, Star, Wrench } from "lucide-react";
-import { Card, Pill, ProgressBar } from "@/components/ui";
+import { ArrowRight, ChevronRight, CloudUpload, Flame, Search, Star } from "lucide-react";
+import { Card, Pill } from "@/components/ui";
+import { SubjectRow, tones } from "@/components/home/SubjectRow";
+import { areaIcon, areaProgress, groupByArea } from "@/lib/areas";
 import { serverGet } from "@/lib/backend";
 import { firstName, formatNumber, pluralize } from "@/lib/format";
 import { ReviewBell } from "@/components/review/ReviewBell";
-import type { ProgressResponse, ReviewResponse, Subject, User } from "@/lib/types";
+import type { ProgressResponse, ReviewResponse, SubjectsResponse, User } from "@/lib/types";
 
 export const metadata: Metadata = { title: "Início" };
 
-const subjectIcons: Record<string, typeof BookOpen> = {
-  "matematica-basica": Calculator,
-  portugues: Languages,
-  "sistemas-operacionais": Cpu,
-  "servidores-vps": Server,
-  refatoracao: Wrench,
-  "producao-textual": PenLine,
-};
-
-// O ícone de cada matéria gira entre as três cores da marca, pela ordem —
-// nunca vermelho, que no Castelei quer dizer erro.
-const subjectTones = ["bg-sky-soft text-sky", "bg-coral-soft text-coral", "bg-sage-soft text-sage"];
-
 export default async function Inicio() {
-  const [{ user }, { subjects }, progress, revisao] = await Promise.all([
+  const [{ user }, { areas, subjects }, progress, revisao] = await Promise.all([
     serverGet<{ user: User }>("/me"),
-    serverGet<{ subjects: Subject[] }>("/subjects"),
+    serverGet<SubjectsResponse>("/subjects"),
     serverGet<ProgressResponse>("/progress"),
     /*
       A fila de revisão nunca pode derrubar a tela inicial: ela é o extra, e
@@ -37,6 +26,7 @@ export default async function Inicio() {
   const last = progress.last_attempt;
   const gami = progress.gamification;
   const firstLesson = subjects[0]?.lessons[0];
+  const { ativas, emBreve } = groupByArea(areas ?? [], subjects);
 
   /*
   | O simulado atravessa várias lições, então não tem `lesson_id` — quem volta
@@ -140,65 +130,59 @@ export default async function Inicio() {
       </section>
 
       {/*
-        As matérias são uma LISTA, não uma grade de cartões.
-        Eram cartões altos em duas colunas, com o ícone no topo e o nome
-        embaixo — e um vão vazio no meio de cada um. Com duas matérias isso
-        era vitrine; com seis, virou uma rolagem de três telas para achar a
-        que se quer. A linha mostra o que a pessoa procura aqui: o nome, quanto
-        falta e qual é a próxima lição daquela matéria.
+        A porta de entrada é a ÁREA, não a matéria: Sistemas Operacionais é uma
+        disciplina de Informática. Primeiro as áreas que já têm aula; as outras
+        vêm depois, apagadas, com "Em breve" — para a pessoa ver o que o app
+        vai cobrir sem ter que tocar numa porta fechada para descobrir.
       */}
-      <section aria-labelledby="materias">
-        <h2 id="materias" className="text-2xl">Matérias</h2>
+      <section aria-labelledby="areas">
+        <h2 id="areas" className="text-2xl">Áreas</h2>
         <ul className="mt-4 space-y-3">
-          {subjects.map((subject, i) => {
-            const Icon = subjectIcons[subject.slug] ?? BookOpen;
-            const total = subject.lessons.length;
-            const practiced = subject.lessons.filter((lesson) => lesson.attempts > 0).length;
-            const proxima = subject.lessons.find((lesson) => lesson.attempts === 0);
-            const tom = subjectTones[i % subjectTones.length];
-
+          {ativas.map((area, i) => {
+            const { practiced, total } = areaProgress(area.subjects);
             return (
-              <li key={subject.id}>
-                <Link
-                  href={`/materia/${subject.slug}`}
-                  className="flex items-center gap-4 rounded-card bg-surface-raised px-4 py-4 shadow-lift transition hover:-translate-y-0.5"
-                >
-                  <span className={`grid size-12 shrink-0 place-items-center rounded-control ${tom}`}>
-                    <Icon className="size-6" aria-hidden="true" />
-                  </span>
-                  <span className="min-w-0 flex-1">
-                    <span className="flex items-start justify-between gap-3">
-                      {/* O nome quebra linha em vez de cortar: "Sistemas Operaci…" não diz qual matéria é. */}
-                      <span className="min-w-0 font-display text-lg leading-snug font-bold">{subject.name}</span>
-                      {/*
-                        A barra mede lições praticadas, não acerto médio: aqui a
-                        pergunta é "quanto falta". O número vem escrito — barra
-                        sozinha obriga a medir a olho.
-                      */}
-                      <span className="shrink-0 pt-0.5 font-mono text-sm tabular-nums text-content-subtle">
-                        {practiced}/{total}
-                      </span>
-                    </span>
-                    <ProgressBar
-                      percent={total > 0 ? (practiced / total) * 100 : 0}
-                      tone="ink"
-                      size="sm"
-                      label={`${subject.name}: ${practiced} de ${total} lições praticadas`}
-                      className="mt-2"
-                    />
-                    <span className="mt-1.5 block truncate text-sm text-content-secondary">
-                      {proxima
-                        ? `${practiced === 0 ? "Comece por" : "Próxima"}: ${proxima.title}`
-                        : "Todas as lições praticadas"}
-                    </span>
-                  </span>
-                  <ChevronRight className="size-5 shrink-0 text-content-faint" aria-hidden="true" />
-                </Link>
+              <li key={area.slug}>
+                <SubjectRow
+                  href={`/area/${area.slug}`}
+                  name={area.name}
+                  icon={areaIcon(area.slug)}
+                  tone={tones[i % tones.length]}
+                  practiced={practiced}
+                  total={total}
+                  detail={area.subjects.map((subject) => subject.name).join(" · ")}
+                />
               </li>
             );
           })}
         </ul>
       </section>
+
+      {emBreve.length > 0 && (
+        <section aria-labelledby="em-breve">
+          <h2 id="em-breve" className="text-2xl">Em breve</h2>
+          <p className="mt-1 text-base text-content-secondary">Áreas que ainda não têm aula por aqui.</p>
+          {/*
+            Não são links, de propósito: não há para onde ir, e alvo que
+            responde ao toque sem levar a lugar nenhum frustra. Por isso também
+            não têm sombra nem seta — nada nelas diz "toque aqui".
+          */}
+          <ul className="mt-4 grid grid-cols-3 gap-2 sm:grid-cols-4">
+            {emBreve.map((area) => {
+              const Icon = areaIcon(area.slug);
+              return (
+                <li
+                  key={area.slug}
+                  className="flex flex-col items-center gap-1.5 rounded-card border border-ink/10 px-2 py-3 text-center text-content-subtle"
+                >
+                  <Icon className="size-6 text-content-faint" aria-hidden="true" />
+                  <span className="text-sm leading-tight font-bold">{area.name}</span>
+                  <span className="sr-only">: em breve</span>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      )}
     </div>
   );
 }

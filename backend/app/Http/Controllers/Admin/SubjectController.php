@@ -22,11 +22,13 @@ class SubjectController extends Controller
             ->get();
 
         return response()->json([
+            'areas' => Subject::areas(),
             'subjects' => $subjects->map(fn (Subject $subject) => [
                 'id' => $subject->id,
                 'slug' => $subject->slug,
                 'name' => $subject->name,
                 'description' => $subject->description,
+                'area' => $subject->area,
                 'exam_date' => $subject->exam_date?->format('Y-m-d'),
                 'position' => $subject->position,
                 'origin' => $subject->origin,
@@ -41,11 +43,13 @@ class SubjectController extends Controller
         $subject->load(['lessons' => fn ($query) => $query->withCount('questions')]);
 
         return response()->json([
+            'areas' => Subject::areas(),
             'subject' => [
                 'id' => $subject->id,
                 'slug' => $subject->slug,
                 'name' => $subject->name,
                 'description' => $subject->description,
+                'area' => $subject->area,
                 'exam_date' => $subject->exam_date?->format('Y-m-d'),
                 'position' => $subject->position,
                 'origin' => $subject->origin,
@@ -92,6 +96,7 @@ class SubjectController extends Controller
             'name' => ['required', 'string', 'max:120'],
             'description' => ['nullable', 'string', 'max:500'],
             'exam_date' => ['nullable', 'date_format:Y-m-d'],
+            'area' => ['nullable', 'string', Rule::in(array_keys((array) config('castelei.areas')))],
         ], self::messages());
 
         $subject = Subject::create($data + [
@@ -121,6 +126,7 @@ class SubjectController extends Controller
             | de estudo de todo mundo que faz a matéria.
             */
             'exam_date' => ['nullable', 'date_format:Y-m-d'],
+            'area' => ['nullable', 'string', Rule::in(array_keys((array) config('castelei.areas')))],
         ], self::messages());
 
         $subject->fill($data);
@@ -191,6 +197,7 @@ class SubjectController extends Controller
             'slug' => $subject->slug,
             'name' => $subject->name,
             'description' => $subject->description,
+            'area' => $subject->area,
             'exam_date' => $subject->exam_date?->format('Y-m-d'),
             'position' => $subject->position,
             'origin' => $subject->origin,
@@ -207,6 +214,7 @@ class SubjectController extends Controller
             'name.required' => 'Informe o nome da matéria.',
             'name.max' => 'O nome ficou longo demais.',
             'exam_date.date_format' => 'A data da prova precisa estar no formato AAAA-MM-DD. Exemplo: 2026-12-15.',
+            'area.in' => 'Escolha uma das áreas da lista.',
         ];
     }
 }

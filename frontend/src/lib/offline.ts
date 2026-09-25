@@ -29,8 +29,9 @@ export function trabalhador(): ServiceWorker | null {
 }
 
 /** As páginas de uma matéria que valem guardar: ela, o vocabulário e cada lição. */
-export function paginasDaMateria(slug: string, lessonIds: number[], comVocabulario: boolean): string[] {
-  const base = [`/materia/${slug}`];
+export function paginasDaMateria(slug: string, lessonIds: number[], comVocabulario: boolean, area?: string): string[] {
+  // A área entra junto: sem ela, o "voltar" da matéria abriria a tela de sem internet.
+  const base = area ? [`/area/${area}`, `/materia/${slug}`] : [`/materia/${slug}`];
   if (comVocabulario) base.push(`/materia/${slug}/vocabulario`);
   return [...base, ...lessonIds.map((id) => `/licao/${id}`)];
 }

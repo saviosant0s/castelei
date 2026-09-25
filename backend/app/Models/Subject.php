@@ -21,6 +21,19 @@ class Subject extends Model
         ];
     }
 
+    /**
+     * As áreas do conhecimento, na ordem da tela inicial.
+     *
+     * @return list<array{slug: string, name: string}>
+     */
+    public static function areas(): array
+    {
+        return collect((array) config('castelei.areas'))
+            ->map(fn (string $name, string $slug) => ['slug' => $slug, 'name' => $name])
+            ->values()
+            ->all();
+    }
+
     public function lessons(): HasMany
     {
         return $this->hasMany(Lesson::class)->orderBy('position');

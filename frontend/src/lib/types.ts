@@ -43,11 +43,26 @@ export interface ExamAvailability {
   writing?: boolean;
 }
 
+/** Área do conhecimento: a porta de entrada da tela inicial. */
+export interface Area {
+  slug: string;
+  name: string;
+}
+
+/** Resposta de `GET /subjects`. */
+export interface SubjectsResponse {
+  /** Todas as áreas, na ordem da tela — inclusive as que ainda não têm matéria. */
+  areas: Area[];
+  subjects: Subject[];
+}
+
 export interface Subject {
   id: number;
   slug: string;
   name: string;
   description: string | null;
+  /** Slug da área do conhecimento (`informatica`, `portugues`…), ou null. */
+  area: string | null;
   /** Data da prova do semestre (AAAA-MM-DD), ou null. É o prazo de onde sai o ritmo das revisões. */
   exam_date: string | null;
   exam: ExamAvailability;
