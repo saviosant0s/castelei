@@ -32,6 +32,7 @@ class SubjectExporter
             'slug' => $subject->slug,
             'name' => $subject->name,
             'description' => $subject->description,
+            'area' => $subject->area,
             'exam_date' => $subject->exam_date?->format('Y-m-d'),
             'lessons' => $subject->lessons->map(fn (Lesson $lesson) => $this->lesson($lesson))->values()->all(),
         ], fn ($valor) => $valor !== null);

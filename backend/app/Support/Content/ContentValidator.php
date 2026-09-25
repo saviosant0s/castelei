@@ -68,6 +68,7 @@ class ContentValidator
         $this->text($data['name'] ?? null, 'name', max: 120);
         $this->optionalText($data['description'] ?? null, 'description', max: 500);
         $this->optionalDate($data['exam_date'] ?? null, 'exam_date');
+        $this->area($data['area'] ?? null);
 
         $lessons = $data['lessons'] ?? null;
 
@@ -177,6 +178,25 @@ class ContentValidator
 
         if (! checkdate($mes, $dia, $ano)) {
             $this->error($path, "A data da prova \"{$value}\" não existe no calendário.");
+        }
+    }
+
+    /**
+     * Área do conhecimento: opcional, mas só das que existem.
+     *
+     * Erro, e não aviso: "informática" com acento cairia numa área que não
+     * existe, e a matéria sumiria da área certa sem nada reclamar.
+     */
+    private function area(mixed $value): void
+    {
+        if ($value === null || $value === '') {
+            return;
+        }
+
+        $areas = array_keys((array) config('castelei.areas'));
+
+        if (! is_string($value) || ! in_array($value, $areas, true)) {
+            $this->error('area', 'Área desconhecida. Use uma destas: '.implode(', ', $areas).'.');
         }
     }
 

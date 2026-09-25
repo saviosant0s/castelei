@@ -9,6 +9,31 @@ return [
     'default_plan' => 'free',
 
     /*
+    | Áreas do conhecimento, na ordem em que a tela inicial mostra.
+    |
+    | Cada matéria aponta para uma delas pelo slug (`subjects.area`). A área sem
+    | matéria aparece como "Em breve": a lista é a das disciplinas de escola,
+    | não a do que já foi escrito, para a pessoa ver o que o app vai cobrir.
+    | Os ícones moram na tela (`frontend/src/lib/areas.ts`); nome e ordem, aqui.
+    */
+    'areas' => [
+        'portugues' => 'Português',
+        'matematica' => 'Matemática',
+        'fisica' => 'Física',
+        'quimica' => 'Química',
+        'biologia' => 'Biologia',
+        'historia' => 'História',
+        'geografia' => 'Geografia',
+        'filosofia' => 'Filosofia',
+        'sociologia' => 'Sociologia',
+        'ingles' => 'Inglês',
+        'espanhol' => 'Espanhol',
+        'artes' => 'Artes',
+        'educacao-fisica' => 'Educação Física',
+        'informatica' => 'Informática',
+    ],
+
+    /*
     | Painel de conteúdo (/admin).
     |
     | `admin_emails` é uma lista separada por vírgula. Ela é a porta de entrada:

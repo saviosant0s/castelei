@@ -103,6 +103,7 @@ class ContentImporter
             $report->subjectCreated = ! $subject->exists;
             $subject->name = $data['name'];
             $subject->description = $data['description'] ?? null;
+            $subject->area = ($data['area'] ?? null) ?: null;
             // Prazo da matéria: é dele que sai o intervalo entre revisões.
             $subject->exam_date = $this->examDate($data['exam_date'] ?? null);
             $subject->origin = $origin;

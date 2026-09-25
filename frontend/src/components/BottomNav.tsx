@@ -29,7 +29,7 @@ export function BottomNav() {
           const active =
             pathname === href ||
             pathname.startsWith(`${href}/`) ||
-            (href === "/inicio" && (pathname.startsWith("/materia") || pathname.startsWith("/licao") || pathname.startsWith("/revisar")));
+            (href === "/inicio" && (pathname.startsWith("/area") || pathname.startsWith("/materia") || pathname.startsWith("/licao") || pathname.startsWith("/revisar")));
           return (
             <li key={href} className="flex-1">
               <Link

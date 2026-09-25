@@ -3,14 +3,15 @@
 import { useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { Download } from "lucide-react";
-import { Aviso, Button, TextField } from "@/components/admin/Form";
+import { Aviso, Button, SelectField, TextField } from "@/components/admin/Form";
 import { ConfirmDelete } from "@/components/admin/ConfirmDelete";
 import { Card } from "@/components/ui";
 import { adminFetch } from "@/lib/admin-client";
 import { ApiError, messageOf } from "@/lib/client";
 import type { AdminSubjectDetail } from "@/lib/admin-types";
+import type { Area } from "@/lib/types";
 
-export function SubjectEditor({ subject }: { subject: AdminSubjectDetail }) {
+export function SubjectEditor({ subject, areas }: { subject: AdminSubjectDetail; areas: Area[] }) {
   const router = useRouter();
   const [busy, setBusy] = useState(false);
   const [salvo, setSalvo] = useState(false);
@@ -54,6 +55,20 @@ export function SubjectEditor({ subject }: { subject: AdminSubjectDetail }) {
             defaultValue={subject.description ?? ""}
             error={campos.description?.[0]}
           />
+          <SelectField
+            label="Área do conhecimento"
+            name="area"
+            defaultValue={subject.area ?? ""}
+            error={campos.area?.[0]}
+            hint="É a porta de entrada da tela inicial: a matéria aparece dentro desta área. Sem área, ela vai para Outras matérias."
+          >
+            <option value="">Sem área</option>
+            {areas.map((area) => (
+              <option key={area.slug} value={area.slug}>
+                {area.name}
+              </option>
+            ))}
+          </SelectField>
           <TextField
             label="Data da prova"
             name="exam_date"

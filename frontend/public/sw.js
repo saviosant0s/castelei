@@ -18,7 +18,7 @@ const CACHE = "castelei-static-v2";
 const PAGINAS = "castelei-paginas-v1";
 
 /* As telas que valem guardar: são as de LER. Prática, perfil e painel ficam de fora. */
-const GUARDAVEL = /^\/(inicio|revisar|progresso|licao\/\d+|materia\/[^/]+(\/vocabulario(\/cartoes)?)?)$/;
+const GUARDAVEL = /^\/(inicio|revisar|progresso|area\/[^/]+|licao\/\d+|materia\/[^/]+(\/vocabulario(\/cartoes)?)?)$/;
 
 self.addEventListener("install", (event) => {
   event.waitUntil(

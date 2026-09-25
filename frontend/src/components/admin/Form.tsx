@@ -1,6 +1,6 @@
 "use client";
 
-import type { ReactNode, TextareaHTMLAttributes, InputHTMLAttributes, ButtonHTMLAttributes } from "react";
+import type { ReactNode, TextareaHTMLAttributes, InputHTMLAttributes, ButtonHTMLAttributes, SelectHTMLAttributes } from "react";
 
 /*
 | As peças de formulário do painel.
@@ -27,6 +27,25 @@ export function TextField({ label, hint, error, ...props }: CampoProps & InputHT
     <label className="block space-y-1.5">
       <span className="text-sm text-content-subtle">{label}</span>
       <input {...props} className={campo} aria-invalid={error ? true : undefined} />
+      {hint && !error && <span className="block text-sm text-content-subtle">{hint}</span>}
+      {error && <span className="block text-sm text-brick">{error}</span>}
+    </label>
+  );
+}
+
+export function SelectField({
+  label,
+  hint,
+  error,
+  children,
+  ...props
+}: CampoProps & SelectHTMLAttributes<HTMLSelectElement>) {
+  return (
+    <label className="block space-y-1.5">
+      <span className="text-sm text-content-subtle">{label}</span>
+      <select {...props} className={campo} aria-invalid={error ? true : undefined}>
+        {children}
+      </select>
       {hint && !error && <span className="block text-sm text-content-subtle">{hint}</span>}
       {error && <span className="block text-sm text-brick">{error}</span>}
     </label>

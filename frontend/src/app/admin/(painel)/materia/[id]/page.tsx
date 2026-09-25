@@ -7,6 +7,7 @@ import { OriginBadge } from "@/components/admin/OriginBadge";
 import { SubjectEditor } from "@/components/admin/SubjectEditor";
 import { Callout } from "@/components/ui";
 import { adminGet } from "@/lib/admin";
+import type { Area } from "@/lib/types";
 import type { AdminSubjectDetail } from "@/lib/admin-types";
 
 interface Props {
@@ -15,7 +16,7 @@ interface Props {
 
 async function carregar(params: Props["params"]) {
   const { id } = await params;
-  return adminGet<{ subject: AdminSubjectDetail }>(`/subjects/${id}`);
+  return adminGet<{ subject: AdminSubjectDetail; areas?: Area[] }>(`/subjects/${id}`);
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -24,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function MateriaNoPainel({ params }: Props) {
-  const { subject } = await carregar(params);
+  const { subject, areas } = await carregar(params);
 
   return (
     <div className="space-y-8">
@@ -62,7 +63,7 @@ export default async function MateriaNoPainel({ params }: Props) {
         <h2 id="ajustes" className="text-2xl">
           Ajustes
         </h2>
-        <SubjectEditor subject={subject} />
+        <SubjectEditor subject={subject} areas={areas ?? []} />
       </section>
     </div>
   );

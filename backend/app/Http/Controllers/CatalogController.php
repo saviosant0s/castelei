@@ -39,11 +39,19 @@ class CatalogController extends Controller
         $examTarget = (int) config('castelei.exam.questions');
 
         return response()->json([
+            /*
+            | Todas as áreas, inclusive as sem matéria: a tela inicial mostra
+            | essas como "Em breve". A lista vem daqui para a tela não ter uma
+            | segunda cópia dela.
+            */
+            'areas' => Subject::areas(),
             'subjects' => $subjects->map(fn (Subject $subject) => [
                 'id' => $subject->id,
                 'slug' => $subject->slug,
                 'name' => $subject->name,
                 'description' => $subject->description,
+                // Nulo = sem área; a tela junta essas em "Outras matérias".
+                'area' => $subject->area,
                 /*
                 | Data da prova do semestre. A tela usa para dizer quanto falta,
                 | e o agendamento de revisão usa como prazo — ver
