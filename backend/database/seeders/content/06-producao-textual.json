@@ -6,7 +6,7 @@
   ],
   "slug": "producao-textual",
   "name": "Produção Textual",
-  "description": "Escrever por partes até o texto inteiro: tese, introdução, argumentos, contra-argumento e conclusão, com conferência de forma e de língua a cada etapa.",
+  "description": "Escrever por partes até o texto inteiro: artigo de opinião, redação dissertativa com proposta de intervenção e fábula, com conferência de forma e de língua a cada etapa.",
   "lessons": [
     {
       "slug": "o-que-e-artigo-de-opiniao",
@@ -1529,6 +1529,1016 @@
           "explanation": "No simulado não há roteiro. Planejar a tese e os argumentos antes de escrever evita o texto que muda de ideia no meio.",
           "pitfall": "Começar a escrever sem saber a tese é o caminho mais curto para um texto em cima do muro.",
           "exam_only": true
+        }
+      ]
+    },
+    {
+      "slug": "redacao-dissertativa",
+      "title": "A redação dissertativa-argumentativa",
+      "module": "Redação dissertativa",
+      "summary": "A redação dos vestibulares e concursos: a estrutura em quatro parágrafos e o que a correção olha.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Explicar um problema a quem decide",
+          "body": [
+            "Imagine que você tem cinco minutos com alguém que pode resolver um problema da sua cidade. Não adianta desabafar.",
+            "Você precisa dizer qual é o problema e por que ele acontece. No fim, diz o que dá para fazer.",
+            "A redação de vestibular e de concurso é essa conversa, por escrito."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que é esse tipo de texto",
+          "body": [
+            "A redação pede um texto que discute um problema e defende um ponto de vista com argumentos. É parecido com o artigo de opinião, mas com regras mais rígidas.",
+            "Não é um texto pessoal. Quem lê é uma banca, e ela espera um texto impessoal, organizado e em português formal."
+          ],
+          "terms": [
+            {
+              "word": "Dissertativo-argumentativo",
+              "meaning": "o texto que discute um problema e defende um ponto de vista com argumentos. É o tipo pedido na maioria das redações de prova."
+            },
+            {
+              "word": "Tese",
+              "meaning": "a posição que o texto defende, dita numa frase clara."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que muda em relação ao artigo de opinião",
+          "body": [
+            "As duas estruturas se parecem. As diferenças estão no tom e no fim do texto."
+          ],
+          "table": {
+            "label": "Artigo de opinião e redação",
+            "headers": [
+              "",
+              "Artigo de opinião",
+              "Redação"
+            ],
+            "rows": [
+              [
+                "Primeira pessoa",
+                "Pode usar",
+                "Evite"
+              ],
+              [
+                "Título",
+                "Tem",
+                "Opcional na maioria das provas"
+              ],
+              [
+                "No fim",
+                "Proposta é opcional",
+                "Proposta de solução é obrigatória"
+              ],
+              [
+                "Quem lê",
+                "O público do jornal",
+                "Uma banca de correção"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Quatro parágrafos",
+          "body": [
+            "O formato mais seguro tem quatro parágrafos. A introdução apresenta o tema e a tese, e já anuncia os dois argumentos.",
+            "Cada desenvolvimento cumpre um desses anúncios. A conclusão retoma a tese e propõe uma solução."
+          ],
+          "figure": {
+            "src": "/figuras/producao-textual/pt-redacao-estrutura.svg",
+            "alt": "Quatro blocos: introdução com contexto, tese e os dois argumentos anunciados; dois desenvolvimentos; e a conclusão com a proposta. Linhas tracejadas ligam a introdução a cada desenvolvimento.",
+            "caption": "A introdução promete os dois argumentos. Cada desenvolvimento cumpre uma promessa."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Anunciar os argumentos",
+          "body": [
+            "Na introdução, depois da tese, diga em poucas palavras quais serão os dois argumentos. Isso orienta o leitor e mostra que o texto foi planejado.",
+            "Os conectivos ajudam a amarrar cada anúncio ao parágrafo que o desenvolve."
+          ],
+          "terms": [
+            {
+              "word": "Conectivo",
+              "meaning": "palavra ou expressão que liga ideias e diz a relação entre elas, como além disso e portanto."
+            }
+          ],
+          "example": {
+            "label": "Tese com os argumentos anunciados",
+            "lines": [
+              "“Combater a desinformação exige enfrentar dois obstáculos: a falta de educação para as redes e a velocidade com que os aplicativos espalham conteúdo.”"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Trazer o mundo para dentro do texto",
+          "body": [
+            "Argumento forte costuma se apoiar em algo de fora do texto. Pode ser um fato, uma lei, um acontecimento histórico ou um exemplo conhecido.",
+            "Só vale o que você sabe que é verdade. Um exemplo certo convence mais do que um número inventado."
+          ],
+          "terms": [
+            {
+              "word": "Repertório",
+              "meaning": "o conhecimento de fora do texto que você traz para sustentar um argumento."
+            }
+          ],
+          "bullets": [
+            "Um fato ou acontecimento que qualquer um pode conferir.",
+            "Uma lei ou um direito garantido pela Constituição.",
+            "Um exemplo concreto do dia a dia do problema.",
+            "Uma comparação com outro lugar ou outra época."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Na redação do ENEM, a correção olha cinco competências, e cada uma vale até 200 pontos. Outras provas usam critérios muito parecidos.",
+            "A redação tem limite de trinta linhas. Texto muito curto, fuga ao tema ou texto de outro tipo podem zerar a nota."
+          ],
+          "table": {
+            "label": "As cinco competências",
+            "headers": [
+              "Competência",
+              "O que se avalia"
+            ],
+            "rows": [
+              [
+                "1",
+                "Domínio da norma-padrão: ortografia, acentuação, concordância e pontuação."
+              ],
+              [
+                "2",
+                "Entender o tema e escrever um texto dissertativo-argumentativo com repertório."
+              ],
+              [
+                "3",
+                "Selecionar e organizar os argumentos para defender a tese."
+              ],
+              [
+                "4",
+                "Coesão: ligar frases e parágrafos com conectivos e retomadas."
+              ],
+              [
+                "5",
+                "Proposta de intervenção completa e que respeite os direitos humanos."
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Estes erros tiram ponto de gente que escreve bem."
+          ],
+          "bullets": [
+            "Tangenciar o tema: falar do assunto geral sem responder ao recorte da proposta.",
+            "Escrever em primeira pessoa, como “eu acho” ou “na minha opinião”.",
+            "Usar uma citação decorada que não tem ligação com o tema.",
+            "Terminar sem proposta de solução."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A redação discute um problema, defende uma tese e termina propondo uma solução."
+          ],
+          "bullets": [
+            "Texto impessoal, sem primeira pessoa.",
+            "Quatro parágrafos: introdução, dois desenvolvimentos e conclusão.",
+            "A introdução anuncia os dois argumentos.",
+            "Cada argumento se apoia em repertório verdadeiro.",
+            "A conclusão retoma a tese e traz a proposta."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Tese",
+          "format": "writing",
+          "statement": "Tema: os desafios para combater a desinformação na internet no Brasil. Escreva a sua tese já com os dois argumentos.",
+          "writing": {
+            "steps": [
+              "Diga o que é preciso para combater o problema.",
+              "Anuncie as duas causas ou os dois obstáculos que você vai discutir.",
+              "Uma frase só, sem primeira pessoa."
+            ],
+            "min_chars": 40,
+            "max_chars": 300,
+            "checks": [
+              "uma_frase",
+              "sem_pergunta",
+              "sem_eu_acho"
+            ],
+            "checklist": [
+              "A frase responde ao tema proposto.",
+              "Os dois argumentos aparecem anunciados.",
+              "Não há primeira pessoa."
+            ],
+            "model": "Combater a desinformação exige enfrentar a falta de educação para as redes e a velocidade com que os aplicativos espalham conteúdo.",
+            "draft_only": true
+          },
+          "explanation": "A tese com os argumentos anunciados é o mapa da redação. Com ela escrita, cada desenvolvimento já sabe o que precisa provar.",
+          "pitfall": "Anunciar três argumentos e desenvolver dois é uma promessa quebrada que a banca percebe."
+        },
+        {
+          "topic": "Introdução",
+          "format": "writing",
+          "statement": "Escreva a introdução da redação.",
+          "writing": {
+            "steps": [
+              "Contextualize o tema com um fato ou uma situação atual.",
+              "Termine com a sua tese e os dois argumentos anunciados.",
+              "Um parágrafo, sem primeira pessoa."
+            ],
+            "min_chars": 250,
+            "max_chars": 700,
+            "checks": [
+              "um_paragrafo",
+              "sem_eu_acho"
+            ],
+            "checklist": [
+              "O contexto leva naturalmente ao problema.",
+              "A tese e os dois argumentos aparecem no fim.",
+              "Não há primeira pessoa.",
+              "Ainda não há argumento desenvolvido."
+            ],
+            "model": "A internet tornou a informação acessível a qualquer pessoa com um celular. Junto com ela, porém, circulam notícias falsas que se espalham mais rápido do que qualquer correção. Nesse cenário, combater a desinformação exige enfrentar dois obstáculos: a falta de educação para o uso das redes e a velocidade com que os aplicativos fazem o conteúdo circular."
+          },
+          "explanation": "A introdução situa o leitor e promete o que o texto vai provar.",
+          "pitfall": "Começar com uma definição de dicionário gasta a primeira frase sem dizer nada."
+        },
+        {
+          "topic": "Desenvolvimento",
+          "format": "writing",
+          "statement": "Escreva o primeiro desenvolvimento, sobre o primeiro argumento anunciado.",
+          "writing": {
+            "steps": [
+              "Abra com um conectivo, como “em primeiro lugar”.",
+              "Explique o argumento e traga um repertório verdadeiro.",
+              "Feche ligando o argumento à tese."
+            ],
+            "min_chars": 350,
+            "max_chars": 900,
+            "checks": [
+              "um_paragrafo",
+              "conectivo",
+              "sem_eu_acho"
+            ],
+            "checklist": [
+              "O parágrafo desenvolve o primeiro argumento anunciado.",
+              "Há repertório ou exemplo, e não só afirmação.",
+              "O fim liga o argumento à tese.",
+              "Não há primeira pessoa."
+            ],
+            "model": "Em primeiro lugar, grande parte dos usuários não aprendeu a checar o que lê. A escola ensina a interpretar um texto, mas raramente ensina a desconfiar da fonte de uma mensagem. Por isso, muita gente compartilha uma notícia só porque ela chegou de um parente. Dessa forma, a falta de preparo transforma pessoas comuns em multiplicadoras de boatos."
+          },
+          "explanation": "O desenvolvimento é onde a promessa da introdução é cumprida. Sem repertório, ele vira só opinião.",
+          "pitfall": "Repertório solto, sem explicar a relação com o tema, não conta como argumento."
+        },
+        {
+          "topic": "Desenvolvimento",
+          "format": "writing",
+          "statement": "Escreva o segundo desenvolvimento, sobre o segundo argumento anunciado.",
+          "writing": {
+            "steps": [
+              "Abra com um conectivo de acréscimo, como “além disso”.",
+              "Explique o argumento com causa e consequência ou com um exemplo.",
+              "Feche ligando o argumento à tese."
+            ],
+            "min_chars": 350,
+            "max_chars": 900,
+            "checks": [
+              "um_paragrafo",
+              "conectivo",
+              "sem_eu_acho"
+            ],
+            "checklist": [
+              "O parágrafo desenvolve o segundo argumento anunciado.",
+              "O argumento é diferente do primeiro.",
+              "O fim liga o argumento à tese.",
+              "Não há primeira pessoa."
+            ],
+            "model": "Além disso, as plataformas favorecem o que provoca reação. Uma mensagem que causa medo ou raiva é compartilhada mais vezes. Assim, ela aparece para mais gente antes que qualquer desmentido consiga alcançá-la. Portanto, o próprio funcionamento das redes acelera a mentira e atrasa a verdade."
+          },
+          "explanation": "Dois argumentos diferentes mostram que você olhou o problema por mais de um lado.",
+          "pitfall": "Repetir o primeiro argumento com outras palavras vale como um só."
+        },
+        {
+          "topic": "Conclusão",
+          "format": "writing",
+          "statement": "Escreva a conclusão com uma proposta de solução.",
+          "writing": {
+            "steps": [
+              "Comece com um conectivo de conclusão.",
+              "Retome a tese em poucas palavras.",
+              "Proponha uma solução dizendo quem faz, o quê, como e para quê."
+            ],
+            "min_chars": 250,
+            "max_chars": 800,
+            "checks": [
+              "um_paragrafo",
+              "conclusivo",
+              "sem_eu_acho"
+            ],
+            "checklist": [
+              "A tese é retomada.",
+              "A proposta diz quem faz e o que faz.",
+              "A proposta diz como e para quê.",
+              "A proposta resolve o problema discutido no texto."
+            ],
+            "model": "Diante disso, é preciso agir nas duas frentes. O Ministério da Educação deve incluir a checagem de informações no currículo do ensino médio, por meio de oficinas práticas com notícias reais. Assim, os jovens aprenderiam a desconfiar antes de compartilhar e ajudariam a frear a desinformação dentro da própria família."
+          },
+          "explanation": "Na redação, a conclusão sem proposta perde uma competência inteira.",
+          "pitfall": "“O governo deve fazer algo” não é proposta: falta dizer o quê, como e para quê."
+        },
+        {
+          "topic": "Texto completo",
+          "format": "writing",
+          "statement": "Junte os quatro parágrafos e revise a redação inteira.",
+          "writing": {
+            "steps": [
+              "Confira se a introdução anuncia os dois argumentos.",
+              "Veja se cada parágrafo começa ligado ao anterior.",
+              "Troque as palavras que se repetem.",
+              "Corrija o que o corretor apontar."
+            ],
+            "min_chars": 1200,
+            "max_chars": 3200,
+            "checks": [
+              "sem_eu_acho"
+            ],
+            "checklist": [
+              "A introdução traz a tese e anuncia os dois argumentos.",
+              "Cada desenvolvimento cumpre o que a introdução anunciou.",
+              "Não há primeira pessoa no texto.",
+              "Os parágrafos estão ligados por conectivos.",
+              "A conclusão traz uma proposta com agente, ação e finalidade."
+            ],
+            "model": "A internet tornou a informação acessível a qualquer pessoa com um celular. Junto com ela, porém, circulam notícias falsas que se espalham mais rápido do que qualquer correção. Nesse cenário, combater a desinformação exige enfrentar dois obstáculos: a falta de educação para o uso das redes e a velocidade com que os aplicativos fazem o conteúdo circular.\n\nEm primeiro lugar, grande parte dos usuários não aprendeu a checar o que lê. A escola ensina a interpretar um texto, mas raramente ensina a desconfiar da fonte de uma mensagem. Por isso, muita gente compartilha uma notícia só porque ela chegou de um parente. Dessa forma, a falta de preparo transforma pessoas comuns em multiplicadoras de boatos.\n\nAlém disso, as plataformas favorecem o que provoca reação. Uma mensagem que causa medo ou raiva é compartilhada mais vezes. Assim, ela aparece para mais gente antes que qualquer desmentido consiga alcançá-la. Portanto, o próprio funcionamento das redes acelera a mentira e atrasa a verdade.\n\nDiante disso, é preciso agir nas duas frentes. O Ministério da Educação deve incluir a checagem de informações no currículo do ensino médio, por meio de oficinas práticas com notícias reais. Assim, os jovens aprenderiam a desconfiar antes de compartilhar e ajudariam a frear a desinformação dentro da própria família.",
+            "assemble": true
+          },
+          "explanation": "Na redação, o texto inteiro é avaliado como uma peça só. A ligação entre os parágrafos pesa tanto quanto cada parágrafo.",
+          "pitfall": "Colar as partes sem reler deixa conectivos repetidos e ideias que não conversam entre si."
+        },
+        {
+          "topic": "Simulado",
+          "format": "writing",
+          "statement": "Escreva uma redação dissertativa-argumentativa sobre este tema: os desafios da saúde mental dos jovens no Brasil.",
+          "writing": {
+            "steps": [
+              "Uma redação completa, em até trinta linhas, sem primeira pessoa.",
+              "Sem roteiro por partes: planeje antes de escrever."
+            ],
+            "min_chars": 1200,
+            "max_chars": 3200,
+            "checks": [
+              "sem_eu_acho"
+            ],
+            "checklist": [
+              "A introdução traz a tese e anuncia os dois argumentos.",
+              "Cada desenvolvimento cumpre um anúncio, com repertório verdadeiro.",
+              "Não há primeira pessoa.",
+              "Os parágrafos estão ligados por conectivos.",
+              "A conclusão traz uma proposta com quem faz, o quê, como e para quê.",
+              "O texto passou pela revisão de ortografia e pontuação."
+            ],
+            "model": "Nos últimos anos, cresceu o número de jovens que relatam ansiedade e tristeza constante. Apesar disso, pedir ajuda ainda é visto por muitos como sinal de fraqueza. Enfrentar esse quadro exige combater o preconceito contra o tratamento e ampliar o acesso ao atendimento.\n\nEm primeiro lugar, o preconceito afasta o jovem da ajuda. Quem ouve que ansiedade é frescura tende a esconder o que sente. Dessa forma, o problema cresce em silêncio até se tornar grave.\n\nAlém disso, mesmo quem decide procurar atendimento encontra filas longas. Os serviços públicos de saúde mental não dão conta da procura em muitas cidades. Assim, a vontade de se tratar esbarra na falta de vaga.\n\nPortanto, é preciso agir nas duas frentes. As escolas devem promover rodas de conversa com psicólogos, uma vez por mês, para que falar de saúde mental deixe de ser tabu. Além disso, o Ministério da Saúde deve ampliar o atendimento psicológico nos postos de saúde, priorizando os bairros com menos oferta."
+          },
+          "explanation": "No simulado não há roteiro. Planejar a tese e os dois argumentos antes de escrever evita a redação que muda de rumo no meio.",
+          "pitfall": "Começar a escrever sem a proposta em mente costuma deixar a conclusão vaga.",
+          "exam_only": true
+        }
+      ]
+    },
+    {
+      "slug": "proposta-de-intervencao",
+      "title": "A proposta de intervenção",
+      "module": "Redação dissertativa",
+      "summary": "Como fechar a redação com uma solução completa: quem faz, o que faz, como e para quê.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Receita de bolo",
+          "body": [
+            "Uma receita que diz só “faça um bolo” não ajuda ninguém. Falta dizer os ingredientes, o forno e o tempo.",
+            "Com a solução de um problema acontece o mesmo. Dizer que “é preciso melhorar a educação” não ensina ninguém a melhorar nada.",
+            "A proposta boa é uma receita: dá para seguir."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As cinco peças",
+          "body": [
+            "Uma proposta completa responde a cinco perguntas. Quem faz e o que faz? Como faz e para quê? E um detalhe a mais sobre qualquer uma delas.",
+            "Faltou uma peça, e a proposta fica vaga. É exatamente isso que a correção procura."
+          ],
+          "terms": [
+            {
+              "word": "Proposta de intervenção",
+              "meaning": "a solução que a redação propõe para o problema discutido. Ela diz quem faz, o quê, como e para quê."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/producao-textual/pt-proposta-intervencao.svg",
+            "alt": "Cinco peças lado a lado: quem faz, o que faz, como faz, para quê e um detalhe a mais.",
+            "caption": "Cada peça responde a uma pergunta. Juntas, viram uma receita que dá para seguir."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Cada peça, com um exemplo",
+          "body": [
+            "Veja uma proposta montada peça por peça. Repare que cada uma cabe em poucas palavras."
+          ],
+          "table": {
+            "label": "Uma proposta, peça por peça",
+            "headers": [
+              "Peça",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "Quem faz",
+                "O Ministério da Educação"
+              ],
+              [
+                "O que faz",
+                "deve ampliar as bolsas de permanência"
+              ],
+              [
+                "Como faz",
+                "pagas mediante frequência mínima"
+              ],
+              [
+                "Para quê",
+                "para que estudar deixe de competir com trabalhar"
+              ],
+              [
+                "Detalhe",
+                "priorizando alunos de baixa renda"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O agente certo para a ação certa",
+          "body": [
+            "O agente precisa ter poder para fazer o que você propõe. A escola não muda uma lei, e o governo não entra na casa das famílias.",
+            "Escolha quem de fato consegue agir. Isso deixa a proposta possível, e não só bonita."
+          ],
+          "bullets": [
+            "Governo e ministérios: leis, verbas e programas.",
+            "Escolas: aulas, projetos e rotina dos alunos.",
+            "Mídia e redes: campanhas e informação.",
+            "Organizações da sociedade: ação local e acompanhamento.",
+            "Família: hábitos dentro de casa."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A proposta responde aos argumentos",
+          "body": [
+            "A solução não pode cair do céu. Ela precisa atacar as causas que o texto discutiu.",
+            "Se o desenvolvimento falou de renda e de falta de sentido nas aulas, a proposta cuida dessas duas coisas. Os conectivos mostram essa ligação."
+          ],
+          "terms": [
+            {
+              "word": "Conectivo",
+              "meaning": "palavra ou expressão que liga ideias e diz a relação entre elas, como além disso e portanto."
+            },
+            {
+              "word": "Tese",
+              "meaning": "a posição que o texto defende, dita numa frase clara."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "No ENEM, a proposta é a competência 5. A nota sobe conforme a proposta traz mais peças e fica mais detalhada.",
+            "A proposta também precisa respeitar os direitos humanos. Propor violência ou tirar direitos de alguém derruba essa competência."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "As propostas mais comuns perdem ponto pelos mesmos motivos."
+          ],
+          "bullets": [
+            "Agente genérico, como “alguém” ou “a sociedade”, sem dizer quem.",
+            "Ação vaga, como “fazer algo” ou “conscientizar”, sem dizer como.",
+            "Solução que não tem nada a ver com as causas discutidas no texto.",
+            "Muitas propostas rasas no lugar de uma completa."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A proposta é uma receita que qualquer um conseguiria seguir."
+          ],
+          "bullets": [
+            "Quem faz e o que faz. Como faz e para quê. Um detalhe a mais.",
+            "O agente precisa ter poder para agir.",
+            "A proposta ataca as causas discutidas no texto.",
+            "Respeita os direitos humanos.",
+            "Uma proposta completa vale mais que várias vagas."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Tese",
+          "format": "writing",
+          "statement": "Tema: caminhos para reduzir o abandono escolar no ensino médio. Escreva a sua tese já com as duas causas.",
+          "writing": {
+            "steps": [
+              "Diga o que é preciso para reduzir o problema.",
+              "Anuncie as duas causas que você vai discutir.",
+              "Uma frase só, sem primeira pessoa."
+            ],
+            "min_chars": 40,
+            "max_chars": 300,
+            "checks": [
+              "uma_frase",
+              "sem_pergunta",
+              "sem_eu_acho"
+            ],
+            "checklist": [
+              "A frase responde ao tema proposto.",
+              "As duas causas aparecem anunciadas.",
+              "Não há primeira pessoa."
+            ],
+            "model": "Reduzir o abandono escolar exige enfrentar a necessidade de trabalhar cedo e a distância entre a escola e a vida do aluno.",
+            "draft_only": true
+          },
+          "explanation": "Com as causas anunciadas, a proposta do fim já sabe o que precisa resolver.",
+          "pitfall": "Causa vaga, como “vários fatores”, não dá à proposta nada para atacar."
+        },
+        {
+          "topic": "Introdução",
+          "format": "writing",
+          "statement": "Escreva a introdução da redação.",
+          "writing": {
+            "steps": [
+              "Contextualize o problema com uma situação concreta.",
+              "Termine com a tese e as duas causas anunciadas.",
+              "Um parágrafo, sem primeira pessoa."
+            ],
+            "min_chars": 250,
+            "max_chars": 700,
+            "checks": [
+              "um_paragrafo",
+              "sem_eu_acho"
+            ],
+            "checklist": [
+              "O contexto leva naturalmente ao problema.",
+              "A tese e as duas causas aparecem no fim.",
+              "Não há primeira pessoa."
+            ],
+            "model": "Muitos jovens brasileiros deixam a escola antes de terminar o ensino médio. A saída raramente acontece de uma vez: ela começa nas faltas e nas notas baixas. Reduzir o abandono escolar exige enfrentar a necessidade de trabalhar cedo e a distância entre o que a escola ensina e a vida do aluno."
+          },
+          "explanation": "A introdução situa o leitor e promete o que o texto vai provar.",
+          "pitfall": "Frase feita na abertura, como “desde os primórdios”, gasta linha sem dizer nada."
+        },
+        {
+          "topic": "Desenvolvimento",
+          "format": "writing",
+          "statement": "Escreva o primeiro desenvolvimento, sobre a primeira causa.",
+          "writing": {
+            "steps": [
+              "Abra com um conectivo, como “em primeiro lugar”.",
+              "Explique como essa causa leva ao problema.",
+              "Feche ligando a causa à tese."
+            ],
+            "min_chars": 300,
+            "max_chars": 900,
+            "checks": [
+              "um_paragrafo",
+              "conectivo",
+              "sem_eu_acho"
+            ],
+            "checklist": [
+              "O parágrafo desenvolve a primeira causa anunciada.",
+              "Há explicação ou exemplo concreto.",
+              "Não há primeira pessoa."
+            ],
+            "model": "Em primeiro lugar, muitos estudantes precisam ajudar a família a pagar as contas. Quando o emprego aparece, a escola perde a disputa pelo tempo do aluno. Dessa forma, o abandono é menos uma escolha e mais uma consequência da renda apertada."
+          },
+          "explanation": "Mostrar como a causa produz o problema prepara a proposta para atacá-la.",
+          "pitfall": "Descrever o problema de novo não é explicar a causa."
+        },
+        {
+          "topic": "Desenvolvimento",
+          "format": "writing",
+          "statement": "Escreva o segundo desenvolvimento, sobre a segunda causa.",
+          "writing": {
+            "steps": [
+              "Abra com um conectivo de acréscimo.",
+              "Explique como essa causa leva ao problema.",
+              "Feche ligando a causa à tese."
+            ],
+            "min_chars": 300,
+            "max_chars": 900,
+            "checks": [
+              "um_paragrafo",
+              "conectivo",
+              "sem_eu_acho"
+            ],
+            "checklist": [
+              "O parágrafo desenvolve a segunda causa anunciada.",
+              "A causa é diferente da primeira.",
+              "Não há primeira pessoa."
+            ],
+            "model": "Além disso, parte dos jovens não vê sentido no que estuda. Uma aula que nunca se liga ao trabalho ou ao cotidiano parece perda de tempo para quem já tem pressa. Assim, a falta de conexão com a vida real empurra o aluno para fora da sala."
+          },
+          "explanation": "Duas causas diferentes pedem duas frentes na proposta.",
+          "pitfall": "Se as duas causas forem a mesma, a proposta também vira uma só."
+        },
+        {
+          "topic": "Proposta de intervenção",
+          "format": "writing",
+          "statement": "Escreva a conclusão com uma proposta completa.",
+          "writing": {
+            "steps": [
+              "Retome a tese em poucas palavras.",
+              "Diga quem faz e o que faz.",
+              "Diga como faz e para quê.",
+              "Acrescente um detalhe a qualquer uma das peças."
+            ],
+            "min_chars": 250,
+            "max_chars": 900,
+            "checks": [
+              "um_paragrafo",
+              "conclusivo",
+              "sem_eu_acho"
+            ],
+            "checklist": [
+              "A proposta diz quem faz.",
+              "A proposta diz o que faz e como.",
+              "A proposta diz para quê.",
+              "Há um detalhe a mais.",
+              "A proposta ataca as causas discutidas."
+            ],
+            "model": "Portanto, manter o jovem na escola exige atacar as duas causas. O Ministério da Educação deve ampliar as bolsas de permanência para alunos de baixa renda, pagas mediante frequência mínima, para que estudar deixe de competir com trabalhar. Além disso, as escolas poderiam incluir projetos ligados a profissões da região, de modo que o aluno veja utilidade no que aprende."
+          },
+          "explanation": "As cinco peças transformam uma boa intenção numa solução que dá para seguir.",
+          "pitfall": "Conscientizar sem dizer como é a proposta vaga mais comum de todas."
+        },
+        {
+          "topic": "Texto completo",
+          "format": "writing",
+          "statement": "Junte os quatro parágrafos e revise a redação inteira.",
+          "writing": {
+            "steps": [
+              "Confira se a introdução anuncia os dois argumentos.",
+              "Veja se cada parágrafo começa ligado ao anterior.",
+              "Troque as palavras que se repetem.",
+              "Corrija o que o corretor apontar."
+            ],
+            "min_chars": 1200,
+            "max_chars": 3200,
+            "checks": [
+              "sem_eu_acho"
+            ],
+            "checklist": [
+              "A introdução traz a tese e anuncia os dois argumentos.",
+              "Cada desenvolvimento cumpre o que a introdução anunciou.",
+              "Não há primeira pessoa no texto.",
+              "Os parágrafos estão ligados por conectivos.",
+              "A conclusão traz uma proposta com agente, ação e finalidade."
+            ],
+            "model": "Muitos jovens brasileiros deixam a escola antes de terminar o ensino médio. A saída raramente acontece de uma vez: ela começa nas faltas e nas notas baixas. Reduzir o abandono escolar exige enfrentar a necessidade de trabalhar cedo e a distância entre o que a escola ensina e a vida do aluno.\n\nEm primeiro lugar, muitos estudantes precisam ajudar a família a pagar as contas. Quando o emprego aparece, a escola perde a disputa pelo tempo do aluno. Dessa forma, o abandono é menos uma escolha e mais uma consequência da renda apertada.\n\nAlém disso, parte dos jovens não vê sentido no que estuda. Uma aula que nunca se liga ao trabalho ou ao cotidiano parece perda de tempo para quem já tem pressa. Assim, a falta de conexão com a vida real empurra o aluno para fora da sala.\n\nPortanto, manter o jovem na escola exige atacar as duas causas. O Ministério da Educação deve ampliar as bolsas de permanência para alunos de baixa renda, pagas mediante frequência mínima, para que estudar deixe de competir com trabalhar. Além disso, as escolas poderiam incluir projetos ligados a profissões da região, de modo que o aluno veja utilidade no que aprende.",
+            "assemble": true
+          },
+          "explanation": "Na redação, o texto inteiro é avaliado como uma peça só. A ligação entre os parágrafos pesa tanto quanto cada parágrafo.",
+          "pitfall": "Colar as partes sem reler deixa conectivos repetidos e ideias que não conversam entre si."
+        }
+      ]
+    },
+    {
+      "slug": "fabula",
+      "title": "Fábula: uma história com lição",
+      "module": "Fábula",
+      "summary": "Como contar uma história curta com personagens animais e terminar numa moral que combina com ela.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "E é por isso que…",
+          "body": [
+            "Toda família tem uma história que termina com “e é por isso que você não deve…”. Ninguém lembra do sermão, mas todo mundo lembra da história.",
+            "A fábula funciona assim. Primeiro conta, depois ensina."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que é uma fábula",
+          "body": [
+            "A fábula é uma narrativa curta em que animais agem e falam como pessoas. Cada animal representa um jeito de ser.",
+            "No fim vem a moral: a lição que a história ensinou, dita numa frase."
+          ],
+          "terms": [
+            {
+              "word": "Fábula",
+              "meaning": "uma história curta, com personagens animais que agem como pessoas, que termina ensinando uma lição."
+            },
+            {
+              "word": "Moral",
+              "meaning": "a lição da fábula, dita numa frase no fim da história."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O caminho da história",
+          "body": [
+            "Quase toda narrativa sobe e desce como uma montanha. Começa calma e aparece um problema, que cresce até o momento mais tenso.",
+            "Depois a tensão se resolve. Na fábula, a moral vem depois do desfecho, fora da montanha."
+          ],
+          "terms": [
+            {
+              "word": "Clímax",
+              "meaning": "o momento mais tenso da história, em que o problema chega ao ponto mais alto."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/producao-textual/pt-arco-narrativo.svg",
+            "alt": "Uma linha em forma de montanha: situação inicial, conflito subindo, clímax no topo e desfecho descendo. A moral fica numa caixa depois do fim da linha.",
+            "caption": "Situação inicial, conflito, clímax e desfecho. A moral fecha tudo."
+          },
+          "example": {
+            "label": "As partes, em ordem",
+            "ordered": true,
+            "lines": [
+              "Situação inicial: quem são os personagens e onde vivem.",
+              "Conflito: o problema que aparece.",
+              "Clímax: o momento em que tudo pode dar errado.",
+              "Desfecho: como o problema se resolve.",
+              "Moral: a lição, numa frase."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Animais que representam algo",
+          "body": [
+            "O leitor já espera certos comportamentos de certos animais. Usar isso economiza explicação.",
+            "Você também pode inventar: o que importa é que o traço do bicho mova a história."
+          ],
+          "table": {
+            "label": "Traços que o leitor reconhece",
+            "headers": [
+              "Animal",
+              "Costuma representar"
+            ],
+            "rows": [
+              [
+                "Raposa",
+                "esperteza e malandragem"
+              ],
+              [
+                "Formiga",
+                "trabalho e prevenção"
+              ],
+              [
+                "Tartaruga",
+                "persistência"
+              ],
+              [
+                "Leão",
+                "poder e força"
+              ],
+              [
+                "Cigarra",
+                "quem só pensa no agora"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Narrador, tempo e diálogo",
+          "body": [
+            "A fábula costuma ser contada em terceira pessoa e no passado: “era uma vez”, “certo dia”. Mantenha o mesmo tempo verbal do começo ao fim.",
+            "Quando os bichos falam, use o travessão no começo da fala. Cada fala nova começa numa linha nova."
+          ],
+          "example": {
+            "label": "Diálogo com travessão",
+            "lines": [
+              "— A água está baixando — avisou a garça.",
+              "— Não preciso de conselho — respondeu a rã."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A moral em uma frase",
+          "body": [
+            "A moral é curta e combina com o que aconteceu. Se a história mostra alguém que não ouviu um aviso, a moral fala de ouvir.",
+            "Ela pode ser um ditado conhecido ou uma frase sua."
+          ],
+          "bullets": [
+            "“Quem não ouve conselho aprende pelo caminho mais difícil.”",
+            "“Devagar e sempre se chega longe.”",
+            "“Quem se prepara no verão não passa fome no inverno.”"
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Na correção de uma narrativa, olha-se se a história tem todas as partes e se a moral combina com ela. Também contam a pontuação do diálogo e o tempo verbal constante.",
+            "Personagem sem traço claro e história sem conflito são os descontos mais comuns."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Estes deslizes fazem a fábula perder a graça e a nota."
+          ],
+          "bullets": [
+            "Moral que não combina com o que aconteceu na história.",
+            "História sem conflito: nada acontece e ninguém aprende nada.",
+            "Trocar o tempo verbal no meio, do passado para o presente.",
+            "Diálogo sem travessão, misturado com a narração."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A fábula conta uma história curta e termina ensinando."
+          ],
+          "bullets": [
+            "Personagens animais com um traço claro.",
+            "Situação inicial, conflito, clímax e desfecho.",
+            "Narrador em terceira pessoa, no passado.",
+            "Diálogo com travessão.",
+            "Moral numa frase, que combina com a história."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Planejamento",
+          "format": "writing",
+          "statement": "Antes de escrever: qual vai ser a moral da sua fábula?",
+          "writing": {
+            "steps": [
+              "Escolha a lição que a história vai ensinar.",
+              "Escreva numa frase só.",
+              "Pode ser um ditado ou uma frase sua."
+            ],
+            "min_chars": 15,
+            "max_chars": 200,
+            "checks": [
+              "uma_frase"
+            ],
+            "checklist": [
+              "A moral é uma frase curta.",
+              "Dá para imaginar uma história que ensine isso."
+            ],
+            "model": "Quem não ouve conselho aprende pelo caminho mais difícil.",
+            "draft_only": true,
+            "placeholder": "Ex.: devagar e sempre se chega longe."
+          },
+          "explanation": "Começar pela moral garante que a história inteira caminhe na direção dela.",
+          "pitfall": "Moral escolhida só no fim costuma não combinar com o que aconteceu."
+        },
+        {
+          "topic": "Situação inicial",
+          "format": "writing",
+          "statement": "Escreva a situação inicial: quem são os personagens e onde vivem.",
+          "writing": {
+            "steps": [
+              "Apresente o personagem principal e o traço dele.",
+              "Diga onde a história acontece.",
+              "Use o passado, como “vivia” ou “era uma vez”."
+            ],
+            "min_chars": 120,
+            "max_chars": 600,
+            "checks": [
+              "um_paragrafo"
+            ],
+            "checklist": [
+              "O personagem principal tem um traço claro.",
+              "O lugar aparece.",
+              "O texto está no passado."
+            ],
+            "model": "Numa lagoa cercada de juncos vivia uma rã que se achava a mais esperta do brejo. Todas as manhãs ela contava aos outros bichos que sabia pular mais longe do que qualquer um."
+          },
+          "explanation": "A situação inicial mostra como era a vida antes do problema. Sem ela, o conflito não tem contra o que contrastar.",
+          "pitfall": "Apresentar muitos personagens de uma vez confunde quem lê."
+        },
+        {
+          "topic": "Conflito",
+          "format": "writing",
+          "statement": "Escreva o conflito: o problema que aparece.",
+          "writing": {
+            "steps": [
+              "Mostre o acontecimento que muda a situação.",
+              "Deixe o traço do personagem pesar na reação dele.",
+              "Se houver fala, use travessão."
+            ],
+            "min_chars": 150,
+            "max_chars": 700,
+            "checks": [],
+            "checklist": [
+              "Há um problema claro.",
+              "A reação do personagem combina com o traço dele.",
+              "O tempo verbal continua o mesmo."
+            ],
+            "model": "Certo dia, a garça avisou que a água estava baixando e que era melhor procurar outra lagoa antes do verão. A rã riu da garça e disse que não precisava de conselho de ninguém. Os outros bichos partiram, e ela ficou sozinha."
+          },
+          "explanation": "O conflito é o motor da história. É dele que a moral vai nascer.",
+          "pitfall": "Problema resolvido na mesma frase em que aparece não é conflito."
+        },
+        {
+          "topic": "Clímax",
+          "format": "writing",
+          "statement": "Escreva o clímax: o momento mais tenso.",
+          "writing": {
+            "steps": [
+              "Mostre o problema no ponto mais alto.",
+              "Faça o leitor querer saber o que vai acontecer.",
+              "Mantenha o tempo verbal."
+            ],
+            "min_chars": 120,
+            "max_chars": 700,
+            "checks": [],
+            "checklist": [
+              "É o momento de maior tensão da história.",
+              "Ele é consequência do conflito.",
+              "O tempo verbal continua o mesmo."
+            ],
+            "model": "Semanas depois, a lagoa virou um charco de lama seca. A rã tentou pular até o rio mais próximo, mas a distância era grande demais para ela. Presa no barro, ela gritou por ajuda e ninguém estava por perto para ouvir."
+          },
+          "explanation": "O clímax é onde o traço do personagem cobra o preço. É o que prepara a lição.",
+          "pitfall": "Pular do conflito direto para o final tira a força da moral."
+        },
+        {
+          "topic": "Desfecho e moral",
+          "format": "writing",
+          "statement": "Escreva o desfecho e, numa linha separada, a moral.",
+          "writing": {
+            "steps": [
+              "Mostre como o problema se resolve.",
+              "Mostre o que o personagem aprendeu.",
+              "Termine com a moral numa linha só, começando por “Moral:”."
+            ],
+            "min_chars": 120,
+            "max_chars": 800,
+            "checks": [],
+            "checklist": [
+              "O problema se resolve.",
+              "A mudança do personagem aparece.",
+              "A moral combina com a história."
+            ],
+            "model": "Por sorte, a garça passou voando e ouviu o grito. Ela carregou a rã no bico até a nova lagoa, onde os outros bichos já estavam. Desde então, a rã passou a ouvir antes de rir.\n\nMoral: quem não ouve conselho aprende pelo caminho mais difícil."
+          },
+          "explanation": "O desfecho fecha a montanha. A moral diz ao leitor o que ele levou dali.",
+          "pitfall": "Moral que fala de outra coisa desmancha a história inteira."
+        },
+        {
+          "topic": "Texto completo",
+          "format": "writing",
+          "statement": "Junte as partes, dê um título e revise a fábula inteira.",
+          "writing": {
+            "steps": [
+              "Escreva um título curto na primeira linha.",
+              "Confira se o tempo verbal é o mesmo do começo ao fim.",
+              "Confira o travessão nos diálogos.",
+              "Corrija o que o corretor apontar."
+            ],
+            "min_chars": 500,
+            "max_chars": 3000,
+            "checks": [
+              "titulo"
+            ],
+            "checklist": [
+              "O título é curto e combina com a história.",
+              "Situação inicial, conflito, clímax e desfecho estão todos lá.",
+              "O tempo verbal é o mesmo do começo ao fim.",
+              "A moral combina com o que aconteceu."
+            ],
+            "model": "A rã que não ouvia\n\nNuma lagoa cercada de juncos vivia uma rã que se achava a mais esperta do brejo. Todas as manhãs ela contava aos outros bichos que sabia pular mais longe do que qualquer um.\n\nCerto dia, a garça avisou que a água estava baixando e que era melhor procurar outra lagoa antes do verão. A rã riu da garça e disse que não precisava de conselho de ninguém. Os outros bichos partiram, e ela ficou sozinha.\n\nSemanas depois, a lagoa virou um charco de lama seca. A rã tentou pular até o rio mais próximo, mas a distância era grande demais para ela. Presa no barro, ela gritou por ajuda e ninguém estava por perto para ouvir.\n\nPor sorte, a garça passou voando e ouviu o grito. Ela carregou a rã no bico até a nova lagoa, onde os outros bichos já estavam. Desde então, a rã passou a ouvir antes de rir.\n\nMoral: quem não ouve conselho aprende pelo caminho mais difícil.",
+            "assemble": true
+          },
+          "explanation": "Relida inteira, a fábula mostra se a moral nasce mesmo da história.",
+          "pitfall": "Juntar sem reler deixa tempos verbais trocados entre uma parte e outra."
         }
       ]
     }
