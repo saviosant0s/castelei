@@ -52,6 +52,8 @@ const ALLOWED_PATHS = [
   /^attempts\/\d+\/finish$/,
   // Produção textual: conferir o texto (língua + modelo) e, com chave, a correção por IA.
   /^attempts\/\d+\/writing\/(check|review)$/,
+  // A anotação da pessoa na lição (ler e guardar).
+  /^lessons\/\d+\/note$/,
   // Lembretes: o interruptor do Perfil assina e desassina o aparelho daqui.
   /^push\/key$/,
   /^push\/subscriptions$/,

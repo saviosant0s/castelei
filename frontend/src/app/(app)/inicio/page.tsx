@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BookOpen, ChevronRight, CloudUpload, Calculator, Cpu, Flame, Languages, PenLine, Server, Star, Wrench } from "lucide-react";
+import { ArrowRight, BookOpen, ChevronRight, CloudUpload, Calculator, Cpu, Flame, Languages, PenLine, Search, Server, Star, Wrench } from "lucide-react";
 import { Card, Pill, ProgressBar } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
 import { firstName, formatNumber, pluralize } from "@/lib/format";
@@ -82,6 +82,13 @@ export default async function Inicio() {
           <Pill tone="sky" href="/planos">
             {user.plan_label}
           </Pill>
+          <Link
+            href="/buscar"
+            aria-label="Buscar lição, palavra ou anotação"
+            className="grid size-11 shrink-0 place-items-center rounded-pill bg-surface-raised text-content shadow-lift transition hover:-translate-y-0.5"
+          >
+            <Search className="size-5" aria-hidden="true" />
+          </Link>
           <ReviewBell vencidas={revisao.due.length} />
         </div>
       </header>

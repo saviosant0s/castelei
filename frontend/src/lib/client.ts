@@ -10,12 +10,26 @@ export class ApiError extends Error {
 
 /** POST JSON para as rotas do próprio Next (`/api/...`). */
 export async function postJson<T>(url: string, body?: unknown): Promise<T> {
+  return sendJson<T>("POST", url, body);
+}
+
+/** PUT JSON: guardar algo que substitui o anterior (a anotação da lição). */
+export async function putJson<T>(url: string, body?: unknown): Promise<T> {
+  return sendJson<T>("PUT", url, body);
+}
+
+/** GET JSON das rotas do próprio Next. */
+export async function getJson<T>(url: string): Promise<T> {
+  return sendJson<T>("GET", url);
+}
+
+async function sendJson<T>(method: "GET" | "POST" | "PUT", url: string, body?: unknown): Promise<T> {
   let response: Response;
   try {
     response = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify(body ?? {}),
+      method,
+      headers: method === "GET" ? { Accept: "application/json" } : { "Content-Type": "application/json", Accept: "application/json" },
+      body: method === "GET" ? undefined : JSON.stringify(body ?? {}),
     });
   } catch {
     throw new ApiError("Sem conexão. Confira sua internet e tente de novo.", 0);

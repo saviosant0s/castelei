@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, BookA } from "lucide-react";
+import { ArrowLeft, BookA, Layers } from "lucide-react";
 import { Card, EmptyState } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
 import type { Subject, VocabularyResponse } from "@/lib/types";
@@ -64,6 +64,11 @@ export default async function VocabularioPage({
         */}
         {vistas > 0 && vistas < terms.length && (
           <p className="mt-1 text-sm text-content-subtle">{AINDA_NAO_VISTAS}</p>
+        )}
+        {terms.length >= 3 && (
+          <Link href={`/materia/${subject.slug}/vocabulario/cartoes`} className="btn btn-primary mt-5 w-full">
+            <Layers className="size-5" aria-hidden="true" /> Treinar com cartões
+          </Link>
         )}
       </header>
 

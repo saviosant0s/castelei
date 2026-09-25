@@ -20,3 +20,9 @@ export async function DELETE(req: NextRequest, ctx: { params: Promise<{ path: st
   const { path } = await ctx.params;
   return forwardToBackend(req, path);
 }
+
+// PUT: guardar a anotação da lição, que substitui a anterior.
+export async function PUT(req: NextRequest, ctx: { params: Promise<{ path: string[] }> }) {
+  const { path } = await ctx.params;
+  return forwardToBackend(req, path);
+}
