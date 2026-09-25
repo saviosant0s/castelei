@@ -10,6 +10,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\CronController;
 use App\Http\Controllers\ExamController;
+use App\Http\Controllers\WritingController;
 use App\Http\Controllers\MediaFileController;
 use App\Http\Controllers\ProgressController;
 use App\Http\Controllers\PushController;
@@ -71,6 +72,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/subjects/{subject}/exams', [ExamController::class, 'store'])->whereNumber('subject');
     Route::post('/attempts/{attempt}/answers', [AttemptController::class, 'answer'])->whereNumber('attempt');
     Route::post('/attempts/{attempt}/finish', [AttemptController::class, 'finish'])->whereNumber('attempt');
+    // Conferir um texto não grava nada, e pode ser feito muitas vezes. O limite existe pelo LanguageTool.
+    Route::post('/attempts/{attempt}/writing/check', [WritingController::class, 'check'])->whereNumber('attempt')->middleware('throttle:30,1');
+    Route::post('/attempts/{attempt}/writing/review', [WritingController::class, 'review'])->whereNumber('attempt')->middleware('throttle:10,1');
 
     Route::get('/progress', [ProgressController::class, 'index']);
 

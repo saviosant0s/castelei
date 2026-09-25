@@ -1,0 +1,1536 @@
+{
+  "_leia_me": [
+    "Produção Textual do Castelei: escrever por partes, conferir e reescrever.",
+    "Chaves começadas por _ são comentário e somem na importação.",
+    "As questões com exam_only são as propostas do simulado: texto inteiro, sem roteiro."
+  ],
+  "slug": "producao-textual",
+  "name": "Produção Textual",
+  "description": "Escrever por partes até o texto inteiro: tese, introdução, argumentos, contra-argumento e conclusão, com conferência de forma e de língua a cada etapa.",
+  "lessons": [
+    {
+      "slug": "o-que-e-artigo-de-opiniao",
+      "title": "O que é um artigo de opinião",
+      "module": "Artigo de opinião",
+      "summary": "Para que serve um artigo de opinião e as quatro partes que ele sempre tem.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Da conversa para o papel",
+          "body": [
+            "Numa roda de amigos, alguém solta que celular na aula atrapalha. Todo mundo opina. Ninguém precisa provar nada.",
+            "Agora imagine defender a mesma ideia para um leitor que não te conhece. Ele não pode te interromper nem perguntar o que você quis dizer.",
+            "Tudo que ele precisa entender tem de estar escrito. Um artigo de opinião é isso: convencer por escrito quem não está na sua frente."
+          ],
+          "example": {
+            "label": "A mesma ideia, dita de dois jeitos",
+            "lines": [
+              "Na conversa: “Celular na aula? Atrapalha, né.”",
+              "No artigo: “O celular deveria ficar guardado durante a aula, porque divide a atenção de quem aprende.”"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Um texto que toma partido",
+          "body": [
+            "O artigo de opinião é um texto curto e assinado. Nele, uma pessoa defende uma posição sobre um assunto atual.",
+            "Ele aparece em jornais, revistas, sites e blogs. O autor não fica em cima do muro: escolhe um lado e mostra por que esse lado faz sentido.",
+            "Como tem nome embaixo, o texto pode usar a primeira pessoa. Mas quem convence são as razões, não o “eu”."
+          ],
+          "terms": [
+            {
+              "word": "Gênero textual",
+              "meaning": "um tipo de texto que se reconhece pela função e pela forma. A receita, a notícia e o artigo de opinião são exemplos."
+            },
+            {
+              "word": "Tese",
+              "meaning": "a posição que o texto defende, dita numa frase clara."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Opinião não é notícia",
+          "body": [
+            "Três textos podem falar do mesmo assunto no mesmo jornal. O que muda é a intenção de cada um.",
+            "Repare na última coluna. Um texto que não defende nada pode ser ótimo, mas não é um artigo de opinião."
+          ],
+          "table": {
+            "label": "Três textos, três intenções",
+            "headers": [
+              "Texto",
+              "Para quê",
+              "Quem assina",
+              "Tem posição?"
+            ],
+            "rows": [
+              [
+                "Notícia",
+                "Contar o que aconteceu",
+                "Um jornalista",
+                "Não: relata os fatos"
+              ],
+              [
+                "Editorial",
+                "Mostrar o que o jornal pensa",
+                "Ninguém: fala pelo jornal",
+                "Sim"
+              ],
+              [
+                "Artigo de opinião",
+                "Defender o que uma pessoa pensa",
+                "O autor, com nome",
+                "Sim"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O esqueleto: quatro partes e um título",
+          "body": [
+            "Quase todo artigo de opinião segue o mesmo caminho. Primeiro você apresenta o assunto e diz o que defende.",
+            "Depois dá as razões, uma em cada parágrafo. No fim, fecha lembrando a ideia principal.",
+            "Um título curto abre tudo. Ele chama o leitor e já dá uma pista da sua posição."
+          ],
+          "figure": {
+            "src": "/figuras/producao-textual/pt-estrutura-artigo.svg",
+            "alt": "Cinco blocos empilhados: título, introdução com a tese, primeiro argumento, segundo argumento e conclusão. Uma linha tracejada liga a tese da introdução à conclusão.",
+            "caption": "A tese aparece duas vezes: no fim da introdução e de novo na conclusão."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A tese cabe numa frase",
+          "body": [
+            "A tese é o coração do texto. Se o leitor só lembrar de uma frase, deve ser dela.",
+            "Uma boa tese afirma, escolhe um lado e pode ser contestada. Dizer que o celular existe não é tese, porque ninguém discorda."
+          ],
+          "example": {
+            "label": "Tese fraca e tese forte",
+            "lines": [
+              "Fraca: “O celular tem pontos positivos e negativos.”",
+              "Fraca: “Será que o celular atrapalha a aula?”",
+              "Forte: “O celular deveria ficar guardado durante a aula.”"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Argumento: o porquê da tese",
+          "body": [
+            "Argumento é a razão que sustenta a tese. Cada razão ganha o seu próprio parágrafo.",
+            "O parágrafo de argumento faz três movimentos. Ele anuncia a razão e depois explica ou dá um exemplo. No fim, liga tudo de volta à tese.",
+            "Os conectivos fazem a ponte entre as frases. Sem eles, o parágrafo vira uma lista de frases soltas."
+          ],
+          "terms": [
+            {
+              "word": "Conectivo",
+              "meaning": "palavra ou expressão que liga ideias e diz a relação entre elas. Exemplos: porque, além disso e portanto."
+            }
+          ],
+          "example": {
+            "label": "Os três movimentos",
+            "ordered": true,
+            "lines": [
+              "Anuncia: “O celular divide a atenção.”",
+              "Explica: “Cada notificação tira o aluno da explicação por alguns segundos.”",
+              "Fecha: “Por isso, guardá-lo ajuda a aprender.”"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A conclusão fecha a porta",
+          "body": [
+            "A conclusão não traz razão nova. Ela lembra o leitor do que foi defendido e amarra o texto.",
+            "O caminho mais seguro é retomar a tese com outras palavras. Depois, feche com uma proposta ou com o que se ganha."
+          ],
+          "bullets": [
+            "Retome a tese sem copiar a frase da introdução.",
+            "Use um conectivo de conclusão: portanto, dessa forma ou assim.",
+            "Termine com uma proposta ou com uma consequência clara."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Na correção, o professor costuma olhar cinco coisas. As três primeiras são sobre a ideia, e as duas últimas sobre a escrita.",
+            "Erro de português tira ponto mesmo quando a ideia é ótima. Por isso a revisão final vale tanto quanto o rascunho."
+          ],
+          "table": {
+            "label": "O que o corretor procura",
+            "headers": [
+              "Critério",
+              "A pergunta por trás"
+            ],
+            "rows": [
+              [
+                "Gênero",
+                "É mesmo um artigo de opinião, com título e posição?"
+              ],
+              [
+                "Tese",
+                "Dá para dizer numa frase o que o autor defende?"
+              ],
+              [
+                "Argumentos",
+                "Cada parágrafo traz uma razão que sustenta a tese?"
+              ],
+              [
+                "Coesão",
+                "As partes estão ligadas por conectivos?"
+              ],
+              [
+                "Norma-padrão",
+                "Ortografia, acentuação, pontuação e concordância estão certas?"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Quatro erros aparecem em quase todo primeiro artigo. Todos têm conserto simples."
+          ],
+          "bullets": [
+            "Ficar em cima do muro: mostrar os dois lados sem escolher nenhum.",
+            "Escrever a tese como pergunta: o leitor fica sem saber o que você pensa.",
+            "Usar “eu acho” no lugar de razões: opinião sem porquê não convence.",
+            "Trazer razão nova na conclusão: ela fecha o texto, não abre outro."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O artigo de opinião defende uma posição por escrito, para um leitor que não pode te interromper."
+          ],
+          "bullets": [
+            "A tese é a posição do texto, numa frase que alguém poderia contestar.",
+            "Introdução apresenta o assunto e termina na tese.",
+            "Cada argumento ocupa um parágrafo: anuncia, explica e fecha.",
+            "A conclusão retoma a tese e termina com uma proposta ou consequência.",
+            "Um título curto abre o texto."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Tese",
+          "format": "writing",
+          "statement": "Tema: O celular deveria ficar guardado durante a aula? Escreva a sua tese.",
+          "writing": {
+            "steps": [
+              "Escolha um lado: a favor ou contra guardar o celular.",
+              "Escreva uma frase só, afirmando a sua posição.",
+              "Não use pergunta nem “eu acho”."
+            ],
+            "min_chars": 30,
+            "max_chars": 250,
+            "checks": [
+              "uma_frase",
+              "sem_pergunta",
+              "sem_eu_acho"
+            ],
+            "checklist": [
+              "A frase escolhe um lado.",
+              "Alguém poderia discordar dela.",
+              "Ela responde ao tema proposto, e não a outro."
+            ],
+            "model": "O celular deveria ficar guardado durante a aula, porque divide a atenção de quem está aprendendo.",
+            "draft_only": true,
+            "placeholder": "A sua posição, numa frase só."
+          },
+          "explanation": "A tese é a frase que o resto do texto vai defender. Com ela escrita, cada parágrafo seguinte tem um alvo.",
+          "pitfall": "Tese que agrada a todo mundo não é tese. Se ninguém discorda, não há o que defender."
+        },
+        {
+          "topic": "Introdução",
+          "format": "writing",
+          "statement": "Escreva a introdução do seu artigo.",
+          "writing": {
+            "steps": [
+              "Comece apresentando o assunto e por que ele está em discussão.",
+              "Termine o parágrafo com a sua tese.",
+              "Um parágrafo só, de três a cinco frases."
+            ],
+            "min_chars": 200,
+            "max_chars": 700,
+            "checks": [
+              "um_paragrafo"
+            ],
+            "checklist": [
+              "O leitor entende do que o texto vai falar.",
+              "A tese aparece clara no fim do parágrafo.",
+              "Ainda não há argumento desenvolvido: só a apresentação."
+            ],
+            "model": "O celular virou parte da rotina de quem estuda. Ele está na mão no ônibus e no intervalo. Também está em cima da carteira durante a explicação. Muitas escolas discutem se ele deve ser liberado ou proibido em sala. Defendo que o celular deveria ficar guardado durante a aula, porque ele divide a atenção de quem está aprendendo."
+          },
+          "explanation": "A introdução prepara o terreno. Quem lê precisa saber do que se trata antes de ser convencido de alguma coisa.",
+          "pitfall": "Introdução que já despeja os argumentos deixa o desenvolvimento sem nada para dizer."
+        },
+        {
+          "topic": "Argumento",
+          "format": "writing",
+          "statement": "Escreva o parágrafo do seu primeiro argumento.",
+          "writing": {
+            "steps": [
+              "Anuncie a razão logo na primeira frase.",
+              "Explique essa razão ou dê um exemplo concreto.",
+              "Use pelo menos um conectivo.",
+              "Feche ligando a razão de volta à sua tese."
+            ],
+            "min_chars": 300,
+            "max_chars": 900,
+            "checks": [
+              "um_paragrafo",
+              "conectivo"
+            ],
+            "checklist": [
+              "A primeira frase diz qual é a razão.",
+              "Há explicação ou exemplo, e não só a afirmação.",
+              "O parágrafo defende a tese, e não outra ideia.",
+              "As frases estão ligadas por conectivos."
+            ],
+            "model": "O primeiro motivo é a atenção. Cada notificação puxa o olhar para a tela por alguns segundos. Depois disso, a pessoa ainda demora para voltar ao raciocínio do professor. Numa aula de uma hora, esses pequenos cortes somam muitos minutos perdidos. Por isso, guardar o celular protege o que a aula tem de mais valioso: a concentração."
+          },
+          "explanation": "Um argumento só convence quando mostra o porquê. A frase de abertura promete, e o resto do parágrafo cumpre.",
+          "pitfall": "Dois argumentos que dizem a mesma coisa com outras palavras valem como um só."
+        },
+        {
+          "topic": "Argumento",
+          "format": "writing",
+          "statement": "Escreva o parágrafo do seu segundo argumento, com uma razão diferente da primeira.",
+          "writing": {
+            "steps": [
+              "Anuncie a razão logo na primeira frase.",
+              "Comece com um conectivo de acréscimo, como “além disso”.",
+              "Explique a razão ou dê um exemplo.",
+              "Feche ligando a razão de volta à sua tese."
+            ],
+            "min_chars": 300,
+            "max_chars": 900,
+            "checks": [
+              "um_paragrafo",
+              "conectivo"
+            ],
+            "checklist": [
+              "A primeira frase diz qual é a razão.",
+              "Há explicação ou exemplo, e não só a afirmação.",
+              "A razão é diferente da do primeiro argumento.",
+              "O parágrafo defende a tese, e não outra ideia.",
+              "As frases estão ligadas por conectivos."
+            ],
+            "model": "Além disso, o celular na mesa atrapalha quem está do lado. Basta um colega rolando vídeos para que outros dois olhem junto. A distração deixa de ser escolha de uma pessoa e vira problema da turma. Assim, guardar o aparelho também é um jeito de respeitar quem quer prestar atenção."
+          },
+          "explanation": "Um argumento só convence quando mostra o porquê. A frase de abertura promete, e o resto do parágrafo cumpre.",
+          "pitfall": "Dois argumentos que dizem a mesma coisa com outras palavras valem como um só."
+        },
+        {
+          "topic": "Conclusão",
+          "format": "writing",
+          "statement": "Escreva a conclusão.",
+          "writing": {
+            "steps": [
+              "Comece com um conectivo de conclusão.",
+              "Retome a tese com outras palavras.",
+              "Termine com uma proposta ou com o que se ganha."
+            ],
+            "min_chars": 200,
+            "max_chars": 700,
+            "checks": [
+              "um_paragrafo",
+              "conclusivo"
+            ],
+            "checklist": [
+              "A tese aparece de novo, com outras palavras.",
+              "Não há argumento novo.",
+              "O fim deixa o leitor com uma proposta ou uma consequência clara."
+            ],
+            "model": "Portanto, guardar o celular durante a aula não é castigo. É um jeito simples de devolver ao estudante a atenção que as notificações roubam. Deixar o aparelho no modo avião até o intervalo já seria um bom começo."
+          },
+          "explanation": "A conclusão é a última coisa que o leitor lê. É ela que decide a lembrança que o texto deixa.",
+          "pitfall": "Argumento novo na conclusão fica sem defesa: não sobra espaço para explicá-lo."
+        },
+        {
+          "topic": "Texto completo",
+          "format": "writing",
+          "statement": "Junte as partes, dê um título e revise o texto inteiro.",
+          "writing": {
+            "steps": [
+              "Escreva um título curto na primeira linha.",
+              "Confira se cada parágrafo se liga ao anterior.",
+              "Troque as palavras que se repetem.",
+              "Leia tudo e corrija o que o corretor apontar."
+            ],
+            "min_chars": 800,
+            "max_chars": 4000,
+            "checks": [
+              "titulo"
+            ],
+            "checklist": [
+              "O título é curto e dá uma pista da posição.",
+              "A introdução termina com a tese.",
+              "Cada argumento ocupa o seu parágrafo.",
+              "Os parágrafos estão ligados por conectivos.",
+              "A conclusão retoma a tese sem trazer ideia nova."
+            ],
+            "model": "Celular guardado, atenção de volta\n\nO celular virou parte da rotina de quem estuda. Ele está na mão no ônibus e no intervalo. Também está em cima da carteira durante a explicação. Muitas escolas discutem se ele deve ser liberado ou proibido em sala. Defendo que o celular deveria ficar guardado durante a aula, porque ele divide a atenção de quem está aprendendo.\n\nO primeiro motivo é a atenção. Cada notificação puxa o olhar para a tela por alguns segundos. Depois disso, a pessoa ainda demora para voltar ao raciocínio do professor. Numa aula de uma hora, esses pequenos cortes somam muitos minutos perdidos. Por isso, guardar o celular protege o que a aula tem de mais valioso: a concentração.\n\nAlém disso, o celular na mesa atrapalha quem está do lado. Basta um colega rolando vídeos para que outros dois olhem junto. A distração deixa de ser escolha de uma pessoa e vira problema da turma. Assim, guardar o aparelho também é um jeito de respeitar quem quer prestar atenção.\n\nPortanto, guardar o celular durante a aula não é castigo. É um jeito simples de devolver ao estudante a atenção que as notificações roubam. Deixar o aparelho no modo avião até o intervalo já seria um bom começo.",
+            "assemble": true
+          },
+          "explanation": "Juntar é mais do que colar. É aqui que as partes ganham ligação e o texto vira uma coisa só.",
+          "pitfall": "Parágrafos bons soltos um do outro ainda não são um texto. Olhe a passagem de um para o outro."
+        }
+      ]
+    },
+    {
+      "slug": "tese-e-introducao",
+      "title": "A tese e a introdução",
+      "module": "Artigo de opinião",
+      "summary": "Como transformar um tema numa tese clara e quatro jeitos de abrir o texto.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O aperto de mão do texto",
+          "body": [
+            "Numa entrevista de emprego, os primeiros segundos pesam muito. O jeito de entrar e o primeiro cumprimento já dizem algo sobre você.",
+            "A introdução é esse aperto de mão. Em poucas linhas, o leitor decide se confia em quem escreve.",
+            "Ele quer saber duas coisas logo: do que se trata e o que você defende."
+          ],
+          "terms": [
+            {
+              "word": "Tese",
+              "meaning": "a posição que o texto defende, dita numa frase clara."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Tema, pergunta e tese",
+          "body": [
+            "O tema é o assunto, amplo e sem lado. Todo tema bom esconde uma pergunta que divide opiniões.",
+            "A tese é a sua resposta a essa pergunta. Por isso, antes de escrever, transforme o tema numa pergunta e responda."
+          ],
+          "example": {
+            "label": "Do tema à tese",
+            "ordered": true,
+            "lines": [
+              "Tema: aulas gravadas na faculdade.",
+              "Pergunta: as aulas gravadas deveriam substituir as aulas ao vivo?",
+              "Tese: as aulas gravadas deveriam complementar as aulas ao vivo, e não substituí-las."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Três testes para uma tese",
+          "body": [
+            "Antes de seguir, passe a sua tese por três perguntas. Se ela falhar em alguma, reescreva agora."
+          ],
+          "bullets": [
+            "Tem lado? Mostrar os dois lados sem escolher não é tese.",
+            "Alguém discordaria? Se todo mundo concorda, não há o que defender.",
+            "Cabe no texto? Tese grande demais pediria um livro para ser defendida."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Recorte: menos é mais",
+          "body": [
+            "Tese ampla parece forte, mas deixa o texto raso. Com o espaço de uma página, é melhor defender bem uma coisa pequena.",
+            "Recortar é dizer quem, onde ou em que situação. Veja a diferença na tabela."
+          ],
+          "table": {
+            "label": "Ampla demais e com recorte",
+            "headers": [
+              "Ampla demais",
+              "Com recorte"
+            ],
+            "rows": [
+              [
+                "A tecnologia mudou a educação.",
+                "As aulas gravadas deveriam complementar as aulas ao vivo na faculdade."
+              ],
+              [
+                "A internet faz mal.",
+                "As redes sociais deveriam esconder o número de curtidas das contas de adolescentes."
+              ],
+              [
+                "O trânsito é um problema.",
+                "A cidade deveria trocar parte das vagas de carro do centro por ciclovias."
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O funil",
+          "body": [
+            "A introdução funciona como um funil. Ela começa larga, no tema, e vai estreitando até a ponta.",
+            "No meio, mostra por que o assunto divide opiniões. Na ponta fica a tese, sempre no fim do parágrafo."
+          ],
+          "figure": {
+            "src": "/figuras/producao-textual/pt-funil-introducao.svg",
+            "alt": "Um funil com três faixas: o tema no alto, a discussão no meio e a tese na ponta, que é a parte mais estreita.",
+            "caption": "Do amplo para o preciso: a tese fecha a introdução."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Quatro jeitos de começar",
+          "body": [
+            "A primeira frase não precisa ser genial. Ela só precisa puxar o leitor para dentro do assunto.",
+            "Escolha um destes caminhos. Todos terminam do mesmo jeito: na tese."
+          ],
+          "table": {
+            "label": "Aberturas que funcionam",
+            "headers": [
+              "Caminho",
+              "Como soa"
+            ],
+            "rows": [
+              [
+                "Fato atual",
+                "“As aulas gravadas viraram rotina em muitas faculdades.”"
+              ],
+              [
+                "Contraste",
+                "“Muita gente acha que o vídeo substitui a sala. Não substitui.”"
+              ],
+              [
+                "Cena do dia a dia",
+                "“São onze da noite e o estudante assiste à aula pela segunda vez.”"
+              ],
+              [
+                "Pergunta que o texto responde",
+                "“Por que voltar para a sala se o vídeo fica disponível?”"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "O corretor lê a introdução procurando a tese. Se ela está escondida no meio ou só aparece no fim do texto, o critério de tese perde ponto.",
+            "Outro desconto comum é tangenciar o tema: falar do assunto geral sem responder à pergunta que a proposta fez."
+          ],
+          "terms": [
+            {
+              "word": "Tangenciar o tema",
+              "meaning": "escrever sobre o assunto em volta da proposta sem tratar do que ela pediu."
+            }
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Estas aberturas gastam as primeiras linhas sem dizer nada."
+          ],
+          "bullets": [
+            "Começar pela definição do dicionário: o leitor já sabe o que é celular.",
+            "Frases feitas como “desde os primórdios” ou “nos dias de hoje, cada vez mais”.",
+            "Pergunta na abertura que o texto nunca responde.",
+            "Introdução comprida que já desenvolve os argumentos."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A introdução diz do que se trata e termina no que você defende."
+          ],
+          "terms": [
+            {
+              "word": "Conectivo",
+              "meaning": "palavra ou expressão que liga ideias e diz a relação entre elas. Exemplos: porque, além disso e portanto."
+            }
+          ],
+          "bullets": [
+            "Transforme o tema numa pergunta; a tese é a sua resposta.",
+            "Tese boa tem lado, pode ser contestada e cabe no texto.",
+            "Recorte: diga quem, onde ou em que situação.",
+            "A introdução é um funil que termina na tese.",
+            "Abra com um fato, um contraste, uma cena ou uma pergunta.",
+            "Nos argumentos, ligue as frases com conectivos."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Tese",
+          "format": "writing",
+          "statement": "Tema: As aulas gravadas deveriam substituir as aulas ao vivo na faculdade? Escreva a sua tese.",
+          "writing": {
+            "steps": [
+              "Escolha um lado: substituir, complementar ou manter só a aula ao vivo.",
+              "Escreva uma frase só, afirmando a sua posição.",
+              "Não use pergunta nem “eu acho”."
+            ],
+            "min_chars": 30,
+            "max_chars": 250,
+            "checks": [
+              "uma_frase",
+              "sem_pergunta",
+              "sem_eu_acho"
+            ],
+            "checklist": [
+              "A frase escolhe um lado.",
+              "Alguém poderia discordar dela.",
+              "Ela responde ao tema proposto, e não a outro."
+            ],
+            "model": "As aulas gravadas deveriam complementar as aulas ao vivo na faculdade, e não substituí-las.",
+            "draft_only": true,
+            "placeholder": "A sua posição, numa frase só."
+          },
+          "explanation": "A tese é a frase que o resto do texto vai defender. Com ela escrita, cada parágrafo seguinte tem um alvo.",
+          "pitfall": "Tese que agrada a todo mundo não é tese. Se ninguém discorda, não há o que defender."
+        },
+        {
+          "topic": "Introdução",
+          "format": "writing",
+          "statement": "Escreva a introdução do seu artigo.",
+          "writing": {
+            "steps": [
+              "Escolha um dos quatro caminhos de abertura: fato, contraste, cena ou pergunta.",
+              "Mostre por que o assunto divide opiniões.",
+              "Termine o parágrafo com a sua tese.",
+              "Um parágrafo só, de três a cinco frases."
+            ],
+            "min_chars": 200,
+            "max_chars": 700,
+            "checks": [
+              "um_paragrafo"
+            ],
+            "checklist": [
+              "O leitor entende do que o texto vai falar.",
+              "A abertura usa um dos quatro caminhos, e não uma frase feita.",
+              "A tese aparece clara no fim do parágrafo.",
+              "Ainda não há argumento desenvolvido: só a apresentação."
+            ],
+            "model": "Durante a pandemia, as aulas gravadas salvaram o semestre de milhões de estudantes. Hoje, muita gente pergunta por que voltar para a sala se o vídeo fica disponível a qualquer hora. A pergunta faz sentido, mas esquece o que só acontece ao vivo. Defendo que as aulas gravadas deveriam complementar as aulas presenciais, e não substituí-las."
+          },
+          "explanation": "A introdução prepara o terreno. Quem lê precisa saber do que se trata antes de ser convencido de alguma coisa.",
+          "pitfall": "Introdução que já despeja os argumentos deixa o desenvolvimento sem nada para dizer."
+        },
+        {
+          "topic": "Argumento",
+          "format": "writing",
+          "statement": "Escreva o parágrafo do seu primeiro argumento.",
+          "writing": {
+            "steps": [
+              "Anuncie a razão logo na primeira frase.",
+              "Explique essa razão ou dê um exemplo concreto.",
+              "Feche ligando a razão de volta à sua tese."
+            ],
+            "min_chars": 300,
+            "max_chars": 900,
+            "checks": [
+              "um_paragrafo",
+              "conectivo"
+            ],
+            "checklist": [
+              "A primeira frase diz qual é a razão.",
+              "Há explicação ou exemplo, e não só a afirmação.",
+              "O parágrafo defende a tese, e não outra ideia.",
+              "As frases estão ligadas por conectivos."
+            ],
+            "model": "O primeiro motivo é a dúvida na hora certa. Na aula ao vivo, quem não entendeu levanta a mão e resolve o problema em um minuto. No vídeo, a dúvida fica guardada até o aluno desistir dela. Por isso, a aula presencial continua sendo o lugar onde a matéria destrava."
+          },
+          "explanation": "Um argumento só convence quando mostra o porquê. A frase de abertura promete, e o resto do parágrafo cumpre.",
+          "pitfall": "Repetir a tese com outras palavras não é argumento. Argumento responde “por quê?”."
+        },
+        {
+          "topic": "Argumento",
+          "format": "writing",
+          "statement": "Escreva o parágrafo do seu segundo argumento, com uma razão diferente da primeira.",
+          "writing": {
+            "steps": [
+              "Anuncie a razão logo na primeira frase.",
+              "Comece com um conectivo de acréscimo, como “além disso”.",
+              "Explique a razão ou dê um exemplo.",
+              "Feche ligando a razão de volta à sua tese."
+            ],
+            "min_chars": 300,
+            "max_chars": 900,
+            "checks": [
+              "um_paragrafo",
+              "conectivo"
+            ],
+            "checklist": [
+              "A primeira frase diz qual é a razão.",
+              "Há explicação ou exemplo, e não só a afirmação.",
+              "A razão é diferente da do primeiro argumento.",
+              "O parágrafo defende a tese, e não outra ideia.",
+              "As frases estão ligadas por conectivos."
+            ],
+            "model": "Além disso, a gravação é ótima para revisar. Quem perdeu um detalhe pode voltar ao trecho quantas vezes precisar. Quem trabalha e chegou atrasado recupera o que perdeu. Assim, o vídeo resolve os limites da aula ao vivo sem ocupar o lugar dela."
+          },
+          "explanation": "Um argumento só convence quando mostra o porquê. A frase de abertura promete, e o resto do parágrafo cumpre.",
+          "pitfall": "Dois argumentos que dizem a mesma coisa com outras palavras valem como um só."
+        },
+        {
+          "topic": "Conclusão",
+          "format": "writing",
+          "statement": "Escreva a conclusão.",
+          "writing": {
+            "steps": [
+              "Comece com um conectivo de conclusão.",
+              "Retome a tese com outras palavras.",
+              "Termine com uma proposta ou com o que se ganha."
+            ],
+            "min_chars": 200,
+            "max_chars": 700,
+            "checks": [
+              "um_paragrafo",
+              "conclusivo"
+            ],
+            "checklist": [
+              "A tese aparece de novo, com outras palavras.",
+              "Não há argumento novo.",
+              "O fim deixa o leitor com uma proposta ou uma consequência clara."
+            ],
+            "model": "Dessa forma, a pergunta não deveria ser gravada ou ao vivo. As duas fazem coisas diferentes e melhores juntas. Se cada aula presencial ganhasse a sua gravação, o estudante teria a conversa e a revisão."
+          },
+          "explanation": "A conclusão é a última coisa que o leitor lê. É ela que decide a lembrança que o texto deixa.",
+          "pitfall": "Argumento novo na conclusão fica sem defesa: não sobra espaço para explicá-lo."
+        },
+        {
+          "topic": "Texto completo",
+          "format": "writing",
+          "statement": "Junte as partes, dê um título e revise o texto inteiro.",
+          "writing": {
+            "steps": [
+              "Escreva um título curto na primeira linha.",
+              "Confira se cada parágrafo se liga ao anterior.",
+              "Troque as palavras que se repetem.",
+              "Leia tudo e corrija o que o corretor apontar."
+            ],
+            "min_chars": 800,
+            "max_chars": 4000,
+            "checks": [
+              "titulo"
+            ],
+            "checklist": [
+              "O título é curto e dá uma pista da posição.",
+              "A introdução termina com a tese.",
+              "Cada argumento ocupa o seu parágrafo.",
+              "Os parágrafos estão ligados por conectivos.",
+              "A conclusão retoma a tese sem trazer ideia nova."
+            ],
+            "model": "Vídeo e sala, não vídeo ou sala\n\nDurante a pandemia, as aulas gravadas salvaram o semestre de milhões de estudantes. Hoje, muita gente pergunta por que voltar para a sala se o vídeo fica disponível a qualquer hora. A pergunta faz sentido, mas esquece o que só acontece ao vivo. Defendo que as aulas gravadas deveriam complementar as aulas presenciais, e não substituí-las.\n\nO primeiro motivo é a dúvida na hora certa. Na aula ao vivo, quem não entendeu levanta a mão e resolve o problema em um minuto. No vídeo, a dúvida fica guardada até o aluno desistir dela. Por isso, a aula presencial continua sendo o lugar onde a matéria destrava.\n\nAlém disso, a gravação é ótima para revisar. Quem perdeu um detalhe pode voltar ao trecho quantas vezes precisar. Quem trabalha e chegou atrasado recupera o que perdeu. Assim, o vídeo resolve os limites da aula ao vivo sem ocupar o lugar dela.\n\nDessa forma, a pergunta não deveria ser gravada ou ao vivo. As duas fazem coisas diferentes e melhores juntas. Se cada aula presencial ganhasse a sua gravação, o estudante teria a conversa e a revisão.",
+            "assemble": true
+          },
+          "explanation": "Juntar é mais do que colar. É aqui que as partes ganham ligação e o texto vira uma coisa só.",
+          "pitfall": "Parágrafos bons soltos um do outro ainda não são um texto. Olhe a passagem de um para o outro."
+        }
+      ]
+    },
+    {
+      "slug": "argumentos-que-convencem",
+      "title": "Argumentos que convencem",
+      "module": "Artigo de opinião",
+      "summary": "Os tipos de argumento, a forma do parágrafo e os conectivos que ligam as ideias.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O advogado no tribunal",
+          "body": [
+            "Um advogado que só repete que o cliente é inocente perde a causa. O júri quer ver provas.",
+            "Ele mostra a câmera que filmou outra pessoa e a testemunha que viu o cliente longe dali. Cada prova é uma razão para acreditar nele.",
+            "No artigo de opinião, você é o advogado da sua tese. As provas são os argumentos."
+          ],
+          "terms": [
+            {
+              "word": "Tese",
+              "meaning": "a posição que o texto defende, dita numa frase clara."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Afirmar não é argumentar",
+          "body": [
+            "Afirmar é dizer o que você pensa. Argumentar é mostrar por que alguém deveria pensar igual.",
+            "O teste é simples. Depois da frase, pergunte “por quê?”. Se o parágrafo não responde, ainda não é argumento."
+          ],
+          "example": {
+            "label": "Afirmação e argumento",
+            "lines": [
+              "Afirmação: “A inteligência artificial é útil.”",
+              "Argumento: “Ela é útil porque revisa um texto em segundos e aponta erros que o autor não viu.”"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os tipos de argumento",
+          "body": [
+            "Existem jeitos diferentes de provar uma ideia. Um texto forte costuma misturar dois ou três.",
+            "Não precisa decorar os nomes. O que importa é saber que existe mais de um caminho."
+          ],
+          "table": {
+            "label": "Cinco caminhos para provar",
+            "headers": [
+              "Tipo",
+              "Como funciona"
+            ],
+            "rows": [
+              [
+                "Exemplo",
+                "Mostra um caso concreto em que a ideia acontece."
+              ],
+              [
+                "Causa e consequência",
+                "Mostra o que uma coisa provoca e aonde isso leva."
+              ],
+              [
+                "Comparação",
+                "Compara com outra situação parecida que já deu certo ou errado."
+              ],
+              [
+                "Dado ou fato",
+                "Usa um número ou acontecimento que qualquer um pode conferir."
+              ],
+              [
+                "Autoridade",
+                "Traz a fala de um especialista ou de uma instituição séria."
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A forma do parágrafo",
+          "body": [
+            "O parágrafo de argumento tem começo, meio e fim. A primeira frase anuncia a razão.",
+            "O meio desenvolve com explicação ou exemplo. A última frase liga tudo de volta à tese."
+          ],
+          "terms": [
+            {
+              "word": "Tópico frasal",
+              "meaning": "a primeira frase do parágrafo, que anuncia a ideia que ele vai desenvolver."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/producao-textual/pt-paragrafo-argumento.svg",
+            "alt": "Três caixas em sequência dentro de um parágrafo: anuncia a razão, desenvolve com explicação ou exemplo e fecha ligando à tese.",
+            "caption": "Quem lê só o tópico frasal já sabe do que o parágrafo trata."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Conectivos: a cola do texto",
+          "body": [
+            "Cada conectivo diz uma relação diferente. Usar o errado muda o sentido da frase.",
+            "Escrever “portanto” antes de uma ideia que não conclui nada confunde o leitor. Escolha pela relação que você quer mostrar."
+          ],
+          "terms": [
+            {
+              "word": "Conectivo",
+              "meaning": "palavra ou expressão que liga ideias e diz a relação entre elas."
+            },
+            {
+              "word": "Coesão",
+              "meaning": "a ligação entre as partes do texto, feita por conectivos e por palavras que retomam o que já foi dito."
+            }
+          ],
+          "table": {
+            "label": "Conectivos por relação",
+            "headers": [
+              "Para…",
+              "Use"
+            ],
+            "rows": [
+              [
+                "Acrescentar",
+                "além disso, também, ademais"
+              ],
+              [
+                "Explicar a causa",
+                "porque, pois, já que"
+              ],
+              [
+                "Opor",
+                "mas, porém, no entanto"
+              ],
+              [
+                "Exemplificar",
+                "por exemplo, é o caso de"
+              ],
+              [
+                "Concluir",
+                "portanto, assim, dessa forma"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Nunca invente número",
+          "body": [
+            "Número passa confiança, e por isso a tentação de inventar um é grande. Mas basta um leitor conferir para o texto inteiro perder o crédito.",
+            "Se você não tem o dado, use outro caminho. Um exemplo bem escolhido convence tanto quanto uma porcentagem."
+          ],
+          "bullets": [
+            "Escreva “segundo tal instituição” só se souber que ela disse aquilo.",
+            "Troque o número inventado por um exemplo concreto.",
+            "Na dúvida, use causa e consequência: ela depende só do seu raciocínio."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "O corretor separa argumento consistente de senso comum. “Todo mundo sabe que” não prova nada.",
+            "Também conta o repertório: um exemplo, dado ou fato de fora que mostra que você conhece o assunto. Ele vale ponto quando está ligado à tese."
+          ],
+          "terms": [
+            {
+              "word": "Repertório",
+              "meaning": "o conhecimento de fora do texto que você traz para argumentar."
+            }
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Estes erros enfraquecem argumentos que tinham tudo para dar certo."
+          ],
+          "bullets": [
+            "Dois argumentos que dizem a mesma coisa com outras palavras.",
+            "Um caso pessoal como única prova: ele mostra que aconteceu com você, não que é regra.",
+            "Um parágrafo que defende outra ideia, e não a tese.",
+            "Conectivo errado, como “portanto” sem conclusão nenhuma."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Argumento é a resposta ao “por quê?” da sua tese."
+          ],
+          "bullets": [
+            "Afirmar diz o que você pensa; argumentar mostra por quê.",
+            "Dá para provar por exemplo ou por causa e consequência. Também por comparação, dado ou autoridade.",
+            "O parágrafo anuncia a razão, desenvolve e liga de volta à tese.",
+            "Escolha o conectivo pela relação que quer mostrar.",
+            "Nunca invente número."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Tese",
+          "format": "writing",
+          "statement": "Tema: A inteligência artificial deveria ser liberada nos trabalhos da faculdade? Escreva a sua tese.",
+          "writing": {
+            "steps": [
+              "Escolha um lado: liberar, proibir ou liberar com alguma condição.",
+              "Escreva uma frase só, afirmando a sua posição.",
+              "Não use pergunta nem “eu acho”."
+            ],
+            "min_chars": 30,
+            "max_chars": 250,
+            "checks": [
+              "uma_frase",
+              "sem_pergunta",
+              "sem_eu_acho"
+            ],
+            "checklist": [
+              "A frase escolhe um lado.",
+              "Alguém poderia discordar dela.",
+              "Ela responde ao tema proposto, e não a outro."
+            ],
+            "model": "A inteligência artificial deveria ser liberada nos trabalhos da faculdade, desde que o aluno declare como a usou.",
+            "draft_only": true,
+            "placeholder": "A sua posição, numa frase só."
+          },
+          "explanation": "A tese é a frase que o resto do texto vai defender. Com ela escrita, cada parágrafo seguinte tem um alvo.",
+          "pitfall": "Tese que agrada a todo mundo não é tese. Se ninguém discorda, não há o que defender."
+        },
+        {
+          "topic": "Introdução",
+          "format": "writing",
+          "statement": "Escreva a introdução do seu artigo.",
+          "writing": {
+            "steps": [
+              "Apresente o assunto e por que ele divide opiniões.",
+              "Termine o parágrafo com a sua tese.",
+              "Um parágrafo só, de três a cinco frases."
+            ],
+            "min_chars": 200,
+            "max_chars": 700,
+            "checks": [
+              "um_paragrafo"
+            ],
+            "checklist": [
+              "O leitor entende do que o texto vai falar.",
+              "A tese aparece clara no fim do parágrafo.",
+              "Ainda não há argumento desenvolvido: só a apresentação."
+            ],
+            "model": "Ferramentas de inteligência artificial escrevem resumos e códigos em segundos. Nas faculdades, a pergunta virou inevitável: liberar ou proibir? Proibir parece seguro, mas é difícil de fiscalizar. Defendo que a inteligência artificial deveria ser liberada nos trabalhos da faculdade, desde que o aluno declare como a usou."
+          },
+          "explanation": "A introdução prepara o terreno. Quem lê precisa saber do que se trata antes de ser convencido de alguma coisa.",
+          "pitfall": "Introdução que já despeja os argumentos deixa o desenvolvimento sem nada para dizer."
+        },
+        {
+          "topic": "Argumento com exemplo",
+          "format": "writing",
+          "statement": "Escreva um argumento que use um exemplo concreto.",
+          "writing": {
+            "steps": [
+              "Anuncie a razão logo na primeira frase.",
+              "Desenvolva com um exemplo: um caso, uma pessoa ou uma situação.",
+              "Mostre como o exemplo prova a razão.",
+              "Feche ligando a razão de volta à sua tese."
+            ],
+            "min_chars": 300,
+            "max_chars": 900,
+            "checks": [
+              "um_paragrafo",
+              "conectivo"
+            ],
+            "checklist": [
+              "A primeira frase diz qual é a razão.",
+              "Há explicação ou exemplo, e não só a afirmação.",
+              "O exemplo é concreto e prova a razão anunciada.",
+              "O parágrafo defende a tese, e não outra ideia.",
+              "As frases estão ligadas por conectivos."
+            ],
+            "model": "O primeiro motivo é que a ferramenta já faz parte do trabalho de verdade. Um programador que usa um assistente para revisar o código entrega mais rápido. Por exemplo, um estagiário que aprende a pedir e a conferir essas respostas chega ao mercado mais preparado. Portanto, proibir a ferramenta na faculdade é treinar o aluno para um mundo que já não existe."
+          },
+          "explanation": "Um argumento só convence quando mostra o porquê. A frase de abertura promete, e o resto do parágrafo cumpre.",
+          "pitfall": "Dois argumentos que dizem a mesma coisa com outras palavras valem como um só."
+        },
+        {
+          "topic": "Argumento de causa e consequência",
+          "format": "writing",
+          "statement": "Escreva um argumento de causa e consequência, com uma razão diferente da primeira.",
+          "writing": {
+            "steps": [
+              "Anuncie a razão logo na primeira frase.",
+              "Mostre o que a situação provoca e aonde isso leva.",
+              "Comece com um conectivo de acréscimo, como “além disso”.",
+              "Feche ligando a razão de volta à sua tese."
+            ],
+            "min_chars": 300,
+            "max_chars": 900,
+            "checks": [
+              "um_paragrafo",
+              "conectivo"
+            ],
+            "checklist": [
+              "A primeira frase diz qual é a razão.",
+              "Há explicação ou exemplo, e não só a afirmação.",
+              "O parágrafo mostra uma causa e a consequência dela.",
+              "O parágrafo defende a tese, e não outra ideia.",
+              "As frases estão ligadas por conectivos."
+            ],
+            "model": "Além disso, a proibição empurra o uso para o escuro. Como não há como provar que um texto foi feito por uma máquina, quem quer usar usa escondido. A consequência é pior do que a liberação: ninguém aprende a usar bem, e o professor avalia sem saber o que está avaliando. Assim, declarar o uso é mais honesto e mais fácil de acompanhar."
+          },
+          "explanation": "Um argumento só convence quando mostra o porquê. A frase de abertura promete, e o resto do parágrafo cumpre.",
+          "pitfall": "Dois argumentos que dizem a mesma coisa com outras palavras valem como um só."
+        },
+        {
+          "topic": "Conclusão",
+          "format": "writing",
+          "statement": "Escreva a conclusão.",
+          "writing": {
+            "steps": [
+              "Comece com um conectivo de conclusão.",
+              "Retome a tese com outras palavras.",
+              "Termine com uma proposta ou com o que se ganha."
+            ],
+            "min_chars": 200,
+            "max_chars": 700,
+            "checks": [
+              "um_paragrafo",
+              "conclusivo"
+            ],
+            "checklist": [
+              "A tese aparece de novo, com outras palavras.",
+              "Não há argumento novo.",
+              "O fim deixa o leitor com uma proposta ou uma consequência clara."
+            ],
+            "model": "Dessa forma, a inteligência artificial deveria entrar na faculdade pela porta da frente. Cada trabalho poderia trazer um parágrafo dizendo o que foi pedido à ferramenta e o que o aluno conferiu. O professor ganharia transparência, e o aluno aprenderia a usar a ferramenta com critério."
+          },
+          "explanation": "A conclusão é a última coisa que o leitor lê. É ela que decide a lembrança que o texto deixa.",
+          "pitfall": "Argumento novo na conclusão fica sem defesa: não sobra espaço para explicá-lo."
+        },
+        {
+          "topic": "Texto completo",
+          "format": "writing",
+          "statement": "Junte as partes, dê um título e revise o texto inteiro.",
+          "writing": {
+            "steps": [
+              "Escreva um título curto na primeira linha.",
+              "Confira se cada parágrafo se liga ao anterior.",
+              "Troque as palavras que se repetem.",
+              "Leia tudo e corrija o que o corretor apontar."
+            ],
+            "min_chars": 800,
+            "max_chars": 4000,
+            "checks": [
+              "titulo"
+            ],
+            "checklist": [
+              "O título é curto e dá uma pista da posição.",
+              "A introdução termina com a tese.",
+              "Cada argumento ocupa o seu parágrafo.",
+              "Os parágrafos estão ligados por conectivos.",
+              "A conclusão retoma a tese sem trazer ideia nova."
+            ],
+            "model": "Pela porta da frente\n\nFerramentas de inteligência artificial escrevem resumos e códigos em segundos. Nas faculdades, a pergunta virou inevitável: liberar ou proibir? Proibir parece seguro, mas é difícil de fiscalizar. Defendo que a inteligência artificial deveria ser liberada nos trabalhos da faculdade, desde que o aluno declare como a usou.\n\nO primeiro motivo é que a ferramenta já faz parte do trabalho de verdade. Um programador que usa um assistente para revisar o código entrega mais rápido. Por exemplo, um estagiário que aprende a pedir e a conferir essas respostas chega ao mercado mais preparado. Portanto, proibir a ferramenta na faculdade é treinar o aluno para um mundo que já não existe.\n\nAlém disso, a proibição empurra o uso para o escuro. Como não há como provar que um texto foi feito por uma máquina, quem quer usar usa escondido. A consequência é pior do que a liberação: ninguém aprende a usar bem, e o professor avalia sem saber o que está avaliando. Assim, declarar o uso é mais honesto e mais fácil de acompanhar.\n\nDessa forma, a inteligência artificial deveria entrar na faculdade pela porta da frente. Cada trabalho poderia trazer um parágrafo dizendo o que foi pedido à ferramenta e o que o aluno conferiu. O professor ganharia transparência, e o aluno aprenderia a usar a ferramenta com critério.",
+            "assemble": true
+          },
+          "explanation": "Juntar é mais do que colar. É aqui que as partes ganham ligação e o texto vira uma coisa só.",
+          "pitfall": "Parágrafos bons soltos um do outro ainda não são um texto. Olhe a passagem de um para o outro."
+        }
+      ]
+    },
+    {
+      "slug": "contra-argumento-e-conclusao",
+      "title": "Contra-argumento e conclusão",
+      "module": "Artigo de opinião",
+      "summary": "Como trazer o outro lado para o texto sem mudar de lado e como fechar com força.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Responder antes da pergunta",
+          "body": [
+            "Num debate, quem se sai melhor não é quem fala mais alto. É quem já sabia o que o outro ia dizer.",
+            "Quando o oponente levanta a objeção, ela já foi respondida. O público pensa que aquela pessoa estudou o assunto de todos os lados.",
+            "O texto pode fazer o mesmo: trazer a objeção antes que o leitor a levante."
+          ],
+          "terms": [
+            {
+              "word": "Tese",
+              "meaning": "a posição que o texto defende, dita numa frase clara."
+            },
+            {
+              "word": "Contra-argumento",
+              "meaning": "a razão de quem pensa diferente de você, trazida para o texto para ser respondida."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Por que falar do outro lado",
+          "body": [
+            "Um texto que ignora as objeções parece ingênuo. O leitor que discorda pensa logo no ponto que você esqueceu.",
+            "Quando você mostra esse ponto e responde a ele, o leitor percebe que você pensou antes de escrever. O contra-argumento respondido deixa a sua tese mais forte."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Conceder e refutar",
+          "body": [
+            "Responder ao outro lado tem dois movimentos. Primeiro você admite o que ele tem de certo.",
+            "Depois mostra por que isso não derruba a sua tese. Os dois vêm juntos, quase sempre na mesma frase ou em frases vizinhas."
+          ],
+          "terms": [
+            {
+              "word": "Concessão",
+              "meaning": "admitir que o outro lado tem um ponto."
+            },
+            {
+              "word": "Refutação",
+              "meaning": "mostrar por que esse ponto não derruba a sua tese."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/producao-textual/pt-balanca.svg",
+            "alt": "Uma balança com a concessão no prato mais leve e a refutação no prato mais pesado. A balança pende para a tese.",
+            "caption": "A concessão é honesta. A refutação precisa pesar mais."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os conectivos da concessão",
+          "body": [
+            "Alguns conectivos avisam que vem uma concessão. Outros avisam que vem a resposta.",
+            "Use um de cada lado e o leitor acompanha a virada sem se perder."
+          ],
+          "terms": [
+            {
+              "word": "Conectivo",
+              "meaning": "palavra ou expressão que liga ideias e diz a relação entre elas."
+            }
+          ],
+          "table": {
+            "label": "Para conceder e para responder",
+            "headers": [
+              "Para conceder",
+              "Para responder"
+            ],
+            "rows": [
+              [
+                "É verdade que…",
+                "No entanto…"
+              ],
+              [
+                "Há quem diga que…",
+                "Porém…"
+              ],
+              [
+                "Embora…",
+                "(a resposta vem na mesma frase)"
+              ],
+              [
+                "Ainda que…",
+                "mesmo assim…"
+              ]
+            ]
+          },
+          "example": {
+            "label": "Na prática",
+            "lines": [
+              "“É verdade que a passagem gratuita custa caro. No entanto, o aluno que abandona o curso custa mais.”",
+              "“Embora custe caro, a passagem gratuita mantém o aluno estudando.”"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Onde o contra-argumento entra",
+          "body": [
+            "O lugar mais comum é o penúltimo parágrafo, depois dos seus argumentos. O leitor já viu as suas razões e está pronto para a objeção.",
+            "Ele também pode abrir o desenvolvimento, quando a objeção é tão óbvia que todo mundo pensaria nela primeiro."
+          ],
+          "bullets": [
+            "Traga a objeção mais forte, não a mais fácil de derrubar.",
+            "Conceda com respeito, sem ironia.",
+            "Termine o parágrafo de volta na sua tese."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Três jeitos de concluir",
+          "body": [
+            "Toda conclusão retoma a tese. O que muda é o que vem depois dela.",
+            "A proposta é o fechamento mais forte quando o tema pede uma solução. Uma boa proposta diz quem faz, o quê e como."
+          ],
+          "table": {
+            "label": "Fechamentos",
+            "headers": [
+              "Depois de retomar a tese…",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "Resuma as razões",
+                "“Mais estudantes e menos abandono: a conta fecha.”"
+              ],
+              [
+                "Faça uma proposta",
+                "“A prefeitura poderia começar pelos alunos de baixa renda.”"
+              ],
+              [
+                "Mostre a consequência",
+                "“Sem isso, a passagem continuará decidindo quem se forma.”"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Contra-argumentar bem mostra domínio do tema, e o corretor percebe isso. Mas conceder demais dá a impressão de que você mudou de lado.",
+            "Na conclusão, proposta vaga perde ponto. “O governo deve fazer algo” não diz quem, o quê nem como."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Estes deslizes aparecem justamente quando o texto está quase pronto."
+          ],
+          "bullets": [
+            "Conceder tanto que o texto termina defendendo o outro lado.",
+            "Responder com desprezo, como “quem pensa assim não entende nada”.",
+            "Fechar com frase vazia, como “então é isso”.",
+            "Proposta vaga, sem dizer quem faz, o quê e como."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Mostrar o outro lado e responder a ele deixa a sua tese mais forte."
+          ],
+          "bullets": [
+            "Contra-argumento é a razão de quem discorda, trazida para ser respondida.",
+            "Conceda o que ele tem de certo e refute o que não derruba a sua tese.",
+            "Use um conectivo para conceder e outro para responder.",
+            "Toda conclusão retoma a tese e pode resumir, propor ou mostrar a consequência.",
+            "Proposta boa diz quem faz, o quê e como."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Tese",
+          "format": "writing",
+          "statement": "Tema: O transporte público deveria ser gratuito para estudantes? Escreva a sua tese.",
+          "writing": {
+            "steps": [
+              "Escolha um lado: gratuito para todos os estudantes, só para alguns ou pago.",
+              "Escreva uma frase só, afirmando a sua posição.",
+              "Não use pergunta nem “eu acho”."
+            ],
+            "min_chars": 30,
+            "max_chars": 250,
+            "checks": [
+              "uma_frase",
+              "sem_pergunta",
+              "sem_eu_acho"
+            ],
+            "checklist": [
+              "A frase escolhe um lado.",
+              "Alguém poderia discordar dela.",
+              "Ela responde ao tema proposto, e não a outro."
+            ],
+            "model": "O transporte público deveria ser gratuito para estudantes, porque a passagem não pode decidir quem continua estudando.",
+            "draft_only": true,
+            "placeholder": "A sua posição, numa frase só."
+          },
+          "explanation": "A tese é a frase que o resto do texto vai defender. Com ela escrita, cada parágrafo seguinte tem um alvo.",
+          "pitfall": "Tese que agrada a todo mundo não é tese. Se ninguém discorda, não há o que defender."
+        },
+        {
+          "topic": "Introdução",
+          "format": "writing",
+          "statement": "Escreva a introdução do seu artigo.",
+          "writing": {
+            "steps": [
+              "Apresente o assunto e por que ele divide opiniões.",
+              "Termine o parágrafo com a sua tese.",
+              "Um parágrafo só, de três a cinco frases."
+            ],
+            "min_chars": 200,
+            "max_chars": 700,
+            "checks": [
+              "um_paragrafo"
+            ],
+            "checklist": [
+              "O leitor entende do que o texto vai falar.",
+              "A tese aparece clara no fim do parágrafo.",
+              "Ainda não há argumento desenvolvido: só a apresentação."
+            ],
+            "model": "Para muitos estudantes, a passagem de ônibus pesa mais no orçamento do que o material do curso. Algumas cidades já oferecem transporte gratuito para quem estuda, e outras discutem se vale o custo. Defendo que o transporte público deveria ser gratuito para estudantes, porque a passagem não pode ser o motivo de alguém largar os estudos."
+          },
+          "explanation": "A introdução prepara o terreno. Quem lê precisa saber do que se trata antes de ser convencido de alguma coisa.",
+          "pitfall": "Introdução que já despeja os argumentos deixa o desenvolvimento sem nada para dizer."
+        },
+        {
+          "topic": "Argumento",
+          "format": "writing",
+          "statement": "Escreva o parágrafo do seu argumento principal.",
+          "writing": {
+            "steps": [
+              "Anuncie a razão logo na primeira frase.",
+              "Explique essa razão ou dê um exemplo concreto.",
+              "Use pelo menos um conectivo.",
+              "Feche ligando a razão de volta à sua tese."
+            ],
+            "min_chars": 300,
+            "max_chars": 900,
+            "checks": [
+              "um_paragrafo",
+              "conectivo"
+            ],
+            "checklist": [
+              "A primeira frase diz qual é a razão.",
+              "Há explicação ou exemplo, e não só a afirmação.",
+              "O parágrafo defende a tese, e não outra ideia.",
+              "As frases estão ligadas por conectivos."
+            ],
+            "model": "O principal motivo é a permanência. Um estudante que gasta duas passagens por dia sente o peso no fim do mês. Quando o dinheiro aperta, a primeira coisa cortada é a ida à aula. Por isso, a passagem gratuita protege justamente quem está mais perto de desistir."
+          },
+          "explanation": "Um argumento só convence quando mostra o porquê. A frase de abertura promete, e o resto do parágrafo cumpre.",
+          "pitfall": "Dois argumentos que dizem a mesma coisa com outras palavras valem como um só."
+        },
+        {
+          "topic": "Contra-argumento",
+          "format": "writing",
+          "statement": "Escreva um parágrafo com o contra-argumento e a sua resposta.",
+          "writing": {
+            "steps": [
+              "Traga a objeção mais forte de quem pensa diferente.",
+              "Conceda o que ela tem de certo, com um conectivo como “é verdade que”.",
+              "Responda com um conectivo como “no entanto”.",
+              "Feche de volta na sua tese."
+            ],
+            "min_chars": 300,
+            "max_chars": 900,
+            "checks": [
+              "um_paragrafo",
+              "concessivo"
+            ],
+            "checklist": [
+              "A objeção é forte, e não uma versão fácil de derrubar.",
+              "A concessão é honesta, sem ironia.",
+              "A resposta mostra por que a objeção não derruba a tese.",
+              "O parágrafo termina defendendo a sua tese."
+            ],
+            "model": "É verdade que a gratuidade custa caro para a cidade e que alguém precisa pagar essa conta. No entanto, o estudante que abandona o curso também custa caro. Ele perde a chance de um emprego melhor, e a cidade perde o profissional que ele seria. Portanto, o gasto com a passagem é um investimento que volta."
+          },
+          "explanation": "Responder à objeção mais forte mostra que a sua tese resiste ao melhor que o outro lado tem.",
+          "pitfall": "Conceder sem responder deixa o leitor do lado de lá. A resposta precisa pesar mais que a concessão."
+        },
+        {
+          "topic": "Conclusão",
+          "format": "writing",
+          "statement": "Escreva a conclusão.",
+          "writing": {
+            "steps": [
+              "Comece com um conectivo de conclusão.",
+              "Retome a tese com outras palavras.",
+              "Termine com uma proposta que diga quem faz, o quê e como."
+            ],
+            "min_chars": 200,
+            "max_chars": 700,
+            "checks": [
+              "um_paragrafo",
+              "conclusivo"
+            ],
+            "checklist": [
+              "A tese aparece de novo, com outras palavras.",
+              "Não há argumento novo.",
+              "O fim deixa o leitor com uma proposta ou uma consequência clara.",
+              "A proposta diz quem faz, o quê e como."
+            ],
+            "model": "Diante disso, garantir o transporte gratuito para estudantes é garantir que o estudo não dependa do saldo do cartão. A prefeitura poderia começar pelos alunos de baixa renda da rede pública e ampliar aos poucos, conforme o orçamento permitir."
+          },
+          "explanation": "A conclusão é a última coisa que o leitor lê. É ela que decide a lembrança que o texto deixa.",
+          "pitfall": "Argumento novo na conclusão fica sem defesa: não sobra espaço para explicá-lo."
+        },
+        {
+          "topic": "Texto completo",
+          "format": "writing",
+          "statement": "Junte as partes, dê um título e revise o texto inteiro.",
+          "writing": {
+            "steps": [
+              "Escreva um título curto na primeira linha.",
+              "Confira se cada parágrafo se liga ao anterior.",
+              "Troque as palavras que se repetem.",
+              "Leia tudo e corrija o que o corretor apontar."
+            ],
+            "min_chars": 800,
+            "max_chars": 4000,
+            "checks": [
+              "titulo"
+            ],
+            "checklist": [
+              "O título é curto e dá uma pista da posição.",
+              "A introdução termina com a tese.",
+              "Cada argumento ocupa o seu parágrafo.",
+              "O contra-argumento é respondido, e não só mencionado.",
+              "Os parágrafos estão ligados por conectivos.",
+              "A conclusão retoma a tese sem trazer ideia nova."
+            ],
+            "model": "A passagem não pode decidir quem se forma\n\nPara muitos estudantes, a passagem de ônibus pesa mais no orçamento do que o material do curso. Algumas cidades já oferecem transporte gratuito para quem estuda, e outras discutem se vale o custo. Defendo que o transporte público deveria ser gratuito para estudantes, porque a passagem não pode ser o motivo de alguém largar os estudos.\n\nO principal motivo é a permanência. Um estudante que gasta duas passagens por dia sente o peso no fim do mês. Quando o dinheiro aperta, a primeira coisa cortada é a ida à aula. Por isso, a passagem gratuita protege justamente quem está mais perto de desistir.\n\nÉ verdade que a gratuidade custa caro para a cidade e que alguém precisa pagar essa conta. No entanto, o estudante que abandona o curso também custa caro. Ele perde a chance de um emprego melhor, e a cidade perde o profissional que ele seria. Portanto, o gasto com a passagem é um investimento que volta.\n\nDiante disso, garantir o transporte gratuito para estudantes é garantir que o estudo não dependa do saldo do cartão. A prefeitura poderia começar pelos alunos de baixa renda da rede pública e ampliar aos poucos, conforme o orçamento permitir.",
+            "assemble": true
+          },
+          "explanation": "Juntar é mais do que colar. É aqui que as partes ganham ligação e o texto vira uma coisa só.",
+          "pitfall": "Parágrafos bons soltos um do outro ainda não são um texto. Olhe a passagem de um para o outro."
+        },
+        {
+          "topic": "Simulado",
+          "format": "writing",
+          "statement": "Escreva um artigo de opinião sobre este tema: o trabalho remoto deveria ser o padrão para quem pode trabalhar de casa?",
+          "writing": {
+            "steps": [
+              "Um artigo de opinião completo, com título.",
+              "Sem roteiro por partes: planeje antes de escrever."
+            ],
+            "min_chars": 1200,
+            "max_chars": 5000,
+            "checks": [
+              "titulo"
+            ],
+            "checklist": [
+              "O título é curto e dá uma pista da posição.",
+              "A introdução apresenta o tema e termina na tese.",
+              "Há pelo menos dois argumentos, cada um no seu parágrafo.",
+              "O outro lado aparece e é respondido.",
+              "Os parágrafos estão ligados por conectivos.",
+              "A conclusão retoma a tese e termina com proposta ou consequência.",
+              "O texto passou pela revisão de ortografia e pontuação."
+            ],
+            "model": "Casa não é escritório, mas pode ser\n\nDepois de 2020, muita gente descobriu que dava para trabalhar sem sair de casa. Agora as empresas discutem se voltam ao escritório ou mantêm o modelo. Defendo que o trabalho remoto deveria ser o padrão para quem pode trabalhar de casa, com encontros presenciais marcados.\n\nO primeiro motivo é o tempo. Quem mora longe gasta horas por dia no trânsito. Essas horas poderiam virar descanso ou estudo. Por isso, trabalhar de casa devolve ao trabalhador uma parte do dia que o deslocamento roubava.\n\nÉ verdade que a equipe perde a conversa de corredor, que resolve problemas rápido. No entanto, reuniões presenciais marcadas recuperam esse contato sem exigir a viagem todos os dias.\n\nPortanto, o trabalho remoto deveria ser a regra e o escritório deveria virar ponto de encontro. As empresas poderiam reunir as equipes uma vez por semana e deixar o resto dos dias em casa."
+          },
+          "explanation": "No simulado não há roteiro. Planejar a tese e os argumentos antes de escrever evita o texto que muda de ideia no meio.",
+          "pitfall": "Começar a escrever sem saber a tese é o caminho mais curto para um texto em cima do muro.",
+          "exam_only": true
+        },
+        {
+          "topic": "Simulado",
+          "format": "writing",
+          "statement": "Escreva um artigo de opinião sobre este tema: as redes sociais deveriam proibir contas de menores de 16 anos?",
+          "writing": {
+            "steps": [
+              "Um artigo de opinião completo, com título.",
+              "Sem roteiro por partes: planeje antes de escrever."
+            ],
+            "min_chars": 1200,
+            "max_chars": 5000,
+            "checks": [
+              "titulo"
+            ],
+            "checklist": [
+              "O título é curto e dá uma pista da posição.",
+              "A introdução apresenta o tema e termina na tese.",
+              "Há pelo menos dois argumentos, cada um no seu parágrafo.",
+              "O outro lado aparece e é respondido.",
+              "Os parágrafos estão ligados por conectivos.",
+              "A conclusão retoma a tese e termina com proposta ou consequência.",
+              "O texto passou pela revisão de ortografia e pontuação."
+            ],
+            "model": "Idade mínima não é censura\n\nAs redes sociais fazem parte da vida dos adolescentes desde muito cedo. Vários países discutem uma idade mínima para abrir uma conta. Defendo que as redes deveriam exigir 16 anos para contas próprias, com verificação de idade feita a sério.\n\nO principal motivo é que essas plataformas são desenhadas para prender a atenção. Um adulto já tem dificuldade para largar o celular. Um adolescente, ainda aprendendo a controlar impulsos, tem mais. Por isso, adiar a entrada protege uma fase em que o hábito se forma.\n\nHá quem diga que proibir só empurra os jovens para mentir a idade. Porém, uma regra que alguns burlam ainda muda o padrão da maioria, como acontece com a venda de bebida.\n\nDessa forma, a idade mínima não tira nada do adolescente: só adia. As plataformas deveriam verificar a idade no cadastro, e as escolas poderiam ensinar o uso das redes antes dos 16."
+          },
+          "explanation": "No simulado não há roteiro. Planejar a tese e os argumentos antes de escrever evita o texto que muda de ideia no meio.",
+          "pitfall": "Começar a escrever sem saber a tese é o caminho mais curto para um texto em cima do muro.",
+          "exam_only": true
+        },
+        {
+          "topic": "Simulado",
+          "format": "writing",
+          "statement": "Escreva um artigo de opinião sobre este tema: a cidade deveria trocar vagas de carro do centro por ciclovias?",
+          "writing": {
+            "steps": [
+              "Um artigo de opinião completo, com título.",
+              "Sem roteiro por partes: planeje antes de escrever."
+            ],
+            "min_chars": 1200,
+            "max_chars": 5000,
+            "checks": [
+              "titulo"
+            ],
+            "checklist": [
+              "O título é curto e dá uma pista da posição.",
+              "A introdução apresenta o tema e termina na tese.",
+              "Há pelo menos dois argumentos, cada um no seu parágrafo.",
+              "O outro lado aparece e é respondido.",
+              "Os parágrafos estão ligados por conectivos.",
+              "A conclusão retoma a tese e termina com proposta ou consequência.",
+              "O texto passou pela revisão de ortografia e pontuação."
+            ],
+            "model": "Menos vagas, mais gente no centro\n\nO centro das cidades grandes vive congestionado, e boa parte das ruas serve de estacionamento. Algumas prefeituras começaram a trocar vagas por ciclovias. Defendo que essa troca deveria acontecer, porque rua é para circular e não para guardar carro.\n\nO primeiro motivo é o espaço. Uma vaga ocupa o lugar de várias bicicletas passando. Quando a ciclovia é segura, quem mora perto deixa o carro em casa. Assim, a troca tira carros da rua em vez de só mudar o congestionamento de lugar.\n\nÉ verdade que o comércio teme perder clientes que chegam de carro. No entanto, quem passa de bicicleta ou a pé para mais vezes e compra perto de casa.\n\nPortanto, trocar vagas por ciclovias é um jeito de devolver a rua para as pessoas. A prefeitura poderia começar por uma avenida e medir o movimento do comércio antes de ampliar."
+          },
+          "explanation": "No simulado não há roteiro. Planejar a tese e os argumentos antes de escrever evita o texto que muda de ideia no meio.",
+          "pitfall": "Começar a escrever sem saber a tese é o caminho mais curto para um texto em cima do muro.",
+          "exam_only": true
+        }
+      ]
+    }
+  ]
+}

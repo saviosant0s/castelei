@@ -286,8 +286,10 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
                 href={`/licao/${lesson.id}/praticar`}
                 className="btn btn-primary flex-1"
               >
-                <Play className="size-5" aria-hidden="true" /> Praticar{" "}
-                {pluralize(lesson.questions_available, "questão", "questões")}
+                <Play className="size-5" aria-hidden="true" />{" "}
+                {lesson.practice === "writing"
+                  ? `Escrever o texto em ${lesson.questions_available} partes`
+                  : `Praticar ${pluralize(lesson.questions_available, "questão", "questões")}`}
               </Link>
             ) : (
               <button

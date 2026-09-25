@@ -26,6 +26,13 @@ class QuestionController extends Controller
 
     public function update(Request $request, Question $question): JsonResponse
     {
+        /*
+        | O formulário só conhece alternativas, ordem e pares. Salvar uma
+        | questão de escrita por ele apagaria o roteiro e o modelo, e ela
+        | viraria múltipla escolha sem aviso. Escrita entra e sai pelo JSON.
+        */
+        abort_if($question->isWriting(), 422, 'Questão de escrita se edita pelo arquivo JSON da matéria (baixe, edite e importe de novo).');
+
         $question->fill($this->validated($request));
         $question->save();
 

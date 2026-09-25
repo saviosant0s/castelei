@@ -26,9 +26,18 @@ class AttemptController extends Controller
     /** Inicia uma tentativa e devolve as questões SEM gabarito nem explicação. */
     public function store(Request $request, Lesson $lesson): JsonResponse
     {
-        $limit = $request->user()->questionLimit();
+        $query = $lesson->questions()->where('exam_only', false)->orderBy('position');
 
-        $query = $lesson->questions()->orderBy('position');
+        /*
+        | O limite do plano corta questões do fim da lista. Numa lição de
+        | escrita, o fim é a etapa que junta as partes num texto só — cortar
+        | ali entregaria um texto pela metade. Por isso a escrita não tem
+        | corte: são poucas partes, e todas formam uma coisa só.
+        */
+        $limit = $lesson->questions()->where('format', Question::FORMAT_WRITING)->exists()
+            ? null
+            : $request->user()->questionLimit();
+
         if ($limit !== null) {
             $query->limit($limit);
         }
@@ -49,7 +58,7 @@ class AttemptController extends Controller
         return response()->json([
             'attempt' => ['id' => $attempt->id, 'total' => $attempt->total_questions, 'kind' => $attempt->kind],
             'questions' => $questions->map(fn (Question $question) => self::payload($question, $attempt->id))->values(),
-            'limited_by_plan' => $lesson->questions()->count() > $questions->count(),
+            'limited_by_plan' => $lesson->questions()->where('exam_only', false)->count() > $questions->count(),
         ], 201);
     }
 
@@ -101,7 +110,34 @@ class AttemptController extends Controller
             'options' => $options,
             // Só a questão de associar tem coluna da esquerda.
             'prompts' => $prompts,
+            'writing' => $question->isWriting() ? self::writingBrief($question) : null,
         ], fn ($valor) => $valor !== null);
+    }
+
+    /**
+     * O que a tela de escrita recebe ANTES de a pessoa escrever.
+     *
+     * O roteiro e as conferências da forma vão já: são o "tem que ter tal
+     * coisa" do enunciado. O texto-modelo e a lista de autoavaliação ficam
+     * no servidor até a pessoa conferir o que escreveu — modelo mostrado
+     * antes vira texto copiado, e aí o exercício acabou.
+     *
+     * @return array<string, mixed>
+     */
+    public static function writingBrief(Question $question): array
+    {
+        $w = $question->writing ?? [];
+
+        return [
+            'steps' => array_values($w['steps'] ?? []),
+            'min_chars' => (int) ($w['min_chars'] ?? 0),
+            'max_chars' => (int) ($w['max_chars'] ?? config('castelei.writing.max_chars')),
+            'checks' => array_values($w['checks'] ?? []),
+            'assemble' => (bool) ($w['assemble'] ?? false),
+            // Parte de rascunho (a tese sozinha): ela já mora dentro da introdução, e não entra no texto juntado.
+            'draft_only' => (bool) ($w['draft_only'] ?? false),
+            'placeholder' => $w['placeholder'] ?? null,
+        ];
     }
 
     public function answer(Request $request, Attempt $attempt): JsonResponse
@@ -116,7 +152,12 @@ class AttemptController extends Controller
             // TELA, na ordem em que a pessoa pôs.
             'ordering' => ['nullable', 'array', 'max:8'],
             'ordering.*' => ['integer', 'min:0', 'max:7'],
-            'seconds' => ['required', 'integer', 'min:0', 'max:7200'],
+            // A resposta de uma questão de escrita: o texto e a autoavaliação.
+            'text' => ['nullable', 'string', 'max:'.config('castelei.writing.max_chars')],
+            'checklist' => ['nullable', 'array', 'max:20'],
+            'checklist.*' => ['boolean'],
+            // Escrever demora mais que marcar uma alternativa: até 3 horas.
+            'seconds' => ['required', 'integer', 'min:0', 'max:10800'],
         ]);
 
         // Só vale responder as questões entregues no início da tentativa.
@@ -124,6 +165,10 @@ class AttemptController extends Controller
         abort_unless(in_array((int) $data['question_id'], $allowedIds, true), 422, 'Questão inválida para esta tentativa.');
 
         $question = Question::findOrFail($data['question_id']);
+
+        if ($question->isWriting()) {
+            return $this->answerWriting($request, $attempt, $question, $data);
+        }
 
         /*
         | Ordenar e associar respondem a mesma coisa: uma permutação do que
@@ -201,6 +246,63 @@ class AttemptController extends Controller
             'explanation' => $question->explanation,
             'pitfall' => $question->pitfall,
             // Só aparece para planos com gamificação (o XP é guardado para todos).
+            'xp' => $request->user()->hasGamification() ? $xp : null,
+        ]);
+    }
+
+    /**
+     * A resposta de uma questão de escrita.
+     *
+     * Não existe "certa". O que conta como cumprida é a AUTOAVALIAÇÃO: a
+     * pessoa leu o texto-modelo, passou pela lista de critérios e marcou o
+     * que o texto dela já faz. A parte vale como cumprida quando todos os
+     * itens estão marcados — e é essa conta que alimenta o resto do app sem
+     * mudar nada nele: a porcentagem vira "partes que cumpriram todos os
+     * critérios", o ponto fraco vira a parte que ficou devendo, e a revisão
+     * espaçada agenda a lição pela mesma regra.
+     *
+     * Texto vazio é "pulei", como a lista vazia na questão de ordenar.
+     *
+     * @param  array<string, mixed>  $data
+     */
+    private function answerWriting(Request $request, Attempt $attempt, Question $question, array $data): JsonResponse
+    {
+        $texto = trim((string) ($data['text'] ?? ''));
+        $criterios = $question->writing['checklist'] ?? [];
+
+        // A lista chega do tamanho da tela; o que faltar conta como não marcado.
+        $marcados = array_map(
+            fn (int $i) => (bool) ($data['checklist'][$i] ?? false),
+            array_keys($criterios),
+        );
+
+        $cumprida = $texto !== '' && ! in_array(false, $marcados, true);
+        $xp = $cumprida ? (int) config('castelei.xp_per_correct_answer') : 0;
+
+        try {
+            $attempt->answers()->create([
+                'question_id' => $question->id,
+                'text' => $texto === '' ? null : $texto,
+                'checklist' => $marcados,
+                'is_correct' => $cumprida,
+                'seconds' => (int) $data['seconds'],
+                'xp' => $xp,
+            ]);
+        } catch (UniqueConstraintViolationException) {
+            abort(409, 'Questão já respondida.');
+        }
+
+        try {
+            $this->gamification->recordStudyToday($request->user());
+        } catch (Throwable $e) {
+            report($e);
+        }
+
+        return response()->json([
+            'is_correct' => $cumprida,
+            'correct_index' => null,
+            'explanation' => $question->explanation,
+            'pitfall' => $question->pitfall,
             'xp' => $request->user()->hasGamification() ? $xp : null,
         ]);
     }
@@ -355,7 +457,7 @@ class AttemptController extends Controller
             'is_record' => $previousBest !== null && $attempt->avg_seconds !== null && $attempt->avg_seconds < $previousBest,
             'weak_topic' => $weakTopic,
             'next_lesson' => $next ? ['id' => $next->id, 'title' => $next->title] : null,
-            'limited_by_plan' => $lesson !== null && $lesson->questions()->count() > $attempt->total_questions,
+            'limited_by_plan' => $lesson !== null && $lesson->questions()->where('exam_only', false)->count() > $attempt->total_questions,
         ];
     }
 }

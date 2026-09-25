@@ -16,7 +16,10 @@ class Question extends Model
     /** Ligar cada item da esquerda ao seu par na direita. */
     public const FORMAT_MATCH = 'match';
 
-    public const FORMATS = [self::FORMAT_CHOICE, self::FORMAT_ORDER, self::FORMAT_MATCH];
+    /** Escrever uma parte de um texto (ou o texto inteiro, no simulado). Não tem gabarito. */
+    public const FORMAT_WRITING = 'writing';
+
+    public const FORMATS = [self::FORMAT_CHOICE, self::FORMAT_ORDER, self::FORMAT_MATCH, self::FORMAT_WRITING];
 
     protected $guarded = [];
 
@@ -25,8 +28,15 @@ class Question extends Model
         return [
             'options' => 'array',
             'pairs' => 'array',
+            'writing' => 'array',
+            'exam_only' => 'boolean',
             'correct_index' => 'integer',
         ];
+    }
+
+    public function isWriting(): bool
+    {
+        return $this->format === self::FORMAT_WRITING;
     }
 
     public function lesson(): BelongsTo

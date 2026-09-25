@@ -181,9 +181,21 @@ const JARGON = [
   ["desserialização", /\b(des)?serializa(r|ção|ções|do|da)\b/i, "r"], ["biblioteca", /\bbibliotecas?\b/i, "r"],
   ["vulnerabilidade", /\bvulnerabilidades?\b/i, "r"], ["exceção", /\bexce(ç|c)(ão|ões)\b/i, "r"],
   ["sprite", /\bsprites?\b/i, "r"], ["JSON", /\bJSON\b/, "r"], ["máquina de estados", /\bm(á|a)quinas? de estados?\b/i, "r"],
+  /*
+  | Produção Textual. O corte é "quem nunca estudou redação saberia?".
+  | "Argumento" fica de fora: todo mundo usa a palavra, e a lição a afina sem
+  | precisar de verbete. "Tese" entra porque, no dia a dia, tese é trabalho de
+  | doutorado — e aqui ela é uma frase.
+  */
+  ["tese", /\bteses?\b/i, "t"], ["contra-argumento", /\bcontra-?argument(o|os|ação|ar)\b/i, "t"],
+  ["gênero textual", /\bg(ê|e)neros? textua(l|is)\b/i, "t"], ["tópico frasal", /\bt(ó|o)picos? frasa(l|is)\b/i, "t"],
+  ["conectivo", /\bconectivos?\b/i, "t"], ["coesão", /\bcoes(ão|o|a)\b/i, "t"],
+  ["coerência", /\bcoer(ê|e)ncia\b|\bcoerentes?\b/i, "t"], ["concessão", /\bconcess(ão|ões|ivo|iva)\b/i, "t"],
+  ["refutação", /\brefuta(ção|ções|r)\b/i, "t"], ["repertório", /\brepert(ó|o)rio\b/i, "t"],
+  ["norma-padrão", /\bnorma[- ]padr(ã|a)o\b/i, "t"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;
@@ -383,8 +395,30 @@ for (const file of arquivos) {
       | resposta é uma alternativa), e escrever a ordem já embaralhada,
       | achando que o arquivo é o que a pessoa vai ver.
       */
-      if (q.format && !["choice", "order", "match"].includes(q.format)) {
-        fail(W, `formato inválido “${q.format}”: use “choice”, “order” ou “match”`);
+      if (q.format && !["choice", "order", "match", "writing"].includes(q.format)) {
+        fail(W, `formato inválido “${q.format}”: use “choice”, “order”, “match” ou “writing”`);
+      }
+      if (q.exam_only && q.format !== "writing") fail(W, "só a questão de escrita pode ser exclusiva do simulado");
+      /*
+      | A questão de escrita.
+      |
+      | Não tem alternativa nem gabarito. Tem o roteiro do que escrever, a
+      | lista com que a pessoa se avalia e um texto-modelo. Os três passam
+      | pela mesma régua de frase das etapas — o modelo, principalmente: ele
+      | é o exemplo de escrita que a pessoa vai imitar, e frase com quatro
+      | vírgulas ensinaria justo o que a lição manda evitar.
+      */
+      if (q.format === "writing") {
+        const w = q.writing ?? {};
+        if (q.options?.length) fail(W, "questão de escrita não tem alternativas: tire o options");
+        if (q.correct_index !== undefined) fail(W, "questão de escrita não tem gabarito: tire o correct_index");
+        if (!w.steps?.length) fail(W, "a questão de escrita precisa do roteiro (writing.steps)");
+        if (!w.checklist?.length) fail(W, "a questão de escrita precisa dos critérios (writing.checklist)");
+        if (!String(w.model ?? "").trim()) fail(W, "a questão de escrita precisa de um texto-modelo (writing.model)");
+        if (!(w.max_chars > (w.min_chars ?? 0))) fail(W, "o tamanho máximo precisa ser maior que o mínimo");
+        [...(w.steps ?? []), ...(w.checklist ?? [])].forEach((t) => checkProse(`${W} (roteiro)`, t));
+        String(w.model ?? "").split(/\n+/).forEach((t) => checkProse(`${W} (modelo)`, t));
+        checkJargon(`${W} (roteiro)`, [...(w.steps ?? []), ...(w.checklist ?? [])].join(" \n "), lessonTerms, jargon);
       }
       /*
       | A questão de associar.

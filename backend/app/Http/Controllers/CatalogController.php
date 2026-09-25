@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Attempt;
 use App\Models\Lesson;
+use App\Models\Question;
 use App\Models\Subject;
 use App\Support\Content\Vocabulary;
 use Illuminate\Http\JsonResponse;
@@ -26,7 +27,11 @@ class CatalogController extends Controller
             ->keyBy('lesson_id');
 
         $subjects = Subject::query()
-            ->with(['lessons' => fn ($query) => $query->withCount('questions')])
+            ->with(['lessons' => fn ($query) => $query->withCount([
+                // As propostas do simulado de escrita não são questões da lição.
+                'questions' => fn ($q) => $q->where('exam_only', false),
+                'questions as exam_only_count' => fn ($q) => $q->where('exam_only', true),
+            ])])
             ->orderBy('position')
             ->get();
 
@@ -80,12 +85,18 @@ class CatalogController extends Controller
      */
     private function examBlock(Subject $subject, bool $unlocked, int $min, int $target): array
     {
+        // Simulado de escrita: um texto inteiro, sorteado entre as propostas.
+        if ($subject->lessons->sum('exam_only_count') > 0) {
+            return ['available' => true, 'unlocked' => $unlocked, 'questions' => 1, 'writing' => true];
+        }
+
         $pool = $subject->lessons->sum('questions_count');
 
         return [
             'available' => $pool >= $min,
             'unlocked' => $unlocked,
             'questions' => min($target, $pool),
+            'writing' => false,
         ];
     }
 
@@ -141,8 +152,10 @@ class CatalogController extends Controller
 
     public function lesson(Request $request, Lesson $lesson): JsonResponse
     {
-        $lesson->load('subject')->loadCount('questions');
-        $limit = $request->user()->questionLimit();
+        $lesson->load('subject')->loadCount(['questions' => fn ($q) => $q->where('exam_only', false)]);
+        $escrita = $lesson->questions()->where('format', Question::FORMAT_WRITING)->exists();
+        // A lição de escrita não tem corte por plano: ver AttemptController::store.
+        $limit = $escrita ? null : $request->user()->questionLimit();
         $available = $limit === null ? $lesson->questions_count : min($limit, $lesson->questions_count);
 
         return response()->json([
@@ -162,6 +175,8 @@ class CatalogController extends Controller
                 'questions_total' => $lesson->questions_count,
                 'questions_available' => $available,
                 'limited_by_plan' => $available < $lesson->questions_count,
+                // A tela troca "treinar 8 questões" por "escrever o texto por partes".
+                'practice' => $escrita ? 'writing' : 'questions',
             ],
         ]);
     }

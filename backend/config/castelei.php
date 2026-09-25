@@ -65,6 +65,38 @@ return [
     | é crescente, igual ao da lição — o simulado se diferencia pela mistura de
     | assuntos, não por pressão de tempo (ver anti-padrões no planejamento).
     */
+    /*
+    | PRODUÇÃO TEXTUAL — como o texto escrito é conferido.
+    |
+    | Três camadas, da mais barata para a mais cara:
+    |
+    | 1. A FORMA (tamanho, frase longa, palavra repetida, marca de fala) é
+    |    código nosso, na tela, enquanto a pessoa escreve (`lib/writing.ts`).
+    | 2. A LÍNGUA (ortografia, acentuação, crase, concordância) é o
+    |    LanguageTool. A API pública é grátis, com limite de 20 pedidos por
+    |    minuto POR IP — e todo pedido sai do nosso servidor, então o limite é
+    |    de todo mundo junto. Para muita gente, rode uma instância própria e
+    |    aponte LANGUAGETOOL_URL para ela. Vazio desliga: a conferência de
+    |    língua some da tela, o resto continua.
+    | 3. O SENTIDO só uma IA avalia. Está pronto e DESLIGADO: sem
+    |    ANTHROPIC_API_KEY, a rota responde 404 e o botão não aparece. Com a
+    |    chave, cada pessoa tem um limite por dia — é a trava que impede
+    |    alguém de gastar o crédito inteiro. A API é pré-paga: acabou o
+    |    crédito, ela para, e a conta não cresce sozinha (desde que a recarga
+    |    automática fique desligada no painel da Anthropic).
+    */
+    'writing' => [
+        'languagetool_url' => env('LANGUAGETOOL_URL', 'https://api.languagetool.org/v2/check'),
+        // O texto mais longo que se aceita, em caracteres. A API pública recusa acima de 20 KB.
+        'max_chars' => 6000,
+        'ai' => [
+            'key' => env('ANTHROPIC_API_KEY', ''),
+            'model' => env('WRITING_AI_MODEL', 'claude-opus-5'),
+            // Correções por pessoa por dia. É a trava de custo, não um detalhe.
+            'daily_limit' => (int) env('WRITING_AI_DAILY_LIMIT', 5),
+        ],
+    ],
+
     'exam' => [
         'questions' => 20,      // alvo de questões por simulado
         'min_questions' => 5,   // abaixo disso a matéria ainda não dá simulado

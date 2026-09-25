@@ -162,6 +162,9 @@ class ContentImporter
                 // são o conteúdo, e `options` fica vazia de propósito.
                 'options' => $questionData['options'] ?? [],
                 'pairs' => $questionData['pairs'] ?? null,
+                // A folha de instruções da escrita: roteiro, critérios e modelo.
+                'writing' => $questionData['writing'] ?? null,
+                'exam_only' => (bool) ($questionData['exam_only'] ?? false),
                 // Na questão de ordenar não existe alternativa certa: o
                 // gabarito é a própria ordem das opções. A coluna não aceita
                 // nulo, então fica em zero e ninguém a lê.

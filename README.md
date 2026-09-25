@@ -40,11 +40,11 @@ O Castelei ataca os dois lados:
 
 | | |
 |---|---|
-| Matérias | 5 (Sistemas Operacionais, Servidores e VPS, Refatoração, Matemática, Português) |
-| Lições | 76, em etapas |
-| Questões originais | 608, em três formatos |
-| Figuras SVG próprias | 71 |
-| Testes | 253 no backend (PHPUnit) e 322 no frontend (Vitest) |
+| Matérias | 6 (Sistemas Operacionais, Servidores e VPS, Refatoração, Produção Textual, Matemática, Português) |
+| Lições | 80, em etapas |
+| Questões originais | 632, em quatro formatos (inclusive escrever) |
+| Figuras SVG próprias | 75 |
+| Testes | 267 no backend (PHPUnit) e 337 no frontend (Vitest) |
 | Verificador de conteúdo | `scripts/lint-content.mjs`, roda no CI |
 
 ## Stack e desenho

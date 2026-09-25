@@ -50,6 +50,8 @@ const ALLOWED_PATHS = [
   /^subjects\/\d+\/exams$/,
   /^attempts\/\d+\/answers$/,
   /^attempts\/\d+\/finish$/,
+  // Produção textual: conferir o texto (língua + modelo) e, com chave, a correção por IA.
+  /^attempts\/\d+\/writing\/(check|review)$/,
   // Lembretes: o interruptor do Perfil assina e desassina o aparelho daqui.
   /^push\/key$/,
   /^push\/subscriptions$/,
