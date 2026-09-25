@@ -156,6 +156,12 @@ Ao escrever conteúdo: use `order` onde a lição ensina uma sequência, e múlt
 
 **Refazer só as que errei** (`?erradas=1` na prática, `only: wrong` na API, `AttemptController::wrongQuestionIds`). Conta a ÚLTIMA resposta de cada questão, em tentativa concluída: quem errou em setembro e acertou ontem já aprendeu, e refazer essa seria castigo. O resultado oferece o botão com o número (`wrong_count`, que já desconta o que se acertou agora) e a última etapa da lição também; a escrita fica de fora, porque parte de texto não tem "errada". Sem erradas, a API responde 422 — e a tela nem mostra o botão.
 
+**Ferramentas de estudo fora da prática** (`StudyToolsController`, `components/study/`):
+
+- **Anotação por lição** (`lesson_notes`, uma por pessoa por lição, `GET/PUT /lessons/{id}/note`). Mora na etapa de resumo, depois de ler e antes de praticar, e guarda sozinha um segundo depois de a pessoa parar de digitar — botão "Salvar" se esquece. Vai para a conta, não para o aparelho: é histórico de estudo. Texto vazio APAGA a anotação.
+- **Busca** (`/buscar`, `GET /search?q=`): título e resumo das lições, palavras do vocabulário (a que casa pelo nome vem antes da que casa só pelo significado) e as anotações da própria pessoa. Sem acento, sem índice: são dezenas de lições, e um motor de busca seria mais um serviço para cair. É formulário GET de verdade — funciona sem JavaScript e o "voltar" devolve aos resultados. A lupa fica no topo da tela inicial, ao lado do sininho.
+- **Cartões do vocabulário** (`/materia/[slug]/vocabulario/cartoes`, `lib/flashcards.ts`). Entram as palavras de lições já praticadas (com menos de cinco, a matéria inteira), no máximo vinte por rodada. A pessoa tenta lembrar, vira e diz se lembrou; nada vai para a nota. O embaralhamento é feito NO SERVIDOR: sorteado no navegador, a primeira carta do HTML e a do React discordariam.
+
 **A espera antes da primeira questão é um esqueleto** (`PracticeSkeleton`, em `PracticeClient.tsx`), com a forma do cabeçalho, do enunciado e das alternativas. Era uma frase solta no branco, no instante de maior desistência da prática.
 
 **A lição retoma de onde parou** (`lib/lesson-progress.ts`, no `localStorage`): o `LessonStepper` devolve a pessoa à etapa, com aviso e saída para recomeçar, e a lista da matéria mostra "parou na etapa 4 de 11". Vale por aparelho e some se a lição mudar de número de etapas. Testes que renderizam o stepper **precisam limpar o `localStorage`** no `afterEach`, senão um teste começa no meio da lição do outro.

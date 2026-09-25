@@ -1,5 +1,6 @@
 "use client";
 
+import { LessonNote } from "@/components/study/LessonNote";
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import {
@@ -255,6 +256,9 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
           </div>
         )}
       </article>
+
+      {/* O caderno da lição mora na etapa de resumo: depois de ler, antes de praticar. */}
+      {isLast && <LessonNote lessonId={lesson.id} />}
 
       <div className="fixed inset-x-0 bottom-0 z-20 border-t border-ink/10 bg-surface/95 backdrop-blur">
         <div className="mx-auto max-w-md px-5 pb-[max(1rem,env(safe-area-inset-bottom))] pt-3">

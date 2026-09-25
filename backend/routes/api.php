@@ -10,6 +10,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\CronController;
 use App\Http\Controllers\ExamController;
+use App\Http\Controllers\StudyToolsController;
 use App\Http\Controllers\WritingController;
 use App\Http\Controllers\MediaFileController;
 use App\Http\Controllers\ProgressController;
@@ -69,6 +70,10 @@ Route::middleware('auth:sanctum')->group(function () {
     | problema só aparece em produção.
     */
     Route::get('/lessons/{lesson}', [CatalogController::class, 'lesson'])->whereNumber('lesson');
+    // Anotação da pessoa na lição, e a busca em todas as matérias.
+    Route::get('/lessons/{lesson}/note', [StudyToolsController::class, 'showNote'])->whereNumber('lesson');
+    Route::put('/lessons/{lesson}/note', [StudyToolsController::class, 'saveNote'])->whereNumber('lesson')->middleware('throttle:60,1');
+    Route::get('/search', [StudyToolsController::class, 'search'])->middleware('throttle:60,1');
 
     Route::post('/lessons/{lesson}/attempts', [AttemptController::class, 'store'])->whereNumber('lesson');
     Route::post('/subjects/{subject}/exams', [ExamController::class, 'store'])->whereNumber('subject');
