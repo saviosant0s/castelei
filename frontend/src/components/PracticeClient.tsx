@@ -22,7 +22,7 @@ type Phase = "loading" | "failed" | "answering" | "feedback" | "result";
  * responder: mudam só onde a tentativa começa e para onde se volta.
  */
 export type PracticeSource =
-  | { kind: "lesson"; lessonId: number; lessonTitle: string }
+  | { kind: "lesson"; lessonId: number; lessonTitle: string; onlyWrong?: boolean }
   | { kind: "exam"; subjectId: number; subjectSlug: string; subjectName: string };
 
 function startUrl(source: PracticeSource): string {
@@ -36,7 +36,8 @@ function backHref(source: PracticeSource): string {
 }
 
 function sourceTitle(source: PracticeSource): string {
-  return source.kind === "lesson" ? source.lessonTitle : `Simulado · ${source.subjectName}`;
+  if (source.kind === "lesson") return source.onlyWrong ? `As que errei · ${source.lessonTitle}` : source.lessonTitle;
+  return `Simulado · ${source.subjectName}`;
 }
 
 /**
@@ -124,7 +125,10 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
   async function begin() {
     setError(null);
     try {
-      const data = await postJson<StartAttemptResponse>(startUrl(source));
+      const data = await postJson<StartAttemptResponse>(
+        startUrl(source),
+        source.kind === "lesson" && source.onlyWrong ? { only: "wrong" } : undefined,
+      );
       setAttempt(data.attempt);
       setQuestions(data.questions);
       setIndex(0);
@@ -620,6 +624,23 @@ export function ResultView({
         <p className={`mt-3 text-base ${diff !== null ? "font-bold text-sage" : "text-content-secondary"}`}>
           {sobreOTempo}
         </p>
+      )}
+
+      {/*
+        Refazer só as erradas, logo depois de errar: é a hora em que a
+        explicação ainda está fresca. Conta a ÚLTIMA resposta de cada questão,
+        então o número já desconta o que a pessoa acertou agora.
+      */}
+      {source.kind === "lesson" && !writing && (result.wrong_count ?? 0) > 0 && (
+        source.onlyWrong ? (
+          <button type="button" onClick={onRetry} className="btn btn-ghost mt-5 w-full border-2 border-ink/15">
+            <RotateCcw className="size-5" aria-hidden="true" /> Refazer as {result.wrong_count} que ainda errei
+          </button>
+        ) : (
+          <Link href={`/licao/${source.lessonId}/praticar?erradas=1`} className="btn btn-ghost mt-5 w-full border-2 border-ink/15">
+            <RotateCcw className="size-5" aria-hidden="true" /> Refazer só as {result.wrong_count} que errei
+          </Link>
+        )
       )}
 
       {result.weak_topic && (

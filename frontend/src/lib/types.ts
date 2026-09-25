@@ -114,6 +114,8 @@ export interface LessonDetail {
   limited_by_plan: boolean;
   /** Lição de escrita: a prática é escrever o texto por partes, não responder questões. */
   practice?: "questions" | "writing";
+  /** Questões cuja última resposta foi errada: a lição oferece refazer só elas. */
+  wrong_count?: number;
 }
 
 /**
@@ -241,6 +243,8 @@ export interface FinishResult {
   next_lesson: { id: number; title: string } | null;
   limited_by_plan: boolean;
   gamification: ResultGamification | null;
+  /** Quantas questões desta lição estão erradas agora, contando esta tentativa. */
+  wrong_count?: number;
 }
 
 export interface TopicStat {

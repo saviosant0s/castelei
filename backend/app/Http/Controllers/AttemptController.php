@@ -29,12 +29,24 @@ class AttemptController extends Controller
         $query = $lesson->questions()->where('exam_only', false)->orderBy('position');
 
         /*
+        | "Refazer só as que errei": as questões cuja ÚLTIMA resposta desta
+        | pessoa foi errada. A última, e não qualquer uma — quem errou em
+        | setembro e acertou ontem já aprendeu, e refazer essa seria castigo.
+        */
+        $soErradas = $request->input('only') === 'wrong';
+        if ($soErradas) {
+            $erradas = self::wrongQuestionIds($request->user()->id, $lesson);
+            abort_if($erradas === [], 422, 'Você não tem questão errada nesta lição. Bom trabalho!');
+            $query->whereIn('id', $erradas);
+        }
+
+        /*
         | O limite do plano corta questões do fim da lista. Numa lição de
         | escrita, o fim é a etapa que junta as partes num texto só — cortar
         | ali entregaria um texto pela metade. Por isso a escrita não tem
         | corte: são poucas partes, e todas formam uma coisa só.
         */
-        $limit = $lesson->questions()->where('format', Question::FORMAT_WRITING)->exists()
+        $limit = $soErradas || $lesson->questions()->where('format', Question::FORMAT_WRITING)->exists()
             ? null
             : $request->user()->questionLimit();
 
@@ -58,8 +70,36 @@ class AttemptController extends Controller
         return response()->json([
             'attempt' => ['id' => $attempt->id, 'total' => $attempt->total_questions, 'kind' => $attempt->kind],
             'questions' => $questions->map(fn (Question $question) => self::payload($question, $attempt->id))->values(),
-            'limited_by_plan' => $lesson->questions()->where('exam_only', false)->count() > $questions->count(),
+            'limited_by_plan' => ! $soErradas && $lesson->questions()->where('exam_only', false)->count() > $questions->count(),
         ], 201);
+    }
+
+    /**
+     * As questões da lição em que a ÚLTIMA resposta desta pessoa foi errada.
+     * Só tentativas concluídas contam, e a escrita fica de fora: parte de
+     * texto não tem "errada", tem critério a cumprir.
+     *
+     * @return list<int>
+     */
+    public static function wrongQuestionIds(int $userId, Lesson $lesson): array
+    {
+        $ultimas = DB::table('answers')
+            ->join('attempts', 'attempts.id', '=', 'answers.attempt_id')
+            ->join('questions', 'questions.id', '=', 'answers.question_id')
+            ->where('attempts.user_id', $userId)
+            ->whereNotNull('attempts.finished_at')
+            ->where('questions.lesson_id', $lesson->id)
+            ->where('questions.format', '!=', Question::FORMAT_WRITING)
+            ->groupBy('answers.question_id')
+            ->selectRaw('MAX(answers.id) as id');
+
+        return DB::table('answers')
+            ->whereIn('id', $ultimas)
+            ->where('is_correct', false)
+            ->orderBy('question_id')
+            ->pluck('question_id')
+            ->map(fn ($id) => (int) $id)
+            ->all();
     }
 
     /**
@@ -458,6 +498,8 @@ class AttemptController extends Controller
             'weak_topic' => $weakTopic,
             'next_lesson' => $next ? ['id' => $next->id, 'title' => $next->title] : null,
             'limited_by_plan' => $lesson !== null && $lesson->questions()->where('exam_only', false)->count() > $attempt->total_questions,
+            // Quantas desta lição estão erradas AGORA, contando esta tentativa. A tela oferece refazer só elas.
+            'wrong_count' => $lesson !== null ? count(self::wrongQuestionIds($attempt->user_id, $lesson)) : 0,
         ];
     }
 }
