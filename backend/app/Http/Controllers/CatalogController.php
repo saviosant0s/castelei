@@ -177,6 +177,8 @@ class CatalogController extends Controller
                 'limited_by_plan' => $available < $lesson->questions_count,
                 // A tela troca "treinar 8 questões" por "escrever o texto por partes".
                 'practice' => $escrita ? 'writing' : 'questions',
+                // Questões cuja última resposta foi errada: a lição oferece refazer só elas.
+                'wrong_count' => count(AttemptController::wrongQuestionIds($request->user()->id, $lesson)),
             ],
         ]);
     }

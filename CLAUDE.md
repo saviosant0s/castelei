@@ -154,6 +154,8 @@ Ao escrever conteúdo: use `order` onde a lição ensina uma sequência, e múlt
 
 **A explicação vem até a pessoa, não o contrário.** Depois de responder, o bloco de feedback rola para o MEIO da tela (`block: "center"`). Era `"nearest"`, que rola o mínimo possível — e o mínimo deixava a explicação encostada na barra fixa de baixo, com a pegadinha cortada. Quem acabou de responder quer ler o porquê, e estava tendo que rolar para isso.
 
+**Refazer só as que errei** (`?erradas=1` na prática, `only: wrong` na API, `AttemptController::wrongQuestionIds`). Conta a ÚLTIMA resposta de cada questão, em tentativa concluída: quem errou em setembro e acertou ontem já aprendeu, e refazer essa seria castigo. O resultado oferece o botão com o número (`wrong_count`, que já desconta o que se acertou agora) e a última etapa da lição também; a escrita fica de fora, porque parte de texto não tem "errada". Sem erradas, a API responde 422 — e a tela nem mostra o botão.
+
 **A espera antes da primeira questão é um esqueleto** (`PracticeSkeleton`, em `PracticeClient.tsx`), com a forma do cabeçalho, do enunciado e das alternativas. Era uma frase solta no branco, no instante de maior desistência da prática.
 
 **A lição retoma de onde parou** (`lib/lesson-progress.ts`, no `localStorage`): o `LessonStepper` devolve a pessoa à etapa, com aviso e saída para recomeçar, e a lista da matéria mostra "parou na etapa 4 de 11". Vale por aparelho e some se a lição mudar de número de etapas. Testes que renderizam o stepper **precisam limpar o `localStorage`** no `afterEach`, senão um teste começa no meio da lição do outro.

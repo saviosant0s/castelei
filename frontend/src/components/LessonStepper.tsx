@@ -258,6 +258,13 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
 
       <div className="fixed inset-x-0 bottom-0 z-20 border-t border-ink/10 bg-surface/95 backdrop-blur">
         <div className="mx-auto max-w-md px-5 pb-[max(1rem,env(safe-area-inset-bottom))] pt-3">
+          {isLast && (lesson.wrong_count ?? 0) > 0 && lesson.practice !== "writing" && (
+            <p className="mb-2 text-center text-sm">
+              <Link href={`/licao/${lesson.id}/praticar?erradas=1`} className="font-bold text-content-secondary underline underline-offset-4">
+                Ou refaça só as {lesson.wrong_count} que você errou
+              </Link>
+            </p>
+          )}
           {isLast && lesson.limited_by_plan && (
             <p className="mb-2 text-center text-sm text-ink/60">
               Plano grátis: {lesson.questions_available} de{" "}
