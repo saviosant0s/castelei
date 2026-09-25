@@ -150,6 +150,29 @@ class WritingTest extends TestCase
             ->assertJsonPath('percent', 50);
     }
 
+    public function test_o_progresso_nao_mistura_texto_com_questao(): void
+    {
+        [$lesson] = $this->licaoDeEscrita();
+        $inicio = $this->comecar($lesson);
+        $attemptId = $inicio['attempt']['id'];
+
+        foreach (array_column($inicio['questions'], 'id') as $id) {
+            $this->postJson("/api/attempts/{$attemptId}/answers", [
+                'question_id' => $id, 'text' => 'Um texto.', 'checklist' => [true, true], 'seconds' => 600,
+            ])->assertOk();
+        }
+        $this->postJson("/api/attempts/{$attemptId}/finish")->assertOk();
+
+        $progresso = $this->getJson('/api/progress')->assertOk();
+
+        // O tópico aparece, marcado como escrita…
+        $this->assertTrue($progresso->json('topics.0.writing'));
+        // …mas não entra nos números de questão nem nos gráficos de acerto e tempo.
+        $this->assertSame(0, $progresso->json('overall.answered'));
+        $this->assertNull($progresso->json('overall.avg_seconds'));
+        $this->assertSame([], $progresso->json('evolution'));
+    }
+
     public function test_texto_vazio_e_pular_e_nao_cumprir(): void
     {
         [$lesson, $question] = $this->licaoDeEscrita();

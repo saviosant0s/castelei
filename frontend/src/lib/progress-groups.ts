@@ -18,6 +18,8 @@ export interface LessonGroup {
   answered: number;
   correct: number;
   accuracy: number;
+  /** Lição de escrita: são partes cumpridas, não questões certas. */
+  writing: boolean;
   /** do mais fraco para o mais forte */
   topics: TopicStat[];
 }
@@ -44,8 +46,10 @@ export function agruparPorLicao(topics: TopicStat[]): LessonGroup[] {
       answered: 0,
       correct: 0,
       accuracy: 0,
+      writing: false,
       topics: [],
     };
+    grupo.writing ||= topic.writing === true;
     grupo.answered += topic.answered;
     grupo.correct += topic.correct;
     grupo.topics.push(topic);

@@ -250,6 +250,8 @@ export interface TopicStat {
   correct: number;
   accuracy: number;
   avg_seconds: number;
+  /** Parte de texto (Produção Textual): conta como cumprida, não como certa. */
+  writing?: boolean;
 }
 
 /** Um ponto do gráfico de evolução: uma tentativa concluída. */
