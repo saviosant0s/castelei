@@ -5,7 +5,11 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ApiError, messageOf, postJson } from "@/lib/client";
 
-type Mode = "login" | "register";
+/**
+ * `claim` é o visitante criando conta: os mesmos campos do cadastro, mas o
+ * usuário é o mesmo, e o que ele estudou vai junto.
+ */
+type Mode = "login" | "register" | "claim";
 
 export function AuthForm({ mode }: { mode: Mode }) {
   const router = useRouter();
@@ -13,7 +17,7 @@ export function AuthForm({ mode }: { mode: Mode }) {
   const [formError, setFormError] = useState<string | null>(null);
   const [fieldErrors, setFieldErrors] = useState<Record<string, string[]>>({});
 
-  const isRegister = mode === "register";
+  const isRegister = mode === "register" || mode === "claim";
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -25,7 +29,7 @@ export function AuthForm({ mode }: { mode: Mode }) {
 
     try {
       await postJson(`/api/auth/${mode}`, data);
-      router.replace("/inicio");
+      router.replace(mode === "claim" ? "/perfil?conta=criada" : "/inicio");
       router.refresh();
     } catch (error) {
       if (error instanceof ApiError && Object.keys(error.errors).length > 0) {
@@ -99,7 +103,7 @@ export function AuthForm({ mode }: { mode: Mode }) {
       </div>
 
       <button type="submit" disabled={busy} className="btn btn-primary w-full">
-        {busy ? "Um instante…" : isRegister ? "Criar conta grátis" : "Entrar"}
+        {busy ? "Um instante…" : mode === "claim" ? "Criar conta e guardar meu progresso" : isRegister ? "Criar conta grátis" : "Entrar"}
       </button>
 
       <p className="text-center text-base text-ink/70">

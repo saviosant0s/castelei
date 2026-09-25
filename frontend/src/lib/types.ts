@@ -10,6 +10,8 @@ export interface User {
   plan: Plan;
   /** administra o conteúdo em /admin. Nada a ver com plano. */
   is_admin: boolean;
+  /** Conta de visitante: o progresso mora só neste navegador até virar conta de verdade. */
+  is_guest?: boolean;
   /** o plano que vale na prática — durante os testes, todo mundo estuda como Pro */
   effective_plan: Plan;
   /** rótulo do plano efetivo */

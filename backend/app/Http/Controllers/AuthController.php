@@ -93,6 +93,45 @@ class AuthController extends Controller
         return response()->json(['ok' => true]);
     }
 
+    /**
+     * O visitante vira conta de verdade, SEM perder nada.
+     *
+     * Criar uma conta nova do zero deixaria o histórico para trás: as
+     * tentativas, a revisão agendada, o streak e as conquistas moram no
+     * usuário de visitante. Então não se cria outro usuário — o mesmo ganha
+     * nome, e-mail e senha. Todo o resto continua preso a ele, e o token da
+     * sessão atual segue valendo.
+     *
+     * Só para visitante: conta de verdade troca e-mail e senha por outro
+     * caminho, com confirmação, e não por aqui.
+     */
+    public function claim(Request $request): JsonResponse
+    {
+        $user = $request->user();
+        abort_unless($user->isGuest(), 409, 'Esta conta já tem e-mail e senha.');
+
+        $request->merge(['email' => Str::lower(trim((string) $request->input('email')))]);
+
+        $data = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'email', 'max:255', 'unique:users,email', 'not_regex:/@guest\.invalid$/'],
+            'password' => ['required', 'string', 'min:8', 'max:255'],
+        ], [
+            'name.required' => 'Informe seu nome.',
+            'email.required' => 'Informe seu e-mail.',
+            'email.email' => 'Informe um e-mail válido.',
+            'email.unique' => 'Este e-mail já tem conta. Use "Entrar" para acessá-la.',
+            'email.not_regex' => 'Informe um e-mail válido.',
+            'password.required' => 'Crie uma senha.',
+            'password.min' => 'A senha precisa ter pelo menos 8 caracteres.',
+        ]);
+
+        // O cast `hashed` do modelo guarda a senha como hash.
+        $user->update($data);
+
+        return response()->json(['user' => self::userPayload($user->fresh())]);
+    }
+
     public function me(Request $request): JsonResponse
     {
         return response()->json(['user' => self::userPayload($request->user())]);
@@ -107,6 +146,8 @@ class AuthController extends Controller
             'email' => $user->email,
             'plan' => $user->plan,
             'is_admin' => $user->isAdmin(),
+            // Visitante: o progresso mora só neste navegador até virar conta.
+            'is_guest' => $user->isGuest(),
             'effective_plan' => $user->effectivePlan(),
             'plan_label' => $user->planLabel(),
             'questions_per_lesson' => $user->questionLimit(),

@@ -228,6 +228,38 @@ export async function deleteAccount(req: NextRequest): Promise<NextResponse> {
   return out;
 }
 
+/**
+ * O visitante vira conta de verdade: o mesmo usuário ganha nome, e-mail e
+ * senha, e leva todo o histórico junto. O token não muda, então o cookie
+ * também não precisa mudar.
+ */
+export async function claimAccount(req: NextRequest): Promise<NextResponse> {
+  const token = req.cookies.get(TOKEN_COOKIE)?.value;
+  if (!token) return json({ message: "Sua sessão expirou. Recarregue a página." }, 401);
+
+  let payload: unknown;
+  try {
+    payload = await req.json();
+  } catch {
+    return json({ message: "Requisição inválida." }, 400);
+  }
+
+  let response: Response;
+  try {
+    response = await fetch(`${apiBase()}/me/claim`, {
+      method: "POST",
+      headers: { Accept: "application/json", "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+      body: JSON.stringify(payload),
+      cache: "no-store",
+    });
+  } catch {
+    return json({ message: "Não deu para falar com o servidor. Tente de novo em instantes." }, 502);
+  }
+
+  const data = await response.json().catch(() => null);
+  return json(data ?? { message: "Algo deu errado. Tente de novo." }, response.status);
+}
+
 /** Revoga o token na API (se possível) e apaga o cookie. */
 export async function logout(req: NextRequest): Promise<NextResponse> {
   const token = req.cookies.get(TOKEN_COOKIE)?.value;

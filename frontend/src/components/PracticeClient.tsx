@@ -665,7 +665,7 @@ export function ResultView({
         <Link href="/planos" className="mt-6 flex items-center gap-3 rounded-2xl border-2 border-dashed border-ink/25 px-5 py-4 hover:border-ink/50">
           <Crown className="size-5 shrink-0 text-sky" aria-hidden="true" />
           <span className="text-base">
-            <strong>Você viu só parte das questões desta lição.</strong> Veja como liberar todas com o Plus.
+            <strong>Você viu só parte das questões desta lição.</strong> Veja os planos.
           </span>
         </Link>
       )}

@@ -235,33 +235,25 @@ export default async function Landing() {
 
         <Card tone="sage" size="lg" radius="panel" className="mt-6">
           <p className="text-base">
-            <strong>Tudo liberado enquanto o app está em testes.</strong> Você estuda com todos os recursos,
-            sem limite de questões. Os planos abaixo mostram como vai ficar depois — e o plano Grátis continua
-            existindo.
+            <strong>Tudo liberado enquanto o app está em testes.</strong> Os planos abaixo mostram como vai ficar
+            depois — e quase tudo continua no grátis.
           </p>
         </Card>
 
-        <div className="mt-6 grid gap-4 sm:grid-cols-3">
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
           <Card tone="outline" size="lg" radius="panel">
             <p className="label-mono">Grátis · para sempre</p>
             <p className="mt-2 font-mono text-2xl font-medium">R$ 0</p>
             <p className="mt-3 text-base text-content-secondary">
-              Todas as lições, 5 questões de treino em cada uma, modo prova com cronômetro e o relatório de
-              acerto e tempo por tópico.
-            </p>
-          </Card>
-          <Card tone="dashed" size="lg" radius="panel">
-            <p className="label-mono">Plus · em breve</p>
-            <p className="mt-2 font-mono text-2xl font-medium">Em breve</p>
-            <p className="mt-3 text-base text-content-secondary">
-              Todas as questões de cada lição, mais dias seguidos, XP e conquistas.
+              Todas as lições e todas as questões, a trilha, o vocabulário, a revisão espaçada com lembretes,
+              streak, XP e conquistas.
             </p>
           </Card>
           <Card tone="dashed" size="lg" radius="panel">
             <p className="label-mono">Pro · em breve</p>
             <p className="mt-2 font-mono text-2xl font-medium">Em breve</p>
             <p className="mt-3 text-base text-content-secondary">
-              Questões sem limite, simulado por matéria e o gráfico de evolução completo.
+              Tudo do grátis, mais o simulado por matéria e questões em três níveis de dificuldade.
             </p>
           </Card>
         </div>

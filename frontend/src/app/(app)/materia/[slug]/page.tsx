@@ -117,7 +117,7 @@ export default async function MateriaPage({ params }: { params: Promise<{ slug: 
 
       {limited && (
         <Callout role="bloqueado" icon={Crown} href="/planos">
-          No plano grátis cada lição traz parte das questões. <strong>Veja o que o Plus libera.</strong>
+          No plano grátis cada lição traz parte das questões. <strong>Veja os planos.</strong>
         </Callout>
       )}
     </div>

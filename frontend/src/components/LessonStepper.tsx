@@ -266,7 +266,7 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
                 href="/planos"
                 className="font-bold text-ink underline underline-offset-4"
               >
-                Ver Plus
+                Ver planos
               </Link>
             </p>
           )}
