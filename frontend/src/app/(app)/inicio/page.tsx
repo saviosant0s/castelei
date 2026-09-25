@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BookOpen, ChevronRight, Calculator, Cpu, Flame, Languages, PenLine, Server, Star, Wrench } from "lucide-react";
+import { ArrowRight, BookOpen, ChevronRight, CloudUpload, Calculator, Cpu, Flame, Languages, PenLine, Server, Star, Wrench } from "lucide-react";
 import { Card, Pill, ProgressBar } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
 import { firstName, formatNumber, pluralize } from "@/lib/format";
@@ -85,6 +85,23 @@ export default async function Inicio() {
           <ReviewBell vencidas={revisao.due.length} />
         </div>
       </header>
+
+      {/*
+        Só para visitante que JÁ estudou alguma coisa: antes disso não há o que
+        perder, e o convite seria só mais um cartão no caminho.
+      */}
+      {user.is_guest && last && (
+        <Link
+          href="/cadastro"
+          className="flex items-center gap-3 rounded-card border-2 border-dashed border-sage/60 bg-sage-soft/50 px-4 py-3 text-base"
+        >
+          <CloudUpload className="size-5 shrink-0 text-sage" aria-hidden="true" />
+          <span className="min-w-0 flex-1">
+            <strong>Crie sua conta</strong> para não perder o que já estudou neste navegador.
+          </span>
+          <ChevronRight className="size-5 shrink-0 text-content-faint" aria-hidden="true" />
+        </Link>
+      )}
 
       <section aria-labelledby="continue">
         <h2 id="continue" className="sr-only">Continuar</h2>

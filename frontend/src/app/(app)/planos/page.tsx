@@ -7,10 +7,39 @@ import type { User } from "@/lib/types";
 
 export const metadata: Metadata = { title: "Planos" };
 
+/*
+| O corte decidido pelo Sávio: TUDO que existe hoje fica no grátis. O Pro
+| ganha só duas coisas por cima — o simulado por matéria e as questões em três
+| níveis de dificuldade. O plano Plus saiu da vitrine: não havia nada que ele
+| desse e o grátis não.
+|
+| A tela descreve o destino, e a cobrança ainda não existe (ver CLAUDE.md).
+*/
 const plans = [
-  { key: "free", name: "Grátis", price: "R$ 0", items: ["Todas as lições", "5 questões de treino por lição", "Modo prova com cronômetro", "Tempo e acerto por tópico"] },
-  { key: "plus", name: "Plus", price: "Em breve", items: ["Tudo do Grátis", "Todas as questões de cada lição", "Streak, XP e conquistas", "Mais lições a cada atualização"] },
-  { key: "pro", name: "Pro", price: "Em breve", items: ["Tudo do Plus", "Questões sem limite", "Simulado por matéria", "Gráfico de evolução completo"] },
+  {
+    key: "free",
+    name: "Grátis",
+    price: "R$ 0",
+    items: [
+      "Todas as matérias e todas as lições",
+      "Todas as questões de cada lição",
+      "Trilha, vocabulário e revisão espaçada",
+      "Lembretes de revisão",
+      "Streak, XP e conquistas",
+      "Produção textual com conferência de ortografia",
+    ],
+  },
+  {
+    key: "pro",
+    name: "Pro",
+    price: "Em breve",
+    items: [
+      "Tudo do Grátis",
+      "Simulado por matéria",
+      "Questões em três níveis: fácil, média e difícil",
+      "Muito mais questões por lição",
+    ],
+  },
 ] as const;
 
 export default async function Planos() {
@@ -28,7 +57,7 @@ export default async function Planos() {
           <Card tone="sage" className="mt-3">
             <p className="text-base">
               <strong>Tudo liberado enquanto o app está em testes.</strong> Você estuda com todos os recursos
-              do Pro, sem limite de questões. Os planos abaixo mostram como vai ficar depois.
+              do Pro. Os planos abaixo mostram como vai ficar depois — e quase tudo continua grátis.
             </p>
           </Card>
         ) : (
@@ -46,7 +75,7 @@ export default async function Planos() {
           return (
             <Card
               key={plan.key}
-              tone={plan.key === "plus" ? "sky" : "outline"}
+              tone={plan.key === "pro" ? "sky" : "outline"}
               size="lg"
               radius="panel"
               aria-labelledby={`plano-${plan.key}`}

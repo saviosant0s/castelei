@@ -55,6 +55,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/me', [AuthController::class, 'me']);
     // Exclusão de conta: exigida pela Google Play e prometida na política.
     Route::delete('/me', [AuthController::class, 'destroy']);
+    // Visitante vira conta de verdade, levando o histórico junto.
+    Route::post('/me/claim', [AuthController::class, 'claim'])->middleware('throttle:10,1');
 
     Route::get('/subjects', [CatalogController::class, 'subjects']);
     // O vocabulário da matéria, montado das etapas das lições.

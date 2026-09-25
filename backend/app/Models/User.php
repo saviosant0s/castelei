@@ -65,6 +65,18 @@ class User extends Authenticatable
      * acesso: no Railway dá para criar uma variável pelo navegador, mas rodar
      * um comando exige CLI — sem ela, ninguém entraria na primeira vez.
      */
+    /**
+     * Conta de visitante, criada sozinha pelo modo de teste (GUEST_MODE).
+     *
+     * O e-mail de visitante termina num domínio que não existe de propósito
+     * (`.invalid` é reservado para isso): ninguém recebe e-mail nele, e ele
+     * não colide com conta de verdade.
+     */
+    public function isGuest(): bool
+    {
+        return str_ends_with((string) $this->email, '@guest.invalid');
+    }
+
     public function isAdmin(): bool
     {
         if ($this->is_admin) {

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ChevronRight, Crown, Palette, ShieldCheck, SlidersHorizontal, Volume2 } from "lucide-react";
+import { ChevronRight, CloudUpload, Crown, LogIn, Palette, ShieldCheck, SlidersHorizontal, Volume2 } from "lucide-react";
 import { DeleteAccountButton } from "@/components/DeleteAccountButton";
 import { InstallButton } from "@/components/InstallButton";
 import { LogoutButton } from "@/components/LogoutButton";
@@ -25,9 +25,11 @@ export const metadata: Metadata = { title: "Perfil" };
 | último. Excluir a conta mora no fim do último grupo, longe do polegar
 | distraído, e ainda pede confirmação.
 */
-export default async function Perfil() {
+export default async function Perfil({ searchParams }: { searchParams: Promise<{ conta?: string }> }) {
   const { user } = await serverGet<{ user: User }>("/me");
-  const guest = isGuestMode();
+  // Visitante é a CONTA, não o modo do servidor: quem criou conta com o modo de teste ligado já não é visitante.
+  const guest = user.is_guest ?? isGuestMode();
+  const contaCriada = (await searchParams).conta === "criada";
 
   return (
     <div className="space-y-8">
@@ -41,7 +43,7 @@ export default async function Perfil() {
         <div className="min-w-0">
           <h1 className="truncate text-3xl">{user.name}</h1>
           <p className="mt-0.5 truncate text-base text-content-secondary">
-            {guest ? "Modo de teste, sem login" : user.email}
+            {guest ? "Sem conta por enquanto" : user.email}
           </p>
         </div>
       </header>
@@ -64,12 +66,30 @@ export default async function Perfil() {
           <ChevronRight className="size-5 shrink-0 on-bold-secondary" aria-hidden="true" />
         </Link>
 
-        {guest && (
-          <p className="px-1 text-sm text-content-subtle">
-            Seu progresso fica salvo neste navegador. Limpar os dados do navegador apaga o que você estudou.
+        {contaCriada && !guest && (
+          <p role="status" className="rounded-2xl bg-sage-soft px-4 py-3 text-base">
+            <strong>Conta criada.</strong> Seu histórico está guardado. Em outro aparelho, é só entrar com {user.email}.
           </p>
         )}
       </div>
+
+      {/*
+        O convite para criar conta mora no TOPO do Perfil, antes dos ajustes.
+        Sem conta, limpar os dados do navegador (ou trocar de celular) apaga
+        tudo que a pessoa estudou — e ela só descobre depois.
+      */}
+      {guest && (
+        <SettingsGroup id="conta-visitante" title="Guarde o seu histórico">
+          <SettingsRow
+            icon={CloudUpload}
+            iconTone="sage"
+            title="Criar minha conta"
+            description="Leva tudo que você já estudou aqui. Depois é só entrar em qualquer aparelho."
+            href="/cadastro"
+          />
+          <SettingsRow icon={LogIn} iconTone="sky" title="Já tenho conta: entrar" href="/entrar" />
+        </SettingsGroup>
+      )}
 
       <SettingsGroup id="aparencia" title="Aparência e som">
         <SettingsRow
