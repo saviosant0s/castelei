@@ -140,12 +140,15 @@ export const SUBJECTS: SiteSubject[] = [
     slug: "producao-textual",
     name: "Produção Textual",
     pitch:
-      "Escrever por partes até o texto inteiro: a tese, a introdução, os argumentos e a conclusão, conferindo a forma e a língua a cada etapa.",
+      "Escrever por partes até o texto inteiro: artigo de opinião, redação com proposta de intervenção e fábula, conferindo a forma e a língua a cada etapa.",
     lessons: [
       "O que é um artigo de opinião",
       "A tese e a introdução",
       "Argumentos que convencem",
       "Contra-argumento e conclusão",
+      "A redação dissertativa-argumentativa",
+      "A proposta de intervenção",
+      "Fábula: uma história com lição",
     ],
   },
 ];
@@ -164,5 +167,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 632,
+  questions: 650,
 };

@@ -193,6 +193,8 @@ const JARGON = [
   ["coerência", /\bcoer(ê|e)ncia\b|\bcoerentes?\b/i, "t"], ["concessão", /\bconcess(ão|ões|ivo|iva)\b/i, "t"],
   ["refutação", /\brefuta(ção|ções|r)\b/i, "t"], ["repertório", /\brepert(ó|o)rio\b/i, "t"],
   ["norma-padrão", /\bnorma[- ]padr(ã|a)o\b/i, "t"],
+  ["proposta de intervenção", /\bpropostas? de interven(ç|c)(ão|ões)\b/i, "t"],
+  ["dissertativo-argumentativo", /\bdissertativ(o|a)-argumentativ(o|a)\b/i, "t"], ["clímax", /\bcl(í|i)max\b/i, "t"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
 const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t" };
