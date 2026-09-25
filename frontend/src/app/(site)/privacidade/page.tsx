@@ -45,6 +45,10 @@ export default function Privacidade() {
               uma, e os números que vêm disso: acerto por tópico, tempo médio, XP, dias seguidos e conquistas.
             </li>
             <li>
+              <strong>Textos:</strong> em Produção Textual, o que você escreve e entrega em cada parte, junto
+              da sua autoavaliação. O rascunho que ainda não foi entregue fica só no seu aparelho.
+            </li>
+            <li>
               <strong>Plano:</strong> qual plano está associado à sua conta.
             </li>
           </ul>
@@ -69,6 +73,14 @@ export default function Privacidade() {
             Com ninguém, para fins comerciais. Seus dados ficam no banco de dados do Castelei, hospedado na
             Railway, que atua apenas como fornecedor de infraestrutura. Podemos divulgar informação se formos
             obrigados por lei ou ordem judicial.
+          </p>
+          <p className="mt-3">
+            <strong>Correção de textos.</strong> Quando você toca em “Conferir” em Produção Textual, o texto é
+            enviado ao LanguageTool, um corretor de ortografia e gramática da empresa LanguageTooler GmbH, na
+            Alemanha, só para apontar os erros. Não vai junto seu nome nem seu e-mail. Se a correção por
+            inteligência artificial estiver ligada e você tocar em “Corrigir com IA”, o texto vai também para
+            a Anthropic, com o mesmo fim. O botão “Copiar para corrigir com IA” não envia nada: só copia o
+            texto para você colar onde quiser.
           </p>
         </section>
 

@@ -70,7 +70,15 @@ class ContentSeederTest extends TestCase
         $this->assertSame($esperado['questions'], Question::count());
 
         foreach (Lesson::withCount('questions')->get() as $lesson) {
-            $this->assertSame(8, $lesson->questions_count, "Lição {$lesson->slug} deve ter 8 questões");
+            /*
+            | Lição de escrita não segue a régua das oito: são tantas partes
+            | quantas o texto tem, mais as propostas do simulado.
+            */
+            if ($lesson->questions()->where('format', Question::FORMAT_WRITING)->exists()) {
+                $this->assertGreaterThanOrEqual(3, $lesson->questions()->where('exam_only', false)->count(), $lesson->slug);
+            } else {
+                $this->assertSame(8, $lesson->questions_count, "Lição {$lesson->slug} deve ter 8 questões");
+            }
             $this->assertNotEmpty($lesson->summary);
             $this->assertNotEmpty($lesson->explanation);
             $this->assertNotEmpty($lesson->exam_style);
@@ -182,6 +190,19 @@ class ContentSeederTest extends TestCase
                     $this->assertCount(count($pares), array_filter($valores), "{$onde}: par sem {$lado}");
                     $this->assertCount(count($valores), array_unique($valores), "{$onde}: repetido em {$lado}");
                 }
+
+                continue;
+            }
+
+            if ($question->format === Question::FORMAT_WRITING) {
+                /*
+                | A de escrita não tem alternativa: tem roteiro, critérios e
+                | modelo. Sem qualquer um dos três, a tela fica sem o que mostrar.
+                */
+                $this->assertSame([], $question->options, $onde);
+                $this->assertNotEmpty($question->writing['steps'] ?? [], "{$onde}: sem roteiro");
+                $this->assertNotEmpty($question->writing['checklist'] ?? [], "{$onde}: sem critérios");
+                $this->assertNotEmpty($question->writing['model'] ?? '', "{$onde}: sem modelo");
 
                 continue;
             }

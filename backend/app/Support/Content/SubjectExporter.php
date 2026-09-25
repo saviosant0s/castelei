@@ -59,8 +59,11 @@ class SubjectExporter
             // "choice" é o padrão: escrevê-lo em toda questão só polui o arquivo.
             'format' => $question->format === Question::FORMAT_CHOICE ? null : $question->format,
             'statement' => $question->statement,
-            'options' => $question->format === Question::FORMAT_MATCH ? null : $question->options,
+            'options' => in_array($question->format, [Question::FORMAT_MATCH, Question::FORMAT_WRITING], true) ? null : $question->options,
             'pairs' => $question->pairs,
+            'writing' => $question->writing,
+            // false é o padrão: só sai no arquivo quando liga.
+            'exam_only' => $question->exam_only ? true : null,
             /*
             | O gabarito sai SEMPRE, mesmo valendo 0.
             |
@@ -71,7 +74,7 @@ class SubjectExporter
             */
             // Questão de ordenar não tem alternativa certa: o gabarito é a
             // ordem das opções, e um `correct_index` aqui só confundiria.
-            'correct_index' => $question->format === Question::FORMAT_ORDER ? null : $question->correct_index,
+            'correct_index' => in_array($question->format, [Question::FORMAT_ORDER, Question::FORMAT_WRITING], true) ? null : $question->correct_index,
             'explanation' => $question->explanation,
             'pitfall' => $question->pitfall,
         ];

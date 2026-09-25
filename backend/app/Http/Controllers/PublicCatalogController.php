@@ -23,7 +23,7 @@ class PublicCatalogController extends Controller
     public function index(): JsonResponse
     {
         $subjects = Subject::query()
-            ->with(['lessons' => fn ($query) => $query->withCount('questions')])
+            ->with(['lessons' => fn ($query) => $query->withCount(['questions' => fn ($q) => $q->where('exam_only', false)])])
             ->orderBy('position')
             ->get();
 

@@ -27,6 +27,8 @@
         <env name="UNLOCK_ALL" value="false"/>
         <env name="GAMIFICATION_FOR_ALL" value="false"/>
         <env name="EXAM_FOR_ALL" value="false"/>
+        <env name="LANGUAGETOOL_URL" value=""/>
+        <env name="ANTHROPIC_API_KEY" value=""/>
         <env name="APP_MAINTENANCE_DRIVER" value="file"/>
         <env name="BCRYPT_ROUNDS" value="4"/>
         <env name="BROADCAST_CONNECTION" value="null"/>

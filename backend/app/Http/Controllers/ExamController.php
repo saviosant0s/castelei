@@ -15,10 +15,22 @@ class ExamController extends Controller
     {
         abort_unless($request->user()->hasExam(), 403, 'O simulado faz parte do plano Pro.');
 
-        $questions = $this->draw($subject);
+        /*
+        | Matéria de escrita tem outro simulado: um texto inteiro, do zero,
+        | sem o roteiro por partes da lição. As propostas dele são as questões
+        | marcadas `exam_only`, e sai uma só, sorteada.
+        */
+        $propostas = Question::query()
+            ->whereIn('lesson_id', $subject->lessons()->pluck('id'))
+            ->where('exam_only', true)
+            ->get();
+
+        $questions = $propostas->isNotEmpty()
+            ? collect([$propostas->random()])
+            : $this->draw($subject);
 
         abort_if(
-            $questions->count() < (int) config('castelei.exam.min_questions'),
+            $propostas->isEmpty() && $questions->count() < (int) config('castelei.exam.min_questions'),
             422,
             'Esta matéria ainda não tem questões suficientes para um simulado.',
         );

@@ -75,7 +75,9 @@ export default async function MateriaPage({ params }: { params: Promise<{ slug: 
                   <span>
                     <span className="block text-base font-bold">Simulado</span>
                     <span className="block text-sm text-content-subtle">
-                      {pluralize(subject.exam.questions, "questão", "questões")} de todas as lições
+                      {subject.exam.writing
+                        ? "Um texto inteiro, do zero"
+                        : `${pluralize(subject.exam.questions, "questão", "questões")} de todas as lições`}
                     </span>
                   </span>
                 </Card>

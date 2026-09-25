@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ArrowRight, BookOpen, Calculator, Cpu, Flame, Languages, Star, Wrench } from "lucide-react";
+import { ArrowRight, BookOpen, Calculator, Cpu, Flame, Languages, PenLine, Star, Wrench } from "lucide-react";
 import { Card, type CardTone, Pill, ProgressBar } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
 import { firstName, formatNumber, pluralize } from "@/lib/format";
@@ -13,6 +13,7 @@ const subjectIcons: Record<string, typeof BookOpen> = {
   portugues: Languages,
   "sistemas-operacionais": Cpu,
   refatoracao: Wrench,
+  "producao-textual": PenLine,
 };
 
 // As matérias alternam entre céu e coral, e a coluna da direita desce um degrau:

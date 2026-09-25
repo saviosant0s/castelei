@@ -136,6 +136,18 @@ export const SUBJECTS: SiteSubject[] = [
       "Refatorar com IA sem quebrar o jogo",
     ],
   },
+  {
+    slug: "producao-textual",
+    name: "Produção Textual",
+    pitch:
+      "Escrever por partes até o texto inteiro: a tese, a introdução, os argumentos e a conclusão, conferindo a forma e a língua a cada etapa.",
+    lessons: [
+      "O que é um artigo de opinião",
+      "A tese e a introdução",
+      "Argumentos que convencem",
+      "Contra-argumento e conclusão",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -145,9 +157,12 @@ export const CATALOG = {
     (total, subject) => total + subject.lessons.length,
     0,
   ),
-  /** Cada lição publicada tem 8 questões. O teste confere. */
-  questionsPerLesson: 8,
-  get questions() {
-    return this.lessons * this.questionsPerLesson;
-  },
+  /*
+  | Nulo desde Produção Textual: as lições de escrita têm tantas partes quantas
+  | o texto pede, e "8 questões por lição" deixou de ser verdade para todas. A
+  | vitrine para de prometer um número em vez de mentir.
+  */
+  questionsPerLesson: null as number | null,
+  /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
+  questions: 632,
 };

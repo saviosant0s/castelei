@@ -1,3 +1,5 @@
+import type { WritingBrief } from "@/lib/writing";
+
 export type Plan = "free" | "plus" | "pro";
 
 export interface User {
@@ -35,6 +37,8 @@ export interface ExamAvailability {
   available: boolean;
   unlocked: boolean;
   questions: number;
+  /** Matéria de escrita: o simulado é um texto inteiro, do zero, e não uma mistura de questões. */
+  writing?: boolean;
 }
 
 export interface Subject {
@@ -106,6 +110,8 @@ export interface LessonDetail {
   questions_total: number;
   questions_available: number;
   limited_by_plan: boolean;
+  /** Lição de escrita: a prática é escrever o texto por partes, não responder questões. */
+  practice?: "questions" | "writing";
 }
 
 /**
@@ -114,8 +120,10 @@ export interface LessonDetail {
  * servidor — a ordem certa é o gabarito, e não pode viajar até o navegador.
  * `match`: ligar cada item de `prompts` ao seu par em `options`, que também
  * chega embaralhado.
+ * `writing`: escrever uma parte de um texto. Não tem gabarito: o roteiro vem
+ * em `writing`, e o texto-modelo só chega depois de a pessoa conferir.
  */
-export type QuestionFormat = "choice" | "order" | "match";
+export type QuestionFormat = "choice" | "order" | "match" | "writing";
 
 export interface PracticeQuestion {
   id: number;
@@ -126,6 +134,35 @@ export interface PracticeQuestion {
   options: string[];
   /** Só na questão de associar: a coluna da esquerda, na ordem escrita. */
   prompts?: string[];
+  /** Só na questão de escrita: o roteiro, o tamanho e as conferências da forma. */
+  writing?: WritingBrief;
+}
+
+/** O que a conferência de um texto devolve. Não grava nada: dá para conferir de novo. */
+export interface WritingCheckResponse {
+  language: {
+    /** false = o corretor estava fora do ar ou está desligado. Não quer dizer "nenhum erro". */
+    available: boolean;
+    issues: LanguageIssue[];
+  };
+  model: string | null;
+  checklist: string[];
+  /** A correção por IA existe neste servidor (há chave configurada). */
+  ai: boolean;
+}
+
+export interface LanguageIssue {
+  /** Posição no texto, contada como o JavaScript conta (UTF-16). */
+  offset: number;
+  length: number;
+  message: string;
+  replacements: string[];
+  group: "ortografia" | "pontuação" | "gramática" | "estilo";
+}
+
+export interface WritingReviewResponse {
+  feedback: string;
+  remaining: number;
 }
 
 export type AttemptKind = "lesson" | "exam";
@@ -142,7 +179,8 @@ export interface StartExamResponse extends StartAttemptResponse {
 
 export interface AnswerResult {
   is_correct: boolean;
-  correct_index: number;
+  /** null na questão de escrita, que não tem gabarito. */
+  correct_index: number | null;
   /** Na questão de ordenar, a sequência certa por extenso. Null nas outras. */
   correct_order: string[] | null;
   /** Na questão de associar, os pares certos. Null nas outras. */

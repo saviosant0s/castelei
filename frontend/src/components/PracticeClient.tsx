@@ -7,10 +7,12 @@ import { BadgeIcon } from "@/components/BadgeIcon";
 import { Confetti } from "@/components/Confetti";
 import { MatchQuestion } from "@/components/MatchQuestion";
 import { OrderQuestion } from "@/components/OrderQuestion";
+import { WritingStep } from "@/components/writing/WritingStep";
 import { ProgressBar } from "@/components/ui";
 import { messageOf, postJson } from "@/lib/client";
 import { formatClock, formatNumber, formatSeconds, optionLetter, pluralize } from "@/lib/format";
 import { playSound, primeSound } from "@/lib/sound";
+import { assemble } from "@/lib/writing";
 import type { AnswerResult, FinishResult, PracticeQuestion, StartAttemptResponse } from "@/lib/types";
 
 type Phase = "loading" | "failed" | "answering" | "feedback" | "result";
@@ -112,6 +114,8 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
   const [result, setResult] = useState<FinishResult | null>(null);
   const [elapsed, setElapsed] = useState(0);
   const [busy, setBusy] = useState(false);
+  /** Os textos entregues em cada parte. A etapa que junta o texto começa por eles. */
+  const [entregues, setEntregues] = useState<Record<number, string>>({});
 
   const questionStart = useRef(0);
   const started = useRef(false);
@@ -129,6 +133,7 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
       setMatching([]);
       setFeedback(null);
       setResult(null);
+      setEntregues({});
       setElapsed(0);
       questionStart.current = Date.now();
       setPhase("answering");
@@ -202,6 +207,29 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
     }
   }
 
+  /** Entrega uma parte do texto, com a autoavaliação. Texto vazio é pular. */
+  async function submitWriting(text: string, checklist: boolean[]) {
+    if (!attempt || !question || busy) return;
+    const seconds = Math.max(0, Math.round((Date.now() - questionStart.current) / 1000));
+    setBusy(true);
+    setError(null);
+    try {
+      const data = await postJson<AnswerResult>(`/api/attempts/${attempt.id}/answers`, {
+        question_id: question.id,
+        text,
+        checklist,
+        seconds,
+      });
+      setEntregues((e) => ({ ...e, [question.id]: text }));
+      setFeedback(data);
+      setPhase("feedback");
+    } catch (e) {
+      setError(messageOf(e));
+    } finally {
+      setBusy(false);
+    }
+  }
+
   async function next() {
     if (!attempt || busy) return;
     if (index + 1 < questions.length) {
@@ -252,13 +280,27 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
   }
 
   if (phase === "result" && result) {
-    return <ResultView result={result} source={source} onRetry={() => { setPhase("loading"); void begin(); }} />;
+    return (
+      <ResultView
+        result={result}
+        source={source}
+        writing={questions.every((q) => q.format === "writing")}
+        onRetry={() => { setPhase("loading"); void begin(); }}
+      />
+    );
   }
 
   if (!question || !attempt) return null;
 
   const answeredCount = index + (phase === "feedback" ? 1 : 0);
   const isLast = index + 1 === questions.length;
+  const escrita = question.format === "writing" && question.writing ? { ...question, writing: question.writing } : null;
+  // Na escrita não são questões: são partes de um texto, ou o texto inteiro no simulado.
+  const rotulo = escrita
+    ? questions.length === 1
+      ? "Texto completo"
+      : `Parte ${index + 1} de ${attempt.total}`
+    : `Questão ${index + 1} de ${attempt.total}`;
 
   /*
   | As vagas da questão de associar, uma por item da esquerda.
@@ -299,11 +341,31 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
 
       <section key={question.id} className="anim-rise mt-8">
         <p className="label-mono">
-          Questão {index + 1} de {attempt.total} · {question.topic}
+          {rotulo} · {question.topic}
         </p>
         <h1 className="mt-3 text-2xl">{question.statement}</h1>
 
-        {question.format === "match" ? (
+        {escrita ? (
+          <WritingStep
+            attemptId={attempt.id}
+            question={escrita}
+            phase={phase === "feedback" ? "feedback" : "answering"}
+            initialText={
+              escrita.writing.assemble
+                ? assemble(
+                    questions
+                      .slice(0, index)
+                      .filter((q) => q.format === "writing" && !q.writing?.assemble && !q.writing?.draft_only)
+                      .map((q) => entregues[q.id] ?? ""),
+                  )
+                : ""
+            }
+            busy={busy}
+            feedback={feedback}
+            onDeliver={(text, checklist) => void submitWriting(text, checklist)}
+            onSkip={() => void submitWriting("", [])}
+          />
+        ) : question.format === "match" ? (
           <MatchQuestion
             prompts={question.prompts ?? []}
             options={question.options}
@@ -356,7 +418,7 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
 
         {error && <p role="alert" className="mt-4 rounded-2xl bg-brick-soft px-4 py-3 text-base text-brick">{error}</p>}
 
-        {phase === "feedback" && feedback && (
+        {phase === "feedback" && feedback && !escrita && (
           <div ref={feedbackRef} className="anim-rise mt-6 space-y-4">
             <div className={`rounded-2xl px-5 py-4 ${feedback.is_correct ? "bg-sage-soft" : pulou ? "bg-paper-2" : "bg-brick-soft"}`}>
               <div className="flex items-center justify-between gap-3">
@@ -375,7 +437,7 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
                   </span>
                 ) : null}
               </div>
-              {!feedback.is_correct && !feedback.correct_order && !feedback.correct_pairs && (
+              {!feedback.is_correct && !feedback.correct_order && !feedback.correct_pairs && feedback.correct_index !== null && (
                 <p className="mt-1 text-base">
                   Gabarito: <strong>{optionLetter(feedback.correct_index)}) {question.options[feedback.correct_index]}</strong>
                 </p>
@@ -394,6 +456,8 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
         )}
       </section>
 
+      {/* A escrita tem a própria barra enquanto se escreve (Conferir, Entregar). */}
+      {!(escrita && phase === "answering") && (
       <div className="fixed inset-x-0 bottom-0 z-20 border-t border-ink/10 bg-surface/95 backdrop-blur">
         <div className="mx-auto flex max-w-md gap-3 px-5 pb-[max(1rem,env(safe-area-inset-bottom))] pt-3">
           {phase === "answering" ? (
@@ -435,11 +499,12 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
             </>
           ) : (
             <button type="button" className="btn btn-dark flex-1" disabled={busy} onClick={next}>
-              {busy ? "Um instante…" : isLast ? "Ver resultado" : "Próxima questão"} <ArrowRight className="size-5" aria-hidden="true" />
+              {busy ? "Um instante…" : isLast ? "Ver resultado" : escrita ? "Próxima parte" : "Próxima questão"} <ArrowRight className="size-5" aria-hidden="true" />
             </button>
           )}
         </div>
       </div>
+      )}
     </div>
   );
 }
@@ -464,9 +529,25 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
 | uma faixa de apoio em três colunas, e o que sobra é frase, não cartão.
 | Cartão ficou só onde há o que comemorar de verdade — a conquista nova.
 */
-export function ResultView({ result, source, onRetry }: { result: FinishResult; source: PracticeSource; onRetry: () => void }) {
+export function ResultView({
+  result,
+  source,
+  onRetry,
+  writing = false,
+}: {
+  result: FinishResult;
+  source: PracticeSource;
+  onRetry: () => void;
+  /** Prática de escrita: a conta é de partes cumpridas, não de acertos. */
+  writing?: boolean;
+}) {
   const isExam = source.kind === "exam";
-  const headline = result.percent >= 80 ? "Mandou bem!" : result.percent >= 50 ? "Bom caminho." : "Agora você conhece as pegadinhas.";
+  const headline = writing
+    ? result.percent >= 80
+      ? "Texto de pé!"
+      : "Texto escrito. Agora é reescrever."
+    : result.percent >= 80 ? "Mandou bem!" : result.percent >= 50 ? "Bom caminho." : "Agora você conhece as pegadinhas.";
+  const unidade = writing ? (result.total === 1 ? ["texto", "textos"] : ["parte", "partes"]) : ["questão", "questões"];
   const g = result.gamification;
   const celebrate = result.is_record || (g?.new_badges.length ?? 0) > 0;
   const diff = result.is_record && result.previous_best_avg_seconds !== null && result.avg_seconds !== null
@@ -481,7 +562,7 @@ export function ResultView({ result, source, onRetry }: { result: FinishResult; 
   | não com buracos.
   */
   const resumo: { label: string; value: string }[] = [];
-  if (result.avg_seconds !== null) resumo.push({ label: "Por questão", value: formatSeconds(result.avg_seconds) });
+  if (result.avg_seconds !== null) resumo.push({ label: writing ? "Por parte" : "Por questão", value: formatSeconds(result.avg_seconds) });
   if (g) resumo.push({ label: "XP ganho", value: `+${formatNumber(g.xp_earned)}` });
   if (g && g.streak.current > 0) resumo.push({ label: "Sequência", value: pluralize(g.streak.current, "dia", "dias") });
 
@@ -490,7 +571,8 @@ export function ResultView({ result, source, onRetry }: { result: FinishResult; 
   | interromper a leitura; na primeira vez não há recorde, e aí o convite é
   | criar um.
   */
-  const sobreOTempo = result.avg_seconds === null
+  // Escrever não é corrida: recorde de tempo num texto convidaria a escrever pior.
+  const sobreOTempo = result.avg_seconds === null || writing
     ? null
     : diff !== null
       ? `Novo recorde: ${formatSeconds(diff)} mais rápido que antes.`
@@ -512,12 +594,12 @@ export function ResultView({ result, source, onRetry }: { result: FinishResult; 
             <span className="text-2xl">%</span>
           </p>
           <p className="text-base text-content-secondary">
-            {result.correct} de {pluralize(result.total, "questão", "questões")}
+            {result.correct} de {pluralize(result.total, unidade[0], unidade[1])}{writing ? (result.total === 1 ? " cumprido" : " cumpridas") : ""}
           </p>
         </div>
         <ProgressBar
           percent={result.percent}
-          label={`${result.percent}% de acerto`}
+          label={writing ? `${result.percent}% das partes cumpridas` : `${result.percent}% de acerto`}
           animate
           className="mt-3"
         />

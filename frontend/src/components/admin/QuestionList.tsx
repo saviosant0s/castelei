@@ -34,7 +34,7 @@ export function QuestionList({ lessonId, questions }: { lessonId: number; questi
     <div className="space-y-3">
       {erro && <Aviso tipo="erro">{erro}</Aviso>}
 
-      {questions.length !== 8 && (
+      {questions.length !== 8 && !questions.some((q) => q.format === "writing") && (
         <Aviso tipo="atencao">
           Esta lição tem {questions.length} {questions.length === 1 ? "questão" : "questões"}. O site público anuncia 8
           por lição — fora desse número, a vitrine promete o que o app não entrega.
@@ -67,20 +67,30 @@ export function QuestionList({ lessonId, questions }: { lessonId: number; questi
                   <span className="mt-1 flex items-start gap-1.5 text-sm text-content-secondary">
                     <Check className="size-4 shrink-0 text-sage" aria-hidden="true" />
                     <span>
-                      {question.format === "order"
-                        ? question.options.join(" → ")
-                        : question.options[question.correct_index]}
+                      {question.format === "writing"
+                        ? "Escrever: roteiro, critérios e texto-modelo"
+                        : question.format === "order"
+                          ? question.options.join(" → ")
+                          : question.options[question.correct_index]}
                     </span>
                   </span>
                   <span className="mt-1 block text-sm text-content-subtle">
                     {question.topic} ·{" "}
-                    {question.format === "order"
-                      ? `${question.options.length} passos para ordenar`
-                      : `${question.options.length} alternativas`}
+                    {question.format === "writing"
+                      ? "questão de escrita — edite pelo arquivo JSON da matéria"
+                      : question.format === "order"
+                        ? `${question.options.length} passos para ordenar`
+                        : `${question.options.length} alternativas`}
                   </span>
                 </span>
 
                 <span className="flex shrink-0 gap-1">
+                  {/*
+                    O formulário só conhece alternativas, ordem e pares: salvar
+                    uma questão de escrita por ele a transformaria em múltipla
+                    escolha e apagaria o roteiro. Ela entra e sai pelo JSON.
+                  */}
+                  {question.format !== "writing" && (
                   <button
                     type="button"
                     onClick={() => setEditando(question.id)}
@@ -89,6 +99,7 @@ export function QuestionList({ lessonId, questions }: { lessonId: number; questi
                   >
                     <Pencil className="size-4" aria-hidden="true" />
                   </button>
+                  )}
                   <button
                     type="button"
                     onClick={() => apagar(question)}

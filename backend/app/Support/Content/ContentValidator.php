@@ -32,6 +32,17 @@ class ContentValidator
     /** Quantas questões por lição o site público anuncia. */
     private const QUESTIONS_PER_LESSON = 8;
 
+    /**
+     * As conferências da forma que uma questão de escrita pode pedir, além
+     * das que valem sempre (tamanho, frase longa, palavra repetida e marca de
+     * fala). A tela sabe fazer exatamente estas — `frontend/src/lib/writing.ts`
+     * tem a mesma lista, e o teste de lá reprova se as duas divergirem.
+     */
+    public const WRITING_CHECKS = [
+        'uma_frase', 'um_paragrafo', 'titulo', 'conectivo', 'conclusivo',
+        'concessivo', 'sem_pergunta', 'sem_eu_acho',
+    ];
+
     /** @var list<array{path: string, message: string}> */
     private array $errors = [];
 
@@ -563,8 +574,19 @@ class ContentValidator
 
             $formato = $question['format'] ?? 'choice';
 
-            if (! in_array($formato, ['choice', 'order', 'match'], true)) {
-                $this->error("{$qPath}.format", 'O formato da questão precisa ser "choice" (alternativas), "order" (pôr na ordem) ou "match" (ligar os pares).');
+            if (! in_array($formato, ['choice', 'order', 'match', 'writing'], true)) {
+                $this->error("{$qPath}.format", 'O formato da questão precisa ser "choice" (alternativas), "order" (pôr na ordem), "match" (ligar os pares) ou "writing" (escrever).');
+
+                continue;
+            }
+
+            if (($question['exam_only'] ?? false) !== false && $formato !== 'writing') {
+                $this->error("{$qPath}.exam_only", 'Só a questão de escrita pode ser exclusiva do simulado: é a proposta de texto inteiro, do zero.');
+            }
+
+            // A questão de escrita não tem alternativa nem gabarito: tem roteiro, critérios e modelo.
+            if ($formato === 'writing') {
+                $this->writing($question['writing'] ?? null, $qPath);
 
                 continue;
             }
@@ -588,9 +610,66 @@ class ContentValidator
         }
 
         $total = count($questions);
+        $escrita = in_array('writing', array_map(fn ($q) => is_array($q) ? ($q['format'] ?? 'choice') : null, $questions), true);
 
-        if ($total !== self::QUESTIONS_PER_LESSON) {
+        // Lição de escrita não segue a régua das oito: são tantas partes quantas o texto tem.
+        if (! $escrita && $total !== self::QUESTIONS_PER_LESSON) {
             $this->warn($path, "A lição tem {$total} questões. O site público anuncia ".self::QUESTIONS_PER_LESSON.' por lição, então fora desse número a vitrine passa a prometer o que o app não entrega.');
+        }
+    }
+
+    /**
+     * A folha de instruções de uma parte do texto.
+     *
+     * Erro é o que deixaria a tela sem o que mostrar: sem roteiro, a pessoa
+     * não sabe o que escrever; sem critérios, não tem como se avaliar; sem
+     * modelo, não tem com o que comparar.
+     */
+    private function writing(mixed $writing, string $path): void
+    {
+        $path = "{$path}.writing";
+
+        if (! is_array($writing) || array_is_list($writing)) {
+            $this->error($path, 'A questão de escrita precisa do campo "writing", com o roteiro ("steps"), os critérios ("checklist") e o texto-modelo ("model").');
+
+            return;
+        }
+
+        $passos = $this->textList($writing['steps'] ?? null, "{$path}.steps", required: true);
+        if ($passos === []) {
+            $this->error("{$path}.steps", 'O roteiro precisa de pelo menos um passo: é o que diz o que escrever.');
+        }
+
+        $criterios = $this->textList($writing['checklist'] ?? null, "{$path}.checklist", required: true);
+        if ($criterios === []) {
+            $this->error("{$path}.checklist", 'A lista de critérios precisa de pelo menos um item: é com ela que a pessoa se avalia.');
+        }
+        if ($criterios !== null && count($criterios) > 8) {
+            $this->warn("{$path}.checklist", 'São '.count($criterios).' critérios. Acima de oito, a autoavaliação vira formulário.');
+        }
+
+        $this->text($writing['model'] ?? null, "{$path}.model");
+        $this->optionalText($writing['placeholder'] ?? null, "{$path}.placeholder", max: 200);
+
+        $maximo = (int) config('castelei.writing.max_chars');
+        $min = $writing['min_chars'] ?? 0;
+        $max = $writing['max_chars'] ?? $maximo;
+
+        if (! is_int($min) || $min < 0 || ! is_int($max) || $max < 1 || $max > $maximo || $min >= $max) {
+            $this->error("{$path}.max_chars", "\"min_chars\" e \"max_chars\" precisam ser números inteiros, com o mínimo menor que o máximo e o máximo até {$maximo}.");
+        }
+
+        $checks = $this->textList($writing['checks'] ?? null, "{$path}.checks", required: false) ?? [];
+        foreach ($checks as $i => $check) {
+            if (! in_array($check, self::WRITING_CHECKS, true)) {
+                $this->error("{$path}.checks[{$i}]", "\"{$check}\" não é uma conferência que a tela saiba fazer. As que existem: ".implode(', ', self::WRITING_CHECKS).'.');
+            }
+        }
+
+        foreach (['assemble', 'draft_only'] as $campo) {
+            if (isset($writing[$campo]) && ! is_bool($writing[$campo])) {
+                $this->error("{$path}.{$campo}", "\"{$campo}\" precisa ser true ou false.");
+            }
         }
     }
 
