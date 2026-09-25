@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Attempt;
+use App\Models\Question;
 use App\Services\GamificationService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -26,7 +27,7 @@ class ProgressController extends Controller
             ->join('subjects', 'subjects.id', '=', 'lessons.subject_id')
             ->where('attempts.user_id', $userId)
             ->whereNotNull('attempts.finished_at')
-            ->selectRaw('questions.topic as topic, lessons.id as lesson_id, lessons.title as lesson_title, subjects.name as subject_name, COUNT(*) as answered, SUM(CASE WHEN answers.is_correct THEN 1 ELSE 0 END) as correct, AVG(answers.seconds) as avg_seconds')
+            ->selectRaw('questions.topic as topic, lessons.id as lesson_id, lessons.title as lesson_title, subjects.name as subject_name, COUNT(*) as answered, SUM(CASE WHEN answers.is_correct THEN 1 ELSE 0 END) as correct, AVG(answers.seconds) as avg_seconds, MAX(CASE WHEN questions.format = ? THEN 1 ELSE 0 END) as writing', [Question::FORMAT_WRITING])
             ->groupBy('questions.topic', 'lessons.id', 'lessons.title', 'subjects.name')
             ->get();
 
@@ -41,10 +42,18 @@ class ProgressController extends Controller
             'correct' => (int) $row->correct,
             'accuracy' => (int) round(((int) $row->correct) / max((int) $row->answered, 1) * 100),
             'avg_seconds' => round((float) $row->avg_seconds, 1),
+            // Parte de texto, não questão: a tela diz "cumpridas", não "certas".
+            'writing' => (bool) $row->writing,
         ])->sortBy([['accuracy', 'asc'], ['topic', 'asc']])->values();
 
-        $answered = $topics->sum('answered');
-        $correct = $topics->sum('correct');
+        /*
+        | Os números gerais são de QUESTÕES. Uma parte de texto leva dez
+        | minutos e não tem certo nem errado: somada ao resto, ela puxava o
+        | tempo médio para cima e o acerto para uma conta que não é acerto.
+        */
+        $questoes = $topics->where('writing', false);
+        $answered = $questoes->sum('answered');
+        $correct = $questoes->sum('correct');
 
         $last = Attempt::query()
             ->where('user_id', $userId)
@@ -58,7 +67,7 @@ class ProgressController extends Controller
                 'answered' => $answered,
                 'accuracy' => $answered > 0 ? (int) round($correct / $answered * 100) : null,
                 'avg_seconds' => $answered > 0
-                    ? round($topics->sum(fn ($t) => $t['avg_seconds'] * $t['answered']) / $answered, 1)
+                    ? round($questoes->sum(fn ($t) => $t['avg_seconds'] * $t['answered']) / $answered, 1)
                     : null,
             ],
             'topics' => $topics,
@@ -90,14 +99,26 @@ class ProgressController extends Controller
      */
     private function evolution(int $userId): array
     {
-        return Attempt::query()
+        $tentativas = Attempt::query()
             ->where('user_id', $userId)
             ->whereNotNull('finished_at')
             ->with(['lesson', 'subject'])
             ->latest('finished_at')
             ->latest('id')
             ->limit(30)
-            ->get()
+            ->get();
+
+        /*
+        | A prática de escrita fica fora dos gráficos. Eles medem acerto e tempo
+        | por questão, e um texto não tem nenhum dos dois: o tempo de uma parte
+        | escrita derrubava a linha de tempo e o gráfico dizia "você está mais
+        | rápido" para quem só tinha mudado de matéria.
+        */
+        $primeiras = $tentativas->map(fn (Attempt $a) => $a->question_ids[0] ?? null)->filter()->all();
+        $escrita = Question::query()->whereIn('id', $primeiras)->where('format', Question::FORMAT_WRITING)->pluck('id')->flip();
+
+        return $tentativas
+            ->reject(fn (Attempt $a) => isset($escrita[$a->question_ids[0] ?? 0]))
             ->reverse()
             ->map(fn (Attempt $attempt) => [
                 'attempt_id' => $attempt->id,

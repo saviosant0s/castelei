@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { ArrowRight, BookOpen, Calculator, Cpu, Flame, Languages, PenLine, Star, Wrench } from "lucide-react";
-import { Card, type CardTone, Pill, ProgressBar } from "@/components/ui";
+import Link from "next/link";
+import { ArrowRight, BookOpen, ChevronRight, Calculator, Cpu, Flame, Languages, PenLine, Server, Star, Wrench } from "lucide-react";
+import { Card, Pill, ProgressBar } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
 import { firstName, formatNumber, pluralize } from "@/lib/format";
 import { ReviewBell } from "@/components/review/ReviewBell";
@@ -12,13 +13,14 @@ const subjectIcons: Record<string, typeof BookOpen> = {
   "matematica-basica": Calculator,
   portugues: Languages,
   "sistemas-operacionais": Cpu,
+  "servidores-vps": Server,
   refatoracao: Wrench,
   "producao-textual": PenLine,
 };
 
-// As matérias alternam entre céu e coral, e a coluna da direita desce um degrau:
-// grade assimétrica foge da fileira de cartões iguais (ver anti-padrões do plano).
-const subjectTones: CardTone[] = ["sky", "coral"];
+// O ícone de cada matéria gira entre as três cores da marca, pela ordem —
+// nunca vermelho, que no Castelei quer dizer erro.
+const subjectTones = ["bg-sky-soft text-sky", "bg-coral-soft text-coral", "bg-sage-soft text-sage"];
 
 export default async function Inicio() {
   const [{ user }, { subjects }, progress, revisao] = await Promise.all([
@@ -113,42 +115,46 @@ export default async function Inicio() {
         ) : null}
       </section>
 
+      {/*
+        As matérias são uma LISTA, não uma grade de cartões.
+        Eram cartões altos em duas colunas, com o ícone no topo e o nome
+        embaixo — e um vão vazio no meio de cada um. Com duas matérias isso
+        era vitrine; com seis, virou uma rolagem de três telas para achar a
+        que se quer. A linha mostra o que a pessoa procura aqui: o nome, quanto
+        falta e qual é a próxima lição daquela matéria.
+      */}
       <section aria-labelledby="materias">
         <h2 id="materias" className="text-2xl">Matérias</h2>
-        <ul className="mt-4 grid grid-cols-2 gap-4">
+        <ul className="mt-4 space-y-3">
           {subjects.map((subject, i) => {
             const Icon = subjectIcons[subject.slug] ?? BookOpen;
             const total = subject.lessons.length;
             const practiced = subject.lessons.filter((lesson) => lesson.attempts > 0).length;
+            const proxima = subject.lessons.find((lesson) => lesson.attempts === 0);
+            const tom = subjectTones[i % subjectTones.length];
 
             return (
-              <li key={subject.id} className={i % 2 === 1 ? "mt-8" : ""}>
-                <Card
+              <li key={subject.id}>
+                <Link
                   href={`/materia/${subject.slug}`}
-                  tone={subjectTones[i % 2]}
-                  radius="panel"
-                  className="flex h-full min-h-44 min-w-0 flex-col justify-between"
+                  className="flex items-center gap-4 rounded-card bg-surface-raised px-4 py-4 shadow-lift transition hover:-translate-y-0.5"
                 >
-                  <Icon className="size-8" aria-hidden="true" />
-                  <div className="min-w-0">
-                    {/*
-                      "Operacionais" sozinha não cabe em meia tela de celular a 24px:
-                      o nome vazava do cartão. O tamanho acompanha a largura da tela
-                      e `break-words` é a rede de segurança para nomes ainda maiores.
-                    */}
-                    <p className="font-display text-[clamp(1rem,4.2vw,1.375rem)] font-bold leading-tight break-words">
-                      {subject.name}
-                    </p>
-                    {/*
-                      A barra mede lições praticadas, não acerto médio: na
-                      tela inicial a pergunta é "quanto falta", e nota média
-                      misturada com avanço não responde nenhuma das duas.
-                      O número vem escrito — barra sozinha obriga a medir a
-                      olho e some para quem enxerga pouco.
-                    */}
-                    <p className="mt-1 text-sm text-content-secondary">
-                      {practiced} de {pluralize(subject.lessons.length, "lição", "lições")}
-                    </p>
+                  <span className={`grid size-12 shrink-0 place-items-center rounded-control ${tom}`}>
+                    <Icon className="size-6" aria-hidden="true" />
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="flex items-start justify-between gap-3">
+                      {/* O nome quebra linha em vez de cortar: "Sistemas Operaci…" não diz qual matéria é. */}
+                      <span className="min-w-0 font-display text-lg leading-snug font-bold">{subject.name}</span>
+                      {/*
+                        A barra mede lições praticadas, não acerto médio: aqui a
+                        pergunta é "quanto falta". O número vem escrito — barra
+                        sozinha obriga a medir a olho.
+                      */}
+                      <span className="shrink-0 pt-0.5 font-mono text-sm tabular-nums text-content-subtle">
+                        {practiced}/{total}
+                      </span>
+                    </span>
                     <ProgressBar
                       percent={total > 0 ? (practiced / total) * 100 : 0}
                       tone="ink"
@@ -156,8 +162,14 @@ export default async function Inicio() {
                       label={`${subject.name}: ${practiced} de ${total} lições praticadas`}
                       className="mt-2"
                     />
-                  </div>
-                </Card>
+                    <span className="mt-1.5 block truncate text-sm text-content-secondary">
+                      {proxima
+                        ? `${practiced === 0 ? "Comece por" : "Próxima"}: ${proxima.title}`
+                        : "Todas as lições praticadas"}
+                    </span>
+                  </span>
+                  <ChevronRight className="size-5 shrink-0 text-content-faint" aria-hidden="true" />
+                </Link>
               </li>
             );
           })}

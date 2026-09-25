@@ -83,10 +83,10 @@ export default async function Resumo() {
                     />
                     <span className="mt-2 flex items-center justify-between gap-3 text-sm">
                       <span className="font-mono text-content-secondary">
-                        {licao.accuracy}% · {licao.correct}/{licao.answered} certas
+                        {licao.accuracy}% · {licao.correct}/{licao.answered} {licao.writing ? "cumpridas" : "certas"}
                       </span>
                       <span className="inline-flex items-center gap-1 font-bold text-content-secondary">
-                        {pluralize(licao.topics.length, "tópico", "tópicos")}
+                        {licao.writing ? pluralize(licao.topics.length, "parte", "partes") : pluralize(licao.topics.length, "tópico", "tópicos")}
                         <ChevronDown
                           className="size-4 transition-transform group-open:rotate-180 motion-reduce:transition-none"
                           aria-hidden="true"
@@ -105,7 +105,7 @@ export default async function Resumo() {
                             <span className="min-w-0 flex-1">
                               <span className="block text-base">{topic.topic}</span>
                               <span className="block font-mono text-sm text-content-subtle">
-                                {topic.correct}/{topic.answered} certas · {formatSeconds(topic.avg_seconds)}
+                                {topic.correct}/{topic.answered} {topic.writing ? "cumpridas" : "certas"} · {formatSeconds(topic.avg_seconds)}
                               </span>
                             </span>
                             <span className={`shrink-0 rounded-pill px-2.5 py-0.5 text-sm font-bold ${tn.chip}`}>
