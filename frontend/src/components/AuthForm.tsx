@@ -4,6 +4,7 @@ import { useState, type FormEvent } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ApiError, messageOf, postJson } from "@/lib/client";
+import { limparPaginasGuardadas } from "@/lib/offline";
 
 /**
  * `claim` é o visitante criando conta: os mesmos campos do cadastro, mas o
@@ -29,6 +30,8 @@ export function AuthForm({ mode }: { mode: Mode }) {
 
     try {
       await postJson(`/api/auth/${mode}`, data);
+      // Entrou em OUTRA conta: as páginas guardadas eram da anterior.
+      if (mode === "login") await limparPaginasGuardadas();
       router.replace(mode === "claim" ? "/perfil?conta=criada" : "/inicio");
       router.refresh();
     } catch (error) {

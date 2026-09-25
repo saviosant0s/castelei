@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Trash2 } from "lucide-react";
 import { SettingsRow } from "@/components/ui";
 import { postJson } from "@/lib/client";
+import { limparPaginasGuardadas } from "@/lib/offline";
 
 /**
  * Exclusão de conta. A Google Play exige esse caminho dentro do app, e a
@@ -62,6 +63,7 @@ export function DeleteAccountButton({ guest }: { guest: boolean }) {
             setError(null);
             try {
               await postJson("/api/auth/delete");
+              await limparPaginasGuardadas();
               router.replace(guest ? "/inicio" : "/entrar");
               router.refresh();
             } catch (e) {

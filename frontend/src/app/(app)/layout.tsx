@@ -1,8 +1,10 @@
 import { BottomNav } from "@/components/BottomNav";
+import { OfflineBanner } from "@/components/offline/OfflineBanner";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="mx-auto min-h-dvh max-w-md px-5 pb-28 pt-6">
+      <OfflineBanner />
       {children}
       <BottomNav />
     </div>

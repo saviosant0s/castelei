@@ -1,3 +1,5 @@
+import { SaveOffline } from "@/components/offline/SaveOffline";
+import { paginasDaMateria } from "@/lib/offline";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -110,6 +112,15 @@ export default async function MateriaPage({ params }: { params: Promise<{ slug: 
           )}
         </div>
       )}
+
+      {/* Some sozinho onde não há service worker (desenvolvimento, navegador antigo). */}
+      <SaveOffline
+        urls={paginasDaMateria(
+          subject.slug,
+          subject.lessons.map((l) => l.id),
+          subject.vocabulary_terms > 0,
+        )}
+      />
 
       {/* A trilha no lugar da lista: com 30 lições, uma fileira de linhas
           iguais não mostra onde você está nem quanto falta. */}
