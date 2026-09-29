@@ -223,6 +223,29 @@ export const SUBJECTS: SiteSubject[] = [
     ],
   },
   {
+    slug: "logica",
+    name: "Lógica",
+    pitch:
+      "Proposições, tabela-verdade, equivalências e as negações que as bancas mais cobram, de “todo” a “se… então”.",
+    lessons: [
+      "Proposição: a frase que é verdadeira ou falsa",
+      "Negação: virar o valor lógico",
+      "E, ou e ou exclusivo",
+      "Condicional: se… então",
+      "Bicondicional: se e somente se",
+      "Montar uma tabela-verdade",
+      "Tautologia, contradição e contingência",
+      "Equivalência lógica e contrapositiva",
+      "Leis de De Morgan: negar “e” e “ou”",
+      "Negar condicional e bicondicional",
+      "Todo, algum e nenhum: quantificadores e negações",
+      "Argumento válido: modus ponens e modus tollens",
+      "Falácias: afirmar o consequente e negar o antecedente",
+      "Silogismos com diagramas de Venn",
+      "Lógica no código: and, or e not",
+    ],
+  },
+  {
     slug: "portugues",
     name: "Português",
     pitch:
@@ -340,5 +363,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 1538,
+  questions: 1658,
 };

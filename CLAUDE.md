@@ -330,6 +330,11 @@ Três coisas de conteúdo:
 
 **A trilha "LLMs do zero" está completa**: os oito passos têm matéria, da Matemática Básica a esta.
 
+**Matéria de Lógica** (15 lições, `14-logica.json`, área Matemática, figuras em `frontend/public/figuras/logica/`). Pedido do Sávio: equivalência, negação e tabela-verdade. Cinco módulos: Proposições e conectivos (proposição, negação, “e”/“ou”/ou exclusivo, condicional, bicondicional), Tabela-verdade (montar a tabela e a precedência; tautologia, contradição e contingência), Equivalências e negações (contrapositiva, De Morgan, negação da condicional e da bicondicional, quantificadores), Argumentos (formas válidas, falácias formais, silogismos com diagramas) e Lógica no código (and, or, not e curto-circuito). Duas coisas:
+
+- **É raciocínio lógico de prova, e fala a língua dela.** Os mnemônicos que as bancas esperam estão lá (“V com F dá F” na condicional, MANÉ na negação dela), e cada lição tem uma tabela das alternativas erradas que costumam aparecer: recíproca e inversa no lugar da contrapositiva, “nenhum” no lugar de “algum não”.
+- **Escopo `q` no verificador**, com o mesmo cuidado de sempre: “verdade”, “conclusão” e “argumento” ficaram de fora por serem palavras do dia a dia; entra “argumento válido”, e a regex pega também “inválido” e “validade”. “Não contradição” casa com “contradição”, então a lição 1 define o princípio pelo nome inteiro.
+
 **Trilha de estudo "LLMs do zero"** (`config/castelei.php` → `trails`, `GET /subjects` devolve `trails`, tela em `trilha/[slug]/page.tsx`, lógica em `lib/trails.ts`). Pedido do Sávio: "organize na sequência do que devo aprender primeiro". A trilha atravessa áreas (Matemática e Informática), e a tela de áreas sozinha não dizia a ordem. Quatro coisas:
 
 - **A ordem mora no backend, e o progresso sai das matérias.** Cada passo é só `{subject, name, why}`; praticadas/total vêm das mesmas matérias de `GET /subjects`, com o mesmo critério das outras telas (tentativa concluída).

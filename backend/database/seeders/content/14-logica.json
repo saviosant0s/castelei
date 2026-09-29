@@ -1,0 +1,5271 @@
+{
+  "_leia_me": [
+    "Lógica do Castelei: proposições, conectivos, tabela-verdade, equivalências, negações, quantificadores e argumentos, com a linguagem das provas de concurso.",
+    "Chaves começadas por _ são comentário e somem na importação.",
+    "Todo código foi executado antes de entrar: ele roda como está."
+  ],
+  "slug": "logica",
+  "name": "Lógica",
+  "area": "matematica",
+  "description": "Raciocínio lógico do zero: proposições, conectivos, tabela-verdade, equivalências, negações, quantificadores e argumentos válidos, com o jeito que as provas cobram.",
+  "lessons": [
+    {
+      "slug": "proposicao",
+      "title": "Proposição: a frase que é verdadeira ou falsa",
+      "module": "Proposições e conectivos",
+      "summary": "A lógica trabalha com proposições: frases que afirmam algo e podem ser julgadas verdadeiras ou falsas. Pergunta, ordem, exclamação e frase com um “x” no meio não são proposições.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O juiz da frase",
+          "body": [
+            "Imagine um juiz que só dá dois vereditos: verdadeiro ou falso. Ele julga “Salvador fica na Bahia”, mas não consegue julgar “que horas são?”.",
+            "A lógica trabalha só com as frases que esse juiz consegue julgar."
+          ],
+          "terms": [
+            {
+              "word": "Proposição",
+              "meaning": "uma frase que afirma alguma coisa e pode ser julgada verdadeira ou falsa, mas não as duas ao mesmo tempo."
+            },
+            {
+              "word": "Valor lógico",
+              "meaning": "o resultado do julgamento de uma proposição: verdadeiro (V) ou falso (F)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que é proposição",
+          "body": [
+            "Uma proposição é uma frase declarativa: ela afirma alguma coisa. E essa coisa pode ser verdadeira ou falsa.",
+            "Não importa saber agora qual é o valor. “Existe vida em Marte” é proposição, mesmo que ninguém saiba a resposta."
+          ],
+          "example": {
+            "label": "São proposições",
+            "lines": [
+              "Salvador fica na Bahia. (V)",
+              "2 + 2 = 5. (F)",
+              "Existe vida em Marte. (ninguém sabe, mas é V ou F)"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que não é proposição",
+          "body": [
+            "Perguntas, ordens e exclamações não afirmam nada, então não podem ser julgadas. Frases com um “x” no lugar de alguém também não: dependem de quem é o x."
+          ],
+          "terms": [
+            {
+              "word": "Sentença aberta",
+              "meaning": "uma frase com um espaço em branco, como “x é maior que 3”. Só vira verdadeira ou falsa quando se sabe quem é x."
+            }
+          ],
+          "table": {
+            "label": "É ou não é?",
+            "headers": [
+              "Frase",
+              "É proposição?",
+              "Por quê"
+            ],
+            "rows": [
+              [
+                "Que horas são?",
+                "não",
+                "é pergunta"
+              ],
+              [
+                "Feche a porta.",
+                "não",
+                "é ordem"
+              ],
+              [
+                "Que dia lindo!",
+                "não",
+                "é exclamação"
+              ],
+              [
+                "x + 1 = 5",
+                "não",
+                "sentença aberta"
+              ],
+              [
+                "O Brasil tem 26 estados e um Distrito Federal.",
+                "sim",
+                "afirma algo"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A frase que se desmente",
+          "body": [
+            "“Esta frase é falsa.” Se ela for verdadeira, então é falsa. Se for falsa, então é verdadeira.",
+            "Não dá para dar um valor sem cair em absurdo. Por isso esse tipo de frase, o paradoxo, também não conta como proposição."
+          ],
+          "terms": [
+            {
+              "word": "Paradoxo",
+              "meaning": "uma frase que, julgada verdadeira ou falsa, leva a um absurdo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As três regras de base",
+          "body": [
+            "Toda a lógica desta matéria se apoia em três regras. Elas parecem óbvias, e é justamente por isso que funcionam."
+          ],
+          "terms": [
+            {
+              "word": "Princípio da não contradição",
+              "meaning": "a regra de que nenhuma proposição é verdadeira e falsa ao mesmo tempo."
+            }
+          ],
+          "bullets": [
+            "Identidade: uma proposição verdadeira é verdadeira; uma falsa é falsa.",
+            "Não contradição: nenhuma proposição é verdadeira e falsa ao mesmo tempo.",
+            "Terceiro excluído: toda proposição é verdadeira ou falsa; não existe uma terceira opção."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Simples e composta",
+          "body": [
+            "“Chove” é uma proposição simples. “Chove e faz frio” junta duas simples numa composta.",
+            "As palavras que fazem a junção, como “e”, “ou” e “se… então”, são os conectivos. Cada um tem a sua regra, assunto das próximas lições."
+          ],
+          "terms": [
+            {
+              "word": "Proposição composta",
+              "meaning": "duas ou mais proposições ligadas por palavras como “e”, “ou” e “se… então”."
+            },
+            {
+              "word": "Conectivo",
+              "meaning": "a palavra que liga proposições. São conectivos o “e”, o “ou”, o “se… então” e o “se e somente se”; o “não” também conta."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Letras no lugar das frases",
+          "body": [
+            "Cada proposição simples ganha uma letra minúscula, como p, q e r. Assim não é preciso escrever a frase inteira toda vez.",
+            "Assim, “chove e faz frio” vira p ∧ q, com p = chove e q = faz frio."
+          ],
+          "example": {
+            "label": "Dando nome às proposições",
+            "lines": [
+              "p: Chove.",
+              "q: Faz frio.",
+              "“Chove e faz frio” → p ∧ q"
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Cai uma lista de frases e a pergunta: quantas são proposições? Procure perguntas, ordens e exclamações. Procure também sentenças abertas e paradoxos.",
+            "Às vezes o item diz que uma frase “não é proposição porque não se sabe se é verdadeira”. Está errado: basta poder ser julgada."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a definição engana."
+          ],
+          "bullets": [
+            "Achar que só é proposição o que se sabe se é verdade.",
+            "Contar “x + 1 = 5” como proposição: é sentença aberta.",
+            "Esquecer que exclamação e ordem não afirmam nada.",
+            "Achar que frase falsa não é proposição: falsa também é valor."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Só entra o que pode ser julgado."
+          ],
+          "bullets": [
+            "Proposição: frase declarativa, verdadeira ou falsa.",
+            "Não são: pergunta, ordem e exclamação.",
+            "Nem sentença aberta, nem paradoxo.",
+            "Não precisa saber o valor; precisa poder ter um.",
+            "Identidade, não contradição e terceiro excluído.",
+            "Simples ou composta; a composta usa conectivos.",
+            "Letras p, q, r no lugar das frases."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Proposição",
+          "statement": "Qual destas frases é uma proposição?",
+          "options": [
+            "Que horas são?",
+            "Feche a janela.",
+            "Recife é a capital de Pernambuco.",
+            "Que calor!",
+            "x + 2 = 7"
+          ],
+          "correct_index": 2,
+          "explanation": "É a única que afirma algo e pode ser julgada.",
+          "pitfall": "x + 2 = 7 depende de quem é x: é sentença aberta."
+        },
+        {
+          "topic": "Não sabe",
+          "statement": "“Existe vida em outro planeta” é proposição?",
+          "options": [
+            "não, porque ninguém sabe a resposta",
+            "sim, porque pode ser julgada verdadeira ou falsa",
+            "não, porque é pergunta",
+            "só se for verdadeira",
+            "só se for falsa"
+          ],
+          "correct_index": 1,
+          "explanation": "Basta poder ser verdadeira ou falsa, mesmo que não se saiba qual.",
+          "pitfall": "Não saber o valor não tira a frase da lógica."
+        },
+        {
+          "topic": "Sentença aberta",
+          "statement": "Por que “ele é médico” não é proposição?",
+          "options": [
+            "porque é falsa",
+            "porque não se sabe quem é “ele”",
+            "porque é ordem",
+            "porque tem verbo",
+            "é proposição"
+          ],
+          "correct_index": 1,
+          "explanation": "Sem saber quem é “ele”, não dá para julgar. É uma sentença aberta.",
+          "pitfall": "Não é por ser falsa: nem dá para dizer se é."
+        },
+        {
+          "topic": "Contar",
+          "statement": "Quantas proposições há entre “2 é par”, “Estude!”, “5 < 3” e “Você vem?”",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "0"
+          ],
+          "correct_index": 1,
+          "explanation": "“2 é par” (V) e “5 < 3” (F). As outras são ordem e pergunta.",
+          "pitfall": "Frase falsa continua sendo proposição."
+        },
+        {
+          "topic": "Paradoxo",
+          "statement": "Por que “esta frase é falsa” não é proposição?",
+          "options": [
+            "porque é longa",
+            "porque qualquer valor que se dê leva a um absurdo",
+            "porque é pergunta",
+            "porque é verdadeira",
+            "porque não tem sujeito"
+          ],
+          "correct_index": 1,
+          "explanation": "Se for V, é F; se for F, é V. Não há valor possível.",
+          "pitfall": "Não é pergunta: é afirmação que se desmente."
+        },
+        {
+          "topic": "Terceiro excluído",
+          "statement": "Qual regra diz que toda proposição é verdadeira ou falsa, sem terceira opção?",
+          "options": [
+            "identidade",
+            "terceiro excluído",
+            "não contradição",
+            "equilíbrio",
+            "De Morgan"
+          ],
+          "correct_index": 1,
+          "explanation": "O nome já diz: o terceiro valor fica de fora.",
+          "pitfall": "Não contradição é não ser V e F ao mesmo tempo."
+        },
+        {
+          "topic": "Composta",
+          "statement": "“Estudo e trabalho” é uma proposição:",
+          "options": [
+            "simples",
+            "composta",
+            "aberta",
+            "interrogativa",
+            "paradoxal"
+          ],
+          "correct_index": 1,
+          "explanation": "Junta “estudo” e “trabalho” com o conectivo “e”.",
+          "pitfall": "Simples seria uma afirmação só."
+        },
+        {
+          "topic": "Tipo de frase",
+          "format": "match",
+          "statement": "Ligue cada frase ao que ela é.",
+          "pairs": [
+            {
+              "left": "Chove em Salvador.",
+              "right": "proposição"
+            },
+            {
+              "left": "x é par.",
+              "right": "sentença aberta"
+            },
+            {
+              "left": "Chove?",
+              "right": "pergunta"
+            },
+            {
+              "left": "Esta frase é falsa.",
+              "right": "paradoxo"
+            }
+          ],
+          "explanation": "Só a primeira pode ser julgada V ou F.",
+          "pitfall": "Sentença aberta depende do x."
+        }
+      ]
+    },
+    {
+      "slug": "negacao",
+      "title": "Negação: virar o valor lógico",
+      "module": "Proposições e conectivos",
+      "summary": "Negar uma proposição é trocar o valor lógico dela: o verdadeiro vira falso e o falso vira verdadeiro. A pegadinha mais comum é confundir a negação com o contrário.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O interruptor",
+          "body": [
+            "Um interruptor tem duas posições: ligado ou desligado. Apertar uma vez troca a posição; apertar duas vezes volta ao começo.",
+            "Negar uma proposição é apertar esse interruptor."
+          ],
+          "terms": [
+            {
+              "word": "Proposição",
+              "meaning": "uma frase que afirma alguma coisa e pode ser julgada verdadeira ou falsa, mas não as duas ao mesmo tempo."
+            },
+            {
+              "word": "Valor lógico",
+              "meaning": "o resultado do julgamento de uma proposição: verdadeiro (V) ou falso (F)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A regra",
+          "body": [
+            "A negação troca o valor lógico. Se p é verdadeira, ¬p é falsa. Se p é falsa, ¬p é verdadeira.",
+            "Nas provas, ela aparece escrita como ¬p ou como ~p. As duas querem dizer “não p”."
+          ],
+          "terms": [
+            {
+              "word": "Negação",
+              "meaning": "a operação que troca o valor lógico: o V vira F, e o F vira V. Escreve-se ¬p ou ~p."
+            }
+          ],
+          "table": {
+            "label": "Tabela da negação",
+            "headers": [
+              "p",
+              "¬p"
+            ],
+            "rows": [
+              [
+                "V",
+                "F"
+              ],
+              [
+                "F",
+                "V"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Como se escreve em português",
+          "body": [
+            "O jeito mais seguro é pôr “não” antes do verbo, ou começar com “não é verdade que”."
+          ],
+          "example": {
+            "label": "Negando frases",
+            "lines": [
+              "p: João é alto. → ¬p: João não é alto.",
+              "p: O céu está azul. → ¬p: Não é verdade que o céu está azul.",
+              "p: 7 é primo. → ¬p: 7 não é primo."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Negação não é o contrário",
+          "body": [
+            "A negação de “João é alto” é “João não é alto”, e não “João é baixo”. Entre alto e baixo existe quem tem altura média.",
+            "O contrário diz outra coisa. A negação só nega."
+          ],
+          "table": {
+            "label": "Negação e contrário",
+            "headers": [
+              "Frase",
+              "Negação certa",
+              "Não é negação"
+            ],
+            "rows": [
+              [
+                "João é alto.",
+                "João não é alto.",
+                "João é baixo."
+              ],
+              [
+                "A porta está aberta.",
+                "A porta não está aberta.",
+                "A porta está trancada."
+              ],
+              [
+                "Ana é feliz.",
+                "Ana não é feliz.",
+                "Ana é triste."
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Dupla negação",
+          "body": [
+            "Negar duas vezes volta ao começo: ¬(¬p) tem o mesmo valor de p. “Não é verdade que João não é alto” diz que João é alto.",
+            "Em português, o “não… nada” não é dupla negação: “não comi nada” quer dizer que não comi."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Negar com números",
+          "body": [
+            "A negação de uma comparação troca o sinal pelo seu oposto exato. A negação de “x > 5” é “x ≤ 5”, e não “x < 5”.",
+            "O 5 precisa ir para algum lado: se não é maior, pode ser igual ou menor."
+          ],
+          "table": {
+            "label": "Negando comparações",
+            "headers": [
+              "Frase",
+              "Negação"
+            ],
+            "rows": [
+              [
+                "x > 5",
+                "x ≤ 5"
+              ],
+              [
+                "x < 5",
+                "x ≥ 5"
+              ],
+              [
+                "x = 5",
+                "x ≠ 5"
+              ],
+              [
+                "x ≥ 5",
+                "x < 5"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Cai pedir a negação de uma frase simples, com uma alternativa que traz o contrário no lugar da negação.",
+            "Também cai a negação de comparações, em que a alternativa errada esquece o sinal de igual."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a negação engana."
+          ],
+          "bullets": [
+            "Trocar a negação pelo contrário: “alto” vira “não alto”, e não “baixo”.",
+            "Negar “x > 5” como “x < 5”, esquecendo o 5.",
+            "Achar que duas negações dão negação.",
+            "Ler “não comi nada” como dupla negação lógica."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Um interruptor de valor."
+          ],
+          "bullets": [
+            "¬p ou ~p: troca V por F e F por V.",
+            "Em português: “não” antes do verbo.",
+            "Negação não é contrário.",
+            "¬(¬p) volta a ser p.",
+            "Negação de > é ≤; de < é ≥.",
+            "Negação de = é ≠."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Regra",
+          "statement": "Se p é falsa, qual é o valor de ¬p?",
+          "options": [
+            "falso",
+            "verdadeiro",
+            "depende de q",
+            "nenhum",
+            "os dois"
+          ],
+          "correct_index": 1,
+          "explanation": "A negação troca o valor.",
+          "pitfall": "Negar não mantém o valor."
+        },
+        {
+          "topic": "Alto",
+          "statement": "Qual é a negação de “Pedro é alto”?",
+          "options": [
+            "Pedro é baixo.",
+            "Pedro não é alto.",
+            "Pedro é médio.",
+            "Ninguém é alto.",
+            "Pedro é alto e baixo."
+          ],
+          "correct_index": 1,
+          "explanation": "A negação só nega: “não é alto”.",
+          "pitfall": "“Baixo” é o contrário, e deixa de fora quem tem altura média."
+        },
+        {
+          "topic": "Dupla",
+          "statement": "¬(¬p) tem o mesmo valor de:",
+          "options": [
+            "¬p",
+            "p",
+            "sempre V",
+            "sempre F",
+            "q"
+          ],
+          "correct_index": 1,
+          "explanation": "Negar duas vezes volta ao começo.",
+          "pitfall": "Duas negações não dão negação."
+        },
+        {
+          "topic": "Maior",
+          "statement": "Qual é a negação de “x > 10”?",
+          "options": [
+            "x < 10",
+            "x ≤ 10",
+            "x ≥ 10",
+            "x = 10",
+            "x > −10"
+          ],
+          "correct_index": 1,
+          "explanation": "Se não é maior, é menor ou igual.",
+          "pitfall": "x < 10 esquece o próprio 10."
+        },
+        {
+          "topic": "Igual",
+          "statement": "Qual é a negação de “a = b”?",
+          "options": [
+            "a > b",
+            "a ≠ b",
+            "a < b",
+            "a ≥ b",
+            "b = a"
+          ],
+          "correct_index": 1,
+          "explanation": "Não ser igual é ser diferente.",
+          "pitfall": "a > b é só um dos jeitos de ser diferente."
+        },
+        {
+          "topic": "Porta",
+          "statement": "Qual é a negação de “a porta está aberta”?",
+          "options": [
+            "A porta está trancada.",
+            "A porta não está aberta.",
+            "A janela está aberta.",
+            "A porta está quebrada.",
+            "A porta está aberta e fechada."
+          ],
+          "correct_index": 1,
+          "explanation": "Negação é pôr o “não”.",
+          "pitfall": "Trancada é um jeito específico de não estar aberta."
+        },
+        {
+          "topic": "Símbolo",
+          "statement": "O que o símbolo ~p quer dizer?",
+          "options": [
+            "p ao quadrado",
+            "não p",
+            "p aproximadamente",
+            "p e q",
+            "p ou q"
+          ],
+          "correct_index": 1,
+          "explanation": "~p e ¬p são duas escritas da negação.",
+          "pitfall": "Nas provas de lógica, o til não quer dizer aproximado."
+        },
+        {
+          "topic": "Negações",
+          "format": "match",
+          "statement": "Ligue cada frase à sua negação.",
+          "pairs": [
+            {
+              "left": "x > 3",
+              "right": "x ≤ 3"
+            },
+            {
+              "left": "x < 3",
+              "right": "x ≥ 3"
+            },
+            {
+              "left": "x = 3",
+              "right": "x ≠ 3"
+            },
+            {
+              "left": "Ana é feliz.",
+              "right": "Ana não é feliz."
+            }
+          ],
+          "explanation": "Cada negação cobre tudo o que a frase deixa de fora.",
+          "pitfall": "“Ana é triste” não seria a negação."
+        }
+      ]
+    },
+    {
+      "slug": "conjuncao-e-disjuncao",
+      "title": "E, ou e ou exclusivo",
+      "module": "Proposições e conectivos",
+      "summary": "A conjunção (“e”) só é verdadeira quando as duas partes são. A disjunção (“ou”) só é falsa quando as duas partes são. O “ou… ou…” é o ou exclusivo: verdadeiro quando só uma delas vale.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Dois interruptores e uma lâmpada",
+          "body": [
+            "Com dois interruptores em fila, a luz só acende se os dois estiverem ligados. Com os dois lado a lado, basta um.",
+            "Em fila é o “e”; lado a lado é o “ou”."
+          ],
+          "terms": [
+            {
+              "word": "Proposição",
+              "meaning": "uma frase que afirma alguma coisa e pode ser julgada verdadeira ou falsa, mas não as duas ao mesmo tempo."
+            },
+            {
+              "word": "Valor lógico",
+              "meaning": "o resultado do julgamento de uma proposição: verdadeiro (V) ou falso (F)."
+            },
+            {
+              "word": "Conectivo",
+              "meaning": "a palavra que liga proposições. São conectivos o “e”, o “ou”, o “se… então” e o “se e somente se”; o “não” também conta."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/logica/circuito.svg",
+            "alt": "Dois circuitos com uma pilha e uma lâmpada. No de cima, os interruptores p e q estão em fila, um depois do outro: a lâmpada só acende se os dois estiverem ligados, como o “e”. No de baixo, os interruptores estão lado a lado, em caminhos separados: basta um ligado para a lâmpada acender, como o “ou”.",
+            "caption": "Em fila, é preciso os dois; lado a lado, basta um."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Conjunção: “e”",
+          "body": [
+            "p ∧ q só é verdadeira quando p e q são verdadeiras. Basta uma falsa para a conjunção toda cair.",
+            "“Estudo e trabalho” só é verdade se eu fizer as duas coisas."
+          ],
+          "terms": [
+            {
+              "word": "Conjunção",
+              "meaning": "ligar duas proposições com “e”. Escreve-se p ∧ q, e só é verdadeira quando as duas são."
+            }
+          ],
+          "table": {
+            "label": "Tabela do “e”",
+            "headers": [
+              "p",
+              "q",
+              "p ∧ q"
+            ],
+            "rows": [
+              [
+                "V",
+                "V",
+                "V"
+              ],
+              [
+                "V",
+                "F",
+                "F"
+              ],
+              [
+                "F",
+                "V",
+                "F"
+              ],
+              [
+                "F",
+                "F",
+                "F"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Outras palavras para “e”",
+          "body": [
+            "Em português, o “e” aparece disfarçado. “Mas”, “porém”, “embora” e “nem… nem” também juntam duas afirmações que precisam valer ao mesmo tempo.",
+            "“Joga bem, mas perdeu” afirma duas coisas: joga bem e perdeu."
+          ],
+          "example": {
+            "label": "A mesma conjunção",
+            "lines": [
+              "Chove e faz frio.",
+              "Chove, mas não faz frio. → chove ∧ ¬(faz frio)",
+              "Nem chove nem faz frio. → ¬(chove) ∧ ¬(faz frio)"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Disjunção: “ou”",
+          "body": [
+            "p ∨ q só é falsa quando p e q são falsas. Basta uma verdadeira para a disjunção valer.",
+            "Na lógica, o “ou” é inclusivo: as duas podem ser verdadeiras juntas."
+          ],
+          "terms": [
+            {
+              "word": "Disjunção",
+              "meaning": "ligar duas proposições com “ou”. Escreve-se p ∨ q, e só é falsa quando as duas são falsas."
+            }
+          ],
+          "table": {
+            "label": "Tabela do “ou”",
+            "headers": [
+              "p",
+              "q",
+              "p ∨ q"
+            ],
+            "rows": [
+              [
+                "V",
+                "V",
+                "V"
+              ],
+              [
+                "V",
+                "F",
+                "V"
+              ],
+              [
+                "F",
+                "V",
+                "V"
+              ],
+              [
+                "F",
+                "F",
+                "F"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Ou exclusivo: “ou… ou…”",
+          "body": [
+            "“Ou vou à praia, ou vou ao cinema” sugere que só uma coisa acontece. Esse é o ou exclusivo, p ⊻ q.",
+            "Ele é verdadeiro quando os valores são diferentes, e falso quando são iguais."
+          ],
+          "terms": [
+            {
+              "word": "Ou exclusivo",
+              "meaning": "o “ou… ou…”: verdadeiro quando só uma das duas é verdadeira. Escreve-se p ⊻ q."
+            }
+          ],
+          "table": {
+            "label": "Tabela do ou exclusivo",
+            "headers": [
+              "p",
+              "q",
+              "p ⊻ q"
+            ],
+            "rows": [
+              [
+                "V",
+                "V",
+                "F"
+              ],
+              [
+                "V",
+                "F",
+                "V"
+              ],
+              [
+                "F",
+                "V",
+                "V"
+              ],
+              [
+                "F",
+                "F",
+                "F"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Como diferenciar na prova",
+          "body": [
+            "“Ou A ou B”, com dois “ou”, é o exclusivo. Um “ou” só é o inclusivo.",
+            "A diferença está numa linha só da tabela: quando as duas são verdadeiras."
+          ],
+          "example": {
+            "label": "As três regras em uma frase cada",
+            "lines": [
+              "“e”: verdadeiro só quando as duas são V",
+              "“ou”: falso só quando as duas são F",
+              "“ou… ou…”: verdadeiro só quando os valores são diferentes"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Uma conta com valores",
+          "body": [
+            "Com p verdadeira e q falsa, dá para calcular cada ligação direto pela regra."
+          ],
+          "example": {
+            "label": "p = V e q = F",
+            "lines": [
+              "p ∧ q: uma é F → F",
+              "p ∨ q: uma é V → V",
+              "p ⊻ q: valores diferentes → V",
+              "¬p ∨ q: F ou F → F"
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "Negação",
+              "meaning": "a operação que troca o valor lógico: o V vira F, e o F vira V. Escreve-se ¬p ou ~p."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Cai dar os valores de p e q e pedir o valor de uma composta. Também cai reconhecer o “mas” como “e”.",
+            "A pegadinha preferida é o “ou… ou…” com as duas partes verdadeiras."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde os conectivos enganam."
+          ],
+          "bullets": [
+            "Achar que “mas” é outro conectivo: na lógica, é “e”.",
+            "Achar que o “ou” da lógica exclui as duas verdadeiras.",
+            "Esquecer que no ou exclusivo V e V dá F.",
+            "Achar que uma conjunção com uma parte falsa pode ser verdadeira."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Em fila ou lado a lado."
+          ],
+          "bullets": [
+            "p ∧ q: verdadeira só com as duas V.",
+            "“mas”, “porém”, “nem… nem” também são “e”.",
+            "p ∨ q: falsa só com as duas F.",
+            "O “ou” da lógica é inclusivo.",
+            "p ⊻ q: verdadeira só com valores diferentes.",
+            "“ou… ou…” indica o ou exclusivo."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "E",
+          "statement": "p é verdadeira e q é falsa. Qual é o valor de p ∧ q?",
+          "options": [
+            "V",
+            "F",
+            "depende",
+            "V e F",
+            "nenhum"
+          ],
+          "correct_index": 1,
+          "explanation": "Basta uma falsa para o “e” ser falso.",
+          "pitfall": "O “e” precisa das duas verdadeiras."
+        },
+        {
+          "topic": "Ou",
+          "statement": "p é falsa e q é verdadeira. Qual é o valor de p ∨ q?",
+          "options": [
+            "V",
+            "F",
+            "depende",
+            "nenhum",
+            "V e F"
+          ],
+          "correct_index": 0,
+          "explanation": "Basta uma verdadeira para o “ou” valer.",
+          "pitfall": "O “ou” só é falso com as duas falsas."
+        },
+        {
+          "topic": "Exclusivo",
+          "statement": "p e q são verdadeiras. Qual é o valor de p ⊻ q?",
+          "options": [
+            "V",
+            "F",
+            "depende",
+            "nenhum",
+            "V e F"
+          ],
+          "correct_index": 1,
+          "explanation": "No ou exclusivo, valores iguais dão falso.",
+          "pitfall": "O “ou” inclusivo daria V aqui."
+        },
+        {
+          "topic": "Mas",
+          "statement": "Na lógica, “Ele é rico, mas é infeliz” é uma:",
+          "options": [
+            "disjunção",
+            "conjunção",
+            "condicional",
+            "negação",
+            "ou exclusivo"
+          ],
+          "correct_index": 1,
+          "explanation": "O “mas” junta duas afirmações que valem juntas: é “e”.",
+          "pitfall": "O “mas” não vira “ou”."
+        },
+        {
+          "topic": "Ou falso",
+          "statement": "Em qual caso p ∨ q é falsa?",
+          "options": [
+            "p V e q V",
+            "p V e q F",
+            "p F e q V",
+            "p F e q F",
+            "nunca"
+          ],
+          "correct_index": 3,
+          "explanation": "Só quando as duas são falsas.",
+          "pitfall": "Com uma verdadeira, o “ou” já vale."
+        },
+        {
+          "topic": "Nem",
+          "statement": "Como se escreve “nem chove nem venta”, com p = chove e q = venta?",
+          "options": [
+            "p ∨ q",
+            "¬p ∧ ¬q",
+            "¬p ∨ ¬q",
+            "p ∧ q",
+            "p ⊻ q"
+          ],
+          "correct_index": 1,
+          "explanation": "“Nem… nem…” nega as duas e exige as duas negações.",
+          "pitfall": "¬p ∨ ¬q diria que pelo menos uma não acontece."
+        },
+        {
+          "topic": "Conta",
+          "statement": "p = V e q = F. Qual é o valor de ¬p ∨ q?",
+          "options": [
+            "V",
+            "F",
+            "depende",
+            "nenhum",
+            "V e F"
+          ],
+          "correct_index": 1,
+          "explanation": "¬p é F e q é F: “ou” com as duas falsas dá F.",
+          "pitfall": "Esquecer de negar o p daria V."
+        },
+        {
+          "topic": "Regras",
+          "format": "match",
+          "statement": "Ligue cada ligação à sua regra.",
+          "pairs": [
+            {
+              "left": "p ∧ q",
+              "right": "V só se as duas forem V"
+            },
+            {
+              "left": "p ∨ q",
+              "right": "F só se as duas forem F"
+            },
+            {
+              "left": "p ⊻ q",
+              "right": "V só se os valores forem diferentes"
+            },
+            {
+              "left": "¬p",
+              "right": "troca o valor de p"
+            }
+          ],
+          "explanation": "Quatro regras que resolvem quase toda conta.",
+          "pitfall": "O ou exclusivo olha se os valores são diferentes."
+        }
+      ]
+    },
+    {
+      "slug": "condicional",
+      "title": "Condicional: se… então",
+      "module": "Proposições e conectivos",
+      "summary": "“Se p, então q” só é falsa num caso: quando p acontece e q não. É o conectivo mais cobrado em prova, e o que mais engana, porque quando p é falso a condicional é verdadeira.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A promessa",
+          "body": [
+            "Um pai promete: “se fizer sol, vou à praia com você”. Quando ele quebrou a promessa?",
+            "Só num caso: fez sol e ele não foi. Se não fez sol, ele não prometeu nada sobre o que faria."
+          ],
+          "terms": [
+            {
+              "word": "Proposição",
+              "meaning": "uma frase que afirma alguma coisa e pode ser julgada verdadeira ou falsa, mas não as duas ao mesmo tempo."
+            },
+            {
+              "word": "Valor lógico",
+              "meaning": "o resultado do julgamento de uma proposição: verdadeiro (V) ou falso (F)."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/logica/condicional.svg",
+            "alt": "Uma grade de quatro casas para a promessa “se fizer sol, vou à praia”. Fez sol e fui: promessa cumprida, verdadeira. Fez sol e não fui: promessa quebrada, a única casa falsa, destacada em vermelho claro. Não fez sol e fui: verdadeira. Não fez sol e não fui: verdadeira. Quando não faz sol, a promessa não diz nada, e não é quebrada.",
+            "caption": "Só uma casa quebra a promessa: fez sol e não foi."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A regra",
+          "body": [
+            "p → q é falsa só quando p é verdadeira e q é falsa. Nos outros três casos, é verdadeira.",
+            "O jeito de lembrar é a dica “Vera Fischer”: V com F dá F."
+          ],
+          "terms": [
+            {
+              "word": "Condicional",
+              "meaning": "a ligação “se p, então q”. Escreve-se p → q, e só é falsa quando p é verdadeira e q é falsa."
+            }
+          ],
+          "table": {
+            "label": "Tabela da condicional",
+            "headers": [
+              "p",
+              "q",
+              "p → q"
+            ],
+            "rows": [
+              [
+                "V",
+                "V",
+                "V"
+              ],
+              [
+                "V",
+                "F",
+                "F"
+              ],
+              [
+                "F",
+                "V",
+                "V"
+              ],
+              [
+                "F",
+                "F",
+                "V"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Antecedente e consequente",
+          "body": [
+            "A parte do “se” é o antecedente. A parte do “então” é o consequente.",
+            "A ordem importa: p → q e q → p são coisas diferentes."
+          ],
+          "terms": [
+            {
+              "word": "Antecedente",
+              "meaning": "a parte que vem depois do “se”: o p de p → q."
+            },
+            {
+              "word": "Consequente",
+              "meaning": "a parte que vem depois do “então”: o q de p → q."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quando o antecedente é falso",
+          "body": [
+            "Com p falsa, a condicional é verdadeira, seja q o que for. A promessa sobre o sol não diz nada para dias de chuva.",
+            "É a parte que mais estranha quem começa, e a que mais cai."
+          ],
+          "example": {
+            "label": "Condicionais verdadeiras por antecedente falso",
+            "lines": [
+              "Se 2 + 2 = 5, então a Lua é de queijo. (V)",
+              "Se 2 + 2 = 5, então o Sol é uma estrela. (V)",
+              "Só com antecedente V e consequente F a condicional cai"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Suficiente e necessária",
+          "body": [
+            "Em p → q, p é condição suficiente para q: basta p acontecer para q acontecer. E q é condição necessária para p: sem q, não há p.",
+            "“Se é baiano, é brasileiro”: ser baiano basta para ser brasileiro, e ser brasileiro é necessário para ser baiano."
+          ],
+          "terms": [
+            {
+              "word": "Condição suficiente",
+              "meaning": "o que basta para garantir outra coisa. Em p → q, p é suficiente para q."
+            },
+            {
+              "word": "Condição necessária",
+              "meaning": "o que não pode faltar. Em p → q, q é necessária para p."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Outras formas de dizer “se… então”",
+          "body": [
+            "A condicional aparece com muitas roupas. Em todas abaixo, p é o antecedente e q o consequente."
+          ],
+          "table": {
+            "label": "A mesma p → q",
+            "headers": [
+              "Forma",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "Se p, então q",
+                "Se chove, a rua molha."
+              ],
+              [
+                "Quando p, q",
+                "Quando chove, a rua molha."
+              ],
+              [
+                "q, se p",
+                "A rua molha, se chove."
+              ],
+              [
+                "p somente se q",
+                "Chove somente se a rua molha."
+              ],
+              [
+                "Todo p é q",
+                "Todo baiano é brasileiro."
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Uma conta com valores",
+          "body": [
+            "Calcular a condicional é procurar a única linha falsa: antecedente V com consequente F."
+          ],
+          "example": {
+            "label": "Valores da condicional",
+            "lines": [
+              "p = V, q = V → V",
+              "p = V, q = F → F",
+              "p = F, q = V → V",
+              "p = F, q = F → V"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Cai dar os valores e pedir o da condicional, e trocar a frase por “somente se” ou “é suficiente para”.",
+            "Um clássico: dizer que a condicional é falsa quando o antecedente é falso. Está errado."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a condicional engana."
+          ],
+          "bullets": [
+            "Achar que p falsa torna a condicional falsa.",
+            "Inverter suficiente e necessária.",
+            "Ler “p somente se q” como q → p: é p → q.",
+            "Achar que p → q e q → p dizem a mesma coisa."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Só V com F quebra a promessa."
+          ],
+          "bullets": [
+            "p → q: falsa só com p V e q F.",
+            "p é o antecedente; q é o consequente.",
+            "Antecedente falso: condicional verdadeira.",
+            "p é suficiente para q; q é necessária para p.",
+            "“quando”, “q se p”, “p somente se q” e “todo p é q”.",
+            "p → q não é o mesmo que q → p."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Regra",
+          "statement": "Em qual caso p → q é falsa?",
+          "options": [
+            "p V e q V",
+            "p V e q F",
+            "p F e q V",
+            "p F e q F",
+            "nunca"
+          ],
+          "correct_index": 1,
+          "explanation": "Só quando o antecedente é V e o consequente é F.",
+          "pitfall": "Com p falsa, a condicional é sempre verdadeira."
+        },
+        {
+          "topic": "Antecedente falso",
+          "statement": "p é falsa e q é falsa. Qual é o valor de p → q?",
+          "options": [
+            "V",
+            "F",
+            "depende",
+            "nenhum",
+            "V e F"
+          ],
+          "correct_index": 0,
+          "explanation": "Antecedente falso deixa a condicional verdadeira.",
+          "pitfall": "Não é F só porque as duas são falsas."
+        },
+        {
+          "topic": "Suficiente",
+          "statement": "Em “se é baiano, então é brasileiro”, ser baiano é condição:",
+          "options": [
+            "necessária para ser brasileiro",
+            "suficiente para ser brasileiro",
+            "contrária a ser brasileiro",
+            "igual a ser brasileiro",
+            "nenhuma"
+          ],
+          "correct_index": 1,
+          "explanation": "Basta ser baiano para ser brasileiro.",
+          "pitfall": "Necessária é ser brasileiro, para ser baiano."
+        },
+        {
+          "topic": "Necessária",
+          "statement": "Em p → q, qual é a condição necessária?",
+          "options": [
+            "p",
+            "q",
+            "¬p",
+            "p ∧ q",
+            "nenhuma"
+          ],
+          "correct_index": 1,
+          "explanation": "Sem q, não há p.",
+          "pitfall": "p é a suficiente."
+        },
+        {
+          "topic": "Somente se",
+          "statement": "“Viajo somente se tiver dinheiro” é o mesmo que:",
+          "options": [
+            "Se tenho dinheiro, então viajo.",
+            "Se viajo, então tenho dinheiro.",
+            "Viajo e tenho dinheiro.",
+            "Viajo ou tenho dinheiro.",
+            "Não viajo."
+          ],
+          "correct_index": 1,
+          "explanation": "“p somente se q” é p → q: viajar exige dinheiro.",
+          "pitfall": "Ter dinheiro não garante a viagem."
+        },
+        {
+          "topic": "Quando",
+          "statement": "“Quando neva, faz frio” é uma:",
+          "options": [
+            "conjunção",
+            "condicional",
+            "disjunção",
+            "negação",
+            "bicondicional"
+          ],
+          "correct_index": 1,
+          "explanation": "“Quando p, q” é outra roupa do “se p, então q”.",
+          "pitfall": "Não é “e”: não afirma que neva."
+        },
+        {
+          "topic": "Absurdo",
+          "statement": "“Se 2 + 2 = 5, então hoje é segunda” é:",
+          "options": [
+            "falsa",
+            "verdadeira, porque o antecedente é falso",
+            "não é proposição",
+            "falsa só às terças",
+            "impossível de julgar"
+          ],
+          "correct_index": 1,
+          "explanation": "Com antecedente falso, a condicional vale.",
+          "pitfall": "O dia da semana não muda nada."
+        },
+        {
+          "topic": "Partes",
+          "format": "match",
+          "statement": "Em “se chove, a rua molha”, ligue cada ideia à sua parte.",
+          "pairs": [
+            {
+              "left": "chove",
+              "right": "antecedente"
+            },
+            {
+              "left": "a rua molha",
+              "right": "consequente"
+            },
+            {
+              "left": "chover basta para molhar",
+              "right": "condição suficiente"
+            },
+            {
+              "left": "molhar é indispensável para ter chovido",
+              "right": "condição necessária"
+            }
+          ],
+          "explanation": "O antecedente é suficiente; o consequente é necessário.",
+          "pitfall": "A ordem dos papéis é a pegadinha preferida."
+        }
+      ]
+    },
+    {
+      "slug": "bicondicional",
+      "title": "Bicondicional: se e somente se",
+      "module": "Proposições e conectivos",
+      "summary": "“p se e somente se q” é a condicional valendo nos dois sentidos. Ela é verdadeira quando p e q têm o mesmo valor lógico, e falsa quando têm valores diferentes.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O acordo de ida e volta",
+          "body": [
+            "“Você ganha a sobremesa se e somente se comer a salada.” Comeu a salada, ganha. Não comeu, não ganha.",
+            "É uma promessa que vale nos dois sentidos."
+          ],
+          "terms": [
+            {
+              "word": "Proposição",
+              "meaning": "uma frase que afirma alguma coisa e pode ser julgada verdadeira ou falsa, mas não as duas ao mesmo tempo."
+            },
+            {
+              "word": "Valor lógico",
+              "meaning": "o resultado do julgamento de uma proposição: verdadeiro (V) ou falso (F)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A regra",
+          "body": [
+            "p ↔ q é verdadeira quando p e q têm o mesmo valor: as duas V ou as duas F. É falsa quando os valores são diferentes.",
+            "É o oposto exato do ou exclusivo."
+          ],
+          "terms": [
+            {
+              "word": "Bicondicional",
+              "meaning": "a ligação “p se e somente se q”. Escreve-se p ↔ q, e é verdadeira quando as duas partes têm o mesmo valor lógico."
+            },
+            {
+              "word": "Ou exclusivo",
+              "meaning": "o “ou… ou…”: verdadeiro quando só uma das duas é verdadeira. Escreve-se p ⊻ q."
+            }
+          ],
+          "table": {
+            "label": "Tabela da bicondicional",
+            "headers": [
+              "p",
+              "q",
+              "p ↔ q"
+            ],
+            "rows": [
+              [
+                "V",
+                "V",
+                "V"
+              ],
+              [
+                "V",
+                "F",
+                "F"
+              ],
+              [
+                "F",
+                "V",
+                "F"
+              ],
+              [
+                "F",
+                "F",
+                "V"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Duas condicionais juntas",
+          "body": [
+            "p ↔ q é o mesmo que (p → q) ∧ (q → p). Ir de p para q, e voltar de q para p.",
+            "Por isso cada lado é condição suficiente e necessária para o outro."
+          ],
+          "terms": [
+            {
+              "word": "Condicional",
+              "meaning": "a ligação “se p, então q”. Escreve-se p → q, e só é falsa quando p é verdadeira e q é falsa."
+            },
+            {
+              "word": "Conjunção",
+              "meaning": "ligar duas proposições com “e”. Escreve-se p ∧ q, e só é verdadeira quando as duas são."
+            },
+            {
+              "word": "Condição suficiente",
+              "meaning": "o que basta para garantir outra coisa. Em p → q, p é suficiente para q."
+            },
+            {
+              "word": "Condição necessária",
+              "meaning": "o que não pode faltar. Em p → q, q é necessária para p."
+            },
+            {
+              "word": "Equivalência lógica",
+              "meaning": "duas proposições com a mesma tabela-verdade, linha por linha. Escreve-se com o sinal ≡."
+            },
+            {
+              "word": "Tabela-verdade",
+              "meaning": "a tabela que mostra o valor lógico de uma proposição composta em todas as combinações possíveis de V e F."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Como aparece em português",
+          "body": [
+            "A forma mais comum é “se e somente se”. Aparece também como “p é condição necessária e suficiente para q”."
+          ],
+          "example": {
+            "label": "A mesma p ↔ q",
+            "lines": [
+              "Passo se e somente se tirar 7.",
+              "Tirar 7 é necessário e suficiente para passar.",
+              "p ↔ q, com p = passo e q = tiro 7"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Comparando os quatro conectivos",
+          "body": [
+            "A tabela com os quatro conectivos lado a lado é a que mais ajuda na prova."
+          ],
+          "terms": [
+            {
+              "word": "Disjunção",
+              "meaning": "ligar duas proposições com “ou”. Escreve-se p ∨ q, e só é falsa quando as duas são falsas."
+            },
+            {
+              "word": "Conectivo",
+              "meaning": "a palavra que liga proposições. São conectivos o “e”, o “ou”, o “se… então” e o “se e somente se”; o “não” também conta."
+            }
+          ],
+          "table": {
+            "label": "Os quatro de uma vez",
+            "headers": [
+              "p",
+              "q",
+              "p ∧ q",
+              "p ∨ q",
+              "p → q",
+              "p ↔ q"
+            ],
+            "rows": [
+              [
+                "V",
+                "V",
+                "V",
+                "V",
+                "V",
+                "V"
+              ],
+              [
+                "V",
+                "F",
+                "F",
+                "V",
+                "F",
+                "F"
+              ],
+              [
+                "F",
+                "V",
+                "F",
+                "V",
+                "V",
+                "F"
+              ],
+              [
+                "F",
+                "F",
+                "F",
+                "F",
+                "V",
+                "V"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Bicondicional e ou exclusivo",
+          "body": [
+            "Na mesma linha, a bicondicional e o ou exclusivo têm sempre valores opostos. Um olha se os valores são iguais; o outro, se são diferentes.",
+            "Por isso a negação de p ↔ q é p ⊻ q."
+          ],
+          "terms": [
+            {
+              "word": "Negação",
+              "meaning": "a operação que troca o valor lógico: o V vira F, e o F vira V. Escreve-se ¬p ou ~p."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Uma conta com valores",
+          "body": [
+            "Basta comparar os valores das duas partes."
+          ],
+          "example": {
+            "label": "Valores da bicondicional",
+            "lines": [
+              "p = V, q = V → iguais → V",
+              "p = V, q = F → diferentes → F",
+              "p = F, q = F → iguais → V"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Cai a tabela da bicondicional e a sua ligação com duas condicionais.",
+            "Também cai trocar “se e somente se” por “condição necessária e suficiente”."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a bicondicional engana."
+          ],
+          "bullets": [
+            "Achar que F ↔ F é falsa: valores iguais dão V.",
+            "Confundir “se e somente se” com “somente se”.",
+            "Achar que a bicondicional vale só num sentido.",
+            "Trocar a bicondicional pelo ou exclusivo."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Vale nos dois sentidos."
+          ],
+          "bullets": [
+            "p ↔ q: V quando os valores são iguais.",
+            "F quando os valores são diferentes.",
+            "p ↔ q ≡ (p → q) ∧ (q → p).",
+            "“necessária e suficiente” é bicondicional.",
+            "É o oposto do ou exclusivo.",
+            "¬(p ↔ q) ≡ p ⊻ q."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Regra",
+          "statement": "p é falsa e q é falsa. Qual é o valor de p ↔ q?",
+          "options": [
+            "V",
+            "F",
+            "depende",
+            "nenhum",
+            "V e F"
+          ],
+          "correct_index": 0,
+          "explanation": "Valores iguais dão V.",
+          "pitfall": "Duas falsas não tornam a bicondicional falsa."
+        },
+        {
+          "topic": "Diferentes",
+          "statement": "p é verdadeira e q é falsa. Qual é o valor de p ↔ q?",
+          "options": [
+            "V",
+            "F",
+            "depende",
+            "nenhum",
+            "V e F"
+          ],
+          "correct_index": 1,
+          "explanation": "Valores diferentes dão F.",
+          "pitfall": "A condicional p → q também daria F aqui, mas por outro motivo."
+        },
+        {
+          "topic": "Duas",
+          "statement": "p ↔ q é o mesmo que:",
+          "options": [
+            "(p → q) ∨ (q → p)",
+            "(p → q) ∧ (q → p)",
+            "p ∧ q",
+            "p ⊻ q",
+            "¬p → q"
+          ],
+          "correct_index": 1,
+          "explanation": "Ida e volta ao mesmo tempo: as duas condicionais com “e”.",
+          "pitfall": "Com “ou”, bastaria um dos sentidos."
+        },
+        {
+          "topic": "Necessária e suficiente",
+          "statement": "“Ser par é necessário e suficiente para ser divisível por 2” é uma:",
+          "options": [
+            "conjunção",
+            "bicondicional",
+            "disjunção",
+            "negação",
+            "condicional simples"
+          ],
+          "correct_index": 1,
+          "explanation": "Necessária e suficiente ao mesmo tempo é o “se e somente se”.",
+          "pitfall": "Só “suficiente” seria condicional."
+        },
+        {
+          "topic": "Oposto",
+          "statement": "Em toda linha da tabela, p ↔ q tem valor oposto ao de:",
+          "options": [
+            "p ∧ q",
+            "p ⊻ q",
+            "p ∨ q",
+            "p → q",
+            "¬p"
+          ],
+          "correct_index": 1,
+          "explanation": "Um olha valores iguais; o outro, diferentes.",
+          "pitfall": "p → q coincide com p ↔ q em três linhas."
+        },
+        {
+          "topic": "Linhas",
+          "statement": "Em quantas das quatro linhas da tabela p ↔ q é verdadeira?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "0"
+          ],
+          "correct_index": 1,
+          "explanation": "Nas linhas V-V e F-F.",
+          "pitfall": "3 é a condicional, e não a bicondicional."
+        },
+        {
+          "topic": "Somente se",
+          "statement": "Qual é a diferença entre “p somente se q” e “p se e somente se q”?",
+          "options": [
+            "nenhuma",
+            "a primeira é p → q; a segunda é p ↔ q",
+            "a primeira é “e”; a segunda é “ou”",
+            "a primeira é negação",
+            "a segunda é p → q"
+          ],
+          "correct_index": 1,
+          "explanation": "O “se e” acrescenta o sentido de volta.",
+          "pitfall": "Uma palavra a mais muda o conectivo."
+        },
+        {
+          "topic": "Conectivos",
+          "format": "match",
+          "statement": "Ligue cada conectivo ao único caso em que ele muda de valor.",
+          "pairs": [
+            {
+              "left": "p ∧ q",
+              "right": "V só em V-V"
+            },
+            {
+              "left": "p ∨ q",
+              "right": "F só em F-F"
+            },
+            {
+              "left": "p → q",
+              "right": "F só em V-F"
+            },
+            {
+              "left": "p ↔ q",
+              "right": "V quando os valores são iguais"
+            }
+          ],
+          "explanation": "Cada conectivo tem a sua linha especial.",
+          "pitfall": "A condicional é a do V com F."
+        }
+      ]
+    },
+    {
+      "slug": "tabela-verdade",
+      "title": "Montar uma tabela-verdade",
+      "module": "Tabela-verdade",
+      "summary": "A tabela-verdade testa uma proposição composta em todas as combinações de V e F. Com n letras são 2ⁿ linhas, preenchidas numa ordem fixa. As contas seguem uma ordem de precedência, como na matemática.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Testar todas as combinações",
+          "body": [
+            "Um cadeado com duas rodinhas, cada uma com só duas posições, tem quatro combinações. Testando as quatro, você descobre qual abre.",
+            "A tabela-verdade faz isso com uma proposição: testa todas as combinações de verdadeiro e falso."
+          ],
+          "terms": [
+            {
+              "word": "Proposição",
+              "meaning": "uma frase que afirma alguma coisa e pode ser julgada verdadeira ou falsa, mas não as duas ao mesmo tempo."
+            },
+            {
+              "word": "Valor lógico",
+              "meaning": "o resultado do julgamento de uma proposição: verdadeiro (V) ou falso (F)."
+            },
+            {
+              "word": "Proposição composta",
+              "meaning": "duas ou mais proposições ligadas por palavras como “e”, “ou” e “se… então”."
+            },
+            {
+              "word": "Tabela-verdade",
+              "meaning": "a tabela que mostra o valor lógico de uma proposição composta em todas as combinações possíveis de V e F."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quantas linhas",
+          "body": [
+            "Cada letra pode ser V ou F. Com duas letras, são 2 × 2 = 4 combinações; com três, 8. Com n letras, são 2ⁿ linhas."
+          ],
+          "table": {
+            "label": "Linhas da tabela",
+            "headers": [
+              "Letras",
+              "Conta",
+              "Linhas"
+            ],
+            "rows": [
+              [
+                "1",
+                "2¹",
+                "2"
+              ],
+              [
+                "2",
+                "2²",
+                "4"
+              ],
+              [
+                "3",
+                "2³",
+                "8"
+              ],
+              [
+                "4",
+                "2⁴",
+                "16"
+              ],
+              [
+                "5",
+                "2⁵",
+                "32"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Preencher as letras",
+          "body": [
+            "Para não esquecer nenhuma combinação, siga um padrão. Na primeira coluna, metade V e metade F. Na seguinte, os blocos caem pela metade. A última alterna V e F.",
+            "Com três letras: p tem 4 V e 4 F; q, blocos de 2; r, um V e um F."
+          ],
+          "example": {
+            "label": "As colunas de três letras",
+            "lines": [
+              "p: V V V V F F F F",
+              "q: V V F F V V F F",
+              "r: V F V F V F V F"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A ordem das contas",
+          "body": [
+            "Como na matemática, há uma ordem. Primeiro vêm os parênteses e depois a negação. Em seguida vêm o “e” e o “ou”. Por último, a condicional e a bicondicional.",
+            "Por isso ¬p ∨ q é (¬p) ∨ q, e não ¬(p ∨ q)."
+          ],
+          "terms": [
+            {
+              "word": "Negação",
+              "meaning": "a operação que troca o valor lógico: o V vira F, e o F vira V. Escreve-se ¬p ou ~p."
+            },
+            {
+              "word": "Conjunção",
+              "meaning": "ligar duas proposições com “e”. Escreve-se p ∧ q, e só é verdadeira quando as duas são."
+            },
+            {
+              "word": "Disjunção",
+              "meaning": "ligar duas proposições com “ou”. Escreve-se p ∨ q, e só é falsa quando as duas são falsas."
+            },
+            {
+              "word": "Condicional",
+              "meaning": "a ligação “se p, então q”. Escreve-se p → q, e só é falsa quando p é verdadeira e q é falsa."
+            },
+            {
+              "word": "Bicondicional",
+              "meaning": "a ligação “p se e somente se q”. Escreve-se p ↔ q, e é verdadeira quando as duas partes têm o mesmo valor lógico."
+            }
+          ],
+          "example": {
+            "label": "Ordem de precedência",
+            "lines": [
+              "1º parênteses",
+              "2º negação ¬",
+              "3º conjunção ∧",
+              "4º disjunção ∨",
+              "5º condicional →",
+              "6º bicondicional ↔"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Uma tabela de duas letras",
+          "body": [
+            "Para p ∧ ¬q, faz-se uma coluna para cada pedaço. Primeiro ¬q, depois o “e”."
+          ],
+          "table": {
+            "label": "p ∧ ¬q",
+            "headers": [
+              "p",
+              "q",
+              "¬q",
+              "p ∧ ¬q"
+            ],
+            "rows": [
+              [
+                "V",
+                "V",
+                "F",
+                "F"
+              ],
+              [
+                "V",
+                "F",
+                "V",
+                "V"
+              ],
+              [
+                "F",
+                "V",
+                "F",
+                "F"
+              ],
+              [
+                "F",
+                "F",
+                "V",
+                "F"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Uma tabela de três letras",
+          "body": [
+            "Para (p ∨ q) → r, primeiro o parêntese, depois a condicional. Ela só é falsa quando p ∨ q é V e r é F."
+          ],
+          "table": {
+            "label": "(p ∨ q) → r",
+            "headers": [
+              "p",
+              "q",
+              "r",
+              "p ∨ q",
+              "(p ∨ q) → r"
+            ],
+            "rows": [
+              [
+                "V",
+                "V",
+                "V",
+                "V",
+                "V"
+              ],
+              [
+                "V",
+                "V",
+                "F",
+                "V",
+                "F"
+              ],
+              [
+                "V",
+                "F",
+                "V",
+                "V",
+                "V"
+              ],
+              [
+                "V",
+                "F",
+                "F",
+                "V",
+                "F"
+              ],
+              [
+                "F",
+                "V",
+                "V",
+                "V",
+                "V"
+              ],
+              [
+                "F",
+                "V",
+                "F",
+                "V",
+                "F"
+              ],
+              [
+                "F",
+                "F",
+                "V",
+                "F",
+                "V"
+              ],
+              [
+                "F",
+                "F",
+                "F",
+                "F",
+                "V"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Em Python",
+          "body": [
+            "O computador monta a tabela sozinho. Em Python, True é V e False é F."
+          ],
+          "code": {
+            "label": "A tabela de p → q",
+            "text": "from itertools import product\ndef se_entao(p, q):\n    return (not p) or q\nfor p, q in product([True, False], repeat=2):\n    print(p, q, se_entao(p, q))",
+            "notes": [
+              "Traz a ferramenta que gera todas as combinações.",
+              "Define a condicional…",
+              "…que é “não p, ou q”, o mesmo que p → q.",
+              "Para cada combinação de p e q entre True e False…",
+              "…mostra p, q e o resultado: só a linha True False dá False."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Cai perguntar quantas linhas tem a tabela de uma proposição com n letras. Cai também o valor numa linha dada.",
+            "Às vezes perguntam em quantas linhas a proposição é verdadeira, e a conta é contar os V da última coluna."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a tabela engana."
+          ],
+          "bullets": [
+            "Contar a mesma letra duas vezes: p aparecendo duas vezes ainda é uma letra.",
+            "Esquecer a precedência e negar o que não devia.",
+            "Achar que com 3 letras são 6 linhas: são 2³ = 8.",
+            "Pular combinações por não seguir o padrão das colunas."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Todas as combinações, em ordem."
+          ],
+          "bullets": [
+            "n letras: 2ⁿ linhas.",
+            "Primeira coluna metade V e metade F; a última alterna.",
+            "Precedência: parênteses e ¬; depois ∧ e ∨; por fim → e ↔.",
+            "Uma coluna para cada pedaço da conta.",
+            "A última coluna é o resultado.",
+            "O Python monta a tabela com product."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Linhas",
+          "statement": "Quantas linhas tem a tabela-verdade de (p ∧ q) → r?",
+          "options": [
+            "3",
+            "6",
+            "8",
+            "9",
+            "16"
+          ],
+          "correct_index": 2,
+          "explanation": "Três letras: 2³ = 8.",
+          "pitfall": "Não é 3 × 2: cada letra dobra as linhas."
+        },
+        {
+          "topic": "Cinco",
+          "statement": "E uma proposição com 5 letras diferentes?",
+          "options": [
+            "10",
+            "25",
+            "32",
+            "64",
+            "5"
+          ],
+          "correct_index": 2,
+          "explanation": "2⁵ = 32.",
+          "pitfall": "25 seria 5², com a base e o expoente trocados."
+        },
+        {
+          "topic": "Repetida",
+          "statement": "Quantas linhas tem a tabela de (p ∧ q) ∨ (¬p ∧ q)?",
+          "options": [
+            "4",
+            "8",
+            "16",
+            "2",
+            "6"
+          ],
+          "correct_index": 0,
+          "explanation": "Só há duas letras diferentes, p e q: 2² = 4.",
+          "pitfall": "Letra repetida não conta de novo."
+        },
+        {
+          "topic": "Precedência",
+          "statement": "Como se lê ¬p ∧ q?",
+          "options": [
+            "¬(p ∧ q)",
+            "(¬p) ∧ q",
+            "¬p ∧ ¬q",
+            "p ∧ ¬q",
+            "¬(¬p ∧ q)"
+          ],
+          "correct_index": 1,
+          "explanation": "A negação vem antes do “e”: nega só o p.",
+          "pitfall": "Para negar tudo, precisaria de parênteses."
+        },
+        {
+          "topic": "Linha",
+          "statement": "Qual é o valor de p ∧ ¬q na linha p = V, q = F?",
+          "options": [
+            "V",
+            "F",
+            "depende",
+            "nenhum",
+            "V e F"
+          ],
+          "correct_index": 0,
+          "explanation": "¬q é V, e V ∧ V dá V.",
+          "pitfall": "Esquecer de negar o q daria F."
+        },
+        {
+          "topic": "Contar",
+          "statement": "Em quantas linhas (p ∨ q) → r é falsa?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "correct_index": 2,
+          "explanation": "Nas linhas em que p ∨ q é V e r é F: três delas.",
+          "pitfall": "5 é o número de linhas verdadeiras."
+        },
+        {
+          "topic": "Coluna",
+          "statement": "Na tabela de três letras, como fica a coluna da última letra, r?",
+          "options": [
+            "V V V V F F F F",
+            "V V F F V V F F",
+            "V F V F V F V F",
+            "tudo V",
+            "tudo F"
+          ],
+          "correct_index": 2,
+          "explanation": "A última coluna alterna um a um.",
+          "pitfall": "Blocos de quatro são da primeira letra."
+        },
+        {
+          "topic": "Ordem",
+          "format": "order",
+          "statement": "Ponha na ordem de precedência, da primeira conta para a última.",
+          "options": [
+            "parênteses",
+            "negação",
+            "conjunção",
+            "disjunção",
+            "condicional"
+          ],
+          "explanation": "Como na matemática, o que está dentro dos parênteses vem antes de tudo.",
+          "pitfall": "O “e” vem antes do “ou”."
+        }
+      ]
+    },
+    {
+      "slug": "tautologia-contradicao-contingencia",
+      "title": "Tautologia, contradição e contingência",
+      "module": "Tabela-verdade",
+      "summary": "Olhando a última coluna da tabela-verdade, toda proposição composta cai num de três grupos. Sempre verdadeira é tautologia; sempre falsa, contradição; às vezes uma e às vezes outra, contingência.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A frase que não arrisca nada",
+          "body": [
+            "“Amanhã vai chover ou não vai chover.” Essa previsão nunca erra. Mas também não diz nada.",
+            "Frases assim são sempre verdadeiras pela forma, e não pelo assunto."
+          ],
+          "terms": [
+            {
+              "word": "Proposição",
+              "meaning": "uma frase que afirma alguma coisa e pode ser julgada verdadeira ou falsa, mas não as duas ao mesmo tempo."
+            },
+            {
+              "word": "Valor lógico",
+              "meaning": "o resultado do julgamento de uma proposição: verdadeiro (V) ou falso (F)."
+            },
+            {
+              "word": "Proposição composta",
+              "meaning": "duas ou mais proposições ligadas por palavras como “e”, “ou” e “se… então”."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Tautologia",
+          "body": [
+            "Uma tautologia é verdadeira em todas as linhas da tabela-verdade. O exemplo mais simples é p ∨ ¬p.",
+            "Seja qual for o valor de p, uma das duas partes é verdadeira."
+          ],
+          "terms": [
+            {
+              "word": "Tautologia",
+              "meaning": "uma proposição composta que é verdadeira em todas as linhas da tabela-verdade."
+            },
+            {
+              "word": "Tabela-verdade",
+              "meaning": "a tabela que mostra o valor lógico de uma proposição composta em todas as combinações possíveis de V e F."
+            },
+            {
+              "word": "Negação",
+              "meaning": "a operação que troca o valor lógico: o V vira F, e o F vira V. Escreve-se ¬p ou ~p."
+            },
+            {
+              "word": "Disjunção",
+              "meaning": "ligar duas proposições com “ou”. Escreve-se p ∨ q, e só é falsa quando as duas são falsas."
+            }
+          ],
+          "table": {
+            "label": "p ∨ ¬p",
+            "headers": [
+              "p",
+              "¬p",
+              "p ∨ ¬p"
+            ],
+            "rows": [
+              [
+                "V",
+                "F",
+                "V"
+              ],
+              [
+                "F",
+                "V",
+                "V"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Contradição",
+          "body": [
+            "Uma contradição é falsa em todas as linhas. O exemplo mais simples é p ∧ ¬p: algo verdadeiro e falso ao mesmo tempo.",
+            "“Está chovendo e não está chovendo” nunca é verdade."
+          ],
+          "terms": [
+            {
+              "word": "Contradição",
+              "meaning": "uma proposição composta que é falsa em todas as linhas da tabela-verdade."
+            },
+            {
+              "word": "Conjunção",
+              "meaning": "ligar duas proposições com “e”. Escreve-se p ∧ q, e só é verdadeira quando as duas são."
+            }
+          ],
+          "table": {
+            "label": "p ∧ ¬p",
+            "headers": [
+              "p",
+              "¬p",
+              "p ∧ ¬p"
+            ],
+            "rows": [
+              [
+                "V",
+                "F",
+                "F"
+              ],
+              [
+                "F",
+                "V",
+                "F"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Contingência",
+          "body": [
+            "Todo o resto é contingência: verdadeira em algumas linhas e falsa em outras. p ∧ q é uma contingência.",
+            "A maioria das proposições do dia a dia é contingência: depende de como o mundo está."
+          ],
+          "terms": [
+            {
+              "word": "Contingência",
+              "meaning": "uma proposição composta que é verdadeira em algumas linhas e falsa em outras."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Tautologias conhecidas",
+          "body": [
+            "Algumas tautologias aparecem tanto que vale reconhecer de olho."
+          ],
+          "terms": [
+            {
+              "word": "Condicional",
+              "meaning": "a ligação “se p, então q”. Escreve-se p → q, e só é falsa quando p é verdadeira e q é falsa."
+            }
+          ],
+          "example": {
+            "label": "Sempre verdadeiras",
+            "lines": [
+              "p ∨ ¬p",
+              "p → p",
+              "(p ∧ q) → p",
+              "p → (p ∨ q)",
+              "¬(p ∧ ¬p)"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Um atalho para a condicional",
+          "body": [
+            "Para saber se uma condicional é tautologia, tente deixá-la falsa: antecedente V e consequente F. Se não houver jeito, é tautologia.",
+            "Em (p ∧ q) → p, deixar p ∧ q verdadeiro obriga p a ser V. Então o consequente nunca é F."
+          ],
+          "terms": [
+            {
+              "word": "Antecedente",
+              "meaning": "a parte que vem depois do “se”: o p de p → q."
+            },
+            {
+              "word": "Consequente",
+              "meaning": "a parte que vem depois do “então”: o q de p → q."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Em Python",
+          "body": [
+            "Uma função que monta a tabela e diz o grupo."
+          ],
+          "code": {
+            "label": "Classificar uma proposição",
+            "text": "from itertools import product\ndef classificar(formula, n):\n    valores = [formula(*linha) for linha in product([True, False], repeat=n)]\n    if all(valores):\n        return \"tautologia\"\n    if not any(valores):\n        return \"contradição\"\n    return \"contingência\"\nprint(classificar(lambda p: p or not p, 1))\nprint(classificar(lambda p: p and not p, 1))\nprint(classificar(lambda p, q: p and q, 2))",
+            "notes": [
+              "Traz a ferramenta que gera as combinações.",
+              "Define a classificação de uma fórmula com n letras…",
+              "…calcula o valor dela em cada linha da tabela.",
+              "Se todos os valores são True…",
+              "…é tautologia.",
+              "Se nenhum valor é True…",
+              "…é contradição.",
+              "Senão, é contingência.",
+              "Mostra tautologia para p ou não p.",
+              "Mostra contradição para p e não p.",
+              "Mostra contingência para p e q."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Cai uma proposição e a pergunta: é tautologia, contradição ou contingência? Em itens de certo ou errado, costuma vir uma condicional.",
+            "O atalho de tentar deixar a condicional falsa economiza a tabela inteira."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a classificação engana."
+          ],
+          "bullets": [
+            "Chamar de tautologia algo que é verdadeiro na maioria das linhas: tem de ser em todas.",
+            "Achar que uma única linha falsa faz contradição: precisa ser falsa em todas.",
+            "Julgar pelo assunto da frase, e não pela forma.",
+            "Esquecer linhas ao montar a tabela e classificar errado."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A última coluna decide."
+          ],
+          "bullets": [
+            "Tautologia: V em todas as linhas.",
+            "Contradição: F em todas as linhas.",
+            "Contingência: um pouco de cada.",
+            "p ∨ ¬p é tautologia; p ∧ ¬p é contradição.",
+            "Condicional: tente deixá-la falsa; sem jeito, é tautologia.",
+            "O que decide é a forma, e não o assunto."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Tautologia",
+          "statement": "Qual destas é uma tautologia?",
+          "options": [
+            "p ∧ q",
+            "p ∨ ¬p",
+            "p ∧ ¬p",
+            "p → q",
+            "¬p"
+          ],
+          "correct_index": 1,
+          "explanation": "Uma das duas partes sempre é verdadeira.",
+          "pitfall": "p ∧ ¬p é o contrário: sempre falsa."
+        },
+        {
+          "topic": "Contradição",
+          "statement": "Qual destas é uma contradição?",
+          "options": [
+            "p ∨ ¬p",
+            "p → p",
+            "p ∧ ¬p",
+            "p ∨ q",
+            "q"
+          ],
+          "correct_index": 2,
+          "explanation": "Nunca dá para ser verdadeiro e falso ao mesmo tempo.",
+          "pitfall": "p → p é tautologia."
+        },
+        {
+          "topic": "Contingência",
+          "statement": "p ∨ q é:",
+          "options": [
+            "tautologia",
+            "contradição",
+            "contingência",
+            "não é proposição",
+            "paradoxo"
+          ],
+          "correct_index": 2,
+          "explanation": "É falsa na linha F-F e verdadeira nas outras.",
+          "pitfall": "Tautologia teria de ser V em todas as linhas."
+        },
+        {
+          "topic": "Condicional",
+          "statement": "(p ∧ q) → p é:",
+          "options": [
+            "tautologia",
+            "contradição",
+            "contingência",
+            "sentença aberta",
+            "negação"
+          ],
+          "correct_index": 0,
+          "explanation": "Se p ∧ q é V, p é V: a condicional nunca cai.",
+          "pitfall": "Não depende dos valores: é sempre verdadeira."
+        },
+        {
+          "topic": "Linhas",
+          "statement": "Uma proposição é falsa em 1 de 8 linhas. Ela é:",
+          "options": [
+            "tautologia",
+            "contradição",
+            "contingência",
+            "equivalente",
+            "impossível"
+          ],
+          "correct_index": 2,
+          "explanation": "Tem V e F na última coluna.",
+          "pitfall": "Uma linha falsa já tira de tautologia."
+        },
+        {
+          "topic": "Previsão",
+          "statement": "“Amanhã vai chover ou não vai chover” é, na forma:",
+          "options": [
+            "contradição",
+            "tautologia",
+            "contingência",
+            "sentença aberta",
+            "negação"
+          ],
+          "correct_index": 1,
+          "explanation": "É p ∨ ¬p: sempre verdadeira.",
+          "pitfall": "Não depende do tempo de amanhã."
+        },
+        {
+          "topic": "Forma",
+          "statement": "O que decide se uma proposição é tautologia?",
+          "options": [
+            "o assunto",
+            "a forma, vista na tabela-verdade",
+            "o tamanho da frase",
+            "a quantidade de letras",
+            "se parece verdade"
+          ],
+          "correct_index": 1,
+          "explanation": "É a forma que garante o V em todas as linhas.",
+          "pitfall": "O assunto não entra na conta."
+        },
+        {
+          "topic": "Grupos",
+          "format": "match",
+          "statement": "Ligue cada proposição ao seu grupo.",
+          "pairs": [
+            {
+              "left": "p ∨ ¬p",
+              "right": "tautologia"
+            },
+            {
+              "left": "p ∧ ¬p",
+              "right": "contradição"
+            },
+            {
+              "left": "p ∧ q",
+              "right": "contingência"
+            },
+            {
+              "left": "p → p",
+              "right": "também tautologia"
+            }
+          ],
+          "explanation": "A última coluna decide o grupo.",
+          "pitfall": "p ∧ q depende dos valores."
+        }
+      ]
+    },
+    {
+      "slug": "equivalencia-e-contrapositiva",
+      "title": "Equivalência lógica e contrapositiva",
+      "module": "Equivalências e negações",
+      "summary": "Duas proposições são equivalentes quando têm a mesma tabela-verdade. A condicional tem duas equivalências que caem sempre: a contrapositiva e a forma com “ou”. A recíproca parece equivalente, mas não é.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Mesma ideia, outras palavras",
+          "body": [
+            "“Não saí sem casaco” e “saí de casaco” dizem a mesma coisa com palavras diferentes.",
+            "Na lógica, duas frases assim são equivalentes: em toda situação, uma é verdadeira exatamente quando a outra é."
+          ],
+          "terms": [
+            {
+              "word": "Proposição",
+              "meaning": "uma frase que afirma alguma coisa e pode ser julgada verdadeira ou falsa, mas não as duas ao mesmo tempo."
+            },
+            {
+              "word": "Valor lógico",
+              "meaning": "o resultado do julgamento de uma proposição: verdadeiro (V) ou falso (F)."
+            },
+            {
+              "word": "Tabela-verdade",
+              "meaning": "a tabela que mostra o valor lógico de uma proposição composta em todas as combinações possíveis de V e F."
+            },
+            {
+              "word": "Equivalência lógica",
+              "meaning": "duas proposições com a mesma tabela-verdade, linha por linha. Escreve-se com o sinal ≡."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Como provar",
+          "body": [
+            "Monta-se a tabela-verdade das duas. Se as últimas colunas forem iguais em todas as linhas, são equivalentes.",
+            "Uma única linha diferente já derruba a equivalência."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A contrapositiva",
+          "body": [
+            "p → q é equivalente a ¬q → ¬p: troca a ordem e nega as duas partes.",
+            "“Se é baiano, é brasileiro” equivale a “se não é brasileiro, não é baiano”. As duas dizem a mesma coisa."
+          ],
+          "terms": [
+            {
+              "word": "Condicional",
+              "meaning": "a ligação “se p, então q”. Escreve-se p → q, e só é falsa quando p é verdadeira e q é falsa."
+            },
+            {
+              "word": "Contrapositiva",
+              "meaning": "trocar a ordem da condicional e negar as duas partes. A contrapositiva de p → q é ¬q → ¬p."
+            },
+            {
+              "word": "Negação",
+              "meaning": "a operação que troca o valor lógico: o V vira F, e o F vira V. Escreve-se ¬p ou ~p."
+            }
+          ],
+          "table": {
+            "label": "A mesma coluna",
+            "headers": [
+              "p",
+              "q",
+              "p → q",
+              "¬q → ¬p"
+            ],
+            "rows": [
+              [
+                "V",
+                "V",
+                "V",
+                "V"
+              ],
+              [
+                "V",
+                "F",
+                "F",
+                "F"
+              ],
+              [
+                "F",
+                "V",
+                "V",
+                "V"
+              ],
+              [
+                "F",
+                "F",
+                "V",
+                "V"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A recíproca não vale",
+          "body": [
+            "Só trocar a ordem, q → p, muda o sentido. “Se é brasileiro, é baiano” é falso para quem é de Minas.",
+            "Negar as duas partes sem trocar, ¬p → ¬q, também muda. As provas adoram oferecer essas duas como se fossem equivalentes."
+          ],
+          "terms": [
+            {
+              "word": "Recíproca",
+              "meaning": "só trocar a ordem da condicional. A recíproca de p → q é q → p."
+            }
+          ],
+          "table": {
+            "label": "Quem equivale a p → q",
+            "headers": [
+              "Forma",
+              "Nome",
+              "Equivale?"
+            ],
+            "rows": [
+              [
+                "¬q → ¬p",
+                "contrapositiva",
+                "sim"
+              ],
+              [
+                "¬p ∨ q",
+                "forma com “ou”",
+                "sim"
+              ],
+              [
+                "q → p",
+                "recíproca",
+                "não"
+              ],
+              [
+                "¬p → ¬q",
+                "inversa",
+                "não"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A condicional com “ou”",
+          "body": [
+            "p → q também é equivalente a ¬p ∨ q. “Se chove, levo guarda-chuva” equivale a “não chove ou levo guarda-chuva”.",
+            "Faz sentido: a promessa só é quebrada quando chove e não levo."
+          ],
+          "terms": [
+            {
+              "word": "Disjunção",
+              "meaning": "ligar duas proposições com “ou”. Escreve-se p ∨ q, e só é falsa quando as duas são falsas."
+            }
+          ],
+          "example": {
+            "label": "De condicional para “ou”",
+            "lines": [
+              "Se estudo, passo. → Não estudo ou passo.",
+              "Se é domingo, descanso. → Não é domingo ou descanso.",
+              "Regra: nega a primeira e troca o → por ∨"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Outras equivalências úteis",
+          "body": [
+            "Algumas trocas aparecem o tempo todo nas provas."
+          ],
+          "terms": [
+            {
+              "word": "Bicondicional",
+              "meaning": "a ligação “p se e somente se q”. Escreve-se p ↔ q, e é verdadeira quando as duas partes têm o mesmo valor lógico."
+            },
+            {
+              "word": "Conjunção",
+              "meaning": "ligar duas proposições com “e”. Escreve-se p ∧ q, e só é verdadeira quando as duas são."
+            }
+          ],
+          "table": {
+            "label": "Equivalências de uso diário",
+            "headers": [
+              "Proposição",
+              "Equivale a"
+            ],
+            "rows": [
+              [
+                "p → q",
+                "¬q → ¬p"
+              ],
+              [
+                "p → q",
+                "¬p ∨ q"
+              ],
+              [
+                "p ↔ q",
+                "(p → q) ∧ (q → p)"
+              ],
+              [
+                "¬(¬p)",
+                "p"
+              ],
+              [
+                "p ∧ q",
+                "q ∧ p"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Em Python",
+          "body": [
+            "Comparar duas fórmulas em todas as linhas é conferir uma equivalência."
+          ],
+          "code": {
+            "label": "Contrapositiva e recíproca",
+            "text": "from itertools import product\ndef se_entao(p, q):\n    return (not p) or q\ndef equivalentes(f, g):\n    return all(f(p, q) == g(p, q) for p, q in product([True, False], repeat=2))\nprint(equivalentes(se_entao, lambda p, q: se_entao(not q, not p)))\nprint(equivalentes(se_entao, lambda p, q: se_entao(q, p)))",
+            "notes": [
+              "Traz a ferramenta que gera as combinações.",
+              "Define a condicional…",
+              "…como “não p, ou q”.",
+              "Define o teste: duas fórmulas são equivalentes…",
+              "…se dão o mesmo resultado em todas as combinações.",
+              "Mostra True: p → q e ¬q → ¬p são equivalentes.",
+              "Mostra False: p → q e q → p não são."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Cai uma condicional e a pergunta: qual alternativa é equivalente? A certa costuma ser a contrapositiva ou a forma com “ou”.",
+            "As erradas trazem a recíproca e a inversa."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a equivalência engana."
+          ],
+          "bullets": [
+            "Achar que a recíproca é equivalente.",
+            "Negar as duas partes sem trocar a ordem.",
+            "Na forma com “ou”, esquecer de negar a primeira parte.",
+            "Achar que equivalente é o mesmo que ter o mesmo assunto."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Mesma tabela, mesma proposição."
+          ],
+          "bullets": [
+            "Equivalentes: mesma tabela-verdade, linha por linha.",
+            "p → q ≡ ¬q → ¬p (contrapositiva).",
+            "p → q ≡ ¬p ∨ q.",
+            "Recíproca q → p: não equivale.",
+            "Inversa ¬p → ¬q: não equivale.",
+            "p ↔ q ≡ (p → q) ∧ (q → p)."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Contrapositiva",
+          "statement": "Qual é equivalente a “Se estudo, então passo”?",
+          "options": [
+            "Se passo, então estudo.",
+            "Se não passo, então não estudo.",
+            "Se não estudo, então não passo.",
+            "Estudo e passo.",
+            "Estudo ou passo."
+          ],
+          "correct_index": 1,
+          "explanation": "A contrapositiva troca a ordem e nega as duas.",
+          "pitfall": "“Se passo, então estudo” é a recíproca."
+        },
+        {
+          "topic": "Ou",
+          "statement": "Qual é equivalente a “Se chove, levo guarda-chuva”?",
+          "options": [
+            "Chove e levo guarda-chuva.",
+            "Não chove ou levo guarda-chuva.",
+            "Chove ou não levo guarda-chuva.",
+            "Não chove e não levo.",
+            "Levo guarda-chuva somente se chove."
+          ],
+          "correct_index": 1,
+          "explanation": "p → q ≡ ¬p ∨ q.",
+          "pitfall": "Esquecer de negar a primeira parte leva ao erro."
+        },
+        {
+          "topic": "Recíproca",
+          "statement": "A recíproca de p → q é:",
+          "options": [
+            "¬q → ¬p",
+            "q → p",
+            "¬p → ¬q",
+            "¬p ∨ q",
+            "p ∧ ¬q"
+          ],
+          "correct_index": 1,
+          "explanation": "Só troca a ordem.",
+          "pitfall": "¬q → ¬p é a contrapositiva."
+        },
+        {
+          "topic": "Recíproca vale",
+          "statement": "A recíproca de uma condicional é sempre equivalente a ela?",
+          "options": [
+            "sim",
+            "não",
+            "só se for verdadeira",
+            "só com “ou”",
+            "só em provas"
+          ],
+          "correct_index": 1,
+          "explanation": "“Se é brasileiro, é baiano” não diz o mesmo que “se é baiano, é brasileiro”.",
+          "pitfall": "A tabela das duas difere em duas linhas."
+        },
+        {
+          "topic": "Provar",
+          "statement": "Como se prova que duas proposições são equivalentes?",
+          "options": [
+            "pelo assunto",
+            "comparando as tabelas-verdade linha por linha",
+            "contando as letras",
+            "pelo tamanho",
+            "pela primeira linha só"
+          ],
+          "correct_index": 1,
+          "explanation": "Todas as linhas precisam coincidir.",
+          "pitfall": "Uma linha só não basta."
+        },
+        {
+          "topic": "Inversa",
+          "statement": "¬p → ¬q é equivalente a p → q?",
+          "options": [
+            "sim, sempre",
+            "não",
+            "só se p for falsa",
+            "só se q for falsa",
+            "é a contrapositiva"
+          ],
+          "correct_index": 1,
+          "explanation": "É a inversa, que diz o mesmo que a recíproca, e não a condicional.",
+          "pitfall": "A contrapositiva também troca a ordem."
+        },
+        {
+          "topic": "Baiano",
+          "statement": "Qual é equivalente a “se é baiano, é brasileiro”?",
+          "options": [
+            "Se é brasileiro, é baiano.",
+            "Não é baiano ou é brasileiro.",
+            "É baiano e brasileiro.",
+            "Se não é baiano, não é brasileiro.",
+            "É baiano ou não é brasileiro."
+          ],
+          "correct_index": 1,
+          "explanation": "A forma com “ou”: nega a primeira e liga com “ou”.",
+          "pitfall": "“Se não é baiano, não é brasileiro” é a inversa."
+        },
+        {
+          "topic": "Formas",
+          "format": "match",
+          "statement": "Ligue cada forma de p → q ao seu nome.",
+          "pairs": [
+            {
+              "left": "¬q → ¬p",
+              "right": "contrapositiva, equivale"
+            },
+            {
+              "left": "q → p",
+              "right": "recíproca, não equivale"
+            },
+            {
+              "left": "¬p → ¬q",
+              "right": "inversa, não equivale"
+            },
+            {
+              "left": "¬p ∨ q",
+              "right": "forma com “ou”, equivale"
+            }
+          ],
+          "explanation": "Duas equivalem, duas enganam.",
+          "pitfall": "A inversa só nega; a contrapositiva nega e troca."
+        }
+      ]
+    },
+    {
+      "slug": "leis-de-de-morgan",
+      "title": "Leis de De Morgan: negar “e” e “ou”",
+      "module": "Equivalências e negações",
+      "summary": "Para negar uma conjunção ou uma disjunção, nega-se cada parte e troca-se o conectivo: o “e” vira “ou”, e o “ou” vira “e”. São as leis de De Morgan, que as provas cobram o tempo todo.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O convite",
+          "body": [
+            "“Vou à festa se tiver carona e dinheiro.” Quando você não vai? Quando falta carona, ou quando falta dinheiro.",
+            "Negar o “e” deu um “ou”. Essa virada é a ideia inteira da lição."
+          ],
+          "terms": [
+            {
+              "word": "Proposição",
+              "meaning": "uma frase que afirma alguma coisa e pode ser julgada verdadeira ou falsa, mas não as duas ao mesmo tempo."
+            },
+            {
+              "word": "Valor lógico",
+              "meaning": "o resultado do julgamento de uma proposição: verdadeiro (V) ou falso (F)."
+            },
+            {
+              "word": "Conjunção",
+              "meaning": "ligar duas proposições com “e”. Escreve-se p ∧ q, e só é verdadeira quando as duas são."
+            },
+            {
+              "word": "Disjunção",
+              "meaning": "ligar duas proposições com “ou”. Escreve-se p ∨ q, e só é falsa quando as duas são falsas."
+            },
+            {
+              "word": "Conectivo",
+              "meaning": "a palavra que liga proposições. São conectivos o “e”, o “ou”, o “se… então” e o “se e somente se”; o “não” também conta."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Negar o “e”",
+          "body": [
+            "¬(p ∧ q) ≡ ¬p ∨ ¬q. Para a conjunção ser falsa, basta uma das partes falhar.",
+            "“Não é verdade que estudo e trabalho” equivale a “não estudo ou não trabalho”."
+          ],
+          "terms": [
+            {
+              "word": "Negação",
+              "meaning": "a operação que troca o valor lógico: o V vira F, e o F vira V. Escreve-se ¬p ou ~p."
+            },
+            {
+              "word": "Leis de De Morgan",
+              "meaning": "as regras para negar “e” e “ou”: ¬(p ∧ q) ≡ ¬p ∨ ¬q e ¬(p ∨ q) ≡ ¬p ∧ ¬q."
+            },
+            {
+              "word": "Equivalência lógica",
+              "meaning": "duas proposições com a mesma tabela-verdade, linha por linha. Escreve-se com o sinal ≡."
+            },
+            {
+              "word": "Tabela-verdade",
+              "meaning": "a tabela que mostra o valor lógico de uma proposição composta em todas as combinações possíveis de V e F."
+            }
+          ],
+          "table": {
+            "label": "A mesma coluna",
+            "headers": [
+              "p",
+              "q",
+              "¬(p ∧ q)",
+              "¬p ∨ ¬q"
+            ],
+            "rows": [
+              [
+                "V",
+                "V",
+                "F",
+                "F"
+              ],
+              [
+                "V",
+                "F",
+                "V",
+                "V"
+              ],
+              [
+                "F",
+                "V",
+                "V",
+                "V"
+              ],
+              [
+                "F",
+                "F",
+                "V",
+                "V"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Negar o “ou”",
+          "body": [
+            "¬(p ∨ q) ≡ ¬p ∧ ¬q. Para a disjunção ser falsa, as duas partes precisam falhar.",
+            "“Não é verdade que vou à praia ou ao cinema” equivale a “não vou à praia e não vou ao cinema”."
+          ],
+          "table": {
+            "label": "A mesma coluna",
+            "headers": [
+              "p",
+              "q",
+              "¬(p ∨ q)",
+              "¬p ∧ ¬q"
+            ],
+            "rows": [
+              [
+                "V",
+                "V",
+                "F",
+                "F"
+              ],
+              [
+                "V",
+                "F",
+                "F",
+                "F"
+              ],
+              [
+                "F",
+                "V",
+                "F",
+                "F"
+              ],
+              [
+                "F",
+                "F",
+                "V",
+                "V"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A receita",
+          "body": [
+            "Nas duas leis, a receita é a mesma. Nega cada parte e troca o conectivo."
+          ],
+          "example": {
+            "label": "Negando com De Morgan",
+            "lines": [
+              "Olhe o conectivo do meio",
+              "Negue a primeira parte",
+              "Negue a segunda parte",
+              "Troque “e” por “ou”, ou “ou” por “e”"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Exemplos de prova",
+          "body": [
+            "Os enunciados costumam vir em português, e a negação também."
+          ],
+          "table": {
+            "label": "Frase e negação",
+            "headers": [
+              "Frase",
+              "Negação"
+            ],
+            "rows": [
+              [
+                "Ana canta e dança.",
+                "Ana não canta ou não dança."
+              ],
+              [
+                "Rui é médico ou dentista.",
+                "Rui não é médico e não é dentista."
+              ],
+              [
+                "Chove e faz frio.",
+                "Não chove ou não faz frio."
+              ],
+              [
+                "Estudo ou trabalho.",
+                "Não estudo e não trabalho."
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Com mais de duas partes",
+          "body": [
+            "A regra vale para qualquer tamanho. ¬(p ∧ q ∧ r) ≡ ¬p ∨ ¬q ∨ ¬r, e ¬(p ∨ q ∨ r) ≡ ¬p ∧ ¬q ∧ ¬r.",
+            "Cada parte é negada, e todos os conectivos trocam."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Em Python",
+          "body": [
+            "As duas leis conferidas em todas as linhas."
+          ],
+          "code": {
+            "label": "Conferindo De Morgan",
+            "text": "from itertools import product\nfor p, q in product([True, False], repeat=2):\n    lei1 = (not (p and q)) == ((not p) or (not q))\n    lei2 = (not (p or q)) == ((not p) and (not q))\n    print(p, q, lei1, lei2)",
+            "notes": [
+              "Traz a ferramenta que gera as combinações.",
+              "Para cada combinação de p e q…",
+              "…confere a primeira lei: negar o “e” dá o “ou” das negações.",
+              "…confere a segunda lei: negar o “ou” dá o “e” das negações.",
+              "Mostra True True em todas as linhas: as duas leis valem sempre."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Cai pedir a negação de uma frase com “e” ou com “ou”. A alternativa errada nega as partes e esquece de trocar o conectivo.",
+            "Também cai a negação de “nem… nem…”, que é um “e”."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde De Morgan engana."
+          ],
+          "bullets": [
+            "Negar as partes e manter o conectivo.",
+            "Trocar o conectivo e esquecer de negar as partes.",
+            "Negar só a primeira parte.",
+            "Esquecer que “mas” é “e”, e também troca."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Nega as partes, troca o conectivo."
+          ],
+          "bullets": [
+            "¬(p ∧ q) ≡ ¬p ∨ ¬q.",
+            "¬(p ∨ q) ≡ ¬p ∧ ¬q.",
+            "Negar o “e”: basta uma parte falhar.",
+            "Negar o “ou”: as duas precisam falhar.",
+            "Vale para qualquer número de partes.",
+            "O erro clássico é não trocar o conectivo."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "E",
+          "statement": "Qual é a negação de “Ana canta e dança”?",
+          "options": [
+            "Ana não canta e não dança.",
+            "Ana não canta ou não dança.",
+            "Ana canta ou dança.",
+            "Ana dança e canta.",
+            "Ana não canta."
+          ],
+          "correct_index": 1,
+          "explanation": "Nega as partes e troca o “e” pelo “ou”.",
+          "pitfall": "Manter o “e” é o erro mais comum."
+        },
+        {
+          "topic": "Ou",
+          "statement": "Qual é a negação de “Rui é médico ou dentista”?",
+          "options": [
+            "Rui não é médico ou não é dentista.",
+            "Rui não é médico e não é dentista.",
+            "Rui é médico e dentista.",
+            "Rui não é médico.",
+            "Rui é enfermeiro."
+          ],
+          "correct_index": 1,
+          "explanation": "Negar o “ou” exige as duas negações juntas.",
+          "pitfall": "Com “ou”, bastaria uma não valer, e isso não nega a frase."
+        },
+        {
+          "topic": "Fórmula",
+          "statement": "¬(p ∧ q) é equivalente a:",
+          "options": [
+            "¬p ∧ ¬q",
+            "¬p ∨ ¬q",
+            "p ∨ q",
+            "¬p ∧ q",
+            "p → q"
+          ],
+          "correct_index": 1,
+          "explanation": "Primeira lei de De Morgan.",
+          "pitfall": "¬p ∧ ¬q é a negação do “ou”."
+        },
+        {
+          "topic": "Fórmula ou",
+          "statement": "¬(p ∨ q) é equivalente a:",
+          "options": [
+            "¬p ∨ ¬q",
+            "¬p ∧ ¬q",
+            "p ∧ q",
+            "¬p ∨ q",
+            "p ↔ q"
+          ],
+          "correct_index": 1,
+          "explanation": "Segunda lei de De Morgan.",
+          "pitfall": "¬p ∨ ¬q é a negação do “e”."
+        },
+        {
+          "topic": "Três",
+          "statement": "¬(p ∧ q ∧ r) é equivalente a:",
+          "options": [
+            "¬p ∧ ¬q ∧ ¬r",
+            "¬p ∨ ¬q ∨ ¬r",
+            "p ∨ q ∨ r",
+            "¬p ∨ q ∨ r",
+            "¬p ∧ q ∧ r"
+          ],
+          "correct_index": 1,
+          "explanation": "Nega cada parte e troca todos os conectivos.",
+          "pitfall": "A regra não muda com mais partes."
+        },
+        {
+          "topic": "Mas",
+          "statement": "Qual é a negação de “Joga bem, mas perdeu”?",
+          "options": [
+            "Não joga bem e não perdeu.",
+            "Não joga bem ou não perdeu.",
+            "Joga bem ou perdeu.",
+            "Joga mal, mas ganhou.",
+            "Não joga bem, mas perdeu."
+          ],
+          "correct_index": 1,
+          "explanation": "O “mas” é “e”: vira “ou” com as partes negadas.",
+          "pitfall": "Joga mal é o contrário, e não a negação."
+        },
+        {
+          "topic": "Quando",
+          "statement": "Quando ¬(p ∨ q) é verdadeira?",
+          "options": [
+            "quando p é V",
+            "quando p e q são F",
+            "quando q é V",
+            "sempre",
+            "nunca"
+          ],
+          "correct_index": 1,
+          "explanation": "Só quando o “ou” é falso, e isso exige as duas falsas.",
+          "pitfall": "Com uma verdadeira, o “ou” vale e a negação cai."
+        },
+        {
+          "topic": "Receita",
+          "format": "order",
+          "statement": "Ponha na ordem a negação de “Chove e faz frio”.",
+          "options": [
+            "Ver que o conectivo é “e”",
+            "Negar a primeira parte: não chove",
+            "Negar a segunda parte: não faz frio",
+            "Trocar o “e” por “ou”: não chove ou não faz frio"
+          ],
+          "explanation": "Olhar, negar, negar e trocar.",
+          "pitfall": "Trocar sem negar não é negação."
+        }
+      ]
+    },
+    {
+      "slug": "negacao-da-condicional",
+      "title": "Negar condicional e bicondicional",
+      "module": "Equivalências e negações",
+      "summary": "A negação de “se p, então q” não é outra condicional: é “p e não q”. A negação da bicondicional é o ou exclusivo. Essas duas regras estão entre as mais cobradas de todo o raciocínio lógico.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Desmentir uma promessa",
+          "body": [
+            "Para provar que o pai mentiu em “se fizer sol, vou à praia”, não adianta falar de dias de chuva. Você precisa de um dia de sol em que ele não foi.",
+            "Fez sol e não foi: essa é a negação da promessa."
+          ],
+          "terms": [
+            {
+              "word": "Proposição",
+              "meaning": "uma frase que afirma alguma coisa e pode ser julgada verdadeira ou falsa, mas não as duas ao mesmo tempo."
+            },
+            {
+              "word": "Valor lógico",
+              "meaning": "o resultado do julgamento de uma proposição: verdadeiro (V) ou falso (F)."
+            },
+            {
+              "word": "Condicional",
+              "meaning": "a ligação “se p, então q”. Escreve-se p → q, e só é falsa quando p é verdadeira e q é falsa."
+            },
+            {
+              "word": "Negação",
+              "meaning": "a operação que troca o valor lógico: o V vira F, e o F vira V. Escreve-se ¬p ou ~p."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A regra",
+          "body": [
+            "¬(p → q) ≡ p ∧ ¬q. Mantém a primeira parte, troca o “se… então” por “e”, e nega a segunda.",
+            "Um jeito de lembrar é MANÉ: MAntém a primeira e NEga a segunda."
+          ],
+          "terms": [
+            {
+              "word": "Equivalência lógica",
+              "meaning": "duas proposições com a mesma tabela-verdade, linha por linha. Escreve-se com o sinal ≡."
+            },
+            {
+              "word": "Tabela-verdade",
+              "meaning": "a tabela que mostra o valor lógico de uma proposição composta em todas as combinações possíveis de V e F."
+            },
+            {
+              "word": "Conjunção",
+              "meaning": "ligar duas proposições com “e”. Escreve-se p ∧ q, e só é verdadeira quando as duas são."
+            }
+          ],
+          "table": {
+            "label": "A mesma coluna",
+            "headers": [
+              "p",
+              "q",
+              "¬(p → q)",
+              "p ∧ ¬q"
+            ],
+            "rows": [
+              [
+                "V",
+                "V",
+                "F",
+                "F"
+              ],
+              [
+                "V",
+                "F",
+                "V",
+                "V"
+              ],
+              [
+                "F",
+                "V",
+                "F",
+                "F"
+              ],
+              [
+                "F",
+                "F",
+                "F",
+                "F"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Exemplos",
+          "body": [
+            "Toda negação de condicional vira uma frase com “e”."
+          ],
+          "table": {
+            "label": "Condicional e negação",
+            "headers": [
+              "Frase",
+              "Negação"
+            ],
+            "rows": [
+              [
+                "Se chove, a rua molha.",
+                "Chove e a rua não molha."
+              ],
+              [
+                "Se estudo, passo.",
+                "Estudo e não passo."
+              ],
+              [
+                "Se é baiano, é brasileiro.",
+                "É baiano e não é brasileiro."
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que NÃO é a negação",
+          "body": [
+            "As provas oferecem outras condicionais como resposta, e todas estão erradas. “Se chove, a rua não molha” não nega a frase original.",
+            "Negação de condicional nunca é condicional."
+          ],
+          "terms": [
+            {
+              "word": "Recíproca",
+              "meaning": "só trocar a ordem da condicional. A recíproca de p → q é q → p."
+            }
+          ],
+          "table": {
+            "label": "Respostas erradas comuns",
+            "headers": [
+              "Alternativa",
+              "Por que erra"
+            ],
+            "rows": [
+              [
+                "Se não chove, a rua não molha.",
+                "é a inversa"
+              ],
+              [
+                "Se chove, a rua não molha.",
+                "continua sendo condicional"
+              ],
+              [
+                "Se a rua molha, chove.",
+                "é a recíproca"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Negar a bicondicional",
+          "body": [
+            "¬(p ↔ q) ≡ p ⊻ q. A bicondicional diz que os valores são iguais; a negação diz que são diferentes.",
+            "“Não é verdade que passo se e somente se estudo” equivale a “ou passo, ou estudo”."
+          ],
+          "terms": [
+            {
+              "word": "Bicondicional",
+              "meaning": "a ligação “p se e somente se q”. Escreve-se p ↔ q, e é verdadeira quando as duas partes têm o mesmo valor lógico."
+            },
+            {
+              "word": "Ou exclusivo",
+              "meaning": "o “ou… ou…”: verdadeiro quando só uma das duas é verdadeira. Escreve-se p ⊻ q."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Outra forma da mesma negação",
+          "body": [
+            "O ou exclusivo também se escreve com “e” e “ou”: (p ∧ ¬q) ∨ (¬p ∧ q). Uma é verdadeira e a outra não.",
+            "E a volta também vale: negar o ou exclusivo dá a bicondicional."
+          ],
+          "terms": [
+            {
+              "word": "Disjunção",
+              "meaning": "ligar duas proposições com “ou”. Escreve-se p ∨ q, e só é falsa quando as duas são falsas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A tabela de todas as negações",
+          "body": [
+            "Esta é a tabela para ter na cabeça no dia da prova."
+          ],
+          "terms": [
+            {
+              "word": "Conectivo",
+              "meaning": "a palavra que liga proposições. São conectivos o “e”, o “ou”, o “se… então” e o “se e somente se”; o “não” também conta."
+            }
+          ],
+          "table": {
+            "label": "Como negar cada conectivo",
+            "headers": [
+              "Proposição",
+              "Negação"
+            ],
+            "rows": [
+              [
+                "p",
+                "¬p"
+              ],
+              [
+                "p ∧ q",
+                "¬p ∨ ¬q"
+              ],
+              [
+                "p ∨ q",
+                "¬p ∧ ¬q"
+              ],
+              [
+                "p → q",
+                "p ∧ ¬q"
+              ],
+              [
+                "p ↔ q",
+                "p ⊻ q"
+              ],
+              [
+                "p ⊻ q",
+                "p ↔ q"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Cai pedir a negação de uma condicional em português. A resposta certa tem “e” e mantém a primeira parte.",
+            "Também cai a negação da bicondicional, com o “ou… ou…” como resposta."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a negação engana."
+          ],
+          "bullets": [
+            "Negar a condicional com outra condicional.",
+            "Negar as duas partes da condicional.",
+            "Usar “ou” em vez de “e” na negação da condicional.",
+            "Negar a bicondicional com outra bicondicional."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "MAntém e NEga."
+          ],
+          "bullets": [
+            "¬(p → q) ≡ p ∧ ¬q.",
+            "Mantém a primeira, nega a segunda, liga com “e”.",
+            "A negação da condicional nunca é condicional.",
+            "¬(p ↔ q) ≡ p ⊻ q.",
+            "¬(p ⊻ q) ≡ p ↔ q.",
+            "Tenha a tabela das negações na cabeça."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Chuva",
+          "statement": "Qual é a negação de “Se chove, então a rua molha”?",
+          "options": [
+            "Se não chove, a rua não molha.",
+            "Chove e a rua não molha.",
+            "Não chove e a rua molha.",
+            "Se chove, a rua não molha.",
+            "Não chove ou a rua molha."
+          ],
+          "correct_index": 1,
+          "explanation": "Mantém a primeira, nega a segunda e liga com “e”.",
+          "pitfall": "Negação de condicional nunca é condicional."
+        },
+        {
+          "topic": "Fórmula",
+          "statement": "¬(p → q) é equivalente a:",
+          "options": [
+            "¬p → ¬q",
+            "p ∧ ¬q",
+            "¬p ∧ q",
+            "q → p",
+            "¬p ∨ q"
+          ],
+          "correct_index": 1,
+          "explanation": "A única linha falsa da condicional é p V e q F.",
+          "pitfall": "¬p ∨ q é a própria condicional, e não a negação."
+        },
+        {
+          "topic": "Estudo",
+          "statement": "Qual é a negação de “Se estudo, passo”?",
+          "options": [
+            "Se não estudo, não passo.",
+            "Estudo e não passo.",
+            "Não estudo e passo.",
+            "Se passo, estudo.",
+            "Não estudo ou não passo."
+          ],
+          "correct_index": 1,
+          "explanation": "É o caso que desmente a frase: estudei e não passei.",
+          "pitfall": "“Se não estudo, não passo” é a inversa."
+        },
+        {
+          "topic": "Bicondicional",
+          "statement": "¬(p ↔ q) é equivalente a:",
+          "options": [
+            "p ∧ ¬q",
+            "p ⊻ q",
+            "p ∧ q",
+            "¬p ↔ ¬q",
+            "p → q"
+          ],
+          "correct_index": 1,
+          "explanation": "Bicondicional: valores iguais. Negação: valores diferentes.",
+          "pitfall": "¬p ↔ ¬q tem a mesma tabela de p ↔ q."
+        },
+        {
+          "topic": "Exclusivo",
+          "statement": "¬(p ⊻ q) é equivalente a:",
+          "options": [
+            "p ∨ q",
+            "p ↔ q",
+            "p ∧ q",
+            "¬p ∨ ¬q",
+            "p → q"
+          ],
+          "correct_index": 1,
+          "explanation": "A volta da regra anterior.",
+          "pitfall": "O “ou” comum não é o oposto do exclusivo."
+        },
+        {
+          "topic": "Quando",
+          "statement": "Em qual situação ¬(p → q) é verdadeira?",
+          "options": [
+            "p V e q V",
+            "p V e q F",
+            "p F e q V",
+            "p F e q F",
+            "sempre"
+          ],
+          "correct_index": 1,
+          "explanation": "É a única linha em que a condicional é falsa.",
+          "pitfall": "Com p falsa, a condicional vale e a negação cai."
+        },
+        {
+          "topic": "Baiano",
+          "statement": "Qual é a negação de “Se é baiano, é brasileiro”?",
+          "options": [
+            "É baiano e não é brasileiro.",
+            "Se não é baiano, não é brasileiro.",
+            "Não é baiano e é brasileiro.",
+            "Se é brasileiro, é baiano.",
+            "É baiano ou brasileiro."
+          ],
+          "correct_index": 0,
+          "explanation": "MAntém “é baiano” e NEga “é brasileiro”.",
+          "pitfall": "Trocar a ordem não nega nada."
+        },
+        {
+          "topic": "Negações",
+          "format": "match",
+          "statement": "Ligue cada proposição à sua negação.",
+          "pairs": [
+            {
+              "left": "p ∧ q",
+              "right": "¬p ∨ ¬q"
+            },
+            {
+              "left": "p ∨ q",
+              "right": "¬p ∧ ¬q"
+            },
+            {
+              "left": "p → q",
+              "right": "p ∧ ¬q"
+            },
+            {
+              "left": "p ↔ q",
+              "right": "p ⊻ q"
+            }
+          ],
+          "explanation": "A tabela das negações, inteira.",
+          "pitfall": "A condicional nega com “e”."
+        }
+      ]
+    },
+    {
+      "slug": "quantificadores-e-negacoes",
+      "title": "Todo, algum e nenhum: quantificadores e negações",
+      "module": "Equivalências e negações",
+      "summary": "“Todo”, “algum” e “nenhum” dizem para quantos vale uma afirmação. Negar “todo” não é dizer “nenhum”: basta um exemplo contrário, e por isso a negação de “todo A é B” é “algum A não é B”.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Uma exceção basta",
+          "body": [
+            "Alguém diz: “todo aluno da turma passou”. Para desmentir, você não precisa provar que ninguém passou.",
+            "Basta mostrar um aluno que não passou. Essa é a chave da lição."
+          ],
+          "terms": [
+            {
+              "word": "Proposição",
+              "meaning": "uma frase que afirma alguma coisa e pode ser julgada verdadeira ou falsa, mas não as duas ao mesmo tempo."
+            },
+            {
+              "word": "Valor lógico",
+              "meaning": "o resultado do julgamento de uma proposição: verdadeiro (V) ou falso (F)."
+            },
+            {
+              "word": "Negação",
+              "meaning": "a operação que troca o valor lógico: o V vira F, e o F vira V. Escreve-se ¬p ou ~p."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os três quantificadores",
+          "body": [
+            "“Todo” fala de cada um do grupo. “Algum” diz que existe pelo menos um. “Nenhum” diz que não existe nenhum.",
+            "Em lógica, “algum” quer dizer pelo menos um, e pode até ser todos."
+          ],
+          "terms": [
+            {
+              "word": "Quantificador",
+              "meaning": "a palavra que diz para quantos vale a afirmação: “todo”, “algum” ou “nenhum”."
+            },
+            {
+              "word": "Diagrama de Venn",
+              "meaning": "um desenho com círculos, em que cada círculo é um grupo de coisas."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/logica/quantificadores.svg",
+            "alt": "Três quadros com diagramas de dois círculos, A e B. Em “Todo A é B”, o círculo A está inteiro dentro do círculo B. Em “Algum A é B”, os círculos se cruzam, e um X marca a parte comum. Em “Nenhum A é B”, os dois círculos estão separados, sem parte comum.",
+            "caption": "Todo, algum e nenhum em diagramas de círculos."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Negar “todo”",
+          "body": [
+            "A negação de “todo A é B” é “algum A não é B”. Também se diz “nem todo A é B” ou “existe A que não é B”.",
+            "Não é “nenhum A é B”: isso seria exagerar a negação."
+          ],
+          "example": {
+            "label": "Negando “todo”",
+            "lines": [
+              "Todo aluno passou. → Algum aluno não passou.",
+              "Todo gato é preto. → Algum gato não é preto.",
+              "Todo político é honesto. → Nem todo político é honesto."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Negar “algum”",
+          "body": [
+            "A negação de “algum A é B” é “nenhum A é B”. Para negar que existe pelo menos um, é preciso dizer que não existe nenhum.",
+            "E a negação de “algum A não é B” volta a ser “todo A é B”."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Negar “nenhum”",
+          "body": [
+            "A negação de “nenhum A é B” é “algum A é B”. Basta um exemplo para derrubar o “nenhum”."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A tabela das negações",
+          "body": [
+            "Os pares se negam dois a dois, como numa gangorra."
+          ],
+          "table": {
+            "label": "Quantificadores e negações",
+            "headers": [
+              "Frase",
+              "Negação"
+            ],
+            "rows": [
+              [
+                "Todo A é B.",
+                "Algum A não é B."
+              ],
+              [
+                "Algum A é B.",
+                "Nenhum A é B."
+              ],
+              [
+                "Nenhum A é B.",
+                "Algum A é B."
+              ],
+              [
+                "Algum A não é B.",
+                "Todo A é B."
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "“Todo” como condicional",
+          "body": [
+            "“Todo A é B” é o mesmo que “se é A, então é B”. Por isso as regras da condicional valem para ele.",
+            "“Todo baiano é brasileiro” é “se é baiano, é brasileiro”. E a negação continua sendo “algum baiano não é brasileiro”."
+          ],
+          "terms": [
+            {
+              "word": "Condicional",
+              "meaning": "a ligação “se p, então q”. Escreve-se p → q, e só é falsa quando p é verdadeira e q é falsa."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Cai pedir a negação de uma frase com “todo” ou com “nenhum”. A alternativa errada troca “todo” por “nenhum”.",
+            "Também cai o “algum” entendido como “só alguns”, que não é o sentido da lógica."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde os quantificadores enganam."
+          ],
+          "bullets": [
+            "Negar “todo” com “nenhum”.",
+            "Negar “algum” com “algum não”.",
+            "Achar que “algum” quer dizer “alguns, mas não todos”.",
+            "Esquecer que “nem todo” é o mesmo que “algum não”."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Uma exceção derruba o “todo”."
+          ],
+          "bullets": [
+            "Todo A é B ↔ negação: algum A não é B.",
+            "Algum A é B ↔ negação: nenhum A é B.",
+            "Nenhum A é B ↔ negação: algum A é B.",
+            "“Algum” é pelo menos um.",
+            "“Nem todo” é “algum não”.",
+            "“Todo A é B” é “se é A, é B”."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Todo",
+          "statement": "Qual é a negação de “Todo aluno passou”?",
+          "options": [
+            "Nenhum aluno passou.",
+            "Algum aluno não passou.",
+            "Todo aluno reprovou.",
+            "Algum aluno passou.",
+            "Nenhum aluno reprovou."
+          ],
+          "correct_index": 1,
+          "explanation": "Basta um aluno que não passou.",
+          "pitfall": "“Nenhum passou” exagera a negação."
+        },
+        {
+          "topic": "Algum",
+          "statement": "Qual é a negação de “Algum carro é elétrico”?",
+          "options": [
+            "Algum carro não é elétrico.",
+            "Nenhum carro é elétrico.",
+            "Todo carro é elétrico.",
+            "Todo carro é a gasolina.",
+            "Algum carro é a gasolina."
+          ],
+          "correct_index": 1,
+          "explanation": "Negar que existe pelo menos um é dizer que não existe nenhum.",
+          "pitfall": "“Algum não é” convive com “algum é”."
+        },
+        {
+          "topic": "Nenhum",
+          "statement": "Qual é a negação de “Nenhum peixe voa”?",
+          "options": [
+            "Todo peixe voa.",
+            "Algum peixe voa.",
+            "Nenhum peixe nada.",
+            "Algum peixe não voa.",
+            "Todo peixe nada."
+          ],
+          "correct_index": 1,
+          "explanation": "Um peixe que voa já derruba o “nenhum”.",
+          "pitfall": "“Todo peixe voa” é mais do que o necessário."
+        },
+        {
+          "topic": "Nem todo",
+          "statement": "“Nem todo político é honesto” é o mesmo que:",
+          "options": [
+            "Nenhum político é honesto.",
+            "Algum político não é honesto.",
+            "Todo político é desonesto.",
+            "Algum político é honesto.",
+            "Todo político é honesto."
+          ],
+          "correct_index": 1,
+          "explanation": "“Nem todo” nega o “todo”: existe pelo menos um que não é.",
+          "pitfall": "Não diz que ninguém é honesto."
+        },
+        {
+          "topic": "Sentido",
+          "statement": "Na lógica, “algum A é B” é verdadeira quando todos os A são B?",
+          "options": [
+            "não, porque algum quer dizer só alguns",
+            "sim, porque algum quer dizer pelo menos um",
+            "só se houver um A",
+            "nunca",
+            "depende da prova"
+          ],
+          "correct_index": 1,
+          "explanation": "Se todos são, então pelo menos um é.",
+          "pitfall": "O uso do dia a dia sugere “só alguns”, mas a lógica não."
+        },
+        {
+          "topic": "Condicional",
+          "statement": "“Todo quadrado é retângulo” é o mesmo que:",
+          "options": [
+            "Se é retângulo, é quadrado.",
+            "Se é quadrado, é retângulo.",
+            "Algum retângulo é quadrado e mais nada.",
+            "Nenhum quadrado é retângulo.",
+            "É quadrado e retângulo."
+          ],
+          "correct_index": 1,
+          "explanation": "“Todo A é B” é “se é A, é B”.",
+          "pitfall": "Trocar a ordem não diz o mesmo."
+        },
+        {
+          "topic": "Algum não",
+          "statement": "Qual é a negação de “Algum gato não é preto”?",
+          "options": [
+            "Nenhum gato é preto.",
+            "Todo gato é preto.",
+            "Algum gato é preto.",
+            "Nenhum gato é branco.",
+            "Todo gato é branco."
+          ],
+          "correct_index": 1,
+          "explanation": "É o par do “todo”: se não existe gato não preto, todos são pretos.",
+          "pitfall": "“Algum gato é preto” convive com a frase original."
+        },
+        {
+          "topic": "Negações",
+          "format": "match",
+          "statement": "Ligue cada frase à sua negação.",
+          "pairs": [
+            {
+              "left": "Todo A é B.",
+              "right": "Algum A não é B."
+            },
+            {
+              "left": "Algum A é B.",
+              "right": "Nenhum A é B."
+            },
+            {
+              "left": "Nenhum A é B.",
+              "right": "Algum A é B."
+            },
+            {
+              "left": "Algum A não é B.",
+              "right": "Todo A é B."
+            }
+          ],
+          "explanation": "Os quatro pares da gangorra.",
+          "pitfall": "“Todo” nunca nega com “nenhum”."
+        }
+      ]
+    },
+    {
+      "slug": "argumento-valido",
+      "title": "Argumento válido: modus ponens e modus tollens",
+      "module": "Argumentos",
+      "summary": "Um argumento é válido quando a conclusão é obrigada a ser verdadeira sempre que as premissas forem. Validade é questão de forma, e não de assunto. Quatro formas válidas resolvem a maior parte das questões.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O detetive",
+          "body": [
+            "Um detetive junta pistas e chega a uma conclusão. Se as pistas estiverem certas e o raciocínio for bom, a conclusão não tem como estar errada.",
+            "A lógica estuda justamente isso: quando uma conclusão é obrigada a sair das pistas."
+          ],
+          "terms": [
+            {
+              "word": "Proposição",
+              "meaning": "uma frase que afirma alguma coisa e pode ser julgada verdadeira ou falsa, mas não as duas ao mesmo tempo."
+            },
+            {
+              "word": "Valor lógico",
+              "meaning": "o resultado do julgamento de uma proposição: verdadeiro (V) ou falso (F)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Premissas e conclusão",
+          "body": [
+            "As afirmações de partida são as premissas. O que se tira delas é a conclusão, que costuma vir depois de “logo” ou “portanto”."
+          ],
+          "terms": [
+            {
+              "word": "Premissa",
+              "meaning": "cada afirmação dada como ponto de partida de um raciocínio."
+            }
+          ],
+          "example": {
+            "label": "Um argumento",
+            "lines": [
+              "Premissa 1: Se chove, a rua molha.",
+              "Premissa 2: Choveu.",
+              "Conclusão: Logo, a rua molhou."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Válido é a forma",
+          "body": [
+            "Um argumento é válido quando, se as premissas forem verdadeiras, a conclusão é obrigatoriamente verdadeira. Não importa se as premissas são verdadeiras de fato.",
+            "“Todo peixe voa. O tubarão é peixe. Logo, o tubarão voa.” É válido, com uma premissa falsa e uma conclusão falsa."
+          ],
+          "terms": [
+            {
+              "word": "Argumento válido",
+              "meaning": "um raciocínio em que, se as premissas forem verdadeiras, a conclusão é obrigatoriamente verdadeira. Se não for assim, ele é inválido."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Modus ponens",
+          "body": [
+            "Se p → q é verdadeira e p é verdadeira, então q é verdadeira. É afirmar o antecedente.",
+            "“Se estudo, passo. Estudei. Logo, passei.”"
+          ],
+          "terms": [
+            {
+              "word": "Modus ponens",
+              "meaning": "a regra: se p → q é verdadeira e p é verdadeira, então q é verdadeira."
+            },
+            {
+              "word": "Condicional",
+              "meaning": "a ligação “se p, então q”. Escreve-se p → q, e só é falsa quando p é verdadeira e q é falsa."
+            },
+            {
+              "word": "Antecedente",
+              "meaning": "a parte que vem depois do “se”: o p de p → q."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Modus tollens",
+          "body": [
+            "Se p → q é verdadeira e q é falsa, então p é falsa. É negar o consequente.",
+            "“Se estudo, passo. Não passei. Logo, não estudei.” Vem direto da contrapositiva."
+          ],
+          "terms": [
+            {
+              "word": "Modus tollens",
+              "meaning": "a regra: se p → q é verdadeira e q é falsa, então p é falsa."
+            },
+            {
+              "word": "Consequente",
+              "meaning": "a parte que vem depois do “então”: o q de p → q."
+            },
+            {
+              "word": "Contrapositiva",
+              "meaning": "trocar a ordem da condicional e negar as duas partes. A contrapositiva de p → q é ¬q → ¬p."
+            },
+            {
+              "word": "Negação",
+              "meaning": "a operação que troca o valor lógico: o V vira F, e o F vira V. Escreve-se ¬p ou ~p."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As quatro formas válidas",
+          "body": [
+            "Além das duas, há mais duas regras que aparecem sempre."
+          ],
+          "terms": [
+            {
+              "word": "Silogismo",
+              "meaning": "um raciocínio com duas premissas e uma conclusão."
+            },
+            {
+              "word": "Disjunção",
+              "meaning": "ligar duas proposições com “ou”. Escreve-se p ∨ q, e só é falsa quando as duas são falsas."
+            }
+          ],
+          "table": {
+            "label": "Formas válidas",
+            "headers": [
+              "Nome",
+              "Premissas",
+              "Conclusão"
+            ],
+            "rows": [
+              [
+                "modus ponens",
+                "p → q; p",
+                "q"
+              ],
+              [
+                "modus tollens",
+                "p → q; ¬q",
+                "¬p"
+              ],
+              [
+                "silogismo hipotético",
+                "p → q; q → r",
+                "p → r"
+              ],
+              [
+                "silogismo disjuntivo",
+                "p ∨ q; ¬p",
+                "q"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Como testar a validade",
+          "body": [
+            "Tente deixar todas as premissas verdadeiras e a conclusão falsa ao mesmo tempo. Se não houver jeito, o argumento é válido.",
+            "Se houver um jeito, esse caso é o contraexemplo, e o argumento é inválido."
+          ],
+          "terms": [
+            {
+              "word": "Contraexemplo",
+              "meaning": "um caso em que as premissas são verdadeiras e a conclusão é falsa. Um só basta para derrubar o argumento."
+            }
+          ],
+          "example": {
+            "label": "Testando o modus ponens",
+            "lines": [
+              "Conclusão falsa: q = F",
+              "Premissa 2 verdadeira: p = V",
+              "Premissa 1: V → F dá F",
+              "Não dá para ter as premissas V com a conclusão F: é válido"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Cai um argumento em português e a pergunta: é válido? Reconheça a forma antes de pensar no assunto.",
+            "Um item clássico diz que um argumento é inválido porque a conclusão é falsa. Está errado: validade é forma."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a validade engana."
+          ],
+          "bullets": [
+            "Julgar a validade pelo assunto, e não pela forma.",
+            "Achar que conclusão falsa torna o argumento inválido.",
+            "Achar que conclusão verdadeira torna o argumento válido.",
+            "Confundir modus tollens com negar o antecedente."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A forma obriga a conclusão."
+          ],
+          "bullets": [
+            "Premissas levam à conclusão.",
+            "Válido: premissas V obrigam conclusão V.",
+            "Modus ponens: p → q; p; logo q.",
+            "Modus tollens: p → q; ¬q; logo ¬p.",
+            "Silogismos hipotético e disjuntivo.",
+            "Teste: premissas V e conclusão F dá para acontecer?"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Ponens",
+          "statement": "“Se é domingo, descanso. Hoje é domingo. Logo, descanso.” Qual regra foi usada?",
+          "options": [
+            "modus tollens",
+            "modus ponens",
+            "silogismo disjuntivo",
+            "negar o antecedente",
+            "afirmar o consequente"
+          ],
+          "correct_index": 1,
+          "explanation": "Afirma o antecedente e conclui o consequente.",
+          "pitfall": "Modus tollens parte da negação do consequente."
+        },
+        {
+          "topic": "Tollens",
+          "statement": "“Se estudo, passo. Não passei.” O que se conclui?",
+          "options": [
+            "Passei.",
+            "Não estudei.",
+            "Estudei.",
+            "Nada.",
+            "Vou passar."
+          ],
+          "correct_index": 1,
+          "explanation": "Modus tollens: nega o consequente, nega o antecedente.",
+          "pitfall": "Concluir “estudei” não sai das premissas."
+        },
+        {
+          "topic": "Forma",
+          "statement": "“Todo peixe voa. O tubarão é peixe. Logo, o tubarão voa.” O argumento é:",
+          "options": [
+            "inválido, porque tubarão não voa",
+            "válido, apesar da premissa falsa",
+            "inválido, porque a conclusão é falsa",
+            "não é argumento",
+            "válido só no mar"
+          ],
+          "correct_index": 1,
+          "explanation": "Se as premissas fossem verdadeiras, a conclusão seria obrigatória.",
+          "pitfall": "Conclusão falsa não torna o argumento inválido."
+        },
+        {
+          "topic": "Disjuntivo",
+          "statement": "“Vou de ônibus ou de metrô. Não vou de ônibus.” O que se conclui?",
+          "options": [
+            "Não vou de metrô.",
+            "Vou de metrô.",
+            "Vou a pé.",
+            "Nada.",
+            "Vou de ônibus."
+          ],
+          "correct_index": 1,
+          "explanation": "Silogismo disjuntivo: sobra a outra opção.",
+          "pitfall": "Uma das duas precisa valer."
+        },
+        {
+          "topic": "Hipotético",
+          "statement": "Das premissas “se chove, a rua molha” e “se a rua molha, o trânsito para” conclui-se:",
+          "options": [
+            "Se o trânsito para, chove.",
+            "Se chove, o trânsito para.",
+            "Chove.",
+            "A rua molha.",
+            "Nada."
+          ],
+          "correct_index": 1,
+          "explanation": "Silogismo hipotético: encadeia as condicionais.",
+          "pitfall": "A primeira alternativa inverte a ordem."
+        },
+        {
+          "topic": "Teste",
+          "statement": "Como se mostra que um argumento é inválido?",
+          "options": [
+            "achando uma premissa falsa",
+            "achando um caso com premissas verdadeiras e conclusão falsa",
+            "mostrando que a conclusão é verdadeira",
+            "contando as premissas",
+            "pelo assunto"
+          ],
+          "correct_index": 1,
+          "explanation": "Um contraexemplo derruba a validade.",
+          "pitfall": "Premissa falsa não diz nada sobre a forma."
+        },
+        {
+          "topic": "Verdade",
+          "statement": "Um argumento tem conclusão verdadeira. Ele é necessariamente válido?",
+          "options": [
+            "sim",
+            "não",
+            "só se tiver duas premissas",
+            "só com modus ponens",
+            "sempre, se a conclusão for curta"
+          ],
+          "correct_index": 1,
+          "explanation": "A conclusão pode ser verdadeira por acaso, sem sair das premissas.",
+          "pitfall": "Validade é a ligação entre premissas e conclusão."
+        },
+        {
+          "topic": "Regras",
+          "format": "match",
+          "statement": "Ligue cada regra à sua forma.",
+          "pairs": [
+            {
+              "left": "modus ponens",
+              "right": "p → q; p; logo q"
+            },
+            {
+              "left": "modus tollens",
+              "right": "p → q; ¬q; logo ¬p"
+            },
+            {
+              "left": "silogismo hipotético",
+              "right": "p → q; q → r; logo p → r"
+            },
+            {
+              "left": "silogismo disjuntivo",
+              "right": "p ∨ q; ¬p; logo q"
+            }
+          ],
+          "explanation": "As quatro formas válidas de uma vez.",
+          "pitfall": "Tollens começa pela negação do consequente."
+        }
+      ]
+    },
+    {
+      "slug": "falacias-formais",
+      "title": "Falácias: afirmar o consequente e negar o antecedente",
+      "module": "Argumentos",
+      "summary": "Duas formas parecem modus ponens e modus tollens, mas são inválidas: afirmar o consequente e negar o antecedente. Elas enganam porque a conclusão às vezes é verdadeira, só que não é obrigada a ser.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A rua molhada",
+          "body": [
+            "Você vê a rua molhada e conclui: choveu. Mas alguém pode ter lavado a calçada.",
+            "A chuva molha a rua, mas a rua molhada não prova que choveu."
+          ],
+          "terms": [
+            {
+              "word": "Proposição",
+              "meaning": "uma frase que afirma alguma coisa e pode ser julgada verdadeira ou falsa, mas não as duas ao mesmo tempo."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/logica/falacia.svg",
+            "alt": "Um círculo grande, “a rua está molhada”, com um círculo menor dentro, “choveu”. Um ponto fica dentro do círculo grande e fora do pequeno, com a etiqueta “lavaram a rua”. Ele mostra que a rua pode estar molhada sem ter chovido.",
+            "caption": "A rua pode estar molhada sem ter chovido."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Falácia",
+          "body": [
+            "Uma falácia é um raciocínio que parece bom, mas é inválido. Nesta lição entram as duas que imitam as formas válidas da condicional."
+          ],
+          "terms": [
+            {
+              "word": "Falácia",
+              "meaning": "um raciocínio que parece bom, mas é inválido."
+            },
+            {
+              "word": "Argumento válido",
+              "meaning": "um raciocínio em que, se as premissas forem verdadeiras, a conclusão é obrigatoriamente verdadeira. Se não for assim, ele é inválido."
+            },
+            {
+              "word": "Premissa",
+              "meaning": "cada afirmação dada como ponto de partida de um raciocínio."
+            },
+            {
+              "word": "Condicional",
+              "meaning": "a ligação “se p, então q”. Escreve-se p → q, e só é falsa quando p é verdadeira e q é falsa."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Afirmar o consequente",
+          "body": [
+            "p → q e q, logo p. É inválido. “Se chove, a rua molha. A rua molhou. Logo, choveu.”",
+            "O consequente pode ser verdadeiro por outro motivo, como a calçada lavada."
+          ],
+          "terms": [
+            {
+              "word": "Consequente",
+              "meaning": "a parte que vem depois do “então”: o q de p → q."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Negar o antecedente",
+          "body": [
+            "p → q e ¬p, logo ¬q. Também é inválido. “Se chove, a rua molha. Não choveu. Logo, a rua não molhou.”",
+            "A condicional não diz nada sobre o que acontece quando não chove."
+          ],
+          "terms": [
+            {
+              "word": "Antecedente",
+              "meaning": "a parte que vem depois do “se”: o p de p → q."
+            },
+            {
+              "word": "Negação",
+              "meaning": "a operação que troca o valor lógico: o V vira F, e o F vira V. Escreve-se ¬p ou ~p."
+            },
+            {
+              "word": "Valor lógico",
+              "meaning": "o resultado do julgamento de uma proposição: verdadeiro (V) ou falso (F)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Lado a lado com as válidas",
+          "body": [
+            "O jeito seguro de reconhecer: nas válidas, afirma-se o antecedente ou nega-se o consequente. Nas falácias, faz-se o contrário."
+          ],
+          "terms": [
+            {
+              "word": "Modus ponens",
+              "meaning": "a regra: se p → q é verdadeira e p é verdadeira, então q é verdadeira."
+            },
+            {
+              "word": "Modus tollens",
+              "meaning": "a regra: se p → q é verdadeira e q é falsa, então p é falsa."
+            }
+          ],
+          "table": {
+            "label": "Com a premissa p → q",
+            "headers": [
+              "Segunda premissa",
+              "Conclusão",
+              "Nome",
+              "Válido?"
+            ],
+            "rows": [
+              [
+                "p",
+                "q",
+                "modus ponens",
+                "sim"
+              ],
+              [
+                "¬q",
+                "¬p",
+                "modus tollens",
+                "sim"
+              ],
+              [
+                "q",
+                "p",
+                "afirmar o consequente",
+                "não"
+              ],
+              [
+                "¬p",
+                "¬q",
+                "negar o antecedente",
+                "não"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O contraexemplo",
+          "body": [
+            "Para mostrar que uma forma é inválida, basta um caso com premissas verdadeiras e conclusão falsa.",
+            "Na rua molhada: é verdade que chuva molha a rua, e a rua está molhada. Mas não choveu: alguém lavou. As premissas valem e a conclusão falha."
+          ],
+          "example": {
+            "label": "Contraexemplo de afirmar o consequente",
+            "lines": [
+              "p → q: Se chove, a rua molha. (V)",
+              "q: A rua está molhada. (V)",
+              "p: Choveu. (F, lavaram a rua)",
+              "Premissas V e conclusão F: a forma é inválida"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Falácias do dia a dia",
+          "body": [
+            "Fora da lógica formal, há falácias de conteúdo que aparecem em discussões. Vale reconhecer as mais comuns."
+          ],
+          "bullets": [
+            "Ataque à pessoa: criticar quem fala, e não o que foi dito.",
+            "Apelo à maioria: “todo mundo acha, então é verdade”.",
+            "Falso dilema: oferecer só duas opções quando existem outras.",
+            "Espantalho: distorcer a ideia do outro para rebater mais fácil."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Cai um argumento com a forma de afirmar o consequente e a pergunta: é válido? Muita gente marca que sim, porque a conclusão parece razoável.",
+            "Olhe só a forma: o que foi afirmado ou negado na segunda premissa?"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde as falácias enganam."
+          ],
+          "bullets": [
+            "Aceitar afirmar o consequente porque a conclusão parece plausível.",
+            "Confundir negar o antecedente com modus tollens.",
+            "Achar que falácia sempre tem conclusão falsa.",
+            "Esquecer que um contraexemplo basta."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Parecem válidas, e não são."
+          ],
+          "bullets": [
+            "Afirmar o consequente: p → q; q; logo p. Inválido.",
+            "Negar o antecedente: p → q; ¬p; logo ¬q. Inválido.",
+            "Válidas: afirmar o antecedente ou negar o consequente.",
+            "Um contraexemplo derruba a forma.",
+            "A conclusão de uma falácia pode até ser verdadeira.",
+            "Falácias do dia a dia: ataque, maioria, falso dilema e espantalho."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Rua",
+          "statement": "“Se chove, a rua molha. A rua molhou. Logo, choveu.” O argumento é:",
+          "options": [
+            "válido, por modus ponens",
+            "inválido: afirma o consequente",
+            "válido, por modus tollens",
+            "inválido: nega o antecedente",
+            "uma tautologia"
+          ],
+          "correct_index": 1,
+          "explanation": "A rua pode ter molhado por outro motivo.",
+          "pitfall": "Modus ponens afirma o antecedente, e não o consequente."
+        },
+        {
+          "topic": "Não chove",
+          "statement": "“Se chove, a rua molha. Não choveu. Logo, a rua não molhou.” O argumento é:",
+          "options": [
+            "válido",
+            "inválido: nega o antecedente",
+            "inválido: afirma o consequente",
+            "modus tollens",
+            "modus ponens"
+          ],
+          "correct_index": 1,
+          "explanation": "A condicional não fala do que acontece sem chuva.",
+          "pitfall": "Modus tollens nega o consequente, e não o antecedente."
+        },
+        {
+          "topic": "Válida",
+          "statement": "Com a premissa p → q, qual segunda premissa leva a uma conclusão válida sobre p?",
+          "options": [
+            "q",
+            "¬q",
+            "p ∨ q",
+            "¬p",
+            "nenhuma"
+          ],
+          "correct_index": 1,
+          "explanation": "Negar o consequente permite negar o antecedente: modus tollens.",
+          "pitfall": "Com q, só se cairia na falácia."
+        },
+        {
+          "topic": "Falácia",
+          "statement": "O que é uma falácia?",
+          "options": [
+            "um argumento com conclusão falsa",
+            "um raciocínio que parece bom, mas é inválido",
+            "uma premissa verdadeira",
+            "uma tautologia",
+            "uma negação"
+          ],
+          "correct_index": 1,
+          "explanation": "O problema é a forma, e não a verdade da conclusão.",
+          "pitfall": "A conclusão de uma falácia pode ser verdadeira."
+        },
+        {
+          "topic": "Médico",
+          "statement": "“Se é médico, estudou muito. Ana estudou muito. Logo, Ana é médica.” O argumento é:",
+          "options": [
+            "válido",
+            "inválido: afirma o consequente",
+            "inválido: nega o antecedente",
+            "modus tollens",
+            "silogismo disjuntivo"
+          ],
+          "correct_index": 1,
+          "explanation": "Muita gente estuda muito sem ser médica.",
+          "pitfall": "A conclusão não é obrigada a sair das premissas."
+        },
+        {
+          "topic": "Contraexemplo",
+          "statement": "O que basta para mostrar que uma forma de argumento é inválida?",
+          "options": [
+            "mil exemplos",
+            "um caso com premissas verdadeiras e conclusão falsa",
+            "uma premissa falsa",
+            "uma conclusão verdadeira",
+            "um diagrama bonito"
+          ],
+          "correct_index": 1,
+          "explanation": "Um contraexemplo derruba a forma.",
+          "pitfall": "Premissa falsa não diz nada sobre a forma."
+        },
+        {
+          "topic": "Dia a dia",
+          "statement": "“Você não pode opinar sobre economia, você nem terminou a faculdade.” É uma falácia de:",
+          "options": [
+            "apelo à maioria",
+            "ataque à pessoa",
+            "falso dilema",
+            "espantalho",
+            "modus tollens"
+          ],
+          "correct_index": 1,
+          "explanation": "Critica quem fala, e não o argumento.",
+          "pitfall": "Apelo à maioria usa o “todo mundo acha”."
+        },
+        {
+          "topic": "Formas",
+          "format": "match",
+          "statement": "Com a premissa p → q, ligue cada segunda premissa ao resultado.",
+          "pairs": [
+            {
+              "left": "p, logo q",
+              "right": "modus ponens, válido"
+            },
+            {
+              "left": "¬q, logo ¬p",
+              "right": "modus tollens, válido"
+            },
+            {
+              "left": "q, logo p",
+              "right": "afirmar o consequente, inválido"
+            },
+            {
+              "left": "¬p, logo ¬q",
+              "right": "negar o antecedente, inválido"
+            }
+          ],
+          "explanation": "Duas válidas e as duas imitações.",
+          "pitfall": "As falácias fazem o contrário das válidas."
+        }
+      ]
+    },
+    {
+      "slug": "silogismos-com-diagramas",
+      "title": "Silogismos com diagramas de Venn",
+      "module": "Argumentos",
+      "summary": "Argumentos com “todo”, “algum” e “nenhum” se resolvem desenhando círculos. A conclusão só é válida se aparecer em todos os desenhos possíveis das premissas.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Caixas dentro de caixas",
+          "body": [
+            "Uma caixa de gatos dentro de uma caixa de mamíferos, dentro de uma caixa de animais. Se a Mimi está na caixa dos gatos, também está nas outras duas.",
+            "Os diagramas de Venn são essas caixas desenhadas como círculos."
+          ],
+          "terms": [
+            {
+              "word": "Diagrama de Venn",
+              "meaning": "um desenho com círculos, em que cada círculo é um grupo de coisas."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/logica/silogismo.svg",
+            "alt": "Três círculos, um dentro do outro. O maior é “animais”, o do meio é “mamíferos” e o menor é “gatos”. Um ponto chamado Mimi está dentro do círculo dos gatos, e por isso também está dentro dos mamíferos e dos animais.",
+            "caption": "Gatos dentro de mamíferos, dentro de animais: a Mimi está nos três."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Todo com todo",
+          "body": [
+            "“Todo A é B” e “todo B é C” levam a “todo A é C”. O círculo A fica dentro de B, e B dentro de C.",
+            "“Todo gato é mamífero. Todo mamífero é animal. Logo, todo gato é animal.” É válido."
+          ],
+          "terms": [
+            {
+              "word": "Quantificador",
+              "meaning": "a palavra que diz para quantos vale a afirmação: “todo”, “algum” ou “nenhum”."
+            },
+            {
+              "word": "Argumento válido",
+              "meaning": "um raciocínio em que, se as premissas forem verdadeiras, a conclusão é obrigatoriamente verdadeira. Se não for assim, ele é inválido."
+            },
+            {
+              "word": "Premissa",
+              "meaning": "cada afirmação dada como ponto de partida de um raciocínio."
+            },
+            {
+              "word": "Silogismo",
+              "meaning": "um raciocínio com duas premissas e uma conclusão."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O método dos círculos",
+          "body": [
+            "Desenhe as premissas de todos os jeitos que elas permitem. Se a conclusão aparecer em todos os desenhos, o argumento é válido. Se falhar em um, é inválido."
+          ],
+          "example": {
+            "label": "Resolvendo com círculos",
+            "lines": [
+              "Desenhe a primeira premissa",
+              "Acrescente a segunda, de todos os jeitos possíveis",
+              "Olhe se a conclusão vale em todos os desenhos",
+              "Valeu em todos: válido. Falhou em um: inválido"
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "Proposição",
+              "meaning": "uma frase que afirma alguma coisa e pode ser julgada verdadeira ou falsa, mas não as duas ao mesmo tempo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Com “algum”",
+          "body": [
+            "“Algum A é B” e “todo B é C” levam a “algum A é C”. A parte comum de A e B está dentro de C.",
+            "Mas “todo A é B” e “algum B é C” não levam a nada sobre A e C. O pedaço de B que é C pode ficar fora de A."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Com “nenhum”",
+          "body": [
+            "“Nenhum A é B” e “todo C é A” levam a “nenhum C é B”. C está dentro de A, e A não toca em B.",
+            "“Nenhum réptil é mamífero. Toda cobra é réptil. Logo, nenhuma cobra é mamífero.”"
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O erro do meio compartilhado",
+          "body": [
+            "“Todo gato é mamífero. Todo cachorro é mamífero. Logo, todo gato é cachorro.” É inválido.",
+            "Gatos e cachorros estão dentro de mamíferos, mas podem ser círculos separados lá dentro. Estar no mesmo grupo não faz um ser o outro."
+          ],
+          "terms": [
+            {
+              "word": "Falácia",
+              "meaning": "um raciocínio que parece bom, mas é inválido."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Válidos e inválidos lado a lado",
+          "body": [
+            "Os padrões que mais caem, com o resultado de cada um."
+          ],
+          "table": {
+            "label": "Silogismos comuns",
+            "headers": [
+              "Premissas",
+              "Conclusão",
+              "Válido?"
+            ],
+            "rows": [
+              [
+                "Todo A é B; todo B é C",
+                "todo A é C",
+                "sim"
+              ],
+              [
+                "Algum A é B; todo B é C",
+                "algum A é C",
+                "sim"
+              ],
+              [
+                "Nenhum A é B; todo C é A",
+                "nenhum C é B",
+                "sim"
+              ],
+              [
+                "Todo A é B; todo C é B",
+                "todo A é C",
+                "não"
+              ],
+              [
+                "Todo A é B; algum B é C",
+                "algum A é C",
+                "não"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Cai um silogismo com palavras do dia a dia e a pergunta: a conclusão decorre das premissas? Troque as palavras por A, B e C e desenhe.",
+            "Não use o que você sabe do mundo: use só as premissas."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde os círculos enganam."
+          ],
+          "bullets": [
+            "Usar o que se sabe do mundo, e não só as premissas.",
+            "Desenhar um jeito só e achar que vale para todos.",
+            "Aceitar “todo A é B; todo C é B; logo todo A é C”.",
+            "Esquecer que “algum” quer dizer pelo menos um."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Desenhe antes de concluir."
+          ],
+          "bullets": [
+            "Cada grupo vira um círculo.",
+            "Todo: círculo dentro de círculo.",
+            "Algum: círculos que se cruzam.",
+            "Nenhum: círculos separados.",
+            "Válido só se valer em todos os desenhos.",
+            "Estar no mesmo grupo grande não faz um ser o outro."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Todo",
+          "statement": "“Todo A é B. Todo B é C.” O que se conclui?",
+          "options": [
+            "Todo C é A.",
+            "Todo A é C.",
+            "Nenhum A é C.",
+            "Algum C não é B.",
+            "Nada."
+          ],
+          "correct_index": 1,
+          "explanation": "A dentro de B, B dentro de C: A dentro de C.",
+          "pitfall": "Todo C é A inverte os círculos."
+        },
+        {
+          "topic": "Mamíferos",
+          "statement": "“Todo gato é mamífero. Todo cachorro é mamífero. Logo, todo gato é cachorro.” É:",
+          "options": [
+            "válido",
+            "inválido",
+            "tautologia",
+            "modus ponens",
+            "válido só para gatos"
+          ],
+          "correct_index": 1,
+          "explanation": "Os dois círculos podem estar separados dentro de mamíferos.",
+          "pitfall": "Estar no mesmo grupo grande não faz um ser o outro."
+        },
+        {
+          "topic": "Nenhum",
+          "statement": "“Nenhum réptil é mamífero. Toda cobra é réptil.” O que se conclui?",
+          "options": [
+            "Toda cobra é mamífero.",
+            "Nenhuma cobra é mamífero.",
+            "Algum mamífero é cobra.",
+            "Nada.",
+            "Todo réptil é cobra."
+          ],
+          "correct_index": 1,
+          "explanation": "Cobra dentro de réptil, e réptil longe de mamífero.",
+          "pitfall": "A ordem das premissas não muda o desenho."
+        },
+        {
+          "topic": "Algum",
+          "statement": "“Algum aluno é atleta. Todo atleta é disciplinado.” O que se conclui?",
+          "options": [
+            "Todo aluno é disciplinado.",
+            "Algum aluno é disciplinado.",
+            "Nenhum aluno é disciplinado.",
+            "Todo disciplinado é aluno.",
+            "Nada."
+          ],
+          "correct_index": 1,
+          "explanation": "O aluno que é atleta está dentro de disciplinados.",
+          "pitfall": "Não dá para falar de todos os alunos."
+        },
+        {
+          "topic": "Inválido",
+          "statement": "“Todo A é B. Algum B é C.” Dá para concluir “algum A é C”?",
+          "options": [
+            "sim, sempre",
+            "não, porque o pedaço de B que é C pode ficar fora de A",
+            "sim, se A for grande",
+            "só com nenhum",
+            "sim, por modus ponens"
+          ],
+          "correct_index": 1,
+          "explanation": "Existe um desenho em que A e C não se tocam.",
+          "pitfall": "Um desenho contrário basta para derrubar."
+        },
+        {
+          "topic": "Mundo",
+          "statement": "Num silogismo de prova, o que se deve usar para julgar a conclusão?",
+          "options": [
+            "o que se sabe do mundo",
+            "só as premissas",
+            "a intuição",
+            "a opinião da banca",
+            "o assunto da frase"
+          ],
+          "correct_index": 1,
+          "explanation": "A validade depende só da forma das premissas.",
+          "pitfall": "Saber do mundo pode fazer aceitar uma conclusão inválida."
+        },
+        {
+          "topic": "Método",
+          "statement": "Quando uma conclusão de silogismo é válida?",
+          "options": [
+            "quando vale em um desenho",
+            "quando vale em todos os desenhos possíveis das premissas",
+            "quando parece verdade",
+            "quando tem “todo”",
+            "nunca"
+          ],
+          "correct_index": 1,
+          "explanation": "Um desenho em que falha já a derruba.",
+          "pitfall": "Um desenho só pode ser um caso de sorte."
+        },
+        {
+          "topic": "Desenhos",
+          "format": "match",
+          "statement": "Ligue cada frase ao seu desenho.",
+          "pairs": [
+            {
+              "left": "Todo A é B.",
+              "right": "A inteiro dentro de B"
+            },
+            {
+              "left": "Algum A é B.",
+              "right": "A e B se cruzam"
+            },
+            {
+              "left": "Nenhum A é B.",
+              "right": "A e B separados"
+            },
+            {
+              "left": "A Mimi é gata.",
+              "right": "um ponto dentro de gatos"
+            }
+          ],
+          "explanation": "Cada quantificador tem o seu jeito de desenhar.",
+          "pitfall": "Nenhum é o único com círculos sem contato."
+        }
+      ]
+    },
+    {
+      "slug": "logica-no-codigo",
+      "title": "Lógica no código: and, or e not",
+      "module": "Lógica no código",
+      "summary": "Todo if de um programa é uma proposição composta. O Python usa and, or e not com as mesmas tabelas desta matéria. Ele para de avaliar quando o resultado já está decidido, e De Morgan ajuda a simplificar condições.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O porteiro do prédio",
+          "body": [
+            "O porteiro deixa entrar quem tem crachá e está na lista, ou quem é morador. Ele aplica conectivos o dia inteiro, sem saber o nome deles.",
+            "Um programa decide do mesmo jeito, só que escrito."
+          ],
+          "terms": [
+            {
+              "word": "Conectivo",
+              "meaning": "a palavra que liga proposições. São conectivos o “e”, o “ou”, o “se… então” e o “se e somente se”; o “não” também conta."
+            },
+            {
+              "word": "Proposição",
+              "meaning": "uma frase que afirma alguma coisa e pode ser julgada verdadeira ou falsa, mas não as duas ao mesmo tempo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Verdadeiro e falso no Python",
+          "body": [
+            "O Python tem um tipo só para isso: o booleano, com os valores True e False. Toda comparação, como idade >= 18, dá um booleano.",
+            "É o valor lógico da matéria, com outro nome."
+          ],
+          "terms": [
+            {
+              "word": "Booleano",
+              "meaning": "o tipo de valor que só pode ser True ou False: o verdadeiro e o falso do Python."
+            },
+            {
+              "word": "Valor lógico",
+              "meaning": "o resultado do julgamento de uma proposição: verdadeiro (V) ou falso (F)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os conectivos no código",
+          "body": [
+            "Os três conectivos básicos existem no Python com nomes em inglês. As tabelas são as mesmas da lógica."
+          ],
+          "terms": [
+            {
+              "word": "Negação",
+              "meaning": "a operação que troca o valor lógico: o V vira F, e o F vira V. Escreve-se ¬p ou ~p."
+            },
+            {
+              "word": "Conjunção",
+              "meaning": "ligar duas proposições com “e”. Escreve-se p ∧ q, e só é verdadeira quando as duas são."
+            },
+            {
+              "word": "Disjunção",
+              "meaning": "ligar duas proposições com “ou”. Escreve-se p ∨ q, e só é falsa quando as duas são falsas."
+            }
+          ],
+          "table": {
+            "label": "Da lógica para o Python",
+            "headers": [
+              "Lógica",
+              "Python",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "¬p",
+                "not p",
+                "not chovendo"
+              ],
+              [
+                "p ∧ q",
+                "p and q",
+                "tem_cracha and na_lista"
+              ],
+              [
+                "p ∨ q",
+                "p or q",
+                "morador or convidado"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Em Python",
+          "body": [
+            "Três conectivos e uma proteção contra erro."
+          ],
+          "code": {
+            "label": "and, or e not",
+            "text": "idade, tem_convite = 17, True\nprint(idade >= 18 and tem_convite)\nprint(idade >= 18 or tem_convite)\nprint(not (idade >= 18))\nlista = []\nprint(len(lista) > 0 and lista[0] == \"x\")",
+            "notes": [
+              "Uma pessoa de 17 anos, com convite.",
+              "Mostra False: o and exige as duas coisas, e a idade falha.",
+              "Mostra True: o or se contenta com o convite.",
+              "Mostra True: not troca o False da comparação.",
+              "Uma lista vazia.",
+              "Mostra False sem erro: o and parou antes de olhar lista[0], que não existe."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Curto-circuito",
+          "body": [
+            "No and, se a primeira parte é False, o Python nem olha a segunda: o resultado já é False. No or, se a primeira é True, o resultado já é True.",
+            "Por isso a ordem importa. Ponha antes o teste que protege o seguinte."
+          ],
+          "terms": [
+            {
+              "word": "Curto-circuito",
+              "meaning": "quando o Python para de avaliar uma expressão lógica porque o resultado já está decidido."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "De Morgan no if",
+          "body": [
+            "As leis de De Morgan simplificam condições. not (a and b) é o mesmo que not a or not b.",
+            "“Bloqueie se não tiver crachá ou não estiver na lista” é a negação de “libere se tiver crachá e estiver na lista”."
+          ],
+          "terms": [
+            {
+              "word": "Leis de De Morgan",
+              "meaning": "as regras para negar “e” e “ou”: ¬(p ∧ q) ≡ ¬p ∨ ¬q e ¬(p ∨ q) ≡ ¬p ∧ ¬q."
+            },
+            {
+              "word": "Equivalência lógica",
+              "meaning": "duas proposições com a mesma tabela-verdade, linha por linha. Escreve-se com o sinal ≡."
+            },
+            {
+              "word": "Tabela-verdade",
+              "meaning": "a tabela que mostra o valor lógico de uma proposição composta em todas as combinações possíveis de V e F."
+            }
+          ],
+          "example": {
+            "label": "A mesma condição, dois jeitos",
+            "lines": [
+              "if not (tem_cracha and na_lista): bloquear()",
+              "if not tem_cracha or not na_lista: bloquear()"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "E a condicional?",
+          "body": [
+            "O Python não tem um sinal para p → q. Usa-se a equivalência p → q ≡ ¬p ∨ q.",
+            "A regra “se é menor de idade, precisa de autorização” vira not menor or autorizado."
+          ],
+          "terms": [
+            {
+              "word": "Condicional",
+              "meaning": "a ligação “se p, então q”. Escreve-se p → q, e só é falsa quando p é verdadeira e q é falsa."
+            }
+          ],
+          "example": {
+            "label": "Regra como condicional",
+            "lines": [
+              "Regra: se é menor, então tem autorização",
+              "Lógica: menor → autorizado",
+              "Python: not menor or autorizado"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Em provas de programação e entrevistas, cai prever o resultado de uma expressão com and, or e not.",
+            "Também cai o curto-circuito: por que a ordem das condições evita um erro."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde o código engana."
+          ],
+          "bullets": [
+            "Esquecer os parênteses em not (a and b).",
+            "Pôr o teste perigoso antes do teste que protege.",
+            "Escrever and quando a regra pedia or.",
+            "Negar só uma parte de uma condição composta."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A matéria inteira cabe num if."
+          ],
+          "bullets": [
+            "Booleano: True ou False.",
+            "not, and e or seguem as tabelas da lógica.",
+            "Curto-circuito: o Python para quando o resultado está decidido.",
+            "A ordem das condições pode evitar erro.",
+            "De Morgan simplifica condições negadas.",
+            "Condicional no código: not p or q."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "And",
+          "statement": "Qual é o resultado de True and False no Python?",
+          "options": [
+            "True",
+            "False",
+            "erro",
+            "None",
+            "1"
+          ],
+          "correct_index": 1,
+          "explanation": "O and exige os dois True.",
+          "pitfall": "O or daria True aqui."
+        },
+        {
+          "topic": "Or",
+          "statement": "Qual é o resultado de False or True?",
+          "options": [
+            "True",
+            "False",
+            "erro",
+            "None",
+            "0"
+          ],
+          "correct_index": 0,
+          "explanation": "Basta um True para o or.",
+          "pitfall": "O and daria False."
+        },
+        {
+          "topic": "Not",
+          "statement": "Qual é o resultado de not (5 > 3)?",
+          "options": [
+            "True",
+            "False",
+            "5",
+            "3",
+            "erro"
+          ],
+          "correct_index": 1,
+          "explanation": "5 > 3 é True, e o not troca para False.",
+          "pitfall": "Esquecer o not daria True."
+        },
+        {
+          "topic": "Curto",
+          "statement": "Por que len(lista) > 0 and lista[0] == \"x\" não dá erro com lista vazia?",
+          "options": [
+            "porque o Python ignora erros",
+            "porque o and para na primeira parte falsa e nem olha lista[0]",
+            "porque lista[0] vale None",
+            "porque o or protege",
+            "dá erro sim"
+          ],
+          "correct_index": 1,
+          "explanation": "É o curto-circuito do and.",
+          "pitfall": "Invertendo a ordem, o erro aconteceria."
+        },
+        {
+          "topic": "Morgan",
+          "statement": "not (a and b) é o mesmo que:",
+          "options": [
+            "not a and not b",
+            "not a or not b",
+            "a or b",
+            "a and not b",
+            "not a or b"
+          ],
+          "correct_index": 1,
+          "explanation": "Lei de De Morgan: nega as partes e troca o conectivo.",
+          "pitfall": "Manter o and é o erro clássico."
+        },
+        {
+          "topic": "Condicional",
+          "statement": "Como se escreve p → q em Python?",
+          "options": [
+            "p -> q",
+            "not p or q",
+            "p and q",
+            "p or not q",
+            "not (p or q)"
+          ],
+          "correct_index": 1,
+          "explanation": "p → q ≡ ¬p ∨ q.",
+          "pitfall": "O Python não tem o sinal da seta para lógica."
+        },
+        {
+          "topic": "Ordem",
+          "statement": "Com o curto-circuito, qual teste deve vir primeiro numa condição com and?",
+          "options": [
+            "o que pode dar erro",
+            "o que protege o teste seguinte",
+            "tanto faz",
+            "o mais longo",
+            "o mais curto de escrever"
+          ],
+          "correct_index": 1,
+          "explanation": "Se o protetor falha, o perigoso nem é avaliado.",
+          "pitfall": "Com o perigoso primeiro, o erro acontece antes."
+        },
+        {
+          "topic": "Tradução",
+          "format": "match",
+          "statement": "Ligue cada expressão lógica ao Python.",
+          "pairs": [
+            {
+              "left": "¬p",
+              "right": "not p"
+            },
+            {
+              "left": "p ∧ q",
+              "right": "p and q"
+            },
+            {
+              "left": "p ∨ q",
+              "right": "p or q"
+            },
+            {
+              "left": "p → q",
+              "right": "not p or q"
+            }
+          ],
+          "explanation": "Os conectivos da matéria, em código.",
+          "pitfall": "A condicional precisa da equivalência com “ou”."
+        }
+      ]
+    }
+  ]
+}
