@@ -45,6 +45,9 @@ class CatalogController extends Controller
             | segunda cópia dela.
             */
             'areas' => Subject::areas(),
+            // A ordem de estudo que atravessa áreas. Os passos só dizem o slug:
+            // o progresso sai das matérias que já vêm nesta mesma resposta.
+            'trails' => array_values((array) config('castelei.trails')),
             'subjects' => $subjects->map(fn (Subject $subject) => [
                 'id' => $subject->id,
                 'slug' => $subject->slug,

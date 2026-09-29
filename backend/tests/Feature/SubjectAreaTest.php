@@ -86,4 +86,34 @@ class SubjectAreaTest extends TestCase
             $this->assertContains($dados['area'] ?? null, $areas, basename($arquivo).' sem área válida.');
         }
     }
+
+    public function test_catalogo_manda_a_trilha_em_ordem(): void
+    {
+        $this->makeLesson(8);
+        Sanctum::actingAs(User::factory()->create());
+
+        $this->getJson('/api/subjects')->assertOk()
+            ->assertJsonPath('trails.0.slug', 'llms-do-zero')
+            ->assertJsonPath('trails.0.steps.0.subject', 'matematica-basica')
+            ->assertJsonPath('trails.0.steps.1.subject', 'programacao-python');
+    }
+
+    public function test_todo_passo_da_trilha_que_ja_tem_arquivo_aponta_para_materia_certa(): void
+    {
+        $arquivos = [];
+        foreach (glob(database_path('seeders/content/*.json')) as $arquivo) {
+            $dados = json_decode(file_get_contents($arquivo), true);
+            $arquivos[$dados['slug']] = $dados['name'];
+        }
+
+        foreach (config('castelei.trails') as $trilha) {
+            foreach ($trilha['steps'] as $passo) {
+                // Passo com matéria já escrita: o nome da trilha é o da matéria,
+                // senão a tela diria uma coisa na trilha e outra na matéria.
+                if (isset($arquivos[$passo['subject']])) {
+                    $this->assertSame($arquivos[$passo['subject']], $passo['name'], $passo['subject']);
+                }
+            }
+        }
+    }
 }

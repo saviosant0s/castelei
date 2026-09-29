@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, ChevronRight, CloudUpload, Flame, Search, Star } from "lucide-react";
+import { ArrowRight, ChevronRight, CloudUpload, Flame, Route, Search, Star } from "lucide-react";
 import { Card, Pill } from "@/components/ui";
 import { SubjectRow, tones } from "@/components/home/SubjectRow";
 import { areaIcon, areaProgress, groupByArea } from "@/lib/areas";
+import { currentStep, trailView } from "@/lib/trails";
 import { serverGet } from "@/lib/backend";
 import { firstName, formatNumber, pluralize } from "@/lib/format";
 import { ReviewBell } from "@/components/review/ReviewBell";
@@ -12,7 +13,7 @@ import type { ProgressResponse, ReviewResponse, SubjectsResponse, User } from "@
 export const metadata: Metadata = { title: "Início" };
 
 export default async function Inicio() {
-  const [{ user }, { areas, subjects }, progress, revisao] = await Promise.all([
+  const [{ user }, { areas, subjects, trails }, progress, revisao] = await Promise.all([
     serverGet<{ user: User }>("/me"),
     serverGet<SubjectsResponse>("/subjects"),
     serverGet<ProgressResponse>("/progress"),
@@ -27,6 +28,10 @@ export default async function Inicio() {
   const gami = progress.gamification;
   const firstLesson = subjects[0]?.lessons[0];
   const { ativas, emBreve } = groupByArea(areas ?? [], subjects);
+  const trilhas = (trails ?? []).map((trail) => {
+    const passos = trailView(trail, subjects);
+    return { trail, passos, atual: currentStep(passos), feitos: passos.filter((p) => p.state === "done").length };
+  });
 
   /*
   | O simulado atravessa várias lições, então não tem `lesson_id` — quem volta
@@ -128,6 +133,44 @@ export default async function Inicio() {
           </Card>
         ) : null}
       </section>
+
+      {/*
+        A trilha responde "por onde eu começo?" quando o objetivo atravessa
+        áreas: LLMs do zero mistura Matemática e Informática, e a lista de áreas
+        sozinha não diz a ordem. Mora antes das áreas porque é um caminho, e
+        as áreas são um catálogo.
+      */}
+      {trilhas.length > 0 && (
+        <section aria-labelledby="trilhas">
+          <h2 id="trilhas" className="text-2xl">Trilha de estudo</h2>
+          <ul className="mt-4 space-y-3">
+            {trilhas.map(({ trail, passos, atual, feitos }) => (
+              <li key={trail.slug}>
+                <Link
+                  href={`/trilha/${trail.slug}`}
+                  className="flex items-center gap-4 rounded-card bg-surface-raised px-4 py-4 shadow-lift transition hover:-translate-y-0.5"
+                >
+                  <span className="grid size-12 shrink-0 place-items-center rounded-control bg-sky-soft text-sky">
+                    <Route className="size-6" aria-hidden="true" />
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="flex items-start justify-between gap-3">
+                      <span className="min-w-0 font-display text-lg leading-snug font-bold">{trail.name}</span>
+                      <span className="shrink-0 pt-0.5 font-mono text-sm tabular-nums text-content-subtle">
+                        {feitos}/{passos.length}
+                      </span>
+                    </span>
+                    <span className="mt-1 block text-sm text-content-secondary">
+                      {atual ? `Passo ${atual.number} de ${passos.length}: ${atual.name}` : "Todos os passos disponíveis concluídos"}
+                    </span>
+                  </span>
+                  <ChevronRight className="size-5 shrink-0 text-content-faint" aria-hidden="true" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {/*
         A porta de entrada é a ÁREA, não a matéria: Sistemas Operacionais é uma

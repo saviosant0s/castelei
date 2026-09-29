@@ -1,0 +1,2894 @@
+{
+  "_leia_me": [
+    "Probabilidade e Estatística do Castelei: a seção 5 da trilha de LLMs do zero.",
+    "Chaves começadas por _ são comentário e somem na importação."
+  ],
+  "slug": "probabilidade-estatistica",
+  "name": "Probabilidade e Estatística",
+  "area": "matematica",
+  "description": "Chance, distribuições, média, desvio padrão, correlação e curva normal, até a máxima verossimilhança: a ideia com que um modelo de linguagem é treinado.",
+  "lessons": [
+    {
+      "slug": "probabilidade-basica",
+      "title": "Probabilidade: medir a chance",
+      "module": "Probabilidade",
+      "summary": "Probabilidade é um número de 0 a 1 que diz o quanto algo é provável. Casos favoráveis sobre casos possíveis, e as regras do “não”, do “e” e do “ou”.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A previsão do tempo",
+          "body": [
+            "A previsão diz: 70% de chance de chuva. Ninguém sabe se vai chover, mas o número diz o quanto vale levar o guarda-chuva.",
+            "Probabilidade é a matemática da incerteza. É exatamente o que um modelo de linguagem calcula para cada próxima palavra."
+          ],
+          "terms": [
+            {
+              "word": "Probabilidade",
+              "meaning": "a chance de algo acontecer, escrita como um número de 0 (impossível) a 1 (certo)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que pode acontecer",
+          "body": [
+            "Ao jogar um dado, os resultados possíveis são 1, 2, 3, 4, 5 e 6. Essa lista inteira é o espaço amostral.",
+            "Um evento é o pedaço que interessa. “Sair número par” é o evento {2, 4, 6}."
+          ],
+          "terms": [
+            {
+              "word": "Espaço amostral",
+              "meaning": "a lista de todos os resultados possíveis de um experimento."
+            },
+            {
+              "word": "Evento",
+              "meaning": "um resultado ou grupo de resultados que interessa, como “sair número par”."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Favoráveis sobre possíveis",
+          "body": [
+            "Quando todos os resultados têm a mesma chance, a probabilidade é: casos favoráveis dividido por casos possíveis.",
+            "Sair par num dado: 3 casos favoráveis em 6 possíveis. P = 3/6 = 0,5, ou 50%."
+          ],
+          "example": {
+            "label": "Exemplos",
+            "lines": [
+              "Sair 6 num dado: 1/6 ≈ 0,17",
+              "Sair cara numa moeda: 1/2 = 0,5",
+              "Tirar um ás num baralho de 52 cartas: 4/52 ≈ 0,08"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Entre 0 e 1",
+          "body": [
+            "Probabilidade 0 é impossível; 1 é certo. Tudo o mais fica no meio.",
+            "As chances de todos os resultados possíveis, somadas, dão exatamente 1. Alguma coisa sempre acontece."
+          ],
+          "table": {
+            "label": "A escala",
+            "headers": [
+              "Probabilidade",
+              "Quer dizer"
+            ],
+            "rows": [
+              [
+                "0",
+                "impossível"
+              ],
+              [
+                "0,1",
+                "improvável"
+              ],
+              [
+                "0,5",
+                "tanto faz"
+              ],
+              [
+                "0,9",
+                "bem provável"
+              ],
+              [
+                "1",
+                "certo"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O “não”",
+          "body": [
+            "A chance de algo não acontecer é 1 menos a chance de acontecer. Se a chance de chuva é 0,7, a de não chover é 0,3.",
+            "Às vezes é bem mais fácil calcular o contrário e subtrair de 1."
+          ],
+          "terms": [
+            {
+              "word": "Evento complementar",
+              "meaning": "o evento “não acontecer”. A chance dele é 1 menos a chance do evento."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O “e”: multiplicar",
+          "body": [
+            "Duas coisas que não interferem uma na outra acontecerem juntas: multiplique as chances. Duas moedas darem cara: 0,5 × 0,5 = 0,25.",
+            "Por isso sequências longas ficam improváveis rápido. Dez caras seguidas: 0,5¹⁰, menos de 0,1%."
+          ],
+          "terms": [
+            {
+              "word": "Eventos independentes",
+              "meaning": "eventos em que um acontecer não muda a chance do outro, como duas jogadas de moeda."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O “ou”: somar, com cuidado",
+          "body": [
+            "Para uma coisa ou outra, some as chances e tire a parte que foi contada duas vezes. P(A ou B) = P(A) + P(B) − P(A e B).",
+            "Num dado, sair par ou sair maior que 4: 3/6 + 2/6 − 1/6 = 4/6. O 6 estava nos dois grupos."
+          ],
+          "example": {
+            "label": "Par ou maior que 4",
+            "lines": [
+              "Par: {2, 4, 6}",
+              "Maior que 4: {5, 6}",
+              "Os dois ao mesmo tempo: {6}",
+              "3/6 + 2/6 − 1/6 = 4/6"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Frases como sequência de chances",
+          "body": [
+            "Um modelo de linguagem dá uma chance para cada palavra possível a seguir. A chance da frase inteira é a multiplicação das chances de cada palavra, uma após a outra.",
+            "Por isso as chances de frases longas ficam minúsculas, e o computador precisa de um truque para lidar com elas, que aparece no fim desta matéria."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem dados, moedas, urnas com bolas coloridas e baralhos. Conte com calma os casos favoráveis e os possíveis.",
+            "Na dúvida entre somar e multiplicar: “e” multiplica, “ou” soma."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a intuição engana."
+          ],
+          "bullets": [
+            "Somar quando o certo era multiplicar, e o contrário.",
+            "Contar duas vezes o que está nos dois eventos do “ou”.",
+            "Achar que, depois de cinco caras, coroa fica mais provável. A moeda não tem memória.",
+            "Dar uma probabilidade maior que 1."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Um número de 0 a 1."
+          ],
+          "bullets": [
+            "P = casos favoráveis ÷ casos possíveis.",
+            "Todas as chances somadas dão 1.",
+            "Não acontecer: 1 − P.",
+            "E, com eventos independentes: multiplique.",
+            "Ou: some e tire o que foi contado duas vezes.",
+            "A chance de uma frase é o produto das chances das palavras."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Dado",
+          "statement": "Qual é a probabilidade de sair um número menor que 3 num dado comum?",
+          "options": [
+            "1/6",
+            "1/3",
+            "1/2",
+            "2/3",
+            "3/6"
+          ],
+          "correct_index": 1,
+          "explanation": "Os favoráveis são 1 e 2: 2 casos em 6. 2/6 = 1/3.",
+          "pitfall": "3/6 incluiria o 3, que não é menor que 3."
+        },
+        {
+          "topic": "Complementar",
+          "statement": "A chance de um voo atrasar é 0,15. Qual é a chance de não atrasar?",
+          "options": [
+            "0,15",
+            "0,85",
+            "0,5",
+            "1,15",
+            "0,015"
+          ],
+          "correct_index": 1,
+          "explanation": "1 − 0,15 = 0,85.",
+          "pitfall": "0,15 é a própria chance de atrasar."
+        },
+        {
+          "topic": "E",
+          "statement": "Qual é a probabilidade de duas moedas darem coroa?",
+          "options": [
+            "1/2",
+            "1/4",
+            "1",
+            "2/4",
+            "1/8"
+          ],
+          "correct_index": 1,
+          "explanation": "Os eventos são independentes: 1/2 × 1/2 = 1/4.",
+          "pitfall": "1/2 + 1/2 = 1 soma quando devia multiplicar."
+        },
+        {
+          "topic": "Ou",
+          "statement": "Num dado, qual é a chance de sair 1 ou 6?",
+          "options": [
+            "1/6",
+            "1/3",
+            "1/36",
+            "1/2",
+            "2/36"
+          ],
+          "correct_index": 1,
+          "explanation": "Não há resultado nos dois ao mesmo tempo: 1/6 + 1/6 = 2/6 = 1/3.",
+          "pitfall": "1/36 multiplica, como se fosse “e”."
+        },
+        {
+          "topic": "Sequência",
+          "statement": "Uma moeda deu cara 5 vezes seguidas. Qual é a chance de dar cara na próxima?",
+          "options": [
+            "menor que 1/2",
+            "1/2",
+            "maior que 1/2",
+            "1/32",
+            "0"
+          ],
+          "correct_index": 1,
+          "explanation": "Cada jogada não depende das anteriores: a chance segue sendo 1/2.",
+          "pitfall": "1/32 é a chance de seis caras seguidas, calculada antes de começar."
+        },
+        {
+          "topic": "Urna",
+          "statement": "Uma urna tem 3 bolas vermelhas e 7 azuis. Qual é a chance de tirar uma vermelha?",
+          "options": [
+            "3/7",
+            "0,3",
+            "0,7",
+            "3/10 × 7/10",
+            "1/3"
+          ],
+          "correct_index": 1,
+          "explanation": "3 favoráveis em 10 possíveis: 0,3.",
+          "pitfall": "3/7 compara vermelhas com azuis, e não com o total."
+        },
+        {
+          "topic": "Ou com sobra",
+          "statement": "Num baralho de 52 cartas, qual é a chance de tirar uma carta de copas ou um rei?",
+          "options": [
+            "17/52",
+            "16/52",
+            "4/52",
+            "13/52",
+            "1/52"
+          ],
+          "correct_index": 1,
+          "explanation": "13 de copas + 4 reis − 1 rei de copas contado duas vezes = 16. 16/52.",
+          "pitfall": "17/52 conta o rei de copas duas vezes."
+        },
+        {
+          "topic": "Regras",
+          "format": "match",
+          "statement": "Ligue cada situação à conta.",
+          "pairs": [
+            {
+              "left": "não acontecer",
+              "right": "1 − P"
+            },
+            {
+              "left": "A e B independentes",
+              "right": "P(A) × P(B)"
+            },
+            {
+              "left": "A ou B",
+              "right": "P(A) + P(B) − P(A e B)"
+            },
+            {
+              "left": "todos os resultados",
+              "right": "soma 1"
+            }
+          ],
+          "explanation": "Não subtrai de 1, e multiplica, ou soma sem contar duas vezes.",
+          "pitfall": "A regra do ou sem o desconto do meio só vale quando nada está nos dois."
+        }
+      ]
+    },
+    {
+      "slug": "probabilidade-condicional",
+      "title": "Probabilidade condicional: quando uma informação muda tudo",
+      "module": "Probabilidade",
+      "summary": "Saber que algo aconteceu muda a chance do resto. A probabilidade condicional mede isso, e é exatamente a pergunta de um modelo de linguagem: dada a frase até aqui, qual a chance da próxima palavra?",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O céu nublado",
+          "body": [
+            "A chance de chover num dia qualquer pode ser 20%. Mas se você olha pela janela e o céu está carregado, a chance sobe muito.",
+            "A informação nova não mudou o mundo: mudou o que você sabe. E a chance muda junto."
+          ],
+          "terms": [
+            {
+              "word": "Probabilidade",
+              "meaning": "a chance de algo acontecer, escrita como um número de 0 (impossível) a 1 (certo)."
+            },
+            {
+              "word": "Evento",
+              "meaning": "um resultado ou grupo de resultados que interessa, como “sair número par”."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A notação P(A | B)",
+          "body": [
+            "P(A | B) se lê “a chance de A, sabendo que B aconteceu”. A barra quer dizer “dado que”.",
+            "Saber que B aconteceu encolhe o mundo: só sobram os casos em que B é verdade."
+          ],
+          "terms": [
+            {
+              "word": "Probabilidade condicional",
+              "meaning": "a chance de um evento sabendo que outro aconteceu. Escreve-se P(A | B)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A conta",
+          "body": [
+            "P(A | B) = P(A e B) ÷ P(B). Dos casos em que B aconteceu, que parte também tem A?",
+            "Num dado, sabendo que saiu par, qual a chance de ser 6? Os pares são {2, 4, 6}. Só um é 6: 1/3."
+          ],
+          "example": {
+            "label": "Dado: P(6 | par)",
+            "lines": [
+              "P(6 e par) = 1/6",
+              "P(par) = 3/6",
+              "P(6 | par) = (1/6) ÷ (3/6) = 1/3"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Uma tabela ajuda",
+          "body": [
+            "Com uma tabela de contagem, a condicional vira olhar uma linha só. Numa turma de 100 alunos, veja quem estudou e quem passou."
+          ],
+          "table": {
+            "label": "100 alunos",
+            "headers": [
+              "",
+              "Passou",
+              "Não passou",
+              "Total"
+            ],
+            "rows": [
+              [
+                "Estudou",
+                "45",
+                "5",
+                "50"
+              ],
+              [
+                "Não estudou",
+                "15",
+                "35",
+                "50"
+              ],
+              [
+                "Total",
+                "60",
+                "40",
+                "100"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Lendo a tabela",
+          "body": [
+            "P(passou) = 60/100 = 0,6. Mas P(passou | estudou) = 45/50 = 0,9, e P(passou | não estudou) = 15/50 = 0,3.",
+            "A informação “estudou” muda bastante a chance. Quando saber B não muda a chance de A, os dois são independentes."
+          ],
+          "terms": [
+            {
+              "word": "Eventos independentes",
+              "meaning": "eventos em que saber de um não muda a chance do outro: P(A | B) = P(A)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A ordem importa",
+          "body": [
+            "P(A | B) e P(B | A) são coisas diferentes. A chance de ter febre sabendo que tem gripe é alta. A chance de ter gripe sabendo que tem febre é bem menor, porque muita coisa dá febre.",
+            "Uma regra famosa, a de Bayes, faz a conta para inverter: P(A | B) = P(B | A) × P(A) ÷ P(B)."
+          ],
+          "terms": [
+            {
+              "word": "Regra de Bayes",
+              "meaning": "a fórmula que inverte uma condicional, usando as chances de cada evento sozinho."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Prever a próxima palavra",
+          "body": [
+            "Depois de “Eu tomei um copo de”, a chance de “água” é alta e a de “parafuso” é quase zero. Tudo que o modelo faz é estimar P(próxima palavra | palavras anteriores).",
+            "Uma frase inteira vira uma fila de condicionais multiplicadas: P(Eu) × P(tomei | Eu) × P(um | Eu tomei) e assim por diante."
+          ],
+          "example": {
+            "label": "Depois de “Eu tomei um copo de”",
+            "lines": [
+              "água: 0,40",
+              "café: 0,25",
+              "leite: 0,15",
+              "suco: 0,12",
+              "outras: 0,08"
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem tabelas de dupla entrada e frases como “sabendo que o sorteado é mulher, qual a chance de ter mais de 30 anos?”.",
+            "“Sabendo que” é o sinal da condicional: restrinja o total à linha ou à coluna dada."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a condicional engana."
+          ],
+          "bullets": [
+            "Dividir pelo total geral em vez de dividir pelo total da condição.",
+            "Confundir P(A | B) com P(B | A).",
+            "Achar que eventos “parecidos” são sempre dependentes: é preciso conferir a conta.",
+            "Esquecer que P(A | B) também fica entre 0 e 1."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Saber algo muda a chance."
+          ],
+          "bullets": [
+            "P(A | B): chance de A sabendo que B aconteceu.",
+            "P(A | B) = P(A e B) ÷ P(B).",
+            "Na tabela: olhe só a linha ou a coluna da condição.",
+            "Independentes: saber B não muda a chance de A.",
+            "P(A | B) e P(B | A) são diferentes; Bayes inverte.",
+            "Um modelo de linguagem estima P(próxima palavra | anteriores)."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Tabela",
+          "statement": "Na tabela da lição, qual é P(estudou | passou)?",
+          "options": [
+            "45/50",
+            "45/60",
+            "45/100",
+            "60/100",
+            "50/100"
+          ],
+          "correct_index": 1,
+          "explanation": "Dos 60 que passaram, 45 estudaram: 45/60 = 0,75.",
+          "pitfall": "45/50 é P(passou | estudou), a ordem inversa."
+        },
+        {
+          "topic": "Dado",
+          "statement": "Num dado, sabendo que saiu um número maior que 3, qual é a chance de ser par?",
+          "options": [
+            "1/2",
+            "2/3",
+            "1/3",
+            "1/6",
+            "3/6"
+          ],
+          "correct_index": 1,
+          "explanation": "Maiores que 3: {4, 5, 6}. Pares entre eles: 4 e 6. São 2 em 3.",
+          "pitfall": "1/2 é a chance de par sem a informação."
+        },
+        {
+          "topic": "Fórmula",
+          "statement": "P(A e B) = 0,12 e P(B) = 0,4. Quanto vale P(A | B)?",
+          "options": [
+            "0,048",
+            "0,3",
+            "0,52",
+            "0,28",
+            "3,3"
+          ],
+          "correct_index": 1,
+          "explanation": "0,12 ÷ 0,4 = 0,3.",
+          "pitfall": "0,048 multiplica em vez de dividir."
+        },
+        {
+          "topic": "Independência",
+          "statement": "P(A) = 0,5 e P(A | B) = 0,5. O que se pode dizer?",
+          "options": [
+            "A e B são independentes",
+            "A causa B",
+            "B é impossível",
+            "A é certo",
+            "P(B) = 0,5"
+          ],
+          "correct_index": 0,
+          "explanation": "Saber B não mudou a chance de A.",
+          "pitfall": "Nada foi dito sobre a chance de B sozinho."
+        },
+        {
+          "topic": "Ordem",
+          "statement": "Por que P(febre | gripe) é bem maior que P(gripe | febre)?",
+          "options": [
+            "porque gripe quase sempre dá febre, mas febre tem muitas causas",
+            "porque são a mesma coisa",
+            "porque febre é rara",
+            "porque gripe é impossível",
+            "por erro de conta"
+          ],
+          "correct_index": 0,
+          "explanation": "Dentro de quem tem gripe, quase todos têm febre. Dentro de quem tem febre, só uma parte tem gripe.",
+          "pitfall": "Tratar as duas como iguais é o erro mais comum com condicionais."
+        },
+        {
+          "topic": "Palavras",
+          "statement": "Um modelo estima P(“água” | “Eu tomei um copo de”) = 0,4. O que isso quer dizer?",
+          "options": [
+            "40% das frases têm água",
+            "depois dessas palavras, a chance de vir água é 40%",
+            "água aparece 40 vezes",
+            "a frase tem 40% de água",
+            "o modelo errou 40%"
+          ],
+          "correct_index": 1,
+          "explanation": "É a chance da próxima palavra, dada a frase até ali.",
+          "pitfall": "Não fala de todas as frases: só das que começam assim."
+        },
+        {
+          "topic": "Fila",
+          "statement": "P(Eu) = 0,1, P(gosto | Eu) = 0,2 e P(de | Eu gosto) = 0,5. Qual é a chance de “Eu gosto de”?",
+          "options": [
+            "0,8",
+            "0,01",
+            "0,1",
+            "0,2",
+            "0,5"
+          ],
+          "correct_index": 1,
+          "explanation": "Multiplica-se a fila: 0,1 × 0,2 × 0,5 = 0,01.",
+          "pitfall": "0,8 soma as chances."
+        },
+        {
+          "topic": "Condicional pela tabela",
+          "format": "order",
+          "statement": "Ponha na ordem os passos para achar P(A | B) numa tabela de contagem.",
+          "options": [
+            "Achar a linha ou coluna da condição B",
+            "Pegar o total dessa linha ou coluna",
+            "Contar, dentro dela, os casos de A",
+            "Dividir essa contagem pelo total da condição"
+          ],
+          "explanation": "A condição encolhe o mundo à sua linha: o denominador é o total dela.",
+          "pitfall": "Dividir pelo total geral dá P(A e B), e não P(A | B)."
+        }
+      ]
+    },
+    {
+      "slug": "variaveis-aleatorias-e-distribuicoes",
+      "title": "Variáveis aleatórias e distribuições",
+      "module": "Probabilidade",
+      "summary": "Uma variável aleatória é um número que depende da sorte. A distribuição diz a chance de cada valor, e pode ser em degraus (discreta) ou numa curva (contínua).",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A roleta de prêmios",
+          "body": [
+            "Numa roleta de festa, você pode ganhar 0, 10 ou 50 reais. Antes de girar, o prêmio é um número que depende da sorte.",
+            "Saber a chance de cada prêmio é o que diz se vale a pena jogar."
+          ],
+          "terms": [
+            {
+              "word": "Probabilidade",
+              "meaning": "a chance de algo acontecer, escrita como um número de 0 (impossível) a 1 (certo)."
+            },
+            {
+              "word": "Variável aleatória",
+              "meaning": "um número cujo valor depende do acaso, como o resultado de um dado ou o prêmio de uma roleta."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A distribuição",
+          "body": [
+            "A distribuição é a lista dos valores possíveis com a chance de cada um. As chances somam 1.",
+            "Na roleta: prêmio 0 com chance 0,6, prêmio 10 com chance 0,3 e prêmio 50 com chance 0,1."
+          ],
+          "terms": [
+            {
+              "word": "Distribuição de probabilidade",
+              "meaning": "a regra que diz a chance de cada valor de uma variável aleatória."
+            }
+          ],
+          "table": {
+            "label": "A roleta",
+            "headers": [
+              "Prêmio",
+              "Chance"
+            ],
+            "rows": [
+              [
+                "R$ 0",
+                "0,6"
+              ],
+              [
+                "R$ 10",
+                "0,3"
+              ],
+              [
+                "R$ 50",
+                "0,1"
+              ],
+              [
+                "Soma",
+                "1,0"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Discreta: valores contáveis",
+          "body": [
+            "Quando os valores podem ser contados um a um, a variável é discreta. Resultado de dado, número de filhos, número de caras em 10 jogadas.",
+            "O desenho da distribuição discreta é um gráfico de barras: uma barra por valor."
+          ],
+          "terms": [
+            {
+              "word": "Variável discreta",
+              "meaning": "variável aleatória com valores separados, que se contam: 0, 1, 2…"
+            }
+          ],
+          "figure": {
+            "src": "/figuras/probabilidade/discreta.svg",
+            "alt": "Um gráfico de barras com a soma de dois dados, de 2 a 12. A barra do 7 é a mais alta, e as barras diminuem para os dois lados.",
+            "caption": "Soma de dois dados: o 7 é o mais provável."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Contínua: qualquer valor",
+          "body": [
+            "Altura, tempo e temperatura podem ter qualquer valor num intervalo, com quantas casas decimais quiser. Essas variáveis são contínuas.",
+            "Aqui a chance de um valor exato é zero. Pergunta-se a chance de cair num intervalo, como entre 1,70 e 1,80 m. O desenho vira uma curva, e a chance é a área embaixo dela."
+          ],
+          "terms": [
+            {
+              "word": "Variável contínua",
+              "meaning": "variável aleatória que pode ter qualquer valor num intervalo, como a altura de uma pessoa."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Uma distribuição famosa: a binomial",
+          "body": [
+            "Repita n vezes algo com chance p de dar certo, como jogar uma moeda, sem uma jogada afetar a outra. O número de sucessos segue a distribuição binomial.",
+            "Em 3 jogadas de moeda, a chance de exatamente 2 caras é 3/8: há 3 jeitos (CCK, CKC, KCC), cada um com chance 1/8."
+          ],
+          "terms": [
+            {
+              "word": "Distribuição binomial",
+              "meaning": "a distribuição do número de sucessos em n tentativas iguais, que não afetam umas às outras."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A distribuição da próxima palavra",
+          "body": [
+            "Um modelo de linguagem, a cada passo, entrega uma distribuição discreta: uma chance para cada palavra do vocabulário. Dezenas de milhares de barras, que somam 1.",
+            "Gerar texto é sortear uma palavra dessa distribuição, acrescentar à frase e repetir."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Sorteando no Python",
+          "body": [
+            "Dá para sortear valores de uma distribuição com poucas linhas."
+          ],
+          "code": {
+            "label": "Sorteando da roleta",
+            "text": "import numpy as np\npremios = [0, 10, 50]\nchances = [0.6, 0.3, 0.1]\nprint(np.random.choice(premios, size=10, p=chances))",
+            "notes": [
+              "Traz o NumPy.",
+              "Os valores possíveis.",
+              "A chance de cada um, somando 1.",
+              "Sorteia 10 prêmios seguindo as chances: aparecem muitos zeros e poucos 50."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem montar a distribuição de uma situação, como a soma de dois dados. Também caem perguntas de binomial, como “exatamente 2 caras em 4 jogadas”.",
+            "Confira sempre se as chances da tabela somam 1."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde as distribuições confundem."
+          ],
+          "bullets": [
+            "Esquecer que as chances de uma distribuição somam 1.",
+            "Perguntar a chance de um valor exato numa variável contínua: é zero.",
+            "Na binomial, esquecer de contar de quantos jeitos o resultado pode sair.",
+            "Tratar como contínuo algo que se conta, como número de pessoas."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Números da sorte e as suas chances."
+          ],
+          "bullets": [
+            "Variável aleatória: número que depende do acaso.",
+            "Distribuição: a chance de cada valor, somando 1.",
+            "Discreta: valores contáveis, desenho de barras.",
+            "Contínua: qualquer valor; chance é área sob a curva.",
+            "Binomial: sucessos em n tentativas.",
+            "O modelo de linguagem entrega uma distribuição sobre o vocabulário."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Soma 1",
+          "statement": "Uma distribuição dá chance 0,2 ao valor 1 e 0,5 ao valor 2. Só existe mais um valor, o 3. Qual é a chance dele?",
+          "options": [
+            "0,3",
+            "0,7",
+            "0,5",
+            "0,2",
+            "1"
+          ],
+          "correct_index": 0,
+          "explanation": "As chances somam 1: 1 − 0,2 − 0,5 = 0,3.",
+          "pitfall": "0,7 é a soma das duas conhecidas."
+        },
+        {
+          "topic": "Tipo",
+          "statement": "Qual variável é contínua?",
+          "options": [
+            "número de gols num jogo",
+            "resultado de um dado",
+            "tempo de espera na fila",
+            "número de filhos",
+            "quantidade de caras em 5 jogadas"
+          ],
+          "correct_index": 2,
+          "explanation": "Tempo pode ter qualquer valor, com quantas casas decimais quiser.",
+          "pitfall": "Gols se contam: é discreta."
+        },
+        {
+          "topic": "Dois dados",
+          "statement": "Qual é a chance de a soma de dois dados dar 7?",
+          "options": [
+            "1/6",
+            "1/12",
+            "7/36",
+            "1/36",
+            "1/2"
+          ],
+          "correct_index": 0,
+          "explanation": "Há 6 jeitos em 36 de a soma dar 7. Por exemplo (1, 6) e (6, 1). 6/36 = 1/6.",
+          "pitfall": "7/36 confunde a soma com a quantidade de jeitos."
+        },
+        {
+          "topic": "Binomial",
+          "statement": "Em 3 jogadas de moeda, qual é a chance de sair exatamente 1 cara?",
+          "options": [
+            "1/8",
+            "3/8",
+            "1/2",
+            "1/3",
+            "3/4"
+          ],
+          "correct_index": 1,
+          "explanation": "Três jeitos (CKK, KCK, KKC), cada um com chance 1/8: 3/8.",
+          "pitfall": "1/8 conta só um dos jeitos."
+        },
+        {
+          "topic": "Valor exato",
+          "statement": "Numa variável contínua, como a altura, qual é a chance de alguém ter exatamente 1,7500000… m?",
+          "options": [
+            "alta",
+            "0,5",
+            "zero",
+            "1",
+            "depende da pessoa"
+          ],
+          "correct_index": 2,
+          "explanation": "Um ponto exato não tem área embaixo da curva. Pergunta-se sempre por intervalos.",
+          "pitfall": "Isso não quer dizer que seja impossível ter 1,75 m arredondado: o arredondamento é um intervalo."
+        },
+        {
+          "topic": "Modelo",
+          "statement": "O que um modelo de linguagem entrega a cada passo?",
+          "options": [
+            "uma palavra certa",
+            "uma distribuição de chances sobre as palavras",
+            "um número inteiro",
+            "a frase inteira",
+            "uma nota de 0 a 10"
+          ],
+          "correct_index": 1,
+          "explanation": "Ele dá uma chance para cada palavra; depois uma é escolhida.",
+          "pitfall": "A palavra final vem de um sorteio ou de uma escolha feita sobre essa distribuição."
+        },
+        {
+          "topic": "Roleta",
+          "statement": "Na roleta da lição (0 com 0,6, 10 com 0,3, 50 com 0,1), qual é a chance de ganhar algum dinheiro?",
+          "options": [
+            "0,1",
+            "0,3",
+            "0,4",
+            "0,6",
+            "1"
+          ],
+          "correct_index": 2,
+          "explanation": "Ganhar algo é ganhar 10 ou 50: 0,3 + 0,1 = 0,4.",
+          "pitfall": "0,6 é a chance de não ganhar nada."
+        },
+        {
+          "topic": "Termos",
+          "format": "match",
+          "statement": "Ligue cada termo ao seu significado.",
+          "pairs": [
+            {
+              "left": "variável aleatória",
+              "right": "número que depende do acaso"
+            },
+            {
+              "left": "distribuição",
+              "right": "a chance de cada valor"
+            },
+            {
+              "left": "discreta",
+              "right": "valores que se contam"
+            },
+            {
+              "left": "contínua",
+              "right": "qualquer valor num intervalo"
+            }
+          ],
+          "explanation": "A variável é o número; a distribuição, as chances dele. Discreta se conta; contínua pode ter qualquer valor.",
+          "pitfall": "Temperatura aparece com um número no termômetro, mas é contínua: pode ter qualquer valor no meio."
+        }
+      ]
+    },
+    {
+      "slug": "esperanca-matematica",
+      "title": "Esperança: o valor médio que se espera",
+      "module": "Probabilidade",
+      "summary": "A esperança é a média ponderada dos valores, cada um pesado pela sua chance. É o que se ganha em média repetindo muitas vezes. É por isso que o cassino sempre vence.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Vale a pena jogar?",
+          "body": [
+            "Uma rifa custa R$ 5. Há 100 bilhetes e um prêmio de R$ 300. Vale a pena?",
+            "Em média, cada bilhete traz R$ 300 ÷ 100 = R$ 3 de prêmio. Pagando R$ 5, você perde R$ 2 por bilhete, em média. Essa média tem nome."
+          ],
+          "terms": [
+            {
+              "word": "Probabilidade",
+              "meaning": "a chance de algo acontecer, escrita como um número de 0 (impossível) a 1 (certo)."
+            },
+            {
+              "word": "Variável aleatória",
+              "meaning": "um número cujo valor depende do acaso."
+            },
+            {
+              "word": "Esperança",
+              "meaning": "o valor médio de uma variável aleatória a longo prazo: cada valor vezes a sua chance, tudo somado. Também se chama valor esperado."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A conta",
+          "body": [
+            "Multiplique cada valor pela chance dele e some tudo. Escreve-se E[X].",
+            "É uma média ponderada: valores mais prováveis pesam mais."
+          ],
+          "example": {
+            "label": "A roleta: 0 (0,6), 10 (0,3), 50 (0,1)",
+            "lines": [
+              "0 × 0,6 = 0",
+              "10 × 0,3 = 3",
+              "50 × 0,1 = 5",
+              "E[X] = 0 + 3 + 5 = 8"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A esperança pode nem ser possível",
+          "body": [
+            "A esperança da roleta é R$ 8, mas nenhum giro dá R$ 8. Ela não é o resultado de uma jogada: é a média de muitas.",
+            "A esperança de um dado é 3,5, e nenhum dado mostra 3,5."
+          ],
+          "example": {
+            "label": "Dado",
+            "lines": [
+              "(1 + 2 + 3 + 4 + 5 + 6) × 1/6",
+              "= 21/6",
+              "= 3,5"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Repetindo muitas vezes",
+          "body": [
+            "Jogando um dado mil vezes e tirando a média, o resultado fica cada vez mais perto de 3,5.",
+            "Esse fato, chamado lei dos grandes números, é o que liga a esperança à vida real."
+          ],
+          "terms": [
+            {
+              "word": "Lei dos grandes números",
+              "meaning": "com muitas repetições, a média dos resultados se aproxima da esperança."
+            }
+          ],
+          "code": {
+            "label": "Conferindo no Python",
+            "text": "import numpy as np\njogadas = np.random.randint(1, 7, size=10000)\nprint(jogadas.mean())",
+            "notes": [
+              "Traz o NumPy.",
+              "Sorteia 10 000 jogadas de dado, de 1 a 6. O 7 fica de fora, como no range.",
+              "Mostra a média: um número muito perto de 3,5."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Por que o cassino sempre ganha",
+          "body": [
+            "Cada jogo de cassino tem esperança levemente negativa para o jogador. Numa noite, alguém pode ganhar muito.",
+            "Mas com milhões de apostas, a média vence, e o cassino fica com a diferença. A sorte de um é o lucro garantido do outro."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Regras úteis",
+          "body": [
+            "Somar um número a todos os valores soma o mesmo à esperança. Multiplicar todos por um número multiplica a esperança.",
+            "E a esperança de uma soma é a soma das esperanças: dois dados têm esperança 3,5 + 3,5 = 7."
+          ],
+          "table": {
+            "label": "Propriedades",
+            "headers": [
+              "Conta",
+              "Esperança"
+            ],
+            "rows": [
+              [
+                "X + 10",
+                "E[X] + 10"
+              ],
+              [
+                "3X",
+                "3·E[X]"
+              ],
+              [
+                "X + Y",
+                "E[X] + E[Y]"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Na inteligência artificial",
+          "body": [
+            "Treinar um modelo é diminuir o erro médio sobre todos os exemplos possíveis: uma esperança. Como não dá para ver todos, usa-se a média de uma amostra.",
+            "É a lei dos grandes números trabalhando: a média de muitos exemplos se aproxima do erro esperado."
+          ],
+          "terms": [
+            {
+              "word": "Amostra",
+              "meaning": "uma parte dos casos, escolhida para representar o todo."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem jogos e rifas: calcule a esperança do ganho e compare com o preço. Também cai o lucro esperado de um seguro.",
+            "Não esqueça de descontar o que se paga para jogar."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a esperança engana."
+          ],
+          "bullets": [
+            "Achar que a esperança é o resultado mais provável.",
+            "Esquecer de pesar cada valor pela chance e fazer a média simples.",
+            "Esquecer o custo de entrada no cálculo do ganho.",
+            "Achar que, depois de perder muito, a sorte “compensa”: cada jogo não depende do anterior."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A média de longo prazo."
+          ],
+          "bullets": [
+            "E[X] = soma de valor × chance.",
+            "É uma média ponderada pelas chances.",
+            "Pode não ser um resultado possível: dado tem 3,5.",
+            "Com muitas repetições, a média real chega nela.",
+            "E[X + Y] = E[X] + E[Y].",
+            "Treinar é diminuir o erro esperado."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Calcular",
+          "statement": "Um jogo paga R$ 20 com chance 0,25 e R$ 0 no resto. Qual é o ganho esperado?",
+          "options": [
+            "R$ 20",
+            "R$ 5",
+            "R$ 10",
+            "R$ 0,25",
+            "R$ 15"
+          ],
+          "correct_index": 1,
+          "explanation": "20 × 0,25 + 0 × 0,75 = 5.",
+          "pitfall": "R$ 10 é a média simples entre 20 e 0, sem pesar as chances."
+        },
+        {
+          "topic": "Rifa",
+          "statement": "Uma rifa de 200 bilhetes tem um prêmio de R$ 1 000, e cada bilhete custa R$ 10. Qual é o ganho esperado, descontado o preço?",
+          "options": [
+            "R$ 5",
+            "−R$ 5",
+            "R$ 0",
+            "−R$ 10",
+            "R$ 990"
+          ],
+          "correct_index": 1,
+          "explanation": "Prêmio esperado: 1 000 ÷ 200 = 5. Menos o preço: 5 − 10 = −5.",
+          "pitfall": "R$ 5 esquece de descontar o bilhete."
+        },
+        {
+          "topic": "Dado",
+          "statement": "Qual é a esperança da soma de dois dados?",
+          "options": [
+            "3,5",
+            "6",
+            "7",
+            "12",
+            "6,5"
+          ],
+          "correct_index": 2,
+          "explanation": "A esperança da soma é a soma das esperanças: 3,5 + 3,5.",
+          "pitfall": "3,5 é de um dado só."
+        },
+        {
+          "topic": "Escala",
+          "statement": "Se E[X] = 4, quanto vale E[2X + 3]?",
+          "options": [
+            "8",
+            "11",
+            "7",
+            "14",
+            "4"
+          ],
+          "correct_index": 1,
+          "explanation": "2 × 4 + 3 = 11.",
+          "pitfall": "8 esquece o + 3."
+        },
+        {
+          "topic": "Grandes números",
+          "statement": "O que acontece com a média de muitos lançamentos de dado?",
+          "options": [
+            "fica sempre 6",
+            "se aproxima de 3,5",
+            "fica aleatória para sempre",
+            "se aproxima de 1",
+            "vira zero"
+          ],
+          "correct_index": 1,
+          "explanation": "Pela lei dos grandes números, a média se aproxima da esperança.",
+          "pitfall": "A média de poucos lançamentos varia muito; de muitos, estabiliza."
+        },
+        {
+          "topic": "Mais provável",
+          "statement": "Uma variável vale 0 com chance 0,9 e 100 com chance 0,1. Qual afirmação é verdadeira?",
+          "options": [
+            "a esperança é 0",
+            "a esperança é 10, mesmo o valor mais provável sendo 0",
+            "a esperança é 50",
+            "a esperança é 100",
+            "não tem esperança"
+          ],
+          "correct_index": 1,
+          "explanation": "0 × 0,9 + 100 × 0,1 = 10. Esperança não é o mais provável.",
+          "pitfall": "Confundir esperança com o resultado mais comum é o erro clássico."
+        },
+        {
+          "topic": "Cassino",
+          "statement": "Uma aposta tem esperança de −R$ 0,05 para o jogador. O que acontece depois de 1 milhão de apostas de todo mundo?",
+          "options": [
+            "os jogadores ganham em média",
+            "o cassino ganha cerca de R$ 50 000",
+            "ninguém ganha",
+            "o resultado é imprevisível",
+            "o cassino perde"
+          ],
+          "correct_index": 1,
+          "explanation": "1 milhão × R$ 0,05 = R$ 50 000 para a casa, aproximadamente.",
+          "pitfall": "Uma aposta é imprevisível; um milhão não é."
+        },
+        {
+          "topic": "Esperança",
+          "format": "order",
+          "statement": "Ponha na ordem os passos para calcular a esperança.",
+          "options": [
+            "Listar os valores possíveis",
+            "Escrever a chance de cada valor",
+            "Multiplicar cada valor pela sua chance",
+            "Somar os produtos"
+          ],
+          "explanation": "É uma média ponderada: valores, pesos, produtos e soma.",
+          "pitfall": "Somar os valores e dividir pela quantidade só funciona com chances iguais."
+        }
+      ]
+    },
+    {
+      "slug": "media-mediana-moda",
+      "title": "Média, mediana e moda: o centro dos dados",
+      "module": "Estatística descritiva",
+      "summary": "Três jeitos de resumir um monte de números num só. A média é puxada por valores extremos, a mediana não, e a moda diz o que mais se repete.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O salário da empresa",
+          "body": [
+            "Numa empresa, nove pessoas ganham R$ 2 000 e o dono ganha R$ 82 000. A média dá R$ 10 000.",
+            "Ninguém ali ganha perto de R$ 10 000. Um número só pode resumir mal, dependendo de qual se escolhe."
+          ],
+          "terms": [
+            {
+              "word": "Amostra",
+              "meaning": "o grupo de números que se tem em mãos para analisar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A média",
+          "body": [
+            "Some todos os valores e divida pela quantidade. É o ponto de equilíbrio dos dados, como numa gangorra.",
+            "Por isso um valor muito grande puxa a média para cima, como o salário do dono."
+          ],
+          "example": {
+            "label": "Notas 6, 7, 7, 8 e 10",
+            "lines": [
+              "Soma: 38",
+              "Quantidade: 5",
+              "Média: 38 ÷ 5 = 7,6"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A mediana",
+          "body": [
+            "Ponha os valores em ordem e pegue o do meio. Metade fica abaixo e metade acima.",
+            "Com quantidade par, não há um do meio: tira-se a média dos dois do centro."
+          ],
+          "terms": [
+            {
+              "word": "Mediana",
+              "meaning": "o valor do meio quando os dados estão em ordem."
+            }
+          ],
+          "example": {
+            "label": "Exemplos",
+            "lines": [
+              "6, 7, 7, 8, 10: mediana 7",
+              "2, 4, 8, 20: mediana (4 + 8) ÷ 2 = 6",
+              "Na empresa: mediana R$ 2 000"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A moda",
+          "body": [
+            "A moda é o valor que mais se repete. Nas notas 6, 7, 7, 8 e 10, a moda é 7.",
+            "É a única das três que funciona com coisas que não são números, como a cor preferida de uma turma."
+          ],
+          "terms": [
+            {
+              "word": "Moda",
+              "meaning": "o valor que aparece mais vezes nos dados."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Qual usar?",
+          "body": [
+            "Com valores extremos, prefira a mediana: ela não se deixa puxar. Por isso o salário típico de um país é informado pela mediana.",
+            "Sem extremos, média e mediana ficam perto uma da outra."
+          ],
+          "table": {
+            "label": "Quando usar",
+            "headers": [
+              "Medida",
+              "Boa para",
+              "Cuidado"
+            ],
+            "rows": [
+              [
+                "média",
+                "dados equilibrados",
+                "é puxada por extremos"
+              ],
+              [
+                "mediana",
+                "dados com extremos, como renda",
+                "ignora o tamanho dos extremos"
+              ],
+              [
+                "moda",
+                "o mais comum, até sem números",
+                "pode haver várias ou nenhuma"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "No Python",
+          "body": [
+            "O NumPy calcula média e mediana direto."
+          ],
+          "code": {
+            "label": "As medidas",
+            "text": "import numpy as np\nsalarios = [2000] * 9 + [82000]\nprint(np.mean(salarios))\nprint(np.median(salarios))",
+            "notes": [
+              "Traz o NumPy.",
+              "Nove salários de 2 000 e um de 82 000.",
+              "Mostra a média: 10000.0.",
+              "Mostra a mediana: 2000.0."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Na inteligência artificial",
+          "body": [
+            "O erro de um modelo é resumido pela média dos erros em muitos exemplos. É esse número que o treino tenta diminuir.",
+            "Um exemplo absurdo nos dados pode puxar essa média, e por isso limpar os dados importa tanto quanto o modelo."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem as três medidas de uma lista e a pergunta de qual delas representa melhor dados com um valor extremo.",
+            "Antes da mediana, sempre ponha em ordem."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde o centro engana."
+          ],
+          "bullets": [
+            "Calcular a mediana sem ordenar os valores.",
+            "Com quantidade par, pegar um dos dois do meio em vez da média deles.",
+            "Achar que a média é sempre um valor da lista.",
+            "Usar a média em dados com um extremo enorme."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Três resumos, três usos."
+          ],
+          "bullets": [
+            "Média: soma dividida pela quantidade.",
+            "Mediana: o do meio, depois de ordenar.",
+            "Moda: o que mais se repete.",
+            "Extremos puxam a média, e não a mediana.",
+            "Renda se resume pela mediana.",
+            "O erro de um modelo é uma média de erros."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Média",
+          "statement": "Qual é a média de 4, 8, 6, 10 e 2?",
+          "options": [
+            "5",
+            "6",
+            "8",
+            "30",
+            "7"
+          ],
+          "correct_index": 1,
+          "explanation": "Soma 30, dividida por 5: 6.",
+          "pitfall": "30 esquece de dividir."
+        },
+        {
+          "topic": "Mediana ímpar",
+          "statement": "Qual é a mediana de 9, 3, 7, 1, 5?",
+          "options": [
+            "7",
+            "5",
+            "3",
+            "9",
+            "25"
+          ],
+          "correct_index": 1,
+          "explanation": "Em ordem: 1, 3, 5, 7, 9. O do meio é 5.",
+          "pitfall": "7 é o do meio da lista fora de ordem."
+        },
+        {
+          "topic": "Mediana par",
+          "statement": "Qual é a mediana de 3, 5, 9 e 11?",
+          "options": [
+            "5",
+            "9",
+            "7",
+            "7,5",
+            "28"
+          ],
+          "correct_index": 2,
+          "explanation": "Os dois do meio são 5 e 9. A média deles é 7.",
+          "pitfall": "7,5 é a média de todos."
+        },
+        {
+          "topic": "Moda",
+          "statement": "Qual é a moda de 2, 4, 4, 5, 5, 5, 9?",
+          "options": [
+            "4",
+            "5",
+            "9",
+            "4 e 5",
+            "34"
+          ],
+          "correct_index": 1,
+          "explanation": "O 5 aparece três vezes, mais que qualquer outro.",
+          "pitfall": "O 4 aparece duas vezes, uma a menos."
+        },
+        {
+          "topic": "Extremo",
+          "statement": "Os salários de um bairro têm alguns valores altíssimos. Qual medida representa melhor o salário típico?",
+          "options": [
+            "média",
+            "mediana",
+            "maior valor",
+            "soma",
+            "moda sempre"
+          ],
+          "correct_index": 1,
+          "explanation": "A mediana não é puxada pelos extremos.",
+          "pitfall": "A média seria puxada para cima pelos salários altíssimos."
+        },
+        {
+          "topic": "Efeito",
+          "statement": "Numa lista, o maior valor é trocado de 20 para 200. O que acontece?",
+          "options": [
+            "a média sobe e a mediana não muda",
+            "as duas sobem igual",
+            "a mediana sobe e a média não",
+            "nada muda",
+            "as duas caem"
+          ],
+          "correct_index": 0,
+          "explanation": "A média usa a soma, que cresce. A mediana só olha a posição do meio.",
+          "pitfall": "A mediana não muda porque o valor do meio fica o mesmo."
+        },
+        {
+          "topic": "Sem números",
+          "statement": "Numa pesquisa de cor favorita, qual medida faz sentido?",
+          "options": [
+            "média",
+            "mediana",
+            "moda",
+            "desvio",
+            "soma"
+          ],
+          "correct_index": 2,
+          "explanation": "Não dá para somar nem ordenar cores, mas dá para ver a mais comum.",
+          "pitfall": "Média de cores não existe."
+        },
+        {
+          "topic": "Medidas",
+          "format": "match",
+          "statement": "Ligue cada medida à sua definição.",
+          "pairs": [
+            {
+              "left": "média",
+              "right": "soma dividida pela quantidade"
+            },
+            {
+              "left": "mediana",
+              "right": "o valor do meio, em ordem"
+            },
+            {
+              "left": "moda",
+              "right": "o valor mais frequente"
+            },
+            {
+              "left": "amostra",
+              "right": "os dados que se tem em mãos"
+            }
+          ],
+          "explanation": "Três jeitos de achar o centro, cada um com a sua força.",
+          "pitfall": "A mediana exige ordem; a moda, contagem; a média, soma."
+        }
+      ]
+    },
+    {
+      "slug": "variancia-e-desvio-padrao",
+      "title": "Variância e desvio padrão: o quanto os dados se espalham",
+      "module": "Estatística descritiva",
+      "summary": "Duas turmas podem ter a mesma média e ser muito diferentes. O desvio padrão mede o quanto os valores costumam se afastar da média.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Duas turmas com média 7",
+          "body": [
+            "Na turma A, todos tiraram 7. Na turma B, metade tirou 4 e metade tirou 10. As duas têm média 7.",
+            "Mas são turmas bem diferentes. Falta um número que diga o quanto as notas se espalham."
+          ],
+          "terms": [
+            {
+              "word": "Amostra",
+              "meaning": "o grupo de números que se tem em mãos para analisar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O desvio de cada valor",
+          "body": [
+            "Para cada valor, veja a distância até a média: valor menos média. Na turma B, os desvios são −3 e +3.",
+            "Somar os desvios não serve: os negativos cancelam os positivos e dá sempre zero."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A variância",
+          "body": [
+            "Eleve cada desvio ao quadrado, para sumir o sinal. Depois tire a média desses quadrados. Isso é a variância.",
+            "Na turma B, cada desvio ao quadrado dá 9, e a variância é 9. Na turma A, é 0."
+          ],
+          "terms": [
+            {
+              "word": "Variância",
+              "meaning": "a média dos quadrados das distâncias até a média. Mede o espalhamento, em unidade ao quadrado."
+            }
+          ],
+          "example": {
+            "label": "Valores 2, 4, 6",
+            "lines": [
+              "Média: 4",
+              "Desvios: −2, 0, 2",
+              "Quadrados: 4, 0, 4",
+              "Variância: 8 ÷ 3 ≈ 2,67"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O desvio padrão",
+          "body": [
+            "A variância fica em unidade ao quadrado, como “pontos ao quadrado”. Tirando a raiz, volta à unidade dos dados.",
+            "Essa raiz é o desvio padrão. Na turma B, √9 = 3: as notas costumam ficar 3 pontos longe da média."
+          ],
+          "terms": [
+            {
+              "word": "Desvio padrão",
+              "meaning": "a raiz quadrada da variância. Diz o quanto os valores costumam se afastar da média, na mesma unidade dos dados."
+            },
+            {
+              "word": "Raiz quadrada",
+              "meaning": "o número que, ao quadrado, dá o valor pedido. √9 = 3."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Lendo o desvio padrão",
+          "body": [
+            "Desvio pequeno: dados agrupados perto da média. Desvio grande: dados espalhados.",
+            "Duas fábricas de parafuso com o mesmo tamanho médio: a de desvio menor faz peças mais iguais, e é a melhor."
+          ],
+          "figure": {
+            "src": "/figuras/probabilidade/dispersao.svg",
+            "alt": "Dois conjuntos de pontos sobre uma reta, com a mesma média marcada no centro. No de cima, os pontos estão juntinhos perto da média. No de baixo, espalhados para longe.",
+            "caption": "A mesma média; espalhamentos bem diferentes."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "No Python",
+          "body": [
+            "np.var dá a variância e np.std dá o desvio padrão."
+          ],
+          "code": {
+            "label": "Duas turmas",
+            "text": "import numpy as np\na = [7, 7, 7, 7]\nb = [4, 10, 4, 10]\nprint(np.std(a), np.std(b))",
+            "notes": [
+              "Traz o NumPy.",
+              "Turma A: todos com 7.",
+              "Turma B: metade com 4, metade com 10.",
+              "Mostra 0.0 e 3.0."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Na inteligência artificial",
+          "body": [
+            "Antes de treinar, é comum padronizar os dados: subtrair a média e dividir pelo desvio padrão. Tudo fica em torno de zero, com espalhamento 1.",
+            "Dentro das redes neurais, uma técnica chamada normalização faz essa mesma conta entre as camadas, e deixa o treino bem mais estável."
+          ],
+          "terms": [
+            {
+              "word": "Padronizar",
+              "meaning": "subtrair a média e dividir pelo desvio padrão, deixando os dados com média 0 e desvio 1."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem o cálculo da variância e do desvio de listas pequenas e a comparação de dois grupos com a mesma média.",
+            "Algumas provas dividem por n − 1 em vez de n quando os dados são uma amostra. Confira o que o enunciado pede."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde o espalhamento engana."
+          ],
+          "bullets": [
+            "Somar os desvios sem elevar ao quadrado: dá sempre zero.",
+            "Esquecer a raiz e responder a variância quando pediram o desvio.",
+            "Achar que mesma média quer dizer mesmos dados.",
+            "Comparar desvios de dados com unidades diferentes."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O quanto os dados se espalham."
+          ],
+          "bullets": [
+            "Desvio de um valor: valor − média.",
+            "Variância: média dos desvios ao quadrado.",
+            "Desvio padrão: raiz da variância.",
+            "Pequeno: dados juntos. Grande: espalhados.",
+            "Padronizar: subtrair a média, dividir pelo desvio.",
+            "Normalização nas redes faz essa conta entre camadas."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Variância",
+          "statement": "Qual é a variância de 1, 3 e 5?",
+          "options": [
+            "3",
+            "8/3",
+            "4",
+            "2",
+            "9"
+          ],
+          "correct_index": 1,
+          "explanation": "Média 3. Desvios −2, 0 e 2. Quadrados 4, 0 e 4. Média dos quadrados: 8/3.",
+          "pitfall": "4 divide por 2 em vez de 3."
+        },
+        {
+          "topic": "Desvio",
+          "statement": "A variância de um grupo é 16. Qual é o desvio padrão?",
+          "options": [
+            "16",
+            "8",
+            "4",
+            "256",
+            "2"
+          ],
+          "correct_index": 2,
+          "explanation": "O desvio padrão é a raiz da variância: √16 = 4.",
+          "pitfall": "8 divide por 2, e raiz não é metade."
+        },
+        {
+          "topic": "Iguais",
+          "statement": "Qual é o desvio padrão de 5, 5, 5, 5?",
+          "options": [
+            "5",
+            "0",
+            "1",
+            "20",
+            "25"
+          ],
+          "correct_index": 1,
+          "explanation": "Todos iguais à média: nenhum se afasta dela.",
+          "pitfall": "5 é a média, e não o espalhamento."
+        },
+        {
+          "topic": "Comparar",
+          "statement": "Duas turmas têm média 6. A turma X tem desvio 0,5 e a Y tem desvio 3. O que isso diz?",
+          "options": [
+            "X tem notas mais parecidas entre si",
+            "Y tem notas mais parecidas",
+            "as duas são iguais",
+            "X tem média maior",
+            "Y tem mais alunos"
+          ],
+          "correct_index": 0,
+          "explanation": "Desvio pequeno quer dizer valores agrupados perto da média.",
+          "pitfall": "O desvio não fala da média, que é igual nas duas."
+        },
+        {
+          "topic": "Soma dos desvios",
+          "statement": "Por que não se usa a soma simples dos desvios para medir o espalhamento?",
+          "options": [
+            "porque dá sempre zero",
+            "porque é difícil de somar",
+            "porque fica muito grande",
+            "porque só funciona com números pares",
+            "porque não tem unidade"
+          ],
+          "correct_index": 0,
+          "explanation": "Os desvios positivos e negativos se cancelam.",
+          "pitfall": "É exatamente por isso que se eleva ao quadrado."
+        },
+        {
+          "topic": "Padronizar",
+          "statement": "Média 50, desvio padrão 10. Qual é o valor padronizado de 70?",
+          "options": [
+            "20",
+            "2",
+            "0,7",
+            "7",
+            "−2"
+          ],
+          "correct_index": 1,
+          "explanation": "(70 − 50) ÷ 10 = 2. O valor está 2 desvios acima da média.",
+          "pitfall": "20 esquece de dividir pelo desvio."
+        },
+        {
+          "topic": "Unidade",
+          "statement": "Os dados são alturas em centímetros. Em que unidade fica o desvio padrão?",
+          "options": [
+            "centímetros",
+            "centímetros ao quadrado",
+            "sem unidade",
+            "metros",
+            "porcentagem"
+          ],
+          "correct_index": 0,
+          "explanation": "A raiz desfaz o quadrado da variância e volta aos centímetros.",
+          "pitfall": "Centímetros ao quadrado é a unidade da variância."
+        },
+        {
+          "topic": "Desvio padrão",
+          "format": "order",
+          "statement": "Ponha na ordem os passos para calcular o desvio padrão.",
+          "options": [
+            "Calcular a média",
+            "Subtrair a média de cada valor",
+            "Elevar cada diferença ao quadrado e tirar a média",
+            "Tirar a raiz quadrada"
+          ],
+          "explanation": "A média vem primeiro, porque todos os desvios são medidos a partir dela.",
+          "pitfall": "Parar antes da raiz entrega a variância."
+        }
+      ]
+    },
+    {
+      "slug": "covariancia-e-correlacao",
+      "title": "Covariância e correlação: quando duas coisas andam juntas",
+      "module": "Estatística descritiva",
+      "summary": "Horas de estudo e nota sobem juntas? A covariância diz o sentido, e a correlação diz a força, num número de −1 a 1. E andar junto não quer dizer que uma causa a outra.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Sorvete e calor",
+          "body": [
+            "Nos dias quentes, vende-se mais sorvete. Nos dias frios, menos. As duas coisas sobem e descem juntas.",
+            "Medir esse andar junto ajuda a entender dados e a prever uma coisa pela outra."
+          ],
+          "terms": [
+            {
+              "word": "Amostra",
+              "meaning": "o grupo de dados que se tem em mãos."
+            },
+            {
+              "word": "Variável",
+              "meaning": "cada coisa medida nos dados, como temperatura ou venda."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O gráfico de pontos",
+          "body": [
+            "Cada dia vira um ponto: temperatura no eixo x e venda no eixo y. Se os pontos sobem da esquerda para a direita, as coisas andam juntas.",
+            "Se descem, uma sobe quando a outra desce. Se formam uma nuvem sem direção, não há relação clara."
+          ],
+          "figure": {
+            "src": "/figuras/probabilidade/correlacao.svg",
+            "alt": "Três gráficos de pontos. No primeiro, os pontos sobem da esquerda para a direita: correlação positiva. No segundo, descem: negativa. No terceiro, formam uma nuvem sem direção: perto de zero.",
+            "caption": "Sobe junto, desce junto ou não tem relação."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A covariância",
+          "body": [
+            "Para cada ponto, multiplique o desvio de x pelo desvio de y. Se os dois estão acima da média, o produto é positivo. Se um está acima e outro abaixo, negativo.",
+            "A média desses produtos é a covariância. Positiva: andam juntas. Negativa: andam ao contrário."
+          ],
+          "terms": [
+            {
+              "word": "Covariância",
+              "meaning": "a média dos produtos dos desvios de duas variáveis. O sinal diz se elas sobem juntas ou ao contrário."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O problema da covariância",
+          "body": [
+            "O tamanho da covariância depende das unidades. Medir a altura em centímetros em vez de metros multiplica a covariância por 100.",
+            "Então ela diz o sentido da relação, mas não a força."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A correlação",
+          "body": [
+            "Dividindo a covariância pelos dois desvios padrão, as unidades somem. O resultado fica sempre entre −1 e 1.",
+            "1 é uma reta perfeita subindo. −1 é uma reta perfeita descendo. 0 é nenhuma relação em linha reta."
+          ],
+          "terms": [
+            {
+              "word": "Correlação",
+              "meaning": "a covariância dividida pelos dois desvios padrão. Vai de −1 a 1 e mede a força da relação em linha reta."
+            },
+            {
+              "word": "Desvio padrão",
+              "meaning": "o quanto os valores costumam se afastar da média."
+            }
+          ],
+          "table": {
+            "label": "Lendo a correlação",
+            "headers": [
+              "Valor",
+              "Quer dizer"
+            ],
+            "rows": [
+              [
+                "perto de 1",
+                "sobem juntas, forte"
+              ],
+              [
+                "perto de 0,5",
+                "sobem juntas, fraca"
+              ],
+              [
+                "perto de 0",
+                "sem relação em linha reta"
+              ],
+              [
+                "perto de −1",
+                "uma sobe, a outra desce, forte"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Andar junto não é causar",
+          "body": [
+            "Venda de sorvete e afogamentos sobem juntos. O sorvete não causa afogamento: os dois vêm do calor, que leva gente à praia.",
+            "Correlação mostra que as coisas andam juntas. Para dizer que uma causa a outra, é preciso muito mais, como um experimento."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "No Python",
+          "body": [
+            "np.corrcoef calcula a correlação."
+          ],
+          "code": {
+            "label": "Estudo e nota",
+            "text": "import numpy as np\nhoras = [1, 2, 3, 4, 5]\nnotas = [5, 6, 6, 8, 9]\nprint(np.corrcoef(horas, notas)[0, 1])",
+            "notes": [
+              "Traz o NumPy.",
+              "Horas de estudo de cinco alunos.",
+              "As notas deles.",
+              "Mostra a correlação, cerca de 0,96: sobem juntas, com força."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem a leitura de gráficos de pontos e a interpretação do valor da correlação.",
+            "A pegadinha favorita é concluir causa a partir de correlação."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a correlação engana."
+          ],
+          "bullets": [
+            "Concluir que uma coisa causa a outra.",
+            "Achar que correlação zero quer dizer nenhuma relação: pode haver uma curva, que a correlação não enxerga.",
+            "Comparar covariâncias em unidades diferentes.",
+            "Achar que −0,9 é fraca: o sinal é o sentido; a força é o tamanho."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Andar junto, medido."
+          ],
+          "bullets": [
+            "Gráfico de pontos mostra a relação a olho.",
+            "Covariância: o sinal diz o sentido.",
+            "Correlação: de −1 a 1, diz a força.",
+            "Perto de ±1: forte. Perto de 0: sem relação em linha reta.",
+            "Correlação não é causa.",
+            "np.corrcoef calcula."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Sinal",
+          "statement": "Quanto mais velho o carro, menor o preço. A correlação entre idade e preço deve ser:",
+          "options": [
+            "positiva",
+            "negativa",
+            "zero",
+            "maior que 1",
+            "sempre 1"
+          ],
+          "correct_index": 1,
+          "explanation": "Uma sobe enquanto a outra desce: correlação negativa.",
+          "pitfall": "Positiva seria as duas subindo juntas."
+        },
+        {
+          "topic": "Força",
+          "statement": "Qual correlação indica a relação mais forte?",
+          "options": [
+            "0,3",
+            "−0,85",
+            "0,5",
+            "0",
+            "−0,1"
+          ],
+          "correct_index": 1,
+          "explanation": "A força é o tamanho: 0,85 é o maior, mesmo com sinal negativo.",
+          "pitfall": "O sinal negativo não enfraquece: só diz o sentido."
+        },
+        {
+          "topic": "Causa",
+          "statement": "Cidades com mais bombeiros têm mais incêndios. O que se pode concluir?",
+          "options": [
+            "bombeiros causam incêndios",
+            "as duas coisas andam juntas, talvez pelo tamanho da cidade",
+            "incêndios não existem",
+            "a correlação é negativa",
+            "nada, porque o número é pequeno"
+          ],
+          "correct_index": 1,
+          "explanation": "Cidades grandes têm mais das duas coisas. Andar junto não é causar.",
+          "pitfall": "Concluir causa é o erro clássico."
+        },
+        {
+          "topic": "Limites",
+          "statement": "Qual valor NÃO pode ser uma correlação?",
+          "options": [
+            "0,99",
+            "−1",
+            "0",
+            "1,2",
+            "−0,5"
+          ],
+          "correct_index": 3,
+          "explanation": "A correlação fica sempre entre −1 e 1.",
+          "pitfall": "−1 é possível: uma reta perfeita descendo."
+        },
+        {
+          "topic": "Covariância",
+          "statement": "Por que a covariância não serve para comparar a força de relações?",
+          "options": [
+            "porque depende das unidades",
+            "porque é sempre zero",
+            "porque não tem sinal",
+            "porque é sempre 1",
+            "porque só usa uma variável"
+          ],
+          "correct_index": 0,
+          "explanation": "Trocar metros por centímetros muda o tamanho dela.",
+          "pitfall": "Ela tem sinal, e o sinal é útil: o problema é o tamanho."
+        },
+        {
+          "topic": "Nuvem",
+          "statement": "Os pontos formam uma nuvem redonda, sem direção. A correlação fica perto de:",
+          "options": [
+            "1",
+            "−1",
+            "0",
+            "0,5",
+            "2"
+          ],
+          "correct_index": 2,
+          "explanation": "Sem subir nem descer, não há relação em linha reta.",
+          "pitfall": "0,5 já indicaria uma tendência de subida."
+        },
+        {
+          "topic": "Curva",
+          "statement": "Os pontos formam um U perfeito. O que acontece com a correlação?",
+          "options": [
+            "fica perto de 1",
+            "pode dar perto de zero, mesmo com relação forte",
+            "fica negativa e forte",
+            "não pode ser calculada",
+            "fica igual a 2"
+          ],
+          "correct_index": 1,
+          "explanation": "A correlação mede só relação em linha reta. O U sobe de um lado e desce do outro, e as metades se cancelam.",
+          "pitfall": "Correlação perto de zero não quer dizer nenhuma relação."
+        },
+        {
+          "topic": "Valores",
+          "format": "match",
+          "statement": "Ligue cada correlação ao que ela indica.",
+          "pairs": [
+            {
+              "left": "0,95",
+              "right": "sobem juntas, forte"
+            },
+            {
+              "left": "−0,95",
+              "right": "uma sobe e a outra desce, forte"
+            },
+            {
+              "left": "0,05",
+              "right": "quase nenhuma relação em linha reta"
+            },
+            {
+              "left": "0,5",
+              "right": "sobem juntas, moderada"
+            }
+          ],
+          "explanation": "O sinal é o sentido; o tamanho é a força.",
+          "pitfall": "−0,95 é tão forte quanto 0,95."
+        }
+      ]
+    },
+    {
+      "slug": "distribuicao-normal",
+      "title": "A distribuição normal: a curva do sino",
+      "module": "Estatística descritiva",
+      "summary": "Alturas, notas e erros de medida costumam formar um sino: muita gente perto da média, pouca nos extremos. A regra 68-95-99,7 lê essa curva em segundos.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A fila de alturas",
+          "body": [
+            "Organize mil adultos por altura. A maioria fica perto do meio, e poucos são muito altos ou muito baixos.",
+            "Desenhando quantos há em cada altura, aparece um sino. Esse formato aparece tanto na natureza que ganhou nome."
+          ],
+          "terms": [
+            {
+              "word": "Probabilidade",
+              "meaning": "a chance de algo acontecer, escrita como um número de 0 a 1."
+            },
+            {
+              "word": "Distribuição normal",
+              "meaning": "a distribuição em forma de sino, simétrica em torno da média. Também chamada de curva normal ou gaussiana."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Dois números definem o sino",
+          "body": [
+            "A média diz onde fica o pico. O desvio padrão diz a largura: pequeno, sino fino; grande, sino largo.",
+            "Toda normal é o mesmo sino, esticado e deslocado."
+          ],
+          "terms": [
+            {
+              "word": "Desvio padrão",
+              "meaning": "o quanto os valores costumam se afastar da média."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/probabilidade/normal.svg",
+            "alt": "Uma curva em forma de sino, com o pico na média. Faixas sombreadas mostram que 68% dos valores ficam a até 1 desvio padrão da média, 95% a até 2 e 99,7% a até 3.",
+            "caption": "68, 95 e 99,7: a regra do sino."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A regra 68-95-99,7",
+          "body": [
+            "Numa normal, cerca de 68% dos valores ficam a até 1 desvio da média. Cerca de 95% ficam a até 2 desvios. E 99,7% ficam a até 3.",
+            "Com média 170 cm e desvio 10 cm: 68% das pessoas entre 160 e 180, e 95% entre 150 e 190."
+          ],
+          "example": {
+            "label": "Média 170 e desvio 10",
+            "lines": [
+              "1 desvio: 160 a 180, cerca de 68%",
+              "2 desvios: 150 a 190, cerca de 95%",
+              "3 desvios: 140 a 200, cerca de 99,7%"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Quão raro é um valor",
+          "body": [
+            "Um valor a 3 desvios da média é muito raro: só 0,3% ficam além disso. Por isso se usa a distância em desvios para achar valores estranhos.",
+            "Essa distância, (valor − média) ÷ desvio, se chama escore padronizado."
+          ],
+          "terms": [
+            {
+              "word": "Escore padronizado",
+              "meaning": "a distância de um valor até a média, contada em desvios padrão: (valor − média) ÷ desvio."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Por que o sino aparece tanto",
+          "body": [
+            "Quando um resultado é a soma de muitos pequenos efeitos independentes, ele tende a formar um sino. A altura soma muitos genes e hábitos.",
+            "Esse fato tem nome: teorema central do limite. É o motivo de a normal aparecer em toda parte."
+          ],
+          "terms": [
+            {
+              "word": "Independentes",
+              "meaning": "efeitos em que um não muda a chance do outro."
+            },
+            {
+              "word": "Teorema central do limite",
+              "meaning": "a soma de muitos efeitos pequenos e independentes tende a ter distribuição normal."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Na inteligência artificial",
+          "body": [
+            "Antes do treino, os pesos de uma rede neural costumam ser sorteados de uma normal com média zero e desvio pequeno. Começar com números pequenos e variados ajuda o treino a arrancar.",
+            "Em Python, np.random.normal(0, 0.02, 10) sorteia dez números assim."
+          ],
+          "terms": [
+            {
+              "word": "Peso",
+              "meaning": "um número ajustável dentro de uma rede neural."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Cai a regra 68-95-99,7 com números: dada a média e o desvio, que porcentagem fica num intervalo.",
+            "Pela simetria, metade de 68% fica de cada lado da média: 34%."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde o sino engana."
+          ],
+          "bullets": [
+            "Achar que todos os dados do mundo são normais: renda, por exemplo, não é.",
+            "Esquecer que o sino é simétrico e que cada lado tem metade da porcentagem.",
+            "Confundir 1 desvio com 1 unidade.",
+            "Achar que um valor fora de 3 desvios é impossível: é só raro."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O sino e a sua regra."
+          ],
+          "bullets": [
+            "Normal: sino simétrico em torno da média.",
+            "Média: onde fica o pico. Desvio: a largura.",
+            "68% a 1 desvio, 95% a 2, 99,7% a 3.",
+            "Escore: (valor − média) ÷ desvio.",
+            "Somas de muitos efeitos pequenos formam o sino.",
+            "Pesos de redes costumam começar sorteados de uma normal."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "68%",
+          "statement": "Notas com média 60 e desvio 5 seguem uma normal. Cerca de que porcentagem fica entre 55 e 65?",
+          "options": [
+            "50%",
+            "68%",
+            "95%",
+            "99,7%",
+            "34%"
+          ],
+          "correct_index": 1,
+          "explanation": "55 e 65 estão a 1 desvio da média: cerca de 68%.",
+          "pitfall": "34% é só metade, de um lado."
+        },
+        {
+          "topic": "95%",
+          "statement": "Com média 100 e desvio 15, cerca de 95% dos valores ficam entre:",
+          "options": [
+            "85 e 115",
+            "70 e 130",
+            "55 e 145",
+            "90 e 110",
+            "100 e 130"
+          ],
+          "correct_index": 1,
+          "explanation": "2 desvios: 100 − 30 e 100 + 30.",
+          "pitfall": "85 e 115 é 1 desvio."
+        },
+        {
+          "topic": "Um lado",
+          "statement": "Numa normal, que porcentagem fica acima da média?",
+          "options": [
+            "68%",
+            "34%",
+            "50%",
+            "95%",
+            "0%"
+          ],
+          "correct_index": 2,
+          "explanation": "O sino é simétrico: metade de cada lado.",
+          "pitfall": "34% é entre a média e 1 desvio acima."
+        },
+        {
+          "topic": "Escore",
+          "statement": "Média 170, desvio 10. Qual é o escore padronizado de 195?",
+          "options": [
+            "25",
+            "2,5",
+            "1,95",
+            "−2,5",
+            "0,25"
+          ],
+          "correct_index": 1,
+          "explanation": "(195 − 170) ÷ 10 = 2,5.",
+          "pitfall": "25 esquece de dividir pelo desvio."
+        },
+        {
+          "topic": "Raro",
+          "statement": "Um valor está a 4 desvios acima da média numa normal. Ele é:",
+          "options": [
+            "comum",
+            "raríssimo",
+            "impossível",
+            "a média",
+            "a mediana"
+          ],
+          "correct_index": 1,
+          "explanation": "Além de 3 desvios já fica menos de 0,3%; 4 é ainda mais raro.",
+          "pitfall": "Raro não é impossível."
+        },
+        {
+          "topic": "Largura",
+          "statement": "Duas normais têm a mesma média. A de desvio maior é:",
+          "options": [
+            "mais fina e alta",
+            "mais larga e baixa",
+            "deslocada para a direita",
+            "igual",
+            "sem pico"
+          ],
+          "correct_index": 1,
+          "explanation": "Mais desvio espalha os valores: o sino fica largo e o pico, mais baixo.",
+          "pitfall": "Deslocar é mudar a média, e não o desvio."
+        },
+        {
+          "topic": "Onde aparece",
+          "statement": "Por que tantas medidas naturais seguem a normal?",
+          "options": [
+            "porque somam muitos efeitos pequenos e independentes",
+            "por acaso",
+            "porque são sempre inteiras",
+            "porque a natureza gosta de sinos",
+            "porque são poucas"
+          ],
+          "correct_index": 0,
+          "explanation": "É o teorema central do limite.",
+          "pitfall": "“A natureza gosta” não explica nada: a soma de efeitos explica."
+        },
+        {
+          "topic": "Regra",
+          "format": "match",
+          "statement": "Ligue cada faixa em torno da média à porcentagem aproximada.",
+          "pairs": [
+            {
+              "left": "1 desvio",
+              "right": "68%"
+            },
+            {
+              "left": "2 desvios",
+              "right": "95%"
+            },
+            {
+              "left": "3 desvios",
+              "right": "99,7%"
+            },
+            {
+              "left": "acima da média",
+              "right": "50%"
+            }
+          ],
+          "explanation": "A regra 68-95-99,7 mais a simetria resolvem quase toda questão de normal.",
+          "pitfall": "Não troque 1 desvio com 2: 68 e 95."
+        }
+      ]
+    },
+    {
+      "slug": "logaritmos-em-probabilidade",
+      "title": "Logaritmos aplicados à probabilidade",
+      "module": "Para a IA",
+      "summary": "Multiplicar muitas chances dá números pequenos demais para o computador. Com logaritmos, a multiplicação vira soma, e é assim que todo modelo de linguagem guarda as suas chances.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Zeros demais",
+          "body": [
+            "Um modelo dá 10% de chance a cada palavra de uma frase de 400 palavras. A chance da frase é 0,1⁴⁰⁰: um zero, uma vírgula e 399 zeros antes do 1.",
+            "O computador não guarda números tão pequenos. Ele arredonda para zero, e toda informação some."
+          ],
+          "terms": [
+            {
+              "word": "Probabilidade",
+              "meaning": "a chance de algo acontecer, escrita como um número de 0 a 1."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O logaritmo transforma",
+          "body": [
+            "O logaritmo de uma multiplicação é a soma dos logaritmos. Em vez de multiplicar 400 chances, somam-se 400 logaritmos.",
+            "log₁₀ 0,1 = −1. Então log₁₀(0,1⁴⁰⁰) = 400 × (−1) = −400. Um número comum, sem problema nenhum."
+          ],
+          "terms": [
+            {
+              "word": "Logaritmo",
+              "meaning": "o expoente que falta. log₁₀ 0,1 = −1 porque 10⁻¹ = 0,1. O logaritmo de um produto é a soma dos logaritmos."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O logaritmo de uma chance",
+          "body": [
+            "Chances ficam entre 0 e 1, e o logaritmo delas é sempre zero ou negativo. Chance 1 dá log 0; chance perto de zero dá um número muito negativo.",
+            "Em ciência de dados se usa o logaritmo natural, ln, na base e."
+          ],
+          "terms": [
+            {
+              "word": "Logaritmo natural (ln)",
+              "meaning": "o logaritmo na base e, que vale cerca de 2,718."
+            }
+          ],
+          "table": {
+            "label": "ln de algumas chances",
+            "headers": [
+              "Chance",
+              "ln"
+            ],
+            "rows": [
+              [
+                "1",
+                "0"
+              ],
+              [
+                "0,5",
+                "−0,69"
+              ],
+              [
+                "0,1",
+                "−2,30"
+              ],
+              [
+                "0,01",
+                "−4,61"
+              ],
+              [
+                "0,0001",
+                "−9,21"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Surpresa",
+          "body": [
+            "−ln(chance) mede a surpresa. Algo certo não surpreende: 0. Algo raríssimo surpreende muito: um número grande.",
+            "Um modelo bom se surpreende pouco com o texto real. Esse é o critério com que ele é avaliado."
+          ],
+          "terms": [
+            {
+              "word": "Surpresa",
+              "meaning": "−ln da chance de algo. Quanto menor a chance, maior a surpresa."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A perda de um modelo de linguagem",
+          "body": [
+            "No treino, o modelo vê a palavra certa e olha a chance que ele tinha dado a ela. A perda é −ln dessa chance.",
+            "Deu chance 0,9 à palavra certa: perda 0,11, ótimo. Deu chance 0,01: perda 4,61, péssimo. O treino ajusta os pesos para diminuir essa perda média."
+          ],
+          "terms": [
+            {
+              "word": "Função de perda",
+              "meaning": "o número que mede o quanto o modelo errou. O treino tenta diminuí-lo."
+            },
+            {
+              "word": "Entropia cruzada",
+              "meaning": "o nome da perda −ln(chance dada à resposta certa), a mais usada em modelos de linguagem."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Perplexidade",
+          "body": [
+            "Tirando o exponencial da perda média, sai a perplexidade: o número de palavras entre as quais o modelo está “em dúvida”, em média.",
+            "Perplexidade 10 é como escolher entre 10 palavras igualmente prováveis a cada passo. Quanto menor, melhor."
+          ],
+          "terms": [
+            {
+              "word": "Perplexidade",
+              "meaning": "e elevado à perda média. Diz entre quantas opções, em média, o modelo fica dividido."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "No Python",
+          "body": [
+            "Somar logs em vez de multiplicar chances é uma linha com NumPy."
+          ],
+          "code": {
+            "label": "Chance de uma frase",
+            "text": "import numpy as np\nchances = np.array([0.2, 0.5, 0.1, 0.4])\nprint(np.sum(np.log(chances)))\nprint(np.prod(chances))",
+            "notes": [
+              "Traz o NumPy.",
+              "As chances de cada palavra da frase.",
+              "Soma os logaritmos: mostra cerca de −5,52.",
+              "Multiplica as chances: 0,004. Com quatro palavras ainda dá; com quatrocentas, viraria zero."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Em entrevistas de IA, cai: por que se usa log de probabilidade? Resposta: evita números pequenos demais e transforma produto em soma.",
+            "Também cai calcular a perda de entropia cruzada para uma chance dada."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde os logs confundem."
+          ],
+          "bullets": [
+            "Esperar log positivo de uma chance: é sempre zero ou negativo.",
+            "Esquecer o sinal de menos na perda.",
+            "Achar que perda maior é melhor.",
+            "Tentar calcular log de chance zero: dá menos infinito."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Somar logs no lugar de multiplicar chances."
+          ],
+          "bullets": [
+            "Produtos de muitas chances viram zero no computador.",
+            "log de produto = soma de logs.",
+            "ln de chance é zero ou negativo.",
+            "Surpresa: −ln(chance).",
+            "Entropia cruzada: −ln da chance da resposta certa.",
+            "Perplexidade: e elevado à perda média; menor é melhor."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Soma",
+          "statement": "Com log₁₀, qual é o logaritmo da chance da frase se cada uma de 5 palavras tem chance 0,1?",
+          "options": [
+            "−1",
+            "−5",
+            "−0,5",
+            "0,00001",
+            "5"
+          ],
+          "correct_index": 1,
+          "explanation": "Cada palavra soma log 0,1 = −1. Cinco palavras: −5.",
+          "pitfall": "0,00001 é a chance, e não o logaritmo."
+        },
+        {
+          "topic": "Sinal",
+          "statement": "Qual é o sinal do ln de uma chance de 0,3?",
+          "options": [
+            "positivo",
+            "negativo",
+            "zero",
+            "depende",
+            "infinito"
+          ],
+          "correct_index": 1,
+          "explanation": "Chances menores que 1 têm logaritmo negativo.",
+          "pitfall": "Zero só com chance 1."
+        },
+        {
+          "topic": "Perda",
+          "statement": "O modelo deu chance 1 à palavra certa. Qual é a perda de entropia cruzada?",
+          "options": [
+            "1",
+            "0",
+            "−1",
+            "infinito",
+            "0,5"
+          ],
+          "correct_index": 1,
+          "explanation": "−ln(1) = 0: nenhuma surpresa, nenhuma perda.",
+          "pitfall": "Perda 1 seria um erro."
+        },
+        {
+          "topic": "Comparar",
+          "statement": "Qual situação dá a maior perda?",
+          "options": [
+            "chance 0,9 à certa",
+            "chance 0,5 à certa",
+            "chance 0,1 à certa",
+            "chance 0,01 à certa",
+            "chance 1 à certa"
+          ],
+          "correct_index": 3,
+          "explanation": "Quanto menor a chance dada à resposta certa, maior o −ln.",
+          "pitfall": "Chance 0,9 dá a menor perda das opções, além da chance 1."
+        },
+        {
+          "topic": "Por quê",
+          "statement": "Por que modelos guardam log de chances em vez das chances?",
+          "options": [
+            "para evitar números pequenos demais e trocar produto por soma",
+            "porque log é mais bonito",
+            "para aumentar as chances",
+            "porque chances são negativas",
+            "para gastar mais memória"
+          ],
+          "correct_index": 0,
+          "explanation": "Produtos longos viram zero; somas de logs não.",
+          "pitfall": "O log não aumenta as chances: só muda a forma de guardar."
+        },
+        {
+          "topic": "Perplexidade",
+          "statement": "Um modelo tem perplexidade 4. Isso quer dizer que:",
+          "options": [
+            "erra 4 vezes",
+            "fica, em média, como se escolhesse entre 4 palavras",
+            "tem 4 camadas",
+            "acerta 4%",
+            "é perfeito"
+          ],
+          "correct_index": 1,
+          "explanation": "É o número de opções igualmente prováveis equivalentes à dúvida dele.",
+          "pitfall": "Perplexidade 1 é que seria certeza total."
+        },
+        {
+          "topic": "Zero",
+          "statement": "O que acontece com o log de uma chance zero?",
+          "options": [
+            "dá zero",
+            "dá menos infinito",
+            "dá 1",
+            "dá um número pequeno",
+            "dá positivo"
+          ],
+          "correct_index": 1,
+          "explanation": "Quanto mais perto de zero a chance, mais negativo o log, sem limite.",
+          "pitfall": "Por isso modelos evitam dar chance exatamente zero a qualquer palavra."
+        },
+        {
+          "topic": "Logs",
+          "format": "match",
+          "statement": "Ligue cada chance ao seu ln aproximado.",
+          "pairs": [
+            {
+              "left": "1",
+              "right": "0"
+            },
+            {
+              "left": "0,5",
+              "right": "−0,69"
+            },
+            {
+              "left": "0,1",
+              "right": "−2,30"
+            },
+            {
+              "left": "0,01",
+              "right": "−4,61"
+            }
+          ],
+          "explanation": "Cada vez que a chance cai dez vezes, o ln cai cerca de 2,3.",
+          "pitfall": "Nenhum ln de chance é positivo."
+        }
+      ]
+    },
+    {
+      "slug": "verossimilhanca",
+      "title": "Verossimilhança e máxima verossimilhança",
+      "module": "Para a IA",
+      "summary": "Dados os dados, qual valor do modelo os torna mais prováveis? Escolher esse valor é a máxima verossimilhança, e treinar um modelo de linguagem é exatamente isso.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A moeda suspeita",
+          "body": [
+            "Você joga uma moeda 10 vezes e sai cara 8 vezes. Ela está viciada? Qual a chance de cara dela?",
+            "Uma moeda com 80% de cara torna esse resultado bem provável. Uma com 50% o torna pouco provável. Escolher a explicação mais provável é a ideia desta lição."
+          ],
+          "terms": [
+            {
+              "word": "Probabilidade",
+              "meaning": "a chance de algo acontecer, escrita como um número de 0 a 1."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Virando a pergunta",
+          "body": [
+            "Normalmente se pergunta: com a moeda justa, qual a chance de 8 caras? Aqui se pergunta ao contrário: com 8 caras observadas, qual chance de cara explica melhor?",
+            "A verossimilhança é a chance dos dados observados, vista como uma função do parâmetro do modelo."
+          ],
+          "terms": [
+            {
+              "word": "Parâmetro",
+              "meaning": "um número do modelo que se quer descobrir, como a chance de cara de uma moeda ou os pesos de uma rede."
+            },
+            {
+              "word": "Verossimilhança",
+              "meaning": "a chance dos dados observados, calculada para cada valor possível do parâmetro. Em inglês, likelihood."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Testando valores",
+          "body": [
+            "Para 8 caras e 2 coroas, a chance dessa sequência é p⁸ × (1 − p)², em que p é a chance de cara.",
+            "Com p = 0,5 dá cerca de 0,001. Com p = 0,8 dá cerca de 0,0067. O 0,8 explica melhor."
+          ],
+          "table": {
+            "label": "Verossimilhança de 8 caras e 2 coroas",
+            "headers": [
+              "p",
+              "p⁸ × (1 − p)²"
+            ],
+            "rows": [
+              [
+                "0,5",
+                "≈ 0,0010"
+              ],
+              [
+                "0,6",
+                "≈ 0,0027"
+              ],
+              [
+                "0,8",
+                "≈ 0,0067"
+              ],
+              [
+                "0,9",
+                "≈ 0,0043"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A máxima verossimilhança",
+          "body": [
+            "O valor que deixa a verossimilhança mais alta é a estimativa de máxima verossimilhança. Aqui é p = 0,8: exatamente a fração de caras observada.",
+            "É a escolha que torna os dados o menos surpreendentes possível."
+          ],
+          "terms": [
+            {
+              "word": "Máxima verossimilhança",
+              "meaning": "escolher o valor do parâmetro que torna os dados observados mais prováveis."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/probabilidade/verossimilhanca.svg",
+            "alt": "Uma curva da verossimilhança em função de p, de 0 a 1. Ela sobe, atinge o pico em p = 0,8, marcado, e desce.",
+            "caption": "O pico da curva é a melhor explicação: p = 0,8."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Com logaritmo, fica mais fácil",
+          "body": [
+            "A verossimilhança é um produto de muitas chances. Com logaritmo, vira soma, e o pico fica no mesmo lugar.",
+            "Maximizar a soma dos logs é o mesmo que minimizar menos essa soma. E menos a soma dos logs das chances é a perda de entropia cruzada."
+          ],
+          "terms": [
+            {
+              "word": "Logaritmo",
+              "meaning": "o expoente que falta; o log de um produto é a soma dos logs."
+            },
+            {
+              "word": "Entropia cruzada",
+              "meaning": "a perda −ln(chance dada à resposta certa), somada ou tirada a média."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Treinar um LLM é isso",
+          "body": [
+            "O modelo tem bilhões de parâmetros. Os dados são uma quantidade enorme de texto. Treinar é procurar os parâmetros que deixam esse texto o mais provável possível.",
+            "Na prática: diminuir a entropia cruzada média de cada próxima palavra, com gradiente descendente. É a máxima verossimilhança em escala gigante."
+          ],
+          "terms": [
+            {
+              "word": "Gradiente descendente",
+              "meaning": "o método de diminuir uma função dando passos contra a direção de subida."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Cuidados",
+          "body": [
+            "Com poucos dados, a máxima verossimilhança exagera. Duas caras em duas jogadas dariam p = 1, como se coroa fosse impossível.",
+            "Por isso modelos usam muitos dados e técnicas que evitam certezas absolutas."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Em entrevistas de IA, cai: qual a relação entre máxima verossimilhança e entropia cruzada? Resposta: minimizar a entropia cruzada é maximizar a log-verossimilhança.",
+            "Em estatística, cai achar a estimativa de uma moeda ou de uma média a partir de dados."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a verossimilhança confunde."
+          ],
+          "bullets": [
+            "Achar que verossimilhança é a chance de o parâmetro estar certo: é a chance dos dados, dado o parâmetro.",
+            "Achar que as verossimilhanças de todos os valores somam 1: não somam.",
+            "Esquecer que o log não muda onde fica o pico.",
+            "Confiar na estimativa com poucos dados."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Os dados escolhem o modelo."
+          ],
+          "bullets": [
+            "Verossimilhança: chance dos dados para cada valor do parâmetro.",
+            "Máxima verossimilhança: o valor que deixa os dados mais prováveis.",
+            "Na moeda, dá a fração de caras observada.",
+            "Com log, o produto vira soma e o pico não muda.",
+            "Minimizar entropia cruzada é maximizar log-verossimilhança.",
+            "Treinar um LLM é máxima verossimilhança em escala gigante."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Moeda",
+          "statement": "Numa moeda, saíram 30 caras em 100 jogadas. Qual é a estimativa de máxima verossimilhança da chance de cara?",
+          "options": [
+            "0,5",
+            "0,3",
+            "0,7",
+            "30",
+            "0,03"
+          ],
+          "correct_index": 1,
+          "explanation": "É a fração observada: 30/100.",
+          "pitfall": "0,5 seria supor que a moeda é justa, ignorando os dados."
+        },
+        {
+          "topic": "Comparar",
+          "statement": "Para 8 caras e 2 coroas, qual valor de p torna os dados mais prováveis?",
+          "options": [
+            "0,5",
+            "0,6",
+            "0,8",
+            "0,9",
+            "1"
+          ],
+          "correct_index": 2,
+          "explanation": "O pico da verossimilhança fica na fração observada, 8/10.",
+          "pitfall": "0,9 exagera: com ele, as 2 coroas ficam raras demais."
+        },
+        {
+          "topic": "Definição",
+          "statement": "A verossimilhança de um valor de parâmetro é:",
+          "options": [
+            "a chance de o parâmetro estar certo",
+            "a chance dos dados observados, se o parâmetro for aquele",
+            "o erro do modelo",
+            "a média dos dados",
+            "sempre 1"
+          ],
+          "correct_index": 1,
+          "explanation": "Ela olha os dados com o parâmetro fixado.",
+          "pitfall": "A chance de o parâmetro estar certo é outra pergunta."
+        },
+        {
+          "topic": "Log",
+          "statement": "Por que se maximiza o log da verossimilhança em vez dela mesma?",
+          "options": [
+            "porque o log vira soma e o pico fica no mesmo lugar",
+            "porque dá outro resultado",
+            "porque a verossimilhança é negativa",
+            "porque o log é sempre 1",
+            "por tradição"
+          ],
+          "correct_index": 0,
+          "explanation": "Soma é mais fácil de calcular e não some no computador; o melhor valor não muda.",
+          "pitfall": "O resultado é o mesmo; só a conta fica viável."
+        },
+        {
+          "topic": "Treino",
+          "statement": "Diminuir a entropia cruzada de um modelo de linguagem é o mesmo que:",
+          "options": [
+            "aumentar a verossimilhança do texto de treino",
+            "diminuir o tamanho do modelo",
+            "aumentar a perda",
+            "sortear palavras",
+            "apagar dados"
+          ],
+          "correct_index": 0,
+          "explanation": "A entropia cruzada é menos a log-verossimilhança, média por palavra.",
+          "pitfall": "Aumentar a perda seria o contrário do treino."
+        },
+        {
+          "topic": "Poucos dados",
+          "statement": "Com 3 caras em 3 jogadas, a máxima verossimilhança dá p = 1. Qual é o problema?",
+          "options": [
+            "nenhum",
+            "afirma que coroa é impossível, com pouquíssima evidência",
+            "p não pode ser 1",
+            "a conta está errada",
+            "deveria dar 0,5"
+          ],
+          "correct_index": 1,
+          "explanation": "Com poucos dados, a estimativa exagera e fica com certeza absoluta.",
+          "pitfall": "A conta está certa; o problema é confiar nela com três jogadas."
+        },
+        {
+          "topic": "Parâmetros",
+          "statement": "Num modelo de linguagem, quais são os parâmetros que a máxima verossimilhança ajusta?",
+          "options": [
+            "as palavras do texto",
+            "os pesos da rede",
+            "o tamanho do vocabulário",
+            "a taxa de aprendizado",
+            "o número de camadas"
+          ],
+          "correct_index": 1,
+          "explanation": "São os pesos, aprendidos para deixar o texto mais provável.",
+          "pitfall": "A taxa de aprendizado é escolhida por quem treina."
+        },
+        {
+          "topic": "Máxima verossimilhança",
+          "format": "order",
+          "statement": "Ponha na ordem a ideia da máxima verossimilhança.",
+          "options": [
+            "Observar os dados",
+            "Escrever a chance dos dados para cada valor do parâmetro",
+            "Tirar o logaritmo para virar soma",
+            "Escolher o valor com a maior soma"
+          ],
+          "explanation": "Os dados vêm primeiro; o parâmetro é escolhido para explicá-los.",
+          "pitfall": "Escolher o parâmetro antes de ver os dados inverte a ideia."
+        }
+      ]
+    }
+  ]
+}

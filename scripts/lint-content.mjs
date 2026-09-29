@@ -261,9 +261,24 @@ const JARGON = [
   ["mínimo local", /\bm(í|i)nimos? loca(l|is)\b/i, "c"], ["gradiente descendente", /\bgradiente descendente\b/i, "c"],
   ["taxa de aprendizado", /\btaxas? de aprendizado\b|\blearning rate\b/i, "c"], ["variável", /\bvari(á|a)ve(l|is)\b/i, "c"],
   ["função de perda", /\bfun(ç|c)(ão|ões) de perda\b/i, "c"], ["reta secante", /\bsecantes?\b/i, "c"],
+
+  /*
+  | Probabilidade e Estatística (escopo "e"). "Média" ficou de fora: todo
+  | mundo sabe o que é a média de notas. "Moda" entra só com o sentido de
+  | estatística, e por isso a lição evita "estar na moda".
+  */
+  ["probabilidade", /\bprobabilidades?\b/i, "e"], ["evento", /\beventos?\b/i, "e"], ["espaço amostral", /\bespa(ç|c)o amostral\b/i, "e"],
+  ["complementar", /\bcomplementar(es)?\b/i, "e"], ["probabilidade condicional", /\bcondiciona(l|is)\b/i, "e"],
+  ["independente", /\bindependentes?\b/i, "e"], ["variável aleatória", /\bvari(á|a)ve(l|is) aleat(ó|o)rias?\b/i, "e"],
+  ["distribuição", /\bdistribui(ç|c)(ão|ões)\b/i, "e"], ["discreta", /\bdiscret(a|as|o|os)\b/i, "e"], ["contínua", /\bcont(í|i)nu(a|as|o|os)\b/i, "e"],
+  ["esperança", /\besperan(ç|c)a\b|\bvalor esperado\b/i, "e"], ["mediana", /\bmedianas?\b/i, "e"], ["moda", /\bmodas?\b/i, "e"],
+  ["variância", /\bvari(â|a)ncias?\b/i, "e"], ["desvio padrão", /\bdesvios? padr(ão|ões)\b/i, "e"], ["covariância", /\bcovari(â|a)ncias?\b/i, "e"],
+  ["correlação", /\bcorrela(ç|c)(ão|ões)\b/i, "e"], ["distribuição normal", /\bdistribui(ç|c)(ão|ões) norma(l|is)\b|\bcurva normal\b/i, "e"],
+  ["logaritmo", /\blogaritm\w*|\blog(?=[\s₀-₉(]|$)|\bln\b/i, "e"], ["verossimilhança", /\bverossimilhan(ç|c)a\b|\blikelihood\b/i, "e"],
+  ["amostra", /\bamostras?\b/i, "e"], ["frequência", /\bfrequ(ê|e)ncias?\b/i, "e"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;

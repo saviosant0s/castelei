@@ -4,6 +4,7 @@ import {
   BookOpenText,
   Brain,
   Calculator,
+  ChartColumn,
   Code,
   Cpu,
   Dna,
@@ -69,6 +70,7 @@ const iconesDeMateria: Record<string, LucideIcon> = {
   "programacao-python": Code,
   "algebra-linear": Grid3x3,
   calculo: LineChart,
+  "probabilidade-estatistica": ChartColumn,
 };
 
 /** Ícone da matéria; a que não tem um próprio usa o da área. */

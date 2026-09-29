@@ -309,6 +309,15 @@ Três coisas de conteúdo:
 
 **Matéria de Cálculo** (11 lições, `09-calculo.json`, área Matemática): a seção 4 da trilha. Módulos Funções, Limites e derivadas, Várias variáveis e Otimizar — termina no gradiente descendente e na taxa de aprendizado, que são o fio que liga a matemática ao treino de redes. O escopo `c` tem derivada, limite, tangente, regra da cadeia, gradiente, taxa de aprendizado… Os exemplos numéricos de descida (passo pequeno, na medida e grande demais) foram conferidos à mão: são a parte que mais engana.
 
+**Matéria de Probabilidade e Estatística** (10 lições, `10-probabilidade-estatistica.json`, área Matemática): a seção 5 da trilha. Módulos Probabilidade, Estatística descritiva e Para a IA — este último fecha a matemática com log de probabilidade, entropia cruzada, perplexidade e máxima verossimilhança, que é exatamente como um modelo de linguagem é treinado. O escopo `e` do verificador deixou "média" de fora (todo mundo conhece a média de notas); "moda" entra só no sentido estatístico. **Cuidado com a regex de "contínua":** ela casa com o verbo "continua", então a lição evita "continua" como verbo.
+
+**Trilha de estudo "LLMs do zero"** (`config/castelei.php` → `trails`, `GET /subjects` devolve `trails`, tela em `trilha/[slug]/page.tsx`, lógica em `lib/trails.ts`). Pedido do Sávio: "organize na sequência do que devo aprender primeiro". A trilha atravessa áreas (Matemática e Informática), e a tela de áreas sozinha não dizia a ordem. Quatro coisas:
+
+- **A ordem mora no backend, e o progresso sai das matérias.** Cada passo é só `{subject, name, why}`; praticadas/total vêm das mesmas matérias de `GET /subjects`, com o mesmo critério das outras telas (tentativa concluída).
+- **Passo de matéria que ainda não existe aparece como "Em breve"**, com o nome da config, e não é link. Quando o JSON da matéria entrar, o passo acende sozinho. Um teste exige que o `name` do passo seja igual ao da matéria já escrita.
+- **Nada é trancado.** O passo atual é o primeiro que existe e não terminou; os outros continuam clicáveis, como o nó cinza da trilha da matéria.
+- **A tela inicial mostra a trilha antes das áreas** ("Passo 2 de 8: Programação com Python"), e a matéria que faz parte dela mostra "Passo N de 8 · LLMs do zero" acima do título, com link para a trilha.
+
 **Ao acrescentar lição, mexa em quatro lugares:** o JSON do conteúdo, a figura em `frontend/public/figuras/`, a lista de `frontend/src/lib/site-content.ts` (o teste `site-content.test.ts` reprova se esquecer) e o mapa em `docs/sistemas-operacionais-mapa.md`. Matéria nova entra com **todas as lições de uma vez**: arquivo com metade delas publicado deixa a outra metade órfã.
 
 **Atualizações feitas sobre o material do semestre** (a regra 4 do Guia manda corrigir o que está defasado): micronúcleo hoje é tecnologia de produção, não experimento — entrou o seL4 e o uso em carros e aviões; e contêineres entraram ao lado de máquinas virtuais, porque é o que se usa hoje e o material da disciplina não cobre.

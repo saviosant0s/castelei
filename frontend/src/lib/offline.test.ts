@@ -22,6 +22,7 @@ describe("offline", () => {
     expect(padrao.test("/licao/12")).toBe(true);
     expect(padrao.test("/materia/sistemas-operacionais")).toBe(true);
     expect(padrao.test("/area/informatica")).toBe(true);
+    expect(padrao.test("/trilha/llms-do-zero")).toBe(true);
     expect(padrao.test("/licao/12/praticar")).toBe(false);
     expect(padrao.test("/perfil")).toBe(false);
     expect(padrao.test("/admin")).toBe(false);

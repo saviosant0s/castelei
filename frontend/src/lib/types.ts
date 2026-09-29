@@ -49,10 +49,29 @@ export interface Area {
   name: string;
 }
 
+/** Um passo de uma trilha: uma matéria, na ordem de estudo. */
+export interface TrailStep {
+  /** Slug da matéria. Pode ainda não existir: aí o passo aparece como "Em breve". */
+  subject: string;
+  name: string;
+  /** Por que este passo vem aqui, numa frase. */
+  why: string;
+}
+
+/** Uma ordem de estudo que atravessa áreas, como "LLMs do zero". */
+export interface Trail {
+  slug: string;
+  name: string;
+  description: string;
+  steps: TrailStep[];
+}
+
 /** Resposta de `GET /subjects`. */
 export interface SubjectsResponse {
   /** Todas as áreas, na ordem da tela — inclusive as que ainda não têm matéria. */
   areas: Area[];
+  /** As trilhas de estudo, com os passos já na ordem. */
+  trails?: Trail[];
   subjects: Subject[];
 }
 
