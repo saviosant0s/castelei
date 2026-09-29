@@ -317,6 +317,12 @@ Três coisas de conteúdo:
 - **Regex que começa em letra acentuada precisa de `(?<!\p{L})` e da flag `u`**, não de `\b`. Sem a flag `u`, o JavaScript não conta "é" como letra: `/\b(é|e)pocas?\b/` nunca reconhecia "Época" como verbete, e "epoca" no código reprovava mesmo com o termo explicado.
 - **Todo código foi executado antes de entrar**, e a linha "Mostra …" de cada nota é a saída real. Os números com sorteio usam semente fixa (`default_rng(1)`, `manual_seed(0)`) para a saída não mudar.
 
+**Matéria LLMs: do texto ao Transformer** (15 lições, `12-llms-como-funcionam.json`, área Informática, figuras em `frontend/public/figuras/llms/`): as seções 8 a 11 da trilha. Módulos Texto vira número (tokens, BPE, embeddings, similaridade), Prever o próximo token (modelagem causal, geração, perplexidade e teacher forcing), Atenção (consulta, chave e valor; a fórmula com √d; máscara causal; várias cabeças) e O Transformer (posição, com RoPE como atualização; o bloco; as três famílias; e um mini-GPT inteiro em PyTorch). Três coisas:
+
+- **O escopo de um verbete pode ter mais de uma letra.** As duas matérias de LLMs dividem quase todo o vocabulário, então o verbete leva `"gl"` e vale para as duas (`scope.includes(letra)` no verificador). Antes era igualdade exata.
+- **"Peso" faz dois trabalhos, como "núcleo" em Sistemas Operacionais.** O peso do modelo é aprendido; o peso de atenção é calculado de novo a cada texto. As lições de atenção definem "peso de atenção" com essa diferença escrita, porque é exatamente a confusão que a prova cobra.
+- **"Atenção" é jargão sozinha, e "seno e cosseno" casa com a similaridade de cosseno.** Nas lições de atenção a palavra quase só aparece no sentido técnico; e a lição de posição define "seno e cosseno" à parte, senão a onda reprovaria como se fosse a medida de similaridade.
+
 **Trilha de estudo "LLMs do zero"** (`config/castelei.php` → `trails`, `GET /subjects` devolve `trails`, tela em `trilha/[slug]/page.tsx`, lógica em `lib/trails.ts`). Pedido do Sávio: "organize na sequência do que devo aprender primeiro". A trilha atravessa áreas (Matemática e Informática), e a tela de áreas sozinha não dizia a ordem. Quatro coisas:
 
 - **A ordem mora no backend, e o progresso sai das matérias.** Cada passo é só `{subject, name, why}`; praticadas/total vêm das mesmas matérias de `GET /subjects`, com o mesmo critério das outras telas (tentativa concluída).

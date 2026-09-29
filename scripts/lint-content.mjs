@@ -296,9 +296,37 @@ const JARGON = [
   ["classificação", /\bclassifica(ç|c)(ão|ões)\b/i, "n"], ["rótulo", /\br(ó|o)tulos?\b/i, "n"], ["vetor", /\bvetor(es)?\b/i, "n"],
   ["matriz", /\bmatriz(es)?\b/i, "n"], ["NumPy", /\bnumpy\b/i, "n"], ["PyTorch", /\bpytorch\b|\btorch\b/i, "n"], ["tensor", /\btensor(es)?\b/i, "n"],
   ["hiperparâmetro", /\bhiperpar(â|a)metros?\b/i, "n"], ["conjunto de validação", /\bvalida(ç|c)(ão|ões)\b/i, "n"],
+  /*
+  | As duas matérias de LLMs ("g" = do texto ao Transformer, "l" = treino, uso
+  | e limites). O escopo de um verbete pode ter mais de uma letra: "gl" vale
+  | para as duas. O corte é o mesmo das outras: quem nunca estudou IA saberia?
+  | "Atenção" entra sozinha, no sentido técnico: nessas matérias a palavra
+  | quase nunca aparece no sentido de "preste atenção", e quando aparece o
+  | texto troca por outra. "Precisão" também, e a lição que a usa define no
+  | sentido dela (número com casas ou métrica de avaliação).
+  */
+  ["token", /\btokens?\b/i, "gl"], ["tokenização", /\btokeniza(ç|c)(ão|ões)\b|\btokenizador(es)?\b/i, "gl"],
+  ["subpalavra", /\bsubpalavras?\b|\bsubwords?\b/i, "g"], ["BPE", /\bBPE\b/, "g"], ["SentencePiece", /\bSentencePiece\b/i, "g"],
+  ["embedding", /\bembeddings?\b/i, "gl"], ["vetor", /\bvetor(es)?\b|\bvetori(al|ais)\b/i, "gl"], ["matriz", /\bmatriz(es)?\b/i, "gl"],
+  ["modelo de linguagem", /\bmodelos? de linguagem\b|\bLLMs?\b/, "gl"], ["peso", /\bpesos?\b/i, "gl"], ["parâmetro", /\bpar(â|a)metros?\b/i, "gl"],
+  ["neurônio", /\bneur(ô|o)nios?\b/i, "gl"], ["camada", /\bcamadas?\b/i, "gl"], ["viés", /\bvi(é|e)s\b|\bbias\b/i, "gl"],
+  ["softmax", /\bsoftmax\b/i, "gl"], ["logit", /\blogits?\b/i, "gl"], ["função de perda", /\bfun(ç|c)(ão|ões) de perda\b|\bperda\b/i, "gl"],
+  ["entropia cruzada", /\bentropia cruzada\b|\bcross-entropy\b/i, "gl"], ["gradiente", /\bgradientes?\b/i, "gl"],
+  ["NumPy", /\bnumpy\b/i, "gl"], ["PyTorch", /\bpytorch\b|\btorch\b/i, "gl"], ["tensor", /\btensor(es)?\b/i, "gl"],
+  ["produto escalar", /\bprodutos? escalar(es)?\b/i, "gl"], ["similaridade de cosseno", /\bcossenos?\b/i, "gl"],
+  ["causal", /\bcausa(l|is)\b/i, "gl"], ["geração autorregressiva", /\bautorregress\w*|\bautoregress\w*/i, "gl"],
+  ["janela de contexto", /\bjanelas? de contexto\b|\bcontext window\b/i, "gl"], ["perplexidade", /\bperplexidade\b/i, "gl"],
+  ["teacher forcing", /\bteacher forcing\b/i, "g"], ["atenção", /\baten(ç|c)(ão|ões)\b|\battention\b/i, "gl"],
+  ["autoatenção", /\bautoaten(ç|c)(ão|ões)\b|\bself-attention\b/i, "gl"], ["consulta (query)", /\bquer(y|ies)\b/i, "gl"],
+  ["chave (key)", /\bkeys?\b/i, "gl"], ["valor (value)", /\bvalues?\b/i, "gl"], ["máscara", /\bm(á|a)scaras?\b/i, "gl"],
+  ["cabeça de atenção", /\bmulti-?head\b|\bcabe(ç|c)as?\b/i, "gl"], ["codificação posicional", /\bposicion(al|ais)\b/i, "gl"],
+  ["conexão residual", /\bresidu(al|ais)\b/i, "gl"], ["normalização de camada", /\blayer ?norm\w*|\bnormaliza(ç|c)(ão|ões)\b/i, "gl"],
+  ["rede feed-forward", /\bfeed-?forward\b|\bFFN\b/i, "gl"], ["Transformer", /\btransformers?\b/i, "gl"],
+  ["codificador (encoder)", /\bencoders?\b|\bcodificador(es)?\b/i, "gl"], ["decodificador (decoder)", /\bdecoders?\b|\bdecodificador(es)?\b/i, "gl"],
+  ["GPT", /\bGPT\b/, "gl"], ["lote (batch)", /\blotes?\b|\bbatch(es)?\b/i, "gl"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;
@@ -406,7 +434,8 @@ let lessonCount = 0, stepCount = 0, questionCount = 0;
 
 for (const file of arquivos) {
   const subject = JSON.parse(readFileSync(file, "utf8"));
-  const jargon = JARGON.filter(([, , scope]) => scope === SCOPE_BY_SUBJECT[subject.slug]);
+  const letra = SCOPE_BY_SUBJECT[subject.slug];
+  const jargon = letra ? JARGON.filter(([, , scope]) => scope.includes(letra)) : [];
   checkModules(subject);
   for (const lesson of subject.lessons) {
     lessonCount++;
