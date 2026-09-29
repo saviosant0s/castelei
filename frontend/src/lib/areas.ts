@@ -2,6 +2,7 @@ import {
   Atom,
   BookOpen,
   BookOpenText,
+  Bot,
   Brain,
   BrainCircuit,
   Calculator,
@@ -75,6 +76,7 @@ const iconesDeMateria: Record<string, LucideIcon> = {
   "probabilidade-estatistica": ChartColumn,
   "redes-neurais": Network,
   "llms-como-funcionam": BrainCircuit,
+  "llms-na-pratica": Bot,
 };
 
 /** Ícone da matéria; a que não tem um próprio usa o da área. */
