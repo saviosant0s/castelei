@@ -72,14 +72,36 @@ export const SUBJECTS: SiteSubject[] = [
     name: "Matemática Básica",
     pitch:
       "A base que volta em toda prova de exatas, explicada do começo — inclusive o passo que todo mundo pula.",
-    lessons: ["Equações do 1º grau", "Porcentagem"],
+    lessons: [
+      "Números inteiros e o sinal de menos",
+      "Frações e números decimais",
+      "Razão, proporção e regra de três",
+      "Porcentagem",
+      "Potenciação: multiplicar o mesmo número várias vezes",
+      "Radiciação: a conta que desfaz a potência",
+      "Notação científica: números gigantes e minúsculos",
+      "Expressões algébricas: letras no lugar de números",
+      "Equações do 1º grau",
+      "Equações do 2º grau e a fórmula de Bhaskara",
+      "Sistemas de equações: duas pistas para dois valores",
+      "Noções de conjuntos",
+      "O plano cartesiano: um endereço para cada ponto",
+      "O que é uma função",
+      "Função afim: o gráfico que é uma reta",
+      "Função quadrática: a curva da bola chutada",
+      "Função exponencial: o que cresce multiplicando",
+      "Logaritmos: quantas vezes multiplicar",
+    ],
   },
   {
     slug: "portugues",
     name: "Português",
     pitch:
       "As duas regras que as bancas mais adoram, com as pegadinhas mapeadas uma a uma.",
-    lessons: ["Crase", "Concordância verbal"],
+    lessons: [
+      "Crase",
+      "Concordância verbal",
+    ],
   },
   {
     slug: "servidores-vps",
@@ -167,5 +189,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 650,
+  questions: 778,
 };

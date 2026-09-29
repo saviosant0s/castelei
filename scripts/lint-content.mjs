@@ -49,6 +49,26 @@ const JARGON = [
   ["distributiva", /\bdistributiva\b/i, "m"], ["porcentagem", /\bporcentage(m|ns)\b/i, "m"],
   ["variação percentual", /\bvaria(ç|c)ão percentual\b/i, "m"], ["acréscimo", /\bacréscimos?\b/i, "m"],
   ["decréscimo", /\bdecréscimos?\b/i, "m"], ["sucessivos", /\bsucessivos?\b/i, "m"],
+  /*
+  | A seção de fundamentos que abre a trilha de LLMs. O corte é o mesmo das
+  | outras matérias: "quem parou de estudar matemática no fundamental saberia?".
+  | "Razão" e "imagem" ficaram de fora de propósito: são palavras do dia a dia,
+  | e a expressão pegaria "a razão disso" e "a imagem abaixo".
+  */
+  ["número inteiro", /\bnúmeros? inteiros?\b/i, "m"], ["número racional", /\bracion(al|ais)\b/i, "m"],
+  ["dízima", /\bdízimas?\b/i, "m"], ["proporção", /\bpropor(ç|c)(ão|ões)\b|\bproporcio\w*/i, "m"],
+  ["grandeza", /\bgrandezas?\b/i, "m"], ["potência", /\bpot(ê|e)ncias?\b|\bpotencia(ç|c)ão\b/i, "m"],
+  ["expoente", /\bexpoentes?\b/i, "m"], ["raiz quadrada", /\bra(í|i)z(es)? quadradas?\b|√/i, "m"],
+  ["raiz cúbica", /\bra(í|i)z(es)? c(ú|u)bicas?\b|∛/i, "m"], ["radical", /\bradica(l|is)\b/i, "m"],
+  ["notação científica", /\bnota(ç|c)ão científica\b/i, "m"], ["coeficiente", /\bcoeficientes?\b/i, "m"],
+  ["termos semelhantes", /\btermos semelhantes\b/i, "m"], ["expressão algébrica", /\bexpress(ão|ões) algébricas?\b/i, "m"],
+  ["discriminante", /\bdiscriminante\b|Δ/i, "m"], ["Bhaskara", /\bBhaskara\b/, "m"],
+  ["sistema linear", /\bsistemas? (line(ar|ares)|de equa(ç|c)(ões))\b/i, "m"],
+  ["função", /\bfun(ç|c)(ão|ões)\b/i, "m"], ["domínio", /\bdomínios?\b/i, "m"], ["variável", /\bvari(á|a)ve(l|is)\b/i, "m"],
+  ["plano cartesiano", /\bplano cartesiano\b/i, "m"], ["eixo", /\beixos?\b/i, "m"], ["coordenada", /\bcoordenadas?\b/i, "m"],
+  ["parábola", /\bparábolas?\b/i, "m"], ["vértice", /\bvértices?\b/i, "m"], ["exponencial", /\bexponencia(l|is)\b/i, "m"],
+  ["logaritmo", /\blogaritm\w*|\blog(?=[\s₀-₉(]|$)/i, "m"], ["conjunto", /\bconjuntos?\b/i, "m"],
+  ["interseção", /\binterse(ç|c)(ão|ões)\b|∩/i, "m"], ["união (de conjuntos)", /\bunião\b|∪/i, "m"],
 
   ["preposição", /\bpreposi(ç|c)(ão|ões)\b/i, "p"], ["artigo", /\bartigos?\b/i, "p"],
   ["verbo", /\bverbos?\b/i, "p"], ["sujeito", /\bsujeitos?\b/i, "p"], ["núcleo", /\bnúcleos?\b/i, "p"], ["pronome", /\bpronomes?\b/i, "p"],
@@ -210,7 +230,9 @@ const warn = (where, msg) => warnings.push(`${where}: ${msg}`);
 
 const words = (s) => s.trim().split(/\s+/).filter(Boolean).length;
 const sentences = (text) => text.split(/(?<=[.!?…])\s+/).map((s) => s.trim()).filter(Boolean);
-const commas = (s) => (s.replace(/\([^)]*\)/g, "").replace(/(\d),(\d)/g, "$1$2").match(/,/g) ?? []).length;
+// Vírgula entre parênteses não conta, e entre chaves também: {1, 2, 3} é a
+// escrita de um conjunto, não uma frase comprida.
+const commas = (s) => (s.replace(/\([^)]*\)/g, "").replace(/\{[^}]*\}/g, "").replace(/(\d),(\d)/g, "$1$2").match(/,/g) ?? []).length;
 
 function checkProse(where, text) {
   if (SOURCE_REF.test(text)) fail(where, `cita livro ou fonte (“${text.match(SOURCE_REF)[0]}”): o app é independente`);
