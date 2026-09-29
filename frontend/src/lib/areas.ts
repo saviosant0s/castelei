@@ -10,6 +10,7 @@ import {
   Dumbbell,
   FlaskConical,
   Globe,
+  Grid3x3,
   Landmark,
   Languages,
   MessagesSquare,
@@ -65,6 +66,7 @@ const iconesDeMateria: Record<string, LucideIcon> = {
   refatoracao: Wrench,
   "producao-textual": PenLine,
   "programacao-python": Code,
+  "algebra-linear": Grid3x3,
 };
 
 /** Ícone da matéria; a que não tem um próprio usa o da área. */

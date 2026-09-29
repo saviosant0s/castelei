@@ -235,9 +235,23 @@ const JARGON = [
   ["ambiente virtual", /\bambientes? virtua(l|is)\b|\bvenv\b/i, "y"], ["condicional", /\bcondiciona(l|is)\b/i, "y"],
   ["iterar", /\biter(ar|a|am|ação|ações|ável|áveis)\b/i, "y"], ["instância", /\binst(â|a)ncias?\b/i, "y"], ["self", /\bself\b/, "y"],
   ["None", /\bNone\b/, "y"], ["tipo de dado", /\btipos? de dados?\b/i, "y"],
+
+  /*
+  | Álgebra Linear (escopo "a"). "Base" ficou de fora: a palavra do dia a dia
+  | ("a base da conta") apareceria em toda lição. O sentido técnico é explicado
+  | na lição de espaços vetoriais, com verbete próprio.
+  */
+  ["vetor", /\bvetor(es|ial|iais)?\b/i, "a"], ["escalar", /\bescalar(es)?\b/i, "a"], ["componente", /\bcomponentes?\b/i, "a"],
+  ["norma", /\bnormas?\b/i, "a"], ["produto escalar", /\bprodutos? escalar(es)?\b/i, "a"], ["matriz", /\bmatriz(es)?\b/i, "a"],
+  ["transposta", /\btranspost(a|as)\b/i, "a"], ["determinante", /\bdeterminantes?\b/i, "a"], ["matriz inversa", /\binversas?\b/i, "a"],
+  ["matriz identidade", /\bidentidade\b/i, "a"], ["transformação linear", /\btransforma(ç|c)(ão|ões) linear(es)?\b/i, "a"],
+  ["espaço vetorial", /\bespa(ç|c)os? vetoria(l|is)\b/i, "a"], ["combinação linear", /\bcombina(ç|c)(ão|ões) linear(es)?\b/i, "a"],
+  ["autovalor", /\bautovalor(es)?\b/i, "a"], ["autovetor", /\bautovetor(es)?\b/i, "a"], ["tensor", /\btensor(es)?\b/i, "a"],
+  ["broadcasting", /\bbroadcasting\b/i, "a"], ["ortogonal", /\bortogona(l|is)\b/i, "a"], ["embedding", /\bembeddings?\b/i, "a"],
+  ["cosseno", /\bcossenos?\b/i, "a"], ["dimensão", /\bdimens(ão|ões)\b/i, "a"], ["linearmente independente", /\blinearmente (in)?dependentes?\b/i, "a"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;
