@@ -135,6 +135,24 @@ export const SUBJECTS: SiteSubject[] = [
     ],
   },
   {
+    slug: "probabilidade-estatistica",
+    name: "Probabilidade e Estatística",
+    pitch:
+      "Chance, média, desvio padrão e a curva do sino, até a máxima verossimilhança: a ideia com que um modelo de linguagem é treinado.",
+    lessons: [
+      "Probabilidade: medir a chance",
+      "Probabilidade condicional: quando uma informação muda tudo",
+      "Variáveis aleatórias e distribuições",
+      "Esperança: o valor médio que se espera",
+      "Média, mediana e moda: o centro dos dados",
+      "Variância e desvio padrão: o quanto os dados se espalham",
+      "Covariância e correlação: quando duas coisas andam juntas",
+      "A distribuição normal: a curva do sino",
+      "Logaritmos aplicados à probabilidade",
+      "Verossimilhança e máxima verossimilhança",
+    ],
+  },
+  {
     slug: "portugues",
     name: "Português",
     pitch:
@@ -252,5 +270,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 1090,
+  questions: 1170,
 };
