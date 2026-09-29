@@ -323,6 +323,13 @@ Três coisas de conteúdo:
 - **"Peso" faz dois trabalhos, como "núcleo" em Sistemas Operacionais.** O peso do modelo é aprendido; o peso de atenção é calculado de novo a cada texto. As lições de atenção definem "peso de atenção" com essa diferença escrita, porque é exatamente a confusão que a prova cobra.
 - **"Atenção" é jargão sozinha, e "seno e cosseno" casa com a similaridade de cosseno.** Nas lições de atenção a palavra quase só aparece no sentido técnico; e a lição de posição define "seno e cosseno" à parte, senão a onda reprovaria como se fosse a medida de similaridade.
 
+**Matéria LLMs: treino, uso e limites** (17 lições, `13-llms-na-pratica.json`, área Informática, figuras em `frontend/public/figuras/llms/`): as seções 12 a 17 da trilha, e a última dela. Módulos Treinar (dados e lotes, o laço com aquecimento e descida em cosseno, um modelo de bigrama treinado de verdade em 9 segundos, leis de escala), Gerar texto (guloso e busca em feixe, temperatura, top-k e top-p, KV cache), Ajustar o modelo (SFT, RLHF e DPO, LoRA e QLoRA), Rodar e economizar (formatos de número e quantização, GPU, VRAM e paralelismo), Usar o modelo (prompt, JSON e ferramentas; RAG) e Avaliar e desconfiar (alucinação e viés, métricas, injeção de prompt e vazamento). Duas coisas:
+
+- **"Perda" e "camada" são jargão no escopo `l`**, então o texto do dia a dia troca de palavra: "queda de qualidade" em vez de "perda de qualidade", "defesas somadas" em vez de "defesas em camadas". Não é capricho: na mesma matéria, "perda" quer dizer a função de perda o tempo todo.
+- **Os números que envelhecem estão escritos como faixa ou com o ano.** "Cerca de 20 tokens por parâmetro, num estudo de 2022", "de alguns milhares a mais de um milhão de tokens", "um modelo pequeno de 2019". Número solto de modelo atual vira mentira em seis meses (regra 4).
+
+**A trilha "LLMs do zero" está completa**: os oito passos têm matéria, da Matemática Básica a esta.
+
 **Trilha de estudo "LLMs do zero"** (`config/castelei.php` → `trails`, `GET /subjects` devolve `trails`, tela em `trilha/[slug]/page.tsx`, lógica em `lib/trails.ts`). Pedido do Sávio: "organize na sequência do que devo aprender primeiro". A trilha atravessa áreas (Matemática e Informática), e a tela de áreas sozinha não dizia a ordem. Quatro coisas:
 
 - **A ordem mora no backend, e o progresso sai das matérias.** Cada passo é só `{subject, name, why}`; praticadas/total vêm das mesmas matérias de `GET /subjects`, com o mesmo critério das outras telas (tentativa concluída).

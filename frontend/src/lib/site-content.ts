@@ -198,6 +198,31 @@ export const SUBJECTS: SiteSubject[] = [
     ],
   },
   {
+    slug: "llms-na-pratica",
+    name: "LLMs: treino, uso e limites",
+    pitch:
+      "Do treino à conversa: dados, ajuste fino, amostragem, quantização, RAG e ferramentas, e onde um modelo de linguagem erra.",
+    lessons: [
+      "Do texto ao lote: os dados de treino",
+      "O laço de treino de um LLM",
+      "Treinar um modelo pequeno de verdade",
+      "Escala: por que modelos maiores aprendem mais",
+      "Da previsão ao texto: guloso e busca em feixe",
+      "Amostragem: temperatura, top-k e top-p",
+      "KV cache: não refazer conta",
+      "Ajuste fino: de modelo base a assistente",
+      "Preferências: RLHF, modelo de recompensa e DPO",
+      "LoRA, QLoRA e adaptadores",
+      "Números em bits: FP32, BF16, INT8, INT4 e quantização",
+      "GPU, VRAM e treino em muitas máquinas",
+      "Prompt, saída estruturada e ferramentas",
+      "RAG: buscar antes de responder",
+      "Alucinação, viés e outros limites",
+      "Medir um modelo: acurácia, precisão, revocação e F1",
+      "Segurança: injeção de prompt e vazamento de dados",
+    ],
+  },
+  {
     slug: "portugues",
     name: "Português",
     pitch:
@@ -315,5 +340,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 1402,
+  questions: 1538,
 };
