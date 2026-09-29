@@ -1,6 +1,7 @@
 import {
   Atom,
   BookOpen,
+  Binary,
   BookOpenText,
   Bot,
   Brain,
@@ -77,6 +78,7 @@ const iconesDeMateria: Record<string, LucideIcon> = {
   "redes-neurais": Network,
   "llms-como-funcionam": BrainCircuit,
   "llms-na-pratica": Bot,
+  logica: Binary,
 };
 
 /** Ícone da matéria; a que não tem um próprio usa o da área. */

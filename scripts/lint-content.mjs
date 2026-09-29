@@ -349,9 +349,32 @@ const JARGON = [
   ["benchmark", /\bbenchmarks?\b/i, "l"], ["contaminação", /\bcontamina\w*/i, "l"],
   ["injeção de prompt", /\binje(ç|c)(ão|ões) de prompts?\b|\bprompt injection\b/i, "l"],
   ["vazamento de dados", /\bvazamentos? de dados\b|\bdata leakage\b/i, "l"],
+  /*
+  | Lógica ("q"). O corte é o de sempre: quem nunca estudou lógica saberia?
+  | "Conclusão", "verdade" e "argumento" ficaram de fora: são palavras do dia a
+  | dia e apareceriam em toda frase. Entra "argumento válido", que é outra
+  | coisa: válido aqui é a FORMA, e não a verdade do que se diz.
+  */
+  ["proposição", /\bproposi(ç|c)(ão|ões)\b/i, "q"], ["valor lógico", /\bvalor(es)? l(ó|o)gicos?\b/i, "q"],
+  ["conectivo", /\bconectivos?\b/i, "q"], ["negação", /\bnega(ç|c)(ão|ões)\b/i, "q"],
+  ["conjunção", /\bconjun(ç|c)(ão|ões)\b/i, "q"], ["disjunção", /\bdisjun(ç|c)(ão|ões)\b/i, "q"],
+  ["ou exclusivo", /\bou exclusivo\b|\bdisjun(ç|c)(ão|ões) exclusivas?\b/i, "q"],
+  ["condicional", /\bcondicion(al|ais)\b/i, "q"], ["bicondicional", /\bbicondicion(al|ais)\b/i, "q"],
+  ["antecedente", /\bantecedentes?\b/i, "q"], ["consequente", /\bconsequentes?\b/i, "q"],
+  ["tabela-verdade", /\btabelas?-verdade\b/i, "q"], ["tautologia", /\btautologias?\b/i, "q"],
+  ["contradição", /\bcontradi(ç|c)(ão|ões)\b/i, "q"], ["contingência", /\bconting(ê|e)ncias?\b/i, "q"],
+  ["equivalência lógica", /\bequival(ê|e)ncias?\b|\bequivalentes?\b/i, "q"],
+  ["contrapositiva", /\bcontrapositivas?\b/i, "q"], ["recíproca", /\brec(í|i)procas?\b/i, "q"],
+  ["leis de De Morgan", /\bDe Morgan\b/i, "q"], ["quantificador", /\bquantificador(es)?\b/i, "q"],
+  ["sentença aberta", /\bsenten(ç|c)as? abertas?\b/i, "q"], ["premissa", /\bpremissas?\b/i, "q"],
+  ["argumento válido", /\bargumentos? v(á|a)lidos?\b|\bvalidade\b|\binv(á|a)lidos?\b/i, "q"],
+  ["modus ponens", /\bmodus ponens\b/i, "q"], ["modus tollens", /\bmodus tollens\b/i, "q"],
+  ["silogismo", /\bsilogismos?\b/i, "q"], ["falácia", /\bfal(á|a)cias?\b/i, "q"],
+  ["diagrama de Venn", /\bVenn\b/i, "q"], ["booleano", /\bbooleanos?\b|\bbool\b/i, "q"],
+  ["curto-circuito", /\bcurto-circuito\b/i, "q"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;
