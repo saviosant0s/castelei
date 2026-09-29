@@ -305,6 +305,8 @@ Três coisas de conteúdo:
 - **Código sem ligaduras** (`globals.css`). A JetBrains Mono desenhava `>=` como `≥`: a pessoa via o sinal na lição e não achava a tecla. Em `pre` e `code`, cada caractere aparece como se digita.
 - **Vírgula entre colchetes e entre números não conta** no limite de vírgulas: `[1, 2, 3]` é uma lista do Python, e "0, 1, 2, 3 e 4" é uma sequência, não uma frase comprida.
 
+**Matéria de Álgebra Linear** (14 lições, `08-algebra-linear.json`, área Matemática): a seção 3 da trilha. Módulos Vetores, Matrizes, Transformações e espaços, e Para a IA (tensores, broadcasting e embeddings). O escopo `a` do verificador tem vetor, escalar, componente, norma, matriz, transposta, determinante, autovalor, tensor, embedding… "Base" ficou de fora, porque a palavra do dia a dia apareceria em toda lição; o sentido técnico tem verbete na lição de espaços vetoriais.
+
 **Ao acrescentar lição, mexa em quatro lugares:** o JSON do conteúdo, a figura em `frontend/public/figuras/`, a lista de `frontend/src/lib/site-content.ts` (o teste `site-content.test.ts` reprova se esquecer) e o mapa em `docs/sistemas-operacionais-mapa.md`. Matéria nova entra com **todas as lições de uma vez**: arquivo com metade delas publicado deixa a outra metade órfã.
 
 **Atualizações feitas sobre o material do semestre** (a regra 4 do Guia manda corrigir o que está defasado): micronúcleo hoje é tecnologia de produção, não experimento — entrou o seL4 e o uso em carros e aviões; e contêineres entraram ao lado de máquinas virtuais, porque é o que se usa hoje e o material da disciplina não cobre.

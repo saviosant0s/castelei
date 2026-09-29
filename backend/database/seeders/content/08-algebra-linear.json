@@ -1,0 +1,4121 @@
+{
+  "_leia_me": [
+    "Álgebra Linear do Castelei: a seção 3 da trilha de LLMs do zero.",
+    "Chaves começadas por _ são comentário e somem na importação."
+  ],
+  "slug": "algebra-linear",
+  "name": "Álgebra Linear",
+  "area": "matematica",
+  "description": "Vetores, matrizes, transformações e tensores, do desenho da seta às contas que um modelo de linguagem faz bilhões de vezes.",
+  "lessons": [
+    {
+      "slug": "o-que-e-vetor",
+      "title": "O que é um vetor",
+      "module": "Vetores",
+      "summary": "Vetor é uma lista de números em ordem. No papel, é uma seta com tamanho e direção; no computador, é o jeito de guardar qualquer coisa como números.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A seta do mapa",
+          "body": [
+            "Alguém pergunta onde fica a padaria, e você responde: três quarteirões para a direita e dois para cima.",
+            "Dois números bastaram para dizer para onde ir e quanto andar. Esse par de números, desenhado como uma seta, é um vetor."
+          ],
+          "terms": [
+            {
+              "word": "Vetor",
+              "meaning": "uma lista ordenada de números, como (3, 2). No desenho, é uma seta que sai da origem e vai até esse ponto."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Números em ordem",
+          "body": [
+            "O vetor (3, 2) manda andar 3 no eixo x e 2 no eixo y. A ordem importa: (2, 3) é outro vetor.",
+            "Cada número do vetor tem nome próprio. O número de componentes é o tamanho da lista."
+          ],
+          "terms": [
+            {
+              "word": "Componente",
+              "meaning": "cada número de um vetor. Em (3, 2), as componentes são 3 e 2."
+            },
+            {
+              "word": "Eixo",
+              "meaning": "cada uma das duas réguas do gráfico. O eixo x é o deitado e o eixo y é o em pé."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/algebra-linear/vetor-seta.svg",
+            "alt": "Um gráfico com uma seta que sai da origem e termina no ponto (3, 2). Tracejados mostram 3 unidades no eixo x e 2 no eixo y.",
+            "caption": "O vetor (3, 2): três para o lado e dois para cima."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Tamanho e direção",
+          "body": [
+            "Uma seta tem duas informações: para onde aponta e quanto mede. Força, velocidade e deslocamento são assim.",
+            "Temperatura não tem direção: é um número só. Um número solto, sem direção, tem outro nome."
+          ],
+          "terms": [
+            {
+              "word": "Escalar",
+              "meaning": "um número sozinho, sem direção, como 5 ou −2. É o oposto de um vetor."
+            }
+          ],
+          "table": {
+            "label": "Vetor ou escalar?",
+            "headers": [
+              "Grandeza",
+              "Tipo",
+              "Por quê"
+            ],
+            "rows": [
+              [
+                "velocidade do vento",
+                "vetor",
+                "tem força e direção"
+              ],
+              [
+                "temperatura",
+                "escalar",
+                "é só um número"
+              ],
+              [
+                "deslocamento",
+                "vetor",
+                "para onde e quanto"
+              ],
+              [
+                "massa",
+                "escalar",
+                "não aponta para lugar nenhum"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Mais de duas componentes",
+          "body": [
+            "No espaço, o vetor precisa de três números: (x, y, z). Para desenhar paramos aí, mas a lista pode continuar.",
+            "Um vetor com 5 componentes não cabe num desenho. Mesmo assim, as contas funcionam igualzinho."
+          ],
+          "example": {
+            "label": "Vetores de vários tamanhos",
+            "lines": [
+              "(4, −1): 2 componentes, cabe no papel",
+              "(1, 0, 2): 3 componentes, cabe no espaço",
+              "(0,2; 0,7; 0,1; 0,9): 4 componentes, só nas contas"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Qualquer coisa vira vetor",
+          "body": [
+            "Um imóvel pode virar o vetor (área, quartos, andar): (70, 2, 5). Uma foto vira a lista das cores de cada ponto.",
+            "Um computador só sabe fazer contas. Transformar coisas em vetores é o que permite que ele trabalhe com elas."
+          ],
+          "example": {
+            "label": "Descrevendo com números",
+            "lines": [
+              "Aluno: (idade, horas de estudo, nota) = (19, 6, 8,5)",
+              "Clima: (temperatura, umidade, vento) = (28, 70, 12)",
+              "Palavra: uma lista com centenas de números"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Palavras como vetores",
+          "body": [
+            "Um modelo de linguagem guarda cada palavra como um vetor com centenas de componentes. Palavras de sentido parecido ganham vetores parecidos.",
+            "É por isso que álgebra linear é a matemática mais importante da inteligência artificial. O resto desta matéria é aprender a fazer contas com essas listas."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Como se escreve",
+          "body": [
+            "Nos livros de matemática, o vetor aparece em negrito ou com uma seta em cima da letra: v⃗. Às vezes também em coluna, um número embaixo do outro.",
+            "Em Python, com NumPy, um vetor é um array: np.array([3, 2])."
+          ],
+          "code": {
+            "label": "Um vetor em Python",
+            "text": "import numpy as np\nv = np.array([3, 2])\nprint(v.shape)",
+            "notes": [
+              "Traz a biblioteca de contas com números, com o apelido np.",
+              "Cria o vetor com as componentes 3 e 2.",
+              "Mostra (2,): o vetor tem 2 componentes."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Em física, cai decidir se uma grandeza é vetor ou escalar. Em matemática, cai identificar as componentes e desenhar a seta.",
+            "Em entrevistas de dados, cai representar um objeto qualquer como vetor de números."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Tropeços iniciais."
+          ],
+          "bullets": [
+            "Trocar a ordem das componentes: (3, 2) não é (2, 3).",
+            "Achar que vetor precisa caber num desenho.",
+            "Chamar temperatura de vetor: ela não tem direção.",
+            "Confundir o ponto (3, 2) com a seta: o vetor é o caminho da origem até ele."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Vetor é uma lista ordenada de números."
+          ],
+          "bullets": [
+            "No desenho, uma seta com direção e tamanho.",
+            "Cada número é uma componente.",
+            "Escalar é um número sozinho.",
+            "Vetores podem ter quantas componentes quiser.",
+            "Qualquer coisa pode ser descrita como vetor.",
+            "Em Python: np.array([3, 2])."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Componentes",
+          "statement": "Quantas componentes tem o vetor (5, 0, −2, 7)?",
+          "options": [
+            "2",
+            "3",
+            "4",
+            "7",
+            "10"
+          ],
+          "correct_index": 2,
+          "explanation": "São quatro números na lista: 5, 0, −2 e 7.",
+          "pitfall": "7 é o maior número, e não a quantidade."
+        },
+        {
+          "topic": "Ordem",
+          "statement": "O vetor (1, 4) e o vetor (4, 1) são:",
+          "options": [
+            "iguais",
+            "diferentes, porque a ordem importa",
+            "iguais, porque têm os mesmos números",
+            "escalares",
+            "impossíveis de comparar"
+          ],
+          "correct_index": 1,
+          "explanation": "(1, 4) anda 1 para o lado e 4 para cima; (4, 1), o contrário.",
+          "pitfall": "Ter os mesmos números não basta: a posição decide."
+        },
+        {
+          "topic": "Vetor ou escalar",
+          "statement": "Qual destas grandezas é um vetor?",
+          "options": [
+            "massa de 3 kg",
+            "temperatura de 25 °C",
+            "vento de 20 km/h para o norte",
+            "tempo de 10 s",
+            "volume de 2 L"
+          ],
+          "correct_index": 2,
+          "explanation": "Só o vento traz direção junto do tamanho.",
+          "pitfall": "20 km/h sozinho seria escalar. É o “para o norte” que faz virar vetor."
+        },
+        {
+          "topic": "Desenho",
+          "statement": "A seta do vetor (−2, 3) termina em qual região do gráfico?",
+          "options": [
+            "acima e à direita",
+            "acima e à esquerda",
+            "abaixo e à esquerda",
+            "abaixo e à direita",
+            "na origem"
+          ],
+          "correct_index": 1,
+          "explanation": "x negativo é esquerda; y positivo é para cima.",
+          "pitfall": "Trocar as componentes leva para a direita e para baixo."
+        },
+        {
+          "topic": "Descrever",
+          "statement": "Um carro é descrito por (ano, potência, portas). Qual vetor descreve um carro de 2021, com 120 cavalos e 4 portas?",
+          "options": [
+            "(4, 120, 2021)",
+            "(2021, 4, 120)",
+            "(2021, 120, 4)",
+            "(120, 2021, 4)",
+            "(2021 + 120 + 4)"
+          ],
+          "correct_index": 2,
+          "explanation": "Cada número vai no lugar combinado: ano, potência e portas.",
+          "pitfall": "A soma vira um número só e perde as três informações."
+        },
+        {
+          "topic": "Python",
+          "statement": "O que print(np.array([7, 1, 9]).shape) mostra?",
+          "options": [
+            "(3,)",
+            "(7, 1, 9)",
+            "3",
+            "(1, 3, 3)",
+            "17"
+          ],
+          "correct_index": 0,
+          "explanation": "shape diz o formato: um vetor de 3 componentes aparece como (3,).",
+          "pitfall": "(7, 1, 9) são as componentes, e não o formato."
+        },
+        {
+          "topic": "Por que vetores",
+          "statement": "Por que um modelo de linguagem transforma palavras em vetores?",
+          "options": [
+            "porque vetores ocupam menos espaço que letras",
+            "porque o computador só faz contas com números",
+            "porque palavras são setas",
+            "porque é mais bonito",
+            "para traduzir para inglês"
+          ],
+          "correct_index": 1,
+          "explanation": "Com a palavra virando números, o computador consegue comparar e combinar sentidos por meio de contas.",
+          "pitfall": "Não é sobre economia de espaço: é sobre poder calcular."
+        },
+        {
+          "topic": "Vetores",
+          "format": "match",
+          "statement": "Ligue cada termo ao seu significado.",
+          "pairs": [
+            {
+              "left": "vetor",
+              "right": "lista ordenada de números"
+            },
+            {
+              "left": "componente",
+              "right": "cada número do vetor"
+            },
+            {
+              "left": "escalar",
+              "right": "um número sozinho"
+            },
+            {
+              "left": "origem",
+              "right": "o ponto de onde a seta sai"
+            }
+          ],
+          "explanation": "O vetor é a lista, cada número é uma componente, e um número solto é um escalar.",
+          "pitfall": "Componente e escalar se confundem: a componente mora dentro do vetor."
+        }
+      ]
+    },
+    {
+      "slug": "operacoes-com-vetores",
+      "title": "Somar vetores e multiplicar por um número",
+      "module": "Vetores",
+      "summary": "Somar vetores é andar um caminho e depois o outro. Multiplicar por um número estica, encolhe ou inverte a seta.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Dois trechos de caminhada",
+          "body": [
+            "Você anda 3 quarteirões para a direita e 1 para cima. Depois, mais 1 para a direita e 2 para cima.",
+            "No fim, andou 4 para a direita e 3 para cima. Somar vetores é exatamente juntar os trechos."
+          ],
+          "terms": [
+            {
+              "word": "Vetor",
+              "meaning": "uma lista ordenada de números, como (3, 2). No desenho, é uma seta que sai da origem e vai até esse ponto."
+            },
+            {
+              "word": "Componente",
+              "meaning": "cada número de um vetor. Em (3, 2), as componentes são 3 e 2."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Soma: componente com componente",
+          "body": [
+            "Some a primeira componente com a primeira, a segunda com a segunda, e assim por diante.",
+            "Só dá para somar vetores do mesmo tamanho. (1, 2) + (1, 2, 3) não existe."
+          ],
+          "example": {
+            "label": "Somando",
+            "lines": [
+              "(3, 1) + (1, 2) = (3 + 1, 1 + 2) = (4, 3)",
+              "(2, −1, 0) + (1, 1, 5) = (3, 0, 5)"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O desenho da soma",
+          "body": [
+            "Ponha a segunda seta começando na ponta da primeira. A soma é a seta que vai do começo da primeira até a ponta da segunda.",
+            "Tanto faz a ordem: a + b chega no mesmo lugar que b + a."
+          ],
+          "figure": {
+            "src": "/figuras/algebra-linear/soma-vetores.svg",
+            "alt": "Duas setas encadeadas: a primeira vai da origem até (3, 1) e a segunda sai de (3, 1) até (4, 3). Uma terceira seta, mais grossa, vai direto da origem até (4, 3) e representa a soma.",
+            "caption": "Ponta com começo: a soma é o atalho direto."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Subtrair",
+          "body": [
+            "Subtrair também é componente com componente. a − b é a seta que sai da ponta de b e chega na ponta de a.",
+            "É o jeito de medir a diferença entre dois vetores, e ele volta no cálculo de distância."
+          ],
+          "example": {
+            "label": "Subtraindo",
+            "lines": [
+              "(5, 4) − (2, 1) = (3, 3)",
+              "(1, 0) − (0, 1) = (1, −1)"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Multiplicar por um número",
+          "body": [
+            "Multiplicar um vetor por um número multiplica cada componente. A seta mantém a direção e muda de tamanho.",
+            "Por 2, dobra. Por 0,5, encolhe pela metade. Por −1, vira para o lado oposto."
+          ],
+          "terms": [
+            {
+              "word": "Escalar",
+              "meaning": "um número sozinho, sem direção. Multiplicar por escalar estica ou encolhe o vetor."
+            }
+          ],
+          "example": {
+            "label": "Esticando",
+            "lines": [
+              "2 × (3, 1) = (6, 2)",
+              "0,5 × (4, 2) = (2, 1)",
+              "−1 × (3, 1) = (−3, −1)"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Misturando vetores",
+          "body": [
+            "Dá para esticar vários vetores e somar os resultados. Esse jeito de misturar tem nome e está em toda a inteligência artificial.",
+            "Uma camada de rede neural faz, no fundo, milhares dessas misturas."
+          ],
+          "terms": [
+            {
+              "word": "Combinação linear",
+              "meaning": "a soma de vetores multiplicados por números, como 2a + 3b."
+            }
+          ],
+          "example": {
+            "label": "2a + 3b com a = (1, 0) e b = (0, 1)",
+            "lines": [
+              "2a = (2, 0)",
+              "3b = (0, 3)",
+              "2a + 3b = (2, 3)"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "No Python",
+          "body": [
+            "Com NumPy, + e * fazem essas contas com uma linha, em todas as componentes de uma vez."
+          ],
+          "code": {
+            "label": "Contas com vetores",
+            "text": "import numpy as np\na = np.array([3, 1])\nb = np.array([1, 2])\nprint(a + b)\nprint(2 * a)",
+            "notes": [
+              "Traz o NumPy.",
+              "Cria o vetor a.",
+              "Cria o vetor b.",
+              "Soma componente com componente: mostra [4 3].",
+              "Multiplica cada componente por 2: mostra [6 2]."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem somas, subtrações e combinações como 2u − 3v. Faça uma componente de cada vez e confira os sinais.",
+            "Em física, a soma de forças é uma soma de vetores."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde as contas escorregam."
+          ],
+          "bullets": [
+            "Somar vetores de tamanhos diferentes.",
+            "Multiplicar só a primeira componente pelo número.",
+            "Esquecer o sinal na subtração: 1 − (−2) dá 3.",
+            "Achar que multiplicar por −1 muda o tamanho: só inverte o sentido."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Contas de vetor são feitas componente a componente."
+          ],
+          "bullets": [
+            "Soma: primeira com primeira, segunda com segunda.",
+            "No desenho: ponta com começo.",
+            "Subtração mede a diferença entre dois vetores.",
+            "Número vezes vetor estica, encolhe ou inverte.",
+            "Combinação linear: esticar e somar.",
+            "No NumPy, + e * fazem tudo de uma vez."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Soma",
+          "statement": "Quanto é (2, −3) + (5, 4)?",
+          "options": [
+            "(7, 1)",
+            "(7, −7)",
+            "(3, 7)",
+            "(10, −12)",
+            "(−3, 1)"
+          ],
+          "correct_index": 0,
+          "explanation": "2 + 5 = 7 e −3 + 4 = 1.",
+          "pitfall": "(7, −7) erra o sinal da segunda componente."
+        },
+        {
+          "topic": "Escalar",
+          "statement": "Quanto é 3 × (1, −2, 4)?",
+          "options": [
+            "(3, −2, 4)",
+            "(3, −6, 12)",
+            "(4, 1, 7)",
+            "(3, 6, 12)",
+            "9"
+          ],
+          "correct_index": 1,
+          "explanation": "O 3 multiplica cada componente.",
+          "pitfall": "(3, −2, 4) multiplica só a primeira."
+        },
+        {
+          "topic": "Subtração",
+          "statement": "Quanto é (6, 1) − (2, −3)?",
+          "options": [
+            "(4, −2)",
+            "(4, 4)",
+            "(8, −2)",
+            "(3, 4)",
+            "(4, 1)"
+          ],
+          "correct_index": 1,
+          "explanation": "6 − 2 = 4 e 1 − (−3) = 4.",
+          "pitfall": "(4, −2) esquece que menos com menos vira mais."
+        },
+        {
+          "topic": "Combinação",
+          "statement": "Com u = (1, 2) e v = (3, 0), quanto é 2u − v?",
+          "options": [
+            "(−1, 4)",
+            "(5, 4)",
+            "(−1, 2)",
+            "(2, 4)",
+            "(1, 4)"
+          ],
+          "correct_index": 0,
+          "explanation": "2u = (2, 4). Menos v: (2 − 3, 4 − 0) = (−1, 4).",
+          "pitfall": "(5, 4) somou em vez de subtrair."
+        },
+        {
+          "topic": "Inverter",
+          "statement": "O que acontece com uma seta multiplicada por −1?",
+          "options": [
+            "dobra de tamanho",
+            "passa a apontar para o lado oposto",
+            "vira um escalar",
+            "some",
+            "gira 90 graus"
+          ],
+          "correct_index": 1,
+          "explanation": "Cada componente troca de sinal: mesma medida, sentido contrário.",
+          "pitfall": "O tamanho não muda; só o sentido."
+        },
+        {
+          "topic": "Tamanhos",
+          "statement": "Quanto é (1, 2) + (1, 2, 3)?",
+          "options": [
+            "(2, 4, 3)",
+            "(2, 4)",
+            "não existe: tamanhos diferentes",
+            "(1, 2, 1, 2, 3)",
+            "9"
+          ],
+          "correct_index": 2,
+          "explanation": "Soma de vetores exige o mesmo número de componentes.",
+          "pitfall": "Preencher com zero parece razoável, mas a soma simplesmente não é definida."
+        },
+        {
+          "topic": "NumPy",
+          "statement": "Com a = np.array([1, 1]) e b = np.array([2, 5]), o que print(a + 2 * b) mostra?",
+          "options": [
+            "[5 11]",
+            "[3 6]",
+            "[6 12]",
+            "[2 7]",
+            "[4 10]"
+          ],
+          "correct_index": 0,
+          "explanation": "2 * b = [4 10]. Mais a: [5 11].",
+          "pitfall": "[6 12] soma antes de multiplicar."
+        },
+        {
+          "topic": "Combinação linear",
+          "format": "order",
+          "statement": "Ponha na ordem os passos para calcular 3a + b.",
+          "options": [
+            "Multiplicar cada componente de a por 3",
+            "Somar a primeira componente de 3a com a primeira de b",
+            "Somar a segunda componente de 3a com a segunda de b",
+            "Escrever o vetor resultado"
+          ],
+          "explanation": "Primeiro se estica, depois se soma componente com componente.",
+          "pitfall": "Somar antes de esticar muda o resultado."
+        }
+      ]
+    },
+    {
+      "slug": "produto-escalar",
+      "title": "Produto escalar: o quanto dois vetores concordam",
+      "module": "Vetores",
+      "summary": "Multiplicar componente com componente e somar tudo dá um número só. Ele diz se dois vetores apontam para o mesmo lado, e é a conta mais repetida de toda rede neural.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Remando juntos",
+          "body": [
+            "Dois remadores puxam um barco. Se puxam para o mesmo lado, as forças se somam. Se puxam em lados opostos, uma atrapalha a outra.",
+            "Uma conta simples mede o quanto duas setas trabalham juntas. O resultado é um número só."
+          ],
+          "terms": [
+            {
+              "word": "Vetor",
+              "meaning": "uma lista ordenada de números, como (3, 2). No desenho, é uma seta que sai da origem e vai até esse ponto."
+            },
+            {
+              "word": "Componente",
+              "meaning": "cada número de um vetor. Em (3, 2), as componentes são 3 e 2."
+            },
+            {
+              "word": "Produto escalar",
+              "meaning": "a conta que multiplica dois vetores componente com componente e soma tudo. O resultado é um número."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A conta",
+          "body": [
+            "Multiplique a primeira componente de um vetor pela primeira do outro, a segunda pela segunda, e some tudo.",
+            "Escreve-se a · b, com um ponto no meio."
+          ],
+          "example": {
+            "label": "(2, 3) · (4, 1)",
+            "lines": [
+              "2 × 4 = 8",
+              "3 × 1 = 3",
+              "8 + 3 = 11",
+              "O produto escalar é 11."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O sinal conta a história",
+          "body": [
+            "Positivo: os vetores apontam mais ou menos para o mesmo lado. Negativo: para lados opostos. Zero: formam um canto reto.",
+            "Vetores que formam um canto reto têm nome especial."
+          ],
+          "terms": [
+            {
+              "word": "Ortogonal",
+              "meaning": "dois vetores que formam um ângulo reto. O produto escalar deles é zero."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/algebra-linear/produto-escalar.svg",
+            "alt": "Três pares de setas saindo da origem. No primeiro, apontam quase para o mesmo lado e o produto é positivo. No segundo, formam um canto reto e o produto é zero. No terceiro, apontam para lados opostos e o produto é negativo.",
+            "caption": "Mesmo lado, canto reto, lados opostos."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Um exemplo de canto reto",
+          "body": [
+            "(1, 0) aponta para a direita e (0, 1) aponta para cima. O produto é 1 × 0 + 0 × 1 = 0.",
+            "(2, 1) e (−1, 2) também dão zero: 2 × (−1) + 1 × 2 = 0. Desenhe e confira o canto reto."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Uma nota como produto escalar",
+          "body": [
+            "Uma prova tem peso 3 e um trabalho tem peso 1. O aluno tirou 8 e 10. A nota ponderada é 3 × 8 + 1 × 10 = 34.",
+            "Isso é um produto escalar entre os pesos (3, 1) e as notas (8, 10). Toda média ponderada é um."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O coração do neurônio",
+          "body": [
+            "Um neurônio artificial recebe um vetor de entradas e tem um vetor de pesos. A primeira coisa que ele faz é o produto escalar dos dois.",
+            "Um modelo de linguagem faz bilhões dessas contas para cada palavra que escreve."
+          ],
+          "terms": [
+            {
+              "word": "Peso",
+              "meaning": "o número que diz o quanto cada entrada importa. Ele é ajustado durante o treino."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "No Python",
+          "body": [
+            "Com NumPy, a conta sai com np.dot ou com o sinal @."
+          ],
+          "code": {
+            "label": "Produto escalar",
+            "text": "import numpy as np\na = np.array([2, 3])\nb = np.array([4, 1])\nprint(a @ b)",
+            "notes": [
+              "Traz o NumPy.",
+              "Cria o vetor a.",
+              "Cria o vetor b.",
+              "Calcula o produto escalar: mostra 11."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem o cálculo direto e a pergunta sobre ângulo reto: dois vetores são ortogonais quando o produto dá zero.",
+            "Às vezes a questão dá um vetor com uma letra, como (k, 2), e pede o k que deixa os vetores ortogonais."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde o produto escalar engana."
+          ],
+          "bullets": [
+            "Devolver um vetor: o resultado é um número só.",
+            "Esquecer de somar os produtos no fim.",
+            "Achar que produto zero quer dizer vetor zero.",
+            "Errar o sinal quando uma componente é negativa."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Multiplica par a par e soma."
+          ],
+          "bullets": [
+            "a · b = a₁b₁ + a₂b₂ + …",
+            "O resultado é um número, e não um vetor.",
+            "Positivo: mesmo lado. Negativo: lados opostos.",
+            "Zero: canto reto, ou seja, ortogonais.",
+            "Média ponderada é um produto escalar.",
+            "Todo neurônio começa com um produto escalar."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Calcular",
+          "statement": "Quanto vale (3, −1) · (2, 5)?",
+          "options": [
+            "1",
+            "11",
+            "6",
+            "(6, −5)",
+            "−11"
+          ],
+          "correct_index": 0,
+          "explanation": "3 × 2 + (−1) × 5 = 6 − 5 = 1.",
+          "pitfall": "(6, −5) esquece a soma do fim."
+        },
+        {
+          "topic": "Três componentes",
+          "statement": "Quanto vale (1, 2, 3) · (4, 0, −1)?",
+          "options": [
+            "1",
+            "4",
+            "7",
+            "−3",
+            "(4, 0, −3)"
+          ],
+          "correct_index": 0,
+          "explanation": "4 + 0 − 3 = 1.",
+          "pitfall": "(4, 0, −3) é um vetor, e o resultado é um número."
+        },
+        {
+          "topic": "Ortogonais",
+          "statement": "Qual par de vetores é ortogonal?",
+          "options": [
+            "(1, 1) e (2, 2)",
+            "(2, 3) e (3, −2)",
+            "(1, 0) e (1, 1)",
+            "(4, 1) e (1, 4)",
+            "(1, 2) e (2, 1)"
+          ],
+          "correct_index": 1,
+          "explanation": "2 × 3 + 3 × (−2) = 6 − 6 = 0.",
+          "pitfall": "(1, 1) e (2, 2) apontam para o mesmo lado: o produto é 4."
+        },
+        {
+          "topic": "Achar k",
+          "statement": "Para qual k os vetores (k, 2) e (3, −6) são ortogonais?",
+          "options": [
+            "4",
+            "−4",
+            "1",
+            "0",
+            "12"
+          ],
+          "correct_index": 0,
+          "explanation": "3k − 12 = 0, então k = 4.",
+          "pitfall": "−4 erra o sinal ao passar o −12 para o outro lado."
+        },
+        {
+          "topic": "Sinal",
+          "statement": "O produto escalar de dois vetores deu −15. O que isso indica?",
+          "options": [
+            "são ortogonais",
+            "apontam para lados mais ou menos opostos",
+            "apontam para o mesmo lado",
+            "um deles é zero",
+            "têm o mesmo tamanho"
+          ],
+          "correct_index": 1,
+          "explanation": "Produto negativo indica sentidos opostos.",
+          "pitfall": "Ortogonal seria produto zero."
+        },
+        {
+          "topic": "Ponderada",
+          "statement": "Pesos (2, 3) e notas (6, 9). Qual é a soma ponderada?",
+          "options": [
+            "15",
+            "39",
+            "54",
+            "30",
+            "(12, 27)"
+          ],
+          "correct_index": 1,
+          "explanation": "2 × 6 + 3 × 9 = 12 + 27 = 39.",
+          "pitfall": "15 soma as notas sem os pesos."
+        },
+        {
+          "topic": "NumPy",
+          "statement": "O que np.array([1, 2]) @ np.array([3, 4]) devolve?",
+          "options": [
+            "[3 8]",
+            "11",
+            "[4 6]",
+            "10",
+            "24"
+          ],
+          "correct_index": 1,
+          "explanation": "1 × 3 + 2 × 4 = 11. O @ é o produto escalar.",
+          "pitfall": "[3 8] multiplica sem somar: seria o *."
+        },
+        {
+          "topic": "Sinal do produto",
+          "format": "match",
+          "statement": "Ligue o resultado do produto escalar ao que ele diz.",
+          "pairs": [
+            {
+              "left": "positivo",
+              "right": "mesmo lado"
+            },
+            {
+              "left": "negativo",
+              "right": "lados opostos"
+            },
+            {
+              "left": "zero",
+              "right": "canto reto"
+            }
+          ],
+          "explanation": "O sinal do produto escalar diz o quanto dois vetores concordam.",
+          "pitfall": "Zero não quer dizer que os vetores sejam zero: quer dizer canto reto."
+        }
+      ]
+    },
+    {
+      "slug": "norma-e-distancia",
+      "title": "Norma, distância e semelhança entre vetores",
+      "module": "Vetores",
+      "summary": "A norma mede o tamanho de um vetor, e a distância mede o quanto dois estão afastados. O cosseno do ângulo mede se apontam para o mesmo lado, e é assim que se compara o sentido de duas palavras.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Quão longe e quão parecido",
+          "body": [
+            "Duas lojas podem estar perto uma da outra, ou longe. Dois amigos podem gostar das mesmas músicas, ou de músicas bem diferentes.",
+            "Quando as coisas viram vetores, perguntas assim viram contas."
+          ],
+          "terms": [
+            {
+              "word": "Vetor",
+              "meaning": "uma lista ordenada de números, como (3, 2). No desenho, é uma seta que sai da origem e vai até esse ponto."
+            },
+            {
+              "word": "Norma",
+              "meaning": "o tamanho de um vetor: o comprimento da seta. Escreve-se ‖v‖."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A norma é a diagonal",
+          "body": [
+            "Para o vetor (3, 4), a seta é a diagonal de um triângulo com lados 3 e 4. O tamanho é √(3² + 4²) = 5.",
+            "Com mais componentes, a regra continua: eleve cada uma ao quadrado, some e tire a raiz."
+          ],
+          "terms": [
+            {
+              "word": "Componente",
+              "meaning": "cada número de um vetor. Em (3, 2), as componentes são 3 e 2."
+            },
+            {
+              "word": "Raiz quadrada",
+              "meaning": "o número que, ao quadrado, dá o valor pedido. √25 = 5."
+            }
+          ],
+          "example": {
+            "label": "Normas",
+            "lines": [
+              "‖(3, 4)‖ = √(9 + 16) = 5",
+              "‖(1, 2, 2)‖ = √(1 + 4 + 4) = 3",
+              "‖(0, 0)‖ = 0"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A norma e o produto escalar",
+          "body": [
+            "Repare: o vetor com ele mesmo dá 3 × 3 + 4 × 4 = 25. A norma é a raiz disso.",
+            "Então ‖v‖ = √(v · v). Tudo nesta matéria se liga ao produto escalar."
+          ],
+          "terms": [
+            {
+              "word": "Produto escalar",
+              "meaning": "a soma dos produtos das componentes, par a par. (3, 4) · (3, 4) = 25."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Distância entre dois vetores",
+          "body": [
+            "A distância entre a e b é a norma da diferença: ‖a − b‖. Primeiro subtraia, depois meça.",
+            "Vetores próximos descrevem coisas parecidas. Dois alunos com notas quase iguais têm vetores de notas próximos."
+          ],
+          "example": {
+            "label": "De (1, 1) até (4, 5)",
+            "lines": [
+              "Diferença: (4 − 1, 5 − 1) = (3, 4)",
+              "Norma: √(9 + 16) = 5",
+              "A distância é 5."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Vetor de tamanho 1",
+          "body": [
+            "Dividir um vetor pela própria norma deixa a seta com tamanho 1, mantendo a direção. Isso se chama normalizar.",
+            "Um vetor de tamanho 1 guarda só a direção. Fica fácil comparar direções sem o tamanho atrapalhar."
+          ],
+          "terms": [
+            {
+              "word": "Vetor unitário",
+              "meaning": "um vetor de norma 1, obtido dividindo o vetor pela própria norma."
+            }
+          ],
+          "example": {
+            "label": "Normalizando (3, 4)",
+            "lines": [
+              "Norma: 5",
+              "(3, 4) ÷ 5 = (0,6; 0,8)",
+              "Confere: √(0,36 + 0,64) = 1"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O cosseno: mesma direção?",
+          "body": [
+            "Às vezes a direção importa mais que o tamanho. Um texto curto e um longo sobre futebol apontam para o mesmo lado, mesmo com tamanhos diferentes.",
+            "A semelhança do cosseno divide o produto escalar pelas duas normas. O resultado vai de −1 a 1: 1 é a mesma direção, 0 é canto reto e −1 é oposta."
+          ],
+          "terms": [
+            {
+              "word": "Cosseno",
+              "meaning": "aqui, o número de −1 a 1 que diz o quanto duas direções combinam: a · b dividido por ‖a‖ × ‖b‖."
+            }
+          ],
+          "example": {
+            "label": "(1, 1) e (2, 2)",
+            "lines": [
+              "Produto escalar: 2 + 2 = 4",
+              "Normas: √2 e √8",
+              "4 ÷ (√2 × √8) = 4 ÷ 4 = 1",
+              "Mesma direção: semelhança 1."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Palavras parecidas",
+          "body": [
+            "É exatamente assim que se mede se duas palavras têm sentido parecido. Os vetores de “gato” e “felino” têm cosseno alto; “gato” e “imposto”, perto de zero.",
+            "A busca por significado de um assistente de IA faz essa conta com milhões de textos."
+          ],
+          "code": {
+            "label": "Semelhança do cosseno",
+            "text": "import numpy as np\na = np.array([1, 1])\nb = np.array([2, 2])\ncos = (a @ b) / (np.linalg.norm(a) * np.linalg.norm(b))\nprint(cos)",
+            "notes": [
+              "Traz o NumPy.",
+              "Cria o vetor a.",
+              "Cria o vetor b, que aponta para o mesmo lado com o dobro do tamanho.",
+              "Divide o produto escalar pelas duas normas. np.linalg.norm calcula a norma.",
+              "Mostra um valor muito próximo de 1: mesma direção."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem normas e distâncias com números que dão raiz exata, como 3, 4 e 5. Também cai normalizar um vetor.",
+            "Em entrevistas de IA, cai a diferença entre distância e semelhança do cosseno."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde as medidas enganam."
+          ],
+          "bullets": [
+            "Somar as componentes em vez de elevar ao quadrado: a norma de (3, 4) não é 7.",
+            "Esquecer a raiz no fim.",
+            "Achar que distância grande sempre quer dizer sentido diferente: dois vetores na mesma direção podem estar longe.",
+            "Esperar que o cosseno passe de 1."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Tamanho, afastamento e direção."
+          ],
+          "bullets": [
+            "Norma: √(soma dos quadrados).",
+            "‖v‖ = √(v · v).",
+            "Distância: a norma da diferença.",
+            "Normalizar: dividir pela norma; o tamanho vira 1.",
+            "Cosseno: produto escalar dividido pelas normas, de −1 a 1.",
+            "Cosseno alto entre vetores de palavras: sentidos parecidos."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Norma",
+          "statement": "Qual é a norma de (6, 8)?",
+          "options": [
+            "14",
+            "10",
+            "48",
+            "100",
+            "7"
+          ],
+          "correct_index": 1,
+          "explanation": "√(36 + 64) = √100 = 10.",
+          "pitfall": "14 soma as componentes."
+        },
+        {
+          "topic": "Três componentes",
+          "statement": "Qual é a norma de (2, 3, 6)?",
+          "options": [
+            "11",
+            "7",
+            "49",
+            "√11",
+            "36"
+          ],
+          "correct_index": 1,
+          "explanation": "√(4 + 9 + 36) = √49 = 7.",
+          "pitfall": "49 esquece a raiz."
+        },
+        {
+          "topic": "Distância",
+          "statement": "Qual é a distância entre (2, 1) e (5, 5)?",
+          "options": [
+            "5",
+            "7",
+            "25",
+            "3",
+            "√7"
+          ],
+          "correct_index": 0,
+          "explanation": "Diferença (3, 4); norma √25 = 5.",
+          "pitfall": "7 soma as diferenças sem elevar ao quadrado."
+        },
+        {
+          "topic": "Unitário",
+          "statement": "Qual é o vetor unitário na direção de (0, 5)?",
+          "options": [
+            "(0, 5)",
+            "(0, 1)",
+            "(1, 0)",
+            "(0, 0,2)",
+            "(5, 0)"
+          ],
+          "correct_index": 1,
+          "explanation": "A norma é 5. Dividindo: (0, 1).",
+          "pitfall": "(0, 0,2) dividiu por 25."
+        },
+        {
+          "topic": "Cosseno",
+          "statement": "Qual é a semelhança do cosseno entre (1, 0) e (0, 3)?",
+          "options": [
+            "1",
+            "0",
+            "−1",
+            "3",
+            "0,5"
+          ],
+          "correct_index": 1,
+          "explanation": "O produto escalar é 0: canto reto. Cosseno 0.",
+          "pitfall": "O 3 não importa: o cosseno ignora o tamanho."
+        },
+        {
+          "topic": "Opostos",
+          "statement": "Qual é a semelhança do cosseno entre (2, 1) e (−4, −2)?",
+          "options": [
+            "1",
+            "0",
+            "−1",
+            "2",
+            "−2"
+          ],
+          "correct_index": 2,
+          "explanation": "(−4, −2) é (2, 1) vezes −2: mesma reta, sentido oposto. Cosseno −1.",
+          "pitfall": "O cosseno nunca passa de 1 nem fica abaixo de −1."
+        },
+        {
+          "topic": "Sentido",
+          "statement": "Os vetores de duas palavras têm semelhança do cosseno 0,95. O que isso sugere?",
+          "options": [
+            "sentidos muito parecidos",
+            "sentidos opostos",
+            "nenhuma relação",
+            "que as palavras têm o mesmo tamanho",
+            "que houve erro"
+          ],
+          "correct_index": 0,
+          "explanation": "Perto de 1 quer dizer mesma direção: sentidos parecidos.",
+          "pitfall": "O cosseno não mede o tamanho das palavras, e sim a direção dos vetores."
+        },
+        {
+          "topic": "Distância",
+          "format": "order",
+          "statement": "Ponha na ordem os passos para achar a distância entre dois vetores.",
+          "options": [
+            "Subtrair um vetor do outro",
+            "Elevar cada componente da diferença ao quadrado",
+            "Somar os quadrados",
+            "Tirar a raiz quadrada"
+          ],
+          "explanation": "A distância é a norma da diferença: subtrai, eleva, soma e tira a raiz.",
+          "pitfall": "Tirar a raiz antes de somar dá outro número."
+        }
+      ]
+    },
+    {
+      "slug": "matrizes-e-tipos",
+      "title": "Matrizes: tabelas de números",
+      "module": "Matrizes",
+      "summary": "Matriz é uma tabela de números em linhas e colunas. Ela tem formato, endereço para cada número e alguns tipos com nome próprio, como a identidade e a transposta.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A planilha de notas",
+          "body": [
+            "Numa planilha, cada linha é um aluno e cada coluna é uma prova. Olhando a tabela inteira, você vê a turma toda de uma vez.",
+            "Em matemática, uma tabela de números assim se chama matriz. Ela guarda muitos vetores lado a lado."
+          ],
+          "terms": [
+            {
+              "word": "Matriz",
+              "meaning": "uma tabela de números arrumados em linhas e colunas."
+            },
+            {
+              "word": "Vetor",
+              "meaning": "uma lista ordenada de números, como (3, 2)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Formato: linhas por colunas",
+          "body": [
+            "Uma matriz com 2 linhas e 3 colunas é uma matriz 2 × 3. Primeiro se diz o número de linhas, depois o de colunas.",
+            "O formato decide quais contas são possíveis com ela."
+          ],
+          "terms": [
+            {
+              "word": "Dimensão",
+              "meaning": "o formato da matriz: número de linhas por número de colunas, como 2 × 3."
+            }
+          ],
+          "example": {
+            "label": "Uma matriz 2 × 3",
+            "lines": [
+              "[ 1  4  7 ]",
+              "[ 2  5  8 ]",
+              "2 linhas e 3 colunas"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O endereço de cada número",
+          "body": [
+            "Cada número tem um endereço: a linha e a coluna onde mora. a₂₃ é o número da linha 2, coluna 3.",
+            "Na matemática, a contagem começa em 1. No Python, começa em 0: o mesmo número é A[1][2]."
+          ],
+          "example": {
+            "label": "Na matriz de cima",
+            "lines": [
+              "a₁₁ = 1",
+              "a₂₃ = 8",
+              "a₁₂ = 4",
+              "No Python: A[1][2] = 8"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Linhas e colunas são vetores",
+          "body": [
+            "Cada linha de uma matriz é um vetor. Cada coluna também.",
+            "Na planilha de notas, a linha de um aluno é o vetor das notas dele. A coluna de uma prova é o vetor das notas da turma nela."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Tipos com nome próprio",
+          "body": [
+            "Algumas matrizes aparecem tanto que ganharam nome.",
+            "A mais importante é a identidade: 1 na diagonal e 0 no resto. Ela faz o papel do número 1 nas contas com matrizes."
+          ],
+          "terms": [
+            {
+              "word": "Matriz identidade",
+              "meaning": "a matriz quadrada com 1 na diagonal e 0 fora dela. Escreve-se I."
+            }
+          ],
+          "table": {
+            "label": "Tipos de matriz",
+            "headers": [
+              "Nome",
+              "Como é"
+            ],
+            "rows": [
+              [
+                "quadrada",
+                "mesmo número de linhas e colunas"
+              ],
+              [
+                "linha",
+                "uma linha só: 1 × n"
+              ],
+              [
+                "coluna",
+                "uma coluna só: n × 1"
+              ],
+              [
+                "nula",
+                "todos os números são zero"
+              ],
+              [
+                "diagonal",
+                "só a diagonal pode ter número diferente de zero"
+              ],
+              [
+                "identidade",
+                "diagonal de 1 e o resto zero"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A transposta: virar a tabela",
+          "body": [
+            "Transpor é trocar linhas por colunas. A primeira linha vira a primeira coluna, e assim por diante.",
+            "Uma matriz 2 × 3 vira 3 × 2. Escreve-se Aᵀ."
+          ],
+          "terms": [
+            {
+              "word": "Transposta",
+              "meaning": "a matriz que se obtém trocando linhas por colunas. Escreve-se Aᵀ."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/algebra-linear/transposta.svg",
+            "alt": "À esquerda, uma matriz de 2 linhas e 3 colunas com os números 1 a 6. À direita, a transposta, com 3 linhas e 2 colunas: a primeira linha virou a primeira coluna.",
+            "caption": "A linha vira coluna: 2 × 3 vira 3 × 2."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "No Python",
+          "body": [
+            "Com NumPy, uma matriz é um array de duas dimensões. O shape diz o formato, e o .T dá a transposta."
+          ],
+          "code": {
+            "label": "Matriz em Python",
+            "text": "import numpy as np\nA = np.array([[1, 2, 3], [4, 5, 6]])\nprint(A.shape)\nprint(A.T.shape)",
+            "notes": [
+              "Traz o NumPy.",
+              "Cria uma matriz de 2 linhas e 3 colunas.",
+              "Mostra (2, 3).",
+              "Mostra (3, 2): a transposta trocou linhas por colunas."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem o formato de uma matriz, o endereço de um número e a transposta. Também cai montar a matriz a partir de uma regra, como aᵢⱼ = i + j.",
+            "Atenção à ordem: linhas vêm antes de colunas."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde as matrizes confundem."
+          ],
+          "bullets": [
+            "Dizer colunas antes de linhas no formato.",
+            "Trocar a₂₃ com a₃₂.",
+            "Esquecer que no Python a contagem começa em 0.",
+            "Achar que a identidade é toda de 1: só a diagonal."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Tabela de números em linhas e colunas."
+          ],
+          "bullets": [
+            "Formato: linhas × colunas.",
+            "aᵢⱼ: linha i, coluna j.",
+            "Cada linha e cada coluna é um vetor.",
+            "Identidade: 1 na diagonal, 0 no resto.",
+            "Transposta troca linhas por colunas.",
+            "No NumPy: shape dá o formato e .T a transposta."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Formato",
+          "statement": "Uma matriz tem 4 linhas e 2 colunas. Qual é o formato?",
+          "options": [
+            "2 × 4",
+            "4 × 2",
+            "8",
+            "6",
+            "4 + 2"
+          ],
+          "correct_index": 1,
+          "explanation": "Primeiro as linhas, depois as colunas: 4 × 2.",
+          "pitfall": "2 × 4 inverte a ordem."
+        },
+        {
+          "topic": "Endereço",
+          "statement": "Na matriz com linhas [3, 7, 1] e [5, 2, 9], quanto vale a₂₁?",
+          "options": [
+            "7",
+            "5",
+            "2",
+            "3",
+            "9"
+          ],
+          "correct_index": 1,
+          "explanation": "Linha 2, coluna 1: o 5.",
+          "pitfall": "7 é a₁₂, com linha e coluna trocadas."
+        },
+        {
+          "topic": "Transposta",
+          "statement": "Qual é o formato da transposta de uma matriz 3 × 5?",
+          "options": [
+            "3 × 5",
+            "5 × 3",
+            "15 × 1",
+            "3 × 3",
+            "5 × 5"
+          ],
+          "correct_index": 1,
+          "explanation": "Transpor troca linhas por colunas: 5 × 3.",
+          "pitfall": "O formato não se mantém na transposta, a menos que a matriz seja quadrada."
+        },
+        {
+          "topic": "Identidade",
+          "statement": "Qual é a matriz identidade 2 × 2?",
+          "options": [
+            "linhas [1, 1] e [1, 1]",
+            "linhas [1, 0] e [0, 1]",
+            "linhas [0, 1] e [1, 0]",
+            "linhas [0, 0] e [0, 0]",
+            "linhas [2, 0] e [0, 2]"
+          ],
+          "correct_index": 1,
+          "explanation": "1 na diagonal, 0 fora dela.",
+          "pitfall": "Toda de 1 não é identidade."
+        },
+        {
+          "topic": "Regra",
+          "statement": "Monte a matriz 2 × 2 com aᵢⱼ = i + j. Qual é a₂₂?",
+          "options": [
+            "2",
+            "3",
+            "4",
+            "22",
+            "1"
+          ],
+          "correct_index": 2,
+          "explanation": "i = 2 e j = 2: 2 + 2 = 4.",
+          "pitfall": "22 junta os índices em vez de somar."
+        },
+        {
+          "topic": "Python",
+          "statement": "Com A = np.array([[1, 2], [3, 4]]), quanto vale A[1][0]?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "um erro"
+          ],
+          "correct_index": 2,
+          "explanation": "No Python, a linha 1 é a segunda: [3, 4]. A coluna 0 dela é o 3.",
+          "pitfall": "Contar a partir do 1 leva ao 2."
+        },
+        {
+          "topic": "Linhas como vetores",
+          "statement": "Numa matriz em que cada linha é um aluno e cada coluna uma prova, o que é a terceira coluna?",
+          "options": [
+            "as notas do terceiro aluno",
+            "as notas de todos os alunos na terceira prova",
+            "a média da turma",
+            "o número de provas",
+            "a transposta"
+          ],
+          "correct_index": 1,
+          "explanation": "Coluna é prova: a terceira coluna reúne a terceira prova de cada aluno.",
+          "pitfall": "As notas de um aluno estão na linha dele."
+        },
+        {
+          "topic": "Tipos",
+          "format": "match",
+          "statement": "Ligue cada tipo de matriz à sua descrição.",
+          "pairs": [
+            {
+              "left": "quadrada",
+              "right": "linhas e colunas em mesmo número"
+            },
+            {
+              "left": "identidade",
+              "right": "1 na diagonal e 0 no resto"
+            },
+            {
+              "left": "nula",
+              "right": "todos os números são zero"
+            },
+            {
+              "left": "transposta",
+              "right": "linhas trocadas por colunas"
+            }
+          ],
+          "explanation": "Cada nome descreve a forma ou a origem da matriz.",
+          "pitfall": "Transposta não é um tipo de forma: é o que se faz com uma matriz."
+        }
+      ]
+    },
+    {
+      "slug": "operacoes-com-matrizes",
+      "title": "Somar matrizes e multiplicar por um número",
+      "module": "Matrizes",
+      "summary": "Soma e multiplicação por número funcionam casa por casa, exatamente como nos vetores. Só exigem que os formatos combinem.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Duas planilhas do mesmo formato",
+          "body": [
+            "Uma loja tem duas filiais, e cada uma anota as vendas numa tabela igual: produtos nas linhas, meses nas colunas.",
+            "Para saber o total da empresa, basta somar casa por casa. É a soma de matrizes."
+          ],
+          "terms": [
+            {
+              "word": "Matriz",
+              "meaning": "uma tabela de números arrumados em linhas e colunas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Soma casa por casa",
+          "body": [
+            "Some o número de cada endereço com o do mesmo endereço na outra matriz.",
+            "Só funciona se as duas tiverem o mesmo formato. Uma 2 × 3 não se soma com uma 3 × 2."
+          ],
+          "example": {
+            "label": "Somando",
+            "lines": [
+              "[1 2] + [5 0] = [6 2]",
+              "[3 4]   [1 1]   [4 5]",
+              "Cada casa com a casa do mesmo lugar"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Multiplicar por um número",
+          "body": [
+            "Multiplicar uma matriz por um número multiplica cada casa. Se todos os preços sobem 10%, a tabela inteira é multiplicada por 1,1.",
+            "Um número sozinho, nesse papel, se chama escalar."
+          ],
+          "terms": [
+            {
+              "word": "Escalar",
+              "meaning": "um número sozinho, sem direção. Escalar vezes matriz multiplica cada casa."
+            }
+          ],
+          "example": {
+            "label": "Dobrando",
+            "lines": [
+              "2 × [1 −3] = [2 −6]",
+              "    [0  4]   [0  8]"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Subtração e a matriz nula",
+          "body": [
+            "A − B também é casa por casa. Ela mostra onde duas tabelas diferem.",
+            "A − A dá a matriz nula, toda de zeros. Ela faz o papel do zero: somá-la não muda nada."
+          ],
+          "terms": [
+            {
+              "word": "Matriz nula",
+              "meaning": "a matriz com todos os números iguais a zero."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As regras de sempre",
+          "body": [
+            "Essas contas obedecem às regras que você já conhece dos números. A ordem da soma não importa, e o número de fora se distribui."
+          ],
+          "table": {
+            "label": "Propriedades",
+            "headers": [
+              "Regra",
+              "Escrita"
+            ],
+            "rows": [
+              [
+                "A ordem não muda a soma",
+                "A + B = B + A"
+              ],
+              [
+                "Agrupar não muda a soma",
+                "(A + B) + C = A + (B + C)"
+              ],
+              [
+                "Somar a nula não muda nada",
+                "A + 0 = A"
+              ],
+              [
+                "O número se distribui",
+                "k(A + B) = kA + kB"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Um exemplo com sentido",
+          "body": [
+            "Um aluno tem duas tabelas de notas, uma por bimestre. A média de cada casa é (B₁ + B₂) ÷ 2.",
+            "Uma conta só, escrita com matrizes, faz a média de todas as matérias de uma vez."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "No Python",
+          "body": [
+            "Com NumPy, + e * fazem tudo de uma vez, casa por casa."
+          ],
+          "code": {
+            "label": "Contas com matrizes",
+            "text": "import numpy as np\nA = np.array([[1, 2], [3, 4]])\nB = np.array([[5, 0], [1, 1]])\nprint(A + B)\nprint(3 * A)",
+            "notes": [
+              "Traz o NumPy.",
+              "Cria a matriz A.",
+              "Cria a matriz B, do mesmo formato.",
+              "Mostra a soma casa por casa: [[6 2] [4 5]].",
+              "Mostra cada casa de A vezes 3: [[3 6] [9 12]]."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem expressões como 2A − B com matrizes pequenas. Faça casa por casa, com cuidado nos sinais.",
+            "Também cai a pergunta sobre formatos: quais pares de matrizes podem ser somados."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Tropeços comuns."
+          ],
+          "bullets": [
+            "Somar matrizes de formatos diferentes.",
+            "Multiplicar só a primeira linha pelo número.",
+            "Errar o sinal na subtração.",
+            "Achar que A * B no NumPy é a multiplicação de matrizes da próxima lição: o * faz casa por casa."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Casa por casa, com o mesmo formato."
+          ],
+          "bullets": [
+            "Soma: cada casa com a do mesmo endereço.",
+            "Só se somam matrizes do mesmo formato.",
+            "Número vezes matriz: multiplica cada casa.",
+            "A nula faz o papel do zero.",
+            "As regras de sempre continuam valendo.",
+            "No NumPy, + e * trabalham casa por casa."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Soma",
+          "statement": "Com A de linhas [2, −1] e [0, 3] e B de linhas [1, 1] e [4, −2], qual é a casa da linha 2, coluna 2 de A + B?",
+          "options": [
+            "1",
+            "5",
+            "−5",
+            "3",
+            "−1"
+          ],
+          "correct_index": 0,
+          "explanation": "3 + (−2) = 1.",
+          "pitfall": "5 soma 3 com 2 e ignora o sinal."
+        },
+        {
+          "topic": "Escalar",
+          "statement": "Quanto vale a casa da linha 1, coluna 2 de 4A, com A de linhas [1, −2] e [3, 0]?",
+          "options": [
+            "−2",
+            "−8",
+            "8",
+            "2",
+            "4"
+          ],
+          "correct_index": 1,
+          "explanation": "A casa é −2. Vezes 4: −8.",
+          "pitfall": "8 perde o sinal."
+        },
+        {
+          "topic": "Formatos",
+          "statement": "Qual par pode ser somado?",
+          "options": [
+            "2 × 3 e 3 × 2",
+            "2 × 2 e 2 × 3",
+            "3 × 1 e 3 × 1",
+            "1 × 3 e 3 × 1",
+            "2 × 2 e 4 × 1"
+          ],
+          "correct_index": 2,
+          "explanation": "A soma exige o mesmo formato: 3 × 1 com 3 × 1.",
+          "pitfall": "2 × 3 e 3 × 2 têm os mesmos números de linhas e colunas, mas trocados."
+        },
+        {
+          "topic": "Combinação",
+          "statement": "Com A de linhas [1, 2] e [3, 4] e B de linhas [1, 0] e [0, 1], qual é a primeira linha de 2A − B?",
+          "options": [
+            "[1, 4]",
+            "[2, 4]",
+            "[3, 4]",
+            "[1, 2]",
+            "[0, 4]"
+          ],
+          "correct_index": 0,
+          "explanation": "2A tem primeira linha [2, 4]. Menos [1, 0]: [1, 4].",
+          "pitfall": "[2, 4] esquece de subtrair o B."
+        },
+        {
+          "topic": "Nula",
+          "statement": "Quanto vale A − A?",
+          "options": [
+            "A",
+            "2A",
+            "a matriz nula",
+            "a identidade",
+            "depende de A"
+          ],
+          "correct_index": 2,
+          "explanation": "Cada casa menos ela mesma dá zero.",
+          "pitfall": "A matriz com 1 na diagonal é outra coisa. A nula é toda de zeros."
+        },
+        {
+          "topic": "Média",
+          "statement": "Duas matrizes de notas B₁ e B₂ têm o mesmo formato. Qual conta dá a média de cada casa?",
+          "options": [
+            "B₁ × B₂",
+            "(B₁ + B₂) ÷ 2",
+            "B₁ − B₂",
+            "2(B₁ + B₂)",
+            "B₁ ÷ B₂"
+          ],
+          "correct_index": 1,
+          "explanation": "Soma casa por casa e divide cada casa por 2.",
+          "pitfall": "2(B₁ + B₂) dobra em vez de dividir."
+        },
+        {
+          "topic": "NumPy",
+          "statement": "Com A = np.array([[1, 2], [3, 4]]), o que A * A mostra no NumPy?",
+          "options": [
+            "[[1 4] [9 16]]",
+            "[[7 10] [15 22]]",
+            "[[2 4] [6 8]]",
+            "um erro",
+            "[[1 2] [3 4]]"
+          ],
+          "correct_index": 0,
+          "explanation": "No NumPy, * multiplica casa por casa: 1, 4, 9 e 16.",
+          "pitfall": "[[7 10] [15 22]] é a multiplicação de matrizes, feita com @."
+        },
+        {
+          "topic": "Propriedades",
+          "format": "match",
+          "statement": "Ligue cada regra à sua escrita.",
+          "pairs": [
+            {
+              "left": "a ordem não importa",
+              "right": "A + B = B + A"
+            },
+            {
+              "left": "somar a nula",
+              "right": "A + 0 = A"
+            },
+            {
+              "left": "distribuir o número",
+              "right": "k(A + B) = kA + kB"
+            },
+            {
+              "left": "subtrair de si mesma",
+              "right": "A − A = 0"
+            }
+          ],
+          "explanation": "As regras da soma de números continuam valendo para matrizes.",
+          "pitfall": "Na multiplicação de matrizes, a ordem vai importar. Na soma, não."
+        }
+      ]
+    },
+    {
+      "slug": "multiplicacao-de-matrizes",
+      "title": "Multiplicação de matrizes: linha com coluna",
+      "module": "Matrizes",
+      "summary": "Cada casa do resultado é o produto escalar de uma linha da primeira matriz com uma coluna da segunda. É a conta que uma camada de rede neural faz.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A conta do mercado",
+          "body": [
+            "Ana compra 2 pães e 1 leite; Rui, 1 pão e 3 leites. O pão custa R$ 1 no mercado A e R$ 2 no mercado B. O leite custa R$ 5 no A e R$ 4 no B.",
+            "Quanto cada um gasta em cada mercado? São quatro contas do mesmo jeito: quantidades vezes preços, somadas. A multiplicação de matrizes faz as quatro de uma vez."
+          ],
+          "terms": [
+            {
+              "word": "Matriz",
+              "meaning": "uma tabela de números arrumados em linhas e colunas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Linha com coluna",
+          "body": [
+            "Para achar a casa da linha i e coluna j do resultado, pegue a linha i da primeira matriz e a coluna j da segunda. Multiplique par a par e some.",
+            "Isso é um produto escalar. Cada casa do resultado é um."
+          ],
+          "terms": [
+            {
+              "word": "Produto escalar",
+              "meaning": "multiplicar dois vetores número a número e somar tudo. (2, 1) · (1, 5) = 2 + 5 = 7."
+            },
+            {
+              "word": "Vetor",
+              "meaning": "uma lista ordenada de números. Cada linha e cada coluna de uma matriz é um vetor."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/algebra-linear/multiplicacao-matrizes.svg",
+            "alt": "Duas matrizes lado a lado. Uma linha da primeira e uma coluna da segunda estão destacadas, e uma seta leva ao único número do resultado que elas formam.",
+            "caption": "Linha da primeira com coluna da segunda: uma casa do resultado."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A conta do mercado, feita",
+          "body": [
+            "Quantidades: linhas [2, 1] para Ana e [1, 3] para Rui. Preços: colunas (1, 5) do mercado A e (2, 4) do mercado B."
+          ],
+          "example": {
+            "label": "Quanto cada um gasta",
+            "lines": [
+              "Ana no A: 2 × 1 + 1 × 5 = 7",
+              "Ana no B: 2 × 2 + 1 × 4 = 8",
+              "Rui no A: 1 × 1 + 3 × 5 = 16",
+              "Rui no B: 1 × 2 + 3 × 4 = 14"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os formatos precisam encaixar",
+          "body": [
+            "A linha da primeira e a coluna da segunda precisam ter o mesmo tamanho. Então o número de colunas da primeira tem que ser igual ao de linhas da segunda.",
+            "O resultado fica com as linhas da primeira e as colunas da segunda: (2 × 3) vezes (3 × 4) dá 2 × 4."
+          ],
+          "terms": [
+            {
+              "word": "Dimensão",
+              "meaning": "o formato da matriz: linhas por colunas."
+            }
+          ],
+          "table": {
+            "label": "Encaixa?",
+            "headers": [
+              "Primeira",
+              "Segunda",
+              "Resultado"
+            ],
+            "rows": [
+              [
+                "2 × 3",
+                "3 × 4",
+                "2 × 4"
+              ],
+              [
+                "3 × 1",
+                "1 × 3",
+                "3 × 3"
+              ],
+              [
+                "2 × 2",
+                "3 × 2",
+                "não encaixa"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A ordem importa",
+          "body": [
+            "Com números, 2 × 3 = 3 × 2. Com matrizes, AB e BA quase sempre dão resultados diferentes, e às vezes um deles nem existe.",
+            "A identidade é a exceção boa: AI = IA = A. Ela não muda nada, como o número 1."
+          ],
+          "terms": [
+            {
+              "word": "Matriz identidade",
+              "meaning": "a matriz quadrada com 1 na diagonal e 0 no resto."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Matriz vezes vetor",
+          "body": [
+            "Um vetor em pé é uma matriz de uma coluna só. Multiplicar uma matriz por ele dá outro vetor.",
+            "Numa rede neural, as entradas formam um vetor, e os pesos formam uma matriz. A camada inteira é uma multiplicação: pesos vezes entradas."
+          ],
+          "code": {
+            "label": "Uma camada, em miniatura",
+            "text": "import numpy as np\nW = np.array([[1, 2], [0, 1], [3, 0]])\nx = np.array([4, 5])\nprint(W @ x)",
+            "notes": [
+              "Traz o NumPy.",
+              "A matriz de pesos, com 3 linhas (uma por neurônio) e 2 colunas (uma por entrada).",
+              "O vetor de entradas.",
+              "O @ multiplica linha com coluna: mostra [14 5 12], uma saída por neurônio."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem o cálculo de uma casa do resultado e a pergunta sobre quais formatos encaixam. Também cai mostrar que AB é diferente de BA.",
+            "Para uma casa só, não é preciso calcular a matriz inteira: basta a linha e a coluna certas."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Os erros clássicos."
+          ],
+          "bullets": [
+            "Multiplicar casa por casa, como na soma.",
+            "Achar que AB = BA.",
+            "Conferir o formato errado: são as colunas da primeira com as linhas da segunda.",
+            "Usar * no NumPy quando o certo é @."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Linha com coluna, multiplica e soma."
+          ],
+          "bullets": [
+            "Cada casa do resultado é um produto escalar.",
+            "Colunas da primeira = linhas da segunda.",
+            "(m × n) vezes (n × p) dá m × p.",
+            "AB e BA costumam ser diferentes.",
+            "A identidade não muda nada: AI = A.",
+            "Uma camada de rede neural é pesos @ entradas."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Uma casa",
+          "statement": "Com A de linhas [1, 2] e [3, 4] e B de linhas [5, 6] e [7, 8], qual é a casa da linha 1, coluna 1 de AB?",
+          "options": [
+            "5",
+            "19",
+            "12",
+            "22",
+            "43"
+          ],
+          "correct_index": 1,
+          "explanation": "Linha 1 de A é [1, 2]; coluna 1 de B é (5, 7). 1 × 5 + 2 × 7 = 19.",
+          "pitfall": "5 multiplica só os primeiros números, sem somar."
+        },
+        {
+          "topic": "Outra casa",
+          "statement": "Com as mesmas A e B, qual é a casa da linha 2, coluna 2 de AB?",
+          "options": [
+            "32",
+            "50",
+            "43",
+            "22",
+            "24"
+          ],
+          "correct_index": 1,
+          "explanation": "Linha 2 de A é [3, 4]; coluna 2 de B é (6, 8). 18 + 32 = 50.",
+          "pitfall": "32 é só o produto 4 × 8."
+        },
+        {
+          "topic": "Formato",
+          "statement": "Uma matriz 3 × 2 vezes uma 2 × 5 dá qual formato?",
+          "options": [
+            "3 × 5",
+            "2 × 2",
+            "5 × 3",
+            "não encaixa",
+            "3 × 2"
+          ],
+          "correct_index": 0,
+          "explanation": "As colunas da primeira (2) batem com as linhas da segunda (2). O resultado tem 3 linhas e 5 colunas.",
+          "pitfall": "2 × 2 pega os números do meio, que são os que se cancelam."
+        },
+        {
+          "topic": "Encaixa?",
+          "statement": "Qual produto NÃO existe?",
+          "options": [
+            "(2 × 3)(3 × 1)",
+            "(1 × 4)(4 × 1)",
+            "(3 × 2)(3 × 2)",
+            "(2 × 2)(2 × 2)",
+            "(4 × 1)(1 × 4)"
+          ],
+          "correct_index": 2,
+          "explanation": "3 × 2 tem 2 colunas, e a segunda tem 3 linhas. Não encaixa.",
+          "pitfall": "(4 × 1)(1 × 4) existe e dá uma matriz 4 × 4."
+        },
+        {
+          "topic": "Ordem",
+          "statement": "O que se pode dizer de AB e BA, em geral?",
+          "options": [
+            "são sempre iguais",
+            "costumam ser diferentes",
+            "BA é sempre a transposta de AB",
+            "uma é sempre o dobro da outra",
+            "as duas dão a identidade"
+          ],
+          "correct_index": 1,
+          "explanation": "A ordem importa na multiplicação de matrizes.",
+          "pitfall": "Com números a ordem não importa, e por isso a intuição engana aqui."
+        },
+        {
+          "topic": "Matriz e vetor",
+          "statement": "Com W de linhas [2, 0] e [1, 3] e x = (1, 2), quanto é W @ x?",
+          "options": [
+            "(2, 7)",
+            "(2, 6)",
+            "(3, 4)",
+            "(4, 7)",
+            "(1, 6)"
+          ],
+          "correct_index": 0,
+          "explanation": "Linha 1: 2 × 1 + 0 × 2 = 2. Linha 2: 1 × 1 + 3 × 2 = 7.",
+          "pitfall": "(2, 6) esquece o 1 × 1 da segunda linha."
+        },
+        {
+          "topic": "Identidade",
+          "statement": "Quanto é A vezes a identidade do tamanho certo?",
+          "options": [
+            "a matriz nula",
+            "A",
+            "a transposta de A",
+            "2A",
+            "a identidade"
+          ],
+          "correct_index": 1,
+          "explanation": "A identidade faz o papel do número 1: não muda nada.",
+          "pitfall": "A identidade não zera nada; quem zera é a nula."
+        },
+        {
+          "topic": "Uma casa",
+          "format": "order",
+          "statement": "Ponha na ordem os passos para achar a casa da linha 2, coluna 3 de AB.",
+          "options": [
+            "Pegar a linha 2 de A",
+            "Pegar a coluna 3 de B",
+            "Multiplicar os números par a par",
+            "Somar os produtos"
+          ],
+          "explanation": "Cada casa do resultado é um produto escalar entre uma linha e uma coluna.",
+          "pitfall": "Pegar a coluna 2 de A inverte os papéis das matrizes."
+        }
+      ]
+    },
+    {
+      "slug": "determinante-e-inversa",
+      "title": "Determinante e matriz inversa",
+      "module": "Matrizes",
+      "summary": "O determinante é um número que diz se a matriz pode ser desfeita. Quando pode, a inversa é a matriz que desfaz.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Dividir por uma matriz?",
+          "body": [
+            "Com números, 3x = 12 se resolve dividindo por 3. Na verdade, multiplica-se pelo inverso, 1/3.",
+            "Com matrizes não existe divisão. Existe algo que faz o mesmo papel: a matriz inversa. Mas nem toda matriz tem uma."
+          ],
+          "terms": [
+            {
+              "word": "Matriz",
+              "meaning": "uma tabela de números arrumados em linhas e colunas."
+            },
+            {
+              "word": "Matriz identidade",
+              "meaning": "a matriz com 1 na diagonal e 0 no resto. Ela faz o papel do número 1."
+            },
+            {
+              "word": "Matriz inversa",
+              "meaning": "a matriz A⁻¹ que desfaz A: A vezes A⁻¹ dá a identidade."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O determinante de uma 2 × 2",
+          "body": [
+            "Para a matriz de linhas [a, b] e [c, d], o determinante é a × d − b × c. Diagonal principal menos a outra diagonal.",
+            "É um número só, calculado a partir da matriz quadrada inteira."
+          ],
+          "terms": [
+            {
+              "word": "Determinante",
+              "meaning": "um número calculado de uma matriz quadrada. Na 2 × 2: ad − bc."
+            }
+          ],
+          "example": {
+            "label": "Linhas [3, 1] e [4, 2]",
+            "lines": [
+              "Diagonal principal: 3 × 2 = 6",
+              "Outra diagonal: 1 × 4 = 4",
+              "Determinante: 6 − 4 = 2"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que ele mede",
+          "body": [
+            "Uma matriz 2 × 2 transforma o plano: estica, gira ou achata. O determinante diz quantas vezes a área muda.",
+            "Determinante 2 dobra as áreas. Determinante 0 achata tudo numa reta, e aí não tem como voltar."
+          ],
+          "figure": {
+            "src": "/figuras/algebra-linear/determinante-area.svg",
+            "alt": "À esquerda, um quadrado de área 1. À direita, o paralelogramo em que ele se transforma, com área 2, indicando determinante 2. Embaixo, um caso em que o quadrado vira um segmento achatado, com área 0.",
+            "caption": "O determinante é o fator de mudança da área."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Determinante zero: sem volta",
+          "body": [
+            "Se o determinante é zero, a matriz achatou alguma direção. Informação foi perdida, e nenhuma conta traz de volta.",
+            "Por isso: determinante zero, não existe inversa. Diferente de zero, existe."
+          ],
+          "example": {
+            "label": "Linhas [2, 4] e [1, 2]",
+            "lines": [
+              "2 × 2 − 4 × 1 = 0",
+              "A segunda linha é metade da primeira",
+              "Sem inversa"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A inversa de uma 2 × 2",
+          "body": [
+            "Troque a e d de lugar, troque o sinal de b e c, e divida tudo pelo determinante.",
+            "Confira sempre: A vezes A⁻¹ precisa dar a identidade."
+          ],
+          "example": {
+            "label": "A de linhas [3, 1] e [4, 2], com determinante 2",
+            "lines": [
+              "Troque a e d: linhas [2, 1] e [4, 3]",
+              "Troque o sinal de b e c: linhas [2, −1] e [−4, 3]",
+              "Divida por 2: linhas [1, −0,5] e [−2, 1,5]"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Matrizes maiores",
+          "body": [
+            "Para 3 × 3 ou mais, as contas crescem muito, e ninguém faz à mão no dia a dia. O computador faz com np.linalg.det e np.linalg.inv.",
+            "Na prática, mais importante que calcular é saber o que o zero quer dizer: a matriz perdeu informação."
+          ],
+          "code": {
+            "label": "No Python",
+            "text": "import numpy as np\nA = np.array([[3, 1], [4, 2]])\nprint(np.linalg.det(A))\nprint(np.linalg.inv(A))",
+            "notes": [
+              "Traz o NumPy.",
+              "Cria a matriz A.",
+              "Mostra o determinante: cerca de 2.",
+              "Mostra a inversa: [[1 −0.5] [−2 1.5]]."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem o determinante de 2 × 2 e 3 × 3 e a pergunta: esta matriz tem inversa? A resposta está no determinante.",
+            "Também cai achar o valor de k que zera o determinante."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde o determinante derruba."
+          ],
+          "bullets": [
+            "Somar as diagonais em vez de subtrair.",
+            "Esquecer de dividir pelo determinante na inversa.",
+            "Achar que toda matriz tem inversa.",
+            "Calcular determinante de matriz que não é quadrada: ele não existe."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Um número que diz se dá para desfazer."
+          ],
+          "bullets": [
+            "2 × 2: determinante = ad − bc.",
+            "Ele mede quanto a área muda.",
+            "Determinante zero: a matriz achata, e não há inversa.",
+            "A vezes A⁻¹ dá a identidade.",
+            "Inversa 2 × 2: troca a com d, troca o sinal de b e c, divide pelo determinante.",
+            "No NumPy: np.linalg.det e np.linalg.inv."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Determinante",
+          "statement": "Qual é o determinante da matriz de linhas [5, 2] e [3, 4]?",
+          "options": [
+            "14",
+            "26",
+            "20",
+            "6",
+            "−14"
+          ],
+          "correct_index": 0,
+          "explanation": "5 × 4 − 2 × 3 = 20 − 6 = 14.",
+          "pitfall": "26 soma as diagonais."
+        },
+        {
+          "topic": "Negativo",
+          "statement": "Qual é o determinante da matriz de linhas [1, 3] e [2, 1]?",
+          "options": [
+            "5",
+            "−5",
+            "7",
+            "1",
+            "0"
+          ],
+          "correct_index": 1,
+          "explanation": "1 × 1 − 3 × 2 = 1 − 6 = −5.",
+          "pitfall": "5 esquece o sinal."
+        },
+        {
+          "topic": "Tem inversa?",
+          "statement": "Qual matriz NÃO tem inversa?",
+          "options": [
+            "linhas [1, 0] e [0, 1]",
+            "linhas [2, 1] e [1, 1]",
+            "linhas [3, 6] e [1, 2]",
+            "linhas [4, 0] e [0, 2]",
+            "linhas [1, 2] e [3, 4]"
+          ],
+          "correct_index": 2,
+          "explanation": "3 × 2 − 6 × 1 = 0. Determinante zero: sem inversa.",
+          "pitfall": "A identidade tem inversa: ela mesma."
+        },
+        {
+          "topic": "Achar k",
+          "statement": "Para qual k a matriz de linhas [k, 2] e [3, 6] não tem inversa?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "6",
+            "0"
+          ],
+          "correct_index": 0,
+          "explanation": "6k − 6 = 0, então k = 1.",
+          "pitfall": "k = 0 dá determinante −6, que não é zero."
+        },
+        {
+          "topic": "Área",
+          "statement": "Uma matriz tem determinante 3. O que acontece com a área de uma figura transformada por ela?",
+          "options": [
+            "fica igual",
+            "triplica",
+            "cai a um terço",
+            "some",
+            "dobra"
+          ],
+          "correct_index": 1,
+          "explanation": "O determinante é o fator de mudança da área.",
+          "pitfall": "Um terço seria determinante 1/3."
+        },
+        {
+          "topic": "Inversa",
+          "statement": "Qual é a inversa da matriz de linhas [2, 0] e [0, 4]?",
+          "options": [
+            "linhas [0,5; 0] e [0; 0,25]",
+            "linhas [2, 0] e [0, 4]",
+            "linhas [−2, 0] e [0, −4]",
+            "linhas [4, 0] e [0, 2]",
+            "não existe"
+          ],
+          "correct_index": 0,
+          "explanation": "Numa matriz diagonal, a inversa inverte cada número da diagonal: 1/2 e 1/4.",
+          "pitfall": "Trocar o sinal não desfaz a matriz."
+        },
+        {
+          "topic": "Conferir",
+          "statement": "Como conferir que B é a inversa de A?",
+          "options": [
+            "A + B dá a nula",
+            "A vezes B dá a identidade",
+            "A − B dá a identidade",
+            "B é a transposta de A",
+            "o determinante de B é 1"
+          ],
+          "correct_index": 1,
+          "explanation": "A inversa desfaz: o produto das duas é a identidade.",
+          "pitfall": "Trocar linhas por colunas só desfaz a matriz em casos especiais."
+        },
+        {
+          "topic": "Inversa 2 × 2",
+          "format": "order",
+          "statement": "Ponha na ordem os passos para achar a inversa de uma matriz 2 × 2.",
+          "options": [
+            "Calcular o determinante e ver se é diferente de zero",
+            "Trocar a e d de lugar",
+            "Trocar o sinal de b e c",
+            "Dividir tudo pelo determinante"
+          ],
+          "explanation": "Com determinante zero não há inversa, então ele vem primeiro.",
+          "pitfall": "Esquecer a divisão final dá uma matriz que não desfaz A."
+        }
+      ]
+    },
+    {
+      "slug": "sistemas-com-matrizes",
+      "title": "Sistemas lineares escritos com matrizes",
+      "module": "Matrizes",
+      "summary": "Um sistema de equações vira uma conta só: A vezes x igual a b. Resolver é descobrir o vetor x, e o computador faz isso com milhares de letras.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A lanchonete, de novo",
+          "body": [
+            "Dois pastéis e um suco custam R$ 17. Um pastel e um suco custam R$ 11. Quanto custa cada coisa?",
+            "Esse problema cabe numa linha: uma matriz com as quantidades, um vetor com os preços desconhecidos e um vetor com os totais."
+          ],
+          "terms": [
+            {
+              "word": "Matriz",
+              "meaning": "uma tabela de números arrumados em linhas e colunas."
+            },
+            {
+              "word": "Vetor",
+              "meaning": "uma lista ordenada de números, como (3, 2)."
+            },
+            {
+              "word": "Sistema linear",
+              "meaning": "um grupo de equações do 1º grau que precisam valer ao mesmo tempo."
+            },
+            {
+              "word": "Equação",
+              "meaning": "uma conta com um valor escondido, em que os dois lados do sinal de igual valem o mesmo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A forma Ax = b",
+          "body": [
+            "A matriz A guarda os números que multiplicam as letras. O vetor x guarda as letras. O vetor b guarda os resultados.",
+            "Multiplicando A por x, cada linha vira uma equação do sistema."
+          ],
+          "example": {
+            "label": "A lanchonete",
+            "lines": [
+              "A: linhas [2, 1] e [1, 1]",
+              "x = (p, s)",
+              "b = (17, 11)",
+              "Linha 1 de Ax = b: 2p + s = 17",
+              "Linha 2 de Ax = b: p + s = 11"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Resolvendo com a inversa",
+          "body": [
+            "Se A tem inversa, multiplique os dois lados por ela: x = A⁻¹b. É o jeito de “dividir” por uma matriz.",
+            "Por isso o determinante importa aqui também. Determinante zero quer dizer nenhuma solução ou infinitas."
+          ],
+          "terms": [
+            {
+              "word": "Matriz inversa",
+              "meaning": "a matriz A⁻¹ que desfaz A."
+            },
+            {
+              "word": "Determinante",
+              "meaning": "o número que diz se a matriz tem inversa. Zero quer dizer que não tem."
+            }
+          ],
+          "example": {
+            "label": "Lanchonete",
+            "lines": [
+              "Determinante de A: 2 × 1 − 1 × 1 = 1",
+              "A⁻¹: linhas [1, −1] e [−1, 2]",
+              "x = A⁻¹b = (17 − 11, −17 + 22) = (6, 5)",
+              "Pastel R$ 6, suco R$ 5"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Escalonar: o jeito de mão",
+          "body": [
+            "Na prática, não se calcula a inversa. Combinam-se as linhas para zerar números abaixo da diagonal, e depois se resolve de baixo para cima.",
+            "É o mesmo método de somar ou subtrair equações, organizado numa tabela."
+          ],
+          "terms": [
+            {
+              "word": "Escalonar",
+              "meaning": "combinar linhas do sistema até a matriz ficar em escada, com zeros abaixo da diagonal."
+            }
+          ],
+          "example": {
+            "label": "Escalonando",
+            "lines": [
+              "Linha 1: 2p + s = 17",
+              "Linha 2: p + s = 11",
+              "Troque a linha 2 por (linha 1 − 2 × linha 2): −s = −5",
+              "Então s = 5, e voltando: p = 6"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Quando não há resposta única",
+          "body": [
+            "Se uma linha é a outra multiplicada por um número, o sistema tem pistas repetidas. O determinante dá zero.",
+            "Pistas repetidas com resultados que batem: infinitas soluções. Com resultados que brigam: nenhuma."
+          ],
+          "table": {
+            "label": "Os casos",
+            "headers": [
+              "Determinante",
+              "Soluções"
+            ],
+            "rows": [
+              [
+                "diferente de zero",
+                "uma só"
+              ],
+              [
+                "zero, com pistas que batem",
+                "infinitas"
+              ],
+              [
+                "zero, com pistas que brigam",
+                "nenhuma"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "No computador",
+          "body": [
+            "np.linalg.solve resolve Ax = b direto, sem montar a inversa. É mais rápido e erra menos por arredondamento."
+          ],
+          "code": {
+            "label": "Resolvendo",
+            "text": "import numpy as np\nA = np.array([[2, 1], [1, 1]])\nb = np.array([17, 11])\nprint(np.linalg.solve(A, b))",
+            "notes": [
+              "Traz o NumPy.",
+              "A matriz das quantidades.",
+              "O vetor dos totais.",
+              "Resolve o sistema: mostra [6. 5.]."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Muitas equações, poucas letras",
+          "body": [
+            "Com dados reais, costuma haver mais equações do que letras, e nenhuma solução exata. Busca-se então o x que erra menos.",
+            "Achar a reta que passa mais perto de muitos pontos é exatamente isso. É o primeiro passo do aprendizado de máquina."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem montar A, x e b a partir de um sistema e dizer se ele tem solução única pelo determinante.",
+            "Também cai resolver um sistema 3 × 3 escalonando."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Tropeços comuns."
+          ],
+          "bullets": [
+            "Pôr os coeficientes na ordem errada das letras.",
+            "Esquecer o coeficiente 1 de uma letra sozinha.",
+            "Achar que determinante zero sempre quer dizer nenhuma solução.",
+            "Calcular a inversa quando só é preciso resolver o sistema."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Um sistema é Ax = b."
+          ],
+          "bullets": [
+            "A: os números que multiplicam as letras.",
+            "x: as letras. b: os resultados.",
+            "Com inversa: x = A⁻¹b.",
+            "Determinante diferente de zero: solução única.",
+            "Escalonar é o jeito de mão.",
+            "No NumPy: np.linalg.solve(A, b)."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Montar",
+          "statement": "No sistema 3x + 2y = 8 e x − y = 1, qual é a matriz A?",
+          "options": [
+            "linhas [3, 2] e [1, −1]",
+            "linhas [3, 2] e [1, 1]",
+            "linhas [8, 1] e [3, 2]",
+            "linhas [3, 1] e [2, −1]",
+            "linhas [3, 8] e [1, 1]"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada linha guarda os números das letras de uma equação: [3, 2] e [1, −1].",
+          "pitfall": "[1, 1] esquece o sinal de −y."
+        },
+        {
+          "topic": "Vetor b",
+          "statement": "No mesmo sistema, qual é o vetor b?",
+          "options": [
+            "(3, 1)",
+            "(8, 1)",
+            "(2, −1)",
+            "(x, y)",
+            "(11, 0)"
+          ],
+          "correct_index": 1,
+          "explanation": "b guarda os resultados: 8 e 1.",
+          "pitfall": "(x, y) é o vetor x das letras."
+        },
+        {
+          "topic": "Solução única",
+          "statement": "O sistema com A de linhas [2, 4] e [1, 2] tem solução única?",
+          "options": [
+            "sim",
+            "não, porque o determinante é zero",
+            "sim, porque os números são pares",
+            "só se b for zero",
+            "não dá para saber"
+          ],
+          "correct_index": 1,
+          "explanation": "2 × 2 − 4 × 1 = 0. Sem solução única.",
+          "pitfall": "Determinante zero não diz se são nenhuma ou infinitas: só que não é uma só."
+        },
+        {
+          "topic": "Resolver",
+          "statement": "Resolva x + y = 7 e x − y = 1. Quanto vale x?",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"
+          ],
+          "correct_index": 1,
+          "explanation": "Somando as equações: 2x = 8, então x = 4.",
+          "pitfall": "3 é o valor de y."
+        },
+        {
+          "topic": "Inversa",
+          "statement": "Com A de linhas [1, 0] e [0, 2] e b = (3, 8), quanto vale x = A⁻¹b?",
+          "options": [
+            "(3, 4)",
+            "(3, 16)",
+            "(3, 8)",
+            "(1, 4)",
+            "(6, 8)"
+          ],
+          "correct_index": 0,
+          "explanation": "A⁻¹ tem linhas [1, 0] e [0, 0,5]. A⁻¹b = (3, 4).",
+          "pitfall": "(3, 16) multiplica por A em vez de desfazer."
+        },
+        {
+          "topic": "Sem solução",
+          "statement": "Qual sistema não tem nenhuma solução?",
+          "options": [
+            "x + y = 2 e x − y = 0",
+            "x + y = 2 e 2x + 2y = 4",
+            "x + y = 2 e x + y = 5",
+            "x = 1 e y = 1",
+            "2x = 4 e y = 3"
+          ],
+          "correct_index": 2,
+          "explanation": "A mesma soma não pode valer 2 e 5.",
+          "pitfall": "x + y = 2 e 2x + 2y = 4 dizem a mesma coisa: infinitas soluções."
+        },
+        {
+          "topic": "Computador",
+          "statement": "Por que np.linalg.solve é preferido a calcular a inversa?",
+          "options": [
+            "porque a inversa não existe no NumPy",
+            "porque é mais rápido e erra menos no arredondamento",
+            "porque dá resultados diferentes",
+            "porque não precisa de A",
+            "porque funciona sem números"
+          ],
+          "correct_index": 1,
+          "explanation": "Resolver direto faz menos contas, e cada conta a menos é um arredondamento a menos.",
+          "pitfall": "Os dois dão a mesma resposta; um só chega lá melhor."
+        },
+        {
+          "topic": "Escalonar",
+          "format": "order",
+          "statement": "Ponha na ordem os passos do escalonamento.",
+          "options": [
+            "Escrever o sistema como tabela de números",
+            "Combinar linhas para zerar os números abaixo da diagonal",
+            "Resolver a última equação, que tem uma letra só",
+            "Voltar para cima trocando as letras já achadas"
+          ],
+          "explanation": "Zerando embaixo, a última linha fica com uma letra só. Daí se volta para cima.",
+          "pitfall": "Começar de cima para baixo obriga a resolver com duas letras de uma vez."
+        }
+      ]
+    },
+    {
+      "slug": "transformacoes-lineares",
+      "title": "Transformações lineares: a matriz como máquina",
+      "module": "Transformações e espaços",
+      "summary": "Multiplicar por uma matriz move cada vetor para outro lugar: estica, gira, espelha ou achata. É isso que cada camada de uma rede neural faz com os dados.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O espelho de parque de diversões",
+          "body": [
+            "No espelho que distorce, tudo aparece esticado para um lado ou apertado para o outro. Mas linhas retas continuam retas, e o centro não sai do lugar.",
+            "Uma matriz faz o mesmo com os vetores. Ela deforma o espaço de um jeito organizado."
+          ],
+          "terms": [
+            {
+              "word": "Matriz",
+              "meaning": "uma tabela de números arrumados em linhas e colunas."
+            },
+            {
+              "word": "Vetor",
+              "meaning": "uma lista ordenada de números, como (3, 2). No desenho, uma seta."
+            },
+            {
+              "word": "Transformação linear",
+              "meaning": "uma regra que leva vetores a outros vetores mantendo retas retas e a origem no lugar. Toda matriz faz uma."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Entra um vetor, sai outro",
+          "body": [
+            "A matriz funciona como uma função: você dá o vetor v, e ela devolve Av.",
+            "A matriz de linhas [2, 0] e [0, 1] dobra o x e deixa o y como está. O vetor (3, 1) vira (6, 1)."
+          ],
+          "terms": [
+            {
+              "word": "Função",
+              "meaning": "uma regra que recebe um valor e devolve exatamente um valor."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os movimentos básicos",
+          "body": [
+            "Algumas matrizes pequenas fazem movimentos conhecidos. Todas as outras são combinações deles."
+          ],
+          "table": {
+            "label": "Matrizes 2 × 2 famosas",
+            "headers": [
+              "Movimento",
+              "Matriz (linhas)",
+              "(1, 2) vira"
+            ],
+            "rows": [
+              [
+                "esticar o x por 3",
+                "[3, 0] e [0, 1]",
+                "(3, 2)"
+              ],
+              [
+                "espelhar no eixo x",
+                "[1, 0] e [0, −1]",
+                "(1, −2)"
+              ],
+              [
+                "girar 90° para a esquerda",
+                "[0, −1] e [1, 0]",
+                "(−2, 1)"
+              ],
+              [
+                "achatar no eixo x",
+                "[1, 0] e [0, 0]",
+                "(1, 0)"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que a matriz faz com o quadrado",
+          "body": [
+            "Um jeito de ver uma transformação é olhar o que ela faz com o quadradinho de lado 1. Ele vira um paralelogramo.",
+            "As colunas da matriz dizem para onde vão (1, 0) e (0, 1). Com essas duas setas, dá para prever o resto."
+          ],
+          "figure": {
+            "src": "/figuras/algebra-linear/transformacao.svg",
+            "alt": "À esquerda, uma grade quadrada com as setas (1, 0) e (0, 1). À direita, a mesma grade inclinada depois da transformação: as setas viraram as colunas da matriz, (2, 0) e (1, 1).",
+            "caption": "As colunas da matriz são os novos lugares de (1, 0) e (0, 1)."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Uma depois da outra",
+          "body": [
+            "Aplicar B e depois A é o mesmo que aplicar a matriz AB, de uma vez só. Multiplicar matrizes é encadear transformações.",
+            "Repare na ordem: a que age primeiro fica à direita. É por isso que AB e BA dão movimentos diferentes."
+          ],
+          "terms": [
+            {
+              "word": "Composição",
+              "meaning": "aplicar uma transformação depois da outra. Com matrizes, é o produto delas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Por que as redes precisam de mais",
+          "body": [
+            "Encadear só transformações lineares dá outra transformação linear. Mil camadas assim seriam iguais a uma.",
+            "Por isso as redes neurais põem, entre uma matriz e outra, uma função que dobra o espaço: a ativação. Ela é o assunto da parte de redes neurais."
+          ],
+          "terms": [
+            {
+              "word": "Função de ativação",
+              "meaning": "uma função que não é linear, aplicada depois de cada camada para a rede aprender formas curvas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "No Python",
+          "body": [
+            "Aplicar uma transformação é multiplicar a matriz pelo vetor com @."
+          ],
+          "code": {
+            "label": "Girando 90 graus",
+            "text": "import numpy as np\nR = np.array([[0, -1], [1, 0]])\nv = np.array([1, 2])\nprint(R @ v)",
+            "notes": [
+              "Traz o NumPy.",
+              "A matriz que gira 90 graus para a esquerda.",
+              "O vetor a girar.",
+              "Aplica a matriz: mostra [-2 1]."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem a imagem de um vetor por uma matriz e a matriz de um movimento descrito em palavras, como espelhar ou girar.",
+            "O atalho: as colunas da matriz são as imagens de (1, 0) e (0, 1)."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde as transformações confundem."
+          ],
+          "bullets": [
+            "Trocar linhas por colunas ao montar a matriz de um movimento.",
+            "Achar que uma transformação linear pode tirar a origem do lugar.",
+            "Esquecer que a ordem das transformações importa.",
+            "Achar que empilhar camadas lineares dá algo mais poderoso."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Matriz é uma máquina que move vetores."
+          ],
+          "bullets": [
+            "Av é o vetor v transformado pela matriz A.",
+            "Retas continuam retas e a origem fica no lugar.",
+            "As colunas dizem para onde vão (1, 0) e (0, 1).",
+            "Encadear transformações é multiplicar as matrizes.",
+            "A que age primeiro fica à direita.",
+            "Redes neurais intercalam matrizes com ativações."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Aplicar",
+          "statement": "A matriz de linhas [2, 0] e [0, 3] transforma (1, 1) em:",
+          "options": [
+            "(2, 3)",
+            "(3, 2)",
+            "(1, 1)",
+            "(2, 0)",
+            "(5, 5)"
+          ],
+          "correct_index": 0,
+          "explanation": "Linha 1: 2 × 1 + 0 = 2. Linha 2: 0 + 3 × 1 = 3.",
+          "pitfall": "(3, 2) troca as linhas."
+        },
+        {
+          "topic": "Espelho",
+          "statement": "Qual matriz espelha os vetores no eixo y, trocando o sinal do x?",
+          "options": [
+            "linhas [−1, 0] e [0, 1]",
+            "linhas [1, 0] e [0, −1]",
+            "linhas [0, 1] e [1, 0]",
+            "linhas [−1, 0] e [0, −1]",
+            "linhas [1, 0] e [0, 1]"
+          ],
+          "correct_index": 0,
+          "explanation": "O x troca de sinal e o y fica: primeira linha [−1, 0], segunda [0, 1].",
+          "pitfall": "[1, 0] e [0, −1] espelha no eixo x."
+        },
+        {
+          "topic": "Colunas",
+          "statement": "Uma matriz leva (1, 0) em (3, 1) e (0, 1) em (−1, 2). Qual é a matriz?",
+          "options": [
+            "linhas [3, 1] e [−1, 2]",
+            "linhas [3, −1] e [1, 2]",
+            "linhas [1, 3] e [2, −1]",
+            "linhas [3, 0] e [0, 2]",
+            "linhas [−1, 2] e [3, 1]"
+          ],
+          "correct_index": 1,
+          "explanation": "As imagens são as colunas: primeira coluna (3, 1), segunda (−1, 2). As linhas ficam [3, −1] e [1, 2].",
+          "pitfall": "Pôr as imagens como linhas é o erro mais comum."
+        },
+        {
+          "topic": "Girar",
+          "statement": "Aplicando a rotação de linhas [0, −1] e [1, 0] ao vetor (3, 0), o resultado é:",
+          "options": [
+            "(0, 3)",
+            "(3, 0)",
+            "(−3, 0)",
+            "(0, −3)",
+            "(3, 3)"
+          ],
+          "correct_index": 0,
+          "explanation": "Linha 1: 0 × 3 + (−1) × 0 = 0. Linha 2: 1 × 3 + 0 = 3.",
+          "pitfall": "(0, −3) giraria para o outro lado."
+        },
+        {
+          "topic": "Origem",
+          "statement": "O que uma transformação linear sempre faz com a origem (0, 0)?",
+          "options": [
+            "leva para (1, 1)",
+            "deixa no mesmo lugar",
+            "leva para longe",
+            "apaga",
+            "depende da matriz"
+          ],
+          "correct_index": 1,
+          "explanation": "Qualquer matriz vezes o vetor zero dá zero.",
+          "pitfall": "Mover a origem exigiria somar algo, e isso não é só multiplicar por matriz."
+        },
+        {
+          "topic": "Encadear",
+          "statement": "Aplica-se B e depois A a um vetor v. Qual conta faz isso de uma vez?",
+          "options": [
+            "BAv",
+            "ABv",
+            "A + B",
+            "A − B",
+            "vAB"
+          ],
+          "correct_index": 1,
+          "explanation": "Primeiro B age em v, depois A: A(Bv) = ABv.",
+          "pitfall": "BA aplicaria A primeiro."
+        },
+        {
+          "topic": "Ativação",
+          "statement": "Por que as redes neurais põem ativações entre as matrizes?",
+          "options": [
+            "para gastar menos memória",
+            "porque várias matrizes seguidas equivalem a uma só",
+            "para girar os vetores",
+            "para tirar a origem do lugar",
+            "porque o NumPy exige"
+          ],
+          "correct_index": 1,
+          "explanation": "Encadear transformações lineares dá outra linear. A ativação quebra isso e deixa a rede aprender formas curvas.",
+          "pitfall": "Economia de memória não é o motivo: é poder de representação."
+        },
+        {
+          "topic": "Movimentos",
+          "format": "match",
+          "statement": "Ligue cada matriz (em linhas) ao movimento.",
+          "pairs": [
+            {
+              "left": "[1, 0] e [0, −1]",
+              "right": "espelhar no eixo x"
+            },
+            {
+              "left": "[0, −1] e [1, 0]",
+              "right": "girar 90° para a esquerda"
+            },
+            {
+              "left": "[2, 0] e [0, 2]",
+              "right": "dobrar tudo"
+            },
+            {
+              "left": "[1, 0] e [0, 1]",
+              "right": "não mudar nada"
+            }
+          ],
+          "explanation": "Espelho troca um sinal e rotação troca as posições. O 2 na diagonal dobra, e 1 na diagonal não muda nada.",
+          "pitfall": "A matriz de 1 na diagonal parece não fazer nada, e é exatamente isso."
+        }
+      ]
+    },
+    {
+      "slug": "espacos-vetoriais-base-e-dimensao",
+      "title": "Espaços vetoriais, base e dimensão",
+      "module": "Transformações e espaços",
+      "summary": "Com poucos vetores bem escolhidos dá para montar todos os outros. Esse conjunto mínimo é a base, e o tamanho dele é a dimensão.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "As cores da tela",
+          "body": [
+            "Toda cor da tela do celular é uma mistura de só três: vermelho, verde e azul. Com a dose certa de cada uma, sai qualquer cor.",
+            "Três ingredientes bastam, e nenhum pode ser tirado. Essa é a ideia de base."
+          ],
+          "terms": [
+            {
+              "word": "Vetor",
+              "meaning": "uma lista ordenada de números, como (3, 2). No desenho, uma seta."
+            },
+            {
+              "word": "Componente",
+              "meaning": "cada número de um vetor. Em (3, 5), as componentes são 3 e 5."
+            },
+            {
+              "word": "Combinação linear",
+              "meaning": "a soma de vetores multiplicados por números, como 2a + 3b."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Espaço vetorial",
+          "body": [
+            "Um espaço vetorial é um lugar onde somar vetores e multiplicar por números nunca faz sair dele. O plano é um; o espaço com altura, largura e profundidade é outro.",
+            "Os vetores de 768 números que representam palavras também formam um espaço vetorial."
+          ],
+          "terms": [
+            {
+              "word": "Espaço vetorial",
+              "meaning": "um grupo de vetores em que somar e multiplicar por números dá sempre outro vetor do mesmo grupo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Gerar tudo",
+          "body": [
+            "Com (1, 0) e (0, 1), qualquer vetor do plano sai como combinação: (3, 5) = 3 × (1, 0) + 5 × (0, 1).",
+            "Dizemos que esses dois vetores geram o plano."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Sem vetor sobrando",
+          "body": [
+            "Os vetores (1, 0), (0, 1) e (1, 1) também geram o plano. Mas o terceiro sobra: ele já é a soma dos outros dois.",
+            "Quando nenhum vetor pode ser escrito com os outros, eles não se repetem."
+          ],
+          "terms": [
+            {
+              "word": "Linearmente independentes",
+              "meaning": "vetores em que nenhum pode ser montado com os outros. Nenhum deles sobra."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Base e dimensão",
+          "body": [
+            "Uma base é um grupo de vetores que gera o espaço inteiro e não tem nenhum sobrando. O número de vetores da base é a dimensão.",
+            "O plano tem dimensão 2. O espaço tem dimensão 3. Um espaço de vetores com 768 números tem dimensão 768."
+          ],
+          "terms": [
+            {
+              "word": "Base (de um espaço)",
+              "meaning": "um grupo de vetores independentes que gera todos os vetores do espaço."
+            },
+            {
+              "word": "Dimensão",
+              "meaning": "o número de vetores de uma base: quantas direções independentes o espaço tem."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/algebra-linear/base-plano.svg",
+            "alt": "Um plano com as setas (1, 0) e (0, 1) saindo da origem. O vetor (3, 2) é montado andando 3 vezes a primeira seta e 2 vezes a segunda, com a trilha tracejada.",
+            "caption": "Com duas setas, qualquer ponto do plano é alcançado."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Mais de uma base",
+          "body": [
+            "A base não é única. (1, 1) e (1, −1) também geram o plano sem sobra.",
+            "Trocar de base é descrever os mesmos vetores com outros ingredientes. Algumas bases deixam um problema bem mais fácil."
+          ],
+          "example": {
+            "label": "(3, 1) em duas bases",
+            "lines": [
+              "Base comum: 3 × (1, 0) + 1 × (0, 1)",
+              "Base nova: 2 × (1, 1) + 1 × (1, −1)",
+              "O mesmo vetor, receitas diferentes"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Como testar a independência",
+          "body": [
+            "Para dois vetores do plano, basta ver se um é múltiplo do outro. (2, 4) e (1, 2) dependem: o primeiro é o dobro do segundo.",
+            "Com uma matriz quadrada, o teste é o determinante. Diferente de zero, as colunas são independentes."
+          ],
+          "terms": [
+            {
+              "word": "Matriz",
+              "meaning": "uma tabela de números arrumados em linhas e colunas."
+            },
+            {
+              "word": "Determinante",
+              "meaning": "o número que diz se a matriz achata o espaço. Zero indica colunas dependentes."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem a pergunta se um grupo de vetores é base e a dimensão de um espaço. O teste rápido: número certo de vetores e determinante diferente de zero.",
+            "Também cai escrever um vetor como combinação dos vetores de uma base."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a base engana."
+          ],
+          "bullets": [
+            "Achar que mais vetores sempre é melhor: sobrando, não é base.",
+            "Achar que só existe uma base.",
+            "Tomar dois vetores na mesma direção como independentes.",
+            "Confundir dimensão com número de componentes de um vetor específico."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Poucos ingredientes montam tudo."
+          ],
+          "bullets": [
+            "Espaço vetorial: somar e esticar nunca faz sair.",
+            "Gerar: montar qualquer vetor por combinação.",
+            "Independentes: nenhum vetor sobra.",
+            "Base: gera tudo sem sobra.",
+            "Dimensão: quantos vetores tem a base.",
+            "Há muitas bases; trocar de base muda a receita, não o vetor."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Combinação",
+          "statement": "Como escrever (4, −2) com (1, 0) e (0, 1)?",
+          "options": [
+            "4 × (1, 0) − 2 × (0, 1)",
+            "−2 × (1, 0) + 4 × (0, 1)",
+            "4 × (0, 1) − 2 × (1, 0)",
+            "(1, 0) + (0, 1)",
+            "2 × (1, 0)"
+          ],
+          "correct_index": 0,
+          "explanation": "A primeira componente vem de (1, 0), a segunda de (0, 1).",
+          "pitfall": "Trocar os números leva a (−2, 4)."
+        },
+        {
+          "topic": "Independência",
+          "statement": "Quais vetores são linearmente dependentes?",
+          "options": [
+            "(1, 0) e (0, 1)",
+            "(2, 3) e (4, 6)",
+            "(1, 1) e (1, −1)",
+            "(3, 0) e (0, 5)",
+            "(1, 2) e (2, 1)"
+          ],
+          "correct_index": 1,
+          "explanation": "(4, 6) é o dobro de (2, 3): mesma direção.",
+          "pitfall": "(1, 2) e (2, 1) têm os mesmos números, mas não são múltiplos."
+        },
+        {
+          "topic": "Base",
+          "statement": "Qual grupo é base do plano?",
+          "options": [
+            "só (1, 2)",
+            "(1, 2) e (2, 4)",
+            "(1, 0) e (1, 1)",
+            "(0, 0) e (1, 0)",
+            "(1, 0), (0, 1) e (1, 1)"
+          ],
+          "correct_index": 2,
+          "explanation": "Dois vetores, nenhum múltiplo do outro: geram o plano sem sobra.",
+          "pitfall": "Três vetores no plano sempre deixam um sobrando."
+        },
+        {
+          "topic": "Dimensão",
+          "statement": "Qual é a dimensão do espaço dos vetores com 5 componentes?",
+          "options": [
+            "1",
+            "2",
+            "5",
+            "10",
+            "25"
+          ],
+          "correct_index": 2,
+          "explanation": "A base mais simples tem 5 vetores, um para cada componente.",
+          "pitfall": "25 pensaria em 5 × 5."
+        },
+        {
+          "topic": "Determinante",
+          "statement": "As colunas (1, 3) e (2, 6) formam uma base do plano?",
+          "options": [
+            "sim",
+            "não: o determinante é zero",
+            "sim, porque são duas",
+            "não: são três",
+            "só se forem normalizadas"
+          ],
+          "correct_index": 1,
+          "explanation": "1 × 6 − 2 × 3 = 0. As colunas são dependentes.",
+          "pitfall": "Ter dois vetores não basta: eles precisam ser independentes."
+        },
+        {
+          "topic": "Vetor zero",
+          "statement": "Um grupo com o vetor (0, 0) pode ser base?",
+          "options": [
+            "sim, sempre",
+            "não: o zero não acrescenta direção nenhuma",
+            "só no plano",
+            "só se tiver três vetores",
+            "sim, se for o único"
+          ],
+          "correct_index": 1,
+          "explanation": "O zero é combinação de qualquer coisa: multiplica-se por zero. Ele sempre sobra.",
+          "pitfall": "O zero nunca ajuda a gerar nada."
+        },
+        {
+          "topic": "Outra base",
+          "statement": "Na base (1, 1) e (1, −1), qual combinação dá (5, 1)?",
+          "options": [
+            "3 e 2",
+            "2 e 3",
+            "5 e 1",
+            "1 e 5",
+            "3 e −2"
+          ],
+          "correct_index": 0,
+          "explanation": "3 × (1, 1) + 2 × (1, −1) = (3 + 2, 3 − 2) = (5, 1).",
+          "pitfall": "5 e 1 são as componentes na base comum, e não nesta."
+        },
+        {
+          "topic": "Conceitos",
+          "format": "match",
+          "statement": "Ligue cada termo à sua ideia.",
+          "pairs": [
+            {
+              "left": "base",
+              "right": "gera tudo sem sobra"
+            },
+            {
+              "left": "dimensão",
+              "right": "quantos vetores a base tem"
+            },
+            {
+              "left": "independentes",
+              "right": "nenhum pode ser montado com os outros"
+            },
+            {
+              "left": "combinação linear",
+              "right": "esticar e somar vetores"
+            }
+          ],
+          "explanation": "A base é o conjunto mínimo; a dimensão é o tamanho dele.",
+          "pitfall": "Gerar tudo não basta para ser base: também não pode sobrar."
+        }
+      ]
+    },
+    {
+      "slug": "autovalores-e-autovetores",
+      "title": "Autovalores e autovetores",
+      "module": "Transformações e espaços",
+      "summary": "Quase todo vetor muda de direção quando uma matriz age. Alguns especiais só esticam ou encolhem: são os autovetores, e o quanto esticam é o autovalor.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O pião que só estica",
+          "body": [
+            "Imagine esticar uma borracha pelas pontas. Pontos no meio andam para os lados e mudam de direção em relação ao centro.",
+            "Mas os pontos na linha do puxão só se afastam, na mesma direção. Essas direções especiais contam o segredo da transformação."
+          ],
+          "terms": [
+            {
+              "word": "Matriz",
+              "meaning": "uma tabela de números arrumados em linhas e colunas."
+            },
+            {
+              "word": "Vetor",
+              "meaning": "uma lista ordenada de números, como (3, 2). No desenho, uma seta."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A definição",
+          "body": [
+            "Um autovetor de A é um vetor que, depois da transformação, continua na mesma reta: Av = λv. O número λ (lambda) é o autovalor.",
+            "λ = 2 quer dizer que o vetor dobrou. λ = 0,5, que encolheu à metade. λ negativo, que virou para o lado oposto."
+          ],
+          "terms": [
+            {
+              "word": "Autovetor",
+              "meaning": "um vetor que a matriz só estica ou encolhe, sem tirar da mesma reta."
+            },
+            {
+              "word": "Autovalor",
+              "meaning": "o número que diz quanto o autovetor foi esticado. Escreve-se λ."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/algebra-linear/autovetor.svg",
+            "alt": "Dois vetores antes e depois de uma transformação. Um deles muda de direção. O outro, o autovetor, continua na mesma reta e só fica duas vezes mais comprido.",
+            "caption": "O autovetor não sai da sua reta; só muda de tamanho."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Um exemplo que se vê",
+          "body": [
+            "A matriz de linhas [3, 0] e [0, 2] estica o x por 3 e o y por 2. O vetor (1, 0) vira (3, 0): mesma direção, três vezes maior.",
+            "Então (1, 0) é autovetor com autovalor 3, e (0, 1) é autovetor com autovalor 2. Já (1, 1) vira (3, 2) e muda de direção."
+          ],
+          "example": {
+            "label": "Conferindo (1, 0)",
+            "lines": [
+              "A(1, 0) = (3, 0)",
+              "(3, 0) = 3 × (1, 0)",
+              "Autovetor, com λ = 3"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Como se acha, em 2 × 2",
+          "body": [
+            "Os autovalores são os números λ que zeram o determinante de A − λI. Isso dá uma equação do 2º grau.",
+            "Para cada λ achado, resolve-se (A − λI)v = 0 para achar o autovetor."
+          ],
+          "terms": [
+            {
+              "word": "Determinante",
+              "meaning": "o número ad − bc de uma matriz 2 × 2."
+            },
+            {
+              "word": "Matriz identidade",
+              "meaning": "a matriz I com 1 na diagonal e 0 no resto."
+            },
+            {
+              "word": "Equação",
+              "meaning": "uma conta com um valor escondido, em que os dois lados do sinal de igual valem o mesmo."
+            }
+          ],
+          "example": {
+            "label": "A de linhas [2, 1] e [1, 2]",
+            "lines": [
+              "det(A − λI) = (2 − λ)² − 1",
+              "(2 − λ)² = 1",
+              "2 − λ = 1 ou 2 − λ = −1",
+              "λ = 1 ou λ = 3"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Para que servem",
+          "body": [
+            "Os autovetores mostram as direções em que a matriz age de forma simples. Neles, a matriz vira só uma multiplicação por um número.",
+            "Uma técnica muito usada em dados, a análise de componentes principais, procura os autovetores para achar as direções em que os dados mais variam."
+          ],
+          "terms": [
+            {
+              "word": "Análise de componentes principais",
+              "meaning": "uma técnica que resume dados de muitas colunas em poucas direções, as que mais variam."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Repetir a mesma matriz",
+          "body": [
+            "Aplicar A muitas vezes é aplicar Aⁿ. Num autovetor, isso é só multiplicar por λⁿ.",
+            "Autovalor maior que 1 faz crescer sem parar; menor que 1 faz encolher até sumir. É o motivo de algumas redes antigas, que repetiam a mesma matriz, “esquecerem” ou “explodirem”."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "No Python",
+          "body": [
+            "np.linalg.eig devolve os autovalores e os autovetores de uma vez."
+          ],
+          "code": {
+            "label": "Autovalores",
+            "text": "import numpy as np\nA = np.array([[2, 1], [1, 2]])\nvalores, vetores = np.linalg.eig(A)\nprint(valores)",
+            "notes": [
+              "Traz o NumPy.",
+              "A matriz do exemplo.",
+              "Calcula os autovalores e os autovetores e guarda em duas variáveis.",
+              "Mostra os autovalores: 3 e 1."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem conferir se um vetor dado é autovetor e calcular os autovalores de uma 2 × 2 pelo determinante.",
+            "Para conferir, multiplique A por v e veja se o resultado é um múltiplo de v."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde os autovetores confundem."
+          ],
+          "bullets": [
+            "Achar que o vetor zero é autovetor: por definição, não conta.",
+            "Esquecer que qualquer múltiplo de um autovetor também é autovetor.",
+            "Achar que autovalor negativo é impossível.",
+            "Confundir o autovalor com uma componente do autovetor."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Direções que só esticam."
+          ],
+          "bullets": [
+            "Av = λv: v é autovetor, λ é autovalor.",
+            "O autovetor fica na mesma reta.",
+            "λ diz quanto esticou; negativo inverte.",
+            "Em 2 × 2: det(A − λI) = 0.",
+            "Aplicar A n vezes vira multiplicar por λⁿ.",
+            "No NumPy: np.linalg.eig."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Conferir",
+          "statement": "Com A de linhas [2, 1] e [1, 2], o vetor (1, 1) é autovetor? Com qual autovalor?",
+          "options": [
+            "sim, λ = 3",
+            "sim, λ = 1",
+            "sim, λ = 2",
+            "não é autovetor",
+            "sim, λ = 4"
+          ],
+          "correct_index": 0,
+          "explanation": "A(1, 1) = (3, 3) = 3 × (1, 1). Autovetor com λ = 3.",
+          "pitfall": "λ = 1 é o autovalor do outro autovetor, (1, −1)."
+        },
+        {
+          "topic": "Outro",
+          "statement": "Com a mesma A, qual é a imagem de (1, −1)?",
+          "options": [
+            "(1, −1)",
+            "(3, −3)",
+            "(1, 1)",
+            "(−1, 1)",
+            "(2, 2)"
+          ],
+          "correct_index": 0,
+          "explanation": "Linha 1: 2 − 1 = 1. Linha 2: 1 − 2 = −1. Ficou igual: autovalor 1.",
+          "pitfall": "(3, −3) seria o autovalor 3."
+        },
+        {
+          "topic": "Diagonal",
+          "statement": "Quais são os autovalores da matriz de linhas [5, 0] e [0, −2]?",
+          "options": [
+            "5 e −2",
+            "5 e 2",
+            "3",
+            "0 e 0",
+            "5 e 0"
+          ],
+          "correct_index": 0,
+          "explanation": "Numa matriz diagonal, os autovalores são os números da diagonal.",
+          "pitfall": "O sinal de −2 importa: ele inverte o vetor."
+        },
+        {
+          "topic": "Não é",
+          "statement": "Com A de linhas [3, 0] e [0, 2], por que (1, 1) não é autovetor?",
+          "options": [
+            "porque vira (3, 2), que não é múltiplo de (1, 1)",
+            "porque tem duas componentes",
+            "porque é unitário",
+            "porque A é diagonal",
+            "porque é o vetor zero"
+          ],
+          "correct_index": 0,
+          "explanation": "3 e 2 são diferentes: o vetor mudou de direção.",
+          "pitfall": "Ser unitário não tem nada a ver: (1, 1) nem é unitário."
+        },
+        {
+          "topic": "Múltiplo",
+          "statement": "Se (1, 2) é autovetor de A com λ = 4, o que se pode dizer de (3, 6)?",
+          "options": [
+            "também é autovetor, com λ = 4",
+            "é autovetor com λ = 12",
+            "não é autovetor",
+            "é o autovalor",
+            "depende de A"
+          ],
+          "correct_index": 0,
+          "explanation": "(3, 6) = 3 × (1, 2): mesma reta, e a matriz estica essa reta por 4.",
+          "pitfall": "λ = 12 confunde o múltiplo do vetor com o autovalor."
+        },
+        {
+          "topic": "Repetir",
+          "statement": "Um autovetor tem λ = 0,5. Depois de aplicar a matriz 3 vezes, ele fica:",
+          "options": [
+            "com 1/8 do tamanho",
+            "com metade do tamanho",
+            "1,5 vez maior",
+            "igual",
+            "8 vezes maior"
+          ],
+          "correct_index": 0,
+          "explanation": "0,5³ = 0,125 = 1/8.",
+          "pitfall": "1,5 somaria em vez de multiplicar."
+        },
+        {
+          "topic": "Equação",
+          "statement": "Os autovalores de A saem de qual equação?",
+          "options": [
+            "det(A − λI) = 0",
+            "A + λ = 0",
+            "det(A) = λ",
+            "Aλ = I",
+            "A − I = 0"
+          ],
+          "correct_index": 0,
+          "explanation": "λ é autovalor quando A − λI achata algum vetor para zero, e isso acontece quando o determinante é zero.",
+          "pitfall": "det(A) = λ não vale em geral."
+        },
+        {
+          "topic": "Autos",
+          "format": "match",
+          "statement": "Ligue cada termo ao seu significado.",
+          "pairs": [
+            {
+              "left": "autovetor",
+              "right": "fica na mesma reta"
+            },
+            {
+              "left": "autovalor",
+              "right": "quanto esticou"
+            },
+            {
+              "left": "λ negativo",
+              "right": "inverte o sentido"
+            },
+            {
+              "left": "λ = 1",
+              "right": "não muda nada"
+            }
+          ],
+          "explanation": "O autovetor é a direção; o autovalor é o fator de esticar.",
+          "pitfall": "λ = 0 achataria o vetor até zero."
+        }
+      ]
+    },
+    {
+      "slug": "tensores-e-broadcasting",
+      "title": "Tensores e broadcasting",
+      "module": "Para a IA",
+      "summary": "Tensor é a generalização: número, vetor, matriz e caixas de matrizes. É a estrutura com que o PyTorch guarda tudo, e o broadcasting deixa fazer contas entre formatos diferentes.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Do número ao cubo",
+          "body": [
+            "Um número é um ponto. Uma fileira de números é um vetor. Uma tabela é uma matriz. Uma pilha de tabelas é um cubo de números.",
+            "Todos são a mesma ideia com mais direções. O nome geral é tensor."
+          ],
+          "terms": [
+            {
+              "word": "Escalar",
+              "meaning": "um número sozinho, sem direção."
+            },
+            {
+              "word": "Vetor",
+              "meaning": "uma lista ordenada de números, como (3, 2). No desenho, uma seta."
+            },
+            {
+              "word": "Matriz",
+              "meaning": "uma tabela de números arrumados em linhas e colunas."
+            },
+            {
+              "word": "Tensor",
+              "meaning": "uma caixa de números com qualquer quantidade de direções. Número, vetor e matriz são tensores."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quantas direções",
+          "body": [
+            "O número de direções de um tensor é o número de índices que você precisa para achar um valor."
+          ],
+          "figure": {
+            "src": "/figuras/algebra-linear/tensores.svg",
+            "alt": "Quatro desenhos lado a lado: um quadradinho (escalar), uma fileira de quadradinhos (vetor), uma grade (matriz) e um cubo de grades empilhadas (tensor de 3 direções).",
+            "caption": "Cada direção nova é mais um índice."
+          },
+          "table": {
+            "label": "Tensores",
+            "headers": [
+              "Nome",
+              "Direções",
+              "Exemplo de formato"
+            ],
+            "rows": [
+              [
+                "escalar",
+                "0",
+                "()"
+              ],
+              [
+                "vetor",
+                "1",
+                "(768,)"
+              ],
+              [
+                "matriz",
+                "2",
+                "(3, 4)"
+              ],
+              [
+                "tensor",
+                "3 ou mais",
+                "(32, 128, 768)"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O formato conta uma história",
+          "body": [
+            "Num modelo de linguagem, o formato (32, 128, 768) quer dizer: 32 frases de uma vez, com 128 palavras em cada e 768 números por palavra.",
+            "Ler o formato é metade do trabalho de entender um código de IA."
+          ],
+          "terms": [
+            {
+              "word": "Formato (shape)",
+              "meaning": "a lista com o tamanho de cada direção do tensor."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Operações casa por casa",
+          "body": [
+            "Somar e multiplicar tensores do mesmo formato funciona casa por casa, como com matrizes.",
+            "E se os formatos forem diferentes? Às vezes a conta ainda faz sentido."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Broadcasting: esticar o menor",
+          "body": [
+            "Somar 10 a uma matriz inteira: o número 10 é esticado para ocupar todas as casas. Somar um vetor a cada linha de uma matriz: o vetor é repetido em cada linha.",
+            "Esse esticar automático se chama broadcasting. Ninguém copia nada de verdade: é só a regra da conta."
+          ],
+          "terms": [
+            {
+              "word": "Broadcasting",
+              "meaning": "a regra que estica automaticamente o tensor menor para combinar com o maior numa conta casa por casa."
+            }
+          ],
+          "code": {
+            "label": "Broadcasting",
+            "text": "import numpy as np\nM = np.array([[1, 2, 3], [4, 5, 6]])\nv = np.array([10, 20, 30])\nprint(M + v)",
+            "notes": [
+              "Traz o NumPy.",
+              "Uma matriz 2 × 3.",
+              "Um vetor com 3 números, o mesmo tamanho de uma linha.",
+              "Soma v a cada linha: mostra [[11 22 33] [14 25 36]]."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A regra dos formatos",
+          "body": [
+            "Compare os formatos da direita para a esquerda. Cada par de tamanhos precisa ser igual, ou um deles precisa ser 1.",
+            "Onde há 1, o tensor é esticado. Se nenhuma dessas condições vale, a conta dá erro."
+          ],
+          "table": {
+            "label": "Combina?",
+            "headers": [
+              "Formato A",
+              "Formato B",
+              "Resultado"
+            ],
+            "rows": [
+              [
+                "(2, 3)",
+                "(3,)",
+                "(2, 3)"
+              ],
+              [
+                "(4, 1)",
+                "(1, 5)",
+                "(4, 5)"
+              ],
+              [
+                "(2, 3)",
+                "(2,)",
+                "erro"
+              ],
+              [
+                "(32, 128, 768)",
+                "(768,)",
+                "(32, 128, 768)"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "No PyTorch",
+          "body": [
+            "O PyTorch usa tensores do mesmo jeito que o NumPy, com as mesmas regras de broadcasting. A diferença é que roda na placa de vídeo e calcula derivadas sozinho.",
+            "Aprender o formato e o broadcasting no NumPy já é aprender metade do PyTorch."
+          ],
+          "terms": [
+            {
+              "word": "PyTorch",
+              "meaning": "a biblioteca de Python mais usada para criar e treinar redes neurais."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Em entrevistas de IA, cai prever o formato de uma conta e dizer se o broadcasting funciona.",
+            "Escreva os formatos alinhados pela direita e confira par a par."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde os formatos traem."
+          ],
+          "bullets": [
+            "Alinhar os formatos pela esquerda: o broadcasting compara pela direita.",
+            "Achar que (2, 3) combina com (2,): o último tamanho é 3 contra 2.",
+            "Esperar erro e receber um resultado errado, porque o broadcasting esticou sem você querer.",
+            "Confundir o número de direções com o número de valores."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Tudo é tensor."
+          ],
+          "bullets": [
+            "Escalar, vetor e matriz são tensores de 0, 1 e 2 direções.",
+            "O formato diz o tamanho de cada direção.",
+            "(32, 128, 768): frases, palavras, números por palavra.",
+            "Broadcasting estica o tensor menor.",
+            "Compare formatos pela direita: iguais ou 1.",
+            "O PyTorch segue as mesmas regras do NumPy."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Direções",
+          "statement": "Um tensor tem formato (10, 20, 30). Quantas direções ele tem?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "60",
+            "6 000"
+          ],
+          "correct_index": 2,
+          "explanation": "São três tamanhos no formato: três direções.",
+          "pitfall": "6 000 é a quantidade de números, e não de direções."
+        },
+        {
+          "topic": "Quantidade",
+          "statement": "Quantos números cabem num tensor de formato (4, 5)?",
+          "options": [
+            "9",
+            "20",
+            "2",
+            "45",
+            "4"
+          ],
+          "correct_index": 1,
+          "explanation": "4 × 5 = 20.",
+          "pitfall": "9 soma os tamanhos."
+        },
+        {
+          "topic": "Broadcasting",
+          "statement": "Com M de formato (3, 4) e v de formato (4,), qual é o formato de M + v?",
+          "options": [
+            "(4,)",
+            "(3, 4)",
+            "(3,)",
+            "erro",
+            "(4, 3)"
+          ],
+          "correct_index": 1,
+          "explanation": "Pela direita: 4 com 4, iguais. v é repetido em cada uma das 3 linhas.",
+          "pitfall": "Não há erro: o último tamanho combina."
+        },
+        {
+          "topic": "Erro",
+          "statement": "Qual par de formatos NÃO combina no broadcasting?",
+          "options": [
+            "(5, 3) e (3,)",
+            "(5, 1) e (1, 4)",
+            "(5, 3) e (5,)",
+            "(2, 2) e (1,)",
+            "(7,) e ()"
+          ],
+          "correct_index": 2,
+          "explanation": "Pela direita: 3 contra 5. Não são iguais e nenhum é 1.",
+          "pitfall": "(5, 1) e (1, 4) combinam e dão (5, 4)."
+        },
+        {
+          "topic": "Número",
+          "statement": "O que faz np.array([[1, 2], [3, 4]]) * 10?",
+          "options": [
+            "dá erro",
+            "multiplica cada casa por 10",
+            "multiplica só a primeira linha",
+            "repete a matriz 10 vezes",
+            "soma 10"
+          ],
+          "correct_index": 1,
+          "explanation": "O 10 é esticado para todas as casas.",
+          "pitfall": "Repetir seria o * de uma lista comum, e não de um array."
+        },
+        {
+          "topic": "Formato de linguagem",
+          "statement": "Num modelo, um tensor tem formato (8, 50, 512). O que o 50 representa, seguindo a convenção da lição?",
+          "options": [
+            "o número de frases",
+            "o número de palavras em cada frase",
+            "os números de cada palavra",
+            "o número de camadas",
+            "o tamanho do vocabulário"
+          ],
+          "correct_index": 1,
+          "explanation": "Frases, palavras e números por palavra: o 50 é a quantidade de palavras.",
+          "pitfall": "8 é o número de frases do lote."
+        },
+        {
+          "topic": "Resultado",
+          "statement": "Com a de formato (4, 1) e b de formato (1, 6), qual é o formato de a + b?",
+          "options": [
+            "(4, 6)",
+            "(1, 1)",
+            "(4, 1)",
+            "erro",
+            "(5, 7)"
+          ],
+          "correct_index": 0,
+          "explanation": "Onde há 1, o tensor é esticado: 4 linhas e 6 colunas.",
+          "pitfall": "(5, 7) soma os tamanhos."
+        },
+        {
+          "topic": "Tensores",
+          "format": "match",
+          "statement": "Ligue cada nome ao número de direções.",
+          "pairs": [
+            {
+              "left": "escalar",
+              "right": "0"
+            },
+            {
+              "left": "vetor",
+              "right": "1"
+            },
+            {
+              "left": "matriz",
+              "right": "2"
+            },
+            {
+              "left": "cubo de números",
+              "right": "3"
+            }
+          ],
+          "explanation": "Cada direção nova é mais um índice para achar um valor.",
+          "pitfall": "Escalar não tem direção nenhuma: é um número solto."
+        }
+      ]
+    },
+    {
+      "slug": "vetores-de-significado",
+      "title": "Vetores que guardam significado",
+      "module": "Para a IA",
+      "summary": "Um modelo de linguagem guarda cada palavra como um vetor. Palavras parecidas ficam perto, e até dá para fazer contas com sentidos: rei − homem + mulher cai perto de rainha.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O mapa das palavras",
+          "body": [
+            "Imagine um mapa em que cada palavra é uma cidade. “Gato” e “cachorro” ficam no mesmo bairro. “Imposto” fica numa cidade distante.",
+            "Um modelo de linguagem constrói um mapa assim, só que com centenas de direções em vez de duas."
+          ],
+          "terms": [
+            {
+              "word": "Vetor",
+              "meaning": "uma lista ordenada de números, como (3, 2). No desenho, uma seta."
+            },
+            {
+              "word": "Embedding",
+              "meaning": "o vetor de números que representa uma palavra, ou um pedaço de palavra, dentro de um modelo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "De palavra a vetor",
+          "body": [
+            "Cada palavra do vocabulário ganha um número de ordem. Esse número aponta uma linha de uma matriz enorme.",
+            "A linha é o embedding da palavra. Um modelo típico tem dezenas de milhares de linhas, com centenas ou milhares de números cada."
+          ],
+          "terms": [
+            {
+              "word": "Matriz",
+              "meaning": "uma tabela de números arrumados em linhas e colunas."
+            },
+            {
+              "word": "Matriz de embeddings",
+              "meaning": "a tabela com uma linha por palavra do vocabulário; cada linha é o vetor dessa palavra."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/algebra-linear/matriz-embeddings.svg",
+            "alt": "Uma tabela com uma linha por palavra: gato, cachorro, carro e imposto. Cada linha tem vários números. A palavra gato aponta para a sua linha, que é o vetor dela.",
+            "caption": "O número da palavra escolhe uma linha; a linha é o vetor."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os números não vêm prontos",
+          "body": [
+            "No começo do treino, os vetores são números sorteados. Aos poucos, o treino ajusta cada vetor para ajudar o modelo a prever a próxima palavra.",
+            "Palavras que aparecem em frases parecidas acabam com vetores parecidos. Ninguém ensina o sentido: ele aparece pelo uso."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Perto quer dizer parecido",
+          "body": [
+            "Para saber se duas palavras têm sentido próximo, compara-se a direção dos vetores. A medida mais usada é a semelhança do cosseno, que vai de −1 a 1.",
+            "“Gato” e “felino” dão perto de 1. “Gato” e “impostos” dão perto de 0."
+          ],
+          "terms": [
+            {
+              "word": "Produto escalar",
+              "meaning": "multiplicar dois vetores número a número e somar tudo."
+            },
+            {
+              "word": "Cosseno",
+              "meaning": "aqui, o número de −1 a 1 que diz o quanto duas direções combinam: o produto escalar dividido pelas duas normas."
+            },
+            {
+              "word": "Norma",
+              "meaning": "o tamanho de um vetor."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Contas com sentido",
+          "body": [
+            "Em muitos modelos, as diferenças entre vetores guardam relações. O caminho de “homem” para “mulher” é parecido com o de “rei” para “rainha”.",
+            "Então rei − homem + mulher cai perto de rainha. O mesmo vale para países e capitais."
+          ],
+          "figure": {
+            "src": "/figuras/algebra-linear/rei-rainha.svg",
+            "alt": "Quatro pontos num plano: homem, mulher, rei e rainha. A seta de homem para mulher é paralela e do mesmo tamanho que a seta de rei para rainha.",
+            "caption": "A mesma seta leva de homem a mulher e de rei a rainha."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Muitas direções, poucos nomes",
+          "body": [
+            "Os vetores têm centenas de direções, e nenhuma vem com etiqueta. Uma direção não é “gênero” ou “tamanho” sozinha: o sentido fica espalhado entre elas.",
+            "Para desenhar num papel, os pesquisadores achatam os vetores para 2 direções. O desenho ajuda, mas perde informação."
+          ],
+          "terms": [
+            {
+              "word": "Dimensão",
+              "meaning": "o número de direções de um vetor. Os embeddings costumam ter centenas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "No Python",
+          "body": [
+            "Um embedding é só uma linha escolhida de uma matriz."
+          ],
+          "code": {
+            "label": "Pegando o vetor de uma palavra",
+            "text": "import numpy as np\nvocab = {\"gato\": 0, \"cachorro\": 1}\nE = np.random.rand(2, 4)\nprint(E[vocab[\"gato\"]])",
+            "notes": [
+              "Traz o NumPy.",
+              "Um vocabulário de brinquedo: cada palavra tem um número.",
+              "Uma matriz de embeddings sorteada: 2 palavras com 4 números cada, como antes do treino.",
+              "Mostra a linha da palavra gato: o vetor dela."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Em entrevistas de IA, cai explicar o que é um embedding e como se mede se duas palavras são parecidas.",
+            "A resposta curta: um vetor aprendido, comparado pela semelhança do cosseno."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Ideias erradas comuns."
+          ],
+          "bullets": [
+            "Achar que alguém escreveu à mão os números de cada palavra.",
+            "Achar que cada direção tem um sentido com nome.",
+            "Achar que rei − homem + mulher dá exatamente rainha: dá um ponto perto.",
+            "Confundir o número da palavra no vocabulário com o vetor dela."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Palavras viram pontos num espaço."
+          ],
+          "bullets": [
+            "Embedding: o vetor de uma palavra.",
+            "Matriz de embeddings: uma linha por palavra.",
+            "Os números são aprendidos no treino.",
+            "Sentidos parecidos, vetores parecidos.",
+            "Semelhança do cosseno mede o quanto se parecem.",
+            "Diferenças entre vetores podem guardar relações."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Definição",
+          "statement": "O que é um embedding?",
+          "options": [
+            "um arquivo de texto",
+            "o vetor de números que representa uma palavra",
+            "o número de ordem da palavra",
+            "uma regra de gramática",
+            "a tradução da palavra"
+          ],
+          "correct_index": 1,
+          "explanation": "Embedding é o vetor aprendido que representa a palavra dentro do modelo.",
+          "pitfall": "O número de ordem só escolhe a linha: o embedding é a linha."
+        },
+        {
+          "topic": "Matriz",
+          "statement": "Um vocabulário tem 50 000 palavras e cada vetor tem 768 números. Qual é o formato da matriz de embeddings?",
+          "options": [
+            "(768, 768)",
+            "(50 000, 768)",
+            "(50 000,)",
+            "(768,)",
+            "(50 000, 50 000)"
+          ],
+          "correct_index": 1,
+          "explanation": "Uma linha por palavra e uma coluna por número do vetor.",
+          "pitfall": "(768, 768) esquece as palavras."
+        },
+        {
+          "topic": "Origem",
+          "statement": "De onde vêm os números dos embeddings?",
+          "options": [
+            "de um dicionário impresso",
+            "são sorteados e ajustados durante o treino",
+            "alguém escreve à mão",
+            "vêm do código de cada letra",
+            "são sempre zero"
+          ],
+          "correct_index": 1,
+          "explanation": "Começam sorteados, e o treino os ajusta para ajudar a prever palavras.",
+          "pitfall": "O código das letras não diz nada sobre o sentido."
+        },
+        {
+          "topic": "Semelhança",
+          "statement": "Qual par de palavras deve ter semelhança do cosseno mais alta num modelo bem treinado?",
+          "options": [
+            "gato e imposto",
+            "gato e felino",
+            "gato e ontem",
+            "gato e vírgula",
+            "gato e sete"
+          ],
+          "correct_index": 1,
+          "explanation": "Gato e felino aparecem em frases parecidas.",
+          "pitfall": "Sentido diferente dá cosseno baixo."
+        },
+        {
+          "topic": "Analogia",
+          "statement": "Se os vetores guardam a relação país e capital, França − Paris + Tóquio deve cair perto de:",
+          "options": [
+            "Japão",
+            "Brasil",
+            "Londres",
+            "Itália",
+            "Tóquio"
+          ],
+          "correct_index": 0,
+          "explanation": "O caminho de Paris até França é o de capital até país. Aplicado a Tóquio, leva ao Japão.",
+          "pitfall": "Tóquio é o ponto de partida, e não o resultado."
+        },
+        {
+          "topic": "Direções",
+          "statement": "Um embedding tem 768 números. Qual afirmação é verdadeira?",
+          "options": [
+            "cada número tem um nome, como gênero",
+            "o sentido fica espalhado entre as direções",
+            "só os dois primeiros números importam",
+            "os números são letras",
+            "o vetor tem 768 palavras"
+          ],
+          "correct_index": 1,
+          "explanation": "As direções não vêm com etiqueta: o sentido se distribui entre elas.",
+          "pitfall": "Não existe a direção “gênero” pronta; o que se acha são padrões espalhados."
+        },
+        {
+          "topic": "Código",
+          "statement": "Com vocab = {\"sol\": 3} e a matriz E, qual escrita pega o vetor de sol?",
+          "options": [
+            "E[3]",
+            "E[\"sol\"]",
+            "vocab[E]",
+            "E.sol",
+            "E[0]"
+          ],
+          "correct_index": 0,
+          "explanation": "vocab[\"sol\"] dá 3, e E[3] é a linha 3.",
+          "pitfall": "A matriz não entende o texto: é preciso o número antes."
+        },
+        {
+          "topic": "Da palavra ao vetor",
+          "format": "order",
+          "statement": "Ponha na ordem o caminho de uma palavra até o seu vetor.",
+          "options": [
+            "Separar o texto em palavras ou pedaços",
+            "Achar o número de cada pedaço no vocabulário",
+            "Pegar a linha correspondente da matriz de embeddings",
+            "Usar esse vetor nas contas do modelo"
+          ],
+          "explanation": "O texto vira pedaços, os pedaços viram números, e os números escolhem as linhas da matriz.",
+          "pitfall": "A matriz não sabe ler texto: o vocabulário vem antes."
+        }
+      ]
+    }
+  ]
+}

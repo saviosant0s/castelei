@@ -94,6 +94,28 @@ export const SUBJECTS: SiteSubject[] = [
     ],
   },
   {
+    slug: "algebra-linear",
+    name: "Álgebra Linear",
+    pitch:
+      "Vetores, matrizes e tensores explicados com setas e tabelas, até chegar ao jeito como um modelo de linguagem guarda o sentido das palavras.",
+    lessons: [
+      "O que é um vetor",
+      "Somar vetores e multiplicar por um número",
+      "Produto escalar: o quanto dois vetores concordam",
+      "Norma, distância e semelhança entre vetores",
+      "Matrizes: tabelas de números",
+      "Somar matrizes e multiplicar por um número",
+      "Multiplicação de matrizes: linha com coluna",
+      "Determinante e matriz inversa",
+      "Sistemas lineares escritos com matrizes",
+      "Transformações lineares: a matriz como máquina",
+      "Espaços vetoriais, base e dimensão",
+      "Autovalores e autovetores",
+      "Tensores e broadcasting",
+      "Vetores que guardam significado",
+    ],
+  },
+  {
     slug: "portugues",
     name: "Português",
     pitch:
@@ -211,5 +233,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 890,
+  questions: 1002,
 };

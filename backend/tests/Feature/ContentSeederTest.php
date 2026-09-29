@@ -187,7 +187,9 @@ class ContentSeederTest extends TestCase
 
                 foreach (['left', 'right'] as $lado) {
                     $valores = array_column($pares, $lado);
-                    $this->assertCount(count($pares), array_filter($valores), "{$onde}: par sem {$lado}");
+                    // "0" é um lado válido (escalar tem 0 direções); array_filter sozinho o descartaria.
+                    $preenchidos = array_filter($valores, fn ($v) => trim((string) $v) !== '');
+                    $this->assertCount(count($pares), $preenchidos, "{$onde}: par sem {$lado}");
                     $this->assertCount(count($valores), array_unique($valores), "{$onde}: repetido em {$lado}");
                 }
 
