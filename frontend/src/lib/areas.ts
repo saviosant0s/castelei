@@ -12,6 +12,7 @@ import {
   Globe,
   Grid3x3,
   Landmark,
+  LineChart,
   Languages,
   MessagesSquare,
   Monitor,
@@ -67,6 +68,7 @@ const iconesDeMateria: Record<string, LucideIcon> = {
   "producao-textual": PenLine,
   "programacao-python": Code,
   "algebra-linear": Grid3x3,
+  calculo: LineChart,
 };
 
 /** Ícone da matéria; a que não tem um próprio usa o da área. */

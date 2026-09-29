@@ -1,0 +1,3218 @@
+{
+  "_leia_me": [
+    "Cálculo do Castelei: a seção 4 da trilha de LLMs do zero.",
+    "Chaves começadas por _ são comentário e somem na importação."
+  ],
+  "slug": "calculo",
+  "name": "Cálculo",
+  "area": "matematica",
+  "description": "Limites, derivadas, regra da cadeia e gradiente, até o gradiente descendente: a conta com que toda rede neural aprende.",
+  "lessons": [
+    {
+      "slug": "funcoes-dominio-imagem-composicao",
+      "title": "Funções: domínio, imagem e composição",
+      "module": "Funções",
+      "summary": "Revisão com um olhar novo: a função como máquina, o que pode entrar, o que sai e o que acontece quando se ligam máquinas em fila. Uma rede neural é uma fila enorme de funções.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A linha de montagem",
+          "body": [
+            "Numa fábrica de pão, a farinha passa pela batedeira, pelo forno e pela fatiadora. Cada máquina recebe o que a anterior entregou.",
+            "Em matemática, cada máquina é uma função, e a fábrica inteira também."
+          ],
+          "terms": [
+            {
+              "word": "Função",
+              "meaning": "uma regra que recebe um valor e devolve exatamente um valor. Escreve-se f(x)."
+            },
+            {
+              "word": "Variável",
+              "meaning": "a letra que representa o valor que entra, e que pode mudar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que pode entrar",
+          "body": [
+            "Nem todo número pode entrar em toda função. Em f(x) = 1/x, o zero é proibido. Em g(x) = √x, os negativos são proibidos entre os números reais.",
+            "O conjunto do que pode entrar é o domínio."
+          ],
+          "terms": [
+            {
+              "word": "Domínio",
+              "meaning": "o conjunto dos valores que podem entrar na função."
+            },
+            {
+              "word": "Imagem",
+              "meaning": "o conjunto dos valores que de fato saem da função."
+            }
+          ],
+          "table": {
+            "label": "Domínios comuns",
+            "headers": [
+              "Função",
+              "Domínio",
+              "Por quê"
+            ],
+            "rows": [
+              [
+                "1/x",
+                "todo x menos 0",
+                "não se divide por zero"
+              ],
+              [
+                "√x",
+                "x ≥ 0",
+                "não há raiz real de negativo"
+              ],
+              [
+                "ln x",
+                "x > 0",
+                "não há logaritmo de zero nem de negativo"
+              ],
+              [
+                "x²",
+                "qualquer x",
+                "sempre dá para elevar ao quadrado"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que sai",
+          "body": [
+            "Em f(x) = x², qualquer número pode entrar, mas nunca sai negativo. A imagem é x ≥ 0.",
+            "Algumas funções usadas em redes neurais têm imagem apertada de propósito. Uma delas só devolve valores entre 0 e 1, como uma chance."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Ligando em fila",
+          "body": [
+            "Na composição g(f(x)), primeiro f age e depois g recebe o resultado. Escreve-se também (g ∘ f)(x).",
+            "A ordem importa: calçar a meia e depois o sapato não é o mesmo que o contrário."
+          ],
+          "terms": [
+            {
+              "word": "Composição",
+              "meaning": "usar a saída de uma função como entrada de outra: g(f(x))."
+            }
+          ],
+          "example": {
+            "label": "f(x) = x + 2 e g(x) = x²",
+            "lines": [
+              "g(f(1)) = g(3) = 9",
+              "f(g(1)) = f(1) = 3",
+              "Ordens diferentes, resultados diferentes"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Desmontando uma função",
+          "body": [
+            "Dá para ver uma função complicada como várias simples em fila. h(x) = (3x + 1)² é: primeiro multiplica por 3 e soma 1, depois eleva ao quadrado.",
+            "Enxergar essa fila é o que permite medir a rapidez de funções complicadas, mais adiante nesta matéria."
+          ],
+          "example": {
+            "label": "h(x) = (3x + 1)²",
+            "lines": [
+              "por dentro: u = 3x + 1",
+              "por fora: h = u²",
+              "h(x) = g(f(x)) com f(x) = 3x + 1 e g(u) = u²"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Uma rede neural é uma fila",
+          "body": [
+            "Cada camada de uma rede neural é uma função que recebe os números da camada anterior. A rede inteira é a composição de todas elas.",
+            "Treinar a rede é ajustar os números de cada máquina da fila. O cálculo diz como ajustar."
+          ],
+          "figure": {
+            "src": "/figuras/calculo/fila-de-funcoes.svg",
+            "alt": "Uma fila de três caixas ligadas por setas: a entrada x passa pela camada 1, depois pela camada 2 e depois pela camada 3, que entrega a saída.",
+            "caption": "A saída de uma camada é a entrada da próxima."
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem o domínio de uma função com fração ou raiz e o valor de uma composição, como f(g(2)).",
+            "Resolva sempre de dentro para fora."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde as funções enganam."
+          ],
+          "bullets": [
+            "Resolver f(g(x)) começando pela f.",
+            "Esquecer os negativos proibidos dentro da raiz.",
+            "Achar que g ∘ f é o mesmo que g vezes f.",
+            "Confundir domínio com imagem. Domínio é o que entra; imagem é o que sai."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Máquinas que entram em fila."
+          ],
+          "bullets": [
+            "Domínio: o que pode entrar.",
+            "Imagem: o que sai.",
+            "g(f(x)): primeiro f, depois g.",
+            "A ordem da composição importa.",
+            "Funções complicadas são filas de funções simples.",
+            "Uma rede neural é uma composição de camadas."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Domínio",
+          "statement": "Qual é o domínio de f(x) = 1/(x − 4)?",
+          "options": [
+            "todo x",
+            "todo x menos 4",
+            "x > 4",
+            "x ≥ 0",
+            "todo x menos 0"
+          ],
+          "correct_index": 1,
+          "explanation": "x = 4 zera a parte de baixo. Todo o resto pode entrar.",
+          "pitfall": "Menos 0 seria para 1/x, sem o − 4."
+        },
+        {
+          "topic": "Raiz",
+          "statement": "Qual é o domínio de g(x) = √(x − 2)?",
+          "options": [
+            "x ≥ 2",
+            "x > 0",
+            "todo x",
+            "x ≤ 2",
+            "x ≥ −2"
+          ],
+          "correct_index": 0,
+          "explanation": "Dentro da raiz precisa dar zero ou mais: x − 2 ≥ 0, então x ≥ 2.",
+          "pitfall": "x ≥ −2 erra o sinal ao passar o 2."
+        },
+        {
+          "topic": "Imagem",
+          "statement": "Qual é a imagem de f(x) = x² + 1?",
+          "options": [
+            "todo número",
+            "valores maiores ou iguais a 1",
+            "valores maiores ou iguais a 0",
+            "só o 1",
+            "valores negativos"
+          ],
+          "correct_index": 1,
+          "explanation": "x² nunca fica negativo, então x² + 1 nunca fica abaixo de 1.",
+          "pitfall": "x ≥ 0 seria a imagem de x² sem o + 1."
+        },
+        {
+          "topic": "Composição",
+          "statement": "Com f(x) = 2x e g(x) = x − 5, quanto vale g(f(4))?",
+          "options": [
+            "3",
+            "−2",
+            "8",
+            "13",
+            "−10"
+          ],
+          "correct_index": 0,
+          "explanation": "f(4) = 8. Depois g(8) = 3.",
+          "pitfall": "−2 é f(g(4)): subtrai antes de dobrar."
+        },
+        {
+          "topic": "Ordem",
+          "statement": "Com f(x) = x² e g(x) = x + 1, quanto vale f(g(3)) − g(f(3))?",
+          "options": [
+            "0",
+            "6",
+            "−6",
+            "10",
+            "16"
+          ],
+          "correct_index": 1,
+          "explanation": "f(g(3)) = f(4) = 16. g(f(3)) = g(9) = 10. A diferença é 6.",
+          "pitfall": "Achar que a ordem não importa leva a 0."
+        },
+        {
+          "topic": "Desmontar",
+          "statement": "Em h(x) = (5x − 2)³, qual é a função de dentro?",
+          "options": [
+            "x³",
+            "5x − 2",
+            "5x",
+            "(5x)³",
+            "−2"
+          ],
+          "correct_index": 1,
+          "explanation": "Primeiro se calcula 5x − 2; depois se eleva ao cubo.",
+          "pitfall": "x³ é a função de fora."
+        },
+        {
+          "topic": "Rede",
+          "statement": "Por que se diz que uma rede neural é uma composição de funções?",
+          "options": [
+            "porque tem muitas variáveis",
+            "porque a saída de cada camada vira a entrada da próxima",
+            "porque usa matrizes",
+            "porque tem domínio grande",
+            "porque é escrita em Python"
+          ],
+          "correct_index": 1,
+          "explanation": "Camada após camada, uma função recebe o que a outra entregou.",
+          "pitfall": "Usar matrizes é verdade, mas não é o que faz ser composição."
+        },
+        {
+          "topic": "Palavras",
+          "format": "match",
+          "statement": "Ligue cada termo ao seu significado.",
+          "pairs": [
+            {
+              "left": "domínio",
+              "right": "o que pode entrar"
+            },
+            {
+              "left": "imagem",
+              "right": "o que pode sair"
+            },
+            {
+              "left": "composição",
+              "right": "uma função depois da outra"
+            },
+            {
+              "left": "variável",
+              "right": "a letra da entrada"
+            }
+          ],
+          "explanation": "Domínio e imagem são as portas da máquina; a composição liga máquinas.",
+          "pitfall": "Imagem não é o desenho da função: é o conjunto do que sai."
+        }
+      ]
+    },
+    {
+      "slug": "limites",
+      "title": "Limites: chegar cada vez mais perto",
+      "module": "Limites e derivadas",
+      "summary": "O limite pergunta de que valor a função se aproxima, mesmo quando não dá para calcular exatamente no ponto. É a ferramenta que permite definir a derivada.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A corrida de Aquiles",
+          "body": [
+            "Você anda metade da distância até a parede. Depois metade do que falta, e metade de novo. A cada passo fica mais perto.",
+            "Em nenhum passo você encosta. Mesmo assim, está claro para onde está indo: para a parede. Esse “para onde está indo” é o limite."
+          ],
+          "terms": [
+            {
+              "word": "Função",
+              "meaning": "uma regra que recebe um valor e devolve exatamente um valor. Escreve-se f(x)."
+            },
+            {
+              "word": "Limite",
+              "meaning": "o valor de que a função se aproxima quando x chega cada vez mais perto de um número."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Chegando perto de um ponto",
+          "body": [
+            "Escreve-se lim quando x → 2 de f(x). Lê-se: o limite de f(x) quando x tende a 2.",
+            "Para descobrir, teste valores cada vez mais perto de 2 pelos dois lados. Depois veja de que número o resultado se aproxima."
+          ],
+          "table": {
+            "label": "f(x) = 3x + 1, com x perto de 2",
+            "headers": [
+              "x",
+              "f(x)"
+            ],
+            "rows": [
+              [
+                "1,9",
+                "6,7"
+              ],
+              [
+                "1,99",
+                "6,97"
+              ],
+              [
+                "2,01",
+                "7,03"
+              ],
+              [
+                "2,1",
+                "7,3"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Quando não dá para trocar o x",
+          "body": [
+            "Em f(x) = (x² − 1)/(x − 1), o x = 1 zera a parte de baixo. A função nem existe ali.",
+            "Mas simplificando: x² − 1 = (x − 1)(x + 1). Cortando, sobra x + 1. Perto de 1, a função chega perto de 2."
+          ],
+          "figure": {
+            "src": "/figuras/calculo/limite-buraco.svg",
+            "alt": "Uma reta com uma bolinha vazia no ponto (1, 2). A função não existe em x = 1, mas a reta chega cada vez mais perto de 2 pelos dois lados.",
+            "caption": "Um buraco no ponto, mas um destino claro: 2."
+          },
+          "example": {
+            "label": "O limite em x → 1",
+            "lines": [
+              "(x² − 1)/(x − 1) = (x − 1)(x + 1)/(x − 1)",
+              "Para x diferente de 1, fica x + 1",
+              "Com x chegando a 1, o valor chega a 2"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Pela esquerda e pela direita",
+          "body": [
+            "O limite só existe se os dois lados chegam no mesmo número. Se pela esquerda vai para 1 e pela direita vai para 3, não há limite.",
+            "Um degrau, como a tarifa que pula de preço num horário, é o exemplo típico."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Para o infinito",
+          "body": [
+            "Também dá para perguntar o que acontece quando x cresce sem parar. 1/x fica cada vez menor: o limite é 0.",
+            "Uma função pode também crescer sem parar, e aí se diz que o limite é infinito."
+          ],
+          "example": {
+            "label": "Quando x → ∞",
+            "lines": [
+              "1/x → 0",
+              "(2x + 1)/x → 2",
+              "x² → ∞"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Para que serve",
+          "body": [
+            "O limite resolve contas do tipo 0/0, que aparecem quando se mede a rapidez de uma mudança num instante.",
+            "É exatamente assim que nasce a derivada, o assunto da próxima lição."
+          ],
+          "terms": [
+            {
+              "word": "Derivada",
+              "meaning": "a rapidez com que uma função muda num ponto. Escreve-se f′(x)."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem limites em que basta trocar o x, e limites do tipo 0/0 que se resolvem simplificando.",
+            "Primeiro tente trocar o x. Se der 0/0, fatore e corte."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde os limites enganam."
+          ],
+          "bullets": [
+            "Achar que o limite é o valor da função no ponto: pode ser diferente, ou a função nem existir ali.",
+            "Parar no 0/0 e dizer que o limite não existe.",
+            "Olhar só um lado.",
+            "Achar que 1/x chega a zero em algum momento: só se aproxima."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Para onde a função vai."
+          ],
+          "bullets": [
+            "lim quando x → a: o valor de que f(x) se aproxima.",
+            "Teste valores perto de a pelos dois lados.",
+            "O limite pode existir mesmo com um buraco no ponto.",
+            "Dá 0/0: simplifique e tente de novo.",
+            "Lados diferentes: não há limite.",
+            "O limite é a porta de entrada da derivada."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Direto",
+          "statement": "Quanto vale o limite de 2x + 5 quando x → 3?",
+          "options": [
+            "8",
+            "11",
+            "5",
+            "6",
+            "não existe"
+          ],
+          "correct_index": 1,
+          "explanation": "Aqui basta trocar: 2 × 3 + 5 = 11.",
+          "pitfall": "8 soma 3 e 5, sem dobrar o x."
+        },
+        {
+          "topic": "0/0",
+          "statement": "Quanto vale o limite de (x² − 9)/(x − 3) quando x → 3?",
+          "options": [
+            "0",
+            "3",
+            "6",
+            "9",
+            "não existe"
+          ],
+          "correct_index": 2,
+          "explanation": "x² − 9 = (x − 3)(x + 3). Cortando, sobra x + 3, que chega a 6.",
+          "pitfall": "Dizer que não existe é parar no 0/0."
+        },
+        {
+          "topic": "Infinito",
+          "statement": "Quanto vale o limite de 5/x quando x → ∞?",
+          "options": [
+            "5",
+            "∞",
+            "0",
+            "1",
+            "−5"
+          ],
+          "correct_index": 2,
+          "explanation": "5 dividido por números cada vez maiores fica cada vez mais perto de zero.",
+          "pitfall": "∞ seria o limite de 5x."
+        },
+        {
+          "topic": "Lados",
+          "statement": "Uma função vai para 2 pela esquerda de x = 0 e para 4 pela direita. O limite em x → 0:",
+          "options": [
+            "é 2",
+            "é 4",
+            "é 3",
+            "não existe",
+            "é 0"
+          ],
+          "correct_index": 3,
+          "explanation": "Os dois lados precisam chegar no mesmo número.",
+          "pitfall": "3 é a média, e limite não é média."
+        },
+        {
+          "topic": "Tabela",
+          "statement": "Com x = 0,9 dando 1,81 e x = 0,99 dando 1,9801, de que número f(x) = x² + 1 se aproxima quando x → 1?",
+          "options": [
+            "1",
+            "1,99",
+            "2",
+            "0",
+            "0,99"
+          ],
+          "correct_index": 2,
+          "explanation": "Os valores chegam cada vez mais perto de 1² + 1 = 2.",
+          "pitfall": "1,99 é um passo do caminho, não o destino."
+        },
+        {
+          "topic": "Valor e limite",
+          "statement": "Uma função vale 7 em x = 2, mas os valores perto de 2 se aproximam de 5. Qual é o limite em x → 2?",
+          "options": [
+            "7",
+            "5",
+            "12",
+            "6",
+            "não existe"
+          ],
+          "correct_index": 1,
+          "explanation": "O limite olha os vizinhos, e não o ponto em si.",
+          "pitfall": "7 é o valor no ponto, que o limite ignora."
+        },
+        {
+          "topic": "Fração no infinito",
+          "statement": "Quanto vale o limite de (3x + 2)/x quando x → ∞?",
+          "options": [
+            "3",
+            "2",
+            "5",
+            "0",
+            "∞"
+          ],
+          "correct_index": 0,
+          "explanation": "(3x + 2)/x = 3 + 2/x. O 2/x vai a zero, sobra 3.",
+          "pitfall": "5 soma 3 e 2 sem pensar no x."
+        },
+        {
+          "topic": "0/0",
+          "format": "order",
+          "statement": "Ponha na ordem os passos para calcular um limite que dá 0/0.",
+          "options": [
+            "Trocar o x pelo número e ver que dá 0/0",
+            "Fatorar em cima ou embaixo",
+            "Cortar o fator que zera",
+            "Trocar o x de novo na expressão simplificada"
+          ],
+          "explanation": "O 0/0 é um aviso de que há um fator escondido. Tirado ele, a troca funciona.",
+          "pitfall": "Dizer que não existe no primeiro passo é desistir cedo."
+        }
+      ]
+    },
+    {
+      "slug": "derivada-taxa-de-variacao",
+      "title": "Derivada: a rapidez da mudança num instante",
+      "module": "Limites e derivadas",
+      "summary": "O velocímetro não mostra a média da viagem, e sim a velocidade agora. A derivada faz isso com qualquer função: diz o quanto ela está mudando num ponto exato.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O velocímetro",
+          "body": [
+            "Numa viagem de 300 km em 3 horas, a média foi 100 km/h. Mas houve trechos a 120 e paradas no pedágio.",
+            "O velocímetro mostra outra coisa: a velocidade neste instante. A derivada é o velocímetro de uma função."
+          ],
+          "terms": [
+            {
+              "word": "Função",
+              "meaning": "uma regra que recebe um valor e devolve exatamente um valor. Escreve-se f(x)."
+            },
+            {
+              "word": "Derivada",
+              "meaning": "a rapidez com que uma função muda num ponto. Escreve-se f′(x)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Primeiro, a média",
+          "body": [
+            "A taxa média entre dois pontos é quanto a função mudou dividido por quanto o x mudou: [f(b) − f(a)] / (b − a).",
+            "Para a posição de um carro, isso é a velocidade média."
+          ],
+          "terms": [
+            {
+              "word": "Taxa de variação",
+              "meaning": "o quanto a saída muda para cada unidade que a entrada muda."
+            }
+          ],
+          "example": {
+            "label": "f(x) = x², de x = 1 a x = 3",
+            "lines": [
+              "f(3) − f(1) = 9 − 1 = 8",
+              "3 − 1 = 2",
+              "Taxa média: 8 ÷ 2 = 4"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Encolhendo o intervalo",
+          "body": [
+            "Para saber a rapidez exatamente em x = 1, encurte o intervalo: de 1 a 1,1, depois até 1,01 e até 1,001.",
+            "As taxas médias chegam cada vez mais perto de um número. Esse número é a derivada em x = 1."
+          ],
+          "table": {
+            "label": "f(x) = x², perto de x = 1",
+            "headers": [
+              "Intervalo",
+              "Taxa média"
+            ],
+            "rows": [
+              [
+                "1 a 2",
+                "3"
+              ],
+              [
+                "1 a 1,1",
+                "2,1"
+              ],
+              [
+                "1 a 1,01",
+                "2,01"
+              ],
+              [
+                "1 a 1,001",
+                "2,001"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A definição com limite",
+          "body": [
+            "Chamando o pedacinho de h, a derivada é o limite da taxa média quando h vai a zero.",
+            "Em palavras: quanto f muda num passo minúsculo, dividido pelo tamanho do passo."
+          ],
+          "terms": [
+            {
+              "word": "Limite",
+              "meaning": "o valor de que uma conta se aproxima quando algo chega cada vez mais perto de um número."
+            }
+          ],
+          "example": {
+            "label": "A fórmula",
+            "lines": [
+              "f′(x) = lim quando h → 0 de [f(x + h) − f(x)] / h"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Calculando para x²",
+          "body": [
+            "Com f(x) = x², a conta fica [(x + h)² − x²] / h. Abrindo o quadrado e cortando, sobra 2x + h.",
+            "Quando h vai a zero, sobra 2x. Em x = 1, a derivada é 2, o número para onde a tabela apontava."
+          ],
+          "example": {
+            "label": "Passo a passo",
+            "lines": [
+              "(x + h)² − x² = 2xh + h²",
+              "Dividindo por h: 2x + h",
+              "Com h → 0: f′(x) = 2x"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que o sinal diz",
+          "body": [
+            "Derivada positiva: a função está subindo ali. Negativa: está descendo. Zero: está parada, num topo, num fundo ou num patamar.",
+            "Para treinar uma rede neural, é essa informação que importa: para que lado mexer um número para o erro diminuir."
+          ],
+          "table": {
+            "label": "O sinal da derivada",
+            "headers": [
+              "f′(x)",
+              "A função"
+            ],
+            "rows": [
+              [
+                "positiva",
+                "sobe"
+              ],
+              [
+                "negativa",
+                "desce"
+              ],
+              [
+                "zero",
+                "está parada naquele ponto"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Derivada no computador",
+          "body": [
+            "Dá para estimar a derivada com um h pequeno, direto da definição. É um jeito simples de conferir uma conta."
+          ],
+          "code": {
+            "label": "Estimando f′(1) para f(x) = x²",
+            "text": "def f(x):\n    return x ** 2\nh = 0.0001\nprint((f(1 + h) - f(1)) / h)",
+            "notes": [
+              "Cria a função f.",
+              "Ela devolve x ao quadrado.",
+              "Escolhe um passo bem pequeno.",
+              "Calcula a taxa média no passo minúsculo: mostra cerca de 2.0001."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem a taxa média entre dois pontos e a interpretação do sinal da derivada. Em física, derivada da posição é velocidade.",
+            "Às vezes a questão pede a derivada pela definição, com o limite de h."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a derivada confunde."
+          ],
+          "bullets": [
+            "Confundir a taxa média com a derivada no ponto.",
+            "Achar que derivada zero quer dizer função zero.",
+            "Trocar o h por zero antes de simplificar: dá 0/0.",
+            "Inverter a conta: é mudança de f dividida por mudança de x."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A rapidez num instante."
+          ],
+          "bullets": [
+            "Taxa média: [f(b) − f(a)] / (b − a).",
+            "Derivada: a taxa média com o intervalo encolhendo até zero.",
+            "f′(x) = lim de [f(x + h) − f(x)] / h.",
+            "A derivada de x² é 2x.",
+            "Positiva sobe, negativa desce, zero está parada.",
+            "Treinar uma rede é usar derivadas para saber para onde mexer."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Taxa média",
+          "statement": "Qual é a taxa média de f(x) = 3x² entre x = 0 e x = 2?",
+          "options": [
+            "6",
+            "12",
+            "3",
+            "2",
+            "0"
+          ],
+          "correct_index": 0,
+          "explanation": "f(2) − f(0) = 12 − 0 = 12. Dividindo por 2: 6.",
+          "pitfall": "12 esquece de dividir pela variação do x."
+        },
+        {
+          "topic": "Velocidade",
+          "statement": "Um carro está no km 50 às 2 h e no km 170 às 4 h. Qual foi a velocidade média?",
+          "options": [
+            "120 km/h",
+            "60 km/h",
+            "85 km/h",
+            "42,5 km/h",
+            "220 km/h"
+          ],
+          "correct_index": 1,
+          "explanation": "(170 − 50) ÷ (4 − 2) = 120 ÷ 2 = 60 km/h.",
+          "pitfall": "120 é a distância, e não a velocidade."
+        },
+        {
+          "topic": "x²",
+          "statement": "Qual é a derivada de x² em x = 5?",
+          "options": [
+            "25",
+            "10",
+            "5",
+            "2",
+            "20"
+          ],
+          "correct_index": 1,
+          "explanation": "f′(x) = 2x. Em x = 5: 10.",
+          "pitfall": "25 é o valor da função, e não a derivada."
+        },
+        {
+          "topic": "Sinal",
+          "statement": "Num ponto, a derivada vale −3. O que a função está fazendo ali?",
+          "options": [
+            "subindo",
+            "descendo",
+            "parada",
+            "valendo −3",
+            "não existe"
+          ],
+          "correct_index": 1,
+          "explanation": "Derivada negativa quer dizer que a função desce naquele ponto.",
+          "pitfall": "−3 é a rapidez da descida, e não o valor da função."
+        },
+        {
+          "topic": "Zero",
+          "statement": "Onde a derivada de f(x) = x² vale zero?",
+          "options": [
+            "x = 1",
+            "x = 0",
+            "x = 2",
+            "nunca",
+            "em todo x"
+          ],
+          "correct_index": 1,
+          "explanation": "2x = 0 só em x = 0, o fundo da parábola.",
+          "pitfall": "“Nunca” esquece o fundo da curva, onde ela para de descer e começa a subir."
+        },
+        {
+          "topic": "Estimativa",
+          "statement": "Com h = 0,01, qual é a taxa média de x² entre 3 e 3,01?",
+          "options": [
+            "6",
+            "6,01",
+            "9",
+            "0,06",
+            "3,01"
+          ],
+          "correct_index": 1,
+          "explanation": "(3,01² − 9) ÷ 0,01 = (9,0601 − 9) ÷ 0,01 = 6,01. Perto da derivada, 6.",
+          "pitfall": "6 é a derivada exata; a taxa com h = 0,01 ainda é 6,01."
+        },
+        {
+          "topic": "Definição",
+          "statement": "Na definição da derivada, o que acontece com h?",
+          "options": [
+            "h vai para o infinito",
+            "h vai para zero",
+            "h vale 1",
+            "h é a derivada",
+            "h é o x"
+          ],
+          "correct_index": 1,
+          "explanation": "O intervalo encolhe até zero: é o limite quando h → 0.",
+          "pitfall": "h grande daria a taxa média num intervalo grande."
+        },
+        {
+          "topic": "Derivada",
+          "format": "match",
+          "statement": "Ligue cada ideia à sua descrição.",
+          "pairs": [
+            {
+              "left": "taxa média",
+              "right": "mudança num intervalo"
+            },
+            {
+              "left": "derivada",
+              "right": "mudança num instante"
+            },
+            {
+              "left": "derivada positiva",
+              "right": "a função sobe"
+            },
+            {
+              "left": "derivada zero",
+              "right": "a função está parada no ponto"
+            }
+          ],
+          "explanation": "A derivada é a taxa média com o intervalo encolhido até zero.",
+          "pitfall": "Derivada zero não quer dizer função zero."
+        }
+      ]
+    },
+    {
+      "slug": "derivada-inclinacao-tangente",
+      "title": "A derivada no desenho: a inclinação da tangente",
+      "module": "Limites e derivadas",
+      "summary": "No gráfico, a derivada é a inclinação da reta que encosta na curva num ponto. Ladeira forte, derivada grande; chão plano, derivada zero.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A ladeira sob os pés",
+          "body": [
+            "Andando por uma estrada de morro, em cada ponto você sente se está subindo, descendo ou no plano. E sente o quanto a ladeira é forte.",
+            "Essa inclinação sob os pés, ponto a ponto, é o desenho da derivada."
+          ],
+          "terms": [
+            {
+              "word": "Função",
+              "meaning": "uma regra que recebe um valor e devolve exatamente um valor. Escreve-se f(x)."
+            },
+            {
+              "word": "Derivada",
+              "meaning": "a rapidez com que uma função muda num ponto. Escreve-se f′(x)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A reta que corta em dois pontos",
+          "body": [
+            "Ligue dois pontos da curva com uma reta. A inclinação dela é a taxa média entre esses pontos.",
+            "Essa reta, que corta a curva em dois lugares, se chama secante."
+          ],
+          "terms": [
+            {
+              "word": "Reta secante",
+              "meaning": "a reta que liga dois pontos de uma curva. A inclinação dela é a taxa média."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Aproximando os pontos",
+          "body": [
+            "Agora deslize o segundo ponto até o primeiro. A secante vai girando e, no fim, só encosta na curva num ponto.",
+            "Essa reta final é a tangente. A inclinação dela é a derivada naquele ponto."
+          ],
+          "terms": [
+            {
+              "word": "Tangente",
+              "meaning": "a reta que só encosta na curva num ponto, com a mesma inclinação que a curva tem ali."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/calculo/secante-tangente.svg",
+            "alt": "Uma curva com um ponto marcado. Duas retas secantes ligam o ponto a outros pontos da curva, cada vez mais próximos. A reta tangente, mais escura, só encosta no ponto.",
+            "caption": "As secantes giram até virar a tangente."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Lendo a inclinação",
+          "body": [
+            "Inclinação é quanto a reta sobe para cada passo para a direita. Inclinação 2 sobe 2 a cada 1. Inclinação −1 desce 1 a cada 1.",
+            "Onde a curva é íngreme, a derivada é grande. Onde ela é quase plana, a derivada é perto de zero."
+          ],
+          "table": {
+            "label": "A curva e a derivada",
+            "headers": [
+              "A curva ali",
+              "A derivada"
+            ],
+            "rows": [
+              [
+                "sobe forte",
+                "positiva e grande"
+              ],
+              [
+                "sobe devagar",
+                "positiva e pequena"
+              ],
+              [
+                "plana",
+                "zero"
+              ],
+              [
+                "desce",
+                "negativa"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A equação da tangente",
+          "body": [
+            "A tangente é uma reta, e uma reta precisa de um ponto e de uma inclinação. O ponto é (a, f(a)); a inclinação é f′(a).",
+            "Assim: y = f(a) + f′(a)(x − a)."
+          ],
+          "example": {
+            "label": "f(x) = x² em x = 3",
+            "lines": [
+              "Ponto: (3, 9)",
+              "Inclinação: f′(3) = 2 × 3 = 6",
+              "Tangente: y = 9 + 6(x − 3), ou seja y = 6x − 9"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Perto do ponto, a curva é quase reta",
+          "body": [
+            "Dê um zoom enorme num ponto de uma curva suave: ela parece uma reta, a tangente.",
+            "Essa é a ideia que o treino de uma rede usa. Perto do lugar onde está, a rede finge que o erro é uma ladeira reta e dá um passinho para baixo."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Onde a derivada falha",
+          "body": [
+            "Num bico, como o do gráfico de |x| em x = 0, a curva não tem uma inclinação só. Pela esquerda desce e pela direita sobe.",
+            "Ali a derivada não existe. Uma função muito usada em redes neurais tem exatamente esse bico em zero, e os programas simplesmente escolhem um valor."
+          ],
+          "terms": [
+            {
+              "word": "Módulo (valor absoluto)",
+              "meaning": "a distância de um número até o zero: |−3| = 3."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem a equação da reta tangente e a leitura do sinal da derivada num gráfico: onde a curva sobe, desce ou fica plana.",
+            "Nos topos e nos fundos de uma curva suave, a tangente é deitada: derivada zero."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a tangente engana."
+          ],
+          "bullets": [
+            "Achar que a tangente não pode cruzar a curva em outro lugar: pode, longe do ponto.",
+            "Usar f(a) no lugar de f′(a) como inclinação.",
+            "Achar que todo ponto tem derivada: bicos não têm.",
+            "Confundir a inclinação da secante com a da tangente."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A derivada é a inclinação da tangente."
+          ],
+          "bullets": [
+            "Secante: liga dois pontos; inclinação é a taxa média.",
+            "Tangente: só encosta; inclinação é a derivada.",
+            "Íngreme: derivada grande. Plano: derivada zero.",
+            "Tangente em a: y = f(a) + f′(a)(x − a).",
+            "De perto, a curva parece a tangente.",
+            "Em bicos, a derivada não existe."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Inclinação",
+          "statement": "A tangente à curva num ponto tem inclinação −2. Qual é a derivada ali?",
+          "options": [
+            "2",
+            "−2",
+            "0",
+            "−1/2",
+            "não dá para saber"
+          ],
+          "correct_index": 1,
+          "explanation": "A derivada é a inclinação da tangente.",
+          "pitfall": "−1/2 inverte o número sem motivo."
+        },
+        {
+          "topic": "Tangente",
+          "statement": "Qual é a tangente a f(x) = x² em x = 1?",
+          "options": [
+            "y = 2x − 1",
+            "y = x + 1",
+            "y = 2x",
+            "y = x²",
+            "y = 2x + 1"
+          ],
+          "correct_index": 0,
+          "explanation": "Ponto (1, 1), inclinação f′(1) = 2. y = 1 + 2(x − 1) = 2x − 1.",
+          "pitfall": "y = 2x passa pela origem, e não pelo ponto (1, 1)."
+        },
+        {
+          "topic": "Leitura",
+          "statement": "Num trecho em que o gráfico desce, a derivada é:",
+          "options": [
+            "positiva",
+            "negativa",
+            "zero",
+            "infinita",
+            "igual à função"
+          ],
+          "correct_index": 1,
+          "explanation": "Descendo, a tangente aponta para baixo: inclinação negativa.",
+          "pitfall": "O sinal da derivada é o da ladeira, e não o da altura."
+        },
+        {
+          "topic": "Topo",
+          "statement": "No ponto mais alto de uma curva suave, a derivada vale:",
+          "options": [
+            "o valor máximo",
+            "zero",
+            "1",
+            "−1",
+            "não existe"
+          ],
+          "correct_index": 1,
+          "explanation": "No topo a tangente fica deitada: inclinação zero.",
+          "pitfall": "O valor máximo é a altura da curva, e não a derivada."
+        },
+        {
+          "topic": "Bico",
+          "statement": "Em qual ponto f(x) = |x| não tem derivada?",
+          "options": [
+            "x = 1",
+            "x = −1",
+            "x = 0",
+            "em todo ponto",
+            "em nenhum"
+          ],
+          "correct_index": 2,
+          "explanation": "Em x = 0 há um bico: a inclinação muda de −1 para 1 de repente.",
+          "pitfall": "Longe do zero, a função é uma reta e tem derivada."
+        },
+        {
+          "topic": "Secante",
+          "statement": "Qual é a inclinação da secante de f(x) = x² entre x = 1 e x = 3?",
+          "options": [
+            "4",
+            "2",
+            "8",
+            "6",
+            "9"
+          ],
+          "correct_index": 0,
+          "explanation": "(9 − 1)/(3 − 1) = 4.",
+          "pitfall": "6 é a derivada em x = 3, e não a secante."
+        },
+        {
+          "topic": "Zoom",
+          "statement": "Por que um passo pequeno funciona bem no treino de uma rede?",
+          "options": [
+            "porque de perto a curva do erro parece uma reta",
+            "porque passos pequenos são mais baratos",
+            "porque a derivada é sempre zero",
+            "porque a curva é sempre reta",
+            "porque não há tangente"
+          ],
+          "correct_index": 0,
+          "explanation": "Perto do ponto, a tangente descreve bem a curva, e ela diz para onde descer.",
+          "pitfall": "A curva não é reta de verdade: só parece, de perto."
+        },
+        {
+          "topic": "Retas",
+          "format": "match",
+          "statement": "Ligue cada termo à sua ideia.",
+          "pairs": [
+            {
+              "left": "secante",
+              "right": "liga dois pontos da curva"
+            },
+            {
+              "left": "tangente",
+              "right": "encosta num ponto só"
+            },
+            {
+              "left": "inclinação da tangente",
+              "right": "a derivada"
+            },
+            {
+              "left": "inclinação da secante",
+              "right": "a taxa média"
+            }
+          ],
+          "explanation": "A secante vira a tangente quando os dois pontos se juntam.",
+          "pitfall": "As duas são retas; o que muda é quantos pontos elas ligam."
+        }
+      ]
+    },
+    {
+      "slug": "regras-de-derivacao",
+      "title": "Regras de derivação: atalhos que evitam o limite",
+      "module": "Limites e derivadas",
+      "summary": "Ninguém calcula a derivada pela definição toda vez. Umas poucas regras resolvem quase tudo: potência, constante e soma, além de exponencial e logaritmo.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A tabuada da derivada",
+          "body": [
+            "Você não soma sete vezes o oito para saber quanto é 7 × 8: usa a tabuada.",
+            "Com derivadas é igual. A definição com limite explica o que é, e as regras dão a resposta rápida."
+          ],
+          "terms": [
+            {
+              "word": "Função",
+              "meaning": "uma regra que recebe um valor e devolve exatamente um valor. Escreve-se f(x)."
+            },
+            {
+              "word": "Derivada",
+              "meaning": "a rapidez com que uma função muda num ponto. Escreve-se f′(x)."
+            },
+            {
+              "word": "Limite",
+              "meaning": "o valor de que uma conta se aproxima quando algo chega cada vez mais perto de um número."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A regra da potência",
+          "body": [
+            "Para xⁿ, o expoente desce multiplicando e diminui um: a derivada de xⁿ é n·xⁿ⁻¹.",
+            "É por isso que a derivada de x² é 2x, confirmando a conta com limite."
+          ],
+          "terms": [
+            {
+              "word": "Expoente",
+              "meaning": "o número no alto que diz quantas vezes multiplicar. Em x³, é 3."
+            }
+          ],
+          "table": {
+            "label": "Potências",
+            "headers": [
+              "f(x)",
+              "f′(x)"
+            ],
+            "rows": [
+              [
+                "x²",
+                "2x"
+              ],
+              [
+                "x³",
+                "3x²"
+              ],
+              [
+                "x",
+                "1"
+              ],
+              [
+                "x¹⁰",
+                "10x⁹"
+              ],
+              [
+                "√x = x^(1/2)",
+                "1/(2√x)"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Constantes e somas",
+          "body": [
+            "Um número sozinho não muda, então a derivada dele é zero. Um número multiplicando fica onde está: a derivada de 5x² é 5 × 2x = 10x.",
+            "Na soma, derive cada pedaço separado e some."
+          ],
+          "example": {
+            "label": "f(x) = 3x² + 4x − 7",
+            "lines": [
+              "3x² vira 3 × 2x = 6x",
+              "4x vira 4",
+              "−7 vira 0",
+              "f′(x) = 6x + 4"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A exponencial e o logaritmo",
+          "body": [
+            "eˣ é especial: a derivada é ela mesma. Ela cresce na mesma rapidez do seu tamanho.",
+            "O logaritmo natural tem derivada 1/x. Essas duas aparecem o tempo todo em redes neurais."
+          ],
+          "terms": [
+            {
+              "word": "Número e",
+              "meaning": "uma constante que vale cerca de 2,718."
+            },
+            {
+              "word": "Logaritmo natural (ln)",
+              "meaning": "o logaritmo na base e."
+            }
+          ],
+          "table": {
+            "label": "Duas que valem decorar",
+            "headers": [
+              "f(x)",
+              "f′(x)"
+            ],
+            "rows": [
+              [
+                "eˣ",
+                "eˣ"
+              ],
+              [
+                "ln x",
+                "1/x"
+              ],
+              [
+                "e^(2x)",
+                "2e^(2x) (explicado na próxima lição)"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Produto e quociente",
+          "body": [
+            "Para o produto de duas funções, a derivada não é o produto das derivadas. É: a primeira derivada vezes a segunda, mais a primeira vezes a segunda derivada.",
+            "Escrito curto: (uv)′ = u′v + uv′."
+          ],
+          "example": {
+            "label": "f(x) = x² · eˣ",
+            "lines": [
+              "u = x², u′ = 2x",
+              "v = eˣ, v′ = eˣ",
+              "f′(x) = 2x·eˣ + x²·eˣ"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Derivar duas vezes",
+          "body": [
+            "A derivada da derivada se chama segunda derivada, f″(x). Ela diz se a curva está entortando para cima ou para baixo.",
+            "Na posição de um carro, a primeira derivada é a velocidade e a segunda é a aceleração."
+          ],
+          "example": {
+            "label": "f(x) = x³",
+            "lines": [
+              "f′(x) = 3x²",
+              "f″(x) = 6x"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O computador também sabe",
+          "body": [
+            "Bibliotecas como o PyTorch aplicam essas regras sozinhas, pedaço por pedaço. É o cálculo automático de derivadas.",
+            "Quem programa não escreve as derivadas: escreve a função, e a biblioteca deriva."
+          ],
+          "code": {
+            "label": "Derivada automática no PyTorch",
+            "text": "import torch\nx = torch.tensor(3.0, requires_grad=True)\ny = x ** 2 + 4 * x\ny.backward()\nprint(x.grad)",
+            "notes": [
+              "Traz o PyTorch.",
+              "Cria o número 3 e pede para acompanhar as contas feitas com ele.",
+              "Calcula y = x² + 4x.",
+              "Pede para calcular a derivada de y.",
+              "Mostra tensor(10.): a derivada 2x + 4 com x = 3."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem derivadas de polinômios, de eˣ e de ln x. Também cai a derivada num ponto específico: derive primeiro, troque o x depois.",
+            "No produto, a pegadinha é multiplicar as derivadas."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Os erros clássicos."
+          ],
+          "bullets": [
+            "Esquecer de diminuir o expoente: x³ vira 3x², e não 3x³.",
+            "Achar que a derivada de uma constante é ela mesma.",
+            "Derivar o produto multiplicando as derivadas.",
+            "Trocar o x pelo número antes de derivar."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Atalhos para derivar."
+          ],
+          "bullets": [
+            "xⁿ vira n·xⁿ⁻¹.",
+            "Constante sozinha vira zero; multiplicando, fica.",
+            "Soma: derive cada pedaço.",
+            "eˣ vira eˣ; ln x vira 1/x.",
+            "Produto: u′v + uv′.",
+            "Bibliotecas derivam sozinhas, com as mesmas regras."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Potência",
+          "statement": "Qual é a derivada de x⁵?",
+          "options": [
+            "5x⁴",
+            "x⁴",
+            "5x⁵",
+            "4x⁵",
+            "x⁶/6"
+          ],
+          "correct_index": 0,
+          "explanation": "O 5 desce e o expoente diminui: 5x⁴.",
+          "pitfall": "5x⁵ esquece de diminuir o expoente."
+        },
+        {
+          "topic": "Polinômio",
+          "statement": "Qual é a derivada de 2x³ − 5x + 8?",
+          "options": [
+            "6x² − 5",
+            "6x³ − 5",
+            "6x² − 5 + 8",
+            "2x² − 5",
+            "6x − 5"
+          ],
+          "correct_index": 0,
+          "explanation": "2x³ vira 6x², −5x vira −5 e 8 vira 0.",
+          "pitfall": "Manter o 8 esquece que a derivada de constante é zero."
+        },
+        {
+          "topic": "No ponto",
+          "statement": "Com f(x) = x² + 3x, quanto vale f′(2)?",
+          "options": [
+            "10",
+            "7",
+            "4",
+            "2x + 3",
+            "13"
+          ],
+          "correct_index": 1,
+          "explanation": "f′(x) = 2x + 3. Em x = 2: 7.",
+          "pitfall": "10 é f(2), o valor da função."
+        },
+        {
+          "topic": "Exponencial",
+          "statement": "Qual é a derivada de 4eˣ?",
+          "options": [
+            "4eˣ",
+            "eˣ",
+            "4xeˣ⁻¹",
+            "4",
+            "0"
+          ],
+          "correct_index": 0,
+          "explanation": "A derivada de eˣ é eˣ, e o 4 fica.",
+          "pitfall": "Tratar eˣ como potência de x leva ao xeˣ⁻¹."
+        },
+        {
+          "topic": "Logaritmo",
+          "statement": "Qual é a derivada de ln x em x = 4?",
+          "options": [
+            "1/4",
+            "4",
+            "ln 4",
+            "0",
+            "1"
+          ],
+          "correct_index": 0,
+          "explanation": "A derivada de ln x é 1/x. Em 4: 1/4.",
+          "pitfall": "ln 4 é o valor da função."
+        },
+        {
+          "topic": "Produto",
+          "statement": "Qual é a derivada de x · ln x?",
+          "options": [
+            "ln x + 1",
+            "1/x",
+            "ln x",
+            "x/x",
+            "1 + x"
+          ],
+          "correct_index": 0,
+          "explanation": "u = x, u′ = 1; v = ln x, v′ = 1/x. u′v + uv′ = ln x + x · 1/x = ln x + 1.",
+          "pitfall": "1/x multiplica as derivadas, e não é assim no produto."
+        },
+        {
+          "topic": "Segunda",
+          "statement": "Qual é a segunda derivada de x⁴?",
+          "options": [
+            "4x³",
+            "12x²",
+            "24x",
+            "x²",
+            "16x²"
+          ],
+          "correct_index": 1,
+          "explanation": "Primeira: 4x³. Segunda: 12x².",
+          "pitfall": "4x³ é só a primeira."
+        },
+        {
+          "topic": "Regras",
+          "format": "match",
+          "statement": "Ligue cada função à sua derivada.",
+          "pairs": [
+            {
+              "left": "x³",
+              "right": "3x²"
+            },
+            {
+              "left": "eˣ",
+              "right": "eˣ"
+            },
+            {
+              "left": "ln x",
+              "right": "1/x"
+            },
+            {
+              "left": "7",
+              "right": "0"
+            }
+          ],
+          "explanation": "Potência, exponencial, logaritmo e constante: as quatro regras mais usadas.",
+          "pitfall": "A constante é a pegadinha: ela não muda, então a derivada é zero."
+        }
+      ]
+    },
+    {
+      "slug": "regra-da-cadeia",
+      "title": "Regra da cadeia: derivar funções em fila",
+      "module": "Limites e derivadas",
+      "summary": "Quando uma função está dentro de outra, as rapidezes se multiplicam. É a regra que faz o treino de redes neurais funcionar, com o nome de retropropagação.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Engrenagens",
+          "body": [
+            "Uma engrenagem A gira a B três vezes mais rápido. A B gira a C duas vezes mais rápido.",
+            "Quantas vezes mais rápido C gira em relação a A? 3 × 2 = 6. As rapidezes se multiplicam ao longo da cadeia."
+          ],
+          "terms": [
+            {
+              "word": "Função",
+              "meaning": "uma regra que recebe um valor e devolve exatamente um valor. Escreve-se f(x)."
+            },
+            {
+              "word": "Derivada",
+              "meaning": "a rapidez com que uma função muda num ponto. Escreve-se f′(x)."
+            },
+            {
+              "word": "Composição",
+              "meaning": "uma função dentro de outra: g(f(x))."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A regra",
+          "body": [
+            "Para y = g(f(x)), derive a função de fora e calcule no valor de dentro. Depois multiplique pela derivada de dentro.",
+            "Em símbolos: [g(f(x))]′ = g′(f(x)) · f′(x)."
+          ],
+          "terms": [
+            {
+              "word": "Regra da cadeia",
+              "meaning": "a derivada de uma função dentro de outra é o produto das derivadas de cada uma."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Um exemplo passo a passo",
+          "body": [
+            "Derive h(x) = (3x + 1)². A de dentro é u = 3x + 1. A de fora é u²."
+          ],
+          "example": {
+            "label": "h(x) = (3x + 1)²",
+            "lines": [
+              "De fora: u² vira 2u",
+              "De dentro: 3x + 1 vira 3",
+              "Multiplica: 2u × 3 = 6u",
+              "Volta o u: h′(x) = 6(3x + 1)"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A notação que ajuda",
+          "body": [
+            "Escrevendo dy/du para “quanto y muda quando u muda”, a regra fica com cara de fração que se cancela: dy/dx = dy/du · du/dx.",
+            "Não é uma fração de verdade, mas a intuição das engrenagens funciona."
+          ],
+          "figure": {
+            "src": "/figuras/calculo/cadeia.svg",
+            "alt": "Três caixas em fila: x entra na primeira função, que dá u; u entra na segunda, que dá y. Embaixo, as rapidezes de cada passo, du/dx e dy/du, se multiplicam para dar dy/dx.",
+            "caption": "Cada passo tem a sua rapidez; o total é o produto."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Com exponencial",
+          "body": [
+            "Derive e^(2x). A de fora é eᵘ, que vira eᵘ. A de dentro é 2x, que vira 2.",
+            "Resultado: 2e^(2x). O mesmo vale para ln(5x): (1/5x) × 5 = 1/x."
+          ],
+          "terms": [
+            {
+              "word": "Número e",
+              "meaning": "a constante de cerca de 2,718; a derivada de eᵘ em relação a u é eᵘ."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Uma fila longa",
+          "body": [
+            "Com três funções em fila, multiplicam-se as três rapidezes. Com cem, as cem.",
+            "Uma rede neural é essa fila. Para saber como o erro muda quando se mexe num peso lá do começo, multiplicam-se as rapidezes de todas as camadas no caminho."
+          ],
+          "terms": [
+            {
+              "word": "Peso",
+              "meaning": "um número ajustável dentro de uma rede neural."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "De trás para frente",
+          "body": [
+            "O jeito eficiente é começar pelo fim: calcular quanto o erro muda com a última camada, depois com a penúltima, reaproveitando a conta anterior.",
+            "Esse caminho de volta se chama retropropagação, ou backpropagation. É só a regra da cadeia bem organizada."
+          ],
+          "terms": [
+            {
+              "word": "Retropropagação (backpropagation)",
+              "meaning": "aplicar a regra da cadeia de trás para frente numa rede neural, para saber como cada peso afeta o erro."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem derivadas de potências de parênteses, como (2x − 5)³, e de exponenciais com algo no expoente.",
+            "O erro favorito da banca é esquecer de multiplicar pela derivada de dentro."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a cadeia arrebenta."
+          ],
+          "bullets": [
+            "Esquecer o fator de dentro: (3x + 1)² não vira só 2(3x + 1).",
+            "Derivar a de dentro e esquecer de calcular a de fora nela.",
+            "Somar as rapidezes em vez de multiplicar.",
+            "Achar que retropropagação é outra matemática: é a regra da cadeia."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Rapidezes em fila se multiplicam."
+          ],
+          "bullets": [
+            "[g(f(x))]′ = g′(f(x)) · f′(x).",
+            "Derive a de fora, deixe a de dentro, multiplique pela derivada de dentro.",
+            "dy/dx = dy/du · du/dx.",
+            "e^(ax) vira a·e^(ax).",
+            "Numa fila longa, multiplica-se tudo.",
+            "Retropropagação é a regra da cadeia de trás para frente."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Parênteses",
+          "statement": "Qual é a derivada de (2x + 5)³?",
+          "options": [
+            "3(2x + 5)²",
+            "6(2x + 5)²",
+            "6(2x + 5)³",
+            "3(2x)²",
+            "(2x + 5)²"
+          ],
+          "correct_index": 1,
+          "explanation": "De fora: 3(2x + 5)². De dentro: 2. Multiplicando: 6(2x + 5)².",
+          "pitfall": "3(2x + 5)² esquece o 2 de dentro."
+        },
+        {
+          "topic": "Exponencial",
+          "statement": "Qual é a derivada de e^(3x)?",
+          "options": [
+            "e^(3x)",
+            "3e^(3x)",
+            "3xe^(3x − 1)",
+            "e³",
+            "e^(3x)/3"
+          ],
+          "correct_index": 1,
+          "explanation": "De fora: e^(3x). De dentro: 3.",
+          "pitfall": "Tratar como potência de x é o erro."
+        },
+        {
+          "topic": "Engrenagens",
+          "statement": "u muda 4 vezes mais rápido que x, e y muda 5 vezes mais rápido que u. Quanto y muda em relação a x?",
+          "options": [
+            "9",
+            "20",
+            "1,25",
+            "0,8",
+            "4"
+          ],
+          "correct_index": 1,
+          "explanation": "As rapidezes se multiplicam: 4 × 5 = 20.",
+          "pitfall": "9 soma em vez de multiplicar."
+        },
+        {
+          "topic": "Num ponto",
+          "statement": "Com h(x) = (x² + 1)², quanto vale h′(1)?",
+          "options": [
+            "4",
+            "8",
+            "2",
+            "16",
+            "6"
+          ],
+          "correct_index": 1,
+          "explanation": "h′(x) = 2(x² + 1) · 2x. Em x = 1: 2 × 2 × 2 = 8.",
+          "pitfall": "4 esquece o 2x de dentro."
+        },
+        {
+          "topic": "Logaritmo",
+          "statement": "Qual é a derivada de ln(x² + 1)?",
+          "options": [
+            "1/(x² + 1)",
+            "2x/(x² + 1)",
+            "2x",
+            "ln(2x)",
+            "1/x²"
+          ],
+          "correct_index": 1,
+          "explanation": "De fora: 1/(x² + 1). De dentro: 2x. Multiplicando: 2x/(x² + 1).",
+          "pitfall": "1/(x² + 1) esquece a de dentro."
+        },
+        {
+          "topic": "Rede",
+          "statement": "Por que a regra da cadeia é essencial para treinar redes neurais?",
+          "options": [
+            "porque a rede é uma fila de funções, e o erro depende dos pesos por essa fila",
+            "porque as redes usam logaritmos",
+            "porque torna a rede menor",
+            "porque dispensa derivadas",
+            "porque só funciona com duas camadas"
+          ],
+          "correct_index": 0,
+          "explanation": "Para saber o efeito de um peso do começo, multiplicam-se as rapidezes de todas as camadas até o erro.",
+          "pitfall": "Ela não dispensa derivadas: é a regra de como juntá-las."
+        },
+        {
+          "topic": "Retropropagação",
+          "statement": "Por que a retropropagação começa pelo fim da rede?",
+          "options": [
+            "porque o fim é mais importante",
+            "para reaproveitar as contas já feitas camada por camada",
+            "porque o começo não tem derivada",
+            "por costume",
+            "porque o erro está no começo"
+          ],
+          "correct_index": 1,
+          "explanation": "Cada camada usa o resultado da camada seguinte, que já foi calculado. Nada é refeito.",
+          "pitfall": "O começo tem derivada; só sai mais caro calcular por ele."
+        },
+        {
+          "topic": "Cadeia",
+          "format": "order",
+          "statement": "Ponha na ordem os passos para derivar g(f(x)).",
+          "options": [
+            "Identificar a função de dentro e a de fora",
+            "Derivar a de fora, mantendo a de dentro como está",
+            "Derivar a de dentro",
+            "Multiplicar os dois resultados"
+          ],
+          "explanation": "Separar as duas é o passo que evita esquecer um pedaço.",
+          "pitfall": "Multiplicar antes de derivar a de dentro deixa a conta pela metade."
+        }
+      ]
+    },
+    {
+      "slug": "derivadas-parciais",
+      "title": "Derivadas parciais: mexer numa coisa de cada vez",
+      "module": "Várias variáveis",
+      "summary": "Quando a função depende de várias entradas, mede-se a rapidez em relação a uma só, segurando as outras paradas. Uma rede tem milhões de entradas assim.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O chuveiro de dois registros",
+          "body": [
+            "Um chuveiro tem registro de água quente e de água fria. A temperatura depende dos dois.",
+            "Para entender o efeito de cada um, você mexe só no quente e deixa o frio parado. Depois faz o contrário."
+          ],
+          "terms": [
+            {
+              "word": "Função",
+              "meaning": "uma regra que recebe valores e devolve exatamente um valor."
+            },
+            {
+              "word": "Variável",
+              "meaning": "uma letra que representa um valor que pode mudar, como x ou y."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Funções de várias entradas",
+          "body": [
+            "f(x, y) = x² + 3xy recebe dois números e devolve um. O preço de um apartamento pode depender de área, bairro e andar.",
+            "O erro de uma rede neural depende de milhões de pesos ao mesmo tempo."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Segurar as outras paradas",
+          "body": [
+            "A derivada parcial em relação a x trata y como um número fixo. Escreve-se ∂f/∂x, com um d arredondado.",
+            "Depois, faz-se o mesmo em relação a y, tratando x como fixo."
+          ],
+          "terms": [
+            {
+              "word": "Derivada",
+              "meaning": "a rapidez com que uma função muda num ponto."
+            },
+            {
+              "word": "Derivada parcial",
+              "meaning": "a derivada em relação a uma variável só, com as outras seguradas paradas. Escreve-se ∂f/∂x."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Um exemplo",
+          "body": [
+            "Com f(x, y) = x² + 3xy, derive em x pensando em y como um número, como 5. Depois em y, pensando em x como um número."
+          ],
+          "example": {
+            "label": "f(x, y) = x² + 3xy",
+            "lines": [
+              "∂f/∂x: x² vira 2x; 3xy vira 3y. Resultado: 2x + 3y",
+              "∂f/∂y: x² é constante e vira 0; 3xy vira 3x. Resultado: 3x",
+              "No ponto (1, 2): ∂f/∂x = 8 e ∂f/∂y = 3"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "No desenho",
+          "body": [
+            "Uma função de duas entradas é uma superfície, como um relevo com morros e vales.",
+            "∂f/∂x é a inclinação andando só na direção leste. ∂f/∂y é a inclinação andando só na direção norte."
+          ],
+          "figure": {
+            "src": "/figuras/calculo/superficie.svg",
+            "alt": "Um mapa de relevo visto de cima, com curvas de nível em volta de um vale. Duas setas saem de um ponto: uma para o leste, marcada ∂f/∂x, e outra para o norte, marcada ∂f/∂y.",
+            "caption": "Cada parcial é a inclinação numa direção só."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que cada número diz",
+          "body": [
+            "Se ∂f/∂x = 8 e ∂f/∂y = 3, mexer em x muda a função bem mais que mexer em y, naquele ponto.",
+            "Numa rede, a derivada parcial do erro em relação a um peso diz o quanto aquele peso está atrapalhando."
+          ],
+          "terms": [
+            {
+              "word": "Peso",
+              "meaning": "um número ajustável dentro de uma rede neural."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "No PyTorch",
+          "body": [
+            "A biblioteca calcula todas as parciais de uma vez."
+          ],
+          "code": {
+            "label": "Parciais automáticas",
+            "text": "import torch\nx = torch.tensor(1.0, requires_grad=True)\ny = torch.tensor(2.0, requires_grad=True)\nf = x ** 2 + 3 * x * y\nf.backward()\nprint(x.grad, y.grad)",
+            "notes": [
+              "Traz o PyTorch.",
+              "Cria x = 1 e pede para acompanhar as contas.",
+              "Cria y = 2 do mesmo jeito.",
+              "Calcula f.",
+              "Calcula as derivadas parciais.",
+              "Mostra tensor(8.) e tensor(3.), as mesmas do exemplo."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem parciais de polinômios com duas letras, e o valor delas num ponto.",
+            "O truque é sempre o mesmo: a letra que não é a da vez vira um número parado."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde as parciais confundem."
+          ],
+          "bullets": [
+            "Derivar y como se fosse variável na parcial em x.",
+            "Esquecer que um termo só com y some na parcial em x.",
+            "Trocar ∂f/∂x com ∂f/∂y.",
+            "Trocar os números antes de derivar."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Uma entrada de cada vez."
+          ],
+          "bullets": [
+            "Várias entradas: f(x, y).",
+            "∂f/∂x: derive em x com y parado.",
+            "∂f/∂y: derive em y com x parado.",
+            "No relevo, cada parcial é a inclinação numa direção.",
+            "A parcial do erro em relação a um peso mede o efeito dele.",
+            "O PyTorch calcula todas de uma vez."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Em x",
+          "statement": "Com f(x, y) = 4x² + y³, qual é ∂f/∂x?",
+          "options": [
+            "8x",
+            "8x + 3y²",
+            "3y²",
+            "4x²",
+            "8x + y³"
+          ],
+          "correct_index": 0,
+          "explanation": "y³ fica parado e vira 0. 4x² vira 8x.",
+          "pitfall": "8x + 3y² junta as duas parciais."
+        },
+        {
+          "topic": "Em y",
+          "statement": "Com f(x, y) = 4x² + y³, qual é ∂f/∂y?",
+          "options": [
+            "3y²",
+            "8x",
+            "3y² + 8x",
+            "y²",
+            "0"
+          ],
+          "correct_index": 0,
+          "explanation": "4x² é constante em y e some. y³ vira 3y².",
+          "pitfall": "8x é a parcial em x."
+        },
+        {
+          "topic": "Produto",
+          "statement": "Com f(x, y) = 5xy, qual é ∂f/∂x?",
+          "options": [
+            "5y",
+            "5x",
+            "5",
+            "5xy",
+            "y"
+          ],
+          "correct_index": 0,
+          "explanation": "Com y parado, 5y é só um número multiplicando x.",
+          "pitfall": "5x é a parcial em y."
+        },
+        {
+          "topic": "No ponto",
+          "statement": "Com f(x, y) = x² + xy, quanto vale ∂f/∂x no ponto (2, 3)?",
+          "options": [
+            "7",
+            "4",
+            "10",
+            "2",
+            "5"
+          ],
+          "correct_index": 0,
+          "explanation": "∂f/∂x = 2x + y. Em (2, 3): 4 + 3 = 7.",
+          "pitfall": "4 esquece o y."
+        },
+        {
+          "topic": "Leitura",
+          "statement": "Num ponto, ∂f/∂x = 10 e ∂f/∂y = 0,5. O que isso sugere?",
+          "options": [
+            "mexer em x muda muito mais a função que mexer em y",
+            "mexer em y muda mais",
+            "as duas mudam igual",
+            "a função não depende de x",
+            "a função vale 10"
+          ],
+          "correct_index": 0,
+          "explanation": "A rapidez em x é 20 vezes maior que em y, naquele ponto.",
+          "pitfall": "10 não é o valor da função: é a rapidez em x."
+        },
+        {
+          "topic": "Constante",
+          "statement": "Com f(x, y) = 7y + 2, qual é ∂f/∂x?",
+          "options": [
+            "7",
+            "0",
+            "2",
+            "7y",
+            "9"
+          ],
+          "correct_index": 1,
+          "explanation": "Não há x na função: mexer em x não muda nada.",
+          "pitfall": "7 é a parcial em y."
+        },
+        {
+          "topic": "Rede",
+          "statement": "O que a parcial do erro em relação a um peso informa?",
+          "options": [
+            "o valor do peso",
+            "quanto o erro muda quando só aquele peso muda",
+            "quantos pesos a rede tem",
+            "o erro total",
+            "a velocidade do computador"
+          ],
+          "correct_index": 1,
+          "explanation": "É a rapidez do erro em relação àquele peso, com os outros parados.",
+          "pitfall": "O valor do peso é outra coisa: a parcial mede o efeito dele."
+        },
+        {
+          "topic": "Parciais",
+          "format": "match",
+          "statement": "Com f(x, y) = x²y, ligue cada conta ao resultado.",
+          "pairs": [
+            {
+              "left": "∂f/∂x",
+              "right": "2xy"
+            },
+            {
+              "left": "∂f/∂y",
+              "right": "x²"
+            },
+            {
+              "left": "∂f/∂x em (1, 3)",
+              "right": "6"
+            },
+            {
+              "left": "∂f/∂y em (1, 3)",
+              "right": "1"
+            }
+          ],
+          "explanation": "Em x, o y fica parado: 2xy. Em y, o x² fica parado: x². No ponto (1, 3): 6 e 1.",
+          "pitfall": "Trocar as parciais é o erro mais comum."
+        }
+      ]
+    },
+    {
+      "slug": "gradiente",
+      "title": "Gradiente: a seta que aponta para a subida",
+      "module": "Várias variáveis",
+      "summary": "Juntando todas as derivadas parciais num vetor, sai o gradiente. Ele aponta para onde a função sobe mais rápido, e o lado oposto é o caminho mais curto para descer.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Perdido na neblina, no morro",
+          "body": [
+            "Você está num morro com neblina e quer descer até o vale. Não enxerga longe, mas sente a inclinação sob os pés.",
+            "A estratégia é simples: veja para onde o chão desce mais forte e dê um passo para lá. Depois repita."
+          ],
+          "terms": [
+            {
+              "word": "Função",
+              "meaning": "uma regra que recebe valores e devolve exatamente um valor."
+            },
+            {
+              "word": "Variável",
+              "meaning": "uma letra que representa um valor que pode mudar, como x ou y."
+            },
+            {
+              "word": "Derivada parcial",
+              "meaning": "a derivada em relação a uma variável só, com as outras paradas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Juntando as parciais",
+          "body": [
+            "O gradiente é o vetor com todas as derivadas parciais, uma em cada posição. Escreve-se ∇f, com um triângulo de ponta para baixo.",
+            "Para f(x, y), ele tem duas componentes: (∂f/∂x, ∂f/∂y)."
+          ],
+          "terms": [
+            {
+              "word": "Vetor",
+              "meaning": "uma lista ordenada de números, que no desenho é uma seta."
+            },
+            {
+              "word": "Gradiente",
+              "meaning": "o vetor com todas as derivadas parciais de uma função. Escreve-se ∇f."
+            }
+          ],
+          "example": {
+            "label": "f(x, y) = x² + y²",
+            "lines": [
+              "∂f/∂x = 2x",
+              "∂f/∂y = 2y",
+              "∇f = (2x, 2y)",
+              "No ponto (1, 2): ∇f = (2, 4)"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Para onde ele aponta",
+          "body": [
+            "Entre todas as direções, o gradiente aponta para a de subida mais forte. O tamanho da seta diz o quanto a subida é forte.",
+            "O vetor oposto, −∇f, aponta para a descida mais forte."
+          ],
+          "figure": {
+            "src": "/figuras/calculo/gradiente.svg",
+            "alt": "Curvas de nível concêntricas em volta de um vale no centro. Num ponto, uma seta do gradiente aponta para fora, subindo; a seta oposta aponta para o centro, descendo.",
+            "caption": "O gradiente sobe; o seu oposto desce direto para o vale."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Curvas de nível",
+          "body": [
+            "Nos mapas de trilha, as curvas de nível ligam pontos da mesma altura. O gradiente é sempre perpendicular a elas.",
+            "Andar sobre uma curva de nível não muda a altura. Andar na direção do gradiente muda o mais rápido possível."
+          ],
+          "terms": [
+            {
+              "word": "Curva de nível",
+              "meaning": "a linha que liga os pontos em que a função tem o mesmo valor."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "No fundo do vale",
+          "body": [
+            "No ponto mais baixo, o chão é plano em todas as direções. Todas as parciais são zero, e o gradiente é o vetor zero.",
+            "Achar onde o gradiente é zero é achar candidatos a mínimo ou máximo."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O gradiente de uma rede",
+          "body": [
+            "O erro de uma rede depende de milhões de pesos. O gradiente dele é um vetor com milhões de componentes, uma por peso.",
+            "Cada componente diz para que lado aquele peso deve mudar para o erro subir. Para o erro cair, anda-se ao contrário."
+          ],
+          "terms": [
+            {
+              "word": "Peso",
+              "meaning": "um número ajustável dentro de uma rede neural."
+            },
+            {
+              "word": "Função de perda",
+              "meaning": "a função que mede o quanto a rede errou. É ela que se quer diminuir."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "No Python",
+          "body": [
+            "Com NumPy, dá para escrever o gradiente como um vetor."
+          ],
+          "code": {
+            "label": "Gradiente de x² + y²",
+            "text": "import numpy as np\ndef grad(p):\n    x, y = p\n    return np.array([2 * x, 2 * y])\nprint(grad(np.array([1, 2])))",
+            "notes": [
+              "Traz o NumPy.",
+              "Cria a função que calcula o gradiente num ponto p.",
+              "Separa as duas coordenadas do ponto.",
+              "Devolve o vetor das parciais: (2x, 2y).",
+              "Mostra [2 4] no ponto (1, 2)."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem o cálculo do gradiente num ponto e a direção de maior subida ou descida.",
+            "Para a maior descida, a resposta é o gradiente com os sinais trocados."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde o gradiente engana."
+          ],
+          "bullets": [
+            "Achar que o gradiente aponta para baixo: ele aponta para a subida.",
+            "Esquecer de calcular no ponto pedido.",
+            "Confundir o gradiente, que é um vetor, com um número.",
+            "Achar que gradiente zero sempre é mínimo: pode ser máximo ou um ponto de sela."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A seta da subida."
+          ],
+          "bullets": [
+            "∇f junta todas as derivadas parciais num vetor.",
+            "Aponta para a subida mais forte.",
+            "−∇f aponta para a descida mais forte.",
+            "É perpendicular às curvas de nível.",
+            "No fundo do vale, ∇f é zero.",
+            "Numa rede, há uma componente do gradiente para cada peso."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Calcular",
+          "statement": "Qual é o gradiente de f(x, y) = 3x + 5y?",
+          "options": [
+            "(3, 5)",
+            "(5, 3)",
+            "8",
+            "(3x, 5y)",
+            "(0, 0)"
+          ],
+          "correct_index": 0,
+          "explanation": "∂f/∂x = 3 e ∂f/∂y = 5.",
+          "pitfall": "(3x, 5y) deixa os x e y que somem ao derivar."
+        },
+        {
+          "topic": "No ponto",
+          "statement": "Qual é o gradiente de f(x, y) = x² + 3y² em (1, 1)?",
+          "options": [
+            "(2, 6)",
+            "(1, 3)",
+            "(2, 3)",
+            "(4, 4)",
+            "8"
+          ],
+          "correct_index": 0,
+          "explanation": "∇f = (2x, 6y). Em (1, 1): (2, 6).",
+          "pitfall": "(1, 3) esquece de derivar."
+        },
+        {
+          "topic": "Descida",
+          "statement": "Em certo ponto, ∇f = (4, −2). Para onde se deve andar para descer mais rápido?",
+          "options": [
+            "(4, −2)",
+            "(−4, 2)",
+            "(2, 4)",
+            "(0, 0)",
+            "(4, 2)"
+          ],
+          "correct_index": 1,
+          "explanation": "A descida mais forte é o oposto do gradiente.",
+          "pitfall": "(4, −2) é a direção de subida."
+        },
+        {
+          "topic": "Zero",
+          "statement": "No ponto mais baixo de um vale suave, o gradiente vale:",
+          "options": [
+            "o menor valor",
+            "o vetor zero",
+            "(1, 1)",
+            "infinito",
+            "a altura do vale"
+          ],
+          "correct_index": 1,
+          "explanation": "No fundo, o chão é plano em todas as direções: todas as parciais são zero.",
+          "pitfall": "A altura do vale é o valor da função, e não o gradiente."
+        },
+        {
+          "topic": "Nível",
+          "statement": "Andando ao longo de uma curva de nível, o valor da função:",
+          "options": [
+            "aumenta",
+            "diminui",
+            "não muda",
+            "dobra",
+            "vira zero"
+          ],
+          "correct_index": 2,
+          "explanation": "A curva de nível liga pontos de mesmo valor.",
+          "pitfall": "Para mudar o mais rápido possível, anda-se no gradiente, perpendicular à curva."
+        },
+        {
+          "topic": "Tamanho",
+          "statement": "Numa rede com 1 milhão de pesos, quantas componentes tem o gradiente do erro?",
+          "options": [
+            "1",
+            "2",
+            "1 milhão",
+            "depende da camada",
+            "nenhuma"
+          ],
+          "correct_index": 2,
+          "explanation": "Uma derivada parcial por peso.",
+          "pitfall": "Uma só seria a derivada de uma função de uma entrada."
+        },
+        {
+          "topic": "Sela",
+          "statement": "O gradiente é zero num ponto. Isso garante que ali é um mínimo?",
+          "options": [
+            "sim, sempre",
+            "não: pode ser máximo ou ponto de sela",
+            "só em duas variáveis",
+            "sim, se a função for positiva",
+            "não existe gradiente zero"
+          ],
+          "correct_index": 1,
+          "explanation": "Gradiente zero é chão plano, que também acontece no topo ou numa sela, que sobe num sentido e desce no outro.",
+          "pitfall": "Zero é candidato, e não garantia."
+        },
+        {
+          "topic": "Gradiente",
+          "format": "match",
+          "statement": "Ligue cada ideia à sua descrição.",
+          "pairs": [
+            {
+              "left": "∇f",
+              "right": "aponta para a maior subida"
+            },
+            {
+              "left": "−∇f",
+              "right": "aponta para a maior descida"
+            },
+            {
+              "left": "curva de nível",
+              "right": "pontos com o mesmo valor"
+            },
+            {
+              "left": "∇f = 0",
+              "right": "chão plano no ponto"
+            }
+          ],
+          "explanation": "O gradiente sobe, o oposto desce, e a curva de nível não muda a altura.",
+          "pitfall": "Chão plano não quer dizer fundo: pode ser topo."
+        }
+      ]
+    },
+    {
+      "slug": "maximos-e-minimos",
+      "title": "Máximos e mínimos: achar o melhor valor",
+      "module": "Otimizar",
+      "summary": "Nos topos e nos fundos de uma curva suave, a derivada é zero. Esse fato transforma “achar o melhor” numa equação, e é a base da otimização.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O melhor preço",
+          "body": [
+            "Uma loja que cobra muito barato vende muito mas lucra pouco em cada peça. Cobrando caro demais, quase ninguém compra.",
+            "Em algum ponto no meio está o preço de lucro máximo. O cálculo acha esse ponto."
+          ],
+          "terms": [
+            {
+              "word": "Função",
+              "meaning": "uma regra que recebe valores e devolve exatamente um valor."
+            },
+            {
+              "word": "Derivada",
+              "meaning": "a rapidez com que uma função muda num ponto."
+            },
+            {
+              "word": "Variável",
+              "meaning": "uma letra que representa um valor que pode mudar, como x ou y."
+            },
+            {
+              "word": "Otimização",
+              "meaning": "procurar o valor de entrada que deixa uma função a maior ou a menor possível."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "No topo, a derivada é zero",
+          "body": [
+            "Subindo um morro, a derivada é positiva. Descendo, negativa. Exatamente no topo, ela passa por zero.",
+            "O mesmo vale para o fundo de um vale. Então, para achar topos e fundos, resolva f′(x) = 0."
+          ],
+          "terms": [
+            {
+              "word": "Tangente",
+              "meaning": "a reta que só encosta na curva num ponto, com a mesma inclinação que ela tem ali."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/calculo/max-min.svg",
+            "alt": "Uma curva com um morro e um vale. No topo do morro e no fundo do vale, pequenas retas tangentes deitadas mostram que a derivada é zero.",
+            "caption": "Nos topos e nos fundos, a tangente fica deitada."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Um exemplo",
+          "body": [
+            "O lucro é L(p) = −p² + 40p − 300. Derive e iguale a zero."
+          ],
+          "terms": [
+            {
+              "word": "Equação",
+              "meaning": "uma conta com um valor escondido, em que os dois lados do sinal de igual valem o mesmo."
+            }
+          ],
+          "example": {
+            "label": "Lucro máximo",
+            "lines": [
+              "L′(p) = −2p + 40",
+              "−2p + 40 = 0",
+              "p = 20",
+              "L(20) = −400 + 800 − 300 = 100"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Topo ou fundo?",
+          "body": [
+            "A derivada zero não diz se é topo ou fundo. A segunda derivada diz: negativa, a curva entorta para baixo, é topo. Positiva, entorta para cima, é fundo.",
+            "No lucro, L″(p) = −2, negativa: p = 20 é máximo mesmo."
+          ],
+          "table": {
+            "label": "Teste da segunda derivada",
+            "headers": [
+              "f″ no ponto",
+              "O ponto é"
+            ],
+            "rows": [
+              [
+                "negativa",
+                "máximo (topo)"
+              ],
+              [
+                "positiva",
+                "mínimo (fundo)"
+              ],
+              [
+                "zero",
+                "o teste não decide"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Local e global",
+          "body": [
+            "Uma curva pode ter vários vales. O fundo de cada um é um mínimo local. O mais baixo de todos é o mínimo global.",
+            "O treino de redes neurais procura vales na paisagem do erro. Ninguém garante achar o mais fundo, mas na prática os vales encontrados costumam ser bons."
+          ],
+          "terms": [
+            {
+              "word": "Mínimo local",
+              "meaning": "o ponto mais baixo da vizinhança, que pode não ser o mais baixo de todos."
+            },
+            {
+              "word": "Mínimo global",
+              "meaning": "o ponto mais baixo de toda a função."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quando a equação não se resolve",
+          "body": [
+            "Com uma variável e uma fórmula simples, resolve-se f′(x) = 0 à mão. Com milhões de pesos, não há como.",
+            "Aí entra a estratégia do morro na neblina: dar passos pequenos na direção que desce. É o gradiente descendente, a próxima lição."
+          ],
+          "terms": [
+            {
+              "word": "Peso",
+              "meaning": "um número ajustável dentro de uma rede neural."
+            },
+            {
+              "word": "Gradiente",
+              "meaning": "o vetor com a derivada da função em relação a cada entrada. Ele aponta para a subida."
+            },
+            {
+              "word": "Gradiente descendente",
+              "meaning": "o método de chegar ao mínimo dando passos contra o gradiente."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem problemas de máximo lucro, menor custo e maior área. Monte a função e derive. Depois iguale a zero e confira se é máximo ou mínimo.",
+            "Leia se a pergunta quer o x do ponto ou o valor da função nele."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a otimização engana."
+          ],
+          "bullets": [
+            "Responder o p quando pediram o lucro máximo, que é L(p).",
+            "Achar que derivada zero sempre é máximo.",
+            "Confundir mínimo local com global.",
+            "Esquecer as pontas do intervalo, que podem ter o maior valor."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Melhor valor: derivada zero."
+          ],
+          "bullets": [
+            "Topo ou fundo de curva suave: f′(x) = 0.",
+            "f″ negativa: máximo. Positiva: mínimo.",
+            "Local: o melhor da vizinhança. Global: o melhor de todos.",
+            "Com poucas variáveis, resolve-se a equação.",
+            "Com milhões de pesos, usa-se o gradiente descendente.",
+            "Leia se a pergunta pede o ponto ou o valor."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Ponto",
+          "statement": "Em que x a função f(x) = x² − 8x + 3 tem o seu mínimo?",
+          "options": [
+            "4",
+            "8",
+            "−4",
+            "3",
+            "−13"
+          ],
+          "correct_index": 0,
+          "explanation": "f′(x) = 2x − 8 = 0, então x = 4.",
+          "pitfall": "−13 é o valor mínimo f(4), e não o x."
+        },
+        {
+          "topic": "Valor",
+          "statement": "Qual é o valor mínimo de f(x) = x² − 8x + 3?",
+          "options": [
+            "4",
+            "−13",
+            "3",
+            "−16",
+            "19"
+          ],
+          "correct_index": 1,
+          "explanation": "f(4) = 16 − 32 + 3 = −13.",
+          "pitfall": "4 é onde o mínimo acontece."
+        },
+        {
+          "topic": "Tipo",
+          "statement": "Com f″(x) = −6 no ponto em que f′(x) = 0, o ponto é:",
+          "options": [
+            "mínimo",
+            "máximo",
+            "nem um nem outro",
+            "raiz",
+            "não dá para saber"
+          ],
+          "correct_index": 1,
+          "explanation": "Segunda derivada negativa: a curva entorta para baixo. É topo.",
+          "pitfall": "Positiva seria mínimo."
+        },
+        {
+          "topic": "Área",
+          "statement": "Com 40 m de cerca, qual retângulo tem a maior área? A área é A(x) = x(20 − x).",
+          "options": [
+            "x = 5",
+            "x = 10",
+            "x = 20",
+            "x = 15",
+            "x = 40"
+          ],
+          "correct_index": 1,
+          "explanation": "A′(x) = 20 − 2x = 0 dá x = 10. É um quadrado de 10 por 10.",
+          "pitfall": "x = 20 zera o outro lado: área zero."
+        },
+        {
+          "topic": "Local",
+          "statement": "Uma curva tem dois vales, com fundos em −3 e em −8. O mínimo global é:",
+          "options": [
+            "−3",
+            "−8",
+            "os dois",
+            "nenhum",
+            "−11"
+          ],
+          "correct_index": 1,
+          "explanation": "O global é o mais baixo de todos: −8.",
+          "pitfall": "−3 é só um mínimo local."
+        },
+        {
+          "topic": "Cúbica",
+          "statement": "Onde f(x) = x³ − 3x tem derivada zero?",
+          "options": [
+            "x = 1 e x = −1",
+            "x = 3",
+            "x = 0",
+            "x = √3",
+            "nunca"
+          ],
+          "correct_index": 0,
+          "explanation": "f′(x) = 3x² − 3 = 0 dá x² = 1, ou seja x = 1 ou x = −1.",
+          "pitfall": "√3 é onde a própria função vale zero, e não a derivada."
+        },
+        {
+          "topic": "Rede",
+          "statement": "Por que o treino de uma rede não resolve f′ = 0 direto?",
+          "options": [
+            "porque há milhões de pesos e nenhuma fórmula pronta",
+            "porque a derivada não existe",
+            "porque o erro é sempre zero",
+            "porque a rede não tem função",
+            "por falta de memória"
+          ],
+          "correct_index": 0,
+          "explanation": "Com milhões de variáveis, resolver a equação é impossível. Dão-se passos em direção ao vale.",
+          "pitfall": "A derivada existe; o que falta é um jeito de resolver tudo de uma vez."
+        },
+        {
+          "topic": "Otimizar",
+          "format": "order",
+          "statement": "Ponha na ordem os passos de um problema de máximo ou mínimo.",
+          "options": [
+            "Montar a função a otimizar",
+            "Derivar e igualar a zero",
+            "Resolver para achar o ponto",
+            "Conferir com a segunda derivada se é máximo ou mínimo"
+          ],
+          "explanation": "Sem a função montada não há o que derivar. A conferência vem no fim.",
+          "pitfall": "Pular a conferência pode entregar um mínimo quando se pediu máximo."
+        }
+      ]
+    },
+    {
+      "slug": "gradiente-descendente",
+      "title": "Gradiente descendente: descer o morro em passinhos",
+      "module": "Otimizar",
+      "summary": "Comece em qualquer lugar, calcule o gradiente e dê um passo para o lado oposto. Repita. É o algoritmo com que todas as redes neurais aprendem.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A neblina, de novo",
+          "body": [
+            "No morro com neblina, você sente a inclinação e dá um passo para baixo. No lugar novo, sente de novo e dá outro passo.",
+            "Sem mapa nenhum, passo a passo, você chega ao vale. Essa receita tem nome."
+          ],
+          "terms": [
+            {
+              "word": "Função",
+              "meaning": "uma regra que recebe valores e devolve exatamente um valor."
+            },
+            {
+              "word": "Derivada",
+              "meaning": "a rapidez com que uma função muda num ponto."
+            },
+            {
+              "word": "Derivada parcial",
+              "meaning": "a derivada em relação a uma entrada só, com as outras paradas."
+            },
+            {
+              "word": "Gradiente",
+              "meaning": "o vetor das derivadas parciais. Ele aponta para a subida mais forte."
+            },
+            {
+              "word": "Gradiente descendente",
+              "meaning": "o método de chegar ao mínimo dando passos repetidos na direção oposta ao gradiente."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A regra do passo",
+          "body": [
+            "A cada passo: novo x = x atual − η × gradiente. A letra grega η (eta) é o tamanho do passo.",
+            "O sinal de menos faz andar contra o gradiente, ou seja, para baixo."
+          ],
+          "terms": [
+            {
+              "word": "Taxa de aprendizado",
+              "meaning": "o número η que decide o tamanho de cada passo. Em inglês, learning rate."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Um exemplo à mão",
+          "body": [
+            "Procure o mínimo de f(x) = (x − 3)², começando em x = 0, com η = 0,1. A derivada é f′(x) = 2(x − 3)."
+          ],
+          "terms": [
+            {
+              "word": "Derivada",
+              "meaning": "a rapidez com que a função muda. Com uma entrada só, o gradiente é a própria derivada."
+            }
+          ],
+          "example": {
+            "label": "Descendo",
+            "lines": [
+              "x = 0: f′ = −6; novo x = 0 − 0,1 × (−6) = 0,6",
+              "x = 0,6: f′ = −4,8; novo x = 0,6 + 0,48 = 1,08",
+              "x = 1,08: f′ = −3,84; novo x = 1,464",
+              "Os passos encolhem e x se aproxima de 3"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os passos encolhem sozinhos",
+          "body": [
+            "Perto do fundo, a ladeira é suave e o gradiente é pequeno. Então os passos ficam curtos sem ninguém mandar.",
+            "Longe do fundo, a ladeira é forte, e os passos são largos."
+          ],
+          "figure": {
+            "src": "/figuras/calculo/descida.svg",
+            "alt": "Uma parábola com vários pontos marcados sobre ela, da esquerda até o fundo. Setas ligam um ponto ao seguinte, com passos largos no começo e cada vez mais curtos perto do mínimo.",
+            "caption": "Passos largos longe do fundo, curtos perto dele."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Em código",
+          "body": [
+            "O método inteiro cabe num laço de poucas linhas."
+          ],
+          "code": {
+            "label": "Gradiente descendente",
+            "text": "x = 0.0\neta = 0.1\nfor passo in range(50):\n    grad = 2 * (x - 3)\n    x = x - eta * grad\nprint(x)",
+            "notes": [
+              "Começa em x = 0.",
+              "Escolhe a taxa de aprendizado.",
+              "Repete 50 passos.",
+              "Calcula a derivada no ponto atual.",
+              "Anda contra ela, na medida da taxa.",
+              "Mostra um número muito perto de 3, o mínimo."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Numa rede neural",
+          "body": [
+            "Numa rede, x é o vetor de todos os pesos, e a função é o erro. A regra é a mesma, com milhões de componentes: pesos = pesos − η × gradiente do erro.",
+            "O gradiente sai multiplicando as rapidezes de cada camada, de trás para frente. Treinar é repetir isso milhões de vezes."
+          ],
+          "terms": [
+            {
+              "word": "Peso",
+              "meaning": "um número ajustável dentro de uma rede neural."
+            },
+            {
+              "word": "Função de perda",
+              "meaning": "a função que mede o erro da rede. É ela que se desce."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Parar quando?",
+          "body": [
+            "Quando o gradiente fica quase zero, os passos quase não mudam nada: chegou perto do fundo.",
+            "Na prática, também se para depois de um número fixo de passos, ou quando o erro para de cair."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem calcular um ou dois passos à mão e explicar por que se usa o sinal de menos.",
+            "Em entrevistas de IA, cai descrever o método em uma frase: andar contra o gradiente, em passos do tamanho da taxa de aprendizado."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a descida tropeça."
+          ],
+          "bullets": [
+            "Somar o gradiente em vez de subtrair: aí se sobe o morro.",
+            "Esquecer de multiplicar pela taxa de aprendizado.",
+            "Achar que sempre se chega ao mínimo global.",
+            "Achar que o número de passos é fixo pela matemática: é escolha."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Passinhos contra o gradiente."
+          ],
+          "bullets": [
+            "Novo x = x − η × gradiente.",
+            "O menos faz descer.",
+            "η é a taxa de aprendizado: o tamanho do passo.",
+            "Perto do fundo, os passos encolhem sozinhos.",
+            "Numa rede, x é o vetor de todos os pesos.",
+            "Treinar é repetir esse passo milhões de vezes."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Um passo",
+          "statement": "Com f(x) = x², x = 4 e η = 0,1, qual é o próximo x?",
+          "options": [
+            "3,2",
+            "4,8",
+            "3,6",
+            "0,8",
+            "4"
+          ],
+          "correct_index": 0,
+          "explanation": "f′(4) = 8. Novo x = 4 − 0,1 × 8 = 3,2.",
+          "pitfall": "4,8 soma em vez de subtrair."
+        },
+        {
+          "topic": "Sinal",
+          "statement": "Por que a regra usa o sinal de menos?",
+          "options": [
+            "porque o gradiente aponta para a subida",
+            "para o x ficar negativo",
+            "porque η é negativo",
+            "por costume",
+            "para somar mais rápido"
+          ],
+          "correct_index": 0,
+          "explanation": "Andar contra o gradiente é andar para baixo.",
+          "pitfall": "η é positivo; quem inverte a direção é o menos."
+        },
+        {
+          "topic": "Dois passos",
+          "statement": "Com f(x) = (x − 3)², x = 0 e η = 0,5, onde se está depois de um passo?",
+          "options": [
+            "3",
+            "1,5",
+            "6",
+            "−3",
+            "0,5"
+          ],
+          "correct_index": 0,
+          "explanation": "f′(0) = −6. Novo x = 0 − 0,5 × (−6) = 3, exatamente o mínimo.",
+          "pitfall": "1,5 usaria metade do passo."
+        },
+        {
+          "topic": "Encolher",
+          "statement": "Por que os passos encolhem perto do mínimo, mesmo com η fixo?",
+          "options": [
+            "porque o gradiente fica pequeno perto do fundo",
+            "porque η diminui sozinho",
+            "porque o computador cansa",
+            "porque a função muda",
+            "porque x vira zero"
+          ],
+          "correct_index": 0,
+          "explanation": "O passo é η vezes o gradiente, e o gradiente diminui no chão quase plano.",
+          "pitfall": "Com η fixo, quem encolhe é o gradiente."
+        },
+        {
+          "topic": "Rede",
+          "statement": "Numa rede neural, o que é o “x” do gradiente descendente?",
+          "options": [
+            "a entrada da rede",
+            "o vetor de todos os pesos",
+            "a taxa de aprendizado",
+            "o erro",
+            "a última camada"
+          ],
+          "correct_index": 1,
+          "explanation": "O que se ajusta são os pesos, e é deles que o erro depende.",
+          "pitfall": "A entrada é o dado; os pesos é que mudam no treino."
+        },
+        {
+          "topic": "Parada",
+          "statement": "Quando faz sentido parar o gradiente descendente?",
+          "options": [
+            "quando o gradiente fica quase zero ou o erro para de cair",
+            "depois do primeiro passo",
+            "quando x fica negativo",
+            "nunca",
+            "quando η vale zero"
+          ],
+          "correct_index": 0,
+          "explanation": "Gradiente quase zero é chão plano; os passos já não mudam nada.",
+          "pitfall": "Parar no primeiro passo quase nunca chega perto do fundo."
+        },
+        {
+          "topic": "Global",
+          "statement": "O gradiente descendente sempre acha o mínimo global?",
+          "options": [
+            "sim",
+            "não: pode parar num mínimo local",
+            "só com η grande",
+            "só com uma variável",
+            "sim, se rodar mais"
+          ],
+          "correct_index": 1,
+          "explanation": "Ele desce o vale onde está, que pode não ser o mais fundo.",
+          "pitfall": "Rodar mais só aprofunda no mesmo vale."
+        },
+        {
+          "topic": "Treinar",
+          "format": "order",
+          "statement": "Ponha na ordem um passo do gradiente descendente.",
+          "options": [
+            "Estar num valor atual dos pesos",
+            "Calcular o gradiente do erro nesse ponto",
+            "Multiplicar o gradiente pela taxa de aprendizado",
+            "Subtrair o resultado dos pesos"
+          ],
+          "explanation": "Sem o gradiente não há direção; sem a taxa não há tamanho de passo.",
+          "pitfall": "Somar em vez de subtrair faz subir o erro."
+        }
+      ]
+    },
+    {
+      "slug": "taxa-de-aprendizado",
+      "title": "Taxa de aprendizado: o tamanho certo do passo",
+      "module": "Otimizar",
+      "summary": "Passo pequeno demais demora uma eternidade; passo grande demais pula o vale e pode explodir. Escolher a taxa de aprendizado é uma das decisões mais importantes do treino.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Descendo a escada no escuro",
+          "body": [
+            "Com passos de formiga, você chega ao térreo, mas amanhã. Com saltos de três degraus, pode errar o degrau e rolar.",
+            "O tamanho do passo decide se você chega, quanto demora e se chega inteiro."
+          ],
+          "terms": [
+            {
+              "word": "Taxa de aprendizado",
+              "meaning": "o número η que decide o tamanho de cada passo do gradiente descendente. Em inglês, learning rate."
+            },
+            {
+              "word": "Gradiente descendente",
+              "meaning": "o método de descer até o mínimo dando passos contra o gradiente."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Pequena demais",
+          "body": [
+            "Com η muito pequeno, cada passo anda quase nada. O treino funciona, mas leva uma eternidade.",
+            "Em f(x) = (x − 3)², começando em 0 com η = 0,001, depois de 100 passos x ainda está perto de 0,5."
+          ],
+          "terms": [
+            {
+              "word": "Função",
+              "meaning": "uma regra que recebe valores e devolve exatamente um valor."
+            },
+            {
+              "word": "Derivada",
+              "meaning": "a rapidez com que uma função muda num ponto."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Grande demais",
+          "body": [
+            "Com η grande, o passo pula por cima do fundo e cai do outro lado da parede, mais alto. No passo seguinte, pula de volta, mais alto ainda.",
+            "Em f(x) = (x − 3)², começando em 0 com η = 1,1, o x vai para 6,6. Depois vai para −1,32 e para 8,18. Cada vez mais longe."
+          ],
+          "example": {
+            "label": "η = 1,1, a derivada é 2(x − 3)",
+            "lines": [
+              "x = 0 → 0 − 1,1 × (−6) = 6,6",
+              "x = 6,6 → 6,6 − 1,1 × 7,2 = −1,32",
+              "x = −1,32 → −1,32 + 9,5 = 8,18",
+              "Explodiu: cada passo mais longe do 3"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os três comportamentos",
+          "body": [
+            "O gráfico do erro ao longo do treino mostra qual é o caso. Descida lenta, descida boa ou erro subindo aos saltos."
+          ],
+          "figure": {
+            "src": "/figuras/calculo/taxas.svg",
+            "alt": "Três pequenos gráficos do erro ao longo dos passos. Com taxa pequena, o erro cai bem devagar. Com taxa boa, cai rápido e se estabiliza. Com taxa grande, o erro sobe aos saltos.",
+            "caption": "Pequena demais, na medida e grande demais."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Como se escolhe",
+          "body": [
+            "Não existe fórmula. Testam-se alguns valores espaçados, como 0,1, 0,01 e 0,001, e escolhe-se o que faz o erro cair rápido sem pular.",
+            "Para treinar modelos grandes, são comuns valores bem pequenos, como 0,0003."
+          ],
+          "terms": [
+            {
+              "word": "Hiperparâmetro",
+              "meaning": "uma escolha feita por quem treina, e não aprendida pela rede. A taxa de aprendizado é a mais famosa."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Mudar a taxa no meio do treino",
+          "body": [
+            "Uma boa estratégia é começar com passos maiores e ir diminuindo, para descer rápido e depois se acomodar no fundo.",
+            "Também é comum começar bem devagar por alguns passos, um aquecimento, antes de acelerar. Esse plano de valores se chama agenda da taxa de aprendizado."
+          ],
+          "terms": [
+            {
+              "word": "Agenda da taxa de aprendizado",
+              "meaning": "o plano que muda o η ao longo do treino. Em inglês, learning rate schedule."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Métodos que ajustam o passo",
+          "body": [
+            "Métodos mais espertos, como o Adam, dão um tamanho de passo próprio para cada peso. Eles se baseiam nos passos anteriores.",
+            "Eles não dispensam a taxa de aprendizado, mas deixam o treino bem menos sensível a ela. O Adam é o padrão para treinar modelos de linguagem."
+          ],
+          "terms": [
+            {
+              "word": "Peso",
+              "meaning": "um número ajustável dentro de uma rede neural."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Em entrevistas de IA, cai: o erro está subindo ou oscilando, o que fazer? Diminuir a taxa. O erro cai muito devagar? Aumentar.",
+            "Também cai calcular um ou dois passos com taxas diferentes."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a taxa engana."
+          ],
+          "bullets": [
+            "Achar que taxa maior sempre treina mais rápido.",
+            "Achar que taxa pequena sempre é segura: pode não chegar nunca.",
+            "Achar que existe um valor certo que serve para tudo.",
+            "Confundir a taxa com os pesos. A taxa é escolhida por quem treina; os pesos são aprendidos pela rede."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O passo certo."
+          ],
+          "bullets": [
+            "η pequeno demais: lento.",
+            "η grande demais: pula o fundo e pode explodir.",
+            "Escolhe-se testando valores espaçados.",
+            "É um hiperparâmetro: escolha de quem treina.",
+            "Agendas mudam o η durante o treino.",
+            "O Adam ajusta o passo de cada peso."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Oscila",
+          "statement": "O erro do treino sobe e desce aos saltos, cada vez mais alto. O que fazer com a taxa de aprendizado?",
+          "options": [
+            "aumentar",
+            "diminuir",
+            "manter",
+            "zerar",
+            "trocar o sinal"
+          ],
+          "correct_index": 1,
+          "explanation": "Passos grandes demais pulam o fundo. Diminuir a taxa resolve.",
+          "pitfall": "Aumentar pioraria a explosão."
+        },
+        {
+          "topic": "Lento",
+          "statement": "O erro cai, mas bem devagar, depois de muitos passos. O que tentar?",
+          "options": [
+            "diminuir a taxa",
+            "aumentar a taxa",
+            "parar o treino",
+            "trocar o sinal da regra",
+            "usar taxa zero"
+          ],
+          "correct_index": 1,
+          "explanation": "Passos pequenos demais demoram. Uma taxa um pouco maior acelera.",
+          "pitfall": "Diminuir deixaria ainda mais lento."
+        },
+        {
+          "topic": "Um passo",
+          "statement": "Com f(x) = x², x = 2 e η = 1, qual é o próximo x?",
+          "options": [
+            "0",
+            "−2",
+            "2",
+            "4",
+            "1"
+          ],
+          "correct_index": 1,
+          "explanation": "f′(2) = 4. Novo x = 2 − 1 × 4 = −2. Pulou para o outro lado, na mesma altura.",
+          "pitfall": "0 seria o fundo; com η = 1 o passo passa direto por ele."
+        },
+        {
+          "topic": "Bom passo",
+          "statement": "Com f(x) = x², x = 2 e η = 0,5, qual é o próximo x?",
+          "options": [
+            "0",
+            "1",
+            "−2",
+            "2",
+            "0,5"
+          ],
+          "correct_index": 0,
+          "explanation": "f′(2) = 4. Novo x = 2 − 0,5 × 4 = 0, o mínimo.",
+          "pitfall": "1 seria com η = 0,25."
+        },
+        {
+          "topic": "Hiperparâmetro",
+          "statement": "Qual destes é um hiperparâmetro?",
+          "options": [
+            "um peso da rede",
+            "a taxa de aprendizado",
+            "a saída da rede",
+            "o gradiente",
+            "o erro"
+          ],
+          "correct_index": 1,
+          "explanation": "Quem treina escolhe a taxa; a rede não aprende esse número.",
+          "pitfall": "Os pesos são aprendidos, e não escolhidos."
+        },
+        {
+          "topic": "Agenda",
+          "statement": "Por que se costuma diminuir a taxa ao longo do treino?",
+          "options": [
+            "para descer rápido no começo e se acomodar no fundo depois",
+            "para gastar menos energia",
+            "porque o gradiente aumenta",
+            "porque a rede esquece",
+            "para aumentar o erro"
+          ],
+          "correct_index": 0,
+          "explanation": "Passos largos longe do fundo, curtos perto dele.",
+          "pitfall": "O gradiente costuma diminuir, e não aumentar, perto do fundo."
+        },
+        {
+          "topic": "Adam",
+          "statement": "O que o Adam tem de diferente do gradiente descendente simples?",
+          "options": [
+            "não usa gradiente",
+            "dá um tamanho de passo próprio para cada peso",
+            "não tem taxa de aprendizado",
+            "só funciona com uma variável",
+            "sobe o erro de propósito"
+          ],
+          "correct_index": 1,
+          "explanation": "Ele adapta o passo de cada peso com base no histórico dos gradientes.",
+          "pitfall": "Ele continua tendo taxa de aprendizado, só fica menos sensível a ela."
+        },
+        {
+          "topic": "Taxas",
+          "format": "match",
+          "statement": "Ligue cada taxa ao comportamento do erro.",
+          "pairs": [
+            {
+              "left": "pequena demais",
+              "right": "cai bem devagar"
+            },
+            {
+              "left": "na medida",
+              "right": "cai rápido e se estabiliza"
+            },
+            {
+              "left": "grande demais",
+              "right": "sobe aos saltos"
+            },
+            {
+              "left": "diminuindo aos poucos",
+              "right": "desce rápido e se acomoda"
+            }
+          ],
+          "explanation": "A curva do erro denuncia a taxa: lenta, boa ou explosiva.",
+          "pitfall": "Taxa grande não treina mais rápido: pula o fundo."
+        }
+      ]
+    }
+  ]
+}

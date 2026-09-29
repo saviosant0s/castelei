@@ -249,9 +249,21 @@ const JARGON = [
   ["autovalor", /\bautovalor(es)?\b/i, "a"], ["autovetor", /\bautovetor(es)?\b/i, "a"], ["tensor", /\btensor(es)?\b/i, "a"],
   ["broadcasting", /\bbroadcasting\b/i, "a"], ["ortogonal", /\bortogona(l|is)\b/i, "a"], ["embedding", /\bembeddings?\b/i, "a"],
   ["cosseno", /\bcossenos?\b/i, "a"], ["dimensão", /\bdimens(ão|ões)\b/i, "a"], ["linearmente independente", /\blinearmente (in)?dependentes?\b/i, "a"],
+
+  /*
+  | Cálculo (escopo "c"). "Inclinação" ficou de fora: é palavra do dia a dia
+  | e se explica sozinha com o desenho da ladeira.
+  */
+  ["função", /\bfun(ç|c)(ão|ões)\b/i, "c"], ["domínio", /\bdomínios?\b/i, "c"], ["composição", /\bcomposi(ç|c)(ão|ões)\b/i, "c"],
+  ["limite", /\blimites?\b|\blim\b/i, "c"], ["derivada", /\bderivad(a|as)\b|\bderivar\b/i, "c"], ["tangente", /\btangentes?\b/i, "c"],
+  ["taxa de variação", /\btaxas? de varia(ç|c)(ão|ões)\b/i, "c"], ["derivada parcial", /\bderivad(a|as) parcia(l|is)\b|∂/i, "c"],
+  ["regra da cadeia", /\bregra da cadeia\b/i, "c"], ["gradiente", /\bgradientes?\b|∇/i, "c"], ["otimização", /\botimiza(ç|c)(ão|ões)\b|\botimizar\b/i, "c"],
+  ["mínimo local", /\bm(í|i)nimos? loca(l|is)\b/i, "c"], ["gradiente descendente", /\bgradiente descendente\b/i, "c"],
+  ["taxa de aprendizado", /\btaxas? de aprendizado\b|\blearning rate\b/i, "c"], ["variável", /\bvari(á|a)ve(l|is)\b/i, "c"],
+  ["função de perda", /\bfun(ç|c)(ão|ões) de perda\b/i, "c"], ["reta secante", /\bsecantes?\b/i, "c"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;
