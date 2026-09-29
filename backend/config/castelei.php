@@ -16,6 +16,32 @@ return [
     | não a do que já foi escrito, para a pessoa ver o que o app vai cobrir.
     | Os ícones moram na tela (`frontend/src/lib/areas.ts`); nome e ordem, aqui.
     */
+    /*
+    | Trilhas: a ordem em que se estuda um objetivo que atravessa áreas.
+    |
+    | "LLMs do zero" mistura Matemática e Informática, e a tela de áreas não
+    | diz por onde começar. A trilha diz: cada passo é uma matéria, na ordem
+    | em que uma depende da outra, com a frase do porquê. Passo cuja matéria
+    | ainda não existe aparece como "Em breve", com o nome daqui.
+    */
+    'trails' => [
+        [
+            'slug' => 'llms-do-zero',
+            'name' => 'LLMs do zero',
+            'description' => 'Da conta de fração ao modelo de linguagem, na ordem em que uma coisa depende da outra.',
+            'steps' => [
+                ['subject' => 'matematica-basica', 'name' => 'Matemática Básica', 'why' => 'A base de tudo: frações, potências, equações, funções e logaritmos.'],
+                ['subject' => 'programacao-python', 'name' => 'Programação com Python', 'why' => 'A linguagem em que toda a parte prática da trilha é escrita.'],
+                ['subject' => 'algebra-linear', 'name' => 'Álgebra Linear', 'why' => 'Vetores e matrizes: é assim que um modelo guarda palavras e faz contas.'],
+                ['subject' => 'calculo', 'name' => 'Cálculo', 'why' => 'Derivada e gradiente: é assim que uma rede aprende com os erros.'],
+                ['subject' => 'probabilidade-estatistica', 'name' => 'Probabilidade e Estatística', 'why' => 'Chances e verossimilhança: é o que um modelo de linguagem calcula e otimiza.'],
+                ['subject' => 'redes-neurais', 'name' => 'Redes Neurais', 'why' => 'O neurônio, as camadas e o treino, juntando a matemática com o código.'],
+                ['subject' => 'llms-como-funcionam', 'name' => 'LLMs: do texto ao Transformer', 'why' => 'Tokens, embeddings, atenção e a arquitetura por dentro de um GPT.'],
+                ['subject' => 'llms-na-pratica', 'name' => 'LLMs: treino, uso e limites', 'why' => 'Como se treina, ajusta, roda e avalia um modelo, e onde ele erra.'],
+            ],
+        ],
+    ],
+
     'areas' => [
         'portugues' => 'Português',
         'matematica' => 'Matemática',

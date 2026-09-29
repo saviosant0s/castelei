@@ -12,17 +12,19 @@ import { pluralize } from "@/lib/format";
 import { concluida } from "@/lib/lesson-trail";
 import type { SubjectsResponse } from "@/lib/types";
 import { OUTRAS } from "@/lib/areas";
+import { stepOfSubject } from "@/lib/trails";
 
 export const metadata: Metadata = { title: "Matéria" };
 
 export default async function MateriaPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const { areas, subjects } = await serverGet<SubjectsResponse>("/subjects");
+  const { areas, subjects, trails } = await serverGet<SubjectsResponse>("/subjects");
   const subject = subjects.find((s) => s.slug === slug);
   if (!subject) notFound();
 
   // Volta para a área de onde a pessoa veio; sem área conhecida, "Outras matérias".
   const area = (areas ?? []).find((a) => a.slug === subject.area) ?? OUTRAS;
+  const naTrilha = stepOfSubject(trails ?? [], subject.slug);
 
   const limited = subject.lessons.some((l) => l.questions_available < l.questions_total);
   // A mesma regra da trilha: a próxima é a primeira ainda não praticada.
@@ -38,6 +40,11 @@ export default async function MateriaPage({ params }: { params: Promise<{ slug: 
       </Link>
 
       <header>
+        {naTrilha && (
+          <Link href={`/trilha/${naTrilha.trail.slug}`} className="label-mono mb-2 inline-block hover:text-ink">
+            Passo {naTrilha.number} de {naTrilha.trail.steps.length} · {naTrilha.trail.name}
+          </Link>
+        )}
         <h1 className="text-4xl">{subject.name}</h1>
         {subject.description && <p className="mt-3 text-base text-content-secondary">{subject.description}</p>}
       </header>
