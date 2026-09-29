@@ -1,0 +1,4675 @@
+{
+  "_leia_me": [
+    "Redes Neurais do Castelei: as seções 6 e 7 da trilha de LLMs do zero, com a prática da seção 18.",
+    "Chaves começadas por _ são comentário e somem na importação.",
+    "Todo código foi executado antes de entrar: ele roda como está."
+  ],
+  "slug": "redes-neurais",
+  "name": "Redes Neurais",
+  "area": "informatica",
+  "description": "Do neurônio à rede treinada: ativações, perdas, retropropagação, lotes, otimizadores e overfitting, com uma rede escrita do zero em Python e depois em PyTorch.",
+  "lessons": [
+    {
+      "slug": "neuronio-artificial",
+      "title": "O neurônio artificial",
+      "module": "O neurônio",
+      "summary": "Um neurônio artificial é uma conta pequena: multiplica cada entrada por um peso, soma tudo com um viés e passa o resultado por uma função de ativação. Aprender é ajustar esses números.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Vou ou não vou à praia?",
+          "body": [
+            "Para decidir, você pesa três coisas: se faz sol, se tem dinheiro e se os amigos vão. O sol pesa muito; o dinheiro, um pouco; os amigos, bastante.",
+            "Você soma tudo na cabeça e, se passar de um certo ponto, vai. Um neurônio artificial faz exatamente essa conta."
+          ],
+          "terms": [
+            {
+              "word": "Neurônio artificial",
+              "meaning": "uma pequena conta que recebe números, combina todos e devolve um número. É a peça básica de uma rede neural."
+            },
+            {
+              "word": "Peso",
+              "meaning": "um número que diz o quanto uma entrada importa. É ele que muda durante o treino."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A soma ponderada",
+          "body": [
+            "Cada entrada é um número. Cada uma é multiplicada pelo seu peso, e os resultados são somados.",
+            "No fim soma-se mais um número fixo, o viés. Ele diz o quanto o neurônio já começa inclinado para um lado."
+          ],
+          "terms": [
+            {
+              "word": "Viés (bias)",
+              "meaning": "um número somado no fim da conta do neurônio, que desloca o resultado para cima ou para baixo."
+            }
+          ],
+          "example": {
+            "label": "Praia: sol = 1, dinheiro = 0, amigos = 1",
+            "lines": [
+              "Pesos: sol 3, dinheiro 1, amigos 2",
+              "Soma: 3 × 1 + 1 × 0 + 2 × 1 = 5",
+              "Viés: −4",
+              "Resultado: 5 − 4 = 1. Passou de zero: vai à praia."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "É um produto escalar",
+          "body": [
+            "Juntando as entradas num vetor x e os pesos num vetor w, a soma ponderada é o produto escalar w · x. Mais o viés: z = w · x + b.",
+            "É por isso que a Álgebra Linear vem antes: um neurônio é um produto escalar com um número somado."
+          ],
+          "terms": [
+            {
+              "word": "Vetor",
+              "meaning": "uma lista ordenada de números, como (0,5; 2; −1)."
+            },
+            {
+              "word": "Produto escalar",
+              "meaning": "multiplicar dois vetores número a número e somar tudo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A ativação decide o que sai",
+          "body": [
+            "Depois da soma, o neurônio passa o resultado por uma função. Ela pode deixar passar só valores positivos, por exemplo. Ou pode espremer tudo entre 0 e 1.",
+            "Sem essa função, empilhar neurônios daria só uma conta de reta, por mais neurônios que houvesse."
+          ],
+          "terms": [
+            {
+              "word": "Função de ativação",
+              "meaning": "uma função aplicada depois da soma do neurônio, que dobra a reta e deixa a rede aprender formas curvas."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/redes-neurais/neuronio.svg",
+            "alt": "Três entradas à esquerda, cada uma ligada por uma seta com um peso a um círculo de soma. O viés entra no círculo por baixo. Do círculo sai uma seta para a função de ativação, e dela sai o resultado.",
+            "caption": "Entradas vezes pesos, mais o viés, depois a ativação."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Parecido com o cérebro? Só um pouco",
+          "body": [
+            "O nome vem do neurônio do cérebro, que recebe sinais, soma e dispara se passar de um limite. A inspiração parou aí.",
+            "O neurônio artificial é só uma conta. Não pensa, não sente e não entende: multiplica, soma e aplica uma função."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Em Python",
+          "body": [
+            "Com NumPy, o neurônio inteiro cabe em quatro linhas."
+          ],
+          "terms": [
+            {
+              "word": "NumPy",
+              "meaning": "a biblioteca do Python para contas rápidas com listas e tabelas de números."
+            }
+          ],
+          "code": {
+            "label": "Um neurônio",
+            "text": "import numpy as np\nx = np.array([1.0, 0.0, 1.0])\nw = np.array([3.0, 1.0, 2.0])\nb = -4.0\nz = w @ x + b\nprint(max(0.0, z))",
+            "notes": [
+              "Traz o NumPy.",
+              "As entradas: sol, dinheiro e amigos.",
+              "Os pesos de cada entrada.",
+              "O viés.",
+              "A soma ponderada mais o viés: o @ faz o produto escalar. Dá 1.0.",
+              "Aplica uma ativação simples, que zera negativos, e mostra 1.0."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Aprender é ajustar os números",
+          "body": [
+            "Ninguém escolhe os pesos à mão. Eles começam sorteados, e o treino os ajusta aos poucos para a saída chegar perto da resposta certa.",
+            "Uma rede de linguagem grande tem bilhões desses números. Treinar é achar valores bons para todos eles."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem contas de um neurônio com poucas entradas: multiplique, some, some o viés e aplique a ativação.",
+            "Também cai a pergunta sobre o papel de cada parte: o peso diz a importância, o viés desloca e a ativação dobra a reta."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde o neurônio confunde."
+          ],
+          "bullets": [
+            "Esquecer de somar o viés.",
+            "Aplicar a ativação antes da soma.",
+            "Achar que o neurônio artificial funciona como o do cérebro.",
+            "Achar que os pesos são escolhidos à mão."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Multiplica, soma e dobra."
+          ],
+          "bullets": [
+            "z = w · x + b: soma ponderada mais viés.",
+            "Peso: o quanto cada entrada importa.",
+            "Viés: desloca o resultado.",
+            "Ativação: dobra a reta e decide o que sai.",
+            "É só uma conta; o cérebro foi só inspiração.",
+            "Treinar é ajustar pesos e vieses."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Soma",
+          "statement": "Um neurônio tem entradas (2, 1), pesos (0,5; 3) e viés −1. Quanto vale a soma antes da ativação?",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "2",
+            "−1"
+          ],
+          "correct_index": 0,
+          "explanation": "0,5 × 2 + 3 × 1 − 1 = 1 + 3 − 1 = 3.",
+          "pitfall": "4 esquece de somar o viés."
+        },
+        {
+          "topic": "Ativação",
+          "statement": "A soma de um neurônio deu −2, e a ativação zera negativos. O que sai?",
+          "options": [
+            "−2",
+            "0",
+            "2",
+            "1",
+            "−1"
+          ],
+          "correct_index": 1,
+          "explanation": "Negativo vira zero nessa ativação.",
+          "pitfall": "−2 esquece a ativação."
+        },
+        {
+          "topic": "Papel do peso",
+          "statement": "O que um peso grande numa entrada quer dizer?",
+          "options": [
+            "que a entrada importa muito para o resultado",
+            "que a entrada é grande",
+            "que o neurônio vai errar",
+            "que o viés é zero",
+            "que a entrada é negativa"
+          ],
+          "correct_index": 0,
+          "explanation": "O peso multiplica a entrada: peso grande, influência grande.",
+          "pitfall": "O valor da entrada e o peso dela são coisas diferentes."
+        },
+        {
+          "topic": "Viés",
+          "statement": "Qual é o papel do viés?",
+          "options": [
+            "multiplicar as entradas",
+            "deslocar o resultado para cima ou para baixo",
+            "escolher a ativação",
+            "contar as entradas",
+            "apagar entradas negativas"
+          ],
+          "correct_index": 1,
+          "explanation": "É um número somado no fim, que empurra o resultado.",
+          "pitfall": "Multiplicar as entradas é trabalho dos pesos."
+        },
+        {
+          "topic": "Sem ativação",
+          "statement": "Por que o neurônio precisa de uma função de ativação?",
+          "options": [
+            "para ficar mais rápido",
+            "porque sem ela, empilhar neurônios só daria uma conta de reta",
+            "para somar o viés",
+            "para sortear os pesos",
+            "para ler texto"
+          ],
+          "correct_index": 1,
+          "explanation": "Sem a dobra da ativação, muitos neurônios empilhados equivalem a uma só conta de reta.",
+          "pitfall": "Velocidade não tem nada a ver: é sobre o que a rede consegue aprender."
+        },
+        {
+          "topic": "Produto escalar",
+          "statement": "Com w = (1, 2, 3) e x = (1, 0, 2), quanto vale w · x?",
+          "options": [
+            "7",
+            "6",
+            "3",
+            "9",
+            "(1, 0, 6)"
+          ],
+          "correct_index": 0,
+          "explanation": "1 + 0 + 6 = 7.",
+          "pitfall": "(1, 0, 6) multiplica sem somar."
+        },
+        {
+          "topic": "Treino",
+          "statement": "De onde vêm os valores dos pesos de uma rede treinada?",
+          "options": [
+            "alguém escreve à mão",
+            "começam sorteados e o treino os ajusta",
+            "vêm do tamanho das entradas",
+            "são sempre 1",
+            "vêm do viés"
+          ],
+          "correct_index": 1,
+          "explanation": "O treino ajusta os pesos pouco a pouco, a partir de valores sorteados.",
+          "pitfall": "Com bilhões de pesos, escrever à mão seria impossível."
+        },
+        {
+          "topic": "A conta do neurônio",
+          "format": "order",
+          "statement": "Ponha na ordem a conta de um neurônio.",
+          "options": [
+            "Multiplicar cada entrada pelo seu peso",
+            "Somar os produtos",
+            "Somar o viés",
+            "Aplicar a função de ativação"
+          ],
+          "explanation": "Primeiro a soma ponderada, depois o viés, e só no fim a ativação.",
+          "pitfall": "Ativar antes de somar dá outra conta."
+        }
+      ]
+    },
+    {
+      "slug": "funcoes-de-ativacao",
+      "title": "Funções de ativação: sigmoide, tanh, ReLU e GELU",
+      "module": "O neurônio",
+      "summary": "A ativação dobra a reta. Cada uma dobra de um jeito: a sigmoide espreme entre 0 e 1, a tanh entre −1 e 1, a ReLU zera negativos e a GELU faz isso de forma suave.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O registro da torneira",
+          "body": [
+            "Um registro comum abre proporcional ao quanto você gira. Uma válvula de segurança só deixa passar água acima de certa pressão.",
+            "As funções de ativação são válvulas com formatos diferentes. O formato decide o que passa, e isso muda o que a rede consegue aprender."
+          ],
+          "terms": [
+            {
+              "word": "Neurônio artificial",
+              "meaning": "uma pequena conta que recebe números, combina todos e devolve um número. É a peça básica de uma rede neural."
+            },
+            {
+              "word": "Função de ativação",
+              "meaning": "uma função aplicada depois da soma do neurônio, que dobra a reta e deixa a rede aprender formas curvas."
+            },
+            {
+              "word": "Camada",
+              "meaning": "um grupo de neurônios que recebem as mesmas entradas e trabalham ao mesmo tempo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Sigmoide: espremer entre 0 e 1",
+          "body": [
+            "A sigmoide leva qualquer número para um valor entre 0 e 1. Números muito negativos viram quase 0; muito positivos, quase 1; o zero vira 0,5.",
+            "Por isso ela é usada quando a saída deve ser uma chance, como “este e-mail é spam”."
+          ],
+          "terms": [
+            {
+              "word": "Sigmoide",
+              "meaning": "a função 1 / (1 + e⁻ˣ), que espreme qualquer número para ficar entre 0 e 1."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/redes-neurais/ativacoes.svg",
+            "alt": "Quatro pequenos gráficos lado a lado. A sigmoide é um S que vai de 0 a 1. A tanh é um S que vai de −1 a 1. A ReLU é zero para negativos e uma reta subindo para positivos. A GELU parece a ReLU, mas com a dobra arredondada.",
+            "caption": "As quatro funções lado a lado, cada uma com o seu formato."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Tanh: espremer entre −1 e 1",
+          "body": [
+            "A tanh tem o mesmo formato de S, mas vai de −1 a 1, com o zero no meio. Isso deixa os valores centrados, o que ajuda o treino em algumas redes.",
+            "Foi muito usada em redes antigas de texto, antes da era dos modelos de linguagem atuais."
+          ],
+          "terms": [
+            {
+              "word": "Tanh",
+              "meaning": "a tangente hiperbólica: um S que vai de −1 a 1, passando pelo zero."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "ReLU: zerar os negativos",
+          "body": [
+            "A ReLU é a mais simples: negativo vira zero, positivo passa igual. Ela virou o padrão das redes profundas por ser barata e treinar bem.",
+            "O defeito: um neurônio que só recebe negativos devolve sempre zero e para de aprender."
+          ],
+          "terms": [
+            {
+              "word": "ReLU",
+              "meaning": "a função que devolve o próprio número se ele for positivo, e 0 se for negativo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "GELU: a ReLU arredondada",
+          "body": [
+            "A GELU se parece com a ReLU, mas a dobra no zero é suave, e pequenos negativos passam um pouco.",
+            "Ela é a ativação usada dentro dos modelos da família GPT e de muitos outros modelos de linguagem."
+          ],
+          "terms": [
+            {
+              "word": "GELU",
+              "meaning": "uma ativação parecida com a ReLU, mas com a curva suave perto do zero. É a usada em modelos como o GPT."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A derivada de cada uma",
+          "body": [
+            "Para aprender, a rede precisa da derivada da ativação. A da sigmoide é no máximo 0,25; passando por muitas camadas, o sinal encolhe até quase sumir.",
+            "A da ReLU é 1 para positivos. O sinal atravessa as camadas sem encolher, e é por isso que ela treina redes fundas."
+          ],
+          "terms": [
+            {
+              "word": "Derivada",
+              "meaning": "a rapidez com que uma conta muda quando a entrada muda um pouquinho."
+            }
+          ],
+          "table": {
+            "label": "Derivadas",
+            "headers": [
+              "Função",
+              "Derivada",
+              "Maior valor"
+            ],
+            "rows": [
+              [
+                "sigmoide",
+                "s(x) · (1 − s(x))",
+                "0,25"
+              ],
+              [
+                "tanh",
+                "1 − tanh(x)²",
+                "1"
+              ],
+              [
+                "ReLU",
+                "1 se x > 0, senão 0",
+                "1"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Em Python",
+          "body": [
+            "Todas cabem numa linha com NumPy."
+          ],
+          "terms": [
+            {
+              "word": "NumPy",
+              "meaning": "a biblioteca do Python para contas rápidas com listas e tabelas de números."
+            }
+          ],
+          "code": {
+            "label": "As ativações",
+            "text": "import numpy as np\nx = np.array([-2.0, 0.0, 2.0])\nprint(1 / (1 + np.exp(-x)))\nprint(np.tanh(x))\nprint(np.maximum(0, x))",
+            "notes": [
+              "Traz o NumPy.",
+              "Três valores de teste: negativo, zero e positivo.",
+              "Sigmoide: mostra cerca de [0.12 0.5 0.88].",
+              "Tanh: mostra cerca de [−0.96 0 0.96].",
+              "ReLU: mostra [0 0 2]."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem o intervalo de saída de cada função e a escolha certa para cada caso: sigmoide para chance, ReLU nas camadas do meio.",
+            "Em entrevistas, cai por que a sigmoide atrapalha redes fundas: a derivada pequena faz o sinal sumir."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde as ativações confundem."
+          ],
+          "bullets": [
+            "Achar que a sigmoide pode dar negativo.",
+            "Achar que a ReLU é curva: são duas retas com uma dobra.",
+            "Usar ReLU na saída quando se quer uma chance entre 0 e 1.",
+            "Esquecer que sem ativação a rede vira uma conta linear."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Cada válvula tem um formato."
+          ],
+          "bullets": [
+            "Sigmoide: de 0 a 1, boa para chance.",
+            "Tanh: de −1 a 1, centrada no zero.",
+            "ReLU: negativo vira zero; é o padrão.",
+            "GELU: ReLU suave, usada no GPT.",
+            "Derivada pequena faz o sinal sumir em redes fundas.",
+            "A da ReLU vale 1 para positivos."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Intervalo",
+          "statement": "Qual ativação sempre devolve um valor entre 0 e 1?",
+          "options": [
+            "ReLU",
+            "tanh",
+            "sigmoide",
+            "GELU",
+            "nenhuma"
+          ],
+          "correct_index": 2,
+          "explanation": "A sigmoide espreme tudo entre 0 e 1.",
+          "pitfall": "A tanh vai de −1 a 1."
+        },
+        {
+          "topic": "ReLU",
+          "statement": "Quanto vale ReLU(−3) + ReLU(4)?",
+          "options": [
+            "1",
+            "4",
+            "7",
+            "−3",
+            "0"
+          ],
+          "correct_index": 1,
+          "explanation": "ReLU(−3) = 0 e ReLU(4) = 4. Soma: 4.",
+          "pitfall": "1 soma −3 com 4 sem aplicar a ReLU."
+        },
+        {
+          "topic": "Sigmoide no zero",
+          "statement": "Quanto vale a sigmoide em x = 0?",
+          "options": [
+            "0",
+            "1",
+            "0,5",
+            "−1",
+            "0,25"
+          ],
+          "correct_index": 2,
+          "explanation": "1 / (1 + e⁰) = 1 / 2 = 0,5.",
+          "pitfall": "0,25 é o maior valor da derivada, e não da função."
+        },
+        {
+          "topic": "Tanh",
+          "statement": "Qual é o intervalo de saída da tanh?",
+          "options": [
+            "de 0 a 1",
+            "de −1 a 1",
+            "de 0 ao infinito",
+            "de −∞ a +∞",
+            "só 0 ou 1"
+          ],
+          "correct_index": 1,
+          "explanation": "É um S centrado no zero, de −1 a 1.",
+          "pitfall": "De 0 a 1 é a sigmoide."
+        },
+        {
+          "topic": "Escolha",
+          "statement": "A saída de uma rede deve dizer a chance de um e-mail ser spam. Qual ativação usar na saída?",
+          "options": [
+            "ReLU",
+            "sigmoide",
+            "nenhuma",
+            "tanh",
+            "GELU"
+          ],
+          "correct_index": 1,
+          "explanation": "A chance precisa ficar entre 0 e 1.",
+          "pitfall": "A ReLU pode dar valores maiores que 1."
+        },
+        {
+          "topic": "Sinal que some",
+          "statement": "Por que a sigmoide atrapalha redes com muitas camadas?",
+          "options": [
+            "porque é lenta de calcular",
+            "porque a derivada dela é no máximo 0,25, e o sinal encolhe a cada camada",
+            "porque dá negativo",
+            "porque não tem derivada",
+            "porque só funciona com texto"
+          ],
+          "correct_index": 1,
+          "explanation": "Multiplicando 0,25 camada após camada, o sinal que ensina a rede quase desaparece.",
+          "pitfall": "A sigmoide tem derivada; o problema é ela ser pequena."
+        },
+        {
+          "topic": "GELU",
+          "statement": "Onde a GELU é usada?",
+          "options": [
+            "em planilhas",
+            "dentro dos modelos da família GPT",
+            "só na saída",
+            "em bancos de dados",
+            "em lugar nenhum"
+          ],
+          "correct_index": 1,
+          "explanation": "É a ativação das camadas internas dos modelos de linguagem desse tipo.",
+          "pitfall": "Ela não serve para chance na saída: não fica entre 0 e 1."
+        },
+        {
+          "topic": "Ativações",
+          "format": "match",
+          "statement": "Ligue cada ativação ao seu comportamento.",
+          "pairs": [
+            {
+              "left": "sigmoide",
+              "right": "espreme entre 0 e 1"
+            },
+            {
+              "left": "tanh",
+              "right": "espreme entre −1 e 1"
+            },
+            {
+              "left": "ReLU",
+              "right": "negativo vira zero"
+            },
+            {
+              "left": "GELU",
+              "right": "ReLU com a dobra suave"
+            }
+          ],
+          "explanation": "Cada ativação dobra a reta de um jeito.",
+          "pitfall": "Sigmoide e tanh têm o mesmo formato de S, com intervalos diferentes."
+        }
+      ]
+    },
+    {
+      "slug": "regressao-linear",
+      "title": "Regressão linear: a primeira máquina que aprende",
+      "module": "O neurônio",
+      "summary": "Achar a reta que passa mais perto de um monte de pontos, deixando a máquina ajustar sozinha a inclinação e o ponto de partida. É um neurônio sem ativação, e o primeiro treino de verdade.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Horas de estudo e nota",
+          "body": [
+            "Você anotou as horas de estudo e a nota de cinco colegas. Os pontos quase formam uma reta: quem estudou mais tirou mais.",
+            "Se chegar um sexto colega que estudou 7 horas, qual nota esperar? Basta achar a reta e seguir por ela."
+          ],
+          "terms": [
+            {
+              "word": "Regressão",
+              "meaning": "prever um número, como o preço de uma casa."
+            },
+            {
+              "word": "Classificação",
+              "meaning": "prever uma categoria, como “spam” ou “não spam”."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O modelo é uma reta",
+          "body": [
+            "A previsão é ŷ = w·x + b: o w é a inclinação, o b é o ponto de partida. É um neurônio com uma entrada e sem ativação.",
+            "No começo, w e b são chutes. O trabalho é ajustá-los até a reta passar perto dos pontos."
+          ],
+          "terms": [
+            {
+              "word": "Neurônio artificial",
+              "meaning": "uma pequena conta que recebe números, combina todos e devolve um número. É a peça básica de uma rede neural."
+            },
+            {
+              "word": "Função de ativação",
+              "meaning": "uma função aplicada depois da soma do neurônio, que dobra a reta e deixa a rede aprender formas curvas."
+            },
+            {
+              "word": "Peso",
+              "meaning": "um número que diz o quanto uma entrada importa. É ele que muda durante o treino."
+            },
+            {
+              "word": "Viés (bias)",
+              "meaning": "um número somado no fim da conta do neurônio, que desloca o resultado para cima ou para baixo."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/redes-neurais/regressao-linear.svg",
+            "alt": "Cinco pontos quase alinhados num gráfico de horas de estudo por nota. Uma reta atravessa perto de todos eles. Pequenos traços verticais ligam cada ponto à reta, mostrando o erro de cada um.",
+            "caption": "Os tracinhos são os erros; o treino encolhe todos juntos."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Medindo o erro",
+          "body": [
+            "Para cada ponto, o erro é previsto menos certo. Elevando ao quadrado, sumimos com o sinal e castigamos mais os erros grandes.",
+            "A média desses quadrados é a perda. Reta boa, perda pequena."
+          ],
+          "terms": [
+            {
+              "word": "Função de perda",
+              "meaning": "a conta que mede o quanto a rede errou num exemplo. O treino tenta deixar esse número o menor possível."
+            },
+            {
+              "word": "MSE (erro quadrático médio)",
+              "meaning": "a média dos quadrados das diferenças entre o previsto e o certo."
+            }
+          ],
+          "example": {
+            "label": "Três pontos e a reta ŷ = 2x",
+            "lines": [
+              "x = 1, certo 3: previsto 2, erro −1, quadrado 1",
+              "x = 2, certo 5: previsto 4, erro −1, quadrado 1",
+              "x = 3, certo 7: previsto 6, erro −1, quadrado 1",
+              "MSE = (1 + 1 + 1) ÷ 3 = 1"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Para que lado mexer",
+          "body": [
+            "A derivada da perda diz como ela muda quando w ou b mudam um pouquinho. Andando no sentido contrário, a perda desce.",
+            "Para o MSE, as contas saem prontas: a derivada em w é 2 × média de (erro × x), e em b é 2 × média do erro."
+          ],
+          "terms": [
+            {
+              "word": "Derivada",
+              "meaning": "a rapidez com que uma conta muda quando a entrada muda um pouquinho."
+            },
+            {
+              "word": "Gradiente",
+              "meaning": "a lista das derivadas da perda em relação a cada peso. Ele aponta para onde a perda sobe."
+            },
+            {
+              "word": "Taxa de aprendizado",
+              "meaning": "o tamanho do passo dado a cada ajuste dos pesos."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O treino, em código",
+          "body": [
+            "Repita muitas vezes: preveja, meça o erro, calcule o gradiente e dê um passinho contra ele. Os dados abaixo seguem nota = 2 × horas + 1."
+          ],
+          "terms": [
+            {
+              "word": "NumPy",
+              "meaning": "a biblioteca do Python para contas rápidas com listas e tabelas de números."
+            }
+          ],
+          "code": {
+            "label": "Regressão linear do zero",
+            "text": "import numpy as np\nhoras = np.array([1, 2, 3, 4, 5], dtype=float)\nnotas = np.array([3, 5, 7, 9, 11], dtype=float)\nw, b = 0.0, 0.0\nfor passo in range(2000):\n    previsto = w * horas + b\n    erro = previsto - notas\n    w -= 0.01 * 2 * np.mean(erro * horas)\n    b -= 0.01 * 2 * np.mean(erro)\nprint(round(w, 2), round(b, 2))",
+            "notes": [
+              "Traz o NumPy.",
+              "As horas de estudo de cinco colegas.",
+              "As notas deles.",
+              "Começa com a reta deitada no zero: os chutes iniciais.",
+              "Repete o ajuste 2 000 vezes.",
+              "Calcula a previsão da reta atual para todos os colegas de uma vez.",
+              "Calcula o erro de cada previsão.",
+              "Anda com w contra a derivada, com passo 0,01.",
+              "Faz o mesmo com b.",
+              "Mostra 2.0 1.0: a máquina achou sozinha a regra nota = 2 × horas + 1."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Muitas entradas",
+          "body": [
+            "Com mais informações, como horas de sono e faltas, cada uma ganha o seu peso: ŷ = w₁x₁ + w₂x₂ + w₃x₃ + b.",
+            "A conta é a mesma, com vetores no lugar de números. Mais ainda: é exatamente um neurônio sem ativação."
+          ],
+          "terms": [
+            {
+              "word": "Vetor",
+              "meaning": "uma lista ordenada de números, como (0,5; 2; −1)."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem o cálculo do MSE de poucos pontos e um passo de ajuste à mão. Também cai interpretar o w: quanto a nota sobe por hora estudada.",
+            "Em entrevistas, cai: regressão é prever número; classificação é prever categoria."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a regressão engana."
+          ],
+          "bullets": [
+            "Somar os erros sem elevar ao quadrado: os negativos cancelam os positivos.",
+            "Somar o gradiente em vez de subtrair.",
+            "Usar taxa de aprendizado grande demais e ver w e b explodirem.",
+            "Achar que a reta passa exatamente por todos os pontos: ela passa perto."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A reta que se ajusta sozinha."
+          ],
+          "bullets": [
+            "Modelo: ŷ = w·x + b.",
+            "Perda: MSE, a média dos erros ao quadrado.",
+            "Gradiente: para onde a perda sobe.",
+            "Treino: repetir passos contra o gradiente.",
+            "Com muitas entradas, é um neurônio sem ativação.",
+            "Regressão prevê um número."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Prever",
+          "statement": "A reta treinada é nota = 2 × horas + 1. Qual nota ela prevê para 6 horas?",
+          "options": [
+            "12",
+            "13",
+            "7",
+            "8",
+            "14"
+          ],
+          "correct_index": 1,
+          "explanation": "2 × 6 + 1 = 13.",
+          "pitfall": "12 esquece o + 1."
+        },
+        {
+          "topic": "MSE",
+          "statement": "Os erros de três previsões foram 2, −2 e 0. Qual é o MSE?",
+          "options": [
+            "0",
+            "8/3",
+            "4",
+            "2",
+            "8"
+          ],
+          "correct_index": 1,
+          "explanation": "Quadrados: 4, 4 e 0. Média: 8/3.",
+          "pitfall": "0 soma os erros sem elevar ao quadrado."
+        },
+        {
+          "topic": "Sinal",
+          "statement": "Por que se eleva o erro ao quadrado?",
+          "options": [
+            "para somar mais rápido",
+            "para os negativos não cancelarem os positivos e para punir mais os erros grandes",
+            "porque a reta é curva",
+            "para o erro ficar negativo",
+            "por tradição"
+          ],
+          "correct_index": 1,
+          "explanation": "O quadrado tira o sinal e cresce rápido para erros grandes.",
+          "pitfall": "Sem o quadrado, erros de −5 e +5 somariam zero."
+        },
+        {
+          "topic": "Passo",
+          "statement": "Com w = 1, derivada da perda em w igual a −4 e taxa 0,1, qual é o novo w?",
+          "options": [
+            "0,6",
+            "1,4",
+            "1",
+            "−3",
+            "5"
+          ],
+          "correct_index": 1,
+          "explanation": "w − 0,1 × (−4) = 1 + 0,4 = 1,4.",
+          "pitfall": "0,6 soma o gradiente em vez de subtrair."
+        },
+        {
+          "topic": "Interpretar",
+          "statement": "Numa regressão, o w de horas de estudo deu 2. O que isso quer dizer?",
+          "options": [
+            "a nota mínima é 2",
+            "cada hora a mais sobe a nota em 2 pontos",
+            "a nota é 2",
+            "há 2 alunos",
+            "o erro é 2"
+          ],
+          "correct_index": 1,
+          "explanation": "O w é a inclinação: quanto a saída muda por unidade da entrada.",
+          "pitfall": "A nota mínima tem a ver com o b, o ponto de partida."
+        },
+        {
+          "topic": "Tipo",
+          "statement": "Qual destes é um problema de regressão?",
+          "options": [
+            "dizer se um e-mail é spam",
+            "prever o preço de um apartamento",
+            "reconhecer um gato numa foto",
+            "escolher entre sim e não",
+            "separar clientes em três grupos"
+          ],
+          "correct_index": 1,
+          "explanation": "Preço é um número contínuo: regressão.",
+          "pitfall": "Spam ou não é uma categoria: classificação."
+        },
+        {
+          "topic": "Neurônio",
+          "statement": "A regressão linear com várias entradas é igual a:",
+          "options": [
+            "uma rede com mil camadas",
+            "um neurônio sem função de ativação",
+            "uma sigmoide",
+            "um dicionário",
+            "uma árvore"
+          ],
+          "correct_index": 1,
+          "explanation": "Soma ponderada mais viés, sem dobra nenhuma.",
+          "pitfall": "Com ativação, já não seria uma reta."
+        },
+        {
+          "topic": "Treino",
+          "format": "order",
+          "statement": "Ponha na ordem uma volta do treino da regressão linear.",
+          "options": [
+            "Calcular a previsão de cada exemplo",
+            "Calcular o erro de cada previsão",
+            "Calcular o gradiente da perda em w e b",
+            "Ajustar w e b contra o gradiente"
+          ],
+          "explanation": "Sem previsão não há erro; sem erro não há gradiente.",
+          "pitfall": "Ajustar antes de medir o erro é andar às cegas."
+        }
+      ]
+    },
+    {
+      "slug": "regressao-logistica",
+      "title": "Regressão logística: prever sim ou não",
+      "module": "O neurônio",
+      "summary": "Para prever uma categoria, o neurônio passa a soma pela sigmoide e devolve uma chance. A perda certa para chances é a entropia cruzada, e o treino é quase igual ao da reta.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Aprovado ou reprovado?",
+          "body": [
+            "Agora a pergunta não é a nota, e sim se o aluno passou. A resposta é sim ou não.",
+            "Uma reta não serve: ela dá valores como −3 ou 12, que não são respostas de sim ou não. É preciso algo que diga a chance de sim."
+          ],
+          "terms": [
+            {
+              "word": "Classificação",
+              "meaning": "prever uma categoria, como “spam” ou “não spam”."
+            },
+            {
+              "word": "Rótulo",
+              "meaning": "a resposta certa de um exemplo de treino, como “gato” numa foto de gato."
+            },
+            {
+              "word": "Regressão",
+              "meaning": "prever um número, como o preço de uma casa."
+            },
+            {
+              "word": "Neurônio artificial",
+              "meaning": "uma pequena conta que recebe números, combina todos e devolve um número. É a peça básica de uma rede neural."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Reta mais sigmoide",
+          "body": [
+            "Calcule a soma z = w·x + b como antes. Depois passe z pela sigmoide, que espreme tudo entre 0 e 1.",
+            "O resultado é a chance de sim. Acima de 0,5, a resposta é sim; abaixo, não."
+          ],
+          "terms": [
+            {
+              "word": "Peso",
+              "meaning": "um número que diz o quanto uma entrada importa. É ele que muda durante o treino."
+            },
+            {
+              "word": "Viés (bias)",
+              "meaning": "um número somado no fim da conta do neurônio, que desloca o resultado para cima ou para baixo."
+            },
+            {
+              "word": "Sigmoide",
+              "meaning": "a função 1 / (1 + e⁻ˣ), que espreme qualquer número para ficar entre 0 e 1."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/redes-neurais/regressao-logistica.svg",
+            "alt": "Um gráfico de horas de estudo no eixo x. Pontos de reprovados ficam embaixo, em 0, e de aprovados em cima, em 1. Uma curva em S passa entre eles, cruzando 0,5 na fronteira entre os dois grupos.",
+            "caption": "A curva em S dá a chance de passar; 0,5 é a fronteira."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Por que não usar o MSE",
+          "body": [
+            "Com chances, o erro quadrático é fraco demais. Errar feio, dando chance 0,01 a quem passou, custaria no máximo 1 ponto.",
+            "Precisa de uma perda que castigue muito a confiança errada. É a entropia cruzada."
+          ],
+          "terms": [
+            {
+              "word": "Função de perda",
+              "meaning": "a conta que mede o quanto a rede errou num exemplo. O treino tenta deixar esse número o menor possível."
+            },
+            {
+              "word": "MSE (erro quadrático médio)",
+              "meaning": "a média dos quadrados das diferenças entre o previsto e o certo."
+            },
+            {
+              "word": "Entropia cruzada",
+              "meaning": "a perda −ln(chance dada à resposta certa). Quanto menor a chance da certa, maior a perda."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A entropia cruzada",
+          "body": [
+            "Se a resposta certa é sim, a perda é −ln(p), em que p é a chance dada ao sim. Se a certa é não, a perda é −ln(1 − p).",
+            "Dar chance 0,9 à resposta certa custa 0,11. Dar 0,01 custa 4,6. Quanto mais confiante e errado, mais caro."
+          ],
+          "terms": [
+            {
+              "word": "Logaritmo natural (ln)",
+              "meaning": "o logaritmo na base e. O ln de números entre 0 e 1 é negativo."
+            }
+          ],
+          "table": {
+            "label": "A perda para a resposta certa",
+            "headers": [
+              "Chance dada à certa",
+              "Perda −ln(p)"
+            ],
+            "rows": [
+              [
+                "0,99",
+                "0,01"
+              ],
+              [
+                "0,9",
+                "0,11"
+              ],
+              [
+                "0,5",
+                "0,69"
+              ],
+              [
+                "0,1",
+                "2,30"
+              ],
+              [
+                "0,01",
+                "4,61"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Um gradiente surpreendentemente simples",
+          "body": [
+            "Juntando sigmoide e entropia cruzada, a derivada em relação a z fica só p − y: a chance dada menos a resposta certa, 0 ou 1.",
+            "Então o treino é quase igual ao da reta: troque o erro por p − y."
+          ],
+          "terms": [
+            {
+              "word": "Gradiente",
+              "meaning": "a lista das derivadas da perda em relação a cada peso. Ele aponta para onde a perda sobe."
+            },
+            {
+              "word": "Derivada",
+              "meaning": "a rapidez com que uma conta muda quando a entrada muda um pouquinho."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Em código",
+          "body": [
+            "Seis alunos: quem estudou 4 horas ou mais passou."
+          ],
+          "terms": [
+            {
+              "word": "NumPy",
+              "meaning": "a biblioteca do Python para contas rápidas com listas e tabelas de números."
+            },
+            {
+              "word": "Taxa de aprendizado",
+              "meaning": "o tamanho do passo dado a cada ajuste dos pesos."
+            }
+          ],
+          "code": {
+            "label": "Regressão logística do zero",
+            "text": "import numpy as np\nhoras = np.array([1, 2, 3, 4, 5, 6], dtype=float)\npassou = np.array([0, 0, 0, 1, 1, 1], dtype=float)\nw, b = 0.0, 0.0\nfor passo in range(5000):\n    p = 1 / (1 + np.exp(-(w * horas + b)))\n    w -= 0.1 * np.mean((p - passou) * horas)\n    b -= 0.1 * np.mean(p - passou)\nnovos = np.array([2.0, 5.0])\nprint(np.round(1 / (1 + np.exp(-(w * novos + b))), 2))",
+            "notes": [
+              "Traz o NumPy.",
+              "As horas de estudo de seis alunos.",
+              "Os rótulos: 0 para reprovou e 1 para passou.",
+              "Chutes iniciais.",
+              "Repete o ajuste 5 000 vezes.",
+              "Calcula a chance de passar de cada aluno: a soma passa pela sigmoide.",
+              "Anda com w usando o gradiente simples: chance menos rótulo, vezes a entrada.",
+              "Faz o mesmo com b.",
+              "Dois alunos novos, com 2 e 5 horas.",
+              "Mostra [0.01 0.99]: quase certamente reprova e quase certamente passa."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "De um neurônio para uma rede",
+          "body": [
+            "A regressão logística é um neurônio que termina numa sigmoide. Ela só separa grupos com uma linha reta.",
+            "Quando a fronteira é curva, é preciso vários neurônios em camadas. Esse é o próximo passo."
+          ],
+          "terms": [
+            {
+              "word": "Camada",
+              "meaning": "um grupo de neurônios que recebem as mesmas entradas e trabalham ao mesmo tempo."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem: calcular a chance para um x dado, decidir sim ou não pelo 0,5 e calcular a perda de uma previsão.",
+            "Em entrevistas, cai por que a logística usa entropia cruzada e não MSE."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a logística confunde."
+          ],
+          "bullets": [
+            "Achar que “regressão logística” prevê número: ela classifica.",
+            "Esquecer a sigmoide e ler a soma como se fosse chance.",
+            "Usar −ln(p) quando a resposta certa é não: aí é −ln(1 − p).",
+            "Achar que ela separa qualquer fronteira: só linhas retas."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Um neurônio que dá chance."
+          ],
+          "bullets": [
+            "Soma ponderada, depois sigmoide: chance entre 0 e 1.",
+            "Acima de 0,5: sim.",
+            "Perda: entropia cruzada, que castiga confiança errada.",
+            "Gradiente em z: p − y.",
+            "Treino igual ao da reta, com outro erro.",
+            "Fronteiras curvas pedem uma rede com camadas."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Chance",
+          "statement": "A soma de um neurônio logístico deu z = 0. Qual é a chance de sim?",
+          "options": [
+            "0",
+            "0,5",
+            "1",
+            "0,25",
+            "−1"
+          ],
+          "correct_index": 1,
+          "explanation": "Sigmoide de zero é 0,5.",
+          "pitfall": "0 seria a soma, e não a chance."
+        },
+        {
+          "topic": "Decidir",
+          "statement": "A chance de spam de um e-mail é 0,73. Com o limiar de 0,5, o e-mail é classificado como:",
+          "options": [
+            "spam",
+            "não spam",
+            "metade spam",
+            "indefinido",
+            "73 spams"
+          ],
+          "correct_index": 0,
+          "explanation": "0,73 passa de 0,5.",
+          "pitfall": "A chance não precisa ser 1 para classificar como sim."
+        },
+        {
+          "topic": "Perda",
+          "statement": "A resposta certa é sim, e o modelo deu chance 0,5. Qual é a perda aproximada?",
+          "options": [
+            "0,5",
+            "0,69",
+            "0",
+            "1",
+            "2,3"
+          ],
+          "correct_index": 1,
+          "explanation": "−ln(0,5) ≈ 0,69.",
+          "pitfall": "0,5 é a chance, e não a perda."
+        },
+        {
+          "topic": "Resposta não",
+          "statement": "A resposta certa é não, e o modelo deu chance 0,9 ao sim. Qual fórmula dá a perda?",
+          "options": [
+            "−ln(0,9)",
+            "−ln(0,1)",
+            "0,9²",
+            "1 − 0,9",
+            "ln(0,9)"
+          ],
+          "correct_index": 1,
+          "explanation": "Para resposta não, a perda é −ln(1 − p) = −ln(0,1) ≈ 2,3.",
+          "pitfall": "−ln(0,9) seria o caso de a resposta certa ser sim."
+        },
+        {
+          "topic": "Gradiente",
+          "statement": "No neurônio logístico, com chance p = 0,8 e rótulo y = 1, quanto vale p − y?",
+          "options": [
+            "0,2",
+            "−0,2",
+            "1,8",
+            "0,8",
+            "1"
+          ],
+          "correct_index": 1,
+          "explanation": "0,8 − 1 = −0,2: negativo, então o ajuste aumenta a chance de sim.",
+          "pitfall": "0,2 inverte a ordem da conta."
+        },
+        {
+          "topic": "MSE ou não",
+          "statement": "Por que a regressão logística usa entropia cruzada no lugar do MSE?",
+          "options": [
+            "porque é mais curta",
+            "porque castiga muito mais a confiança errada",
+            "porque o MSE não existe",
+            "porque dá números inteiros",
+            "porque não precisa de derivada"
+          ],
+          "correct_index": 1,
+          "explanation": "Chance 0,01 para a certa custa 4,6 na entropia cruzada, e menos de 1 no MSE.",
+          "pitfall": "As duas têm derivada; o problema é o tamanho do castigo."
+        },
+        {
+          "topic": "Limite",
+          "statement": "O que um neurônio logístico sozinho NÃO consegue?",
+          "options": [
+            "dar uma chance",
+            "separar grupos com fronteira curva",
+            "usar pesos",
+            "ser treinado",
+            "classificar em sim ou não"
+          ],
+          "correct_index": 1,
+          "explanation": "Ele só desenha fronteiras retas. Curvas pedem camadas.",
+          "pitfall": "Classificar em sim ou não é exatamente o que ele faz."
+        },
+        {
+          "topic": "Peças",
+          "format": "match",
+          "statement": "Ligue cada peça da regressão logística ao seu papel.",
+          "pairs": [
+            {
+              "left": "soma ponderada",
+              "right": "junta as entradas com os pesos"
+            },
+            {
+              "left": "sigmoide",
+              "right": "transforma a soma em chance"
+            },
+            {
+              "left": "entropia cruzada",
+              "right": "mede o erro da chance"
+            },
+            {
+              "left": "limiar 0,5",
+              "right": "decide entre sim e não"
+            }
+          ],
+          "explanation": "Soma, espreme, mede e decide.",
+          "pitfall": "A sigmoide não decide sozinha: o limiar é que transforma chance em resposta."
+        }
+      ]
+    },
+    {
+      "slug": "camadas-e-forward",
+      "title": "Camadas: entrada, ocultas e saída",
+      "module": "A rede",
+      "summary": "Uma rede neural é feita de camadas de neurônios, uma alimentando a outra. Cada camada é uma multiplicação de matriz seguida de uma ativação, e os números vão da entrada à saída.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O júri em etapas",
+          "body": [
+            "Num concurso, um primeiro time de jurados avalia detalhes, como afinação e ritmo. Um segundo time lê essas notas e dá a nota final.",
+            "Uma rede neural é assim: grupos de neurônios em fila, cada grupo trabalhando sobre o que o anterior entregou."
+          ],
+          "terms": [
+            {
+              "word": "Neurônio artificial",
+              "meaning": "uma pequena conta que recebe números, combina todos e devolve um número. É a peça básica de uma rede neural."
+            },
+            {
+              "word": "Camada",
+              "meaning": "um grupo de neurônios que recebem as mesmas entradas e trabalham ao mesmo tempo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os três tipos de camada",
+          "body": [
+            "A camada de entrada só recebe os números do exemplo. As camadas ocultas fazem o trabalho no meio. A camada de saída entrega a resposta.",
+            "Ocultas não quer dizer secretas: só que ninguém vê os números delas, só os da entrada e os da saída."
+          ],
+          "terms": [
+            {
+              "word": "Camada oculta",
+              "meaning": "qualquer camada entre a entrada e a saída."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/redes-neurais/rede.svg",
+            "alt": "Uma rede com três colunas de círculos: três na entrada, quatro na camada oculta e dois na saída. Cada círculo de uma coluna está ligado por linhas a todos os círculos da coluna seguinte.",
+            "caption": "Três entradas, quatro neurônios ocultos, duas saídas: todos ligados a todos."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Uma camada é uma matriz",
+          "body": [
+            "Cada neurônio da camada tem os seus pesos. Empilhando os pesos de todos, uma linha por neurônio, forma-se uma matriz W. Os vieses formam um vetor b.",
+            "A camada inteira vira uma conta só: h = f(W·x + b), com a ativação f aplicada em cada número."
+          ],
+          "terms": [
+            {
+              "word": "Matriz",
+              "meaning": "uma tabela de números em linhas e colunas."
+            },
+            {
+              "word": "Vetor",
+              "meaning": "uma lista ordenada de números, como (0,5; 2; −1)."
+            },
+            {
+              "word": "Peso",
+              "meaning": "um número que diz o quanto uma entrada importa. É ele que muda durante o treino."
+            },
+            {
+              "word": "Viés (bias)",
+              "meaning": "um número somado no fim da conta do neurônio, que desloca o resultado para cima ou para baixo."
+            },
+            {
+              "word": "Função de ativação",
+              "meaning": "uma função aplicada depois da soma do neurônio, que dobra a reta e deixa a rede aprender formas curvas."
+            },
+            {
+              "word": "ReLU",
+              "meaning": "a função que devolve o próprio número se ele for positivo, e 0 se for negativo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os números seguem em frente",
+          "body": [
+            "A saída de uma camada é a entrada da próxima. Os números entram, passam pelas ocultas e chegam à saída.",
+            "Esse caminho de ida se chama propagação para frente. É o que a rede faz toda vez que responde algo."
+          ],
+          "terms": [
+            {
+              "word": "Propagação para frente (forward)",
+              "meaning": "o caminho dos números da entrada até a saída, camada por camada."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Contando os parâmetros",
+          "body": [
+            "De 3 entradas para 4 neurônios, W tem 4 linhas e 3 colunas: 12 pesos. Mais 4 vieses: 16 parâmetros.",
+            "Um modelo de linguagem grande faz essa mesma conta com bilhões de parâmetros."
+          ],
+          "terms": [
+            {
+              "word": "Parâmetro",
+              "meaning": "cada número que a rede aprende: todos os pesos e todos os vieses."
+            }
+          ],
+          "example": {
+            "label": "A rede da figura",
+            "lines": [
+              "Entrada para oculta: 4 × 3 pesos + 4 vieses = 16",
+              "Oculta para saída: 2 × 4 pesos + 2 vieses = 10",
+              "Total: 26 parâmetros"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Em Python",
+          "body": [
+            "Com pesos sorteados, a rede já responde. A resposta é ruim, porque ninguém treinou, mas a conta está toda aqui."
+          ],
+          "terms": [
+            {
+              "word": "NumPy",
+              "meaning": "a biblioteca do Python para contas rápidas com listas e tabelas de números."
+            }
+          ],
+          "code": {
+            "label": "Propagação para frente",
+            "text": "import numpy as np\nrng = np.random.default_rng(0)\nx = np.array([1.0, 0.5, -1.0])\nW1, b1 = rng.normal(size=(4, 3)), np.zeros(4)\nW2, b2 = rng.normal(size=(2, 4)), np.zeros(2)\nh = np.maximum(0, W1 @ x + b1)\nsaida = W2 @ h + b2\nprint(h.shape, saida.shape)",
+            "notes": [
+              "Traz o NumPy.",
+              "Cria um sorteador com semente fixa, para o resultado se repetir.",
+              "Um exemplo com três números de entrada.",
+              "Pesos sorteados da primeira camada (4 × 3) e vieses zerados.",
+              "Pesos da segunda camada (2 × 4) e vieses zerados.",
+              "Camada oculta: matriz vezes entrada, mais viés e depois ReLU, que zera negativos.",
+              "Camada de saída: matriz vezes a oculta, mais viés.",
+              "Mostra (4,) (2,): quatro números na oculta e dois na saída."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Por que mais de uma camada",
+          "body": [
+            "O “ou exclusivo” vale 1 quando só uma das duas entradas é 1. Não existe uma reta que separe os 1 dos 0 nessa tabela.",
+            "Um neurônio sozinho não resolve. Com uma camada oculta de dois neurônios, resolve: cada camada dobra o espaço um pouco mais."
+          ],
+          "table": {
+            "label": "O ou exclusivo (XOR)",
+            "headers": [
+              "Entrada A",
+              "Entrada B",
+              "Saída"
+            ],
+            "rows": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "1",
+                "1"
+              ],
+              [
+                "1",
+                "0",
+                "1"
+              ],
+              [
+                "1",
+                "1",
+                "0"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem contar parâmetros de uma rede pequena e dizer o formato de W entre duas camadas.",
+            "O formato de W é sempre (neurônios da camada de chegada) × (neurônios da camada de saída)."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde as camadas confundem."
+          ],
+          "bullets": [
+            "Esquecer os vieses ao contar parâmetros.",
+            "Inverter o formato de W: são as linhas da camada de chegada.",
+            "Contar a camada de entrada como camada de neurônios: ela não tem pesos.",
+            "Achar que “oculta” quer dizer escondida de propósito."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Camadas em fila."
+          ],
+          "bullets": [
+            "Entrada, ocultas e saída.",
+            "Uma camada: h = f(W·x + b).",
+            "A saída de uma camada é a entrada da próxima.",
+            "Parâmetros: pesos mais vieses.",
+            "Camadas a mais dobram o espaço mais vezes.",
+            "XOR precisa de pelo menos uma camada oculta."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Parâmetros",
+          "statement": "Uma camada liga 5 entradas a 3 neurônios. Quantos parâmetros ela tem?",
+          "options": [
+            "15",
+            "18",
+            "8",
+            "20",
+            "3"
+          ],
+          "correct_index": 1,
+          "explanation": "5 × 3 = 15 pesos, mais 3 vieses: 18.",
+          "pitfall": "15 esquece os vieses."
+        },
+        {
+          "topic": "Formato",
+          "statement": "Entre uma camada de 10 neurônios e uma de 4, qual é o formato de W?",
+          "options": [
+            "10 × 4",
+            "4 × 10",
+            "4 × 4",
+            "10 × 10",
+            "14 × 1"
+          ],
+          "correct_index": 1,
+          "explanation": "Uma linha por neurônio de chegada (4), uma coluna por neurônio de saída da camada anterior (10).",
+          "pitfall": "10 × 4 inverte a ordem."
+        },
+        {
+          "topic": "Tipos",
+          "statement": "Qual camada entrega a resposta da rede?",
+          "options": [
+            "entrada",
+            "oculta",
+            "saída",
+            "todas",
+            "nenhuma"
+          ],
+          "correct_index": 2,
+          "explanation": "A camada de saída é a última.",
+          "pitfall": "As ocultas trabalham no meio."
+        },
+        {
+          "topic": "Forward",
+          "statement": "O que é a propagação para frente?",
+          "options": [
+            "ajustar os pesos",
+            "o caminho dos números da entrada até a saída",
+            "apagar camadas",
+            "sortear os pesos",
+            "medir o erro"
+          ],
+          "correct_index": 1,
+          "explanation": "É a rede calculando a resposta, camada por camada.",
+          "pitfall": "Ajustar os pesos é o treino, que vem depois."
+        },
+        {
+          "topic": "Conta",
+          "statement": "Numa camada com ReLU, W tem linhas [1, 0] e [0, 2] e o viés é b = (0, −5). Com x = (3, 2), qual é h?",
+          "options": [
+            "(3, 0)",
+            "(3, −1)",
+            "(3, 4)",
+            "(0, 0)",
+            "(3, 9)"
+          ],
+          "correct_index": 0,
+          "explanation": "W·x = (3, 4). Mais b: (3, −1). A ReLU zera o negativo: (3, 0).",
+          "pitfall": "(3, −1) esquece a ReLU."
+        },
+        {
+          "topic": "XOR",
+          "statement": "Por que um neurônio sozinho não resolve o XOR?",
+          "options": [
+            "porque tem entradas demais",
+            "porque nenhuma reta separa os casos 1 dos casos 0",
+            "porque não tem viés",
+            "porque só aceita números negativos",
+            "porque XOR não tem resposta"
+          ],
+          "correct_index": 1,
+          "explanation": "Os dois 1 ficam em cantos opostos, e uma reta não os separa dos 0.",
+          "pitfall": "Colocar viés não resolve: continua sendo uma reta."
+        },
+        {
+          "topic": "Total",
+          "statement": "Uma rede tem 2 entradas, uma camada oculta de 3 neurônios e 1 saída. Quantos parâmetros no total?",
+          "options": [
+            "9",
+            "13",
+            "6",
+            "11",
+            "7"
+          ],
+          "correct_index": 1,
+          "explanation": "Oculta: 2 × 3 + 3 = 9. Saída: 3 × 1 + 1 = 4. Total: 13.",
+          "pitfall": "9 é só a primeira camada."
+        },
+        {
+          "topic": "Uma camada",
+          "format": "order",
+          "statement": "Ponha na ordem a conta de uma camada.",
+          "options": [
+            "Multiplicar a matriz de pesos pelo vetor de entrada",
+            "Somar o vetor de vieses",
+            "Aplicar a ativação em cada número",
+            "Passar o resultado para a próxima camada"
+          ],
+          "explanation": "É a conta do neurônio, feita para todos de uma vez.",
+          "pitfall": "Aplicar a ativação antes de somar o viés muda o resultado."
+        }
+      ]
+    },
+    {
+      "slug": "softmax",
+      "title": "Softmax: transformar números em chances",
+      "module": "A rede",
+      "summary": "A saída de uma rede são números crus, que podem ser negativos. A softmax os transforma em chances positivas que somam 1, e é ela que escolhe a próxima palavra de um modelo de linguagem.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "As notas dos jurados",
+          "body": [
+            "Três jurados dão notas a três cantores: 2, 1 e 0. Quem deve ganhar? E com que certeza?",
+            "Notas não são porcentagens. É preciso transformar em chances, mantendo a ordem: quem teve mais nota fica com mais chance."
+          ],
+          "terms": [
+            {
+              "word": "Neurônio artificial",
+              "meaning": "uma pequena conta que recebe números, combina todos e devolve um número. É a peça básica de uma rede neural."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os números crus",
+          "body": [
+            "A camada de saída de um classificador dá um número por categoria, chamado logit. Ele pode ser qualquer coisa: 3,2, −1 ou 0.",
+            "Maior quer dizer mais provável, mas ainda não é uma chance."
+          ],
+          "terms": [
+            {
+              "word": "Logit",
+              "meaning": "o número cru que a rede dá para cada categoria, antes de virar chance."
+            },
+            {
+              "word": "Camada",
+              "meaning": "um grupo de neurônios que trabalham ao mesmo tempo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A receita",
+          "body": [
+            "Primeiro, eleve e a cada logit: tudo fica positivo. Depois divida cada um pela soma de todos: agora somam 1.",
+            "O resultado é a softmax."
+          ],
+          "terms": [
+            {
+              "word": "Softmax",
+              "meaning": "a função que transforma uma lista de números numa lista de chances positivas que somam 1."
+            },
+            {
+              "word": "Número e",
+              "meaning": "uma constante de cerca de 2,718. Elevar e a qualquer número dá resultado positivo."
+            }
+          ],
+          "example": {
+            "label": "Logits 2, 1 e 0",
+            "lines": [
+              "e² ≈ 7,39; e¹ ≈ 2,72; e⁰ = 1",
+              "Soma: 11,11",
+              "Chances: 0,665; 0,245; 0,090"
+            ],
+            "ordered": true
+          },
+          "figure": {
+            "src": "/figuras/redes-neurais/softmax.svg",
+            "alt": "À esquerda, três barras de logits, com alturas 2, 1 e 0. Uma seta com a palavra softmax leva a três barras de chances à direita: 66%, 24% e 9%, que somam 100%.",
+            "caption": "Números crus viram chances que somam 1."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que importa é a diferença",
+          "body": [
+            "Somar o mesmo número a todos os logits não muda as chances: 12, 11 e 10 dão exatamente o mesmo resultado que 2, 1 e 0.",
+            "Os programas usam isso para não estourar a conta: subtraem o maior logit antes da exponencial."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A temperatura",
+          "body": [
+            "Dividindo os logits por um número T antes da softmax, muda-se a confiança. T pequeno exagera as diferenças e o maior leva quase tudo. T grande achata e aproxima as chances.",
+            "Nos modelos de linguagem, é esse o controle de temperatura. Baixa dá respostas mais previsíveis; alta, mais variadas."
+          ],
+          "terms": [
+            {
+              "word": "Temperatura",
+              "meaning": "o número que divide os logits antes da softmax. Baixa deixa a escolha mais certa; alta, mais variada."
+            }
+          ],
+          "table": {
+            "label": "Logits 2, 1 e 0",
+            "headers": [
+              "Temperatura",
+              "Chances"
+            ],
+            "rows": [
+              [
+                "0,5",
+                "0,87 · 0,12 · 0,02"
+              ],
+              [
+                "1",
+                "0,67 · 0,24 · 0,09"
+              ],
+              [
+                "2",
+                "0,51 · 0,31 · 0,19"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Em Python",
+          "body": [
+            "A softmax estável cabe em três linhas."
+          ],
+          "terms": [
+            {
+              "word": "NumPy",
+              "meaning": "a biblioteca do Python para contas rápidas com listas e tabelas de números."
+            }
+          ],
+          "code": {
+            "label": "Softmax",
+            "text": "import numpy as np\nlogits = np.array([2.0, 1.0, 0.0])\ne = np.exp(logits - logits.max())\nprint(np.round(e / e.sum(), 3))",
+            "notes": [
+              "Traz o NumPy.",
+              "Os três logits.",
+              "Tira o maior de todos, para a conta não estourar, e eleva e a cada um.",
+              "Divide pela soma e mostra [0.665 0.245 0.09]."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Onde ela aparece",
+          "body": [
+            "Na saída de todo classificador com várias categorias: gato, cachorro ou passarinho.",
+            "Num modelo de linguagem, a categoria é cada palavra do vocabulário. A softmax dá a chance de cada uma ser a próxima."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem o cálculo da softmax de dois ou três números e o efeito da temperatura.",
+            "Em entrevistas, cai por que se subtrai o maior logit: para a exponencial não estourar, sem mudar o resultado."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a softmax engana."
+          ],
+          "bullets": [
+            "Dividir pela soma sem exponenciar: logits negativos dariam chance negativa.",
+            "Achar que dobrar todos os logits não muda nada: muda, deixa mais confiante.",
+            "Achar que somar a todos muda: não muda.",
+            "Confundir logit com chance."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Números viram chances."
+          ],
+          "bullets": [
+            "Logit: o número cru por categoria.",
+            "Softmax: eleva e a cada um e divide pela soma.",
+            "As chances ficam positivas e somam 1.",
+            "Só as diferenças entre logits importam.",
+            "Temperatura baixa: mais certeza. Alta: mais variedade.",
+            "É a softmax que dá a chance de cada próxima palavra."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Soma",
+          "statement": "Quanto somam as saídas de uma softmax?",
+          "options": [
+            "0",
+            "1",
+            "o número de categorias",
+            "100",
+            "depende dos logits"
+          ],
+          "correct_index": 1,
+          "explanation": "Divide-se pela soma exatamente para dar 1.",
+          "pitfall": "100 seria em porcentagem, e aí é 100%."
+        },
+        {
+          "topic": "Iguais",
+          "statement": "Qual é a softmax de três logits iguais a 5?",
+          "options": [
+            "(5, 5, 5)",
+            "(1/3, 1/3, 1/3)",
+            "(1, 1, 1)",
+            "(0, 0, 1)",
+            "(5/15, 5/15, 5/15) e mais nada"
+          ],
+          "correct_index": 1,
+          "explanation": "Logits iguais dão chances iguais.",
+          "pitfall": "(1, 1, 1) somaria 3."
+        },
+        {
+          "topic": "Deslocar",
+          "statement": "Os logits (3, 1) e (103, 101) dão chances:",
+          "options": [
+            "iguais",
+            "diferentes",
+            "negativas",
+            "zero",
+            "impossíveis de calcular"
+          ],
+          "correct_index": 0,
+          "explanation": "Somar 100 a todos não muda as diferenças, e a softmax só olha as diferenças.",
+          "pitfall": "A exponencial fica gigante, mas a divisão cancela isso."
+        },
+        {
+          "topic": "Temperatura baixa",
+          "statement": "O que acontece com as chances quando se usa temperatura bem baixa?",
+          "options": [
+            "ficam todas iguais",
+            "o maior logit leva quase toda a chance",
+            "ficam negativas",
+            "somam mais que 1",
+            "nada muda"
+          ],
+          "correct_index": 1,
+          "explanation": "Dividir por número pequeno aumenta as diferenças.",
+          "pitfall": "Todas iguais é o que a temperatura alta faz no extremo."
+        },
+        {
+          "topic": "Dois logits",
+          "statement": "Com logits 0 e 0, qual é a chance da primeira categoria?",
+          "options": [
+            "0",
+            "0,5",
+            "1",
+            "e",
+            "0,25"
+          ],
+          "correct_index": 1,
+          "explanation": "e⁰ = 1 para os dois. 1 / (1 + 1) = 0,5.",
+          "pitfall": "Logit zero não quer dizer chance zero."
+        },
+        {
+          "topic": "Estável",
+          "statement": "Por que se subtrai o maior logit antes da exponencial?",
+          "options": [
+            "para mudar as chances",
+            "para a conta não estourar, sem mudar o resultado",
+            "para as chances ficarem negativas",
+            "para ordenar",
+            "porque a softmax exige"
+          ],
+          "correct_index": 1,
+          "explanation": "e elevado a números enormes estoura; subtrair um valor comum não muda as chances.",
+          "pitfall": "O resultado final é exatamente o mesmo."
+        },
+        {
+          "topic": "LLM",
+          "statement": "Num modelo de linguagem, sobre o que a softmax da saída distribui as chances?",
+          "options": [
+            "sobre as camadas",
+            "sobre as palavras do vocabulário",
+            "sobre os pesos",
+            "sobre as frases de treino",
+            "sobre as letras do alfabeto só"
+          ],
+          "correct_index": 1,
+          "explanation": "Cada palavra do vocabulário é uma categoria.",
+          "pitfall": "Os números internos da rede não são escolhidos pela softmax: são aprendidos no treino."
+        },
+        {
+          "topic": "Receita",
+          "format": "order",
+          "statement": "Ponha na ordem a receita da softmax.",
+          "options": [
+            "Receber os logits",
+            "Subtrair o maior logit de todos",
+            "Elevar e a cada um",
+            "Dividir cada um pela soma"
+          ],
+          "explanation": "A subtração é só para a conta não estourar; o coração é exponenciar e dividir.",
+          "pitfall": "Dividir antes de exponenciar dá outra coisa."
+        }
+      ]
+    },
+    {
+      "slug": "funcoes-de-perda",
+      "title": "Funções de perda: MSE, entropia e entropia cruzada",
+      "module": "A rede",
+      "summary": "A perda é o número que diz o quanto a rede errou. Para prever números, usa-se o erro quadrático. Para prever categorias, usa-se a entropia cruzada, que olha só a chance dada à resposta certa.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A nota que ensina",
+          "body": [
+            "Um professor que só diz certo ou errado ensina pouco. Um que diz o quanto você errou, e em que direção, ensina muito mais.",
+            "A função de perda é esse professor. Ela transforma o erro num número que o treino pode diminuir."
+          ],
+          "terms": [
+            {
+              "word": "Função de perda",
+              "meaning": "a conta que mede o quanto a rede errou num exemplo. O treino tenta deixar esse número o menor possível."
+            },
+            {
+              "word": "Neurônio artificial",
+              "meaning": "uma pequena conta que recebe números, combina todos e devolve um número. É a peça básica de uma rede neural."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Para números: o MSE",
+          "body": [
+            "Quando a rede prevê um número, como um preço, a perda mais comum é o erro quadrático médio: a média dos quadrados das diferenças.",
+            "O quadrado tira o sinal e castiga mais os erros grandes."
+          ],
+          "terms": [
+            {
+              "word": "MSE (erro quadrático médio)",
+              "meaning": "a média dos quadrados das diferenças entre o previsto e o certo."
+            },
+            {
+              "word": "Regressão",
+              "meaning": "prever um número, como o preço de uma casa."
+            }
+          ],
+          "example": {
+            "label": "Previsões 10, 12 e 20; certos 11, 12 e 17",
+            "lines": [
+              "Erros: −1, 0 e 3",
+              "Quadrados: 1, 0 e 9",
+              "MSE = 10 ÷ 3 ≈ 3,33"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Para categorias: a resposta certa vira uma lista",
+          "body": [
+            "Com as categorias gato, cachorro e pássaro, a resposta “cachorro” vira a lista (0, 1, 0). Fica 1 na certa e 0 nas outras.",
+            "Essa lista é uma distribuição de chances com toda a certeza numa categoria só."
+          ],
+          "terms": [
+            {
+              "word": "Classificação",
+              "meaning": "prever uma categoria, como “spam” ou “não spam”."
+            },
+            {
+              "word": "Codificação one-hot",
+              "meaning": "escrever a resposta certa como uma lista com 1 na categoria certa e 0 nas outras."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A entropia: medir a incerteza",
+          "body": [
+            "Uma moeda justa é o máximo de incerteza entre duas opções. Uma moeda de duas caras não tem incerteza nenhuma.",
+            "A entropia mede isso: a surpresa média de uma distribuição. Zero quando uma opção tem chance 1; grande quando tudo é igualmente provável."
+          ],
+          "terms": [
+            {
+              "word": "Entropia",
+              "meaning": "a surpresa média de uma distribuição: −soma de p × ln(p). Mede o quanto o resultado é incerto."
+            }
+          ],
+          "table": {
+            "label": "Entropia de algumas moedas",
+            "headers": [
+              "Chances (cara, coroa)",
+              "Entropia"
+            ],
+            "rows": [
+              [
+                "(0,5; 0,5)",
+                "0,69"
+              ],
+              [
+                "(0,9; 0,1)",
+                "0,33"
+              ],
+              [
+                "(1; 0)",
+                "0"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A entropia cruzada",
+          "body": [
+            "A entropia cruzada compara a resposta certa com o que a rede previu. Com a resposta em one-hot, sobra só um termo: −ln da chance dada à categoria certa.",
+            "Prever 0,7 para cachorro, que era a certa, custa −ln(0,7) ≈ 0,36."
+          ],
+          "terms": [
+            {
+              "word": "Entropia cruzada",
+              "meaning": "a perda −ln(chance dada à resposta certa). Quanto menor a chance da certa, maior a perda."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Comparando previsões",
+          "body": [
+            "Quanto mais chance na resposta certa, menor a perda. E as chances dadas às erradas não entram diretamente na conta: elas só pesam porque roubam chance da certa."
+          ],
+          "table": {
+            "label": "Resposta certa: cachorro",
+            "headers": [
+              "Previsão (gato, cachorro, pássaro)",
+              "Perda"
+            ],
+            "rows": [
+              [
+                "(0,1; 0,8; 0,1)",
+                "0,22"
+              ],
+              [
+                "(0,3; 0,4; 0,3)",
+                "0,92"
+              ],
+              [
+                "(0,9; 0,05; 0,05)",
+                "3,00"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Em Python",
+          "body": [
+            "A entropia cruzada de um exemplo é uma linha."
+          ],
+          "terms": [
+            {
+              "word": "NumPy",
+              "meaning": "a biblioteca do Python para contas rápidas com listas e tabelas de números."
+            }
+          ],
+          "code": {
+            "label": "Entropia cruzada",
+            "text": "import numpy as np\nprevisao = np.array([0.1, 0.8, 0.1])\ncerta = 1\nprint(round(-np.log(previsao[certa]), 2))",
+            "notes": [
+              "Traz o NumPy.",
+              "As chances previstas para gato, cachorro e pássaro.",
+              "O índice da resposta certa: cachorro, na posição 1.",
+              "Mostra 0.22, o −ln da chance dada à resposta certa."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem: qual perda usar em cada problema, e o cálculo da entropia cruzada para uma previsão dada.",
+            "Número contínuo pede MSE; categoria pede entropia cruzada."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde as perdas confundem."
+          ],
+          "bullets": [
+            "Usar MSE para classificar em categorias.",
+            "Achar que a entropia cruzada soma as chances das erradas: só olha a certa, quando a resposta é one-hot.",
+            "Esquecer o sinal de menos: ln de chance é negativo.",
+            "Achar que perda zero é possível na prática: exigiria chance 1 exata."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O número do erro."
+          ],
+          "bullets": [
+            "Perda: o quanto a rede errou.",
+            "Prever número: MSE.",
+            "Prever categoria: entropia cruzada.",
+            "Resposta certa em one-hot: 1 na certa, 0 nas outras.",
+            "Entropia: a incerteza de uma distribuição.",
+            "Entropia cruzada: −ln da chance da certa."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Qual perda",
+          "statement": "Uma rede prevê a temperatura de amanhã. Qual perda combina?",
+          "options": [
+            "entropia cruzada",
+            "MSE",
+            "softmax",
+            "ReLU",
+            "nenhuma"
+          ],
+          "correct_index": 1,
+          "explanation": "Temperatura é um número: MSE.",
+          "pitfall": "Entropia cruzada é para categorias."
+        },
+        {
+          "topic": "MSE",
+          "statement": "Previsões 2 e 4, certos 3 e 6. Qual é o MSE?",
+          "options": [
+            "1,5",
+            "2,5",
+            "5",
+            "3",
+            "1"
+          ],
+          "correct_index": 1,
+          "explanation": "Erros −1 e −2. Quadrados 1 e 4. Média: 2,5.",
+          "pitfall": "1,5 tira a média sem elevar ao quadrado."
+        },
+        {
+          "topic": "One-hot",
+          "statement": "Com as categorias (gato, cachorro, pássaro), como fica “pássaro” em one-hot?",
+          "options": [
+            "(1, 0, 0)",
+            "(0, 1, 0)",
+            "(0, 0, 1)",
+            "(3)",
+            "(1, 1, 1)"
+          ],
+          "correct_index": 2,
+          "explanation": "1 na posição da certa e 0 nas outras.",
+          "pitfall": "(0, 1, 0) seria cachorro."
+        },
+        {
+          "topic": "Entropia cruzada",
+          "statement": "A rede deu chance 0,5 à categoria certa. Qual é a perda?",
+          "options": [
+            "0,5",
+            "0,69",
+            "0",
+            "1",
+            "2"
+          ],
+          "correct_index": 1,
+          "explanation": "−ln(0,5) ≈ 0,69.",
+          "pitfall": "0,5 é a chance, e não a perda."
+        },
+        {
+          "topic": "Comparar",
+          "statement": "Qual previsão tem a menor perda, se a certa é a segunda categoria?",
+          "options": [
+            "(0,6; 0,2; 0,2)",
+            "(0,1; 0,7; 0,2)",
+            "(0,3; 0,3; 0,4)",
+            "(0,05; 0,9; 0,05)",
+            "(0,5; 0,5; 0)"
+          ],
+          "correct_index": 3,
+          "explanation": "A perda só depende da chance da certa: 0,9 é a maior.",
+          "pitfall": "(0,1; 0,7; 0,2) é boa, mas 0,9 é ainda melhor."
+        },
+        {
+          "topic": "Entropia",
+          "statement": "Qual distribuição tem a maior entropia?",
+          "options": [
+            "(1; 0)",
+            "(0,9; 0,1)",
+            "(0,5; 0,5)",
+            "(0,99; 0,01)",
+            "(0; 1)"
+          ],
+          "correct_index": 2,
+          "explanation": "Chances iguais: a maior incerteza possível entre duas opções.",
+          "pitfall": "(1; 0) tem entropia zero: não há surpresa."
+        },
+        {
+          "topic": "Erradas",
+          "statement": "Na entropia cruzada com resposta one-hot, por que as chances dadas às erradas importam?",
+          "options": [
+            "porque são somadas à perda",
+            "porque, somando 1, elas tiram chance da certa",
+            "não importam de jeito nenhum",
+            "porque são multiplicadas pela certa",
+            "porque viram negativas"
+          ],
+          "correct_index": 1,
+          "explanation": "A conta olha só a certa, mas a certa só sobe se as erradas descerem.",
+          "pitfall": "Elas não entram direto na fórmula."
+        },
+        {
+          "topic": "Perdas",
+          "format": "match",
+          "statement": "Ligue cada ideia à sua descrição.",
+          "pairs": [
+            {
+              "left": "MSE",
+              "right": "média dos erros ao quadrado"
+            },
+            {
+              "left": "entropia",
+              "right": "incerteza de uma distribuição"
+            },
+            {
+              "left": "entropia cruzada",
+              "right": "−ln da chance da certa"
+            },
+            {
+              "left": "one-hot",
+              "right": "1 na certa e 0 nas outras"
+            }
+          ],
+          "explanation": "MSE para números; entropia cruzada para categorias.",
+          "pitfall": "Entropia e entropia cruzada são parentes, mas medem coisas diferentes."
+        }
+      ]
+    },
+    {
+      "slug": "retropropagacao",
+      "title": "Retropropagação: o erro voltando pela rede",
+      "module": "A rede",
+      "summary": "Para ajustar cada peso, é preciso saber o quanto ele contribuiu para o erro. A retropropagação calcula isso para todos os pesos de uma vez, levando o erro da saída de volta com a regra da cadeia.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Quem estragou o bolo?",
+          "body": [
+            "O bolo saiu queimado. A culpa pode ser do forno, do tempo ou da receita. Você volta pelo caminho: o forno estava alto porque o botão estava errado, e assim por diante.",
+            "A rede faz o mesmo com o erro: volta da saída para o começo, distribuindo a culpa entre os pesos."
+          ],
+          "terms": [
+            {
+              "word": "Neurônio artificial",
+              "meaning": "uma pequena conta que recebe números, combina todos e devolve um número. É a peça básica de uma rede neural."
+            },
+            {
+              "word": "Peso",
+              "meaning": "um número que diz o quanto uma entrada importa. É ele que muda durante o treino."
+            },
+            {
+              "word": "Função de perda",
+              "meaning": "a conta que mede o quanto a rede errou num exemplo. O treino tenta deixar esse número o menor possível."
+            },
+            {
+              "word": "Camada",
+              "meaning": "um grupo de neurônios que recebem as mesmas entradas e trabalham ao mesmo tempo."
+            },
+            {
+              "word": "Função de ativação",
+              "meaning": "uma função aplicada depois da soma do neurônio, que dobra a reta e deixa a rede aprender formas curvas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que se quer calcular",
+          "body": [
+            "Para cada peso, a derivada da perda em relação a ele: quanto a perda muda se aquele peso mudar um pouquinho.",
+            "Com todas essas derivadas, o gradiente descendente sabe para onde empurrar cada peso."
+          ],
+          "terms": [
+            {
+              "word": "Derivada",
+              "meaning": "a rapidez com que uma conta muda quando a entrada muda um pouquinho."
+            },
+            {
+              "word": "Gradiente",
+              "meaning": "a lista das derivadas da perda em relação a cada peso. Ele aponta para onde a perda sobe."
+            },
+            {
+              "word": "Taxa de aprendizado",
+              "meaning": "o tamanho do passo dado a cada ajuste dos pesos."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Um neurônio, à mão",
+          "body": [
+            "Rede mínima: y = w·x, perda L = (y − t)², com t a resposta certa. A derivada é dL/dw = 2(y − t)·x.",
+            "Com x = 2, w = 1 e t = 5: y = 2, e dL/dw = 2 × (−3) × 2 = −12. Negativo: aumentar w diminui a perda."
+          ],
+          "example": {
+            "label": "x = 2, w = 1, t = 5",
+            "lines": [
+              "y = 1 × 2 = 2",
+              "y − t = −3",
+              "dL/dw = 2 × (−3) × 2 = −12",
+              "Com taxa 0,01: novo w = 1 + 0,12 = 1,12"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Duas camadas: a regra da cadeia",
+          "body": [
+            "Agora h = ReLU(w₁·x) e y = w₂·h. O w₁ afeta a perda passando por h e por y. As rapidezes de cada passo se multiplicam.",
+            "dL/dw₁ = dL/dy × dy/dh × dh/dw₁. Cada fator é uma conta pequena e local."
+          ],
+          "terms": [
+            {
+              "word": "Regra da cadeia",
+              "meaning": "a derivada de uma conta em fila é o produto das derivadas de cada passo."
+            },
+            {
+              "word": "ReLU",
+              "meaning": "a ativação que devolve o número se ele for positivo, e 0 se for negativo."
+            }
+          ],
+          "example": {
+            "label": "x = 1, w₁ = 2, w₂ = 3, t = 10",
+            "lines": [
+              "Ida: h = ReLU(2) = 2; y = 3 × 2 = 6",
+              "dL/dy = 2 × (6 − 10) = −8",
+              "dL/dw₂ = dL/dy × h = −8 × 2 = −16",
+              "dL/dh = dL/dy × w₂ = −24",
+              "dL/dw₁ = dL/dh × 1 (ReLU ligada) × x = −24"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "De trás para frente",
+          "body": [
+            "Repare que dL/dh reaproveita dL/dy, que já estava calculado. Começando do fim, cada camada usa o resultado da seguinte.",
+            "Por isso calcular o gradiente de milhões de pesos custa só umas duas vezes o trabalho da ida."
+          ],
+          "terms": [
+            {
+              "word": "Retropropagação (backpropagation)",
+              "meaning": "o jeito de calcular o gradiente de todos os pesos, levando o erro da saída de volta para o começo da rede com a regra da cadeia."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/redes-neurais/backprop.svg",
+            "alt": "Uma fila de caixas da esquerda para a direita: x, camada 1, camada 2 e perda, com setas de ida em cima. Embaixo, setas no sentido contrário levam o gradiente da perda de volta até a camada 1.",
+            "caption": "Ida calcula a resposta; volta calcula a culpa de cada peso."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O computador faz sozinho",
+          "body": [
+            "Ninguém escreve essas derivadas à mão numa rede de verdade. O PyTorch guarda as contas da ida e, com um comando, faz a volta.",
+            "O código confere o exemplo das duas camadas."
+          ],
+          "terms": [
+            {
+              "word": "PyTorch",
+              "meaning": "a biblioteca do Python mais usada para criar e treinar redes neurais. Ela calcula as derivadas sozinha."
+            },
+            {
+              "word": "Tensor",
+              "meaning": "o nome que o PyTorch dá às listas e tabelas de números, de qualquer número de direções."
+            }
+          ],
+          "code": {
+            "label": "Conferindo no PyTorch",
+            "text": "import torch\nx, t = torch.tensor(1.0), torch.tensor(10.0)\nw1 = torch.tensor(2.0, requires_grad=True)\nw2 = torch.tensor(3.0, requires_grad=True)\nperda = (w2 * torch.relu(w1 * x) - t) ** 2\nperda.backward()\nprint(w1.grad.item(), w2.grad.item())",
+            "notes": [
+              "Traz o PyTorch.",
+              "A entrada e a resposta certa.",
+              "O peso da primeira camada, pedindo para acompanhar as contas feitas com ele.",
+              "O peso da segunda camada, do mesmo jeito.",
+              "A ida inteira numa linha: ReLU, multiplicação e erro ao quadrado.",
+              "A volta: calcula as derivadas da perda em relação aos pesos.",
+              "Mostra −24.0 −16.0, os mesmos valores da conta à mão."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem uma ou duas derivadas à mão numa rede minúscula e a pergunta sobre o sentido: por que começar pelo fim.",
+            "A resposta: para reaproveitar as contas de cada camada, sem refazer nada."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a retropropagação confunde."
+          ],
+          "bullets": [
+            "Achar que é outro método de treino: ela só calcula o gradiente, e quem ajusta é o gradiente descendente.",
+            "Somar as derivadas da fila em vez de multiplicar.",
+            "Esquecer a derivada da ativação: na ReLU desligada, ela zera tudo que passa.",
+            "Esquecer de zerar os gradientes entre um passo e outro no PyTorch."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A culpa volta pela rede."
+          ],
+          "bullets": [
+            "Queremos dPerda/dPeso para todo peso.",
+            "Numa fila de contas, as derivadas se multiplicam.",
+            "Começando do fim, cada camada reaproveita a seguinte.",
+            "Custo: umas duas vezes o da ida.",
+            "O PyTorch faz a volta com backward().",
+            "Quem ajusta os pesos é o gradiente descendente."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Um neurônio",
+          "statement": "A rede é y = w·x e a perda é L = (y − t)². Com x = 3; w = 2 e t = 4, quanto vale dL/dw?",
+          "options": [
+            "12",
+            "6",
+            "24",
+            "2",
+            "−12"
+          ],
+          "correct_index": 0,
+          "explanation": "y = 6, y − t = 2. dL/dw = 2 × 2 × 3 = 12.",
+          "pitfall": "6 esquece o fator 2 da derivada do quadrado."
+        },
+        {
+          "topic": "Sinal",
+          "statement": "A derivada da perda em relação a um peso deu −5. Para diminuir a perda, o peso deve:",
+          "options": [
+            "diminuir",
+            "aumentar",
+            "ficar igual",
+            "virar zero",
+            "trocar de sinal"
+          ],
+          "correct_index": 1,
+          "explanation": "Derivada negativa: aumentar o peso faz a perda cair.",
+          "pitfall": "Diminuir aumentaria a perda."
+        },
+        {
+          "topic": "Cadeia",
+          "statement": "Na fila x → h → y → L, como se calcula dL/dx?",
+          "options": [
+            "dL/dy + dy/dh + dh/dx",
+            "dL/dy × dy/dh × dh/dx",
+            "só dL/dy",
+            "dh/dx",
+            "dL/dy ÷ dh/dx"
+          ],
+          "correct_index": 1,
+          "explanation": "As rapidezes se multiplicam ao longo da fila.",
+          "pitfall": "Somar é o erro clássico."
+        },
+        {
+          "topic": "ReLU desligada",
+          "statement": "Um neurônio ReLU recebeu soma negativa. O que acontece com o gradiente que tenta passar por ele?",
+          "options": [
+            "dobra",
+            "vira zero",
+            "fica igual",
+            "fica negativo",
+            "vira 1"
+          ],
+          "correct_index": 1,
+          "explanation": "A derivada da ReLU é 0 para negativos, e multiplica tudo que passa.",
+          "pitfall": "Fica igual só com a ReLU ligada, para positivos."
+        },
+        {
+          "topic": "Por quê do fim",
+          "statement": "Por que a retropropagação começa pela saída?",
+          "options": [
+            "porque a saída é mais importante",
+            "para reaproveitar as derivadas já calculadas das camadas seguintes",
+            "porque o começo não tem pesos",
+            "por costume",
+            "para gastar mais tempo"
+          ],
+          "correct_index": 1,
+          "explanation": "Cada camada usa o resultado da que vem depois dela, já pronto.",
+          "pitfall": "Pelo começo, as mesmas contas seriam refeitas muitas vezes."
+        },
+        {
+          "topic": "Papel",
+          "statement": "Qual é o papel da retropropagação no treino?",
+          "options": [
+            "ajustar os pesos sozinha",
+            "calcular o gradiente de todos os pesos",
+            "sortear os pesos",
+            "escolher a taxa de aprendizado",
+            "medir a acurácia"
+          ],
+          "correct_index": 1,
+          "explanation": "Ela calcula; quem ajusta é o gradiente descendente.",
+          "pitfall": "Ajustar é o passo seguinte, feito com o gradiente."
+        },
+        {
+          "topic": "PyTorch",
+          "statement": "No PyTorch, que comando faz a volta e calcula os gradientes?",
+          "options": [
+            "forward()",
+            "backward()",
+            "print()",
+            "relu()",
+            "tensor()"
+          ],
+          "correct_index": 1,
+          "explanation": "backward() percorre as contas guardadas de trás para frente.",
+          "pitfall": "forward é o nome da ida."
+        },
+        {
+          "topic": "Um passo de treino",
+          "format": "order",
+          "statement": "Ponha na ordem um passo de treino completo.",
+          "options": [
+            "Propagação para frente: calcular a saída",
+            "Calcular a perda",
+            "Retropropagação: calcular o gradiente de cada peso",
+            "Ajustar os pesos contra o gradiente"
+          ],
+          "explanation": "Sem a ida não há perda; sem a perda não há o que voltar.",
+          "pitfall": "Ajustar antes de retropropagar é andar sem direção."
+        }
+      ]
+    },
+    {
+      "slug": "epocas-lotes-e-sgd",
+      "title": "Épocas, lotes e SGD: como o treino anda",
+      "module": "Treinar",
+      "summary": "Olhar todos os exemplos antes de cada passo é lento; olhar um só é barulhento. O meio-termo é o mini-lote, e uma passada por todos os dados é uma época.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Pesquisa de opinião",
+          "body": [
+            "Para saber o que uma cidade pensa, dá para entrevistar todo mundo. Isso é caro e lento. Dá também para ouvir uma pessoa só, que pode enganar.",
+            "O normal é entrevistar algumas centenas, sorteadas. O treino de uma rede faz a mesma escolha a cada passo."
+          ],
+          "terms": [
+            {
+              "word": "Neurônio artificial",
+              "meaning": "uma pequena conta que recebe números, combina todos e devolve um número. É a peça básica de uma rede neural."
+            },
+            {
+              "word": "Peso",
+              "meaning": "um número que diz o quanto uma entrada importa. É ele que muda durante o treino."
+            },
+            {
+              "word": "Função de perda",
+              "meaning": "a conta que mede o quanto a rede errou num exemplo. O treino tenta deixar esse número o menor possível."
+            },
+            {
+              "word": "Derivada",
+              "meaning": "a rapidez com que uma conta muda quando a entrada muda um pouquinho."
+            },
+            {
+              "word": "Gradiente",
+              "meaning": "a lista das derivadas da perda em relação a cada peso. Ele aponta para onde a perda sobe."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Três jeitos de calcular o gradiente",
+          "body": [
+            "Com todos os exemplos, o gradiente é exato, mas cada passo custa caro. Com um exemplo só, cada passo é barato, mas o gradiente balança muito.",
+            "Com um lote pequeno, de 32 ou 64 exemplos, fica o equilíbrio: barato o bastante e estável o bastante."
+          ],
+          "terms": [
+            {
+              "word": "Lote (batch)",
+              "meaning": "um grupo de exemplos processados juntos, antes de um ajuste dos pesos."
+            },
+            {
+              "word": "Mini-lote",
+              "meaning": "um grupo pequeno de exemplos, sorteado dos dados, usado para calcular um passo."
+            }
+          ],
+          "table": {
+            "label": "Tamanho do lote",
+            "headers": [
+              "Jeito",
+              "Exemplos por passo",
+              "Custo do passo",
+              "Gradiente"
+            ],
+            "rows": [
+              [
+                "todos de uma vez",
+                "todos",
+                "alto",
+                "exato"
+              ],
+              [
+                "um por vez",
+                "1",
+                "baixo",
+                "barulhento"
+              ],
+              [
+                "mini-lote",
+                "32 a 512",
+                "médio",
+                "bom o suficiente"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "SGD",
+          "body": [
+            "Gradiente descendente com lotes sorteados se chama gradiente descendente estocástico, ou SGD. “Estocástico” quer dizer que tem sorteio no meio.",
+            "O barulho do sorteio até ajuda: sacode a descida e evita que ela pare em qualquer buraquinho."
+          ],
+          "terms": [
+            {
+              "word": "Taxa de aprendizado",
+              "meaning": "o tamanho do passo dado a cada ajuste dos pesos."
+            },
+            {
+              "word": "SGD",
+              "meaning": "gradiente descendente estocástico: ajustar os pesos com o gradiente de lotes sorteados, e não de todos os dados."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Épocas",
+          "body": [
+            "Uma época é uma passada completa por todos os dados. Com 10 000 exemplos e lotes de 100, uma época tem 100 passos.",
+            "Redes pequenas treinam por dezenas de épocas. Modelos de linguagem grandes muitas vezes veem os dados só uma vez ou duas."
+          ],
+          "terms": [
+            {
+              "word": "Época",
+              "meaning": "uma passada completa por todos os exemplos de treino."
+            }
+          ],
+          "example": {
+            "label": "10 000 exemplos, lote 100, 5 épocas",
+            "lines": [
+              "Passos por época: 10 000 ÷ 100 = 100",
+              "Passos no total: 100 × 5 = 500",
+              "Cada exemplo foi visto 5 vezes"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Embaralhar a cada época",
+          "body": [
+            "Antes de cada época, os exemplos são embaralhados. Senão os lotes seriam sempre os mesmos, e na mesma ordem.",
+            "Dados em ordem, como todos os gatos primeiro e depois todos os cachorros, fariam a rede balançar de um lado para o outro."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Em Python",
+          "body": [
+            "O laço de treino com mini-lotes tem esta forma, qualquer que seja a rede."
+          ],
+          "terms": [
+            {
+              "word": "NumPy",
+              "meaning": "a biblioteca do Python para contas rápidas com listas e tabelas de números."
+            }
+          ],
+          "code": {
+            "label": "Laço de épocas e lotes",
+            "text": "import numpy as np\nrng = np.random.default_rng(0)\nn, tam_lote = 1000, 100\nfor epoca in range(3):\n    ordem = rng.permutation(n)\n    for inicio in range(0, n, tam_lote):\n        lote = ordem[inicio:inicio + tam_lote]\nprint(epoca + 1, len(lote), n // tam_lote)",
+            "notes": [
+              "Traz o NumPy.",
+              "Cria um sorteador com semente fixa.",
+              "Mil exemplos, em lotes de cem.",
+              "Repete por três épocas.",
+              "Embaralha os índices dos exemplos a cada época.",
+              "Anda de cem em cem pelos exemplos embaralhados.",
+              "Separa os índices do lote da vez. Aqui entraria o passo de treino.",
+              "Mostra 3 100 10: três épocas, lotes de cem e dez passos por época."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem contas de quantos passos há numa época e o nome certo de cada coisa: época, lote e passo.",
+            "Em entrevistas, cai o porquê do mini-lote: equilíbrio entre custo e estabilidade, e bom uso da placa de vídeo."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde os nomes confundem."
+          ],
+          "bullets": [
+            "Confundir época com passo: uma época tem muitos passos.",
+            "Achar que lote maior sempre é melhor.",
+            "Esquecer de embaralhar os dados entre épocas.",
+            "Achar que “estocástico” quer dizer errado: quer dizer com sorteio."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Como o treino anda."
+          ],
+          "bullets": [
+            "Passo: um ajuste dos pesos.",
+            "Lote: os exemplos usados num passo.",
+            "Mini-lote: poucos exemplos sorteados; é o padrão.",
+            "SGD: gradiente descendente com lotes sorteados.",
+            "Época: uma passada por todos os dados.",
+            "Passos por época = exemplos ÷ tamanho do lote."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Passos",
+          "statement": "Com 6 000 exemplos e lotes de 200, quantos passos tem uma época?",
+          "options": [
+            "200",
+            "30",
+            "6 000",
+            "1 200 000",
+            "3"
+          ],
+          "correct_index": 1,
+          "explanation": "6 000 ÷ 200 = 30.",
+          "pitfall": "200 é o tamanho do lote."
+        },
+        {
+          "topic": "Total",
+          "statement": "Com 30 passos por época e 10 épocas, quantos passos no total?",
+          "options": [
+            "40",
+            "300",
+            "3",
+            "30",
+            "10"
+          ],
+          "correct_index": 1,
+          "explanation": "30 × 10 = 300.",
+          "pitfall": "40 soma em vez de multiplicar."
+        },
+        {
+          "topic": "Época",
+          "statement": "O que é uma época?",
+          "options": [
+            "um passo de ajuste",
+            "uma passada completa por todos os dados de treino",
+            "um lote",
+            "uma camada",
+            "o tempo de um segundo"
+          ],
+          "correct_index": 1,
+          "explanation": "É o treino ter visto cada exemplo uma vez.",
+          "pitfall": "Um passo usa só um lote."
+        },
+        {
+          "topic": "SGD",
+          "statement": "O que o “estocástico” de SGD quer dizer?",
+          "options": [
+            "que usa lotes sorteados",
+            "que é errado",
+            "que é lento",
+            "que não usa gradiente",
+            "que tem uma camada só"
+          ],
+          "correct_index": 0,
+          "explanation": "Os lotes são sorteados dos dados, e isso traz um pouco de sorteio ao gradiente.",
+          "pitfall": "Não é errado: o barulho até ajuda."
+        },
+        {
+          "topic": "Mini-lote",
+          "statement": "Por que o mini-lote é o padrão?",
+          "options": [
+            "porque é o mais exato",
+            "porque equilibra o custo de cada passo e a estabilidade do gradiente",
+            "porque dispensa o gradiente",
+            "porque usa um exemplo só",
+            "porque não precisa de dados"
+          ],
+          "correct_index": 1,
+          "explanation": "Nem caro como todos os dados, nem barulhento como um exemplo só.",
+          "pitfall": "O mais exato seria usar todos os dados."
+        },
+        {
+          "topic": "Embaralhar",
+          "statement": "Por que embaralhar os exemplos a cada época?",
+          "options": [
+            "para gastar tempo",
+            "para os lotes variarem e a rede não balançar com dados em ordem",
+            "para apagar exemplos",
+            "para mudar as respostas certas",
+            "porque o NumPy exige"
+          ],
+          "correct_index": 1,
+          "explanation": "Dados em ordem fazem lotes enviesados; embaralhar deixa cada lote parecido com o todo.",
+          "pitfall": "As respostas certas não mudam: só a ordem."
+        },
+        {
+          "topic": "Um por vez",
+          "statement": "Qual é o problema de calcular o gradiente com um exemplo só?",
+          "options": [
+            "é caro demais",
+            "o gradiente balança muito de um passo para o outro",
+            "não dá para calcular",
+            "usa todos os dados",
+            "não existe"
+          ],
+          "correct_index": 1,
+          "explanation": "Um exemplo só é pouca informação: cada passo aponta para um lado diferente.",
+          "pitfall": "Caro é usar todos."
+        },
+        {
+          "topic": "Treino com lotes",
+          "format": "order",
+          "statement": "Ponha na ordem o que acontece numa época.",
+          "options": [
+            "Embaralhar os exemplos",
+            "Separar o próximo lote",
+            "Calcular a perda e o gradiente desse lote",
+            "Ajustar os pesos e passar ao lote seguinte"
+          ],
+          "explanation": "Embaralha uma vez por época, e depois repete lote a lote.",
+          "pitfall": "Embaralhar a cada lote desfaria a passada organizada pelos dados."
+        }
+      ]
+    },
+    {
+      "slug": "momentum-e-adam",
+      "title": "Otimizadores: momentum e Adam",
+      "module": "Treinar",
+      "summary": "O gradiente descendente puro é um andarilho sem memória. O momentum dá embalo, e o Adam dá a cada peso o seu tamanho de passo. O Adam é o padrão para treinar modelos de linguagem.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A bola rolando no vale",
+          "body": [
+            "Um andarilho no escuro dá cada passo só olhando o chão sob os pés. Numa ladeira em zigue-zague, ele vai e volta sem sair do lugar.",
+            "Uma bola rolando tem embalo: não muda de direção a cada pedrinha, e passa por pequenos buracos sem parar neles."
+          ],
+          "terms": [
+            {
+              "word": "Neurônio artificial",
+              "meaning": "uma pequena conta que recebe números, combina todos e devolve um número. É a peça básica de uma rede neural."
+            },
+            {
+              "word": "Peso",
+              "meaning": "um número que diz o quanto uma entrada importa. É ele que muda durante o treino."
+            },
+            {
+              "word": "Função de perda",
+              "meaning": "a conta que mede o quanto a rede errou num exemplo. O treino tenta deixar esse número o menor possível."
+            },
+            {
+              "word": "Derivada",
+              "meaning": "a rapidez com que uma conta muda quando a entrada muda um pouquinho."
+            },
+            {
+              "word": "Gradiente",
+              "meaning": "a lista das derivadas da perda em relação a cada peso. Ele aponta para onde a perda sobe."
+            },
+            {
+              "word": "Taxa de aprendizado",
+              "meaning": "o tamanho do passo dado a cada ajuste dos pesos."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O problema do passo puro",
+          "body": [
+            "No gradiente descendente puro, cada passo depende só do gradiente de agora. Num vale estreito e comprido, o gradiente aponta quase todo para as paredes.",
+            "O resultado é um zigue-zague lento, batendo de uma parede na outra."
+          ],
+          "figure": {
+            "src": "/figuras/redes-neurais/otimizadores.svg",
+            "alt": "Curvas de nível de um vale estreito e comprido. Um caminho em zigue-zague, batendo nas paredes, representa o passo puro. Outro caminho, mais suave, segue pelo meio do vale até o fundo, representando o momentum.",
+            "caption": "Sem embalo, zigue-zague; com embalo, direto para o fundo."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Momentum: guardar o embalo",
+          "body": [
+            "O momentum mantém uma velocidade: uma média dos gradientes recentes. O passo segue essa velocidade, e não só o gradiente de agora.",
+            "Os zigue-zagues se cancelam na média, e a direção que se repete vai somando embalo."
+          ],
+          "terms": [
+            {
+              "word": "Momentum",
+              "meaning": "guardar uma média dos gradientes recentes e andar por ela. Dá embalo e reduz o zigue-zague."
+            }
+          ],
+          "example": {
+            "label": "A cada passo",
+            "lines": [
+              "velocidade = 0,9 × velocidade + gradiente",
+              "peso = peso − taxa × velocidade",
+              "O 0,9 diz quanto do embalo antigo se mantém"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Adam: um passo para cada peso",
+          "body": [
+            "Alguns pesos recebem gradientes enormes; outros, minúsculos. Um mesmo tamanho de passo não serve para todos.",
+            "O Adam guarda duas médias por peso: a dos gradientes, como o momentum, e a dos gradientes ao quadrado. Divide uma pela raiz da outra, e cada peso ganha um passo na medida."
+          ],
+          "terms": [
+            {
+              "word": "Adam",
+              "meaning": "o otimizador que combina momentum com um tamanho de passo próprio para cada peso. É o padrão para treinar redes grandes."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Na prática",
+          "body": [
+            "Com o Adam, a taxa de aprendizado ainda existe, mas o treino fica bem menos sensível a ela. Valores como 0,001 costumam funcionar de primeira.",
+            "Para modelos de linguagem usa-se o AdamW, uma versão que aplica a regularização de um jeito mais correto."
+          ],
+          "terms": [
+            {
+              "word": "Hiperparâmetro",
+              "meaning": "uma escolha feita por quem treina, e não aprendida pela rede, como a taxa de aprendizado."
+            },
+            {
+              "word": "Lote (batch)",
+              "meaning": "um grupo de exemplos processados juntos, antes de um ajuste dos pesos."
+            },
+            {
+              "word": "SGD",
+              "meaning": "gradiente descendente estocástico: ajustar os pesos com o gradiente de lotes sorteados, e não de todos os dados."
+            },
+            {
+              "word": "Regularização",
+              "meaning": "qualquer técnica que ajuda a rede a generalizar em vez de decorar."
+            }
+          ],
+          "table": {
+            "label": "Quem é quem",
+            "headers": [
+              "Otimizador",
+              "Ideia",
+              "Onde aparece"
+            ],
+            "rows": [
+              [
+                "SGD",
+                "passo pelo gradiente de agora",
+                "redes simples"
+              ],
+              [
+                "SGD com momentum",
+                "passo com embalo",
+                "visão por computador"
+              ],
+              [
+                "Adam e AdamW",
+                "embalo e passo por peso",
+                "modelos de linguagem"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "No PyTorch",
+          "body": [
+            "Trocar de otimizador é trocar uma linha."
+          ],
+          "terms": [
+            {
+              "word": "PyTorch",
+              "meaning": "a biblioteca do Python mais usada para criar e treinar redes neurais. Ela calcula as derivadas sozinha."
+            },
+            {
+              "word": "Tensor",
+              "meaning": "o nome que o PyTorch dá às listas e tabelas de números, de qualquer número de direções."
+            },
+            {
+              "word": "Retropropagação (backpropagation)",
+              "meaning": "o jeito de calcular o gradiente de todos os pesos, levando o erro da saída de volta para o começo da rede com a regra da cadeia."
+            }
+          ],
+          "code": {
+            "label": "Adam minimizando (w − 3)²",
+            "text": "import torch\nw = torch.tensor(0.0, requires_grad=True)\notim = torch.optim.Adam([w], lr=0.1)\nfor passo in range(200):\n    otim.zero_grad()\n    perda = (w - 3) ** 2\n    perda.backward()\n    otim.step()\nprint(round(w.item(), 2))",
+            "notes": [
+              "Traz o PyTorch.",
+              "Um peso só, começando em zero, com as contas acompanhadas.",
+              "Cria o otimizador Adam para esse peso, com taxa de aprendizado 0,1.",
+              "Repete 200 passos.",
+              "Zera o gradiente do passo anterior.",
+              "Calcula a perda: o mínimo está em w = 3.",
+              "Calcula o gradiente pela retropropagação.",
+              "O Adam dá o passo.",
+              "Mostra 3.0: achou o mínimo."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Em entrevistas, cai: qual o problema que o momentum resolve? O zigue-zague e a lentidão em vales compridos. E o Adam? O passo por peso.",
+            "Também cai a ordem das três linhas do PyTorch: zerar, retropropagar e dar o passo."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde os otimizadores confundem."
+          ],
+          "bullets": [
+            "Achar que o Adam dispensa a taxa de aprendizado.",
+            "Esquecer o zero_grad: no PyTorch os gradientes se acumulam de um passo para o outro.",
+            "Achar que momentum é outra perda: é outro jeito de andar.",
+            "Achar que o otimizador calcula o gradiente: quem calcula é a retropropagação."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Jeitos mais espertos de descer."
+          ],
+          "bullets": [
+            "Passo puro: zigue-zague em vales compridos.",
+            "Momentum: média dos gradientes, dá embalo.",
+            "Adam: embalo e passo próprio para cada peso.",
+            "AdamW: o padrão dos modelos de linguagem.",
+            "No PyTorch: zero_grad, backward e step.",
+            "A taxa de aprendizado continua existindo."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Momentum",
+          "statement": "Qual problema o momentum ajuda a resolver?",
+          "options": [
+            "falta de dados",
+            "o zigue-zague lento em vales estreitos",
+            "a falta de camadas",
+            "o excesso de memória",
+            "a escolha da ativação"
+          ],
+          "correct_index": 1,
+          "explanation": "A média dos gradientes cancela as idas e vindas e soma a direção que se repete.",
+          "pitfall": "Momentum não mexe nos dados."
+        },
+        {
+          "topic": "Adam",
+          "statement": "O que o Adam tem de especial?",
+          "options": [
+            "não usa gradiente",
+            "dá a cada peso um tamanho de passo próprio",
+            "não tem taxa de aprendizado",
+            "só funciona com uma camada",
+            "treina sem perda"
+          ],
+          "correct_index": 1,
+          "explanation": "Ele ajusta o passo de cada peso pelo histórico dos gradientes desse peso.",
+          "pitfall": "A taxa de aprendizado continua lá."
+        },
+        {
+          "topic": "Velocidade",
+          "statement": "Com velocidade 2, gradiente 1 e fator 0,9, qual é a nova velocidade no momentum?",
+          "options": [
+            "2,8",
+            "3",
+            "1,9",
+            "2,9",
+            "0,9"
+          ],
+          "correct_index": 0,
+          "explanation": "0,9 × 2 + 1 = 2,8.",
+          "pitfall": "3 esquece o fator 0,9."
+        },
+        {
+          "topic": "Ordem",
+          "statement": "Qual é a ordem certa num passo de treino no PyTorch?",
+          "options": [
+            "step, backward, zero_grad",
+            "zero_grad, backward, step",
+            "backward, zero_grad, step",
+            "step, zero_grad, backward",
+            "zero_grad, step, backward"
+          ],
+          "correct_index": 1,
+          "explanation": "Zera o antigo, calcula o novo gradiente e dá o passo.",
+          "pitfall": "Dar o passo antes de calcular usaria um gradiente velho."
+        },
+        {
+          "topic": "zero_grad",
+          "statement": "O que acontece se esquecer o zero_grad no PyTorch?",
+          "options": [
+            "nada",
+            "os gradientes se acumulam de um passo para o outro",
+            "a rede apaga os pesos",
+            "o Adam vira SGD",
+            "a perda vira zero"
+          ],
+          "correct_index": 1,
+          "explanation": "O PyTorch soma os gradientes novos aos antigos, de propósito.",
+          "pitfall": "Nada mudar é o que se espera, e é por isso que o erro engana."
+        },
+        {
+          "topic": "LLM",
+          "statement": "Qual otimizador é o padrão para treinar modelos de linguagem?",
+          "options": [
+            "SGD puro",
+            "AdamW",
+            "nenhum",
+            "a perda",
+            "o gradiente"
+          ],
+          "correct_index": 1,
+          "explanation": "A família Adam, na versão AdamW, é a mais usada.",
+          "pitfall": "A perda é o que se quer diminuir, e não o jeito de diminuir."
+        },
+        {
+          "topic": "Quem calcula",
+          "statement": "Quem calcula o gradiente, e quem dá o passo?",
+          "options": [
+            "o otimizador calcula e a retropropagação dá o passo",
+            "a retropropagação calcula e o otimizador dá o passo",
+            "os dois calculam",
+            "a perda calcula",
+            "ninguém"
+          ],
+          "correct_index": 1,
+          "explanation": "backward calcula; o otimizador usa esse gradiente para mexer nos pesos.",
+          "pitfall": "O contrário é a confusão mais comum."
+        },
+        {
+          "topic": "Otimizadores",
+          "format": "match",
+          "statement": "Ligue cada otimizador à sua ideia.",
+          "pairs": [
+            {
+              "left": "SGD",
+              "right": "passo pelo gradiente de agora"
+            },
+            {
+              "left": "momentum",
+              "right": "passo com embalo"
+            },
+            {
+              "left": "Adam",
+              "right": "embalo e passo por peso"
+            },
+            {
+              "left": "AdamW",
+              "right": "Adam com a regularização corrigida"
+            }
+          ],
+          "explanation": "Cada um acrescenta uma ideia ao anterior.",
+          "pitfall": "Todos usam o gradiente; mudam o jeito de andar com ele."
+        }
+      ]
+    },
+    {
+      "slug": "overfitting-e-underfitting",
+      "title": "Overfitting e underfitting: decorar ou aprender",
+      "module": "Treinar",
+      "summary": "Uma rede pode aprender pouco demais, ou decorar os exemplos e errar nos novos. Separar os dados em treino, validação e teste é o que mostra qual dos dois está acontecendo.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Decorar o gabarito",
+          "body": [
+            "Um aluno decorou as respostas da lista de exercícios. Na lista, tira dez. Na prova, com questões novas, vai mal.",
+            "Ele não aprendeu a matéria: aprendeu a lista. Uma rede pode fazer exatamente o mesmo."
+          ],
+          "terms": [
+            {
+              "word": "Neurônio artificial",
+              "meaning": "uma pequena conta que recebe números, combina todos e devolve um número. É a peça básica de uma rede neural."
+            },
+            {
+              "word": "Peso",
+              "meaning": "um número que diz o quanto uma entrada importa. É ele que muda durante o treino."
+            },
+            {
+              "word": "Função de perda",
+              "meaning": "a conta que mede o quanto a rede errou num exemplo. O treino tenta deixar esse número o menor possível."
+            },
+            {
+              "word": "Generalizar",
+              "meaning": "acertar em exemplos novos, que a rede nunca viu no treino."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Três pilhas de dados",
+          "body": [
+            "Os dados são divididos antes de tudo. O treino é a lista de exercícios. A validação são simulados, usados para decidir ajustes. O teste é a prova final, olhada uma vez só.",
+            "Se o teste for usado para decidir coisas, ele vira mais um simulado, e deixa de medir a verdade."
+          ],
+          "terms": [
+            {
+              "word": "Conjunto de validação",
+              "meaning": "exemplos separados que a rede nunca usa para aprender. Servem para medir se ela generaliza."
+            },
+            {
+              "word": "Conjunto de treino",
+              "meaning": "os exemplos com que a rede aprende."
+            },
+            {
+              "word": "Conjunto de teste",
+              "meaning": "os exemplos guardados para a medida final, usados só no fim."
+            }
+          ],
+          "table": {
+            "label": "Divisão comum",
+            "headers": [
+              "Pilha",
+              "Parte dos dados",
+              "Para quê"
+            ],
+            "rows": [
+              [
+                "treino",
+                "cerca de 80%",
+                "ajustar os pesos"
+              ],
+              [
+                "validação",
+                "cerca de 10%",
+                "escolher ajustes e quando parar"
+              ],
+              [
+                "teste",
+                "cerca de 10%",
+                "a nota final, uma vez só"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Underfitting: aprendeu pouco",
+          "body": [
+            "A rede erra muito no treino e na validação. Ela é simples demais para o problema, ou treinou pouco.",
+            "É como tentar desenhar uma curva só com uma régua."
+          ],
+          "terms": [
+            {
+              "word": "Underfitting (subajuste)",
+              "meaning": "quando a rede não consegue aprender nem os exemplos de treino."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Overfitting: decorou",
+          "body": [
+            "A perda de treino continua caindo, mas a de validação para de cair e começa a subir. A rede está decorando detalhes e ruído do treino.",
+            "Redes com muitos parâmetros e poucos dados são as mais expostas."
+          ],
+          "terms": [
+            {
+              "word": "Overfitting (sobreajuste)",
+              "meaning": "quando a rede decora os exemplos de treino e erra em exemplos novos."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/redes-neurais/overfitting.svg",
+            "alt": "Um gráfico de perda ao longo das épocas com duas curvas. A de treino desce sempre. A de validação desce, chega a um ponto mais baixo e depois volta a subir. Esse ponto mais baixo está marcado como o melhor momento para parar.",
+            "caption": "Quando a validação sobe e o treino desce, começou a decorar."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Lendo as duas curvas",
+          "body": [
+            "O diagnóstico sai da comparação entre a perda de treino e a de validação."
+          ],
+          "table": {
+            "label": "Diagnóstico",
+            "headers": [
+              "Treino",
+              "Validação",
+              "O que está acontecendo"
+            ],
+            "rows": [
+              [
+                "alta",
+                "alta",
+                "underfitting"
+              ],
+              [
+                "baixa",
+                "baixa",
+                "bom ajuste"
+              ],
+              [
+                "baixa",
+                "alta e subindo",
+                "overfitting"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Parar na hora certa",
+          "body": [
+            "Um jeito simples de evitar o overfitting é parar o treino quando a validação para de melhorar, e ficar com os pesos do melhor momento.",
+            "Isso se chama parada antecipada. Outros jeitos são mais dados e as técnicas de regularização, da próxima lição."
+          ],
+          "terms": [
+            {
+              "word": "Parada antecipada",
+              "meaning": "parar o treino quando a perda de validação para de cair, guardando os melhores pesos."
+            },
+            {
+              "word": "Regularização",
+              "meaning": "qualquer técnica que ajuda a rede a generalizar em vez de decorar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Em código",
+          "body": [
+            "A parada antecipada é um contador de paciência."
+          ],
+          "terms": [
+            {
+              "word": "Época",
+              "meaning": "uma passada completa por todos os exemplos de treino."
+            }
+          ],
+          "code": {
+            "label": "Parada antecipada",
+            "text": "validacao = [0.9, 0.7, 0.6, 0.58, 0.59, 0.61, 0.63]\nmelhor, paciencia, espera = 99.0, 2, 0\nfor epoca, perda in enumerate(validacao):\n    if perda < melhor:\n        melhor, espera = perda, 0\n    else:\n        espera += 1\n        if espera > paciencia:\n            break\nprint(epoca, melhor)",
+            "notes": [
+              "A perda de validação em cada época, como se viesse do treino.",
+              "Começa com um melhor valor bem alto e aceita duas épocas sem melhorar.",
+              "Passa pelas épocas, uma a uma.",
+              "Se melhorou…",
+              "…guarda o novo melhor e zera a espera.",
+              "Se não melhorou…",
+              "…conta mais uma época de espera.",
+              "Se passou da paciência…",
+              "…para o treino.",
+              "Mostra 6 0.58: parou na época 6, com o melhor valor 0,58."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem gráficos das duas curvas para diagnosticar, e o papel de cada pilha de dados.",
+            "A pegadinha preferida é usar o teste para escolher ajustes."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde o diagnóstico engana."
+          ],
+          "bullets": [
+            "Achar que perda de treino baixa quer dizer rede boa.",
+            "Usar o conjunto de teste para decidir quando parar.",
+            "Deixar exemplos repetidos no treino e no teste: a nota fica falsamente alta.",
+            "Resolver underfitting com parada antecipada: ela serve para overfitting."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Aprender, e não decorar."
+          ],
+          "bullets": [
+            "Treino ensina, validação orienta, teste dá a nota.",
+            "Underfitting: erra no treino e na validação.",
+            "Overfitting: acerta no treino e erra na validação.",
+            "O sinal: a validação para de cair e sobe.",
+            "Parada antecipada guarda o melhor momento.",
+            "O teste é olhado uma vez só."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Diagnóstico",
+          "statement": "Perda de treino 0,05 e de validação 1,8, subindo. O que está acontecendo?",
+          "options": [
+            "underfitting",
+            "overfitting",
+            "bom ajuste",
+            "falta de épocas",
+            "nada"
+          ],
+          "correct_index": 1,
+          "explanation": "Acerta muito no treino e erra nos novos: decorou.",
+          "pitfall": "Underfitting teria o treino alto também."
+        },
+        {
+          "topic": "Underfitting",
+          "statement": "Perda de treino e de validação altas e parecidas indicam:",
+          "options": [
+            "overfitting",
+            "underfitting",
+            "bom ajuste",
+            "teste contaminado",
+            "excesso de dados"
+          ],
+          "correct_index": 1,
+          "explanation": "Nem o treino foi aprendido.",
+          "pitfall": "Overfitting separaria as duas curvas."
+        },
+        {
+          "topic": "Teste",
+          "statement": "Para que serve o conjunto de teste?",
+          "options": [
+            "ajustar os pesos",
+            "escolher quando parar",
+            "dar a nota final, olhado uma vez só",
+            "aumentar o treino",
+            "calcular o gradiente"
+          ],
+          "correct_index": 2,
+          "explanation": "É a prova final, que não pode influenciar nenhuma decisão.",
+          "pitfall": "Escolher quando parar é trabalho da validação."
+        },
+        {
+          "topic": "Validação",
+          "statement": "Para que serve o conjunto de validação?",
+          "options": [
+            "ensinar a rede",
+            "escolher ajustes e quando parar",
+            "substituir o teste",
+            "guardar os pesos",
+            "nada"
+          ],
+          "correct_index": 1,
+          "explanation": "Ela funciona como os simulados: orienta as decisões.",
+          "pitfall": "Quem ensina é o treino."
+        },
+        {
+          "topic": "Parar",
+          "statement": "Na parada antecipada, com quais pesos se fica no fim?",
+          "options": [
+            "os da última época",
+            "os da época com a menor perda de validação",
+            "os da primeira época",
+            "os sorteados",
+            "os da maior perda"
+          ],
+          "correct_index": 1,
+          "explanation": "O melhor momento é o de menor perda na validação.",
+          "pitfall": "Os da última época podem já estar decorando."
+        },
+        {
+          "topic": "Contaminação",
+          "statement": "O mesmo exemplo aparece no treino e no teste. Qual é o efeito?",
+          "options": [
+            "nenhum",
+            "a nota de teste fica falsamente alta",
+            "a rede para de treinar",
+            "o treino fica mais rápido",
+            "a perda fica negativa"
+          ],
+          "correct_index": 1,
+          "explanation": "A rede já viu a resposta: o teste deixa de medir exemplos novos.",
+          "pitfall": "Parece inofensivo, mas é a causa mais comum de resultados enganosos."
+        },
+        {
+          "topic": "Mais exposto",
+          "statement": "Qual situação corre mais risco de overfitting?",
+          "options": [
+            "rede pequena com muitos dados",
+            "rede enorme com poucos dados",
+            "rede média com dados médios",
+            "qualquer rede com zero épocas",
+            "rede sem pesos"
+          ],
+          "correct_index": 1,
+          "explanation": "Muitos parâmetros e poucos exemplos: dá para decorar tudo.",
+          "pitfall": "Com muitos dados, decorar fica bem mais difícil."
+        },
+        {
+          "topic": "Pilhas",
+          "format": "match",
+          "statement": "Ligue cada conjunto de dados ao seu papel.",
+          "pairs": [
+            {
+              "left": "treino",
+              "right": "ajustar os pesos"
+            },
+            {
+              "left": "validação",
+              "right": "escolher ajustes e quando parar"
+            },
+            {
+              "left": "teste",
+              "right": "nota final, uma vez só"
+            },
+            {
+              "left": "parada antecipada",
+              "right": "parar quando a validação piora"
+            }
+          ],
+          "explanation": "Três pilhas com três trabalhos, e uma técnica que usa a validação.",
+          "pitfall": "O teste nunca decide nada: só mede."
+        }
+      ]
+    },
+    {
+      "slug": "regularizacao-dropout-normalizacao",
+      "title": "Regularização, dropout e normalização",
+      "module": "Treinar",
+      "summary": "Técnicas para a rede aprender em vez de decorar, e para o treino ficar estável: castigar pesos grandes, desligar neurônios ao acaso e manter os números de cada camada num tamanho saudável.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Estudar de jeitos diferentes",
+          "body": [
+            "Quem estuda sempre com a mesma lista e o mesmo colega de dupla aprende a depender deles. Trocar de lista e estudar sozinho às vezes força a entender de verdade.",
+            "As técnicas desta lição fazem a rede estudar assim: com um pouco de dificuldade de propósito."
+          ],
+          "terms": [
+            {
+              "word": "Neurônio artificial",
+              "meaning": "uma pequena conta que recebe números, combina todos e devolve um número. É a peça básica de uma rede neural."
+            },
+            {
+              "word": "Peso",
+              "meaning": "um número que diz o quanto uma entrada importa. É ele que muda durante o treino."
+            },
+            {
+              "word": "Overfitting (sobreajuste)",
+              "meaning": "quando a rede decora os exemplos de treino e erra em exemplos novos."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Castigar pesos grandes",
+          "body": [
+            "Soma-se à perda um pedacinho proporcional ao tamanho dos pesos, como λ × soma dos pesos ao quadrado. Pesos enormes passam a custar caro.",
+            "A rede prefere então soluções mais suaves, que dependem de muitas entradas um pouco, e não de uma entrada demais. Isso ajuda a generalizar."
+          ],
+          "terms": [
+            {
+              "word": "Função de perda",
+              "meaning": "a conta que mede o quanto a rede errou num exemplo. O treino tenta deixar esse número o menor possível."
+            },
+            {
+              "word": "Regularização",
+              "meaning": "qualquer técnica que ajuda a rede a generalizar em vez de decorar."
+            },
+            {
+              "word": "Penalidade L2",
+              "meaning": "somar à perda o tamanho dos pesos ao quadrado, vezes um número pequeno λ. Também se chama decaimento de peso."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Dropout: desligar ao acaso",
+          "body": [
+            "A cada passo do treino, cada neurônio é desligado com uma certa chance, como 10%. A rede não pode depender de nenhum neurônio específico.",
+            "Na hora de usar a rede, ninguém é desligado. O efeito é parecido com treinar muitas redes diferentes e tirar a média."
+          ],
+          "terms": [
+            {
+              "word": "Camada",
+              "meaning": "um grupo de neurônios que recebem as mesmas entradas e trabalham ao mesmo tempo."
+            },
+            {
+              "word": "Dropout",
+              "meaning": "desligar neurônios ao acaso durante o treino, para a rede não depender de nenhum deles."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/redes-neurais/dropout.svg",
+            "alt": "Duas redes lado a lado. Na da esquerda, todos os neurônios estão ligados. Na da direita, alguns neurônios da camada do meio estão riscados e as linhas ligadas a eles sumiram.",
+            "caption": "No treino, alguns neurônios são desligados ao acaso a cada passo."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Normalização: números num tamanho saudável",
+          "body": [
+            "Ao passar por muitas camadas, os números podem crescer demais ou encolher demais, e o treino fica instável.",
+            "A normalização ajusta os números de cada camada para média perto de 0 e espalhamento perto de 1, e depois deixa a rede reescalar como quiser."
+          ],
+          "terms": [
+            {
+              "word": "Normalização",
+              "meaning": "ajustar os números de uma camada para média perto de 0 e desvio padrão perto de 1."
+            },
+            {
+              "word": "Desvio padrão",
+              "meaning": "o quanto os números costumam se afastar da média."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Batch norm e layer norm",
+          "body": [
+            "A batch normalization calcula a média e o desvio de cada número ao longo do lote. Funciona bem em imagens.",
+            "A layer normalization calcula dentro de cada exemplo, sem depender do lote. É a usada em todos os modelos de linguagem."
+          ],
+          "terms": [
+            {
+              "word": "Lote (batch)",
+              "meaning": "um grupo de exemplos processados juntos, antes de um ajuste dos pesos."
+            }
+          ],
+          "table": {
+            "label": "Onde se mede a média",
+            "headers": [
+              "Técnica",
+              "Média calculada sobre",
+              "Onde brilha"
+            ],
+            "rows": [
+              [
+                "batch normalization",
+                "os exemplos do lote",
+                "imagens"
+              ],
+              [
+                "layer normalization",
+                "os números de um mesmo exemplo",
+                "modelos de linguagem"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Em Python",
+          "body": [
+            "A layer normalization de um vetor, sem os ajustes finais, é esta conta."
+          ],
+          "terms": [
+            {
+              "word": "NumPy",
+              "meaning": "a biblioteca do Python para contas rápidas com listas e tabelas de números."
+            },
+            {
+              "word": "Vetor",
+              "meaning": "uma lista ordenada de números, como (0,5; 2; −1)."
+            }
+          ],
+          "code": {
+            "label": "Normalizando um vetor",
+            "text": "import numpy as np\nh = np.array([2.0, 4.0, 6.0, 8.0])\nnormal = (h - h.mean()) / h.std()\nprint(np.round(normal, 2), round(normal.mean(), 2), round(normal.std(), 2))",
+            "notes": [
+              "Traz o NumPy.",
+              "Os números que saíram de uma camada.",
+              "Subtrai a média e divide pelo desvio padrão.",
+              "Mostra [−1.34 −0.45 0.45 1.34] 0.0 1.0: média 0 e desvio 1."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "No PyTorch",
+          "body": [
+            "Cada técnica é uma peça pronta. O decaimento de peso vem como opção do otimizador AdamW; o dropout e a normalização viram camadas: nn.Dropout(0.1) e nn.LayerNorm(512).",
+            "Um detalhe importante: model.train() liga o dropout e model.eval() o desliga. Esquecer o eval() na hora de usar a rede dá respostas que mudam a cada vez."
+          ],
+          "terms": [
+            {
+              "word": "Derivada",
+              "meaning": "a rapidez com que uma conta muda quando a entrada muda um pouquinho."
+            },
+            {
+              "word": "PyTorch",
+              "meaning": "a biblioteca do Python mais usada para criar e treinar redes neurais. Ela calcula as derivadas sozinha."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem o objetivo de cada técnica e a diferença entre o modo de treino e o de uso no dropout.",
+            "Em entrevistas de modelos de linguagem, cai por que se usa layer norm e não batch norm: não depender do tamanho do lote."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde as técnicas confundem."
+          ],
+          "bullets": [
+            "Deixar o dropout ligado na hora de usar a rede.",
+            "Achar que regularização aumenta a perda de treino por erro: é de propósito.",
+            "Usar λ grande demais e a rede não aprender nada.",
+            "Achar que normalização é o mesmo que regularização: uma estabiliza, a outra evita decorar."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Aprender com um pouco de dificuldade."
+          ],
+          "bullets": [
+            "Regularização: tudo que ajuda a generalizar.",
+            "L2: castiga pesos grandes.",
+            "Dropout: desliga neurônios ao acaso no treino.",
+            "Normalização: média 0 e desvio 1 em cada camada.",
+            "Layer norm é a dos modelos de linguagem.",
+            "model.train() e model.eval() ligam e desligam o dropout."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "L2",
+          "statement": "A penalidade L2 soma à perda:",
+          "options": [
+            "o número de camadas",
+            "os pesos ao quadrado, vezes um número pequeno",
+            "o tamanho do lote",
+            "o tamanho do passo",
+            "a acurácia"
+          ],
+          "correct_index": 1,
+          "explanation": "λ × soma dos pesos ao quadrado.",
+          "pitfall": "O tamanho do passo do treino não entra na perda."
+        },
+        {
+          "topic": "Dropout no uso",
+          "statement": "Na hora de usar a rede treinada, o dropout:",
+          "options": [
+            "continua desligando neurônios",
+            "fica desligado: todos os neurônios trabalham",
+            "desliga todos",
+            "dobra os pesos",
+            "muda a cada resposta de propósito"
+          ],
+          "correct_index": 1,
+          "explanation": "Ele só existe no treino.",
+          "pitfall": "Deixá-lo ligado faz as respostas mudarem a cada vez."
+        },
+        {
+          "topic": "Objetivo",
+          "statement": "Qual é o objetivo do dropout?",
+          "options": [
+            "acelerar a conta",
+            "evitar que a rede dependa de neurônios específicos",
+            "normalizar os números",
+            "sortear os dados",
+            "aumentar a taxa"
+          ],
+          "correct_index": 1,
+          "explanation": "Desligando ao acaso, a rede aprende a ter redundância.",
+          "pitfall": "Normalizar é outra técnica."
+        },
+        {
+          "topic": "Normalizar",
+          "statement": "Qual é a média do vetor (2, 4, 6, 8) depois da normalização da lição?",
+          "options": [
+            "5",
+            "0",
+            "1",
+            "2",
+            "−1"
+          ],
+          "correct_index": 1,
+          "explanation": "Subtrair a média deixa a média nova em zero.",
+          "pitfall": "5 é a média de antes."
+        },
+        {
+          "topic": "LLM",
+          "statement": "Qual normalização os modelos de linguagem usam?",
+          "options": [
+            "batch normalization",
+            "layer normalization",
+            "nenhuma",
+            "dropout",
+            "L2"
+          ],
+          "correct_index": 1,
+          "explanation": "Ela funciona dentro de cada exemplo, sem depender do lote.",
+          "pitfall": "Dropout e L2 são regularização, e não normalização."
+        },
+        {
+          "topic": "λ grande",
+          "statement": "O que acontece com um λ grande demais na penalidade L2?",
+          "options": [
+            "a rede decora mais",
+            "os pesos ficam tão pequenos que a rede não aprende",
+            "nada",
+            "o treino acelera sempre",
+            "o dropout liga"
+          ],
+          "correct_index": 1,
+          "explanation": "Castigar demais os pesos faz a rede aprender pouco, até no treino.",
+          "pitfall": "Decorar mais é o efeito de tirar a regularização."
+        },
+        {
+          "topic": "Modos",
+          "statement": "No PyTorch, o que model.eval() faz com o dropout?",
+          "options": [
+            "liga",
+            "desliga",
+            "dobra",
+            "apaga a rede",
+            "troca a perda"
+          ],
+          "correct_index": 1,
+          "explanation": "eval é o modo de uso: sem dropout.",
+          "pitfall": "train() é que liga."
+        },
+        {
+          "topic": "Técnicas",
+          "format": "match",
+          "statement": "Ligue cada técnica ao que ela faz.",
+          "pairs": [
+            {
+              "left": "L2",
+              "right": "castiga pesos grandes"
+            },
+            {
+              "left": "dropout",
+              "right": "desliga neurônios ao acaso no treino"
+            },
+            {
+              "left": "layer norm",
+              "right": "ajusta média e desvio dentro do exemplo"
+            },
+            {
+              "left": "parada antecipada",
+              "right": "para quando os exemplos separados pioram"
+            }
+          ],
+          "explanation": "Três evitam decorar; a normalização estabiliza o treino.",
+          "pitfall": "Normalização e regularização têm objetivos diferentes."
+        }
+      ]
+    },
+    {
+      "slug": "rede-do-zero-em-numpy",
+      "title": "Uma rede do zero, em NumPy",
+      "module": "Na prática",
+      "summary": "Uma rede de verdade que aprende o ou exclusivo, escrita linha por linha. São quatro peças: ida, perda, volta e descida. É o mesmo laço que treina um modelo de linguagem, só que pequeno o bastante para caber numa tela.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Desmontar o relógio",
+          "body": [
+            "Quem desmonta um relógio uma vez nunca mais acha que ele funciona por mágica. Depois pode comprar um pronto sem medo.",
+            "Nesta lição a rede é montada peça por peça, sem biblioteca de redes neurais. Na próxima, a mesma rede sai pronta de uma biblioteca."
+          ],
+          "terms": [
+            {
+              "word": "Neurônio artificial",
+              "meaning": "uma pequena conta que recebe números, combina todos e devolve um número. É a peça básica de uma rede neural."
+            },
+            {
+              "word": "Peso",
+              "meaning": "um número que diz o quanto uma entrada importa. É ele que muda durante o treino."
+            },
+            {
+              "word": "Viés (bias)",
+              "meaning": "um número somado no fim da conta do neurônio, que desloca o resultado para cima ou para baixo."
+            },
+            {
+              "word": "Camada",
+              "meaning": "um grupo de neurônios que recebem as mesmas entradas e trabalham ao mesmo tempo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O problema: o ou exclusivo",
+          "body": [
+            "O ou exclusivo vale 1 quando só uma das entradas é 1. Um neurônio sozinho não resolve, porque nenhuma reta separa os 1 dos 0.",
+            "A rede terá 2 entradas, uma camada oculta de 4 neurônios e 1 neurônio de saída."
+          ],
+          "terms": [
+            {
+              "word": "Ou exclusivo (XOR)",
+              "meaning": "a regra que responde 1 quando só uma das duas entradas vale 1, e 0 nos outros casos."
+            },
+            {
+              "word": "Camada oculta",
+              "meaning": "qualquer camada entre a entrada e a saída."
+            }
+          ],
+          "table": {
+            "label": "Os quatro exemplos",
+            "headers": [
+              "A",
+              "B",
+              "Resposta certa"
+            ],
+            "rows": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "1",
+                "1"
+              ],
+              [
+                "1",
+                "0",
+                "1"
+              ],
+              [
+                "1",
+                "1",
+                "0"
+              ]
+            ]
+          },
+          "figure": {
+            "src": "/figuras/redes-neurais/xor-rede.svg",
+            "alt": "Uma rede pequena com três colunas de círculos: duas entradas, A e B, quatro neurônios na camada oculta, marcada com tanh, e um neurônio na saída, marcado com sigmoide. Cada círculo está ligado a todos os da coluna seguinte. Da saída sai a chance de a resposta ser 1.",
+            "caption": "Duas entradas, quatro neurônios no meio e uma saída."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os exemplos em linhas",
+          "body": [
+            "Os quatro exemplos viram uma matriz X de 4 linhas e 2 colunas. Um exemplo por linha.",
+            "Com os exemplos em linhas, a conta de uma camada vira X @ W1 + b1. Assim a rede calcula os quatro exemplos de uma vez. W1 tem 2 linhas e 4 colunas: das 2 entradas para os 4 neurônios."
+          ],
+          "terms": [
+            {
+              "word": "Matriz",
+              "meaning": "uma tabela de números em linhas e colunas."
+            },
+            {
+              "word": "Vetor",
+              "meaning": "uma lista ordenada de números, como (0,5; 2; −1)."
+            },
+            {
+              "word": "NumPy",
+              "meaning": "a biblioteca do Python para contas rápidas com listas e tabelas de números."
+            }
+          ],
+          "example": {
+            "label": "Os formatos",
+            "lines": [
+              "X: 4 × 2 (4 exemplos, 2 entradas)",
+              "X @ W1: 4 × 4 (4 exemplos, 4 neurônios ocultos)",
+              "h @ W2: 4 × 1 (4 exemplos, 1 resposta)"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Por que sortear os pesos",
+          "body": [
+            "Se todos os pesos começassem em zero, os 4 neurônios ocultos fariam a mesma conta. Receberiam o mesmo ajuste e continuariam iguais para sempre.",
+            "Sortear os pesos quebra esse empate: cada neurônio começa diferente e aprende uma coisa diferente. Os vieses podem começar em zero."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Ida: da entrada à chance",
+          "body": [
+            "A camada oculta faz a soma e passa pela tanh. A saída faz a soma e passa pela sigmoide, que entrega um número entre 0 e 1.",
+            "Esse número é a chance que a rede dá de a resposta ser 1."
+          ],
+          "terms": [
+            {
+              "word": "Derivada",
+              "meaning": "a rapidez com que uma conta muda quando a entrada muda um pouquinho."
+            },
+            {
+              "word": "Tanh",
+              "meaning": "a função que espreme qualquer número para ficar entre −1 e 1. A derivada dela é 1 − h², em que h é o resultado."
+            },
+            {
+              "word": "Sigmoide",
+              "meaning": "a função 1 / (1 + e⁻ˣ), que espreme qualquer número para ficar entre 0 e 1."
+            }
+          ],
+          "example": {
+            "label": "A ida, em duas linhas",
+            "lines": [
+              "h = tanh(X @ W1 + b1)",
+              "p = sigmoide(h @ W2 + b2)"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Medir o erro",
+          "body": [
+            "A perda é a entropia cruzada para duas respostas. Quando a certa é 1, ela vale −ln(p). Quando a certa é 0, vale −ln(1 − p).",
+            "No começo a rede responde perto de 0,5 para tudo. A perda fica perto de ln 2, que é 0,69."
+          ],
+          "terms": [
+            {
+              "word": "Função de perda",
+              "meaning": "a conta que mede o quanto a rede errou num exemplo. O treino tenta deixar esse número o menor possível."
+            },
+            {
+              "word": "Entropia cruzada",
+              "meaning": "a perda −ln(chance dada à resposta certa). Quanto menor a chance da certa, maior a perda."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Volta: o erro caminha para trás",
+          "body": [
+            "Com sigmoide e entropia cruzada juntas, a derivada na saída fica simples: p − y. É o quanto a chance passou do certo.",
+            "Esse erro volta pela matriz W2 e depois pela tanh, multiplicado pela derivada dela. Cada passo dessa volta é uma regra da cadeia."
+          ],
+          "terms": [
+            {
+              "word": "Derivada",
+              "meaning": "a rapidez com que uma conta muda quando a entrada muda um pouquinho."
+            },
+            {
+              "word": "Gradiente",
+              "meaning": "a lista das derivadas da perda em relação a cada peso. Ele aponta para onde a perda sobe."
+            },
+            {
+              "word": "Retropropagação (backpropagation)",
+              "meaning": "o jeito de calcular o gradiente de todos os pesos, levando o erro da saída de volta para o começo da rede com a regra da cadeia."
+            }
+          ],
+          "example": {
+            "label": "A volta, da saída para a entrada",
+            "lines": [
+              "erro na saída: p − y, dividido pelos 4 exemplos",
+              "gradiente de W2: h transposta @ erro na saída",
+              "erro na oculta: erro na saída @ W2 transposta, vezes 1 − h²",
+              "gradiente de W1: X transposta @ erro na oculta"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Descer",
+          "body": [
+            "Com os gradientes na mão, cada peso anda um passo contra eles. É o gradiente descendente da matéria de Cálculo, agora com 17 números ao mesmo tempo.",
+            "Repetir ida, perda, volta e descida milhares de vezes é todo o treino."
+          ],
+          "terms": [
+            {
+              "word": "Taxa de aprendizado",
+              "meaning": "o tamanho do passo dado a cada ajuste dos pesos."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/redes-neurais/perda-xor.svg",
+            "alt": "Um gráfico da perda ao longo de 3000 passos de treino da rede do ou exclusivo. A perda começa perto de 0,67, despenca nas primeiras centenas de passos e termina encostada no zero.",
+            "caption": "A perda do programa desta lição, passo a passo."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O programa inteiro",
+          "body": [
+            "São 18 linhas. Cada uma é uma peça que você já viu."
+          ],
+          "code": {
+            "label": "Rede que aprende o ou exclusivo",
+            "text": "import numpy as np\nrng = np.random.default_rng(1)\nX = np.array([[0, 0], [0, 1], [1, 0], [1, 1]], dtype=float)\ny = np.array([[0], [1], [1], [0]], dtype=float)\nW1, b1 = rng.normal(size=(2, 4)), np.zeros(4)\nW2, b2 = rng.normal(size=(4, 1)), np.zeros(1)\ntaxa = 0.5\nfor passo in range(3000):\n    h = np.tanh(X @ W1 + b1)\n    p = 1 / (1 + np.exp(-(h @ W2 + b2)))\n    perda = -np.mean(y * np.log(p) + (1 - y) * np.log(1 - p))\n    d2 = (p - y) / 4\n    dW2, db2 = h.T @ d2, d2.sum(axis=0)\n    d1 = (d2 @ W2.T) * (1 - h ** 2)\n    dW1, db1 = X.T @ d1, d1.sum(axis=0)\n    W1, b1 = W1 - taxa * dW1, b1 - taxa * db1\n    W2, b2 = W2 - taxa * dW2, b2 - taxa * db2\nprint(round(perda, 3), np.round(p.ravel(), 2))",
+            "notes": [
+              "Traz o NumPy.",
+              "Cria um sorteador com semente fixa, para o resultado se repetir.",
+              "Os quatro exemplos, um por linha.",
+              "As respostas certas, uma por linha.",
+              "Pesos sorteados da camada oculta (2 × 4) e vieses zerados.",
+              "Pesos sorteados da saída (4 × 1) e viés zerado.",
+              "A taxa de aprendizado.",
+              "Repete o treino 3000 vezes.",
+              "Ida na camada oculta: soma e tanh.",
+              "Ida na saída: soma e sigmoide, que dá a chance.",
+              "A perda: a média da entropia cruzada dos quatro exemplos.",
+              "Volta: o erro na saída, dividido pelos 4 exemplos.",
+              "Gradientes de W2 e de b2.",
+              "O erro volta pela W2 e pela derivada da tanh.",
+              "Gradientes de W1 e de b1.",
+              "Descida da camada oculta.",
+              "Descida da saída.",
+              "Mostra 0.002 [0. 1. 1. 0.]: perda quase zero e as quatro respostas certas."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Em entrevistas de aprendizado de máquina, é comum pedirem esta rede numa folha: a ida, a derivada na saída e a volta pela ativação.",
+            "Também caem os formatos das matrizes e a conta dos parâmetros."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a rede do zero quebra."
+          ],
+          "bullets": [
+            "Começar todos os pesos em zero: os neurônios ficam iguais para sempre.",
+            "Esquecer de multiplicar pela derivada da tanh na volta.",
+            "Trocar a ordem de uma multiplicação de matrizes: os formatos param de casar.",
+            "Esquecer de dividir pelo número de exemplos: o passo fica grande demais."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A rede inteira, à mão."
+          ],
+          "bullets": [
+            "Ida: h = tanh(X @ W1 + b1) e p = sigmoide(h @ W2 + b2).",
+            "Perda: entropia cruzada.",
+            "Derivada na saída: p − y.",
+            "Volta: pela W2 e pela derivada da tanh, 1 − h².",
+            "Descida: peso menos taxa vezes gradiente.",
+            "Pesos sorteados, para os neurônios não ficarem iguais."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Formato",
+          "statement": "Com 2 entradas, 4 neurônios ocultos e os exemplos em linhas (X @ W1), qual é o formato de W1?",
+          "options": [
+            "4 × 2",
+            "2 × 4",
+            "4 × 4",
+            "2 × 2",
+            "1 × 4"
+          ],
+          "correct_index": 1,
+          "explanation": "Linhas para as entradas e colunas para os neurônios: 2 × 4.",
+          "pitfall": "4 × 2 seria o formato com os exemplos em colunas."
+        },
+        {
+          "topic": "Parâmetros",
+          "statement": "Quantos números a rede 2 → 4 → 1 aprende, contando pesos e vieses?",
+          "options": [
+            "12",
+            "17",
+            "13",
+            "8",
+            "24"
+          ],
+          "correct_index": 1,
+          "explanation": "2 × 4 + 4 na oculta e 4 × 1 + 1 na saída: 12 + 5 = 17.",
+          "pitfall": "12 esquece a camada de saída."
+        },
+        {
+          "topic": "Tanh",
+          "statement": "Se a tanh deu h = 0,5, quanto vale a derivada dela nesse ponto?",
+          "options": [
+            "0,5",
+            "0,75",
+            "0,25",
+            "1",
+            "0"
+          ],
+          "correct_index": 1,
+          "explanation": "1 − h² = 1 − 0,25 = 0,75.",
+          "pitfall": "0,25 é o h², e não 1 − h²."
+        },
+        {
+          "topic": "Saída",
+          "statement": "Com sigmoide e entropia cruzada, a rede deu p = 0,8 para um exemplo de resposta 0. Qual é o erro na saída?",
+          "options": [
+            "−0,8",
+            "0,8",
+            "0,2",
+            "1,8",
+            "0"
+          ],
+          "correct_index": 1,
+          "explanation": "p − y = 0,8 − 0 = 0,8: a chance passou 0,8 do certo.",
+          "pitfall": "O sinal importa: positivo quer dizer que a chance tem de descer."
+        },
+        {
+          "topic": "Zeros",
+          "statement": "O que acontece se todos os pesos começarem em zero?",
+          "options": [
+            "o treino fica mais rápido",
+            "os neurônios ocultos fazem a mesma conta e continuam iguais",
+            "a perda vira zero",
+            "nada muda",
+            "a rede decora os dados"
+          ],
+          "correct_index": 1,
+          "explanation": "Iguais no começo, recebem o mesmo ajuste e nunca se separam.",
+          "pitfall": "Os vieses podem começar em zero; o problema é zerar os pesos."
+        },
+        {
+          "topic": "Começo",
+          "statement": "Se a rede responde 0,5 para os quatro exemplos, quanto vale a perda de entropia cruzada?",
+          "options": [
+            "0",
+            "cerca de 0,69",
+            "0,5",
+            "1",
+            "cerca de 2,3"
+          ],
+          "correct_index": 1,
+          "explanation": "−ln(0,5) = ln 2 ≈ 0,69, para qualquer resposta certa.",
+          "pitfall": "0,5 é a chance, e não a perda."
+        },
+        {
+          "topic": "Um passo de treino",
+          "format": "order",
+          "statement": "Ponha na ordem um passo de treino da rede.",
+          "options": [
+            "Ida: calcular h e p",
+            "Calcular a perda",
+            "Volta: calcular os gradientes",
+            "Descer: ajustar pesos e vieses"
+          ],
+          "explanation": "Sem a ida não há erro, e sem o erro não há o que levar de volta.",
+          "pitfall": "Ajustar antes da volta seria andar sem saber para onde."
+        },
+        {
+          "topic": "Linhas do programa",
+          "format": "match",
+          "statement": "Ligue cada trecho do programa ao que ele faz.",
+          "pairs": [
+            {
+              "left": "np.tanh(X @ W1 + b1)",
+              "right": "ida na camada oculta"
+            },
+            {
+              "left": "(p - y) / 4",
+              "right": "erro na saída"
+            },
+            {
+              "left": "1 - h ** 2",
+              "right": "derivada da tanh"
+            },
+            {
+              "left": "W1 - taxa * dW1",
+              "right": "descida"
+            }
+          ],
+          "explanation": "Ida, erro, volta e descida: as quatro peças do treino.",
+          "pitfall": "A derivada da tanh só aparece na volta."
+        }
+      ]
+    },
+    {
+      "slug": "a-mesma-rede-em-pytorch",
+      "title": "A mesma rede, em PyTorch",
+      "module": "Na prática",
+      "summary": "A rede do ou exclusivo de novo, agora com as peças prontas do PyTorch. As derivadas saem sozinhas, as camadas são blocos e o laço de treino tem quatro linhas que se repetem em qualquer projeto, até num modelo de linguagem.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Da cozinha de casa à cozinha industrial",
+          "body": [
+            "Quem já fez pão à mão sabe o que a batedeira industrial está fazendo. A receita é a mesma. Muda quem faz o trabalho repetitivo.",
+            "O PyTorch é a cozinha industrial das redes neurais. Tudo que ele faz você já fez à mão na lição anterior."
+          ],
+          "terms": [
+            {
+              "word": "Neurônio artificial",
+              "meaning": "uma pequena conta que recebe números, combina todos e devolve um número. É a peça básica de uma rede neural."
+            },
+            {
+              "word": "Peso",
+              "meaning": "um número que diz o quanto uma entrada importa. É ele que muda durante o treino."
+            },
+            {
+              "word": "Camada",
+              "meaning": "um grupo de neurônios que recebem as mesmas entradas e trabalham ao mesmo tempo."
+            },
+            {
+              "word": "Derivada",
+              "meaning": "a rapidez com que uma conta muda quando a entrada muda um pouquinho."
+            },
+            {
+              "word": "PyTorch",
+              "meaning": "a biblioteca do Python mais usada para criar e treinar redes neurais. Ela calcula as derivadas sozinha."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Tensores",
+          "body": [
+            "Um tensor é o equivalente do PyTorch ao array do NumPy: uma lista ou tabela de números. A diferença é que ele pode anotar cada conta feita com ele.",
+            "Com essas anotações, o PyTorch consegue refazer o caminho de volta sozinho."
+          ],
+          "terms": [
+            {
+              "word": "Tensor",
+              "meaning": "o nome que o PyTorch dá às listas e tabelas de números, de qualquer número de direções."
+            },
+            {
+              "word": "NumPy",
+              "meaning": "a biblioteca do Python para contas rápidas com listas e tabelas de números."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As derivadas saem sozinhas",
+          "body": [
+            "Marcando um tensor com requires_grad=True, o PyTorch anota as contas. Ao chamar backward() na perda, ele faz a retropropagação inteira e guarda o gradiente em .grad.",
+            "É exatamente a volta que você escreveu à mão, sem precisar escrever."
+          ],
+          "terms": [
+            {
+              "word": "Função de perda",
+              "meaning": "a conta que mede o quanto a rede errou num exemplo. O treino tenta deixar esse número o menor possível."
+            },
+            {
+              "word": "Gradiente",
+              "meaning": "a lista das derivadas da perda em relação a cada peso. Ele aponta para onde a perda sobe."
+            },
+            {
+              "word": "Retropropagação (backpropagation)",
+              "meaning": "o jeito de calcular o gradiente de todos os pesos, levando o erro da saída de volta para o começo da rede com a regra da cadeia."
+            }
+          ],
+          "code": {
+            "label": "A derivada de w², com w = 3",
+            "text": "import torch\nw = torch.tensor(3.0, requires_grad=True)\nperda = w ** 2\nperda.backward()\nprint(w.grad)",
+            "notes": [
+              "Traz o PyTorch.",
+              "Um número, 3, com as contas anotadas.",
+              "A perda: w ao quadrado.",
+              "Faz a volta e calcula a derivada.",
+              "Mostra tensor(6.): a derivada de w² é 2w, e 2 × 3 = 6."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Camadas prontas",
+          "body": [
+            "nn.Linear(2, 4) é uma camada com a matriz de pesos e os vieses já criados e sorteados. nn.Tanh() é a ativação.",
+            "nn.Sequential liga as peças em fila: a saída de uma é a entrada da seguinte."
+          ],
+          "terms": [
+            {
+              "word": "Viés (bias)",
+              "meaning": "um número somado no fim da conta do neurônio, que desloca o resultado para cima ou para baixo."
+            },
+            {
+              "word": "Matriz",
+              "meaning": "uma tabela de números em linhas e colunas."
+            },
+            {
+              "word": "Função de ativação",
+              "meaning": "uma função aplicada depois da soma do neurônio, que dobra a reta e deixa a rede aprender formas curvas."
+            },
+            {
+              "word": "Tanh",
+              "meaning": "a função que espreme qualquer número para ficar entre −1 e 1. A derivada dela é 1 − h², em que h é o resultado."
+            }
+          ],
+          "table": {
+            "label": "O que cada peça substitui",
+            "headers": [
+              "À mão, em NumPy",
+              "No PyTorch"
+            ],
+            "rows": [
+              [
+                "X @ W1 + b1",
+                "nn.Linear(2, 4)"
+              ],
+              [
+                "np.tanh(...)",
+                "nn.Tanh()"
+              ],
+              [
+                "calcular dW1 e dW2 à mão",
+                "perda.backward()"
+              ],
+              [
+                "W1 - taxa * dW1",
+                "otim.step()"
+              ]
+            ],
+            "mono": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A sua própria rede",
+          "body": [
+            "Redes maiores são escritas como uma classe que herda de nn.Module. As camadas são criadas em __init__, e o caminho de ida mora em forward.",
+            "É assim que todo modelo de linguagem é escrito, só que com mais peças."
+          ],
+          "terms": [
+            {
+              "word": "Classe",
+              "meaning": "um molde para criar objetos com os mesmos dados e as mesmas ações."
+            },
+            {
+              "word": "nn.Module",
+              "meaning": "o molde do PyTorch para qualquer rede. Quem herda dele ganha a contagem de parâmetros, o salvar e o carregar."
+            }
+          ],
+          "code": {
+            "label": "A rede do ou exclusivo como classe",
+            "text": "import torch\nfrom torch import nn\nclass RedeXor(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.oculta = nn.Linear(2, 4)\n        self.saida = nn.Linear(4, 1)\n    def forward(self, x):\n        h = torch.tanh(self.oculta(x))\n        return self.saida(h)\nrede = RedeXor()\nprint(sum(p.numel() for p in rede.parameters()))",
+            "notes": [
+              "Traz o PyTorch.",
+              "Traz o módulo de redes neurais.",
+              "Uma rede nova, feita a partir do molde nn.Module.",
+              "O que acontece ao criar a rede:",
+              "Prepara a parte que vem do molde.",
+              "Camada oculta: 2 entradas para 4 neurônios.",
+              "Camada de saída: 4 neurônios para 1 resposta.",
+              "O caminho de ida:",
+              "Oculta e tanh.",
+              "Saída: o número cru, antes de virar chance.",
+              "Cria uma rede.",
+              "Mostra 17: o mesmo número de parâmetros da rede feita à mão."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Perda e otimizador",
+          "body": [
+            "nn.BCEWithLogitsLoss junta a sigmoide e a entropia cruzada numa conta só. Por isso a rede entrega o número antes da sigmoide.",
+            "Juntas, as duas contas ficam mais estáveis: não há ln de um número que arredondou para zero. O otimizador é o Adam, com taxa 0,1."
+          ],
+          "terms": [
+            {
+              "word": "Sigmoide",
+              "meaning": "a função 1 / (1 + e⁻ˣ), que espreme qualquer número para ficar entre 0 e 1."
+            },
+            {
+              "word": "Entropia cruzada",
+              "meaning": "a perda −ln(chance dada à resposta certa). Quanto menor a chance da certa, maior a perda."
+            },
+            {
+              "word": "Taxa de aprendizado",
+              "meaning": "o tamanho do passo dado a cada ajuste dos pesos."
+            },
+            {
+              "word": "Adam",
+              "meaning": "o otimizador que dá a cada peso um tamanho de passo próprio."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O laço de treino",
+          "body": [
+            "Zerar, calcular a perda, voltar e dar o passo. Estas quatro linhas aparecem em qualquer treino em PyTorch."
+          ],
+          "code": {
+            "label": "Treinando o ou exclusivo",
+            "text": "import torch\nfrom torch import nn\ntorch.manual_seed(0)\nX = torch.tensor([[0., 0.], [0., 1.], [1., 0.], [1., 1.]])\ny = torch.tensor([[0.], [1.], [1.], [0.]])\nmodelo = nn.Sequential(nn.Linear(2, 4), nn.Tanh(), nn.Linear(4, 1))\nperda_fn = nn.BCEWithLogitsLoss()\notim = torch.optim.Adam(modelo.parameters(), lr=0.1)\nfor passo in range(300):\n    otim.zero_grad()\n    perda = perda_fn(modelo(X), y)\n    perda.backward()\n    otim.step()\nwith torch.no_grad():\n    print(torch.sigmoid(modelo(X)).round().flatten().tolist())",
+            "notes": [
+              "Traz o PyTorch.",
+              "Traz o módulo de redes neurais.",
+              "Semente fixa, para o resultado se repetir.",
+              "Os quatro exemplos, um por linha.",
+              "As respostas certas.",
+              "A rede: linear, tanh e linear, em fila.",
+              "A perda, com a sigmoide embutida.",
+              "O otimizador Adam, cuidando de todos os parâmetros.",
+              "Repete 300 passos.",
+              "Zera os gradientes do passo anterior.",
+              "Ida e perda.",
+              "Volta: calcula todos os gradientes.",
+              "O Adam dá o passo.",
+              "Na hora de usar, desliga as anotações.",
+              "Mostra [0.0, 1.0, 1.0, 0.0]: as quatro respostas certas."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Usar a rede treinada",
+          "body": [
+            "Na hora de responder, não há volta. torch.no_grad() desliga as anotações, e a conta fica mais leve.",
+            "Em redes com dropout, chama-se também modelo.eval() antes de usar. O mesmo vale para um modelo de linguagem gerando texto."
+          ],
+          "terms": [
+            {
+              "word": "Dropout",
+              "meaning": "desligar neurônios ao acaso durante o treino."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Cai a ordem das quatro linhas do laço, e o que cada uma faz.",
+            "Também cai por que a perda recebe a saída antes da sigmoide, e para que servem o no_grad e o eval."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde o PyTorch engana."
+          ],
+          "bullets": [
+            "Esquecer o zero_grad: os gradientes se somam de um passo para o outro.",
+            "Passar a saída pela sigmoide antes da BCEWithLogitsLoss: fica sigmoide duas vezes.",
+            "Chamar backward antes de calcular a perda.",
+            "Usar a rede sem no_grad: gasta memória anotando contas que ninguém vai usar."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A mesma rede, sem trabalho braçal."
+          ],
+          "bullets": [
+            "Tensor: array que anota as contas.",
+            "backward(): a volta inteira, sozinha.",
+            "nn.Linear e nn.Tanh: camadas prontas.",
+            "nn.Module: o molde de qualquer rede.",
+            "Laço: zero_grad, perda, backward e step.",
+            "Para usar: no_grad e eval."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "backward",
+          "statement": "O que perda.backward() faz?",
+          "options": [
+            "dá o passo nos pesos",
+            "calcula os gradientes de todos os parâmetros",
+            "zera os gradientes",
+            "mostra a perda",
+            "cria a rede"
+          ],
+          "correct_index": 1,
+          "explanation": "É a volta inteira, feita pelo PyTorch.",
+          "pitfall": "Quem dá o passo é o otimizador, com step()."
+        },
+        {
+          "topic": "Derivada",
+          "statement": "Com w = 3 e perda = w², quanto vale w.grad depois do backward()?",
+          "options": [
+            "3",
+            "6",
+            "9",
+            "2",
+            "1"
+          ],
+          "correct_index": 1,
+          "explanation": "A derivada de w² é 2w: 2 × 3 = 6.",
+          "pitfall": "9 é o valor da perda, e não da derivada."
+        },
+        {
+          "topic": "O laço",
+          "format": "order",
+          "statement": "Ponha na ordem as linhas de um passo de treino em PyTorch.",
+          "options": [
+            "otim.zero_grad()",
+            "perda = perda_fn(modelo(X), y)",
+            "perda.backward()",
+            "otim.step()"
+          ],
+          "explanation": "Zera, calcula, volta e anda.",
+          "pitfall": "Sem zerar antes, o gradiente novo se soma ao velho."
+        },
+        {
+          "topic": "Linear",
+          "statement": "Quantos números a camada nn.Linear(2, 4) aprende?",
+          "options": [
+            "8",
+            "12",
+            "6",
+            "4",
+            "16"
+          ],
+          "correct_index": 1,
+          "explanation": "8 pesos (2 × 4) e 4 vieses: 12.",
+          "pitfall": "8 esquece os vieses."
+        },
+        {
+          "topic": "Sigmoide",
+          "statement": "Por que a rede entrega o número antes da sigmoide para a BCEWithLogitsLoss?",
+          "options": [
+            "porque a sigmoide é proibida",
+            "porque essa perda já aplica a sigmoide por dentro",
+            "porque assim a rede fica maior",
+            "porque o Adam exige",
+            "por engano"
+          ],
+          "correct_index": 1,
+          "explanation": "Ela junta sigmoide e entropia cruzada, o que deixa a conta estável.",
+          "pitfall": "Aplicar a sigmoide antes faria a conta duas vezes."
+        },
+        {
+          "topic": "zero_grad",
+          "statement": "Sem otim.zero_grad(), o que acontece?",
+          "options": [
+            "nada",
+            "os gradientes de passos diferentes se somam",
+            "os pesos voltam a zero",
+            "a perda some",
+            "o Adam para"
+          ],
+          "correct_index": 1,
+          "explanation": "O PyTorch acumula os gradientes em .grad até alguém zerar.",
+          "pitfall": "Os pesos não são zerados: só os gradientes seriam."
+        },
+        {
+          "topic": "no_grad",
+          "statement": "Para que serve torch.no_grad() na hora de usar a rede?",
+          "options": [
+            "para treinar mais rápido",
+            "para não anotar as contas, já que não haverá volta",
+            "para zerar os pesos",
+            "para ligar o dropout",
+            "para trocar a perda"
+          ],
+          "correct_index": 1,
+          "explanation": "Sem volta, as anotações só gastariam memória.",
+          "pitfall": "Ligar e desligar o dropout é trabalho de train() e eval()."
+        },
+        {
+          "topic": "À mão e pronto",
+          "format": "match",
+          "statement": "Ligue o que se fazia à mão ao que o PyTorch oferece.",
+          "pairs": [
+            {
+              "left": "X @ W1 + b1",
+              "right": "nn.Linear(2, 4)"
+            },
+            {
+              "left": "np.tanh(...)",
+              "right": "nn.Tanh()"
+            },
+            {
+              "left": "calcular dW1 e dW2",
+              "right": "perda.backward()"
+            },
+            {
+              "left": "W1 - taxa * dW1",
+              "right": "otim.step()"
+            }
+          ],
+          "explanation": "Cada peça feita à mão tem uma peça pronta.",
+          "pitfall": "backward calcula; step anda."
+        }
+      ]
+    }
+  ]
+}

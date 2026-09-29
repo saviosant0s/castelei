@@ -17,6 +17,7 @@ import {
   Languages,
   MessagesSquare,
   Monitor,
+  Network,
   Palette,
   PenLine,
   Server,
@@ -71,6 +72,7 @@ const iconesDeMateria: Record<string, LucideIcon> = {
   "algebra-linear": Grid3x3,
   calculo: LineChart,
   "probabilidade-estatistica": ChartColumn,
+  "redes-neurais": Network,
 };
 
 /** Ícone da matéria; a que não tem um próprio usa o da área. */
