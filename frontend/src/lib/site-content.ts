@@ -175,6 +175,29 @@ export const SUBJECTS: SiteSubject[] = [
     ],
   },
   {
+    slug: "llms-como-funcionam",
+    name: "LLMs: do texto ao Transformer",
+    pitch:
+      "Como um modelo de linguagem lê e escreve: tokens, embeddings, atenção e o Transformer por dentro, até montar um mini-GPT.",
+    lessons: [
+      "Texto vira número: tokens, vocabulário e IDs",
+      "Pedaços de palavra: BPE e SentencePiece",
+      "Embeddings: cada token vira um vetor",
+      "Parecido com parecido: similaridade entre embeddings",
+      "Modelo de linguagem: prever o próximo token",
+      "Contexto e geração, um token de cada vez",
+      "Perplexidade e teacher forcing: medir e treinar",
+      "A ideia da atenção: consulta, chave e valor",
+      "Atenção por produto escalar, com escala",
+      "Autoatenção e a máscara causal",
+      "Várias cabeças: atenção multi-head",
+      "Onde está cada palavra: codificação posicional",
+      "O bloco do Transformer",
+      "Codificador, decodificador e a família GPT",
+      "Um mini-GPT em PyTorch",
+    ],
+  },
+  {
     slug: "portugues",
     name: "Português",
     pitch:
@@ -292,5 +315,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 1282,
+  questions: 1402,
 };

@@ -3,6 +3,7 @@ import {
   BookOpen,
   BookOpenText,
   Brain,
+  BrainCircuit,
   Calculator,
   ChartColumn,
   Code,
@@ -73,6 +74,7 @@ const iconesDeMateria: Record<string, LucideIcon> = {
   calculo: LineChart,
   "probabilidade-estatistica": ChartColumn,
   "redes-neurais": Network,
+  "llms-como-funcionam": BrainCircuit,
 };
 
 /** Ícone da matéria; a que não tem um próprio usa o da área. */
