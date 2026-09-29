@@ -286,6 +286,18 @@ A escolha do tema (Automático/Claro/Escuro, em `/perfil`) e a do som vivem no `
 - **A redação não pede título** (a checagem `titulo` fica só no artigo e na fábula) e **pede `sem_eu_acho` em toda parte**: é texto impessoal. A fábula não tem checagem de conectivo — narrativa não argumenta. As propostas de simulado (`exam_only`) moram na lição que explica os termos que elas usam: a de redação precisa de "tese" e "repertório" definidos, e por isso mora em `redacao-dissertativa`, não na fábula.
 - **Ainda falta:** editar questão de escrita pelo formulário do painel (ela entra e sai pela importação de JSON, mas o editor de questão só conhece os três formatos antigos).
 
+**Trilha de LLMs do zero** (pedido do Sávio: um guia de 18 seções, da álgebra básica a construir um mini-GPT, para quem é leigo). Ela não é uma matéria só: cada bloco do guia mora na área dele, e entra como matéria inteira (a regra de "todas as lições de uma vez" vale para cada uma). O plano:
+
+- **Matemática Básica** ganhou a seção 1 inteira (18 lições, em quatro módulos: Números, Potências e raízes, Álgebra e Funções). As duas lições antigas ficaram, com as questões no mesmo lugar, só ganharam módulo.
+- Em **Matemática**, matérias novas: Álgebra Linear (seção 3), Cálculo (seção 4) e Probabilidade e Estatística (seção 5).
+- Em **Informática**, matérias novas: Programação com Python (seção 2), Redes Neurais (seções 6 e 7) e duas de LLMs (seções 8 a 11 e 12 a 17). A seção 18, de prática, não vira matéria: entra como código comentado linha a linha dentro das lições.
+
+Três coisas de conteúdo:
+
+- **As lições de matemática apontam para onde a ideia volta**, sem jargão: a distância na diagonal volta como tamanho de vetor, o fundo da parábola é como a máquina aprende e a soma de logaritmos é como o modelo mede uma frase. Isso é gancho, não aula de IA: a matéria continua servindo para qualquer prova.
+- **O escopo `m` do `lint-content.mjs` cresceu** (potência, expoente, raiz quadrada, função, domínio, eixo, parábola, logaritmo, conjunto…). "Razão" e "imagem" ficaram de fora de propósito: são palavras do dia a dia, e a expressão pegaria "a razão disso". Como a régua vale por lição, "equação" e "função" precisam de verbete em toda lição que as usa.
+- **Vírgula entre chaves não conta** no limite de vírgulas, como já não contava entre parênteses: `{1, 2, 3}` é a escrita de um conjunto, não uma frase comprida.
+
 **Ao acrescentar lição, mexa em quatro lugares:** o JSON do conteúdo, a figura em `frontend/public/figuras/`, a lista de `frontend/src/lib/site-content.ts` (o teste `site-content.test.ts` reprova se esquecer) e o mapa em `docs/sistemas-operacionais-mapa.md`. Matéria nova entra com **todas as lições de uma vez**: arquivo com metade delas publicado deixa a outra metade órfã.
 
 **Atualizações feitas sobre o material do semestre** (a regra 4 do Guia manda corrigir o que está defasado): micronúcleo hoje é tecnologia de produção, não experimento — entrou o seL4 e o uso em carros e aviões; e contêineres entraram ao lado de máquinas virtuais, porque é o que se usa hoje e o material da disciplina não cobre.
