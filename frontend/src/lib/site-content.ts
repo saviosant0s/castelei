@@ -153,6 +153,28 @@ export const SUBJECTS: SiteSubject[] = [
     ],
   },
   {
+    slug: "redes-neurais",
+    name: "Redes Neurais",
+    pitch:
+      "Do neurônio à rede treinada, com cada conta à mostra: uma rede escrita do zero em Python e depois a mesma em PyTorch.",
+    lessons: [
+      "O neurônio artificial",
+      "Funções de ativação: sigmoide, tanh, ReLU e GELU",
+      "Regressão linear: a primeira máquina que aprende",
+      "Regressão logística: prever sim ou não",
+      "Camadas: entrada, ocultas e saída",
+      "Softmax: transformar números em chances",
+      "Funções de perda: MSE, entropia e entropia cruzada",
+      "Retropropagação: o erro voltando pela rede",
+      "Épocas, lotes e SGD: como o treino anda",
+      "Otimizadores: momentum e Adam",
+      "Overfitting e underfitting: decorar ou aprender",
+      "Regularização, dropout e normalização",
+      "Uma rede do zero, em NumPy",
+      "A mesma rede, em PyTorch",
+    ],
+  },
+  {
     slug: "portugues",
     name: "Português",
     pitch:
@@ -270,5 +292,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 1170,
+  questions: 1282,
 };

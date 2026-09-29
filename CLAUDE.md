@@ -311,6 +311,12 @@ Três coisas de conteúdo:
 
 **Matéria de Probabilidade e Estatística** (10 lições, `10-probabilidade-estatistica.json`, área Matemática): a seção 5 da trilha. Módulos Probabilidade, Estatística descritiva e Para a IA — este último fecha a matemática com log de probabilidade, entropia cruzada, perplexidade e máxima verossimilhança, que é exatamente como um modelo de linguagem é treinado. O escopo `e` do verificador deixou "média" de fora (todo mundo conhece a média de notas); "moda" entra só no sentido estatístico. **Cuidado com a regex de "contínua":** ela casa com o verbo "continua", então a lição evita "continua" como verbo.
 
+**Matéria de Redes Neurais** (14 lições, `11-redes-neurais.json`, área Informática): as seções 6 e 7 da trilha, com a prática da seção 18. Módulos O neurônio, A rede, Treinar e Na prática — este último escreve a rede do ou exclusivo duas vezes, primeiro à mão em NumPy (ida, perda, volta e descida, linha por linha) e depois em PyTorch, com uma tabela ligando cada peça feita à mão à peça pronta. Três coisas:
+
+- **O escopo `n` do verificador trata "perda" sozinha como jargão**, não só "função de perda": no treino a palavra aparece o tempo todo no sentido técnico. O mesmo vale para "peso", "camada" e "época". Por isso quase toda lição define `peso` e `perda` na primeira etapa.
+- **Regex que começa em letra acentuada precisa de `(?<!\p{L})` e da flag `u`**, não de `\b`. Sem a flag `u`, o JavaScript não conta "é" como letra: `/\b(é|e)pocas?\b/` nunca reconhecia "Época" como verbete, e "epoca" no código reprovava mesmo com o termo explicado.
+- **Todo código foi executado antes de entrar**, e a linha "Mostra …" de cada nota é a saída real. Os números com sorteio usam semente fixa (`default_rng(1)`, `manual_seed(0)`) para a saída não mudar.
+
 **Trilha de estudo "LLMs do zero"** (`config/castelei.php` → `trails`, `GET /subjects` devolve `trails`, tela em `trilha/[slug]/page.tsx`, lógica em `lib/trails.ts`). Pedido do Sávio: "organize na sequência do que devo aprender primeiro". A trilha atravessa áreas (Matemática e Informática), e a tela de áreas sozinha não dizia a ordem. Quatro coisas:
 
 - **A ordem mora no backend, e o progresso sai das matérias.** Cada passo é só `{subject, name, why}`; praticadas/total vêm das mesmas matérias de `GET /subjects`, com o mesmo critério das outras telas (tentativa concluída).

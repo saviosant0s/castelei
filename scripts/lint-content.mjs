@@ -276,9 +276,29 @@ const JARGON = [
   ["correlação", /\bcorrela(ç|c)(ão|ões)\b/i, "e"], ["distribuição normal", /\bdistribui(ç|c)(ão|ões) norma(l|is)\b|\bcurva normal\b/i, "e"],
   ["logaritmo", /\blogaritm\w*|\blog(?=[\s₀-₉(]|$)|\bln\b/i, "e"], ["verossimilhança", /\bverossimilhan(ç|c)a\b|\blikelihood\b/i, "e"],
   ["amostra", /\bamostras?\b/i, "e"], ["frequência", /\bfrequ(ê|e)ncias?\b/i, "e"],
+
+  /*
+  | Redes Neurais (escopo "n"). O corte é "quem nunca estudou aprendizado de
+  | máquina saberia?". "Peso" entra: aqui não é o da balança. "Camada" também,
+  | e "erro" não, porque todo mundo sabe o que é errar.
+  */
+  ["neurônio", /\bneur(ô|o)nios?\b/i, "n"], ["peso", /\bpesos?\b/i, "n"], ["viés (bias)", /\bvi(é|e)s\b|\bbias\b/i, "n"],
+  ["função de ativação", /\bativa(ç|c)(ão|ões)\b/i, "n"], ["sigmoide", /\bsigm(o|ó)ide\b|\bsigmoid\b/i, "n"], ["tanh", /\btanh\b/i, "n"],
+  ["ReLU", /\bReLU\b/i, "n"], ["GELU", /\bGELU\b/i, "n"], ["softmax", /\bsoftmax\b/i, "n"], ["camada", /\bcamadas?\b/i, "n"],
+  ["função de perda", /\bfun(ç|c)(ão|ões) de perda\b|\bperda\b/i, "n"], ["MSE", /\bMSE\b|\berro quadr(á|a)tico\b/i, "n"],
+  ["entropia cruzada", /\bentropia cruzada\b|\bcross-entropy\b/i, "n"], ["entropia", /\bentropia\b/i, "n"],
+  ["retropropagação", /\bretropropaga(ç|c)(ão|ões)\b|\bbackpropagation\b|\bbackward\b/i, "n"],
+  ["gradiente", /\bgradientes?\b|\bgrad\b/i, "n"], ["derivada", /\bderivad(a|as)\b/i, "n"], ["taxa de aprendizado", /\btaxas? de aprendizado\b|\blearning rate\b|\blr\b/i, "n"],
+  ["época", /(?<!\p{L})(é|e)pocas?\b|\bepochs?\b/iu, "n"], ["lote (batch)", /\blotes?\b|\bbatch(es)?\b/i, "n"], ["SGD", /\bSGD\b/, "n"],
+  ["momentum", /\bmomentum\b/i, "n"], ["Adam", /\bAdam\b/, "n"], ["overfitting", /\boverfitting\b|\bsobreajuste\b/i, "n"],
+  ["underfitting", /\bunderfitting\b|\bsubajuste\b/i, "n"], ["regularização", /\bregulariza(ç|c)(ão|ões)\b/i, "n"], ["dropout", /\bdropout\b/i, "n"],
+  ["normalização", /\bnormaliza(ç|c)(ão|ões)\b|\bbatch ?norm\w*/i, "n"], ["regressão", /\bregress(ão|ões)\b/i, "n"],
+  ["classificação", /\bclassifica(ç|c)(ão|ões)\b/i, "n"], ["rótulo", /\br(ó|o)tulos?\b/i, "n"], ["vetor", /\bvetor(es)?\b/i, "n"],
+  ["matriz", /\bmatriz(es)?\b/i, "n"], ["NumPy", /\bnumpy\b/i, "n"], ["PyTorch", /\bpytorch\b|\btorch\b/i, "n"], ["tensor", /\btensor(es)?\b/i, "n"],
+  ["hiperparâmetro", /\bhiperpar(â|a)metros?\b/i, "n"], ["conjunto de validação", /\bvalida(ç|c)(ão|ões)\b/i, "n"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;
