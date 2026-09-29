@@ -116,6 +116,25 @@ export const SUBJECTS: SiteSubject[] = [
     ],
   },
   {
+    slug: "calculo",
+    name: "Cálculo",
+    pitch:
+      "Derivada como velocímetro, gradiente como a seta da ladeira: o cálculo que uma rede neural usa para aprender, sem decoreba.",
+    lessons: [
+      "Funções: domínio, imagem e composição",
+      "Limites: chegar cada vez mais perto",
+      "Derivada: a rapidez da mudança num instante",
+      "A derivada no desenho: a inclinação da tangente",
+      "Regras de derivação: atalhos que evitam o limite",
+      "Regra da cadeia: derivar funções em fila",
+      "Derivadas parciais: mexer numa coisa de cada vez",
+      "Gradiente: a seta que aponta para a subida",
+      "Máximos e mínimos: achar o melhor valor",
+      "Gradiente descendente: descer o morro em passinhos",
+      "Taxa de aprendizado: o tamanho certo do passo",
+    ],
+  },
+  {
     slug: "portugues",
     name: "Português",
     pitch:
@@ -233,5 +252,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 1002,
+  questions: 1090,
 };

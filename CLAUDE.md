@@ -307,6 +307,8 @@ Três coisas de conteúdo:
 
 **Matéria de Álgebra Linear** (14 lições, `08-algebra-linear.json`, área Matemática): a seção 3 da trilha. Módulos Vetores, Matrizes, Transformações e espaços, e Para a IA (tensores, broadcasting e embeddings). O escopo `a` do verificador tem vetor, escalar, componente, norma, matriz, transposta, determinante, autovalor, tensor, embedding… "Base" ficou de fora, porque a palavra do dia a dia apareceria em toda lição; o sentido técnico tem verbete na lição de espaços vetoriais.
 
+**Matéria de Cálculo** (11 lições, `09-calculo.json`, área Matemática): a seção 4 da trilha. Módulos Funções, Limites e derivadas, Várias variáveis e Otimizar — termina no gradiente descendente e na taxa de aprendizado, que são o fio que liga a matemática ao treino de redes. O escopo `c` tem derivada, limite, tangente, regra da cadeia, gradiente, taxa de aprendizado… Os exemplos numéricos de descida (passo pequeno, na medida e grande demais) foram conferidos à mão: são a parte que mais engana.
+
 **Ao acrescentar lição, mexa em quatro lugares:** o JSON do conteúdo, a figura em `frontend/public/figuras/`, a lista de `frontend/src/lib/site-content.ts` (o teste `site-content.test.ts` reprova se esquecer) e o mapa em `docs/sistemas-operacionais-mapa.md`. Matéria nova entra com **todas as lições de uma vez**: arquivo com metade delas publicado deixa a outra metade órfã.
 
 **Atualizações feitas sobre o material do semestre** (a regra 4 do Guia manda corrigir o que está defasado): micronúcleo hoje é tecnologia de produção, não experimento — entrou o seL4 e o uso em carros e aviões; e contêineres entraram ao lado de máquinas virtuais, porque é o que se usa hoje e o material da disciplina não cobre.
