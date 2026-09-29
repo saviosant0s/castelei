@@ -4,6 +4,7 @@ import {
   BookOpenText,
   Brain,
   Calculator,
+  Code,
   Cpu,
   Dna,
   Dumbbell,
@@ -63,6 +64,7 @@ const iconesDeMateria: Record<string, LucideIcon> = {
   "servidores-vps": Server,
   refatoracao: Wrench,
   "producao-textual": PenLine,
+  "programacao-python": Code,
 };
 
 /** Ícone da matéria; a que não tem um próprio usa o da área. */

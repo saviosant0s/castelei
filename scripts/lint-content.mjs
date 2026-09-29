@@ -215,9 +215,29 @@ const JARGON = [
   ["norma-padrão", /\bnorma[- ]padr(ã|a)o\b/i, "t"],
   ["proposta de intervenção", /\bpropostas? de interven(ç|c)(ão|ões)\b/i, "t"],
   ["dissertativo-argumentativo", /\bdissertativ(o|a)-argumentativ(o|a)\b/i, "t"], ["clímax", /\bcl(í|i)max\b/i, "t"],
+
+  /*
+  | Programação com Python (escopo "y"). O corte é "quem nunca programou
+  | saberia?". "Comando" e "programa" ficaram de fora: são palavras que
+  | qualquer pessoa usa. Os nomes de tipo do próprio Python (int, str, float)
+  | também, porque aparecem em quase todo código: quem os explica é a lição
+  | de tipos, e o código de cada lição vem traduzido linha a linha.
+  */
+  ["variável", /\bvari(á|a)ve(l|is)\b/i, "y"], ["string", /\bstrings?\b/i, "y"], ["lista", /\blistas?\b/i, "y"],
+  ["dicionário", /\bdicion(á|a)rios?\b/i, "y"], ["função", /\bfun(ç|c)(ão|ões)\b/i, "y"], ["laço", /\bla(ç|c)os?\b|\bloops?\b/i, "y"],
+  ["índice", /\b(í|i)ndices?\b/i, "y"], ["parâmetro", /\bpar(â|a)metros?\b/i, "y"], ["argumento", /\bargumentos?\b/i, "y"],
+  ["retorno", /\bretorn(o|os|a|am|ar|ou)\b|\breturn\b/i, "y"], ["módulo", /\bm(ó|o)dulos?\b/i, "y"], ["biblioteca", /\bbibliotecas?\b/i, "y"],
+  ["terminal", /\bterminal\b/i, "y"], ["interpretador", /\binterpretador\b/i, "y"], ["booleano", /\bbooleanos?\b|\bbool\b/i, "y"],
+  ["tupla", /\btuplas?\b/i, "y"], ["método", /\bm(é|e)todos?\b/i, "y"], ["classe", /\b[Cc]lasses?\b|\bclass\b/, "y"],
+  ["objeto", /\bobjetos?\b/i, "y"], ["atributo", /\batributos?\b/i, "y"], ["recursão", /\brecurs(ão|ivo|iva|ivos|ivas|ivamente)\b/i, "y"],
+  ["algoritmo", /\balgoritmos?\b/i, "y"], ["complexidade", /\bcomplexidade\b/i, "y"], ["pip", /\bpip\b/, "y"],
+  ["array", /\barrays?\b/i, "y"], ["indentação", /\bindenta(ç|c)(ão|ões)\b|\bindentad\w+/i, "y"], ["NumPy", /\bnumpy\b/i, "y"],
+  ["ambiente virtual", /\bambientes? virtua(l|is)\b|\bvenv\b/i, "y"], ["condicional", /\bcondiciona(l|is)\b/i, "y"],
+  ["iterar", /\biter(ar|a|am|ação|ações|ável|áveis)\b/i, "y"], ["instância", /\binst(â|a)ncias?\b/i, "y"], ["self", /\bself\b/, "y"],
+  ["None", /\bNone\b/, "y"], ["tipo de dado", /\btipos? de dados?\b/i, "y"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;
@@ -230,9 +250,11 @@ const warn = (where, msg) => warnings.push(`${where}: ${msg}`);
 
 const words = (s) => s.trim().split(/\s+/).filter(Boolean).length;
 const sentences = (text) => text.split(/(?<=[.!?…])\s+/).map((s) => s.trim()).filter(Boolean);
-// Vírgula entre parênteses não conta, e entre chaves também: {1, 2, 3} é a
-// escrita de um conjunto, não uma frase comprida.
-const commas = (s) => (s.replace(/\([^)]*\)/g, "").replace(/\{[^}]*\}/g, "").replace(/(\d),(\d)/g, "$1$2").match(/,/g) ?? []).length;
+// Vírgula entre parênteses não conta, e entre chaves e colchetes também:
+// {1, 2, 3} é a escrita de um conjunto, e [1, 2, 3] a de uma lista do Python.
+// Numa sequência de números ("0, 1, 2, 3 e 4") a vírgula só separa valores:
+// ela não deixa a frase mais difícil de ler.
+const commas = (s) => (s.replace(/\([^)]*\)/g, "").replace(/\{[^}]*\}/g, "").replace(/\[[^\]]*\]/g, "").replace(/(\d),(\d)/g, "$1$2").replace(/(\d), (?=[−-]?\d)/g, "$1 ").match(/,/g) ?? []).length;
 
 function checkProse(where, text) {
   if (SOURCE_REF.test(text)) fail(where, `cita livro ou fonte (“${text.match(SOURCE_REF)[0]}”): o app é independente`);
