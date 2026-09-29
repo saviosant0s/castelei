@@ -471,3 +471,17 @@ h3,
     animation: rise-in 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 }
+
+/*
+| Código sem ligaduras.
+|
+| A JetBrains Mono junta >= num sinal só (≥), e != vira ≠. Fica bonito para
+| quem já programa, e engana quem está aprendendo: a pessoa vê ≥ na lição,
+| procura a tecla e não acha. Em bloco de código, cada caractere aparece como
+| se digita.
+*/
+pre,
+code {
+  font-variant-ligatures: none;
+  font-feature-settings: "calt" 0, "liga" 0;
+}

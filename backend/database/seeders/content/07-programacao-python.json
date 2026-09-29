@@ -1,0 +1,4578 @@
+{
+  "_leia_me": [
+    "Programação com Python do Castelei: a seção 2 da trilha de LLMs do zero.",
+    "Chaves começadas por _ são comentário e somem na importação.",
+    "Todo código vem com uma nota por linha: quem lê pode nunca ter programado."
+  ],
+  "slug": "programacao-python",
+  "name": "Programação com Python",
+  "area": "informatica",
+  "description": "Programar do zero, em Python: variáveis, decisões, repetições, funções, coleções, módulos e objetos. É a linguagem da inteligência artificial, com cada linha de código explicada.",
+  "lessons": [
+    {
+      "slug": "primeiro-programa",
+      "title": "Programar e rodar o primeiro código",
+      "module": "Primeiros passos",
+      "summary": "Programa é uma receita que o computador segue à risca. Instalar o Python no Windows ou no Linux, abrir o terminal e rodar o primeiro arquivo.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Uma receita para um robô",
+          "body": [
+            "Imagine um robô de cozinha que segue receitas ao pé da letra. Se a receita diz “mexa”, ele mexe. Se esqueceu de dizer “desligue o fogo”, ele não desliga.",
+            "Programar é escrever receitas assim, para o computador. Ele não adivinha o que você quis dizer: faz exatamente o que está escrito."
+          ],
+          "terms": [
+            {
+              "word": "Programa",
+              "meaning": "uma sequência de instruções que o computador segue, uma depois da outra."
+            },
+            {
+              "word": "Linguagem de programação",
+              "meaning": "um jeito combinado de escrever essas instruções, com palavras e regras que o computador entende."
+            },
+            {
+              "word": "Python",
+              "meaning": "uma linguagem de programação conhecida por ser fácil de ler. É a mais usada em inteligência artificial."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Instalando o Python",
+          "body": [
+            "No Windows, baixe o instalador em python.org. Na primeira tela, marque a caixa “Add python.exe to PATH” antes de clicar em instalar. Sem ela, o terminal não acha o Python.",
+            "No Linux, o Python quase sempre já vem instalado. Se não vier, o comando da tabela resolve. Esses comandos são digitados no terminal."
+          ],
+          "terms": [
+            {
+              "word": "Terminal",
+              "meaning": "a janela de texto onde se digitam pedidos ao computador. No Windows, o terminal mais usado é o PowerShell."
+            }
+          ],
+          "table": {
+            "label": "Como instalar",
+            "headers": [
+              "Sistema",
+              "Como"
+            ],
+            "rows": [
+              [
+                "Windows",
+                "baixar em python.org e marcar “Add python.exe to PATH”"
+              ],
+              [
+                "Windows (alternativa)",
+                "winget install Python.Python.3.13"
+              ],
+              [
+                "Linux (Ubuntu e Debian)",
+                "sudo apt install python3"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Abrindo o terminal",
+          "body": [
+            "O terminal é uma janela onde você digita pedidos ao computador, em vez de clicar. Parece antiquado, mas é onde o Python roda.",
+            "Cada pedido é uma linha de texto. Você digita e aperta Enter."
+          ],
+          "table": {
+            "label": "Onde está o terminal",
+            "headers": [
+              "Sistema",
+              "Como abrir"
+            ],
+            "rows": [
+              [
+                "Windows",
+                "tecla do Windows, digite PowerShell e aperte Enter"
+              ],
+              [
+                "Linux",
+                "Ctrl + Alt + T, ou procure Terminal no menu"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Conferindo a instalação",
+          "body": [
+            "Peça ao Python para dizer a versão. Se aparecer um número como 3.13, está tudo certo.",
+            "No Linux, o nome costuma ser python3. No Windows, é só python."
+          ],
+          "table": {
+            "label": "Conferir a versão",
+            "headers": [
+              "Onde",
+              "Digite no terminal"
+            ],
+            "rows": [
+              [
+                "Windows (PowerShell)",
+                "python --version"
+              ],
+              [
+                "Linux",
+                "python3 --version"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O modo de conversa",
+          "body": [
+            "Digite python no terminal (ou python3, no Linux) e aperte Enter. Aparece o sinal >>>. É o Python esperando uma instrução.",
+            "Digite 2 + 3 e aperte Enter: ele responde 5 na hora. Para sair, digite exit() e aperte Enter."
+          ],
+          "terms": [
+            {
+              "word": "Interpretador",
+              "meaning": "o programa que lê o que você escreveu em Python e executa na hora, linha por linha."
+            }
+          ],
+          "example": {
+            "label": "Uma conversa com o Python",
+            "lines": [
+              ">>> 2 + 3",
+              "5",
+              ">>> 10 * 4",
+              "40",
+              ">>> exit()"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O primeiro arquivo",
+          "body": [
+            "O modo de conversa esquece tudo quando fecha. Para guardar um programa, escreva num arquivo com final .py. Qualquer editor de texto serve, mas o VS Code é o mais usado.",
+            "Salve o arquivo abaixo como ola.py. No terminal, na mesma pasta, rode python ola.py no Windows ou python3 ola.py no Linux."
+          ],
+          "code": {
+            "label": "ola.py",
+            "text": "print(\"Olá, mundo!\")\nprint(2 + 3)",
+            "notes": [
+              "Mostra na tela o texto entre aspas. As aspas avisam que aquilo é texto, e não uma conta.",
+              "Mostra na tela o resultado da conta 2 + 3, que é 5. Aqui não há aspas, então o Python faz a conta."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Comentários e mensagens de erro",
+          "body": [
+            "Tudo o que vem depois de # numa linha é ignorado pelo Python. Serve para deixar recados para quem lê.",
+            "Errar é normal, e o Python avisa onde. A mensagem de erro diz a linha e o tipo do problema. Leia de baixo para cima: a última linha é a mais importante."
+          ],
+          "terms": [
+            {
+              "word": "String",
+              "meaning": "o nome em programação para um valor de texto, escrito entre aspas."
+            }
+          ],
+          "example": {
+            "label": "Um erro comum",
+            "lines": [
+              "print(\"Olá)",
+              "SyntaxError: unterminated string literal",
+              "Faltou fechar as aspas da string."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Sem instalar nada",
+          "body": [
+            "Dá para programar em Python direto no navegador. O Google Colab abre um caderno onde cada bloco de código roda com um clique.",
+            "É o jeito mais comum de treinar modelos de inteligência artificial sem ter uma máquina potente. Vale para testar tudo desta matéria."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Em provas de lógica e em entrevistas de emprego, o formato clássico é mostrar um trecho de código e perguntar o que aparece na tela.",
+            "Para acertar, faça o papel do computador. Leia uma linha por vez e anote o que cada uma faz, sem adivinhar."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Tropeços do primeiro dia."
+          ],
+          "bullets": [
+            "No Windows, esquecer de marcar “Add python.exe to PATH” na instalação.",
+            "Rodar o arquivo estando em outra pasta: o terminal precisa estar na pasta do arquivo.",
+            "Usar python no Linux quando o nome lá é python3.",
+            "Esquecer de fechar aspas ou parênteses."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O computador faz exatamente o que está escrito."
+          ],
+          "bullets": [
+            "Instale pelo python.org (Windows) ou pelo apt (Linux).",
+            "Abra o terminal: PowerShell no Windows, Ctrl + Alt + T no Linux.",
+            "python --version confere a instalação.",
+            "O sinal >>> é o modo de conversa; exit() sai.",
+            "Programas ficam em arquivos .py e rodam com python arquivo.py.",
+            "# começa um comentário; a mensagem de erro diz a linha do problema."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "print",
+          "statement": "O que aparece na tela ao rodar print(\"2 + 3\")?",
+          "options": [
+            "5",
+            "2 + 3",
+            "“2 + 3”",
+            "um erro",
+            "nada"
+          ],
+          "correct_index": 1,
+          "explanation": "Entre aspas, 2 + 3 é texto, e não conta. O Python mostra o texto exatamente como está.",
+          "pitfall": "5 seria a resposta de print(2 + 3), sem aspas."
+        },
+        {
+          "topic": "Versão",
+          "statement": "No Linux, qual comando confere a versão do Python instalada?",
+          "options": [
+            "python3 --version",
+            "version python",
+            "print(version)",
+            "python3 ola.py",
+            "exit()"
+          ],
+          "correct_index": 0,
+          "explanation": "No Linux, o Python costuma se chamar python3. O --version pede a versão.",
+          "pitfall": "python3 ola.py roda um arquivo; não mostra a versão."
+        },
+        {
+          "topic": "PATH",
+          "statement": "No Windows, o terminal responde que não conhece o comando python. Qual é a causa mais provável?",
+          "options": [
+            "o computador é lento demais",
+            "na instalação, a opção “Add python.exe to PATH” ficou desmarcada",
+            "faltou reiniciar o roteador",
+            "o arquivo não termina em .py",
+            "o Python só funciona no Linux"
+          ],
+          "correct_index": 1,
+          "explanation": "Sem essa opção, o Windows não sabe onde o Python mora, e o terminal não o encontra.",
+          "pitfall": "O final .py importa para rodar um arquivo, mas o problema aqui é antes: o próprio Python não é achado."
+        },
+        {
+          "topic": "Comentário",
+          "statement": "O que aparece ao rodar a linha print(\"oi\")  # mostra oi?",
+          "options": [
+            "oi  # mostra oi",
+            "oi",
+            "mostra oi",
+            "# mostra oi",
+            "um erro"
+          ],
+          "correct_index": 1,
+          "explanation": "Tudo depois do # é comentário e é ignorado. Só o print roda, e mostra oi.",
+          "pitfall": "O comentário nunca aparece na tela: ele é recado para quem lê o código."
+        },
+        {
+          "topic": "Modo de conversa",
+          "statement": "O que o sinal >>> no terminal quer dizer?",
+          "options": [
+            "o Python travou",
+            "o Python está esperando uma instrução",
+            "o arquivo foi salvo",
+            "houve um erro de digitação",
+            "a internet caiu"
+          ],
+          "correct_index": 1,
+          "explanation": "É o modo de conversa: cada linha digitada é executada na hora.",
+          "pitfall": "Não é erro: é o Python pronto para ouvir."
+        },
+        {
+          "topic": "Rodar arquivo",
+          "statement": "O arquivo contas.py está na pasta Documentos, mas o terminal está aberto em outra pasta. O que acontece com python contas.py?",
+          "options": [
+            "roda normalmente",
+            "o Python avisa que não achou o arquivo",
+            "o arquivo é apagado",
+            "abre o modo de conversa",
+            "roda duas vezes"
+          ],
+          "correct_index": 1,
+          "explanation": "O terminal procura o arquivo na pasta em que está. Em outra pasta, o Python não o encontra.",
+          "pitfall": "O Python não procura o arquivo pelo computador inteiro."
+        },
+        {
+          "topic": "Ler erro",
+          "statement": "Uma mensagem de erro do Python tem várias linhas. Por onde começar a ler?",
+          "options": [
+            "pela primeira linha",
+            "pela última linha",
+            "pelo meio",
+            "tanto faz",
+            "pelo nome do arquivo"
+          ],
+          "correct_index": 1,
+          "explanation": "A última linha diz o tipo do erro e a explicação curta. As de cima mostram o caminho até ele.",
+          "pitfall": "Começar pela primeira linha costuma mostrar só o caminho, e não o problema."
+        },
+        {
+          "topic": "Primeiro programa",
+          "format": "order",
+          "statement": "Ponha na ordem os passos para rodar o seu primeiro programa.",
+          "options": [
+            "Instalar o Python",
+            "Escrever o código e salvar como ola.py",
+            "Abrir o terminal na pasta do arquivo",
+            "Rodar python ola.py"
+          ],
+          "explanation": "Sem o Python instalado nada roda. O arquivo precisa existir antes de ser executado, e o terminal precisa estar na pasta dele.",
+          "pitfall": "Abrir o terminal em qualquer pasta é o tropeço mais comum."
+        }
+      ]
+    },
+    {
+      "slug": "variaveis-e-tipos",
+      "title": "Variáveis e tipos de dados",
+      "module": "Primeiros passos",
+      "summary": "Variável é uma caixa com etiqueta. Cada valor tem um tipo: número, texto ou verdadeiro e falso. O tipo decide o que dá para fazer com ele.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Caixas com etiqueta",
+          "body": [
+            "Numa mudança, você escreve na caixa o que tem dentro: “livros”, “panelas”. Depois, para achar as panelas, basta ler as etiquetas.",
+            "Um programa faz o mesmo com os valores que usa. Cada valor vai numa caixa com nome."
+          ],
+          "terms": [
+            {
+              "word": "Variável",
+              "meaning": "um nome que guarda um valor, como uma caixa com etiqueta. O valor pode ser trocado depois."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Guardar um valor",
+          "body": [
+            "O sinal = guarda o valor da direita na caixa da esquerda. Não é o “igual” da matemática: é uma ordem de guardar.",
+            "Depois disso, usar o nome é o mesmo que usar o valor guardado."
+          ],
+          "code": {
+            "label": "Guardando e usando",
+            "text": "idade = 20\nnome = \"Ana\"\nprint(nome, idade)",
+            "notes": [
+              "Cria a caixa idade e guarda o número 20 nela.",
+              "Cria a caixa nome e guarda o texto Ana. As aspas dizem que é texto.",
+              "Mostra na tela os dois valores guardados: Ana 20."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os quatro tipos básicos",
+          "body": [
+            "Todo valor tem um tipo, e o tipo decide o que dá para fazer com ele. Número se soma; texto se junta.",
+            "O Python descobre o tipo sozinho, pelo jeito como o valor foi escrito."
+          ],
+          "terms": [
+            {
+              "word": "Tipo de dado",
+              "meaning": "a espécie de um valor: número inteiro, número com vírgula, texto ou verdadeiro e falso."
+            },
+            {
+              "word": "String",
+              "meaning": "o nome em programação para um valor de texto. Vem sempre entre aspas: \"Ana\"."
+            },
+            {
+              "word": "Booleano",
+              "meaning": "o tipo que só tem dois valores: True (verdadeiro) e False (falso)."
+            }
+          ],
+          "table": {
+            "label": "Tipos básicos",
+            "headers": [
+              "Tipo",
+              "Nome no Python",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "número inteiro",
+                "int",
+                "20"
+              ],
+              [
+                "número com vírgula",
+                "float",
+                "1.75"
+              ],
+              [
+                "texto (string)",
+                "str",
+                "\"Ana\""
+              ],
+              [
+                "verdadeiro ou falso (booleano)",
+                "bool",
+                "True"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Ponto, e não vírgula",
+          "body": [
+            "No Python, o número com vírgula se escreve com ponto: 1.75. A vírgula tem outro trabalho, que é separar valores.",
+            "Escrever 1,75 não dá erro, mas vira outra coisa: dois números separados."
+          ],
+          "example": {
+            "label": "Cuidado",
+            "lines": [
+              "altura = 1.75: um número",
+              "altura = 1,75: dois números, 1 e 75"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Perguntando o tipo",
+          "body": [
+            "A função type diz o tipo de qualquer valor. É útil quando uma conta dá resultado estranho."
+          ],
+          "terms": [
+            {
+              "word": "Função",
+              "meaning": "um pedido com nome que faz um trabalho e pode devolver um resultado. print e type são funções que já vêm no Python."
+            },
+            {
+              "word": "Classe",
+              "meaning": "no Python, outro nome para tipo. É por isso que a tela escreve class na resposta. A palavra volta com calma na última lição da matéria."
+            }
+          ],
+          "code": {
+            "label": "type",
+            "text": "print(type(20))\nprint(type(1.75))\nprint(type(\"20\"))",
+            "notes": [
+              "Mostra <class 'int'>: 20 é um número inteiro.",
+              "Mostra <class 'float'>: 1.75 é um número com vírgula.",
+              "Mostra <class 'str'>: entre aspas, \"20\" é texto, mesmo parecendo número."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Trocando de tipo",
+          "body": [
+            "O que a pessoa digita chega sempre como texto. Para fazer conta, converta antes.",
+            "int transforma em número inteiro, float em número com vírgula e str em texto."
+          ],
+          "code": {
+            "label": "Lendo a idade",
+            "text": "resposta = input(\"Sua idade: \")\nidade = int(resposta)\nprint(idade + 1)",
+            "notes": [
+              "Mostra a pergunta, espera a pessoa digitar e guarda a resposta. Ela chega como texto.",
+              "Converte o texto em número inteiro e guarda na caixa idade.",
+              "Soma 1 e mostra o resultado. Sem a conversão, daria erro."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A caixa pode mudar",
+          "body": [
+            "Uma variável pode receber valor novo a qualquer momento. O valor antigo é jogado fora.",
+            "A linha pontos = pontos + 10 parece absurda na matemática. No Python, ela lê o valor atual, soma 10 e guarda de volta."
+          ],
+          "code": {
+            "label": "Atualizando",
+            "text": "pontos = 0\npontos = pontos + 10\nprint(pontos)",
+            "notes": [
+              "Começa com zero pontos.",
+              "Lê o valor atual, soma 10 e guarda o resultado na mesma caixa.",
+              "Mostra 10."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Regras dos nomes",
+          "body": [
+            "Os nomes não podem ter espaço nem começar com número. Letra maiúscula conta: Idade e idade são caixas diferentes.",
+            "O costume no Python é escrever tudo minúsculo, com _ no lugar do espaço: nota_final."
+          ],
+          "table": {
+            "label": "Nomes",
+            "headers": [
+              "Nome",
+              "Vale?"
+            ],
+            "rows": [
+              [
+                "nota_final",
+                "sim"
+              ],
+              [
+                "nota final",
+                "não: tem espaço"
+              ],
+              [
+                "2nota",
+                "não: começa com número"
+              ],
+              [
+                "notaFinal",
+                "vale, mas foge do costume"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "As perguntas querem saber o tipo de um valor e o que acontece numa conta com tipos misturados.",
+            "\"5\" + \"5\" dá \"55\", porque junta textos. Já 5 + 5 dá 10. A resposta depende das aspas."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde as variáveis enganam."
+          ],
+          "bullets": [
+            "Esquecer que input devolve texto e tentar somar direto.",
+            "Escrever 1,5 em vez de 1.5.",
+            "Usar Nota e nota achando que são a mesma variável.",
+            "Ler = como “é igual”: ele guarda, não compara."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Variável é um nome para um valor."
+          ],
+          "bullets": [
+            "= guarda o valor da direita no nome da esquerda.",
+            "Tipos básicos: int, float, str e bool.",
+            "Número com vírgula se escreve com ponto.",
+            "type mostra o tipo de um valor.",
+            "input devolve texto; converta com int ou float.",
+            "x = x + 1 lê, soma e guarda de volta."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Tipo",
+          "statement": "Qual é o tipo do valor \"3.14\", escrito com as aspas?",
+          "options": [
+            "int",
+            "float",
+            "str",
+            "bool",
+            "número"
+          ],
+          "correct_index": 2,
+          "explanation": "Com aspas, qualquer coisa é texto: str.",
+          "pitfall": "Parece um número com vírgula, mas as aspas mandam."
+        },
+        {
+          "topic": "Juntar texto",
+          "statement": "O que o código print(\"7\" + \"3\") mostra?",
+          "options": [
+            "10",
+            "73",
+            "“7 + 3”",
+            "um erro",
+            "7 3"
+          ],
+          "correct_index": 1,
+          "explanation": "Com aspas, os dois são texto, e + junta textos: 73.",
+          "pitfall": "10 seria a conta de 7 + 3 sem aspas."
+        },
+        {
+          "topic": "Atualizar",
+          "statement": "Depois de x = 5 e x = x * 2, quanto vale x?",
+          "options": [
+            "5",
+            "7",
+            "10",
+            "2",
+            "25"
+          ],
+          "correct_index": 2,
+          "explanation": "A segunda linha lê o 5, multiplica por 2 e guarda 10 de volta em x.",
+          "pitfall": "Ler x = x * 2 como equação faz achar que não tem solução. É uma ordem, não uma equação."
+        },
+        {
+          "topic": "input",
+          "statement": "A pessoa digita 8 quando o programa faz n = input(\"Número: \"). Qual é o tipo de n?",
+          "options": [
+            "int",
+            "float",
+            "str",
+            "bool",
+            "depende do número"
+          ],
+          "correct_index": 2,
+          "explanation": "input devolve sempre texto, mesmo que a pessoa digite um número.",
+          "pitfall": "Por isso somar n + 1 dá erro: é preciso converter com int(n)."
+        },
+        {
+          "topic": "Ponto e vírgula",
+          "statement": "Qual linha guarda o número dois e meio na variável x?",
+          "options": [
+            "x = 2,5",
+            "x = 2.5",
+            "x = \"2,5\"",
+            "x = 2 e 5",
+            "x == 2.5"
+          ],
+          "correct_index": 1,
+          "explanation": "No Python, o número com vírgula se escreve com ponto.",
+          "pitfall": "x = \"2,5\" guarda um texto, e não um número."
+        },
+        {
+          "topic": "Nome válido",
+          "statement": "Qual destes nomes de variável é válido no Python?",
+          "options": [
+            "1lugar",
+            "nota final",
+            "nota_final",
+            "nota-final",
+            "nota.final"
+          ],
+          "correct_index": 2,
+          "explanation": "O _ faz o papel do espaço. Os outros têm espaço, começam com número ou usam sinais proibidos.",
+          "pitfall": "nota-final parece bom, mas o Python lê como nota menos final."
+        },
+        {
+          "topic": "Booleano",
+          "statement": "Quais são os únicos valores do tipo bool?",
+          "options": [
+            "0 e 1",
+            "True e False",
+            "sim e não",
+            "\"True\" e \"False\"",
+            "qualquer número"
+          ],
+          "correct_index": 1,
+          "explanation": "O tipo booleano só tem True e False, com a primeira letra maiúscula.",
+          "pitfall": "Com aspas, \"True\" é texto, e não o valor booleano."
+        },
+        {
+          "topic": "Tipos",
+          "format": "match",
+          "statement": "Ligue cada valor ao seu tipo no Python.",
+          "pairs": [
+            {
+              "left": "42",
+              "right": "int"
+            },
+            {
+              "left": "0.5",
+              "right": "float"
+            },
+            {
+              "left": "\"oi\"",
+              "right": "str"
+            },
+            {
+              "left": "False",
+              "right": "bool"
+            }
+          ],
+          "explanation": "Número sem ponto é int, e com ponto é float. Entre aspas é str, e True ou False é bool.",
+          "pitfall": "\"42\", com aspas, seria str. As aspas sempre vencem."
+        }
+      ]
+    },
+    {
+      "slug": "operadores",
+      "title": "Operadores: contas, comparações e lógica",
+      "module": "Primeiros passos",
+      "summary": "Os sinais que fazem contas, comparam valores e combinam perguntas. Toda decisão de um programa começa num desses.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Calculadora e balança",
+          "body": [
+            "Um programa precisa de duas ferramentas o tempo todo. Uma calculadora, para fazer contas. E uma balança de comparar, para responder perguntas como “o saldo é maior que o preço?”.",
+            "Os operadores são essas ferramentas, escritas como sinais."
+          ],
+          "terms": [
+            {
+              "word": "Operador",
+              "meaning": "um sinal que faz uma operação com valores, como + para somar ou > para comparar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As contas",
+          "body": [
+            "Somar, subtrair e multiplicar funcionam como na escola. A divisão tem três sabores, e a potência usa dois asteriscos."
+          ],
+          "table": {
+            "label": "Operadores de conta",
+            "headers": [
+              "Sinal",
+              "Faz",
+              "Exemplo",
+              "Resultado"
+            ],
+            "rows": [
+              [
+                "+",
+                "soma",
+                "7 + 2",
+                "9"
+              ],
+              [
+                "-",
+                "subtração",
+                "7 - 2",
+                "5"
+              ],
+              [
+                "*",
+                "multiplicação",
+                "7 * 2",
+                "14"
+              ],
+              [
+                "/",
+                "divisão",
+                "7 / 2",
+                "3.5"
+              ],
+              [
+                "//",
+                "divisão inteira",
+                "7 // 2",
+                "3"
+              ],
+              [
+                "%",
+                "resto da divisão",
+                "7 % 2",
+                "1"
+              ],
+              [
+                "**",
+                "potência",
+                "7 ** 2",
+                "49"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Resto e divisão inteira",
+          "body": [
+            "7 // 2 dá 3: quantas vezes o 2 cabe inteiro no 7. 7 % 2 dá 1: o que sobrou.",
+            "O resto serve para muita coisa. Um número é par quando o resto da divisão por 2 é zero."
+          ],
+          "code": {
+            "label": "Par ou ímpar",
+            "text": "n = 14\nprint(n % 2)\nprint(n % 2 == 0)",
+            "notes": [
+              "Guarda o número 14.",
+              "Mostra 0: 14 dividido por 2 não deixa resto.",
+              "Mostra True: o resto é zero, então o número é par."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A ordem das contas",
+          "body": [
+            "O Python segue a mesma ordem da matemática. Primeiro a potência, depois multiplicação e divisão, por último soma e subtração.",
+            "Na dúvida, use parênteses. Eles deixam a intenção clara para quem lê."
+          ],
+          "example": {
+            "label": "Ordem",
+            "lines": [
+              "2 + 3 * 4 dá 14",
+              "(2 + 3) * 4 dá 20",
+              "2 ** 3 * 2 dá 16"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Comparar",
+          "body": [
+            "Os operadores de comparação respondem uma pergunta com True ou False. Repare: para comparar igualdade são dois sinais de igual.",
+            "Um = guarda. Dois == perguntam."
+          ],
+          "terms": [
+            {
+              "word": "Booleano",
+              "meaning": "o tipo que só tem dois valores: True e False."
+            }
+          ],
+          "table": {
+            "label": "Comparações",
+            "headers": [
+              "Sinal",
+              "Pergunta",
+              "Exemplo",
+              "Resultado"
+            ],
+            "rows": [
+              [
+                "==",
+                "é igual?",
+                "5 == 5",
+                "True"
+              ],
+              [
+                "!=",
+                "é diferente?",
+                "5 != 3",
+                "True"
+              ],
+              [
+                ">",
+                "é maior?",
+                "2 > 7",
+                "False"
+              ],
+              [
+                "<=",
+                "é menor ou igual?",
+                "3 <= 3",
+                "True"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Combinar perguntas",
+          "body": [
+            "and exige que as duas perguntas sejam verdadeiras. or se contenta com uma. not inverte a resposta.",
+            "Para entrar no cinema: ter ingresso and ter idade. Para pagar meia: ser estudante or ser idoso."
+          ],
+          "table": {
+            "label": "and e or",
+            "headers": [
+              "A",
+              "B",
+              "A and B",
+              "A or B"
+            ],
+            "rows": [
+              [
+                "True",
+                "True",
+                "True",
+                "True"
+              ],
+              [
+                "True",
+                "False",
+                "False",
+                "True"
+              ],
+              [
+                "False",
+                "False",
+                "False",
+                "False"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Atalhos de atualização",
+          "body": [
+            "Somar a uma variável é tão comum que ganhou atalho. pontos += 10 é o mesmo que pontos = pontos + 10.",
+            "Existe o mesmo atalho para as outras contas: -=, *= e /=."
+          ],
+          "terms": [
+            {
+              "word": "Variável",
+              "meaning": "um nome que guarda um valor, como uma caixa com etiqueta."
+            }
+          ],
+          "code": {
+            "label": "Atalho",
+            "text": "saldo = 100\nsaldo -= 30\nprint(saldo)",
+            "notes": [
+              "Começa com 100 no saldo.",
+              "Tira 30 do saldo. É o mesmo que saldo = saldo - 30.",
+              "Mostra 70."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Sinais com texto",
+          "body": [
+            "Alguns operadores também funcionam com texto. + junta dois textos, e * repete um texto.",
+            "Somar texto com número dá erro. O Python não adivinha se você quis juntar ou fazer conta."
+          ],
+          "example": {
+            "label": "Com texto",
+            "lines": [
+              "\"bom\" + \"dia\" dá \"bomdia\"",
+              "\"ha\" * 3 dá \"hahaha\"",
+              "\"ano \" + 2026 dá erro"
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Os favoritos são o resto (%), a divisão inteira (//) e a diferença entre = e ==. Também cai a ordem das contas sem parênteses.",
+            "Em lógica, a pergunta combina and e or e pede o resultado final. Resolva uma parte de cada vez."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Os tropeços clássicos."
+          ],
+          "bullets": [
+            "Usar = para comparar, em vez de ==.",
+            "Achar que 7 / 2 dá 3. No Python, / sempre dá número com vírgula: 3.5.",
+            "Esquecer que ** vem antes da multiplicação.",
+            "Achar que and aceita uma das duas verdadeira. Quem aceita uma só é o or."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Contas, comparações e lógica."
+          ],
+          "bullets": [
+            "/ divide com vírgula; // divide inteiro; % dá o resto.",
+            "** é potência e vem antes de * e /.",
+            "== pergunta; = guarda.",
+            "Comparações devolvem True ou False.",
+            "and: as duas. or: pelo menos uma. not: inverte.",
+            "+= soma e guarda de volta."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Resto",
+          "statement": "Quanto vale 17 % 5?",
+          "options": [
+            "3",
+            "2",
+            "3.4",
+            "12",
+            "85"
+          ],
+          "correct_index": 1,
+          "explanation": "17 dividido por 5 dá 3, e sobra 2. O % devolve o que sobra.",
+          "pitfall": "3 é a divisão inteira, 17 // 5."
+        },
+        {
+          "topic": "Divisão",
+          "statement": "Quanto vale 9 / 3 no Python?",
+          "options": [
+            "3",
+            "3.0",
+            "0",
+            "27",
+            "um erro"
+          ],
+          "correct_index": 1,
+          "explanation": "A divisão com uma barra devolve sempre número com vírgula, mesmo quando a conta é exata: 3.0.",
+          "pitfall": "3 seria o resultado de 9 // 3."
+        },
+        {
+          "topic": "Ordem",
+          "statement": "Quanto vale 3 + 2 ** 3?",
+          "options": [
+            "125",
+            "11",
+            "15",
+            "13",
+            "9"
+          ],
+          "correct_index": 1,
+          "explanation": "A potência vem primeiro: 2 ** 3 = 8. Depois a soma: 3 + 8 = 11.",
+          "pitfall": "125 é de quem somou antes: (3 + 2) ** 3."
+        },
+        {
+          "topic": "Igualdade",
+          "statement": "O que print(4 == 4.0) mostra?",
+          "options": [
+            "True",
+            "False",
+            "4",
+            "um erro",
+            "4.0"
+          ],
+          "correct_index": 0,
+          "explanation": "== compara valores, e 4 e 4.0 valem o mesmo. A resposta é True.",
+          "pitfall": "Tipos diferentes não impedem a comparação de valor."
+        },
+        {
+          "topic": "and e or",
+          "statement": "Com a = True e b = False, quanto vale (a and b) or not b?",
+          "options": [
+            "True",
+            "False",
+            "None",
+            "um erro",
+            "b"
+          ],
+          "correct_index": 0,
+          "explanation": "a and b é False. not b é True. False or True dá True.",
+          "pitfall": "Parar no a and b e responder False esquece o resto da expressão."
+        },
+        {
+          "topic": "Atalho",
+          "statement": "Depois de x = 10, x += 5 e x *= 2, quanto vale x?",
+          "options": [
+            "20",
+            "30",
+            "25",
+            "15",
+            "10"
+          ],
+          "correct_index": 1,
+          "explanation": "x += 5 deixa 15. x *= 2 dobra: 30.",
+          "pitfall": "25 soma 5 e depois soma 10, em vez de multiplicar."
+        },
+        {
+          "topic": "Texto",
+          "statement": "O que print(\"oi\" * 2 + \"!\") mostra?",
+          "options": [
+            "oioi!",
+            "oi!oi!",
+            "oi2!",
+            "um erro",
+            "oi oi !"
+          ],
+          "correct_index": 0,
+          "explanation": "Primeiro a multiplicação: \"oi\" * 2 é \"oioi\". Depois junta o \"!\".",
+          "pitfall": "oi!oi! faz a soma antes da multiplicação."
+        },
+        {
+          "topic": "Operadores",
+          "format": "match",
+          "statement": "Ligue cada operador ao que ele faz.",
+          "pairs": [
+            {
+              "left": "%",
+              "right": "resto da divisão"
+            },
+            {
+              "left": "//",
+              "right": "divisão inteira"
+            },
+            {
+              "left": "**",
+              "right": "potência"
+            },
+            {
+              "left": "==",
+              "right": "pergunta se é igual"
+            }
+          ],
+          "explanation": "% e // são as duas metades da divisão: o que sobra e o que coube. ** eleva e == compara.",
+          "pitfall": "== não guarda nada. Quem guarda é o = sozinho."
+        }
+      ]
+    },
+    {
+      "slug": "condicionais",
+      "title": "Condicionais: o programa que decide",
+      "module": "Decidir e repetir",
+      "summary": "if, elif e else fazem o programa escolher um caminho. O recuo das linhas diz o que pertence a cada escolha.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A bifurcação na estrada",
+          "body": [
+            "Ao sair de casa, você olha o céu. Se estiver chovendo, leva guarda-chuva. Senão, sai sem.",
+            "Programas tomam decisões assim o tempo todo. Uma pergunta com resposta verdadeira ou falsa escolhe o caminho."
+          ],
+          "terms": [
+            {
+              "word": "Condicional",
+              "meaning": "o trecho do programa que só roda se uma pergunta for verdadeira. No Python, começa com if."
+            },
+            {
+              "word": "Booleano",
+              "meaning": "o tipo que só tem dois valores: True (verdadeiro) e False (falso)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O if",
+          "body": [
+            "Depois do if vem a pergunta e dois-pontos. As linhas de baixo, recuadas, só rodam se a resposta for True.",
+            "A linha sem recuo volta ao caminho normal e roda sempre."
+          ],
+          "terms": [
+            {
+              "word": "Variável",
+              "meaning": "um nome que guarda um valor, como uma caixa com etiqueta."
+            }
+          ],
+          "code": {
+            "label": "Um if simples",
+            "text": "temperatura = 32\nif temperatura > 30:\n    print(\"Leve água\")\nprint(\"Bom passeio\")",
+            "notes": [
+              "Guarda 32 na variável temperatura.",
+              "Pergunta se a temperatura passa de 30. Os dois-pontos abrem o bloco da resposta.",
+              "Recuada, esta linha só roda se a resposta for True. Aqui é, então mostra Leve água.",
+              "Sem recuo, esta linha está fora do if e roda sempre."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O recuo manda",
+          "body": [
+            "Em muitas linguagens, chaves marcam o começo e o fim de um bloco. No Python, quem marca é o recuo.",
+            "O costume é recuar 4 espaços. Misturar recuos diferentes no mesmo bloco dá erro."
+          ],
+          "terms": [
+            {
+              "word": "Indentação",
+              "meaning": "o recuo no começo da linha. No Python, ela diz a que bloco a linha pertence."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Senão: o else",
+          "body": [
+            "O else é o caminho de quando a resposta é False. Uma das duas partes sempre roda, nunca as duas."
+          ],
+          "code": {
+            "label": "if e else",
+            "text": "saldo = 50\nif saldo >= 80:\n    print(\"Compra aprovada\")\nelse:\n    print(\"Saldo insuficiente\")",
+            "notes": [
+              "Guarda 50 no saldo.",
+              "Pergunta se o saldo é pelo menos 80.",
+              "Roda se a resposta for True. Aqui não é.",
+              "O else pega todos os outros casos.",
+              "Roda porque a resposta foi False: mostra Saldo insuficiente."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Várias saídas: o elif",
+          "body": [
+            "Quando há mais de dois caminhos, use elif. Ele quer dizer “senão, se”. O Python testa de cima para baixo e para na primeira pergunta verdadeira.",
+            "Por isso a ordem importa. A pergunta mais exigente vem primeiro."
+          ],
+          "code": {
+            "label": "Nota em conceito",
+            "text": "nota = 7.5\nif nota >= 9:\n    print(\"A\")\nelif nota >= 7:\n    print(\"B\")\nelse:\n    print(\"C\")",
+            "notes": [
+              "Guarda a nota 7.5.",
+              "Primeira pergunta: a nota é pelo menos 9? Não.",
+              "Pulada, porque a primeira resposta foi False.",
+              "Segunda pergunta: a nota é pelo menos 7? Sim.",
+              "Mostra B. Depois disso, o resto é ignorado.",
+              "O else só rodaria se nenhuma pergunta desse True.",
+              "Não roda nesta vez."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Perguntas combinadas",
+          "body": [
+            "Uma condição pode juntar várias perguntas com and e or. Os parênteses ajudam a ler.",
+            "Meia-entrada: idade abaixo de 18 or acima de 60. Entrada liberada: tem ingresso and não está lotado."
+          ],
+          "example": {
+            "label": "Exemplos",
+            "lines": [
+              "if idade < 18 or idade > 60:",
+              "if tem_ingresso and not lotado:",
+              "if 10 <= hora < 18:"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Decisão dentro de decisão",
+          "body": [
+            "Um if pode morar dentro de outro. Cada nível ganha mais um recuo.",
+            "Use com moderação. Três níveis de recuo já ficam difíceis de ler, e quase sempre dá para juntar as perguntas com and."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A questão mostra um trecho com if, elif e else, dá o valor da variável e pergunta o que aparece. Siga as perguntas de cima para baixo e pare na primeira verdadeira.",
+            "Outra favorita troca a ordem dos elif e pergunta por que a nota 9,5 recebe B."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde as condicionais enganam."
+          ],
+          "bullets": [
+            "Esquecer os dois-pontos no fim da linha do if.",
+            "Usar = em vez de == na pergunta.",
+            "Pôr a pergunta mais fraca antes da mais exigente nos elif.",
+            "Errar o recuo e deixar uma linha dentro ou fora do bloco sem querer."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "if escolhe o caminho."
+          ],
+          "bullets": [
+            "if pergunta; o bloco recuado roda se a resposta for True.",
+            "else roda quando nenhuma pergunta anterior deu True.",
+            "elif testa outra pergunta, em ordem, de cima para baixo.",
+            "O recuo de 4 espaços marca o bloco.",
+            "and e or combinam perguntas.",
+            "A pergunta mais exigente vem primeiro."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "if e else",
+          "statement": "Com x = 3, o que o código abaixo mostra?\nif x > 5:\n    print(\"grande\")\nelse:\n    print(\"pequeno\")",
+          "options": [
+            "grande",
+            "pequeno",
+            "grande e pequeno",
+            "nada",
+            "um erro"
+          ],
+          "correct_index": 1,
+          "explanation": "3 > 5 é False, então roda o else: pequeno.",
+          "pitfall": "Nunca rodam as duas partes: é uma ou a outra."
+        },
+        {
+          "topic": "elif",
+          "statement": "Com nota = 9.5, o código testa primeiro if nota >= 7 (dá B) e depois elif nota >= 9 (dá A). O else dá C. Que conceito sai?",
+          "options": [
+            "A",
+            "B",
+            "C",
+            "A e B",
+            "nenhum"
+          ],
+          "correct_index": 1,
+          "explanation": "A primeira pergunta, nota >= 7, já é True. O Python para ali e mostra B, mesmo a nota sendo 9,5.",
+          "pitfall": "A resposta A seria a certa com a ordem inversa. A ordem dos elif decide."
+        },
+        {
+          "topic": "Recuo",
+          "statement": "Com chovendo = False, o que o código mostra?\nif chovendo:\n    print(\"guarda-chuva\")\nprint(\"tchau\")",
+          "options": [
+            "guarda-chuva",
+            "tchau",
+            "guarda-chuva e tchau",
+            "nada",
+            "um erro"
+          ],
+          "correct_index": 1,
+          "explanation": "O if não roda, porque chovendo é False. A última linha não tem recuo, então roda sempre: tchau.",
+          "pitfall": "Achar que tchau está dentro do if é ignorar o recuo."
+        },
+        {
+          "topic": "Combinar",
+          "statement": "Com idade = 65 e estudante = False, quanto vale idade < 18 or idade > 60 or estudante?",
+          "options": [
+            "True",
+            "False",
+            "65",
+            "None",
+            "um erro"
+          ],
+          "correct_index": 0,
+          "explanation": "idade > 60 é True. Com or, basta uma verdadeira.",
+          "pitfall": "and exigiria todas; aqui é or."
+        },
+        {
+          "topic": "Intervalo",
+          "statement": "Com hora = 18, a pergunta 10 <= hora < 18 dá:",
+          "options": [
+            "True",
+            "False",
+            "18",
+            "um erro",
+            "None"
+          ],
+          "correct_index": 1,
+          "explanation": "O < 18 exige menor que 18. Com 18 exato, a resposta é False.",
+          "pitfall": "Quem lê < como <= marca True."
+        },
+        {
+          "topic": "Dois-pontos",
+          "statement": "Qual linha está escrita corretamente?",
+          "options": [
+            "if x > 3",
+            "if x > 3:",
+            "if (x > 3)",
+            "if x > 3 then:",
+            "if: x > 3"
+          ],
+          "correct_index": 1,
+          "explanation": "O if termina com dois-pontos, que abrem o bloco de baixo.",
+          "pitfall": "if (x > 3), sem os dois-pontos, também dá erro. Os parênteses são opcionais; os dois-pontos, não."
+        },
+        {
+          "topic": "Igualdade",
+          "statement": "Qual pergunta testa se a senha é igual a \"abc\"?",
+          "options": [
+            "if senha = \"abc\":",
+            "if senha == \"abc\":",
+            "if senha is equal \"abc\":",
+            "if \"abc\":",
+            "if senha: \"abc\""
+          ],
+          "correct_index": 1,
+          "explanation": "== pergunta se é igual. Um = sozinho guarda valor e, dentro do if, dá erro.",
+          "pitfall": "O erro de um = só é o mais comum de todos."
+        },
+        {
+          "topic": "elif",
+          "format": "order",
+          "statement": "Ponha as perguntas na ordem certa para dar A (a partir de 9), B (a partir de 7) e C (o resto).",
+          "options": [
+            "if nota >= 9:",
+            "elif nota >= 7:",
+            "else:"
+          ],
+          "explanation": "A pergunta mais exigente vem primeiro. O else fica no fim, para pegar o que sobrou.",
+          "pitfall": "Com nota >= 7 primeiro, ninguém tiraria A."
+        }
+      ]
+    },
+    {
+      "slug": "lacos-de-repeticao",
+      "title": "Laços: repetir sem copiar e colar",
+      "module": "Decidir e repetir",
+      "summary": "for repete para cada item de uma coleção, e while repete enquanto uma pergunta for verdadeira. Com eles, mil repetições cabem em duas linhas.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Cem vezes no quadro",
+          "body": [
+            "O professor manda escrever “não vou conversar na aula” cem vezes. Você pode escrever cem linhas iguais.",
+            "Ou pode dizer: repita cem vezes. Os computadores são ótimos nisso, e nunca se cansam."
+          ],
+          "terms": [
+            {
+              "word": "Laço",
+              "meaning": "um trecho de código que se repete várias vezes. Em inglês, loop."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "for com range",
+          "body": [
+            "range(5) produz os números de 0 a 4: cinco números, começando do zero. O for passa por cada um deles.",
+            "A cada volta, a variável i guarda o número da vez."
+          ],
+          "terms": [
+            {
+              "word": "Variável",
+              "meaning": "um nome que guarda um valor, como uma caixa com etiqueta."
+            }
+          ],
+          "code": {
+            "label": "Contando",
+            "text": "for i in range(5):\n    print(i)",
+            "notes": [
+              "Repete para cada número de 0 a 4. Em cada volta, i guarda o número da vez.",
+              "Mostra o número. No total aparecem 0, 1, 2, 3 e 4, um por linha."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os três jeitos do range",
+          "body": [
+            "Com um número, range começa em zero. Com dois, você escolhe o começo. Com três, também o passo.",
+            "O último número nunca entra. range(1, 5) para no 4."
+          ],
+          "table": {
+            "label": "range",
+            "headers": [
+              "Escrita",
+              "Produz"
+            ],
+            "rows": [
+              [
+                "range(4)",
+                "0, 1, 2, 3"
+              ],
+              [
+                "range(2, 6)",
+                "2, 3, 4, 5"
+              ],
+              [
+                "range(0, 10, 3)",
+                "0, 3, 6, 9"
+              ],
+              [
+                "range(5, 0, -1)",
+                "5, 4, 3, 2, 1"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Somando dentro do laço",
+          "body": [
+            "Um uso clássico é acumular: começar com zero e somar algo a cada volta.",
+            "A variável que guarda a soma nasce fora do laço. Se nascesse dentro, voltaria a zero em toda volta."
+          ],
+          "code": {
+            "label": "Somar de 1 a 100",
+            "text": "total = 0\nfor n in range(1, 101):\n    total += n\nprint(total)",
+            "notes": [
+              "Cria o acumulador com zero, fora do laço.",
+              "Repete para cada n de 1 até 100. O 101 fica de fora.",
+              "Soma o n da vez ao total.",
+              "Fora do laço, mostra o resultado: 5050."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Percorrer os itens",
+          "body": [
+            "O for também passa por textos e por coleções de valores. Em cada volta, recebe um item.",
+            "Não é preciso saber quantos itens existem: o for para sozinho no fim."
+          ],
+          "terms": [
+            {
+              "word": "Iterar",
+              "meaning": "passar pelos itens de uma coleção, um de cada vez."
+            }
+          ],
+          "code": {
+            "label": "Letra por letra",
+            "text": "for letra in \"oi!\":\n    print(letra)",
+            "notes": [
+              "Itera sobre o texto oi!, uma letra por volta.",
+              "Mostra a letra da vez: o, depois i, depois !."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "while: enquanto for verdade",
+          "body": [
+            "O while repete enquanto a pergunta der True. Serve quando você não sabe de antemão quantas voltas vão ser precisas.",
+            "Alguma coisa dentro do laço precisa mudar a resposta um dia. Senão ele nunca para."
+          ],
+          "code": {
+            "label": "Juntando dinheiro",
+            "text": "saldo = 0\nmeses = 0\nwhile saldo < 1000:\n    saldo += 150\n    meses += 1\nprint(meses)",
+            "notes": [
+              "Começa sem dinheiro.",
+              "Começa contando zero meses.",
+              "Repete enquanto o saldo não chegar a 1 000.",
+              "Guarda mais 150 a cada volta.",
+              "Conta mais um mês.",
+              "Mostra 7: são sete meses até passar de 1 000."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Parar antes: break",
+          "body": [
+            "break encerra o laço na hora, mesmo que ainda faltem voltas. continue pula só o resto da volta atual.",
+            "Um laço while True com break é comum para pedir dados até a pessoa digitar certo."
+          ],
+          "example": {
+            "label": "break e continue",
+            "lines": [
+              "for n in range(10): if n == 3: break → para no 3",
+              "for n in range(5): if n == 2: continue → pula o 2",
+              "while True: ... break → roda até alguém mandar parar"
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "As perguntas querem saber quantas vezes um laço roda e qual é o valor final de um acumulador.",
+            "Monte uma tabelinha no papel: uma linha por volta, com o valor de cada variável. É lento, mas não erra."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Os erros dos laços."
+          ],
+          "bullets": [
+            "Achar que range(5) inclui o 5.",
+            "Criar o acumulador dentro do laço e ele voltar a zero a cada volta.",
+            "Esquecer de mudar a variável do while e o laço nunca parar.",
+            "Errar o recuo e deixar o print dentro do laço, repetindo sem querer."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Repetir é o forte do computador."
+          ],
+          "bullets": [
+            "for passa por cada item de uma coleção.",
+            "range(a, b) vai de a até b − 1.",
+            "Acumulador: nasce fora do laço, cresce dentro.",
+            "while repete enquanto a pergunta for True.",
+            "Algo dentro do while precisa mudar a resposta.",
+            "break encerra; continue pula para a próxima volta."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "range",
+          "statement": "Quais números range(3, 7) produz?",
+          "options": [
+            "3, 4, 5, 6, 7",
+            "3, 4, 5, 6",
+            "4, 5, 6, 7",
+            "3, 7",
+            "0, 1, 2, 3, 4, 5, 6"
+          ],
+          "correct_index": 1,
+          "explanation": "Começa no 3 e para antes do 7.",
+          "pitfall": "Incluir o 7 é o erro mais comum com range."
+        },
+        {
+          "topic": "Quantas voltas",
+          "statement": "Quantas vezes o print roda em for i in range(10): print(i)?",
+          "options": [
+            "9",
+            "10",
+            "11",
+            "1",
+            "0"
+          ],
+          "correct_index": 1,
+          "explanation": "range(10) produz 0 a 9: dez números, dez voltas.",
+          "pitfall": "9 conta até o último número, e esquece o zero."
+        },
+        {
+          "topic": "Acumulador",
+          "statement": "Qual é o valor final de total?\ntotal = 0\nfor n in range(4):\n    total += n",
+          "options": [
+            "10",
+            "6",
+            "4",
+            "3",
+            "0"
+          ],
+          "correct_index": 1,
+          "explanation": "n passa por 0, 1, 2 e 3. Somando: 0 + 1 + 2 + 3 = 6.",
+          "pitfall": "10 somaria até o 4, que o range não inclui."
+        },
+        {
+          "topic": "while",
+          "statement": "Quantas vezes o laço roda?\nx = 1\nwhile x < 20:\n    x = x * 2",
+          "options": [
+            "4",
+            "5",
+            "10",
+            "19",
+            "infinitas"
+          ],
+          "correct_index": 1,
+          "explanation": "x vale 1, 2, 4, 8, 16 no começo de cada volta. Na quinta volta vira 32, e 32 < 20 é False. São cinco voltas.",
+          "pitfall": "Contar até o 16 e esquecer a volta que o transforma em 32 dá quatro."
+        },
+        {
+          "topic": "Laço sem fim",
+          "statement": "Por que este laço nunca para?\nn = 0\nwhile n < 5:\n    print(n)",
+          "options": [
+            "o print está errado",
+            "n nunca muda, então n < 5 é sempre True",
+            "falta o range",
+            "o while não aceita <",
+            "falta um else"
+          ],
+          "correct_index": 1,
+          "explanation": "Nada dentro do laço muda o n. A pergunta dá True para sempre.",
+          "pitfall": "Faltaria uma linha como n += 1 dentro do laço."
+        },
+        {
+          "topic": "break",
+          "statement": "O que aparece?\nfor n in range(10):\n    if n == 4:\n        break\n    print(n)",
+          "options": [
+            "0 1 2 3",
+            "0 1 2 3 4",
+            "4",
+            "0 a 9",
+            "nada"
+          ],
+          "correct_index": 0,
+          "explanation": "Quando n chega a 4, o break encerra o laço antes do print. Saem 0, 1, 2 e 3.",
+          "pitfall": "O 4 não aparece: o break vem antes do print."
+        },
+        {
+          "topic": "Passo",
+          "statement": "Quais números range(10, 0, -3) produz?",
+          "options": [
+            "10, 7, 4, 1",
+            "10, 7, 4, 1, 0",
+            "0, 3, 6, 9",
+            "10, 13, 16",
+            "nenhum"
+          ],
+          "correct_index": 0,
+          "explanation": "Começa em 10 e desce de 3 em 3 enquanto for maior que 0: 10, 7, 4, 1.",
+          "pitfall": "O zero não entra: o fim nunca entra no range."
+        },
+        {
+          "topic": "Acumular",
+          "format": "order",
+          "statement": "Ponha na ordem as linhas de um programa que soma de 1 a 10 e mostra o resultado.",
+          "options": [
+            "total = 0",
+            "for n in range(1, 11):",
+            "    total += n",
+            "print(total)"
+          ],
+          "explanation": "O acumulador nasce antes do laço. A soma fica dentro, recuada. O print fica fora, depois.",
+          "pitfall": "Com o total = 0 dentro do laço, a soma recomeçaria a cada volta."
+        }
+      ]
+    },
+    {
+      "slug": "funcoes",
+      "title": "Funções: dar nome a um pedaço de código",
+      "module": "Decidir e repetir",
+      "summary": "Função é uma receita com nome: recebe ingredientes, faz o trabalho e devolve o prato. Escreve-se uma vez e usa-se quantas quiser.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A receita com nome",
+          "body": [
+            "Numa cozinha, ninguém repete a receita do molho toda vez. Dizem “faça o molho” e pronto.",
+            "Em programação é igual. Você escreve os passos uma vez, dá um nome, e depois só chama pelo nome."
+          ],
+          "terms": [
+            {
+              "word": "Função",
+              "meaning": "um pedaço de código com nome, que faz um trabalho e pode devolver um resultado."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Criando com def",
+          "body": [
+            "def cria a função. Depois vêm o nome, os parênteses e os dois-pontos. O corpo fica recuado.",
+            "Criar a função não a executa. Ela só roda quando alguém a chama."
+          ],
+          "code": {
+            "label": "Criar e chamar",
+            "text": "def saudar():\n    print(\"Olá!\")\nsaudar()\nsaudar()",
+            "notes": [
+              "Cria a função saudar. Nada aparece ainda.",
+              "O corpo recuado: o que a função faz quando é chamada.",
+              "Chama a função: aparece Olá!.",
+              "Chama de novo: aparece Olá! outra vez."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Ingredientes: parâmetros",
+          "body": [
+            "Entre os parênteses vão os ingredientes que a função recebe. Na criação, eles têm nome. Na chamada, recebem valores.",
+            "O nome da criação é o parâmetro. O valor mandado na chamada é o argumento."
+          ],
+          "terms": [
+            {
+              "word": "Parâmetro",
+              "meaning": "o nome que a função usa para o valor que recebe."
+            },
+            {
+              "word": "Argumento",
+              "meaning": "o valor que se manda para a função na hora de chamá-la."
+            }
+          ],
+          "code": {
+            "label": "Com parâmetro",
+            "text": "def saudar(nome):\n    print(\"Olá, \" + nome)\nsaudar(\"Ana\")",
+            "notes": [
+              "Cria a função com o parâmetro nome.",
+              "Junta Olá com o nome recebido e mostra.",
+              "Chama mandando o argumento Ana. Aparece Olá, Ana."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Devolvendo o prato: return",
+          "body": [
+            "print só mostra na tela. return entrega o resultado de volta para quem chamou, que pode guardar ou usar numa conta.",
+            "Quando o return roda, a função termina ali."
+          ],
+          "terms": [
+            {
+              "word": "Retorno",
+              "meaning": "o valor que a função devolve com return. Ele volta para o lugar de onde a função foi chamada."
+            }
+          ],
+          "code": {
+            "label": "Com return",
+            "text": "def dobro(x):\n    return x * 2\nr = dobro(5) + 1\nprint(r)",
+            "notes": [
+              "Cria a função dobro, que recebe x.",
+              "Devolve x vezes 2 e encerra a função.",
+              "Chama com 5, recebe 10 de volta, soma 1 e guarda 11 em r.",
+              "Mostra 11."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Sem return, volta None",
+          "body": [
+            "Uma função sem return devolve um valor especial que quer dizer “nada”.",
+            "É por isso que guardar o resultado de uma função que só faz print dá um valor vazio."
+          ],
+          "terms": [
+            {
+              "word": "None",
+              "meaning": "o valor do Python que quer dizer “nada”. É o que volta de uma função sem return."
+            }
+          ],
+          "example": {
+            "label": "A diferença",
+            "lines": [
+              "def a(x): print(x * 2) → mostra, mas devolve None",
+              "def b(x): return x * 2 → não mostra, mas devolve o valor",
+              "y = a(3) guarda None; y = b(3) guarda 6"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Valores padrão",
+          "body": [
+            "Um parâmetro pode vir com valor já preenchido. Se a chamada não mandar nada, vale o padrão.",
+            "É útil para ajustes que quase nunca mudam."
+          ],
+          "code": {
+            "label": "Parâmetro com padrão",
+            "text": "def preco_final(preco, desconto=0):\n    return preco - desconto\nprint(preco_final(100))\nprint(preco_final(100, 15))",
+            "notes": [
+              "Cria a função. Se ninguém mandar desconto, ele vale 0.",
+              "Devolve o preço menos o desconto.",
+              "Chama sem desconto: mostra 100.",
+              "Chama com desconto de 15: mostra 85."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que nasce dentro, fica dentro",
+          "body": [
+            "Variáveis criadas dentro de uma função só existem lá dentro. Quando a função termina, elas somem.",
+            "Isso é bom: cada função cuida das suas caixas e não bagunça as das outras."
+          ],
+          "terms": [
+            {
+              "word": "Variável",
+              "meaning": "um nome que guarda um valor, como uma caixa com etiqueta."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Funções como na matemática",
+          "body": [
+            "Uma função do Python lembra a f(x) da matemática: entra um valor, sai outro. def f(x): return 2 * x + 1 é a mesma f(x) = 2x + 1.",
+            "Funções podem chamar outras funções. Uma rede neural é feita de muitas funções simples encadeadas."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A questão mostra uma função e uma chamada e pergunta o resultado. Troque cada parâmetro pelo argumento e siga o corpo.",
+            "Outra favorita é a diferença entre print e return. A pergunta guarda o resultado numa variável e pede o valor dela."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde as funções enganam."
+          ],
+          "bullets": [
+            "Achar que criar a função com def já a executa.",
+            "Usar print quando era preciso return, e receber None.",
+            "Esquecer os parênteses na chamada: saudar sem () não roda nada.",
+            "Tentar usar fora da função uma variável criada dentro dela."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Escreva uma vez, use sempre."
+          ],
+          "bullets": [
+            "def nome(parâmetros): cria a função.",
+            "Chamar é escrever o nome com parênteses.",
+            "Parâmetro é o nome; argumento é o valor mandado.",
+            "return devolve o resultado e encerra a função.",
+            "Sem return, a função devolve None.",
+            "O que nasce dentro da função fica lá dentro."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "return",
+          "statement": "O que aparece?\ndef f(x):\n    return x + 3\nprint(f(4) * 2)",
+          "options": [
+            "14",
+            "11",
+            "10",
+            "7",
+            "None"
+          ],
+          "correct_index": 0,
+          "explanation": "f(4) devolve 7. Depois 7 * 2 = 14.",
+          "pitfall": "11 faz 4 * 2 + 3: multiplica antes de chamar a função."
+        },
+        {
+          "topic": "print e return",
+          "statement": "O que aparece na última linha?\ndef f(x):\n    print(x * 2)\ny = f(5)\nprint(y)",
+          "options": [
+            "10",
+            "None",
+            "5",
+            "um erro",
+            "y"
+          ],
+          "correct_index": 1,
+          "explanation": "f mostra 10, mas não tem return. Então y guarda None, e a última linha mostra None.",
+          "pitfall": "O 10 aparece, mas na linha de dentro da função, e não na última."
+        },
+        {
+          "topic": "Parâmetro e argumento",
+          "statement": "Em def area(lado): e na chamada area(4), o que é o 4?",
+          "options": [
+            "o parâmetro",
+            "o argumento",
+            "o retorno",
+            "o nome da função",
+            "o corpo"
+          ],
+          "correct_index": 1,
+          "explanation": "O valor mandado na chamada é o argumento. lado é o parâmetro.",
+          "pitfall": "Os dois se confundem fácil. O parâmetro é o nome; o argumento é o valor."
+        },
+        {
+          "topic": "Padrão",
+          "statement": "O que aparece?\ndef potencia(b, e=2):\n    return b ** e\nprint(potencia(3))",
+          "options": [
+            "6",
+            "9",
+            "27",
+            "3",
+            "um erro"
+          ],
+          "correct_index": 1,
+          "explanation": "Sem o segundo argumento, e vale 2. 3 ** 2 = 9.",
+          "pitfall": "27 usaria e = 3. O padrão aqui é 2."
+        },
+        {
+          "topic": "def não executa",
+          "statement": "Quantas vezes Oi aparece?\ndef f():\n    print(\"Oi\")\nf()\nf()\nf()",
+          "options": [
+            "0",
+            "1",
+            "3",
+            "4",
+            "infinitas"
+          ],
+          "correct_index": 2,
+          "explanation": "A criação com def não mostra nada. Cada uma das três chamadas mostra Oi.",
+          "pitfall": "4 conta a linha do def como se ela rodasse."
+        },
+        {
+          "topic": "Encerra no return",
+          "statement": "O que aparece?\ndef g():\n    return 1\n    return 2\nprint(g())",
+          "options": [
+            "1",
+            "2",
+            "1 e 2",
+            "None",
+            "um erro"
+          ],
+          "correct_index": 0,
+          "explanation": "O primeiro return encerra a função. A linha de baixo nunca roda.",
+          "pitfall": "Uma função só devolve uma vez por chamada."
+        },
+        {
+          "topic": "Encadear",
+          "statement": "Com def a(x): return x + 1 e def b(x): return x * 10, quanto vale b(a(2))?",
+          "options": [
+            "21",
+            "30",
+            "12",
+            "3",
+            "20"
+          ],
+          "correct_index": 1,
+          "explanation": "Primeiro a de dentro: a(2) = 3. Depois b(3) = 30.",
+          "pitfall": "21 faz b primeiro e a depois: é a(b(2))."
+        },
+        {
+          "topic": "Partes da função",
+          "format": "match",
+          "statement": "Ligue cada parte ao seu papel.",
+          "pairs": [
+            {
+              "left": "def",
+              "right": "cria a função"
+            },
+            {
+              "left": "return",
+              "right": "devolve o resultado"
+            },
+            {
+              "left": "parâmetro",
+              "right": "nome do valor recebido"
+            },
+            {
+              "left": "None",
+              "right": "o que volta sem return"
+            }
+          ],
+          "explanation": "def cria e return devolve. O parâmetro é o nome do ingrediente, e None é o “nada” que volta quando falta o return.",
+          "pitfall": "print não aparece aqui porque não devolve nada: só mostra na tela."
+        }
+      ]
+    },
+    {
+      "slug": "strings",
+      "title": "Strings: trabalhando com texto",
+      "module": "Guardar coleções",
+      "summary": "Texto é uma fileira de letras numeradas a partir do zero. Dá para pegar pedaços, trocar, separar em palavras e montar frases com valores dentro.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O colar de contas",
+          "body": [
+            "Imagine um colar em que cada conta tem uma letra. A palavra “Python” é um colar de seis contas.",
+            "Você pode apontar para uma conta, cortar um pedaço do colar ou contar quantas contas ele tem. Texto em programação funciona assim."
+          ],
+          "terms": [
+            {
+              "word": "String",
+              "meaning": "um valor de texto, escrito entre aspas. É uma fileira de caracteres."
+            },
+            {
+              "word": "Caractere",
+              "meaning": "cada símbolo de um texto: letra, número, espaço ou sinal."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A posição começa no zero",
+          "body": [
+            "Cada letra tem um número de posição. A primeira é a posição 0, e não 1.",
+            "Números negativos contam do fim: −1 é a última letra."
+          ],
+          "terms": [
+            {
+              "word": "Índice",
+              "meaning": "o número da posição de um item. No Python, começa em 0."
+            }
+          ],
+          "table": {
+            "label": "A string \"Python\"",
+            "headers": [
+              "Letra",
+              "P",
+              "y",
+              "t",
+              "h",
+              "o",
+              "n"
+            ],
+            "rows": [
+              [
+                "Índice",
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              [
+                "Do fim",
+                "−6",
+                "−5",
+                "−4",
+                "−3",
+                "−2",
+                "−1"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Pegando letras e pedaços",
+          "body": [
+            "Entre colchetes vai o índice: palavra[0] é a primeira letra. Com dois-pontos, você corta um pedaço.",
+            "O pedaço [1:4] vai do índice 1 até antes do 4. O fim nunca entra, como no range."
+          ],
+          "code": {
+            "label": "Fatias",
+            "text": "p = \"Python\"\nprint(p[0])\nprint(p[-1])\nprint(p[1:4])\nprint(len(p))",
+            "notes": [
+              "Guarda o texto Python.",
+              "Mostra P, a letra de índice 0.",
+              "Mostra n, a última letra.",
+              "Mostra yth: índices 1, 2 e 3. O 4 fica de fora.",
+              "len conta os caracteres: mostra 6."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Ferramentas que já vêm no texto",
+          "body": [
+            "Todo texto traz ferramentas prontas. Você as usa com um ponto depois do texto: nome.upper().",
+            "Nenhuma delas muda o texto original. Elas devolvem um texto novo."
+          ],
+          "terms": [
+            {
+              "word": "Método",
+              "meaning": "uma ferramenta que pertence a um valor e se usa com ponto, como nome.upper()."
+            }
+          ],
+          "table": {
+            "label": "Métodos de texto",
+            "headers": [
+              "Método",
+              "Faz",
+              "\"  Oi Ana \" vira"
+            ],
+            "rows": [
+              [
+                ".upper()",
+                "tudo maiúsculo",
+                "\"  OI ANA \""
+              ],
+              [
+                ".lower()",
+                "tudo minúsculo",
+                "\"  oi ana \""
+              ],
+              [
+                ".strip()",
+                "tira espaços das pontas",
+                "\"Oi Ana\""
+              ],
+              [
+                ".replace(\"Oi\", \"Olá\")",
+                "troca um pedaço",
+                "\"  Olá Ana \""
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Separar em palavras",
+          "body": [
+            "split corta o texto nos espaços e devolve as palavras separadas. É o primeiro passo para um computador ler uma frase.",
+            "Quebrar um texto em pedaços menores é exatamente o que um modelo de linguagem faz antes de tudo."
+          ],
+          "code": {
+            "label": "split",
+            "text": "frase = \"o gato subiu no muro\"\npalavras = frase.split()\nprint(palavras)\nprint(len(palavras))",
+            "notes": [
+              "Guarda a frase.",
+              "Corta a frase nos espaços.",
+              "Mostra as cinco palavras separadas, entre colchetes.",
+              "Mostra 5, o número de palavras."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Montando frases com valores",
+          "body": [
+            "Para pôr valores dentro de um texto, use a letra f antes das aspas e o valor entre chaves.",
+            "É o jeito mais limpo de montar mensagens, e aceita contas dentro das chaves."
+          ],
+          "code": {
+            "label": "Texto com f",
+            "text": "nome = \"Ana\"\nnota = 8.5\nprint(f\"{nome} tirou {nota} e precisa de {10 - nota} para o dez\")",
+            "notes": [
+              "Guarda o nome.",
+              "Guarda a nota.",
+              "Mostra: Ana tirou 8.5 e precisa de 1.5 para o dez."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Perguntar se tem",
+          "body": [
+            "in pergunta se um pedaço aparece dentro do texto. A resposta é True ou False.",
+            "Letras maiúsculas e minúsculas são diferentes: \"A\" in \"casa\" dá False."
+          ],
+          "example": {
+            "label": "in",
+            "lines": [
+              "\"gato\" in \"o gato subiu\" dá True",
+              "\"cão\" in \"o gato subiu\" dá False",
+              "\"G\" in \"gato\" dá False"
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem fatias como texto[2:5] e índices negativos. Conte as posições no papel, a partir do zero.",
+            "Também cai o que um método devolve. Lembre que o texto original não muda."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde o texto engana."
+          ],
+          "bullets": [
+            "Começar a contar do 1 em vez do 0.",
+            "Achar que [1:4] inclui o índice 4.",
+            "Chamar nome.upper() e esperar que nome mude sozinho.",
+            "Esquecer o f antes das aspas: as chaves aparecem como texto."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Texto é uma fileira numerada."
+          ],
+          "bullets": [
+            "O índice começa em 0; −1 é o último.",
+            "[a:b] pega de a até antes de b.",
+            "len conta os caracteres.",
+            "Métodos devolvem um texto novo; o original não muda.",
+            "split separa em palavras.",
+            "f\"...{valor}...\" monta frases com valores."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Índice",
+          "statement": "Com s = \"banana\", o que s[2] mostra?",
+          "options": [
+            "a",
+            "n",
+            "b",
+            "an",
+            "um erro"
+          ],
+          "correct_index": 1,
+          "explanation": "b é 0, a é 1, n é 2.",
+          "pitfall": "Contar a partir do 1 leva à letra a."
+        },
+        {
+          "topic": "Fatia",
+          "statement": "Com s = \"computador\", o que s[0:4] mostra?",
+          "options": [
+            "comp",
+            "compu",
+            "omp",
+            "c",
+            "ompu"
+          ],
+          "correct_index": 0,
+          "explanation": "Índices 0, 1, 2 e 3 dão as letras c o m p. O 4 fica de fora.",
+          "pitfall": "compu inclui o índice 4."
+        },
+        {
+          "topic": "Negativo",
+          "statement": "Com s = \"teclado\", o que s[-2] mostra?",
+          "options": [
+            "t",
+            "d",
+            "o",
+            "a",
+            "l"
+          ],
+          "correct_index": 1,
+          "explanation": "−1 é o, a última. −2 é d, a penúltima.",
+          "pitfall": "o seria o −1."
+        },
+        {
+          "topic": "len",
+          "statement": "Quanto vale len(\"oi mundo\")?",
+          "options": [
+            "7",
+            "8",
+            "2",
+            "6",
+            "9"
+          ],
+          "correct_index": 1,
+          "explanation": "O espaço também conta como caractere. São 2 letras em oi, 1 espaço e 5 letras em mundo: 8.",
+          "pitfall": "Esquecer o espaço dá 7."
+        },
+        {
+          "topic": "Não muda",
+          "statement": "O que aparece?\nn = \"ana\"\nn.upper()\nprint(n)",
+          "options": [
+            "ANA",
+            "ana",
+            "Ana",
+            "None",
+            "um erro"
+          ],
+          "correct_index": 1,
+          "explanation": "upper devolve um texto novo, mas ninguém guardou. n continua ana.",
+          "pitfall": "Para mudar, seria preciso n = n.upper()."
+        },
+        {
+          "topic": "split",
+          "statement": "Quantos itens tem \"eu gosto de python\".split()?",
+          "options": [
+            "1",
+            "3",
+            "4",
+            "18",
+            "19"
+          ],
+          "correct_index": 2,
+          "explanation": "split corta nos espaços e sobram quatro palavras: eu, gosto, de e python.",
+          "pitfall": "18 conta os caracteres, e não as palavras."
+        },
+        {
+          "topic": "f-string",
+          "statement": "Com x = 3, o que print(f\"{x} ao quadrado é {x ** 2}\") mostra?",
+          "options": [
+            "x ao quadrado é x ** 2",
+            "3 ao quadrado é 9",
+            "3 ao quadrado é 6",
+            "{x} ao quadrado é {x ** 2}",
+            "um erro"
+          ],
+          "correct_index": 1,
+          "explanation": "O f faz as chaves virarem valor. x é 3 e x ** 2 é 9.",
+          "pitfall": "Sem o f, as chaves apareceriam como estão."
+        },
+        {
+          "topic": "Métodos",
+          "format": "match",
+          "statement": "Ligue cada método ao que ele faz.",
+          "pairs": [
+            {
+              "left": ".upper()",
+              "right": "deixa tudo maiúsculo"
+            },
+            {
+              "left": ".strip()",
+              "right": "tira espaços das pontas"
+            },
+            {
+              "left": ".split()",
+              "right": "separa em palavras"
+            },
+            {
+              "left": ".replace(a, b)",
+              "right": "troca a por b"
+            }
+          ],
+          "explanation": "Os quatro devolvem algo novo sem mexer no texto original.",
+          "pitfall": "strip não tira os espaços do meio: só os das pontas."
+        }
+      ]
+    },
+    {
+      "slug": "listas-e-arrays",
+      "title": "Listas e arrays: muitos valores numa variável só",
+      "module": "Guardar coleções",
+      "summary": "A lista guarda vários valores em ordem, e pode crescer. O array guarda só números e faz contas em todos de uma vez, e é a base da inteligência artificial.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A lista de compras",
+          "body": [
+            "Uma lista de compras tem itens em ordem. Você risca, acrescenta e confere quantos faltam.",
+            "Criar uma variável para cada item seria impossível com mil itens. Uma variável só pode guardar a lista inteira."
+          ],
+          "terms": [
+            {
+              "word": "Lista",
+              "meaning": "uma coleção de valores em ordem, escrita entre colchetes: [3, 7, 1]."
+            },
+            {
+              "word": "Variável",
+              "meaning": "um nome que guarda um valor, como uma caixa com etiqueta."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Criar e acessar",
+          "body": [
+            "Os itens vão entre colchetes, separados por vírgula. O acesso é pelo índice, que começa em 0, como no texto.",
+            "Diferente do texto, a lista pode ser alterada: dá para trocar um item no lugar."
+          ],
+          "terms": [
+            {
+              "word": "Índice",
+              "meaning": "o número da posição de um item. Começa em 0."
+            }
+          ],
+          "code": {
+            "label": "Uma lista",
+            "text": "notas = [7, 9, 5]\nprint(notas[0])\nnotas[2] = 6\nprint(notas)",
+            "notes": [
+              "Cria uma lista com três notas.",
+              "Mostra 7, o item de índice 0.",
+              "Troca o item de índice 2 por 6.",
+              "Mostra [7, 9, 6]."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Crescer e encolher",
+          "body": [
+            "append põe um item no fim. pop tira o último e o devolve. len diz quantos itens há.",
+            "Fatias funcionam como no texto: notas[1:3] pega os índices 1 e 2."
+          ],
+          "terms": [
+            {
+              "word": "Método",
+              "meaning": "uma ferramenta que pertence a um valor e se usa com ponto, como notas.append(8)."
+            }
+          ],
+          "code": {
+            "label": "Mexendo na lista",
+            "text": "notas = [7, 9]\nnotas.append(10)\nultima = notas.pop()\nprint(notas, ultima, len(notas))",
+            "notes": [
+              "Começa com duas notas.",
+              "Põe o 10 no fim: agora são três.",
+              "Tira o último item, o 10, e guarda em ultima.",
+              "Mostra [7, 9] 10 2."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Passando por todos",
+          "body": [
+            "O for percorre a lista item por item. É o jeito mais comum de trabalhar com ela.",
+            "sum, max e min já fazem as contas mais comuns sem laço nenhum."
+          ],
+          "terms": [
+            {
+              "word": "Laço",
+              "meaning": "um trecho de código que se repete. O for é um laço."
+            }
+          ],
+          "code": {
+            "label": "Média",
+            "text": "notas = [7, 9, 5]\nsoma = 0\nfor n in notas:\n    soma += n\nprint(soma / len(notas))",
+            "notes": [
+              "A lista de notas.",
+              "Começa a soma em zero.",
+              "Passa por cada nota.",
+              "Soma a nota da vez.",
+              "Divide pela quantidade: mostra 7.0. O mesmo sai de sum(notas) / len(notas)."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Lista de listas: uma tabela",
+          "body": [
+            "Uma lista pode guardar outras listas. Assim se monta uma tabela com linhas e colunas.",
+            "O primeiro índice escolhe a linha; o segundo, a coluna. Essa tabela de números tem nome na matemática: matriz."
+          ],
+          "terms": [
+            {
+              "word": "Matriz",
+              "meaning": "uma tabela de números em linhas e colunas."
+            }
+          ],
+          "code": {
+            "label": "Uma tabela",
+            "text": "m = [[1, 2, 3],\n     [4, 5, 6]]\nprint(m[1][0])",
+            "notes": [
+              "Primeira linha da tabela: 1, 2 e 3.",
+              "Segunda linha: 4, 5 e 6.",
+              "Linha 1, coluna 0: mostra 4."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Arrays: contas em todos de uma vez",
+          "body": [
+            "Somar 1 a um milhão de números com um for é lento. O array é uma lista só de números, guardada de um jeito que o computador calcula tudo junto.",
+            "Ele vem da biblioteca NumPy, que precisa ser instalada. Numa rede neural, tudo é array."
+          ],
+          "terms": [
+            {
+              "word": "Array",
+              "meaning": "uma coleção de números do mesmo tipo, feita para contas rápidas em todos os itens de uma vez."
+            },
+            {
+              "word": "Biblioteca",
+              "meaning": "um pacote de código pronto, escrito por outras pessoas, que se usa no seu programa."
+            },
+            {
+              "word": "NumPy",
+              "meaning": "a biblioteca de arrays do Python. É a base de quase todo programa de ciência de dados."
+            }
+          ],
+          "code": {
+            "label": "Array",
+            "text": "import numpy as np\na = np.array([1, 2, 3])\nprint(a * 10)\nprint(a + a)",
+            "notes": [
+              "Traz a biblioteca NumPy e a apelida de np.",
+              "Cria um array com três números.",
+              "Multiplica cada item por 10: mostra [10 20 30].",
+              "Soma item com item: mostra [2 4 6]."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Lista e array: a diferença",
+          "body": [
+            "Com lista, * repete: [1, 2] * 2 dá [1, 2, 1, 2]. Com array, * multiplica cada número.",
+            "Lista aceita qualquer coisa misturada. Array aceita só números do mesmo tipo, e em troca é muito mais rápido."
+          ],
+          "table": {
+            "label": "Comparando",
+            "headers": [
+              "",
+              "Lista",
+              "Array"
+            ],
+            "rows": [
+              [
+                "Guarda",
+                "qualquer coisa",
+                "só números"
+              ],
+              [
+                "[1, 2] * 2",
+                "[1, 2, 1, 2]",
+                "[2 4]"
+              ],
+              [
+                "Velocidade em contas",
+                "lenta",
+                "rápida"
+              ],
+              [
+                "Vem de",
+                "já vem no Python",
+                "biblioteca NumPy"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem índices, fatias e o resultado de append e pop em sequência. Desenhe a lista no papel a cada linha.",
+            "Em entrevistas de dados, cai a diferença entre lista e array."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde as listas enganam."
+          ],
+          "bullets": [
+            "Pedir notas[3] numa lista de três itens: o último é o índice 2.",
+            "Esperar que [1, 2] * 2 multiplique os números.",
+            "Esquecer que pop devolve o item que tirou.",
+            "Achar que o array vem pronto no Python: é preciso instalar o NumPy."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Muitos valores, uma variável."
+          ],
+          "bullets": [
+            "Lista: colchetes, em ordem, índice a partir de 0.",
+            "append põe no fim; pop tira do fim.",
+            "for percorre; sum, max e min resumem.",
+            "Lista de listas vira tabela: m[linha][coluna].",
+            "Array do NumPy: só números, contas em todos de uma vez.",
+            "Com lista, * repete; com array, * multiplica."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Índice",
+          "statement": "Com x = [10, 20, 30, 40], quanto vale x[1] + x[-1]?",
+          "options": [
+            "30",
+            "50",
+            "60",
+            "70",
+            "um erro"
+          ],
+          "correct_index": 2,
+          "explanation": "x[1] é 20 e x[-1] é 40. Somando: 60.",
+          "pitfall": "50 usa x[0] no lugar de x[1]."
+        },
+        {
+          "topic": "append e pop",
+          "statement": "O que aparece?\nx = [1, 2]\nx.append(3)\nx.pop()\nx.append(4)\nprint(x)",
+          "options": [
+            "[1, 2, 3, 4]",
+            "[1, 2, 4]",
+            "[1, 4]",
+            "[2, 3, 4]",
+            "[1, 2, 3]"
+          ],
+          "correct_index": 1,
+          "explanation": "Depois do append fica [1, 2, 3]. O pop tira o 3. O último append põe o 4.",
+          "pitfall": "[1, 2, 3, 4] esquece o pop."
+        },
+        {
+          "topic": "len",
+          "statement": "Quanto vale len([[1, 2], [3, 4], [5, 6]])?",
+          "options": [
+            "6",
+            "3",
+            "2",
+            "12",
+            "1"
+          ],
+          "correct_index": 1,
+          "explanation": "A lista de fora tem três itens, cada um é uma lista.",
+          "pitfall": "6 conta os números lá de dentro."
+        },
+        {
+          "topic": "Tabela",
+          "statement": "Com m = [[5, 6], [7, 8]], quanto vale m[0][1]?",
+          "options": [
+            "5",
+            "6",
+            "7",
+            "8",
+            "um erro"
+          ],
+          "correct_index": 1,
+          "explanation": "Linha 0 é [5, 6]; coluna 1 dessa linha é 6.",
+          "pitfall": "7 troca linha com coluna."
+        },
+        {
+          "topic": "Repetir lista",
+          "statement": "Quanto vale [0] * 3?",
+          "options": [
+            "[0]",
+            "[0, 0, 0]",
+            "[0, 3]",
+            "0",
+            "[3]"
+          ],
+          "correct_index": 1,
+          "explanation": "Com lista, * repete os itens.",
+          "pitfall": "Com array, 0 vezes 3 daria zero; com lista, repete."
+        },
+        {
+          "topic": "Array",
+          "statement": "Com a = np.array([2, 4]), o que print(a * 3) mostra?",
+          "options": [
+            "[2, 4, 2, 4, 2, 4]",
+            "[6 12]",
+            "[5 7]",
+            "18",
+            "um erro"
+          ],
+          "correct_index": 1,
+          "explanation": "No array, * multiplica cada número: 6 e 12.",
+          "pitfall": "Repetir é o que a lista faria."
+        },
+        {
+          "topic": "Fatia",
+          "statement": "Com x = [3, 1, 4, 1, 5], o que x[1:3] mostra?",
+          "options": [
+            "[1, 4]",
+            "[3, 1, 4]",
+            "[1, 4, 1]",
+            "[4, 1]",
+            "[1]"
+          ],
+          "correct_index": 0,
+          "explanation": "Índices 1 e 2: 1 e 4.",
+          "pitfall": "Incluir o índice 3 dá [1, 4, 1]."
+        },
+        {
+          "topic": "Lista e array",
+          "format": "match",
+          "statement": "Ligue cada coisa ao que ela faz.",
+          "pairs": [
+            {
+              "left": "append",
+              "right": "põe um item no fim"
+            },
+            {
+              "left": "pop",
+              "right": "tira o último item"
+            },
+            {
+              "left": "len",
+              "right": "conta os itens"
+            },
+            {
+              "left": "np.array",
+              "right": "cria um array para contas rápidas"
+            }
+          ],
+          "explanation": "append, pop e len são da lista. np.array vem do NumPy.",
+          "pitfall": "pop devolve o item que tirou, e não só apaga."
+        }
+      ]
+    },
+    {
+      "slug": "dicionarios",
+      "title": "Dicionários: achar pelo nome, não pela posição",
+      "module": "Guardar coleções",
+      "summary": "No dicionário, cada valor mora numa chave com nome. É assim que um modelo de linguagem liga cada palavra a um número.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A agenda de contatos",
+          "body": [
+            "Na agenda do celular, você não procura “o contato número 57”. Procura “Mãe”, e aparece o telefone.",
+            "Achar pelo nome é mais natural do que achar pela posição. O dicionário faz isso."
+          ],
+          "terms": [
+            {
+              "word": "Dicionário",
+              "meaning": "uma coleção de pares chave e valor. Cada chave leva a um valor."
+            },
+            {
+              "word": "Chave",
+              "meaning": "o nome pelo qual se acha um valor no dicionário. Não pode repetir."
+            },
+            {
+              "word": "Lista",
+              "meaning": "uma coleção em ordem, entre colchetes, em que se acha pela posição."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Criar e consultar",
+          "body": [
+            "O dicionário vai entre chaves. Cada par tem a chave, dois-pontos e o valor.",
+            "Para consultar, põe-se a chave entre colchetes."
+          ],
+          "code": {
+            "label": "Uma agenda",
+            "text": "agenda = {\"Ana\": \"9999-1111\", \"Bia\": \"9999-2222\"}\nprint(agenda[\"Bia\"])",
+            "notes": [
+              "Cria o dicionário com duas chaves: Ana e Bia, cada uma com o seu telefone.",
+              "Consulta pela chave Bia: mostra 9999-2222."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Acrescentar e trocar",
+          "body": [
+            "Atribuir a uma chave nova cria o par. Atribuir a uma chave que já existe troca o valor.",
+            "Não há chave repetida: a segunda atribuição apaga a primeira."
+          ],
+          "code": {
+            "label": "Mudando",
+            "text": "precos = {\"pão\": 1}\nprecos[\"leite\"] = 5\nprecos[\"pão\"] = 2\nprint(precos)",
+            "notes": [
+              "Começa com o pão custando 1.",
+              "Chave nova: cria o leite com preço 5.",
+              "Chave que já existe: troca o preço do pão para 2.",
+              "Mostra {'pão': 2, 'leite': 5}."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Chave que não existe",
+          "body": [
+            "Pedir uma chave que não está lá dá erro. Para perguntar com calma, use get: ele devolve um valor padrão.",
+            "in pergunta se a chave existe."
+          ],
+          "code": {
+            "label": "Com cuidado",
+            "text": "estoque = {\"caneta\": 10}\nprint(estoque.get(\"lápis\", 0))\nprint(\"caneta\" in estoque)",
+            "notes": [
+              "Um estoque com uma só chave.",
+              "Pede lápis, que não existe: em vez de erro, get devolve o padrão 0.",
+              "Pergunta se a chave caneta existe: mostra True."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Percorrendo os pares",
+          "body": [
+            "items devolve os pares chave e valor. Com o for, dá para passar por todos.",
+            "keys devolve só as chaves, e values só os valores."
+          ],
+          "terms": [
+            {
+              "word": "Laço",
+              "meaning": "um trecho de código que se repete. O for é um laço."
+            }
+          ],
+          "code": {
+            "label": "Todos os pares",
+            "text": "notas = {\"Ana\": 9, \"Rui\": 7}\nfor nome, nota in notas.items():\n    print(nome, nota)",
+            "notes": [
+              "Um dicionário de notas.",
+              "Passa por cada par, guardando a chave em nome e o valor em nota.",
+              "Mostra Ana 9 e depois Rui 7."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Contando palavras",
+          "body": [
+            "Um uso clássico: contar quantas vezes cada palavra aparece num texto. A palavra é a chave, e a contagem é o valor."
+          ],
+          "code": {
+            "label": "Contagem",
+            "text": "texto = \"a casa e a rua\"\ncontagem = {}\nfor p in texto.split():\n    contagem[p] = contagem.get(p, 0) + 1\nprint(contagem[\"a\"])",
+            "notes": [
+              "O texto a analisar.",
+              "Começa com um dicionário vazio.",
+              "Passa por cada palavra do texto.",
+              "Soma 1 à contagem da palavra. Se ela ainda não existe, começa do 0.",
+              "Mostra 2: a palavra a aparece duas vezes."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Palavras viram números",
+          "body": [
+            "Um modelo de linguagem não lê letras. Antes de tudo, ele troca cada pedaço de texto por um número, usando um dicionário enorme.",
+            "Esse dicionário se chama vocabulário. Ele é um dos primeiros assuntos da parte de LLMs."
+          ],
+          "example": {
+            "label": "Um vocabulário de brinquedo",
+            "lines": [
+              "vocab = {\"o\": 0, \"gato\": 1, \"subiu\": 2}",
+              "\"o gato subiu\" vira [0, 1, 2]"
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem consultas, trocas de valor e o erro de chave inexistente. Também cai o resultado de uma contagem feita com laço.",
+            "Lembre que atribuir a uma chave que já existe troca o valor em vez de criar outro par."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde os dicionários enganam."
+          ],
+          "bullets": [
+            "Consultar pela posição, como d[0], esperando o primeiro par.",
+            "Pedir uma chave que não existe sem usar get.",
+            "Achar que dá para ter duas chaves iguais.",
+            "Confundir as chaves de {} com os colchetes de []."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Achar pelo nome."
+          ],
+          "bullets": [
+            "{chave: valor}; consulta com d[chave].",
+            "Chave nova cria; chave existente troca.",
+            "get(chave, padrão) evita o erro de chave inexistente.",
+            "in pergunta se a chave existe.",
+            "items percorre os pares.",
+            "Vocabulário: um dicionário de palavra para número."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Consultar",
+          "statement": "Com d = {\"a\": 1, \"b\": 2}, quanto vale d[\"b\"] * 10?",
+          "options": [
+            "10",
+            "20",
+            "2",
+            "b",
+            "um erro"
+          ],
+          "correct_index": 1,
+          "explanation": "d[\"b\"] é 2. Vezes 10: 20.",
+          "pitfall": "10 usaria a chave a."
+        },
+        {
+          "topic": "Trocar",
+          "statement": "O que aparece?\nd = {\"x\": 1}\nd[\"x\"] = 5\nd[\"y\"] = 2\nprint(len(d))",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "5",
+            "um erro"
+          ],
+          "correct_index": 1,
+          "explanation": "x foi trocado, e não duplicado. Com y, são duas chaves.",
+          "pitfall": "3 conta o x duas vezes."
+        },
+        {
+          "topic": "get",
+          "statement": "Com d = {\"a\": 1}, o que d.get(\"z\", 0) devolve?",
+          "options": [
+            "1",
+            "0",
+            "None",
+            "z",
+            "um erro"
+          ],
+          "correct_index": 1,
+          "explanation": "A chave z não existe, então vale o padrão, 0.",
+          "pitfall": "O erro só viria com d[\"z\"]."
+        },
+        {
+          "topic": "in",
+          "statement": "Com d = {\"sol\": 1, \"lua\": 2}, quanto vale \"2\" in d?",
+          "options": [
+            "True",
+            "False",
+            "2",
+            "lua",
+            "um erro"
+          ],
+          "correct_index": 1,
+          "explanation": "in procura nas chaves, e \"2\" não é chave. Além disso, 2 é valor, e não texto.",
+          "pitfall": "in em dicionário olha as chaves, nunca os valores."
+        },
+        {
+          "topic": "Contagem",
+          "statement": "Depois de contar as palavras de \"sim não sim sim\", quanto vale contagem[\"sim\"]?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "0"
+          ],
+          "correct_index": 2,
+          "explanation": "sim aparece três vezes.",
+          "pitfall": "4 conta todas as palavras."
+        },
+        {
+          "topic": "Vocabulário",
+          "statement": "Com vocab = {\"eu\": 0, \"amo\": 1, \"café\": 2}, que lista representa \"café eu amo\"?",
+          "options": [
+            "[0, 1, 2]",
+            "[2, 0, 1]",
+            "[2, 1, 0]",
+            "[1, 2, 0]",
+            "[3, 1, 2]"
+          ],
+          "correct_index": 1,
+          "explanation": "café é 2, eu é 0, amo é 1. Na ordem da frase: [2, 0, 1].",
+          "pitfall": "[0, 1, 2] segue a ordem do vocabulário, e não a da frase."
+        },
+        {
+          "topic": "Posição",
+          "statement": "Com d = {\"a\": 1}, o que acontece em print(d[0])?",
+          "options": [
+            "mostra 1",
+            "mostra a",
+            "dá erro: 0 não é chave",
+            "mostra 0",
+            "mostra None"
+          ],
+          "correct_index": 2,
+          "explanation": "Dicionário não tem posição: procura a chave 0, que não existe.",
+          "pitfall": "Esperar o primeiro par é pensar por posição, e o dicionário não tem posição."
+        },
+        {
+          "topic": "Coleções",
+          "format": "match",
+          "statement": "Ligue cada escrita à coleção que ela cria.",
+          "pairs": [
+            {
+              "left": "[1, 2]",
+              "right": "lista"
+            },
+            {
+              "left": "{\"a\": 1}",
+              "right": "dicionário"
+            },
+            {
+              "left": "{1, 2}",
+              "right": "conjunto"
+            }
+          ],
+          "explanation": "Colchetes fazem lista. Chaves com dois-pontos fazem dicionário, e chaves sem dois-pontos fazem conjunto.",
+          "pitfall": "As chaves aparecem nos dois últimos: quem decide é o dois-pontos."
+        }
+      ]
+    },
+    {
+      "slug": "estruturas-de-dados",
+      "title": "Estruturas de dados: tupla, conjunto, pilha e fila",
+      "module": "Guardar coleções",
+      "summary": "Cada problema pede um jeito de guardar. Tupla não muda, conjunto não repete, pilha tira o último e fila tira o primeiro.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Gavetas, pilhas e filas",
+          "body": [
+            "Pratos lavados vão empilhados: você pega o de cima, o último que entrou. Na fila do banco, é atendido quem chegou primeiro.",
+            "Os dois guardam coisas, mas tiram em ordens opostas. Escolher o jeito certo de guardar deixa o programa simples."
+          ],
+          "terms": [
+            {
+              "word": "Estrutura de dados",
+              "meaning": "um jeito de organizar valores pensando em como eles vão ser usados."
+            },
+            {
+              "word": "Lista",
+              "meaning": "uma coleção em ordem, entre colchetes, que pode mudar: [3, 7, 1]."
+            },
+            {
+              "word": "Dicionário",
+              "meaning": "uma coleção de pares chave e valor, em que se acha pelo nome."
+            },
+            {
+              "word": "Variável",
+              "meaning": "um nome que guarda um valor."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Tupla: a lista que não muda",
+          "body": [
+            "A tupla é como uma lista, mas com parênteses, e ninguém pode trocar os itens depois.",
+            "Serve para o que é fixo por natureza, como um ponto (x, y) ou uma data."
+          ],
+          "terms": [
+            {
+              "word": "Tupla",
+              "meaning": "uma coleção em ordem que não pode ser alterada, escrita entre parênteses: (3, 4)."
+            }
+          ],
+          "code": {
+            "label": "Tupla",
+            "text": "ponto = (3, 4)\nx, y = ponto\nprint(x + y)",
+            "notes": [
+              "Cria a tupla com as coordenadas.",
+              "Desmonta a tupla em duas variáveis: x recebe 3 e y recebe 4.",
+              "Mostra 7."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Conjunto: sem repetição",
+          "body": [
+            "O conjunto guarda cada valor uma vez só, e não tem ordem. É perfeito para tirar repetidos.",
+            "Perguntar se um valor está num conjunto é muito rápido, mesmo com milhões de itens."
+          ],
+          "terms": [
+            {
+              "word": "Conjunto (set)",
+              "meaning": "uma coleção sem ordem e sem itens repetidos, escrita entre chaves: {1, 2, 3}."
+            }
+          ],
+          "code": {
+            "label": "Tirando repetidos",
+            "text": "cores = [\"azul\", \"verde\", \"azul\"]\nunicas = set(cores)\nprint(len(unicas))",
+            "notes": [
+              "Uma lista com azul repetido.",
+              "Transforma em conjunto: o repetido some.",
+              "Mostra 2."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Pilha: o último sai primeiro",
+          "body": [
+            "Na pilha, quem entra por último sai primeiro. Com lista, append empilha e pop desempilha.",
+            "O botão de desfazer dos editores é uma pilha: desfaz primeiro a última ação."
+          ],
+          "terms": [
+            {
+              "word": "Pilha",
+              "meaning": "estrutura em que o último a entrar é o primeiro a sair."
+            }
+          ],
+          "code": {
+            "label": "Desfazer",
+            "text": "acoes = []\nacoes.append(\"digitar\")\nacoes.append(\"apagar\")\nprint(acoes.pop())",
+            "notes": [
+              "Começa com a pilha vazia.",
+              "Empilha a primeira ação.",
+              "Empilha a segunda ação.",
+              "Desempilha: sai apagar, a última ação."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Fila: o primeiro sai primeiro",
+          "body": [
+            "Na fila, quem chega primeiro é atendido primeiro. O Python tem uma estrutura feita para isso, chamada deque.",
+            "append põe no fim, e popleft tira do começo."
+          ],
+          "terms": [
+            {
+              "word": "Fila",
+              "meaning": "estrutura em que o primeiro a entrar é o primeiro a sair."
+            }
+          ],
+          "code": {
+            "label": "Atendimento",
+            "text": "from collections import deque\nfila = deque([\"Ana\", \"Rui\"])\nfila.append(\"Bia\")\nprint(fila.popleft())",
+            "notes": [
+              "Traz a estrutura deque, que já vem com o Python.",
+              "Cria a fila com Ana e Rui.",
+              "Bia chega e entra no fim.",
+              "Atende o primeiro: sai Ana."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Qual escolher",
+          "body": [
+            "A pergunta que decide é: como vou procurar e tirar as coisas?"
+          ],
+          "table": {
+            "label": "Escolhendo",
+            "headers": [
+              "Preciso de",
+              "Use"
+            ],
+            "rows": [
+              [
+                "ordem e poder mudar",
+                "lista"
+              ],
+              [
+                "ordem e nunca mudar",
+                "tupla"
+              ],
+              [
+                "achar pelo nome",
+                "dicionário"
+              ],
+              [
+                "sem repetidos",
+                "conjunto"
+              ],
+              [
+                "tirar o último que entrou",
+                "pilha"
+              ],
+              [
+                "tirar o primeiro que entrou",
+                "fila"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem sequências de empilhar e desempilhar, ou de entrar e sair da fila, pedindo o que sobra no fim.",
+            "Anote a estrutura no papel depois de cada operação."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde as estruturas confundem."
+          ],
+          "bullets": [
+            "Tentar trocar um item de uma tupla.",
+            "Esperar ordem num conjunto.",
+            "Trocar pilha e fila: pilha tira o último, fila tira o primeiro.",
+            "Criar conjunto vazio com {}: isso cria um dicionário vazio. Use set()."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Guardar de acordo com o uso."
+          ],
+          "bullets": [
+            "Tupla: ordem fixa, entre parênteses.",
+            "Conjunto: sem repetição e sem ordem.",
+            "Pilha: último a entrar, primeiro a sair.",
+            "Fila: primeiro a entrar, primeiro a sair.",
+            "Na lista, append e pop fazem pilha.",
+            "deque com popleft faz fila."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Conjunto",
+          "statement": "Quanto vale len(set([1, 2, 2, 3, 3, 3]))?",
+          "options": [
+            "6",
+            "3",
+            "1",
+            "2",
+            "0"
+          ],
+          "correct_index": 1,
+          "explanation": "O conjunto guarda 1, 2 e 3 uma vez cada.",
+          "pitfall": "6 conta os repetidos."
+        },
+        {
+          "topic": "Pilha",
+          "statement": "Numa pilha vazia, empilham-se A, B e C nessa ordem. Depois desempilha-se uma vez. Quem sai?",
+          "options": [
+            "A",
+            "B",
+            "C",
+            "A e B",
+            "nenhum"
+          ],
+          "correct_index": 2,
+          "explanation": "Pilha tira o último que entrou: C.",
+          "pitfall": "A sairia de uma fila."
+        },
+        {
+          "topic": "Fila",
+          "statement": "Numa fila vazia, entram A, B e C nessa ordem. Depois sai um. Quem sai?",
+          "options": [
+            "A",
+            "B",
+            "C",
+            "C e B",
+            "nenhum"
+          ],
+          "correct_index": 0,
+          "explanation": "Fila tira o primeiro que entrou: A.",
+          "pitfall": "C sairia de uma pilha."
+        },
+        {
+          "topic": "Tupla",
+          "statement": "O que acontece com p = (1, 2) seguido de p[0] = 5?",
+          "options": [
+            "p vira (5, 2)",
+            "dá erro: tupla não muda",
+            "p vira [5, 2]",
+            "p vira (1, 2, 5)",
+            "nada acontece"
+          ],
+          "correct_index": 1,
+          "explanation": "Tupla não pode ser alterada depois de criada.",
+          "pitfall": "Com lista, a troca funcionaria."
+        },
+        {
+          "topic": "Escolher",
+          "statement": "Um programa guarda o histórico de páginas para o botão voltar. Qual estrutura combina?",
+          "options": [
+            "fila",
+            "pilha",
+            "conjunto",
+            "tupla",
+            "dicionário"
+          ],
+          "correct_index": 1,
+          "explanation": "Voltar leva à última página visitada: último a entrar, primeiro a sair.",
+          "pitfall": "Fila voltaria para a primeira página do dia."
+        },
+        {
+          "topic": "Conjunto vazio",
+          "statement": "Qual linha cria um conjunto vazio?",
+          "options": [
+            "{}",
+            "set()",
+            "[]",
+            "()",
+            "{0}"
+          ],
+          "correct_index": 1,
+          "explanation": "{} cria dicionário vazio. O conjunto vazio precisa de set().",
+          "pitfall": "{0} cria um conjunto com o zero dentro, não vazio."
+        },
+        {
+          "topic": "Desmontar",
+          "statement": "Depois de a, b = (10, 20), quanto vale b - a?",
+          "options": [
+            "10",
+            "−10",
+            "30",
+            "20",
+            "um erro"
+          ],
+          "correct_index": 0,
+          "explanation": "a recebe 10 e b recebe 20. 20 − 10 = 10.",
+          "pitfall": "−10 troca a ordem."
+        },
+        {
+          "topic": "Estruturas",
+          "format": "match",
+          "statement": "Ligue cada estrutura ao que a define.",
+          "pairs": [
+            {
+              "left": "pilha",
+              "right": "último a entrar sai primeiro"
+            },
+            {
+              "left": "fila",
+              "right": "primeiro a entrar sai primeiro"
+            },
+            {
+              "left": "conjunto",
+              "right": "não guarda repetidos"
+            },
+            {
+              "left": "tupla",
+              "right": "não pode ser alterada"
+            }
+          ],
+          "explanation": "Cada estrutura existe para um jeito de usar.",
+          "pitfall": "Pilha e fila se confundem fácil: pense em pratos e em banco."
+        }
+      ]
+    },
+    {
+      "slug": "recursao",
+      "title": "Recursão: a função que chama a si mesma",
+      "module": "Organizar e pensar",
+      "summary": "Um problema grande resolvido com uma versão menor dele mesmo, até chegar num caso tão pequeno que a resposta é óbvia.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "As bonecas russas",
+          "body": [
+            "Uma boneca russa tem outra boneca dentro, que tem outra dentro. Para contar todas, você abre uma e conta a de dentro do mesmo jeito.",
+            "Uma hora aparece a boneca menor, que não abre. Ali a contagem para e volta somando."
+          ],
+          "terms": [
+            {
+              "word": "Função",
+              "meaning": "um pedaço de código com nome, que faz um trabalho e pode devolver um resultado."
+            },
+            {
+              "word": "Recursão",
+              "meaning": "quando uma função resolve um problema chamando a si mesma com uma versão menor dele."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O fatorial",
+          "body": [
+            "O fatorial de 4, escrito 4!, é 4 × 3 × 2 × 1 = 24. Repare: 4! é 4 × 3!, e 3! é 3 × 2!.",
+            "Cada fatorial usa o fatorial do número anterior. Isso é recursão pronta."
+          ],
+          "example": {
+            "label": "Por dentro",
+            "lines": [
+              "4! = 4 × 3!",
+              "3! = 3 × 2!",
+              "2! = 2 × 1!",
+              "1! = 1 (a boneca que não abre)"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O código",
+          "body": [
+            "Toda função recursiva tem duas partes. O caso base responde direto, sem chamar ninguém. O passo recursivo chama a função com um problema menor."
+          ],
+          "terms": [
+            {
+              "word": "Caso base",
+              "meaning": "a situação tão simples que a resposta sai direto, sem nova chamada. É ela que faz a recursão parar."
+            },
+            {
+              "word": "Retorno",
+              "meaning": "o valor que a função devolve com return."
+            }
+          ],
+          "code": {
+            "label": "Fatorial recursivo",
+            "text": "def fatorial(n):\n    if n == 1:\n        return 1\n    return n * fatorial(n - 1)\nprint(fatorial(4))",
+            "notes": [
+              "Cria a função, que recebe um número n.",
+              "Pergunta se chegou ao caso base.",
+              "No caso base, devolve 1 direto.",
+              "Senão, multiplica n pelo fatorial do número anterior: a função chama a si mesma.",
+              "Mostra 24."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A pilha de chamadas",
+          "body": [
+            "Cada chamada espera a de dentro terminar. O computador empilha as chamadas pendentes e desempilha quando as respostas voltam.",
+            "Por isso a resposta é montada de trás para frente. Primeiro sai o 1, e depois 2, 6 e 24."
+          ],
+          "terms": [
+            {
+              "word": "Pilha de chamadas",
+              "meaning": "a fileira de funções que começaram e ainda esperam uma resposta. A última a entrar é a primeira a terminar."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/python/pilha-recursao.svg",
+            "alt": "Quatro caixas empilhadas: fatorial(4), fatorial(3), fatorial(2) e fatorial(1). Setas na volta mostram os resultados subindo: 1, 2, 6 e 24.",
+            "caption": "Desce chamando, sobe respondendo."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Sem caso base, não para",
+          "body": [
+            "Se o caso base falta, ou nunca é alcançado, a função se chama para sempre. O Python interrompe depois de mil chamadas, com o erro RecursionError.",
+            "Confira sempre duas coisas: existe um caso base, e cada chamada chega mais perto dele."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Recursão ou laço?",
+          "body": [
+            "Tudo o que se faz com recursão dá para fazer com um laço. O laço costuma ser mais rápido e não esbarra no limite de chamadas.",
+            "A recursão brilha em problemas que já são aninhados, como pastas dentro de pastas ou galhos de uma árvore."
+          ],
+          "terms": [
+            {
+              "word": "Laço",
+              "meaning": "um trecho de código que se repete, como o for e o while."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quando a recursão desperdiça",
+          "body": [
+            "A sequência de Fibonacci soma os dois anteriores: 1, 1, 2, 3, 5, 8. A versão recursiva ingênua calcula os mesmos valores muitas e muitas vezes.",
+            "Para o 40º número são mais de cem milhões de chamadas. Guardar os valores já calculados resolve o desperdício."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A questão mostra uma função recursiva e pergunta o resultado de uma chamada. Escreva as chamadas uma embaixo da outra até o caso base e volte montando.",
+            "Outra pergunta clássica é o que falta para a função parar."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a recursão tropeça."
+          ],
+          "bullets": [
+            "Esquecer o caso base.",
+            "Chamar com o mesmo valor, sem diminuir: fatorial(n) em vez de fatorial(n - 1).",
+            "Esquecer o return antes da chamada recursiva e receber um valor vazio.",
+            "Achar que recursão é sempre mais rápida que laço."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Resolver o grande com o menor."
+          ],
+          "bullets": [
+            "Recursão: a função chama a si mesma.",
+            "Caso base: resposta direta, que faz parar.",
+            "Passo recursivo: chama com um problema menor.",
+            "As chamadas se empilham e respondem de trás para frente.",
+            "Sem caso base: RecursionError.",
+            "Laço costuma ser mais rápido; recursão é natural em coisas aninhadas."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Fatorial",
+          "statement": "Quanto vale fatorial(5), com a função da lição?",
+          "options": [
+            "15",
+            "25",
+            "120",
+            "60",
+            "5"
+          ],
+          "correct_index": 2,
+          "explanation": "5 × 4 × 3 × 2 × 1 = 120.",
+          "pitfall": "15 soma em vez de multiplicar."
+        },
+        {
+          "topic": "Soma recursiva",
+          "statement": "O que aparece?\ndef s(n):\n    if n == 0:\n        return 0\n    return n + s(n - 1)\nprint(s(4))",
+          "options": [
+            "4",
+            "10",
+            "24",
+            "0",
+            "um erro"
+          ],
+          "correct_index": 1,
+          "explanation": "s(4) = 4 + 3 + 2 + 1 + 0 = 10.",
+          "pitfall": "24 multiplicaria, como no fatorial."
+        },
+        {
+          "topic": "Caso base",
+          "statement": "O que acontece com esta função?\ndef f(n):\n    return f(n - 1)",
+          "options": [
+            "devolve 0",
+            "devolve n",
+            "se chama sem parar até dar RecursionError",
+            "devolve None",
+            "roda uma vez só"
+          ],
+          "correct_index": 2,
+          "explanation": "Não há caso base: nada faz a função parar.",
+          "pitfall": "O n diminui, mas nenhum if manda parar."
+        },
+        {
+          "topic": "Chamadas",
+          "statement": "Quantas vezes fatorial é chamada em fatorial(4), contando a primeira?",
+          "options": [
+            "1",
+            "3",
+            "4",
+            "24",
+            "5"
+          ],
+          "correct_index": 2,
+          "explanation": "fatorial(4), fatorial(3), fatorial(2) e fatorial(1): quatro chamadas.",
+          "pitfall": "24 é o resultado, e não o número de chamadas."
+        },
+        {
+          "topic": "Ordem da volta",
+          "statement": "Em fatorial(3), qual resultado fica pronto primeiro?",
+          "options": [
+            "fatorial(3)",
+            "fatorial(2)",
+            "fatorial(1)",
+            "todos juntos",
+            "nenhum"
+          ],
+          "correct_index": 2,
+          "explanation": "A mais funda, o caso base, responde primeiro. As outras esperam por ela.",
+          "pitfall": "fatorial(3) é a primeira a começar, mas a última a terminar."
+        },
+        {
+          "topic": "Laço ou recursão",
+          "statement": "Qual problema é mais natural com recursão?",
+          "options": [
+            "somar os itens de uma lista",
+            "percorrer pastas dentro de pastas",
+            "contar de 1 a 10",
+            "mostrar um texto",
+            "trocar um valor de variável"
+          ],
+          "correct_index": 1,
+          "explanation": "Pastas dentro de pastas são aninhadas: cada pasta é um problema menor do mesmo tipo.",
+          "pitfall": "Somar números dá para fazer com recursão, mas um laço resolve de forma mais simples."
+        },
+        {
+          "topic": "Fibonacci",
+          "statement": "Por que a versão recursiva ingênua de Fibonacci é lenta?",
+          "options": [
+            "porque usa multiplicação",
+            "porque recalcula os mesmos valores muitas vezes",
+            "porque o Python não aceita recursão",
+            "porque falta o caso base",
+            "porque usa listas"
+          ],
+          "correct_index": 1,
+          "explanation": "Cada número pede os dois anteriores, e esses pedem os anteriores deles, repetindo contas já feitas.",
+          "pitfall": "Ela tem caso base: o problema é o desperdício, e não o fim."
+        },
+        {
+          "topic": "Montar",
+          "format": "order",
+          "statement": "Ponha na ordem as linhas de uma função recursiva de fatorial.",
+          "options": [
+            "def fatorial(n):",
+            "    if n == 1:",
+            "        return 1",
+            "    return n * fatorial(n - 1)"
+          ],
+          "explanation": "Primeiro o caso base, que para a recursão. Depois o passo que chama a própria função.",
+          "pitfall": "Sem o if antes, a função nunca pararia."
+        }
+      ]
+    },
+    {
+      "slug": "modulos-e-bibliotecas",
+      "title": "Módulos e bibliotecas: usar código pronto",
+      "module": "Organizar e pensar",
+      "summary": "Ninguém escreve tudo do zero. import traz código pronto, o pip instala bibliotecas no Windows e no Linux, e o ambiente virtual deixa cada projeto com as suas.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A caixa de ferramentas",
+          "body": [
+            "Um marceneiro não fabrica o próprio martelo. Ele compra as ferramentas e se concentra no móvel.",
+            "Em programação, as ferramentas prontas vêm em pacotes. Você traz para o seu programa só as que precisa."
+          ],
+          "terms": [
+            {
+              "word": "Módulo",
+              "meaning": "um arquivo de código Python com funções prontas, que outro programa pode usar."
+            },
+            {
+              "word": "Biblioteca",
+              "meaning": "um pacote com vários módulos sobre o mesmo assunto, como números ou gráficos."
+            },
+            {
+              "word": "Função",
+              "meaning": "um pedaço de código com nome, que faz um trabalho e pode devolver um resultado."
+            },
+            {
+              "word": "NumPy",
+              "meaning": "a biblioteca de contas com arrays do Python."
+            },
+            {
+              "word": "Array",
+              "meaning": "uma coleção só de números, feita para contas rápidas em todos de uma vez."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Trazendo com import",
+          "body": [
+            "import traz um módulo inteiro. Depois, você usa o que tem dentro com um ponto: math.sqrt.",
+            "O módulo math já vem com o Python. Não é preciso instalar nada."
+          ],
+          "code": {
+            "label": "math",
+            "text": "import math\nprint(math.sqrt(16))\nprint(math.pi)",
+            "notes": [
+              "Traz o módulo math, de matemática.",
+              "Usa a função sqrt, de raiz quadrada: mostra 4.0.",
+              "Mostra o valor de pi: 3.141592653589793."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Outros jeitos de importar",
+          "body": [
+            "from traz só uma parte, que então se usa sem o nome do módulo. as dá um apelido curto.",
+            "O apelido np para o NumPy é tão comum que todo mundo o reconhece."
+          ],
+          "example": {
+            "label": "Três jeitos",
+            "lines": [
+              "import math → math.sqrt(9)",
+              "from math import sqrt → sqrt(9)",
+              "import numpy as np → np.array([1, 2])"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Instalando com pip",
+          "body": [
+            "Bibliotecas de fora, como o NumPy, precisam ser baixadas. Quem baixa é o pip, digitado no terminal, e não dentro do Python.",
+            "O comando é o mesmo nos dois sistemas; muda só o nome do Python."
+          ],
+          "terms": [
+            {
+              "word": "pip",
+              "meaning": "o instalador de bibliotecas do Python. Ele baixa e instala pacotes pela internet."
+            },
+            {
+              "word": "Terminal",
+              "meaning": "a janela de texto onde se digitam pedidos ao computador. No Windows, o PowerShell."
+            }
+          ],
+          "table": {
+            "label": "Instalar o NumPy",
+            "headers": [
+              "Onde",
+              "Digite no terminal"
+            ],
+            "rows": [
+              [
+                "Windows (PowerShell)",
+                "python -m pip install numpy"
+              ],
+              [
+                "Linux",
+                "python3 -m pip install numpy"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Uma caixa para cada projeto",
+          "body": [
+            "Projetos diferentes podem precisar de versões diferentes da mesma biblioteca. O ambiente virtual é uma pasta onde cada projeto guarda as suas, sem misturar.",
+            "Em versões recentes do Linux, o pip nem aceita instalar fora de um ambiente virtual. É o jeito recomendado nos dois sistemas."
+          ],
+          "terms": [
+            {
+              "word": "Ambiente virtual",
+              "meaning": "uma pasta com um Python e bibliotecas só daquele projeto. Cria-se com python -m venv."
+            }
+          ],
+          "table": {
+            "label": "Criar e ativar",
+            "headers": [
+              "Passo",
+              "Windows (PowerShell)",
+              "Linux"
+            ],
+            "rows": [
+              [
+                "Criar",
+                "python -m venv .venv",
+                "python3 -m venv .venv"
+              ],
+              [
+                "Ativar",
+                ".venv\\Scripts\\Activate.ps1",
+                "source .venv/bin/activate"
+              ],
+              [
+                "Sair",
+                "deactivate",
+                "deactivate"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Seu próprio módulo",
+          "body": [
+            "Qualquer arquivo .py é um módulo. Se você cria contas.py com uma função, outro arquivo na mesma pasta pode importá-lo.",
+            "É assim que programas grandes se dividem em arquivos menores."
+          ],
+          "code": {
+            "label": "principal.py, ao lado de contas.py",
+            "text": "from contas import dobro\nprint(dobro(21))",
+            "notes": [
+              "Traz a função dobro que está no arquivo contas.py, na mesma pasta.",
+              "Usa a função como se ela estivesse aqui: mostra 42."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "As bibliotecas da inteligência artificial",
+          "body": [
+            "A trilha de IA se apoia em poucas bibliotecas. Vale reconhecer o nome de cada uma."
+          ],
+          "table": {
+            "label": "Quem é quem",
+            "headers": [
+              "Biblioteca",
+              "Serve para"
+            ],
+            "rows": [
+              [
+                "NumPy",
+                "contas rápidas com muitos números"
+              ],
+              [
+                "pandas",
+                "tabelas de dados, como planilhas"
+              ],
+              [
+                "Matplotlib",
+                "gráficos"
+              ],
+              [
+                "PyTorch",
+                "criar e treinar redes neurais"
+              ],
+              [
+                "Hugging Face Transformers",
+                "usar modelos de linguagem prontos"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem as formas de importar e como se chama uma função depois de cada uma. Com from, não se escreve o nome do módulo.",
+            "Em provas práticas, cai o comando para instalar uma biblioteca e criar um ambiente virtual."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Tropeços com módulos."
+          ],
+          "bullets": [
+            "Digitar pip install dentro do modo de conversa do Python. É no terminal.",
+            "Instalar a biblioteca num ambiente e rodar o programa em outro.",
+            "Chamar o seu arquivo de numpy.py: ele esconde a biblioteca de verdade.",
+            "Usar math.sqrt depois de from math import sqrt: o nome math não existe."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Use o que já existe."
+          ],
+          "bullets": [
+            "import traz um módulo; use com ponto.",
+            "from traz uma parte; as dá apelido.",
+            "pip instala bibliotecas, no terminal.",
+            "Windows usa python; Linux usa python3.",
+            "Ambiente virtual: python -m venv .venv e depois ativar.",
+            "NumPy, pandas e PyTorch são a base da IA."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "import",
+          "statement": "Depois de import math, como se calcula a raiz de 25?",
+          "options": [
+            "sqrt(25)",
+            "math.sqrt(25)",
+            "math(25)",
+            "import sqrt(25)",
+            "25.sqrt()"
+          ],
+          "correct_index": 1,
+          "explanation": "Com import math, tudo o que vem do módulo usa o prefixo math.",
+          "pitfall": "sqrt(25) sozinho só funcionaria com from math import sqrt."
+        },
+        {
+          "topic": "from",
+          "statement": "Depois de from math import pi, qual linha mostra o valor de pi?",
+          "options": [
+            "print(math.pi)",
+            "print(pi)",
+            "print(math)",
+            "print(import pi)",
+            "print(from pi)"
+          ],
+          "correct_index": 1,
+          "explanation": "O from trouxe o nome pi direto, sem o prefixo.",
+          "pitfall": "math.pi dá erro: o nome math não foi trazido."
+        },
+        {
+          "topic": "Apelido",
+          "statement": "O que faz import numpy as np?",
+          "options": [
+            "instala o NumPy",
+            "traz o NumPy com o apelido np",
+            "cria um arquivo np.py",
+            "apaga o NumPy",
+            "abre o terminal"
+          ],
+          "correct_index": 1,
+          "explanation": "as dá um apelido: depois se escreve np.array em vez de numpy.array.",
+          "pitfall": "Instalar é trabalho do pip, no terminal."
+        },
+        {
+          "topic": "pip",
+          "statement": "No Linux, qual comando instala a biblioteca pandas?",
+          "options": [
+            "python3 -m pip install pandas",
+            "import pandas",
+            "install pandas",
+            "pandas --install",
+            "python3 pandas.py"
+          ],
+          "correct_index": 0,
+          "explanation": "O pip roda no terminal, chamado pelo python3 no Linux.",
+          "pitfall": "import só usa a biblioteca depois de instalada."
+        },
+        {
+          "topic": "Ativar",
+          "statement": "No Windows, com o PowerShell, qual comando ativa o ambiente virtual .venv?",
+          "options": [
+            "source .venv/bin/activate",
+            ".venv\\Scripts\\Activate.ps1",
+            "python -m venv .venv",
+            "activate",
+            "pip activate"
+          ],
+          "correct_index": 1,
+          "explanation": "No Windows, o ativador fica em Scripts. O source com bin é o do Linux.",
+          "pitfall": "python -m venv .venv cria o ambiente, mas não o ativa."
+        },
+        {
+          "topic": "Nome de arquivo",
+          "statement": "Um aluno salvou o seu programa como numpy.py, e o import numpy parou de funcionar. Por quê?",
+          "options": [
+            "o NumPy foi apagado",
+            "o Python importa o arquivo dele no lugar da biblioteca",
+            "falta internet",
+            "o nome tem ponto",
+            "arquivos .py não importam nada"
+          ],
+          "correct_index": 1,
+          "explanation": "O Python procura primeiro na pasta do programa. O arquivo do aluno esconde a biblioteca de verdade.",
+          "pitfall": "Nada foi apagado: basta renomear o arquivo."
+        },
+        {
+          "topic": "Qual biblioteca",
+          "statement": "Qual biblioteca é usada para criar e treinar redes neurais?",
+          "options": [
+            "math",
+            "Matplotlib",
+            "PyTorch",
+            "pandas",
+            "collections"
+          ],
+          "correct_index": 2,
+          "explanation": "PyTorch é feita para redes neurais.",
+          "pitfall": "pandas cuida de tabelas de dados, não de redes."
+        },
+        {
+          "topic": "Novo projeto",
+          "format": "order",
+          "statement": "Ponha na ordem os passos para começar um projeto com NumPy.",
+          "options": [
+            "Criar o ambiente virtual com python -m venv .venv",
+            "Ativar o ambiente",
+            "Instalar com python -m pip install numpy",
+            "Escrever import numpy as np no programa"
+          ],
+          "explanation": "O ambiente vem antes, para a biblioteca ir para dentro dele. O import só funciona depois de instalar.",
+          "pitfall": "Instalar antes de ativar põe a biblioteca fora do ambiente."
+        }
+      ]
+    },
+    {
+      "slug": "complexidade-de-algoritmos",
+      "title": "Complexidade: quanto o programa demora quando cresce",
+      "module": "Organizar e pensar",
+      "summary": "Não importa quantos segundos leva hoje, e sim como o tempo cresce quando os dados crescem. O jeito de dizer isso se chama O grande.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A lista telefônica",
+          "body": [
+            "Para achar “Silva” numa lista telefônica, você pode ler página por página. Ou abrir no meio e descartar a metade errada, várias vezes.",
+            "Com mil páginas, o primeiro jeito pode levar mil olhadas. O segundo leva umas dez. A diferença cresce quanto maior a lista."
+          ],
+          "terms": [
+            {
+              "word": "Algoritmo",
+              "meaning": "uma receita de passos para resolver um problema."
+            },
+            {
+              "word": "Complexidade",
+              "meaning": "a medida de como o trabalho de um algoritmo cresce quando os dados crescem."
+            },
+            {
+              "word": "Lista",
+              "meaning": "uma coleção de valores em ordem, entre colchetes: [3, 7, 1]."
+            },
+            {
+              "word": "Dicionário",
+              "meaning": "uma coleção de pares chave e valor, em que se acha pelo nome."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Contar passos, e não segundos",
+          "body": [
+            "O tempo em segundos depende do computador. Por isso se conta quantos passos o algoritmo dá para n itens.",
+            "E só importa o que cresce mais rápido. 3n + 5 e n crescem do mesmo jeito: em linha reta."
+          ],
+          "terms": [
+            {
+              "word": "O grande",
+              "meaning": "a notação que diz como o trabalho cresce. O(n) quer dizer que cresce na mesma proporção dos dados."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As velocidades mais comuns",
+          "body": [
+            "A tabela mostra quantos passos cada tipo dá. Repare no salto das últimas linhas."
+          ],
+          "table": {
+            "label": "Passos para n itens",
+            "headers": [
+              "Tipo",
+              "Exemplo",
+              "n = 10",
+              "n = 1 000"
+            ],
+            "rows": [
+              [
+                "O(1)",
+                "pegar item pelo índice",
+                "1",
+                "1"
+              ],
+              [
+                "O(log n)",
+                "procurar abrindo no meio",
+                "3",
+                "10"
+              ],
+              [
+                "O(n)",
+                "ler item por item",
+                "10",
+                "1 000"
+              ],
+              [
+                "O(n²)",
+                "comparar cada item com todos",
+                "100",
+                "1 000 000"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O(n): um laço",
+          "body": [
+            "Um laço que passa uma vez por cada item faz n passos. Dobrar os dados dobra o trabalho."
+          ],
+          "terms": [
+            {
+              "word": "Laço",
+              "meaning": "um trecho de código que se repete, como o for."
+            }
+          ],
+          "code": {
+            "label": "Procurar o maior",
+            "text": "maior = numeros[0]\nfor x in numeros:\n    if x > maior:\n        maior = x",
+            "notes": [
+              "Começa achando que o primeiro é o maior.",
+              "Passa uma vez por cada número: n voltas.",
+              "Compara com o maior até agora.",
+              "Se achou um maior, guarda. No total, O(n)."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O(n²): laço dentro de laço",
+          "body": [
+            "Com um laço dentro de outro, cada item encontra todos os outros. Para n itens, são n × n passos.",
+            "Com 1 000 itens já é um milhão de passos. Isso vale para a atenção dos modelos de linguagem: cada palavra olha para todas as outras, e dobrar o texto quadruplica o trabalho."
+          ],
+          "code": {
+            "label": "Pares repetidos",
+            "text": "for a in itens:\n    for b in itens:\n        if a == b:\n            print(a)",
+            "notes": [
+              "Passa por cada item: n voltas.",
+              "Para cada um, passa por todos de novo: n voltas de novo.",
+              "Compara os dois.",
+              "Mostra quando são iguais. No total, n × n passos: O(n²)."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O(log n): cortar pela metade",
+          "body": [
+            "Numa lista em ordem, abra no meio e descarte a metade errada. Cada passo corta o problema pela metade.",
+            "Um milhão de itens se resolve em uns 20 passos, porque 2 elevado a 20 passa de um milhão. É a busca binária."
+          ],
+          "terms": [
+            {
+              "word": "Busca binária",
+              "meaning": "procurar numa lista ordenada olhando o meio e descartando a metade que não serve."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Escolher a estrutura certa",
+          "body": [
+            "Perguntar se um valor está numa lista é O(n): ela é lida item por item. Num conjunto ou dicionário, é O(1): o valor é achado direto.",
+            "Às vezes trocar uma lista por um conjunto transforma minutos em segundos."
+          ],
+          "table": {
+            "label": "Procurar um valor",
+            "headers": [
+              "Estrutura",
+              "x in estrutura"
+            ],
+            "rows": [
+              [
+                "lista",
+                "O(n)"
+              ],
+              [
+                "conjunto",
+                "O(1)"
+              ],
+              [
+                "dicionário (pela chave)",
+                "O(1)"
+              ],
+              [
+                "lista ordenada com busca binária",
+                "O(log n)"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A questão mostra um código e pergunta a complexidade. Conte os laços um dentro do outro: um laço é n, dois são n².",
+            "Também cai ordenar as complexidades da mais rápida para a mais lenta."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a complexidade engana."
+          ],
+          "bullets": [
+            "Contar segundos em vez de como o trabalho cresce.",
+            "Achar que dois laços em sequência dão n². Um depois do outro dá 2n, ou seja O(n).",
+            "Esquecer que a busca binária exige a lista em ordem.",
+            "Guardar as constantes: O(3n) se escreve O(n)."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Como o trabalho cresce."
+          ],
+          "bullets": [
+            "O(1): não cresce.",
+            "O(log n): cresce devagar, cortando pela metade.",
+            "O(n): um laço, cresce junto.",
+            "O(n²): laço dentro de laço, explode.",
+            "Um laço depois do outro continua O(n).",
+            "Na atenção dos LLMs, dobrar o texto quadruplica o trabalho."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Um laço",
+          "statement": "Qual é a complexidade de somar todos os itens de uma lista com um for?",
+          "options": [
+            "O(1)",
+            "O(log n)",
+            "O(n)",
+            "O(n²)",
+            "O(2ⁿ)"
+          ],
+          "correct_index": 2,
+          "explanation": "Um laço passa uma vez por cada item: n passos.",
+          "pitfall": "O(1) seria sem depender do tamanho da lista."
+        },
+        {
+          "topic": "Laço duplo",
+          "statement": "Um laço sobre n itens tem outro laço sobre os mesmos n itens dentro. Qual é a complexidade?",
+          "options": [
+            "O(n)",
+            "O(2n)",
+            "O(n²)",
+            "O(log n)",
+            "O(1)"
+          ],
+          "correct_index": 2,
+          "explanation": "Para cada um dos n, faz n passos: n × n.",
+          "pitfall": "O(2n) seria um laço depois do outro, e não um dentro do outro."
+        },
+        {
+          "topic": "Em sequência",
+          "statement": "Um laço sobre n itens termina, e depois começa outro laço sobre os mesmos n itens. Qual é a complexidade?",
+          "options": [
+            "O(n²)",
+            "O(n)",
+            "O(1)",
+            "O(log n)",
+            "O(n³)"
+          ],
+          "correct_index": 1,
+          "explanation": "São n + n = 2n passos. Constantes somem: O(n).",
+          "pitfall": "n² exigiria um laço dentro do outro."
+        },
+        {
+          "topic": "Busca binária",
+          "statement": "Quantos passos, no máximo, a busca binária leva numa lista ordenada de 1 024 itens?",
+          "options": [
+            "1 024",
+            "512",
+            "32",
+            "10",
+            "1"
+          ],
+          "correct_index": 3,
+          "explanation": "Cada passo corta pela metade: 1 024, 512, 256… até 1. São 10 cortes, porque 2¹⁰ = 1 024.",
+          "pitfall": "512 é só o primeiro corte."
+        },
+        {
+          "topic": "Índice",
+          "statement": "Qual é a complexidade de pegar lista[500]?",
+          "options": [
+            "O(1)",
+            "O(n)",
+            "O(500)",
+            "O(log n)",
+            "O(n²)"
+          ],
+          "correct_index": 0,
+          "explanation": "Pelo índice, o Python vai direto ao lugar, sem ler os anteriores.",
+          "pitfall": "O(500) não existe: constantes viram O(1)."
+        },
+        {
+          "topic": "Trocar estrutura",
+          "statement": "Um programa pergunta milhões de vezes se um nome está numa lista enorme, e está lento. Qual troca ajuda mais?",
+          "options": [
+            "trocar a lista por um conjunto",
+            "usar um computador novo",
+            "ordenar a lista a cada pergunta",
+            "usar recursão",
+            "trocar for por while"
+          ],
+          "correct_index": 0,
+          "explanation": "No conjunto, perguntar se tem é O(1). Na lista é O(n).",
+          "pitfall": "Ordenar a cada pergunta custa mais do que procurar."
+        },
+        {
+          "topic": "Atenção",
+          "statement": "Na atenção de um modelo de linguagem, cada palavra olha todas as outras. Se o texto dobra de tamanho, o trabalho:",
+          "options": [
+            "fica igual",
+            "dobra",
+            "quadruplica",
+            "cai pela metade",
+            "cresce um pouco"
+          ],
+          "correct_index": 2,
+          "explanation": "É O(n²): 2n × 2n = 4n².",
+          "pitfall": "Dobrar seria O(n)."
+        },
+        {
+          "topic": "Mais rápida primeiro",
+          "format": "order",
+          "statement": "Ponha as complexidades da mais rápida para a mais lenta, para n grande.",
+          "options": [
+            "O(1)",
+            "O(log n)",
+            "O(n)",
+            "O(n²)"
+          ],
+          "explanation": "Não crescer vence cortar pela metade, que vence crescer junto, que vence o quadrado.",
+          "pitfall": "log n cresce, mas muito devagar: fica antes de n."
+        }
+      ]
+    },
+    {
+      "slug": "orientacao-a-objetos",
+      "title": "Programação orientada a objetos",
+      "module": "Organizar e pensar",
+      "summary": "Classe é a planta da casa; objeto é a casa construída. Dados e ações ficam juntos, e é assim que as redes neurais são escritas em PyTorch.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A planta e as casas",
+          "body": [
+            "Um arquiteto desenha uma planta uma vez. Com ela, a construtora ergue cem casas iguais na estrutura, cada uma com a sua cor e os seus moradores.",
+            "Na programação orientada a objetos, a planta se chama classe, e cada casa é um objeto."
+          ],
+          "terms": [
+            {
+              "word": "Classe",
+              "meaning": "o molde que descreve como são e o que fazem as coisas de um tipo."
+            },
+            {
+              "word": "Objeto",
+              "meaning": "uma coisa concreta criada a partir de uma classe."
+            },
+            {
+              "word": "Instância",
+              "meaning": "outro nome para objeto: uma coisa criada a partir de uma classe."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Dados e ações juntos",
+          "body": [
+            "Um objeto guarda dados sobre ele mesmo e sabe fazer coisas. Uma conta de banco guarda o saldo e sabe depositar.",
+            "Os dados se chamam atributos. As ações se chamam métodos."
+          ],
+          "terms": [
+            {
+              "word": "Atributo",
+              "meaning": "um dado guardado dentro do objeto, como o saldo de uma conta."
+            },
+            {
+              "word": "Método",
+              "meaning": "uma função que pertence ao objeto e mexe nos dados dele, como depositar."
+            },
+            {
+              "word": "Função",
+              "meaning": "um pedaço de código com nome, que faz um trabalho."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Escrevendo a classe",
+          "body": [
+            "class cria o molde. O método __init__ roda sozinho na hora de construir cada objeto e prepara os atributos.",
+            "self é o próprio objeto. É por ele que um método acha os dados daquela conta, e não de outra."
+          ],
+          "terms": [
+            {
+              "word": "self",
+              "meaning": "o nome que um método usa para falar do próprio objeto."
+            }
+          ],
+          "code": {
+            "label": "Uma conta",
+            "text": "class Conta:\n    def __init__(self, dono):\n        self.dono = dono\n        self.saldo = 0\n    def depositar(self, valor):\n        self.saldo += valor",
+            "notes": [
+              "Cria a classe Conta, o molde.",
+              "O construtor: roda ao criar cada conta e recebe o nome do dono.",
+              "Guarda o dono como atributo deste objeto.",
+              "Toda conta nova começa com saldo zero.",
+              "Um método que recebe um valor.",
+              "Soma o valor ao saldo desta conta."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Criando e usando objetos",
+          "body": [
+            "Chamar a classe como uma função cria um objeto novo. Cada objeto tem os seus próprios atributos.",
+            "Para usar um método, escreva o objeto, um ponto e o nome do método."
+          ],
+          "code": {
+            "label": "Duas contas",
+            "text": "a = Conta(\"Ana\")\nb = Conta(\"Rui\")\na.depositar(100)\nprint(a.saldo, b.saldo)",
+            "notes": [
+              "Cria a conta da Ana.",
+              "Cria a conta do Rui, separada da primeira.",
+              "Deposita 100 só na conta da Ana.",
+              "Mostra 100 0: cada objeto tem o seu saldo."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Herança: aproveitar um molde",
+          "body": [
+            "Uma conta poupança é uma conta com um detalhe a mais. Em vez de copiar tudo, a classe nova herda da antiga e acrescenta só o que muda.",
+            "Escreve-se o nome da classe mãe entre parênteses: class Poupanca(Conta)."
+          ],
+          "terms": [
+            {
+              "word": "Herança",
+              "meaning": "quando uma classe aproveita tudo o que outra tem e acrescenta ou muda algumas partes."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Você já usava objetos",
+          "body": [
+            "No Python, tudo é objeto. Um texto é objeto da classe str, e upper é um método dele. Uma lista é objeto, e append é método dela.",
+            "Por isso type(\"oi\") responde class str."
+          ],
+          "terms": [
+            {
+              "word": "Lista",
+              "meaning": "uma coleção de valores em ordem, entre colchetes: [3, 7, 1]."
+            },
+            {
+              "word": "Array",
+              "meaning": "uma coleção só de números, feita para contas rápidas."
+            }
+          ],
+          "example": {
+            "label": "Objetos do dia a dia",
+            "lines": [
+              "\"oi\".upper(): método de um texto",
+              "[1, 2].append(3): método de uma lista",
+              "np.array([1, 2]).sum(): método de um array"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Redes neurais são classes",
+          "body": [
+            "No PyTorch, cada rede neural é uma classe que herda de nn.Module. Os pesos são atributos, e o cálculo da resposta é um método chamado forward.",
+            "Entender classes é o que permite ler o código de um modelo de linguagem de verdade."
+          ],
+          "example": {
+            "label": "O esqueleto de uma rede em PyTorch",
+            "lines": [
+              "class MinhaRede(nn.Module):",
+              "    def __init__(self): cria as camadas",
+              "    def forward(self, x): calcula a resposta"
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Caem as definições de classe, objeto, atributo e método. Também cai o que um trecho mostra depois de criar objetos e chamar métodos.",
+            "A pegadinha preferida é mexer num objeto e perguntar pelo outro."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde os objetos confundem."
+          ],
+          "bullets": [
+            "Esquecer o self como primeiro item entre os parênteses dos métodos.",
+            "Escrever saldo em vez de self.saldo dentro do método.",
+            "Achar que mudar um objeto muda os outros da mesma classe.",
+            "Confundir a classe com o objeto. A classe é o molde; o objeto é a coisa feita."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Molde e coisas feitas com ele."
+          ],
+          "bullets": [
+            "Classe é o molde; objeto é a coisa criada.",
+            "Atributos são dados; métodos são ações.",
+            "__init__ prepara cada objeto novo.",
+            "self é o próprio objeto.",
+            "Herança aproveita uma classe e acrescenta.",
+            "No PyTorch, cada rede é uma classe."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Separados",
+          "statement": "Com a classe Conta da lição, o que aparece?\nx = Conta(\"A\")\ny = Conta(\"B\")\nx.depositar(50)\ny.depositar(20)\nprint(x.saldo)",
+          "options": [
+            "70",
+            "50",
+            "20",
+            "0",
+            "um erro"
+          ],
+          "correct_index": 1,
+          "explanation": "Cada objeto tem o seu saldo. x recebeu só os 50.",
+          "pitfall": "70 junta as duas contas, como se fossem uma só."
+        },
+        {
+          "topic": "Definição",
+          "statement": "Na analogia da planta e das casas, o objeto é:",
+          "options": [
+            "a planta",
+            "cada casa construída",
+            "o arquiteto",
+            "a construtora",
+            "o terreno"
+          ],
+          "correct_index": 1,
+          "explanation": "A classe é a planta; cada casa feita com ela é um objeto.",
+          "pitfall": "A planta é a classe."
+        },
+        {
+          "topic": "Atributo ou método",
+          "statement": "Numa classe Carro, velocidade e acelerar são, respectivamente:",
+          "options": [
+            "dois métodos",
+            "atributo e método",
+            "método e atributo",
+            "dois atributos",
+            "duas classes"
+          ],
+          "correct_index": 1,
+          "explanation": "velocidade é um dado: atributo. acelerar é uma ação: método.",
+          "pitfall": "Nome de ação quase sempre indica método."
+        },
+        {
+          "topic": "init",
+          "statement": "Quando o método __init__ roda?",
+          "options": [
+            "quando o programa termina",
+            "ao criar cada objeto",
+            "só quando chamado pelo nome",
+            "uma vez, ao escrever a classe",
+            "nunca"
+          ],
+          "correct_index": 1,
+          "explanation": "O construtor roda sozinho toda vez que um objeto novo é criado.",
+          "pitfall": "Escrever a classe não cria nenhum objeto."
+        },
+        {
+          "topic": "self",
+          "statement": "Dentro de um método, qual escrita muda o saldo do próprio objeto?",
+          "options": [
+            "saldo = 10",
+            "self.saldo = 10",
+            "Conta.saldo = 10",
+            "objeto.saldo = 10",
+            "this.saldo = 10"
+          ],
+          "correct_index": 1,
+          "explanation": "self é o próprio objeto: self.saldo é o atributo dele.",
+          "pitfall": "saldo sozinho cria um nome solto, que some no fim do método."
+        },
+        {
+          "topic": "Herança",
+          "statement": "O que class Poupanca(Conta): quer dizer?",
+          "options": [
+            "Poupanca apaga Conta",
+            "Poupanca herda tudo de Conta",
+            "Conta herda de Poupanca",
+            "as duas são a mesma classe",
+            "Poupanca é um objeto"
+          ],
+          "correct_index": 1,
+          "explanation": "A classe entre parênteses é a mãe: Poupanca ganha tudo o que Conta tem.",
+          "pitfall": "A herança vai da mãe, entre parênteses, para a filha."
+        },
+        {
+          "topic": "Tudo é objeto",
+          "statement": "Em \"oi\".upper(), o que é upper?",
+          "options": [
+            "uma classe",
+            "um atributo",
+            "um método do texto",
+            "uma biblioteca",
+            "um laço"
+          ],
+          "correct_index": 2,
+          "explanation": "É uma ação que o objeto texto sabe fazer, chamada com ponto.",
+          "pitfall": "Os parênteses no fim indicam que é um método sendo chamado."
+        },
+        {
+          "topic": "Objetos",
+          "format": "match",
+          "statement": "Ligue cada termo ao seu significado.",
+          "pairs": [
+            {
+              "left": "classe",
+              "right": "o molde"
+            },
+            {
+              "left": "objeto",
+              "right": "a coisa feita com o molde"
+            },
+            {
+              "left": "atributo",
+              "right": "um dado do objeto"
+            },
+            {
+              "left": "método",
+              "right": "uma ação do objeto"
+            }
+          ],
+          "explanation": "A classe descreve; o objeto existe. Atributos guardam, métodos fazem.",
+          "pitfall": "Instância é mais um nome para objeto."
+        }
+      ]
+    }
+  ]
+}

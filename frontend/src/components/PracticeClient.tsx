@@ -7,6 +7,7 @@ import { BadgeIcon } from "@/components/BadgeIcon";
 import { Confetti } from "@/components/Confetti";
 import { MatchQuestion } from "@/components/MatchQuestion";
 import { OrderQuestion } from "@/components/OrderQuestion";
+import { QuestionStatement } from "@/components/QuestionStatement";
 import { WritingStep } from "@/components/writing/WritingStep";
 import { ProgressBar } from "@/components/ui";
 import { messageOf, postJson } from "@/lib/client";
@@ -347,7 +348,7 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
         <p className="label-mono">
           {rotulo} · {question.topic}
         </p>
-        <h1 className="mt-3 text-2xl">{question.statement}</h1>
+        <QuestionStatement statement={question.statement} />
 
         {escrita ? (
           <WritingStep

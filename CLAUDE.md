@@ -298,6 +298,13 @@ Três coisas de conteúdo:
 - **O escopo `m` do `lint-content.mjs` cresceu** (potência, expoente, raiz quadrada, função, domínio, eixo, parábola, logaritmo, conjunto…). "Razão" e "imagem" ficaram de fora de propósito: são palavras do dia a dia, e a expressão pegaria "a razão disso". Como a régua vale por lição, "equação" e "função" precisam de verbete em toda lição que as usa.
 - **Vírgula entre chaves não conta** no limite de vírgulas, como já não contava entre parênteses: `{1, 2, 3}` é a escrita de um conjunto, não uma frase comprida.
 
+**Matéria de Programação com Python** (14 lições, `07-programacao-python.json`, área Informática): a seção 2 da trilha. Quatro módulos (Primeiros passos, Decidir e repetir, Guardar coleções, Organizar e pensar), do terminal no Windows e no Linux à orientação a objetos. Quatro coisas:
+
+- **O escopo `y` do verificador** (variável, string, lista, dicionário, função, laço, índice, parâmetro, retorno, módulo, classe, objeto…). "Comando" e "programa" ficaram de fora, e os nomes de tipo do Python (`int`, `str`, `float`) também: aparecem em quase todo código, e quem os explica é a lição de tipos.
+- **Pergunta com código no enunciado** (`QuestionStatement`). A questão clássica de programação é "o que este trecho mostra?", e o título comum juntava tudo numa linha, com o recuo perdido. A convenção: a primeira linha é a pergunta, e o que vem depois da primeira quebra sai no bloco escuro de código.
+- **Código sem ligaduras** (`globals.css`). A JetBrains Mono desenhava `>=` como `≥`: a pessoa via o sinal na lição e não achava a tecla. Em `pre` e `code`, cada caractere aparece como se digita.
+- **Vírgula entre colchetes e entre números não conta** no limite de vírgulas: `[1, 2, 3]` é uma lista do Python, e "0, 1, 2, 3 e 4" é uma sequência, não uma frase comprida.
+
 **Ao acrescentar lição, mexa em quatro lugares:** o JSON do conteúdo, a figura em `frontend/public/figuras/`, a lista de `frontend/src/lib/site-content.ts` (o teste `site-content.test.ts` reprova se esquecer) e o mapa em `docs/sistemas-operacionais-mapa.md`. Matéria nova entra com **todas as lições de uma vez**: arquivo com metade delas publicado deixa a outra metade órfã.
 
 **Atualizações feitas sobre o material do semestre** (a regra 4 do Guia manda corrigir o que está defasado): micronúcleo hoje é tecnologia de produção, não experimento — entrou o seL4 e o uso em carros e aviões; e contêineres entraram ao lado de máquinas virtuais, porque é o que se usa hoje e o material da disciplina não cobre.

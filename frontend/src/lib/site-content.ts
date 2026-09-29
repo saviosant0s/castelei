@@ -159,6 +159,28 @@ export const SUBJECTS: SiteSubject[] = [
     ],
   },
   {
+    slug: "programacao-python",
+    name: "Programação com Python",
+    pitch:
+      "Programar do zero na linguagem da inteligência artificial, com cada linha de código traduzida para o português.",
+    lessons: [
+      "Programar e rodar o primeiro código",
+      "Variáveis e tipos de dados",
+      "Operadores: contas, comparações e lógica",
+      "Condicionais: o programa que decide",
+      "Laços: repetir sem copiar e colar",
+      "Funções: dar nome a um pedaço de código",
+      "Strings: trabalhando com texto",
+      "Listas e arrays: muitos valores numa variável só",
+      "Dicionários: achar pelo nome, não pela posição",
+      "Estruturas de dados: tupla, conjunto, pilha e fila",
+      "Recursão: a função que chama a si mesma",
+      "Módulos e bibliotecas: usar código pronto",
+      "Complexidade: quanto o programa demora quando cresce",
+      "Programação orientada a objetos",
+    ],
+  },
+  {
     slug: "producao-textual",
     name: "Produção Textual",
     pitch:
@@ -189,5 +211,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 778,
+  questions: 890,
 };
