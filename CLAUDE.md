@@ -335,6 +335,12 @@ Três coisas de conteúdo:
 - **É raciocínio lógico de prova, e fala a língua dela.** Os mnemônicos que as bancas esperam estão lá (“V com F dá F” na condicional, MANÉ na negação dela), e cada lição tem uma tabela das alternativas erradas que costumam aparecer: recíproca e inversa no lugar da contrapositiva, “nenhum” no lugar de “algum não”.
 - **Escopo `q` no verificador**, com o mesmo cuidado de sempre: “verdade”, “conclusão” e “argumento” ficaram de fora por serem palavras do dia a dia; entra “argumento válido”, e a regex pega também “inválido” e “validade”. “Não contradição” casa com “contradição”, então a lição 1 define o princípio pelo nome inteiro.
 
+**Matéria Montar um PC: lendo o nome das peças** (15 lições, `15-montar-pc.json`, área Informática, figuras em `frontend/public/figuras/pc/`). Pedido do Sávio, que vai montar um PC: bater o olho no nome de uma peça e saber se é boa, como já faz com celular. Três módulos de peças (processador, placa de vídeo; memória, armazenamento, placa-mãe e fonte), um de abertura (as peças e o gargalo) e uma lição final que lê um anúncio de verdade linha por linha. Três coisas:
+
+- **A matéria ensina a REGRA do nome, e usa os modelos como exemplo datado.** Hardware envelhece em meses. Toda menção a geração atual vem com o ano (“a série 50, lançada em 2025”), e as próximas gerações aparecem como “esperadas para 2027”, sem nome confirmado. Em outubro de 2026 não havia RTX 60, Core Ultra 400 nem Ryzen 10000 nas lojas. **Ao revisar, confira na internet e atualize os exemplos, não a regra.**
+- **Nada de preço.** Preço em real muda toda semana e cada loja cobra uma coisa. Os exemplos de montagem dizem peças e o porquê de cada uma.
+- **Escopo `h` no verificador.** “Fonte” entra sozinha, porque aqui é sempre a de alimentação. Cuidado com duas armadilhas que já morderam: “cores” (em inglês, núcleos) casava com “Core Ultra”, e saiu da regex; e “HD” casa com “Full HD”, então a lição escreve “1080p”.
+
 **Trilha de estudo "LLMs do zero"** (`config/castelei.php` → `trails`, `GET /subjects` devolve `trails`, tela em `trilha/[slug]/page.tsx`, lógica em `lib/trails.ts`). Pedido do Sávio: "organize na sequência do que devo aprender primeiro". A trilha atravessa áreas (Matemática e Informática), e a tela de áreas sozinha não dizia a ordem. Quatro coisas:
 
 - **A ordem mora no backend, e o progresso sai das matérias.** Cada passo é só `{subject, name, why}`; praticadas/total vêm das mesmas matérias de `GET /subjects`, com o mesmo critério das outras telas (tentativa concluída).

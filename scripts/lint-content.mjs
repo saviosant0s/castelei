@@ -372,9 +372,28 @@ const JARGON = [
   ["silogismo", /\bsilogismos?\b/i, "q"], ["falácia", /\bfal(á|a)cias?\b/i, "q"],
   ["diagrama de Venn", /\bVenn\b/i, "q"], ["booleano", /\bbooleanos?\b|\bbool\b/i, "q"],
   ["curto-circuito", /\bcurto-circuito\b/i, "q"],
+  /*
+  | Montar um PC ("h"). O corte: quem nunca abriu um computador saberia?
+  | "Fonte" entra sozinha porque, nesta matéria, é sempre a fonte de
+  | alimentação. "Núcleo" aqui é o do processador, e não o do sistema
+  | operacional: os escopos são separados, então um não atrapalha o outro.
+  */
+  ["processador", /\bprocessador(es)?\b|\bCPUs?\b/, "h"], ["placa de vídeo", /\bplacas? de v(í|i)deo\b|\bGPUs?\b/i, "h"],
+  ["memória RAM", /\bRAM\b/, "h"], ["VRAM", /\bVRAM\b/, "h"], ["SSD", /\bSSDs?\b/, "h"], ["NVMe", /\bNVMe\b/i, "h"],
+  ["HD", /\bHDs?\b|\bHDDs?\b/, "h"], ["placa-mãe", /\bplacas?-m(ã|a)e\b/i, "h"], ["chipset", /\bchipsets?\b/i, "h"],
+  ["soquete", /\bsoquetes?\b|\bsockets?\b/i, "h"], ["núcleo", /\bn(ú|u)cleos?\b/i, "h"], ["thread", /\bthreads?\b/i, "h"],
+  ["frequência", /\bfrequ(ê|e)ncias?\b|\bGHz\b/i, "h"], ["cache", /\bcache\b/i, "h"], ["overclock", /\boverclock\w*/i, "h"],
+  ["benchmark", /\bbenchmarks?\b/i, "h"], ["FPS", /\bFPS\b/, "h"], ["gargalo", /\bgargalos?\b/i, "h"],
+  ["fonte", /\bfontes?\b/i, "h"], ["TDP", /\bTDP\b|\bTGP\b/, "h"], ["BIOS", /\bBIOS\b|\bUEFI\b/, "h"],
+  ["dual channel", /\bdual channel\b|\bcanal duplo\b/i, "h"], ["XMP e EXPO", /\bXMP\b|\bEXPO\b/, "h"],
+  ["latência", /\blat(ê|e)ncias?\b|\bCL\d*\b/, "h"], ["MT/s", /\bMT\/s\b/, "h"], ["PCIe", /\bPCIe\b|\bPCI Express\b/i, "h"],
+  ["M.2", /\bM\.2\b/, "h"], ["SATA", /\bSATA\b/, "h"], ["DDR", /\bDDR\d\b/, "h"],
+  ["upscaling", /\b[Uu]pscaling\b|\bDLSS\b|\bFSR\b|\bXeSS\b/, "h"], ["ray tracing", /\bray tracing\b|\btraçado de raios\b/i, "h"],
+  ["geração de quadros", /\bgera(ç|c)(ão|ões) de quadros\b|\bframe generation\b/i, "h"], ["vídeo integrado", /\bv(í|i)deo integrado\b|\biGPU\b/i, "h"],
+  ["cooler", /\bcoolers?\b|\bwater cooler\b/i, "h"], ["80 Plus", /\b80 Plus\b/i, "h"], ["fonte modular", /\bmodular(es)?\b/i, "h"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;

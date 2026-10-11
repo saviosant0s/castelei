@@ -22,6 +22,7 @@ import {
   Monitor,
   Network,
   Palette,
+  PcCase,
   PenLine,
   Server,
   Shapes,
@@ -79,6 +80,7 @@ const iconesDeMateria: Record<string, LucideIcon> = {
   "llms-como-funcionam": BrainCircuit,
   "llms-na-pratica": Bot,
   logica: Binary,
+  "montar-pc": PcCase,
 };
 
 /** Ícone da matéria; a que não tem um próprio usa o da área. */
