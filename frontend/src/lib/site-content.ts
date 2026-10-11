@@ -246,6 +246,29 @@ export const SUBJECTS: SiteSubject[] = [
     ],
   },
   {
+    slug: "montar-pc",
+    name: "Montar um PC: lendo o nome das peças",
+    pitch:
+      "Bata o olho em “Ryzen 7 9800X3D” ou “RTX 5070 Ti” e saiba o que o nome diz, onde está a pegadinha e o que perguntar antes de comprar.",
+    lessons: [
+      "As peças de um PC e o que cada uma faz",
+      "Gargalo e equilíbrio: montar para o seu uso",
+      "Lendo o nome de um processador Intel",
+      "Lendo o nome de um processador AMD Ryzen",
+      "Núcleos, threads, GHz e cache: a ficha do processador",
+      "Soquete e compatibilidade: o encaixe certo",
+      "Lendo o nome de uma placa de vídeo NVIDIA",
+      "Lendo AMD Radeon e Intel Arc",
+      "Memória de vídeo: quantos GB de VRAM",
+      "Comparar placas de verdade: FPS, DLSS e geração de quadros",
+      "Memória RAM: lendo “DDR5-6000 CL30”",
+      "Armazenamento: HD, SSD, NVMe, M.2 e PCIe",
+      "Placa-mãe: chipset, letras e tamanho",
+      "Fonte: watts, 80 Plus e o que não economizar",
+      "Juntando tudo: lendo um anúncio de PC",
+    ],
+  },
+  {
     slug: "portugues",
     name: "Português",
     pitch:
@@ -363,5 +386,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 1658,
+  questions: 1778,
 };

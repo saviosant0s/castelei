@@ -1,0 +1,4772 @@
+{
+  "_leia_me": [
+    "Montar um PC: como ler o nome das peças e comparar uma com a outra. Os exemplos são do mercado de 2026; a regra dos nomes é o que fica.",
+    "Chaves começadas por _ são comentário e somem na importação."
+  ],
+  "slug": "montar-pc",
+  "name": "Montar um PC: lendo o nome das peças",
+  "area": "informatica",
+  "description": "Aprenda a bater o olho no nome de um processador, de uma placa de vídeo, da memória, do SSD, da placa-mãe e da fonte e saber o que ele diz: geração, faixa, versão e onde estão as pegadinhas.",
+  "lessons": [
+    {
+      "slug": "as-pecas-de-um-pc",
+      "title": "As peças de um PC e o que cada uma faz",
+      "module": "O mapa do PC",
+      "summary": "Um computador é um time. O processador pensa e a placa de vídeo desenha. A memória RAM guarda o que está aberto, o armazenamento guarda o resto e a fonte dá energia. Tudo se liga na placa-mãe.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Uma cozinha de restaurante",
+          "body": [
+            "Numa cozinha há o chef, que decide e corta. Há a bancada com os ingredientes em uso e a despensa com o estoque. E há a rede elétrica, que faz tudo funcionar.",
+            "Um computador é montado do mesmo jeito. Cada peça é um papel dessa cozinha."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O mapa",
+          "body": [
+            "Todas as peças se encaixam numa placa grande, a placa-mãe. Ela é o chão da cozinha, por onde tudo passa."
+          ],
+          "terms": [
+            {
+              "word": "Placa-mãe",
+              "meaning": "a placa grande onde todas as peças se encaixam e conversam."
+            },
+            {
+              "word": "Processador (CPU)",
+              "meaning": "o chip que faz as contas e dá as ordens do computador. É o cérebro da máquina."
+            },
+            {
+              "word": "Placa de vídeo (GPU)",
+              "meaning": "a peça que desenha as imagens na tela. Em jogos, é a que mais pesa no desempenho."
+            },
+            {
+              "word": "Memória RAM",
+              "meaning": "a memória rápida onde ficam os programas abertos. Ela se apaga quando o PC desliga."
+            },
+            {
+              "word": "Fonte",
+              "meaning": "a peça que recebe a energia da tomada e entrega a cada componente na medida certa."
+            },
+            {
+              "word": "Cooler",
+              "meaning": "o sistema que tira o calor de uma peça, com ventoinha ou com líquido."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/pc/mapa.svg",
+            "alt": "Um diagrama do computador com a placa-mãe no centro, como uma grande base. Ligados a ela estão o processador, a memória RAM, a placa de vídeo e o armazenamento. A fonte, ao lado, manda energia para todos. Cada peça tem uma frase curta: o processador pensa, a RAM é a mesa de trabalho, o armazenamento é o armário, a placa de vídeo desenha a imagem e a fonte dá energia.",
+            "caption": "Cada peça tem um papel, e todas se ligam na placa-mãe."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Processador: o chef",
+          "body": [
+            "O processador faz as contas e dá as ordens. Abrir um programa, calcular uma planilha e rodar a lógica de um jogo passam por ele.",
+            "Um processador fraco deixa tudo lento, mesmo com as outras peças boas."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Placa de vídeo: o desenhista",
+          "body": [
+            "A placa de vídeo desenha as imagens da tela. Em jogos, ela é a peça que mais decide quantas imagens por segundo aparecem.",
+            "Para estudar e navegar, o vídeo que vem dentro de muitos processadores já basta."
+          ],
+          "terms": [
+            {
+              "word": "Vídeo integrado",
+              "meaning": "um chip de vídeo simples dentro do processador. Faz a tela funcionar sem placa de vídeo."
+            },
+            {
+              "word": "FPS",
+              "meaning": "quadros por segundo: quantas imagens o jogo desenha a cada segundo. Mais é mais fluido."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "RAM e armazenamento: bancada e despensa",
+          "body": [
+            "A memória RAM é a bancada: rápida, mas pequena, e se apaga quando o PC desliga. O armazenamento é a despensa: grande e permanente, onde ficam o sistema, os jogos e os arquivos.",
+            "Hoje o armazenamento principal deve ser um SSD. O HD ficou para guardar muita coisa barato."
+          ],
+          "terms": [
+            {
+              "word": "SSD",
+              "meaning": "o armazenamento sem partes móveis, feito de chips. É muito mais rápido que os discos que giram."
+            },
+            {
+              "word": "HD",
+              "meaning": "o armazenamento antigo, com um disco que gira. É barato por espaço, mas lento."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Fonte, gabinete e cooler",
+          "body": [
+            "A fonte pega a energia da tomada e entrega a cada peça na medida certa. Fonte ruim pode queimar o resto.",
+            "O gabinete é a caixa que guarda tudo, e o cooler tira o calor do processador."
+          ],
+          "terms": [
+            {
+              "word": "Gabinete",
+              "meaning": "a caixa do computador, onde as peças são montadas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que pesa em cada uso",
+          "body": [
+            "Cada uso puxa mais de uma peça. Saber o que você vai fazer decide onde gastar."
+          ],
+          "table": {
+            "label": "Onde o dinheiro rende mais",
+            "headers": [
+              "Uso",
+              "Peça mais importante",
+              "O que basta no resto"
+            ],
+            "rows": [
+              [
+                "estudo e escritório",
+                "SSD e 16 GB de RAM",
+                "vídeo integrado"
+              ],
+              [
+                "jogos",
+                "placa de vídeo",
+                "processador do meio da linha"
+              ],
+              [
+                "edição de vídeo",
+                "processador e RAM",
+                "placa de vídeo intermediária"
+              ],
+              [
+                "programação",
+                "processador e RAM",
+                "vídeo integrado ou placa simples"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na hora de comprar",
+          "body": [
+            "O vendedor oferece um PC com “processador i7” e nada mais na ficha. Sem saber a geração, a placa de vídeo e o SSD, esse nome não diz quase nada.",
+            "As próximas lições ensinam a ler cada nome."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a primeira compra erra."
+          ],
+          "bullets": [
+            "Gastar tudo no processador e ficar sem placa de vídeo para jogar.",
+            "Economizar na fonte para sobrar dinheiro.",
+            "Comprar HD como armazenamento principal.",
+            "Achar que mais RAM compensa uma placa de vídeo fraca em jogos."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Um time, cada um no seu papel."
+          ],
+          "bullets": [
+            "Processador: pensa e dá as ordens.",
+            "Placa de vídeo: desenha a imagem.",
+            "RAM: a bancada, rápida e temporária.",
+            "SSD: a despensa, grande e permanente.",
+            "Fonte: energia na medida certa.",
+            "Placa-mãe: onde tudo se liga."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Papel",
+          "statement": "Qual peça mais decide o FPS em jogos?",
+          "options": [
+            "a memória RAM",
+            "a placa de vídeo",
+            "a fonte",
+            "o gabinete",
+            "o SSD"
+          ],
+          "correct_index": 1,
+          "explanation": "Ela desenha cada imagem do jogo.",
+          "pitfall": "RAM a mais não compensa uma placa fraca."
+        },
+        {
+          "topic": "RAM",
+          "statement": "O que acontece com o que está na memória RAM quando o PC desliga?",
+          "options": [
+            "fica guardado para sempre",
+            "se apaga",
+            "vai para a placa de vídeo",
+            "vira um arquivo",
+            "vai para a fonte"
+          ],
+          "correct_index": 1,
+          "explanation": "A RAM é temporária, como a bancada que se limpa no fim do dia.",
+          "pitfall": "Quem guarda para sempre é o armazenamento."
+        },
+        {
+          "topic": "Armazenamento",
+          "statement": "Qual deve ser o armazenamento principal de um PC hoje?",
+          "options": [
+            "um HD",
+            "um SSD",
+            "um pendrive",
+            "a memória RAM",
+            "a nuvem, só"
+          ],
+          "correct_index": 1,
+          "explanation": "O SSD é muito mais rápido para ligar o sistema e abrir programas.",
+          "pitfall": "O HD ficou para guardar muita coisa barato."
+        },
+        {
+          "topic": "Placa-mãe",
+          "statement": "Para que serve a placa-mãe?",
+          "options": [
+            "desenhar a imagem",
+            "ligar todas as peças entre si",
+            "guardar os arquivos",
+            "dar energia",
+            "esfriar o processador"
+          ],
+          "correct_index": 1,
+          "explanation": "É onde todas as peças se encaixam e conversam.",
+          "pitfall": "Quem dá energia é a fonte."
+        },
+        {
+          "topic": "Estudo",
+          "statement": "Para um PC só de estudo e navegação, o que costuma bastar para a imagem?",
+          "options": [
+            "uma placa de vídeo topo de linha",
+            "o vídeo integrado do processador",
+            "duas placas de vídeo",
+            "um HD",
+            "uma fonte maior"
+          ],
+          "correct_index": 1,
+          "explanation": "Para texto, vídeo e navegador, o vídeo integrado dá conta.",
+          "pitfall": "Placa de vídeo forte é gasto de quem joga ou edita."
+        },
+        {
+          "topic": "Fonte",
+          "statement": "Por que não economizar na fonte?",
+          "options": [
+            "porque ela é bonita",
+            "porque uma fonte ruim pode queimar as outras peças",
+            "porque ela deixa o jogo mais rápido",
+            "porque ela guarda arquivos",
+            "não importa"
+          ],
+          "correct_index": 1,
+          "explanation": "Ela entrega a energia de tudo. Se falha, leva o resto junto.",
+          "pitfall": "Ela não aumenta o FPS: protege o investimento."
+        },
+        {
+          "topic": "Vendedor",
+          "statement": "Um anúncio diz só “PC com processador i7”. O que falta para saber se é bom?",
+          "options": [
+            "nada",
+            "a geração, a placa de vídeo e o armazenamento",
+            "a cor do gabinete",
+            "o nome da loja",
+            "o tamanho da caixa"
+          ],
+          "correct_index": 1,
+          "explanation": "Um i7 de dez anos atrás perde para um i5 novo.",
+          "pitfall": "O nome da faixa sozinho diz pouco."
+        },
+        {
+          "topic": "Cozinha",
+          "format": "match",
+          "statement": "Ligue cada peça ao seu papel na cozinha.",
+          "pairs": [
+            {
+              "left": "processador",
+              "right": "o chef"
+            },
+            {
+              "left": "memória RAM",
+              "right": "a bancada"
+            },
+            {
+              "left": "SSD",
+              "right": "a despensa"
+            },
+            {
+              "left": "fonte",
+              "right": "a rede elétrica"
+            }
+          ],
+          "explanation": "Cada peça é um papel da mesma cozinha.",
+          "pitfall": "A bancada é rápida e pequena; a despensa, grande e permanente."
+        }
+      ]
+    },
+    {
+      "slug": "gargalo-e-equilibrio",
+      "title": "Gargalo e equilíbrio: montar para o seu uso",
+      "module": "O mapa do PC",
+      "summary": "Um PC rende o que a sua peça mais fraca deixa. Juntar um processador fraco com uma placa de vídeo forte desperdiça dinheiro: é o gargalo. Montar bem é equilibrar as peças para o uso e a resolução que você quer.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A garrafa de gargalo fino",
+          "body": [
+            "Uma garrafa cheia com o gargalo fino derrama a água devagar, por mais que você vire. O que manda é a parte mais estreita.",
+            "Num computador, a parte mais estreita é a peça que trava as outras."
+          ],
+          "terms": [
+            {
+              "word": "Gargalo",
+              "meaning": "a peça mais fraca de um conjunto, que segura o desempenho das outras."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/pc/gargalo.svg",
+            "alt": "Duas garrafas lado a lado. Na da esquerda, o gargalo é estreito e a água sai devagar, mesmo com a garrafa cheia: é um processador fraco segurando uma placa de vídeo forte. Na da direita, o gargalo é largo e a água sai à vontade: as peças estão equilibradas.",
+            "caption": "O gargalo estreito segura a água, por mais cheia que esteja a garrafa."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Quem espera por quem",
+          "body": [
+            "Em jogos, o processador prepara cada quadro e a placa de vídeo desenha. Se o processador demora, a placa fica parada esperando.",
+            "Se a placa demora, é o processador que espera. O ideal é os dois terminarem quase juntos."
+          ],
+          "terms": [
+            {
+              "word": "Processador (CPU)",
+              "meaning": "o chip que faz as contas e dá as ordens do computador. É o cérebro da máquina."
+            },
+            {
+              "word": "Placa de vídeo (GPU)",
+              "meaning": "a peça que desenha as imagens na tela. Em jogos, é a que mais pesa no desempenho."
+            },
+            {
+              "word": "FPS",
+              "meaning": "quadros por segundo: quantas imagens o jogo desenha a cada segundo. Mais é mais fluido."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A resolução muda o peso",
+          "body": [
+            "Em 1080p, a placa desenha rápido, e o processador aparece mais. Em 1440p e 4K, cada imagem tem muito mais pontos, e a placa vira o limite.",
+            "Por isso quem joga em 4K pode usar um processador intermediário. Quem quer 240 FPS em 1080p precisa de um processador forte."
+          ],
+          "table": {
+            "label": "Resolução e peça que mais pesa",
+            "headers": [
+              "Resolução",
+              "Pontos na tela",
+              "Quem costuma limitar"
+            ],
+            "rows": [
+              [
+                "1080p",
+                "cerca de 2 milhões",
+                "o processador, em jogos rápidos"
+              ],
+              [
+                "1440p (QHD)",
+                "cerca de 3,7 milhões",
+                "os dois, equilibrados"
+              ],
+              [
+                "2160p (4K)",
+                "cerca de 8,3 milhões",
+                "a placa de vídeo"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Uma regra de bolso",
+          "body": [
+            "Num PC para jogos, a placa de vídeo costuma levar a maior fatia do dinheiro, perto de um terço do total. O processador vem depois.",
+            "É uma regra de bolso, e não lei. Quem edita vídeo ou programa puxa a balança para o processador e para a RAM."
+          ],
+          "terms": [
+            {
+              "word": "Memória RAM",
+              "meaning": "a memória rápida onde ficam os programas abertos. Ela se apaga quando o PC desliga."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Exemplos de desequilíbrio",
+          "body": [
+            "Os dois erros mais comuns são opostos, e os dois desperdiçam dinheiro."
+          ],
+          "terms": [
+            {
+              "word": "Fonte",
+              "meaning": "a peça que recebe a energia da tomada e entrega a cada componente na medida certa."
+            },
+            {
+              "word": "Vídeo integrado",
+              "meaning": "um chip de vídeo simples dentro do processador. Faz a tela funcionar sem placa de vídeo."
+            }
+          ],
+          "example": {
+            "label": "Desequilíbrios comuns",
+            "lines": [
+              "Placa de vídeo topo de linha com processador de entrada antigo: a placa espera",
+              "Processador topo de linha com vídeo integrado, para jogar: o jogo trava",
+              "Tudo forte e fonte genérica: o PC desliga sozinho em jogo pesado"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Como saber o que comprar",
+          "body": [
+            "Comece pelo uso e pela tela: qual resolução e quantos FPS você quer. Escolha a placa de vídeo para isso. Depois, um processador que não a segure.",
+            "Testes com várias combinações, os benchmarks, mostram isso em números."
+          ],
+          "terms": [
+            {
+              "word": "Benchmark",
+              "meaning": "um teste padronizado que mede o desempenho de uma peça, para comparar com outras."
+            },
+            {
+              "word": "SSD",
+              "meaning": "o armazenamento sem partes móveis, feito de chips. É muito mais rápido que os discos que giram."
+            },
+            {
+              "word": "Placa-mãe",
+              "meaning": "a placa grande onde todas as peças se encaixam e conversam."
+            }
+          ],
+          "example": {
+            "label": "A ordem de decisão para jogos",
+            "lines": [
+              "Definir o uso e a resolução do monitor",
+              "Escolher a placa de vídeo para essa resolução",
+              "Escolher um processador à altura dela",
+              "Completar com RAM, SSD, placa-mãe e fonte"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na hora de comprar",
+          "body": [
+            "Cai o kit “placa de vídeo nova com processador velho” anunciado como pechincha. Pergunte: em que resolução eu jogo?",
+            "Em 1080p competitivo, esse processador vai segurar a placa."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde o equilíbrio engana."
+          ],
+          "bullets": [
+            "Achar que gargalo é sempre ruim: algum lado sempre limita, o problema é limitar muito.",
+            "Escolher peças sem pensar na resolução do monitor.",
+            "Gastar a maior parte no processador para jogar em 4K.",
+            "Esquecer que o uso, e não o jogo da moda, decide a montagem."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A parte estreita manda."
+          ],
+          "bullets": [
+            "Gargalo: a peça que segura as outras.",
+            "Em jogos, processador prepara e placa desenha.",
+            "1080p puxa o processador; 4K puxa a placa.",
+            "Regra de bolso: a placa leva perto de um terço.",
+            "Decida pela tela: resolução e FPS.",
+            "Benchmarks mostram as combinações em números."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Gargalo",
+          "statement": "O que é um gargalo num PC?",
+          "options": [
+            "a peça mais cara",
+            "a peça mais fraca, que segura o desempenho das outras",
+            "o cabo da fonte",
+            "o gabinete",
+            "a placa-mãe"
+          ],
+          "correct_index": 1,
+          "explanation": "Como o gargalo da garrafa, é a parte estreita que manda.",
+          "pitfall": "Mais cara não quer dizer que segura as outras."
+        },
+        {
+          "topic": "4K",
+          "statement": "Jogando em 4K, qual peça costuma limitar o desempenho?",
+          "options": [
+            "o processador",
+            "a placa de vídeo",
+            "a memória RAM",
+            "o SSD",
+            "a fonte"
+          ],
+          "correct_index": 1,
+          "explanation": "Cada imagem em 4K tem cerca de 8 milhões de pontos para desenhar.",
+          "pitfall": "Em 1080p é que o processador aparece mais."
+        },
+        {
+          "topic": "1080p",
+          "statement": "Quem quer 240 FPS em 1080p, num jogo competitivo, precisa caprichar em:",
+          "options": [
+            "gabinete",
+            "processador",
+            "fonte bonita",
+            "HD",
+            "teclado"
+          ],
+          "correct_index": 1,
+          "explanation": "A placa desenha rápido em 1080p, e o processador vira o limite.",
+          "pitfall": "Em 4K seria o contrário."
+        },
+        {
+          "topic": "Regra",
+          "statement": "Num PC para jogos, qual peça costuma levar a maior fatia do dinheiro?",
+          "options": [
+            "a fonte",
+            "a placa de vídeo",
+            "o gabinete",
+            "a memória RAM",
+            "o SSD"
+          ],
+          "correct_index": 1,
+          "explanation": "Perto de um terço do total, como regra de bolso.",
+          "pitfall": "Gastar mais no processador rende mais em edição de vídeo, e não em jogos."
+        },
+        {
+          "topic": "Desequilíbrio",
+          "statement": "Placa de vídeo topo de linha com processador de entrada antigo dá:",
+          "options": [
+            "o melhor PC possível",
+            "uma placa que fica esperando o processador",
+            "mais FPS que qualquer outro",
+            "fonte mais econômica",
+            "nada muda"
+          ],
+          "correct_index": 1,
+          "explanation": "O processador não prepara as imagens rápido o bastante.",
+          "pitfall": "A placa não consegue trabalhar no máximo."
+        },
+        {
+          "topic": "Ordem",
+          "statement": "Para montar um PC de jogos, por onde começar a decisão?",
+          "options": [
+            "pela cor do gabinete",
+            "pelo uso e pela resolução do monitor",
+            "pelo processador mais caro",
+            "pela marca da placa-mãe",
+            "pela fonte"
+          ],
+          "correct_index": 1,
+          "explanation": "É a tela que decide a placa de vídeo, e a placa decide o resto.",
+          "pitfall": "Começar pelo processador mais caro desequilibra."
+        },
+        {
+          "topic": "Decisão",
+          "format": "order",
+          "statement": "Ponha na ordem a decisão de um PC de jogos.",
+          "options": [
+            "Definir o uso e a resolução",
+            "Escolher a placa de vídeo",
+            "Escolher o processador à altura",
+            "Completar RAM, SSD, placa-mãe e fonte"
+          ],
+          "explanation": "Do uso para a peça principal, e dela para o resto.",
+          "pitfall": "Escolher a fonte antes de saber a placa de vídeo é chutar."
+        },
+        {
+          "topic": "Resolução",
+          "format": "match",
+          "statement": "Ligue cada resolução ao que costuma limitar.",
+          "pairs": [
+            {
+              "left": "1080p em jogo rápido",
+              "right": "o processador"
+            },
+            {
+              "left": "1440p",
+              "right": "os dois, equilibrados"
+            },
+            {
+              "left": "4K",
+              "right": "a placa de vídeo"
+            },
+            {
+              "left": "estudo e navegador",
+              "right": "quase nada: o vídeo integrado basta"
+            }
+          ],
+          "explanation": "Quanto mais pontos, mais a placa pesa.",
+          "pitfall": "Em 4K, o processador perde importância."
+        }
+      ]
+    },
+    {
+      "slug": "lendo-o-nome-de-um-processador-intel",
+      "title": "Lendo o nome de um processador Intel",
+      "module": "Processador",
+      "summary": "“Core Ultra 7 265K” não é um código aleatório. Cada pedaço diz uma coisa: marca e faixa, depois geração, modelo e sufixo. Com a regra, dá para comparar processadores Intel só pelo nome. Vale até para a linha antiga, como o “Core i5-14600K”.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Placa de carro",
+          "body": [
+            "Uma placa de carro parece só letras e números, mas tem regra: cada parte diz uma coisa. Quem conhece a regra lê de relance.",
+            "O nome de um processador é igual. Cada pedaço tem um significado fixo."
+          ],
+          "terms": [
+            {
+              "word": "Processador (CPU)",
+              "meaning": "o chip que faz as contas e dá as ordens do computador. É o cérebro da máquina."
+            },
+            {
+              "word": "Placa de vídeo (GPU)",
+              "meaning": "a peça que desenha as imagens na tela. Em jogos, é a que mais pesa no desempenho."
+            },
+            {
+              "word": "Placa-mãe",
+              "meaning": "a placa grande onde todas as peças se encaixam e conversam."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os pedaços do nome",
+          "body": [
+            "No nome atual da Intel, a marca vem primeiro, depois a faixa e um número de três dígitos. O primeiro dígito é a geração, e os outros dois dizem a posição dentro dela."
+          ],
+          "figure": {
+            "src": "/figuras/pc/nome-intel.svg",
+            "alt": "O nome “Core Ultra 7 265K” cortado em cinco pedaços coloridos. “Core Ultra” é a marca, a linha atual da Intel. “7” é a faixa, que vai de 3 a 9. “2” é a geração, a série 200. “65” é o modelo dentro da geração: maior é mais forte. “K” é o sufixo, que indica que aceita overclock.",
+            "caption": "Marca e faixa; depois geração, modelo e sufixo."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A faixa: 3, 5, 7 ou 9",
+          "body": [
+            "A faixa diz para quem é o processador. 3 é entrada, 5 é o meio, 7 é o forte e 9 é o topo.",
+            "Mas a faixa só compara processadores da mesma geração. Um 7 antigo pode perder para um 5 novo."
+          ],
+          "table": {
+            "label": "As faixas",
+            "headers": [
+              "Faixa",
+              "Para quem",
+              "Uso típico"
+            ],
+            "rows": [
+              [
+                "3",
+                "entrada",
+                "estudo e escritório"
+              ],
+              [
+                "5",
+                "o meio",
+                "jogos e uso geral"
+              ],
+              [
+                "7",
+                "forte",
+                "jogos e trabalho pesado"
+              ],
+              [
+                "9",
+                "topo",
+                "quem quer o máximo"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Geração e modelo",
+          "body": [
+            "Em “265”, o 2 diz a geração: a série 200, lançada em 2024. O 65 diz a posição dentro dela: quanto maior, mais forte.",
+            "Em 2026 saiu uma atualização com “Plus” no fim, como o 270K Plus. Ela é um degrau acima do modelo sem Plus da mesma faixa."
+          ],
+          "example": {
+            "label": "Comparando na mesma geração",
+            "lines": [
+              "Core Ultra 5 245K < Core Ultra 7 265K < Core Ultra 9 285K",
+              "Core Ultra 7 265K < Core Ultra 7 270K Plus",
+              "Mesma geração: número maior é mais forte"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os sufixos",
+          "body": [
+            "A letra do fim muda bastante coisa. As duas mais importantes no PC de mesa são K e F."
+          ],
+          "terms": [
+            {
+              "word": "Overclock",
+              "meaning": "fazer uma peça trabalhar acima da velocidade de fábrica para ganhar desempenho."
+            },
+            {
+              "word": "Vídeo integrado",
+              "meaning": "um chip de vídeo simples dentro do processador. Faz a tela funcionar sem placa de vídeo."
+            }
+          ],
+          "table": {
+            "label": "Sufixos de processador Intel de mesa",
+            "headers": [
+              "Sufixo",
+              "Quer dizer",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "K",
+                "liberado para overclock",
+                "265K"
+              ],
+              [
+                "F",
+                "sem vídeo integrado: exige placa de vídeo",
+                "225F"
+              ],
+              [
+                "KF",
+                "as duas coisas",
+                "265KF"
+              ],
+              [
+                "sem letra",
+                "versão comum, mais econômica",
+                "265"
+              ],
+              [
+                "T",
+                "baixo consumo",
+                "265T"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O nome antigo: Core i5-14600K",
+          "body": [
+            "Até 2023, o nome era “Core i5-14600K”. O i5 é a faixa. O 14 é a geração, e o 600 é o modelo. O K continua sendo o mesmo sufixo.",
+            "Essa linha antiga vai da 12ª à 14ª geração. Ela ainda é muito vendida no Brasil, principalmente o i5-12400F e o i5-14400F."
+          ],
+          "example": {
+            "label": "Lendo o nome antigo",
+            "lines": [
+              "Core i5-14600K",
+              "i5: faixa do meio",
+              "14: 14ª geração",
+              "600: posição dentro da geração",
+              "K: liberado para overclock"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Notebook tem outras letras",
+          "body": [
+            "No notebook, a letra do fim diz o consumo. H é para notebooks potentes, U para os que economizam bateria, e V para a linha fina de 2024.",
+            "Um processador de notebook com o mesmo número costuma render menos que o de mesa, porque tem menos energia e menos espaço para esfriar."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na hora de comprar",
+          "body": [
+            "Cai a comparação “i7 ou i5, qual é melhor?”. A resposta certa é: de qual geração cada um?",
+            "Outra pegadinha é comprar um processador com F sem ter placa de vídeo: a tela fica preta."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde o nome engana."
+          ],
+          "bullets": [
+            "Comparar a faixa sem olhar a geração.",
+            "Comprar um F sem placa de vídeo.",
+            "Pagar pelo K sem placa-mãe que aceite overclock.",
+            "Achar que o processador de notebook é igual ao de mesa com o mesmo número."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Cada pedaço diz uma coisa."
+          ],
+          "bullets": [
+            "Core Ultra 7 265K: marca e faixa, depois geração, modelo e sufixo.",
+            "Faixa 3, 5, 7 ou 9: só compara dentro da geração.",
+            "Primeiro dígito: geração; os outros: posição.",
+            "K: overclock. F: sem vídeo integrado.",
+            "Nome antigo: Core i5-14600K, com a geração no 14.",
+            "Notebook: H forte, U econômico."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Faixa",
+          "statement": "No nome “Core Ultra 5 245K”, o que o 5 indica?",
+          "options": [
+            "a geração",
+            "a faixa: o meio da linha",
+            "o número de núcleos",
+            "a frequência",
+            "o ano"
+          ],
+          "correct_index": 1,
+          "explanation": "A faixa vai de 3 a 9.",
+          "pitfall": "A geração está no primeiro dígito do número."
+        },
+        {
+          "topic": "F",
+          "statement": "O que quer dizer o F em “Core Ultra 5 225F”?",
+          "options": [
+            "mais rápido",
+            "sem vídeo integrado: exige placa de vídeo",
+            "liberado para overclock",
+            "para notebook",
+            "frio"
+          ],
+          "correct_index": 1,
+          "explanation": "Sem placa de vídeo, a tela não liga.",
+          "pitfall": "Overclock é o K."
+        },
+        {
+          "topic": "K",
+          "statement": "O que quer dizer o K em “Core Ultra 7 265K”?",
+          "options": [
+            "sem vídeo integrado",
+            "liberado para overclock",
+            "baixo consumo",
+            "para notebook",
+            "geração 2"
+          ],
+          "correct_index": 1,
+          "explanation": "K é desbloqueado.",
+          "pitfall": "Baixo consumo é o T."
+        },
+        {
+          "topic": "Antigo",
+          "statement": "No nome “Core i5-14600K”, qual número diz a geração?",
+          "options": [
+            "5",
+            "14",
+            "600",
+            "1",
+            "K"
+          ],
+          "correct_index": 1,
+          "explanation": "No nome antigo, a geração vem logo depois do traço.",
+          "pitfall": "O 5 do i5 é a faixa."
+        },
+        {
+          "topic": "Comparar",
+          "statement": "Na mesma geração, qual é o mais forte?",
+          "options": [
+            "Core Ultra 5 245K",
+            "Core Ultra 9 285K",
+            "Core Ultra 7 265K",
+            "Core Ultra 5 225",
+            "todos iguais"
+          ],
+          "correct_index": 1,
+          "explanation": "Mesma geração: faixa e modelo maiores, mais forte.",
+          "pitfall": "Entre gerações diferentes a regra não vale."
+        },
+        {
+          "topic": "Geração",
+          "statement": "Um i7 de uma geração bem antiga contra um i5 da 14ª geração. O que esperar?",
+          "options": [
+            "o i7 sempre vence",
+            "o i5 novo pode vencer com folga",
+            "são iguais",
+            "não dá para usar os dois",
+            "o mais barato vence"
+          ],
+          "correct_index": 1,
+          "explanation": "A faixa só compara dentro da mesma geração.",
+          "pitfall": "O 7 no nome não garante nada entre gerações."
+        },
+        {
+          "topic": "Notebook",
+          "statement": "Em processador Intel de notebook, a letra U costuma indicar:",
+          "options": [
+            "o mais potente",
+            "foco em economizar bateria",
+            "sem vídeo integrado",
+            "overclock",
+            "uso em servidor"
+          ],
+          "correct_index": 1,
+          "explanation": "U economiza; H é para notebooks potentes.",
+          "pitfall": "Notebook tem letras próprias."
+        },
+        {
+          "topic": "Sufixos",
+          "format": "match",
+          "statement": "Ligue cada sufixo ao significado.",
+          "pairs": [
+            {
+              "left": "K",
+              "right": "liberado para overclock"
+            },
+            {
+              "left": "F",
+              "right": "sem vídeo integrado"
+            },
+            {
+              "left": "KF",
+              "right": "overclock e sem vídeo integrado"
+            },
+            {
+              "left": "T",
+              "right": "baixo consumo"
+            }
+          ],
+          "explanation": "A letra do fim muda a compra.",
+          "pitfall": "F exige placa de vídeo."
+        }
+      ]
+    },
+    {
+      "slug": "lendo-o-nome-de-um-processador-amd",
+      "title": "Lendo o nome de um processador AMD Ryzen",
+      "module": "Processador",
+      "summary": "“Ryzen 7 9800X3D” segue uma regra parecida com a da Intel: faixa, geração, modelo e sufixo. O sufixo X3D, com cache extra empilhado, é o que faz os Ryzen mais desejados para jogos. E há uma pegadinha nos números da série 8000.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O mesmo idioma, outro sotaque",
+          "body": [
+            "Quem entende o nome da Intel já entende quase todo o da AMD. A lógica é a mesma; mudam algumas letras.",
+            "Como português de Salvador e de Lisboa: as mesmas palavras, com um sotaque diferente."
+          ],
+          "terms": [
+            {
+              "word": "Processador (CPU)",
+              "meaning": "o chip que faz as contas e dá as ordens do computador. É o cérebro da máquina."
+            },
+            {
+              "word": "Placa de vídeo (GPU)",
+              "meaning": "a peça que desenha as imagens na tela. Em jogos, é a que mais pesa no desempenho."
+            },
+            {
+              "word": "Placa-mãe",
+              "meaning": "a placa grande onde todas as peças se encaixam e conversam."
+            },
+            {
+              "word": "Núcleo",
+              "meaning": "uma unidade de trabalho dentro do processador. Com 8 núcleos, ele faz 8 tarefas pesadas ao mesmo tempo."
+            },
+            {
+              "word": "Frequência",
+              "meaning": "quantos ciclos de trabalho o processador faz por segundo, medida em GHz. 5 GHz são 5 bilhões de ciclos por segundo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os pedaços do nome",
+          "body": [
+            "Depois de “Ryzen” vem a faixa, de 3 a 9. O número de quatro dígitos começa pela geração; os dois seguintes dizem a posição dentro dela."
+          ],
+          "figure": {
+            "src": "/figuras/pc/nome-amd.svg",
+            "alt": "O nome “Ryzen 7 9800X3D” cortado em seis pedaços. “Ryzen” é a marca. “7” é a faixa, de 3 a 9. “9” é a geração, a série 9000. “80” é o modelo dentro da geração. O último “0” quase sempre é zero. “X3D” é o sufixo da versão com cache extra empilhado, muito boa em jogos.",
+            "caption": "Marca e faixa; depois geração, modelo e sufixo."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Geração e modelo",
+          "body": [
+            "No 9800, o 9 é a série 9000, lançada em 2024. O 8 diz a posição: 9600 é menor que 9700, que é menor que 9800 e 9900.",
+            "As séries 7000 e 9000 usam o encaixe novo da AMD. A série 5000 usa o antigo, e ainda é muito vendida por ser barata."
+          ],
+          "example": {
+            "label": "Comparando na mesma geração",
+            "lines": [
+              "Ryzen 5 9600X < Ryzen 7 9700X < Ryzen 9 9950X",
+              "Ryzen 7 9700X < Ryzen 7 9800X3D, para jogos",
+              "Mesma geração: número maior é mais forte"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os sufixos",
+          "body": [
+            "Cada letra muda o que o processador oferece."
+          ],
+          "terms": [
+            {
+              "word": "Vídeo integrado",
+              "meaning": "um chip de vídeo simples dentro do processador. Faz a tela funcionar sem placa de vídeo."
+            },
+            {
+              "word": "Cache",
+              "meaning": "uma memória minúscula e muito rápida dentro do processador, para os dados que ele usa toda hora."
+            }
+          ],
+          "table": {
+            "label": "Sufixos de Ryzen de mesa",
+            "headers": [
+              "Sufixo",
+              "Quer dizer",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "X",
+                "frequências mais altas",
+                "9700X"
+              ],
+              [
+                "X3D",
+                "cache extra empilhado: ótimo em jogos",
+                "9800X3D"
+              ],
+              [
+                "sem letra",
+                "versão comum e mais fria",
+                "9600"
+              ],
+              [
+                "G",
+                "vídeo integrado forte",
+                "8600G"
+              ],
+              [
+                "F",
+                "sem vídeo integrado",
+                "8400F"
+              ],
+              [
+                "XT",
+                "um pouco mais rápido que o modelo comum",
+                "5600XT"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Por que o X3D faz sucesso",
+          "body": [
+            "Jogos usam muito um mesmo grupo de dados. O X3D empilha uma camada extra de cache em cima do chip, e os dados ficam ao alcance.",
+            "O Ryzen 7 9800X3D tem 96 MB desse cache, contra 32 MB do 9700X. Em muitos jogos, isso rende mais que núcleos ou frequência a mais."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A pegadinha da série 8000",
+          "body": [
+            "Os Ryzen 8000G, como o 8600G, têm número maior que a série 7000. Mas são da mesma família por dentro. A vantagem deles é o vídeo integrado forte.",
+            "Ou seja: o primeiro dígito nem sempre diz quem é mais novo por dentro. Na dúvida, procure um teste."
+          ],
+          "terms": [
+            {
+              "word": "Benchmark",
+              "meaning": "um teste padronizado que mede o desempenho de uma peça, para comparar com outras."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que vem por aí",
+          "body": [
+            "Em outubro de 2026, a próxima geração da AMD ainda não chegou às lojas. Ela é esperada para 2027, com o nome Ryzen 10000 citado nos boatos, mas ainda não confirmado.",
+            "A regra de leitura deve continuar a mesma: faixa, geração e modelo."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na hora de comprar",
+          "body": [
+            "Cai a escolha entre um 9700X e um 9800X3D para jogar. Os dois são faixa 7, mas o X3D costuma render bem mais em jogos.",
+            "Também cai o 8600G vendido como “mais novo” que o 7600."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde o nome AMD engana."
+          ],
+          "bullets": [
+            "Ignorar o X3D e escolher só pela faixa.",
+            "Achar que a série 8000G é mais nova por dentro que a 7000.",
+            "Comprar um F, ou um modelo da série 5000 sem vídeo, sem ter placa de vídeo.",
+            "Misturar processador da série 5000 com placa-mãe feita para a 9000."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A mesma lógica, outras letras."
+          ],
+          "bullets": [
+            "Ryzen 7 9800X3D: marca e faixa, depois geração, modelo e sufixo.",
+            "Primeiro dígito: geração; os seguintes: posição.",
+            "X: frequências altas. X3D: cache extra para jogos.",
+            "G: vídeo integrado forte. F: sem vídeo.",
+            "A série 8000G engana no número.",
+            "A próxima geração é esperada para 2027."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Geração",
+          "statement": "No nome “Ryzen 5 9600X”, qual dígito diz a geração?",
+          "options": [
+            "5",
+            "o primeiro do número: 9",
+            "6",
+            "X",
+            "o último 0"
+          ],
+          "correct_index": 1,
+          "explanation": "O 9 é a série 9000.",
+          "pitfall": "O 5 do começo é a faixa."
+        },
+        {
+          "topic": "X3D",
+          "statement": "O que o sufixo X3D acrescenta?",
+          "options": [
+            "vídeo integrado forte",
+            "cache extra empilhado, muito bom em jogos",
+            "mais núcleos sempre",
+            "baixo consumo",
+            "nada"
+          ],
+          "correct_index": 1,
+          "explanation": "Os jogos aproveitam muito a cache extra.",
+          "pitfall": "Vídeo integrado forte é o G."
+        },
+        {
+          "topic": "Jogos",
+          "statement": "Para jogar, qual costuma render mais?",
+          "options": [
+            "Ryzen 7 9700X",
+            "Ryzen 7 9800X3D",
+            "são iguais",
+            "Ryzen 5 9600",
+            "depende da cor"
+          ],
+          "correct_index": 1,
+          "explanation": "A mesma faixa, mas com o cache extra.",
+          "pitfall": "Faixa igual não quer dizer desempenho igual."
+        },
+        {
+          "topic": "G",
+          "statement": "O que o G em “Ryzen 5 8600G” indica?",
+          "options": [
+            "sem vídeo integrado",
+            "vídeo integrado forte",
+            "overclock",
+            "geração G",
+            "para servidor"
+          ],
+          "correct_index": 1,
+          "explanation": "Dá para jogar leve sem placa de vídeo.",
+          "pitfall": "Sem vídeo é o F."
+        },
+        {
+          "topic": "8000",
+          "statement": "O 8600G é mais novo por dentro que o 7600?",
+          "options": [
+            "sim, porque o número é maior",
+            "não necessariamente: são da mesma família, e o 8600G se destaca pelo vídeo integrado",
+            "sim, é de 2030",
+            "não, é de 2010",
+            "não dá para saber"
+          ],
+          "correct_index": 1,
+          "explanation": "O primeiro dígito nem sempre diz quem é mais novo por dentro.",
+          "pitfall": "Número maior não garante família mais nova."
+        },
+        {
+          "topic": "Comparar",
+          "statement": "Na série 9000, qual é o mais forte?",
+          "options": [
+            "Ryzen 5 9600X",
+            "Ryzen 9 9950X",
+            "Ryzen 7 9700X",
+            "Ryzen 5 9600",
+            "são iguais"
+          ],
+          "correct_index": 1,
+          "explanation": "Faixa e modelo maiores, na mesma geração.",
+          "pitfall": "Para jogos o X3D pode vencer, mas no geral o 9950X é o topo."
+        },
+        {
+          "topic": "Futuro",
+          "statement": "Em outubro de 2026, a próxima geração da AMD para PC de mesa:",
+          "options": [
+            "já está à venda",
+            "ainda não chegou e é esperada para 2027",
+            "foi cancelada",
+            "saiu em 2020",
+            "é igual à 5000"
+          ],
+          "correct_index": 1,
+          "explanation": "O nome Ryzen 10000 é citado, mas não confirmado.",
+          "pitfall": "Não confunda boato com produto na loja."
+        },
+        {
+          "topic": "Sufixos",
+          "format": "match",
+          "statement": "Ligue cada sufixo AMD ao significado.",
+          "pairs": [
+            {
+              "left": "X",
+              "right": "frequências mais altas"
+            },
+            {
+              "left": "X3D",
+              "right": "cache extra para jogos"
+            },
+            {
+              "left": "G",
+              "right": "vídeo integrado forte"
+            },
+            {
+              "left": "F",
+              "right": "sem vídeo integrado"
+            }
+          ],
+          "explanation": "As letras mudam a escolha.",
+          "pitfall": "G e F são opostos no vídeo integrado."
+        }
+      ]
+    },
+    {
+      "slug": "nucleos-threads-ghz-e-cache",
+      "title": "Núcleos, threads, GHz e cache: a ficha do processador",
+      "module": "Processador",
+      "summary": "Além do nome, a ficha do processador traz núcleos, threads e GHz. Traz também a cache e o consumo. Cada número diz uma coisa, e quase nenhum serve sozinho para comparar famílias diferentes.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Cozinheiros e velocidade",
+          "body": [
+            "Uma cozinha com oito cozinheiros faz mais pratos ao mesmo tempo do que uma com quatro. Mas um cozinheiro muito rápido, sozinho, resolve primeiro um prato urgente.",
+            "Processador também tem os dois lados: quantos trabalham e o quão rápido cada um trabalha."
+          ],
+          "terms": [
+            {
+              "word": "Processador (CPU)",
+              "meaning": "o chip que faz as contas e dá as ordens do computador. É o cérebro da máquina."
+            },
+            {
+              "word": "Placa de vídeo (GPU)",
+              "meaning": "a peça que desenha as imagens na tela. Em jogos, é a que mais pesa no desempenho."
+            },
+            {
+              "word": "FPS",
+              "meaning": "quadros por segundo: quantas imagens o jogo desenha a cada segundo. Mais é mais fluido."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Núcleos",
+          "body": [
+            "O núcleo é a unidade que trabalha dentro do processador. Mais núcleos ajudam em tarefas que se dividem: editar vídeo, compilar código, transmitir jogando.",
+            "Jogos costumam aproveitar bem até uns 6 a 8 núcleos. Acima disso, o ganho em jogos diminui."
+          ],
+          "terms": [
+            {
+              "word": "Núcleo",
+              "meaning": "uma unidade de trabalho dentro do processador. Com 8 núcleos, ele faz 8 tarefas pesadas ao mesmo tempo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Núcleos de dois tipos",
+          "body": [
+            "Nos Intel recentes, há núcleos fortes e núcleos econômicos. O Core Ultra 7 265K tem 8 fortes e 12 econômicos: 20 no total.",
+            "Os econômicos cuidam de tarefas de fundo, e os fortes cuidam do que pesa. Somar os dois tipos como se fossem iguais engana."
+          ],
+          "example": {
+            "label": "Lendo a contagem",
+            "lines": [
+              "Core Ultra 7 265K: 8 fortes + 12 econômicos = 20 núcleos",
+              "Ryzen 7 9800X3D: 8 núcleos, todos do mesmo tipo",
+              "Mais núcleos no total não quer dizer mais FPS"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Threads",
+          "body": [
+            "Muitos processadores deixam cada núcleo atender duas linhas de trabalho, as threads. O Ryzen 7 9800X3D tem 8 núcleos e 16 threads.",
+            "Os Core Ultra da série 200 tiraram isso: cada núcleo atende uma thread só. Por isso o 265K tem 20 núcleos e 20 threads."
+          ],
+          "terms": [
+            {
+              "word": "Thread",
+              "meaning": "uma linha de trabalho que o sistema entrega ao processador. Em muitos modelos, cada núcleo atende duas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Frequência",
+          "body": [
+            "A frequência, em GHz, diz quantos ciclos o núcleo faz por segundo. A ficha traz duas: a base e a máxima, chamada de turbo.",
+            "GHz só compara processadores da mesma família. Um núcleo mais novo faz mais trabalho por ciclo, e pode vencer com menos GHz."
+          ],
+          "terms": [
+            {
+              "word": "Frequência",
+              "meaning": "quantos ciclos de trabalho o processador faz por segundo, medida em GHz. 5 GHz são 5 bilhões de ciclos por segundo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Cache",
+          "body": [
+            "A cache é uma memória minúscula dentro do processador. Quanto mais dados cabem nela, menos o processador espera a memória RAM, que fica longe.",
+            "É por isso que o X3D, com cache extra, rende tanto em jogos."
+          ],
+          "terms": [
+            {
+              "word": "Cache",
+              "meaning": "uma memória minúscula e muito rápida dentro do processador, para os dados que ele usa toda hora."
+            },
+            {
+              "word": "Memória RAM",
+              "meaning": "a memória rápida onde ficam os programas abertos. Ela se apaga quando o PC desliga."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Consumo e calor",
+          "body": [
+            "A ficha informa um número em watts, o TDP. Ele diz o calor que o cooler precisa dar conta, e dá uma ideia da conta de luz.",
+            "Processador que esquenta muito exige cooler melhor. Sem isso, ele reduz a velocidade sozinho para não superaquecer."
+          ],
+          "terms": [
+            {
+              "word": "TDP",
+              "meaning": "o calor, em watts, que o cooler precisa dar conta. Dá uma ideia do consumo. Na placa de vídeo, a NVIDIA chama de TGP."
+            },
+            {
+              "word": "Cooler",
+              "meaning": "o sistema que tira o calor de uma peça, com ventoinha ou com líquido."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na hora de comprar",
+          "body": [
+            "Cai o anúncio “20 núcleos!” contra “8 núcleos”. Para jogos, o de 8 com cache extra pode ganhar.",
+            "Também cai comparar GHz de Intel com GHz de AMD. Não diz quem é melhor: procure um teste."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a ficha engana."
+          ],
+          "bullets": [
+            "Comparar GHz entre famílias diferentes.",
+            "Somar núcleos fortes e econômicos como se fossem iguais.",
+            "Achar que 16 núcleos sempre dão mais FPS que 8.",
+            "Ignorar o cooler de um processador que esquenta muito."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Cada número, uma pergunta."
+          ],
+          "bullets": [
+            "Núcleos: quantos trabalham ao mesmo tempo.",
+            "Intel recente: núcleos fortes e econômicos.",
+            "Threads: linhas de trabalho; muitos núcleos atendem duas.",
+            "GHz: só compara dentro da mesma família.",
+            "Cache: menos espera; o segredo do X3D.",
+            "TDP: o calor que o cooler precisa aguentar."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Núcleos",
+          "statement": "Mais núcleos ajudam mais em qual tarefa?",
+          "options": [
+            "abrir um site",
+            "editar e exportar vídeo",
+            "digitar um texto",
+            "ouvir música",
+            "ligar o monitor"
+          ],
+          "correct_index": 1,
+          "explanation": "Exportar vídeo se divide bem entre muitos núcleos.",
+          "pitfall": "Tarefas leves quase não aproveitam."
+        },
+        {
+          "topic": "Jogos",
+          "statement": "Para jogos, a partir de quantos núcleos o ganho costuma diminuir bastante?",
+          "options": [
+            "2",
+            "uns 6 a 8",
+            "32",
+            "64",
+            "1"
+          ],
+          "correct_index": 1,
+          "explanation": "Jogos aproveitam bem até uns 6 a 8 núcleos.",
+          "pitfall": "Mais núcleos não viram FPS proporcional."
+        },
+        {
+          "topic": "265K",
+          "statement": "O Core Ultra 7 265K tem 8 núcleos fortes e 12 econômicos. Quantos núcleos no total?",
+          "options": [
+            "8",
+            "20",
+            "12",
+            "40",
+            "16"
+          ],
+          "correct_index": 1,
+          "explanation": "8 + 12 = 20, de dois tipos diferentes.",
+          "pitfall": "Somados, eles não valem como 20 fortes."
+        },
+        {
+          "topic": "Threads",
+          "statement": "Quantas threads tem o Ryzen 7 9800X3D, com 8 núcleos?",
+          "options": [
+            "8",
+            "16",
+            "4",
+            "32",
+            "24"
+          ],
+          "correct_index": 1,
+          "explanation": "Cada núcleo atende duas threads.",
+          "pitfall": "Os Core Ultra 200 é que têm uma thread por núcleo."
+        },
+        {
+          "topic": "GHz",
+          "statement": "Dá para dizer qual é melhor comparando só os GHz de um Intel e de um AMD?",
+          "options": [
+            "sim, sempre",
+            "não: cada família faz um trabalho diferente por ciclo",
+            "sim, o de mais GHz",
+            "sim, o de menos GHz",
+            "só no verão"
+          ],
+          "correct_index": 1,
+          "explanation": "GHz só compara dentro da mesma família.",
+          "pitfall": "Um núcleo mais novo faz mais por ciclo."
+        },
+        {
+          "topic": "Cache",
+          "statement": "Por que mais cache ajuda?",
+          "options": [
+            "deixa a tela mais bonita",
+            "o processador espera menos pela memória RAM",
+            "aumenta o SSD",
+            "esfria o PC",
+            "dobra os núcleos"
+          ],
+          "correct_index": 1,
+          "explanation": "Os dados usados toda hora ficam ao alcance.",
+          "pitfall": "Cache não é armazenamento."
+        },
+        {
+          "topic": "TDP",
+          "statement": "O que o TDP do processador diz?",
+          "options": [
+            "o preço",
+            "o calor que o cooler precisa dar conta",
+            "o tamanho da memória",
+            "a velocidade do SSD",
+            "o número de threads"
+          ],
+          "correct_index": 1,
+          "explanation": "É um número em watts, ligado ao calor e ao consumo.",
+          "pitfall": "Não é preço nem desempenho direto."
+        },
+        {
+          "topic": "Ficha",
+          "format": "match",
+          "statement": "Ligue cada número da ficha ao que ele diz.",
+          "pairs": [
+            {
+              "left": "núcleos",
+              "right": "quantos trabalham ao mesmo tempo"
+            },
+            {
+              "left": "GHz",
+              "right": "ciclos por segundo de cada núcleo"
+            },
+            {
+              "left": "cache",
+              "right": "memória minúscula e rápida dentro do chip"
+            },
+            {
+              "left": "TDP",
+              "right": "calor e consumo, em watts"
+            }
+          ],
+          "explanation": "Cada número responde uma pergunta diferente.",
+          "pitfall": "Nenhum deles sozinho decide a compra."
+        }
+      ]
+    },
+    {
+      "slug": "soquete-e-compatibilidade",
+      "title": "Soquete e compatibilidade: o encaixe certo",
+      "module": "Processador",
+      "summary": "Cada processador encaixa num soquete, e cada placa-mãe tem um soquete só. AM4, AM5, LGA1700 e LGA1851 são os encaixes que você vai ver em 2026. Errar o par é o erro de compra mais caro, porque nada funciona.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A tomada de três pinos",
+          "body": [
+            "Um carregador de tomada nova não entra numa tomada antiga sem adaptador. Os dois funcionam, mas não se encaixam.",
+            "Processador e placa-mãe são assim, e para eles não existe adaptador."
+          ],
+          "terms": [
+            {
+              "word": "Processador (CPU)",
+              "meaning": "o chip que faz as contas e dá as ordens do computador. É o cérebro da máquina."
+            },
+            {
+              "word": "Placa-mãe",
+              "meaning": "a placa grande onde todas as peças se encaixam e conversam."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que é o soquete",
+          "body": [
+            "O soquete é o encaixe do processador na placa-mãe. Cada família de processadores usa o seu, e o nome do soquete aparece na ficha dos dois.",
+            "A primeira conferência de qualquer montagem é essa: o mesmo soquete nos dois."
+          ],
+          "terms": [
+            {
+              "word": "Soquete",
+              "meaning": "o encaixe do processador na placa-mãe. Os dois precisam ter o mesmo soquete."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os soquetes de 2026",
+          "body": [
+            "Estes são os encaixes que você vai encontrar nas lojas."
+          ],
+          "terms": [
+            {
+              "word": "Memória RAM",
+              "meaning": "a memória rápida onde ficam os programas abertos. Ela se apaga quando o PC desliga."
+            },
+            {
+              "word": "DDR4 e DDR5",
+              "meaning": "as duas gerações de memória RAM em uso. Uma não encaixa no lugar da outra."
+            }
+          ],
+          "table": {
+            "label": "Soquetes em uso",
+            "headers": [
+              "Soquete",
+              "Processadores",
+              "Memória"
+            ],
+            "rows": [
+              [
+                "AM4 (AMD)",
+                "Ryzen 1000 a 5000",
+                "só DDR4"
+              ],
+              [
+                "AM5 (AMD)",
+                "Ryzen 7000, 8000G e 9000",
+                "só DDR5"
+              ],
+              [
+                "LGA1700 (Intel)",
+                "Core i da 12ª à 14ª geração",
+                "DDR4 ou DDR5, conforme a placa"
+              ],
+              [
+                "LGA1851 (Intel)",
+                "Core Ultra da série 200",
+                "só DDR5"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A memória vem junto",
+          "body": [
+            "O soquete também decide o tipo de memória RAM. DDR4 e DDR5 têm o encaixe diferente: uma não entra no lugar da outra.",
+            "No LGA1700, cada placa-mãe aceita um tipo só. Confira na ficha antes de comprar a memória."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Atualizar a BIOS",
+          "body": [
+            "Às vezes o soquete é o mesmo, mas a placa-mãe saiu antes do processador. Aí ela precisa de uma atualização do programa interno, a BIOS, para reconhecê-lo.",
+            "Muitas placas da série B650, por exemplo, precisaram atualizar a BIOS para aceitar os Ryzen 9000. Algumas atualizam até sem processador instalado."
+          ],
+          "terms": [
+            {
+              "word": "BIOS",
+              "meaning": "o programa gravado na placa-mãe que liga o computador antes do sistema. O nome técnico de hoje é UEFI."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Pensar no futuro",
+          "body": [
+            "Um soquete que vai continuar em uso deixa trocar só o processador daqui a alguns anos. A AMD prometeu manter o AM5 por bastante tempo.",
+            "A próxima geração da Intel é esperada para 2027. Ela deve usar um soquete novo, o LGA1954. Quem compra LGA1851 hoje não deve contar com muitas trocas de processador."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A conferência em três perguntas",
+          "body": [
+            "Antes de fechar a compra, três respostas precisam bater."
+          ],
+          "example": {
+            "label": "Conferindo a compatibilidade",
+            "lines": [
+              "O processador e a placa-mãe têm o mesmo soquete?",
+              "A memória é do tipo que a placa aceita, DDR4 ou DDR5?",
+              "A placa já vem com a BIOS para esse processador, ou dá para atualizar?"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na hora de comprar",
+          "body": [
+            "Cai o kit com processador AM5 e placa AM4, ou memória DDR4 com placa só DDR5. As peças são boas e não funcionam juntas.",
+            "Sites de montagem conferem isso sozinhos, mas vale saber ler a ficha."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a compatibilidade engana."
+          ],
+          "bullets": [
+            "Comprar processador e placa-mãe de soquetes diferentes.",
+            "Comprar DDR4 para uma placa que só aceita DDR5.",
+            "Esquecer de conferir se a BIOS reconhece o processador novo.",
+            "Achar que todo LGA1700 aceita os dois tipos de memória."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O encaixe vem antes de tudo."
+          ],
+          "bullets": [
+            "Soquete: o encaixe do processador na placa-mãe.",
+            "AM4 e AM5 da AMD; LGA1700 e LGA1851 da Intel.",
+            "AM5 e LGA1851: só DDR5.",
+            "AM4: só DDR4. LGA1700: depende da placa.",
+            "Placa mais antiga pode precisar de BIOS nova.",
+            "Soquete com futuro deixa trocar só o processador."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Soquete",
+          "statement": "O que precisa ser igual no processador e na placa-mãe?",
+          "options": [
+            "a cor",
+            "o soquete",
+            "a marca da caixa",
+            "o tamanho do gabinete",
+            "o preço"
+          ],
+          "correct_index": 1,
+          "explanation": "É o encaixe físico dos dois.",
+          "pitfall": "A cor não importa para funcionar."
+        },
+        {
+          "topic": "AM5",
+          "statement": "Um Ryzen 7 9800X3D usa qual soquete?",
+          "options": [
+            "AM4",
+            "AM5",
+            "LGA1700",
+            "LGA1851",
+            "qualquer um"
+          ],
+          "correct_index": 1,
+          "explanation": "A série 9000 usa o AM5.",
+          "pitfall": "AM4 é das séries até a 5000."
+        },
+        {
+          "topic": "Memória",
+          "statement": "Uma placa-mãe AM5 aceita qual memória?",
+          "options": [
+            "só DDR4",
+            "só DDR5",
+            "as duas",
+            "DDR3",
+            "nenhuma"
+          ],
+          "correct_index": 1,
+          "explanation": "O AM5 trabalha só com DDR5.",
+          "pitfall": "DDR4 é do AM4."
+        },
+        {
+          "topic": "Intel",
+          "statement": "Um Core Ultra 7 265K usa qual soquete?",
+          "options": [
+            "LGA1700",
+            "LGA1851",
+            "AM5",
+            "AM4",
+            "LGA1954"
+          ],
+          "correct_index": 1,
+          "explanation": "A série Core Ultra 200 usa o LGA1851.",
+          "pitfall": "O LGA1700 é da 12ª à 14ª geração."
+        },
+        {
+          "topic": "LGA1700",
+          "statement": "No LGA1700, que memória a placa aceita?",
+          "options": [
+            "sempre DDR5",
+            "DDR4 ou DDR5, conforme a placa",
+            "só DDR3",
+            "as duas na mesma placa",
+            "nenhuma"
+          ],
+          "correct_index": 1,
+          "explanation": "Cada placa aceita um tipo; confira na ficha.",
+          "pitfall": "Não dá para misturar os dois tipos."
+        },
+        {
+          "topic": "BIOS",
+          "statement": "A placa tem o soquete certo, mas saiu antes do processador. O que pode ser preciso?",
+          "options": [
+            "trocar o gabinete",
+            "atualizar a BIOS",
+            "trocar a fonte",
+            "comprar outra memória",
+            "nada nunca"
+          ],
+          "correct_index": 1,
+          "explanation": "A BIOS nova ensina a placa a reconhecer o processador.",
+          "pitfall": "O soquete igual não garante tudo."
+        },
+        {
+          "topic": "DDR4",
+          "statement": "Dá para colocar um pente DDR4 num encaixe de DDR5?",
+          "options": [
+            "sim, com força",
+            "não: o encaixe é diferente",
+            "sim, se for da mesma marca",
+            "só em notebooks",
+            "sim, com adaptador comum"
+          ],
+          "correct_index": 1,
+          "explanation": "O corte no pente é em outro lugar.",
+          "pitfall": "Forçar estraga a peça."
+        },
+        {
+          "topic": "Conferência",
+          "format": "order",
+          "statement": "Ponha na ordem a conferência de compatibilidade.",
+          "options": [
+            "Conferir o soquete do processador e da placa-mãe",
+            "Conferir o tipo de memória que a placa aceita",
+            "Conferir se a BIOS reconhece o processador",
+            "Fechar a compra"
+          ],
+          "explanation": "Do encaixe à memória e ao programa da placa.",
+          "pitfall": "Fechar antes de conferir é apostar."
+        }
+      ]
+    },
+    {
+      "slug": "lendo-o-nome-de-uma-placa-nvidia",
+      "title": "Lendo o nome de uma placa de vídeo NVIDIA",
+      "module": "Placa de vídeo",
+      "summary": "“GeForce RTX 5070 Ti” diz a família, a geração, a classe e a versão. A classe vai de 50 a 90 e é o número que mais importa. Ela costuma pesar mais que uma geração de diferença. A marca na caixa, como ASUS ou MSI, é outra coisa.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Carros do mesmo modelo, anos diferentes",
+          "body": [
+            "Um carro popular do ano é melhor que o do ano passado, mas não vira um carro de luxo. Um carro de luxo de dois anos atrás continua à frente.",
+            "Placa de vídeo é igual: a classe pesa mais que o ano."
+          ],
+          "terms": [
+            {
+              "word": "Placa de vídeo (GPU)",
+              "meaning": "a peça que desenha as imagens na tela. Em jogos, é a que mais pesa no desempenho."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os pedaços do nome",
+          "body": [
+            "Depois de “GeForce RTX”, vem um número de quatro dígitos. Os dois primeiros são a geração; os dois últimos são a classe. No fim, pode vir Ti ou Super."
+          ],
+          "terms": [
+            {
+              "word": "Ray tracing",
+              "meaning": "um jeito de calcular luz e reflexos imitando os raios de luz de verdade. Fica bonito e pesa muito."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/pc/nome-nvidia.svg",
+            "alt": "O nome “GeForce RTX 5070 Ti” cortado em cinco pedaços. “GeForce” é a marca de jogos da NVIDIA. “RTX” é a família com ray tracing. “50” é a geração, a série 50. “70” é a classe, que vai de 50 a 90. “Ti” é a versão turbinada, um degrau acima da 5070 comum.",
+            "caption": "Marca e família; depois geração, classe e versão."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A classe: de 50 a 90",
+          "body": [
+            "A classe diz o nível da placa dentro da geração. 50 e 60 são de entrada; 70 é o meio forte; 80 é alto; 90 é o topo, para quem quer o máximo.",
+            "É o número mais importante do nome."
+          ],
+          "table": {
+            "label": "As classes",
+            "headers": [
+              "Classe",
+              "Nível",
+              "Para quem"
+            ],
+            "rows": [
+              [
+                "50",
+                "entrada",
+                "jogos leves em 1080p"
+              ],
+              [
+                "60",
+                "entrada forte",
+                "1080p com folga"
+              ],
+              [
+                "70",
+                "meio forte",
+                "1440p"
+              ],
+              [
+                "80",
+                "alto",
+                "1440p alto e 4K"
+              ],
+              [
+                "90",
+                "topo",
+                "4K no máximo e trabalho pesado"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Ti e Super",
+          "body": [
+            "Ti e Super são versões um degrau acima da placa comum da mesma classe. A 5070 Ti fica entre a 5070 e a 5080.",
+            "A série 50 saiu em 2025. A escada completa está logo abaixo."
+          ],
+          "example": {
+            "label": "A escada da série 50",
+            "lines": [
+              "RTX 5050",
+              "RTX 5060",
+              "RTX 5060 Ti",
+              "RTX 5070",
+              "RTX 5070 Ti",
+              "RTX 5080",
+              "RTX 5090"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Classe contra geração",
+          "body": [
+            "Uma classe acima costuma valer mais que uma geração à frente. A RTX 4070, da geração anterior, costuma superar a RTX 5060 nova.",
+            "A geração nova traz recursos novos e gasta menos energia. Mas não pula de classe."
+          ],
+          "terms": [
+            {
+              "word": "FPS",
+              "meaning": "quadros por segundo: quantas imagens o jogo desenha a cada segundo. Mais é mais fluido."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "RTX e GTX",
+          "body": [
+            "RTX é a família com peças próprias para ray tracing e para o upscaling por inteligência artificial. GTX é a família antiga, sem esses recursos.",
+            "Uma GTX 1650 ainda aparece barata nas lojas. Serve para jogos leves, mas não roda os recursos novos."
+          ],
+          "terms": [
+            {
+              "word": "Upscaling",
+              "meaning": "desenhar a imagem menor e aumentar com inteligência artificial, para ganhar FPS. Na NVIDIA chama DLSS; na AMD, FSR; na Intel, XeSS."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "ASUS, MSI, Gigabyte: quem fabrica a placa",
+          "body": [
+            "A NVIDIA faz o chip; outras marcas montam a placa em volta dele. Uma RTX 5070 da ASUS e uma da Galax têm o mesmo chip.",
+            "Mudam o tamanho, o cooler, o barulho e uma pequena diferença de velocidade. A versão “OC” vem com alguns por cento a mais, e só."
+          ],
+          "terms": [
+            {
+              "word": "Cooler",
+              "meaning": "o sistema que tira o calor de uma peça, com ventoinha ou com líquido."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Notebook engana no nome",
+          "body": [
+            "Uma “RTX 5070 Laptop” não é a 5070 de mesa. Ela tem menos energia e menos espaço para esfriar, e rende menos.",
+            "E duas notebooks com a mesma placa podem render bem diferente, conforme a energia que cada fabricante liberou."
+          ],
+          "terms": [
+            {
+              "word": "TDP",
+              "meaning": "o calor, em watts, que o cooler precisa dar conta. Dá uma ideia do consumo. Na placa de vídeo, a NVIDIA chama de TGP."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na hora de comprar",
+          "body": [
+            "Cai a oferta de uma placa nova de classe baixa contra uma da geração passada de classe acima. Compare a classe antes do ano.",
+            "Também cai o notebook anunciado “com RTX 5070” como se fosse a placa de mesa."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde o nome engana."
+          ],
+          "bullets": [
+            "Achar que geração nova sempre vence a anterior.",
+            "Pagar muito a mais por uma versão “OC” de poucos por cento.",
+            "Comparar a placa de notebook com a de mesa pelo nome.",
+            "Achar que a marca da caixa muda o chip."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A classe é o que pesa."
+          ],
+          "bullets": [
+            "GeForce RTX 5070 Ti: família, geração, classe e versão.",
+            "Classe 50 a 90: o número que mais importa.",
+            "Ti e Super: um degrau acima da comum.",
+            "Uma classe acima costuma vencer uma geração à frente.",
+            "A marca da caixa monta a placa; o chip é o mesmo.",
+            "Placa de notebook rende menos que a de mesa."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Classe",
+          "statement": "No nome “RTX 5070 Ti”, qual parte é a classe?",
+          "options": [
+            "50",
+            "70",
+            "Ti",
+            "RTX",
+            "5"
+          ],
+          "correct_index": 1,
+          "explanation": "Os dois últimos dígitos são a classe.",
+          "pitfall": "50 é a geração."
+        },
+        {
+          "topic": "Geração",
+          "statement": "No nome “RTX 4060”, qual é a geração?",
+          "options": [
+            "60",
+            "40",
+            "4060",
+            "RTX",
+            "6"
+          ],
+          "correct_index": 1,
+          "explanation": "Os dois primeiros dígitos: série 40.",
+          "pitfall": "60 é a classe."
+        },
+        {
+          "topic": "Ti",
+          "statement": "Onde fica a RTX 5070 Ti na escada da série 50?",
+          "options": [
+            "abaixo da 5060",
+            "entre a 5070 e a 5080",
+            "acima da 5090",
+            "igual à 5070",
+            "abaixo da 5050"
+          ],
+          "correct_index": 1,
+          "explanation": "Ti é um degrau acima da comum, sem chegar à classe seguinte.",
+          "pitfall": "Não passa da 5080."
+        },
+        {
+          "topic": "Classe ou geração",
+          "statement": "Qual costuma render mais em jogos?",
+          "options": [
+            "RTX 5060",
+            "RTX 4070",
+            "são iguais",
+            "GTX 1650",
+            "RTX 3050"
+          ],
+          "correct_index": 1,
+          "explanation": "Uma classe acima costuma valer mais que uma geração à frente.",
+          "pitfall": "Geração nova não pula de classe."
+        },
+        {
+          "topic": "Marca",
+          "statement": "Uma RTX 5070 da ASUS e uma da MSI têm:",
+          "options": [
+            "chips diferentes",
+            "o mesmo chip, com cooler e tamanho diferentes",
+            "classes diferentes",
+            "gerações diferentes",
+            "nada em comum"
+          ],
+          "correct_index": 1,
+          "explanation": "A NVIDIA faz o chip; a marca monta a placa.",
+          "pitfall": "A diferença de desempenho é pequena."
+        },
+        {
+          "topic": "GTX",
+          "statement": "O que uma GTX tem a menos que uma RTX?",
+          "options": [
+            "nada",
+            "os núcleos de ray tracing e o upscaling por IA",
+            "a saída de vídeo",
+            "a memória",
+            "a energia"
+          ],
+          "correct_index": 1,
+          "explanation": "GTX é a família antiga, sem esses recursos.",
+          "pitfall": "Ela ainda roda jogos leves."
+        },
+        {
+          "topic": "Notebook",
+          "statement": "Uma “RTX 5070 Laptop” rende o mesmo que a RTX 5070 de mesa?",
+          "options": [
+            "sim, é igual",
+            "não: tem menos energia e menos espaço para esfriar",
+            "rende mais",
+            "só se for da ASUS",
+            "é a mesma peça"
+          ],
+          "correct_index": 1,
+          "explanation": "O nome é parecido, o desempenho é menor.",
+          "pitfall": "E muda de notebook para notebook."
+        },
+        {
+          "topic": "Escada",
+          "format": "order",
+          "statement": "Ponha as placas da série 50 da mais fraca para a mais forte.",
+          "options": [
+            "RTX 5060",
+            "RTX 5060 Ti",
+            "RTX 5070",
+            "RTX 5070 Ti",
+            "RTX 5080"
+          ],
+          "explanation": "Classe primeiro; dentro da classe, a Ti vem acima.",
+          "pitfall": "A Ti nunca passa da classe seguinte."
+        }
+      ]
+    },
+    {
+      "slug": "radeon-e-arc",
+      "title": "Lendo AMD Radeon e Intel Arc",
+      "module": "Placa de vídeo",
+      "summary": "A AMD numera as Radeon para lembrar as classes da rival: a RX 9070 XT disputa com a RTX 5070 Ti. A Intel usa uma letra por geração, em ordem alfabética: a Arc B580 é da geração B. Com as duas regras, quase toda placa de vídeo do mercado fica legível.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Times que imitam a numeração da rival",
+          "body": [
+            "Quando um time copia o número da camisa do craque rival, fica fácil comparar quem joga na mesma posição.",
+            "A AMD fez isso com as placas de vídeo em 2025: escolheu números que lembram as classes da NVIDIA."
+          ],
+          "terms": [
+            {
+              "word": "Placa de vídeo (GPU)",
+              "meaning": "a peça que desenha as imagens na tela. Em jogos, é a que mais pesa no desempenho."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Radeon: os pedaços",
+          "body": [
+            "Depois de “Radeon RX”, o primeiro dígito é a geração e os seguintes, a classe. No fim, XT ou XTX indicam versões mais fortes."
+          ],
+          "figure": {
+            "src": "/figuras/pc/nome-radeon.svg",
+            "alt": "O nome “Radeon RX 9070 XT” cortado em cinco pedaços. “Radeon” é a marca de placas de vídeo da AMD. “RX” é a família de jogos. “9” é a geração, a série 9000. “070” é a classe, numerada para lembrar a classe 70 da rival. “XT” é a versão mais forte do mesmo modelo.",
+            "caption": "Marca e família; depois geração, classe e versão."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A série 9000 da AMD",
+          "body": [
+            "Em 2025 a AMD lançou a série 9000, com a 9070 XT, a 9070 e a 9060 XT. O 70 e o 60 foram escolhidos para conversar com as classes 70 e 60 da rival.",
+            "XTX fica acima de XT, que fica acima da versão sem letra."
+          ],
+          "table": {
+            "label": "Radeon e a classe parecida da rival",
+            "headers": [
+              "Radeon",
+              "Disputa com",
+              "Memória"
+            ],
+            "rows": [
+              [
+                "RX 9070 XT",
+                "RTX 5070 Ti",
+                "16 GB"
+              ],
+              [
+                "RX 9070",
+                "RTX 5070",
+                "16 GB"
+              ],
+              [
+                "RX 9060 XT",
+                "RTX 5060 Ti",
+                "8 ou 16 GB"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "As Radeon antigas",
+          "body": [
+            "A série 7000 seguia outra conta, sem conversar com a rival. Os nomes dela estão na lista.",
+            "Placas da série 6000, como a 6600 e a 6750 XT, ainda aparecem baratas no Brasil. São boas para 1080p, sem os recursos mais novos."
+          ],
+          "terms": [
+            {
+              "word": "FPS",
+              "meaning": "quadros por segundo: quantas imagens o jogo desenha a cada segundo. Mais é mais fluido."
+            }
+          ],
+          "example": {
+            "label": "A série 7000, da mais fraca à mais forte",
+            "lines": [
+              "RX 7600",
+              "RX 7700 XT",
+              "RX 7800 XT",
+              "RX 7900 XT",
+              "RX 7900 XTX"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Intel Arc: uma letra por geração",
+          "body": [
+            "A Intel batiza cada geração com uma letra, em ordem alfabética. Primeiro veio a A, depois a B; as próximas serão C e D. O número de três dígitos é a classe.",
+            "A Arc B580 tem 12 GB e é a mais conhecida da geração B. Costuma ser uma das melhores opções baratas para 1080p."
+          ],
+          "terms": [
+            {
+              "word": "VRAM",
+              "meaning": "a memória própria da placa de vídeo, onde ficam as texturas e a imagem em preparo."
+            }
+          ],
+          "example": {
+            "label": "Lendo um nome Arc",
+            "lines": [
+              "Arc B580",
+              "B: segunda geração, chamada Battlemage",
+              "580: a classe dentro da geração",
+              "B570 fica um degrau abaixo da B580"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O cuidado com a Arc",
+          "body": [
+            "As Arc precisam de um ajuste da placa-mãe chamado Resizable BAR ligado. Sem ele, rendem bem menos.",
+            "Em PCs muito antigos, que não têm esse ajuste, a Arc não é boa escolha."
+          ],
+          "terms": [
+            {
+              "word": "Placa-mãe",
+              "meaning": "a placa grande onde todas as peças se encaixam e conversam."
+            },
+            {
+              "word": "BIOS",
+              "meaning": "o programa gravado na placa-mãe que liga o computador antes do sistema. O nome técnico de hoje é UEFI."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Recursos de cada marca",
+          "body": [
+            "As três marcas têm o seu jeito de aumentar o FPS com inteligência artificial. Os nomes mudam; a ideia é a mesma."
+          ],
+          "terms": [
+            {
+              "word": "Upscaling",
+              "meaning": "desenhar a imagem menor e aumentar com inteligência artificial, para ganhar FPS. Na NVIDIA chama DLSS; na AMD, FSR; na Intel, XeSS."
+            },
+            {
+              "word": "Ray tracing",
+              "meaning": "um jeito de calcular luz e reflexos imitando os raios de luz de verdade. Fica bonito e pesa muito."
+            }
+          ],
+          "table": {
+            "label": "O mesmo recurso, três nomes",
+            "headers": [
+              "Recurso",
+              "NVIDIA",
+              "AMD",
+              "Intel"
+            ],
+            "rows": [
+              [
+                "upscaling",
+                "DLSS",
+                "FSR",
+                "XeSS"
+              ],
+              [
+                "ray tracing",
+                "forte",
+                "melhorou muito na série 9000",
+                "bom para o preço"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na hora de comprar",
+          "body": [
+            "Cai a dúvida entre RX 9070 XT e RTX 5070 Ti. O nome já diz que são da mesma classe; o resto é preço e teste.",
+            "Também cai a Arc barata para um PC antigo sem Resizable BAR."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde os nomes enganam."
+          ],
+          "bullets": [
+            "Comparar a série 7000 da AMD com a rival pelo número.",
+            "Comprar uma Arc para um PC sem Resizable BAR.",
+            "Achar que XT é mais fraco que a versão sem letra.",
+            "Achar que a letra da Arc é a faixa, e não a geração."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Duas regras a mais."
+          ],
+          "bullets": [
+            "Radeon RX 9070 XT: geração 9, classe 70, versão XT.",
+            "A série 9000 imita as classes da rival.",
+            "XTX > XT > sem letra.",
+            "Arc: uma letra por geração; o número é a classe.",
+            "Arc precisa de Resizable BAR ligado.",
+            "DLSS, FSR e XeSS: o mesmo recurso, três nomes."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Rival",
+          "statement": "Com qual placa da NVIDIA a RX 9070 XT disputa?",
+          "options": [
+            "RTX 5050",
+            "RTX 5070 Ti",
+            "RTX 5090",
+            "GTX 1650",
+            "RTX 3060"
+          ],
+          "correct_index": 1,
+          "explanation": "A numeração da série 9000 foi feita para conversar com as classes da rival.",
+          "pitfall": "O 70 do nome não aponta para a classe 90."
+        },
+        {
+          "topic": "XT",
+          "statement": "Na Radeon, qual é a ordem das versões, da mais forte para a mais fraca?",
+          "options": [
+            "sem letra, XT, XTX",
+            "XTX, XT, sem letra",
+            "XT, XTX, sem letra",
+            "todas iguais",
+            "XT, sem letra, XTX"
+          ],
+          "correct_index": 1,
+          "explanation": "XTX no topo, depois XT, depois a comum.",
+          "pitfall": "Sem letra é a versão de base."
+        },
+        {
+          "topic": "Arc",
+          "statement": "Na Arc B580, o que o B indica?",
+          "options": [
+            "a faixa",
+            "a geração, em ordem alfabética",
+            "a memória",
+            "a marca",
+            "a cor"
+          ],
+          "correct_index": 1,
+          "explanation": "A era A; a B é a segunda geração.",
+          "pitfall": "A classe é o número."
+        },
+        {
+          "topic": "Arc antigo",
+          "statement": "Por que a Arc não é boa escolha para um PC muito antigo?",
+          "options": [
+            "porque é cara",
+            "porque precisa de Resizable BAR ligado na placa-mãe",
+            "porque não tem saída de vídeo",
+            "porque só funciona em notebook",
+            "porque é grande"
+          ],
+          "correct_index": 1,
+          "explanation": "Sem esse ajuste, ela rende bem menos.",
+          "pitfall": "Não é questão de tamanho."
+        },
+        {
+          "topic": "Série 7000",
+          "statement": "Dá para comparar a Radeon RX 7800 XT com a rival só pelo número?",
+          "options": [
+            "sim, é uma RTX 7800",
+            "não: a série 7000 não seguia as classes da rival",
+            "sim, é igual à RTX 4080",
+            "sim, sempre",
+            "só em 4K"
+          ],
+          "correct_index": 1,
+          "explanation": "Só a série 9000 alinhou os números.",
+          "pitfall": "Na série 7000, a conta era outra."
+        },
+        {
+          "topic": "Upscaling",
+          "statement": "Qual é o nome do upscaling da AMD?",
+          "options": [
+            "DLSS",
+            "FSR",
+            "XeSS",
+            "RTX",
+            "XT"
+          ],
+          "correct_index": 1,
+          "explanation": "DLSS é da NVIDIA; XeSS é da Intel.",
+          "pitfall": "XT é versão de placa, e não recurso."
+        },
+        {
+          "topic": "VRAM",
+          "statement": "Quanto de memória tem a Arc B580?",
+          "options": [
+            "4 GB",
+            "12 GB",
+            "32 GB",
+            "2 GB",
+            "64 GB"
+          ],
+          "correct_index": 1,
+          "explanation": "12 GB é bastante para a faixa de preço.",
+          "pitfall": "32 GB é coisa de topo de linha."
+        },
+        {
+          "topic": "Nomes",
+          "format": "match",
+          "statement": "Ligue cada nome ao que ele é.",
+          "pairs": [
+            {
+              "left": "RX 9070 XT",
+              "right": "Radeon da série 9000, classe 70"
+            },
+            {
+              "left": "Arc B580",
+              "right": "Intel da geração B"
+            },
+            {
+              "left": "RTX 5070 Ti",
+              "right": "NVIDIA da série 50"
+            },
+            {
+              "left": "RX 7900 XTX",
+              "right": "topo da série 7000 da AMD"
+            }
+          ],
+          "explanation": "Três marcas, cada uma com a sua regra.",
+          "pitfall": "XTX é o topo da série 7000."
+        }
+      ]
+    },
+    {
+      "slug": "memoria-de-video-vram",
+      "title": "Memória de vídeo: quantos GB de VRAM",
+      "module": "Placa de vídeo",
+      "summary": "A placa de vídeo tem memória própria, a VRAM. Quando ela acaba, o jogo engasga, por mais forte que seja o chip. Em 2026, 8 GB já apertam em jogos novos, e a mesma placa às vezes é vendida com duas quantidades.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A mesa do desenhista",
+          "body": [
+            "Um desenhista rápido com uma mesa pequena perde tempo indo buscar papel no armário a toda hora.",
+            "A VRAM é a mesa da placa de vídeo. Se é pequena, o chip forte fica esperando."
+          ],
+          "terms": [
+            {
+              "word": "Placa de vídeo (GPU)",
+              "meaning": "a peça que desenha as imagens na tela. Em jogos, é a que mais pesa no desempenho."
+            },
+            {
+              "word": "VRAM",
+              "meaning": "a memória própria da placa de vídeo, onde ficam as texturas e a imagem em preparo."
+            },
+            {
+              "word": "Processador (CPU)",
+              "meaning": "o chip que faz as contas e dá as ordens do computador. É o cérebro da máquina."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que fica na VRAM",
+          "body": [
+            "Ficam as texturas, que são as imagens coladas nos objetos do jogo, e a própria imagem que está sendo montada. Quanto maior a resolução e a qualidade das texturas, mais memória.",
+            "Quando a VRAM não basta, a placa busca dados na memória RAM do PC, que é bem mais lenta. Aí aparecem os engasgos."
+          ],
+          "terms": [
+            {
+              "word": "Memória RAM",
+              "meaning": "a memória rápida onde ficam os programas abertos. Ela se apaga quando o PC desliga."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quanto basta em 2026",
+          "body": [
+            "Os jogos novos pedem cada vez mais memória de vídeo. A tabela é uma régua de bolso para comprar hoje."
+          ],
+          "table": {
+            "label": "VRAM e uso",
+            "headers": [
+              "VRAM",
+              "Uso confortável",
+              "Observação"
+            ],
+            "rows": [
+              [
+                "8 GB",
+                "1080p com texturas no médio",
+                "já aperta em jogos novos"
+              ],
+              [
+                "12 GB",
+                "1080p alto e 1440p",
+                "bom equilíbrio"
+              ],
+              [
+                "16 GB",
+                "1440p alto e 4K",
+                "folga para os próximos anos"
+              ],
+              [
+                "24 a 32 GB",
+                "4K no máximo e trabalho com IA",
+                "placas de topo"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O mesmo nome, duas memórias",
+          "body": [
+            "Algumas placas saem com duas quantidades. A RTX 5060 Ti existe com 8 GB e com 16 GB, e a RX 9060 XT também.",
+            "O chip é o mesmo; a versão maior aguenta melhor jogos pesados e dura mais. O anúncio precisa dizer qual é."
+          ],
+          "example": {
+            "label": "Leia o anúncio inteiro",
+            "lines": [
+              "RTX 5060 Ti 8 GB",
+              "RTX 5060 Ti 16 GB",
+              "Mesmo nome, mesmo chip, memória dobrada na segunda"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Mais VRAM não é mais força",
+          "body": [
+            "Uma placa de entrada com muita memória continua sendo de entrada. A VRAM evita engasgos; quem decide o FPS é o chip.",
+            "Já aconteceu de placas fracas virem com memória sobrando só para impressionar na caixa."
+          ],
+          "terms": [
+            {
+              "word": "FPS",
+              "meaning": "quadros por segundo: quantas imagens o jogo desenha a cada segundo. Mais é mais fluido."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Como perceber que falta",
+          "body": [
+            "Os sinais de VRAM curta são característicos. Abaixar só a qualidade das texturas costuma resolver na hora."
+          ],
+          "bullets": [
+            "Engasgos de repente ao entrar em áreas novas do mapa.",
+            "Texturas borradas que demoram a ficar nítidas.",
+            "O FPS médio bom, mas com travadas curtas.",
+            "O jogo avisando que passou do limite de memória nas opções gráficas."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "IA e trabalho",
+          "body": [
+            "Para rodar modelos de inteligência artificial no próprio PC, a VRAM manda mais que tudo: o modelo inteiro precisa caber nela.",
+            "Por isso placas com 16 GB ou mais são procuradas por quem estuda IA, mesmo sem jogar."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na hora de comprar",
+          "body": [
+            "Cai a mesma placa em duas versões com preço próximo. Para durar, a versão com mais memória costuma valer a diferença.",
+            "Também cai a placa fraca vendida pelo “16 GB” estampado na caixa."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a VRAM engana."
+          ],
+          "bullets": [
+            "Confundir VRAM com memória RAM do PC.",
+            "Comprar a versão de 8 GB sem perceber que existe a de 16 GB.",
+            "Achar que mais VRAM deixa uma placa fraca forte.",
+            "Culpar o processador por engasgos que são de VRAM."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A mesa do desenhista."
+          ],
+          "bullets": [
+            "VRAM: a memória própria da placa de vídeo.",
+            "Guarda texturas e a imagem em preparo.",
+            "Em 2026: 8 GB aperta, 12 GB equilibra, 16 GB folga.",
+            "O mesmo nome pode vir com duas quantidades.",
+            "VRAM evita engasgos; o chip decide o FPS.",
+            "Para IA no PC, VRAM é o que mais pesa."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "O que é",
+          "statement": "O que é VRAM?",
+          "options": [
+            "a memória RAM do PC",
+            "a memória própria da placa de vídeo",
+            "o armazenamento",
+            "a velocidade do processador",
+            "a fonte"
+          ],
+          "correct_index": 1,
+          "explanation": "Ela fica na placa, perto do chip de vídeo.",
+          "pitfall": "A RAM do PC é outra memória, mais lenta para a placa."
+        },
+        {
+          "topic": "Falta",
+          "statement": "O que costuma acontecer quando a VRAM não basta?",
+          "options": [
+            "o PC desliga",
+            "engasgos e texturas borradas",
+            "o som some",
+            "a internet cai",
+            "nada"
+          ],
+          "correct_index": 1,
+          "explanation": "A placa busca dados na memória RAM, que é lenta para ela.",
+          "pitfall": "Não costuma desligar o PC."
+        },
+        {
+          "topic": "2026",
+          "statement": "Para 1440p com qualidade alta em 2026, quanto de VRAM é confortável?",
+          "options": [
+            "4 GB",
+            "12 a 16 GB",
+            "2 GB",
+            "1 GB",
+            "128 GB"
+          ],
+          "correct_index": 1,
+          "explanation": "12 GB equilibra; 16 GB dá folga.",
+          "pitfall": "8 GB já aperta em jogos novos."
+        },
+        {
+          "topic": "Duas versões",
+          "statement": "A RTX 5060 Ti de 8 GB e a de 16 GB têm:",
+          "options": [
+            "chips diferentes",
+            "o mesmo chip, com memória diferente",
+            "classes diferentes",
+            "gerações diferentes",
+            "fontes diferentes"
+          ],
+          "correct_index": 1,
+          "explanation": "Mesmo nome, mesmo chip, memória dobrada.",
+          "pitfall": "O anúncio precisa dizer qual é."
+        },
+        {
+          "topic": "Força",
+          "statement": "Uma placa de entrada com 16 GB vira uma placa forte?",
+          "options": [
+            "sim",
+            "não: a VRAM evita engasgos, mas o chip decide o FPS",
+            "sim, se for nova",
+            "sim, em 4K",
+            "só com DLSS"
+          ],
+          "correct_index": 1,
+          "explanation": "Memória não substitui o chip.",
+          "pitfall": "Caixa com número grande pode enganar."
+        },
+        {
+          "topic": "Resolver",
+          "statement": "Os engasgos são de VRAM curta. O que costuma resolver na hora?",
+          "options": [
+            "trocar a fonte",
+            "abaixar a qualidade das texturas",
+            "comprar mais SSD",
+            "aumentar a resolução",
+            "trocar o mouse"
+          ],
+          "correct_index": 1,
+          "explanation": "Texturas menores ocupam menos memória.",
+          "pitfall": "Aumentar a resolução pioraria."
+        },
+        {
+          "topic": "IA",
+          "statement": "Para rodar modelos de IA no próprio PC, o que mais pesa na placa?",
+          "options": [
+            "a cor",
+            "a quantidade de VRAM",
+            "o tamanho do cooler",
+            "a marca da caixa",
+            "o número de saídas"
+          ],
+          "correct_index": 1,
+          "explanation": "O modelo inteiro precisa caber na memória da placa.",
+          "pitfall": "Velocidade ajuda, mas sem memória nem começa."
+        },
+        {
+          "topic": "Régua",
+          "format": "match",
+          "statement": "Ligue cada quantidade de VRAM ao uso confortável em 2026.",
+          "pairs": [
+            {
+              "left": "8 GB",
+              "right": "1080p com texturas no médio"
+            },
+            {
+              "left": "12 GB",
+              "right": "1080p alto e 1440p"
+            },
+            {
+              "left": "16 GB",
+              "right": "1440p alto e 4K"
+            },
+            {
+              "left": "24 a 32 GB",
+              "right": "4K no máximo e IA"
+            }
+          ],
+          "explanation": "Uma régua de bolso para comprar hoje.",
+          "pitfall": "8 GB já aperta em jogos novos."
+        }
+      ]
+    },
+    {
+      "slug": "comparar-placas-de-video",
+      "title": "Comparar placas de verdade: FPS, DLSS e geração de quadros",
+      "module": "Placa de vídeo",
+      "summary": "O nome aproxima; o teste decide. Comparar placas é olhar o FPS medido em jogos, na sua resolução, com e sem os truques de inteligência artificial. A geração de quadros infla o número e é a pegadinha preferida do marketing.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O teste de estrada",
+          "body": [
+            "A ficha de um carro diz a potência. Mas quem quer saber o consumo de verdade procura um teste de estrada, feito por alguém de fora.",
+            "Com placa de vídeo é igual: o nome dá a ideia, e o teste mostra o desempenho."
+          ],
+          "terms": [
+            {
+              "word": "Placa de vídeo (GPU)",
+              "meaning": "a peça que desenha as imagens na tela. Em jogos, é a que mais pesa no desempenho."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Benchmarks em jogos",
+          "body": [
+            "Sites e canais especializados rodam os mesmos jogos, nas mesmas configurações, em várias placas. O resultado sai em FPS.",
+            "Procure testes na resolução do seu monitor e nos jogos que você joga."
+          ],
+          "terms": [
+            {
+              "word": "Benchmark",
+              "meaning": "um teste padronizado que mede o desempenho de uma peça, para comparar com outras."
+            },
+            {
+              "word": "FPS",
+              "meaning": "quadros por segundo: quantas imagens o jogo desenha a cada segundo. Mais é mais fluido."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Média e mínimas",
+          "body": [
+            "O FPS médio mostra o quanto o jogo roda no geral. As mínimas, chamadas de 1% low, mostram os piores momentos: os engasgos.",
+            "Duas placas com a mesma média podem ter mínimas bem diferentes. A de mínimas melhores parece mais fluida."
+          ],
+          "example": {
+            "label": "Duas placas com a mesma média",
+            "lines": [
+              "Placa A: média 90 FPS, mínimas 70 FPS",
+              "Placa B: média 90 FPS, mínimas 45 FPS",
+              "A placa A parece bem mais fluida"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Upscaling",
+          "body": [
+            "O upscaling desenha a imagem numa resolução menor e aumenta com inteligência artificial. O FPS sobe de verdade, com pouca perda de qualidade nas versões atuais.",
+            "DLSS, FSR e XeSS são os nomes de cada marca. Testes com e sem upscaling ajudam a comparar."
+          ],
+          "terms": [
+            {
+              "word": "Upscaling",
+              "meaning": "desenhar a imagem menor e aumentar com inteligência artificial, para ganhar FPS. Na NVIDIA chama DLSS; na AMD, FSR; na Intel, XeSS."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Geração de quadros",
+          "body": [
+            "A geração de quadros cria imagens inventadas entre as imagens de verdade. O contador de FPS dobra ou mais, mas o jogo não responde mais rápido aos seus comandos.",
+            "Ela funciona melhor quando o jogo já roda bem. Em jogos competitivos, quase ninguém liga."
+          ],
+          "terms": [
+            {
+              "word": "Geração de quadros",
+              "meaning": "criar imagens extras entre as imagens de verdade, por inteligência artificial. O contador de FPS sobe, mas o jogo não responde mais rápido."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A pegadinha do marketing",
+          "body": [
+            "No lançamento da série 50, a NVIDIA disse que a RTX 5070 tinha o desempenho da RTX 4090. A conta usava geração de quadros ligada na 5070.",
+            "Sem esse recurso, a 4090 fica muito à frente. Sempre pergunte: esse FPS é com quadros gerados?"
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Consumo e tamanho",
+          "body": [
+            "A placa precisa caber no gabinete e ter energia suficiente. A página da fabricante informa o comprimento e a fonte recomendada.",
+            "Placas grandes passam de 30 cm de comprimento e ocupam três espaços na placa-mãe."
+          ],
+          "terms": [
+            {
+              "word": "Fonte",
+              "meaning": "a peça que recebe a energia da tomada e entrega a cada componente na medida certa."
+            },
+            {
+              "word": "TDP",
+              "meaning": "o calor, em watts, que o cooler precisa dar conta. Dá uma ideia do consumo. Na placa de vídeo, a NVIDIA chama de TGP."
+            },
+            {
+              "word": "Cooler",
+              "meaning": "o sistema que tira o calor de uma peça, com ventoinha ou com líquido."
+            },
+            {
+              "word": "Placa-mãe",
+              "meaning": "a placa grande onde todas as peças se encaixam e conversam."
+            }
+          ],
+          "example": {
+            "label": "Antes de comprar a placa",
+            "lines": [
+              "Conferir o comprimento contra o espaço do gabinete",
+              "Conferir a fonte recomendada pela fabricante",
+              "Conferir os conectores de energia que ela pede"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na hora de comprar",
+          "body": [
+            "Cai o gráfico de propaganda com FPS gigante. Procure as letrinhas: geração de quadros ligada?",
+            "Também cai comparar placas em 1080p quando você joga em 1440p."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a comparação engana."
+          ],
+          "bullets": [
+            "Comparar FPS com geração de quadros contra FPS sem ela.",
+            "Olhar só a média e ignorar as mínimas.",
+            "Usar testes de outra resolução.",
+            "Esquecer de conferir se a placa cabe no gabinete."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O teste decide."
+          ],
+          "bullets": [
+            "Benchmarks em jogos, na sua resolução.",
+            "Média diz o geral; mínimas dizem os engasgos.",
+            "Upscaling: ganho real com pouca perda.",
+            "Geração de quadros: o número sobe, a resposta não.",
+            "Desconfie de FPS de propaganda.",
+            "Confira tamanho e fonte antes de comprar."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Mínimas",
+          "statement": "O que o 1% low mostra?",
+          "options": [
+            "o FPS máximo",
+            "os piores momentos, os engasgos",
+            "o consumo",
+            "a temperatura",
+            "o preço"
+          ],
+          "correct_index": 1,
+          "explanation": "Mínimas boas querem dizer jogo fluido.",
+          "pitfall": "A média esconde as travadas."
+        },
+        {
+          "topic": "Fluida",
+          "statement": "Mesma média de 90 FPS. Qual parece mais fluida?",
+          "options": [
+            "a de mínimas 45",
+            "a de mínimas 70",
+            "são iguais",
+            "a mais cara",
+            "a mais nova"
+          ],
+          "correct_index": 1,
+          "explanation": "Mínimas maiores, menos engasgos.",
+          "pitfall": "A média sozinha não mostra isso."
+        },
+        {
+          "topic": "Quadros",
+          "statement": "O que a geração de quadros faz?",
+          "options": [
+            "deixa o jogo responder mais rápido",
+            "cria imagens extras: o FPS sobe, mas a resposta não acelera",
+            "aumenta a VRAM",
+            "diminui o consumo pela metade",
+            "troca a resolução"
+          ],
+          "correct_index": 1,
+          "explanation": "As imagens geradas não vêm dos seus comandos.",
+          "pitfall": "Ela não reduz o atraso de resposta."
+        },
+        {
+          "topic": "Marketing",
+          "statement": "A frase “a RTX 5070 tem o desempenho da 4090” valia em qual condição?",
+          "options": [
+            "sempre",
+            "com geração de quadros ligada na 5070",
+            "em jogos antigos",
+            "sem DLSS",
+            "em 720p"
+          ],
+          "correct_index": 1,
+          "explanation": "Sem quadros gerados, a 4090 fica muito à frente.",
+          "pitfall": "Pergunte sempre como o número foi medido."
+        },
+        {
+          "topic": "Upscaling",
+          "statement": "O que o upscaling faz?",
+          "options": [
+            "inventa imagens entre as reais",
+            "desenha menor e aumenta com IA, ganhando FPS de verdade",
+            "aumenta a memória",
+            "esfria a placa",
+            "nada"
+          ],
+          "correct_index": 1,
+          "explanation": "O ganho é real, com pouca perda nas versões atuais.",
+          "pitfall": "Inventar imagens é a geração de quadros."
+        },
+        {
+          "topic": "Teste",
+          "statement": "Ao procurar testes, qual resolução olhar?",
+          "options": [
+            "qualquer uma",
+            "a do seu monitor",
+            "sempre 720p",
+            "sempre 8K",
+            "a do vendedor"
+          ],
+          "correct_index": 1,
+          "explanation": "O peso de cada peça muda com a resolução.",
+          "pitfall": "Teste em outra resolução pode enganar."
+        },
+        {
+          "topic": "Tamanho",
+          "statement": "O que conferir antes de comprar uma placa grande?",
+          "options": [
+            "a cor do LED",
+            "o comprimento contra o espaço do gabinete e a fonte recomendada",
+            "a marca do teclado",
+            "o tamanho do monitor",
+            "nada"
+          ],
+          "correct_index": 1,
+          "explanation": "Placas grandes passam de 30 cm.",
+          "pitfall": "Sem espaço, nem entra."
+        },
+        {
+          "topic": "Termos",
+          "format": "match",
+          "statement": "Ligue cada termo ao que ele é.",
+          "pairs": [
+            {
+              "left": "FPS médio",
+              "right": "o desempenho no geral"
+            },
+            {
+              "left": "1% low",
+              "right": "os piores momentos"
+            },
+            {
+              "left": "upscaling",
+              "right": "desenhar menor e aumentar com IA"
+            },
+            {
+              "left": "geração de quadros",
+              "right": "imagens inventadas entre as reais"
+            }
+          ],
+          "explanation": "Quatro números e recursos para ler testes.",
+          "pitfall": "Upscaling e geração de quadros são coisas diferentes."
+        }
+      ]
+    },
+    {
+      "slug": "memoria-ram-ddr5-6000-cl30",
+      "title": "Memória RAM: lendo “DDR5-6000 CL30”",
+      "module": "Memória, armazenamento e o resto",
+      "summary": "O anúncio de memória traz o tipo, a velocidade, a latência e o kit. DDR4 e DDR5 não se misturam, dois pentes rendem mais que um e a velocidade anunciada só aparece depois de ligar um perfil na BIOS.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A estrada até a bancada",
+          "body": [
+            "Ingredientes chegam à bancada por uma estrada. Uma estrada larga, com caminhões rápidos e que saem logo, abastece melhor.",
+            "A memória RAM é essa bancada, e o anúncio dela descreve a estrada."
+          ],
+          "terms": [
+            {
+              "word": "Memória RAM",
+              "meaning": "a memória rápida onde ficam os programas abertos. Ela se apaga quando o PC desliga."
+            },
+            {
+              "word": "Processador (CPU)",
+              "meaning": "o chip que faz as contas e dá as ordens do computador. É o cérebro da máquina."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os pedaços do anúncio",
+          "body": [
+            "Um anúncio típico diz o tipo, a velocidade, a latência e quantos pentes vêm no kit."
+          ],
+          "terms": [
+            {
+              "word": "DDR4 e DDR5",
+              "meaning": "as duas gerações de memória RAM em uso. Uma não encaixa no lugar da outra."
+            },
+            {
+              "word": "MT/s",
+              "meaning": "milhões de transferências por segundo: a velocidade da memória. A DDR5-6000 faz 6000 MT/s."
+            },
+            {
+              "word": "Latência (CL)",
+              "meaning": "quantos ciclos a memória demora para começar a responder. Menor é melhor."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/pc/nome-ram.svg",
+            "alt": "A descrição “DDR5 6000 CL30 2×16 GB” cortada em quatro pedaços. “DDR5” é o tipo, a geração da memória. “6000” é a velocidade, em milhões de transferências por segundo. “CL30” é a latência, o tempo de resposta em ciclos: menor é melhor. “2×16 GB” é o kit, com dois pentes de 16 GB.",
+            "caption": "Tipo, velocidade, latência e kit."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "DDR4 ou DDR5",
+          "body": [
+            "A DDR5 é a geração atual, mais rápida. A DDR4 aparece em PCs mais antigos e baratos.",
+            "Uma não encaixa no lugar da outra. Quem decide é a placa-mãe, e o soquete do processador costuma decidir a placa."
+          ],
+          "terms": [
+            {
+              "word": "Placa-mãe",
+              "meaning": "a placa grande onde todas as peças se encaixam e conversam."
+            },
+            {
+              "word": "Soquete",
+              "meaning": "o encaixe do processador na placa-mãe. Os dois precisam ter o mesmo soquete."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Velocidade e latência juntas",
+          "body": [
+            "A velocidade diz quantas transferências por segundo. A latência, o CL, diz quantos ciclos a memória demora para começar a responder.",
+            "O tempo de verdade junta os dois: CL vezes 2000, dividido pela velocidade. DDR5-6000 CL30 e DDR4-3200 CL16 dão os mesmos 10 nanossegundos, mas a DDR5 transfere quase o dobro."
+          ],
+          "example": {
+            "label": "Tempo de resposta em nanossegundos",
+            "lines": [
+              "DDR5-6000 CL30: 30 × 2000 ÷ 6000 = 10 ns",
+              "DDR4-3200 CL16: 16 × 2000 ÷ 3200 = 10 ns",
+              "DDR5-6000 CL36: 36 × 2000 ÷ 6000 = 12 ns"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Dois pentes: dual channel",
+          "body": [
+            "O processador lê de dois pentes ao mesmo tempo, quando eles estão nos encaixes certos. Isso dobra a largura da estrada.",
+            "Por isso 2 × 16 GB rende mais que um pente só de 32 GB. O manual da placa diz em quais encaixes colocar."
+          ],
+          "terms": [
+            {
+              "word": "Dual channel",
+              "meaning": "usar dois pentes de memória iguais, para o processador ler dos dois ao mesmo tempo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Ligar o perfil na BIOS",
+          "body": [
+            "Recém-instalada, a memória roda numa velocidade básica, abaixo da anunciada. Para chegar aos 6000, liga-se um perfil na BIOS: XMP na Intel, EXPO na AMD.",
+            "É um clique, mas muita gente nunca faz e usa a memória mais lenta do que pagou."
+          ],
+          "terms": [
+            {
+              "word": "XMP e EXPO",
+              "meaning": "perfis gravados na memória que a fazem rodar na velocidade anunciada. Precisam ser ligados na BIOS."
+            },
+            {
+              "word": "BIOS",
+              "meaning": "o programa gravado na placa-mãe que liga o computador antes do sistema. O nome técnico de hoje é UEFI."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quanto comprar em 2026",
+          "body": [
+            "A quantidade conta mais que a velocidade quando falta memória. Com pouca RAM, o PC usa o armazenamento como bancada, e tudo fica lento."
+          ],
+          "terms": [
+            {
+              "word": "SSD",
+              "meaning": "o armazenamento sem partes móveis, feito de chips. É muito mais rápido que os discos que giram."
+            }
+          ],
+          "table": {
+            "label": "Quantidade de RAM",
+            "headers": [
+              "RAM",
+              "Para quê"
+            ],
+            "rows": [
+              [
+                "8 GB",
+                "só o básico, e já aperta"
+              ],
+              [
+                "16 GB",
+                "estudo, escritório e jogos mais leves"
+              ],
+              [
+                "32 GB",
+                "jogos atuais com folga e edição"
+              ],
+              [
+                "64 GB",
+                "edição pesada, máquinas virtuais e IA"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na hora de comprar",
+          "body": [
+            "Cai o kit de um pente só, anunciado como “32 GB”. Dois de 16 rendem mais.",
+            "No AMD AM5, a combinação mais recomendada é DDR5-6000 CL30. Mais rápido que isso quase não rende."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a memória engana."
+          ],
+          "bullets": [
+            "Comprar DDR4 para uma placa DDR5, ou o contrário.",
+            "Usar um pente só e perder o dual channel.",
+            "Esquecer de ligar o XMP ou o EXPO.",
+            "Olhar só a velocidade e ignorar a latência."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Tipo, velocidade, latência e kit."
+          ],
+          "bullets": [
+            "DDR5 é a geração atual; DDR4 não encaixa no lugar dela.",
+            "6000: velocidade em MT/s.",
+            "CL30: latência; menor é melhor.",
+            "Tempo real: CL × 2000 ÷ velocidade.",
+            "Dois pentes: dual channel.",
+            "Ligue o XMP ou o EXPO na BIOS."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "CL",
+          "statement": "Em “DDR5-6000 CL30”, o que o CL30 indica?",
+          "options": [
+            "a capacidade",
+            "a latência: ciclos até começar a responder",
+            "a velocidade",
+            "o tamanho do pente",
+            "a marca"
+          ],
+          "correct_index": 1,
+          "explanation": "Menor é melhor.",
+          "pitfall": "6000 é a velocidade."
+        },
+        {
+          "topic": "Tempo",
+          "statement": "Qual é o tempo de resposta de uma DDR5-6000 CL30?",
+          "options": [
+            "30 ns",
+            "10 ns",
+            "6 ns",
+            "60 ns",
+            "3 ns"
+          ],
+          "correct_index": 1,
+          "explanation": "30 × 2000 ÷ 6000 = 10 ns.",
+          "pitfall": "O CL sozinho não é o tempo."
+        },
+        {
+          "topic": "Pentes",
+          "statement": "O que costuma render mais?",
+          "options": [
+            "1 pente de 32 GB",
+            "2 pentes de 16 GB",
+            "são iguais",
+            "3 pentes de 8 GB",
+            "4 pentes de 4 GB"
+          ],
+          "correct_index": 1,
+          "explanation": "Dois pentes ativam o dual channel.",
+          "pitfall": "Um pente só lê por um caminho."
+        },
+        {
+          "topic": "XMP",
+          "statement": "A memória foi instalada e roda abaixo do anunciado. O que fazer?",
+          "options": [
+            "trocar a fonte",
+            "ligar o XMP ou o EXPO na BIOS",
+            "comprar outra placa de vídeo",
+            "nada resolve",
+            "formatar o PC"
+          ],
+          "correct_index": 1,
+          "explanation": "O perfil faz a memória rodar na velocidade da caixa.",
+          "pitfall": "Sem o perfil, ela fica na velocidade básica."
+        },
+        {
+          "topic": "Encaixe",
+          "statement": "Dá para usar DDR4 numa placa feita para DDR5?",
+          "options": [
+            "sim",
+            "não: o encaixe é diferente",
+            "só com adaptador barato",
+            "só em AMD",
+            "só com 2 pentes"
+          ],
+          "correct_index": 1,
+          "explanation": "O corte no pente fica em outro lugar.",
+          "pitfall": "Não existe adaptador para isso."
+        },
+        {
+          "topic": "Quantidade",
+          "statement": "Para jogos atuais com folga em 2026, quanto de RAM?",
+          "options": [
+            "4 GB",
+            "32 GB",
+            "2 GB",
+            "8 GB",
+            "1 TB"
+          ],
+          "correct_index": 1,
+          "explanation": "16 GB serve para o mais leve; 32 GB dá folga.",
+          "pitfall": "8 GB já aperta no básico."
+        },
+        {
+          "topic": "AM5",
+          "statement": "Qual combinação de memória é a mais recomendada no AMD AM5?",
+          "options": [
+            "DDR4-3200",
+            "DDR5-6000 CL30",
+            "DDR3-1600",
+            "DDR5-4800 CL40",
+            "qualquer uma"
+          ],
+          "correct_index": 1,
+          "explanation": "É o ponto de equilíbrio da plataforma.",
+          "pitfall": "Mais rápido que isso quase não rende."
+        },
+        {
+          "topic": "Anúncio",
+          "format": "match",
+          "statement": "Ligue cada pedaço do anúncio ao que ele diz.",
+          "pairs": [
+            {
+              "left": "DDR5",
+              "right": "o tipo"
+            },
+            {
+              "left": "6000",
+              "right": "a velocidade"
+            },
+            {
+              "left": "CL30",
+              "right": "a latência"
+            },
+            {
+              "left": "2×16 GB",
+              "right": "o kit de dois pentes"
+            }
+          ],
+          "explanation": "Quatro informações em uma linha.",
+          "pitfall": "Velocidade e latência se leem juntas."
+        }
+      ]
+    },
+    {
+      "slug": "ssd-nvme-m2-e-pcie",
+      "title": "Armazenamento: HD, SSD, NVMe, M.2 e PCIe",
+      "module": "Memória, armazenamento e o resto",
+      "summary": "Os nomes de armazenamento misturam formato e velocidade. M.2 é o formato do pente; NVMe e SATA são o jeito de conversar; PCIe 3.0, 4.0 e 5.0 dizem a velocidade da estrada. Em 2026, o mínimo sensato é um SSD NVMe de 1 TB.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O formato da caixa e a estrada",
+          "body": [
+            "Duas caixas iguais podem chegar de bicicleta ou de caminhão. O formato da caixa não diz a velocidade da entrega.",
+            "Com o armazenamento é igual: o formato e a velocidade são coisas diferentes."
+          ],
+          "terms": [
+            {
+              "word": "SSD",
+              "meaning": "o armazenamento sem partes móveis, feito de chips. É muito mais rápido que os discos que giram."
+            },
+            {
+              "word": "HD",
+              "meaning": "o armazenamento antigo, com um disco que gira. É barato por espaço, mas lento."
+            },
+            {
+              "word": "Placa de vídeo (GPU)",
+              "meaning": "a peça que desenha as imagens na tela. Em jogos, é a que mais pesa no desempenho."
+            },
+            {
+              "word": "Placa-mãe",
+              "meaning": "a placa grande onde todas as peças se encaixam e conversam."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "HD, SSD e as velocidades",
+          "body": [
+            "O HD tem um disco que gira, e lê cerca de 150 MB/s. O SSD é feito de chips: os mais simples leem 550 MB/s, e os NVMe chegam a 7000 ou mais.",
+            "Para ligar o PC e abrir jogos, a diferença entre HD e SSD é enorme. Entre SSDs rápidos, é bem menor."
+          ],
+          "terms": [
+            {
+              "word": "SATA",
+              "meaning": "a ligação antiga de HDs e SSDs, limitada a cerca de 550 MB/s."
+            },
+            {
+              "word": "NVMe",
+              "meaning": "o jeito rápido de um SSD conversar com o PC, pelas linhas PCIe."
+            },
+            {
+              "word": "PCIe",
+              "meaning": "o caminho de dados entre a placa-mãe e peças como a placa de vídeo e o SSD. Cada geração dobra a velocidade."
+            }
+          ],
+          "table": {
+            "label": "Velocidades típicas de leitura",
+            "headers": [
+              "Tipo",
+              "Velocidade"
+            ],
+            "rows": [
+              [
+                "HD",
+                "cerca de 150 MB/s"
+              ],
+              [
+                "SSD SATA",
+                "cerca de 550 MB/s"
+              ],
+              [
+                "SSD NVMe PCIe 3.0",
+                "cerca de 3500 MB/s"
+              ],
+              [
+                "SSD NVMe PCIe 4.0",
+                "cerca de 7000 MB/s"
+              ],
+              [
+                "SSD NVMe PCIe 5.0",
+                "de 10000 a 14000 MB/s"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "M.2 é formato",
+          "body": [
+            "M.2 é o formato do pente pequeno que encaixa direto na placa-mãe. Existe SSD M.2 lento, que conversa por SATA. E existe SSD M.2 NVMe, rápido.",
+            "O anúncio precisa dizer NVMe. “M.2” sozinho não garante a velocidade."
+          ],
+          "terms": [
+            {
+              "word": "M.2",
+              "meaning": "um formato de peça: o pente pequeno que encaixa direto na placa-mãe. O formato não diz a velocidade."
+            },
+            {
+              "word": "Placa-mãe",
+              "meaning": "a placa grande onde todas as peças se encaixam e conversam."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "PCIe: a geração da estrada",
+          "body": [
+            "Os SSD NVMe usam as linhas PCIe da placa-mãe. Cada geração dobra a velocidade: 3.0, 4.0 e 5.0.",
+            "Um SSD PCIe 5.0 numa placa só 4.0 funciona, mas na velocidade 4.0. E em jogos, a diferença entre 4.0 e 5.0 quase não aparece."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Outros números da ficha",
+          "body": [
+            "A ficha traz a capacidade em TB e a durabilidade em TBW: quantos terabytes dá para gravar antes do desgaste.",
+            "SSDs com memória chamada QLC são mais baratos e mais lentos para gravar muito; os TLC aguentam melhor. Para uso comum, os dois servem."
+          ],
+          "terms": [
+            {
+              "word": "TBW",
+              "meaning": "terabytes gravados: quanto dá para escrever no SSD antes do desgaste esperado."
+            },
+            {
+              "word": "TLC e QLC",
+              "meaning": "tipos de chip de SSD. O QLC guarda mais por chip e é mais barato, mas grava mais devagar e desgasta antes."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quanto comprar em 2026",
+          "body": [
+            "Sistema e programas ocupam cerca de 100 GB, e um jogo grande passa de 100 GB sozinho.",
+            "Para jogar, 1 TB é o mínimo sensato e 2 TB dá folga. Um HD pode ficar como segunda gaveta, para fotos e backup."
+          ],
+          "example": {
+            "label": "Planejando o espaço",
+            "lines": [
+              "Sistema e programas: cerca de 100 GB",
+              "Três jogos grandes: 300 a 450 GB",
+              "Folga para atualizações e arquivos",
+              "Total: 1 TB é o mínimo para jogar"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na hora de comprar",
+          "body": [
+            "Cai o “SSD M.2 1 TB” barato que, na ficha, é SATA. Procure a palavra NVMe.",
+            "Também cai o SSD PCIe 5.0 caro numa placa que só tem 4.0."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde o armazenamento engana."
+          ],
+          "bullets": [
+            "Achar que M.2 é sempre rápido.",
+            "Usar HD como disco do sistema.",
+            "Pagar por PCIe 5.0 sem placa que aproveite.",
+            "Comprar pouco espaço e ficar desinstalando jogo."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Formato não é velocidade."
+          ],
+          "bullets": [
+            "HD: lento e barato; serve de segunda gaveta.",
+            "SSD SATA: cerca de 550 MB/s.",
+            "SSD NVMe: de 3500 a 14000 MB/s, conforme o PCIe.",
+            "M.2 é formato; NVMe é o jeito rápido de conversar.",
+            "Cada geração PCIe dobra a velocidade.",
+            "Em 2026: 1 TB NVMe é o mínimo para jogar."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "M.2",
+          "statement": "Um SSD M.2 é sempre NVMe e rápido?",
+          "options": [
+            "sim",
+            "não: M.2 é o formato, e existe M.2 SATA",
+            "sim, se for azul",
+            "só em AMD",
+            "só com 2 TB"
+          ],
+          "correct_index": 1,
+          "explanation": "O anúncio precisa dizer NVMe.",
+          "pitfall": "Formato não diz velocidade."
+        },
+        {
+          "topic": "Velocidade",
+          "statement": "Qual é o mais rápido?",
+          "options": [
+            "HD",
+            "SSD SATA",
+            "SSD NVMe PCIe 4.0",
+            "pendrive",
+            "DVD"
+          ],
+          "correct_index": 2,
+          "explanation": "Cerca de 7000 MB/s, contra 550 do SATA.",
+          "pitfall": "O HD fica em torno de 150 MB/s."
+        },
+        {
+          "topic": "PCIe",
+          "statement": "Um SSD PCIe 5.0 numa placa só PCIe 4.0:",
+          "options": [
+            "não funciona",
+            "funciona, na velocidade 4.0",
+            "queima",
+            "fica mais rápido",
+            "vira SATA"
+          ],
+          "correct_index": 1,
+          "explanation": "A estrada mais lenta manda.",
+          "pitfall": "Funciona, só não rende tudo."
+        },
+        {
+          "topic": "Sistema",
+          "statement": "Onde instalar o sistema operacional hoje?",
+          "options": [
+            "num HD",
+            "num SSD",
+            "num pendrive",
+            "na memória RAM",
+            "na placa de vídeo"
+          ],
+          "correct_index": 1,
+          "explanation": "Ligar e abrir programas fica muito mais rápido.",
+          "pitfall": "O HD serve de segunda gaveta."
+        },
+        {
+          "topic": "TBW",
+          "statement": "O que o TBW de um SSD indica?",
+          "options": [
+            "a velocidade",
+            "quanto dá para gravar antes do desgaste esperado",
+            "o preço",
+            "o formato",
+            "a temperatura"
+          ],
+          "correct_index": 1,
+          "explanation": "É uma medida de durabilidade.",
+          "pitfall": "Velocidade é outra linha da ficha."
+        },
+        {
+          "topic": "Espaço",
+          "statement": "Para jogar em 2026, qual é o mínimo sensato de SSD?",
+          "options": [
+            "128 GB",
+            "1 TB",
+            "32 GB",
+            "256 GB",
+            "10 TB"
+          ],
+          "correct_index": 1,
+          "explanation": "Um jogo grande passa de 100 GB sozinho.",
+          "pitfall": "256 GB acaba com dois jogos."
+        },
+        {
+          "topic": "Jogos",
+          "statement": "Em jogos, trocar um SSD PCIe 4.0 por um 5.0 costuma:",
+          "options": [
+            "dobrar o FPS",
+            "quase não fazer diferença",
+            "piorar muito",
+            "aumentar a VRAM",
+            "desligar o PC"
+          ],
+          "correct_index": 1,
+          "explanation": "Jogos raramente usam essa velocidade toda.",
+          "pitfall": "Não tem relação com o desempenho no jogo."
+        },
+        {
+          "topic": "Termos",
+          "format": "match",
+          "statement": "Ligue cada termo ao que ele é.",
+          "pairs": [
+            {
+              "left": "M.2",
+              "right": "o formato do pente"
+            },
+            {
+              "left": "NVMe",
+              "right": "o jeito rápido de conversar"
+            },
+            {
+              "left": "PCIe 4.0",
+              "right": "a geração da estrada"
+            },
+            {
+              "left": "SATA",
+              "right": "a ligação antiga, de cerca de 550 MB/s"
+            }
+          ],
+          "explanation": "Formato, protocolo e geração são coisas diferentes.",
+          "pitfall": "M.2 sozinho não diz a velocidade."
+        }
+      ]
+    },
+    {
+      "slug": "placa-mae-chipset-e-tamanho",
+      "title": "Placa-mãe: chipset, letras e tamanho",
+      "module": "Memória, armazenamento e o resto",
+      "summary": "O nome da placa-mãe traz o chipset, que diz o nível dela, como B850 ou Z890. A letra indica a faixa, e o número, a geração. O tamanho decide o gabinete e quantas peças cabem: ATX, Micro-ATX ou Mini-ITX.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O terreno da casa",
+          "body": [
+            "Antes de construir, você escolhe o terreno: o tamanho e o que a prefeitura deixa fazer ali. Isso limita a casa inteira.",
+            "A placa-mãe é o terreno do PC. Ela decide o que cabe e o que dá para ligar."
+          ],
+          "terms": [
+            {
+              "word": "Placa-mãe",
+              "meaning": "a placa grande onde todas as peças se encaixam e conversam."
+            },
+            {
+              "word": "Placa de vídeo (GPU)",
+              "meaning": "a peça que desenha as imagens na tela. Em jogos, é a que mais pesa no desempenho."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Como ler o nome",
+          "body": [
+            "Um nome como “ASUS TUF Gaming B850-Plus” tem a marca, a linha da marca e o chipset. O chipset é a parte que importa: B850.",
+            "A letra diz a faixa, e os números dizem a geração."
+          ],
+          "terms": [
+            {
+              "word": "Chipset",
+              "meaning": "o conjunto de chips da placa-mãe que define o que ela oferece: quantas portas, se aceita overclock e mais."
+            },
+            {
+              "word": "Overclock",
+              "meaning": "fazer uma peça trabalhar acima da velocidade de fábrica para ganhar desempenho."
+            }
+          ],
+          "example": {
+            "label": "Lendo o nome de uma placa",
+            "lines": [
+              "ASUS: a marca",
+              "TUF Gaming: a linha da marca",
+              "B850: o chipset, a parte que importa",
+              "Plus: a versão da marca"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "As letras",
+          "body": [
+            "Nas duas marcas, a letra separa as faixas. Z e X são o topo; B é o meio, o melhor custo para a maioria; H e A são o básico.",
+            "Na Intel, só o Z libera o overclock do processador K. Nas placas AMD, o B já libera."
+          ],
+          "terms": [
+            {
+              "word": "Processador (CPU)",
+              "meaning": "o chip que faz as contas e dá as ordens do computador. É o cérebro da máquina."
+            }
+          ],
+          "table": {
+            "label": "Chipsets em 2026",
+            "headers": [
+              "Faixa",
+              "AMD (AM5)",
+              "Intel (LGA1851)",
+              "Intel (LGA1700)"
+            ],
+            "rows": [
+              [
+                "topo",
+                "X870E e X870",
+                "Z890",
+                "Z790"
+              ],
+              [
+                "meio",
+                "B850 e B650",
+                "B860",
+                "B760"
+              ],
+              [
+                "básico",
+                "A620",
+                "H810",
+                "H610"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que muda entre as faixas",
+          "body": [
+            "Placas de topo têm mais encaixes para SSD, mais portas USB rápidas e mais linhas PCIe da geração nova. As básicas têm o necessário.",
+            "Para a maioria das montagens, uma B resolve sem desperdício."
+          ],
+          "terms": [
+            {
+              "word": "SSD",
+              "meaning": "o armazenamento sem partes móveis, feito de chips. É muito mais rápido que os discos que giram."
+            },
+            {
+              "word": "M.2",
+              "meaning": "um formato de peça: o pente pequeno que encaixa direto na placa-mãe. O formato não diz a velocidade."
+            },
+            {
+              "word": "PCIe",
+              "meaning": "o caminho de dados entre a placa-mãe e peças como a placa de vídeo e o SSD. Cada geração dobra a velocidade."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os tamanhos",
+          "body": [
+            "O tamanho da placa decide o gabinete e quantos encaixes ela tem. Uma placa menor cabe num gabinete menor, mas tem menos espaço para peças."
+          ],
+          "table": {
+            "label": "Tamanhos de placa-mãe",
+            "headers": [
+              "Tamanho",
+              "Medida",
+              "Para quem"
+            ],
+            "rows": [
+              [
+                "ATX",
+                "30,5 × 24,4 cm",
+                "a montagem comum, com mais encaixes"
+              ],
+              [
+                "Micro-ATX",
+                "24,4 × 24,4 cm",
+                "boa e mais barata"
+              ],
+              [
+                "Mini-ITX",
+                "17 × 17 cm",
+                "PC pequeno, com menos encaixes"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Detalhes que importam",
+          "body": [
+            "Confira se a placa tem Wi-Fi, se não for usar cabo de rede. Confira também quantos encaixes M.2 e quantas portas USB atrás.",
+            "E, de novo: o soquete e o tipo de memória precisam bater com o processador e a RAM."
+          ],
+          "terms": [
+            {
+              "word": "Soquete",
+              "meaning": "o encaixe do processador na placa-mãe. Os dois precisam ter o mesmo soquete."
+            },
+            {
+              "word": "Memória RAM",
+              "meaning": "a memória rápida onde ficam os programas abertos. Ela se apaga quando o PC desliga."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A BIOS e o processador novo",
+          "body": [
+            "Uma placa fabricada antes do processador pode precisar de BIOS nova para reconhecê-lo. Muitas placas trazem um botão para atualizar sem processador instalado.",
+            "Na loja, vale perguntar se a placa já sai com a BIOS atual."
+          ],
+          "terms": [
+            {
+              "word": "BIOS",
+              "meaning": "o programa gravado na placa-mãe que liga o computador antes do sistema. O nome técnico de hoje é UEFI."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na hora de comprar",
+          "body": [
+            "Cai pagar caro por uma placa Z ou X sem usar overclock nem os encaixes extras. A B costuma bastar.",
+            "Também cai comprar uma placa Mini-ITX sem perceber que ela tem só dois encaixes de memória."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a placa-mãe engana."
+          ],
+          "bullets": [
+            "Pagar pelo processador K e comprar placa Intel sem Z.",
+            "Comprar placa sem Wi-Fi e não ter cabo de rede onde fica o PC.",
+            "Esquecer de conferir o tamanho contra o gabinete.",
+            "Ignorar a BIOS ao montar com processador mais novo que a placa."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O terreno do PC."
+          ],
+          "bullets": [
+            "O chipset é a parte que importa no nome.",
+            "Z e X: topo. B: meio. H e A: básico.",
+            "Overclock na Intel: só no Z.",
+            "ATX, Micro-ATX e Mini-ITX: tamanho e encaixes.",
+            "Confira Wi-Fi, encaixes M.2 e portas USB.",
+            "Soquete, memória e BIOS precisam bater."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Chipset",
+          "statement": "No nome “MSI MAG B850 Tomahawk”, qual parte é o chipset?",
+          "options": [
+            "MSI",
+            "MAG",
+            "B850",
+            "Tomahawk",
+            "nenhuma"
+          ],
+          "correct_index": 2,
+          "explanation": "B850 é o chipset: faixa B, geração 850.",
+          "pitfall": "MAG e Tomahawk são nomes da linha da marca."
+        },
+        {
+          "topic": "Faixa",
+          "statement": "Qual letra indica a faixa de topo nas placas Intel?",
+          "options": [
+            "H",
+            "B",
+            "Z",
+            "A",
+            "X"
+          ],
+          "correct_index": 2,
+          "explanation": "Na Intel, o topo é o Z.",
+          "pitfall": "X é o topo nas placas AMD."
+        },
+        {
+          "topic": "Overclock",
+          "statement": "Para fazer overclock num Core Ultra 7 265K, qual chipset Intel?",
+          "options": [
+            "H810",
+            "B860",
+            "Z890",
+            "A620",
+            "qualquer um"
+          ],
+          "correct_index": 2,
+          "explanation": "Só o Z libera o overclock na Intel.",
+          "pitfall": "A620 é de placa AMD."
+        },
+        {
+          "topic": "Custo",
+          "statement": "Para a maioria das montagens, qual faixa de placa costuma bastar?",
+          "options": [
+            "topo, sempre",
+            "a B, do meio",
+            "a mais barata possível, sempre",
+            "nenhuma",
+            "duas placas"
+          ],
+          "correct_index": 1,
+          "explanation": "A B tem o que a maioria usa, sem desperdício.",
+          "pitfall": "Topo só compensa com uso que aproveite."
+        },
+        {
+          "topic": "Tamanho",
+          "statement": "Qual tamanho de placa-mãe é o menor?",
+          "options": [
+            "ATX",
+            "Micro-ATX",
+            "Mini-ITX",
+            "E-ATX",
+            "são iguais"
+          ],
+          "correct_index": 2,
+          "explanation": "17 × 17 cm, para PCs pequenos.",
+          "pitfall": "Micro-ATX é o meio-termo."
+        },
+        {
+          "topic": "AM5",
+          "statement": "Qual destes chipsets é de placa AMD AM5?",
+          "options": [
+            "Z890",
+            "B850",
+            "B760",
+            "H610",
+            "Z790"
+          ],
+          "correct_index": 1,
+          "explanation": "B850 é do AM5, na faixa do meio.",
+          "pitfall": "B760 e H610 são do LGA1700."
+        },
+        {
+          "topic": "Wi-Fi",
+          "statement": "O PC vai ficar longe do roteador, sem cabo de rede. O que conferir na placa?",
+          "options": [
+            "a cor",
+            "se ela tem Wi-Fi",
+            "o número de saídas de vídeo",
+            "o chipset Z",
+            "o tamanho da caixa"
+          ],
+          "correct_index": 1,
+          "explanation": "Nem toda placa vem com Wi-Fi.",
+          "pitfall": "Sem ele, seria preciso um adaptador."
+        },
+        {
+          "topic": "Letras",
+          "format": "match",
+          "statement": "Ligue cada chipset à sua faixa.",
+          "pairs": [
+            {
+              "left": "X870E",
+              "right": "topo AMD"
+            },
+            {
+              "left": "B850",
+              "right": "meio AMD"
+            },
+            {
+              "left": "A620",
+              "right": "básico AMD"
+            },
+            {
+              "left": "Z890",
+              "right": "topo Intel"
+            }
+          ],
+          "explanation": "A letra diz a faixa nas duas marcas.",
+          "pitfall": "B é o meio nas duas."
+        }
+      ]
+    },
+    {
+      "slug": "fonte-watts-e-80-plus",
+      "title": "Fonte: watts, 80 Plus e o que não economizar",
+      "module": "Memória, armazenamento e o resto",
+      "summary": "A fonte é a peça em que menos se deve economizar. O nome traz a potência em watts e o selo de eficiência 80 Plus; a ficha traz se é modular e se segue o padrão ATX 3. Fonte genérica com potência inflada é o jeito mais comum de perder um PC.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A caixa d’água da casa",
+          "body": [
+            "Uma caixa d’água pequena demais deixa faltar água no banho. Uma caixa rachada pode alagar a casa inteira.",
+            "A fonte é a caixa d’água do PC: precisa do tamanho certo e de qualidade."
+          ],
+          "terms": [
+            {
+              "word": "Fonte",
+              "meaning": "a peça que recebe a energia da tomada e entrega a cada componente na medida certa."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quantos watts",
+          "body": [
+            "Some o consumo do processador e da placa de vídeo, e deixe uma folga de uns 30% a 40%. A página da placa de vídeo informa a fonte recomendada.",
+            "Uma fonte trabalhando perto do limite esquenta, faz barulho e dura menos."
+          ],
+          "terms": [
+            {
+              "word": "Processador (CPU)",
+              "meaning": "o chip que faz as contas e dá as ordens do computador. É o cérebro da máquina."
+            },
+            {
+              "word": "Placa de vídeo (GPU)",
+              "meaning": "a peça que desenha as imagens na tela. Em jogos, é a que mais pesa no desempenho."
+            },
+            {
+              "word": "TDP",
+              "meaning": "o calor, em watts, que o cooler precisa dar conta. Dá uma ideia do consumo. Na placa de vídeo, a NVIDIA chama de TGP."
+            },
+            {
+              "word": "Cooler",
+              "meaning": "o sistema que tira o calor de uma peça, com ventoinha ou com líquido."
+            }
+          ],
+          "example": {
+            "label": "Uma conta de bolso",
+            "lines": [
+              "Processador: 120 W",
+              "Placa de vídeo: 250 W",
+              "Resto do PC: 50 W",
+              "Soma: 420 W; com folga, uma fonte de 650 W"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O selo 80 Plus",
+          "body": [
+            "Toda fonte desperdiça parte da energia em calor. O selo 80 Plus diz o quanto ela aproveita. Vai do Bronze ao Titanium, passando por Silver, Gold e Platinum.",
+            "Mais eficiente esquenta menos e gasta menos na conta de luz. Gold é uma ótima escolha; Bronze de marca boa também serve."
+          ],
+          "terms": [
+            {
+              "word": "80 Plus",
+              "meaning": "o selo de eficiência da fonte, que vai do Bronze ao Titanium. Mais eficiente desperdiça menos energia em calor."
+            }
+          ],
+          "table": {
+            "label": "Selos 80 Plus (com metade da carga)",
+            "headers": [
+              "Selo",
+              "Aproveitamento aproximado"
+            ],
+            "rows": [
+              [
+                "Bronze",
+                "85%"
+              ],
+              [
+                "Silver",
+                "88%"
+              ],
+              [
+                "Gold",
+                "90%"
+              ],
+              [
+                "Platinum",
+                "92%"
+              ],
+              [
+                "Titanium",
+                "94%"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Watts de verdade e watts de caixa",
+          "body": [
+            "Fontes genéricas anunciam potências que não entregam. Uma “600 W” sem selo e sem marca pode não aguentar 400 W com segurança.",
+            "E, ao falhar, ela pode levar junto a placa-mãe e a placa de vídeo."
+          ],
+          "terms": [
+            {
+              "word": "Placa-mãe",
+              "meaning": "a placa grande onde todas as peças se encaixam e conversam."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Modular ou não",
+          "body": [
+            "Na fonte modular, os cabos se encaixam e se soltam: você liga só os que vai usar, e o gabinete fica arrumado. Na semimodular, só alguns soltam.",
+            "Na não modular, todos os cabos vêm presos. Funciona igual; só dá mais trabalho para organizar."
+          ],
+          "terms": [
+            {
+              "word": "Fonte modular",
+              "meaning": "a fonte em que os cabos se encaixam e se soltam. Só se liga o que vai usar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "ATX 3 e o conector das placas novas",
+          "body": [
+            "As placas de vídeo potentes recentes usam um conector de energia próprio, o 12V-2x6. Fontes do padrão ATX 3.0 e 3.1 já trazem esse cabo.",
+            "Esse conector precisa entrar até o fim. Encaixe pela metade esquenta e já derreteu conectores."
+          ],
+          "terms": [
+            {
+              "word": "ATX 3",
+              "meaning": "o padrão atual de fontes, feito para os picos de consumo das placas de vídeo novas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Como escolher",
+          "body": [
+            "Escolha a potência pela conta com folga. Depois, prefira modelos com selo, de marcas com boas análises e com garantia longa.",
+            "Garantia de 5 anos ou mais costuma ser sinal de que a fabricante confia na fonte."
+          ],
+          "example": {
+            "label": "A escolha da fonte",
+            "lines": [
+              "Somar o consumo e pôr folga",
+              "Conferir a recomendação da placa de vídeo",
+              "Escolher um modelo com selo 80 Plus",
+              "Preferir marca com boas análises e garantia longa"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na hora de comprar",
+          "body": [
+            "Cai o PC montado com placa de vídeo cara e fonte genérica. É a economia que mais sai cara.",
+            "Também cai o conector de energia da placa de vídeo mal encaixado."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde a fonte engana."
+          ],
+          "bullets": [
+            "Confiar na potência estampada numa fonte sem marca.",
+            "Comprar a fonte no limite, sem folga.",
+            "Achar que o selo 80 Plus diz a potência: ele diz a eficiência.",
+            "Encaixar pela metade o conector de energia da placa de vídeo."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A caixa d’água do PC."
+          ],
+          "bullets": [
+            "Potência: some e deixe 30% a 40% de folga.",
+            "80 Plus: eficiência, de Bronze a Titanium.",
+            "Gold é ótimo; Bronze de marca boa serve.",
+            "Fonte genérica pode não entregar o que promete.",
+            "Modular: só os cabos que vai usar.",
+            "ATX 3 traz o conector das placas novas."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Conta",
+          "statement": "Processador de 120 W, placa de vídeo de 250 W e 50 W do resto. Qual fonte faz sentido?",
+          "options": [
+            "350 W",
+            "650 W",
+            "200 W",
+            "400 W, no limite",
+            "2000 W"
+          ],
+          "correct_index": 1,
+          "explanation": "420 W com folga de uns 30% a 40% dá perto de 600 W a 650 W.",
+          "pitfall": "Fonte no limite esquenta e dura menos."
+        },
+        {
+          "topic": "80 Plus",
+          "statement": "O que o selo 80 Plus indica?",
+          "options": [
+            "a potência máxima",
+            "a eficiência: quanto da energia é aproveitada",
+            "o tamanho",
+            "a cor",
+            "o número de cabos"
+          ],
+          "correct_index": 1,
+          "explanation": "Vai do Bronze ao Titanium.",
+          "pitfall": "Potência é outro número."
+        },
+        {
+          "topic": "Gold",
+          "statement": "Qual selo aproveita mais energia?",
+          "options": [
+            "Bronze",
+            "Gold",
+            "Silver",
+            "nenhum selo",
+            "Bronze genérico"
+          ],
+          "correct_index": 1,
+          "explanation": "Gold fica perto de 90% com metade da carga.",
+          "pitfall": "Bronze fica perto de 85%."
+        },
+        {
+          "topic": "Genérica",
+          "statement": "Por que evitar fonte genérica com potência alta estampada?",
+          "options": [
+            "porque é feia",
+            "porque pode não entregar o que promete e danificar outras peças",
+            "porque é modular",
+            "porque tem selo Gold",
+            "não precisa evitar"
+          ],
+          "correct_index": 1,
+          "explanation": "Potência de caixa não é potência de verdade.",
+          "pitfall": "A falha pode levar outras peças junto."
+        },
+        {
+          "topic": "Modular",
+          "statement": "O que é uma fonte modular?",
+          "options": [
+            "uma fonte sem cabos",
+            "uma fonte com cabos que se encaixam e se soltam",
+            "uma fonte para notebook",
+            "duas fontes juntas",
+            "uma fonte sem selo"
+          ],
+          "correct_index": 1,
+          "explanation": "Liga-se só o que vai usar.",
+          "pitfall": "Funciona igual à não modular."
+        },
+        {
+          "topic": "Conector",
+          "statement": "Qual é o cuidado com o conector 12V-2x6 das placas de vídeo novas?",
+          "options": [
+            "usar fita",
+            "encaixar até o fim",
+            "deixar solto",
+            "cortar o cabo",
+            "nenhum"
+          ],
+          "correct_index": 1,
+          "explanation": "Encaixe pela metade esquenta e pode derreter.",
+          "pitfall": "Ele precisa entrar todo."
+        },
+        {
+          "topic": "Garantia",
+          "statement": "Qual costuma ser sinal de fonte confiável?",
+          "options": [
+            "garantia de 3 meses",
+            "selo 80 Plus e garantia longa de marca com boas análises",
+            "a caixa mais bonita",
+            "o maior número de watts pelo menor preço",
+            "ser genérica"
+          ],
+          "correct_index": 1,
+          "explanation": "A fabricante que confia na fonte dá garantia longa.",
+          "pitfall": "Muito watt por pouco dinheiro é sinal de alerta."
+        },
+        {
+          "topic": "Escolha",
+          "format": "order",
+          "statement": "Ponha na ordem a escolha da fonte.",
+          "options": [
+            "Somar o consumo e pôr folga",
+            "Conferir a recomendação da placa de vídeo",
+            "Escolher um modelo com selo 80 Plus",
+            "Preferir marca com boas análises e garantia longa"
+          ],
+          "explanation": "Primeiro a potência, depois a qualidade.",
+          "pitfall": "Escolher pela marca sem saber a potência é chute."
+        }
+      ]
+    },
+    {
+      "slug": "lendo-um-anuncio-de-pc",
+      "title": "Juntando tudo: lendo um anúncio de PC",
+      "module": "Memória, armazenamento e o resto",
+      "summary": "Com as regras dos nomes, um anúncio de PC deixa de ser uma sopa de letras. Esta lição lê um anúncio linha por linha, mostra o que falta perguntar e monta exemplos de PC equilibrados para 2026.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Ler o rótulo do mercado",
+          "body": [
+            "Quem aprende a ler rótulo de comida passa a ver o açúcar escondido. O pacote bonito deixa de enganar.",
+            "Com anúncio de PC é igual: o nome de cada peça diz o que tem, e o que falta no anúncio também diz muito."
+          ],
+          "terms": [
+            {
+              "word": "Processador (CPU)",
+              "meaning": "o chip que faz as contas e dá as ordens do computador. É o cérebro da máquina."
+            },
+            {
+              "word": "Placa de vídeo (GPU)",
+              "meaning": "a peça que desenha as imagens na tela. Em jogos, é a que mais pesa no desempenho."
+            },
+            {
+              "word": "Memória RAM",
+              "meaning": "a memória rápida onde ficam os programas abertos. Ela se apaga quando o PC desliga."
+            },
+            {
+              "word": "SSD",
+              "meaning": "o armazenamento sem partes móveis, feito de chips. É muito mais rápido que os discos que giram."
+            },
+            {
+              "word": "Fonte",
+              "meaning": "a peça que recebe a energia da tomada e entrega a cada componente na medida certa."
+            },
+            {
+              "word": "Gargalo",
+              "meaning": "a peça mais fraca de um conjunto, que segura o desempenho das outras."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Um anúncio de verdade",
+          "body": [
+            "Um anúncio comum está na lista, pedaço por pedaço. Cada pedaço já conta uma história."
+          ],
+          "terms": [
+            {
+              "word": "VRAM",
+              "meaning": "a memória própria da placa de vídeo, onde ficam as texturas e a imagem em preparo."
+            },
+            {
+              "word": "Soquete",
+              "meaning": "o encaixe do processador na placa-mãe. Os dois precisam ter o mesmo soquete."
+            },
+            {
+              "word": "DDR4 e DDR5",
+              "meaning": "as duas gerações de memória RAM em uso. Uma não encaixa no lugar da outra."
+            },
+            {
+              "word": "NVMe",
+              "meaning": "o jeito rápido de um SSD conversar com o PC, pelas linhas PCIe."
+            },
+            {
+              "word": "PCIe",
+              "meaning": "o caminho de dados entre a placa-mãe e peças como a placa de vídeo e o SSD. Cada geração dobra a velocidade."
+            },
+            {
+              "word": "SATA",
+              "meaning": "a ligação antiga de HDs e SSDs, limitada a cerca de 550 MB/s."
+            },
+            {
+              "word": "HD",
+              "meaning": "o armazenamento antigo, com um disco que gira. É barato por espaço, mas lento."
+            },
+            {
+              "word": "Placa-mãe",
+              "meaning": "a placa grande onde todas as peças se encaixam e conversam."
+            }
+          ],
+          "example": {
+            "label": "Lendo linha por linha",
+            "lines": [
+              "Anúncio: PC Gamer Ryzen 5 5600 + RTX 4060 8 GB + 16 GB + SSD 512 GB + fonte 500 W",
+              "Ryzen 5 5600: faixa 5, série 5000, soquete AM4, memória DDR4",
+              "RTX 4060 8 GB: classe 60 da série 40, boa para 1080p",
+              "16 GB: falta dizer se são dois pentes",
+              "SSD 512 GB: falta dizer se é NVMe, e é pouco para jogos",
+              "Fonte 500 W: falta dizer a marca e o selo"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que perguntar ao vendedor",
+          "body": [
+            "O que o anúncio não diz costuma ser onde ele economizou. Estas perguntas resolvem quase tudo."
+          ],
+          "terms": [
+            {
+              "word": "Dual channel",
+              "meaning": "usar dois pentes de memória iguais, para o processador ler dos dois ao mesmo tempo."
+            },
+            {
+              "word": "80 Plus",
+              "meaning": "o selo de eficiência da fonte, que vai do Bronze ao Titanium. Mais eficiente desperdiça menos energia em calor."
+            },
+            {
+              "word": "Chipset",
+              "meaning": "o conjunto de chips da placa-mãe que define o que ela oferece: quantas portas, se aceita overclock e mais."
+            },
+            {
+              "word": "Overclock",
+              "meaning": "fazer uma peça trabalhar acima da velocidade de fábrica para ganhar desempenho."
+            }
+          ],
+          "bullets": [
+            "A memória é em dois pentes, em dual channel?",
+            "O SSD é NVMe? De qual geração PCIe?",
+            "A fonte é de qual marca e tem selo 80 Plus?",
+            "Qual é a placa-mãe, e qual o chipset?",
+            "Qual é a garantia de cada peça?"
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Um PC de entrada para 1080p",
+          "body": [
+            "Para jogar em 1080p gastando pouco em 2026, a plataforma antiga ainda faz sentido. O exemplo é de peças, sem preço: preço muda toda semana."
+          ],
+          "table": {
+            "label": "Exemplo de entrada, 2026",
+            "headers": [
+              "Peça",
+              "Exemplo",
+              "Por quê"
+            ],
+            "rows": [
+              [
+                "processador",
+                "Ryzen 5 5600 ou Core i5-12400F",
+                "baratos e suficientes para 1080p"
+              ],
+              [
+                "placa de vídeo",
+                "Arc B580, RTX 5060 ou RX 9060 XT",
+                "boas para 1080p"
+              ],
+              [
+                "memória",
+                "2 × 8 GB DDR4-3200",
+                "dual channel na plataforma antiga"
+              ],
+              [
+                "SSD",
+                "1 TB NVMe",
+                "espaço para alguns jogos"
+              ],
+              [
+                "fonte",
+                "550 a 650 W, 80 Plus Bronze de marca",
+                "com folga e segurança"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Um PC intermediário para 1440p",
+          "body": [
+            "Para 1440p, a plataforma nova dá mais fôlego e mais caminho de troca no futuro."
+          ],
+          "terms": [
+            {
+              "word": "Latência (CL)",
+              "meaning": "quantos ciclos a memória demora para começar a responder. Menor é melhor."
+            }
+          ],
+          "table": {
+            "label": "Exemplo intermediário, 2026",
+            "headers": [
+              "Peça",
+              "Exemplo",
+              "Por quê"
+            ],
+            "rows": [
+              [
+                "processador",
+                "Ryzen 7 9800X3D ou Core Ultra 5 250K Plus",
+                "fortes em jogos"
+              ],
+              [
+                "placa de vídeo",
+                "RTX 5070 ou RX 9070",
+                "feitas para 1440p"
+              ],
+              [
+                "memória",
+                "2 × 16 GB DDR5-6000 CL30",
+                "folga e dual channel"
+              ],
+              [
+                "SSD",
+                "1 a 2 TB NVMe PCIe 4.0",
+                "rápido e com espaço"
+              ],
+              [
+                "fonte",
+                "750 W, 80 Plus Gold",
+                "folga para trocar a placa depois"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A conferência final",
+          "body": [
+            "Antes de comprar, passe por esta lista. Ela pega os erros que mais custam caro."
+          ],
+          "terms": [
+            {
+              "word": "BIOS",
+              "meaning": "o programa gravado na placa-mãe que liga o computador antes do sistema. O nome técnico de hoje é UEFI."
+            },
+            {
+              "word": "Cooler",
+              "meaning": "o sistema que tira o calor de uma peça, com ventoinha ou com líquido."
+            }
+          ],
+          "example": {
+            "label": "Antes de fechar a compra",
+            "lines": [
+              "Soquete do processador igual ao da placa-mãe",
+              "Tipo de memória que a placa aceita",
+              "BIOS que reconhece o processador",
+              "Placa de vídeo cabendo no gabinete",
+              "Fonte com folga, selo e marca",
+              "Cooler à altura do processador"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Montar ou comprar pronto",
+          "body": [
+            "Montar costuma sair mais barato e deixa escolher cada peça. Comprar pronto dá uma garantia só e menos dor de cabeça.",
+            "Com o que você aprendeu, dá para avaliar os dois: no PC pronto, leia a ficha inteira e procure onde economizaram."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na hora de comprar",
+          "body": [
+            "Cai o anúncio com processador e placa de vídeo fortes, e o resto escondido. As peças sem nome são onde está a economia.",
+            "Desconfie de “16 GB” sem dizer os pentes, de “SSD” sem dizer NVMe e de fonte sem marca."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde o anúncio engana."
+          ],
+          "bullets": [
+            "Escolher o PC só pelo processador e pela placa de vídeo.",
+            "Não perguntar a marca e o selo da fonte.",
+            "Aceitar SSD pequeno demais para os jogos que você quer.",
+            "Pagar por peça de topo e deixar outra virar gargalo."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O nome diz; o que falta também diz."
+          ],
+          "bullets": [
+            "Leia o anúncio peça por peça.",
+            "O que não aparece costuma ser onde economizaram.",
+            "Pergunte sobre pentes e NVMe; depois fonte, placa-mãe e garantia.",
+            "Entrada 1080p: plataforma antiga ainda serve.",
+            "1440p: plataforma nova, 32 GB e fonte Gold.",
+            "Passe a lista de conferência antes de comprar."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Anúncio",
+          "statement": "No anúncio “Ryzen 5 5600, RTX 4060”, qual memória a placa-mãe vai usar?",
+          "options": [
+            "DDR5",
+            "DDR4",
+            "DDR3",
+            "as duas",
+            "VRAM"
+          ],
+          "correct_index": 1,
+          "explanation": "O 5600 usa o AM4, que trabalha só com DDR4.",
+          "pitfall": "DDR5 é do AM5."
+        },
+        {
+          "topic": "Falta",
+          "statement": "O anúncio diz só “16 GB de RAM”. O que perguntar?",
+          "options": [
+            "a cor",
+            "se são dois pentes, em dual channel",
+            "o peso",
+            "a marca do mouse",
+            "nada"
+          ],
+          "correct_index": 1,
+          "explanation": "Um pente só perde desempenho.",
+          "pitfall": "A quantidade sozinha não conta tudo."
+        },
+        {
+          "topic": "SSD",
+          "statement": "O anúncio diz “SSD 512 GB”. O que falta saber?",
+          "options": [
+            "nada",
+            "se é NVMe, e se o espaço basta para os seus jogos",
+            "a cor do SSD",
+            "o tamanho do monitor",
+            "o chipset da placa de vídeo"
+          ],
+          "correct_index": 1,
+          "explanation": "SATA e NVMe têm velocidades muito diferentes; e 512 GB é pouco para jogos.",
+          "pitfall": "SSD não diz a velocidade sozinho."
+        },
+        {
+          "topic": "Fonte",
+          "statement": "O anúncio diz “fonte 500 W”, sem marca. O que é o mais importante perguntar?",
+          "options": [
+            "a cor dos cabos",
+            "a marca e o selo 80 Plus",
+            "o peso da caixa",
+            "se tem LED",
+            "nada"
+          ],
+          "correct_index": 1,
+          "explanation": "Fonte sem marca pode não entregar os 500 W.",
+          "pitfall": "LED não diz nada sobre segurança."
+        },
+        {
+          "topic": "1440p",
+          "statement": "Para jogar em 1440p, qual placa faz mais sentido?",
+          "options": [
+            "GTX 1650",
+            "RTX 5070",
+            "vídeo integrado",
+            "Arc A380",
+            "RTX 3050"
+          ],
+          "correct_index": 1,
+          "explanation": "A classe 70 é feita para 1440p.",
+          "pitfall": "As outras são de entrada."
+        },
+        {
+          "topic": "Escondido",
+          "statement": "Num anúncio, onde costuma estar a economia do vendedor?",
+          "options": [
+            "no processador em destaque",
+            "nas peças que aparecem sem nome",
+            "na placa de vídeo em destaque",
+            "no preço",
+            "no frete"
+          ],
+          "correct_index": 1,
+          "explanation": "O que não é dito costuma ser o mais barato possível.",
+          "pitfall": "As peças do destaque são as que vendem."
+        },
+        {
+          "topic": "Conferência",
+          "format": "order",
+          "statement": "Ponha na ordem a conferência final antes de comprar.",
+          "options": [
+            "Soquete do processador igual ao da placa-mãe",
+            "Tipo de memória que a placa aceita",
+            "Placa de vídeo cabendo no gabinete",
+            "Fonte com folga, selo e marca"
+          ],
+          "explanation": "Do encaixe à energia.",
+          "pitfall": "Pular o soquete pode tornar tudo inútil."
+        },
+        {
+          "topic": "Linhas do anúncio",
+          "format": "match",
+          "statement": "Ligue cada linha do anúncio ao que ela diz.",
+          "pairs": [
+            {
+              "left": "Ryzen 5 5600",
+              "right": "faixa 5 da série 5000, no AM4"
+            },
+            {
+              "left": "RTX 4060 8 GB",
+              "right": "classe 60 da série 40"
+            },
+            {
+              "left": "DDR5-6000 CL30",
+              "right": "memória rápida de geração atual"
+            },
+            {
+              "left": "80 Plus Gold",
+              "right": "fonte eficiente"
+            }
+          ],
+          "explanation": "Cada linha, lida com a sua regra.",
+          "pitfall": "O selo da fonte é eficiência, e não potência."
+        }
+      ]
+    }
+  ]
+}
