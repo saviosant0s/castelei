@@ -147,6 +147,15 @@ O Sávio quer um vídeo do Castelei com roteiro para ele narrar por cima. Fica
 para depois das estatísticas e do "do slide à lição", porque aí o vídeo mostra
 o diferencial de verdade.
 
+## Defeitos conhecidos (corrigir quando o Sávio pedir)
+
+- **Questão de pôr na ordem (`order`) marca errado quem acertou.** Relato do
+  Sávio, outubro de 2026: ele monta a sequência certa, e a correção mostra a
+  ordem trocada, como se a resposta tivesse mudado no caminho. Ainda não foi
+  investigado. Por onde começar: a tradução entre a posição NA TELA e a do
+  conteúdo (`StepShuffle`, campo `ordering` da resposta). A questão de ligar
+  pares (`match`) usa a mesma conta, então conferir as duas juntas.
+
 ## Ordem combinada
 
 1. Refazer as estatísticas.
