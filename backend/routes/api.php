@@ -73,6 +73,7 @@ Route::middleware('auth:sanctum')->group(function () {
     // Anotação da pessoa na lição, e a busca em todas as matérias.
     Route::get('/lessons/{lesson}/note', [StudyToolsController::class, 'showNote'])->whereNumber('lesson');
     Route::put('/lessons/{lesson}/note', [StudyToolsController::class, 'saveNote'])->whereNumber('lesson')->middleware('throttle:60,1');
+    Route::post('/lessons/{lesson}/note/review', [StudyToolsController::class, 'reviewNote'])->whereNumber('lesson')->middleware('throttle:10,1');
     Route::get('/search', [StudyToolsController::class, 'search'])->middleware('throttle:60,1');
 
     Route::post('/lessons/{lesson}/attempts', [AttemptController::class, 'store'])->whereNumber('lesson');

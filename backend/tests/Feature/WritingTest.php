@@ -244,9 +244,22 @@ class WritingTest extends TestCase
         ])->assertNotFound();
     }
 
+    public function test_a_chave_sozinha_nao_liga_a_correcao_da_escrita(): void
+    {
+        // A chave é dividida com a anotação: ligar uma não pode ligar a outra.
+        config(['castelei.writing.ai.key' => 'chave-de-teste', 'castelei.writing.ai.daily_limit' => 2]);
+        [$lesson, $question] = $this->licaoDeEscrita();
+        $attemptId = $this->comecar($lesson)['attempt']['id'];
+
+        $this->postJson("/api/attempts/{$attemptId}/writing/review", [
+            'question_id' => $question->id,
+            'text' => 'Um texto.',
+        ])->assertNotFound();
+    }
+
     public function test_com_chave_a_correcao_por_ia_tem_limite_por_dia(): void
     {
-        config(['castelei.writing.ai.key' => 'chave-de-teste', 'castelei.writing.ai.daily_limit' => 2]);
+        config(['castelei.writing.ai.key' => 'chave-de-teste', 'castelei.writing.ai.enabled' => true, 'castelei.writing.ai.daily_limit' => 2]);
 
         $this->app->instance(WritingReviewer::class, new class implements WritingReviewer
         {
@@ -272,7 +285,7 @@ class WritingTest extends TestCase
 
     public function test_falha_da_ia_devolve_a_correcao_do_dia(): void
     {
-        config(['castelei.writing.ai.key' => 'chave-de-teste', 'castelei.writing.ai.daily_limit' => 1]);
+        config(['castelei.writing.ai.key' => 'chave-de-teste', 'castelei.writing.ai.enabled' => true, 'castelei.writing.ai.daily_limit' => 1]);
 
         $this->app->instance(WritingReviewer::class, new class implements WritingReviewer
         {

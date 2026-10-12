@@ -142,9 +142,31 @@ return [
         'max_chars' => 6000,
         'ai' => [
             'key' => env('ANTHROPIC_API_KEY', ''),
+            // A chave sozinha NÃO liga esta correção: ela é dividida com a da
+            // anotação (`notes.ai`), e o Sávio ligou a IA só para a anotação.
+            'enabled' => (bool) env('WRITING_AI_ENABLED', false),
             'model' => env('WRITING_AI_MODEL', 'claude-opus-5'),
             // Correções por pessoa por dia. É a trava de custo, não um detalhe.
             'daily_limit' => (int) env('WRITING_AI_DAILY_LIMIT', 5),
+        ],
+    ],
+
+    /*
+    | ANOTAÇÃO DA LIÇÃO — a correção por IA da "explicação para si mesmo".
+    |
+    | A pessoa escreve (ou fala) o que entendeu, e a IA compara com o conteúdo
+    | da PRÓPRIA lição: o que acertou, o que está errado e o que faltou. Liga
+    | com ANTHROPIC_API_KEY e desliga com NOTE_AI_ENABLED=false. A mesma chave
+    | serve à Produção Textual, que tem o próprio interruptor (desligado).
+    |
+    | O limite por pessoa por dia é a trava de custo, como na escrita.
+    */
+    'notes' => [
+        'ai' => [
+            'key' => env('ANTHROPIC_API_KEY', ''),
+            'enabled' => (bool) env('NOTE_AI_ENABLED', true),
+            'model' => env('NOTE_AI_MODEL', 'claude-sonnet-5-5'),
+            'daily_limit' => (int) env('NOTE_AI_DAILY_LIMIT', 5),
         ],
     ],
 
