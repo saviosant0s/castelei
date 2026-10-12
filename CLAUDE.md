@@ -341,6 +341,15 @@ Três coisas de conteúdo:
 - **Nada de preço.** Preço em real muda toda semana e cada loja cobra uma coisa. Os exemplos de montagem dizem peças e o porquê de cada uma.
 - **Escopo `h` no verificador.** “Fonte” entra sozinha, porque aqui é sempre a de alimentação. Cuidado com duas armadilhas que já morderam: “cores” (em inglês, núcleos) casava com “Core Ultra”, e saiu da regex; e “HD” casa com “Full HD”, então a lição escreve “1080p”.
 
+**Narração da lição** (botão "Ouvir", `components/useNarration.ts`, texto em `lib/narration-text.ts`, áudios em `frontend/public/narracao/`). Pedido do Sávio: ouvir ajuda a prestar atenção, mas sem voz robótica. Por enquanto só o **Projeto Number Race** tem áudio, por escolha dele. Quatro coisas:
+
+- **Gravado uma vez, com voz aberta e de graça** (voz Dora, do Kokoro, escolhida pelo Sávio entre cinco abertas; `scripts/narrar.py`). O próximo passo combinado é o Azure (`AZURE_SPEECH_KEY`, plano F0, que recusa em vez de cobrar), regravando os mesmos arquivos. Gerar na hora custaria por uso, e o Sávio já tem medo de gasto que cresce sozinho (ver a correção por IA). Arquivo estático não custa nada para ouvir e funciona sem internet.
+- **O nome do arquivo é o resumo do TEXTO narrado**, não o número da etapa. Editar a etapa no painel muda o resumo; o áudio antigo deixa de ser achado, e o botão some até alguém gravar de novo. Áudio lendo um parágrafo que já não está na tela seria pior que áudio nenhum. Por isso o texto tem UMA definição, `narrationText`, que o script de gravação importa direto (`scripts/narracao-textos.mjs`).
+- **Código não é lido; a tradução linha a linha é.** Termo em inglês ganha grafia de pronúncia só na hora de gravar (dicionário em `narrar.py`): "Number Race" vira "Nâmber Rêice" na voz, e o resumo continua sendo o do texto da tela.
+- **Um elemento de áudio para a lição inteira.** O iPhone só libera som dentro de um toque; o primeiro "Ouvir" libera esse elemento, e trocar o `src` dele quando a etapa acaba continua valendo. Terminou a etapa, a lição avança e a voz segue; na última ela para.
+
+Para gravar outra lição: baixe a resposta de `GET /api/lessons/{id}` (ou use o arquivo da matéria), rode `node scripts/narracao-textos.mjs arquivo.json > textos.json` e `python scripts/narrar.py textos.json`, e commite os `.mp3` com a lista `lib/narracao.json`.
+
 **Trilha de estudo "LLMs do zero"** (`config/castelei.php` → `trails`, `GET /subjects` devolve `trails`, tela em `trilha/[slug]/page.tsx`, lógica em `lib/trails.ts`). Pedido do Sávio: "organize na sequência do que devo aprender primeiro". A trilha atravessa áreas (Matemática e Informática), e a tela de áreas sozinha não dizia a ordem. Quatro coisas:
 
 - **A ordem mora no backend, e o progresso sai das matérias.** Cada passo é só `{subject, name, why}`; praticadas/total vêm das mesmas matérias de `GET /subjects`, com o mesmo critério das outras telas (tentativa concluída).
