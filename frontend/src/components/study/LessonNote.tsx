@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { NotebookPen } from "lucide-react";
+import { Mic, NotebookPen, Square } from "lucide-react";
 import { getJson, messageOf, putJson } from "@/lib/client";
+import { appendSpoken, useDictation } from "./useDictation";
 
 /*
 | O caderno da lição: o que a pessoa entendeu, com as palavras dela.
@@ -37,7 +38,15 @@ export function LessonNote({ lessonId }: { lessonId: number }) {
     };
   }, [lessonId]);
 
+  // A fala chega depois do toque: junta ao texto de AGORA, não ao de quando tocou.
+  const atual = useRef(texto);
+  useEffect(() => {
+    atual.current = texto;
+  }, [texto]);
+  const ditado = useDictation((falado) => escrever(appendSpoken(atual.current, falado)));
+
   function escrever(valor: string) {
+    atual.current = valor;
     setTexto(valor);
     setEstado("salvando");
     if (timer.current) window.clearTimeout(timer.current);
@@ -78,6 +87,37 @@ export function LessonNote({ lessonId }: { lessonId: number }) {
         placeholder={estado === "carregando" ? "Carregando…" : "Ex.: semáforo é um contador que deixa entrar enquanto for maior que zero."}
         className="mt-3 block min-h-28 w-full resize-y rounded-control border-2 border-ink/15 bg-paper px-3 py-2.5 text-base leading-relaxed [field-sizing:content] focus:border-sky focus-visible:outline-none"
       />
+      {ditado.supported && (
+        <div className="mt-3">
+          <button
+            type="button"
+            onClick={ditado.toggle}
+            disabled={estado === "carregando"}
+            aria-pressed={ditado.listening}
+            className={`inline-flex min-h-11 items-center gap-2 rounded-full px-4 text-sm font-bold transition ${ditado.listening ? "bg-coral text-on-accent" : "border-2 border-ink/15 hover:bg-ink/5"}`}
+          >
+            {ditado.listening ? (
+              <>
+                <Square className="size-4" aria-hidden="true" /> Ouvindo… toque para parar
+              </>
+            ) : (
+              <>
+                <Mic className="size-4" aria-hidden="true" /> Falar em vez de digitar
+              </>
+            )}
+          </button>
+          {ditado.partial && (
+            <p className="mt-2 text-sm italic text-content-secondary" aria-live="polite">
+              {ditado.partial}
+            </p>
+          )}
+          {ditado.error && (
+            <p role="alert" className="mt-2 text-sm text-content-secondary">
+              {ditado.error}
+            </p>
+          )}
+        </div>
+      )}
       {erro && (
         <p role="alert" className="mt-2 text-sm text-brick">
           {erro}
