@@ -83,6 +83,27 @@ antes de assinar.
 Atenção: isso muda o corte grátis × pago já decidido (hoje o Pro tem só o
 simulado e os níveis de dificuldade). A decisão é do Sávio.
 
+### Compartilhar curso (ideia do Sávio)
+
+Curso gerado nasce privado; a ideia é cobrar pelo compartilhamento. Três
+formas, da mais simples para a mais complexa:
+
+1. **Link para uma pessoa estudar** (só leitura e prática, cada um com o
+   próprio progresso). Não custa nada para nós — ninguém gera nada de novo.
+   Sugestão: deixar grátis com limite, porque cada curso compartilhado traz
+   gente nova para o app.
+2. **Turma (o que vale cobrar).** Quem cria compartilha com uma turma e vê o
+   desempenho dela: quem já estudou, em que lição a turma erra mais, quem
+   está atrasado para a prova. O público natural é o professor que gera o
+   curso a partir dos próprios slides. Plano "Professor" ou "Turma".
+3. **Vender o curso** (loja, com repasse a quem criou). É o mais complexo:
+   repasse de dinheiro, imposto, e a regra do Google Play para conteúdo
+   digital vendido dentro do app. Fica para muito depois.
+
+Cuidado em todas: curso gerado de fontes da web, quando passa a ser
+compartilhado, aumenta o risco de direito autoral. Por isso o compartilhamento
+é por link ou turma, nunca catálogo público sem revisão.
+
 ## Estatísticas que importam (refazer `/progresso`)
 
 Queixa do Sávio: a aba de estatística está fraca, com gráficos que não ajudam
