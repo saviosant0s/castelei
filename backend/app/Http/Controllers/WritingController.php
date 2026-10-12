@@ -90,6 +90,7 @@ class WritingController extends Controller
     public static function aiEnabled(): bool
     {
         return (string) config('castelei.writing.ai.key') !== ''
+            && (bool) config('castelei.writing.ai.enabled')
             && (int) config('castelei.writing.ai.daily_limit') > 0;
     }
 

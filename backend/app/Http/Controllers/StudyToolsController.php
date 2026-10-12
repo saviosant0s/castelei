@@ -6,9 +6,12 @@ use App\Models\Lesson;
 use App\Models\LessonNote;
 use App\Models\Subject;
 use App\Support\Content\Vocabulary;
+use App\Support\Notes\NoteReviewer;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
+use Throwable;
 
 /**
  * Ferramentas de estudo que não são prática: a anotação da lição e a busca.
@@ -24,7 +27,62 @@ class StudyToolsController extends Controller
 
         return response()->json([
             'note' => $note ? ['text' => $note->text, 'updated_at' => $note->updated_at?->toIso8601String()] : null,
+            // A tela só mostra "Corrigir minha explicação" quando a correção existe.
+            'ai' => self::noteAiEnabled(),
         ]);
+    }
+
+    /**
+     * A IA confere a anotação contra a lição: o que acertou, o que corrigir e
+     * o que faltou. Corrige o texto que está NA TELA, mesmo que o salvamento
+     * automático ainda não tenha chegado.
+     *
+     * Sem chave ou desligada, a rota não existe. O limite por pessoa por dia é
+     * a trava de custo, e falha da IA devolve a tentativa — mesmo acordo da
+     * correção da escrita (`WritingController::review`).
+     */
+    public function reviewNote(Request $request, Lesson $lesson, NoteReviewer $reviewer): JsonResponse
+    {
+        abort_unless(self::noteAiEnabled(), 404);
+
+        $data = $request->validate([
+            'text' => ['required', 'string', 'min:20', 'max:'.self::NOTE_MAX],
+        ], [
+            'text.required' => 'Escreva ou fale a sua explicação antes de pedir a correção.',
+            'text.min' => 'Escreva um pouco mais antes de pedir a correção: uma ou duas frases já servem.',
+        ]);
+
+        $chave = 'note-ai:'.$request->user()->id;
+        $limite = (int) config('castelei.notes.ai.daily_limit');
+
+        if (RateLimiter::tooManyAttempts($chave, $limite)) {
+            return response()->json([
+                'message' => "Você já usou as {$limite} correções de hoje. Amanhã tem mais.",
+            ], 429);
+        }
+
+        RateLimiter::hit($chave, 60 * 60 * 24);
+
+        try {
+            $correcao = $reviewer->review($lesson, trim($data['text']));
+        } catch (Throwable $e) {
+            report($e);
+            RateLimiter::decrement($chave);
+
+            return response()->json(['message' => 'A correção não respondeu agora. Tente de novo daqui a pouco.'], 503);
+        }
+
+        return response()->json([
+            'review' => $correcao,
+            'remaining' => RateLimiter::remaining($chave, $limite),
+        ]);
+    }
+
+    public static function noteAiEnabled(): bool
+    {
+        return (string) config('castelei.notes.ai.key') !== ''
+            && (bool) config('castelei.notes.ai.enabled')
+            && (int) config('castelei.notes.ai.daily_limit') > 0;
     }
 
     /**

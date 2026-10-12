@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Mic, NotebookPen, Square } from "lucide-react";
-import { getJson, messageOf, putJson } from "@/lib/client";
+import { Mic, NotebookPen, Sparkles, Square } from "lucide-react";
+import { getJson, messageOf, postJson, putJson } from "@/lib/client";
+import { NoteReview, type NoteReviewData } from "./NoteReview";
 import { appendSpoken, useDictation } from "./useDictation";
 
 /*
@@ -23,13 +24,22 @@ export function LessonNote({ lessonId }: { lessonId: number }) {
   const [estado, setEstado] = useState<Estado>("carregando");
   const [erro, setErro] = useState<string | null>(null);
   const timer = useRef<number | null>(null);
+  /** A correção por IA existe? Vem do backend: sem chave, o botão nem aparece. */
+  const [ia, setIa] = useState(false);
+  const [correcao, setCorrecao] = useState<{
+    carregando: boolean;
+    dados: NoteReviewData | null;
+    erro: string | null;
+    restantes: number | null;
+  }>({ carregando: false, dados: null, erro: null, restantes: null });
 
   useEffect(() => {
     let vivo = true;
-    getJson<{ note: { text: string } | null }>(`/api/lessons/${lessonId}/note`)
+    getJson<{ note: { text: string } | null; ai?: boolean }>(`/api/lessons/${lessonId}/note`)
       .then((data) => {
         if (!vivo) return;
         setTexto(data.note?.text ?? "");
+        setIa(data.ai === true);
         setEstado("pronto");
       })
       .catch(() => vivo && setEstado("pronto"));
@@ -44,6 +54,18 @@ export function LessonNote({ lessonId }: { lessonId: number }) {
     atual.current = texto;
   }, [texto]);
   const ditado = useDictation((falado) => escrever(appendSpoken(atual.current, falado)));
+
+  async function corrigir() {
+    setCorrecao((c) => ({ ...c, carregando: true, erro: null }));
+    try {
+      const r = await postJson<{ review: NoteReviewData; remaining: number }>(`/api/lessons/${lessonId}/note/review`, {
+        text: atual.current,
+      });
+      setCorrecao({ carregando: false, dados: r.review, erro: null, restantes: r.remaining });
+    } catch (e) {
+      setCorrecao((c) => ({ ...c, carregando: false, erro: messageOf(e) }));
+    }
+  }
 
   function escrever(valor: string) {
     atual.current = valor;
@@ -116,6 +138,35 @@ export function LessonNote({ lessonId }: { lessonId: number }) {
               {ditado.error}
             </p>
           )}
+        </div>
+      )}
+      {/*
+      | Corrigir com IA: compara a explicação com a própria lição. O botão só
+      | acende com uma ou duas frases escritas — abaixo disso não há o que
+      | corrigir, e o pedido gastaria uma das correções do dia.
+      */}
+      {ia && (
+        <div className="mt-4 border-t border-ink/10 pt-4">
+          <button
+            type="button"
+            onClick={corrigir}
+            disabled={correcao.carregando || texto.trim().length < 20 || ditado.listening}
+            className="btn btn-dark w-full"
+          >
+            <Sparkles className="size-5" aria-hidden="true" />
+            {correcao.carregando ? "Corrigindo…" : correcao.dados ? "Corrigir de novo" : "Corrigir minha explicação"}
+          </button>
+          {texto.trim().length < 20 && !correcao.dados && (
+            <p className="mt-2 text-center text-sm text-content-subtle">
+              Escreva ou fale uma ou duas frases para pedir a correção.
+            </p>
+          )}
+          {correcao.erro && (
+            <p role="alert" className="mt-2 text-sm text-content-secondary">
+              {correcao.erro}
+            </p>
+          )}
+          {correcao.dados && <NoteReview review={correcao.dados} remaining={correcao.restantes} />}
         </div>
       )}
       {erro && (
