@@ -24,15 +24,24 @@ const PARTES: { key: keyof NoteReviewData; title: string; icon: LucideIcon; tone
   { key: "missing", title: "O que ficou faltando", icon: Plus, tone: "bg-sky-soft" },
 ];
 
-export function NoteReview({ review, remaining }: { review: NoteReviewData; remaining: number | null }) {
+export function NoteReview({
+  review,
+  remaining = null,
+  scroll = true,
+}: {
+  review: NoteReviewData;
+  remaining?: number | null;
+  /** Rolar até a correção quando ela aparece. No histórico, não: são várias. */
+  scroll?: boolean;
+}) {
   const vazia = PARTES.every((p) => review[p.key].length === 0);
 
   // A correção vem até a pessoa (como a explicação da questão): ela nasce
   // embaixo do botão, atrás da barra fixa, e ninguém rolaria para achá-la.
   const box = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    box.current?.scrollIntoView?.({ behavior: "smooth", block: "center" });
-  }, [review]);
+    if (scroll) box.current?.scrollIntoView?.({ behavior: "smooth", block: "center" });
+  }, [review, scroll]);
 
   return (
     <div ref={box} className="mt-4 space-y-3 scroll-mb-40" aria-live="polite">

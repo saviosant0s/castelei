@@ -49,3 +49,14 @@ export function weekdayInitial(isoDate: string): string {
   // meio-dia UTC evita virar o dia por causa de fuso
   return initials[new Date(`${isoDate}T12:00:00Z`).getUTCDay()];
 }
+
+/** "12 de out., 14:30" — no fuso do Brasil, o mesmo da sequência de dias. */
+export function formatDateTime(iso: string): string {
+  return new Intl.DateTimeFormat("pt-BR", {
+    day: "numeric",
+    month: "short",
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZone: "America/Sao_Paulo",
+  }).format(new Date(iso));
+}

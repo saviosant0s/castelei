@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Lesson;
 use App\Models\LessonNote;
+use App\Models\NoteReview;
 use App\Models\Subject;
 use App\Support\Content\Vocabulary;
 use App\Support\Notes\NoteReviewer;
@@ -29,6 +30,9 @@ class StudyToolsController extends Controller
             'note' => $note ? ['text' => $note->text, 'updated_at' => $note->updated_at?->toIso8601String()] : null,
             // A tela só mostra "Corrigir minha explicação" quando a correção existe.
             'ai' => self::noteAiEnabled(),
+            // A última correção volta junto: rever não pode custar outra.
+            'last_review' => NoteReview::where('user_id', $request->user()->id)
+                ->where('lesson_id', $lesson->id)->latest('id')->first()?->toPayload(),
         ]);
     }
 
@@ -72,10 +76,37 @@ class StudyToolsController extends Controller
             return response()->json(['message' => 'A correção não respondeu agora. Tente de novo daqui a pouco.'], 503);
         }
 
+        $guardada = NoteReview::create([
+            'user_id' => $request->user()->id,
+            'lesson_id' => $lesson->id,
+            'note_text' => trim($data['text']),
+            'review' => $correcao,
+        ]);
+
         return response()->json([
             'review' => $correcao,
+            'saved' => $guardada->toPayload(),
             'remaining' => RateLimiter::remaining($chave, $limite),
         ]);
+    }
+
+    /**
+     * Todas as correções da pessoa, da mais nova para a mais antiga, para
+     * revisar sem pedir outra. Cem é bem mais do que um semestre de uso.
+     */
+    public function noteReviews(Request $request): JsonResponse
+    {
+        $lista = NoteReview::with('lesson.subject')
+            ->where('user_id', $request->user()->id)
+            ->latest('id')
+            ->limit(100)
+            ->get()
+            ->map(fn (NoteReview $r) => $r->toPayload() + [
+                'lesson' => ['id' => $r->lesson->id, 'title' => $r->lesson->title],
+                'subject' => ['name' => $r->lesson->subject?->name],
+            ]);
+
+        return response()->json(['reviews' => $lista]);
     }
 
     public static function noteAiEnabled(): bool
