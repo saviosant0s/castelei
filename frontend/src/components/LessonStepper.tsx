@@ -9,9 +9,11 @@ import {
   BookOpen,
   Check,
   Lightbulb,
+  Pause,
   Play,
   Sparkles,
   Target,
+  Volume2,
   X,
   type LucideIcon,
 } from "lucide-react";
@@ -19,8 +21,10 @@ import { LessonVideo } from "@/components/LessonVideo";
 import { StepCode } from "@/components/StepCode";
 import { StepExample } from "@/components/StepExample";
 import { StepTable } from "@/components/StepTable";
+import { useNarration } from "@/components/useNarration";
 import { pluralize } from "@/lib/format";
 import { clearSpot, saveSpot, useSpot } from "@/lib/lesson-progress";
+import { narrationSrc } from "@/lib/narration";
 import type { LessonDetail, StepKind } from "@/lib/types";
 
 const KIND: Record<
@@ -82,6 +86,18 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
 
   const next = () => move(1);
   const back = () => move(-1);
+
+  /*
+  | Ouvir a lição. Terminou a etapa, a lição avança e a voz segue; na última
+  | ela para, porque dali em diante são questões, e questão se responde
+  | lendo. O botão só aparece na etapa que já tem áudio gravado.
+  */
+  const audioSrc = step ? narrationSrc(step) : null;
+  const narration = useNarration(audioSrc, () => {
+    if (isLast) return false;
+    move(1);
+    return true;
+  });
 
   // Cada etapa começa no topo da tela.
   useEffect(() => {
@@ -175,11 +191,31 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
       <p className="mt-8 text-sm text-ink/60">{lesson.title}</p>
 
       <article key={index} className="anim-rise mt-2">
-        <p
-          className={`inline-flex items-center gap-2 rounded-full px-3 py-1.5 font-mono text-sm font-medium ${meta.chip}`}
-        >
-          <Icon className="size-4" aria-hidden="true" /> {meta.label}
-        </p>
+        <div className="flex items-center justify-between gap-3">
+          <p
+            className={`inline-flex items-center gap-2 rounded-full px-3 py-1.5 font-mono text-sm font-medium ${meta.chip}`}
+          >
+            <Icon className="size-4" aria-hidden="true" /> {meta.label}
+          </p>
+          {audioSrc && (
+            <button
+              type="button"
+              onClick={narration.toggle}
+              aria-pressed={narration.playing}
+              className="inline-flex min-h-11 items-center gap-2 rounded-full border-2 border-ink/15 px-4 text-sm font-bold hover:bg-ink/5"
+            >
+              {narration.playing ? (
+                <>
+                  <Pause className="size-4" aria-hidden="true" /> Pausar
+                </>
+              ) : (
+                <>
+                  <Volume2 className="size-4" aria-hidden="true" /> Ouvir
+                </>
+              )}
+            </button>
+          )}
+        </div>
         <h1 className="mt-4 text-2xl sm:text-4xl">{step.title}</h1>
 
         <div className="mt-5 space-y-4 text-base leading-relaxed">
