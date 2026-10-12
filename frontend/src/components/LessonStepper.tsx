@@ -319,19 +319,26 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
           )}
           <div className="flex gap-3">
             {!isFirst && (
+              /*
+              | Na última etapa o botão principal tem o texto mais longo da
+              | lição ("Praticar 8 questões"), e com "Voltar" ao lado ele
+              | quebrava em duas linhas e era cortado embaixo. Ali o voltar
+              | fica só com a seta, e o rótulo continua para o leitor de tela.
+              */
               <button
                 type="button"
                 onClick={back}
-                className="btn btn-ghost border-2 border-ink/15"
+                className={`btn btn-ghost shrink-0 border-2 border-ink/15 ${isLast ? "px-4" : ""}`}
                 aria-label="Voltar para a etapa anterior"
               >
-                <ArrowLeft className="size-5" aria-hidden="true" /> Voltar
+                <ArrowLeft className="size-5" aria-hidden="true" />
+                {!isLast && " Voltar"}
               </button>
             )}
             {isLast ? (
               <Link
                 href={`/licao/${lesson.id}/praticar`}
-                className="btn btn-primary flex-1"
+                className="btn btn-primary min-w-0 flex-1 whitespace-nowrap px-4"
               >
                 <Play className="size-5" aria-hidden="true" />{" "}
                 {lesson.practice === "writing"
