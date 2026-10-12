@@ -83,26 +83,47 @@ antes de assinar.
 Atenção: isso muda o corte grátis × pago já decidido (hoje o Pro tem só o
 simulado e os níveis de dificuldade). A decisão é do Sávio.
 
-### Compartilhar curso (ideia do Sávio)
+### Compartilhar curso (decidido pelo Sávio)
 
-Curso gerado nasce privado; a ideia é cobrar pelo compartilhamento. Três
-formas, da mais simples para a mais complexa:
+Curso gerado nasce privado. O que ficou decidido:
 
-1. **Link para uma pessoa estudar** (só leitura e prática, cada um com o
-   próprio progresso). Não custa nada para nós — ninguém gera nada de novo.
-   Sugestão: deixar grátis com limite, porque cada curso compartilhado traz
-   gente nova para o app.
-2. **Turma (o que vale cobrar).** Quem cria compartilha com uma turma e vê o
-   desempenho dela: quem já estudou, em que lição a turma erra mais, quem
-   está atrasado para a prova. O público natural é o professor que gera o
-   curso a partir dos próprios slides. Plano "Professor" ou "Turma".
-3. **Vender o curso** (loja, com repasse a quem criou). É o mais complexo:
-   repasse de dinheiro, imposto, e a regra do Google Play para conteúdo
-   digital vendido dentro do app. Fica para muito depois.
+- **Compartilhar por link ou e-mail: GRÁTIS.** A pessoa convidada estuda o
+  curso com o próprio progresso. Não custa nada para nós (ninguém gera nada
+  de novo) e cada curso compartilhado traz gente nova para o app.
+- **Turma: PAGO, e é implementação nova.** Hoje o sistema não tem nada disso.
+  Quem cria compartilha com uma turma e acompanha o desempenho dela: quem já
+  estudou, em que lição a turma erra mais, quem está atrasado para a prova. O
+  público natural é o professor que gera o curso dos próprios slides. Peças
+  novas: tabela de turmas, membros (convite por link ou e-mail), papel de dono
+  e de aluno, e a tela de desempenho da turma — que reaproveita as contas que
+  o `/progresso` já faz, agrupadas por turma em vez de por pessoa.
+- **Vender o curso** (loja, com repasse a quem criou): fica para muito depois
+  — repasse de dinheiro, imposto e a regra do Google Play para conteúdo
+  digital vendido dentro do app.
 
 Cuidado em todas: curso gerado de fontes da web, quando passa a ser
-compartilhado, aumenta o risco de direito autoral. Por isso o compartilhamento
-é por link ou turma, nunca catálogo público sem revisão.
+compartilhado, aumenta o risco de direito autoral. Por isso é por link ou
+turma, nunca catálogo público sem revisão.
+
+### Preço com lucro (lembrete do Sávio)
+
+Créditos estão decididos. O preço de cada crédito não pode cobrir só o custo
+da IA, senão não sobra nada. A conta por trás tem que somar:
+
+- o custo da IA (medido na primeira geração real, não estimado);
+- a taxa do Google Play, que fica com uma parte de cada venda (conferir a taxa
+  em vigor quando for publicar);
+- o imposto, que depende de como o Sávio vai emitir (MEI, Simples…);
+- a margem de lucro.
+
+Fórmula de partida: **preço = custo da IA × margem ÷ (1 − taxa da loja −
+imposto)**. Exemplo só para ver a ordem de grandeza (taxas a confirmar): um
+curso que custa R$ 12 de IA, com margem de 2×, loja de 15% e imposto de 6%,
+sai por volta de R$ 30.
+
+A favor da margem: créditos de assinatura que não são usados no mês também
+viram lucro. Contra: a primeira geração pode sair mais cara que o estimado, e
+por isso o preço só se fixa depois de medir.
 
 ## Estatísticas que importam (refazer `/progresso`)
 
