@@ -9,7 +9,7 @@ O planejamento completo, com o **Guia Editorial de Conteúdo**, está em `docs/p
 - `backend/`: API Laravel 12 (Sanctum, PostgreSQL em produção, SQLite em dev e testes).
 - `frontend/`: Next.js 16 (App Router), React 19, Tailwind 4. É um PWA.
 - `scripts/lint-content.mjs`: verificador do Guia Editorial (roda no conteúdo, não no código).
-- `docs/`: planejamento, **design system (`design-system.md`)**, guia de deploy (`deploy-railway.md`), **lançamento na Play Store (`play-store.md`)**, mapa das aulas de Sistemas Operacionais (`sistemas-operacionais-mapa.md`), **painel de conteúdo (`painel-admin.md`)**, **revisão espaçada e a ciência por trás dela (`revisao-espacada.md`)**.
+- `docs/`: planejamento, **design system (`design-system.md`)**, guia de deploy (`deploy-railway.md`), **lançamento na Play Store (`play-store.md`)**, mapa das aulas de Sistemas Operacionais (`sistemas-operacionais-mapa.md`), **painel de conteúdo (`painel-admin.md`)**, **revisão espaçada e a ciência por trás dela (`revisao-espacada.md`)**, **próximos passos combinados (`proximos-passos.md`: gerador de cursos, estatísticas novas, vídeo)**.
 - `frontend/src/components/ui/`: os componentes do design system (`Card`, `Callout`, `Pill`, `Stat`, `ProgressBar`, `ListRow`, `EmptyState`). **Leia `docs/design-system.md` antes de mexer em tela.**
 - Conteúdo das lições: `backend/database/seeders/content/*.json` (**fonte de verdade**). Figuras SVG: `frontend/public/figuras/`.
 
