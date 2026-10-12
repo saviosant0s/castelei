@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Mic, NotebookPen, Sparkles, Square } from "lucide-react";
 import { getJson, messageOf, postJson, putJson } from "@/lib/client";
+import Link from "next/link";
+import { formatDateTime } from "@/lib/format";
 import { NoteReview, type NoteReviewData } from "./NoteReview";
 import { appendSpoken, useDictation } from "./useDictation";
 
@@ -29,17 +31,27 @@ export function LessonNote({ lessonId }: { lessonId: number }) {
   const [correcao, setCorrecao] = useState<{
     carregando: boolean;
     dados: NoteReviewData | null;
+    /** Quando foi feita — a guardada de outro dia mostra a data. */
+    quando: string | null;
     erro: string | null;
     restantes: number | null;
-  }>({ carregando: false, dados: null, erro: null, restantes: null });
+  }>({ carregando: false, dados: null, quando: null, erro: null, restantes: null });
 
   useEffect(() => {
     let vivo = true;
-    getJson<{ note: { text: string } | null; ai?: boolean }>(`/api/lessons/${lessonId}/note`)
+    getJson<{
+      note: { text: string } | null;
+      ai?: boolean;
+      last_review?: { review: NoteReviewData; created_at: string } | null;
+    }>(`/api/lessons/${lessonId}/note`)
       .then((data) => {
         if (!vivo) return;
         setTexto(data.note?.text ?? "");
         setIa(data.ai === true);
+        // A última correção volta guardada: rever não gasta outra.
+        if (data.last_review) {
+          setCorrecao((c) => ({ ...c, dados: data.last_review!.review, quando: data.last_review!.created_at }));
+        }
         setEstado("pronto");
       })
       .catch(() => vivo && setEstado("pronto"));
@@ -58,10 +70,11 @@ export function LessonNote({ lessonId }: { lessonId: number }) {
   async function corrigir() {
     setCorrecao((c) => ({ ...c, carregando: true, erro: null }));
     try {
-      const r = await postJson<{ review: NoteReviewData; remaining: number }>(`/api/lessons/${lessonId}/note/review`, {
-        text: atual.current,
-      });
-      setCorrecao({ carregando: false, dados: r.review, erro: null, restantes: r.remaining });
+      const r = await postJson<{ review: NoteReviewData; saved: { created_at: string }; remaining: number }>(
+        `/api/lessons/${lessonId}/note/review`,
+        { text: atual.current },
+      );
+      setCorrecao({ carregando: false, dados: r.review, quando: r.saved.created_at, erro: null, restantes: r.remaining });
     } catch (e) {
       setCorrecao((c) => ({ ...c, carregando: false, erro: messageOf(e) }));
     }
@@ -166,7 +179,19 @@ export function LessonNote({ lessonId }: { lessonId: number }) {
               {correcao.erro}
             </p>
           )}
-          {correcao.dados && <NoteReview review={correcao.dados} remaining={correcao.restantes} />}
+          {correcao.dados && (
+            <>
+              {correcao.quando && (
+                <p className="mt-4 label-mono">Última correção · {formatDateTime(correcao.quando)}</p>
+              )}
+              <NoteReview review={correcao.dados} remaining={correcao.restantes} scroll={correcao.restantes !== null} />
+              <p className="mt-3 text-center text-sm">
+                <Link href="/correcoes" className="font-bold text-content-secondary underline underline-offset-4">
+                  Ver todas as minhas correções
+                </Link>
+              </p>
+            </>
+          )}
         </div>
       )}
       {erro && (

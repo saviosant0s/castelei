@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ChevronRight, CloudUpload, Crown, LogIn, Palette, ShieldCheck, SlidersHorizontal, Volume2 } from "lucide-react";
+import { ChevronRight, CloudUpload, Crown, LogIn, Palette, ShieldCheck, SlidersHorizontal, Sparkles, Volume2 } from "lucide-react";
 import { DeleteAccountButton } from "@/components/DeleteAccountButton";
 import { InstallButton } from "@/components/InstallButton";
 import { LogoutButton } from "@/components/LogoutButton";
@@ -109,6 +109,13 @@ export default async function Perfil({ searchParams }: { searchParams: Promise<{
       </SettingsGroup>
 
       <SettingsGroup id="estudo" title="Estudo">
+        <SettingsRow
+          icon={Sparkles}
+          iconTone="coral"
+          title="Minhas correções"
+          description="O que a IA disse das suas explicações, para rever sem gastar outra."
+          href="/correcoes"
+        />
         <PushToggle />
         <InstallButton />
       </SettingsGroup>

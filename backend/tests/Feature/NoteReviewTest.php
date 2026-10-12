@@ -77,6 +77,31 @@ class NoteReviewTest extends TestCase
         $this->postJson("/api/lessons/{$lesson->id}/note/review", ['text' => self::NOTA])->assertStatus(429);
     }
 
+    public function test_a_correcao_fica_guardada_para_rever_sem_pagar_de_novo(): void
+    {
+        $this->ligar(5);
+        $this->revisorFalso();
+        $lesson = $this->makeLesson(1);
+        $eu = User::factory()->create();
+        Sanctum::actingAs($eu);
+
+        $this->postJson("/api/lessons/{$lesson->id}/note/review", ['text' => self::NOTA])->assertOk()
+            ->assertJsonPath('saved.note_text', self::NOTA);
+
+        $this->getJson("/api/lessons/{$lesson->id}/note")
+            ->assertJsonPath('last_review.note_text', self::NOTA)
+            ->assertJsonPath('last_review.review.right.0', 'Contador certo.');
+        $this->getJson('/api/note-reviews')
+            ->assertJsonCount(1, 'reviews')
+            ->assertJsonPath('reviews.0.lesson.id', $lesson->id)
+            ->assertJsonPath('reviews.0.review.missing.0', 'O down e o up.');
+
+        // A correção de um não aparece para outro.
+        Sanctum::actingAs(User::factory()->create());
+        $this->getJson('/api/note-reviews')->assertJsonCount(0, 'reviews');
+        $this->getJson("/api/lessons/{$lesson->id}/note")->assertJsonPath('last_review', null);
+    }
+
     public function test_anotacao_curta_demais_nao_gasta(): void
     {
         $this->ligar(1);
