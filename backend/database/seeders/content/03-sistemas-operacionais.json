@@ -4051,16 +4051,239 @@
         },
         {
           "kind": "explain",
+          "title": "Quatro nomes para \"ao mesmo tempo\"",
+          "body": [
+            "O professor separa quatro nomes para essa ilusão. Eles parecem iguais, mas cada um diz uma coisa.",
+            "A pergunta que separa os quatro é simples: existe mais de um núcleo trabalhando de verdade?"
+          ],
+          "table": {
+            "label": "Os quatro nomes",
+            "headers": [
+              "Nome",
+              "O que quer dizer"
+            ],
+            "rows": [
+              [
+                "Concorrência",
+                "várias tarefas avançam no mesmo período, não necessariamente no mesmo instante"
+              ],
+              [
+                "Paralelismo",
+                "tarefas rodam de fato juntas, cada uma num núcleo diferente"
+              ],
+              [
+                "Pseudoparalelismo",
+                "um núcleo só alterna tão rápido que parece paralelismo"
+              ],
+              [
+                "Multiprogramação",
+                "vários programas ficam na memória para o processador nunca ficar parado"
+              ]
+            ]
+          },
+          "terms": [
+            {
+              "word": "Concorrência",
+              "meaning": "várias tarefas em andamento no mesmo período, revezando ou não o processador."
+            },
+            {
+              "word": "Paralelismo",
+              "meaning": "tarefas executando no mesmo instante, em núcleos diferentes."
+            },
+            {
+              "word": "Pseudoparalelismo",
+              "meaning": "a ilusão de paralelismo criada por um núcleo só que troca de tarefa muito rápido."
+            },
+            {
+              "word": "Multiprogramação",
+              "meaning": "manter vários programas na memória ao mesmo tempo, para sempre ter um pronto para usar o processador."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
           "title": "Para revezar, é preciso anotar",
           "body": [
             "Trocar de processo só funciona se der para voltar depois, do ponto exato.",
             "Por isso o sistema guarda uma ficha de cada processo.",
-            "Na ficha vai a posição em que ele parou, a memória que usa e os arquivos abertos."
+            "Na ficha vai a posição em que ele parou, a memória que usa e os arquivos abertos.",
+            "Na prova, essa ficha se chama PCB. O conjunto do que vai nela é o contexto do processo."
           ],
           "terms": [
             {
               "word": "Tabela de processos",
               "meaning": "a lista de fichas que o sistema mantém, com uma ficha para cada processo em andamento."
+            },
+            {
+              "word": "PCB",
+              "meaning": "sigla em inglês de bloco de controle do processo. É a ficha que o sistema guarda para cada processo."
+            },
+            {
+              "word": "Contexto",
+              "meaning": "tudo o que é preciso guardar de um processo para ele continuar depois de onde parou."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A troca, passo a passo",
+          "body": [
+            "Trocar de processo tem nome na prova: chaveamento de contexto.",
+            "Pense num pai fazendo um bolo pela receita. A filha se machuca no meio.",
+            "Ele marca onde parou na receita, pega o livro de primeiros socorros e cuida dela. Depois volta ao bolo do ponto marcado."
+          ],
+          "example": {
+            "label": "O chaveamento de contexto",
+            "ordered": true,
+            "lines": [
+              "O processo A está usando o processador.",
+              "Chega uma interrupção, ou o escalonador decide trocar.",
+              "O estado de A vai para o PCB de A.",
+              "O estado de B sai do PCB de B e volta ao processador.",
+              "B continua exatamente de onde tinha parado."
+            ]
+          },
+          "table": {
+            "label": "A analogia do professor",
+            "headers": [
+              "No bolo",
+              "No computador"
+            ],
+            "rows": [
+              [
+                "o pai",
+                "o processador"
+              ],
+              [
+                "a receita",
+                "o programa"
+              ],
+              [
+                "o pai seguindo a receita",
+                "o processo"
+              ],
+              [
+                "marcar onde parou",
+                "salvar o contexto"
+              ],
+              [
+                "cuidar da filha",
+                "executar outro processo"
+              ]
+            ]
+          },
+          "terms": [
+            {
+              "word": "Chaveamento de contexto",
+              "meaning": "a troca de um processo por outro no processador, salvando o estado de um e restaurando o do outro."
+            },
+            {
+              "word": "Interrupção",
+              "meaning": "um aviso que faz o processador parar o que está fazendo e atender outra coisa."
+            },
+            {
+              "word": "Escalonador",
+              "meaning": "a parte do sistema que escolhe qual processo usa o processador agora."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que vai dentro do PCB",
+          "body": [
+            "O PCB guarda três grupos de informação. Com eles o sistema sabe quem é o processo e como retomá-lo.",
+            "No Linux a prioridade vai de -20 a 19, e quanto menor o número mais o processo é atendido. O slide escreve até 20; na prática o último valor é 19."
+          ],
+          "table": {
+            "label": "Campos do PCB",
+            "headers": [
+              "Grupo",
+              "O que guarda"
+            ],
+            "rows": [
+              [
+                "Identificação",
+                "o número do processo e quem é o pai dele"
+              ],
+              [
+                "Execução",
+                "o estado, o contador de programa, os registradores e o topo da pilha"
+              ],
+              [
+                "Gerenciamento",
+                "a prioridade, a memória que usa e os arquivos abertos"
+              ]
+            ]
+          },
+          "bullets": [
+            "Estados que o PCB anota: novo → pronto → executando → bloqueado → concluído.",
+            "No Windows a prioridade tem nomes, de \"baixa\" até \"tempo real\". No meio fica \"normal\"."
+          ],
+          "terms": [
+            {
+              "word": "Registrador",
+              "meaning": "uma gaveta pequena e rápida dentro do processador, onde ficam os valores em uso naquele instante."
+            },
+            {
+              "word": "Contador de programa",
+              "meaning": "o registrador que aponta a próxima instrução a executar."
+            },
+            {
+              "word": "Prioridade",
+              "meaning": "o peso que diz quem é atendido primeiro quando vários querem o processador."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Por que manter vários na memória",
+          "body": [
+            "Um processo passa boa parte do tempo esperando o disco ou a rede. Enquanto espera, não usa o processador.",
+            "Com vários processos na memória, quando um espera outro aproveita. A conta do professor mede isso: U = 1 − pⁿ.",
+            "U é quanto o processador fica ocupado. O p é a fração do tempo que um processo passa esperando. O n é quantos processos estão na memória."
+          ],
+          "table": {
+            "label": "U = 1 − pⁿ, calculado",
+            "headers": [
+              "Processos (n)",
+              "Espera muito (p = 0,8)",
+              "Espera pouco (p = 0,2)"
+            ],
+            "rows": [
+              [
+                "1",
+                "20%",
+                "80%"
+              ],
+              [
+                "2",
+                "36%",
+                "96%"
+              ],
+              [
+                "10",
+                "89,3%",
+                "quase 100%"
+              ]
+            ]
+          },
+          "bullets": [
+            "Com p = 0,8 e n = 2: 0,8 × 0,8 = 0,64. Então U = 1 − 0,64 = 0,36, ou 36%.",
+            "Quanto mais processos na memória, maior o U.",
+            "Quem espera pouco já ocupa bem o processador sozinho. Quem espera muito precisa de companhia."
+          ],
+          "terms": [
+            {
+              "word": "E/S",
+              "meaning": "entrada e saída: ler ou gravar no disco, na rede, no teclado ou na tela."
+            },
+            {
+              "word": "Limitado por E/S",
+              "meaning": "o processo que passa a maior parte do tempo esperando entrada e saída. É o p alto."
+            },
+            {
+              "word": "Limitado pela CPU",
+              "meaning": "o processo que passa a maior parte do tempo calculando. É o p baixo."
             }
           ]
         },
@@ -4221,7 +4444,8 @@
           "kind": "explain",
           "title": "Quatro jeitos de morrer",
           "body": [
-            "Um processo termina de quatro maneiras. Duas são combinadas e duas não são."
+            "Um processo termina de quatro maneiras. Duas são combinadas e duas não são.",
+            "Os nomes que aparecem na prova: exit() ou ExitProcess() na saída normal, e kill ou TerminateProcess no encerramento forçado."
           ],
           "bullets": [
             "Saída normal: o trabalho acabou e ele avisa que terminou.",
@@ -4233,6 +4457,14 @@
             {
               "word": "Permissão",
               "meaning": "a autorização que diz quem pode fazer o quê. Sem ela, o pedido é recusado pelo sistema."
+            },
+            {
+              "word": "ExitProcess e TerminateProcess",
+              "meaning": "pedidos ao sistema no Windows. O primeiro encerra o próprio processo; o segundo encerra outro."
+            },
+            {
+              "word": "exit",
+              "meaning": "o pedido ao sistema para encerrar o próprio processo, no Linux. No Windows o nome é ExitProcess."
             }
           ],
           "table": {
@@ -4638,6 +4870,75 @@
             "Novo: foi criado e ainda não entrou na fila.",
             "Terminado: acabou e a ficha dele ainda vai ser retirada.",
             "Suspenso: foi guardado fora da memória principal, para liberar espaço."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Pronto não é bloqueado",
+          "body": [
+            "Os dois esperam, mas esperam coisas diferentes. Essa diferença é a pegadinha mais cobrada.",
+            "O pronto espera só a vez dele no processador. O bloqueado espera algo de fora, e mesmo com o processador livre ele não pode seguir."
+          ],
+          "table": {
+            "label": "A diferença",
+            "headers": [
+              "",
+              "Pronto",
+              "Bloqueado"
+            ],
+            "rows": [
+              [
+                "Pode executar?",
+                "sim",
+                "não"
+              ],
+              [
+                "Espera o quê?",
+                "o processador ficar livre",
+                "um evento de fora, como o disco responder"
+              ],
+              [
+                "Quando sai da espera?",
+                "quando o escalonador escolher",
+                "quando o evento acontecer, e aí vai para pronto"
+              ]
+            ]
+          },
+          "terms": [
+            {
+              "word": "Escalonador",
+              "meaning": "a parte do sistema que escolhe qual processo usa o processador agora."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que acontece numa interrupção",
+          "body": [
+            "A interrupção é o jeito de o sistema retomar o controle do processador. Sem ela, um processo poderia ficar com a vez para sempre."
+          ],
+          "example": {
+            "label": "A sequência",
+            "ordered": true,
+            "lines": [
+              "Um processo está executando normalmente.",
+              "Uma peça da máquina ou um programa gera a interrupção.",
+              "O estado do processo é salvo no PCB.",
+              "Uma rotina do sistema trata a interrupção.",
+              "O escalonador escolhe quem executa agora.",
+              "O estado do escolhido é carregado do PCB dele.",
+              "O processo escolhido continua de onde parou."
+            ]
+          },
+          "terms": [
+            {
+              "word": "Interrupção",
+              "meaning": "um aviso que faz o processador parar o que está fazendo e atender outra coisa."
+            },
+            {
+              "word": "PCB",
+              "meaning": "a ficha que o sistema guarda para cada processo, com tudo para retomá-lo depois."
+            }
           ]
         },
         {
@@ -5479,6 +5780,149 @@
           }
         },
         {
+          "kind": "explain",
+          "title": "Processo × thread",
+          "body": [
+            "O processo junta os recursos. A thread é quem executa dentro dele.",
+            "Cinco motivos para usar threads aparecem na lista abaixo.",
+            "Na prova o caminho de execução se chama thread. Um processo pode ter uma ou várias."
+          ],
+          "table": {
+            "label": "A comparação do professor",
+            "headers": [
+              "Processo",
+              "Thread"
+            ],
+            "rows": [
+              [
+                "agrupa recursos",
+                "representa a execução"
+              ],
+              [
+                "memória própria",
+                "divide a memória do processo"
+              ],
+              [
+                "mais pesado para criar",
+                "mais leve para criar"
+              ],
+              [
+                "conversa com outros por mecanismos especiais",
+                "conversa direto pela memória comum"
+              ],
+              [
+                "isolado dos outros",
+                "pode atrapalhar as outras threads"
+              ]
+            ]
+          },
+          "bullets": [
+            "O programa fica mais simples.",
+            "Os dados são divididos sem esforço.",
+            "Criar custa pouco.",
+            "Uma espera o disco enquanto outra trabalha.",
+            "Em vários núcleos elas rodam de fato juntas."
+          ],
+          "terms": [
+            {
+              "word": "Recurso",
+              "meaning": "o que o processo usa para trabalhar: memória, arquivos abertos, conexões."
+            },
+            {
+              "word": "Thread",
+              "meaning": "uma linha de execução dentro de um processo. É o nome técnico do caminho."
+            },
+            {
+              "word": "Núcleo",
+              "meaning": "cada unidade de execução dentro do processador."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os exemplos que caem na prova",
+          "body": [
+            "O professor usa dois exemplos. Nos dois a resposta é a mesma: threads, porque todas mexem nos mesmos dados.",
+            "Com processos separados, cada um teria memória própria. Dividir o mesmo documento ficaria complicado."
+          ],
+          "table": {
+            "label": "Quem faz o quê",
+            "headers": [
+              "Exemplo",
+              "As threads"
+            ],
+            "rows": [
+              [
+                "Processador de texto",
+                "uma atende o teclado, outra arruma a página, outra salva sozinha de tempos em tempos"
+              ],
+              [
+                "Servidor web",
+                "a despachante recebe os pedidos; as trabalhadoras atendem cada um, buscando na memória rápida ou no disco"
+              ]
+            ]
+          },
+          "bullets": [
+            "Num navegador: um processo por aba, threads para a tela, para a rede e para o processamento.",
+            "O que as abas dividem: memória rápida de páginas, cookies e histórico. Tudo isso que é alterado é região crítica."
+          ],
+          "terms": [
+            {
+              "word": "Thread despachante",
+              "meaning": "a que recebe os pedidos e entrega cada um a uma trabalhadora."
+            },
+            {
+              "word": "Thread trabalhadora",
+              "meaning": "a que atende um pedido do começo ao fim."
+            },
+            {
+              "word": "Região crítica",
+              "meaning": "o trecho do programa que mexe num dado dividido, onde só um pode estar por vez."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Duas threads em Python, linha por linha",
+          "body": [
+            "Este é o exemplo da aula: dois carrinhos andando ao mesmo tempo, cada um numa thread.",
+            "Rodando, as linhas dos dois carrinhos saem misturadas. É a prova de que as duas threads avançam juntas."
+          ],
+          "code": {
+            "label": "carrinho.py",
+            "text": "from threading import Thread\nimport time\nfrom random import random\n\ndef carrinho(velocidade, nome):\n    distancia = 0\n    while distancia <= 10:\n        print(f\"{nome} - {distancia:.2f}\")\n        distancia += velocidade\n        time.sleep(1)\n\ncarro1 = Thread(target=carrinho, args=[random(), \"Vermelho\"])\ncarro2 = Thread(target=carrinho, args=[random(), \"Amarelo\"])\n\ncarro1.start()\ncarro2.start()",
+            "notes": [
+              "Traz a ferramenta que cria threads.",
+              "Traz o relógio, usado para pausar.",
+              "Traz o sorteio de números entre 0 e 1.",
+              "Cria a função carrinho, que recebe a velocidade e o nome.",
+              "Começa na distância zero.",
+              "Repete enquanto não passar de 10.",
+              "Mostra o nome e a distância, com duas casas depois da vírgula.",
+              "Anda a velocidade sorteada.",
+              "Espera um segundo.",
+              "Prepara a thread do carro vermelho, com velocidade sorteada.",
+              "Prepara a thread do carro amarelo.",
+              "Dá a largada no vermelho.",
+              "Dá a largada no amarelo, sem esperar o vermelho acabar."
+            ]
+          },
+          "terms": [
+            {
+              "word": "Função",
+              "meaning": "um pedaço de programa com nome, que faz uma tarefa."
+            },
+            {
+              "word": "Laço",
+              "meaning": "um trecho que se repete enquanto uma condição for verdadeira."
+            },
+            {
+              "word": "Variável",
+              "meaning": "uma caixinha com nome, onde o programa guarda um valor que muda."
+            }
+          ]
+        },
+        {
           "kind": "exam",
           "title": "Como cai na prova",
           "body": [
@@ -5822,6 +6266,99 @@
           ]
         },
         {
+          "kind": "explain",
+          "title": "Os três modelos de mapeamento",
+          "body": [
+            "As threads que o programa cria precisam virar threads que o núcleo conhece. Há três jeitos de ligar uma coisa à outra."
+          ],
+          "table": {
+            "label": "Modelos",
+            "headers": [
+              "Modelo",
+              "Como liga",
+              "O que acontece"
+            ],
+            "rows": [
+              [
+                "Muitos-para-um",
+                "várias do usuário em uma do núcleo",
+                "troca barata, mas uma espera trava todas"
+              ],
+              [
+                "Um-para-um",
+                "cada uma do usuário com uma do núcleo",
+                "é o de Windows e Linux hoje; mais firme e mais caro"
+              ],
+              [
+                "Muitos-para-muitos",
+                "várias do usuário em várias do núcleo",
+                "o meio-termo; é a ideia das goroutines"
+              ]
+            ]
+          },
+          "terms": [
+            {
+              "word": "Thread de usuário",
+              "meaning": "a criada e trocada pelo próprio programa, sem o núcleo saber."
+            },
+            {
+              "word": "Thread de núcleo",
+              "meaning": "a que o núcleo do sistema conhece e escalona."
+            },
+            {
+              "word": "Núcleo",
+              "meaning": "a parte do sistema com poder total sobre a máquina."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Pthreads: as três funções",
+          "body": [
+            "Pthreads é o jeito padrão de criar threads em Linux e macOS, na linguagem C.",
+            "A prova cobra três funções e para que serve cada uma."
+          ],
+          "table": {
+            "label": "Funções do Pthreads",
+            "headers": [
+              "Função",
+              "Para que serve"
+            ],
+            "rows": [
+              [
+                "pthread_create",
+                "cria uma thread nova"
+              ],
+              [
+                "pthread_join",
+                "espera uma thread terminar"
+              ],
+              [
+                "pthread_exit",
+                "encerra a thread atual"
+              ]
+            ],
+            "mono": true
+          },
+          "bullets": [
+            "Para sincronizar, o Pthreads também traz o mutex e as variáveis de condição."
+          ],
+          "terms": [
+            {
+              "word": "Pthreads",
+              "meaning": "o conjunto padrão de funções para threads em sistemas parecidos com o Unix."
+            },
+            {
+              "word": "Mutex",
+              "meaning": "uma tranca que só deixa uma thread por vez num trecho."
+            },
+            {
+              "word": "Função",
+              "meaning": "um pedaço de programa com nome, que faz uma tarefa."
+            }
+          ]
+        },
+        {
           "kind": "exam",
           "title": "Como cai na prova",
           "body": [
@@ -6100,13 +6637,19 @@
           "kind": "explain",
           "title": "O que uma boa solução precisa ter",
           "body": [
-            "Qualquer jeito de resolver isso precisa cumprir quatro exigências."
+            "Qualquer jeito de resolver isso precisa cumprir quatro exigências. Na prova elas vêm com estes nomes."
           ],
           "bullets": [
-            "Nunca dois lá dentro ao mesmo tempo.",
-            "Não pode supor nada sobre a velocidade de cada caminho.",
-            "Quem está fora do trecho perigoso não pode travar os outros.",
-            "Ninguém pode ficar esperando para sempre."
+            "Exclusão mútua: nunca dois lá dentro ao mesmo tempo.",
+            "Independência de velocidade: não pode supor nada sobre a velocidade de cada um.",
+            "Não bloqueio externo: quem está fora do trecho perigoso não trava os outros.",
+            "Sem espera indefinida: ninguém espera para sempre."
+          ],
+          "terms": [
+            {
+              "word": "Exclusão mútua",
+              "meaning": "a regra de que só um processo por vez entra no trecho perigoso."
+            }
           ]
         },
         {
@@ -6120,6 +6663,72 @@
             "Venda de ingresso: a mesma poltrona sai duas vezes.",
             "Contador de curtidas: o número anda menos do que os cliques.",
             "Dois programas gravando no mesmo arquivo deixam o conteúdo picado."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Por que processos conversam",
+          "body": [
+            "O professor resume em três problemas: trocar informação, não atrapalhar o outro e garantir a ordem certa.",
+            "Para conversar existem quatro mecanismos. Comunicar e sincronizar andam juntos, mas não são a mesma coisa."
+          ],
+          "table": {
+            "label": "Os quatro mecanismos de IPC",
+            "headers": [
+              "Mecanismo",
+              "Como funciona"
+            ],
+            "rows": [
+              [
+                "Memória compartilhada",
+                "os dois mexem na mesma área; é rápido, mas exige cuidado"
+              ],
+              [
+                "Pipe",
+                "um cano de mão única: o que um escreve o outro lê"
+              ],
+              [
+                "Mensagens",
+                "um manda e o outro recebe, cada um com sua memória"
+              ],
+              [
+                "Sinais",
+                "um aviso curto, como \"pare\" ou \"termine\""
+              ]
+            ]
+          },
+          "terms": [
+            {
+              "word": "IPC",
+              "meaning": "sigla em inglês de comunicação entre processos."
+            },
+            {
+              "word": "Pipe",
+              "meaning": "um canal de mão única entre dois processos."
+            },
+            {
+              "word": "Sinal",
+              "meaning": "um aviso curto mandado a um processo, sem dados junto."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O exemplo do spool de impressão",
+          "body": [
+            "Dois processos querem imprimir. Os pedidos vão para uma fila dividida, o spool.",
+            "A variável in diz a próxima vaga livre. A out diz o próximo arquivo a imprimir.",
+            "A lê in e vê a vaga 7. Antes de gravar, perde a vez. B lê o mesmo 7 e grava ali. A volta e grava por cima. O pedido de B some."
+          ],
+          "terms": [
+            {
+              "word": "Spool",
+              "meaning": "a fila onde os pedidos de impressão esperam a vez."
+            },
+            {
+              "word": "Variável",
+              "meaning": "uma caixinha com nome, onde o programa guarda um valor que muda."
+            }
           ]
         },
         {
@@ -6870,6 +7479,54 @@
             {
               "word": "Impasse",
               "meaning": "quando cada um segura o que o outro precisa, e nenhum dos dois solta. Os dois ficam parados para sempre."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Exclusão mútua não é sincronização",
+          "body": [
+            "As duas palavras aparecem juntas, mas pedem ferramentas diferentes.",
+            "Exclusão mútua é \"só um por vez\". Sincronização é \"um espera o outro chegar a um ponto\"."
+          ],
+          "table": {
+            "label": "A diferença",
+            "headers": [
+              "",
+              "Exclusão mútua",
+              "Sincronização"
+            ],
+            "rows": [
+              [
+                "A ideia",
+                "só um por vez",
+                "um espera o outro"
+              ],
+              [
+                "Exemplo",
+                "dois não mexem no saldo juntos",
+                "o consumidor espera o produtor produzir"
+              ],
+              [
+                "Ferramenta",
+                "mutex",
+                "semáforo de contagem"
+              ]
+            ]
+          },
+          "bullets": [
+            "Semáforo binário vale só 0 ou 1 e faz o papel de tranca.",
+            "Semáforo de contagem vai além de 1 e conta vagas ou itens.",
+            "O mutex tem dois estados: bloqueado ou desbloqueado."
+          ],
+          "terms": [
+            {
+              "word": "Mutex",
+              "meaning": "uma tranca com dois estados, que deixa um por vez num trecho."
+            },
+            {
+              "word": "Semáforo",
+              "meaning": "um contador com duas operações, down e up, usado para esperar e avisar."
             }
           ]
         },
