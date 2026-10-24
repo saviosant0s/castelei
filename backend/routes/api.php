@@ -75,6 +75,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('/lessons/{lesson}/note', [StudyToolsController::class, 'saveNote'])->whereNumber('lesson')->middleware('throttle:60,1');
     Route::post('/lessons/{lesson}/note/review', [StudyToolsController::class, 'reviewNote'])->whereNumber('lesson')->middleware('throttle:10,1');
     Route::get('/note-reviews', [StudyToolsController::class, 'noteReviews']);
+    Route::get('/lessons/{lesson}/doubts', [StudyToolsController::class, 'doubts'])->whereNumber('lesson');
+    Route::post('/lessons/{lesson}/doubts', [StudyToolsController::class, 'askDoubt'])->whereNumber('lesson')->middleware('throttle:10,1');
+    Route::get('/doubts', [StudyToolsController::class, 'allDoubts']);
     Route::get('/search', [StudyToolsController::class, 'search'])->middleware('throttle:60,1');
 
     Route::post('/lessons/{lesson}/attempts', [AttemptController::class, 'store'])->whereNumber('lesson');

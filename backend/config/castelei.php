@@ -167,6 +167,9 @@ return [
             'enabled' => (bool) env('NOTE_AI_ENABLED', true),
             'model' => env('NOTE_AI_MODEL', 'claude-sonnet-5-5'),
             'daily_limit' => (int) env('NOTE_AI_DAILY_LIMIT', 5),
+            // Dúvidas tiradas com a IA no fim da lição: limite à parte, porque
+            // perguntar é o uso mais comum. Mesma chave e mesmo modelo.
+            'doubt_daily_limit' => (int) env('NOTE_AI_DOUBT_DAILY_LIMIT', 10),
         ],
     ],
 

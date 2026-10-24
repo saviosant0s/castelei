@@ -56,6 +56,8 @@ const ALLOWED_PATHS = [
   /^lessons\/\d+\/note$/,
   // A correção por IA da anotação (só existe com a chave no backend).
   /^lessons\/\d+\/note\/review$/,
+  // Tirar dúvida no fim da lição: ler as anteriores e perguntar.
+  /^lessons\/\d+\/doubts$/,
   // Lembretes: o interruptor do Perfil assina e desassina o aparelho daqui.
   /^push\/key$/,
   /^push\/subscriptions$/,

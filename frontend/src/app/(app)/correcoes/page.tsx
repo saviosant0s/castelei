@@ -6,7 +6,7 @@ import { EmptyState } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
 import { formatDateTime } from "@/lib/format";
 
-export const metadata: Metadata = { title: "Minhas correções" };
+export const metadata: Metadata = { title: "Minhas dúvidas e correções" };
 
 interface Correcao {
   id: number;
@@ -23,15 +23,27 @@ interface Correcao {
 | guardada com o texto que foi corrigido, para comparar "o que eu disse" com
 | "o que estava errado" mesmo depois de a anotação ser reescrita.
 */
-export default async function CorrecoesPage() {
-  const { reviews } = await serverGet<{ reviews: Correcao[] }>("/note-reviews");
+interface Duvida {
+  id: number;
+  question: string;
+  answer: string;
+  created_at: string;
+  lesson: { id: number; title: string };
+  subject: { name: string | null };
+}
 
-  if (reviews.length === 0) {
+export default async function CorrecoesPage() {
+  const [{ reviews }, { doubts }] = await Promise.all([
+    serverGet<{ reviews: Correcao[] }>("/note-reviews"),
+    serverGet<{ doubts: Duvida[] }>("/doubts"),
+  ]);
+
+  if (reviews.length === 0 && doubts.length === 0) {
     return (
       <EmptyState
         icon={Sparkles}
-        title="Nenhuma correção ainda"
-        description="No fim de cada lição, explique com as suas palavras o que entendeu e toque em “Corrigir minha explicação”. Cada correção fica guardada aqui."
+        title="Nada por aqui ainda"
+        description="No fim de cada lição dá para tirar uma dúvida ou pedir a correção da sua explicação. Tudo fica guardado aqui, para rever sem gastar de novo."
       />
     );
   }
@@ -40,11 +52,34 @@ export default async function CorrecoesPage() {
     <div className="space-y-8">
       <header>
         <p className="label-mono">Anotações</p>
-        <h1 className="mt-1 text-4xl">Minhas correções</h1>
+        <h1 className="mt-1 text-4xl">Minhas dúvidas e correções</h1>
         <p className="mt-2 text-base text-content-secondary">
-          O que você explicou e o que a correção disse. Rever aqui não gasta correção.
+          O que você perguntou, o que explicou e o que a IA respondeu. Rever aqui não gasta nada.
         </p>
       </header>
+
+      {doubts.length > 0 && (
+        <section aria-labelledby="h-duvidas" className="space-y-4">
+          <h2 id="h-duvidas" className="text-2xl">Dúvidas</h2>
+          <ol className="space-y-4">
+            {doubts.map((d) => (
+              <li key={d.id} className="rounded-card bg-surface-raised px-5 py-4 shadow-lift">
+                <p className="text-sm text-content-subtle">
+                  {d.subject.name ? `${d.subject.name} · ` : ""}
+                  {formatDateTime(d.created_at)}
+                </p>
+                <Link href={`/licao/${d.lesson.id}`} className="mt-1 block text-lg font-bold underline-offset-4 hover:underline">
+                  {d.lesson.title}
+                </Link>
+                <p className="mt-3 font-bold">{d.question}</p>
+                <p className="mt-2 whitespace-pre-line rounded-2xl bg-sky-soft px-4 py-3 text-base leading-relaxed">{d.answer}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )}
+
+      {reviews.length > 0 && <h2 className="text-2xl">Correções</h2>}
 
       <ol className="space-y-6">
         {reviews.map((c) => (

@@ -21,7 +21,8 @@ import { appendSpoken, useDictation } from "./useDictation";
 */
 type Estado = "carregando" | "pronto" | "salvando" | "salvo" | "erro";
 
-export function LessonNote({ lessonId }: { lessonId: number }) {
+/** `bare`: dentro da caixa de abas do fim da lição, sem o cartão próprio. */
+export function LessonNote({ lessonId, bare = false }: { lessonId: number; bare?: boolean }) {
   const [texto, setTexto] = useState("");
   const [estado, setEstado] = useState<Estado>("carregando");
   const [erro, setErro] = useState<string | null>(null);
@@ -98,7 +99,10 @@ export function LessonNote({ lessonId }: { lessonId: number }) {
   }
 
   return (
-    <section aria-labelledby={`nota-${lessonId}`} className="mt-8 rounded-card bg-surface-raised px-5 py-4 shadow-lift">
+    <section
+      aria-labelledby={`nota-${lessonId}`}
+      className={bare ? "" : "mt-8 rounded-card bg-surface-raised px-5 py-4 shadow-lift"}
+    >
       <div className="flex items-center justify-between gap-3">
         <h2 id={`nota-${lessonId}`} className="flex items-center gap-2 text-base font-bold">
           <NotebookPen className="size-5 text-coral" aria-hidden="true" /> Minha anotação

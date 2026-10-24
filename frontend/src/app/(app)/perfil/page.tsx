@@ -112,8 +112,8 @@ export default async function Perfil({ searchParams }: { searchParams: Promise<{
         <SettingsRow
           icon={Sparkles}
           iconTone="coral"
-          title="Minhas correções"
-          description="O que a IA disse das suas explicações, para rever sem gastar outra."
+          title="Minhas dúvidas e correções"
+          description="O que você perguntou à IA e o que ela corrigiu, para rever sem gastar de novo."
           href="/correcoes"
         />
         <PushToggle />

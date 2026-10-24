@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Support\Notes\ClaudeDoubtAnswerer;
 use App\Support\Notes\ClaudeNoteReviewer;
+use App\Support\Notes\DoubtAnswerer;
 use App\Support\Notes\NoteReviewer;
 use App\Support\Writing\ClaudeWritingReviewer;
 use App\Support\Writing\WritingReviewer;
@@ -19,6 +21,8 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(WritingReviewer::class, ClaudeWritingReviewer::class);
         // Quem confere a anotação da lição contra o conteúdo dela.
         $this->app->bind(NoteReviewer::class, ClaudeNoteReviewer::class);
+        // Quem responde a dúvida do fim da lição.
+        $this->app->bind(DoubtAnswerer::class, ClaudeDoubtAnswerer::class);
     }
 
     /**
