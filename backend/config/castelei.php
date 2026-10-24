@@ -105,6 +105,14 @@ return [
     */
     'unlock_all' => (bool) env('UNLOCK_ALL', true),
 
+    /*
+    | Contas que enxergam o plano DE VERDADE mesmo na fase de testes. Lista
+    | de e-mails separada por vírgula. Existe para o Sávio ter uma conta
+    | grátis e ver o que fica faltando, sem desligar o UNLOCK_ALL de todo
+    | mundo.
+    */
+    'real_plan_emails' => env('REAL_PLAN_EMAILS', ''),
+
     // true = libera streak/XP/conquistas para todos os planos (útil em testes).
     'gamification_for_all' => (bool) env('GAMIFICATION_FOR_ALL', false),
 
@@ -314,7 +322,13 @@ return [
     ],
 
     'plans' => [
-        'free' => ['label' => 'Grátis', 'questions_per_lesson' => 5, 'gamification' => false, 'exam' => false],
+        /*
+        | O corte decidido pelo Sávio: TUDO o que existe hoje fica no grátis —
+        | as oito questões por lição, a gamificação, a trilha, o vocabulário,
+        | a revisão e os lembretes. O Pro ganha o simulado e, quando existirem,
+        | as questões além das oito (níveis de dificuldade).
+        */
+        'free' => ['label' => 'Grátis', 'questions_per_lesson' => 8, 'gamification' => true, 'exam' => false],
         'plus' => ['label' => 'Plus', 'questions_per_lesson' => 30, 'gamification' => true, 'exam' => false],
         'pro' => ['label' => 'Pro', 'questions_per_lesson' => null, 'gamification' => true, 'exam' => true],
     ],

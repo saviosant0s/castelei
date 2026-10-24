@@ -86,15 +86,21 @@ class User extends Authenticatable
         return Admins::allows($this->email);
     }
 
+    /** Conta de teste que enxerga o plano de verdade (`REAL_PLAN_EMAILS`). */
+    public function seesRealPlan(): bool
+    {
+        return Plans::seesRealPlan($this->email);
+    }
+
     public function questionLimit(): ?int
     {
-        return Plans::questionLimit($this->plan);
+        return Plans::questionLimit($this->plan, $this->seesRealPlan());
     }
 
     /** O plano que vale na prática (na fase de testes, todo mundo estuda como Pro). */
     public function effectivePlan(): string
     {
-        return Plans::effective($this->plan);
+        return Plans::effective($this->plan, $this->seesRealPlan());
     }
 
     public function planLabel(): string
@@ -104,11 +110,11 @@ class User extends Authenticatable
 
     public function hasGamification(): bool
     {
-        return Plans::hasGamification($this->plan);
+        return Plans::hasGamification($this->plan, $this->seesRealPlan());
     }
 
     public function hasExam(): bool
     {
-        return Plans::hasExam($this->plan);
+        return Plans::hasExam($this->plan, $this->seesRealPlan());
     }
 }

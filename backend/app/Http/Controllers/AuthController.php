@@ -152,7 +152,7 @@ class AuthController extends Controller
             'plan_label' => $user->planLabel(),
             'questions_per_lesson' => $user->questionLimit(),
             // Fase de testes: tudo liberado, seja qual for o plano guardado.
-            'unlocked_for_testing' => Plans::unlockedForEveryone(),
+            'unlocked_for_testing' => Plans::unlockedForEveryone($user->seesRealPlan()),
         ];
     }
 }

@@ -24,7 +24,7 @@ class AuthTest extends TestCase
             ->assertJsonPath('user.name', 'Sávio')
             ->assertJsonPath('user.email', 'savio@example.com')
             ->assertJsonPath('user.plan', 'free')
-            ->assertJsonPath('user.questions_per_lesson', 5)
+            ->assertJsonPath('user.questions_per_lesson', 8)
             ->assertJsonStructure(['token']);
 
         $this->assertDatabaseHas('users', ['email' => 'savio@example.com', 'plan' => 'free']);
