@@ -108,37 +108,70 @@ export function OrderQuestion({ options, ordering, onChange, disabled, correctOr
 | Depois de responder.
 |
 | Mostrar só "errou" numa questão de ordem não ensina nada: o que falta saber
-| é ONDE a sequência saiu do trilho. Por isso a ordem certa aparece por
-| extenso, com um certo em cada passo que ficou no lugar.
+| é ONDE a sequência saiu do trilho.
+|
+| A primeira versão mostrava SÓ a ordem certa. Quem errava via, no lugar da
+| própria resposta, uma lista diferente da que tinha montado — e lia "o app
+| mudou a minha ordem". Agora a resposta da pessoa fica na tela, passo a
+| passo, marcando o que ficou no lugar; a ordem certa vem embaixo, só quando
+| houve erro. Errar de posição é coral, não vermelho: é o que se veio aprender.
 */
 function Gabarito({ escolha, certa }: { escolha: string[]; certa: string[] }) {
-  return (
-    <div className="mt-6">
-      <p className="label-mono">A ordem certa</p>
-      <ol className="mt-2 space-y-2">
-        {certa.map((passo, i) => {
-          const acertou = escolha[i] === passo;
+  const tudoCerto = escolha.length === certa.length && escolha.every((passo, i) => passo === certa[i]);
 
-          return (
-            <li
-              key={passo}
-              className={`flex min-h-14 items-center gap-3 rounded-2xl border-2 px-4 py-3 text-base ${
-                acertou ? "border-sage bg-sage-soft" : "border-ink/10 bg-surface-raised"
-              }`}
-            >
-              <span
-                aria-hidden="true"
-                className={`grid size-8 shrink-0 place-items-center rounded-full font-mono text-sm font-bold ${
-                  acertou ? "bg-sage text-on-accent" : "bg-ink/8"
+  return (
+    <div className="mt-6 space-y-5">
+      <section>
+        <p className="label-mono">{tudoCerto ? "Sua ordem está certa" : "Sua ordem"}</p>
+        <ol className="mt-2 space-y-2">
+          {escolha.map((passo, i) => {
+            const noLugar = passo === certa[i];
+            return (
+              <li
+                key={passo}
+                className={`flex min-h-14 items-center gap-3 rounded-2xl border-2 px-4 py-3 text-base ${
+                  noLugar ? "border-sage bg-sage-soft" : "border-coral bg-coral-soft"
                 }`}
               >
-                {acertou ? <Check className="size-4" /> : i + 1}
-              </span>
-              <span>{passo}</span>
-            </li>
-          );
-        })}
-      </ol>
+                <span
+                  aria-hidden="true"
+                  className={`grid size-8 shrink-0 place-items-center rounded-full font-mono text-sm font-bold ${
+                    noLugar ? "bg-sage text-on-accent" : "bg-coral text-on-accent"
+                  }`}
+                >
+                  {noLugar ? <Check className="size-4" /> : i + 1}
+                </span>
+                <span>
+                  {passo}
+                  <span className="sr-only">{noLugar ? " (no lugar certo)" : " (fora do lugar)"}</span>
+                </span>
+              </li>
+            );
+          })}
+        </ol>
+      </section>
+
+      {!tudoCerto && (
+        <section>
+          <p className="label-mono">A ordem certa</p>
+          <ol className="mt-2 space-y-2">
+            {certa.map((passo, i) => (
+              <li
+                key={passo}
+                className="flex min-h-14 items-center gap-3 rounded-2xl border-2 border-ink/10 bg-surface-raised px-4 py-3 text-base"
+              >
+                <span
+                  aria-hidden="true"
+                  className="grid size-8 shrink-0 place-items-center rounded-full bg-ink/8 font-mono text-sm font-bold"
+                >
+                  {i + 1}
+                </span>
+                <span>{passo}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )}
     </div>
   );
 }
