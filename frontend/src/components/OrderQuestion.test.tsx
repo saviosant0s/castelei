@@ -67,11 +67,32 @@ describe("questão de ordenar", () => {
       />,
     );
 
+    // A resposta da pessoa continua na tela, e a certa vem embaixo:
+    // mostrar só a certa parecia que o app tinha trocado a ordem dela.
     const itens = screen.getAllByRole("listitem");
 
-    expect(itens).toHaveLength(3);
+    expect(screen.getByText("Sua ordem")).toBeTruthy();
+    expect(screen.getByText("A ordem certa")).toBeTruthy();
+    expect(itens).toHaveLength(6);
+    expect(itens[0].textContent).toContain(passos[1]);
     expect(itens[0].className).toContain("border-sage");
-    expect(itens[1].className).not.toContain("border-sage");
+    expect(itens[1].className).toContain("border-coral");
     expect(screen.queryByText(/Toque nos passos abaixo/)).toBeNull();
+  });
+
+  it("quem acertou vê só a própria ordem, marcada como certa", () => {
+    render(
+      <OrderQuestion
+        options={passos}
+        ordering={[1, 2, 0]}
+        onChange={vi.fn()}
+        disabled
+        correctOrder={[passos[1], passos[2], passos[0]]}
+      />,
+    );
+
+    expect(screen.getByText("Sua ordem está certa")).toBeTruthy();
+    expect(screen.queryByText("A ordem certa")).toBeNull();
+    expect(screen.getAllByRole("listitem")).toHaveLength(3);
   });
 });

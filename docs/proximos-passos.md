@@ -149,12 +149,10 @@ o diferencial de verdade.
 
 ## Defeitos conhecidos (corrigir quando o Sávio pedir)
 
-- **Questão de pôr na ordem (`order`) marca errado quem acertou.** Relato do
-  Sávio, outubro de 2026: ele monta a sequência certa, e a correção mostra a
-  ordem trocada, como se a resposta tivesse mudado no caminho. Ainda não foi
-  investigado. Por onde começar: a tradução entre a posição NA TELA e a do
-  conteúdo (`StepShuffle`, campo `ordering` da resposta). A questão de ligar
-  pares (`match`) usa a mesma conta, então conferir as duas juntas.
+- ~~Questão de pôr na ordem "muda a resposta".~~ **Resolvido.** O servidor
+  conferia certo; a tela de depois mostrava SÓ a ordem certa, e quem errava
+  lia aquilo como a própria resposta trocada. Agora aparece "Sua ordem",
+  passo a passo, e a ordem certa embaixo (`OrderQuestion`, `Gabarito`).
 
 ## Ordem combinada
 
