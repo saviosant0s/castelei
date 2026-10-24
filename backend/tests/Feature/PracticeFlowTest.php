@@ -14,6 +14,17 @@ class PracticeFlowTest extends TestCase
     use MakesLessons;
     use RefreshDatabase;
 
+    /*
+    | Estes testes exercitam o MECANISMO do corte por plano, e precisam de um
+    | grátis menor que a lição de teste e sem gamificação. O corte decidido de
+    | verdade (8 questões, gamificação no grátis) é conferido em PlansTest.
+    */
+    protected function setUp(): void
+    {
+        parent::setUp();
+        config(['castelei.plans.free.questions_per_lesson' => 5, 'castelei.plans.free.gamification' => false]);
+    }
+
     private function start(User $user, Lesson $lesson)
     {
         Sanctum::actingAs($user);

@@ -158,6 +158,7 @@ class ContentImporter
             $question->fill([
                 'topic' => $questionData['topic'],
                 'format' => $questionData['format'] ?? Question::FORMAT_CHOICE,
+                'difficulty' => $questionData['difficulty'] ?? null,
                 'statement' => $questionData['statement'],
                 // Na questão de associar não há alternativas: os pares é que
                 // são o conteúdo, e `options` fica vazia de propósito.

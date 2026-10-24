@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Lesson;
 use App\Models\Question;
+use App\Support\Content\ContentValidator;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -21,24 +22,23 @@ class QuestionController extends Controller
 
         $lesson->subject->takeOverByPanel();
 
-        return response()->json(['question' => $this->payload($question)], 201);
+        return response()->json(['question' => self::payload($question)], 201);
     }
 
     public function update(Request $request, Question $question): JsonResponse
     {
         /*
-        | O formulário só conhece alternativas, ordem e pares. Salvar uma
-        | questão de escrita por ele apagaria o roteiro e o modelo, e ela
-        | viraria múltipla escolha sem aviso. Escrita entra e sai pelo JSON.
+        | A questão de escrita tem um formulário próprio: roteiro, critérios,
+        | texto-modelo e conferências. Ela nunca passa pelas regras das
+        | alternativas — se passasse, viraria múltipla escolha sem aviso e
+        | perderia o roteiro.
         */
-        abort_if($question->isWriting(), 422, 'Questão de escrita se edita pelo arquivo JSON da matéria (baixe, edite e importe de novo).');
-
-        $question->fill($this->validated($request));
+        $question->fill($question->isWriting() ? $this->validatedWriting($request, $question) : $this->validated($request));
         $question->save();
 
         $question->lesson->subject->takeOverByPanel();
 
-        return response()->json(['question' => $this->payload($question)]);
+        return response()->json(['question' => self::payload($question)]);
     }
 
     /**
@@ -62,6 +62,58 @@ class QuestionController extends Controller
         return response()->json(['ok' => true]);
     }
 
+    /**
+     * Os campos de uma questão de escrita. Chaves de `writing` que o
+     * formulário não conhece (escritas à mão no JSON) são mantidas.
+     *
+     * @return array<string, mixed>
+     */
+    private function validatedWriting(Request $request, Question $question): array
+    {
+        $maximo = (int) config('castelei.writing.max_chars');
+        $data = $request->validate([
+            'topic' => ['required', 'string', 'max:120'],
+            'statement' => ['required', 'string'],
+            'explanation' => ['required', 'string'],
+            'pitfall' => ['nullable', 'string'],
+            'exam_only' => ['boolean'],
+            'writing' => ['required', 'array'],
+            'writing.steps' => ['required', 'array', 'min:1'],
+            'writing.steps.*' => ['required', 'string'],
+            'writing.checklist' => ['required', 'array', 'min:1', 'max:12'],
+            'writing.checklist.*' => ['required', 'string'],
+            'writing.model' => ['required', 'string'],
+            'writing.placeholder' => ['nullable', 'string', 'max:200'],
+            'writing.min_chars' => ['nullable', 'integer', 'min:0'],
+            'writing.max_chars' => ['nullable', 'integer', 'min:1', 'max:'.$maximo],
+            'writing.checks' => ['nullable', 'array'],
+            'writing.checks.*' => ['string', 'in:'.implode(',', ContentValidator::WRITING_CHECKS)],
+            'writing.assemble' => ['boolean'],
+            'writing.draft_only' => ['boolean'],
+        ], [
+            'writing.steps.required' => 'O roteiro precisa de pelo menos um passo.',
+            'writing.checklist.required' => 'A lista de critérios precisa de pelo menos um item.',
+            'writing.model.required' => 'Escreva o texto-modelo: ele aparece depois que a pessoa confere o próprio texto.',
+        ]);
+
+        $min = $data['writing']['min_chars'] ?? 0;
+        $max = $data['writing']['max_chars'] ?? $maximo;
+        abort_if($min >= $max, 422, 'O mínimo de caracteres precisa ser menor que o máximo.');
+
+        $writing = array_merge($question->writing ?? [], $data['writing']);
+        // Campo opcional vazio sai do registro, em vez de ficar valendo null.
+        $writing = array_filter($writing, fn ($v) => $v !== null && $v !== [] && $v !== '');
+
+        return [
+            'topic' => $data['topic'],
+            'statement' => $data['statement'],
+            'explanation' => $data['explanation'],
+            'pitfall' => $data['pitfall'] ?? null,
+            'exam_only' => (bool) ($data['exam_only'] ?? false),
+            'writing' => $writing,
+        ];
+    }
+
     /** @return array<string, mixed> */
     private function validated(Request $request): array
     {
@@ -71,6 +123,7 @@ class QuestionController extends Controller
             'options' => ['required_unless:format,match', 'array', 'min:2', 'max:8'],
             'options.*' => ['required', 'string'],
             'format' => ['nullable', 'string', 'in:choice,order,match'],
+            'difficulty' => ['nullable', 'string', 'in:facil,media,dificil'],
             'pairs' => ['required_if:format,match', 'array', 'min:3', 'max:5'],
             'pairs.*.left' => ['required', 'string', 'max:120'],
             'pairs.*.right' => ['required', 'string', 'max:120'],
@@ -145,8 +198,14 @@ class QuestionController extends Controller
         return $data;
     }
 
-    /** @return array<string, mixed> */
-    private function payload(Question $question): array
+    /**
+     * A questão como o painel a edita. A tela da lição usa o mesmo: quando
+     * ela montava a lista por conta própria, esquecia o formato, e a questão
+     * de ordenar abria no formulário como múltipla escolha.
+     *
+     * @return array<string, mixed>
+     */
+    public static function payload(Question $question): array
     {
         return [
             'id' => $question->id,
@@ -159,6 +218,9 @@ class QuestionController extends Controller
             'correct_index' => $question->correct_index,
             'explanation' => $question->explanation,
             'pitfall' => $question->pitfall,
+            'difficulty' => $question->difficulty,
+            'writing' => $question->writing,
+            'exam_only' => (bool) $question->exam_only,
         ];
     }
 }

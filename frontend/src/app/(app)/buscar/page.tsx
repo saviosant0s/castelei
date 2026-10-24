@@ -57,7 +57,7 @@ export default async function BuscarPage({ searchParams }: { searchParams: Promi
         </p>
       ) : total === 0 ? (
         <EmptyState
-          icon={Search}
+          art="buscar"
           title={`Nada encontrado para “${q}”`}
           description="Tente uma palavra só, ou outro jeito de escrever. A busca não diferencia acento."
         />

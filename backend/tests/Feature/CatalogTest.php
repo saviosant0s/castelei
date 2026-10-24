@@ -13,6 +13,17 @@ class CatalogTest extends TestCase
     use MakesLessons;
     use RefreshDatabase;
 
+    /*
+    | Estes testes exercitam o MECANISMO do corte por plano, e precisam de um
+    | grátis menor que a lição de teste e sem gamificação. O corte decidido de
+    | verdade (8 questões, gamificação no grátis) é conferido em PlansTest.
+    */
+    protected function setUp(): void
+    {
+        parent::setUp();
+        config(['castelei.plans.free.questions_per_lesson' => 5, 'castelei.plans.free.gamification' => false]);
+    }
+
     public function test_catalogo_exige_login(): void
     {
         $this->getJson('/api/subjects')->assertUnauthorized();

@@ -23,6 +23,7 @@ export default async function Resumo() {
     return (
       <EmptyState
         level="h2"
+        art="progresso"
         title="Ainda não há números"
         description="Assim que você terminar sua primeira prática, aqui aparecem seu acerto e seu tempo por tópico."
         action={{ label: "Fazer minha primeira lição", href: "/inicio" }}

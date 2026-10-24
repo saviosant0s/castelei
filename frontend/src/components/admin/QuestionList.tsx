@@ -5,10 +5,12 @@ import { useRouter } from "next/navigation";
 import { Check, Pencil, Plus, Trash2 } from "lucide-react";
 import { Aviso, Button } from "@/components/admin/Form";
 import { QuestionForm } from "@/components/admin/QuestionForm";
+import { WritingQuestionForm } from "@/components/admin/WritingQuestionForm";
 import { Card } from "@/components/ui";
 import { adminFetch } from "@/lib/admin-client";
 import { messageOf } from "@/lib/client";
 import type { AdminQuestion } from "@/lib/admin-types";
+import { DIFFICULTY_LABEL } from "@/lib/types";
 
 export function QuestionList({ lessonId, questions }: { lessonId: number; questions: AdminQuestion[] }) {
   const router = useRouter();
@@ -44,7 +46,13 @@ export function QuestionList({ lessonId, questions }: { lessonId: number; questi
       <ul className="space-y-2">
         {questions.map((question) => (
           <li key={question.id}>
-            {editando === question.id ? (
+            {editando === question.id && question.format === "writing" ? (
+              <WritingQuestionForm
+                question={question}
+                onDone={() => setEditando(null)}
+                onCancel={() => setEditando(null)}
+              />
+            ) : editando === question.id ? (
               <QuestionForm
                 question={question}
                 lessonId={lessonId}
@@ -77,20 +85,15 @@ export function QuestionList({ lessonId, questions }: { lessonId: number; questi
                   <span className="mt-1 block text-sm text-content-subtle">
                     {question.topic} ·{" "}
                     {question.format === "writing"
-                      ? "questão de escrita — edite pelo arquivo JSON da matéria"
+                      ? `questão de escrita${question.exam_only ? " · só no simulado" : ""}`
                       : question.format === "order"
                         ? `${question.options.length} passos para ordenar`
                         : `${question.options.length} alternativas`}
+                    {question.difficulty && ` · ${DIFFICULTY_LABEL[question.difficulty]}`}
                   </span>
                 </span>
 
                 <span className="flex shrink-0 gap-1">
-                  {/*
-                    O formulário só conhece alternativas, ordem e pares: salvar
-                    uma questão de escrita por ele a transformaria em múltipla
-                    escolha e apagaria o roteiro. Ela entra e sai pelo JSON.
-                  */}
-                  {question.format !== "writing" && (
                   <button
                     type="button"
                     onClick={() => setEditando(question.id)}
@@ -99,7 +102,6 @@ export function QuestionList({ lessonId, questions }: { lessonId: number; questi
                   >
                     <Pencil className="size-4" aria-hidden="true" />
                   </button>
-                  )}
                   <button
                     type="button"
                     onClick={() => apagar(question)}

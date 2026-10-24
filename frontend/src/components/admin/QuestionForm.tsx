@@ -3,12 +3,12 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Plus, Trash2 } from "lucide-react";
-import { Aviso, Button, TextArea, TextField } from "@/components/admin/Form";
+import { Aviso, Button, SelectField, TextArea, TextField } from "@/components/admin/Form";
 import { Card } from "@/components/ui";
 import { adminFetch } from "@/lib/admin-client";
 import { ApiError, messageOf } from "@/lib/client";
 import type { AdminQuestion } from "@/lib/admin-types";
-import type { QuestionFormat } from "@/lib/types";
+import { DIFFICULTY_LABEL, type Difficulty, type QuestionFormat } from "@/lib/types";
 
 const VAZIA = {
   topic: "",
@@ -19,6 +19,7 @@ const VAZIA = {
   correct_index: 0,
   explanation: "",
   pitfall: "",
+  difficulty: null,
 };
 
 interface Props {
@@ -57,6 +58,7 @@ export function QuestionForm({ question, lessonId, onDone, onCancel }: Props) {
   const associar = format === "match";
   const [explanation, setExplanation] = useState(inicial.explanation);
   const [pitfall, setPitfall] = useState(inicial.pitfall ?? "");
+  const [difficulty, setDifficulty] = useState<Difficulty | "">(inicial.difficulty ?? "");
 
   const [busy, setBusy] = useState(false);
   const [erro, setErro] = useState<string | null>(null);
@@ -84,6 +86,7 @@ export function QuestionForm({ question, lessonId, onDone, onCancel }: Props) {
       ...(associar ? { pairs } : { options, correct_index: correct }),
       explanation,
       pitfall: pitfall.trim() === "" ? null : pitfall,
+      difficulty: difficulty === "" ? null : difficulty,
     };
 
     try {
@@ -283,6 +286,21 @@ export function QuestionForm({ question, lessonId, onDone, onCancel }: Props) {
         onChange={(event) => setPitfall(event.target.value)}
         hint="Opcional. O aviso extra que aparece quando a pessoa erra."
       />
+
+      <SelectField
+        label="Nível"
+        value={difficulty}
+        onChange={(event) => setDifficulty(event.target.value as Difficulty | "")}
+        hint="Opcional. Com nível, a questão também aparece na prática por nível, que é do Pro."
+        error={campos.difficulty?.[0]}
+      >
+        <option value="">Sem nível</option>
+        {(Object.keys(DIFFICULTY_LABEL) as Difficulty[]).map((nivel) => (
+          <option key={nivel} value={nivel}>
+            {DIFFICULTY_LABEL[nivel]}
+          </option>
+        ))}
+      </SelectField>
 
       <div className="flex gap-3">
         <Button peso="principal" onClick={salvar} disabled={busy}>

@@ -602,6 +602,7 @@ for (const file of arquivos) {
         fail(W, `formato inválido “${q.format}”: use “choice”, “order”, “match” ou “writing”`);
       }
       if (q.exam_only && q.format !== "writing") fail(W, "só a questão de escrita pode ser exclusiva do simulado");
+      if (q.difficulty != null && !["facil", "media", "dificil"].includes(q.difficulty)) fail(W, `nível "${q.difficulty}" não existe: use facil, media ou dificil`);
       /*
       | A questão de escrita.
       |

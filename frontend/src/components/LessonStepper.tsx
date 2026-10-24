@@ -1,5 +1,6 @@
 "use client";
 
+import { LevelPicker } from "@/components/LevelPicker";
 import { LessonStudyBox } from "@/components/study/LessonStudyBox";
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
@@ -294,6 +295,9 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
       </article>
 
       {/* O caderno da lição mora na etapa de resumo: depois de ler, antes de praticar. */}
+      {isLast && lesson.levels && (
+        <LevelPicker lessonId={lesson.id} levels={lesson.levels} canUse={lesson.can_use_levels ?? false} />
+      )}
       {isLast && <LessonStudyBox lessonId={lesson.id} />}
 
       <div className="fixed inset-x-0 bottom-0 z-20 border-t border-ink/10 bg-surface/95 backdrop-blur">

@@ -32,16 +32,7 @@ class LessonController extends Controller
                     'name' => $lesson->subject->name,
                     'origin' => $lesson->subject->origin,
                 ],
-                'questions' => $lesson->questions->map(fn (Question $question) => [
-                    'id' => $question->id,
-                    'position' => $question->position,
-                    'topic' => $question->topic,
-                    'statement' => $question->statement,
-                    'options' => $question->options,
-                    'correct_index' => $question->correct_index,
-                    'explanation' => $question->explanation,
-                    'pitfall' => $question->pitfall,
-                ])->values(),
+                'questions' => $lesson->questions->map(fn (Question $question) => QuestionController::payload($question))->values(),
             ],
         ]);
     }

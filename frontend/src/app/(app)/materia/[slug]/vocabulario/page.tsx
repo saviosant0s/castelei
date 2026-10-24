@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, BookA, Layers } from "lucide-react";
+import { ArrowLeft, Layers } from "lucide-react";
 import { Card, EmptyState } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
 import type { Subject, VocabularyResponse } from "@/lib/types";
@@ -74,7 +74,7 @@ export default async function VocabularioPage({
 
       {terms.length === 0 ? (
         <EmptyState
-          icon={BookA}
+          art="vocabulario"
           level="h2"
           title="Ainda não há palavras aqui"
           description="As palavras desta página vêm das lições: cada termo novo é explicado na etapa em que aparece pela primeira vez. Assim que as lições trouxerem esses blocos, eles aparecem aqui sozinhos."

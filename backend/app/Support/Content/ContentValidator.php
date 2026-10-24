@@ -600,6 +600,11 @@ class ContentValidator
                 continue;
             }
 
+            $nivel = $question['difficulty'] ?? null;
+            if ($nivel !== null && ! in_array($nivel, ['facil', 'media', 'dificil'], true)) {
+                $this->error("{$qPath}.difficulty", 'O nível precisa ser "facil", "media" ou "dificil", sem acento.');
+            }
+
             if (($question['exam_only'] ?? false) !== false && $formato !== 'writing') {
                 $this->error("{$qPath}.exam_only", 'Só a questão de escrita pode ser exclusiva do simulado: é a proposta de texto inteiro, do zero.');
             }

@@ -1,4 +1,4 @@
-import type { LessonStep, QuestionFormat } from "@/lib/types";
+import type { Difficulty, LessonStep, QuestionFormat } from "@/lib/types";
 
 /**
  * De onde vem o conteúdo de uma matéria.
@@ -59,6 +59,25 @@ export interface AdminQuestion {
   correct_index: number;
   explanation: string;
   pitfall: string | null;
+  /** O nível (Pro). Null = a questão não tem nível. */
+  difficulty?: Difficulty | null;
+  /** Só na questão de escrita: roteiro, critérios, modelo e conferências. */
+  writing?: AdminWriting | null;
+  /** Proposta que só o simulado usa. */
+  exam_only?: boolean;
+}
+
+/** A folha de uma questão de escrita, como o painel edita. */
+export interface AdminWriting {
+  steps: string[];
+  checklist: string[];
+  model: string;
+  placeholder?: string | null;
+  min_chars?: number;
+  max_chars?: number;
+  checks?: string[];
+  assemble?: boolean;
+  draft_only?: boolean;
 }
 
 export interface AdminLessonDetail {
