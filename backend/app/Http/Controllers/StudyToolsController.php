@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lesson;
+use App\Models\LessonDoubt;
 use App\Models\LessonNote;
 use App\Models\NoteReview;
 use App\Models\Subject;
 use App\Support\Content\Vocabulary;
+use App\Support\Notes\DoubtAnswerer;
 use App\Support\Notes\NoteReviewer;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -107,6 +109,82 @@ class StudyToolsController extends Controller
             ]);
 
         return response()->json(['reviews' => $lista]);
+    }
+
+    /** As dúvidas da pessoa nesta lição, da mais nova para a mais antiga. */
+    public function doubts(Request $request, Lesson $lesson): JsonResponse
+    {
+        return response()->json([
+            'ai' => self::noteAiEnabled(),
+            'doubts' => LessonDoubt::where('user_id', $request->user()->id)
+                ->where('lesson_id', $lesson->id)->latest('id')->limit(20)->get()
+                ->map(fn (LessonDoubt $d) => $d->toPayload())->values(),
+        ]);
+    }
+
+    /**
+     * Tirar uma dúvida: a IA responde com a lição inteira junto.
+     *
+     * Mesmas travas da correção (`reviewNote`): sem chave a rota não existe,
+     * há limite por pessoa por dia, e falha da IA devolve a tentativa.
+     */
+    public function askDoubt(Request $request, Lesson $lesson, DoubtAnswerer $answerer): JsonResponse
+    {
+        abort_unless(self::noteAiEnabled(), 404);
+
+        $data = $request->validate([
+            'question' => ['required', 'string', 'min:5', 'max:1000'],
+        ], [
+            'question.required' => 'Escreva ou fale a sua dúvida antes de perguntar.',
+            'question.min' => 'Escreva um pouco mais a sua dúvida.',
+            'question.max' => 'A dúvida passou de 1000 caracteres. Tente dividir em duas.',
+        ]);
+
+        $chave = 'doubt-ai:'.$request->user()->id;
+        $limite = (int) config('castelei.notes.ai.doubt_daily_limit');
+
+        if ($limite <= 0 || RateLimiter::tooManyAttempts($chave, $limite)) {
+            return response()->json([
+                'message' => "Você já tirou as {$limite} dúvidas de hoje. Amanhã tem mais.",
+            ], 429);
+        }
+
+        RateLimiter::hit($chave, 60 * 60 * 24);
+
+        try {
+            $resposta = $answerer->answer($lesson, trim($data['question']));
+        } catch (Throwable $e) {
+            report($e);
+            RateLimiter::decrement($chave);
+
+            return response()->json(['message' => 'A resposta não veio agora. Tente de novo daqui a pouco.'], 503);
+        }
+
+        $duvida = LessonDoubt::create([
+            'user_id' => $request->user()->id,
+            'lesson_id' => $lesson->id,
+            'question' => trim($data['question']),
+            'answer' => $resposta,
+        ]);
+
+        return response()->json([
+            'doubt' => $duvida->toPayload(),
+            'remaining' => RateLimiter::remaining($chave, $limite),
+        ]);
+    }
+
+    /** Todas as dúvidas da pessoa, para rever sem perguntar de novo. */
+    public function allDoubts(Request $request): JsonResponse
+    {
+        $lista = LessonDoubt::with('lesson.subject')
+            ->where('user_id', $request->user()->id)
+            ->latest('id')->limit(100)->get()
+            ->map(fn (LessonDoubt $d) => $d->toPayload() + [
+                'lesson' => ['id' => $d->lesson->id, 'title' => $d->lesson->title],
+                'subject' => ['name' => $d->lesson->subject?->name],
+            ]);
+
+        return response()->json(['doubts' => $lista]);
     }
 
     public static function noteAiEnabled(): bool
