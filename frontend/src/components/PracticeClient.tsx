@@ -14,7 +14,15 @@ import { messageOf, postJson } from "@/lib/client";
 import { formatClock, formatNumber, formatSeconds, optionLetter, pluralize } from "@/lib/format";
 import { playSound, primeSound } from "@/lib/sound";
 import { assemble } from "@/lib/writing";
-import type { AnswerResult, FinishResult, PracticeQuestion, StartAttemptResponse } from "@/lib/types";
+import { DIFFICULTY_LABEL } from "@/lib/types";
+import type { AnswerResult, Difficulty, FinishResult, PracticeQuestion, StartAttemptResponse } from "@/lib/types";
+
+/** Cor da etiqueta de nível. Difícil é coral, nunca o vermelho de erro. */
+const DIFFICULTY_TONE: Record<Difficulty, string> = {
+  facil: "bg-sage-soft",
+  media: "bg-sky-soft",
+  dificil: "bg-coral-soft",
+};
 
 type Phase = "loading" | "failed" | "answering" | "feedback" | "result";
 
@@ -23,7 +31,7 @@ type Phase = "loading" | "failed" | "answering" | "feedback" | "result";
  * responder: mudam só onde a tentativa começa e para onde se volta.
  */
 export type PracticeSource =
-  | { kind: "lesson"; lessonId: number; lessonTitle: string; onlyWrong?: boolean }
+  | { kind: "lesson"; lessonId: number; lessonTitle: string; onlyWrong?: boolean; level?: Difficulty }
   | { kind: "exam"; subjectId: number; subjectSlug: string; subjectName: string };
 
 function startUrl(source: PracticeSource): string {
@@ -37,7 +45,11 @@ function backHref(source: PracticeSource): string {
 }
 
 function sourceTitle(source: PracticeSource): string {
-  if (source.kind === "lesson") return source.onlyWrong ? `As que errei · ${source.lessonTitle}` : source.lessonTitle;
+  if (source.kind === "lesson") {
+    if (source.onlyWrong) return `As que errei · ${source.lessonTitle}`;
+    if (source.level) return `${DIFFICULTY_LABEL[source.level]} · ${source.lessonTitle}`;
+    return source.lessonTitle;
+  }
   return `Simulado · ${source.subjectName}`;
 }
 
@@ -128,7 +140,11 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
     try {
       const data = await postJson<StartAttemptResponse>(
         startUrl(source),
-        source.kind === "lesson" && source.onlyWrong ? { only: "wrong" } : undefined,
+        source.kind === "lesson" && source.onlyWrong
+          ? { only: "wrong" }
+          : source.kind === "lesson" && source.level
+            ? { level: source.level }
+            : undefined,
       );
       setAttempt(data.attempt);
       setQuestions(data.questions);
@@ -345,8 +361,15 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
       </div>
 
       <section key={question.id} className="anim-rise mt-8">
-        <p className="label-mono">
-          {rotulo} · {question.topic}
+        <p className="flex flex-wrap items-center gap-x-2 gap-y-1">
+          <span className="label-mono">
+            {rotulo} · {question.topic}
+          </span>
+          {question.difficulty && (
+            <span className={`rounded-full px-2.5 py-0.5 text-xs font-bold ${DIFFICULTY_TONE[question.difficulty]}`}>
+              {DIFFICULTY_LABEL[question.difficulty]}
+            </span>
+          )}
         </p>
         <QuestionStatement statement={question.statement} />
 

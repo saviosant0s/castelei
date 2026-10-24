@@ -76,4 +76,13 @@ class Plans
             || (bool) config('castelei.exam_for_all')
             || (bool) (self::all()[$plan]['exam'] ?? false);
     }
+
+    /**
+     * Pode praticar por nível de dificuldade e receber as questões além das
+     * oito? É o mesmo corte do simulado: a parte paga é o Pro.
+     */
+    public static function hasLevels(string $plan, bool $realPlan = false): bool
+    {
+        return self::hasExam($plan, $realPlan);
+    }
 }

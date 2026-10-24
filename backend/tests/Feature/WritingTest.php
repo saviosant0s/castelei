@@ -317,6 +317,31 @@ class WritingTest extends TestCase
         $this->assertSame(self::FOLHA['model'], $question->fresh()->writing['model']);
     }
 
+    public function test_o_painel_edita_questao_de_escrita_sem_perder_o_formato(): void
+    {
+        [, $question] = $this->licaoDeEscrita();
+        Sanctum::actingAs(User::factory()->create(['is_admin' => true]));
+
+        $this->putJson("/api/admin/questions/{$question->id}", [
+            'topic' => 'Tese', 'statement' => 'Escreva a tese de novo.', 'explanation' => 'x',
+            'writing' => [
+                'steps' => ['Diga o tema.'], 'checklist' => ['Cabe numa frase?'], 'model' => 'Modelo novo.',
+                'min_chars' => 10, 'max_chars' => 300, 'checks' => ['uma_frase', 'sem_eu_acho'], 'placeholder' => '',
+            ],
+        ])->assertOk()->assertJsonPath('question.writing.model', 'Modelo novo.');
+
+        $salva = $question->fresh();
+        $this->assertSame(Question::FORMAT_WRITING, $salva->format);
+        $this->assertSame(['uma_frase', 'sem_eu_acho'], $salva->writing['checks']);
+        $this->assertArrayNotHasKey('placeholder', $salva->writing);
+
+        // Mínimo maior que o máximo não entra.
+        $this->putJson("/api/admin/questions/{$question->id}", [
+            'topic' => 'Tese', 'statement' => 'x', 'explanation' => 'x',
+            'writing' => ['steps' => ['a'], 'checklist' => ['b'], 'model' => 'c', 'min_chars' => 500, 'max_chars' => 100],
+        ])->assertStatus(422);
+    }
+
     public function test_o_validador_exige_roteiro_criterios_e_modelo(): void
     {
         $materia = fn (array $questao) => [

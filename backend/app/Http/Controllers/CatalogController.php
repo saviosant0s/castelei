@@ -190,6 +190,15 @@ class CatalogController extends Controller
                 'practice' => $escrita ? 'writing' : 'questions',
                 // Questões cuja última resposta foi errada: a lição oferece refazer só elas.
                 'wrong_count' => count(AttemptController::wrongQuestionIds($request->user()->id, $lesson)),
+                /*
+                | Quantas questões a lição tem em cada nível. Só aparece o que
+                | existe: lição sem nível nenhum não mostra a escolha.
+                */
+                'levels' => $lesson->questions()->where('exam_only', false)->whereNotNull('difficulty')
+                    ->selectRaw('difficulty, count(*) as total')->groupBy('difficulty')->pluck('total', 'difficulty')
+                    ->map(fn ($n) => (int) $n),
+                // Praticar por nível é do Pro: a tela mostra a escolha trancada para o grátis.
+                'can_use_levels' => $request->user()->hasLevels(),
             ],
         ]);
     }

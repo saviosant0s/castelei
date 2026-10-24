@@ -150,7 +150,16 @@ export interface LessonDetail {
   practice?: "questions" | "writing";
   /** Questões cuja última resposta foi errada: a lição oferece refazer só elas. */
   wrong_count?: number;
+  /** Quantas questões em cada nível. Vazio = a lição não tem níveis. */
+  levels?: Partial<Record<Difficulty, number>>;
+  /** Praticar por nível é do Pro. */
+  can_use_levels?: boolean;
 }
+
+/** Nível de dificuldade de uma questão. */
+export type Difficulty = "facil" | "media" | "dificil";
+
+export const DIFFICULTY_LABEL: Record<Difficulty, string> = { facil: "Fácil", media: "Média", dificil: "Difícil" };
 
 /**
  * `choice`: cinco alternativas, uma certa. O formato da prova.
@@ -167,6 +176,8 @@ export interface PracticeQuestion {
   id: number;
   position: number;
   format: QuestionFormat;
+  /** O nível, mostrado como etiqueta na questão. Sem nível, nada aparece. */
+  difficulty?: Difficulty | null;
   topic: string;
   statement: string;
   options: string[];

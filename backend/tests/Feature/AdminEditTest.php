@@ -157,6 +157,22 @@ class AdminEditTest extends TestCase
         ])->assertCreated()->assertJsonPath('question.position', 9);
     }
 
+    public function test_a_tela_da_licao_manda_o_formato_de_cada_questao(): void
+    {
+        $lesson = $this->makeLesson(2);
+        $lesson->questions()->where('position', 2)->update([
+            'format' => Question::FORMAT_ORDER, 'difficulty' => 'dificil',
+        ]);
+
+        // Sem o formato, o formulário abria a questão de ordenar como
+        // múltipla escolha, e salvar a convertia sem ninguém notar.
+        $this->getJson("/api/admin/lessons/{$lesson->id}")
+            ->assertOk()
+            ->assertJsonPath('lesson.questions.1.format', Question::FORMAT_ORDER)
+            ->assertJsonPath('lesson.questions.1.difficulty', 'dificil')
+            ->assertJsonPath('lesson.questions.0.format', Question::FORMAT_CHOICE);
+    }
+
     public function test_gabarito_fora_da_lista_e_recusado(): void
     {
         $lesson = $this->makeLesson(8);

@@ -21,6 +21,9 @@ class Question extends Model
 
     public const FORMATS = [self::FORMAT_CHOICE, self::FORMAT_ORDER, self::FORMAT_MATCH, self::FORMAT_WRITING];
 
+    /** Níveis de dificuldade. Opcional: questão sem nível não mostra etiqueta. */
+    public const LEVELS = ['facil', 'media', 'dificil'];
+
     protected $guarded = [];
 
     protected function casts(): array

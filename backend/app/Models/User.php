@@ -113,6 +113,11 @@ class User extends Authenticatable
         return Plans::hasGamification($this->plan, $this->seesRealPlan());
     }
 
+    public function hasLevels(): bool
+    {
+        return Plans::hasLevels($this->plan, $this->seesRealPlan());
+    }
+
     public function hasExam(): bool
     {
         return Plans::hasExam($this->plan, $this->seesRealPlan());

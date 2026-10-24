@@ -34,6 +34,17 @@ class AttemptController extends Controller
         | setembro e acertou ontem já aprendeu, e refazer essa seria castigo.
         */
         $soErradas = $request->input('only') === 'wrong';
+
+        /*
+        | Praticar por nível (fácil, média, difícil) é do Pro. Escolhido o
+        | nível, vêm todas as questões dele, sem o corte das oito.
+        */
+        $nivel = $request->input('level');
+        if ($nivel !== null) {
+            abort_unless(in_array($nivel, Question::LEVELS, true), 422, 'Nível inválido.');
+            abort_unless($request->user()->hasLevels(), 403, 'Praticar por nível faz parte do plano Pro.');
+            $query->where('difficulty', $nivel);
+        }
         if ($soErradas) {
             $erradas = self::wrongQuestionIds($request->user()->id, $lesson);
             abort_if($erradas === [], 422, 'Você não tem questão errada nesta lição. Bom trabalho!');
@@ -46,7 +57,7 @@ class AttemptController extends Controller
         | ali entregaria um texto pela metade. Por isso a escrita não tem
         | corte: são poucas partes, e todas formam uma coisa só.
         */
-        $limit = $soErradas || $lesson->questions()->where('format', Question::FORMAT_WRITING)->exists()
+        $limit = $soErradas || $nivel !== null || $lesson->questions()->where('format', Question::FORMAT_WRITING)->exists()
             ? null
             : $request->user()->questionLimit();
 
@@ -70,7 +81,7 @@ class AttemptController extends Controller
         return response()->json([
             'attempt' => ['id' => $attempt->id, 'total' => $attempt->total_questions, 'kind' => $attempt->kind],
             'questions' => $questions->map(fn (Question $question) => self::payload($question, $attempt->id))->values(),
-            'limited_by_plan' => ! $soErradas && $lesson->questions()->where('exam_only', false)->count() > $questions->count(),
+            'limited_by_plan' => ! $soErradas && $nivel === null && $lesson->questions()->where('exam_only', false)->count() > $questions->count(),
         ], 201);
     }
 
@@ -145,6 +156,8 @@ class AttemptController extends Controller
             'id' => $question->id,
             'position' => $question->position,
             'format' => $question->format,
+            // A etiqueta de nível na tela. Sem nível, nada aparece.
+            'difficulty' => $question->difficulty,
             'topic' => $question->topic,
             'statement' => $question->statement,
             'options' => $options,

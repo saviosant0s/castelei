@@ -59,6 +59,7 @@ class SubjectExporter
             'topic' => $question->topic,
             // "choice" é o padrão: escrevê-lo em toda questão só polui o arquivo.
             'format' => $question->format === Question::FORMAT_CHOICE ? null : $question->format,
+            'difficulty' => $question->difficulty,
             'statement' => $question->statement,
             'options' => in_array($question->format, [Question::FORMAT_MATCH, Question::FORMAT_WRITING], true) ? null : $question->options,
             'pairs' => $question->pairs,
