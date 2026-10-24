@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Flame, Lock, Star } from "lucide-react";
-import { BadgeIcon } from "@/components/BadgeIcon";
+import { BadgeMedal } from "@/components/illustrations/BadgeMedal";
 import { Card, Callout, EmptyState } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
 import { formatNumber, weekdayInitial } from "@/lib/format";
@@ -24,6 +24,7 @@ export default async function Conquistas() {
     return (
       <EmptyState
         level="h2"
+        art="conquistas"
         title="Nenhuma conquista ainda"
         description="As conquistas vão aparecendo conforme você pratica: a primeira lição, o primeiro dia seguido, a primeira nota cheia."
         action={{ label: "Fazer minha primeira lição", href: "/inicio" }}
@@ -88,13 +89,7 @@ export default async function Conquistas() {
                 size="sm"
                 className={badge.earned ? "border-2 border-sage" : "border-2 border-dashed border-ink/15"}
               >
-                <span
-                  className={`grid size-11 place-items-center rounded-pill ${
-                    badge.earned ? "bg-sage text-on-accent" : "bg-ink/10 text-ink/50"
-                  }`}
-                >
-                  {badge.earned ? <BadgeIcon badgeKey={badge.key} /> : <Lock className="size-5" aria-hidden="true" />}
-                </span>
+                <BadgeMedal badgeKey={badge.key} earned={badge.earned} />
                 <p className={`mt-3 text-base font-bold ${badge.earned ? "" : "text-content-subtle"}`}>{badge.name}</p>
                 <p className="mt-0.5 text-sm text-content-secondary">{badge.description}</p>
                 <span className="sr-only">{badge.earned ? "Conquistada" : "Ainda bloqueada"}</span>

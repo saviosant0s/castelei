@@ -14,6 +14,7 @@ export default async function Evolucao() {
     return (
       <EmptyState
         level="h2"
+        art="evolucao"
         title="Falta uma prática para comparar"
         description="A evolução aparece quando existem pelo menos duas práticas terminadas — aí dá para ver se o acerto subiu e se o tempo caiu."
         action={{ label: "Praticar agora", href: "/inicio" }}

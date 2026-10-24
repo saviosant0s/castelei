@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Check, Crown, Lightbulb, RotateCcw, SkipForward, Star, Timer, TriangleAlert, X } from "lucide-react";
-import { BadgeIcon } from "@/components/BadgeIcon";
+import { BadgeMedal } from "@/components/illustrations/BadgeMedal";
 import { Confetti } from "@/components/Confetti";
 import { MatchQuestion } from "@/components/MatchQuestion";
 import { OrderQuestion } from "@/components/OrderQuestion";
@@ -693,9 +693,7 @@ export function ResultView({
                 className="anim-pop flex items-center gap-3 rounded-2xl bg-sage-soft px-4 py-3"
                 style={{ animationDelay: `${i * 140}ms` }}
               >
-                <span className="grid size-10 shrink-0 place-items-center rounded-full bg-sage">
-                  <BadgeIcon badgeKey={badge.key} className="size-5" />
-                </span>
+                <BadgeMedal badgeKey={badge.key} className="h-12 w-auto shrink-0" />
                 <span className="min-w-0">
                   <span className="block text-base font-bold">{badge.name}</span>
                   <span className="block text-sm text-content-secondary">{badge.description}</span>

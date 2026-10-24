@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Sparkles } from "lucide-react";
 import { NoteReview, type NoteReviewData } from "@/components/study/NoteReview";
 import { EmptyState } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
@@ -41,7 +40,7 @@ export default async function CorrecoesPage() {
   if (reviews.length === 0 && doubts.length === 0) {
     return (
       <EmptyState
-        icon={Sparkles}
+        art="correcoes"
         title="Nada por aqui ainda"
         description="No fim de cada lição dá para tirar uma dúvida ou pedir a correção da sua explicação. Tudo fica guardado aqui, para rever sem gastar de novo."
       />

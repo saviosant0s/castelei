@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CalendarCheck, CalendarClock, Info } from "lucide-react";
+import { CalendarClock, Info } from "lucide-react";
 import { Callout, Card, EmptyState } from "@/components/ui";
 import { ReviewList } from "@/components/review/ReviewRow";
 import { serverGet } from "@/lib/backend";
@@ -55,7 +55,7 @@ export default async function Revisar() {
         ) : (
           <EmptyState
             level="h2"
-            icon={CalendarCheck}
+            art="revisar"
             title="A fila começa na primeira lição"
             description="Assim que você terminar uma lição, ela entra na fila de revisão e volta na hora certa."
             action={{ label: "Ver matérias", href: "/inicio" }}

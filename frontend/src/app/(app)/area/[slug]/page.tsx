@@ -2,7 +2,7 @@ import { createElement } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Hourglass } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { SubjectRow, nextLessonLine, tones } from "@/components/home/SubjectRow";
 import { EmptyState } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
@@ -45,7 +45,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
         // Só chega aqui quem digitou o endereço: a tela inicial não liga para área vazia.
         <EmptyState
           level="h2"
-          icon={Hourglass}
+          art="em-breve"
           title="Em breve"
           description="Esta área ainda não tem aula no Castelei. Enquanto isso, as outras estão abertas."
           action={{ href: "/inicio", label: "Ver as áreas" }}
