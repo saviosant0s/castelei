@@ -1,0 +1,9 @@
+# O Vercel instala as dependências no build (composer install). Mandar a pasta
+# local junto só deixaria o envio lento e poderia levar pacote de desenvolvimento.
+vendor
+node_modules
+tests
+.env
+database/database.sqlite
+storage/logs/*.log
+.phpunit.result.cache

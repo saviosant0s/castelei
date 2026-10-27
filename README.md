@@ -14,7 +14,7 @@
   <img alt="PWA" src="https://img.shields.io/badge/PWA-instalável-5A0FC8?logo=pwa&logoColor=white">
 </p>
 
-<p align="center"><strong>App no ar:</strong> <a href="https://frontend-production-3c7da.up.railway.app">frontend-production-3c7da.up.railway.app</a> — entra sem cadastro, em modo visitante.</p>
+<p align="center"><strong>App no ar:</strong> <a href="https://castelei.vercel.app">castelei.vercel.app</a> — entra sem cadastro, em modo visitante.</p>
 
 ---
 
@@ -151,7 +151,7 @@ Para liberar a primeira conta, defina `ADMIN_EMAILS` no backend; depois disso o 
 | [`docs/design-system.md`](docs/design-system.md) | o design system próprio (sem biblioteca de terceiros) |
 | [`docs/revisao-espacada.md`](docs/revisao-espacada.md) | a revisão espaçada e a ciência por trás dos números |
 | [`docs/painel-admin.md`](docs/painel-admin.md) | o painel de conteúdo |
-| [`docs/deploy-railway.md`](docs/deploy-railway.md) | o deploy (Railway, três serviços, deploy automático na `main`) |
+| [`docs/deploy-vercel.md`](docs/deploy-vercel.md) | o deploy (Vercel, dois projetos e o banco no Neon, deploy automático na `main`) |
 | [`docs/play-store.md`](docs/play-store.md) | o caminho para a Play Store, via TWA |
 | [`docs/sistemas-operacionais-mapa.md`](docs/sistemas-operacionais-mapa.md) | o mapa das 30 aulas do semestre |
 

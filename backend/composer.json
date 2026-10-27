@@ -52,6 +52,9 @@
             "@php artisan config:clear --ansi",
             "@php artisan test"
         ],
+        "vercel": [
+            "if [ \"$VERCEL_ENV\" = production ]; then php artisan castelei:setup; else echo 'Deploy de teste: o banco de produção não é tocado.'; fi"
+        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"

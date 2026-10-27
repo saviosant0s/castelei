@@ -165,9 +165,11 @@ app e não passa por aqui.
 
 ### Onde o arquivo mora
 
-O disco do contêiner do Railway **é descartado a cada deploy**, então a mídia
-precisa de um lugar que sobreviva. Hoje isso é o volume `midia`, montado no
-serviço `backend` em `/app/storage/app/public`.
+A API roda em função no Vercel, que não tem disco que dure além da
+requisição. Por isso a mídia mora no próprio banco: `MEDIA_DISK=database`,
+tabela `media_files` (ver `App\Support\Media\DatabaseAdapter`). O Vercel
+limita o envio a 4,5 MB, então o painel aceita até 4 MB; vídeo maior vai pelo
+YouTube.
 
 Para trocar por armazenamento externo: `MEDIA_DISK=s3` e as variáveis `AWS_*`
 (vale para S3, Cloudflare R2 e compatíveis). Nada no código muda — a rota de

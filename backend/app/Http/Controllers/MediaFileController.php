@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
@@ -27,12 +28,20 @@ use Symfony\Component\HttpFoundation\BinaryFileResponse;
  */
 class MediaFileController extends Controller
 {
-    public function __invoke(string $path): BinaryFileResponse|RedirectResponse
+    public function __invoke(string $path): BinaryFileResponse|RedirectResponse|Response
     {
         $disk = (string) config('castelei.media.disk');
         $storage = Storage::disk($disk);
 
         abort_unless($storage->exists($path), 404);
+
+        // Disco no banco (o do Vercel): o PHP lê e entrega o conteúdo.
+        if (config("filesystems.disks.{$disk}.driver") === 'database') {
+            return response($storage->get($path), 200, [
+                'Content-Type' => $storage->mimeType($path) ?: 'application/octet-stream',
+                'Cache-Control' => 'public, max-age=31536000, immutable',
+            ]);
+        }
 
         // Disco externo (S3, R2): quem entrega é ele, não o PHP.
         if (! method_exists($storage, 'path')) {

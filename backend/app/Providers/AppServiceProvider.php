@@ -2,13 +2,17 @@
 
 namespace App\Providers;
 
+use App\Support\Media\DatabaseAdapter;
 use App\Support\Notes\ClaudeDoubtAnswerer;
 use App\Support\Notes\ClaudeNoteReviewer;
 use App\Support\Notes\DoubtAnswerer;
 use App\Support\Notes\NoteReviewer;
 use App\Support\Writing\ClaudeWritingReviewer;
 use App\Support\Writing\WritingReviewer;
+use Illuminate\Filesystem\FilesystemAdapter;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\ServiceProvider;
+use League\Flysystem\Filesystem;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -30,6 +34,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Disco de mídia dentro do banco (ver DatabaseAdapter).
+        Storage::extend('database', function ($app, array $config) {
+            $adapter = new DatabaseAdapter($config['table'] ?? 'media_files');
+
+            return new FilesystemAdapter(new Filesystem($adapter, $config), $adapter, $config);
+        });
     }
 }

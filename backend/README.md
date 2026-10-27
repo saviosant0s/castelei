@@ -48,4 +48,4 @@ As lições ficam em `database/seeders/content/*.json` (matéria → lições �
 
 ## Deploy
 
-Veja `../docs/deploy-railway.md`.
+Veja `../docs/deploy-vercel.md`.
