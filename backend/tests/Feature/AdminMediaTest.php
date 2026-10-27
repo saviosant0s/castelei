@@ -183,4 +183,28 @@ class AdminMediaTest extends TestCase
         Storage::disk('public')->assertMissing($media->path);
         $this->assertSame(0, Media::count());
     }
+
+    /**
+     * O disco do Vercel: a função não tem disco que dure, então o arquivo
+     * mora no banco. Enviar, entregar com o tipo certo e apagar.
+     */
+    public function test_disco_no_banco_guarda_entrega_e_apaga(): void
+    {
+        config(['castelei.media.disk' => 'database']);
+        $imagem = UploadedFile::fake()->image('figura.png', 20, 20);
+        $bytes = file_get_contents($imagem->getRealPath());
+
+        $url = $this->post('/api/admin/media', ['file' => $imagem])->assertCreated()->json('media.url');
+        $media = Media::firstOrFail();
+        $this->assertSame('database', $media->disk);
+
+        app('auth')->forgetGuards();
+        $resposta = $this->get(parse_url($url, PHP_URL_PATH))->assertOk()->assertHeader('Content-Type', 'image/png');
+        $this->assertSame($bytes, $resposta->getContent());
+
+        Sanctum::actingAs(User::factory()->create(['is_admin' => true]));
+        $this->deleteJson("/api/admin/media/{$media->id}")->assertOk();
+        $this->assertDatabaseCount('media_files', 0);
+        $this->get(parse_url($url, PHP_URL_PATH))->assertNotFound();
+    }
 }

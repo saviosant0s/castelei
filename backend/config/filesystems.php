@@ -47,6 +47,14 @@ return [
             'report' => false,
         ],
 
+        // O arquivo mora no próprio banco. É o disco do Vercel, onde a API
+        // não tem disco que dure além da requisição.
+        'database' => [
+            'driver' => 'database',
+            'table' => 'media_files',
+            'throw' => true,
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
