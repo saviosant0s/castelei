@@ -210,6 +210,10 @@ class ContentImportTest extends TestCase
         $original = $lesson->title;
 
         $lesson->update(['title' => 'Mexido por fora do painel']);
+
+        // Arquivo igual é pulado (ver ContentSeeder). Quando o arquivo muda —
+        // aqui, a marca da última carga some —, o arquivo volta a mandar.
+        \Illuminate\Support\Facades\Cache::forget('conteudo-carregado:sistemas-operacionais');
         (new ContentSeeder)->run();
 
         $this->assertSame($original, $lesson->fresh()->title);
