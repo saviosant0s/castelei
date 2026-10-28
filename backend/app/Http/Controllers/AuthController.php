@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Support\Auth\GoogleSignIn;
 use App\Support\Plans;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -10,6 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 use Laravel\Sanctum\PersonalAccessToken;
+use RuntimeException;
 
 class AuthController extends Controller
 {
@@ -130,6 +132,61 @@ class AuthController extends Controller
         $user->update($data);
 
         return response()->json(['user' => self::userPayload($user->fresh())]);
+    }
+
+    /**
+     * Entrar com o Google. Quatro casos, nesta ordem:
+     *
+     * 1. Já entrou com este Google antes: é a mesma conta.
+     * 2. Já tem conta com este e-mail: ganha o Google junto. O Google
+     *    confirmou que o e-mail é dela, que é o mesmo que a senha provaria.
+     * 3. Está estudando como visitante: o visitante VIRA a conta Google, sem
+     *    perder nada — o mesmo raciocínio do `claim`.
+     * 4. Nenhum dos anteriores: conta nova.
+     *
+     * A rota é pública, e o token do visitante vem opcional, pelo mesmo
+     * cabeçalho de sempre. Sem chaves do Google, a função não existe (404).
+     */
+    public function google(Request $request, GoogleSignIn $google): JsonResponse
+    {
+        abort_unless(GoogleSignIn::enabled(), 404);
+
+        $data = $request->validate([
+            'code' => ['required', 'string', 'max:2048'],
+            'redirect_uri' => ['required', 'url', 'max:500'],
+        ]);
+
+        try {
+            $perfil = $google->exchange($data['code'], $data['redirect_uri']);
+        } catch (RuntimeException) {
+            return response()->json(['message' => 'Não deu para entrar com o Google. Tente de novo.'], 422);
+        }
+
+        $atual = auth('sanctum')->user();
+
+        $user = User::where('google_id', $perfil['sub'])->first()
+            ?? User::where('email', $perfil['email'])->first();
+
+        if ($user) {
+            $user->google_id ??= $perfil['sub'];
+            $user->save();
+        } elseif ($atual instanceof User && $atual->isGuest()) {
+            $user = $atual;
+            $user->update(['name' => $perfil['name'], 'email' => $perfil['email'], 'google_id' => $perfil['sub']]);
+        } else {
+            // Sem senha que alguém saiba: quem entra pelo Google entra pelo Google.
+            $user = User::create([
+                'name' => $perfil['name'],
+                'email' => $perfil['email'],
+                'google_id' => $perfil['sub'],
+                'password' => Str::random(64),
+            ]);
+        }
+
+        return response()->json([
+            'user' => self::userPayload($user->fresh()),
+            'token' => $user->createToken('web')->plainTextToken,
+        ]);
     }
 
     public function me(Request $request): JsonResponse
