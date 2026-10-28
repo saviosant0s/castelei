@@ -23,6 +23,43 @@ jobs:
       - run: cp .env.example .env && php artisan key:generate
       - run: php artisan test
 
+  # Produção é Postgres, e o SQLite aceita consultas que o Postgres recusa
+  # (ORDER BY de coluna fora do GROUP BY derrubou a tela da lição no primeiro
+  # deploy no Vercel, com todos os testes verdes em SQLite).
+  backend-postgres:
+    name: Backend (Postgres)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: castelei
+          POSTGRES_PASSWORD: teste
+          POSTGRES_DB: castelei_test
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd pg_isready --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DB_CONNECTION: pgsql
+      DB_HOST: 127.0.0.1
+      DB_PORT: 5432
+      DB_DATABASE: castelei_test
+      DB_USERNAME: castelei
+      DB_PASSWORD: teste
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          extensions: mbstring, pdo_pgsql, pgsql
+          tools: composer
+      - run: composer install --no-interaction --prefer-dist --no-progress
+      - run: cp .env.example .env && php artisan key:generate
+      - run: php artisan test
+
   content:
     name: Conteúdo (Guia Editorial)
     runs-on: ubuntu-latest

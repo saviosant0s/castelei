@@ -194,7 +194,9 @@ class CatalogController extends Controller
                 | Quantas questões a lição tem em cada nível. Só aparece o que
                 | existe: lição sem nível nenhum não mostra a escolha.
                 */
-                'levels' => $lesson->questions()->where('exam_only', false)->whereNotNull('difficulty')
+                // `reorder()`: a relação já vem ordenada por posição, e o Postgres
+                // recusa ORDER BY de coluna fora do GROUP BY (o SQLite aceita).
+                'levels' => $lesson->questions()->reorder()->where('exam_only', false)->whereNotNull('difficulty')
                     ->selectRaw('difficulty, count(*) as total')->groupBy('difficulty')->pluck('total', 'difficulty')
                     ->map(fn ($n) => (int) $n),
                 // Praticar por nível é do Pro: a tela mostra a escolha trancada para o grátis.
