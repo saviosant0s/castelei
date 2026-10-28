@@ -25,7 +25,8 @@ function aparelho(escuro: boolean) {
 
 beforeEach(() => {
   window.localStorage.clear();
-  delete document.documentElement.dataset.theme;
+  // Como o HTML de verdade sai do servidor (layout.tsx): claro por padrão.
+  document.documentElement.dataset.theme = "light";
   // As duas metas do HTML de verdade, uma por media query.
   document.head.innerHTML =
     '<meta name="theme-color" media="(prefers-color-scheme: light)" content="#F8F9FA">' +
@@ -42,8 +43,9 @@ const metas = () =>
 const meta = () => metas()[0];
 
 describe("leitura e gravação", () => {
-  it("sem nada guardado, o aparelho manda", () => {
-    expect(readTheme()).toBe("auto");
+  it("sem nada guardado, vale o claro, mesmo num aparelho escuro", () => {
+    aparelho(true);
+    expect(readTheme()).toBe("light");
   });
 
   it("guarda e lê a escolha", () => {
@@ -52,17 +54,18 @@ describe("leitura e gravação", () => {
     expect(readTheme()).toBe("dark");
   });
 
-  it("automático APAGA a chave em vez de escrever 'auto'", () => {
-    // Sem atributo é o que devolve a decisão ao aparelho. Gravar "auto"
-    // deixaria um valor que o script do <head> teria de saber ignorar.
+  it("claro é o padrão e APAGA a chave; automático fica guardado", () => {
     saveTheme("dark");
-    saveTheme("auto");
+    saveTheme("light");
     expect(window.localStorage.getItem(THEME_KEY)).toBeNull();
+    saveTheme("auto");
+    expect(window.localStorage.getItem(THEME_KEY)).toBe("auto");
+    expect(readTheme()).toBe("auto");
   });
 
-  it("valor estragado no armazenamento vira automático", () => {
+  it("valor estragado no armazenamento vira o claro", () => {
     window.localStorage.setItem(THEME_KEY, "roxo");
-    expect(readTheme()).toBe("auto");
+    expect(readTheme()).toBe("light");
   });
 
   it("só aceita os três temas", () => {
@@ -144,7 +147,14 @@ describe("o script do <head>", () => {
     expect(document.documentElement.dataset.theme).toBe("dark");
   });
 
-  it("não escreve atributo nenhum quando a escolha é automática", () => {
+  it("sem escolha guardada, mantém o claro que veio do servidor", () => {
+    aparelho(true);
+    new Function(THEME_SCRIPT)();
+    expect(document.documentElement.dataset.theme).toBe("light");
+  });
+
+  it("no automático, apaga o atributo e devolve a decisão ao aparelho", () => {
+    window.localStorage.setItem(THEME_KEY, "auto");
     new Function(THEME_SCRIPT)();
     expect(document.documentElement.dataset.theme).toBeUndefined();
   });
