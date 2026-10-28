@@ -87,7 +87,7 @@ return [
         'pgsql' => [
             'driver' => 'pgsql',
             // DATABASE_URL é o nome que a integração do Neon com o Vercel cria.
-            'url' => env('DB_URL', env('DATABASE_URL')),
+            // O `url` de verdade sai do NeonUrl, no fim desta lista.
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '5432'),
             'database' => env('DB_DATABASE', 'laravel'),
@@ -98,6 +98,9 @@ return [
             'prefix_indexes' => true,
             'search_path' => 'public',
             'sslmode' => env('DB_SSLMODE', 'prefer'),
+            // No Neon, a URL vira campos separados, com o endpoint na senha.
+            // Ver App\Support\Database\NeonUrl.
+            ...\App\Support\Database\NeonUrl::config(env('DB_URL', env('DATABASE_URL'))),
         ],
 
         'sqlsrv' => [
