@@ -96,7 +96,9 @@ Dois projetos no Vercel ligados a este repositório: `castelei` (Root Directory 
 - **`DATABASE_URL`** é o nome que a integração do Neon cria; o `config/database.php` usa ele quando `DB_URL` não existe.
 - **O endereço público do site** sai de `SITE_URL` ou, sem ela, de `VERCEL_PROJECT_PRODUCTION_URL` (`lib/site-url.ts`).
 - Segredos ficam nas variáveis do projeto `castelei-api`: `APP_KEY`, `ANTHROPIC_API_KEY`, `VAPID_PUBLIC_KEY`/`VAPID_PRIVATE_KEY`/`VAPID_SUBJECT`, `CRON_SECRET` (o mesmo valor do secret `CASTELEI_CRON_SECRET` do GitHub), `ADMIN_EMAILS` e `REAL_PLAN_EMAILS`. No `castelei`: `API_URL` (terminando em `/api`) e `GUEST_MODE=true`.
-- **O conector do Vercel do Claude só lê.** Criar projeto, banco e variável é com o Sávio, pelo painel.
+- **O build roda nos EUA (iad1) e o banco está em São Paulo**, então cada consulta do build leva centenas de milissegundos. A carga completa das matérias passa de cinco minutos. Por isso o `composer.json` tem `process-timeout: 0` (o Composer mataria o script aos 300 s), e o `ContentSeeder` **pula o arquivo que não mudou** desde a última carga, pela marca `conteudo-carregado:{slug}` no cache (o banco): resumo do arquivo, do `ContentImporter` e da posição. Edição feita por fora do painel só é desfeita quando o arquivo muda.
+- **O Neon precisa do endpoint na senha** (`Support\Database\NeonUrl`): a biblioteca de Postgres do `vercel-php` não manda o nome do servidor no TLS, e o Neon recusa com "Endpoint ID is not specified".
+- **O conector do Vercel do Claude cria projeto, variável e deploy** (o Sávio reautorizou com escrita). O banco do Neon pede o aceite dele no painel.
 - Nunca commite segredos. Não versione `.env`.
 
 ## Estado atual

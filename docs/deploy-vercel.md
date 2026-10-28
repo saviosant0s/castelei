@@ -38,8 +38,8 @@ consequências:
 
 ## Montar do zero (o que é feito no painel do Vercel)
 
-O conector do Vercel usado pelo Claude só lê; criar projeto e banco é com o
-Sávio.
+O conector do Vercel do Claude cria projeto, variável e deploy. O banco do
+Neon pede o aceite do Sávio no painel.
 
 ### 1. Projeto da API
 

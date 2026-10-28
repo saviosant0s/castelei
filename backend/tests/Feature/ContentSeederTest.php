@@ -238,6 +238,23 @@ class ContentSeederTest extends TestCase
         $this->assertSame($esperado['questions'], Question::count());
     }
 
+    /**
+     * No Vercel o seeder roda a cada deploy, longe do banco. Arquivo que não
+     * mudou não pode ser regravado: eram dez minutos de build para nada.
+     */
+    public function test_segunda_carga_pula_os_arquivos_que_nao_mudaram(): void
+    {
+        $this->seed(DatabaseSeeder::class);
+
+        \Illuminate\Support\Facades\DB::enableQueryLog();
+        $this->seed(DatabaseSeeder::class);
+        $consultas = count(\Illuminate\Support\Facades\DB::getQueryLog());
+
+        // Uma consulta para ver as matérias do painel e uma por arquivo.
+        $this->assertLessThan(40, $consultas);
+        $this->assertSame($this->esperado()['questions'], Question::count());
+    }
+
     public function test_comando_setup_roda_migrations_e_carrega_o_conteudo(): void
     {
         $this->artisan('castelei:setup')->assertSuccessful();
