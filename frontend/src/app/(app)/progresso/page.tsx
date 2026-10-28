@@ -2,10 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { Card, EmptyState, ProgressBar } from "@/components/ui";
+import { MapLegend, SubjectMap } from "@/components/stats/SubjectMap";
+import { Retention } from "@/components/stats/Retention";
+import { WeakLessons } from "@/components/stats/WeakLessons";
 import { serverGet } from "@/lib/backend";
 import { formatSeconds, pluralize } from "@/lib/format";
 import { agruparPorLicao, nivel } from "@/lib/progress-groups";
-import type { ProgressResponse } from "@/lib/types";
+import type { ProgressResponse, StatsResponse } from "@/lib/types";
 
 export const metadata: Metadata = { title: "Progresso" };
 
@@ -17,7 +20,10 @@ const niveis = {
 };
 
 export default async function Resumo() {
-  const { overall, topics } = await serverGet<ProgressResponse>("/progress");
+  const [{ overall, topics }, stats] = await Promise.all([
+    serverGet<ProgressResponse>("/progress"),
+    serverGet<StatsResponse>("/progress/stats"),
+  ]);
 
   if (overall.attempts === 0) {
     return (
@@ -33,30 +39,45 @@ export default async function Resumo() {
 
   const licoes = agruparPorLicao(topics);
 
+  /*
+  | A ordem é a das perguntas de quem estuda: estou pronto? onde eu erro? o
+  | que estou esquecendo? Os números gerais (e o tempo por questão) vão para o
+  | fim: eles contam o que foi feito, mas não ajudam a decidir o que fazer.
+  */
   return (
-    <div className="space-y-8">
-      {/*
-        Uma faixa só, e não três cartões iguais lado a lado: são três leituras
-        do mesmo assunto, e cartões separados pediam para ser comparados como
-        se fossem coisas diferentes.
-      */}
-      <Card size="sm" className="!p-0">
-        <dl className="grid grid-cols-3 divide-x divide-ink/10">
-          {[
-            { label: "Respondidas", value: String(overall.answered) },
-            { label: "Acerto", value: overall.accuracy !== null ? `${overall.accuracy}%` : "—" },
-            { label: "Por questão", value: overall.avg_seconds !== null ? formatSeconds(overall.avg_seconds) : "—" },
-          ].map((item) => (
-            <div key={item.label} className="min-w-0 px-3 py-4 text-center">
-              <dt className="text-sm text-content-subtle">{item.label}</dt>
-              <dd className="mt-1 font-mono text-2xl font-medium">{item.value}</dd>
-            </div>
+    <div className="space-y-10">
+      {stats.subjects.length > 0 && (
+        <section aria-labelledby="pronto" className="space-y-4">
+          <div>
+            <h2 id="pronto" className="text-2xl">Estou pronto para a prova?</h2>
+            <p className="mt-1 text-base text-content-secondary">
+              Uma lição está dominada quando a sua última resposta acerta 80% dela. Toque num quadrado para abrir a lição.
+            </p>
+          </div>
+          <MapLegend />
+          {stats.subjects.map((subject) => (
+            <SubjectMap key={subject.id} subject={subject} />
           ))}
-        </dl>
-      </Card>
+        </section>
+      )}
+
+      <section aria-labelledby="erro" className="space-y-4">
+        <div>
+          <h2 id="erro" className="text-2xl">Onde eu erro</h2>
+          <p className="mt-1 text-base text-content-secondary">
+            As lições mais fracas hoje, e se estão melhorando desde a primeira vez. Toque para refazer só as erradas.
+          </p>
+        </div>
+        <WeakLessons lessons={stats.weak_lessons} />
+      </section>
+
+      <section aria-labelledby="esquecendo" className="space-y-4">
+        <h2 id="esquecendo" className="text-2xl">O que estou esquecendo</h2>
+        <Retention retention={stats.retention} />
+      </section>
 
       <section aria-labelledby="licoes">
-        <h2 id="licoes" className="text-2xl">Por lição</h2>
+        <h2 id="licoes" className="text-2xl">Todas as lições</h2>
         <p className="mt-1 text-base text-content-secondary">
           As que mais precisam de atenção vêm primeiro. Toque numa lição para ver os tópicos.
         </p>
@@ -125,6 +146,29 @@ export default async function Resumo() {
             );
           })}
         </ul>
+      </section>
+
+      <section aria-labelledby="geral" className="space-y-3">
+        <h2 id="geral" className="text-xl">Números gerais</h2>
+        {/*
+          Uma faixa só, e não três cartões iguais lado a lado: são três leituras
+          do mesmo assunto, e cartões separados pediam para ser comparados como
+          se fossem coisas diferentes.
+        */}
+        <Card size="sm" className="!p-0">
+          <dl className="grid grid-cols-3 divide-x divide-ink/10">
+            {[
+              { label: "Respondidas", value: String(overall.answered) },
+              { label: "Acerto", value: overall.accuracy !== null ? `${overall.accuracy}%` : "—" },
+              { label: "Por questão", value: overall.avg_seconds !== null ? formatSeconds(overall.avg_seconds) : "—" },
+            ].map((item) => (
+              <div key={item.label} className="min-w-0 px-3 py-4 text-center">
+                <dt className="text-sm text-content-subtle">{item.label}</dt>
+                <dd className="mt-1 font-mono text-2xl font-medium">{item.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </Card>
       </section>
     </div>
   );

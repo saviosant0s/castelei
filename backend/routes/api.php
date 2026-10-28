@@ -14,6 +14,7 @@ use App\Http\Controllers\StudyToolsController;
 use App\Http\Controllers\WritingController;
 use App\Http\Controllers\MediaFileController;
 use App\Http\Controllers\ProgressController;
+use App\Http\Controllers\StatsController;
 use App\Http\Controllers\PushController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\PublicCatalogController;
@@ -90,6 +91,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/attempts/{attempt}/writing/review', [WritingController::class, 'review'])->whereNumber('attempt')->middleware('throttle:10,1');
 
     Route::get('/progress', [ProgressController::class, 'index']);
+    // O que estudar: prontidão para a prova, onde erra e o que esqueceu.
+    Route::get('/progress/stats', [StatsController::class, 'index']);
 
     /*
     | O que revisar hoje. O intervalo entre revisões é uma proporção do tempo
