@@ -363,3 +363,56 @@ export interface ReviewResponse {
   /** A próxima marcada, quando não há nenhuma vencida. Serve para a tela não dizer "acabou". */
   next: ReviewItem | null;
 }
+
+/** Uma lição no mapa da matéria. `mastery` nulo = ainda não praticada. */
+export interface StatsLesson {
+  id: number;
+  title: string;
+  module: string | null;
+  /** parte das questões de base cuja ÚLTIMA resposta está certa, em % */
+  mastery: number | null;
+}
+
+export interface StatsSubject {
+  id: number;
+  slug: string;
+  name: string;
+  exam_date: string | null;
+  /** nulo quando não há prova marcada ou ela já passou */
+  days_to_exam: number | null;
+  lessons_total: number;
+  lessons_started: number;
+  lessons_mastered: number;
+  /** na ordem da matéria */
+  lessons: StatsLesson[];
+}
+
+export interface WeakLesson {
+  lesson_id: number;
+  lesson_title: string;
+  subject_name: string;
+  /** questões diferentes já respondidas */
+  answered: number;
+  /** questões cuja última resposta está errada */
+  wrong: number;
+  /** acerto pela última resposta de cada questão */
+  accuracy: number;
+  /** acerto pela primeira resposta das mesmas questões */
+  first_accuracy: number;
+  /** nulo quando nenhuma questão foi respondida duas vezes */
+  trend: "up" | "down" | "flat" | null;
+}
+
+export interface StatsResponse {
+  subjects: StatsSubject[];
+  weak_lessons: WeakLesson[];
+  retention: {
+    first_answered: number;
+    first_accuracy: number | null;
+    /** respostas dadas depois de já ter acertado a mesma questão */
+    rechecked: number;
+    kept: number;
+    kept_accuracy: number | null;
+    forgotten_lessons: { lesson_id: number; lesson_title: string; subject_name: string; forgotten: number }[];
+  };
+}

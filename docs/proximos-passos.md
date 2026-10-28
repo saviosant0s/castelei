@@ -125,7 +125,11 @@ A favor da margem: créditos de assinatura que não são usados no mês também
 viram lucro. Contra: a primeira geração pode sair mais cara que o estimado, e
 por isso o preço só se fixa depois de medir.
 
-## Estatísticas que importam (refazer `/progresso`)
+## Estatísticas que importam (refazer `/progresso`) — FEITO
+
+Feito em outubro de 2026: ver `StatsController` e a seção do Progresso no
+`CLAUDE.md`. Ficou por lição, e não por tópico, porque o tópico é quase sempre
+uma questão só.
 
 Queixa do Sávio: a aba de estatística está fraca, com gráficos que não ajudam
 quem estuda. O que entra:
@@ -156,7 +160,7 @@ o diferencial de verdade.
 
 ## Ordem combinada
 
-1. Refazer as estatísticas.
+1. ~~Refazer as estatísticas.~~ Feito.
 2. "Do slide à lição", só para admin. Usa o que já existe; o Sávio testa no
    próprio semestre (ele já manda o slide de cada aula).
 3. Abrir a geração para os alunos: pesquisa na web, curso privado, sumário
