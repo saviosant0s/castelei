@@ -1,22 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { Download, Smartphone } from "lucide-react";
 import { SettingsRow } from "@/components/ui";
-
-type InstallPromptEvent = Event & { prompt: () => Promise<void> };
+import { installPrompt, promptInstall, subscribeInstallPrompt } from "@/lib/install-prompt";
 
 export function InstallButton() {
-  const [promptEvent, setPromptEvent] = useState<InstallPromptEvent | null>(null);
-
-  useEffect(() => {
-    const onPrompt = (event: Event) => {
-      event.preventDefault();
-      setPromptEvent(event as InstallPromptEvent);
-    };
-    window.addEventListener("beforeinstallprompt", onPrompt);
-    return () => window.removeEventListener("beforeinstallprompt", onPrompt);
-  }, []);
+  // O convite foi guardado na abertura do app (lib/install-prompt.ts); aqui só se lê.
+  const promptEvent = useSyncExternalStore(subscribeInstallPrompt, installPrompt, () => null);
 
   return (
     <SettingsRow
@@ -33,10 +24,7 @@ export function InstallButton() {
           <button
             type="button"
             className="btn btn-dark min-h-10 shrink-0 px-4 text-sm"
-            onClick={async () => {
-              await promptEvent.prompt();
-              setPromptEvent(null);
-            }}
+            onClick={() => void promptInstall()}
           >
             <Download className="size-4" aria-hidden="true" /> Instalar
           </button>

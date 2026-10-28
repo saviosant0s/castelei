@@ -32,13 +32,10 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  // A barra de status casa com o fundo do app nos dois temas. Quem escolhe
-  // à mão no Perfil não é coberto por media query: `applyTheme` reescreve
-  // esta meta no navegador.
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: THEME_COLOR.light },
-    { media: "(prefers-color-scheme: dark)", color: THEME_COLOR.dark },
-  ],
+  // A barra de status casa com o fundo do app. O padrão é claro em qualquer
+  // aparelho; quem escolheu escuro ou automático tem a cor reescrita pelo
+  // script do <head> e por `applyTheme` (lib/theme.ts).
+  themeColor: THEME_COLOR.light,
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -46,7 +43,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" data-theme="light" suppressHydrationWarning>
       <head>
         {/*
           Antes da primeira pintura, senão quem pediu escuro vê a tela clara

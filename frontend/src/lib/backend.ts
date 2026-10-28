@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { cookies } from "next/headers";
 import { notFound, redirect } from "next/navigation";
 import { apiBase, isGuestMode, TOKEN_COOKIE } from "@/lib/proxy";
@@ -35,8 +36,11 @@ export async function serverGet<T>(path: string): Promise<T> {
  * As telas de entrar e de criar conta precisam saber se já existe sessão (e se
  * ela é de visitante) para escolher o formulário certo — mas, sem sessão, a
  * resposta certa é mostrar o formulário, e não mandar para outra tela.
+ *
+ * `cache` do React: o layout do app e a página pedem a mesma coisa na mesma
+ * requisição, e a API é chamada uma vez só.
  */
-export async function currentUser(): Promise<User | null> {
+export const currentUser = cache(async (): Promise<User | null> => {
   const token = (await cookies()).get(TOKEN_COOKIE)?.value;
   if (!token) return null;
 
@@ -50,4 +54,4 @@ export async function currentUser(): Promise<User | null> {
   } catch {
     return null;
   }
-}
+});

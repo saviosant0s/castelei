@@ -24,9 +24,9 @@ afterEach(() => {
 const opcao = (nome: string) => screen.getByRole("radio", { name: new RegExp(nome) });
 
 describe("ThemeToggle", () => {
-  it("começa no automático", () => {
+  it("começa no claro, que é o padrão", () => {
     render(<ThemeToggle />);
-    expect(opcao("Automático").getAttribute("aria-checked")).toBe("true");
+    expect(opcao("Claro").getAttribute("aria-checked")).toBe("true");
   });
 
   it("escolher escuro guarda e aplica na página", () => {
@@ -43,14 +43,23 @@ describe("ThemeToggle", () => {
     fireEvent.click(opcao("Escuro"));
     fireEvent.click(opcao("Automático"));
 
-    expect(window.localStorage.getItem(THEME_KEY)).toBeNull();
+    expect(window.localStorage.getItem(THEME_KEY)).toBe("auto");
     expect(document.documentElement.dataset.theme).toBeUndefined();
   });
 
-  it("mostra a escolha já guardada quando a tela abre", () => {
-    window.localStorage.setItem(THEME_KEY, "light");
+  it("voltar ao claro apaga a escolha guardada", () => {
     render(<ThemeToggle />);
-    expect(opcao("Claro").getAttribute("aria-checked")).toBe("true");
+    fireEvent.click(opcao("Escuro"));
+    fireEvent.click(opcao("Claro"));
+
+    expect(window.localStorage.getItem(THEME_KEY)).toBeNull();
+    expect(document.documentElement.dataset.theme).toBe("light");
+  });
+
+  it("mostra a escolha já guardada quando a tela abre", () => {
+    window.localStorage.setItem(THEME_KEY, "dark");
+    render(<ThemeToggle />);
+    expect(opcao("Escuro").getAttribute("aria-checked")).toBe("true");
   });
 
   it("é um grupo de rádio, não três botões soltos", () => {

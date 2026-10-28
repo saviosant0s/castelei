@@ -16,23 +16,23 @@ import { type Theme, applyTheme, readTheme, saveTheme, subscribeTheme } from "@/
 | estuda no celular à noite e no computador de dia quer justamente isso.
 */
 const opcoes: { value: Theme; label: string; icon: typeof Sun }[] = [
-  { value: "auto", label: "Automático", icon: Monitor },
   { value: "light", label: "Claro", icon: Sun },
   { value: "dark", label: "Escuro", icon: Moon },
+  { value: "auto", label: "Automático", icon: Monitor },
 ];
 
 export function ThemeToggle() {
   /*
   | É `useSyncExternalStore` pelo mesmo motivo de `lesson-progress.ts`: o
   | valor só existe no navegador, numa tela que o servidor também desenha. O
-  | retorno do servidor é "auto", então o HTML do servidor e a primeira
+  | retorno do servidor é "light" (o padrão), então o HTML do servidor e a primeira
   | renderização do cliente combinam, e o valor de verdade entra na
   | renderização seguinte — sem erro de hidratação.
   |
   | A cor certa já está na tela desde antes da primeira pintura (o script do
   | `<head>`); o que ajusta aqui é só qual botão aparece marcado.
   */
-  const tema = useSyncExternalStore<Theme>(subscribeTheme, readTheme, () => "auto");
+  const tema = useSyncExternalStore<Theme>(subscribeTheme, readTheme, () => "light");
 
   function escolher(valor: Theme) {
     saveTheme(valor);

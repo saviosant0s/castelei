@@ -81,7 +81,7 @@ Neon pede o aceite do Sávio no painel.
    | Variável | Valor |
    |---|---|
    | `API_URL` | o endereço da API **terminando em `/api`**, ex. `https://castelei-api.vercel.app/api` |
-   | `GUEST_MODE` | `true` (modo de teste, sem login obrigatório) |
+   | `GUEST_MODE` | `false` (o app exige conta; `true` volta ao modo de teste, com visitante automático) |
    | `CONTACT_EMAIL` | opcional, aparece em `/privacidade` |
 
    `SITE_URL` é opcional: sem ela, o sitemap e as prévias de link usam o
