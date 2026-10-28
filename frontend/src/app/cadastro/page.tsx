@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { AuthForm } from "@/components/AuthForm";
+import { GoogleButton, OrDivider } from "@/components/GoogleButton";
 import { Logo } from "@/components/Logo";
 import { currentUser } from "@/lib/backend";
+import { googleEnabled } from "@/lib/google";
 
 export const metadata: Metadata = { title: "Criar conta" };
 
@@ -36,6 +38,13 @@ export default async function Page() {
           : "Leva menos de um minuto e é grátis."}
       </p>
       <div className="mt-8">
+        {googleEnabled() && (
+          <>
+            {/* Para o visitante, o Google também leva o histórico junto (AuthController::google). */}
+            <GoogleButton label="Criar conta com o Google" />
+            <OrDivider />
+          </>
+        )}
         <AuthForm mode={visitante ? "claim" : "register"} />
       </div>
     </main>

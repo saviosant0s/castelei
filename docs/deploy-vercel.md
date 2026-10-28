@@ -105,3 +105,19 @@ Actions → Variables** a variável `CASTELEI_API_URL` com o endereço certo.
   reserva, então o site parecer normal não prova que a API responde.
 - **Erro 500 na API:** **Logs** do projeto `castelei-api`. Com
   `LOG_CHANNEL=stderr`, o erro do Laravel aparece ali.
+
+## Entrar com o Google
+
+1. No [Google Cloud Console](https://console.cloud.google.com/), crie um projeto
+   e configure a **tela de consentimento OAuth** (tipo Externo, nome Castelei,
+   escopos `openid`, `email` e `profile`).
+2. Em **Credenciais → Criar credenciais → ID do cliente OAuth**, tipo
+   **Aplicativo da Web**. Em "URIs de redirecionamento autorizados":
+   `https://castelei.vercel.app/api/auth/google/callback` (e
+   `http://localhost:3000/api/auth/google/callback` para testar).
+3. Variáveis: `GOOGLE_CLIENT_ID` nos **dois** projetos (`castelei` e
+   `castelei-api`) e `GOOGLE_CLIENT_SECRET` só no `castelei-api`. Redeploy dos
+   dois.
+
+Sem elas, o botão não aparece e a rota da API responde 404.
+

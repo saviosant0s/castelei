@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { AuthForm } from "@/components/AuthForm";
+import { GoogleButton, OrDivider } from "@/components/GoogleButton";
 import { Logo } from "@/components/Logo";
 import { Callout } from "@/components/ui";
 import { currentUser } from "@/lib/backend";
+import { googleEnabled } from "@/lib/google";
 import { isGuestMode } from "@/lib/proxy";
 
 export const metadata: Metadata = { title: "Entrar" };
@@ -18,7 +20,8 @@ export const dynamic = "force-dynamic";
 | daria a ele um visitante novo e vazio, e o histórico ficaria no outro
 | aparelho.
 */
-export default async function Page() {
+export default async function Page({ searchParams }: { searchParams: Promise<{ erro?: string }> }) {
+  const { erro } = await searchParams;
   const user = await currentUser();
   if (user && !user.is_guest) redirect("/inicio");
 
@@ -43,7 +46,19 @@ export default async function Page() {
         </div>
       )}
 
+      {erro === "google" && (
+        <div className="mt-6">
+          <Callout role="alerta">Não deu para entrar com o Google. Tente de novo, ou entre com e-mail e senha.</Callout>
+        </div>
+      )}
+
       <div className="mt-8">
+        {googleEnabled() && (
+          <>
+            <GoogleButton />
+            <OrDivider />
+          </>
+        )}
         <AuthForm mode="login" />
       </div>
 
