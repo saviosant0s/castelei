@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { SubjectRow, nextLessonLine, tones } from "@/components/home/SubjectRow";
-import { EmptyState } from "@/components/ui";
+import { EmptyState, PageHero } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
 import { areaIcon, groupByArea, OUTRAS, subjectIcon } from "@/lib/areas";
 import { pluralize } from "@/lib/format";
@@ -29,17 +29,16 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
         <ArrowLeft className="size-5" aria-hidden="true" /> Início
       </Link>
 
-      <header className="flex items-center gap-4">
-        <span className="grid size-14 shrink-0 place-items-center rounded-control bg-sky-soft text-sky">
-          {createElement(areaIcon(area.slug), { className: "size-7", "aria-hidden": true })}
-        </span>
-        <div className="min-w-0">
-          <h1 className="text-4xl">{area.name}</h1>
-          {lista.length > 0 && (
-            <p className="mt-1 text-base text-content-secondary">{pluralize(lista.length, "matéria", "matérias")}</p>
-          )}
-        </div>
-      </header>
+      <PageHero
+        title={area.name}
+        art={
+          <span className="grid size-16 place-items-center rounded-control bg-sky-soft text-sky">
+            {createElement(areaIcon(area.slug), { className: "size-8", "aria-hidden": true })}
+          </span>
+        }
+      >
+        {lista.length > 0 && pluralize(lista.length, "matéria", "matérias")}
+      </PageHero>
 
       {lista.length === 0 ? (
         // Só chega aqui quem digitou o endereço: a tela inicial não liga para área vazia.

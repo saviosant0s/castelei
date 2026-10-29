@@ -1,4 +1,5 @@
 import { ProgressTabs } from "@/components/ProgressTabs";
+import { PageHero } from "@/components/ui";
 
 /*
 | O progresso é grande demais para uma tela só: números, evolução no tempo e
@@ -8,10 +9,7 @@ import { ProgressTabs } from "@/components/ProgressTabs";
 export default function ProgressoLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="space-y-6">
-      <header>
-        <p className="label-mono">Seus números</p>
-        <h1 className="mt-1 text-4xl">Progresso</h1>
-      </header>
+      <PageHero eyebrow="Seus números" title="Progresso" />
       <ProgressTabs />
       {children}
     </div>

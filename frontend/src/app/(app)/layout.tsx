@@ -1,8 +1,10 @@
+import { redirect, unstable_rethrow } from "next/navigation";
+import { AppBar } from "@/components/app/AppBar";
 import { BottomNav } from "@/components/BottomNav";
-import { redirect } from "next/navigation";
 import { OfflineBanner } from "@/components/offline/OfflineBanner";
-import { currentUser } from "@/lib/backend";
+import { currentUser, serverGet } from "@/lib/backend";
 import { isGuestMode } from "@/lib/proxy";
+import type { AppBarResponse } from "@/lib/types";
 
 export default async function AppLayout({ children }: { children: React.ReactNode }) {
   /*
@@ -17,11 +19,24 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     if (user?.is_guest) redirect("/cadastro");
   }
 
+  /*
+  | O cabeçalho é o extra, a tela é o essencial: se `/me/bar` falhar, a barra
+  | sai vazia e a página abre do mesmo jeito. O redirecionamento de sessão
+  | vencida passa (`unstable_rethrow`), senão ninguém voltaria ao login.
+  */
+  let bar: AppBarResponse | null = null;
+  try {
+    bar = await serverGet<AppBarResponse>("/me/bar");
+  } catch (error) {
+    unstable_rethrow(error);
+  }
+
   return (
-    <div className="mx-auto min-h-dvh max-w-md px-5 pb-28 pt-6">
+    <div className="mx-auto min-h-dvh max-w-md px-5 pb-28" style={{ paddingTop: "calc(var(--appbar) + 1.25rem)" }}>
+      <AppBar bar={bar} />
       <OfflineBanner />
       {children}
-      <BottomNav />
+      <BottomNav reviewsDue={bar?.reviews_due ?? 0} />
     </div>
   );
 }

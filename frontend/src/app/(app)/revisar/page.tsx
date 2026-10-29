@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CalendarClock, Info } from "lucide-react";
-import { Callout, Card, EmptyState } from "@/components/ui";
+import { Callout, Card, EmptyState, PageHero } from "@/components/ui";
 import { ReviewList } from "@/components/review/ReviewRow";
 import { serverGet } from "@/lib/backend";
 import { COMO_FUNCIONA, porQueAgora, quandoVence, resumoDaProva, tituloDaFila } from "@/lib/review";
@@ -22,10 +22,7 @@ export default async function Revisar() {
   if (due.length === 0) {
     return (
       <div className="space-y-8">
-        <header>
-          <p className="label-mono">Revisão</p>
-          <h1 className="mt-1 text-4xl">{next ? "Tudo em dia" : "Nada para revisar"}</h1>
-        </header>
+        <PageHero eyebrow="Revisão" title={next ? "Tudo em dia" : "Nada para revisar"} />
 
         {next ? (
           <>
@@ -69,11 +66,9 @@ export default async function Revisar() {
 
   return (
     <div className="space-y-8">
-      <header>
-        <p className="label-mono">Revisão</p>
-        <h1 className="mt-1 text-4xl">{tituloDaFila(due.length)}</h1>
-        <p className="mt-3 text-base text-content-secondary">{COMO_FUNCIONA}</p>
-      </header>
+      <PageHero eyebrow="Revisão" title={tituloDaFila(due.length)}>
+        {COMO_FUNCIONA}
+      </PageHero>
 
       <section aria-labelledby="fila">
         <h2 id="fila" className="sr-only">Lições para revisar</h2>

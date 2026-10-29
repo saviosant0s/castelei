@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { NoteReview, type NoteReviewData } from "@/components/study/NoteReview";
-import { EmptyState } from "@/components/ui";
+import { EmptyState, PageHero } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
 import { formatDateTime } from "@/lib/format";
 
@@ -49,13 +49,9 @@ export default async function CorrecoesPage() {
 
   return (
     <div className="space-y-8">
-      <header>
-        <p className="label-mono">Anotações</p>
-        <h1 className="mt-1 text-4xl">Minhas dúvidas e correções</h1>
-        <p className="mt-2 text-base text-content-secondary">
-          O que você perguntou, o que explicou e o que a IA respondeu. Rever aqui não gasta nada.
-        </p>
-      </header>
+      <PageHero eyebrow="Anotações" title="Minhas dúvidas e correções">
+        O que você perguntou, o que explicou e o que a IA respondeu. Rever aqui não gasta nada.
+      </PageHero>
 
       {doubts.length > 0 && (
         <section aria-labelledby="h-duvidas" className="space-y-4">

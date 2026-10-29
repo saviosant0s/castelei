@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, BookA, ClipboardCheck, Crown } from "lucide-react";
 import { SubjectSummary } from "@/components/trail/SubjectSummary";
 import { SubjectTrail } from "@/components/trail/SubjectTrail";
-import { Callout, Card } from "@/components/ui";
+import { Callout, Card, PageHero } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
 import { pluralize } from "@/lib/format";
 import { concluida } from "@/lib/lesson-trail";
@@ -39,15 +39,18 @@ export default async function MateriaPage({ params }: { params: Promise<{ slug: 
         <ArrowLeft className="size-5" aria-hidden="true" /> {area.name}
       </Link>
 
-      <header>
-        {naTrilha && (
-          <Link href={`/trilha/${naTrilha.trail.slug}`} className="label-mono mb-2 inline-block hover:text-ink">
-            Passo {naTrilha.number} de {naTrilha.trail.steps.length} · {naTrilha.trail.name}
-          </Link>
-        )}
-        <h1 className="text-4xl">{subject.name}</h1>
-        {subject.description && <p className="mt-3 text-base text-content-secondary">{subject.description}</p>}
-      </header>
+      <PageHero
+        title={subject.name}
+        eyebrow={
+          naTrilha && (
+            <Link href={`/trilha/${naTrilha.trail.slug}`} className="hover:text-ink">
+              Passo {naTrilha.number} de {naTrilha.trail.steps.length} · {naTrilha.trail.name}
+            </Link>
+          )
+        }
+      >
+        {subject.description}
+      </PageHero>
 
       {/* Quanto falta para a prova e quanto do caminho já andou: as duas
           perguntas que a pessoa faz ao abrir a matéria, e que a trilha
@@ -62,7 +65,7 @@ export default async function MateriaPage({ params }: { params: Promise<{ slug: 
       */}
       {proxima && (
         <Card tone="bold" size="lg" radius="panel" href={`/licao/${proxima.id}`}>
-          <p className="label-mono !text-on-bold/60">
+          <p className="label-mono !text-sky">
             {feitas === 0 ? "Comece por aqui" : "Próxima lição"} · {proxima.position} de {subject.lessons.length}
           </p>
           <p className="mt-2 font-display text-2xl leading-tight font-bold">{proxima.title}</p>

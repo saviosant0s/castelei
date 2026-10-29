@@ -79,9 +79,9 @@ export function TrailModule({
         | solto deixaria o traço do caminho aparecer pelos cantos
         | arredondados.
         |
-        | O `padding-top` é a área segura do celular: o topo da página é a
-        | barra de status, e um cabeçalho colado em `top: 0` nasceria por
-        | baixo do relógio.
+        | Ele gruda LOGO ABAIXO do cabeçalho fixo do app (`--appbar`, que já
+        | inclui a área segura do celular), e não em `top: 0`: ali ele
+        | passaria por baixo da barra com os dias e o XP.
         |
         | E ELA NÃO TEM MARGEM DE BAIXO, de propósito. A prisão de um elemento
         | grudado é a CAIXA DE CONTEÚDO do pai, e a margem do próprio elemento
@@ -91,9 +91,8 @@ export function TrailModule({
         | `mt-6` na trilha abaixo, que é dentro da caixa de conteúdo.
         */
         <div
-          className="sticky top-0 z-10 -mx-5 bg-surface px-5 pb-2"
+          className="sticky top-[var(--appbar)] z-10 -mx-5 bg-surface px-5 pb-2 pt-2"
           style={{
-            paddingTop: "max(env(safe-area-inset-top, 0px), 0.5rem)",
             // O grão do fundo vai junto, senão a faixa chapada aparece como
             // um retângulo liso por cima da página texturizada.
             backgroundImage: "var(--grain)",
@@ -105,7 +104,7 @@ export function TrailModule({
               metade". */}
           <Card tone={tons[bloco.accent]} size="sm">
             <div className="flex items-baseline justify-between gap-3">
-              <p className="font-mono text-[0.6875rem] tracking-wide text-content-subtle uppercase">
+              <p className="text-sm font-bold text-content-subtle">
                 Módulo {bloco.number}
               </p>
               {/* O número vem escrito junto: barra sozinha não diz quanto falta. */}

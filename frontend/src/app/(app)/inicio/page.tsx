@@ -1,27 +1,32 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, ChevronRight, CloudUpload, Flame, Route, Search, Star } from "lucide-react";
-import { Card, Pill } from "@/components/ui";
+import { ArrowRight, ChevronRight, CloudUpload, Route } from "lucide-react";
+import { Card, PageHero } from "@/components/ui";
 import { SubjectRow, tones } from "@/components/home/SubjectRow";
 import { areaIcon, areaProgress, groupByArea } from "@/lib/areas";
 import { currentStep, trailView } from "@/lib/trails";
 import { serverGet } from "@/lib/backend";
-import { firstName, formatNumber, pluralize } from "@/lib/format";
-import { ReviewBell } from "@/components/review/ReviewBell";
-import type { ProgressResponse, ReviewResponse, SubjectsResponse, User } from "@/lib/types";
+import { firstName, pluralize } from "@/lib/format";
+import type { ProgressResponse, SubjectsResponse, User } from "@/lib/types";
 
 export const metadata: Metadata = { title: "Início" };
 
+/** A frase embaixo do "Oi": o que o streak pede hoje, sem cobrar. */
+function saudacao(gami: ProgressResponse["gamification"]): string {
+  if (!gami) return "Escolha uma área e comece por onde quiser.";
+  const dias = gami.streak.current;
+  if (gami.streak.studied_today) {
+    return dias > 1 ? `${dias} dias seguidos. Hoje já está feito.` : "Hoje já está feito. Volte amanhã para começar uma sequência.";
+  }
+  if (dias > 0) return `Estude hoje para chegar a ${dias + 1} dias seguidos.`;
+  return "Uma lição por dia já começa uma sequência.";
+}
+
 export default async function Inicio() {
-  const [{ user }, { areas, subjects, trails }, progress, revisao] = await Promise.all([
+  const [{ user }, { areas, subjects, trails }, progress] = await Promise.all([
     serverGet<{ user: User }>("/me"),
     serverGet<SubjectsResponse>("/subjects"),
     serverGet<ProgressResponse>("/progress"),
-    /*
-      A fila de revisão nunca pode derrubar a tela inicial: ela é o extra, e
-      as matérias são o essencial. Falhou, o sininho abre sem número.
-    */
-    serverGet<ReviewResponse>("/review").catch(() => ({ due: [], next: null }) as ReviewResponse),
   ]);
 
   const last = progress.last_attempt;
@@ -48,45 +53,15 @@ export default async function Inicio() {
 
   return (
     <div className="space-y-10">
-      <header className="flex items-start justify-between gap-4">
-        <div>
-          <p className="label-mono">Bora estudar</p>
-          <h1 className="mt-1 text-4xl">Oi, {firstName(user.name)}!</h1>
-          {gami && (
-            <>
-              <div className="mt-3 flex flex-wrap items-center gap-2">
-                <Pill
-                  tone="coral"
-                  icon={Flame}
-                  label={`Streak: ${gami.streak.current} ${gami.streak.current === 1 ? "dia seguido" : "dias seguidos"}`}
-                >
-                  {gami.streak.current} {gami.streak.current === 1 ? "dia" : "dias"}
-                </Pill>
-                <Pill tone="sky" icon={Star} label={`${gami.xp_total} pontos de experiência`}>
-                  {formatNumber(gami.xp_total)} XP
-                </Pill>
-              </div>
-              {gami.streak.current > 0 && !gami.streak.studied_today && (
-                <p className="mt-2 text-sm text-content-secondary">Estude hoje para manter seu streak.</p>
-              )}
-            </>
-          )}
-        </div>
-        {/* A fila de revisão mora em /revisar; aqui fica só o aviso, no sininho. */}
-        <div className="flex shrink-0 items-center gap-2">
-          <Pill tone="sky" href="/planos">
-            {user.plan_label}
-          </Pill>
-          <Link
-            href="/buscar"
-            aria-label="Buscar lição, palavra ou anotação"
-            className="grid size-11 shrink-0 place-items-center rounded-pill bg-surface-raised text-content shadow-lift transition hover:-translate-y-0.5"
-          >
-            <Search className="size-5" aria-hidden="true" />
-          </Link>
-          <ReviewBell vencidas={revisao.due.length} />
-        </div>
-      </header>
+      {/*
+        A saudação fica sozinha e no centro: os dias seguidos e o XP subiram
+        para o cabeçalho fixo (e aparecem em toda tela), a revisão virou aba e
+        a busca mora no Perfil. A frase de baixo é a única coisa que muda de
+        um dia para o outro, e diz o que fazer agora.
+      */}
+      <PageHero eyebrow="Bora estudar" title={`Oi, ${firstName(user.name)}!`}>
+        {saudacao(gami)}
+      </PageHero>
 
       {/*
         Só para visitante que JÁ estudou alguma coisa: antes disso não há o que
@@ -109,7 +84,7 @@ export default async function Inicio() {
         <h2 id="continue" className="sr-only">Continuar</h2>
         {last && continueHref ? (
           <Card tone="bold" size="lg" radius="panel" href={continueHref}>
-            <p className="label-mono !text-on-bold/60">Continue de onde parou</p>
+            <p className="label-mono !text-sky">Continue de onde parou</p>
             <p className="mt-3 font-display text-2xl font-bold">{last.lesson_title}</p>
             <p className="mt-1 text-base on-bold-secondary">
               {last.subject_name}
@@ -122,7 +97,7 @@ export default async function Inicio() {
           </Card>
         ) : firstLesson ? (
           <Card tone="bold" size="lg" radius="panel" href={`/licao/${firstLesson.id}`}>
-            <p className="label-mono !text-on-bold/60">Comece por aqui</p>
+            <p className="label-mono !text-sky">Comece por aqui</p>
             <p className="mt-3 font-display text-2xl font-bold">{firstLesson.title}</p>
             <p className="mt-1 text-base on-bold-secondary">
               Leva poucos minutos: leia a lição e treine {pluralize(firstLesson.questions_available, "questão", "questões")}.

@@ -421,4 +421,19 @@ export interface StatsResponse {
     kept_accuracy: number | null;
     forgotten_lessons: { lesson_id: number; lesson_title: string; subject_name: string; forgotten: number }[];
   };
+  /** Últimos 7 dias (do mais antigo até hoje) e o acerto contra a semana anterior. */
+  week: {
+    days: { date: string; answered: number; correct: number }[];
+    accuracy: number | null;
+    previous_accuracy: number | null;
+    /** pontos de diferença; nulo sem respostas suficientes nas duas semanas */
+    change: number | null;
+  };
+}
+
+/** O cabeçalho fixo e a barra de baixo (`GET /me/bar`). */
+export interface AppBarResponse {
+  gamification: { streak: number; studied_today: boolean; xp: number } | null;
+  area: { slug: string; name: string } | null;
+  reviews_due: number;
 }

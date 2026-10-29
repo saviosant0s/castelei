@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BookA, BookOpen, NotebookPen, Search } from "lucide-react";
-import { EmptyState } from "@/components/ui";
+import { EmptyState, PageHero } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
 
 export const metadata: Metadata = { title: "Buscar" };
@@ -29,8 +29,7 @@ export default async function BuscarPage({ searchParams }: { searchParams: Promi
   return (
     <div className="space-y-8">
       <header>
-        <p className="label-mono">Buscar</p>
-        <h1 className="mt-1 text-4xl">O que você procura?</h1>
+        <PageHero eyebrow="Buscar" title="O que você procura?" />
         <form action="/buscar" method="get" role="search" className="mt-5 flex gap-2">
           <label htmlFor="q" className="sr-only">
             Buscar lição, palavra ou anotação

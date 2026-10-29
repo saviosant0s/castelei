@@ -11,6 +11,7 @@
 export { Card, type CardTone } from "./Card";
 export { Callout, type CalloutRole } from "./Callout";
 export { EmptyState } from "./EmptyState";
+export { PageHero } from "./PageHero";
 export { ListRow } from "./ListRow";
 export { Pill, type PillTone } from "./Pill";
 export { ProgressBar } from "./ProgressBar";
