@@ -20,6 +20,8 @@ class Review extends Model
         return [
             'due_at' => 'datetime',
             'reviewed_at' => 'datetime',
+            'stability' => 'float',
+            'difficulty' => 'float',
         ];
     }
 

@@ -40,6 +40,11 @@ const KIND: Record<
 };
 
 /** A lição, uma ideia por tela. */
+/** A mesma régua do Progresso: 80% das questões de base certas na última resposta. */
+export function dominada(mastery: number | null | undefined): boolean {
+  return typeof mastery === "number" && mastery >= 80;
+}
+
 export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
   const steps = lesson.steps;
 
@@ -186,6 +191,24 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
           >
             Começar do início
           </button>
+        </p>
+      )}
+
+      {/*
+      | Quem já domina a lição não precisa reler tudo: o apoio que ajuda quem
+      | começa atrapalha quem já sabe (efeito de reversão da especialização).
+      | O app não esconde as etapas — oferece o atalho, e só na primeira tela.
+      | Ver docs/principios-pedagogicos.md.
+      */}
+      {index === 0 && !showResumed && dominada(lesson.mastery) && (
+        <p className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 rounded-control bg-sage-soft px-4 py-2.5 text-sm">
+          <span>Você já domina esta lição ({lesson.mastery}%).</span>
+          <Link
+            href={`/licao/${lesson.id}/praticar`}
+            className="min-h-11 content-center font-bold underline underline-offset-4"
+          >
+            Ir direto às questões
+          </Link>
         </p>
       )}
 

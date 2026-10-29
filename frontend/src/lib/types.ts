@@ -154,6 +154,8 @@ export interface LessonDetail {
   practice?: "questions" | "writing";
   /** Questões cuja última resposta foi errada: a lição oferece refazer só elas. */
   wrong_count?: number;
+  /** Domínio da pessoa nesta lição, pela última resposta (0–100). null = nunca praticada. */
+  mastery?: number | null;
   /** Quantas questões em cada nível. Vazio = a lição não tem níveis. */
   levels?: Partial<Record<Difficulty, number>>;
   /** Praticar por nível é do Pro. */

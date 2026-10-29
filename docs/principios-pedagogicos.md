@@ -36,15 +36,22 @@ base e apontou três melhorias, registradas no fim.
 3. **Efeito de reversão da especialização.** O apoio que ajuda quem está
    começando atrapalha quem já domina. Hoje o app já tem duas saídas para
    isso: “Ir às questões” no alto de toda lição, e a revisão que abre direto
-   no Modo Prova. **Ideia para depois:** quando a lição estiver dominada (80%
-   pelo critério do Progresso), oferecer as questões antes das etapas.
+   no Modo Prova. E agora a lição dominada (80% pelo critério do Progresso)
+   oferece na primeira etapa “Ir direto às questões”. **Feito.**
+4. **FSRS para quem não marcou data de prova.** Sem prazo, o problema vira
+   “lembrar para sempre”, que é o que o FSRS resolve. Ele substituiu a escada
+   fixa de 1, 3, 7, 16 e 30 dias. **Feito.**
 
-## O que a análise sugeriu e o Castelei não segue, de propósito
+## O que a análise sugeriu e o Castelei segue só em parte
 
-- **O algoritmo FSRS.** Ele resolve “lembrar para sempre”, sem data. O
-  Castelei conhece a data da prova, e para prazo conhecido o resultado de
-  Cepeda é direto. A crista do estudo é larga: precisão a mais não compra
-  retenção. O porquê completo está em `docs/revisao-espacada.md`.
-- **Tirar apoio visual de forma automática** conforme o acerto sobe. Mudar a
-  lição sozinha confunde quem volta para revisar, e as duas saídas acima já
-  deixam a pessoa pular o que não precisa.
+- **O algoritmo FSRS** entra só sem data de prova. Com data, quem manda é a
+  proporção de Cepeda: o FSRS mira uma chance fixa de lembrar a qualquer
+  momento, sem saber que existe um dia que importa.
+- **Tirar apoio visual de forma automática** conforme o acerto sobe não
+  entrou. Mudar a lição sozinha confunde quem volta para revisar; o atalho
+  para as questões dá o mesmo ganho sem esconder nada.
+
+## A data da prova é de quem estuda
+
+Ela é marcada por cada pessoa na tela da matéria, e não pelo painel. Numa
+matéria pública, cada um tem a sua prova.

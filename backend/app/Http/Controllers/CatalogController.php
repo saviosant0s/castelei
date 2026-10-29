@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Attempt;
+use App\Models\ExamDate;
 use App\Models\Lesson;
 use App\Models\Question;
 use App\Models\Subject;
@@ -36,6 +37,9 @@ class CatalogController extends Controller
             ->orderBy('position')
             ->get();
 
+        // A data da prova é de cada pessoa (ela marca na tela da matéria).
+        $datas = ExamDate::mapFor($user);
+
         $minForExam = (int) config('castelei.exam.min_questions');
         $examTarget = (int) config('castelei.exam.questions');
 
@@ -67,7 +71,7 @@ class CatalogController extends Controller
                 | e o agendamento de revisão usa como prazo — ver
                 | docs/revisao-espacada.md.
                 */
-                'exam_date' => $subject->exam_date?->format('Y-m-d'),
+                'exam_date' => $datas[$subject->id] ?? null,
                 'exam' => $this->examBlock($subject, $user->hasExam(), $minForExam, $examTarget),
                 /*
                 | Quantas palavras o vocabulário da matéria tem. Vem de graça:
@@ -195,6 +199,13 @@ class CatalogController extends Controller
                 'limited_by_plan' => $available < $lesson->questions_count,
                 // A tela troca "treinar 8 questões" por "escrever o texto por partes".
                 'practice' => $escrita ? 'writing' : 'questions',
+                /*
+                | Domínio da pessoa nesta lição (mesma conta do Progresso). Com
+                | 80% ou mais, a lição oferece ir direto às questões: o apoio
+                | que ajuda quem começa atrapalha quem já domina (efeito de
+                | reversão da especialização). Ver docs/principios-pedagogicos.md.
+                */
+                'mastery' => StatsController::lessonMastery($request->user()->id, $lesson->id),
                 // Questões cuja última resposta foi errada: a lição oferece refazer só elas.
                 'wrong_count' => count(AttemptController::wrongQuestionIds($request->user()->id, $lesson)),
                 /*

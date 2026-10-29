@@ -22,6 +22,14 @@ class ReviewTest extends TestCase
     {
         Sanctum::actingAs($user);
 
+        // "Matéria com prova" nos testes quer dizer: a pessoa marcou essa data.
+        if ($lesson->subject->exam_date !== null) {
+            \App\Models\ExamDate::firstOrCreate(
+                ['user_id' => $user->id, 'subject_id' => $lesson->subject_id],
+                ['exam_date' => $lesson->subject->exam_date->format('Y-m-d')],
+            );
+        }
+
         $start = $this->postJson("/api/lessons/{$lesson->id}/attempts")->assertCreated();
         $attemptId = $start->json('attempt.id');
 
@@ -184,17 +192,29 @@ class ReviewTest extends TestCase
         $this->getJson('/api/review')->assertOk()->assertJsonCount(0, 'due');
     }
 
-    /** Matéria sem data de prova cai na escada de longo prazo, e o primeiro degrau é 1 dia. */
-    public function test_materia_sem_prova_usa_a_escada(): void
+    /** Sem data de prova, quem decide é o FSRS, e a memória fica guardada. */
+    public function test_materia_sem_prova_usa_o_fsrs(): void
     {
         $lesson = $this->makeLesson(8); // makeLesson cria matéria sem exam_date
         $user = User::factory()->create(['plan' => 'pro']);
 
         $result = $this->practice($user, $lesson);
 
-        $ladder = config('castelei.review.fallback_days');
-        // Primeiro degrau (1 dia) com fator 1,3 de acerto alto → 2.
-        $this->assertSame((int) ceil($ladder[0] * 1.3), $result['review']['interval_days']);
+        // Primeira prática com 100% é nota 4: estabilidade inicial de 13,8 dias → 14.
+        $this->assertSame(14, $result['review']['interval_days']);
+        $review = Review::where('user_id', $user->id)->first();
+        $this->assertEqualsWithDelta(13.82, $review->stability, 0.01);
+        $this->assertNotNull($review->difficulty);
+    }
+
+    public function test_sem_prova_errar_tudo_volta_amanha(): void
+    {
+        $lesson = $this->makeLesson(8);
+        $user = User::factory()->create(['plan' => 'pro']);
+
+        $result = $this->practice($user, $lesson, correct: false);
+
+        $this->assertSame(1, $result['review']['interval_days']);
     }
 
     /** Prova que já passou não pode gerar intervalo negativo nem travar a matéria. */

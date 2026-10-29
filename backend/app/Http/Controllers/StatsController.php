@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ExamDate;
 use App\Models\Question;
 use App\Models\Subject;
 use App\Services\ReviewService;
@@ -65,7 +66,7 @@ class StatsController extends Controller
         $porQuestao = $answers->groupBy('question_id');
 
         return response()->json([
-            'subjects' => $this->subjects($answers, $porQuestao),
+            'subjects' => $this->subjects($answers, $porQuestao, ExamDate::mapFor($request->user())),
             'weak_lessons' => $this->weakLessons($answers->reject(fn ($a) => $a->writing)),
             'retention' => $this->retention($porQuestao->reject(fn ($lista) => $lista->first()->writing)),
         ]);
@@ -80,9 +81,10 @@ class StatsController extends Controller
      *
      * @param  Collection<int, object>  $answers
      * @param  Collection<int, Collection<int, object>>  $porQuestao
+     * @param  array<int, string>  $datas  subject_id => data da prova desta pessoa
      * @return list<array<string, mixed>>
      */
-    private function subjects(Collection $answers, Collection $porQuestao): array
+    private function subjects(Collection $answers, Collection $porQuestao, array $datas): array
     {
         if ($answers->isEmpty()) {
             return [];
@@ -104,7 +106,7 @@ class StatsController extends Controller
             ->groupBy('lesson_id');
 
         return $subjects
-            ->map(function (Subject $subject) use ($base, $porQuestao, $recente) {
+            ->map(function (Subject $subject) use ($base, $porQuestao, $recente, $datas) {
                 $licoes = $subject->lessons
                     ->filter(fn ($lesson) => $base->has($lesson->id))
                     ->map(function ($lesson) use ($base, $porQuestao) {
@@ -127,8 +129,8 @@ class StatsController extends Controller
                     'id' => $subject->id,
                     'slug' => $subject->slug,
                     'name' => $subject->name,
-                    'exam_date' => $subject->exam_date?->format('Y-m-d'),
-                    'days_to_exam' => $this->review->daysToExam($subject),
+                    'exam_date' => $datas[$subject->id] ?? null,
+                    'days_to_exam' => ReviewService::daysUntil($datas[$subject->id] ?? null),
                     'lessons_total' => $licoes->count(),
                     'lessons_started' => $licoes->whereNotNull('mastery')->count(),
                     'lessons_mastered' => $licoes->where('mastery', '>=', self::MASTERED)->count(),
@@ -258,6 +260,39 @@ class StatsController extends Controller
                 ->values()
                 ->all(),
         ];
+    }
+
+    /**
+     * O domínio de uma lição para uma pessoa: a parte das questões de base
+     * cuja ÚLTIMA resposta está certa. null = nunca praticada.
+     */
+    public static function lessonMastery(int $userId, int $lessonId): ?int
+    {
+        $base = DB::table('questions')
+            ->where('lesson_id', $lessonId)
+            ->where('exam_only', false)
+            ->whereNull('difficulty')
+            ->pluck('id');
+
+        if ($base->isEmpty()) {
+            return null;
+        }
+
+        $ultimas = DB::table('answers')
+            ->join('attempts', 'attempts.id', '=', 'answers.attempt_id')
+            ->where('attempts.user_id', $userId)
+            ->whereNotNull('attempts.finished_at')
+            ->whereIn('answers.question_id', $base)
+            ->groupBy('answers.question_id')
+            ->selectRaw('MAX(answers.id) as id');
+
+        $respostas = DB::table('answers')->whereIn('id', $ultimas)->pluck('is_correct');
+
+        if ($respostas->isEmpty()) {
+            return null;
+        }
+
+        return (int) round($respostas->filter()->count() / $base->count() * 100);
     }
 
     /** @param  Collection<int, object>  $respostas */
