@@ -25,8 +25,6 @@ export const MAP_STATES: Record<MapState, { label: string; cell: string }> = {
  * procurar QUAIS oito em outro.
  */
 export function SubjectMap({ subject }: { subject: StatsSubject }) {
-  const modulos = mapModules(subject.lessons);
-
   return (
     <Card className="space-y-4">
       <div className="flex items-start justify-between gap-3">
@@ -53,34 +51,43 @@ export function SubjectMap({ subject }: { subject: StatsSubject }) {
         <p className="mt-1 text-base text-content-secondary">{readiness(subject)}</p>
       </div>
 
-      <div className="space-y-3">
-        {modulos.map((modulo, i) => (
-          <div key={`${modulo.name ?? "sem-modulo"}-${i}`}>
-            {modulo.name && <p className="mb-1.5 text-sm text-content-subtle">{modulo.name}</p>}
-            <ul className="flex flex-wrap gap-1.5">
-              {modulo.lessons.map((lesson) => {
-                const estado = mapState(lesson);
-                const s = MAP_STATES[estado];
-                const nota = lesson.mastery === null ? "" : `, ${lesson.mastery}%`;
-
-                return (
-                  <li key={lesson.id}>
-                    <Link
-                      href={`/licao/${lesson.id}`}
-                      title={`${lesson.title}: ${s.label.toLowerCase()}${nota}`}
-                      aria-label={`Lição ${lesson.number}, ${lesson.title}: ${s.label.toLowerCase()}${nota}`}
-                      className={`flex size-9 items-center justify-center rounded-control font-mono text-sm font-medium ${s.cell}`}
-                    >
-                      {estado === "dominado" ? <Check className="size-4" aria-hidden="true" /> : lesson.number}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        ))}
-      </div>
+      <SubjectMapGrid subject={subject} />
     </Card>
+  );
+}
+
+/** Os quadrados do mapa, módulo a módulo: um por lição, cada um um link. */
+export function SubjectMapGrid({ subject }: { subject: StatsSubject }) {
+  const modulos = mapModules(subject.lessons);
+
+  return (
+    <div className="space-y-3">
+      {modulos.map((modulo, i) => (
+        <div key={`${modulo.name ?? "sem-modulo"}-${i}`}>
+          {modulo.name && <p className="mb-1.5 text-sm text-content-subtle">{modulo.name}</p>}
+          <ul className="flex flex-wrap gap-1.5">
+            {modulo.lessons.map((lesson) => {
+              const estado = mapState(lesson);
+              const s = MAP_STATES[estado];
+              const nota = lesson.mastery === null ? "" : `, ${lesson.mastery}%`;
+
+              return (
+                <li key={lesson.id}>
+                  <Link
+                    href={`/licao/${lesson.id}`}
+                    title={`${lesson.title}: ${s.label.toLowerCase()}${nota}`}
+                    aria-label={`Lição ${lesson.number}, ${lesson.title}: ${s.label.toLowerCase()}${nota}`}
+                    className={`flex size-9 items-center justify-center rounded-control font-mono text-sm font-medium ${s.cell}`}
+                  >
+                    {estado === "dominado" ? <Check className="size-4" aria-hidden="true" /> : lesson.number}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      ))}
+    </div>
   );
 }
 

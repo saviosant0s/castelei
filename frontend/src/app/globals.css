@@ -32,6 +32,9 @@
   --color-sage-soft: #ddf3e7;
   --color-brick: #c93b3b;
   --color-brick-soft: #fbe3e3;
+  /* O dourado do XP, só no cabeçalho e nas conquistas. */
+  --color-gold: #a87a14;
+  --color-gold-soft: #fbefc9;
 
   /*
   | O degrau de baixo do nó da trilha.
@@ -61,6 +64,14 @@
   | "Confirmar" ficava ilegível — azul claro com letra quase branca.
   */
   --color-on-accent: #1c1c2e;
+
+  /*
+  | O rótulo pequeno que abre um bloco ("Continue de onde parou", "Passo 3
+  | de 5"). Era fonte de máquina em caixa alta e espaçada, e o Sávio cravou:
+  | "cara de IA". Virou texto normal, em negrito e na cor da marca — um azul
+  | mais fundo que o `sky`, porque em letra pequena o azul claro some.
+  */
+  --color-label: #2f6fb0;
 
   /*
   | Elevação com a cor do próprio fundo, não cinza puro: sombra cinza sobre
@@ -127,6 +138,8 @@
     --color-sage-soft: #16301f;
     --color-brick: #e0625f;
     --color-brick-soft: #3a1d1d;
+    --color-gold: #f2c14e;
+    --color-gold-soft: #3b3218;
     --color-sky-deep: #3f7ead;
     --color-sage-deep: #3d8e69;
     --color-coral-deep: #c06a4e;
@@ -135,6 +148,7 @@
     --color-surface-sunken: #0e0e16;
     --color-surface-bold: #2b2b40;
     --color-on-bold: #f2f3f7;
+    --color-label: #8fc3f4;
     --shadow-lift: 0 14px 30px -16px rgb(0 0 0 / 0.75);
     --shadow-sky: 0 14px 26px -14px rgb(47 127 199 / 0.55);
   }
@@ -154,6 +168,8 @@
   --color-sage-soft: #16301f;
   --color-brick: #e0625f;
   --color-brick-soft: #3a1d1d;
+  --color-gold: #f2c14e;
+  --color-gold-soft: #3b3218;
   --color-sky-deep: #3f7ead;
   --color-sage-deep: #3d8e69;
   --color-coral-deep: #c06a4e;
@@ -162,6 +178,7 @@
   --color-surface-sunken: #0e0e16;
   --color-surface-bold: #2b2b40;
   --color-on-bold: #f2f3f7;
+  --color-label: #8fc3f4;
   --shadow-lift: 0 14px 30px -16px rgb(0 0 0 / 0.75);
   --shadow-sky: 0 14px 26px -14px rgb(47 127 199 / 0.55);
 }
@@ -213,6 +230,21 @@ h3 {
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.1;
+  /*
+  | Linhas equilibradas: "Matemática / do dia a dia", e não "Matemática do
+  | dia a / dia". A palavra sozinha na linha de baixo é a quebra que mais
+  | denuncia página de site dentro de um app.
+  */
+  text-wrap: balance;
+}
+
+/*
+| A altura do cabeçalho fixo do app (AppBar). Tudo que gruda no topo — o
+| cabeçalho do módulo da trilha, a letra do vocabulário — gruda LOGO ABAIXO
+| dele, e não em `top: 0`, senão some por baixo da barra.
+*/
+:root {
+  --appbar: calc(3.5rem + env(safe-area-inset-top, 0px));
 }
 
 @layer components {
@@ -221,8 +253,18 @@ h3 {
     @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink;
     @apply active:translate-y-px disabled:cursor-not-allowed disabled:opacity-45;
   }
+  /*
+  | O botão principal é uma TECLA: degrau sólido embaixo, que some quando o
+  | dedo aperta — a mesma cara do nó da trilha. Era um azul com brilho
+  | difuso embaixo, e o Sávio apontou: "100% cara de IA".
+  */
   .btn-primary {
-    @apply bg-sky text-on-accent shadow-sky hover:brightness-105;
+    @apply bg-sky text-on-accent hover:brightness-105;
+    box-shadow: 0 4px 0 var(--color-sky-deep);
+  }
+  .btn-primary:active:not(:disabled) {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 var(--color-sky-deep);
   }
   .btn-dark {
     @apply bg-ink text-paper hover:bg-ink/90;
@@ -234,8 +276,9 @@ h3 {
     @apply min-h-12 w-full rounded-2xl border-2 border-ink/15 bg-white px-4 text-base text-ink transition;
     @apply placeholder:text-ink/40 focus:border-sky focus:outline-none;
   }
+  /* O nome ficou por histórico: hoje é texto normal (ver `--color-label`). */
   .label-mono {
-    @apply font-mono text-sm font-medium uppercase tracking-wider text-ink/60;
+    @apply font-sans text-sm font-bold text-label;
   }
 
   /*

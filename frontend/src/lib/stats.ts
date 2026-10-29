@@ -64,3 +64,11 @@ export function mapModules(lessons: StatsLesson[]): MapModule[] {
 
   return modulos;
 }
+
+/** A frase grande ao lado do acerto: dá o veredito antes do número. */
+export function comoEstou(acerto: number): string {
+  if (acerto >= 85) return "Você está muito bem";
+  if (acerto >= 70) return "Você está bem";
+  if (acerto >= 50) return "Dá para melhorar";
+  return "Hora de revisar";
+}

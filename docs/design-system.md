@@ -364,3 +364,12 @@ lição**, a mais fraca primeiro, e os tópicos ficam recolhidos dentro dela
 (`<details>` nativo, sem JavaScript). Regra geral: quando uma lista cresce
 com o uso, agrupe pelo que a pessoa reconhece (a lição) e deixe o detalhe a
 um toque.
+
+
+## Outubro de 2026: cara de app
+
+- **Rótulo** (`.label-mono`): texto normal, negrito, `--color-label` (azul fundo no claro, azul claro no escuro). Sobre o bloco escuro, `!text-sky`. Nada de fonte de máquina em caixa alta.
+- **Botão principal** (`.btn-primary`): tecla com degrau de 4px em `--color-sky-deep`, que some no `:active`. Sem sombra difusa.
+- **Topo de tela** (`PageHero`): rótulo, título e frase centralizados; título longo em 3xl.
+- **Cabeçalho fixo** (`AppBar`): altura em `--appbar`; o que gruda no topo gruda abaixo dele.
+- **XP** usa `--color-gold`/`--color-gold-soft`, só no cabeçalho e em conquistas.

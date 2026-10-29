@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ChevronRight, CloudUpload, Crown, LogIn, Palette, ShieldCheck, SlidersHorizontal, Sparkles, Volume2 } from "lucide-react";
+import { ChevronRight, CloudUpload, Crown, LogIn, Palette, Search, ShieldCheck, SlidersHorizontal, Sparkles, Volume2 } from "lucide-react";
 import { DeleteAccountButton } from "@/components/DeleteAccountButton";
 import { InstallButton } from "@/components/InstallButton";
 import { LogoutButton } from "@/components/LogoutButton";
 import { PushToggle } from "@/components/PushToggle";
 import { SoundToggle } from "@/components/SoundToggle";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { SettingsGroup, SettingsRow } from "@/components/ui";
+import { SettingsGroup, SettingsRow, PageHero } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
 import { initials } from "@/lib/format";
 import { isGuestMode } from "@/lib/proxy";
@@ -33,20 +33,19 @@ export default async function Perfil({ searchParams }: { searchParams: Promise<{
 
   return (
     <div className="space-y-8">
-      <header className="flex items-center gap-4">
-        <span
-          aria-hidden="true"
-          className="grid size-16 shrink-0 place-items-center rounded-full bg-sky font-display text-2xl font-bold text-on-accent"
-        >
-          {initials(user.name)}
-        </span>
-        <div className="min-w-0">
-          <h1 className="truncate text-3xl">{user.name}</h1>
-          <p className="mt-0.5 truncate text-base text-content-secondary">
-            {guest ? "Sem conta por enquanto" : user.email}
-          </p>
-        </div>
-      </header>
+      <PageHero
+        title={user.name}
+        art={
+          <span
+            aria-hidden="true"
+            className="grid size-20 place-items-center rounded-full bg-sky font-display text-3xl font-bold text-on-accent"
+          >
+            {initials(user.name)}
+          </span>
+        }
+      >
+        <span className="block truncate">{guest ? "Sem conta por enquanto" : user.email}</span>
+      </PageHero>
 
       <div className="space-y-3">
         <Link
@@ -109,6 +108,14 @@ export default async function Perfil({ searchParams }: { searchParams: Promise<{
       </SettingsGroup>
 
       <SettingsGroup id="estudo" title="Estudo">
+        {/* A busca saiu do topo da tela inicial: lupa no cabeçalho é cara de site. */}
+        <SettingsRow
+          icon={Search}
+          iconTone="sky"
+          title="Buscar"
+          description="Lições, palavras do vocabulário e as suas anotações."
+          href="/buscar"
+        />
         <SettingsRow
           icon={Sparkles}
           iconTone="coral"

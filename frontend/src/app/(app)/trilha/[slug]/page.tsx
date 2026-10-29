@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Check, ChevronRight } from "lucide-react";
-import { ProgressBar } from "@/components/ui";
+import { ProgressBar, PageHero } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
 import { trailView, type TrailStepView } from "@/lib/trails";
 import type { SubjectsResponse } from "@/lib/types";
@@ -32,9 +32,9 @@ export default async function TrilhaPage({ params }: { params: Promise<{ slug: s
       </Link>
 
       <header>
-        <p className="label-mono">Trilha de estudo</p>
-        <h1 className="mt-1 text-4xl">{trail.name}</h1>
-        <p className="mt-3 text-base text-content-secondary">{trail.description}</p>
+        <PageHero eyebrow="Trilha de estudo" title={trail.name}>
+          {trail.description}
+        </PageHero>
         <ProgressBar
           percent={(feitos / passos.length) * 100}
           tone="ink"
@@ -42,7 +42,7 @@ export default async function TrilhaPage({ params }: { params: Promise<{ slug: s
           label={`${feitos} de ${passos.length} passos concluídos`}
           className="mt-4"
         />
-        <p className="mt-1.5 font-mono text-sm tabular-nums text-content-subtle">
+        <p className="mt-1.5 text-center font-mono text-sm tabular-nums text-content-subtle">
           {feitos}/{passos.length} passos
         </p>
       </header>

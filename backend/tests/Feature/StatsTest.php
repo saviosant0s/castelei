@@ -77,6 +77,40 @@ class StatsTest extends TestCase
             ->assertJsonPath('subjects.0.lessons.1.mastery', null);
     }
 
+    public function test_a_semana_conta_por_dia_e_compara_com_a_anterior(): void
+    {
+        Sanctum::actingAs(User::factory()->create(['plan' => 'pro']));
+        $licao = $this->makeLesson(6, 1);
+
+        // Há 10 dias: acertou 3 de 6. Hoje: acertou 6 de 6.
+        Carbon::setTestNow(Carbon::now()->subDays(10));
+        $this->praticar($licao->id, [1, 2, 3]);
+        Carbon::setTestNow();
+        $this->praticar($licao->id, [1, 2, 3, 4, 5, 6]);
+
+        $semana = $this->getJson('/api/progress/stats')->assertOk()->json('week');
+
+        $this->assertCount(7, $semana['days']);
+        $this->assertSame(6, $semana['days'][6]['answered']);
+        $this->assertSame(6, $semana['days'][6]['correct']);
+        $this->assertSame(0, $semana['days'][0]['answered']);
+        $this->assertSame(100, $semana['accuracy']);
+        $this->assertSame(50, $semana['previous_accuracy']);
+        $this->assertSame(50, $semana['change']);
+    }
+
+    public function test_sem_semana_anterior_nao_inventa_comparacao(): void
+    {
+        Sanctum::actingAs(User::factory()->create(['plan' => 'pro']));
+        $licao = $this->makeLesson(6, 1);
+        $this->praticar($licao->id, [1, 2]);
+
+        $this->getJson('/api/progress/stats')
+            ->assertJsonPath('week.accuracy', 33)
+            ->assertJsonPath('week.previous_accuracy', null)
+            ->assertJsonPath('week.change', null);
+    }
+
     public function test_a_licao_diz_o_dominio_da_pessoa(): void
     {
         Sanctum::actingAs(User::factory()->create(['plan' => 'pro']));

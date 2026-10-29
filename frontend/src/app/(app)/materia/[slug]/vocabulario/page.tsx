@@ -119,9 +119,9 @@ export default async function VocabularioPage({
             <section key={grupo.letra} aria-labelledby={`letra-${grupo.letra}`}>
               <h2
                 id={`letra-${grupo.letra}`}
-                className="sticky top-0 z-10 -mx-5 bg-surface px-5 pb-2 font-mono text-sm font-bold tracking-wide text-content-subtle"
+                className="sticky top-[var(--appbar)] z-10 -mx-5 bg-surface px-5 pb-2 font-mono text-sm font-bold tracking-wide text-content-subtle"
                 style={{
-                  paddingTop: "max(env(safe-area-inset-top, 0px), 0.5rem)",
+                  paddingTop: "0.5rem",
                   // O grão do fundo vai junto, senão a faixa chapada aparece
                   // como um retângulo liso por cima da página texturizada.
                   backgroundImage: "var(--grain)",

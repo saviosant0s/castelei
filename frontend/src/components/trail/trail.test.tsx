@@ -98,13 +98,14 @@ describe("SubjectTrail", () => {
     expect(screen.getByLabelText(/^Lição 5:/)).toBeTruthy();
   });
 
-  it("o cabeçalho do módulo gruda no topo ao rolar", () => {
+  it("o cabeçalho do módulo gruda logo abaixo do cabeçalho fixo do app", () => {
     render(<SubjectTrail lessons={materia} />);
 
     const cabecalho = screen.getByText("Módulo 1").closest("div.sticky");
 
     expect(cabecalho).toBeTruthy();
-    expect(cabecalho!.className).toContain("top-0");
+    // Em `top: 0` ele passaria por baixo da barra com os dias e o XP.
+    expect(cabecalho!.className).toContain("top-[var(--appbar)]");
   });
 
   it("os módulos ficam colados, para um cabeçalho entregar o topo ao outro", () => {

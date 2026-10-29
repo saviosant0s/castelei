@@ -6,6 +6,7 @@ use App\Models\ExamDate;
 use App\Models\Question;
 use App\Models\Subject;
 use App\Services\ReviewService;
+use Carbon\CarbonImmutable;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
@@ -33,6 +34,9 @@ class StatsController extends Controller
     /** Diferença, em pontos, para dizer que a lição melhorou ou piorou. */
     private const TREND_POINTS = 15;
 
+    /** Respostas mínimas em cada semana para comparar uma com a outra. */
+    private const WEEK_MIN_ANSWERS = 5;
+
     public function __construct(private ReviewService $review)
     {
     }
@@ -48,7 +52,7 @@ class StatsController extends Controller
             ->whereNotNull('attempts.finished_at')
             ->orderBy('answers.id')
             ->get([
-                'answers.id', 'answers.question_id', 'answers.is_correct',
+                'answers.id', 'answers.question_id', 'answers.is_correct', 'attempts.finished_at',
                 'questions.topic', 'questions.format', 'questions.lesson_id', 'lessons.subject_id',
             ])
             ->map(function ($row) {
@@ -69,6 +73,7 @@ class StatsController extends Controller
             'subjects' => $this->subjects($answers, $porQuestao, ExamDate::mapFor($request->user())),
             'weak_lessons' => $this->weakLessons($answers->reject(fn ($a) => $a->writing)),
             'retention' => $this->retention($porQuestao->reject(fn ($lista) => $lista->first()->writing)),
+            'week' => $this->week($answers->reject(fn ($a) => $a->writing)),
         ]);
     }
 
@@ -293,6 +298,48 @@ class StatsController extends Controller
         }
 
         return (int) round($respostas->filter()->count() / $base->count() * 100);
+    }
+
+    /**
+     * A semana de quem estuda: quantas questões por dia nos últimos 7 dias, e
+     * o acerto destes 7 dias contra o dos 7 anteriores.
+     *
+     * Responde "eu evoluí?" de relance. A comparação só aparece com pelo
+     * menos 5 respostas em cada semana: com duas questões, uma errada vira
+     * "caiu 50 pontos", e isso é ruído, não tendência.
+     *
+     * @param  Collection<int, object>  $answers
+     * @return array<string, mixed>
+     */
+    private function week(Collection $answers): array
+    {
+        $tz = config('castelei.timezone');
+        $hoje = CarbonImmutable::now($tz)->startOfDay();
+        $dia = fn ($a) => CarbonImmutable::parse($a->finished_at, 'UTC')->setTimezone($tz)->startOfDay();
+
+        $dias = [];
+        for ($i = 6; $i >= 0; $i--) {
+            $d = $hoje->subDays($i);
+            $doDia = $answers->filter(fn ($a) => $dia($a)->equalTo($d));
+            $dias[] = [
+                'date' => $d->format('Y-m-d'),
+                'answered' => $doDia->count(),
+                'correct' => $doDia->where('is_correct', true)->count(),
+            ];
+        }
+
+        $estaSemana = $answers->filter(fn ($a) => $dia($a)->greaterThan($hoje->subDays(7)));
+        $anterior = $answers->filter(fn ($a) => $dia($a)->lessThanOrEqualTo($hoje->subDays(7)) && $dia($a)->greaterThan($hoje->subDays(14)));
+        $minimo = self::WEEK_MIN_ANSWERS;
+
+        return [
+            'days' => $dias,
+            'accuracy' => $estaSemana->isEmpty() ? null : $this->percent($estaSemana),
+            'previous_accuracy' => $anterior->count() >= $minimo ? $this->percent($anterior) : null,
+            'change' => $estaSemana->count() >= $minimo && $anterior->count() >= $minimo
+                ? $this->percent($estaSemana) - $this->percent($anterior)
+                : null,
+        ];
     }
 
     /** @param  Collection<int, object>  $respostas */

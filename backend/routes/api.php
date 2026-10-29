@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\MediaController;
 use App\Http\Controllers\Admin\QuestionController;
 use App\Http\Controllers\Admin\SubjectController as AdminSubjectController;
 use App\Http\Controllers\AttemptController;
+use App\Http\Controllers\AppBarController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\CronController;
@@ -57,6 +58,8 @@ Route::post('/auth/google', [AuthController::class, 'google'])->middleware('thro
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/me', [AuthController::class, 'me']);
+    // O cabeçalho fixo e a barra de baixo: dias seguidos, XP, área do momento e revisões vencidas.
+    Route::get('/me/bar', [AppBarController::class, 'show']);
     // Exclusão de conta: exigida pela Google Play e prometida na política.
     Route::delete('/me', [AuthController::class, 'destroy']);
     // Visitante vira conta de verdade, levando o histórico junto.
