@@ -269,6 +269,17 @@ export const SUBJECTS: SiteSubject[] = [
     ],
   },
   {
+    slug: "android-por-dentro",
+    name: "Android por dentro: lendo os registros do celular",
+    pitch:
+      "Ligue o celular no computador e descubra a que horas a tela acendeu, quando ele foi desbloqueado e quais apps foram abertos.",
+    lessons: [
+      "ADB: conversar com o celular pelo computador",
+      "O diário do Android: tela acesa e bloqueio",
+      "Apps, notificações e o que o registro não mostra",
+    ],
+  },
+  {
     slug: "portugues",
     name: "Português",
     pitch:
@@ -386,5 +397,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 1778,
+  questions: 1802,
 };

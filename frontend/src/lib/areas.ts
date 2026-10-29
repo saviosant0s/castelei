@@ -23,6 +23,7 @@ import {
   Network,
   Palette,
   PcCase,
+  Smartphone,
   PenLine,
   Server,
   Shapes,
@@ -81,6 +82,7 @@ const iconesDeMateria: Record<string, LucideIcon> = {
   "llms-na-pratica": Bot,
   logica: Binary,
   "montar-pc": PcCase,
+  "android-por-dentro": Smartphone,
 };
 
 /** Ícone da matéria; a que não tem um próprio usa o da área. */

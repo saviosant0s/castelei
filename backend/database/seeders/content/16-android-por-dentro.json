@@ -1,0 +1,1037 @@
+{
+  "_leia_me": [
+    "Matéria Android por dentro do Castelei: ler os registros do próprio celular pelo computador.",
+    "Chaves começadas por _ são comentário e somem na importação."
+  ],
+  "slug": "android-por-dentro",
+  "name": "Android por dentro: lendo os registros do celular",
+  "area": "informatica",
+  "description": "Ligue o celular Android no computador e descubra a que horas a tela acendeu, quando ele foi desbloqueado e quais apps foram abertos. Você aprende o que é cada nome do registro e como ler cada linha sem tirar conclusão errada.",
+  "lessons": [
+    {
+      "slug": "adb-conectar-o-celular",
+      "module": "Investigar o próprio celular",
+      "title": "ADB: conversar com o celular pelo computador",
+      "summary": "O ADB é um programa que deixa o computador mandar perguntas para o celular Android. Para ele funcionar você liga a depuração USB no celular e autoriza o computador na primeira conexão. Depois disso um comando no terminal já mostra informações do sistema.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Um interfone para o celular",
+          "body": [
+            "Imagine um prédio com porteiro. Você não entra no apartamento do síndico. Você aperta o interfone e pergunta.",
+            "O celular guarda um caderno com tudo que aconteceu nele. O computador não entra lá sozinho. Ele precisa de um interfone e da permissão do dono."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que é o ADB",
+          "body": [
+            "O interfone se chama ADB. É um programa gratuito do Google feito para quem cria apps Android.",
+            "Ele roda no computador e conversa com o celular pelo cabo USB. Você digita um pedido e o celular responde com texto."
+          ],
+          "terms": [
+            {
+              "word": "ADB (Android Debug Bridge)",
+              "meaning": "programa que liga o computador ao celular Android para mandar comandos e ler informações. O nome quer dizer ponte de depuração do Android."
+            },
+            {
+              "word": "Depurar",
+              "meaning": "investigar o funcionamento de um programa para achar defeitos. Vem do inglês debug."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O terminal: onde se digita o pedido",
+          "body": [
+            "O ADB não tem janela com botões. Ele é usado num terminal, uma tela preta onde você escreve comandos.",
+            "No Windows o terminal se chama PowerShell. Abra o menu Iniciar e digite PowerShell. No Linux e no Mac procure por Terminal."
+          ],
+          "terms": [
+            {
+              "word": "Terminal",
+              "meaning": "janela de texto onde você digita comandos e o computador responde em texto."
+            },
+            {
+              "word": "PowerShell",
+              "meaning": "o terminal moderno do Windows."
+            }
+          ],
+          "table": {
+            "label": "Onde abrir o terminal",
+            "headers": [
+              "Sistema",
+              "Programa",
+              "Como abrir"
+            ],
+            "rows": [
+              [
+                "Windows",
+                "PowerShell",
+                "Menu Iniciar e digitar PowerShell"
+              ],
+              [
+                "Linux",
+                "Terminal",
+                "Ctrl + Alt + T na maioria das versões"
+              ],
+              [
+                "Mac",
+                "Terminal",
+                "Spotlight e digitar Terminal"
+              ]
+            ],
+            "mono": false
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Baixar o ADB",
+          "body": [
+            "O ADB vem num pacote chamado Platform Tools. Você baixa um arquivo zip do site de desenvolvedores do Android e extrai numa pasta.",
+            "No Windows dá para fazer tudo pelo PowerShell. Os três comandos abaixo baixam o pacote e extraem em C:\\platform-tools."
+          ],
+          "terms": [
+            {
+              "word": "Platform Tools",
+              "meaning": "pacote oficial do Google que traz o ADB e outros programas de linha de comando para Android."
+            }
+          ],
+          "code": {
+            "label": "Windows (PowerShell): baixar e extrair",
+            "text": "Invoke-WebRequest \"https://dl.google.com/android/repository/platform-tools-latest-windows.zip\" -OutFile \"$env:TEMP\\pt.zip\"\nExpand-Archive \"$env:TEMP\\pt.zip\" -DestinationPath \"C:\\\" -Force\ncd C:\\platform-tools",
+            "notes": [
+              "Baixa o pacote da internet e salva na pasta de arquivos temporários do Windows.",
+              "Abre o zip e coloca o conteúdo em C:\\platform-tools.",
+              "Entra na pasta onde o ADB ficou. O comando cd quer dizer mudar de pasta."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Por que o .\\ antes do adb",
+          "body": [
+            "Se você digitar só adb o Windows procura o programa nas pastas que ele conhece. Ele não acha e mostra que o termo não é reconhecido.",
+            "O .\\ quer dizer nesta pasta aqui. Assim o terminal usa o adb que está na pasta onde você entrou. No Linux e no Mac a barra é a outra."
+          ],
+          "table": {
+            "label": "Chamar o ADB da pasta atual",
+            "headers": [
+              "Comando",
+              "Onde funciona"
+            ],
+            "rows": [
+              [
+                ".\\adb devices",
+                "Windows (PowerShell)"
+              ],
+              [
+                "adb devices",
+                "Windows (cmd), dentro da pasta"
+              ],
+              [
+                "./adb devices",
+                "Linux e Mac"
+              ]
+            ],
+            "mono": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Ligar a depuração USB no celular",
+          "body": [
+            "O celular só aceita o ADB com a depuração USB ligada. Ela fica num menu escondido chamado Opções do desenvolvedor.",
+            "Para mostrar esse menu entre em Configurações e depois em Sobre o telefone. Toque sete vezes em Número de compilação. Nos Samsung ele fica dentro de Informações do software."
+          ],
+          "terms": [
+            {
+              "word": "Depuração USB",
+              "meaning": "opção do Android que permite ao computador mandar comandos pelo cabo."
+            },
+            {
+              "word": "Opções do desenvolvedor",
+              "meaning": "menu escondido do Android com ajustes avançados para quem cria apps."
+            }
+          ],
+          "bullets": [
+            "Configurações e depois Sobre o telefone.",
+            "Tocar sete vezes em Número de compilação.",
+            "Voltar e abrir Opções do desenvolvedor.",
+            "Ligar Depuração USB."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Autorizar o computador",
+          "body": [
+            "Ligue o cabo e rode .\\adb devices no PowerShell. O celular mostra a pergunta Permitir depuração USB.",
+            "Toque em Permitir e rode o comando de novo. Cada estado da lista diz uma coisa diferente."
+          ],
+          "table": {
+            "label": "O que aparece ao lado do aparelho",
+            "headers": [
+              "Estado",
+              "O que quer dizer",
+              "O que fazer"
+            ],
+            "rows": [
+              [
+                "device",
+                "Conectado e autorizado",
+                "Pode usar"
+              ],
+              [
+                "unauthorized",
+                "Esperando você permitir",
+                "Olhar a tela do celular e tocar em Permitir"
+              ],
+              [
+                "offline",
+                "Conexão travada",
+                "Tirar e pôr o cabo de novo"
+              ],
+              [
+                "lista vazia",
+                "Nada encontrado",
+                "Trocar o cabo ou ligar a depuração"
+              ]
+            ],
+            "mono": false
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Questões sobre ADB costumam perguntar o que é preciso ativar no aparelho e o que significa cada estado do comando adb devices.",
+            "Também aparece a diferença entre chamar um programa pelo nome e chamar pelo caminho da pasta."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde quem está começando costuma errar."
+          ],
+          "bullets": [
+            "Cabo que só carrega não transfere dados. O celular carrega e o ADB não vê nada.",
+            "O estado unauthorized não é defeito. É o celular esperando você tocar em Permitir.",
+            "Quando terminar a investigação desligue a depuração USB. Ela deixa o celular aceitar comandos de qualquer computador que você autorizar."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O ADB é o interfone entre computador e celular Android."
+          ],
+          "bullets": [
+            "Baixe o Platform Tools e extraia numa pasta.",
+            "Abra o terminal e entre na pasta com cd.",
+            "No PowerShell chame com .\\adb. No Linux e no Mac com ./adb.",
+            "Ligue a depuração USB nas Opções do desenvolvedor.",
+            "Rode adb devices e aceite a pergunta no celular até aparecer device."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Conceito",
+          "statement": "Para que serve o ADB?",
+          "options": [
+            "para limpar vírus do celular",
+            "para o computador mandar comandos e ler informações de um Android",
+            "para carregar o celular mais rápido",
+            "para instalar o Windows no celular",
+            "para fazer backup na nuvem"
+          ],
+          "correct_index": 1,
+          "explanation": "O ADB é a ponte entre o computador e o Android. Você manda um pedido e o celular responde em texto.",
+          "pitfall": "Ele não é antivírus nem backup. Ele só permite conversar com o sistema."
+        },
+        {
+          "topic": "Preparação",
+          "statement": "O que precisa estar ligado no celular para o ADB funcionar?",
+          "options": [
+            "o modo avião",
+            "a localização",
+            "a depuração USB",
+            "o bluetooth",
+            "a economia de bateria"
+          ],
+          "correct_index": 2,
+          "explanation": "Sem a depuração USB o celular recusa os comandos que chegam pelo cabo.",
+          "pitfall": "Ela fica nas Opções do desenvolvedor, que começam escondidas."
+        },
+        {
+          "topic": "Preparação",
+          "statement": "Como se mostra o menu Opções do desenvolvedor?",
+          "options": [
+            "reiniciando o celular três vezes",
+            "tocando sete vezes em Número de compilação",
+            "instalando um app da loja",
+            "segurando o botão de volume",
+            "digitando a senha do Wi-Fi"
+          ],
+          "correct_index": 1,
+          "explanation": "Os sete toques em Número de compilação liberam o menu escondido.",
+          "pitfall": "Nos Samsung o Número de compilação fica em Informações do software."
+        },
+        {
+          "topic": "Estados",
+          "statement": "O comando adb devices mostrou unauthorized. O que fazer?",
+          "options": [
+            "trocar de computador",
+            "reinstalar o ADB",
+            "formatar o celular",
+            "tocar em Permitir na pergunta que apareceu no celular",
+            "desligar a depuração USB"
+          ],
+          "correct_index": 3,
+          "explanation": "O celular está esperando o dono autorizar aquele computador.",
+          "pitfall": "Não é defeito. Basta olhar a tela do celular."
+        },
+        {
+          "topic": "Estados",
+          "statement": "Qual estado quer dizer que está tudo pronto para usar?",
+          "options": [
+            "device",
+            "offline",
+            "unauthorized",
+            "lista vazia",
+            "recovery"
+          ],
+          "correct_index": 0,
+          "explanation": "Device quer dizer conectado e autorizado.",
+          "pitfall": "Offline aparece com o aparelho na lista e mesmo assim não funciona."
+        },
+        {
+          "topic": "Terminal",
+          "statement": "No PowerShell apareceu que o termo adb não é reconhecido. O que resolve?",
+          "options": [
+            "trocar o cabo",
+            "ligar o modo avião",
+            "rodar o PowerShell como outro usuário",
+            "apagar a pasta platform-tools",
+            "entrar na pasta do ADB e chamar .\\adb"
+          ],
+          "correct_index": 4,
+          "explanation": "O Windows não achou o programa nas pastas que conhece. O .\\ manda usar o que está na pasta atual.",
+          "pitfall": "Se o ADB nem foi baixado ainda o erro é o mesmo. Baixe o Platform Tools antes."
+        },
+        {
+          "topic": "Terminal",
+          "statement": "Qual forma chama o ADB da pasta atual no Linux?",
+          "options": [
+            ".\\adb devices",
+            "./adb devices",
+            "adb.exe devices",
+            "run adb devices",
+            "sudo devices"
+          ],
+          "correct_index": 1,
+          "explanation": "No Linux e no Mac a barra da pasta atual é a barra normal.",
+          "pitfall": "A barra invertida é coisa do Windows."
+        },
+        {
+          "topic": "Cuidado",
+          "statement": "O celular carrega mas o adb devices mostra a lista vazia. Qual a causa mais comum?",
+          "options": [
+            "a bateria está fraca",
+            "o celular está sem internet",
+            "o cabo só carrega e não transfere dados",
+            "o ADB só funciona de madrugada",
+            "o Windows está desatualizado"
+          ],
+          "correct_index": 2,
+          "explanation": "Alguns cabos só têm os fios de energia. Sem os de dados o computador não enxerga o celular.",
+          "pitfall": "Carregar não prova que o cabo serve para dados."
+        }
+      ]
+    },
+    {
+      "slug": "usagestats-tela-e-bloqueio",
+      "module": "Investigar o próprio celular",
+      "title": "O diário do Android: tela acesa e bloqueio",
+      "summary": "O Android anota com data e hora quando a tela acende e apaga e quando o celular é bloqueado ou desbloqueado. O comando dumpsys usagestats mostra essas anotações. Cada linha tem hora, tipo de evento e o app responsável.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O livro de visitas da portaria",
+          "body": [
+            "Num prédio organizado o porteiro anota cada entrada e saída com a hora. Quem chegou e quando foi embora.",
+            "O Android faz o mesmo. Ele anota quando a tela acendeu e quando foi destrancada. Lendo esse caderno você monta a história da noite."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O comando que abre o caderno",
+          "body": [
+            "O caderno se chama usagestats, que quer dizer estatísticas de uso. Quem lê ele é o dumpsys, um programa do próprio Android.",
+            "Você pede pelo ADB. O resultado é enorme. Por isso ele vai junto com um filtro que só deixa passar as linhas que interessam."
+          ],
+          "terms": [
+            {
+              "word": "dumpsys",
+              "meaning": "programa do Android que despeja na tela o estado de uma parte do sistema."
+            },
+            {
+              "word": "usagestats",
+              "meaning": "registro do Android com os eventos de uso do aparelho e dos apps."
+            },
+            {
+              "word": "Filtro",
+              "meaning": "comando que recebe muito texto e devolve só as linhas com a palavra pedida."
+            }
+          ],
+          "table": {
+            "label": "Ver só tela e bloqueio",
+            "headers": [
+              "Comando",
+              "Onde funciona"
+            ],
+            "rows": [
+              [
+                ".\\adb shell dumpsys usagestats | findstr \"SCREEN_ KEYGUARD\"",
+                "Windows (PowerShell e cmd)"
+              ],
+              [
+                "./adb shell dumpsys usagestats | grep -E \"SCREEN_|KEYGUARD\"",
+                "Linux e Mac"
+              ]
+            ],
+            "mono": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Lendo o comando por partes",
+          "body": [
+            "O comando é uma fila de pedidos. A barra em pé passa o resultado de um para o próximo."
+          ],
+          "terms": [
+            {
+              "word": "Pipe (|)",
+              "meaning": "a barra em pé. Ela entrega o texto de saída de um comando como entrada do seguinte."
+            },
+            {
+              "word": "shell",
+              "meaning": "o terminal dentro do próprio celular. adb shell manda o resto do comando rodar lá."
+            }
+          ],
+          "code": {
+            "label": "Windows (PowerShell)",
+            "text": ".\\adb shell dumpsys usagestats | findstr \"SCREEN_ KEYGUARD\"",
+            "notes": [
+              "O adb abre o shell do celular e roda o dumpsys pedindo o caderno usagestats. O texto volta para o PC e o findstr deixa só as linhas com SCREEN_ ou KEYGUARD."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A anatomia de uma linha",
+          "body": [
+            "Toda linha segue o mesmo molde. Primeiro vem a hora. Depois o tipo do evento. Por último o pacote, que é o nome interno do app que causou o evento."
+          ],
+          "terms": [
+            {
+              "word": "Pacote (package)",
+              "meaning": "o nome interno e único de um app Android. O WhatsApp é com.whatsapp."
+            },
+            {
+              "word": "Evento",
+              "meaning": "uma coisa que aconteceu e ficou anotada com data e hora."
+            }
+          ],
+          "example": {
+            "label": "time=\"2026-10-29 00:28:24\" type=SCREEN_NON_INTERACTIVE package=android flags=0x0",
+            "lines": [
+              "time: dia e hora do evento no fuso do celular.",
+              "type: o que aconteceu. Aqui a tela apagou.",
+              "package=android: quem causou foi o próprio sistema.",
+              "flags=0x0: detalhes técnicos extras. Para esta leitura pode ignorar."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os quatro eventos principais",
+          "body": [
+            "Dois falam da tela e dois falam da trava. Tela acesa não quer dizer celular aberto. A notificação acende a tela e ele continua bloqueado."
+          ],
+          "terms": [
+            {
+              "word": "Keyguard",
+              "meaning": "a tela de bloqueio do Android, a que pede senha ou digital."
+            }
+          ],
+          "table": {
+            "label": "Os eventos de tela e bloqueio",
+            "headers": [
+              "Evento",
+              "Em português",
+              "O que indica"
+            ],
+            "rows": [
+              [
+                "SCREEN_INTERACTIVE",
+                "Tela acendeu",
+                "Notificação, botão ou alguém pegou o celular"
+              ],
+              [
+                "SCREEN_NON_INTERACTIVE",
+                "Tela apagou",
+                "Botão de desligar ou tempo esgotado"
+              ],
+              [
+                "KEYGUARD_SHOWN",
+                "Bloqueio apareceu",
+                "O celular trancou"
+              ],
+              [
+                "KEYGUARD_HIDDEN",
+                "Bloqueio sumiu",
+                "Alguém desbloqueou"
+              ]
+            ],
+            "mono": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Montando a linha do tempo",
+          "body": [
+            "Leia de cima para baixo e conte a história com suas palavras. Tela acesa por seis segundos sem desbloqueio é alguém olhando a hora ou uma notificação.",
+            "Desbloqueio seguido de tela acesa por muito tempo pede atenção. Algum app manteve a tela ligada ou alguém estava usando."
+          ],
+          "example": {
+            "label": "Um trecho de madrugada",
+            "lines": [
+              "23:14:47 KEYGUARD_HIDDEN: desbloqueou.",
+              "00:28:24 SCREEN_NON_INTERACTIVE: a tela apagou mais de uma hora depois.",
+              "00:28:25 KEYGUARD_SHOWN: trancou.",
+              "05:36:20 KEYGUARD_HIDDEN: só foi aberto de novo de manhã."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "O enunciado traz um trecho de log e pergunta a que horas o aparelho foi desbloqueado ou por quanto tempo a tela ficou ligada.",
+            "Também cobra a diferença entre SCREEN_INTERACTIVE e KEYGUARD_HIDDEN e o papel do pipe num comando encadeado."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde quem está começando costuma errar."
+          ],
+          "bullets": [
+            "Tela acesa não é desbloqueio. Só KEYGUARD_HIDDEN mostra que alguém passou da trava.",
+            "O caderno detalhado guarda poucos dias. Se quiser investigar algo rode o comando logo.",
+            "Se o celular já estava desbloqueado não aparece desbloqueio novo. A pessoa pode ter usado sem passar pela trava."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O usagestats é o livro de visitas do Android."
+          ],
+          "bullets": [
+            "adb shell dumpsys usagestats mostra o caderno.",
+            "findstr no Windows e grep no Linux filtram as linhas.",
+            "Cada linha tem hora, tipo e pacote.",
+            "SCREEN fala da tela. KEYGUARD fala da trava.",
+            "Leia em ordem e conte a história antes de concluir."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Eventos",
+          "statement": "Qual evento mostra que alguém desbloqueou o celular?",
+          "options": [
+            "SCREEN_INTERACTIVE",
+            "KEYGUARD_SHOWN",
+            "KEYGUARD_HIDDEN",
+            "SCREEN_NON_INTERACTIVE",
+            "FLAGS_0x0"
+          ],
+          "correct_index": 2,
+          "explanation": "Hidden quer dizer escondido. A tela de bloqueio saiu da frente.",
+          "pitfall": "SCREEN_INTERACTIVE só diz que a tela acendeu."
+        },
+        {
+          "topic": "Eventos",
+          "statement": "A tela acendeu e apagou seis segundos depois sem KEYGUARD_HIDDEN. O que é mais provável?",
+          "options": [
+            "alguém leu todas as conversas",
+            "o celular foi formatado",
+            "alguém instalou um app",
+            "uma notificação chegou ou alguém olhou a hora",
+            "a bateria acabou"
+          ],
+          "correct_index": 3,
+          "explanation": "Sem desbloqueio ninguém passou da tela de bloqueio. Seis segundos é tempo de olhar e largar.",
+          "pitfall": "Tela acesa sozinha não prova uso."
+        },
+        {
+          "topic": "Comando",
+          "statement": "O que faz a barra em pé (|) no comando?",
+          "options": [
+            "entrega a saída de um comando para o próximo",
+            "apaga o resultado",
+            "salva num arquivo",
+            "liga a depuração USB",
+            "separa duas senhas"
+          ],
+          "correct_index": 0,
+          "explanation": "O pipe passa o texto do dumpsys para o filtro.",
+          "pitfall": "Ele não guarda nada em arquivo."
+        },
+        {
+          "topic": "Comando",
+          "statement": "Qual comando filtra as linhas no Linux?",
+          "options": [
+            "findstr",
+            "grep",
+            "cd",
+            "dir",
+            "Expand-Archive"
+          ],
+          "correct_index": 1,
+          "explanation": "O grep é o filtro do Linux e do Mac.",
+          "pitfall": "O findstr é o filtro do Windows."
+        },
+        {
+          "topic": "Linha",
+          "statement": "Na linha com package=android quem causou o evento?",
+          "options": [
+            "o WhatsApp",
+            "o computador",
+            "o Google Chrome",
+            "o próprio sistema Android",
+            "a operadora"
+          ],
+          "correct_index": 3,
+          "explanation": "O pacote android é o próprio sistema.",
+          "pitfall": "Não quer dizer que o evento foi falso. Só diz quem anotou."
+        },
+        {
+          "topic": "Leitura",
+          "statement": "Desbloqueio às 23:14 e tela apagada às 00:28 sem nada entre eles. O que se pode afirmar?",
+          "options": [
+            "o celular ficou desligado nesse tempo",
+            "ninguém tocou no celular",
+            "a tela ficou acesa e desbloqueada por mais de uma hora",
+            "o celular foi roubado",
+            "o log está com defeito"
+          ],
+          "correct_index": 2,
+          "explanation": "Entre os dois eventos a tela não apagou. Ela ficou acesa e destrancada.",
+          "pitfall": "O log de tela não diz se foi um vídeo tocando ou uma pessoa usando. Para isso é preciso olhar os apps."
+        },
+        {
+          "topic": "Cuidado",
+          "statement": "Por que rodar o comando logo depois do acontecido?",
+          "options": [
+            "porque o registro detalhado só guarda poucos dias",
+            "porque o ADB expira",
+            "porque o celular bloqueia o comando à noite",
+            "porque a hora muda sozinha",
+            "porque o cabo esfria"
+          ],
+          "correct_index": 0,
+          "explanation": "Os eventos detalhados são apagados com o tempo.",
+          "pitfall": "Esperar uma semana pode fazer a noite investigada sumir."
+        },
+        {
+          "topic": "Eventos",
+          "statement": "Associe cada evento ao que ele quer dizer.",
+          "format": "match",
+          "pairs": [
+            {
+              "left": "SCREEN_INTERACTIVE",
+              "right": "a tela acendeu"
+            },
+            {
+              "left": "SCREEN_NON_INTERACTIVE",
+              "right": "a tela apagou"
+            },
+            {
+              "left": "KEYGUARD_SHOWN",
+              "right": "o celular trancou"
+            },
+            {
+              "left": "KEYGUARD_HIDDEN",
+              "right": "alguém desbloqueou"
+            }
+          ],
+          "explanation": "SCREEN fala da tela. KEYGUARD fala da trava.",
+          "pitfall": "Shown é mostrado e hidden é escondido. A trava aparece quando tranca."
+        }
+      ]
+    },
+    {
+      "slug": "apps-notificacoes-linha-do-tempo",
+      "module": "Investigar o próprio celular",
+      "title": "Apps, notificações e o que o registro não mostra",
+      "summary": "O mesmo registro anota cada tela de app que vai para a frente e cada notificação vista. Lendo esses eventos você sabe que app estava aberto em cada minuto. Rolar dentro de uma mesma tela não gera evento, e isso limita o que dá para concluir.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "As câmeras dos corredores",
+          "body": [
+            "O livro da portaria diz quem entrou no prédio. As câmeras dos corredores dizem em que porta a pessoa entrou.",
+            "Dentro do apartamento não tem câmera. Você sabe que a pessoa entrou na sala e não sabe o que ela leu lá dentro."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Telas de app têm nome",
+          "body": [
+            "Cada tela de um app Android é uma atividade. A conversa do WhatsApp é uma atividade e a lista de conversas é outra.",
+            "O registro anota quando uma atividade vem para a frente e quando sai. O nome dela costuma entregar o que era."
+          ],
+          "terms": [
+            {
+              "word": "Atividade (activity)",
+              "meaning": "uma tela de um app Android. Um app tem várias."
+            },
+            {
+              "word": "Classe (class)",
+              "meaning": "o nome interno da atividade no código do app. Aparece no campo class do registro."
+            }
+          ],
+          "code": {
+            "label": "Windows (PowerShell): telas que vieram para a frente num horário",
+            "text": ".\\adb shell dumpsys usagestats | findstr /C:\"2026-10-28 23:\" | findstr \"RESUMED\"",
+            "notes": [
+              "Pega o caderno inteiro. O primeiro findstr deixa só as linhas das 23h do dia 28. O segundo deixa só as telas que vieram para a frente. No Linux troque cada findstr /C: por grep."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O ciclo de uma tela",
+          "body": [
+            "Uma tela passa por três estados que aparecem no registro. Vem para a frente e depois perde a frente. Por fim fica invisível."
+          ],
+          "table": {
+            "label": "Eventos de atividade",
+            "headers": [
+              "Evento",
+              "Em português",
+              "O que indica"
+            ],
+            "rows": [
+              [
+                "ACTIVITY_RESUMED",
+                "Veio para a frente",
+                "Essa tela apareceu para quem usa"
+              ],
+              [
+                "ACTIVITY_PAUSED",
+                "Perdeu a frente",
+                "Outra coisa ficou por cima"
+              ],
+              [
+                "ACTIVITY_STOPPED",
+                "Ficou invisível",
+                "A tela saiu de vista"
+              ]
+            ],
+            "mono": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Nomes que você vai ver muito",
+          "body": [
+            "Alguns pacotes e classes aparecem em toda investigação. Saber ler esses nomes economiza muito tempo."
+          ],
+          "terms": [
+            {
+              "word": "Launcher",
+              "meaning": "o app da tela inicial, onde ficam os ícones."
+            }
+          ],
+          "table": {
+            "label": "Pacotes e classes comuns",
+            "headers": [
+              "Nome no registro",
+              "O que é"
+            ],
+            "rows": [
+              [
+                "com.sec.android.app.launcher / Launcher",
+                "Tela inicial dos Samsung"
+              ],
+              [
+                "com.android.quickstep.RecentsActivity",
+                "Tela de apps recentes"
+              ],
+              [
+                "com.whatsapp / Conversation",
+                "Uma conversa aberta no WhatsApp"
+              ],
+              [
+                "com.whatsapp / HomeActivity",
+                "Lista de conversas do WhatsApp"
+              ],
+              [
+                "AppAuthenticationActivity",
+                "A trava do próprio app pedindo digital ou senha"
+              ],
+              [
+                "com.instagram.android / ModalActivity",
+                "Janela por cima no Instagram"
+              ]
+            ],
+            "mono": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Eventos que não são toque",
+          "body": [
+            "Nem todo evento é uma pessoa mexendo. Alguns são os apps trabalhando em segundo plano, sem tela.",
+            "Antes de concluir separe o que é ação de alguém do que é rotina do sistema."
+          ],
+          "terms": [
+            {
+              "word": "Segundo plano",
+              "meaning": "trabalho que um app faz sem aparecer na tela."
+            },
+            {
+              "word": "Notificação",
+              "meaning": "o aviso que um app mostra na barra do topo da tela."
+            }
+          ],
+          "table": {
+            "label": "Quem causou o evento",
+            "headers": [
+              "Evento",
+              "O que significa",
+              "É ação de alguém?"
+            ],
+            "rows": [
+              [
+                "NOTIFICATION_INTERRUPTION",
+                "Chegou uma notificação",
+                "Não"
+              ],
+              [
+                "NOTIFICATION_SEEN",
+                "A notificação foi vista na barra",
+                "Sim"
+              ],
+              [
+                "USER_INTERACTION",
+                "Alguém mexeu na notificação ou no app",
+                "Sim"
+              ],
+              [
+                "FOREGROUND_SERVICE_START",
+                "App começou trabalho em segundo plano",
+                "Não"
+              ],
+              [
+                "SHORTCUT_INVOCATION",
+                "App registrou um atalho",
+                "Não costuma ser"
+              ],
+              [
+                "STANDBY_BUCKET_CHANGED",
+                "O sistema reorganizou o app",
+                "Não"
+              ]
+            ],
+            "mono": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que o registro não vê",
+          "body": [
+            "Rolar o feed e assistir vídeos dentro da mesma tela não gera evento. Abrir uma conversa dentro de alguns apps também pode não gerar.",
+            "Por isso silêncio no registro não prova que ninguém mexeu. Prova só que nenhuma tela nova apareceu."
+          ],
+          "bullets": [
+            "Confirme com o próprio app: mensagens que viraram lidas e curtidas novas.",
+            "Compare com o seu uso normal. Você gera telas novas a cada minuto ou dois.",
+            "Junte tela, trava e apps antes de dizer o que aconteceu."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Um caso lido do começo ao fim",
+          "body": [
+            "Veja um trecho real de madrugada e a leitura de cada linha. O celular estava desbloqueado com o Instagram parado havia meia hora."
+          ],
+          "example": {
+            "label": "Das 00:24 às 00:28",
+            "lines": [
+              "00:24:18 Launcher RESUMED: alguém saiu do Instagram para a tela inicial.",
+              "00:24:22 NOTIFICATION_SEEN: abriram a barra de notificações.",
+              "00:27:34 WhatsApp AppAuthenticationActivity: tentaram abrir o WhatsApp e a trava do app apareceu.",
+              "00:27:44 Launcher RESUMED: voltaram para a tela inicial sem passar da trava.",
+              "00:28:24 SCREEN_NON_INTERACTIVE: apagaram a tela."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A questão mostra eventos de atividade e pede qual app estava em primeiro plano num horário.",
+            "Também pergunta qual evento é ação do usuário e qual é processo em segundo plano. Distrator comum é tratar SHORTCUT_INVOCATION como toque."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas",
+          "body": [
+            "Onde quem está começando costuma errar."
+          ],
+          "bullets": [
+            "AppAuthenticationActivity sem Conversation depois quer dizer que a pessoa parou na trava do app.",
+            "Ausência de evento não é prova de inocência. Ela só mostra que nenhuma tela nova abriu.",
+            "O registro diz o que aconteceu e não diz quem fez. A conclusão sobre a pessoa é sempre sua."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O registro de apps é a câmera do corredor."
+          ],
+          "bullets": [
+            "Cada tela é uma atividade com pacote e classe.",
+            "RESUMED veio para a frente. PAUSED perdeu a frente. STOPPED saiu de vista.",
+            "Separe ações de alguém dos eventos de segundo plano.",
+            "Rolagem dentro da mesma tela não aparece.",
+            "Confirme no próprio app antes de concluir."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Atividades",
+          "statement": "O que significa ACTIVITY_RESUMED?",
+          "options": [
+            "o app foi desinstalado",
+            "a tela daquele app veio para a frente",
+            "o app recebeu uma mensagem",
+            "o app travou",
+            "o celular reiniciou"
+          ],
+          "correct_index": 1,
+          "explanation": "Resumed quer dizer retomada. A tela passou a ser a que aparece para quem usa.",
+          "pitfall": "Mensagem recebida gera notificação e não RESUMED."
+        },
+        {
+          "topic": "Nomes",
+          "statement": "O que é com.sec.android.app.launcher?",
+          "options": [
+            "um vírus",
+            "o app de câmera",
+            "a tela inicial dos Samsung",
+            "o WhatsApp Business",
+            "a loja de apps"
+          ],
+          "correct_index": 2,
+          "explanation": "É o launcher da Samsung, a tela onde ficam os ícones.",
+          "pitfall": "Launcher no registro quer dizer que alguém saiu de um app para a tela inicial."
+        },
+        {
+          "topic": "Nomes",
+          "statement": "Apareceu AppAuthenticationActivity do WhatsApp e logo depois o launcher. O que aconteceu?",
+          "options": [
+            "a pessoa leu todas as conversas",
+            "o WhatsApp foi desinstalado",
+            "uma mensagem foi enviada",
+            "o WhatsApp travou",
+            "a trava do app apareceu e a pessoa saiu sem entrar"
+          ],
+          "correct_index": 4,
+          "explanation": "Sem Conversation ou HomeActivity depois da trava ninguém chegou às conversas.",
+          "pitfall": "Abrir o app não é o mesmo que passar da trava dele."
+        },
+        {
+          "topic": "Segundo plano",
+          "statement": "Qual destes eventos não indica uma pessoa mexendo?",
+          "options": [
+            "NOTIFICATION_SEEN",
+            "USER_INTERACTION",
+            "ACTIVITY_RESUMED do launcher",
+            "FOREGROUND_SERVICE_START",
+            "KEYGUARD_HIDDEN"
+          ],
+          "correct_index": 3,
+          "explanation": "É o app começando um trabalho em segundo plano, como receber mensagem.",
+          "pitfall": "O nome tem foreground e mesmo assim não é tela aberta. É um serviço com aviso fixo."
+        },
+        {
+          "topic": "Segundo plano",
+          "statement": "Linhas SHORTCUT_INVOCATION do WhatsApp aparecem junto com FOREGROUND_SERVICE_START. Como ler?",
+          "options": [
+            "o WhatsApp registrando atalho enquanto recebia mensagens",
+            "alguém abriu a câmera do WhatsApp várias vezes",
+            "o celular foi invadido",
+            "alguém tirou fotos",
+            "o WhatsApp foi atualizado"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem nenhuma atividade do WhatsApp vindo para a frente ninguém abriu o app.",
+          "pitfall": "O nome open_camera engana. Atalho registrado não é câmera aberta."
+        },
+        {
+          "topic": "Limites",
+          "statement": "O Instagram ficou 36 minutos sem nenhum evento novo. O que dá para afirmar?",
+          "options": [
+            "ninguém viu nada",
+            "alguém leu o Direct",
+            "nenhuma tela nova abriu nesse tempo",
+            "o app estava fechado",
+            "a internet caiu"
+          ],
+          "correct_index": 2,
+          "explanation": "O registro só anota telas que mudam. Rolar ou assistir dentro da mesma tela não aparece.",
+          "pitfall": "Silêncio no registro não prova que ninguém mexeu."
+        },
+        {
+          "topic": "Limites",
+          "statement": "Qual destas coisas o registro não consegue mostrar?",
+          "options": [
+            "a hora em que a tela acendeu",
+            "o app que veio para a frente",
+            "a chegada de uma notificação",
+            "quem estava segurando o celular",
+            "o desbloqueio"
+          ],
+          "correct_index": 3,
+          "explanation": "O registro diz o que aconteceu e quando. Quem fez é conclusão sua.",
+          "pitfall": "Padrão de uso ajuda a suspeitar. Não prova quem foi."
+        },
+        {
+          "topic": "Linha do tempo",
+          "statement": "Coloque na ordem o que aparece quando alguém sai de um app para outro.",
+          "format": "order",
+          "options": [
+            "ACTIVITY_RESUMED do launcher",
+            "ACTIVITY_PAUSED do app antigo",
+            "ACTIVITY_STOPPED do app antigo",
+            "ACTIVITY_RESUMED do app novo"
+          ],
+          "explanation": "A tela inicial vem para a frente e o app antigo perde a frente e some. Depois o app novo aparece.",
+          "pitfall": "Os eventos podem ter o mesmo segundo. A ordem das linhas desempata."
+        }
+      ]
+    }
+  ]
+}
