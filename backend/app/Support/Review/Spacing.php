@@ -18,18 +18,17 @@ class Spacing
     /**
      * Em quantos dias esta lição deve voltar.
      *
-     * @param  int|null  $daysToExam  Dias até a prova da matéria. null = matéria sem data.
+     * Só vale com data de prova. Sem data, quem decide é o FSRS (ver Fsrs).
+     *
+     * @param  int       $daysToExam  Dias até a prova que a pessoa marcou.
      * @param  int|null  $percent     Acerto da tentativa que acabou. null = tentativa sem nota.
-     * @param  int       $reviewsDone Quantas revisões já foram feitas (só usado sem data de prova).
      * @param  int       $lapses      Recaídas acumuladas.
      */
-    public static function intervalDays(?int $daysToExam, ?int $percent, int $reviewsDone = 0, int $lapses = 0): int
+    public static function intervalDays(int $daysToExam, ?int $percent, int $lapses = 0): int
     {
         $config = config('castelei.review');
 
-        $base = $daysToExam !== null
-            ? $daysToExam * self::ratio($daysToExam, $config['ratio_by_horizon'])
-            : self::fallback($reviewsDone, $config['fallback_days']);
+        $base = $daysToExam * self::ratio($daysToExam, $config['ratio_by_horizon']);
 
         $interval = $base
             * self::performanceFactor($percent, $config['performance'])
@@ -50,12 +49,9 @@ class Spacing
         | revisão que nunca aconteceu. Com a prova em cima, o intervalo vira o
         | que couber — e se não couber mais nada, amanhã.
         */
-        if ($daysToExam !== null) {
-            $lastUsefulDay = $daysToExam - (int) $config['days_before_exam'];
-            $interval = min($interval, max(1, $lastUsefulDay));
-        }
+        $lastUsefulDay = $daysToExam - (int) $config['days_before_exam'];
 
-        return $interval;
+        return min($interval, max(1, $lastUsefulDay));
     }
 
     /**
@@ -90,22 +86,6 @@ class Spacing
         }
 
         return (float) $anchors[end($dias)];
-    }
-
-    /**
-     * Matéria sem data de prova: escada fixa.
-     *
-     * Passar do fim da escada repete o último degrau — não multiplica. Intervalo
-     * que só cresce acaba mandando a lição para daqui a um ano, que é o mesmo
-     * que arquivá-la.
-     *
-     * @param  list<int>  $ladder
-     */
-    private static function fallback(int $reviewsDone, array $ladder): float
-    {
-        $index = min(max(0, $reviewsDone), count($ladder) - 1);
-
-        return (float) $ladder[$index];
     }
 
     /**

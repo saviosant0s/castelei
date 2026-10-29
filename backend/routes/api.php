@@ -10,6 +10,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\CronController;
 use App\Http\Controllers\ExamController;
+use App\Http\Controllers\ExamDateController;
 use App\Http\Controllers\StudyToolsController;
 use App\Http\Controllers\WritingController;
 use App\Http\Controllers\MediaFileController;
@@ -83,6 +84,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/search', [StudyToolsController::class, 'search'])->middleware('throttle:60,1');
 
     Route::post('/lessons/{lesson}/attempts', [AttemptController::class, 'store'])->whereNumber('lesson')->middleware('visible');
+    // A data da prova é de quem estuda: cada um marca a sua na tela da matéria.
+    Route::put('/subjects/{subject}/exam-date', [ExamDateController::class, 'update'])->whereNumber('subject')->middleware('visible');
     Route::post('/subjects/{subject}/exams', [ExamController::class, 'store'])->whereNumber('subject')->middleware('visible');
     Route::post('/attempts/{attempt}/answers', [AttemptController::class, 'answer'])->whereNumber('attempt');
     Route::post('/attempts/{attempt}/finish', [AttemptController::class, 'finish'])->whereNumber('attempt');

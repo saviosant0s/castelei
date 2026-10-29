@@ -128,26 +128,4 @@ class SpacingTest extends TestCase
         $this->assertSame(1, Spacing::intervalDays(daysToExam: 1, percent: 10, lapses: 50));
         $this->assertSame(1, Spacing::intervalDays(daysToExam: 0, percent: 10));
     }
-
-    /** Matéria sem data de prova cai na escada de longo prazo. */
-    public function test_sem_data_de_prova_usa_a_escada(): void
-    {
-        $ladder = config('castelei.review.fallback_days');
-
-        $this->assertSame($ladder[0], Spacing::intervalDays(daysToExam: null, percent: 75, reviewsDone: 0));
-        $this->assertSame($ladder[1], Spacing::intervalDays(daysToExam: null, percent: 75, reviewsDone: 1));
-        $this->assertSame($ladder[2], Spacing::intervalDays(daysToExam: null, percent: 75, reviewsDone: 2));
-    }
-
-    /**
-     * A escada para no último degrau em vez de multiplicar para sempre.
-     * Intervalo que só cresce acaba arquivando a lição.
-     */
-    public function test_a_escada_para_no_ultimo_degrau(): void
-    {
-        $ladder = config('castelei.review.fallback_days');
-        $ultimo = $ladder[count($ladder) - 1];
-
-        $this->assertSame($ultimo, Spacing::intervalDays(daysToExam: null, percent: 75, reviewsDone: 99));
-    }
 }

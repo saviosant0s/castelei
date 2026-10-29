@@ -90,15 +90,67 @@ class ExamDateTest extends TestCase
         $this->assertNotSame([], $resultado['errors']);
     }
 
-    public function test_o_catalogo_entrega_a_data_para_o_app(): void
+    /**
+     * A data da prova é de quem estuda: a do arquivo não vale para ninguém
+     * até a pessoa marcar a sua.
+     */
+    public function test_o_catalogo_entrega_a_data_que_a_pessoa_marcou(): void
     {
         app(ContentImporter::class)->import($this->arquivo(['exam_date' => '2026-12-15']), origin: 'seed');
+        $subject = Subject::firstWhere('slug', 'materia-nova');
         Sanctum::actingAs(User::factory()->create());
 
-        $this->getJson('/api/subjects')->assertOk()->assertJsonPath('subjects.0.exam_date', '2026-12-15');
+        $this->getJson('/api/subjects')->assertOk()->assertJsonPath('subjects.0.exam_date', null);
+
+        $futuro = now(config('castelei.timezone'))->addDays(40)->toDateString();
+        $this->putJson("/api/subjects/{$subject->id}/exam-date", ['exam_date' => $futuro])
+            ->assertOk()
+            ->assertJsonPath('exam_date', $futuro)
+            ->assertJsonPath('days_to_exam', 40);
+
+        $this->getJson('/api/subjects')->assertJsonPath('subjects.0.exam_date', $futuro);
     }
 
-    public function test_o_painel_edita_a_data_da_prova(): void
+    public function test_cada_pessoa_tem_a_sua_data(): void
+    {
+        app(ContentImporter::class)->import($this->arquivo(), origin: 'seed');
+        $subject = Subject::firstWhere('slug', 'materia-nova');
+        $futuro = now(config('castelei.timezone'))->addDays(40)->toDateString();
+
+        Sanctum::actingAs(User::factory()->create());
+        $this->putJson("/api/subjects/{$subject->id}/exam-date", ['exam_date' => $futuro])->assertOk();
+
+        Sanctum::actingAs(User::factory()->create());
+        $this->getJson('/api/subjects')->assertJsonPath('subjects.0.exam_date', null);
+    }
+
+    public function test_apagar_a_data_devolve_o_plano_sem_prazo(): void
+    {
+        app(ContentImporter::class)->import($this->arquivo(), origin: 'seed');
+        $subject = Subject::firstWhere('slug', 'materia-nova');
+        Sanctum::actingAs(User::factory()->create());
+        $futuro = now(config('castelei.timezone'))->addDays(40)->toDateString();
+
+        $this->putJson("/api/subjects/{$subject->id}/exam-date", ['exam_date' => $futuro])->assertOk();
+        $this->putJson("/api/subjects/{$subject->id}/exam-date", ['exam_date' => null])
+            ->assertOk()->assertJsonPath('exam_date', null);
+
+        $this->getJson('/api/subjects')->assertJsonPath('subjects.0.exam_date', null);
+    }
+
+    public function test_data_no_passado_ou_fora_do_formato_e_recusada(): void
+    {
+        app(ContentImporter::class)->import($this->arquivo(), origin: 'seed');
+        $subject = Subject::firstWhere('slug', 'materia-nova');
+        Sanctum::actingAs(User::factory()->create());
+
+        $this->putJson("/api/subjects/{$subject->id}/exam-date", ['exam_date' => '15/12/2026'])
+            ->assertStatus(422)->assertJsonValidationErrors('exam_date');
+        $this->putJson("/api/subjects/{$subject->id}/exam-date", ['exam_date' => now()->subDay()->toDateString()])
+            ->assertStatus(422)->assertJsonValidationErrors('exam_date');
+    }
+
+    public function test_o_painel_nao_marca_mais_a_data(): void
     {
         app(ContentImporter::class)->import($this->arquivo(), origin: 'seed');
         $subject = Subject::firstWhere('slug', 'materia-nova');
@@ -107,32 +159,6 @@ class ExamDateTest extends TestCase
         $this->putJson("/api/admin/subjects/{$subject->id}", [
             'name' => 'Matéria nova',
             'exam_date' => '2026-12-15',
-        ])->assertOk()->assertJsonPath('subject.exam_date', '2026-12-15');
-
-        $this->assertSame('2026-12-15', $subject->fresh()->exam_date->format('Y-m-d'));
-    }
-
-    public function test_o_painel_recusa_data_fora_do_formato(): void
-    {
-        app(ContentImporter::class)->import($this->arquivo(), origin: 'seed');
-        $subject = Subject::firstWhere('slug', 'materia-nova');
-        Sanctum::actingAs(User::factory()->create(['is_admin' => true]));
-
-        $this->putJson("/api/admin/subjects/{$subject->id}", [
-            'name' => 'Matéria nova',
-            'exam_date' => '15/12/2026',
-        ])->assertStatus(422)->assertJsonValidationErrors('exam_date');
-    }
-
-    public function test_o_painel_limpa_a_data_da_prova(): void
-    {
-        app(ContentImporter::class)->import($this->arquivo(['exam_date' => '2026-12-15']), origin: 'seed');
-        $subject = Subject::firstWhere('slug', 'materia-nova');
-        Sanctum::actingAs(User::factory()->create(['is_admin' => true]));
-
-        $this->putJson("/api/admin/subjects/{$subject->id}", [
-            'name' => 'Matéria nova',
-            'exam_date' => null,
         ])->assertOk();
 
         $this->assertNull($subject->fresh()->exam_date);

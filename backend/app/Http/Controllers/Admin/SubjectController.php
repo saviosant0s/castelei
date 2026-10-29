@@ -97,7 +97,6 @@ class SubjectController extends Controller
             'slug' => ['required', 'string', 'max:80', 'regex:/^[a-z0-9]+(?:-[a-z0-9]+)*$/', 'unique:subjects,slug'],
             'name' => ['required', 'string', 'max:120'],
             'description' => ['nullable', 'string', 'max:500'],
-            'exam_date' => ['nullable', 'date_format:Y-m-d'],
             'area' => ['nullable', 'string', Rule::in(array_keys((array) config('castelei.areas')))],
             // Privada: só quem administra vê. É como se revisa uma matéria antes de abrir.
             'visibility' => ['sometimes', Rule::in([Subject::PUBLIC, Subject::PRIVATE])],
@@ -129,7 +128,6 @@ class SubjectController extends Controller
             | uma fatia do tempo que falta até ela. Mexer aqui muda o calendário
             | de estudo de todo mundo que faz a matéria.
             */
-            'exam_date' => ['nullable', 'date_format:Y-m-d'],
             'area' => ['nullable', 'string', Rule::in(array_keys((array) config('castelei.areas')))],
             // Privada: só quem administra vê. É como se revisa uma matéria antes de abrir.
             'visibility' => ['sometimes', Rule::in([Subject::PUBLIC, Subject::PRIVATE])],

@@ -52,7 +52,7 @@ export default async function MateriaPage({ params }: { params: Promise<{ slug: 
       {/* Quanto falta para a prova e quanto do caminho já andou: as duas
           perguntas que a pessoa faz ao abrir a matéria, e que a trilha
           sozinha não responde. */}
-      <SubjectSummary lessons={subject.lessons} examDate={subject.exam_date} />
+      <SubjectSummary subjectId={subject.id} lessons={subject.lessons} examDate={subject.exam_date} />
 
       {/*
         A próxima lição é a notícia da tela, e por isso é o único bloco

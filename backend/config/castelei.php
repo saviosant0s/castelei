@@ -241,11 +241,15 @@ return [
     | Cepeda descreve material aprendido; quem saiu com 40% não aprendeu ainda,
     | e mandar essa pessoa embora por 13 dias é agendar o esquecimento.
     |
-    | `fallback_days` vale para matéria SEM data de prova. A escada para em 30
-    | dias de propósito: é o intervalo que a própria curva de Cepeda indica para
-    | horizonte de um ano (5 a 10% de 350 dias). E ela cresce devagar porque
-    | Karpicke & Roediger (2007) mostraram que intervalo crescente ganha no
-    | teste imediato mas PERDE no teste adiado — o que interessa aqui.
+    | SEM data de prova (a pessoa não marcou), quem decide é o FSRS-4.5
+    | (App\Support\Review\Fsrs), com os parâmetros padrão. Sem prazo, o
+    | problema vira "lembrar para sempre", que é o que ele resolve, e ele
+    | aprende com cada lição de cada pessoa. Antes era uma escada fixa de 1, 3,
+    | 7, 16 e 30 dias. O estado de memória (estabilidade e dificuldade) anda
+    | em toda revisão, com ou sem data, para não recomeçar do zero.
+    |
+    | A data da prova é de CADA PESSOA (tabela exam_dates), marcada na tela da
+    | matéria. Decisão do Sávio: quem sabe quando é a prova é quem estuda.
     |
     | O conteúdo da revisão são QUESTÕES, nunca reler a lição, e isso também é
     | achado, não gosto: Roediger & Karpicke (2006) mediram 61% contra 40% de
@@ -272,9 +276,6 @@ return [
         // Cada recaída acumulada corta este tanto do intervalo (limitado por `lapse_floor`).
         'lapse_penalty' => 0.15,
         'lapse_floor' => 0.5,
-
-        // Matéria sem data de prova: escada fixa, em dias, pelo nº de revisões feitas.
-        'fallback_days' => [1, 3, 7, 16, 30],
 
         // Nunca marcar revisão para depois da prova, nem no próprio dia dela.
         'days_before_exam' => 1,

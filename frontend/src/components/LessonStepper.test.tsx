@@ -32,6 +32,26 @@ afterEach(() => {
 });
 
 describe("LessonStepper", () => {
+  it("oferece ir direto às questões para quem já domina a lição", async () => {
+    const user = userEvent.setup();
+    render(<LessonStepper lesson={{ ...lesson, mastery: 88 }} />);
+
+    expect(screen.getByText(/Você já domina esta lição \(88%\)/)).toBeTruthy();
+    expect(screen.getByRole("link", { name: "Ir direto às questões" }).getAttribute("href")).toBe("/licao/7/praticar");
+
+    // Só na primeira tela: depois de avançar, o aviso some.
+    await user.click(screen.getByRole("button", { name: /continuar/i }));
+    expect(screen.queryByText(/Você já domina/)).toBeNull();
+  });
+
+  it("não oferece o atalho abaixo de 80% nem para quem nunca praticou", () => {
+    render(<LessonStepper lesson={{ ...lesson, mastery: 62 }} />);
+    expect(screen.queryByText(/Você já domina/)).toBeNull();
+    cleanup();
+    render(<LessonStepper lesson={{ ...lesson, mastery: null }} />);
+    expect(screen.queryByText(/Você já domina/)).toBeNull();
+  });
+
   it("começa na primeira etapa, com a palavra nova em destaque e sem botão de voltar", () => {
     render(<LessonStepper lesson={lesson} />);
 

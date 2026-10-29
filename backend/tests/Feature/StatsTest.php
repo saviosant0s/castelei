@@ -58,7 +58,7 @@ class StatsTest extends TestCase
         Sanctum::actingAs(User::factory()->create(['plan' => 'pro']));
         $primeira = $this->makeLesson(4, 1);
         $segunda = $this->makeLesson(4, 2, $primeira->subject);
-        $primeira->subject->update(['exam_date' => Carbon::now('America/Sao_Paulo')->addDays(10)->format('Y-m-d')]);
+        $this->putJson("/api/subjects/{$primeira->subject_id}/exam-date", ['exam_date' => Carbon::now('America/Sao_Paulo')->addDays(10)->format('Y-m-d')])->assertOk();
 
         // Errou duas; refazer as erradas e acertar sobe o domínio para 100%.
         $this->praticar($primeira->id, [1, 2]);
@@ -75,6 +75,16 @@ class StatsTest extends TestCase
             // A lição ainda não praticada aparece, sem nota: é o buraco do mapa.
             ->assertJsonPath('subjects.0.lessons.1.id', $segunda->id)
             ->assertJsonPath('subjects.0.lessons.1.mastery', null);
+    }
+
+    public function test_a_licao_diz_o_dominio_da_pessoa(): void
+    {
+        Sanctum::actingAs(User::factory()->create(['plan' => 'pro']));
+        $lesson = $this->makeLesson(4);
+
+        $this->getJson("/api/lessons/{$lesson->id}")->assertJsonPath('lesson.mastery', null);
+        $this->praticar($lesson->id, [1, 2, 3, 4]);
+        $this->getJson("/api/lessons/{$lesson->id}")->assertJsonPath('lesson.mastery', 100);
     }
 
     public function test_questao_de_nivel_nao_entra_no_dominio(): void

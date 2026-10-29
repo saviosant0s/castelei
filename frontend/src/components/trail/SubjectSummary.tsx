@@ -1,6 +1,6 @@
-import { CalendarDays } from "lucide-react";
 import { Card, ProgressBar } from "@/components/ui";
-import { contagemParaProva, progressoDaMateria } from "@/lib/subject-summary";
+import { progressoDaMateria } from "@/lib/subject-summary";
+import { ExamDateEditor } from "./ExamDateEditor";
 import type { LessonSummary } from "@/lib/types";
 
 /*
@@ -22,32 +22,23 @@ import type { LessonSummary } from "@/lib/types";
 | calendário andando não é erro de ninguém.
 */
 export function SubjectSummary({
+  subjectId,
   lessons,
   examDate,
 }: {
+  subjectId: number;
   lessons: LessonSummary[];
+  /** A data que ESTA pessoa marcou. É ela quem diz quando é a prova. */
   examDate: string | null;
 }) {
   const progresso = progressoDaMateria(lessons);
-  const prova = contagemParaProva(examDate);
 
   // Matéria vazia não tem o que resumir, e barra de 0/0 é só ruído.
   if (progresso.total === 0) return null;
 
   return (
     <Card tone="sunken" className="space-y-3">
-      {prova && (
-        <p className="flex items-start gap-2.5 text-base">
-          <CalendarDays
-            className="mt-0.5 size-5 shrink-0 text-sky"
-            aria-hidden="true"
-          />
-          <span>
-            <strong>{prova.frase}</strong>
-            <span className="text-content-secondary"> — {prova.data}.</span>
-          </span>
-        </p>
-      )}
+      <ExamDateEditor subjectId={subjectId} examDate={examDate} />
 
       <div className="flex items-center gap-3">
         <ProgressBar

@@ -48,6 +48,8 @@ export function apiBase(): string {
 const ALLOWED_PATHS = [
   /^lessons\/\d+\/attempts$/,
   /^subjects\/\d+\/exams$/,
+  // A data da prova, que cada pessoa marca na tela da matéria.
+  /^subjects\/\d+\/exam-date$/,
   /^attempts\/\d+\/answers$/,
   /^attempts\/\d+\/finish$/,
   // Produção textual: conferir o texto (língua + modelo) e, com chave, a correção por IA.

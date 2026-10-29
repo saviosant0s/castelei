@@ -3,10 +3,12 @@
 namespace App\Services;
 
 use App\Models\Attempt;
+use App\Models\ExamDate;
 use App\Models\Lesson;
 use App\Models\Review;
 use App\Models\Subject;
 use App\Models\User;
+use App\Support\Review\Fsrs;
 use App\Support\Review\Spacing;
 use Carbon\CarbonImmutable;
 use Illuminate\Database\UniqueConstraintViolationException;
@@ -44,14 +46,22 @@ class ReviewService
             $lapses++;
         }
 
-        $days = Spacing::intervalDays(
-            daysToExam: $this->daysToExam($lesson->subject),
-            percent: $percent,
-            reviewsDone: $existing ? $this->ladderStep($existing) : 0,
-            lapses: $lapses,
-        );
-
         $now = CarbonImmutable::now();
+
+        /*
+        | O estado de memória do FSRS anda SEMPRE, com ou sem data de prova:
+        | se a pessoa apagar a data um dia, o agendamento continua de onde a
+        | memória dela está, e não da estaca zero.
+        */
+        $elapsed = $existing ? max(0, $existing->reviewed_at->diffInSeconds($now)) / 86400 : 0.0;
+        $memoria = Fsrs::next($existing?->stability, $existing?->difficulty, Fsrs::grade($percent), $elapsed);
+
+        $daysToExam = $this->daysToExam($lesson->subject, $user);
+
+        // Com prova marcada, Cepeda (prazo conhecido). Sem, o FSRS (lembrar para sempre).
+        $days = $daysToExam !== null
+            ? Spacing::intervalDays(daysToExam: $daysToExam, percent: $percent, lapses: $lapses)
+            : Fsrs::intervalDays($memoria['stability']);
 
         $values = [
             'due_at' => $now->addDays($days),
@@ -59,6 +69,8 @@ class ReviewService
             'last_percent' => $percent,
             'interval_days' => $days,
             'lapses' => $lapses,
+            'stability' => $memoria['stability'],
+            'difficulty' => $memoria['difficulty'],
         ];
 
         try {
@@ -118,20 +130,36 @@ class ReviewService
     }
 
     /**
-     * Dias entre hoje e a prova da matéria. null = matéria sem data marcada.
+     * Dias entre hoje e a prova que ESTA PESSOA marcou para a matéria.
+     * null = sem data marcada (ou a prova já passou).
      *
-     * Conta em dias de calendário no fuso do aluno, não em horas: "faltam 13
-     * dias" não pode virar 12 porque a conta rodou às 23h.
+     * A data é de quem estuda, não da matéria: cada um tem a sua prova.
      */
-    public function daysToExam(?Subject $subject): ?int
+    public function daysToExam(?Subject $subject, User $user): ?int
     {
-        if ($subject?->exam_date === null) {
+        if ($subject === null) {
+            return null;
+        }
+
+        $data = ExamDate::where('user_id', $user->id)->where('subject_id', $subject->id)->value('exam_date');
+
+        return self::daysUntil($data ? substr((string) $data, 0, 10) : null);
+    }
+
+    /**
+     * Dias de calendário de hoje até a data, no fuso do aluno: "faltam 13
+     * dias" não pode virar 12 porque a conta rodou às 23h. Data passada ou
+     * nula devolve null — a matéria volta ao plano de longo prazo.
+     */
+    public static function daysUntil(?string $date): ?int
+    {
+        if ($date === null) {
             return null;
         }
 
         $timezone = config('castelei.timezone');
         $today = CarbonImmutable::now($timezone)->startOfDay();
-        $exam = CarbonImmutable::parse($subject->exam_date->format('Y-m-d'), $timezone)->startOfDay();
+        $exam = CarbonImmutable::parse($date, $timezone)->startOfDay();
 
         $days = $today->diffInDays($exam, absolute: false);
 
@@ -147,25 +175,5 @@ class ReviewService
         }
 
         return (int) round($attempt->correct_count * 100 / $attempt->total_questions);
-    }
-
-    /**
-     * Em que degrau da escada de longo prazo esta lição está.
-     *
-     * Só vale para matéria sem data de prova. Usa o intervalo anterior para
-     * descobrir o degrau em vez de guardar um contador: assim, mudar a escada na
-     * configuração não deixa linhas antigas apontando para um degrau que sumiu.
-     */
-    private function ladderStep(Review $review): int
-    {
-        $ladder = config('castelei.review.fallback_days');
-
-        foreach ($ladder as $index => $days) {
-            if ($review->interval_days <= $days) {
-                return $index + 1;
-            }
-        }
-
-        return count($ladder) - 1;
     }
 }

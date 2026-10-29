@@ -14,6 +14,7 @@ O código correspondente:
 ## Por que não é o algoritmo do Anki
 
 SM-2 e FSRS resolvem outro problema: **"lembrar para sempre"**, sem data marcada.
+(Por isso o FSRS entra aqui só quando a pessoa NÃO marcou data — ver abaixo.)
 Por isso trabalham com múltiplos do intervalo anterior (SM-2) ou com um modelo de
 estabilidade de memória treinado em milhões de revisões (FSRS). Nenhum dos dois
 sabe que existe uma prova no dia 15/12.
@@ -128,12 +129,41 @@ Recaídas (terminar abaixo de 50%) encurtam mais, com piso em metade do interval
 quem erra sempre não deve receber o intervalo de quem acerta, mas nada pode ficar
 preso em "volta todo dia para sempre".
 
-## Matéria sem data de prova
+## A data da prova é de quem estuda
 
-Cai numa escada fixa: **1, 3, 7, 16, 30 dias**, e para no último degrau. O teto de
-30 dias é o que a própria curva de Cepeda indica para horizonte de um ano (5 a 10%
-de 350 dias). Parar em vez de multiplicar é deliberado: intervalo que só cresce
-acaba mandando a lição para daqui a um ano, o que é o mesmo que arquivá-la.
+Desde outubro de 2026, a data mora na pessoa, e não na matéria (tabela
+`exam_dates`, rota `PUT /subjects/{id}/exam-date`, editor `ExamDateEditor` na
+faixa de resumo da matéria). Decisão do Sávio: numa matéria pública, cada um tem
+a sua prova — o ENEM, o vestibular, o concurso. A coluna `subjects.exam_date`
+ficou só como origem da migração: quem já estudava uma matéria com data herdou
+essa data, para o cronograma não mudar sem a pessoa pedir. O painel não marca
+mais data nenhuma.
+
+## Sem data de prova: o FSRS
+
+Quando a pessoa não marcou data, o problema vira **"lembrar para sempre"** — e
+aí o FSRS é a ferramenta certa (`App\Support\Review\Fsrs`, versão 4.5 com os
+parâmetros padrão publicados). Antes era uma escada fixa de 1, 3, 7, 16 e 30
+dias, igual para todo mundo e toda lição.
+
+O FSRS guarda dois números por (pessoa, lição), nas colunas `stability` e
+`difficulty` da tabela `reviews`:
+
+- **estabilidade**: em quantos dias a chance de lembrar cai para 90%;
+- **dificuldade**: de 1 a 10, o quanto a lição custa para esta pessoa.
+
+A nota que ele espera sai do acerto da tentativa: abaixo de 50% é "errei", de 50
+a 69% "difícil", de 70 a 89% "bom" e 90% ou mais "fácil". O intervalo é o dia em
+que a chance de lembrar chega a 90%, com teto de 365 dias.
+
+**O estado anda sempre, com ou sem data.** Com data, quem decide o intervalo é
+Cepeda; mas a memória continua sendo medida, e se a pessoa apagar a data o
+agendamento segue de onde ela está, não da estaca zero.
+
+Por que não usar o FSRS também com data: ele mira uma chance fixa de lembrar a
+qualquer momento, sem saber que existe um dia que importa. Com prazo conhecido, a
+proporção de Cepeda é o resultado direto — e é o que comprime o cronograma
+sozinho conforme a prova chega.
 
 ## Decisões de produto que acompanham
 

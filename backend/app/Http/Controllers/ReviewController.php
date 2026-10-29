@@ -30,13 +30,13 @@ class ReviewController extends Controller
         $next = $due->isEmpty() ? $this->reviews->next($user) : null;
 
         return response()->json([
-            'due' => $due->map(fn (Review $review) => $this->row($review))->values(),
-            'next' => $next ? $this->row($next) : null,
+            'due' => $due->map(fn (Review $review) => $this->row($review, $user))->values(),
+            'next' => $next ? $this->row($next, $user) : null,
         ]);
     }
 
     /** @return array<string, mixed> */
-    private function row(Review $review): array
+    private function row(Review $review, \App\Models\User $user): array
     {
         $lesson = $review->lesson;
         $subject = $lesson?->subject;
@@ -59,7 +59,7 @@ class ReviewController extends Controller
             'last_percent' => $review->last_percent,
             'interval_days' => $review->interval_days,
             // O que dá sentido ao intervalo na tela: ele é uma fatia disto.
-            'days_to_exam' => $this->reviews->daysToExam($subject),
+            'days_to_exam' => $this->reviews->daysToExam($subject, $user),
         ];
     }
 }
