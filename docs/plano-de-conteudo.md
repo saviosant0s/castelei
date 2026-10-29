@@ -30,7 +30,7 @@ básico de cada área da escola**, e o que é específico fica guardado.
 | Matéria | Área | Situação |
 |---|---|---|
 | Matemática Básica (18 lições) | Matemática | **Pública** |
-| Português (2 lições) | Português | **Pública**, a completar (próximo passo) |
+| Português (18 lições) | Português | **Pública**, básico completo |
 | Lógica (15) | Matemática | **Pública** |
 | Produção Textual (7) | Português | **Pública** |
 | Sistemas Operacionais (33) | Informática | Privada: é o semestre do Sávio |
@@ -61,7 +61,7 @@ Lógica → Produção Textual) e **LLMs do zero** (privada).
 Cada lista é o sumário planejado. Ao escrever, a ordem pode mudar, mas o
 recorte é este.
 
-### Português — `portugues` (ampliar a que existe)
+### Português — `portugues` (feito: 18 lições em quatro módulos)
 
 1. **A língua por dentro:** a palavra e as classes de palavras (substantivo,
    adjetivo, artigo, numeral, pronome); verbo e tempos verbais; advérbio,
@@ -222,8 +222,8 @@ aparecer como "Em breve".
 ## Ordem de execução
 
 1. Mecanismo de público e privado (feito).
-2. **Português básico completo** (próximo).
-3. Questões com nível de dificuldade, começando pelas matérias públicas.
+2. Português básico completo (feito).
+3. **Questões com nível de dificuldade, começando pelas matérias públicas** (próximo).
 4. Matemática do dia a dia.
 5. Uma área por rodada: Biologia, História, Geografia, Física, Química,
    Inglês, Informática básica, Filosofia, Sociologia, Espanhol, Artes,

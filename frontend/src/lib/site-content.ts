@@ -33,10 +33,26 @@ export const SUBJECTS: SiteSubject[] = [
     slug: "portugues",
     name: "Português",
     pitch:
-      "As duas regras que as bancas mais adoram, com as pegadinhas mapeadas uma a uma.",
+      "O básico da língua do zero: as classes de palavras, a frase, as regras que a prova mais cobra e a leitura de textos.",
     lessons: [
-      "Crase",
+      "Substantivo, adjetivo, artigo e numeral",
+      "Pronomes: as palavras que apontam",
+      "Verbos: pessoa, tempo e modo",
+      "Advérbio, preposição e conjunção",
+      "Sujeito e predicado",
+      "Os complementos do verbo",
+      "Período composto: coordenação e subordinação",
+      "Concordância nominal",
       "Concordância verbal",
+      "Regência: a preposição que a palavra exige",
+      "Crase",
+      "Colocação pronominal: antes, depois ou no meio",
+      "A vírgula: onde ela vai e onde não pode ir",
+      "Acentuação: onde vai o acento",
+      "Interpretação de texto: o que ele diz e o que permite concluir",
+      "Tipos e gêneros textuais",
+      "Coesão e coerência",
+      "Sentido das palavras e figuras de linguagem",
     ],
   },
   {
@@ -119,5 +135,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 322,
+  questions: 450,
 };

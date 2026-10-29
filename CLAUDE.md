@@ -349,6 +349,11 @@ Três coisas de conteúdo:
 
 **A trilha "LLMs do zero" está completa**: os oito passos têm matéria, da Matemática Básica a esta.
 
+**Matéria de Português, o básico da língua** (18 lições, `02-portugues.json`, área Português, pública). A primeira matéria escrita pelo plano do básico de cada área (`docs/plano-de-conteudo.md`). Quatro módulos: A palavra (substantivo, adjetivo, artigo e numeral; pronomes; verbos; advérbio, preposição e conjunção), A frase (sujeito e predicado; complementos do verbo; período composto), As regras que mais caem (concordância nominal e verbal, regência, crase, colocação pronominal, vírgula, acentuação) e Ler um texto (interpretação, tipos e gêneros, coesão e coerência, figuras de linguagem). Duas coisas:
+
+- **As duas lições antigas (Crase e Concordância verbal) ficaram como estavam**, só ganharam módulo. As questões continuam na mesma posição, então as respostas de quem já estudou seguem valendo.
+- **O escopo `p` do verificador cresceu** (predicado, objeto direto e indireto, oração, conjunção, advérbio, regência, próclise, sílaba tônica, coesão, metáfora, vocativo, aposto…). Como a régua vale por lição, "verbo", "artigo" e "plural" ganham verbete em quase toda lição. Cuidado com "artigo de opinião": ele casa com "artigo", e por isso a lição de gêneros tem o verbete com o nome inteiro.
+
 **Matéria de Lógica** (15 lições, `14-logica.json`, área Matemática, figuras em `frontend/public/figuras/logica/`). Pedido do Sávio: equivalência, negação e tabela-verdade. Cinco módulos: Proposições e conectivos (proposição, negação, “e”/“ou”/ou exclusivo, condicional, bicondicional), Tabela-verdade (montar a tabela e a precedência; tautologia, contradição e contingência), Equivalências e negações (contrapositiva, De Morgan, negação da condicional e da bicondicional, quantificadores), Argumentos (formas válidas, falácias formais, silogismos com diagramas) e Lógica no código (and, or, not e curto-circuito). Duas coisas:
 
 - **É raciocínio lógico de prova, e fala a língua dela.** Os mnemônicos que as bancas esperam estão lá (“V com F dá F” na condicional, MANÉ na negação dela), e cada lição tem uma tabela das alternativas erradas que costumam aparecer: recíproca e inversa no lugar da contrapositiva, “nenhum” no lugar de “algum não”.
