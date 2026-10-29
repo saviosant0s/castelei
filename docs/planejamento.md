@@ -306,6 +306,8 @@ A qualidade do conteúdo é o coração do Castelei. O maior risco na produção
 - **Vocabulário de banca só na camada "Como cai na prova"** — na camada de Explicação Humana, linguagem completamente informal e acessível. O jargão formal aparece apenas quando estamos ensinando *como a prova vai perguntar*.
 - **Frases curtas** — se uma frase tem mais de duas vírgulas, quebra em duas.
 - **Concreto antes de abstrato** — começa com um exemplo real, depois generaliza a regra.
+- **Escrito para qualquer pessoa, não para quem escreve** — o exemplo vem do dia a dia de quem estuda para uma prova (escola, compras, casa, notícia), e não do curso, do trabalho ou do interesse de quem escreveu. Matéria básica não aponta para matéria avançada que a pessoa não escolheu estudar.
+- **Toda alternativa errada é um erro de verdade** — cada distrator imita um engano que a banca explora, e não um chute absurdo. Os quatro moldes: a frase certa com **uma palavra trocada**; o **quantificador absoluto** (“sempre”, “nunca”, “todos”) onde a regra admite exceção; a **parte pelo todo** (fala de um detalhe como se fosse a ideia central); e a **inversão** (causa e consequência trocadas, ou a recíproca no lugar da contrapositiva). A explicação da questão diz qual molde cada erro usou quando isso ensina algo. Nos níveis de dificuldade, o difícil é o que usa os moldes mais finos — não o que tem a conta mais longa.
 
 ### Como revisar o conteúdo antes de publicar
 

@@ -56,6 +56,43 @@ function steps(questionsPerLesson: number | null) {
   ];
 }
 
+/*
+| Os princípios, na língua de quem estuda. O mapa completo (com onde cada
+| regra mora no código) está em docs/principios-pedagogicos.md.
+*/
+const ciencia = [
+  {
+    title: "Responder ensina mais que reler",
+    study: "Prática de recuperação · Roediger e Karpicke, 2006",
+    app: "Uma semana depois, quem respondeu perguntas lembrava 61% do conteúdo; quem só releu, 40%. Por isso toda lição termina em questões, e a revisão abre as questões, nunca o texto.",
+  },
+  {
+    title: "A memória curta é pequena",
+    study: "Teoria da carga cognitiva · Sweller, 1988",
+    app: "Uma ideia por tela, frases com no máximo duas vírgulas e nenhum termo sem explicação. Um verificador automático reprova o texto que passar disso.",
+  },
+  {
+    title: "Palavra e imagem juntas fixam mais",
+    study: "Dupla codificação · Paivio",
+    app: "As lições trazem tabela, exemplo ou figura junto do texto, na mesma tela, para os dois caminhos da memória trabalharem ao mesmo tempo.",
+  },
+  {
+    title: "Do concreto para o abstrato",
+    study: "Esmaecimento da concretude · Fyfe, McNeil e Goldstone, 2014",
+    app: "Toda lição começa com uma comparação do dia a dia, como o dedo que aponta antes da palavra pronome. A regra formal vem depois, quando já faz sentido.",
+  },
+  {
+    title: "Revisar na hora certa",
+    study: "Repetição espaçada · Cepeda e colegas, 2008, com 1.354 pessoas",
+    app: "O melhor intervalo entre revisões é uma fatia do tempo que falta até a prova. O app marca as revisões sozinho a partir da data da sua prova, e aperta o ritmo conforme ela chega.",
+  },
+  {
+    title: "Saber o assunto não é saber a prova",
+    study: "Como as bancas montam as alternativas",
+    app: "Cada lição tem uma etapa só para o jeito que o tema cai e outra só para as pegadinhas. Errar no treino, com a explicação na hora, é o que evita errar no dia.",
+  },
+];
+
 export default async function ComoFunciona() {
   const { questionsPerLesson } = await getSiteCatalog();
   const passos = steps(questionsPerLesson);
@@ -117,10 +154,10 @@ export default async function ComoFunciona() {
             </p>
           </Card>
           <Card tone="outline" size="lg">
-            <h3 className="text-base font-bold">Comando sempre diz onde funciona</h3>
+            <h3 className="text-base font-bold">Toda alternativa errada é um erro de verdade</h3>
             <p className="mt-2 text-base text-content-secondary">
-              Windows ou Linux, PowerShell ou terminal. Quando há dois jeitos, os dois aparecem — e o app
-              explica até como abrir o terminal.
+              Nada de opção absurda para encher a lista. Cada uma imita um engano que a prova explora: a
+              palavra trocada, o “sempre” onde a regra tem exceção, a recíproca no lugar da contrapositiva.
             </p>
           </Card>
           <Card tone="outline" size="lg">
@@ -131,6 +168,34 @@ export default async function ComoFunciona() {
             </p>
           </Card>
         </div>
+      </section>
+
+      <section aria-labelledby="ciencia" className="mt-24">
+        <h2 id="ciencia" className="text-2xl sm:text-3xl">
+          A ciência por trás do método
+        </h2>
+        <p className="mt-3 max-w-xl text-base text-content-secondary">
+          Nada aqui é gosto pessoal. Cada regra vem de um achado da pesquisa sobre memória, e virou uma coisa
+          que o app faz por você.
+        </p>
+
+        {/*
+        | Lista e não seis cartões iguais: cartões do mesmo tamanho pediriam
+        | para ser comparados, e aqui cada linha é uma ideia diferente.
+        */}
+        <Card size="lg" radius="panel" className="mt-8 !p-0">
+          <ul className="divide-y divide-ink/10">
+            {ciencia.map(({ title, study, app }) => (
+              <li key={title} className="grid gap-2 p-6 sm:grid-cols-[1fr_1.2fr] sm:gap-8">
+                <div>
+                  <h3 className="text-base font-bold">{title}</h3>
+                  <p className="mt-1 text-sm text-content-subtle">{study}</p>
+                </div>
+                <p className="text-base text-content-secondary">{app}</p>
+              </li>
+            ))}
+          </ul>
+        </Card>
       </section>
 
       <Card tone="bold" size="lg" radius="panel" className="mt-24 sm:p-10">

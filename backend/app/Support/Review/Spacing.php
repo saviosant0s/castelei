@@ -28,7 +28,7 @@ class Spacing
         $config = config('castelei.review');
 
         $base = $daysToExam !== null
-            ? self::proportional($daysToExam, (float) $config['ratio'])
+            ? $daysToExam * self::ratio($daysToExam, $config['ratio_by_horizon'])
             : self::fallback($reviewsDone, $config['fallback_days']);
 
         $interval = $base
@@ -59,14 +59,37 @@ class Spacing
     }
 
     /**
-     * A regra de Cepeda: uma fatia do tempo que falta.
+     * A regra de Cepeda: uma fatia do tempo que falta — e a fatia encolhe
+     * quando o prazo cresce.
      *
-     * É o que faz o cronograma se comprimir sozinho conforme a prova chega, sem
-     * ninguém reconfigurar nada.
+     * O estudo mediu o ótimo em 20 a 40% do prazo para teste em uma semana e
+     * em 5 a 10% para teste em um ano. Uma fração fixa acerta o meio e erra as
+     * pontas: para uma prova daqui a um ano, 15% mandaria a lição embora por
+     * quase dois meses. Entre os pontos medidos, a fração anda em linha reta
+     * na escala logarítmica dos dois eixos, como a própria curva do artigo.
+     *
+     * @param  array<int, float>  $anchors  dias até a prova => fração
      */
-    private static function proportional(int $daysToExam, float $ratio): float
+    public static function ratio(int $daysToExam, array $anchors): float
     {
-        return max(0, $daysToExam) * $ratio;
+        ksort($anchors);
+        $dias = array_keys($anchors);
+        $d = max(1, $daysToExam);
+
+        if ($d <= $dias[0]) {
+            return (float) $anchors[$dias[0]];
+        }
+
+        foreach ($dias as $i => $ate) {
+            if ($d <= $ate) {
+                $de = $dias[$i - 1];
+                $t = log($d / $de) / log($ate / $de);
+
+                return exp(log($anchors[$de]) + $t * (log($anchors[$ate]) - log($anchors[$de])));
+            }
+        }
+
+        return (float) $anchors[end($dias)];
     }
 
     /**

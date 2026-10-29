@@ -55,8 +55,8 @@ class ReviewTest extends TestCase
 
         $result = $this->practice($user, $lesson);
 
-        // 15% de 90 dias = 13,5, arredondado para cima, com fator 1,3 de acerto alto.
-        $this->assertSame(18, $result['review']['interval_days']);
+        // A 90 dias a fração é cerca de 13,4% (12,1 dias); com o fator 1,3 de acerto alto, 15,7 → 16.
+        $this->assertSame(16, $result['review']['interval_days']);
         $this->assertDatabaseHas('reviews', ['user_id' => $user->id, 'lesson_id' => $lesson->id]);
     }
 

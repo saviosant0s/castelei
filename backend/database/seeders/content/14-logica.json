@@ -1984,24 +1984,6 @@
           }
         },
         {
-          "kind": "explain",
-          "title": "Em Python",
-          "body": [
-            "O computador monta a tabela sozinho. Em Python, True é V e False é F."
-          ],
-          "code": {
-            "label": "A tabela de p → q",
-            "text": "from itertools import product\ndef se_entao(p, q):\n    return (not p) or q\nfor p, q in product([True, False], repeat=2):\n    print(p, q, se_entao(p, q))",
-            "notes": [
-              "Traz a ferramenta que gera todas as combinações.",
-              "Define a condicional…",
-              "…que é “não p, ou q”, o mesmo que p → q.",
-              "Para cada combinação de p e q entre True e False…",
-              "…mostra p, q e o resultado: só a linha True False dá False."
-            ]
-          }
-        },
-        {
           "kind": "exam",
           "title": "Como cai na prova",
           "body": [
@@ -2033,8 +2015,7 @@
             "Primeira coluna metade V e metade F; a última alterna.",
             "Precedência: parênteses e ¬; depois ∧ e ∨; por fim → e ↔.",
             "Uma coluna para cada pedaço da conta.",
-            "A última coluna é o resultado.",
-            "O Python monta a tabela com product."
+            "A última coluna é o resultado."
           ]
         }
       ],
@@ -2319,30 +2300,6 @@
               "meaning": "a parte que vem depois do “então”: o q de p → q."
             }
           ]
-        },
-        {
-          "kind": "explain",
-          "title": "Em Python",
-          "body": [
-            "Uma função que monta a tabela e diz o grupo."
-          ],
-          "code": {
-            "label": "Classificar uma proposição",
-            "text": "from itertools import product\ndef classificar(formula, n):\n    valores = [formula(*linha) for linha in product([True, False], repeat=n)]\n    if all(valores):\n        return \"tautologia\"\n    if not any(valores):\n        return \"contradição\"\n    return \"contingência\"\nprint(classificar(lambda p: p or not p, 1))\nprint(classificar(lambda p: p and not p, 1))\nprint(classificar(lambda p, q: p and q, 2))",
-            "notes": [
-              "Traz a ferramenta que gera as combinações.",
-              "Define a classificação de uma fórmula com n letras…",
-              "…calcula o valor dela em cada linha da tabela.",
-              "Se todos os valores são True…",
-              "…é tautologia.",
-              "Se nenhum valor é True…",
-              "…é contradição.",
-              "Senão, é contingência.",
-              "Mostra tautologia para p ou não p.",
-              "Mostra contradição para p e não p.",
-              "Mostra contingência para p e q."
-            ]
-          }
         },
         {
           "kind": "exam",
@@ -2717,26 +2674,6 @@
           }
         },
         {
-          "kind": "explain",
-          "title": "Em Python",
-          "body": [
-            "Comparar duas fórmulas em todas as linhas é conferir uma equivalência."
-          ],
-          "code": {
-            "label": "Contrapositiva e recíproca",
-            "text": "from itertools import product\ndef se_entao(p, q):\n    return (not p) or q\ndef equivalentes(f, g):\n    return all(f(p, q) == g(p, q) for p, q in product([True, False], repeat=2))\nprint(equivalentes(se_entao, lambda p, q: se_entao(not q, not p)))\nprint(equivalentes(se_entao, lambda p, q: se_entao(q, p)))",
-            "notes": [
-              "Traz a ferramenta que gera as combinações.",
-              "Define a condicional…",
-              "…como “não p, ou q”.",
-              "Define o teste: duas fórmulas são equivalentes…",
-              "…se dão o mesmo resultado em todas as combinações.",
-              "Mostra True: p → q e ¬q → ¬p são equivalentes.",
-              "Mostra False: p → q e q → p não são."
-            ]
-          }
-        },
-        {
           "kind": "exam",
           "title": "Como cai na prova",
           "body": [
@@ -3095,24 +3032,6 @@
             "A regra vale para qualquer tamanho. ¬(p ∧ q ∧ r) ≡ ¬p ∨ ¬q ∨ ¬r, e ¬(p ∨ q ∨ r) ≡ ¬p ∧ ¬q ∧ ¬r.",
             "Cada parte é negada, e todos os conectivos trocam."
           ]
-        },
-        {
-          "kind": "explain",
-          "title": "Em Python",
-          "body": [
-            "As duas leis conferidas em todas as linhas."
-          ],
-          "code": {
-            "label": "Conferindo De Morgan",
-            "text": "from itertools import product\nfor p, q in product([True, False], repeat=2):\n    lei1 = (not (p and q)) == ((not p) or (not q))\n    lei2 = (not (p or q)) == ((not p) and (not q))\n    print(p, q, lei1, lei2)",
-            "notes": [
-              "Traz a ferramenta que gera as combinações.",
-              "Para cada combinação de p e q…",
-              "…confere a primeira lei: negar o “e” dá o “ou” das negações.",
-              "…confere a segunda lei: negar o “ou” dá o “e” das negações.",
-              "Mostra True True em todas as linhas: as duas leis valem sempre."
-            ]
-          }
         },
         {
           "kind": "exam",
@@ -4933,337 +4852,353 @@
     },
     {
       "slug": "logica-no-codigo",
-      "title": "Lógica no código: and, or e not",
-      "module": "Lógica no código",
-      "summary": "Todo if de um programa é uma proposição composta. O Python usa and, or e not com as mesmas tabelas desta matéria. Ele para de avaliar quando o resultado já está decidido, e De Morgan ajuda a simplificar condições.",
+      "title": "Lógica no dia a dia: regras, filtros e promoções",
+      "module": "Lógica no dia a dia",
+      "summary": "Toda regra do dia a dia é feita dos mesmos conectivos da matéria. Saber lê-los diz quem ganha a promoção, quem descumpre uma regra e o que um filtro de busca vai mostrar.",
       "steps": [
         {
           "kind": "idea",
           "title": "O porteiro do prédio",
           "body": [
-            "O porteiro deixa entrar quem tem crachá e está na lista, ou quem é morador. Ele aplica conectivos o dia inteiro, sem saber o nome deles.",
-            "Um programa decide do mesmo jeito, só que escrito."
+            "O porteiro deixa entrar quem tem crachá e está na lista, ou quem é morador. Ele aplica lógica o dia inteiro, sem saber o nome de nada.",
+            "Regulamento de promoção, filtro de loja e contrato funcionam do mesmo jeito. Esta lição lê esses textos com os olhos da lógica."
           ],
           "terms": [
-            {
-              "word": "Conectivo",
-              "meaning": "a palavra que liga proposições. São conectivos o “e”, o “ou”, o “se… então” e o “se e somente se”; o “não” também conta."
-            },
             {
               "word": "Proposição",
               "meaning": "uma frase que afirma alguma coisa e pode ser julgada verdadeira ou falsa, mas não as duas ao mesmo tempo."
+            },
+            {
+              "word": "Conectivo",
+              "meaning": "a palavra que liga proposições (“e”, “ou”, “se… então”, “não”)."
             }
           ]
         },
         {
           "kind": "explain",
-          "title": "Verdadeiro e falso no Python",
+          "title": "Regras de promoção: o “e” e o “ou”",
           "body": [
-            "O Python tem um tipo só para isso: o booleano, com os valores True e False. Toda comparação, como idade >= 18, dá um booleano.",
-            "É o valor lógico da matéria, com outro nome."
+            "“Frete grátis para compras acima de R$ 100 e entregas na capital.” Com “e”, a pessoa precisa cumprir as duas condições.",
+            "“Meia-entrada para estudante ou idoso.” Com “ou”, basta uma."
           ],
           "terms": [
-            {
-              "word": "Booleano",
-              "meaning": "o tipo de valor que só pode ser True ou False: o verdadeiro e o falso do Python."
-            },
-            {
-              "word": "Valor lógico",
-              "meaning": "o resultado do julgamento de uma proposição: verdadeiro (V) ou falso (F)."
-            }
-          ]
-        },
-        {
-          "kind": "explain",
-          "title": "Os conectivos no código",
-          "body": [
-            "Os três conectivos básicos existem no Python com nomes em inglês. As tabelas são as mesmas da lógica."
-          ],
-          "terms": [
-            {
-              "word": "Negação",
-              "meaning": "a operação que troca o valor lógico: o V vira F, e o F vira V. Escreve-se ¬p ou ~p."
-            },
             {
               "word": "Conjunção",
-              "meaning": "ligar duas proposições com “e”. Escreve-se p ∧ q, e só é verdadeira quando as duas são."
+              "meaning": "ligar duas proposições com “e”. Só é verdadeira quando as duas são."
             },
             {
               "word": "Disjunção",
-              "meaning": "ligar duas proposições com “ou”. Escreve-se p ∨ q, e só é falsa quando as duas são falsas."
+              "meaning": "ligar duas proposições com “ou”. Só é falsa quando as duas são falsas."
             }
           ],
           "table": {
-            "label": "Da lógica para o Python",
+            "label": "Quem ganha?",
             "headers": [
-              "Lógica",
-              "Python",
-              "Exemplo"
+              "Regra",
+              "Conectivo",
+              "Ganha quando"
             ],
             "rows": [
               [
-                "¬p",
-                "not p",
-                "not chovendo"
+                "Acima de R$ 100 e na capital",
+                "e",
+                "as duas valem"
               ],
               [
-                "p ∧ q",
-                "p and q",
-                "tem_cracha and na_lista"
-              ],
-              [
-                "p ∨ q",
-                "p or q",
-                "morador or convidado"
+                "Estudante ou idoso",
+                "ou",
+                "pelo menos uma vale"
               ]
             ]
           }
         },
         {
           "kind": "explain",
-          "title": "Em Python",
+          "title": "O “ou” da conversa e o “ou” da lógica",
           "body": [
-            "Três conectivos e uma proteção contra erro."
+            "Na meia-entrada, um estudante idoso também ganha. Esse “ou” aceita as duas coisas juntas.",
+            "Já no cardápio “acompanha pudim ou sorvete”, o restaurante dá um só. Esse “ou” não aceita os dois juntos, e tem nome próprio."
           ],
-          "code": {
-            "label": "and, or e not",
-            "text": "idade, tem_convite = 17, True\nprint(idade >= 18 and tem_convite)\nprint(idade >= 18 or tem_convite)\nprint(not (idade >= 18))\nlista = []\nprint(len(lista) > 0 and lista[0] == \"x\")",
-            "notes": [
-              "Uma pessoa de 17 anos, com convite.",
-              "Mostra False: o and exige as duas coisas, e a idade falha.",
-              "Mostra True: o or se contenta com o convite.",
-              "Mostra True: not troca o False da comparação.",
-              "Uma lista vazia.",
-              "Mostra False sem erro: o and parou antes de olhar lista[0], que não existe."
+          "example": {
+            "label": "Os dois “ou”",
+            "lines": [
+              "Estudante ou idoso: quem é os dois também ganha.",
+              "Pudim ou sorvete: escolha um, e só um."
             ]
-          }
-        },
-        {
-          "kind": "explain",
-          "title": "Curto-circuito",
-          "body": [
-            "No and, se a primeira parte é False, o Python nem olha a segunda: o resultado já é False. No or, se a primeira é True, o resultado já é True.",
-            "Por isso a ordem importa. Ponha antes o teste que protege o seguinte."
-          ],
+          },
           "terms": [
             {
-              "word": "Curto-circuito",
-              "meaning": "quando o Python para de avaliar uma expressão lógica porque o resultado já está decidido."
+              "word": "Ou exclusivo",
+              "meaning": "o “ou” em que só uma das partes pode valer: ou pudim, ou sorvete, nunca os dois."
             }
           ]
         },
         {
           "kind": "explain",
-          "title": "De Morgan no if",
+          "title": "Filtros de busca",
           "body": [
-            "As leis de De Morgan simplificam condições. not (a and b) é o mesmo que not a or not b.",
-            "“Bloqueie se não tiver crachá ou não estiver na lista” é a negação de “libere se tiver crachá e estiver na lista”."
-          ],
-          "terms": [
-            {
-              "word": "Leis de De Morgan",
-              "meaning": "as regras para negar “e” e “ou”: ¬(p ∧ q) ≡ ¬p ∨ ¬q e ¬(p ∨ q) ≡ ¬p ∧ ¬q."
-            },
-            {
-              "word": "Equivalência lógica",
-              "meaning": "duas proposições com a mesma tabela-verdade, linha por linha. Escreve-se com o sinal ≡."
-            },
-            {
-              "word": "Tabela-verdade",
-              "meaning": "a tabela que mostra o valor lógico de uma proposição composta em todas as combinações possíveis de V e F."
-            }
+            "Numa loja pela internet, cada filtro é uma proposição sobre o produto.",
+            "Juntar filtros com “e” estreita a lista: só passa o que cumpre tudo. Juntar com “ou” alarga: passa o que cumpre qualquer um."
           ],
           "example": {
-            "label": "A mesma condição, dois jeitos",
+            "label": "Camisetas da loja",
             "lines": [
-              "if not (tem_cracha and na_lista): bloquear()",
-              "if not tem_cracha or not na_lista: bloquear()"
+              "Azul: 40 resultados",
+              "M: 50 resultados",
+              "Azul e M: 12 resultados (as duas coisas)",
+              "Azul ou M: 78 resultados (qualquer uma)"
             ]
           }
         },
         {
           "kind": "explain",
-          "title": "E a condicional?",
+          "title": "Regras com “se… então”",
           "body": [
-            "O Python não tem um sinal para p → q. Usa-se a equivalência p → q ≡ ¬p ∨ q.",
-            "A regra “se é menor de idade, precisa de autorização” vira not menor or autorizado."
+            "“Se for menor de idade, precisa de autorização.” A regra só fala de quem é menor.",
+            "Por isso só uma pessoa a descumpre: o menor sem autorização. O adulto sem autorização não quebra nada, porque a regra não fala dele."
           ],
           "terms": [
             {
               "word": "Condicional",
-              "meaning": "a ligação “se p, então q”. Escreve-se p → q, e só é falsa quando p é verdadeira e q é falsa."
+              "meaning": "a ligação “se p, então q”. Só é falsa quando p é verdadeira e q é falsa."
             }
           ],
-          "example": {
-            "label": "Regra como condicional",
-            "lines": [
-              "Regra: se é menor, então tem autorização",
-              "Lógica: menor → autorizado",
-              "Python: not menor or autorizado"
+          "table": {
+            "label": "Quem descumpre a regra?",
+            "headers": [
+              "Pessoa",
+              "Descumpre?"
             ],
-            "ordered": true
+            "rows": [
+              [
+                "Menor com autorização",
+                "não"
+              ],
+              [
+                "Menor sem autorização",
+                "sim"
+              ],
+              [
+                "Adulto com autorização",
+                "não"
+              ],
+              [
+                "Adulto sem autorização",
+                "não"
+              ]
+            ]
           }
+        },
+        {
+          "kind": "explain",
+          "title": "Provar que uma regra foi quebrada",
+          "body": [
+            "Para mostrar que “se chover, o jogo é adiado” falhou, basta um caso: choveu e o jogo não foi adiado.",
+            "Isso é negar a condicional. Mantém-se a primeira parte e nega-se a segunda."
+          ],
+          "example": {
+            "label": "Negando a regra",
+            "lines": [
+              "Regra: se chover, o jogo é adiado.",
+              "Quebra da regra: choveu e o jogo não foi adiado."
+            ]
+          },
+          "terms": [
+            {
+              "word": "Negação",
+              "meaning": "a operação que troca o valor de uma proposição: o verdadeiro vira falso, e o falso vira verdadeiro."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Avisos que dizem a mesma coisa",
+          "body": [
+            "“É proibido entrar sem crachá ou fora da lista” e “só entra quem tem crachá e está na lista” dizem a mesma coisa.",
+            "Ao negar um “e”, ele vira “ou”, e cada parte é negada. É a regra das leis de De Morgan."
+          ],
+          "example": {
+            "label": "Mesma regra, dois jeitos",
+            "lines": [
+              "Não é verdade que (tem crachá e está na lista).",
+              "= Não tem crachá ou não está na lista."
+            ]
+          },
+          "terms": [
+            {
+              "word": "Leis de De Morgan",
+              "meaning": "as regras para negar “e” e “ou”: o “e” negado vira “ou”, e o “ou” negado vira “e”, negando cada parte."
+            },
+            {
+              "word": "Equivalência lógica",
+              "meaning": "quando duas frases têm sempre o mesmo valor, em todas as situações."
+            }
+          ]
         },
         {
           "kind": "exam",
           "title": "Como cai na prova",
           "body": [
-            "Em provas de programação e entrevistas, cai prever o resultado de uma expressão com and, or e not.",
-            "Também cai o curto-circuito: por que a ordem das condições evita um erro."
+            "As bancas dão um regulamento ou um aviso e perguntam quem cumpre, quem descumpre ou qual frase diz o mesmo.",
+            "O caso mais cobrado é a condicional: a única pessoa que a descumpre tem a primeira parte verdadeira e a segunda falsa."
+          ],
+          "bullets": [
+            "“Considerando a regra, descumpre-a a pessoa que…”",
+            "“A afirmação equivalente ao aviso é…”",
+            "“Uma negação lógica da regra é…”"
           ]
         },
         {
           "kind": "pitfall",
           "title": "Pegadinhas",
           "body": [
-            "Onde o código engana."
+            "Onde a leitura apressada engana:"
           ],
           "bullets": [
-            "Esquecer os parênteses em not (a and b).",
-            "Pôr o teste perigoso antes do teste que protege.",
-            "Escrever and quando a regra pedia or.",
-            "Negar só uma parte de uma condição composta."
+            "Achar que o adulto sem autorização descumpre a regra dos menores.",
+            "Ler todo “ou” como exclusivo. Na lógica, o “ou” aceita os dois juntos.",
+            "Negar um “e” mantendo o “e”.",
+            "Negar uma regra com outra regra “se… então”."
           ]
         },
         {
           "kind": "recap",
           "title": "Resumo em 1 minuto",
           "body": [
-            "A matéria inteira cabe num if."
+            "Regra do dia a dia é lógica com outras palavras."
           ],
           "bullets": [
-            "Booleano: True ou False.",
-            "not, and e or seguem as tabelas da lógica.",
-            "Curto-circuito: o Python para quando o resultado está decidido.",
-            "A ordem das condições pode evitar erro.",
-            "De Morgan simplifica condições negadas.",
-            "Condicional no código: not p or q."
+            "“E” exige tudo. “Ou” se contenta com um.",
+            "Filtro com “e” estreita a lista. Com “ou”, alarga.",
+            "Só descumpre o “se… então” quem tem a primeira parte e não tem a segunda.",
+            "Negar o “e” dá “ou”, negando cada parte.",
+            "O “ou” do cardápio é exclusivo. O da lógica não é."
           ]
         }
       ],
       "questions": [
         {
-          "topic": "And",
-          "statement": "Qual é o resultado de True and False no Python?",
+          "topic": "Regra com “e”",
+          "statement": "Uma loja dá frete grátis para compras acima de R$ 100 e entregas na capital. Quem ganha o frete grátis?",
           "options": [
-            "True",
-            "False",
-            "erro",
-            "None",
-            "1"
-          ],
-          "correct_index": 1,
-          "explanation": "O and exige os dois True.",
-          "pitfall": "O or daria True aqui."
-        },
-        {
-          "topic": "Or",
-          "statement": "Qual é o resultado de False or True?",
-          "options": [
-            "True",
-            "False",
-            "erro",
-            "None",
-            "0"
+            "Quem comprou R$ 150 e mora na capital",
+            "Quem comprou R$ 150 e mora no interior",
+            "Quem comprou R$ 80 e mora na capital",
+            "Quem comprou R$ 80 e mora no interior",
+            "Qualquer pessoa que mora na capital"
           ],
           "correct_index": 0,
-          "explanation": "Basta um True para o or.",
-          "pitfall": "O and daria False."
+          "explanation": "Com “e”, as duas condições precisam valer. Só a compra de R$ 150 na capital cumpre as duas.",
+          "pitfall": "Morar na capital é só metade da regra."
         },
         {
-          "topic": "Not",
-          "statement": "Qual é o resultado de not (5 > 3)?",
+          "topic": "Regra com “ou”",
+          "statement": "O cinema dá meia-entrada para estudante ou idoso. Quem NÃO tem direito?",
           "options": [
-            "True",
-            "False",
-            "5",
-            "3",
-            "erro"
+            "Um adulto de 40 anos que não estuda",
+            "Um estudante de 20 anos",
+            "Um idoso que não estuda",
+            "Um idoso que também estuda",
+            "Uma estudante de 16 anos"
           ],
-          "correct_index": 1,
-          "explanation": "5 > 3 é True, e o not troca para False.",
-          "pitfall": "Esquecer o not daria True."
+          "correct_index": 0,
+          "explanation": "Com “ou”, basta uma condição. O adulto que não estuda não cumpre nenhuma das duas.",
+          "pitfall": "O idoso que estuda também tem direito: o “ou” da regra aceita as duas coisas juntas."
         },
         {
-          "topic": "Curto",
-          "statement": "Por que len(lista) > 0 and lista[0] == \"x\" não dá erro com lista vazia?",
+          "topic": "Quem descumpre",
+          "statement": "A regra diz: “se for menor de idade, precisa de autorização”. Quem descumpre a regra?",
           "options": [
-            "porque o Python ignora erros",
-            "porque o and para na primeira parte falsa e nem olha lista[0]",
-            "porque lista[0] vale None",
-            "porque o or protege",
-            "dá erro sim"
+            "Um menor sem autorização",
+            "Um adulto sem autorização",
+            "Um adulto com autorização",
+            "Um menor com autorização",
+            "Ninguém pode descumprir"
           ],
-          "correct_index": 1,
-          "explanation": "É o curto-circuito do and.",
-          "pitfall": "Invertendo a ordem, o erro aconteceria."
+          "correct_index": 0,
+          "explanation": "A condicional só falha quando a primeira parte vale e a segunda não. É o menor sem autorização.",
+          "pitfall": "O adulto sem autorização não quebra nada: a regra não fala de adultos."
         },
         {
-          "topic": "Morgan",
-          "statement": "not (a and b) é o mesmo que:",
+          "topic": "Filtros",
+          "statement": "Numa loja pela internet, trocar o filtro “azul e tamanho M” por “azul ou tamanho M” faz a lista de resultados:",
           "options": [
-            "not a and not b",
-            "not a or not b",
-            "a or b",
-            "a and not b",
-            "not a or b"
+            "aumentar ou ficar igual",
+            "diminuir",
+            "ficar vazia",
+            "mostrar só o tamanho M",
+            "mostrar só o azul"
           ],
-          "correct_index": 1,
-          "explanation": "Lei de De Morgan: nega as partes e troca o conectivo.",
-          "pitfall": "Manter o and é o erro clássico."
+          "correct_index": 0,
+          "explanation": "Com “ou”, passa o que cumpre qualquer uma das condições. A lista só pode crescer ou ficar como estava.",
+          "pitfall": "O “e” estreita e o “ou” alarga. Trocar um pelo outro inverte o efeito."
         },
         {
-          "topic": "Condicional",
-          "statement": "Como se escreve p → q em Python?",
+          "topic": "De Morgan",
+          "statement": "“Não é verdade que ele tem crachá e está na lista” equivale a:",
           "options": [
-            "p -> q",
-            "not p or q",
-            "p and q",
-            "p or not q",
-            "not (p or q)"
+            "Ele não tem crachá ou não está na lista.",
+            "Ele não tem crachá e não está na lista.",
+            "Ele tem crachá ou está na lista.",
+            "Ele tem crachá e não está na lista.",
+            "Ele não tem crachá."
           ],
-          "correct_index": 1,
-          "explanation": "p → q ≡ ¬p ∨ q.",
-          "pitfall": "O Python não tem o sinal da seta para lógica."
+          "correct_index": 0,
+          "explanation": "Negar um “e” troca para “ou” e nega cada parte. Basta faltar uma das duas coisas.",
+          "pitfall": "Manter o “e” é o erro clássico: exigiria que faltassem as duas."
         },
         {
-          "topic": "Ordem",
-          "statement": "Com o curto-circuito, qual teste deve vir primeiro numa condição com and?",
+          "topic": "Ou exclusivo",
+          "statement": "No cardápio, o prato “acompanha pudim ou sorvete”, e o cliente só pode escolher um. Esse “ou” é:",
           "options": [
-            "o que pode dar erro",
-            "o que protege o teste seguinte",
-            "tanto faz",
-            "o mais longo",
-            "o mais curto de escrever"
+            "exclusivo",
+            "inclusivo",
+            "uma condicional",
+            "uma conjunção",
+            "uma negação"
           ],
-          "correct_index": 1,
-          "explanation": "Se o protetor falha, o perigoso nem é avaliado.",
-          "pitfall": "Com o perigoso primeiro, o erro acontece antes."
+          "correct_index": 0,
+          "explanation": "Só uma das opções pode valer, nunca as duas. Esse é o “ou” exclusivo.",
+          "pitfall": "O “ou” da lógica aceita as duas juntas. O do cardápio não aceita."
         },
         {
-          "topic": "Tradução",
+          "topic": "Negar a condicional",
+          "statement": "Qual frase mostra que a regra “se chover, o jogo é adiado” foi quebrada?",
+          "options": [
+            "Choveu e o jogo não foi adiado.",
+            "Não choveu e o jogo foi adiado.",
+            "Se não chover, o jogo não é adiado.",
+            "Não choveu e o jogo não foi adiado.",
+            "Se o jogo for adiado, choveu."
+          ],
+          "correct_index": 0,
+          "explanation": "A regra só falha quando chove e o jogo não é adiado. Mantém-se a primeira parte e nega-se a segunda.",
+          "pitfall": "“Se não chover, o jogo não é adiado” é outra regra, e não a negação desta."
+        },
+        {
+          "topic": "Regras e conectivos",
           "format": "match",
-          "statement": "Ligue cada expressão lógica ao Python.",
+          "statement": "Ligue cada regra ao conectivo que ela usa.",
           "pairs": [
             {
-              "left": "¬p",
-              "right": "not p"
+              "left": "Precisa de RG e comprovante.",
+              "right": "conjunção"
             },
             {
-              "left": "p ∧ q",
-              "right": "p and q"
+              "left": "Aceita cartão ou pix.",
+              "right": "disjunção"
             },
             {
-              "left": "p ∨ q",
-              "right": "p or q"
+              "left": "Se for sócio, entra grátis.",
+              "right": "condicional"
             },
             {
-              "left": "p → q",
-              "right": "not p or q"
+              "left": "Não é permitido fumar.",
+              "right": "negação"
             }
           ],
-          "explanation": "Os conectivos da matéria, em código.",
-          "pitfall": "A condicional precisa da equivalência com “ou”."
+          "explanation": "“E” é conjunção, “ou” é disjunção, “se… então” é condicional, e “não” é negação.",
+          "pitfall": "A palavra que liga as partes é o que decide o conectivo."
         }
       ]
     }

@@ -33,14 +33,23 @@ conhecido — existe um resultado direto, e melhor.
 O resultado: **o intervalo ideal entre revisões é uma proporção do tempo que falta
 até o teste.**
 
-- Prazos de semanas a meses: o ótimo fica em torno de **10 a 20%** do prazo.
-  Para teste em 70 dias, o melhor intervalo medido foi de 21 dias.
+- Prazo de uma semana: o ótimo fica em torno de **20 a 40%** do prazo.
+- Prazos de semanas a meses: em torno de **10 a 20%**.
 - Prazo de um ano: a proporção cai para **5 a 10%**.
 
 Ou seja: quanto mais longe o teste, maior o intervalo absoluto — mas **menor** a
 proporção.
 
-O Castelei usa **15%**, o meio da faixa para o horizonte de um semestre.
+O Castelei segue essa queda (`ratio_by_horizon` em `config/castelei.php`): **30%**
+com a prova a uma semana, **15%** a dez semanas e **7,5%** a um ano. Entre esses
+pontos, a fração anda em linha reta na escala logarítmica dos dois eixos, como a
+curva do artigo.
+
+Até outubro de 2026 a fração era fixa em 15%. Ela acertava o semestre e errava as
+pontas: com a prova daqui a um ano (o ENEM, para quem começa cedo), mandava a
+lição embora por quase dois meses, quando o estudo indica cerca de quatro
+semanas. A mudança veio da revisão dos princípios pedagógicos
+(`docs/principios-pedagogicos.md`).
 
 ### A consequência prática
 
@@ -49,11 +58,12 @@ reconfigurar nada:
 
 | Falta para a prova | Intervalo (acerto médio) |
 | ------------------ | ------------------------ |
-| 120 dias           | 18 dias                  |
-| 90 dias            | 14 dias                  |
-| 60 dias            | 9 dias                   |
-| 30 dias            | 5 dias                   |
-| 10 dias            | 2 dias                   |
+| 350 dias           | 27 dias                  |
+| 120 dias           | 15 dias                  |
+| 90 dias            | 13 dias                  |
+| 60 dias            | 10 dias                  |
+| 30 dias            | 6 dias                   |
+| 10 dias            | 3 dias                   |
 | 3 dias             | 1 dia                    |
 
 Isso é o que nenhum app de flashcard faz, porque nenhum deles conhece a data da
@@ -110,7 +120,7 @@ esquecimento. Daí o multiplicador por faixa de acerto:
 | 90–100%                    | 1,3   |
 
 Isto **não** vem de um estudo específico — é um ajuste de engenharia sobre a base
-que vem. Está documentado como tal de propósito: a proporção de 15% tem origem
+que vem. Está documentado como tal de propósito: a proporção por horizonte tem origem
 medida, os fatores são calibragem nossa. Se alguém for mexer em algo, que mexa
 aqui, não lá.
 

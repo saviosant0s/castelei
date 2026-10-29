@@ -101,7 +101,7 @@ export const SUBJECTS: SiteSubject[] = [
       "Argumento válido: modus ponens e modus tollens",
       "Falácias: afirmar o consequente e negar o antecedente",
       "Silogismos com diagramas de Venn",
-      "Lógica no código: and, or e not",
+      "Lógica no dia a dia: regras, filtros e promoções",
     ],
   },
   {
