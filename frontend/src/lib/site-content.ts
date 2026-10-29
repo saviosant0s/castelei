@@ -82,6 +82,27 @@ export const SUBJECTS: SiteSubject[] = [
     ],
   },
   {
+    slug: "matematica-do-dia-a-dia",
+    name: "Matemática do dia a dia",
+    pitch:
+      "A conta que a prova cobra e a vida usa: medidas, horários, juros, preço por quilo, áreas, volumes, gráficos e chances.",
+    lessons: [
+      "Medidas: comprimento, massa e capacidade",
+      "Tempo, horários e velocidade",
+      "Juros simples e compostos",
+      "Comprar bem: preço por unidade, descontos e parcelas",
+      "Ângulos e triângulos",
+      "Perímetro e área",
+      "O círculo: raio, contorno e área",
+      "O teorema de Pitágoras",
+      "Volume: caixas, latas e litros",
+      "Média, moda e mediana",
+      "Ler gráficos e tabelas",
+      "Contar sem listar: o princípio multiplicativo",
+      "Probabilidade: a chance em números",
+    ],
+  },
+  {
     slug: "logica",
     name: "Lógica",
     pitch:
@@ -135,5 +156,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 756,
+  questions: 938,
 };

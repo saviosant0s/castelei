@@ -1,0 +1,4945 @@
+{
+  "slug": "matematica-do-dia-a-dia",
+  "name": "Matemática do dia a dia",
+  "area": "matematica",
+  "description": "A matemática que toda prova cobra e a vida usa: medidas, tempo, juros, áreas, volumes, gráficos e chances, explicada do zero.",
+  "lessons": [
+    {
+      "slug": "unidades-de-medida",
+      "title": "Medidas: comprimento, massa e capacidade",
+      "module": "Medidas",
+      "summary": "Metro, grama e litro, e como passar de uma unidade para outra sem decorar tabela: é uma escada de dez em dez.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A receita da avó",
+          "body": [
+            "A receita da avó pede “uma xícara de farinha” e “um punhado de sal”. Cada xícara tem um tamanho, e cada mão também.",
+            "Por isso o bolo nunca sai igual. Para duas pessoas medirem a mesma coisa do mesmo jeito, elas precisam de um tamanho combinado.",
+            "Esse tamanho combinado é a unidade de medida."
+          ],
+          "terms": [
+            {
+              "word": "Unidade de medida",
+              "meaning": "um tamanho combinado que serve de régua: o metro, o grama, o litro."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O metro e os seus vizinhos",
+          "body": [
+            "Para comprimento, a unidade é o metro. Os vizinhos dele têm nomes com prefixos que dizem o tamanho.",
+            "Quilo quer dizer mil, e centi quer dizer centésimo. Então 1 quilômetro são mil metros, e 1 centímetro é a centésima parte de um metro."
+          ],
+          "table": {
+            "label": "A escada do comprimento",
+            "headers": [
+              "Unidade",
+              "Símbolo",
+              "Em metros"
+            ],
+            "rows": [
+              [
+                "quilômetro",
+                "km",
+                "1 000 m"
+              ],
+              [
+                "hectômetro",
+                "hm",
+                "100 m"
+              ],
+              [
+                "decâmetro",
+                "dam",
+                "10 m"
+              ],
+              [
+                "metro",
+                "m",
+                "1 m"
+              ],
+              [
+                "decímetro",
+                "dm",
+                "0,1 m"
+              ],
+              [
+                "centímetro",
+                "cm",
+                "0,01 m"
+              ],
+              [
+                "milímetro",
+                "mm",
+                "0,001 m"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Converter é descer ou subir a escada",
+          "body": [
+            "Cada degrau da tabela é dez vezes o de baixo. Descer um degrau multiplica por 10, e subir divide por 10.",
+            "Para ir de metro a centímetro, desce-se dois degraus. Então se multiplica por 10 duas vezes, ou seja, por 100."
+          ],
+          "example": {
+            "label": "Converter 3,5 m em centímetros",
+            "lines": [
+              "Metro para centímetro são dois degraus para baixo.",
+              "Dois degraus para baixo é multiplicar por 100.",
+              "3,5 × 100 = 350.",
+              "Resposta: 350 cm."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Massa: o grama e o quilo",
+          "body": [
+            "A massa é o quanto de matéria uma coisa tem. No dia a dia a gente chama de peso.",
+            "A unidade é o grama, e a escada é a mesma do metro. O quilograma (kg) vale mil gramas, e o miligrama (mg) é a milésima parte de um grama.",
+            "Para coisas muito pesadas usa-se a tonelada, que vale mil quilos."
+          ],
+          "example": {
+            "label": "Massas do dia a dia",
+            "lines": [
+              "1 kg = 1 000 g",
+              "1 g = 1 000 mg",
+              "1 tonelada = 1 000 kg",
+              "um comprimido de 500 mg = 0,5 g"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Capacidade: o litro",
+          "body": [
+            "Capacidade é quanto cabe dentro de um recipiente. A unidade é o litro.",
+            "O mais usado depois dele é o mililitro (mL), a milésima parte de um litro. Uma lata de refrigerante tem 350 mL.",
+            "A escada continua valendo: 1 L = 1 000 mL."
+          ],
+          "example": {
+            "label": "Capacidades do dia a dia",
+            "lines": [
+              "garrafa de água: 500 mL = 0,5 L",
+              "lata de refrigerante: 350 mL",
+              "galão de água: 20 L",
+              "colher de sopa: cerca de 15 mL"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Litro e caixa-d’água",
+          "body": [
+            "Litro e metro se encontram num cubo. Uma caixa de 10 cm de lado tem dentro exatamente 1 litro.",
+            "Um cubo de 1 metro de lado (o metro cúbico, m³) tem mil litros. É por isso que a conta de água chega em metros cúbicos."
+          ],
+          "example": {
+            "label": "A ponte entre as duas",
+            "lines": [
+              "1 L cabe num cubo de 10 cm de lado",
+              "1 m³ = 1 000 L",
+              "conta de água: 12 m³ = 12 000 L"
+            ]
+          },
+          "terms": [
+            {
+              "word": "Metro cúbico (m³)",
+              "meaning": "o espaço de um cubo com 1 metro de lado. Cabem mil litros nele."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A área pula de cem em cem",
+          "body": [
+            "O metro quadrado mede pisos, terrenos e paredes.",
+            "Aqui a escada muda. Um quadrado de 1 m de lado tem 100 cm de cada lado. Dentro dele cabem 100 × 100 quadradinhos de 1 cm.",
+            "Então 1 m² = 10 000 cm². Cada degrau, na área, vale 100 em vez de 10."
+          ],
+          "terms": [
+            {
+              "word": "Metro quadrado (m²)",
+              "meaning": "a área de um quadrado com 1 metro de lado."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mistura unidades de propósito e espera que você converta antes de fazer a conta.",
+            "Também é comum perguntar quantas embalagens pequenas enchem uma grande."
+          ],
+          "bullets": [
+            "“Uma receita pede 250 g. Quantas receitas dá um pacote de 1 kg?”",
+            "“Quantos copos de 200 mL enchem uma jarra de 2 L?”",
+            "“Uma caixa-d’água de 1,5 m³ tem quantos litros?”",
+            "“Um terreno tem 0,3 km. Quantos metros são?”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Fazer a conta com unidades diferentes, como somar metros com centímetros.",
+            "Multiplicar quando devia dividir: subir a escada divide.",
+            "Usar 10 em vez de 100 na área: 1 m² são 10 000 cm², e não 100.",
+            "Esquecer que 1 m³ são 1 000 litros, e não 100."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Metro, grama e litro usam a mesma escada de dez em dez. Descer multiplica e subir divide.",
+            "Quilo é mil, e mili é milésimo. Um cubo de 10 cm guarda 1 litro, e 1 m³ guarda mil.",
+            "Na área, cada degrau vale 100."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Converter",
+          "statement": "Quantos metros tem 2,5 km?",
+          "options": [
+            "2 500 m",
+            "250 m",
+            "25 m",
+            "25 000 m",
+            "0,0025 m"
+          ],
+          "correct_index": 0,
+          "explanation": "Quilômetro para metro são três degraus para baixo. Multiplica-se por 1 000: 2,5 × 1 000 = 2 500.",
+          "pitfall": "250 m desce só dois degraus. De km para m são três."
+        },
+        {
+          "topic": "Gramas",
+          "statement": "Um pacote de 1 kg de arroz rende quantas porções de 250 g?",
+          "options": [
+            "4",
+            "40",
+            "250",
+            "2,5",
+            "25"
+          ],
+          "correct_index": 0,
+          "explanation": "1 kg são 1 000 g. Então 1 000 ÷ 250 = 4 porções.",
+          "pitfall": "Quem divide sem converter faz 1 ÷ 250 e chega num número sem sentido."
+        },
+        {
+          "topic": "Copos",
+          "statement": "Quantos copos de 200 mL enchem uma jarra de 2 L?",
+          "options": [
+            "10",
+            "100",
+            "1",
+            "4",
+            "20"
+          ],
+          "correct_index": 0,
+          "explanation": "2 L são 2 000 mL. Então 2 000 ÷ 200 = 10 copos.",
+          "pitfall": "100 vem de converter 2 L como se fossem 20 000 mL."
+        },
+        {
+          "topic": "Centímetros",
+          "statement": "Uma mesa tem 1,2 m de comprimento. Quantos centímetros são?",
+          "options": [
+            "120 cm",
+            "12 cm",
+            "1 200 cm",
+            "0,12 cm",
+            "1,2 cm"
+          ],
+          "correct_index": 0,
+          "explanation": "Metro para centímetro são dois degraus: multiplica-se por 100.",
+          "pitfall": "12 cm multiplica por 10, como se fosse um degrau só."
+        },
+        {
+          "topic": "Caixa-d’água",
+          "statement": "Uma caixa-d’água tem 2 m³. Quantos litros cabem nela?",
+          "options": [
+            "2 000 L",
+            "200 L",
+            "20 L",
+            "20 000 L",
+            "2 L"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada metro cúbico guarda 1 000 litros. Então 2 × 1 000 = 2 000.",
+          "pitfall": "200 L usa 100 litros por metro cúbico. O certo é mil."
+        },
+        {
+          "topic": "Área",
+          "statement": "Quantos centímetros quadrados tem 1 m²?",
+          "options": [
+            "10 000 cm²",
+            "100 cm²",
+            "1 000 cm²",
+            "10 cm²",
+            "100 000 cm²"
+          ],
+          "correct_index": 0,
+          "explanation": "O quadrado de 1 m tem 100 cm de cada lado. São 100 × 100 = 10 000 quadradinhos.",
+          "pitfall": "100 cm² usa a escada do comprimento. Na área, cada degrau vale 100."
+        },
+        {
+          "topic": "Somar medidas",
+          "statement": "Quanto é 1,5 m + 30 cm?",
+          "options": [
+            "1,8 m",
+            "31,5 m",
+            "1,53 m",
+            "4,5 m",
+            "45 cm"
+          ],
+          "correct_index": 0,
+          "explanation": "30 cm são 0,3 m. Então 1,5 + 0,3 = 1,8 m.",
+          "pitfall": "31,5 soma números de unidades diferentes. Converta antes de somar."
+        },
+        {
+          "topic": "Prefixos",
+          "format": "match",
+          "statement": "Ligue cada prefixo ao que ele quer dizer.",
+          "pairs": [
+            {
+              "left": "quilo",
+              "right": "mil vezes"
+            },
+            {
+              "left": "centi",
+              "right": "a centésima parte"
+            },
+            {
+              "left": "mili",
+              "right": "a milésima parte"
+            },
+            {
+              "left": "deci",
+              "right": "a décima parte"
+            }
+          ],
+          "explanation": "Os prefixos são os mesmos no metro, no grama e no litro. Quilo multiplica, e os outros dividem.",
+          "pitfall": "Centi e mili se confundem. Centi lembra cem, e mili lembra mil."
+        },
+        {
+          "topic": "Converter",
+          "statement": "Quantos milímetros tem 4 cm?",
+          "options": [
+            "40 mm",
+            "400 mm",
+            "4 mm",
+            "0,4 mm",
+            "4 000 mm"
+          ],
+          "correct_index": 0,
+          "explanation": "Centímetro para milímetro é um degrau para baixo: multiplica-se por 10.",
+          "pitfall": "400 desce dois degraus. Entre cm e mm há um só.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Litro",
+          "statement": "Quantos mililitros tem meio litro?",
+          "options": [
+            "500 mL",
+            "50 mL",
+            "5 mL",
+            "5 000 mL",
+            "0,5 mL"
+          ],
+          "correct_index": 0,
+          "explanation": "1 L são 1 000 mL. A metade é 500 mL.",
+          "pitfall": "0,5 mL esquece de converter: o 0,5 era em litros.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Remédio",
+          "statement": "Um remédio deve ser tomado em doses de 5 mL. Quantas doses tem um frasco de 0,1 L?",
+          "options": [
+            "20",
+            "2",
+            "200",
+            "50",
+            "5"
+          ],
+          "correct_index": 0,
+          "explanation": "0,1 L são 100 mL. Então 100 ÷ 5 = 20 doses.",
+          "pitfall": "2 doses vem de converter 0,1 L como se fossem 10 mL.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Subir a escada",
+          "statement": "Quanto é 3 500 g em quilogramas?",
+          "options": [
+            "3,5 kg",
+            "35 kg",
+            "350 kg",
+            "0,35 kg",
+            "3 500 kg"
+          ],
+          "correct_index": 0,
+          "explanation": "Grama para quilo é subir três degraus. Divide-se por 1 000.",
+          "pitfall": "35 kg divide só por 100.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Piso",
+          "statement": "Uma sala de 4 m por 5 m vai receber piso em placas de 50 cm por 50 cm. Quantas placas são necessárias?",
+          "options": [
+            "80",
+            "20",
+            "40",
+            "800",
+            "8"
+          ],
+          "correct_index": 0,
+          "explanation": "A sala tem 20 m². Cada placa tem 0,5 × 0,5 = 0,25 m². Então 20 ÷ 0,25 = 80 placas.",
+          "pitfall": "20 placas trata cada placa como se tivesse 1 m². Uma placa de 50 cm de lado é um quarto disso.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Conta de água",
+          "statement": "A conta mostra um gasto de 9 m³ num mês de 30 dias. Quantos litros a casa gastou por dia, em média?",
+          "options": [
+            "300 L",
+            "30 L",
+            "3 000 L",
+            "0,3 L",
+            "270 L"
+          ],
+          "correct_index": 0,
+          "explanation": "9 m³ são 9 000 L. Divididos por 30 dias dão 300 L por dia.",
+          "pitfall": "30 L usa 100 litros por metro cúbico. Cada metro cúbico tem mil.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "tempo-e-velocidade",
+      "title": "Tempo, horários e velocidade",
+      "module": "Medidas",
+      "summary": "O relógio conta de sessenta em sessenta, e é aí que mora o erro. Depois, a velocidade: distância dividida pelo tempo.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O relógio não conta de dez em dez",
+          "body": [
+            "Se uma aula começa às 9h50 e dura 20 minutos, ela não termina às 9h70. Termina às 10h10.",
+            "O relógio não usa a escada de dez em dez. Ele vira a hora a cada sessenta minutos.",
+            "Quase todo erro com horário vem de esquecer isso."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A base sessenta",
+          "body": [
+            "Uma hora tem 60 minutos, e um minuto tem 60 segundos. Um dia tem 24 horas.",
+            "Para passar de hora para minuto, multiplica-se por 60. Para voltar, divide-se por 60."
+          ],
+          "table": {
+            "label": "As unidades de tempo",
+            "headers": [
+              "De",
+              "Para",
+              "Faça"
+            ],
+            "rows": [
+              [
+                "horas",
+                "minutos",
+                "× 60"
+              ],
+              [
+                "minutos",
+                "segundos",
+                "× 60"
+              ],
+              [
+                "horas",
+                "segundos",
+                "× 3 600"
+              ],
+              [
+                "dias",
+                "horas",
+                "× 24"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Hora com vírgula não é hora com minutos",
+          "body": [
+            "1,5 hora não é 1 hora e 50 minutos. É 1 hora e meia, ou seja, 1 hora e 30 minutos.",
+            "Para achar os minutos, multiplica-se a parte depois da vírgula por 60. 0,5 × 60 = 30."
+          ],
+          "example": {
+            "label": "Horas com vírgula",
+            "lines": [
+              "0,25 h = 15 min",
+              "0,5 h = 30 min",
+              "0,75 h = 45 min",
+              "2,4 h = 2 h 24 min"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Somar horários",
+          "body": [
+            "Soma-se hora com hora e minuto com minuto. Se os minutos passarem de 60, tira-se 60 deles e soma-se 1 hora."
+          ],
+          "example": {
+            "label": "A aula começa às 9h45 e dura 1h30. A que horas termina?",
+            "lines": [
+              "Somar as horas: 9 + 1 = 10.",
+              "Somar os minutos: 45 + 30 = 75.",
+              "75 minutos passam de 60: sobram 15 e ganha-se 1 hora.",
+              "Resposta: 11h15."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Velocidade média",
+          "body": [
+            "Velocidade diz quanto se anda num certo tempo. Um carro a 80 km/h anda 80 quilômetros em uma hora.",
+            "Numa viagem real o carro acelera e para. A velocidade média é a conta da viagem inteira: a distância total dividida pelo tempo total."
+          ],
+          "terms": [
+            {
+              "word": "Velocidade média",
+              "meaning": "a distância percorrida dividida pelo tempo gasto. 240 km em 3 horas dão 80 km/h."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As três contas com a mesma ideia",
+          "body": [
+            "Distância, velocidade e tempo estão presos na mesma relação. Sabendo duas, acha-se a terceira."
+          ],
+          "table": {
+            "label": "Distância, velocidade e tempo",
+            "headers": [
+              "Quer saber",
+              "Conta",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "velocidade",
+                "distância ÷ tempo",
+                "300 km em 4 h = 75 km/h"
+              ],
+              [
+                "distância",
+                "velocidade × tempo",
+                "60 km/h por 2 h = 120 km"
+              ],
+              [
+                "tempo",
+                "distância ÷ velocidade",
+                "150 km a 50 km/h = 3 h"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Quilômetros por hora e metros por segundo",
+          "body": [
+            "Na corrida e na física aparece o metro por segundo (m/s). Para passar de km/h para m/s, divide-se por 3,6.",
+            "O 3,6 vem de 1 000 metros divididos por 3 600 segundos. Assim, 36 km/h são 10 m/s."
+          ],
+          "example": {
+            "label": "Conversões",
+            "lines": [
+              "36 km/h = 10 m/s",
+              "72 km/h = 20 m/s",
+              "10 m/s × 3,6 = 36 km/h"
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Quase toda questão de tempo exige converter antes. A de velocidade costuma pedir a média de uma viagem com trechos diferentes."
+          ],
+          "bullets": [
+            "“Um filme de 2h15 começou às 20h50. A que horas terminou?”",
+            "“Uma viagem de 360 km levou 4h30. Qual foi a velocidade média?”",
+            "“Quanto tempo leva para percorrer 45 km a 60 km/h?”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Ler 1,5 h como 1 hora e 50 minutos. São 30 minutos.",
+            "Somar minutos e deixar passar de 60.",
+            "Fazer a média das velocidades dos trechos em vez de dividir a distância total pelo tempo total.",
+            "Multiplicar por 3,6 quando era para dividir."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O tempo conta de 60 em 60. Hora com vírgula se converte multiplicando a parte depois da vírgula por 60.",
+            "Velocidade média é distância total dividida pelo tempo total. De km/h para m/s, divide-se por 3,6."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Minutos",
+          "statement": "Quantos minutos há em 2,5 horas?",
+          "options": [
+            "150",
+            "250",
+            "125",
+            "25",
+            "205"
+          ],
+          "correct_index": 0,
+          "explanation": "2,5 × 60 = 150 minutos.",
+          "pitfall": "250 trata a hora como se tivesse 100 minutos."
+        },
+        {
+          "topic": "Hora com vírgula",
+          "statement": "1,75 hora é o mesmo que:",
+          "options": [
+            "1 h 45 min",
+            "1 h 75 min",
+            "1 h 7 min",
+            "1 h 57 min",
+            "2 h 15 min"
+          ],
+          "correct_index": 0,
+          "explanation": "0,75 × 60 = 45. Então 1,75 h é 1 hora e 45 minutos.",
+          "pitfall": "1 h 75 min lê a vírgula como minutos, o que nem existe: 75 minutos passam de uma hora."
+        },
+        {
+          "topic": "Somar horários",
+          "statement": "Um filme de 2h15 começou às 20h50. A que horas terminou?",
+          "options": [
+            "23h05",
+            "22h65",
+            "22h05",
+            "23h15",
+            "22h55"
+          ],
+          "correct_index": 0,
+          "explanation": "20 + 2 = 22 horas e 50 + 15 = 65 minutos. Os 65 minutos viram 1 hora e 5 minutos: 23h05.",
+          "pitfall": "22h65 esquece de transformar os minutos que passaram de 60."
+        },
+        {
+          "topic": "Velocidade",
+          "statement": "Um ônibus andou 360 km em 4 horas. Qual foi a velocidade média?",
+          "options": [
+            "90 km/h",
+            "80 km/h",
+            "1 440 km/h",
+            "36 km/h",
+            "100 km/h"
+          ],
+          "correct_index": 0,
+          "explanation": "360 ÷ 4 = 90 km/h.",
+          "pitfall": "1 440 multiplica em vez de dividir."
+        },
+        {
+          "topic": "Tempo",
+          "statement": "Quanto tempo leva para percorrer 45 km a 60 km/h?",
+          "options": [
+            "45 min",
+            "1 h 15 min",
+            "1 h 33 min",
+            "15 min",
+            "1 h 45 min"
+          ],
+          "correct_index": 0,
+          "explanation": "45 ÷ 60 = 0,75 h. E 0,75 × 60 = 45 minutos.",
+          "pitfall": "1 h 33 min faz 60 ÷ 45 = 1,33 e ainda lê a vírgula como minutos."
+        },
+        {
+          "topic": "Distância",
+          "statement": "Um ciclista anda a 15 km/h por 2 horas e 20 minutos. Que distância ele percorre?",
+          "options": [
+            "35 km",
+            "33 km",
+            "30 km",
+            "37,5 km",
+            "45 km"
+          ],
+          "correct_index": 0,
+          "explanation": "20 minutos são 1/3 de hora. Então 15 × 2 = 30 km e mais 15 ÷ 3 = 5 km. No total, 35 km.",
+          "pitfall": "33 km lê 2h20 como 2,2 horas. Vinte minutos não são 0,2 hora."
+        },
+        {
+          "topic": "m/s",
+          "statement": "Quanto é 72 km/h em metros por segundo?",
+          "options": [
+            "20 m/s",
+            "259,2 m/s",
+            "72 m/s",
+            "7,2 m/s",
+            "2 m/s"
+          ],
+          "correct_index": 0,
+          "explanation": "De km/h para m/s divide-se por 3,6: 72 ÷ 3,6 = 20.",
+          "pitfall": "259,2 multiplica por 3,6. Isso faz o caminho contrário."
+        },
+        {
+          "topic": "Ordem",
+          "format": "order",
+          "statement": "Ponha na ordem os passos para achar a velocidade média de uma viagem com dois trechos.",
+          "options": [
+            "Somar as distâncias dos dois trechos.",
+            "Somar os tempos dos dois trechos.",
+            "Converter o tempo total para horas.",
+            "Dividir a distância total pelo tempo total."
+          ],
+          "explanation": "A média sai da viagem inteira. Primeiro juntam-se distâncias e tempos, depois se divide.",
+          "pitfall": "Fazer a média das duas velocidades é o atalho errado: o trecho mais demorado pesa mais."
+        },
+        {
+          "topic": "Segundos",
+          "statement": "Quantos segundos tem 3 minutos?",
+          "options": [
+            "180",
+            "300",
+            "30",
+            "360",
+            "18"
+          ],
+          "correct_index": 0,
+          "explanation": "3 × 60 = 180 segundos.",
+          "pitfall": "300 usa 100 segundos por minuto.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Dia",
+          "statement": "Quantas horas há em 2 dias e meio?",
+          "options": [
+            "60",
+            "48",
+            "50",
+            "36",
+            "72"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada dia tem 24 horas. 2,5 × 24 = 60.",
+          "pitfall": "48 conta só os dois dias inteiros e esquece o meio.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Subtrair horários",
+          "statement": "Lia entrou às 7h40 e saiu às 12h15. Quanto tempo ficou?",
+          "options": [
+            "4 h 35 min",
+            "5 h 25 min",
+            "4 h 75 min",
+            "5 h 35 min",
+            "4 h 25 min"
+          ],
+          "correct_index": 0,
+          "explanation": "Das 7h40 às 11h40 são 4 horas. Das 11h40 às 12h15 são 35 minutos.",
+          "pitfall": "5 h 25 min faz 12 − 7 e 40 − 15, misturando o sentido das contas.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Hora com vírgula",
+          "statement": "Uma tarefa levou 3,2 horas. Quanto é isso em horas e minutos?",
+          "options": [
+            "3 h 12 min",
+            "3 h 20 min",
+            "3 h 2 min",
+            "3 h 32 min",
+            "3 h 30 min"
+          ],
+          "correct_index": 0,
+          "explanation": "0,2 × 60 = 12. Então são 3 horas e 12 minutos.",
+          "pitfall": "3 h 20 min lê o 2 como se fossem minutos.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Média dos trechos",
+          "statement": "Um carro faz 120 km a 60 km/h e depois mais 120 km a 120 km/h. Qual é a velocidade média da viagem?",
+          "options": [
+            "80 km/h",
+            "90 km/h",
+            "100 km/h",
+            "60 km/h",
+            "120 km/h"
+          ],
+          "correct_index": 0,
+          "explanation": "O primeiro trecho leva 2 h e o segundo 1 h. São 240 km em 3 h: 80 km/h.",
+          "pitfall": "90 km/h é a média das duas velocidades. O trecho lento durou mais e pesa mais.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Virar o dia",
+          "statement": "Um voo sai às 22h40 e dura 3h50. A que horas chega, no mesmo fuso?",
+          "options": [
+            "2h30 do dia seguinte",
+            "25h90",
+            "1h30 do dia seguinte",
+            "2h90 do dia seguinte",
+            "1h90"
+          ],
+          "correct_index": 0,
+          "explanation": "22 + 3 = 25 horas e 40 + 50 = 90 minutos. 90 minutos são 1h30, então 26h30. Passou da meia-noite: 2h30.",
+          "pitfall": "1h30 esquece a hora que veio dos 90 minutos.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "juros-simples-e-compostos",
+      "title": "Juros simples e compostos",
+      "module": "Dinheiro",
+      "summary": "Juro é o aluguel do dinheiro. No simples, ele é sempre o mesmo; no composto, rende juro sobre juro e cresce cada vez mais rápido.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O aluguel do dinheiro",
+          "body": [
+            "Quem aluga uma casa paga todo mês para usar algo que não é seu. Com dinheiro emprestado acontece o mesmo.",
+            "O banco empresta, e você devolve o valor com um extra. Esse extra é o juro: o aluguel do dinheiro.",
+            "Quando é você quem guarda dinheiro na poupança, o banco é que paga o aluguel."
+          ],
+          "terms": [
+            {
+              "word": "Juro",
+              "meaning": "o valor pago pelo uso de um dinheiro emprestado. É o aluguel do dinheiro."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os quatro nomes da conta",
+          "body": [
+            "Toda conta de juro tem as mesmas peças. A prova usa estes nomes o tempo todo."
+          ],
+          "terms": [
+            {
+              "word": "Taxa de juros",
+              "meaning": "quanto o dinheiro rende em cada período, em porcento: 2% ao mês."
+            },
+            {
+              "word": "Montante",
+              "meaning": "o valor no fim da conta: o capital mais os juros."
+            }
+          ],
+          "table": {
+            "label": "As peças do juro",
+            "headers": [
+              "Nome",
+              "O que é",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "Capital",
+                "o valor emprestado ou aplicado",
+                "R$ 1 000"
+              ],
+              [
+                "Taxa",
+                "quanto rende em cada período",
+                "2% ao mês"
+              ],
+              [
+                "Tempo",
+                "quantos períodos passaram",
+                "5 meses"
+              ],
+              [
+                "Montante",
+                "capital mais juros, no fim",
+                "R$ 1 100"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Juros simples: sempre o mesmo valor",
+          "body": [
+            "Nos juros simples, o juro de cada mês é calculado sempre sobre o capital do começo. Então todo mês rende o mesmo.",
+            "A conta é juro = capital × taxa × tempo."
+          ],
+          "example": {
+            "label": "R$ 1 000 a 2% ao mês, por 5 meses",
+            "lines": [
+              "Juro de um mês: 2% de 1 000 = 20.",
+              "Cinco meses: 5 × 20 = 100.",
+              "Montante: 1 000 + 100 = R$ 1 100."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "Juros simples",
+              "meaning": "o juro de cada período é calculado sempre sobre o valor inicial. Rende o mesmo todo mês."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Juros compostos: juro sobre juro",
+          "body": [
+            "Nos juros compostos, o juro do mês entra na conta do mês seguinte. O mês dois rende sobre o capital e também sobre o juro do mês um.",
+            "É assim que funcionam a poupança e as dívidas de cartão. É o mais comum na vida real."
+          ],
+          "example": {
+            "label": "R$ 1 000 a 10% ao mês, por 2 meses",
+            "lines": [
+              "Mês 1: 10% de 1 000 = 100. Fica 1 100.",
+              "Mês 2: 10% de 1 100 = 110. Fica 1 210.",
+              "Nos simples seriam 1 200. A diferença de 10 reais é o juro sobre o juro."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "Juros compostos",
+              "meaning": "o juro de cada período entra na conta do próximo. Rende juro sobre juro."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A diferença cresce com o tempo",
+          "body": [
+            "No começo, simples e compostos andam quase juntos. Com o tempo, os compostos disparam.",
+            "A tabela mostra R$ 1 000 a 10% ao ano."
+          ],
+          "table": {
+            "label": "R$ 1 000 a 10% ao ano",
+            "headers": [
+              "Anos",
+              "Juros simples",
+              "Juros compostos"
+            ],
+            "rows": [
+              [
+                "1",
+                "R$ 1 100",
+                "R$ 1 100"
+              ],
+              [
+                "2",
+                "R$ 1 200",
+                "R$ 1 210"
+              ],
+              [
+                "3",
+                "R$ 1 300",
+                "R$ 1 331"
+              ],
+              [
+                "10",
+                "R$ 2 000",
+                "R$ 2 593,74"
+              ],
+              [
+                "20",
+                "R$ 3 000",
+                "R$ 6 727,50"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O atalho dos compostos",
+          "body": [
+            "Somar 10% é o mesmo que multiplicar por 1,1. Então cada ano de juros compostos multiplica o valor por 1,1.",
+            "Três anos são 1,1 × 1,1 × 1,1. Isso se escreve 1,1³, e o número pequeno no alto (o expoente) conta as vezes.",
+            "A conta geral é montante = capital × (1 + taxa) elevado ao tempo."
+          ],
+          "terms": [
+            {
+              "word": "Expoente",
+              "meaning": "o número pequeno no alto que diz quantas vezes multiplicar. 1,1³ é 1,1 × 1,1 × 1,1."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Cartão de crédito e cheque especial",
+          "body": [
+            "Dívida em juros compostos cresce sozinha. Uma taxa de 10% ao mês dobra a dívida em pouco mais de sete meses.",
+            "Por isso o rotativo do cartão e o cheque especial são as dívidas mais caras. Pagar só o mínimo da fatura deixa o resto crescendo juro sobre juro."
+          ],
+          "example": {
+            "label": "Dívida de R$ 500 a 10% ao mês",
+            "lines": [
+              "depois de 1 mês: R$ 550",
+              "depois de 3 meses: R$ 665,50",
+              "depois de 6 meses: R$ 885,78",
+              "depois de 8 meses: R$ 1 071,79"
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá capital, taxa e tempo e pede o montante. Às vezes pede para comparar simples e compostos.",
+            "Fique de olho na unidade: taxa ao mês com tempo em anos exige converter antes."
+          ],
+          "bullets": [
+            "“Qual o montante de R$ 2 000 a 3% ao mês por 4 meses, em juros simples?”",
+            "“Uma dívida de R$ 1 000 a 5% ao mês, em juros compostos, vale quanto em 2 meses?”",
+            "“Em quanto tempo um capital dobra a 10% ao ano em juros simples?”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Calcular composto como se fosse simples, somando o mesmo juro todo mês.",
+            "Responder o juro quando a pergunta pede o montante, ou o contrário.",
+            "Misturar taxa ao mês com tempo em anos.",
+            "Achar que 1% ao mês é o mesmo que 12% ao ano nos compostos. Dá um pouco mais: cerca de 12,7%."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Juro é o aluguel do dinheiro. Montante é o capital mais os juros.",
+            "Nos simples, o juro é o mesmo todo período. Nos compostos, cada período multiplica por (1 + taxa), e o juro rende juro."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Juros simples",
+          "statement": "Quanto rendem R$ 2 000 a 3% ao mês, por 4 meses, em juros simples?",
+          "options": [
+            "R$ 240",
+            "R$ 60",
+            "R$ 2 240",
+            "R$ 24",
+            "R$ 2 400"
+          ],
+          "correct_index": 0,
+          "explanation": "Juro de um mês: 3% de 2 000 = 60. Quatro meses: 4 × 60 = 240.",
+          "pitfall": "R$ 2 240 é o montante. A pergunta pede só o que rendeu."
+        },
+        {
+          "topic": "Montante",
+          "statement": "Qual é o montante de R$ 500 a 4% ao mês, por 3 meses, em juros simples?",
+          "options": [
+            "R$ 560",
+            "R$ 60",
+            "R$ 512",
+            "R$ 620",
+            "R$ 504"
+          ],
+          "correct_index": 0,
+          "explanation": "Juro de um mês: 20. Três meses: 60. Montante: 500 + 60 = 560.",
+          "pitfall": "R$ 60 é só o juro. O montante soma o capital."
+        },
+        {
+          "topic": "Compostos",
+          "statement": "Uma dívida de R$ 1 000 a 5% ao mês, em juros compostos, vale quanto em 2 meses?",
+          "options": [
+            "R$ 1 102,50",
+            "R$ 1 100",
+            "R$ 1 050",
+            "R$ 1 105",
+            "R$ 1 010"
+          ],
+          "correct_index": 0,
+          "explanation": "Mês 1: 1 000 × 1,05 = 1 050. Mês 2: 1 050 × 1,05 = 1 102,50.",
+          "pitfall": "R$ 1 100 é juros simples. No composto, o segundo mês rende sobre 1 050."
+        },
+        {
+          "topic": "Dobrar",
+          "statement": "Em quanto tempo um capital dobra a 10% ao ano, em juros simples?",
+          "options": [
+            "10 anos",
+            "5 anos",
+            "20 anos",
+            "2 anos",
+            "100 anos"
+          ],
+          "correct_index": 0,
+          "explanation": "Dobrar é render 100% do capital. A 10% por ano, são 10 anos.",
+          "pitfall": "5 anos dá só metade do capital em juros."
+        },
+        {
+          "topic": "Comparar",
+          "statement": "R$ 1 000 a 10% ao ano por 2 anos. Quanto os juros compostos rendem a mais que os simples?",
+          "options": [
+            "R$ 10",
+            "R$ 0",
+            "R$ 100",
+            "R$ 21",
+            "R$ 110"
+          ],
+          "correct_index": 0,
+          "explanation": "Simples: 1 200. Compostos: 1 210. A diferença é de 10 reais, o juro sobre o juro do primeiro ano.",
+          "pitfall": "R$ 0 vale só para o primeiro ano. No segundo, o composto já ganha."
+        },
+        {
+          "topic": "Multiplicar",
+          "statement": "Somar 8% a um valor é o mesmo que multiplicar por:",
+          "options": [
+            "1,08",
+            "0,08",
+            "8",
+            "1,8",
+            "0,92"
+          ],
+          "correct_index": 0,
+          "explanation": "O valor inteiro é 1, e somar 8% dá 1 + 0,08 = 1,08.",
+          "pitfall": "0,08 dá só os 8%, sem o valor original. 0,92 é tirar 8%."
+        },
+        {
+          "topic": "Taxa",
+          "statement": "Um empréstimo de R$ 800 virou R$ 920 em 5 meses, em juros simples. Qual foi a taxa ao mês?",
+          "options": [
+            "3%",
+            "15%",
+            "2,4%",
+            "12%",
+            "24%"
+          ],
+          "correct_index": 0,
+          "explanation": "O juro total foi 120. Por mês, 120 ÷ 5 = 24 reais. E 24 é 3% de 800.",
+          "pitfall": "15% é a taxa dos cinco meses juntos. A pergunta é por mês."
+        },
+        {
+          "topic": "Nomes",
+          "format": "match",
+          "statement": "Ligue cada nome ao que ele é.",
+          "pairs": [
+            {
+              "left": "Capital",
+              "right": "o valor do começo"
+            },
+            {
+              "left": "Taxa",
+              "right": "quanto rende por período"
+            },
+            {
+              "left": "Juro",
+              "right": "o valor que rendeu"
+            },
+            {
+              "left": "Montante",
+              "right": "o valor do fim"
+            }
+          ],
+          "explanation": "Montante é o capital mais o juro. A taxa diz quanto rende em cada período.",
+          "pitfall": "Juro e montante se confundem. O juro é só o que rendeu; o montante já inclui o capital."
+        },
+        {
+          "topic": "Juros simples",
+          "statement": "Quanto rendem R$ 300 a 2% ao mês por 1 mês?",
+          "options": [
+            "R$ 6",
+            "R$ 60",
+            "R$ 0,60",
+            "R$ 306",
+            "R$ 2"
+          ],
+          "correct_index": 0,
+          "explanation": "2% de 300 é 300 × 0,02 = 6.",
+          "pitfall": "R$ 60 usa 20% em vez de 2%.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Montante",
+          "statement": "Um capital de R$ 1 000 rendeu R$ 150 de juros. Qual é o montante?",
+          "options": [
+            "R$ 1 150",
+            "R$ 150",
+            "R$ 850",
+            "R$ 1 015",
+            "R$ 1 500"
+          ],
+          "correct_index": 0,
+          "explanation": "Montante é capital mais juros: 1 000 + 150.",
+          "pitfall": "R$ 850 subtrai os juros, como se fosse um desconto.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Anos e meses",
+          "statement": "R$ 1 200 a 1% ao mês, em juros simples, rendem quanto em 2 anos?",
+          "options": [
+            "R$ 288",
+            "R$ 24",
+            "R$ 2 880",
+            "R$ 240",
+            "R$ 1 488"
+          ],
+          "correct_index": 0,
+          "explanation": "2 anos são 24 meses. Por mês rende 12 reais, então 24 × 12 = 288.",
+          "pitfall": "R$ 24 usa 2 como se fosse o número de meses.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Compostos",
+          "statement": "R$ 2 000 a 10% ao ano, em juros compostos. Quanto há em 3 anos?",
+          "options": [
+            "R$ 2 662",
+            "R$ 2 600",
+            "R$ 2 620",
+            "R$ 2 200",
+            "R$ 2 000,30"
+          ],
+          "correct_index": 0,
+          "explanation": "2 000 × 1,1 = 2 200. Depois 2 420. Depois 2 662.",
+          "pitfall": "R$ 2 600 soma 200 por ano, que é a conta de juros simples.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Taxa ao ano",
+          "statement": "Uma aplicação paga 1% ao mês em juros compostos. Em um ano, rende aproximadamente:",
+          "options": [
+            "12,7%",
+            "12%",
+            "1%",
+            "11,4%",
+            "13,5%"
+          ],
+          "correct_index": 0,
+          "explanation": "1,01 multiplicado doze vezes dá cerca de 1,127. São 12,7%, um pouco mais que 12%.",
+          "pitfall": "12% seria a conta dos juros simples. No composto, o juro de cada mês também rende.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Pagar o mínimo",
+          "statement": "Uma fatura de R$ 1 000 cobra 10% ao mês em juros compostos. A pessoa não paga nada por 2 meses. Quanto deve?",
+          "options": [
+            "R$ 1 210",
+            "R$ 1 200",
+            "R$ 1 020",
+            "R$ 1 100",
+            "R$ 2 000"
+          ],
+          "correct_index": 0,
+          "explanation": "1 000 × 1,1 = 1 100 no primeiro mês. 1 100 × 1,1 = 1 210 no segundo.",
+          "pitfall": "R$ 1 200 soma 100 nos dois meses. No segundo, o juro incide sobre os 1 100.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "comparar-precos",
+      "title": "Comprar bem: preço por unidade, descontos e parcelas",
+      "module": "Dinheiro",
+      "summary": "Embalagem maior nem sempre sai mais barato, e “sem juros” nem sempre é verdade. A conta que decide é a do preço por unidade e a do total pago.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Dois pacotes de café",
+          "body": [
+            "No mercado, o pacote de 500 g de café custa R$ 18. O de 250 g custa R$ 10.",
+            "Qual sai mais barato? O preço de etiqueta não responde, porque os pacotes têm tamanhos diferentes.",
+            "Para comparar, é preciso pôr os dois na mesma régua: quanto custa cada quilo."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Preço por unidade",
+          "body": [
+            "Divide-se o preço pela quantidade. O resultado é o preço por unidade (por quilo, por litro, por rolo).",
+            "Muitos mercados já mostram isso na etiqueta, em letra pequena. É o número que importa."
+          ],
+          "example": {
+            "label": "Os dois cafés",
+            "lines": [
+              "500 g por R$ 18: um quilo sai por 2 × 18 = R$ 36.",
+              "250 g por R$ 10: um quilo sai por 4 × 10 = R$ 40.",
+              "O pacote grande é mais barato por quilo."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "Preço por unidade",
+              "meaning": "o preço dividido pela quantidade: quanto custa cada quilo, litro ou rolo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Porcentagem em uma frase",
+          "body": [
+            "Porcentagem é uma parte de cem. 20% de algo é 20 de cada 100.",
+            "Para calcular, multiplica-se pelo número com vírgula: 20% de 150 é 150 × 0,2 = 30.",
+            "Desconto tira essa parte, e aumento soma."
+          ],
+          "terms": [
+            {
+              "word": "Porcentagem (%)",
+              "meaning": "uma parte de cem: 20% são 20 de cada 100."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Leve 3, pague 2",
+          "body": [
+            "Na promoção “leve 3, pague 2”, você ganha um item a cada três. É um desconto de um terço no total.",
+            "Um terço é cerca de 33%. Mas só vale se você ia mesmo usar os três."
+          ],
+          "table": {
+            "label": "Promoções comparadas",
+            "headers": [
+              "Promoção",
+              "Desconto real"
+            ],
+            "rows": [
+              [
+                "leve 2, pague 1",
+                "50%"
+              ],
+              [
+                "leve 3, pague 2",
+                "cerca de 33%"
+              ],
+              [
+                "leve 4, pague 3",
+                "25%"
+              ],
+              [
+                "segunda unidade com 50% de desconto",
+                "25% no par"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "À vista ou parcelado",
+          "body": [
+            "Uma loja vende uma TV por R$ 2 000 em 10 vezes “sem juros”. À vista, dá 10% de desconto.",
+            "Se o preço à vista é R$ 1 800, as parcelas somam R$ 2 000. Os 200 reais a mais são juros, só que escondidos.",
+            "Sempre compare o total pago, e não o tamanho da parcela."
+          ],
+          "example": {
+            "label": "A TV",
+            "lines": [
+              "à vista: R$ 1 800",
+              "parcelado: 10 × R$ 200 = R$ 2 000",
+              "diferença: R$ 200 a mais para quem parcela"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Desconto em cima de desconto",
+          "body": [
+            "Dois descontos de 10% não são 20%. O segundo é calculado sobre o preço que já caiu.",
+            "Tirar 10% é multiplicar por 0,9. Duas vezes dá 0,9 × 0,9 = 0,81, ou seja, 19% de desconto."
+          ],
+          "example": {
+            "label": "Uma camisa de R$ 100",
+            "lines": [
+              "primeiro desconto de 10%: R$ 90",
+              "segundo desconto de 10%: R$ 81",
+              "desconto total: 19%, e não 20%"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O aumento que o desconto não desfaz",
+          "body": [
+            "Se um preço sobe 20% e depois cai 20%, ele não volta ao começo.",
+            "R$ 100 viram 120. Tirar 20% de 120 dá 24, e o preço fica em 96.",
+            "O desconto foi calculado sobre um valor maior, então tirou mais do que o aumento pôs."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova põe duas ofertas lado a lado e pergunta qual vale mais a pena. A resposta sai do preço por unidade ou do total pago."
+          ],
+          "bullets": [
+            "“Qual embalagem tem o menor preço por litro?”",
+            "“Qual é o desconto real da promoção leve 3, pague 2?”",
+            "“Quanto se paga a mais no parcelado?”",
+            "“Dois descontos de 10% seguidos equivalem a quanto?”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Escolher pela etiqueta, sem dividir pela quantidade.",
+            "Somar descontos seguidos: 10% e 10% dão 19%.",
+            "Achar que aumento e desconto iguais se anulam.",
+            "Comparar o valor da parcela em vez do total pago."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Para comparar ofertas, divida o preço pela quantidade. Para comparar formas de pagar, some o total.",
+            "Descontos seguidos se multiplicam, e não se somam. Aumento e desconto iguais não se anulam."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Preço por unidade",
+          "statement": "Qual sai mais barato por litro?",
+          "options": [
+            "2 L por R$ 7",
+            "1 L por R$ 4",
+            "500 mL por R$ 2,50",
+            "350 mL por R$ 2",
+            "600 mL por R$ 3"
+          ],
+          "correct_index": 0,
+          "explanation": "2 L por 7 dá R$ 3,50 o litro. Os outros dão 4, 5, cerca de 5,71 e 5 reais por litro.",
+          "pitfall": "O de R$ 2 parece o mais barato, mas tem só 350 mL."
+        },
+        {
+          "topic": "Leve 3",
+          "statement": "Qual é o desconto real da promoção “leve 3, pague 2”?",
+          "options": [
+            "cerca de 33%",
+            "50%",
+            "66%",
+            "25%",
+            "3%"
+          ],
+          "correct_index": 0,
+          "explanation": "Leva três e paga dois: um de cada três sai de graça. Um terço é cerca de 33%.",
+          "pitfall": "50% seria leve 2, pague 1."
+        },
+        {
+          "topic": "Parcelado",
+          "statement": "À vista uma geladeira custa R$ 2 700. Parcelada, são 12 vezes de R$ 250. Quanto se paga a mais no parcelado?",
+          "options": [
+            "R$ 300",
+            "R$ 250",
+            "R$ 2 450",
+            "R$ 3 000",
+            "R$ 50"
+          ],
+          "correct_index": 0,
+          "explanation": "12 × 250 = 3 000. A diferença para 2 700 é de 300 reais.",
+          "pitfall": "R$ 3 000 é o total parcelado, e não o que se paga a mais."
+        },
+        {
+          "topic": "Descontos seguidos",
+          "statement": "Dois descontos seguidos de 10% equivalem a um desconto de:",
+          "options": [
+            "19%",
+            "20%",
+            "10%",
+            "21%",
+            "1%"
+          ],
+          "correct_index": 0,
+          "explanation": "0,9 × 0,9 = 0,81. O preço cai para 81%, um desconto de 19%.",
+          "pitfall": "20% soma os descontos. O segundo incide sobre um preço menor."
+        },
+        {
+          "topic": "Sobe e desce",
+          "statement": "Um produto de R$ 200 subiu 10% e depois caiu 10%. Quanto custa agora?",
+          "options": [
+            "R$ 198",
+            "R$ 200",
+            "R$ 202",
+            "R$ 180",
+            "R$ 220"
+          ],
+          "correct_index": 0,
+          "explanation": "Subiu para 220. Tirar 10% de 220 é tirar 22, e fica 198.",
+          "pitfall": "R$ 200 supõe que aumento e desconto se anulam. O desconto foi sobre um valor maior."
+        },
+        {
+          "topic": "Embalagens",
+          "statement": "Um rolo de papel-toalha sai por R$ 3. Um fardo com 12 rolos sai por R$ 30. Quanto se economiza por rolo no fardo?",
+          "options": [
+            "R$ 0,50",
+            "R$ 2,50",
+            "R$ 6",
+            "R$ 0,25",
+            "R$ 1"
+          ],
+          "correct_index": 0,
+          "explanation": "No fardo, cada rolo sai por 30 ÷ 12 = 2,50. Economiza-se 3 − 2,50 = 0,50 por rolo.",
+          "pitfall": "R$ 2,50 é o preço do rolo no fardo, e não a economia."
+        },
+        {
+          "topic": "Desconto",
+          "statement": "Um tênis de R$ 250 está com 30% de desconto. Quanto se paga?",
+          "options": [
+            "R$ 175",
+            "R$ 75",
+            "R$ 220",
+            "R$ 280",
+            "R$ 225"
+          ],
+          "correct_index": 0,
+          "explanation": "30% de 250 é 75. Paga-se 250 − 75 = 175.",
+          "pitfall": "R$ 75 é o desconto. A pergunta é o preço final."
+        },
+        {
+          "topic": "Promoções",
+          "format": "match",
+          "statement": "Ligue cada promoção ao seu desconto real.",
+          "pairs": [
+            {
+              "left": "leve 2, pague 1",
+              "right": "50%"
+            },
+            {
+              "left": "leve 4, pague 3",
+              "right": "25%"
+            },
+            {
+              "left": "leve 3, pague 2",
+              "right": "cerca de 33%"
+            },
+            {
+              "left": "leve 5, pague 4",
+              "right": "20%"
+            }
+          ],
+          "explanation": "O desconto é a fração que sai de graça: 1 de 2, 1 de 4, 1 de 3 e 1 de 5.",
+          "pitfall": "Leve 4, pague 3 parece melhor que leve 3, pague 2. É pior: um de graça em quatro é menos."
+        },
+        {
+          "topic": "Preço por quilo",
+          "statement": "Um pacote de 2 kg de arroz custa R$ 12. Qual é o preço por quilo?",
+          "options": [
+            "R$ 6",
+            "R$ 24",
+            "R$ 12",
+            "R$ 10",
+            "R$ 3"
+          ],
+          "correct_index": 0,
+          "explanation": "12 ÷ 2 = 6 reais o quilo.",
+          "pitfall": "R$ 24 multiplica em vez de dividir.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Desconto",
+          "statement": "Quanto é 10% de desconto em uma conta de R$ 80?",
+          "options": [
+            "R$ 8",
+            "R$ 10",
+            "R$ 72",
+            "R$ 0,80",
+            "R$ 18"
+          ],
+          "correct_index": 0,
+          "explanation": "10% é dividir por 10: 80 ÷ 10 = 8.",
+          "pitfall": "R$ 72 é o que se paga depois do desconto, e não o desconto.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Segunda unidade",
+          "statement": "Uma loja dá 50% de desconto na segunda unidade. Levando duas, qual é o desconto no total?",
+          "options": [
+            "25%",
+            "50%",
+            "100%",
+            "75%",
+            "33%"
+          ],
+          "correct_index": 0,
+          "explanation": "Duas unidades de 100 custariam 200. Com a promoção, 150. A economia de 50 é 25% de 200.",
+          "pitfall": "50% vale só para uma das duas. No par, o desconto é a metade disso.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Comparar",
+          "statement": "Qual embalagem de sabão em pó sai mais barata por quilo?",
+          "options": [
+            "2 kg por R$ 30",
+            "1 kg por R$ 16",
+            "800 g por R$ 13,60",
+            "500 g por R$ 8,50",
+            "4 kg por R$ 64"
+          ],
+          "correct_index": 0,
+          "explanation": "2 kg por 30 dá R$ 15 o quilo. As outras dão 16, 17, 17 e 16.",
+          "pitfall": "A maior embalagem (4 kg) parece a melhor, mas sai por 16 o quilo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "À vista",
+          "statement": "Um celular custa R$ 1 500 em 10 vezes sem juros, ou à vista com 8% de desconto. Quanto se economiza pagando à vista?",
+          "options": [
+            "R$ 120",
+            "R$ 1 380",
+            "R$ 150",
+            "R$ 8",
+            "R$ 12"
+          ],
+          "correct_index": 0,
+          "explanation": "8% de 1 500 é 120. À vista sai por 1 380, e a economia é de 120.",
+          "pitfall": "R$ 1 380 é o preço à vista, e não a economia.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Volta ao preço",
+          "statement": "Um produto teve 20% de desconto. Quanto ele precisa subir para voltar ao preço antigo?",
+          "options": [
+            "25%",
+            "20%",
+            "80%",
+            "40%",
+            "10%"
+          ],
+          "correct_index": 0,
+          "explanation": "R$ 100 viram 80. Para voltar a 100, falta subir 20 sobre 80, que é 25%.",
+          "pitfall": "20% de 80 é 16, e o preço iria só a 96. O aumento é calculado sobre o valor menor.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "angulos-e-triangulos",
+      "title": "Ângulos e triângulos",
+      "module": "Geometria",
+      "summary": "Ângulo é o quanto uma coisa gira. Num triângulo, os três ângulos somam sempre 180 graus, e isso resolve muita questão.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A porta que abre",
+          "body": [
+            "Uma porta fechada começa encostada no batente. Conforme abre, ela gira.",
+            "O quanto ela girou é o ângulo. Meia aberta é um ângulo pequeno, e escancarada é um grande.",
+            "O ângulo mede abertura, e não tamanho. Uma porta pequena e uma grande podem abrir o mesmo ângulo."
+          ],
+          "terms": [
+            {
+              "word": "Ângulo",
+              "meaning": "a abertura entre duas linhas que saem do mesmo ponto. Mede o quanto algo girou."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O grau",
+          "body": [
+            "O ângulo se mede em graus (°). Uma volta inteira tem 360°.",
+            "Meia volta tem 180°, e é uma linha reta. Um quarto de volta tem 90°: é o canto de uma folha de papel."
+          ],
+          "example": {
+            "label": "Ângulos que você conhece",
+            "lines": [
+              "volta inteira: 360°",
+              "meia volta: 180°",
+              "canto da folha: 90°",
+              "ponteiros às 2h: 60°"
+            ]
+          },
+          "terms": [
+            {
+              "word": "Ângulo reto",
+              "meaning": "o ângulo de 90 graus, o canto de uma folha de papel."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Agudo, reto e obtuso",
+          "body": [
+            "Os ângulos têm nome pelo tamanho, sempre comparado com o canto da folha.",
+            "Menor que 90° é agudo. Igual a 90° é reto. Entre 90° e 180° é obtuso."
+          ],
+          "figure": {
+            "src": "/figuras/dia-a-dia/angulos.svg",
+            "alt": "Três ângulos lado a lado. O agudo é uma abertura estreita, o reto é o canto de uma folha com um quadradinho marcando os 90 graus, e o obtuso é uma abertura larga.",
+            "caption": "O quadradinho no canto é o sinal de ângulo reto."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A soma dos ângulos do triângulo",
+          "body": [
+            "Em todo triângulo, os três ângulos somam 180°. Não importa o tamanho nem o formato.",
+            "Dá para ver com papel. Recorte os três cantos de um triângulo e junte as pontas: eles formam uma linha reta, que é meia volta."
+          ],
+          "example": {
+            "label": "Achar o ângulo que falta",
+            "lines": [
+              "Um triângulo tem ângulos de 50° e 70°.",
+              "Os dois somam 120°.",
+              "Falta 180 − 120 = 60°."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os triângulos pelos lados",
+          "body": [
+            "Os triângulos também têm nome pelos lados. A prova cobra muito o equilátero e o isósceles."
+          ],
+          "table": {
+            "label": "Tipos de triângulo",
+            "headers": [
+              "Nome",
+              "Lados",
+              "Ângulos"
+            ],
+            "rows": [
+              [
+                "equilátero",
+                "três iguais",
+                "três de 60°"
+              ],
+              [
+                "isósceles",
+                "dois iguais",
+                "dois iguais"
+              ],
+              [
+                "escaleno",
+                "três diferentes",
+                "três diferentes"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O triângulo retângulo",
+          "body": [
+            "O triângulo que tem um ângulo reto se chama retângulo. É o mais usado no dia a dia: a escada no muro, a rampa, o canto da sala.",
+            "Como um ângulo já tem 90°, os outros dois somam os 90° que faltam."
+          ],
+          "terms": [
+            {
+              "word": "Triângulo retângulo",
+              "meaning": "o triângulo que tem um ângulo de 90 graus."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá dois ângulos e pede o terceiro. Também pergunta quanto vale cada ângulo de um triângulo equilátero."
+          ],
+          "bullets": [
+            "“Num triângulo, dois ângulos medem 45° e 85°. Quanto mede o terceiro?”",
+            "“Qual é o ângulo entre os ponteiros às 3h?”",
+            "“Um triângulo isósceles tem um ângulo de 40° entre os lados iguais. Quanto medem os outros?”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que a soma depende do tamanho do triângulo. É sempre 180°.",
+            "Confundir obtuso com reto: obtuso passa de 90°.",
+            "No isósceles, repetir o ângulo errado: os iguais são os da base, e não o de cima.",
+            "Usar 360° na soma dos ângulos do triângulo. 360° é a do quadrilátero."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Ângulo mede abertura em graus. Uma volta tem 360°, e o canto da folha tem 90°.",
+            "Os ângulos de um triângulo somam 180°. No equilátero, cada um vale 60°."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Terceiro ângulo",
+          "statement": "Num triângulo, dois ângulos medem 45° e 85°. Quanto mede o terceiro?",
+          "options": [
+            "50°",
+            "130°",
+            "230°",
+            "40°",
+            "90°"
+          ],
+          "correct_index": 0,
+          "explanation": "45 + 85 = 130. Faltam 180 − 130 = 50°.",
+          "pitfall": "130° é a soma dos dois. A pergunta é o que falta."
+        },
+        {
+          "topic": "Equilátero",
+          "statement": "Quanto mede cada ângulo de um triângulo equilátero?",
+          "options": [
+            "60°",
+            "90°",
+            "45°",
+            "180°",
+            "120°"
+          ],
+          "correct_index": 0,
+          "explanation": "Os três são iguais e somam 180°. 180 ÷ 3 = 60°.",
+          "pitfall": "90° é o ângulo reto. O equilátero não tem nenhum."
+        },
+        {
+          "topic": "Classificar",
+          "statement": "Um ângulo de 120° é:",
+          "options": [
+            "obtuso",
+            "agudo",
+            "reto",
+            "raso",
+            "completo"
+          ],
+          "correct_index": 0,
+          "explanation": "Fica entre 90° e 180°. Isso é obtuso.",
+          "pitfall": "Agudo é o menor que 90°."
+        },
+        {
+          "topic": "Relógio",
+          "statement": "Qual é o ângulo entre os ponteiros às 3h em ponto?",
+          "options": [
+            "90°",
+            "30°",
+            "45°",
+            "180°",
+            "120°"
+          ],
+          "correct_index": 0,
+          "explanation": "O ponteiro grande aponta para o 12 e o pequeno para o 3. É um quarto de volta: 90°.",
+          "pitfall": "30° é a distância entre dois números vizinhos do relógio. Do 12 ao 3 são três desses."
+        },
+        {
+          "topic": "Retângulo",
+          "statement": "Num triângulo retângulo, um dos ângulos agudos mede 35°. Quanto mede o outro?",
+          "options": [
+            "55°",
+            "35°",
+            "145°",
+            "65°",
+            "45°"
+          ],
+          "correct_index": 0,
+          "explanation": "O ângulo reto já usa 90°. Os outros dois somam 90°, então 90 − 35 = 55°.",
+          "pitfall": "145° faz 180 − 35 e esquece o ângulo reto."
+        },
+        {
+          "topic": "Isósceles",
+          "statement": "Um triângulo isósceles tem um ângulo de 40° entre os lados iguais. Quanto mede cada um dos outros dois?",
+          "options": [
+            "70°",
+            "40°",
+            "140°",
+            "50°",
+            "100°"
+          ],
+          "correct_index": 0,
+          "explanation": "Sobram 180 − 40 = 140°, divididos igualmente entre os dois ângulos da base: 70° cada.",
+          "pitfall": "40° repete o ângulo de cima. Os ângulos iguais são os da base."
+        },
+        {
+          "topic": "Linha reta",
+          "statement": "Dois ângulos lado a lado formam uma linha reta. Um mede 110°. Quanto mede o outro?",
+          "options": [
+            "70°",
+            "250°",
+            "110°",
+            "90°",
+            "20°"
+          ],
+          "correct_index": 0,
+          "explanation": "Uma linha reta é meia volta, 180°. 180 − 110 = 70°.",
+          "pitfall": "250° usa a volta inteira, 360°."
+        },
+        {
+          "topic": "Tipos",
+          "format": "match",
+          "statement": "Ligue cada triângulo à sua descrição.",
+          "pairs": [
+            {
+              "left": "equilátero",
+              "right": "três lados iguais"
+            },
+            {
+              "left": "isósceles",
+              "right": "dois lados iguais"
+            },
+            {
+              "left": "escaleno",
+              "right": "três lados diferentes"
+            },
+            {
+              "left": "retângulo",
+              "right": "um ângulo de 90°"
+            }
+          ],
+          "explanation": "Equilátero, isósceles e escaleno falam dos lados. Retângulo fala de um ângulo.",
+          "pitfall": "Isósceles e equilátero se confundem. Equi quer dizer igual: os três."
+        },
+        {
+          "topic": "Volta",
+          "statement": "Quantos graus tem meia volta?",
+          "options": [
+            "180°",
+            "90°",
+            "360°",
+            "45°",
+            "100°"
+          ],
+          "correct_index": 0,
+          "explanation": "Uma volta tem 360°. A metade é 180°.",
+          "pitfall": "90° é um quarto de volta.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Agudo",
+          "statement": "Qual destes ângulos é agudo?",
+          "options": [
+            "30°",
+            "90°",
+            "100°",
+            "180°",
+            "150°"
+          ],
+          "correct_index": 0,
+          "explanation": "Agudo é o menor que 90°. Só o de 30° serve.",
+          "pitfall": "90° é reto, e não agudo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Proporção",
+          "statement": "Num triângulo, os ângulos são x, 2x e 3x. Quanto vale o maior?",
+          "options": [
+            "90°",
+            "30°",
+            "60°",
+            "180°",
+            "120°"
+          ],
+          "correct_index": 0,
+          "explanation": "x + 2x + 3x = 6x = 180, então x = 30. O maior é 3 × 30 = 90°.",
+          "pitfall": "30° é o valor de x, o menor ângulo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Relógio",
+          "statement": "Qual é o menor ângulo entre os ponteiros às 4h em ponto?",
+          "options": [
+            "120°",
+            "90°",
+            "40°",
+            "240°",
+            "100°"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada número do relógio está a 30° do vizinho. Do 12 ao 4 são 4 × 30 = 120°.",
+          "pitfall": "240° é o ângulo do outro lado. A pergunta é o menor.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Quadrilátero",
+          "statement": "Um quadrilátero tem ângulos de 80°, 100° e 95°. Quanto mede o quarto?",
+          "options": [
+            "85°",
+            "5°",
+            "265°",
+            "95°",
+            "180°"
+          ],
+          "correct_index": 0,
+          "explanation": "Os ângulos de um quadrilátero somam 360°. 80 + 100 + 95 = 275, e falta 85°.",
+          "pitfall": "5° usa 180°, que é a soma do triângulo. Um quadrilátero são dois triângulos.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Externo",
+          "statement": "Num triângulo, dois ângulos medem 50° e 60°. Quanto mede o ângulo que fica do lado de fora do terceiro, formando linha reta com ele?",
+          "options": [
+            "110°",
+            "70°",
+            "180°",
+            "290°",
+            "60°"
+          ],
+          "correct_index": 0,
+          "explanation": "O terceiro ângulo é 70°. O de fora completa a linha reta: 180 − 70 = 110°. É a soma dos outros dois.",
+          "pitfall": "70° é o ângulo de dentro. A pergunta é o de fora.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "perimetro-e-area",
+      "title": "Perímetro e área",
+      "module": "Geometria",
+      "summary": "Perímetro é o contorno, que se mede em metros. Área é o que cabe dentro, que se mede em metros quadrados. Confundir os dois é o erro mais comum.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A cerca e o gramado",
+          "body": [
+            "Para cercar um terreno, o que importa é o tamanho do contorno. Para gramar o mesmo terreno, importa o tamanho do chão.",
+            "São duas medidas diferentes do mesmo lugar. A primeira é o perímetro, e a segunda é a área."
+          ],
+          "terms": [
+            {
+              "word": "Perímetro",
+              "meaning": "o tamanho do contorno de uma figura: a soma de todos os lados."
+            },
+            {
+              "word": "Área",
+              "meaning": "o tamanho da superfície de dentro, medido em quadradinhos."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Perímetro: somar os lados",
+          "body": [
+            "Para achar o perímetro, basta somar o tamanho de todos os lados. A resposta sai em metros, centímetros ou quilômetros."
+          ],
+          "example": {
+            "label": "Um terreno de 12 m por 20 m",
+            "lines": [
+              "O retângulo tem dois lados de 12 e dois de 20.",
+              "12 + 12 + 20 + 20 = 64.",
+              "São 64 m de cerca."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Área: contar quadradinhos",
+          "body": [
+            "A área conta quantos quadradinhos de 1 por 1 cabem dentro da figura. Por isso a unidade é o metro quadrado (m²).",
+            "Num retângulo de 3 por 4, cabem 3 fileiras de 4 quadradinhos. São 12 m². Daí vem a conta: base × altura."
+          ],
+          "terms": [
+            {
+              "word": "Metro quadrado (m²)",
+              "meaning": "a área de um quadrado com 1 metro de lado."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Triângulo e trapézio",
+          "body": [
+            "Um triângulo é metade de um retângulo de mesma base e altura. Por isso a área dele é base × altura ÷ 2.",
+            "O trapézio tem dois lados de cima e de baixo diferentes. Tira-se a média deles e multiplica-se pela altura."
+          ],
+          "figure": {
+            "src": "/figuras/dia-a-dia/areas.svg",
+            "alt": "Três figuras com a conta da área. Retângulo: base vezes altura. Triângulo: a mesma conta dividida por 2, porque ele é metade do retângulo tracejado em volta. Trapézio: base maior mais base menor, vezes a altura, dividido por 2.",
+            "caption": "O triângulo ocupa a metade do retângulo em volta dele."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Polígonos são feitos de pedaços",
+          "body": [
+            "Figura de muitos lados é um polígono. A área dela se acha cortando em pedaços que você já sabe medir.",
+            "Uma casa em L, por exemplo, vira dois retângulos. Calcula-se cada um e soma-se."
+          ],
+          "example": {
+            "label": "Sala em L",
+            "lines": [
+              "parte 1: 4 m × 3 m = 12 m²",
+              "parte 2: 2 m × 5 m = 10 m²",
+              "total: 22 m² de piso"
+            ]
+          },
+          "terms": [
+            {
+              "word": "Polígono",
+              "meaning": "uma figura fechada feita só de lados retos: triângulo, quadrado, pentágono."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Dobrar o lado não dobra a área",
+          "body": [
+            "Se o lado de um quadrado dobra, o perímetro dobra também. Mas a área fica quatro vezes maior.",
+            "Um quadrado de 2 m tem 4 m². Um de 4 m tem 16 m². Por isso um tapete com o dobro do lado gasta quatro vezes mais tecido."
+          ],
+          "table": {
+            "label": "Lado, perímetro e área do quadrado",
+            "headers": [
+              "Lado",
+              "Perímetro",
+              "Área"
+            ],
+            "rows": [
+              [
+                "1 m",
+                "4 m",
+                "1 m²"
+              ],
+              [
+                "2 m",
+                "8 m",
+                "4 m²"
+              ],
+              [
+                "3 m",
+                "12 m",
+                "9 m²"
+              ],
+              [
+                "4 m",
+                "16 m",
+                "16 m²"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá uma situação concreta e espera que você perceba se é contorno ou chão. Cerca, rodapé e moldura pedem perímetro; piso, pintura e grama pedem área."
+          ],
+          "bullets": [
+            "“Quantos metros de rodapé uma sala de 5 m por 4 m precisa?”",
+            "“Quantas caixas de piso de 2 m² cobrem essa sala?”",
+            "“Um terreno triangular tem base 30 m e altura 20 m. Qual é a área?”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Usar a área quando a pergunta é o contorno, e o contrário.",
+            "Esquecer de dividir por 2 na área do triângulo.",
+            "Achar que dobrar o lado dobra a área. Ela fica quatro vezes maior.",
+            "Somar só dois lados do retângulo no perímetro."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Perímetro é o contorno: soma dos lados, em metros. Área é o chão: quadradinhos, em metros quadrados.",
+            "Retângulo: base × altura. Triângulo: a metade disso. Figura difícil se corta em pedaços."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Rodapé",
+          "statement": "Quantos metros de rodapé uma sala de 5 m por 4 m precisa, sem descontar a porta?",
+          "options": [
+            "18 m",
+            "20 m",
+            "9 m",
+            "40 m",
+            "16 m"
+          ],
+          "correct_index": 0,
+          "explanation": "O rodapé corre o contorno: 5 + 4 + 5 + 4 = 18 m.",
+          "pitfall": "20 é a área, em metros quadrados. Rodapé é contorno."
+        },
+        {
+          "topic": "Piso",
+          "statement": "Quantos metros quadrados de piso cobrem uma sala de 5 m por 4 m?",
+          "options": [
+            "20 m²",
+            "18 m²",
+            "9 m²",
+            "40 m²",
+            "25 m²"
+          ],
+          "correct_index": 0,
+          "explanation": "Área do retângulo: 5 × 4 = 20 m².",
+          "pitfall": "18 é o perímetro. Piso é área."
+        },
+        {
+          "topic": "Triângulo",
+          "statement": "Um terreno triangular tem base 30 m e altura 20 m. Qual é a área?",
+          "options": [
+            "300 m²",
+            "600 m²",
+            "50 m²",
+            "100 m²",
+            "150 m²"
+          ],
+          "correct_index": 0,
+          "explanation": "Base × altura ÷ 2 = 30 × 20 ÷ 2 = 300 m².",
+          "pitfall": "600 m² esquece de dividir por 2."
+        },
+        {
+          "topic": "Quadrado",
+          "statement": "Um quadrado tem perímetro de 36 cm. Qual é a área?",
+          "options": [
+            "81 cm²",
+            "36 cm²",
+            "9 cm²",
+            "144 cm²",
+            "1 296 cm²"
+          ],
+          "correct_index": 0,
+          "explanation": "Os quatro lados são iguais: 36 ÷ 4 = 9 cm. A área é 9 × 9 = 81 cm².",
+          "pitfall": "9 é o lado, e não a área."
+        },
+        {
+          "topic": "Trapézio",
+          "statement": "Um trapézio tem bases de 10 m e 6 m e altura de 4 m. Qual é a área?",
+          "options": [
+            "32 m²",
+            "64 m²",
+            "240 m²",
+            "20 m²",
+            "40 m²"
+          ],
+          "correct_index": 0,
+          "explanation": "(10 + 6) × 4 ÷ 2 = 16 × 4 ÷ 2 = 32 m².",
+          "pitfall": "64 m² esquece de dividir por 2."
+        },
+        {
+          "topic": "Dobrar",
+          "statement": "O lado de um quadrado dobrou. O que acontece com a área?",
+          "options": [
+            "Fica 4 vezes maior.",
+            "Dobra.",
+            "Fica igual.",
+            "Fica 8 vezes maior.",
+            "Cai pela metade."
+          ],
+          "correct_index": 0,
+          "explanation": "A área é lado × lado. Dobrar os dois lados multiplica por 2 × 2 = 4.",
+          "pitfall": "Dobrar vale para o perímetro, e não para a área."
+        },
+        {
+          "topic": "Caixas de piso",
+          "statement": "Uma sala de 6 m por 5 m vai receber piso vendido em caixas de 2 m². Quantas caixas são necessárias?",
+          "options": [
+            "15",
+            "30",
+            "11",
+            "60",
+            "22"
+          ],
+          "correct_index": 0,
+          "explanation": "A área é 6 × 5 = 30 m². Divididos por 2 m² dão 15 caixas.",
+          "pitfall": "30 é a área. Cada caixa cobre 2 m²."
+        },
+        {
+          "topic": "Contorno ou chão",
+          "format": "match",
+          "statement": "Ligue cada tarefa à medida que ela pede.",
+          "pairs": [
+            {
+              "left": "cercar um terreno",
+              "right": "perímetro"
+            },
+            {
+              "left": "gramar um terreno",
+              "right": "área"
+            },
+            {
+              "left": "pôr moldura num quadro",
+              "right": "perímetro do quadro"
+            },
+            {
+              "left": "pintar uma parede",
+              "right": "área da parede"
+            }
+          ],
+          "explanation": "Tudo que contorna pede perímetro. Tudo que cobre pede área.",
+          "pitfall": "Moldura parece cobrir o quadro, mas só passa em volta dele."
+        },
+        {
+          "topic": "Perímetro",
+          "statement": "Qual é o perímetro de um quadrado de lado 7 cm?",
+          "options": [
+            "28 cm",
+            "49 cm",
+            "14 cm",
+            "21 cm",
+            "7 cm"
+          ],
+          "correct_index": 0,
+          "explanation": "Quatro lados de 7: 4 × 7 = 28 cm.",
+          "pitfall": "49 é a área do quadrado.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Área",
+          "statement": "Qual é a área de um retângulo de 8 m por 3 m?",
+          "options": [
+            "24 m²",
+            "22 m²",
+            "11 m²",
+            "48 m²",
+            "64 m²"
+          ],
+          "correct_index": 0,
+          "explanation": "8 × 3 = 24 m².",
+          "pitfall": "22 é o perímetro: 8 + 3 + 8 + 3.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Em L",
+          "statement": "Uma sala em L é formada por um retângulo de 6 m por 4 m e outro de 3 m por 2 m. Qual é a área total?",
+          "options": [
+            "30 m²",
+            "15 m²",
+            "24 m²",
+            "36 m²",
+            "60 m²"
+          ],
+          "correct_index": 0,
+          "explanation": "6 × 4 = 24 e 3 × 2 = 6. Somando, 30 m².",
+          "pitfall": "15 soma os lados em vez de multiplicar.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Lado pela área",
+          "statement": "Um quadrado tem 64 m² de área. Qual é o perímetro dele?",
+          "options": [
+            "32 m",
+            "16 m",
+            "8 m",
+            "64 m",
+            "256 m"
+          ],
+          "correct_index": 0,
+          "explanation": "8 × 8 = 64, então o lado é 8. O perímetro é 4 × 8 = 32 m.",
+          "pitfall": "8 m é o lado, e não o contorno.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Mesma cerca",
+          "statement": "Com 40 m de cerca, qual destes retângulos tem a MAIOR área?",
+          "options": [
+            "10 m por 10 m",
+            "15 m por 5 m",
+            "18 m por 2 m",
+            "12 m por 8 m",
+            "19 m por 1 m"
+          ],
+          "correct_index": 0,
+          "explanation": "Todos têm 40 m de contorno. As áreas são 100, 75, 36, 96 e 19. O quadrado ganha.",
+          "pitfall": "Mesmo perímetro não quer dizer mesma área. Quanto mais perto de um quadrado, mais área.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Pintura",
+          "statement": "Uma parede de 4 m por 3 m tem uma janela de 1,5 m por 1 m. Uma lata pinta 5 m². Quantas latas, no mínimo, são necessárias?",
+          "options": [
+            "3",
+            "2",
+            "2,1",
+            "4",
+            "12"
+          ],
+          "correct_index": 0,
+          "explanation": "A parede tem 12 m², menos 1,5 m² da janela: 10,5 m². Duas latas pintam 10 m², então são precisas 3.",
+          "pitfall": "2,1 latas não se compram. Arredonda-se para cima, senão falta tinta.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "circulo",
+      "title": "O círculo: raio, contorno e área",
+      "module": "Geometria",
+      "summary": "Toda roda guarda o mesmo segredo: o contorno é um pouco mais que três diâmetros. Esse número é o pi, e com ele se acha contorno e área.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Barbante numa lata",
+          "body": [
+            "Enrole um barbante em volta de uma lata e meça. Depois meça a lata de um lado ao outro, passando pelo meio.",
+            "O barbante sempre dá um pouco mais que três vezes a largura. Vale para lata, prato, pneu ou moeda.",
+            "Esse “um pouco mais que três” é um dos números mais famosos da matemática."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Raio e diâmetro",
+          "body": [
+            "O raio vai do centro até a borda. O diâmetro atravessa o círculo inteiro passando pelo centro.",
+            "Por isso o diâmetro é sempre o dobro do raio. Uma pizza de 40 cm de diâmetro tem 20 cm de raio."
+          ],
+          "terms": [
+            {
+              "word": "Raio",
+              "meaning": "a distância do centro do círculo até a borda."
+            },
+            {
+              "word": "Diâmetro",
+              "meaning": "a linha que atravessa o círculo de lado a lado passando pelo centro. Vale dois raios."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O número pi",
+          "body": [
+            "O contorno de qualquer círculo dividido pelo diâmetro dá sempre o mesmo número: cerca de 3,14. Esse número se chama pi e se escreve π.",
+            "Ele tem infinitas casas depois da vírgula. Na prova, use o valor que o enunciado der (3 ou 3,14)."
+          ],
+          "terms": [
+            {
+              "word": "Pi (π)",
+              "meaning": "o número que diz quantas vezes o contorno de um círculo é maior que o diâmetro. Vale cerca de 3,14."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O contorno do círculo",
+          "body": [
+            "Se o contorno é π vezes o diâmetro, a conta é contorno = π × diâmetro. Como o diâmetro são dois raios, também se escreve 2 × π × raio.",
+            "Esse contorno também se chama circunferência."
+          ],
+          "example": {
+            "label": "Uma roda de bicicleta de 70 cm de diâmetro",
+            "lines": [
+              "Contorno = π × diâmetro.",
+              "3,14 × 70 = 219,8.",
+              "A cada volta, a bicicleta anda cerca de 2,2 m."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "Circunferência",
+              "meaning": "a linha da borda do círculo. O tamanho dela é o contorno."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A área do círculo",
+          "body": [
+            "A área do círculo é π × raio × raio. Escreve-se π × r², em que r² é o raio vezes ele mesmo.",
+            "Cuidado: aqui entra o raio, e não o diâmetro. Se a prova der o diâmetro, divida por 2 primeiro."
+          ],
+          "figure": {
+            "src": "/figuras/dia-a-dia/circulo.svg",
+            "alt": "Um círculo com o centro marcado. Uma linha vai do centro à borda e é o raio. Outra atravessa o círculo passando pelo centro e é o diâmetro, que vale dois raios. Ao lado, as contas: contorno igual a 2 vezes pi vezes o raio, e área igual a pi vezes o raio ao quadrado.",
+            "caption": "Contorno usa o raio uma vez; área usa o raio duas vezes."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Pizza grande ou duas médias?",
+          "body": [
+            "Como a área usa o raio duas vezes, um aumento pequeno no tamanho dá muito mais pizza.",
+            "Uma pizza de 40 cm de diâmetro tem mais área que duas de 25 cm. Faça a conta com π = 3."
+          ],
+          "example": {
+            "label": "A conta das pizzas",
+            "lines": [
+              "pizza de 40 cm: raio 20, área 3 × 20 × 20 = 1 200 cm²",
+              "pizza de 25 cm: raio 12,5, área 3 × 12,5 × 12,5 = 468,75 cm²",
+              "duas de 25 cm: 937,5 cm², menos que uma de 40"
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova costuma dar o diâmetro e pedir a área, para ver se você divide por 2. Também pergunta quantas voltas uma roda dá num certo caminho."
+          ],
+          "bullets": [
+            "“Uma praça circular tem 20 m de diâmetro. Qual é a área? Use π = 3.”",
+            "“Uma roda de 50 cm de raio dá quantas voltas em 314 m?”",
+            "“Qual é o comprimento da borda de um prato de 10 cm de raio?”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Usar o diâmetro na fórmula da área. A área pede o raio.",
+            "Confundir contorno com área: contorno usa o raio uma vez, área usa duas.",
+            "Achar que dobrar o raio dobra a área. Ela fica quatro vezes maior.",
+            "Esquecer a unidade: contorno em metros, área em metros quadrados."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Diâmetro é o dobro do raio. O contorno é π × diâmetro, ou 2 × π × raio.",
+            "A área é π × raio × raio. π vale cerca de 3,14."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Raio",
+          "statement": "Um prato tem 26 cm de diâmetro. Qual é o raio?",
+          "options": [
+            "13 cm",
+            "52 cm",
+            "26 cm",
+            "8,3 cm",
+            "81,6 cm"
+          ],
+          "correct_index": 0,
+          "explanation": "O raio é metade do diâmetro: 26 ÷ 2 = 13 cm.",
+          "pitfall": "52 cm dobra o diâmetro em vez de dividir."
+        },
+        {
+          "topic": "Contorno",
+          "statement": "Qual é o contorno de um prato de 10 cm de raio? Use π = 3,14.",
+          "options": [
+            "62,8 cm",
+            "31,4 cm",
+            "314 cm",
+            "20 cm",
+            "628 cm"
+          ],
+          "correct_index": 0,
+          "explanation": "2 × 3,14 × 10 = 62,8 cm.",
+          "pitfall": "31,4 cm usa o raio como se fosse o diâmetro."
+        },
+        {
+          "topic": "Área",
+          "statement": "Uma praça circular tem 20 m de diâmetro. Qual é a área? Use π = 3.",
+          "options": [
+            "300 m²",
+            "1 200 m²",
+            "60 m²",
+            "120 m²",
+            "30 m²"
+          ],
+          "correct_index": 0,
+          "explanation": "O raio é 10. A área é 3 × 10 × 10 = 300 m².",
+          "pitfall": "1 200 m² usa o diâmetro na fórmula. A área pede o raio."
+        },
+        {
+          "topic": "Voltas",
+          "statement": "Uma roda de 50 cm de raio dá quantas voltas para percorrer 314 m? Use π = 3,14.",
+          "options": [
+            "100",
+            "314",
+            "200",
+            "50",
+            "1 000"
+          ],
+          "correct_index": 0,
+          "explanation": "Uma volta anda 2 × 3,14 × 0,5 = 3,14 m. Então 314 ÷ 3,14 = 100 voltas.",
+          "pitfall": "200 voltas usa o raio no lugar do diâmetro na conta do contorno."
+        },
+        {
+          "topic": "Dobrar o raio",
+          "statement": "Se o raio de um círculo dobra, a área:",
+          "options": [
+            "fica 4 vezes maior",
+            "dobra",
+            "fica 3 vezes maior",
+            "fica igual",
+            "fica 8 vezes maior"
+          ],
+          "correct_index": 0,
+          "explanation": "A área usa o raio duas vezes. Dobrar o raio multiplica a área por 2 × 2 = 4.",
+          "pitfall": "Quem dobra é o contorno. A área cresce mais."
+        },
+        {
+          "topic": "Pi",
+          "statement": "O que o número π representa?",
+          "options": [
+            "quantas vezes o contorno é maior que o diâmetro",
+            "a área de um círculo de raio 1 metro",
+            "o diâmetro de um círculo qualquer",
+            "a metade do raio",
+            "o número de lados do círculo"
+          ],
+          "correct_index": 0,
+          "explanation": "Em qualquer círculo, contorno dividido pelo diâmetro dá π.",
+          "pitfall": "A área do círculo de raio 1 também vale π, mas não é isso que o número representa."
+        },
+        {
+          "topic": "Pizza",
+          "statement": "Usando π = 3, quanto de área tem uma pizza de 30 cm de diâmetro?",
+          "options": [
+            "675 cm²",
+            "2 700 cm²",
+            "90 cm²",
+            "225 cm²",
+            "450 cm²"
+          ],
+          "correct_index": 0,
+          "explanation": "O raio é 15. A área é 3 × 15 × 15 = 675 cm².",
+          "pitfall": "2 700 usa o diâmetro inteiro."
+        },
+        {
+          "topic": "Contas",
+          "format": "match",
+          "statement": "Ligue cada medida à sua conta.",
+          "pairs": [
+            {
+              "left": "diâmetro",
+              "right": "2 × raio"
+            },
+            {
+              "left": "contorno",
+              "right": "2 × π × raio"
+            },
+            {
+              "left": "área",
+              "right": "π × raio × raio"
+            }
+          ],
+          "explanation": "O diâmetro não usa π. O contorno usa o raio uma vez, e a área duas.",
+          "pitfall": "Contorno e área se trocam fácil. Lembre: área tem raio vezes raio."
+        },
+        {
+          "topic": "Diâmetro",
+          "statement": "Um círculo tem raio de 8 cm. Qual é o diâmetro?",
+          "options": [
+            "16 cm",
+            "4 cm",
+            "8 cm",
+            "64 cm",
+            "25,12 cm"
+          ],
+          "correct_index": 0,
+          "explanation": "O diâmetro é o dobro do raio: 2 × 8 = 16 cm.",
+          "pitfall": "4 cm divide o raio em vez de dobrar.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Valor de pi",
+          "statement": "Qual é o valor aproximado de π?",
+          "options": [
+            "3,14",
+            "2,71",
+            "1,41",
+            "3,41",
+            "31,4"
+          ],
+          "correct_index": 0,
+          "explanation": "π vale cerca de 3,14.",
+          "pitfall": "3,41 troca os algarismos de lugar.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Contorno",
+          "statement": "Uma mesa redonda tem 1 m de diâmetro. Quantos metros de fita contornam a borda? Use π = 3,14.",
+          "options": [
+            "3,14 m",
+            "6,28 m",
+            "1,57 m",
+            "0,785 m",
+            "2 m"
+          ],
+          "correct_index": 0,
+          "explanation": "Contorno = π × diâmetro = 3,14 × 1 = 3,14 m.",
+          "pitfall": "6,28 m usa o diâmetro como se fosse o raio.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Área",
+          "statement": "Qual é a área de um círculo de raio 4 m? Use π = 3,14.",
+          "options": [
+            "50,24 m²",
+            "25,12 m²",
+            "12,56 m²",
+            "200,96 m²",
+            "16 m²"
+          ],
+          "correct_index": 0,
+          "explanation": "3,14 × 4 × 4 = 3,14 × 16 = 50,24 m².",
+          "pitfall": "25,12 é o contorno: 2 × 3,14 × 4.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Pizzas",
+          "statement": "O que tem mais pizza: uma de 40 cm de diâmetro ou duas de 25 cm?",
+          "options": [
+            "Uma de 40 cm.",
+            "Duas de 25 cm.",
+            "As duas opções dão o mesmo.",
+            "Depende do sabor.",
+            "Não dá para comparar sem π exato."
+          ],
+          "correct_index": 0,
+          "explanation": "A de 40 cm tem 1 200 cm² (com π = 3). Cada uma de 25 cm tem cerca de 469 cm², e as duas somam 937,5 cm².",
+          "pitfall": "Somar os diâmetros (50 contra 40) engana. A área cresce com o raio vezes o raio.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Volta na praça",
+          "statement": "Uma pista circular tem 50 m de raio. Quantas voltas completas uma pessoa precisa dar para andar pelo menos 1 km? Use π = 3,14.",
+          "options": [
+            "4",
+            "3",
+            "10",
+            "2",
+            "314"
+          ],
+          "correct_index": 0,
+          "explanation": "Uma volta tem 2 × 3,14 × 50 = 314 m. Três voltas dão 942 m, menos de 1 km. São precisas 4.",
+          "pitfall": "3 voltas ficam perto, mas não chegam a 1 000 m.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "teorema-de-pitagoras",
+      "title": "O teorema de Pitágoras",
+      "module": "Geometria",
+      "summary": "No triângulo com um canto reto, os quadrados dos dois lados menores somam o quadrado do maior. Com isso se mede o que não dá para medir com trena.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A escada no muro",
+          "body": [
+            "Uma escada está apoiada num muro, com o pé um pouco afastado. Escada, muro e chão formam um triângulo.",
+            "O muro e o chão fazem um canto reto. Sabendo o tamanho da escada e a distância do pé, dá para descobrir a altura que ela alcança sem subir nela."
+          ],
+          "terms": [
+            {
+              "word": "Ângulo reto",
+              "meaning": "o ângulo de 90 graus, o canto de uma folha de papel."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os nomes dos lados",
+          "body": [
+            "No triângulo com um ângulo reto, os dois lados que formam o canto se chamam catetos. O lado do outro lado do canto é a hipotenusa.",
+            "A hipotenusa é sempre o maior lado. Na escada, ela é a própria escada."
+          ],
+          "terms": [
+            {
+              "word": "Cateto",
+              "meaning": "cada um dos dois lados que formam o ângulo reto."
+            },
+            {
+              "word": "Hipotenusa",
+              "meaning": "o lado de frente para o ângulo reto. É sempre o maior dos três."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A regra",
+          "body": [
+            "Eleve cada cateto ao quadrado, ou seja, multiplique por ele mesmo. Some os dois resultados. O total é a hipotenusa ao quadrado.",
+            "Em símbolos: a² = b² + c², em que a é a hipotenusa."
+          ],
+          "figure": {
+            "src": "/figuras/dia-a-dia/pitagoras.svg",
+            "alt": "Um triângulo com um canto reto e lados 3, 4 e 5. Sobre cada lado há um quadrado: o do lado 3 tem área 9, o do lado 4 tem área 16, e o do lado 5, que é a hipotenusa, tem área 25, que é 9 mais 16.",
+            "caption": "Os dois quadrados menores juntos têm a mesma área do maior."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A volta: a raiz quadrada",
+          "body": [
+            "A conta dá o quadrado da hipotenusa, e não ela. Para voltar, procura-se o número que multiplicado por ele mesmo dá aquele total. Isso é a raiz quadrada.",
+            "Se a² = 25, então a = 5, porque 5 × 5 = 25."
+          ],
+          "terms": [
+            {
+              "word": "Raiz quadrada (√)",
+              "meaning": "o número que, multiplicado por ele mesmo, dá o valor pedido. √25 = 5."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Achar a hipotenusa",
+          "body": [
+            "Quando a prova dá os dois catetos, somam-se os quadrados e tira-se a raiz quadrada."
+          ],
+          "example": {
+            "label": "Uma pessoa anda 6 m para a frente e 8 m para o lado",
+            "lines": [
+              "Os catetos são 6 e 8.",
+              "6 × 6 = 36 e 8 × 8 = 64.",
+              "36 + 64 = 100.",
+              "√100 = 10. Ela está a 10 m do ponto de partida."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Achar um cateto",
+          "body": [
+            "Quando a prova dá a hipotenusa e um cateto, a conta é de menos. Do quadrado da hipotenusa, tira-se o quadrado do cateto conhecido."
+          ],
+          "example": {
+            "label": "A escada de 5 m com o pé a 3 m do muro",
+            "lines": [
+              "A escada é a hipotenusa: 5 × 5 = 25.",
+              "O pé é um cateto: 3 × 3 = 9.",
+              "25 − 9 = 16.",
+              "√16 = 4. A escada alcança 4 m de altura."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os trios que a prova adora",
+          "body": [
+            "Alguns trios de números sem vírgula servem na regra. Reconhecê-los poupa conta.",
+            "Os múltiplos de um trio também servem: 3, 4 e 5 vezes 2 dão 6, 8 e 10."
+          ],
+          "table": {
+            "label": "Trios que servem",
+            "headers": [
+              "Catetos",
+              "Hipotenusa",
+              "Conferência"
+            ],
+            "rows": [
+              [
+                "3 e 4",
+                "5",
+                "9 + 16 = 25"
+              ],
+              [
+                "6 e 8",
+                "10",
+                "36 + 64 = 100"
+              ],
+              [
+                "5 e 12",
+                "13",
+                "25 + 144 = 169"
+              ],
+              [
+                "8 e 15",
+                "17",
+                "64 + 225 = 289"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "Quase sempre a questão tem uma escada, uma rampa, uma diagonal de tela ou um caminho em L. Desenhe o triângulo e marque o canto reto."
+          ],
+          "bullets": [
+            "“Uma TV tem 48 cm de altura e 64 cm de largura. Qual é a diagonal?”",
+            "“Uma rampa sobe 5 m e avança 12 m. Qual é o comprimento da rampa?”",
+            "“Um terreno quadrado de 10 m de lado tem diagonal de quanto?”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Somar os lados em vez de somar os quadrados: 3 + 4 não dá 5.",
+            "Esquecer a raiz quadrada no fim e responder 25 em vez de 5.",
+            "Somar os quadrados quando o que falta é um cateto. Aí é subtração.",
+            "Usar a regra num triângulo sem ângulo reto. Ela só vale com o canto de 90°."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "No triângulo com ângulo reto, hipotenusa² = cateto² + cateto².",
+            "Hipotenusa: some os quadrados e tire a raiz. Cateto: subtraia os quadrados e tire a raiz."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Hipotenusa",
+          "statement": "Os catetos de um triângulo com ângulo reto medem 9 e 12. Quanto mede a hipotenusa?",
+          "options": [
+            "15",
+            "21",
+            "225",
+            "√21",
+            "13"
+          ],
+          "correct_index": 0,
+          "explanation": "81 + 144 = 225, e √225 = 15.",
+          "pitfall": "21 soma os lados. A regra soma os quadrados."
+        },
+        {
+          "topic": "TV",
+          "statement": "Uma TV tem 48 cm de altura e 64 cm de largura. Qual é a diagonal?",
+          "options": [
+            "80 cm",
+            "112 cm",
+            "56 cm",
+            "6 400 cm",
+            "100 cm"
+          ],
+          "correct_index": 0,
+          "explanation": "48² = 2 304 e 64² = 4 096. Somando, 6 400, e √6 400 = 80 cm.",
+          "pitfall": "6 400 esqueceu a raiz quadrada no fim."
+        },
+        {
+          "topic": "Cateto",
+          "statement": "Uma escada de 13 m está apoiada num muro, com o pé a 5 m do muro. Que altura ela alcança?",
+          "options": [
+            "12 m",
+            "8 m",
+            "18 m",
+            "√194 m",
+            "144 m"
+          ],
+          "correct_index": 0,
+          "explanation": "169 − 25 = 144, e √144 = 12 m.",
+          "pitfall": "√194 soma os quadrados. Quando falta um cateto, subtrai-se."
+        },
+        {
+          "topic": "Rampa",
+          "statement": "Uma rampa sobe 5 m e avança 12 m. Qual é o comprimento da rampa?",
+          "options": [
+            "13 m",
+            "17 m",
+            "7 m",
+            "169 m",
+            "√119 m"
+          ],
+          "correct_index": 0,
+          "explanation": "25 + 144 = 169, e √169 = 13 m.",
+          "pitfall": "17 m soma os lados direto."
+        },
+        {
+          "topic": "Diagonal",
+          "statement": "Qual é a diagonal de um quadrado de 10 m de lado, aproximadamente?",
+          "options": [
+            "14,1 m",
+            "20 m",
+            "10 m",
+            "100 m",
+            "200 m"
+          ],
+          "correct_index": 0,
+          "explanation": "A diagonal corta o quadrado em dois triângulos. 100 + 100 = 200, e √200 ≈ 14,1 m.",
+          "pitfall": "20 m soma os lados. A diagonal é mais curta que dar a volta."
+        },
+        {
+          "topic": "Quando vale",
+          "statement": "A regra de Pitágoras vale para:",
+          "options": [
+            "triângulos com um ângulo reto",
+            "qualquer triângulo",
+            "só triângulos com lados iguais",
+            "qualquer figura de quatro lados",
+            "só triângulos de lados 3, 4 e 5"
+          ],
+          "correct_index": 0,
+          "explanation": "A regra só funciona quando há um ângulo de 90°.",
+          "pitfall": "3, 4 e 5 é só um exemplo de trio. A regra vale para todo triângulo com canto reto."
+        },
+        {
+          "topic": "Caminho",
+          "statement": "Uma pessoa anda 30 m para o norte e 40 m para o leste. A que distância em linha reta ela está do início?",
+          "options": [
+            "50 m",
+            "70 m",
+            "10 m",
+            "2 500 m",
+            "35 m"
+          ],
+          "correct_index": 0,
+          "explanation": "É o trio 3, 4 e 5 vezes 10: 30, 40 e 50.",
+          "pitfall": "70 m é o caminho andado, e não a distância em linha reta."
+        },
+        {
+          "topic": "Passos",
+          "format": "order",
+          "statement": "Ponha na ordem os passos para achar a hipotenusa.",
+          "options": [
+            "Identificar os dois catetos.",
+            "Multiplicar cada cateto por ele mesmo.",
+            "Somar os dois resultados.",
+            "Tirar a raiz quadrada da soma."
+          ],
+          "explanation": "Primeiro os quadrados, depois a soma e por último a raiz.",
+          "pitfall": "Tirar a raiz antes de somar não dá o mesmo resultado."
+        },
+        {
+          "topic": "Trio",
+          "statement": "Os catetos medem 3 e 4. Quanto mede a hipotenusa?",
+          "options": [
+            "5",
+            "7",
+            "25",
+            "12",
+            "1"
+          ],
+          "correct_index": 0,
+          "explanation": "9 + 16 = 25, e √25 = 5.",
+          "pitfall": "25 esqueceu a raiz quadrada.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Nomes",
+          "statement": "Qual é o maior lado de um triângulo com ângulo reto?",
+          "options": [
+            "a hipotenusa",
+            "o cateto de baixo",
+            "o cateto em pé",
+            "os três são iguais",
+            "depende do desenho"
+          ],
+          "correct_index": 0,
+          "explanation": "A hipotenusa fica de frente para o ângulo reto e é sempre o maior lado.",
+          "pitfall": "Desenho virado não muda isso: o maior lado é sempre o oposto ao canto reto.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Múltiplo",
+          "statement": "Os catetos medem 10 e 24. Quanto mede a hipotenusa?",
+          "options": [
+            "26",
+            "34",
+            "676",
+            "14",
+            "20"
+          ],
+          "correct_index": 0,
+          "explanation": "É o trio 5, 12 e 13 vezes 2. Ou 100 + 576 = 676, e √676 = 26.",
+          "pitfall": "676 esqueceu a raiz quadrada.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Pipa",
+          "statement": "A linha de uma pipa tem 50 m e está esticada. A pipa está bem em cima de um ponto a 30 m de quem segura. Qual é a altura da pipa?",
+          "options": [
+            "40 m",
+            "80 m",
+            "20 m",
+            "58 m",
+            "1 600 m"
+          ],
+          "correct_index": 0,
+          "explanation": "A linha é a hipotenusa: 2 500 − 900 = 1 600, e √1 600 = 40 m.",
+          "pitfall": "58 m soma os quadrados. Aqui falta um cateto.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Não é retângulo",
+          "statement": "Um triângulo tem lados 5, 6 e 8. Ele tem ângulo reto?",
+          "options": [
+            "Não, porque 25 + 36 não dá 64.",
+            "Sim, porque 5 + 6 é maior que 8.",
+            "Sim, porque todo triângulo tem um.",
+            "Não, porque os lados são diferentes.",
+            "Sim, porque 8 é o maior lado."
+          ],
+          "correct_index": 0,
+          "explanation": "Se tivesse, 5² + 6² daria 8². Mas 25 + 36 = 61, e não 64.",
+          "pitfall": "Ter lados diferentes não impede o ângulo reto: 3, 4 e 5 são diferentes e têm.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Duas vezes",
+          "statement": "Uma caixa tem fundo de 3 por 4 e altura 12. Qual é a maior vareta reta que cabe dentro dela, de um canto ao canto oposto?",
+          "options": [
+            "13",
+            "19",
+            "5",
+            "12",
+            "169"
+          ],
+          "correct_index": 0,
+          "explanation": "A diagonal do fundo é 5. Com a altura, forma outro triângulo: 25 + 144 = 169, e √169 = 13.",
+          "pitfall": "5 é só a diagonal do fundo. A vareta pode subir na diagonal da caixa inteira.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "volume",
+      "title": "Volume: caixas, latas e litros",
+      "module": "Geometria",
+      "summary": "Volume é quanto espaço uma coisa ocupa. Numa caixa, é comprimento × largura × altura; numa lata, a área do fundo × a altura. E cada mil centímetros cúbicos são um litro.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Encher a caixa de cubinhos",
+          "body": [
+            "Imagine uma caixa de sapato e um saco de dados de 1 cm. Quantos dados cabem dentro dela?",
+            "Primeiro se forra o fundo com uma camada. Depois se empilham camadas até a tampa.",
+            "Essa contagem de cubinhos é o volume."
+          ],
+          "terms": [
+            {
+              "word": "Volume",
+              "meaning": "o espaço que uma coisa ocupa, contado em cubinhos."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O centímetro cúbico",
+          "body": [
+            "O cubinho de 1 cm de lado tem 1 centímetro cúbico (cm³) de volume. O de 1 m de lado tem 1 metro cúbico (m³).",
+            "O número pequeno 3 lembra que a medida tem três direções: comprimento, largura e altura."
+          ],
+          "terms": [
+            {
+              "word": "Centímetro cúbico (cm³)",
+              "meaning": "o volume de um cubo com 1 cm de lado."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O volume da caixa",
+          "body": [
+            "O fundo de uma caixa de 10 cm por 6 cm tem 60 cubinhos. Com 4 cm de altura, cabem 4 camadas.",
+            "São 60 × 4 = 240 cm³. A conta é comprimento × largura × altura.",
+            "Uma caixa assim, com fundo e tampa iguais e paredes retas, se chama prisma."
+          ],
+          "terms": [
+            {
+              "word": "Prisma",
+              "meaning": "um sólido com fundo e tampa iguais e paredes retas. A caixa de sapato é um prisma."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O volume da lata",
+          "body": [
+            "A lata tem o mesmo jeito da caixa: um fundo que se repete até a tampa. Só que o fundo é um círculo.",
+            "Então o volume é a área do fundo × a altura. A área do círculo é π × raio × raio."
+          ],
+          "terms": [
+            {
+              "word": "Cilindro",
+              "meaning": "o sólido com fundo e tampa redondos e iguais: o formato da lata."
+            },
+            {
+              "word": "Raio e diâmetro",
+              "meaning": "o raio vai do centro do círculo até a borda. O diâmetro atravessa o círculo inteiro e vale dois raios."
+            },
+            {
+              "word": "Pi (π)",
+              "meaning": "o número que diz quantas vezes o contorno do círculo é maior que a largura dele. Vale cerca de 3,14."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/dia-a-dia/volumes.svg",
+            "alt": "Duas figuras com a conta do volume. À esquerda, uma caixa com comprimento, largura e altura: volume igual ao produto dos três. À direita, uma lata em forma de cilindro com raio r e altura h: volume igual a pi vezes r ao quadrado vezes h.",
+            "caption": "Nos dois casos: área do fundo vezes a altura."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Volume vira litro",
+          "body": [
+            "Um litro cabe exatamente num cubo de 10 cm de lado. Esse cubo tem 10 × 10 × 10 = 1 000 cm³.",
+            "Então 1 litro = 1 000 cm³, e 1 cm³ = 1 mL. Um metro cúbico tem mil litros."
+          ],
+          "table": {
+            "label": "Volume e capacidade",
+            "headers": [
+              "Volume",
+              "Capacidade"
+            ],
+            "rows": [
+              [
+                "1 cm³",
+                "1 mL"
+              ],
+              [
+                "1 000 cm³",
+                "1 L"
+              ],
+              [
+                "1 m³",
+                "1 000 L"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Um aquário de verdade",
+          "body": [
+            "Um aquário de 50 cm por 30 cm por 40 cm de altura tem 50 × 30 × 40 = 60 000 cm³.",
+            "Divide-se por 1 000 para ter litros: 60 L. Se encher só até 30 cm de altura, cabem 50 × 30 × 30 = 45 000 cm³, ou 45 L."
+          ],
+          "example": {
+            "label": "O aquário",
+            "lines": [
+              "volume total: 60 000 cm³ = 60 L",
+              "até 30 cm: 45 000 cm³ = 45 L",
+              "a altura da água é que manda"
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá as medidas em centímetros e pede a resposta em litros. Também pede quantas embalagens pequenas cabem numa grande."
+          ],
+          "bullets": [
+            "“Quantos litros cabem numa caixa-d’água de 1 m por 1 m por 1,5 m?”",
+            "“Uma lata tem 4 cm de raio e 10 cm de altura. Qual é o volume? Use π = 3.”",
+            "“Quantos cubos de 2 cm de lado cabem numa caixa de 10 por 6 por 4?”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Esquecer de converter cm³ em litros: são mil para um.",
+            "Usar o diâmetro da lata como se fosse o raio.",
+            "Achar que dobrar todas as medidas dobra o volume. Ele fica oito vezes maior.",
+            "Somar as medidas em vez de multiplicar."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Volume é área do fundo × altura. Caixa: comprimento × largura × altura. Lata: π × raio × raio × altura.",
+            "1 000 cm³ são 1 litro, e 1 m³ são 1 000 litros."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Caixa",
+          "statement": "Qual é o volume de uma caixa de 10 cm por 6 cm por 4 cm?",
+          "options": [
+            "240 cm³",
+            "20 cm³",
+            "60 cm³",
+            "120 cm³",
+            "480 cm³"
+          ],
+          "correct_index": 0,
+          "explanation": "10 × 6 × 4 = 240 cm³.",
+          "pitfall": "20 soma as medidas em vez de multiplicar."
+        },
+        {
+          "topic": "Litros",
+          "statement": "Quantos litros cabem numa caixa-d’água de 1 m por 1 m por 1,5 m?",
+          "options": [
+            "1 500 L",
+            "150 L",
+            "15 L",
+            "3,5 L",
+            "15 000 L"
+          ],
+          "correct_index": 0,
+          "explanation": "O volume é 1,5 m³. Cada m³ tem 1 000 L, então são 1 500 L.",
+          "pitfall": "150 L usa 100 litros por metro cúbico."
+        },
+        {
+          "topic": "Lata",
+          "statement": "Uma lata tem 4 cm de raio e 10 cm de altura. Qual é o volume? Use π = 3.",
+          "options": [
+            "480 cm³",
+            "120 cm³",
+            "1 920 cm³",
+            "240 cm³",
+            "160 cm³"
+          ],
+          "correct_index": 0,
+          "explanation": "Área do fundo: 3 × 4 × 4 = 48. Vezes a altura: 48 × 10 = 480 cm³.",
+          "pitfall": "1 920 usa o diâmetro (8) no lugar do raio."
+        },
+        {
+          "topic": "Aquário",
+          "statement": "Um aquário de 50 cm por 20 cm por 30 cm de altura tem quantos litros?",
+          "options": [
+            "30 L",
+            "300 L",
+            "3 L",
+            "100 L",
+            "30 000 L"
+          ],
+          "correct_index": 0,
+          "explanation": "50 × 20 × 30 = 30 000 cm³. Divididos por 1 000, dão 30 L.",
+          "pitfall": "30 000 é o volume em cm³. Falta passar para litros."
+        },
+        {
+          "topic": "Cubinhos",
+          "statement": "Quantos cubos de 2 cm de lado cabem numa caixa de 10 cm por 6 cm por 4 cm?",
+          "options": [
+            "30",
+            "240",
+            "120",
+            "60",
+            "8"
+          ],
+          "correct_index": 0,
+          "explanation": "Cabem 5 cubos no comprimento, 3 na largura e 2 na altura: 5 × 3 × 2 = 30.",
+          "pitfall": "240 conta cubos de 1 cm. O cubo de 2 cm ocupa 8 desses."
+        },
+        {
+          "topic": "Dobrar",
+          "statement": "Se as três medidas de uma caixa dobram, o volume:",
+          "options": [
+            "fica 8 vezes maior",
+            "dobra",
+            "fica 4 vezes maior",
+            "fica 6 vezes maior",
+            "fica igual"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada medida dobra: 2 × 2 × 2 = 8.",
+          "pitfall": "4 vezes é o que acontece com a área. O volume tem três medidas."
+        },
+        {
+          "topic": "cm³ e mL",
+          "statement": "Um frasco tem 250 cm³. Quantos mililitros cabem nele?",
+          "options": [
+            "250 mL",
+            "2,5 mL",
+            "25 mL",
+            "2 500 mL",
+            "0,25 mL"
+          ],
+          "correct_index": 0,
+          "explanation": "1 cm³ é exatamente 1 mL.",
+          "pitfall": "0,25 é o valor em litros, e não em mililitros."
+        },
+        {
+          "topic": "Volume e capacidade",
+          "format": "match",
+          "statement": "Ligue cada volume à capacidade igual.",
+          "pairs": [
+            {
+              "left": "1 cm³",
+              "right": "1 mL"
+            },
+            {
+              "left": "1 000 cm³",
+              "right": "1 L"
+            },
+            {
+              "left": "1 m³",
+              "right": "1 000 L"
+            },
+            {
+              "left": "500 cm³",
+              "right": "meio litro"
+            }
+          ],
+          "explanation": "Cada centímetro cúbico é um mililitro. Mil deles são um litro.",
+          "pitfall": "1 m³ não é 100 litros. São mil."
+        },
+        {
+          "topic": "Cubo",
+          "statement": "Qual é o volume de um cubo de 3 cm de lado?",
+          "options": [
+            "27 cm³",
+            "9 cm³",
+            "12 cm³",
+            "18 cm³",
+            "6 cm³"
+          ],
+          "correct_index": 0,
+          "explanation": "3 × 3 × 3 = 27 cm³.",
+          "pitfall": "9 é a área de uma face. O volume multiplica mais uma vez.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Litro",
+          "statement": "Quantos cm³ tem 1 litro?",
+          "options": [
+            "1 000",
+            "100",
+            "10",
+            "10 000",
+            "1"
+          ],
+          "correct_index": 0,
+          "explanation": "Um litro cabe num cubo de 10 cm de lado: 10 × 10 × 10 = 1 000 cm³.",
+          "pitfall": "100 é a área de uma face desse cubo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Altura da água",
+          "statement": "Uma caixa de 40 cm por 25 cm recebe 20 litros de água. Até que altura a água sobe?",
+          "options": [
+            "20 cm",
+            "2 cm",
+            "10 cm",
+            "50 cm",
+            "200 cm"
+          ],
+          "correct_index": 0,
+          "explanation": "20 L são 20 000 cm³. O fundo tem 40 × 25 = 1 000 cm². Então 20 000 ÷ 1 000 = 20 cm.",
+          "pitfall": "2 cm esquece de passar litros para cm³.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Cilindro",
+          "statement": "Uma caixa-d’água cilíndrica tem 1 m de raio e 2 m de altura. Quantos litros cabem nela? Use π = 3.",
+          "options": [
+            "6 000 L",
+            "600 L",
+            "24 000 L",
+            "2 000 L",
+            "6 L"
+          ],
+          "correct_index": 0,
+          "explanation": "3 × 1 × 1 × 2 = 6 m³. Cada m³ tem 1 000 L: 6 000 L.",
+          "pitfall": "24 000 L usa o diâmetro da caixa (2 m) no lugar do raio.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Embalagens",
+          "statement": "Uma caixa de 30 cm por 20 cm por 10 cm vai ser enchida com suco de caixinhas de 200 mL. Quantas caixinhas são precisas?",
+          "options": [
+            "30",
+            "300",
+            "3",
+            "60",
+            "6 000"
+          ],
+          "correct_index": 0,
+          "explanation": "A caixa tem 6 000 cm³, que são 6 000 mL. Então 6 000 ÷ 200 = 30 caixinhas.",
+          "pitfall": "300 erra a conversão: cada cm³ é um mL, sem multiplicar por 10.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Lata maior",
+          "statement": "Uma lata tem raio e altura dobrados em relação a outra. Quantas vezes o volume é maior?",
+          "options": [
+            "8",
+            "4",
+            "2",
+            "6",
+            "16"
+          ],
+          "correct_index": 0,
+          "explanation": "O raio entra duas vezes e a altura uma: 2 × 2 × 2 = 8.",
+          "pitfall": "4 conta só o raio vezes o raio e esquece a altura.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "media-moda-mediana",
+      "title": "Média, moda e mediana",
+      "module": "Dados e chance",
+      "summary": "Três jeitos de resumir uma lista de números num só. A média divide por igual, a mediana é o do meio e a moda é o que mais aparece.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A vaquinha da pizza",
+          "body": [
+            "Cinco amigos juntam dinheiro para uma pizza. Um tem 10 reais, outro 20, e os outros têm 15, 25 e 30.",
+            "Se todos tivessem dado o mesmo valor, quanto cada um teria dado? Essa é a pergunta da média."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A média: dividir por igual",
+          "body": [
+            "Para achar a média, soma-se tudo e divide-se pela quantidade de números."
+          ],
+          "example": {
+            "label": "A vaquinha",
+            "lines": [
+              "Soma: 10 + 20 + 15 + 25 + 30 = 100.",
+              "São 5 amigos.",
+              "100 ÷ 5 = 20. A média é 20 reais por pessoa."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "Média",
+              "meaning": "a soma dos valores dividida pela quantidade deles: o valor que cada um teria se tudo fosse dividido por igual."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A mediana: o do meio",
+          "body": [
+            "Para achar a mediana, ponha os números em ordem e pegue o do meio.",
+            "Se a quantidade for par, há dois no meio. Aí a mediana é a média desses dois."
+          ],
+          "example": {
+            "label": "Exemplos",
+            "lines": [
+              "3, 5, 8, 9, 20 → mediana 8",
+              "2, 4, 6, 10 → mediana (4 + 6) ÷ 2 = 5"
+            ]
+          },
+          "terms": [
+            {
+              "word": "Mediana",
+              "meaning": "o valor do meio quando a lista está em ordem."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A moda: o que mais aparece",
+          "body": [
+            "Em estatística, moda é o valor que aparece mais vezes. Numa lista de números de sapato vendidos, a moda é o número que mais saiu.",
+            "Uma lista pode ter duas modas, ou nenhuma, se nada se repete."
+          ],
+          "example": {
+            "label": "Sapatos vendidos",
+            "lines": [
+              "38, 40, 39, 38, 41, 38, 40",
+              "o 38 aparece três vezes",
+              "a moda é 38"
+            ]
+          },
+          "terms": [
+            {
+              "word": "Moda (em estatística)",
+              "meaning": "o valor que aparece mais vezes numa lista."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quando a média engana",
+          "body": [
+            "Numa rua, quatro pessoas ganham R$ 2 000 por mês e uma ganha R$ 52 000. A média dá R$ 12 000.",
+            "Ninguém ali ganha perto disso. Um valor muito fora puxa a média, mas não mexe na mediana, que continua R$ 2 000.",
+            "Por isso notícias sobre salário costumam usar a mediana."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A média ponderada",
+          "body": [
+            "Às vezes um valor vale mais que outro. Na escola, a prova pode ter peso 2 e o trabalho peso 1.",
+            "Multiplica-se cada nota pelo peso, soma-se tudo e divide-se pela soma dos pesos."
+          ],
+          "example": {
+            "label": "Prova 8 com peso 2, trabalho 5 com peso 1",
+            "lines": [
+              "8 × 2 = 16 e 5 × 1 = 5.",
+              "16 + 5 = 21.",
+              "Soma dos pesos: 3.",
+              "21 ÷ 3 = 7."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "Média ponderada",
+              "meaning": "a média em que cada valor conta de acordo com um peso."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá uma tabela de notas, idades ou salários e pede uma das três medidas. Às vezes pede o valor que falta para chegar a uma média."
+          ],
+          "bullets": [
+            "“Qual a mediana de 7, 3, 9, 4 e 6?”",
+            "“Um aluno tirou 6, 7 e 8. Quanto precisa tirar na quarta prova para ficar com média 7,5?”",
+            "“Qual medida representa melhor o salário típico dessa empresa?”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Pegar o número do meio sem pôr a lista em ordem antes.",
+            "Na lista de tamanho par, escolher um dos dois do meio em vez de tirar a média deles.",
+            "Na média ponderada, dividir pela quantidade de notas, e não pela soma dos pesos.",
+            "Achar que a moda é o maior valor. É o que mais se repete."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Média: soma e divide. Mediana: ordena e pega o do meio. Moda: o que mais aparece.",
+            "Um valor muito fora puxa a média, e não a mediana. Na média ponderada, divide-se pela soma dos pesos."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Média",
+          "statement": "Qual é a média de 4, 8, 6 e 10?",
+          "options": [
+            "7",
+            "6",
+            "28",
+            "8",
+            "9"
+          ],
+          "correct_index": 0,
+          "explanation": "4 + 8 + 6 + 10 = 28. Dividido por 4, dá 7.",
+          "pitfall": "28 é a soma. Falta dividir pela quantidade."
+        },
+        {
+          "topic": "Mediana",
+          "statement": "Qual é a mediana de 7, 3, 9, 4 e 6?",
+          "options": [
+            "6",
+            "9",
+            "5,8",
+            "4",
+            "7"
+          ],
+          "correct_index": 0,
+          "explanation": "Em ordem: 3, 4, 6, 7, 9. O do meio é 6.",
+          "pitfall": "9 é o do meio da lista fora de ordem. Ordene antes."
+        },
+        {
+          "topic": "Moda",
+          "statement": "Qual é a moda de 2, 5, 5, 7, 8, 5, 2?",
+          "options": [
+            "5",
+            "2",
+            "8",
+            "4,9",
+            "7"
+          ],
+          "correct_index": 0,
+          "explanation": "O 5 aparece três vezes, mais que qualquer outro.",
+          "pitfall": "8 é o maior valor, e não o que mais se repete."
+        },
+        {
+          "topic": "Mediana par",
+          "statement": "Qual é a mediana de 10, 2, 8 e 4?",
+          "options": [
+            "6",
+            "8",
+            "4",
+            "2",
+            "24"
+          ],
+          "correct_index": 0,
+          "explanation": "Em ordem: 2, 4, 8, 10. Os do meio são 4 e 8, e a média deles é 6.",
+          "pitfall": "8 é um dos dois do meio. Com quantidade par, tira-se a média dos dois."
+        },
+        {
+          "topic": "Nota que falta",
+          "statement": "Um aluno tirou 6, 7 e 8. Quanto precisa tirar na quarta prova para ficar com média 7,5?",
+          "options": [
+            "9",
+            "7,5",
+            "8",
+            "10",
+            "30"
+          ],
+          "correct_index": 0,
+          "explanation": "Para média 7,5 em 4 provas, a soma tem de ser 30. Já tem 21. Faltam 9.",
+          "pitfall": "30 é a soma total necessária, e não a nota da quarta prova."
+        },
+        {
+          "topic": "Ponderada",
+          "statement": "Prova com nota 6 e peso 3, trabalho com nota 9 e peso 1. Qual é a média?",
+          "options": [
+            "6,75",
+            "7,5",
+            "15",
+            "27",
+            "6"
+          ],
+          "correct_index": 0,
+          "explanation": "6 × 3 + 9 × 1 = 27. Soma dos pesos: 4. Então 27 ÷ 4 = 6,75.",
+          "pitfall": "7,5 é a média simples, sem os pesos."
+        },
+        {
+          "topic": "Valor fora",
+          "statement": "Salários: 2, 2, 2, 2 e 52 mil reais. Qual medida descreve melhor o salário típico?",
+          "options": [
+            "a mediana, de 2 mil",
+            "a média, de 12 mil",
+            "a soma, de 60 mil",
+            "o maior, de 52 mil",
+            "a diferença, de 50 mil"
+          ],
+          "correct_index": 0,
+          "explanation": "O salário de 52 mil puxa a média para 12 mil. A mediana mostra o que quase todos ganham.",
+          "pitfall": "A média é a conta mais conhecida, mas um só valor muito alto a deforma."
+        },
+        {
+          "topic": "Medidas",
+          "format": "match",
+          "statement": "Ligue cada medida ao seu jeito de calcular.",
+          "pairs": [
+            {
+              "left": "média",
+              "right": "somar tudo e dividir pela quantidade"
+            },
+            {
+              "left": "mediana",
+              "right": "ordenar e pegar o do meio"
+            },
+            {
+              "left": "moda",
+              "right": "ver o que mais se repete"
+            },
+            {
+              "left": "média ponderada",
+              "right": "multiplicar pelos pesos e dividir pela soma deles"
+            }
+          ],
+          "explanation": "As três primeiras resumem uma lista de jeitos diferentes. A ponderada dá peso a cada valor.",
+          "pitfall": "Mediana e média têm nomes parecidos. Mediana lembra meio."
+        },
+        {
+          "topic": "Média",
+          "statement": "Qual é a média de 5, 5 e 8?",
+          "options": [
+            "6",
+            "5",
+            "18",
+            "6,5",
+            "8"
+          ],
+          "correct_index": 0,
+          "explanation": "5 + 5 + 8 = 18, e 18 ÷ 3 = 6.",
+          "pitfall": "5 é a moda, e não a média.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Moda",
+          "statement": "Numa turma, as idades são 15, 16, 16, 17 e 15, 16. Qual é a moda?",
+          "options": [
+            "16",
+            "15",
+            "17",
+            "15,8",
+            "95"
+          ],
+          "correct_index": 0,
+          "explanation": "O 16 aparece três vezes, mais que os outros.",
+          "pitfall": "15 aparece duas vezes, uma a menos que o 16.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Mudar a média",
+          "statement": "A média de 4 números é 10. Se um quinto número igual a 20 entra, qual é a nova média?",
+          "options": [
+            "12",
+            "15",
+            "10",
+            "30",
+            "6"
+          ],
+          "correct_index": 0,
+          "explanation": "A soma dos 4 era 40. Com o 20, fica 60, e 60 ÷ 5 = 12.",
+          "pitfall": "15 tira a média entre 10 e 20, como se fossem só dois números.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Mediana com repetidos",
+          "statement": "Qual é a mediana de 1, 1, 2, 9, 9, 9?",
+          "options": [
+            "5,5",
+            "9",
+            "2",
+            "5,2",
+            "1"
+          ],
+          "correct_index": 0,
+          "explanation": "Os do meio são 2 e 9. A média deles é 5,5.",
+          "pitfall": "9 é a moda. A mediana é o meio da lista ordenada.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Média e mediana",
+          "statement": "Uma lista tem média 50 e mediana 30. O que isso indica?",
+          "options": [
+            "Há alguns valores bem altos puxando a média para cima.",
+            "Há valores muito baixos puxando a média para baixo.",
+            "Os valores são todos iguais.",
+            "A conta está errada: média e mediana são iguais.",
+            "Metade dos valores é maior que 50."
+          ],
+          "correct_index": 0,
+          "explanation": "A mediana mostra o meio. Uma média bem maior que ela indica valores altos que puxam a média.",
+          "pitfall": "“Metade é maior que 50” confunde: metade é maior que 30, que é a mediana.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Ponderada ao contrário",
+          "statement": "A média final é prova (peso 2) e trabalho (peso 1). O trabalho valeu 6. Quanto precisa tirar na prova para média 8?",
+          "options": [
+            "9",
+            "8",
+            "10",
+            "7",
+            "18"
+          ],
+          "correct_index": 0,
+          "explanation": "Para média 8 com pesos somando 3, o total tem de ser 24. O trabalho dá 6, e faltam 18 para a prova com peso 2: nota 9.",
+          "pitfall": "18 é o que a prova precisa valer já com o peso. A nota é a metade.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "graficos-e-tabelas",
+      "title": "Ler gráficos e tabelas",
+      "module": "Dados e chance",
+      "summary": "Gráfico é um resumo desenhado. Saber qual tipo serve para quê, e onde ele pode enganar, resolve boa parte das questões de prova.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O extrato do mês",
+          "body": [
+            "O aplicativo do banco mostra uma lista de gastos. Com trinta linhas, ninguém entende para onde o dinheiro foi.",
+            "Agora o mesmo aplicativo mostra um círculo dividido em fatias: mercado, transporte, lazer. De relance, dá para ver o maior gasto.",
+            "Gráfico é isso: um resumo desenhado de uma tabela."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A tabela vem primeiro",
+          "body": [
+            "Todo gráfico nasce de uma tabela. Ela tem um título, as categorias numa coluna e os valores na outra.",
+            "Antes de olhar o desenho, leia o título e as unidades. Gastos em reais e gastos em porcento contam histórias diferentes."
+          ],
+          "terms": [
+            {
+              "word": "Porcentagem (%)",
+              "meaning": "uma parte de cem: 40% são 40 de cada 100."
+            }
+          ],
+          "table": {
+            "label": "Gastos de uma família em um mês",
+            "headers": [
+              "Categoria",
+              "Valor",
+              "Parte do total"
+            ],
+            "rows": [
+              [
+                "moradia",
+                "R$ 1 200",
+                "40%"
+              ],
+              [
+                "mercado",
+                "R$ 900",
+                "30%"
+              ],
+              [
+                "transporte",
+                "R$ 450",
+                "15%"
+              ],
+              [
+                "lazer",
+                "R$ 450",
+                "15%"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os três gráficos mais comuns",
+          "body": [
+            "Cada tipo de gráfico responde melhor a uma pergunta. A tabela mostra qual usar."
+          ],
+          "table": {
+            "label": "Qual gráfico para qual pergunta",
+            "headers": [
+              "Gráfico",
+              "Responde bem",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "colunas ou barras",
+                "quem é maior, quem é menor",
+                "votos de cada candidato"
+              ],
+              [
+                "linhas",
+                "como algo mudou com o tempo",
+                "preço da gasolina mês a mês"
+              ],
+              [
+                "setores (pizza)",
+                "que parte do todo cada um é",
+                "divisão dos gastos da casa"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A fatia da pizza em graus",
+          "body": [
+            "No gráfico de setores, o círculo inteiro é 100% e tem 360°. Cada 1% vale 3,6°.",
+            "Uma fatia de 25% é um quarto do círculo: 90°. Uma de 50% é a metade: 180°."
+          ],
+          "example": {
+            "label": "Os gastos da família",
+            "lines": [
+              "moradia: 40% de 360° = 144°",
+              "mercado: 30% de 360° = 108°",
+              "transporte: 15% de 360° = 54°",
+              "lazer: 15% de 360° = 54°"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Ler o gráfico de linhas",
+          "body": [
+            "No gráfico de linhas, a linha horizontal embaixo mostra o tempo. A vertical, do lado, mostra o valor.",
+            "Linha subindo é crescimento, descendo é queda. A inclinação diz a rapidez: quanto mais em pé, mais rápida a mudança."
+          ],
+          "example": {
+            "label": "Preço do litro da gasolina",
+            "lines": [
+              "janeiro: R$ 5,80",
+              "fevereiro: R$ 5,90",
+              "março: R$ 6,30",
+              "a maior subida foi de fevereiro para março"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O gráfico que engana",
+          "body": [
+            "Um truque comum é começar a régua vertical bem acima do zero. Uma diferença pequena parece enorme.",
+            "Se as vendas foram de 100 para 104, isso é 4% a mais. Mas com a régua começando em 98, a segunda coluna parece três vezes mais alta.",
+            "Sempre olhe onde a régua começa antes de concluir."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mostra um gráfico e pede uma conta com ele: a diferença entre dois valores, a parte do total ou o maior crescimento."
+          ],
+          "bullets": [
+            "“Em qual mês houve o maior aumento?”",
+            "“Qual o ângulo da fatia que representa 20% do total?”",
+            "“Qual tipo de gráfico mostra melhor a evolução das vendas no ano?”",
+            "“O gráfico exagera a diferença entre os dois anos?”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Ler o desenho sem ler o título e as unidades.",
+            "Achar o mês de maior valor quando a pergunta é o de maior aumento.",
+            "Confiar no tamanho da coluna sem ver onde a régua começa.",
+            "Usar 100° em vez de 360° no círculo inteiro."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Gráfico é tabela desenhada: leia título e unidades primeiro. Colunas comparam, linhas mostram o tempo e setores mostram partes do todo.",
+            "O círculo tem 360°, e cada 1% vale 3,6°. Desconfie de régua que não começa no zero."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Tipo",
+          "statement": "Qual gráfico mostra melhor como o preço do arroz mudou ao longo do ano?",
+          "options": [
+            "de linhas",
+            "de setores",
+            "uma tabela de uma linha só",
+            "de setores com 12 fatias",
+            "nenhum gráfico serve"
+          ],
+          "correct_index": 0,
+          "explanation": "Mudança no tempo é o trabalho do gráfico de linhas.",
+          "pitfall": "Setores mostram partes de um todo, e não mudança."
+        },
+        {
+          "topic": "Fatia",
+          "statement": "Qual é o ângulo da fatia que representa 20% num gráfico de setores?",
+          "options": [
+            "72°",
+            "20°",
+            "36°",
+            "200°",
+            "90°"
+          ],
+          "correct_index": 0,
+          "explanation": "20% de 360° = 0,2 × 360 = 72°.",
+          "pitfall": "20° lê o 20% como se fosse grau."
+        },
+        {
+          "topic": "Parte do total",
+          "statement": "Numa família, o mercado custa R$ 900 de um total de R$ 3 000. Que parte do total é o mercado?",
+          "options": [
+            "30%",
+            "9%",
+            "90%",
+            "33%",
+            "300%"
+          ],
+          "correct_index": 0,
+          "explanation": "900 ÷ 3 000 = 0,3, que são 30%.",
+          "pitfall": "9% usa só os primeiros algarismos, sem fazer a divisão."
+        },
+        {
+          "topic": "Maior aumento",
+          "statement": "Vendas por mês (janeiro 50, fevereiro 70, março 80, abril 120). Em qual mudança houve o maior aumento?",
+          "options": [
+            "de março para abril",
+            "de janeiro para fevereiro",
+            "de fevereiro para março",
+            "em abril, que é o maior valor",
+            "não houve aumento"
+          ],
+          "correct_index": 0,
+          "explanation": "Os aumentos foram de 20, 10 e 40. O maior foi de março para abril.",
+          "pitfall": "Abril tem o maior valor, mas a pergunta é sobre o maior aumento."
+        },
+        {
+          "topic": "Régua",
+          "statement": "Um gráfico mostra vendas de 200 e 210, com a régua vertical começando em 195. O que acontece?",
+          "options": [
+            "Uma diferença de 5% parece muito maior.",
+            "O gráfico fica mais preciso.",
+            "As vendas parecem iguais.",
+            "As vendas parecem ter caído.",
+            "Nada muda."
+          ],
+          "correct_index": 0,
+          "explanation": "Cortando a régua em 195, as colunas medem 5 e 15. A segunda parece o triplo, mas o aumento é de 5%.",
+          "pitfall": "Começar perto dos valores não deixa mais preciso: deixa a diferença com cara de enorme."
+        },
+        {
+          "topic": "Ler tabela",
+          "statement": "Uma tabela mostra 40 alunos: 12 de ônibus, 18 a pé e o resto de bicicleta. Quantos vão de bicicleta?",
+          "options": [
+            "10",
+            "30",
+            "22",
+            "28",
+            "12"
+          ],
+          "correct_index": 0,
+          "explanation": "12 + 18 = 30. Sobram 40 − 30 = 10.",
+          "pitfall": "30 é quem vai de ônibus ou a pé."
+        },
+        {
+          "topic": "Setores",
+          "statement": "Num gráfico de setores, uma fatia tem 90°. Que parte do total ela representa?",
+          "options": [
+            "25%",
+            "90%",
+            "9%",
+            "50%",
+            "33%"
+          ],
+          "correct_index": 0,
+          "explanation": "90° é um quarto de 360°. Um quarto é 25%.",
+          "pitfall": "90% lê o grau como se fosse porcentagem."
+        },
+        {
+          "topic": "Gráficos",
+          "format": "match",
+          "statement": "Ligue cada pergunta ao gráfico que responde melhor.",
+          "pairs": [
+            {
+              "left": "Como a temperatura mudou durante o dia?",
+              "right": "linhas"
+            },
+            {
+              "left": "Qual time fez mais gols?",
+              "right": "colunas"
+            },
+            {
+              "left": "Que parte do salário vai para o aluguel?",
+              "right": "setores"
+            }
+          ],
+          "explanation": "Tempo pede linhas, comparação pede colunas e parte do todo pede setores.",
+          "pitfall": "Setores também comparam, mas só servem bem quando as partes formam um todo."
+        },
+        {
+          "topic": "Metade",
+          "statement": "Num gráfico de setores, quanto mede a fatia de 50%?",
+          "options": [
+            "180°",
+            "50°",
+            "90°",
+            "360°",
+            "100°"
+          ],
+          "correct_index": 0,
+          "explanation": "Metade do círculo é metade de 360°: 180°.",
+          "pitfall": "50° lê o 50% como se fosse grau.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Ler valor",
+          "statement": "Uma tabela mostra: segunda 12, terça 15, quarta 9. Em que dia o valor foi menor?",
+          "options": [
+            "quarta",
+            "segunda",
+            "terça",
+            "os três empataram",
+            "não dá para saber"
+          ],
+          "correct_index": 0,
+          "explanation": "9 é o menor dos três.",
+          "pitfall": "Segunda vem primeiro, mas não é a menor.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Ângulo para valor",
+          "statement": "Num gráfico de setores sobre 600 pessoas, uma fatia mede 120°. Quantas pessoas ela representa?",
+          "options": [
+            "200",
+            "120",
+            "72",
+            "300",
+            "400"
+          ],
+          "correct_index": 0,
+          "explanation": "120° é um terço de 360°. Um terço de 600 é 200.",
+          "pitfall": "120 lê o grau como se fosse o número de pessoas.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Crescimento",
+          "statement": "Um preço foi de R$ 50 em janeiro para R$ 60 em junho. Qual foi o aumento em porcento?",
+          "options": [
+            "20%",
+            "10%",
+            "60%",
+            "16,7%",
+            "120%"
+          ],
+          "correct_index": 0,
+          "explanation": "Subiu 10 sobre os 50 iniciais: 10 ÷ 50 = 0,2, ou 20%.",
+          "pitfall": "16,7% divide pelo valor final, 60. O aumento se mede sobre o valor de partida.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Média no gráfico",
+          "statement": "Um gráfico de colunas mostra as vendas de quatro meses: 30, 50, 40 e 60. Qual é a média mensal?",
+          "options": [
+            "45",
+            "50",
+            "180",
+            "60",
+            "40"
+          ],
+          "correct_index": 0,
+          "explanation": "30 + 50 + 40 + 60 = 180, e 180 ÷ 4 = 45.",
+          "pitfall": "50 é a média entre o menor e o maior, e não dos quatro.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Duas tabelas",
+          "statement": "Na escola A, 30 de 120 alunos usam óculos. Na B, 40 de 200. Qual escola tem a maior parte de alunos com óculos?",
+          "options": [
+            "A, com 25%",
+            "B, com 20%",
+            "B, porque 40 é maior que 30",
+            "empatam",
+            "não dá para comparar escolas de tamanhos diferentes"
+          ],
+          "correct_index": 0,
+          "explanation": "A: 30 ÷ 120 = 25%. B: 40 ÷ 200 = 20%. A tem a maior parte.",
+          "pitfall": "40 alunos é mais gente, mas a escola B é maior. Compare a parte, e não o número.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "contagem",
+      "title": "Contar sem listar: o princípio multiplicativo",
+      "module": "Dados e chance",
+      "summary": "Quantas senhas, quantas roupas, quantos jeitos de formar uma fila? Quando as escolhas vêm em etapas, multiplica-se.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Quantas roupas diferentes?",
+          "body": [
+            "Você tem 3 camisetas e 2 calças. De quantos jeitos dá para se vestir?",
+            "Para cada camiseta há 2 calças possíveis. São 3 grupos de 2, ou seja, 6 jeitos.",
+            "Não foi preciso escrever os seis. Bastou multiplicar."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O princípio multiplicativo",
+          "body": [
+            "Se uma escolha tem 3 opções e a seguinte tem 2, juntas elas dão 3 × 2 combinações. Vale para quantas etapas houver.",
+            "É a regra mais útil da contagem. Quase toda questão começa por ela."
+          ],
+          "terms": [
+            {
+              "word": "Princípio multiplicativo",
+              "meaning": "quando uma escolha é feita em etapas, multiplica-se o número de opções de cada etapa."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Senhas e placas",
+          "body": [
+            "Uma senha de 4 algarismos tem 10 opções em cada posição (de 0 a 9). São 10 × 10 × 10 × 10 = 10 000 senhas.",
+            "Se o algarismo não puder se repetir, cada posição tem um a menos que a anterior: 10 × 9 × 8 × 7 = 5 040."
+          ],
+          "example": {
+            "label": "Contar senhas",
+            "lines": [
+              "4 algarismos, pode repetir: 10 × 10 × 10 × 10 = 10 000",
+              "4 algarismos, sem repetir: 10 × 9 × 8 × 7 = 5 040",
+              "3 letras de 26: 26 × 26 × 26 = 17 576"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Formar uma fila",
+          "body": [
+            "De quantos jeitos 4 pessoas formam uma fila? Para o primeiro lugar há 4 opções, para o segundo 3, depois 2 e 1.",
+            "São 4 × 3 × 2 × 1 = 24 filas. Trocar a ordem de todos se chama permutação."
+          ],
+          "terms": [
+            {
+              "word": "Permutação",
+              "meaning": "cada jeito diferente de pôr todos os itens em ordem."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O fatorial",
+          "body": [
+            "A conta 4 × 3 × 2 × 1 aparece tanto que ganhou um nome e um sinal. Ela se chama 4 fatorial e se escreve 4!.",
+            "O fatorial cresce muito rápido. 10 pessoas formam mais de três milhões de filas."
+          ],
+          "terms": [
+            {
+              "word": "Fatorial",
+              "meaning": "o produto de um número por todos os menores até 1. 4! = 24."
+            }
+          ],
+          "table": {
+            "label": "Fatoriais",
+            "headers": [
+              "Número",
+              "Conta",
+              "Valor"
+            ],
+            "rows": [
+              [
+                "3!",
+                "3 × 2 × 1",
+                "6"
+              ],
+              [
+                "4!",
+                "4 × 3 × 2 × 1",
+                "24"
+              ],
+              [
+                "5!",
+                "5 × 4 × 3 × 2 × 1",
+                "120"
+              ],
+              [
+                "10!",
+                "10 × 9 × … × 1",
+                "3 628 800"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Quando a ordem não importa",
+          "body": [
+            "Escolher 2 sabores de sorvete entre 4 é diferente de formar fila. Morango e chocolate é o mesmo pedido que chocolate e morango.",
+            "Conta-se como fila (4 × 3 = 12) e divide-se pelos jeitos de ordenar os escolhidos (2 × 1 = 2). São 6 pedidos."
+          ],
+          "example": {
+            "label": "Sabores: morango, chocolate, creme e limão",
+            "lines": [
+              "morango e chocolate",
+              "morango e creme",
+              "morango e limão",
+              "chocolate e creme",
+              "chocolate e limão",
+              "creme e limão"
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova conta senhas, placas e filas. Também conta roupas e cardápios. A pergunta-chave é se a ordem importa e se pode repetir."
+          ],
+          "bullets": [
+            "“Um restaurante tem 3 entradas, 4 pratos e 2 sobremesas. Quantos menus completos há?”",
+            "“Quantos anagramas tem a palavra AMOR?”",
+            "“De quantos jeitos 5 amigos se sentam num banco de 5 lugares?”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Somar as opções quando era para multiplicar.",
+            "Esquecer de tirar um a cada etapa quando não pode repetir.",
+            "Contar como fila uma escolha em que a ordem não importa.",
+            "Achar que o fatorial cresce devagar."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Escolha em etapas: multiplique as opções de cada etapa. Sem repetir, cada etapa tem uma opção a menos.",
+            "Ordenar n coisas dá n! jeitos. Se a ordem não importa, divida pelas trocas dos escolhidos."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Roupas",
+          "statement": "Com 4 camisetas e 3 bermudas, quantas combinações diferentes dá para vestir?",
+          "options": [
+            "12",
+            "7",
+            "1",
+            "24",
+            "64"
+          ],
+          "correct_index": 0,
+          "explanation": "Para cada camiseta, 3 bermudas: 4 × 3 = 12.",
+          "pitfall": "7 soma as opções. Escolhas em etapas se multiplicam."
+        },
+        {
+          "topic": "Menu",
+          "statement": "Um restaurante tem 3 entradas, 4 pratos e 2 sobremesas. Quantos menus completos existem?",
+          "options": [
+            "24",
+            "9",
+            "12",
+            "8",
+            "48"
+          ],
+          "correct_index": 0,
+          "explanation": "3 × 4 × 2 = 24.",
+          "pitfall": "9 soma tudo. Um menu escolhe um de cada grupo, e isso multiplica."
+        },
+        {
+          "topic": "Senha",
+          "statement": "Quantas senhas de 3 algarismos existem, podendo repetir?",
+          "options": [
+            "1 000",
+            "720",
+            "30",
+            "999",
+            "27"
+          ],
+          "correct_index": 0,
+          "explanation": "10 opções em cada posição: 10 × 10 × 10 = 1 000.",
+          "pitfall": "720 é a conta sem repetir. Aqui pode repetir."
+        },
+        {
+          "topic": "Sem repetir",
+          "statement": "Quantas senhas de 3 algarismos diferentes existem?",
+          "options": [
+            "720",
+            "1 000",
+            "30",
+            "27",
+            "504"
+          ],
+          "correct_index": 0,
+          "explanation": "10 × 9 × 8 = 720.",
+          "pitfall": "1 000 deixa repetir. Sem repetir, cada posição tem um a menos."
+        },
+        {
+          "topic": "Fila",
+          "statement": "De quantos jeitos 5 amigos se sentam num banco de 5 lugares?",
+          "options": [
+            "120",
+            "25",
+            "5",
+            "15",
+            "3 125"
+          ],
+          "correct_index": 0,
+          "explanation": "5! = 5 × 4 × 3 × 2 × 1 = 120.",
+          "pitfall": "25 multiplica 5 por 5. Mas cada lugar ocupado tira uma pessoa da escolha."
+        },
+        {
+          "topic": "Anagramas",
+          "statement": "Quantos anagramas (palavras com as mesmas letras em outra ordem) tem AMOR?",
+          "options": [
+            "24",
+            "4",
+            "16",
+            "12",
+            "256"
+          ],
+          "correct_index": 0,
+          "explanation": "São 4 letras diferentes para ordenar: 4! = 24.",
+          "pitfall": "16 é 4 × 4, como se as letras pudessem se repetir."
+        },
+        {
+          "topic": "Ordem não importa",
+          "statement": "De quantos jeitos dá para escolher 2 sabores entre 4, sem importar a ordem?",
+          "options": [
+            "6",
+            "12",
+            "8",
+            "16",
+            "24"
+          ],
+          "correct_index": 0,
+          "explanation": "Como fila seriam 4 × 3 = 12. Cada par aparece duas vezes, então 12 ÷ 2 = 6.",
+          "pitfall": "12 conta morango-chocolate e chocolate-morango como pedidos diferentes."
+        },
+        {
+          "topic": "Fatoriais",
+          "format": "match",
+          "statement": "Ligue cada fatorial ao seu valor.",
+          "pairs": [
+            {
+              "left": "3!",
+              "right": "6"
+            },
+            {
+              "left": "4!",
+              "right": "24"
+            },
+            {
+              "left": "5!",
+              "right": "120"
+            },
+            {
+              "left": "1!",
+              "right": "1"
+            }
+          ],
+          "explanation": "Cada fatorial é o anterior vezes o número novo: 4! = 4 × 6, 5! = 5 × 24.",
+          "pitfall": "4! não é 4 × 4. É 4 × 3 × 2 × 1."
+        },
+        {
+          "topic": "Lanches",
+          "statement": "Com 2 tipos de pão e 3 recheios, quantos lanches diferentes dá para montar?",
+          "options": [
+            "6",
+            "5",
+            "8",
+            "9",
+            "1"
+          ],
+          "correct_index": 0,
+          "explanation": "2 × 3 = 6.",
+          "pitfall": "5 soma em vez de multiplicar.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Fatorial",
+          "statement": "Quanto vale 3!?",
+          "options": [
+            "6",
+            "3",
+            "9",
+            "27",
+            "1"
+          ],
+          "correct_index": 0,
+          "explanation": "3 × 2 × 1 = 6.",
+          "pitfall": "9 é 3 × 3, que não é fatorial.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Placas",
+          "statement": "Uma placa tem 2 letras (de 26) seguidas de 2 algarismos. Quantas placas existem, podendo repetir?",
+          "options": [
+            "67 600",
+            "2 600",
+            "6 760",
+            "676",
+            "56"
+          ],
+          "correct_index": 0,
+          "explanation": "26 × 26 × 10 × 10 = 676 × 100 = 67 600.",
+          "pitfall": "2 600 usa só uma letra e dois algarismos, ou esquece uma etapa.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Pódio",
+          "statement": "Numa corrida com 8 atletas, de quantos jeitos podem sair o 1º, o 2º e o 3º lugares?",
+          "options": [
+            "336",
+            "24",
+            "512",
+            "56",
+            "40 320"
+          ],
+          "correct_index": 0,
+          "explanation": "8 opções para o ouro, 7 para a prata e 6 para o bronze: 8 × 7 × 6 = 336.",
+          "pitfall": "40 320 é 8!, a fila com todos os oito. Só três sobem no pódio.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Ímpar",
+          "statement": "Quantos números de 3 algarismos diferentes, usando só 1, 2, 3, 4 e 5, são ímpares?",
+          "options": [
+            "36",
+            "60",
+            "24",
+            "30",
+            "48"
+          ],
+          "correct_index": 0,
+          "explanation": "O último tem de ser 1, 3 ou 5: 3 opções. Sobram 4 para o primeiro e 3 para o do meio. 3 × 4 × 3 = 36.",
+          "pitfall": "60 conta todos, pares e ímpares. Comece pela posição que tem restrição.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Comissão",
+          "statement": "De quantos jeitos se escolhem 3 pessoas entre 6 para uma comissão, sem cargos?",
+          "options": [
+            "20",
+            "120",
+            "18",
+            "216",
+            "720"
+          ],
+          "correct_index": 0,
+          "explanation": "Como fila seriam 6 × 5 × 4 = 120. Cada grupo de 3 aparece 3! = 6 vezes. 120 ÷ 6 = 20.",
+          "pitfall": "120 conta a mesma comissão várias vezes, em ordens diferentes.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "probabilidade",
+      "title": "Probabilidade: a chance em números",
+      "module": "Dados e chance",
+      "summary": "Probabilidade é quantos casos servem dividido por quantos casos existem. Com isso se calcula a chance no dado, na moeda e no sorteio.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O sorteio da rifa",
+          "body": [
+            "Uma rifa tem 100 números, e você comprou 5. Qual é a sua chance de ganhar?",
+            "Dos 100 números possíveis, 5 são seus. Sua chance é 5 em 100.",
+            "Quantos servem dividido por quantos existem: essa é toda a ideia da chance em números."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Casos possíveis e casos favoráveis",
+          "body": [
+            "Os casos possíveis são tudo o que pode acontecer. A lista inteira deles se chama espaço amostral.",
+            "Os casos favoráveis são os que você quer. A probabilidade é favoráveis ÷ possíveis."
+          ],
+          "example": {
+            "label": "Tirar número par num dado",
+            "lines": [
+              "Possíveis: 1, 2, 3, 4, 5 e 6. São 6.",
+              "Favoráveis: 2, 4 e 6. São 3.",
+              "Probabilidade: 3 ÷ 6 = 1/2."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "Probabilidade",
+              "meaning": "a chance de algo acontecer: casos favoráveis divididos por casos possíveis."
+            },
+            {
+              "word": "Espaço amostral",
+              "meaning": "a lista de tudo o que pode acontecer num sorteio."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Fração, decimal ou porcento",
+          "body": [
+            "A mesma chance pode ser escrita de três jeitos. 1/4, 0,25 e 25% dizem a mesma coisa.",
+            "Toda probabilidade fica entre 0 e 1. Zero é impossível, e 1 é certeza."
+          ],
+          "table": {
+            "label": "Chances do dia a dia",
+            "headers": [
+              "Situação",
+              "Chance"
+            ],
+            "rows": [
+              [
+                "cara numa moeda",
+                "1/2 = 50%"
+              ],
+              [
+                "um número certo num dado",
+                "1/6 ≈ 16,7%"
+              ],
+              [
+                "tirar 7 num dado comum",
+                "0 (impossível)"
+              ],
+              [
+                "tirar menos que 7 num dado",
+                "1 (certeza)"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A chance de não acontecer",
+          "body": [
+            "A chance de algo não acontecer é 1 menos a chance de acontecer. Às vezes essa conta é bem mais curta.",
+            "Se a chance de chover é 30%, a de não chover é 70%."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Duas coisas ao mesmo tempo",
+          "body": [
+            "Para a chance de duas coisas que não se influenciam acontecerem juntas, multiplicam-se as chances.",
+            "Duas caras em duas moedas: 1/2 × 1/2 = 1/4. Dá para conferir pela lista: cara-cara, cara-coroa, coroa-cara e coroa-coroa."
+          ],
+          "example": {
+            "label": "Duas moedas",
+            "lines": [
+              "cara e cara",
+              "cara e coroa",
+              "coroa e cara",
+              "coroa e coroa",
+              "só 1 dos 4 casos é cara-cara: 1/4"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Sem devolver muda a conta",
+          "body": [
+            "Num saco com 3 bolas vermelhas e 2 azuis, tira-se uma bola e não se devolve. Depois, tira-se outra.",
+            "Para a segunda, o saco já tem uma bola a menos. A chance de duas vermelhas é 3/5 × 2/4 = 6/20 = 3/10."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova usa dado, moeda e urna com bolas. Também usa sorteio de alunos e cartas. Quase sempre basta montar a lista de possíveis e contar os favoráveis."
+          ],
+          "bullets": [
+            "“Qual a chance de sair soma 7 no lançamento de dois dados?”",
+            "“Numa turma de 30 alunos, 12 são meninas. Sorteando um, qual a chance de ser menino?”",
+            "“Qual a chance de pelo menos uma cara em três moedas?”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Contar mal os casos possíveis: dois dados dão 36 casos, e não 12.",
+            "Somar chances que deviam ser multiplicadas.",
+            "Esquecer que, sem devolver, o total diminui na segunda retirada.",
+            "Achar que depois de três caras a coroa fica mais provável. A moeda não tem memória."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Probabilidade é favoráveis ÷ possíveis, sempre entre 0 e 1.",
+            "Não acontecer é 1 menos acontecer. Duas coisas independentes juntas: multiplica-se."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Dado",
+          "statement": "Qual é a chance de sair um número maior que 4 num dado comum?",
+          "options": [
+            "1/3",
+            "1/2",
+            "1/6",
+            "2/3",
+            "4/6"
+          ],
+          "correct_index": 0,
+          "explanation": "Maiores que 4: 5 e 6. São 2 de 6 casos, ou 1/3.",
+          "pitfall": "4/6 conta os números até 4, que são o contrário do que se pede."
+        },
+        {
+          "topic": "Turma",
+          "statement": "Numa turma de 30 alunos, 12 são meninas. Sorteando um aluno, qual é a chance de ser menino?",
+          "options": [
+            "60%",
+            "40%",
+            "18%",
+            "12%",
+            "50%"
+          ],
+          "correct_index": 0,
+          "explanation": "São 18 meninos de 30: 18 ÷ 30 = 0,6, ou 60%.",
+          "pitfall": "40% é a chance de ser menina."
+        },
+        {
+          "topic": "Duas moedas",
+          "statement": "Qual é a chance de sair duas caras em duas moedas?",
+          "options": [
+            "1/4",
+            "1/2",
+            "1/3",
+            "2/4",
+            "1"
+          ],
+          "correct_index": 0,
+          "explanation": "1/2 × 1/2 = 1/4. Só um dos quatro casos é cara-cara.",
+          "pitfall": "1/3 conta só três casos (duas caras, duas coroas, uma de cada). Uma de cada acontece de dois jeitos."
+        },
+        {
+          "topic": "Soma 7",
+          "statement": "Lançando dois dados, qual é a chance de a soma dar 7?",
+          "options": [
+            "1/6",
+            "1/12",
+            "7/36",
+            "1/11",
+            "1/36"
+          ],
+          "correct_index": 0,
+          "explanation": "Há 36 casos. Somam 7: 1+6, 2+5, 3+4, 4+3, 5+2 e 6+1. São 6, e 6/36 = 1/6.",
+          "pitfall": "1/11 conta só as somas possíveis, de 2 a 12. Elas não têm a mesma chance."
+        },
+        {
+          "topic": "Não acontecer",
+          "statement": "A chance de um voo atrasar é 15%. Qual é a chance de não atrasar?",
+          "options": [
+            "85%",
+            "15%",
+            "100%",
+            "75%",
+            "0%"
+          ],
+          "correct_index": 0,
+          "explanation": "Não acontecer é 100% menos acontecer: 100 − 15 = 85%.",
+          "pitfall": "15% repete a chance de atrasar."
+        },
+        {
+          "topic": "Sem devolver",
+          "statement": "Num saco com 3 bolas vermelhas e 2 azuis, tiram-se duas sem devolver. Qual é a chance de as duas serem vermelhas?",
+          "options": [
+            "3/10",
+            "9/25",
+            "6/25",
+            "3/5",
+            "1/2"
+          ],
+          "correct_index": 0,
+          "explanation": "Primeira vermelha: 3/5. Segunda, com 4 bolas e 2 vermelhas: 2/4. 3/5 × 2/4 = 6/20 = 3/10.",
+          "pitfall": "9/25 é a conta com devolução. Sem devolver, o saco muda."
+        },
+        {
+          "topic": "Moeda sem memória",
+          "statement": "Uma moeda deu cara quatro vezes seguidas. Qual é a chance de dar cara na quinta?",
+          "options": [
+            "1/2",
+            "1/32",
+            "menos de 1/2",
+            "mais de 1/2",
+            "0"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada lançamento é independente. A moeda não lembra o que saiu antes.",
+          "pitfall": "1/32 é a chance de cinco caras seguidas antes de começar, e não a da quinta sozinha."
+        },
+        {
+          "topic": "Chances",
+          "format": "match",
+          "statement": "Ligue cada situação à sua chance.",
+          "pairs": [
+            {
+              "left": "cara numa moeda",
+              "right": "1/2"
+            },
+            {
+              "left": "um 6 num dado",
+              "right": "1/6"
+            },
+            {
+              "left": "um 7 num dado comum",
+              "right": "0"
+            },
+            {
+              "left": "menos que 7 num dado",
+              "right": "1"
+            }
+          ],
+          "explanation": "Chance 0 é impossível e chance 1 é certeza. As outras ficam no meio.",
+          "pitfall": "Um 7 num dado de 1 a 6 não é pouco provável: é impossível."
+        },
+        {
+          "topic": "Moeda",
+          "statement": "Qual é a chance de sair coroa numa moeda?",
+          "options": [
+            "1/2",
+            "1",
+            "0",
+            "1/4",
+            "2"
+          ],
+          "correct_index": 0,
+          "explanation": "Dois casos possíveis, e um serve: 1/2.",
+          "pitfall": "2 é o número de casos, e não a chance.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Rifa",
+          "statement": "Uma rifa tem 200 números e você comprou 10. Qual é a sua chance?",
+          "options": [
+            "5%",
+            "10%",
+            "20%",
+            "2%",
+            "1/10"
+          ],
+          "correct_index": 0,
+          "explanation": "10 ÷ 200 = 0,05, ou 5%.",
+          "pitfall": "10% confunde os 10 números comprados com 10 por cento.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Pelo menos uma",
+          "statement": "Lançando 3 moedas, qual é a chance de sair pelo menos uma cara?",
+          "options": [
+            "7/8",
+            "1/8",
+            "3/8",
+            "1/2",
+            "3/4"
+          ],
+          "correct_index": 0,
+          "explanation": "Só um caso não tem cara nenhuma: coroa-coroa-coroa, com chance 1/8. Então 1 − 1/8 = 7/8.",
+          "pitfall": "1/8 é a chance de nenhuma cara, o contrário do que se pede.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Cartas",
+          "statement": "De um baralho de 52 cartas, com 4 ases, tira-se uma. Qual é a chance de ser um ás?",
+          "options": [
+            "1/13",
+            "1/4",
+            "4/13",
+            "1/52",
+            "1/48"
+          ],
+          "correct_index": 0,
+          "explanation": "4 ÷ 52 = 1/13.",
+          "pitfall": "1/52 é a chance de UM ás específico, como o de copas.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Dado e moeda",
+          "statement": "Lança-se um dado e uma moeda. Qual é a chance de sair número par e cara?",
+          "options": [
+            "1/4",
+            "1/2",
+            "1",
+            "1/12",
+            "2/3"
+          ],
+          "correct_index": 0,
+          "explanation": "Par no dado: 1/2. Cara: 1/2. Juntas: 1/2 × 1/2 = 1/4.",
+          "pitfall": "1 soma as chances. Para acontecerem juntas, multiplica-se.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Soma maior que 10",
+          "statement": "Lançando dois dados, qual é a chance de a soma ser maior que 10?",
+          "options": [
+            "1/12",
+            "1/18",
+            "2/11",
+            "1/6",
+            "1/36"
+          ],
+          "correct_index": 0,
+          "explanation": "Somam 11: 5+6 e 6+5. Somam 12: 6+6. São 3 de 36 casos, ou 1/12.",
+          "pitfall": "1/18 conta o 5+6 e o 6+5 como um caso só. A ordem dos dados conta.",
+          "difficulty": "dificil"
+        }
+      ]
+    }
+  ]
+}

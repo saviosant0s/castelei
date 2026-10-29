@@ -69,6 +69,19 @@ const JARGON = [
   ["parábola", /\bparábolas?\b/i, "m"], ["vértice", /\bvértices?\b/i, "m"], ["exponencial", /\bexponencia(l|is)\b/i, "m"],
   ["logaritmo", /\blogaritm\w*|\blog(?=[\s₀-₉(]|$)/i, "m"], ["conjunto", /\bconjuntos?\b/i, "m"],
   ["interseção", /\binterse(ç|c)(ão|ões)\b|∩/i, "m"], ["união (de conjuntos)", /\bunião\b|∪/i, "m"],
+  /*
+  | Matemática do dia a dia: medidas, dinheiro, geometria e dados. "Área",
+  | "volume" e "raio" ficaram de fora: são palavras de casa. "Moda" só no
+  | sentido estatístico, por isso a lição evita a moda das roupas.
+  */
+  ["perímetro", /\bper(í|i)metros?\b/i, "d"], ["hipotenusa", /\bhipotenusas?\b/i, "d"], ["cateto", /\bcatetos?\b/i, "d"],
+  ["diâmetro", /\bdi(â|a)metros?\b/i, "d"], ["pi (π)", /π|\bpi\b/i, "d"], ["polígono", /\bpol(í|i)gonos?\b/i, "d"],
+  ["prisma", /\bprismas?\b/i, "d"], ["cilindro", /\bcilindros?\b/i, "d"], ["ângulo reto", /\b(â|a)ngulos? retos?\b/i, "d"],
+  ["juros simples", /\bjuros simples\b/i, "d"], ["juros compostos", /\bjuros compostos\b/i, "d"], ["montante", /\bmontantes?\b/i, "d"],
+  ["média ponderada", /\bm(é|e)dias? ponderadas?\b/i, "d"], ["mediana", /\bmedianas?\b/i, "d"], ["moda", /\bmodas?\b/i, "d"],
+  ["probabilidade", /\bprobabilidades?\b/i, "d"], ["espaço amostral", /\bespa(ç|c)o amostral\b/i, "d"],
+  ["princípio multiplicativo", /\bprinc(í|i)pio multiplicativo\b/i, "d"], ["fatorial", /\bfatori(al|ais)\b|\d!/i, "d"],
+  ["permutação", /\bpermuta(ç|c)(ão|ões)\b/i, "d"], ["velocidade média", /\bvelocidades? m(é|e)dias?\b/i, "d"],
 
   ["preposição", /\bpreposi(ç|c)(ão|ões)\b/i, "p"], ["artigo", /\bartigos?\b/i, "p"],
   ["verbo", /\bverbos?\b/i, "p"], ["sujeito", /\bsujeitos?\b/i, "p"], ["núcleo", /\bnúcleos?\b/i, "p"], ["pronome", /\bpronomes?\b/i, "p"],
@@ -406,7 +419,7 @@ const JARGON = [
   ["cooler", /\bcoolers?\b|\bwater cooler\b/i, "h"], ["80 Plus", /\b80 Plus\b/i, "h"], ["fonte modular", /\bmodular(es)?\b/i, "h"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;
@@ -515,7 +528,9 @@ let lessonCount = 0, stepCount = 0, questionCount = 0;
 for (const file of arquivos) {
   const subject = JSON.parse(readFileSync(file, "utf8"));
   const letra = SCOPE_BY_SUBJECT[subject.slug];
-  const jargon = letra ? JARGON.filter(([, , scope]) => scope.includes(letra)) : [];
+  // Uma matéria pode ter mais de uma letra: a Matemática do dia a dia ("md")
+  // usa o vocabulário da básica e o dela.
+  const jargon = letra ? JARGON.filter(([, , scope]) => [...letra].some((c) => scope.includes(c))) : [];
   checkModules(subject);
   for (const lesson of subject.lessons) {
     lessonCount++;
