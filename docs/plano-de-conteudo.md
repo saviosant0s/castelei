@@ -31,6 +31,7 @@ básico de cada área da escola**, e o que é específico fica guardado.
 |---|---|---|
 | Matemática Básica (18 lições) | Matemática | **Pública** |
 | Português (18 lições) | Português | **Pública**, básico completo |
+| Matemática do dia a dia (13) | Matemática | **Pública** |
 | Lógica (15) | Matemática | **Pública** |
 | Produção Textual (7) | Português | **Pública** |
 | Sistemas Operacionais (33) | Informática | Privada: é o semestre do Sávio |
@@ -42,7 +43,7 @@ básico de cada área da escola**, e o que é específico fica guardado.
 | Montar um PC (15) | Informática | Privada |
 
 Trilhas: **Base para provas** (pública: Português → Matemática Básica →
-Lógica → Produção Textual) e **LLMs do zero** (privada).
+Matemática do dia a dia → Lógica → Produção Textual) e **LLMs do zero** (privada).
 
 ## A régua do básico
 
@@ -81,8 +82,12 @@ Números, potências e raízes, álgebra e funções já estão escritos. **Falt
 o que toda prova cobra e a trilha de LLMs não precisava:** razão e
 proporção, regra de três, porcentagem e juros, geometria plana (áreas e
 perímetros), geometria espacial (volumes), noções de estatística (média,
-moda, mediana, gráficos) e probabilidade básica. Pode virar uma segunda
-matéria pública, **Matemática do dia a dia**, para não inchar a primeira.
+moda, mediana, gráficos) e probabilidade básica. Isso virou a segunda
+matéria pública, **Matemática do dia a dia** (`matematica-do-dia-a-dia`, feita):
+Medidas (unidades; tempo e velocidade), Dinheiro (juros; comprar bem),
+Geometria (ângulos e triângulos; perímetro e área; círculo; Pitágoras;
+volume) e Dados e chance (média, moda e mediana; gráficos; contagem;
+probabilidade). Razão, proporção e porcentagem ficaram na básica.
 
 ### Física — `fisica-basica`
 
@@ -208,7 +213,7 @@ Operacionais.
 
 | Trilha | Passos | Situação |
 |---|---|---|
-| **Base para provas** | Português → Matemática Básica → Lógica → Produção Textual | **No ar** |
+| **Base para provas** | Português → Matemática Básica → Matemática do dia a dia → Lógica → Produção Textual | **No ar** |
 | ENEM: Linguagens | Português → Produção Textual → Inglês (ou Espanhol) → Artes → Educação Física | Planejada |
 | ENEM: Matemática | Matemática Básica → Matemática do dia a dia → Lógica | Planejada |
 | ENEM: Natureza | Física → Química → Biologia | Planejada |
@@ -224,8 +229,8 @@ aparecer como "Em breve".
 1. Mecanismo de público e privado (feito).
 2. Português básico completo (feito).
 3. Questões com nível de dificuldade nas matérias públicas (feito: Português, Matemática Básica e Lógica, seis por lição).
-4. **Matemática do dia a dia** (próximo).
-5. Uma área por rodada: Biologia, História, Geografia, Física, Química,
+4. Matemática do dia a dia (feito: 13 lições em quatro módulos, já com os níveis).
+5. **Uma área por rodada** (próximo): Biologia, História, Geografia, Física, Química,
    Inglês, Informática básica, Filosofia, Sociologia, Espanhol, Artes,
    Educação Física. Cada uma entra com todas as lições de uma vez.
 6. As trilhas ENEM entram conforme as matérias delas ficam prontas.

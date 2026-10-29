@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 220" width="440" height="220" role="img" aria-label="Duas figuras com a conta do volume. À esquerda, uma caixa com comprimento, largura e altura: volume igual a comprimento vezes largura vezes altura. À direita, uma lata em forma de cilindro com raio r e altura h: volume igual à área do círculo da base, pi vezes r ao quadrado, vezes a altura."><title>Volume da caixa e do cilindro</title>
+<g transform="translate(30 0)"><g stroke="#1C1C2E" stroke-width="2.5" stroke-linejoin="round">
+<path d="M 30 70 L 140 70 L 140 150 L 30 150 Z" fill="#DCEBF7"/>
+<path d="M 30 70 L 70 40 L 180 40 L 140 70 Z" fill="#EAF3FB"/>
+<path d="M 140 70 L 180 40 L 180 120 L 140 150 Z" fill="#C9DEF1"/>
+</g>
+<text font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="600" fill="#1C1C2E" text-anchor="middle"><tspan x="85" y="168">comprimento</tspan><tspan x="182" y="148">largura</tspan></text></g>
+<text font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="600" fill="#1C1C2E"><tspan x="6" y="114">altura</tspan></text>
+<path d="M 260 60 L 260 150 A 55 16 0 0 0 370 150 L 370 60" fill="#E3EFE0" stroke="#1C1C2E" stroke-width="2.5"/>
+<ellipse cx="315" cy="60" rx="55" ry="16" fill="#F0F7EE" stroke="#1C1C2E" stroke-width="2.5"/>
+<path d="M 315 60 L 370 60" stroke="#2F6FB0" stroke-width="2"/>
+<text font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="700" fill="#2F6FB0"><tspan x="338" y="54">r</tspan></text>
+<text font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="600" fill="#1C1C2E"><tspan x="376" y="110">h</tspan></text>
+<text font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="14" font-weight="700" fill="#1C1C2E" text-anchor="middle"><tspan x="130" y="196">caixa: c × l × a</tspan><tspan x="315" y="196">cilindro: π × r² × h</tspan></text>
+</svg>

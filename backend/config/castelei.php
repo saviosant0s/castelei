@@ -38,6 +38,7 @@ return [
             'steps' => [
                 ['subject' => 'portugues', 'name' => 'Português', 'why' => 'Entender o enunciado é metade da questão: classes de palavras, frase, concordância e interpretação.'],
                 ['subject' => 'matematica-basica', 'name' => 'Matemática Básica', 'why' => 'Frações, porcentagem, potências, equações e funções: a conta que aparece em toda prova.'],
+                ['subject' => 'matematica-do-dia-a-dia', 'name' => 'Matemática do dia a dia', 'why' => 'Medidas, juros, áreas, volumes, gráficos e chances: a matemática das questões com situação do cotidiano.'],
                 ['subject' => 'logica', 'name' => 'Lógica', 'why' => 'Negar, concluir e montar a tabela-verdade: o raciocínio que as bancas cobram à parte.'],
                 ['subject' => 'producao-textual', 'name' => 'Produção Textual', 'why' => 'Defender uma ideia por escrito, da tese à conclusão, como pede a redação.'],
             ],
