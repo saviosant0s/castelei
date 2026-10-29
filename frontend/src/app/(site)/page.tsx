@@ -129,25 +129,24 @@ export default async function Landing() {
         */}
         <section aria-label="Exemplo de questão do app">
           <Card tone="raised" size="lg" radius="panel" className="-rotate-1">
-            <p className="label-mono">Questão 3 de 8 · Sistemas Operacionais</p>
+            <p className="label-mono">Questão 1 de 8 · Lógica</p>
             <p className="mt-3 font-display text-xl font-bold leading-snug">
-              Você ouve música, baixa um arquivo e escreve um texto ao mesmo tempo. O SO reveza o processador
-              entre esses programas e reparte a memória entre eles. Esse exemplo ilustra o SO como:
+              Qual é a negação de “Se chove, então a rua molha”?
             </p>
             <ul className="mt-4 space-y-2 text-base">
               <li className="flex items-center gap-3 rounded-control border-2 border-ink/10 px-3 py-2">
-                <span className="font-mono text-sm text-content-subtle">A</span> máquina estendida
+                <span className="font-mono text-sm text-content-subtle">A</span> Se não chove, a rua não molha.
               </li>
               <li className="flex items-center gap-3 rounded-control border-2 border-sage bg-sage-soft px-3 py-2">
-                <Check className="size-4 shrink-0" aria-hidden="true" /> gerenciador de recursos
+                <Check className="size-4 shrink-0" aria-hidden="true" /> Chove e a rua não molha.
               </li>
               <li className="flex items-center gap-3 rounded-control border-2 border-ink/10 px-3 py-2">
-                <span className="font-mono text-sm text-content-subtle">C</span> interface gráfica
+                <span className="font-mono text-sm text-content-subtle">C</span> Não chove e a rua molha.
               </li>
             </ul>
             <p className="mt-4 rounded-control bg-coral-soft px-3 py-2 text-sm">
-              <strong>Pegadinha:</strong> vários programas ao mesmo tempo não significa vários processadores.
-              É o SO revezando o tempo do mesmo.
+              <strong>Pegadinha:</strong> negação de condicional nunca é outra condicional. A frase só é
+              mentira quando chove e a rua continua seca.
             </p>
           </Card>
         </section>
@@ -207,7 +206,7 @@ export default async function Landing() {
         </div>
 
         <p className="mt-6 text-base text-content-subtle">
-          O catálogo cresce a cada atualização, acompanhando as aulas do semestre.
+          O catálogo cresce a cada atualização: uma área da escola por vez, do básico para cima.
         </p>
       </section>
 

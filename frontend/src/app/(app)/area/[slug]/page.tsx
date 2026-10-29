@@ -63,7 +63,8 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
                   tone={tones[i % tones.length]}
                   practiced={practiced}
                   total={subject.lessons.length}
-                  detail={nextLessonLine(subject.lessons)}
+                  // A privada só aparece para quem administra: o aviso lembra que ninguém mais a vê.
+                  detail={`${subject.private ? "Só você vê · " : ""}${nextLessonLine(subject.lessons)}`}
                 />
               </li>
             );

@@ -29,6 +29,7 @@ class SubjectController extends Controller
                 'name' => $subject->name,
                 'description' => $subject->description,
                 'area' => $subject->area,
+                'visibility' => $subject->visibility,
                 'exam_date' => $subject->exam_date?->format('Y-m-d'),
                 'position' => $subject->position,
                 'origin' => $subject->origin,
@@ -50,6 +51,7 @@ class SubjectController extends Controller
                 'name' => $subject->name,
                 'description' => $subject->description,
                 'area' => $subject->area,
+                'visibility' => $subject->visibility,
                 'exam_date' => $subject->exam_date?->format('Y-m-d'),
                 'position' => $subject->position,
                 'origin' => $subject->origin,
@@ -97,6 +99,8 @@ class SubjectController extends Controller
             'description' => ['nullable', 'string', 'max:500'],
             'exam_date' => ['nullable', 'date_format:Y-m-d'],
             'area' => ['nullable', 'string', Rule::in(array_keys((array) config('castelei.areas')))],
+            // Privada: só quem administra vê. É como se revisa uma matéria antes de abrir.
+            'visibility' => ['sometimes', Rule::in([Subject::PUBLIC, Subject::PRIVATE])],
         ], self::messages());
 
         $subject = Subject::create($data + [
@@ -127,6 +131,8 @@ class SubjectController extends Controller
             */
             'exam_date' => ['nullable', 'date_format:Y-m-d'],
             'area' => ['nullable', 'string', Rule::in(array_keys((array) config('castelei.areas')))],
+            // Privada: só quem administra vê. É como se revisa uma matéria antes de abrir.
+            'visibility' => ['sometimes', Rule::in([Subject::PUBLIC, Subject::PRIVATE])],
         ], self::messages());
 
         $subject->fill($data);
@@ -198,6 +204,7 @@ class SubjectController extends Controller
             'name' => $subject->name,
             'description' => $subject->description,
             'area' => $subject->area,
+            'visibility' => $subject->visibility,
             'exam_date' => $subject->exam_date?->format('Y-m-d'),
             'position' => $subject->position,
             'origin' => $subject->origin,

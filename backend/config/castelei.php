@@ -24,10 +24,29 @@ return [
     | em que uma depende da outra, com a frase do porquê. Passo cuja matéria
     | ainda não existe aparece como "Em breve", com o nome daqui.
     */
+    /*
+    | Trilhas: a ordem de estudo que atravessa matérias e áreas. `visibility`
+    | private = só quem administra vê. O plano das trilhas básicas está em
+    | docs/plano-de-conteudo.md; passo de matéria que ainda não existe (ou que
+    | a pessoa não enxerga) aparece como "Em breve".
+    */
     'trails' => [
+        [
+            'slug' => 'base-para-provas',
+            'name' => 'Base para provas',
+            'description' => 'Ler, contar, raciocinar e escrever: o que toda prova cobra, na ordem em que uma coisa apoia a outra.',
+            'steps' => [
+                ['subject' => 'portugues', 'name' => 'Português', 'why' => 'Entender o enunciado é metade da questão: classes de palavras, frase, concordância e interpretação.'],
+                ['subject' => 'matematica-basica', 'name' => 'Matemática Básica', 'why' => 'Frações, porcentagem, potências, equações e funções: a conta que aparece em toda prova.'],
+                ['subject' => 'logica', 'name' => 'Lógica', 'why' => 'Negar, concluir e montar a tabela-verdade: o raciocínio que as bancas cobram à parte.'],
+                ['subject' => 'producao-textual', 'name' => 'Produção Textual', 'why' => 'Defender uma ideia por escrito, da tese à conclusão, como pede a redação.'],
+            ],
+        ],
         [
             'slug' => 'llms-do-zero',
             'name' => 'LLMs do zero',
+            // Trilha pessoal do Sávio: só quem administra vê, como a matéria privada.
+            'visibility' => 'private',
             'description' => 'Da conta de fração ao modelo de linguagem, na ordem em que uma coisa depende da outra.',
             'steps' => [
                 ['subject' => 'matematica-basica', 'name' => 'Matemática Básica', 'why' => 'A base de tudo: frações, potências, equações, funções e logaritmos.'],

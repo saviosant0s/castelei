@@ -15,6 +15,8 @@ export interface AdminSubject {
   description: string | null;
   /** Slug da área do conhecimento, ou null (vai para "Outras matérias"). */
   area: string | null;
+  /** private = só quem administra vê. */
+  visibility: "public" | "private";
   exam_date: string | null;
   position: number;
   origin: SubjectOrigin;
@@ -40,6 +42,8 @@ export interface AdminSubjectDetail {
   description: string | null;
   /** Slug da área do conhecimento, ou null (vai para "Outras matérias"). */
   area: string | null;
+  /** private = só quem administra vê. */
+  visibility: "public" | "private";
   exam_date: string | null;
   position: number;
   origin: SubjectOrigin;

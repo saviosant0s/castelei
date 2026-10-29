@@ -236,7 +236,7 @@ class StudyToolsController extends Controller
             return response()->json(['query' => $termo, 'lessons' => [], 'terms' => [], 'notes' => []]);
         }
 
-        $subjects = Subject::with('lessons')->orderBy('position')->get();
+        $subjects = Subject::visibleTo($request->user())->with('lessons')->orderBy('position')->get();
         $casa = fn (?string $texto) => $texto !== null && str_contains(self::sem_acento($texto), $termo);
 
         $lessons = [];

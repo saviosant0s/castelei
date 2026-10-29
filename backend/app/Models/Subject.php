@@ -2,11 +2,17 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Subject extends Model
 {
+    public const PUBLIC = 'public';
+
+    /** Só quem administra o conteúdo vê: é a matéria em revisão, ou de uso pessoal. */
+    public const PRIVATE = 'private';
+
     protected $guarded = [];
 
     protected function casts(): array
@@ -32,6 +38,20 @@ class Subject extends Model
             ->map(fn (string $name, string $slug) => ['slug' => $slug, 'name' => $name])
             ->values()
             ->all();
+    }
+
+    /**
+     * As matérias que esta pessoa enxerga. Sem pessoa (a vitrine pública),
+     * só as públicas.
+     */
+    public function scopeVisibleTo(Builder $query, ?User $user): Builder
+    {
+        return $user?->isAdmin() ? $query : $query->where('visibility', self::PUBLIC);
+    }
+
+    public function isVisibleTo(?User $user): bool
+    {
+        return $this->visibility !== self::PRIVATE || (bool) $user?->isAdmin();
     }
 
     public function lessons(): HasMany

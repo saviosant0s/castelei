@@ -69,6 +69,16 @@ export function SubjectEditor({ subject, areas }: { subject: AdminSubjectDetail;
               </option>
             ))}
           </SelectField>
+          <SelectField
+            label="Quem vê"
+            name="visibility"
+            defaultValue={subject.visibility}
+            error={campos.visibility?.[0]}
+            hint="Só eu: a matéria some para todo mundo que não administra o conteúdo, inclusive da vitrine. É o jeito de estudar e revisar antes de abrir."
+          >
+            <option value="public">Todo mundo</option>
+            <option value="private">Só quem administra</option>
+          </SelectField>
           <TextField
             label="Data da prova"
             name="exam_date"
