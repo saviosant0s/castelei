@@ -289,6 +289,96 @@
           ],
           "explanation": "Parênteses primeiro. Depois multiplicação e divisão, da esquerda para a direita. A soma fica para o fim.",
           "pitfall": "Somar 3 + 4 antes de multiplicar muda o resultado inteiro."
+        },
+        {
+          "topic": "Somar com sinais",
+          "statement": "Quanto vale −7 + 3?",
+          "options": [
+            "−4",
+            "4",
+            "−10",
+            "10",
+            "−3"
+          ],
+          "correct_index": 0,
+          "explanation": "Os sinais são diferentes, então se subtrai: 7 − 3 = 4. Fica o sinal do maior em módulo, que é o 7: −4.",
+          "pitfall": "Quem soma 7 e 3 chega a −10. Com sinais diferentes, a conta é de menos.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Comparar",
+          "statement": "Qual destes números é o menor?",
+          "options": [
+            "−9",
+            "−2",
+            "0",
+            "1",
+            "−5"
+          ],
+          "correct_index": 0,
+          "explanation": "Na reta, quanto mais à esquerda, menor. −9 é o mais à esquerda.",
+          "pitfall": "−2 parece menor por ter o algarismo menor. Com sinal de menos, a ordem se inverte.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Dois menos",
+          "statement": "Quanto vale −3 − (−8)?",
+          "options": [
+            "5",
+            "−11",
+            "11",
+            "−5",
+            "−24"
+          ],
+          "correct_index": 0,
+          "explanation": "Menos com menos vira mais: −3 + 8 = 5.",
+          "pitfall": "Quem esquece de trocar o sinal faz −3 − 8 = −11.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Ordem das contas",
+          "statement": "Quanto vale 20 − 12 ÷ 4 × 2?",
+          "options": [
+            "14",
+            "4",
+            "1",
+            "17",
+            "16"
+          ],
+          "correct_index": 0,
+          "explanation": "Divisão e multiplicação vêm antes, da esquerda para a direita: 12 ÷ 4 = 3 e 3 × 2 = 6. Depois, 20 − 6 = 14.",
+          "pitfall": "Quem faz 20 − 12 primeiro chega a 4. A subtração fica para o fim.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Potência e sinal",
+          "statement": "Quanto vale (−2)³ − (−3)²?",
+          "options": [
+            "−17",
+            "1",
+            "−1",
+            "17",
+            "−5"
+          ],
+          "correct_index": 0,
+          "explanation": "(−2)³ = (−2) × (−2) × (−2) = −8. E (−3)² = 9. Então −8 − 9 = −17.",
+          "pitfall": "Quem acha que (−3)² dá −9 chega a 1. Número negativo ao quadrado dá positivo.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Saldo",
+          "statement": "Uma conta tinha saldo de −R$ 150. Entraram R$ 400 e saíram R$ 320. Qual é o saldo agora?",
+          "options": [
+            "−R$ 70",
+            "R$ 70",
+            "−R$ 230",
+            "R$ 230",
+            "−R$ 870"
+          ],
+          "correct_index": 0,
+          "explanation": "−150 + 400 = 250. Depois, 250 − 320 = −70.",
+          "pitfall": "Quem trata o −150 como positivo chega a R$ 230. A conta começa no vermelho.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -612,6 +702,96 @@
           ],
           "explanation": "Divida o de cima pelo de baixo em cada fração. 1 ÷ 4 = 0,25 e 1 ÷ 5 = 0,2. Também 3 ÷ 4 = 0,75 e 1 ÷ 8 = 0,125.",
           "pitfall": "1/5 não é 0,5: o 5 embaixo corta o inteiro em cinco partes, e cada uma vale 0,2."
+        },
+        {
+          "topic": "Mesmo denominador",
+          "statement": "Quanto é 2/7 + 3/7?",
+          "options": [
+            "5/7",
+            "5/14",
+            "6/7",
+            "5/49",
+            "1/7"
+          ],
+          "correct_index": 0,
+          "explanation": "Com o mesmo denominador, soma-se só o de cima: 2 + 3 = 5. O de baixo fica 7.",
+          "pitfall": "Somar também os de baixo dá 5/14, que é menor que 2/7 + 3/7. Não faz sentido.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Decimal",
+          "statement": "Qual é o decimal de 3/4?",
+          "options": [
+            "0,75",
+            "0,34",
+            "0,25",
+            "3,4",
+            "0,7"
+          ],
+          "correct_index": 0,
+          "explanation": "3 ÷ 4 = 0,75. Pense em dinheiro: três moedas de 25 centavos.",
+          "pitfall": "0,34 só junta os algarismos. A fração é uma divisão.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Dividir frações",
+          "statement": "Quanto é 2/3 ÷ 4/9?",
+          "options": [
+            "3/2",
+            "8/27",
+            "2/3",
+            "3/4",
+            "1/6"
+          ],
+          "correct_index": 0,
+          "explanation": "Divide-se multiplicando pelo inverso: 2/3 × 9/4 = 18/12 = 3/2.",
+          "pitfall": "8/27 é o resultado de multiplicar, e não de dividir.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Fração de quantia",
+          "statement": "Quanto é 3/5 de R$ 250?",
+          "options": [
+            "R$ 150",
+            "R$ 50",
+            "R$ 100",
+            "R$ 750",
+            "R$ 83,33"
+          ],
+          "correct_index": 0,
+          "explanation": "Um quinto de 250 é 50. Três quintos são 3 × 50 = 150.",
+          "pitfall": "R$ 50 é só um quinto. Faltou multiplicar por 3.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "O que sobra",
+          "statement": "Paulo leu 2/5 de um livro no sábado e 1/3 do que faltava no domingo. Que fração do livro ainda falta?",
+          "options": [
+            "2/5",
+            "4/15",
+            "1/5",
+            "3/5",
+            "11/15"
+          ],
+          "correct_index": 0,
+          "explanation": "Faltavam 3/5. Ele leu 1/3 disso, que é 1/5. Sobram 3/5 − 1/5 = 2/5.",
+          "pitfall": "Quem calcula 1/3 do livro inteiro chega a 4/15. O domingo foi sobre o que faltava.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Dízima",
+          "statement": "Qual fração é igual a 0,333…?",
+          "options": [
+            "1/3",
+            "3/10",
+            "33/100",
+            "1/9",
+            "1/33"
+          ],
+          "correct_index": 0,
+          "explanation": "1 ÷ 3 = 0,333…, com o 3 repetindo para sempre.",
+          "pitfall": "3/10 é 0,3, que para no primeiro 3. A dízima não para.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -924,6 +1104,96 @@
           ],
           "explanation": "Decidir se é direta ou inversa vem antes de montar a conta. É essa decisão que escolhe o jeito de multiplicar.",
           "pitfall": "Montar a conta antes de decidir o tipo é o caminho mais curto para a alternativa errada."
+        },
+        {
+          "topic": "Regra de três",
+          "statement": "Três cadernos custam R$ 24. Quanto custam cinco?",
+          "options": [
+            "R$ 40",
+            "R$ 8",
+            "R$ 120",
+            "R$ 72",
+            "R$ 30"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada caderno custa 24 ÷ 3 = 8. Cinco custam 5 × 8 = 40.",
+          "pitfall": "R$ 8 é o preço de um só. A pergunta é sobre cinco.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Razão",
+          "statement": "Numa receita vão 2 xícaras de açúcar para 6 de farinha. Qual é a razão açúcar para farinha?",
+          "options": [
+            "1/3",
+            "3",
+            "1/4",
+            "2/8",
+            "3/1"
+          ],
+          "correct_index": 0,
+          "explanation": "2/6, simplificando, é 1/3. Para cada xícara de açúcar, vão três de farinha.",
+          "pitfall": "3 é a razão farinha para açúcar. A ordem da pergunta manda.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Inversa",
+          "statement": "Quatro torneiras enchem um tanque em 6 horas. Em quanto tempo três torneiras iguais encheriam?",
+          "options": [
+            "8 horas",
+            "4,5 horas",
+            "2 horas",
+            "24 horas",
+            "6 horas"
+          ],
+          "correct_index": 0,
+          "explanation": "Menos torneiras levam mais tempo. 4 × 6 = 24 horas-torneira, e 24 ÷ 3 = 8.",
+          "pitfall": "4,5 horas é a conta feita como se fosse direta. Com menos torneiras o tempo não pode diminuir.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Escala",
+          "statement": "Numa planta de escala 1 : 100, um quarto mede 4 cm de largura. Qual é a largura real?",
+          "options": [
+            "4 m",
+            "40 cm",
+            "400 m",
+            "0,4 m",
+            "40 m"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada centímetro do papel são 100 cm reais. 4 × 100 = 400 cm, que são 4 m.",
+          "pitfall": "40 m vem de errar a conversão: 400 cm são 4 m, e não 40.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Dividir em partes",
+          "statement": "Dois sócios dividem um lucro de R$ 9 000 na proporção do que investiram: R$ 2 000 e R$ 4 000. Quanto recebe o segundo?",
+          "options": [
+            "R$ 6 000",
+            "R$ 4 500",
+            "R$ 3 000",
+            "R$ 4 000",
+            "R$ 7 000"
+          ],
+          "correct_index": 0,
+          "explanation": "A proporção é 2 para 4, ou 1 para 2: são 3 partes. Cada parte vale 3 000, e o segundo fica com 2 partes.",
+          "pitfall": "R$ 4 500 divide meio a meio. A divisão é pelo que cada um pôs.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Duas grandezas",
+          "statement": "Cinco máquinas produzem 200 peças em 4 horas. Quantas peças 10 máquinas produzem em 6 horas?",
+          "options": [
+            "600",
+            "400",
+            "300",
+            "800",
+            "1 200"
+          ],
+          "correct_index": 0,
+          "explanation": "Uma máquina faz 200 ÷ 5 ÷ 4 = 10 peças por hora. Dez máquinas em 6 horas: 10 × 10 × 6 = 600.",
+          "pitfall": "400 dobra as máquinas e esquece as horas a mais. As duas grandezas mudaram.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -1223,6 +1493,96 @@
           "correct_index": 2,
           "explanation": "Depois do aumento: 200 × 1,10 = 220. O desconto de 10% agora é calculado sobre 220: 220 × 0,90 = R$ 198.",
           "pitfall": "Subir 10% e descer 10% não devolve o preço original. A segunda porcentagem é calculada sobre outro valor. R$ 200 é a resposta de quem soma +10% com −10% direto."
+        },
+        {
+          "topic": "Dez por cento",
+          "statement": "Quanto é 10% de 350?",
+          "options": [
+            "35",
+            "3,5",
+            "350",
+            "10",
+            "3 500"
+          ],
+          "correct_index": 0,
+          "explanation": "10% é dividir por 10: 350 ÷ 10 = 35.",
+          "pitfall": "3,5 é 1%. Dez por cento é dez vezes isso.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Metade",
+          "statement": "50% de uma turma de 36 alunos são quantos alunos?",
+          "options": [
+            "18",
+            "50",
+            "36",
+            "72",
+            "16"
+          ],
+          "correct_index": 0,
+          "explanation": "50% é a metade. Metade de 36 é 18.",
+          "pitfall": "50 é a porcentagem, e não a quantidade de alunos.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Aumento",
+          "statement": "Um salário de R$ 1 800 teve aumento de 5%. Qual é o novo salário?",
+          "options": [
+            "R$ 1 890",
+            "R$ 1 805",
+            "R$ 1 710",
+            "R$ 90",
+            "R$ 2 700"
+          ],
+          "correct_index": 0,
+          "explanation": "5% de 1 800 é 90. Somando, 1 800 + 90 = 1 890.",
+          "pitfall": "R$ 1 805 soma 5 reais, e não 5%.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Quanto por cento",
+          "statement": "Numa prova de 40 questões, Lia acertou 30. Qual foi a porcentagem de acerto?",
+          "options": [
+            "75%",
+            "30%",
+            "70%",
+            "25%",
+            "133%"
+          ],
+          "correct_index": 0,
+          "explanation": "30 ÷ 40 = 0,75, que são 75%.",
+          "pitfall": "25% é a parte que ela errou, e não a que acertou.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Aumento sobre aumento",
+          "statement": "Um aluguel subiu 10% num ano e mais 10% no ano seguinte. Qual foi o aumento total?",
+          "options": [
+            "21%",
+            "20%",
+            "11%",
+            "100%",
+            "19%"
+          ],
+          "correct_index": 0,
+          "explanation": "O fator é 1,1 × 1,1 = 1,21. O aluguel ficou 21% mais caro.",
+          "pitfall": "20% esquece que o segundo aumento incide sobre o preço já aumentado.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Desconto ao contrário",
+          "statement": "Com 25% de desconto, um tênis saiu por R$ 180. Qual era o preço sem desconto?",
+          "options": [
+            "R$ 240",
+            "R$ 225",
+            "R$ 205",
+            "R$ 135",
+            "R$ 720"
+          ],
+          "correct_index": 0,
+          "explanation": "Pagar 75% do preço deu 180. Então o preço é 180 ÷ 0,75 = 240.",
+          "pitfall": "R$ 225 soma 25% de 180. Mas os 25% eram sobre o preço antigo, que é maior.",
+          "difficulty": "dificil"
         }
       ],
       "module": "Números"
@@ -1552,6 +1912,96 @@
           ],
           "explanation": "O expoente positivo conta os zeros. O zero dá 1, e o expoente negativo conta as casas depois da vírgula.",
           "pitfall": "10⁰ não é 0 nem 10: todo número diferente de zero elevado a zero dá 1."
+        },
+        {
+          "topic": "Valor",
+          "statement": "Quanto vale 5³?",
+          "options": [
+            "125",
+            "15",
+            "25",
+            "53",
+            "8"
+          ],
+          "correct_index": 0,
+          "explanation": "5³ é 5 × 5 × 5 = 125.",
+          "pitfall": "15 é 5 × 3. O expoente diz quantas vezes multiplicar o 5 por ele mesmo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Expoente um",
+          "statement": "Quanto vale 9¹?",
+          "options": [
+            "9",
+            "1",
+            "0",
+            "10",
+            "81"
+          ],
+          "correct_index": 0,
+          "explanation": "Expoente 1 quer dizer o número aparecendo uma vez só: 9.",
+          "pitfall": "81 é 9². Com expoente 1 não há multiplicação nenhuma.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Multiplicar potências",
+          "statement": "Quanto é 2³ × 2⁴?",
+          "options": [
+            "2⁷",
+            "2¹²",
+            "4⁷",
+            "4¹²",
+            "2¹"
+          ],
+          "correct_index": 0,
+          "explanation": "Mesma base na multiplicação: somam-se os expoentes. 3 + 4 = 7.",
+          "pitfall": "2¹² multiplica os expoentes, que é a regra da potência de potência.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Fração ao quadrado",
+          "statement": "Quanto vale (2/3)²?",
+          "options": [
+            "4/9",
+            "4/3",
+            "2/9",
+            "4/6",
+            "2/6"
+          ],
+          "correct_index": 0,
+          "explanation": "Eleva-se o de cima e o de baixo: 2² = 4 e 3² = 9.",
+          "pitfall": "4/3 eleva só o de cima.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Expoente negativo",
+          "statement": "Quanto vale (1/2)⁻³?",
+          "options": [
+            "8",
+            "1/8",
+            "−8",
+            "−1/8",
+            "6"
+          ],
+          "correct_index": 0,
+          "explanation": "Expoente negativo inverte a base: (1/2)⁻³ = 2³ = 8.",
+          "pitfall": "Expoente negativo não deixa o resultado negativo. Ele inverte a fração.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Simplificar",
+          "statement": "Quanto vale (3⁵ × 3²) ÷ 3⁶?",
+          "options": [
+            "3",
+            "1",
+            "9",
+            "3⁴",
+            "1/3"
+          ],
+          "correct_index": 0,
+          "explanation": "Em cima, 3⁵ × 3² = 3⁷. Dividindo por 3⁶, fica 3¹ = 3.",
+          "pitfall": "Quem multiplica os expoentes de cima chega a 3¹⁰ ÷ 3⁶ = 3⁴.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -1878,6 +2328,96 @@
           ],
           "explanation": "Raiz quadrada e quadrado se desfazem; raiz cúbica e cubo também. √81 = 9 porque 9² = 81, e ∛27 = 3 porque 3³ = 27.",
           "pitfall": "2³ é 8, e não 6. O expoente repete a multiplicação; não multiplica a base."
+        },
+        {
+          "topic": "Raiz quadrada",
+          "statement": "Quanto vale √81?",
+          "options": [
+            "9",
+            "40,5",
+            "8",
+            "18",
+            "81"
+          ],
+          "correct_index": 0,
+          "explanation": "9 × 9 = 81. A raiz quadrada desfaz o quadrado.",
+          "pitfall": "40,5 é a metade de 81. Raiz não é dividir por 2.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Raiz cúbica",
+          "statement": "Quanto vale ∛8?",
+          "options": [
+            "2",
+            "4",
+            "3",
+            "64",
+            "2,67"
+          ],
+          "correct_index": 0,
+          "explanation": "2 × 2 × 2 = 8.",
+          "pitfall": "2,67 é 8 ÷ 3. A raiz cúbica não é dividir por 3.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Simplificar",
+          "statement": "Qual é a forma simplificada de √72?",
+          "options": [
+            "6√2",
+            "8√9",
+            "2√18",
+            "36√2",
+            "3√8"
+          ],
+          "correct_index": 0,
+          "explanation": "72 = 36 × 2, e √36 = 6. Fica 6√2.",
+          "pitfall": "2√18 está certo, mas não está simplificado: dentro de 18 ainda há um 9.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Somar raízes",
+          "statement": "Quanto é √9 + √16?",
+          "options": [
+            "7",
+            "5",
+            "25",
+            "√25",
+            "12"
+          ],
+          "correct_index": 0,
+          "explanation": "√9 = 3 e √16 = 4. Somando, 7.",
+          "pitfall": "5 é √25, e √(9 + 16) é diferente de √9 + √16.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Pitágoras",
+          "statement": "Uma escada de 10 m está apoiada num muro, com o pé a 6 m do muro. A que altura ela toca o muro?",
+          "options": [
+            "8 m",
+            "4 m",
+            "16 m",
+            "√136 m",
+            "6 m"
+          ],
+          "correct_index": 0,
+          "explanation": "A escada é a hipotenusa: 6² + h² = 10². Então h² = 64, e h = 8.",
+          "pitfall": "√136 soma 36 e 100. Mas a escada é o lado maior, então se subtrai.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Expoente fracionário",
+          "statement": "Quanto vale 27^(2/3)?",
+          "options": [
+            "9",
+            "18",
+            "3",
+            "81",
+            "729"
+          ],
+          "correct_index": 0,
+          "explanation": "O 3 de baixo é raiz cúbica: ∛27 = 3. O 2 de cima é quadrado: 3² = 9.",
+          "pitfall": "18 multiplica 27 por 2/3. O expoente fracionário não é uma multiplicação.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -2182,6 +2722,96 @@
           ],
           "explanation": "Quilo, mega e giga sobem de mil em mil: 10³, 10⁶ e 10⁹. Mili é a milésima parte: 10⁻³.",
           "pitfall": "Mili e mega começam com a mesma letra, mas ficam em pontas opostas: um é mil vezes menor, o outro um milhão de vezes maior."
+        },
+        {
+          "topic": "Escrever",
+          "statement": "Como se escreve 3 000 em notação científica?",
+          "options": [
+            "3 × 10³",
+            "3 × 10⁴",
+            "30 × 10²",
+            "3 × 10²",
+            "0,3 × 10⁴"
+          ],
+          "correct_index": 0,
+          "explanation": "A vírgula anda três casas para a esquerda até ficar 3. Então o expoente é 3.",
+          "pitfall": "30 × 10² vale 3 000, mas não está em notação científica: o número da frente tem de ficar entre 1 e 10.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Ler",
+          "statement": "Quanto vale 4 × 10²?",
+          "options": [
+            "400",
+            "40",
+            "4 000",
+            "42",
+            "0,04"
+          ],
+          "correct_index": 0,
+          "explanation": "10² é 100. Então 4 × 100 = 400.",
+          "pitfall": "42 só gruda os algarismos. O 10² é uma multiplicação por cem.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Pequeno",
+          "statement": "Como se escreve 0,00045 em notação científica?",
+          "options": [
+            "4,5 × 10⁻⁴",
+            "4,5 × 10⁴",
+            "45 × 10⁻⁵",
+            "4,5 × 10⁻³",
+            "0,45 × 10⁻³"
+          ],
+          "correct_index": 0,
+          "explanation": "A vírgula anda quatro casas para a direita até ficar 4,5. Número pequeno leva expoente negativo.",
+          "pitfall": "4,5 × 10⁴ é um número grande, 45 000. Faltou o sinal de menos.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Dividir",
+          "statement": "Quanto é (8 × 10⁶) ÷ (2 × 10²)?",
+          "options": [
+            "4 × 10⁴",
+            "4 × 10³",
+            "6 × 10⁴",
+            "4 × 10⁸",
+            "16 × 10⁸"
+          ],
+          "correct_index": 0,
+          "explanation": "Divide-se a frente: 8 ÷ 2 = 4. Subtraem-se os expoentes: 6 − 2 = 4.",
+          "pitfall": "4 × 10³ divide os expoentes. Na divisão, eles se subtraem.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Ajustar",
+          "statement": "Quanto é (4 × 10³) × (5 × 10⁻⁷) em notação científica?",
+          "options": [
+            "2 × 10⁻³",
+            "20 × 10⁻⁴",
+            "2 × 10⁻⁴",
+            "9 × 10⁻⁴",
+            "2 × 10⁻¹⁰"
+          ],
+          "correct_index": 0,
+          "explanation": "4 × 5 = 20, e 3 + (−7) = −4. Fica 20 × 10⁻⁴. Para o 20 virar 2, a vírgula anda uma casa e o expoente sobe: 2 × 10⁻³.",
+          "pitfall": "20 × 10⁻⁴ está certo no valor, mas não é notação científica. E 2 × 10⁻⁴ ajusta a frente sem ajustar o expoente.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Comparar",
+          "statement": "Qual destes números é o maior?",
+          "options": [
+            "3 × 10⁻²",
+            "9 × 10⁻³",
+            "5 × 10⁻⁴",
+            "8 × 10⁻⁵",
+            "9,9 × 10⁻⁵"
+          ],
+          "correct_index": 0,
+          "explanation": "Quanto menos negativo o expoente, maior o número: 10⁻² ganha de 10⁻³. 3 × 10⁻² = 0,03, e 9 × 10⁻³ = 0,009.",
+          "pitfall": "O 9 da frente engana. Quem decide primeiro é o expoente.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -2474,6 +3104,96 @@
           "correct_index": 2,
           "explanation": "O termo com x é −x, que é o mesmo que −1x. O coeficiente é −1.",
           "pitfall": "7 é o coeficiente de x², outro termo."
+        },
+        {
+          "topic": "Valor",
+          "statement": "Qual é o valor de 3x + 2 quando x = 4?",
+          "options": [
+            "14",
+            "34",
+            "9",
+            "12",
+            "20"
+          ],
+          "correct_index": 0,
+          "explanation": "Troca-se x por 4: 3 × 4 + 2 = 14.",
+          "pitfall": "34 cola o 3 no 4. 3x quer dizer 3 vezes x.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Juntar",
+          "statement": "Simplifique 4x + 6x − 3x.",
+          "options": [
+            "7x",
+            "13x",
+            "7x³",
+            "10x − 3",
+            "x"
+          ],
+          "correct_index": 0,
+          "explanation": "São termos semelhantes. 4 + 6 − 3 = 7, e o x fica.",
+          "pitfall": "7x³ trata a soma como se fosse multiplicação. Na soma, a letra não muda.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Distributiva",
+          "statement": "Qual é o resultado de 3(2x − 5) + x?",
+          "options": [
+            "7x − 15",
+            "7x − 5",
+            "6x − 15",
+            "7x + 15",
+            "9x − 15"
+          ],
+          "correct_index": 0,
+          "explanation": "3 × 2x = 6x e 3 × (−5) = −15. Somando o x: 7x − 15.",
+          "pitfall": "7x − 5 multiplica o 3 só pelo 2x. A distributiva vale para todos os termos.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Quadrado da diferença",
+          "statement": "Quanto é (x − 3)²?",
+          "options": [
+            "x² − 6x + 9",
+            "x² − 9",
+            "x² + 9",
+            "x² − 3x + 9",
+            "x² − 6x − 9"
+          ],
+          "correct_index": 0,
+          "explanation": "(x − 3)(x − 3) = x² − 3x − 3x + 9 = x² − 6x + 9.",
+          "pitfall": "x² − 9 eleva cada termo e esquece o termo do meio.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Fatorar",
+          "statement": "Qual é a forma fatorada de x² − 25?",
+          "options": [
+            "(x + 5)(x − 5)",
+            "(x − 5)²",
+            "(x + 5)²",
+            "x(x − 25)",
+            "(x − 25)(x + 1)"
+          ],
+          "correct_index": 0,
+          "explanation": "É a diferença de dois quadrados: x² e 5². Ela vira (x + 5)(x − 5).",
+          "pitfall": "(x − 5)² dá x² − 10x + 25, com um termo do meio que não existe aqui.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Montar",
+          "statement": "Um retângulo tem lado x e o outro lado 3 a mais. Qual expressão dá o perímetro?",
+          "options": [
+            "4x + 6",
+            "2x + 3",
+            "x² + 3x",
+            "4x + 3",
+            "2x + 6"
+          ],
+          "correct_index": 0,
+          "explanation": "Os lados são x e x + 3. O perímetro soma os quatro: 2x + 2(x + 3) = 4x + 6.",
+          "pitfall": "x² + 3x é a área, e não o perímetro.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -2790,6 +3510,96 @@
           "correct_index": 3,
           "explanation": "Junte os x de um lado e os números do outro: 7x − 3x = 12 + 4. Então 4x = 16 e x = 4. Conferindo: 7 · 4 − 4 = 24 e 3 · 4 + 12 = 24.",
           "pitfall": "Ao passar o −4 para o outro lado, ele vira +4. Fazer 12 − 4 = 8 leva a x = 2."
+        },
+        {
+          "topic": "Resolver",
+          "statement": "Resolva x + 9 = 15.",
+          "options": [
+            "6",
+            "24",
+            "−6",
+            "15",
+            "9"
+          ],
+          "correct_index": 0,
+          "explanation": "O 9 passa para o outro lado subtraindo: x = 15 − 9 = 6.",
+          "pitfall": "24 soma em vez de subtrair. O 9 muda de lado com a operação contrária.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Multiplicação",
+          "statement": "Resolva 4x = 28.",
+          "options": [
+            "7",
+            "24",
+            "32",
+            "112",
+            "4"
+          ],
+          "correct_index": 0,
+          "explanation": "O 4 que multiplica passa dividindo: 28 ÷ 4 = 7.",
+          "pitfall": "24 subtrai 4. Quem multiplica passa dividindo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Os dois lados",
+          "statement": "Resolva 5x − 3 = 2x + 9.",
+          "options": [
+            "4",
+            "2",
+            "6",
+            "12",
+            "−4"
+          ],
+          "correct_index": 0,
+          "explanation": "x de um lado e número do outro: 5x − 2x = 9 + 3. Então 3x = 12, e x = 4.",
+          "pitfall": "Quem esquece de trocar o sinal do −3 faz 3x = 6 e chega a 2.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Problema",
+          "statement": "Um número mais o seu triplo dá 48. Que número é esse?",
+          "options": [
+            "12",
+            "16",
+            "24",
+            "45",
+            "4"
+          ],
+          "correct_index": 0,
+          "explanation": "x + 3x = 48, ou 4x = 48. Então x = 12.",
+          "pitfall": "16 é 48 ÷ 3, como se fosse só o triplo. Falta somar o próprio número.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Com frações",
+          "statement": "Resolva (x − 1)/4 = (x + 2)/7.",
+          "options": [
+            "5",
+            "1",
+            "3",
+            "−5",
+            "13"
+          ],
+          "correct_index": 0,
+          "explanation": "Multiplica-se em cruz: 7(x − 1) = 4(x + 2). Então 7x − 7 = 4x + 8, 3x = 15 e x = 5.",
+          "pitfall": "Quem multiplica só o x pelo 7 esquece o −1. A conta vale para a expressão inteira.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Idades",
+          "statement": "Um pai tem 40 anos e o filho 10. Daqui a quantos anos o pai terá o dobro da idade do filho?",
+          "options": [
+            "20",
+            "10",
+            "15",
+            "30",
+            "5"
+          ],
+          "correct_index": 0,
+          "explanation": "Daqui a x anos: 40 + x = 2(10 + x). Então 40 + x = 20 + 2x, e x = 20. Pai com 60, filho com 30.",
+          "pitfall": "Quem esquece que o filho também envelhece monta 40 + x = 2 × 10. Os dois ganham x anos.",
+          "difficulty": "dificil"
         }
       ],
       "module": "Álgebra"
@@ -3098,6 +3908,96 @@
           ],
           "explanation": "Sem a, b e c não dá para calcular o delta. E sem o delta não dá para usar a fórmula do x.",
           "pitfall": "Pular a conferência deixa passar um sinal trocado."
+        },
+        {
+          "topic": "Incompleta",
+          "statement": "Quais são as soluções de x² = 36?",
+          "options": [
+            "6 e −6",
+            "6",
+            "18",
+            "18 e −18",
+            "36"
+          ],
+          "correct_index": 0,
+          "explanation": "6 × 6 = 36 e também (−6) × (−6) = 36.",
+          "pitfall": "Esquecer o −6 é o erro mais comum. O quadrado de um negativo também é positivo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Coeficientes",
+          "statement": "Em 2x² − 5x + 3 = 0, quanto vale o coeficiente b?",
+          "options": [
+            "−5",
+            "5",
+            "2",
+            "3",
+            "−2"
+          ],
+          "correct_index": 0,
+          "explanation": "A forma é ax² + bx + c. O número junto do x é b, com o sinal: −5.",
+          "pitfall": "5 perde o sinal. O sinal faz parte do coeficiente.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Delta",
+          "statement": "Quanto vale Δ em x² − 4x − 5 = 0?",
+          "options": [
+            "36",
+            "−4",
+            "16",
+            "4",
+            "−36"
+          ],
+          "correct_index": 0,
+          "explanation": "Δ = b² − 4ac = 16 − 4 × 1 × (−5) = 16 + 20 = 36.",
+          "pitfall": "Quem esquece o sinal de c faz 16 − 20 = −4.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Raízes",
+          "statement": "Quais são as raízes de x² − x − 6 = 0?",
+          "options": [
+            "3 e −2",
+            "−3 e 2",
+            "6 e −1",
+            "2 e 3",
+            "−6 e 1"
+          ],
+          "correct_index": 0,
+          "explanation": "Soma 1 e produto −6: os números são 3 e −2. Conferindo, 9 − 3 − 6 = 0.",
+          "pitfall": "−3 e 2 têm o produto certo, mas a soma dá −1.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Produto",
+          "statement": "Qual é o produto das raízes de 3x² + 6x − 12 = 0?",
+          "options": [
+            "−4",
+            "4",
+            "−2",
+            "−12",
+            "2"
+          ],
+          "correct_index": 0,
+          "explanation": "O produto das raízes é c/a: −12 ÷ 3 = −4.",
+          "pitfall": "−2 é a soma (−b/a). A pergunta é o produto.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Problema",
+          "statement": "A área de um terreno retangular é 48 m², e um lado tem 2 m a mais que o outro. Quanto mede o lado menor?",
+          "options": [
+            "6 m",
+            "8 m",
+            "4 m",
+            "24 m",
+            "−8 m"
+          ],
+          "correct_index": 0,
+          "explanation": "x(x + 2) = 48 dá x² + 2x − 48 = 0, com raízes 6 e −8. Medida não é negativa: 6 m.",
+          "pitfall": "−8 é raiz da equação, mas não serve como medida. 8 m é o lado maior.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -3394,6 +4294,96 @@
           ],
           "explanation": "O método reduz o sistema a uma equação de uma letra só. Com essa letra, a outra sai de volta.",
           "pitfall": "Parar depois de achar uma letra é deixar a resposta pela metade."
+        },
+        {
+          "topic": "Somar",
+          "statement": "Resolva x + y = 7 e x − y = 1. Qual é o valor de x?",
+          "options": [
+            "4",
+            "3",
+            "8",
+            "6",
+            "7"
+          ],
+          "correct_index": 0,
+          "explanation": "Somando as duas, 2x = 8. Então x = 4.",
+          "pitfall": "3 é o valor de y. A pergunta é o x.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Substituir",
+          "statement": "Se y = 2x e x + y = 9, quanto vale x?",
+          "options": [
+            "3",
+            "6",
+            "9",
+            "4,5",
+            "18"
+          ],
+          "correct_index": 0,
+          "explanation": "Troca-se y por 2x: x + 2x = 9, então x = 3.",
+          "pitfall": "6 é o y. Leia de novo o que se pede.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Ingressos",
+          "statement": "Um ingresso inteiro e uma meia-entrada custam juntos R$ 45. A meia é metade da inteira. Quanto custa a inteira?",
+          "options": [
+            "R$ 30",
+            "R$ 15",
+            "R$ 22,50",
+            "R$ 45",
+            "R$ 90"
+          ],
+          "correct_index": 0,
+          "explanation": "Inteira = x e meia = x/2. x + x/2 = 45, então 1,5x = 45 e x = 30.",
+          "pitfall": "R$ 22,50 divide 45 por dois, como se custassem igual.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Eliminar",
+          "statement": "Resolva 2x + 3y = 12 e 2x + y = 8. Qual é o valor de y?",
+          "options": [
+            "2",
+            "3",
+            "4",
+            "6",
+            "1"
+          ],
+          "correct_index": 0,
+          "explanation": "Subtraindo a segunda da primeira, 2y = 4. Então y = 2.",
+          "pitfall": "3 é o valor de x. Conferindo: 6 + 6 = 12 e 6 + 2 = 8.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Moedas",
+          "statement": "Um cofre tem 20 moedas de 50 centavos e de 1 real, somando R$ 14. Quantas são de 1 real?",
+          "options": [
+            "8",
+            "12",
+            "10",
+            "14",
+            "6"
+          ],
+          "correct_index": 0,
+          "explanation": "x + y = 20 e 0,5x + y = 14. Subtraindo, 0,5x = 6 e x = 12 moedas de 50 centavos. Sobram 8 de 1 real.",
+          "pitfall": "12 é a quantidade de moedas de 50 centavos. A pergunta é sobre as de 1 real.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Quantas soluções",
+          "statement": "Para que valor de k o sistema x + 2y = 5 e 2x + 4y = k tem infinitas soluções?",
+          "options": [
+            "10",
+            "5",
+            "2,5",
+            "0",
+            "Nenhum valor"
+          ],
+          "correct_index": 0,
+          "explanation": "A segunda equação é o dobro da primeira do lado esquerdo. Se o direito também dobrar, as duas são a mesma reta.",
+          "pitfall": "Com k diferente de 10, as retas ficam paralelas e o sistema não tem solução. É o caso oposto.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -3721,6 +4711,96 @@
           ],
           "explanation": "∈ liga um elemento a um conjunto. ⊂ liga um conjunto a outro. ∪ junta e ∩ cruza.",
           "pitfall": "∪ e ∩ se confundem fácil. O ∪ tem a boca para cima e junta; o ∩ fica de cabeça para baixo e cruza."
+        },
+        {
+          "topic": "Elemento",
+          "statement": "Se A = {1, 2, 3}, qual afirmação é verdadeira?",
+          "options": [
+            "2 ∈ A",
+            "4 ∈ A",
+            "1 ∉ A",
+            "3 ∉ A",
+            "0 ∈ A"
+          ],
+          "correct_index": 0,
+          "explanation": "O 2 está na lista de A. Por isso 2 pertence a A.",
+          "pitfall": "∉ quer dizer “não pertence”. O 1 e o 3 estão em A.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Interseção",
+          "statement": "Se A = {2, 3, 5} e B = {3, 5, 8}, qual é A ∩ B?",
+          "options": [
+            "{3, 5}",
+            "{2, 3, 5, 8}",
+            "{2, 8}",
+            "{3}",
+            "{}"
+          ],
+          "correct_index": 0,
+          "explanation": "A interseção é o que está nos dois ao mesmo tempo: 3 e 5.",
+          "pitfall": "{2, 3, 5, 8} é a união, que junta tudo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Quantos elementos",
+          "statement": "Se A tem 10 elementos, B tem 8 e A ∩ B tem 3, quantos elementos tem A ∪ B?",
+          "options": [
+            "15",
+            "18",
+            "21",
+            "13",
+            "5"
+          ],
+          "correct_index": 0,
+          "explanation": "Soma-se tudo e tira-se o que foi contado duas vezes: 10 + 8 − 3 = 15.",
+          "pitfall": "18 conta duas vezes os 3 que estão nos dois.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Subconjunto",
+          "statement": "Se A = {1, 2} e B = {1, 2, 3}, qual afirmação é verdadeira?",
+          "options": [
+            "A ⊂ B",
+            "B ⊂ A",
+            "A = B",
+            "A ∩ B = {}",
+            "A ∪ B = A"
+          ],
+          "correct_index": 0,
+          "explanation": "Todo elemento de A está em B. Então A é subconjunto de B.",
+          "pitfall": "B ⊂ A inverte: o 3 está em B e não está em A.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Nenhum dos dois",
+          "statement": "Numa escola de 100 alunos, 60 jogam futebol, 30 jogam vôlei e 20 jogam os dois. Quantos não jogam nenhum?",
+          "options": [
+            "30",
+            "10",
+            "50",
+            "70",
+            "0"
+          ],
+          "correct_index": 0,
+          "explanation": "Jogam pelo menos um: 60 + 30 − 20 = 70. Sobram 100 − 70 = 30.",
+          "pitfall": "10 sai de 100 − 60 − 30, que conta duas vezes quem joga os dois.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Só um",
+          "statement": "Numa pesquisa, 40 pessoas leem jornal, 25 leem revista e 10 leem os dois. Quantas leem só um deles?",
+          "options": [
+            "45",
+            "55",
+            "65",
+            "35",
+            "15"
+          ],
+          "correct_index": 0,
+          "explanation": "Só jornal: 40 − 10 = 30. Só revista: 25 − 10 = 15. Somando, 45.",
+          "pitfall": "55 é quem lê pelo menos um, e inclui os 10 que leem os dois.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -4003,6 +5083,96 @@
           ],
           "explanation": "O x vem primeiro. Negativo manda para a esquerda, e o y positivo manda para cima.",
           "pitfall": "Começar pelo y leva a outro ponto."
+        },
+        {
+          "topic": "Quadrante",
+          "statement": "Em qual quadrante fica o ponto (4, 2)?",
+          "options": [
+            "1º quadrante",
+            "2º quadrante",
+            "3º quadrante",
+            "4º quadrante",
+            "Em cima do eixo x"
+          ],
+          "correct_index": 0,
+          "explanation": "x e y positivos: direita e para cima. É o 1º quadrante.",
+          "pitfall": "Só fica em cima de um eixo o ponto que tem uma das coordenadas igual a zero.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Ler o ponto",
+          "statement": "No ponto (−1, 7), qual é a coordenada x?",
+          "options": [
+            "−1",
+            "7",
+            "6",
+            "1",
+            "−7"
+          ],
+          "correct_index": 0,
+          "explanation": "No par ordenado, o x vem primeiro: −1.",
+          "pitfall": "7 é o y. A ordem do par importa.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Origem",
+          "statement": "Qual é a distância do ponto (−5, 12) até a origem?",
+          "options": [
+            "13",
+            "17",
+            "7",
+            "√119",
+            "12"
+          ],
+          "correct_index": 0,
+          "explanation": "Pitágoras: 5² + 12² = 25 + 144 = 169, e √169 = 13.",
+          "pitfall": "17 soma as coordenadas sem sinal. Distância passa pelo quadrado de cada uma.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Ponto médio",
+          "statement": "Qual é o ponto do meio do segmento entre (2, 4) e (8, 10)?",
+          "options": [
+            "(5, 7)",
+            "(6, 6)",
+            "(10, 14)",
+            "(3, 3)",
+            "(4, 8)"
+          ],
+          "correct_index": 0,
+          "explanation": "O meio é a média de cada coordenada: (2 + 8)/2 = 5 e (4 + 10)/2 = 7.",
+          "pitfall": "(10, 14) soma sem dividir por 2. (6, 6) é a diferença entre os pontos.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Distância",
+          "statement": "Qual é a distância entre (−2, −3) e (4, 5)?",
+          "options": [
+            "10",
+            "14",
+            "8",
+            "√8",
+            "6"
+          ],
+          "correct_index": 0,
+          "explanation": "Andou 6 em x e 8 em y. √(36 + 64) = √100 = 10.",
+          "pitfall": "Quem faz 4 − 2 e 5 − 3 ignora os sinais: a distância em x é 4 − (−2) = 6.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Simétrico",
+          "statement": "Qual é o ponto simétrico de (3, −2) em relação ao eixo y?",
+          "options": [
+            "(−3, −2)",
+            "(3, 2)",
+            "(−3, 2)",
+            "(2, −3)",
+            "(−2, 3)"
+          ],
+          "correct_index": 0,
+          "explanation": "Espelhar no eixo y troca o lado: o x muda de sinal e o y fica.",
+          "pitfall": "(3, 2) espelha no eixo x. O eixo da pergunta é o y.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -4338,6 +5508,96 @@
           ],
           "explanation": "Domínio e imagem são os dois lados da máquina. A variável é a letra da entrada, e a composição liga duas máquinas em fila.",
           "pitfall": "Trocar domínio com imagem é comum. O domínio é a porta de entrada da máquina; a imagem, a de saída."
+        },
+        {
+          "topic": "Calcular",
+          "statement": "Se f(x) = 2x + 1, quanto vale f(3)?",
+          "options": [
+            "7",
+            "6",
+            "9",
+            "21",
+            "5"
+          ],
+          "correct_index": 0,
+          "explanation": "Troca-se x por 3: 2 × 3 + 1 = 7.",
+          "pitfall": "21 cola o 2 no x como se fosse a dezena. 2x quer dizer 2 vezes x.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Nomes",
+          "statement": "Na função f(x) = x², o conjunto dos valores que podem ENTRAR chama-se:",
+          "options": [
+            "domínio",
+            "imagem",
+            "variável",
+            "gráfico",
+            "constante"
+          ],
+          "correct_index": 0,
+          "explanation": "O domínio é o que pode entrar. A imagem é o que sai.",
+          "pitfall": "Imagem é o outro lado: os valores que a função entrega.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Negativo",
+          "statement": "Se f(x) = x² − 3x + 2, quanto vale f(−1)?",
+          "options": [
+            "6",
+            "0",
+            "−2",
+            "2",
+            "4"
+          ],
+          "correct_index": 0,
+          "explanation": "(−1)² = 1, e −3 × (−1) = 3. Então 1 + 3 + 2 = 6.",
+          "pitfall": "Quem faz (−1)² = −1 chega a 4. Negativo ao quadrado dá positivo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Domínio",
+          "statement": "Qual valor de x NÃO pode entrar em f(x) = 1/(x + 6)?",
+          "options": [
+            "−6",
+            "6",
+            "0",
+            "1",
+            "−1"
+          ],
+          "correct_index": 0,
+          "explanation": "Com x = −6, o de baixo vira zero. E não existe divisão por zero.",
+          "pitfall": "Com 6 fica 1/12, que existe. O problema é o x que zera o de baixo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Composição",
+          "statement": "Com f(x) = 3x − 1 e g(x) = x², quanto vale f(g(2))?",
+          "options": [
+            "11",
+            "25",
+            "5",
+            "12",
+            "35"
+          ],
+          "correct_index": 0,
+          "explanation": "Primeiro g(2) = 4. Depois f(4) = 12 − 1 = 11.",
+          "pitfall": "25 é g(f(2)): a ordem da composição está trocada. A de dentro age primeiro.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Ao contrário",
+          "statement": "Se f(x) = 5x − 3 e f(a) = 22, quanto vale a?",
+          "options": [
+            "5",
+            "107",
+            "19",
+            "4,4",
+            "25"
+          ],
+          "correct_index": 0,
+          "explanation": "5a − 3 = 22 dá 5a = 25, então a = 5.",
+          "pitfall": "107 calcula f(22). Aqui o 22 é a saída, e o que se procura é a entrada.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -4647,6 +5907,96 @@
           ],
           "explanation": "O a é a inclinação e o b é o valor em x = 0. O zero é onde f(x) = 0.",
           "pitfall": "O b e o zero da função se confundem. O b é onde a reta corta o eixo y; o zero, onde corta o eixo x."
+        },
+        {
+          "topic": "Valor",
+          "statement": "Se f(x) = 2x + 5, quanto vale f(4)?",
+          "options": [
+            "13",
+            "11",
+            "28",
+            "9",
+            "6,5"
+          ],
+          "correct_index": 0,
+          "explanation": "2 × 4 + 5 = 13.",
+          "pitfall": "28 faz 2 × (4 + 5). A multiplicação só pega o x.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Sobe ou desce",
+          "statement": "O gráfico de f(x) = −2x + 3:",
+          "options": [
+            "desce da esquerda para a direita",
+            "sobe da esquerda para a direita",
+            "é uma reta horizontal",
+            "passa pela origem",
+            "é uma curva"
+          ],
+          "correct_index": 0,
+          "explanation": "O número que multiplica o x é negativo. Então a reta desce.",
+          "pitfall": "O 3 positivo não decide nada sobre subir ou descer: ele só diz onde a reta corta o eixo y.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Zero",
+          "statement": "Em que valor de x a função f(x) = −5x + 20 vale zero?",
+          "options": [
+            "4",
+            "−4",
+            "20",
+            "−100",
+            "15"
+          ],
+          "correct_index": 0,
+          "explanation": "−5x + 20 = 0 dá 5x = 20, então x = 4.",
+          "pitfall": "−4 erra o sinal na hora de passar o −5 para o outro lado.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Conta de luz",
+          "statement": "Uma conta de luz cobra R$ 15 fixos mais R$ 0,80 por quilowatt-hora. Quanto se paga por 200 quilowatts-hora?",
+          "options": [
+            "R$ 175",
+            "R$ 160",
+            "R$ 3 015",
+            "R$ 215",
+            "R$ 1 700"
+          ],
+          "correct_index": 0,
+          "explanation": "15 + 0,80 × 200 = 15 + 160 = 175.",
+          "pitfall": "R$ 160 esquece a parte fixa, que se paga mesmo sem gastar nada.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Lei pelos pontos",
+          "statement": "Uma reta passa por (1, 1) e (3, 7). Qual é a lei da função?",
+          "options": [
+            "f(x) = 3x − 2",
+            "f(x) = 3x + 1",
+            "f(x) = 2x − 1",
+            "f(x) = 6x − 5",
+            "f(x) = x + 4"
+          ],
+          "correct_index": 0,
+          "explanation": "A inclinação é (7 − 1)/(3 − 1) = 3. Com f(1) = 1, fica 3 + b = 1, então b = −2.",
+          "pitfall": "6x − 5 usa só a diferença dos y, sem dividir pela dos x.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Comparar planos",
+          "statement": "O plano A cobra R$ 50 fixos mais R$ 2 por minuto. O plano B cobra R$ 5 por minuto, sem fixo. A partir de quantos minutos o A fica mais barato?",
+          "options": [
+            "Mais de 16 minutos",
+            "Mais de 10 minutos",
+            "Mais de 25 minutos",
+            "Mais de 50 minutos",
+            "Nunca"
+          ],
+          "correct_index": 0,
+          "explanation": "Os dois empatam quando 50 + 2x = 5x, ou seja, x = 16,7. Daí em diante, o A cresce mais devagar e fica mais barato.",
+          "pitfall": "“Nunca” olha só para o fixo. O B parte de zero, mas sobe mais rápido.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -4976,6 +6326,96 @@
           ],
           "explanation": "O a decide a abertura, o delta conta os cortes e o c é o valor de f(0). O x do vértice sai de −b / 2a.",
           "pitfall": "O c não diz onde fica o vértice. Ele é só o ponto em que a parábola cruza o eixo y."
+        },
+        {
+          "topic": "Abertura",
+          "statement": "Para onde abre a parábola de f(x) = 2x² − 3x + 1?",
+          "options": [
+            "Para cima",
+            "Para baixo",
+            "Para a direita",
+            "Para a esquerda",
+            "Não abre: é uma reta"
+          ],
+          "correct_index": 0,
+          "explanation": "O número junto do x² é positivo. Então a parábola abre para cima.",
+          "pitfall": "O −3 não decide a abertura. Quem decide é o número do x².",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Onde corta o y",
+          "statement": "Em qual ponto a parábola f(x) = x² − 4x + 7 corta o eixo y?",
+          "options": [
+            "(0, 7)",
+            "(7, 0)",
+            "(0, −4)",
+            "(0, 1)",
+            "(4, 0)"
+          ],
+          "correct_index": 0,
+          "explanation": "No eixo y, x = 0. f(0) = 7.",
+          "pitfall": "(7, 0) troca a ordem do par. No eixo y, o x é que vale zero.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Vértice",
+          "statement": "Qual é o vértice de f(x) = x² − 6x + 5?",
+          "options": [
+            "(3, −4)",
+            "(−3, 32)",
+            "(3, 4)",
+            "(6, 5)",
+            "(5, 0)"
+          ],
+          "correct_index": 0,
+          "explanation": "x do vértice = −b/2a = 6/2 = 3. f(3) = 9 − 18 + 5 = −4.",
+          "pitfall": "(−3, 32) erra o sinal de −b. Com b = −6, −b é 6.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Raízes",
+          "statement": "Em quais valores de x a parábola f(x) = x² − 9 corta o eixo x?",
+          "options": [
+            "−3 e 3",
+            "Só 3",
+            "Só 9",
+            "−9 e 9",
+            "Não corta"
+          ],
+          "correct_index": 0,
+          "explanation": "x² − 9 = 0 dá x² = 9, então x = 3 ou x = −3.",
+          "pitfall": "“Só 3” esquece a raiz negativa.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Maior área",
+          "statement": "Com 20 m de cerca, qual é a maior área de um retângulo que se pode cercar?",
+          "options": [
+            "25 m²",
+            "100 m²",
+            "20 m²",
+            "24 m²",
+            "50 m²"
+          ],
+          "correct_index": 0,
+          "explanation": "Se um lado é x, o outro é 10 − x. A área é x(10 − x), que é máxima em x = 5: 5 × 5 = 25.",
+          "pitfall": "24 m² é o retângulo 4 por 6, que cerca bem, mas não é o maior.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Sinal",
+          "statement": "Para quais valores de x a função f(x) = x² − 5x + 6 é negativa?",
+          "options": [
+            "Entre 2 e 3",
+            "Menores que 2",
+            "Maiores que 3",
+            "Menores que 2 ou maiores que 3",
+            "Nunca"
+          ],
+          "correct_index": 0,
+          "explanation": "As raízes são 2 e 3, e a parábola abre para cima. Ela fica abaixo do eixo só entre as raízes.",
+          "pitfall": "Fora das raízes ela é positiva. É o contrário do que se pede.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -5294,6 +6734,96 @@
           ],
           "explanation": "Somar ou tirar sempre o mesmo valor é afim. Multiplicar sempre pelo mesmo número é exponencial.",
           "pitfall": "Cair pela metade parece uma perda fixa, mas não é: metade de 800 é 400, e metade de 400 já é só 200."
+        },
+        {
+          "topic": "Calcular",
+          "statement": "Se f(x) = 2ˣ, quanto vale f(5)?",
+          "options": [
+            "32",
+            "10",
+            "25",
+            "7",
+            "16"
+          ],
+          "correct_index": 0,
+          "explanation": "2⁵ = 2 × 2 × 2 × 2 × 2 = 32.",
+          "pitfall": "10 é 2 × 5. No expoente, o x diz quantas vezes multiplicar o 2.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Começo",
+          "statement": "Quanto vale f(0) em f(x) = 7ˣ?",
+          "options": [
+            "1",
+            "0",
+            "7",
+            "70",
+            "−7"
+          ],
+          "correct_index": 0,
+          "explanation": "Qualquer número diferente de zero elevado a 0 dá 1.",
+          "pitfall": "0 é a resposta de quem acha que expoente zero zera tudo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Equação",
+          "statement": "Qual é o valor de x em 3ˣ = 81?",
+          "options": [
+            "4",
+            "27",
+            "3",
+            "9",
+            "78"
+          ],
+          "correct_index": 0,
+          "explanation": "81 = 3 × 3 × 3 × 3 = 3⁴. Então x = 4.",
+          "pitfall": "27 divide 81 por 3. A pergunta é quantas vezes multiplicar o 3.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Juros compostos",
+          "statement": "R$ 1 000 aplicados a 20% ao ano, com juros compostos. Quanto há depois de 2 anos?",
+          "options": [
+            "R$ 1 440",
+            "R$ 1 400",
+            "R$ 1 200",
+            "R$ 1 040",
+            "R$ 2 400"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada ano multiplica por 1,2: 1 000 × 1,2 × 1,2 = 1 440.",
+          "pitfall": "R$ 1 400 é juros simples: 200 por ano. No composto, o juro do segundo ano rende sobre o primeiro.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Meia-vida",
+          "statement": "Um remédio perde metade do efeito a cada 6 horas. Que fração do efeito resta depois de 24 horas?",
+          "options": [
+            "1/16",
+            "1/4",
+            "1/8",
+            "1/24",
+            "1/2"
+          ],
+          "correct_index": 0,
+          "explanation": "24 horas são 4 metades seguidas: (1/2)⁴ = 1/16.",
+          "pitfall": "1/4 divide 24 por 6 e para aí. Cada período corta pela metade de novo.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Expoente negativo",
+          "statement": "Qual é o valor de x em 2ˣ = 1/8?",
+          "options": [
+            "−3",
+            "3",
+            "−8",
+            "1/3",
+            "−1/3"
+          ],
+          "correct_index": 0,
+          "explanation": "1/8 = 1/2³ = 2⁻³. Então x = −3.",
+          "pitfall": "3 dá 8, e não 1/8. O inverso pede o expoente negativo.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -5619,6 +7149,96 @@
           ],
           "explanation": "2⁴ = 16, 3² = 9, 10⁻¹ = 0,1 e e¹ = e. Cada logaritmo é o expoente que falta.",
           "pitfall": "log₂ 16 não é 8. A pergunta é quantas vezes multiplicar o 2, e não quanto é 16 dividido por 2."
+        },
+        {
+          "topic": "Calcular",
+          "statement": "Quanto vale log₃ 9?",
+          "options": [
+            "2",
+            "3",
+            "6",
+            "27",
+            "1/2"
+          ],
+          "correct_index": 0,
+          "explanation": "3 elevado a quanto dá 9? 3² = 9. Então o logaritmo é 2.",
+          "pitfall": "3 é a base, e não a resposta. A resposta é o expoente.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Base dez",
+          "statement": "Quanto vale log 100?",
+          "options": [
+            "2",
+            "10",
+            "100",
+            "1",
+            "20"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem base escrita, a base é 10. 10² = 100.",
+          "pitfall": "10 é a base. O logaritmo é o expoente que leva a base ao 100.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Igual à base",
+          "statement": "Quanto vale log₈ 8?",
+          "options": [
+            "1",
+            "0",
+            "8",
+            "64",
+            "2"
+          ],
+          "correct_index": 0,
+          "explanation": "8¹ = 8. O logaritmo de um número na própria base é 1.",
+          "pitfall": "0 é o log de 1, e não o log da própria base.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Produto",
+          "statement": "Com log 2 ≈ 0,30 e log 3 ≈ 0,48, quanto vale log 6?",
+          "options": [
+            "0,78",
+            "0,144",
+            "0,18",
+            "1,5",
+            "0,24"
+          ],
+          "correct_index": 0,
+          "explanation": "6 = 2 × 3. O log do produto é a soma dos logs: 0,30 + 0,48 = 0,78.",
+          "pitfall": "0,144 multiplica os logs. Multiplicar dentro vira somar fora.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Divisão",
+          "statement": "Com log 2 ≈ 0,30, quanto vale log 5?",
+          "options": [
+            "0,70",
+            "0,15",
+            "0,60",
+            "1,30",
+            "2,50"
+          ],
+          "correct_index": 0,
+          "explanation": "5 = 10/2. Então log 5 = log 10 − log 2 = 1 − 0,30 = 0,70.",
+          "pitfall": "0,15 divide 0,30 por 2. A divisão dentro do log vira subtração fora.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Potência",
+          "statement": "Com log 3 ≈ 0,48, quanto vale log 81?",
+          "options": [
+            "1,92",
+            "0,48⁴",
+            "1,44",
+            "38,88",
+            "3,24"
+          ],
+          "correct_index": 0,
+          "explanation": "81 = 3⁴. O expoente desce multiplicando: 4 × 0,48 = 1,92.",
+          "pitfall": "0,48⁴ eleva o log em vez de multiplicar. O expoente desce e multiplica.",
+          "difficulty": "dificil"
         }
       ]
     }

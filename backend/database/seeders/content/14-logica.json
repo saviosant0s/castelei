@@ -324,6 +324,96 @@
           ],
           "explanation": "Só a primeira pode ser julgada V ou F.",
           "pitfall": "Sentença aberta depende do x."
+        },
+        {
+          "topic": "Proposição",
+          "statement": "Qual destas frases é uma proposição?",
+          "options": [
+            "O Brasil fica na América do Sul.",
+            "Feche a porta.",
+            "Que dia lindo!",
+            "Quantos anos você tem?",
+            "Tomara que chova."
+          ],
+          "correct_index": 0,
+          "explanation": "Só a primeira pode ser julgada como verdadeira ou falsa. Ordem, exclamação, pergunta e desejo não afirmam nada.",
+          "pitfall": "Ponto de exclamação engana: “que dia lindo” expressa um sentimento, e sentimento não se julga como verdadeiro ou falso.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Valor lógico",
+          "statement": "Quantos valores lógicos uma proposição pode ter ao mesmo tempo?",
+          "options": [
+            "Um só: verdadeiro ou falso.",
+            "Dois: verdadeiro e falso.",
+            "Três: verdadeiro, falso ou talvez.",
+            "Nenhum, até alguém conferir.",
+            "Depende de quem lê."
+          ],
+          "correct_index": 0,
+          "explanation": "Toda proposição é verdadeira ou falsa, e nunca as duas coisas. Não há terceira opção.",
+          "pitfall": "Não saber se é verdade não cria um terceiro valor. A frase tem um valor, mesmo que ninguém saiba qual.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Sentença aberta",
+          "statement": "Qual destas frases é uma sentença aberta, e não uma proposição?",
+          "options": [
+            "x + 3 = 10",
+            "3 + 4 = 10",
+            "Todo número par é divisível por 2.",
+            "Brasília é a capital do Brasil.",
+            "7 é maior que 2."
+          ],
+          "correct_index": 0,
+          "explanation": "Enquanto não se diz quem é x, não dá para julgar a frase. Por isso ela é aberta.",
+          "pitfall": "3 + 4 = 10 é falsa, mas é proposição: dá para julgar. Falsa não quer dizer aberta.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Simples ou composta",
+          "statement": "Qual destas proposições é simples?",
+          "options": [
+            "Maria é professora.",
+            "Maria é professora e mora em Salvador.",
+            "Se Maria estuda, então passa.",
+            "Maria canta ou dança.",
+            "Maria não é professora e não é médica."
+          ],
+          "correct_index": 0,
+          "explanation": "Só a primeira afirma uma ideia só. As outras juntam duas ideias com um conectivo.",
+          "pitfall": "“Maria não é professora e não é médica” parece uma ideia, mas o “e” liga duas.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Pergunta disfarçada",
+          "statement": "Qual destas frases é uma proposição?",
+          "options": [
+            "Ninguém sabe quantos grãos de areia existem na Terra.",
+            "Será que existe vida em Marte?",
+            "Descubra quantos grãos de areia existem.",
+            "Quem dera saber a resposta!",
+            "x é um número primo."
+          ],
+          "correct_index": 0,
+          "explanation": "A primeira afirma algo que pode ser julgado: é verdadeira ou falsa. As outras são pergunta, ordem, desejo e sentença aberta.",
+          "pitfall": "O assunto da primeira é um mistério, mas a frase em si afirma uma coisa. É isso que conta.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Contar proposições",
+          "statement": "Quantas proposições há nesta lista? (“Salvador é na Bahia”; “Leia o texto”; “2 + 2 = 5”; “ele é alto”; “Que horas são?”)",
+          "options": [
+            "2",
+            "1",
+            "3",
+            "4",
+            "5"
+          ],
+          "correct_index": 0,
+          "explanation": "São duas. “Salvador é na Bahia” é verdadeira, e “2 + 2 = 5” é falsa. As outras são ordem, sentença aberta e pergunta.",
+          "pitfall": "Quem conta 1 deixa a falsa de fora. Quem conta 3 trata “ele é alto” como proposição, mas sem saber quem é “ele” não dá para julgar.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -631,6 +721,96 @@
           ],
           "explanation": "Cada negação cobre tudo o que a frase deixa de fora.",
           "pitfall": "“Ana é triste” não seria a negação."
+        },
+        {
+          "topic": "Valor",
+          "statement": "Se p é verdadeira, qual é o valor de ¬p?",
+          "options": [
+            "Falso",
+            "Verdadeiro",
+            "Depende de q",
+            "Verdadeiro e falso",
+            "Não tem valor"
+          ],
+          "correct_index": 0,
+          "explanation": "A negação vira o valor. Verdadeira vira falsa.",
+          "pitfall": "A negação não depende de outra letra: ela olha só para p.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Negar uma frase",
+          "statement": "Qual é a negação de “O ônibus chegou”?",
+          "options": [
+            "O ônibus não chegou.",
+            "O ônibus saiu.",
+            "O ônibus chegou atrasado.",
+            "O trem chegou.",
+            "Nenhum ônibus chegou."
+          ],
+          "correct_index": 0,
+          "explanation": "Negar é dizer que a mesma coisa não acontece. Basta pôr o “não”.",
+          "pitfall": "“Saiu” não é o contrário lógico de “chegou”: dá para não chegar e também não sair.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Menor ou igual",
+          "statement": "Qual é a negação de “x < 5”?",
+          "options": [
+            "x ≥ 5",
+            "x > 5",
+            "x ≤ 5",
+            "x = 5",
+            "x < −5"
+          ],
+          "correct_index": 0,
+          "explanation": "Se x não é menor que 5, ele é igual ou maior. Por isso a negação é x ≥ 5.",
+          "pitfall": "x > 5 esquece o caso x = 5, que também não é menor que 5.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Antônimo",
+          "statement": "Qual é a negação de “O copo está cheio”?",
+          "options": [
+            "O copo não está cheio.",
+            "O copo está vazio.",
+            "O copo está pela metade.",
+            "O copo nunca esteve cheio.",
+            "O copo está quebrado."
+          ],
+          "correct_index": 0,
+          "explanation": "A negação cobre tudo o que não é “cheio”: vazio, pela metade, quase cheio.",
+          "pitfall": "Vazio é o antônimo, não a negação. Um copo pela metade não está cheio e também não está vazio.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Negações seguidas",
+          "statement": "Qual é o valor de ¬(¬(¬p)) quando p é verdadeira?",
+          "options": [
+            "Falso",
+            "Verdadeiro",
+            "Depende de q",
+            "Não dá para saber",
+            "Igual a ¬(¬p)"
+          ],
+          "correct_index": 0,
+          "explanation": "Três negações valem uma só. Como p é verdadeira, ¬p é falsa.",
+          "pitfall": "Duas negações se anulam, mas aqui são três. Sobra uma.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Antônimo no lugar",
+          "statement": "A frase “Não é verdade que Lia é feliz” é equivalente a:",
+          "options": [
+            "Lia não é feliz.",
+            "Lia é infeliz.",
+            "Lia é triste.",
+            "Lia nunca foi feliz.",
+            "Ninguém é feliz."
+          ],
+          "correct_index": 0,
+          "explanation": "“Não é verdade que” nega a frase inteira. O resultado é só “Lia não é feliz”.",
+          "pitfall": "Infeliz e triste dizem mais do que a negação: alguém pode não ser feliz e nem por isso estar triste.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -1014,6 +1194,96 @@
           ],
           "explanation": "Quatro regras que resolvem quase toda conta.",
           "pitfall": "O ou exclusivo olha se os valores são diferentes."
+        },
+        {
+          "topic": "E com os dois",
+          "statement": "p e q são verdadeiras. Qual é o valor de p ∧ q?",
+          "options": [
+            "Verdadeiro",
+            "Falso",
+            "Depende da ordem",
+            "Só p é verdadeira",
+            "Não tem valor"
+          ],
+          "correct_index": 0,
+          "explanation": "O “e” só é verdadeiro quando as duas partes são. Aqui são.",
+          "pitfall": "A ordem não muda o “e”: q ∧ p dá o mesmo resultado.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Ou com uma",
+          "statement": "p é verdadeira e q é falsa. Qual é o valor de p ∨ q?",
+          "options": [
+            "Verdadeiro",
+            "Falso",
+            "Depende de r",
+            "Verdadeiro só se q mudar",
+            "Não tem valor"
+          ],
+          "correct_index": 0,
+          "explanation": "O “ou” precisa de uma parte verdadeira só. p já basta.",
+          "pitfall": "Quem confunde “ou” com “e” responde falso.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Ou exclusivo",
+          "statement": "Qual frase tem um “ou” exclusivo?",
+          "options": [
+            "Ou você passa, ou você reprova.",
+            "Leve guarda-chuva ou casaco.",
+            "Ele fala inglês ou espanhol.",
+            "Ela gosta de café ou de chá.",
+            "Quem é estudante ou professor tem desconto."
+          ],
+          "correct_index": 0,
+          "explanation": "Passar e reprovar não acontecem juntos. O “ou… ou” marca exatamente isso.",
+          "pitfall": "Nas outras, as duas partes podem acontecer juntas: dá para falar inglês e espanhol.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Conta",
+          "statement": "p = F e q = F. Qual é o valor de ¬p ∧ ¬q?",
+          "options": [
+            "Verdadeiro",
+            "Falso",
+            "Depende da ordem",
+            "Igual a p ∧ q",
+            "Não dá para calcular"
+          ],
+          "correct_index": 0,
+          "explanation": "¬p é verdadeira e ¬q também. Verdadeiro e verdadeiro dá verdadeiro.",
+          "pitfall": "Quem esquece de negar primeiro faz F ∧ F e responde falso.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Ou e ou exclusivo",
+          "statement": "Em qual situação p ∨ q e p ⊻ q têm valores diferentes?",
+          "options": [
+            "Quando p e q são verdadeiras.",
+            "Quando p e q são falsas.",
+            "Quando só p é verdadeira.",
+            "Quando só q é verdadeira.",
+            "Em todas as situações."
+          ],
+          "correct_index": 0,
+          "explanation": "Com as duas verdadeiras, o “ou” comum dá verdadeiro e o exclusivo dá falso. Nas outras linhas, os dois concordam.",
+          "pitfall": "“Em todas” exagera: em três das quatro linhas os dois dão o mesmo resultado.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Nem um nem outro",
+          "statement": "“Não fui nem ao cinema nem ao teatro” é falsa em qual caso?",
+          "options": [
+            "Quando fui a pelo menos um dos dois.",
+            "Só quando fui aos dois.",
+            "Só quando fui ao cinema.",
+            "Quando não fui a nenhum.",
+            "Nunca: a frase é sempre verdadeira."
+          ],
+          "correct_index": 0,
+          "explanation": "A frase é ¬c ∧ ¬t. Basta ter ido a um dos dois para uma parte ficar falsa, e o “e” cai.",
+          "pitfall": "“Só quando fui aos dois” toma a parte pelo todo: ir a um só já desmente a frase.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -1355,6 +1625,96 @@
           ],
           "explanation": "O antecedente é suficiente; o consequente é necessário.",
           "pitfall": "A ordem dos papéis é a pegadinha preferida."
+        },
+        {
+          "topic": "Valor",
+          "statement": "p é verdadeira e q é verdadeira. Qual é o valor de p → q?",
+          "options": [
+            "Verdadeiro",
+            "Falso",
+            "Depende de r",
+            "Não dá para saber",
+            "Igual a ¬p"
+          ],
+          "correct_index": 0,
+          "explanation": "A condicional só é falsa com V antes e F depois. Aqui as duas são V.",
+          "pitfall": "A regra “V com F dá F” é o único caso falso. Fora dele, é verdadeira.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Partes",
+          "statement": "Em “Se fizer sol, vou à praia”, qual é o antecedente?",
+          "options": [
+            "fizer sol",
+            "vou à praia",
+            "se",
+            "então",
+            "a frase inteira"
+          ],
+          "correct_index": 0,
+          "explanation": "O antecedente é a parte que vem depois do “se”: a condição.",
+          "pitfall": "“Vou à praia” é o consequente, o que acontece se a condição se cumprir.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Antecedente falso",
+          "statement": "p é falsa e q é verdadeira. Qual é o valor de p → q?",
+          "options": [
+            "Verdadeiro",
+            "Falso",
+            "Depende de q",
+            "Não tem valor",
+            "Igual a p"
+          ],
+          "correct_index": 0,
+          "explanation": "Com o antecedente falso, a condicional nunca é desmentida. Então é verdadeira.",
+          "pitfall": "Parece estranho, mas a promessa “se p, então q” só é quebrada quando p acontece e q não.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Necessária",
+          "statement": "Em “Se é campeão, então treinou muito”, treinar muito é condição:",
+          "options": [
+            "necessária para ser campeão",
+            "suficiente para ser campeão",
+            "necessária e suficiente para ser campeão",
+            "dispensável para ser campeão",
+            "contrária a ser campeão"
+          ],
+          "correct_index": 0,
+          "explanation": "O consequente é a condição necessária. Todo campeão treinou muito, mas treinar muito não garante o título.",
+          "pitfall": "Inverter é o erro clássico: treinar não basta, por isso não é suficiente.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Somente se",
+          "statement": "“Saio somente se terminar a tarefa” é o mesmo que:",
+          "options": [
+            "Se saio, então terminei a tarefa.",
+            "Se termino a tarefa, então saio.",
+            "Saio se e somente se terminar a tarefa.",
+            "Se não saio, não terminei a tarefa.",
+            "Termino a tarefa somente se sair."
+          ],
+          "correct_index": 0,
+          "explanation": "“Somente se” marca a condição necessária, que fica depois da seta. Sair exige ter terminado.",
+          "pitfall": "A segunda alternativa inverte: terminar a tarefa não obriga a sair.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Linhas falsas",
+          "statement": "Em quantas das quatro linhas da tabela p → q é falsa?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "0",
+            "4"
+          ],
+          "correct_index": 0,
+          "explanation": "Só uma linha é falsa: p verdadeira e q falsa.",
+          "pitfall": "Quem conta 2 inclui p falsa e q falsa, que é verdadeira.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -1731,6 +2091,96 @@
           ],
           "explanation": "Cada conectivo tem a sua linha especial.",
           "pitfall": "A condicional é a do V com F."
+        },
+        {
+          "topic": "Iguais",
+          "statement": "p e q são verdadeiras. Qual é o valor de p ↔ q?",
+          "options": [
+            "Verdadeiro",
+            "Falso",
+            "Depende de r",
+            "Não tem valor",
+            "Igual a ¬p"
+          ],
+          "correct_index": 0,
+          "explanation": "A bicondicional é verdadeira quando as duas partes têm o mesmo valor.",
+          "pitfall": "Não é só “as duas verdadeiras”: as duas falsas também dão verdadeiro.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Leitura",
+          "statement": "Como se lê p ↔ q?",
+          "options": [
+            "p se e somente se q",
+            "se p, então q",
+            "p ou q",
+            "p e q",
+            "p somente se q"
+          ],
+          "correct_index": 0,
+          "explanation": "A seta de duas pontas se lê “se e somente se”.",
+          "pitfall": "“p somente se q” é só metade: é a condicional p → q.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Diferentes",
+          "statement": "p é falsa e q é verdadeira. Qual é o valor de p ↔ q?",
+          "options": [
+            "Falso",
+            "Verdadeiro",
+            "Depende da ordem",
+            "Não tem valor",
+            "Igual a p ∨ q"
+          ],
+          "correct_index": 0,
+          "explanation": "Valores diferentes deixam a bicondicional falsa.",
+          "pitfall": "A ordem não importa aqui: p ↔ q e q ↔ p têm a mesma tabela.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Exemplo",
+          "statement": "Qual frase é verdadeira como bicondicional?",
+          "options": [
+            "Um número é par se e somente se é divisível por 2.",
+            "Um animal é mamífero se e somente se é um cachorro.",
+            "Uma pessoa é brasileira se e somente se é baiana.",
+            "Um número é positivo se e somente se é maior que 10.",
+            "Chove se e somente se está nublado."
+          ],
+          "correct_index": 0,
+          "explanation": "Ser par e ser divisível por 2 andam sempre juntos. As outras falham num sentido: há mamífero que não é cachorro.",
+          "pitfall": "“Brasileira se e somente se baiana” só vale num sentido: toda baiana é brasileira, mas não o contrário.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Duas condicionais",
+          "statement": "Sabe-se que p → q é verdadeira e q → p é falsa. Qual é o valor de p ↔ q?",
+          "options": [
+            "Falso",
+            "Verdadeiro",
+            "Depende de p",
+            "Depende de q",
+            "Não dá para saber"
+          ],
+          "correct_index": 0,
+          "explanation": "p ↔ q é (p → q) ∧ (q → p). Uma das partes é falsa, então o “e” cai.",
+          "pitfall": "Saber uma metade verdadeira não basta: a bicondicional exige as duas.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Negada",
+          "statement": "Em quais casos ¬p ↔ q é verdadeira?",
+          "options": [
+            "Quando p e q têm valores diferentes.",
+            "Quando p e q têm o mesmo valor.",
+            "Só quando p e q são falsas.",
+            "Só quando p é verdadeira.",
+            "Em todos os casos."
+          ],
+          "correct_index": 0,
+          "explanation": "Negar p troca o valor dele. Então ¬p e q são iguais exatamente quando p e q são diferentes.",
+          "pitfall": "Quem esquece o ¬ responde “o mesmo valor”, que é a regra de p ↔ q.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -2131,6 +2581,96 @@
           ],
           "explanation": "Como na matemática, o que está dentro dos parênteses vem antes de tudo.",
           "pitfall": "O “e” vem antes do “ou”."
+        },
+        {
+          "topic": "Duas letras",
+          "statement": "Quantas linhas tem a tabela-verdade de p ∨ q?",
+          "options": [
+            "4",
+            "2",
+            "3",
+            "6",
+            "8"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada letra dobra as linhas: 2 × 2 = 4.",
+          "pitfall": "O número de linhas não depende do sinal que liga as letras. Só conta quantas letras diferentes há.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Uma letra",
+          "statement": "Quantas linhas tem a tabela-verdade de ¬p?",
+          "options": [
+            "2",
+            "1",
+            "4",
+            "3",
+            "0"
+          ],
+          "correct_index": 0,
+          "explanation": "Com uma letra só, há dois casos: p verdadeira e p falsa.",
+          "pitfall": "O ¬ não cria letra nova. Continua sendo só p.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Quatro letras",
+          "statement": "Quantas linhas tem a tabela de (p ∧ q) ∨ (r ∧ s)?",
+          "options": [
+            "16",
+            "8",
+            "4",
+            "12",
+            "32"
+          ],
+          "correct_index": 0,
+          "explanation": "São quatro letras diferentes. 2 elevado a 4 dá 16.",
+          "pitfall": "Quem multiplica 4 por 2 chega a 8. A conta é 2 × 2 × 2 × 2.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Linha",
+          "statement": "Qual é o valor de ¬p ∨ q na linha p = V, q = F?",
+          "options": [
+            "Falso",
+            "Verdadeiro",
+            "Depende de r",
+            "Igual a p",
+            "Não dá para saber"
+          ],
+          "correct_index": 0,
+          "explanation": "¬p é falsa e q é falsa. F ou F dá falso.",
+          "pitfall": "Esquecer de negar p faz parecer V ∨ F, que daria verdadeiro.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Precedência",
+          "statement": "Na linha (p = V, q = F, r = F), qual é o valor de p ∨ q ∧ r?",
+          "options": [
+            "Verdadeiro",
+            "Falso",
+            "Depende da ordem de leitura",
+            "Não dá para calcular",
+            "Igual a q"
+          ],
+          "correct_index": 0,
+          "explanation": "O “e” vem antes do “ou”. q ∧ r é falso, e p ∨ F com p verdadeira dá verdadeiro.",
+          "pitfall": "Quem faz o “ou” primeiro calcula (V ∨ F) ∧ F e chega em falso. A ordem certa é o “e” antes.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Contar",
+          "statement": "Em quantas linhas p ∧ (q ∨ r) é verdadeira?",
+          "options": [
+            "3",
+            "1",
+            "4",
+            "6",
+            "7"
+          ],
+          "correct_index": 0,
+          "explanation": "p precisa ser V: são 4 linhas. Delas, q ∨ r é falsa só numa (q e r falsas). Sobram 3.",
+          "pitfall": "Quem conta 7 esquece que o “e” exige p verdadeira.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -2461,6 +3001,96 @@
           ],
           "explanation": "A última coluna decide o grupo.",
           "pitfall": "p ∧ q depende dos valores."
+        },
+        {
+          "topic": "Tautologia",
+          "statement": "p ∨ ¬p é:",
+          "options": [
+            "uma tautologia",
+            "uma contradição",
+            "uma contingência",
+            "uma sentença aberta",
+            "uma falácia"
+          ],
+          "correct_index": 0,
+          "explanation": "Sempre uma das duas partes é verdadeira. Então a proposição é verdadeira em toda linha.",
+          "pitfall": "Contradição é o contrário: falsa em toda linha.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Contradição",
+          "statement": "p ∧ ¬p é:",
+          "options": [
+            "uma contradição",
+            "uma tautologia",
+            "uma contingência",
+            "uma sentença aberta",
+            "uma bicondicional"
+          ],
+          "correct_index": 0,
+          "explanation": "p e ¬p nunca são verdadeiras juntas. Então o “e” é falso em toda linha.",
+          "pitfall": "Contingência é a que muda de valor conforme a linha. Esta nunca muda.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Contingência",
+          "statement": "p → q é:",
+          "options": [
+            "uma contingência",
+            "uma tautologia",
+            "uma contradição",
+            "sempre falsa",
+            "sempre verdadeira"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela é falsa numa linha e verdadeira nas outras três. Muda de valor, então é contingência.",
+          "pitfall": "Ser verdadeira em três de quatro linhas não basta para tautologia: precisa ser em todas.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Condicional",
+          "statement": "p → (p ∨ q) é:",
+          "options": [
+            "uma tautologia",
+            "uma contingência",
+            "uma contradição",
+            "falsa quando q é falsa",
+            "verdadeira só quando p é verdadeira"
+          ],
+          "correct_index": 0,
+          "explanation": "Se p é verdadeira, p ∨ q também é. Então nunca acontece V antes e F depois.",
+          "pitfall": "Com q falsa, p ∨ q ainda vale p. A seta não cai.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Equivalência e tautologia",
+          "statement": "Se p ↔ q é uma tautologia, então p e q são:",
+          "options": [
+            "equivalentes",
+            "contraditórias entre si",
+            "as duas tautologias",
+            "as duas contradições",
+            "independentes"
+          ],
+          "correct_index": 0,
+          "explanation": "O “se e somente se” é verdadeiro quando os valores coincidem. Coincidir em toda linha quer dizer que p e q dizem a mesma coisa.",
+          "pitfall": "Não precisam ser tautologias. p ∧ q e q ∧ p têm sempre o mesmo valor, e esse valor muda de linha para linha.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Negar uma tautologia",
+          "statement": "A negação de uma tautologia é:",
+          "options": [
+            "uma contradição",
+            "uma tautologia",
+            "uma contingência",
+            "às vezes tautologia e às vezes contradição",
+            "uma sentença aberta"
+          ],
+          "correct_index": 0,
+          "explanation": "A tautologia é verdadeira em toda linha. Negada, vira falsa em toda linha: contradição.",
+          "pitfall": "Não vira contingência: para mudar de valor entre linhas, ela já teria que mudar antes.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -2833,6 +3463,96 @@
           ],
           "explanation": "Duas equivalem, duas enganam.",
           "pitfall": "A inversa só nega; a contrapositiva nega e troca."
+        },
+        {
+          "topic": "Contrapositiva",
+          "statement": "Qual é a contrapositiva de “Se chove, a rua molha”?",
+          "options": [
+            "Se a rua não molha, não chove.",
+            "Se a rua molha, chove.",
+            "Se não chove, a rua não molha.",
+            "Chove e a rua não molha.",
+            "A rua molha somente se não chove."
+          ],
+          "correct_index": 0,
+          "explanation": "A contrapositiva troca as partes de lugar e nega as duas. Ela diz o mesmo que a original.",
+          "pitfall": "“Se a rua molha, chove” é a recíproca: só troca de lugar, sem negar.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Equivalente",
+          "statement": "Duas proposições são equivalentes quando:",
+          "options": [
+            "têm o mesmo valor em todas as linhas da tabela.",
+            "têm o mesmo valor em pelo menos uma linha.",
+            "usam as mesmas letras.",
+            "usam o mesmo conectivo.",
+            "são as duas verdadeiras."
+          ],
+          "correct_index": 0,
+          "explanation": "Equivalência é coincidir linha a linha, na tabela inteira.",
+          "pitfall": "Coincidir em uma linha não basta: quase todas as proposições coincidem em alguma.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Com ou",
+          "statement": "“Se estudo, passo” é equivalente a:",
+          "options": [
+            "Não estudo ou passo.",
+            "Estudo ou passo.",
+            "Estudo e passo.",
+            "Não estudo e não passo.",
+            "Estudo ou não passo."
+          ],
+          "correct_index": 0,
+          "explanation": "p → q equivale a ¬p ∨ q. Nega-se a primeira parte e troca-se a seta por “ou”.",
+          "pitfall": "“Estudo ou passo” esquece de negar a primeira parte.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Inversa",
+          "statement": "Original: “Se estudo, passo”. Nova: “Se não estudo, não passo”. A nova é a:",
+          "options": [
+            "inversa, e não é equivalente",
+            "contrapositiva, e é equivalente",
+            "recíproca, e é equivalente",
+            "negação",
+            "mesma proposição"
+          ],
+          "correct_index": 0,
+          "explanation": "Negar as duas partes sem trocar de lugar dá a inversa. Ela não diz o mesmo que a original.",
+          "pitfall": "A contrapositiva também nega as duas, mas TROCA de lugar. Sem a troca, é a inversa.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "De volta à condicional",
+          "statement": "“Não acordo cedo ou perco o ônibus” é equivalente a:",
+          "options": [
+            "Se acordo cedo, perco o ônibus.",
+            "Se não acordo cedo, perco o ônibus.",
+            "Se perco o ônibus, acordo cedo.",
+            "Se acordo cedo, não perco o ônibus.",
+            "Acordo cedo e perco o ônibus."
+          ],
+          "correct_index": 0,
+          "explanation": "¬p ∨ q é p → q. Aqui p é “acordo cedo” e q é “perco o ônibus”.",
+          "pitfall": "A segunda alternativa esquece que o “não” estava na primeira parte: ¬p vira o “se p”.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Contrapositiva com negação",
+          "statement": "Qual é a contrapositiva de “Se não tenho dinheiro, não viajo”?",
+          "options": [
+            "Se viajo, tenho dinheiro.",
+            "Se tenho dinheiro, viajo.",
+            "Se não viajo, não tenho dinheiro.",
+            "Se viajo, não tenho dinheiro.",
+            "Tenho dinheiro e não viajo."
+          ],
+          "correct_index": 0,
+          "explanation": "Troca de lugar e nega as duas partes. Negar “não viajo” dá “viajo”, e negar “não tenho dinheiro” dá “tenho dinheiro”.",
+          "pitfall": "“Se tenho dinheiro, viajo” é a inversa: nega sem trocar.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -3181,6 +3901,96 @@
           ],
           "explanation": "Olhar, negar, negar e trocar.",
           "pitfall": "Trocar sem negar não é negação."
+        },
+        {
+          "topic": "Negar o e",
+          "statement": "Qual é a negação de “Faz sol e calor”?",
+          "options": [
+            "Não faz sol ou não faz calor.",
+            "Não faz sol e não faz calor.",
+            "Faz chuva e frio.",
+            "Faz sol ou calor.",
+            "Não faz sol e faz calor."
+          ],
+          "correct_index": 0,
+          "explanation": "Negar o “e” vira “ou”, com as duas partes negadas.",
+          "pitfall": "Negar as duas e manter o “e” é o erro mais cobrado.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Negar o ou",
+          "statement": "Qual é a negação de “Vou à festa ou ao cinema”?",
+          "options": [
+            "Não vou à festa e não vou ao cinema.",
+            "Não vou à festa ou não vou ao cinema.",
+            "Vou à festa e ao cinema.",
+            "Vou ao teatro.",
+            "Vou à festa e não vou ao cinema."
+          ],
+          "correct_index": 0,
+          "explanation": "Negar o “ou” vira “e”, com as duas partes negadas.",
+          "pitfall": "Manter o “ou” deixa a frase verdadeira para quem foi a um dos dois. Isso não nega nada.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Com negação dentro",
+          "statement": "Qual é a negação de “Ana estuda e não trabalha”?",
+          "options": [
+            "Ana não estuda ou trabalha.",
+            "Ana não estuda e trabalha.",
+            "Ana não estuda ou não trabalha.",
+            "Ana estuda ou trabalha.",
+            "Ana não estuda e não trabalha."
+          ],
+          "correct_index": 0,
+          "explanation": "O “e” vira “ou”. “Estuda” vira “não estuda”, e “não trabalha” vira “trabalha”.",
+          "pitfall": "Quem põe mais um “não” em “não trabalha” deixa a parte igual. Negar o que já é negativo tira o “não”.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Fórmula",
+          "statement": "¬(¬p ∨ q) é equivalente a:",
+          "options": [
+            "p ∧ ¬q",
+            "¬p ∧ q",
+            "p ∨ ¬q",
+            "¬p ∧ ¬q",
+            "p ∧ q"
+          ],
+          "correct_index": 0,
+          "explanation": "O “ou” vira “e”. ¬p negado vira p, e q negado vira ¬q.",
+          "pitfall": "¬p ∧ ¬q esquece que ¬p já estava negado.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Três partes",
+          "statement": "Qual é a negação de “Leio, escrevo ou desenho”?",
+          "options": [
+            "Não leio, não escrevo e não desenho.",
+            "Não leio, não escrevo ou não desenho.",
+            "Leio, escrevo e desenho.",
+            "Não leio ou não escrevo, e desenho.",
+            "Não leio e escrevo ou desenho."
+          ],
+          "correct_index": 0,
+          "explanation": "Com três partes, a regra é a mesma. Todo “ou” vira “e”, e cada parte é negada.",
+          "pitfall": "Manter o “ou” nega só um pedaço: quem lê e não escreve tornaria as duas frases verdadeiras.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Equivalência",
+          "statement": "“Não é verdade que Rui foi e Lia ficou” é equivalente a:",
+          "options": [
+            "Rui não foi ou Lia não ficou.",
+            "Rui não foi e Lia não ficou.",
+            "Rui ficou e Lia foi.",
+            "Rui foi ou Lia ficou.",
+            "Rui não foi e Lia ficou."
+          ],
+          "correct_index": 0,
+          "explanation": "“Não é verdade que” nega o “e” inteiro. De Morgan troca o “e” por “ou” e nega as duas partes.",
+          "pitfall": "“Rui ficou e Lia foi” troca as palavras por antônimos e mantém o “e”. São dois erros juntos.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -3574,6 +4384,96 @@
           ],
           "explanation": "A tabela das negações, inteira.",
           "pitfall": "A condicional nega com “e”."
+        },
+        {
+          "topic": "Regra",
+          "statement": "¬(p → q) é equivalente a:",
+          "options": [
+            "p ∧ ¬q",
+            "¬p → ¬q",
+            "¬p ∧ q",
+            "q → p",
+            "¬p ∨ q"
+          ],
+          "correct_index": 0,
+          "explanation": "A condicional só é falsa com p verdadeira e q falsa. A negação diz exatamente isso: p e não q.",
+          "pitfall": "Negar a seta não dá outra seta. A negação de uma condicional usa “e”.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Frase",
+          "statement": "Qual é a negação de “Se treino, venço”?",
+          "options": [
+            "Treino e não venço.",
+            "Se não treino, não venço.",
+            "Se treino, não venço.",
+            "Não treino e venço.",
+            "Não treino ou venço."
+          ],
+          "correct_index": 0,
+          "explanation": "Mantém a primeira parte, nega a segunda e troca a seta por “e”. É o MANÉ.",
+          "pitfall": "“Se não treino, não venço” é a inversa, e não nega nada.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Bicondicional",
+          "statement": "Qual é a negação de “Saio se e somente se fizer sol”?",
+          "options": [
+            "Ou saio, ou faz sol.",
+            "Não saio se e somente se não faz sol.",
+            "Saio e faz sol.",
+            "Se saio, faz sol.",
+            "Não saio e não faz sol."
+          ],
+          "correct_index": 0,
+          "explanation": "A bicondicional é falsa quando as partes discordam. Negar dá o “ou… ou”, que exige exatamente isso.",
+          "pitfall": "Negar as duas partes da bicondicional dá algo equivalente a ela, e não a negação.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Com negação dentro",
+          "statement": "Qual é a negação de “Se não chove, vou à praia”?",
+          "options": [
+            "Não chove e não vou à praia.",
+            "Chove e vou à praia.",
+            "Se chove, não vou à praia.",
+            "Não chove e vou à praia.",
+            "Chove ou não vou à praia."
+          ],
+          "correct_index": 0,
+          "explanation": "MANÉ: mantém “não chove”, troca por “e” e nega “vou à praia”.",
+          "pitfall": "Mexer na primeira parte é o erro: ela fica como está.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Quando é falsa",
+          "statement": "Sabe-se que “Se Lia viajou, Rui ficou” é FALSA. Então:",
+          "options": [
+            "Lia viajou e Rui não ficou.",
+            "Lia não viajou e Rui ficou.",
+            "Lia não viajou e Rui não ficou.",
+            "Lia viajou e Rui ficou.",
+            "Não dá para saber nada."
+          ],
+          "correct_index": 0,
+          "explanation": "A condicional só é falsa num caso: a primeira parte verdadeira e a segunda falsa.",
+          "pitfall": "Dizer que não dá para saber é exagero: falsa, a condicional só tem um jeito de estar.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Equivalente da negação",
+          "statement": "Qual frase é equivalente à negação de “Não estudo ou passo”?",
+          "options": [
+            "Estudo e não passo.",
+            "Não estudo e passo.",
+            "Estudo ou não passo.",
+            "Se estudo, passo.",
+            "Se não passo, não estudo."
+          ],
+          "correct_index": 0,
+          "explanation": "“Não estudo ou passo” é o mesmo que “se estudo, passo”. A negação é MANÉ: estudo e não passo.",
+          "pitfall": "As duas últimas são equivalentes à frase original, e não à negação dela.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -3865,6 +4765,96 @@
           ],
           "explanation": "Os quatro pares da gangorra.",
           "pitfall": "“Todo” nunca nega com “nenhum”."
+        },
+        {
+          "topic": "Todo",
+          "statement": "Qual é a negação de “Todo cachorro late”?",
+          "options": [
+            "Algum cachorro não late.",
+            "Nenhum cachorro late.",
+            "Todo cachorro não late.",
+            "Algum cachorro late.",
+            "Só um cachorro late."
+          ],
+          "correct_index": 0,
+          "explanation": "Para negar “todo”, basta um que não faça. A negação é “algum… não”.",
+          "pitfall": "“Nenhum cachorro late” vai longe demais: é o oposto, e não a negação.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Nenhum",
+          "statement": "Qual é a negação de “Nenhum aluno faltou”?",
+          "options": [
+            "Algum aluno faltou.",
+            "Todo aluno faltou.",
+            "Nenhum aluno veio.",
+            "Algum aluno não faltou.",
+            "Todo aluno veio."
+          ],
+          "correct_index": 0,
+          "explanation": "Para desmentir “nenhum”, basta um. Então a negação é “algum aluno faltou”.",
+          "pitfall": "“Todo aluno faltou” é exagero: um só que faltasse já desmente a frase.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Algum",
+          "statement": "Qual é a negação de “Algum político é honesto”?",
+          "options": [
+            "Nenhum político é honesto.",
+            "Algum político não é honesto.",
+            "Todo político é honesto.",
+            "Todo político é desonesto e rico.",
+            "Pelo menos um político é desonesto."
+          ],
+          "correct_index": 0,
+          "explanation": "“Algum” diz que existe pelo menos um. Negar é dizer que não existe nenhum.",
+          "pitfall": "“Algum não é” convive com “algum é”: as duas podem ser verdadeiras juntas, então uma não nega a outra.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Nem todo",
+          "statement": "“Nem todo remédio é seguro” é o mesmo que:",
+          "options": [
+            "Algum remédio não é seguro.",
+            "Nenhum remédio é seguro.",
+            "Todo remédio é perigoso.",
+            "Algum remédio é seguro.",
+            "Só um remédio é seguro."
+          ],
+          "correct_index": 0,
+          "explanation": "“Nem todo” é a negação de “todo”. Então é “algum… não”.",
+          "pitfall": "“Nenhum” troca a parte pelo todo: basta um não seguro.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Duas partes",
+          "statement": "Qual é a negação de “Todo aluno passou e nenhum aluno faltou”?",
+          "options": [
+            "Algum aluno não passou ou algum aluno faltou.",
+            "Algum aluno não passou e algum aluno faltou.",
+            "Nenhum aluno passou ou todo aluno faltou.",
+            "Nenhum aluno passou e todo aluno faltou.",
+            "Todo aluno reprovou ou faltou."
+          ],
+          "correct_index": 0,
+          "explanation": "O “e” vira “ou”. “Todo passou” vira “algum não passou”, e “nenhum faltou” vira “algum faltou”.",
+          "pitfall": "Manter o “e” exige as duas falhas juntas. Basta uma para desmentir a frase.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Todo com condicional",
+          "statement": "Qual é a negação de “Todo aluno que estuda passa”?",
+          "options": [
+            "Algum aluno estuda e não passa.",
+            "Nenhum aluno que estuda passa.",
+            "Algum aluno não estuda e passa.",
+            "Todo aluno que não estuda não passa.",
+            "Algum aluno que passa não estuda."
+          ],
+          "correct_index": 0,
+          "explanation": "A frase é “para todo aluno, se estuda, passa”. A negação pede um caso que quebre: estuda e não passa.",
+          "pitfall": "“Não estuda e passa” não quebra a regra: ela não diz nada sobre quem não estuda.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -4206,6 +5196,96 @@
           ],
           "explanation": "As quatro formas válidas de uma vez.",
           "pitfall": "Tollens começa pela negação do consequente."
+        },
+        {
+          "topic": "Modus ponens",
+          "statement": "“Se o sinal abrir, eu atravesso. O sinal abriu.” O que se conclui?",
+          "options": [
+            "Eu atravesso.",
+            "Eu não atravesso.",
+            "O sinal fechou.",
+            "Nada se conclui.",
+            "Eu atravessei antes."
+          ],
+          "correct_index": 0,
+          "explanation": "A condição se cumpriu, então a consequência vale. É o modus ponens.",
+          "pitfall": "“Nada se conclui” serve para outras formas. Aqui a conclusão é obrigatória.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Modus tollens",
+          "statement": "“Se é ouro, brilha. Não brilha.” O que se conclui?",
+          "options": [
+            "Não é ouro.",
+            "É ouro.",
+            "Brilha.",
+            "É prata.",
+            "Nada se conclui."
+          ],
+          "correct_index": 0,
+          "explanation": "Se fosse ouro, brilharia. Como não brilha, não é ouro. É o modus tollens.",
+          "pitfall": "“É prata” inventa uma informação que as premissas não dão.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Silogismo disjuntivo",
+          "statement": "“Ou ele está em casa, ou está no trabalho. Não está no trabalho.” O que se conclui?",
+          "options": [
+            "Está em casa.",
+            "Não está em casa.",
+            "Está na rua.",
+            "Está nos dois.",
+            "Nada se conclui."
+          ],
+          "correct_index": 0,
+          "explanation": "Das duas opções, uma foi descartada. Sobra a outra.",
+          "pitfall": "“Está na rua” sai das premissas: elas só deixam casa ou trabalho.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Válido",
+          "statement": "Um argumento é válido quando:",
+          "options": [
+            "a conclusão não pode ser falsa se as premissas forem verdadeiras.",
+            "a conclusão é verdadeira.",
+            "todas as premissas são verdadeiras.",
+            "a conclusão parece razoável.",
+            "tem pelo menos duas premissas."
+          ],
+          "correct_index": 0,
+          "explanation": "Validade é sobre a forma. Com premissas verdadeiras, a conclusão é obrigatória.",
+          "pitfall": "Conclusão verdadeira não prova validade: um argumento mal feito pode acertar por acaso.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Encadeado",
+          "statement": "“Se acordo tarde, perco o ônibus. Se perco o ônibus, chego atrasado. Não cheguei atrasado.” O que se conclui?",
+          "options": [
+            "Não acordei tarde.",
+            "Acordei tarde.",
+            "Perdi o ônibus.",
+            "Cheguei cedo porque peguei carona.",
+            "Nada se conclui."
+          ],
+          "correct_index": 0,
+          "explanation": "As duas primeiras dão “se acordo tarde, chego atrasado”. Não cheguei atrasado, então não acordei tarde.",
+          "pitfall": "“Peguei carona” inventa um fato. As premissas não falam de carona.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Válido com premissa falsa",
+          "statement": "“Todo gato voa. Tom é gato. Logo, Tom voa.” Sobre esse argumento, é correto dizer:",
+          "options": [
+            "É válido, mas tem uma premissa falsa.",
+            "É inválido, porque a conclusão é falsa.",
+            "É inválido, porque gatos não voam.",
+            "É válido e a conclusão é verdadeira.",
+            "Não é argumento."
+          ],
+          "correct_index": 0,
+          "explanation": "A forma é perfeita: se as premissas fossem verdadeiras, a conclusão seria obrigatória. A falha está na premissa, não na forma.",
+          "pitfall": "Confundir válido com verdadeiro é o erro que a prova procura.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -4538,6 +5618,96 @@
           ],
           "explanation": "Duas válidas e as duas imitações.",
           "pitfall": "As falácias fazem o contrário das válidas."
+        },
+        {
+          "topic": "Afirmar o consequente",
+          "statement": "“Se é cachorro, tem quatro patas. Rex tem quatro patas. Logo, Rex é cachorro.” O argumento é:",
+          "options": [
+            "inválido: afirma o consequente",
+            "válido: modus ponens",
+            "válido: modus tollens",
+            "inválido: nega o antecedente",
+            "válido, porque Rex pode ser cachorro"
+          ],
+          "correct_index": 0,
+          "explanation": "Ter quatro patas não garante ser cachorro: gato também tem. Partir do consequente para o antecedente é a falácia.",
+          "pitfall": "Parece modus ponens, mas o modus ponens parte da condição, e não do resultado.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Negar o antecedente",
+          "statement": "“Se estudo, passo. Não estudei. Logo, não passei.” O argumento é:",
+          "options": [
+            "inválido: nega o antecedente",
+            "válido: modus tollens",
+            "válido: modus ponens",
+            "inválido: afirma o consequente",
+            "válido, porque quem não estuda não passa"
+          ],
+          "correct_index": 0,
+          "explanation": "A regra só fala de quem estuda. Quem não estudou pode passar por outro motivo.",
+          "pitfall": "Parece modus tollens, mas o modus tollens nega o CONSEQUENTE, e não o antecedente.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Qual é válido",
+          "statement": "Com a premissa “Se é feriado, a escola fecha”, qual argumento é válido?",
+          "options": [
+            "A escola não fechou. Logo, não é feriado.",
+            "A escola fechou. Logo, é feriado.",
+            "Não é feriado. Logo, a escola não fecha.",
+            "A escola fechou. Logo, não é feriado.",
+            "Não é feriado. Logo, a escola fecha."
+          ],
+          "correct_index": 0,
+          "explanation": "Negar o consequente leva a negar o antecedente. É o modus tollens.",
+          "pitfall": "A escola pode fechar por outro motivo, como greve. Por isso a segunda alternativa é falácia.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Contraexemplo",
+          "statement": "Qual situação mostra que “Se chove, a rua molha. A rua molhou. Logo, choveu” é inválido?",
+          "options": [
+            "Um caminhão-pipa molhou a rua num dia sem chuva.",
+            "Choveu e a rua molhou.",
+            "Não choveu e a rua ficou seca.",
+            "Choveu e a rua não molhou.",
+            "A rua molhou porque choveu muito."
+          ],
+          "correct_index": 0,
+          "explanation": "O contraexemplo deixa as premissas verdadeiras e a conclusão falsa. A rua molhou e não choveu.",
+          "pitfall": "“Choveu e a rua não molhou” torna a primeira premissa falsa. Contraexemplo precisa das premissas verdadeiras.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Duas falácias",
+          "statement": "“Se for aprovado, faço festa. Não fiz festa. Logo, não fui aprovado.” e “Se for aprovado, faço festa. Fiz festa. Logo, fui aprovado.” São, nesta ordem:",
+          "options": [
+            "válido e inválido",
+            "inválido e válido",
+            "os dois válidos",
+            "os dois inválidos",
+            "válido e válido só se a festa foi grande"
+          ],
+          "correct_index": 0,
+          "explanation": "O primeiro nega o consequente: modus tollens, válido. O segundo afirma o consequente: falácia.",
+          "pitfall": "Os dois começam igual. O que decide é qual parte a segunda premissa toca.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Conclusão verdadeira",
+          "statement": "“Se é capital, é cidade. Salvador é cidade. Logo, Salvador é capital.” Sobre esse argumento:",
+          "options": [
+            "É inválido, mesmo com a conclusão verdadeira.",
+            "É válido, porque Salvador é capital.",
+            "É válido, porque as premissas são verdadeiras.",
+            "É inválido, porque Salvador não é cidade.",
+            "É válido: modus ponens."
+          ],
+          "correct_index": 0,
+          "explanation": "Afirma o consequente. A conclusão acerta por acaso: trocando Salvador por Feira de Santana, a mesma forma erra.",
+          "pitfall": "Conclusão verdadeira não salva a forma. Validade é sobre o caminho, não sobre o ponto de chegada.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -4847,6 +6017,96 @@
           ],
           "explanation": "Cada quantificador tem o seu jeito de desenhar.",
           "pitfall": "Nenhum é o único com círculos sem contato."
+        },
+        {
+          "topic": "Todo com todo",
+          "statement": "“Todo cachorro é mamífero. Todo mamífero é animal.” O que se conclui?",
+          "options": [
+            "Todo cachorro é animal.",
+            "Todo animal é cachorro.",
+            "Todo mamífero é cachorro.",
+            "Algum animal não é mamífero.",
+            "Nada se conclui."
+          ],
+          "correct_index": 0,
+          "explanation": "O círculo dos cachorros está dentro do dos mamíferos, que está dentro do dos animais.",
+          "pitfall": "“Todo animal é cachorro” inverte: o círculo maior não cabe no menor.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Desenho",
+          "statement": "Como se desenha “Todo A é B” num diagrama de Venn?",
+          "options": [
+            "O círculo A dentro do círculo B.",
+            "O círculo B dentro do círculo A.",
+            "Os dois círculos separados.",
+            "Os dois círculos iguais, um sobre o outro.",
+            "Os dois círculos se cruzando só um pouco."
+          ],
+          "correct_index": 0,
+          "explanation": "Todo A está em B: o círculo de A cabe inteiro no de B.",
+          "pitfall": "B dentro de A seria “todo B é A”, que é outra frase.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Nenhum",
+          "statement": "“Nenhum peixe é mamífero. Todo tubarão é peixe.” O que se conclui?",
+          "options": [
+            "Nenhum tubarão é mamífero.",
+            "Algum tubarão é mamífero.",
+            "Todo mamífero é tubarão.",
+            "Nenhum peixe é tubarão.",
+            "Nada se conclui."
+          ],
+          "correct_index": 0,
+          "explanation": "O círculo dos tubarões está dentro do dos peixes, que está longe do dos mamíferos.",
+          "pitfall": "“Nenhum peixe é tubarão” contradiz a segunda premissa.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Algum",
+          "statement": "“Algum estudante é atleta. Todo atleta acorda cedo.” O que se conclui?",
+          "options": [
+            "Algum estudante acorda cedo.",
+            "Todo estudante acorda cedo.",
+            "Todo atleta é estudante.",
+            "Nenhum estudante acorda cedo.",
+            "Nada se conclui."
+          ],
+          "correct_index": 0,
+          "explanation": "Os estudantes que são atletas estão dentro do círculo de quem acorda cedo. Pelo menos esses acordam.",
+          "pitfall": "“Todo estudante” troca algum por todo: as premissas só garantem uma parte.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Meio compartilhado",
+          "statement": "“Todo gato é felino. Algum felino é selvagem.” Dá para concluir “algum gato é selvagem”?",
+          "options": [
+            "Não: os felinos selvagens podem estar fora do círculo dos gatos.",
+            "Sim: todo gato é felino.",
+            "Sim: algum felino é selvagem.",
+            "Não: nenhum gato é felino.",
+            "Sim: é um silogismo com todo e algum."
+          ],
+          "correct_index": 0,
+          "explanation": "Dá para desenhar os felinos selvagens longe dos gatos e as premissas continuam verdadeiras. Se um desenho fura a conclusão, ela não é obrigatória.",
+          "pitfall": "A conclusão até pode ser verdadeira no mundo. O que se pergunta é se ela é obrigatória.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Algum não",
+          "statement": "“Nenhum A é B. Algum C é A.” O que se conclui com certeza?",
+          "options": [
+            "Algum C não é B.",
+            "Nenhum C é B.",
+            "Todo C é B.",
+            "Algum B é C.",
+            "Nada se conclui."
+          ],
+          "correct_index": 0,
+          "explanation": "Os C que são A ficam fora de B. Então pelo menos esses C não são B.",
+          "pitfall": "“Nenhum C é B” vai longe demais: os C que não são A podem ser B.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -5199,6 +6459,96 @@
           ],
           "explanation": "“E” é conjunção, “ou” é disjunção, “se… então” é condicional, e “não” é negação.",
           "pitfall": "A palavra que liga as partes é o que decide o conectivo."
+        },
+        {
+          "topic": "Regra com e",
+          "statement": "Uma vaga exige “ensino médio completo e carteira de motorista”. Quem pode se candidatar?",
+          "options": [
+            "Quem tem os dois.",
+            "Quem tem só o ensino médio.",
+            "Quem tem só a carteira.",
+            "Quem tem pelo menos um dos dois.",
+            "Qualquer pessoa."
+          ],
+          "correct_index": 0,
+          "explanation": "O “e” exige as duas coisas ao mesmo tempo.",
+          "pitfall": "“Pelo menos um” é a regra do “ou”, e não do “e”.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Regra com ou",
+          "statement": "Um ônibus aceita “cartão ou dinheiro”. Quem NÃO consegue pagar?",
+          "options": [
+            "Quem não tem nem cartão nem dinheiro.",
+            "Quem tem só cartão.",
+            "Quem tem só dinheiro.",
+            "Quem tem os dois.",
+            "Ninguém consegue pagar."
+          ],
+          "correct_index": 0,
+          "explanation": "O “ou” só falha quando falta tudo.",
+          "pitfall": "Quem tem os dois paga sem problema: o “ou” comum aceita as duas partes.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Quem descumpre",
+          "statement": "A regra diz: “Se entrar na piscina, precisa de touca.” Quem descumpre?",
+          "options": [
+            "Quem entrou na piscina sem touca.",
+            "Quem usou touca fora da piscina.",
+            "Quem não entrou na piscina e está sem touca.",
+            "Quem entrou na piscina de touca.",
+            "Ninguém consegue descumprir."
+          ],
+          "correct_index": 0,
+          "explanation": "A condicional só é quebrada com a condição cumprida e a consequência falhando.",
+          "pitfall": "Usar touca fora da piscina não quebra nada: a regra só fala de quem entra.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Filtro",
+          "statement": "Numa busca, o filtro “preto e tamanho 40” mostrou 3 sapatos. O que acontece trocando por “preto ou tamanho 40”?",
+          "options": [
+            "Aparecem 3 ou mais sapatos.",
+            "Aparecem menos de 3 sapatos.",
+            "Aparecem exatamente 3 sapatos.",
+            "Não aparece nenhum sapato.",
+            "Aparecem só os sapatos pretos."
+          ],
+          "correct_index": 0,
+          "explanation": "Todo sapato que passa no “e” também passa no “ou”. O “ou” só pode manter ou aumentar a lista.",
+          "pitfall": "“Só os pretos” esquece os de tamanho 40 que não são pretos.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "De Morgan no aviso",
+          "statement": "Um aviso diz: “Proibido entrar sem crachá ou sem uniforme.” Quem PODE entrar?",
+          "options": [
+            "Quem tem crachá e uniforme.",
+            "Quem tem crachá ou uniforme.",
+            "Quem tem só o crachá.",
+            "Quem tem só o uniforme.",
+            "Quem não tem nenhum dos dois."
+          ],
+          "correct_index": 0,
+          "explanation": "Proibido é quem está sem crachá ou sem uniforme. Pode entrar quem não está em nenhum desses casos: tem os dois.",
+          "pitfall": "Quem tem só o crachá está sem uniforme. Basta uma falta para cair na proibição.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Quebrar a regra",
+          "statement": "A loja promete: “Se a entrega atrasar, o frete é devolvido.” Qual fato prova que a promessa foi quebrada?",
+          "options": [
+            "A entrega atrasou e o frete não foi devolvido.",
+            "A entrega não atrasou e o frete foi devolvido.",
+            "A entrega não atrasou e o frete não foi devolvido.",
+            "A entrega atrasou e o frete foi devolvido.",
+            "O frete foi devolvido."
+          ],
+          "correct_index": 0,
+          "explanation": "A negação da condicional é “atrasou e não devolveu”. É o único caso que quebra a promessa.",
+          "pitfall": "Devolver o frete sem atraso é generosidade, e não quebra de promessa.",
+          "difficulty": "dificil"
         }
       ]
     }

@@ -223,8 +223,8 @@ aparecer como "Em breve".
 
 1. Mecanismo de público e privado (feito).
 2. Português básico completo (feito).
-3. **Questões com nível de dificuldade, começando pelas matérias públicas** (próximo).
-4. Matemática do dia a dia.
+3. Questões com nível de dificuldade nas matérias públicas (feito: Português, Matemática Básica e Lógica, seis por lição).
+4. **Matemática do dia a dia** (próximo).
 5. Uma área por rodada: Biologia, História, Geografia, Física, Química,
    Inglês, Informática básica, Filosofia, Sociologia, Espanhol, Artes,
    Educação Física. Cada uma entra com todas as lições de uma vez.
