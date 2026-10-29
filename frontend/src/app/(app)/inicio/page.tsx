@@ -142,7 +142,7 @@ export default async function Inicio() {
       */}
       {trilhas.length > 0 && (
         <section aria-labelledby="trilhas">
-          <h2 id="trilhas" className="text-2xl">Trilha de estudo</h2>
+          <h2 id="trilhas" className="text-2xl">{trilhas.length > 1 ? "Trilhas de estudo" : "Trilha de estudo"}</h2>
           <ul className="mt-4 space-y-3">
             {trilhas.map(({ trail, passos, atual, feitos }) => (
               <li key={trail.slug}>
@@ -161,6 +161,7 @@ export default async function Inicio() {
                       </span>
                     </span>
                     <span className="mt-1 block text-sm text-content-secondary">
+                      {trail.private && "Só você vê · "}
                       {atual ? `Passo ${atual.number} de ${passos.length}: ${atual.name}` : "Todos os passos disponíveis concluídos"}
                     </span>
                   </span>

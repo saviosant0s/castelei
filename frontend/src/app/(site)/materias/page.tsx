@@ -65,10 +65,10 @@ export default async function Materias() {
       </div>
 
       <Card tone="bold" size="lg" radius="panel" className="mt-12 sm:p-10">
-        <h2 className="text-2xl">O catálogo cresce junto com o semestre</h2>
+        <h2 className="text-2xl">O catálogo cresce uma área por vez</h2>
         <p className="mt-3 max-w-lg text-base on-bold-secondary">
-          As próximas lições de Sistemas Operacionais seguem a ordem das aulas: estrutura e arquitetura,
-          processos e threads, comunicação entre processos, memória, arquivos, dispositivos e virtualização.
+          Depois de Português e Matemática, vem o básico de cada disciplina da escola: Física, Química,
+          Biologia, História, Geografia, Inglês e as outras, sempre do zero e na língua da prova.
         </p>
         <StartLink className="btn btn-primary mt-8" />
       </Card>

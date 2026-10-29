@@ -57,6 +57,11 @@ class StatsController extends Controller
                 return $row;
             });
 
+        // Matéria que virou privada sai daqui também: o mapa e as listas são
+        // links, e link para lição que responde 404 é pior que nenhum.
+        $visiveis = Subject::visibleTo($request->user())->pluck('id')->flip();
+        $answers = $answers->filter(fn ($a) => isset($visiveis[$a->subject_id]))->values();
+
         $porQuestao = $answers->groupBy('question_id');
 
         return response()->json([

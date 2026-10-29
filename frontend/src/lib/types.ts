@@ -62,6 +62,8 @@ export interface TrailStep {
 export interface Trail {
   slug: string;
   name: string;
+  /** Trilha que só quem administra vê. */
+  private?: boolean;
   description: string;
   steps: TrailStep[];
 }
@@ -82,6 +84,8 @@ export interface Subject {
   description: string | null;
   /** Slug da área do conhecimento (`informatica`, `portugues`…), ou null. */
   area: string | null;
+  /** Só chega verdadeiro para quem administra: a matéria que ninguém mais vê. */
+  private?: boolean;
   /** Data da prova do semestre (AAAA-MM-DD), ou null. É o prazo de onde sai o ritmo das revisões. */
   exam_date: string | null;
   exam: ExamAvailability;

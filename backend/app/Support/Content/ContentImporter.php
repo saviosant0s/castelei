@@ -104,6 +104,8 @@ class ContentImporter
             $subject->name = $data['name'];
             $subject->description = $data['description'] ?? null;
             $subject->area = ($data['area'] ?? null) ?: null;
+            // Privada só aparece para quem administra. Sem o campo, pública.
+            $subject->visibility = ($data['visibility'] ?? null) === Subject::PRIVATE ? Subject::PRIVATE : Subject::PUBLIC;
             // Prazo da matéria: é dele que sai o intervalo entre revisões.
             $subject->exam_date = $this->examDate($data['exam_date'] ?? null);
             $subject->origin = $origin;

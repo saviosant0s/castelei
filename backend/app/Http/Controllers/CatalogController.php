@@ -27,6 +27,7 @@ class CatalogController extends Controller
             ->keyBy('lesson_id');
 
         $subjects = Subject::query()
+            ->visibleTo($user)
             ->with(['lessons' => fn ($query) => $query->withCount([
                 // As propostas do simulado de escrita não são questões da lição.
                 'questions' => fn ($q) => $q->where('exam_only', false),
@@ -47,7 +48,11 @@ class CatalogController extends Controller
             'areas' => Subject::areas(),
             // A ordem de estudo que atravessa áreas. Os passos só dizem o slug:
             // o progresso sai das matérias que já vêm nesta mesma resposta.
-            'trails' => array_values((array) config('castelei.trails')),
+            // A trilha privada é como a matéria privada: só quem administra vê.
+            'trails' => collect((array) config('castelei.trails'))
+                ->filter(fn (array $trail) => ($trail['visibility'] ?? Subject::PUBLIC) === Subject::PUBLIC || $user->isAdmin())
+                ->map(fn (array $trail) => collect($trail)->except('visibility')->all() + ['private' => ($trail['visibility'] ?? null) === Subject::PRIVATE])
+                ->values(),
             'subjects' => $subjects->map(fn (Subject $subject) => [
                 'id' => $subject->id,
                 'slug' => $subject->slug,
@@ -55,6 +60,8 @@ class CatalogController extends Controller
                 'description' => $subject->description,
                 // Nulo = sem área; a tela junta essas em "Outras matérias".
                 'area' => $subject->area,
+                // Só chega aqui privada para quem administra: a tela marca "só você vê".
+                'private' => $subject->visibility === Subject::PRIVATE,
                 /*
                 | Data da prova do semestre. A tela usa para dizer quanto falta,
                 | e o agendamento de revisão usa como prazo — ver

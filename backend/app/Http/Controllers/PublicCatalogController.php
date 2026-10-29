@@ -22,7 +22,9 @@ class PublicCatalogController extends Controller
 {
     public function index(): JsonResponse
     {
+        // A vitrine não tem sessão: só anuncia o que está aberto a todos.
         $subjects = Subject::query()
+            ->visibleTo(null)
             ->with(['lessons' => fn ($query) => $query->withCount(['questions' => fn ($q) => $q->where('exam_only', false)])])
             ->orderBy('position')
             ->get();

@@ -70,6 +70,10 @@ class ContentValidator
         $this->optionalDate($data['exam_date'] ?? null, 'exam_date');
         $this->area($data['area'] ?? null);
 
+        if (isset($data['visibility']) && ! in_array($data['visibility'], ['public', 'private'], true)) {
+            $this->error('visibility', 'A visibilidade é "public" (todo mundo vê) ou "private" (só quem administra o conteúdo).');
+        }
+
         $lessons = $data['lessons'] ?? null;
 
         if (! is_array($lessons) || ! array_is_list($lessons) || $lessons === []) {

@@ -63,7 +63,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::get('/subjects', [CatalogController::class, 'subjects']);
     // O vocabulário da matéria, montado das etapas das lições.
-    Route::get('/subjects/{subject}/vocabulario', [CatalogController::class, 'vocabulary'])->whereNumber('subject');
+    Route::get('/subjects/{subject}/vocabulario', [CatalogController::class, 'vocabulary'])->whereNumber('subject')->middleware('visible');
 
     /*
     | `whereNumber` não é capricho: sem ele, um id que não é número (um "null"
@@ -71,19 +71,19 @@ Route::middleware('auth:sanctum')->group(function () {
     | em vez de "não encontrado". No SQLite do dev isso passa batido, então o
     | problema só aparece em produção.
     */
-    Route::get('/lessons/{lesson}', [CatalogController::class, 'lesson'])->whereNumber('lesson');
+    Route::get('/lessons/{lesson}', [CatalogController::class, 'lesson'])->whereNumber('lesson')->middleware('visible');
     // Anotação da pessoa na lição, e a busca em todas as matérias.
-    Route::get('/lessons/{lesson}/note', [StudyToolsController::class, 'showNote'])->whereNumber('lesson');
-    Route::put('/lessons/{lesson}/note', [StudyToolsController::class, 'saveNote'])->whereNumber('lesson')->middleware('throttle:60,1');
-    Route::post('/lessons/{lesson}/note/review', [StudyToolsController::class, 'reviewNote'])->whereNumber('lesson')->middleware('throttle:10,1');
+    Route::get('/lessons/{lesson}/note', [StudyToolsController::class, 'showNote'])->whereNumber('lesson')->middleware('visible');
+    Route::put('/lessons/{lesson}/note', [StudyToolsController::class, 'saveNote'])->whereNumber('lesson')->middleware('throttle:60,1')->middleware('visible');
+    Route::post('/lessons/{lesson}/note/review', [StudyToolsController::class, 'reviewNote'])->whereNumber('lesson')->middleware('throttle:10,1')->middleware('visible');
     Route::get('/note-reviews', [StudyToolsController::class, 'noteReviews']);
-    Route::get('/lessons/{lesson}/doubts', [StudyToolsController::class, 'doubts'])->whereNumber('lesson');
-    Route::post('/lessons/{lesson}/doubts', [StudyToolsController::class, 'askDoubt'])->whereNumber('lesson')->middleware('throttle:10,1');
+    Route::get('/lessons/{lesson}/doubts', [StudyToolsController::class, 'doubts'])->whereNumber('lesson')->middleware('visible');
+    Route::post('/lessons/{lesson}/doubts', [StudyToolsController::class, 'askDoubt'])->whereNumber('lesson')->middleware('throttle:10,1')->middleware('visible');
     Route::get('/doubts', [StudyToolsController::class, 'allDoubts']);
     Route::get('/search', [StudyToolsController::class, 'search'])->middleware('throttle:60,1');
 
-    Route::post('/lessons/{lesson}/attempts', [AttemptController::class, 'store'])->whereNumber('lesson');
-    Route::post('/subjects/{subject}/exams', [ExamController::class, 'store'])->whereNumber('subject');
+    Route::post('/lessons/{lesson}/attempts', [AttemptController::class, 'store'])->whereNumber('lesson')->middleware('visible');
+    Route::post('/subjects/{subject}/exams', [ExamController::class, 'store'])->whereNumber('subject')->middleware('visible');
     Route::post('/attempts/{attempt}/answers', [AttemptController::class, 'answer'])->whereNumber('attempt');
     Route::post('/attempts/{attempt}/finish', [AttemptController::class, 'finish'])->whereNumber('attempt');
     // Conferir um texto não grava nada, e pode ser feito muitas vezes. O limite existe pelo LanguageTool.

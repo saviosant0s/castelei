@@ -7,7 +7,7 @@ const resposta = (body: unknown, status = 200) =>
 
 const API = {
   subjects: [
-    { slug: "sistemas-operacionais", name: "Sistemas Operacionais", description: "Do banco.", lessons: ["A", "B"] },
+    { slug: "logica", name: "Lógica", description: "Do banco.", lessons: ["A", "B"] },
     { slug: "redes", name: "Redes", description: "Criada pelo painel.", lessons: ["C"] },
   ],
   totals: { subjects: 2, lessons: 3, questions: 24 },
@@ -30,7 +30,7 @@ describe("getSiteCatalog", () => {
     const catalogo = await getSiteCatalog();
 
     expect(catalogo.fallback).toBe(false);
-    expect(catalogo.subjects.map((s) => s.slug)).toEqual(["sistemas-operacionais", "redes"]);
+    expect(catalogo.subjects.map((s) => s.slug)).toEqual(["logica", "redes"]);
     expect(catalogo.totals.lessons).toBe(3);
   });
 
@@ -48,8 +48,8 @@ describe("getSiteCatalog", () => {
   it("preserva a frase escrita à mão das matérias que já têm uma", async () => {
     fetchMock.mockResolvedValue(resposta(API));
 
-    const so = (await getSiteCatalog()).subjects.find((s) => s.slug === "sistemas-operacionais");
-    const escrita = SUBJECTS.find((s) => s.slug === "sistemas-operacionais")!.pitch;
+    const so = (await getSiteCatalog()).subjects.find((s) => s.slug === "logica");
+    const escrita = SUBJECTS.find((s) => s.slug === "logica")!.pitch;
 
     expect(so?.pitch).toBe(escrita);
     expect(so?.pitch).not.toBe("Do banco.");

@@ -21,13 +21,16 @@ interface SeedLesson {
 interface SeedSubject {
   slug: string;
   name: string;
+  visibility?: "public" | "private";
   lessons: SeedLesson[];
 }
 
 function seeded(): SeedSubject[] {
   return readdirSync(CONTENT_DIR)
     .filter((file) => file.endsWith(".json"))
-    .map((file) => JSON.parse(readFileSync(path.join(CONTENT_DIR, file), "utf8")) as SeedSubject);
+    .map((file) => JSON.parse(readFileSync(path.join(CONTENT_DIR, file), "utf8")) as SeedSubject)
+    // A privada só existe para quem administra: a vitrine não a anuncia.
+    .filter((subject) => subject.visibility !== "private");
 }
 
 describe("catálogo do site público", () => {

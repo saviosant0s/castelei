@@ -33,6 +33,8 @@ class SubjectExporter
             'name' => $subject->name,
             'description' => $subject->description,
             'area' => $subject->area,
+            // Só sai quando é privada: pública é o padrão, e o arquivo fica mais limpo.
+            'visibility' => $subject->visibility === Subject::PRIVATE ? Subject::PRIVATE : null,
             'exam_date' => $subject->exam_date?->format('Y-m-d'),
             'lessons' => $subject->lessons->map(fn (Lesson $lesson) => $this->lesson($lesson))->values()->all(),
         ], fn ($valor) => $valor !== null);

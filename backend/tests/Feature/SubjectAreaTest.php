@@ -90,12 +90,15 @@ class SubjectAreaTest extends TestCase
     public function test_catalogo_manda_a_trilha_em_ordem(): void
     {
         $this->makeLesson(8);
-        Sanctum::actingAs(User::factory()->create());
+        // A trilha de LLMs é privada: quem administra é quem a vê.
+        Sanctum::actingAs(User::factory()->create(['is_admin' => true]));
 
         $this->getJson('/api/subjects')->assertOk()
-            ->assertJsonPath('trails.0.slug', 'llms-do-zero')
-            ->assertJsonPath('trails.0.steps.0.subject', 'matematica-basica')
-            ->assertJsonPath('trails.0.steps.1.subject', 'programacao-python');
+            ->assertJsonPath('trails.0.slug', 'base-para-provas')
+            ->assertJsonPath('trails.0.steps.0.subject', 'portugues')
+            ->assertJsonPath('trails.1.slug', 'llms-do-zero')
+            ->assertJsonPath('trails.1.steps.0.subject', 'matematica-basica')
+            ->assertJsonPath('trails.1.steps.1.subject', 'programacao-python');
     }
 
     public function test_todo_passo_da_trilha_que_ja_tem_arquivo_aponta_para_materia_certa(): void
