@@ -25,12 +25,16 @@ class PublicCatalogController extends Controller
         // A vitrine não tem sessão: só anuncia o que está aberto a todos.
         $subjects = Subject::query()
             ->visibleTo(null)
-            ->with(['lessons' => fn ($query) => $query->withCount(['questions' => fn ($q) => $q->where('exam_only', false)])])
+            ->with(['lessons' => fn ($query) => $query->withCount([
+                'questions' => fn ($q) => $q->where('exam_only', false),
+                // A promessa "8 por lição" é das questões de base, que todo plano recebe.
+                'questions as base_count' => fn ($q) => $q->where('exam_only', false)->whereNull('difficulty'),
+            ])])
             ->orderBy('position')
             ->get();
 
         $lessons = $subjects->flatMap->lessons;
-        $contagens = $lessons->pluck('questions_count')->unique();
+        $contagens = $lessons->pluck('base_count')->unique();
 
         return response()->json([
             'subjects' => $subjects->map(fn (Subject $subject) => [

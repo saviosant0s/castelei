@@ -37,4 +37,23 @@ class DifficultyTest extends TestCase
             ->assertJsonPath('limited_by_plan', false);
         $this->postJson("/api/lessons/{$lesson->id}/attempts", ['level' => 'impossivel'])->assertUnprocessable();
     }
+
+    /** Com questões de base, a prática comum é só delas; as com nível ficam em "Praticar por nível". */
+    public function test_a_pratica_comum_e_so_da_base(): void
+    {
+        $lesson = $this->makeLesson(11);
+        $lesson->questions()->where('position', '>', 8)->get()
+            ->each(fn ($q) => $q->update(['difficulty' => ['facil', 'media', 'dificil'][$q->position - 9]]));
+
+        Sanctum::actingAs(User::factory()->create(['plan' => 'pro']));
+
+        $pratica = $this->postJson("/api/lessons/{$lesson->id}/attempts")->assertCreated();
+        $this->assertCount(8, $pratica->json('questions'));
+        $this->assertSame([], array_filter(array_column($pratica->json('questions'), 'difficulty')));
+
+        $this->getJson("/api/lessons/{$lesson->id}")
+            ->assertJsonPath('lesson.questions_total', 8)
+            ->assertJsonPath('lesson.levels.media', 1);
+        $this->postJson("/api/lessons/{$lesson->id}/attempts", ['level' => 'media'])->assertJsonCount(1, 'questions');
+    }
 }

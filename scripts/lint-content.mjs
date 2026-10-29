@@ -596,6 +596,13 @@ for (const file of arquivos) {
       }
     });
 
+    // A prática grátis pega as primeiras pela posição: questão com nível no
+    // meio das de base empurraria uma questão de base para fora do grátis.
+    const ultimaBase = lesson.questions.map((q) => q.difficulty == null).lastIndexOf(true);
+    lesson.questions.forEach((q, i) => {
+      if (q.difficulty != null && i < ultimaBase) fail(`${L} › questão ${i + 1}`, "questão com nível antes de uma de base: ponha as com nível depois de todas as de base");
+    });
+
     lesson.questions.forEach((q, i) => {
       questionCount++;
       const W = `${L} › questão ${i + 1}`;

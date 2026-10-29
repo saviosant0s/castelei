@@ -391,6 +391,96 @@
           "correct_index": 0,
           "explanation": "Fada existe por si, mesmo que só na imaginação. Por isso é um substantivo concreto.",
           "pitfall": "Concreto não quer dizer “real”. Quer dizer que o ser existe por si, sem depender de alguém."
+        },
+        {
+          "topic": "Substantivo comum",
+          "statement": "Qual destas palavras é um substantivo comum?",
+          "options": [
+            "janela",
+            "bonita",
+            "rapidamente",
+            "três",
+            "o"
+          ],
+          "correct_index": 0,
+          "explanation": "Janela nomeia qualquer janela, e por isso é substantivo comum. Bonita é adjetivo, três é numeral e o é artigo.",
+          "pitfall": "Rapidamente parece nome, mas diz como algo acontece. Não nomeia nada.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Adjetivo",
+          "statement": "Em “O céu está azul”, a palavra “azul” é:",
+          "options": [
+            "adjetivo",
+            "substantivo",
+            "artigo",
+            "numeral",
+            "coletivo"
+          ],
+          "correct_index": 0,
+          "explanation": "Azul diz como está o céu. Dar característica ao nome é o trabalho do adjetivo.",
+          "pitfall": "Azul pode ser substantivo em “o azul do mar”. Aqui ele caracteriza o céu.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Locução adjetiva",
+          "statement": "Qual adjetivo pode trocar a locução em “o leite de cabra”?",
+          "options": [
+            "caprino",
+            "bovino",
+            "ovino",
+            "equino",
+            "suíno"
+          ],
+          "correct_index": 0,
+          "explanation": "De cabra é caprino. Bovino é de boi, ovino é de ovelha, equino é de cavalo e suíno é de porco.",
+          "pitfall": "Ovino e caprino se confundem. Ovino vem de ovelha.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Numeral multiplicativo",
+          "statement": "Em “Ele ganhou o dobro do meu salário”, a palavra “dobro” é um numeral:",
+          "options": [
+            "multiplicativo",
+            "ordinal",
+            "fracionário",
+            "cardinal",
+            "coletivo"
+          ],
+          "correct_index": 0,
+          "explanation": "Dobro diz quantas vezes maior: duas vezes. Esse é o numeral multiplicativo.",
+          "pitfall": "Dobro não é posição (ordinal) nem parte (fracionário).",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Substantivação",
+          "statement": "Em qual frase a palavra destacada deixou de ser adjetivo e virou substantivo?",
+          "options": [
+            "O belo nem sempre agrada a todos.",
+            "O quadro belo ficou na sala.",
+            "A casa é bela.",
+            "Achei a música bela demais.",
+            "Ela tem olhos belos."
+          ],
+          "correct_index": 0,
+          "explanation": "Em “o belo”, o artigo transformou a palavra em nome: ela nomeia a beleza. Nas outras, belo caracteriza um nome.",
+          "pitfall": "A palavra é a mesma nas cinco frases. O que muda é o trabalho dela, e o artigo é a pista.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Concreto ou abstrato",
+          "statement": "Assinale a alternativa em que todos os substantivos são abstratos.",
+          "options": [
+            "coragem, saudade, corrida",
+            "coragem, fada, corrida",
+            "mesa, saudade, beleza",
+            "Deus, alegria, viagem",
+            "medo, sereia, amor"
+          ],
+          "correct_index": 0,
+          "explanation": "Coragem e saudade são sentimentos, e corrida é ação. Os três dependem de alguém para existir.",
+          "pitfall": "Fada, Deus e sereia parecem abstratos por serem imaginários, mas são concretos: existem por si.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -769,6 +859,96 @@
           "correct_index": 0,
           "explanation": "Os pronomes de tratamento pedem a terceira pessoa: “está” e “seus”.",
           "pitfall": "O “Vossa” engana. Ele não puxa “estais” nem “vossos”."
+        },
+        {
+          "topic": "Pronome pessoal",
+          "statement": "Na frase “Ana saiu cedo e ela voltou tarde”, o pronome “ela” substitui:",
+          "options": [
+            "Ana",
+            "cedo",
+            "tarde",
+            "saiu",
+            "voltou"
+          ],
+          "correct_index": 0,
+          "explanation": "O pronome ocupa o lugar de um nome. Aqui ele retoma Ana para não repetir o nome.",
+          "pitfall": "O pronome sempre aponta para um nome, nunca para uma ação.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Este, esse",
+          "statement": "Complete: “___ livro aqui na minha mão é o meu preferido.”",
+          "options": [
+            "Este",
+            "Esse",
+            "Aquele",
+            "Essa",
+            "Aquilo"
+          ],
+          "correct_index": 0,
+          "explanation": "O livro está na mão de quem fala. Perto de quem fala, o certo é “este”.",
+          "pitfall": "Esse é para o que está perto de quem ouve.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Eu ou mim",
+          "statement": "Complete: “Sem ___, a festa não teria acontecido.”",
+          "options": [
+            "mim",
+            "eu",
+            "me",
+            "migo",
+            "comigo"
+          ],
+          "correct_index": 0,
+          "explanation": "Depois de “sem”, sem nenhuma ação logo em seguida, o certo é “mim”.",
+          "pitfall": "“Eu” só aparece ali quando a própria pessoa faz uma ação logo em seguida.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Pronome relativo",
+          "statement": "Em “A cidade onde nasci é pequena”, a palavra “onde” retoma:",
+          "options": [
+            "a cidade",
+            "nasci",
+            "pequena",
+            "é",
+            "a pessoa que fala"
+          ],
+          "correct_index": 0,
+          "explanation": "O pronome relativo retoma um nome anterior. “Onde” retoma a cidade, que é um lugar.",
+          "pitfall": "Por retomar um lugar físico, “onde” está correto aqui.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Tratamento",
+          "statement": "Assinale a frase que segue a norma-padrão.",
+          "options": [
+            "Vossa Excelência deve trazer seus documentos.",
+            "Vossa Excelência deveis trazer vossos documentos.",
+            "Vossa Excelência deve trazer vossos documentos.",
+            "Vossa Excelência deveis trazer seus documentos.",
+            "Sua Excelência, trazei vossos documentos."
+          ],
+          "correct_index": 0,
+          "explanation": "O pronome de tratamento pede a terceira pessoa: deve, e não deveis; seus, e não vossos.",
+          "pitfall": "A palavra “Vossa” puxa para “vossos”. É a armadilha: o certo é “seus”.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Esse e este no texto",
+          "statement": "Leia: “Estudar com pausas e dormir bem: ___ são os dois segredos da memória.” Qual palavra completa a frase de acordo com a norma?",
+          "options": [
+            "esses",
+            "estes",
+            "aqueles",
+            "estas",
+            "isto"
+          ],
+          "correct_index": 0,
+          "explanation": "As duas ideias já foram ditas antes da lacuna. Para retomar o que já foi dito no texto, usa-se “esse”.",
+          "pitfall": "“Este” anuncia o que ainda vai ser dito. Aqui as ideias vieram antes.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -1201,6 +1381,96 @@
           "correct_index": 0,
           "explanation": "Manter segue o verbo ter: se eles tiverem, se eles mantiverem.",
           "pitfall": "O derivado copia o verbo de origem. Se não é “se eles terem”, também não é “se eles manterem”."
+        },
+        {
+          "topic": "Conjugação",
+          "statement": "O verbo “partir” pertence à:",
+          "options": [
+            "terceira conjugação",
+            "primeira conjugação",
+            "segunda conjugação",
+            "quarta conjugação",
+            "nenhuma conjugação"
+          ],
+          "correct_index": 0,
+          "explanation": "Partir termina em -ir no infinitivo. A terminação -ir é a da terceira conjugação.",
+          "pitfall": "Para saber a conjugação, olhe só o final do infinitivo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Tempo verbal",
+          "statement": "Em “Amanhã eu viajarei cedo”, o verbo está no:",
+          "options": [
+            "futuro do presente",
+            "pretérito perfeito",
+            "presente",
+            "pretérito imperfeito",
+            "futuro do pretérito"
+          ],
+          "correct_index": 0,
+          "explanation": "Viajarei diz algo que vai acontecer. Esse é o futuro do presente.",
+          "pitfall": "O futuro do pretérito seria “viajaria”, que é hipótese.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Futuro do subjuntivo",
+          "statement": "Complete: “Se você ___ tempo amanhã, passe aqui.”",
+          "options": [
+            "tiver",
+            "ter",
+            "tem",
+            "tivesse",
+            "terá"
+          ],
+          "correct_index": 0,
+          "explanation": "Condição que olha para a frente pede o futuro do subjuntivo: se você tiver.",
+          "pitfall": "“Se você ter” é o erro mais comum. O verbo ter vira “tiver” nesse tempo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Imperativo",
+          "statement": "Em qual frase o verbo está no imperativo?",
+          "options": [
+            "Feche a porta, por favor.",
+            "Ele fechou a porta.",
+            "Talvez ele feche a porta.",
+            "Ele fecharia a porta.",
+            "Fechar a porta é fácil."
+          ],
+          "correct_index": 0,
+          "explanation": "O imperativo é o modo do pedido e da ordem. “Feche a porta” pede algo a alguém.",
+          "pitfall": "“Talvez ele feche” usa a mesma forma, mas expressa dúvida. É subjuntivo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Derivados de vir",
+          "statement": "Assinale a frase que segue a norma-padrão.",
+          "options": [
+            "Quando ele intervier na reunião, todos vão ouvir.",
+            "Quando ele intervir na reunião, todos vão ouvir.",
+            "Quando ele interver na reunião, todos vão ouvir.",
+            "Quando ele intervim na reunião, todos vão ouvir.",
+            "Quando ele intervia na reunião, todos vão ouvir."
+          ],
+          "correct_index": 0,
+          "explanation": "Intervir deriva de vir e segue a conjugação dele. Como se diz “quando ele vier”, diz-se “quando ele intervier”.",
+          "pitfall": "Intervir termina em -ir e engana. Ele não segue partir: segue vir.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Mais-que-perfeito",
+          "statement": "Em “Quando cheguei, o ônibus já partira”, o verbo “partira” indica:",
+          "options": [
+            "uma ação passada anterior a outra também passada",
+            "uma ação que ainda vai acontecer",
+            "um costume no passado",
+            "uma hipótese",
+            "uma ordem"
+          ],
+          "correct_index": 0,
+          "explanation": "O ônibus partiu antes de a pessoa chegar, e as duas ações estão no passado. Esse passado anterior é o pretérito mais-que-perfeito.",
+          "pitfall": "Partira parece futuro pela terminação. É o passado mais distante.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -1586,6 +1856,96 @@
           "correct_index": 0,
           "explanation": "“Talvez” expressa dúvida. Os outros advérbios indicam tempo, negação, intensidade e lugar.",
           "pitfall": "“Amanhã” aparece em duas frases e não é dúvida: é tempo."
+        },
+        {
+          "topic": "Advérbio de lugar",
+          "statement": "Em “Os livros ficaram lá em cima”, a palavra “lá” indica:",
+          "options": [
+            "lugar",
+            "tempo",
+            "modo",
+            "intensidade",
+            "negação"
+          ],
+          "correct_index": 0,
+          "explanation": "Lá diz onde os livros ficaram. É advérbio de lugar.",
+          "pitfall": "“Em cima” reforça o lugar. Não troque por modo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Conjunção de adição",
+          "statement": "Qual conjunção soma duas ideias?",
+          "options": [
+            "e",
+            "mas",
+            "porque",
+            "embora",
+            "se"
+          ],
+          "correct_index": 0,
+          "explanation": "A conjunção “e” acrescenta uma ideia à outra.",
+          "pitfall": "Mas opõe, porque explica, embora concede e se põe condição.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Bastante",
+          "statement": "Assinale a frase que segue a norma-padrão.",
+          "options": [
+            "Havia bastantes pessoas na fila.",
+            "As pessoas estavam bastantes cansadas.",
+            "Elas ficaram bastantes felizes.",
+            "Os alunos estudaram bastantes.",
+            "Ele fala bastantes bem."
+          ],
+          "correct_index": 0,
+          "explanation": "Quando quer dizer “muitas”, bastante acompanha o nome e varia: bastantes pessoas. Quando quer dizer “muito”, é advérbio e não varia.",
+          "pitfall": "“Bastante cansadas” quer dizer muito cansadas. Aí a palavra não vai para o plural.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Conclusão",
+          "statement": "Complete com a conjunção que indica conclusão: “Choveu a semana toda; ___, o campo está alagado.”",
+          "options": [
+            "portanto",
+            "embora",
+            "porque",
+            "mas",
+            "caso"
+          ],
+          "correct_index": 0,
+          "explanation": "O campo alagado é a consequência da chuva. Portanto anuncia essa conclusão.",
+          "pitfall": "Porque faria o contrário: diria a causa, e não a consequência.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Troca de conjunção",
+          "statement": "Em qual alternativa a troca de “mas” muda o sentido da frase “Treinou muito, mas perdeu o jogo”?",
+          "options": [
+            "Treinou muito, portanto perdeu o jogo.",
+            "Treinou muito, porém perdeu o jogo.",
+            "Treinou muito, contudo perdeu o jogo.",
+            "Treinou muito, todavia perdeu o jogo.",
+            "Treinou muito, entretanto perdeu o jogo."
+          ],
+          "correct_index": 0,
+          "explanation": "As quatro primeiras trocas indicam oposição, como o mas. Portanto indica conclusão e muda o sentido: a derrota viraria consequência do treino.",
+          "pitfall": "A pergunta pede a troca que MUDA o sentido. Quem lê rápido procura a que mantém.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Concessão e oposição",
+          "statement": "Qual reescrita mantém o sentido de “Estava cansado, mas terminou a prova”?",
+          "options": [
+            "Embora estivesse cansado, terminou a prova.",
+            "Como estava cansado, terminou a prova.",
+            "Se estivesse cansado, terminaria a prova.",
+            "Estava cansado, logo terminou a prova.",
+            "Porque estava cansado, terminou a prova."
+          ],
+          "correct_index": 0,
+          "explanation": "A ideia é de obstáculo que não impediu. Com embora, a frase continua dizendo isso: o cansaço não impediu de terminar.",
+          "pitfall": "“Como” e “porque” fariam do cansaço a causa de terminar, o que inverte a ideia.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -1957,6 +2317,96 @@
           "correct_index": 0,
           "explanation": "“Chegou” é ação, e “cansada” é o estado de Ana. Ação mais estado faz o predicado verbo-nominal.",
           "pitfall": "Ver só a ação leva a marcar verbal. A característica do sujeito também está ali."
+        },
+        {
+          "topic": "Achar o sujeito",
+          "statement": "Em “O cachorro latiu a noite toda”, o sujeito é:",
+          "options": [
+            "o cachorro",
+            "latiu",
+            "a noite toda",
+            "a noite",
+            "toda"
+          ],
+          "correct_index": 0,
+          "explanation": "Quem latiu? O cachorro. Perguntar ao verbo revela o sujeito.",
+          "pitfall": "A noite toda diz quando, e não quem fez a ação.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Sujeito oculto",
+          "statement": "Em “Chegamos cedo à escola”, o sujeito é:",
+          "options": [
+            "oculto: nós",
+            "indeterminado",
+            "inexistente",
+            "a escola",
+            "cedo"
+          ],
+          "correct_index": 0,
+          "explanation": "O final “-mos” do verbo mostra que foi “nós”. O sujeito não está escrito, mas o verbo o revela.",
+          "pitfall": "Não é indeterminado: o verbo diz exatamente quem foi.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Sujeito composto",
+          "statement": "Em qual frase o sujeito é composto?",
+          "options": [
+            "O pai e a filha viajaram juntos.",
+            "Os pais viajaram juntos.",
+            "A família viajou junta.",
+            "Viajamos juntos.",
+            "Viajaram com a filha."
+          ],
+          "correct_index": 0,
+          "explanation": "O pai e a filha são dois núcleos ligados por “e”. Dois ou mais núcleos fazem o sujeito composto.",
+          "pitfall": "“Os pais” fala de mais de uma pessoa, mas com um núcleo só. É sujeito simples.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Predicativo do sujeito",
+          "statement": "Em “A prova parecia difícil”, a palavra “difícil” é:",
+          "options": [
+            "predicativo do sujeito",
+            "sujeito",
+            "verbo",
+            "núcleo do sujeito",
+            "objeto"
+          ],
+          "correct_index": 0,
+          "explanation": "Parecer é verbo de ligação. Ele liga a prova a uma característica dela: difícil.",
+          "pitfall": "Quem tem a característica é o sujeito. A característica é o predicativo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Haver e fazer",
+          "statement": "Assinale a frase que segue a norma-padrão.",
+          "options": [
+            "Faz três meses que não chove, e houve muitas reclamações.",
+            "Fazem três meses que não chove, e houve muitas reclamações.",
+            "Faz três meses que não chove, e houveram muitas reclamações.",
+            "Fazem três meses que não chove, e houveram muitas reclamações.",
+            "Faz três meses que não chovem, e houve muitas reclamações."
+          ],
+          "correct_index": 0,
+          "explanation": "Fazer que conta tempo e haver no sentido de existir não têm sujeito. Por isso ficam no singular: faz e houve.",
+          "pitfall": "A frase traz os dois casos de uma vez. Basta um plural errado para a alternativa cair.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Indeterminado ou oculto",
+          "statement": "Em qual frase o sujeito é indeterminado?",
+          "options": [
+            "Falaram mal de você na reunião.",
+            "Falamos mal de você na reunião.",
+            "Os colegas falaram mal de você.",
+            "Choveu durante a reunião.",
+            "Eu falei mal de você na reunião."
+          ],
+          "correct_index": 0,
+          "explanation": "Alguém falou, mas a frase não diz quem. O verbo na terceira pessoa do plural, sem a quem se referir, indetermina o sujeito.",
+          "pitfall": "“Choveu” não tem sujeito nenhum. Indeterminado é quando alguém fez, só não se sabe quem.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -2302,6 +2752,96 @@
           "correct_index": 0,
           "explanation": "“Dormir” já tem sentido completo. “Na sala” só acrescenta onde, e isso é adjunto adverbial.",
           "pitfall": "Ter preposição não faz de um termo objeto indireto. Ele precisa completar o verbo."
+        },
+        {
+          "topic": "Verbo intransitivo",
+          "statement": "Qual verbo tem sentido completo, sem precisar de complemento?",
+          "options": [
+            "nascer",
+            "comprar",
+            "precisar",
+            "entregar",
+            "gostar"
+          ],
+          "correct_index": 0,
+          "explanation": "Quem nasce, simplesmente nasce. Os outros pedem algo: comprar algo, precisar de algo, entregar algo a alguém.",
+          "pitfall": "Teste a frase sozinha: “ela nasceu” fica completa.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Objeto direto",
+          "statement": "Em “Ela leu o livro inteiro”, o objeto direto é:",
+          "options": [
+            "o livro inteiro",
+            "ela",
+            "leu",
+            "inteiro",
+            "não há"
+          ],
+          "correct_index": 0,
+          "explanation": "Leu o quê? O livro inteiro. O complemento se liga ao verbo sem preposição.",
+          "pitfall": "“Inteiro” faz parte do objeto: diz como era o livro lido.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Lhe ou o",
+          "statement": "Assinale a frase que segue a norma-padrão.",
+          "options": [
+            "Encontrei-o na saída do cinema.",
+            "Encontrei-lhe na saída do cinema.",
+            "Lhe encontrei na saída do cinema.",
+            "Encontrei ele na saída do cinema.",
+            "Eu lhe encontrei na saída do cinema."
+          ],
+          "correct_index": 0,
+          "explanation": "Encontrar pede objeto direto (encontrei alguém). O objeto direto vira “o”: encontrei-o.",
+          "pitfall": "“Lhe” serve ao objeto indireto de pessoa, como em “obedeço-lhe”.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Objeto indireto",
+          "statement": "Em qual frase há objeto indireto?",
+          "options": [
+            "Confio em você.",
+            "Comprei pão.",
+            "Ela dormiu cedo.",
+            "Vi o filme.",
+            "Ele chegou ontem."
+          ],
+          "correct_index": 0,
+          "explanation": "Quem confia, confia em alguém. A preposição “em” é obrigatória, e o complemento é objeto indireto.",
+          "pitfall": "“Ele chegou ontem” tem só circunstância de tempo, que é adjunto adverbial.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Complemento ou circunstância",
+          "statement": "Em “Ela gosta de cinema nos fins de semana”, os termos “de cinema” e “nos fins de semana” são, nessa ordem:",
+          "options": [
+            "objeto indireto e adjunto adverbial",
+            "adjunto adverbial e objeto indireto",
+            "objeto direto e adjunto adverbial",
+            "objeto indireto e objeto direto",
+            "dois adjuntos adverbiais"
+          ],
+          "correct_index": 0,
+          "explanation": "“De cinema” completa o verbo gostar, que pede a preposição. “Nos fins de semana” só diz quando.",
+          "pitfall": "Os dois termos têm preposição. Só um deles completa o sentido do verbo.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Transitivo direto e indireto",
+          "statement": "Em qual frase o verbo pede objeto direto e objeto indireto ao mesmo tempo?",
+          "options": [
+            "O professor explicou a regra aos alunos.",
+            "O professor chegou à escola cedo.",
+            "O professor gosta de música.",
+            "O professor dormiu na sala.",
+            "O professor saiu de casa."
+          ],
+          "correct_index": 0,
+          "explanation": "Quem explica, explica algo (a regra) a alguém (aos alunos). Os dois complementos estão na frase.",
+          "pitfall": "“Chegou à escola” tem preposição, mas indica lugar. Não é complemento de quem explica algo a alguém.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -2705,6 +3245,96 @@
           ],
           "explanation": "Conforme diz de acordo com o quê. À medida que mostra proporção. Tão… que traz a consequência. Para que traz a finalidade.",
           "pitfall": "Consequência e finalidade confundem. A finalidade é o objetivo, e a consequência é o resultado."
+        },
+        {
+          "topic": "Período simples",
+          "statement": "Qual destas frases é um período simples?",
+          "options": [
+            "O ônibus atrasou.",
+            "O ônibus atrasou e perdi a aula.",
+            "Quando o ônibus atrasou, perdi a aula.",
+            "Saí cedo, mas o ônibus atrasou.",
+            "Corri porque o ônibus atrasou."
+          ],
+          "correct_index": 0,
+          "explanation": "Há um verbo só (atrasou), e por isso uma oração só. As outras têm dois verbos.",
+          "pitfall": "Para contar orações, conte os verbos.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Coordenada aditiva",
+          "statement": "Em “Ela estudou e passou”, a segunda oração é coordenada:",
+          "options": [
+            "aditiva",
+            "adversativa",
+            "explicativa",
+            "conclusiva",
+            "alternativa"
+          ],
+          "correct_index": 0,
+          "explanation": "A conjunção “e” soma uma ideia à outra. É a coordenada aditiva.",
+          "pitfall": "Mesmo que passar seja consequência de estudar, a conjunção usada é de soma.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Adverbial temporal",
+          "statement": "Em “Assim que o sinal tocou, todos saíram”, a primeira oração é subordinada adverbial:",
+          "options": [
+            "temporal",
+            "causal",
+            "condicional",
+            "final",
+            "concessiva"
+          ],
+          "correct_index": 0,
+          "explanation": "Assim que indica tempo: logo depois de o sinal tocar.",
+          "pitfall": "A saída pode parecer consequência do sinal, mas a conjunção marca o momento.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Coordenada alternativa",
+          "statement": "Em “Ou você estuda agora, ou perde a prova”, as orações são coordenadas:",
+          "options": [
+            "alternativas",
+            "aditivas",
+            "adversativas",
+            "conclusivas",
+            "explicativas"
+          ],
+          "correct_index": 0,
+          "explanation": "O par “ou… ou” apresenta uma escolha entre duas ideias. É a coordenada alternativa.",
+          "pitfall": "Não é condicional: não há “se” ligando uma oração à outra.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Adjetiva restritiva",
+          "statement": "Qual frase diz que só uma parte dos funcionários foi demitida?",
+          "options": [
+            "Os funcionários que faltaram foram demitidos.",
+            "Os funcionários, que faltaram, foram demitidos.",
+            "Os funcionários foram demitidos, e faltaram.",
+            "Os funcionários, faltando, foram demitidos.",
+            "Os funcionários, todos, faltaram e foram demitidos."
+          ],
+          "correct_index": 0,
+          "explanation": "Sem vírgulas, a oração adjetiva é restritiva: separa do grupo só os que faltaram. Com vírgulas, ela diria que todos faltaram.",
+          "pitfall": "As duas primeiras frases têm as mesmas palavras. Só as vírgulas mudam o sentido.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Consecutiva ou final",
+          "statement": "Em “Falou tão baixo que ninguém ouviu”, a oração “que ninguém ouviu” é subordinada adverbial:",
+          "options": [
+            "consecutiva",
+            "final",
+            "causal",
+            "comparativa",
+            "concessiva"
+          ],
+          "correct_index": 0,
+          "explanation": "O par “tão… que” traz a consequência de falar baixo: ninguém ouviu.",
+          "pitfall": "Final seria o objetivo, como em “falou baixo para que ninguém ouvisse”.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -3068,6 +3698,96 @@
           ],
           "explanation": "Menos e “em anexo” são fixos. Anexo combina com o nome, e “só” no sentido de sozinho vai para o plural.",
           "pitfall": "“Só” no sentido de somente não varia. O sentido decide."
+        },
+        {
+          "topic": "Regra geral",
+          "statement": "Complete: “Comprei duas camisas ___.”",
+          "options": [
+            "brancas",
+            "branca",
+            "branco",
+            "brancos",
+            "branquinho"
+          ],
+          "correct_index": 0,
+          "explanation": "O adjetivo combina com camisas: feminino e plural, brancas.",
+          "pitfall": "O numeral “duas” já mostra que são mais de uma.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Obrigado",
+          "statement": "Um homem agradece a ajuda. O certo é ele dizer:",
+          "options": [
+            "Muito obrigado.",
+            "Muito obrigada.",
+            "Muito obrigados.",
+            "Muita obrigado.",
+            "Muitos obrigado."
+          ],
+          "correct_index": 0,
+          "explanation": "Obrigado combina com quem agradece. Um homem diz obrigado.",
+          "pitfall": "“Muito” aqui não muda: é sempre muito obrigado ou muito obrigada.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Meio",
+          "statement": "Complete: “Ela chegou ___ atrasada, mas comeu ___ pizza.”",
+          "options": [
+            "meio — meia",
+            "meia — meia",
+            "meio — meio",
+            "meia — meio",
+            "meios — meia"
+          ],
+          "correct_index": 0,
+          "explanation": "No sentido de um pouco, meio não varia: meio atrasada. No sentido de metade, varia: meia pizza.",
+          "pitfall": "As duas lacunas pedem a mesma palavra com sentidos diferentes.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Anexo",
+          "statement": "Assinale a frase que segue a norma-padrão.",
+          "options": [
+            "Seguem anexas as notas fiscais.",
+            "Segue anexo as notas fiscais.",
+            "Seguem anexo as notas fiscais.",
+            "Segue anexas as notas fiscais.",
+            "Seguem em anexas as notas fiscais."
+          ],
+          "correct_index": 0,
+          "explanation": "Anexo é adjetivo e combina com notas fiscais. O verbo também vai ao plural: seguem anexas.",
+          "pitfall": "Há dois acertos na mesma frase: o verbo e o adjetivo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "É proibido",
+          "statement": "Assinale a frase que segue a norma-padrão.",
+          "options": [
+            "É proibido entrada de pessoas estranhas.",
+            "É proibida entrada de pessoas estranhas.",
+            "É proibido a entrada de pessoas estranhas.",
+            "São proibidas a entrada de pessoas estranhas.",
+            "É proibidos a entrada de pessoas estranhas."
+          ],
+          "correct_index": 0,
+          "explanation": "Sem artigo depois, a expressão fica no masculino singular: é proibido entrada. Com artigo, seria “é proibida a entrada”.",
+          "pitfall": "A segunda opção parece mais caprichada, mas a concordância só acontece quando há artigo.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Adjetivo antes dos nomes",
+          "statement": "Assinale a frase em que a concordância segue a norma-padrão.",
+          "options": [
+            "Escolheu ótima hora e lugar para a festa.",
+            "Escolheu ótimos hora e lugar para a festa.",
+            "Escolheu ótimo hora e lugar para a festa.",
+            "Escolheu ótimas hora e lugar para a festa.",
+            "Escolheu ótima horas e lugar para a festa."
+          ],
+          "correct_index": 0,
+          "explanation": "Adjetivo antes de dois nomes combina com o mais próximo: ótima hora.",
+          "pitfall": "Depois dos nomes, o plural seria aceito. Antes deles, vale o vizinho.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -3366,6 +4086,96 @@
           "correct_index": 0,
           "explanation": "Para dizer as horas, o verbo ser acompanha o número de horas. Por isso: “É uma hora”, “São duas horas”, “É meio-dia”.",
           "pitfall": "“Meio-dia” e “meia-noite” são singulares: “É meio-dia”. E “uma hora” também: “É uma hora”."
+        },
+        {
+          "topic": "Sujeito no plural",
+          "statement": "Complete: “Os alunos ___ cedo para a excursão.”",
+          "options": [
+            "chegaram",
+            "chegou",
+            "chega",
+            "chegue",
+            "chegasse"
+          ],
+          "correct_index": 0,
+          "explanation": "O sujeito “os alunos” está no plural, e o verbo acompanha: chegaram.",
+          "pitfall": "O verbo concorda com o sujeito, não com a palavra que vem logo antes.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Haver",
+          "statement": "Complete: “___ muitas pessoas na fila do banco.”",
+          "options": [
+            "Havia",
+            "Haviam",
+            "Houveram",
+            "Hão",
+            "Haverão"
+          ],
+          "correct_index": 0,
+          "explanation": "Haver no sentido de existir não tem sujeito e fica no singular: havia.",
+          "pitfall": "Pessoas está no plural, mas não é sujeito de haver.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Sujeito depois do verbo",
+          "statement": "Assinale a frase que segue a norma-padrão.",
+          "options": [
+            "Chegaram as cartas que você esperava.",
+            "Chegou as cartas que você esperava.",
+            "Chega as cartas que você esperava.",
+            "Chegou-se as cartas que você esperava.",
+            "Chegava as cartas que você esperava."
+          ],
+          "correct_index": 0,
+          "explanation": "O sujeito “as cartas” vem depois do verbo, mas continua no plural. O verbo acompanha: chegaram.",
+          "pitfall": "Sujeito depois do verbo engana o ouvido. Pergunte ao verbo: o que chegou?",
+          "difficulty": "media"
+        },
+        {
+          "topic": "O se dos anúncios",
+          "statement": "Assinale a frase que segue a norma-padrão.",
+          "options": [
+            "Vendem-se casas na praia.",
+            "Vende-se casas na praia.",
+            "Vendeu-se casas na praia.",
+            "Vende-se as casas na praia.",
+            "Vendem-se casa na praia."
+          ],
+          "correct_index": 0,
+          "explanation": "Casas são vendidas: casas é o sujeito, e o verbo vai ao plural. Vendem-se casas.",
+          "pitfall": "“Vende-se casas” é o que se vê nas placas, mas a norma pede o plural.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Precisa-se",
+          "statement": "Assinale a frase que segue a norma-padrão.",
+          "options": [
+            "Precisa-se de vendedores.",
+            "Precisam-se de vendedores.",
+            "Precisam-se vendedores.",
+            "Precisa-se vendedores.",
+            "Precisam-se dos vendedores."
+          ],
+          "correct_index": 0,
+          "explanation": "Quem precisa, precisa DE algo. Com esse “de” no meio, o sujeito fica indeterminado, e o verbo não vai ao plural.",
+          "pitfall": "Compare com “vendem-se casas”: lá não há o “de”, e casas é o sujeito.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Mais de um",
+          "statement": "Assinale a frase que segue a norma-padrão.",
+          "options": [
+            "Mais de um aluno faltou à aula.",
+            "Mais de um aluno faltaram à aula.",
+            "Mais de dois aluno faltou à aula.",
+            "Mais de dois alunos faltou à aula.",
+            "Mais de um alunos faltaram à aula."
+          ],
+          "correct_index": 0,
+          "explanation": "Com “mais de um”, o verbo fica no singular, porque acompanha o numeral “um”.",
+          "pitfall": "“Mais de dois alunos” pediria o plural: faltaram.",
+          "difficulty": "dificil"
         }
       ],
       "module": "As regras que mais caem"
@@ -3734,6 +4544,96 @@
           "correct_index": 0,
           "explanation": "No sentido de causar, “implicar” não pede preposição: implica mudanças.",
           "pitfall": "As outras trazem os erros clássicos: namorar com, preferir mais e assistir sem “a”."
+        },
+        {
+          "topic": "Gostar de",
+          "statement": "Complete: “Eu gosto ___ estudar à noite.”",
+          "options": [
+            "de",
+            "em",
+            "a",
+            "com",
+            "por"
+          ],
+          "correct_index": 0,
+          "explanation": "Quem gosta, gosta de algo. A preposição pedida é “de”.",
+          "pitfall": "Na fala, a preposição às vezes some. Na escrita, ela fica.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Assistir",
+          "statement": "Complete: “Assistimos ___ jogo de ontem na casa do vizinho.”",
+          "options": [
+            "ao",
+            "o",
+            "no",
+            "pelo",
+            "do"
+          ],
+          "correct_index": 0,
+          "explanation": "No sentido de ver, assistir pede a preposição “a”: assistimos ao jogo.",
+          "pitfall": "“Assistimos o jogo” é o erro mais comum desse verbo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Preferir",
+          "statement": "Qual reescrita de “Prefiro mais ler do que ver televisão” segue a norma-padrão?",
+          "options": [
+            "Prefiro ler a ver televisão.",
+            "Prefiro mais ler a ver televisão.",
+            "Prefiro ler do que ver televisão.",
+            "Prefiro mais ler que ver televisão.",
+            "Prefiro de ler a ver televisão."
+          ],
+          "correct_index": 0,
+          "explanation": "Quem prefere, prefere algo a algo, sem “mais” e sem “do que”.",
+          "pitfall": "Tirar só o “mais” não basta: o “do que” também sai.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Obedecer",
+          "statement": "Assinale a frase que segue a norma-padrão.",
+          "options": [
+            "Os motoristas devem obedecer às leis de trânsito.",
+            "Os motoristas devem obedecer as leis de trânsito.",
+            "Os motoristas devem obedecer com as leis de trânsito.",
+            "Os motoristas devem obedecer nas leis de trânsito.",
+            "Os motoristas devem obedecer pelas leis de trânsito."
+          ],
+          "correct_index": 0,
+          "explanation": "Quem obedece, obedece a algo. A + as leis = às leis.",
+          "pitfall": "O acento só aparece porque o verbo pede a preposição.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Preposição antes do relativo",
+          "statement": "Assinale a frase que segue a norma-padrão.",
+          "options": [
+            "Este é o filme a que me referi.",
+            "Este é o filme que me referi.",
+            "Este é o filme de que me referi.",
+            "Este é o filme em que me referi.",
+            "Este é o filme onde me referi."
+          ],
+          "correct_index": 0,
+          "explanation": "Quem se refere, se refere a algo. A preposição pedida vai para antes do pronome relativo: a que me referi.",
+          "pitfall": "Na fala some a preposição. A prova cobra justamente essa ausência.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Visar",
+          "statement": "Em qual frase o verbo “visar” tem o sentido de “ter como objetivo”?",
+          "options": [
+            "A campanha visa à redução de acidentes.",
+            "O atirador visou o alvo.",
+            "O gerente visou o documento.",
+            "O fiscal visou o passaporte.",
+            "Ele visou a placa com a lanterna."
+          ],
+          "correct_index": 0,
+          "explanation": "Com a preposição “a”, visar quer dizer ter como objetivo. Sem preposição, quer dizer mirar ou carimbar.",
+          "pitfall": "As outras quatro usam o verbo sem preposição, nos sentidos de mirar e de carimbar.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -4039,6 +4939,96 @@
           "correct_index": 1,
           "explanation": "Casa sozinha, no sentido de lar, não tem artigo: volto DE casa. Mas “a casa dos avós” tem artigo: volto DA casa dos avós. Então: “voltou à casa dos avós”, com crase.",
           "pitfall": "Teste sempre “volto de” e “volto da”. “Volto de casa” leva a “a casa”, sem crase. “Volto da casa dos avós” leva a “à casa dos avós”, com crase."
+        },
+        {
+          "topic": "Antes de palavra masculina",
+          "statement": "Em qual frase NÃO deve haver crase?",
+          "options": [
+            "Fomos a pé até o parque.",
+            "Fomos à praia de manhã.",
+            "Fomos à feira de domingo.",
+            "Fomos à casa da avó.",
+            "Fomos à escola juntos."
+          ],
+          "correct_index": 0,
+          "explanation": "Pé é palavra masculina, e não aceita o “a” de feminino. Por isso não há crase.",
+          "pitfall": "As outras têm palavra feminina com artigo (a praia, a feira, a casa da avó, a escola).",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Horas",
+          "statement": "Complete: “A aula começa ___ oito horas.”",
+          "options": [
+            "às",
+            "as",
+            "a",
+            "à",
+            "há"
+          ],
+          "correct_index": 0,
+          "explanation": "Hora marcada pede crase: a preposição de “começa a” junto com o artigo de “as oito horas”.",
+          "pitfall": "Com uma hora só, seria “à uma hora”.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Teste do ao",
+          "statement": "Usando o teste do “ao”, em qual frase há crase?",
+          "options": [
+            "Entreguei o recado à diretora.",
+            "Entreguei o recado a ela.",
+            "Comecei a entender o recado.",
+            "Mandei o recado a uma amiga.",
+            "Fiquei cara a cara com a diretora."
+          ],
+          "correct_index": 0,
+          "explanation": "No masculino ficaria “entreguei o recado ao diretor”. Deu “ao”, então no feminino há crase.",
+          "pitfall": "Não há crase antes de pronome, de ação e de “uma”. Nem entre palavras repetidas.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Nomes de lugares",
+          "statement": "Em qual frase a crase está correta?",
+          "options": [
+            "Vou à Bahia nas férias.",
+            "Vou à Salvador nas férias.",
+            "Vou à Portugal nas férias.",
+            "Vou à Roma nas férias.",
+            "Vou à Recife nas férias."
+          ],
+          "correct_index": 0,
+          "explanation": "Volto DA Bahia, então vou À Bahia. Para Salvador, Roma e Recife se diz volto DE, e Portugal é masculino.",
+          "pitfall": "Estado e cidade não seguem a mesma regra. Faça o teste do volto da.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Crase antes de pronome",
+          "statement": "Assinale a frase em que o acento grave está ERRADO.",
+          "options": [
+            "Refiro-me à essa questão da prova.",
+            "Refiro-me à questão da prova.",
+            "Fui à mesma escola que você.",
+            "Cheguei à conclusão certa.",
+            "Fiz a viagem à noite."
+          ],
+          "correct_index": 0,
+          "explanation": "Antes do pronome “essa”, não há artigo, e por isso não há crase: refiro-me a essa questão.",
+          "pitfall": "A pergunta pede a ERRADA. Quem marca a primeira certa que vê perde a questão.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Casa",
+          "statement": "Assinale a frase em que o acento grave está correto.",
+          "options": [
+            "Voltei à casa onde nasci.",
+            "Voltei à casa cedo ontem.",
+            "Cheguei à casa às seis.",
+            "Fui à casa buscar a mochila.",
+            "Saí de casa e voltei à casa."
+          ],
+          "correct_index": 0,
+          "explanation": "Casa acompanhada de uma explicação (onde nasci) aceita artigo: volto da casa onde nasci. Por isso há crase.",
+          "pitfall": "Casa sozinha, no sentido de lar, não tem artigo: voltei a casa cedo.",
+          "difficulty": "dificil"
         }
       ],
       "module": "As regras que mais caem"
@@ -4391,6 +5381,96 @@
           "correct_index": 0,
           "explanation": "O pronome nunca se cola depois do particípio. E “ver” pede “o”, e não “lhe”.",
           "pitfall": "Duas armadilhas na mesma frase: o lugar do pronome e o pronome certo."
+        },
+        {
+          "topic": "Próclise com não",
+          "statement": "Assinale a frase que segue a norma-padrão.",
+          "options": [
+            "Ninguém me avisou da prova.",
+            "Ninguém avisou-me da prova.",
+            "Ninguém avisou me da prova.",
+            "Ninguém avisar-me-á da prova.",
+            "Ninguém avisoume da prova."
+          ],
+          "correct_index": 0,
+          "explanation": "Palavras negativas como “ninguém” atraem o pronome para antes do verbo.",
+          "pitfall": "A próclise é obrigatória com palavra negativa.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Começo de frase",
+          "statement": "Assinale a frase que segue a norma-padrão.",
+          "options": [
+            "Disseram-me que a prova mudou.",
+            "Me disseram que a prova mudou.",
+            "Me disseram-me que a prova mudou.",
+            "Disseram me que a prova mudou.",
+            "Te disseram que a prova mudou."
+          ],
+          "correct_index": 0,
+          "explanation": "Na escrita formal, a frase não começa com pronome oblíquo. Com o verbo no começo, o pronome vai depois.",
+          "pitfall": "Começar com “me” é natural na fala, mas a prova cobra a escrita formal.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Pronome relativo atrai",
+          "statement": "Assinale a frase que segue a norma-padrão.",
+          "options": [
+            "O livro que me emprestaste é ótimo.",
+            "O livro que emprestaste-me é ótimo.",
+            "O livro que emprestaste me é ótimo.",
+            "O livro que emprestar-me-ás é ótimo.",
+            "O livro me que emprestaste é ótimo."
+          ],
+          "correct_index": 0,
+          "explanation": "O pronome relativo “que” atrai o pronome oblíquo para antes do verbo.",
+          "pitfall": "Ênclise depois de “que” é erro mesmo quando soa formal.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Futuro e mesóclise",
+          "statement": "Assinale a frase que segue a norma-padrão.",
+          "options": [
+            "Dir-lhe-ei a verdade amanhã.",
+            "Direi-lhe a verdade amanhã.",
+            "Lhe direi a verdade amanhã.",
+            "Dirá-lhe a verdade amanhã.",
+            "Direi lhe a verdade amanhã."
+          ],
+          "correct_index": 0,
+          "explanation": "Com o futuro do presente abrindo a frase, sem palavra que atraia, o pronome vai para o meio: dir-lhe-ei.",
+          "pitfall": "Com futuro, o pronome nunca se cola depois do verbo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Advérbio com vírgula",
+          "statement": "Assinale a frase que segue a norma-padrão.",
+          "options": [
+            "Aqui, vive-se bem.",
+            "Aqui vive-se bem.",
+            "Se vive bem aqui.",
+            "Vive se bem aqui.",
+            "Aqui vive bem-se."
+          ],
+          "correct_index": 0,
+          "explanation": "Com vírgula depois do advérbio, a atração se quebra, e o pronome vai para depois do verbo: vive-se.",
+          "pitfall": "Sem a vírgula, o certo seria “aqui se vive bem”. A vírgula muda a regra.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Particípio",
+          "statement": "Assinale a frase que segue a norma-padrão.",
+          "options": [
+            "Eles nos haviam avisado do problema.",
+            "Eles haviam avisado-nos do problema.",
+            "Eles haviam-nos avisados do problema.",
+            "Eles nos haviam avisados do problema.",
+            "Eles haviam avisado nos do problema."
+          ],
+          "correct_index": 0,
+          "explanation": "O pronome nunca se cola depois do particípio. Ele pode vir antes da locução: nos haviam avisado.",
+          "pitfall": "O particípio da locução não muda de forma: é “avisado”, e não “avisados”.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -4704,6 +5784,96 @@
           ],
           "explanation": "Chamado é vocativo. Explicação é aposto. Tempo no começo é circunstância deslocada. Lista é enumeração.",
           "pitfall": "Vocativo e aposto se confundem. O vocativo chama, e o aposto explica."
+        },
+        {
+          "topic": "Vocativo",
+          "statement": "Em qual frase a vírgula isola quem é chamado?",
+          "options": [
+            "Pedro, traga o caderno.",
+            "Pedro trouxe o caderno.",
+            "O caderno de Pedro sumiu.",
+            "Pedro e Ana trouxeram o caderno.",
+            "Trouxe o caderno do Pedro."
+          ],
+          "correct_index": 0,
+          "explanation": "Pedro está sendo chamado na frase. Esse chamado é o vocativo, e a vírgula o isola.",
+          "pitfall": "Nas outras, Pedro é de quem se fala, e não quem é chamado.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Itens de uma lista",
+          "statement": "Assinale a frase com a pontuação correta.",
+          "options": [
+            "Ela comprou lápis, caneta e borracha.",
+            "Ela comprou, lápis, caneta e borracha.",
+            "Ela comprou lápis caneta, e borracha.",
+            "Ela, comprou lápis, caneta e borracha.",
+            "Ela comprou lápis caneta e, borracha."
+          ],
+          "correct_index": 0,
+          "explanation": "A vírgula separa os itens, e antes do último entra o “e” sem vírgula.",
+          "pitfall": "Vírgula entre o verbo e o que ele comprou é erro.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Aposto",
+          "statement": "Assinale a frase com a pontuação correta.",
+          "options": [
+            "Brasília, a capital do país, foi inaugurada em 1960.",
+            "Brasília a capital do país, foi inaugurada em 1960.",
+            "Brasília, a capital do país foi inaugurada em 1960.",
+            "Brasília a capital, do país foi inaugurada em 1960.",
+            "Brasília, a capital do país foi, inaugurada em 1960."
+          ],
+          "correct_index": 0,
+          "explanation": "O aposto explica Brasília e fica entre duas vírgulas: uma que abre e outra que fecha.",
+          "pitfall": "Abrir o aposto e esquecer de fechar é o erro mais comum.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Sujeito longo",
+          "statement": "Assinale a frase com a pontuação correta.",
+          "options": [
+            "Os estudantes que chegaram atrasados perderam a prova.",
+            "Os estudantes que chegaram atrasados, perderam a prova.",
+            "Os estudantes, que chegaram atrasados perderam a prova.",
+            "Os estudantes que chegaram, atrasados perderam a prova.",
+            "Os estudantes que chegaram atrasados perderam, a prova."
+          ],
+          "correct_index": 0,
+          "explanation": "Todo o trecho “os estudantes que chegaram atrasados” é o sujeito. Entre ele e o verbo não vai vírgula.",
+          "pitfall": "Sujeito longo dá vontade de pausar. A pausa da voz não é motivo para vírgula.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Vírgula e sentido",
+          "statement": "Em qual frase tirar a vírgula muda o sentido?",
+          "options": [
+            "Não, quero ir embora.",
+            "Ontem, choveu muito.",
+            "Depois do almoço, saímos.",
+            "No sábado, fomos ao cinema.",
+            "Em casa, li o livro todo."
+          ],
+          "correct_index": 0,
+          "explanation": "Com a vírgula, a pessoa responde “não” e quer ir embora. Sem ela, “não quero ir embora” diz o contrário.",
+          "pitfall": "Nas outras, a vírgula só separa uma circunstância curta deslocada. Tirá-la não muda o sentido.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Vírgula antes do e",
+          "statement": "Em qual frase a vírgula antes do “e” está justificada?",
+          "options": [
+            "Ana estudou para a prova, e Rui foi ao cinema.",
+            "Ana estudou, e passou na prova.",
+            "Comprei pão, e leite.",
+            "Ela canta, e dança bem.",
+            "Li o livro, e gostei."
+          ],
+          "correct_index": 0,
+          "explanation": "A vírgula antes do “e” se justifica quando as duas partes têm sujeitos diferentes: Ana e Rui.",
+          "pitfall": "Com o mesmo sujeito nas duas partes, a vírgula antes do “e” sobra.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -5085,6 +6255,96 @@
           "correct_index": 0,
           "explanation": "No passado, o verbo leva acento para se diferenciar do presente: ontem ele não pôde.",
           "pitfall": "É um dos acentos que o Acordo manteve, justamente para separar os dois tempos."
+        },
+        {
+          "topic": "Oxítona",
+          "statement": "Qual destas palavras é oxítona?",
+          "options": [
+            "sofá",
+            "mesa",
+            "lâmpada",
+            "fácil",
+            "livro"
+          ],
+          "correct_index": 0,
+          "explanation": "Em so-fá, a força está na última sílaba. Isso é oxítona.",
+          "pitfall": "Ter acento não faz da palavra oxítona: fácil e lâmpada também têm.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Acordo",
+          "statement": "Qual palavra está escrita de acordo com as regras atuais?",
+          "options": [
+            "voo",
+            "vôo",
+            "idéia",
+            "lingüiça",
+            "heróico"
+          ],
+          "correct_index": 0,
+          "explanation": "Desde o Acordo de 2009, o “oo” não leva mais acento: voo.",
+          "pitfall": "As outras perderam o acento ou o trema com o Acordo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Paroxítona",
+          "statement": "A palavra “lápis” leva acento porque é:",
+          "options": [
+            "paroxítona terminada em is",
+            "oxítona terminada em s",
+            "proparoxítona",
+            "um hiato",
+            "uma palavra de uma sílaba"
+          ],
+          "correct_index": 0,
+          "explanation": "Em lá-pis, a força está na penúltima sílaba. Paroxítonas terminadas em is levam acento.",
+          "pitfall": "Não é oxítona: a força não está no fim da palavra.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Mesma regra",
+          "statement": "Em qual alternativa as duas palavras são acentuadas pela mesma regra?",
+          "options": [
+            "café — você",
+            "café — fácil",
+            "lâmpada — sofá",
+            "saúde — avô",
+            "júri — pé"
+          ],
+          "correct_index": 0,
+          "explanation": "Café e você são oxítonas terminadas em e. As outras duplas misturam regras diferentes.",
+          "pitfall": "Fácil também tem acento, mas é paroxítona terminada em l.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Hiato",
+          "statement": "Qual palavra perde o acento por causa da regra do hiato com nh?",
+          "options": [
+            "rainha",
+            "saída",
+            "país",
+            "baú",
+            "saúde"
+          ],
+          "correct_index": 0,
+          "explanation": "Em ra-i-nha, o i forma sozinho a sílaba forte, mas vem antes de nh. Nesse caso não leva acento.",
+          "pitfall": "As outras seguem a regra geral do hiato e levam acento.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Acentos que ficaram",
+          "statement": "Assinale a frase escrita de acordo com as regras atuais.",
+          "options": [
+            "Eles têm certeza de que o atleta não pôde treinar ontem.",
+            "Eles tem certeza de que o atleta não pôde treinar ontem.",
+            "Eles têm certeza de que o atleta não pode treinar ontem.",
+            "Eles teem certeza de que o atleta não pôde treinar ontem.",
+            "Eles têm certeza de que o atleta não póde treinar ontem."
+          ],
+          "correct_index": 0,
+          "explanation": "Têm leva acento no plural, e pôde leva acento no passado. O Acordo manteve os dois, para diferenciar palavras.",
+          "pitfall": "Há duas armadilhas na mesma frase. Basta uma delas para a alternativa cair.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -5378,6 +6638,96 @@
           "correct_index": 0,
           "explanation": "O texto diz que o museu fecha às segundas. Afirmar que funciona nesse dia é dizer o oposto.",
           "pitfall": "“Seis dias por semana” parece ir além, mas é só uma conta: de terça a domingo são seis dias."
+        },
+        {
+          "topic": "O que o texto diz",
+          "statement": "Leia: “A biblioteca abre às 8h e fecha às 18h.” Segundo o texto:",
+          "options": [
+            "a biblioteca fica aberta dez horas por dia",
+            "a biblioteca abre aos sábados",
+            "a biblioteca fecha ao meio-dia",
+            "a biblioteca abre às 18h",
+            "a biblioteca nunca fecha"
+          ],
+          "correct_index": 0,
+          "explanation": "Das 8h às 18h são dez horas. É uma conta direta com o que o texto diz.",
+          "pitfall": "Sábado não aparece no texto. Afirmar isso é ir além dele.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Tema",
+          "statement": "Leia: “Beber água ajuda a regular a temperatura do corpo. Também ajuda a digestão.” O tema do texto é:",
+          "options": [
+            "os benefícios de beber água",
+            "a temperatura do planeta",
+            "a digestão dos animais",
+            "a falta de água no mundo",
+            "as doenças do verão"
+          ],
+          "correct_index": 0,
+          "explanation": "O texto inteiro fala do que a água faz pelo corpo. Esse é o tema.",
+          "pitfall": "A digestão é um dos benefícios, e não o tema inteiro.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Inferência",
+          "statement": "Leia: “Levei o guarda-chuva e voltei seco.” O que se pode inferir?",
+          "options": [
+            "Havia chance de chover.",
+            "Choveu forte o dia todo.",
+            "O guarda-chuva quebrou.",
+            "A pessoa não saiu de casa.",
+            "A pessoa odeia chuva."
+          ],
+          "correct_index": 0,
+          "explanation": "Ninguém leva guarda-chuva sem motivo. Dá para inferir que havia chance de chover.",
+          "pitfall": "“Choveu forte o dia todo” vai além: o texto nem diz se choveu.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Sentido no contexto",
+          "statement": "Em “O professor deu uma prova pesada”, a palavra “pesada” significa:",
+          "options": [
+            "difícil",
+            "de muitos quilos",
+            "barulhenta",
+            "comprida demais",
+            "colorida"
+          ],
+          "correct_index": 0,
+          "explanation": "Uma prova não tem peso de verdade. No contexto, pesada quer dizer difícil.",
+          "pitfall": "O sentido do dicionário (que pesa muito) não cabe aqui.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Redução",
+          "statement": "Leia: “O aplicativo economiza tempo, mas pode viciar quem não controla o uso.” Qual alternativa REDUZ o sentido do texto?",
+          "options": [
+            "O texto apenas elogia o aplicativo.",
+            "O texto aponta uma vantagem e um risco do aplicativo.",
+            "O aplicativo pode ser útil e perigoso.",
+            "O controle do uso evita um problema.",
+            "O aplicativo economiza tempo."
+          ],
+          "correct_index": 0,
+          "explanation": "O texto tem duas partes: vantagem e risco. Dizer que ele apenas elogia fica com uma parte só.",
+          "pitfall": "“O aplicativo economiza tempo” também fala de uma parte só, mas não diz que é tudo. O “apenas” é que reduz.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Tese ou argumento",
+          "statement": "Leia: “A escola deveria ensinar finanças. Muitos jovens se endividam cedo. E ninguém aprende a fazer orçamento em casa.” A tese é:",
+          "options": [
+            "a escola deveria ensinar finanças",
+            "muitos jovens se endividam cedo",
+            "ninguém aprende orçamento em casa",
+            "os jovens gastam demais",
+            "as famílias não sabem economizar"
+          ],
+          "correct_index": 0,
+          "explanation": "A tese é a posição defendida: a escola deveria ensinar finanças. As outras frases são os argumentos que a sustentam.",
+          "pitfall": "Os argumentos aparecem mais no texto, mas eles servem à tese.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -5721,6 +7071,96 @@
           "correct_index": 0,
           "explanation": "A charge usa humor e desenho para comentar um fato do momento.",
           "pitfall": "Tirinha também é desenho com humor, mas não precisa tratar de um fato atual."
+        },
+        {
+          "topic": "Tipo descritivo",
+          "statement": "Leia: “A sala era pequena, com paredes azuis e uma janela redonda.” Predomina o tipo:",
+          "options": [
+            "descritivo",
+            "narrativo",
+            "injuntivo",
+            "dissertativo-argumentativo",
+            "expositivo"
+          ],
+          "correct_index": 0,
+          "explanation": "O trecho retrata como era a sala, com várias características. Isso é descrição.",
+          "pitfall": "Não há fatos em sequência, e por isso não é narração.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Anúncio",
+          "statement": "Um texto que tenta convencer a pessoa a comprar um produto é:",
+          "options": [
+            "um anúncio publicitário",
+            "uma notícia",
+            "uma bula",
+            "uma receita",
+            "um editorial"
+          ],
+          "correct_index": 0,
+          "explanation": "O objetivo do anúncio é convencer a comprar ou a agir.",
+          "pitfall": "O editorial também convence, mas defende uma opinião, e não um produto.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Expositivo",
+          "statement": "Leia: “O coração bombeia o sangue para o corpo. Ele bate cerca de 70 vezes por minuto.” O texto é predominantemente:",
+          "options": [
+            "expositivo",
+            "dissertativo-argumentativo",
+            "narrativo",
+            "injuntivo",
+            "descritivo"
+          ],
+          "correct_index": 0,
+          "explanation": "O trecho explica como algo funciona, com um dado, e não defende opinião nenhuma.",
+          "pitfall": "Explicar sem opinar é o que separa o expositivo do argumentativo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Crônica",
+          "statement": "Um texto curto que comenta uma cena do dia a dia com o olhar pessoal do autor, num tom leve, é:",
+          "options": [
+            "uma crônica",
+            "uma reportagem",
+            "uma bula",
+            "um verbete",
+            "uma ata"
+          ],
+          "correct_index": 0,
+          "explanation": "A crônica parte do cotidiano e traz o olhar do autor sobre ele.",
+          "pitfall": "A reportagem também trata de fatos, mas aprofunda com apuração, sem o tom pessoal.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Tipo e gênero",
+          "statement": "Assinale a alternativa que traz um gênero textual e o tipo que predomina nele, nessa ordem.",
+          "options": [
+            "receita — injuntivo",
+            "injuntivo — receita",
+            "narrativo — notícia",
+            "descritivo — anúncio",
+            "expositivo — editorial"
+          ],
+          "correct_index": 0,
+          "explanation": "Receita é o gênero (o texto do dia a dia). Injuntivo é o tipo que predomina nela: dar instruções.",
+          "pitfall": "A ordem importa. Nas opções invertidas, o tipo aparece no lugar do gênero.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Variação linguística",
+          "statement": "Sobre a frase “Nós vai chegar mais tarde”, dita numa conversa entre amigos, a análise mais adequada é:",
+          "options": [
+            "foge do português formal, mas é uma variação comum na fala informal",
+            "está certa em qualquer situação, inclusive num documento oficial",
+            "não tem sentido, e ninguém entende",
+            "segue o português formal, porque a gente fala assim",
+            "é uma variação que só existe na escrita"
+          ],
+          "correct_index": 0,
+          "explanation": "A frase foge do português formal que a prova cobra, e isso pesaria num documento. Numa conversa informal, é uma variação comum e compreensível.",
+          "pitfall": "As alternativas extremas (sempre certa ou sem sentido) são as que a prova costuma descartar.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -6055,6 +7495,96 @@
           "correct_index": 0,
           "explanation": "Juntar as frases com “e” mantém a ordem e o sentido, e “o celular” não se repete.",
           "pitfall": "As outras mudam o que aconteceu ou a relação de causa."
+        },
+        {
+          "topic": "Sinônimo",
+          "statement": "Leia: “O cão fugiu de casa. O animal foi achado na praça.” A palavra “animal” retoma:",
+          "options": [
+            "o cão",
+            "a casa",
+            "a praça",
+            "quem achou",
+            "a fuga"
+          ],
+          "correct_index": 0,
+          "explanation": "“O animal” é outra forma de falar do cão, para não repetir a palavra.",
+          "pitfall": "A retomada aponta para um ser já citado, e não para o lugar.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Conectivo de oposição",
+          "statement": "Qual conectivo indica oposição?",
+          "options": [
+            "no entanto",
+            "além disso",
+            "portanto",
+            "por exemplo",
+            "assim"
+          ],
+          "correct_index": 0,
+          "explanation": "“No entanto” opõe uma ideia à anterior.",
+          "pitfall": "Além disso soma, portanto conclui e por exemplo exemplifica.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Pronome retoma",
+          "statement": "Leia: “Mariana ganhou um prêmio. Ela vai usá-lo na faculdade.” O pronome “lo” retoma:",
+          "options": [
+            "um prêmio",
+            "Mariana",
+            "a faculdade",
+            "ela",
+            "o uso"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela vai usar o quê? O prêmio. O pronome retoma esse nome.",
+          "pitfall": "“Ela” retoma Mariana. São dois pronomes, cada um apontando para um ser.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Incoerência",
+          "statement": "Qual frase tem problema de coerência?",
+          "options": [
+            "Ele é vegetariano e come carne todos os dias.",
+            "Ele é vegetariano e come muita salada.",
+            "Ele é vegetariano, mas a família come carne.",
+            "Ele virou vegetariano no ano passado.",
+            "Ele é vegetariano e cozinha bem."
+          ],
+          "correct_index": 0,
+          "explanation": "Vegetariano não come carne. Dizer as duas coisas juntas é uma contradição.",
+          "pitfall": "Na terceira frase, quem come carne é a família. Não há contradição.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Conectivo e sentido",
+          "statement": "Em “Estudou pouco; ___, tirou a nota máxima”, qual conectivo mantém a coerência?",
+          "options": [
+            "ainda assim",
+            "por isso",
+            "portanto",
+            "consequentemente",
+            "logo"
+          ],
+          "correct_index": 0,
+          "explanation": "Estudar pouco e tirar a nota máxima se opõem. “Ainda assim” marca essa surpresa.",
+          "pitfall": "Por isso, portanto, consequentemente e logo fariam da nota máxima uma consequência de estudar pouco.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Ambiguidade",
+          "statement": "Qual reescrita desfaz a ambiguidade de “O pai disse ao filho que ele estava errado”?",
+          "options": [
+            "O pai disse ao filho: — Você está errado.",
+            "O pai disse ao filho que ele estava errado mesmo.",
+            "O pai disse ao filho, que ele estava errado.",
+            "Ele disse ao filho que o pai estava errado.",
+            "O pai disse que ao filho ele estava errado."
+          ],
+          "correct_index": 0,
+          "explanation": "No original, “ele” pode ser o pai ou o filho. A fala direta deixa claro: quem está errado é o filho.",
+          "pitfall": "Acrescentar “mesmo” ou uma vírgula não muda a dúvida.",
+          "difficulty": "dificil"
         }
       ]
     },
@@ -6404,6 +7934,96 @@
           "correct_index": 0,
           "explanation": "Amor e ódio são ideias opostas postas lado a lado. Isso é antítese.",
           "pitfall": "Não há exagero nem suavização: há contraste."
+        },
+        {
+          "topic": "Denotação",
+          "statement": "Em qual frase a palavra “gelo” está em sentido denotativo?",
+          "options": [
+            "Pus gelo no suco.",
+            "Ela me deu um gelo.",
+            "Ele tem coração de gelo.",
+            "O clima da reunião era um gelo.",
+            "Ficou com os pés de gelo de medo."
+          ],
+          "correct_index": 0,
+          "explanation": "Gelo no suco é gelo de verdade, no sentido do dicionário. Isso é denotação.",
+          "pitfall": "“Dar um gelo” quer dizer ignorar alguém. É sentido figurado.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Comparação",
+          "statement": "Em “Ela corre como o vento”, há:",
+          "options": [
+            "comparação",
+            "metáfora",
+            "metonímia",
+            "eufemismo",
+            "ironia"
+          ],
+          "correct_index": 0,
+          "explanation": "A palavra “como” liga as duas coisas comparadas. Com ela à vista, é comparação.",
+          "pitfall": "Sem o “como” (ela é o vento), seria metáfora.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Metonímia",
+          "statement": "Em “Bebi um copo de água gelada”, a palavra “copo” é um exemplo de:",
+          "options": [
+            "metonímia",
+            "metáfora",
+            "hipérbole",
+            "antítese",
+            "ironia"
+          ],
+          "correct_index": 0,
+          "explanation": "Ninguém bebe o copo, e sim a água. O recipiente ocupa o lugar do conteúdo.",
+          "pitfall": "Não há semelhança entre copo e água, e sim vizinhança. Por isso é metonímia.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Ironia",
+          "statement": "Em “Que dia lindo para esquecer o guarda-chuva!”, dito no meio de uma tempestade, há:",
+          "options": [
+            "ironia",
+            "comparação",
+            "eufemismo",
+            "personificação",
+            "metonímia"
+          ],
+          "correct_index": 0,
+          "explanation": "A pessoa diz o contrário do que pensa: o dia está péssimo. Isso é ironia.",
+          "pitfall": "Sem o contexto da tempestade, a frase poderia ser sincera. A ironia depende dele.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Parônimos",
+          "statement": "Assinale a frase em que as palavras estão empregadas corretamente.",
+          "options": [
+            "O juiz deferiu o pedido e mandou cumprir a sentença.",
+            "O juiz diferiu o pedido e mandou comprir a sentença.",
+            "O juiz deferiu o pedido e mandou comprimir a sentença.",
+            "O juiz diferiu o pedido e mandou cumprir a sentença.",
+            "O juiz deferiu o pedido e mandou comprir a sentença."
+          ],
+          "correct_index": 0,
+          "explanation": "Deferir é aprovar, e cumprir é executar. Diferir quer dizer adiar ou ser diferente.",
+          "pitfall": "Deferir e diferir só mudam uma letra. É o molde da palavra trocada.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Metáfora ou metonímia",
+          "statement": "Em qual frase há metáfora, e não metonímia?",
+          "options": [
+            "Aquela professora é uma enciclopédia.",
+            "Li Jorge Amado nas férias.",
+            "Comprei uma gilete nova.",
+            "O Planalto anunciou a medida.",
+            "Bebeu dois pratos de sopa."
+          ],
+          "correct_index": 0,
+          "explanation": "A professora é aproximada de uma enciclopédia por semelhança: sabe muito. Semelhança é metáfora.",
+          "pitfall": "Nas outras há vizinhança (autor pela obra, marca pelo produto, lugar pelo governo, prato pelo conteúdo).",
+          "difficulty": "dificil"
         }
       ]
     }

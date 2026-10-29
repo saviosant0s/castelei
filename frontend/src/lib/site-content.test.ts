@@ -15,7 +15,7 @@ const CONTENT_DIR = path.resolve(import.meta.dirname, "../../../backend/database
 
 interface SeedLesson {
   title: string;
-  questions?: { exam_only?: boolean }[];
+  questions?: { exam_only?: boolean; difficulty?: string | null }[];
 }
 
 interface SeedSubject {
@@ -54,10 +54,13 @@ describe("catálogo do site público", () => {
 
     expect(CATALOG.subjects).toBe(backend.length);
     expect(CATALOG.lessons).toBe(lessons.length);
-    // O número por lição só pode ser dito enquanto for o mesmo em todas.
+    // O número por lição só pode ser dito enquanto for o mesmo em todas — e
+    // ele conta as questões de BASE, que todo plano recebe. As com nível somam
+    // no total de questões, mas não mudam a promessa por lição.
     const praticas = lessons.map((lesson) => (lesson.questions ?? []).filter((q) => !q.exam_only).length);
-    const iguais = new Set(praticas).size === 1;
-    expect(CATALOG.questionsPerLesson).toBe(iguais ? praticas[0] : null);
+    const base = lessons.map((lesson) => (lesson.questions ?? []).filter((q) => !q.exam_only && q.difficulty == null).length);
+    const iguais = new Set(base).size === 1;
+    expect(CATALOG.questionsPerLesson).toBe(iguais ? base[0] : null);
     expect(CATALOG.questions).toBe(praticas.reduce((a, b) => a + b, 0));
   });
 });

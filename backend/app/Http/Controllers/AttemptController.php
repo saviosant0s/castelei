@@ -44,6 +44,15 @@ class AttemptController extends Controller
             abort_unless(in_array($nivel, Question::LEVELS, true), 422, 'Nível inválido.');
             abort_unless($request->user()->hasLevels(), 403, 'Praticar por nível faz parte do plano Pro.');
             $query->where('difficulty', $nivel);
+        } elseif (! $soErradas && $lesson->questions()->where('exam_only', false)->whereNull('difficulty')->exists()) {
+            /*
+            | A prática comum é das questões de BASE, para todo mundo. As com
+            | nível moram em "Praticar por nível": misturadas aqui, o Pro
+            | treinaria 14 questões de dificuldade sorteada sem saber, e o
+            | domínio do Progresso (que conta só a base) deixaria de bater.
+            | Lição em que TODAS têm nível (sem base) segue o corte antigo.
+            */
+            $query->whereNull('difficulty');
         }
         if ($soErradas) {
             $erradas = self::wrongQuestionIds($request->user()->id, $lesson);
