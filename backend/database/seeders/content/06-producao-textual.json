@@ -420,7 +420,7 @@
             "label": "Do tema à tese",
             "ordered": true,
             "lines": [
-              "Tema: aulas gravadas na faculdade.",
+              "Tema: aulas gravadas na escola.",
               "Pergunta: as aulas gravadas deveriam substituir as aulas ao vivo?",
               "Tese: as aulas gravadas deveriam complementar as aulas ao vivo, e não substituí-las."
             ]
@@ -454,7 +454,7 @@
             "rows": [
               [
                 "A tecnologia mudou a educação.",
-                "As aulas gravadas deveriam complementar as aulas ao vivo na faculdade."
+                "As aulas gravadas deveriam complementar as aulas ao vivo na escola."
               ],
               [
                 "A internet faz mal.",
@@ -496,7 +496,7 @@
             "rows": [
               [
                 "Fato atual",
-                "“As aulas gravadas viraram rotina em muitas faculdades.”"
+                "“As aulas gravadas viraram rotina em muitas escolas.”"
               ],
               [
                 "Contraste",
@@ -566,7 +566,7 @@
         {
           "topic": "Tese",
           "format": "writing",
-          "statement": "Tema: As aulas gravadas deveriam substituir as aulas ao vivo na faculdade? Escreva a sua tese.",
+          "statement": "Tema: As aulas gravadas deveriam substituir as aulas ao vivo na escola? Escreva a sua tese.",
           "writing": {
             "steps": [
               "Escolha um lado: substituir, complementar ou manter só a aula ao vivo.",
@@ -585,7 +585,7 @@
               "Alguém poderia discordar dela.",
               "Ela responde ao tema proposto, e não a outro."
             ],
-            "model": "As aulas gravadas deveriam complementar as aulas ao vivo na faculdade, e não substituí-las.",
+            "model": "As aulas gravadas deveriam complementar as aulas ao vivo na escola, e não substituí-las.",
             "draft_only": true,
             "placeholder": "A sua posição, numa frase só."
           },
@@ -614,7 +614,7 @@
               "A tese aparece clara no fim do parágrafo.",
               "Ainda não há argumento desenvolvido: só a apresentação."
             ],
-            "model": "Durante a pandemia, as aulas gravadas salvaram o semestre de milhões de estudantes. Hoje, muita gente pergunta por que voltar para a sala se o vídeo fica disponível a qualquer hora. A pergunta faz sentido, mas esquece o que só acontece ao vivo. Defendo que as aulas gravadas deveriam complementar as aulas presenciais, e não substituí-las."
+            "model": "Durante a pandemia, as aulas gravadas salvaram o ano letivo de milhões de estudantes. Hoje, muita gente pergunta por que voltar para a sala se o vídeo fica disponível a qualquer hora. A pergunta faz sentido, mas esquece o que só acontece ao vivo. Defendo que as aulas gravadas deveriam complementar as aulas presenciais, e não substituí-las."
           },
           "explanation": "A introdução prepara o terreno. Quem lê precisa saber do que se trata antes de ser convencido de alguma coisa.",
           "pitfall": "Introdução que já despeja os argumentos deixa o desenvolvimento sem nada para dizer."
@@ -724,7 +724,7 @@
               "Os parágrafos estão ligados por conectivos.",
               "A conclusão retoma a tese sem trazer ideia nova."
             ],
-            "model": "Vídeo e sala, não vídeo ou sala\n\nDurante a pandemia, as aulas gravadas salvaram o semestre de milhões de estudantes. Hoje, muita gente pergunta por que voltar para a sala se o vídeo fica disponível a qualquer hora. A pergunta faz sentido, mas esquece o que só acontece ao vivo. Defendo que as aulas gravadas deveriam complementar as aulas presenciais, e não substituí-las.\n\nO primeiro motivo é a dúvida na hora certa. Na aula ao vivo, quem não entendeu levanta a mão e resolve o problema em um minuto. No vídeo, a dúvida fica guardada até o aluno desistir dela. Por isso, a aula presencial continua sendo o lugar onde a matéria destrava.\n\nAlém disso, a gravação é ótima para revisar. Quem perdeu um detalhe pode voltar ao trecho quantas vezes precisar. Quem trabalha e chegou atrasado recupera o que perdeu. Assim, o vídeo resolve os limites da aula ao vivo sem ocupar o lugar dela.\n\nDessa forma, a pergunta não deveria ser gravada ou ao vivo. As duas fazem coisas diferentes e melhores juntas. Se cada aula presencial ganhasse a sua gravação, o estudante teria a conversa e a revisão.",
+            "model": "Vídeo e sala, não vídeo ou sala\n\nDurante a pandemia, as aulas gravadas salvaram o ano letivo de milhões de estudantes. Hoje, muita gente pergunta por que voltar para a sala se o vídeo fica disponível a qualquer hora. A pergunta faz sentido, mas esquece o que só acontece ao vivo. Defendo que as aulas gravadas deveriam complementar as aulas presenciais, e não substituí-las.\n\nO primeiro motivo é a dúvida na hora certa. Na aula ao vivo, quem não entendeu levanta a mão e resolve o problema em um minuto. No vídeo, a dúvida fica guardada até o aluno desistir dela. Por isso, a aula presencial continua sendo o lugar onde a matéria destrava.\n\nAlém disso, a gravação é ótima para revisar. Quem perdeu um detalhe pode voltar ao trecho quantas vezes precisar. Quem trabalha e chegou atrasado recupera o que perdeu. Assim, o vídeo resolve os limites da aula ao vivo sem ocupar o lugar dela.\n\nDessa forma, a pergunta não deveria ser gravada ou ao vivo. As duas fazem coisas diferentes e melhores juntas. Se cada aula presencial ganhasse a sua gravação, o estudante teria a conversa e a revisão.",
             "assemble": true
           },
           "explanation": "Juntar é mais do que colar. É aqui que as partes ganham ligação e o texto vira uma coisa só.",
@@ -930,7 +930,7 @@
         {
           "topic": "Tese",
           "format": "writing",
-          "statement": "Tema: A inteligência artificial deveria ser liberada nos trabalhos da faculdade? Escreva a sua tese.",
+          "statement": "Tema: A inteligência artificial deveria ser liberada nos trabalhos da escola? Escreva a sua tese.",
           "writing": {
             "steps": [
               "Escolha um lado: liberar, proibir ou liberar com alguma condição.",
@@ -949,7 +949,7 @@
               "Alguém poderia discordar dela.",
               "Ela responde ao tema proposto, e não a outro."
             ],
-            "model": "A inteligência artificial deveria ser liberada nos trabalhos da faculdade, desde que o aluno declare como a usou.",
+            "model": "A inteligência artificial deveria ser liberada nos trabalhos da escola, desde que o aluno declare como a usou.",
             "draft_only": true,
             "placeholder": "A sua posição, numa frase só."
           },
@@ -976,7 +976,7 @@
               "A tese aparece clara no fim do parágrafo.",
               "Ainda não há argumento desenvolvido: só a apresentação."
             ],
-            "model": "Ferramentas de inteligência artificial escrevem resumos e códigos em segundos. Nas faculdades, a pergunta virou inevitável: liberar ou proibir? Proibir parece seguro, mas é difícil de fiscalizar. Defendo que a inteligência artificial deveria ser liberada nos trabalhos da faculdade, desde que o aluno declare como a usou."
+            "model": "Ferramentas de inteligência artificial escrevem resumos e redações em segundos. Nas escolas, a pergunta virou inevitável: liberar ou proibir? Proibir parece seguro, mas é difícil de fiscalizar. Defendo que a inteligência artificial deveria ser liberada nos trabalhos da escola, desde que o aluno declare como a usou."
           },
           "explanation": "A introdução prepara o terreno. Quem lê precisa saber do que se trata antes de ser convencido de alguma coisa.",
           "pitfall": "Introdução que já despeja os argumentos deixa o desenvolvimento sem nada para dizer."
@@ -1005,7 +1005,7 @@
               "O parágrafo defende a tese, e não outra ideia.",
               "As frases estão ligadas por conectivos."
             ],
-            "model": "O primeiro motivo é que a ferramenta já faz parte do trabalho de verdade. Um programador que usa um assistente para revisar o código entrega mais rápido. Por exemplo, um estagiário que aprende a pedir e a conferir essas respostas chega ao mercado mais preparado. Portanto, proibir a ferramenta na faculdade é treinar o aluno para um mundo que já não existe."
+            "model": "O primeiro motivo é que a ferramenta já faz parte do trabalho de verdade. Um profissional que usa um assistente para revisar um relatório entrega mais rápido. Por exemplo, um estagiário que aprende a pedir e a conferir essas respostas chega ao mercado mais preparado. Portanto, proibir a ferramenta na escola é treinar o aluno para um mundo que já não existe."
           },
           "explanation": "Um argumento só convence quando mostra o porquê. A frase de abertura promete, e o resto do parágrafo cumpre.",
           "pitfall": "Dois argumentos que dizem a mesma coisa com outras palavras valem como um só."
@@ -1060,7 +1060,7 @@
               "Não há argumento novo.",
               "O fim deixa o leitor com uma proposta ou uma consequência clara."
             ],
-            "model": "Dessa forma, a inteligência artificial deveria entrar na faculdade pela porta da frente. Cada trabalho poderia trazer um parágrafo dizendo o que foi pedido à ferramenta e o que o aluno conferiu. O professor ganharia transparência, e o aluno aprenderia a usar a ferramenta com critério."
+            "model": "Dessa forma, a inteligência artificial deveria entrar na escola pela porta da frente. Cada trabalho poderia trazer um parágrafo dizendo o que foi pedido à ferramenta e o que o aluno conferiu. O professor ganharia transparência, e o aluno aprenderia a usar a ferramenta com critério."
           },
           "explanation": "A conclusão é a última coisa que o leitor lê. É ela que decide a lembrança que o texto deixa.",
           "pitfall": "Argumento novo na conclusão fica sem defesa: não sobra espaço para explicá-lo."
@@ -1088,7 +1088,7 @@
               "Os parágrafos estão ligados por conectivos.",
               "A conclusão retoma a tese sem trazer ideia nova."
             ],
-            "model": "Pela porta da frente\n\nFerramentas de inteligência artificial escrevem resumos e códigos em segundos. Nas faculdades, a pergunta virou inevitável: liberar ou proibir? Proibir parece seguro, mas é difícil de fiscalizar. Defendo que a inteligência artificial deveria ser liberada nos trabalhos da faculdade, desde que o aluno declare como a usou.\n\nO primeiro motivo é que a ferramenta já faz parte do trabalho de verdade. Um programador que usa um assistente para revisar o código entrega mais rápido. Por exemplo, um estagiário que aprende a pedir e a conferir essas respostas chega ao mercado mais preparado. Portanto, proibir a ferramenta na faculdade é treinar o aluno para um mundo que já não existe.\n\nAlém disso, a proibição empurra o uso para o escuro. Como não há como provar que um texto foi feito por uma máquina, quem quer usar usa escondido. A consequência é pior do que a liberação: ninguém aprende a usar bem, e o professor avalia sem saber o que está avaliando. Assim, declarar o uso é mais honesto e mais fácil de acompanhar.\n\nDessa forma, a inteligência artificial deveria entrar na faculdade pela porta da frente. Cada trabalho poderia trazer um parágrafo dizendo o que foi pedido à ferramenta e o que o aluno conferiu. O professor ganharia transparência, e o aluno aprenderia a usar a ferramenta com critério.",
+            "model": "Pela porta da frente\n\nFerramentas de inteligência artificial escrevem resumos e redações em segundos. Nas escolas, a pergunta virou inevitável: liberar ou proibir? Proibir parece seguro, mas é difícil de fiscalizar. Defendo que a inteligência artificial deveria ser liberada nos trabalhos da escola, desde que o aluno declare como a usou.\n\nO primeiro motivo é que a ferramenta já faz parte do trabalho de verdade. Um profissional que usa um assistente para revisar um relatório entrega mais rápido. Por exemplo, um estagiário que aprende a pedir e a conferir essas respostas chega ao mercado mais preparado. Portanto, proibir a ferramenta na escola é treinar o aluno para um mundo que já não existe.\n\nAlém disso, a proibição empurra o uso para o escuro. Como não há como provar que um texto foi feito por uma máquina, quem quer usar usa escondido. A consequência é pior do que a liberação: ninguém aprende a usar bem, e o professor avalia sem saber o que está avaliando. Assim, declarar o uso é mais honesto e mais fácil de acompanhar.\n\nDessa forma, a inteligência artificial deveria entrar na escola pela porta da frente. Cada trabalho poderia trazer um parágrafo dizendo o que foi pedido à ferramenta e o que o aluno conferiu. O professor ganharia transparência, e o aluno aprenderia a usar a ferramenta com critério.",
             "assemble": true
           },
           "explanation": "Juntar é mais do que colar. É aqui que as partes ganham ligação e o texto vira uma coisa só.",

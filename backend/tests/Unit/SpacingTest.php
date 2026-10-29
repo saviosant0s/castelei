@@ -20,10 +20,32 @@ class SpacingTest extends TestCase
      */
     public function test_o_intervalo_e_uma_fracao_do_tempo_ate_a_prova(): void
     {
-        // 15% de 90 dias = 13,5 → 14 (arredonda para cima).
-        $this->assertSame(14, Spacing::intervalDays(daysToExam: 90, percent: 75));
-        // 15% de 30 = 4,5 → 5.
-        $this->assertSame(5, Spacing::intervalDays(daysToExam: 30, percent: 75));
+        // Com a prova a 70 dias, a fração é 15%: 10,5 → 11 (arredonda para cima).
+        $this->assertSame(11, Spacing::intervalDays(daysToExam: 70, percent: 75));
+        // A 90 dias, a fração já caiu para cerca de 13,4%: 12,1 → 13.
+        $this->assertSame(13, Spacing::intervalDays(daysToExam: 90, percent: 75));
+        // A 30 dias, sobe para cerca de 19,4%: 5,8 → 6.
+        $this->assertSame(6, Spacing::intervalDays(daysToExam: 30, percent: 75));
+    }
+
+    /**
+     * A outra metade do achado: quanto mais longe o teste, MENOR a fração.
+     * De 20 a 40% com uma semana para 5 a 10% com um ano.
+     */
+    public function test_a_fracao_cai_quando_a_prova_esta_longe(): void
+    {
+        $pontos = config('castelei.review.ratio_by_horizon');
+
+        $this->assertEqualsWithDelta(0.30, Spacing::ratio(7, $pontos), 0.001);
+        $this->assertEqualsWithDelta(0.15, Spacing::ratio(70, $pontos), 0.001);
+        $this->assertEqualsWithDelta(0.075, Spacing::ratio(350, $pontos), 0.001);
+        $this->assertGreaterThan(Spacing::ratio(200, $pontos), Spacing::ratio(30, $pontos));
+        // Fora dos pontos medidos, a fração fica no extremo mais próximo.
+        $this->assertEqualsWithDelta(0.30, Spacing::ratio(2, $pontos), 0.001);
+        $this->assertEqualsWithDelta(0.075, Spacing::ratio(700, $pontos), 0.001);
+
+        // Prova daqui a um ano: cerca de 4 semanas, e não 8 como com 15% fixo.
+        $this->assertSame(27, Spacing::intervalDays(daysToExam: 350, percent: 75));
     }
 
     /**
@@ -47,8 +69,8 @@ class SpacingTest extends TestCase
      */
     public function test_arredonda_para_cima_nunca_para_baixo(): void
     {
-        // 15% de 7 = 1,05. Para baixo daria 1; o teste exige 2.
-        $this->assertSame(2, Spacing::intervalDays(daysToExam: 7, percent: 75));
+        // 30% de 7 = 2,1. Para baixo daria 2; o teste exige 3.
+        $this->assertSame(3, Spacing::intervalDays(daysToExam: 7, percent: 75));
     }
 
     /** Quem saiu com nota baixa ainda não aprendeu: volta antes. */

@@ -2,7 +2,7 @@
   "slug": "matematica-basica",
   "name": "Matemática Básica",
   "area": "matematica",
-  "description": "A base de números, álgebra e funções, do sinal de menos aos logaritmos. É o primeiro passo da trilha de IA e serve para qualquer prova.",
+  "description": "A base de números, álgebra e funções, do sinal de menos aos logaritmos, explicada do zero para qualquer prova.",
   "lessons": [
     {
       "slug": "numeros-inteiros",
@@ -132,16 +132,12 @@
           "title": "A distância até o zero",
           "body": [
             "Às vezes importa só o tamanho do número, e não o lado da reta. Um carro que andou 7 km para trás também andou 7 km.",
-            "Essa distância até o zero tem nome e símbolo próprios. Ela volta muito mais à frente, quando for preciso medir o tamanho de um vetor."
+            "Essa distância até o zero tem nome e símbolo próprios. Ela aparece quando só importa o quanto, e não para que lado."
           ],
           "terms": [
             {
               "word": "Módulo (valor absoluto)",
               "meaning": "a distância de um número até o zero, sempre positiva ou zero. Escreve-se entre barras: |−7| = 7 e |7| = 7."
-            },
-            {
-              "word": "Vetor",
-              "meaning": "uma lista ordenada de números, como (3, −2). Ele volta com calma em Álgebra Linear."
             }
           ]
         },
@@ -1664,7 +1660,7 @@
           "title": "A raiz é um expoente fracionário",
           "body": [
             "Existe outro jeito de escrever a raiz. √9 é o mesmo que 9 elevado a 1/2.",
-            "Faz sentido pela regra da potência de potência: (9^(1/2))² = 9^1 = 9. Programas de computador usam muito essa forma."
+            "Faz sentido pela regra da potência de potência: (9^(1/2))² = 9^1 = 9. Na calculadora, elevar a 0,5 dá a raiz quadrada."
           ],
           "terms": [
             {
@@ -1714,7 +1710,7 @@
           "body": [
             "Você anda 3 quarteirões para leste e 4 para o norte. Em linha reta, a quanto ficou do ponto de partida?",
             "O caminho forma um triângulo com um canto reto. A distância reta é a raiz da soma dos quadrados: √(3² + 4²) = √25 = 5.",
-            "Essa conta volta em Álgebra Linear, para medir o tamanho de um vetor."
+            "É a conta do teorema de Pitágoras, que cai muito em prova."
           ],
           "figure": {
             "src": "/figuras/matematica/diagonal-pitagoras.svg",
@@ -1895,13 +1891,13 @@
           "kind": "idea",
           "title": "Zeros demais para contar",
           "body": [
-            "Um modelo de inteligência artificial grande tem cerca de 175 000 000 000 números ajustáveis. Um vírus mede cerca de 0,0000001 metro.",
+            "A distância da Terra ao Sol é de cerca de 150 000 000 000 metros. Um vírus mede cerca de 0,0000001 metro.",
             "Escritos assim, ninguém lê sem contar os zeros com o dedo. E contar zeros é o jeito mais fácil de errar."
           ],
           "terms": [
             {
               "word": "Notação científica",
-              "meaning": "o jeito de escrever um número como algo entre 1 e 10 multiplicado por uma potência de 10. Exemplo: 175 000 000 000 = 1,75 × 10¹¹."
+              "meaning": "o jeito de escrever um número como algo entre 1 e 10 multiplicado por uma potência de 10. Exemplo: 150 000 000 000 = 1,5 × 10¹¹."
             },
             {
               "word": "Expoente",
@@ -1983,7 +1979,7 @@
           "title": "Os prefixos: quilo, mega, giga",
           "body": [
             "As potências de 10 mais usadas têm nome. Você os vê em memória de celular, distância e tempo.",
-            "Programas de computador escrevem de um jeito ainda mais curto. 3,2 × 10⁶ vira 3.2e6, e 10⁻³ vira 1e-3."
+            "A calculadora escreve de um jeito ainda mais curto. 3,2 × 10⁶ aparece como 3.2E6, e 10⁻³ como 1E-3."
           ],
           "table": {
             "label": "Prefixos",
@@ -2059,7 +2055,7 @@
             "O expoente conta as casas que a vírgula andou.",
             "Multiplicar: multiplique a frente e some os expoentes.",
             "Dividir: divida a frente e subtraia os expoentes.",
-            "Em programas, 3,2 × 10⁶ se escreve 3.2e6."
+            "Na calculadora, 3,2 × 10⁶ aparece como 3.2E6."
           ]
         }
       ],
@@ -2149,8 +2145,8 @@
           "pitfall": "Somar os expoentes dá 10¹⁰. Na divisão, eles se subtraem."
         },
         {
-          "topic": "Escrita de programa",
-          "statement": "Um programa mostra o valor 2.5e-3. Que número é esse?",
+          "topic": "Na tela da calculadora",
+          "statement": "A calculadora mostra o valor 2.5E-3. Que número é esse?",
           "options": [
             "2 500",
             "0,025",
@@ -2159,7 +2155,7 @@
             "2,5"
           ],
           "correct_index": 2,
-          "explanation": "2.5e-3 é 2,5 × 10⁻³. A vírgula anda 3 casas para a esquerda: 0,0025.",
+          "explanation": "2.5E-3 é 2,5 × 10⁻³. A vírgula anda 3 casas para a esquerda: 0,0025.",
           "pitfall": "O sinal de menos está no expoente. O número continua positivo, só que pequeno."
         },
         {
@@ -3233,17 +3229,22 @@
         },
         {
           "kind": "explain",
-          "title": "Por que isso importa depois",
+          "title": "Onde o sistema aparece na prova",
           "body": [
-            "Um computador resolve sistemas com milhares de letras e milhares de equações. A ideia é a mesma: combinar as equações até cada letra ficar sozinha.",
-            "Para organizar tanta conta, os números são arrumados em tabelas chamadas matrizes. Elas são o assunto da Álgebra Linear."
+            "Toda vez que há dois valores desconhecidos e duas informações, há um sistema escondido no texto.",
+            "O clássico é o das galinhas e coelhos. Há 10 cabeças e 28 patas no quintal. Quantos são de cada?"
           ],
-          "terms": [
-            {
-              "word": "Matriz",
-              "meaning": "uma tabela de números arrumados em linhas e colunas."
-            }
-          ]
+          "example": {
+            "label": "Galinhas (g) e coelhos (c)",
+            "lines": [
+              "Cabeças: g + c = 10",
+              "Patas: 2g + 4c = 28",
+              "Da primeira: g = 10 − c",
+              "Na segunda: 2(10 − c) + 4c = 28, então 20 + 2c = 28",
+              "c = 4 e g = 6"
+            ],
+            "ordered": true
+          }
         },
         {
           "kind": "exam",
@@ -3851,7 +3852,7 @@
           "title": "Pontos com mais números",
           "body": [
             "Um ponto no espaço precisa de três números: (x, y, z). O terceiro diz a altura.",
-            "Nada impede usar mais. Um computador guarda o sentido de uma palavra como um ponto com centenas de coordenadas. Palavras de sentido parecido ficam perto umas das outras, e a distância entre elas se mede com a mesma conta."
+            "O GPS do celular usa a mesma ideia. Latitude e longitude dizem onde você está no mapa, e a altitude diz a que altura."
           ]
         },
         {
@@ -3886,8 +3887,8 @@
             "(x, y): primeiro para o lado, depois para cima ou para baixo.",
             "Os sinais dizem o quadrante.",
             "Distância: √(diferença em x² + diferença em y²).",
-            "No espaço são três coordenadas; um computador usa centenas.",
-            "Perto no plano quer dizer parecido."
+            "No espaço são três coordenadas: para o lado, para a frente e para cima.",
+            "Distância nunca é negativa."
           ]
         }
       ],
@@ -4159,7 +4160,7 @@
           "body": [
             "Dá para ligar a saída de uma máquina na entrada de outra. Primeiro a fruta vira suco, depois o suco vira picolé.",
             "Com f(x) = x + 1 e g(x) = 2x, a fila g(f(x)) primeiro soma 1 e depois dobra.",
-            "Uma rede neural é exatamente isso: muitas funções simples ligadas em fila."
+            "Uma loja faz isso no caixa: primeiro aplica o desconto, depois soma o frete."
           ],
           "terms": [
             {
@@ -4458,7 +4459,7 @@
           "title": "A reta a partir de dois pontos",
           "body": [
             "Dois pontos definem uma reta. O a é o quanto y mudou dividido pelo quanto x mudou. O b sai trocando um ponto na fórmula.",
-            "Descobrir a reta a partir de pontos é o primeiro problema que uma máquina aprende a resolver. Com muitos pontos espalhados, ela procura a reta que passa mais perto de todos."
+            "É assim que se descobre uma tarifa a partir de duas contas. Quem pagou R$ 7 por 1 km e R$ 9 por 2 km acha a = 2 e b = 5."
           ],
           "example": {
             "label": "Pontos (1, 5) e (3, 9)",
@@ -4477,7 +4478,7 @@
           "body": [
             "Quando o b é zero, a reta passa pela origem, e a função se chama linear: f(x) = ax. Dobrar a entrada dobra a saída.",
             "Com b diferente de zero, isso deixa de valer. No táxi, 2 km não custam o dobro de 1 km, por causa dos R$ 5 fixos.",
-            "Em inteligência artificial, “linear” costuma ser usado de um jeito mais solto, para as duas."
+            "Na prova, quando dobrar um lado sempre dobra o outro, a função é linear."
           ],
           "terms": [
             {
@@ -4802,11 +4803,18 @@
         },
         {
           "kind": "explain",
-          "title": "Achar o fundo da curva",
+          "title": "O c mostra onde a curva cruza o eixo y",
           "body": [
-            "Guarde esta ideia: achar o ponto mais baixo de uma curva é o coração de como uma máquina aprende.",
-            "Ela mede o próprio erro. Depois procura os valores que deixam esse erro no ponto mais baixo possível, como quem desce até o fundo de um vale."
-          ]
+            "Trocando x por 0, sobram só o c. Por isso o c é o ponto onde a parábola cruza o eixo y.",
+            "É a primeira pista para desenhar o gráfico sem fazer conta nenhuma."
+          ],
+          "example": {
+            "label": "f(x) = x² − 4x + 3",
+            "lines": [
+              "f(0) = 0 − 0 + 3 = 3",
+              "A parábola cruza o eixo y no ponto (0, 3)."
+            ]
+          }
         },
         {
           "kind": "exam",
@@ -4841,7 +4849,7 @@
             "O delta diz quantos cortes há.",
             "x do vértice: −b / 2a. O y sai trocando na função.",
             "Máximo ou mínimo de um problema: é o vértice.",
-            "Descer até o fundo da curva é como a máquina aprende."
+            "O c é onde a parábola cruza o eixo y."
           ]
         }
       ],
@@ -5117,12 +5125,12 @@
           "title": "Um número especial: o e",
           "body": [
             "Existe uma base que aparece sozinha quando algo cresce sem parar, a cada instante. Ela vale cerca de 2,718 e se chama e.",
-            "A função eˣ está em toda parte em probabilidade e em redes neurais. Ela transforma qualquer número num valor positivo, e isso vai ser muito útil."
+            "Ela aparece nos juros que rendem a cada instante, no crescimento de populações e no remédio que some do sangue."
           ],
           "terms": [
             {
               "word": "Número e",
-              "meaning": "uma constante que vale cerca de 2,718. É a base mais usada em ciência e em inteligência artificial."
+              "meaning": "uma constante que vale cerca de 2,718. É a base mais usada em ciência."
             }
           ]
         },
@@ -5293,7 +5301,7 @@
       "slug": "logaritmos",
       "title": "Logaritmos: quantas vezes multiplicar",
       "module": "Funções",
-      "summary": "O logaritmo responde qual expoente é preciso. Ele transforma multiplicação em soma, e por isso é a ferramenta que a inteligência artificial usa para lidar com chances minúsculas.",
+      "summary": "O logaritmo responde qual expoente é preciso. Ele transforma multiplicação em soma, e por isso encurta escalas enormes como a do pH e a dos terremotos.",
       "steps": [
         {
           "kind": "idea",
@@ -5426,7 +5434,7 @@
           "title": "O logaritmo natural",
           "body": [
             "Com a base e (cerca de 2,718), o logaritmo ganha outro nome: logaritmo natural, escrito ln.",
-            "Ele é o logaritmo padrão da ciência e da programação. Em muitas linguagens de programação, o comando log sem base calcula o ln."
+            "Ele é o logaritmo padrão da ciência. Na calculadora científica, ele tem tecla própria: ln."
           ],
           "terms": [
             {
@@ -5437,23 +5445,17 @@
         },
         {
           "kind": "explain",
-          "title": "Por que a IA precisa disso",
+          "title": "Escalas que cabem num número",
           "body": [
-            "Uma chance é um número de 0 a 1. Multiplicar muitas chances pequenas dá números tão minúsculos que o computador arredonda para zero.",
-            "Com logaritmos, a multiplicação vira soma de números negativos, e nada se perde. É assim que um modelo de linguagem mede o quanto uma frase era provável."
-          ],
-          "terms": [
-            {
-              "word": "Probabilidade",
-              "meaning": "a chance de algo acontecer, escrita como um número de 0 a 1."
-            }
+            "Quando os valores vão do minúsculo ao enorme, o logaritmo encurta a escala. O pH da química e a magnitude dos terremotos funcionam assim.",
+            "Em cada uma, subir ou descer um ponto quer dizer 10 vezes mais ou menos. Não é uma soma, é uma multiplicação por 10."
           ],
           "example": {
-            "label": "Três chances de 1%",
+            "label": "Um ponto é 10 vezes",
             "lines": [
-              "Multiplicando: 0,01 × 0,01 × 0,01 = 0,000001",
-              "Somando os logaritmos: (−2) + (−2) + (−2) = −6",
-              "E log₁₀ 0,000001 = −6: a mesma informação"
+              "pH 4 é 10 vezes mais ácido que pH 5.",
+              "pH 3 é 100 vezes mais ácido que pH 5.",
+              "Um tremor de magnitude 6 balança 10 vezes mais que um de magnitude 5."
             ]
           }
         },
@@ -5490,7 +5492,7 @@
             "log 1 = 0, e números entre 0 e 1 têm log negativo.",
             "Não existe log de zero nem de negativo.",
             "ln é o logaritmo na base e.",
-            "Somar logs de chances evita números pequenos demais para o computador."
+            "Escalas como o pH e a magnitude de terremoto são logaritmos: um ponto vale 10 vezes."
           ]
         }
       ],
@@ -5580,8 +5582,8 @@
           "pitfall": "Achar que log de 1 vale 1 é o erro mais comum."
         },
         {
-          "topic": "Chances somadas",
-          "statement": "Um modelo dá 1% de chance para cada uma de 4 palavras seguidas. Qual é o log₁₀ da chance da sequência inteira?",
+          "topic": "Log de uma multiplicação",
+          "statement": "Quanto vale log₁₀ (0,01 × 0,01 × 0,01 × 0,01)?",
           "options": [
             "−2",
             "−4",
@@ -5590,8 +5592,8 @@
             "−0,08"
           ],
           "correct_index": 2,
-          "explanation": "Cada 1% é 0,01, e log₁₀ 0,01 = −2. Multiplicar as chances vira somar os logaritmos: 4 × (−2) = −8.",
-          "pitfall": "−2 é o log de uma palavra só. A sequência soma os quatro."
+          "explanation": "Cada 0,01 tem log₁₀ igual a −2. O log de uma multiplicação é a soma dos logs: 4 × (−2) = −8.",
+          "pitfall": "−2 é o log de um 0,01 só. A multiplicação soma os quatro."
         },
         {
           "topic": "Log e potência",

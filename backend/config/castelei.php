@@ -223,9 +223,14 @@ return [
     | dias, o melhor intervalo medido foi 21 dias), caindo para 5 a 10% quando o
     | prazo é de um ano.
     |
-    | `ratio` = 0,15, o meio dessa faixa. A consequência é a parte bonita: o
+    | `ratio_by_horizon` segue a curva medida: 30% com a prova a uma semana,
+    | 15% a dez semanas (o meio da faixa de um semestre) e 7,5% a um ano, com
+    | a fração andando em linha reta na escala logarítmica entre esses pontos.
+    | Antes era 15% fixo, que acertava o semestre e errava as pontas — uma
+    | prova daqui a um ano (o ENEM, para quem começa cedo) mandava a lição
+    | embora por quase dois meses. A consequência continua a parte bonita: o
     | cronograma se comprime sozinho conforme a prova chega. Faltam 90 dias,
-    | revise em 13; faltam 30, em 4; faltam 7, amanhã. Nenhum agendador de
+    | revise em 13; faltam 30, em 6; faltam 7, em 3. Nenhum agendador de
     | flashcard faz isso, porque nenhum deles sabe a data da prova.
     |
     | O ótimo é uma CRISTA LARGA E ASSIMÉTRICA: errar para mais custa bem menos
@@ -248,8 +253,8 @@ return [
     | O Modo Prova já é exatamente isso.
     */
     'review' => [
-        // Proporção do tempo até a prova (Cepeda et al., 2008).
-        'ratio' => 0.15,
+        // Proporção do tempo até a prova, por horizonte em dias (Cepeda et al., 2008).
+        'ratio_by_horizon' => [7 => 0.30, 70 => 0.15, 350 => 0.075],
 
         /*
         | Multiplicadores por faixa de acerto da última tentativa. A chave é o
