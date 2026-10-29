@@ -32,6 +32,8 @@ class CatalogController extends Controller
             ->with(['lessons' => fn ($query) => $query->withCount([
                 // As propostas do simulado de escrita não são questões da lição.
                 'questions' => fn ($q) => $q->where('exam_only', false),
+                // As de base: as com nível são praticadas à parte, por nível.
+                'questions as base_count' => fn ($q) => $q->where('exam_only', false)->whereNull('difficulty'),
                 'questions as exam_only_count' => fn ($q) => $q->where('exam_only', true),
             ])])
             ->orderBy('position')
@@ -82,6 +84,8 @@ class CatalogController extends Controller
                 'vocabulary_terms' => count(Vocabulary::fromLessons($subject->lessons)),
                 'lessons' => $subject->lessons->map(function (Lesson $lesson) use ($stats, $limit) {
                     $stat = $stats->get($lesson->id);
+                    // A prática comum é a base; lição só com questões de nível usa todas.
+                    $total = $lesson->base_count > 0 ? $lesson->base_count : $lesson->questions_count;
 
                     return [
                         'id' => $lesson->id,
@@ -89,8 +93,8 @@ class CatalogController extends Controller
                         'position' => $lesson->position,
                         // Nome do módulo, sem número: a trilha numera pela ordem.
                         'module' => $lesson->module,
-                        'questions_total' => $lesson->questions_count,
-                        'questions_available' => $limit === null ? $lesson->questions_count : min($limit, $lesson->questions_count),
+                        'questions_total' => $total,
+                        'questions_available' => $limit === null ? $total : min($limit, $total),
                         'attempts' => $stat ? (int) $stat->attempts : 0,
                         'best_percent' => $stat && $stat->best_percent !== null ? (int) round((float) $stat->best_percent) : null,
                     ];
@@ -174,7 +178,12 @@ class CatalogController extends Controller
 
     public function lesson(Request $request, Lesson $lesson): JsonResponse
     {
-        $lesson->load('subject')->loadCount(['questions' => fn ($q) => $q->where('exam_only', false)]);
+        $lesson->load('subject')->loadCount([
+            'questions' => fn ($q) => $q->where('exam_only', false),
+            'questions as base_count' => fn ($q) => $q->where('exam_only', false)->whereNull('difficulty'),
+        ]);
+        // A prática comum é a base; lição só com questões de nível usa todas.
+        $lesson->questions_count = $lesson->base_count > 0 ? $lesson->base_count : $lesson->questions_count;
         $escrita = $lesson->questions()->where('format', Question::FORMAT_WRITING)->exists();
         // A lição de escrita não tem corte por plano: ver AttemptController::store.
         $limit = $escrita ? null : $request->user()->questionLimit();

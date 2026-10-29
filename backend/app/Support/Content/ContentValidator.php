@@ -638,7 +638,24 @@ class ContentValidator
                 : $this->options($options, $question['correct_index'] ?? null, $qPath);
         }
 
-        $total = count($questions);
+        // A régua das oito é das questões de BASE: as com nível vêm por cima, no Pro.
+        $base = array_values(array_filter($questions, fn ($q) => is_array($q) && ($q['difficulty'] ?? null) === null));
+        $total = count($base);
+
+        // A prática grátis pega as primeiras pela posição: questão com nível no
+        // meio delas empurraria uma questão de base para fora do grátis.
+        $ultimaBase = null;
+        foreach ($questions as $i => $q) {
+            if (is_array($q) && ($q['difficulty'] ?? null) === null) {
+                $ultimaBase = $i;
+            }
+        }
+        foreach ($questions as $i => $q) {
+            if (is_array($q) && ($q['difficulty'] ?? null) !== null && $ultimaBase !== null && $i < $ultimaBase) {
+                $this->warn("{$path}[{$i}]", 'Questão com nível no meio das de base. Ponha as com nível depois de todas as de base.');
+            }
+        }
+
         $escrita = in_array('writing', array_map(fn ($q) => is_array($q) ? ($q['format'] ?? 'choice') : null, $questions), true);
 
         // Lição de escrita não segue a régua das oito: são tantas partes quantas o texto tem.

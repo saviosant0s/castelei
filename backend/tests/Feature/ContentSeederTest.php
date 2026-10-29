@@ -77,7 +77,8 @@ class ContentSeederTest extends TestCase
             if ($lesson->questions()->where('format', Question::FORMAT_WRITING)->exists()) {
                 $this->assertGreaterThanOrEqual(3, $lesson->questions()->where('exam_only', false)->count(), $lesson->slug);
             } else {
-                $this->assertSame(8, $lesson->questions_count, "Lição {$lesson->slug} deve ter 8 questões");
+                // Oito de BASE; as com nível (Pro) vêm por cima e não entram na conta.
+                $this->assertSame(8, $lesson->questions()->whereNull('difficulty')->count(), "Lição {$lesson->slug} deve ter 8 questões de base");
             }
             $this->assertNotEmpty($lesson->summary);
             $this->assertNotEmpty($lesson->explanation);
