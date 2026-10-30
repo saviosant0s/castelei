@@ -18,8 +18,11 @@
 */
 import type { LessonSummary } from "./types";
 
-/** Concluída, a próxima a fazer, ou ainda à frente. */
-export type TrailState = "concluida" | "atual" | "adiante";
+/**
+ * Concluída (praticada), lida (leu até o fim, falta praticar), a próxima a
+ * fazer, ou ainda à frente.
+ */
+export type TrailState = "concluida" | "lida" | "atual" | "adiante";
 
 export interface TrailLesson {
   lesson: LessonSummary;
@@ -183,9 +186,11 @@ export function concluida(lesson: LessonSummary): boolean {
 }
 
 export function buildTrail(lessons: LessonSummary[]): TrailModule[] {
-  // A atual é a primeira ainda não praticada, na ordem da matéria. Quem pulou
-  // a 2 e fez a 5 é levado de volta à 2 — é o buraco no caminho.
-  const currentIndex = lessons.findIndex((lesson) => !concluida(lesson));
+  // A atual é a primeira ainda não tocada, na ordem da matéria. Quem pulou
+  // a 2 e fez a 5 é levado de volta à 2 — é o buraco no caminho. A lida não
+  // é atual: ela já tem o seu sinal ("falta praticar"), e o "Agora" segue
+  // para a próxima que a pessoa nem abriu.
+  const currentIndex = lessons.findIndex((lesson) => !concluida(lesson) && !lesson.read);
 
   const modules: TrailModule[] = [];
   let currentModule = -1;
@@ -211,7 +216,13 @@ export function buildTrail(lessons: LessonSummary[]): TrailModule[] {
       modules.push(bloco);
     }
 
-    const state: TrailState = concluida(lesson) ? "concluida" : index === currentIndex ? "atual" : "adiante";
+    const state: TrailState = concluida(lesson)
+      ? "concluida"
+      : lesson.read
+        ? "lida"
+        : index === currentIndex
+          ? "atual"
+          : "adiante";
 
     if (state === "atual") currentModule = modules.length - 1;
 

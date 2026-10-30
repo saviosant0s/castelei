@@ -78,6 +78,8 @@ Route::middleware('auth:sanctum')->group(function () {
     */
     Route::get('/lessons/{lesson}', [CatalogController::class, 'lesson'])->whereNumber('lesson')->middleware('visible');
     // Anotação da pessoa na lição, e a busca em todas as matérias.
+    // A pessoa chegou à última etapa: a trilha mostra a lição como lida.
+    Route::post('/lessons/{lesson}/read', [StudyToolsController::class, 'markRead'])->whereNumber('lesson')->middleware('throttle:60,1')->middleware('visible');
     Route::get('/lessons/{lesson}/note', [StudyToolsController::class, 'showNote'])->whereNumber('lesson')->middleware('visible');
     Route::put('/lessons/{lesson}/note', [StudyToolsController::class, 'saveNote'])->whereNumber('lesson')->middleware('throttle:60,1')->middleware('visible');
     Route::post('/lessons/{lesson}/note/review', [StudyToolsController::class, 'reviewNote'])->whereNumber('lesson')->middleware('throttle:10,1')->middleware('visible');

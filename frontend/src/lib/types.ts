@@ -34,6 +34,8 @@ export interface LessonSummary {
   questions_available: number;
   attempts: number;
   best_percent: number | null;
+  /** leu até a última etapa (com ou sem prática): a trilha mostra pela metade */
+  read?: boolean;
 }
 
 /** Situação do simulado de uma matéria. `unlocked` false = existe, mas o plano não inclui. */
