@@ -12,6 +12,7 @@ use App\Support\Notes\DoubtAnswerer;
 use App\Support\Notes\NoteReviewer;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
 use Throwable;
@@ -23,6 +24,23 @@ class StudyToolsController extends Controller
 {
     /** Tamanho máximo da anotação. Um caderno, não um trabalho. */
     private const NOTE_MAX = 4000;
+
+    /**
+     * Marca a lição como lida até o fim. Repetir não faz nada: a primeira
+     * leitura é a que conta, e reler não é notícia para a trilha.
+     */
+    public function markRead(Request $request, Lesson $lesson): JsonResponse
+    {
+        $agora = now();
+        DB::table('lesson_reads')->insertOrIgnore([
+            'user_id' => $request->user()->id,
+            'lesson_id' => $lesson->id,
+            'created_at' => $agora,
+            'updated_at' => $agora,
+        ]);
+
+        return response()->json(['read' => true]);
+    }
 
     public function showNote(Request $request, Lesson $lesson): JsonResponse
     {

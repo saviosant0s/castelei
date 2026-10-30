@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Check, Star } from "lucide-react";
+import { BookOpen, Check, Star } from "lucide-react";
 import { TrailLabel } from "./TrailLabel";
 import { TrailResume } from "./TrailResume";
 import { NODE, ROW, type TrailAccent, type TrailLesson, labelSide, stars } from "@/lib/lesson-trail";
@@ -35,8 +35,15 @@ const anel: Record<TrailAccent, string> = {
   coral: "ring-coral",
 };
 
+const metade: Record<TrailAccent, string> = {
+  sky: "node-half node-half-sky",
+  sage: "node-half node-half-sage",
+  coral: "node-half node-half-coral",
+};
+
 const words = {
   concluida: "concluída",
+  lida: "lida, falta praticar",
   atual: "é a próxima",
   adiante: "ainda não praticada",
 } as const;
@@ -57,12 +64,20 @@ export function TrailNode({ item, index, accent }: { item: TrailLesson; index: n
       <span
         aria-hidden="true"
         className={`node absolute top-0 grid -translate-x-1/2 place-items-center rounded-pill font-display text-xl font-bold group-focus-visible:ring-4 group-focus-visible:ring-sky/50 ${
-          state === "adiante" ? "node-adiante" : cores[accent]
+          state === "adiante" ? "node-adiante" : state === "lida" ? metade[accent] : cores[accent]
         }`}
         style={{ left: `${x}%`, width: NODE, height: NODE }}
       >
         {state === "atual" && <span className={`trail-pulse absolute inset-0 rounded-pill ring-4 ${anel[accent]}`} />}
-        {state === "concluida" ? <Check className="size-7" strokeWidth={3} /> : lesson.position}
+        {state === "concluida" ? (
+          <Check className="size-7" strokeWidth={3} />
+        ) : state === "lida" ? (
+          <span className="grid size-9 place-items-center rounded-full bg-surface-raised">
+            <BookOpen className="size-5" strokeWidth={2.5} />
+          </span>
+        ) : (
+          lesson.position
+        )}
       </span>
 
       <TrailLabel x={x} side={labelSide(index)} emphasis={state === "atual"}>
@@ -79,10 +94,17 @@ export function TrailNode({ item, index, accent }: { item: TrailLesson; index: n
         </span>
 
         {/* A linha de baixo tem dono conforme o estado: "Agora" na atual,
-            estrelas e a melhor nota na concluída, nada na que falta. */}
+            "falta praticar" na lida, estrelas e a melhor nota na concluída,
+            nada na que falta. */}
         {state === "atual" && (
           <span className="mt-1.5 inline-block rounded-pill bg-surface-bold px-2.5 py-0.5 text-[0.625rem] font-bold tracking-wide text-on-bold uppercase">
             Agora
+          </span>
+        )}
+
+        {state === "lida" && (
+          <span className="mt-1.5 inline-flex items-center gap-1 rounded-pill border border-dashed border-ink/25 px-2.5 py-0.5 text-[0.6875rem] font-bold text-content-secondary">
+            Lida · falta praticar
           </span>
         )}
 

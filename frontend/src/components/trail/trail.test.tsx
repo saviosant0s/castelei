@@ -46,6 +46,18 @@ describe("SubjectTrail", () => {
     expect(screen.getByLabelText("Lição 5: Lição 5 — ainda não praticada")).toBeTruthy();
   });
 
+  it("a lição lida sem prática fica pela metade, e o Agora segue para a próxima", () => {
+    const lidas = [licao(1, "Fundamentos", 1), { ...licao(2, "Fundamentos"), read: true }, licao(3, "Fundamentos")];
+    render(<SubjectTrail lessons={lidas} />);
+
+    const no = screen.getByLabelText("Lição 2: Lição 2 — lida, falta praticar");
+    expect(no.querySelector(".node-half")).toBeTruthy();
+    expect(no.textContent).toContain("Lida · falta praticar");
+    expect(screen.getByLabelText("Lição 3: Lição 3 — é a próxima")).toBeTruthy();
+    // Lida não é concluída: o módulo conta só a praticada.
+    expect(screen.getByText("1/3")).toBeTruthy();
+  });
+
   it("dá cores diferentes a módulos vizinhos", () => {
     // A cor diz MÓDULO, não estado — é ela que faz rolar a matéria parecer
     // atravessar territórios. Vizinhos iguais desfariam o efeito.

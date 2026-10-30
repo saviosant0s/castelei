@@ -64,14 +64,16 @@ export default async function MateriaPage({ params }: { params: Promise<{ slug: 
         estava no meio da trilha, uma tela e meia para baixo.
       */}
       {proxima && (
-        <Card tone="bold" size="lg" radius="panel" href={`/licao/${proxima.id}`}>
+        /* Já lida: o que falta é praticar, e o bloco leva direto às questões. */
+        <Card tone="bold" size="lg" radius="panel" href={proxima.read ? `/licao/${proxima.id}/praticar` : `/licao/${proxima.id}`}>
           <p className="label-mono !text-sky">
-            {feitas === 0 ? "Comece por aqui" : "Próxima lição"} · {proxima.position} de {subject.lessons.length}
+            {proxima.read ? "Você já leu · falta praticar" : feitas === 0 ? "Comece por aqui" : "Próxima lição"} · {proxima.position} de{" "}
+            {subject.lessons.length}
           </p>
           <p className="mt-2 font-display text-2xl leading-tight font-bold">{proxima.title}</p>
           {proxima.module && <p className="mt-1 text-base on-bold-secondary">{proxima.module}</p>}
           <span className="mt-4 inline-flex items-center gap-2 font-bold text-sky">
-            {feitas === 0 ? "Começar" : "Abrir a lição"} <ArrowRight className="size-5" aria-hidden="true" />
+            {proxima.read ? "Praticar" : feitas === 0 ? "Começar" : "Abrir a lição"} <ArrowRight className="size-5" aria-hidden="true" />
           </span>
         </Card>
       )}

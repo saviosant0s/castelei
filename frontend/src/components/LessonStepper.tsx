@@ -2,7 +2,7 @@
 
 import { LevelPicker } from "@/components/LevelPicker";
 import { LessonStudyBox } from "@/components/study/LessonStudyBox";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -23,6 +23,7 @@ import { StepCode } from "@/components/StepCode";
 import { StepExample } from "@/components/StepExample";
 import { StepTable } from "@/components/StepTable";
 import { useNarration } from "@/components/useNarration";
+import { postJson } from "@/lib/client";
 import { pluralize } from "@/lib/format";
 import { clearSpot, saveSpot, useSpot } from "@/lib/lesson-progress";
 import { narrationSrc } from "@/lib/narration";
@@ -121,6 +122,19 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
     if (chosen === null) return;
     saveSpot(lesson.id, chosen, steps.length);
   }, [lesson.id, chosen, steps.length]);
+
+  /*
+  | Chegou à última etapa andando pela lição: ela conta como LIDA, e a trilha
+  | passa a mostrá-la pela metade até a prática. Só conta quem navegou
+  | (`chosen`): abrir a lição não é ler. Falhou, tudo bem — é um aviso para a
+  | trilha, nunca motivo para atrapalhar quem está lendo.
+  */
+  const avisouLeitura = useRef(false);
+  useEffect(() => {
+    if (!isLast || chosen === null || avisouLeitura.current) return;
+    avisouLeitura.current = true;
+    postJson(`/api/lessons/${lesson.id}/read`).catch(() => {});
+  }, [isLast, chosen, lesson.id]);
 
   // Setas do teclado, para quem estuda no computador.
   useEffect(() => {

@@ -10,6 +10,7 @@ use App\Models\Subject;
 use App\Support\Content\Vocabulary;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CatalogController extends Controller
 {
@@ -26,6 +27,9 @@ class CatalogController extends Controller
             ->groupBy('lesson_id')
             ->get()
             ->keyBy('lesson_id');
+
+        // Lições lidas até o fim: a trilha as mostra pela metade até a prática.
+        $lidas = DB::table('lesson_reads')->where('user_id', $user->id)->pluck('lesson_id')->flip();
 
         $subjects = Subject::query()
             ->visibleTo($user)
@@ -82,7 +86,7 @@ class CatalogController extends Controller
                 | calada. Link para uma página vazia é pior que link nenhum.
                 */
                 'vocabulary_terms' => count(Vocabulary::fromLessons($subject->lessons)),
-                'lessons' => $subject->lessons->map(function (Lesson $lesson) use ($stats, $limit) {
+                'lessons' => $subject->lessons->map(function (Lesson $lesson) use ($stats, $limit, $lidas) {
                     $stat = $stats->get($lesson->id);
                     // A prática comum é a base; lição só com questões de nível usa todas.
                     $total = $lesson->base_count > 0 ? $lesson->base_count : $lesson->questions_count;
@@ -97,6 +101,7 @@ class CatalogController extends Controller
                         'questions_available' => $limit === null ? $total : min($limit, $total),
                         'attempts' => $stat ? (int) $stat->attempts : 0,
                         'best_percent' => $stat && $stat->best_percent !== null ? (int) round((float) $stat->best_percent) : null,
+                        'read' => $lidas->has($lesson->id),
                     ];
                 })->values(),
             ])->values(),

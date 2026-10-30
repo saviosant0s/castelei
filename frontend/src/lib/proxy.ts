@@ -56,6 +56,8 @@ const ALLOWED_PATHS = [
   /^attempts\/\d+\/writing\/(check|review)$/,
   // A anotação da pessoa na lição (ler e guardar).
   /^lessons\/\d+\/note$/,
+  // A lição lida até o fim (a trilha mostra pela metade até a prática).
+  /^lessons\/\d+\/read$/,
   // A correção por IA da anotação (só existe com a chave no backend).
   /^lessons\/\d+\/note\/review$/,
   // Tirar dúvida no fim da lição: ler as anteriores e perguntar.

@@ -65,4 +65,24 @@ class StudyToolsTest extends TestCase
         Sanctum::actingAs(User::factory()->create());
         $this->getJson('/api/search?q=a')->assertOk()->assertJsonPath('lessons', []);
     }
+
+    public function test_ler_a_licao_ate_o_fim_marca_como_lida_so_para_quem_leu(): void
+    {
+        $lesson = $this->makeLesson(1);
+        $leitor = User::factory()->create();
+        Sanctum::actingAs($leitor);
+
+        $this->getJson('/api/subjects')->assertJsonPath('subjects.0.lessons.0.read', false);
+
+        $this->postJson("/api/lessons/{$lesson->id}/read")->assertOk();
+        $this->postJson("/api/lessons/{$lesson->id}/read")->assertOk(); // repetir não duplica
+        $this->assertDatabaseCount('lesson_reads', 1);
+
+        $this->getJson('/api/subjects')
+            ->assertJsonPath('subjects.0.lessons.0.read', true)
+            ->assertJsonPath('subjects.0.lessons.0.attempts', 0);
+
+        Sanctum::actingAs(User::factory()->create());
+        $this->getJson('/api/subjects')->assertJsonPath('subjects.0.lessons.0.read', false);
+    }
 }

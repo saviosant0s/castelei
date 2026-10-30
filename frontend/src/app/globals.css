@@ -429,6 +429,34 @@ h3,
 .node-adiante {
   @apply bg-surface-sunken text-ink/60;
 }
+/*
+| A lida: leu tudo, falta praticar. Um copo pela METADE — a cor do módulo
+| enche só a parte de baixo, sobre o tom claro dela. É meio caminho de
+| verdade, e se distingue da concluída (cheia, com certo) e da que falta
+| (cavidade cinza) sem precisar de legenda. Mantém o degrau: é tecla, há o
+| que apertar (praticar).
+*/
+.node-half {
+  background: linear-gradient(to top, var(--half) 50%, var(--half-soft) 50%);
+}
+.node-half-sky {
+  --lip: var(--color-sky-deep);
+  --half: var(--color-sky);
+  --half-soft: var(--color-sky-soft);
+  @apply text-sky-deep;
+}
+.node-half-sage {
+  --lip: var(--color-sage-deep);
+  --half: var(--color-sage);
+  --half-soft: var(--color-sage-soft);
+  @apply text-sage-deep;
+}
+.node-half-coral {
+  --lip: var(--color-coral-deep);
+  --half: var(--color-coral);
+  --half-soft: var(--color-coral-soft);
+  @apply text-coral-deep;
+}
 
 /*
 | A tecla afundando.
