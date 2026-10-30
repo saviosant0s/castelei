@@ -82,6 +82,25 @@ const JARGON = [
   ["probabilidade", /\bprobabilidades?\b/i, "d"], ["espaço amostral", /\bespa(ç|c)o amostral\b/i, "d"],
   ["princípio multiplicativo", /\bprinc(í|i)pio multiplicativo\b/i, "d"], ["fatorial", /\bfatori(al|ais)\b|\d!/i, "d"],
   ["permutação", /\bpermuta(ç|c)(ão|ões)\b/i, "d"], ["velocidade média", /\bvelocidades? m(é|e)dias?\b/i, "d"],
+  /*
+  | Biologia básica. O corte é "quem parou de estudar no fundamental
+  | saberia?": "célula", "vírus", "bactéria", "proteína" e "vacina" ficaram de
+  | fora, são palavras de jornal. "Dominante" também, porque a palavra do dia
+  | a dia apareceria em toda frase; o sentido genético vai junto de "alelo".
+  */
+  ["organela", /\borganelas?\b/i, "b"], ["mitocôndria", /\bmitoc(ô|o)ndrias?\b/i, "b"], ["cloroplasto", /\bcloroplastos?\b/i, "b"],
+  ["ribossomo", /\bribossomos?\b/i, "b"], ["núcleo (da célula)", /(?<!\p{L})n(ú|u)cleos?(?!\p{L})/iu, "b"], ["citoplasma", /\bcitoplasmas?\b/i, "b"],
+  ["membrana plasmática", /\bmembranas? plasm(á|a)ticas?\b/i, "b"], ["eucarionte", /(?<!\p{L})eucariont\p{L}*/iu, "b"], ["procarionte", /\bprocariont\w*/i, "b"],
+  ["DNA", /\bDNA\b/, "b"], ["RNA", /\bRNA\b/, "b"], ["gene", /\bgenes?\b/i, "b"], ["cromossomo", /\bcromossomos?\b/i, "b"],
+  ["alelo", /\balelos?\b/i, "b"], ["recessivo", /\brecessiv(o|a|os|as)\b/i, "b"], ["genótipo", /\bgen(ó|o)tipos?\b/i, "b"],
+  ["fenótipo", /\bfen(ó|o)tipos?\b/i, "b"], ["homozigoto", /\bhomozigot(o|a|os|as)\b/i, "b"], ["heterozigoto", /\bheterozigot(o|a|os|as)\b/i, "b"],
+  ["mitose", /\bmitoses?\b/i, "b"], ["meiose", /\bmeioses?\b/i, "b"], ["gameta", /\bgametas?\b/i, "b"], ["mutação", /\bmuta(ç|c)(ão|ões)\b/i, "b"],
+  ["seleção natural", /\bsele(ç|c)(ão|ões) natura(l|is)\b/i, "b"], ["fotossíntese", /\bfotoss(í|i)ntese\b/i, "b"],
+  ["respiração celular", /\brespira(ç|c)(ão|ões) celula(r|res)\b/i, "b"], ["ecossistema", /(?<!\p{L})ecossistemas?(?!\p{L})/iu, "b"],
+  ["bioma", /\bbiomas?\b/i, "b"], ["nível trófico", /\bn(í|i)ve(l|is) tr(ó|o)fic(o|os)\b/i, "b"], ["decompositor", /\bdecomposito(r|res)\b/i, "b"],
+  ["enzima", /(?<!\p{L})enzimas?(?!\p{L})/iu, "b"], ["hormônio", /\bhorm(ô|o)nios?\b/i, "b"], ["anticorpo", /(?<!\p{L})anticorpos?(?!\p{L})/iu, "b"],
+  ["antígeno", /(?<!\p{L})ant(í|i)genos?(?!\p{L})/iu, "b"], ["ATP", /\bATP\b/, "b"], ["aminoácido", /(?<!\p{L})amino(á|a)cidos?(?!\p{L})/iu, "b"],
+  ["glicose", /\bglicoses?\b/i, "b"],
 
   ["preposição", /\bpreposi(ç|c)(ão|ões)\b/i, "p"], ["artigo", /\bartigos?\b/i, "p"],
   ["verbo", /\bverbos?\b/i, "p"], ["sujeito", /\bsujeitos?\b/i, "p"], ["núcleo", /\bnúcleos?\b/i, "p"], ["pronome", /\bpronomes?\b/i, "p"],
@@ -419,7 +438,7 @@ const JARGON = [
   ["cooler", /\bcoolers?\b|\bwater cooler\b/i, "h"], ["80 Plus", /\b80 Plus\b/i, "h"], ["fonte modular", /\bmodular(es)?\b/i, "h"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;

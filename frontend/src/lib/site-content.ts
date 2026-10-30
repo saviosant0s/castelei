@@ -140,6 +140,26 @@ export const SUBJECTS: SiteSubject[] = [
       "Fábula: uma história com lição",
     ],
   },
+  {
+    slug: "biologia-basica",
+    name: "Biologia",
+    pitch:
+      "A célula, o DNA, a herança de Mendel, a evolução, a ecologia e os biomas do Brasil, o corpo humano e as vacinas: o básico que toda prova de Biologia cobra.",
+    lessons: [
+      "A célula: a menor parte viva",
+      "As organelas: as peças de dentro da célula",
+      "Mitose e meiose: como a célula se divide",
+      "Do DNA à proteína: a receita da vida",
+      "Herança: as leis de Mendel",
+      "Evolução: como as espécies mudam",
+      "Cadeias alimentares: quem come quem",
+      "Os ciclos da natureza e os biomas do Brasil",
+      "Digestão e respiração: combustível e oxigênio",
+      "Circulação, nervos e hormônios",
+      "Vírus, bactérias e vacinas",
+      "Plantas e a classificação dos seres vivos",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -156,5 +176,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 938,
+  questions: 1106,
 };

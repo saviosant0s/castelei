@@ -1,0 +1,4868 @@
+{
+  "slug": "biologia-basica",
+  "name": "Biologia",
+  "area": "biologia",
+  "description": "O básico da vida para qualquer prova: a célula, a herança, a evolução, a ecologia, o corpo humano e a saúde, explicado do zero.",
+  "lessons": [
+    {
+      "slug": "a-celula",
+      "title": "A célula: a menor parte viva",
+      "module": "A célula",
+      "summary": "Todo ser vivo é feito de células, das bactérias às baleias. Elas têm partes em comum e se dividem em dois grandes tipos.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O tijolo da vida",
+          "body": [
+            "Uma casa é feita de tijolos. Cada tijolo sozinho não é uma casa, mas sem ele a casa não existe.",
+            "Os seres vivos são assim. A peça básica de todos eles é a célula.",
+            "Alguns seres têm uma célula só, como as bactérias. Você tem trilhões delas."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Pequena demais para ver",
+          "body": [
+            "Quase toda célula é pequena demais para o olho. Para vê-la, é preciso um microscópio.",
+            "Por isso as células só foram descobertas no século XVII, quando os primeiros microscópios ficaram bons o bastante.",
+            "Algumas são exceção. A gema de um ovo de galinha, antes de ser fecundada, é uma célula só."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As três partes que toda célula tem",
+          "body": [
+            "Por fora, a célula tem uma película que a separa do mundo. Por dentro, um líquido onde tudo acontece.",
+            "E em algum lugar dentro dela fica o material que dá as ordens. A tabela resume as três partes."
+          ],
+          "terms": [
+            {
+              "word": "Membrana plasmática",
+              "meaning": "a película fina que envolve a célula e escolhe o que entra e o que sai."
+            },
+            {
+              "word": "Citoplasma",
+              "meaning": "o líquido gelatinoso que enche a célula, onde as peças dela ficam e trabalham."
+            }
+          ],
+          "table": {
+            "label": "O que toda célula tem",
+            "headers": [
+              "Parte",
+              "Para que serve",
+              "Comparação"
+            ],
+            "rows": [
+              [
+                "membrana plasmática",
+                "escolher o que entra e o que sai",
+                "o porteiro"
+              ],
+              [
+                "citoplasma",
+                "abrigar as peças que trabalham",
+                "o salão da fábrica"
+              ],
+              [
+                "material genético",
+                "guardar as instruções",
+                "o manual de instruções"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O núcleo: a sala de controle",
+          "body": [
+            "Em muitas células, as instruções ficam guardadas numa bolsa separada, com membrana própria. Essa bolsa é o núcleo.",
+            "Ter ou não ter núcleo é a grande divisão entre as células."
+          ],
+          "terms": [
+            {
+              "word": "Núcleo",
+              "meaning": "a parte da célula que guarda o material que comanda tudo. É a sala de controle."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Com núcleo e sem núcleo",
+          "body": [
+            "Célula sem núcleo tem as instruções soltas no citoplasma. Ela se chama procarionte, e é a das bactérias.",
+            "Célula com núcleo se chama eucarionte. É a de plantas, animais, fungos e você."
+          ],
+          "terms": [
+            {
+              "word": "Procarionte",
+              "meaning": "a célula sem núcleo, com as instruções soltas no citoplasma. É a das bactérias."
+            },
+            {
+              "word": "Eucarionte",
+              "meaning": "a célula com núcleo, que guarda as instruções numa bolsa própria. É a de animais e plantas."
+            }
+          ],
+          "table": {
+            "label": "Os dois tipos de célula",
+            "headers": [
+              "Tipo",
+              "Núcleo",
+              "Exemplos"
+            ],
+            "rows": [
+              [
+                "procarionte",
+                "não tem",
+                "bactérias"
+              ],
+              [
+                "eucarionte",
+                "tem",
+                "animais, plantas, fungos"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Célula animal e célula vegetal",
+          "body": [
+            "As duas têm núcleo, mas a da planta tem três coisas a mais. Por fora da membrana, uma parede dura que dá forma.",
+            "Dentro, peças verdes que fazem comida com a luz do sol. E um grande saco de água no meio."
+          ],
+          "terms": [
+            {
+              "word": "Cloroplasto",
+              "meaning": "a peça verde da célula da planta que usa a luz para fabricar açúcar."
+            }
+          ],
+          "table": {
+            "label": "O que a célula da planta tem a mais",
+            "headers": [
+              "Parte",
+              "Função"
+            ],
+            "rows": [
+              [
+                "parede celular",
+                "dar forma e firmeza"
+              ],
+              [
+                "cloroplastos",
+                "fazer comida com a luz"
+              ],
+              [
+                "vacúolo grande",
+                "guardar água e manter a célula cheia"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Um ser de uma célula, um ser de muitas",
+          "body": [
+            "Na bactéria, uma única célula faz tudo: come, cresce e se divide.",
+            "No corpo humano, as células se especializam. Juntas formam tecidos, e tecidos formam órgãos, como o coração."
+          ],
+          "example": {
+            "label": "Do pequeno ao grande",
+            "lines": [
+              "célula → tecido → órgão → sistema → organismo",
+              "célula do músculo → músculo do coração → coração → sistema circulatório → você"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mostra o desenho de uma célula e pergunta se é de planta ou de animal. Também cobra a diferença entre procarionte e eucarionte."
+          ],
+          "bullets": [
+            "“A presença de parede celular e cloroplastos indica uma célula…”",
+            "“Bactérias são organismos procariontes porque…”",
+            "“Qual estrutura controla a entrada e a saída de substâncias?”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que bactéria não tem material genético. Tem, só que solto, sem núcleo.",
+            "Confundir parede celular com membrana. A planta tem as duas.",
+            "Dizer que célula animal tem cloroplasto. Só a de planta e a de algas tem.",
+            "Achar que toda célula é invisível. Algumas, como a gema do ovo, se veem a olho nu."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Todo ser vivo é feito de células. Toda célula tem membrana, citoplasma e material genético.",
+            "Procarionte não tem núcleo (bactérias); eucarionte tem (animais e plantas). A da planta tem parede, cloroplastos e vacúolo grande."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Tipos",
+          "statement": "Uma célula sem núcleo, com o material genético solto no citoplasma, é:",
+          "options": [
+            "procarionte",
+            "eucarionte",
+            "vegetal",
+            "animal",
+            "um vírus"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem núcleo é procarionte. É o caso das bactérias.",
+          "pitfall": "Vírus nem é célula. Ele não tem membrana nem citoplasma próprios."
+        },
+        {
+          "topic": "Planta",
+          "statement": "Qual estrutura existe na célula da planta e NÃO na célula animal?",
+          "options": [
+            "parede celular",
+            "membrana plasmática",
+            "núcleo",
+            "citoplasma",
+            "material genético"
+          ],
+          "correct_index": 0,
+          "explanation": "A parede celular é dura e fica por fora da membrana. Só plantas, algas, fungos e bactérias têm.",
+          "pitfall": "Membrana as duas têm. A planta tem membrana E parede."
+        },
+        {
+          "topic": "Membrana",
+          "statement": "Qual parte da célula escolhe o que entra e o que sai?",
+          "options": [
+            "a membrana plasmática",
+            "o núcleo",
+            "o cloroplasto",
+            "a parede celular",
+            "o vacúolo"
+          ],
+          "correct_index": 0,
+          "explanation": "A membrana é o porteiro. Ela deixa passar umas substâncias e barra outras.",
+          "pitfall": "A parede dá forma, mas deixa quase tudo passar. Quem escolhe é a membrana."
+        },
+        {
+          "topic": "Núcleo",
+          "statement": "O núcleo da célula funciona como:",
+          "options": [
+            "a sala de controle, que guarda as instruções",
+            "a usina, que produz energia",
+            "o porteiro, que escolhe o que entra",
+            "a cozinha, que faz comida com a luz",
+            "o depósito de água"
+          ],
+          "correct_index": 0,
+          "explanation": "No núcleo fica o material genético, com as instruções que comandam a célula.",
+          "pitfall": "A usina de energia é outra peça da célula, que aparece na próxima lição."
+        },
+        {
+          "topic": "Bactéria",
+          "statement": "As bactérias são formadas por:",
+          "options": [
+            "uma única célula procarionte",
+            "muitas células eucariontes",
+            "uma única célula eucarionte",
+            "muitas células procariontes, formando órgãos",
+            "nenhuma célula"
+          ],
+          "correct_index": 0,
+          "explanation": "A bactéria é um ser de uma célula só, e sem núcleo.",
+          "pitfall": "Bactéria não forma órgãos. Uma célula sozinha faz tudo."
+        },
+        {
+          "topic": "Cloroplasto",
+          "statement": "Para que serve o cloroplasto?",
+          "options": [
+            "fabricar açúcar usando a luz",
+            "guardar as instruções da célula",
+            "dar firmeza à célula",
+            "deixar entrar só o necessário",
+            "dividir a célula em duas"
+          ],
+          "correct_index": 0,
+          "explanation": "O cloroplasto usa a luz do sol para fabricar açúcar, a comida da planta.",
+          "pitfall": "Dar firmeza é trabalho da parede celular."
+        },
+        {
+          "topic": "Organização",
+          "statement": "Qual é a ordem certa, do menor para o maior?",
+          "options": [
+            "célula → tecido → órgão → sistema",
+            "tecido → célula → órgão → sistema",
+            "célula → órgão → tecido → sistema",
+            "órgão → tecido → célula → sistema",
+            "sistema → órgão → tecido → célula"
+          ],
+          "correct_index": 0,
+          "explanation": "Células formam tecidos, tecidos formam órgãos e órgãos formam sistemas.",
+          "pitfall": "A última alternativa está certa, mas ao contrário: vai do maior para o menor."
+        },
+        {
+          "topic": "Partes",
+          "format": "match",
+          "statement": "Ligue cada parte ao que ela faz.",
+          "pairs": [
+            {
+              "left": "membrana plasmática",
+              "right": "escolhe o que entra e sai"
+            },
+            {
+              "left": "núcleo",
+              "right": "guarda as instruções"
+            },
+            {
+              "left": "cloroplasto",
+              "right": "faz comida com a luz"
+            },
+            {
+              "left": "parede celular",
+              "right": "dá forma e firmeza"
+            }
+          ],
+          "explanation": "Cada parte tem um trabalho. A membrana é o porteiro, o núcleo é a sala de controle.",
+          "pitfall": "Membrana e parede se confundem: a membrana escolhe, a parede segura a forma."
+        },
+        {
+          "topic": "Ser vivo",
+          "statement": "O que todo ser vivo tem em comum?",
+          "options": [
+            "é formado por células",
+            "tem núcleo",
+            "faz comida com a luz do sol",
+            "tem muitas células",
+            "tem parede celular"
+          ],
+          "correct_index": 0,
+          "explanation": "Todo ser vivo é feito de uma ou mais células.",
+          "pitfall": "Ter núcleo não é regra: as bactérias não têm.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Ver a célula",
+          "statement": "Para ver a maioria das células é preciso:",
+          "options": [
+            "um microscópio",
+            "uma lupa de bolso",
+            "nada, elas se veem a olho nu",
+            "um telescópio",
+            "um raio X"
+          ],
+          "correct_index": 0,
+          "explanation": "A maioria das células é pequena demais para o olho e até para uma lupa simples.",
+          "pitfall": "Telescópio serve para ver o que está longe, e não o que é pequeno.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Animal ou planta",
+          "statement": "Uma célula tem núcleo, membrana e citoplasma, mas não tem parede nem cloroplastos. Ela é:",
+          "options": [
+            "de um animal",
+            "de uma planta",
+            "de uma bactéria",
+            "de uma alga",
+            "de um vírus"
+          ],
+          "correct_index": 0,
+          "explanation": "Com núcleo é eucarionte. Sem parede e sem cloroplastos, é animal.",
+          "pitfall": "Bactéria não tem núcleo, então não pode ser.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Vacúolo",
+          "statement": "O vacúolo grande da célula da planta serve para:",
+          "options": [
+            "guardar água e manter a célula cheia",
+            "fabricar açúcar",
+            "comandar a célula",
+            "produzir a parede",
+            "fazer a célula se mexer"
+          ],
+          "correct_index": 0,
+          "explanation": "O vacúolo é um saco de água. Cheio, ele deixa a planta firme. Vazio, a planta murcha.",
+          "pitfall": "Fabricar açúcar é do cloroplasto.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Planta murcha",
+          "statement": "Uma planta sem água murcha. O que aconteceu nas células dela?",
+          "options": [
+            "os vacúolos perderam água e a célula ficou mole",
+            "os cloroplastos sumiram",
+            "o núcleo saiu da célula",
+            "a parede celular se dissolveu",
+            "as células viraram procariontes"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem água, o vacúolo esvazia e a célula perde a firmeza. Somando milhões delas, a planta cai.",
+          "pitfall": "A parede continua lá: o que some é a água que empurrava a célula contra ela.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Eucarionte",
+          "statement": "O cogumelo é um fungo. As células dele têm núcleo e parede, mas não têm cloroplastos. Então os fungos:",
+          "options": [
+            "são eucariontes que não fazem comida com a luz",
+            "são procariontes, sem núcleo",
+            "são plantas",
+            "são bactérias",
+            "são animais"
+          ],
+          "correct_index": 0,
+          "explanation": "Ter núcleo os faz eucariontes. Sem cloroplasto, não fazem comida com a luz: comem o que decompõem.",
+          "pitfall": "Ter parede não faz de alguém planta. É a falta de cloroplasto que separa os fungos.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "organelas",
+      "title": "As organelas: as peças de dentro da célula",
+      "module": "A célula",
+      "summary": "Dentro da célula há peças com trabalhos diferentes, como numa fábrica. Uma faz energia, outra monta proteínas e outra recicla.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Uma fábrica em miniatura",
+          "body": [
+            "Uma fábrica tem setores: diretoria, linha de montagem, embalagem e usina de energia. Cada um faz uma coisa.",
+            "A célula eucarionte funciona igual. Cada setor é uma peça com nome próprio.",
+            "Essas peças se chamam organelas, como pequenos órgãos."
+          ],
+          "terms": [
+            {
+              "word": "Organela",
+              "meaning": "cada pecinha com função própria dentro da célula, como os órgãos dentro do corpo."
+            },
+            {
+              "word": "Eucarionte",
+              "meaning": "a célula que guarda as suas instruções numa sala fechada, como a de animais e plantas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A mitocôndria: a usina",
+          "body": [
+            "A mitocôndria pega o açúcar da comida e o oxigênio que você respira. Com eles, libera a energia que a célula usa.",
+            "Esse processo se chama respiração celular. É por ele que você precisa respirar e comer.",
+            "Célula que gasta muita energia, como a do músculo, tem muitas mitocôndrias."
+          ],
+          "terms": [
+            {
+              "word": "Mitocôndria",
+              "meaning": "a organela que tira energia do açúcar usando oxigênio. É a usina da célula."
+            },
+            {
+              "word": "Respiração celular",
+              "meaning": "o processo, na mitocôndria, que quebra o açúcar com oxigênio e libera energia."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O ribossomo: a linha de montagem",
+          "body": [
+            "As proteínas são as ferramentas e os tijolos da célula. Quem as monta é o ribossomo, uma peça minúscula.",
+            "Ele lê uma ordem vinda do núcleo e encaixa as peças da proteína, uma por uma."
+          ],
+          "terms": [
+            {
+              "word": "Ribossomo",
+              "meaning": "a organela minúscula que monta as proteínas seguindo as ordens do núcleo."
+            },
+            {
+              "word": "Núcleo",
+              "meaning": "a parte da célula que guarda o material que comanda tudo. É a sala de controle."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Retículo e complexo de Golgi: transporte e embalagem",
+          "body": [
+            "O retículo endoplasmático é uma rede de canais que leva as proteínas pela célula. O complexo de Golgi recebe, ajusta e embala.",
+            "Depois, o que foi embalado pode sair da célula. É assim que a célula do estômago solta o suco que digere a comida."
+          ],
+          "example": {
+            "label": "O caminho de uma proteína que sai da célula",
+            "lines": [
+              "O ribossomo monta a proteína.",
+              "O retículo leva a proteína pela célula.",
+              "O complexo de Golgi ajusta e embala.",
+              "A embalagem se funde à membrana e solta a proteína fora."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "Membrana plasmática",
+              "meaning": "a película fina que envolve a célula e escolhe o que entra e o que sai."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O lisossomo: a reciclagem",
+          "body": [
+            "O lisossomo é um saquinho cheio de substâncias que digerem coisas. Ele quebra peças velhas da célula e restos que entraram.",
+            "As substâncias que fazem essa quebra são enzimas: ferramentas que aceleram uma reação química."
+          ],
+          "terms": [
+            {
+              "word": "Lisossomo",
+              "meaning": "o saquinho que digere peças velhas e restos dentro da célula."
+            },
+            {
+              "word": "Enzima",
+              "meaning": "uma proteína que acelera uma reação química, como quebrar uma molécula grande em pedaços."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Na planta, o cloroplasto",
+          "body": [
+            "A célula da planta tem tudo isso e mais o cloroplasto. Ele faz o caminho contrário da mitocôndria: usa luz, água e gás carbônico para fabricar açúcar.",
+            "Esse processo é a fotossíntese. E a planta também tem mitocôndrias, para usar o açúcar que fez."
+          ],
+          "terms": [
+            {
+              "word": "Cloroplasto",
+              "meaning": "a organela verde da planta que fabrica açúcar usando a luz."
+            },
+            {
+              "word": "Fotossíntese",
+              "meaning": "a fabricação de açúcar a partir de luz, água e gás carbônico, que solta oxigênio."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As organelas lado a lado",
+          "body": [
+            "A tabela junta tudo. Repare que a planta tem mitocôndria: a pegadinha mais comum é achar que não."
+          ],
+          "table": {
+            "label": "As principais organelas",
+            "headers": [
+              "Organela",
+              "Trabalho",
+              "Na fábrica"
+            ],
+            "rows": [
+              [
+                "núcleo",
+                "guardar as instruções",
+                "a diretoria"
+              ],
+              [
+                "mitocôndria",
+                "liberar energia",
+                "a usina"
+              ],
+              [
+                "ribossomo",
+                "montar proteínas",
+                "a linha de montagem"
+              ],
+              [
+                "complexo de Golgi",
+                "embalar e enviar",
+                "a expedição"
+              ],
+              [
+                "lisossomo",
+                "digerir e reciclar",
+                "a reciclagem"
+              ],
+              [
+                "cloroplasto (só planta)",
+                "fabricar açúcar com luz",
+                "a cozinha solar"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova descreve um trabalho e pede a organela. Também pergunta qual célula tem mais de uma certa organela."
+          ],
+          "bullets": [
+            "“Células musculares têm grande quantidade de qual organela?”",
+            "“A organela responsável pela síntese de proteínas é…”",
+            "“Fotossíntese e respiração celular ocorrem, respectivamente, em…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que planta não tem mitocôndria. Tem, e respira o tempo todo.",
+            "Trocar ribossomo (monta proteína) por lisossomo (digere).",
+            "Achar que a fotossíntese libera energia para a célula. Ela GUARDA energia no açúcar.",
+            "Esquecer que bactéria também tem ribossomo, mesmo sem núcleo nem organelas com membrana."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Mitocôndria libera energia; ribossomo monta proteína; retículo transporta; Golgi embala; lisossomo recicla.",
+            "A planta tem tudo isso e mais o cloroplasto, que faz a fotossíntese. E ela respira também."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Usina",
+          "statement": "Qual organela libera a energia do açúcar usando oxigênio?",
+          "options": [
+            "mitocôndria",
+            "ribossomo",
+            "lisossomo",
+            "cloroplasto",
+            "complexo de Golgi"
+          ],
+          "correct_index": 0,
+          "explanation": "A mitocôndria faz a respiração celular: quebra o açúcar com oxigênio e libera energia.",
+          "pitfall": "O cloroplasto faz o contrário: guarda energia fabricando açúcar."
+        },
+        {
+          "topic": "Proteína",
+          "statement": "A organela que monta as proteínas é o:",
+          "options": [
+            "ribossomo",
+            "lisossomo",
+            "núcleo",
+            "vacúolo",
+            "cloroplasto"
+          ],
+          "correct_index": 0,
+          "explanation": "O ribossomo lê a ordem do núcleo e encaixa as peças da proteína.",
+          "pitfall": "Lisossomo tem nome parecido, mas digere em vez de montar."
+        },
+        {
+          "topic": "Músculo",
+          "statement": "Células de músculo gastam muita energia. Elas têm muitas:",
+          "options": [
+            "mitocôndrias",
+            "cloroplastos",
+            "paredes celulares",
+            "vacúolos grandes",
+            "lisossomos vazios"
+          ],
+          "correct_index": 0,
+          "explanation": "Muito trabalho pede muita usina. O músculo tem muitas mitocôndrias.",
+          "pitfall": "Cloroplasto não existe em célula animal."
+        },
+        {
+          "topic": "Planta respira",
+          "statement": "A célula da planta:",
+          "options": [
+            "tem cloroplasto e também mitocôndria",
+            "tem cloroplasto no lugar da mitocôndria",
+            "tem mitocôndria e não tem cloroplasto",
+            "não tem nenhum dos dois",
+            "só tem mitocôndria à noite"
+          ],
+          "correct_index": 0,
+          "explanation": "A planta fabrica açúcar no cloroplasto e o usa na mitocôndria. Ela tem os dois.",
+          "pitfall": "Achar que o cloroplasto substitui a mitocôndria é o erro mais cobrado."
+        },
+        {
+          "topic": "Lisossomo",
+          "statement": "Uma célula precisa digerir uma peça velha dela mesma. Quem faz isso?",
+          "options": [
+            "o lisossomo",
+            "o ribossomo",
+            "a mitocôndria",
+            "o cloroplasto",
+            "a membrana"
+          ],
+          "correct_index": 0,
+          "explanation": "O lisossomo é a reciclagem: tem enzimas que quebram o que não serve mais.",
+          "pitfall": "Ribossomo monta, não desmonta."
+        },
+        {
+          "topic": "Golgi",
+          "statement": "O complexo de Golgi tem a função de:",
+          "options": [
+            "ajustar e embalar substâncias para envio",
+            "liberar energia",
+            "fazer fotossíntese",
+            "guardar o material genético",
+            "digerir restos"
+          ],
+          "correct_index": 0,
+          "explanation": "O Golgi é a expedição da fábrica: recebe, ajusta e embala.",
+          "pitfall": "Guardar o material genético é do núcleo."
+        },
+        {
+          "topic": "Fotossíntese",
+          "statement": "Na fotossíntese, a planta usa luz, água e gás carbônico para:",
+          "options": [
+            "fabricar açúcar e soltar oxigênio",
+            "quebrar açúcar e soltar gás carbônico",
+            "montar proteínas",
+            "digerir restos da célula",
+            "dividir a célula"
+          ],
+          "correct_index": 0,
+          "explanation": "A fotossíntese fabrica açúcar e solta oxigênio. A respiração faz o caminho contrário.",
+          "pitfall": "Quebrar açúcar e soltar gás carbônico é a respiração celular."
+        },
+        {
+          "topic": "Caminho",
+          "format": "order",
+          "statement": "Ponha na ordem o caminho de uma proteína que a célula vai soltar.",
+          "options": [
+            "O ribossomo monta a proteína.",
+            "O retículo leva a proteína pela célula.",
+            "O complexo de Golgi ajusta e embala.",
+            "A embalagem se funde à membrana e solta a proteína."
+          ],
+          "explanation": "Montar, levar, embalar e soltar: a mesma ordem de uma fábrica.",
+          "pitfall": "O Golgi não monta proteína. Ele recebe a proteína já montada."
+        },
+        {
+          "topic": "Nome",
+          "statement": "Organelas são:",
+          "options": [
+            "peças com função própria dentro da célula",
+            "células muito pequenas",
+            "órgãos do corpo humano",
+            "tipos de bactéria",
+            "camadas da pele"
+          ],
+          "correct_index": 0,
+          "explanation": "Organela quer dizer pequeno órgão: uma peça da célula com um trabalho.",
+          "pitfall": "Organela fica DENTRO da célula. Não é uma célula.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Usina",
+          "statement": "Por que você precisa respirar oxigênio?",
+          "options": [
+            "as mitocôndrias usam oxigênio para liberar energia da comida",
+            "o oxigênio vira proteína",
+            "o oxigênio guarda as instruções da célula",
+            "o pulmão precisa de oxigênio só para si",
+            "o oxigênio é o alimento das células da pele"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem oxigênio, a mitocôndria não consegue tirar a energia do açúcar.",
+          "pitfall": "Todas as células usam oxigênio, não só as do pulmão.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Bactéria",
+          "statement": "Uma bactéria não tem núcleo nem organelas com membrana. Mesmo assim ela tem:",
+          "options": [
+            "ribossomos",
+            "mitocôndrias",
+            "cloroplastos",
+            "complexo de Golgi",
+            "lisossomos"
+          ],
+          "correct_index": 0,
+          "explanation": "Toda célula precisa montar proteínas. Por isso até a bactéria tem ribossomo, que não tem membrana.",
+          "pitfall": "Mitocôndria é organela com membrana: bactéria não tem.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Estômago",
+          "statement": "Uma célula que solta muito suco digestivo terá bastante:",
+          "options": [
+            "complexo de Golgi, para embalar e enviar",
+            "cloroplasto, para fazer açúcar",
+            "vacúolo, para guardar água",
+            "parede celular, para se proteger",
+            "nenhuma organela"
+          ],
+          "correct_index": 0,
+          "explanation": "Soltar substância é trabalho da expedição: retículo e Golgi.",
+          "pitfall": "Cloroplasto não existe em célula de estômago.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Ciclo",
+          "statement": "O gás carbônico que a mitocôndria solta pode ser usado:",
+          "options": [
+            "pelo cloroplasto, na fotossíntese",
+            "pelo ribossomo, para montar proteína",
+            "pelo lisossomo, para digerir",
+            "pelo núcleo, como instrução",
+            "por nenhuma organela"
+          ],
+          "correct_index": 0,
+          "explanation": "O que a respiração solta (gás carbônico e água) é o que a fotossíntese usa. Uma alimenta a outra.",
+          "pitfall": "A pegadinha é achar que o gás carbônico é só lixo. A planta o usa para fazer açúcar.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Energia",
+          "statement": "Qual frase está certa?",
+          "options": [
+            "A fotossíntese guarda energia no açúcar, e a respiração libera essa energia.",
+            "A fotossíntese libera energia, e a respiração guarda.",
+            "As duas liberam energia.",
+            "As duas guardam energia.",
+            "Nenhuma das duas mexe com energia."
+          ],
+          "correct_index": 0,
+          "explanation": "A planta guarda a energia da luz no açúcar. A mitocôndria solta essa energia para a célula usar.",
+          "pitfall": "A segunda alternativa inverte os papéis: é o erro de quem confunde as duas.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "divisao-celular",
+      "title": "Mitose e meiose: como a célula se divide",
+      "module": "A célula",
+      "summary": "Uma célula vira duas para o corpo crescer e se consertar (mitose), e forma as células de reprodução com metade das instruções (meiose).",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O corte que fecha",
+          "body": [
+            "Você corta o dedo e, em alguns dias, a pele está inteira de novo. De onde vieram as células novas?",
+            "Das células que estavam ao redor. Cada uma copiou o que tinha e se dividiu em duas.",
+            "Toda célula nova vem de outra célula que se dividiu."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os cromossomos",
+          "body": [
+            "Dentro do núcleo, o material genético fica em fios. Na hora de dividir, esses fios se enrolam e ficam grossos. Cada fio enrolado é um cromossomo.",
+            "A célula humana comum tem 46 cromossomos, em 23 pares. Um de cada par veio da mãe, e o outro do pai."
+          ],
+          "terms": [
+            {
+              "word": "Cromossomo",
+              "meaning": "um fio enrolado de material genético. A célula humana comum tem 46."
+            },
+            {
+              "word": "Núcleo",
+              "meaning": "a parte da célula que guarda o material genético."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Mitose: uma vira duas iguais",
+          "body": [
+            "Na mitose, a célula copia os 46 cromossomos e divide a cópia em duas partes iguais.",
+            "Saem duas células com os mesmos 46, idênticas à primeira. É assim que o corpo cresce, troca a pele e cicatriza."
+          ],
+          "example": {
+            "label": "A mitose, passo a passo",
+            "lines": [
+              "A célula copia todos os cromossomos.",
+              "Os cromossomos se enrolam e se alinham no meio.",
+              "As cópias se separam, metade para cada lado.",
+              "A célula se divide: são duas, iguais à primeira."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "Mitose",
+              "meaning": "a divisão em que uma célula vira duas iguais a ela. É assim que o corpo cresce e se conserta."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Meiose: para fazer um bebê",
+          "body": [
+            "Se o óvulo e o espermatozoide tivessem 46 cromossomos cada, o bebê teria 92. E na geração seguinte, 184.",
+            "Por isso essas células são feitas por outra divisão, a meiose. Ela produz células com 23 cromossomos, metade do normal.",
+            "Na fecundação, 23 da mãe somam com 23 do pai, e o bebê tem 46 de novo."
+          ],
+          "terms": [
+            {
+              "word": "Meiose",
+              "meaning": "a divisão que forma as células de reprodução, com metade das instruções da célula comum."
+            },
+            {
+              "word": "Gameta",
+              "meaning": "a célula de reprodução: o óvulo ou o espermatozoide. Tem metade dos cromossomos."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Mitose e meiose lado a lado",
+          "body": [
+            "A tabela compara as duas. A meiose também embaralha os cromossomos: por isso irmãos não são iguais."
+          ],
+          "table": {
+            "label": "As duas divisões",
+            "headers": [
+              "",
+              "Mitose",
+              "Meiose"
+            ],
+            "rows": [
+              [
+                "para quê",
+                "crescer e consertar",
+                "formar gametas"
+              ],
+              [
+                "células que saem",
+                "2",
+                "4"
+              ],
+              [
+                "cromossomos em cada",
+                "46, como a mãe",
+                "23, metade"
+              ],
+              [
+                "filhas iguais à mãe?",
+                "sim",
+                "não, misturadas"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Quando a divisão sai do controle",
+          "body": [
+            "A célula só se divide quando recebe o sinal certo. Se o freio estraga, ela se divide sem parar.",
+            "O resultado é um amontoado de células que cresce sem necessidade: um tumor. Quando ele invade outros tecidos, é câncer."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pergunta o número de cromossomos em cada célula e qual divisão forma o quê."
+          ],
+          "bullets": [
+            "“Quantos cromossomos tem um espermatozoide humano?”",
+            "“A regeneração da pele depende de qual divisão?”",
+            "“Por que irmãos dos mesmos pais não são idênticos?”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que o gameta tem 46 cromossomos. Tem 23.",
+            "Trocar as divisões: cicatrização é mitose, não meiose.",
+            "Achar que a mitose produz quatro células. São duas; quatro é a meiose.",
+            "Achar que as células da meiose são iguais entre si. Elas saem misturadas."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Mitose: uma célula vira duas iguais, com 46 cromossomos. Serve para crescer e consertar.",
+            "Meiose: forma quatro gametas com 23 cromossomos e misturados. Na fecundação, 23 + 23 = 46."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Gameta",
+          "statement": "Quantos cromossomos tem um óvulo humano?",
+          "options": [
+            "23",
+            "46",
+            "92",
+            "12",
+            "2"
+          ],
+          "correct_index": 0,
+          "explanation": "Gametas têm metade dos cromossomos: 23.",
+          "pitfall": "46 é o número da célula comum do corpo."
+        },
+        {
+          "topic": "Pele",
+          "statement": "A pele que fecha um corte vem de células que se dividiram por:",
+          "options": [
+            "mitose",
+            "meiose",
+            "fotossíntese",
+            "fecundação",
+            "respiração celular"
+          ],
+          "correct_index": 0,
+          "explanation": "Consertar o corpo é trabalho da mitose: células iguais às que já existiam.",
+          "pitfall": "Meiose só forma gametas."
+        },
+        {
+          "topic": "Quantas",
+          "statement": "Uma célula que passa por mitose dá origem a:",
+          "options": [
+            "2 células iguais a ela",
+            "4 células diferentes",
+            "2 células com metade dos cromossomos",
+            "4 células iguais",
+            "1 célula maior"
+          ],
+          "correct_index": 0,
+          "explanation": "A mitose faz uma virar duas, com os mesmos cromossomos.",
+          "pitfall": "Quatro células diferentes é o resultado da meiose."
+        },
+        {
+          "topic": "Fecundação",
+          "statement": "Na fecundação, o óvulo e o espermatozoide se juntam. Quantos cromossomos tem a primeira célula do bebê?",
+          "options": [
+            "46",
+            "23",
+            "92",
+            "69",
+            "11"
+          ],
+          "correct_index": 0,
+          "explanation": "23 da mãe mais 23 do pai dão 46.",
+          "pitfall": "92 seria se cada gameta tivesse 46. É por isso que existe a meiose."
+        },
+        {
+          "topic": "Irmãos",
+          "statement": "Por que dois irmãos dos mesmos pais não são idênticos?",
+          "options": [
+            "a meiose mistura os cromossomos de jeitos diferentes em cada gameta",
+            "a mitose muda os cromossomos",
+            "cada irmão tem um número diferente de cromossomos",
+            "só a mãe passa cromossomos",
+            "os irmãos não recebem nada do pai"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada gameta sai com uma mistura diferente. Cada filho recebe uma combinação nova.",
+          "pitfall": "Todos os irmãos têm 46 cromossomos. O que muda é a combinação."
+        },
+        {
+          "topic": "Cromossomo",
+          "statement": "O que é um cromossomo?",
+          "options": [
+            "um fio enrolado de material genético",
+            "uma organela que faz energia",
+            "uma célula de reprodução",
+            "um tipo de proteína da pele",
+            "o mesmo que núcleo"
+          ],
+          "correct_index": 0,
+          "explanation": "O material genético fica em fios. Enrolado na hora de dividir, cada fio é um cromossomo.",
+          "pitfall": "O cromossomo fica DENTRO do núcleo, mas não é o núcleo."
+        },
+        {
+          "topic": "Câncer",
+          "statement": "O que acontece numa célula de tumor?",
+          "options": [
+            "ela se divide sem parar, sem obedecer ao freio",
+            "ela para de se dividir",
+            "ela faz meiose no lugar de mitose",
+            "ela perde todos os cromossomos",
+            "ela vira um gameta"
+          ],
+          "correct_index": 0,
+          "explanation": "O freio da divisão estragou. A célula se multiplica sem necessidade.",
+          "pitfall": "Parar de dividir é o contrário do que acontece."
+        },
+        {
+          "topic": "Divisões",
+          "format": "match",
+          "statement": "Ligue cada palavra ao que ela quer dizer.",
+          "pairs": [
+            {
+              "left": "mitose",
+              "right": "uma célula vira duas iguais"
+            },
+            {
+              "left": "meiose",
+              "right": "forma gametas com 23 cromossomos"
+            },
+            {
+              "left": "fecundação",
+              "right": "o óvulo e o espermatozoide se juntam"
+            },
+            {
+              "left": "cromossomo",
+              "right": "fio enrolado de material genético"
+            }
+          ],
+          "explanation": "Mitose é para o corpo; meiose é para a reprodução; a fecundação junta os dois gametas.",
+          "pitfall": "Trocar mitose por meiose é o erro mais comum. Duas células iguais é mitose."
+        },
+        {
+          "topic": "Normal",
+          "statement": "Quantos cromossomos tem uma célula comum do corpo humano?",
+          "options": [
+            "46",
+            "23",
+            "92",
+            "48",
+            "13"
+          ],
+          "correct_index": 0,
+          "explanation": "São 46, em 23 pares.",
+          "pitfall": "23 é o número dos gametas.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Crescer",
+          "statement": "Uma criança cresce porque suas células se dividem por:",
+          "options": [
+            "mitose",
+            "meiose",
+            "fecundação",
+            "fotossíntese",
+            "digestão"
+          ],
+          "correct_index": 0,
+          "explanation": "Crescer é ganhar células iguais às que já existiam: mitose.",
+          "pitfall": "Meiose acontece só nos órgãos de reprodução.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Pares",
+          "statement": "Os 46 cromossomos de uma pessoa formam 23 pares. De onde vem cada cromossomo de um par?",
+          "options": [
+            "um da mãe e um do pai",
+            "os dois da mãe",
+            "os dois do pai",
+            "da mitose",
+            "de nenhum dos pais"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada par tem um cromossomo que veio no óvulo e outro que veio no espermatozoide.",
+          "pitfall": "A mãe não passa os dois: o óvulo tem só um de cada par.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Metade",
+          "statement": "Por que os gametas precisam ter metade dos cromossomos?",
+          "options": [
+            "para que, ao se juntarem, o bebê tenha o número normal",
+            "para serem mais rápidos",
+            "para não precisarem de núcleo",
+            "porque perderam os outros por acidente",
+            "para fazer mitose depois"
+          ],
+          "correct_index": 0,
+          "explanation": "Se cada um tivesse 46, o número dobraria a cada geração.",
+          "pitfall": "Não é acidente: a meiose divide pela metade de propósito.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Mitose ou meiose",
+          "statement": "Uma célula com 46 cromossomos gera quatro células com 23 cada, todas diferentes. Que divisão foi essa?",
+          "options": [
+            "meiose",
+            "mitose",
+            "fecundação",
+            "duas mitoses seguidas",
+            "fotossíntese"
+          ],
+          "correct_index": 0,
+          "explanation": "Quatro células, metade dos cromossomos e misturadas: é a meiose.",
+          "pitfall": "Duas mitoses seguidas dariam quatro células com 46 e iguais.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Gêmeos",
+          "statement": "Gêmeos idênticos vêm de um único óvulo fecundado que se separou em dois no começo. Por isso eles:",
+          "options": [
+            "têm os mesmos cromossomos",
+            "têm 23 cromossomos cada",
+            "são sempre de sexos diferentes",
+            "vieram de duas meioses diferentes no pai",
+            "não têm cromossomos da mãe"
+          ],
+          "correct_index": 0,
+          "explanation": "Depois da fecundação, as divisões são mitoses: as duas metades ficam com as mesmas instruções.",
+          "pitfall": "Gêmeos de dois óvulos diferentes é que têm misturas diferentes, como irmãos comuns.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "dna-e-proteinas",
+      "title": "Do DNA à proteína: a receita da vida",
+      "module": "Hereditariedade",
+      "summary": "O DNA guarda receitas chamadas genes. Cada receita é copiada e lida para montar uma proteína, e as proteínas fazem quase tudo no corpo.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Um livro de receitas",
+          "body": [
+            "Pense num livro de receitas que nunca sai da cozinha. Para fazer um bolo, você copia a receita num papel e leva o papel até o forno.",
+            "A célula faz o mesmo. O livro fica guardado no núcleo, e uma cópia sai para a parte da célula que monta as coisas."
+          ],
+          "terms": [
+            {
+              "word": "Núcleo",
+              "meaning": "a sala fechada da célula onde ficam as instruções."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O DNA é o livro",
+          "body": [
+            "O livro da célula é o DNA. Ele é uma molécula comprida, em forma de escada torcida.",
+            "Cada degrau da escada é uma letra. São só quatro letras: A, T, C e G. A ordem delas é a mensagem.",
+            "Na hora de dividir a célula, o DNA se enrola em fios grossos, os cromossomos."
+          ],
+          "terms": [
+            {
+              "word": "DNA",
+              "meaning": "a molécula que guarda as instruções de um ser vivo. Ela fica no núcleo, enrolada nos cromossomos."
+            },
+            {
+              "word": "Cromossomo",
+              "meaning": "um fio enrolado de DNA. A célula humana comum tem 46."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O gene é uma receita",
+          "body": [
+            "O DNA é um livro inteiro. Cada receita dentro dele é um gene.",
+            "Um gene diz como montar uma proteína. Você tem cerca de 20 mil genes que fazem proteínas.",
+            "A cor dos olhos, o tipo de sangue e muitas outras características dependem dos genes."
+          ],
+          "terms": [
+            {
+              "word": "Gene",
+              "meaning": "um trecho do DNA com a receita de uma proteína. É ele que passa uma característica de pais para filhos."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As proteínas fazem o trabalho",
+          "body": [
+            "Proteína não é só o que tem na carne. É a peça que faz quase tudo em você.",
+            "A cor do olho, o transporte de oxigênio no sangue e a digestão dependem de proteínas.",
+            "Cada proteína é um colar de peças pequenas chamadas aminoácidos. A ordem das peças decide o formato e o trabalho dela."
+          ],
+          "terms": [
+            {
+              "word": "Aminoácido",
+              "meaning": "cada peça pequena que forma uma proteína, como as contas de um colar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Da receita ao bolo",
+          "body": [
+            "A receita não sai do núcleo. Primeiro a célula faz uma cópia de trabalho do gene, chamada RNA.",
+            "O RNA sai do núcleo e chega ao ribossomo. O ribossomo lê as letras de três em três e encaixa um aminoácido para cada trio."
+          ],
+          "example": {
+            "label": "Do gene à proteína",
+            "lines": [
+              "No núcleo, o gene é copiado em RNA.",
+              "O RNA sai do núcleo.",
+              "O ribossomo lê o RNA de três em três letras.",
+              "Para cada trio, ele encaixa um aminoácido.",
+              "O colar de aminoácidos se dobra: é a proteína pronta."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "RNA",
+              "meaning": "uma cópia de trabalho de um trecho do DNA, que sai do núcleo e leva a receita até o ribossomo."
+            },
+            {
+              "word": "Ribossomo",
+              "meaning": "a peça da célula que monta as proteínas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "DNA e RNA lado a lado",
+          "body": [
+            "Os dois guardam letras, mas têm trabalhos diferentes. A tabela mostra o que muda."
+          ],
+          "table": {
+            "label": "DNA e RNA",
+            "headers": [
+              "",
+              "DNA",
+              "RNA"
+            ],
+            "rows": [
+              [
+                "trabalho",
+                "guardar a receita",
+                "levar a cópia ao ribossomo"
+              ],
+              [
+                "onde fica",
+                "no núcleo",
+                "sai do núcleo"
+              ],
+              [
+                "forma",
+                "fita dupla (a escada)",
+                "fita simples (meia escada)"
+              ],
+              [
+                "letras",
+                "A, T, C e G",
+                "A, U, C e G (U no lugar de T)"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Quando a receita tem um erro",
+          "body": [
+            "Às vezes uma letra do DNA muda. É como um erro de digitação na receita.",
+            "Muitas vezes o erro não muda nada. Às vezes muda uma peça da proteína, e ela deixa de funcionar bem.",
+            "Na anemia falciforme, uma só letra trocada muda a proteína que leva oxigênio. O glóbulo vermelho fica em forma de foice."
+          ],
+          "terms": [
+            {
+              "word": "Mutação",
+              "meaning": "uma mudança na sequência do DNA, como um erro de cópia numa receita."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede a ordem do caminho e a diferença entre DNA e RNA. Também cobra o que é um gene."
+          ],
+          "bullets": [
+            "“A sequência correta do fluxo da informação genética é…”",
+            "“Uma diferença entre DNA e RNA é…”",
+            "“A síntese de proteínas ocorre em qual estrutura?”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "DNA",
+              "meaning": "a molécula que guarda as instruções de um ser vivo. Ela fica no núcleo, enrolada nos cromossomos."
+            },
+            {
+              "word": "RNA",
+              "meaning": "uma cópia de trabalho de um trecho do DNA, que sai do núcleo e leva a receita até o ribossomo."
+            },
+            {
+              "word": "Gene",
+              "meaning": "um trecho do DNA com a receita de uma proteína. É ele que passa uma característica de pais para filhos."
+            },
+            {
+              "word": "Cromossomo",
+              "meaning": "um fio enrolado de DNA. A célula humana comum tem 46."
+            },
+            {
+              "word": "Mutação",
+              "meaning": "uma mudança na sequência do DNA, como um erro de cópia numa receita."
+            }
+          ],
+          "bullets": [
+            "Achar que o DNA sai do núcleo. Quem sai é a cópia, o RNA.",
+            "Achar que gene e cromossomo são a mesma coisa. O cromossomo é o fio; o gene é um trecho dele.",
+            "Trocar as letras: o RNA tem U no lugar do T.",
+            "Achar que toda mutação é ruim. A maioria não muda nada, e algumas ajudam."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O DNA é o livro, no núcleo. O gene é uma receita. O RNA é a cópia que sai do núcleo.",
+            "O ribossomo lê o RNA e monta a proteína, um aminoácido por vez. Um erro na receita é uma mutação."
+          ],
+          "terms": [
+            {
+              "word": "DNA",
+              "meaning": "a molécula que guarda as instruções de um ser vivo. Ela fica no núcleo, enrolada nos cromossomos."
+            },
+            {
+              "word": "Gene",
+              "meaning": "um trecho do DNA com a receita de uma proteína. É ele que passa uma característica de pais para filhos."
+            },
+            {
+              "word": "RNA",
+              "meaning": "uma cópia de trabalho de um trecho do DNA, que sai do núcleo e leva a receita até o ribossomo."
+            },
+            {
+              "word": "Aminoácido",
+              "meaning": "cada peça pequena que forma uma proteína, como as contas de um colar."
+            },
+            {
+              "word": "Mutação",
+              "meaning": "uma mudança na sequência do DNA, como um erro de cópia numa receita."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Fluxo",
+          "statement": "Qual é o caminho da informação na célula?",
+          "options": [
+            "DNA → RNA → proteína",
+            "proteína → RNA → DNA",
+            "RNA → DNA → proteína",
+            "DNA → proteína → RNA",
+            "proteína → DNA → RNA"
+          ],
+          "correct_index": 0,
+          "explanation": "O gene do DNA é copiado em RNA, e o RNA é lido para montar a proteína.",
+          "pitfall": "Começar pela proteína inverte o caminho."
+        },
+        {
+          "topic": "Gene",
+          "statement": "Um gene é:",
+          "options": [
+            "um trecho do DNA com a receita de uma proteína",
+            "o DNA inteiro de uma célula",
+            "uma organela do núcleo",
+            "uma proteína do sangue",
+            "o mesmo que cromossomo"
+          ],
+          "correct_index": 0,
+          "explanation": "O DNA é o livro; o gene é uma receita dentro dele.",
+          "pitfall": "O cromossomo é o fio inteiro, com muitos genes."
+        },
+        {
+          "topic": "Onde monta",
+          "statement": "Onde a proteína é montada?",
+          "options": [
+            "no ribossomo",
+            "no núcleo",
+            "na membrana",
+            "no cromossomo",
+            "no gene"
+          ],
+          "correct_index": 0,
+          "explanation": "O ribossomo lê o RNA e encaixa os aminoácidos.",
+          "pitfall": "No núcleo o DNA é só copiado. A montagem é fora dele."
+        },
+        {
+          "topic": "Letra",
+          "statement": "Qual letra o RNA tem no lugar do T do DNA?",
+          "options": [
+            "U",
+            "A",
+            "C",
+            "G",
+            "X"
+          ],
+          "correct_index": 0,
+          "explanation": "O RNA troca o T pelo U. As outras três letras são iguais.",
+          "pitfall": "A, C e G existem nos dois."
+        },
+        {
+          "topic": "Quem sai",
+          "statement": "Que molécula sai do núcleo levando a receita?",
+          "options": [
+            "o RNA",
+            "o DNA",
+            "o cromossomo",
+            "a proteína pronta",
+            "o ribossomo"
+          ],
+          "correct_index": 0,
+          "explanation": "O DNA fica guardado. Sai a cópia de trabalho, o RNA.",
+          "pitfall": "O DNA nunca sai do núcleo para fazer proteína."
+        },
+        {
+          "topic": "Proteína",
+          "statement": "Uma proteína é formada por uma sequência de:",
+          "options": [
+            "aminoácidos",
+            "genes",
+            "cromossomos",
+            "letras A, T, C e G",
+            "células"
+          ],
+          "correct_index": 0,
+          "explanation": "Proteína é um colar de aminoácidos.",
+          "pitfall": "As letras formam o DNA e o RNA, não a proteína."
+        },
+        {
+          "topic": "Mutação",
+          "statement": "Uma mutação é:",
+          "options": [
+            "uma mudança na sequência do DNA",
+            "a cópia do DNA em RNA",
+            "a montagem da proteína",
+            "a divisão da célula",
+            "a entrada de oxigênio na célula"
+          ],
+          "correct_index": 0,
+          "explanation": "Mutação é um erro de cópia na receita.",
+          "pitfall": "Copiar o DNA em RNA é um passo normal, não um erro."
+        },
+        {
+          "topic": "Do gene",
+          "format": "order",
+          "statement": "Ponha em ordem o caminho do gene até a proteína.",
+          "options": [
+            "O gene é copiado em RNA no núcleo.",
+            "O RNA sai do núcleo.",
+            "O ribossomo lê o RNA de três em três letras.",
+            "Os aminoácidos são encaixados e a proteína se dobra."
+          ],
+          "explanation": "Copiar, sair, ler e montar.",
+          "pitfall": "O ribossomo só lê depois que o RNA chega até ele."
+        },
+        {
+          "topic": "Letras",
+          "statement": "Quantas letras diferentes formam o DNA?",
+          "options": [
+            "4",
+            "2",
+            "20",
+            "26",
+            "46"
+          ],
+          "correct_index": 0,
+          "explanation": "São quatro: A, T, C e G.",
+          "pitfall": "46 é o número de cromossomos, não de letras.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Forma",
+          "statement": "O DNA tem a forma de:",
+          "options": [
+            "uma escada torcida",
+            "uma bola",
+            "um fio simples",
+            "uma folha",
+            "um anel"
+          ],
+          "correct_index": 0,
+          "explanation": "As duas fitas formam uma escada que se torce.",
+          "pitfall": "Fita simples é o RNA.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Gene e cromossomo",
+          "statement": "Qual frase está certa?",
+          "options": [
+            "O cromossomo tem muitos genes.",
+            "O gene tem muitos cromossomos.",
+            "Gene e cromossomo são a mesma coisa.",
+            "Cada célula tem um gene só.",
+            "O gene fica fora do núcleo."
+          ],
+          "correct_index": 0,
+          "explanation": "O cromossomo é o fio; cada gene é um trecho dele.",
+          "pitfall": "A segunda inverte a parte com o todo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Trio",
+          "statement": "O ribossomo lê o RNA em grupos de quantas letras para cada aminoácido?",
+          "options": [
+            "3",
+            "1",
+            "2",
+            "4",
+            "46"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada trio de letras corresponde a um aminoácido.",
+          "pitfall": "Uma letra só daria apenas quatro combinações. Não chega para os aminoácidos.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Falciforme",
+          "statement": "Na anemia falciforme, uma só letra do DNA muda. Por que isso muda a célula do sangue?",
+          "options": [
+            "muda um aminoácido da proteína que leva oxigênio",
+            "o DNA sai do núcleo",
+            "a célula perde todos os genes",
+            "o ribossomo deixa de existir",
+            "a célula vira um gameta"
+          ],
+          "correct_index": 0,
+          "explanation": "Uma letra diferente muda um trio. O trio muda um aminoácido, e a proteína muda de forma.",
+          "pitfall": "Uma mutação muda uma peça, não apaga os genes.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Mutação neutra",
+          "statement": "Qual frase sobre mutações está certa?",
+          "options": [
+            "Muitas mutações não mudam nada na proteína.",
+            "Toda mutação causa doença.",
+            "Mutações só acontecem em laboratório.",
+            "Toda mutação melhora o ser vivo.",
+            "Mutação é o mesmo que gene."
+          ],
+          "correct_index": 0,
+          "explanation": "Muitos erros de cópia caem em trechos que não mudam o aminoácido nem a proteína.",
+          "pitfall": "“Toda” é a palavra que denuncia o erro.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "leis-de-mendel",
+      "title": "Herança: as leis de Mendel",
+      "module": "Hereditariedade",
+      "summary": "Cada característica vem de um par de versões do gene, uma da mãe e outra do pai. Uma pode esconder a outra, e o quadro de cruzamento mostra as chances.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Olhos do pai, nariz da mãe",
+          "body": [
+            "Às vezes um filho nasce com olhos claros, e os pais têm olhos escuros. Como isso é possível?",
+            "A resposta veio de um monge que cruzou ervilhas por anos, no século XIX. Gregor Mendel contou os resultados e achou um padrão."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Cada gene vem em duas versões",
+          "body": [
+            "Para cada característica, você tem duas cópias do gene. Uma veio da mãe, e a outra do pai.",
+            "As cópias podem ser iguais ou diferentes. Cada versão de um gene se chama alelo.",
+            "A gente escreve com letras: A maiúsculo para uma versão e a minúsculo para a outra."
+          ],
+          "terms": [
+            {
+              "word": "Gene",
+              "meaning": "a receita, guardada dentro da célula, de uma característica que passa de pais para filhos."
+            },
+            {
+              "word": "Alelo",
+              "meaning": "cada versão de um mesmo gene. Um gene da cor da ervilha tem a versão amarela e a versão verde."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Uma versão pode esconder a outra",
+          "body": [
+            "Na ervilha, o alelo amarelo (A) esconde o verde (a). Quem tem Aa é amarelo.",
+            "A versão que aparece com uma cópia só é a dominante. A que fica escondida é a recessiva, e só aparece em dupla: aa."
+          ],
+          "terms": [
+            {
+              "word": "Dominante e recessivo",
+              "meaning": "dominante é a versão que aparece mesmo com uma cópia só. Recessivo é a versão que só aparece com duas cópias iguais."
+            },
+            {
+              "word": "Homozigoto e heterozigoto",
+              "meaning": "homozigoto tem os dois alelos iguais (AA ou aa). Heterozigoto tem um de cada (Aa)."
+            }
+          ],
+          "table": {
+            "label": "Os três pares possíveis",
+            "headers": [
+              "Par",
+              "Nome",
+              "Cor da ervilha"
+            ],
+            "rows": [
+              [
+                "AA",
+                "homozigoto dominante",
+                "amarela"
+              ],
+              [
+                "Aa",
+                "heterozigoto",
+                "amarela"
+              ],
+              [
+                "aa",
+                "homozigoto recessivo",
+                "verde"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que você tem e o que aparece",
+          "body": [
+            "AA e Aa dão a mesma cor. Olhando a ervilha, não dá para saber qual dos dois ela tem.",
+            "Por isso existem duas palavras. O par de letras é o genótipo. A cor que aparece é o fenótipo."
+          ],
+          "terms": [
+            {
+              "word": "Genótipo e fenótipo",
+              "meaning": "genótipo é o par de alelos que a pessoa tem; fenótipo é o que aparece, como a cor."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Cada filho recebe uma letra de cada pai",
+          "body": [
+            "Ao formar as células de reprodução, o par se separa. Cada uma leva só uma letra.",
+            "Essa é a primeira lei de Mendel: os dois alelos se separam, e o filho recebe um do pai e um da mãe.",
+            "Para ver as chances, monta-se um quadro. Em cima vão as letras de um pai; do lado, as do outro."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O quadro de cruzamento",
+          "body": [
+            "Cruzando Aa com Aa, cada casa do quadro junta uma letra de cima com uma do lado. Saem quatro casas.",
+            "Uma é AA, duas são Aa e uma é aa. Três ervilhas amarelas para uma verde.",
+            "É assim que pais de olhos escuros têm filho de olhos claros: os dois tinham o alelo escondido."
+          ],
+          "terms": [
+            {
+              "word": "Genótipo e fenótipo",
+              "meaning": "genótipo é o par de alelos que a pessoa tem; fenótipo é o que aparece, como a cor."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/biologia/quadro-de-punnett.svg",
+            "alt": "Quadro de dois por dois. Em cima, as letras A e a de um pai; à esquerda, A e a do outro. As casas mostram AA, Aa, Aa e aa, com três ervilhas amarelas e uma verde.",
+            "caption": "Aa com Aa: três chances em quatro de amarelo e uma de verde."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Chance não é garantia",
+          "body": [
+            "Três em quatro é uma chance, como num sorteio. Um casal pode ter quatro filhos e nenhum de olhos claros.",
+            "O quadro diz o que acontece em média, com muitos filhos. Cada filho é um sorteio novo."
+          ],
+          "example": {
+            "label": "As chances de Aa com Aa",
+            "lines": [
+              "AA: 1 em 4, ou 25%",
+              "Aa: 2 em 4, ou 50%",
+              "aa: 1 em 4, ou 25%",
+              "Amarela (AA ou Aa): 3 em 4, ou 75%"
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá os pais e pede a chance de um filho. Também pede o genótipo dos pais a partir dos filhos."
+          ],
+          "bullets": [
+            "“Do cruzamento Aa × Aa, qual a proporção esperada de fenótipos?”",
+            "“Um casal normal teve um filho albino. Qual o genótipo dos pais?”",
+            "“Qual a probabilidade de nascer um filho homozigoto recessivo?”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Genótipo e fenótipo",
+              "meaning": "genótipo é o par de alelos que a pessoa tem; fenótipo é o que aparece, como a cor."
+            },
+            {
+              "word": "Dominante e recessivo",
+              "meaning": "dominante é a versão que aparece mesmo com uma cópia só. Recessivo é a versão que só aparece com duas cópias iguais."
+            }
+          ],
+          "bullets": [
+            "Confundir genótipo (as letras) com fenótipo (o que aparece).",
+            "Achar que a proporção 3 para 1 é garantia. É uma chance por filho.",
+            "Achar que dominante quer dizer mais comum. Quer dizer só que aparece com uma cópia.",
+            "Esquecer que quem tem o fenótipo recessivo é sempre aa."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Cada característica tem dois alelos, um de cada pai. O dominante aparece com uma cópia; o recessivo só com duas.",
+            "Aa com Aa dá 1 AA, 2 Aa e 1 aa: três para um no que aparece. Cada filho é um sorteio novo."
+          ],
+          "terms": [
+            {
+              "word": "Alelo",
+              "meaning": "cada versão de um mesmo gene. Um gene da cor da ervilha tem a versão amarela e a versão verde."
+            },
+            {
+              "word": "Dominante e recessivo",
+              "meaning": "dominante é a versão que aparece mesmo com uma cópia só. Recessivo é a versão que só aparece com duas cópias iguais."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Alelo",
+          "statement": "Alelos são:",
+          "options": [
+            "versões diferentes de um mesmo gene",
+            "genes de características diferentes",
+            "cromossomos inteiros",
+            "células de reprodução",
+            "proteínas do sangue"
+          ],
+          "correct_index": 0,
+          "explanation": "Amarelo e verde são duas versões do gene da cor da ervilha.",
+          "pitfall": "Genes de características diferentes não são alelos entre si."
+        },
+        {
+          "topic": "Heterozigoto",
+          "statement": "Qual destes é heterozigoto?",
+          "options": [
+            "Aa",
+            "AA",
+            "aa",
+            "A",
+            "a"
+          ],
+          "correct_index": 0,
+          "explanation": "Heterozigoto tem um alelo de cada tipo.",
+          "pitfall": "AA e aa são homozigotos: as duas letras iguais."
+        },
+        {
+          "topic": "Fenótipo",
+          "statement": "Uma ervilha Aa, com A amarelo dominante, tem cor:",
+          "options": [
+            "amarela",
+            "verde",
+            "metade amarela e metade verde",
+            "verde-clara",
+            "sem cor"
+          ],
+          "correct_index": 0,
+          "explanation": "O dominante aparece com uma cópia só.",
+          "pitfall": "Na herança de Mendel não há mistura: Aa é amarela."
+        },
+        {
+          "topic": "Recessivo",
+          "statement": "Uma ervilha verde (recessiva) tem genótipo:",
+          "options": [
+            "aa",
+            "AA",
+            "Aa",
+            "AA ou Aa",
+            "não dá para saber"
+          ],
+          "correct_index": 0,
+          "explanation": "O recessivo só aparece quando as duas cópias são recessivas.",
+          "pitfall": "AA ou Aa vale para a amarela, não para a verde."
+        },
+        {
+          "topic": "Cruzamento",
+          "statement": "Cruzando Aa com Aa, qual a proporção de cores esperada?",
+          "options": [
+            "3 amarelas para 1 verde",
+            "1 amarela para 1 verde",
+            "todas amarelas",
+            "todas verdes",
+            "1 amarela para 3 verdes"
+          ],
+          "correct_index": 0,
+          "explanation": "O quadro dá AA, Aa, Aa e aa. Só o aa é verde.",
+          "pitfall": "A última alternativa inverte a proporção."
+        },
+        {
+          "topic": "Chance",
+          "statement": "Do cruzamento Aa × Aa, qual a chance de nascer um aa?",
+          "options": [
+            "25%",
+            "50%",
+            "75%",
+            "100%",
+            "0%"
+          ],
+          "correct_index": 0,
+          "explanation": "Uma casa em quatro: 25%.",
+          "pitfall": "75% é a chance de ser amarela, não de ser aa."
+        },
+        {
+          "topic": "Genótipo",
+          "statement": "A palavra genótipo quer dizer:",
+          "options": [
+            "o par de alelos que o ser vivo tem",
+            "a característica que aparece",
+            "o número de cromossomos",
+            "o lugar onde o gene fica",
+            "a divisão da célula"
+          ],
+          "correct_index": 0,
+          "explanation": "Genótipo são as letras: AA, Aa ou aa.",
+          "pitfall": "O que aparece é o fenótipo."
+        },
+        {
+          "topic": "Termos",
+          "format": "match",
+          "statement": "Ligue cada termo ao exemplo certo.",
+          "pairs": [
+            {
+              "left": "homozigoto dominante",
+              "right": "AA"
+            },
+            {
+              "left": "heterozigoto",
+              "right": "Aa"
+            },
+            {
+              "left": "homozigoto recessivo",
+              "right": "aa"
+            },
+            {
+              "left": "fenótipo",
+              "right": "ervilha amarela"
+            }
+          ],
+          "explanation": "Os três pares de letras são genótipos. A cor que se vê é o fenótipo.",
+          "pitfall": "A ervilha amarela pode ser AA ou Aa: a cor sozinha não diz o par."
+        },
+        {
+          "topic": "De quem",
+          "statement": "Dos dois alelos de um gene, de onde vem cada um?",
+          "options": [
+            "um da mãe e outro do pai",
+            "os dois da mãe",
+            "os dois do pai",
+            "nenhum dos pais",
+            "do ambiente"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada célula de reprodução leva um alelo do par.",
+          "pitfall": "A mãe passa só um alelo, não os dois.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Dominante",
+          "statement": "Um alelo dominante:",
+          "options": [
+            "aparece mesmo com uma cópia só",
+            "só aparece com duas cópias",
+            "é sempre o mais comum na população",
+            "nunca passa para os filhos",
+            "é sempre causa de doença"
+          ],
+          "correct_index": 0,
+          "explanation": "Dominante é o que aparece com uma cópia.",
+          "pitfall": "Dominante não quer dizer mais comum: é o engano mais frequente.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Testar",
+          "statement": "Cruzando AA com aa, como serão os filhos?",
+          "options": [
+            "todos Aa, de fenótipo dominante",
+            "todos aa",
+            "metade AA e metade aa",
+            "3 dominantes para 1 recessivo",
+            "todos AA"
+          ],
+          "correct_index": 0,
+          "explanation": "Um pai só dá A, o outro só dá a. Todos os filhos são Aa.",
+          "pitfall": "Três para um vem de Aa com Aa, não deste cruzamento.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Metade",
+          "statement": "Cruzando Aa com aa, qual a proporção esperada?",
+          "options": [
+            "metade Aa e metade aa",
+            "todos Aa",
+            "3 Aa para 1 aa",
+            "todos aa",
+            "1 AA para 1 aa"
+          ],
+          "correct_index": 0,
+          "explanation": "O quadro dá Aa, Aa, aa e aa: metade de cada.",
+          "pitfall": "AA não pode sair: o pai aa só tem a para dar.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Albino",
+          "statement": "Um casal de pele normal teve um filho albino. O albinismo é recessivo. O que se sabe dos pais?",
+          "options": [
+            "os dois são Aa",
+            "os dois são AA",
+            "um é AA e o outro aa",
+            "os dois são aa",
+            "só a mãe tem o alelo a"
+          ],
+          "correct_index": 0,
+          "explanation": "O filho é aa e recebeu um a de cada pai. Como os pais não são albinos, cada um é Aa.",
+          "pitfall": "Se só um dos pais tivesse o a, o filho não poderia ser aa.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Quatro filhos",
+          "statement": "Um casal Aa × Aa teve três filhos de fenótipo dominante. Qual a chance de o quarto ser aa?",
+          "options": [
+            "25%",
+            "100%",
+            "0%",
+            "75%",
+            "50%"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada filho é um sorteio novo. A chance continua 1 em 4.",
+          "pitfall": "Achar que “agora tem que vir o aa” é o erro de quem trata a proporção como garantia.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "evolucao",
+      "title": "Evolução: como as espécies mudam",
+      "module": "Hereditariedade",
+      "summary": "Os seres vivos de uma espécie são diferentes entre si. Os que sobrevivem melhor deixam mais filhos, e ao longo de muitas gerações a espécie muda.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O antibiótico pela metade",
+          "body": [
+            "O médico diz para tomar o antibiótico até o fim, mesmo depois de melhorar. Por quê?",
+            "Nas primeiras doses morrem as bactérias mais fracas. As que aguentam um pouco mais sobram, e se você para, são elas que se multiplicam.",
+            "Isso é a evolução acontecendo em poucos dias."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Ninguém é igual",
+          "body": [
+            "Numa população, cada ser é um pouco diferente. Alguns são mais rápidos, outros mais escuros, outros mais resistentes.",
+            "Essas diferenças vêm do DNA. Parte delas surgiu por mutação, e a reprodução as mistura a cada geração."
+          ],
+          "terms": [
+            {
+              "word": "População",
+              "meaning": "o grupo de seres da mesma espécie que vive num mesmo lugar."
+            },
+            {
+              "word": "DNA",
+              "meaning": "a molécula que guarda as instruções de um ser vivo, passada de pais para filhos."
+            },
+            {
+              "word": "Mutação",
+              "meaning": "uma mudança no DNA. É a fonte de características novas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quem sobrevive deixa mais filhos",
+          "body": [
+            "O ambiente tem pouca comida, predadores e doenças. Nem todos sobrevivem até ter filhos.",
+            "Quem tem uma característica que ajuda vive mais e tem mais filhos. Os filhos herdam essa característica.",
+            "Geração após geração, ela fica mais comum. É a seleção natural, descrita por Charles Darwin e Alfred Wallace no século XIX."
+          ],
+          "terms": [
+            {
+              "word": "Seleção natural",
+              "meaning": "o processo em que quem tem características que ajudam a sobreviver deixa mais filhos, e essas características ficam mais comuns."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A seleção natural, passo a passo",
+          "body": [
+            "O exemplo segue o caminho das bactérias e do antibiótico."
+          ],
+          "example": {
+            "label": "Como uma bactéria fica resistente",
+            "lines": [
+              "As bactérias da população são um pouco diferentes entre si.",
+              "O antibiótico mata as mais fracas.",
+              "As mais resistentes sobrevivem.",
+              "Elas se multiplicam e passam a resistência adiante.",
+              "Depois de muitas gerações, quase todas são resistentes."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O erro de Lamarck",
+          "body": [
+            "Antes de Darwin, Jean-Baptiste Lamarck achava que o uso muda o corpo e que a mudança passa aos filhos. A girafa esticaria o pescoço, e o filho nasceria com pescoço maior.",
+            "Hoje sabemos que não é assim. Quem malha não tem filho musculoso. O que passa aos filhos é o DNA."
+          ],
+          "terms": [
+            {
+              "word": "DNA",
+              "meaning": "a molécula que guarda as instruções de um ser vivo, passada de pais para filhos."
+            }
+          ],
+          "table": {
+            "label": "Lamarck e Darwin",
+            "headers": [
+              "",
+              "Lamarck",
+              "Darwin"
+            ],
+            "rows": [
+              [
+                "de onde vem a diferença",
+                "do esforço e do uso",
+                "já existe na população"
+              ],
+              [
+                "o que passa aos filhos",
+                "o que o corpo ganhou na vida",
+                "o que está no DNA"
+              ],
+              [
+                "está certo hoje?",
+                "não",
+                "sim, com a genética somada"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Como nasce uma espécie nova",
+          "body": [
+            "Imagine uma população dividida por um rio que se formou. Os dois lados vivem em ambientes diferentes e não se encontram mais.",
+            "Depois de muitas gerações, ficam tão diferentes que não conseguem mais ter filhos juntos. Viraram duas espécies."
+          ],
+          "terms": [
+            {
+              "word": "Espécie",
+              "meaning": "o grupo de seres que se reproduzem entre si e têm filhos que também se reproduzem."
+            },
+            {
+              "word": "População",
+              "meaning": "o grupo de seres da mesma espécie que vive num mesmo lugar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As provas da evolução",
+          "body": [
+            "Os fósseis mostram seres que mudaram ao longo de milhões de anos. O DNA mostra quem é parente de quem.",
+            "O braço humano, a asa do morcego e a nadadeira da baleia têm os mesmos ossos. É sinal de um ancestral comum."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova descreve um caso e pede a explicação de Darwin. Ou mostra uma frase de Lamarck disfarçada."
+          ],
+          "bullets": [
+            "“A resistência de bactérias a antibióticos é explicada por…”",
+            "“Segundo a teoria de Darwin, as girafas têm pescoço longo porque…”",
+            "“O isolamento geográfico pode levar à formação de…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Seleção natural",
+              "meaning": "o processo em que quem tem características que ajudam a sobreviver deixa mais filhos, e essas características ficam mais comuns."
+            }
+          ],
+          "bullets": [
+            "Achar que o antibiótico cria a resistência. Ele só escolhe quem já resistia.",
+            "Dizer que o ser vivo muda porque precisa. A diferença já existia antes.",
+            "Achar que o ser humano veio do macaco atual. Os dois têm um ancestral comum.",
+            "Trocar Darwin por Lamarck: o uso do corpo não passa aos filhos."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Numa população, cada ser é diferente, e a diferença vem do DNA. Quem sobrevive melhor deixa mais filhos.",
+            "Isso é a seleção natural. Ao longo de muitas gerações, a espécie muda, e populações separadas podem virar espécies novas."
+          ],
+          "terms": [
+            {
+              "word": "População",
+              "meaning": "o grupo de seres da mesma espécie que vive num mesmo lugar."
+            },
+            {
+              "word": "DNA",
+              "meaning": "a molécula que guarda as instruções de um ser vivo, passada de pais para filhos."
+            },
+            {
+              "word": "Seleção natural",
+              "meaning": "o processo em que quem tem características que ajudam a sobreviver deixa mais filhos, e essas características ficam mais comuns."
+            },
+            {
+              "word": "Espécie",
+              "meaning": "o grupo de seres que se reproduzem entre si e têm filhos que também se reproduzem."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Darwin",
+          "statement": "Segundo Darwin, as girafas têm pescoço longo porque:",
+          "options": [
+            "as de pescoço maior comiam mais, sobreviviam e deixavam mais filhos",
+            "esticavam o pescoço, e os filhos herdavam o esforço",
+            "precisavam alcançar as folhas, então o pescoço cresceu",
+            "o ambiente mandou o pescoço crescer",
+            "o pescoço cresce com a idade"
+          ],
+          "correct_index": 0,
+          "explanation": "As diferenças já existiam. As de pescoço maior foram selecionadas.",
+          "pitfall": "Esticar e passar aos filhos é a ideia de Lamarck."
+        },
+        {
+          "topic": "Antibiótico",
+          "statement": "Por que surgem bactérias resistentes ao antibiótico?",
+          "options": [
+            "o remédio mata as sensíveis e sobram as que já resistiam",
+            "o remédio ensina as bactérias a resistir",
+            "o remédio cria a mutação de resistência",
+            "as bactérias se acostumam com o remédio",
+            "o corpo humano produz bactérias novas"
+          ],
+          "correct_index": 0,
+          "explanation": "A resistência já existia em algumas. O antibiótico só escolhe quem sobra.",
+          "pitfall": "“Criar” e “ensinar” são as palavras do engano: o remédio seleciona, não cria."
+        },
+        {
+          "topic": "Fonte",
+          "statement": "Qual é a fonte das características novas numa população?",
+          "options": [
+            "a mutação no DNA",
+            "o esforço do ser vivo",
+            "a vontade de mudar",
+            "o uso dos órgãos",
+            "a idade dos pais"
+          ],
+          "correct_index": 0,
+          "explanation": "Mudanças no DNA criam versões novas, e a reprodução as mistura.",
+          "pitfall": "Esforço e uso são ideias de Lamarck."
+        },
+        {
+          "topic": "Lamarck",
+          "statement": "Qual frase é de Lamarck, e não de Darwin?",
+          "options": [
+            "O uso de um órgão o desenvolve, e isso passa aos filhos.",
+            "Quem sobrevive melhor deixa mais filhos.",
+            "As diferenças já existem antes do ambiente mudar.",
+            "Os mais adaptados se reproduzem mais.",
+            "A seleção natural muda as espécies."
+          ],
+          "correct_index": 0,
+          "explanation": "Uso e herança do que se ganhou na vida são a marca de Lamarck.",
+          "pitfall": "As outras quatro são todas ideias de Darwin."
+        },
+        {
+          "topic": "Espécie nova",
+          "statement": "Uma população dividida por uma montanha, depois de muito tempo, pode:",
+          "options": [
+            "virar duas espécies diferentes",
+            "morrer toda de uma vez",
+            "voltar a ser uma espécie só",
+            "parar de mudar",
+            "virar outro reino"
+          ],
+          "correct_index": 0,
+          "explanation": "Separadas e em ambientes diferentes, as duas metades mudam cada uma do seu jeito.",
+          "pitfall": "Separadas, elas não voltam a se misturar."
+        },
+        {
+          "topic": "Ancestral",
+          "statement": "Sobre o ser humano e os macacos, qual frase está certa?",
+          "options": [
+            "os dois têm um ancestral comum",
+            "o ser humano veio do chimpanzé atual",
+            "o chimpanzé veio do ser humano",
+            "não há parentesco nenhum",
+            "o ser humano não evoluiu"
+          ],
+          "correct_index": 0,
+          "explanation": "Humanos e chimpanzés são primos que se separaram há milhões de anos.",
+          "pitfall": "Ninguém veio do chimpanzé de hoje: os dois vieram de um ancestral."
+        },
+        {
+          "topic": "Provas",
+          "statement": "Qual destes é uma prova da evolução?",
+          "options": [
+            "os fósseis de seres que mudaram com o tempo",
+            "a cor do céu",
+            "a força da gravidade",
+            "o número de dias do ano",
+            "o tamanho da Lua"
+          ],
+          "correct_index": 0,
+          "explanation": "Os fósseis registram as mudanças ao longo de milhões de anos.",
+          "pitfall": "As outras não falam de seres vivos."
+        },
+        {
+          "topic": "Seleção",
+          "format": "order",
+          "statement": "Ponha em ordem como a seleção natural deixa uma população resistente.",
+          "options": [
+            "A população tem seres um pouco diferentes.",
+            "O ambiente elimina os menos resistentes.",
+            "Os resistentes se reproduzem mais.",
+            "A resistência fica comum na população."
+          ],
+          "explanation": "Diferença, ambiente, reprodução e mudança da população.",
+          "pitfall": "A diferença vem antes do ambiente mudar, nunca depois."
+        },
+        {
+          "topic": "População",
+          "statement": "Numa população de uma espécie, os seres:",
+          "options": [
+            "são um pouco diferentes entre si",
+            "são todos idênticos",
+            "são de espécies diferentes",
+            "não se reproduzem",
+            "não têm DNA"
+          ],
+          "correct_index": 0,
+          "explanation": "A variedade é o ponto de partida da seleção natural.",
+          "pitfall": "Sem diferença, não haveria o que selecionar.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Herança",
+          "statement": "Uma pessoa malha e fica musculosa. O filho dela:",
+          "options": [
+            "não nasce musculoso por causa disso",
+            "nasce musculoso",
+            "nasce com mais músculos que o normal",
+            "nasce com mutação de músculo",
+            "herda metade dos músculos"
+          ],
+          "correct_index": 0,
+          "explanation": "O que passa aos filhos é o DNA, e malhar não muda o DNA.",
+          "pitfall": "Achar que o filho herda é a ideia de Lamarck.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Inseticida",
+          "statement": "Um inseticida funcionou bem por anos e hoje quase não mata os insetos. A explicação é:",
+          "options": [
+            "os insetos resistentes sobreviveram e se multiplicaram",
+            "o inseticida perdeu a força",
+            "os insetos aprenderam a fugir",
+            "o inseticida criou insetos novos",
+            "os insetos ficaram maiores"
+          ],
+          "correct_index": 0,
+          "explanation": "É o mesmo caso do antibiótico: o veneno selecionou os que resistiam.",
+          "pitfall": "“Criar” insetos novos é o erro de achar que o veneno causa a mudança.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Ossos",
+          "statement": "O braço humano e a asa do morcego têm os mesmos ossos. Isso indica que:",
+          "options": [
+            "os dois vieram de um ancestral comum",
+            "o morcego veio do ser humano",
+            "os dois servem para voar",
+            "é uma coincidência",
+            "o ser humano veio do morcego"
+          ],
+          "correct_index": 0,
+          "explanation": "Os mesmos ossos com usos diferentes são herança de um parente antigo.",
+          "pitfall": "Não é que um veio do outro: os dois vieram de um terceiro.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Precisa",
+          "statement": "“As bactérias ficaram resistentes porque precisavam sobreviver.” O erro desta frase é:",
+          "options": [
+            "dizer que a mudança vem da necessidade",
+            "falar de bactérias",
+            "falar de resistência",
+            "usar a palavra sobreviver",
+            "nenhum, a frase está certa"
+          ],
+          "correct_index": 0,
+          "explanation": "A resistência já existia antes. A necessidade não cria nada; o ambiente só escolhe.",
+          "pitfall": "A frase parece Darwin, mas a palavra “precisavam” a torna Lamarck.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Antes",
+          "statement": "O que aconteceria se nenhuma bactéria de uma população tivesse resistência ao antibiótico?",
+          "options": [
+            "o antibiótico mataria todas, e não surgiria uma população resistente",
+            "elas ficariam resistentes do mesmo jeito",
+            "o remédio criaria a resistência",
+            "a resistência surgiria em todas ao mesmo tempo",
+            "elas se acostumariam com o remédio"
+          ],
+          "correct_index": 0,
+          "explanation": "Seleção só escolhe o que já existe. Sem nenhuma resistente, não há quem sobre.",
+          "pitfall": "Achar que surgiria do mesmo jeito é acreditar que o remédio cria a resistência.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "cadeias-alimentares",
+      "title": "Cadeias alimentares: quem come quem",
+      "module": "Ecologia",
+      "summary": "A energia entra pelas plantas, que usam a luz do Sol, e passa de um ser para outro quando um come o outro. A cada passo, boa parte dela se perde.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "De onde vem a energia do seu almoço",
+          "body": [
+            "Você comeu frango no almoço. O frango comeu milho. E o milho, comeu o quê?",
+            "O milho não come. Ele fabrica o próprio alimento com a luz do Sol.",
+            "Toda a energia que você usa começou como luz, e foi passando de um ser para outro."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os produtores",
+          "body": [
+            "As plantas e as algas fazem fotossíntese: usam a luz, a água e o gás carbônico para fabricar açúcar.",
+            "Por isso elas são os produtores. Toda cadeia alimentar começa por um deles."
+          ],
+          "terms": [
+            {
+              "word": "Fotossíntese",
+              "meaning": "a fabricação de açúcar pela planta, usando luz, água e gás carbônico."
+            },
+            {
+              "word": "Produtor",
+              "meaning": "o ser que fabrica o próprio alimento com a luz, como as plantas e as algas."
+            },
+            {
+              "word": "Cadeia alimentar",
+              "meaning": "a fila de quem come quem, sempre começando por um ser que faz o próprio alimento."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os consumidores",
+          "body": [
+            "Quem não fabrica alimento precisa comer outro ser vivo. São os consumidores.",
+            "Quem come planta é consumidor primário, como o gafanhoto. Quem come o primário é secundário, como o sapo. E assim por diante."
+          ],
+          "example": {
+            "label": "Uma cadeia alimentar",
+            "lines": [
+              "capim: produtor",
+              "gafanhoto: consumidor primário",
+              "sapo: consumidor secundário",
+              "cobra: consumidor terciário",
+              "gavião: consumidor quaternário"
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "Consumidor",
+              "meaning": "o ser que come outros seres vivos, porque não fabrica o próprio alimento."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Cada degrau é um nível",
+          "body": [
+            "Cada posição na cadeia é um nível trófico. O produtor está no primeiro, o consumidor primário no segundo.",
+            "O mesmo animal pode estar em níveis diferentes. O ser humano que come alface é primário; quando come carne de boi, é secundário."
+          ],
+          "terms": [
+            {
+              "word": "Nível trófico",
+              "meaning": "a posição de um ser vivo na cadeia alimentar: quem come quem."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os decompositores fecham o ciclo",
+          "body": [
+            "Folha que cai, animal que morre, fezes: alguém precisa dar fim nisso. Fungos e bactérias se alimentam desses restos.",
+            "Ao fazer isso, devolvem ao solo o que os restos tinham. A planta usa esses nutrientes de novo."
+          ],
+          "terms": [
+            {
+              "word": "Decompositor",
+              "meaning": "o ser vivo que se alimenta de restos e devolve ao solo o que eles tinham, como fungos e bactérias."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A energia diminui a cada passo",
+          "body": [
+            "O gafanhoto usa quase toda a energia do capim para viver: andar, se aquecer e respirar. Só uma pequena parte vira corpo dele.",
+            "Só essa parte passa para o sapo. Em média, cerca de 10% passa de um nível ao seguinte.",
+            "Por isso as cadeias são curtas, e há muito mais capim do que gaviões."
+          ],
+          "terms": [
+            {
+              "word": "Nível trófico",
+              "meaning": "a posição de um ser vivo na cadeia alimentar: quem come quem."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/biologia/piramide-de-energia.svg",
+            "alt": "Pirâmide de quatro andares. Na base, larga, o capim com 10 mil unidades de energia. Acima, o gafanhoto com mil, o sapo com cem e, no topo estreito, a cobra com dez.",
+            "caption": "A cada andar, só cerca de um décimo da energia passa para cima."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Cadeias se cruzam e viram teia",
+          "body": [
+            "Na natureza, o sapo come gafanhotos e moscas. A cobra come sapos e ratos. As cadeias se cruzam.",
+            "O conjunto de todas elas é a teia alimentar. Se uma espécie some, a teia inteira sente."
+          ],
+          "terms": [
+            {
+              "word": "Ecossistema",
+              "meaning": "um lugar com todos os seres vivos que moram nele e com o que não é vivo, como a água, o solo e a luz."
+            }
+          ],
+          "table": {
+            "label": "Cadeia e teia",
+            "headers": [
+              "",
+              "Cadeia alimentar",
+              "Teia alimentar"
+            ],
+            "rows": [
+              [
+                "o que mostra",
+                "uma fila só",
+                "todas as filas cruzadas"
+              ],
+              [
+                "cada ser come",
+                "um tipo de alimento",
+                "vários tipos"
+              ],
+              [
+                "é mais real?",
+                "não, é um recorte",
+                "sim"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mostra uma cadeia e pede o nível de um ser. Ou pergunta o que acontece se uma espécie sumir."
+          ],
+          "bullets": [
+            "“Na cadeia capim → gafanhoto → sapo → cobra, o sapo é…”",
+            "“Por que as cadeias alimentares raramente têm mais de cinco níveis?”",
+            "“Qual o papel dos fungos e bactérias no ecossistema?”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Nível trófico",
+              "meaning": "a posição de um ser vivo na cadeia alimentar: quem come quem."
+            },
+            {
+              "word": "Decompositor",
+              "meaning": "o ser vivo que se alimenta de restos e devolve ao solo o que eles tinham, como fungos e bactérias."
+            }
+          ],
+          "bullets": [
+            "Contar o nível errado: o consumidor primário está no segundo nível trófico.",
+            "Achar que a energia volta para a planta. A energia se perde; o que volta são os nutrientes.",
+            "Esquecer os decompositores, que atuam em todos os níveis.",
+            "Achar que a seta aponta para quem come. Ela aponta para onde a energia vai."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A cadeia começa no produtor, que faz fotossíntese. Os consumidores vêm depois, e os decompositores reciclam os restos.",
+            "A energia passa de nível em nível e diminui a cada passo: cerca de 10% segue. As cadeias se cruzam numa teia."
+          ],
+          "terms": [
+            {
+              "word": "Produtor",
+              "meaning": "o ser que fabrica o próprio alimento com a luz, como as plantas e as algas."
+            },
+            {
+              "word": "Fotossíntese",
+              "meaning": "a fabricação de açúcar pela planta, usando luz, água e gás carbônico."
+            },
+            {
+              "word": "Consumidor",
+              "meaning": "o ser que come outros seres vivos, porque não fabrica o próprio alimento."
+            },
+            {
+              "word": "Decompositor",
+              "meaning": "o ser vivo que se alimenta de restos e devolve ao solo o que eles tinham, como fungos e bactérias."
+            },
+            {
+              "word": "Nível trófico",
+              "meaning": "a posição de um ser vivo na cadeia alimentar: quem come quem."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Produtor",
+          "statement": "Toda cadeia alimentar começa por:",
+          "options": [
+            "um produtor, como uma planta",
+            "um consumidor primário",
+            "um decompositor",
+            "um predador de topo",
+            "um animal herbívoro"
+          ],
+          "correct_index": 0,
+          "explanation": "Só o produtor fabrica alimento com a luz. Sem ele, ninguém tem o que comer.",
+          "pitfall": "O herbívoro come a planta: ele vem depois dela."
+        },
+        {
+          "topic": "Sapo",
+          "statement": "Na cadeia capim → gafanhoto → sapo → cobra, o sapo é:",
+          "options": [
+            "consumidor secundário",
+            "consumidor primário",
+            "produtor",
+            "decompositor",
+            "consumidor terciário"
+          ],
+          "correct_index": 0,
+          "explanation": "O sapo come o gafanhoto, que é o primário. Então o sapo é secundário.",
+          "pitfall": "Primário é quem come a planta: o gafanhoto."
+        },
+        {
+          "topic": "Fungos",
+          "statement": "Qual o papel dos fungos e bactérias decompositores?",
+          "options": [
+            "devolver ao solo os nutrientes dos restos",
+            "fabricar alimento com a luz",
+            "caçar animais menores",
+            "produzir oxigênio para os animais",
+            "levar energia de volta ao Sol"
+          ],
+          "correct_index": 0,
+          "explanation": "Eles comem os restos e devolvem os nutrientes ao solo.",
+          "pitfall": "Quem fabrica alimento com luz é o produtor."
+        },
+        {
+          "topic": "Energia",
+          "statement": "Por que as cadeias alimentares são curtas?",
+          "options": [
+            "a energia diminui muito a cada nível",
+            "os animais não gostam de comer outros",
+            "as plantas param de crescer",
+            "os decompositores comem tudo",
+            "a energia aumenta a cada nível"
+          ],
+          "correct_index": 0,
+          "explanation": "Só cerca de 10% passa adiante. Depois de quatro ou cinco níveis, quase não sobra energia.",
+          "pitfall": "A última alternativa inverte: a energia cai, não sobe."
+        },
+        {
+          "topic": "Nível",
+          "statement": "O consumidor primário está em qual nível trófico?",
+          "options": [
+            "segundo",
+            "primeiro",
+            "terceiro",
+            "quarto",
+            "último"
+          ],
+          "correct_index": 0,
+          "explanation": "O primeiro nível é do produtor. O primário vem logo depois.",
+          "pitfall": "Contar o primário como primeiro nível é o erro mais comum."
+        },
+        {
+          "topic": "Humano",
+          "statement": "Uma pessoa que come carne de boi é, nessa cadeia, consumidor:",
+          "options": [
+            "secundário",
+            "primário",
+            "terciário",
+            "produtor",
+            "decompositor"
+          ],
+          "correct_index": 0,
+          "explanation": "O boi come capim e é primário. Quem come o boi é secundário.",
+          "pitfall": "Quando a pessoa come alface, aí sim é primária."
+        },
+        {
+          "topic": "Teia",
+          "statement": "A teia alimentar é:",
+          "options": [
+            "o conjunto das cadeias que se cruzam num lugar",
+            "uma cadeia com um ser só",
+            "a lista dos produtores",
+            "o caminho da água na natureza",
+            "o nome da cadeia dos insetos"
+          ],
+          "correct_index": 0,
+          "explanation": "Na natureza cada ser come vários tipos de alimento, e as cadeias se cruzam.",
+          "pitfall": "Uma cadeia é só uma fila; a teia junta todas."
+        },
+        {
+          "topic": "Cadeia",
+          "format": "order",
+          "statement": "Ponha a cadeia em ordem, do produtor ao último consumidor.",
+          "options": [
+            "capim",
+            "gafanhoto",
+            "sapo",
+            "cobra"
+          ],
+          "explanation": "Produtor, primário, secundário e terciário.",
+          "pitfall": "O capim vem primeiro porque é o único que faz o próprio alimento."
+        },
+        {
+          "topic": "Seta",
+          "statement": "Numa cadeia alimentar, a seta aponta:",
+          "options": [
+            "para quem recebe a energia, ou seja, quem come",
+            "para quem é comido",
+            "sempre para o Sol",
+            "para o decompositor",
+            "para o produtor"
+          ],
+          "correct_index": 0,
+          "explanation": "A seta segue a energia: do capim para o gafanhoto que o come.",
+          "pitfall": "Achar que a seta aponta para quem é comido inverte o sentido.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Sol",
+          "statement": "De onde vem, no começo, a energia de uma cadeia alimentar?",
+          "options": [
+            "da luz do Sol",
+            "do solo",
+            "da água",
+            "dos decompositores",
+            "do gás carbônico"
+          ],
+          "correct_index": 0,
+          "explanation": "O produtor capta a luz e a guarda no açúcar.",
+          "pitfall": "Água e gás carbônico são matéria-prima, não energia.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Dez por cento",
+          "statement": "O capim tem 10 mil unidades de energia. Quanto chega, mais ou menos, ao sapo da cadeia capim → gafanhoto → sapo?",
+          "options": [
+            "100",
+            "1.000",
+            "10.000",
+            "10",
+            "5.000"
+          ],
+          "correct_index": 0,
+          "explanation": "Ao gafanhoto chegam mil. Ao sapo, um décimo disso: cem.",
+          "pitfall": "Mil é o que chega ao gafanhoto, um passo antes.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Nutrientes",
+          "statement": "Qual frase está certa?",
+          "options": [
+            "Os nutrientes voltam ao solo; a energia não volta.",
+            "A energia volta ao solo; os nutrientes não.",
+            "Os dois voltam ao Sol.",
+            "Os dois se perdem para sempre.",
+            "A energia aumenta a cada nível."
+          ],
+          "correct_index": 0,
+          "explanation": "Os decompositores devolvem os nutrientes. A energia vira calor e se perde.",
+          "pitfall": "A segunda inverte: o que circula é a matéria, não a energia.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Sumiu",
+          "statement": "Numa região, os sapos foram quase todos mortos. O que tende a acontecer primeiro com os gafanhotos?",
+          "options": [
+            "aumentar, porque ninguém mais os come",
+            "diminuir, porque perderam a comida",
+            "não mudar nada",
+            "virar produtores",
+            "sumir também"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem o predador, a população de gafanhotos cresce. Depois o capim sofre.",
+          "pitfall": "Os gafanhotos comem capim, não sapos: a comida deles continua lá.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Dois níveis",
+          "statement": "Na teia, a cobra come sapos e ratos. O rato come grãos. Em qual nível a cobra está?",
+          "options": [
+            "no terceiro ou no quarto, conforme a presa",
+            "sempre no segundo",
+            "sempre no quinto",
+            "primeiro, porque é a maior",
+            "nenhum, porque é predador de topo"
+          ],
+          "correct_index": 0,
+          "explanation": "Comendo o rato, ela fica no terceiro nível. Comendo o sapo, que comeu gafanhoto, fica no quarto.",
+          "pitfall": "“Sempre” é o erro: na teia, o nível depende da presa.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "ciclos-e-biomas",
+      "title": "Os ciclos da natureza e os biomas do Brasil",
+      "module": "Ecologia",
+      "summary": "Água e carbono andam em círculos entre os seres vivos, o ar e o solo. O Brasil tem seis grandes regiões naturais, cada uma com clima e vida próprios.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A água do seu copo é antiga",
+          "body": [
+            "A água que você bebe hoje já foi nuvem, rio, mar e até chuva sobre dinossauros.",
+            "Na natureza, a água e outras substâncias não acabam. Elas mudam de lugar e voltam, num ciclo."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O ciclo da água",
+          "body": [
+            "O Sol aquece o mar, e a água vira vapor. No alto, o vapor esfria e forma nuvens, que caem como chuva.",
+            "As plantas também soltam vapor pelas folhas. A floresta amazônica solta tanto vapor que ajuda a chover no Sudeste."
+          ],
+          "example": {
+            "label": "O caminho da água",
+            "lines": [
+              "A água do mar e dos rios evapora com o calor.",
+              "O vapor sobe, esfria e forma nuvens.",
+              "A água cai como chuva.",
+              "Ela escorre para os rios e se infiltra no solo.",
+              "Volta ao mar, e o ciclo recomeça."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O ciclo do carbono",
+          "body": [
+            "O gás carbônico do ar entra na planta pela fotossíntese e vira açúcar. Quem come a planta recebe esse carbono.",
+            "Na respiração celular, plantas e animais devolvem o gás carbônico ao ar. Os decompositores fazem o mesmo com os restos."
+          ],
+          "terms": [
+            {
+              "word": "Fotossíntese",
+              "meaning": "a fabricação de açúcar pela planta com luz, água e gás carbônico, soltando oxigênio."
+            },
+            {
+              "word": "Respiração celular",
+              "meaning": "o processo em que as células usam oxigênio para tirar energia do açúcar, soltando gás carbônico."
+            },
+            {
+              "word": "Decompositor",
+              "meaning": "o ser vivo, como fungos e bactérias, que se alimenta de restos e devolve os nutrientes ao solo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quando o ciclo sai do equilíbrio",
+          "body": [
+            "Queimar carvão, petróleo e floresta solta no ar o carbono que estava guardado há muito tempo.",
+            "O gás carbônico a mais segura mais calor perto do chão. Esse aumento do efeito estufa esquenta o planeta."
+          ],
+          "terms": [
+            {
+              "word": "Efeito estufa",
+              "meaning": "o calor que alguns gases da atmosfera seguram perto do chão, como o vidro de um carro fechado ao sol."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que é um bioma",
+          "body": [
+            "Um ecossistema pode ser um lago ou um pedaço de mata. Um bioma é bem maior: uma região inteira com clima e vida parecidos.",
+            "O Brasil tem seis biomas. A tabela mostra cada um."
+          ],
+          "terms": [
+            {
+              "word": "Ecossistema",
+              "meaning": "um lugar com os seres vivos que moram nele e o que não é vivo ao redor."
+            },
+            {
+              "word": "Bioma",
+              "meaning": "uma grande região com clima e seres vivos parecidos, como a Amazônia ou o Cerrado."
+            }
+          ],
+          "table": {
+            "label": "Os biomas do Brasil",
+            "headers": [
+              "Bioma",
+              "Onde fica",
+              "Marca"
+            ],
+            "rows": [
+              [
+                "Amazônia",
+                "Norte",
+                "floresta densa, muita chuva"
+              ],
+              [
+                "Cerrado",
+                "Centro-Oeste",
+                "árvores tortas, fogo natural"
+              ],
+              [
+                "Caatinga",
+                "Nordeste",
+                "seca longa, plantas que guardam água"
+              ],
+              [
+                "Mata Atlântica",
+                "litoral",
+                "a mais desmatada"
+              ],
+              [
+                "Pantanal",
+                "Mato Grosso e Mato Grosso do Sul",
+                "planície que alaga"
+              ],
+              [
+                "Pampa",
+                "Rio Grande do Sul",
+                "campos baixos"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Plantas que combinam com o lugar",
+          "body": [
+            "Na Caatinga, muitas árvores perdem as folhas na seca para não perder água. O mandacaru guarda água no caule.",
+            "No Cerrado, as raízes vão fundo atrás da água, e a casca grossa protege do fogo.",
+            "Cada bioma tem seres que combinam com o clima dele. Quem não combinava deixou menos filhos, ao longo de milhares de anos."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova descreve um bioma e pede o nome. Também cobra o papel da fotossíntese e da respiração no ciclo do carbono."
+          ],
+          "bullets": [
+            "“Vegetação adaptada à seca, com plantas que perdem as folhas: que bioma é?”",
+            "“Qual processo retira gás carbônico da atmosfera?”",
+            "“Qual o bioma brasileiro mais devastado?”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Efeito estufa",
+              "meaning": "o calor que alguns gases da atmosfera seguram perto do chão, como o vidro de um carro fechado ao sol."
+            },
+            {
+              "word": "Respiração celular",
+              "meaning": "o processo em que as células usam oxigênio para tirar energia do açúcar, soltando gás carbônico."
+            },
+            {
+              "word": "Fotossíntese",
+              "meaning": "a fabricação de açúcar pela planta com luz, água e gás carbônico, soltando oxigênio."
+            }
+          ],
+          "bullets": [
+            "Achar que a planta não respira. Ela faz as duas coisas: fotossíntese e respiração.",
+            "Confundir efeito estufa com buraco na camada de ozônio. São problemas diferentes.",
+            "Achar que o efeito estufa é sempre ruim. Sem ele, a Terra seria gelada; o problema é o excesso.",
+            "Trocar Caatinga por Cerrado: a Caatinga é a da seca longa no Nordeste."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A água evapora, vira nuvem e cai como chuva. O carbono entra na planta pela fotossíntese e volta ao ar pela respiração.",
+            "Queimar petróleo e floresta solta carbono a mais e aquece o planeta. O Brasil tem seis biomas, cada um com vida própria."
+          ],
+          "terms": [
+            {
+              "word": "Fotossíntese",
+              "meaning": "a fabricação de açúcar pela planta com luz, água e gás carbônico, soltando oxigênio."
+            },
+            {
+              "word": "Respiração celular",
+              "meaning": "o processo em que as células usam oxigênio para tirar energia do açúcar, soltando gás carbônico."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Retira",
+          "statement": "Qual processo retira gás carbônico do ar?",
+          "options": [
+            "a fotossíntese",
+            "a respiração celular",
+            "a queima de petróleo",
+            "a decomposição",
+            "a evaporação"
+          ],
+          "correct_index": 0,
+          "explanation": "Na fotossíntese, a planta usa o gás carbônico para fabricar açúcar.",
+          "pitfall": "A respiração faz o contrário: devolve gás carbônico ao ar."
+        },
+        {
+          "topic": "Devolve",
+          "statement": "Qual processo devolve gás carbônico ao ar?",
+          "options": [
+            "a respiração celular",
+            "a fotossíntese",
+            "a chuva",
+            "a infiltração no solo",
+            "a formação de nuvens"
+          ],
+          "correct_index": 0,
+          "explanation": "As células quebram o açúcar com oxigênio e soltam gás carbônico.",
+          "pitfall": "A fotossíntese retira o gás, não devolve."
+        },
+        {
+          "topic": "Caatinga",
+          "statement": "Seca longa, plantas que perdem as folhas e cactos que guardam água. Que bioma é esse?",
+          "options": [
+            "Caatinga",
+            "Amazônia",
+            "Pampa",
+            "Pantanal",
+            "Mata Atlântica"
+          ],
+          "correct_index": 0,
+          "explanation": "A Caatinga, no Nordeste, tem a seca mais longa do Brasil.",
+          "pitfall": "O Cerrado também tem seca, mas é marcado pelas árvores tortas e pelo fogo."
+        },
+        {
+          "topic": "Pantanal",
+          "statement": "Qual bioma é uma planície que alaga em parte do ano?",
+          "options": [
+            "Pantanal",
+            "Caatinga",
+            "Cerrado",
+            "Pampa",
+            "Amazônia"
+          ],
+          "correct_index": 0,
+          "explanation": "No Pantanal, as cheias cobrem boa parte do chão todo ano.",
+          "pitfall": "A Amazônia tem rios enormes, mas é marcada pela floresta densa."
+        },
+        {
+          "topic": "Estufa",
+          "statement": "O aumento do efeito estufa é causado, principalmente, por:",
+          "options": [
+            "mais gás carbônico no ar, vindo de queimadas e combustíveis",
+            "o buraco na camada de ozônio",
+            "o excesso de chuva",
+            "a fotossíntese das florestas",
+            "a evaporação dos oceanos"
+          ],
+          "correct_index": 0,
+          "explanation": "Queimar carvão, petróleo e mata solta carbono guardado há muito tempo.",
+          "pitfall": "O buraco no ozônio é outro problema, ligado à luz do Sol que passa."
+        },
+        {
+          "topic": "Planta respira",
+          "statement": "Sobre a planta, qual frase está certa?",
+          "options": [
+            "faz fotossíntese e também respira",
+            "só faz fotossíntese",
+            "só respira",
+            "não faz nenhum dos dois",
+            "respira só de dia"
+          ],
+          "correct_index": 0,
+          "explanation": "A planta fabrica açúcar e também o queima para viver, dia e noite.",
+          "pitfall": "Achar que planta não respira é a pegadinha mais cobrada."
+        },
+        {
+          "topic": "Mata Atlântica",
+          "statement": "Qual é o bioma brasileiro mais desmatado?",
+          "options": [
+            "Mata Atlântica",
+            "Amazônia",
+            "Pampa",
+            "Pantanal",
+            "Caatinga"
+          ],
+          "correct_index": 0,
+          "explanation": "A Mata Atlântica fica no litoral, onde estão as maiores cidades. Sobrou pouco dela.",
+          "pitfall": "A Amazônia sofre muito desmatamento, mas ainda tem a maior parte em pé."
+        },
+        {
+          "topic": "Água",
+          "format": "order",
+          "statement": "Ponha em ordem o ciclo da água.",
+          "options": [
+            "A água evapora com o calor.",
+            "O vapor esfria e forma nuvens.",
+            "A água cai como chuva.",
+            "A água escorre para os rios e volta ao mar."
+          ],
+          "explanation": "Evaporar, condensar, chover e escorrer.",
+          "pitfall": "A nuvem só se forma depois que o vapor sobe e esfria."
+        },
+        {
+          "topic": "Bioma",
+          "statement": "Um bioma é:",
+          "options": [
+            "uma grande região com clima e vida parecidos",
+            "um lago pequeno",
+            "uma única espécie",
+            "o mesmo que cadeia alimentar",
+            "um tipo de solo"
+          ],
+          "correct_index": 0,
+          "explanation": "Bioma é uma região inteira, como o Cerrado.",
+          "pitfall": "Um lago é um ecossistema, bem menor que um bioma.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Ciclo",
+          "statement": "Por que se diz que a água da Terra faz um ciclo?",
+          "options": [
+            "ela muda de lugar e de forma, mas volta",
+            "ela é criada todo dia",
+            "ela some depois da chuva",
+            "ela vem do espaço",
+            "ela só existe no mar"
+          ],
+          "correct_index": 0,
+          "explanation": "A mesma água evapora, chove e volta ao mar, de novo e de novo.",
+          "pitfall": "A água não é criada nem some: ela circula.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Cerrado",
+          "statement": "Árvores de tronco torto, casca grossa e raízes fundas, num bioma com fogo natural. É o:",
+          "options": [
+            "Cerrado",
+            "Pampa",
+            "Pantanal",
+            "Mata Atlântica",
+            "Amazônia"
+          ],
+          "correct_index": 0,
+          "explanation": "A casca grossa protege do fogo, e as raízes buscam água funda.",
+          "pitfall": "A Caatinga é mais seca, com cactos e árvores que perdem as folhas.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Ozônio",
+          "statement": "Qual frase está certa?",
+          "options": [
+            "O efeito estufa aquece a Terra; a camada de ozônio filtra parte da luz do Sol.",
+            "O efeito estufa é o buraco no ozônio.",
+            "A camada de ozônio aquece a Terra.",
+            "O efeito estufa filtra a luz do Sol.",
+            "Os dois são a mesma coisa."
+          ],
+          "correct_index": 0,
+          "explanation": "São dois problemas diferentes: um segura calor; o outro deixa passar luz demais quando falha.",
+          "pitfall": "Juntar os dois num só é o erro clássico.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Sem estufa",
+          "statement": "O que aconteceria se não existisse efeito estufa nenhum?",
+          "options": [
+            "a Terra seria gelada demais para a vida como é hoje",
+            "a Terra seria mais quente",
+            "nada mudaria",
+            "choveria mais",
+            "as plantas cresceriam mais"
+          ],
+          "correct_index": 0,
+          "explanation": "Os gases seguram parte do calor. Sem eles, a temperatura média ficaria abaixo de zero.",
+          "pitfall": "O problema é o EXCESSO, não o efeito em si.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Floresta",
+          "statement": "Uma área de floresta é queimada para virar pasto. O que acontece com o carbono?",
+          "options": [
+            "o carbono guardado nas árvores vai para o ar como gás carbônico",
+            "o carbono fica guardado no capim para sempre",
+            "o carbono some",
+            "o carbono vira oxigênio",
+            "nada, porque árvore não tem carbono"
+          ],
+          "correct_index": 0,
+          "explanation": "A madeira é feita de carbono. Ao queimar, ele vira gás carbônico e aumenta o efeito estufa.",
+          "pitfall": "Carbono não some: ele muda de lugar.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "digestao-e-respiracao",
+      "title": "Digestão e respiração: combustível e oxigênio",
+      "module": "Corpo humano e saúde",
+      "summary": "A digestão quebra a comida em peças pequenas que o sangue consegue levar. A respiração traz o oxigênio que as células usam para queimar essas peças.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O pão que vira energia",
+          "body": [
+            "Você come um pão, e uma hora depois tem energia para correr. Mas o pão inteiro não entra na célula.",
+            "Antes ele precisa ser quebrado em pedaços minúsculos. E para virar energia, a célula precisa de oxigênio.",
+            "São dois trabalhos: digerir e respirar."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A quebra começa na boca",
+          "body": [
+            "Os dentes cortam e moem. A saliva já começa a quebrar o amido do pão, e por isso o pão mastigado fica doce.",
+            "Quem faz essa quebra são as enzimas. Cada uma quebra um tipo de alimento."
+          ],
+          "terms": [
+            {
+              "word": "Enzima",
+              "meaning": "uma proteína que acelera uma reação química, como quebrar a comida em pedaços menores."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O caminho da comida",
+          "body": [
+            "A comida desce pelo esôfago até o estômago. Lá, um suco ácido começa a quebrar as proteínas.",
+            "No intestino delgado a quebra termina, e o que sobra passa para o sangue. O intestino grosso tira a água do resto."
+          ],
+          "example": {
+            "label": "O caminho da comida",
+            "lines": [
+              "Boca: dentes moem e a saliva começa a quebrar o amido.",
+              "Esôfago: leva a comida ao estômago.",
+              "Estômago: o suco ácido quebra as proteínas.",
+              "Intestino delgado: a quebra termina e os nutrientes vão para o sangue.",
+              "Intestino grosso: a água é absorvida e o resto vira fezes."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Em que a comida se transforma",
+          "body": [
+            "Cada tipo de alimento termina numa peça pequena. A tabela mostra as três principais."
+          ],
+          "terms": [
+            {
+              "word": "Glicose",
+              "meaning": "o açúcar mais simples, que as células usam como combustível."
+            },
+            {
+              "word": "Aminoácido",
+              "meaning": "cada peça pequena que forma uma proteína."
+            }
+          ],
+          "table": {
+            "label": "O que sai da digestão",
+            "headers": [
+              "Alimento",
+              "Exemplo",
+              "Vira"
+            ],
+            "rows": [
+              [
+                "carboidrato",
+                "pão, arroz",
+                "glicose"
+              ],
+              [
+                "proteína",
+                "carne, feijão",
+                "aminoácidos"
+              ],
+              [
+                "gordura",
+                "óleo, manteiga",
+                "ácidos graxos e glicerol"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O ar até o pulmão",
+          "body": [
+            "O ar entra pelo nariz, desce pela traqueia e chega aos pulmões. Lá ele termina em milhões de saquinhos, os alvéolos.",
+            "Os alvéolos são cercados de vasos de sangue finíssimos. O oxigênio passa do ar para o sangue, e o gás carbônico passa do sangue para o ar."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Respirar de verdade é na célula",
+          "body": [
+            "O sangue leva a glicose e o oxigênio até cada célula. Lá, a mitocôndria queima a glicose com o oxigênio e libera energia.",
+            "Sobra gás carbônico, que o sangue leva de volta ao pulmão. Por isso você solta esse gás ao expirar."
+          ],
+          "terms": [
+            {
+              "word": "Respiração celular",
+              "meaning": "o processo em que a célula usa oxigênio para tirar energia da glicose, soltando gás carbônico."
+            },
+            {
+              "word": "Mitocôndria",
+              "meaning": "a parte da célula que tira energia da glicose usando oxigênio."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede o órgão de cada etapa da digestão. Também liga a respiração do pulmão à da célula."
+          ],
+          "bullets": [
+            "“Em que órgão ocorre a maior parte da absorção dos nutrientes?”",
+            "“As trocas gasosas acontecem em quais estruturas?”",
+            "“Qual a relação entre a respiração pulmonar e a celular?”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Respiração celular",
+              "meaning": "o processo em que a célula usa oxigênio para tirar energia da glicose, soltando gás carbônico."
+            }
+          ],
+          "bullets": [
+            "Achar que a absorção é no estômago. A maior parte é no intestino delgado.",
+            "Achar que a digestão começa no estômago. Ela começa na boca.",
+            "Achar que o pulmão usa o oxigênio. Quem usa é cada célula do corpo.",
+            "Trocar os papéis: o intestino grosso absorve água, não nutrientes."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A digestão começa na boca e termina no intestino delgado, que passa os nutrientes ao sangue. Enzimas fazem a quebra.",
+            "O pulmão troca oxigênio e gás carbônico nos alvéolos. Na célula, a mitocôndria queima a glicose com o oxigênio."
+          ],
+          "terms": [
+            {
+              "word": "Enzima",
+              "meaning": "uma proteína que acelera uma reação química, como quebrar a comida em pedaços menores."
+            },
+            {
+              "word": "Glicose",
+              "meaning": "o açúcar mais simples, que as células usam como combustível."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Absorção",
+          "statement": "Em que órgão a maior parte dos nutrientes passa para o sangue?",
+          "options": [
+            "intestino delgado",
+            "estômago",
+            "intestino grosso",
+            "esôfago",
+            "boca"
+          ],
+          "correct_index": 0,
+          "explanation": "No intestino delgado a quebra termina, e os nutrientes atravessam a parede para o sangue.",
+          "pitfall": "O intestino grosso absorve sobretudo água."
+        },
+        {
+          "topic": "Começo",
+          "statement": "Onde começa a digestão?",
+          "options": [
+            "na boca",
+            "no estômago",
+            "no intestino",
+            "no esôfago",
+            "no fígado"
+          ],
+          "correct_index": 0,
+          "explanation": "Os dentes moem e a saliva já começa a quebrar o amido.",
+          "pitfall": "O estômago é a segunda parada, não a primeira."
+        },
+        {
+          "topic": "Enzima",
+          "statement": "As enzimas da digestão servem para:",
+          "options": [
+            "quebrar os alimentos em peças menores",
+            "levar o oxigênio no sangue",
+            "guardar gordura",
+            "produzir fezes",
+            "mover os músculos do braço"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada enzima acelera a quebra de um tipo de alimento.",
+          "pitfall": "Levar oxigênio é trabalho do sangue."
+        },
+        {
+          "topic": "Carboidrato",
+          "statement": "O pão e o arroz, depois de digeridos, viram principalmente:",
+          "options": [
+            "glicose",
+            "aminoácidos",
+            "gordura",
+            "água",
+            "gás carbônico"
+          ],
+          "correct_index": 0,
+          "explanation": "Carboidratos terminam em glicose, o combustível da célula.",
+          "pitfall": "Aminoácidos vêm das proteínas, como a carne."
+        },
+        {
+          "topic": "Alvéolos",
+          "statement": "Onde acontece a troca de oxigênio e gás carbônico no pulmão?",
+          "options": [
+            "nos alvéolos",
+            "na traqueia",
+            "no nariz",
+            "no estômago",
+            "no coração"
+          ],
+          "correct_index": 0,
+          "explanation": "Os alvéolos são saquinhos cercados de vasos de sangue finíssimos.",
+          "pitfall": "A traqueia só leva o ar até lá."
+        },
+        {
+          "topic": "Quem usa",
+          "statement": "Quem usa o oxigênio que você respira?",
+          "options": [
+            "cada célula do corpo, nas mitocôndrias",
+            "só o pulmão",
+            "só o coração",
+            "só o sangue",
+            "só o cérebro"
+          ],
+          "correct_index": 0,
+          "explanation": "O pulmão só recebe o oxigênio. Quem o usa é cada célula, para queimar a glicose.",
+          "pitfall": "Achar que o pulmão usa o oxigênio é confundir a entrada com o uso."
+        },
+        {
+          "topic": "Expirar",
+          "statement": "Por que soltamos gás carbônico ao expirar?",
+          "options": [
+            "as células o produzem ao queimar a glicose",
+            "o pulmão fabrica gás carbônico",
+            "o ar já entra com ele e sai igual",
+            "o estômago o produz",
+            "ele vem da fotossíntese"
+          ],
+          "correct_index": 0,
+          "explanation": "A respiração celular solta gás carbônico, e o sangue o leva ao pulmão.",
+          "pitfall": "O pulmão só troca os gases; quem produz é a célula."
+        },
+        {
+          "topic": "Digestão",
+          "format": "order",
+          "statement": "Ponha em ordem o caminho da comida.",
+          "options": [
+            "boca",
+            "esôfago",
+            "estômago",
+            "intestino delgado",
+            "intestino grosso"
+          ],
+          "explanation": "Da boca ao estômago, e depois o delgado antes do grosso.",
+          "pitfall": "O delgado vem antes do grosso, apesar do nome."
+        },
+        {
+          "topic": "Esôfago",
+          "statement": "Para que serve o esôfago?",
+          "options": [
+            "levar a comida da boca ao estômago",
+            "quebrar as proteínas",
+            "absorver a água",
+            "trocar gases",
+            "produzir saliva"
+          ],
+          "correct_index": 0,
+          "explanation": "O esôfago é o tubo que liga a boca ao estômago.",
+          "pitfall": "Quebrar proteínas é trabalho do estômago.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Grosso",
+          "statement": "O intestino grosso absorve principalmente:",
+          "options": [
+            "água",
+            "glicose",
+            "proteínas",
+            "oxigênio",
+            "gordura"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele tira a água do que sobrou e forma as fezes.",
+          "pitfall": "Os nutrientes já foram absorvidos no delgado.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Proteína",
+          "statement": "A carne, depois de digerida, vira:",
+          "options": [
+            "aminoácidos",
+            "glicose",
+            "ácidos graxos",
+            "água",
+            "oxigênio"
+          ],
+          "correct_index": 0,
+          "explanation": "As proteínas são colares de aminoácidos. A digestão desmancha o colar.",
+          "pitfall": "Glicose vem dos carboidratos.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Pão doce",
+          "statement": "Por que o pão mastigado por muito tempo fica doce?",
+          "options": [
+            "a saliva quebra o amido em açúcar",
+            "o pão tem açúcar escondido",
+            "o estômago manda açúcar à boca",
+            "os dentes produzem açúcar",
+            "a língua adoça o pão"
+          ],
+          "correct_index": 0,
+          "explanation": "A enzima da saliva corta o amido em pedaços de açúcar.",
+          "pitfall": "O doce aparece por causa da quebra, não de açúcar escondido.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Ligação",
+          "statement": "Qual frase liga corretamente a digestão à respiração?",
+          "options": [
+            "A digestão fornece a glicose, e a respiração fornece o oxigênio para queimá-la na célula.",
+            "A digestão fornece o oxigênio, e a respiração fornece a glicose.",
+            "As duas fornecem só glicose.",
+            "As duas acontecem só no pulmão.",
+            "Não há ligação entre as duas."
+          ],
+          "correct_index": 0,
+          "explanation": "A célula precisa dos dois: combustível e oxigênio.",
+          "pitfall": "A segunda alternativa inverte os papéis.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Absorve mais",
+          "statement": "A parede do intestino delgado é cheia de dobras. Para que servem essas dobras?",
+          "options": [
+            "aumentar a área que absorve os nutrientes",
+            "deixar a comida mais lenta para não doer",
+            "guardar a comida por dias",
+            "produzir oxigênio",
+            "deixar o intestino mais curto"
+          ],
+          "correct_index": 0,
+          "explanation": "Mais dobras dão mais superfície em contato com a comida, e mais nutriente passa ao sangue.",
+          "pitfall": "As dobras não guardam comida: elas absorvem.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "circulacao-nervos-hormonios",
+      "title": "Circulação, nervos e hormônios",
+      "module": "Corpo humano e saúde",
+      "summary": "O sangue leva tudo para todas as células. Os nervos dão ordens rápidas, e os hormônios dão ordens lentas e duradouras.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Uma cidade precisa de ruas e de telefone",
+          "body": [
+            "Numa cidade, caminhões levam comida pelas ruas. E, quando algo urgente acontece, alguém liga.",
+            "O corpo também tem as duas coisas. O sangue é o caminhão; os nervos são o telefone."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O coração é uma bomba",
+          "body": [
+            "O coração bate cerca de 70 vezes por minuto e empurra o sangue por tubos chamados vasos.",
+            "As artérias levam o sangue para fora do coração. As veias trazem o sangue de volta."
+          ],
+          "table": {
+            "label": "Os vasos do sangue",
+            "headers": [
+              "Vaso",
+              "Sentido",
+              "Lembrete"
+            ],
+            "rows": [
+              [
+                "artéria",
+                "sai do coração",
+                "A de afastar"
+              ],
+              [
+                "veia",
+                "volta ao coração",
+                "V de voltar"
+              ],
+              [
+                "capilar",
+                "liga as duas, perto das células",
+                "o mais fino"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Duas voltas",
+          "body": [
+            "O sangue faz duas voltas. Na curta, vai do coração ao pulmão e pega oxigênio.",
+            "Na longa, vai do coração para o corpo inteiro e entrega o oxigênio às células. Depois volta ao coração."
+          ],
+          "example": {
+            "label": "O caminho do sangue",
+            "lines": [
+              "O coração manda o sangue ao pulmão.",
+              "No pulmão, o sangue pega oxigênio.",
+              "O sangue volta ao coração.",
+              "O coração o manda para o corpo todo.",
+              "As células recebem o oxigênio, e o sangue volta."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que tem no sangue",
+          "body": [
+            "Os glóbulos vermelhos levam o oxigênio. Os glóbulos brancos defendem o corpo. As plaquetas fecham um corte.",
+            "Tudo isso nada num líquido amarelado, o plasma. Ele leva a glicose, a água e muitas outras coisas."
+          ],
+          "terms": [
+            {
+              "word": "Glicose",
+              "meaning": "o açúcar que as células usam como combustível."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os nervos: a ordem rápida",
+          "body": [
+            "O sistema nervoso usa células chamadas neurônios. Elas passam mensagens elétricas em milésimos de segundo.",
+            "Encostar a mão numa panela quente faz você puxar a mão antes de sentir a dor. Esse é o reflexo, e quem manda é a medula, não o cérebro."
+          ],
+          "terms": [
+            {
+              "word": "Neurônio",
+              "meaning": "a célula do sistema nervoso, que leva mensagens elétricas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os hormônios: a ordem lenta",
+          "body": [
+            "Algumas ordens não precisam ser rápidas, mas precisam durar. Para isso o corpo usa hormônios.",
+            "Depois de uma refeição, a glicose do sangue sobe. O pâncreas solta insulina, que manda as células guardarem a glicose."
+          ],
+          "terms": [
+            {
+              "word": "Hormônio",
+              "meaning": "uma substância que uma glândula solta no sangue e que dá uma ordem a outra parte do corpo."
+            }
+          ],
+          "table": {
+            "label": "Nervos e hormônios",
+            "headers": [
+              "",
+              "Nervos",
+              "Hormônios"
+            ],
+            "rows": [
+              [
+                "por onde vai",
+                "pelos neurônios",
+                "pelo sangue"
+              ],
+              [
+                "velocidade",
+                "rápida",
+                "lenta"
+              ],
+              [
+                "duração",
+                "curta",
+                "longa"
+              ],
+              [
+                "exemplo",
+                "puxar a mão do fogo",
+                "a insulina depois do almoço"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede o papel de cada parte do sangue e o sentido de artérias e veias. Também cobra a insulina e o diabetes."
+          ],
+          "bullets": [
+            "“Qual componente do sangue transporta o oxigênio?”",
+            "“O diabetes tipo 1 está ligado à falta de qual hormônio?”",
+            "“O ato reflexo é comandado pela…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Hormônio",
+              "meaning": "uma substância que uma glândula solta no sangue e que dá uma ordem a outra parte do corpo."
+            }
+          ],
+          "bullets": [
+            "Achar que veia sempre leva sangue sem oxigênio. A veia que vem do pulmão traz sangue com oxigênio.",
+            "Achar que o reflexo é comandado pelo cérebro. É a medula.",
+            "Trocar glóbulo branco (defesa) por vermelho (oxigênio).",
+            "Achar que a insulina aumenta o açúcar do sangue. Ela diminui."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O coração bombeia o sangue: artérias saem dele, veias voltam. O sangue faz uma volta pelo pulmão e outra pelo corpo.",
+            "Os nervos dão ordens rápidas por neurônios. Os hormônios dão ordens lentas pelo sangue, como a insulina."
+          ],
+          "terms": [
+            {
+              "word": "Neurônio",
+              "meaning": "a célula do sistema nervoso, que leva mensagens elétricas."
+            },
+            {
+              "word": "Hormônio",
+              "meaning": "uma substância que uma glândula solta no sangue e que dá uma ordem a outra parte do corpo."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Vermelho",
+          "statement": "Qual parte do sangue leva o oxigênio?",
+          "options": [
+            "os glóbulos vermelhos",
+            "os glóbulos brancos",
+            "as plaquetas",
+            "o plasma sozinho",
+            "os neurônios"
+          ],
+          "correct_index": 0,
+          "explanation": "Os glóbulos vermelhos carregam o oxigênio do pulmão às células.",
+          "pitfall": "Os brancos defendem o corpo."
+        },
+        {
+          "topic": "Artéria",
+          "statement": "A artéria é o vaso que:",
+          "options": [
+            "leva o sangue para fora do coração",
+            "traz o sangue de volta ao coração",
+            "liga o estômago ao intestino",
+            "leva o ar ao pulmão",
+            "só existe no pulmão"
+          ],
+          "correct_index": 0,
+          "explanation": "Artéria afasta o sangue do coração.",
+          "pitfall": "Trazer de volta é a veia."
+        },
+        {
+          "topic": "Plaqueta",
+          "statement": "Você corta o dedo e o sangue para de sair. Quem fez isso?",
+          "options": [
+            "as plaquetas",
+            "os glóbulos vermelhos",
+            "os neurônios",
+            "a insulina",
+            "o plasma"
+          ],
+          "correct_index": 0,
+          "explanation": "As plaquetas se juntam no corte e formam um tampão.",
+          "pitfall": "Os glóbulos vermelhos levam oxigênio, não fecham o corte."
+        },
+        {
+          "topic": "Reflexo",
+          "statement": "Você puxa a mão da panela quente antes de sentir a dor. Quem deu essa ordem?",
+          "options": [
+            "a medula",
+            "o cérebro",
+            "o coração",
+            "o pâncreas",
+            "o estômago"
+          ],
+          "correct_index": 0,
+          "explanation": "O reflexo passa pela medula, que responde antes de a mensagem chegar ao cérebro.",
+          "pitfall": "O cérebro sente a dor depois que a mão já saiu."
+        },
+        {
+          "topic": "Insulina",
+          "statement": "Depois do almoço, a insulina:",
+          "options": [
+            "faz a glicose do sangue baixar",
+            "faz a glicose do sangue subir",
+            "leva oxigênio às células",
+            "quebra as proteínas",
+            "acelera o coração"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela manda as células guardarem a glicose, e o nível no sangue cai.",
+          "pitfall": "Achar que a insulina aumenta o açúcar é o erro mais comum."
+        },
+        {
+          "topic": "Diabetes",
+          "statement": "No diabetes tipo 1, o corpo não produz insulina suficiente. Por isso:",
+          "options": [
+            "a glicose fica alta no sangue",
+            "a glicose fica baixa no sangue",
+            "o sangue para de circular",
+            "os neurônios param",
+            "o pulmão não respira"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem a ordem da insulina, as células não guardam a glicose, e ela sobra no sangue.",
+          "pitfall": "Com pouca insulina, o açúcar sobe, não desce."
+        },
+        {
+          "topic": "Hormônio",
+          "statement": "Um hormônio é:",
+          "options": [
+            "uma substância que vai pelo sangue e dá uma ordem a outra parte do corpo",
+            "uma célula do sangue",
+            "um tipo de neurônio",
+            "um vaso sanguíneo",
+            "uma parte do pulmão"
+          ],
+          "correct_index": 0,
+          "explanation": "A glândula solta o hormônio no sangue, e ele chega aonde a ordem é dada.",
+          "pitfall": "Neurônio é a célula do nervo, outro sistema."
+        },
+        {
+          "topic": "Partes",
+          "format": "match",
+          "statement": "Ligue cada parte ao trabalho dela.",
+          "pairs": [
+            {
+              "left": "glóbulo vermelho",
+              "right": "levar oxigênio"
+            },
+            {
+              "left": "glóbulo branco",
+              "right": "defender o corpo"
+            },
+            {
+              "left": "plaqueta",
+              "right": "fechar um corte"
+            },
+            {
+              "left": "neurônio",
+              "right": "levar mensagens elétricas"
+            }
+          ],
+          "explanation": "Três partes do sangue e a célula do nervo.",
+          "pitfall": "Branco e vermelho são os mais trocados: o branco defende."
+        },
+        {
+          "topic": "Bomba",
+          "statement": "Qual órgão bombeia o sangue?",
+          "options": [
+            "o coração",
+            "o pulmão",
+            "o fígado",
+            "o estômago",
+            "o cérebro"
+          ],
+          "correct_index": 0,
+          "explanation": "O coração se contrai e empurra o sangue pelos vasos.",
+          "pitfall": "O pulmão só oxigena o sangue que passa por ele.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Branco",
+          "statement": "Os glóbulos brancos servem para:",
+          "options": [
+            "defender o corpo",
+            "levar oxigênio",
+            "fechar cortes",
+            "levar glicose",
+            "dar a cor ao sangue"
+          ],
+          "correct_index": 0,
+          "explanation": "Eles atacam o que invade o corpo, como bactérias.",
+          "pitfall": "A cor vermelha vem dos glóbulos vermelhos.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Volta curta",
+          "statement": "Na volta curta, o sangue vai do coração para:",
+          "options": [
+            "o pulmão, onde pega oxigênio",
+            "o corpo todo",
+            "o estômago",
+            "o cérebro",
+            "os rins"
+          ],
+          "correct_index": 0,
+          "explanation": "A volta curta oxigena o sangue no pulmão.",
+          "pitfall": "O corpo todo é a volta longa.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Velocidade",
+          "statement": "Por que puxar a mão do fogo é comandado pelos nervos, e não por um hormônio?",
+          "options": [
+            "o nervo é muito mais rápido",
+            "o hormônio não existe no braço",
+            "o nervo dura mais tempo",
+            "o hormônio só age à noite",
+            "o nervo vai pelo sangue"
+          ],
+          "correct_index": 0,
+          "explanation": "A mensagem elétrica chega em milésimos de segundo. O hormônio viaja pelo sangue e demora.",
+          "pitfall": "Quem vai pelo sangue é o hormônio, não o nervo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Veia do pulmão",
+          "statement": "Qual frase está certa?",
+          "options": [
+            "A veia que vem do pulmão traz sangue com oxigênio.",
+            "Toda veia leva sangue sem oxigênio.",
+            "Toda artéria leva sangue com oxigênio.",
+            "As veias saem do coração.",
+            "As artérias voltam ao coração."
+          ],
+          "correct_index": 0,
+          "explanation": "Veia é definida pelo sentido (volta ao coração), não pelo oxigênio. A do pulmão volta cheia.",
+          "pitfall": "Usar o oxigênio para definir veia é o erro que a prova espera.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Duradoura",
+          "statement": "O crescimento de uma criança dura anos. Faz sentido que seja comandado por:",
+          "options": [
+            "um hormônio, que dá ordens lentas e duradouras",
+            "um reflexo da medula",
+            "as plaquetas",
+            "os glóbulos vermelhos",
+            "o pulmão"
+          ],
+          "correct_index": 0,
+          "explanation": "Ordem que precisa durar anos é trabalho de hormônio.",
+          "pitfall": "O reflexo é rápido e curto: o contrário do que o crescimento pede.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "microrganismos-e-vacinas",
+      "title": "Vírus, bactérias e vacinas",
+      "module": "Corpo humano e saúde",
+      "summary": "Vírus e bactérias são diferentes, e por isso o tratamento é diferente. A vacina ensina o corpo a reconhecer um invasor antes de ele chegar.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Por que o antibiótico não cura a gripe",
+          "body": [
+            "Muita gente toma antibiótico quando pega gripe. Não adianta nada.",
+            "A gripe é causada por um vírus, e o antibiótico só funciona contra bactérias. Os dois são bem diferentes."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A bactéria é uma célula",
+          "body": [
+            "A bactéria é um ser vivo completo, de uma célula só. Ela come, cresce e se divide sozinha.",
+            "A maioria é útil: as do seu intestino ajudam a digerir, e outras fazem o iogurte. Algumas causam doenças, como a tuberculose."
+          ],
+          "terms": [
+            {
+              "word": "Núcleo",
+              "meaning": "a sala fechada onde a célula de plantas e animais guarda as suas instruções."
+            },
+            {
+              "word": "Bactéria",
+              "meaning": "um ser vivo de uma célula só, sem núcleo. Muitas são úteis; algumas causam doença."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O vírus não é célula",
+          "body": [
+            "O vírus é muito menor. É só um pacote de instruções dentro de uma capa de proteína.",
+            "Sozinho, ele não faz nada. Ele entra numa célula e a obriga a fabricar cópias dele. Depois as cópias saem e invadem outras células."
+          ],
+          "terms": [
+            {
+              "word": "Vírus",
+              "meaning": "um parasita minúsculo que não é célula. Ele só se multiplica dentro de uma célula viva."
+            }
+          ],
+          "table": {
+            "label": "Vírus e bactéria",
+            "headers": [
+              "",
+              "Bactéria",
+              "Vírus"
+            ],
+            "rows": [
+              [
+                "é célula?",
+                "sim",
+                "não"
+              ],
+              [
+                "vive sozinha?",
+                "sim",
+                "não, só dentro de uma célula"
+              ],
+              [
+                "remédio",
+                "antibiótico",
+                "antiviral, em alguns casos"
+              ],
+              [
+                "exemplos de doença",
+                "tuberculose, tétano",
+                "gripe, sarampo, dengue"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Como o corpo se defende",
+          "body": [
+            "Cada invasor tem marcas na superfície, os antígenos. O corpo reconhece essas marcas como estranhas.",
+            "Os glóbulos brancos fabricam anticorpos que grudam nos antígenos. O invasor marcado é destruído.",
+            "E o corpo guarda memória: na segunda vez, a defesa vem muito mais rápido."
+          ],
+          "terms": [
+            {
+              "word": "Antígeno",
+              "meaning": "a marca na superfície de um invasor que o corpo reconhece como estranha."
+            },
+            {
+              "word": "Anticorpo",
+              "meaning": "uma proteína que o corpo fabrica para grudar num antígeno e marcar o invasor para ser destruído."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A vacina é um ensaio",
+          "body": [
+            "A vacina mostra ao corpo o antígeno sem a doença. Ela pode levar o vírus morto, enfraquecido ou só um pedaço dele.",
+            "O corpo fabrica anticorpos e guarda a memória. Se o invasor de verdade chegar, a defesa já está pronta."
+          ],
+          "example": {
+            "label": "Como a vacina protege",
+            "lines": [
+              "A vacina leva o antígeno, sem causar a doença.",
+              "O corpo fabrica anticorpos contra ele.",
+              "O corpo guarda a memória desse antígeno.",
+              "O invasor de verdade chega.",
+              "A defesa vem rápida, e a pessoa não adoece ou adoece pouco."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Vacina e soro não são a mesma coisa",
+          "body": [
+            "A vacina ensina o corpo a fazer anticorpos. Demora alguns dias, mas a proteção dura muito.",
+            "O soro já traz os anticorpos prontos, como o soro contra veneno de cobra. Age na hora, mas a proteção some logo."
+          ],
+          "terms": [
+            {
+              "word": "Anticorpo",
+              "meaning": "uma proteína que o corpo fabrica para grudar num antígeno e marcar o invasor para ser destruído."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Doenças que dependem do lugar",
+          "body": [
+            "Algumas doenças passam por um mosquito. A dengue é causada por um vírus que o mosquito Aedes aegypti leva de uma pessoa a outra.",
+            "Por isso a prevenção é tirar a água parada, onde o mosquito põe os ovos."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova cobra a diferença entre vírus e bactéria e entre vacina e soro. Também pede a prevenção da dengue."
+          ],
+          "bullets": [
+            "“Por que antibióticos não são indicados contra a gripe?”",
+            "“A diferença entre vacina e soro é que…”",
+            "“A principal forma de prevenção da dengue é…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Núcleo",
+              "meaning": "a sala fechada onde a célula de plantas e animais guarda as suas instruções."
+            },
+            {
+              "word": "Vírus",
+              "meaning": "um parasita minúsculo que não é célula. Ele só se multiplica dentro de uma célula viva."
+            },
+            {
+              "word": "Bactéria",
+              "meaning": "um ser vivo de uma célula só, sem núcleo. Muitas são úteis; algumas causam doença."
+            }
+          ],
+          "bullets": [
+            "Achar que antibiótico mata vírus. Só mata bactéria.",
+            "Trocar vacina por soro: a vacina ensina, o soro traz pronto.",
+            "Achar que toda bactéria faz mal. A maioria é útil.",
+            "Achar que o mosquito é a causa da dengue. A causa é o vírus; o mosquito só transporta."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Bactéria é célula e morre com antibiótico. Vírus não é célula e só se multiplica dentro de uma.",
+            "O corpo reconhece antígenos e faz anticorpos. A vacina ensina isso antes da doença; o soro traz os anticorpos prontos."
+          ],
+          "terms": [
+            {
+              "word": "Antígeno",
+              "meaning": "a marca na superfície de um invasor que o corpo reconhece como estranha."
+            },
+            {
+              "word": "Anticorpo",
+              "meaning": "uma proteína que o corpo fabrica para grudar num antígeno e marcar o invasor para ser destruído."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Gripe",
+          "statement": "Por que o antibiótico não cura a gripe?",
+          "options": [
+            "a gripe é causada por vírus, e o antibiótico só age em bactérias",
+            "a gripe não tem cura nenhuma",
+            "o antibiótico é fraco demais",
+            "a gripe é causada por um fungo",
+            "o corpo rejeita o antibiótico"
+          ],
+          "correct_index": 0,
+          "explanation": "O antibiótico ataca peças que só a bactéria tem. O vírus não tem essas peças.",
+          "pitfall": "Não é questão de força: é o alvo errado."
+        },
+        {
+          "topic": "Vírus",
+          "statement": "Qual frase sobre os vírus está certa?",
+          "options": [
+            "só se multiplicam dentro de uma célula viva",
+            "são células sem núcleo",
+            "vivem sozinhos na água",
+            "são maiores que as bactérias",
+            "morrem com antibiótico"
+          ],
+          "correct_index": 0,
+          "explanation": "O vírus não é célula e depende de uma para fazer cópias.",
+          "pitfall": "Célula sem núcleo é a bactéria."
+        },
+        {
+          "topic": "Vacina",
+          "statement": "A vacina protege porque:",
+          "options": [
+            "ensina o corpo a fabricar anticorpos antes da doença",
+            "traz anticorpos prontos",
+            "mata o vírus no sangue na hora",
+            "é um antibiótico forte",
+            "impede o vírus de existir"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela mostra o antígeno sem a doença, e o corpo guarda a memória.",
+          "pitfall": "Anticorpos prontos é o soro."
+        },
+        {
+          "topic": "Soro",
+          "statement": "Uma pessoa foi picada por uma cobra. O tratamento é:",
+          "options": [
+            "soro, que traz anticorpos prontos",
+            "vacina, que ensina o corpo",
+            "antibiótico",
+            "antiviral",
+            "nenhum, o corpo resolve sozinho"
+          ],
+          "correct_index": 0,
+          "explanation": "Não dá tempo de o corpo aprender. O soro age na hora.",
+          "pitfall": "A vacina demora dias para proteger."
+        },
+        {
+          "topic": "Antígeno",
+          "statement": "Antígeno é:",
+          "options": [
+            "a marca de um invasor que o corpo reconhece como estranha",
+            "a proteína que o corpo fabrica para se defender",
+            "um tipo de remédio",
+            "uma célula do sangue",
+            "o mesmo que vacina"
+          ],
+          "correct_index": 0,
+          "explanation": "O antígeno é do invasor. O anticorpo é do corpo.",
+          "pitfall": "Trocar antígeno por anticorpo é o erro clássico."
+        },
+        {
+          "topic": "Dengue",
+          "statement": "Qual é a melhor forma de prevenir a dengue?",
+          "options": [
+            "eliminar a água parada onde o mosquito põe ovos",
+            "tomar antibiótico",
+            "usar soro",
+            "ferver a água de beber",
+            "lavar as mãos"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem água parada, o mosquito não se reproduz e não leva o vírus.",
+          "pitfall": "Antibiótico não age em vírus, e a dengue é um vírus."
+        },
+        {
+          "topic": "Útil",
+          "statement": "Sobre as bactérias, qual frase está certa?",
+          "options": [
+            "muitas são úteis, como as do intestino",
+            "todas causam doenças",
+            "nenhuma vive no corpo humano",
+            "todas são vírus",
+            "não se dividem"
+          ],
+          "correct_index": 0,
+          "explanation": "As bactérias do intestino ajudam a digerir. Outras fazem iogurte.",
+          "pitfall": "“Todas” é a palavra que denuncia o erro."
+        },
+        {
+          "topic": "Vacina",
+          "format": "order",
+          "statement": "Ponha em ordem como a vacina protege.",
+          "options": [
+            "A vacina leva o antígeno, sem causar a doença.",
+            "O corpo fabrica anticorpos.",
+            "O corpo guarda a memória do antígeno.",
+            "O invasor chega e a defesa vem rápida."
+          ],
+          "explanation": "Mostrar, reagir, guardar e defender.",
+          "pitfall": "A memória só existe depois que o corpo fabricou os anticorpos."
+        },
+        {
+          "topic": "Célula",
+          "statement": "Qual destes é uma célula?",
+          "options": [
+            "a bactéria",
+            "o vírus",
+            "o anticorpo",
+            "o antígeno",
+            "a vacina"
+          ],
+          "correct_index": 0,
+          "explanation": "A bactéria é um ser de uma célula só.",
+          "pitfall": "O vírus não é célula: é um pacote de instruções numa capa.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Mosquito",
+          "statement": "Na dengue, o mosquito é:",
+          "options": [
+            "o transmissor, que leva o vírus",
+            "a causa da doença",
+            "o remédio",
+            "a vacina natural",
+            "um tipo de bactéria"
+          ],
+          "correct_index": 0,
+          "explanation": "A causa é o vírus. O mosquito só leva de uma pessoa a outra.",
+          "pitfall": "Dizer que o mosquito causa a dengue troca o transmissor pela causa.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Memória",
+          "statement": "Por que quem já teve sarampo raramente pega de novo?",
+          "options": [
+            "o corpo guardou a memória e reage rápido",
+            "o vírus do sarampo morreu no mundo",
+            "o corpo ficou sem células",
+            "o sarampo vira outra doença",
+            "o antibiótico fica no corpo"
+          ],
+          "correct_index": 0,
+          "explanation": "Na segunda vez, os anticorpos vêm tão rápido que a doença não se instala.",
+          "pitfall": "O vírus continua existindo; quem mudou foi a defesa do corpo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Diferença",
+          "statement": "Qual a diferença entre vacina e soro?",
+          "options": [
+            "a vacina ensina o corpo a fazer anticorpos; o soro já os traz prontos",
+            "a vacina traz anticorpos prontos; o soro ensina o corpo",
+            "os dois são a mesma coisa",
+            "a vacina é para bactérias e o soro para vírus",
+            "o soro protege por toda a vida"
+          ],
+          "correct_index": 0,
+          "explanation": "Vacina é proteção lenta e duradoura. Soro é imediato e passageiro.",
+          "pitfall": "A segunda alternativa inverte os dois.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Resistência",
+          "statement": "Tomar antibiótico para gripe, sem precisar, pode causar qual problema?",
+          "options": [
+            "ajudar a selecionar bactérias resistentes",
+            "deixar o vírus resistente ao antibiótico",
+            "curar a gripe mais rápido",
+            "fazer o corpo produzir vírus",
+            "nenhum problema"
+          ],
+          "correct_index": 0,
+          "explanation": "O antibiótico mata as bactérias sensíveis do corpo e deixa as resistentes se multiplicarem.",
+          "pitfall": "O vírus nunca foi alvo do antibiótico, então não fica “resistente” a ele.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Coletiva",
+          "statement": "Por que vacinar muita gente protege até quem não pode tomar a vacina?",
+          "options": [
+            "o vírus encontra poucas pessoas para infectar e para de circular",
+            "a vacina passa de uma pessoa para outra",
+            "quem não vacinou recebe anticorpos pelo ar",
+            "o vírus morre só de chegar perto de um vacinado",
+            "não protege: cada um precisa da sua"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem gente para infectar, a corrente de transmissão se quebra.",
+          "pitfall": "A vacina não passa de pessoa para pessoa; o que muda é o caminho do vírus.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "plantas-e-classificacao",
+      "title": "Plantas e a classificação dos seres vivos",
+      "module": "A diversidade da vida",
+      "summary": "Os cientistas organizam os seres vivos em grupos, do maior ao menor, e dão a cada espécie um nome em duas palavras. As plantas se dividem em quatro grupos.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Um armário bem arrumado",
+          "body": [
+            "Num supermercado, ninguém procura o arroz entre os sabões. Os produtos estão em corredores, e cada corredor tem prateleiras.",
+            "Com quase 2 milhões de espécies conhecidas, a Biologia precisa do mesmo. Ela organiza os seres vivos em grupos dentro de grupos."
+          ],
+          "terms": [
+            {
+              "word": "Espécie",
+              "meaning": "o grupo de seres que se reproduzem entre si e têm filhos que também se reproduzem."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Do maior ao menor grupo",
+          "body": [
+            "O grupo maior é o reino. Dentro dele vêm grupos cada vez menores, até chegar à espécie.",
+            "Quanto mais grupos dois seres dividem, mais parentes eles são. O cão e o lobo dividem até o gênero."
+          ],
+          "example": {
+            "label": "Os grupos, do maior ao menor",
+            "lines": [
+              "reino",
+              "filo",
+              "classe",
+              "ordem",
+              "família",
+              "gênero",
+              "espécie"
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O nome em duas palavras",
+          "body": [
+            "Cada espécie tem um nome científico, igual no mundo inteiro. A primeira palavra é o gênero, com maiúscula. A segunda é da espécie, com minúscula.",
+            "Ele vem escrito em itálico. O ser humano é Homo sapiens, e o cão é Canis familiaris."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os grandes reinos",
+          "body": [
+            "Uma divisão muito usada na escola tem cinco reinos. A primeira pergunta é se a célula tem núcleo."
+          ],
+          "terms": [
+            {
+              "word": "Núcleo",
+              "meaning": "a sala fechada onde a célula guarda as suas instruções."
+            },
+            {
+              "word": "Procarionte",
+              "meaning": "o ser de célula sem núcleo, como as bactérias."
+            },
+            {
+              "word": "Eucarionte",
+              "meaning": "o ser de célula com núcleo, como plantas, animais e fungos."
+            },
+            {
+              "word": "Fotossíntese",
+              "meaning": "a fabricação de açúcar pela planta, usando luz, água e gás carbônico."
+            }
+          ],
+          "table": {
+            "label": "Os cinco reinos",
+            "headers": [
+              "Reino",
+              "Célula",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "Monera",
+                "sem núcleo",
+                "bactérias"
+              ],
+              [
+                "Protista",
+                "com núcleo, quase sempre uma só",
+                "ameba, algas simples"
+              ],
+              [
+                "Fungi",
+                "com núcleo, não faz fotossíntese",
+                "cogumelo, bolor"
+              ],
+              [
+                "Plantae",
+                "com núcleo, faz fotossíntese",
+                "capim, árvore"
+              ],
+              [
+                "Animalia",
+                "com núcleo, come outros seres",
+                "peixe, ser humano"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Fungo não é planta",
+          "body": [
+            "O cogumelo parece planta, mas não faz fotossíntese. Ele se alimenta de restos, como um decompositor.",
+            "Por isso os fungos ganharam reino próprio. Na verdade, são mais parentes dos animais que das plantas."
+          ],
+          "terms": [
+            {
+              "word": "Fotossíntese",
+              "meaning": "a fabricação de açúcar pela planta, usando luz, água e gás carbônico."
+            },
+            {
+              "word": "Decompositor",
+              "meaning": "o ser que se alimenta de restos e devolve os nutrientes ao solo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os quatro grupos de plantas",
+          "body": [
+            "As plantas surgiram na água e foram ganhando peças para viver na terra. Primeiro os vasos para levar água, depois a semente. Por fim vieram a flor e o fruto."
+          ],
+          "table": {
+            "label": "Os grupos de plantas",
+            "headers": [
+              "Grupo",
+              "Tem vasos?",
+              "Semente?",
+              "Flor e fruto?",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "briófitas",
+                "não",
+                "não",
+                "não",
+                "musgo"
+              ],
+              [
+                "pteridófitas",
+                "sim",
+                "não",
+                "não",
+                "samambaia"
+              ],
+              [
+                "gimnospermas",
+                "sim",
+                "sim, sem fruto",
+                "não",
+                "pinheiro"
+              ],
+              [
+                "angiospermas",
+                "sim",
+                "sim, dentro do fruto",
+                "sim",
+                "mangueira, feijão"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Por que o musgo é baixinho",
+          "body": [
+            "Sem vasos, a água passa de célula em célula, devagar. Por isso o musgo fica rente ao chão e só vive em lugar úmido.",
+            "Com vasos, a água sobe por tubos até o alto. É assim que uma árvore chega a dezenas de metros."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede a ordem dos grupos e a escrita do nome científico. Também descreve uma planta e pede o grupo."
+          ],
+          "bullets": [
+            "“Planta com vasos, sementes e sem frutos pertence ao grupo das…”",
+            "“O nome científico corretamente escrito é…”",
+            "“Por que os fungos não são classificados como plantas?”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Fotossíntese",
+              "meaning": "a fabricação de açúcar pela planta, usando luz, água e gás carbônico."
+            }
+          ],
+          "bullets": [
+            "Achar que cogumelo é planta. É fungo, e não faz fotossíntese.",
+            "Escrever o nome científico com as duas palavras em maiúscula. Só o gênero começa com maiúscula.",
+            "Achar que o pinheiro tem fruto. A pinha não é fruto: a semente fica exposta.",
+            "Inverter a ordem: o reino é o maior grupo, e a espécie o menor."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Os seres vivos vão em grupos, do reino à espécie. O nome científico tem duas palavras: o gênero e a espécie.",
+            "Os cinco reinos começam pela pergunta do núcleo. As plantas ganharam vasos e semente, e por último a flor e o fruto."
+          ],
+          "terms": [
+            {
+              "word": "Núcleo",
+              "meaning": "a sala fechada onde a célula guarda as suas instruções."
+            },
+            {
+              "word": "Espécie",
+              "meaning": "o grupo de seres que se reproduzem entre si e têm filhos que também se reproduzem."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Maior",
+          "statement": "Qual é o maior grupo da classificação dos seres vivos?",
+          "options": [
+            "reino",
+            "espécie",
+            "gênero",
+            "família",
+            "classe"
+          ],
+          "correct_index": 0,
+          "explanation": "O reino é o grupo mais amplo. A espécie é o menor.",
+          "pitfall": "A espécie é o grupo mais estreito, não o mais largo."
+        },
+        {
+          "topic": "Nome",
+          "statement": "Qual nome científico está escrito do jeito certo?",
+          "options": [
+            "Homo sapiens",
+            "homo sapiens",
+            "Homo Sapiens",
+            "HOMO SAPIENS",
+            "sapiens Homo"
+          ],
+          "correct_index": 0,
+          "explanation": "O gênero com maiúscula e a espécie com minúscula, nessa ordem.",
+          "pitfall": "Pôr maiúscula nas duas palavras é o erro mais comum."
+        },
+        {
+          "topic": "Cogumelo",
+          "statement": "Por que o cogumelo não é uma planta?",
+          "options": [
+            "não faz fotossíntese",
+            "não tem célula",
+            "não tem núcleo",
+            "vive na água",
+            "é um animal"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele se alimenta de restos, como um decompositor. Não fabrica o próprio alimento.",
+          "pitfall": "O fungo tem núcleo: não é por isso que fica fora das plantas."
+        },
+        {
+          "topic": "Monera",
+          "statement": "As bactérias pertencem a qual reino?",
+          "options": [
+            "Monera",
+            "Protista",
+            "Fungi",
+            "Plantae",
+            "Animalia"
+          ],
+          "correct_index": 0,
+          "explanation": "Monera é o reino dos seres sem núcleo.",
+          "pitfall": "Protista tem núcleo, como a ameba."
+        },
+        {
+          "topic": "Musgo",
+          "statement": "O musgo não tem vasos para levar água. Por isso ele:",
+          "options": [
+            "é baixinho e vive em lugar úmido",
+            "é a planta mais alta",
+            "vive no deserto",
+            "tem flores grandes",
+            "não precisa de água"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem tubos, a água anda devagar de célula em célula. A planta não pode ser alta.",
+          "pitfall": "Sem vasos, a planta precisa de MAIS umidade, não de menos."
+        },
+        {
+          "topic": "Pinheiro",
+          "statement": "Planta com vasos e sementes, mas sem fruto. É do grupo das:",
+          "options": [
+            "gimnospermas",
+            "angiospermas",
+            "briófitas",
+            "pteridófitas",
+            "algas"
+          ],
+          "correct_index": 0,
+          "explanation": "As gimnospermas têm semente exposta, sem fruto em volta. O pinheiro é o exemplo.",
+          "pitfall": "Angiospermas têm fruto."
+        },
+        {
+          "topic": "Mangueira",
+          "statement": "A mangueira tem flor e fruto. Ela é:",
+          "options": [
+            "angiosperma",
+            "gimnosperma",
+            "briófita",
+            "pteridófita",
+            "fungo"
+          ],
+          "correct_index": 0,
+          "explanation": "Flor e fruto só existem nas angiospermas.",
+          "pitfall": "A gimnosperma tem semente, mas não fruto."
+        },
+        {
+          "topic": "Grupos",
+          "format": "order",
+          "statement": "Ponha os grupos em ordem, do maior ao menor.",
+          "options": [
+            "reino",
+            "classe",
+            "família",
+            "gênero",
+            "espécie"
+          ],
+          "explanation": "Do reino até a espécie, cada grupo cabe dentro do anterior.",
+          "pitfall": "O gênero vem logo antes da espécie: é a primeira palavra do nome."
+        },
+        {
+          "topic": "Primeira",
+          "statement": "No nome Canis familiaris, a palavra Canis indica:",
+          "options": [
+            "o gênero",
+            "a espécie inteira",
+            "o reino",
+            "a família",
+            "a classe"
+          ],
+          "correct_index": 0,
+          "explanation": "A primeira palavra é o gênero; as duas juntas formam o nome da espécie.",
+          "pitfall": "Canis sozinho não é a espécie: o lobo também é Canis.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Samambaia",
+          "statement": "A samambaia tem vasos, mas não tem semente. Ela é:",
+          "options": [
+            "pteridófita",
+            "briófita",
+            "gimnosperma",
+            "angiosperma",
+            "fungo"
+          ],
+          "correct_index": 0,
+          "explanation": "Vasos sem semente: pteridófita.",
+          "pitfall": "Briófita não tem nem vasos.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Parentes",
+          "statement": "O cão e o lobo dividem o mesmo gênero. O cão e o gato dividem só a ordem. Qual par é mais parente?",
+          "options": [
+            "o cão e o lobo",
+            "o cão e o gato",
+            "os três são igualmente parentes",
+            "o gato e o lobo",
+            "não dá para saber"
+          ],
+          "correct_index": 0,
+          "explanation": "Quanto mais grupos em comum, mais próximo o parentesco. Gênero é mais estreito que ordem.",
+          "pitfall": "Ordem é um grupo mais largo: dividir só ela é ser parente mais distante.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Pinha",
+          "statement": "Sobre o pinheiro, qual frase está certa?",
+          "options": [
+            "a pinha não é fruto; a semente fica exposta",
+            "a pinha é o fruto do pinheiro",
+            "o pinheiro não tem semente",
+            "o pinheiro é uma briófita",
+            "o pinheiro tem flores coloridas"
+          ],
+          "correct_index": 0,
+          "explanation": "Gimnosperma quer dizer semente nua: sem fruto em volta.",
+          "pitfall": "Chamar a pinha de fruto é a pegadinha clássica.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Fungo parente",
+          "statement": "Qual frase sobre os fungos está certa?",
+          "options": [
+            "são mais parentes dos animais do que das plantas",
+            "são plantas sem folha",
+            "fazem fotossíntese no escuro",
+            "não têm núcleo",
+            "são bactérias grandes"
+          ],
+          "correct_index": 0,
+          "explanation": "Comparando as instruções das células, viu-se que fungos e animais têm um ancestral comum mais recente.",
+          "pitfall": "Os fungos têm núcleo: são eucariontes.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Árvore alta",
+          "statement": "Uma árvore de 40 metros só é possível porque a planta tem:",
+          "options": [
+            "vasos que levam a água até o alto",
+            "flores grandes",
+            "fruto pesado",
+            "raízes curtas",
+            "nenhuma célula no tronco"
+          ],
+          "correct_index": 0,
+          "explanation": "Os vasos levam água das raízes ao topo. Sem eles, a planta fica rente ao chão, como o musgo.",
+          "pitfall": "Flor e fruto servem à reprodução, não ao transporte de água.",
+          "difficulty": "dificil"
+        }
+      ]
+    }
+  ]
+}
