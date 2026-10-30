@@ -110,7 +110,7 @@ probabilidade). Razão, proporção e porcentagem ficaram na básica.
 7. Química orgânica: o carbono, as cadeias e as principais funções.
 8. Química e ambiente: combustíveis, poluição e reciclagem.
 
-### Biologia — `biologia-basica`
+### Biologia — `biologia-basica` (feito: 12 lições em cinco módulos, com os níveis)
 
 1. A célula: partes, tipos e divisão (mitose e meiose).
 2. Do DNA à proteína; genética e as leis de Mendel.
@@ -230,7 +230,7 @@ aparecer como "Em breve".
 2. Português básico completo (feito).
 3. Questões com nível de dificuldade nas matérias públicas (feito: Português, Matemática Básica e Lógica, seis por lição).
 4. Matemática do dia a dia (feito: 13 lições em quatro módulos, já com os níveis).
-5. **Uma área por rodada** (próximo): Biologia, História, Geografia, Física, Química,
+5. **Uma área por rodada** (em andamento; Biologia feita): História, Geografia, Física, Química,
    Inglês, Informática básica, Filosofia, Sociologia, Espanhol, Artes,
    Educação Física. Cada uma entra com todas as lições de uma vez.
 6. As trilhas ENEM entram conforme as matérias delas ficam prontas.
