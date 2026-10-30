@@ -64,4 +64,39 @@ class AppBarTest extends TestCase
     {
         $this->getJson('/api/me/bar')->assertUnauthorized();
     }
+
+    public function test_a_meta_do_dia_conta_o_xp_de_hoje(): void
+    {
+        $user = User::factory()->create(['plan' => 'pro']);
+        Sanctum::actingAs($user);
+        $licao = $this->makeLesson(3, 1);
+
+        $this->getJson('/api/me/bar')
+            ->assertJsonPath('gamification.goal.target', 120)
+            ->assertJsonPath('gamification.goal.today', 0);
+
+        $inicio = $this->postJson("/api/lessons/{$licao->id}/attempts")->assertCreated()->json();
+        $attempt = $inicio['attempt']['id'];
+        foreach ($inicio['questions'] as $q) {
+            $question = Question::find($q['id']);
+            $this->postJson("/api/attempts/{$attempt}/answers", [
+                'question_id' => $question->id,
+                'selected' => $this->naTela($attempt, $question->id, $question->correct_index),
+                'seconds' => 5,
+            ])->assertOk();
+        }
+
+        $this->assertSame(60, $this->getJson('/api/me/bar')->json('gamification.goal.today'));
+    }
+
+    public function test_troca_a_meta_so_entre_as_opcoes(): void
+    {
+        Sanctum::actingAs(User::factory()->create(['plan' => 'pro']));
+
+        $this->putJson('/api/me/daily-goal', ['goal' => 'puxada'])->assertOk()->assertJsonPath('daily_goal', 240);
+        $this->getJson('/api/me/bar')->assertJsonPath('gamification.goal.target', 240);
+        $this->getJson('/api/me')->assertJsonPath('user.daily_goal', 240);
+
+        $this->putJson('/api/me/daily-goal', ['goal' => '5'])->assertUnprocessable();
+    }
 }

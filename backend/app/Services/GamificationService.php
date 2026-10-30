@@ -30,6 +30,22 @@ class GamificationService
         }
     }
 
+    /**
+     * XP ganho hoje, no fuso de quem estuda. É o que enche o anel da meta do
+     * dia, então conta a resposta pela hora em que foi dada.
+     */
+    public function xpToday(User $user): int
+    {
+        $tz = config('castelei.timezone');
+        $inicio = now($tz)->startOfDay()->utc();
+
+        return (int) DB::table('answers')
+            ->join('attempts', 'attempts.id', '=', 'answers.attempt_id')
+            ->where('attempts.user_id', $user->id)
+            ->where('answers.created_at', '>=', $inicio)
+            ->sum('answers.xp');
+    }
+
     /** Soma de XP de todas as respostas do usuário. */
     public function xpTotal(User $user): int
     {

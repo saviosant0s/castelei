@@ -207,6 +207,7 @@ class AuthController extends Controller
             'is_guest' => $user->isGuest(),
             'effective_plan' => $user->effectivePlan(),
             'plan_label' => $user->planLabel(),
+            'daily_goal' => $user->dailyGoal(),
             'questions_per_lesson' => $user->questionLimit(),
             // Fase de testes: tudo liberado, seja qual for o plano guardado.
             'unlocked_for_testing' => Plans::unlockedForEveryone($user->seesRealPlan()),

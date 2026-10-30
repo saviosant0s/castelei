@@ -36,6 +36,11 @@ class AppBarController extends Controller
                     'streak' => $streak['current'],
                     'studied_today' => $streak['studied_today'],
                     'xp' => $this->gamification->xpTotal($user),
+                    // A meta do dia: quanto já foi hoje contra o que a pessoa escolheu.
+                    'goal' => [
+                        'target' => $user->dailyGoal(),
+                        'today' => $this->gamification->xpToday($user),
+                    ],
                 ];
             } catch (Throwable $e) {
                 report($e);
@@ -67,5 +72,21 @@ class AppBarController extends Controller
             'area' => $area,
             'reviews_due' => $vencidas,
         ]);
+    }
+
+    /**
+     * Troca a meta do dia. Só aceita as opções da configuração: um número
+     * livre viraria "meta de 5 XP" e o anel encheria com meio acerto.
+     */
+    public function updateGoal(Request $request): JsonResponse
+    {
+        $opcoes = (array) config('castelei.daily_goals');
+        $dados = $request->validate(['goal' => ['required', 'string', 'in:'.implode(',', array_keys($opcoes))]]);
+
+        $user = $request->user();
+        $user->daily_goal = $opcoes[$dados['goal']];
+        $user->save();
+
+        return response()->json(['daily_goal' => $user->dailyGoal()]);
     }
 }

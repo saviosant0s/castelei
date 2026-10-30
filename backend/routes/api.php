@@ -60,6 +60,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/me', [AuthController::class, 'me']);
     // O cabeçalho fixo e a barra de baixo: dias seguidos, XP, área do momento e revisões vencidas.
     Route::get('/me/bar', [AppBarController::class, 'show']);
+    Route::put('/me/daily-goal', [AppBarController::class, 'updateGoal']);
     // Exclusão de conta: exigida pela Google Play e prometida na política.
     Route::delete('/me', [AuthController::class, 'destroy']);
     // Visitante vira conta de verdade, levando o histórico junto.

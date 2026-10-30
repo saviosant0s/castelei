@@ -63,6 +63,8 @@ const ALLOWED_PATHS = [
   // Lembretes: o interruptor do Perfil assina e desassina o aparelho daqui.
   /^push\/key$/,
   /^push\/subscriptions$/,
+  // A meta do dia, escolhida no Perfil.
+  /^me\/daily-goal$/,
 ];
 
 export function isAllowedPath(path: string): boolean {

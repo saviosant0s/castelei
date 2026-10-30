@@ -1,9 +1,8 @@
 import Link from "next/link";
 import { createElement } from "react";
-import { Flame, Star } from "lucide-react";
 import { CastleMark } from "@/components/Logo";
+import { AppBarStats } from "./AppBarStats";
 import { areaIcon } from "@/lib/areas";
-import { formatNumber } from "@/lib/format";
 import type { AppBarResponse } from "@/lib/types";
 
 /*
@@ -19,8 +18,6 @@ import type { AppBarResponse } from "@/lib/types";
 export function AppBar({ bar }: { bar: AppBarResponse | null }) {
   const gami = bar?.gamification ?? null;
   const area = bar?.area ?? null;
-  // A chama acende quando já se estudou hoje; apagada, ela convida sem cobrar.
-  const acesa = gami ? gami.streak > 0 && gami.studied_today : false;
 
   return (
     <header
@@ -45,26 +42,7 @@ export function AppBar({ bar }: { bar: AppBarResponse | null }) {
           </Link>
         )}
 
-        {gami && (
-          <div className="flex shrink-0 items-center gap-1.5">
-            <span
-              className={`inline-flex h-9 items-center gap-1.5 rounded-pill px-3 font-display text-base font-bold ${
-                acesa ? "bg-coral-soft text-coral-deep" : "bg-surface-sunken text-content-subtle"
-              }`}
-              aria-label={`${gami.streak} ${gami.streak === 1 ? "dia seguido" : "dias seguidos"}${acesa ? "" : ", ainda não estudou hoje"}`}
-            >
-              <Flame className={`size-[1.1rem] ${acesa ? "fill-coral text-coral" : ""}`} aria-hidden="true" />
-              {gami.streak}
-            </span>
-            <span
-              className="inline-flex h-9 items-center gap-1.5 rounded-pill bg-gold-soft px-3 font-display text-base font-bold text-gold"
-              aria-label={`${gami.xp} pontos de experiência`}
-            >
-              <Star className="size-[1.1rem] fill-current" aria-hidden="true" />
-              {formatNumber(gami.xp)}
-            </span>
-          </div>
-        )}
+        {gami && <AppBarStats gami={gami} />}
       </div>
     </header>
   );

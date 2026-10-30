@@ -3,7 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Check, Crown, Lightbulb, RotateCcw, SkipForward, Star, Timer, TriangleAlert, X } from "lucide-react";
+import { motion } from "motion/react";
 import { BadgeMedal } from "@/components/illustrations/BadgeMedal";
+import { CountUp } from "@/components/app/CountUp";
 import { Confetti } from "@/components/Confetti";
 import { MatchQuestion } from "@/components/MatchQuestion";
 import { OrderQuestion } from "@/components/OrderQuestion";
@@ -589,9 +591,10 @@ export function ResultView({
   | traço: simulado sem gamificação liberada fica com a faixa mais estreita,
   | não com buracos.
   */
-  const resumo: { label: string; value: string }[] = [];
+  const resumo: { label: string; value: React.ReactNode }[] = [];
   if (result.avg_seconds !== null) resumo.push({ label: writing ? "Por parte" : "Por questão", value: formatSeconds(result.avg_seconds) });
-  if (g) resumo.push({ label: "XP ganho", value: `+${formatNumber(g.xp_earned)}` });
+  // O XP ganho sobe contando, depois do acerto: é a recompensa chegando.
+  if (g) resumo.push({ label: "XP ganho", value: <CountUp value={g.xp_earned} prefix="+" delay={0.7} /> });
   if (g && g.streak.current > 0) resumo.push({ label: "Sequência", value: pluralize(g.streak.current, "dia", "dias") });
 
   /*
@@ -617,8 +620,8 @@ export function ResultView({
 
       <div className="mt-7">
         <div className="flex items-baseline justify-between gap-3">
-          <p className="font-mono text-5xl font-medium tabular-nums">
-            {result.percent}
+          <p className="font-display text-5xl font-bold tabular-nums">
+            <CountUp value={result.percent} />
             <span className="text-2xl">%</span>
           </p>
           <p className="text-base text-content-secondary">
@@ -688,17 +691,27 @@ export function ResultView({
           </h2>
           <ul className="mt-3 space-y-2">
             {g.new_badges.map((badge, i) => (
-              <li
+              <motion.li
                 key={badge.key}
-                className="anim-pop flex items-center gap-3 rounded-2xl bg-sage-soft px-4 py-3"
-                style={{ animationDelay: `${i * 140}ms` }}
+                className="flex items-center gap-3 rounded-2xl bg-sage-soft px-4 py-3"
+                initial={{ opacity: 0, y: 16, scale: 0.92 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ type: "spring", stiffness: 260, damping: 18, delay: 1 + i * 0.18 }}
               >
-                <BadgeMedal badgeKey={badge.key} className="h-12 w-auto shrink-0" />
+                {/* A medalha chega girando e assenta: é o único "uau" da tela. */}
+                <motion.span
+                  className="shrink-0"
+                  initial={{ rotate: -35, scale: 0.4 }}
+                  animate={{ rotate: 0, scale: 1 }}
+                  transition={{ type: "spring", stiffness: 220, damping: 11, delay: 1.1 + i * 0.18 }}
+                >
+                  <BadgeMedal badgeKey={badge.key} className="h-12 w-auto" />
+                </motion.span>
                 <span className="min-w-0">
                   <span className="block text-base font-bold">{badge.name}</span>
                   <span className="block text-sm text-content-secondary">{badge.description}</span>
                 </span>
-              </li>
+              </motion.li>
             ))}
           </ul>
         </section>
