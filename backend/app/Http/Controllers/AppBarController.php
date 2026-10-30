@@ -6,6 +6,7 @@ use App\Models\Attempt;
 use App\Models\Review;
 use App\Models\Subject;
 use App\Services\GamificationService;
+use App\Support\Gamification\Level;
 use Carbon\CarbonImmutable;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -32,10 +33,14 @@ class AppBarController extends Controller
         if ($user->hasGamification()) {
             try {
                 $streak = $this->gamification->streak($user);
+                $xp = $this->gamification->xpTotal($user);
                 $gami = [
                     'streak' => $streak['current'],
                     'studied_today' => $streak['studied_today'],
-                    'xp' => $this->gamification->xpTotal($user),
+                    'xp' => $xp,
+                    // Os balões do cabeçalho: a semana da chama e o nível do XP.
+                    'week' => $this->gamification->calendarWeek($user),
+                    'level' => Level::fromXp($xp),
                     // A meta do dia: quanto já foi hoje contra o que a pessoa escolheu.
                     'goal' => [
                         'target' => $user->dailyGoal(),

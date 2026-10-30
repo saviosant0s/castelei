@@ -1,10 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import { animate, motion, useAnimate, useMotionValue, useReducedMotion, useTransform } from "motion/react";
 import { Flame, Star } from "lucide-react";
-import { useLayoutEffect } from "react";
+import { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { GoalRing } from "./GoalRing";
+import { Balao, PainelChama, PainelMeta, PainelNivel } from "./HeaderPanels";
 import { formatNumber } from "@/lib/format";
 import { lembrado, lembrar } from "@/lib/remembered";
 import type { AppBarResponse } from "@/lib/types";
@@ -15,6 +15,9 @@ type Gami = NonNullable<AppBarResponse["gamification"]>;
 | Os números do cabeçalho, vivos: o XP sobe contando quando a pessoa volta de
 | uma lição, a chama acende com um pulo na primeira lição do dia, e o anel da
 | meta enche. Cada um compara com o último valor que a aba mostrou.
+|
+| Os três são botões: cada um abre o seu balão (a semana, o nível e a meta),
+| um aberto por vez.
 */
 export function AppBarStats({ gami }: { gami: Gami }) {
   const reduzir = useReducedMotion();
@@ -22,6 +25,10 @@ export function AppBarStats({ gami }: { gami: Gami }) {
   const xp = useMotionValue(gami.xp);
   const xpTexto = useTransform(xp, (v) => formatNumber(Math.round(v)));
   const [chama, animarChama] = useAnimate();
+  const [aberto, setAberto] = useState<"chama" | "nivel" | "meta" | null>(null);
+  const caixa = useRef<HTMLDivElement>(null);
+  const fechar = useCallback(() => setAberto(null), []);
+  const alternar = (qual: "chama" | "nivel" | "meta") => setAberto((a) => (a === qual ? null : qual));
 
   useLayoutEffect(() => {
     const antes = lembrado("xp");
@@ -43,9 +50,12 @@ export function AppBarStats({ gami }: { gami: Gami }) {
   const dias = `${gami.streak} ${gami.streak === 1 ? "dia seguido" : "dias seguidos"}${acesa ? "" : ", ainda não estudou hoje"}`;
 
   return (
-    <div className="flex shrink-0 items-center gap-1.5">
-      <span
+    <div ref={caixa} className="relative flex shrink-0 items-center gap-1.5">
+      <button
+        type="button"
         ref={chama}
+        onClick={() => alternar("chama")}
+        aria-expanded={aberto === "chama"}
         className={`inline-flex h-9 items-center gap-1.5 rounded-pill px-3 font-display text-base font-bold ${
           acesa ? "bg-coral-soft text-coral-deep" : "bg-surface-sunken text-content-subtle"
         }`}
@@ -53,17 +63,36 @@ export function AppBarStats({ gami }: { gami: Gami }) {
       >
         <Flame className={`size-[1.1rem] ${acesa ? "fill-coral text-coral" : ""}`} aria-hidden="true" />
         {gami.streak}
-      </span>
-      <span
+      </button>
+      <button
+        type="button"
+        onClick={() => alternar("nivel")}
+        aria-expanded={aberto === "nivel"}
         className="inline-flex h-9 items-center gap-1.5 rounded-pill bg-gold-soft px-3 font-display text-base font-bold tabular-nums text-gold"
-        aria-label={`${gami.xp} pontos de experiência`}
+        aria-label={`${gami.xp} pontos de experiência, nível ${gami.level.current}`}
       >
         <Star className="size-[1.1rem] fill-current" aria-hidden="true" />
         <motion.span>{xpTexto}</motion.span>
-      </span>
-      <Link href="/perfil#meta" className="grid size-9 place-items-center" aria-label={`Meta do dia: ${gami.goal.today} de ${gami.goal.target} XP`}>
+      </button>
+      <button
+        type="button"
+        onClick={() => alternar("meta")}
+        aria-expanded={aberto === "meta"}
+        className="grid size-9 place-items-center"
+        aria-label={`Meta do dia: ${gami.goal.today} de ${gami.goal.target} XP`}
+      >
         <GoalRing today={gami.goal.today} target={gami.goal.target} size={30} />
-      </Link>
+      </button>
+
+      <Balao aberto={aberto === "chama"} aoFechar={fechar} ancora={caixa} rotulo="Dias seguidos">
+        <PainelChama gami={gami} />
+      </Balao>
+      <Balao aberto={aberto === "nivel"} aoFechar={fechar} ancora={caixa} rotulo="Seu nível">
+        <PainelNivel gami={gami} />
+      </Balao>
+      <Balao aberto={aberto === "meta"} aoFechar={fechar} ancora={caixa} rotulo="Meta do dia">
+        <PainelMeta goal={gami.goal} />
+      </Balao>
     </div>
   );
 }

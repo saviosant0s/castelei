@@ -1,27 +1,48 @@
 // @vitest-environment jsdom
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { cleanup, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { AppBar } from "./AppBar";
 import { BottomNav } from "@/components/BottomNav";
 import { comoEstou } from "@/lib/stats";
 
 const pathname = vi.hoisted(() => ({ value: "/inicio" }));
-vi.mock("next/navigation", () => ({ usePathname: () => pathname.value }));
+vi.mock("next/navigation", () => ({ usePathname: () => pathname.value, useRouter: () => ({ refresh: vi.fn() }) }));
 
 afterEach(cleanup);
 
 describe("AppBar", () => {
   it("mostra a área, os dias seguidos e o XP", () => {
-    render(<AppBar bar={{ gamification: { streak: 5, studied_today: true, xp: 1340, goal: { target: 120, today: 60 } }, area: { slug: "matematica", name: "Matemática" }, reviews_due: 0 }} />);
+    render(<AppBar bar={{ gamification: { streak: 5, studied_today: true, xp: 1340, goal: { target: 120, today: 60 }, week: [], level: { current: 7, floor: 1350, next: 1800 } }, area: { slug: "matematica", name: "Matemática" }, reviews_due: 0 }} />);
 
     expect(screen.getByRole("link", { name: "Estudando Matemática" }).getAttribute("href")).toBe("/area/matematica");
     expect(screen.getByLabelText("5 dias seguidos")).toBeTruthy();
-    expect(screen.getByLabelText("1340 pontos de experiência").textContent).toContain("1.340");
-    expect(screen.getByRole("link", { name: "Meta do dia: 60 de 120 XP" }).getAttribute("href")).toBe("/perfil#meta");
+    expect(screen.getByLabelText("1340 pontos de experiência, nível 7").textContent).toContain("1.340");
+    expect(screen.getByRole("button", { name: "Meta do dia: 60 de 120 XP" })).toBeTruthy();
+  });
+
+  it("cada número do cabeçalho abre o seu balão", () => {
+    const week = ["2026-10-25", "2026-10-26", "2026-10-27", "2026-10-28", "2026-10-29", "2026-10-30", "2026-10-31"].map((date, i) => ({
+      date,
+      studied: i === 1 || i === 3,
+      future: i > 3,
+    }));
+    render(<AppBar bar={{ gamification: { streak: 2, studied_today: true, xp: 1500, goal: { target: 120, today: 60 }, week, level: { current: 7, floor: 1350, next: 1800 } }, area: null, reviews_due: 0 }} />);
+
+    fireEvent.click(screen.getByRole("button", { name: "2 dias seguidos" }));
+    expect(screen.getByRole("dialog", { name: "Dias seguidos" })).toBeTruthy();
+    expect(screen.getByLabelText("segunda: estudou")).toBeTruthy();
+    expect(screen.getByLabelText("terça: não estudou")).toBeTruthy();
+    expect(screen.getByLabelText("sexta: ainda não chegou")).toBeTruthy();
+
+    fireEvent.click(screen.getByRole("button", { name: "1500 pontos de experiência, nível 7" }));
+    expect(screen.getByRole("dialog", { name: "Seu nível" }).textContent).toContain("Faltam 300 XP para o nível 8");
+
+    fireEvent.click(screen.getByRole("button", { name: "Meta do dia: 60 de 120 XP" }));
+    expect(screen.getByRole("radiogroup", { name: "Meta do dia" })).toBeTruthy();
   });
 
   it("avisa quando ainda não estudou hoje, sem esconder o número", () => {
-    render(<AppBar bar={{ gamification: { streak: 3, studied_today: false, xp: 10, goal: { target: 120, today: 0 } }, area: null, reviews_due: 0 }} />);
+    render(<AppBar bar={{ gamification: { streak: 3, studied_today: false, xp: 10, goal: { target: 120, today: 0 }, week: [], level: { current: 7, floor: 1350, next: 1800 } }, area: null, reviews_due: 0 }} />);
 
     expect(screen.getByLabelText("3 dias seguidos, ainda não estudou hoje")).toBeTruthy();
   });

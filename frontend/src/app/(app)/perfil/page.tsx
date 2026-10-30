@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ChevronRight, CloudUpload, Crown, LogIn, Palette, Search, ShieldCheck, Target, SlidersHorizontal, Sparkles, Volume2 } from "lucide-react";
-import { DailyGoalPicker } from "@/components/app/DailyGoalPicker";
+import { ChevronRight, CloudUpload, Crown, LogIn, Palette, Search, ShieldCheck, SlidersHorizontal, Sparkles, Volume2 } from "lucide-react";
 import { DeleteAccountButton } from "@/components/DeleteAccountButton";
 import { InstallButton } from "@/components/InstallButton";
 import { LogoutButton } from "@/components/LogoutButton";
@@ -109,16 +108,6 @@ export default async function Perfil({ searchParams }: { searchParams: Promise<{
       </SettingsGroup>
 
       <SettingsGroup id="estudo" title="Estudo">
-        {/* O anel do cabeçalho leva para cá (#meta). */}
-        <div id="meta" className="scroll-mt-24">
-          <SettingsRow
-            icon={Target}
-            iconTone="sage"
-            title="Meta do dia"
-            description="Quanto XP você quer ganhar por dia. Cada acerto vale 20."
-            below={<DailyGoalPicker atual={user.daily_goal ?? 120} />}
-          />
-        </div>
         {/* A busca saiu do topo da tela inicial: lupa no cabeçalho é cara de site. */}
         <SettingsRow
           icon={Search}

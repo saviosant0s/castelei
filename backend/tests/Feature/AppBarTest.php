@@ -26,6 +26,8 @@ class AppBarTest extends TestCase
             ->assertOk()
             ->assertJsonPath('gamification.streak', 0)
             ->assertJsonPath('gamification.xp', 0)
+            ->assertJsonPath('gamification.level', ['current' => 1, 'floor' => 0, 'next' => 100])
+            ->assertJsonCount(7, 'gamification.week')
             ->assertJsonPath('area', null)
             ->assertJsonPath('reviews_due', 0);
     }
@@ -98,5 +100,29 @@ class AppBarTest extends TestCase
         $this->getJson('/api/me')->assertJsonPath('user.daily_goal', 240);
 
         $this->putJson('/api/me/daily-goal', ['goal' => '5'])->assertUnprocessable();
+    }
+
+    public function test_a_semana_vai_de_domingo_a_sabado_e_marca_hoje(): void
+    {
+        $this->travelTo(\Carbon\CarbonImmutable::parse('2026-10-28 12:00', 'America/Sao_Paulo')); // quarta
+        $user = User::factory()->create(['plan' => 'pro']);
+        Sanctum::actingAs($user);
+        app(\App\Services\GamificationService::class)->recordStudyToday($user);
+
+        $semana = $this->getJson('/api/me/bar')->assertOk()->json('gamification.week');
+
+        $this->assertSame('2026-10-25', $semana[0]['date']);
+        $this->assertSame('2026-10-31', $semana[6]['date']);
+        $this->assertTrue($semana[3]['studied']);
+        $this->assertFalse($semana[3]['future']);
+        $this->assertTrue($semana[4]['future']);
+        $this->assertFalse($semana[2]['studied']);
+    }
+
+    public function test_o_nivel_sai_do_xp(): void
+    {
+        $this->assertSame(['current' => 1, 'floor' => 0, 'next' => 100], \App\Support\Gamification\Level::fromXp(99));
+        $this->assertSame(['current' => 2, 'floor' => 100, 'next' => 250], \App\Support\Gamification\Level::fromXp(100));
+        $this->assertSame(['current' => 4, 'floor' => 450, 'next' => 700], \App\Support\Gamification\Level::fromXp(600));
     }
 }
