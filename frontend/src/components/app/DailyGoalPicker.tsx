@@ -11,7 +11,7 @@ const OPCOES = [
 ] as const;
 
 /*
-| A meta do dia, no Perfil. Três opções e nada de número livre: com "5 XP" o
+| A meta do dia, no balão do anel (cabeçalho e tela inicial). Três opções e nada de número livre: com "5 XP" o
 | anel encheria com meio acerto e deixaria de querer dizer alguma coisa.
 | Cada opção diz o que ela é em lições, que é como a pessoa pensa o dia.
 */

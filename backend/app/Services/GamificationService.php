@@ -75,6 +75,28 @@ class GamificationService
         return $week;
     }
 
+    /**
+     * A semana do calendário, de domingo a sábado, como na folhinha: é o que o
+     * balão da chama mostra. Dia que ainda não chegou vem marcado como futuro,
+     * para a tela não o pintar de "faltou".
+     *
+     * @return list<array{date: string, studied: bool, future: bool}>
+     */
+    public function calendarWeek(User $user): array
+    {
+        $studied = array_flip($this->studyDays($user));
+        $today = new DateTimeImmutable($this->today());
+        $sunday = $today->modify('-'.$today->format('w').' days');
+        $week = [];
+        for ($i = 0; $i < 7; $i++) {
+            $day = $sunday->modify("+{$i} days");
+            $date = $day->format('Y-m-d');
+            $week[] = ['date' => $date, 'studied' => isset($studied[$date]), 'future' => $day > $today];
+        }
+
+        return $week;
+    }
+
     /** Tudo o que a tela de progresso precisa. */
     public function snapshot(User $user): array
     {

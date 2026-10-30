@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ChevronRight, CloudUpload, Route } from "lucide-react";
 import { Card, PageHero } from "@/components/ui";
-import { GoalRing } from "@/components/app/GoalRing";
+import { HomeGoal } from "@/components/app/HomeGoal";
 import { SubjectRow, tones } from "@/components/home/SubjectRow";
 import { areaIcon, areaProgress, groupByArea } from "@/lib/areas";
 import { currentStep, trailView } from "@/lib/trails";
@@ -79,9 +79,7 @@ export default async function Inicio() {
         title={`Oi, ${firstName(user.name)}!`}
         art={
           meta && (
-            <Link href="/perfil#meta" aria-label={`Meta do dia: ${meta.today} de ${meta.target} XP`}>
-              <GoalRing today={meta.today} target={meta.target} size={132} big />
-            </Link>
+            <HomeGoal goal={meta} />
           )
         }
       >

@@ -441,6 +441,10 @@ export interface AppBarResponse {
     xp: number;
     /** a meta do dia: XP ganho hoje contra o escolhido */
     goal: { target: number; today: number };
+    /** a semana do calendário, de domingo a sábado (o balão da chama) */
+    week: { date: string; studied: boolean; future: boolean }[];
+    /** o nível sai do XP: `floor` é onde o nível atual começa, `next` onde o próximo começa */
+    level: { current: number; floor: number; next: number };
   } | null;
   area: { slug: string; name: string } | null;
   reviews_due: number;
