@@ -110,6 +110,18 @@ return [
     ],
 
     // Fuso usado para decidir "que dia é hoje" no streak. O Brasil não tem horário de verão desde 2019.
+    /*
+    | A meta do dia, em XP (20 por acerto). As opções que o Perfil oferece, e a
+    | padrão. Uma lição de 8 questões com 6 certas dá 120: "normal" é uma lição
+    | bem feita por dia.
+    */
+    'daily_goals' => [
+        'leve' => 60,
+        'normal' => 120,
+        'puxada' => 240,
+    ],
+    'daily_goal_default' => 120,
+
     'timezone' => env('CASTELEI_TIMEZONE', 'America/Sao_Paulo'),
 
     // XP ganho por resposta certa (o wireframe mostra +20 por questão).

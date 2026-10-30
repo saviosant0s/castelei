@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ChevronRight, CloudUpload, Route } from "lucide-react";
 import { Card, PageHero } from "@/components/ui";
+import { GoalRing } from "@/components/app/GoalRing";
 import { SubjectRow, tones } from "@/components/home/SubjectRow";
 import { areaIcon, areaProgress, groupByArea } from "@/lib/areas";
 import { currentStep, trailView } from "@/lib/trails";
 import { serverGet } from "@/lib/backend";
 import { firstName, pluralize } from "@/lib/format";
-import type { ProgressResponse, SubjectsResponse, User } from "@/lib/types";
+import type { AppBarResponse, ProgressResponse, SubjectsResponse, User } from "@/lib/types";
 
 export const metadata: Metadata = { title: "Início" };
 
@@ -22,12 +23,26 @@ function saudacao(gami: ProgressResponse["gamification"]): string {
   return "Uma lição por dia já começa uma sequência.";
 }
 
+/** Embaixo do "Oi", com meta: quanto falta hoje, ou a comemoração. */
+function fraseDaMeta(meta: { today: number; target: number }, gami: ProgressResponse["gamification"]): string {
+  const falta = meta.target - meta.today;
+  if (falta <= 0) {
+    const dias = gami?.streak.current ?? 0;
+    return dias > 1 ? `Meta de hoje feita. São ${dias} dias seguidos.` : "Meta de hoje feita. Volte amanhã para manter o ritmo.";
+  }
+  if (meta.today === 0) return `Sua meta é ${meta.target} XP por dia. Cada acerto vale 20.`;
+  return `Faltam ${falta} XP para a meta de hoje.`;
+}
+
 export default async function Inicio() {
-  const [{ user }, { areas, subjects, trails }, progress] = await Promise.all([
+  const [{ user }, { areas, subjects, trails }, progress, bar] = await Promise.all([
     serverGet<{ user: User }>("/me"),
     serverGet<SubjectsResponse>("/subjects"),
     serverGet<ProgressResponse>("/progress"),
+    // A meta do dia é o extra: falhou, a tela abre sem o anel.
+    serverGet<AppBarResponse>("/me/bar").catch(() => null),
   ]);
+  const meta = bar?.gamification?.goal ?? null;
 
   const last = progress.last_attempt;
   const gami = progress.gamification;
@@ -59,8 +74,18 @@ export default async function Inicio() {
         a busca mora no Perfil. A frase de baixo é a única coisa que muda de
         um dia para o outro, e diz o que fazer agora.
       */}
-      <PageHero eyebrow="Bora estudar" title={`Oi, ${firstName(user.name)}!`}>
-        {saudacao(gami)}
+      <PageHero
+        eyebrow="Bora estudar"
+        title={`Oi, ${firstName(user.name)}!`}
+        art={
+          meta && (
+            <Link href="/perfil#meta" aria-label={`Meta do dia: ${meta.today} de ${meta.target} XP`}>
+              <GoalRing today={meta.today} target={meta.target} size={132} big />
+            </Link>
+          )
+        }
+      >
+        {meta ? fraseDaMeta(meta, gami) : saudacao(gami)}
       </PageHero>
 
       {/*

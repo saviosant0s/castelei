@@ -56,6 +56,7 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
             'is_admin' => 'boolean',
+            'daily_goal' => 'integer',
         ];
     }
 
@@ -123,5 +124,11 @@ class User extends Authenticatable
     public function hasExam(): bool
     {
         return Plans::hasExam($this->plan, $this->seesRealPlan());
+    }
+
+    /** A meta de XP do dia: a escolhida, ou a padrão. */
+    public function dailyGoal(): int
+    {
+        return $this->daily_goal ?? (int) config('castelei.daily_goal_default', 120);
     }
 }

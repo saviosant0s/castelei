@@ -12,15 +12,16 @@ afterEach(cleanup);
 
 describe("AppBar", () => {
   it("mostra a área, os dias seguidos e o XP", () => {
-    render(<AppBar bar={{ gamification: { streak: 5, studied_today: true, xp: 1340 }, area: { slug: "matematica", name: "Matemática" }, reviews_due: 0 }} />);
+    render(<AppBar bar={{ gamification: { streak: 5, studied_today: true, xp: 1340, goal: { target: 120, today: 60 } }, area: { slug: "matematica", name: "Matemática" }, reviews_due: 0 }} />);
 
     expect(screen.getByRole("link", { name: "Estudando Matemática" }).getAttribute("href")).toBe("/area/matematica");
     expect(screen.getByLabelText("5 dias seguidos")).toBeTruthy();
     expect(screen.getByLabelText("1340 pontos de experiência").textContent).toContain("1.340");
+    expect(screen.getByRole("link", { name: "Meta do dia: 60 de 120 XP" }).getAttribute("href")).toBe("/perfil#meta");
   });
 
   it("avisa quando ainda não estudou hoje, sem esconder o número", () => {
-    render(<AppBar bar={{ gamification: { streak: 3, studied_today: false, xp: 10 }, area: null, reviews_due: 0 }} />);
+    render(<AppBar bar={{ gamification: { streak: 3, studied_today: false, xp: 10, goal: { target: 120, today: 0 } }, area: null, reviews_due: 0 }} />);
 
     expect(screen.getByLabelText("3 dias seguidos, ainda não estudou hoje")).toBeTruthy();
   });

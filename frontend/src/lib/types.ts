@@ -16,6 +16,8 @@ export interface User {
   effective_plan: Plan;
   /** rótulo do plano efetivo */
   plan_label: string;
+  /** a meta de XP por dia (60, 120 ou 240) */
+  daily_goal?: number;
   /** null = ilimitado */
   questions_per_lesson: number | null;
   /** fase de testes: tudo liberado, seja qual for o plano guardado */
@@ -433,7 +435,13 @@ export interface StatsResponse {
 
 /** O cabeçalho fixo e a barra de baixo (`GET /me/bar`). */
 export interface AppBarResponse {
-  gamification: { streak: number; studied_today: boolean; xp: number } | null;
+  gamification: {
+    streak: number;
+    studied_today: boolean;
+    xp: number;
+    /** a meta do dia: XP ganho hoje contra o escolhido */
+    goal: { target: number; today: number };
+  } | null;
   area: { slug: string; name: string } | null;
   reviews_due: number;
 }
