@@ -283,6 +283,20 @@ export const SUBJECTS: SiteSubject[] = [
       "Movimentos sociais e direitos humanos",
     ],
   },
+  {
+    slug: "espanhol-basico",
+    name: "Espanhol",
+    pitch:
+      "Saudações, ser e estar, artigos, os verbos no presente, passado e futuro, vocabulário do dia a dia e os falsos amigos que o ENEM mais cobra.",
+    lessons: [
+      "Saudações, pronomes, ser e estar",
+      "Artigos, gênero e as palavras que trocam de gênero",
+      "O presente: verbos em -ar, -er e -ir",
+      "Passado e futuro",
+      "Vocabulário do dia a dia: números, horas, família e rotina",
+      "Falsos amigos e como ler um texto em espanhol",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -299,5 +313,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 1932,
+  questions: 2016,
 };

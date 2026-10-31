@@ -173,7 +173,7 @@ probabilidade). Razão, proporção e porcentagem ficaram na básica.
 O formato `match` (ligar os pares) serve bem para vocabulário. Sem áudio por
 enquanto: a narração ainda é gravada à mão (ver o `CLAUDE.md`).
 
-### Espanhol — `espanhol-basico`
+### Espanhol — `espanhol-basico` (feito: 6 lições em três módulos, com os níveis)
 
 Mesma espinha do Inglês, com os **falsos amigos** (heterossemânticos) em
 destaque, porque é o que a prova do ENEM cobra.
