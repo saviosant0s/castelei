@@ -211,6 +211,22 @@ export const SUBJECTS: SiteSubject[] = [
       "Eletricidade: corrente, tensão e a conta de luz",
     ],
   },
+  {
+    slug: "quimica-basica",
+    name: "Química",
+    pitch:
+      "Misturas e separação, átomos e tabela periódica, ligações, ácidos e bases, reações e mol, soluções, química orgânica e o impacto no ambiente.",
+    lessons: [
+      "Matéria, misturas e como separá-las",
+      "O átomo e a tabela periódica",
+      "Ligações químicas: como os átomos se unem",
+      "Ácidos, bases, sais e óxidos",
+      "Reações químicas, balanceamento e mol",
+      "Soluções e concentração",
+      "Química orgânica: o mundo do carbono",
+      "Química e ambiente: combustíveis, poluição e reciclagem",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -227,5 +243,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 1484,
+  questions: 1596,
 };

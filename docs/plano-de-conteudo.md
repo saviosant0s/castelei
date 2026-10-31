@@ -99,7 +99,7 @@ probabilidade). Razão, proporção e porcentagem ficaram na básica.
 6. Ondas e som; luz, reflexão e refração.
 7. Eletricidade: carga, corrente, tensão e resistência; circuito simples e conta de luz.
 
-### Química — `quimica-basica`
+### Química — `quimica-basica` (feito: 8 lições em quatro módulos, com os níveis)
 
 1. Matéria e suas propriedades; misturas e separação de misturas.
 2. O átomo: modelos, prótons, nêutrons e elétrons; tabela periódica.

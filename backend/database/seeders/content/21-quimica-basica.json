@@ -1,0 +1,3093 @@
+{
+  "slug": "quimica-basica",
+  "name": "Química",
+  "area": "quimica",
+  "description": "Misturas, átomos, ligações, ácidos e bases, reações, soluções, química orgânica e ambiente: o básico de Química para qualquer prova, explicado do zero.",
+  "lessons": [
+    {
+      "slug": "materia-e-misturas",
+      "title": "Matéria, misturas e como separá-las",
+      "module": "Matéria",
+      "summary": "Quase tudo à nossa volta é mistura. Ela pode ser homogênea ou heterogênea, e cada tipo pede um jeito diferente de separar.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O café da manhã",
+          "body": [
+            "Para fazer café, você mistura pó com água quente e depois passa no filtro. O pó fica no papel, e o líquido desce.",
+            "Sem perceber, você acabou de separar uma mistura. A Química estuda isso e muito mais."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Substância pura e mistura",
+          "body": [
+            "Uma substância pura tem um tipo só de componente. A água destilada é pura; a água da torneira tem sais e cloro.",
+            "Quase tudo na natureza é mistura, como o ar, o mar e o leite."
+          ],
+          "terms": [
+            {
+              "word": "Substância pura",
+              "meaning": "um material formado por um tipo só de substância, como a água destilada ou o ouro puro."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Homogênea ou heterogênea",
+          "body": [
+            "Se você olha e não vê partes diferentes, a mistura é homogênea. Se vê, é heterogênea."
+          ],
+          "terms": [
+            {
+              "word": "Mistura homogênea e heterogênea",
+              "meaning": "homogênea é a mistura em que não se vê diferença entre as partes, como água com açúcar. Heterogênea é a que mostra partes diferentes, como água com óleo."
+            }
+          ],
+          "table": {
+            "label": "Exemplos",
+            "headers": [
+              "Mistura",
+              "Tipo",
+              "Por quê"
+            ],
+            "rows": [
+              [
+                "água com açúcar dissolvido",
+                "homogênea",
+                "parece uma coisa só"
+              ],
+              [
+                "ar filtrado",
+                "homogênea",
+                "os gases se misturam por completo"
+              ],
+              [
+                "água com óleo",
+                "heterogênea",
+                "duas camadas visíveis"
+              ],
+              [
+                "areia com água",
+                "heterogênea",
+                "a areia fica no fundo"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Separando o heterogêneo",
+          "body": [
+            "Quando as partes se veem, a separação é mais simples. O café usa filtração.",
+            "Água com óleo se separa por decantação: o óleo fica em cima, e a água pode ser escoada por baixo."
+          ],
+          "terms": [
+            {
+              "word": "Filtração",
+              "meaning": "separar um sólido de um líquido com um filtro, como no café coado."
+            },
+            {
+              "word": "Decantação",
+              "meaning": "deixar a mistura parada até a parte mais pesada descer, e então separar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Separando o homogêneo",
+          "body": [
+            "Água com sal dissolvido não passa no filtro: o sal atravessa junto. É preciso usar o calor.",
+            "Nas salinas, o sol evapora a água, e o sal fica. Para recolher a água, usa-se a destilação: ferver, esfriar o vapor e juntar as gotas."
+          ],
+          "terms": [
+            {
+              "word": "Destilação",
+              "meaning": "ferver a mistura e esfriar o vapor para recolher o líquido separado."
+            }
+          ],
+          "table": {
+            "label": "Qual método usar",
+            "headers": [
+              "Mistura",
+              "Método"
+            ],
+            "rows": [
+              [
+                "pó de café e água",
+                "filtração"
+              ],
+              [
+                "água e óleo",
+                "decantação"
+              ],
+              [
+                "sal dissolvido na água, para ficar com o sal",
+                "evaporação"
+              ],
+              [
+                "sal dissolvido na água, para ficar com a água",
+                "destilação simples"
+              ],
+              [
+                "petróleo, para separar gasolina e diesel",
+                "destilação fracionada"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova descreve uma mistura e pede o método de separação. Também classifica misturas em homogêneas e heterogêneas."
+          ],
+          "bullets": [
+            "“Para separar água e areia, o método mais simples é…”",
+            "“A obtenção de sal nas salinas ocorre por…”",
+            "“Uma mistura de água e álcool é classificada como…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Substância pura",
+              "meaning": "um material formado por um tipo só de substância, como a água destilada ou o ouro puro."
+            },
+            {
+              "word": "Destilação",
+              "meaning": "ferver a mistura e esfriar o vapor para recolher o líquido separado."
+            }
+          ],
+          "bullets": [
+            "Achar que água da torneira é substância pura. Ela tem sais e cloro.",
+            "Tentar separar sal dissolvido com filtro. O sal atravessa.",
+            "Achar que água e álcool formam duas camadas. Eles se misturam: é homogênea.",
+            "Confundir evaporação (fica o sólido) com destilação (recolhe o líquido)."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Substância pura tem um componente só; mistura tem vários. Homogênea parece uma coisa só; heterogênea mostra partes.",
+            "Filtração e decantação separam o heterogêneo. Evaporação e destilação separam o que está dissolvido."
+          ],
+          "terms": [
+            {
+              "word": "Mistura homogênea e heterogênea",
+              "meaning": "homogênea é a mistura em que não se vê diferença entre as partes, como água com açúcar. Heterogênea é a que mostra partes diferentes, como água com óleo."
+            },
+            {
+              "word": "Filtração",
+              "meaning": "separar um sólido de um líquido com um filtro, como no café coado."
+            },
+            {
+              "word": "Decantação",
+              "meaning": "deixar a mistura parada até a parte mais pesada descer, e então separar."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Café",
+          "statement": "Coar o café é um exemplo de:",
+          "options": [
+            "filtração",
+            "destilação",
+            "decantação",
+            "evaporação",
+            "fusão"
+          ],
+          "correct_index": 0,
+          "explanation": "O filtro segura o pó e deixa o líquido passar.",
+          "pitfall": "Destilação usa calor, e o café coado não ferve no filtro."
+        },
+        {
+          "topic": "Óleo",
+          "statement": "Água e óleo formam uma mistura:",
+          "options": [
+            "heterogênea",
+            "homogênea",
+            "pura",
+            "que não se separa nunca",
+            "gasosa"
+          ],
+          "correct_index": 0,
+          "explanation": "Dá para ver duas camadas.",
+          "pitfall": "Homogênea seria se parecesse uma coisa só."
+        },
+        {
+          "topic": "Salinas",
+          "statement": "Nas salinas, o sal é obtido por:",
+          "options": [
+            "evaporação da água do mar",
+            "filtração",
+            "decantação do sal",
+            "destilação fracionada",
+            "imã"
+          ],
+          "correct_index": 0,
+          "explanation": "O sol evapora a água, e o sal fica.",
+          "pitfall": "O sal está dissolvido: o filtro não o segura."
+        },
+        {
+          "topic": "Pura",
+          "statement": "Qual destes é uma substância pura?",
+          "options": [
+            "água destilada",
+            "água do mar",
+            "ar",
+            "leite",
+            "suco de laranja"
+          ],
+          "correct_index": 0,
+          "explanation": "A destilação deixa a água sem os outros componentes.",
+          "pitfall": "O ar é mistura de vários gases."
+        },
+        {
+          "topic": "Areia",
+          "statement": "Para separar areia e água, o método mais simples é:",
+          "options": [
+            "filtração ou decantação",
+            "destilação fracionada",
+            "evaporação da areia",
+            "dissolução",
+            "fusão"
+          ],
+          "correct_index": 0,
+          "explanation": "A areia não se dissolve: pode ser filtrada ou deixada no fundo.",
+          "pitfall": "Destilação fracionada é para líquidos misturados, como o petróleo."
+        },
+        {
+          "topic": "Álcool",
+          "statement": "Água misturada com álcool forma uma mistura:",
+          "options": [
+            "homogênea",
+            "heterogênea",
+            "de duas camadas",
+            "sólida",
+            "pura"
+          ],
+          "correct_index": 0,
+          "explanation": "Água e álcool se misturam por completo.",
+          "pitfall": "Duas camadas seria o caso de água e óleo."
+        },
+        {
+          "topic": "Petróleo",
+          "statement": "Gasolina, diesel e gás de cozinha são separados do petróleo por:",
+          "options": [
+            "destilação fracionada",
+            "filtração",
+            "peneira",
+            "decantação",
+            "imã"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada parte ferve numa temperatura diferente e é recolhida separada.",
+          "pitfall": "Filtração serve para sólido e líquido, não para líquidos misturados."
+        },
+        {
+          "topic": "Métodos",
+          "format": "match",
+          "statement": "Ligue cada mistura ao método de separação.",
+          "pairs": [
+            {
+              "left": "pó de café e água",
+              "right": "filtração"
+            },
+            {
+              "left": "água e óleo",
+              "right": "decantação"
+            },
+            {
+              "left": "água salgada, para ficar com o sal",
+              "right": "evaporação"
+            },
+            {
+              "left": "água salgada, para ficar com a água",
+              "right": "destilação"
+            }
+          ],
+          "explanation": "Cada mistura pede um método.",
+          "pitfall": "Evaporação e destilação são as mais trocadas: uma fica com o sólido, a outra recolhe o líquido."
+        },
+        {
+          "topic": "Ar",
+          "statement": "O ar que respiramos é:",
+          "options": [
+            "uma mistura de gases",
+            "uma substância pura",
+            "só oxigênio",
+            "um sólido",
+            "só gás carbônico"
+          ],
+          "correct_index": 0,
+          "explanation": "Tem nitrogênio, oxigênio e outros gases.",
+          "pitfall": "Só oxigênio é o erro mais comum: a maior parte é nitrogênio.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Homogênea",
+          "statement": "Qual destas é uma mistura homogênea?",
+          "options": [
+            "água com açúcar dissolvido",
+            "água com areia",
+            "água com óleo",
+            "feijão com arroz",
+            "granito"
+          ],
+          "correct_index": 0,
+          "explanation": "O açúcar dissolvido não se vê: parece uma coisa só.",
+          "pitfall": "Feijão com arroz dá para separar com os dedos.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Filtro e sal",
+          "statement": "Por que um filtro de papel não separa o sal da água salgada?",
+          "options": [
+            "o sal está dissolvido e passa junto com a água",
+            "o filtro é fino demais",
+            "o sal é mais pesado",
+            "a água evapora no filtro",
+            "o sal derrete o papel"
+          ],
+          "correct_index": 0,
+          "explanation": "As partículas do sal dissolvido são minúsculas e atravessam o filtro.",
+          "pitfall": "Mais pesado é o argumento da decantação, que também não funciona aqui.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Torneira",
+          "statement": "A água da torneira é:",
+          "options": [
+            "uma mistura, com sais e cloro",
+            "uma substância pura",
+            "o mesmo que água destilada",
+            "um sólido",
+            "um gás"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela é tratada com cloro e carrega sais dissolvidos.",
+          "pitfall": "Substância pura é a água destilada.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Duas etapas",
+          "statement": "Uma mistura tem areia, sal e água. Qual a melhor sequência para obter o sal?",
+          "options": [
+            "filtrar para tirar a areia e depois evaporar a água",
+            "evaporar tudo de uma vez e separar com os dedos",
+            "decantar o sal e depois filtrar a areia",
+            "destilar a areia",
+            "usar um imã"
+          ],
+          "correct_index": 0,
+          "explanation": "Primeiro sai o que não está dissolvido; depois, a água evapora e sobra o sal.",
+          "pitfall": "Evaporar tudo de uma vez deixaria o sal grudado na areia.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Água doce",
+          "statement": "Uma cidade quer tirar água potável da água do mar. Qual processo serve?",
+          "options": [
+            "destilação ou outra forma de dessalinização",
+            "filtração simples",
+            "decantação",
+            "peneira",
+            "imã"
+          ],
+          "correct_index": 0,
+          "explanation": "O sal está dissolvido; é preciso separar com calor ou com membranas especiais.",
+          "pitfall": "Filtração simples não tira o sal dissolvido.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "atomo-e-tabela",
+      "title": "O átomo e a tabela periódica",
+      "module": "O átomo",
+      "summary": "Tudo é feito de átomos, com prótons e nêutrons no núcleo e elétrons em volta. O número de prótons define o elemento, e a tabela periódica organiza todos eles.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Cortar até não dar mais",
+          "body": [
+            "Pegue uma folha de alumínio e corte ao meio, e de novo, e de novo. Uma hora não dá mais com a tesoura.",
+            "Se desse para continuar, chegaria a um pedaço que ainda seria alumínio e não poderia ser dividido sem deixar de ser. É o átomo."
+          ],
+          "terms": [
+            {
+              "word": "Átomo",
+              "meaning": "a menor parte de um elemento químico que ainda tem as características dele."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Como a ideia de átomo mudou",
+          "body": [
+            "Ninguém vê um átomo a olho nu. Por isso a ideia de como ele é foi mudando, conforme novos experimentos apareciam."
+          ],
+          "terms": [
+            {
+              "word": "Próton, nêutron e elétron",
+              "meaning": "as partes do átomo. Prótons (carga positiva) e nêutrons (sem carga) ficam no núcleo; elétrons (carga negativa) giram em volta."
+            }
+          ],
+          "table": {
+            "label": "Os modelos do átomo",
+            "headers": [
+              "Modelo",
+              "Ano",
+              "A ideia"
+            ],
+            "rows": [
+              [
+                "Dalton",
+                "1808",
+                "uma bolinha maciça que não se divide"
+              ],
+              [
+                "Thomson",
+                "1897",
+                "uma massa positiva com elétrons espalhados, como passas num pudim"
+              ],
+              [
+                "Rutherford",
+                "1911",
+                "um núcleo minúsculo e denso, com muito espaço vazio em volta"
+              ],
+              [
+                "Bohr",
+                "1913",
+                "elétrons girando em camadas com energia certa"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "As partes do átomo",
+          "body": [
+            "No centro fica o núcleo, com prótons e nêutrons. Em volta giram os elétrons, muito mais leves.",
+            "Num átomo neutro, há tantos elétrons quanto prótons, e as cargas se equilibram."
+          ],
+          "terms": [
+            {
+              "word": "Próton, nêutron e elétron",
+              "meaning": "as partes do átomo. Prótons (carga positiva) e nêutrons (sem carga) ficam no núcleo; elétrons (carga negativa) giram em volta."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que define o elemento",
+          "body": [
+            "O número de prótons é o número atômico. Todo átomo com 6 prótons é carbono; com 8, oxigênio.",
+            "O número de nêutrons pode variar. O carbono-12 e o carbono-14 são isótopos: os dois têm 6 prótons, mas 6 e 8 nêutrons."
+          ],
+          "terms": [
+            {
+              "word": "Número atômico",
+              "meaning": "o número de prótons de um átomo. É ele que diz qual é o elemento."
+            },
+            {
+              "word": "Isótopo",
+              "meaning": "átomos do mesmo elemento, com o mesmo número de prótons, mas número diferente de nêutrons."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A tabela periódica",
+          "body": [
+            "A tabela periódica organiza os 118 elementos conhecidos pelo número atômico. As linhas são os períodos; as colunas, os grupos ou famílias.",
+            "Elementos do mesmo grupo têm comportamento parecido. Os gases nobres, na última coluna, quase não reagem com nada."
+          ],
+          "table": {
+            "label": "Algumas famílias",
+            "headers": [
+              "Grupo",
+              "Nome",
+              "Exemplos"
+            ],
+            "rows": [
+              [
+                "1",
+                "metais alcalinos",
+                "sódio, potássio"
+              ],
+              [
+                "17",
+                "halogênios",
+                "cloro, flúor"
+              ],
+              [
+                "18",
+                "gases nobres",
+                "hélio, neônio"
+              ],
+              [
+                "vários",
+                "metais",
+                "ferro, cobre, ouro"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede o número de prótons, nêutrons e elétrons de um átomo. Também cobra os modelos atômicos e os grupos da tabela."
+          ],
+          "bullets": [
+            "“Um átomo neutro com 11 prótons tem quantos elétrons?”",
+            "“O modelo que propôs um núcleo pequeno e denso foi o de…”",
+            "“Isótopos são átomos com mesmo número de…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Número atômico",
+              "meaning": "o número de prótons de um átomo. É ele que diz qual é o elemento."
+            },
+            {
+              "word": "Isótopo",
+              "meaning": "átomos do mesmo elemento, com o mesmo número de prótons, mas número diferente de nêutrons."
+            },
+            {
+              "word": "Próton, nêutron e elétron",
+              "meaning": "as partes do átomo. Prótons (carga positiva) e nêutrons (sem carga) ficam no núcleo; elétrons (carga negativa) giram em volta."
+            }
+          ],
+          "bullets": [
+            "Achar que o número de nêutrons define o elemento. Quem define é o de prótons.",
+            "Achar que isótopos são elementos diferentes. São o mesmo elemento, com nêutrons diferentes.",
+            "Trocar Thomson (pudim de passas) por Rutherford (núcleo e espaço vazio).",
+            "Achar que os elétrons ficam no núcleo. Eles giram em volta."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O átomo tem prótons e nêutrons no núcleo e elétrons em volta. O número de prótons é o número atômico e define o elemento.",
+            "Isótopos mudam só os nêutrons. A tabela organiza 118 elementos em períodos e grupos, e grupos parecidos reagem parecido."
+          ],
+          "terms": [
+            {
+              "word": "Átomo",
+              "meaning": "a menor parte de um elemento químico que ainda tem as características dele."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Elétrons",
+          "statement": "Um átomo neutro de sódio tem 11 prótons. Quantos elétrons ele tem?",
+          "options": [
+            "11",
+            "22",
+            "0",
+            "12",
+            "23"
+          ],
+          "correct_index": 0,
+          "explanation": "No átomo neutro, elétrons e prótons são em número igual.",
+          "pitfall": "22 soma prótons e elétrons, sem razão."
+        },
+        {
+          "topic": "Define",
+          "statement": "O que define qual é o elemento químico?",
+          "options": [
+            "o número de prótons",
+            "o número de nêutrons",
+            "o número de elétrons livres",
+            "a cor do átomo",
+            "a massa do núcleo só"
+          ],
+          "correct_index": 0,
+          "explanation": "Todo átomo com 6 prótons é carbono, não importa o resto.",
+          "pitfall": "Nêutrons podem variar sem mudar o elemento."
+        },
+        {
+          "topic": "Rutherford",
+          "statement": "Quem propôs um átomo com núcleo pequeno, denso e muito espaço vazio em volta?",
+          "options": [
+            "Rutherford",
+            "Dalton",
+            "Thomson",
+            "Bohr",
+            "Lavoisier"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele chegou a isso atirando partículas numa folha de ouro.",
+          "pitfall": "Thomson é o do pudim de passas."
+        },
+        {
+          "topic": "Isótopos",
+          "statement": "Isótopos são átomos com:",
+          "options": [
+            "o mesmo número de prótons e número diferente de nêutrons",
+            "números diferentes de prótons",
+            "o mesmo número de nêutrons e prótons diferentes",
+            "elétrons a mais",
+            "nenhum próton"
+          ],
+          "correct_index": 0,
+          "explanation": "Carbono-12 e carbono-14 têm 6 prótons e nêutrons diferentes.",
+          "pitfall": "Prótons diferentes seriam elementos diferentes."
+        },
+        {
+          "topic": "Gases nobres",
+          "statement": "Os gases nobres, como o hélio, ficam na última coluna da tabela e:",
+          "options": [
+            "quase não reagem com outros elementos",
+            "reagem com tudo",
+            "são todos metais",
+            "são líquidos",
+            "não existem na natureza"
+          ],
+          "correct_index": 0,
+          "explanation": "Eles já são estáveis e raramente formam ligações.",
+          "pitfall": "Reagir com tudo é o oposto dos gases nobres."
+        },
+        {
+          "topic": "Núcleo",
+          "statement": "Onde ficam os prótons e os nêutrons?",
+          "options": [
+            "no núcleo do átomo",
+            "girando em volta do núcleo",
+            "fora do átomo",
+            "só nos elétrons",
+            "na tabela periódica"
+          ],
+          "correct_index": 0,
+          "explanation": "Prótons e nêutrons formam o núcleo; os elétrons giram em volta.",
+          "pitfall": "Quem gira em volta são os elétrons."
+        },
+        {
+          "topic": "Colunas",
+          "statement": "Na tabela periódica, as colunas se chamam:",
+          "options": [
+            "grupos ou famílias",
+            "períodos",
+            "camadas",
+            "isótopos",
+            "núcleos"
+          ],
+          "correct_index": 0,
+          "explanation": "As colunas reúnem elementos de comportamento parecido.",
+          "pitfall": "As linhas é que são os períodos."
+        },
+        {
+          "topic": "Modelos",
+          "format": "match",
+          "statement": "Ligue cada modelo à sua ideia.",
+          "pairs": [
+            {
+              "left": "Dalton",
+              "right": "bolinha maciça indivisível"
+            },
+            {
+              "left": "Thomson",
+              "right": "pudim de passas"
+            },
+            {
+              "left": "Rutherford",
+              "right": "núcleo pequeno e muito espaço vazio"
+            },
+            {
+              "left": "Bohr",
+              "right": "elétrons em camadas de energia"
+            }
+          ],
+          "explanation": "Cada modelo corrigiu o anterior com um experimento novo.",
+          "pitfall": "Thomson e Rutherford são os mais trocados."
+        },
+        {
+          "topic": "Carga",
+          "statement": "Qual parte do átomo tem carga negativa?",
+          "options": [
+            "o elétron",
+            "o próton",
+            "o nêutron",
+            "o núcleo",
+            "nenhuma"
+          ],
+          "correct_index": 0,
+          "explanation": "Elétrons são negativos; prótons, positivos; nêutrons, sem carga.",
+          "pitfall": "O próton é positivo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Quantos",
+          "statement": "Quantos elementos a tabela periódica tem hoje?",
+          "options": [
+            "118",
+            "8",
+            "50",
+            "1.000",
+            "26"
+          ],
+          "correct_index": 0,
+          "explanation": "São 118 elementos reconhecidos.",
+          "pitfall": "26 é o número de letras do alfabeto, não de elementos.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Nêutrons",
+          "statement": "Um átomo tem 8 prótons e número de massa 16. Quantos nêutrons ele tem?",
+          "options": [
+            "8",
+            "16",
+            "24",
+            "0",
+            "2"
+          ],
+          "correct_index": 0,
+          "explanation": "Massa = prótons + nêutrons: 16 − 8 = 8.",
+          "pitfall": "16 é a massa, não o número de nêutrons.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Família",
+          "statement": "Por que sódio e potássio, do mesmo grupo, reagem de forma parecida?",
+          "options": [
+            "têm o mesmo número de elétrons na última camada",
+            "têm a mesma massa",
+            "são o mesmo elemento",
+            "têm o mesmo número de prótons",
+            "foram descobertos juntos"
+          ],
+          "correct_index": 0,
+          "explanation": "Os elétrons de fora decidem como o átomo reage, e no mesmo grupo eles se repetem.",
+          "pitfall": "Mesmo número de prótons faria deles o mesmo elemento.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Carbono-14",
+          "statement": "O carbono-14 tem 6 prótons e 8 nêutrons. O carbono-12 tem 6 prótons e 6 nêutrons. Eles são:",
+          "options": [
+            "isótopos do mesmo elemento",
+            "elementos diferentes",
+            "íons do carbono",
+            "o mesmo átomo com outro nome",
+            "gases nobres"
+          ],
+          "correct_index": 0,
+          "explanation": "Mesmo número de prótons, nêutrons diferentes.",
+          "pitfall": "Elementos diferentes teriam prótons diferentes.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Vazio",
+          "statement": "O experimento de Rutherford mostrou que quase todas as partículas atravessavam a folha de ouro. Isso indicou que:",
+          "options": [
+            "o átomo é quase todo espaço vazio",
+            "o átomo é uma bola maciça",
+            "o ouro não tem átomos",
+            "os elétrons ficam no núcleo",
+            "o átomo não tem núcleo"
+          ],
+          "correct_index": 0,
+          "explanation": "Só poucas partículas batiam em algo: o núcleo, minúsculo.",
+          "pitfall": "Bola maciça era o modelo de Dalton, derrubado por esse resultado.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "ligacoes-quimicas",
+      "title": "Ligações químicas: como os átomos se unem",
+      "module": "O átomo",
+      "summary": "Os átomos se unem para ficar estáveis. Uns passam elétrons para outros, uns dividem elétrons e os metais formam um mar de elétrons livres.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O sal da cozinha",
+          "body": [
+            "O sódio é um metal que explode na água. O cloro é um gás venenoso. Juntos, viram o sal que você põe na comida.",
+            "Quando átomos se unem, nasce algo com propriedades novas. Essa união é a ligação química."
+          ],
+          "terms": [
+            {
+              "word": "Átomo",
+              "meaning": "a menor parte de um elemento químico."
+            },
+            {
+              "word": "Próton, nêutron e elétron",
+              "meaning": "as partes do átomo: prótons e nêutrons no núcleo, elétrons em volta."
+            },
+            {
+              "word": "Ligação iônica, covalente e metálica",
+              "meaning": "a união entre átomos. A iônica transfere elétrons; a covalente compartilha; a metálica forma um mar de elétrons livres."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Por que os átomos se unem",
+          "body": [
+            "Os gases nobres quase não reagem: com 8 elétrons na camada de fora, já estão estáveis.",
+            "Os outros átomos ganham, perdem ou dividem elétrons para ficar parecidos com eles."
+          ],
+          "terms": [
+            {
+              "word": "Próton, nêutron e elétron",
+              "meaning": "as partes do átomo: prótons e nêutrons no núcleo, elétrons em volta."
+            },
+            {
+              "word": "Regra do octeto",
+              "meaning": "a tendência dos átomos de ficarem com 8 elétrons na última camada, como os gases nobres, que são estáveis."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A ligação iônica",
+          "body": [
+            "O sódio tem 1 elétron sobrando na camada de fora, e o cloro precisa de 1. O sódio passa o elétron para o cloro.",
+            "Os dois viram íons de cargas opostas, que se atraem. Acontece entre um metal e um não metal."
+          ],
+          "terms": [
+            {
+              "word": "Íon",
+              "meaning": "um átomo que ganhou ou perdeu elétrons e ficou com carga. Quem perde vira cátion, positivo; quem ganha vira ânion, negativo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A ligação covalente",
+          "body": [
+            "Dois não metais não querem perder elétrons. Então eles dividem.",
+            "Na molécula de água, o oxigênio divide elétrons com dois hidrogênios: H₂O. O gás carbônico, CO₂, também é covalente."
+          ],
+          "terms": [
+            {
+              "word": "Molécula",
+              "meaning": "um grupo de átomos unidos por ligações, como a da água, H₂O."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A ligação metálica",
+          "body": [
+            "Nos metais, os elétrons de fora ficam soltos e andam entre os átomos, como um mar.",
+            "É por isso que os metais conduzem eletricidade e calor tão bem."
+          ],
+          "table": {
+            "label": "Os três tipos",
+            "headers": [
+              "Ligação",
+              "Entre",
+              "O que acontece",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "iônica",
+                "metal e não metal",
+                "um passa elétrons ao outro",
+                "sal de cozinha"
+              ],
+              [
+                "covalente",
+                "não metais",
+                "dividem elétrons",
+                "água, gás carbônico"
+              ],
+              [
+                "metálica",
+                "metais",
+                "elétrons soltos entre os átomos",
+                "fio de cobre"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá dois elementos e pede o tipo de ligação. Também cobra por que os metais conduzem eletricidade."
+          ],
+          "bullets": [
+            "“A ligação entre sódio e cloro é…”",
+            "“Na molécula de água, os átomos estão unidos por ligação…”",
+            "“Os metais conduzem corrente elétrica porque…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Íon",
+              "meaning": "um átomo que ganhou ou perdeu elétrons e ficou com carga. Quem perde vira cátion, positivo; quem ganha vira ânion, negativo."
+            },
+            {
+              "word": "Molécula",
+              "meaning": "um grupo de átomos unidos por ligações, como a da água, H₂O."
+            }
+          ],
+          "bullets": [
+            "Achar que na ligação covalente um átomo dá elétrons ao outro. Eles dividem.",
+            "Achar que o sal tem moléculas como a água. Ele é formado por íons.",
+            "Achar que o cloro do sal é venenoso como o gás. Ligado ao sódio, ele vira outra coisa.",
+            "Esquecer que a ligação metálica explica a condução de eletricidade."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Átomos se unem para ter 8 elétrons na camada de fora, como os gases nobres. É a regra do octeto.",
+            "Iônica: metal passa elétrons ao não metal. Covalente: não metais dividem. Metálica: elétrons soltos, que conduzem eletricidade."
+          ],
+          "terms": [
+            {
+              "word": "Regra do octeto",
+              "meaning": "a tendência dos átomos de ficarem com 8 elétrons na última camada, como os gases nobres, que são estáveis."
+            },
+            {
+              "word": "Ligação iônica, covalente e metálica",
+              "meaning": "a união entre átomos. A iônica transfere elétrons; a covalente compartilha; a metálica forma um mar de elétrons livres."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Sal",
+          "statement": "A ligação entre o sódio e o cloro, no sal de cozinha, é:",
+          "options": [
+            "iônica",
+            "covalente",
+            "metálica",
+            "nuclear",
+            "magnética"
+          ],
+          "correct_index": 0,
+          "explanation": "O sódio é um metal e passa um elétron ao cloro, que é um não metal.",
+          "pitfall": "Covalente seria entre dois não metais."
+        },
+        {
+          "topic": "Água",
+          "statement": "Na molécula de água, os átomos estão unidos por ligação:",
+          "options": [
+            "covalente",
+            "iônica",
+            "metálica",
+            "nenhuma",
+            "nuclear"
+          ],
+          "correct_index": 0,
+          "explanation": "Oxigênio e hidrogênio são não metais e dividem elétrons.",
+          "pitfall": "Iônica exige um metal passando elétrons."
+        },
+        {
+          "topic": "Metais",
+          "statement": "Os metais conduzem bem a eletricidade porque:",
+          "options": [
+            "têm elétrons soltos que andam entre os átomos",
+            "não têm elétrons",
+            "são muito pesados",
+            "são frios",
+            "têm moléculas de água dentro"
+          ],
+          "correct_index": 0,
+          "explanation": "Esses elétrons livres carregam a corrente.",
+          "pitfall": "Sem elétrons não haveria corrente nenhuma."
+        },
+        {
+          "topic": "Octeto",
+          "statement": "A regra do octeto diz que os átomos tendem a ficar com:",
+          "options": [
+            "8 elétrons na camada de fora",
+            "8 prótons no núcleo",
+            "8 nêutrons",
+            "8 ligações sempre",
+            "8 átomos vizinhos"
+          ],
+          "correct_index": 0,
+          "explanation": "Com 8 elétrons fora, ficam estáveis como os gases nobres.",
+          "pitfall": "Prótons não mudam numa ligação química."
+        },
+        {
+          "topic": "Íon",
+          "statement": "Um átomo que perdeu um elétron fica:",
+          "options": [
+            "com carga positiva, um cátion",
+            "com carga negativa, um ânion",
+            "sem carga",
+            "com um próton a menos",
+            "maior e neutro"
+          ],
+          "correct_index": 0,
+          "explanation": "Perdendo carga negativa, sobra mais carga positiva.",
+          "pitfall": "Ânion é quem ganha elétrons."
+        },
+        {
+          "topic": "Covalente",
+          "statement": "Na ligação covalente, os átomos:",
+          "options": [
+            "dividem elétrons",
+            "passam elétrons de um para outro",
+            "perdem todos os elétrons",
+            "juntam os núcleos",
+            "ficam com elétrons soltos como um mar"
+          ],
+          "correct_index": 0,
+          "explanation": "Nenhum quer perder elétrons, então eles dividem.",
+          "pitfall": "Passar elétrons é a ligação iônica."
+        },
+        {
+          "topic": "Gás carbônico",
+          "statement": "O gás carbônico, CO₂, é formado por:",
+          "options": [
+            "ligações covalentes entre carbono e oxigênio",
+            "ligações iônicas",
+            "ligação metálica",
+            "átomos soltos sem ligação",
+            "íons de sódio"
+          ],
+          "correct_index": 0,
+          "explanation": "Carbono e oxigênio são não metais: dividem elétrons.",
+          "pitfall": "Íons de sódio não fazem parte do CO₂."
+        },
+        {
+          "topic": "Ligações",
+          "format": "match",
+          "statement": "Ligue cada ligação ao exemplo.",
+          "pairs": [
+            {
+              "left": "iônica",
+              "right": "sal de cozinha"
+            },
+            {
+              "left": "covalente",
+              "right": "molécula de água"
+            },
+            {
+              "left": "metálica",
+              "right": "fio de cobre"
+            },
+            {
+              "left": "regra do octeto",
+              "right": "8 elétrons na camada de fora"
+            }
+          ],
+          "explanation": "Três ligações e a regra que explica todas.",
+          "pitfall": "Iônica e covalente são as mais trocadas."
+        },
+        {
+          "topic": "Estáveis",
+          "statement": "Por que os gases nobres quase não fazem ligações?",
+          "options": [
+            "já têm 8 elétrons na camada de fora",
+            "não têm elétrons",
+            "são metais",
+            "são muito pesados",
+            "são raros demais"
+          ],
+          "correct_index": 0,
+          "explanation": "Eles já são estáveis e não precisam ganhar nem perder elétrons.",
+          "pitfall": "Eles têm elétrons; só não precisam mexer neles.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Cobre",
+          "statement": "O fio de cobre é feito de átomos unidos por ligação:",
+          "options": [
+            "metálica",
+            "iônica",
+            "covalente",
+            "nuclear",
+            "gasosa"
+          ],
+          "correct_index": 0,
+          "explanation": "O cobre é metal: elétrons soltos entre os átomos.",
+          "pitfall": "Iônica exige metal e não metal juntos.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Propriedades novas",
+          "statement": "Sódio explode na água e cloro é venenoso, mas o sal é comestível. Isso mostra que:",
+          "options": [
+            "a ligação cria uma substância com propriedades novas",
+            "o sal ainda é perigoso",
+            "o sódio desaparece",
+            "o cloro do sal é gás",
+            "o sal não tem sódio"
+          ],
+          "correct_index": 0,
+          "explanation": "Unidos, os íons formam uma substância diferente das duas de origem.",
+          "pitfall": "Os átomos continuam lá; o que mudou foi a forma de estarem.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Ânion",
+          "statement": "O cloro, ao receber um elétron do sódio, vira:",
+          "options": [
+            "um ânion, com carga negativa",
+            "um cátion, com carga positiva",
+            "um átomo neutro",
+            "um gás nobre",
+            "um metal"
+          ],
+          "correct_index": 0,
+          "explanation": "Ganhar um elétron dá carga negativa.",
+          "pitfall": "Cátion é quem perde elétrons, como o sódio.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Sal na água",
+          "statement": "O sal derretido ou dissolvido em água conduz eletricidade. Por quê?",
+          "options": [
+            "os íons ficam livres para andar",
+            "o sal vira metal",
+            "a água fica com elétrons soltos de metal",
+            "o sal tem moléculas como o açúcar",
+            "o sal perde os íons"
+          ],
+          "correct_index": 0,
+          "explanation": "Íons soltos carregam a corrente. No sal sólido, eles ficam presos.",
+          "pitfall": "O sal não vira metal: são os íons que conduzem.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Açúcar",
+          "statement": "Água com açúcar quase não conduz eletricidade, e água com sal conduz. A explicação é:",
+          "options": [
+            "o açúcar forma moléculas, sem íons; o sal se separa em íons",
+            "o açúcar é metal",
+            "o sal é covalente",
+            "o açúcar tem mais elétrons livres",
+            "a água só conduz quando está pura"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem íons livres, não há o que carregue a corrente.",
+          "pitfall": "Água pura conduz muito mal: são os íons do sal que ajudam.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "acidos-bases-sais-oxidos",
+      "title": "Ácidos, bases, sais e óxidos",
+      "module": "Reações",
+      "summary": "Ácidos azedam e soltam H⁺ na água; bases são amargas e soltam OH⁻. O pH mede de 0 a 14, e ácido com base vira sal e água.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Limão e sabão",
+          "body": [
+            "O limão é azedo. O sabão, se cair na boca, é amargo e escorregadio.",
+            "Os dois estão em lados opostos de uma escala que a Química usa o tempo todo."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Ácidos e bases",
+          "body": [
+            "Um ácido, na água, solta íons H⁺. Uma base solta íons OH⁻.",
+            "O vinagre, o limão e o suco do estômago são ácidos. O sabão, a soda cáustica e o leite de magnésia são bases."
+          ],
+          "terms": [
+            {
+              "word": "Íon",
+              "meaning": "uma partícula com carga elétrica, positiva ou negativa."
+            },
+            {
+              "word": "Ácido",
+              "meaning": "a substância que, na água, solta íons H⁺. Tem gosto azedo, como o limão e o vinagre."
+            },
+            {
+              "word": "Base química",
+              "meaning": "a substância que, na água, solta íons OH⁻. Tem gosto amargo e é escorregadia, como o sabão."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A escala de pH",
+          "body": [
+            "O pH vai de 0 a 14. Abaixo de 7 é ácido, 7 é neutro e acima de 7 é básico."
+          ],
+          "terms": [
+            {
+              "word": "pH",
+              "meaning": "a escala de 0 a 14 que mede se algo é ácido, neutro ou básico. 7 é neutro."
+            }
+          ],
+          "table": {
+            "label": "O pH de coisas do dia a dia",
+            "headers": [
+              "Substância",
+              "pH aproximado",
+              "É"
+            ],
+            "rows": [
+              [
+                "suco do estômago",
+                "1 a 2",
+                "muito ácido"
+              ],
+              [
+                "limão",
+                "2",
+                "ácido"
+              ],
+              [
+                "água pura",
+                "7",
+                "neutra"
+              ],
+              [
+                "sangue",
+                "7,4",
+                "levemente básico"
+              ],
+              [
+                "sabonete",
+                "9 a 10",
+                "básico"
+              ],
+              [
+                "soda cáustica",
+                "14",
+                "muito básica"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Descobrindo pela cor",
+          "body": [
+            "Um indicador muda de cor conforme o pH. Suco de repolho roxo fica vermelho no limão e verde no sabão.",
+            "No laboratório, a fenolftaleína fica sem cor no ácido e rosa na base."
+          ],
+          "terms": [
+            {
+              "word": "Indicador",
+              "meaning": "a substância que muda de cor conforme o meio é ácido ou básico, como o suco de repolho roxo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Sais e óxidos",
+          "body": [
+            "Ácido com base se neutraliza: vira sal e água. O sal de cozinha é o mais conhecido, mas há muitos sais.",
+            "Óxidos são um elemento ligado ao oxigênio. O gás carbônico e a ferrugem são óxidos."
+          ],
+          "example": {
+            "label": "Uma neutralização",
+            "lines": [
+              "ácido clorídrico + hidróxido de sódio → cloreto de sódio + água",
+              "HCl + NaOH → NaCl + H₂O",
+              "É por isso que o leite de magnésia, uma base, alivia a azia, que é excesso de ácido."
+            ]
+          },
+          "terms": [
+            {
+              "word": "Óxido",
+              "meaning": "a substância formada por um elemento ligado ao oxigênio, como o gás carbônico, CO₂."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá o pH de uma substância e pergunta se ela é ácida ou básica. Também cobra a neutralização no dia a dia."
+          ],
+          "bullets": [
+            "“Uma substância de pH 3 é…”",
+            "“O uso de leite de magnésia contra a azia é exemplo de…”",
+            "“A fenolftaleína fica rosa em meio…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "pH",
+              "meaning": "a escala de 0 a 14 que mede se algo é ácido, neutro ou básico. 7 é neutro."
+            }
+          ],
+          "bullets": [
+            "Achar que pH maior é mais ácido. É o contrário: quanto menor, mais ácido.",
+            "Achar que só o sal de cozinha é sal. Sal é toda substância que vem de ácido com base.",
+            "Achar que base é sempre fraca. A soda cáustica queima a pele.",
+            "Achar que o sangue é ácido. Ele é levemente básico, perto de 7,4."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Ácido solta H⁺ e é azedo; base solta OH⁻ e é amarga. O pH vai de 0 a 14, com 7 neutro.",
+            "Indicadores mudam de cor com o pH. Ácido com base vira sal e água, e óxido é elemento com oxigênio."
+          ],
+          "terms": [
+            {
+              "word": "Ácido",
+              "meaning": "a substância que, na água, solta íons H⁺. Tem gosto azedo, como o limão e o vinagre."
+            },
+            {
+              "word": "Base química",
+              "meaning": "a substância que, na água, solta íons OH⁻. Tem gosto amargo e é escorregadia, como o sabão."
+            },
+            {
+              "word": "Indicador",
+              "meaning": "a substância que muda de cor conforme o meio é ácido ou básico, como o suco de repolho roxo."
+            },
+            {
+              "word": "Óxido",
+              "meaning": "a substância formada por um elemento ligado ao oxigênio, como o gás carbônico, CO₂."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "pH 3",
+          "statement": "Uma substância com pH 3 é:",
+          "options": [
+            "ácida",
+            "básica",
+            "neutra",
+            "um metal",
+            "um gás nobre"
+          ],
+          "correct_index": 0,
+          "explanation": "Abaixo de 7 é ácido.",
+          "pitfall": "Básica seria acima de 7."
+        },
+        {
+          "topic": "Azia",
+          "statement": "Tomar leite de magnésia para aliviar a azia é um exemplo de:",
+          "options": [
+            "neutralização de um ácido por uma base",
+            "destilação",
+            "filtração",
+            "aumento do ácido no estômago",
+            "ligação metálica"
+          ],
+          "correct_index": 0,
+          "explanation": "A base do leite de magnésia neutraliza o excesso de ácido.",
+          "pitfall": "Aumentar o ácido pioraria a azia."
+        },
+        {
+          "topic": "Neutro",
+          "statement": "Qual é o pH da água pura?",
+          "options": [
+            "7",
+            "0",
+            "14",
+            "1",
+            "10"
+          ],
+          "correct_index": 0,
+          "explanation": "A água pura é neutra: pH 7.",
+          "pitfall": "14 é o extremo básico."
+        },
+        {
+          "topic": "Limão",
+          "statement": "O limão é:",
+          "options": [
+            "ácido",
+            "básico",
+            "neutro",
+            "um óxido",
+            "um metal"
+          ],
+          "correct_index": 0,
+          "explanation": "O gosto azedo é marca dos ácidos.",
+          "pitfall": "Sabão é que é básico."
+        },
+        {
+          "topic": "Neutralização",
+          "statement": "Ácido misturado com base, na proporção certa, produz:",
+          "options": [
+            "sal e água",
+            "só gás",
+            "um metal",
+            "outro ácido mais forte",
+            "um gás nobre"
+          ],
+          "correct_index": 0,
+          "explanation": "É a neutralização: HCl + NaOH → NaCl + H₂O.",
+          "pitfall": "Outro ácido mais forte não faz sentido: a base neutraliza."
+        },
+        {
+          "topic": "Fenolftaleína",
+          "statement": "A fenolftaleína fica rosa em meio:",
+          "options": [
+            "básico",
+            "ácido",
+            "neutro",
+            "gasoso",
+            "metálico"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela é incolor no ácido e rosa na base.",
+          "pitfall": "No ácido ela fica sem cor."
+        },
+        {
+          "topic": "Óxido",
+          "statement": "Qual destes é um óxido?",
+          "options": [
+            "gás carbônico, CO₂",
+            "sal de cozinha, NaCl",
+            "ácido clorídrico, HCl",
+            "soda cáustica, NaOH",
+            "açúcar"
+          ],
+          "correct_index": 0,
+          "explanation": "Óxido é um elemento ligado ao oxigênio: carbono e oxigênio.",
+          "pitfall": "NaCl é um sal."
+        },
+        {
+          "topic": "Escala",
+          "format": "match",
+          "statement": "Ligue cada substância ao seu tipo.",
+          "pairs": [
+            {
+              "left": "suco do estômago",
+              "right": "muito ácido"
+            },
+            {
+              "left": "água pura",
+              "right": "neutra"
+            },
+            {
+              "left": "sabonete",
+              "right": "básico"
+            },
+            {
+              "left": "soda cáustica",
+              "right": "muito básica"
+            }
+          ],
+          "explanation": "A escala vai de muito ácido a muito básico.",
+          "pitfall": "O sabonete é básico, não neutro."
+        },
+        {
+          "topic": "Vinagre",
+          "statement": "O vinagre tem gosto azedo porque é:",
+          "options": [
+            "ácido",
+            "básico",
+            "neutro",
+            "um sal",
+            "um gás"
+          ],
+          "correct_index": 0,
+          "explanation": "Azedo é a marca dos ácidos.",
+          "pitfall": "Bases são amargas.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Repolho",
+          "statement": "Para saber se algo é ácido ou básico em casa, dá para usar:",
+          "options": [
+            "suco de repolho roxo como indicador",
+            "uma régua",
+            "um ímã",
+            "um termômetro",
+            "o olfato só"
+          ],
+          "correct_index": 0,
+          "explanation": "O repolho roxo muda de cor conforme o pH.",
+          "pitfall": "A temperatura não diz se algo é ácido.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Mais ácido",
+          "statement": "Qual destas substâncias é a mais ácida?",
+          "options": [
+            "a de pH 1",
+            "a de pH 5",
+            "a de pH 7",
+            "a de pH 9",
+            "a de pH 13"
+          ],
+          "correct_index": 0,
+          "explanation": "Quanto menor o pH, mais ácido.",
+          "pitfall": "pH 13 é o mais básico da lista.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Sangue",
+          "statement": "O sangue humano tem pH perto de 7,4. Ele é:",
+          "options": [
+            "levemente básico",
+            "muito ácido",
+            "neutro exato",
+            "muito básico",
+            "um óxido"
+          ],
+          "correct_index": 0,
+          "explanation": "Um pouco acima de 7: levemente básico.",
+          "pitfall": "Achar que o sangue é ácido é a pegadinha.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Fora do 7",
+          "statement": "Um suco tem pH 4 e outro, pH 6. Qual frase está certa?",
+          "options": [
+            "o de pH 4 é mais ácido",
+            "o de pH 6 é mais ácido",
+            "os dois são básicos",
+            "os dois são neutros",
+            "o de pH 4 é básico"
+          ],
+          "correct_index": 0,
+          "explanation": "Os dois são ácidos, mas pH menor é mais ácido.",
+          "pitfall": "Inverter a escala é o erro que a prova espera.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Sabão",
+          "statement": "Por que o sabão é escorregadio e amargo?",
+          "options": [
+            "é uma base",
+            "é um ácido",
+            "é neutro",
+            "é um metal",
+            "é um óxido de ferro"
+          ],
+          "correct_index": 0,
+          "explanation": "Bases são amargas e deixam a pele escorregadia ao toque.",
+          "pitfall": "Ácidos são azedos, não escorregadios.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "reacoes-e-mol",
+      "title": "Reações químicas, balanceamento e mol",
+      "module": "Reações",
+      "summary": "Numa reação, átomos se rearranjam e nada some: a massa se conserva. O balanceamento acerta as contas, e o mol é o pacote que conta partículas.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O bolo que não volta a ser ovo",
+          "body": [
+            "Depois de assado, o bolo nunca mais vira farinha, ovo e açúcar. Algo novo se formou.",
+            "Isso é uma reação química. Já o gelo que derrete pode voltar a ser gelo: é só uma mudança de estado."
+          ],
+          "terms": [
+            {
+              "word": "Reação química",
+              "meaning": "a transformação em que substâncias se rearranjam e viram outras, com propriedades novas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Como saber que houve reação",
+          "body": [
+            "Alguns sinais indicam uma reação: sai gás, muda a cor, aparece um sólido no líquido ou há calor e luz.",
+            "Um comprimido efervescente na água solta bolhas de gás: é reação."
+          ],
+          "terms": [
+            {
+              "word": "Reagente e produto",
+              "meaning": "reagente é a substância que entra na reação; produto é a que sai."
+            }
+          ],
+          "table": {
+            "label": "Sinais de reação",
+            "headers": [
+              "Sinal",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "sai gás",
+                "comprimido efervescente"
+              ],
+              [
+                "muda a cor",
+                "maçã cortada que escurece"
+              ],
+              [
+                "solta calor e luz",
+                "vela queimando"
+              ],
+              [
+                "aparece um sólido",
+                "ferrugem num prego"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Nada se perde",
+          "body": [
+            "Antoine Lavoisier mostrou, no século XVIII, que numa reação a massa total não muda. Nada se cria, nada se perde, tudo se transforma.",
+            "Se a madeira queimada parece pesar menos, é porque parte dela virou gás e foi para o ar."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Balanceando a equação",
+          "body": [
+            "Como os átomos não somem, cada tipo precisa aparecer na mesma quantidade dos dois lados da equação."
+          ],
+          "example": {
+            "label": "Balanceando a formação da água",
+            "lines": [
+              "Sem balancear: H₂ + O₂ → H₂O. À esquerda há 2 oxigênios; à direita, 1.",
+              "Ponha 2 na frente da água: H₂ + O₂ → 2 H₂O. Agora há 4 hidrogênios à direita.",
+              "Ponha 2 na frente do hidrogênio: 2 H₂ + O₂ → 2 H₂O.",
+              "Confira: 4 hidrogênios e 2 oxigênios de cada lado."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "Átomo",
+              "meaning": "a menor parte de um elemento químico."
+            },
+            {
+              "word": "Molécula",
+              "meaning": "um grupo de átomos ligados, como H₂O."
+            },
+            {
+              "word": "Balanceamento",
+              "meaning": "acertar os números na frente de cada substância para que cada tipo de átomo apareça na mesma quantidade antes e depois."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O mol",
+          "body": [
+            "Átomos são pequenos demais para contar um a um. A Química usa um pacote: o mol, com 6 × 10²³ partículas.",
+            "A massa de 1 mol é a massa molar. A da água é 18 g: dois hidrogênios de 1 g e um oxigênio de 16 g."
+          ],
+          "terms": [
+            {
+              "word": "Mol",
+              "meaning": "um pacote com 6 × 10²³ partículas, como a dúzia é um pacote com 12."
+            },
+            {
+              "word": "Massa molar",
+              "meaning": "a massa de 1 mol de uma substância, em gramas."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede para balancear uma equação e calcular a massa molar. Também cobra a lei de Lavoisier e os sinais de reação."
+          ],
+          "bullets": [
+            "“Na queima da madeira, a massa parece diminuir porque…”",
+            "“Qual é o coeficiente que balanceia a equação…”",
+            "“A massa molar do CO₂ (C = 12, O = 16) é…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Balanceamento",
+              "meaning": "acertar os números na frente de cada substância para que cada tipo de átomo apareça na mesma quantidade antes e depois."
+            },
+            {
+              "word": "Mol",
+              "meaning": "um pacote com 6 × 10²³ partículas, como a dúzia é um pacote com 12."
+            }
+          ],
+          "bullets": [
+            "Achar que derreter gelo é reação química. É só mudança de estado.",
+            "Achar que a massa some quando a madeira queima. Ela vira gás.",
+            "Balancear mudando o número pequeno da fórmula, como trocar H₂O por H₂O₂. Só se mexe no número da frente.",
+            "Achar que mol é uma unidade de massa. Mol é quantidade de partículas."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Reação química forma substâncias novas; gás, cor, calor e sólido novo são sinais. A massa se conserva.",
+            "Balancear é igualar os átomos dos dois lados, mexendo só nos números da frente. Mol é um pacote de 6 × 10²³ partículas."
+          ],
+          "terms": [
+            {
+              "word": "Reação química",
+              "meaning": "a transformação em que substâncias se rearranjam e viram outras, com propriedades novas."
+            },
+            {
+              "word": "Massa molar",
+              "meaning": "a massa de 1 mol de uma substância, em gramas."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Madeira",
+          "statement": "Quando a madeira queima, a cinza pesa menos que a madeira. Por quê?",
+          "options": [
+            "parte da massa virou gás e foi para o ar",
+            "a massa desapareceu",
+            "o fogo destrói átomos",
+            "a cinza é mais leve por ser preta",
+            "a madeira não tinha massa"
+          ],
+          "correct_index": 0,
+          "explanation": "Pela lei de Lavoisier, a massa total se conserva, contando os gases.",
+          "pitfall": "Átomos não são destruídos numa reação."
+        },
+        {
+          "topic": "Reação",
+          "statement": "Qual destes é uma reação química?",
+          "options": [
+            "um prego enferrujando",
+            "gelo derretendo",
+            "água fervendo",
+            "papel sendo rasgado",
+            "açúcar dissolvendo na água"
+          ],
+          "correct_index": 0,
+          "explanation": "A ferrugem é uma substância nova, formada pelo ferro com o oxigênio.",
+          "pitfall": "Gelo derretendo é só mudança de estado."
+        },
+        {
+          "topic": "Balancear",
+          "statement": "Na equação 2 H₂ + O₂ → 2 H₂O, quantos átomos de hidrogênio há em cada lado?",
+          "options": [
+            "4",
+            "2",
+            "1",
+            "8",
+            "6"
+          ],
+          "correct_index": 0,
+          "explanation": "2 × H₂ dá 4 hidrogênios; 2 × H₂O também dá 4.",
+          "pitfall": "2 esquece de multiplicar pelo número da frente."
+        },
+        {
+          "topic": "Massa molar",
+          "statement": "Qual a massa molar da água, H₂O? Use H = 1 e O = 16.",
+          "options": [
+            "18 g/mol",
+            "17 g/mol",
+            "32 g/mol",
+            "16 g/mol",
+            "34 g/mol"
+          ],
+          "correct_index": 0,
+          "explanation": "2 × 1 + 16 = 18 g/mol.",
+          "pitfall": "17 esquece que são dois hidrogênios."
+        },
+        {
+          "topic": "Mol",
+          "statement": "Um mol de qualquer substância tem:",
+          "options": [
+            "cerca de 6 × 10²³ partículas",
+            "1 grama",
+            "12 partículas",
+            "1 litro",
+            "100 átomos"
+          ],
+          "correct_index": 0,
+          "explanation": "O mol é um pacote de partículas, como a dúzia.",
+          "pitfall": "1 grama confunde mol com massa."
+        },
+        {
+          "topic": "Lavoisier",
+          "statement": "A frase “nada se cria, nada se perde, tudo se transforma” resume:",
+          "options": [
+            "a conservação da massa nas reações",
+            "a regra do octeto",
+            "a escala de pH",
+            "o modelo de Rutherford",
+            "a destilação"
+          ],
+          "correct_index": 0,
+          "explanation": "Lavoisier mostrou que a massa total não muda numa reação.",
+          "pitfall": "A frase não fala de ligações: fala de massa."
+        },
+        {
+          "topic": "Efervescente",
+          "statement": "Um comprimido efervescente solta bolhas na água. Isso indica:",
+          "options": [
+            "uma reação química com formação de gás",
+            "só uma mudança de estado",
+            "que a água está fervendo",
+            "que não houve transformação",
+            "uma ligação metálica"
+          ],
+          "correct_index": 0,
+          "explanation": "Gás novo saindo é sinal de reação.",
+          "pitfall": "A água não está fervendo: as bolhas são de gás novo."
+        },
+        {
+          "topic": "Balanceamento",
+          "format": "order",
+          "statement": "Ponha em ordem os passos para balancear H₂ + O₂ → H₂O.",
+          "options": [
+            "Conte os átomos de cada lado.",
+            "Ponha 2 na frente da água para igualar o oxigênio.",
+            "Ponha 2 na frente do hidrogênio para igualar o hidrogênio.",
+            "Confira se cada átomo aparece igual dos dois lados."
+          ],
+          "explanation": "Contar, acertar um elemento, acertar o outro e conferir.",
+          "pitfall": "Conferir é sempre o último passo."
+        },
+        {
+          "topic": "Bolo",
+          "statement": "Assar um bolo é uma transformação:",
+          "options": [
+            "química, porque forma substâncias novas",
+            "física, porque só muda de forma",
+            "que pode ser desfeita facilmente",
+            "que não muda nada",
+            "nuclear"
+          ],
+          "correct_index": 0,
+          "explanation": "O bolo assado não volta a ser os ingredientes.",
+          "pitfall": "Mudança física pode ser desfeita, como derreter gelo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Reagentes",
+          "statement": "Na reação de queima da vela, a parafina e o oxigênio são:",
+          "options": [
+            "os reagentes",
+            "os produtos",
+            "os catalisadores",
+            "a massa molar",
+            "os isótopos"
+          ],
+          "correct_index": 0,
+          "explanation": "O que entra na reação são os reagentes.",
+          "pitfall": "Produtos são o que sai: gás carbônico e água.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "CO₂",
+          "statement": "Qual a massa molar do gás carbônico, CO₂? Use C = 12 e O = 16.",
+          "options": [
+            "44 g/mol",
+            "28 g/mol",
+            "32 g/mol",
+            "12 g/mol",
+            "60 g/mol"
+          ],
+          "correct_index": 0,
+          "explanation": "12 + 2 × 16 = 44 g/mol.",
+          "pitfall": "28 esquece um dos oxigênios.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Coeficiente",
+          "statement": "Para balancear N₂ + H₂ → NH₃, os números da frente são:",
+          "options": [
+            "1, 3 e 2",
+            "1, 1 e 1",
+            "2, 3 e 1",
+            "1, 2 e 3",
+            "3, 1 e 2"
+          ],
+          "correct_index": 0,
+          "explanation": "N₂ + 3 H₂ → 2 NH₃: 2 nitrogênios e 6 hidrogênios de cada lado.",
+          "pitfall": "1, 1 e 1 deixa os hidrogênios desiguais.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Fórmula",
+          "statement": "Ao balancear uma equação, o que NÃO se pode mudar?",
+          "options": [
+            "os números pequenos dentro das fórmulas",
+            "os números na frente das substâncias",
+            "a ordem de conferência",
+            "o lado em que se começa a contar",
+            "a contagem final"
+          ],
+          "correct_index": 0,
+          "explanation": "Mudar o H₂O para H₂O₂ trocaria a substância: viraria água oxigenada.",
+          "pitfall": "Os números da frente são justamente o que se ajusta.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Dois mols",
+          "statement": "Quantos gramas há em 2 mols de água? A massa molar é 18 g/mol.",
+          "options": [
+            "36 g",
+            "18 g",
+            "9 g",
+            "20 g",
+            "180 g"
+          ],
+          "correct_index": 0,
+          "explanation": "2 × 18 = 36 g.",
+          "pitfall": "18 g é a massa de um mol só.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "solucoes",
+      "title": "Soluções e concentração",
+      "module": "Reações",
+      "summary": "Uma solução tem soluto e solvente. A concentração diz quanto soluto há em cada litro, e a solubilidade diz o máximo que dá para dissolver.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O suco forte demais",
+          "body": [
+            "Você fez um suco de pó e ficou forte demais. Basta pôr mais água: o gosto fica mais fraco.",
+            "A quantidade de pó não mudou; o que mudou foi quanto pó há em cada gole."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Soluto e solvente",
+          "body": [
+            "Numa solução, quem é dissolvido é o soluto, e quem dissolve é o solvente. No café adoçado, o açúcar é o soluto e a água, o solvente.",
+            "A água dissolve tanta coisa que é chamada de solvente universal."
+          ],
+          "terms": [
+            {
+              "word": "Soluto e solvente",
+              "meaning": "soluto é o que se dissolve, como o açúcar; solvente é o que dissolve, quase sempre a água."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A concentração",
+          "body": [
+            "A concentração mais simples é a massa do soluto dividida pelo volume da solução, em gramas por litro."
+          ],
+          "example": {
+            "label": "Calculando a concentração",
+            "lines": [
+              "Você dissolve 20 g de sal até completar 2 litros de água.",
+              "20 g ÷ 2 L = 10 g/L.",
+              "Cada litro dessa água tem 10 g de sal."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "Concentração",
+              "meaning": "quanto soluto há num volume de solução. Em gramas por litro, é a massa do soluto dividida pelo volume."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Diluir",
+          "body": [
+            "Diluir é acrescentar solvente. A massa do soluto fica igual, mas o volume aumenta, e a concentração cai.",
+            "Por isso a água sanitária deve ser diluída antes da limpeza: pura, ela é forte demais."
+          ],
+          "table": {
+            "label": "Antes e depois de diluir",
+            "headers": [
+              "",
+              "Antes",
+              "Depois de dobrar o volume"
+            ],
+            "rows": [
+              [
+                "massa de sal",
+                "20 g",
+                "20 g"
+              ],
+              [
+                "volume",
+                "1 L",
+                "2 L"
+              ],
+              [
+                "concentração",
+                "20 g/L",
+                "10 g/L"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O máximo que dissolve",
+          "body": [
+            "Ponha açúcar no copo de água sem parar. Uma hora ele começa a sobrar no fundo. Essa solução está saturada.",
+            "A temperatura muda a solubilidade. Açúcar dissolve mais em água quente. Já o gás do refrigerante escapa mais quando ele está quente."
+          ],
+          "terms": [
+            {
+              "word": "Solubilidade",
+              "meaning": "a quantidade máxima de soluto que se dissolve num volume de solvente, numa certa temperatura."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede a concentração de uma solução e o efeito de diluir. Também cobra a solubilidade e o papel da temperatura."
+          ],
+          "bullets": [
+            "“Uma solução com 30 g de soluto em 3 L tem concentração de…”",
+            "“Ao diluir uma solução, a massa do soluto…”",
+            "“Refrigerante quente perde mais gás porque…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Soluto e solvente",
+              "meaning": "soluto é o que se dissolve, como o açúcar; solvente é o que dissolve, quase sempre a água."
+            },
+            {
+              "word": "Solubilidade",
+              "meaning": "a quantidade máxima de soluto que se dissolve num volume de solvente, numa certa temperatura."
+            }
+          ],
+          "bullets": [
+            "Achar que diluir tira soluto. A massa de soluto continua a mesma.",
+            "Trocar soluto por solvente. Quem dissolve é o solvente.",
+            "Achar que tudo dissolve mais no calor. Os gases dissolvem menos.",
+            "Dividir pelo volume do solvente em vez do volume da solução."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Soluto é dissolvido, solvente dissolve. Concentração é massa do soluto dividida pelo volume, em g/L.",
+            "Diluir aumenta o volume e baixa a concentração. Solubilidade é o máximo que dissolve, e depende da temperatura."
+          ],
+          "terms": [
+            {
+              "word": "Concentração",
+              "meaning": "quanto soluto há num volume de solução. Em gramas por litro, é a massa do soluto dividida pelo volume."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Concentração",
+          "statement": "Uma solução tem 30 g de sal em 3 litros. Qual a concentração?",
+          "options": [
+            "10 g/L",
+            "90 g/L",
+            "33 g/L",
+            "3 g/L",
+            "0,1 g/L"
+          ],
+          "correct_index": 0,
+          "explanation": "30 ÷ 3 = 10 g/L.",
+          "pitfall": "90 vem de multiplicar em vez de dividir."
+        },
+        {
+          "topic": "Soluto",
+          "statement": "No café com açúcar, o açúcar é:",
+          "options": [
+            "o soluto",
+            "o solvente",
+            "o recipiente",
+            "a concentração",
+            "um gás"
+          ],
+          "correct_index": 0,
+          "explanation": "O açúcar é o que se dissolve.",
+          "pitfall": "Solvente é a água, que dissolve."
+        },
+        {
+          "topic": "Diluir",
+          "statement": "Ao diluir uma solução acrescentando água, a massa do soluto:",
+          "options": [
+            "continua a mesma",
+            "aumenta",
+            "diminui",
+            "some",
+            "dobra"
+          ],
+          "correct_index": 0,
+          "explanation": "Só o volume aumenta; o soluto é o mesmo.",
+          "pitfall": "Achar que diluir tira soluto é a pegadinha."
+        },
+        {
+          "topic": "Saturada",
+          "statement": "Uma solução em que já sobra açúcar no fundo é:",
+          "options": [
+            "saturada",
+            "diluída",
+            "pura",
+            "gasosa",
+            "sem soluto"
+          ],
+          "correct_index": 0,
+          "explanation": "Chegou ao máximo que dá para dissolver.",
+          "pitfall": "Diluída tem pouco soluto, longe do máximo."
+        },
+        {
+          "topic": "Refrigerante",
+          "statement": "Por que o refrigerante quente perde mais gás?",
+          "options": [
+            "gases dissolvem menos em líquido quente",
+            "o calor cria gás novo",
+            "o açúcar vira gás",
+            "a garrafa encolhe",
+            "o gás dissolve mais no calor"
+          ],
+          "correct_index": 0,
+          "explanation": "No calor, o gás escapa do líquido mais facilmente.",
+          "pitfall": "Para sólidos, como o açúcar, é o contrário."
+        },
+        {
+          "topic": "Universal",
+          "statement": "Por que a água é chamada de solvente universal?",
+          "options": [
+            "dissolve uma grande variedade de substâncias",
+            "dissolve absolutamente tudo",
+            "não dissolve nada",
+            "é um metal",
+            "só existe no espaço"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela dissolve muita coisa, mas não tudo. O óleo, por exemplo, não se dissolve nela.",
+          "pitfall": "“Absolutamente tudo” é exagero."
+        },
+        {
+          "topic": "Dobrar",
+          "statement": "Uma solução de 20 g/L tem o volume dobrado com água. A nova concentração é:",
+          "options": [
+            "10 g/L",
+            "40 g/L",
+            "20 g/L",
+            "5 g/L",
+            "2 g/L"
+          ],
+          "correct_index": 0,
+          "explanation": "Mesma massa em volume dobrado: metade da concentração.",
+          "pitfall": "40 g/L seria se dobrasse o soluto."
+        },
+        {
+          "topic": "Termos",
+          "format": "match",
+          "statement": "Ligue cada termo ao que ele quer dizer.",
+          "pairs": [
+            {
+              "left": "soluto",
+              "right": "o que se dissolve"
+            },
+            {
+              "left": "solvente",
+              "right": "o que dissolve"
+            },
+            {
+              "left": "concentração",
+              "right": "massa por volume"
+            },
+            {
+              "left": "saturada",
+              "right": "não dissolve mais nada"
+            }
+          ],
+          "explanation": "Quatro palavras das soluções.",
+          "pitfall": "Soluto e solvente são os mais trocados."
+        },
+        {
+          "topic": "Água",
+          "statement": "Na água com sal, o solvente é:",
+          "options": [
+            "a água",
+            "o sal",
+            "o copo",
+            "o ar",
+            "a colher"
+          ],
+          "correct_index": 0,
+          "explanation": "A água é quem dissolve o sal.",
+          "pitfall": "O sal é o soluto.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Suco",
+          "statement": "Pôr mais água num suco forte deixa ele:",
+          "options": [
+            "menos concentrado",
+            "mais concentrado",
+            "com mais pó",
+            "igual",
+            "sem soluto"
+          ],
+          "correct_index": 0,
+          "explanation": "Mais volume com o mesmo pó: menor concentração.",
+          "pitfall": "Mais concentrado seria pôr mais pó.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Soro",
+          "statement": "Para fazer 1 litro de soro com concentração de 9 g/L, são precisos quantos gramas de sal?",
+          "options": [
+            "9 g",
+            "1 g",
+            "90 g",
+            "0,9 g",
+            "18 g"
+          ],
+          "correct_index": 0,
+          "explanation": "9 g/L × 1 L = 9 g.",
+          "pitfall": "0,9 g daria uma concentração dez vezes menor.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Açúcar quente",
+          "statement": "Por que o açúcar dissolve mais rápido e em maior quantidade no chá quente?",
+          "options": [
+            "a solubilidade da maioria dos sólidos aumenta com a temperatura",
+            "o calor destrói o açúcar",
+            "o chá quente tem menos água",
+            "o açúcar vira gás",
+            "a temperatura não muda nada"
+          ],
+          "correct_index": 0,
+          "explanation": "Para a maioria dos sólidos, mais calor quer dizer mais solubilidade.",
+          "pitfall": "O açúcar não é destruído: só se dissolve.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Volume final",
+          "statement": "Você dissolve 50 g de açúcar e completa até 500 mL. Qual a concentração em g/L?",
+          "options": [
+            "100 g/L",
+            "10 g/L",
+            "25 g/L",
+            "0,1 g/L",
+            "50 g/L"
+          ],
+          "correct_index": 0,
+          "explanation": "500 mL é 0,5 L. 50 ÷ 0,5 = 100 g/L.",
+          "pitfall": "10 g/L vem de dividir 50 por 5, esquecendo a conversão.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Água sanitária",
+          "statement": "O rótulo manda misturar um copo de água sanitária em 10 litros de água. O que acontece com a concentração do produto?",
+          "options": [
+            "diminui muito, e o produto fica seguro para limpar",
+            "aumenta",
+            "fica igual",
+            "o produto some",
+            "vira outro produto"
+          ],
+          "correct_index": 0,
+          "explanation": "A massa do produto é a mesma, espalhada num volume muito maior.",
+          "pitfall": "A substância continua lá, só mais diluída.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "quimica-organica",
+      "title": "Química orgânica: o mundo do carbono",
+      "module": "Química no mundo",
+      "summary": "O carbono faz quatro ligações e forma cadeias enormes. Por isso existem milhões de substâncias orgânicas, dos combustíveis aos remédios e aos plásticos.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A peça que se encaixa em tudo",
+          "body": [
+            "Pense numa peça de montar com quatro encaixes. Com ela dá para fazer correntes, anéis e formas complicadas.",
+            "O carbono é essa peça. Ele está na comida, na gasolina, no plástico e no seu corpo."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Por que o carbono é especial",
+          "body": [
+            "Cada átomo de carbono faz quatro ligações. Ele se liga a outros carbonos e forma cadeias longas, retas, com galhos ou fechadas em anel.",
+            "Por isso existem milhões de substâncias com carbono. Elas formam a química orgânica."
+          ],
+          "terms": [
+            {
+              "word": "Átomo",
+              "meaning": "a menor parte de um elemento químico."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os hidrocarbonetos",
+          "body": [
+            "As substâncias mais simples têm só carbono e hidrogênio. São os hidrocarbonetos, a base dos combustíveis."
+          ],
+          "terms": [
+            {
+              "word": "Hidrocarboneto",
+              "meaning": "a substância formada só por carbono e hidrogênio, como o gás de cozinha e a gasolina."
+            }
+          ],
+          "table": {
+            "label": "Hidrocarbonetos do dia a dia",
+            "headers": [
+              "Substância",
+              "Onde está"
+            ],
+            "rows": [
+              [
+                "metano",
+                "gás natural e biogás"
+              ],
+              [
+                "propano e butano",
+                "gás de cozinha"
+              ],
+              [
+                "octano e outros",
+                "gasolina"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "As funções orgânicas",
+          "body": [
+            "Quando a cadeia de carbono ganha um grupo de átomos diferente, o comportamento muda. Cada grupo define uma função orgânica."
+          ],
+          "terms": [
+            {
+              "word": "Função orgânica",
+              "meaning": "um grupo de substâncias orgânicas com uma mesma parte que lhes dá comportamento parecido, como o grupo OH dos álcoois."
+            },
+            {
+              "word": "Ácido",
+              "meaning": "a substância de gosto azedo, como o vinagre e o limão."
+            }
+          ],
+          "table": {
+            "label": "As funções que mais caem",
+            "headers": [
+              "Função",
+              "Grupo",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "álcool",
+                "OH",
+                "etanol, o álcool do carro"
+              ],
+              [
+                "ácido carboxílico",
+                "COOH",
+                "ácido do vinagre"
+              ],
+              [
+                "éster",
+                "COO entre duas cadeias",
+                "aroma de frutas"
+              ],
+              [
+                "cetona",
+                "C=O no meio da cadeia",
+                "acetona"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Plásticos e polímeros",
+          "body": [
+            "Muitas moléculas pequenas iguais podem se ligar numa cadeia gigante, chamada polímero. O plástico é um polímero.",
+            "Garrafa PET, sacola e cano de PVC são polímeros feitos a partir do petróleo. Alguns levam séculos para se decompor na natureza."
+          ],
+          "terms": [
+            {
+              "word": "Molécula",
+              "meaning": "um grupo de átomos ligados."
+            },
+            {
+              "word": "Polímero",
+              "meaning": "uma molécula gigante formada por muitas moléculas pequenas iguais, ligadas em cadeia."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede quantas ligações o carbono faz e a função de uma substância pelo grupo. Também cobra os hidrocarbonetos nos combustíveis."
+          ],
+          "bullets": [
+            "“O carbono forma cadeias porque…”",
+            "“O etanol pertence à função…”",
+            "“O gás de cozinha é formado principalmente por…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Função orgânica",
+              "meaning": "um grupo de substâncias orgânicas com uma mesma parte que lhes dá comportamento parecido, como o grupo OH dos álcoois."
+            }
+          ],
+          "bullets": [
+            "Achar que o carbono faz duas ligações. Faz quatro.",
+            "Achar que orgânico quer dizer “sem agrotóxico”. Em Química, é a substância com carbono.",
+            "Confundir álcool (OH) com ácido carboxílico (COOH).",
+            "Achar que todo plástico se decompõe rápido. Muitos levam séculos."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O carbono faz quatro ligações e forma cadeias. Hidrocarbonetos têm só carbono e hidrogênio, como o gás de cozinha.",
+            "Funções orgânicas dependem do grupo, como álcool, ácido carboxílico e cetona. Plásticos são polímeros."
+          ],
+          "terms": [
+            {
+              "word": "Hidrocarboneto",
+              "meaning": "a substância formada só por carbono e hidrogênio, como o gás de cozinha e a gasolina."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Quatro",
+          "statement": "Quantas ligações um átomo de carbono faz?",
+          "options": [
+            "quatro",
+            "duas",
+            "uma",
+            "oito",
+            "seis"
+          ],
+          "correct_index": 0,
+          "explanation": "As quatro ligações permitem cadeias longas e variadas.",
+          "pitfall": "Oito não tem a ver com as ligações do carbono."
+        },
+        {
+          "topic": "Etanol",
+          "statement": "O etanol, usado como combustível, pertence à função:",
+          "options": [
+            "álcool",
+            "ácido carboxílico",
+            "cetona",
+            "éster",
+            "hidrocarboneto"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele tem o grupo OH, marca dos álcoois.",
+          "pitfall": "Hidrocarboneto tem só carbono e hidrogênio, sem o OH."
+        },
+        {
+          "topic": "Gás",
+          "statement": "O gás de cozinha é formado principalmente por:",
+          "options": [
+            "propano e butano",
+            "oxigênio e nitrogênio",
+            "etanol",
+            "gás carbônico",
+            "hélio"
+          ],
+          "correct_index": 0,
+          "explanation": "São hidrocarbonetos tirados do petróleo.",
+          "pitfall": "Gás carbônico é o que sai da queima, não o que queima."
+        },
+        {
+          "topic": "Hidrocarboneto",
+          "statement": "Um hidrocarboneto é formado só por:",
+          "options": [
+            "carbono e hidrogênio",
+            "carbono e oxigênio",
+            "hidrogênio e oxigênio",
+            "carbono e nitrogênio",
+            "metais"
+          ],
+          "correct_index": 0,
+          "explanation": "O nome já diz: hidrogênio e carbono.",
+          "pitfall": "Carbono e oxigênio formariam, por exemplo, o gás carbônico."
+        },
+        {
+          "topic": "Vinagre",
+          "statement": "O vinagre tem ácido acético, que é da função:",
+          "options": [
+            "ácido carboxílico",
+            "álcool",
+            "cetona",
+            "hidrocarboneto",
+            "éster"
+          ],
+          "correct_index": 0,
+          "explanation": "O grupo COOH caracteriza os ácidos carboxílicos.",
+          "pitfall": "Álcool tem só o OH."
+        },
+        {
+          "topic": "Orgânica",
+          "statement": "Em Química, uma substância orgânica é aquela que:",
+          "options": [
+            "tem cadeias de carbono",
+            "foi produzida sem agrotóxico",
+            "vem só de animais",
+            "não tem carbono",
+            "é sempre líquida"
+          ],
+          "correct_index": 0,
+          "explanation": "O que define é o carbono, não a forma de cultivo.",
+          "pitfall": "“Sem agrotóxico” é o sentido do supermercado, não o da Química."
+        },
+        {
+          "topic": "Plástico",
+          "statement": "Os plásticos são:",
+          "options": [
+            "polímeros, cadeias gigantes de moléculas repetidas",
+            "metais",
+            "sais",
+            "gases nobres",
+            "moléculas de uma só átomo"
+          ],
+          "correct_index": 0,
+          "explanation": "Muitas unidades iguais ligadas formam o polímero.",
+          "pitfall": "Plástico não é metal: não conduz eletricidade como o cobre."
+        },
+        {
+          "topic": "Funções",
+          "format": "match",
+          "statement": "Ligue cada função ao exemplo.",
+          "pairs": [
+            {
+              "left": "álcool",
+              "right": "etanol"
+            },
+            {
+              "left": "ácido carboxílico",
+              "right": "ácido do vinagre"
+            },
+            {
+              "left": "éster",
+              "right": "aroma de frutas"
+            },
+            {
+              "left": "cetona",
+              "right": "acetona"
+            }
+          ],
+          "explanation": "Cada função tem um grupo e um exemplo do dia a dia.",
+          "pitfall": "Álcool e ácido carboxílico são os mais trocados."
+        },
+        {
+          "topic": "Gasolina",
+          "statement": "A gasolina é uma mistura de:",
+          "options": [
+            "hidrocarbonetos",
+            "sais",
+            "ácidos fortes",
+            "metais",
+            "gases nobres"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela é tirada do petróleo e tem cadeias de carbono e hidrogênio.",
+          "pitfall": "Sais não queimam como combustível.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Corpo",
+          "statement": "O corpo humano tem muitas substâncias orgânicas porque:",
+          "options": [
+            "é feito em grande parte de moléculas com carbono",
+            "não tem carbono",
+            "é feito de metal",
+            "só tem água",
+            "é um gás nobre"
+          ],
+          "correct_index": 0,
+          "explanation": "Proteínas, gorduras e açúcares têm cadeias de carbono.",
+          "pitfall": "Água é muito importante, mas não é orgânica.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Cadeias",
+          "statement": "O carbono forma tantas substâncias diferentes porque:",
+          "options": [
+            "se liga a outros carbonos em cadeias retas, com galhos ou em anel",
+            "é o elemento mais pesado",
+            "não faz ligações",
+            "só existe no petróleo",
+            "é um gás nobre"
+          ],
+          "correct_index": 0,
+          "explanation": "Quatro ligações e a capacidade de se ligar a si mesmo geram variedade enorme.",
+          "pitfall": "Gás nobre quase não faz ligações: é o contrário do carbono.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Metano",
+          "statement": "O metano, CH₄, é o principal componente:",
+          "options": [
+            "do gás natural e do biogás",
+            "do vinagre",
+            "do sal de cozinha",
+            "da acetona",
+            "do plástico PET"
+          ],
+          "correct_index": 0,
+          "explanation": "É o hidrocarboneto mais simples.",
+          "pitfall": "Vinagre é ácido acético, outra função.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Grupo OH",
+          "statement": "Uma substância tem uma cadeia de carbono com um grupo OH na ponta. Ela é provavelmente:",
+          "options": [
+            "um álcool",
+            "um hidrocarboneto",
+            "uma cetona",
+            "um gás nobre",
+            "um sal"
+          ],
+          "correct_index": 0,
+          "explanation": "O grupo OH ligado ao carbono é a marca dos álcoois.",
+          "pitfall": "Hidrocarboneto não tem oxigênio.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Séculos",
+          "statement": "Por que o lixo plástico é um problema ambiental grave?",
+          "options": [
+            "muitos plásticos levam séculos para se decompor",
+            "se decompõe em poucos dias",
+            "vira petróleo de novo sozinho",
+            "não tem carbono",
+            "dissolve na água da chuva"
+          ],
+          "correct_index": 0,
+          "explanation": "As cadeias longas não são quebradas facilmente pelos seres vivos.",
+          "pitfall": "Se decompusesse em dias, não seria tão grave.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "quimica-e-ambiente",
+      "title": "Química e ambiente: combustíveis, poluição e reciclagem",
+      "module": "Química no mundo",
+      "summary": "Queimar combustíveis solta energia e também gases que poluem e aquecem o planeta. Biocombustíveis e reciclagem são parte da resposta.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O cano de escape",
+          "body": [
+            "Atrás de um carro antigo sai uma fumaça escura. Aquilo é o resultado de uma queima que acontece milhares de vezes por minuto no motor.",
+            "Toda energia tem um preço químico. Entender esse preço ajuda a escolher melhor."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A combustão",
+          "body": [
+            "Na combustão, o combustível reage com o oxigênio e solta energia. Quando a queima é completa, sobram gás carbônico e água.",
+            "Com pouco oxigênio, a queima é incompleta e solta monóxido de carbono, um gás venenoso. Por isso não se liga aquecedor a gás em lugar fechado."
+          ],
+          "example": {
+            "label": "A queima completa do metano",
+            "lines": [
+              "metano + oxigênio → gás carbônico + água + energia",
+              "CH₄ + 2 O₂ → CO₂ + 2 H₂O"
+            ]
+          },
+          "terms": [
+            {
+              "word": "Combustão",
+              "meaning": "a queima: a reação de um combustível com o oxigênio, que libera energia na forma de calor e luz."
+            },
+            {
+              "word": "Óxido",
+              "meaning": "uma substância formada por um elemento ligado ao oxigênio."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Fóssil ou renovável",
+          "body": [
+            "Petróleo, carvão e gás natural levaram milhões de anos para se formar. Ao queimá-los, devolvemos ao ar um carbono que estava guardado.",
+            "O etanol da cana também solta gás carbônico, mas a cana absorveu esse carbono enquanto crescia. Por isso o balanço é bem menor."
+          ],
+          "terms": [
+            {
+              "word": "Combustível fóssil",
+              "meaning": "o combustível formado por restos de seres vivos ao longo de milhões de anos, como petróleo, carvão e gás natural. Não se renova no tempo humano."
+            },
+            {
+              "word": "Biocombustível",
+              "meaning": "o combustível feito de plantas, como o etanol da cana e o biodiesel. É renovável."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A poluição do ar",
+          "body": [
+            "A queima de carvão e diesel solta óxidos de enxofre e de nitrogênio. Na chuva, eles formam ácidos: é a chuva ácida, que corrói monumentos e prejudica plantas.",
+            "O excesso de gás carbônico reforça o efeito estufa e aquece o planeta."
+          ],
+          "terms": [
+            {
+              "word": "Ácido",
+              "meaning": "a substância de gosto azedo, como o vinagre. Na chuva, ela corrói o que toca."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Reciclar e reduzir",
+          "body": [
+            "Reciclar é transformar o lixo em matéria-prima de novo. O Brasil recicla quase todas as latas de alumínio, porque o metal reciclado gasta muito menos energia.",
+            "Antes de reciclar, vale reduzir e reutilizar. O lixo orgânico, como cascas de fruta, pode virar adubo na compostagem."
+          ],
+          "table": {
+            "label": "Os três erres",
+            "headers": [
+              "Ação",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "reduzir",
+                "comprar produtos com menos embalagem"
+              ],
+              [
+                "reutilizar",
+                "usar o pote de vidro para guardar outra coisa"
+              ],
+              [
+                "reciclar",
+                "separar latas, papel e plástico para a coleta"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede os produtos da combustão e a diferença entre combustível fóssil e renovável. Também cobra a chuva ácida e a reciclagem."
+          ],
+          "bullets": [
+            "“A queima completa de um combustível orgânico produz…”",
+            "“O etanol é considerado renovável porque…”",
+            "“A chuva ácida é causada principalmente por…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Biocombustível",
+              "meaning": "o combustível feito de plantas, como o etanol da cana e o biodiesel. É renovável."
+            },
+            {
+              "word": "Óxido",
+              "meaning": "uma substância formada por um elemento ligado ao oxigênio."
+            }
+          ],
+          "bullets": [
+            "Achar que o etanol não solta gás carbônico. Solta, mas a cana o absorveu antes.",
+            "Confundir monóxido de carbono (venenoso, queima incompleta) com gás carbônico.",
+            "Achar que a chuva ácida vem do gás carbônico. Vem dos óxidos de enxofre e de nitrogênio.",
+            "Achar que reciclar é a primeira opção. Reduzir e reutilizar vêm antes."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Combustão é reação com oxigênio; completa, dá gás carbônico e água; incompleta, solta monóxido de carbono.",
+            "Fósseis devolvem carbono antigo ao ar; biocombustíveis são renováveis. Óxidos de enxofre e nitrogênio causam chuva ácida."
+          ],
+          "terms": [
+            {
+              "word": "Combustão",
+              "meaning": "a queima: a reação de um combustível com o oxigênio, que libera energia na forma de calor e luz."
+            },
+            {
+              "word": "Combustível fóssil",
+              "meaning": "o combustível formado por restos de seres vivos ao longo de milhões de anos, como petróleo, carvão e gás natural. Não se renova no tempo humano."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Produtos",
+          "statement": "A queima completa de um combustível com carbono e hidrogênio produz:",
+          "options": [
+            "gás carbônico e água",
+            "oxigênio e hidrogênio",
+            "monóxido de carbono e sal",
+            "só água",
+            "metal e gás nobre"
+          ],
+          "correct_index": 0,
+          "explanation": "Carbono vira gás carbônico, e hidrogênio vira água.",
+          "pitfall": "Monóxido de carbono sai da queima incompleta."
+        },
+        {
+          "topic": "Renovável",
+          "statement": "O etanol de cana é considerado renovável porque:",
+          "options": [
+            "a cana absorve gás carbônico ao crescer e pode ser plantada de novo",
+            "não solta nenhum gás",
+            "vem do petróleo",
+            "nunca acaba sozinho",
+            "é um metal"
+          ],
+          "correct_index": 0,
+          "explanation": "A planta cresce de novo a cada safra e retira carbono do ar.",
+          "pitfall": "Ele solta gás carbônico, sim: a diferença está no ciclo."
+        },
+        {
+          "topic": "Chuva ácida",
+          "statement": "A chuva ácida é causada principalmente por:",
+          "options": [
+            "óxidos de enxofre e nitrogênio da queima de carvão e diesel",
+            "excesso de árvores",
+            "gás carbônico das plantas",
+            "sal do mar",
+            "vapor de água puro"
+          ],
+          "correct_index": 0,
+          "explanation": "Esses óxidos reagem com a água e formam ácidos.",
+          "pitfall": "O gás carbônico forma um ácido fraco; os vilões são enxofre e nitrogênio."
+        },
+        {
+          "topic": "Monóxido",
+          "statement": "Por que não se deve ligar um aquecedor a gás num lugar fechado?",
+          "options": [
+            "a queima incompleta solta monóxido de carbono, que é venenoso",
+            "o gás vira água",
+            "o lugar fica frio demais",
+            "o oxigênio aumenta",
+            "não há perigo nenhum"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem ar suficiente, a queima é incompleta e libera um gás tóxico sem cheiro.",
+          "pitfall": "O perigo é justamente o oxigênio acabar, não aumentar."
+        },
+        {
+          "topic": "Fóssil",
+          "statement": "Qual destes é um combustível fóssil?",
+          "options": [
+            "carvão mineral",
+            "etanol de cana",
+            "biodiesel",
+            "lenha de reflorestamento",
+            "biogás do lixo"
+          ],
+          "correct_index": 0,
+          "explanation": "O carvão se formou de restos de plantas ao longo de milhões de anos.",
+          "pitfall": "Etanol e biodiesel vêm de plantas atuais."
+        },
+        {
+          "topic": "Alumínio",
+          "statement": "Por que vale tanto a pena reciclar latas de alumínio?",
+          "options": [
+            "o metal reciclado gasta muito menos energia que o produzido do minério",
+            "o alumínio não existe na natureza",
+            "reciclar gasta mais energia",
+            "as latas se decompõem rápido",
+            "o alumínio é um gás"
+          ],
+          "correct_index": 0,
+          "explanation": "Derreter latas usa uma fração da energia de tirar o metal do minério.",
+          "pitfall": "Se gastasse mais energia, não compensaria."
+        },
+        {
+          "topic": "Três erres",
+          "statement": "Qual atitude vem ANTES da reciclagem nos três erres?",
+          "options": [
+            "reduzir o consumo",
+            "jogar no lixo comum",
+            "queimar o lixo",
+            "enterrar o plástico",
+            "comprar mais embalagens"
+          ],
+          "correct_index": 0,
+          "explanation": "O melhor lixo é o que nem chega a existir.",
+          "pitfall": "Queimar polui o ar e não é um dos três erres."
+        },
+        {
+          "topic": "Ambiente",
+          "format": "match",
+          "statement": "Ligue cada termo à sua descrição.",
+          "pairs": [
+            {
+              "left": "combustão completa",
+              "right": "dá gás carbônico e água"
+            },
+            {
+              "left": "combustão incompleta",
+              "right": "solta monóxido de carbono"
+            },
+            {
+              "left": "combustível fóssil",
+              "right": "petróleo, carvão e gás natural"
+            },
+            {
+              "left": "biocombustível",
+              "right": "etanol e biodiesel"
+            }
+          ],
+          "explanation": "Quatro termos sobre combustíveis.",
+          "pitfall": "Completa e incompleta são as mais trocadas."
+        },
+        {
+          "topic": "Oxigênio",
+          "statement": "Toda combustão precisa de:",
+          "options": [
+            "oxigênio",
+            "nitrogênio",
+            "água",
+            "sal",
+            "gás nobre"
+          ],
+          "correct_index": 0,
+          "explanation": "O combustível reage com o oxigênio do ar.",
+          "pitfall": "Sem oxigênio, o fogo apaga.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Compostagem",
+          "statement": "Cascas de frutas e restos de comida podem virar adubo na:",
+          "options": [
+            "compostagem",
+            "destilação",
+            "combustão",
+            "reciclagem de alumínio",
+            "filtração"
+          ],
+          "correct_index": 0,
+          "explanation": "Na compostagem, o lixo orgânico se decompõe e vira adubo.",
+          "pitfall": "Reciclagem de alumínio é para latas.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Carbono antigo",
+          "statement": "Por que queimar petróleo aumenta o gás carbônico do ar mais do que queimar etanol?",
+          "options": [
+            "devolve ao ar um carbono guardado há milhões de anos",
+            "o petróleo não tem carbono",
+            "o etanol não queima",
+            "o petróleo vira oxigênio",
+            "não há diferença"
+          ],
+          "correct_index": 0,
+          "explanation": "O carbono do etanol foi tirado do ar pela cana há pouco tempo.",
+          "pitfall": "Os dois soltam gás carbônico; a diferença é a origem do carbono.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Monumentos",
+          "statement": "Estátuas de mármore ficam corroídas em cidades poluídas por causa:",
+          "options": [
+            "da chuva ácida",
+            "da chuva doce",
+            "do excesso de árvores",
+            "do vento do mar sem poluição",
+            "do frio"
+          ],
+          "correct_index": 0,
+          "explanation": "Os ácidos da chuva reagem com o mármore e o desgastam.",
+          "pitfall": "O frio sozinho não corrói o mármore.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Balanço",
+          "statement": "Qual frase sobre o etanol está certa?",
+          "options": [
+            "ele solta gás carbônico ao queimar, mas a cana absorveu esse gás ao crescer",
+            "ele não solta gás carbônico",
+            "ele é um combustível fóssil",
+            "ele aumenta a chuva ácida mais que o carvão",
+            "ele não pode ser usado em carros"
+          ],
+          "correct_index": 0,
+          "explanation": "O ciclo da planta compensa boa parte da emissão.",
+          "pitfall": "“Não solta gás carbônico” é a pegadinha.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Metano",
+          "statement": "Na queima completa de 1 molécula de metano, CH₄ + 2 O₂ → CO₂ + 2 H₂O, quantas moléculas de água se formam?",
+          "options": [
+            "2",
+            "1",
+            "4",
+            "3",
+            "0"
+          ],
+          "correct_index": 0,
+          "explanation": "O número na frente da água é 2.",
+          "pitfall": "4 é a quantidade de hidrogênios, não de águas formadas.",
+          "difficulty": "dificil"
+        }
+      ]
+    }
+  ]
+}

@@ -140,6 +140,17 @@ const JARGON = [
   ["reflexão", /(?<!\p{L})reflex(ão|ões)(?!\p{L})/iu, "f"], ["refração", /(?<!\p{L})refra(ç|c)(ão|ões)(?!\p{L})/iu, "f"], ["onda eletromagnética", /\beletromagn(é|e)tic(a|as|o|os)\b/i, "f"],
   ["corrente elétrica", /\bcorrentes? el(é|e)tricas?\b|\bamp(è|e)res?\b/i, "f"], ["tensão elétrica", /\btens(ão|ões)( el(é|e)tricas?)?\b|\bvolts?\b/i, "f"],
   ["resistência elétrica", /(?<!\p{L})resist(ê|e)ncias? el(é|e)tricas?(?!\p{L})|\bohms?\b/iu, "f"], ["quilowatt-hora", /\bquilowatts?-hora\b|\bkWh\b/, "f"],
+  // Química básica (escopo "x").
+  ["substância pura", /(?<!\p{L})subst(â|a)ncias? puras?(?!\p{L})/iu, "x"], ["mistura homogênea e heterogênea", /(?<!\p{L})(homog|heterog)(ê|e)ne(a|as|o|os)(?!\p{L})/iu, "x"],
+  ["filtração", /\bfiltra(ç|c)(ão|ões)\b/i, "x"], ["decantação", /\bdecanta(ç|c)(ão|ões)\b/i, "x"], ["destilação", /\bdestila(ç|c)(ão|ões)\b/i, "x"],
+  ["átomo", /(?<!\p{L})(á|a)tomos?(?!\p{L})/iu, "x"], ["próton, nêutron e elétron", /(?<!\p{L})(pr(ó|o)tons?|n(ê|e)utrons?|el(é|e)trons?)(?!\p{L})/iu, "x"],
+  ["número atômico", /(?<!\p{L})n(ú|u)meros? at(ô|o)micos?(?!\p{L})/iu, "x"], ["isótopo", /(?<!\p{L})is(ó|o)topos?(?!\p{L})/iu, "x"], ["íon", /(?<!\p{L})(í|i)ons?(?!\p{L})|\bc(á|a)tions?\b|(?<!\p{L})(â|a)nions?(?!\p{L})/iu, "x"],
+  ["molécula", /(?<!\p{L})mol(é|e)culas?(?!\p{L})/iu, "x"], ["ligação iônica, covalente e metálica", /\bliga(ç|c)(ão|ões) (i(ô|o)nica|covalente|met(á|a)lica)s?\b/i, "x"], ["regra do octeto", /\boctetos?\b/i, "x"],
+  ["ácido", /(?<!\p{L})(á|a)cid(o|os|a|as)(?!\p{L})/iu, "x"], ["óxido", /(?<!\p{L})(ó|o)xidos?(?!\p{L})/iu, "x"], ["pH", /\bpH\b/, "x"], ["indicador", /\bindicador(es)?\b/i, "x"],
+  ["reação química", /(?<!\p{L})rea(ç|c)(ão|ões) qu(í|i)micas?(?!\p{L})/iu, "x"], ["reagente e produto", /\breagentes?\b/i, "x"], ["balanceamento", /\bbalance(amento|ar|ada|ado)\b/i, "x"],
+  ["mol", /(?<!\p{L})mols?(?!\p{L})/iu, "x"], ["massa molar", /\bmassas? molar(es)?\b/i, "x"], ["soluto e solvente", /\bsolutos?\b|\bsolventes?\b/i, "x"], ["concentração", /\bconcentra(ç|c)(ão|ões)\b/i, "x"],
+  ["solubilidade", /\bsolubilidade\b/i, "x"], ["hidrocarboneto", /\bhidrocarbonetos?\b/i, "x"], ["função orgânica", /(?<!\p{L})fun(ç|c)(ão|ões) org(â|a)nicas?(?!\p{L})/iu, "x"],
+  ["combustão", /(?<!\p{L})combust(ão|ões)(?!\p{L})/iu, "x"], ["combustível fóssil", /(?<!\p{L})combust(í|i)ve(l|is) f(ó|o)sse(l|is)(?!\p{L})/iu, "x"], ["biocombustível", /(?<!\p{L})biocombust(í|i)ve(l|is)(?!\p{L})/iu, "x"],
 
   ["preposição", /\bpreposi(ç|c)(ão|ões)\b/i, "p"], ["artigo", /\bartigos?\b/i, "p"],
   ["verbo", /\bverbos?\b/i, "p"], ["sujeito", /\bsujeitos?\b/i, "p"], ["núcleo", /\bnúcleos?\b/i, "p"], ["pronome", /\bpronomes?\b/i, "p"],
@@ -477,7 +488,7 @@ const JARGON = [
   ["cooler", /\bcoolers?\b|\bwater cooler\b/i, "h"], ["80 Plus", /\b80 Plus\b/i, "h"], ["fonte modular", /\bmodular(es)?\b/i, "h"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;
