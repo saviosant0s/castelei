@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, BookA, ClipboardCheck, Crown } from "lucide-react";
+import { SubjectArt, subjectArtKey } from "@/components/illustrations/SubjectArt";
 import { SubjectSummary } from "@/components/trail/SubjectSummary";
 import { SubjectTrail } from "@/components/trail/SubjectTrail";
 import { Callout, Card, PageHero } from "@/components/ui";
@@ -41,6 +42,7 @@ export default async function MateriaPage({ params }: { params: Promise<{ slug: 
 
       <PageHero
         title={subject.name}
+        art={<SubjectArt name={subjectArtKey(subject)} />}
         eyebrow={
           naTrilha && (
             <Link href={`/trilha/${naTrilha.trail.slug}`} className="hover:text-ink">

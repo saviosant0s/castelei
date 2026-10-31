@@ -7,6 +7,7 @@ import {
   Brain,
   BrainCircuit,
   Calculator,
+  Ruler,
   ChartColumn,
   Code,
   Cpu,
@@ -67,6 +68,7 @@ export function areaIcon(slug: string): LucideIcon {
 
 const iconesDeMateria: Record<string, LucideIcon> = {
   "matematica-basica": Calculator,
+  "matematica-do-dia-a-dia": Ruler,
   portugues: Languages,
   "sistemas-operacionais": Cpu,
   "servidores-vps": Server,

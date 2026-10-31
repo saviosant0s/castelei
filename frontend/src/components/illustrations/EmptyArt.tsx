@@ -24,11 +24,12 @@ export type EmptyArtName =
 
 const traco = "stroke-ink fill-none";
 
-function Moldura({ children }: { children: ReactNode }) {
+/** O quadro comum a todas as ilustrações: mesma caixa, mesmo traço e o mesmo chão. */
+export function Moldura({ children, className = "h-28 w-auto" }: { children: ReactNode; className?: string }) {
   return (
     <svg
       viewBox="0 0 160 120"
-      className="h-28 w-auto"
+      className={className}
       aria-hidden="true"
       strokeWidth={2.5}
       strokeLinecap="round"
