@@ -150,7 +150,13 @@ const JARGON = [
   ["reação química", /(?<!\p{L})rea(ç|c)(ão|ões) qu(í|i)micas?(?!\p{L})/iu, "x"], ["reagente e produto", /\breagentes?\b/i, "x"], ["balanceamento", /\bbalance(amento|ar|ada|ado)\b/i, "x"],
   ["mol", /(?<!\p{L})mols?(?!\p{L})/iu, "x"], ["massa molar", /\bmassas? molar(es)?\b/i, "x"], ["soluto e solvente", /\bsolutos?\b|\bsolventes?\b/i, "x"], ["concentração", /\bconcentra(ç|c)(ão|ões)\b/i, "x"],
   ["solubilidade", /\bsolubilidade\b/i, "x"], ["hidrocarboneto", /\bhidrocarbonetos?\b/i, "x"], ["função orgânica", /(?<!\p{L})fun(ç|c)(ão|ões) org(â|a)nicas?(?!\p{L})/iu, "x"],
-  ["combustão", /(?<!\p{L})combust(ão|ões)(?!\p{L})/iu, "x"], ["combustível fóssil", /(?<!\p{L})combust(í|i)ve(l|is) f(ó|o)sse(l|is)(?!\p{L})/iu, "x"], ["biocombustível", /(?<!\p{L})biocombust(í|i)ve(l|is)(?!\p{L})/iu, "x"],
+  ["combustão", /(?<!\p{L})combust(ão|ões)(?!\p{L})/iu, "x"],
+  // Inglês e Espanhol básicos (escopos "w" e "u"): os nomes de gramática que a lição explica.
+  ["pronome pessoal", /\bpronomes?\b/i, "wu"], ["verbo to be", /\bto be\b/i, "w"], ["contração", /\bcontra(ç|c)(ão|ões)\b/i, "wu"],
+  ["presente simples e contínuo", /\bpresente (simples|cont(í|i)nuo)\b/i, "w"], ["passado simples", /\bpassado simples\b/i, "w"],
+  ["verbo regular e irregular", /\bverbos? (regular|irregular)(es)?\b/i, "wu"], ["verbo auxiliar", /\bauxiliar(es)?\b/i, "w"],
+  ["cognato", /\bcognatos?\b/i, "wu"], ["falso cognato", /\bfalsos? cognatos?\b|\bfalsos? amigos?\b|\bheterossem(â|a)ntic(o|os)\b/i, "wu"],
+  ["skimming e scanning", /\bskimming\b|\bscanning\b/i, "wu"], ["artigo", /\bartigos?\b/i, "u"], ["conjugação", /\bconjuga(ç|c)(ão|ões)\b|\bconjugad(o|a)\b/i, "u"], ["combustível fóssil", /(?<!\p{L})combust(í|i)ve(l|is) f(ó|o)sse(l|is)(?!\p{L})/iu, "x"], ["biocombustível", /(?<!\p{L})biocombust(í|i)ve(l|is)(?!\p{L})/iu, "x"],
 
   ["preposição", /\bpreposi(ç|c)(ão|ões)\b/i, "p"], ["artigo", /\bartigos?\b/i, "p"],
   ["verbo", /\bverbos?\b/i, "p"], ["sujeito", /\bsujeitos?\b/i, "p"], ["núcleo", /\bnúcleos?\b/i, "p"], ["pronome", /\bpronomes?\b/i, "p"],
@@ -488,7 +494,7 @@ const JARGON = [
   ["cooler", /\bcoolers?\b|\bwater cooler\b/i, "h"], ["80 Plus", /\b80 Plus\b/i, "h"], ["fonte modular", /\bmodular(es)?\b/i, "h"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;

@@ -227,6 +227,20 @@ export const SUBJECTS: SiteSubject[] = [
       "Química e ambiente: combustíveis, poluição e reciclagem",
     ],
   },
+  {
+    slug: "ingles-basico",
+    name: "Inglês",
+    pitch:
+      "O verbo to be, presente, passado e futuro, o vocabulário do dia a dia e como ler um texto em inglês com estratégia, de olho nos falsos cognatos.",
+    lessons: [
+      "Cumprimentos, pronomes e o verbo to be",
+      "Presente simples e presente contínuo",
+      "Passado simples e os verbos irregulares",
+      "Futuro: will e going to",
+      "Vocabulário do dia a dia: números, horas, família e rotina",
+      "Ler um texto em inglês com estratégia",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -243,5 +257,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 1596,
+  questions: 1680,
 };
