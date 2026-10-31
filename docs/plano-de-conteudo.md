@@ -133,7 +133,7 @@ probabilidade). Razão, proporção e porcentagem ficaram na básica.
 9. Guerras mundiais e Guerra Fria.
 10. Ditadura militar e redemocratização no Brasil.
 
-### Geografia — `geografia-basica`
+### Geografia — `geografia-basica` (feito: 9 lições em cinco módulos, com os níveis)
 
 1. Cartografia: escala, coordenadas, fuso horário e projeções.
 2. A Terra: estrutura, relevo e clima.

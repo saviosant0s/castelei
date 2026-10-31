@@ -178,6 +178,23 @@ export const SUBJECTS: SiteSubject[] = [
       "Ditadura militar e a volta da democracia",
     ],
   },
+  {
+    slug: "geografia-basica",
+    name: "Geografia",
+    pitch:
+      "Mapas, escala, coordenadas e fusos; relevo, clima e as questões ambientais; população, cidades, economia, globalização e as regiões do Brasil.",
+    lessons: [
+      "Mapas: escala, legenda e projeções",
+      "Coordenadas e fusos horários",
+      "A Terra por dentro e o relevo",
+      "Tempo, clima e os climas do Brasil",
+      "Biomas e questões ambientais",
+      "População, migração e cidades",
+      "Economia: setores, indústria e campo",
+      "Globalização e blocos econômicos",
+      "As regiões do Brasil e suas diferenças",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -194,5 +211,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 1246,
+  questions: 1372,
 };
