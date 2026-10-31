@@ -1,0 +1,3081 @@
+{
+  "slug": "fisica-basica",
+  "name": "Física",
+  "area": "fisica",
+  "description": "Medidas, movimento, as leis de Newton, energia, calor, ondas, luz e eletricidade: o básico de Física para qualquer prova, com exemplos do dia a dia.",
+  "lessons": [
+    {
+      "slug": "grandezas-e-unidades",
+      "title": "Grandezas, unidades e notação científica",
+      "module": "Medir",
+      "summary": "Medir é comparar com um padrão. A Física usa unidades combinadas no mundo todo, prefixos como quilo e mili, e a notação científica para números enormes ou minúsculos.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Uma xícara de quê?",
+          "body": [
+            "Uma receita pede “uma xícara de farinha”. Mas qual xícara? A da sua avó é maior que a sua, e o bolo sai diferente.",
+            "Para não ter essa confusão, a ciência combinou padrões que valem no mundo todo."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Grandeza e unidade",
+          "body": [
+            "Comprimento, massa e tempo são grandezas. Para dizer quanto, é preciso um número e uma unidade. Por exemplo: 3 metros, 2 quilogramas ou 10 segundos.",
+            "O conjunto de unidades usado no mundo todo é o Sistema Internacional, o SI."
+          ],
+          "terms": [
+            {
+              "word": "Grandeza",
+              "meaning": "tudo o que pode ser medido e expresso com um número e uma unidade, como comprimento, massa e tempo."
+            }
+          ],
+          "table": {
+            "label": "Unidades básicas do SI",
+            "headers": [
+              "Grandeza",
+              "Unidade",
+              "Símbolo"
+            ],
+            "rows": [
+              [
+                "comprimento",
+                "metro",
+                "m"
+              ],
+              [
+                "massa",
+                "quilograma",
+                "kg"
+              ],
+              [
+                "tempo",
+                "segundo",
+                "s"
+              ],
+              [
+                "temperatura",
+                "kelvin",
+                "K"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os prefixos",
+          "body": [
+            "Um prefixo multiplica a unidade. Quilo quer dizer mil: 1 quilômetro são 1.000 metros.",
+            "Mili quer dizer um milésimo: 1 milímetro é a milésima parte do metro."
+          ],
+          "table": {
+            "label": "Os prefixos mais usados",
+            "headers": [
+              "Prefixo",
+              "Vale",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "mega (M)",
+                "1 milhão",
+                "1 MB de memória"
+              ],
+              [
+                "quilo (k)",
+                "1 mil",
+                "1 km = 1.000 m"
+              ],
+              [
+                "centi (c)",
+                "1 centésimo",
+                "1 cm = 0,01 m"
+              ],
+              [
+                "mili (m)",
+                "1 milésimo",
+                "1 mm = 0,001 m"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A notação científica",
+          "body": [
+            "A luz anda 300.000.000 metros por segundo. Escrever tantos zeros cansa e dá erro.",
+            "Na notação científica, esse número vira 3 × 10⁸. O expoente 8 conta quantas casas a vírgula andou."
+          ],
+          "example": {
+            "label": "Passando para notação científica",
+            "lines": [
+              "300.000.000 → 3 × 10⁸ (a vírgula andou 8 casas para a esquerda)",
+              "5.000 → 5 × 10³",
+              "0,0005 → 5 × 10⁻⁴ (andou 4 casas para a direita: expoente negativo)"
+            ]
+          },
+          "terms": [
+            {
+              "word": "Notação científica",
+              "meaning": "o jeito de escrever números muito grandes ou muito pequenos como um número entre 1 e 10 multiplicado por uma potência de 10."
+            },
+            {
+              "word": "Potência de 10",
+              "meaning": "o 10 multiplicado por ele mesmo algumas vezes. 10³ é 10 × 10 × 10 = 1.000."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "De km/h para m/s",
+          "body": [
+            "O velocímetro mostra km/h, mas a Física costuma usar metros por segundo. Para passar de km/h para m/s, divida por 3,6.",
+            "A conta vem de 1 km ter 1.000 m e 1 hora ter 3.600 s."
+          ],
+          "example": {
+            "label": "Convertendo velocidades",
+            "lines": [
+              "72 km/h ÷ 3,6 = 20 m/s",
+              "36 km/h ÷ 3,6 = 10 m/s",
+              "10 m/s × 3,6 = 36 km/h (o caminho de volta multiplica)"
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede conversões de unidade e números em notação científica. Também cobra qual é a unidade do SI de cada grandeza."
+          ],
+          "bullets": [
+            "“Uma velocidade de 90 km/h equivale a quantos m/s?”",
+            "“O número 0,00032 em notação científica é…”",
+            "“A unidade de massa no Sistema Internacional é…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Notação científica",
+              "meaning": "o jeito de escrever números muito grandes ou muito pequenos como um número entre 1 e 10 multiplicado por uma potência de 10."
+            }
+          ],
+          "bullets": [
+            "Achar que a unidade de massa do SI é o grama. É o quilograma.",
+            "Multiplicar por 3,6 quando era para dividir. De km/h para m/s, divida.",
+            "Escrever 30 × 10⁷ e chamar de notação científica. O número da frente tem de ficar entre 1 e 10.",
+            "Esquecer o sinal negativo do expoente em números menores que 1."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Grandeza é o que se mede, com número e unidade. O SI usa metro, quilograma e segundo.",
+            "Quilo é mil e mili é um milésimo. Notação científica é um número de 1 a 10 vezes uma potência de 10, e km/h dividido por 3,6 dá m/s."
+          ],
+          "terms": [
+            {
+              "word": "Grandeza",
+              "meaning": "tudo o que pode ser medido e expresso com um número e uma unidade, como comprimento, massa e tempo."
+            },
+            {
+              "word": "Potência de 10",
+              "meaning": "o 10 multiplicado por ele mesmo algumas vezes. 10³ é 10 × 10 × 10 = 1.000."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Conversão",
+          "statement": "Uma velocidade de 72 km/h equivale a:",
+          "options": [
+            "20 m/s",
+            "72 m/s",
+            "259,2 m/s",
+            "2 m/s",
+            "7,2 m/s"
+          ],
+          "correct_index": 0,
+          "explanation": "72 ÷ 3,6 = 20 m/s.",
+          "pitfall": "259,2 é o resultado de multiplicar em vez de dividir."
+        },
+        {
+          "topic": "Massa",
+          "statement": "A unidade de massa no Sistema Internacional é:",
+          "options": [
+            "o quilograma",
+            "o grama",
+            "o newton",
+            "o litro",
+            "o metro"
+          ],
+          "correct_index": 0,
+          "explanation": "O SI usa o quilograma como unidade básica de massa.",
+          "pitfall": "O grama é muito usado, mas não é a unidade básica do SI."
+        },
+        {
+          "topic": "Quilo",
+          "statement": "Quantos metros tem 1 quilômetro?",
+          "options": [
+            "1.000",
+            "100",
+            "10",
+            "10.000",
+            "1.000.000"
+          ],
+          "correct_index": 0,
+          "explanation": "Quilo quer dizer mil.",
+          "pitfall": "100 seria o hecto, prefixo pouco usado."
+        },
+        {
+          "topic": "Notação",
+          "statement": "O número 300.000.000 em notação científica é:",
+          "options": [
+            "3 × 10⁸",
+            "3 × 10⁶",
+            "30 × 10⁷",
+            "3 × 10⁹",
+            "0,3 × 10⁸"
+          ],
+          "correct_index": 0,
+          "explanation": "A vírgula anda 8 casas, e o número da frente fica entre 1 e 10.",
+          "pitfall": "30 × 10⁷ vale o mesmo, mas não está em notação científica."
+        },
+        {
+          "topic": "Pequeno",
+          "statement": "O número 0,0005 em notação científica é:",
+          "options": [
+            "5 × 10⁻⁴",
+            "5 × 10⁴",
+            "5 × 10⁻³",
+            "0,5 × 10⁻³",
+            "5 × 10⁻⁵"
+          ],
+          "correct_index": 0,
+          "explanation": "A vírgula anda 4 casas para a direita: expoente −4.",
+          "pitfall": "Sem o sinal negativo, o número viraria 50.000."
+        },
+        {
+          "topic": "Mili",
+          "statement": "Quantos milímetros há em 1 metro?",
+          "options": [
+            "1.000",
+            "100",
+            "10",
+            "10.000",
+            "1"
+          ],
+          "correct_index": 0,
+          "explanation": "Mili é um milésimo: o metro tem mil milímetros.",
+          "pitfall": "100 é o número de centímetros."
+        },
+        {
+          "topic": "Grandeza",
+          "statement": "Qual destas NÃO é uma grandeza física?",
+          "options": [
+            "a beleza de uma paisagem",
+            "o comprimento de uma mesa",
+            "a massa de uma fruta",
+            "o tempo de uma corrida",
+            "a temperatura de um copo de água"
+          ],
+          "correct_index": 0,
+          "explanation": "Beleza não se mede com número e unidade.",
+          "pitfall": "Temperatura é grandeza: se mede com termômetro."
+        },
+        {
+          "topic": "Prefixos",
+          "format": "match",
+          "statement": "Ligue cada prefixo ao quanto ele vale.",
+          "pairs": [
+            {
+              "left": "mega",
+              "right": "1 milhão"
+            },
+            {
+              "left": "quilo",
+              "right": "1 mil"
+            },
+            {
+              "left": "centi",
+              "right": "1 centésimo"
+            },
+            {
+              "left": "mili",
+              "right": "1 milésimo"
+            }
+          ],
+          "explanation": "Os prefixos multiplicam ou dividem a unidade.",
+          "pitfall": "Centi e mili são os mais trocados: o centímetro é dez vezes maior que o milímetro."
+        },
+        {
+          "topic": "Tempo SI",
+          "statement": "A unidade de tempo no Sistema Internacional é:",
+          "options": [
+            "o segundo",
+            "o minuto",
+            "a hora",
+            "o dia",
+            "o ano"
+          ],
+          "correct_index": 0,
+          "explanation": "O segundo é a unidade básica de tempo.",
+          "pitfall": "Minuto e hora são usados no dia a dia, mas não são a unidade do SI.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Centímetros",
+          "statement": "Quantos centímetros tem 2 metros?",
+          "options": [
+            "200",
+            "20",
+            "2.000",
+            "0,02",
+            "2"
+          ],
+          "correct_index": 0,
+          "explanation": "1 metro tem 100 centímetros; 2 metros, 200.",
+          "pitfall": "2.000 seria em milímetros.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Volta",
+          "statement": "Uma velocidade de 15 m/s equivale a:",
+          "options": [
+            "54 km/h",
+            "4,17 km/h",
+            "15 km/h",
+            "150 km/h",
+            "5,4 km/h"
+          ],
+          "correct_index": 0,
+          "explanation": "Para voltar de m/s para km/h, multiplique: 15 × 3,6 = 54.",
+          "pitfall": "4,17 é o resultado de dividir, o caminho errado.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Expoente",
+          "statement": "Em 6 × 10³, quanto vale o número?",
+          "options": [
+            "6.000",
+            "600",
+            "60.000",
+            "18",
+            "0,006"
+          ],
+          "correct_index": 0,
+          "explanation": "10³ é mil; 6 × 1.000 = 6.000.",
+          "pitfall": "18 seria 6 × 3, que não é o que o expoente quer dizer.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Comparar",
+          "statement": "Qual destes números é o maior?",
+          "options": [
+            "2 × 10⁵",
+            "9 × 10⁴",
+            "5 × 10³",
+            "8 × 10⁻²",
+            "1 × 10⁻⁵"
+          ],
+          "correct_index": 0,
+          "explanation": "Compare primeiro os expoentes: 10⁵ vence 10⁴, mesmo com 2 menor que 9.",
+          "pitfall": "Olhar só o número da frente leva a escolher 9 × 10⁴.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Celular",
+          "statement": "Um arquivo tem 3 MB. Quantos quilobytes isso é, contando que mega é mil vezes quilo?",
+          "options": [
+            "3.000 kB",
+            "300 kB",
+            "30 kB",
+            "3 kB",
+            "30.000 kB"
+          ],
+          "correct_index": 0,
+          "explanation": "Mega é um milhão e quilo é mil: 1 MB são 1.000 kB.",
+          "pitfall": "300 kB vem de achar que mega é cem vezes quilo.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "velocidade-e-aceleracao",
+      "title": "Movimento: velocidade e aceleração",
+      "module": "Movimento",
+      "summary": "Velocidade média é distância dividida por tempo. Aceleração é o quanto a velocidade muda a cada segundo, e na queda livre todos os corpos ganham a mesma aceleração.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Uma viagem de carro",
+          "body": [
+            "Uma família viaja 240 km em 3 horas. Ela parou num posto, pegou trânsito e correu na estrada vazia.",
+            "Mesmo assim, dá para dizer que ela andou em média 80 km a cada hora."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A velocidade média",
+          "body": [
+            "Para achar a velocidade média, divida a distância pelo tempo. Ela não diz quanto o carro marcou em cada momento, só o resultado da viagem toda."
+          ],
+          "example": {
+            "label": "Calculando",
+            "lines": [
+              "Distância: 240 km. Tempo: 3 h.",
+              "240 ÷ 3 = 80.",
+              "Velocidade média: 80 km/h."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "Velocidade média",
+              "meaning": "a distância percorrida dividida pelo tempo gasto."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Velocidade constante",
+          "body": [
+            "Quando a velocidade não muda, o movimento é uniforme. A cada segundo, o objeto anda a mesma distância."
+          ],
+          "terms": [
+            {
+              "word": "Movimento uniforme",
+              "meaning": "o movimento com velocidade constante: a mesma distância a cada segundo."
+            }
+          ],
+          "table": {
+            "label": "Um ciclista a 5 m/s",
+            "headers": [
+              "Tempo",
+              "Posição"
+            ],
+            "rows": [
+              [
+                "0 s",
+                "0 m"
+              ],
+              [
+                "1 s",
+                "5 m"
+              ],
+              [
+                "2 s",
+                "10 m"
+              ],
+              [
+                "3 s",
+                "15 m"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A aceleração",
+          "body": [
+            "Quando a velocidade muda, há aceleração. Um carro que vai de 0 a 20 m/s em 5 segundos ganha 4 m/s a cada segundo.",
+            "A conta é a mudança da velocidade dividida pelo tempo: 20 ÷ 5 = 4 m/s². Frear também é acelerar, só que para baixo."
+          ],
+          "terms": [
+            {
+              "word": "Aceleração",
+              "meaning": "o quanto a velocidade muda a cada segundo. Medida em metros por segundo ao quadrado, m/s²."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A queda livre",
+          "body": [
+            "Sem ar, uma pena e um martelo caem juntos. Um astronauta fez esse teste na Lua, em 1971, e os dois chegaram ao chão ao mesmo tempo.",
+            "Perto da Terra, a aceleração da queda é de cerca de 10 m/s². Depois de 1 segundo caindo, um objeto está a 10 m/s; depois de 2, a 20 m/s."
+          ],
+          "terms": [
+            {
+              "word": "Queda livre",
+              "meaning": "a queda de um objeto quando só a gravidade age sobre ele, sem a resistência do ar."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede a velocidade média de uma viagem e a aceleração de um veículo. Também cobra que, sem ar, corpos de massas diferentes caem juntos."
+          ],
+          "bullets": [
+            "“Um ônibus percorre 180 km em 2 h. Sua velocidade média é…”",
+            "“Um carro vai de 0 a 30 m/s em 10 s. Sua aceleração é…”",
+            "“Desprezando o ar, uma bola de ferro e uma de borracha soltas juntas…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Velocidade média",
+              "meaning": "a distância percorrida dividida pelo tempo gasto."
+            },
+            {
+              "word": "Queda livre",
+              "meaning": "a queda de um objeto quando só a gravidade age sobre ele, sem a resistência do ar."
+            }
+          ],
+          "bullets": [
+            "Achar que a velocidade média é a média das velocidades. É a distância total pelo tempo total.",
+            "Achar que o objeto mais pesado cai mais rápido. Sem ar, todos caem juntos.",
+            "Achar que frear não é aceleração. É aceleração contra o movimento.",
+            "Misturar unidades: não divida quilômetros por segundos."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Velocidade média é distância dividida por tempo. No movimento uniforme, a velocidade não muda.",
+            "Aceleração é a mudança da velocidade a cada segundo. Na queda livre, ela vale cerca de 10 m/s² para todos."
+          ],
+          "terms": [
+            {
+              "word": "Movimento uniforme",
+              "meaning": "o movimento com velocidade constante: a mesma distância a cada segundo."
+            },
+            {
+              "word": "Aceleração",
+              "meaning": "o quanto a velocidade muda a cada segundo. Medida em metros por segundo ao quadrado, m/s²."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Ônibus",
+          "statement": "Um ônibus percorre 180 km em 2 horas. Qual a velocidade média?",
+          "options": [
+            "90 km/h",
+            "360 km/h",
+            "180 km/h",
+            "45 km/h",
+            "120 km/h"
+          ],
+          "correct_index": 0,
+          "explanation": "180 ÷ 2 = 90 km/h.",
+          "pitfall": "360 vem de multiplicar em vez de dividir."
+        },
+        {
+          "topic": "Aceleração",
+          "statement": "Um carro vai de 0 a 30 m/s em 10 segundos. Qual a aceleração?",
+          "options": [
+            "3 m/s²",
+            "300 m/s²",
+            "30 m/s²",
+            "0,3 m/s²",
+            "10 m/s²"
+          ],
+          "correct_index": 0,
+          "explanation": "30 ÷ 10 = 3 m/s².",
+          "pitfall": "300 é a velocidade vezes o tempo, conta que não faz sentido aqui."
+        },
+        {
+          "topic": "Queda",
+          "statement": "Sem a resistência do ar, uma bola de ferro e uma de borracha soltas da mesma altura:",
+          "options": [
+            "chegam ao chão juntas",
+            "a de ferro chega primeiro",
+            "a de borracha chega primeiro",
+            "nenhuma cai",
+            "a de ferro cai pela metade do tempo"
+          ],
+          "correct_index": 0,
+          "explanation": "Na queda livre, todos os corpos têm a mesma aceleração.",
+          "pitfall": "Achar que o mais pesado cai mais rápido é o erro clássico."
+        },
+        {
+          "topic": "Uniforme",
+          "statement": "No movimento uniforme:",
+          "options": [
+            "a velocidade não muda",
+            "a velocidade aumenta sempre",
+            "o objeto está parado",
+            "a aceleração é de 10 m/s²",
+            "a distância percorrida diminui a cada segundo"
+          ],
+          "correct_index": 0,
+          "explanation": "A cada segundo, a mesma distância.",
+          "pitfall": "Velocidade aumentando é movimento acelerado."
+        },
+        {
+          "topic": "Ciclista",
+          "statement": "Um ciclista anda a 5 m/s em movimento uniforme. Em 6 segundos, percorre:",
+          "options": [
+            "30 m",
+            "11 m",
+            "5 m",
+            "1,2 m",
+            "60 m"
+          ],
+          "correct_index": 0,
+          "explanation": "5 m a cada segundo, por 6 segundos: 30 m.",
+          "pitfall": "11 é somar 5 + 6, conta sem sentido aqui."
+        },
+        {
+          "topic": "Pedra",
+          "statement": "Uma pedra cai em queda livre. Qual a velocidade dela depois de 3 segundos? Use 10 m/s².",
+          "options": [
+            "30 m/s",
+            "10 m/s",
+            "3 m/s",
+            "13 m/s",
+            "90 m/s"
+          ],
+          "correct_index": 0,
+          "explanation": "A cada segundo ela ganha 10 m/s: 3 × 10 = 30 m/s.",
+          "pitfall": "10 m/s é a velocidade só depois do primeiro segundo."
+        },
+        {
+          "topic": "Frear",
+          "statement": "Um carro freia de 20 m/s até parar em 4 segundos. O que acontece com a aceleração?",
+          "options": [
+            "ela é de 5 m/s² contra o movimento",
+            "ela é zero, porque o carro parou",
+            "ela é de 80 m/s²",
+            "ela é de 20 m/s² a favor do movimento",
+            "não existe aceleração quando se freia"
+          ],
+          "correct_index": 0,
+          "explanation": "A velocidade cai 20 m/s em 4 s: 5 m/s² a cada segundo, contra o movimento.",
+          "pitfall": "Frear também é acelerar, só que para trás."
+        },
+        {
+          "topic": "Conceitos",
+          "format": "match",
+          "statement": "Ligue cada conceito à sua definição.",
+          "pairs": [
+            {
+              "left": "velocidade média",
+              "right": "distância dividida pelo tempo"
+            },
+            {
+              "left": "aceleração",
+              "right": "mudança da velocidade por segundo"
+            },
+            {
+              "left": "movimento uniforme",
+              "right": "velocidade constante"
+            },
+            {
+              "left": "queda livre",
+              "right": "queda só com a gravidade agindo"
+            }
+          ],
+          "explanation": "Quatro ideias que caem juntas em cinemática.",
+          "pitfall": "Velocidade e aceleração são as mais trocadas."
+        },
+        {
+          "topic": "Unidade",
+          "statement": "Qual destas é uma unidade de velocidade?",
+          "options": [
+            "km/h",
+            "kg",
+            "m²",
+            "°C",
+            "N"
+          ],
+          "correct_index": 0,
+          "explanation": "Velocidade é distância por tempo: quilômetros por hora.",
+          "pitfall": "kg é unidade de massa.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Caminhada",
+          "statement": "Uma pessoa anda 6 km em 2 horas. Qual a velocidade média?",
+          "options": [
+            "3 km/h",
+            "12 km/h",
+            "6 km/h",
+            "8 km/h",
+            "1 km/h"
+          ],
+          "correct_index": 0,
+          "explanation": "6 ÷ 2 = 3 km/h.",
+          "pitfall": "12 é multiplicar, não dividir.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Média enganosa",
+          "statement": "Um carro anda 1 hora a 60 km/h e mais 1 hora a 100 km/h. Qual a velocidade média?",
+          "options": [
+            "80 km/h",
+            "160 km/h",
+            "60 km/h",
+            "100 km/h",
+            "40 km/h"
+          ],
+          "correct_index": 0,
+          "explanation": "Andou 60 + 100 = 160 km em 2 h: 80 km/h.",
+          "pitfall": "Aqui a média dá certo porque os tempos são iguais. Com tempos diferentes, ela não daria.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Lua",
+          "statement": "Na Lua, um astronauta soltou um martelo e uma pena ao mesmo tempo. O que aconteceu?",
+          "options": [
+            "chegaram juntos, porque lá não há ar",
+            "o martelo chegou bem antes",
+            "a pena flutuou para cima",
+            "nenhum dos dois caiu",
+            "a pena chegou antes"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem ar para frear a pena, os dois caíram com a mesma aceleração.",
+          "pitfall": "Na Terra a pena demora por causa do ar, não da massa.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Tempos diferentes",
+          "statement": "Um carro anda 120 km a 60 km/h e depois 120 km a 120 km/h. Qual a velocidade média da viagem toda?",
+          "options": [
+            "80 km/h",
+            "90 km/h",
+            "100 km/h",
+            "60 km/h",
+            "120 km/h"
+          ],
+          "correct_index": 0,
+          "explanation": "O primeiro trecho leva 2 h e o segundo, 1 h. São 240 km em 3 h: 80 km/h.",
+          "pitfall": "90 é a média das velocidades, que só vale quando os tempos são iguais.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Dois segundos",
+          "statement": "Uma bola cai em queda livre por 2 segundos. Qual a distância percorrida? Use d = 5 × t².",
+          "options": [
+            "20 m",
+            "10 m",
+            "40 m",
+            "5 m",
+            "100 m"
+          ],
+          "correct_index": 0,
+          "explanation": "d = 5 × 2² = 5 × 4 = 20 m.",
+          "pitfall": "10 m vem de esquecer de elevar o tempo ao quadrado.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "leis-de-newton",
+      "title": "As três leis de Newton",
+      "module": "Movimento",
+      "summary": "Um corpo tende a continuar como está, força muda o movimento na proporção da massa, e toda força vem com outra igual e contrária. Peso não é massa.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O ônibus que freia",
+          "body": [
+            "O ônibus freia de repente, e você é jogado para a frente. Ninguém o empurrou.",
+            "Seu corpo só quis continuar andando, como estava. É a primeira lei de Newton."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Primeira lei: a inércia",
+          "body": [
+            "Um corpo parado continua parado, e um corpo andando continua andando em linha reta, se nenhuma força mudar isso.",
+            "É por isso que o cinto de segurança salva vidas: na batida, ele segura o corpo, que continuaria indo para a frente."
+          ],
+          "terms": [
+            {
+              "word": "Inércia",
+              "meaning": "a tendência de um corpo continuar como está: parado se está parado, andando em linha reta se está andando."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Segunda lei: força, massa e aceleração",
+          "body": [
+            "Empurrar um carrinho vazio é fácil; cheio, é difícil. Quanto mais massa, mais força para acelerar igual.",
+            "A conta é F = m × a: força é massa vezes aceleração. Para acelerar 2 kg em 3 m/s², são precisos 6 N."
+          ],
+          "terms": [
+            {
+              "word": "Força resultante",
+              "meaning": "a soma de todas as forças que agem num corpo, levando em conta a direção de cada uma."
+            },
+            {
+              "word": "newton (N)",
+              "meaning": "a unidade de força. 1 N é a força que acelera 1 kg em 1 m/s²."
+            },
+            {
+              "word": "Aceleração",
+              "meaning": "o quanto a velocidade muda a cada segundo, em m/s²."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Terceira lei: ação e reação",
+          "body": [
+            "Quando você empurra a parede, a parede empurra você com a mesma força, no sentido contrário.",
+            "As duas forças agem em corpos diferentes, por isso não se anulam. O foguete empurra os gases para baixo, e os gases empurram o foguete para cima."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Massa não é peso",
+          "body": [
+            "Massa é quanto de matéria você tem, e é igual em qualquer lugar. Peso é a força com que o planeta te puxa: P = m × g.",
+            "Uma pessoa de 60 kg pesa 600 N na Terra, com g = 10. Na Lua, onde g é cerca de 1,6, pesa uns 96 N. Mesmo assim, continua com 60 kg."
+          ],
+          "terms": [
+            {
+              "word": "Massa e peso",
+              "meaning": "massa é a quantidade de matéria, em quilogramas, e não muda. Peso é a força com que o planeta puxa o corpo, em newtons, e muda de um planeta para outro."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O atrito",
+          "body": [
+            "O atrito é a força que aparece quando duas superfícies raspam. Ele freia o que desliza.",
+            "Mas sem atrito ninguém andaria: o pé escorregaria no chão. Pneu careca tem pouco atrito, e por isso derrapa."
+          ],
+          "terms": [
+            {
+              "word": "Atrito",
+              "meaning": "a força que aparece quando uma superfície raspa na outra e atrapalha o deslizamento."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá uma situação do dia a dia e pede qual lei explica. Também cobra contas com F = m × a e a diferença entre massa e peso."
+          ],
+          "bullets": [
+            "“O uso do cinto de segurança relaciona-se com qual lei?”",
+            "“Uma força de 20 N age num corpo de 4 kg. A aceleração é…”",
+            "“Um astronauta na Lua tem a mesma massa, mas o peso…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Massa e peso",
+              "meaning": "massa é a quantidade de matéria, em quilogramas, e não muda. Peso é a força com que o planeta puxa o corpo, em newtons, e muda de um planeta para outro."
+            },
+            {
+              "word": "Atrito",
+              "meaning": "a força que aparece quando uma superfície raspa na outra e atrapalha o deslizamento."
+            }
+          ],
+          "bullets": [
+            "Achar que ação e reação se anulam. Elas agem em corpos diferentes.",
+            "Dizer que alguém pesa 60 kg. Isso é a massa; o peso é em newtons.",
+            "Achar que é preciso força para manter um corpo andando sem atrito. Sem atrito, ele segue sozinho.",
+            "Achar que o atrito só atrapalha. Sem ele não daria para andar nem frear."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Primeira lei: inércia. Segunda: F = m × a. Terceira: toda ação tem reação igual e contrária, em outro corpo.",
+            "Massa não muda; peso é a força do planeta, P = m × g. O atrito freia, mas também é o que permite andar."
+          ],
+          "terms": [
+            {
+              "word": "Inércia",
+              "meaning": "a tendência de um corpo continuar como está: parado se está parado, andando em linha reta se está andando."
+            },
+            {
+              "word": "newton (N)",
+              "meaning": "a unidade de força. 1 N é a força que acelera 1 kg em 1 m/s²."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Cinto",
+          "statement": "O uso do cinto de segurança está ligado a qual lei de Newton?",
+          "options": [
+            "primeira lei, da inércia",
+            "segunda lei",
+            "terceira lei",
+            "lei da gravitação",
+            "nenhuma"
+          ],
+          "correct_index": 0,
+          "explanation": "Na freada, o corpo tende a continuar indo para a frente; o cinto o segura.",
+          "pitfall": "A terceira lei é ação e reação, outra ideia."
+        },
+        {
+          "topic": "Conta",
+          "statement": "Uma força de 20 N age num corpo de 4 kg. Qual a aceleração?",
+          "options": [
+            "5 m/s²",
+            "80 m/s²",
+            "24 m/s²",
+            "16 m/s²",
+            "0,2 m/s²"
+          ],
+          "correct_index": 0,
+          "explanation": "a = F ÷ m = 20 ÷ 4 = 5 m/s².",
+          "pitfall": "80 é multiplicar força e massa, o contrário."
+        },
+        {
+          "topic": "Foguete",
+          "statement": "Um foguete sobe porque:",
+          "options": [
+            "empurra os gases para baixo, e os gases o empurram para cima",
+            "fica mais leve que o ar",
+            "a Terra para de puxá-lo",
+            "o ar o empurra por baixo como uma pipa",
+            "não tem massa"
+          ],
+          "correct_index": 0,
+          "explanation": "É a terceira lei: ação e reação. Funciona até no espaço, sem ar.",
+          "pitfall": "Ele funciona sem ar, por isso não depende do ar empurrar."
+        },
+        {
+          "topic": "Peso",
+          "statement": "Uma pessoa tem 50 kg. Qual o peso dela na Terra, com g = 10 m/s²?",
+          "options": [
+            "500 N",
+            "50 N",
+            "50 kg",
+            "5 N",
+            "60 N"
+          ],
+          "correct_index": 0,
+          "explanation": "P = m × g = 50 × 10 = 500 N.",
+          "pitfall": "50 kg é a massa, não o peso."
+        },
+        {
+          "topic": "Lua",
+          "statement": "Um astronauta vai da Terra para a Lua. O que acontece?",
+          "options": [
+            "a massa continua igual e o peso diminui",
+            "a massa diminui e o peso continua igual",
+            "os dois continuam iguais",
+            "os dois aumentam",
+            "a massa some"
+          ],
+          "correct_index": 0,
+          "explanation": "Massa é quantidade de matéria; peso depende da gravidade, menor na Lua.",
+          "pitfall": "A segunda alternativa inverte massa e peso."
+        },
+        {
+          "topic": "Anulam?",
+          "statement": "Por que ação e reação não se anulam?",
+          "options": [
+            "agem em corpos diferentes",
+            "têm tamanhos diferentes",
+            "uma é sempre maior que a outra",
+            "agem no mesmo corpo e se somam",
+            "só existem no espaço"
+          ],
+          "correct_index": 0,
+          "explanation": "Quando você empurra a parede, uma força age na parede e a outra em você.",
+          "pitfall": "Elas têm o mesmo tamanho: o que muda é o corpo em que agem."
+        },
+        {
+          "topic": "Atrito",
+          "statement": "Por que é difícil andar sobre gelo liso?",
+          "options": [
+            "há pouco atrito entre o sapato e o gelo",
+            "o gelo tem muita massa",
+            "o gelo empurra as pessoas",
+            "falta gravidade no gelo",
+            "o gelo tem muito atrito"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem atrito, o pé escorrega em vez de empurrar o chão para trás.",
+          "pitfall": "Muito atrito ajudaria a andar, não atrapalharia."
+        },
+        {
+          "topic": "Leis",
+          "format": "match",
+          "statement": "Ligue cada situação à lei de Newton que a explica.",
+          "pairs": [
+            {
+              "left": "passageiro jogado para a frente na freada",
+              "right": "primeira lei"
+            },
+            {
+              "left": "carrinho cheio difícil de empurrar",
+              "right": "segunda lei"
+            },
+            {
+              "left": "foguete que sobe soltando gases",
+              "right": "terceira lei"
+            },
+            {
+              "left": "pneu careca que derrapa",
+              "right": "pouco atrito"
+            }
+          ],
+          "explanation": "Três leis e o atrito em situações do dia a dia.",
+          "pitfall": "Primeira e terceira são as mais trocadas."
+        },
+        {
+          "topic": "Unidade",
+          "statement": "A unidade de força no Sistema Internacional é:",
+          "options": [
+            "o newton",
+            "o quilograma",
+            "o metro",
+            "o joule",
+            "o watt"
+          ],
+          "correct_index": 0,
+          "explanation": "Força se mede em newtons.",
+          "pitfall": "Quilograma mede massa.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Inércia",
+          "statement": "Um livro parado na mesa continua parado porque:",
+          "options": [
+            "nenhuma força resultante o tira do lugar",
+            "ele não tem massa",
+            "a mesa o puxa para os lados",
+            "ele está acelerando",
+            "não existe gravidade na mesa"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem força resultante, o corpo fica como está.",
+          "pitfall": "Ele tem massa; só não há força que o mova.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Força maior",
+          "statement": "Para dar a mesma aceleração a dois carrinhos, um de 10 kg e outro de 20 kg, a força no de 20 kg deve ser:",
+          "options": [
+            "o dobro",
+            "a metade",
+            "igual",
+            "quatro vezes maior",
+            "zero"
+          ],
+          "correct_index": 0,
+          "explanation": "Pela segunda lei, força e massa crescem juntas para a mesma aceleração.",
+          "pitfall": "A metade daria METADE da aceleração.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Peso na Lua",
+          "statement": "Um objeto pesa 100 N na Terra (g = 10). Na Lua, com g = 1,6, ele pesa:",
+          "options": [
+            "16 N",
+            "100 N",
+            "160 N",
+            "10 N",
+            "1,6 N"
+          ],
+          "correct_index": 0,
+          "explanation": "A massa é 100 ÷ 10 = 10 kg. Na Lua, P = 10 × 1,6 = 16 N.",
+          "pitfall": "100 N ignora que o peso muda com a gravidade.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Sem atrito",
+          "statement": "Um disco desliza numa pista sem nenhum atrito. Sem ninguém empurrar, ele:",
+          "options": [
+            "continua deslizando em linha reta com a mesma velocidade",
+            "para logo em seguida",
+            "volta para trás",
+            "acelera sozinho",
+            "afunda na pista"
+          ],
+          "correct_index": 0,
+          "explanation": "Pela inércia, sem força nenhuma ele mantém o movimento.",
+          "pitfall": "Achar que é preciso força para manter o movimento é o engano mais antigo da Física.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Duas forças",
+          "statement": "Um caixote de 5 kg é puxado por uma força de 30 N para a direita e por outra de 10 N para a esquerda. Qual a aceleração?",
+          "options": [
+            "4 m/s² para a direita",
+            "8 m/s² para a direita",
+            "6 m/s² para a direita",
+            "2 m/s² para a esquerda",
+            "zero"
+          ],
+          "correct_index": 0,
+          "explanation": "A resultante é 30 − 10 = 20 N. a = 20 ÷ 5 = 4 m/s², para a direita.",
+          "pitfall": "8 m/s² vem de somar as forças em vez de subtrair.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "energia-e-potencia",
+      "title": "Energia: movimento, altura e potência",
+      "module": "Energia",
+      "summary": "Energia de movimento é cinética; de altura, potencial. Ela não some, só se transforma. Potência é a rapidez com que a energia é usada.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A montanha-russa",
+          "body": [
+            "O carrinho da montanha-russa sobe devagar, puxado por uma corrente. Lá no alto, é solto e desce cada vez mais rápido.",
+            "A energia da subida não sumiu: virou velocidade na descida. Energia muda de forma, mas não desaparece."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Energia de movimento",
+          "body": [
+            "Tudo o que se move tem energia cinética. Ela cresce com a massa e, muito mais, com a velocidade.",
+            "A velocidade entra ao quadrado: dobrar a velocidade multiplica a energia por quatro. Por isso uma batida a 100 km/h é muito pior que a 50 km/h."
+          ],
+          "example": {
+            "label": "Um carro de 1.000 kg",
+            "lines": [
+              "a 10 m/s: Ec = 1.000 × 10² ÷ 2 = 50.000 J",
+              "a 20 m/s: Ec = 1.000 × 20² ÷ 2 = 200.000 J",
+              "a velocidade dobrou, e a energia ficou quatro vezes maior"
+            ]
+          },
+          "terms": [
+            {
+              "word": "Energia cinética",
+              "meaning": "a energia que um corpo tem por estar em movimento. Ec = m × v² ÷ 2."
+            },
+            {
+              "word": "Joule (J)",
+              "meaning": "a unidade de energia no Sistema Internacional."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Energia guardada no alto",
+          "body": [
+            "Um objeto no alto guarda energia potencial. Quanto mais pesado e mais alto, mais energia.",
+            "Uma pedra de 2 kg a 5 metros de altura guarda 2 × 10 × 5 = 100 J. Se cair, essa energia vira movimento."
+          ],
+          "terms": [
+            {
+              "word": "Energia potencial",
+              "meaning": "a energia guardada por um corpo que está no alto, pronta para virar movimento. Ep = m × g × h."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A energia se conserva",
+          "body": [
+            "Na descida da montanha-russa, a energia potencial vira cinética. Uma parte vira calor por causa do atrito, mas nada some.",
+            "Uma usina hidrelétrica faz a mesma troca, em várias etapas."
+          ],
+          "example": {
+            "label": "A energia numa hidrelétrica",
+            "lines": [
+              "A água parada no alto da represa tem energia potencial.",
+              "Ao descer pelos tubos, ganha velocidade: energia cinética.",
+              "A água gira uma turbina ligada a um gerador.",
+              "O gerador transforma o movimento em energia elétrica."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "Atrito",
+              "meaning": "a força que aparece quando uma superfície raspa na outra. Ela transforma movimento em calor."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A potência",
+          "body": [
+            "Dois elevadores sobem a mesma carga até o mesmo andar. O que chega primeiro tem mais potência: gasta a mesma energia em menos tempo."
+          ],
+          "terms": [
+            {
+              "word": "Potência",
+              "meaning": "a rapidez com que a energia é usada ou transformada: energia dividida pelo tempo."
+            },
+            {
+              "word": "Watt (W)",
+              "meaning": "a unidade de potência: 1 W é 1 joule a cada segundo. 1 quilowatt (kW) são 1.000 W."
+            }
+          ],
+          "table": {
+            "label": "Potência de alguns aparelhos",
+            "headers": [
+              "Aparelho",
+              "Potência típica"
+            ],
+            "rows": [
+              [
+                "lâmpada de LED",
+                "10 W"
+              ],
+              [
+                "televisão",
+                "100 W"
+              ],
+              [
+                "micro-ondas",
+                "1.200 W"
+              ],
+              [
+                "chuveiro elétrico",
+                "5.500 W"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede as transformações de energia numa usina ou num brinquedo. Também cobra contas de energia cinética, potencial e potência."
+          ],
+          "bullets": [
+            "“Numa usina hidrelétrica, a sequência de transformações de energia é…”",
+            "“Se a velocidade de um carro dobra, sua energia cinética…”",
+            "“Um aparelho de 2.000 W ligado por 2 horas consome…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Energia cinética",
+              "meaning": "a energia que um corpo tem por estar em movimento. Ec = m × v² ÷ 2."
+            },
+            {
+              "word": "Potência",
+              "meaning": "a rapidez com que a energia é usada ou transformada: energia dividida pelo tempo."
+            }
+          ],
+          "bullets": [
+            "Achar que dobrar a velocidade dobra a energia cinética. Ela quadruplica.",
+            "Dizer que a energia se perde. Ela se transforma, muitas vezes em calor.",
+            "Confundir energia com potência. Potência é a rapidez com que a energia é usada.",
+            "Esquecer que energia potencial depende da altura: no chão, ela é zero."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Energia cinética é de movimento e cresce com o quadrado da velocidade. Potencial é de altura: m × g × h.",
+            "A energia se transforma sem sumir. Potência é energia por tempo, medida em watts."
+          ],
+          "terms": [
+            {
+              "word": "Energia potencial",
+              "meaning": "a energia guardada por um corpo que está no alto, pronta para virar movimento. Ep = m × g × h."
+            },
+            {
+              "word": "Watt (W)",
+              "meaning": "a unidade de potência: 1 W é 1 joule a cada segundo. 1 quilowatt (kW) são 1.000 W."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Dobro",
+          "statement": "Se a velocidade de um carro dobra, sua energia cinética:",
+          "options": [
+            "fica quatro vezes maior",
+            "dobra",
+            "continua igual",
+            "cai pela metade",
+            "fica oito vezes maior"
+          ],
+          "correct_index": 0,
+          "explanation": "A velocidade entra ao quadrado: 2² = 4.",
+          "pitfall": "Dobrar é o erro de esquecer o quadrado."
+        },
+        {
+          "topic": "Hidrelétrica",
+          "statement": "Numa hidrelétrica, a energia passa por qual sequência?",
+          "options": [
+            "potencial, cinética e elétrica",
+            "elétrica, cinética e potencial",
+            "térmica, química e elétrica",
+            "cinética, potencial e química",
+            "nuclear, térmica e elétrica"
+          ],
+          "correct_index": 0,
+          "explanation": "A água no alto desce, ganha velocidade e gira o gerador.",
+          "pitfall": "Térmica e nuclear descrevem outros tipos de usina."
+        },
+        {
+          "topic": "Potencial",
+          "statement": "Uma pedra de 2 kg está a 10 m de altura. Qual sua energia potencial? Use g = 10.",
+          "options": [
+            "200 J",
+            "20 J",
+            "12 J",
+            "2.000 J",
+            "100 J"
+          ],
+          "correct_index": 0,
+          "explanation": "Ep = 2 × 10 × 10 = 200 J.",
+          "pitfall": "20 J esquece de multiplicar pela gravidade."
+        },
+        {
+          "topic": "Conserva",
+          "statement": "O que acontece com a energia quando um carrinho de montanha-russa desce?",
+          "options": [
+            "a potencial vira cinética, e uma parte vira calor",
+            "a energia desaparece",
+            "a cinética vira potencial",
+            "a energia é criada do nada",
+            "a energia vira massa"
+          ],
+          "correct_index": 0,
+          "explanation": "A altura vira velocidade; o atrito transforma uma parte em calor.",
+          "pitfall": "Energia não desaparece nem é criada: se transforma."
+        },
+        {
+          "topic": "Potência",
+          "statement": "Potência é:",
+          "options": [
+            "a energia usada dividida pelo tempo",
+            "a mesma coisa que energia",
+            "a força vezes a massa",
+            "a velocidade ao quadrado",
+            "o peso de um corpo"
+          ],
+          "correct_index": 0,
+          "explanation": "Mais potência é gastar a mesma energia em menos tempo.",
+          "pitfall": "Confundir energia e potência é o erro mais comum."
+        },
+        {
+          "topic": "Watt",
+          "statement": "Um aparelho de 1.000 W usa quantos joules por segundo?",
+          "options": [
+            "1.000 J",
+            "1 J",
+            "100 J",
+            "10 J",
+            "3.600 J"
+          ],
+          "correct_index": 0,
+          "explanation": "1 watt é 1 joule por segundo.",
+          "pitfall": "3.600 J seria em uma hora para um aparelho de 1 W."
+        },
+        {
+          "topic": "Cinética",
+          "statement": "Um carro de 1.000 kg anda a 10 m/s. Qual a energia cinética?",
+          "options": [
+            "50.000 J",
+            "10.000 J",
+            "100.000 J",
+            "5.000 J",
+            "1.000.000 J"
+          ],
+          "correct_index": 0,
+          "explanation": "Ec = 1.000 × 10² ÷ 2 = 50.000 J.",
+          "pitfall": "100.000 J esquece de dividir por 2."
+        },
+        {
+          "topic": "Usina",
+          "format": "order",
+          "statement": "Ponha em ordem as transformações numa hidrelétrica.",
+          "options": [
+            "água parada no alto da represa",
+            "água descendo pelos tubos",
+            "turbina girando o gerador",
+            "energia elétrica saindo da usina"
+          ],
+          "explanation": "Potencial, cinética, movimento da turbina e energia elétrica.",
+          "pitfall": "A turbina só gira depois que a água ganha velocidade."
+        },
+        {
+          "topic": "Unidade",
+          "statement": "A unidade de energia no Sistema Internacional é:",
+          "options": [
+            "o joule",
+            "o watt",
+            "o newton",
+            "o volt",
+            "o metro"
+          ],
+          "correct_index": 0,
+          "explanation": "Energia se mede em joules.",
+          "pitfall": "Watt mede potência.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Parado",
+          "statement": "Um carro parado no estacionamento tem energia cinética:",
+          "options": [
+            "zero",
+            "máxima",
+            "igual à potencial",
+            "negativa",
+            "infinita"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem velocidade, não há energia de movimento.",
+          "pitfall": "Máxima seria em alta velocidade.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Elevadores",
+          "statement": "Dois elevadores levam a mesma carga ao mesmo andar. Um leva 10 s e o outro, 20 s. Qual tem mais potência?",
+          "options": [
+            "o que leva 10 s",
+            "o que leva 20 s",
+            "têm a mesma potência",
+            "nenhum tem potência",
+            "depende só da cor"
+          ],
+          "correct_index": 0,
+          "explanation": "Mesma energia em menos tempo é mais potência.",
+          "pitfall": "A energia é a mesma; o que muda é a rapidez.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Batida",
+          "statement": "Por que uma batida a 100 km/h é muito mais grave que a 50 km/h?",
+          "options": [
+            "a energia cinética fica quatro vezes maior",
+            "a energia dobra",
+            "a massa do carro aumenta",
+            "o atrito some",
+            "a energia potencial aumenta"
+          ],
+          "correct_index": 0,
+          "explanation": "Dobrando a velocidade, a energia que precisa ser dissipada na batida quadruplica.",
+          "pitfall": "A massa do carro não muda com a velocidade.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Velocidade na queda",
+          "statement": "Uma bola de 1 kg cai de 5 m de altura. Com que velocidade chega ao chão, desprezando o ar? Use g = 10.",
+          "options": [
+            "10 m/s",
+            "50 m/s",
+            "5 m/s",
+            "100 m/s",
+            "25 m/s"
+          ],
+          "correct_index": 0,
+          "explanation": "Ep = 1 × 10 × 5 = 50 J vira cinética: 50 = 1 × v² ÷ 2, então v² = 100 e v = 10 m/s.",
+          "pitfall": "50 m/s confunde a energia (50 J) com a velocidade.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Calor",
+          "statement": "Uma bola quica e cada vez sobe menos. Para onde vai a energia?",
+          "options": [
+            "vira calor e som no choque com o chão e no ar",
+            "desaparece",
+            "volta para dentro da bola como massa",
+            "vai para a Lua",
+            "vira mais altura"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada choque transforma parte da energia em calor e som.",
+          "pitfall": "Energia não desaparece: só muda de forma.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "calor-e-temperatura",
+      "title": "Calor, temperatura e mudanças de estado",
+      "module": "Energia",
+      "summary": "Temperatura mede a agitação das partículas; calor é a energia que passa do mais quente para o mais frio. Ele viaja de três jeitos e pode mudar o estado da matéria.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O metal gelado",
+          "body": [
+            "Pela manhã, encoste a mão numa maçaneta de metal e depois numa porta de madeira. O metal parece mais frio.",
+            "Mas os dois estão na mesma temperatura. O metal só tira calor da sua mão mais rápido."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Temperatura não é calor",
+          "body": [
+            "Tudo é feito de partículas que tremem sem parar. A temperatura mede o quanto elas se agitam.",
+            "Calor é a energia que passa de um corpo mais quente para um mais frio, até os dois ficarem na mesma temperatura."
+          ],
+          "table": {
+            "label": "As três escalas de temperatura",
+            "headers": [
+              "Escala",
+              "Gelo derretendo",
+              "Água fervendo"
+            ],
+            "rows": [
+              [
+                "Celsius",
+                "0 °C",
+                "100 °C"
+              ],
+              [
+                "Fahrenheit",
+                "32 °F",
+                "212 °F"
+              ],
+              [
+                "Kelvin",
+                "273 K",
+                "373 K"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os três caminhos do calor",
+          "body": [
+            "Uma colher na sopa quente esquenta pelo cabo: é condução. O ar quente sobe e o frio desce numa sala: é convecção. O calor do Sol atravessa o espaço vazio: é irradiação."
+          ],
+          "terms": [
+            {
+              "word": "Condução, convecção e irradiação",
+              "meaning": "os três caminhos do calor. Condução é pelo contato; convecção, pelo movimento de líquidos e gases. Irradiação é por ondas, até no vácuo."
+            }
+          ],
+          "table": {
+            "label": "Onde cada um aparece",
+            "headers": [
+              "Forma",
+              "Precisa de quê",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "condução",
+                "contato, sobretudo em sólidos",
+                "panela no fogo"
+              ],
+              [
+                "convecção",
+                "líquido ou gás que se move",
+                "ar-condicionado instalado no alto"
+              ],
+              [
+                "irradiação",
+                "nada, passa até no vácuo",
+                "calor do Sol chegando à Terra"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Esquentar faz crescer",
+          "body": [
+            "Quase tudo aumenta de tamanho quando esquenta. Por isso pontes e trilhos têm pequenos vãos entre as partes.",
+            "A água é uma exceção curiosa: ao virar gelo, ela aumenta. Por isso o gelo boia e uma garrafa cheia estoura no congelador."
+          ],
+          "terms": [
+            {
+              "word": "Dilatação",
+              "meaning": "o aumento de tamanho de um material quando ele esquenta."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As mudanças de estado",
+          "body": [
+            "Com calor, o sólido vira líquido e o líquido vira gás. Tirando calor, o caminho volta.",
+            "Durante a mudança, a temperatura fica parada: a água fervendo fica em 100 °C até virar toda vapor, ao nível do mar."
+          ],
+          "table": {
+            "label": "Os nomes das mudanças",
+            "headers": [
+              "De",
+              "Para",
+              "Nome"
+            ],
+            "rows": [
+              [
+                "sólido",
+                "líquido",
+                "fusão"
+              ],
+              [
+                "líquido",
+                "gás",
+                "vaporização"
+              ],
+              [
+                "gás",
+                "líquido",
+                "condensação"
+              ],
+              [
+                "líquido",
+                "sólido",
+                "solidificação"
+              ],
+              [
+                "sólido",
+                "gás",
+                "sublimação"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede a forma de propagação numa situação do dia a dia e o nome de cada mudança de estado. Também cobra a diferença entre calor e temperatura."
+          ],
+          "bullets": [
+            "“O aquecimento de uma sala por um aquecedor no chão ocorre principalmente por…”",
+            "“As juntas de dilatação em pontes servem para…”",
+            "“Durante a fusão do gelo, a temperatura…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Condução, convecção e irradiação",
+              "meaning": "os três caminhos do calor. Condução é pelo contato; convecção, pelo movimento de líquidos e gases. Irradiação é por ondas, até no vácuo."
+            }
+          ],
+          "bullets": [
+            "Dizer que um corpo “tem calor”. Ele tem temperatura; calor é energia em trânsito.",
+            "Achar que o metal está mais frio que a madeira no mesmo lugar. Ele só conduz melhor.",
+            "Achar que a temperatura sobe durante a fervura. Ela fica parada até a mudança terminar.",
+            "Achar que irradiação precisa de ar. Ela passa até no vácuo."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Temperatura é a agitação das partículas; calor é energia passando do quente para o frio. Condução, convecção e irradiação levam o calor.",
+            "Esquentar dilata os materiais, menos a água ao congelar. Nas mudanças de estado, a temperatura fica parada."
+          ],
+          "terms": [
+            {
+              "word": "Dilatação",
+              "meaning": "o aumento de tamanho de um material quando ele esquenta."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Sol",
+          "statement": "O calor do Sol chega à Terra por:",
+          "options": [
+            "irradiação",
+            "condução",
+            "convecção",
+            "dilatação",
+            "fusão"
+          ],
+          "correct_index": 0,
+          "explanation": "Entre o Sol e a Terra há vácuo. Só a irradiação atravessa o vazio.",
+          "pitfall": "Condução e convecção precisam de matéria."
+        },
+        {
+          "topic": "Colher",
+          "statement": "Uma colher de metal na sopa quente esquenta até o cabo. Isso é:",
+          "options": [
+            "condução",
+            "irradiação",
+            "convecção",
+            "sublimação",
+            "condensação"
+          ],
+          "correct_index": 0,
+          "explanation": "O calor passa de partícula em partícula pelo metal.",
+          "pitfall": "Convecção exige líquido ou gás em movimento."
+        },
+        {
+          "topic": "Ferver",
+          "statement": "Enquanto a água ferve ao nível do mar, a temperatura dela:",
+          "options": [
+            "fica em 100 °C até virar toda vapor",
+            "sobe sem parar",
+            "cai para 0 °C",
+            "sobe até 200 °C",
+            "oscila sem regra"
+          ],
+          "correct_index": 0,
+          "explanation": "Toda a energia vai para a mudança de estado, não para subir a temperatura.",
+          "pitfall": "Achar que ela continua subindo é o engano clássico."
+        },
+        {
+          "topic": "Gelo",
+          "statement": "A passagem do estado sólido para o líquido se chama:",
+          "options": [
+            "fusão",
+            "vaporização",
+            "condensação",
+            "solidificação",
+            "sublimação"
+          ],
+          "correct_index": 0,
+          "explanation": "O gelo derretendo é uma fusão.",
+          "pitfall": "Solidificação é o caminho contrário, de líquido para sólido."
+        },
+        {
+          "topic": "Ponte",
+          "statement": "Por que pontes e trilhos têm pequenos vãos entre as partes?",
+          "options": [
+            "para dar espaço à dilatação no calor",
+            "para economizar material",
+            "para a água da chuva passar",
+            "por erro de construção",
+            "para o trem fazer barulho"
+          ],
+          "correct_index": 0,
+          "explanation": "No calor, as partes crescem; sem folga, entortariam.",
+          "pitfall": "Não é economia: o vão evita danos."
+        },
+        {
+          "topic": "Celsius",
+          "statement": "Na escala Celsius, a água ferve ao nível do mar a:",
+          "options": [
+            "100 °C",
+            "212 °C",
+            "0 °C",
+            "373 °C",
+            "32 °C"
+          ],
+          "correct_index": 0,
+          "explanation": "0 °C para o gelo derretendo e 100 °C para a água fervendo.",
+          "pitfall": "212 é o valor na escala Fahrenheit."
+        },
+        {
+          "topic": "Ar-condicionado",
+          "statement": "Por que o ar-condicionado costuma ser instalado no alto da parede?",
+          "options": [
+            "o ar frio desce e o quente sobe, e assim o ambiente circula",
+            "o ar frio sobe",
+            "para ficar longe das crianças",
+            "porque a irradiação só funciona no alto",
+            "para conduzir calor pela parede"
+          ],
+          "correct_index": 0,
+          "explanation": "O ar frio, mais pesado, desce e empurra o quente para cima: é convecção.",
+          "pitfall": "Ar frio não sobe: ele desce."
+        },
+        {
+          "topic": "Estados",
+          "format": "match",
+          "statement": "Ligue cada mudança ao seu nome.",
+          "pairs": [
+            {
+              "left": "sólido para líquido",
+              "right": "fusão"
+            },
+            {
+              "left": "líquido para gás",
+              "right": "vaporização"
+            },
+            {
+              "left": "gás para líquido",
+              "right": "condensação"
+            },
+            {
+              "left": "sólido direto para gás",
+              "right": "sublimação"
+            }
+          ],
+          "explanation": "Cada passagem tem nome próprio.",
+          "pitfall": "Condensação é a gota no copo gelado: o vapor do ar virando líquido."
+        },
+        {
+          "topic": "Kelvin",
+          "statement": "Na escala Kelvin, o gelo derrete a:",
+          "options": [
+            "273 K",
+            "0 K",
+            "100 K",
+            "32 K",
+            "373 K"
+          ],
+          "correct_index": 0,
+          "explanation": "O 0 K é o zero absoluto; o gelo derrete a 273 K.",
+          "pitfall": "0 K é bem mais frio que o gelo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Garrafa",
+          "statement": "Uma garrafa de vidro cheia de água estoura no congelador porque:",
+          "options": [
+            "a água aumenta de volume ao virar gelo",
+            "o vidro esquenta",
+            "a água evapora",
+            "o gelo ocupa menos espaço",
+            "o congelador tem pressão alta"
+          ],
+          "correct_index": 0,
+          "explanation": "A água é uma exceção: ao congelar, ela cresce.",
+          "pitfall": "Ocupar menos espaço é o contrário do que acontece.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Maçaneta",
+          "statement": "De manhã, a maçaneta de metal parece mais fria que a porta de madeira. Por quê?",
+          "options": [
+            "o metal conduz o calor da mão mais rápido",
+            "o metal está mais frio",
+            "a madeira produz calor",
+            "o metal não tem temperatura",
+            "a madeira está mais quente"
+          ],
+          "correct_index": 0,
+          "explanation": "Os dois estão na mesma temperatura do ambiente. O metal tira calor da mão mais depressa.",
+          "pitfall": "Achar que o metal está mais frio é a pegadinha.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Fahrenheit",
+          "statement": "Quanto é 20 °C em Fahrenheit? Use F = 1,8 × C + 32.",
+          "options": [
+            "68 °F",
+            "36 °F",
+            "52 °F",
+            "20 °F",
+            "100 °F"
+          ],
+          "correct_index": 0,
+          "explanation": "1,8 × 20 = 36; 36 + 32 = 68 °F.",
+          "pitfall": "36 °F esquece de somar 32.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Calor",
+          "statement": "Qual frase está certa?",
+          "options": [
+            "calor é energia que passa do corpo mais quente para o mais frio",
+            "um corpo quente tem muito calor guardado",
+            "calor e temperatura são a mesma coisa",
+            "o calor passa do frio para o quente",
+            "o frio é uma energia que entra nos corpos"
+          ],
+          "correct_index": 0,
+          "explanation": "Calor é energia em trânsito; o que o corpo tem é temperatura.",
+          "pitfall": "“Ter calor guardado” é o erro mais comum de linguagem.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Gelo seco",
+          "statement": "O gelo seco vira gás sem passar pelo líquido. Essa mudança se chama:",
+          "options": [
+            "sublimação",
+            "fusão",
+            "vaporização",
+            "condensação",
+            "solidificação"
+          ],
+          "correct_index": 0,
+          "explanation": "Sólido direto para gás é sublimação.",
+          "pitfall": "Vaporização é de líquido para gás.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "ondas-e-som",
+      "title": "Ondas e som",
+      "module": "Ondas",
+      "summary": "Onda leva energia sem levar matéria. O som é uma onda que precisa de um meio para andar, e sua frequência decide se ele é grave ou agudo.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A pedra no lago",
+          "body": [
+            "Jogue uma pedra num lago. Círculos se espalham pela água, mas uma folha boiando só sobe e desce no mesmo lugar.",
+            "A onda leva energia de um lugar a outro, sem levar a água junto."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Dois tipos de onda",
+          "body": [
+            "Algumas ondas precisam de um meio para andar, como a água ou o ar: são as mecânicas. O som é uma delas.",
+            "Outras andam até no vácuo, como a luz e as ondas de rádio. São as eletromagnéticas."
+          ],
+          "terms": [
+            {
+              "word": "Onda eletromagnética",
+              "meaning": "a onda que não precisa de meio para andar, como a luz, o rádio e o wi-fi."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As medidas de uma onda",
+          "body": [
+            "Toda onda tem altura, distância entre os topos e um ritmo. A velocidade da onda é o comprimento de onda vezes a frequência: v = λ × f."
+          ],
+          "terms": [
+            {
+              "word": "Amplitude",
+              "meaning": "a altura da onda: quanto ela sobe a partir do meio. No som, maior amplitude é som mais forte."
+            },
+            {
+              "word": "Comprimento de onda",
+              "meaning": "a distância entre dois topos seguidos da onda."
+            },
+            {
+              "word": "Frequência",
+              "meaning": "quantas ondas passam por um ponto a cada segundo. É medida em hertz (Hz)."
+            },
+            {
+              "word": "Hertz (Hz)",
+              "meaning": "a unidade de frequência: uma onda por segundo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O som",
+          "body": [
+            "O som é o ar vibrando. No ar, ele anda cerca de 340 metros por segundo, e é mais rápido na água e nos sólidos.",
+            "No vácuo não há som: no espaço, uma explosão seria silenciosa."
+          ],
+          "table": {
+            "label": "O que muda no som",
+            "headers": [
+              "Característica",
+              "Depende de",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "grave ou agudo",
+                "frequência",
+                "a voz de um homem costuma ser mais grave"
+              ],
+              [
+                "forte ou fraco",
+                "amplitude",
+                "aumentar o volume do celular"
+              ],
+              [
+                "timbre",
+                "a forma da onda",
+                "violão e piano tocando a mesma nota"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que o ouvido escuta",
+          "body": [
+            "O ouvido humano escuta de cerca de 20 Hz a 20.000 Hz. Acima disso é ultrassom, usado nos exames de imagem.",
+            "Contar os segundos entre o relâmpago e o trovão dá a distância da tempestade: divida por 3 para ter quilômetros."
+          ],
+          "example": {
+            "label": "A conta do trovão",
+            "lines": [
+              "Você vê o relâmpago e conta 6 segundos até o trovão.",
+              "O som anda cerca de 1 km a cada 3 segundos.",
+              "6 ÷ 3 = 2: a tempestade está a uns 2 km."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede a diferença entre som grave e agudo e por que o som não anda no vácuo. Também cobra contas com v = λ × f."
+          ],
+          "bullets": [
+            "“A diferença entre um som grave e um agudo está na…”",
+            "“Uma onda de frequência 10 Hz e comprimento 2 m tem velocidade…”",
+            "“No espaço, não se ouve som porque…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Amplitude",
+              "meaning": "a altura da onda: quanto ela sobe a partir do meio. No som, maior amplitude é som mais forte."
+            },
+            {
+              "word": "Frequência",
+              "meaning": "quantas ondas passam por um ponto a cada segundo. É medida em hertz (Hz)."
+            }
+          ],
+          "bullets": [
+            "Achar que a onda leva a matéria junto. Ela leva só energia.",
+            "Confundir som alto (forte) com som agudo. Forte é amplitude; agudo é frequência.",
+            "Achar que o som anda no vácuo. Ele precisa de um meio.",
+            "Achar que o som é mais rápido no ar do que na água. É o contrário."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Onda leva energia sem levar matéria. Mecânica precisa de meio; eletromagnética anda até no vácuo.",
+            "O som é mecânico e anda cerca de 340 m/s no ar. Frequência decide grave ou agudo; amplitude, forte ou fraco."
+          ],
+          "terms": [
+            {
+              "word": "Comprimento de onda",
+              "meaning": "a distância entre dois topos seguidos da onda."
+            },
+            {
+              "word": "Hertz (Hz)",
+              "meaning": "a unidade de frequência: uma onda por segundo."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Agudo",
+          "statement": "A diferença entre um som grave e um agudo está na:",
+          "options": [
+            "frequência",
+            "amplitude",
+            "velocidade da luz",
+            "massa do ar",
+            "cor da onda"
+          ],
+          "correct_index": 0,
+          "explanation": "Som agudo tem frequência alta; grave, baixa.",
+          "pitfall": "Amplitude decide se o som é forte ou fraco."
+        },
+        {
+          "topic": "Vácuo",
+          "statement": "No espaço, não se ouve uma explosão porque:",
+          "options": [
+            "o som precisa de um meio para andar, e lá há vácuo",
+            "o som é rápido demais",
+            "a explosão não faz barulho",
+            "os astronautas usam capacete",
+            "a luz apaga o som"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem ar ou outra matéria, não há o que vibrar.",
+          "pitfall": "O capacete não é o motivo: mesmo sem ele não haveria som."
+        },
+        {
+          "topic": "Velocidade",
+          "statement": "Uma onda tem frequência de 10 Hz e comprimento de 2 m. Qual a velocidade?",
+          "options": [
+            "20 m/s",
+            "5 m/s",
+            "12 m/s",
+            "0,2 m/s",
+            "8 m/s"
+          ],
+          "correct_index": 0,
+          "explanation": "v = λ × f = 2 × 10 = 20 m/s.",
+          "pitfall": "5 vem de dividir em vez de multiplicar."
+        },
+        {
+          "topic": "Volume",
+          "statement": "Aumentar o volume do celular muda qual característica do som?",
+          "options": [
+            "a amplitude",
+            "a frequência",
+            "o timbre",
+            "o comprimento do celular",
+            "a velocidade do som"
+          ],
+          "correct_index": 0,
+          "explanation": "Mais volume é onda mais alta: mais amplitude.",
+          "pitfall": "A nota continua a mesma: a frequência não muda."
+        },
+        {
+          "topic": "Folha",
+          "statement": "Uma onda passa pelo lago e a folha boiando só sobe e desce. Isso mostra que:",
+          "options": [
+            "a onda leva energia, não matéria",
+            "a folha é muito pesada",
+            "a onda parou",
+            "a água não se move",
+            "a onda leva a água para longe"
+          ],
+          "correct_index": 0,
+          "explanation": "A folha fica no lugar: a energia passa por ela.",
+          "pitfall": "Se a onda levasse a água, a folha iria junto."
+        },
+        {
+          "topic": "Trovão",
+          "statement": "Você conta 9 segundos entre o relâmpago e o trovão. A tempestade está a cerca de:",
+          "options": [
+            "3 km",
+            "9 km",
+            "27 km",
+            "1 km",
+            "340 m"
+          ],
+          "correct_index": 0,
+          "explanation": "O som anda cerca de 1 km a cada 3 segundos: 9 ÷ 3 = 3 km.",
+          "pitfall": "9 km esquece de dividir por 3."
+        },
+        {
+          "topic": "Luz",
+          "statement": "Qual destas é uma onda eletromagnética?",
+          "options": [
+            "a luz",
+            "o som",
+            "a onda do mar",
+            "a vibração de uma corda",
+            "o eco"
+          ],
+          "correct_index": 0,
+          "explanation": "A luz anda até no vácuo: é eletromagnética.",
+          "pitfall": "O eco é som refletido, uma onda mecânica."
+        },
+        {
+          "topic": "Medidas",
+          "format": "match",
+          "statement": "Ligue cada medida ao que ela diz.",
+          "pairs": [
+            {
+              "left": "frequência",
+              "right": "quantas ondas por segundo"
+            },
+            {
+              "left": "amplitude",
+              "right": "altura da onda"
+            },
+            {
+              "left": "comprimento de onda",
+              "right": "distância entre dois topos"
+            },
+            {
+              "left": "hertz",
+              "right": "unidade de frequência"
+            }
+          ],
+          "explanation": "As medidas de toda onda.",
+          "pitfall": "Amplitude e comprimento são os mais trocados: um é altura, o outro é distância."
+        },
+        {
+          "topic": "Energia",
+          "statement": "O que uma onda transporta?",
+          "options": [
+            "energia",
+            "matéria",
+            "água",
+            "ar",
+            "massa"
+          ],
+          "correct_index": 0,
+          "explanation": "A onda leva energia de um lugar a outro.",
+          "pitfall": "Ela não leva matéria junto.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Ouvido",
+          "statement": "O ouvido humano escuta, mais ou menos, de:",
+          "options": [
+            "20 Hz a 20.000 Hz",
+            "1 Hz a 10 Hz",
+            "1.000 Hz a 2.000 Hz",
+            "100.000 Hz a 1 milhão de Hz",
+            "0 Hz a 20 Hz"
+          ],
+          "correct_index": 0,
+          "explanation": "Abaixo de 20 Hz é infrassom; acima de 20.000 Hz, ultrassom.",
+          "pitfall": "Acima de 20.000 Hz já é ultrassom.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Meio",
+          "statement": "Em qual meio o som anda mais rápido?",
+          "options": [
+            "nos sólidos, como o ferro",
+            "no ar",
+            "no vácuo",
+            "igual em todos",
+            "no gás hélio parado"
+          ],
+          "correct_index": 0,
+          "explanation": "Partículas mais próximas passam a vibração adiante mais rápido.",
+          "pitfall": "No vácuo ele nem anda.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Timbre",
+          "statement": "Um violão e um piano tocam a mesma nota, e mesmo assim dá para diferenciar. Isso se deve ao:",
+          "options": [
+            "timbre",
+            "volume",
+            "comprimento da sala",
+            "som mais agudo do violão",
+            "vácuo"
+          ],
+          "correct_index": 0,
+          "explanation": "A forma da onda de cada instrumento é diferente.",
+          "pitfall": "A nota é a mesma: a frequência principal é igual.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Comprimento",
+          "statement": "Uma onda sonora no ar (340 m/s) tem frequência de 340 Hz. Qual o comprimento de onda?",
+          "options": [
+            "1 m",
+            "340 m",
+            "0,5 m",
+            "680 m",
+            "115.600 m"
+          ],
+          "correct_index": 0,
+          "explanation": "λ = v ÷ f = 340 ÷ 340 = 1 m.",
+          "pitfall": "115.600 é multiplicar, quando era para dividir.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Alto e agudo",
+          "statement": "Uma pessoa diz “abaixa esse som, está muito alto”. Fisicamente, ela quer:",
+          "options": [
+            "diminuir a amplitude",
+            "diminuir a frequência",
+            "deixar o som mais grave",
+            "mudar o timbre",
+            "aumentar a velocidade do som"
+          ],
+          "correct_index": 0,
+          "explanation": "No dia a dia, “alto” quer dizer forte. Na Física, isso é amplitude.",
+          "pitfall": "Diminuir a frequência deixaria o som grave, mas não mais baixo.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "luz",
+      "title": "Luz: reflexão, refração e cores",
+      "module": "Ondas",
+      "summary": "A luz anda em linha reta, a 300 mil km por segundo. Ela volta nos espelhos, entorta ao mudar de meio e se separa em cores no arco-íris.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O canudo quebrado",
+          "body": [
+            "Ponha um canudo num copo de água e olhe de lado. Ele parece quebrado bem na superfície.",
+            "O canudo está inteiro. Quem entortou foi o caminho da luz, ao passar da água para o ar."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Como a luz anda",
+          "body": [
+            "A luz é uma onda eletromagnética: anda até no vácuo. No vazio, a 300 mil quilômetros por segundo, a coisa mais rápida que existe.",
+            "Ela anda em linha reta. Por isso existe a sombra: onde um objeto bloqueia a luz, ela não chega."
+          ],
+          "terms": [
+            {
+              "word": "Onda eletromagnética",
+              "meaning": "a onda que anda até no vácuo, como a luz, o rádio e as micro-ondas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A reflexão",
+          "body": [
+            "Num espelho, a luz bate e volta. O ângulo com que ela chega é igual ao ângulo com que sai.",
+            "É por isso que você se vê no espelho e que a Lua brilha: ela reflete a luz do Sol."
+          ],
+          "terms": [
+            {
+              "word": "Reflexão",
+              "meaning": "quando a luz bate numa superfície e volta, como num espelho."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A refração",
+          "body": [
+            "Ao passar do ar para a água, a luz fica mais lenta e muda de direção. É o canudo quebrado.",
+            "A refração também faz a piscina parecer mais rasa do que é. E as lentes dos óculos usam a refração para corrigir a visão."
+          ],
+          "terms": [
+            {
+              "word": "Refração",
+              "meaning": "quando a luz passa de um meio para outro, muda de velocidade e entorta o caminho."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As cores",
+          "body": [
+            "A luz branca é a mistura de todas as cores. No arco-íris, as gotas de chuva separam essas cores.",
+            "Um objeto vermelho reflete o vermelho e absorve as outras cores. O preto absorve quase tudo, e por isso esquenta mais ao sol."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A luz que não vemos",
+          "body": [
+            "A luz visível é só uma parte de uma família maior de ondas eletromagnéticas."
+          ],
+          "table": {
+            "label": "Do mais fraco ao mais forte",
+            "headers": [
+              "Onda",
+              "Uso"
+            ],
+            "rows": [
+              [
+                "rádio",
+                "rádio, TV, celular"
+              ],
+              [
+                "micro-ondas",
+                "forno, wi-fi"
+              ],
+              [
+                "infravermelho",
+                "controle remoto, calor"
+              ],
+              [
+                "luz visível",
+                "o que nossos olhos veem"
+              ],
+              [
+                "ultravioleta",
+                "bronzeia e queima a pele"
+              ],
+              [
+                "raio X",
+                "exames de ossos"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede o fenômeno numa situação: espelho, canudo, arco-íris. Também cobra por que um objeto tem a cor que tem."
+          ],
+          "bullets": [
+            "“O canudo parece quebrado dentro do copo por causa da…”",
+            "“Uma camisa vermelha parece vermelha porque…”",
+            "“A formação de sombras mostra que a luz…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Reflexão",
+              "meaning": "quando a luz bate numa superfície e volta, como num espelho."
+            },
+            {
+              "word": "Refração",
+              "meaning": "quando a luz passa de um meio para outro, muda de velocidade e entorta o caminho."
+            }
+          ],
+          "bullets": [
+            "Trocar reflexão (volta) por refração (entorta ao mudar de meio).",
+            "Achar que o objeto vermelho absorve o vermelho. Ele reflete o vermelho.",
+            "Achar que a Lua tem luz própria. Ela reflete a do Sol.",
+            "Achar que ano-luz mede tempo. Mede distância: o quanto a luz anda num ano."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A luz anda em linha reta a 300 mil km/s, e a sombra prova isso. Na reflexão ela volta; na refração ela entorta.",
+            "A luz branca junta todas as cores, e cada objeto reflete a sua. A luz visível é só uma parte das ondas eletromagnéticas."
+          ],
+          "terms": [
+            {
+              "word": "Onda eletromagnética",
+              "meaning": "a onda que anda até no vácuo, como a luz, o rádio e as micro-ondas."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Canudo",
+          "statement": "O canudo parece quebrado dentro do copo de água por causa da:",
+          "options": [
+            "refração",
+            "reflexão",
+            "sombra",
+            "dilatação",
+            "condução"
+          ],
+          "correct_index": 0,
+          "explanation": "A luz muda de velocidade e de direção ao passar da água para o ar.",
+          "pitfall": "Reflexão é a luz voltando, como no espelho."
+        },
+        {
+          "topic": "Vermelho",
+          "statement": "Uma camisa parece vermelha porque:",
+          "options": [
+            "reflete a luz vermelha e absorve as outras cores",
+            "absorve a luz vermelha",
+            "produz luz vermelha",
+            "não reflete nenhuma luz",
+            "é feita de luz"
+          ],
+          "correct_index": 0,
+          "explanation": "Vemos a cor que o objeto reflete.",
+          "pitfall": "Absorver o vermelho é o contrário do que acontece."
+        },
+        {
+          "topic": "Sombra",
+          "statement": "A existência da sombra mostra que a luz:",
+          "options": [
+            "anda em linha reta",
+            "anda em curva",
+            "é muito lenta",
+            "precisa de ar",
+            "não existe no escuro"
+          ],
+          "correct_index": 0,
+          "explanation": "Onde algo bloqueia o caminho reto da luz, forma-se a sombra.",
+          "pitfall": "Se andasse em curva, contornaria os objetos."
+        },
+        {
+          "topic": "Lua",
+          "statement": "A Lua brilha à noite porque:",
+          "options": [
+            "reflete a luz do Sol",
+            "tem luz própria",
+            "é feita de fogo",
+            "refrata a luz das estrelas",
+            "produz eletricidade"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela é iluminada pelo Sol e reflete parte dessa luz.",
+          "pitfall": "Luz própria têm as estrelas, como o Sol."
+        },
+        {
+          "topic": "Espelho",
+          "statement": "Num espelho, a luz:",
+          "options": [
+            "volta com o mesmo ângulo com que chegou",
+            "atravessa o espelho",
+            "some",
+            "entorta para dentro do vidro",
+            "vira som"
+          ],
+          "correct_index": 0,
+          "explanation": "Na reflexão, o ângulo de chegada é igual ao de saída.",
+          "pitfall": "Atravessar seria o caso de um vidro transparente."
+        },
+        {
+          "topic": "Preto",
+          "statement": "Por que uma roupa preta esquenta mais ao sol?",
+          "options": [
+            "absorve quase toda a luz",
+            "reflete toda a luz",
+            "é mais pesada",
+            "conduz o frio",
+            "produz calor sozinha"
+          ],
+          "correct_index": 0,
+          "explanation": "A luz absorvida vira calor.",
+          "pitfall": "Refletir tudo é o que faz uma roupa branca."
+        },
+        {
+          "topic": "Velocidade",
+          "statement": "A velocidade da luz no vácuo é de cerca de:",
+          "options": [
+            "300 mil km por segundo",
+            "340 m por segundo",
+            "100 km por hora",
+            "1.000 km por segundo",
+            "3 km por segundo"
+          ],
+          "correct_index": 0,
+          "explanation": "É a maior velocidade que existe.",
+          "pitfall": "340 m/s é a velocidade do som no ar."
+        },
+        {
+          "topic": "Fenômenos",
+          "format": "match",
+          "statement": "Ligue cada situação ao fenômeno.",
+          "pairs": [
+            {
+              "left": "ver-se no espelho",
+              "right": "reflexão"
+            },
+            {
+              "left": "piscina que parece rasa",
+              "right": "refração"
+            },
+            {
+              "left": "arco-íris",
+              "right": "separação da luz em cores"
+            },
+            {
+              "left": "sombra de uma árvore",
+              "right": "luz em linha reta"
+            }
+          ],
+          "explanation": "Quatro situações do dia a dia, quatro ideias sobre a luz.",
+          "pitfall": "Espelho e piscina são os mais trocados."
+        },
+        {
+          "topic": "Branca",
+          "statement": "A luz branca é:",
+          "options": [
+            "a mistura de todas as cores",
+            "a ausência de cor",
+            "uma cor só",
+            "luz sem energia",
+            "o mesmo que luz ultravioleta"
+          ],
+          "correct_index": 0,
+          "explanation": "O arco-íris mostra as cores que estão juntas na luz branca.",
+          "pitfall": "Ausência de luz é o escuro, não a luz branca.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Raio X",
+          "statement": "Qual onda eletromagnética é usada nos exames de ossos?",
+          "options": [
+            "o raio X",
+            "a onda de rádio",
+            "a luz visível",
+            "o som",
+            "a micro-onda"
+          ],
+          "correct_index": 0,
+          "explanation": "O raio X atravessa a pele e é barrado pelos ossos.",
+          "pitfall": "O som não é onda eletromagnética.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Arco-íris",
+          "statement": "O arco-íris se forma quando:",
+          "options": [
+            "gotas de chuva separam as cores da luz do Sol",
+            "a Lua reflete a chuva",
+            "o vento pinta o céu",
+            "as nuvens produzem luz colorida",
+            "a luz anda em curva"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada cor entorta um pouco diferente dentro da gota e elas se separam.",
+          "pitfall": "As nuvens não produzem luz.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Óculos",
+          "statement": "As lentes dos óculos corrigem a visão usando a:",
+          "options": [
+            "refração",
+            "reflexão",
+            "irradiação",
+            "sombra",
+            "sublimação"
+          ],
+          "correct_index": 0,
+          "explanation": "A lente entorta a luz para ela chegar no ponto certo do olho.",
+          "pitfall": "Reflexão é de espelho, não de lente.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Ano-luz",
+          "statement": "Um ano-luz é:",
+          "options": [
+            "a distância que a luz percorre em um ano",
+            "o tempo de um ano medido pela luz",
+            "a idade de uma estrela",
+            "a luz de um ano de verão",
+            "uma unidade de brilho"
+          ],
+          "correct_index": 0,
+          "explanation": "É uma distância enorme, usada para medir o espaço.",
+          "pitfall": "Apesar do nome, não mede tempo.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Ultravioleta",
+          "statement": "Por que o protetor solar é importante mesmo num dia nublado?",
+          "options": [
+            "o ultravioleta, que queima a pele, atravessa as nuvens",
+            "as nuvens produzem calor",
+            "o infravermelho só existe quando está nublado",
+            "a luz visível queima mais no escuro",
+            "não é importante"
+          ],
+          "correct_index": 0,
+          "explanation": "Boa parte da radiação ultravioleta passa pelas nuvens.",
+          "pitfall": "As nuvens não produzem radiação: só deixam passar parte dela.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "eletricidade",
+      "title": "Eletricidade: corrente, tensão e a conta de luz",
+      "module": "Eletricidade",
+      "summary": "Tensão empurra, corrente anda e resistência atrapalha. A potência do aparelho e o tempo ligado decidem quanto se paga na conta de luz.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A conta de luz",
+          "body": [
+            "Todo mês chega a conta de luz, com um número em kWh. Quase ninguém sabe o que ele quer dizer.",
+            "Ao fim desta lição, você vai conseguir calcular quanto o chuveiro pesa nessa conta."
+          ],
+          "terms": [
+            {
+              "word": "Quilowatt-hora (kWh)",
+              "meaning": "a energia gasta por um aparelho de 1.000 watts ligado por uma hora. É a unidade da conta de luz."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Cargas e corrente",
+          "body": [
+            "A matéria tem cargas elétricas: positivas e negativas. Cargas opostas se atraem, e iguais se repelem.",
+            "Quando cargas andam por um fio, temos corrente elétrica. Num fio de cobre, quem anda são os elétrons."
+          ],
+          "terms": [
+            {
+              "word": "Corrente elétrica",
+              "meaning": "o movimento de cargas elétricas por um fio. É medida em ampères (A)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A analogia da água",
+          "body": [
+            "Pense num cano com água. A pressão empurra a água, a quantidade que passa é a vazão, e um cano fino atrapalha.",
+            "Na eletricidade, a pressão é a tensão, a vazão é a corrente e o cano fino é a resistência. A conta que liga os três é U = R × i."
+          ],
+          "terms": [
+            {
+              "word": "Tensão elétrica",
+              "meaning": "o empurrão que faz a corrente andar. É medida em volts (V); nas tomadas do Brasil, 127 V ou 220 V."
+            },
+            {
+              "word": "Resistência elétrica",
+              "meaning": "o quanto um material atrapalha a passagem da corrente. É medida em ohms."
+            }
+          ],
+          "table": {
+            "label": "Água e eletricidade",
+            "headers": [
+              "Na água",
+              "Na eletricidade",
+              "Unidade"
+            ],
+            "rows": [
+              [
+                "pressão",
+                "tensão (U)",
+                "volt (V)"
+              ],
+              [
+                "vazão",
+                "corrente (i)",
+                "ampère (A)"
+              ],
+              [
+                "cano fino",
+                "resistência (R)",
+                "ohm"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Potência e consumo",
+          "body": [
+            "A potência elétrica é tensão vezes corrente: P = U × i. O consumo é a potência vezes o tempo ligado.",
+            "Por isso o chuveiro, de alta potência, é o vilão da conta. Uma lâmpada de LED gasta muito pouco."
+          ],
+          "example": {
+            "label": "Quanto custa o banho",
+            "lines": [
+              "Chuveiro de 5.500 W, que são 5,5 kW.",
+              "Ligado meia hora por dia: 5,5 × 0,5 = 2,75 kWh por dia.",
+              "Em 30 dias: 2,75 × 30 = 82,5 kWh no mês.",
+              "Multiplique pelo preço do kWh na sua conta para saber o valor."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "Potência",
+              "meaning": "a energia que um aparelho usa a cada segundo, medida em watts. Um chuveiro tem muito mais que uma lâmpada."
+            },
+            {
+              "word": "Watt",
+              "meaning": "a unidade de potência. Um quilowatt são 1.000 watts."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Série ou paralelo",
+          "body": [
+            "Num circuito em série, as lâmpadas ficam numa fila só. Se uma queima, todas apagam.",
+            "Nas casas, os aparelhos ficam em paralelo: cada um tem seu caminho. Desligar a TV não apaga a geladeira."
+          ],
+          "table": {
+            "label": "Os dois jeitos de ligar",
+            "headers": [
+              "",
+              "Em série",
+              "Em paralelo"
+            ],
+            "rows": [
+              [
+                "caminho da corrente",
+                "um só",
+                "vários"
+              ],
+              [
+                "se um aparelho desliga",
+                "todos param",
+                "os outros continuam"
+              ],
+              [
+                "onde se usa",
+                "pisca-pisca antigo",
+                "instalação de casa"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Segurança",
+          "body": [
+            "A corrente que passa pelo corpo causa o choque. Água e pés descalços facilitam a passagem.",
+            "O disjuntor desliga o circuito quando a corrente passa do limite, e o fio terra leva para o chão a corrente que vazaria para você."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede o consumo de um aparelho em kWh e a diferença entre série e paralelo. Também cobra contas com U = R × i e P = U × i."
+          ],
+          "bullets": [
+            "“Um chuveiro de 4.000 W ligado 30 minutos por dia consome, em 30 dias…”",
+            "“Nas residências, os aparelhos são ligados em paralelo porque…”",
+            "“Uma lâmpada ligada em 120 V com corrente de 0,5 A tem potência…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Quilowatt-hora (kWh)",
+              "meaning": "a energia gasta por um aparelho de 1.000 watts ligado por uma hora. É a unidade da conta de luz."
+            },
+            {
+              "word": "Corrente elétrica",
+              "meaning": "o movimento de cargas elétricas por um fio. É medida em ampères (A)."
+            }
+          ],
+          "bullets": [
+            "Esquecer de passar watts para quilowatts e minutos para horas antes da conta.",
+            "Achar que a conta cobra potência. Ela cobra energia: potência vezes tempo.",
+            "Achar que em casa os aparelhos estão em série. Estão em paralelo.",
+            "Achar que o choque vem só da tensão. O que machuca é a corrente pelo corpo."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Tensão empurra, corrente anda e resistência atrapalha: U = R × i. Potência é P = U × i.",
+            "Consumo é potência em kW vezes horas, em kWh. Casas usam ligação em paralelo, protegida por disjuntor e fio terra."
+          ],
+          "terms": [
+            {
+              "word": "Tensão elétrica",
+              "meaning": "o empurrão que faz a corrente andar. É medida em volts (V); nas tomadas do Brasil, 127 V ou 220 V."
+            },
+            {
+              "word": "Resistência elétrica",
+              "meaning": "o quanto um material atrapalha a passagem da corrente. É medida em ohms."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Chuveiro",
+          "statement": "Um chuveiro de 4.000 W fica ligado 30 minutos por dia. Quanto consome em 30 dias?",
+          "options": [
+            "60 kWh",
+            "120 kWh",
+            "2 kWh",
+            "4.000 kWh",
+            "6 kWh"
+          ],
+          "correct_index": 0,
+          "explanation": "4 kW × 0,5 h = 2 kWh por dia; 2 × 30 = 60 kWh.",
+          "pitfall": "120 kWh esquece de passar 30 minutos para meia hora."
+        },
+        {
+          "topic": "Paralelo",
+          "statement": "Nas casas, os aparelhos são ligados em paralelo porque:",
+          "options": [
+            "assim cada um funciona independente dos outros",
+            "gasta menos energia",
+            "é proibido ligar em série",
+            "aumenta a tensão",
+            "faz os fios esquentarem menos sempre"
+          ],
+          "correct_index": 0,
+          "explanation": "Desligar ou queimar um aparelho não apaga os outros.",
+          "pitfall": "A ligação não muda quanto cada aparelho gasta."
+        },
+        {
+          "topic": "Potência",
+          "statement": "Uma lâmpada em 120 V tem corrente de 0,5 A. Qual a potência?",
+          "options": [
+            "60 W",
+            "240 W",
+            "120,5 W",
+            "0,004 W",
+            "600 W"
+          ],
+          "correct_index": 0,
+          "explanation": "P = U × i = 120 × 0,5 = 60 W.",
+          "pitfall": "240 W é dividir em vez de multiplicar."
+        },
+        {
+          "topic": "Tensão",
+          "statement": "Na analogia da água, a tensão elétrica corresponde à:",
+          "options": [
+            "pressão",
+            "vazão",
+            "cor do cano",
+            "temperatura",
+            "largura do cano"
+          ],
+          "correct_index": 0,
+          "explanation": "Tensão é o empurrão, como a pressão no cano.",
+          "pitfall": "Vazão corresponde à corrente."
+        },
+        {
+          "topic": "Ohm",
+          "statement": "Um aparelho tem resistência de 10 ohms e recebe 220 V. Qual a corrente?",
+          "options": [
+            "22 A",
+            "2.200 A",
+            "230 A",
+            "2,2 A",
+            "210 A"
+          ],
+          "correct_index": 0,
+          "explanation": "i = U ÷ R = 220 ÷ 10 = 22 A.",
+          "pitfall": "2.200 é multiplicar tensão e resistência."
+        },
+        {
+          "topic": "Conta",
+          "statement": "A conta de luz cobra:",
+          "options": [
+            "a energia consumida, em kWh",
+            "a potência dos aparelhos, em watts",
+            "a tensão da tomada",
+            "a corrente do poste",
+            "o número de tomadas"
+          ],
+          "correct_index": 0,
+          "explanation": "Energia é potência vezes tempo: kWh.",
+          "pitfall": "Cobrar só a potência ignoraria quanto tempo cada aparelho fica ligado."
+        },
+        {
+          "topic": "Disjuntor",
+          "statement": "O disjuntor serve para:",
+          "options": [
+            "desligar o circuito quando a corrente passa do limite",
+            "aumentar a tensão da casa",
+            "guardar energia",
+            "medir a conta de luz",
+            "trocar a corrente de lugar"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele protege a instalação contra sobrecarga e curto-circuito.",
+          "pitfall": "Quem mede o consumo é o medidor da companhia."
+        },
+        {
+          "topic": "Unidades",
+          "format": "match",
+          "statement": "Ligue cada grandeza à sua unidade.",
+          "pairs": [
+            {
+              "left": "tensão",
+              "right": "volt"
+            },
+            {
+              "left": "corrente",
+              "right": "ampère"
+            },
+            {
+              "left": "resistência",
+              "right": "ohm"
+            },
+            {
+              "left": "energia da conta de luz",
+              "right": "kWh"
+            }
+          ],
+          "explanation": "Cada medida elétrica tem sua unidade.",
+          "pitfall": "Volt e ampère são os mais trocados."
+        },
+        {
+          "topic": "Opostas",
+          "statement": "Duas cargas elétricas opostas:",
+          "options": [
+            "se atraem",
+            "se repelem",
+            "se anulam e somem",
+            "viram corrente",
+            "não interagem"
+          ],
+          "correct_index": 0,
+          "explanation": "Opostas se atraem; iguais se repelem.",
+          "pitfall": "Repelir é o que fazem as cargas iguais.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Vilão",
+          "statement": "Qual destes aparelhos costuma pesar mais na conta de luz?",
+          "options": [
+            "o chuveiro elétrico",
+            "a lâmpada de LED",
+            "o carregador de celular",
+            "o relógio de parede",
+            "o controle remoto"
+          ],
+          "correct_index": 0,
+          "explanation": "Tem potência muito alta e fica ligado todos os dias.",
+          "pitfall": "A lâmpada de LED gasta muito pouco.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Série",
+          "statement": "Num pisca-pisca antigo, ligado em série, uma lâmpada queima. O que acontece?",
+          "options": [
+            "todas apagam",
+            "só ela apaga",
+            "as outras brilham mais",
+            "nada muda",
+            "a tensão da casa sobe"
+          ],
+          "correct_index": 0,
+          "explanation": "Em série há um caminho só: se ele se abre, a corrente para.",
+          "pitfall": "Só ela apagar seria o caso da ligação em paralelo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Minutos",
+          "statement": "Uma TV de 100 W fica ligada 5 horas por dia. Quanto consome por dia?",
+          "options": [
+            "0,5 kWh",
+            "500 kWh",
+            "5 kWh",
+            "20 kWh",
+            "105 kWh"
+          ],
+          "correct_index": 0,
+          "explanation": "0,1 kW × 5 h = 0,5 kWh.",
+          "pitfall": "500 kWh esquece de passar watts para quilowatts.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Economia",
+          "statement": "Trocar um chuveiro de 5.500 W por um de 4.000 W, com o mesmo tempo de banho, faz o consumo do chuveiro:",
+          "options": [
+            "cair cerca de 27%",
+            "cair pela metade",
+            "ficar igual",
+            "subir",
+            "cair 1.500%"
+          ],
+          "correct_index": 0,
+          "explanation": "4.000 ÷ 5.500 ≈ 0,73: sobra cerca de 73% do consumo, uma queda de 27%.",
+          "pitfall": "Cair pela metade exigiria um chuveiro de 2.750 W.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Choque",
+          "statement": "Por que o choque é mais perigoso com o corpo molhado?",
+          "options": [
+            "a água diminui a resistência do corpo, e passa mais corrente",
+            "a água aumenta a tensão da tomada",
+            "a água produz eletricidade",
+            "a água esquenta o fio",
+            "não faz diferença"
+          ],
+          "correct_index": 0,
+          "explanation": "Com menos resistência, a mesma tensão faz passar mais corrente: U = R × i.",
+          "pitfall": "A tensão da tomada é a mesma; o que muda é a resistência.",
+          "difficulty": "dificil"
+        }
+      ]
+    }
+  ]
+}

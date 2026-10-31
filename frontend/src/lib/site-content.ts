@@ -195,6 +195,22 @@ export const SUBJECTS: SiteSubject[] = [
       "As regiões do Brasil e suas diferenças",
     ],
   },
+  {
+    slug: "fisica-basica",
+    name: "Física",
+    pitch:
+      "Medidas, movimento, as leis de Newton, energia, calor, ondas, luz e eletricidade, com a conta de luz e outros exemplos de casa.",
+    lessons: [
+      "Grandezas, unidades e notação científica",
+      "Movimento: velocidade e aceleração",
+      "As três leis de Newton",
+      "Energia: movimento, altura e potência",
+      "Calor, temperatura e mudanças de estado",
+      "Ondas e som",
+      "Luz: reflexão, refração e cores",
+      "Eletricidade: corrente, tensão e a conta de luz",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -211,5 +227,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 1372,
+  questions: 1484,
 };

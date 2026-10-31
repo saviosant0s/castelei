@@ -76,6 +76,16 @@ return [
             ],
         ],
         [
+            'slug' => 'enem-natureza',
+            'name' => 'ENEM: Ciências da Natureza',
+            'description' => 'Física, Química e Biologia: a prova de Natureza do ENEM, da medida e da força até a célula e o ambiente.',
+            'steps' => [
+                ['subject' => 'fisica-basica', 'name' => 'Física', 'why' => 'Movimento, energia e eletricidade: as contas e os conceitos que aparecem em situações do dia a dia.'],
+                ['subject' => 'quimica-basica', 'name' => 'Química', 'why' => 'Átomos, ligações, reações e soluções: do que as coisas são feitas e como se transformam.'],
+                ['subject' => 'biologia-basica', 'name' => 'Biologia', 'why' => 'Célula, herança, evolução, ecologia e corpo humano: a parte que mais cai em Natureza.'],
+            ],
+        ],
+        [
             'slug' => 'enem-humanas',
             'name' => 'ENEM: Ciências Humanas',
             'description' => 'História, Geografia, Filosofia e Sociologia: a prova de Humanas do ENEM, na ordem em que uma ajuda a entender a outra.',
