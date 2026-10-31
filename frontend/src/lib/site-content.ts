@@ -241,6 +241,20 @@ export const SUBJECTS: SiteSubject[] = [
       "Ler um texto em inglês com estratégia",
     ],
   },
+  {
+    slug: "informatica-basica",
+    name: "Informática básica",
+    pitch:
+      "Como o computador funciona, arquivos e pastas, internet, golpes e senhas, texto, planilha e apresentação, e o primeiro algoritmo: para quem parte do zero.",
+    lessons: [
+      "O computador por dentro: hardware, software e sistema",
+      "Arquivos e pastas: organizar e encontrar",
+      "Como a internet funciona e como buscar bem",
+      "Segurança digital: senhas, golpes e cópias",
+      "Texto, planilha e apresentação",
+      "O que é um algoritmo",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -257,5 +271,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 1680,
+  questions: 1764,
 };
