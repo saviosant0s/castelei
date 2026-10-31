@@ -269,6 +269,20 @@ export const SUBJECTS: SiteSubject[] = [
       "Filosofia contemporânea: Marx, Nietzsche e o existencialismo",
     ],
   },
+  {
+    slug: "sociologia-basica",
+    name: "Sociologia",
+    pitch:
+      "Indivíduo e sociedade, Durkheim, Weber e Marx, cultura e diversidade, trabalho e desigualdade, Estado e cidadania, movimentos sociais e direitos humanos.",
+    lessons: [
+      "O que é sociologia: indivíduo e sociedade",
+      "Os clássicos: Durkheim, Weber e Marx",
+      "Cultura, identidade e diversidade",
+      "Trabalho e desigualdade social",
+      "Poder, Estado, democracia e cidadania",
+      "Movimentos sociais e direitos humanos",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -285,5 +299,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 1848,
+  questions: 1932,
 };
