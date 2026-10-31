@@ -297,6 +297,32 @@ export const SUBJECTS: SiteSubject[] = [
       "Falsos amigos e como ler um texto em espanhol",
     ],
   },
+  {
+    slug: "artes-basica",
+    name: "Artes",
+    pitch:
+      "Para olhar uma obra e saber o que ela diz: as linguagens da arte, cor e composição, os grandes movimentos, a arte brasileira e a arte de hoje.",
+    lessons: [
+      "As linguagens da arte",
+      "Cor, forma e composição",
+      "Do Renascimento ao Surrealismo",
+      "Arte brasileira: do Barroco mineiro à Semana de 22",
+      "Arte contemporânea e cultura digital",
+    ],
+  },
+  {
+    slug: "educacao-fisica-basica",
+    name: "Educação Física",
+    pitch:
+      "Corpo, saúde e cultura em movimento: capacidades físicas, quanto se mexer, esportes e regras, capoeira e danças do Brasil, e o corpo na mídia.",
+    lessons: [
+      "O corpo em movimento",
+      "Atividade física e saúde",
+      "Esportes coletivos e suas regras",
+      "Lutas, danças e jogos do Brasil",
+      "Corpo, mídia e padrões de beleza",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -313,5 +339,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 2016,
+  questions: 2156,
 };

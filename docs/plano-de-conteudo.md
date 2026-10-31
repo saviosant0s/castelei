@@ -178,7 +178,7 @@ enquanto: a narração ainda é gravada à mão (ver o `CLAUDE.md`).
 Mesma espinha do Inglês, com os **falsos amigos** (heterossemânticos) em
 destaque, porque é o que a prova do ENEM cobra.
 
-### Artes — `artes-basica`
+### Artes — `artes-basica` (feito: 5 lições em três módulos, com os níveis)
 
 1. Linguagens da arte: visual, música, teatro e dança.
 2. Elementos visuais: cor, forma, composição.
@@ -186,7 +186,7 @@ destaque, porque é o que a prova do ENEM cobra.
 4. Arte brasileira: Barroco mineiro, Semana de 22, arte popular.
 5. Arte contemporânea e cultura digital.
 
-### Educação Física — `educacao-fisica-basica`
+### Educação Física — `educacao-fisica-basica` (feito: 5 lições em três módulos, com os níveis)
 
 1. Corpo e movimento: aquecimento, capacidades físicas.
 2. Saúde: sedentarismo, frequência cardíaca, alimentação.
@@ -214,10 +214,10 @@ Operacionais.
 | Trilha | Passos | Situação |
 |---|---|---|
 | **Base para provas** | Português → Matemática Básica → Matemática do dia a dia → Lógica → Produção Textual | **No ar** |
-| ENEM: Linguagens | Português → Produção Textual → Inglês (ou Espanhol) → Artes → Educação Física | **No ar** (os passos sem matéria aparecem como "Em breve") |
-| ENEM: Matemática | Matemática Básica → Matemática do dia a dia → Lógica | **No ar** |
-| ENEM: Natureza | Física → Química → Biologia | **No ar** (os passos sem matéria aparecem como "Em breve") |
-| ENEM: Humanas | História → Geografia → Filosofia → Sociologia | **No ar** (os passos sem matéria aparecem como "Em breve") |
+| ENEM: Linguagens | Português → Produção Textual → Inglês (ou Espanhol) → Artes → Educação Física | **No ar**, completa |
+| ENEM: Matemática | Matemática Básica → Matemática do dia a dia → Lógica | **No ar**, completa |
+| ENEM: Natureza | Física → Química → Biologia | **No ar**, completa |
+| ENEM: Humanas | História → Geografia → Filosofia → Sociologia | **No ar**, completa |
 | Primeiros passos na informática | Informática básica → Montar um PC → Python | Planejada; Montar um PC e Python ainda privadas |
 | LLMs do zero | Matemática Básica → … → LLMs: treino, uso e limites | Privada |
 
@@ -230,7 +230,5 @@ aparecer como "Em breve".
 2. Português básico completo (feito).
 3. Questões com nível de dificuldade nas matérias públicas (feito: Português, Matemática Básica e Lógica, seis por lição).
 4. Matemática do dia a dia (feito: 13 lições em quatro módulos, já com os níveis).
-5. **Uma área por rodada** (em andamento; Biologia e História feitas): Geografia, Física, Química,
-   Inglês, Informática básica, Filosofia, Sociologia, Espanhol, Artes,
-   Educação Física. Cada uma entra com todas as lições de uma vez.
-6. As trilhas ENEM entram conforme as matérias delas ficam prontas.
+5. **Uma área por rodada** (feito: todas as áreas da lista têm a sua matéria básica, de Biologia a Educação Física). Cada uma entrou com todas as lições de uma vez.
+6. As trilhas ENEM (feito: as quatro estão no ar e completas).
