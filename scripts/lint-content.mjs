@@ -174,6 +174,15 @@ const JARGON = [
   ["fato social", /\bfatos? socia(l|is)\b/i, "j"], ["socialização", /\bsocializa(ç|c)(ão|ões)\b/i, "j"], ["etnocentrismo", /\betnocentris(mo|ta|tas)\b/i, "j"],
   ["relativismo cultural", /\brelativismo cultural\b/i, "j"], ["classe social", /\bclasses? socia(l|is)\b/i, "j"], ["luta de classes", /\bluta de classes\b/i, "j"],
   ["burguesia e proletariado", /(?<!\p{L})burgu(e|ê)s(ia|es|a|as)?(?!\p{L})|\bproletari(ado|os?)\b/iu, "zj"], ["mobilidade social", /\bmobilidade social\b/i, "j"],
+  // Artes (escopo "A") e Educação Física (escopo "E"): letras maiúsculas para não colidir com Álgebra ("a") e Probabilidade ("e").
+  ["linguagem artística", /\blinguage(m|ns) art(í|i)sticas?\b/i, "A"], ["cores primárias", /(?<!\p{L})cores prim(á|a)rias(?!\p{L})/iu, "A"], ["cores complementares", /\bcores complementares\b/i, "A"],
+  ["perspectiva", /\bperspectiva\b|\bponto de fuga\b/i, "A"], ["Renascimento", /\bRenascimento\b/, "A"], ["Barroco", /\bBarroco\b|\bbarroc(o|a)s?\b/, "A"],
+  ["Impressionismo", /\bimpressionis(mo|ta|tas)\b/i, "A"], ["Expressionismo", /\bexpressionis(mo|ta|tas)\b/i, "A"], ["Cubismo", /\bcubis(mo|ta|tas)\b/i, "A"], ["Surrealismo", /\bsurrealis(mo|ta|tas)\b/i, "A"],
+  ["Modernismo", /\bmodernis(mo|ta|tas)\b/i, "A"], ["Antropofagia", /\bantropofagia\b|\bantrop(ó|o)fag(o|a|os|as)\b/i, "A"], ["xilogravura", /\bxilogravuras?\b/i, "A"],
+  ["instalação", /\binstala(ç|c)(ão|ões)\b/i, "A"], ["performance", /\bperformances?\b/i, "A"], ["grafite", /\bgrafites?\b/i, "A"],
+  ["capacidade física", /\bcapacidades? f(í|i)sicas?\b/i, "E"], ["sedentarismo", /\bsedentaris(mo)\b|\bsedent(á|a)ri(o|a|os|as)\b/i, "E"], ["frequência cardíaca", /(?<!\p{L})frequ(ê|e)ncias? card(í|i)acas?(?!\p{L})/iu, "E"],
+  ["IMC", /\bIMC\b/, "E"], ["exercício aeróbico e anaeróbico", /(?<!\p{L})(an)?aer(ó|o)bic(o|a|os|as)(?!\p{L})/iu, "E"], ["padrão de beleza", /(?<!\p{L})padr(ão|ões) de beleza(?!\p{L})/iu, "E"],
+  ["transtorno alimentar", /\btranstornos? alimentar(es)?\b/i, "E"], ["anabolizante", /\banabolizantes?\b/i, "E"], ["patrimônio imaterial", /(?<!\p{L})patrim(ô|o)nio (cultural )?imaterial(?!\p{L})/iu, "E"],
   ["Estado", /\bEstado\b/, "j"], ["cidadania", /\bcidadania\b/i, "j"], ["movimento social", /\bmovimentos? socia(l|is)\b/i, "j"], ["ação social", /(?<!\p{L})a(ç|c)(ão|ões) socia(l|is)(?!\p{L})/iu, "j"], ["artigo", /\bartigos?\b/i, "u"], ["conjugação", /\bconjuga(ç|c)(ão|ões)\b|\bconjugad(o|a)\b/i, "u"], ["combustível fóssil", /(?<!\p{L})combust(í|i)ve(l|is) f(ó|o)sse(l|is)(?!\p{L})/iu, "x"], ["biocombustível", /(?<!\p{L})biocombust(í|i)ve(l|is)(?!\p{L})/iu, "x"],
 
   ["preposição", /\bpreposi(ç|c)(ão|ões)\b/i, "p"], ["artigo", /\bartigos?\b/i, "p"],
@@ -512,7 +521,7 @@ const JARGON = [
   ["cooler", /\bcoolers?\b|\bwater cooler\b/i, "h"], ["80 Plus", /\b80 Plus\b/i, "h"], ["fonte modular", /\bmodular(es)?\b/i, "h"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;
