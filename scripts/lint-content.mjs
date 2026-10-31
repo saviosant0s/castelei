@@ -156,7 +156,15 @@ const JARGON = [
   ["presente simples e contínuo", /\bpresente (simples|cont(í|i)nuo)\b/i, "w"], ["passado simples", /\bpassado simples\b/i, "w"],
   ["verbo regular e irregular", /\bverbos? (regular|irregular)(es)?\b/i, "wu"], ["verbo auxiliar", /\bauxiliar(es)?\b/i, "w"],
   ["cognato", /\bcognatos?\b/i, "wu"], ["falso cognato", /\bfalsos? cognatos?\b|\bfalsos? amigos?\b|\bheterossem(â|a)ntic(o|os)\b/i, "wu"],
-  ["skimming e scanning", /\bskimming\b|\bscanning\b/i, "wu"], ["artigo", /\bartigos?\b/i, "u"], ["conjugação", /\bconjuga(ç|c)(ão|ões)\b|\bconjugad(o|a)\b/i, "u"], ["combustível fóssil", /(?<!\p{L})combust(í|i)ve(l|is) f(ó|o)sse(l|is)(?!\p{L})/iu, "x"], ["biocombustível", /(?<!\p{L})biocombust(í|i)ve(l|is)(?!\p{L})/iu, "x"],
+  ["skimming e scanning", /\bskimming\b|\bscanning\b/i, "wu"],
+  // Informática básica (escopo "k"): a porta de entrada, para quem nunca estudou computador.
+  ["hardware e software", /\bhardware\b|\bsoftware\b/i, "k"], ["sistema operacional", /\bsistemas? operaciona(l|is)\b/i, "k"],
+  ["processador", /\bprocessador(es)?\b/i, "k"], ["memória RAM", /(?<!\p{L})mem(ó|o)ria RAM(?!\p{L})|\bRAM\b/iu, "k"], ["armazenamento", /\barmazenamento\b|\bSSD\b/i, "k"],
+  ["bit e byte", /\bbits?\b|\bbytes?\b|\b(KB|MB|GB|TB)\b/, "k"], ["extensão de arquivo", /(?<!\p{L})extens(ão|ões)(?!\p{L})/iu, "k"], ["caminho de arquivo", /\bcaminho do arquivo\b|\bcaminhos? de arquivos?\b/i, "k"],
+  ["navegador", /\bnavegador(es)?\b/i, "k"], ["endereço IP", /\bIP\b/, "k"], ["DNS", /\bDNS\b/, "k"], ["URL", /\bURLs?\b/, "k"], ["HTTPS", /\bHTTPS?\b/, "k"],
+  ["servidor", /\bservidor(es)?\b/i, "k"], ["nuvem", /\bna nuvem\b/i, "k"], ["phishing", /\bphishing\b/i, "k"], ["verificação em duas etapas", /(?<!\p{L})verifica(ç|c)(ão|ões) em duas etapas(?!\p{L})/iu, "k"],
+  ["backup", /\bbackups?\b/i, "k"], ["malware", /\bmalwares?\b/i, "k"], ["planilha", /\bplanilhas?\b/i, "k"], ["célula (de planilha)", /(?<!\p{L})c(é|e)lulas?(?!\p{L})/iu, "k"],
+  ["fórmula", /(?<!\p{L})f(ó|o)rmulas?(?!\p{L})/iu, "k"], ["algoritmo", /\balgoritmos?\b/i, "k"], ["artigo", /\bartigos?\b/i, "u"], ["conjugação", /\bconjuga(ç|c)(ão|ões)\b|\bconjugad(o|a)\b/i, "u"], ["combustível fóssil", /(?<!\p{L})combust(í|i)ve(l|is) f(ó|o)sse(l|is)(?!\p{L})/iu, "x"], ["biocombustível", /(?<!\p{L})biocombust(í|i)ve(l|is)(?!\p{L})/iu, "x"],
 
   ["preposição", /\bpreposi(ç|c)(ão|ões)\b/i, "p"], ["artigo", /\bartigos?\b/i, "p"],
   ["verbo", /\bverbos?\b/i, "p"], ["sujeito", /\bsujeitos?\b/i, "p"], ["núcleo", /\bnúcleos?\b/i, "p"], ["pronome", /\bpronomes?\b/i, "p"],
@@ -494,7 +502,7 @@ const JARGON = [
   ["cooler", /\bcoolers?\b|\bwater cooler\b/i, "h"], ["80 Plus", /\b80 Plus\b/i, "h"], ["fonte modular", /\bmodular(es)?\b/i, "h"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;

@@ -1,0 +1,2289 @@
+{
+  "slug": "informatica-basica",
+  "name": "Informática básica",
+  "area": "informatica",
+  "description": "Como o computador funciona, arquivos e pastas, internet, segurança digital, texto, planilha e apresentação, e o primeiro contato com algoritmos: o básico para quem parte do zero.",
+  "lessons": [
+    {
+      "slug": "o-computador-por-dentro",
+      "title": "O computador por dentro: hardware, software e sistema",
+      "module": "O computador",
+      "summary": "O computador tem peças físicas e programas. O processador calcula, a memória RAM guarda o que está aberto e o armazenamento guarda os arquivos. O sistema operacional comanda tudo.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Uma cozinha",
+          "body": [
+            "Pense numa cozinha. O cozinheiro trabalha na bancada, pega ingredientes da despensa e segue uma receita.",
+            "O computador funciona do mesmo jeito. Cada parte da cozinha tem uma peça que faz o mesmo papel."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que se toca e o que não se toca",
+          "body": [
+            "Teclado, tela e as peças de dentro são o hardware. Os programas, como os jogos e o aplicativo de mensagens, são o software.",
+            "Um sem o outro não faz nada: peça sem programa é ferro, e programa sem peça não tem onde rodar."
+          ],
+          "terms": [
+            {
+              "word": "Hardware e software",
+              "meaning": "hardware é a parte física do computador, que dá para tocar. Software são os programas, as instruções que dizem ao hardware o que fazer."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As peças principais",
+          "body": [
+            "Na cozinha, o cozinheiro é o processador, a bancada é a memória RAM e a despensa é o armazenamento."
+          ],
+          "terms": [
+            {
+              "word": "Processador",
+              "meaning": "a peça que faz as contas e executa as instruções dos programas. É o cérebro do computador."
+            },
+            {
+              "word": "Memória RAM",
+              "meaning": "a memória de trabalho, rápida, que guarda o que está aberto agora. Ela se apaga quando o aparelho desliga."
+            },
+            {
+              "word": "Armazenamento",
+              "meaning": "onde os arquivos ficam guardados mesmo com o aparelho desligado, como o SSD ou o HD."
+            }
+          ],
+          "table": {
+            "label": "A cozinha do computador",
+            "headers": [
+              "Peça",
+              "Na cozinha",
+              "O que faz"
+            ],
+            "rows": [
+              [
+                "processador",
+                "o cozinheiro",
+                "faz as contas e executa os programas"
+              ],
+              [
+                "memória RAM",
+                "a bancada",
+                "guarda o que está aberto agora"
+              ],
+              [
+                "armazenamento",
+                "a despensa",
+                "guarda os arquivos, mesmo desligado"
+              ],
+              [
+                "teclado e mouse",
+                "os pedidos que chegam",
+                "entrada de informação"
+              ],
+              [
+                "tela e impressora",
+                "o prato servido",
+                "saída de informação"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O sistema operacional",
+          "body": [
+            "Quando você liga o aparelho, o primeiro programa que roda é o sistema operacional. Ele cuida das peças e abre os outros programas.",
+            "No computador, os mais comuns são Windows, Linux e macOS. No celular, Android e iOS."
+          ],
+          "terms": [
+            {
+              "word": "Sistema operacional",
+              "meaning": "o programa principal do aparelho, que liga tudo e deixa os outros programas funcionarem. Exemplos: Windows, Linux, Android."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Medindo a informação",
+          "body": [
+            "Tudo no computador vira 0 e 1. Cada 0 ou 1 é um bit; oito bits formam um byte."
+          ],
+          "terms": [
+            {
+              "word": "Bit e byte",
+              "meaning": "o bit é a menor informação, um 0 ou um 1. Um byte são 8 bits. Mil bytes são cerca de 1 KB, e as medidas seguem (MB, GB, TB)."
+            }
+          ],
+          "table": {
+            "label": "Os tamanhos",
+            "headers": [
+              "Medida",
+              "Mais ou menos",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "1 KB",
+                "mil bytes",
+                "um texto curto"
+              ],
+              [
+                "1 MB",
+                "mil KB",
+                "uma foto de celular"
+              ],
+              [
+                "1 GB",
+                "mil MB",
+                "um filme"
+              ],
+              [
+                "1 TB",
+                "mil GB",
+                "centenas de filmes"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede a diferença entre hardware e software e o papel de cada peça. Também cobra o que é o sistema operacional."
+          ],
+          "bullets": [
+            "“Um exemplo de software é…”",
+            "“A memória que perde os dados ao desligar o computador é…”",
+            "“O sistema operacional tem a função de…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Memória RAM",
+              "meaning": "a memória de trabalho, rápida, que guarda o que está aberto agora. Ela se apaga quando o aparelho desliga."
+            },
+            {
+              "word": "Sistema operacional",
+              "meaning": "o programa principal do aparelho, que liga tudo e deixa os outros programas funcionarem. Exemplos: Windows, Linux, Android."
+            }
+          ],
+          "bullets": [
+            "Achar que memória RAM e armazenamento são a mesma coisa. A RAM se apaga ao desligar.",
+            "Achar que um aplicativo é hardware. É software.",
+            "Achar que o Word ou um jogo são sistemas operacionais. São programas que rodam sobre ele.",
+            "Trocar entrada por saída: teclado é entrada, impressora é saída."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Hardware é a parte física; software são os programas. O processador calcula, a RAM guarda o que está aberto e o armazenamento guarda os arquivos.",
+            "O sistema operacional comanda tudo, como Windows, Linux ou Android. Um byte são 8 bits, e as medidas sobem de mil em mil."
+          ],
+          "terms": [
+            {
+              "word": "Hardware e software",
+              "meaning": "hardware é a parte física do computador, que dá para tocar. Software são os programas, as instruções que dizem ao hardware o que fazer."
+            },
+            {
+              "word": "Bit e byte",
+              "meaning": "o bit é a menor informação, um 0 ou um 1. Um byte são 8 bits. Mil bytes são cerca de 1 KB, e as medidas seguem (MB, GB, TB)."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Software",
+          "statement": "Qual destes é um exemplo de software?",
+          "options": [
+            "um aplicativo de mensagens",
+            "o teclado",
+            "a tela",
+            "o mouse",
+            "a impressora"
+          ],
+          "correct_index": 0,
+          "explanation": "O aplicativo é um programa: não dá para tocar nele.",
+          "pitfall": "Teclado, tela e mouse são hardware."
+        },
+        {
+          "topic": "RAM",
+          "statement": "Qual memória perde o que guarda quando o computador desliga?",
+          "options": [
+            "a memória RAM",
+            "o SSD",
+            "o HD",
+            "o pen drive",
+            "a nuvem"
+          ],
+          "correct_index": 0,
+          "explanation": "A RAM é a bancada: ao desligar, ela fica vazia.",
+          "pitfall": "SSD, HD e pen drive guardam os arquivos desligados."
+        },
+        {
+          "topic": "Sistema",
+          "statement": "O sistema operacional tem a função de:",
+          "options": [
+            "comandar as peças e permitir que os outros programas rodem",
+            "imprimir documentos",
+            "editar fotos",
+            "navegar na internet",
+            "ser uma peça física do computador"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele é o programa principal, que abre e cuida dos outros.",
+          "pitfall": "Ele é software, não uma peça física."
+        },
+        {
+          "topic": "Processador",
+          "statement": "A peça que executa as instruções dos programas é:",
+          "options": [
+            "o processador",
+            "o monitor",
+            "o teclado",
+            "a impressora",
+            "a caixa de som"
+          ],
+          "correct_index": 0,
+          "explanation": "O processador é o cérebro, que faz as contas.",
+          "pitfall": "O monitor só mostra o resultado."
+        },
+        {
+          "topic": "Entrada",
+          "statement": "Qual destes é um dispositivo de entrada?",
+          "options": [
+            "o teclado",
+            "o monitor",
+            "a impressora",
+            "a caixa de som",
+            "o projetor"
+          ],
+          "correct_index": 0,
+          "explanation": "Pelo teclado, a informação entra no computador.",
+          "pitfall": "Monitor e impressora mostram o resultado: são saída."
+        },
+        {
+          "topic": "Byte",
+          "statement": "Um byte é formado por quantos bits?",
+          "options": [
+            "8",
+            "2",
+            "10",
+            "100",
+            "1.000"
+          ],
+          "correct_index": 0,
+          "explanation": "Oito bits formam um byte.",
+          "pitfall": "1.000 é a relação entre byte e KB, mais ou menos."
+        },
+        {
+          "topic": "Android",
+          "statement": "Qual destes é um sistema operacional de celular?",
+          "options": [
+            "Android",
+            "WhatsApp",
+            "Google Chrome",
+            "Instagram",
+            "Excel"
+          ],
+          "correct_index": 0,
+          "explanation": "O Android comanda o celular; os outros são aplicativos.",
+          "pitfall": "WhatsApp e Instagram rodam sobre o sistema."
+        },
+        {
+          "topic": "Cozinha",
+          "format": "match",
+          "statement": "Ligue cada peça ao seu papel na cozinha.",
+          "pairs": [
+            {
+              "left": "processador",
+              "right": "o cozinheiro"
+            },
+            {
+              "left": "memória RAM",
+              "right": "a bancada"
+            },
+            {
+              "left": "armazenamento",
+              "right": "a despensa"
+            },
+            {
+              "left": "tela",
+              "right": "o prato servido"
+            }
+          ],
+          "explanation": "A analogia da cozinha resume as peças.",
+          "pitfall": "Bancada e despensa são as mais trocadas: uma é rápida e temporária, a outra guarda."
+        },
+        {
+          "topic": "Hardware",
+          "statement": "Qual destes é hardware?",
+          "options": [
+            "o mouse",
+            "o Windows",
+            "um jogo",
+            "o navegador",
+            "um aplicativo de mensagens"
+          ],
+          "correct_index": 0,
+          "explanation": "O mouse é uma peça física.",
+          "pitfall": "Windows é software.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "GB",
+          "statement": "Uma foto de celular costuma ter alguns:",
+          "options": [
+            "MB",
+            "TB",
+            "bits",
+            "KB de mil fotos",
+            "GB de mil filmes"
+          ],
+          "correct_index": 0,
+          "explanation": "Uma foto tem alguns megabytes.",
+          "pitfall": "TB é tamanho de disco inteiro.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Lento",
+          "statement": "O computador fica lento com muitos programas abertos. A peça mais ligada a isso é:",
+          "options": [
+            "a memória RAM, que enche",
+            "o teclado",
+            "a impressora",
+            "o monitor",
+            "a caixa de som"
+          ],
+          "correct_index": 0,
+          "explanation": "Com a bancada cheia, o processador espera para trabalhar.",
+          "pitfall": "Teclado e monitor não guardam os programas abertos.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Arquivo salvo",
+          "statement": "Você escreve um texto e o computador desliga sem você salvar. O texto se perde porque:",
+          "options": [
+            "estava só na memória RAM, que se apaga",
+            "o armazenamento apagou",
+            "o teclado guardou",
+            "o processador quebrou",
+            "o monitor desligou"
+          ],
+          "correct_index": 0,
+          "explanation": "Salvar é passar da bancada para a despensa.",
+          "pitfall": "O armazenamento só guarda o que foi salvo nele.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Tamanho",
+          "statement": "Um pen drive tem 32 GB. Cabem nele, mais ou menos, quantos arquivos de 1 MB?",
+          "options": [
+            "cerca de 32 mil",
+            "32",
+            "320",
+            "3,2 milhões",
+            "3.200"
+          ],
+          "correct_index": 0,
+          "explanation": "1 GB tem cerca de mil MB: 32 × 1.000 = 32 mil.",
+          "pitfall": "32 esquece de converter GB em MB.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Programa e peça",
+          "statement": "Qual frase está certa?",
+          "options": [
+            "um computador precisa de hardware e de software para funcionar",
+            "só o hardware basta",
+            "só o software basta",
+            "o software é a parte física",
+            "o sistema operacional é uma peça"
+          ],
+          "correct_index": 0,
+          "explanation": "As peças fazem o trabalho, e os programas dizem o que fazer.",
+          "pitfall": "“Só o hardware basta” esquece que peça sem programa não faz nada.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "arquivos-e-pastas",
+      "title": "Arquivos e pastas: organizar e encontrar",
+      "module": "O computador",
+      "summary": "Tudo o que se guarda no computador é arquivo, com nome e extensão. Pastas organizam os arquivos, e alguns atalhos de teclado economizam tempo.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Um armário de escritório",
+          "body": [
+            "Num armário de escritório, cada folha fica numa pasta, e cada pasta numa gaveta com etiqueta.",
+            "O computador copia essa ideia. Sem organização, achar um documento vira uma caça ao tesouro."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O arquivo e sua extensão",
+          "body": [
+            "Cada coisa guardada é um arquivo: uma foto, um texto, uma música. O nome termina num ponto e algumas letras, a extensão.",
+            "A extensão diz que tipo de arquivo é, e qual programa abre ele."
+          ],
+          "terms": [
+            {
+              "word": "Extensão de arquivo",
+              "meaning": "as letras depois do ponto no nome do arquivo, que dizem o tipo dele (.pdf, .jpg, .mp3)."
+            }
+          ],
+          "table": {
+            "label": "Extensões comuns",
+            "headers": [
+              "Extensão",
+              "Tipo"
+            ],
+            "rows": [
+              [
+                ".pdf",
+                "documento para ler e imprimir"
+              ],
+              [
+                ".docx",
+                "texto do Word"
+              ],
+              [
+                ".jpg ou .png",
+                "imagem"
+              ],
+              [
+                ".mp3",
+                "música"
+              ],
+              [
+                ".mp4",
+                "vídeo"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "As pastas e o caminho",
+          "body": [
+            "Pastas guardam arquivos e outras pastas. O endereço completo de um arquivo é o caminho.",
+            "Ele muda um pouco de um sistema operacional para outro."
+          ],
+          "terms": [
+            {
+              "word": "Caminho do arquivo",
+              "meaning": "o endereço completo de um arquivo, com todas as pastas até ele."
+            },
+            {
+              "word": "Sistema operacional",
+              "meaning": "o programa principal do computador, como Windows ou Linux."
+            }
+          ],
+          "table": {
+            "label": "O mesmo arquivo em dois sistemas",
+            "headers": [
+              "Sistema",
+              "Caminho"
+            ],
+            "rows": [
+              [
+                "Windows",
+                "C:\\Users\\Ana\\Documents\\trabalho.pdf"
+              ],
+              [
+                "Linux",
+                "/home/ana/Documentos/trabalho.pdf"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Atalhos que todo mundo usa",
+          "body": [
+            "Algumas teclas juntas fazem ações comuns na hora. Elas funcionam no Windows e no Linux; no Mac, troque Ctrl por Cmd."
+          ],
+          "table": {
+            "label": "Atalhos de teclado",
+            "headers": [
+              "Teclas",
+              "O que faz"
+            ],
+            "rows": [
+              [
+                "Ctrl + C",
+                "copiar"
+              ],
+              [
+                "Ctrl + V",
+                "colar"
+              ],
+              [
+                "Ctrl + X",
+                "recortar"
+              ],
+              [
+                "Ctrl + Z",
+                "desfazer"
+              ],
+              [
+                "Ctrl + F",
+                "procurar uma palavra"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Encontrar e apagar",
+          "body": [
+            "No Windows, aperte a tecla do Windows e digite o nome do arquivo para procurar. No Linux, a busca fica no menu de aplicativos.",
+            "Arquivo apagado vai para a lixeira. Ele só some de vez quando você esvazia a lixeira."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede o tipo de arquivo pela extensão e a função dos atalhos. Também cobra a diferença entre copiar e recortar."
+          ],
+          "bullets": [
+            "“Um arquivo com extensão .mp3 é…”",
+            "“O atalho Ctrl + Z serve para…”",
+            "“A diferença entre copiar e recortar é…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Extensão de arquivo",
+              "meaning": "as letras depois do ponto no nome do arquivo, que dizem o tipo dele (.pdf, .jpg, .mp3)."
+            }
+          ],
+          "bullets": [
+            "Achar que recortar e copiar são iguais. Recortar tira do lugar; copiar deixa o original.",
+            "Achar que arquivo apagado some na hora. Ele vai para a lixeira.",
+            "Trocar a extensão do nome achando que muda o arquivo. Isso só confunde o programa.",
+            "Usar a barra do Windows no Linux: lá a barra é / e não \\."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Todo dado guardado é arquivo, e a extensão diz o tipo (.pdf, .jpg, .mp3). Pastas organizam, e o caminho é o endereço completo.",
+            "Ctrl + C copia, Ctrl + V cola, Ctrl + X recorta e Ctrl + Z desfaz. O que se apaga vai para a lixeira."
+          ],
+          "terms": [
+            {
+              "word": "Caminho do arquivo",
+              "meaning": "o endereço completo de um arquivo, com todas as pastas até ele."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "MP3",
+          "statement": "Um arquivo com extensão .mp3 é:",
+          "options": [
+            "uma música ou áudio",
+            "uma imagem",
+            "um texto do Word",
+            "um vídeo",
+            "uma planilha"
+          ],
+          "correct_index": 0,
+          "explanation": "MP3 é o formato de áudio mais comum.",
+          "pitfall": "Vídeo costuma ser .mp4."
+        },
+        {
+          "topic": "Desfazer",
+          "statement": "O atalho Ctrl + Z serve para:",
+          "options": [
+            "desfazer a última ação",
+            "copiar",
+            "colar",
+            "fechar o programa",
+            "salvar"
+          ],
+          "correct_index": 0,
+          "explanation": "Errou? Ctrl + Z volta um passo.",
+          "pitfall": "Copiar é Ctrl + C."
+        },
+        {
+          "topic": "Recortar",
+          "statement": "Qual a diferença entre copiar e recortar?",
+          "options": [
+            "recortar tira do lugar original; copiar deixa uma cópia lá",
+            "não há diferença",
+            "copiar apaga o original",
+            "recortar só funciona com imagens",
+            "copiar só funciona no Linux"
+          ],
+          "correct_index": 0,
+          "explanation": "Ao colar depois de recortar, o arquivo muda de lugar.",
+          "pitfall": "Copiar mantém o original."
+        },
+        {
+          "topic": "PDF",
+          "statement": "Qual extensão indica um documento para ler e imprimir?",
+          "options": [
+            ".pdf",
+            ".mp3",
+            ".jpg",
+            ".mp4",
+            ".exe"
+          ],
+          "correct_index": 0,
+          "explanation": "PDF mantém o documento com a mesma cara em qualquer aparelho.",
+          "pitfall": ".jpg é imagem."
+        },
+        {
+          "topic": "Lixeira",
+          "statement": "Você apagou um arquivo por engano. Onde procurar primeiro?",
+          "options": [
+            "na lixeira",
+            "na memória RAM",
+            "no teclado",
+            "na impressora",
+            "não há como recuperar"
+          ],
+          "correct_index": 0,
+          "explanation": "Arquivo apagado vai para a lixeira e pode ser restaurado.",
+          "pitfall": "“Não há como” esquece que a lixeira existe para isso."
+        },
+        {
+          "topic": "Caminho",
+          "statement": "Qual destes é um caminho de arquivo no Linux?",
+          "options": [
+            "/home/ana/Documentos/foto.jpg",
+            "C:\\Users\\Ana\\foto.jpg",
+            "www.foto.com",
+            "foto@ana.com",
+            "Ctrl + C"
+          ],
+          "correct_index": 0,
+          "explanation": "No Linux, as pastas são separadas por / a partir de /home.",
+          "pitfall": "C:\\ é o jeito do Windows."
+        },
+        {
+          "topic": "Colar",
+          "statement": "Para colar o que foi copiado, usa-se:",
+          "options": [
+            "Ctrl + V",
+            "Ctrl + C",
+            "Ctrl + X",
+            "Ctrl + Z",
+            "Ctrl + F"
+          ],
+          "correct_index": 0,
+          "explanation": "Ctrl + V cola.",
+          "pitfall": "Ctrl + C é copiar."
+        },
+        {
+          "topic": "Atalhos",
+          "format": "match",
+          "statement": "Ligue cada atalho à sua função.",
+          "pairs": [
+            {
+              "left": "Ctrl + C",
+              "right": "copiar"
+            },
+            {
+              "left": "Ctrl + V",
+              "right": "colar"
+            },
+            {
+              "left": "Ctrl + X",
+              "right": "recortar"
+            },
+            {
+              "left": "Ctrl + F",
+              "right": "procurar"
+            }
+          ],
+          "explanation": "Os atalhos mais usados funcionam no Windows e no Linux.",
+          "pitfall": "Ctrl + X e Ctrl + C são os mais trocados."
+        },
+        {
+          "topic": "JPG",
+          "statement": "Um arquivo foto.jpg é:",
+          "options": [
+            "uma imagem",
+            "um áudio",
+            "um texto",
+            "um programa",
+            "um vídeo"
+          ],
+          "correct_index": 0,
+          "explanation": ".jpg é um formato de imagem.",
+          "pitfall": "Áudio seria .mp3.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Pasta",
+          "statement": "Para que servem as pastas?",
+          "options": [
+            "organizar os arquivos em grupos",
+            "deixar o computador mais rápido",
+            "apagar arquivos",
+            "imprimir",
+            "acessar a internet"
+          ],
+          "correct_index": 0,
+          "explanation": "Como gavetas de um armário, elas agrupam o que é parecido.",
+          "pitfall": "Pastas não mudam a velocidade do computador.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Mac",
+          "statement": "No Mac, o atalho de copiar é:",
+          "options": [
+            "Cmd + C",
+            "Ctrl + C",
+            "Alt + C",
+            "Shift + C",
+            "Win + C"
+          ],
+          "correct_index": 0,
+          "explanation": "No Mac, Ctrl dá lugar ao Cmd.",
+          "pitfall": "Ctrl + C é o do Windows e do Linux.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Procurar",
+          "statement": "No Windows, um jeito rápido de achar um arquivo é:",
+          "options": [
+            "apertar a tecla do Windows e digitar o nome",
+            "desligar o computador",
+            "abrir a lixeira",
+            "apertar Ctrl + Z",
+            "olhar a impressora"
+          ],
+          "correct_index": 0,
+          "explanation": "A busca do menu Iniciar procura arquivos e programas.",
+          "pitfall": "Ctrl + Z desfaz, não procura.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Extensão errada",
+          "statement": "Trocar o nome de musica.mp3 para musica.jpg faz o quê?",
+          "options": [
+            "confunde o programa, mas o arquivo continua sendo música",
+            "transforma a música em imagem",
+            "apaga o arquivo",
+            "melhora o som",
+            "deixa o arquivo menor"
+          ],
+          "correct_index": 0,
+          "explanation": "A extensão só diz qual programa tentar. O conteúdo não muda.",
+          "pitfall": "Mudar o nome não converte o arquivo.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Barra",
+          "statement": "Qual frase sobre caminhos de arquivo está certa?",
+          "options": [
+            "no Windows as pastas são separadas por \\ e no Linux por /",
+            "os dois usam a mesma barra",
+            "o Linux usa C:\\",
+            "o Windows começa por /home",
+            "caminhos não existem no Linux"
+          ],
+          "correct_index": 0,
+          "explanation": "Windows: C:\\Users\\... Linux: /home/...",
+          "pitfall": "Usar a barra de um sistema no outro é a pegadinha.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "como-a-internet-funciona",
+      "title": "Como a internet funciona e como buscar bem",
+      "module": "Internet e segurança",
+      "summary": "A internet é uma rede de computadores. Quando você digita um endereço, o DNS acha o servidor, os dados viajam em pedaços e o navegador monta a página.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Pedir uma pizza",
+          "body": [
+            "Você liga para a pizzaria pelo nome, sem decorar o número. A agenda do celular acha o número para você.",
+            "A internet faz algo parecido toda vez que você abre um site."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Uma rede de redes",
+          "body": [
+            "A internet liga milhões de computadores no mundo todo. Alguns deles, os servidores, guardam os sites e ficam ligados o tempo todo.",
+            "Cada aparelho conectado tem um número, o endereço IP. É como o endereço de uma casa."
+          ],
+          "terms": [
+            {
+              "word": "Servidor",
+              "meaning": "um computador que fica ligado o tempo todo guardando sites e respondendo a quem pede."
+            },
+            {
+              "word": "Endereço IP",
+              "meaning": "o número que identifica cada aparelho na internet, como um endereço de casa."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Do endereço à página",
+          "body": [
+            "Você digita um nome de site no navegador. Ninguém decora números, então existe o DNS, que funciona como a agenda."
+          ],
+          "example": {
+            "label": "O que acontece ao abrir um site",
+            "lines": [
+              "Você digita o endereço no navegador.",
+              "O DNS traduz o nome no endereço IP do servidor.",
+              "O navegador pede a página ao servidor.",
+              "O servidor manda a página em pequenos pedaços.",
+              "O navegador junta os pedaços e mostra a página."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "Navegador",
+              "meaning": "o programa que abre sites, como Chrome, Firefox e Edge."
+            },
+            {
+              "word": "DNS",
+              "meaning": "o serviço que traduz o nome de um site para o endereço IP dele, como uma agenda de contatos."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As partes de um endereço",
+          "body": [
+            "Um endereço de site tem partes. O https mostra que a conexão é segura; depois vêm o nome do site e a página dentro dele.",
+            "O cadeado do HTTPS garante que ninguém lê os dados no caminho. Ele não garante que o site é honesto: golpistas também usam."
+          ],
+          "terms": [
+            {
+              "word": "URL",
+              "meaning": "o endereço de uma página na internet, como https://www.exemplo.com.br/contato."
+            },
+            {
+              "word": "HTTPS",
+              "meaning": "a forma segura de abrir um site: os dados vão embaralhados no caminho. O navegador mostra um cadeado."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Buscar bem",
+          "body": [
+            "Num buscador, use palavras-chave, e não perguntas enormes. Algumas marcas ajudam muito."
+          ],
+          "table": {
+            "label": "Dicas de busca",
+            "headers": [
+              "Faça assim",
+              "Para quê"
+            ],
+            "rows": [
+              [
+                "\"revolução industrial\"",
+                "achar a frase exata, entre aspas"
+              ],
+              [
+                "jaguar -carro",
+                "tirar os resultados com a palavra carro"
+              ],
+              [
+                "clima site:gov.br",
+                "buscar só em sites do governo"
+              ],
+              [
+                "olhar quem publicou e a data",
+                "saber se a fonte é confiável"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede a função do DNS e do navegador e o que o HTTPS garante. Também cobra estratégias de busca."
+          ],
+          "bullets": [
+            "“O serviço que traduz nomes de sites em endereços IP é…”",
+            "“O cadeado na barra do navegador indica que…”",
+            "“Para buscar uma frase exata, usa-se…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "HTTPS",
+              "meaning": "a forma segura de abrir um site: os dados vão embaralhados no caminho. O navegador mostra um cadeado."
+            },
+            {
+              "word": "Navegador",
+              "meaning": "o programa que abre sites, como Chrome, Firefox e Edge."
+            }
+          ],
+          "bullets": [
+            "Achar que o cadeado garante que o site é confiável. Ele só protege os dados no caminho.",
+            "Achar que internet e navegador são a mesma coisa. O navegador é só o programa que abre sites.",
+            "Achar que o primeiro resultado da busca é sempre o melhor. Pode ser anúncio.",
+            "Esquecer de ver quem publicou e quando."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A internet liga computadores, e cada um tem um endereço IP. Servidores guardam os sites, e o DNS traduz nomes em números.",
+            "O HTTPS protege os dados no caminho, mas não garante honestidade. Aspas buscam a frase exata, e o menos tira palavras."
+          ],
+          "terms": [
+            {
+              "word": "URL",
+              "meaning": "o endereço de uma página na internet, como https://www.exemplo.com.br/contato."
+            },
+            {
+              "word": "Endereço IP",
+              "meaning": "o número que identifica cada aparelho na internet, como um endereço de casa."
+            },
+            {
+              "word": "DNS",
+              "meaning": "o serviço que traduz o nome de um site para o endereço IP dele, como uma agenda de contatos."
+            },
+            {
+              "word": "Servidor",
+              "meaning": "um computador que fica ligado o tempo todo guardando sites e respondendo a quem pede."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "DNS",
+          "statement": "O serviço que traduz o nome de um site no endereço IP é:",
+          "options": [
+            "o DNS",
+            "o navegador",
+            "o HTTPS",
+            "o mouse",
+            "a impressora"
+          ],
+          "correct_index": 0,
+          "explanation": "O DNS funciona como a agenda de contatos da internet.",
+          "pitfall": "O navegador só pede e mostra a página."
+        },
+        {
+          "topic": "Cadeado",
+          "statement": "O cadeado ao lado do endereço indica que:",
+          "options": [
+            "os dados viajam protegidos entre você e o site",
+            "o site é honesto com certeza",
+            "o site é do governo",
+            "o site não tem vírus",
+            "a internet está rápida"
+          ],
+          "correct_index": 0,
+          "explanation": "O HTTPS embaralha os dados no caminho.",
+          "pitfall": "Golpistas também usam cadeado: ele não prova honestidade."
+        },
+        {
+          "topic": "Aspas",
+          "statement": "Para buscar uma frase exata, como revolução industrial, usa-se:",
+          "options": [
+            "aspas em volta da frase",
+            "o sinal de menos",
+            "só letras maiúsculas",
+            "um ponto de interrogação",
+            "a frase ao contrário"
+          ],
+          "correct_index": 0,
+          "explanation": "As aspas pedem as palavras juntas, naquela ordem.",
+          "pitfall": "O sinal de menos tira palavras da busca."
+        },
+        {
+          "topic": "Navegador",
+          "statement": "Qual destes é um navegador?",
+          "options": [
+            "Firefox",
+            "Windows",
+            "Excel",
+            "Linux",
+            "WhatsApp"
+          ],
+          "correct_index": 0,
+          "explanation": "Firefox, Chrome e Edge abrem sites.",
+          "pitfall": "Windows e Linux são os programas principais do computador, não navegadores."
+        },
+        {
+          "topic": "Servidor",
+          "statement": "Onde ficam guardados os sites?",
+          "options": [
+            "em servidores, computadores ligados o tempo todo",
+            "no seu teclado",
+            "no navegador de cada pessoa",
+            "no DNS",
+            "na lixeira"
+          ],
+          "correct_index": 0,
+          "explanation": "O servidor guarda o site e responde a quem pede.",
+          "pitfall": "O DNS só traduz o nome; não guarda o site."
+        },
+        {
+          "topic": "IP",
+          "statement": "O endereço IP serve para:",
+          "options": [
+            "identificar cada aparelho na internet",
+            "deixar o site bonito",
+            "guardar senhas",
+            "imprimir páginas",
+            "fechar o navegador"
+          ],
+          "correct_index": 0,
+          "explanation": "É como o endereço de uma casa, para os dados acharem o caminho.",
+          "pitfall": "Guardar senhas não é função do IP."
+        },
+        {
+          "topic": "Fonte",
+          "statement": "Ao achar uma informação na internet, o que vale conferir?",
+          "options": [
+            "quem publicou e a data",
+            "só a cor do site",
+            "se tem muitas imagens",
+            "se é o primeiro resultado",
+            "se o texto é longo"
+          ],
+          "correct_index": 0,
+          "explanation": "Saber a fonte e a data ajuda a decidir se dá para confiar.",
+          "pitfall": "Primeiro resultado pode ser anúncio."
+        },
+        {
+          "topic": "Site",
+          "format": "order",
+          "statement": "Ponha em ordem o que acontece ao abrir um site.",
+          "options": [
+            "Você digita o endereço no navegador.",
+            "O DNS acha o endereço IP do servidor.",
+            "O servidor manda a página em pedaços.",
+            "O navegador junta os pedaços e mostra a página."
+          ],
+          "explanation": "Digitar, traduzir, receber e montar.",
+          "pitfall": "O servidor só manda a página depois que o DNS achou onde ele está."
+        },
+        {
+          "topic": "Internet",
+          "statement": "A internet é:",
+          "options": [
+            "uma rede que liga computadores do mundo todo",
+            "um programa do computador",
+            "o mesmo que o navegador",
+            "uma peça do computador",
+            "um site"
+          ],
+          "correct_index": 0,
+          "explanation": "O navegador é só a porta de entrada.",
+          "pitfall": "Confundir internet com navegador é comum.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "HTTPS",
+          "statement": "Num endereço, o https quer dizer que:",
+          "options": [
+            "a conexão é protegida",
+            "o site é grátis",
+            "o site é do Brasil",
+            "o site é antigo",
+            "o site não tem imagens"
+          ],
+          "correct_index": 0,
+          "explanation": "O s final é de seguro.",
+          "pitfall": "Não tem relação com o país do site.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Menos",
+          "statement": "A busca “jaguar -carro” traz resultados:",
+          "options": [
+            "sobre jaguar, sem os que falam de carro",
+            "só sobre carros",
+            "sobre carro e jaguar juntos",
+            "nenhum resultado",
+            "só imagens"
+          ],
+          "correct_index": 0,
+          "explanation": "O sinal de menos tira a palavra da busca.",
+          "pitfall": "Só carros é o contrário do pedido.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Agenda",
+          "statement": "Por que o DNS é comparado a uma agenda de contatos?",
+          "options": [
+            "traduz um nome fácil num número que o computador usa",
+            "guarda as fotos dos contatos",
+            "liga para as pessoas",
+            "apaga os sites antigos",
+            "protege as senhas"
+          ],
+          "correct_index": 0,
+          "explanation": "Você procura pelo nome; a agenda acha o número.",
+          "pitfall": "Ele não guarda conteúdo dos sites.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Golpe",
+          "statement": "Um site falso de loja tem o cadeado do HTTPS. Isso quer dizer que:",
+          "options": [
+            "os dados vão protegidos até o golpista, mas o site continua falso",
+            "o site é verdadeiro com certeza",
+            "o banco aprovou o site",
+            "o governo verificou a loja",
+            "o site não pode roubar dados"
+          ],
+          "correct_index": 0,
+          "explanation": "O cadeado protege o caminho, não garante quem está do outro lado.",
+          "pitfall": "Achar que cadeado é selo de confiança é o erro mais perigoso.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Pedaços",
+          "statement": "Por que os dados viajam em pequenos pedaços na internet?",
+          "options": [
+            "pedaços podem ir por caminhos diferentes e ser reenviados se algum se perder",
+            "para deixar o site feio",
+            "porque o servidor é pequeno",
+            "para gastar menos luz",
+            "porque a internet só tem um caminho"
+          ],
+          "correct_index": 0,
+          "explanation": "Se um pedaço se perde, só ele é pedido de novo.",
+          "pitfall": "A internet tem muitos caminhos, não um só.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "seguranca-digital",
+      "title": "Segurança digital: senhas, golpes e cópias",
+      "module": "Internet e segurança",
+      "summary": "Senha longa e diferente para cada conta, verificação em duas etapas, desconfiança de mensagens urgentes e cópia de segurança protegem quase tudo.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A chave da casa",
+          "body": [
+            "Você não deixa a chave de casa embaixo do tapete. E não usa a mesma chave para a casa, o carro e o cofre.",
+            "Senhas são as chaves da vida digital. Os mesmos cuidados valem para elas."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Senhas fortes",
+          "body": [
+            "Senha forte é longa. Uma frase como “meu gato come bolo às três” é mais segura e mais fácil de lembrar que “Gt#4”.",
+            "Use uma senha diferente para cada conta. Se uma vazar, as outras continuam seguras. Um gerenciador de senhas guarda todas para você."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A segunda tranca",
+          "body": [
+            "Ligue a verificação em duas etapas nas contas importantes: e-mail, banco e redes sociais.",
+            "Mesmo que alguém descubra a senha, vai precisar do código que chega no seu celular."
+          ],
+          "terms": [
+            {
+              "word": "Verificação em duas etapas",
+              "meaning": "pedir, além da senha, um código que chega no celular. Quem roubar a senha não entra sem o código."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os golpes mais comuns",
+          "body": [
+            "O golpista quase sempre cria pressa: “sua conta será bloqueada”, “é urgente”. A pressa faz a pessoa clicar sem pensar."
+          ],
+          "terms": [
+            {
+              "word": "Phishing",
+              "meaning": "o golpe da mensagem falsa que finge ser do banco, de uma loja ou de um conhecido para roubar senhas e dados."
+            },
+            {
+              "word": "Malware",
+              "meaning": "um programa feito para causar dano: roubar dados, espionar ou travar o aparelho. O vírus é um tipo."
+            }
+          ],
+          "table": {
+            "label": "Golpes e defesas",
+            "headers": [
+              "Golpe",
+              "Como se defender"
+            ],
+            "rows": [
+              [
+                "mensagem do banco pedindo senha",
+                "o banco nunca pede senha por mensagem"
+              ],
+              [
+                "parente pedindo dinheiro de número novo",
+                "ligar para o número antigo e confirmar"
+              ],
+              [
+                "link de prêmio ou promoção",
+                "não clicar; procurar o site oficial"
+              ],
+              [
+                "pedido de código que chegou por SMS",
+                "nunca passar o código para ninguém"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A cópia de segurança",
+          "body": [
+            "Celular cai, computador quebra e aparelho é roubado. Sem backup, fotos e trabalhos somem para sempre.",
+            "Guarde cópias em mais de um lugar: num disco externo e também na nuvem."
+          ],
+          "terms": [
+            {
+              "word": "Backup",
+              "meaning": "uma cópia de segurança dos arquivos, guardada em outro lugar, para não perder tudo se o aparelho quebrar ou for roubado."
+            },
+            {
+              "word": "Guardar na nuvem",
+              "meaning": "guardar arquivos nos computadores de uma empresa, pela internet, para acessar de qualquer aparelho."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Atualizar também protege",
+          "body": [
+            "As atualizações do sistema e dos aplicativos fecham brechas que os golpistas usam.",
+            "Baixe aplicativos só das lojas oficiais e desconfie de programa que pede permissão demais."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova descreve um golpe e pede o nome ou a defesa. Também cobra o que é senha forte e para que serve o backup."
+          ],
+          "bullets": [
+            "“Uma mensagem falsa que imita o banco para roubar dados é…”",
+            "“Qual é a senha mais segura?”",
+            "“A verificação em duas etapas serve para…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Phishing",
+              "meaning": "o golpe da mensagem falsa que finge ser do banco, de uma loja ou de um conhecido para roubar senhas e dados."
+            },
+            {
+              "word": "Backup",
+              "meaning": "uma cópia de segurança dos arquivos, guardada em outro lugar, para não perder tudo se o aparelho quebrar ou for roubado."
+            }
+          ],
+          "bullets": [
+            "Achar que senha curta com símbolos é melhor que frase longa. O tamanho pesa mais.",
+            "Usar a mesma senha em tudo. Um vazamento abre todas as contas.",
+            "Passar o código que chegou por SMS para alguém. É assim que roubam o WhatsApp.",
+            "Achar que backup é só para empresa. Qualquer foto importante merece cópia."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Senha longa e diferente para cada conta, com um gerenciador ajudando. A verificação em duas etapas é a segunda tranca.",
+            "Golpes criam pressa: desconfie e confirme por outro caminho. Faça backup e mantenha tudo atualizado."
+          ],
+          "terms": [
+            {
+              "word": "Verificação em duas etapas",
+              "meaning": "pedir, além da senha, um código que chega no celular. Quem roubar a senha não entra sem o código."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Phishing",
+          "statement": "Uma mensagem falsa que imita o banco para roubar senhas é:",
+          "options": [
+            "phishing",
+            "backup",
+            "navegador",
+            "verificação em duas etapas",
+            "atualização"
+          ],
+          "correct_index": 0,
+          "explanation": "O phishing pesca dados com mensagens falsas.",
+          "pitfall": "Backup é a cópia de segurança, outra coisa."
+        },
+        {
+          "topic": "Senha",
+          "statement": "Qual destas senhas é a mais segura?",
+          "options": [
+            "uma frase longa como meu gato come bolo às três",
+            "123456",
+            "a data do seu aniversário",
+            "o nome do seu cachorro",
+            "senha"
+          ],
+          "correct_index": 0,
+          "explanation": "Tamanho pesa mais que símbolos; frase longa é difícil de adivinhar.",
+          "pitfall": "Datas e nomes são os primeiros palpites de quem tenta invadir."
+        },
+        {
+          "topic": "Duas etapas",
+          "statement": "A verificação em duas etapas serve para:",
+          "options": [
+            "exigir um código além da senha para entrar",
+            "deixar a internet mais rápida",
+            "apagar a conta",
+            "guardar fotos",
+            "trocar o celular"
+          ],
+          "correct_index": 0,
+          "explanation": "Quem tiver só a senha não entra sem o código.",
+          "pitfall": "Ela não muda a velocidade da internet."
+        },
+        {
+          "topic": "Código",
+          "statement": "Alguém pede o código de seis números que chegou por SMS no seu celular. Você deve:",
+          "options": [
+            "não passar o código para ninguém",
+            "passar, se a pessoa for educada",
+            "passar, se for urgente",
+            "postar o código nas redes",
+            "passar para o primeiro que pedir"
+          ],
+          "correct_index": 0,
+          "explanation": "Esse código é a chave para entrar na sua conta.",
+          "pitfall": "Urgência é justamente a marca do golpe."
+        },
+        {
+          "topic": "Backup",
+          "statement": "Para que serve o backup?",
+          "options": [
+            "ter uma cópia dos arquivos se o aparelho quebrar ou sumir",
+            "deixar o celular mais rápido",
+            "bloquear vírus",
+            "pagar contas",
+            "aumentar a bateria"
+          ],
+          "correct_index": 0,
+          "explanation": "Com a cópia em outro lugar, nada se perde de vez.",
+          "pitfall": "Backup não é antivírus."
+        },
+        {
+          "topic": "Mesma senha",
+          "statement": "Por que não usar a mesma senha em todas as contas?",
+          "options": [
+            "se uma vazar, todas ficam abertas",
+            "porque o site não deixa",
+            "porque gasta mais internet",
+            "porque deixa o celular lento",
+            "não tem problema nenhum"
+          ],
+          "correct_index": 0,
+          "explanation": "Golpistas testam a senha vazada em vários sites.",
+          "pitfall": "“Não tem problema” é o erro mais comum."
+        },
+        {
+          "topic": "Parente",
+          "statement": "Um parente manda mensagem de um número novo pedindo dinheiro com urgência. O que fazer?",
+          "options": [
+            "ligar para o número antigo dele e confirmar",
+            "mandar o dinheiro na hora",
+            "pedir mais detalhes e mandar",
+            "passar sua senha do banco",
+            "ignorar para sempre o parente"
+          ],
+          "correct_index": 0,
+          "explanation": "Confirmar por outro caminho desmonta o golpe.",
+          "pitfall": "Mandar na hora é o que o golpista quer."
+        },
+        {
+          "topic": "Segurança",
+          "format": "match",
+          "statement": "Ligue cada termo à sua descrição.",
+          "pairs": [
+            {
+              "left": "phishing",
+              "right": "mensagem falsa para roubar dados"
+            },
+            {
+              "left": "backup",
+              "right": "cópia de segurança"
+            },
+            {
+              "left": "malware",
+              "right": "programa feito para causar dano"
+            },
+            {
+              "left": "verificação em duas etapas",
+              "right": "código além da senha"
+            }
+          ],
+          "explanation": "Quatro termos de segurança digital.",
+          "pitfall": "Phishing e malware são os mais trocados."
+        },
+        {
+          "topic": "Banco",
+          "statement": "O banco manda mensagem pedindo sua senha. Isso é:",
+          "options": [
+            "golpe: banco nunca pede senha por mensagem",
+            "normal",
+            "uma atualização",
+            "um backup",
+            "uma promoção"
+          ],
+          "correct_index": 0,
+          "explanation": "Nenhum banco pede senha por mensagem ou ligação.",
+          "pitfall": "Achar normal é exatamente o que o golpista espera.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Loja oficial",
+          "statement": "Onde é mais seguro baixar aplicativos?",
+          "options": [
+            "nas lojas oficiais do celular",
+            "em links de mensagens",
+            "em sites desconhecidos",
+            "em anúncios de prêmio",
+            "em qualquer lugar"
+          ],
+          "correct_index": 0,
+          "explanation": "As lojas oficiais verificam os aplicativos.",
+          "pitfall": "Links de mensagem são um caminho comum de golpe.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Atualizar",
+          "statement": "Por que vale atualizar o sistema e os aplicativos?",
+          "options": [
+            "as atualizações fecham brechas de segurança",
+            "só para mudar as cores",
+            "para gastar internet",
+            "para apagar fotos",
+            "não serve para nada"
+          ],
+          "correct_index": 0,
+          "explanation": "Muitas atualizações corrigem falhas que golpistas exploram.",
+          "pitfall": "Não é só aparência: é proteção.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Nuvem",
+          "statement": "Guardar fotos na nuvem quer dizer:",
+          "options": [
+            "guardá-las em computadores de uma empresa, pela internet",
+            "guardá-las no céu de verdade",
+            "apagá-las",
+            "imprimi-las",
+            "deixá-las só na memória RAM"
+          ],
+          "correct_index": 0,
+          "explanation": "A nuvem é um conjunto de computadores de empresas que guardam seus arquivos.",
+          "pitfall": "Apesar do nome, não tem nada a ver com o tempo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Pressa",
+          "statement": "Qual é o sinal mais comum de que uma mensagem é golpe?",
+          "options": [
+            "cria pressa e urgência para você agir sem pensar",
+            "chega à noite",
+            "tem emoji",
+            "vem de um amigo próximo sem pedir nada",
+            "é curta"
+          ],
+          "correct_index": 0,
+          "explanation": "Pressa impede a pessoa de desconfiar e conferir.",
+          "pitfall": "Horário e emoji não dizem nada.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Dois lugares",
+          "statement": "Por que guardar o backup em dois lugares, como num disco e na nuvem?",
+          "options": [
+            "se um falhar ou sumir, o outro ainda tem a cópia",
+            "porque é obrigatório por lei",
+            "para gastar mais espaço",
+            "porque um só não funciona",
+            "para deixar mais lento"
+          ],
+          "correct_index": 0,
+          "explanation": "Disco pode quebrar junto com o computador; a nuvem fica fora de casa.",
+          "pitfall": "Não é lei: é prudência.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "texto-planilha-e-apresentacao",
+      "title": "Texto, planilha e apresentação",
+      "module": "Ferramentas",
+      "summary": "O editor de texto escreve e formata documentos, a planilha faz contas sozinha e a apresentação mostra ideias em slides. Há versões pagas e gratuitas de cada um.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Três tarefas da escola",
+          "body": [
+            "Um trabalho escrito, uma tabela de gastos e uma apresentação para a turma. Três tarefas, três tipos de programa.",
+            "Saber o básico de cada um resolve boa parte do que se faz no computador."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O editor de texto",
+          "body": [
+            "Word, Google Docs e LibreOffice Writer servem para escrever. Dá para mudar a letra, pôr títulos, listas e imagens.",
+            "Use os estilos de título em vez de só aumentar a letra: o programa monta o sumário sozinho. No fim, salve em PDF para mandar."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A planilha",
+          "body": [
+            "Excel, Google Planilhas e LibreOffice Calc são planilhas. Cada caixinha é uma célula, com um endereço como A1 ou B3.",
+            "A mágica é a fórmula: a planilha faz a conta e refaz sozinha quando um número muda."
+          ],
+          "terms": [
+            {
+              "word": "Planilha",
+              "meaning": "um programa de tabela em que cada caixinha guarda um número ou texto e pode fazer contas sozinha, como o Excel e o Google Planilhas."
+            },
+            {
+              "word": "Célula (de planilha)",
+              "meaning": "cada caixinha da planilha, com um endereço formado pela letra da coluna e o número da linha, como A1."
+            },
+            {
+              "word": "Fórmula",
+              "meaning": "a conta que a planilha faz sozinha. Começa sempre com o sinal de igual, como =A1+A2."
+            }
+          ],
+          "table": {
+            "label": "Fórmulas básicas",
+            "headers": [
+              "Fórmula",
+              "O que faz"
+            ],
+            "rows": [
+              [
+                "=A1+A2",
+                "soma duas células"
+              ],
+              [
+                "=SOMA(A1:A5)",
+                "soma de A1 até A5"
+              ],
+              [
+                "=MÉDIA(A1:A5)",
+                "faz a média de A1 até A5"
+              ],
+              [
+                "=A1*2",
+                "multiplica A1 por 2"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Uma conta de gastos",
+          "body": [
+            "Planilha serve muito para controlar dinheiro. O exemplo abaixo soma os gastos do mês."
+          ],
+          "example": {
+            "label": "Os gastos do mês",
+            "lines": [
+              "Em A1 escreva Lanche, e em B1, 50.",
+              "Em A2 escreva Transporte, e em B2, 120.",
+              "Em A3 escreva Celular, e em B3, 40.",
+              "Em B4 escreva =SOMA(B1:B3). Aparece 210.",
+              "Mude B1 para 60, e o total vira 220 sozinho."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A apresentação",
+          "body": [
+            "PowerPoint, Google Apresentações e LibreOffice Impress montam slides. O erro mais comum é encher o slide de texto.",
+            "Um slide bom tem uma ideia, pouco texto e uma imagem. Quem explica é você; o slide só ajuda."
+          ],
+          "table": {
+            "label": "Programas de cada tipo",
+            "headers": [
+              "Tipo",
+              "Pago",
+              "Gratuito"
+            ],
+            "rows": [
+              [
+                "texto",
+                "Word",
+                "Google Docs, LibreOffice Writer"
+              ],
+              [
+                "planilha",
+                "Excel",
+                "Google Planilhas, LibreOffice Calc"
+              ],
+              [
+                "apresentação",
+                "PowerPoint",
+                "Google Apresentações, LibreOffice Impress"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede o resultado de uma fórmula e o endereço de uma célula. Também cobra qual programa serve para cada tarefa."
+          ],
+          "bullets": [
+            "“Se A1 vale 2 e A2 vale 3, o resultado de =A1+A2 é…”",
+            "“Toda fórmula de planilha começa com…”",
+            "“Para montar slides, usa-se um programa de…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Fórmula",
+              "meaning": "a conta que a planilha faz sozinha. Começa sempre com o sinal de igual, como =A1+A2."
+            }
+          ],
+          "bullets": [
+            "Esquecer o sinal de igual: sem ele, a planilha mostra o texto em vez de fazer a conta.",
+            "Achar que A1:A5 soma só A1 e A5. Os dois pontos querem dizer de A1 até A5.",
+            "Encher o slide de texto. Slide é apoio, não é o roteiro.",
+            "Achar que só existem programas pagos. Há opções gratuitas para tudo."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Editor de texto escreve e formata; salve em PDF para mandar. A planilha tem células como A1 e faz contas com fórmulas que começam com igual.",
+            "Apresentação boa tem pouco texto por slide. Há versões gratuitas de cada programa."
+          ],
+          "terms": [
+            {
+              "word": "Planilha",
+              "meaning": "um programa de tabela em que cada caixinha guarda um número ou texto e pode fazer contas sozinha, como o Excel e o Google Planilhas."
+            },
+            {
+              "word": "Célula (de planilha)",
+              "meaning": "cada caixinha da planilha, com um endereço formado pela letra da coluna e o número da linha, como A1."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Soma",
+          "statement": "Numa planilha, A1 = 2, A2 = 3 e A3 = 5. Qual o resultado de =SOMA(A1:A3)?",
+          "options": [
+            "10",
+            "7",
+            "5",
+            "2",
+            "30"
+          ],
+          "correct_index": 0,
+          "explanation": "Soma de A1 até A3: 2 + 3 + 5 = 10.",
+          "pitfall": "7 soma só A1 e A3, ignorando o intervalo."
+        },
+        {
+          "topic": "Igual",
+          "statement": "Toda fórmula de planilha começa com:",
+          "options": [
+            "o sinal de igual",
+            "a letra A",
+            "um ponto",
+            "o número 1",
+            "um parêntese"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem o igual, a planilha trata a conta como texto.",
+          "pitfall": "A letra A é só o nome de uma coluna."
+        },
+        {
+          "topic": "Slides",
+          "statement": "Para montar slides de uma apresentação, usa-se:",
+          "options": [
+            "um programa como PowerPoint ou Google Apresentações",
+            "uma planilha",
+            "um navegador só",
+            "o sistema operacional",
+            "um antivírus"
+          ],
+          "correct_index": 0,
+          "explanation": "Esses programas são feitos para slides.",
+          "pitfall": "Planilha é para tabelas e contas."
+        },
+        {
+          "topic": "Célula",
+          "statement": "Numa planilha, B3 é:",
+          "options": [
+            "a célula da coluna B e linha 3",
+            "a terceira planilha",
+            "uma fórmula",
+            "um gráfico",
+            "a coluna 3 e linha B"
+          ],
+          "correct_index": 0,
+          "explanation": "O endereço é a letra da coluna mais o número da linha.",
+          "pitfall": "A última inverte a ordem: letra é coluna, número é linha."
+        },
+        {
+          "topic": "Média",
+          "statement": "Qual fórmula calcula a média de A1 até A4?",
+          "options": [
+            "=MÉDIA(A1:A4)",
+            "=SOMA(A1:A4)",
+            "MÉDIA A1 A4",
+            "=A1:A4",
+            "=A1+A4"
+          ],
+          "correct_index": 0,
+          "explanation": "MÉDIA faz a média do intervalo.",
+          "pitfall": "SOMA soma, não faz média."
+        },
+        {
+          "topic": "Gratuito",
+          "statement": "Qual destes é um editor de texto gratuito?",
+          "options": [
+            "LibreOffice Writer",
+            "Excel",
+            "PowerPoint",
+            "Google Planilhas",
+            "Windows"
+          ],
+          "correct_index": 0,
+          "explanation": "O Writer é gratuito e abre arquivos do Word.",
+          "pitfall": "Google Planilhas é gratuito, mas é planilha, não editor de texto."
+        },
+        {
+          "topic": "Slide bom",
+          "statement": "Qual é uma boa prática para slides?",
+          "options": [
+            "uma ideia por slide, com pouco texto",
+            "todo o texto do trabalho em cada slide",
+            "letra bem pequena para caber mais",
+            "nenhuma imagem",
+            "ler o slide inteiro em voz alta"
+          ],
+          "correct_index": 0,
+          "explanation": "O slide ajuda quem fala; não substitui a fala.",
+          "pitfall": "Encher de texto é o erro mais comum."
+        },
+        {
+          "topic": "Programas",
+          "format": "match",
+          "statement": "Ligue cada tarefa ao tipo de programa.",
+          "pairs": [
+            {
+              "left": "escrever um trabalho",
+              "right": "editor de texto"
+            },
+            {
+              "left": "controlar gastos",
+              "right": "planilha"
+            },
+            {
+              "left": "montar slides",
+              "right": "apresentação"
+            },
+            {
+              "left": "mandar um trabalho sem mudar o formato",
+              "right": "salvar em PDF"
+            }
+          ],
+          "explanation": "Cada tarefa tem seu programa.",
+          "pitfall": "Controlar gastos pede planilha, por causa das contas."
+        },
+        {
+          "topic": "PDF",
+          "statement": "Para mandar um trabalho que não mude de formato em outro computador, é melhor salvar em:",
+          "options": [
+            "PDF",
+            "MP3",
+            "JPG de cada página",
+            "EXE",
+            "MP4"
+          ],
+          "correct_index": 0,
+          "explanation": "O PDF mantém a mesma aparência em qualquer aparelho.",
+          "pitfall": "MP3 é áudio.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Excel",
+          "statement": "O Excel é um programa de:",
+          "options": [
+            "planilha",
+            "texto",
+            "apresentação",
+            "navegação",
+            "sistema operacional"
+          ],
+          "correct_index": 0,
+          "explanation": "É a planilha mais conhecida.",
+          "pitfall": "Texto é o Word.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Intervalo",
+          "statement": "Em =SOMA(A1:A5), os dois pontos querem dizer:",
+          "options": [
+            "de A1 até A5",
+            "só A1 e A5",
+            "A1 dividido por A5",
+            "A1 vezes A5",
+            "nenhuma célula"
+          ],
+          "correct_index": 0,
+          "explanation": "O intervalo pega todas as células entre as duas.",
+          "pitfall": "Só A1 e A5 é a pegadinha.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Refaz",
+          "statement": "Uma vantagem da fórmula na planilha é que:",
+          "options": [
+            "o resultado se refaz sozinho quando um número muda",
+            "deixa a planilha colorida",
+            "imprime sozinha",
+            "apaga os dados antigos",
+            "manda e-mail sozinha"
+          ],
+          "correct_index": 0,
+          "explanation": "Mude um valor, e todas as contas que dependem dele se atualizam.",
+          "pitfall": "Fórmula não imprime nem manda nada.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Gastos",
+          "statement": "B1 = 50, B2 = 120 e B3 = 40, e B4 tem =SOMA(B1:B3). Se B2 virar 100, quanto mostra B4?",
+          "options": [
+            "190",
+            "210",
+            "200",
+            "150",
+            "100"
+          ],
+          "correct_index": 0,
+          "explanation": "50 + 100 + 40 = 190, e a planilha refaz sozinha.",
+          "pitfall": "210 é o total antigo, antes da mudança.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Sem igual",
+          "statement": "Alguém digita SOMA(A1:A3), sem o igual, numa célula. O que aparece?",
+          "options": [
+            "o próprio texto SOMA(A1:A3)",
+            "o resultado da soma",
+            "um erro que apaga a planilha",
+            "zero",
+            "o valor de A1"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem o igual, a planilha entende que é texto, e não conta.",
+          "pitfall": "O resultado só aparece com o igual na frente.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "o-que-e-um-algoritmo",
+      "title": "O que é um algoritmo",
+      "module": "Ferramentas",
+      "summary": "Algoritmo é uma receita: passos em ordem, com decisões e repetições, que chegam ao fim. Um programa é um algoritmo escrito numa língua que o computador entende.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A receita de bolo",
+          "body": [
+            "Uma receita diz o que fazer, em que ordem e quando parar. Se você trocar a ordem, o bolo dá errado.",
+            "Um algoritmo é exatamente isso: uma receita para resolver um problema."
+          ],
+          "terms": [
+            {
+              "word": "Algoritmo",
+              "meaning": "uma sequência de passos, bem definidos e com fim, para resolver um problema."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Passos em ordem",
+          "body": [
+            "Os passos precisam ser claros e na ordem certa. “Bata os ovos” antes de “leve ao forno”.",
+            "E o algoritmo precisa terminar. Uma receita que nunca diz “pronto” não é algoritmo."
+          ],
+          "example": {
+            "label": "Algoritmo para fazer um café",
+            "lines": [
+              "Ferva a água.",
+              "Coloque o pó no filtro.",
+              "Despeje a água quente sobre o pó.",
+              "Espere o café descer.",
+              "Sirva."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Decisões: se isso, então aquilo",
+          "body": [
+            "Muitos algoritmos precisam escolher. “Se estiver chovendo, leve guarda-chuva; senão, vá sem.”",
+            "Essa escolha se chama condição, e aparece em todo programa."
+          ],
+          "terms": [
+            {
+              "word": "Condição",
+              "meaning": "a escolha do algoritmo: se algo for verdade, faz uma coisa; senão, faz outra."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Repetições",
+          "body": [
+            "Outros passos se repetem. “Enquanto a panela não ferver, espere.” “Repita 10 vezes: faça uma flexão.”",
+            "Repetir evita escrever o mesmo passo muitas vezes."
+          ],
+          "terms": [
+            {
+              "word": "Repetição",
+              "meaning": "o trecho do algoritmo que se repete várias vezes, ou até uma condição mudar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Do algoritmo ao programa",
+          "body": [
+            "O computador não entende português. Para ele seguir um algoritmo, é preciso escrever numa linguagem de programação, como Python.",
+            "O programa é o algoritmo traduzido para essa língua. Antes de programar, muita gente escreve o algoritmo em português simples."
+          ],
+          "table": {
+            "label": "Peças de todo algoritmo",
+            "headers": [
+              "Peça",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "sequência",
+                "ferva a água, depois coloque o pó"
+              ],
+              [
+                "condição",
+                "se chover, leve guarda-chuva"
+              ],
+              [
+                "repetição",
+                "repita 10 vezes"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá um algoritmo e pede o resultado, ou pede para pôr os passos na ordem. Também cobra o que é condição e repetição."
+          ],
+          "bullets": [
+            "“Qual a ordem correta dos passos do algoritmo?”",
+            "“O trecho ‘se a nota for maior que 6, aprovado’ é uma…”",
+            "“Um algoritmo precisa, obrigatoriamente…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Algoritmo",
+              "meaning": "uma sequência de passos, bem definidos e com fim, para resolver um problema."
+            }
+          ],
+          "bullets": [
+            "Achar que algoritmo é só coisa de computador. Uma receita já é um algoritmo.",
+            "Achar que a ordem dos passos não importa. Trocar a ordem muda o resultado.",
+            "Achar que um algoritmo pode não terminar. Ele precisa ter fim.",
+            "Confundir algoritmo com programa. O programa é o algoritmo escrito numa linguagem."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Algoritmo é uma sequência de passos claros, em ordem e com fim. Uma receita é um algoritmo.",
+            "Os algoritmos usam sequência, condição e repetição. Um programa é o algoritmo escrito numa linguagem de programação."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Definição",
+          "statement": "Um algoritmo é:",
+          "options": [
+            "uma sequência de passos com fim para resolver um problema",
+            "um tipo de computador",
+            "um vírus",
+            "uma peça do teclado",
+            "um site de busca"
+          ],
+          "correct_index": 0,
+          "explanation": "É uma receita: passos claros, em ordem, que terminam.",
+          "pitfall": "Não é peça nem aparelho: é uma ideia."
+        },
+        {
+          "topic": "Condição",
+          "statement": "O trecho “se a nota for maior que 6, aprovado” é uma:",
+          "options": [
+            "condição",
+            "repetição",
+            "fórmula de planilha",
+            "senha",
+            "extensão de arquivo"
+          ],
+          "correct_index": 0,
+          "explanation": "Escolha entre caminhos é condição.",
+          "pitfall": "Repetição seria fazer algo várias vezes."
+        },
+        {
+          "topic": "Fim",
+          "statement": "Um algoritmo precisa obrigatoriamente:",
+          "options": [
+            "terminar",
+            "ser escrito em inglês",
+            "ter imagens",
+            "rodar só no celular",
+            "ter mais de cem passos"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem fim, não é algoritmo.",
+          "pitfall": "Pode ser escrito em português: a receita é um exemplo."
+        },
+        {
+          "topic": "Receita",
+          "statement": "Uma receita de bolo é um exemplo de algoritmo porque:",
+          "options": [
+            "tem passos em ordem que levam a um resultado e terminam",
+            "fica escrita num papel",
+            "é doce",
+            "usa forno",
+            "foi feita no computador"
+          ],
+          "correct_index": 0,
+          "explanation": "Passos claros, ordem e fim: é a definição.",
+          "pitfall": "Usar forno não tem relação com ser algoritmo."
+        },
+        {
+          "topic": "Programa",
+          "statement": "Qual a relação entre algoritmo e programa?",
+          "options": [
+            "o programa é o algoritmo escrito numa linguagem que o computador entende",
+            "são exatamente a mesma coisa, sem diferença",
+            "o algoritmo é uma peça do computador",
+            "o programa não usa algoritmos",
+            "o algoritmo só existe em inglês"
+          ],
+          "correct_index": 0,
+          "explanation": "O algoritmo é a ideia; o programa, a tradução para a máquina.",
+          "pitfall": "Algoritmo pode existir sem computador, como na receita."
+        },
+        {
+          "topic": "Repetição",
+          "statement": "O trecho “repita 10 vezes: faça uma flexão” é uma:",
+          "options": [
+            "repetição",
+            "condição",
+            "sequência sem fim",
+            "fórmula",
+            "falha"
+          ],
+          "correct_index": 0,
+          "explanation": "Fazer a mesma ação várias vezes é repetição.",
+          "pitfall": "Condição escolhe um caminho."
+        },
+        {
+          "topic": "Ordem",
+          "statement": "Por que a ordem dos passos importa?",
+          "options": [
+            "trocar a ordem pode mudar ou estragar o resultado",
+            "não importa",
+            "o computador reordena sozinho",
+            "só importa em inglês",
+            "porque o algoritmo nunca termina"
+          ],
+          "correct_index": 0,
+          "explanation": "Levar ao forno antes de misturar estraga o bolo.",
+          "pitfall": "O computador segue a ordem que recebeu, não reordena."
+        },
+        {
+          "topic": "Café",
+          "format": "order",
+          "statement": "Ponha em ordem o algoritmo para fazer café.",
+          "options": [
+            "Ferva a água.",
+            "Coloque o pó no filtro.",
+            "Despeje a água quente sobre o pó.",
+            "Sirva o café."
+          ],
+          "explanation": "Ferver, preparar o filtro, despejar e servir.",
+          "pitfall": "Servir é o último passo: antes disso não há café."
+        },
+        {
+          "topic": "Exemplo",
+          "statement": "Qual destes é um algoritmo?",
+          "options": [
+            "as instruções para montar um móvel",
+            "uma foto de paisagem",
+            "uma música",
+            "um teclado",
+            "um número solto"
+          ],
+          "correct_index": 0,
+          "explanation": "Instruções em passos, que terminam com o móvel pronto.",
+          "pitfall": "Uma foto não tem passos.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Python",
+          "statement": "Python é:",
+          "options": [
+            "uma linguagem de programação",
+            "um algoritmo",
+            "um processador",
+            "um navegador",
+            "uma planilha"
+          ],
+          "correct_index": 0,
+          "explanation": "É uma das linguagens usadas para escrever programas.",
+          "pitfall": "Algoritmo é a ideia; Python é a língua para escrevê-la.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Guarda-chuva",
+          "statement": "Um algoritmo diz: se chover, leve guarda-chuva; senão, vá sem. O que acontece num dia de sol?",
+          "options": [
+            "vai sem guarda-chuva",
+            "leva guarda-chuva",
+            "não sai de casa",
+            "o algoritmo para",
+            "repete para sempre"
+          ],
+          "correct_index": 0,
+          "explanation": "A condição é falsa, então vale o “senão”.",
+          "pitfall": "Levar guarda-chuva é o caminho do dia de chuva.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Enquanto",
+          "statement": "No passo “enquanto a água não ferver, espere”, quando a espera termina?",
+          "options": [
+            "quando a água ferve",
+            "nunca",
+            "depois de um minuto exato",
+            "antes de ligar o fogo",
+            "quando o café está pronto"
+          ],
+          "correct_index": 0,
+          "explanation": "A repetição dura até a condição mudar.",
+          "pitfall": "“Nunca” faria o algoritmo não terminar.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Conta",
+          "statement": "Um algoritmo diz: comece com 0; repita 3 vezes: some 5. No fim, qual o resultado?",
+          "options": [
+            "15",
+            "5",
+            "3",
+            "8",
+            "0"
+          ],
+          "correct_index": 0,
+          "explanation": "0 + 5 + 5 + 5 = 15.",
+          "pitfall": "5 é fazer a soma uma vez só.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Sem fim",
+          "statement": "“Repita para sempre: olhe o relógio.” Por que isso não é um bom algoritmo?",
+          "options": [
+            "nunca termina",
+            "é curto demais",
+            "não tem relógio",
+            "está em português",
+            "tem uma condição"
+          ],
+          "correct_index": 0,
+          "explanation": "Algoritmo precisa ter fim.",
+          "pitfall": "Estar em português não é problema.",
+          "difficulty": "dificil"
+        }
+      ]
+    }
+  ]
+}

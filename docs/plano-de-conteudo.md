@@ -194,7 +194,7 @@ destaque, porque é o que a prova do ENEM cobra.
 4. Lutas, danças e jogos da cultura brasileira.
 5. Corpo, mídia e padrões de beleza (tema frequente no ENEM).
 
-### Informática — `informatica-basica`
+### Informática — `informatica-basica` (feito: 6 lições em três módulos, com os níveis)
 
 As matérias de Informática que existem hoje são especializadas e ficaram
 privadas. A básica é a porta de entrada:
