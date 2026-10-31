@@ -161,7 +161,7 @@ probabilidade). Razão, proporção e porcentagem ficaram na básica.
 5. Poder, Estado, democracia e cidadania.
 6. Movimentos sociais e direitos humanos.
 
-### Inglês — `ingles-basico`
+### Inglês — `ingles-basico` (feito: 6 lições em três módulos, com os níveis)
 
 1. Cumprimentos, o verbo *to be* e pronomes.
 2. Presente simples e contínuo.
