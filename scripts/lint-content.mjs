@@ -129,6 +129,17 @@ const JARGON = [
   ["setor primário, secundário e terciário", /\bsetor(es)? (prim|secund|terci)(á|a)rios?\b/i, "o"], ["agronegócio", /(?<!\p{L})agroneg(ó|o)cios?(?!\p{L})/iu, "o"],
   ["globalização", /\bglobaliza(ç|c)(ão|ões)\b/i, "o"], ["bloco econômico", /(?<!\p{L})blocos? econ(ô|o)micos?(?!\p{L})/iu, "o"], ["Mercosul", /\bMercosul\b/, "o"],
   ["multinacional", /\bmultinaciona(l|is)\b|\btransnaciona(l|is)\b/i, "o"], ["PIB", /\bPIB\b/, "o"], ["IDH", /\bIDH\b/, "o"],
+  // Física básica (escopo "f").
+  ["grandeza", /\bgrandezas?\b/i, "f"], ["notação científica", /\bnota(ç|c)(ão|ões) cient(í|i)ficas?\b/i, "f"], ["velocidade média", /\bvelocidades? m(é|e)dias?\b/i, "f"],
+  ["aceleração", /\bacelera(ç|c)(ão|ões)\b/i, "f"], ["movimento uniforme", /\bmovimentos? uniformes?\b/i, "f"], ["queda livre", /\bquedas? livres?\b/i, "f"],
+  ["inércia", /(?<!\p{L})in(é|e)rcia(?!\p{L})/iu, "f"], ["força resultante", /\bfor(ç|c)as? resultantes?\b/i, "f"], ["newton (unidade)", /\bnewtons?\b|\b\d+ N\b/, "f"],
+  ["massa e peso", /\bpeso\b/i, "f"], ["atrito", /\batritos?\b/i, "f"], ["energia cinética", /\benergias? cin(é|e)ticas?\b/i, "f"],
+  ["energia potencial", /\benergias? potencia(l|is)\b/i, "f"], ["joule", /\bjoules?\b/i, "f"], ["potência", /(?<!\p{L})pot(ê|e)ncias?(?!\p{L})/iu, "f"], ["watt", /\bwatts?\b|\bquilowatts?\b/i, "f"],
+  ["dilatação", /\bdilata(ç|c)(ão|ões)\b/i, "f"], ["condução, convecção e irradiação", /\bcondu(ç|c)(ão|ões)\b|\bconvec(ç|c)(ão|ões)\b|\birradia(ç|c)(ão|ões)\b/i, "f"],
+  ["frequência", /(?<!\p{L})frequ(ê|e)ncias?(?!\p{L})/iu, "f"], ["amplitude", /\bamplitudes?\b/i, "f"], ["comprimento de onda", /\bcomprimentos? de onda\b/i, "f"], ["hertz", /\bhertz\b|\bHz\b/, "f"],
+  ["reflexão", /(?<!\p{L})reflex(ão|ões)(?!\p{L})/iu, "f"], ["refração", /(?<!\p{L})refra(ç|c)(ão|ões)(?!\p{L})/iu, "f"], ["onda eletromagnética", /\beletromagn(é|e)tic(a|as|o|os)\b/i, "f"],
+  ["corrente elétrica", /\bcorrentes? el(é|e)tricas?\b|\bamp(è|e)res?\b/i, "f"], ["tensão elétrica", /\btens(ão|ões)( el(é|e)tricas?)?\b|\bvolts?\b/i, "f"],
+  ["resistência elétrica", /(?<!\p{L})resist(ê|e)ncias? el(é|e)tricas?(?!\p{L})|\bohms?\b/iu, "f"], ["quilowatt-hora", /\bquilowatts?-hora\b|\bkWh\b/, "f"],
 
   ["preposição", /\bpreposi(ç|c)(ão|ões)\b/i, "p"], ["artigo", /\bartigos?\b/i, "p"],
   ["verbo", /\bverbos?\b/i, "p"], ["sujeito", /\bsujeitos?\b/i, "p"], ["núcleo", /\bnúcleos?\b/i, "p"], ["pronome", /\bpronomes?\b/i, "p"],
@@ -466,7 +477,7 @@ const JARGON = [
   ["cooler", /\bcoolers?\b|\bwater cooler\b/i, "h"], ["80 Plus", /\b80 Plus\b/i, "h"], ["fonte modular", /\bmodular(es)?\b/i, "h"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;

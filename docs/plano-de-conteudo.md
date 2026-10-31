@@ -89,7 +89,7 @@ Geometria (ângulos e triângulos; perímetro e área; círculo; Pitágoras;
 volume) e Dados e chance (média, moda e mediana; gráficos; contagem;
 probabilidade). Razão, proporção e porcentagem ficaram na básica.
 
-### Física — `fisica-basica`
+### Física — `fisica-basica` (feito: 8 lições em cinco módulos, com os níveis)
 
 1. Grandezas e unidades; notação científica.
 2. Cinemática: velocidade, aceleração, movimento uniforme e variado; queda livre.
@@ -216,7 +216,7 @@ Operacionais.
 | **Base para provas** | Português → Matemática Básica → Matemática do dia a dia → Lógica → Produção Textual | **No ar** |
 | ENEM: Linguagens | Português → Produção Textual → Inglês (ou Espanhol) → Artes → Educação Física | **No ar** (os passos sem matéria aparecem como "Em breve") |
 | ENEM: Matemática | Matemática Básica → Matemática do dia a dia → Lógica | **No ar** |
-| ENEM: Natureza | Física → Química → Biologia | Planejada |
+| ENEM: Natureza | Física → Química → Biologia | **No ar** (os passos sem matéria aparecem como "Em breve") |
 | ENEM: Humanas | História → Geografia → Filosofia → Sociologia | **No ar** (os passos sem matéria aparecem como "Em breve") |
 | Primeiros passos na informática | Informática básica → Montar um PC → Python | Planejada; Montar um PC e Python ainda privadas |
 | LLMs do zero | Matemática Básica → … → LLMs: treino, uso e limites | Privada |
