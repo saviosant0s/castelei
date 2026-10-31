@@ -60,6 +60,44 @@ return [
                 ['subject' => 'llms-na-pratica', 'name' => 'LLMs: treino, uso e limites', 'why' => 'Como se treina, ajusta, roda e avalia um modelo, e onde ele erra.'],
             ],
         ],
+        /*
+        | As trilhas do ENEM seguem as quatro áreas da prova. Passo de matéria
+        | que ainda não existe aparece como "Em breve" e acende sozinho quando
+        | o arquivo dela entrar.
+        */
+        [
+            'slug' => 'enem-matematica',
+            'name' => 'ENEM: Matemática',
+            'description' => 'A conta, a situação do dia a dia e o raciocínio: a prova de Matemática do ENEM, do básico ao que mais cai.',
+            'steps' => [
+                ['subject' => 'matematica-basica', 'name' => 'Matemática Básica', 'why' => 'Frações, porcentagem, potências, equações e funções: sem isso nenhuma questão anda.'],
+                ['subject' => 'matematica-do-dia-a-dia', 'name' => 'Matemática do dia a dia', 'why' => 'Medidas, juros, áreas, gráficos e chances: o tipo de situação que o ENEM mais usa.'],
+                ['subject' => 'logica', 'name' => 'Lógica', 'why' => 'Ler uma afirmação com cuidado e tirar a conclusão certa.'],
+            ],
+        ],
+        [
+            'slug' => 'enem-humanas',
+            'name' => 'ENEM: Ciências Humanas',
+            'description' => 'História, Geografia, Filosofia e Sociologia: a prova de Humanas do ENEM, na ordem em que uma ajuda a entender a outra.',
+            'steps' => [
+                ['subject' => 'historia-basica', 'name' => 'História', 'why' => 'O que aconteceu e por quê: a base para entender o mundo e o Brasil de hoje.'],
+                ['subject' => 'geografia-basica', 'name' => 'Geografia', 'why' => 'Mapas, clima, população e economia: onde as coisas acontecem e por quê.'],
+                ['subject' => 'filosofia-basica', 'name' => 'Filosofia', 'why' => 'Ética, política e conhecimento: as perguntas que atravessam a história.'],
+                ['subject' => 'sociologia-basica', 'name' => 'Sociologia', 'why' => 'Cultura, trabalho, desigualdade e cidadania: como a sociedade funciona.'],
+            ],
+        ],
+        [
+            'slug' => 'enem-linguagens',
+            'name' => 'ENEM: Linguagens',
+            'description' => 'Ler, escrever, outra língua, arte e corpo: a prova de Linguagens do ENEM e a redação.',
+            'steps' => [
+                ['subject' => 'portugues', 'name' => 'Português', 'why' => 'Interpretação, gramática e gêneros: a maior parte da prova de Linguagens.'],
+                ['subject' => 'producao-textual', 'name' => 'Produção Textual', 'why' => 'A redação dissertativa, da tese à proposta de intervenção.'],
+                ['subject' => 'ingles-basico', 'name' => 'Inglês', 'why' => 'Ler um texto em inglês com cognatos e estratégia. Quem escolhe espanhol faz Espanhol.'],
+                ['subject' => 'artes-basica', 'name' => 'Artes', 'why' => 'Movimentos, linguagens e arte brasileira, que o ENEM cobra com imagens.'],
+                ['subject' => 'educacao-fisica-basica', 'name' => 'Educação Física', 'why' => 'Corpo, saúde, esporte e mídia: tema frequente nas questões de Linguagens.'],
+            ],
+        ],
     ],
 
     'areas' => [
