@@ -164,7 +164,17 @@ const JARGON = [
   ["navegador", /\bnavegador(es)?\b/i, "k"], ["endereço IP", /\bIP\b/, "k"], ["DNS", /\bDNS\b/, "k"], ["URL", /\bURLs?\b/, "k"], ["HTTPS", /\bHTTPS?\b/, "k"],
   ["servidor", /\bservidor(es)?\b/i, "k"], ["nuvem", /\bna nuvem\b/i, "k"], ["phishing", /\bphishing\b/i, "k"], ["verificação em duas etapas", /(?<!\p{L})verifica(ç|c)(ão|ões) em duas etapas(?!\p{L})/iu, "k"],
   ["backup", /\bbackups?\b/i, "k"], ["malware", /\bmalwares?\b/i, "k"], ["planilha", /\bplanilhas?\b/i, "k"], ["célula (de planilha)", /(?<!\p{L})c(é|e)lulas?(?!\p{L})/iu, "k"],
-  ["fórmula", /(?<!\p{L})f(ó|o)rmulas?(?!\p{L})/iu, "k"], ["algoritmo", /\balgoritmos?\b/i, "k"], ["artigo", /\bartigos?\b/i, "u"], ["conjugação", /\bconjuga(ç|c)(ão|ões)\b|\bconjugad(o|a)\b/i, "u"], ["combustível fóssil", /(?<!\p{L})combust(í|i)ve(l|is) f(ó|o)sse(l|is)(?!\p{L})/iu, "x"], ["biocombustível", /(?<!\p{L})biocombust(í|i)ve(l|is)(?!\p{L})/iu, "x"],
+  ["fórmula", /(?<!\p{L})f(ó|o)rmulas?(?!\p{L})/iu, "k"], ["algoritmo", /\balgoritmos?\b/i, "k"],
+  // Filosofia (escopo "z") e Sociologia (escopo "j"): os conceitos que a prova cobra pelo nome.
+  ["mito", /\bmitos?\b/i, "z"], ["arché", /\barch(é|e)\b/i, "z"], ["maiêutica", /(?<!\p{L})mai(ê|e)utica(?!\p{L})/iu, "z"], ["mundo das ideias", /\bmundo das ideias\b/i, "z"],
+  ["ética e moral", /(?<!\p{L})(é|e)tica(s)?(?!\p{L})|\bmora(l|is)\b/iu, "z"], ["racionalismo e empirismo", /\bracionalis(mo|ta|tas)\b|\bempiris(mo|ta|tas)\b/i, "z"],
+  ["imperativo categórico", /\bimperativo categ(ó|o)rico\b/i, "z"], ["utilitarismo", /\butilitaris(mo|ta|tas)\b/i, "z"],
+  ["estado de natureza", /\bestado de natureza\b/i, "zj"], ["contrato social", /\bcontrato social\b/i, "zj"], ["alienação", /\baliena(ç|c)(ão|ões)\b/i, "zj"],
+  ["mais-valia", /\bmais-valia\b/i, "zj"], ["existencialismo", /\bexistencialis(mo|ta|tas)\b/i, "z"], ["niilismo", /\bniilis(mo|ta|tas)\b/i, "z"],
+  ["fato social", /\bfatos? socia(l|is)\b/i, "j"], ["socialização", /\bsocializa(ç|c)(ão|ões)\b/i, "j"], ["etnocentrismo", /\betnocentris(mo|ta|tas)\b/i, "j"],
+  ["relativismo cultural", /\brelativismo cultural\b/i, "j"], ["classe social", /\bclasses? socia(l|is)\b/i, "j"], ["luta de classes", /\bluta de classes\b/i, "j"],
+  ["burguesia e proletariado", /(?<!\p{L})burgu(e|ê)s(ia|es|a|as)?(?!\p{L})|\bproletari(ado|os?)\b/iu, "zj"], ["mobilidade social", /\bmobilidade social\b/i, "j"],
+  ["Estado", /\bEstado\b/, "j"], ["cidadania", /\bcidadania\b/i, "j"], ["movimento social", /\bmovimentos? socia(l|is)\b/i, "j"], ["ação social", /(?<!\p{L})a(ç|c)(ão|ões) socia(l|is)(?!\p{L})/iu, "j"], ["artigo", /\bartigos?\b/i, "u"], ["conjugação", /\bconjuga(ç|c)(ão|ões)\b|\bconjugad(o|a)\b/i, "u"], ["combustível fóssil", /(?<!\p{L})combust(í|i)ve(l|is) f(ó|o)sse(l|is)(?!\p{L})/iu, "x"], ["biocombustível", /(?<!\p{L})biocombust(í|i)ve(l|is)(?!\p{L})/iu, "x"],
 
   ["preposição", /\bpreposi(ç|c)(ão|ões)\b/i, "p"], ["artigo", /\bartigos?\b/i, "p"],
   ["verbo", /\bverbos?\b/i, "p"], ["sujeito", /\bsujeitos?\b/i, "p"], ["núcleo", /\bnúcleos?\b/i, "p"], ["pronome", /\bpronomes?\b/i, "p"],
@@ -502,7 +512,7 @@ const JARGON = [
   ["cooler", /\bcoolers?\b|\bwater cooler\b/i, "h"], ["80 Plus", /\b80 Plus\b/i, "h"], ["fonte modular", /\bmodular(es)?\b/i, "h"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;
