@@ -152,7 +152,7 @@ probabilidade). Razão, proporção e porcentagem ficaram na básica.
 5. Política: contrato social e Estado (Hobbes, Locke, Rousseau).
 6. Filosofia contemporânea: Marx, Nietzsche, existencialismo.
 
-### Sociologia — `sociologia-basica`
+### Sociologia — `sociologia-basica` (feito: 6 lições em três módulos, com os níveis)
 
 1. O que é sociologia; indivíduo e sociedade.
 2. Os clássicos: Durkheim, Weber e Marx.
