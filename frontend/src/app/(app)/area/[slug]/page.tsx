@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
+import { SubjectArt, subjectArtKey } from "@/components/illustrations/SubjectArt";
 import { SubjectRow, nextLessonLine, tones } from "@/components/home/SubjectRow";
 import { EmptyState, PageHero } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
@@ -32,9 +33,14 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
       <PageHero
         title={area.name}
         art={
-          <span className="grid size-16 place-items-center rounded-control bg-sky-soft text-sky">
-            {createElement(areaIcon(area.slug), { className: "size-8", "aria-hidden": true })}
-          </span>
+          // O desenho da área; a que ainda não tem desenho fica com o ícone.
+          subjectArtKey({ slug: area.slug, area: area.slug }) ? (
+            <SubjectArt name={area.slug} />
+          ) : (
+            <span className="grid size-16 place-items-center rounded-control bg-sky-soft text-sky">
+              {createElement(areaIcon(area.slug), { className: "size-8", "aria-hidden": true })}
+            </span>
+          )
         }
       >
         {lista.length > 0 && pluralize(lista.length, "matéria", "matérias")}
