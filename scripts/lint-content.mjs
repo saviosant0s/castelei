@@ -115,6 +115,20 @@ const JARGON = [
   ["fascismo e nazismo", /\bfascis(mo|ta|tas)\b|\bnazis(mo|ta|tas)\b/i, "i"], ["Guerra Fria", /\bGuerra Fria\b/i, "i"],
   ["capitalismo e socialismo", /\bcapitalis(mo|ta|tas)\b|\bsocialis(mo|ta|tas)\b/i, "i"], ["AI-5", /\bAI-5\b|\bato institucional\b/i, "i"],
   ["anistia", /\banistia\b/i, "i"], ["golpe de Estado", /\bgolpes? (de Estado|militar)\b/i, "i"],
+  // Geografia básica (escopo "o").
+  ["escala", /\bescalas?\b/i, "o"], ["legenda", /\blegendas?\b/i, "o"], ["projeção cartográfica", /\bproje(ç|c)(ão|ões)\b/i, "o"],
+  ["latitude", /\blatitudes?\b/i, "o"], ["longitude", /\blongitudes?\b/i, "o"], ["meridiano", /\bmeridianos?\b|\bGreenwich\b/i, "o"],
+  ["Equador (a linha)", /\b(linha do )?Equador\b/, "o"], ["fuso horário", /\bfusos?( horários?)?\b/i, "o"],
+  ["placa tectônica", /\bplacas? tect(ô|o)nicas?\b/i, "o"], ["intemperismo", /\bintemperismo\b/i, "o"], ["erosão", /(?<!\p{L})eros(ão|ões)(?!\p{L})/iu, "o"],
+  ["planalto", /\bplanaltos?\b/i, "o"], ["planície", /(?<!\p{L})plan(í|i)cies?(?!\p{L})/iu, "o"], ["depressão (relevo)", /(?<!\p{L})depress(ão|ões)(?!\p{L})/iu, "o"],
+  ["massa de ar", /\bmassas? de ar\b/i, "o"], ["El Niño", /\bEl Ni(ñ|n)o\b/i, "o"], ["semiárido", /(?<!\p{L})semi(á|a)rid(o|a)(?!\p{L})/iu, "o"],
+  ["efeito estufa", /\befeito estufa\b/i, "o"], ["ilha de calor", /\bilhas? de calor\b/i, "o"], ["inversão térmica", /\binvers(ão|ões) t(é|e)rmicas?\b/i, "o"],
+  ["chuva ácida", /\bchuvas? (á|a)cidas?\b/i, "o"], ["taxa de fecundidade", /\bfecundidade\b/i, "o"], ["taxa de natalidade", /\bnatalidade\b/i, "o"],
+  ["pirâmide etária", /(?<!\p{L})pir(â|a)mides? et(á|a)rias?(?!\p{L})/iu, "o"], ["êxodo rural", /(?<!\p{L})(ê|e)xodo rural(?!\p{L})/iu, "o"],
+  ["urbanização", /\burbaniza(ç|c)(ão|ões)\b/i, "o"], ["metrópole", /(?<!\p{L})metr(ó|o)poles?(?!\p{L})/iu, "o"], ["conurbação", /\bconurba(ç|c)(ão|ões)\b/i, "o"],
+  ["setor primário, secundário e terciário", /\bsetor(es)? (prim|secund|terci)(á|a)rios?\b/i, "o"], ["agronegócio", /(?<!\p{L})agroneg(ó|o)cios?(?!\p{L})/iu, "o"],
+  ["globalização", /\bglobaliza(ç|c)(ão|ões)\b/i, "o"], ["bloco econômico", /(?<!\p{L})blocos? econ(ô|o)micos?(?!\p{L})/iu, "o"], ["Mercosul", /\bMercosul\b/, "o"],
+  ["multinacional", /\bmultinaciona(l|is)\b|\btransnaciona(l|is)\b/i, "o"], ["PIB", /\bPIB\b/, "o"], ["IDH", /\bIDH\b/, "o"],
 
   ["preposição", /\bpreposi(ç|c)(ão|ões)\b/i, "p"], ["artigo", /\bartigos?\b/i, "p"],
   ["verbo", /\bverbos?\b/i, "p"], ["sujeito", /\bsujeitos?\b/i, "p"], ["núcleo", /\bnúcleos?\b/i, "p"], ["pronome", /\bpronomes?\b/i, "p"],
@@ -452,7 +466,7 @@ const JARGON = [
   ["cooler", /\bcoolers?\b|\bwater cooler\b/i, "h"], ["80 Plus", /\b80 Plus\b/i, "h"], ["fonte modular", /\bmodular(es)?\b/i, "h"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;

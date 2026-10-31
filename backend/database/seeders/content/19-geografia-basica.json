@@ -1,0 +1,3454 @@
+{
+  "slug": "geografia-basica",
+  "name": "Geografia",
+  "area": "geografia",
+  "description": "Mapas, fusos, relevo, clima, ambiente, população, economia, globalização e as regiões do Brasil: o básico de Geografia para qualquer prova, do zero.",
+  "lessons": [
+    {
+      "slug": "mapas-e-escala",
+      "title": "Mapas: escala, legenda e projeções",
+      "module": "Mapas",
+      "summary": "Todo mapa é uma redução do mundo real. A escala diz quanto foi reduzido, a legenda explica os símbolos e a projeção decide o que vai ficar distorcido.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O mapa do celular",
+          "body": [
+            "Quando você afasta os dedos no mapa do celular, a rua cresce e aparecem nomes de lojas. Quando junta, aparece a cidade inteira.",
+            "Você acabou de mudar a escala. Mais perto, mais detalhe e menos área; mais longe, o contrário."
+          ],
+          "terms": [
+            {
+              "word": "Escala",
+              "meaning": "a conta que diz quantas vezes o lugar real foi reduzido para caber no mapa."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Como ler uma escala",
+          "body": [
+            "A escala 1:100.000 quer dizer que 1 centímetro no mapa vale 100.000 centímetros no chão. Isso dá 1 quilômetro.",
+            "Para achar a distância real, meça no mapa e multiplique pelo número da escala."
+          ],
+          "example": {
+            "label": "Conta com a escala 1:100.000",
+            "lines": [
+              "No mapa, duas cidades estão a 5 cm uma da outra.",
+              "5 × 100.000 = 500.000 cm.",
+              "500.000 cm = 5.000 m = 5 km."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Escala grande e escala pequena",
+          "body": [
+            "A escala 1:1.000 é grande: o número de baixo é pequeno, e o mapa mostra uma área pequena com muito detalhe, como um bairro.",
+            "A escala 1:10.000.000 é pequena: mostra uma área enorme, como um país, com pouco detalhe."
+          ],
+          "table": {
+            "label": "Comparando escalas",
+            "headers": [
+              "Escala",
+              "Tipo",
+              "Mostra bem"
+            ],
+            "rows": [
+              [
+                "1:1.000",
+                "grande",
+                "uma rua ou um bairro"
+              ],
+              [
+                "1:100.000",
+                "média",
+                "uma cidade e arredores"
+              ],
+              [
+                "1:10.000.000",
+                "pequena",
+                "um país inteiro"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Título, legenda e rosa dos ventos",
+          "body": [
+            "Um bom mapa tem título, que diz o assunto. Tem também legenda, que explica os símbolos, e mostra a orientação.",
+            "A rosa dos ventos indica os pontos cardeais: norte, sul, leste e oeste. O Sol nasce do lado leste."
+          ],
+          "terms": [
+            {
+              "word": "Legenda",
+              "meaning": "o quadro do mapa que explica o que cada cor, linha ou símbolo quer dizer."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As projeções",
+          "body": [
+            "Não dá para achatar uma laranja sem rasgar ou esticar a casca. Com a Terra é igual: todo mapa-múndi distorce alguma coisa.",
+            "A projeção de Mercator mantém as formas, mas aumenta muito as áreas perto dos polos. A de Peters mantém o tamanho das áreas, mas deforma os contornos."
+          ],
+          "terms": [
+            {
+              "word": "Projeção cartográfica",
+              "meaning": "o jeito de passar a superfície redonda da Terra para o papel plano. Toda projeção distorce alguma coisa."
+            }
+          ],
+          "table": {
+            "label": "As duas mais cobradas",
+            "headers": [
+              "Projeção",
+              "Preserva",
+              "Distorce"
+            ],
+            "rows": [
+              [
+                "Mercator",
+                "as formas e as direções, boa para navegar",
+                "as áreas perto dos polos"
+              ],
+              [
+                "Peters",
+                "o tamanho real das áreas",
+                "as formas dos continentes"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A Groenlândia não é do tamanho da África",
+          "body": [
+            "No mapa de Mercator, a Groenlândia parece quase do tamanho da África. Na verdade, a África é cerca de 14 vezes maior.",
+            "Por isso a escolha da projeção também é política: ela pode fazer a Europa parecer maior do que é."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá uma escala e uma medida e pede a distância real. Também compara projeções e pergunta qual distorce o quê."
+          ],
+          "bullets": [
+            "“Num mapa de escala 1:50.000, a distância de 4 cm corresponde a…”",
+            "“A projeção de Mercator distorce principalmente…”",
+            "“Um mapa de escala grande é indicado para representar…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Escala",
+              "meaning": "a conta que diz quantas vezes o lugar real foi reduzido para caber no mapa."
+            },
+            {
+              "word": "Projeção cartográfica",
+              "meaning": "o jeito de passar a superfície redonda da Terra para o papel plano. Toda projeção distorce alguma coisa."
+            }
+          ],
+          "bullets": [
+            "Achar que escala grande mostra área grande. É o contrário: mostra área pequena com mais detalhe.",
+            "Esquecer de converter centímetros em quilômetros. Corte cinco zeros: 100.000 cm = 1 km.",
+            "Achar que existe projeção sem distorção. Toda projeção distorce algo.",
+            "Achar que a Groenlândia é enorme. A distorção de Mercator a aumenta."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A escala diz quanto o real foi reduzido: 1:100.000 quer dizer 1 cm para 1 km. Escala grande mostra pouca área com muito detalhe.",
+            "A legenda explica os símbolos. Mercator preserva formas e aumenta as áreas perto dos polos; Peters preserva as áreas."
+          ],
+          "terms": [
+            {
+              "word": "Legenda",
+              "meaning": "o quadro do mapa que explica o que cada cor, linha ou símbolo quer dizer."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Distância",
+          "statement": "Num mapa de escala 1:100.000, duas cidades estão a 3 cm. Qual a distância real?",
+          "options": [
+            "3 km",
+            "30 km",
+            "300 m",
+            "3.000 km",
+            "0,3 km"
+          ],
+          "correct_index": 0,
+          "explanation": "3 × 100.000 = 300.000 cm, que dá 3 km.",
+          "pitfall": "30 km sai de errar um zero na conversão."
+        },
+        {
+          "topic": "Grande",
+          "statement": "Um mapa de escala grande é o melhor para mostrar:",
+          "options": [
+            "um bairro com suas ruas",
+            "o mundo inteiro",
+            "um continente",
+            "o Brasil inteiro",
+            "o sistema solar"
+          ],
+          "correct_index": 0,
+          "explanation": "Escala grande mostra pouca área com muito detalhe.",
+          "pitfall": "Achar que escala grande mostra área grande é o engano clássico."
+        },
+        {
+          "topic": "Legenda",
+          "statement": "Para que serve a legenda de um mapa?",
+          "options": [
+            "explicar o que cada cor e símbolo representa",
+            "dizer a distância real",
+            "mostrar o norte",
+            "dar o nome do autor",
+            "mudar a escala"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem a legenda, as cores e símbolos não querem dizer nada.",
+          "pitfall": "Mostrar o norte é trabalho da rosa dos ventos."
+        },
+        {
+          "topic": "Mercator",
+          "statement": "A projeção de Mercator:",
+          "options": [
+            "mantém as formas e aumenta as áreas perto dos polos",
+            "mantém o tamanho real de todas as áreas",
+            "não tem distorção nenhuma",
+            "deforma tudo igualmente",
+            "só mostra o Brasil"
+          ],
+          "correct_index": 0,
+          "explanation": "Por isso a Groenlândia parece enorme nela.",
+          "pitfall": "Manter o tamanho das áreas é a proposta de Peters."
+        },
+        {
+          "topic": "Peters",
+          "statement": "A projeção de Peters ficou conhecida por:",
+          "options": [
+            "mostrar o tamanho real das áreas, deformando as formas",
+            "ser a melhor para navegar",
+            "não ter nenhuma distorção",
+            "aumentar a Europa",
+            "mostrar o relevo em três dimensões"
+          ],
+          "correct_index": 0,
+          "explanation": "Peters mantém as áreas proporcionais, mas os continentes ficam esticados.",
+          "pitfall": "Boa para navegar é a de Mercator."
+        },
+        {
+          "topic": "Converter",
+          "statement": "Quantos centímetros há em 1 quilômetro?",
+          "options": [
+            "100.000",
+            "1.000",
+            "10.000",
+            "1.000.000",
+            "100"
+          ],
+          "correct_index": 0,
+          "explanation": "1 km = 1.000 m, e 1 m = 100 cm. 1.000 × 100 = 100.000.",
+          "pitfall": "1.000 é o número de metros, não de centímetros."
+        },
+        {
+          "topic": "Distorção",
+          "statement": "Por que todo mapa-múndi tem alguma distorção?",
+          "options": [
+            "é impossível passar uma superfície redonda para o plano sem esticar ou rasgar",
+            "os cartógrafos erram de propósito",
+            "a Terra é plana",
+            "os satélites tiram fotos tortas",
+            "porque os mapas são feitos à mão"
+          ],
+          "correct_index": 0,
+          "explanation": "Como a casca de uma laranja, a superfície da Terra não fica plana sem deformar.",
+          "pitfall": "Não é erro: é uma limitação de qualquer projeção."
+        },
+        {
+          "topic": "Escalas",
+          "format": "match",
+          "statement": "Ligue cada escala ao que ela mostra bem.",
+          "pairs": [
+            {
+              "left": "1:1.000",
+              "right": "uma rua"
+            },
+            {
+              "left": "1:50.000",
+              "right": "uma cidade"
+            },
+            {
+              "left": "1:5.000.000",
+              "right": "um país"
+            },
+            {
+              "left": "1:100.000.000",
+              "right": "o mundo"
+            }
+          ],
+          "explanation": "Quanto maior o número de baixo, menor a escala e maior a área.",
+          "pitfall": "O número grande engana: 1:100.000.000 é a escala MENOR de todas."
+        },
+        {
+          "topic": "Leste",
+          "statement": "Para que lado o Sol nasce?",
+          "options": [
+            "leste",
+            "oeste",
+            "norte",
+            "sul",
+            "depende do mapa"
+          ],
+          "correct_index": 0,
+          "explanation": "O Sol nasce do lado leste e se põe no oeste.",
+          "pitfall": "Oeste é onde ele se põe.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Ler 1:1.000",
+          "statement": "Na escala 1:1.000, 1 cm no mapa vale:",
+          "options": [
+            "10 metros no chão",
+            "1 quilômetro no chão",
+            "100 metros no chão",
+            "1 metro no chão",
+            "1.000 quilômetros"
+          ],
+          "correct_index": 0,
+          "explanation": "1.000 cm = 10 m.",
+          "pitfall": "1 km seria a escala 1:100.000.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Mapa da cidade",
+          "statement": "Num mapa de escala 1:50.000, a distância de 4 cm corresponde a:",
+          "options": [
+            "2 km",
+            "20 km",
+            "200 m",
+            "4 km",
+            "50 km"
+          ],
+          "correct_index": 0,
+          "explanation": "4 × 50.000 = 200.000 cm, que dá 2 km.",
+          "pitfall": "20 km vem de errar um zero.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Menor escala",
+          "statement": "Qual destas é a menor escala?",
+          "options": [
+            "1:20.000.000",
+            "1:20.000",
+            "1:2.000",
+            "1:200.000",
+            "1:200"
+          ],
+          "correct_index": 0,
+          "explanation": "Escala é uma fração: 1/20.000.000 é o menor valor.",
+          "pitfall": "O número grande de baixo faz a escala ser PEQUENA.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Política",
+          "statement": "Por que se diz que a escolha da projeção também é política?",
+          "options": [
+            "a projeção pode fazer alguns continentes parecerem maiores ou menores",
+            "os governos proíbem algumas projeções",
+            "só países ricos podem fazer mapas",
+            "a projeção muda as fronteiras de verdade",
+            "não tem relação nenhuma"
+          ],
+          "correct_index": 0,
+          "explanation": "Mercator aumenta a Europa e a América do Norte, e passa a ideia de que são maiores.",
+          "pitfall": "A projeção muda a IMAGEM, não as fronteiras reais.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Ampliar",
+          "statement": "Um mapa de 1:200.000 é ampliado e passa a ter o dobro do tamanho. Qual a nova escala?",
+          "options": [
+            "1:100.000",
+            "1:400.000",
+            "1:200.000",
+            "1:20.000",
+            "1:2.000.000"
+          ],
+          "correct_index": 0,
+          "explanation": "O dobro do tamanho quer dizer que 1 cm passa a valer metade da distância: 1:100.000.",
+          "pitfall": "1:400.000 seria o mapa reduzido à metade, não ampliado.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "coordenadas-e-fusos",
+      "title": "Coordenadas e fusos horários",
+      "module": "Mapas",
+      "summary": "Latitude e longitude formam o endereço de qualquer ponto da Terra. Como a Terra gira, ela é dividida em 24 fusos, e a hora muda de um para o outro.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Batalha naval",
+          "body": [
+            "No jogo de batalha naval, você acerta o navio dizendo uma letra e um número, como B5. Duas coordenadas acham uma casa.",
+            "Com a Terra é igual. Duas medidas acham qualquer ponto do planeta."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As duas linhas de partida",
+          "body": [
+            "Para medir, é preciso um ponto zero. A linha do Equador é o zero da latitude. O meridiano de Greenwich é o zero da longitude."
+          ],
+          "terms": [
+            {
+              "word": "Equador",
+              "meaning": "a linha imaginária que divide a Terra em hemisfério norte e hemisfério sul."
+            },
+            {
+              "word": "Meridiano de Greenwich",
+              "meaning": "a linha imaginária que vai de um polo ao outro e passa por Londres. Ela é o 0° da longitude e divide a Terra em leste e oeste."
+            },
+            {
+              "word": "Latitude",
+              "meaning": "a distância de um ponto até a linha do Equador, medida em graus para o norte ou para o sul, de 0° a 90°."
+            },
+            {
+              "word": "Longitude",
+              "meaning": "a distância de um ponto até o meridiano de Greenwich, medida em graus para leste ou oeste, de 0° a 180°."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/geografia/coordenadas.svg",
+            "alt": "Globo com a linha do Equador na horizontal e o meridiano de Greenwich na vertical. Um ponto marcado tem as setas da latitude, a partir do Equador, e da longitude, a partir de Greenwich.",
+            "caption": "O Equador é o zero da latitude; Greenwich, o zero da longitude."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Latitude e longitude",
+          "body": [
+            "A latitude diz quão longe do Equador você está, de 0° a 90°, norte ou sul. A longitude diz quão longe de Greenwich, de 0° a 180°, leste ou oeste.",
+            "Brasília fica perto de 16° de latitude sul e 48° de longitude oeste. O Brasil inteiro está a oeste de Greenwich."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Por que existem fusos",
+          "body": [
+            "A Terra dá uma volta em si mesma a cada 24 horas. Enquanto um lado está de dia, o outro está de noite.",
+            "Por isso ela é dividida em 24 fusos. Uma volta tem 360°, e 360 dividido por 24 dá 15°: cada fuso tem 15° de largura."
+          ],
+          "terms": [
+            {
+              "word": "Fuso horário",
+              "meaning": "cada uma das 24 faixas da Terra, de polo a polo, que têm a mesma hora."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Leste adiantado, oeste atrasado",
+          "body": [
+            "A Terra gira de oeste para leste. Por isso o Sol nasce primeiro para quem está a leste, e lá o relógio está adiantado.",
+            "Andando para o leste, some uma hora a cada fuso. Para o oeste, tire uma hora."
+          ],
+          "example": {
+            "label": "Conta de fuso",
+            "lines": [
+              "Em Brasília são 10h. Londres fica 3 fusos a leste.",
+              "Para o leste, soma: 10 + 3 = 13h em Londres.",
+              "Tóquio fica 12 fusos a leste de Brasília: lá são 22h."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os fusos do Brasil",
+          "body": [
+            "O Brasil é tão largo que tem quatro fusos. A hora oficial é a de Brasília, três horas atrás de Greenwich."
+          ],
+          "table": {
+            "label": "Os quatro fusos brasileiros",
+            "headers": [
+              "Em relação a Brasília",
+              "Onde"
+            ],
+            "rows": [
+              [
+                "uma hora a mais",
+                "ilhas do Atlântico, como Fernando de Noronha"
+              ],
+              [
+                "a mesma hora",
+                "Sul, Sudeste, Nordeste, Goiás, Pará e outros"
+              ],
+              [
+                "uma hora a menos",
+                "Mato Grosso, Mato Grosso do Sul, Rondônia, Roraima e boa parte do Amazonas"
+              ],
+              [
+                "duas horas a menos",
+                "Acre e o oeste do Amazonas"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá a hora de um lugar e pede a de outro. Também pede a latitude ou o hemisfério de uma cidade."
+          ],
+          "bullets": [
+            "“Se em Brasília são 14h, em Londres são…”",
+            "“Um ponto a 30° de latitude sul e 50° de longitude oeste está…”",
+            "“Cada fuso horário corresponde a quantos graus?”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Latitude",
+              "meaning": "a distância de um ponto até a linha do Equador, medida em graus para o norte ou para o sul, de 0° a 90°."
+            },
+            {
+              "word": "Longitude",
+              "meaning": "a distância de um ponto até o meridiano de Greenwich, medida em graus para leste ou oeste, de 0° a 180°."
+            }
+          ],
+          "bullets": [
+            "Trocar latitude por longitude. Latitude mede a partir do Equador; longitude, a partir de Greenwich.",
+            "Errar o sentido da hora: a leste é mais tarde, a oeste é mais cedo.",
+            "Achar que a latitude vai até 180°. Ela vai até 90°; a longitude é que vai até 180°.",
+            "Achar que o Brasil tem um só fuso. Tem quatro."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A latitude mede a distância até o Equador, até 90°. A longitude mede até Greenwich, até 180°.",
+            "São 24 fusos de 15°. A leste a hora é adiantada, a oeste é atrasada, e o Brasil tem quatro fusos."
+          ],
+          "terms": [
+            {
+              "word": "Fuso horário",
+              "meaning": "cada uma das 24 faixas da Terra, de polo a polo, que têm a mesma hora."
+            },
+            {
+              "word": "Equador",
+              "meaning": "a linha imaginária que divide a Terra em hemisfério norte e hemisfério sul."
+            },
+            {
+              "word": "Meridiano de Greenwich",
+              "meaning": "a linha imaginária que vai de um polo ao outro e passa por Londres. Ela é o 0° da longitude e divide a Terra em leste e oeste."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Londres",
+          "statement": "Em Brasília são 14h. Londres está 3 fusos a leste. Que horas são em Londres?",
+          "options": [
+            "17h",
+            "11h",
+            "14h",
+            "20h",
+            "8h"
+          ],
+          "correct_index": 0,
+          "explanation": "Para o leste, a hora aumenta: 14 + 3 = 17h.",
+          "pitfall": "11h é o resultado de andar no sentido errado."
+        },
+        {
+          "topic": "15 graus",
+          "statement": "Quantos graus de largura tem cada fuso horário?",
+          "options": [
+            "15°",
+            "24°",
+            "30°",
+            "10°",
+            "360°"
+          ],
+          "correct_index": 0,
+          "explanation": "360° divididos por 24 fusos dá 15° cada.",
+          "pitfall": "24 é o número de fusos, não a largura deles."
+        },
+        {
+          "topic": "Latitude",
+          "statement": "A latitude de um ponto é medida a partir:",
+          "options": [
+            "da linha do Equador",
+            "do meridiano de Greenwich",
+            "do polo norte",
+            "de Brasília",
+            "do trópico de Capricórnio"
+          ],
+          "correct_index": 0,
+          "explanation": "A latitude vai de 0° no Equador a 90° nos polos.",
+          "pitfall": "Greenwich é o ponto de partida da longitude."
+        },
+        {
+          "topic": "Hemisfério",
+          "statement": "O meridiano de Greenwich divide a Terra em:",
+          "options": [
+            "leste e oeste",
+            "norte e sul",
+            "dia e noite",
+            "terra e mar",
+            "verão e inverno"
+          ],
+          "correct_index": 0,
+          "explanation": "Greenwich separa os hemisférios leste e oeste.",
+          "pitfall": "Norte e sul são separados pelo Equador."
+        },
+        {
+          "topic": "Sentido",
+          "statement": "Por que o horário é adiantado nos lugares a leste?",
+          "options": [
+            "a Terra gira de oeste para leste, e o Sol aparece primeiro lá",
+            "a Terra gira de leste para oeste",
+            "os relógios do leste são mais rápidos",
+            "o leste fica mais perto do Sol",
+            "por decisão da ONU"
+          ],
+          "correct_index": 0,
+          "explanation": "Quem está a leste vê o Sol nascer antes.",
+          "pitfall": "A Terra gira de oeste para leste, não o contrário."
+        },
+        {
+          "topic": "Brasil",
+          "statement": "Quantos fusos horários o Brasil tem?",
+          "options": [
+            "quatro",
+            "um",
+            "dois",
+            "três",
+            "cinco"
+          ],
+          "correct_index": 0,
+          "explanation": "Do arquipélago de Fernando de Noronha ao Acre, são quatro fusos.",
+          "pitfall": "Muita gente acha que é um só porque usa a hora de Brasília."
+        },
+        {
+          "topic": "Máximo",
+          "statement": "Qual é o maior valor que a latitude pode ter?",
+          "options": [
+            "90°",
+            "180°",
+            "360°",
+            "45°",
+            "24°"
+          ],
+          "correct_index": 0,
+          "explanation": "Do Equador ao polo são 90°.",
+          "pitfall": "180° é o máximo da longitude."
+        },
+        {
+          "topic": "Coordenadas",
+          "format": "match",
+          "statement": "Ligue cada termo à sua definição.",
+          "pairs": [
+            {
+              "left": "latitude",
+              "right": "distância até o Equador"
+            },
+            {
+              "left": "longitude",
+              "right": "distância até Greenwich"
+            },
+            {
+              "left": "Equador",
+              "right": "divide norte e sul"
+            },
+            {
+              "left": "Greenwich",
+              "right": "divide leste e oeste"
+            }
+          ],
+          "explanation": "Cada medida tem a sua linha de partida.",
+          "pitfall": "Latitude e longitude são as mais trocadas."
+        },
+        {
+          "topic": "Volta",
+          "statement": "Em quanto tempo a Terra dá uma volta em si mesma?",
+          "options": [
+            "24 horas",
+            "365 dias",
+            "12 horas",
+            "30 dias",
+            "1 hora"
+          ],
+          "correct_index": 0,
+          "explanation": "A rotação leva cerca de 24 horas e cria o dia e a noite.",
+          "pitfall": "365 dias é a volta em torno do Sol.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Oeste",
+          "statement": "O Brasil inteiro está a oeste de Greenwich. Por isso, a hora no Brasil é:",
+          "options": [
+            "mais cedo que a de Londres",
+            "mais tarde que a de Londres",
+            "igual à de Londres",
+            "igual à de Tóquio",
+            "sempre meia-noite"
+          ],
+          "correct_index": 0,
+          "explanation": "A oeste, o relógio está atrasado. Brasília está três horas atrás de Londres.",
+          "pitfall": "Mais tarde seria se o Brasil ficasse a leste.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Acre",
+          "statement": "Em Brasília são 12h. No Acre, duas horas atrás, são:",
+          "options": [
+            "10h",
+            "14h",
+            "12h",
+            "9h",
+            "11h"
+          ],
+          "correct_index": 0,
+          "explanation": "O Acre está a oeste: tira duas horas.",
+          "pitfall": "14h seria somar, como se o Acre estivesse a leste.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Ponto",
+          "statement": "Um ponto a 30° sul e 50° oeste está:",
+          "options": [
+            "no hemisfério sul e no ocidental",
+            "no hemisfério norte e no oriental",
+            "no hemisfério sul e no oriental",
+            "no hemisfério norte e no ocidental",
+            "na linha do Equador"
+          ],
+          "correct_index": 0,
+          "explanation": "Sul pela latitude; oeste, ou ocidental, pela longitude.",
+          "pitfall": "Oriental é o lado leste.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Tóquio",
+          "statement": "Em Brasília são 20h de segunda-feira. Tóquio fica 12 fusos a leste. Que horas e que dia são lá?",
+          "options": [
+            "8h de terça-feira",
+            "8h de segunda-feira",
+            "20h de terça-feira",
+            "8h de domingo",
+            "12h de segunda-feira"
+          ],
+          "correct_index": 0,
+          "explanation": "20 + 12 = 32 horas, ou seja, 8h do dia seguinte.",
+          "pitfall": "Esquecer de virar o dia é o erro mais comum.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Viagem",
+          "statement": "Um avião sai de Brasília às 22h para um lugar 3 fusos a leste, num voo de 9 horas. Que horas são no destino quando ele chega?",
+          "options": [
+            "10h do dia seguinte",
+            "7h do dia seguinte",
+            "4h do dia seguinte",
+            "22h",
+            "13h do mesmo dia"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele chega às 7h no horário de Brasília. No destino, 3 fusos a leste, são 10h.",
+          "pitfall": "7h é a hora de Brasília, sem converter.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "estrutura-e-relevo",
+      "title": "A Terra por dentro e o relevo",
+      "module": "A Terra",
+      "summary": "A Terra tem camadas, e a de fora é quebrada em placas que se movem. Forças de dentro levantam o relevo, e o sol, a chuva e o vento o desgastam.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Um pêssego",
+          "body": [
+            "Corte um pêssego ao meio: casca fina, polpa grossa e caroço duro no centro. A Terra tem um jeito parecido.",
+            "A casca é a crosta, onde vivemos. A polpa é o manto, de rocha quente. O caroço é o núcleo, de metal muito quente."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As placas que se mexem",
+          "body": [
+            "A camada de fora não é inteira: ela é quebrada em grandes pedaços, as placas tectônicas. Elas flutuam sobre o manto e se movem devagar.",
+            "Onde as placas se encontram, há terremotos, vulcões e montanhas. A Cordilheira dos Andes nasceu do choque de duas placas."
+          ],
+          "terms": [
+            {
+              "word": "Placa tectônica",
+              "meaning": "cada um dos grandes pedaços em que a camada de fora da Terra é dividida. Elas se movem alguns centímetros por ano."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Por que o Brasil tem poucos terremotos",
+          "body": [
+            "O Brasil fica no meio da placa Sul-Americana, longe das bordas. Por isso não tem vulcões ativos nem terremotos fortes.",
+            "Tremores pequenos acontecem, mas quase sempre passam sem ninguém perceber."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Forças que levantam e forças que gastam",
+          "body": [
+            "As forças de dentro da Terra, como o movimento das placas e os vulcões, criam e levantam o relevo.",
+            "As forças de fora desgastam e carregam o material: a chuva, o vento e os rios. Um vale de rio é obra da água ao longo de milhares de anos."
+          ],
+          "terms": [
+            {
+              "word": "Intemperismo",
+              "meaning": "o desgaste das rochas pelo sol, pela chuva e pelo vento, que as quebra em pedaços."
+            },
+            {
+              "word": "Erosão",
+              "meaning": "o transporte do material desgastado pela água, pelo vento ou pelo gelo, que vai mudando a forma do relevo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As formas do relevo",
+          "body": [
+            "O relevo é o formato da superfície. Três formas aparecem em toda prova."
+          ],
+          "terms": [
+            {
+              "word": "Planalto",
+              "meaning": "uma área de terreno alto em que o desgaste é maior do que o acúmulo de material."
+            },
+            {
+              "word": "Planície",
+              "meaning": "uma área plana e baixa em que o acúmulo de material é maior do que o desgaste, como a beira de um rio."
+            },
+            {
+              "word": "Depressão (relevo)",
+              "meaning": "uma área mais baixa do que o terreno ao redor."
+            }
+          ],
+          "table": {
+            "label": "As três formas principais",
+            "headers": [
+              "Forma",
+              "Como é",
+              "Exemplo no Brasil"
+            ],
+            "rows": [
+              [
+                "planalto",
+                "alto; o desgaste vence",
+                "Planalto Central"
+              ],
+              [
+                "planície",
+                "baixa e plana; o acúmulo vence",
+                "Pantanal e a beira do Amazonas"
+              ],
+              [
+                "depressão",
+                "mais baixa que o entorno",
+                "Depressão Sertaneja, no Nordeste"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O relevo brasileiro",
+          "body": [
+            "O relevo do Brasil é antigo e muito desgastado. Por isso quase não há montanhas altas, e predominam planaltos e depressões.",
+            "O ponto mais alto do país é o Pico da Neblina, no Amazonas, com cerca de 3 mil metros."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede a diferença entre planalto e planície e as causas de terremotos. Também pergunta por que o Brasil quase não tem tremores fortes."
+          ],
+          "bullets": [
+            "“A ocorrência de terremotos está associada a…”",
+            "“O relevo em que a sedimentação supera o desgaste é…”",
+            "“O Brasil não apresenta vulcanismo ativo porque…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Intemperismo",
+              "meaning": "o desgaste das rochas pelo sol, pela chuva e pelo vento, que as quebra em pedaços."
+            },
+            {
+              "word": "Erosão",
+              "meaning": "o transporte do material desgastado pela água, pelo vento ou pelo gelo, que vai mudando a forma do relevo."
+            },
+            {
+              "word": "Planalto",
+              "meaning": "uma área de terreno alto em que o desgaste é maior do que o acúmulo de material."
+            },
+            {
+              "word": "Planície",
+              "meaning": "uma área plana e baixa em que o acúmulo de material é maior do que o desgaste, como a beira de um rio."
+            }
+          ],
+          "bullets": [
+            "Definir planalto e planície só pela altura. O que conta é se vence o desgaste ou o acúmulo.",
+            "Achar que o Brasil nunca tem tremores. Tem, mas fracos.",
+            "Trocar intemperismo (o desgaste) por erosão (o transporte).",
+            "Achar que o Brasil tem montanhas muito altas. O relevo é antigo e baixo."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A Terra tem crosta, manto e núcleo. As placas tectônicas se movem, e nas bordas há terremotos e vulcões.",
+            "Forças de dentro levantam o relevo; sol, chuva e vento o gastam. Planalto é desgaste, planície é acúmulo."
+          ],
+          "terms": [
+            {
+              "word": "Placa tectônica",
+              "meaning": "cada um dos grandes pedaços em que a camada de fora da Terra é dividida. Elas se movem alguns centímetros por ano."
+            },
+            {
+              "word": "Depressão (relevo)",
+              "meaning": "uma área mais baixa do que o terreno ao redor."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Camadas",
+          "statement": "Qual é a ordem das camadas da Terra, de fora para dentro?",
+          "options": [
+            "crosta, manto e núcleo",
+            "núcleo, manto e crosta",
+            "manto, crosta e núcleo",
+            "crosta, núcleo e manto",
+            "núcleo, crosta e manto"
+          ],
+          "correct_index": 0,
+          "explanation": "Como no pêssego: casca, polpa e caroço.",
+          "pitfall": "Começar pelo núcleo é ir de dentro para fora."
+        },
+        {
+          "topic": "Terremotos",
+          "statement": "Os terremotos acontecem principalmente:",
+          "options": [
+            "nas bordas das placas tectônicas",
+            "no centro das placas",
+            "só no fundo do mar",
+            "nos lugares mais frios",
+            "onde chove muito"
+          ],
+          "correct_index": 0,
+          "explanation": "É onde as placas se chocam ou raspam uma na outra.",
+          "pitfall": "O centro das placas, como o Brasil, é a área mais calma."
+        },
+        {
+          "topic": "Brasil",
+          "statement": "Por que o Brasil quase não tem terremotos fortes?",
+          "options": [
+            "fica no meio de uma placa tectônica, longe das bordas",
+            "não tem placas tectônicas",
+            "é muito quente",
+            "tem muitos rios",
+            "fica no hemisfério sul"
+          ],
+          "correct_index": 0,
+          "explanation": "Longe das bordas da placa, o terreno é estável.",
+          "pitfall": "Todo o planeta está sobre placas, inclusive o Brasil."
+        },
+        {
+          "topic": "Planície",
+          "statement": "A planície é uma área:",
+          "options": [
+            "plana e baixa, onde o acúmulo de material vence o desgaste",
+            "alta, onde o desgaste vence",
+            "mais baixa que o entorno, sempre seca",
+            "de montanhas muito altas",
+            "dentro de um vulcão"
+          ],
+          "correct_index": 0,
+          "explanation": "Os rios depositam material e deixam o terreno plano.",
+          "pitfall": "Onde o desgaste vence é o planalto."
+        },
+        {
+          "topic": "Intemperismo",
+          "statement": "O intemperismo é:",
+          "options": [
+            "o desgaste das rochas pelo sol, chuva, vento e seres vivos",
+            "o transporte de material pelos rios",
+            "o movimento das placas",
+            "a erupção de um vulcão",
+            "a formação de uma montanha"
+          ],
+          "correct_index": 0,
+          "explanation": "Primeiro a rocha se desgasta; depois a erosão leva os pedaços.",
+          "pitfall": "Transportar o material é a erosão."
+        },
+        {
+          "topic": "Andes",
+          "statement": "A Cordilheira dos Andes se formou:",
+          "options": [
+            "pelo choque de duas placas tectônicas",
+            "pelo desgaste da chuva",
+            "pela ação do vento do deserto",
+            "pelo acúmulo de areia na praia",
+            "por um meteoro"
+          ],
+          "correct_index": 0,
+          "explanation": "A placa de Nazca empurra a Sul-Americana, e o terreno se dobra para cima.",
+          "pitfall": "A chuva desgasta o relevo; não forma montanhas."
+        },
+        {
+          "topic": "Pico",
+          "statement": "O ponto mais alto do Brasil é:",
+          "options": [
+            "o Pico da Neblina",
+            "o Pão de Açúcar",
+            "o Corcovado",
+            "o Pico do Everest",
+            "a Chapada Diamantina"
+          ],
+          "correct_index": 0,
+          "explanation": "O Pico da Neblina, no Amazonas, tem cerca de 3 mil metros.",
+          "pitfall": "O Everest fica na Ásia, não no Brasil."
+        },
+        {
+          "topic": "Relevo",
+          "format": "match",
+          "statement": "Ligue cada termo ao que ele é.",
+          "pairs": [
+            {
+              "left": "planalto",
+              "right": "área alta onde o desgaste vence"
+            },
+            {
+              "left": "planície",
+              "right": "área plana onde o acúmulo vence"
+            },
+            {
+              "left": "depressão",
+              "right": "área mais baixa que o entorno"
+            },
+            {
+              "left": "erosão",
+              "right": "transporte do material desgastado"
+            }
+          ],
+          "explanation": "Três formas e um processo.",
+          "pitfall": "Planalto e planície se separam pelo que vence: desgaste ou acúmulo."
+        },
+        {
+          "topic": "Núcleo",
+          "statement": "A camada mais interna da Terra é:",
+          "options": [
+            "o núcleo",
+            "a crosta",
+            "o manto",
+            "a atmosfera",
+            "a placa"
+          ],
+          "correct_index": 0,
+          "explanation": "O núcleo é o caroço, de metal muito quente.",
+          "pitfall": "A crosta é a de fora, onde vivemos.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Força externa",
+          "statement": "Qual destas é uma força externa que modifica o relevo?",
+          "options": [
+            "a chuva",
+            "o movimento das placas",
+            "um vulcão",
+            "um terremoto",
+            "o calor do núcleo"
+          ],
+          "correct_index": 0,
+          "explanation": "A chuva desgasta e carrega material.",
+          "pitfall": "Placas, vulcões e terremotos são forças de dentro.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Antigo",
+          "statement": "Por que o relevo brasileiro tem poucas montanhas altas?",
+          "options": [
+            "é muito antigo e foi desgastado por milhões de anos",
+            "o Brasil fica longe do mar",
+            "nunca houve placas tectônicas aqui",
+            "chove pouco no Brasil",
+            "foi aplainado por pessoas"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem choque recente de placas, o desgaste venceu.",
+          "pitfall": "Chove bastante no Brasil, e isso até ajuda o desgaste.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Pantanal",
+          "statement": "O Pantanal é um exemplo de:",
+          "options": [
+            "planície",
+            "planalto",
+            "cordilheira",
+            "depressão absoluta, abaixo do nível do mar",
+            "vulcão"
+          ],
+          "correct_index": 0,
+          "explanation": "É uma área plana e baixa, que alaga em parte do ano.",
+          "pitfall": "Depressão absoluta fica abaixo do nível do mar, o que não é o caso.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Altura não basta",
+          "statement": "Por que planalto e planície não se definem só pela altura?",
+          "options": [
+            "o que define é se o desgaste ou o acúmulo de material vence",
+            "porque os dois têm sempre a mesma altura",
+            "porque a altura muda todo dia",
+            "porque planícies são sempre mais altas",
+            "porque ninguém mede a altura"
+          ],
+          "correct_index": 0,
+          "explanation": "Existe planície em lugar relativamente alto e planalto baixo. O que decide é o processo.",
+          "pitfall": "A altura ajuda a imaginar, mas não é o critério.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Tremor",
+          "statement": "Qual frase sobre o Brasil está certa?",
+          "options": [
+            "acontecem tremores pequenos, quase sempre imperceptíveis",
+            "nunca houve nenhum tremor de terra",
+            "tem vulcões ativos no Nordeste",
+            "fica na borda entre duas placas",
+            "tem terremotos fortes todo ano"
+          ],
+          "correct_index": 0,
+          "explanation": "Há pequenos tremores, ligados a falhas antigas dentro da placa.",
+          "pitfall": "“Nunca” é o erro: tremores fracos acontecem.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "tempo-e-clima",
+      "title": "Tempo, clima e os climas do Brasil",
+      "module": "A Terra",
+      "summary": "Tempo é como está o ar agora; clima é o padrão de muitos anos. Latitude, altitude, mar e massas de ar explicam por que o Brasil tem climas tão diferentes.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Hoje e sempre",
+          "body": [
+            "“Hoje está chovendo” fala do tempo. “Em Manaus faz calor o ano todo” fala do clima.",
+            "Tempo é o estado do ar num momento. Clima é o comportamento médio ao longo de pelo menos 30 anos."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que muda o clima",
+          "body": [
+            "Perto do Equador, o Sol bate mais forte e faz mais calor. Quanto mais alto, mais frio: na serra é mais fresco que na praia.",
+            "Perto do mar, a temperatura varia menos, porque a água esquenta e esfria devagar. No meio do continente, a variação é maior."
+          ],
+          "terms": [
+            {
+              "word": "Equador",
+              "meaning": "a linha imaginária que divide a Terra em norte e sul."
+            },
+            {
+              "word": "Latitude",
+              "meaning": "a distância de um lugar até o Equador, para o norte ou para o sul."
+            },
+            {
+              "word": "Massa de ar",
+              "meaning": "um grande volume de ar com temperatura e umidade parecidas, que se desloca e muda o tempo por onde passa."
+            }
+          ],
+          "table": {
+            "label": "Os fatores principais",
+            "headers": [
+              "Fator",
+              "Efeito"
+            ],
+            "rows": [
+              [
+                "latitude",
+                "perto do Equador, mais quente"
+              ],
+              [
+                "altitude",
+                "mais alto, mais frio"
+              ],
+              [
+                "proximidade do mar",
+                "temperatura varia menos"
+              ],
+              [
+                "massas de ar",
+                "trazem frio, calor, chuva ou seca"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "As massas de ar",
+          "body": [
+            "No inverno, uma massa de ar frio vem do sul e derruba a temperatura. É a famosa frente fria.",
+            "Na Amazônia, uma massa de ar quente e úmida leva chuva para boa parte do país no verão."
+          ],
+          "terms": [
+            {
+              "word": "Massa de ar",
+              "meaning": "um grande volume de ar com temperatura e umidade parecidas, que se desloca e muda o tempo por onde passa."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os climas do Brasil",
+          "body": [
+            "Como o Brasil é enorme, há vários climas. A maior parte do território é quente."
+          ],
+          "terms": [
+            {
+              "word": "Semiárido",
+              "meaning": "o clima quente com pouca chuva, mal distribuída ao longo do ano, como o do sertão nordestino."
+            }
+          ],
+          "table": {
+            "label": "Os climas brasileiros",
+            "headers": [
+              "Clima",
+              "Onde",
+              "Como é"
+            ],
+            "rows": [
+              [
+                "equatorial",
+                "Amazônia",
+                "quente e chuvoso o ano todo"
+              ],
+              [
+                "tropical",
+                "Centro-Oeste e parte do Sudeste",
+                "verão chuvoso e inverno seco"
+              ],
+              [
+                "tropical de altitude",
+                "serras do Sudeste",
+                "mais ameno, com inverno fresco"
+              ],
+              [
+                "semiárido",
+                "sertão do Nordeste",
+                "quente, com pouca chuva e mal distribuída"
+              ],
+              [
+                "subtropical",
+                "Sul",
+                "estações bem definidas e inverno frio, com geada"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O El Niño",
+          "body": [
+            "De tempos em tempos, as águas do Pacífico perto do Equador esquentam além do normal. É o El Niño.",
+            "No Brasil, ele costuma trazer seca no Norte e no Nordeste e chuva forte no Sul."
+          ],
+          "terms": [
+            {
+              "word": "El Niño",
+              "meaning": "o aquecimento fora do normal das águas do oceano Pacífico perto do Equador, que muda as chuvas em várias partes do mundo."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova separa tempo de clima e pede o clima de uma região pela descrição. Também cobra os efeitos do El Niño."
+          ],
+          "bullets": [
+            "“A frase ‘amanhã vai chover’ refere-se a tempo ou clima?”",
+            "“Clima quente com chuvas escassas e irregulares é…”",
+            "“O fenômeno El Niño provoca no Brasil…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Semiárido",
+              "meaning": "o clima quente com pouca chuva, mal distribuída ao longo do ano, como o do sertão nordestino."
+            }
+          ],
+          "bullets": [
+            "Trocar tempo por clima. Tempo é agora; clima é o padrão de décadas.",
+            "Achar que o Brasil todo é quente. O Sul tem inverno frio, com geada.",
+            "Achar que no semiárido nunca chove. Chove pouco e de forma irregular.",
+            "Achar que altitude esquenta. Quanto mais alto, mais frio."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Tempo é o estado do ar agora; clima é o padrão de pelo menos 30 anos. Latitude, altitude, mar e massas de ar mudam o clima.",
+            "No Brasil há o clima equatorial e o tropical. Há também o tropical de altitude, o semiárido e o subtropical, e o El Niño seca o Nordeste e molha o Sul."
+          ],
+          "terms": [
+            {
+              "word": "Massa de ar",
+              "meaning": "um grande volume de ar com temperatura e umidade parecidas, que se desloca e muda o tempo por onde passa."
+            },
+            {
+              "word": "El Niño",
+              "meaning": "o aquecimento fora do normal das águas do oceano Pacífico perto do Equador, que muda as chuvas em várias partes do mundo."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Tempo",
+          "statement": "A frase “amanhã vai chover em São Paulo” fala de:",
+          "options": [
+            "tempo",
+            "clima",
+            "relevo",
+            "latitude",
+            "bioma"
+          ],
+          "correct_index": 0,
+          "explanation": "É o estado do ar num momento: tempo.",
+          "pitfall": "Clima seria o padrão de muitos anos."
+        },
+        {
+          "topic": "Altitude",
+          "statement": "Por que no alto da serra costuma ser mais frio do que na praia?",
+          "options": [
+            "quanto maior a altitude, menor a temperatura",
+            "a serra fica mais longe do Equador",
+            "o vento do mar é quente",
+            "a serra tem mais placas tectônicas",
+            "o Sol não chega à serra"
+          ],
+          "correct_index": 0,
+          "explanation": "O ar fica mais rarefeito e mais frio conforme se sobe.",
+          "pitfall": "A serra e a praia podem estar na mesma latitude."
+        },
+        {
+          "topic": "Semiárido",
+          "statement": "Clima quente com pouca chuva e mal distribuída, típico do sertão nordestino:",
+          "options": [
+            "semiárido",
+            "equatorial",
+            "subtropical",
+            "tropical de altitude",
+            "polar"
+          ],
+          "correct_index": 0,
+          "explanation": "O semiárido tem secas longas e chuvas irregulares.",
+          "pitfall": "Equatorial é quente e chuvoso o ano todo."
+        },
+        {
+          "topic": "Sul",
+          "statement": "O clima subtropical, do Sul do Brasil, tem:",
+          "options": [
+            "estações bem definidas e inverno frio, com geada",
+            "calor e chuva o ano todo",
+            "chuva quase nenhuma",
+            "temperatura igual o ano inteiro",
+            "neve o ano todo"
+          ],
+          "correct_index": 0,
+          "explanation": "No Sul, as quatro estações são bem marcadas.",
+          "pitfall": "Calor e chuva o ano todo descreve a Amazônia."
+        },
+        {
+          "topic": "Mar",
+          "statement": "Cidades perto do mar costumam ter:",
+          "options": [
+            "menor variação de temperatura",
+            "maior variação de temperatura",
+            "neve todo inverno",
+            "clima desértico",
+            "temperatura sempre abaixo de zero"
+          ],
+          "correct_index": 0,
+          "explanation": "A água esquenta e esfria devagar e segura a temperatura.",
+          "pitfall": "A maior variação é no meio do continente."
+        },
+        {
+          "topic": "El Niño",
+          "statement": "O El Niño costuma provocar no Brasil:",
+          "options": [
+            "seca no Norte e Nordeste e chuva forte no Sul",
+            "chuva forte no Nordeste e seca no Sul",
+            "neve no Nordeste",
+            "fim das estações do ano",
+            "terremotos no Sul"
+          ],
+          "correct_index": 0,
+          "explanation": "O aquecimento do Pacífico muda a circulação do ar e as chuvas.",
+          "pitfall": "A segunda alternativa inverte os efeitos."
+        },
+        {
+          "topic": "Frente fria",
+          "statement": "A queda de temperatura no Sul e Sudeste no inverno é causada principalmente:",
+          "options": [
+            "por massas de ar frio vindas do sul",
+            "por massas de ar quente da Amazônia",
+            "pelo El Niño",
+            "pelo desgaste do relevo",
+            "pela rotação da Terra"
+          ],
+          "correct_index": 0,
+          "explanation": "A massa de ar polar avança e derruba a temperatura.",
+          "pitfall": "A massa da Amazônia é quente e úmida."
+        },
+        {
+          "topic": "Climas",
+          "format": "match",
+          "statement": "Ligue cada clima à região onde ele aparece.",
+          "pairs": [
+            {
+              "left": "equatorial",
+              "right": "Amazônia"
+            },
+            {
+              "left": "semiárido",
+              "right": "sertão do Nordeste"
+            },
+            {
+              "left": "subtropical",
+              "right": "Sul"
+            },
+            {
+              "left": "tropical",
+              "right": "Centro-Oeste"
+            }
+          ],
+          "explanation": "Cada região tem um clima predominante.",
+          "pitfall": "Equatorial e tropical se confundem: o equatorial não tem estação seca."
+        },
+        {
+          "topic": "30 anos",
+          "statement": "Para falar de clima, é preciso observar o tempo por pelo menos:",
+          "options": [
+            "30 anos",
+            "um dia",
+            "uma semana",
+            "um ano",
+            "um mês"
+          ],
+          "correct_index": 0,
+          "explanation": "O clima é a média de décadas.",
+          "pitfall": "Um dia é tempo, não clima.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Equatorial",
+          "statement": "Qual clima é quente e chuvoso o ano inteiro?",
+          "options": [
+            "equatorial",
+            "semiárido",
+            "subtropical",
+            "tropical de altitude",
+            "polar"
+          ],
+          "correct_index": 0,
+          "explanation": "É o clima da Amazônia.",
+          "pitfall": "Semiárido é quente, mas com pouca chuva.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Tropical",
+          "statement": "O clima tropical, do Centro-Oeste, tem:",
+          "options": [
+            "verão chuvoso e inverno seco",
+            "chuva o ano inteiro",
+            "inverno com neve",
+            "seca o ano inteiro",
+            "quatro estações bem definidas"
+          ],
+          "correct_index": 0,
+          "explanation": "Em Brasília, o inverno é muito seco e o verão é chuvoso.",
+          "pitfall": "Estações bem definidas são do Sul.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Latitude",
+          "statement": "Por que faz mais calor perto do Equador?",
+          "options": [
+            "os raios do Sol chegam mais diretos e concentrados",
+            "o Equador fica mais perto do Sol",
+            "há mais vulcões ali",
+            "não existe vento ali",
+            "o ar é mais pesado ali"
+          ],
+          "correct_index": 0,
+          "explanation": "Perto do Equador, o Sol bate quase de cima, e a energia se concentra.",
+          "pitfall": "A distância até o Sol é praticamente a mesma: o que muda é o ângulo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Mesma latitude",
+          "statement": "Duas cidades estão na mesma latitude, uma no litoral e outra no alto de uma serra. O que explica a diferença de clima entre elas?",
+          "options": [
+            "a altitude e a proximidade do mar",
+            "a latitude",
+            "o fuso horário",
+            "a longitude",
+            "o número de habitantes"
+          ],
+          "correct_index": 0,
+          "explanation": "Com a mesma latitude, o que muda é a altura e a distância do mar.",
+          "pitfall": "A latitude é igual: não pode ser ela.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Não é nunca",
+          "statement": "Sobre o semiárido nordestino, qual frase está certa?",
+          "options": [
+            "chove pouco e de forma irregular, com secas longas",
+            "nunca chove",
+            "chove o ano inteiro",
+            "tem inverno com neve",
+            "é o clima mais úmido do Brasil"
+          ],
+          "correct_index": 0,
+          "explanation": "As chuvas se concentram em poucos meses e falham em alguns anos.",
+          "pitfall": "“Nunca” é o exagero que a prova espera.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "questoes-ambientais",
+      "title": "Biomas e questões ambientais",
+      "module": "Natureza e sociedade",
+      "summary": "O Brasil tem seis grandes biomas, todos sob pressão. Aquecimento global, desmatamento e os problemas das cidades são os temas ambientais que mais caem.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O calor do asfalto",
+          "body": [
+            "Num dia de sol, ande descalço no asfalto e depois na grama. A diferença é enorme.",
+            "Uma cidade inteira de asfalto e concreto também esquenta mais que o campo. Muitos problemas ambientais começam assim: com a mudança que fazemos no lugar."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os biomas do Brasil",
+          "body": [
+            "Bioma é uma grande região com clima e vegetação parecidos. O Brasil tem seis."
+          ],
+          "table": {
+            "label": "Os seis biomas",
+            "headers": [
+              "Bioma",
+              "Marca",
+              "Principal ameaça"
+            ],
+            "rows": [
+              [
+                "Amazônia",
+                "a maior floresta tropical do mundo",
+                "desmatamento e garimpo"
+              ],
+              [
+                "Cerrado",
+                "árvores tortas, nascentes de grandes rios",
+                "avanço da soja e do gado"
+              ],
+              [
+                "Mata Atlântica",
+                "floresta do litoral",
+                "já perdeu a maior parte da área original"
+              ],
+              [
+                "Caatinga",
+                "plantas adaptadas à seca",
+                "desmatamento e desertificação"
+              ],
+              [
+                "Pantanal",
+                "área plana e baixa que alaga",
+                "queimadas"
+              ],
+              [
+                "Pampa",
+                "campos do Sul",
+                "conversão em lavoura"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O aquecimento global",
+          "body": [
+            "Queimar carvão, petróleo e florestas solta gases que reforçam o efeito estufa. O planeta esquenta.",
+            "As consequências são ondas de calor, secas e chuvas mais fortes e a subida do nível do mar. O Acordo de Paris, de 2015, tenta limitar o aquecimento."
+          ],
+          "terms": [
+            {
+              "word": "Efeito estufa",
+              "meaning": "o calor que alguns gases da atmosfera seguram perto do chão. Ele é natural; o problema é o excesso, que aquece o planeta."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os problemas das cidades",
+          "body": [
+            "Nas cidades grandes, três fenômenos aparecem muito na prova."
+          ],
+          "terms": [
+            {
+              "word": "Ilha de calor",
+              "meaning": "a área central de uma cidade grande que fica mais quente que os arredores, por causa do asfalto, do concreto e da falta de árvores."
+            },
+            {
+              "word": "Inversão térmica",
+              "meaning": "quando uma camada de ar frio fica presa embaixo de uma de ar quente e prende a poluição perto do chão."
+            },
+            {
+              "word": "Chuva ácida",
+              "meaning": "a chuva que fica ácida ao se misturar com gases soltos pela queima de carvão e combustíveis. Ela corrói prédios e prejudica plantas e rios."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Ozônio não é efeito estufa",
+          "body": [
+            "A camada de ozônio fica no alto da atmosfera e filtra parte dos raios ultravioleta do Sol. Gases de geladeiras antigas, os CFCs, abriram um buraco nela.",
+            "Em 1987, os países proibiram esses gases, e a camada está se recuperando. É outro problema, diferente do aquecimento."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede a causa e a consequência de cada problema ambiental. Também cobra a diferença entre efeito estufa e camada de ozônio."
+          ],
+          "bullets": [
+            "“A intensificação do efeito estufa está relacionada a…”",
+            "“A inversão térmica é mais comum no inverno porque…”",
+            "“A formação de ilhas de calor deve-se a…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Efeito estufa",
+              "meaning": "o calor que alguns gases da atmosfera seguram perto do chão. Ele é natural; o problema é o excesso, que aquece o planeta."
+            },
+            {
+              "word": "Inversão térmica",
+              "meaning": "quando uma camada de ar frio fica presa embaixo de uma de ar quente e prende a poluição perto do chão."
+            }
+          ],
+          "bullets": [
+            "Achar que o efeito estufa é sempre ruim. Sem ele a Terra seria gelada; o problema é o excesso.",
+            "Confundir o buraco na camada de ozônio com o aquecimento global.",
+            "Achar que a inversão térmica é causada pela poluição. Ela só prende a poluição que já existe.",
+            "Achar que a Amazônia é o único bioma ameaçado. A Mata Atlântica é o mais devastado."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O Brasil tem seis biomas, e a Mata Atlântica é o mais devastado. O excesso de gases do efeito estufa aquece o planeta.",
+            "Nas cidades, há ilha de calor, inversão térmica e chuva ácida. O buraco no ozônio é outro problema, e está melhorando."
+          ],
+          "terms": [
+            {
+              "word": "Ilha de calor",
+              "meaning": "a área central de uma cidade grande que fica mais quente que os arredores, por causa do asfalto, do concreto e da falta de árvores."
+            },
+            {
+              "word": "Chuva ácida",
+              "meaning": "a chuva que fica ácida ao se misturar com gases soltos pela queima de carvão e combustíveis. Ela corrói prédios e prejudica plantas e rios."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Estufa",
+          "statement": "A intensificação do efeito estufa é causada principalmente:",
+          "options": [
+            "pela queima de combustíveis fósseis e de florestas",
+            "pelo buraco na camada de ozônio",
+            "pelas chuvas fortes",
+            "pelo movimento das placas tectônicas",
+            "pela rotação da Terra"
+          ],
+          "correct_index": 0,
+          "explanation": "Carvão, petróleo e queimadas soltam gás carbônico e outros gases.",
+          "pitfall": "O buraco no ozônio é outro problema."
+        },
+        {
+          "topic": "Ilha de calor",
+          "statement": "A ilha de calor nas cidades acontece por causa:",
+          "options": [
+            "do asfalto, do concreto e da falta de árvores",
+            "do excesso de árvores",
+            "da chuva ácida",
+            "do frio do inverno",
+            "da camada de ozônio"
+          ],
+          "correct_index": 0,
+          "explanation": "Asfalto e concreto absorvem calor, e sem árvores não há sombra nem umidade.",
+          "pitfall": "Árvores ajudam a esfriar, não esquentam."
+        },
+        {
+          "topic": "Inversão",
+          "statement": "Na inversão térmica:",
+          "options": [
+            "o ar frio fica preso embaixo e segura a poluição perto do chão",
+            "o ar quente sobe e limpa a cidade",
+            "a poluição desaparece",
+            "chove ácido",
+            "a camada de ozônio se fecha"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem o ar subir, a poluição fica parada sobre a cidade.",
+          "pitfall": "É justamente porque o ar não sobe que a poluição fica."
+        },
+        {
+          "topic": "Chuva ácida",
+          "statement": "A chuva ácida é causada:",
+          "options": [
+            "por gases da queima de carvão e combustíveis",
+            "pelo excesso de árvores",
+            "pelo sal do mar",
+            "pelas geladeiras antigas",
+            "pelo El Niño"
+          ],
+          "correct_index": 0,
+          "explanation": "Gases de enxofre e nitrogênio se misturam à água da chuva.",
+          "pitfall": "Geladeiras antigas soltavam CFC, ligado ao ozônio."
+        },
+        {
+          "topic": "Mata Atlântica",
+          "statement": "Qual bioma brasileiro já perdeu a maior parte da sua área original?",
+          "options": [
+            "Mata Atlântica",
+            "Amazônia",
+            "Pantanal",
+            "Pampa",
+            "Caatinga"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela ocupa o litoral, onde estão as maiores cidades.",
+          "pitfall": "A Amazônia sofre muito, mas ainda tem a maior parte em pé."
+        },
+        {
+          "topic": "Ozônio",
+          "statement": "A camada de ozônio serve para:",
+          "options": [
+            "filtrar parte dos raios ultravioleta do Sol",
+            "segurar o calor perto do chão",
+            "produzir chuva",
+            "formar as nuvens",
+            "esfriar os oceanos"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela protege contra o excesso de ultravioleta.",
+          "pitfall": "Segurar o calor é o efeito estufa, outra coisa."
+        },
+        {
+          "topic": "Acordo",
+          "statement": "O Acordo de Paris, de 2015, tem como objetivo:",
+          "options": [
+            "limitar o aquecimento global",
+            "acabar com o buraco na camada de ozônio",
+            "proibir as cidades grandes",
+            "dividir a Amazônia entre os países",
+            "aumentar o uso de carvão"
+          ],
+          "correct_index": 0,
+          "explanation": "Os países se comprometeram a reduzir as emissões de gases.",
+          "pitfall": "O ozônio foi tratado no Protocolo de Montreal, de 1987."
+        },
+        {
+          "topic": "Problemas",
+          "format": "match",
+          "statement": "Ligue cada problema à sua causa.",
+          "pairs": [
+            {
+              "left": "ilha de calor",
+              "right": "asfalto e falta de árvores"
+            },
+            {
+              "left": "chuva ácida",
+              "right": "gases da queima de carvão"
+            },
+            {
+              "left": "buraco no ozônio",
+              "right": "gases CFC das geladeiras antigas"
+            },
+            {
+              "left": "aquecimento global",
+              "right": "excesso de gases do efeito estufa"
+            }
+          ],
+          "explanation": "Cada problema tem sua causa própria.",
+          "pitfall": "Ozônio e aquecimento são os mais trocados."
+        },
+        {
+          "topic": "Seis",
+          "statement": "Quantos biomas o Brasil tem?",
+          "options": [
+            "seis",
+            "dois",
+            "quatro",
+            "dez",
+            "um"
+          ],
+          "correct_index": 0,
+          "explanation": "São Amazônia, Cerrado e Mata Atlântica. Os outros três são Caatinga, Pantanal e Pampa.",
+          "pitfall": "Quatro deixa de fora dois biomas.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Consequência",
+          "statement": "Qual é uma consequência do aquecimento global?",
+          "options": [
+            "subida do nível do mar",
+            "fim das estações do ano no mundo todo",
+            "aumento da camada de ozônio",
+            "esfriamento dos oceanos",
+            "fim dos terremotos"
+          ],
+          "correct_index": 0,
+          "explanation": "O gelo derrete e a água do mar se expande com o calor.",
+          "pitfall": "Os oceanos esquentam, não esfriam.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Inverno",
+          "statement": "Por que a inversão térmica é mais comum no inverno?",
+          "options": [
+            "o chão esfria mais à noite e o ar frio fica preso embaixo",
+            "chove mais no inverno",
+            "há mais árvores no inverno",
+            "o Sol é mais forte no inverno",
+            "os carros param de rodar"
+          ],
+          "correct_index": 0,
+          "explanation": "Nas noites frias o ar junto ao chão esfria e não sobe.",
+          "pitfall": "Chuva até ajuda a limpar o ar.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Cerrado",
+          "statement": "O Cerrado é importante também porque:",
+          "options": [
+            "nele nascem rios de grandes bacias do Brasil",
+            "é a maior floresta do mundo",
+            "é coberto de neve",
+            "não tem nenhuma planta",
+            "fica no litoral"
+          ],
+          "correct_index": 0,
+          "explanation": "Por isso ele é chamado de caixa-d'água do Brasil.",
+          "pitfall": "A maior floresta tropical é a Amazônia.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Natural",
+          "statement": "Qual frase sobre o efeito estufa está certa?",
+          "options": [
+            "é natural e necessário; o problema é a intensificação",
+            "é sempre prejudicial e deveria acabar",
+            "é causado pelo buraco na camada de ozônio",
+            "não existe",
+            "esfria o planeta"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem ele, a temperatura média da Terra ficaria abaixo de zero.",
+          "pitfall": "Querer o fim do efeito estufa é o erro que a prova espera.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Recuperação",
+          "statement": "Por que a camada de ozônio está se recuperando?",
+          "options": [
+            "os países proibiram os gases CFC em 1987",
+            "o aquecimento global a fechou",
+            "as florestas a reconstruíram",
+            "a chuva ácida a reforçou",
+            "ela nunca teve problema"
+          ],
+          "correct_index": 0,
+          "explanation": "O Protocolo de Montreal tirou os CFCs de uso, e o buraco começou a diminuir.",
+          "pitfall": "O aquecimento global não tem esse efeito.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "populacao-e-urbanizacao",
+      "title": "População, migração e cidades",
+      "module": "População e economia",
+      "summary": "O Brasil tem cada vez menos filhos por família e cada vez mais idosos. Em poucas décadas, a maior parte da população saiu do campo e foi para as cidades.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A família da sua avó",
+          "body": [
+            "Pergunte a uma pessoa idosa quantos irmãos ela teve. É comum ouvir oito, dez, doze.",
+            "Hoje a maioria das famílias tem um ou dois filhos. Essa mudança, repetida em milhões de casas, muda o país inteiro."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Nascer, morrer e crescer",
+          "body": [
+            "A população cresce quando nascem mais pessoas do que morrem. A diferença entre os dois se chama crescimento vegetativo.",
+            "No Brasil, a taxa de fecundidade caiu de cerca de 6 filhos por mulher em 1960 para menos de 2. A população ainda cresce, mas cada vez mais devagar."
+          ],
+          "terms": [
+            {
+              "word": "Taxa de natalidade",
+              "meaning": "quantos bebês nascem por ano para cada mil habitantes."
+            },
+            {
+              "word": "Taxa de fecundidade",
+              "meaning": "quantos filhos, em média, cada mulher tem ao longo da vida."
+            },
+            {
+              "word": "Crescimento vegetativo",
+              "meaning": "a diferença entre quantos nascem e quantos morrem num ano."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A pirâmide etária",
+          "body": [
+            "Com muitos nascimentos, a pirâmide tem a base larga: muitas crianças. Com poucos nascimentos e vida mais longa, ela vai alargando em cima.",
+            "O Brasil está nessa passagem: está envelhecendo. Isso pesa na previdência e na saúde."
+          ],
+          "terms": [
+            {
+              "word": "Pirâmide etária",
+              "meaning": "o gráfico que mostra quantas pessoas há em cada faixa de idade, com os homens de um lado e as mulheres do outro."
+            }
+          ],
+          "table": {
+            "label": "Como a pirâmide muda",
+            "headers": [
+              "Fase",
+              "Formato",
+              "O que mostra"
+            ],
+            "rows": [
+              [
+                "país jovem",
+                "base larga e topo fino",
+                "muitos nascimentos, vida curta"
+              ],
+              [
+                "em transição",
+                "meio mais largo",
+                "menos nascimentos, vida mais longa"
+              ],
+              [
+                "país envelhecido",
+                "topo largo",
+                "poucos nascimentos, muitos idosos"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Do campo para a cidade",
+          "body": [
+            "A partir de 1950, milhões de pessoas deixaram o campo. As máquinas tomaram o lugar dos trabalhadores, e as cidades ofereciam emprego na indústria.",
+            "Hoje, mais de 8 em cada 10 brasileiros moram em cidades. A mudança foi rápida demais para o planejamento acompanhar."
+          ],
+          "terms": [
+            {
+              "word": "Êxodo rural",
+              "meaning": "a saída em massa de pessoas do campo para as cidades."
+            },
+            {
+              "word": "Urbanização",
+              "meaning": "o aumento da parte da população que mora em cidades."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os caminhos das migrações",
+          "body": [
+            "No século XX, muitos nordestinos foram para São Paulo e o Rio de Janeiro em busca de trabalho. Depois, a agricultura atraiu gente para o Centro-Oeste e o Norte.",
+            "O Brasil também recebe imigrantes. No passado vieram italianos, japoneses e portugueses. Hoje chegam venezuelanos e haitianos, entre outros."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As cidades grandes",
+          "body": [
+            "Quando as cidades crescem, algumas passam a comandar a região inteira. Outras crescem tanto que se juntam.",
+            "O crescimento sem planejamento trouxe problemas: moradias em áreas de risco, trânsito, enchentes e falta de saneamento."
+          ],
+          "terms": [
+            {
+              "word": "Metrópole",
+              "meaning": "uma cidade grande que comanda a economia e os serviços de uma região inteira ao seu redor."
+            },
+            {
+              "word": "Conurbação",
+              "meaning": "quando duas ou mais cidades crescem tanto que se juntam, sem que se perceba onde uma termina e a outra começa."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mostra uma pirâmide etária e pede o que ela revela. Também cobra as causas do êxodo rural e os problemas urbanos."
+          ],
+          "bullets": [
+            "“A pirâmide etária com topo cada vez mais largo indica…”",
+            "“Uma das causas do êxodo rural no Brasil foi…”",
+            "“A conurbação é o processo em que…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Metrópole",
+              "meaning": "uma cidade grande que comanda a economia e os serviços de uma região inteira ao seu redor."
+            },
+            {
+              "word": "Conurbação",
+              "meaning": "quando duas ou mais cidades crescem tanto que se juntam, sem que se perceba onde uma termina e a outra começa."
+            },
+            {
+              "word": "Pirâmide etária",
+              "meaning": "o gráfico que mostra quantas pessoas há em cada faixa de idade, com os homens de um lado e as mulheres do outro."
+            },
+            {
+              "word": "Êxodo rural",
+              "meaning": "a saída em massa de pessoas do campo para as cidades."
+            }
+          ],
+          "bullets": [
+            "Achar que a população brasileira já está diminuindo. Ela ainda cresce, só que devagar.",
+            "Achar que o êxodo rural foi só por vontade própria. A mecanização e a concentração de terras empurraram as pessoas.",
+            "Confundir metrópole (comanda a região) com conurbação (cidades que se juntam).",
+            "Achar que base larga na pirâmide quer dizer muitos idosos. Quer dizer muitos jovens."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A fecundidade caiu para menos de 2 filhos por mulher, e o Brasil está envelhecendo. A pirâmide alarga em cima.",
+            "O êxodo rural levou mais de 80% da população para as cidades. Metrópoles e conurbações cresceram sem planejamento."
+          ],
+          "terms": [
+            {
+              "word": "Taxa de fecundidade",
+              "meaning": "quantos filhos, em média, cada mulher tem ao longo da vida."
+            },
+            {
+              "word": "Urbanização",
+              "meaning": "o aumento da parte da população que mora em cidades."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Topo largo",
+          "statement": "Uma pirâmide etária com o topo cada vez mais largo indica:",
+          "options": [
+            "envelhecimento da população",
+            "muitos nascimentos",
+            "população muito jovem",
+            "guerra recente",
+            "aumento da fecundidade"
+          ],
+          "correct_index": 0,
+          "explanation": "Topo largo é muita gente nas faixas de idade mais altas.",
+          "pitfall": "Muitos nascimentos alargam a BASE, não o topo."
+        },
+        {
+          "topic": "Fecundidade",
+          "statement": "A taxa de fecundidade no Brasil, hoje, é de:",
+          "options": [
+            "menos de 2 filhos por mulher",
+            "cerca de 6 filhos por mulher",
+            "mais de 4 filhos por mulher",
+            "exatamente 3 filhos por mulher",
+            "zero"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela caiu de cerca de 6, em 1960, para menos de 2.",
+          "pitfall": "6 filhos era o número de 1960."
+        },
+        {
+          "topic": "Êxodo",
+          "statement": "Uma das causas do êxodo rural no Brasil foi:",
+          "options": [
+            "a mecanização do campo, que tirou trabalho das pessoas",
+            "a falta de cidades no Brasil",
+            "o fim das indústrias",
+            "a proibição de morar nas cidades",
+            "o excesso de empregos no campo"
+          ],
+          "correct_index": 0,
+          "explanation": "Máquinas substituíram trabalhadores, e a indústria atraía nas cidades.",
+          "pitfall": "Se sobrasse emprego no campo, as pessoas não sairiam."
+        },
+        {
+          "topic": "Conurbação",
+          "statement": "A conurbação acontece quando:",
+          "options": [
+            "cidades vizinhas crescem até se juntar",
+            "uma cidade perde população",
+            "o campo vira floresta",
+            "uma cidade muda de estado",
+            "os moradores vão para o campo"
+          ],
+          "correct_index": 0,
+          "explanation": "Fica difícil saber onde termina uma cidade e começa a outra.",
+          "pitfall": "Perder população é o contrário do crescimento que gera conurbação."
+        },
+        {
+          "topic": "Vegetativo",
+          "statement": "O crescimento vegetativo é:",
+          "options": [
+            "a diferença entre nascimentos e mortes",
+            "o crescimento das plantas da cidade",
+            "a chegada de imigrantes",
+            "a saída do campo para a cidade",
+            "o número de idosos"
+          ],
+          "correct_index": 0,
+          "explanation": "Nascimentos menos mortes, sem contar as migrações.",
+          "pitfall": "Imigrantes entram na conta do crescimento total, não do vegetativo."
+        },
+        {
+          "topic": "Urbana",
+          "statement": "Hoje, a maior parte da população brasileira mora:",
+          "options": [
+            "nas cidades",
+            "no campo",
+            "metade e metade",
+            "em aldeias indígenas",
+            "em ilhas"
+          ],
+          "correct_index": 0,
+          "explanation": "Mais de 8 em cada 10 brasileiros moram em cidades.",
+          "pitfall": "Até 1960, a maioria morava no campo; isso mudou."
+        },
+        {
+          "topic": "Problemas",
+          "statement": "Qual destes é um problema típico do crescimento urbano sem planejamento?",
+          "options": [
+            "moradias em áreas de risco",
+            "excesso de áreas verdes",
+            "falta de trânsito",
+            "saneamento sobrando",
+            "poucos moradores"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem planejamento, muita gente vai morar em encostas e beiras de rio.",
+          "pitfall": "Falta de trânsito é o contrário do que acontece."
+        },
+        {
+          "topic": "Termos",
+          "format": "match",
+          "statement": "Ligue cada termo ao que ele quer dizer.",
+          "pairs": [
+            {
+              "left": "êxodo rural",
+              "right": "saída do campo para a cidade"
+            },
+            {
+              "left": "metrópole",
+              "right": "cidade que comanda uma região"
+            },
+            {
+              "left": "conurbação",
+              "right": "cidades que se juntam"
+            },
+            {
+              "left": "fecundidade",
+              "right": "filhos por mulher"
+            }
+          ],
+          "explanation": "Quatro palavras que caem juntas em questões de população.",
+          "pitfall": "Metrópole e conurbação são as mais trocadas."
+        },
+        {
+          "topic": "Base larga",
+          "statement": "Uma pirâmide etária de base larga mostra:",
+          "options": [
+            "muitas crianças e jovens",
+            "muitos idosos",
+            "poucos nascimentos",
+            "população envelhecida",
+            "só adultos"
+          ],
+          "correct_index": 0,
+          "explanation": "A base é a faixa de idade mais nova.",
+          "pitfall": "Muitos idosos alargariam o topo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Nordestinos",
+          "statement": "No século XX, muitos nordestinos migraram principalmente para:",
+          "options": [
+            "São Paulo e Rio de Janeiro",
+            "a Europa",
+            "o Sul, para fugir do frio",
+            "o Japão",
+            "as ilhas do Atlântico"
+          ],
+          "correct_index": 0,
+          "explanation": "Buscavam trabalho nas indústrias e na construção do Sudeste.",
+          "pitfall": "A migração para o exterior foi pequena perto dessa.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Ainda cresce",
+          "statement": "Qual frase sobre a população brasileira está certa?",
+          "options": [
+            "ainda cresce, mas cada vez mais devagar",
+            "já está diminuindo há décadas",
+            "cresce cada vez mais rápido",
+            "não mudou desde 1960",
+            "é formada sobretudo por crianças"
+          ],
+          "correct_index": 0,
+          "explanation": "Com a fecundidade baixa, o ritmo de crescimento cai ano a ano.",
+          "pitfall": "Diminuir de vez ainda não aconteceu.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Envelhecer",
+          "statement": "Uma consequência do envelhecimento da população é:",
+          "options": [
+            "mais gastos com aposentadoria e saúde",
+            "mais escolas infantis necessárias",
+            "menos idosos no país",
+            "aumento do número de nascimentos",
+            "fim da previdência"
+          ],
+          "correct_index": 0,
+          "explanation": "Mais idosos e menos jovens trabalhando pressionam a previdência.",
+          "pitfall": "Menos idosos é o contrário do que acontece.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Repulsão",
+          "statement": "No êxodo rural, quais fatores EMPURRARAM as pessoas para fora do campo?",
+          "options": [
+            "a mecanização e a concentração de terras",
+            "os empregos na indústria",
+            "os hospitais das cidades",
+            "as escolas das cidades",
+            "a vida noturna das cidades"
+          ],
+          "correct_index": 0,
+          "explanation": "Esses são fatores de repulsão. Emprego e serviços urbanos são fatores de atração.",
+          "pitfall": "Emprego na indústria PUXA para a cidade; não empurra do campo.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Fecundidade baixa",
+          "statement": "Com menos de 2 filhos por mulher, a longo prazo a população tende a:",
+          "options": [
+            "parar de crescer e depois diminuir, sem imigração",
+            "crescer cada vez mais rápido",
+            "ficar só de crianças",
+            "dobrar a cada 10 anos",
+            "não mudar nunca"
+          ],
+          "correct_index": 0,
+          "explanation": "Para repor os pais, cada mulher precisaria ter cerca de 2 filhos.",
+          "pitfall": "Crescer mais rápido exigiria mais filhos, não menos.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "economia-e-industria",
+      "title": "Economia: setores, indústria e campo",
+      "module": "População e economia",
+      "summary": "A economia se divide em três setores. O Brasil se industrializou tarde, concentrado no Sudeste, e hoje é um dos maiores exportadores de alimentos do mundo.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O caminho do pão",
+          "body": [
+            "O trigo é plantado no campo. Vira farinha numa fábrica. A padaria assa e vende o pão.",
+            "Nesse caminho estão os três setores da economia: tirar da natureza, transformar e vender."
+          ],
+          "terms": [
+            {
+              "word": "Setor primário, secundário e terciário",
+              "meaning": "o setor primário tira da natureza (agricultura, pecuária, mineração); o secundário transforma (indústria, construção); o terciário oferece comércio e serviços."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quanto vale cada setor",
+          "body": [
+            "No Brasil, o setor de serviços é o maior. Comércio, bancos, transporte e saúde somam a maior parte do PIB.",
+            "O primário é menor em valor, mas é o que mais exporta."
+          ],
+          "terms": [
+            {
+              "word": "PIB",
+              "meaning": "Produto Interno Bruto: a soma de tudo o que um país produz em bens e serviços num ano."
+            }
+          ],
+          "table": {
+            "label": "Exemplos de cada setor",
+            "headers": [
+              "Setor",
+              "O que faz",
+              "Exemplos"
+            ],
+            "rows": [
+              [
+                "primário",
+                "tira da natureza",
+                "soja, gado, minério de ferro"
+              ],
+              [
+                "secundário",
+                "transforma",
+                "fábrica de carros, siderúrgica, construção"
+              ],
+              [
+                "terciário",
+                "comércio e serviços",
+                "loja, banco, hospital, escola"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A industrialização brasileira",
+          "body": [
+            "O Brasil se industrializou tarde, a partir dos anos 1930. O governo de Vargas criou a primeira grande siderúrgica e a Petrobras.",
+            "Juscelino Kubitschek, nos anos 1950, trouxe montadoras de carros e construiu Brasília. A indústria se concentrou em São Paulo."
+          ],
+          "example": {
+            "label": "As etapas",
+            "lines": [
+              "Anos 1930 e 1940: Vargas cria a indústria de base, como aço e petróleo.",
+              "Anos 1950: Juscelino atrai montadoras estrangeiras.",
+              "Anos 1970: grandes obras e endividamento no governo militar.",
+              "Desde os anos 1990: fábricas se espalham para outros estados atrás de impostos menores."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O campo moderno",
+          "body": [
+            "O Brasil é o maior exportador de soja, café e suco de laranja do mundo. Esse agronegócio usa máquinas, tecnologia e grandes áreas.",
+            "Já boa parte do alimento que vai à mesa dos brasileiros vem da agricultura familiar, em propriedades menores."
+          ],
+          "terms": [
+            {
+              "word": "Agronegócio",
+              "meaning": "a cadeia inteira da produção agropecuária em grandes áreas, do adubo e das máquinas à exportação."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Terra concentrada",
+          "body": [
+            "No Brasil, poucas pessoas são donas de grande parte das terras. Essa concentração vem da colônia, das sesmarias.",
+            "Ela gera conflitos no campo e a luta pela reforma agrária: dividir terras improdutivas entre quem quer plantar."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A fronteira que avança",
+          "body": [
+            "A soja e o gado avançaram sobre o Cerrado e chegam à Amazônia. É a fronteira agrícola.",
+            "Ela traz riqueza e emprego para algumas regiões, mas também desmatamento e conflitos com indígenas."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova classifica atividades nos setores e pede as fases da industrialização. Também cobra a diferença entre agronegócio e agricultura familiar."
+          ],
+          "bullets": [
+            "“A mineração pertence a qual setor da economia?”",
+            "“A industrialização brasileira concentrou-se inicialmente em…”",
+            "“A expansão da fronteira agrícola tem como consequência…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Setor primário, secundário e terciário",
+              "meaning": "o setor primário tira da natureza (agricultura, pecuária, mineração); o secundário transforma (indústria, construção); o terciário oferece comércio e serviços."
+            },
+            {
+              "word": "Agronegócio",
+              "meaning": "a cadeia inteira da produção agropecuária em grandes áreas, do adubo e das máquinas à exportação."
+            }
+          ],
+          "bullets": [
+            "Achar que a indústria é o maior setor do PIB brasileiro. É o de serviços.",
+            "Pôr a mineração no setor secundário. Tirar da natureza é primário.",
+            "Achar que o agronegócio alimenta a maior parte da mesa do brasileiro. Grande parte vai para exportação.",
+            "Achar que o Brasil se industrializou no século XIX. Foi a partir de 1930."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Primário tira da natureza, secundário transforma, terciário vende e presta serviço. Os serviços são a maior parte do PIB.",
+            "A indústria veio tarde, com Vargas e Juscelino, concentrada em São Paulo. O agronegócio exporta muito, e a terra é concentrada."
+          ],
+          "terms": [
+            {
+              "word": "PIB",
+              "meaning": "Produto Interno Bruto: a soma de tudo o que um país produz em bens e serviços num ano."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Mineração",
+          "statement": "A mineração pertence a qual setor da economia?",
+          "options": [
+            "primário",
+            "secundário",
+            "terciário",
+            "quaternário",
+            "nenhum"
+          ],
+          "correct_index": 0,
+          "explanation": "Tirar minério da natureza é atividade primária.",
+          "pitfall": "Transformar o minério em aço, aí sim, é secundário."
+        },
+        {
+          "topic": "Maior setor",
+          "statement": "Qual setor responde pela maior parte do PIB brasileiro?",
+          "options": [
+            "terciário",
+            "primário",
+            "secundário",
+            "os três empatados",
+            "nenhum, o PIB é só agricultura"
+          ],
+          "correct_index": 0,
+          "explanation": "Comércio e serviços somam a maior parte da riqueza produzida.",
+          "pitfall": "O primário exporta muito, mas vale menos no total."
+        },
+        {
+          "topic": "Soja",
+          "statement": "O Brasil é o maior exportador mundial de:",
+          "options": [
+            "soja",
+            "petróleo",
+            "automóveis",
+            "computadores",
+            "trigo"
+          ],
+          "correct_index": 0,
+          "explanation": "Soja, café e suco de laranja lideram as exportações do campo.",
+          "pitfall": "O Brasil importa trigo; não é grande exportador."
+        },
+        {
+          "topic": "Vargas",
+          "statement": "Qual medida da industrialização é do governo Vargas?",
+          "options": [
+            "a criação da Petrobras",
+            "a chegada das montadoras de carros",
+            "a construção de Brasília",
+            "o fim da escravidão",
+            "a abertura dos portos"
+          ],
+          "correct_index": 0,
+          "explanation": "Vargas apostou na indústria de base: aço e petróleo.",
+          "pitfall": "Montadoras e Brasília são de Juscelino Kubitschek."
+        },
+        {
+          "topic": "Concentração",
+          "statement": "A industrialização brasileira se concentrou inicialmente:",
+          "options": [
+            "no Sudeste, sobretudo em São Paulo",
+            "no Norte",
+            "no Nordeste",
+            "no Centro-Oeste",
+            "igualmente em todo o país"
+          ],
+          "correct_index": 0,
+          "explanation": "O dinheiro do café e a infraestrutura de São Paulo atraíram as fábricas.",
+          "pitfall": "“Igualmente” é o erro: a indústria se concentrou."
+        },
+        {
+          "topic": "Familiar",
+          "statement": "A agricultura familiar se destaca por:",
+          "options": [
+            "produzir boa parte do alimento consumido no Brasil",
+            "exportar quase toda a produção",
+            "usar as maiores áreas do país",
+            "plantar só soja",
+            "não usar terra"
+          ],
+          "correct_index": 0,
+          "explanation": "Feijão, mandioca, leite e hortaliças vêm muito das pequenas propriedades.",
+          "pitfall": "Exportar quase tudo é marca do agronegócio."
+        },
+        {
+          "topic": "Fronteira",
+          "statement": "Uma consequência do avanço da fronteira agrícola é:",
+          "options": [
+            "desmatamento do Cerrado e da Amazônia",
+            "aumento das florestas",
+            "fim da produção de soja",
+            "diminuição do gado",
+            "mudança da capital"
+          ],
+          "correct_index": 0,
+          "explanation": "Novas áreas de plantio e pasto ocupam a vegetação nativa.",
+          "pitfall": "As florestas diminuem, não aumentam."
+        },
+        {
+          "topic": "Setores",
+          "format": "match",
+          "statement": "Ligue cada atividade ao seu setor.",
+          "pairs": [
+            {
+              "left": "plantar soja",
+              "right": "setor primário"
+            },
+            {
+              "left": "fabricar carros",
+              "right": "setor secundário"
+            },
+            {
+              "left": "vender roupas numa loja",
+              "right": "setor terciário"
+            },
+            {
+              "left": "PIB",
+              "right": "soma de tudo o que o país produz"
+            }
+          ],
+          "explanation": "Tirar da natureza, transformar e vender; o PIB soma tudo.",
+          "pitfall": "Fabricar é transformar: setor secundário, não primário."
+        },
+        {
+          "topic": "Padaria",
+          "statement": "Uma padaria que vende pão está em qual setor?",
+          "options": [
+            "terciário",
+            "primário",
+            "secundário",
+            "nenhum",
+            "quaternário"
+          ],
+          "correct_index": 0,
+          "explanation": "Vender é comércio: setor terciário.",
+          "pitfall": "Se fosse só a fábrica de farinha, seria secundário.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Juscelino",
+          "statement": "Qual destas obras é do governo de Juscelino Kubitschek?",
+          "options": [
+            "a construção de Brasília",
+            "a criação da Petrobras",
+            "a Lei Áurea",
+            "a CLT",
+            "a abertura dos portos"
+          ],
+          "correct_index": 0,
+          "explanation": "Brasília foi inaugurada em 1960.",
+          "pitfall": "Petrobras é de Vargas.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Reforma agrária",
+          "statement": "A reforma agrária propõe:",
+          "options": [
+            "dividir terras improdutivas entre quem quer plantar",
+            "juntar todas as terras numa só fazenda",
+            "acabar com a agricultura",
+            "proibir a exportação",
+            "levar a indústria para o campo"
+          ],
+          "correct_index": 0,
+          "explanation": "É uma resposta à concentração de terras.",
+          "pitfall": "Juntar terras é o contrário: aumentaria a concentração.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Guerra fiscal",
+          "statement": "Por que muitas fábricas saíram de São Paulo a partir dos anos 1990?",
+          "options": [
+            "outros estados ofereceram impostos menores e mão de obra mais barata",
+            "São Paulo proibiu fábricas",
+            "acabou a energia em São Paulo",
+            "o Nordeste tem mais neve",
+            "o governo federal mandou todas para Brasília"
+          ],
+          "correct_index": 0,
+          "explanation": "É a chamada guerra fiscal: estados disputam fábricas com descontos de impostos.",
+          "pitfall": "Não houve proibição: foi escolha das empresas.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Exportação",
+          "statement": "Por que se diz que o setor primário é pequeno no PIB, mas grande na balança comercial?",
+          "options": [
+            "vale menos no total da economia, mas é o que o Brasil mais vende para fora",
+            "porque não produz nada",
+            "porque é proibido exportar serviços",
+            "porque todo o PIB vem da agricultura",
+            "porque o PIB não conta a agricultura"
+          ],
+          "correct_index": 0,
+          "explanation": "Serviços valem mais no total, mas quase não são exportados. Soja e minério, sim.",
+          "pitfall": "O PIB conta a agricultura, só que ela vale menos que os serviços.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Herança",
+          "statement": "A concentração de terras no Brasil tem raiz:",
+          "options": [
+            "na colonização, com as sesmarias e os grandes engenhos",
+            "na chegada da internet",
+            "na construção de Brasília",
+            "na Revolução Industrial inglesa",
+            "no século XXI"
+          ],
+          "correct_index": 0,
+          "explanation": "Desde o começo, a terra foi dada em grandes lotes a poucas famílias.",
+          "pitfall": "É um problema antigo, não recente.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "globalizacao-e-blocos",
+      "title": "Globalização e blocos econômicos",
+      "module": "População e economia",
+      "summary": "A globalização ligou o mundo pelo comércio, pelas empresas e pela internet, mas de forma desigual. Os países se juntam em blocos para facilitar o comércio entre vizinhos.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O seu celular",
+          "body": [
+            "O seu celular foi desenhado num país, tem peças de outros cinco e foi montado num sexto. Chegou até você de navio e depois de caminhão.",
+            "Isso é a globalização: o mundo inteiro trabalhando ligado, como uma linha de montagem só."
+          ],
+          "terms": [
+            {
+              "word": "Globalização",
+              "meaning": "a ligação cada vez maior entre os países pelo comércio, pela internet e pelas empresas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que tornou isso possível",
+          "body": [
+            "Navios de contêineres, aviões e sobretudo a internet encurtaram as distâncias. Uma empresa consegue comandar fábricas em vários países ao mesmo tempo.",
+            "As multinacionais espalham a produção para onde é mais barato produzir."
+          ],
+          "terms": [
+            {
+              "word": "Multinacional",
+              "meaning": "uma empresa que tem sede num país e fábricas ou lojas em vários outros."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Uma globalização desigual",
+          "body": [
+            "Nem todos ganham igual. Os países ricos concentram as sedes das empresas, a tecnologia e os lucros.",
+            "Muitos países pobres entram com matéria-prima e mão de obra barata. A globalização também espalha hábitos e marcas, e alguns costumes locais perdem espaço."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os blocos econômicos",
+          "body": [
+            "Países vizinhos fazem acordos para comerciar mais. Os acordos vão de mais simples a mais profundos."
+          ],
+          "terms": [
+            {
+              "word": "Bloco econômico",
+              "meaning": "um grupo de países vizinhos que fazem acordos para facilitar o comércio entre si."
+            },
+            {
+              "word": "Mercosul",
+              "meaning": "o bloco econômico criado em 1991 por Brasil, Argentina, Paraguai e Uruguai."
+            }
+          ],
+          "table": {
+            "label": "Do acordo mais simples ao mais profundo",
+            "headers": [
+              "Tipo",
+              "O que libera",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "zona de livre comércio",
+                "mercadorias sem imposto entre os membros",
+                "Estados Unidos, México e Canadá"
+              ],
+              [
+                "união aduaneira",
+                "isso e um imposto comum para quem vem de fora",
+                "Mercosul"
+              ],
+              [
+                "mercado comum",
+                "isso e a circulação de pessoas e dinheiro",
+                "União Europeia"
+              ],
+              [
+                "união monetária",
+                "isso e uma moeda única",
+                "a zona do euro"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Mercosul e União Europeia",
+          "body": [
+            "O Mercosul nasceu em 1991. Ele cobra o mesmo imposto de quem vem de fora, mas ainda tem muitas exceções.",
+            "A União Europeia é o bloco mais profundo: tem moeda comum, o euro, e livre circulação de pessoas. O Reino Unido saiu dela em 2020."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede o que caracteriza a globalização e quem ganha com ela. Também classifica os blocos pelo tipo de acordo."
+          ],
+          "bullets": [
+            "“Um fator que impulsionou a globalização foi…”",
+            "“O Mercosul é classificado como…”",
+            "“A União Europeia diferencia-se dos outros blocos por…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "Globalização",
+              "meaning": "a ligação cada vez maior entre os países pelo comércio, pela internet e pelas empresas."
+            },
+            {
+              "word": "Mercosul",
+              "meaning": "o bloco econômico criado em 1991 por Brasil, Argentina, Paraguai e Uruguai."
+            }
+          ],
+          "bullets": [
+            "Achar que a globalização beneficia todos os países igualmente. Ela é desigual.",
+            "Achar que o Mercosul tem moeda única. Quem tem é parte da União Europeia, com o euro.",
+            "Achar que todos os países da União Europeia usam o euro. Alguns mantêm a própria moeda.",
+            "Confundir zona de livre comércio com mercado comum. Só o mercado comum libera as pessoas."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Transporte e internet ligaram o mundo, e as multinacionais espalharam a produção. Os ganhos são desiguais.",
+            "Blocos vão do livre comércio à moeda única. O Mercosul é uma união aduaneira; a União Europeia tem o euro."
+          ],
+          "terms": [
+            {
+              "word": "Multinacional",
+              "meaning": "uma empresa que tem sede num país e fábricas ou lojas em vários outros."
+            },
+            {
+              "word": "Bloco econômico",
+              "meaning": "um grupo de países vizinhos que fazem acordos para facilitar o comércio entre si."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Internet",
+          "statement": "Qual destes fatores mais impulsionou a globalização?",
+          "options": [
+            "a internet e os meios de transporte modernos",
+            "o fim do comércio entre países",
+            "a volta do feudalismo",
+            "a proibição de empresas estrangeiras",
+            "o isolamento dos países"
+          ],
+          "correct_index": 0,
+          "explanation": "Comunicação instantânea e transporte barato encurtaram o mundo.",
+          "pitfall": "Isolamento é o contrário da globalização."
+        },
+        {
+          "topic": "Multinacional",
+          "statement": "Uma empresa multinacional é aquela que:",
+          "options": [
+            "tem sede num país e atua em vários outros",
+            "só vende no próprio país",
+            "pertence a vários governos",
+            "não paga impostos em lugar nenhum",
+            "só produz alimentos"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela espalha fábricas e lojas por vários países.",
+          "pitfall": "Vender só no próprio país é o contrário."
+        },
+        {
+          "topic": "Desigual",
+          "statement": "Por que se diz que a globalização é desigual?",
+          "options": [
+            "os países ricos concentram tecnologia, sedes e lucros",
+            "todos os países ganham exatamente igual",
+            "só os países pobres lucram",
+            "ela acabou com a pobreza no mundo",
+            "não há comércio entre ricos e pobres"
+          ],
+          "correct_index": 0,
+          "explanation": "Muitos países pobres entram com matéria-prima e mão de obra barata.",
+          "pitfall": "Ganhar igual é o engano que a prova espera."
+        },
+        {
+          "topic": "Mercosul",
+          "statement": "O Mercosul foi criado em 1991 por:",
+          "options": [
+            "Brasil, Argentina, Paraguai e Uruguai",
+            "Estados Unidos, México e Canadá",
+            "França, Alemanha e Itália",
+            "China, Índia e Rússia",
+            "Brasil, Portugal e Angola"
+          ],
+          "correct_index": 0,
+          "explanation": "Os quatro vizinhos do sul da América do Sul fundaram o bloco.",
+          "pitfall": "Estados Unidos, México e Canadá formam outro acordo."
+        },
+        {
+          "topic": "Euro",
+          "statement": "Qual bloco tem uma moeda comum?",
+          "options": [
+            "a União Europeia, com o euro",
+            "o Mercosul",
+            "o acordo entre Estados Unidos, México e Canadá",
+            "nenhum bloco no mundo",
+            "todos os blocos"
+          ],
+          "correct_index": 0,
+          "explanation": "O euro é usado pela maioria dos países da União Europeia.",
+          "pitfall": "O Mercosul não tem moeda única."
+        },
+        {
+          "topic": "Pessoas",
+          "statement": "O que diferencia um mercado comum de uma zona de livre comércio?",
+          "options": [
+            "no mercado comum, também circulam livremente pessoas e dinheiro",
+            "no mercado comum, ninguém pode comerciar",
+            "a zona de livre comércio tem moeda única",
+            "não há diferença",
+            "o mercado comum só vale para alimentos"
+          ],
+          "correct_index": 0,
+          "explanation": "A zona de livre comércio libera só as mercadorias.",
+          "pitfall": "Moeda única é um passo ainda mais adiante, a união monetária."
+        },
+        {
+          "topic": "Brexit",
+          "statement": "Qual país saiu da União Europeia em 2020?",
+          "options": [
+            "Reino Unido",
+            "França",
+            "Alemanha",
+            "Brasil",
+            "Estados Unidos"
+          ],
+          "correct_index": 0,
+          "explanation": "A saída ficou conhecida como Brexit.",
+          "pitfall": "França e Alemanha estão entre os fundadores do bloco."
+        },
+        {
+          "topic": "Blocos",
+          "format": "order",
+          "statement": "Ponha os tipos de bloco em ordem, do mais simples ao mais profundo.",
+          "options": [
+            "zona de livre comércio",
+            "união aduaneira",
+            "mercado comum",
+            "união monetária"
+          ],
+          "explanation": "Cada etapa soma algo à anterior: imposto comum, depois pessoas e por fim moeda.",
+          "pitfall": "A moeda única é o último passo, não o primeiro."
+        },
+        {
+          "topic": "Celular",
+          "statement": "Um celular com peças de vários países, montado num outro, é um exemplo de:",
+          "options": [
+            "globalização",
+            "feudalismo",
+            "êxodo rural",
+            "conurbação",
+            "El Niño"
+          ],
+          "correct_index": 0,
+          "explanation": "A produção espalhada pelo mundo é a marca da globalização.",
+          "pitfall": "Sair do campo para a cidade é outro assunto.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Bloco",
+          "statement": "Um bloco econômico é:",
+          "options": [
+            "um grupo de países que fazem acordos para facilitar o comércio",
+            "um bairro de uma cidade",
+            "uma empresa muito grande",
+            "um tipo de imposto",
+            "um prédio de escritórios"
+          ],
+          "correct_index": 0,
+          "explanation": "Os países vizinhos se juntam para comerciar mais.",
+          "pitfall": "Empresa grande é multinacional, não bloco.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Aduaneira",
+          "statement": "O Mercosul é classificado como união aduaneira porque:",
+          "options": [
+            "cobra um imposto comum de produtos de fora do bloco",
+            "tem moeda única",
+            "libera a circulação de todas as pessoas sem regra",
+            "não tem nenhum acordo",
+            "é formado por um país só"
+          ],
+          "correct_index": 0,
+          "explanation": "A Tarifa Externa Comum vale para quem vem de fora, apesar das exceções.",
+          "pitfall": "Moeda única o Mercosul não tem.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Cultura",
+          "statement": "Um efeito cultural da globalização é:",
+          "options": [
+            "a difusão de marcas e hábitos pelo mundo, com perda de costumes locais",
+            "o fim de todas as culturas",
+            "a proibição de filmes estrangeiros",
+            "o isolamento das culturas",
+            "a volta das línguas antigas"
+          ],
+          "correct_index": 0,
+          "explanation": "Músicas, comidas e marcas se espalham; alguns costumes locais perdem espaço.",
+          "pitfall": "“Fim de todas as culturas” é exagero.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Nem todos",
+          "statement": "Sobre o euro, qual frase está certa?",
+          "options": [
+            "é a moeda da maioria dos países da União Europeia, mas não de todos",
+            "é usado por todos os países do mundo",
+            "é a moeda do Mercosul",
+            "foi criado pelo Brasil",
+            "todos os países da União Europeia o usam"
+          ],
+          "correct_index": 0,
+          "explanation": "Países como a Suécia e a Dinamarca mantêm a própria moeda.",
+          "pitfall": "“Todos os países da União Europeia” é o erro.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Produção espalhada",
+          "statement": "Por que uma multinacional monta celulares num país e desenha em outro?",
+          "options": [
+            "busca em cada lugar o que é mais barato ou melhor para cada etapa",
+            "porque é proibido fazer tudo num lugar só",
+            "por acaso",
+            "para pagar mais impostos",
+            "porque os clientes exigem"
+          ],
+          "correct_index": 0,
+          "explanation": "Projeto onde há engenheiros, montagem onde a mão de obra é barata.",
+          "pitfall": "Não é proibição: é cálculo de custo.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "regioes-do-brasil",
+      "title": "As regiões do Brasil e suas diferenças",
+      "module": "Brasil",
+      "summary": "O IBGE divide o Brasil em cinco regiões, seguindo os limites dos estados. Riqueza, população e desenvolvimento são bem diferentes entre elas.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Um país do tamanho de um continente",
+          "body": [
+            "Do Acre a Pernambuco, a distância é maior que a de Lisboa a Moscou. Num país desse tamanho, cada parte tem um jeito.",
+            "Para estudar e planejar, o Brasil é dividido em regiões."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As cinco regiões do IBGE",
+          "body": [
+            "A divisão oficial agrupa os estados em cinco regiões. Ela segue os limites dos estados."
+          ],
+          "table": {
+            "label": "As cinco regiões",
+            "headers": [
+              "Região",
+              "Estados",
+              "Marca"
+            ],
+            "rows": [
+              [
+                "Norte",
+                "7",
+                "maior área, menos gente por quilômetro, floresta"
+              ],
+              [
+                "Nordeste",
+                "9",
+                "litoral populoso, sertão seco"
+              ],
+              [
+                "Centro-Oeste",
+                "3 e o Distrito Federal",
+                "grandes fazendas de soja e gado, e a capital"
+              ],
+              [
+                "Sudeste",
+                "4",
+                "mais população e maior economia"
+              ],
+              [
+                "Sul",
+                "3",
+                "imigração europeia, clima mais frio"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Outra divisão: as regiões geoeconômicas",
+          "body": [
+            "Há uma divisão em três grandes regiões: Amazônia, Nordeste e Centro-Sul. Ela agrupa áreas pelo tipo de economia.",
+            "Essa divisão não segue os limites dos estados. O norte de Minas Gerais, por exemplo, fica no Nordeste geoeconômico."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Uma riqueza concentrada",
+          "body": [
+            "O Sudeste reúne cerca de 4 em cada 10 brasileiros e produz quase metade do PIB do país.",
+            "No Norte e no Nordeste, o IDH é mais baixo, em média. Essa diferença vem da história: a indústria e o dinheiro se concentraram no Sudeste."
+          ],
+          "terms": [
+            {
+              "word": "PIB",
+              "meaning": "a soma de tudo o que é produzido em bens e serviços num lugar durante um ano."
+            },
+            {
+              "word": "IDH",
+              "meaning": "Índice de Desenvolvimento Humano: uma nota de 0 a 1 que junta renda, educação e expectativa de vida."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os recursos do país",
+          "body": [
+            "A maior parte da eletricidade do Brasil vem de fontes renováveis, principalmente das hidrelétricas. A energia do vento cresce no Nordeste.",
+            "O país tem petróleo no pré-sal, em águas muito profundas. Tem também grandes jazidas de minério de ferro, como Carajás, no Pará."
+          ],
+          "table": {
+            "label": "Onde fica cada recurso",
+            "headers": [
+              "Recurso",
+              "Onde"
+            ],
+            "rows": [
+              [
+                "hidrelétricas",
+                "rios do Sul, Sudeste e Norte"
+              ],
+              [
+                "energia do vento",
+                "litoral e serras do Nordeste"
+              ],
+              [
+                "petróleo do pré-sal",
+                "mar do Rio de Janeiro e de São Paulo"
+              ],
+              [
+                "minério de ferro",
+                "Pará e Minas Gerais"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede as marcas de cada região e a diferença entre as duas divisões. Também cobra a concentração da riqueza no Sudeste."
+          ],
+          "bullets": [
+            "“A divisão regional do IBGE baseia-se em…”",
+            "“As regiões geoeconômicas diferem da divisão do IBGE porque…”",
+            "“A maior parte da energia elétrica do Brasil vem de…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "terms": [
+            {
+              "word": "IDH",
+              "meaning": "Índice de Desenvolvimento Humano: uma nota de 0 a 1 que junta renda, educação e expectativa de vida."
+            }
+          ],
+          "bullets": [
+            "Achar que as regiões geoeconômicas seguem os limites dos estados. Não seguem.",
+            "Achar que o Norte é a região mais populosa por ser a maior. É a de menos gente por quilômetro.",
+            "Achar que a eletricidade do Brasil vem sobretudo do carvão. Vem das hidrelétricas.",
+            "Achar que a diferença entre as regiões é natural. Ela vem da história da economia."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O IBGE divide o Brasil em cinco regiões, pelos limites dos estados. As regiões geoeconômicas são três e não seguem esses limites.",
+            "O Sudeste concentra população e quase metade do PIB. A eletricidade vem sobretudo das hidrelétricas."
+          ],
+          "terms": [
+            {
+              "word": "PIB",
+              "meaning": "a soma de tudo o que é produzido em bens e serviços num lugar durante um ano."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Cinco",
+          "statement": "Quantas regiões tem a divisão oficial do IBGE?",
+          "options": [
+            "cinco",
+            "três",
+            "quatro",
+            "seis",
+            "27"
+          ],
+          "correct_index": 0,
+          "explanation": "São Norte, Nordeste e Centro-Oeste, mais Sudeste e Sul.",
+          "pitfall": "Três são as regiões geoeconômicas, outra divisão."
+        },
+        {
+          "topic": "Populosa",
+          "statement": "Qual é a região mais populosa do Brasil?",
+          "options": [
+            "Sudeste",
+            "Norte",
+            "Centro-Oeste",
+            "Sul",
+            "Nordeste"
+          ],
+          "correct_index": 0,
+          "explanation": "Cerca de 4 em cada 10 brasileiros moram no Sudeste.",
+          "pitfall": "O Norte é o maior em área, mas tem pouca gente por quilômetro."
+        },
+        {
+          "topic": "Geoeconômica",
+          "statement": "As regiões geoeconômicas se diferenciam da divisão do IBGE porque:",
+          "options": [
+            "não seguem os limites dos estados",
+            "são cinco",
+            "foram criadas em 2020",
+            "só valem para o Sul",
+            "seguem exatamente os limites dos estados"
+          ],
+          "correct_index": 0,
+          "explanation": "Elas agrupam áreas pela economia, e podem cortar um estado ao meio.",
+          "pitfall": "Seguir os limites dos estados é a marca da divisão do IBGE."
+        },
+        {
+          "topic": "Energia",
+          "statement": "A maior parte da eletricidade do Brasil vem de:",
+          "options": [
+            "hidrelétricas",
+            "usinas a carvão",
+            "usinas nucleares",
+            "geradores a diesel",
+            "petróleo do pré-sal"
+          ],
+          "correct_index": 0,
+          "explanation": "Os grandes rios fazem do Brasil um país de energia sobretudo renovável.",
+          "pitfall": "O pré-sal é petróleo, usado mais como combustível do que para gerar eletricidade."
+        },
+        {
+          "topic": "Centro-Oeste",
+          "statement": "Qual região abriga a capital do país e se destaca no agronegócio?",
+          "options": [
+            "Centro-Oeste",
+            "Norte",
+            "Nordeste",
+            "Sul",
+            "Sudeste"
+          ],
+          "correct_index": 0,
+          "explanation": "Brasília fica no Distrito Federal, no Centro-Oeste, região forte em soja e gado.",
+          "pitfall": "O Sudeste tem a maior economia, mas a capital não está lá."
+        },
+        {
+          "topic": "IDH",
+          "statement": "O IDH mede:",
+          "options": [
+            "renda, educação e expectativa de vida juntas",
+            "só a renda",
+            "só o tamanho do país",
+            "o número de habitantes",
+            "a quantidade de chuva"
+          ],
+          "correct_index": 0,
+          "explanation": "É uma nota de 0 a 1 que junta três dimensões.",
+          "pitfall": "Só a renda seria o PIB por pessoa."
+        },
+        {
+          "topic": "Carajás",
+          "statement": "Carajás, no Pará, é conhecida por:",
+          "options": [
+            "uma das maiores jazidas de minério de ferro do mundo",
+            "suas praias",
+            "o petróleo do pré-sal",
+            "ser a capital do Brasil",
+            "a produção de vinho"
+          ],
+          "correct_index": 0,
+          "explanation": "O minério de ferro de Carajás é exportado para vários países.",
+          "pitfall": "O pré-sal fica no mar do Sudeste."
+        },
+        {
+          "topic": "Regiões",
+          "format": "match",
+          "statement": "Ligue cada região à sua marca.",
+          "pairs": [
+            {
+              "left": "Norte",
+              "right": "maior área e floresta"
+            },
+            {
+              "left": "Nordeste",
+              "right": "sertão seco"
+            },
+            {
+              "left": "Sudeste",
+              "right": "maior economia"
+            },
+            {
+              "left": "Sul",
+              "right": "imigração europeia e clima mais frio"
+            }
+          ],
+          "explanation": "Cada região tem um traço que a prova mais cobra.",
+          "pitfall": "Norte é a maior em área, não em população."
+        },
+        {
+          "topic": "Sul",
+          "statement": "Qual região tem o clima mais frio e forte marca da imigração europeia?",
+          "options": [
+            "Sul",
+            "Norte",
+            "Nordeste",
+            "Centro-Oeste",
+            "Sudeste"
+          ],
+          "correct_index": 0,
+          "explanation": "Alemães, italianos e outros europeus se instalaram no Sul a partir do século XIX.",
+          "pitfall": "O Norte é quente o ano inteiro.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Estados",
+          "statement": "Quantos estados tem a região Nordeste?",
+          "options": [
+            "nove",
+            "sete",
+            "três",
+            "quatro",
+            "cinco"
+          ],
+          "correct_index": 0,
+          "explanation": "É a região com mais estados do Brasil.",
+          "pitfall": "Sete são os do Norte.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Riqueza",
+          "statement": "Por que o Sudeste concentra boa parte da riqueza do Brasil?",
+          "options": [
+            "a indústria e o dinheiro se concentraram lá ao longo da história",
+            "tem o maior território",
+            "é a única região com rios",
+            "não tem cidades grandes",
+            "tem o menor número de habitantes"
+          ],
+          "correct_index": 0,
+          "explanation": "Café, indústria e infraestrutura se acumularam no Sudeste desde o século XIX.",
+          "pitfall": "O maior território é o do Norte.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Vento",
+          "statement": "A energia gerada pelo vento cresce principalmente em qual região?",
+          "options": [
+            "Nordeste",
+            "Norte",
+            "Sul",
+            "Centro-Oeste",
+            "nenhuma"
+          ],
+          "correct_index": 0,
+          "explanation": "O litoral e as serras do Nordeste têm ventos fortes e constantes.",
+          "pitfall": "O Norte tem muitas hidrelétricas, mas pouco vento forte.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Norte de Minas",
+          "statement": "O norte de Minas Gerais pertence a qual região?",
+          "options": [
+            "à região Sudeste no IBGE e ao Nordeste geoeconômico",
+            "ao Norte no IBGE",
+            "ao Sul nas duas divisões",
+            "a nenhuma região",
+            "ao Centro-Oeste nas duas divisões"
+          ],
+          "correct_index": 0,
+          "explanation": "Pelo estado, é Sudeste. Pela economia e pelo clima seco, é Nordeste geoeconômico.",
+          "pitfall": "As duas divisões podem discordar: é o que a questão cobra.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Desigualdade",
+          "statement": "Sobre as diferenças entre as regiões do Brasil, qual frase está certa?",
+          "options": [
+            "elas vêm da história da economia, e não só da natureza",
+            "são naturais e não podem mudar",
+            "não existem diferenças entre as regiões",
+            "o Norte é a região mais rica",
+            "o Nordeste tem o maior PIB"
+          ],
+          "correct_index": 0,
+          "explanation": "A concentração de indústria e investimento ao longo do tempo explica boa parte.",
+          "pitfall": "Achar que a diferença é natural é o engano que a prova espera.",
+          "difficulty": "dificil"
+        }
+      ]
+    }
+  ]
+}
