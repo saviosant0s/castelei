@@ -143,7 +143,7 @@ probabilidade). Razão, proporção e porcentagem ficaram na básica.
 6. Globalização e blocos econômicos.
 7. Geografia do Brasil: regiões, recursos e desigualdades.
 
-### Filosofia — `filosofia-basica`
+### Filosofia — `filosofia-basica` (feito: 6 lições em quatro módulos, com os níveis)
 
 1. O que é filosofia; mito e razão.
 2. Os pré-socráticos, Sócrates, Platão e Aristóteles.

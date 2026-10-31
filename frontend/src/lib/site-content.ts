@@ -255,6 +255,20 @@ export const SUBJECTS: SiteSubject[] = [
       "O que é um algoritmo",
     ],
   },
+  {
+    slug: "filosofia-basica",
+    name: "Filosofia",
+    pitch:
+      "Do mito à razão, Sócrates, Platão e Aristóteles, razão e experiência, ética, política e contrato social, Marx, Nietzsche e o existencialismo.",
+    lessons: [
+      "O que é filosofia: do mito à razão",
+      "Sócrates, Platão e Aristóteles",
+      "Razão e experiência: de onde vem o conhecimento",
+      "Ética: o certo e o errado",
+      "Política: poder, Estado e contrato social",
+      "Filosofia contemporânea: Marx, Nietzsche e o existencialismo",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -271,5 +285,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 1764,
+  questions: 1848,
 };
