@@ -120,7 +120,7 @@ probabilidade). Razão, proporção e porcentagem ficaram na básica.
 6. Saúde: vírus, bactérias, vacinas e doenças que mais caem.
 7. Plantas e classificação dos seres vivos.
 
-### História — `historia-basica`
+### História — `historia-basica` (feito: 10 lições em cinco módulos, com os níveis)
 
 1. Para que serve a História; fontes e tempo histórico.
 2. Antiguidade: Grécia e Roma.
@@ -214,10 +214,10 @@ Operacionais.
 | Trilha | Passos | Situação |
 |---|---|---|
 | **Base para provas** | Português → Matemática Básica → Matemática do dia a dia → Lógica → Produção Textual | **No ar** |
-| ENEM: Linguagens | Português → Produção Textual → Inglês (ou Espanhol) → Artes → Educação Física | Planejada |
-| ENEM: Matemática | Matemática Básica → Matemática do dia a dia → Lógica | Planejada |
+| ENEM: Linguagens | Português → Produção Textual → Inglês (ou Espanhol) → Artes → Educação Física | **No ar** (os passos sem matéria aparecem como "Em breve") |
+| ENEM: Matemática | Matemática Básica → Matemática do dia a dia → Lógica | **No ar** |
 | ENEM: Natureza | Física → Química → Biologia | Planejada |
-| ENEM: Humanas | História → Geografia → Filosofia → Sociologia | Planejada |
+| ENEM: Humanas | História → Geografia → Filosofia → Sociologia | **No ar** (os passos sem matéria aparecem como "Em breve") |
 | Primeiros passos na informática | Informática básica → Montar um PC → Python | Planejada; Montar um PC e Python ainda privadas |
 | LLMs do zero | Matemática Básica → … → LLMs: treino, uso e limites | Privada |
 
@@ -230,7 +230,7 @@ aparecer como "Em breve".
 2. Português básico completo (feito).
 3. Questões com nível de dificuldade nas matérias públicas (feito: Português, Matemática Básica e Lógica, seis por lição).
 4. Matemática do dia a dia (feito: 13 lições em quatro módulos, já com os níveis).
-5. **Uma área por rodada** (em andamento; Biologia feita): História, Geografia, Física, Química,
+5. **Uma área por rodada** (em andamento; Biologia e História feitas): Geografia, Física, Química,
    Inglês, Informática básica, Filosofia, Sociologia, Espanhol, Artes,
    Educação Física. Cada uma entra com todas as lições de uma vez.
 6. As trilhas ENEM entram conforme as matérias delas ficam prontas.

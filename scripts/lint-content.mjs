@@ -101,6 +101,20 @@ const JARGON = [
   ["enzima", /(?<!\p{L})enzimas?(?!\p{L})/iu, "b"], ["hormônio", /\bhorm(ô|o)nios?\b/i, "b"], ["anticorpo", /(?<!\p{L})anticorpos?(?!\p{L})/iu, "b"],
   ["antígeno", /(?<!\p{L})ant(í|i)genos?(?!\p{L})/iu, "b"], ["ATP", /\bATP\b/, "b"], ["aminoácido", /(?<!\p{L})amino(á|a)cidos?(?!\p{L})/iu, "b"],
   ["glicose", /\bglicoses?\b/i, "b"],
+  // História básica (escopo "i"): o que quem nunca estudou História não saberia.
+  ["fonte histórica", /\bfontes? hist(ó|o)ricas?\b/i, "i"], ["pólis", /(?<!\p{L})p(ó|o)lis(?!\p{L})/iu, "i"], ["cidadão (na Grécia)", /\bcidadania ateniense\b/i, "i"],
+  ["patrício e plebeu", /\b(patr(í|i)ci|pleb)eus?\b|\bpatr(í|i)cios?\b/i, "i"], ["feudalismo", /\bfeuda(l|is|lismo)\b|\bfeudos?\b/i, "i"],
+  ["suserano e vassalo", /\b(suseran|vassal)(o|os|a|as)\b/i, "i"], ["servo", /\bserv(o|os)\b|\bservid(ã|a)o\b/i, "i"],
+  ["Renascimento", /\bRenascimento\b/, "i"], ["Reforma Protestante", /\bReforma\b/, "i"], ["mercantilismo", /\bmercantilis(mo|ta|tas)\b/i, "i"],
+  ["absolutismo", /\babsolutis(mo|ta|tas)\b/i, "i"], ["burguesia", /(?<!\p{L})burgu(e|ê)s(ia|es|a|as)?(?!\p{L})/iu, "i"],
+  ["capitania hereditária", /\bcapitanias?\b/i, "i"], ["sesmaria", /\bsesmarias?\b/i, "i"], ["quilombo", /\bquilombo(s|la|las)?\b/i, "i"],
+  ["Iluminismo", /\bIluminis(mo|ta|tas)\b/i, "i"], ["Revolução Industrial", /\bRevolu(ç|c)(ã|a)o Industrial\b/i, "i"],
+  ["monarquia", /\bmonarqui(a|as)\b/i, "i"], ["república", /(?<!\p{L})rep(ú|u)blica(?!\p{L})/iu, "i"],
+  ["oligarquia", /\boligarqui(a|as)\b/i, "i"], ["coronelismo", /\bcoronelismo\b|\bvoto de cabresto\b/i, "i"],
+  ["populismo", /\bpopulis(mo|ta|tas)\b/i, "i"], ["Estado Novo", /\bEstado Novo\b/, "i"], ["imperialismo", /\bimperialis(mo|ta|tas)\b/i, "i"],
+  ["fascismo e nazismo", /\bfascis(mo|ta|tas)\b|\bnazis(mo|ta|tas)\b/i, "i"], ["Guerra Fria", /\bGuerra Fria\b/i, "i"],
+  ["capitalismo e socialismo", /\bcapitalis(mo|ta|tas)\b|\bsocialis(mo|ta|tas)\b/i, "i"], ["AI-5", /\bAI-5\b|\bato institucional\b/i, "i"],
+  ["anistia", /\banistia\b/i, "i"], ["golpe de Estado", /\bgolpes? (de Estado|militar)\b/i, "i"],
 
   ["preposição", /\bpreposi(ç|c)(ão|ões)\b/i, "p"], ["artigo", /\bartigos?\b/i, "p"],
   ["verbo", /\bverbos?\b/i, "p"], ["sujeito", /\bsujeitos?\b/i, "p"], ["núcleo", /\bnúcleos?\b/i, "p"], ["pronome", /\bpronomes?\b/i, "p"],
@@ -438,7 +452,7 @@ const JARGON = [
   ["cooler", /\bcoolers?\b|\bwater cooler\b/i, "h"], ["80 Plus", /\b80 Plus\b/i, "h"], ["fonte modular", /\bmodular(es)?\b/i, "h"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;

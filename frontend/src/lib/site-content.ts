@@ -160,6 +160,24 @@ export const SUBJECTS: SiteSubject[] = [
       "Plantas e a classificação dos seres vivos",
     ],
   },
+  {
+    slug: "historia-basica",
+    name: "História",
+    pitch:
+      "Da Grécia e de Roma à Constituição de 1988: Idade Média, navegações, revoluções, Brasil Colônia, Império, Vargas, guerras mundiais e ditadura, na ordem em que uma coisa explica a outra.",
+    lessons: [
+      "Para que serve a História",
+      "Grécia e Roma: a Antiguidade que deixou herança",
+      "Idade Média: feudos, servos e Igreja",
+      "Navegações, Renascimento e Reforma",
+      "Brasil Colônia: pau-brasil, açúcar e ouro",
+      "Iluminismo, Revolução Francesa e Revolução Industrial",
+      "Brasil Império e o fim da escravidão",
+      "Da Primeira República à Era Vargas",
+      "Guerras mundiais e Guerra Fria",
+      "Ditadura militar e a volta da democracia",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -176,5 +194,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 1106,
+  questions: 1246,
 };
