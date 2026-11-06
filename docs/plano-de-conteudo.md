@@ -255,7 +255,7 @@ escrever.
 | Matemática | Geometria e trigonometria (feita: 13 lições em quatro módulos, com os níveis) |
 | História | História do Brasil (feita: 13 lições em três módulos, com os níveis) |
 | Geografia | Geografia do Brasil (feita: 13 lições em quatro módulos, com os níveis) |
-| Biologia | Corpo humano e saúde |
+| Biologia | Corpo humano e saúde (feita: 13 lições em quatro módulos, com os níveis) |
 | Química | Química orgânica |
 | Física | Óptica, termodinâmica e física moderna |
 | Sociologia | Sociedade brasileira |

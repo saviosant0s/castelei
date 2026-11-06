@@ -466,6 +466,27 @@ export const SUBJECTS: SiteSubject[] = [
       "Amazônia, desmatamento e as leis que protegem",
     ],
   },
+  {
+    slug: "corpo-humano-e-saude",
+    name: "Corpo humano e saúde",
+    pitch:
+      "Os sistemas do corpo por dentro, os tipos sanguíneos, a imunidade, a reprodução e as doenças do saneamento, do jeito que o ENEM cobra.",
+    lessons: [
+      "Da célula ao organismo: tecidos, órgãos e sistemas",
+      "Alimentos e nutrientes: o que a comida dá ao corpo",
+      "O sistema digestório por dentro: enzimas e absorção",
+      "Respirar: o caminho do ar e as trocas gasosas",
+      "Coração e vasos: as duas circulações",
+      "O sangue e os tipos sanguíneos",
+      "Os rins e a urina: o filtro do corpo",
+      "O sistema nervoso: neurônios, reflexos e drogas",
+      "Os hormônios: as mensagens lentas do corpo",
+      "As defesas do corpo: imunidade, vacinas e soros",
+      "Reprodução humana: ciclo, gravidez e métodos contraceptivos",
+      "ISTs: as infecções do sexo e como se prevenir",
+      "Doenças, vetores e saneamento básico",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -482,5 +503,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 3710,
+  questions: 3892,
 };
