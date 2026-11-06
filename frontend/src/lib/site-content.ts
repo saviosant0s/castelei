@@ -547,6 +547,26 @@ export const SUBJECTS: SiteSubject[] = [
       "Cultura e religião no Brasil",
     ],
   },
+  {
+    slug: "autores-de-filosofia",
+    name: "Os filósofos que mais caem",
+    pitch:
+      "Um filósofo por vez, com as ideias e as frases que a prova cobra e as trocas que ela espera que você faça.",
+    lessons: [
+      "Platão: a caverna, as ideias e a cidade justa",
+      "Aristóteles: as causas, a virtude e o animal político",
+      "Agostinho e Tomás de Aquino: fé e razão",
+      "Maquiavel: a política como ela é",
+      "Descartes: duvidar de tudo para ter certeza",
+      "Hobbes, Locke, Rousseau e Montesquieu: o poder e o povo",
+      "Kant: ouse saber e o imperativo categórico",
+      "Marx: classe, trabalho e ideologia",
+      "Nietzsche: a morte de Deus e a criação de valores",
+      "Sartre e Beauvoir: liberdade e escolha",
+      "A Escola de Frankfurt: indústria cultural e razão",
+      "Arendt e Foucault: o mal comum e o poder que vigia",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -563,5 +583,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 4396,
+  questions: 4564,
 };

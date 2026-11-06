@@ -383,6 +383,24 @@ const JARGON = [
   ["encarceramento em massa", /\bencarceramento\b/i, "S"], ["milícia", /(?<!\p{L})mil(í|i)cias?(?!\p{L})/iu, "S"],
   ["sincretismo religioso", /\bsincretismos?\b/i, "S"], ["intolerância religiosa", /(?<!\p{L})intoler(â|a)ncia religiosa(?!\p{L})/iu, "S"],
   ["cultura popular, erudita e de massa", /\bcultura (popular|erudita|de massa)\b/i, "S"],
+  // Os autores que mais caem, de Filosofia (escopo "F", somado ao "z" da Filosofia básica).
+  ["alegoria da caverna", /\balegoria da caverna\b/i, "F"], ["reminiscência", /(?<!\p{L})reminisc(ê|e)ncias?(?!\p{L})|\banamnese\b/iu, "F"],
+  ["ato e potência", /(?<!\p{L})ato e pot(ê|e)ncia(?!\p{L})/iu, "F"], ["justo meio", /\bjusto meio\b/i, "F"], ["eudaimonia", /\beudaimonia\b/i, "F"],
+  ["quatro causas", /\bquatro causas\b|\bcausa (material|formal|eficiente|final)\b/i, "F"],
+  ["livre-arbítrio", /(?<!\p{L})livre-arb(í|i)trio(?!\p{L})/iu, "F"], ["escolástica", /(?<!\p{L})escol(á|a)stic(a|o)(?!\p{L})/iu, "F"], ["cinco vias", /\bcinco vias\b/i, "F"],
+  ["virtù e fortuna", /\bvirt(ù|u)\b/iu, "F"], ["dúvida metódica", /(?<!\p{L})d(ú|u)vida met(ó|o)dica(?!\p{L})/iu, "F"], ["cogito", /\bcogito\b/i, "F"], ["dualismo", /\bdualis(mo|ta)\b/i, "F"],
+  ["separação dos poderes", /(?<!\p{L})separa(ç|c)(ão|ao) dos poderes(?!\p{L})/iu, "F"], ["vontade geral", /\bvontade geral\b/i, "F"],
+  ["bom selvagem", /\bbom selvagem\b/i, "F"], ["direito natural", /\bdireitos? natura(l|is)\b/i, "F"], ["Leviatã", /(?<!\p{L})Leviat(ã|a)(?!\p{L})/u, "F"],
+  ["esclarecimento", /\besclarecimento\b/i, "F"], ["autonomia e heteronomia", /\bheteronomi(a|as)\b|(?<!\p{L})aut(ô|o)nom(o|a|ia)(?!\p{L})/iu, "F"],
+  ["juízo analítico e sintético", /(?<!\p{L})ju(í|i)zos? (sint(é|e)ticos?|anal(í|i)ticos?)(?!\p{L})/iu, "F"],
+  ["materialismo histórico", /(?<!\p{L})materialismo hist(ó|o)rico(?!\p{L})/iu, "F"], ["infraestrutura e superestrutura", /\b(infra|super)estruturas?\b/i, "F"],
+  ["ideologia", /\bideologias?\b/i, "F"], ["fetichismo da mercadoria", /\bfetichismo\b/i, "F"],
+  ["vontade de potência", /(?<!\p{L})vontade de pot(ê|e)ncia(?!\p{L})/iu, "F"], ["além-do-homem", /(?<!\p{L})al(é|e)m-do-homem(?!\p{L})|\bsuper-homem\b/iu, "F"],
+  ["eterno retorno", /\beterno retorno\b/i, "F"], ["moral de senhores e de escravos", /\bmoral (de|dos) (senhores|escravos)\b/i, "F"], ["má-fé", /(?<!\p{L})m(á|a)-f(é|e)(?!\p{L})/iu, "F"],
+  ["razão instrumental", /(?<!\p{L})raz(ão|ao) instrumental(?!\p{L})/iu, "F"], ["aura (da obra de arte)", /\baura\b/i, "F"],
+  ["razão comunicativa", /(?<!\p{L})(raz(ão|ao)|a(ç|c)(ão|ao)) comunicativa(?!\p{L})/iu, "F"],
+  ["banalidade do mal", /\bbanalidade do mal\b/i, "F"], ["totalitarismo", /\btotalitaris(mo|ta|tas)\b/i, "F"],
+  ["poder disciplinar", /\b(poder|sociedade) disciplinar\b/i, "F"], ["panóptico", /(?<!\p{L})pan(ó|o)ptico(?!\p{L})/iu, "F"], ["biopoder", /\bbiopoder\b|(?<!\p{L})biopol(í|i)tica(?!\p{L})/iu, "F"],
   ["Estado", /\bEstado\b/, "j"], ["cidadania", /\bcidadania\b/i, "j"], ["movimento social", /\bmovimentos? socia(l|is)\b/i, "j"], ["ação social", /(?<!\p{L})a(ç|c)(ão|ões) socia(l|is)(?!\p{L})/iu, "j"], ["artigo", /\bartigos?\b/i, "u"], ["conjugação", /\bconjuga(ç|c)(ão|ões)\b|\bconjugad(o|a)\b/i, "u"], ["combustível fóssil", /(?<!\p{L})combust(í|i)ve(l|is) f(ó|o)sse(l|is)(?!\p{L})/iu, "x"], ["biocombustível", /(?<!\p{L})biocombust(í|i)ve(l|is)(?!\p{L})/iu, "x"],
 
   ["preposição", /\bpreposi(ç|c)(ão|ões)\b/i, "p"], ["artigo", /\bartigos?\b/i, "p"],
@@ -721,7 +739,7 @@ const JARGON = [
   ["cooler", /\bcoolers?\b|\bwater cooler\b/i, "h"], ["80 Plus", /\b80 Plus\b/i, "h"], ["fonte modular", /\bmodular(es)?\b/i, "h"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG", "historia-do-brasil": "iH", "geografia-do-brasil": "oB", "corpo-humano-e-saude": "bC", "quimica-organica": "xO", "termodinamica-optica-e-fisica-moderna": "fT", "sociedade-brasileira": "jS" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG", "historia-do-brasil": "iH", "geografia-do-brasil": "oB", "corpo-humano-e-saude": "bC", "quimica-organica": "xO", "termodinamica-optica-e-fisica-moderna": "fT", "sociedade-brasileira": "jS", "autores-de-filosofia": "zF" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;
