@@ -369,10 +369,17 @@ export const SUBJECTS: SiteSubject[] = [
       "Corpo, saúde e cultura em movimento: capacidades físicas, quanto se mexer, esportes e regras, capoeira e danças do Brasil, e o corpo na mídia.",
     lessons: [
       "O corpo em movimento",
+      "Ossos, músculos e articulações",
+      "Princípios do treinamento",
       "Atividade física e saúde",
+      "Primeiros socorros: o que fazer até a ajuda chegar",
       "Esportes coletivos e suas regras",
+      "Atletismo, natação e ginástica",
       "Lutas, danças e jogos do Brasil",
+      "Jogos Olímpicos e Paralímpicos",
       "Corpo, mídia e padrões de beleza",
+      "Esporte, mídia e sociedade",
+      "Lazer, trabalho e qualidade de vida",
     ],
   },
 ];
@@ -391,5 +398,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 2884,
+  questions: 2982,
 };
