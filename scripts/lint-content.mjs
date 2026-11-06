@@ -115,6 +115,7 @@ const JARGON = [
   ["fascismo e nazismo", /\bfascis(mo|ta|tas)\b|\bnazis(mo|ta|tas)\b/i, "i"], ["Guerra Fria", /\bGuerra Fria\b/i, "i"],
   ["capitalismo e socialismo", /\bcapitalis(mo|ta|tas)\b|\bsocialis(mo|ta|tas)\b/i, "i"], ["AI-5", /\bAI-5\b|\bato institucional\b/i, "i"],
   ["anistia", /\banistia\b/i, "i"], ["golpe de Estado", /\bgolpes? (de Estado|militar)\b/i, "i"],
+  ["Paleolítico e Neolítico", /(?<!\p{L})(paleol|neol)(í|i)tic(o|os|a|as)(?!\p{L})/iu, "i"], ["etnocentrismo", /\betnoc(ê|e)ntric(o|a|os|as)\b|\betnocentrismo\b/i, "i"],
   // Geografia básica (escopo "o").
   ["escala", /\bescalas?\b/i, "o"], ["legenda", /\blegendas?\b/i, "o"], ["projeção cartográfica", /\bproje(ç|c)(ão|ões)\b/i, "o"],
   ["latitude", /\blatitudes?\b/i, "o"], ["longitude", /\blongitudes?\b/i, "o"], ["meridiano", /\bmeridianos?\b|\bGreenwich\b/i, "o"],
@@ -129,6 +130,8 @@ const JARGON = [
   ["setor primário, secundário e terciário", /\bsetor(es)? (prim|secund|terci)(á|a)rios?\b/i, "o"], ["agronegócio", /(?<!\p{L})agroneg(ó|o)cios?(?!\p{L})/iu, "o"],
   ["globalização", /\bglobaliza(ç|c)(ão|ões)\b/i, "o"], ["bloco econômico", /(?<!\p{L})blocos? econ(ô|o)micos?(?!\p{L})/iu, "o"], ["Mercosul", /\bMercosul\b/, "o"],
   ["multinacional", /\bmultinaciona(l|is)\b|\btransnaciona(l|is)\b/i, "o"], ["PIB", /\bPIB\b/, "o"], ["IDH", /\bIDH\b/, "o"],
+  ["bacia hidrográfica", /\bbacias? hidrogr(á|a)ficas?\b/i, "o"], ["aquífero", /(?<!\p{L})aqu(í|i)feros?(?!\p{L})/iu, "o"], ["assoreamento", /\bassoreamentos?\b/i, "o"],
+  ["matriz energética", /\bmatriz(es)? (energ(é|e)tica|el(é|e)trica)s?\b/i, "o"],
   // Física básica (escopo "f").
   ["grandeza", /\bgrandezas?\b/i, "f"], ["notação científica", /\bnota(ç|c)(ão|ões) cient(í|i)ficas?\b/i, "f"], ["velocidade média", /\bvelocidades? m(é|e)dias?\b/i, "f"],
   ["aceleração", /\bacelera(ç|c)(ão|ões)\b/i, "f"], ["movimento uniforme", /\bmovimentos? uniformes?\b/i, "f"], ["queda livre", /\bquedas? livres?\b/i, "f"],

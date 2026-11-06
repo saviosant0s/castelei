@@ -122,7 +122,7 @@ probabilidade). Razão, proporção e porcentagem ficaram na básica.
 6. Saúde: vírus, bactérias, vacinas e doenças que mais caem.
 7. Plantas e classificação dos seres vivos.
 
-### História — `historia-basica` (feito: 10 lições em cinco módulos, com os níveis)
+### História — `historia-basica` (feito: 12 lições em cinco módulos, com os níveis)
 
 1. Para que serve a História; fontes e tempo histórico.
 2. Antiguidade: Grécia e Roma.
@@ -134,8 +134,9 @@ probabilidade). Razão, proporção e porcentagem ficaram na básica.
 8. Brasil República: da Primeira República a Vargas.
 9. Guerras mundiais e Guerra Fria.
 10. Ditadura militar e redemocratização no Brasil.
+11. Segunda rodada: os primeiros povos (Pré-história, Egito e Mesopotâmia); África e América antes dos europeus.
 
-### Geografia — `geografia-basica` (feito: 9 lições em cinco módulos, com os níveis)
+### Geografia — `geografia-basica` (feito: 12 lições em seis módulos, com os níveis)
 
 1. Cartografia: escala, coordenadas, fuso horário e projeções.
 2. A Terra: estrutura, relevo e clima.
@@ -144,6 +145,7 @@ probabilidade). Razão, proporção e porcentagem ficaram na básica.
 5. Economia: setores, industrialização e agropecuária.
 6. Globalização e blocos econômicos.
 7. Geografia do Brasil: regiões, recursos e desigualdades.
+8. Segunda rodada: a água (bacias, aquíferos e quem gasta); a matriz energética do Brasil e do mundo; poder, conflitos e refugiados.
 
 ### Filosofia — `filosofia-basica` (feito: 6 lições em quatro módulos, com os níveis)
 

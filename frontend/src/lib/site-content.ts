@@ -167,8 +167,10 @@ export const SUBJECTS: SiteSubject[] = [
       "Da Grécia e de Roma à Constituição de 1988: Idade Média, navegações, revoluções, Brasil Colônia, Império, Vargas, guerras mundiais e ditadura, na ordem em que uma coisa explica a outra.",
     lessons: [
       "Para que serve a História",
+      "Os primeiros povos: Pré-história, Egito e Mesopotâmia",
       "Grécia e Roma: a Antiguidade que deixou herança",
       "Idade Média: feudos, servos e Igreja",
+      "África e América antes dos europeus",
       "Navegações, Renascimento e Reforma",
       "Brasil Colônia: pau-brasil, açúcar e ouro",
       "Iluminismo, Revolução Francesa e Revolução Industrial",
@@ -188,10 +190,13 @@ export const SUBJECTS: SiteSubject[] = [
       "Coordenadas e fusos horários",
       "A Terra por dentro e o relevo",
       "Tempo, clima e os climas do Brasil",
+      "A água: rios, bacias e quem gasta",
       "Biomas e questões ambientais",
       "População, migração e cidades",
       "Economia: setores, indústria e campo",
+      "Energia: a do Brasil e a do mundo",
       "Globalização e blocos econômicos",
+      "O mundo de hoje: poder, conflitos e refugiados",
       "As regiões do Brasil e suas diferenças",
     ],
   },
@@ -349,5 +354,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 2296,
+  questions: 2366,
 };
