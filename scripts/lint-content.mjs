@@ -346,6 +346,27 @@ const JARGON = [
   ["reação de adição, substituição e eliminação", /(?<!\p{L})rea(ç|c)(ão|ões) de (adi|substitui|elimina)(ç|c)(ão|ões)(?!\p{L})/iu, "O"],
   ["polímero e monômero", /(?<!\p{L})(pol(í|i)|mon(ô|o))meros?(?!\p{L})/iu, "O"], ["vulcanização", /(?<!\p{L})vulcaniza(ç|c)(ão|ões)(?!\p{L})/iu, "O"],
   ["microplástico", /(?<!\p{L})micropl(á|a)sticos?(?!\p{L})/iu, "O"], ["termoplástico e termorrígido", /(?<!\p{L})termo(pl(á|a)stic|rr(í|i)gid)(o|os|a|as)(?!\p{L})/iu, "O"],
+  // Óptica, termodinâmica e física moderna (escopo "T", somado ao "f" da Física básica).
+  ["escala Kelvin", /\bkelvins?\b/i, "T"], ["zero absoluto", /\bzero absoluto\b/i, "T"], ["equilíbrio térmico", /(?<!\p{L})equil(í|i)brio t(é|e)rmico(?!\p{L})/iu, "T"],
+  ["calor específico", /(?<!\p{L})calor(es)? espec(í|i)fic(o|os)(?!\p{L})/iu, "T"], ["capacidade térmica", /(?<!\p{L})capacidades? t(é|e)rmicas?(?!\p{L})/iu, "T"],
+  ["calor latente", /\bcalor(es)? latentes?\b/i, "T"], ["calor sensível", /(?<!\p{L})calor(es)? sens(í|i)ve(l|is)(?!\p{L})/iu, "T"],
+  ["transformação isotérmica, isobárica e isocórica", /(?<!\p{L})iso(t(é|e)rmic|b(á|a)ric|c(ó|o)ric|volum(é|e)tric)(a|as|o|os)(?!\p{L})/iu, "T"],
+  ["energia interna", /(?<!\p{L})energias? internas?(?!\p{L})/iu, "T"], ["máquina térmica", /(?<!\p{L})m(á|a)quinas? t(é|e)rmicas?(?!\p{L})/iu, "T"],
+  ["entropia", /\bentropias?\b/i, "T"], ["ciclo de Carnot", /\bCarnot\b/, "T"],
+  ["penumbra", /\bpenumbras?\b/i, "T"], ["meio translúcido", /(?<!\p{L})transl(ú|u)cid(o|os|a|as)(?!\p{L})/iu, "T"],
+  ["imagem real e virtual", /(?<!\p{L})image(m|ns) (rea(l|is)|virtua(l|is))(?!\p{L})/iu, "T"],
+  ["espelho côncavo e convexo", /(?<!\p{L})c(ô|o)ncav(o|os|a|as)(?!\p{L})|(?<!\p{L})convex(o|os|a|as)(?!\p{L})/iu, "T"],
+  ["foco (de espelho ou lente)", /\bfocos?\b/i, "T"], ["distância focal", /(?<!\p{L})dist(â|a)ncias? foca(l|is)(?!\p{L})/iu, "T"],
+  ["índice de refração", /(?<!\p{L})(í|i)ndices? de refra(ç|c)(ão|ões)(?!\p{L})/iu, "T"], ["reflexão total", /(?<!\p{L})reflex(ão|ões) tota(l|is)(?!\p{L})/iu, "T"],
+  ["dispersão da luz", /(?<!\p{L})dispers(ão|ões)(?!\p{L})/iu, "T"], ["lente convergente e divergente", /\b(convergentes?|divergentes?)\b/i, "T"],
+  ["dioptria", /\bdioptrias?\b/i, "T"], ["vergência", /(?<!\p{L})verg(ê|e)ncias?(?!\p{L})/iu, "T"],
+  ["miopia e hipermetropia", /(?<!\p{L})(miopias?|m(í|i)opes?|hipermetropias?|hiperm(é|e)tropes?)(?!\p{L})/iu, "T"],
+  ["presbiopia", /\bpresbiopias?\b/i, "T"], ["astigmatismo", /\bastigmatismos?\b/i, "T"], ["retina", /\bretinas?\b/i, "T"], ["cristalino (do olho)", /\bcristalinos?\b/i, "T"],
+  ["relatividade", /\brelatividade\b/i, "T"], ["dilatação do tempo", /(?<!\p{L})dilata(ç|c)(ão|ões) do tempo(?!\p{L})/iu, "T"],
+  ["espaço-tempo", /(?<!\p{L})espa(ç|c)o-tempo(?!\p{L})/iu, "T"], ["onda gravitacional", /\bondas? gravitaciona(l|is)\b/i, "T"],
+  ["fóton", /(?<!\p{L})f(ó|o)tons?(?!\p{L})/iu, "T"], ["constante de Planck", /\bPlanck\b/, "T"], ["efeito fotoelétrico", /(?<!\p{L})fotoel(é|e)tric(o|a)(?!\p{L})/iu, "T"],
+  ["dualidade onda-partícula", /\bdualidade\b/i, "T"], ["espectro", /\bespectros?\b/i, "T"], ["nível de energia", /(?<!\p{L})n(í|i)ve(l|is) de energia(?!\p{L})/iu, "T"],
+  ["radiação ionizante", /(?<!\p{L})ionizantes?(?!\p{L})/iu, "T"], ["semicondutor", /\bsemicondutor(es)?\b/i, "T"], ["laser", /\blasers?\b/i, "T"], ["LED", /\bLEDs?\b/, "T"],
   ["Estado", /\bEstado\b/, "j"], ["cidadania", /\bcidadania\b/i, "j"], ["movimento social", /\bmovimentos? socia(l|is)\b/i, "j"], ["ação social", /(?<!\p{L})a(ç|c)(ão|ões) socia(l|is)(?!\p{L})/iu, "j"], ["artigo", /\bartigos?\b/i, "u"], ["conjugação", /\bconjuga(ç|c)(ão|ões)\b|\bconjugad(o|a)\b/i, "u"], ["combustível fóssil", /(?<!\p{L})combust(í|i)ve(l|is) f(ó|o)sse(l|is)(?!\p{L})/iu, "x"], ["biocombustível", /(?<!\p{L})biocombust(í|i)ve(l|is)(?!\p{L})/iu, "x"],
 
   ["preposição", /\bpreposi(ç|c)(ão|ões)\b/i, "p"], ["artigo", /\bartigos?\b/i, "p"],
@@ -684,7 +705,7 @@ const JARGON = [
   ["cooler", /\bcoolers?\b|\bwater cooler\b/i, "h"], ["80 Plus", /\b80 Plus\b/i, "h"], ["fonte modular", /\bmodular(es)?\b/i, "h"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG", "historia-do-brasil": "iH", "geografia-do-brasil": "oB", "corpo-humano-e-saude": "bC", "quimica-organica": "xO" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG", "historia-do-brasil": "iH", "geografia-do-brasil": "oB", "corpo-humano-e-saude": "bC", "quimica-organica": "xO", "termodinamica-optica-e-fisica-moderna": "fT" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;

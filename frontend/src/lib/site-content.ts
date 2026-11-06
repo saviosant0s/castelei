@@ -507,6 +507,26 @@ export const SUBJECTS: SiteSubject[] = [
       "Polímeros: plásticos, borracha e o lixo que fica",
     ],
   },
+  {
+    slug: "termodinamica-optica-e-fisica-moderna",
+    name: "Termodinâmica, óptica e física moderna",
+    pitch:
+      "Calor e motores, espelhos e lentes, relatividade, quântica e radiações: a Física que vem depois do básico, com as contas e os casos do ENEM.",
+    lessons: [
+      "Temperatura e as três escalas: Celsius, Fahrenheit e Kelvin",
+      "Calor que esquenta e calor que derrete",
+      "Os gases: pressão, volume e temperatura",
+      "As leis da termodinâmica: motores e geladeiras",
+      "A luz anda em linha reta: sombras, eclipses e cores",
+      "Espelhos: planos, côncavos e convexos",
+      "Refração e lentes: o canudo quebrado e a lupa",
+      "O olho e os óculos: miopia, hipermetropia e vista cansada",
+      "Relatividade: tempo, espaço e E = mc²",
+      "A física quântica: a luz em pacotes",
+      "Radiações: o que faz mal e o que não faz",
+      "A física moderna no seu dia a dia",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -523,5 +543,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 4060,
+  questions: 4228,
 };
