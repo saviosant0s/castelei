@@ -196,13 +196,14 @@ Na segunda rodada entraram: possessivos e demonstrativos; verbos que mudam a vog
 5. Arte contemporânea e cultura digital.
 6. Segunda rodada: da caverna à catedral (arte rupestre, Egito, Grécia, Roma, românico e gótico); arte indígena e afro-brasileira; arquitetura e patrimônio (material e imaterial, tombamento); elementos da música; música brasileira, do choro ao rap; teatro; fotografia e cinema.
 
-### Educação Física — `educacao-fisica-basica` (feito: 5 lições em três módulos, com os níveis)
+### Educação Física — `educacao-fisica-basica` (feito: 12 lições em três módulos, com os níveis)
 
 1. Corpo e movimento: aquecimento, capacidades físicas.
 2. Saúde: sedentarismo, frequência cardíaca, alimentação.
 3. Esportes coletivos e regras básicas.
 4. Lutas, danças e jogos da cultura brasileira.
 5. Corpo, mídia e padrões de beleza (tema frequente no ENEM).
+6. Segunda rodada: ossos, músculos e articulações; princípios do treinamento; primeiros socorros; atletismo, natação e ginástica; Jogos Olímpicos e Paralímpicos; esporte, mídia e sociedade; lazer, trabalho e qualidade de vida.
 
 ### Informática — `informatica-basica` (feito: 12 lições em quatro módulos, com os níveis)
 
