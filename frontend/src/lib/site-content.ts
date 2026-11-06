@@ -312,9 +312,15 @@ export const SUBJECTS: SiteSubject[] = [
     lessons: [
       "Saudações, pronomes, ser e estar",
       "Artigos, gênero e as palavras que trocam de gênero",
+      "Possessivos e demonstrativos: mi, su, este, ese",
       "O presente: verbos em -ar, -er e -ir",
+      "Verbos que mudam: quiero, puedo e os reflexivos",
+      "Gustar: me gusta, me gustan",
       "Passado e futuro",
+      "O imperativo: ordens, pedidos e anúncios",
+      "Comparar: más que, menos que, tan como",
       "Vocabulário do dia a dia: números, horas, família e rotina",
+      "Conectivos: pero, sin embargo, aunque",
       "Falsos amigos e como ler um texto em espanhol",
     ],
   },
@@ -360,5 +366,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 2450,
+  questions: 2534,
 };
