@@ -187,13 +187,14 @@ destaque, porque é o que a prova do ENEM cobra.
 
 Na segunda rodada entraram: possessivos e demonstrativos; verbos que mudam a vogal e os reflexivos; gustar e os parecidos; o imperativo dos anúncios; comparativos; conectivos (com sino, todavía e luego).
 
-### Artes — `artes-basica` (feito: 5 lições em três módulos, com os níveis)
+### Artes — `artes-basica` (feito: 12 lições em cinco módulos, com os níveis)
 
 1. Linguagens da arte: visual, música, teatro e dança.
 2. Elementos visuais: cor, forma, composição.
 3. Grandes movimentos: do Renascimento ao Modernismo.
 4. Arte brasileira: Barroco mineiro, Semana de 22, arte popular.
 5. Arte contemporânea e cultura digital.
+6. Segunda rodada: da caverna à catedral (arte rupestre, Egito, Grécia, Roma, românico e gótico); arte indígena e afro-brasileira; arquitetura e patrimônio (material e imaterial, tombamento); elementos da música; música brasileira, do choro ao rap; teatro; fotografia e cinema.
 
 ### Educação Física — `educacao-fisica-basica` (feito: 5 lições em três módulos, com os níveis)
 
@@ -240,7 +241,7 @@ entram entre elas, já com os níveis.
 | Filosofia | 6 | 12 | pré-socráticos, helenísticos, argumentação e falácias, ciência, estética e indústria cultural, Arendt, Foucault e Beauvoir |
 | Sociologia | 6 | 12 | raça e racismo, gênero, religião, escola e desigualdade, cidade e violência, mídia e consumo |
 | Informática | 6 | 12 | redes e Wi-Fi, nuvem e compartilhamento, privacidade e LGPD, fórmulas e gráficos de planilha, e-mail, IA no dia a dia |
-| Artes | 5 | 12 | arte antiga, música (elementos e música brasileira), teatro, arte indígena e afro-brasileira, cinema e fotografia, arquitetura |
+| Artes | 5 | 12 | da caverna à catedral, arte indígena e afro-brasileira, arquitetura e patrimônio, elementos da música, música brasileira, teatro, fotografia e cinema |
 | Educação Física | 5 | 12 | ossos e músculos, treinamento, esportes individuais, Olimpíadas e Paralimpíadas, primeiros socorros, esporte e mídia, lazer e trabalho |
 
 **2. A segunda matéria de cada área.** Mais funda que a básica, pública e com

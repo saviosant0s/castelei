@@ -350,8 +350,15 @@ export const SUBJECTS: SiteSubject[] = [
     lessons: [
       "As linguagens da arte",
       "Cor, forma e composição",
+      "Da caverna à catedral: a arte antes do Renascimento",
       "Do Renascimento ao Surrealismo",
       "Arte brasileira: do Barroco mineiro à Semana de 22",
+      "Arte indígena e afro-brasileira",
+      "Arquitetura e patrimônio cultural",
+      "Música: som, silêncio e os seus elementos",
+      "Música brasileira: do choro ao rap",
+      "Teatro: o corpo em cena",
+      "Fotografia e cinema: ler a imagem",
       "Arte contemporânea e cultura digital",
     ],
   },
@@ -384,5 +391,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 2786,
+  questions: 2884,
 };
