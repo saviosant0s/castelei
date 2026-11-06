@@ -1190,6 +1190,674 @@
       ]
     },
     {
+      "slug": "redes-e-wi-fi",
+      "title": "Redes em casa: Wi-Fi, roteador e velocidade",
+      "module": "Internet e segurança",
+      "summary": "A internet chega pela rua e se espalha pela casa. A lição mostra modem e roteador, por que 100 mega não baixam 100 MB por segundo e os cuidados com a rede.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A caixa-d'água",
+          "body": [
+            "A água da rua chega à caixa-d'água, e dela vai para as torneiras da casa. A internet faz um caminho parecido.",
+            "Ela chega pela rua, passa por um aparelho e se espalha pelos cômodos, com fio ou sem fio."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Modem e roteador",
+          "body": [
+            "O modem traz a internet da operadora para dentro de casa. O roteador espalha essa internet para os aparelhos, por cabo ou por Wi-Fi.",
+            "Hoje, muitas operadoras entregam os dois num aparelho só."
+          ],
+          "terms": [
+            {
+              "word": "roteador",
+              "meaning": "o aparelho que distribui a internet pela casa, pelo cabo ou pelo Wi-Fi."
+            },
+            {
+              "word": "Wi-Fi",
+              "meaning": "a ligação sem fio entre os aparelhos e o roteador, por ondas de rádio."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Mega não é mega",
+          "body": [
+            "A internet é vendida em megabits por segundo (Mbps). Já os arquivos são medidos em megabytes (MB).",
+            "Como um byte tem oito bits, uma internet de 100 Mbps baixa no máximo cerca de 12,5 MB por segundo."
+          ],
+          "example": {
+            "label": "A conta da velocidade",
+            "lines": [
+              "Plano de 100 Mbps.",
+              "Divida por 8: 100 ÷ 8 = 12,5.",
+              "Na prática, cerca de 12,5 MB por segundo, ou um pouco menos."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "bit e byte",
+              "meaning": "o bit é o menor pedaço de informação, um 0 ou um 1. Oito bits formam um byte."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Cabo ou sem fio",
+          "body": [
+            "O cabo é mais estável e mais rápido, bom para TV e computador de mesa. O Wi-Fi é prático, mas perde força com paredes e distância.",
+            "Muitos roteadores têm duas faixas. A de 2,4 GHz alcança mais longe; a de 5 GHz é mais rápida, mas alcança menos."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Dados móveis",
+          "body": [
+            "Na rua, o celular usa a rede da operadora: 4G ou 5G. O 5G é mais rápido e responde mais depressa.",
+            "Os dados móveis costumam ter limite por mês, e o Wi-Fi de casa, não."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Cuidados com a rede",
+          "body": [
+            "Troque a senha que vem de fábrica no roteador e use uma senha forte no Wi-Fi.",
+            "Em Wi-Fi público, de praça ou de shopping, evite entrar no banco. Outras pessoas podem estar na mesma rede."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede a função do roteador e a diferença entre megabit e megabyte. Também cobra os cuidados com redes públicas."
+          ],
+          "bullets": [
+            "“O equipamento que distribui o sinal pela casa é o…”",
+            "“Uma conexão de 80 Mbps permite baixar até…”",
+            "“Ao usar uma rede Wi-Fi pública, recomenda-se…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que 100 Mbps baixa 100 MB por segundo. Divida por 8.",
+            "Achar que Wi-Fi é a mesma coisa que internet. Wi-Fi é só a ligação sem fio até o roteador.",
+            "Achar que 5 GHz alcança mais longe. Ele é mais rápido, mas alcança menos.",
+            "Entrar no banco em Wi-Fi público. Outras pessoas podem estar na rede."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O modem traz a internet, e o roteador a espalha por cabo ou Wi-Fi. A internet é vendida em megabits, e arquivos são medidos em megabytes: divida por 8.",
+            "O cabo é mais estável; o Wi-Fi é prático. Troque a senha de fábrica e evite o banco em rede pública."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Roteador",
+          "statement": "O aparelho que espalha a internet pela casa, por cabo ou Wi-Fi, é o:",
+          "options": [
+            "roteador",
+            "teclado",
+            "monitor",
+            "carregador",
+            "pen drive"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele distribui o sinal para os aparelhos.",
+          "pitfall": "Monitor é só a tela."
+        },
+        {
+          "topic": "Wi-Fi",
+          "statement": "Wi-Fi é:",
+          "options": [
+            "a ligação sem fio entre os aparelhos e o roteador",
+            "a própria internet do mundo todo",
+            "um tipo de cabo",
+            "um programa de texto",
+            "uma senha"
+          ],
+          "correct_index": 0,
+          "explanation": "É o trecho sem fio até o roteador.",
+          "pitfall": "Confundir Wi-Fi com internet é o engano comum."
+        },
+        {
+          "topic": "80 mega",
+          "statement": "Um plano de 80 Mbps baixa, no máximo, cerca de:",
+          "options": [
+            "10 MB por segundo",
+            "80 MB por segundo",
+            "640 MB por segundo",
+            "8 MB por minuto",
+            "1 MB por hora"
+          ],
+          "correct_index": 0,
+          "explanation": "80 ÷ 8 = 10.",
+          "pitfall": "640 multiplicou por 8 em vez de dividir."
+        },
+        {
+          "topic": "Byte",
+          "statement": "Um byte tem:",
+          "options": [
+            "8 bits",
+            "10 bits",
+            "2 bits",
+            "100 bits",
+            "1.000 bits"
+          ],
+          "correct_index": 0,
+          "explanation": "Oito bits formam um byte.",
+          "pitfall": "10 é a conta que parece óbvia, mas não é a regra."
+        },
+        {
+          "topic": "TV travando",
+          "statement": "Para uma TV que trava no Wi-Fi, uma boa solução é:",
+          "options": [
+            "ligar a TV no roteador por cabo",
+            "desligar o roteador",
+            "trocar de televisão",
+            "apagar os aplicativos",
+            "usar dados móveis"
+          ],
+          "correct_index": 0,
+          "explanation": "O cabo é mais estável.",
+          "pitfall": "Desligar o roteador tira a internet de vez."
+        },
+        {
+          "topic": "5G",
+          "statement": "Sobre o 5G, é certo dizer que:",
+          "options": [
+            "é uma rede de celular mais rápida que o 4G",
+            "é a rede do Wi-Fi de casa",
+            "é um cabo de internet",
+            "é mais lento que o 4G",
+            "só funciona no computador"
+          ],
+          "correct_index": 0,
+          "explanation": "É a rede da operadora, na rua.",
+          "pitfall": "5 GHz do roteador é outra coisa: a troca do nome."
+        },
+        {
+          "topic": "Shopping",
+          "statement": "Num Wi-Fi público de shopping, o mais seguro é:",
+          "options": [
+            "evitar entrar no banco",
+            "fazer compras com cartão sem cuidado",
+            "desligar a senha do celular",
+            "compartilhar a tela",
+            "aceitar todo aviso que aparecer"
+          ],
+          "correct_index": 0,
+          "explanation": "Outras pessoas podem estar na mesma rede.",
+          "pitfall": "Desligar a senha deixa o celular aberto."
+        },
+        {
+          "topic": "Rede",
+          "format": "match",
+          "statement": "Ligue cada termo ao que ele faz.",
+          "pairs": [
+            {
+              "left": "modem",
+              "right": "traz a internet da operadora"
+            },
+            {
+              "left": "roteador",
+              "right": "espalha a internet pela casa"
+            },
+            {
+              "left": "Wi-Fi",
+              "right": "liga sem fio ao roteador"
+            },
+            {
+              "left": "dados móveis",
+              "right": "internet do celular na rua"
+            }
+          ],
+          "explanation": "Cada peça faz um trecho do caminho.",
+          "pitfall": "Modem traz; roteador espalha."
+        },
+        {
+          "topic": "Senha de fábrica",
+          "statement": "Ao instalar um roteador novo, é recomendado:",
+          "options": [
+            "trocar a senha que vem de fábrica",
+            "deixar sem senha",
+            "anotar a senha na porta",
+            "desligar o Wi-Fi para sempre",
+            "usar a senha 123456"
+          ],
+          "correct_index": 0,
+          "explanation": "A de fábrica é fácil de descobrir.",
+          "pitfall": "Sem senha, qualquer um entra.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Paredes",
+          "statement": "O sinal do Wi-Fi fica mais fraco com:",
+          "options": [
+            "paredes e distância",
+            "a luz do sol",
+            "o volume da TV",
+            "o calor do dia",
+            "a cor do roteador"
+          ],
+          "correct_index": 0,
+          "explanation": "Ondas de rádio perdem força pelo caminho.",
+          "pitfall": "A cor do roteador não muda nada.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Faixas",
+          "statement": "Entre as faixas do roteador, a de 2,4 GHz:",
+          "options": [
+            "alcança mais longe, mas é mais lenta",
+            "é mais rápida e alcança menos",
+            "não funciona com celular",
+            "é a do 5G",
+            "só serve para cabo"
+          ],
+          "correct_index": 0,
+          "explanation": "Alcance maior, velocidade menor.",
+          "pitfall": "Mais rápida e de alcance menor é a de 5 GHz.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Tempo",
+          "statement": "Um arquivo de 50 MB, numa internet de 40 Mbps (5 MB por segundo), leva cerca de:",
+          "options": [
+            "10 segundos",
+            "1 segundo",
+            "50 segundos",
+            "2 segundos",
+            "200 segundos"
+          ],
+          "correct_index": 0,
+          "explanation": "50 ÷ 5 = 10.",
+          "pitfall": "1 segundo confunde Mbps com MB por segundo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Sinal cheio",
+          "statement": "O Wi-Fi está conectado, com sinal cheio, mas nenhum site abre. O mais provável é que:",
+          "options": [
+            "a internet que chega ao roteador caiu",
+            "o Wi-Fi não existe",
+            "o celular perdeu a tela",
+            "o sinal cheio é a internet",
+            "o carregador apagou a internet"
+          ],
+          "correct_index": 0,
+          "explanation": "Wi-Fi é só a ligação até o roteador.",
+          "pitfall": "Achar que sinal cheio é internet é a troca fina.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "500 mega",
+          "statement": "Uma propaganda diz “internet de 500 mega”. Para saber quanto tempo leva para baixar um jogo de 50 GB, é preciso lembrar que:",
+          "options": [
+            "mega na propaganda é megabit, e o jogo é medido em bytes",
+            "mega é sempre igual a megabyte",
+            "GB e Gb são a mesma coisa",
+            "velocidade não muda o tempo",
+            "jogo não é arquivo"
+          ],
+          "correct_index": 0,
+          "explanation": "Bits e bytes: divida por 8.",
+          "pitfall": "“Mega é sempre megabyte” é a troca fina.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "nuvem-e-compartilhamento",
+      "title": "A nuvem: guardar e compartilhar arquivos",
+      "module": "Internet e segurança",
+      "summary": "A nuvem são computadores de empresas que guardam seus arquivos. A lição mostra a sincronização, as permissões de um link e por que a nuvem sozinha não é cópia de segurança.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O dinheiro no banco",
+          "body": [
+            "Em vez de guardar dinheiro embaixo do colchão, muita gente guarda no banco. Dá para sacar de qualquer lugar, e o dinheiro não some se a casa pegar fogo.",
+            "Guardar arquivos na internet é parecido: eles ficam em computadores de uma empresa, e você os acessa de onde estiver."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que é a nuvem",
+          "body": [
+            "Guardar na nuvem não é guardar no céu. São servidores enormes de grandes empresas (como Google, Microsoft e Apple), espalhados pelo mundo.",
+            "Google Drive, OneDrive e iCloud são serviços desse tipo. As contas grátis costumam ter um limite de espaço."
+          ],
+          "terms": [
+            {
+              "word": "guardar na nuvem",
+              "meaning": "guardar arquivos em computadores de empresas, acessados pela internet."
+            },
+            {
+              "word": "servidor",
+              "meaning": "um computador ligado o tempo todo, que guarda arquivos e sites e atende outros computadores."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Sincronizar",
+          "body": [
+            "Com a nuvem, a foto tirada no celular aparece no computador sozinha. O arquivo fica igual nos dois aparelhos.",
+            "Isso também é um perigo: apagar o arquivo num aparelho pode apagar nos outros."
+          ],
+          "terms": [
+            {
+              "word": "sincronizar",
+              "meaning": "manter o mesmo arquivo igual em vários aparelhos."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Compartilhar com cuidado",
+          "body": [
+            "Dá para compartilhar um arquivo mandando um link. Na hora, escolha quem pode ver e quem pode editar.",
+            "Link aberto para “qualquer pessoa com o link” pode parar nas mãos erradas. Para documento pessoal, compartilhe só com quem precisa."
+          ],
+          "table": {
+            "label": "As permissões de um link",
+            "headers": [
+              "Permissão",
+              "O que a pessoa pode fazer"
+            ],
+            "rows": [
+              [
+                "ver",
+                "só olhar e baixar"
+              ],
+              [
+                "comentar",
+                "deixar recados, sem mudar o texto"
+              ],
+              [
+                "editar",
+                "mudar e apagar o conteúdo"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A nuvem não é a única cópia",
+          "body": [
+            "A nuvem ajuda no backup, mas não deve ser a única cópia. Conta invadida ou apagada leva tudo junto.",
+            "Uma regra simples: três cópias, em dois tipos de lugar, com uma fora de casa."
+          ],
+          "terms": [
+            {
+              "word": "backup",
+              "meaning": "uma cópia de segurança dos arquivos, guardada em outro lugar."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede o que é a computação em nuvem e as vantagens e riscos de usá-la. Também cobra as permissões de compartilhamento."
+          ],
+          "bullets": [
+            "“Uma vantagem de guardar arquivos na nuvem é…”",
+            "“Ao compartilhar um arquivo com permissão de edição…”",
+            "“A sincronização de arquivos permite…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que a nuvem fica no céu. São computadores de empresas.",
+            "Achar que a nuvem é cópia de segurança garantida. Conta invadida leva tudo.",
+            "Compartilhar documento pessoal com qualquer pessoa com o link.",
+            "Achar que apagar no celular não apaga na nuvem. Com sincronização, apaga."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Guardar na nuvem é guardar em servidores de empresas, acessados pela internet. A sincronização deixa o arquivo igual em todos os aparelhos.",
+            "Compartilhe escolhendo quem vê e quem edita. E não confie só na nuvem: três cópias, dois lugares, uma fora de casa."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Nuvem",
+          "statement": "Guardar arquivos na nuvem quer dizer guardá-los:",
+          "options": [
+            "em servidores de empresas, acessados pela internet",
+            "no céu",
+            "só no pen drive",
+            "dentro do monitor",
+            "na memória do teclado"
+          ],
+          "correct_index": 0,
+          "explanation": "A nuvem são computadores de verdade.",
+          "pitfall": "No céu é só o nome que engana."
+        },
+        {
+          "topic": "Serviço",
+          "statement": "Qual destes é um serviço de nuvem?",
+          "options": [
+            "Google Drive",
+            "teclado",
+            "impressora",
+            "mouse",
+            "pen drive"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele guarda arquivos na internet.",
+          "pitfall": "Pen drive guarda, mas fica no seu bolso."
+        },
+        {
+          "topic": "Sincronizar",
+          "statement": "Sincronizar arquivos é:",
+          "options": [
+            "manter o mesmo arquivo igual em vários aparelhos",
+            "apagar todos os arquivos",
+            "imprimir um arquivo",
+            "trocar a senha",
+            "desligar a internet"
+          ],
+          "correct_index": 0,
+          "explanation": "O que muda num aparelho muda nos outros.",
+          "pitfall": "Apagar tudo não é sincronizar."
+        },
+        {
+          "topic": "Editar",
+          "statement": "Ao compartilhar um link com permissão de edição, a outra pessoa pode:",
+          "options": [
+            "mudar e apagar o conteúdo",
+            "só olhar",
+            "só comentar",
+            "nada",
+            "só imprimir"
+          ],
+          "correct_index": 0,
+          "explanation": "Editar dá controle sobre o conteúdo.",
+          "pitfall": "Só olhar seria a permissão de ver."
+        },
+        {
+          "topic": "Pessoal",
+          "statement": "Para compartilhar um documento com dados pessoais, o mais seguro é:",
+          "options": [
+            "compartilhar só com quem precisa",
+            "liberar para qualquer pessoa com o link",
+            "postar numa rede social",
+            "mandar para um grupo grande",
+            "deixar público na internet"
+          ],
+          "correct_index": 0,
+          "explanation": "Menos gente, menos risco.",
+          "pitfall": "Link aberto pode ser repassado."
+        },
+        {
+          "topic": "Apagar",
+          "statement": "Com a sincronização ligada, apagar uma foto no celular:",
+          "options": [
+            "pode apagar também nos outros aparelhos",
+            "nunca apaga em lugar nenhum",
+            "apaga só o celular",
+            "cria uma cópia nova",
+            "manda a foto para o e-mail"
+          ],
+          "correct_index": 0,
+          "explanation": "A sincronização leva a mudança junto.",
+          "pitfall": "“Apaga só o celular” esquece a sincronização."
+        },
+        {
+          "topic": "Uma cópia só",
+          "statement": "Guardar tudo só na nuvem é arriscado porque:",
+          "options": [
+            "se a conta for invadida ou apagada, tudo vai junto",
+            "a nuvem chove",
+            "a nuvem não guarda fotos",
+            "os arquivos ficam maiores",
+            "a internet fica mais rápida"
+          ],
+          "correct_index": 0,
+          "explanation": "Uma cópia só é um ponto só de falha.",
+          "pitfall": "A nuvem guarda fotos, sim."
+        },
+        {
+          "topic": "Termos",
+          "format": "match",
+          "statement": "Ligue cada termo ao que ele quer dizer.",
+          "pairs": [
+            {
+              "left": "ver",
+              "right": "só olhar e baixar"
+            },
+            {
+              "left": "comentar",
+              "right": "deixar recados sem mudar o texto"
+            },
+            {
+              "left": "editar",
+              "right": "mudar e apagar"
+            },
+            {
+              "left": "sincronizar",
+              "right": "manter igual em vários aparelhos"
+            }
+          ],
+          "explanation": "Três permissões e um recurso.",
+          "pitfall": "Comentar não muda o texto; editar muda."
+        },
+        {
+          "topic": "Limite",
+          "statement": "As contas grátis de nuvem costumam ter:",
+          "options": [
+            "um limite de espaço",
+            "espaço infinito",
+            "nenhum espaço",
+            "só lugar para música",
+            "obrigação de pagar"
+          ],
+          "correct_index": 0,
+          "explanation": "Acima do limite, é preciso pagar.",
+          "pitfall": "Infinito não existe nas contas grátis.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Vantagem",
+          "statement": "Uma vantagem da nuvem é:",
+          "options": [
+            "acessar os arquivos de qualquer lugar com internet",
+            "não precisar de internet nunca",
+            "ficar sem senha",
+            "deixar o celular mais pesado",
+            "apagar vírus sozinha"
+          ],
+          "correct_index": 0,
+          "explanation": "Os arquivos estão na internet.",
+          "pitfall": "Sem internet, a nuvem não abre.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Três cópias",
+          "statement": "A regra simples de cópia de segurança é:",
+          "options": [
+            "três cópias, em dois tipos de lugar, uma fora de casa",
+            "uma cópia só, na nuvem",
+            "duas cópias no mesmo pen drive",
+            "nenhuma cópia",
+            "cópias só no celular"
+          ],
+          "correct_index": 0,
+          "explanation": "Lugares diferentes protegem de perdas diferentes.",
+          "pitfall": "Duas cópias no mesmo pen drive somem juntas.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Comentar",
+          "statement": "Um professor quer que os alunos deixem recados num texto, sem mudá-lo. Ele deve dar permissão de:",
+          "options": [
+            "comentar",
+            "editar",
+            "apagar",
+            "ser dono",
+            "sincronizar"
+          ],
+          "correct_index": 0,
+          "explanation": "Comentar não muda o texto.",
+          "pitfall": "Editar deixaria mudar.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Link aberto",
+          "statement": "Um currículo com CPF e endereço foi compartilhado como “qualquer pessoa com o link pode ver”. O risco é:",
+          "options": [
+            "o link ser repassado e os dados caírem em mãos erradas",
+            "o arquivo apagar sozinho",
+            "a nuvem cobrar uma multa",
+            "o arquivo ficar maior",
+            "nenhum, porque só quem tem o link vê"
+          ],
+          "correct_index": 0,
+          "explanation": "Link pode ser repassado sem controle.",
+          "pitfall": "“Nenhum, porque só quem tem o link vê” é a troca fina: o link circula.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Sincronizar não basta",
+          "statement": "Por que a sincronização sozinha não é backup?",
+          "options": [
+            "porque um arquivo apagado num aparelho some nos outros também",
+            "porque ela não funciona",
+            "porque deixa os arquivos lentos",
+            "porque só vale para fotos",
+            "porque precisa de impressora"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela copia também o erro.",
+          "pitfall": "Ela funciona, e é justamente por isso que copia o apagar.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "seguranca-digital",
       "title": "Segurança digital: senhas, golpes e cópias",
       "module": "Internet e segurança",
@@ -1555,6 +2223,354 @@
           "correct_index": 0,
           "explanation": "Disco pode quebrar junto com o computador; a nuvem fica fora de casa.",
           "pitfall": "Não é lei: é prudência.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "privacidade-e-lgpd",
+      "title": "Privacidade e dados pessoais: a LGPD",
+      "module": "Internet e segurança",
+      "summary": "Seus dados valem dinheiro, e uma lei diz o que podem fazer com eles. A lição mostra dado pessoal e sensível, os direitos da LGPD e os cuidados no celular.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O CPF na farmácia",
+          "body": [
+            "No caixa da farmácia, pedem seu CPF para dar desconto. Em troca, a farmácia fica sabendo o que você compra.",
+            "Seus dados valem dinheiro. Por isso existe uma lei que diz o que podem e o que não podem fazer com eles."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Dados pessoais",
+          "body": [
+            "Nome, telefone e localização do celular são dados pessoais. Com eles, empresas montam um retrato de quem você é e do que você gosta.",
+            "Alguns dados exigem cuidado maior, porque podem gerar preconceito. São os dados sensíveis."
+          ],
+          "terms": [
+            {
+              "word": "dado pessoal",
+              "meaning": "qualquer informação que identifica uma pessoa (nome, CPF, endereço, foto ou localização)."
+            },
+            {
+              "word": "dado sensível",
+              "meaning": "o dado que pode gerar discriminação (saúde, religião, origem racial ou opinião política). Tem proteção maior."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A LGPD",
+          "body": [
+            "No Brasil, a LGPD está em vigor desde 2020. Ela vale para empresas, sites, escolas e governos.",
+            "Quem coleta dados precisa ter um motivo claro e, em muitos casos, o consentimento da pessoa. E só pode usar os dados para aquele fim."
+          ],
+          "terms": [
+            {
+              "word": "LGPD",
+              "meaning": "a Lei Geral de Proteção de Dados (Lei 13.709, de 2018), que diz como empresas e governos podem usar os dados das pessoas."
+            },
+            {
+              "word": "consentimento",
+              "meaning": "a autorização clara da pessoa para que seus dados sejam usados para um fim."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os seus direitos",
+          "body": [
+            "A lei dá à pessoa o controle sobre os próprios dados. Quem fiscaliza é a ANPD, a Autoridade Nacional de Proteção de Dados."
+          ],
+          "table": {
+            "label": "O que você pode pedir",
+            "headers": [
+              "Direito",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "saber",
+                "perguntar à loja quais dados ela tem sobre você"
+              ],
+              [
+                "corrigir",
+                "pedir para trocar um endereço errado"
+              ],
+              [
+                "apagar",
+                "pedir a exclusão dos dados que não são mais necessários"
+              ],
+              [
+                "revogar",
+                "retirar o consentimento dado antes"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "No celular e nos sites",
+          "body": [
+            "Aplicativos pedem permissões (câmera, microfone, contatos e localização). Negue o que não faz sentido: uma lanterna não precisa dos seus contatos.",
+            "Sites usam cookies, pequenos arquivos que lembram o que você fez. Dá para recusar os que não são necessários."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que você posta fica",
+          "body": [
+            "Uma foto postada pode ser copiada, guardada e espalhada, mesmo depois de apagada. É a sua pegada digital.",
+            "Antes de postar, vale pensar: eu mostraria isso para um desconhecido? Se não, não poste."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede o que é dado pessoal e sensível e os direitos da LGPD. Também cobra situações de vazamento e de permissões de aplicativo."
+          ],
+          "bullets": [
+            "“De acordo com a LGPD, o titular tem direito a…”",
+            "“É considerado dado pessoal sensível…”",
+            "“Ao instalar um aplicativo, recomenda-se…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que a LGPD vale só para empresas grandes. Vale para todos que tratam dados.",
+            "Achar que dado pessoal é só o documento. Foto e localização também são.",
+            "Aceitar todas as permissões de um aplicativo sem ler.",
+            "Achar que apagar uma postagem apaga as cópias. Elas podem continuar por aí."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Dado pessoal é tudo o que identifica alguém; dado sensível pode gerar preconceito e tem proteção maior. A LGPD, em vigor desde 2020, diz como os dados podem ser usados.",
+            "Você pode saber, corrigir e apagar seus dados, e retirar o consentimento. Negue permissões sem sentido e pense antes de postar."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Dado pessoal",
+          "statement": "Qual destes é um dado pessoal?",
+          "options": [
+            "a localização do seu celular",
+            "a cor do céu",
+            "o preço do pão",
+            "a capital do país",
+            "a hora oficial"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela diz onde você está.",
+          "pitfall": "A capital do país não identifica ninguém."
+        },
+        {
+          "topic": "Sensível",
+          "statement": "Pela LGPD, é exemplo de dado sensível:",
+          "options": [
+            "informação sobre saúde",
+            "o nome da rua",
+            "a marca do celular",
+            "o clima de hoje",
+            "o nome de uma loja"
+          ],
+          "correct_index": 0,
+          "explanation": "Saúde pode gerar discriminação.",
+          "pitfall": "Nome da rua não é dado de pessoa."
+        },
+        {
+          "topic": "LGPD",
+          "statement": "A LGPD é:",
+          "options": [
+            "a lei brasileira que protege os dados pessoais",
+            "um aplicativo de mensagens",
+            "um tipo de vírus",
+            "uma rede social",
+            "um programa de planilha"
+          ],
+          "correct_index": 0,
+          "explanation": "É a Lei Geral de Proteção de Dados.",
+          "pitfall": "Não é programa: é lei."
+        },
+        {
+          "topic": "Corrigir",
+          "statement": "Pela LGPD, a pessoa tem o direito de:",
+          "options": [
+            "pedir para corrigir um dado errado sobre ela",
+            "ver os dados dos vizinhos",
+            "vender os dados dos outros",
+            "apagar os dados de qualquer pessoa",
+            "proibir a internet"
+          ],
+          "correct_index": 0,
+          "explanation": "Corrigir é um dos direitos do titular.",
+          "pitfall": "Os dados dos outros não são seus."
+        },
+        {
+          "topic": "Lanterna",
+          "statement": "Um aplicativo de lanterna pede acesso aos seus contatos. O mais sensato é:",
+          "options": [
+            "negar, porque não faz sentido",
+            "aceitar sempre",
+            "dar a senha do banco",
+            "desligar o celular para sempre",
+            "aceitar e compartilhar"
+          ],
+          "correct_index": 0,
+          "explanation": "Lanterna não precisa de contatos.",
+          "pitfall": "Aceitar sempre é o hábito que vaza dados."
+        },
+        {
+          "topic": "Cookies",
+          "statement": "Cookies, nos sites, são:",
+          "options": [
+            "pequenos arquivos que lembram o que você fez",
+            "biscoitos de verdade",
+            "sempre vírus perigosos",
+            "senhas do banco",
+            "fotos do usuário"
+          ],
+          "correct_index": 0,
+          "explanation": "Eles guardam preferências e rastros.",
+          "pitfall": "O nome é de biscoito, mas a coisa é outra."
+        },
+        {
+          "topic": "Pegada",
+          "statement": "Uma foto postada e depois apagada:",
+          "options": [
+            "pode continuar circulando em cópias",
+            "some de todos os lugares na hora",
+            "nunca foi vista",
+            "vira um cookie",
+            "fica protegida de qualquer cópia pela LGPD"
+          ],
+          "correct_index": 0,
+          "explanation": "Quem viu pode ter copiado.",
+          "pitfall": "Apagar não alcança as cópias."
+        },
+        {
+          "topic": "Direitos",
+          "format": "match",
+          "statement": "Ligue cada direito ao seu exemplo.",
+          "pairs": [
+            {
+              "left": "saber",
+              "right": "perguntar quais dados a loja tem"
+            },
+            {
+              "left": "corrigir",
+              "right": "trocar um endereço errado"
+            },
+            {
+              "left": "apagar",
+              "right": "pedir a exclusão dos dados"
+            },
+            {
+              "left": "revogar",
+              "right": "retirar o consentimento"
+            }
+          ],
+          "explanation": "São os direitos que a prova mais cobra.",
+          "pitfall": "Revogar é tirar a autorização, não apagar."
+        },
+        {
+          "topic": "Desde quando",
+          "statement": "A LGPD está em vigor no Brasil desde:",
+          "options": [
+            "2020",
+            "1988",
+            "1500",
+            "2050",
+            "1970"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela foi aprovada em 2018 e passou a valer em 2020.",
+          "pitfall": "1988 é a Constituição.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "CPF",
+          "statement": "Pedir seu CPF no caixa permite à loja:",
+          "options": [
+            "saber o que você compra",
+            "aumentar seu salário",
+            "apagar seus dados",
+            "deixar a compra grátis sempre",
+            "nada"
+          ],
+          "correct_index": 0,
+          "explanation": "O desconto é a troca pelos dados.",
+          "pitfall": "“Nada” ignora o valor do dado.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "ANPD",
+          "statement": "No Brasil, quem fiscaliza o cumprimento da LGPD é:",
+          "options": [
+            "a ANPD, autoridade de proteção de dados",
+            "a escola",
+            "o dono do aplicativo",
+            "o próprio usuário sozinho",
+            "a operadora de celular"
+          ],
+          "correct_index": 0,
+          "explanation": "É um órgão criado para isso.",
+          "pitfall": "O usuário tem direitos, mas não fiscaliza sozinho.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Fim",
+          "statement": "Uma loja coletou o e-mail para mandar a nota fiscal e passou a vender esse e-mail a outras empresas. Pela LGPD:",
+          "options": [
+            "ela desviou o uso do dado do fim combinado",
+            "ela agiu certo",
+            "o e-mail não é dado pessoal",
+            "isso é obrigatório",
+            "o cliente perdeu os direitos"
+          ],
+          "correct_index": 0,
+          "explanation": "O dado só pode servir ao fim combinado.",
+          "pitfall": "E-mail é dado pessoal, sim.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Revogar",
+          "statement": "Sobre o consentimento na LGPD, é certo dizer que:",
+          "options": [
+            "a pessoa pode retirá-lo depois",
+            "uma vez dado, vale para sempre",
+            "a empresa pode presumir sem perguntar",
+            "só vale por escrito em cartório",
+            "não existe na lei"
+          ],
+          "correct_index": 0,
+          "explanation": "Revogar o consentimento é um direito.",
+          "pitfall": "“Vale para sempre” é a troca fina.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Qual é sensível",
+          "statement": "Qual destes dados é sensível pela LGPD?",
+          "options": [
+            "a religião de uma pessoa",
+            "o nome de uma pessoa",
+            "o e-mail de uma pessoa",
+            "o telefone de uma pessoa",
+            "o endereço de uma pessoa"
+          ],
+          "correct_index": 0,
+          "explanation": "Religião pode gerar discriminação: é sensível.",
+          "pitfall": "Os outros são pessoais, mas não sensíveis: a troca fina.",
           "difficulty": "dificil"
         }
       ]
@@ -1946,9 +2962,728 @@
       ]
     },
     {
+      "slug": "planilhas-formulas-e-graficos",
+      "title": "Planilhas: fórmulas, funções e gráficos",
+      "module": "Ferramentas",
+      "summary": "Na planilha, a conta se refaz sozinha. A lição mostra as fórmulas e as funções (SOMA, MÉDIA e SE). Depois vêm a ordem das contas, o cifrão e a escolha do gráfico.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O caderno de gastos",
+          "body": [
+            "No caderno, se você muda um gasto, precisa refazer a soma inteira à mão. Na planilha, a conta se refaz sozinha.",
+            "Para isso, em vez de números fixos, as contas usam o endereço das caixinhas."
+          ],
+          "terms": [
+            {
+              "word": "planilha",
+              "meaning": "uma tabela do computador que faz contas sozinha, como o Excel e o Calc."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Fórmulas",
+          "body": [
+            "Toda fórmula começa com =. Por exemplo, =A1+A2 soma o que está nas células A1 e A2.",
+            "Se o valor de A1 mudar, o resultado muda junto. É por isso que a planilha não erra a conta de novo."
+          ],
+          "example": {
+            "label": "As operações",
+            "lines": [
+              "+ soma: =A1+A2",
+              "- subtrai: =A1-A2",
+              "* multiplica: =A1*2",
+              "/ divide: =A1/4",
+              "^ eleva: =A1^2"
+            ]
+          },
+          "terms": [
+            {
+              "word": "célula",
+              "meaning": "cada caixinha da planilha, com um endereço: a letra da coluna e o número da linha, como B3."
+            },
+            {
+              "word": "fórmula",
+              "meaning": "a conta escrita na célula. Ela sempre começa com o sinal de igual (=)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As funções mais usadas",
+          "body": [
+            "Para somar muitas células, use uma função. O dois-pontos indica um intervalo: A1:A5 é de A1 até A5.",
+            "Na versão em inglês, os nomes mudam (SUM, AVERAGE e IF)."
+          ],
+          "terms": [
+            {
+              "word": "função",
+              "meaning": "uma fórmula pronta com nome, como SOMA ou MÉDIA."
+            }
+          ],
+          "table": {
+            "label": "Funções que mais caem",
+            "headers": [
+              "Função",
+              "O que faz",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "SOMA",
+                "soma o intervalo",
+                "=SOMA(A1:A5)"
+              ],
+              [
+                "MÉDIA",
+                "faz a média",
+                "=MÉDIA(B1:B4)"
+              ],
+              [
+                "MÁXIMO e MÍNIMO",
+                "acham o maior e o menor",
+                "=MÁXIMO(C1:C10)"
+              ],
+              [
+                "SE",
+                "escolhe entre dois resultados",
+                "=SE(B2>=6;\"Aprovado\";\"Reprovado\")"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A função SE",
+          "body": [
+            "A função SE testa uma condição e devolve um de dois resultados. Em =SE(B2>=6;\"Aprovado\";\"Reprovado\"), se a nota em B2 for 6 ou mais, aparece Aprovado.",
+            "O ponto e vírgula separa as partes: a condição, o resultado se for verdade e o resultado se não for."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A ordem das contas e o $",
+          "body": [
+            "A planilha segue a ordem da matemática: multiplica e divide antes de somar. =2+3*4 dá 14, e =(2+3)*4 dá 20.",
+            "Ao copiar uma fórmula para baixo, os endereços andam junto: A1 vira A2. Para travar uma célula, use o cifrão: $A$1 não muda ao copiar."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Gráficos",
+          "body": [
+            "Selecione os dados e escolha um gráfico. Colunas comparam valores; pizza mostra partes de um todo; linha mostra mudança no tempo.",
+            "Escolher o gráfico certo é metade da mensagem."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá uma planilha e pede o resultado de uma fórmula. SOMA, MÉDIA e SE são as mais cobradas, junto com a ordem das contas."
+          ],
+          "bullets": [
+            "“O resultado da fórmula =SOMA(A1:A3) é…”",
+            "“Ao copiar a fórmula para a célula abaixo…”",
+            "“A função SE retornará…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Esquecer o = no começo. Sem ele, a planilha mostra o texto, e não a conta.",
+            "Achar que =2+3*4 dá 20. A multiplicação vem primeiro: dá 14.",
+            "Confundir A1:A5 com A1;A5. Dois-pontos é o intervalo; ponto e vírgula separa as partes.",
+            "Esquecer o $ quando a célula não pode andar ao copiar."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Toda fórmula começa com = e usa endereços de células. As funções mais usadas são cinco (SOMA, MÉDIA, MÁXIMO, MÍNIMO e SE).",
+            "A planilha multiplica antes de somar. Ao copiar, os endereços andam, menos os travados com $. Gráficos mostram a mensagem dos números."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Igual",
+          "statement": "Toda fórmula de planilha começa com:",
+          "options": [
+            "o sinal de igual (=)",
+            "um ponto",
+            "a letra A",
+            "um espaço",
+            "o sinal de mais"
+          ],
+          "correct_index": 0,
+          "explanation": "É o = que avisa que vem uma conta.",
+          "pitfall": "Sem o =, vira texto."
+        },
+        {
+          "topic": "Soma",
+          "statement": "Se A1 = 4, A2 = 6 e A3 = 10, =SOMA(A1:A3) dá:",
+          "options": [
+            "20",
+            "10",
+            "4",
+            "60",
+            "3"
+          ],
+          "correct_index": 0,
+          "explanation": "4 + 6 + 10 = 20.",
+          "pitfall": "3 é o número de células, não a soma."
+        },
+        {
+          "topic": "Média",
+          "statement": "Se B1 = 6, B2 = 8 e B3 = 10, =MÉDIA(B1:B3) dá:",
+          "options": [
+            "8",
+            "24",
+            "6",
+            "10",
+            "3"
+          ],
+          "correct_index": 0,
+          "explanation": "24 ÷ 3 = 8.",
+          "pitfall": "24 é a soma, falta dividir por 3."
+        },
+        {
+          "topic": "Ordem",
+          "statement": "A fórmula =2+3*4 dá:",
+          "options": [
+            "14",
+            "20",
+            "24",
+            "9",
+            "10"
+          ],
+          "correct_index": 0,
+          "explanation": "A multiplicação vem antes: 3 × 4 = 12, mais 2 dá 14.",
+          "pitfall": "20 fez a soma primeiro."
+        },
+        {
+          "topic": "SE",
+          "statement": "Em =SE(B2>=6;\"Aprovado\";\"Reprovado\"), com B2 = 5, aparece:",
+          "options": [
+            "Reprovado",
+            "Aprovado",
+            "5",
+            "6",
+            "erro"
+          ],
+          "correct_index": 0,
+          "explanation": "5 não é 6 ou mais.",
+          "pitfall": "Aprovado seria com nota 6 ou mais."
+        },
+        {
+          "topic": "Intervalo",
+          "statement": "Na fórmula =SOMA(A1:A5), o dois-pontos quer dizer:",
+          "options": [
+            "de A1 até A5",
+            "só A1 e A5",
+            "A1 dividido por A5",
+            "A1 vezes A5",
+            "apagar de A1 a A5"
+          ],
+          "correct_index": 0,
+          "explanation": "É o intervalo inteiro.",
+          "pitfall": "Só A1 e A5 seria com ponto e vírgula."
+        },
+        {
+          "topic": "Endereço",
+          "statement": "A célula da coluna C com a linha 7 tem o endereço:",
+          "options": [
+            "C7",
+            "7C",
+            "C-7",
+            "CC7",
+            "7"
+          ],
+          "correct_index": 0,
+          "explanation": "Primeiro a letra, depois o número.",
+          "pitfall": "7C inverte a ordem."
+        },
+        {
+          "topic": "Gráficos",
+          "format": "match",
+          "statement": "Ligue cada gráfico ao que ele mostra melhor.",
+          "pairs": [
+            {
+              "left": "colunas",
+              "right": "comparar valores"
+            },
+            {
+              "left": "pizza",
+              "right": "partes de um todo"
+            },
+            {
+              "left": "linha",
+              "right": "mudança no tempo"
+            },
+            {
+              "left": "tabela",
+              "right": "os números exatos"
+            }
+          ],
+          "explanation": "Cada gráfico conta um tipo de história.",
+          "pitfall": "Pizza não mostra tempo: mostra partes."
+        },
+        {
+          "topic": "Máximo",
+          "statement": "A função que acha o maior valor de um intervalo é:",
+          "options": [
+            "MÁXIMO",
+            "MÍNIMO",
+            "SOMA",
+            "SE",
+            "MÉDIA"
+          ],
+          "correct_index": 0,
+          "explanation": "Máximo é o maior.",
+          "pitfall": "Mínimo é o menor.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Sem igual",
+          "statement": "Se você digita SOMA(A1:A3) sem o =, a planilha:",
+          "options": [
+            "mostra o texto, sem fazer a conta",
+            "faz a conta mesmo assim",
+            "apaga a coluna",
+            "fecha o arquivo",
+            "cria um gráfico"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem o =, é só texto.",
+          "pitfall": "Ela não adivinha que era conta.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Parênteses",
+          "statement": "A fórmula =(2+3)*4 dá:",
+          "options": [
+            "20",
+            "14",
+            "9",
+            "24",
+            "10"
+          ],
+          "correct_index": 0,
+          "explanation": "O parêntese vem primeiro: 5 × 4 = 20.",
+          "pitfall": "14 esquece o parêntese.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Copiar",
+          "statement": "A fórmula =A1*2, em B1, é copiada para B2. Em B2 ela vira:",
+          "options": [
+            "=A2*2",
+            "=A1*2",
+            "=B2*2",
+            "=A1*3",
+            "=A3*2"
+          ],
+          "correct_index": 0,
+          "explanation": "Ao copiar para baixo, o endereço anda uma linha.",
+          "pitfall": "=A1*2 só ficaria igual com o $.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Cifrão",
+          "statement": "Em C1 está =A1*$B$1. Copiada para C2, a fórmula vira:",
+          "options": [
+            "=A2*$B$1",
+            "=A2*$B$2",
+            "=A1*$B$1",
+            "=A2*B2",
+            "=B2*$A$1"
+          ],
+          "correct_index": 0,
+          "explanation": "A1 anda; $B$1 fica travado.",
+          "pitfall": "=A2*$B$2 acha que o $ também anda: a troca fina.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "SE com conta",
+          "statement": "Com A1 = 3 e A2 = 4, a fórmula =SE(A1+A2>6;\"Passou\";\"Não passou\") mostra:",
+          "options": [
+            "Passou",
+            "Não passou",
+            "7",
+            "6",
+            "erro"
+          ],
+          "correct_index": 0,
+          "explanation": "3 + 4 = 7, que é maior que 6.",
+          "pitfall": "Não passou seria se a soma fosse 6 ou menos.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "email-e-mensagens",
+      "title": "E-mail: para, cópia, cópia oculta e anexo",
+      "module": "Ferramentas",
+      "summary": "Cada campo do e-mail tem um sentido. A lição mostra Para, Cc e Cco e as três formas de responder. No fim, ensina a reconhecer um e-mail de golpe.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A carta com cópia",
+          "body": [
+            "Antigamente, para mandar a mesma carta a três pessoas, era preciso escrever três cartas. O e-mail manda uma só para quantas pessoas quiser.",
+            "Mas cada campo do e-mail tem um sentido, e usar o errado pode expor endereços ou incomodar muita gente."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os campos",
+          "body": [
+            "No campo Para vai quem deve ler e agir. No Cc (a cópia) vai quem precisa saber, mas não precisa responder.",
+            "No Cco (a cópia oculta), os destinatários não aparecem para os outros. É o certo para mandar a muitas pessoas que não se conhecem."
+          ],
+          "terms": [
+            {
+              "word": "cópia oculta (Cco)",
+              "meaning": "o campo em que os destinatários recebem o e-mail sem que os outros vejam o endereço deles."
+            }
+          ],
+          "table": {
+            "label": "Os campos do e-mail",
+            "headers": [
+              "Campo",
+              "Para quê"
+            ],
+            "rows": [
+              [
+                "Para",
+                "quem deve ler e agir"
+              ],
+              [
+                "Cc (com cópia)",
+                "quem precisa só ficar sabendo"
+              ],
+              [
+                "Cco (cópia oculta)",
+                "quem recebe sem aparecer para os outros"
+              ],
+              [
+                "Assunto",
+                "o resumo do e-mail em poucas palavras"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Responder e encaminhar",
+          "body": [
+            "Responder manda só para quem escreveu. Responder a todos manda para todos do Para e do Cc, e pode encher a caixa de muita gente.",
+            "Encaminhar manda a mensagem, com os anexos, para alguém que não estava na conversa."
+          ],
+          "terms": [
+            {
+              "word": "anexo",
+              "meaning": "um arquivo mandado junto com o e-mail, como um PDF ou uma foto."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Um e-mail que funciona",
+          "body": [
+            "Num e-mail de escola ou de trabalho, vale ser claro e educado. Um bom assunto ajuda a pessoa a achar o e-mail depois."
+          ],
+          "example": {
+            "label": "Um e-mail bem escrito",
+            "lines": [
+              "Assunto claro: “Trabalho de História — grupo 3”.",
+              "Cumprimento: “Bom dia, professora”.",
+              "A mensagem em poucas frases.",
+              "Avise do anexo e confira se ele foi.",
+              "Despedida e seu nome."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Spam e golpes",
+          "body": [
+            "Desconfie de e-mail com pressa, prêmio ou ameaça: “sua conta será bloqueada hoje”. É o jeito do phishing.",
+            "Não clique no link nem abra anexos estranhos. Entre no site digitando o endereço você mesmo."
+          ],
+          "terms": [
+            {
+              "word": "spam",
+              "meaning": "mensagem em massa que ninguém pediu, muitas vezes propaganda ou golpe."
+            },
+            {
+              "word": "phishing",
+              "meaning": "o golpe em que o criminoso finge ser uma empresa ou pessoa conhecida para roubar dados."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede a função de Para, Cc e Cco e a diferença entre responder a todos e encaminhar. Também cobra como reconhecer um e-mail de golpe."
+          ],
+          "bullets": [
+            "“Para que os destinatários não vejam os endereços uns dos outros, usa-se…”",
+            "“A opção encaminhar permite…”",
+            "“É indício de phishing…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Usar Cc para mandar a muita gente que não se conhece. O certo é o Cco.",
+            "Clicar em responder a todos para uma resposta que é de uma pessoa só.",
+            "Esquecer o anexo. Confira antes de enviar.",
+            "Confiar no nome que aparece no remetente. Ele pode ser falso."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Para é quem age; Cc é quem fica sabendo; Cco esconde os endereços dos outros. Responder vai para quem escreveu, e responder a todos vai para todos.",
+            "Encaminhar manda a mensagem a alguém novo. Desconfie de pressa, prêmio e ameaça, e não clique em link estranho."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Cco",
+          "statement": "Para mandar um e-mail a 50 pais sem que eles vejam o endereço uns dos outros, use o campo:",
+          "options": [
+            "Cco (cópia oculta)",
+            "Para",
+            "Cc (com cópia)",
+            "Assunto",
+            "Responder a todos"
+          ],
+          "correct_index": 0,
+          "explanation": "O Cco esconde os destinatários.",
+          "pitfall": "No Cc, todos veem todos."
+        },
+        {
+          "topic": "Cc",
+          "statement": "No campo Cc vai quem:",
+          "options": [
+            "precisa só ficar sabendo",
+            "deve agir e responder",
+            "não pode ver o e-mail",
+            "escreveu o e-mail",
+            "é o golpista"
+          ],
+          "correct_index": 0,
+          "explanation": "É a cópia para informar.",
+          "pitfall": "Quem deve agir vai no Para."
+        },
+        {
+          "topic": "Responder",
+          "statement": "A opção responder manda a resposta para:",
+          "options": [
+            "só quem escreveu",
+            "todos da conversa",
+            "ninguém",
+            "quem está no Cco",
+            "toda a lista de contatos"
+          ],
+          "correct_index": 0,
+          "explanation": "Responder é só para o remetente.",
+          "pitfall": "Todos seria responder a todos."
+        },
+        {
+          "topic": "Encaminhar",
+          "statement": "Encaminhar um e-mail é:",
+          "options": [
+            "mandá-lo, com os anexos, para alguém que não estava na conversa",
+            "apagar o e-mail",
+            "responder só ao remetente",
+            "bloquear o remetente",
+            "imprimir o e-mail"
+          ],
+          "correct_index": 0,
+          "explanation": "Leva a mensagem a alguém novo.",
+          "pitfall": "Responder ao remetente é outra opção."
+        },
+        {
+          "topic": "Anexo",
+          "statement": "Um anexo é:",
+          "options": [
+            "um arquivo mandado junto com o e-mail",
+            "o assunto do e-mail",
+            "o endereço do remetente",
+            "sempre um vírus",
+            "a assinatura"
+          ],
+          "correct_index": 0,
+          "explanation": "PDF, foto ou documento que vai junto.",
+          "pitfall": "Nem todo anexo é vírus, mas o estranho merece cuidado."
+        },
+        {
+          "topic": "Bloqueio",
+          "statement": "Um e-mail diz: “Sua conta será bloqueada hoje. Clique aqui.” O mais seguro é:",
+          "options": [
+            "não clicar e entrar no site digitando o endereço",
+            "clicar rápido para não perder a conta",
+            "responder com a senha",
+            "encaminhar para todos",
+            "abrir todos os anexos"
+          ],
+          "correct_index": 0,
+          "explanation": "Pressa é a isca do golpe.",
+          "pitfall": "Clicar rápido é o que o golpista quer."
+        },
+        {
+          "topic": "Assunto",
+          "statement": "O assunto de um e-mail serve para:",
+          "options": [
+            "resumir a mensagem em poucas palavras",
+            "esconder os destinatários",
+            "anexar arquivos",
+            "bloquear spam",
+            "escolher a cor da letra"
+          ],
+          "correct_index": 0,
+          "explanation": "Ajuda a achar o e-mail depois.",
+          "pitfall": "Esconder é o Cco."
+        },
+        {
+          "topic": "Campos",
+          "format": "match",
+          "statement": "Ligue cada campo ao seu uso.",
+          "pairs": [
+            {
+              "left": "Para",
+              "right": "quem deve agir"
+            },
+            {
+              "left": "Cc",
+              "right": "quem fica sabendo"
+            },
+            {
+              "left": "Cco",
+              "right": "quem recebe sem aparecer"
+            },
+            {
+              "left": "Assunto",
+              "right": "o resumo da mensagem"
+            }
+          ],
+          "explanation": "Cada campo tem um papel.",
+          "pitfall": "Cc mostra os endereços; Cco esconde."
+        },
+        {
+          "topic": "Spam",
+          "statement": "Spam é:",
+          "options": [
+            "mensagem em massa que ninguém pediu",
+            "um e-mail do professor",
+            "um anexo em PDF",
+            "o campo de cópia",
+            "a assinatura do e-mail"
+          ],
+          "correct_index": 0,
+          "explanation": "Propaganda ou golpe em massa.",
+          "pitfall": "E-mail do professor foi pedido.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Conferir",
+          "statement": "Antes de enviar um e-mail que fala de um arquivo, vale:",
+          "options": [
+            "conferir se o anexo foi junto",
+            "apagar o assunto",
+            "colocar todos no Cc",
+            "mudar o remetente",
+            "enviar duas vezes"
+          ],
+          "correct_index": 0,
+          "explanation": "Esquecer o anexo é o erro mais comum.",
+          "pitfall": "Enviar duas vezes não resolve.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Agradecer",
+          "statement": "Um professor manda um aviso para 40 alunos, todos no campo Para. Um aluno quer agradecer só ao professor. Ele deve usar:",
+          "options": [
+            "responder",
+            "responder a todos",
+            "encaminhar",
+            "Cco",
+            "spam"
+          ],
+          "correct_index": 0,
+          "explanation": "Só o professor precisa ler.",
+          "pitfall": "Responder a todos encheria a caixa de 40 colegas.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Remetente",
+          "statement": "Um e-mail aparece com o nome do seu banco, mas o endereço é bancosegur0@mail.xyz. Isso indica:",
+          "options": [
+            "um possível golpe de phishing",
+            "que é o banco de verdade",
+            "um anexo seguro",
+            "um e-mail de escola",
+            "nada, porque o nome basta"
+          ],
+          "correct_index": 0,
+          "explanation": "O endereço não é o do banco.",
+          "pitfall": "O nome que aparece pode ser falso.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Cc ou Cco",
+          "statement": "Ana manda um convite a clientes que não se conhecem e põe todos no Cc. O problema é que:",
+          "options": [
+            "todos veem o endereço de todos",
+            "ninguém recebe o convite",
+            "o anexo some",
+            "o e-mail vira spam sozinho",
+            "só o primeiro recebe"
+          ],
+          "correct_index": 0,
+          "explanation": "No Cc, os endereços aparecem para todos.",
+          "pitfall": "Achar que Cc esconde é a troca fina: quem esconde é o Cco.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Do Cco",
+          "statement": "Quem está no Cco de um e-mail clica em responder a todos. A resposta vai para:",
+          "options": [
+            "o remetente e quem estava no Para e no Cc",
+            "só os outros que estavam no Cco",
+            "ninguém",
+            "toda a internet",
+            "só o próprio Cco"
+          ],
+          "correct_index": 0,
+          "explanation": "Quem está no Cco não vê os outros do Cco, então eles não recebem.",
+          "pitfall": "“Só os outros do Cco” é a troca fina: eles ficam escondidos.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "o-que-e-um-algoritmo",
       "title": "O que é um algoritmo",
-      "module": "Ferramentas",
+      "module": "Mundo digital",
       "summary": "Algoritmo é uma receita: passos em ordem, com decisões e repetições, que chegam ao fim. Um programa é um algoritmo escrito numa língua que o computador entende.",
       "steps": [
         {
@@ -2281,6 +4016,364 @@
           "correct_index": 0,
           "explanation": "Algoritmo precisa ter fim.",
           "pitfall": "Estar em português não é problema.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "inteligencia-artificial",
+      "title": "Inteligência artificial no dia a dia",
+      "module": "Mundo digital",
+      "summary": "A inteligência artificial aprende com exemplos e já está no celular, no mapa e no banco. A lição mostra como ela funciona, onde erra e como usá-la bem nos estudos.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O celular que reconhece seu rosto",
+          "body": [
+            "O celular abre ao ver seu rosto. O aplicativo de música sugere uma canção que você ainda não conhecia, e acerta.",
+            "Por trás dessas coisas há programas que aprenderam com milhões de exemplos. Eles são o assunto desta lição."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Aprender com exemplos",
+          "body": [
+            "Um programa comum segue um algoritmo escrito passo a passo por uma pessoa. A inteligência artificial aprende o caminho sozinha, olhando exemplos.",
+            "Mostre milhares de fotos de gatos e de cachorros, cada uma com o nome certo. Com o tempo, o programa aprende a separar os dois em fotos novas."
+          ],
+          "terms": [
+            {
+              "word": "algoritmo",
+              "meaning": "uma sequência de passos para resolver um problema."
+            },
+            {
+              "word": "inteligência artificial",
+              "meaning": "programas que aprendem com muitos exemplos a fazer tarefas que pareciam só humanas, como reconhecer rostos ou escrever textos."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Onde ela já está",
+          "body": [
+            "Muita gente usa IA todos os dias sem perceber."
+          ],
+          "table": {
+            "label": "A IA no dia a dia",
+            "headers": [
+              "Onde",
+              "O que ela faz"
+            ],
+            "rows": [
+              [
+                "celular",
+                "reconhece rosto e voz"
+              ],
+              [
+                "aplicativos de vídeo e música",
+                "recomenda o que ver e ouvir"
+              ],
+              [
+                "mapa do celular",
+                "prevê o trânsito"
+              ],
+              [
+                "banco",
+                "percebe compra estranha no cartão"
+              ],
+              [
+                "assistentes de texto",
+                "respondem perguntas e escrevem textos"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Ela erra, e com confiança",
+          "body": [
+            "As IAs que escrevem textos podem inventar fatos, datas e até livros que não existem, com a maior segurança.",
+            "Por isso, informação importante tirada de uma IA precisa ser conferida em fonte confiável."
+          ],
+          "terms": [
+            {
+              "word": "alucinação",
+              "meaning": "quando a IA inventa uma informação falsa e a apresenta como se fosse verdade."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Viés e deepfake",
+          "body": [
+            "Se a IA aprende com exemplos desiguais, ela repete a desigualdade. Um sistema treinado quase só com rostos claros erra mais com rostos escuros.",
+            "E a IA também cria deepfakes: vídeos falsos de pessoas reais dizendo o que nunca disseram."
+          ],
+          "terms": [
+            {
+              "word": "viés",
+              "meaning": "um desvio injusto que a IA aprende quando os exemplos dados a ela já são desiguais."
+            },
+            {
+              "word": "deepfake",
+              "meaning": "vídeo, foto ou áudio falso feito por IA, que imita uma pessoa real."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Usar bem nos estudos",
+          "body": [
+            "A IA pode explicar um assunto de outro jeito, sugerir exercícios e revisar um texto.",
+            "Mas entregar como seu um texto feito por ela não ensina nada e pode ser fraude. Use para aprender, confira o que ela diz e diga quando usou."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede o que caracteriza a IA e os riscos de alucinação, viés e deepfake. Também cobra o uso ético na escola e no trabalho."
+          ],
+          "bullets": [
+            "“A inteligência artificial diferencia-se de um programa comum por…”",
+            "“O viés em sistemas de IA ocorre quando…”",
+            "“Um deepfake é…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que a IA sabe tudo e não erra. Ela pode inventar com confiança.",
+            "Achar que a IA é neutra. Ela repete os vieses dos exemplos.",
+            "Acreditar em vídeo só porque parece real. Pode ser deepfake.",
+            "Entregar como seu um texto feito por IA. Não ensina e pode ser fraude."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A inteligência artificial aprende com muitos exemplos, em vez de seguir passos escritos um a um. Ela já está no celular, no mapa, no banco e nas recomendações.",
+            "Ela pode inventar fatos, repetir vieses e criar deepfakes. Use para aprender, confira as informações e diga quando usou."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Diferença",
+          "statement": "A inteligência artificial se diferencia de um programa comum porque:",
+          "options": [
+            "aprende com muitos exemplos, em vez de seguir só passos escritos",
+            "não usa eletricidade",
+            "é sempre um robô com corpo",
+            "nunca erra",
+            "funciona sem dados"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela tira o caminho dos exemplos.",
+          "pitfall": "“Nunca erra” é o engano mais perigoso."
+        },
+        {
+          "topic": "Gatos",
+          "statement": "Para aprender a reconhecer gatos, uma IA precisa principalmente de:",
+          "options": [
+            "muitas fotos de gatos com a resposta certa",
+            "um gato de verdade",
+            "uma única foto",
+            "um teclado novo",
+            "nenhum exemplo"
+          ],
+          "correct_index": 0,
+          "explanation": "Aprende com muitos exemplos rotulados.",
+          "pitfall": "Uma foto só não basta."
+        },
+        {
+          "topic": "Alucinação",
+          "statement": "Quando uma IA inventa um fato falso e o apresenta como verdade, isso se chama:",
+          "options": [
+            "alucinação",
+            "viés",
+            "atualização",
+            "spam",
+            "sincronização"
+          ],
+          "correct_index": 0,
+          "explanation": "É inventar com confiança.",
+          "pitfall": "Viés é repetir desigualdade dos exemplos."
+        },
+        {
+          "topic": "Viés",
+          "statement": "Um sistema treinado quase só com rostos claros erra mais com rostos escuros. Isso é um exemplo de:",
+          "options": [
+            "viés",
+            "alucinação",
+            "deepfake",
+            "spam",
+            "anexo"
+          ],
+          "correct_index": 0,
+          "explanation": "Exemplos desiguais geram erro desigual.",
+          "pitfall": "Alucinação é inventar fato."
+        },
+        {
+          "topic": "Deepfake",
+          "statement": "Um deepfake é:",
+          "options": [
+            "um vídeo, foto ou áudio falso feito por IA imitando uma pessoa real",
+            "um vídeo antigo",
+            "um filme de animação",
+            "um vírus de e-mail",
+            "uma foto tirada de longe"
+          ],
+          "correct_index": 0,
+          "explanation": "Parece real, mas é fabricado.",
+          "pitfall": "Animação não finge ser real."
+        },
+        {
+          "topic": "Data",
+          "statement": "Uma IA deu uma data histórica para seu trabalho. O mais sensato é:",
+          "options": [
+            "conferir a data numa fonte confiável",
+            "copiar sem conferir",
+            "apagar o trabalho",
+            "perguntar para outra IA e parar por aí",
+            "inventar outra data"
+          ],
+          "correct_index": 0,
+          "explanation": "A IA pode errar com confiança.",
+          "pitfall": "Outra IA pode errar igual."
+        },
+        {
+          "topic": "Escola",
+          "statement": "Sobre usar IA nos estudos, a atitude mais adequada é:",
+          "options": [
+            "usar para aprender, conferir o que ela diz e avisar quando usou",
+            "entregar o texto dela como se fosse seu",
+            "nunca abrir um livro de novo",
+            "acreditar em tudo",
+            "esconder que usou"
+          ],
+          "correct_index": 0,
+          "explanation": "A IA ajuda quem continua pensando.",
+          "pitfall": "Entregar como seu não ensina e pode ser fraude."
+        },
+        {
+          "topic": "Riscos",
+          "format": "match",
+          "statement": "Ligue cada risco ao seu sentido.",
+          "pairs": [
+            {
+              "left": "alucinação",
+              "right": "inventar fato falso"
+            },
+            {
+              "left": "viés",
+              "right": "repetir uma desigualdade dos exemplos"
+            },
+            {
+              "left": "deepfake",
+              "right": "vídeo falso de pessoa real"
+            },
+            {
+              "left": "plágio",
+              "right": "entregar como seu o texto da IA"
+            }
+          ],
+          "explanation": "Quatro riscos que a prova cobra.",
+          "pitfall": "Viés não é mentira: é desigualdade aprendida."
+        },
+        {
+          "topic": "Onde está",
+          "statement": "Qual destes usa inteligência artificial?",
+          "options": [
+            "a recomendação de vídeos de um aplicativo",
+            "uma régua de plástico",
+            "um caderno",
+            "uma lâmpada comum",
+            "um lápis"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela aprende o que você gosta.",
+          "pitfall": "Régua e lápis não aprendem nada.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Cartão",
+          "statement": "O banco que bloqueia uma compra estranha no cartão está usando IA para:",
+          "options": [
+            "perceber um padrão fora do normal",
+            "pintar o cartão",
+            "trocar a senha sozinho",
+            "imprimir extratos",
+            "apagar a conta"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela conhece o seu jeito de comprar.",
+          "pitfall": "Trocar a senha não é o que acontece.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Quem escreve",
+          "statement": "Num programa comum, quem escreve o algoritmo passo a passo é:",
+          "options": [
+            "uma pessoa",
+            "o próprio computador, sempre",
+            "o mouse",
+            "a internet",
+            "o usuário final, sem saber"
+          ],
+          "correct_index": 0,
+          "explanation": "É a diferença para a IA, que aprende com exemplos.",
+          "pitfall": "O computador sozinho é o caso da IA.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Vídeo",
+          "statement": "Aparece um vídeo de um político dizendo algo absurdo, sem fonte. Antes de compartilhar, vale lembrar que:",
+          "options": [
+            "pode ser um deepfake e precisa ser conferido",
+            "todo vídeo é verdadeiro",
+            "vídeo não pode ser falsificado",
+            "a IA não faz vídeos",
+            "o político sempre fala isso"
+          ],
+          "correct_index": 0,
+          "explanation": "Vídeo realista pode ser fabricado.",
+          "pitfall": "“Todo vídeo é verdadeiro” não vale mais.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Confiança",
+          "statement": "Uma IA responde com muita segurança, citando um livro. Isso garante que a informação é certa?",
+          "options": [
+            "não, porque a IA pode inventar até livros, com confiança",
+            "sim, porque ela citou um livro",
+            "sim, porque ela respondeu rápido",
+            "sim, porque ela nunca erra",
+            "não, porque livros não existem"
+          ],
+          "correct_index": 0,
+          "explanation": "Segurança no tom não é prova.",
+          "pitfall": "“Sim, porque citou um livro” cai na alucinação: a troca fina.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Injusta",
+          "statement": "Por que uma IA pode ser injusta mesmo que ninguém a programe para isso?",
+          "options": [
+            "porque aprende com exemplos que já trazem desigualdades",
+            "porque tem vontade própria",
+            "porque odeia pessoas",
+            "porque usa muita energia",
+            "porque não tem internet"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela repete o que viu.",
+          "pitfall": "Vontade própria ela não tem.",
           "difficulty": "dificil"
         }
       ]

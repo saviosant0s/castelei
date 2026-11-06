@@ -175,6 +175,7 @@ const JARGON = [
   ["servidor", /\bservidor(es)?\b/i, "k"], ["nuvem", /\bna nuvem\b/i, "k"], ["phishing", /\bphishing\b/i, "k"], ["verificação em duas etapas", /(?<!\p{L})verifica(ç|c)(ão|ões) em duas etapas(?!\p{L})/iu, "k"],
   ["backup", /\bbackups?\b/i, "k"], ["malware", /\bmalwares?\b/i, "k"], ["planilha", /\bplanilhas?\b/i, "k"], ["célula (de planilha)", /(?<!\p{L})c(é|e)lulas?(?!\p{L})/iu, "k"],
   ["fórmula", /(?<!\p{L})f(ó|o)rmulas?(?!\p{L})/iu, "k"], ["algoritmo", /\balgoritmos?\b/i, "k"],
+  ["roteador", /\broteador(es)?\b/i, "k"], ["LGPD", /\bLGPD\b/, "k"], ["inteligência artificial", /(?<!\p{L})intelig(ê|e)ncias? artificia(l|is)(?!\p{L})/iu, "k"],
   // Filosofia (escopo "z") e Sociologia (escopo "j"): os conceitos que a prova cobra pelo nome.
   ["mito", /\bmitos?\b/i, "z"], ["arché", /\barch(é|e)\b/i, "z"], ["maiêutica", /(?<!\p{L})mai(ê|e)utica(?!\p{L})/iu, "z"], ["mundo das ideias", /\bmundo das ideias\b/i, "z"],
   ["ética e moral", /(?<!\p{L})(é|e)tica(s)?(?!\p{L})|\bmora(l|is)\b/iu, "z"], ["racionalismo e empirismo", /\bracionalis(mo|ta|tas)\b|\bempiris(mo|ta|tas)\b/i, "z"],
