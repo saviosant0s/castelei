@@ -235,6 +235,18 @@ const JARGON = [
   ["poesia concreta", /\bpoesia concreta\b|\bpoemas? concretos?\b|\bconcretis(mo|ta|tas)\b/i, "L"], ["poesia marginal", /\bpoesia marginal\b/i, "L"],
   ["escrevivência", /(?<!\p{L})escreviv(ê|e)ncia(?!\p{L})/iu, "L"], ["cordel", /(?<!\p{L})cord(el|éis)(?!\p{L})/iu, "L"],
   ["metáfora", /(?<!\p{L})met(á|a)foras?(?!\p{L})/iu, "L"],
+  // Geometria e trigonometria (escopo "G", somado ao "m" e ao "d": a matéria usa raiz, eixo, hipotenusa e π).
+  ["reta transversal", /\btransversa(l|is)\b/i, "G"], ["ângulos alternos", /(?<!\p{L})alternos?(?!\p{L})/iu, "G"],
+  ["complementar e suplementar", /\bcomplementares?\b|\bsuplementares?\b/i, "G"], ["opostos pelo vértice", /(?<!\p{L})opostos? pelo v(é|e)rtice(?!\p{L})/iu, "G"],
+  ["triângulos semelhantes", /(?<!\p{L})(tri(â|a)ngulos?|figuras?) semelhantes?(?!\p{L})|(?<!\p{L})semelhan(ç|c)a(?!\p{L})/iu, "G"],
+  ["teorema de Tales", /\bTales\b/, "G"], ["diagonal", /\bdiagona(l|is)\b/i, "G"], ["polígono regular", /(?<!\p{L})pol(í|i)gonos? regular(es)?(?!\p{L})/iu, "G"],
+  ["paralelogramo", /\bparalelogramos?\b/i, "G"], ["trapézio", /(?<!\p{L})trap(é|e)zios?(?!\p{L})/iu, "G"], ["losango", /\blosangos?\b/i, "G"],
+  ["setor circular", /\bsetor(es)? circular(es)?\b/i, "G"],
+  ["seno, cosseno e tangente", /\bseno\b|\bcosseno\b|\btangente\b|\bsen\b|\bcos\b|\btg\b/i, "G"], ["lei dos senos e lei dos cossenos", /\blei dos (senos|cossenos)\b/i, "G"],
+  ["radiano", /\bradianos?\b/i, "G"], ["círculo trigonométrico", /(?<!\p{L})c(í|i)rculo trigonom(é|e)trico(?!\p{L})/iu, "G"], ["quadrante", /\bquadrantes?\b/i, "G"],
+  ["fenômeno periódico", /(?<!\p{L})peri(ó|o)dic(o|a|os|as)(?!\p{L})/iu, "G"], ["amplitude", /\bamplitudes?\b/i, "G"],
+  ["poliedro", /\bpoliedros?\b/i, "G"], ["aresta", /\barestas?\b/i, "G"], ["relação de Euler", /\bEuler\b/, "G"],
+  ["ponto médio", /(?<!\p{L})pontos? m(é|e)dios?(?!\p{L})/iu, "G"],
   ["Estado", /\bEstado\b/, "j"], ["cidadania", /\bcidadania\b/i, "j"], ["movimento social", /\bmovimentos? socia(l|is)\b/i, "j"], ["ação social", /(?<!\p{L})a(ç|c)(ão|ões) socia(l|is)(?!\p{L})/iu, "j"], ["artigo", /\bartigos?\b/i, "u"], ["conjugação", /\bconjuga(ç|c)(ão|ões)\b|\bconjugad(o|a)\b/i, "u"], ["combustível fóssil", /(?<!\p{L})combust(í|i)ve(l|is) f(ó|o)sse(l|is)(?!\p{L})/iu, "x"], ["biocombustível", /(?<!\p{L})biocombust(í|i)ve(l|is)(?!\p{L})/iu, "x"],
 
   ["preposição", /\bpreposi(ç|c)(ão|ões)\b/i, "p"], ["artigo", /\bartigos?\b/i, "p"],
@@ -573,7 +585,7 @@ const JARGON = [
   ["cooler", /\bcoolers?\b|\bwater cooler\b/i, "h"], ["80 Plus", /\b80 Plus\b/i, "h"], ["fonte modular", /\bmodular(es)?\b/i, "h"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;

@@ -20,6 +20,30 @@ import type { LessonStep } from "@/lib/types";
 | manda mostrar o comando no Windows e no Linux lado a lado, então tabela larga
 | é o caso comum nesta plataforma, não a exceção.
 */
+/*
+| Tabela de células curtas não precisa de largura mínima.
+|
+| A largura mínima de 26rem existe para a tabela de frases: sem ela, três
+| colunas de texto viram três tirinhas com uma palavra por linha. Mas ela
+| também empurrava para a rolagem a tabela que cabia folgada — a dos ângulos
+| notáveis (30°, 45° e 60°, com valores como √3/2) escondia a coluna de 60°
+| atrás do "arraste", justo a tabela que a pessoa precisa ver inteira.
+|
+| A conta é pelo texto mais longo de cada coluna, somado: até 36 letras, as
+| colunas cabem lado a lado num celular de 390px sem espremer nada.
+*/
+const LETRAS_QUE_CABEM = 36;
+
+export function tabelaCompacta(table: NonNullable<LessonStep["table"]>): boolean {
+  const colunas = table.headers.length;
+  let soma = 0;
+  for (let c = 0; c < colunas; c++) {
+    const textos = [table.headers[c] ?? "", ...table.rows.map((linha) => linha[c] ?? "")];
+    soma += Math.max(...textos.map((texto) => texto.length));
+  }
+  return soma <= LETRAS_QUE_CABEM;
+}
+
 export function StepTable({
   table,
 }: {
@@ -64,7 +88,7 @@ export function StepTable({
 
       <div className="relative">
         <div ref={caixa} onScroll={medir} className="overflow-x-auto">
-          <table className="mt-2 w-full min-w-[26rem] text-left text-sm">
+          <table className={`mt-2 w-full text-left text-sm ${tabelaCompacta(table) ? "" : "min-w-[26rem]"}`}>
             <thead>
               <tr className="border-b-2 border-ink/15">
                 {table.headers.map((header) => (

@@ -252,7 +252,7 @@ escrever.
 | Área | Matéria |
 |---|---|
 | Português | Literatura brasileira (feita: 13 lições em quatro módulos, com os níveis) |
-| Matemática | Geometria e trigonometria |
+| Matemática | Geometria e trigonometria (feita: 13 lições em quatro módulos, com os níveis) |
 | História | História do Brasil |
 | Geografia | Geografia do Brasil |
 | Biologia | Corpo humano e saúde |

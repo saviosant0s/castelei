@@ -403,6 +403,27 @@ export const SUBJECTS: SiteSubject[] = [
       "Literatura contemporânea: novas vozes",
     ],
   },
+  {
+    slug: "geometria-e-trigonometria",
+    name: "Geometria e trigonometria",
+    pitch:
+      "Retas e ângulos, semelhança, polígonos e áreas, seno e cosseno, o círculo trigonométrico, sólidos e a reta no plano: a geometria da prova, com conta feita passo a passo.",
+    lessons: [
+      "Retas paralelas e ângulos",
+      "Semelhança de triângulos e o teorema de Tales",
+      "Polígonos: ângulos e diagonais",
+      "Áreas de figuras planas",
+      "Seno, cosseno e tangente",
+      "Os ângulos notáveis: 30°, 45° e 60°",
+      "Lei dos senos e lei dos cossenos",
+      "O círculo trigonométrico e o radiano",
+      "Funções trigonométricas: as ondas que se repetem",
+      "Poliedros e prismas",
+      "Pirâmide, cilindro, cone e esfera",
+      "Distância entre dois pontos e ponto médio",
+      "A equação da reta e a da circunferência",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -419,5 +440,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 3164,
+  questions: 3346,
 };
