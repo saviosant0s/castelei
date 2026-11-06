@@ -382,6 +382,27 @@ export const SUBJECTS: SiteSubject[] = [
       "Lazer, trabalho e qualidade de vida",
     ],
   },
+  {
+    slug: "literatura-brasileira",
+    name: "Literatura brasileira",
+    pitch:
+      "Do Quinhentismo à literatura de hoje: cada escola com seus autores e obras, o jeito de ler um poema e as pistas que a prova dá.",
+    lessons: [
+      "O que é literatura",
+      "O poema: verso, estrofe, rima e métrica",
+      "Quinhentismo e Barroco",
+      "Arcadismo: a vida simples no campo",
+      "Romantismo: as três gerações da poesia",
+      "Romantismo: o romance brasileiro",
+      "Realismo e Naturalismo",
+      "Parnasianismo e Simbolismo",
+      "Pré-Modernismo: o Brasil que ninguém mostrava",
+      "Modernismo: a Semana de 22 e a primeira fase",
+      "A geração de 30: o romance do Nordeste e a poesia",
+      "Guimarães Rosa, Clarice Lispector e João Cabral",
+      "Literatura contemporânea: novas vozes",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -398,5 +419,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 2982,
+  questions: 3164,
 };

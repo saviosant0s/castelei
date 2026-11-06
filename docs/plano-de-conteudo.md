@@ -251,7 +251,7 @@ escrever.
 
 | Área | Matéria |
 |---|---|
-| Português | Literatura brasileira |
+| Português | Literatura brasileira (feita: 13 lições em quatro módulos, com os níveis) |
 | Matemática | Geometria e trigonometria |
 | História | História do Brasil |
 | Geografia | Geografia do Brasil |
