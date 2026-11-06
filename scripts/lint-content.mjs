@@ -192,7 +192,7 @@ const JARGON = [
   ["linguagem artística", /\blinguage(m|ns) art(í|i)sticas?\b/i, "A"], ["cores primárias", /(?<!\p{L})cores prim(á|a)rias(?!\p{L})/iu, "A"], ["cores complementares", /\bcores complementares\b/i, "A"],
   ["perspectiva", /\bperspectiva\b|\bponto de fuga\b/i, "A"], ["Renascimento", /\bRenascimento\b/, "A"], ["Barroco", /\bBarroco\b|\bbarroc(o|a)s?\b/, "A"],
   ["Impressionismo", /\bimpressionis(mo|ta|tas)\b/i, "A"], ["Expressionismo", /\bexpressionis(mo|ta|tas)\b/i, "A"], ["Cubismo", /\bcubis(mo|ta|tas)\b/i, "A"], ["Surrealismo", /\bsurrealis(mo|ta|tas)\b/i, "A"],
-  ["Modernismo", /\bmodernis(mo|ta|tas)\b/i, "A"], ["Antropofagia", /\bantropofagia\b|\bantrop(ó|o)fag(o|a|os|as)\b/i, "A"], ["xilogravura", /\bxilogravuras?\b/i, "A"],
+  ["Modernismo", /\bmodernis(mo|ta|tas)\b/i, "A"], ["Antropofagia", /\bantropofagia\b|\bantrop(ó|o)fag(o|a|os|as)\b/i, "AL"], ["xilogravura", /\bxilogravuras?\b/i, "A"],
   ["instalação", /\binstala(ç|c)(ão|ões)\b/i, "A"], ["performance", /\bperformances?\b/i, "A"], ["grafite", /\bgrafites?\b/i, "A"],
   ["arte rupestre", /\brupestres?\b/i, "A"], ["frontalidade", /\bfrontalidade\b/i, "A"], ["vitral", /\bvitra(l|is)\b/i, "A"],
   ["românico", /(?<!\p{L})rom(â|a)nic(o|a|os|as)(?!\p{L})/iu, "A"], ["gótico", /(?<!\p{L})g(ó|o)tic(o|a|os|as)(?!\p{L})/iu, "A"],
@@ -213,6 +213,28 @@ const JARGON = [
   ["doping", /\bdoping\b/i, "E"], ["classificação funcional", /(?<!\p{L})classifica(ç|c)(ão|ões) funciona(l|is)(?!\p{L})/iu, "E"], ["goalball", /\bgoalball\b/i, "E"],
   ["esporte-espetáculo", /(?<!\p{L})esportes?-espet(á|a)culos?(?!\p{L})/iu, "E"], ["esporte de rendimento", /\besportes? de rendimento\b/i, "E"], ["megaevento", /\bmegaeventos?\b/i, "E"],
   ["ginástica laboral", /(?<!\p{L})gin(á|a)stica laboral(?!\p{L})/iu, "E"], ["LER/DORT", /\bLER\b|\bDORT\b/, "E"], ["ergonomia", /\bergonomi(a|co|ca|cos|cas)\b/i, "E"],
+  // Literatura brasileira (escopo "L"): os nomes de recurso e de estilo que a prova usa. Os nomes das
+  // escolas (Romantismo, Realismo…) ficam de fora: cada lição explica a sua, e citá-las de passagem é contexto.
+  ["eu lírico", /\beu l(í|i)rico\b/i, "L"], ["escola literária", /(?<!\p{L})escolas? liter(á|a)rias?(?!\p{L})/iu, "L"],
+  ["conotação e denotação", /(?<!\p{L})(conota|denota)(ç|c)(ão|ões)(?!\p{L})|(?<!\p{L})(conotativ|denotativ)(o|a|os|as)(?!\p{L})/iu, "L"],
+  ["gênero lírico, narrativo e dramático", /(?<!\p{L})g(ê|e)neros? (l(í|i)ric|narrativ|dram(á|a)tic)(o|os)(?!\p{L})/iu, "L"],
+  ["métrica", /(?<!\p{L})m(é|e)trica(?!\p{L})/iu, "L"], ["sílaba poética", /(?<!\p{L})s(í|i)labas? po(é|e)ticas?(?!\p{L})/iu, "L"],
+  ["redondilha", /\bredondilhas?\b/i, "L"], ["decassílabo e alexandrino", /(?<!\p{L})(decass(í|i)labo|alexandrino)s?(?!\p{L})/iu, "L"],
+  ["soneto", /\bsonetos?\b/i, "L"], ["verso livre", /\bversos? livres?\b/i, "L"],
+  ["antítese e paradoxo", /(?<!\p{L})ant(í|i)teses?(?!\p{L})|\bparadox(o|os|al|ais)\b/iu, "L"],
+  ["cultismo e conceptismo", /\bcultis(mo|ta|tas)\b|\bconceptis(mo|ta|tas)\b/i, "L"], ["Contrarreforma", /\bContrarreforma\b/i, "L"],
+  ["bucolismo", /(?<!\p{L})buc(ó|o)lic(o|a|os|as)(?!\p{L})|\bbucolismo\b/iu, "L"], ["carpe diem", /\bcarpe diem\b/i, "L"],
+  ["fugere urbem", /\bfugere urbem\b/i, "L"], ["locus amoenus", /\blocus amoenus\b/i, "L"],
+  ["indianismo", /\bindianis(mo|ta|tas)\b/i, "L"], ["mal do século", /(?<!\p{L})mal do s(é|e)culo(?!\p{L})|(?<!\p{L})ultrarrom(â|a)ntic(o|a|os|as)(?!\p{L})/iu, "L"],
+  ["condoreirismo", /\bcondoreir(o|a|os|as|ismo)\b/i, "L"], ["folhetim", /\bfolhetins?\b/i, "L"], ["regionalismo", /\bregionalis(mo|ta|tas)\b/i, "L"],
+  ["determinismo", /\bdeterminis(mo|ta|tas)\b/i, "L"], ["zoomorfização", /(?<!\p{L})zoomorfiza(ç|c)(ão|ões)(?!\p{L})/iu, "L"],
+  ["narrador não confiável", /(?<!\p{L})n(ão|ao) confi(á|a)ve(l|is)(?!\p{L})/iu, "L"], ["arte pela arte", /\barte pela arte\b/i, "L"],
+  ["sinestesia", /\bsinestesias?\b/i, "L"], ["aliteração", /(?<!\p{L})alitera(ç|c)(ão|ões)(?!\p{L})/iu, "L"], ["poema-piada", /\bpoemas?-piadas?\b/i, "L"],
+  ["fluxo de consciência", /(?<!\p{L})fluxo de consci(ê|e)ncia(?!\p{L})/iu, "L"], ["epifania", /\bepifanias?\b/i, "L"],
+  ["neologismo", /\bneologismos?\b/i, "L"], ["metalinguagem", /\bmetalinguagem\b/i, "L"],
+  ["poesia concreta", /\bpoesia concreta\b|\bpoemas? concretos?\b|\bconcretis(mo|ta|tas)\b/i, "L"], ["poesia marginal", /\bpoesia marginal\b/i, "L"],
+  ["escrevivência", /(?<!\p{L})escreviv(ê|e)ncia(?!\p{L})/iu, "L"], ["cordel", /(?<!\p{L})cord(el|éis)(?!\p{L})/iu, "L"],
+  ["metáfora", /(?<!\p{L})met(á|a)foras?(?!\p{L})/iu, "L"],
   ["Estado", /\bEstado\b/, "j"], ["cidadania", /\bcidadania\b/i, "j"], ["movimento social", /\bmovimentos? socia(l|is)\b/i, "j"], ["ação social", /(?<!\p{L})a(ç|c)(ão|ões) socia(l|is)(?!\p{L})/iu, "j"], ["artigo", /\bartigos?\b/i, "u"], ["conjugação", /\bconjuga(ç|c)(ão|ões)\b|\bconjugad(o|a)\b/i, "u"], ["combustível fóssil", /(?<!\p{L})combust(í|i)ve(l|is) f(ó|o)sse(l|is)(?!\p{L})/iu, "x"], ["biocombustível", /(?<!\p{L})biocombust(í|i)ve(l|is)(?!\p{L})/iu, "x"],
 
   ["preposição", /\bpreposi(ç|c)(ão|ões)\b/i, "p"], ["artigo", /\bartigos?\b/i, "p"],
@@ -551,7 +573,7 @@ const JARGON = [
   ["cooler", /\bcoolers?\b|\bwater cooler\b/i, "h"], ["80 Plus", /\b80 Plus\b/i, "h"], ["fonte modular", /\bmodular(es)?\b/i, "h"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;
