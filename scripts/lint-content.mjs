@@ -247,6 +247,19 @@ const JARGON = [
   ["fenômeno periódico", /(?<!\p{L})peri(ó|o)dic(o|a|os|as)(?!\p{L})/iu, "G"], ["amplitude", /\bamplitudes?\b/i, "G"],
   ["poliedro", /\bpoliedros?\b/i, "G"], ["aresta", /\barestas?\b/i, "G"], ["relação de Euler", /\bEuler\b/, "G"],
   ["ponto médio", /(?<!\p{L})pontos? m(é|e)dios?(?!\p{L})/iu, "G"],
+  // História do Brasil (escopo "H", somado ao "i" da História básica: república, monarquia e golpe pedem verbete).
+  ["escambo", /\bescambo\b/i, "H"], ["plantation", /\bplantations?\b/i, "H"], ["engenho", /\bengenhos?\b/i, "H"],
+  ["tráfico negreiro", /(?<!\p{L})tr(á|a)fico negreiro(?!\p{L})/iu, "H"], ["Tratado de Tordesilhas", /\bTordesilhas\b/, "H"],
+  ["União Ibérica", /(?<!\p{L})Uni(ã|a)o Ib(é|e)rica(?!\p{L})/iu, "H"], ["bandeirante", /\bbandeirantes?\b/i, "H"], ["uti possidetis", /\buti possidetis\b/i, "H"],
+  ["quinto e derrama", /\bderrama\b/i, "H"], ["Poder Moderador", /\bPoder Moderador\b/i, "H"],
+  ["voto censitário", /(?<!\p{L})censit(á|a)rio(?!\p{L})/iu, "H"], ["Regência", /(?<!\p{L})reg(ê|e)ncias?(?!\p{L})|(?<!\p{L})regencia(l|is)(?!\p{L})/iu, "H"],
+  ["parlamentarismo", /\bparlamentaris(mo|ta|tas)\b/i, "H"], ["abolicionismo", /\babolicionis(mo|ta|tas)\b/i, "H"],
+  ["política do café com leite", /(?<!\p{L})caf(é|e) com leite(?!\p{L})/iu, "H"], ["tenentismo", /\btenentis(mo|ta|tas)\b/i, "H"],
+  ["trabalhismo", /\btrabalhis(mo|ta|tas)\b/i, "H"], ["CLT", /\bCLT\b/, "H"], ["desenvolvimentismo", /\bdesenvolvimentis(mo|ta|tas)\b/i, "H"],
+  ["Reformas de Base", /\bReformas de Base\b/i, "H"], ["bipartidarismo", /\bbipartidaris(mo|ta|tas)\b/i, "H"],
+  ["milagre econômico", /(?<!\p{L})milagre econ(ô|o)mico(?!\p{L})/iu, "H"], ["Diretas Já", /(?<!\p{L})Diretas J(á|a)(?!\p{L})/iu, "H"],
+  ["impeachment", /\bimpeachments?\b/i, "H"], ["hiperinflação", /(?<!\p{L})hiperinfla(ç|c)(ão|ões)(?!\p{L})/iu, "H"],
+  ["Constituição Cidadã", /(?<!\p{L})Constitui(ç|c)(ão|ao) Cidad(ã|a)(?!\p{L})/iu, "H"],
   ["Estado", /\bEstado\b/, "j"], ["cidadania", /\bcidadania\b/i, "j"], ["movimento social", /\bmovimentos? socia(l|is)\b/i, "j"], ["ação social", /(?<!\p{L})a(ç|c)(ão|ões) socia(l|is)(?!\p{L})/iu, "j"], ["artigo", /\bartigos?\b/i, "u"], ["conjugação", /\bconjuga(ç|c)(ão|ões)\b|\bconjugad(o|a)\b/i, "u"], ["combustível fóssil", /(?<!\p{L})combust(í|i)ve(l|is) f(ó|o)sse(l|is)(?!\p{L})/iu, "x"], ["biocombustível", /(?<!\p{L})biocombust(í|i)ve(l|is)(?!\p{L})/iu, "x"],
 
   ["preposição", /\bpreposi(ç|c)(ão|ões)\b/i, "p"], ["artigo", /\bartigos?\b/i, "p"],
@@ -585,7 +598,7 @@ const JARGON = [
   ["cooler", /\bcoolers?\b|\bwater cooler\b/i, "h"], ["80 Plus", /\b80 Plus\b/i, "h"], ["fonte modular", /\bmodular(es)?\b/i, "h"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG", "historia-do-brasil": "iH" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;

@@ -424,6 +424,27 @@ export const SUBJECTS: SiteSubject[] = [
       "A equação da reta e a da circunferência",
     ],
   },
+  {
+    slug: "historia-do-brasil",
+    name: "História do Brasil",
+    pitch:
+      "Colônia, Império e República em detalhe: as revoltas, as leis e os governos que o ENEM cobra, sempre com a data e o porquê.",
+    lessons: [
+      "Os povos indígenas e a chegada dos portugueses",
+      "Açúcar e escravidão",
+      "Holandeses, bandeirantes e as novas fronteiras",
+      "O ouro e as revoltas coloniais",
+      "Da chegada da família real à Independência",
+      "Primeiro Reinado e Regências",
+      "Segundo Reinado: café, guerra e imigrantes",
+      "A abolição e o fim do Império",
+      "A Primeira República (1889–1930)",
+      "A Era Vargas (1930–1945)",
+      "A República de 1946 a 1964",
+      "A ditadura militar (1964–1985)",
+      "A Nova República: de 1985 aos dias de hoje",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -440,5 +461,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 3346,
+  questions: 3528,
 };
