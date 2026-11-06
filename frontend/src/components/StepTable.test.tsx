@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 import { afterEach, describe, expect, it } from "vitest";
 import { cleanup, render, screen } from "@testing-library/react";
-import { StepTable } from "./StepTable";
+import { StepTable, tabelaCompacta } from "./StepTable";
 
 afterEach(cleanup);
 
@@ -51,5 +51,28 @@ describe("StepTable", () => {
     const { container } = render(<StepTable table={tabela} />);
 
     expect(container.querySelector("table")!.parentElement!.className).toContain("overflow-x-auto");
+  });
+
+  it("tabela de células curtas não ganha largura mínima, e a de frases ganha", () => {
+    // A dos ângulos notáveis cabe inteira num celular: forçar 26rem escondia a
+    // coluna de 60° atrás da rolagem.
+    const notaveis = {
+      label: "Os ângulos notáveis",
+      headers: ["", "30°", "45°", "60°"],
+      rows: [
+        ["seno", "1/2", "√2/2", "√3/2"],
+        ["cosseno", "√3/2", "√2/2", "1/2"],
+        ["tangente", "√3/3", "1", "√3"],
+      ],
+    };
+    expect(tabelaCompacta(notaveis)).toBe(true);
+    expect(tabelaCompacta(tabela)).toBe(false);
+
+    const { container } = render(<StepTable table={notaveis} />);
+    expect(container.querySelector("table")!.className).not.toContain("min-w-");
+    cleanup();
+
+    const { container: outra } = render(<StepTable table={tabela} />);
+    expect(outra.querySelector("table")!.className).toContain("min-w-[26rem]");
   });
 });

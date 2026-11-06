@@ -1,0 +1,4944 @@
+{
+  "slug": "geometria-e-trigonometria",
+  "name": "Geometria e trigonometria",
+  "area": "matematica",
+  "description": "Ângulos, semelhança, polígonos e áreas, seno e cosseno, o círculo trigonométrico, sólidos e a geometria do plano cartesiano: a geometria que a prova cobra, passo a passo.",
+  "lessons": [
+    {
+      "slug": "retas-e-angulos",
+      "title": "Retas paralelas e ângulos",
+      "module": "Geometria plana",
+      "summary": "Quando uma reta corta duas paralelas, os ângulos se repetem. A lição mostra ângulos complementares e suplementares, opostos pelo vértice e os pares que as paralelas criam.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A rua que cruza os trilhos",
+          "body": [
+            "Imagine dois trilhos de trem, sempre na mesma distância, e uma rua que corta os dois. Nos dois cruzamentos, a rua faz exatamente os mesmos ângulos.",
+            "Essa repetição é a chave de muitos problemas de geometria."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Ângulos que se completam",
+          "body": [
+            "Um ângulo reto mede 90°, e uma volta inteira mede 360°. Meia volta, a linha reta, mede 180°.",
+            "Dois ângulos que somam 90° são complementares. Dois que somam 180° são suplementares."
+          ],
+          "example": {
+            "label": "Achando o que falta",
+            "lines": [
+              "O complementar de 35° é 90° − 35° = 55°.",
+              "O suplementar de 35° é 180° − 35° = 145°."
+            ]
+          },
+          "terms": [
+            {
+              "word": "ângulo reto",
+              "meaning": "o ângulo de 90°, o canto de uma folha de papel."
+            },
+            {
+              "word": "ângulos complementares e suplementares",
+              "meaning": "dois ângulos são complementares quando somam 90° e suplementares quando somam 180°."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quando duas retas se cruzam",
+          "body": [
+            "Duas retas que se cruzam formam quatro ângulos. Os que ficam frente a frente são iguais: são os opostos pelo vértice.",
+            "Os vizinhos somam 180°, porque juntos formam meia volta."
+          ],
+          "example": {
+            "label": "Um cruzamento com 70°",
+            "lines": [
+              "Se um ângulo mede 70°, o oposto pelo vértice também mede 70°.",
+              "Cada vizinho mede 180° − 70° = 110°.",
+              "Conferindo: 70° + 110° + 70° + 110° = 360°."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "vértice",
+              "meaning": "o ponto onde duas linhas se encontram e formam um ângulo."
+            },
+            {
+              "word": "opostos pelo vértice",
+              "meaning": "os dois ângulos que ficam frente a frente quando duas retas se cruzam. Eles são sempre iguais."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Paralelas cortadas por uma transversal",
+          "body": [
+            "Retas paralelas nunca se encontram. Quando uma reta transversal corta duas paralelas, os ângulos dos dois cruzamentos se repetem.",
+            "Os correspondentes, na mesma posição, são iguais. Os alternos internos, entre as paralelas e em lados opostos, também são iguais."
+          ],
+          "terms": [
+            {
+              "word": "reta transversal",
+              "meaning": "a reta que corta duas outras retas."
+            },
+            {
+              "word": "ângulos alternos e correspondentes",
+              "meaning": "os pares que aparecem quando uma transversal corta duas paralelas. Correspondentes ficam na mesma posição; alternos ficam em lados opostos da transversal."
+            }
+          ],
+          "table": {
+            "label": "Os pares que aparecem",
+            "headers": [
+              "Par",
+              "Onde ficam",
+              "Relação"
+            ],
+            "rows": [
+              [
+                "correspondentes",
+                "mesma posição nos dois cruzamentos",
+                "iguais"
+              ],
+              [
+                "alternos internos",
+                "entre as paralelas, lados opostos",
+                "iguais"
+              ],
+              [
+                "colaterais internos",
+                "entre as paralelas, mesmo lado",
+                "somam 180°"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Um ângulo dá todos",
+          "body": [
+            "Com paralelas, basta descobrir um ângulo. Os outros sete saem dele, porque só existem dois valores."
+          ],
+          "example": {
+            "label": "Duas paralelas e uma transversal",
+            "lines": [
+              "A transversal faz 60° com a primeira paralela.",
+              "No outro cruzamento, o correspondente também mede 60°.",
+              "O vizinho dele mede 180° − 60° = 120°.",
+              "Pronto: os oito ângulos medem 60° ou 120°."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá uma figura com paralelas e pede um ângulo. Ache um valor e use as relações: iguais ou somam 180°."
+          ],
+          "bullets": [
+            "“Sabendo que r e s são paralelas, o valor de x é…”",
+            "“O suplementar de um ângulo de 48° mede…”",
+            "“Dois ângulos opostos pelo vértice medem 3x e 60°…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Trocar complementar por suplementar. Complementar soma 90°; suplementar, 180°.",
+            "Achar que alternos são iguais mesmo sem paralelas. A igualdade só existe se as retas forem paralelas.",
+            "Somar opostos pelo vértice para dar 180°. Opostos são iguais; vizinhos somam 180°.",
+            "Esquecer que a linha reta mede 180°."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Ângulo reto mede 90°, meia volta 180° e volta inteira 360°. Complementares somam 90° e suplementares, 180°.",
+            "Opostos pelo vértice são iguais. Com paralelas e uma transversal, todo ângulo é igual a outro ou soma 180° com ele."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Complementar",
+          "statement": "O complementar de um ângulo de 25° mede:",
+          "options": [
+            "65°",
+            "155°",
+            "25°",
+            "335°",
+            "75°"
+          ],
+          "correct_index": 0,
+          "explanation": "90° − 25° = 65°.",
+          "pitfall": "155° é o suplementar: a conta foi para 180°."
+        },
+        {
+          "topic": "Suplementar",
+          "statement": "O suplementar de um ângulo de 110° mede:",
+          "options": [
+            "70°",
+            "250°",
+            "20°",
+            "110°",
+            "90°"
+          ],
+          "correct_index": 0,
+          "explanation": "180° − 110° = 70°.",
+          "pitfall": "250° somou em vez de subtrair."
+        },
+        {
+          "topic": "Opostos",
+          "statement": "Duas retas se cruzam e um dos ângulos mede 40°. O ângulo oposto pelo vértice mede:",
+          "options": [
+            "40°",
+            "140°",
+            "50°",
+            "320°",
+            "80°"
+          ],
+          "correct_index": 0,
+          "explanation": "Opostos pelo vértice são iguais.",
+          "pitfall": "140° é o vizinho, não o oposto."
+        },
+        {
+          "topic": "Vizinho",
+          "statement": "No mesmo cruzamento, o ângulo vizinho ao de 40° mede:",
+          "options": [
+            "140°",
+            "40°",
+            "50°",
+            "320°",
+            "60°"
+          ],
+          "correct_index": 0,
+          "explanation": "Vizinhos somam 180°.",
+          "pitfall": "50° fez a conta com 90°."
+        },
+        {
+          "topic": "Reto",
+          "statement": "Um ângulo reto mede:",
+          "options": [
+            "90°",
+            "180°",
+            "360°",
+            "45°",
+            "60°"
+          ],
+          "correct_index": 0,
+          "explanation": "É o canto da folha de papel.",
+          "pitfall": "180° é a linha reta inteira."
+        },
+        {
+          "topic": "Correspondentes",
+          "statement": "Duas paralelas são cortadas por uma transversal. Os ângulos correspondentes são:",
+          "options": [
+            "iguais",
+            "sempre retos",
+            "complementares",
+            "diferentes",
+            "sempre de 45°"
+          ],
+          "correct_index": 0,
+          "explanation": "Ficam na mesma posição e têm a mesma medida.",
+          "pitfall": "“Sempre retos” só vale se a transversal for perpendicular."
+        },
+        {
+          "topic": "Achar x",
+          "statement": "Dois ângulos opostos pelo vértice medem 2x e 80°. O valor de x é:",
+          "options": [
+            "40°",
+            "80°",
+            "160°",
+            "50°",
+            "100°"
+          ],
+          "correct_index": 0,
+          "explanation": "2x = 80°, então x = 40°.",
+          "pitfall": "80° esquece de dividir por 2."
+        },
+        {
+          "topic": "Pares",
+          "format": "match",
+          "statement": "Ligue cada par de ângulos à sua relação.",
+          "pairs": [
+            {
+              "left": "opostos pelo vértice",
+              "right": "são iguais"
+            },
+            {
+              "left": "complementares",
+              "right": "somam 90°"
+            },
+            {
+              "left": "suplementares",
+              "right": "somam 180°"
+            },
+            {
+              "left": "alternos internos entre paralelas",
+              "right": "também são iguais"
+            }
+          ],
+          "explanation": "Cada par tem uma regra.",
+          "pitfall": "Complementar e suplementar são os que a prova mais troca."
+        },
+        {
+          "topic": "Volta",
+          "statement": "Uma volta inteira mede:",
+          "options": [
+            "360°",
+            "180°",
+            "90°",
+            "100°",
+            "270°"
+          ],
+          "correct_index": 0,
+          "explanation": "São quatro ângulos retos.",
+          "pitfall": "180° é meia volta.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Linha reta",
+          "statement": "Os ângulos de uma linha reta somam:",
+          "options": [
+            "180°",
+            "90°",
+            "360°",
+            "100°",
+            "45°"
+          ],
+          "correct_index": 0,
+          "explanation": "A linha reta é meia volta.",
+          "pitfall": "360° é a volta inteira.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Alterno",
+          "statement": "Uma transversal faz 65° com uma de duas paralelas. No outro cruzamento, o ângulo alterno interno mede:",
+          "options": [
+            "65°",
+            "115°",
+            "25°",
+            "130°",
+            "295°"
+          ],
+          "correct_index": 0,
+          "explanation": "Alternos internos entre paralelas são iguais.",
+          "pitfall": "115° é o suplementar, que fica do mesmo lado.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Colaterais",
+          "statement": "Entre duas paralelas, dois colaterais internos medem x e 3x. O valor de x é:",
+          "options": [
+            "45°",
+            "90°",
+            "60°",
+            "30°",
+            "135°"
+          ],
+          "correct_index": 0,
+          "explanation": "x + 3x = 180°, então 4x = 180° e x = 45°.",
+          "pitfall": "135° é o 3x, não o x.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Dois valores",
+          "statement": "Duas paralelas são cortadas por uma transversal, e um dos oito ângulos mede 72°. Quantos valores diferentes aparecem entre os oito?",
+          "options": [
+            "dois: 72° e 108°",
+            "oito, um para cada ângulo",
+            "quatro",
+            "um só: 72°",
+            "três: 72°, 108° e 90°"
+          ],
+          "correct_index": 0,
+          "explanation": "Todo ângulo é igual a 72° ou soma 180° com ele.",
+          "pitfall": "“Oito valores” ignora as repetições.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Sem paralelas",
+          "statement": "Duas retas NÃO paralelas são cortadas por uma transversal. Sobre os ângulos alternos internos, é correto dizer:",
+          "options": [
+            "não precisam ser iguais",
+            "são sempre iguais",
+            "somam sempre 180°",
+            "são sempre retos",
+            "são sempre complementares"
+          ],
+          "correct_index": 0,
+          "explanation": "A igualdade depende das paralelas.",
+          "pitfall": "“Sempre iguais” esquece a condição.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "semelhanca-e-tales",
+      "title": "Semelhança de triângulos e o teorema de Tales",
+      "module": "Geometria plana",
+      "summary": "Figuras semelhantes têm a mesma forma e tamanhos diferentes. A lição mostra como medir um prédio pela sombra, o teorema de Tales e por que a área cresce mais que o lado.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A foto ampliada",
+          "body": [
+            "Quando você amplia uma foto no celular, tudo cresce junto (o rosto, o braço e o fundo). Nada fica torto.",
+            "Figuras assim têm a mesma forma e tamanhos diferentes. Essa ideia mede coisas que não dá para alcançar."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Mesma forma, tamanho diferente",
+          "body": [
+            "Dois triângulos são semelhantes quando têm os três ângulos iguais. Aí os lados correspondentes crescem todos na mesma razão.",
+            "Se um lado dobrou, todos dobraram. Esse número é a razão de semelhança."
+          ],
+          "example": {
+            "label": "Um triângulo e a sua ampliação",
+            "lines": [
+              "Lados do pequeno: 3, 4 e 5.",
+              "Lados do grande: 6, 8 e 10.",
+              "Cada lado dobrou: a razão de semelhança é 2."
+            ]
+          },
+          "terms": [
+            {
+              "word": "triângulos semelhantes",
+              "meaning": "triângulos com a mesma forma e tamanhos que podem ser diferentes: os ângulos são iguais, e os lados crescem na mesma razão."
+            },
+            {
+              "word": "proporção",
+              "meaning": "a igualdade entre duas razões, como 2/4 = 3/6. Lados proporcionais crescem na mesma razão."
+            },
+            {
+              "word": "razão de semelhança",
+              "meaning": "o número que diz quantas vezes um lado é maior que o lado correspondente da outra figura."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Dois ângulos bastam",
+          "body": [
+            "Para saber se dois triângulos são semelhantes, basta conferir dois ângulos. Se dois são iguais, o terceiro também é, porque a soma dá sempre 180°.",
+            "Depois, é só montar a proporção entre os lados correspondentes."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A sombra que mede o prédio",
+          "body": [
+            "A semelhança mede o que não dá para alcançar. É assim que se calcula a altura de um prédio sem subir nele."
+          ],
+          "example": {
+            "label": "Medindo um prédio pela sombra",
+            "lines": [
+              "Uma pessoa de 1,8 m faz uma sombra de 1,2 m.",
+              "No mesmo instante, o prédio faz uma sombra de 20 m.",
+              "O sol bate igual nos dois: os triângulos são semelhantes.",
+              "Razão: altura ÷ sombra = 1,8 ÷ 1,2 = 1,5.",
+              "Altura do prédio: 20 × 1,5 = 30 m."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O teorema de Tales",
+          "body": [
+            "Quando retas paralelas cortam duas outras retas, os pedaços formados ficam proporcionais. Esse é o teorema de Tales.",
+            "Ele aparece em mapas de ruas paralelas e na divisão de terrenos."
+          ],
+          "example": {
+            "label": "Ruas paralelas",
+            "lines": [
+              "Numa avenida, as ruas paralelas cortam quarteirões de 30 m e 40 m.",
+              "Na avenida de trás, o primeiro quarteirão mede 45 m.",
+              "Proporção: 30/40 = 45/x, então x = 60 m."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "teorema de Tales",
+              "meaning": "quando retas paralelas cortam duas outras retas, os pedaços formados são proporcionais."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A área cresce mais",
+          "body": [
+            "Se a razão de semelhança é 2, o perímetro dobra, mas a área fica 4 vezes maior. A área cresce com o quadrado da razão.",
+            "Uma pizza de raio 20 cm tem quatro vezes a área de uma de 10 cm, e não o dobro."
+          ],
+          "terms": [
+            {
+              "word": "perímetro",
+              "meaning": "a medida do contorno de uma figura."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá uma sombra, uma rampa ou um mapa e pede a medida que falta. Monte a proporção entre lados correspondentes e confira se a figura é mesmo semelhante."
+          ],
+          "bullets": [
+            "“Um poste projeta uma sombra de… No mesmo instante…”",
+            "“As retas a, b e c são paralelas. O valor de x é…”",
+            "“Se a razão de semelhança é 3, a área fica…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Comparar lados que não se correspondem. O menor lado de um vai com o menor do outro.",
+            "Achar que a área dobra quando o lado dobra. Ela fica 4 vezes maior.",
+            "Usar Tales sem retas paralelas. Sem paralelas, os pedaços não são proporcionais.",
+            "Achar que basta ter a forma “mais ou menos” igual. Os ângulos precisam ser iguais."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Triângulos semelhantes têm os ângulos iguais e os lados na mesma razão. Dois ângulos iguais bastam para provar.",
+            "A semelhança mede prédios pela sombra, e o teorema de Tales divide pedaços entre paralelas. Se o lado multiplica por k, a área multiplica por k²."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Dobrou",
+          "statement": "Um triângulo de lados 3, 4 e 5 é ampliado e o menor lado vira 6. Os outros lados passam a medir:",
+          "options": [
+            "8 e 10",
+            "7 e 8",
+            "4 e 5",
+            "12 e 15",
+            "6 e 6"
+          ],
+          "correct_index": 0,
+          "explanation": "A razão é 2: 4 × 2 = 8 e 5 × 2 = 10.",
+          "pitfall": "7 e 8 somou 3 em vez de multiplicar."
+        },
+        {
+          "topic": "Semelhantes",
+          "statement": "Dois triângulos são semelhantes quando têm:",
+          "options": [
+            "os ângulos iguais e os lados na mesma razão",
+            "o mesmo perímetro",
+            "a mesma área",
+            "um lado igual",
+            "a mesma posição no papel"
+          ],
+          "correct_index": 0,
+          "explanation": "Mesma forma, tamanho que pode mudar.",
+          "pitfall": "Mesmo perímetro não garante a mesma forma."
+        },
+        {
+          "topic": "Dois bastam",
+          "statement": "Para provar que dois triângulos são semelhantes, basta conferir:",
+          "options": [
+            "dois ângulos iguais",
+            "um lado igual",
+            "a área",
+            "o perímetro",
+            "um ângulo qualquer"
+          ],
+          "correct_index": 0,
+          "explanation": "O terceiro ângulo vem de graça: a soma é 180°.",
+          "pitfall": "Um ângulo só não basta."
+        },
+        {
+          "topic": "Árvore",
+          "statement": "Uma pessoa de 1,6 m faz sombra de 2 m. No mesmo instante, uma árvore faz sombra de 10 m. A árvore mede:",
+          "options": [
+            "8 m",
+            "12,5 m",
+            "10 m",
+            "16 m",
+            "6 m"
+          ],
+          "correct_index": 0,
+          "explanation": "Altura ÷ sombra = 0,8. Então 10 × 0,8 = 8 m.",
+          "pitfall": "12,5 m inverteu a razão."
+        },
+        {
+          "topic": "Quando vale Tales",
+          "statement": "O teorema de Tales vale quando:",
+          "options": [
+            "retas paralelas cortam duas outras retas",
+            "as retas se cruzam num ponto só",
+            "o triângulo tem um ângulo reto",
+            "as linhas são curvas",
+            "os lados são iguais"
+          ],
+          "correct_index": 0,
+          "explanation": "As paralelas são a condição.",
+          "pitfall": "Ângulo reto é a condição de Pitágoras, não de Tales."
+        },
+        {
+          "topic": "Área",
+          "statement": "Se a razão de semelhança entre dois quadrados é 3, a área do maior é quantas vezes a do menor?",
+          "options": [
+            "9",
+            "3",
+            "6",
+            "27",
+            "1,5"
+          ],
+          "correct_index": 0,
+          "explanation": "3² = 9.",
+          "pitfall": "3 esquece que a área usa o quadrado da razão."
+        },
+        {
+          "topic": "Perímetro",
+          "statement": "Com razão de semelhança 2, o perímetro do triângulo maior é:",
+          "options": [
+            "o dobro do menor",
+            "4 vezes o menor",
+            "igual ao menor",
+            "a metade do menor",
+            "8 vezes o menor"
+          ],
+          "correct_index": 0,
+          "explanation": "O contorno cresce como o lado.",
+          "pitfall": "4 vezes é o que acontece com a área."
+        },
+        {
+          "topic": "Razão 2",
+          "format": "match",
+          "statement": "Uma figura é ampliada com razão 2. Ligue cada medida ao que vira.",
+          "pairs": [
+            {
+              "left": "lado de 3 cm",
+              "right": "vira 6 cm"
+            },
+            {
+              "left": "área de 5 cm²",
+              "right": "vira 20 cm²"
+            },
+            {
+              "left": "ângulo de 40°",
+              "right": "continua 40°"
+            },
+            {
+              "left": "perímetro de 12 cm",
+              "right": "vira 24 cm"
+            }
+          ],
+          "explanation": "Lado e perímetro dobram; a área quadruplica; o ângulo fica.",
+          "pitfall": "A área não dobra: multiplica por 4."
+        },
+        {
+          "topic": "Mesma forma",
+          "statement": "Figuras semelhantes têm:",
+          "options": [
+            "a mesma forma, com tamanhos que podem ser diferentes",
+            "sempre o mesmo tamanho",
+            "formas diferentes",
+            "sempre a mesma área",
+            "todos os lados iguais"
+          ],
+          "correct_index": 0,
+          "explanation": "É a foto ampliada.",
+          "pitfall": "“Mesmo tamanho” seria figura igual, não só semelhante.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Correspondente",
+          "statement": "Ao comparar dois triângulos semelhantes, o menor lado de um deve ser comparado com:",
+          "options": [
+            "o menor lado do outro",
+            "o maior lado do outro",
+            "qualquer lado",
+            "o ângulo do outro",
+            "a área do outro"
+          ],
+          "correct_index": 0,
+          "explanation": "Lados correspondentes ocupam a mesma posição.",
+          "pitfall": "Qualquer lado dá razões erradas.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Quarteirão",
+          "statement": "Ruas paralelas cortam uma avenida em trechos de 20 m e 30 m. Na outra avenida, o primeiro trecho mede 40 m. O segundo mede:",
+          "options": [
+            "60 m",
+            "50 m",
+            "45 m",
+            "26,7 m",
+            "70 m"
+          ],
+          "correct_index": 0,
+          "explanation": "20/30 = 40/x, então x = 60 m.",
+          "pitfall": "50 m somou 10, como se a diferença se mantivesse.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Pizza",
+          "statement": "Uma pizza tem raio 15 cm e outra, raio 30 cm. A área da maior é:",
+          "options": [
+            "4 vezes a da menor",
+            "2 vezes a da menor",
+            "igual",
+            "8 vezes a da menor",
+            "3 vezes a da menor"
+          ],
+          "correct_index": 0,
+          "explanation": "Razão 2, área 2² = 4.",
+          "pitfall": "“2 vezes” esquece o quadrado.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Mapa",
+          "statement": "Um terreno no mapa tem 2 cm² de área. O mapa reduz cada medida 100 vezes. A área real é:",
+          "options": [
+            "20.000 cm², ou 2 m²",
+            "200 cm²",
+            "2 m de lado",
+            "100 cm²",
+            "2.000 cm²"
+          ],
+          "correct_index": 0,
+          "explanation": "A área multiplica por 100² = 10.000.",
+          "pitfall": "200 cm² multiplicou por 100 em vez de 100².",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Quase igual",
+          "statement": "Um triângulo tem ângulos de 50° e 60°. Outro tem ângulos de 50° e 80°. Eles são semelhantes?",
+          "options": [
+            "não, porque os terceiros ângulos são 70° e 50°",
+            "sim, porque os dois têm 50°",
+            "sim, porque todo triângulo é semelhante a outro",
+            "não, porque um é maior que o outro",
+            "sim, porque os ângulos somam 180° nos dois"
+          ],
+          "correct_index": 0,
+          "explanation": "O primeiro tem 50°, 60° e 70°. O segundo tem 50°, 80° e 50°.",
+          "pitfall": "Um ângulo igual não basta: são precisos dois.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "poligonos",
+      "title": "Polígonos: ângulos e diagonais",
+      "module": "Geometria plana",
+      "summary": "Do triângulo ao favo de mel. A lição mostra a soma dos ângulos internos, o ângulo do polígono regular, os ângulos externos e a conta das diagonais.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O favo da abelha",
+          "body": [
+            "As abelhas constroem o favo com hexágonos, figuras de seis lados. Eles se encaixam sem deixar buraco e gastam pouca cera.",
+            "Para entender por que o hexágono encaixa, é preciso saber quanto medem os ângulos de uma figura de vários lados."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que é um polígono",
+          "body": [
+            "Polígono é uma figura plana fechada feita de lados retos. O nome vem do número de lados."
+          ],
+          "terms": [
+            {
+              "word": "polígono",
+              "meaning": "uma figura plana fechada feita só de lados retos, como o triângulo e o quadrado."
+            },
+            {
+              "word": "vértice",
+              "meaning": "o ponto onde dois lados do polígono se encontram."
+            }
+          ],
+          "table": {
+            "label": "Os nomes",
+            "headers": [
+              "Lados",
+              "Nome"
+            ],
+            "rows": [
+              [
+                "3",
+                "triângulo"
+              ],
+              [
+                "4",
+                "quadrilátero"
+              ],
+              [
+                "5",
+                "pentágono"
+              ],
+              [
+                "6",
+                "hexágono"
+              ],
+              [
+                "8",
+                "octógono"
+              ],
+              [
+                "10",
+                "decágono"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A soma dos ângulos internos",
+          "body": [
+            "De um vértice, as diagonais dividem o polígono em triângulos. Um polígono de n lados vira n − 2 triângulos.",
+            "Cada triângulo tem 180°. Então a soma dos ângulos internos é (n − 2) × 180°."
+          ],
+          "example": {
+            "label": "O hexágono",
+            "lines": [
+              "Seis lados viram 6 − 2 = 4 triângulos.",
+              "Soma: 4 × 180° = 720°."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "diagonal",
+              "meaning": "o segmento que liga dois vértices que não são vizinhos."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Polígonos regulares",
+          "body": [
+            "No polígono regular, todos os ângulos são iguais. Para achar cada um, divida a soma pelo número de ângulos.",
+            "No hexágono regular, cada ângulo mede 120°. Três deles num ponto dão 360°, e por isso o favo fecha sem buraco."
+          ],
+          "example": {
+            "label": "Cada ângulo do hexágono regular",
+            "lines": [
+              "A soma dos ângulos internos é 720°.",
+              "São 6 ângulos iguais.",
+              "Cada um mede 720° ÷ 6 = 120°."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "polígono regular",
+              "meaning": "o polígono com todos os lados iguais e todos os ângulos iguais."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os ângulos externos",
+          "body": [
+            "O ângulo externo é o que falta para o interno chegar a 180°. Em qualquer polígono, a soma dos externos dá sempre 360°.",
+            "É como dar a volta no quarteirão: no fim, você girou uma volta inteira."
+          ],
+          "example": {
+            "label": "O externo do hexágono regular",
+            "lines": [
+              "Interno: 120°.",
+              "Externo: 180° − 120° = 60°.",
+              "Seis externos: 6 × 60° = 360°."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Quantas diagonais",
+          "body": [
+            "De cada vértice saem n − 3 diagonais: ele não se liga a si mesmo nem aos dois vizinhos. Como cada diagonal é contada duas vezes, divide-se por 2.",
+            "Número de diagonais: n × (n − 3) ÷ 2. O hexágono tem 6 × 3 ÷ 2 = 9 diagonais."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede a soma dos ângulos, o ângulo de um polígono regular ou o número de diagonais. Também cobra por que algumas figuras encaixam no piso e outras não."
+          ],
+          "bullets": [
+            "“A soma dos ângulos internos de um octógono é…”",
+            "“Cada ângulo interno de um pentágono regular mede…”",
+            "“O número de diagonais de um decágono é…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Usar n em vez de n − 2 na soma. Um quadrado não tem 4 × 180°: tem 360°.",
+            "Esquecer de dividir por 2 nas diagonais. Cada uma é contada duas vezes.",
+            "Achar que a soma dos externos cresce com os lados. Ela é sempre 360°.",
+            "Dividir a soma pelo número de lados num polígono que não é regular. Só no regular os ângulos são iguais."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A soma dos ângulos internos de um polígono de n lados é (n − 2) × 180°. No regular, cada ângulo é a soma dividida por n.",
+            "Os externos somam sempre 360°. O número de diagonais é n × (n − 3) ÷ 2."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Pentágono",
+          "statement": "Um pentágono tem quantos lados?",
+          "options": [
+            "5",
+            "6",
+            "4",
+            "8",
+            "10"
+          ],
+          "correct_index": 0,
+          "explanation": "Penta quer dizer cinco.",
+          "pitfall": "Seis lados é o hexágono."
+        },
+        {
+          "topic": "Soma",
+          "statement": "A soma dos ângulos internos de um pentágono é:",
+          "options": [
+            "540°",
+            "360°",
+            "900°",
+            "720°",
+            "180°"
+          ],
+          "correct_index": 0,
+          "explanation": "(5 − 2) × 180° = 540°.",
+          "pitfall": "900° usou 5 × 180°."
+        },
+        {
+          "topic": "Quadrilátero",
+          "statement": "A soma dos ângulos internos de qualquer quadrilátero é:",
+          "options": [
+            "360°",
+            "180°",
+            "540°",
+            "720°",
+            "90°"
+          ],
+          "correct_index": 0,
+          "explanation": "Dois triângulos: 2 × 180°.",
+          "pitfall": "180° é a soma do triângulo."
+        },
+        {
+          "topic": "Hexágono regular",
+          "statement": "Cada ângulo interno de um hexágono regular mede:",
+          "options": [
+            "120°",
+            "60°",
+            "720°",
+            "108°",
+            "135°"
+          ],
+          "correct_index": 0,
+          "explanation": "720° ÷ 6 = 120°.",
+          "pitfall": "60° é o externo."
+        },
+        {
+          "topic": "Externos",
+          "statement": "A soma dos ângulos externos de qualquer polígono é:",
+          "options": [
+            "360°",
+            "180°",
+            "depende do número de lados",
+            "720°",
+            "90°"
+          ],
+          "correct_index": 0,
+          "explanation": "Dar a volta é girar 360°.",
+          "pitfall": "“Depende do número de lados” vale para os internos."
+        },
+        {
+          "topic": "Diagonais",
+          "statement": "Um hexágono tem quantas diagonais?",
+          "options": [
+            "9",
+            "18",
+            "6",
+            "3",
+            "12"
+          ],
+          "correct_index": 0,
+          "explanation": "6 × 3 ÷ 2 = 9.",
+          "pitfall": "18 esqueceu de dividir por 2."
+        },
+        {
+          "topic": "Regular",
+          "statement": "Um polígono regular tem:",
+          "options": [
+            "todos os lados e todos os ângulos iguais",
+            "só os lados iguais",
+            "pelo menos um canto de 90°",
+            "lados de tamanhos diferentes",
+            "sempre seis lados"
+          ],
+          "correct_index": 0,
+          "explanation": "Lados e ângulos iguais.",
+          "pitfall": "Só os lados iguais não basta: os ângulos também precisam ser iguais."
+        },
+        {
+          "topic": "Nomes",
+          "format": "match",
+          "statement": "Ligue cada polígono ao número de lados.",
+          "pairs": [
+            {
+              "left": "triângulo",
+              "right": "3 lados"
+            },
+            {
+              "left": "hexágono",
+              "right": "6 lados"
+            },
+            {
+              "left": "octógono",
+              "right": "8 lados"
+            },
+            {
+              "left": "decágono",
+              "right": "10 lados"
+            }
+          ],
+          "explanation": "O nome conta os lados.",
+          "pitfall": "Octo é oito; deca é dez."
+        },
+        {
+          "topic": "Triângulos",
+          "statement": "De um vértice, as diagonais dividem um octógono em quantos triângulos?",
+          "options": [
+            "6",
+            "8",
+            "5",
+            "7",
+            "4"
+          ],
+          "correct_index": 0,
+          "explanation": "8 − 2 = 6.",
+          "pitfall": "8 usou o número de lados.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Lados retos",
+          "statement": "Qual destas figuras NÃO é um polígono?",
+          "options": [
+            "o círculo",
+            "o triângulo",
+            "o quadrado",
+            "o hexágono",
+            "o pentágono"
+          ],
+          "correct_index": 0,
+          "explanation": "O círculo não tem lados retos.",
+          "pitfall": "Os outros são feitos de lados retos.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Octógono regular",
+          "statement": "Cada ângulo interno de um octógono regular mede:",
+          "options": [
+            "135°",
+            "1.080°",
+            "120°",
+            "150°",
+            "108°"
+          ],
+          "correct_index": 0,
+          "explanation": "(8 − 2) × 180° = 1.080°, e 1.080° ÷ 8 = 135°.",
+          "pitfall": "1.080° é a soma, não cada ângulo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Externo de 30°",
+          "statement": "Cada ângulo externo de um polígono regular mede 30°. Ele tem quantos lados?",
+          "options": [
+            "12",
+            "30",
+            "6",
+            "10",
+            "360"
+          ],
+          "correct_index": 0,
+          "explanation": "360° ÷ 30° = 12.",
+          "pitfall": "30 confunde a medida com a quantidade.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Piso",
+          "statement": "Por que o pentágono regular não cobre um piso sem deixar buraco?",
+          "options": [
+            "porque 108° não divide 360° em partes inteiras",
+            "porque tem lados demais",
+            "porque não é um polígono",
+            "porque seus ângulos são de 90°",
+            "porque todo polígono deixa buraco"
+          ],
+          "correct_index": 0,
+          "explanation": "Três pentágonos dão 324°, e quatro passam de 360°.",
+          "pitfall": "“Todo polígono deixa buraco” esquece o quadrado e o hexágono.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Quantos lados",
+          "statement": "A soma dos ângulos internos de um polígono é 1.440°. Ele tem quantos lados?",
+          "options": [
+            "10",
+            "8",
+            "12",
+            "9",
+            "14"
+          ],
+          "correct_index": 0,
+          "explanation": "1.440° ÷ 180° = 8 triângulos, e n − 2 = 8 dá n = 10.",
+          "pitfall": "8 é o número de triângulos, não de lados.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "areas-de-figuras-planas",
+      "title": "Áreas de figuras planas",
+      "module": "Geometria plana",
+      "summary": "Quanto piso comprar, quanta tinta usar. A lição mostra as áreas das figuras mais cobradas (retângulo, triângulo, trapézio, losango, círculo e setor) e como dividir figuras compostas.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Ladrilhos no chão",
+          "body": [
+            "Para saber quanto piso comprar, você conta quantos quadradinhos de 1 m cabem no chão. Essa contagem é a área.",
+            "Cada figura tem um jeito rápido de fazer essa conta, sem contar um por um."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Retângulo, quadrado e paralelogramo",
+          "body": [
+            "No retângulo, a área é base × altura. O quadrado é um retângulo de lados iguais: lado × lado.",
+            "O paralelogramo vira um retângulo se você cortar um triângulo de um lado e encaixar do outro. Por isso a área também é base × altura."
+          ],
+          "terms": [
+            {
+              "word": "paralelogramo",
+              "meaning": "o quadrilátero com dois pares de lados paralelos, como um retângulo “tombado”."
+            },
+            {
+              "word": "perímetro",
+              "meaning": "a medida do contorno de uma figura."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Triângulo",
+          "body": [
+            "Todo triângulo é a metade de um paralelogramo de mesma base e mesma altura. Por isso a área é base × altura ÷ 2.",
+            "A altura é a distância da base ao vértice oposto, medida em linha reta e perpendicular à base."
+          ],
+          "example": {
+            "label": "Um triângulo",
+            "lines": [
+              "Base de 10 cm e altura de 6 cm.",
+              "Área: 10 × 6 ÷ 2 = 30 cm²."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "vértice",
+              "meaning": "o ponto onde duas linhas se encontram e formam um ângulo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Trapézio e losango",
+          "body": [
+            "O trapézio tem duas bases diferentes. A área é a média delas vezes a altura: (B + b) × h ÷ 2.",
+            "No losango, a área é o produto das diagonais dividido por 2."
+          ],
+          "terms": [
+            {
+              "word": "trapézio",
+              "meaning": "o quadrilátero com só um par de lados paralelos, chamados de base maior e base menor."
+            },
+            {
+              "word": "losango",
+              "meaning": "o quadrilátero com os quatro lados iguais, como um quadrado “espremido”. Suas diagonais se cruzam em ângulo reto."
+            },
+            {
+              "word": "diagonal",
+              "meaning": "o segmento que liga dois vértices que não são vizinhos."
+            },
+            {
+              "word": "ângulo reto",
+              "meaning": "o ângulo de 90°, o canto de uma folha de papel."
+            }
+          ],
+          "table": {
+            "label": "As fórmulas",
+            "headers": [
+              "Figura",
+              "Área"
+            ],
+            "rows": [
+              [
+                "retângulo",
+                "base × altura"
+              ],
+              [
+                "quadrado",
+                "lado × lado"
+              ],
+              [
+                "paralelogramo",
+                "base × altura"
+              ],
+              [
+                "triângulo",
+                "base × altura ÷ 2"
+              ],
+              [
+                "trapézio",
+                "(base maior + base menor) × altura ÷ 2"
+              ],
+              [
+                "losango",
+                "diagonal maior × diagonal menor ÷ 2"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Círculo e setor",
+          "body": [
+            "A área do círculo é π × r², em que r é o raio. Uma fatia dele é um setor circular.",
+            "A área do setor é a parte do círculo que o ângulo pega. Um setor de 90° é um quarto do círculo."
+          ],
+          "example": {
+            "label": "Um setor de 60°",
+            "lines": [
+              "Círculo de raio 6 cm: área = π × 36 ≈ 113 cm².",
+              "60° é 60/360 = 1/6 da volta.",
+              "Setor: 113 ÷ 6 ≈ 18,8 cm²."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "pi (π)",
+              "meaning": "o número que diz quantas vezes o contorno do círculo é maior que o diâmetro. Vale cerca de 3,14."
+            },
+            {
+              "word": "diâmetro",
+              "meaning": "o segmento que atravessa o círculo pelo centro. Mede duas vezes o raio."
+            },
+            {
+              "word": "setor circular",
+              "meaning": "a fatia de um círculo, como um pedaço de pizza."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Figuras compostas",
+          "body": [
+            "Muitas figuras são juntas de outras. Divida em pedaços conhecidos, calcule cada área e some.",
+            "Ou faça o contrário: calcule a figura inteira e tire o buraco."
+          ],
+          "example": {
+            "label": "Um terreno em L",
+            "lines": [
+              "Divida em dois retângulos: 10 m × 4 m e 6 m × 3 m.",
+              "Áreas: 40 m² e 18 m².",
+              "Total: 40 + 18 = 58 m²."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá a planta de um terreno ou de uma sala e pede a área. Divida a figura em partes conhecidas e cuide das unidades."
+          ],
+          "bullets": [
+            "“Um terreno tem a forma de um trapézio de bases…”",
+            "“A área da região sombreada é…”",
+            "“Uma pizza é dividida em 8 fatias iguais. A área de cada fatia…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Esquecer o ÷ 2 no triângulo e no losango.",
+            "Usar o lado inclinado como altura. A altura é sempre perpendicular à base.",
+            "Somar as bases do trapézio e esquecer de dividir por 2.",
+            "Confundir raio com diâmetro na área do círculo. A fórmula usa o raio."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Retângulo e paralelogramo: base × altura. Triângulo: metade disso. Trapézio: média das bases vezes a altura. Losango: diagonais multiplicadas e divididas por 2.",
+            "Círculo: π × r². O setor é a fração do círculo que o ângulo pega."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Sala",
+          "statement": "Uma sala retangular mede 5 m por 4 m. A área é:",
+          "options": [
+            "20 m²",
+            "18 m²",
+            "9 m²",
+            "40 m²",
+            "25 m²"
+          ],
+          "correct_index": 0,
+          "explanation": "5 × 4 = 20 m².",
+          "pitfall": "18 m é o perímetro, não a área."
+        },
+        {
+          "topic": "Triângulo",
+          "statement": "Um triângulo tem base 8 cm e altura 5 cm. A área é:",
+          "options": [
+            "20 cm²",
+            "40 cm²",
+            "13 cm²",
+            "26 cm²",
+            "10 cm²"
+          ],
+          "correct_index": 0,
+          "explanation": "8 × 5 ÷ 2 = 20 cm².",
+          "pitfall": "40 esqueceu o ÷ 2."
+        },
+        {
+          "topic": "Trapézio",
+          "statement": "Um trapézio tem bases de 10 m e 6 m e altura 4 m. A área é:",
+          "options": [
+            "32 m²",
+            "64 m²",
+            "240 m²",
+            "20 m²",
+            "16 m²"
+          ],
+          "correct_index": 0,
+          "explanation": "(10 + 6) × 4 ÷ 2 = 32 m².",
+          "pitfall": "64 esqueceu de dividir por 2."
+        },
+        {
+          "topic": "Losango",
+          "statement": "Um losango tem diagonais de 6 cm e 8 cm. A área é:",
+          "options": [
+            "24 cm²",
+            "48 cm²",
+            "14 cm²",
+            "28 cm²",
+            "12 cm²"
+          ],
+          "correct_index": 0,
+          "explanation": "6 × 8 ÷ 2 = 24 cm².",
+          "pitfall": "48 esqueceu o ÷ 2."
+        },
+        {
+          "topic": "Círculo",
+          "statement": "A área de um círculo de raio 3 cm, usando π ≈ 3,14, é cerca de:",
+          "options": [
+            "28,3 cm²",
+            "18,8 cm²",
+            "9,4 cm²",
+            "113 cm²",
+            "56,5 cm²"
+          ],
+          "correct_index": 0,
+          "explanation": "3,14 × 9 ≈ 28,3 cm².",
+          "pitfall": "113 usou o diâmetro no lugar do raio."
+        },
+        {
+          "topic": "Quadrado",
+          "statement": "Um quadrado tem lado 7 cm. A área é:",
+          "options": [
+            "49 cm²",
+            "28 cm²",
+            "14 cm²",
+            "21 cm²",
+            "7 cm²"
+          ],
+          "correct_index": 0,
+          "explanation": "7 × 7 = 49 cm².",
+          "pitfall": "28 cm é o perímetro."
+        },
+        {
+          "topic": "Setor",
+          "statement": "Um setor de 90° de um círculo de área 100 cm² tem área de:",
+          "options": [
+            "25 cm²",
+            "90 cm²",
+            "50 cm²",
+            "10 cm²",
+            "75 cm²"
+          ],
+          "correct_index": 0,
+          "explanation": "90° é um quarto da volta: 100 ÷ 4 = 25.",
+          "pitfall": "50 seria meia volta, 180°."
+        },
+        {
+          "topic": "Fórmulas",
+          "format": "match",
+          "statement": "Ligue cada figura à fórmula da área.",
+          "pairs": [
+            {
+              "left": "retângulo",
+              "right": "base × altura"
+            },
+            {
+              "left": "triângulo",
+              "right": "base × altura ÷ 2"
+            },
+            {
+              "left": "losango",
+              "right": "diagonal × diagonal ÷ 2"
+            },
+            {
+              "left": "círculo",
+              "right": "π × r²"
+            }
+          ],
+          "explanation": "Cada figura tem a sua conta.",
+          "pitfall": "Triângulo e losango levam o ÷ 2."
+        },
+        {
+          "topic": "Altura",
+          "statement": "No triângulo, a altura é:",
+          "options": [
+            "a distância perpendicular da base ao vértice oposto",
+            "o lado inclinado",
+            "a soma dos lados",
+            "sempre o maior lado",
+            "metade da base"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela é medida em linha reta, perpendicular à base.",
+          "pitfall": "O lado inclinado é a troca mais comum.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Metade",
+          "statement": "A área do triângulo é metade da área de:",
+          "options": [
+            "um paralelogramo de mesma base e mesma altura",
+            "um círculo",
+            "um quadrado qualquer",
+            "um losango qualquer",
+            "um trapézio qualquer"
+          ],
+          "correct_index": 0,
+          "explanation": "Dois triângulos iguais formam um paralelogramo.",
+          "pitfall": "“Um quadrado qualquer” ignora as medidas.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Terreno em L",
+          "statement": "Um terreno é formado por dois retângulos: 8 m × 5 m e 4 m × 3 m. A área total é:",
+          "options": [
+            "52 m²",
+            "40 m²",
+            "12 m²",
+            "480 m²",
+            "20 m²"
+          ],
+          "correct_index": 0,
+          "explanation": "40 + 12 = 52 m².",
+          "pitfall": "480 multiplicou as áreas em vez de somar.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Moldura",
+          "statement": "Um quadro de 50 cm × 40 cm tem uma moldura que deixa a parte de dentro com 40 cm × 30 cm. A área da moldura é:",
+          "options": [
+            "800 cm²",
+            "1.200 cm²",
+            "2.000 cm²",
+            "20 cm²",
+            "700 cm²"
+          ],
+          "correct_index": 0,
+          "explanation": "2.000 − 1.200 = 800 cm².",
+          "pitfall": "1.200 é a parte de dentro, não a moldura.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Raio dobrado",
+          "statement": "Uma praça circular tem o raio aumentado de 10 m para 20 m. A área:",
+          "options": [
+            "fica 4 vezes maior",
+            "dobra",
+            "fica 3 vezes maior",
+            "aumenta 10 m²",
+            "não muda"
+          ],
+          "correct_index": 0,
+          "explanation": "A área depende do raio ao quadrado: 2² = 4.",
+          "pitfall": "“Dobra” esquece o quadrado do raio.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Lado inclinado",
+          "statement": "Um paralelogramo tem base 10 cm, lado inclinado de 6 cm e altura de 5 cm. A área é:",
+          "options": [
+            "50 cm²",
+            "60 cm²",
+            "30 cm²",
+            "25 cm²",
+            "32 cm²"
+          ],
+          "correct_index": 0,
+          "explanation": "Base × altura: 10 × 5 = 50 cm².",
+          "pitfall": "60 usou o lado inclinado como altura.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "seno-cosseno-tangente",
+      "title": "Seno, cosseno e tangente",
+      "module": "Trigonometria",
+      "summary": "A trigonometria liga ângulos e lados. A lição mostra os lados do triângulo retângulo, as três razões e como achar uma altura sem subir até ela.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A pipa no alto",
+          "body": [
+            "A linha de uma pipa mede 50 m. Dá para saber a altura da pipa sem subir lá?",
+            "Dá, se você souber o ângulo da linha com o chão. A trigonometria liga ângulos e lados de triângulos."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os lados do triângulo retângulo",
+          "body": [
+            "No triângulo retângulo, o maior lado é a hipotenusa, em frente ao ângulo reto. Os outros dois são os catetos.",
+            "Para um ângulo escolhido, o cateto oposto fica em frente a ele, e o adjacente fica encostado."
+          ],
+          "terms": [
+            {
+              "word": "triângulo retângulo",
+              "meaning": "o triângulo que tem um ângulo reto."
+            },
+            {
+              "word": "ângulo reto",
+              "meaning": "o ângulo de 90°, o canto de uma folha de papel."
+            },
+            {
+              "word": "hipotenusa",
+              "meaning": "o maior lado do triângulo retângulo, sempre em frente ao ângulo reto."
+            },
+            {
+              "word": "cateto",
+              "meaning": "cada um dos dois lados que formam o ângulo reto. Em relação a um ângulo, há o cateto oposto (em frente a ele) e o adjacente (encostado nele)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Três razões",
+          "body": [
+            "Num triângulo retângulo, as razões entre os lados dependem só do ângulo, e não do tamanho. Por isso elas ganharam nome.",
+            "Seno é oposto sobre hipotenusa, cosseno é adjacente sobre hipotenusa e tangente é oposto sobre adjacente."
+          ],
+          "terms": [
+            {
+              "word": "seno, cosseno e tangente",
+              "meaning": "as três razões entre os lados do triângulo retângulo, para um ângulo dado. Seno é oposto ÷ hipotenusa; cosseno é adjacente ÷ hipotenusa; tangente é oposto ÷ adjacente."
+            }
+          ],
+          "table": {
+            "label": "As três razões",
+            "headers": [
+              "Razão",
+              "Conta",
+              "O que diz"
+            ],
+            "rows": [
+              [
+                "seno",
+                "oposto ÷ hipotenusa",
+                "quanto o lado sobe"
+              ],
+              [
+                "cosseno",
+                "adjacente ÷ hipotenusa",
+                "quanto o lado avança"
+              ],
+              [
+                "tangente",
+                "oposto ÷ adjacente",
+                "a inclinação"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Por que só o ângulo importa",
+          "body": [
+            "Triângulos retângulos com o mesmo ângulo têm a mesma forma, então seus lados crescem juntos. A razão entre eles não muda."
+          ],
+          "example": {
+            "label": "Dois triângulos com o mesmo ângulo",
+            "lines": [
+              "Pequeno: oposto 3 e hipotenusa 5, seno = 3/5 = 0,6.",
+              "Grande: oposto 6 e hipotenusa 10, seno = 6/10 = 0,6.",
+              "Tamanho diferente, mesmo seno."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Usando na prática",
+          "body": [
+            "Para achar um lado, escolha a razão que liga o que você sabe ao que procura. Depois isole o lado."
+          ],
+          "example": {
+            "label": "A altura da pipa",
+            "lines": [
+              "A linha mede 50 m e faz 30° com o chão.",
+              "A altura é o cateto oposto, e a linha é a hipotenusa.",
+              "Seno de 30° = altura ÷ 50.",
+              "Como o seno de 30° é 0,5, a altura é 50 × 0,5 = 25 m."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá um ângulo e um lado e pede outro lado. Também dá a tabela dos valores, ou espera que você saiba os de 30°, 45° e 60°."
+          ],
+          "bullets": [
+            "“Um avião decola com ângulo de 30°. Após percorrer 2 km…”",
+            "“Uma escada de 5 m está apoiada num muro…”",
+            "“A tangente do ângulo de inclinação da rampa é…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Trocar oposto por adjacente. O oposto fica em frente ao ângulo; o adjacente encosta nele.",
+            "Usar a hipotenusa na tangente. A tangente é oposto sobre adjacente.",
+            "Achar que o seno depende do tamanho do triângulo. Só o ângulo importa.",
+            "Usar essas razões num triângulo sem ângulo reto. Elas valem no triângulo retângulo."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "No triângulo retângulo, a hipotenusa fica em frente ao ângulo reto, e os catetos formam esse ângulo.",
+            "Seno é oposto sobre hipotenusa, cosseno é adjacente sobre hipotenusa e tangente é oposto sobre adjacente. Elas dependem só do ângulo."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Hipotenusa",
+          "statement": "No triângulo retângulo, a hipotenusa é:",
+          "options": [
+            "o maior lado, em frente ao ângulo reto",
+            "o menor lado",
+            "qualquer um dos lados",
+            "o lado encostado no ângulo",
+            "a altura"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela fica em frente ao canto de 90°.",
+          "pitfall": "O lado encostado é um cateto."
+        },
+        {
+          "topic": "Seno",
+          "statement": "O seno de um ângulo é:",
+          "options": [
+            "cateto oposto ÷ hipotenusa",
+            "cateto adjacente ÷ hipotenusa",
+            "cateto oposto ÷ cateto adjacente",
+            "hipotenusa ÷ cateto oposto",
+            "a soma dos catetos"
+          ],
+          "correct_index": 0,
+          "explanation": "Oposto sobre hipotenusa.",
+          "pitfall": "Adjacente sobre hipotenusa é o cosseno."
+        },
+        {
+          "topic": "Cosseno",
+          "statement": "O cosseno de um ângulo é:",
+          "options": [
+            "cateto adjacente ÷ hipotenusa",
+            "cateto oposto ÷ hipotenusa",
+            "cateto oposto ÷ cateto adjacente",
+            "hipotenusa ÷ cateto adjacente",
+            "o dobro do seno"
+          ],
+          "correct_index": 0,
+          "explanation": "Adjacente sobre hipotenusa.",
+          "pitfall": "Oposto sobre hipotenusa é o seno."
+        },
+        {
+          "topic": "Tangente",
+          "statement": "A tangente de um ângulo é:",
+          "options": [
+            "cateto oposto ÷ cateto adjacente",
+            "cateto oposto ÷ hipotenusa",
+            "cateto adjacente ÷ hipotenusa",
+            "hipotenusa ÷ cateto oposto",
+            "a hipotenusa ao quadrado"
+          ],
+          "correct_index": 0,
+          "explanation": "Oposto sobre adjacente: a inclinação.",
+          "pitfall": "A tangente não usa a hipotenusa."
+        },
+        {
+          "topic": "Pipa",
+          "statement": "A linha de uma pipa mede 50 m e faz 30° com o chão. Sabendo que o seno de 30° é 0,5, a altura da pipa é:",
+          "options": [
+            "25 m",
+            "50 m",
+            "100 m",
+            "30 m",
+            "15 m"
+          ],
+          "correct_index": 0,
+          "explanation": "50 × 0,5 = 25 m.",
+          "pitfall": "100 m dividiu por 0,5 em vez de multiplicar."
+        },
+        {
+          "topic": "Calcular",
+          "statement": "Num triângulo retângulo, o cateto oposto a um ângulo mede 6 e a hipotenusa mede 10. O seno desse ângulo é:",
+          "options": [
+            "0,6",
+            "0,8",
+            "0,75",
+            "1,67",
+            "6"
+          ],
+          "correct_index": 0,
+          "explanation": "6 ÷ 10 = 0,6.",
+          "pitfall": "0,8 é o cosseno: o outro cateto mede 8."
+        },
+        {
+          "topic": "Só o ângulo",
+          "statement": "Dois triângulos retângulos têm o mesmo ângulo de 40°, mas um é o dobro do outro. O seno de 40°:",
+          "options": [
+            "é o mesmo nos dois",
+            "é o dobro no maior",
+            "é a metade no maior",
+            "não existe no menor",
+            "depende da hipotenusa"
+          ],
+          "correct_index": 0,
+          "explanation": "Os lados crescem juntos, e a razão fica.",
+          "pitfall": "“O dobro no maior” confunde lado com razão."
+        },
+        {
+          "topic": "Razões",
+          "format": "match",
+          "statement": "Ligue cada palavra à sua definição.",
+          "pairs": [
+            {
+              "left": "seno",
+              "right": "oposto ÷ hipotenusa"
+            },
+            {
+              "left": "cosseno",
+              "right": "adjacente ÷ hipotenusa"
+            },
+            {
+              "left": "tangente",
+              "right": "oposto ÷ adjacente"
+            },
+            {
+              "left": "hipotenusa",
+              "right": "o maior lado"
+            }
+          ],
+          "explanation": "Três razões e o lado que entra em duas delas.",
+          "pitfall": "A tangente é a única sem hipotenusa."
+        },
+        {
+          "topic": "Catetos",
+          "statement": "Os catetos são os lados que:",
+          "options": [
+            "formam o ângulo reto",
+            "ficam em frente ao ângulo reto",
+            "medem sempre o mesmo",
+            "somam 180°",
+            "não existem no triângulo retângulo"
+          ],
+          "correct_index": 0,
+          "explanation": "Eles se encontram no canto de 90°.",
+          "pitfall": "Em frente ao ângulo reto fica a hipotenusa.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Oposto",
+          "statement": "Em relação a um ângulo, o cateto oposto é o que:",
+          "options": [
+            "fica em frente ao ângulo",
+            "encosta no ângulo",
+            "é o maior lado",
+            "é a hipotenusa",
+            "mede sempre 1"
+          ],
+          "correct_index": 0,
+          "explanation": "Oposto: do outro lado do ângulo.",
+          "pitfall": "Encostar é o adjacente.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "3-4-5",
+          "statement": "Num triângulo de catetos 3 e 4, a tangente do ângulo oposto ao lado 3 é:",
+          "options": [
+            "0,75",
+            "0,6",
+            "0,8",
+            "1,33",
+            "5"
+          ],
+          "correct_index": 0,
+          "explanation": "3 ÷ 4 = 0,75.",
+          "pitfall": "1,33 inverteu a conta: 4 ÷ 3.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Escada",
+          "statement": "Uma escada de 6 m faz com o chão um ângulo cujo cosseno é 0,5. A distância do pé da escada ao muro é:",
+          "options": [
+            "3 m",
+            "6 m",
+            "12 m",
+            "0,5 m",
+            "5,2 m"
+          ],
+          "correct_index": 0,
+          "explanation": "Adjacente = 6 × 0,5 = 3 m.",
+          "pitfall": "5,2 m é a altura, o cateto oposto.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Qual razão",
+          "statement": "Você sabe o cateto adjacente e quer o cateto oposto. A razão que liga os dois é:",
+          "options": [
+            "a tangente",
+            "o seno",
+            "o cosseno",
+            "nenhuma, é preciso a hipotenusa",
+            "a soma dos ângulos"
+          ],
+          "correct_index": 0,
+          "explanation": "Oposto ÷ adjacente é a tangente.",
+          "pitfall": "“É preciso a hipotenusa” esquece a tangente.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Seno 1,4",
+          "statement": "Um aluno calculou o seno de um ângulo do triângulo retângulo e deu 1,4. O que se pode concluir?",
+          "options": [
+            "errou, porque o oposto nunca passa da hipotenusa",
+            "o ângulo é maior que 90°",
+            "o triângulo é grande",
+            "o seno passa de 1 em triângulos grandes",
+            "está certo"
+          ],
+          "correct_index": 0,
+          "explanation": "A hipotenusa é o maior lado: a razão fica abaixo de 1.",
+          "pitfall": "“Triângulos grandes” confunde tamanho com razão.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "angulos-notaveis",
+      "title": "Os ângulos notáveis: 30°, 45° e 60°",
+      "module": "Trigonometria",
+      "summary": "Três ângulos voltam em quase todo problema. A lição mostra de onde vêm os valores de 30°, 45° e 60°, a tabela inteira e como usá-la.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Três ângulos que voltam sempre",
+          "body": [
+            "Na prova, quase todo problema de trigonometria usa 30°, 45° ou 60°. São os ângulos notáveis.",
+            "Vale a pena saber os valores deles de cor. Melhor ainda: saber de onde eles vêm."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Lembrando as razões",
+          "body": [
+            "Num triângulo retângulo, seno é oposto sobre hipotenusa, cosseno é adjacente sobre hipotenusa e tangente é oposto sobre adjacente."
+          ],
+          "terms": [
+            {
+              "word": "seno, cosseno e tangente",
+              "meaning": "as razões do triângulo retângulo: oposto ÷ hipotenusa, adjacente ÷ hipotenusa e oposto ÷ adjacente."
+            },
+            {
+              "word": "ângulo reto",
+              "meaning": "o ângulo de 90°, o canto de uma folha de papel."
+            },
+            {
+              "word": "hipotenusa",
+              "meaning": "o maior lado do triângulo retângulo, sempre em frente ao ângulo reto."
+            },
+            {
+              "word": "cateto",
+              "meaning": "cada um dos dois lados que formam o ângulo reto. Em relação a um ângulo, há o cateto oposto (em frente a ele) e o adjacente (encostado nele)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O 45° vem do quadrado",
+          "body": [
+            "Corte um quadrado de lado 1 pela diagonal. Nascem dois triângulos com ângulos de 45°, catetos 1 e hipotenusa √2.",
+            "Então o seno e o cosseno de 45° são 1/√2, que é igual a √2/2. A tangente é 1 ÷ 1 = 1."
+          ],
+          "example": {
+            "label": "Por que a hipotenusa é √2",
+            "lines": [
+              "Pitágoras: 1² + 1² = 2.",
+              "A hipotenusa é a raiz quadrada de 2, cerca de 1,41."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "raiz quadrada",
+              "meaning": "o número que, multiplicado por ele mesmo, dá o valor de dentro. A raiz quadrada de 9 é 3, porque 3 × 3 = 9."
+            },
+            {
+              "word": "diagonal",
+              "meaning": "o segmento que liga dois vértices que não são vizinhos."
+            },
+            {
+              "word": "vértice",
+              "meaning": "o ponto onde duas linhas se encontram e formam um ângulo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "30° e 60° vêm do triângulo equilátero",
+          "body": [
+            "Corte um triângulo equilátero de lado 2 ao meio. Nasce um triângulo retângulo com ângulos de 30° e 60°, hipotenusa 2 e catetos 1 e √3.",
+            "Daí saem os valores: o seno de 30° é 1/2, e o de 60° é √3/2."
+          ],
+          "terms": [
+            {
+              "word": "triângulo equilátero",
+              "meaning": "o triângulo de três lados iguais. Cada ângulo mede 60°."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A tabela",
+          "body": [
+            "O seno sobe de 30° para 60°, e o cosseno desce. O seno de 30° é o cosseno de 60°, e vice-versa."
+          ],
+          "table": {
+            "label": "Os ângulos notáveis",
+            "headers": [
+              "",
+              "30°",
+              "45°",
+              "60°"
+            ],
+            "rows": [
+              [
+                "seno",
+                "1/2",
+                "√2/2",
+                "√3/2"
+              ],
+              [
+                "cosseno",
+                "√3/2",
+                "√2/2",
+                "1/2"
+              ],
+              [
+                "tangente",
+                "√3/3",
+                "1",
+                "√3"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Usando os valores",
+          "body": [
+            "Com a tabela na cabeça, muitos problemas viram conta direta."
+          ],
+          "example": {
+            "label": "A sombra do poste",
+            "lines": [
+              "O sol está a 60° do chão, e o poste mede 6 m.",
+              "Tangente de 60° = poste ÷ sombra.",
+              "√3 = 6 ÷ sombra, então sombra = 6 ÷ √3.",
+              "Sombra ≈ 6 ÷ 1,73 ≈ 3,5 m."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova usa os ângulos notáveis sem dar a tabela, ou dá a tabela num quadro. Saber de onde ela vem evita decorar errado."
+          ],
+          "bullets": [
+            "“Considere sen 30° = 1/2…”",
+            "“A tangente de 45° vale…”",
+            "“Um observador vê o topo de um prédio sob um ângulo de 60°…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Trocar o seno de 30° pelo de 60°. O de 30° é 1/2, o menor.",
+            "Achar que a tangente de 45° é √2/2. Ela é 1, porque os catetos são iguais.",
+            "Esquecer que o seno de 30° é igual ao cosseno de 60°.",
+            "Arredondar √3 cedo demais. Use 1,73 só no fim."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Os ângulos notáveis são 30°, 45° e 60°. O de 45° vem do quadrado cortado pela diagonal; os de 30° e 60°, do triângulo equilátero cortado ao meio.",
+            "Seno de 30° é 1/2, o de 45° é √2/2 e o de 60° é √3/2. A tangente de 45° é 1."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Seno de 30°",
+          "statement": "O seno de 30° é:",
+          "options": [
+            "1/2",
+            "√3/2",
+            "√2/2",
+            "1",
+            "2"
+          ],
+          "correct_index": 0,
+          "explanation": "Vem do triângulo equilátero cortado ao meio.",
+          "pitfall": "√3/2 é o seno de 60°."
+        },
+        {
+          "topic": "Tangente de 45°",
+          "statement": "A tangente de 45° é:",
+          "options": [
+            "1",
+            "√2/2",
+            "0",
+            "√3",
+            "1/2"
+          ],
+          "correct_index": 0,
+          "explanation": "Os catetos são iguais: 1 ÷ 1.",
+          "pitfall": "√2/2 é o seno e o cosseno de 45°."
+        },
+        {
+          "topic": "Cosseno de 60°",
+          "statement": "O cosseno de 60° é:",
+          "options": [
+            "1/2",
+            "√3/2",
+            "√2/2",
+            "1",
+            "0"
+          ],
+          "correct_index": 0,
+          "explanation": "É igual ao seno de 30°.",
+          "pitfall": "√3/2 é o seno de 60°."
+        },
+        {
+          "topic": "Seno de 60°",
+          "statement": "O seno de 60° é:",
+          "options": [
+            "√3/2",
+            "1/2",
+            "√2/2",
+            "√3",
+            "1"
+          ],
+          "correct_index": 0,
+          "explanation": "O cateto √3 sobre a hipotenusa 2.",
+          "pitfall": "√3 é a tangente de 60°."
+        },
+        {
+          "topic": "Quadrado",
+          "statement": "Os valores de 45° saem de:",
+          "options": [
+            "um quadrado cortado pela diagonal",
+            "um triângulo equilátero cortado ao meio",
+            "um círculo",
+            "um hexágono",
+            "um retângulo qualquer"
+          ],
+          "correct_index": 0,
+          "explanation": "A diagonal corta o canto de 90° em dois de 45°.",
+          "pitfall": "O equilátero dá 30° e 60°."
+        },
+        {
+          "topic": "Igualdade",
+          "statement": "O seno de 30° é igual:",
+          "options": [
+            "ao cosseno de 60°",
+            "ao seno de 60°",
+            "à tangente de 30°",
+            "ao cosseno de 30°",
+            "a zero"
+          ],
+          "correct_index": 0,
+          "explanation": "Os dois valem 1/2.",
+          "pitfall": "O seno de 60° vale √3/2."
+        },
+        {
+          "topic": "Escorregador",
+          "statement": "Um escorregador de 4 m faz 30° com o chão. A altura do topo é:",
+          "options": [
+            "2 m",
+            "4 m",
+            "8 m",
+            "3,46 m",
+            "1 m"
+          ],
+          "correct_index": 0,
+          "explanation": "4 × seno de 30° = 4 × 0,5 = 2 m.",
+          "pitfall": "3,46 m usou o seno de 60°."
+        },
+        {
+          "topic": "Tabela",
+          "format": "match",
+          "statement": "Ligue cada razão ao seu valor.",
+          "pairs": [
+            {
+              "left": "sen 30°",
+              "right": "1/2"
+            },
+            {
+              "left": "sen 45°",
+              "right": "√2/2"
+            },
+            {
+              "left": "sen 60°",
+              "right": "√3/2"
+            },
+            {
+              "left": "tg 45°",
+              "right": "1"
+            }
+          ],
+          "explanation": "O seno cresce de 30° para 60°.",
+          "pitfall": "A tangente de 45° é 1, não √2/2."
+        },
+        {
+          "topic": "Notáveis",
+          "statement": "Os ângulos notáveis são:",
+          "options": [
+            "30°, 45° e 60°",
+            "10°, 20° e 30°",
+            "90°, 180° e 360°",
+            "15°, 25° e 35°",
+            "1°, 2° e 3°"
+          ],
+          "correct_index": 0,
+          "explanation": "São os que aparecem em quase todo problema.",
+          "pitfall": "90°, 180° e 360° são marcos da volta.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Catetos iguais",
+          "statement": "No triângulo retângulo com ângulos de 45°, os catetos são:",
+          "options": [
+            "iguais",
+            "um o dobro do outro",
+            "sempre de 1 m",
+            "maiores que a hipotenusa",
+            "perpendiculares à hipotenusa"
+          ],
+          "correct_index": 0,
+          "explanation": "É meio quadrado.",
+          "pitfall": "“Um o dobro do outro” lembra o triângulo de 30° e 60°.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Diagonal",
+          "statement": "A diagonal de um quadrado de lado 5 cm mede:",
+          "options": [
+            "5√2 cm, cerca de 7,1 cm",
+            "10 cm",
+            "5 cm",
+            "25 cm",
+            "2,5 cm"
+          ],
+          "correct_index": 0,
+          "explanation": "Lado vezes √2.",
+          "pitfall": "10 cm somou os dois lados.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Equilátero",
+          "statement": "Num triângulo equilátero de lado 2 cortado ao meio, o cateto maior mede:",
+          "options": [
+            "√3",
+            "1",
+            "2",
+            "√2",
+            "3"
+          ],
+          "correct_index": 0,
+          "explanation": "2² − 1² = 3, então o cateto é √3.",
+          "pitfall": "1 é o cateto menor, a metade da base.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Sombra a 45°",
+          "statement": "O sol está a 45° do chão, e uma árvore mede 7 m. A sombra mede:",
+          "options": [
+            "7 m",
+            "3,5 m",
+            "14 m",
+            "7√2 m",
+            "0 m"
+          ],
+          "correct_index": 0,
+          "explanation": "A tangente de 45° é 1: altura e sombra são iguais.",
+          "pitfall": "7√2 m é a distância do topo da árvore à ponta da sombra.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Crescimento",
+          "statement": "Comparando os senos de 30°, 45° e 60°, é correto dizer:",
+          "options": [
+            "o seno cresce de 30° para 60°",
+            "o seno diminui de 30° para 60°",
+            "os três senos são iguais",
+            "o seno de 45° é o maior",
+            "o seno de 30° é maior que 1"
+          ],
+          "correct_index": 0,
+          "explanation": "1/2, depois √2/2 e depois √3/2: cresce.",
+          "pitfall": "Diminuir é o que o cosseno faz.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "lei-dos-senos-e-cossenos",
+      "title": "Lei dos senos e lei dos cossenos",
+      "module": "Trigonometria",
+      "summary": "Nem todo triângulo tem ângulo reto. A lição mostra as duas leis que valem em qualquer triângulo e como escolher a certa.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O terreno sem canto reto",
+          "body": [
+            "A maioria dos terrenos não tem canto de 90°. Mesmo assim, um topógrafo mede um lado e dois ângulos e descobre o resto.",
+            "Para isso servem duas leis que valem em qualquer triângulo."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quando não há ângulo reto",
+          "body": [
+            "Seno, cosseno e tangente nasceram no triângulo retângulo. Num triângulo qualquer, usam-se a lei dos senos e a lei dos cossenos.",
+            "Cada uma serve para um tipo de dado. A escolha certa é metade do problema."
+          ],
+          "terms": [
+            {
+              "word": "ângulo reto",
+              "meaning": "o ângulo de 90°, o canto de uma folha de papel."
+            },
+            {
+              "word": "seno e cosseno",
+              "meaning": "números ligados a cada ângulo, que a calculadora mostra. No triângulo retângulo, são razões entre os lados."
+            },
+            {
+              "word": "lei dos senos e lei dos cossenos",
+              "meaning": "as duas regras que ligam lados e ângulos em QUALQUER triângulo, mesmo sem ângulo reto."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A lei dos senos",
+          "body": [
+            "Em todo triângulo, cada lado dividido pelo seno do ângulo em frente dá o mesmo número. Em conta: a ÷ sen A = b ÷ sen B = c ÷ sen C.",
+            "Use quando souber um lado e o ângulo em frente a ele, mais um outro dado."
+          ],
+          "example": {
+            "label": "Achando um lado",
+            "lines": [
+              "Um lado mede 10, e o ângulo em frente mede 30°.",
+              "Outro ângulo mede 45°. Qual o lado em frente a ele?",
+              "10 ÷ sen 30° = x ÷ sen 45°.",
+              "10 ÷ 0,5 = x ÷ 0,71, então 20 = x ÷ 0,71.",
+              "x = 20 × 0,71 ≈ 14,1."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A lei dos cossenos",
+          "body": [
+            "Ela é um Pitágoras com correção: a² = b² + c² − 2 × b × c × cos A. O ângulo A fica entre os lados b e c.",
+            "Use quando souber dois lados e o ângulo entre eles, ou os três lados."
+          ],
+          "example": {
+            "label": "Achando o terceiro lado",
+            "lines": [
+              "Dois lados medem 3 e 5, com 60° entre eles.",
+              "a² = 3² + 5² − 2 × 3 × 5 × cos 60°.",
+              "a² = 9 + 25 − 30 × 0,5 = 34 − 15 = 19.",
+              "a = √19 ≈ 4,36."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "raiz quadrada",
+              "meaning": "o número que, multiplicado por ele mesmo, dá o valor de dentro. A raiz quadrada de 9 é 3, porque 3 × 3 = 9."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Qual usar",
+          "body": [
+            "A pergunta é: o que você sabe? A tabela resolve a dúvida na hora."
+          ],
+          "table": {
+            "label": "Qual lei usar",
+            "headers": [
+              "O que você sabe",
+              "Use"
+            ],
+            "rows": [
+              [
+                "dois ângulos e um lado",
+                "lei dos senos"
+              ],
+              [
+                "um lado, o ângulo em frente e mais um dado",
+                "lei dos senos"
+              ],
+              [
+                "dois lados e o ângulo entre eles",
+                "lei dos cossenos"
+              ],
+              [
+                "os três lados (para achar um ângulo)",
+                "lei dos cossenos"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Com 90°, vira Pitágoras",
+          "body": [
+            "Se o ângulo A mede 90°, o cosseno vale 0, e a lei dos cossenos vira a² = b² + c². É o teorema de Pitágoras.",
+            "Por isso se diz que ela estende Pitágoras para qualquer triângulo."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova descreve um terreno, um rio ou um percurso com ângulos e pede uma distância. Identifique os dados e escolha a lei."
+          ],
+          "bullets": [
+            "“Dois lados de um terreno medem… e formam um ângulo de 120°…”",
+            "“Num triângulo, os ângulos medem 30° e 45°, e o lado oposto…”",
+            "“A distância entre as duas margens do rio é…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Usar a lei dos cossenos com o ângulo errado. O ângulo tem que estar entre os dois lados conhecidos.",
+            "Esquecer o sinal de menos na lei dos cossenos.",
+            "Usar as razões do triângulo retângulo num triângulo sem ângulo reto.",
+            "Esquecer que o cosseno de um ângulo maior que 90° é negativo. Aí o termo − 2bc cos A vira soma."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A lei dos senos diz que cada lado dividido pelo seno do ângulo em frente dá o mesmo número.",
+            "A lei dos cossenos é a² = b² + c² − 2bc cos A, um Pitágoras corrigido. Com 90°, ela vira o próprio Pitágoras."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Qualquer",
+          "statement": "A lei dos senos e a lei dos cossenos valem:",
+          "options": [
+            "em qualquer triângulo",
+            "só no triângulo retângulo",
+            "só no equilátero",
+            "só em quadrados",
+            "só com ângulos de 30°"
+          ],
+          "correct_index": 0,
+          "explanation": "Esse é o motivo de existirem.",
+          "pitfall": "“Só no retângulo” é onde valem as razões comuns."
+        },
+        {
+          "topic": "Senos",
+          "statement": "Pela lei dos senos, em todo triângulo:",
+          "options": [
+            "cada lado dividido pelo seno do ângulo em frente dá o mesmo número",
+            "a soma dos lados é 180°",
+            "o maior lado é sempre o dobro do menor",
+            "os senos de todos os ângulos são iguais",
+            "cada lado vezes o seno dá zero"
+          ],
+          "correct_index": 0,
+          "explanation": "a ÷ sen A = b ÷ sen B = c ÷ sen C.",
+          "pitfall": "180° é a soma dos ângulos, não dos lados."
+        },
+        {
+          "topic": "Cossenos",
+          "statement": "A lei dos cossenos é usada quando se sabe:",
+          "options": [
+            "dois lados e o ângulo entre eles",
+            "só os três ângulos",
+            "um lado só",
+            "apenas a área",
+            "só o perímetro"
+          ],
+          "correct_index": 0,
+          "explanation": "Ou os três lados, para achar um ângulo.",
+          "pitfall": "Só os ângulos não dizem o tamanho do triângulo."
+        },
+        {
+          "topic": "Ângulo A",
+          "statement": "Na lei dos cossenos, a² = b² + c² − 2bc cos A, o ângulo A fica:",
+          "options": [
+            "entre os lados b e c",
+            "em frente ao lado b",
+            "fora do triângulo",
+            "em qualquer canto",
+            "junto do lado a"
+          ],
+          "correct_index": 0,
+          "explanation": "É o ângulo formado por b e c.",
+          "pitfall": "“Em qualquer canto” dá resultado errado."
+        },
+        {
+          "topic": "90°",
+          "statement": "Se o ângulo A mede 90°, a lei dos cossenos vira:",
+          "options": [
+            "o teorema de Pitágoras",
+            "a lei dos senos",
+            "a área do triângulo",
+            "o teorema de Tales",
+            "a soma dos ângulos"
+          ],
+          "correct_index": 0,
+          "explanation": "O cosseno de 90° é 0 e o último termo some.",
+          "pitfall": "A área é outra conta, que não sai daí."
+        },
+        {
+          "topic": "Terceiro lado",
+          "statement": "Dois lados medem 3 e 4, com 90° entre eles. O terceiro lado mede:",
+          "options": [
+            "5",
+            "7",
+            "1",
+            "12",
+            "25"
+          ],
+          "correct_index": 0,
+          "explanation": "9 + 16 = 25, e a raiz é 5.",
+          "pitfall": "25 esqueceu de tirar a raiz."
+        },
+        {
+          "topic": "Dois ângulos",
+          "statement": "Você sabe dois ângulos e um lado de um triângulo. A lei mais direta é:",
+          "options": [
+            "a lei dos senos",
+            "a lei dos cossenos",
+            "o teorema de Tales",
+            "a soma dos externos",
+            "nenhuma"
+          ],
+          "correct_index": 0,
+          "explanation": "Com dois ângulos, você acha o terceiro e usa os senos.",
+          "pitfall": "A lei dos cossenos pede dois lados."
+        },
+        {
+          "topic": "Escolha",
+          "format": "match",
+          "statement": "Ligue cada situação à ferramenta.",
+          "pairs": [
+            {
+              "left": "triângulo com ângulo reto",
+              "right": "seno, cosseno e tangente"
+            },
+            {
+              "left": "dois ângulos e um lado",
+              "right": "lei dos senos"
+            },
+            {
+              "left": "dois lados e o ângulo entre eles",
+              "right": "lei dos cossenos"
+            },
+            {
+              "left": "os três lados, para achar um ângulo",
+              "right": "lei dos cossenos, isolando o cosseno"
+            }
+          ],
+          "explanation": "O dado decide a ferramenta.",
+          "pitfall": "A lei dos cossenos serve aos dois últimos casos."
+        },
+        {
+          "topic": "Sinal",
+          "statement": "Na lei dos cossenos, o termo 2bc cos A vem com sinal:",
+          "options": [
+            "de menos",
+            "de mais",
+            "de vezes",
+            "de dividir",
+            "nenhum"
+          ],
+          "correct_index": 0,
+          "explanation": "a² = b² + c² − 2bc cos A.",
+          "pitfall": "“De mais” é o erro de sinal mais comum.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Cosseno de 90°",
+          "statement": "O cosseno de 90° vale:",
+          "options": [
+            "0",
+            "1",
+            "0,5",
+            "−1",
+            "90"
+          ],
+          "correct_index": 0,
+          "explanation": "Por isso a lei vira Pitágoras.",
+          "pitfall": "1 é o cosseno de 0°.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Lados 2 e 2",
+          "statement": "Dois lados medem 2 e 2, com 60° entre eles. O terceiro lado mede:",
+          "options": [
+            "2",
+            "4",
+            "√8",
+            "0",
+            "1"
+          ],
+          "correct_index": 0,
+          "explanation": "4 + 4 − 8 × 0,5 = 4, e a raiz é 2.",
+          "pitfall": "√8 esqueceu o termo com o cosseno.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Razão",
+          "statement": "Num triângulo, um lado mede 8 e o ângulo em frente mede 30°. Pela lei dos senos, a razão lado ÷ seno vale:",
+          "options": [
+            "16",
+            "4",
+            "8",
+            "2,4",
+            "0,5"
+          ],
+          "correct_index": 0,
+          "explanation": "8 ÷ 0,5 = 16.",
+          "pitfall": "4 multiplicou em vez de dividir.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "120°",
+          "statement": "Dois lados medem 3 e 5, com 120° entre eles. Sabendo que o cosseno de 120° é −0,5, o terceiro lado mede:",
+          "options": [
+            "7",
+            "√19",
+            "8",
+            "4",
+            "2"
+          ],
+          "correct_index": 0,
+          "explanation": "9 + 25 − 30 × (−0,5) = 49, e a raiz é 7.",
+          "pitfall": "√19 usou cosseno positivo, como se fosse 60°.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Ângulo errado",
+          "statement": "Um aluno usou a lei dos cossenos com um ângulo que NÃO estava entre os dois lados conhecidos. O resultado:",
+          "options": [
+            "sai errado, porque a lei exige o ângulo entre esses lados",
+            "sai certo do mesmo jeito",
+            "vira a lei dos senos",
+            "dá sempre zero",
+            "dá sempre 90°"
+          ],
+          "correct_index": 0,
+          "explanation": "A fórmula usa o ângulo formado pelos dois lados.",
+          "pitfall": "“Sai certo do mesmo jeito” ignora a posição do ângulo.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "circulo-trigonometrico",
+      "title": "O círculo trigonométrico e o radiano",
+      "module": "Trigonometria",
+      "summary": "Seno e cosseno também moram num círculo. A lição mostra o radiano e a conversão de graus. Depois vêm o círculo de raio 1, os sinais em cada quadrante e a regra cos² + sen² = 1.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O ponteiro do relógio",
+          "body": [
+            "Pense na ponta de um ponteiro girando. Em cada instante, ela está um pouco para o lado e um pouco para cima ou para baixo.",
+            "Essas duas medidas, lado e altura, vão ganhar nome nesta lição."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Medir ângulo pelo raio",
+          "body": [
+            "Além do grau, há o radiano. Um radiano é o ângulo cujo arco tem o mesmo comprimento do raio.",
+            "Como o contorno do círculo mede 2π raios, a volta inteira vale 2π radianos. Meia volta, 180°, vale π."
+          ],
+          "terms": [
+            {
+              "word": "pi (π)",
+              "meaning": "o número que vale cerca de 3,14. O contorno de um círculo mede 2π vezes o raio."
+            },
+            {
+              "word": "radiano",
+              "meaning": "a medida de ângulo que usa o raio como régua. Meia volta vale π radianos."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Converter graus e radianos",
+          "body": [
+            "Para converter, use a regra de três com 180° = π. De graus para radianos, multiplique por π e divida por 180."
+          ],
+          "example": {
+            "label": "120° em radianos",
+            "lines": [
+              "120 × π ÷ 180 = 2π/3."
+            ]
+          },
+          "table": {
+            "label": "Graus e radianos",
+            "headers": [
+              "Graus",
+              "Radianos"
+            ],
+            "rows": [
+              [
+                "30°",
+                "π/6"
+              ],
+              [
+                "45°",
+                "π/4"
+              ],
+              [
+                "60°",
+                "π/3"
+              ],
+              [
+                "90°",
+                "π/2"
+              ],
+              [
+                "180°",
+                "π"
+              ],
+              [
+                "360°",
+                "2π"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O círculo de raio 1",
+          "body": [
+            "Desenhe um círculo de raio 1 com centro no cruzamento dos eixos. Cada ângulo, medido a partir do eixo horizontal, marca um ponto no círculo.",
+            "A posição horizontal desse ponto é o cosseno, e a vertical é o seno."
+          ],
+          "terms": [
+            {
+              "word": "eixo",
+              "meaning": "cada uma das duas retas graduadas do plano: a horizontal (x) e a vertical (y)."
+            },
+            {
+              "word": "círculo trigonométrico",
+              "meaning": "um círculo de raio 1, com centro no cruzamento dos eixos. Cada ângulo marca um ponto nele."
+            },
+            {
+              "word": "seno e cosseno",
+              "meaning": "no círculo de raio 1, o cosseno é a posição horizontal do ponto, e o seno é a posição vertical."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os sinais em cada quadrante",
+          "body": [
+            "Os eixos dividem o plano em quatro quadrantes. Em cada um, seno e cosseno podem ser positivos ou negativos.",
+            "No 2º quadrante, por exemplo, o ponto está à esquerda e para cima: cosseno negativo e seno positivo."
+          ],
+          "terms": [
+            {
+              "word": "quadrante",
+              "meaning": "cada uma das quatro partes em que os eixos dividem o plano."
+            }
+          ],
+          "table": {
+            "label": "Os sinais",
+            "headers": [
+              "Quadrante",
+              "Ângulos",
+              "Seno",
+              "Cosseno"
+            ],
+            "rows": [
+              [
+                "1º",
+                "0° a 90°",
+                "+",
+                "+"
+              ],
+              [
+                "2º",
+                "90° a 180°",
+                "+",
+                "−"
+              ],
+              [
+                "3º",
+                "180° a 270°",
+                "−",
+                "−"
+              ],
+              [
+                "4º",
+                "270° a 360°",
+                "−",
+                "+"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A regra que nunca falha",
+          "body": [
+            "O ponto está num círculo de raio 1, então vale Pitágoras: cos² + sen² = 1. Isso vale para qualquer ângulo."
+          ],
+          "example": {
+            "label": "Usando a regra",
+            "lines": [
+              "O seno de um ângulo é 0,6.",
+              "cos² = 1 − 0,36 = 0,64.",
+              "O cosseno é 0,8 ou −0,8, conforme o quadrante."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede a conversão entre graus e radianos, o sinal do seno ou do cosseno num quadrante, ou usa a regra cos² + sen² = 1."
+          ],
+          "bullets": [
+            "“O ângulo de 3π/4 radianos corresponde a…”",
+            "“No terceiro quadrante, o seno e o cosseno são…”",
+            "“Sabendo que sen x = 3/5 e x está no 2º quadrante…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que π é 180. π é um número (cerca de 3,14); π radianos é que vale 180°.",
+            "Trocar seno com cosseno no círculo. Cosseno é a horizontal; seno é a vertical.",
+            "Esquecer o sinal do quadrante. Depois de achar o valor, confira se é positivo ou negativo.",
+            "Achar que seno e cosseno passam de 1. No círculo de raio 1, eles ficam entre −1 e 1."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Um radiano usa o raio como régua: meia volta vale π radianos e a volta, 2π.",
+            "No círculo de raio 1, o cosseno é a horizontal e o seno é a vertical. O sinal muda com o quadrante, e sempre vale cos² + sen² = 1."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Meia volta",
+          "statement": "Meia volta, 180°, vale em radianos:",
+          "options": [
+            "π",
+            "2π",
+            "π/2",
+            "180",
+            "1"
+          ],
+          "correct_index": 0,
+          "explanation": "180° = π radianos.",
+          "pitfall": "2π é a volta inteira."
+        },
+        {
+          "topic": "90°",
+          "statement": "O ângulo de 90° vale:",
+          "options": [
+            "π/2 radianos",
+            "π radianos",
+            "2π radianos",
+            "90 radianos",
+            "π/4 radianos"
+          ],
+          "correct_index": 0,
+          "explanation": "Metade de meia volta.",
+          "pitfall": "π/4 é 45°."
+        },
+        {
+          "topic": "Cosseno",
+          "statement": "No círculo de raio 1, o cosseno de um ângulo é:",
+          "options": [
+            "a posição horizontal do ponto",
+            "a posição vertical do ponto",
+            "o raio",
+            "o ângulo em graus",
+            "a área do círculo"
+          ],
+          "correct_index": 0,
+          "explanation": "Cosseno é o lado, a horizontal.",
+          "pitfall": "A vertical é o seno."
+        },
+        {
+          "topic": "2º quadrante",
+          "statement": "No 2º quadrante, o seno é:",
+          "options": [
+            "positivo",
+            "negativo",
+            "sempre zero",
+            "maior que 1",
+            "igual ao cosseno"
+          ],
+          "correct_index": 0,
+          "explanation": "O ponto está acima do eixo horizontal.",
+          "pitfall": "Negativo é o cosseno nesse quadrante."
+        },
+        {
+          "topic": "3º quadrante",
+          "statement": "No 3º quadrante, o seno e o cosseno são:",
+          "options": [
+            "os dois negativos",
+            "os dois positivos",
+            "seno positivo e cosseno negativo",
+            "seno negativo e cosseno positivo",
+            "os dois iguais a 1"
+          ],
+          "correct_index": 0,
+          "explanation": "O ponto está à esquerda e para baixo.",
+          "pitfall": "Seno negativo e cosseno positivo é o 4º quadrante."
+        },
+        {
+          "topic": "A regra",
+          "statement": "Para qualquer ângulo, vale:",
+          "options": [
+            "cos² + sen² = 1",
+            "cos + sen = 1",
+            "cos × sen = 1",
+            "cos² − sen² = 0",
+            "sen = 2 cos"
+          ],
+          "correct_index": 0,
+          "explanation": "É Pitágoras no círculo de raio 1.",
+          "pitfall": "“cos + sen = 1” esquece os quadrados."
+        },
+        {
+          "topic": "60°",
+          "statement": "O ângulo de 60° em radianos é:",
+          "options": [
+            "π/3",
+            "π/6",
+            "π/2",
+            "3π",
+            "60π"
+          ],
+          "correct_index": 0,
+          "explanation": "60 × π ÷ 180 = π/3.",
+          "pitfall": "π/6 é 30°."
+        },
+        {
+          "topic": "Conversões",
+          "format": "match",
+          "statement": "Ligue cada ângulo em graus ao valor em radianos.",
+          "pairs": [
+            {
+              "left": "30°",
+              "right": "π/6"
+            },
+            {
+              "left": "45°",
+              "right": "π/4"
+            },
+            {
+              "left": "90°",
+              "right": "π/2"
+            },
+            {
+              "left": "360°",
+              "right": "2π"
+            }
+          ],
+          "explanation": "180° = π é a régua de todas.",
+          "pitfall": "π/4 e π/6 são os que mais se trocam."
+        },
+        {
+          "topic": "Entre −1 e 1",
+          "statement": "No círculo de raio 1, o seno de qualquer ângulo fica entre:",
+          "options": [
+            "−1 e 1",
+            "0 e 10",
+            "−90 e 90",
+            "0 e 360",
+            "1 e 2"
+          ],
+          "correct_index": 0,
+          "explanation": "O ponto nunca sai do círculo de raio 1.",
+          "pitfall": "−90 e 90 confunde o seno com o ângulo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Cosseno de 0°",
+          "statement": "O cosseno de 0° é:",
+          "options": [
+            "1",
+            "0",
+            "−1",
+            "0,5",
+            "π"
+          ],
+          "correct_index": 0,
+          "explanation": "Em 0°, o ponto está todo à direita: horizontal 1.",
+          "pitfall": "0 é o seno de 0°.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "120°",
+          "statement": "O ângulo de 120° em radianos é:",
+          "options": [
+            "2π/3",
+            "π/3",
+            "3π/2",
+            "120π",
+            "π/12"
+          ],
+          "correct_index": 0,
+          "explanation": "120 × π ÷ 180 = 2π/3.",
+          "pitfall": "π/3 é 60°.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Achar o cosseno",
+          "statement": "Um ângulo do 1º quadrante tem seno 0,8. O cosseno dele é:",
+          "options": [
+            "0,6",
+            "0,2",
+            "−0,6",
+            "1,8",
+            "0,8"
+          ],
+          "correct_index": 0,
+          "explanation": "cos² = 1 − 0,64 = 0,36, e a raiz é 0,6.",
+          "pitfall": "0,2 fez 1 − 0,8 sem os quadrados.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Sinal",
+          "statement": "Um ângulo do 2º quadrante tem seno 0,6. O cosseno dele é:",
+          "options": [
+            "−0,8",
+            "0,8",
+            "0,4",
+            "−0,4",
+            "1,6"
+          ],
+          "correct_index": 0,
+          "explanation": "cos² = 0,64; no 2º quadrante o cosseno é negativo.",
+          "pitfall": "0,8 esqueceu o sinal do quadrante.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "π não é 180",
+          "statement": "Um aluno escreve: “π = 180”. A correção é:",
+          "options": [
+            "π é cerca de 3,14; π radianos é que correspondem a 180°",
+            "π vale 360",
+            "a frase está certa",
+            "π é um ângulo de 90°",
+            "π só existe em graus"
+          ],
+          "correct_index": 0,
+          "explanation": "π é um número; a unidade radiano é que liga ao 180°.",
+          "pitfall": "“A frase está certa” mistura o número com o ângulo.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "funcoes-trigonometricas",
+      "title": "Funções trigonométricas: as ondas que se repetem",
+      "module": "Trigonometria",
+      "summary": "Marés e rodas-gigantes sobem e descem sem parar. A lição mostra a onda do seno, o período, a amplitude e o que cada número da fórmula faz com a onda.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A roda-gigante",
+          "body": [
+            "Numa roda-gigante você sobe até o topo e desce até o ponto mais baixo. Depois começa tudo de novo.",
+            "A altura vai e volta sem parar. E a matemática tem uma onda perfeita para descrever isso."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O seno vira onda",
+          "body": [
+            "No círculo de raio 1, o seno é a altura do ponto. Se o ângulo cresce sem parar, essa altura sobe e desce.",
+            "Pondo o ângulo no eixo horizontal e o seno no vertical, aparece uma onda. É a função seno."
+          ],
+          "example": {
+            "label": "Alguns pontos da onda",
+            "lines": [
+              "0°: seno 0.",
+              "90°: seno 1 (o pico).",
+              "180°: seno 0.",
+              "270°: seno −1 (o vale).",
+              "360°: seno 0 de novo."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "seno e cosseno",
+              "meaning": "no círculo de raio 1, o cosseno é a posição horizontal do ponto, e o seno é a vertical."
+            },
+            {
+              "word": "função",
+              "meaning": "uma regra que liga cada entrada a uma única saída. Aqui, a entrada é o ângulo, e a saída é o seno dele."
+            },
+            {
+              "word": "eixo",
+              "meaning": "cada uma das duas retas graduadas do plano: a horizontal (x) e a vertical (y)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Período e amplitude",
+          "body": [
+            "O seno se repete a cada 360°, ou 2π radianos: esse é o período. Ele vai de −1 a 1, então a amplitude é 1.",
+            "Mudando os números da função, a onda estica ou encolhe e sobe ou desce."
+          ],
+          "terms": [
+            {
+              "word": "período e fenômeno periódico",
+              "meaning": "período é quanto a onda leva para se repetir inteira. Fenômeno periódico é o que se repete em intervalos iguais."
+            },
+            {
+              "word": "amplitude",
+              "meaning": "a altura da onda medida do meio até o pico."
+            },
+            {
+              "word": "radiano",
+              "meaning": "a medida de ângulo que usa o raio como régua. Meia volta vale π radianos."
+            },
+            {
+              "word": "pi (π)",
+              "meaning": "o número que vale cerca de 3,14. O contorno de um círculo mede 2π vezes o raio."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Mexendo na fórmula",
+          "body": [
+            "Na prova, cada número da fórmula tem um papel. O que multiplica o seno muda a altura; o que soma muda o meio da onda."
+          ],
+          "table": {
+            "label": "O que cada número faz",
+            "headers": [
+              "Função",
+              "Efeito na onda"
+            ],
+            "rows": [
+              [
+                "y = sen x",
+                "a onda básica, de −1 a 1"
+              ],
+              [
+                "y = 3 sen x",
+                "amplitude 3: vai de −3 a 3"
+              ],
+              [
+                "y = sen x + 2",
+                "a onda sobe 2: vai de 1 a 3"
+              ],
+              [
+                "y = sen 2x",
+                "a onda anda o dobro: o período cai pela metade"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Ondas da vida real",
+          "body": [
+            "Marés, a temperatura ao longo do ano e o som são fenômenos periódicos. Todos podem ser descritos por ondas de seno e cosseno."
+          ],
+          "example": {
+            "label": "A maré de uma praia",
+            "lines": [
+              "Altura da água: h = 2 + 1,5 sen(…) metros.",
+              "O meio da onda é 2 m.",
+              "A amplitude é 1,5 m.",
+              "Maré alta: 2 + 1,5 = 3,5 m. Maré baixa: 2 − 1,5 = 0,5 m."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova traz uma função de seno ou cosseno que descreve uma maré ou uma roda-gigante e pede o máximo, o mínimo ou o período."
+          ],
+          "bullets": [
+            "“A altura da maré é dada por h(t) = 3 + 2 sen(…). A maré alta atinge…”",
+            "“O período da função f(x) = sen 2x é…”",
+            "“O valor máximo de y = 5 + 3 cos x é…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que a amplitude é a altura total da onda. Ela vai do meio até o pico: metade da distância do vale ao pico.",
+            "Esquecer que o seno vai de −1 a 1. Por isso o máximo de 2 + 1,5 sen x é 3,5.",
+            "Achar que sen 2x dobra a altura. Ele dobra a velocidade e corta o período pela metade.",
+            "Achar que só o seno faz onda. O cosseno faz a mesma onda, deslocada."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O seno vira uma onda quando o ângulo cresce sem parar. Ela se repete a cada 2π (o período) e vai de −1 a 1 (amplitude 1).",
+            "O número que multiplica o seno muda a altura, e o que soma muda o meio. Marés e rodas-gigantes são descritas assim."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Período",
+          "statement": "A função seno se repete a cada:",
+          "options": [
+            "360°, ou 2π radianos",
+            "90°",
+            "180°",
+            "1°",
+            "nunca se repete"
+          ],
+          "correct_index": 0,
+          "explanation": "Uma volta inteira no círculo.",
+          "pitfall": "180° é só meia onda."
+        },
+        {
+          "topic": "Máximo",
+          "statement": "O maior valor de y = sen x é:",
+          "options": [
+            "1",
+            "0",
+            "−1",
+            "2π",
+            "360"
+          ],
+          "correct_index": 0,
+          "explanation": "O topo do círculo de raio 1.",
+          "pitfall": "2π é o período, não o valor."
+        },
+        {
+          "topic": "Amplitude 3",
+          "statement": "A amplitude de y = 3 sen x é:",
+          "options": [
+            "3",
+            "1",
+            "6",
+            "2π",
+            "0"
+          ],
+          "correct_index": 0,
+          "explanation": "O 3 multiplica a altura.",
+          "pitfall": "6 é a distância do vale ao pico."
+        },
+        {
+          "topic": "Subiu 2",
+          "statement": "A função y = sen x + 2 vai de:",
+          "options": [
+            "1 a 3",
+            "−1 a 1",
+            "−3 a 3",
+            "0 a 2",
+            "2 a 4"
+          ],
+          "correct_index": 0,
+          "explanation": "A onda inteira sobe 2.",
+          "pitfall": "2 a 4 subiu só o pico."
+        },
+        {
+          "topic": "Maré alta",
+          "statement": "A altura da maré é h = 2 + 1,5 sen(…) metros. A maré alta chega a:",
+          "options": [
+            "3,5 m",
+            "2 m",
+            "1,5 m",
+            "0,5 m",
+            "3 m"
+          ],
+          "correct_index": 0,
+          "explanation": "2 + 1,5 × 1 = 3,5 m.",
+          "pitfall": "0,5 m é a maré baixa."
+        },
+        {
+          "topic": "Periódico",
+          "statement": "Um fenômeno periódico é aquele que:",
+          "options": [
+            "se repete em intervalos iguais",
+            "acontece uma vez só",
+            "cresce sem parar",
+            "nunca muda",
+            "só acontece à noite"
+          ],
+          "correct_index": 0,
+          "explanation": "Como a maré, todo dia.",
+          "pitfall": "“Cresce sem parar” não volta ao começo."
+        },
+        {
+          "topic": "Pico",
+          "statement": "Na onda do seno, o pico (valor 1) acontece em:",
+          "options": [
+            "90°",
+            "0°",
+            "180°",
+            "270°",
+            "360°"
+          ],
+          "correct_index": 0,
+          "explanation": "Em 90°, o ponto está no topo do círculo.",
+          "pitfall": "270° é o vale."
+        },
+        {
+          "topic": "Fórmulas",
+          "format": "match",
+          "statement": "Ligue cada função ao seu intervalo de valores.",
+          "pairs": [
+            {
+              "left": "y = sen x",
+              "right": "de −1 a 1"
+            },
+            {
+              "left": "y = 3 sen x",
+              "right": "de −3 a 3"
+            },
+            {
+              "left": "y = sen x + 2",
+              "right": "de 1 a 3"
+            },
+            {
+              "left": "y = 2 + 5 sen x",
+              "right": "de −3 a 7"
+            }
+          ],
+          "explanation": "Multiplicar estica; somar sobe.",
+          "pitfall": "Em 2 + 5 sen x, o meio é 2 e a amplitude é 5."
+        },
+        {
+          "topic": "Mínimo",
+          "statement": "O menor valor de y = sen x é:",
+          "options": [
+            "−1",
+            "0",
+            "1",
+            "−360",
+            "π"
+          ],
+          "correct_index": 0,
+          "explanation": "O ponto mais baixo do círculo.",
+          "pitfall": "0 é o meio da onda.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Exemplo",
+          "statement": "Qual destes é um fenômeno periódico?",
+          "options": [
+            "as marés, que sobem e descem todo dia",
+            "a idade de uma pessoa",
+            "a população de uma cidade que só cresce",
+            "uma pedra caindo",
+            "um preço que só sobe"
+          ],
+          "correct_index": 0,
+          "explanation": "A maré volta ao mesmo ponto em intervalos iguais.",
+          "pitfall": "A idade cresce e nunca volta.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Maré baixa",
+          "statement": "Uma maré segue h = 3 + 2 sen(…) metros. A maré baixa chega a:",
+          "options": [
+            "1 m",
+            "3 m",
+            "5 m",
+            "2 m",
+            "0 m"
+          ],
+          "correct_index": 0,
+          "explanation": "3 − 2 = 1 m.",
+          "pitfall": "5 m é a maré alta.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "sen 2x",
+          "statement": "Comparada com y = sen x, a onda de y = sen 2x:",
+          "options": [
+            "se repete duas vezes mais rápido, com período π",
+            "fica duas vezes mais alta",
+            "sobe 2 unidades",
+            "não muda nada",
+            "fica duas vezes mais lenta"
+          ],
+          "correct_index": 0,
+          "explanation": "O 2 dentro do seno acelera a onda.",
+          "pitfall": "“Mais alta” seria 2 sen x, com o 2 fora.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Roda-gigante",
+          "statement": "A altura de uma cadeira na roda-gigante é h = 10 + 8 sen(…) metros. A diferença entre o ponto mais alto e o mais baixo é:",
+          "options": [
+            "16 m",
+            "8 m",
+            "18 m",
+            "10 m",
+            "2 m"
+          ],
+          "correct_index": 0,
+          "explanation": "Topo: 18 m. Chão: 2 m. Diferença: 16 m.",
+          "pitfall": "8 m é a amplitude, só metade da diferença.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Amplitude não é altura",
+          "statement": "Uma onda vai de 1 m a 7 m. A amplitude dela é:",
+          "options": [
+            "3 m",
+            "6 m",
+            "7 m",
+            "4 m",
+            "1 m"
+          ],
+          "correct_index": 0,
+          "explanation": "Metade da distância do vale ao pico: 6 ÷ 2 = 3.",
+          "pitfall": "4 m é o meio da onda, não a amplitude.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "poliedros-e-prismas",
+      "title": "Poliedros e prismas",
+      "module": "Geometria espacial",
+      "summary": "Caixas, dados e embalagens são poliedros. A lição mostra faces, arestas e vértices e a relação de Euler. Depois vêm os prismas, com a área e o volume deles.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Montar uma caixa",
+          "body": [
+            "Desmonte uma caixa de leite e ela vira uma folha plana com abas. Monte de novo e ela vira um sólido.",
+            "Sólidos com faces planas, como a caixa e o dado, são os poliedros."
+          ],
+          "terms": [
+            {
+              "word": "poliedro",
+              "meaning": "um sólido fechado formado só por faces planas, como um dado ou uma caixa."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Faces, arestas e vértices",
+          "body": [
+            "Todo poliedro tem faces, arestas e vértices. Num dado, são 6 faces, 12 arestas e 8 vértices.",
+            "Contar esses três números é o primeiro passo de muitos problemas."
+          ],
+          "terms": [
+            {
+              "word": "face, aresta e vértice",
+              "meaning": "face é cada lado plano; aresta é a linha onde duas faces se encontram; vértice é a ponta onde as arestas se juntam."
+            },
+            {
+              "word": "prisma",
+              "meaning": "o poliedro com duas bases iguais e paralelas, ligadas por faces retangulares. A caixa de sapato é um prisma."
+            }
+          ],
+          "table": {
+            "label": "Contando as peças",
+            "headers": [
+              "Sólido",
+              "Faces",
+              "Arestas",
+              "Vértices"
+            ],
+            "rows": [
+              [
+                "cubo",
+                "6",
+                "12",
+                "8"
+              ],
+              [
+                "pirâmide de base quadrada",
+                "5",
+                "8",
+                "5"
+              ],
+              [
+                "prisma de base triangular",
+                "5",
+                "9",
+                "6"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A relação de Euler",
+          "body": [
+            "Em todo poliedro sem buracos, vale V − A + F = 2. No cubo: 8 − 12 + 6 = 2.",
+            "Com ela, sabendo dois dos números, você descobre o terceiro."
+          ],
+          "example": {
+            "label": "Quantos vértices?",
+            "lines": [
+              "Um poliedro tem 20 faces e 30 arestas.",
+              "V − 30 + 20 = 2.",
+              "V = 12."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "relação de Euler",
+              "meaning": "nos poliedros sem buracos nem cantos para dentro, V − A + F = 2. V são os vértices, A as arestas e F as faces."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os prismas",
+          "body": [
+            "O prisma tem duas bases iguais e paralelas, e as faces do lado são retângulos. O nome vem da base: prisma triangular, quadrangular ou hexagonal.",
+            "O cubo é um prisma especial, com todas as faces quadradas."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Área e volume do prisma",
+          "body": [
+            "A área total é a soma das áreas de todas as faces: as duas bases e as laterais. O volume é a área da base vezes a altura."
+          ],
+          "example": {
+            "label": "Uma caixa de 2 m × 3 m × 4 m",
+            "lines": [
+              "Volume: 2 × 3 × 4 = 24 m³.",
+              "Faces: duas de 2 × 3, duas de 2 × 4 e duas de 3 × 4.",
+              "Área: 2 × 6 + 2 × 8 + 2 × 12 = 52 m²."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Planificação",
+          "body": [
+            "Planificar é abrir o sólido no plano, como a caixa desmontada. A planificação mostra todas as faces de uma vez.",
+            "Ela ajuda a calcular a área e é tema frequente de prova: qual desenho, dobrado, forma o cubo?"
+          ],
+          "bullets": [
+            "Cubo: seis quadrados ligados.",
+            "Prisma triangular: dois triângulos e três retângulos.",
+            "Pirâmide de base quadrada: um quadrado e quatro triângulos."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede a contagem de faces, arestas e vértices, a relação de Euler ou o volume de uma caixa. A planificação também cai muito."
+          ],
+          "bullets": [
+            "“Um poliedro convexo tem 8 faces e 12 vértices. O número de arestas é…”",
+            "“Qual das planificações forma um cubo?”",
+            "“Uma piscina com formato de prisma retangular tem…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Errar o sinal na relação de Euler. É V − A + F = 2, com menos nas arestas.",
+            "Confundir área com volume. Área se mede em m²; volume, em m³.",
+            "Achar que todo poliedro é prisma. A pirâmide é poliedro, mas não é prisma.",
+            "Esquecer as duas bases na área total."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Poliedros têm faces, arestas e vértices, e vale V − A + F = 2.",
+            "O prisma tem duas bases iguais e paralelas. O volume é a área da base vezes a altura, e a área total soma todas as faces."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Cubo",
+          "statement": "Um cubo tem quantas arestas?",
+          "options": [
+            "12",
+            "6",
+            "8",
+            "24",
+            "4"
+          ],
+          "correct_index": 0,
+          "explanation": "4 em cima, 4 embaixo e 4 em pé.",
+          "pitfall": "8 são os vértices; 6, as faces."
+        },
+        {
+          "topic": "Euler",
+          "statement": "A relação de Euler diz que:",
+          "options": [
+            "V − A + F = 2",
+            "V + A + F = 2",
+            "V − A − F = 0",
+            "V × A = F",
+            "A = V + F"
+          ],
+          "correct_index": 0,
+          "explanation": "Vértices menos arestas mais faces dá 2.",
+          "pitfall": "“V + A + F = 2” erra o sinal das arestas."
+        },
+        {
+          "topic": "Arestas",
+          "statement": "Um poliedro tem 6 vértices e 5 faces. Pela relação de Euler, ele tem quantas arestas?",
+          "options": [
+            "9",
+            "11",
+            "1",
+            "13",
+            "7"
+          ],
+          "correct_index": 0,
+          "explanation": "6 − A + 5 = 2, então A = 9.",
+          "pitfall": "11 só somou vértices e faces."
+        },
+        {
+          "topic": "Volume",
+          "statement": "Uma caixa mede 3 m × 2 m × 5 m. O volume é:",
+          "options": [
+            "30 m³",
+            "10 m³",
+            "62 m²",
+            "30 m²",
+            "15 m³"
+          ],
+          "correct_index": 0,
+          "explanation": "3 × 2 × 5 = 30 m³.",
+          "pitfall": "30 m² usou a unidade de área."
+        },
+        {
+          "topic": "Prisma",
+          "statement": "O prisma tem:",
+          "options": [
+            "duas bases iguais e paralelas",
+            "uma base só e uma ponta no topo",
+            "faces curvas",
+            "só faces triangulares",
+            "nenhuma base"
+          ],
+          "correct_index": 0,
+          "explanation": "Duas bases ligadas por retângulos.",
+          "pitfall": "Uma base e uma ponta é a pirâmide."
+        },
+        {
+          "topic": "Planificação",
+          "statement": "A planificação de um cubo é formada por:",
+          "options": [
+            "seis quadrados",
+            "quatro triângulos",
+            "dois círculos e um retângulo",
+            "seis triângulos",
+            "três quadrados"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada face do cubo é um quadrado.",
+          "pitfall": "Dois círculos e um retângulo formam a lata, outro sólido."
+        },
+        {
+          "topic": "Unidade",
+          "statement": "O volume de uma caixa se mede em:",
+          "options": [
+            "metros cúbicos",
+            "metros quadrados",
+            "metros",
+            "graus",
+            "litros por metro"
+          ],
+          "correct_index": 0,
+          "explanation": "Volume tem três medidas: m³.",
+          "pitfall": "Metro quadrado é área."
+        },
+        {
+          "topic": "Faces",
+          "format": "match",
+          "statement": "Ligue cada sólido ao número de faces.",
+          "pairs": [
+            {
+              "left": "cubo",
+              "right": "6 faces"
+            },
+            {
+              "left": "pirâmide de base quadrada",
+              "right": "5 faces"
+            },
+            {
+              "left": "tetraedro, a pirâmide de base triangular",
+              "right": "4 faces"
+            },
+            {
+              "left": "prisma hexagonal",
+              "right": "8 faces"
+            }
+          ],
+          "explanation": "Conte as bases e as faces do lado.",
+          "pitfall": "O prisma hexagonal tem 6 faces do lado e 2 bases."
+        },
+        {
+          "topic": "Dado",
+          "statement": "Um dado tem quantas faces?",
+          "options": [
+            "6",
+            "8",
+            "12",
+            "4",
+            "10"
+          ],
+          "correct_index": 0,
+          "explanation": "Uma para cada número.",
+          "pitfall": "12 são as arestas.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Aresta",
+          "statement": "A linha onde duas faces se encontram é a:",
+          "options": [
+            "aresta",
+            "base",
+            "altura",
+            "diagonal",
+            "face"
+          ],
+          "correct_index": 0,
+          "explanation": "É a “dobra” da caixa.",
+          "pitfall": "A ponta é o vértice.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Área do cubo",
+          "statement": "Um cubo tem aresta de 2 cm. A área total é:",
+          "options": [
+            "24 cm²",
+            "8 cm²",
+            "12 cm²",
+            "16 cm²",
+            "4 cm²"
+          ],
+          "correct_index": 0,
+          "explanation": "6 faces de 4 cm²: 24 cm².",
+          "pitfall": "8 é o volume em cm³, não a área.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Base hexagonal",
+          "statement": "Um prisma de base hexagonal tem quantas faces?",
+          "options": [
+            "8",
+            "6",
+            "12",
+            "7",
+            "18"
+          ],
+          "correct_index": 0,
+          "explanation": "6 do lado mais 2 bases.",
+          "pitfall": "6 esqueceu as bases.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Doze pentágonos",
+          "statement": "Um poliedro tem 12 faces pentagonais, e cada aresta é dividida por duas faces. Ele tem quantos vértices?",
+          "options": [
+            "20",
+            "30",
+            "12",
+            "60",
+            "32"
+          ],
+          "correct_index": 0,
+          "explanation": "Arestas: 12 × 5 ÷ 2 = 30. Pela relação de Euler, V = 2 + 30 − 12 = 20.",
+          "pitfall": "30 são as arestas, não os vértices.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Dobrar a aresta",
+          "statement": "Se a aresta de um cubo dobra, o volume:",
+          "options": [
+            "fica 8 vezes maior",
+            "dobra",
+            "fica 4 vezes maior",
+            "fica 6 vezes maior",
+            "não muda"
+          ],
+          "correct_index": 0,
+          "explanation": "2 × 2 × 2 = 8.",
+          "pitfall": "4 vezes é o que acontece com a área.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "piramide-cone-esfera",
+      "title": "Pirâmide, cilindro, cone e esfera",
+      "module": "Geometria espacial",
+      "summary": "Latas, cones de sorvete e bolas têm fórmulas próprias. A lição mostra o volume do cilindro, por que o cone guarda um terço dele, a esfera e o efeito de dobrar as medidas.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O cone de sorvete e a lata",
+          "body": [
+            "Encha um cone de sorvete com água e despeje numa lata de mesma base e mesma altura. Você vai precisar de três cones para encher a lata.",
+            "Essa é a ideia central da lição: o que tem ponta guarda um terço do que não tem."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Volume do cilindro",
+          "body": [
+            "O cilindro funciona como um prisma: o volume é a área da base vezes a altura. Como a base é um círculo, o volume é π × r² × h."
+          ],
+          "example": {
+            "label": "Uma lata de raio 5 cm e altura 10 cm",
+            "lines": [
+              "Área da base: π × 25 ≈ 78,5 cm².",
+              "Volume: 78,5 × 10 = 785 cm³, quase 0,8 litro."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "cilindro",
+              "meaning": "o sólido de duas bases circulares iguais, como uma lata."
+            },
+            {
+              "word": "pi (π)",
+              "meaning": "o número que vale cerca de 3,14. O contorno de um círculo mede 2π vezes o raio."
+            },
+            {
+              "word": "prisma",
+              "meaning": "o sólido de duas bases iguais e paralelas, como uma caixa."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Pirâmide e cone: um terço",
+          "body": [
+            "A pirâmide tem uma base e faces que se juntam numa ponta. O cone é a mesma ideia com a base redonda.",
+            "O volume dos dois é um terço da área da base vezes a altura. É a conta dos três cones que enchem a lata."
+          ],
+          "example": {
+            "label": "Um cone de raio 3 cm e altura 10 cm",
+            "lines": [
+              "Área da base: π × 9 ≈ 28,3 cm².",
+              "Volume: 28,3 × 10 ÷ 3 ≈ 94 cm³."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "pirâmide",
+              "meaning": "o sólido com uma base e faces triangulares que se juntam numa ponta só, o vértice."
+            },
+            {
+              "word": "vértice",
+              "meaning": "o ponto de encontro das linhas de um sólido; na pirâmide e no cone, é a ponta."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A esfera",
+          "body": [
+            "A esfera é a bola: todos os pontos da superfície ficam à mesma distância do centro, o raio.",
+            "Volume: 4/3 × π × r³. Área da superfície: 4 × π × r²."
+          ],
+          "example": {
+            "label": "Uma bola de raio 10 cm",
+            "lines": [
+              "Volume: 4/3 × 3,14 × 1.000 ≈ 4.187 cm³, cerca de 4,2 litros.",
+              "Superfície: 4 × 3,14 × 100 = 1.256 cm²."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "As fórmulas lado a lado",
+          "body": [
+            "Com ponta, divide por 3. Sem ponta, não divide. A esfera tem fórmula própria."
+          ],
+          "table": {
+            "label": "Os volumes",
+            "headers": [
+              "Sólido",
+              "Volume"
+            ],
+            "rows": [
+              [
+                "prisma",
+                "área da base × altura"
+              ],
+              [
+                "cilindro",
+                "π × r² × h"
+              ],
+              [
+                "pirâmide",
+                "área da base × altura ÷ 3"
+              ],
+              [
+                "cone",
+                "π × r² × h ÷ 3"
+              ],
+              [
+                "esfera",
+                "4/3 × π × r³"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Dobrar as medidas",
+          "body": [
+            "Se todas as medidas de um sólido dobram, o volume fica 8 vezes maior: 2 × 2 × 2. A área fica 4 vezes maior.",
+            "Por isso uma melancia com o dobro do diâmetro tem 8 vezes mais polpa."
+          ],
+          "terms": [
+            {
+              "word": "diâmetro",
+              "meaning": "o segmento que atravessa o círculo pelo centro. Mede duas vezes o raio."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova compara embalagens, caixas-d'água e copos e pede o volume ou quantas vezes um cabe no outro. Cuidado com litros: 1 litro é 1.000 cm³."
+          ],
+          "bullets": [
+            "“Um reservatório cilíndrico tem raio de 2 m e altura de 3 m…”",
+            "“Um copo cônico e um copo cilíndrico de mesma base e altura…”",
+            "“Uma bola de raio 6 cm…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Esquecer o ÷ 3 na pirâmide e no cone.",
+            "Usar o diâmetro no lugar do raio. As fórmulas usam o raio.",
+            "Achar que dobrar o raio dobra o volume da esfera. Ele fica 8 vezes maior.",
+            "Esquecer de converter: 1 litro = 1.000 cm³ e 1 m³ = 1.000 litros."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Cilindro: π × r² × h. Pirâmide e cone: um terço da base vezes a altura. Esfera: 4/3 × π × r³.",
+            "Dobrar todas as medidas multiplica o volume por 8. E 1 litro são 1.000 cm³."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Lata",
+          "statement": "Uma lata de raio 2 cm e altura 10 cm, com π ≈ 3, tem volume de cerca de:",
+          "options": [
+            "120 cm³",
+            "60 cm³",
+            "40 cm³",
+            "240 cm³",
+            "20 cm³"
+          ],
+          "correct_index": 0,
+          "explanation": "3 × 4 × 10 = 120 cm³.",
+          "pitfall": "40 cm³ dividiu por 3, como se fosse um cone."
+        },
+        {
+          "topic": "Um terço",
+          "statement": "Um cone e um cilindro têm mesma base e mesma altura. O volume do cone é:",
+          "options": [
+            "um terço do cilindro",
+            "igual ao cilindro",
+            "o dobro do cilindro",
+            "metade do cilindro",
+            "três vezes o cilindro"
+          ],
+          "correct_index": 0,
+          "explanation": "Três cones enchem o cilindro.",
+          "pitfall": "“Metade” é o palpite comum, mas errado."
+        },
+        {
+          "topic": "Pirâmide",
+          "statement": "Uma pirâmide tem base de 9 m² e altura 4 m. O volume é:",
+          "options": [
+            "12 m³",
+            "36 m³",
+            "13 m³",
+            "108 m³",
+            "18 m³"
+          ],
+          "correct_index": 0,
+          "explanation": "9 × 4 ÷ 3 = 12 m³.",
+          "pitfall": "36 esqueceu o ÷ 3."
+        },
+        {
+          "topic": "Esfera",
+          "statement": "O volume da esfera é:",
+          "options": [
+            "4/3 × π × r³",
+            "π × r² × h",
+            "4 × π × r²",
+            "π × r²",
+            "r³ ÷ 3"
+          ],
+          "correct_index": 0,
+          "explanation": "É a fórmula própria da esfera.",
+          "pitfall": "4 × π × r² é a área da superfície."
+        },
+        {
+          "topic": "Litro",
+          "statement": "Um litro corresponde a:",
+          "options": [
+            "1.000 cm³",
+            "100 cm³",
+            "10 cm³",
+            "1 m³",
+            "10.000 cm³"
+          ],
+          "correct_index": 0,
+          "explanation": "Um cubo de 10 cm de lado.",
+          "pitfall": "1 m³ são 1.000 litros."
+        },
+        {
+          "topic": "Cilindro",
+          "statement": "O volume do cilindro é:",
+          "options": [
+            "área da base × altura",
+            "área da base × altura ÷ 3",
+            "4/3 × π × r³",
+            "base + altura",
+            "π × diâmetro"
+          ],
+          "correct_index": 0,
+          "explanation": "Igual ao prisma, com base redonda.",
+          "pitfall": "÷ 3 é para o cone."
+        },
+        {
+          "topic": "Raio",
+          "statement": "Nas fórmulas de volume, usa-se:",
+          "options": [
+            "o raio",
+            "o diâmetro",
+            "o contorno",
+            "a área total",
+            "o ângulo"
+          ],
+          "correct_index": 0,
+          "explanation": "r é sempre o raio.",
+          "pitfall": "Usar o diâmetro multiplica o erro."
+        },
+        {
+          "topic": "Volumes",
+          "format": "match",
+          "statement": "Ligue cada sólido à fórmula do volume.",
+          "pairs": [
+            {
+              "left": "cilindro",
+              "right": "π × r² × h"
+            },
+            {
+              "left": "cone",
+              "right": "π × r² × h ÷ 3"
+            },
+            {
+              "left": "esfera",
+              "right": "4/3 × π × r³"
+            },
+            {
+              "left": "pirâmide",
+              "right": "área da base × altura ÷ 3"
+            }
+          ],
+          "explanation": "Ponta divide por 3.",
+          "pitfall": "A esfera não segue a regra base × altura."
+        },
+        {
+          "topic": "Sem ponta",
+          "statement": "Qual sólido NÃO tem ponta?",
+          "options": [
+            "o cilindro",
+            "o cone",
+            "a pirâmide de base triangular",
+            "a pirâmide de base quadrada",
+            "a pirâmide de base hexagonal"
+          ],
+          "correct_index": 0,
+          "explanation": "O cilindro tem duas bases.",
+          "pitfall": "Toda pirâmide tem ponta.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "1 m³",
+          "statement": "Uma caixa-d'água de 1 m³ guarda:",
+          "options": [
+            "1.000 litros",
+            "100 litros",
+            "10 litros",
+            "1 litro",
+            "10.000 litros"
+          ],
+          "correct_index": 0,
+          "explanation": "1 m³ = 1.000 litros.",
+          "pitfall": "100 litros esquece um zero.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Copos",
+          "statement": "Um copo em forma de cone tem mesma base e altura de um copo cilíndrico. Quantos cones cheios enchem o cilindro?",
+          "options": [
+            "3",
+            "2",
+            "1",
+            "4",
+            "6"
+          ],
+          "correct_index": 0,
+          "explanation": "O cone é um terço do cilindro.",
+          "pitfall": "2 é o palpite da metade.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Bola",
+          "statement": "Uma bola de raio 3 cm, com π ≈ 3, tem volume de cerca de:",
+          "options": [
+            "108 cm³",
+            "36 cm³",
+            "27 cm³",
+            "324 cm³",
+            "81 cm³"
+          ],
+          "correct_index": 0,
+          "explanation": "4/3 × 3 × 27 = 108 cm³.",
+          "pitfall": "324 esqueceu de dividir por 3.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Melancia",
+          "statement": "Uma melancia tem o dobro do diâmetro de outra, com o mesmo formato. Ela tem quantas vezes mais polpa?",
+          "options": [
+            "8",
+            "2",
+            "4",
+            "6",
+            "16"
+          ],
+          "correct_index": 0,
+          "explanation": "Volume cresce com o cubo: 2³ = 8.",
+          "pitfall": "4 vezes seria a casca, a área.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Reservatório",
+          "statement": "Um reservatório cilíndrico tem raio 2 m e altura 3 m. Com π ≈ 3, ele guarda:",
+          "options": [
+            "36.000 litros",
+            "36 litros",
+            "3.600 litros",
+            "12.000 litros",
+            "360 litros"
+          ],
+          "correct_index": 0,
+          "explanation": "3 × 4 × 3 = 36 m³, ou 36.000 litros.",
+          "pitfall": "12.000 litros dividiu por 3, como se fosse um cone.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "distancia-e-ponto-medio",
+      "title": "Distância entre dois pontos e ponto médio",
+      "module": "Geometria analítica",
+      "summary": "No plano cartesiano, cada ponto tem endereço. A lição mostra como a distância entre dois pontos sai de Pitágoras e como achar o ponto do meio.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Ruas em grade",
+          "body": [
+            "Numa cidade de ruas em grade, você anda 3 quadras para o leste e 4 para o norte. Em linha reta, quão longe você ficou?",
+            "Andando, foram 7 quadras. Voando, a resposta é 5, e quem diz isso é Pitágoras."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Pontos com endereço",
+          "body": [
+            "No plano cartesiano, cada ponto tem duas coordenadas: (x, y). O x diz quanto andar na horizontal, e o y, na vertical."
+          ],
+          "example": {
+            "label": "Lendo pontos",
+            "lines": [
+              "(3, 2): 3 para a direita e 2 para cima.",
+              "(−1, 4): 1 para a esquerda e 4 para cima.",
+              "(0, 0): o cruzamento dos eixos, a origem."
+            ]
+          },
+          "terms": [
+            {
+              "word": "eixo",
+              "meaning": "cada uma das duas retas graduadas do plano: a horizontal (x) e a vertical (y)."
+            },
+            {
+              "word": "plano cartesiano",
+              "meaning": "o plano com dois eixos, um horizontal e um vertical, que dão um endereço para cada ponto."
+            },
+            {
+              "word": "coordenada",
+              "meaning": "cada número do endereço de um ponto. Em (3, 2), o 3 é a posição no eixo x e o 2 no eixo y."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A distância é Pitágoras",
+          "body": [
+            "Entre dois pontos, a diferença dos x e a diferença dos y formam os catetos de um triângulo retângulo. A distância é a hipotenusa.",
+            "Por isso: d = √((x₂ − x₁)² + (y₂ − y₁)²)."
+          ],
+          "terms": [
+            {
+              "word": "ângulo reto",
+              "meaning": "o ângulo de 90°, o canto de uma folha de papel."
+            },
+            {
+              "word": "hipotenusa",
+              "meaning": "o maior lado do triângulo retângulo, sempre em frente ao ângulo reto."
+            },
+            {
+              "word": "cateto",
+              "meaning": "cada um dos dois lados que formam o ângulo reto."
+            },
+            {
+              "word": "raiz quadrada",
+              "meaning": "o número que, multiplicado por ele mesmo, dá o valor de dentro. A raiz quadrada de 25 é 5, porque 5 × 5 = 25."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Um exemplo",
+          "body": [
+            "A ordem dos pontos não importa, porque a diferença vai ao quadrado e o sinal some."
+          ],
+          "example": {
+            "label": "De A(1, 2) até B(4, 6)",
+            "lines": [
+              "Diferença dos x: 4 − 1 = 3.",
+              "Diferença dos y: 6 − 2 = 4.",
+              "d = √(3² + 4²) = √25 = 5."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O ponto médio",
+          "body": [
+            "O ponto médio fica no meio do caminho. Suas coordenadas são as médias das coordenadas das pontas.",
+            "Ponto médio de A(1, 2) e B(5, 8): ((1 + 5) ÷ 2, (2 + 8) ÷ 2) = (3, 5)."
+          ],
+          "terms": [
+            {
+              "word": "ponto médio",
+              "meaning": "o ponto que fica exatamente no meio de um segmento."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Para que serve",
+          "body": [
+            "Distância e ponto médio resolvem problemas de mapa. Por exemplo: onde instalar uma antena à mesma distância de duas cidades, ou quanto cabo é preciso entre dois postes."
+          ],
+          "example": {
+            "label": "Duas cidades no mapa",
+            "lines": [
+              "A cidade A fica em (0, 0) e a B em (6, 8), em quilômetros.",
+              "Distância: √(36 + 64) = √100 = 10 km.",
+              "Ponto médio: (3, 4), a 5 km de cada uma."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá pontos num mapa e pede a distância, o ponto médio ou o perímetro de uma figura. Desenhe o triângulo retângulo e use Pitágoras."
+          ],
+          "bullets": [
+            "“A distância entre os pontos A(2, 3) e B(5, 7) é…”",
+            "“O ponto médio do segmento AB é…”",
+            "“Uma antena deve ficar no ponto médio entre…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Somar as diferenças em vez de usar Pitágoras. Andar 3 e 4 quadras dá 7, mas a distância em linha reta é 5.",
+            "Esquecer a raiz quadrada no final.",
+            "Subtrair no ponto médio. Ponto médio é a média: some e divida por 2.",
+            "Trocar x com y. O primeiro número é sempre o da horizontal."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Cada ponto tem coordenadas (x, y). A distância entre dois pontos é a hipotenusa do triângulo formado pelas diferenças: d = √((x₂ − x₁)² + (y₂ − y₁)²).",
+            "O ponto médio é a média das coordenadas: some e divida por 2."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Distância",
+          "statement": "A distância entre A(0, 0) e B(3, 4) é:",
+          "options": [
+            "5",
+            "7",
+            "1",
+            "12",
+            "25"
+          ],
+          "correct_index": 0,
+          "explanation": "√(9 + 16) = √25 = 5.",
+          "pitfall": "7 somou as diferenças, como quem anda pelas ruas."
+        },
+        {
+          "topic": "Ponto médio",
+          "statement": "O ponto médio entre A(2, 4) e B(6, 8) é:",
+          "options": [
+            "(4, 6)",
+            "(8, 12)",
+            "(2, 2)",
+            "(4, 4)",
+            "(3, 6)"
+          ],
+          "correct_index": 0,
+          "explanation": "((2 + 6) ÷ 2, (4 + 8) ÷ 2) = (4, 6).",
+          "pitfall": "(8, 12) somou e esqueceu de dividir."
+        },
+        {
+          "topic": "De onde vem",
+          "statement": "A fórmula da distância entre dois pontos vem:",
+          "options": [
+            "do teorema de Pitágoras",
+            "da semelhança de triângulos",
+            "da soma dos ângulos",
+            "da área do círculo",
+            "da relação de Euler"
+          ],
+          "correct_index": 0,
+          "explanation": "As diferenças são os catetos.",
+          "pitfall": "A soma dos ângulos não mede distância."
+        },
+        {
+          "topic": "Coordenada",
+          "statement": "No ponto (−2, 5), o −2 indica:",
+          "options": [
+            "2 para a esquerda, na horizontal",
+            "2 para baixo",
+            "5 para a esquerda",
+            "a distância até a origem",
+            "a área"
+          ],
+          "correct_index": 0,
+          "explanation": "O primeiro número é o da horizontal.",
+          "pitfall": "“2 para baixo” trocou x com y."
+        },
+        {
+          "topic": "Origem",
+          "statement": "O ponto (0, 0) é chamado de:",
+          "options": [
+            "origem",
+            "ponto médio",
+            "vértice",
+            "hipotenusa",
+            "raio"
+          ],
+          "correct_index": 0,
+          "explanation": "É o cruzamento dos eixos.",
+          "pitfall": "Ponto médio depende de dois pontos."
+        },
+        {
+          "topic": "Ordem",
+          "statement": "Ao calcular a distância de A até B ou de B até A, o resultado:",
+          "options": [
+            "é o mesmo",
+            "muda de sinal",
+            "dobra",
+            "fica negativo",
+            "depende do quadrante"
+          ],
+          "correct_index": 0,
+          "explanation": "As diferenças vão ao quadrado, e o sinal some.",
+          "pitfall": "Distância nunca é negativa."
+        },
+        {
+          "topic": "Cidades",
+          "statement": "Duas cidades estão em (0, 0) e (6, 8), em km. A distância em linha reta é:",
+          "options": [
+            "10 km",
+            "14 km",
+            "48 km",
+            "100 km",
+            "2 km"
+          ],
+          "correct_index": 0,
+          "explanation": "√(36 + 64) = √100 = 10.",
+          "pitfall": "100 esqueceu a raiz."
+        },
+        {
+          "topic": "Contas",
+          "format": "match",
+          "statement": "Ligue cada pergunta à conta.",
+          "pairs": [
+            {
+              "left": "distância em linha reta",
+              "right": "raiz da soma dos quadrados das diferenças"
+            },
+            {
+              "left": "ponto médio",
+              "right": "média das coordenadas"
+            },
+            {
+              "left": "caminho pelas ruas em grade",
+              "right": "soma das diferenças"
+            },
+            {
+              "left": "origem",
+              "right": "o ponto (0, 0)"
+            }
+          ],
+          "explanation": "Linha reta é Pitágoras; ruas são soma.",
+          "pitfall": "Ponto médio soma e divide por 2."
+        },
+        {
+          "topic": "Horizontal",
+          "statement": "Em (x, y), o primeiro número indica a posição:",
+          "options": [
+            "na horizontal",
+            "na vertical",
+            "na diagonal",
+            "no tempo",
+            "no círculo"
+          ],
+          "correct_index": 0,
+          "explanation": "x é a horizontal.",
+          "pitfall": "A vertical é o y.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Meio da reta",
+          "statement": "O ponto médio entre 2 e 10 numa reta é:",
+          "options": [
+            "6",
+            "8",
+            "12",
+            "4",
+            "5"
+          ],
+          "correct_index": 0,
+          "explanation": "(2 + 10) ÷ 2 = 6.",
+          "pitfall": "8 é a distância, não o meio.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Quadras",
+          "statement": "Você anda 6 quadras para o leste e 8 para o norte. A distância em linha reta até o ponto de partida é:",
+          "options": [
+            "10 quadras",
+            "14 quadras",
+            "48 quadras",
+            "2 quadras",
+            "100 quadras"
+          ],
+          "correct_index": 0,
+          "explanation": "√(36 + 64) = 10.",
+          "pitfall": "14 é o caminho andado, não a linha reta.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Negativos",
+          "statement": "A distância entre A(−1, −1) e B(2, 3) é:",
+          "options": [
+            "5",
+            "√5",
+            "7",
+            "3",
+            "25"
+          ],
+          "correct_index": 0,
+          "explanation": "Diferenças 3 e 4: √25 = 5.",
+          "pitfall": "√5 usou 2 − 1 e 3 − 1, esquecendo os sinais.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Ponta que falta",
+          "statement": "O ponto médio de AB é M(3, 4), e A é (1, 1). O ponto B é:",
+          "options": [
+            "(5, 7)",
+            "(7, 5)",
+            "(4, 5)",
+            "(2, 3)",
+            "(6, 8)"
+          ],
+          "correct_index": 0,
+          "explanation": "De A até M anda-se (2, 3). Andando de novo: (5, 7).",
+          "pitfall": "(7, 5) trocou x com y.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Mais perto",
+          "statement": "Qual ponto está mais perto da origem: P(3, 4) ou Q(5, 1)?",
+          "options": [
+            "P, a 5 de distância; Q fica a cerca de 5,1",
+            "Q, porque 5 + 1 é menor que 3 + 4",
+            "os dois estão à mesma distância",
+            "Q, porque tem o y menor",
+            "não dá para saber"
+          ],
+          "correct_index": 0,
+          "explanation": "P: √25 = 5. Q: √26 ≈ 5,1.",
+          "pitfall": "Comparar as somas é medir pelas ruas, não em linha reta.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "reta-e-circunferencia",
+      "title": "A equação da reta e a da circunferência",
+      "module": "Geometria analítica",
+      "summary": "Toda reta e toda circunferência têm uma regra. A lição mostra y = mx + n e a inclinação, as retas paralelas e perpendiculares e como ler o centro e o raio de uma circunferência.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A rampa de skate",
+          "body": [
+            "Uma rampa que sobe 1 metro a cada 2 metros andados tem sempre a mesma inclinação. Em qualquer trecho, a conta é a mesma.",
+            "Uma reta no plano é assim: um número diz o quanto ela sobe, e outro diz onde ela começa."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A equação reduzida da reta",
+          "body": [
+            "Toda reta não vertical pode ser escrita como y = mx + n. O m é o coeficiente angular, a inclinação.",
+            "O n é onde a reta corta o eixo vertical. Os pontos (x, y) que obedecem à equação formam a reta."
+          ],
+          "terms": [
+            {
+              "word": "equação",
+              "meaning": "uma igualdade com um valor desconhecido. A equação de uma figura é a regra que todos os pontos dela obedecem."
+            },
+            {
+              "word": "coeficiente angular",
+              "meaning": "o número que diz quanto a reta sobe a cada passo para a direita. É a inclinação da reta."
+            },
+            {
+              "word": "eixo",
+              "meaning": "cada uma das duas retas graduadas do plano: a horizontal (x) e a vertical (y)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Achando a inclinação",
+          "body": [
+            "Com dois pontos, a inclinação é a variação de y dividida pela variação de x: m = (y₂ − y₁) ÷ (x₂ − x₁)."
+          ],
+          "example": {
+            "label": "A reta por (1, 3) e (3, 7)",
+            "lines": [
+              "m = (7 − 3) ÷ (3 − 1) = 4 ÷ 2 = 2.",
+              "y = 2x + n. Usando (1, 3): 3 = 2 × 1 + n, então n = 1.",
+              "Equação: y = 2x + 1."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O sinal da inclinação",
+          "body": [
+            "Só de olhar o m, você sabe o desenho da reta. A reta vertical é a exceção: ela tem a forma x = número."
+          ],
+          "table": {
+            "label": "O que o m diz",
+            "headers": [
+              "m",
+              "A reta"
+            ],
+            "rows": [
+              [
+                "positivo",
+                "sobe da esquerda para a direita"
+              ],
+              [
+                "negativo",
+                "desce da esquerda para a direita"
+              ],
+              [
+                "zero",
+                "é horizontal"
+              ],
+              [
+                "não existe",
+                "é vertical: x = número"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Paralelas e perpendiculares",
+          "body": [
+            "Retas paralelas têm a mesma inclinação: mesmo m. Retas perpendiculares, que se cruzam em ângulo reto, têm inclinações que multiplicadas dão −1."
+          ],
+          "example": {
+            "label": "Duas retas",
+            "lines": [
+              "y = 2x + 1 e y = 2x − 5: paralelas (m = 2 nas duas).",
+              "y = 2x + 1 e y = −x/2 + 3: perpendiculares, porque 2 × (−1/2) = −1."
+            ]
+          },
+          "terms": [
+            {
+              "word": "ângulo reto",
+              "meaning": "o ângulo de 90°, o canto de uma folha de papel."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A equação da circunferência",
+          "body": [
+            "A circunferência é feita de todos os pontos à mesma distância r do centro (a, b). Pela fórmula da distância, eles obedecem a (x − a)² + (y − b)² = r²."
+          ],
+          "example": {
+            "label": "Lendo uma equação",
+            "lines": [
+              "(x − 2)² + (y + 1)² = 9.",
+              "Centro: (2, −1). Repare no sinal trocado.",
+              "Raio: √9 = 3."
+            ]
+          },
+          "terms": [
+            {
+              "word": "circunferência",
+              "meaning": "a linha do contorno do círculo: todos os pontos à mesma distância do centro."
+            },
+            {
+              "word": "raiz quadrada",
+              "meaning": "o número que, multiplicado por ele mesmo, dá o valor de dentro. A raiz quadrada de 25 é 5, porque 5 × 5 = 25."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede a equação de uma reta por dois pontos ou a inclinação dela. Também cobra retas paralelas e perpendiculares, e o centro e o raio de uma circunferência."
+          ],
+          "bullets": [
+            "“A equação da reta que passa por (0, 2) e (2, 6) é…”",
+            "“As retas r e s são perpendiculares se…”",
+            "“O centro e o raio da circunferência (x − 3)² + y² = 16 são…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Inverter a conta da inclinação. É variação de y sobre variação de x.",
+            "Esquecer o sinal trocado no centro. Em (x − 2)², o centro tem x = 2; em (y + 1)², y = −1.",
+            "Achar que perpendiculares têm o mesmo m. Mesmo m é paralela; perpendicular dá produto −1.",
+            "Esquecer a raiz no raio. Se a equação termina em 9, o raio é 3."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A reta é y = mx + n: m é a inclinação, e n é onde ela corta o eixo vertical. Paralelas têm o mesmo m; perpendiculares têm produto −1.",
+            "A circunferência de centro (a, b) e raio r é (x − a)² + (y − b)² = r²."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Inclinação",
+          "statement": "Na reta y = 3x + 2, a inclinação é:",
+          "options": [
+            "3",
+            "2",
+            "5",
+            "1",
+            "6"
+          ],
+          "correct_index": 0,
+          "explanation": "O m é o número que multiplica o x.",
+          "pitfall": "2 é onde a reta corta o eixo vertical."
+        },
+        {
+          "topic": "Corte",
+          "statement": "A reta y = 3x + 2 corta o eixo vertical em:",
+          "options": [
+            "y = 2",
+            "y = 3",
+            "y = 5",
+            "y = 0",
+            "y = −2"
+          ],
+          "correct_index": 0,
+          "explanation": "Com x = 0, y = 2.",
+          "pitfall": "3 é a inclinação."
+        },
+        {
+          "topic": "Dois pontos",
+          "statement": "A inclinação da reta que passa por (0, 1) e (2, 5) é:",
+          "options": [
+            "2",
+            "4",
+            "0,5",
+            "3",
+            "6"
+          ],
+          "correct_index": 0,
+          "explanation": "(5 − 1) ÷ (2 − 0) = 2.",
+          "pitfall": "0,5 inverteu a conta."
+        },
+        {
+          "topic": "Paralela",
+          "statement": "A reta paralela a y = 4x − 1 tem inclinação:",
+          "options": [
+            "4",
+            "−4",
+            "−1/4",
+            "1",
+            "0"
+          ],
+          "correct_index": 0,
+          "explanation": "Paralelas têm o mesmo m.",
+          "pitfall": "−1/4 seria a perpendicular."
+        },
+        {
+          "topic": "Perpendicular",
+          "statement": "A reta perpendicular a y = 2x tem inclinação:",
+          "options": [
+            "−1/2",
+            "2",
+            "−2",
+            "1/2",
+            "0"
+          ],
+          "correct_index": 0,
+          "explanation": "2 × (−1/2) = −1.",
+          "pitfall": "−2 trocou só o sinal, sem inverter."
+        },
+        {
+          "topic": "Centro",
+          "statement": "O centro da circunferência (x − 3)² + (y − 5)² = 4 é:",
+          "options": [
+            "(3, 5)",
+            "(−3, −5)",
+            "(5, 3)",
+            "(3, 5), com raio 4",
+            "(0, 0)"
+          ],
+          "correct_index": 0,
+          "explanation": "O centro tem os números com sinal trocado.",
+          "pitfall": "O raio é √4 = 2, e não 4."
+        },
+        {
+          "topic": "Raio",
+          "statement": "O raio da circunferência x² + y² = 25 é:",
+          "options": [
+            "5",
+            "25",
+            "12,5",
+            "√5",
+            "0"
+          ],
+          "correct_index": 0,
+          "explanation": "√25 = 5.",
+          "pitfall": "25 esqueceu a raiz."
+        },
+        {
+          "topic": "Retas",
+          "format": "match",
+          "statement": "Ligue cada equação ao desenho da reta.",
+          "pairs": [
+            {
+              "left": "y = 2x + 1",
+              "right": "sobe"
+            },
+            {
+              "left": "y = −x + 4",
+              "right": "desce"
+            },
+            {
+              "left": "y = 3",
+              "right": "horizontal"
+            },
+            {
+              "left": "x = 3",
+              "right": "vertical"
+            }
+          ],
+          "explanation": "O sinal do m conta o desenho.",
+          "pitfall": "y = 3 é horizontal; x = 3 é vertical."
+        },
+        {
+          "topic": "Negativa",
+          "statement": "Uma reta com inclinação negativa:",
+          "options": [
+            "desce da esquerda para a direita",
+            "sobe da esquerda para a direita",
+            "é horizontal",
+            "é vertical",
+            "não existe"
+          ],
+          "correct_index": 0,
+          "explanation": "m negativo: desce.",
+          "pitfall": "Subir é m positivo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "y = 7",
+          "statement": "A reta y = 7 é:",
+          "options": [
+            "horizontal",
+            "vertical",
+            "inclinada para cima",
+            "inclinada para baixo",
+            "uma circunferência"
+          ],
+          "correct_index": 0,
+          "explanation": "m = 0: horizontal.",
+          "pitfall": "Vertical seria x = 7.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Equação",
+          "statement": "A equação da reta que passa por (0, 2) e (2, 6) é:",
+          "options": [
+            "y = 2x + 2",
+            "y = 4x + 2",
+            "y = 2x + 6",
+            "y = x + 2",
+            "y = 3x"
+          ],
+          "correct_index": 0,
+          "explanation": "m = 4 ÷ 2 = 2, e com x = 0, y = 2.",
+          "pitfall": "y = 4x + 2 esqueceu de dividir pela variação de x.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Sinal trocado",
+          "statement": "O centro de (x + 4)² + (y − 1)² = 9 é:",
+          "options": [
+            "(−4, 1)",
+            "(4, −1)",
+            "(4, 1)",
+            "(−4, −1)",
+            "(9, 0)"
+          ],
+          "correct_index": 0,
+          "explanation": "x + 4 = x − (−4): o centro tem x = −4.",
+          "pitfall": "(4, −1) trocou os dois sinais ao contrário.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Perpendiculares?",
+          "statement": "As retas y = 3x + 1 e y = −x/3 + 5 são:",
+          "options": [
+            "perpendiculares, porque 3 × (−1/3) = −1",
+            "paralelas, porque cortam o eixo em pontos diferentes",
+            "paralelas, porque 3 e 1/3 são parecidos",
+            "a mesma reta",
+            "nem paralelas nem perpendiculares"
+          ],
+          "correct_index": 0,
+          "explanation": "O produto das inclinações é −1.",
+          "pitfall": "Cortar o eixo em pontos diferentes não diz nada sobre ser paralela.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Ponto na circunferência",
+          "statement": "O ponto (3, 4) está na circunferência x² + y² = 25?",
+          "options": [
+            "sim, porque 9 + 16 = 25",
+            "não, porque 3 + 4 = 7",
+            "sim, porque 3 × 4 = 12",
+            "não, porque o raio é 25",
+            "não dá para saber"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele obedece à equação.",
+          "pitfall": "“O raio é 25” esqueceu a raiz: o raio é 5.",
+          "difficulty": "dificil"
+        }
+      ]
+    }
+  ]
+}
