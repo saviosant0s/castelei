@@ -178,10 +178,12 @@ probabilidade). Razão, proporção e porcentagem ficaram na básica.
 O formato `match` (ligar os pares) serve bem para vocabulário. Sem áudio por
 enquanto: a narração ainda é gravada à mão (ver o `CLAUDE.md`).
 
-### Espanhol — `espanhol-basico` (feito: 6 lições em três módulos, com os níveis)
+### Espanhol — `espanhol-basico` (feito: 12 lições em três módulos, com os níveis)
 
 Mesma espinha do Inglês, com os **falsos amigos** (heterossemânticos) em
 destaque, porque é o que a prova do ENEM cobra.
+
+Na segunda rodada entraram: possessivos e demonstrativos; verbos que mudam a vogal e os reflexivos; gustar e os parecidos; o imperativo dos anúncios; comparativos; conectivos (com sino, todavía e luego).
 
 ### Artes — `artes-basica` (feito: 5 lições em três módulos, com os níveis)
 
