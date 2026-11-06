@@ -249,10 +249,16 @@ export const SUBJECTS: SiteSubject[] = [
       "O verbo to be, presente, passado e futuro, o vocabulário do dia a dia e como ler um texto em inglês com estratégia, de olho nos falsos cognatos.",
     lessons: [
       "Cumprimentos, pronomes e o verbo to be",
+      "Substantivos, artigos e de quem é",
       "Presente simples e presente contínuo",
+      "Preposições: in, on e at",
       "Passado simples e os verbos irregulares",
+      "Present perfect: o passado que chega até hoje",
       "Futuro: will e going to",
+      "Can, must e should: poder, dever e aconselhar",
+      "Comparar: taller, more expensive, the best",
       "Vocabulário do dia a dia: números, horas, família e rotina",
+      "Conectivos: and, but, however e because",
       "Ler um texto em inglês com estratégia",
     ],
   },
@@ -354,5 +360,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 2366,
+  questions: 2450,
 };

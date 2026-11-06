@@ -165,6 +165,8 @@ const JARGON = [
   ["verbo regular e irregular", /\bverbos? (regular|irregular)(es)?\b/i, "wu"], ["verbo auxiliar", /\bauxiliar(es)?\b/i, "w"],
   ["cognato", /\bcognatos?\b/i, "wu"], ["falso cognato", /\bfalsos? cognatos?\b|\bfalsos? amigos?\b|\bheterossem(â|a)ntic(o|os)\b/i, "wu"],
   ["skimming e scanning", /\bskimming\b|\bscanning\b/i, "wu"],
+  ["verbo modal", /\bmodais\b|\bverbos? moda(l|is)\b/i, "w"], ["particípio", /(?<!\p{L})partic(í|i)pios?(?!\p{L})/iu, "wu"], ["comparativo e superlativo", /\bcomparativos?\b|\bsuperlativos?\b/i, "wu"],
+  ["preposição", /\bpreposi(ç|c)(ão|ões)\b/i, "wu"], ["conectivo", /\bconectivos?\b/i, "wu"], ["possessivo", /\bpossessiv(o|os|a|as)\b/i, "wu"],
   // Informática básica (escopo "k"): a porta de entrada, para quem nunca estudou computador.
   ["hardware e software", /\bhardware\b|\bsoftware\b/i, "k"], ["sistema operacional", /\bsistemas? operaciona(l|is)\b/i, "k"],
   ["processador", /\bprocessador(es)?\b/i, "k"], ["memória RAM", /(?<!\p{L})mem(ó|o)ria RAM(?!\p{L})|\bRAM\b/iu, "k"], ["armazenamento", /\barmazenamento\b|\bSSD\b/i, "k"],
