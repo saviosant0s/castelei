@@ -445,6 +445,27 @@ export const SUBJECTS: SiteSubject[] = [
       "A Nova República: de 1985 aos dias de hoje",
     ],
   },
+  {
+    slug: "geografia-do-brasil",
+    name: "Geografia do Brasil",
+    pitch:
+      "O território, o relevo, os climas e os domínios, as cidades, o campo e a Amazônia: a Geografia do país em detalhe, com os números que o ENEM cobra.",
+    lessons: [
+      "O território: tamanho, limites e formação",
+      "Três jeitos de dividir o Brasil",
+      "O relevo brasileiro e suas classificações",
+      "Climas do Brasil e as massas de ar",
+      "Os domínios morfoclimáticos",
+      "Rios, regiões hidrográficas e a água do Brasil",
+      "A população brasileira: quantos somos e quem somos",
+      "Migrações: quem saiu, para onde e por quê",
+      "Cidades brasileiras: crescimento, rede urbana e problemas",
+      "A indústria brasileira: onde nasceu e para onde foi",
+      "O campo: agronegócio, terra e conflitos",
+      "Transportes: por onde a carga viaja",
+      "Amazônia, desmatamento e as leis que protegem",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -461,5 +482,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 3528,
+  questions: 3710,
 };

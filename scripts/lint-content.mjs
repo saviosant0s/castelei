@@ -260,6 +260,35 @@ const JARGON = [
   ["milagre econômico", /(?<!\p{L})milagre econ(ô|o)mico(?!\p{L})/iu, "H"], ["Diretas Já", /(?<!\p{L})Diretas J(á|a)(?!\p{L})/iu, "H"],
   ["impeachment", /\bimpeachments?\b/i, "H"], ["hiperinflação", /(?<!\p{L})hiperinfla(ç|c)(ão|ões)(?!\p{L})/iu, "H"],
   ["Constituição Cidadã", /(?<!\p{L})Constitui(ç|c)(ão|ao) Cidad(ã|a)(?!\p{L})/iu, "H"],
+  // Geografia do Brasil (escopo "B", somado ao "o" da básica).
+  ["mar territorial", /\bmar territorial\b/i, "B"], ["zona econômica exclusiva", /(?<!\p{L})zonas? econ(ô|o)micas? exclusivas?(?!\p{L})|\bZEE\b/iu, "B"],
+  ["Amazônia Azul", /(?<!\p{L})Amaz(ô|o)nia Azul(?!\p{L})/u, "B"], ["faixa de fronteira", /\bfaixas? de fronteira\b/i, "B"],
+  ["uti possidetis", /\buti possidetis\b/i, "B"], ["complexo geoeconômico", /(?<!\p{L})(complexos?|regi(ão|ões)) geoecon(ô|o)mic(o|os|a|as)(?!\p{L})/iu, "B"],
+  ["Região Concentrada", /(?<!\p{L})Regi(ão|ao) Concentrada(?!\p{L})/u, "B"], ["Amazônia Legal", /(?<!\p{L})Amaz(ô|o)nia Legal(?!\p{L})/u, "B"],
+  ["escudo cristalino", /\bescudos? cristalinos?\b/i, "B"], ["bacia sedimentar", /\bbacias? sedimentar(es)?\b/i, "B"],
+  ["dobramento moderno", /\bdobramentos? modernos?\b/i, "B"], ["frente fria", /\bfrentes? frias?\b/i, "B"], ["friagem", /\bfriagem\b/i, "B"],
+  ["chuva orográfica", /(?<!\p{L})chuvas? orogr(á|a)ficas?(?!\p{L})/iu, "B"], ["domínio morfoclimático", /(?<!\p{L})dom(í|i)nios? morfoclim(á|a)ticos?(?!\p{L})/iu, "B"],
+  ["faixa de transição", /(?<!\p{L})faixas? de transi(ç|c)(ão|ões)(?!\p{L})/iu, "B"], ["desertificação", /(?<!\p{L})desertifica(ç|c)(ão|ões)(?!\p{L})/iu, "B"],
+  ["região hidrográfica", /(?<!\p{L})regi(ão|ões) hidrogr(á|a)ficas?(?!\p{L})/iu, "B"], ["rio intermitente", /\bintermitentes?\b/i, "B"],
+  ["transposição", /(?<!\p{L})transposi(ç|c)(ão|ões)(?!\p{L})/iu, "B"], ["rios voadores", /\brios voadores\b/i, "B"],
+  ["densidade demográfica", /(?<!\p{L})densidades? demogr(á|a)ficas?(?!\p{L})/iu, "B"], ["transição demográfica", /(?<!\p{L})transi(ç|c)(ão|ões) demogr(á|a)ficas?(?!\p{L})/iu, "B"],
+  ["bônus demográfico", /(?<!\p{L})b(ô|o)nus demogr(á|a)ficos?(?!\p{L})/iu, "B"], ["migração pendular", /(?<!\p{L})(migra(ç|c)(ão|ões)|movimentos?) pendular(es)?(?!\p{L})/iu, "B"],
+  ["migração de retorno", /(?<!\p{L})migra(ç|c)(ão|ões) de retorno(?!\p{L})/iu, "B"], ["transumância", /(?<!\p{L})transum(â|a)ncias?(?!\p{L})/iu, "B"],
+  ["fronteira agrícola", /(?<!\p{L})fronteiras? agr(í|i)colas?(?!\p{L})/iu, "B"], ["região metropolitana", /(?<!\p{L})regi(ão|ões) metropolitanas?(?!\p{L})/iu, "B"],
+  ["megalópole", /(?<!\p{L})megal(ó|o)poles?(?!\p{L})/iu, "B"], ["rede urbana", /\bredes? urbanas?\b/i, "B"],
+  ["segregação socioespacial", /(?<!\p{L})segrega(ç|c)(ão|ões) socioespacia(l|is)(?!\p{L})/iu, "B"], ["periferização", /(?<!\p{L})periferiza(ç|c)(ão|ões)(?!\p{L})/iu, "B"],
+  ["gentrificação", /(?<!\p{L})gentrifica(ç|c)(ão|ões)(?!\p{L})/iu, "B"], ["plano diretor", /\bplanos? diretor(es)?\b/i, "B"],
+  ["substituição de importações", /(?<!\p{L})substitui(ç|c)(ão|ões) de importa(ç|c)(ões|ão)(?!\p{L})/iu, "B"], ["indústria de base", /(?<!\p{L})ind(ú|u)strias? de base(?!\p{L})/iu, "B"],
+  ["desconcentração industrial", /(?<!\p{L})desconcentra(ç|c)(ão|ões)(?!\p{L})/iu, "B"], ["guerra fiscal", /\bguerras? fisca(l|is)\b/i, "B"],
+  ["desindustrialização", /(?<!\p{L})desindustrializa(ç|c)(ão|ões)(?!\p{L})/iu, "B"], ["commodity", /\bcommodit(y|ies)\b/i, "B"],
+  ["estrutura fundiária", /(?<!\p{L})estruturas? fundi(á|a)rias?(?!\p{L})/iu, "B"], ["latifúndio", /(?<!\p{L})latif(ú|u)ndios?(?!\p{L})/iu, "B"],
+  ["agricultura familiar", /\bagricultura familiar\b/i, "B"], ["reforma agrária", /(?<!\p{L})reformas? agr(á|a)rias?(?!\p{L})/iu, "B"],
+  ["MATOPIBA", /\bMATOPIBA\b/i, "B"], ["grilagem", /\bgrilage(m|ns)\b|\bgrileiros?\b/i, "B"],
+  ["modal de transporte", /\bmoda(l|is)\b/i, "B"], ["rodoviarismo", /\brodoviarismo\b/i, "B"], ["hidrovia", /\bhidrovias?\b/i, "B"],
+  ["cabotagem", /\bcabotagem\b/i, "B"], ["transporte intermodal", /\bintermoda(l|is)\b/i, "B"], ["custo Brasil", /\bcusto Brasil\b/i, "B"],
+  ["arco do desmatamento", /\barco do desmatamento\b/i, "B"], ["reserva legal", /\breservas? lega(l|is)\b/i, "B"],
+  ["área de preservação permanente", /(?<!\p{L})(á|a)reas? de preserva(ç|c)(ão|ões) permanentes?(?!\p{L})/iu, "B"],
+  ["unidade de conservação", /(?<!\p{L})unidades? de conserva(ç|c)(ão|ões)(?!\p{L})/iu, "B"],
   ["Estado", /\bEstado\b/, "j"], ["cidadania", /\bcidadania\b/i, "j"], ["movimento social", /\bmovimentos? socia(l|is)\b/i, "j"], ["ação social", /(?<!\p{L})a(ç|c)(ão|ões) socia(l|is)(?!\p{L})/iu, "j"], ["artigo", /\bartigos?\b/i, "u"], ["conjugação", /\bconjuga(ç|c)(ão|ões)\b|\bconjugad(o|a)\b/i, "u"], ["combustível fóssil", /(?<!\p{L})combust(í|i)ve(l|is) f(ó|o)sse(l|is)(?!\p{L})/iu, "x"], ["biocombustível", /(?<!\p{L})biocombust(í|i)ve(l|is)(?!\p{L})/iu, "x"],
 
   ["preposição", /\bpreposi(ç|c)(ão|ões)\b/i, "p"], ["artigo", /\bartigos?\b/i, "p"],
@@ -598,7 +627,7 @@ const JARGON = [
   ["cooler", /\bcoolers?\b|\bwater cooler\b/i, "h"], ["80 Plus", /\b80 Plus\b/i, "h"], ["fonte modular", /\bmodular(es)?\b/i, "h"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG", "historia-do-brasil": "iH" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG", "historia-do-brasil": "iH", "geografia-do-brasil": "oB" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;
