@@ -567,6 +567,26 @@ export const SUBJECTS: SiteSubject[] = [
       "Arendt e Foucault: o mal comum e o poder que vigia",
     ],
   },
+  {
+    slug: "leitura-em-ingles-enem",
+    name: "Leitura em inglês para o ENEM",
+    pitch:
+      "Ler em inglês sem saber todas as palavras, com as pistas e os gêneros que a prova traz.",
+    lessons: [
+      "Como a questão de inglês do ENEM funciona",
+      "Prefixos e sufixos: abrir a palavra em pedaços",
+      "Descobrir a palavra pelo contexto",
+      "Os falsos cognatos que mais caem",
+      "Grupos nominais: ler de trás para a frente",
+      "Phrasal verbs: quando a partícula muda tudo",
+      "Os conectivos que enganam: since, while e unless",
+      "Voz passiva e frases com if: quem faz o quê",
+      "Tirinhas, cartuns e memes: de onde vem o humor",
+      "Notícias e textos de ciência: fato e cautela",
+      "Anúncios, campanhas e infográficos: o texto que quer convencer",
+      "Poemas e letras de música: o sentido além das palavras",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -583,5 +603,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 4564,
+  questions: 4732,
 };

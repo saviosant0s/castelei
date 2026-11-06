@@ -167,6 +167,14 @@ const JARGON = [
   ["skimming e scanning", /\bskimming\b|\bscanning\b/i, "wu"],
   ["verbo modal", /\bmodais\b|\bverbos? moda(l|is)\b/i, "w"], ["particípio", /(?<!\p{L})partic(í|i)pios?(?!\p{L})/iu, "wu"], ["comparativo e superlativo", /\bcomparativos?\b|\bsuperlativos?\b/i, "wu"],
   ["preposição", /\bpreposi(ç|c)(ão|ões)\b/i, "wu"], ["conectivo", /\bconectivos?\b/i, "wu"], ["possessivo", /\bpossessiv(o|os|a|as)\b/i, "wu"],
+  // Leitura em inglês para o ENEM (escopo "R"): as ferramentas de leitura e os gêneros da prova.
+  ["extrapolação", /(?<!\p{L})extrapola(ç|c)(ão|ões)(?!\p{L})/iu, "R"], ["prefixo e sufixo", /\bprefixos?\b|\bsufixos?\b/i, "R"],
+  ["inferência", /(?<!\p{L})infer(ê|e)ncias?(?!\p{L})/iu, "R"], ["grupo nominal", /\bgrupos? nomina(l|is)\b/i, "R"],
+  ["phrasal verb", /\bphrasal verbs?\b/i, "R"], ["voz passiva", /\bvoz passiva\b/i, "R"], ["frase condicional", /\bcondiciona(l|is)\b/i, "R"],
+  ["trocadilho", /\btrocadilhos?\b/i, "R"], ["ironia", /\bironias?\b|(?<!\p{L})ir(ô|o)nic(o|a|os|as)(?!\p{L})/iu, "R"],
+  ["manchete", /\bmanchetes?\b/i, "R"], ["linguagem cautelosa", /\blinguagem cautelosa\b|\bhedging\b/i, "R"],
+  ["imperativo", /\bimperativos?\b/i, "R"], ["infográfico", /(?<!\p{L})infogr(á|a)fic(o|os)(?!\p{L})/iu, "R"],
+  ["linguagem figurada", /\blinguagem figurada\b|\bsentido figurado\b/i, "R"], ["gíria", /(?<!\p{L})g(í|i)rias?(?!\p{L})/iu, "R"],
   // Informática básica (escopo "k"): a porta de entrada, para quem nunca estudou computador.
   ["hardware e software", /\bhardware\b|\bsoftware\b/i, "k"], ["sistema operacional", /\bsistemas? operaciona(l|is)\b/i, "k"],
   ["processador", /\bprocessador(es)?\b/i, "k"], ["memória RAM", /(?<!\p{L})mem(ó|o)ria RAM(?!\p{L})|\bRAM\b/iu, "k"], ["armazenamento", /\barmazenamento\b|\bSSD\b/i, "k"],
@@ -739,7 +747,7 @@ const JARGON = [
   ["cooler", /\bcoolers?\b|\bwater cooler\b/i, "h"], ["80 Plus", /\b80 Plus\b/i, "h"], ["fonte modular", /\bmodular(es)?\b/i, "h"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG", "historia-do-brasil": "iH", "geografia-do-brasil": "oB", "corpo-humano-e-saude": "bC", "quimica-organica": "xO", "termodinamica-optica-e-fisica-moderna": "fT", "sociedade-brasileira": "jS", "autores-de-filosofia": "zF" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG", "historia-do-brasil": "iH", "geografia-do-brasil": "oB", "corpo-humano-e-saude": "bC", "quimica-organica": "xO", "termodinamica-optica-e-fisica-moderna": "fT", "sociedade-brasileira": "jS", "autores-de-filosofia": "zF", "leitura-em-ingles-enem": "wR" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;
