@@ -1968,6 +1968,1074 @@
       ]
     },
     {
+      "slug": "termoquimica",
+      "title": "Reações que esquentam e reações que esfriam",
+      "module": "Reações",
+      "summary": "Toda reação mexe com energia. Umas soltam calor, outras absorvem. A lição mostra o sinal do ΔH, o papel das ligações e por que o etanol rende menos.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A bolsa que gela sozinha",
+          "body": [
+            "No futebol, o massagista aperta uma bolsa e ela fica gelada na hora, sem geladeira.",
+            "Dentro dela acontece um processo que puxa calor da sua pele. Outros fazem o contrário e soltam calor, como o fogo."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Soltar ou absorver calor",
+          "body": [
+            "Toda reação química mexe com energia. Na exotérmica, sobra energia, e ela sai como calor: a queima do gás no fogão esquenta a panela.",
+            "Na endotérmica, falta energia, e a reação puxa calor de fora. Cozinhar um ovo é assim: sem fogo, ele não cozinha."
+          ],
+          "terms": [
+            {
+              "word": "reação química",
+              "meaning": "a transformação em que substâncias viram outras, novas."
+            },
+            {
+              "word": "exotérmica e endotérmica",
+              "meaning": "exotérmica é a reação que solta calor; endotérmica é a que absorve calor do ambiente."
+            }
+          ],
+          "table": {
+            "label": "Exemplos do dia a dia",
+            "headers": [
+              "Solta calor (exotérmico)",
+              "Absorve calor (endotérmico)"
+            ],
+            "rows": [
+              [
+                "queima do gás no fogão",
+                "cozinhar um ovo"
+              ],
+              [
+                "respiração das células",
+                "fotossíntese das plantas"
+              ],
+              [
+                "cimento endurecendo",
+                "bolsa de gelo instantânea"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O sinal do ΔH",
+          "body": [
+            "A Química chama de ΔH a diferença de energia entre o que sai e o que entra. ΔH negativo quer dizer que a energia caiu: a reação soltou calor.",
+            "ΔH positivo é o contrário. Os produtos guardam mais energia que os reagentes, e o calor foi absorvido."
+          ],
+          "example": {
+            "label": "Como ler o ΔH",
+            "lines": [
+              "ΔH < 0: exotérmica, solta calor.",
+              "ΔH > 0: endotérmica, absorve calor."
+            ]
+          },
+          "terms": [
+            {
+              "word": "entalpia",
+              "meaning": "o nome que a Química dá à energia guardada nas substâncias. A variação dela, ΔH, diz se a reação solta ou absorve calor."
+            },
+            {
+              "word": "reagente e produto",
+              "meaning": "reagente é o que entra na reação; produto é o que sai dela."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quebrar e formar ligações",
+          "body": [
+            "Para quebrar uma ligação entre átomos, é preciso dar energia. Quando uma ligação se forma, energia é solta.",
+            "Se as ligações formadas soltam mais do que as quebradas pediram, sobra calor: a reação é exotérmica."
+          ],
+          "terms": [
+            {
+              "word": "átomo",
+              "meaning": "a menor parte de um elemento químico, como o carbono ou o oxigênio."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O calor dos combustíveis",
+          "body": [
+            "Cada combustível solta uma quantidade de calor por grama queimado. A gasolina solta mais que o etanol: com o mesmo tanque, o carro anda menos com etanol.",
+            "Por isso a regra do posto: o etanol só compensa se custar até cerca de 70% do preço da gasolina."
+          ],
+          "terms": [
+            {
+              "word": "combustão",
+              "meaning": "a queima: a reação de um combustível com o oxigênio, que solta calor."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede se um processo é exotérmico ou endotérmico e o sinal do ΔH. Também cobra a comparação entre combustíveis."
+          ],
+          "bullets": [
+            "“O processo descrito é classificado como…”",
+            "“A reação apresenta ΔH negativo, o que indica…”",
+            "“Comparando a energia liberada pelos combustíveis…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que ΔH negativo quer dizer que a reação absorve calor. Negativo é soltar.",
+            "Achar que a queima é endotérmica porque precisa de faísca. A faísca só dá a partida; a queima solta muito mais calor.",
+            "Achar que quebrar ligação solta energia. Quebrar pede energia; formar é que solta.",
+            "Achar que o processo endotérmico fica quente. Ele esfria o ambiente, porque puxa calor."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Exotérmica solta calor e tem ΔH negativo; endotérmica absorve calor e tem ΔH positivo.",
+            "Quebrar ligações pede energia, e formar ligações solta. Combustíveis diferentes soltam quantidades diferentes de calor por grama."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Fogão",
+          "statement": "A queima do gás no fogão é uma reação:",
+          "options": [
+            "exotérmica, porque solta calor",
+            "endotérmica, porque absorve calor",
+            "sem troca de calor",
+            "que esfria a panela",
+            "que só acontece no gelo"
+          ],
+          "correct_index": 0,
+          "explanation": "O calor que sai esquenta a panela.",
+          "pitfall": "Endotérmica puxaria calor da panela."
+        },
+        {
+          "topic": "Ovo",
+          "statement": "Cozinhar um ovo é um processo:",
+          "options": [
+            "endotérmico, porque precisa receber calor",
+            "exotérmico, porque solta calor",
+            "que não envolve energia",
+            "que esfria o fogo",
+            "de combustão"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem receber calor, o ovo não cozinha.",
+          "pitfall": "O ovo não queima: ele recebe calor."
+        },
+        {
+          "topic": "Sinal",
+          "statement": "Uma reação tem ΔH negativo. Ela:",
+          "options": [
+            "solta calor",
+            "absorve calor",
+            "não troca calor",
+            "precisa de gelo",
+            "tem produtos com mais energia que os reagentes"
+          ],
+          "correct_index": 0,
+          "explanation": "ΔH negativo: a energia caiu e saiu como calor.",
+          "pitfall": "Produtos com mais energia seriam ΔH positivo."
+        },
+        {
+          "topic": "Bolsa de gelo",
+          "statement": "A bolsa de gelo instantânea fica fria porque o processo dentro dela:",
+          "options": [
+            "absorve calor do ambiente",
+            "solta calor no ambiente",
+            "produz gelo de verdade",
+            "não troca energia",
+            "queima um combustível"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela puxa o calor da pele.",
+          "pitfall": "Não há gelo dentro: é o processo que esfria."
+        },
+        {
+          "topic": "Ligações",
+          "statement": "Para quebrar uma ligação entre átomos, é preciso:",
+          "options": [
+            "fornecer energia",
+            "soltar energia",
+            "esfriar a substância",
+            "acrescentar água",
+            "nada, ela se quebra sozinha"
+          ],
+          "correct_index": 0,
+          "explanation": "Quebrar pede energia; formar solta.",
+          "pitfall": "Soltar energia é o que acontece ao formar."
+        },
+        {
+          "topic": "Etanol",
+          "statement": "Com o mesmo tanque, o carro anda menos com etanol que com gasolina porque o etanol:",
+          "options": [
+            "solta menos calor por grama queimado",
+            "solta mais calor por grama",
+            "não queima",
+            "é uma mistura de gelo",
+            "é mais pesado"
+          ],
+          "correct_index": 0,
+          "explanation": "Menos calor por grama, menos quilômetros.",
+          "pitfall": "Mais calor faria o carro andar mais."
+        },
+        {
+          "topic": "Fotossíntese",
+          "statement": "A fotossíntese, em que a planta usa a luz para fabricar açúcar, é um processo:",
+          "options": [
+            "endotérmico",
+            "exotérmico",
+            "de combustão",
+            "sem energia",
+            "nuclear"
+          ],
+          "correct_index": 0,
+          "explanation": "A planta absorve a energia da luz.",
+          "pitfall": "Exotérmica é a respiração, que queima o açúcar."
+        },
+        {
+          "topic": "ΔH e ligações",
+          "format": "match",
+          "statement": "Ligue cada caso ao que ele quer dizer.",
+          "pairs": [
+            {
+              "left": "ΔH negativo",
+              "right": "a reação solta calor"
+            },
+            {
+              "left": "ΔH positivo",
+              "right": "a reação absorve calor"
+            },
+            {
+              "left": "quebrar uma ligação",
+              "right": "pede energia"
+            },
+            {
+              "left": "formar uma ligação",
+              "right": "solta energia"
+            }
+          ],
+          "explanation": "O sinal do ΔH e as ligações contam a mesma história.",
+          "pitfall": "Negativo é soltar: o sinal engana quem pensa em perder calor."
+        },
+        {
+          "topic": "Exotérmica",
+          "statement": "Uma reação exotérmica:",
+          "options": [
+            "solta calor",
+            "absorve calor",
+            "não muda nada",
+            "só acontece no frio",
+            "precisa de geladeira"
+          ],
+          "correct_index": 0,
+          "explanation": "Exo quer dizer para fora.",
+          "pitfall": "Absorver calor é a endotérmica.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Respiração",
+          "statement": "A respiração das células, que queima o açúcar dos alimentos, é:",
+          "options": [
+            "exotérmica, e mantém o corpo aquecido",
+            "endotérmica, e esfria o corpo",
+            "sem energia",
+            "uma fotossíntese",
+            "uma diluição"
+          ],
+          "correct_index": 0,
+          "explanation": "É dela que vem o calor do corpo.",
+          "pitfall": "A fotossíntese é o caminho contrário.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Faísca",
+          "statement": "O gás do fogão precisa de uma faísca para começar a queimar. Mesmo assim, a combustão é exotérmica porque:",
+          "options": [
+            "solta muito mais calor do que a faísca deu",
+            "a faísca é fria",
+            "absorve o calor da faísca",
+            "não solta calor",
+            "a panela esfria"
+          ],
+          "correct_index": 0,
+          "explanation": "A faísca é só a partida.",
+          "pitfall": "Absorver o calor da faísca seria endotérmica.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Mais energia",
+          "statement": "Num processo endotérmico, a energia dos produtos é:",
+          "options": [
+            "maior que a dos reagentes",
+            "menor que a dos reagentes",
+            "igual à dos reagentes",
+            "zero",
+            "sempre negativa"
+          ],
+          "correct_index": 0,
+          "explanation": "O calor absorvido ficou guardado nos produtos.",
+          "pitfall": "Menor seria exotérmico.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Saldo",
+          "statement": "Numa reação, quebrar as ligações pede 500 unidades de energia, e formar as novas solta 700. A reação:",
+          "options": [
+            "é exotérmica, com sobra de 200",
+            "é endotérmica, com falta de 200",
+            "não troca calor",
+            "absorve 1.200",
+            "solta 1.200"
+          ],
+          "correct_index": 0,
+          "explanation": "700 − 500 = 200, que sobram e saem como calor.",
+          "pitfall": "Somar as duas é o erro: uma entra, a outra sai.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Posto",
+          "statement": "O etanol custa R$ 3,90 e a gasolina, R$ 6,00. Pela regra dos 70%, vale abastecer com:",
+          "options": [
+            "etanol, porque custa menos de 70% da gasolina",
+            "gasolina, porque o etanol nunca compensa",
+            "etanol, porque é sempre o melhor",
+            "gasolina, porque custa menos",
+            "tanto faz, porque soltam o mesmo calor"
+          ],
+          "correct_index": 0,
+          "explanation": "3,90 ÷ 6,00 = 0,65, abaixo de 70%.",
+          "pitfall": "“Sempre o melhor” ignora que o etanol rende menos.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "cinetica-quimica",
+      "title": "A velocidade das reações",
+      "module": "Reações",
+      "summary": "Umas reações levam segundos, outras, anos. Quatro fatores mudam essa velocidade (calor, superfície, concentração e catalisador), e é por isso que a geladeira conserva a comida.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A banana na geladeira",
+          "body": [
+            "A banana na fruteira escurece em poucos dias. Na geladeira, dura bem mais.",
+            "O frio não para as reações que estragam a comida, mas deixa elas lentas. A velocidade de uma reação depende das condições."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O choque entre partículas",
+          "body": [
+            "Para reagir, as partículas precisam se encontrar com força suficiente e na posição certa.",
+            "Tudo o que aumenta os encontros acelera a reação. Tudo o que diminui deixa a reação lenta."
+          ],
+          "terms": [
+            {
+              "word": "reação química",
+              "meaning": "a transformação em que substâncias viram outras, novas."
+            },
+            {
+              "word": "reagente e produto",
+              "meaning": "reagente é o que entra na reação; produto é o que sai dela."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A temperatura",
+          "body": [
+            "Mais quente, as partículas se agitam mais e se chocam mais, e com mais força. Por isso a panela de pressão cozinha mais rápido: a água ferve acima de 100 °C.",
+            "E por isso a geladeira conserva: no frio, os encontros diminuem."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Superfície e concentração",
+          "body": [
+            "Um comprimido efervescente em pó some mais rápido que o comprimido inteiro. Em pó, há muito mais superfície para a água encontrar.",
+            "Mais concentração também acelera: há mais partículas no mesmo espaço, e os encontros aumentam."
+          ],
+          "example": {
+            "label": "Mais encontros, reação mais rápida",
+            "lines": [
+              "Lenha em gravetos pega fogo antes de um tronco.",
+              "Palha de aço enferruja antes de um prego.",
+              "Água sanitária pura mancha a roupa mais rápido que diluída."
+            ]
+          },
+          "terms": [
+            {
+              "word": "concentração",
+              "meaning": "quanto de uma substância está dissolvido num volume de líquido."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A faísca e o catalisador",
+          "body": [
+            "Toda reação precisa de um empurrão inicial para começar. O fósforo só acende quando você risca a caixinha.",
+            "O catalisador abaixa esse empurrão, e a reação fica mais rápida. As enzimas do seu corpo são catalisadores: sem elas, a digestão seria lenta demais para manter você vivo."
+          ],
+          "terms": [
+            {
+              "word": "energia de ativação",
+              "meaning": "a energia mínima para uma reação começar. É o empurrão que o fósforo recebe ao ser riscado."
+            },
+            {
+              "word": "catalisador",
+              "meaning": "uma substância que acelera a reação sem ser gasta por ela."
+            }
+          ],
+          "table": {
+            "label": "O que acelera uma reação",
+            "headers": [
+              "Fator",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "temperatura mais alta",
+                "panela de pressão"
+              ],
+              [
+                "mais superfície de contato",
+                "comprimido em pó"
+              ],
+              [
+                "mais concentração",
+                "água sanitária pura"
+              ],
+              [
+                "catalisador",
+                "enzimas da digestão"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O catalisador do carro",
+          "body": [
+            "O escapamento do carro tem um catalisador. Ele acelera a transformação de gases tóxicos em gases menos perigosos antes de saírem.",
+            "Ele não é gasto: o mesmo catalisador trabalha por anos."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova descreve uma situação do dia a dia e pede o fator que mudou a velocidade. Também cobra o papel do catalisador."
+          ],
+          "bullets": [
+            "“O aumento da velocidade se deve ao aumento da…”",
+            "“A função do catalisador é…”",
+            "“Guardar alimentos na geladeira retarda…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que o catalisador é gasto na reação. Ele sai inteiro no fim.",
+            "Achar que a geladeira para as reações. Ela só deixa as reações mais lentas.",
+            "Confundir superfície de contato com quantidade. O mesmo comprimido, em pó, reage mais rápido.",
+            "Achar que o catalisador muda o que a reação produz. Ele só muda a velocidade."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Reação acontece quando partículas se chocam com força suficiente. Calor, mais superfície e mais concentração aumentam os choques e aceleram a reação.",
+            "O catalisador abaixa a energia de ativação e acelera a reação sem ser gasto. O frio deixa as reações lentas: é o segredo da geladeira."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Geladeira",
+          "statement": "Guardar a comida na geladeira faz ela durar mais porque o frio:",
+          "options": [
+            "deixa lentas as reações que estragam o alimento",
+            "acaba com todas as reações para sempre",
+            "aumenta a velocidade das reações",
+            "adiciona conservante",
+            "tira a água do alimento"
+          ],
+          "correct_index": 0,
+          "explanation": "No frio, as partículas se encontram menos.",
+          "pitfall": "“Para sempre” é o quantificador absoluto."
+        },
+        {
+          "topic": "Comprimido",
+          "statement": "Um comprimido efervescente em pó reage mais rápido que inteiro porque:",
+          "options": [
+            "tem mais superfície de contato com a água",
+            "tem mais massa",
+            "está mais frio",
+            "é outro remédio",
+            "tem catalisador"
+          ],
+          "correct_index": 0,
+          "explanation": "Em pó, a água encontra muito mais pedacinhos.",
+          "pitfall": "A massa é a mesma: o que muda é a superfície."
+        },
+        {
+          "topic": "Panela de pressão",
+          "statement": "A panela de pressão cozinha mais rápido porque:",
+          "options": [
+            "a água ferve acima de 100 °C, e o calor acelera as reações",
+            "a água ferve abaixo de 100 °C",
+            "a panela tem catalisador",
+            "a comida vira pó",
+            "o vapor é frio"
+          ],
+          "correct_index": 0,
+          "explanation": "Temperatura mais alta, reação mais rápida.",
+          "pitfall": "Abaixo de 100 °C seria em lugar alto, sem tampa."
+        },
+        {
+          "topic": "Catalisador",
+          "statement": "Um catalisador:",
+          "options": [
+            "acelera a reação sem ser gasto",
+            "é gasto e vira produto",
+            "deixa a reação mais lenta",
+            "muda o produto da reação",
+            "esfria a reação"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele sai inteiro no fim.",
+          "pitfall": "Ser gasto é o engano clássico."
+        },
+        {
+          "topic": "Enzima",
+          "statement": "As enzimas da digestão são exemplos de:",
+          "options": [
+            "catalisadores",
+            "combustíveis",
+            "sais",
+            "produtos da queima",
+            "gases nobres"
+          ],
+          "correct_index": 0,
+          "explanation": "Elas aceleram as reações do corpo.",
+          "pitfall": "Combustível é o que se queima."
+        },
+        {
+          "topic": "Fósforo",
+          "statement": "O fósforo só acende quando é riscado. O risco fornece:",
+          "options": [
+            "a energia de ativação",
+            "o catalisador",
+            "a concentração",
+            "o produto",
+            "o frio"
+          ],
+          "correct_index": 0,
+          "explanation": "É o empurrão para a reação começar.",
+          "pitfall": "Catalisador abaixaria o empurrão, não o daria."
+        },
+        {
+          "topic": "Mais reagente",
+          "statement": "Aumentar a concentração de um reagente costuma deixar a reação:",
+          "options": [
+            "mais rápida, porque há mais encontros",
+            "mais lenta",
+            "igual",
+            "parada",
+            "fria"
+          ],
+          "correct_index": 0,
+          "explanation": "Mais partículas no mesmo espaço se chocam mais.",
+          "pitfall": "Mais lenta inverte o efeito."
+        },
+        {
+          "topic": "Fatores",
+          "format": "match",
+          "statement": "Ligue cada situação ao fator que muda a velocidade da reação.",
+          "pairs": [
+            {
+              "left": "lenha em gravetos",
+              "right": "superfície de contato"
+            },
+            {
+              "left": "comida na geladeira",
+              "right": "temperatura"
+            },
+            {
+              "left": "enzimas da digestão",
+              "right": "catalisador"
+            },
+            {
+              "left": "água sanitária pura",
+              "right": "concentração"
+            }
+          ],
+          "explanation": "Cada situação mexe num fator diferente.",
+          "pitfall": "Graveto e tronco são da mesma madeira: o que muda é a superfície."
+        },
+        {
+          "topic": "Frio",
+          "statement": "No frio, as reações químicas costumam ficar:",
+          "options": [
+            "mais lentas",
+            "mais rápidas",
+            "iguais",
+            "explosivas",
+            "impossíveis para sempre"
+          ],
+          "correct_index": 0,
+          "explanation": "As partículas se agitam menos.",
+          "pitfall": "Mais rápidas é o efeito do calor.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Escapamento",
+          "statement": "O catalisador do carro serve para:",
+          "options": [
+            "transformar gases tóxicos em gases menos perigosos",
+            "aumentar a velocidade do carro",
+            "economizar gasolina sozinho",
+            "esfriar o motor",
+            "limpar o ar da cidade inteira"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele age nos gases antes de saírem.",
+          "pitfall": "Ele não mexe na velocidade do carro.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Palha de aço",
+          "statement": "A palha de aço enferruja mais rápido que um prego do mesmo metal porque:",
+          "options": [
+            "tem muito mais superfície exposta ao ar",
+            "é outro metal",
+            "tem mais massa",
+            "está mais quente",
+            "tem catalisador dentro"
+          ],
+          "correct_index": 0,
+          "explanation": "Fios finos expõem muito mais metal.",
+          "pitfall": "O metal é o mesmo: muda a superfície.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "No fim",
+          "statement": "Ao fim de uma reação com catalisador, ele:",
+          "options": [
+            "continua lá, sem ter sido gasto",
+            "virou produto",
+            "desapareceu",
+            "virou gás",
+            "dobrou de massa"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele pode ser usado de novo.",
+          "pitfall": "Virar produto seria ser gasto.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Por que acelera",
+          "statement": "O catalisador acelera a reação porque:",
+          "options": [
+            "abaixa a energia de ativação",
+            "aumenta a temperatura",
+            "aumenta a quantidade de produto",
+            "muda o calor total que a reação solta",
+            "adiciona mais reagente"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele abre um caminho com empurrão inicial menor.",
+          "pitfall": "Ele não muda o calor total: é a pegadinha fina.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Saco fechado",
+          "statement": "Uma banana amadurece mais rápido num saco fechado, junto com outras frutas maduras. Isso acontece porque:",
+          "options": [
+            "um gás que as frutas soltam fica concentrado no saco",
+            "o saco é um catalisador",
+            "falta luz",
+            "a banana esfria",
+            "o saco tira a água da fruta"
+          ],
+          "correct_index": 0,
+          "explanation": "As frutas soltam um gás que acelera o amadurecimento, e no saco ele se acumula.",
+          "pitfall": "O saco não acelera nada sozinho: ele só prende o gás.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "equilibrio-quimico",
+      "title": "Equilíbrio químico: a reação que vai e volta",
+      "module": "Reações",
+      "summary": "Muitas reações andam nos dois sentidos ao mesmo tempo. A lição mostra o equilíbrio, o que o desloca e por que o refrigerante solta bolhas ao ser aberto.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "As escadas rolantes",
+          "body": [
+            "Imagine duas escadas rolantes, uma subindo e outra descendo, com gente nas duas. Se o mesmo número de pessoas sobe e desce por minuto, o número lá em cima não muda.",
+            "Mas as pessoas não pararam de andar. Muitas reações funcionam desse jeito."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Reações que voltam",
+          "body": [
+            "Muitas reações andam nos dois sentidos. Os reagentes formam produtos, e os produtos voltam a formar reagentes.",
+            "No refrigerante fechado, o gás carbônico entra e sai da água o tempo todo, nos dois sentidos ao mesmo tempo."
+          ],
+          "terms": [
+            {
+              "word": "reação química",
+              "meaning": "a transformação em que substâncias viram outras, novas."
+            },
+            {
+              "word": "reagente e produto",
+              "meaning": "reagente é o que entra na reação; produto é o que sai dela."
+            },
+            {
+              "word": "reação reversível",
+              "meaning": "a reação que anda nos dois sentidos: os produtos voltam a formar os reagentes."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O equilíbrio",
+          "body": [
+            "Quando a ida e a volta ficam na mesma velocidade, a reação chega ao equilíbrio. As quantidades param de mudar.",
+            "Parar de mudar não quer dizer parar de reagir. É um equilíbrio dinâmico: tudo continua se mexendo."
+          ],
+          "terms": [
+            {
+              "word": "equilíbrio químico",
+              "meaning": "o ponto em que a reação de ida e a de volta têm a mesma velocidade. As quantidades param de mudar, mas as reações continuam."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Mexer no equilíbrio",
+          "body": [
+            "Quando algo perturba o equilíbrio, a reação anda no sentido que diminui a perturbação. É o princípio de Le Chatelier.",
+            "Abra o refrigerante: a pressão cai, e o gás sai da água em bolhas. Esquente o refrigerante: sai ainda mais gás."
+          ],
+          "terms": [
+            {
+              "word": "átomo",
+              "meaning": "a menor parte de um elemento químico, como o carbono ou o oxigênio."
+            },
+            {
+              "word": "molécula",
+              "meaning": "um grupo de átomos ligados. A de água tem dois hidrogênios e um oxigênio."
+            }
+          ],
+          "table": {
+            "label": "O que desloca o equilíbrio",
+            "headers": [
+              "Mudança",
+              "Para onde a reação anda"
+            ],
+            "rows": [
+              [
+                "acrescentar reagente",
+                "forma mais produto"
+              ],
+              [
+                "tirar o produto",
+                "forma mais produto"
+              ],
+              [
+                "aumentar a pressão de um gás",
+                "para o lado com menos moléculas de gás"
+              ],
+              [
+                "mudar a temperatura",
+                "favorece um dos dois sentidos"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "No corpo e no mar",
+          "body": [
+            "O sangue usa equilíbrios para manter o pH perto de 7,4. Se ele muda muito, o corpo adoece.",
+            "No mar, mais gás carbônico no ar deixa a água mais ácida. Corais e conchas sofrem, porque a acidez desmancha o calcário deles."
+          ],
+          "terms": [
+            {
+              "word": "ácido",
+              "meaning": "a substância de gosto azedo que deixa o pH abaixo de 7, como o limão."
+            },
+            {
+              "word": "pH",
+              "meaning": "a escala de 0 a 14 que mede a acidez: abaixo de 7 é ácido, 7 é neutro e acima é básico."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede o que acontece com o equilíbrio quando algo muda. O refrigerante e o sangue são exemplos comuns."
+          ],
+          "bullets": [
+            "“Ao abrir a garrafa, o equilíbrio se desloca no sentido de…”",
+            "“No equilíbrio, as velocidades das reações direta e inversa…”",
+            "“O aumento de gás carbônico na atmosfera provoca…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que no equilíbrio a reação parou. Ela continua, nos dois sentidos, na mesma velocidade.",
+            "Achar que no equilíbrio há quantidades iguais de reagente e de produto. As quantidades só param de mudar.",
+            "Esquecer que a reação anda para o lado que diminui a mudança.",
+            "Achar que o refrigerante só perde gás quando é agitado. Esquentar e abrir também tiram gás."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Reação reversível anda nos dois sentidos. No equilíbrio, ida e volta têm a mesma velocidade, e as quantidades param de mudar.",
+            "Perturbado, o equilíbrio se desloca para diminuir a perturbação: é o princípio de Le Chatelier. O refrigerante aberto e o pH do sangue são exemplos."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Parou?",
+          "statement": "No equilíbrio químico, as reações de ida e de volta:",
+          "options": [
+            "continuam, na mesma velocidade",
+            "pararam de acontecer",
+            "acontecem só para um lado",
+            "ficam cada vez mais rápidas",
+            "viram uma queima"
+          ],
+          "correct_index": 0,
+          "explanation": "É um equilíbrio dinâmico.",
+          "pitfall": "“Pararam” é o engano clássico."
+        },
+        {
+          "topic": "Quantidades",
+          "statement": "No equilíbrio, as quantidades de reagentes e produtos:",
+          "options": [
+            "param de mudar",
+            "ficam sempre iguais entre si",
+            "caem até zero",
+            "dobram a cada minuto",
+            "mudam sem parar"
+          ],
+          "correct_index": 0,
+          "explanation": "Ida e volta se compensam.",
+          "pitfall": "Iguais entre si é outra coisa."
+        },
+        {
+          "topic": "Bolhas",
+          "statement": "Ao abrir uma garrafa de refrigerante, aparecem bolhas porque:",
+          "options": [
+            "a pressão cai, e o gás sai da água",
+            "o refrigerante esquenta sozinho",
+            "entra oxigênio na garrafa",
+            "o açúcar vira gás",
+            "a garrafa é um catalisador"
+          ],
+          "correct_index": 0,
+          "explanation": "Com menos pressão, o equilíbrio anda para o lado do gás.",
+          "pitfall": "O açúcar continua dissolvido."
+        },
+        {
+          "topic": "Quente",
+          "statement": "Um refrigerante quente perde gás mais rápido que um gelado porque:",
+          "options": [
+            "o calor desloca o equilíbrio para o gás sair",
+            "o frio cria mais gás",
+            "o calor é um catalisador",
+            "o gás fica mais pesado no calor",
+            "a garrafa encolhe"
+          ],
+          "correct_index": 0,
+          "explanation": "No calor, menos gás fica dissolvido.",
+          "pitfall": "O calor muda o equilíbrio; não é ele que acelera a saída."
+        },
+        {
+          "topic": "Le Chatelier",
+          "statement": "Pelo princípio de Le Chatelier, um equilíbrio perturbado:",
+          "options": [
+            "se desloca para diminuir a perturbação",
+            "aumenta a perturbação",
+            "para de reagir",
+            "explode",
+            "nunca muda"
+          ],
+          "correct_index": 0,
+          "explanation": "A reação compensa a mudança.",
+          "pitfall": "Aumentar a perturbação inverte o princípio."
+        },
+        {
+          "topic": "Acrescentar",
+          "statement": "Num equilíbrio, acrescenta-se mais reagente. A reação passa a formar:",
+          "options": [
+            "mais produto",
+            "menos produto",
+            "só reagente",
+            "nada",
+            "um catalisador"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela gasta o excesso formando produto.",
+          "pitfall": "Menos produto inverte o deslocamento."
+        },
+        {
+          "topic": "Corais",
+          "statement": "O aumento de gás carbônico no ar afeta os corais porque:",
+          "options": [
+            "deixa a água do mar mais ácida, e a acidez desmancha o calcário",
+            "esfria o mar",
+            "aumenta o sal do mar",
+            "dá mais luz aos corais",
+            "tira o oxigênio do ar"
+          ],
+          "correct_index": 0,
+          "explanation": "O gás dissolvido deixa a água mais ácida.",
+          "pitfall": "O problema não é o frio: é a acidez."
+        },
+        {
+          "topic": "Abrir",
+          "format": "order",
+          "statement": "Ponha na ordem o que acontece ao abrir um refrigerante.",
+          "options": [
+            "A tampa sai e a pressão cai",
+            "O equilíbrio se desloca para o lado do gás",
+            "O gás sai da água",
+            "Aparecem as bolhas"
+          ],
+          "explanation": "Primeiro a perturbação, depois a resposta do equilíbrio.",
+          "pitfall": "As bolhas são o fim da história, não o começo."
+        },
+        {
+          "topic": "Reversível",
+          "statement": "Uma reação reversível é a que:",
+          "options": [
+            "pode andar nos dois sentidos",
+            "só anda para a frente",
+            "nunca acontece",
+            "só acontece no fogo",
+            "não forma produtos"
+          ],
+          "correct_index": 0,
+          "explanation": "Os produtos voltam a formar reagentes.",
+          "pitfall": "Só para a frente seria irreversível.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Sangue",
+          "statement": "O sangue mantém o pH perto de:",
+          "options": [
+            "7,4",
+            "1",
+            "14",
+            "3",
+            "11"
+          ],
+          "correct_index": 0,
+          "explanation": "Um pouco acima do neutro.",
+          "pitfall": "1 seria ácido demais para a vida.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Dinâmico",
+          "statement": "Dizer que o equilíbrio é dinâmico quer dizer que:",
+          "options": [
+            "as reações continuam, mesmo sem mudança nas quantidades",
+            "a reação parou de vez",
+            "as quantidades mudam o tempo todo",
+            "só há reagentes",
+            "a temperatura sobe sem parar"
+          ],
+          "correct_index": 0,
+          "explanation": "Ida e volta seguem acontecendo.",
+          "pitfall": "Parar de vez é o oposto de dinâmico.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Tirar produto",
+          "statement": "Numa fábrica, o produto é retirado assim que se forma. Com isso, a reação:",
+          "options": [
+            "forma mais produto, para repor o que saiu",
+            "para",
+            "volta a formar reagente",
+            "fica mais lenta e acaba",
+            "não muda"
+          ],
+          "correct_index": 0,
+          "explanation": "Tirar produto puxa a reação para a frente.",
+          "pitfall": "Voltar a formar reagente inverte o deslocamento.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Iguais?",
+          "statement": "Um aluno diz: “no equilíbrio, há a mesma quantidade de reagente e de produto”. O erro dele é:",
+          "options": [
+            "confundir quantidades que param de mudar com quantidades iguais",
+            "achar que a reação continua",
+            "achar que há produto",
+            "lembrar do princípio de Le Chatelier",
+            "falar de velocidade"
+          ],
+          "correct_index": 0,
+          "explanation": "Parar de mudar não quer dizer ficar igual.",
+          "pitfall": "Achar que a reação continua não é erro: ela continua mesmo.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Pressão",
+          "statement": "Num cilindro com gases em equilíbrio, a pressão é aumentada. A reação tende a andar para o lado que:",
+          "options": [
+            "tem menos moléculas de gás",
+            "tem mais moléculas de gás",
+            "tem sempre mais líquido",
+            "sempre solta mais calor",
+            "não muda nada"
+          ],
+          "correct_index": 0,
+          "explanation": "Menos moléculas de gás aliviam a pressão: é a resposta à perturbação.",
+          "pitfall": "Mais moléculas aumentariam a pressão de novo.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "solucoes",
       "title": "Soluções e concentração",
       "module": "Reações",
@@ -2326,6 +3394,351 @@
           "correct_index": 0,
           "explanation": "A massa do produto é a mesma, espalhada num volume muito maior.",
           "pitfall": "A substância continua lá, só mais diluída.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "eletroquimica",
+      "title": "Pilhas, baterias e ferrugem",
+      "module": "Química no mundo",
+      "summary": "Algumas reações passam elétrons de um átomo a outro. Aproveitada, essa passagem vira a pilha; sem controle, vira a ferrugem. E a eletrólise faz o caminho de volta.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O celular sem fio",
+          "body": [
+            "O celular funciona horas sem tomada. Dentro dele, uma transformação química gera eletricidade.",
+            "É a mesma família de transformação que enferruja o portão de ferro. Só que, na bateria, alguém aproveita a corrente."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Perder e ganhar elétrons",
+          "body": [
+            "Em algumas reações, um átomo passa elétrons para outro. Quem perde elétrons se oxida; quem ganha se reduz.",
+            "As duas coisas andam juntas: todo elétron que sai de um lugar chega a outro."
+          ],
+          "terms": [
+            {
+              "word": "átomo",
+              "meaning": "a menor parte de um elemento químico, como o carbono ou o oxigênio."
+            },
+            {
+              "word": "próton, nêutron e elétron",
+              "meaning": "as partes do átomo. O elétron é a mais leve, tem carga negativa e é a que passa de um átomo para outro."
+            },
+            {
+              "word": "oxidação e redução",
+              "meaning": "oxidação é perder elétrons; redução é ganhar. Uma não acontece sem a outra."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A pilha",
+          "body": [
+            "Na pilha, quem perde elétrons fica de um lado, e quem ganha fica do outro. Os elétrons só passam de um lado ao outro pelo fio do aparelho.",
+            "Esse caminho é a corrente elétrica. A pilha transforma energia química em energia elétrica."
+          ],
+          "table": {
+            "label": "As partes de uma pilha",
+            "headers": [
+              "Parte",
+              "O que faz"
+            ],
+            "rows": [
+              [
+                "polo negativo",
+                "perde elétrons (oxidação)"
+              ],
+              [
+                "polo positivo",
+                "ganha elétrons (redução)"
+              ],
+              [
+                "fio do aparelho",
+                "leva os elétrons de um polo ao outro"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A recarga e a eletrólise",
+          "body": [
+            "Na bateria do celular, a recarga empurra os elétrons de volta. A eletricidade força a reação a andar ao contrário.",
+            "Forçar uma reação com eletricidade é a eletrólise. É assim que se produz o alumínio e que se cobre um metal com outro, como numa joia folheada."
+          ],
+          "terms": [
+            {
+              "word": "eletrólise",
+              "meaning": "o uso da eletricidade para forçar uma reação que não aconteceria sozinha."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A ferrugem",
+          "body": [
+            "A ferrugem é o ferro se oxidando, com ajuda do oxigênio e da água. Por isso o portão perto da praia enferruja mais: o sal da maresia acelera a reação.",
+            "Pintar, cobrir com zinco ou passar óleo isola o ferro do ar e da água."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O descarte",
+          "body": [
+            "Pilhas e baterias têm metais que contaminam o solo e a água, como chumbo, cádmio e mercúrio.",
+            "Por isso não vão para o lixo comum. Lojas e postos de coleta recebem e mandam para reciclagem."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede quem se oxida e quem se reduz numa pilha, e por que o ferro enferruja. Também cobra o descarte correto de pilhas."
+          ],
+          "bullets": [
+            "“No processo, o metal que sofre oxidação é…”",
+            "“A pilha converte energia química em…”",
+            "“A ferrugem é acelerada em regiões litorâneas porque…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Inverter oxidação e redução. Oxidar é perder elétrons; reduzir é ganhar.",
+            "Achar que oxidação precisa de oxigênio. O que define é perder elétrons.",
+            "Confundir pilha com eletrólise. A pilha gera eletricidade; a eletrólise gasta eletricidade.",
+            "Jogar pilha no lixo comum. Os metais contaminam o solo."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Oxidação é perder elétrons, e redução é ganhar. Na pilha, os elétrons passam de um lado ao outro pelo fio, e a energia química vira elétrica.",
+            "A eletrólise faz o contrário: usa eletricidade para forçar uma reação. A ferrugem é o ferro se oxidando, e pilha usada vai para a coleta."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Perder",
+          "statement": "Um átomo que perde elétrons:",
+          "options": [
+            "sofre oxidação",
+            "sofre redução",
+            "vira gás nobre",
+            "ganha prótons",
+            "fica sempre neutro"
+          ],
+          "correct_index": 0,
+          "explanation": "Oxidar é perder elétrons.",
+          "pitfall": "Redução é ganhar."
+        },
+        {
+          "topic": "Ganhar",
+          "statement": "Na redução, um átomo:",
+          "options": [
+            "ganha elétrons",
+            "perde elétrons",
+            "perde prótons",
+            "vira outro elemento",
+            "se desfaz"
+          ],
+          "correct_index": 0,
+          "explanation": "Reduzir é ganhar elétrons.",
+          "pitfall": "Perder elétrons é oxidar."
+        },
+        {
+          "topic": "Pilha",
+          "statement": "Uma pilha transforma:",
+          "options": [
+            "energia química em energia elétrica",
+            "energia elétrica em química",
+            "luz em calor",
+            "calor em movimento",
+            "som em luz"
+          ],
+          "correct_index": 0,
+          "explanation": "A reação dentro dela empurra os elétrons pelo fio.",
+          "pitfall": "Elétrica em química é a recarga, ou a eletrólise."
+        },
+        {
+          "topic": "Eletrólise",
+          "statement": "A eletrólise é usada para:",
+          "options": [
+            "produzir alumínio e folhear joias",
+            "gerar eletricidade de graça",
+            "esfriar metais",
+            "fazer fotossíntese",
+            "medir a acidez"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela usa eletricidade para forçar uma reação.",
+          "pitfall": "Ela gasta eletricidade, não gera."
+        },
+        {
+          "topic": "Ferrugem",
+          "statement": "O ferro enferruja porque:",
+          "options": [
+            "se oxida com o oxigênio e a água",
+            "ganha elétrons do ar",
+            "derrete com o calor do Sol",
+            "vira alumínio",
+            "é um gás"
+          ],
+          "correct_index": 0,
+          "explanation": "O ferro perde elétrons para o oxigênio.",
+          "pitfall": "Ganhar elétrons seria reduzir."
+        },
+        {
+          "topic": "Praia",
+          "statement": "O portão de ferro perto da praia enferruja mais rápido porque:",
+          "options": [
+            "o sal da maresia acelera a oxidação",
+            "faz mais frio",
+            "há menos oxigênio",
+            "a areia protege o ferro",
+            "a água do mar é doce"
+          ],
+          "correct_index": 0,
+          "explanation": "O sal facilita a passagem dos elétrons.",
+          "pitfall": "A areia não protege nada."
+        },
+        {
+          "topic": "Descarte",
+          "statement": "Uma pilha usada deve ir para:",
+          "options": [
+            "um posto de coleta, para reciclagem",
+            "o lixo comum",
+            "o vaso sanitário",
+            "a terra do jardim",
+            "o rio"
+          ],
+          "correct_index": 0,
+          "explanation": "Os metais dela contaminam o solo e a água.",
+          "pitfall": "Lixo comum leva os metais para o solo."
+        },
+        {
+          "topic": "Termos",
+          "format": "match",
+          "statement": "Ligue cada termo ao que ele quer dizer.",
+          "pairs": [
+            {
+              "left": "oxidação",
+              "right": "perder elétrons"
+            },
+            {
+              "left": "redução",
+              "right": "ganhar elétrons"
+            },
+            {
+              "left": "pilha",
+              "right": "gera eletricidade com uma reação"
+            },
+            {
+              "left": "eletrólise",
+              "right": "usa eletricidade para forçar uma reação"
+            }
+          ],
+          "explanation": "Pilha e eletrólise são caminhos contrários.",
+          "pitfall": "Oxidar é perder: o nome engana quem pensa em oxigênio."
+        },
+        {
+          "topic": "Zinco",
+          "statement": "Cobrir o ferro com zinco serve para:",
+          "options": [
+            "protegê-lo da ferrugem",
+            "deixá-lo mais pesado",
+            "torná-lo magnético",
+            "fazê-lo conduzir menos",
+            "mudar a cor para sempre"
+          ],
+          "correct_index": 0,
+          "explanation": "O zinco isola o ferro do ar e da água.",
+          "pitfall": "O peso não tem nada a ver.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Recarga",
+          "statement": "Ao recarregar a bateria do celular, a eletricidade:",
+          "options": [
+            "força a reação a andar ao contrário",
+            "apaga a bateria",
+            "vira luz",
+            "não faz nada",
+            "esfria o aparelho"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela empurra os elétrons de volta.",
+          "pitfall": "A recarga faz, sim, a reação voltar.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Juntas",
+          "statement": "Oxidação e redução:",
+          "options": [
+            "acontecem sempre juntas",
+            "nunca acontecem juntas",
+            "só acontecem no fogo",
+            "são a mesma coisa",
+            "só acontecem na água"
+          ],
+          "correct_index": 0,
+          "explanation": "Todo elétron que sai de um lugar chega a outro.",
+          "pitfall": "Elas são opostas, não a mesma coisa.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Polo negativo",
+          "statement": "Numa pilha, o polo negativo é onde:",
+          "options": [
+            "um metal perde elétrons",
+            "um metal ganha elétrons",
+            "os elétrons param",
+            "nasce o oxigênio",
+            "fica o fio desligado"
+          ],
+          "correct_index": 0,
+          "explanation": "É de lá que os elétrons saem para o fio.",
+          "pitfall": "Ganhar elétrons é o polo positivo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Sem oxigênio",
+          "statement": "Um colega diz que só há oxidação quando há oxigênio. Isso está:",
+          "options": [
+            "errado, porque oxidar é perder elétrons, com ou sem oxigênio",
+            "certo, porque o nome vem de oxigênio",
+            "certo só na pilha",
+            "certo só na ferrugem",
+            "errado, porque oxidar é ganhar elétrons"
+          ],
+          "correct_index": 0,
+          "explanation": "O que define a oxidação é perder elétrons.",
+          "pitfall": "A última diz errado pelo motivo errado: a pegadinha fina.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Navio",
+          "statement": "Navios têm blocos de zinco presos ao casco de aço. O zinco:",
+          "options": [
+            "se oxida no lugar do aço e o protege",
+            "deixa o navio mais rápido",
+            "impede a água de tocar o casco",
+            "ganha elétrons do aço",
+            "serve de enfeite"
+          ],
+          "correct_index": 0,
+          "explanation": "O zinco perde elétrons mais fácil e é corroído primeiro.",
+          "pitfall": "Quem ganha elétrons nessa troca é o lado do aço.",
           "difficulty": "dificil"
         }
       ]
@@ -3085,6 +4498,384 @@
           "correct_index": 0,
           "explanation": "O número na frente da água é 2.",
           "pitfall": "4 é a quantidade de hidrogênios, não de águas formadas.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "radioatividade",
+      "title": "Radioatividade e energia nuclear",
+      "module": "Química no mundo",
+      "summary": "Núcleos instáveis soltam radiação num ritmo conhecido, a meia-vida. A lição mostra os três tipos de radiação e para que ela serve. Também mostra a fissão, a fusão e o acidente de Goiânia.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O osso antigo",
+          "body": [
+            "Cientistas acham um osso enterrado e dizem que ele tem 20 mil anos. Ninguém estava lá para anotar a data.",
+            "O relógio estava no próprio osso: alguns átomos dele se transformam num ritmo conhecido."
+          ],
+          "terms": [
+            {
+              "word": "átomo",
+              "meaning": "a menor parte de um elemento químico, como o carbono ou o oxigênio."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Núcleos instáveis",
+          "body": [
+            "Alguns núcleos têm prótons e nêutrons demais e ficam instáveis. Com o tempo, eles soltam partículas e energia até ficarem estáveis.",
+            "Isso é a radioatividade. O urânio e o césio-137 são exemplos de átomos radioativos."
+          ],
+          "terms": [
+            {
+              "word": "próton, nêutron e elétron",
+              "meaning": "as partes do átomo. O elétron é a mais leve, tem carga negativa e é a que passa de um átomo para outro."
+            },
+            {
+              "word": "isótopo",
+              "meaning": "átomos do mesmo elemento com números diferentes de nêutrons."
+            },
+            {
+              "word": "radioatividade",
+              "meaning": "a emissão de partículas e energia pelo núcleo de átomos instáveis."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Três tipos de radiação",
+          "body": [
+            "O núcleo instável pode soltar três tipos de radiação. Quanto mais penetrante, mais difícil barrar."
+          ],
+          "table": {
+            "label": "As radiações do núcleo",
+            "headers": [
+              "Radiação",
+              "O que é",
+              "O que a barra"
+            ],
+            "rows": [
+              [
+                "alfa",
+                "partícula pesada, com 2 prótons e 2 nêutrons",
+                "uma folha de papel"
+              ],
+              [
+                "beta",
+                "elétron rápido, saído do núcleo",
+                "uma placa fina de alumínio"
+              ],
+              [
+                "gama",
+                "onda de energia, da mesma família da luz",
+                "chumbo grosso ou concreto"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A meia-vida",
+          "body": [
+            "Cada átomo radioativo tem a sua meia-vida. Depois dela, sobra metade; depois de mais uma, um quarto.",
+            "O carbono-14 tem meia-vida de cerca de 5.730 anos. Medindo quanto sobrou num osso, dá para saber a idade dele."
+          ],
+          "example": {
+            "label": "A conta da meia-vida",
+            "lines": [
+              "Começo: 100 gramas do material radioativo.",
+              "Depois de 1 meia-vida: 50 gramas.",
+              "Depois de 2: 25 gramas.",
+              "Depois de 3: 12,5 gramas."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "meia-vida",
+              "meaning": "o tempo para metade dos átomos radioativos de uma amostra se transformar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Para que serve",
+          "body": [
+            "Bem usada, a radiação salva vidas. A radioterapia ataca tumores, e alguns exames usam pequenas doses de material radioativo.",
+            "Ela também esteriliza material de hospital e conserva alimentos. E as usinas nucleares geram eletricidade sem soltar gás carbônico."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Fissão e fusão",
+          "body": [
+            "Na usina nuclear, núcleos de urânio se dividem e soltam calor. Isso é a fissão.",
+            "No Sol, núcleos de hidrogênio se juntam e formam hélio. Isso é a fusão, que acende as estrelas."
+          ],
+          "terms": [
+            {
+              "word": "fissão e fusão nuclear",
+              "meaning": "fissão é a divisão de um núcleo grande; fusão é a união de núcleos pequenos. As duas soltam muita energia."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os perigos",
+          "body": [
+            "Em excesso, a radiação danifica as células e causa doenças, como o câncer. Por isso o lixo radioativo precisa ser guardado por muito tempo.",
+            "Em 1987, em Goiânia, um aparelho de radioterapia abandonado foi aberto num ferro-velho. O pó de césio-137 contaminou cerca de 250 pessoas, e quatro morreram."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede a meia-vida, os usos da radiação e a diferença entre fissão e fusão. O acidente de Goiânia aparece com frequência."
+          ],
+          "bullets": [
+            "“Após três meias-vidas, a massa restante será…”",
+            "“O processo que ocorre no Sol é a…”",
+            "“O acidente com o césio-137 em Goiânia mostra…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que depois de duas meias-vidas não sobra nada. Sobra um quarto.",
+            "Confundir fissão com fusão. Fissão divide; fusão junta.",
+            "Achar que toda radiação é perigosa em qualquer dose. Pequenas doses controladas são usadas em exames.",
+            "Achar que a radiação gama é uma partícula pesada. Ela é uma onda de energia."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Núcleos instáveis soltam radiação: alfa, beta e gama. Meia-vida é o tempo para sobrar metade, e o carbono-14 data fósseis.",
+            "Fissão divide núcleos, como na usina; fusão junta, como no Sol. Bem usada, a radiação trata doenças. Sem controle, ela contamina, como em Goiânia."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Radioatividade",
+          "statement": "A radioatividade é:",
+          "options": [
+            "a emissão de partículas e energia por núcleos instáveis",
+            "a luz de uma lâmpada",
+            "o som de um rádio",
+            "a queima de um combustível",
+            "a ferrugem do ferro"
+          ],
+          "correct_index": 0,
+          "explanation": "Vem do núcleo de átomos instáveis.",
+          "pitfall": "O nome lembra rádio, mas não tem nada a ver."
+        },
+        {
+          "topic": "Papel",
+          "statement": "A radiação que uma folha de papel consegue barrar é a:",
+          "options": [
+            "alfa",
+            "gama",
+            "beta",
+            "de todas as cores",
+            "nenhuma"
+          ],
+          "correct_index": 0,
+          "explanation": "A alfa é pesada e anda pouco.",
+          "pitfall": "A gama atravessa até paredes finas."
+        },
+        {
+          "topic": "Duas meias-vidas",
+          "statement": "Uma amostra de 80 g de um material radioativo passa por duas meias-vidas. Sobram:",
+          "options": [
+            "20 g",
+            "40 g",
+            "0 g",
+            "10 g",
+            "60 g"
+          ],
+          "correct_index": 0,
+          "explanation": "80 → 40 → 20.",
+          "pitfall": "0 g é a pegadinha de achar que duas metades somam tudo."
+        },
+        {
+          "topic": "Carbono-14",
+          "statement": "O carbono-14 é usado para:",
+          "options": [
+            "descobrir a idade de fósseis e objetos antigos",
+            "fazer gelo",
+            "produzir alumínio",
+            "medir a acidez",
+            "acender lâmpadas"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele some num ritmo conhecido.",
+          "pitfall": "Alumínio não tem nada a ver com a idade de um osso."
+        },
+        {
+          "topic": "Sol",
+          "statement": "No Sol, núcleos de hidrogênio se juntam e formam hélio. Esse processo é a:",
+          "options": [
+            "fusão nuclear",
+            "fissão nuclear",
+            "queima de gás",
+            "eletrólise",
+            "ferrugem"
+          ],
+          "correct_index": 0,
+          "explanation": "Fusão é juntar núcleos.",
+          "pitfall": "Fissão é dividir."
+        },
+        {
+          "topic": "Usina",
+          "statement": "Nas usinas nucleares de hoje, o calor vem da:",
+          "options": [
+            "fissão de núcleos de urânio",
+            "fusão de hidrogênio",
+            "queima de carvão",
+            "luz do Sol",
+            "força das marés"
+          ],
+          "correct_index": 0,
+          "explanation": "O urânio se divide e solta calor.",
+          "pitfall": "Fusão em usina ainda é experiência."
+        },
+        {
+          "topic": "Goiânia",
+          "statement": "O acidente de Goiânia, em 1987, aconteceu porque:",
+          "options": [
+            "um aparelho de radioterapia abandonado foi aberto num ferro-velho",
+            "uma usina nuclear explodiu",
+            "uma bomba caiu na cidade",
+            "um navio afundou",
+            "um vulcão entrou em erupção"
+          ],
+          "correct_index": 0,
+          "explanation": "O pó de césio-137 se espalhou pela cidade.",
+          "pitfall": "Não havia usina: o problema foi um aparelho abandonado."
+        },
+        {
+          "topic": "Termos",
+          "format": "match",
+          "statement": "Ligue cada termo ao que ele quer dizer.",
+          "pairs": [
+            {
+              "left": "fissão",
+              "right": "divisão de um núcleo grande"
+            },
+            {
+              "left": "fusão",
+              "right": "união de núcleos pequenos"
+            },
+            {
+              "left": "meia-vida",
+              "right": "tempo para sobrar metade"
+            },
+            {
+              "left": "isótopo",
+              "right": "mesmo elemento, nêutrons diferentes"
+            }
+          ],
+          "explanation": "São as palavras que a prova mais usa sobre o núcleo.",
+          "pitfall": "Fissão e fusão são opostas: uma divide, a outra junta."
+        },
+        {
+          "topic": "Gama",
+          "statement": "A radiação gama é:",
+          "options": [
+            "uma onda de energia, muito penetrante",
+            "uma partícula pesada",
+            "um gás",
+            "um tipo de ferrugem",
+            "uma luz que se vê"
+          ],
+          "correct_index": 0,
+          "explanation": "É da família da luz, mas não se vê.",
+          "pitfall": "Partícula pesada é a alfa.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Medicina",
+          "statement": "Em pequenas doses controladas, a radiação é usada:",
+          "options": [
+            "em tratamentos e exames médicos",
+            "para temperar comida",
+            "para encher pneus",
+            "para acender o fogão",
+            "em lâmpadas comuns"
+          ],
+          "correct_index": 0,
+          "explanation": "A radioterapia é o exemplo mais conhecido.",
+          "pitfall": "Lâmpada comum não tem nada radioativo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Três meias-vidas",
+          "statement": "Depois de três meias-vidas, uma amostra de 200 g fica com:",
+          "options": [
+            "25 g",
+            "50 g",
+            "100 g",
+            "66 g",
+            "0 g"
+          ],
+          "correct_index": 0,
+          "explanation": "200 → 100 → 50 → 25.",
+          "pitfall": "66 dividiu por três em vez de cortar pela metade três vezes.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Lixo",
+          "statement": "O lixo radioativo das usinas precisa ser guardado por muito tempo porque:",
+          "options": [
+            "continua soltando radiação por anos",
+            "pega fogo sozinho",
+            "é muito pesado",
+            "tem cheiro forte",
+            "vira gás"
+          ],
+          "correct_index": 0,
+          "explanation": "A meia-vida de alguns materiais é muito longa.",
+          "pitfall": "O perigo é a radiação, não o fogo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Idade",
+          "statement": "Um osso tem um quarto do carbono-14 que tinha quando o animal morreu. A meia-vida é de cerca de 5.730 anos. A idade do osso é de cerca de:",
+          "options": [
+            "11.460 anos",
+            "5.730 anos",
+            "1.432 anos",
+            "22.920 anos",
+            "2.865 anos"
+          ],
+          "correct_index": 0,
+          "explanation": "Um quarto são duas meias-vidas: 2 × 5.730.",
+          "pitfall": "5.730 é só uma meia-vida, que deixaria a metade.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Nuclear",
+          "statement": "Sobre as usinas nucleares, é certo dizer que:",
+          "options": [
+            "não soltam gás carbônico ao gerar energia, mas deixam lixo radioativo",
+            "não deixam nenhum resíduo",
+            "funcionam por fusão, como o Sol",
+            "queimam urânio como carvão",
+            "são renováveis como o vento"
+          ],
+          "correct_index": 0,
+          "explanation": "Têm vantagem no clima e problema no lixo.",
+          "pitfall": "“Por fusão” é a troca fina de fissão por fusão.",
           "difficulty": "dificil"
         }
       ]

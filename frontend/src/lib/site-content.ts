@@ -203,12 +203,17 @@ export const SUBJECTS: SiteSubject[] = [
     lessons: [
       "Grandezas, unidades e notação científica",
       "Movimento: velocidade e aceleração",
+      "Os gráficos do movimento",
       "As três leis de Newton",
+      "Movimento circular: rodas, engrenagens e satélites",
       "Energia: movimento, altura e potência",
       "Calor, temperatura e mudanças de estado",
+      "Pressão, densidade e empuxo: por que o navio flutua",
       "Ondas e som",
       "Luz: reflexão, refração e cores",
       "Eletricidade: corrente, tensão e a conta de luz",
+      "Ímãs, motores e geradores",
+      "De onde vem a energia: usinas e rendimento",
     ],
   },
   {
@@ -222,9 +227,14 @@ export const SUBJECTS: SiteSubject[] = [
       "Ligações químicas: como os átomos se unem",
       "Ácidos, bases, sais e óxidos",
       "Reações químicas, balanceamento e mol",
+      "Reações que esquentam e reações que esfriam",
+      "A velocidade das reações",
+      "Equilíbrio químico: a reação que vai e volta",
       "Soluções e concentração",
+      "Pilhas, baterias e ferrugem",
       "Química orgânica: o mundo do carbono",
       "Química e ambiente: combustíveis, poluição e reciclagem",
+      "Radioatividade e energia nuclear",
     ],
   },
   {
@@ -339,5 +349,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 2156,
+  questions: 2296,
 };
