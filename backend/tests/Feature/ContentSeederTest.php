@@ -251,8 +251,11 @@ class ContentSeederTest extends TestCase
         $this->seed(DatabaseSeeder::class);
         $consultas = count(\Illuminate\Support\Facades\DB::getQueryLog());
 
-        // Uma consulta para ver as matérias do painel e uma por arquivo.
-        $this->assertLessThan(40, $consultas);
+        // Uma consulta para ver as matérias do painel e uma por arquivo. O
+        // limite cresce com a pasta: um número fixo reprovava a matéria nova,
+        // e não o arquivo regravado à toa, que custa dezenas de consultas.
+        $arquivos = count(glob(database_path('seeders/content/*.json')));
+        $this->assertLessThanOrEqual($arquivos + 1, $consultas);
         $this->assertSame($this->esperado()['questions'], Question::count());
     }
 
