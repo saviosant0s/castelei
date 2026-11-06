@@ -147,7 +147,7 @@ probabilidade). Razão, proporção e porcentagem ficaram na básica.
 7. Geografia do Brasil: regiões, recursos e desigualdades.
 8. Segunda rodada: a água (bacias, aquíferos e quem gasta); a matriz energética do Brasil e do mundo; poder, conflitos e refugiados.
 
-### Filosofia — `filosofia-basica` (feito: 6 lições em quatro módulos, com os níveis)
+### Filosofia — `filosofia-basica` (feito: 12 lições em quatro módulos, com os níveis)
 
 1. O que é filosofia; mito e razão.
 2. Os pré-socráticos, Sócrates, Platão e Aristóteles.
@@ -155,8 +155,9 @@ probabilidade). Razão, proporção e porcentagem ficaram na básica.
 4. Ética: o certo e o errado nas principais correntes.
 5. Política: contrato social e Estado (Hobbes, Locke, Rousseau).
 6. Filosofia contemporânea: Marx, Nietzsche, existencialismo.
+7. Segunda rodada: os pré-socráticos; estoicos, epicuristas e cínicos; argumentação e falácias; ciência (Bacon, Popper e Kuhn); estética e indústria cultural; Arendt, Foucault e Beauvoir.
 
-### Sociologia — `sociologia-basica` (feito: 6 lições em três módulos, com os níveis)
+### Sociologia — `sociologia-basica` (feito: 12 lições em seis módulos, com os níveis)
 
 1. O que é sociologia; indivíduo e sociedade.
 2. Os clássicos: Durkheim, Weber e Marx.
@@ -164,6 +165,7 @@ probabilidade). Razão, proporção e porcentagem ficaram na básica.
 4. Trabalho e desigualdade social.
 5. Poder, Estado, democracia e cidadania.
 6. Movimentos sociais e direitos humanos.
+7. Segunda rodada: raça e racismo; gênero; religião; escola e desigualdade (Bourdieu); cidade, segregação e violência; mídia, consumo e redes.
 
 ### Inglês — `ingles-basico` (feito: 12 lições em quatro módulos, com os níveis)
 
@@ -233,9 +235,9 @@ entram entre elas, já com os níveis.
 | Geografia | 9 | 12 | água e hidrografia, energia e matriz energética, geopolítica e conflitos |
 | História | 10 | 12 | primeiros povos e Antiguidade oriental, África e América antes dos europeus |
 | Inglês | 6 | 12 | substantivos e possessivos, preposições, modais, comparativos, present perfect, conectivos |
-| Espanhol | 6 | 12 | possessivos e demonstrativos, verbos irregulares, muy e mucho, gustar, comparativos, conectivos |
-| Filosofia | 6 | 12 | pré-socráticos, helenísticos, medieval, Maquiavel, estética, ciência e bioética |
-| Sociologia | 6 | 12 | socialização, raça e racismo, gênero, mídia e consumo, religião, sociedade em rede |
+| Espanhol | 6 | 12 | possessivos e demonstrativos, verbos que mudam e reflexivos, gustar, imperativo, comparativos, conectivos |
+| Filosofia | 6 | 12 | pré-socráticos, helenísticos, argumentação e falácias, ciência, estética e indústria cultural, Arendt, Foucault e Beauvoir |
+| Sociologia | 6 | 12 | raça e racismo, gênero, religião, escola e desigualdade, cidade e violência, mídia e consumo |
 | Informática | 6 | 12 | bits e bytes, redes e Wi-Fi, e-mail e nuvem, fórmulas de planilha, privacidade e LGPD, IA no dia a dia |
 | Artes | 5 | 12 | arte antiga, música (elementos e música brasileira), teatro, arte indígena e afro-brasileira, cinema e fotografia, arquitetura |
 | Educação Física | 5 | 12 | ossos e músculos, treinamento, esportes individuais, Olimpíadas e Paralimpíadas, primeiros socorros, esporte e mídia, lazer e trabalho |
