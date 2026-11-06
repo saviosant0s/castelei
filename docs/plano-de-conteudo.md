@@ -258,7 +258,7 @@ escrever.
 | Biologia | Corpo humano e saúde (feita: 13 lições em quatro módulos, com os níveis) |
 | Química | Química orgânica (feita: 12 lições em quatro módulos, com os níveis) |
 | Física | Termodinâmica, óptica e física moderna (feita: 12 lições em três módulos, com os níveis) |
-| Sociologia | Sociedade brasileira |
+| Sociologia | Sociedade brasileira (feita: 12 lições em quatro módulos, com os níveis) |
 | Filosofia | Os autores que mais caem |
 | Inglês | Leitura em inglês para o ENEM |
 | Espanhol | Leitura em espanhol para o ENEM |

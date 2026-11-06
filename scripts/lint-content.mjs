@@ -367,6 +367,22 @@ const JARGON = [
   ["fóton", /(?<!\p{L})f(ó|o)tons?(?!\p{L})/iu, "T"], ["constante de Planck", /\bPlanck\b/, "T"], ["efeito fotoelétrico", /(?<!\p{L})fotoel(é|e)tric(o|a)(?!\p{L})/iu, "T"],
   ["dualidade onda-partícula", /\bdualidade\b/i, "T"], ["espectro", /\bespectros?\b/i, "T"], ["nível de energia", /(?<!\p{L})n(í|i)ve(l|is) de energia(?!\p{L})/iu, "T"],
   ["radiação ionizante", /(?<!\p{L})ionizantes?(?!\p{L})/iu, "T"], ["semicondutor", /\bsemicondutor(es)?\b/i, "T"], ["laser", /\blasers?\b/i, "T"], ["LED", /\bLEDs?\b/, "T"],
+  // Sociedade brasileira (escopo "S", somado ao "j" da Sociologia básica).
+  ["democracia racial", /\bdemocracia racial\b/i, "S"], ["miscigenação", /(?<!\p{L})miscigena(ç|c)(ão|ões)(?!\p{L})/iu, "S"],
+  ["branqueamento", /\bbranqueamento\b/i, "S"], ["colorismo", /\bcolorismo\b/i, "S"],
+  ["homem cordial", /\bhomem cordial\b/i, "S"], ["patrimonialismo", /\bpatrimonialis(mo|ta|tas)\b/i, "S"], ["clientelismo", /\bclientelis(mo|ta|tas)\b/i, "S"],
+  ["coronelismo", /\bcoronelismo\b/i, "S"], ["jeitinho brasileiro", /\bjeitinho\b/i, "S"], ["estadania", /\bestadania\b/i, "S"],
+  ["direitos civis, políticos e sociais", /(?<!\p{L})direitos (civis|pol(í|i)ticos|sociais)(?!\p{L})/iu, "S"],
+  ["ação afirmativa", /(?<!\p{L})a(ç|c)(ão|ões) afirmativas?(?!\p{L})/iu, "S"],
+  ["coeficiente de Gini", /\bGini\b/, "S"], ["concentração de renda", /(?<!\p{L})concentra(ç|c)(ão|ões) de renda(?!\p{L})/iu, "S"],
+  ["trabalho informal", /\binforma(l|is|lidade)\b/i, "S"], ["uberização", /(?<!\p{L})uberiza(ç|c)(ão|ões)(?!\p{L})/iu, "S"],
+  ["terceirização", /(?<!\p{L})terceiriza(ç|c)(ão|ões)(?!\p{L})/iu, "S"], ["precarização", /(?<!\p{L})precariza(ç|c)(ão|ões)(?!\p{L})/iu, "S"],
+  ["trabalho análogo à escravidão", /(?<!\p{L})an(á|a)logo (à|a) escravid(ão|ao)(?!\p{L})/iu, "S"],
+  ["demarcação", /(?<!\p{L})demarca(ç|c)(ão|ões)(?!\p{L})/iu, "S"], ["marco temporal", /\bmarco temporal\b/i, "S"], ["quilombola", /\bquilombolas?\b|\bquilombos?\b/i, "S"],
+  ["feminicídio", /(?<!\p{L})feminic(í|i)dios?(?!\p{L})/iu, "S"], ["dupla jornada", /\bdupla jornada\b/i, "S"], ["família monoparental", /\bmonoparenta(l|is)\b/i, "S"],
+  ["encarceramento em massa", /\bencarceramento\b/i, "S"], ["milícia", /(?<!\p{L})mil(í|i)cias?(?!\p{L})/iu, "S"],
+  ["sincretismo religioso", /\bsincretismos?\b/i, "S"], ["intolerância religiosa", /(?<!\p{L})intoler(â|a)ncia religiosa(?!\p{L})/iu, "S"],
+  ["cultura popular, erudita e de massa", /\bcultura (popular|erudita|de massa)\b/i, "S"],
   ["Estado", /\bEstado\b/, "j"], ["cidadania", /\bcidadania\b/i, "j"], ["movimento social", /\bmovimentos? socia(l|is)\b/i, "j"], ["ação social", /(?<!\p{L})a(ç|c)(ão|ões) socia(l|is)(?!\p{L})/iu, "j"], ["artigo", /\bartigos?\b/i, "u"], ["conjugação", /\bconjuga(ç|c)(ão|ões)\b|\bconjugad(o|a)\b/i, "u"], ["combustível fóssil", /(?<!\p{L})combust(í|i)ve(l|is) f(ó|o)sse(l|is)(?!\p{L})/iu, "x"], ["biocombustível", /(?<!\p{L})biocombust(í|i)ve(l|is)(?!\p{L})/iu, "x"],
 
   ["preposição", /\bpreposi(ç|c)(ão|ões)\b/i, "p"], ["artigo", /\bartigos?\b/i, "p"],
@@ -705,7 +721,7 @@ const JARGON = [
   ["cooler", /\bcoolers?\b|\bwater cooler\b/i, "h"], ["80 Plus", /\b80 Plus\b/i, "h"], ["fonte modular", /\bmodular(es)?\b/i, "h"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG", "historia-do-brasil": "iH", "geografia-do-brasil": "oB", "corpo-humano-e-saude": "bC", "quimica-organica": "xO", "termodinamica-optica-e-fisica-moderna": "fT" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG", "historia-do-brasil": "iH", "geografia-do-brasil": "oB", "corpo-humano-e-saude": "bC", "quimica-organica": "xO", "termodinamica-optica-e-fisica-moderna": "fT", "sociedade-brasileira": "jS" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;

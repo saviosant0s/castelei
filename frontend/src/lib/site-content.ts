@@ -527,6 +527,26 @@ export const SUBJECTS: SiteSubject[] = [
       "A física moderna no seu dia a dia",
     ],
   },
+  {
+    slug: "sociedade-brasileira",
+    name: "Sociedade brasileira",
+    pitch:
+      "O Brasil pela Sociologia: a formação do povo, os intérpretes do país, o racismo, a cidadania, o trabalho e a desigualdade, com os dados que o ENEM cobra.",
+    lessons: [
+      "A formação do povo brasileiro",
+      "Os intérpretes do Brasil: Freyre, Buarque, Caio Prado e Florestan",
+      "O racismo no Brasil: do mito aos números",
+      "Patrimonialismo, coronelismo e clientelismo",
+      "A cidadania no Brasil: a ordem invertida dos direitos",
+      "Movimentos sociais no Brasil",
+      "A desigualdade no Brasil",
+      "O trabalho no Brasil de hoje",
+      "Povos indígenas e quilombolas: terra e direitos",
+      "Família e gênero no Brasil de hoje",
+      "Violência e segurança pública",
+      "Cultura e religião no Brasil",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -543,5 +563,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 4228,
+  questions: 4396,
 };
