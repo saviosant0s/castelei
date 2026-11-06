@@ -283,11 +283,17 @@ export const SUBJECTS: SiteSubject[] = [
       "Do mito à razão, Sócrates, Platão e Aristóteles, razão e experiência, ética, política e contrato social, Marx, Nietzsche e o existencialismo.",
     lessons: [
       "O que é filosofia: do mito à razão",
+      "Os pré-socráticos: de que o mundo é feito",
       "Sócrates, Platão e Aristóteles",
+      "Como viver bem: estoicos, epicuristas e cínicos",
       "Razão e experiência: de onde vem o conhecimento",
+      "Argumentar bem: dedução, indução e falácias",
+      "Ciência: como sabemos o que sabemos",
       "Ética: o certo e o errado",
       "Política: poder, Estado e contrato social",
+      "Estética e indústria cultural: o belo e a arte de massa",
       "Filosofia contemporânea: Marx, Nietzsche e o existencialismo",
+      "Pensar o século XX: Arendt, Foucault e Beauvoir",
     ],
   },
   {
@@ -300,6 +306,12 @@ export const SUBJECTS: SiteSubject[] = [
       "Os clássicos: Durkheim, Weber e Marx",
       "Cultura, identidade e diversidade",
       "Trabalho e desigualdade social",
+      "Raça, racismo e desigualdade racial",
+      "Gênero: papéis, desigualdade e violência",
+      "Religião e sociedade",
+      "Escola e desigualdade",
+      "A cidade: periferia, segregação e violência",
+      "Mídia, consumo e redes sociais",
       "Poder, Estado, democracia e cidadania",
       "Movimentos sociais e direitos humanos",
     ],
@@ -366,5 +378,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 2534,
+  questions: 2702,
 };

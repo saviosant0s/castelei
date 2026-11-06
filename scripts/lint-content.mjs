@@ -181,9 +181,12 @@ const JARGON = [
   ["imperativo categórico", /\bimperativo categ(ó|o)rico\b/i, "z"], ["utilitarismo", /\butilitaris(mo|ta|tas)\b/i, "z"],
   ["estado de natureza", /\bestado de natureza\b/i, "zj"], ["contrato social", /\bcontrato social\b/i, "zj"], ["alienação", /\baliena(ç|c)(ão|ões)\b/i, "zj"],
   ["mais-valia", /\bmais-valia\b/i, "zj"], ["existencialismo", /\bexistencialis(mo|ta|tas)\b/i, "z"], ["niilismo", /\bniilis(mo|ta|tas)\b/i, "z"],
+  ["falácia", /(?<!\p{L})fal(á|a)cias?(?!\p{L})/iu, "z"], ["indústria cultural", /(?<!\p{L})ind(ú|u)strias? cultura(l|is)(?!\p{L})/iu, "zj"], ["paradigma", /\bparadigmas?\b/i, "z"], ["mimese", /\bmimeses?\b/i, "z"],
   ["fato social", /\bfatos? socia(l|is)\b/i, "j"], ["socialização", /\bsocializa(ç|c)(ão|ões)\b/i, "j"], ["etnocentrismo", /\betnocentris(mo|ta|tas)\b/i, "j"],
   ["relativismo cultural", /\brelativismo cultural\b/i, "j"], ["classe social", /\bclasses? socia(l|is)\b/i, "j"], ["luta de classes", /\bluta de classes\b/i, "j"],
   ["burguesia e proletariado", /(?<!\p{L})burgu(e|ê)s(ia|es|a|as)?(?!\p{L})|\bproletari(ado|os?)\b/iu, "zj"], ["mobilidade social", /\bmobilidade social\b/i, "j"],
+  ["racismo estrutural", /\bracismo estrutural\b/i, "j"], ["segregação espacial", /\bsegrega(ç|c)(ão|ões) espacia(l|is)\b/i, "j"], ["gentrificação", /\bgentrifica(ç|c)(ão|ões)\b/i, "j"],
+  ["capital cultural", /\bcapita(l|is) cultura(l|is)\b/i, "j"], ["meritocracia", /\bmeritocracias?\b/i, "j"],
   // Artes (escopo "A") e Educação Física (escopo "E"): letras maiúsculas para não colidir com Álgebra ("a") e Probabilidade ("e").
   ["linguagem artística", /\blinguage(m|ns) art(í|i)sticas?\b/i, "A"], ["cores primárias", /(?<!\p{L})cores prim(á|a)rias(?!\p{L})/iu, "A"], ["cores complementares", /\bcores complementares\b/i, "A"],
   ["perspectiva", /\bperspectiva\b|\bponto de fuga\b/i, "A"], ["Renascimento", /\bRenascimento\b/, "A"], ["Barroco", /\bBarroco\b|\bbarroc(o|a)s?\b/, "A"],
