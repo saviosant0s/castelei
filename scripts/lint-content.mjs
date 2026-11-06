@@ -140,6 +140,7 @@ const JARGON = [
   ["reflexão", /(?<!\p{L})reflex(ão|ões)(?!\p{L})/iu, "f"], ["refração", /(?<!\p{L})refra(ç|c)(ão|ões)(?!\p{L})/iu, "f"], ["onda eletromagnética", /\beletromagn(é|e)tic(a|as|o|os)\b/i, "f"],
   ["corrente elétrica", /\bcorrentes? el(é|e)tricas?\b|\bamp(è|e)res?\b/i, "f"], ["tensão elétrica", /\btens(ão|ões)( el(é|e)tricas?)?\b|\bvolts?\b/i, "f"],
   ["resistência elétrica", /(?<!\p{L})resist(ê|e)ncias? el(é|e)tricas?(?!\p{L})|\bohms?\b/iu, "f"], ["quilowatt-hora", /\bquilowatts?-hora\b|\bkWh\b/, "f"],
+  ["força centrípeta", /\bfor(ç|c)as? centr(í|i)petas?\b/i, "f"], ["densidade", /\bdensidades?\b/i, "f"], ["empuxo", /\bempuxos?\b/i, "f"], ["campo magnético", /\bcampos? magn(é|e)ticos?\b/i, "f"],
   // Química básica (escopo "x").
   ["substância pura", /(?<!\p{L})subst(â|a)ncias? puras?(?!\p{L})/iu, "x"], ["mistura homogênea e heterogênea", /(?<!\p{L})(homog|heterog)(ê|e)ne(a|as|o|os)(?!\p{L})/iu, "x"],
   ["filtração", /\bfiltra(ç|c)(ão|ões)\b/i, "x"], ["decantação", /\bdecanta(ç|c)(ão|ões)\b/i, "x"], ["destilação", /\bdestila(ç|c)(ão|ões)\b/i, "x"],
@@ -151,6 +152,10 @@ const JARGON = [
   ["mol", /(?<!\p{L})mols?(?!\p{L})/iu, "x"], ["massa molar", /\bmassas? molar(es)?\b/i, "x"], ["soluto e solvente", /\bsolutos?\b|\bsolventes?\b/i, "x"], ["concentração", /\bconcentra(ç|c)(ão|ões)\b/i, "x"],
   ["solubilidade", /\bsolubilidade\b/i, "x"], ["hidrocarboneto", /\bhidrocarbonetos?\b/i, "x"], ["função orgânica", /(?<!\p{L})fun(ç|c)(ão|ões) org(â|a)nicas?(?!\p{L})/iu, "x"],
   ["combustão", /(?<!\p{L})combust(ão|ões)(?!\p{L})/iu, "x"],
+  ["exotérmica e endotérmica", /(?<!\p{L})(ex|end)ot(é|e)rmic(a|as|o|os)(?!\p{L})/iu, "x"], ["entalpia", /\bentalpias?\b/i, "x"], ["catalisador", /\bcatalisador(es)?\b/i, "x"],
+  ["energia de ativação", /(?<!\p{L})energias? de ativa(ç|c)(ão|ões)(?!\p{L})/iu, "x"], ["equilíbrio químico", /(?<!\p{L})equil(í|i)brios? qu(í|i)micos?(?!\p{L})/iu, "x"],
+  ["oxidação e redução", /(?<!\p{L})oxida(ç|c)(ão|ões)(?!\p{L})/iu, "x"], ["eletrólise", /(?<!\p{L})eletr(ó|o)lises?(?!\p{L})/iu, "x"], ["radioatividade", /\bradioatividade\b/i, "x"],
+  ["meia-vida", /\bmeias?-vidas?\b/i, "x"], ["fissão e fusão nuclear", /(?<!\p{L})fiss(ão|ões)(?!\p{L})|(?<!\p{L})fus(ão|ões) nuclear(es)?(?!\p{L})/iu, "x"],
   // Inglês e Espanhol básicos (escopos "w" e "u"): os nomes de gramática que a lição explica.
   ["pronome pessoal", /\bpronomes?\b/i, "wu"], ["verbo to be", /\bto be\b/i, "w"], ["contração", /\bcontra(ç|c)(ão|ões)\b/i, "wu"],
   ["presente simples e contínuo", /\bpresente (simples|cont(í|i)nuo)\b/i, "w"], ["passado simples", /\bpassado simples\b/i, "w"],

@@ -781,6 +781,390 @@
       ]
     },
     {
+      "slug": "graficos-do-movimento",
+      "title": "Os gráficos do movimento",
+      "module": "Movimento",
+      "summary": "O movimento pode ser desenhado: o tempo num eixo, a posição ou a velocidade no outro. Saber ler o desenho é saber se o objeto parou, correu ou freou.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O carro no mapa",
+          "body": [
+            "O aplicativo de corrida mostra o carro andando no mapa, minuto a minuto. Dá para desenhar isso: o tempo num eixo, a posição no outro.",
+            "O desenho conta a viagem inteira de uma vez. Quem sabe ler o gráfico sabe se o carro parou, correu ou freou."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A posição ao longo do tempo",
+          "body": [
+            "No movimento uniforme, a posição muda sempre do mesmo tanto. A conta é s = s₀ + v × t.",
+            "Um ciclista parte do km 10 a 15 km/h. Depois de 2 horas, ele está no km 10 + 15 × 2 = 40."
+          ],
+          "example": {
+            "label": "Lendo a fórmula",
+            "lines": [
+              "s: a posição agora, onde o objeto está.",
+              "s₀: a posição de partida.",
+              "v: a velocidade, que não muda.",
+              "t: o tempo que passou."
+            ]
+          },
+          "terms": [
+            {
+              "word": "movimento uniforme",
+              "meaning": "o movimento com velocidade constante: o objeto anda a mesma distância a cada segundo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O gráfico da reta",
+          "body": [
+            "No gráfico da posição pelo tempo, o movimento uniforme vira uma reta inclinada. Quanto mais em pé a reta, maior a velocidade.",
+            "Uma reta deitada, que não sobe, quer dizer que o objeto está parado."
+          ],
+          "table": {
+            "label": "Como ler o gráfico da posição",
+            "headers": [
+              "O desenho",
+              "Quer dizer"
+            ],
+            "rows": [
+              [
+                "reta subindo",
+                "andando para a frente, sem mudar a velocidade"
+              ],
+              [
+                "reta mais em pé",
+                "mais rápido"
+              ],
+              [
+                "reta deitada",
+                "parado"
+              ],
+              [
+                "reta descendo",
+                "voltando"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Quando a velocidade muda",
+          "body": [
+            "Um carro saindo do sinal ganha velocidade aos poucos. Se ele ganha sempre o mesmo tanto por segundo, o movimento é uniformemente variado.",
+            "A conta é v = v₀ + a × t. Um carro parte parado com aceleração de 2 m/s². Depois de 5 segundos, ele está a 0 + 2 × 5 = 10 m/s."
+          ],
+          "terms": [
+            {
+              "word": "aceleração",
+              "meaning": "a mudança da velocidade a cada segundo. Um carro que ganha 2 m/s por segundo tem aceleração de 2 m/s²."
+            },
+            {
+              "word": "movimento uniformemente variado",
+              "meaning": "o movimento em que a velocidade muda sempre do mesmo tanto a cada segundo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O gráfico da velocidade",
+          "body": [
+            "No gráfico da velocidade pelo tempo, o movimento uniforme é uma reta deitada. O variado é uma reta inclinada: subindo quando acelera, descendo quando freia.",
+            "A área embaixo da linha dá a distância percorrida. Um carro a 20 m/s por 10 segundos forma um retângulo de 20 × 10 = 200 metros."
+          ],
+          "table": {
+            "label": "Os dois movimentos nos dois gráficos",
+            "headers": [
+              "Movimento",
+              "Posição × tempo",
+              "Velocidade × tempo"
+            ],
+            "rows": [
+              [
+                "uniforme",
+                "reta inclinada",
+                "reta deitada"
+              ],
+              [
+                "uniformemente variado",
+                "curva (parábola)",
+                "reta inclinada"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A área do triângulo",
+          "body": [
+            "Quando a velocidade cresce de 0 a 20 m/s em 10 segundos, a área embaixo da linha é um triângulo.",
+            "Ela vale a metade do retângulo. Faz sentido: no começo o carro andava devagar."
+          ],
+          "example": {
+            "label": "A conta passo a passo",
+            "lines": [
+              "Base do triângulo: 10 segundos.",
+              "Altura: 20 m/s.",
+              "Área: 10 × 20 ÷ 2 = 100.",
+              "O carro andou 100 metros."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mostra um gráfico e pede a velocidade, a aceleração ou a distância. Também cobra qual desenho corresponde a cada tipo de movimento."
+          ],
+          "bullets": [
+            "“De acordo com o gráfico, a velocidade do móvel…”",
+            "“A distância percorrida entre 0 e 10 s corresponde a…”",
+            "“O gráfico que representa um movimento uniforme é…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que reta deitada no gráfico da posição é velocidade constante. Ali ela quer dizer parado.",
+            "Confundir os dois gráficos. Olhe sempre o nome dos eixos antes.",
+            "Esquecer de dividir por 2 a área do triângulo.",
+            "Achar que velocidade alta é aceleração alta. Um avião em linha reta está rápido, mas sem aceleração."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "No movimento uniforme, s = s₀ + v × t, e o gráfico da posição é uma reta inclinada. No variado, v = v₀ + a × t, e a reta inclinada aparece no gráfico da velocidade.",
+            "Reta deitada na posição é parado; na velocidade, é velocidade constante. A área embaixo da velocidade dá a distância."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Posição",
+          "statement": "Um ônibus parte do km 20 a 60 km/h, sem mudar a velocidade. Depois de 2 horas, ele está no km:",
+          "options": [
+            "140",
+            "120",
+            "80",
+            "62",
+            "100"
+          ],
+          "correct_index": 0,
+          "explanation": "s = 20 + 60 × 2 = 140.",
+          "pitfall": "120 esquece a posição de partida."
+        },
+        {
+          "topic": "Reta deitada",
+          "statement": "No gráfico da posição pelo tempo, uma reta deitada quer dizer que o objeto está:",
+          "options": [
+            "parado",
+            "com velocidade constante e alta",
+            "acelerando",
+            "freando",
+            "voltando"
+          ],
+          "correct_index": 0,
+          "explanation": "A posição não muda: ele não saiu do lugar.",
+          "pitfall": "No gráfico da velocidade, reta deitada seria velocidade constante."
+        },
+        {
+          "topic": "Inclinação",
+          "statement": "Dois carros aparecem no mesmo gráfico da posição pelo tempo. A reta do carro A é mais em pé. Então o carro A:",
+          "options": [
+            "é mais rápido",
+            "é mais lento",
+            "está parado",
+            "tem a mesma velocidade de B",
+            "está voltando"
+          ],
+          "correct_index": 0,
+          "explanation": "Reta mais em pé: mais posição em menos tempo.",
+          "pitfall": "Mais lento seria a reta mais deitada."
+        },
+        {
+          "topic": "Ganhar velocidade",
+          "statement": "Um carro parte parado com aceleração de 3 m/s². Depois de 4 segundos, a velocidade é:",
+          "options": [
+            "12 m/s",
+            "7 m/s",
+            "1 m/s",
+            "0,75 m/s",
+            "34 m/s"
+          ],
+          "correct_index": 0,
+          "explanation": "v = 0 + 3 × 4 = 12.",
+          "pitfall": "7 somou em vez de multiplicar."
+        },
+        {
+          "topic": "Retângulo",
+          "statement": "Um carro anda a 15 m/s durante 8 segundos. A distância percorrida é:",
+          "options": [
+            "120 metros",
+            "23 metros",
+            "7 metros",
+            "1,9 metro",
+            "60 metros"
+          ],
+          "correct_index": 0,
+          "explanation": "É a área do retângulo: 15 × 8 = 120.",
+          "pitfall": "23 somou os números."
+        },
+        {
+          "topic": "Triângulo",
+          "statement": "Num gráfico, a velocidade sobe de 0 a 30 m/s em 6 segundos. A distância percorrida é:",
+          "options": [
+            "90 metros",
+            "180 metros",
+            "36 metros",
+            "5 metros",
+            "24 metros"
+          ],
+          "correct_index": 0,
+          "explanation": "Área do triângulo: 6 × 30 ÷ 2 = 90.",
+          "pitfall": "180 esqueceu de dividir por 2."
+        },
+        {
+          "topic": "Velocidade constante",
+          "statement": "No gráfico da velocidade pelo tempo, um movimento uniforme aparece como:",
+          "options": [
+            "uma reta deitada",
+            "uma reta subindo",
+            "uma parábola",
+            "um ponto só",
+            "uma reta descendo"
+          ],
+          "correct_index": 0,
+          "explanation": "A velocidade não muda, então a linha não sobe nem desce.",
+          "pitfall": "Reta subindo seria velocidade aumentando."
+        },
+        {
+          "topic": "Desenhos",
+          "format": "match",
+          "statement": "Ligue cada desenho do gráfico da velocidade ao que ele quer dizer.",
+          "pairs": [
+            {
+              "left": "reta deitada",
+              "right": "velocidade constante"
+            },
+            {
+              "left": "reta subindo",
+              "right": "acelerando"
+            },
+            {
+              "left": "reta descendo",
+              "right": "freando"
+            },
+            {
+              "left": "reta deitada no zero",
+              "right": "parado"
+            }
+          ],
+          "explanation": "No gráfico da velocidade, a inclinação é a aceleração.",
+          "pitfall": "Reta deitada no zero é velocidade zero: parado."
+        },
+        {
+          "topic": "Letra",
+          "statement": "Na fórmula s = s₀ + v × t, a letra s₀ é:",
+          "options": [
+            "a posição de partida",
+            "a velocidade",
+            "o tempo",
+            "a aceleração",
+            "a distância final"
+          ],
+          "correct_index": 0,
+          "explanation": "O zero pequeno marca o começo.",
+          "pitfall": "A velocidade é a letra v.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Voltando",
+          "statement": "No gráfico da posição, uma reta descendo indica que o objeto está:",
+          "options": [
+            "voltando",
+            "parado",
+            "acelerando para a frente",
+            "sempre na posição zero",
+            "mais rápido a cada segundo"
+          ],
+          "correct_index": 0,
+          "explanation": "A posição diminui com o tempo.",
+          "pitfall": "Parado seria a reta deitada.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Frear",
+          "statement": "Um carro a 20 m/s freia e perde 4 m/s a cada segundo. Ele para depois de:",
+          "options": [
+            "5 segundos",
+            "16 segundos",
+            "80 segundos",
+            "24 segundos",
+            "4 segundos"
+          ],
+          "correct_index": 0,
+          "explanation": "20 ÷ 4 = 5.",
+          "pitfall": "80 multiplicou em vez de dividir.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Encontro",
+          "statement": "Dois amigos andam na mesma pista. No gráfico da posição pelo tempo, as duas retas se cruzam. O cruzamento mostra:",
+          "options": [
+            "o instante e o lugar em que eles se encontram",
+            "que os dois estão parados",
+            "que os dois têm a mesma velocidade",
+            "o fim da pista",
+            "que um deles voltou"
+          ],
+          "correct_index": 0,
+          "explanation": "No cruzamento, os dois estão na mesma posição no mesmo tempo.",
+          "pitfall": "Mesma velocidade seria retas paralelas.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Avião",
+          "statement": "Um avião voa a 900 km/h em linha reta, sem mudar a velocidade. Sobre ele, é certo dizer que:",
+          "options": [
+            "a aceleração é zero",
+            "a aceleração é de 900",
+            "a aceleração é alta porque ele é rápido",
+            "ele está parado",
+            "o gráfico da velocidade sobe"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem mudança de velocidade, não há aceleração.",
+          "pitfall": "Rápido não quer dizer acelerado: é a pegadinha fina.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Dois trechos",
+          "statement": "Um carro anda 10 segundos a 10 m/s e depois mais 10 segundos a 20 m/s. A distância total é:",
+          "options": [
+            "300 metros",
+            "200 metros",
+            "150 metros",
+            "30 metros",
+            "400 metros"
+          ],
+          "correct_index": 0,
+          "explanation": "10 × 10 + 10 × 20 = 100 + 200 = 300.",
+          "pitfall": "200 usou só o trecho mais rápido.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "leis-de-newton",
       "title": "As três leis de Newton",
       "module": "Movimento",
@@ -1132,6 +1516,370 @@
           "correct_index": 0,
           "explanation": "A resultante é 30 − 10 = 20 N. a = 20 ÷ 5 = 4 m/s², para a direita.",
           "pitfall": "8 m/s² vem de somar as forças em vez de subtrair.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "movimento-circular",
+      "title": "Movimento circular: rodas, engrenagens e satélites",
+      "module": "Movimento",
+      "summary": "Rodas, ventiladores e satélites andam em círculo. A lição mostra o período e a frequência, a conta das engrenagens e por que a Lua não cai.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A lama da bicicleta",
+          "body": [
+            "Ande de bicicleta numa poça e olhe a roda. A lama sai voando reta, para fora, e não em círculo.",
+            "Toda roda que gira tenta jogar as coisas em linha reta. Entender por que é entender o movimento em círculo."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Uma volta e quantas voltas",
+          "body": [
+            "Um ventilador dá 600 voltas por minuto (600 rpm). Então ele dá 10 voltas por segundo, e cada volta dura um décimo de segundo.",
+            "Período e frequência são o inverso um do outro: um diz quanto dura a volta, o outro quantas voltas cabem."
+          ],
+          "terms": [
+            {
+              "word": "período e frequência",
+              "meaning": "período é o tempo de uma volta completa. Frequência é quantas voltas cabem num tempo, como voltas por minuto."
+            }
+          ],
+          "table": {
+            "label": "Quanto dura uma volta",
+            "headers": [
+              "O que gira",
+              "Período"
+            ],
+            "rows": [
+              [
+                "ponteiro dos segundos",
+                "1 minuto"
+              ],
+              [
+                "Terra em torno de si",
+                "cerca de 24 horas"
+              ],
+              [
+                "Lua em torno da Terra",
+                "cerca de 27 dias"
+              ],
+              [
+                "Terra em torno do Sol",
+                "cerca de 365 dias"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Engrenagens e correntes",
+          "body": [
+            "Na bicicleta, a corrente liga a coroa (a roda dentada do pedal) à catraca (a da roda de trás). Os dentes das duas andam juntos com a corrente.",
+            "Por isso a menor gira mais vezes. Uma coroa de 48 dentes e uma catraca de 16 fazem a roda de trás dar 3 voltas a cada pedalada."
+          ],
+          "example": {
+            "label": "A conta da marcha",
+            "lines": [
+              "Divida os dentes da coroa pelos da catraca: 48 ÷ 16 = 3.",
+              "Cada volta do pedal dá 3 voltas na roda de trás.",
+              "Catraca menor dá mais voltas: anda mais, mas pesa na subida."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A força para o centro",
+          "body": [
+            "Um corpo em movimento tende a seguir em linha reta. Para fazer uma curva, alguma força precisa puxá-lo para o centro.",
+            "No carro, quem faz isso é o atrito dos pneus. Na pista molhada falta atrito, e o carro sai pela tangente: segue reto."
+          ],
+          "terms": [
+            {
+              "word": "inércia",
+              "meaning": "a tendência de um corpo de continuar como está: parado, ou andando em linha reta."
+            },
+            {
+              "word": "atrito",
+              "meaning": "a força que aparece quando duas superfícies raspam. É ela que segura o pneu no chão."
+            },
+            {
+              "word": "força centrípeta",
+              "meaning": "a força que puxa para o centro e faz um objeto andar em círculo. Sem ela, ele seguiria em linha reta."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Por que a Lua não cai",
+          "body": [
+            "A Terra puxa a Lua, e a Lua puxa a Terra. Quanto maiores as massas, mais forte a atração. Quanto maior a distância, mais fraca: dobrar a distância deixa a força quatro vezes menor.",
+            "A Lua está caindo o tempo todo, mas anda tão rápido de lado que nunca chega. Isso é uma órbita."
+          ],
+          "terms": [
+            {
+              "word": "gravitação",
+              "meaning": "a atração entre todas as massas do Universo. É ela que segura a Lua perto da Terra."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O astronauta que flutua",
+          "body": [
+            "Na estação espacial, a gravidade da Terra ainda é quase 90% da que temos aqui.",
+            "O astronauta flutua porque cai junto com a estação, em órbita. É como estar num elevador despencando: tudo cai igual, e nada empurra o chão."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede a frequência de uma roda, a conta das engrenagens ou o caminho de um objeto que escapa de uma curva. Também cobra por que um satélite fica em órbita."
+          ],
+          "bullets": [
+            "“A frequência de rotação da roda, em rpm, é…”",
+            "“Ao se soltar, o objeto segue a trajetória…”",
+            "“O satélite permanece em órbita porque…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que o objeto solto de uma curva continua em curva. Ele sai em linha reta, pela tangente.",
+            "Achar que no espaço não há gravidade. O astronauta flutua porque está caindo junto com a nave.",
+            "Inverter a conta das engrenagens. A roda menor é a que gira mais vezes.",
+            "Confundir período com frequência: um é o tempo de uma volta; o outro, as voltas num tempo."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Período é o tempo de uma volta; frequência, as voltas num tempo. Ligadas por corrente, a roda menor gira mais vezes.",
+            "Para andar em círculo é preciso uma força para o centro. Sem ela, o corpo segue reto. A Lua e os satélites estão caindo o tempo todo, sem nunca chegar."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Por segundo",
+          "statement": "Um ventilador dá 1.200 voltas por minuto. Quantas voltas ele dá por segundo?",
+          "options": [
+            "20",
+            "1.200",
+            "72.000",
+            "12",
+            "200"
+          ],
+          "correct_index": 0,
+          "explanation": "Um minuto tem 60 segundos: 1.200 ÷ 60 = 20.",
+          "pitfall": "72.000 multiplicou por 60 em vez de dividir."
+        },
+        {
+          "topic": "Uma volta",
+          "statement": "Uma roda dá 4 voltas por segundo. O tempo de uma volta é:",
+          "options": [
+            "0,25 segundo",
+            "4 segundos",
+            "40 segundos",
+            "2 segundos",
+            "1 segundo"
+          ],
+          "correct_index": 0,
+          "explanation": "1 ÷ 4 = 0,25.",
+          "pitfall": "4 segundos confunde período com frequência."
+        },
+        {
+          "topic": "Coroa e catraca",
+          "statement": "Uma bicicleta tem coroa de 40 dentes e catraca de 20. A cada volta do pedal, a roda de trás dá:",
+          "options": [
+            "2 voltas",
+            "1 volta",
+            "meia volta",
+            "20 voltas",
+            "60 voltas"
+          ],
+          "correct_index": 0,
+          "explanation": "40 ÷ 20 = 2.",
+          "pitfall": "Meia volta inverte a conta."
+        },
+        {
+          "topic": "Barbante",
+          "statement": "Uma pedra gira presa num barbante, que arrebenta. A pedra sai:",
+          "options": [
+            "em linha reta, pela tangente",
+            "em círculo, como antes",
+            "para o centro",
+            "parada no ar",
+            "em espiral para dentro"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem força para o centro, ela segue reto.",
+          "pitfall": "Achar que continua em círculo é o engano clássico."
+        },
+        {
+          "topic": "Curva",
+          "statement": "Num carro fazendo uma curva, a força que puxa para o centro vem principalmente:",
+          "options": [
+            "do atrito dos pneus com o chão",
+            "do motor",
+            "do volante sozinho",
+            "do vento",
+            "do banco do motorista"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem atrito, o carro sairia reto.",
+          "pitfall": "O volante só vira as rodas; quem segura é o atrito."
+        },
+        {
+          "topic": "Lua",
+          "statement": "A Lua não cai na Terra porque:",
+          "options": [
+            "ela cai o tempo todo, mas anda rápido de lado e nunca chega",
+            "no espaço não existe gravidade",
+            "a Terra a empurra para longe",
+            "ela está parada no céu",
+            "o Sol a segura no lugar"
+          ],
+          "correct_index": 0,
+          "explanation": "A órbita é uma queda que nunca termina.",
+          "pitfall": "“Não existe gravidade” é a pegadinha."
+        },
+        {
+          "topic": "Astronauta",
+          "statement": "Um astronauta flutua dentro da estação espacial porque:",
+          "options": [
+            "ele cai junto com a estação, em órbita",
+            "lá não existe gravidade nenhuma",
+            "a estação tem ímãs",
+            "ele perdeu a massa",
+            "o ar o empurra para cima"
+          ],
+          "correct_index": 0,
+          "explanation": "Tudo cai junto, então nada empurra o chão.",
+          "pitfall": "A gravidade lá ainda é quase 90% da daqui."
+        },
+        {
+          "topic": "Períodos",
+          "format": "match",
+          "statement": "Ligue cada movimento ao tempo de uma volta.",
+          "pairs": [
+            {
+              "left": "ponteiro dos segundos",
+              "right": "1 minuto"
+            },
+            {
+              "left": "Terra em torno de si",
+              "right": "cerca de 24 horas"
+            },
+            {
+              "left": "Lua em torno da Terra",
+              "right": "cerca de 27 dias"
+            },
+            {
+              "left": "Terra em torno do Sol",
+              "right": "cerca de 365 dias"
+            }
+          ],
+          "explanation": "Período é sempre o tempo de uma volta completa.",
+          "pitfall": "Um dia é a volta da Terra em torno de si; um ano, em torno do Sol."
+        },
+        {
+          "topic": "rpm",
+          "statement": "A sigla rpm quer dizer:",
+          "options": [
+            "rotações por minuto",
+            "raio por metro",
+            "rodas por motor",
+            "reação por massa",
+            "rapidez por média"
+          ],
+          "correct_index": 0,
+          "explanation": "É uma medida de frequência.",
+          "pitfall": "Não tem nada de metro.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Menor",
+          "statement": "Duas engrenagens estão ligadas por uma corrente. A que gira mais vezes é:",
+          "options": [
+            "a menor",
+            "a maior",
+            "as duas igualmente",
+            "a que tem mais dentes",
+            "nenhuma"
+          ],
+          "correct_index": 0,
+          "explanation": "Com menos dentes, ela precisa dar mais voltas.",
+          "pitfall": "Mais dentes é justamente a que gira menos.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Distância",
+          "statement": "Se a distância entre dois planetas dobra, a atração entre eles fica:",
+          "options": [
+            "quatro vezes menor",
+            "duas vezes menor",
+            "duas vezes maior",
+            "igual",
+            "quatro vezes maior"
+          ],
+          "correct_index": 0,
+          "explanation": "A força cai com o quadrado da distância: 2 × 2 = 4.",
+          "pitfall": "Duas vezes menor esquece o quadrado.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Subida",
+          "statement": "Numa subida, o ciclista troca para uma catraca maior. Com isso:",
+          "options": [
+            "cada pedalada gira menos a roda, e pedalar fica mais leve",
+            "a bicicleta fica mais rápida",
+            "a roda gira mais vezes por pedalada",
+            "a corrente deixa de funcionar",
+            "nada muda"
+          ],
+          "correct_index": 0,
+          "explanation": "Menos voltas por pedalada pedem menos força.",
+          "pitfall": "Mais voltas é o que a catraca menor faz.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Em comum",
+          "statement": "Na corrente da bicicleta, coroa e catraca têm em comum:",
+          "options": [
+            "a velocidade dos dentes, que andam com a corrente",
+            "o número de voltas por minuto",
+            "o tamanho",
+            "o número de dentes",
+            "o período"
+          ],
+          "correct_index": 0,
+          "explanation": "A corrente leva os dentes das duas no mesmo passo.",
+          "pitfall": "Voltas por minuto é justamente o que muda: a pegadinha fina.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Lá em cima",
+          "statement": "Na estação espacial, a cerca de 400 km de altura, a gravidade da Terra é:",
+          "options": [
+            "quase 90% da que sentimos aqui",
+            "zero",
+            "o dobro da daqui",
+            "10% da daqui",
+            "igual à da Lua"
+          ],
+          "correct_index": 0,
+          "explanation": "400 km é pouco perto dos 6.400 km do raio da Terra.",
+          "pitfall": "Zero é o engano que o astronauta flutuando sugere.",
           "difficulty": "dificil"
         }
       ]
@@ -1914,6 +2662,381 @@
           "correct_index": 0,
           "explanation": "Sólido direto para gás é sublimação.",
           "pitfall": "Vaporização é de líquido para gás.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "pressao-e-empuxo",
+      "title": "Pressão, densidade e empuxo: por que o navio flutua",
+      "module": "Fluidos",
+      "summary": "A faca corta porque concentra a força. A pressão cresce com a profundidade, e o empuxo explica por que um navio de aço flutua e uma pedra afunda.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A faca afiada",
+          "body": [
+            "Uma faca afiada corta o tomate com pouca força. A mesma força, com a faca cega, só amassa.",
+            "A diferença está na área. Na lâmina fina, a força se concentra num ponto pequeno."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A pressão",
+          "body": [
+            "A conta é força dividida pela área: p = F ÷ A. A unidade é o pascal (Pa), que é um newton por metro quadrado.",
+            "Por isso o salto fino afunda na grama, e o tênis largo não."
+          ],
+          "example": {
+            "label": "Pouca área, muita pressão",
+            "lines": [
+              "Faca afiada: corta.",
+              "Salto fino: afunda na grama.",
+              "Pneu largo do trator: não atola."
+            ]
+          },
+          "terms": [
+            {
+              "word": "pressão",
+              "meaning": "a força dividida pela área em que ela se apoia. A mesma força apertada num ponto pequeno faz mais pressão."
+            },
+            {
+              "word": "newton (N)",
+              "meaning": "a unidade de força. Segurar um pacote de 1 kg pede cerca de 10 N."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A pressão da água e do ar",
+          "body": [
+            "Quanto mais fundo, mais água em cima, e mais pressão. A cada 10 metros de mergulho, ela aumenta cerca de uma atmosfera.",
+            "Uma atmosfera é a pressão do ar ao nível do mar. É ela que empurra o suco canudo acima quando você puxa o ar de dentro dele."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A densidade",
+          "body": [
+            "Um quilo de chumbo e um quilo de isopor têm a mesma massa. Mas o isopor ocupa muito mais espaço.",
+            "A água tem densidade de 1 kg por litro. O que é menos denso que ela flutua; o que é mais denso afunda."
+          ],
+          "terms": [
+            {
+              "word": "densidade",
+              "meaning": "a massa dividida pelo volume. Diz quanto de matéria cabe num pedaço de espaço."
+            }
+          ],
+          "table": {
+            "label": "Densidades aproximadas",
+            "headers": [
+              "Material",
+              "kg por litro"
+            ],
+            "rows": [
+              [
+                "isopor",
+                "0,03"
+              ],
+              [
+                "madeira",
+                "cerca de 0,6"
+              ],
+              [
+                "gelo",
+                "0,92"
+              ],
+              [
+                "água",
+                "1"
+              ],
+              [
+                "ferro",
+                "7,9"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O empuxo",
+          "body": [
+            "Dentro da piscina, uma pessoa parece mais leve. A água empurra o corpo para cima.",
+            "Esse empurrão vale o peso da água que o corpo tirou do lugar. Se ele for maior que o peso do corpo, o corpo sobe e flutua."
+          ],
+          "terms": [
+            {
+              "word": "massa e peso",
+              "meaning": "massa é a quantidade de matéria, em quilogramas. Peso é a força com que a Terra puxa essa massa."
+            },
+            {
+              "word": "empuxo",
+              "meaning": "a força para cima que um líquido faz em quem está dentro dele. Ela vale o peso do líquido que o corpo tirou do lugar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O navio de aço",
+          "body": [
+            "Uma bola maciça de aço afunda. O mesmo aço em forma de barco tira muita água do lugar e flutua.",
+            "O navio é oco: somando o aço e o ar de dentro, ele fica menos denso que a água."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O macaco hidráulico",
+          "body": [
+            "Num líquido preso, um aperto num ponto chega igual a todos os pontos. É o princípio de Pascal.",
+            "No macaco hidráulico, você empurra o óleo num tubo fino. O óleo empurra um tubo largo com a mesma pressão, e a força fica muitas vezes maior."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede por que algo afunda ou flutua e por que a faca corta. Também cobra o mergulho e o macaco hidráulico."
+          ],
+          "bullets": [
+            "“O navio flutua porque sua densidade média…”",
+            "“A pressão exercida pelo salto é maior porque…”",
+            "“O empuxo sobre o corpo é igual ao…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que o navio flutua por ser leve. Ele é pesado, mas é oco e tira muita água do lugar.",
+            "Confundir pressão com força. A mesma força faz mais pressão numa área menor.",
+            "Achar que um quilo de chumbo pesa mais que um de isopor. Os dois têm um quilo; o isopor só ocupa mais espaço.",
+            "Achar que o empuxo depende do peso do corpo. Ele depende da água que o corpo tirou do lugar."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Pressão é força dividida pela área: ponta fina, muita pressão. Na água, ela cresce cerca de uma atmosfera a cada 10 metros.",
+            "Densidade é massa dividida pelo volume. O empuxo vale o peso do líquido tirado do lugar, e quem é menos denso que o líquido flutua."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Faca",
+          "statement": "Uma faca afiada corta melhor que uma cega porque:",
+          "options": [
+            "a mesma força se concentra numa área menor",
+            "a faca afiada é mais pesada",
+            "a cega tem mais força",
+            "a pressão não depende da área",
+            "a afiada é mais densa"
+          ],
+          "correct_index": 0,
+          "explanation": "Menos área, mais pressão.",
+          "pitfall": "Dizer que a pressão não depende da área é o engano."
+        },
+        {
+          "topic": "Calcular",
+          "statement": "Uma caixa aperta o chão com força de 600 N, numa área de 2 m². A pressão é:",
+          "options": [
+            "300 Pa",
+            "1.200 Pa",
+            "602 Pa",
+            "598 Pa",
+            "3 Pa"
+          ],
+          "correct_index": 0,
+          "explanation": "600 ÷ 2 = 300.",
+          "pitfall": "1.200 multiplicou em vez de dividir."
+        },
+        {
+          "topic": "Mergulho",
+          "statement": "Um mergulhador desce de 10 para 30 metros. A pressão da água sobre ele:",
+          "options": [
+            "aumenta cerca de duas atmosferas",
+            "diminui",
+            "não muda",
+            "aumenta cerca de 30 atmosferas",
+            "cai pela metade"
+          ],
+          "correct_index": 0,
+          "explanation": "São 20 metros a mais: duas vezes 10 metros.",
+          "pitfall": "30 atmosferas esquece que é uma a cada 10 metros."
+        },
+        {
+          "topic": "Densidade",
+          "statement": "Um bloco de 2 kg ocupa 4 litros. A densidade dele é:",
+          "options": [
+            "0,5 kg por litro",
+            "2 kg por litro",
+            "8 kg por litro",
+            "6 kg por litro",
+            "4 kg por litro"
+          ],
+          "correct_index": 0,
+          "explanation": "2 ÷ 4 = 0,5.",
+          "pitfall": "8 multiplicou em vez de dividir."
+        },
+        {
+          "topic": "Na água",
+          "statement": "Um bloco com densidade de 0,5 kg por litro é posto na água. Ele:",
+          "options": [
+            "flutua",
+            "afunda",
+            "fica no fundo e sobe depois",
+            "se dissolve",
+            "afunda até o meio e para no fundo"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele é menos denso que a água, de 1 kg por litro.",
+          "pitfall": "Afunda quem é mais denso que a água."
+        },
+        {
+          "topic": "Navio",
+          "statement": "Um navio de aço flutua porque:",
+          "options": [
+            "é oco, e no total fica menos denso que a água",
+            "o aço é menos denso que a água",
+            "a água do mar não faz empuxo",
+            "ele é leve",
+            "o motor o segura em cima"
+          ],
+          "correct_index": 0,
+          "explanation": "O ar de dentro conta na densidade média.",
+          "pitfall": "O aço sozinho afunda: é bem mais denso que a água."
+        },
+        {
+          "topic": "Empuxo",
+          "statement": "O empuxo que a água faz num corpo é igual:",
+          "options": [
+            "ao peso da água que o corpo tirou do lugar",
+            "ao peso do próprio corpo, sempre",
+            "à massa da piscina inteira",
+            "a zero",
+            "à pressão do ar"
+          ],
+          "correct_index": 0,
+          "explanation": "É a regra de Arquimedes.",
+          "pitfall": "“Sempre o peso do corpo” só vale quando ele já flutua parado."
+        },
+        {
+          "topic": "Situações",
+          "format": "match",
+          "statement": "Ligue cada situação à ideia que a explica.",
+          "pairs": [
+            {
+              "left": "salto fino afundando na grama",
+              "right": "pressão"
+            },
+            {
+              "left": "gelo boiando no copo",
+              "right": "densidade"
+            },
+            {
+              "left": "corpo mais leve na piscina",
+              "right": "empuxo"
+            },
+            {
+              "left": "macaco hidráulico erguendo um carro",
+              "right": "princípio de Pascal"
+            }
+          ],
+          "explanation": "Cada ideia explica um tipo de situação.",
+          "pitfall": "O gelo bóia por ser menos denso; o empuxo é a força que o sustenta."
+        },
+        {
+          "topic": "Unidade",
+          "statement": "A unidade de pressão no Sistema Internacional é:",
+          "options": [
+            "o pascal",
+            "o quilograma",
+            "o metro",
+            "o litro",
+            "o segundo"
+          ],
+          "correct_index": 0,
+          "explanation": "Um pascal é um newton por metro quadrado.",
+          "pitfall": "Quilograma é unidade de massa.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Gelo",
+          "statement": "O gelo flutua na água porque:",
+          "options": [
+            "é menos denso que a água líquida",
+            "é mais pesado que a água",
+            "está mais frio que a água",
+            "tem ar preso de propósito",
+            "afunda e volta"
+          ],
+          "correct_index": 0,
+          "explanation": "Ao congelar, a água ocupa mais espaço.",
+          "pitfall": "Mais pesado afundaria.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Pregos",
+          "statement": "Uma pessoa deita numa cama de milhares de pregos e não se fere. O motivo é:",
+          "options": [
+            "o peso se divide entre muitas pontas, e a pressão em cada uma fica pequena",
+            "os pregos são de borracha",
+            "o corpo fica mais leve",
+            "não há força nenhuma",
+            "a pressão não depende da área"
+          ],
+          "correct_index": 0,
+          "explanation": "Muitas pontas somam uma área grande.",
+          "pitfall": "A força existe: só está dividida.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Mar",
+          "statement": "É mais fácil boiar no mar que na piscina porque a água salgada:",
+          "options": [
+            "é mais densa, e faz mais empuxo",
+            "é menos densa",
+            "não tem pressão",
+            "é mais quente",
+            "tem ondas que empurram"
+          ],
+          "correct_index": 0,
+          "explanation": "O sal deixa a água mais densa.",
+          "pitfall": "Menos densa faria afundar mais.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Bola e barco",
+          "statement": "Uma bola maciça de aço afunda, mas o mesmo aço moldado como barco flutua. O que mudou?",
+          "options": [
+            "o volume de água que ele tira do lugar",
+            "a densidade do aço",
+            "a massa do aço",
+            "a gravidade sobre o aço",
+            "a pressão do ar"
+          ],
+          "correct_index": 0,
+          "explanation": "Oco, ele desloca muito mais água.",
+          "pitfall": "O aço continua o mesmo: a densidade do material não mudou.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Macaco",
+          "statement": "No macaco hidráulico, o tubo largo tem área 50 vezes maior que o fino. Uma força de 100 N no fino vira, no largo:",
+          "options": [
+            "5.000 N",
+            "100 N",
+            "2 N",
+            "150 N",
+            "50 N"
+          ],
+          "correct_index": 0,
+          "explanation": "A pressão é a mesma: a força cresce na mesma proporção da área.",
+          "pitfall": "100 N esquece que a área maior multiplica a força.",
           "difficulty": "dificil"
         }
       ]
@@ -3073,6 +4196,718 @@
           "correct_index": 0,
           "explanation": "Com menos resistência, a mesma tensão faz passar mais corrente: U = R × i.",
           "pitfall": "A tensão da tomada é a mesma; o que muda é a resistência.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "magnetismo-e-inducao",
+      "title": "Ímãs, motores e geradores",
+      "module": "Eletricidade",
+      "summary": "Ímãs têm dois polos que não se separam. A corrente elétrica vira ímã, o ímã em movimento vira corrente, e é assim que funcionam o motor e a usina.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Os ímãs da geladeira",
+          "body": [
+            "Os ímãs da porta da geladeira grudam no metal, mas não grudam no plástico nem no vidro.",
+            "O mesmo fenômeno faz girar o motor do ventilador. E gera a eletricidade que chega à sua casa."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os polos de um ímã",
+          "body": [
+            "Todo ímã tem dois polos: norte e sul. Polos diferentes se atraem, e iguais se repelem.",
+            "Quebre um ímã ao meio, e cada pedaço vira um ímã inteiro, com norte e sul. Não existe polo sozinho.",
+            "O ímã atrai ferro, níquel e cobalto. Alumínio e cobre não grudam."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A Terra é um ímã",
+          "body": [
+            "A bússola é um ímã pequeno que pode girar. Ela se alinha com o campo magnético da Terra e aponta o norte.",
+            "Por isso os navegadores se orientavam por ela muito antes do GPS."
+          ],
+          "terms": [
+            {
+              "word": "campo magnético",
+              "meaning": "a região em volta de um ímã onde ele faz força. A bússola mostra o desenho desse campo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Corrente que vira ímã",
+          "body": [
+            "Em 1820, um professor percebeu que um fio com corrente mexia a agulha de uma bússola. A corrente elétrica cria um campo magnético.",
+            "Enrolando o fio num prego, nasce um eletroímã: um ímã que liga e desliga. Ele levanta sucata nos ferros-velhos e faz a campainha tocar."
+          ],
+          "terms": [
+            {
+              "word": "corrente elétrica",
+              "meaning": "cargas elétricas andando por um fio. É ela que acende a lâmpada."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O motor",
+          "body": [
+            "Ponha uma bobina (um fio enrolado) com corrente entre os polos de um ímã. Ela é empurrada e gira.",
+            "É o motor elétrico do ventilador, do liquidificador e do carro elétrico. Ele transforma energia elétrica em movimento."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O gerador",
+          "body": [
+            "O caminho também volta. Gire um ímã perto de uma bobina, e aparece corrente no fio.",
+            "Toda usina que tem turbina faz isso. A água, o vapor ou o vento giram a turbina, e a turbina gira o ímã do gerador."
+          ],
+          "terms": [
+            {
+              "word": "indução eletromagnética",
+              "meaning": "a corrente que aparece num fio quando um ímã se move perto dele. É assim que as usinas geram eletricidade."
+            }
+          ],
+          "table": {
+            "label": "Motor e gerador",
+            "headers": [
+              "Aparelho",
+              "Entra",
+              "Sai"
+            ],
+            "rows": [
+              [
+                "motor",
+                "energia elétrica",
+                "movimento"
+              ],
+              [
+                "gerador",
+                "movimento",
+                "energia elétrica"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O transformador",
+          "body": [
+            "A tomada tem corrente alternada: ela vai e volta muitas vezes por segundo. A pilha tem corrente contínua, sempre no mesmo sentido.",
+            "O transformador muda a tensão, e só funciona com corrente alternada. É ele que baixa a tensão alta das linhas de transmissão para a da sua casa."
+          ],
+          "terms": [
+            {
+              "word": "tensão elétrica",
+              "meaning": "o empurrão que faz a corrente andar. Na tomada brasileira, ela é de 127 ou de 220."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede o que acontece ao quebrar um ímã e como funciona uma usina. Também cobra a diferença entre motor e gerador."
+          ],
+          "bullets": [
+            "“Ao dividir o ímã ao meio, obtêm-se…”",
+            "“O funcionamento do gerador baseia-se no fenômeno da…”",
+            "“No motor elétrico, a energia elétrica é transformada em…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que quebrar um ímã separa o norte do sul. Cada pedaço vira um ímã completo.",
+            "Confundir motor com gerador. O motor gasta eletricidade, e o gerador produz.",
+            "Achar que ímã atrai qualquer metal. Alumínio e cobre não grudam.",
+            "Achar que o transformador funciona com pilha. Ele precisa de corrente alternada."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Todo ímã tem norte e sul, e quebrá-lo dá dois ímãs. A bússola se alinha com o campo magnético da Terra.",
+            "Corrente cria campo magnético: é o eletroímã e o motor. Ímã em movimento cria corrente: é o gerador das usinas. O transformador muda a tensão da corrente alternada."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Polos",
+          "statement": "Dois ímãs estão com os polos norte virados um para o outro. Eles:",
+          "options": [
+            "se repelem",
+            "se atraem",
+            "não fazem força",
+            "viram um ímã só",
+            "perdem o magnetismo"
+          ],
+          "correct_index": 0,
+          "explanation": "Polos iguais se repelem.",
+          "pitfall": "Atrair é o que fazem polos diferentes."
+        },
+        {
+          "topic": "Quebrar",
+          "statement": "Um ímã é quebrado ao meio. Cada pedaço fica:",
+          "options": [
+            "um ímã inteiro, com norte e sul",
+            "só com o polo norte",
+            "só com o polo sul",
+            "sem magnetismo",
+            "com três polos"
+          ],
+          "correct_index": 0,
+          "explanation": "Não existe polo sozinho.",
+          "pitfall": "Separar os polos é o engano clássico."
+        },
+        {
+          "topic": "Bússola",
+          "statement": "A agulha da bússola aponta para o norte porque:",
+          "options": [
+            "se alinha com o campo magnético da Terra",
+            "é atraída pelo Sol",
+            "o vento a empurra",
+            "é feita de ouro",
+            "o GPS a controla"
+          ],
+          "correct_index": 0,
+          "explanation": "A Terra se comporta como um grande ímã.",
+          "pitfall": "A bússola é bem mais antiga que o GPS."
+        },
+        {
+          "topic": "Gruda",
+          "statement": "Um ímã de geladeira gruda:",
+          "options": [
+            "numa porta de ferro",
+            "numa janela de vidro",
+            "numa panela de alumínio",
+            "num pote de plástico",
+            "numa tábua de madeira"
+          ],
+          "correct_index": 0,
+          "explanation": "Ferro é atraído pelo ímã.",
+          "pitfall": "Alumínio é metal, mas não gruda."
+        },
+        {
+          "topic": "Eletroímã",
+          "statement": "Um prego enrolado num fio com corrente vira um ímã. Isso mostra que:",
+          "options": [
+            "a corrente elétrica cria campo magnético",
+            "o prego já era ímã",
+            "a corrente não tem efeito magnético",
+            "só ímãs naturais existem",
+            "o fio esfria o prego"
+          ],
+          "correct_index": 0,
+          "explanation": "Desligando a corrente, o prego deixa de ser ímã.",
+          "pitfall": "O prego sozinho não era ímã."
+        },
+        {
+          "topic": "Liquidificador",
+          "statement": "O motor do liquidificador transforma:",
+          "options": [
+            "energia elétrica em movimento",
+            "movimento em energia elétrica",
+            "calor em luz",
+            "som em eletricidade",
+            "luz em movimento"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele gasta eletricidade para girar a lâmina.",
+          "pitfall": "Movimento em eletricidade é o gerador."
+        },
+        {
+          "topic": "Usina",
+          "statement": "Numa hidrelétrica, a água gira a turbina, e a turbina gira o gerador. O gerador funciona por:",
+          "options": [
+            "indução eletromagnética",
+            "atrito do ar",
+            "reflexão da luz",
+            "evaporação da água",
+            "pressão do vento"
+          ],
+          "correct_index": 0,
+          "explanation": "Ímã girando perto de bobina gera corrente.",
+          "pitfall": "Quem gera a corrente é o ímã girando, não o ar."
+        },
+        {
+          "topic": "Hidrelétrica",
+          "format": "order",
+          "statement": "Ponha na ordem o caminho da energia numa hidrelétrica.",
+          "options": [
+            "A água desce da represa",
+            "A água gira a turbina",
+            "A turbina gira o ímã do gerador",
+            "Aparece corrente no fio da bobina"
+          ],
+          "explanation": "Do alto da represa até o fio: altura, movimento, eletricidade.",
+          "pitfall": "A corrente é o fim do caminho, não o começo."
+        },
+        {
+          "topic": "Diferentes",
+          "statement": "Polos diferentes de dois ímãs:",
+          "options": [
+            "se atraem",
+            "se repelem",
+            "se anulam",
+            "esquentam",
+            "se apagam"
+          ],
+          "correct_index": 0,
+          "explanation": "Norte e sul se atraem.",
+          "pitfall": "Repelir é coisa de polos iguais.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Pilha",
+          "statement": "A pilha fornece corrente:",
+          "options": [
+            "contínua, sempre no mesmo sentido",
+            "alternada, que vai e volta",
+            "magnética",
+            "sem sentido nenhum",
+            "só à noite"
+          ],
+          "correct_index": 0,
+          "explanation": "Alternada é a da tomada.",
+          "pitfall": "Vai e volta é a corrente da tomada.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Transformador",
+          "statement": "O transformador da rua baixa a tensão das linhas para a da casa. Ele só funciona porque a corrente é:",
+          "options": [
+            "alternada",
+            "contínua",
+            "de pilha",
+            "fraca",
+            "magnética"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele depende da corrente que vai e volta.",
+          "pitfall": "Com corrente contínua, ele não funciona.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Dínamo",
+          "statement": "O dínamo da bicicleta acende o farol enquanto a roda gira. Ele é um:",
+          "options": [
+            "gerador",
+            "motor",
+            "transformador",
+            "eletroímã parado",
+            "ímã de geladeira"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele transforma o giro da roda em eletricidade.",
+          "pitfall": "Motor faria o contrário.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Ímã parado",
+          "statement": "Um ímã fica parado dentro de uma bobina. A corrente no fio é:",
+          "options": [
+            "zero, porque a indução precisa de movimento",
+            "alta, porque o ímã está perto",
+            "alternada",
+            "contínua e forte",
+            "a mesma da tomada"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem movimento, não aparece corrente.",
+          "pitfall": "Estar perto não basta: a pegadinha fina.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Sem turbina",
+          "statement": "Entre estas usinas, a única que gera eletricidade sem turbina e sem gerador é:",
+          "options": [
+            "a solar fotovoltaica",
+            "a hidrelétrica",
+            "a eólica",
+            "a termelétrica",
+            "a nuclear"
+          ],
+          "correct_index": 0,
+          "explanation": "A placa solar transforma luz direto em eletricidade.",
+          "pitfall": "A eólica também é limpa, mas usa turbina e gerador.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "usinas-e-rendimento",
+      "title": "De onde vem a energia: usinas e rendimento",
+      "module": "Eletricidade",
+      "summary": "Toda usina transforma uma energia da natureza em eletricidade. A lição compara as fontes, separa renovável de não renovável e mostra por que nenhuma máquina aproveita tudo.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O caminho até a tomada",
+          "body": [
+            "A luz do seu quarto começou muito longe: numa represa, num vento forte ou num pedaço de carvão queimando.",
+            "Toda usina faz a mesma coisa. Ela transforma uma energia que existe na natureza em energia elétrica."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A hidrelétrica",
+          "body": [
+            "A represa guarda água no alto. Ao descer, a energia potencial da água vira energia cinética e gira as turbinas.",
+            "A maior parte da eletricidade do Brasil vem de hidrelétricas. Elas não queimam nada, mas alagam grandes áreas e mudam a vida dos rios."
+          ],
+          "terms": [
+            {
+              "word": "energia potencial",
+              "meaning": "a energia guardada pela altura: quanto mais alto, mais energia."
+            },
+            {
+              "word": "energia cinética",
+              "meaning": "a energia de quem está em movimento."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As outras usinas",
+          "body": [
+            "Na termelétrica e na nuclear, o calor ferve água, e o vapor gira a turbina. Na eólica, quem gira é o vento."
+          ],
+          "table": {
+            "label": "As usinas e o que elas transformam",
+            "headers": [
+              "Usina",
+              "De onde vem a energia",
+              "Um cuidado"
+            ],
+            "rows": [
+              [
+                "termelétrica",
+                "queima de carvão, gás ou óleo",
+                "solta gases que esquentam o planeta"
+              ],
+              [
+                "nuclear",
+                "o calor da divisão do urânio",
+                "o lixo radioativo"
+              ],
+              [
+                "eólica",
+                "o vento",
+                "depende de onde e quando venta"
+              ],
+              [
+                "solar",
+                "a luz do Sol",
+                "só gera de dia"
+              ],
+              [
+                "biomassa",
+                "queima de bagaço de cana",
+                "precisa de área de plantio"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Renovável ou não",
+          "body": [
+            "Fonte renovável é a que a natureza repõe: água, vento, Sol e plantas. As não renováveis acabam, como o petróleo e o carvão, que levaram milhões de anos para se formar.",
+            "Renovável não quer dizer sem impacto. Uma represa também alaga florestas."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O rendimento",
+          "body": [
+            "Nenhuma máquina aproveita toda a energia que recebe. Uma parte sempre escapa, quase sempre como calor.",
+            "Uma lâmpada antiga, de filamento, aproveita perto de 5% da energia em luz. O resto esquenta o quarto. A lâmpada de LED aproveita bem mais, e por isso gasta menos."
+          ],
+          "example": {
+            "label": "A conta do rendimento",
+            "lines": [
+              "Energia que entrou: 100 J.",
+              "Energia útil que saiu: 30 J.",
+              "Rendimento: 30 ÷ 100 = 30%."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "rendimento",
+              "meaning": "a parte da energia que vira o que se queria. É a energia útil dividida pela energia total."
+            },
+            {
+              "word": "joule (J)",
+              "meaning": "a unidade de energia."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Gastar menos",
+          "body": [
+            "Gastar menos é a usina mais barata que existe. Trocar lâmpadas por LED, desligar o que não se usa e escolher aparelhos econômicos ajudam.",
+            "No Brasil, a etiqueta do Inmetro e o selo Procel mostram quem gasta menos. Na etiqueta, a letra A marca o aparelho mais econômico."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede as transformações de energia numa usina e o rendimento de uma máquina. Também cobra as vantagens e os problemas de cada fonte."
+          ],
+          "bullets": [
+            "“Na usina hidrelétrica, a energia potencial gravitacional é convertida em…”",
+            "“O rendimento da máquina é de…”",
+            "“Uma desvantagem da energia eólica é…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que fonte renovável não tem impacto. Represas alagam, e parques eólicos mudam a paisagem.",
+            "Achar que uma máquina pode ter 100% de rendimento. Sempre escapa calor.",
+            "Achar que a usina solar usa turbina. A placa transforma luz direto em eletricidade.",
+            "Confundir nuclear com queima de combustível. Na nuclear, o calor vem da divisão do urânio."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Usina transforma uma energia da natureza em elétrica. Na hidrelétrica, a altura da água vira movimento e depois eletricidade.",
+            "Renovável é a fonte que a natureza repõe, mas nenhuma é sem impacto. Rendimento é energia útil dividida pela total, e nunca chega a 100%."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Represa",
+          "statement": "Numa hidrelétrica, a energia da água parada no alto da represa é energia:",
+          "options": [
+            "potencial",
+            "nuclear",
+            "química",
+            "solar",
+            "sonora"
+          ],
+          "correct_index": 0,
+          "explanation": "É a energia guardada pela altura.",
+          "pitfall": "Nuclear vem da divisão do urânio."
+        },
+        {
+          "topic": "Brasil",
+          "statement": "A maior parte da eletricidade do Brasil vem de usinas:",
+          "options": [
+            "hidrelétricas",
+            "nucleares",
+            "a carvão",
+            "a óleo diesel",
+            "de ondas do mar"
+          ],
+          "correct_index": 0,
+          "explanation": "O país tem muitos rios caudalosos.",
+          "pitfall": "As nucleares são poucas no Brasil."
+        },
+        {
+          "topic": "Renovável",
+          "statement": "Qual destas fontes é renovável?",
+          "options": [
+            "o vento",
+            "o petróleo",
+            "o carvão mineral",
+            "o gás natural",
+            "o urânio"
+          ],
+          "correct_index": 0,
+          "explanation": "A natureza repõe o vento.",
+          "pitfall": "O petróleo levou milhões de anos para se formar."
+        },
+        {
+          "topic": "Conta",
+          "statement": "Uma máquina recebe 200 J e entrega 50 J de energia útil. O rendimento é:",
+          "options": [
+            "25%",
+            "50%",
+            "75%",
+            "4%",
+            "150%"
+          ],
+          "correct_index": 0,
+          "explanation": "50 ÷ 200 = 0,25, ou seja, 25%.",
+          "pitfall": "50% usou o número da energia útil como porcentagem."
+        },
+        {
+          "topic": "LED",
+          "statement": "A lâmpada de LED gasta menos que a de filamento porque:",
+          "options": [
+            "transforma mais energia em luz e menos em calor",
+            "não usa eletricidade",
+            "tem rendimento de 100%",
+            "é menor",
+            "fica desligada de dia"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela esquenta bem menos.",
+          "pitfall": "Nenhuma lâmpada chega a 100%."
+        },
+        {
+          "topic": "Termelétrica",
+          "statement": "Numa termelétrica, o que gira a turbina é:",
+          "options": [
+            "o vapor de água aquecida pela queima",
+            "o vento",
+            "a luz do Sol direto",
+            "a água descendo da represa",
+            "a maré"
+          ],
+          "correct_index": 0,
+          "explanation": "A queima ferve a água, e o vapor gira a turbina.",
+          "pitfall": "Água descendo é a hidrelétrica."
+        },
+        {
+          "topic": "Impacto",
+          "statement": "Sobre as fontes renováveis, é certo dizer que:",
+          "options": [
+            "também causam impactos, como represas que alagam florestas",
+            "não causam nenhum impacto",
+            "acabam em poucos anos",
+            "só existem fora do Brasil",
+            "não geram eletricidade"
+          ],
+          "correct_index": 0,
+          "explanation": "Renovável quer dizer que a natureza repõe, não que não tem impacto.",
+          "pitfall": "“Nenhum impacto” é o quantificador absoluto."
+        },
+        {
+          "topic": "Usinas",
+          "format": "match",
+          "statement": "Ligue cada usina ao que ela transforma em eletricidade.",
+          "pairs": [
+            {
+              "left": "hidrelétrica",
+              "right": "água descendo da represa"
+            },
+            {
+              "left": "eólica",
+              "right": "vento"
+            },
+            {
+              "left": "solar",
+              "right": "luz do Sol"
+            },
+            {
+              "left": "nuclear",
+              "right": "calor da divisão do urânio"
+            }
+          ],
+          "explanation": "Cada usina parte de uma fonte diferente.",
+          "pitfall": "Nuclear não queima nada: divide o urânio."
+        },
+        {
+          "topic": "Escapa",
+          "statement": "Numa máquina, a energia que não vira trabalho útil escapa quase sempre como:",
+          "options": [
+            "calor",
+            "luz azul",
+            "água",
+            "massa",
+            "ímã"
+          ],
+          "correct_index": 0,
+          "explanation": "É por isso que motores esquentam.",
+          "pitfall": "Luz azul não tem nada a ver.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "De dia",
+          "statement": "A usina solar gera eletricidade:",
+          "options": [
+            "só quando há luz",
+            "também à noite, sem luz",
+            "queimando carvão",
+            "com a força das marés",
+            "com a água da represa"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem luz, a placa não gera.",
+          "pitfall": "À noite ela não gera.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Carvão",
+          "statement": "O carvão e o petróleo não são renováveis porque:",
+          "options": [
+            "levaram milhões de anos para se formar e acabam",
+            "são líquidos",
+            "não queimam",
+            "o vento os repõe",
+            "são feitos de urânio"
+          ],
+          "correct_index": 0,
+          "explanation": "A natureza não os repõe no nosso tempo.",
+          "pitfall": "O carvão nem é líquido.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Eólica",
+          "statement": "Uma desvantagem da energia eólica é:",
+          "options": [
+            "depender de onde e quando venta",
+            "soltar muita fumaça",
+            "gerar lixo radioativo",
+            "alagar cidades",
+            "precisar de carvão"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem vento, não há geração.",
+          "pitfall": "Fumaça é da termelétrica.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Cem por cento",
+          "statement": "Um anúncio diz que um motor tem rendimento de 100%. Isso é:",
+          "options": [
+            "impossível, porque sempre escapa alguma energia",
+            "comum nos motores de hoje",
+            "obrigatório por lei",
+            "possível só à noite",
+            "o mínimo esperado"
+          ],
+          "correct_index": 0,
+          "explanation": "Sempre escapa um pouco, quase sempre como calor.",
+          "pitfall": "“Comum” engana quem confunde rendimento alto com perfeito.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Sequência",
+          "statement": "Numa hidrelétrica, a sequência certa de transformações é:",
+          "options": [
+            "potencial, cinética e elétrica",
+            "elétrica, cinética e potencial",
+            "cinética, potencial e química",
+            "química, elétrica e luz",
+            "elétrica, potencial e calor"
+          ],
+          "correct_index": 0,
+          "explanation": "A altura vira movimento, e o movimento vira eletricidade.",
+          "pitfall": "A segunda opção é a mesma cadeia de trás para a frente.",
           "difficulty": "dificil"
         }
       ]

@@ -89,7 +89,7 @@ Geometria (ângulos e triângulos; perímetro e área; círculo; Pitágoras;
 volume) e Dados e chance (média, moda e mediana; gráficos; contagem;
 probabilidade). Razão, proporção e porcentagem ficaram na básica.
 
-### Física — `fisica-basica` (feito: 8 lições em cinco módulos, com os níveis)
+### Física — `fisica-basica` (feito: 13 lições em seis módulos, com os níveis)
 
 1. Grandezas e unidades; notação científica.
 2. Cinemática: velocidade, aceleração, movimento uniforme e variado; queda livre.
@@ -98,8 +98,9 @@ probabilidade). Razão, proporção e porcentagem ficaram na básica.
 5. Calor e temperatura; dilatação; mudanças de estado.
 6. Ondas e som; luz, reflexão e refração.
 7. Eletricidade: carga, corrente, tensão e resistência; circuito simples e conta de luz.
+8. Segunda rodada: os gráficos do movimento; movimento circular, engrenagens e órbitas; pressão, densidade e empuxo; ímãs, motores e geradores; usinas e rendimento.
 
-### Química — `quimica-basica` (feito: 8 lições em quatro módulos, com os níveis)
+### Química — `quimica-basica` (feito: 13 lições em quatro módulos, com os níveis)
 
 1. Matéria e suas propriedades; misturas e separação de misturas.
 2. O átomo: modelos, prótons, nêutrons e elétrons; tabela periódica.
@@ -109,6 +110,7 @@ probabilidade). Razão, proporção e porcentagem ficaram na básica.
 6. Soluções e concentração.
 7. Química orgânica: o carbono, as cadeias e as principais funções.
 8. Química e ambiente: combustíveis, poluição e reciclagem.
+9. Segunda rodada: reações que esquentam e esfriam (ΔH); a velocidade das reações; equilíbrio químico; pilhas, baterias e ferrugem; radioatividade e energia nuclear.
 
 ### Biologia — `biologia-basica` (feito: 12 lições em cinco módulos, com os níveis)
 
@@ -208,6 +210,51 @@ privadas. A básica é a porta de entrada:
 
 Daqui saem as especializadas que já existem: Montar um PC, Python, Sistemas
 Operacionais.
+
+## Segunda rodada (novembro de 2026)
+
+Pedido do Sávio: "fazer todas as matérias que faltam". Duas partes, nesta ordem.
+
+**1. Completar as básicas até a régua (12 lições).** As matérias da primeira
+rodada saíram com o sumário inteiro, mas curtas: de 5 a 10 lições. Cada uma
+ganha as lições que a prova cobra e o sumário deixava de fora. As antigas não
+mudam (lição é `(matéria, slug)` e questão é `(lição, posição)`): as novas
+entram entre elas, já com os níveis.
+
+| Matéria | Antes | Depois | O que entra |
+|---|---|---|---|
+| Física | 8 | 13 | gráficos do movimento, movimento circular, pressão e empuxo, ímãs e geradores, usinas e rendimento |
+| Química | 8 | 13 | termoquímica, velocidade das reações, equilíbrio, pilhas e ferrugem, radioatividade |
+| Geografia | 9 | 12 | água e hidrografia, energia e matriz energética, geopolítica e conflitos |
+| História | 10 | 12 | primeiros povos e Antiguidade oriental, África e América antes dos europeus |
+| Inglês | 6 | 12 | substantivos e possessivos, preposições, modais, comparativos, present perfect, conectivos |
+| Espanhol | 6 | 12 | possessivos e demonstrativos, verbos irregulares, muy e mucho, gustar, comparativos, conectivos |
+| Filosofia | 6 | 12 | pré-socráticos, helenísticos, medieval, Maquiavel, estética, ciência e bioética |
+| Sociologia | 6 | 12 | socialização, raça e racismo, gênero, mídia e consumo, religião, sociedade em rede |
+| Informática | 6 | 12 | bits e bytes, redes e Wi-Fi, e-mail e nuvem, fórmulas de planilha, privacidade e LGPD, IA no dia a dia |
+| Artes | 5 | 12 | arte antiga, música (elementos e música brasileira), teatro, arte indígena e afro-brasileira, cinema e fotografia, arquitetura |
+| Educação Física | 5 | 12 | ossos e músculos, treinamento, esportes individuais, Olimpíadas e Paralimpíadas, primeiros socorros, esporte e mídia, lazer e trabalho |
+
+**2. A segunda matéria de cada área.** Mais funda que a básica, pública e com
+os níveis, na ordem da prova. A lista é a proposta; o recorte pode mudar ao
+escrever.
+
+| Área | Matéria |
+|---|---|
+| Português | Literatura brasileira |
+| Matemática | Geometria e trigonometria |
+| História | História do Brasil |
+| Geografia | Geografia do Brasil |
+| Biologia | Corpo humano e saúde |
+| Química | Química orgânica |
+| Física | Óptica, termodinâmica e física moderna |
+| Sociologia | Sociedade brasileira |
+| Filosofia | Os autores que mais caem |
+| Inglês | Leitura em inglês para o ENEM |
+| Espanhol | Leitura em espanhol para o ENEM |
+| Informática | Informática para concursos |
+| Artes | Música |
+| Educação Física | Treino, saúde e alimentação |
 
 ## Trilhas básicas planejadas
 
