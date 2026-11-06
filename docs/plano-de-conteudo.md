@@ -165,7 +165,7 @@ probabilidade). Razão, proporção e porcentagem ficaram na básica.
 5. Poder, Estado, democracia e cidadania.
 6. Movimentos sociais e direitos humanos.
 
-### Inglês — `ingles-basico` (feito: 6 lições em três módulos, com os níveis)
+### Inglês — `ingles-basico` (feito: 12 lições em quatro módulos, com os níveis)
 
 1. Cumprimentos, o verbo *to be* e pronomes.
 2. Presente simples e contínuo.
@@ -173,6 +173,7 @@ probabilidade). Razão, proporção e porcentagem ficaram na básica.
 4. Futuro (*will* e *going to*).
 5. Vocabulário do dia a dia: números, horas, família, rotina.
 6. Ler um texto em inglês: cognatos, falsos cognatos e estratégia de prova.
+7. Segunda rodada: substantivos, artigos e possessivos; preposições in, on e at; present perfect; modais; comparativos e superlativos; conectivos e referência.
 
 O formato `match` (ligar os pares) serve bem para vocabulário. Sem áudio por
 enquanto: a narração ainda é gravada à mão (ver o `CLAUDE.md`).
