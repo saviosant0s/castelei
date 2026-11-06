@@ -257,7 +257,7 @@ escrever.
 | Geografia | Geografia do Brasil (feita: 13 lições em quatro módulos, com os níveis) |
 | Biologia | Corpo humano e saúde (feita: 13 lições em quatro módulos, com os níveis) |
 | Química | Química orgânica (feita: 12 lições em quatro módulos, com os níveis) |
-| Física | Óptica, termodinâmica e física moderna |
+| Física | Termodinâmica, óptica e física moderna (feita: 12 lições em três módulos, com os níveis) |
 | Sociologia | Sociedade brasileira |
 | Filosofia | Os autores que mais caem |
 | Inglês | Leitura em inglês para o ENEM |
