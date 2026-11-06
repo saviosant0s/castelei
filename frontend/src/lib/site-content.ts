@@ -271,9 +271,15 @@ export const SUBJECTS: SiteSubject[] = [
       "O computador por dentro: hardware, software e sistema",
       "Arquivos e pastas: organizar e encontrar",
       "Como a internet funciona e como buscar bem",
+      "Redes em casa: Wi-Fi, roteador e velocidade",
+      "A nuvem: guardar e compartilhar arquivos",
       "Segurança digital: senhas, golpes e cópias",
+      "Privacidade e dados pessoais: a LGPD",
       "Texto, planilha e apresentação",
+      "Planilhas: fórmulas, funções e gráficos",
+      "E-mail: para, cópia, cópia oculta e anexo",
       "O que é um algoritmo",
+      "Inteligência artificial no dia a dia",
     ],
   },
   {
@@ -378,5 +384,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 2702,
+  questions: 2786,
 };

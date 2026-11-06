@@ -203,7 +203,7 @@ Na segunda rodada entraram: possessivos e demonstrativos; verbos que mudam a vog
 4. Lutas, danças e jogos da cultura brasileira.
 5. Corpo, mídia e padrões de beleza (tema frequente no ENEM).
 
-### Informática — `informatica-basica` (feito: 6 lições em três módulos, com os níveis)
+### Informática — `informatica-basica` (feito: 12 lições em quatro módulos, com os níveis)
 
 As matérias de Informática que existem hoje são especializadas e ficaram
 privadas. A básica é a porta de entrada:
@@ -214,6 +214,7 @@ privadas. A básica é a porta de entrada:
 4. Segurança: senhas, golpes, cópia de segurança.
 5. Editor de texto, planilha e apresentação: o essencial de cada um.
 6. Primeiro contato com programação: o que é um algoritmo.
+7. Segunda rodada: redes em casa (Wi-Fi, roteador e velocidade); nuvem e compartilhamento; privacidade e LGPD; planilhas (fórmulas, funções e gráficos); e-mail (para, cópia, cópia oculta e anexo); inteligência artificial no dia a dia.
 
 Daqui saem as especializadas que já existem: Montar um PC, Python, Sistemas
 Operacionais.
@@ -238,7 +239,7 @@ entram entre elas, já com os níveis.
 | Espanhol | 6 | 12 | possessivos e demonstrativos, verbos que mudam e reflexivos, gustar, imperativo, comparativos, conectivos |
 | Filosofia | 6 | 12 | pré-socráticos, helenísticos, argumentação e falácias, ciência, estética e indústria cultural, Arendt, Foucault e Beauvoir |
 | Sociologia | 6 | 12 | raça e racismo, gênero, religião, escola e desigualdade, cidade e violência, mídia e consumo |
-| Informática | 6 | 12 | bits e bytes, redes e Wi-Fi, e-mail e nuvem, fórmulas de planilha, privacidade e LGPD, IA no dia a dia |
+| Informática | 6 | 12 | redes e Wi-Fi, nuvem e compartilhamento, privacidade e LGPD, fórmulas e gráficos de planilha, e-mail, IA no dia a dia |
 | Artes | 5 | 12 | arte antiga, música (elementos e música brasileira), teatro, arte indígena e afro-brasileira, cinema e fotografia, arquitetura |
 | Educação Física | 5 | 12 | ossos e músculos, treinamento, esportes individuais, Olimpíadas e Paralimpíadas, primeiros socorros, esporte e mídia, lazer e trabalho |
 
