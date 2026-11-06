@@ -289,6 +289,39 @@ const JARGON = [
   ["arco do desmatamento", /\barco do desmatamento\b/i, "B"], ["reserva legal", /\breservas? lega(l|is)\b/i, "B"],
   ["área de preservação permanente", /(?<!\p{L})(á|a)reas? de preserva(ç|c)(ão|ões) permanentes?(?!\p{L})/iu, "B"],
   ["unidade de conservação", /(?<!\p{L})unidades? de conserva(ç|c)(ão|ões)(?!\p{L})/iu, "B"],
+  // Corpo humano e saúde (escopo "C", somado ao "b" da Biologia básica).
+  ["tecido (do corpo)", /\btecidos?\b/i, "C"], ["homeostase", /\bhomeostases?\b/i, "C"],
+  ["tecido epitelial", /(?<!\p{L})epiteli(al|ais)(?!\p{L})|(?<!\p{L})epit(é|e)lios?(?!\p{L})/iu, "C"], ["tecido conjuntivo", /\bconjuntivos?\b/i, "C"],
+  ["nutriente", /\bnutrientes?\b/i, "C"], ["carboidrato", /\bcarboidratos?\b/i, "C"], ["lipídio", /(?<!\p{L})lip(í|i)dios?(?!\p{L})/iu, "C"],
+  ["avitaminose", /\bavitaminoses?\b/i, "C"], ["ultraprocessado", /\bultraprocessad(o|os|a|as)\b/i, "C"],
+  ["bile", /\bbiles?\b/i, "C"], ["vilosidade", /\bvilosidades?\b/i, "C"], ["peristaltismo", /\bperistaltismos?\b/i, "C"], ["microbiota", /\bmicrobiotas?\b/i, "C"],
+  ["alvéolo", /(?<!\p{L})alv(é|e)olos?(?!\p{L})/iu, "C"], ["hematose", /\bhematoses?\b/i, "C"], ["diafragma", /\bdiafragmas?\b/i, "C"],
+  ["hemoglobina", /\bhemoglobinas?\b/i, "C"], ["hemácia", /(?<!\p{L})hem(á|a)cias?(?!\p{L})/iu, "C"], ["leucócito", /(?<!\p{L})leuc(ó|o)citos?(?!\p{L})/iu, "C"],
+  ["plaqueta", /\bplaquetas?\b/i, "C"], ["plasma (do sangue)", /\bplasmas?\b/i, "C"],
+  ["átrio e ventrículo", /(?<!\p{L})(á|a)trios?(?!\p{L})|(?<!\p{L})ventr(í|i)culos?(?!\p{L})/iu, "C"],
+  ["artéria", /(?<!\p{L})art(é|e)rias?(?!\p{L})/iu, "C"], ["veia", /\bveias?\b/i, "C"], ["capilar (vaso)", /\bcapilar(es)?\b/i, "C"],
+  ["pressão arterial", /(?<!\p{L})press(ão|ao) arterial(?!\p{L})/iu, "C"], ["hipertensão", /(?<!\p{L})hipertens(ão|ao|o|a|os|as)(?!\p{L})/iu, "C"],
+  ["aterosclerose", /\baterosclerose\b/i, "C"], ["infarto", /\binfartos?\b/i, "C"], ["AVC", /\bAVCs?\b/, "C"],
+  ["sistema ABO", /\bABO\b/, "C"], ["fator Rh", /\bRh\b/, "C"], ["eritroblastose fetal", /\beritroblastoses?\b/i, "C"],
+  ["doador universal", /\bdoadora? universa(l|is)\b/i, "C"], ["receptor universal", /\breceptora? universa(l|is)\b/i, "C"],
+  ["néfron", /(?<!\p{L})n(é|e)frons?(?!\p{L})/iu, "C"], ["ureia", /\bureias?\b/i, "C"], ["hemodiálise", /(?<!\p{L})hemodi(á|a)lises?(?!\p{L})/iu, "C"], ["ADH", /\bADH\b/, "C"],
+  ["neurônio", /(?<!\p{L})neur(ô|o)nios?(?!\p{L})/iu, "C"], ["axônio e dendrito", /(?<!\p{L})ax(ô|o)nios?(?!\p{L})|\bdendritos?\b/iu, "C"],
+  ["sinapse", /\bsinapses?\b/i, "C"], ["neurotransmissor", /\bneurotransmissor(es)?\b/i, "C"], ["ato reflexo", /\batos? reflexos?\b/i, "C"],
+  ["sistema nervoso central e periférico", /\bsistema nervoso (central|perif(é|e)rico)\b/i, "C"],
+  ["simpático e parassimpático", /(?<!\p{L})(para)?ssimp(á|a)tic(o|a)(?!\p{L})|(?<!\p{L})simp(á|a)tic(o|a)(?!\p{L})/iu, "C"],
+  ["glândula", /(?<!\p{L})gl(â|a)ndulas?(?!\p{L})/iu, "C"], ["hipófise", /(?<!\p{L})hip(ó|o)fises?(?!\p{L})/iu, "C"], ["tireoide", /\btireoides?\b/i, "C"],
+  ["insulina e glucagon", /\binsulinas?\b|\bglucagon\b/i, "C"], ["diabetes", /\bdiabetes\b|(?<!\p{L})diab(é|e)tic(o|a|os|as)(?!\p{L})/iu, "C"],
+  ["retroalimentação negativa", /(?<!\p{L})retroalimenta(ç|c)(ão|ões)(?!\p{L})/iu, "C"],
+  ["imunidade inata e adaptativa", /(?<!\p{L})imunidade (inata|adaptativa)(?!\p{L})/iu, "C"], ["linfócito", /(?<!\p{L})linf(ó|o)citos?(?!\p{L})/iu, "C"],
+  ["fagocitose", /\bfagocitoses?\b|(?<!\p{L})fag(ó|o)citos?(?!\p{L})/iu, "C"], ["imunidade ativa e passiva", /(?<!\p{L})imunidade (ativa|passiva)(?!\p{L})/iu, "C"],
+  ["doença autoimune", /\bautoimunes?\b/i, "C"], ["imunidade de rebanho", /\bimunidade de rebanho\b/i, "C"],
+  ["ovulação", /(?<!\p{L})ovula(ç|c)(ão|ões)(?!\p{L})/iu, "C"], ["endométrio", /(?<!\p{L})endom(é|e)trios?(?!\p{L})/iu, "C"],
+  ["fecundação", /(?<!\p{L})fecunda(ç|c)(ão|ões)(?!\p{L})/iu, "C"], ["zigoto", /\bzigotos?\b/i, "C"], ["embrião", /(?<!\p{L})embri(ão|ões)(?!\p{L})/iu, "C"],
+  ["placenta", /\bplacentas?\b/i, "C"], ["método contraceptivo", /\bcontraceptiv(o|os|a|as)\b|\banticoncepciona(l|is)\b/i, "C"],
+  ["IST", /\bISTs?\b/, "C"], ["HIV e aids", /\bHIV\b|\baids\b/i, "C"], ["HPV", /\bHPV\b/, "C"], ["PrEP e PEP", /\bPrEP\b|\bPEP\b/, "C"],
+  ["vetor (de doença)", /\bvetor(es)?\b/i, "C"], ["protozoário", /(?<!\p{L})protozo(á|a)rios?(?!\p{L})/iu, "C"],
+  ["hospedeiro intermediário", /(?<!\p{L})hospedeiros? (intermedi(á|a)rios?|definitivos?)(?!\p{L})/iu, "C"], ["verminose", /\bverminoses?\b/i, "C"],
+  ["arbovirose", /\barboviroses?\b/i, "C"], ["cisticercose", /\bcisticercos(e|es)?\b/i, "C"], ["saneamento básico", /(?<!\p{L})saneamento b(á|a)sico(?!\p{L})/iu, "C"],
   ["Estado", /\bEstado\b/, "j"], ["cidadania", /\bcidadania\b/i, "j"], ["movimento social", /\bmovimentos? socia(l|is)\b/i, "j"], ["ação social", /(?<!\p{L})a(ç|c)(ão|ões) socia(l|is)(?!\p{L})/iu, "j"], ["artigo", /\bartigos?\b/i, "u"], ["conjugação", /\bconjuga(ç|c)(ão|ões)\b|\bconjugad(o|a)\b/i, "u"], ["combustível fóssil", /(?<!\p{L})combust(í|i)ve(l|is) f(ó|o)sse(l|is)(?!\p{L})/iu, "x"], ["biocombustível", /(?<!\p{L})biocombust(í|i)ve(l|is)(?!\p{L})/iu, "x"],
 
   ["preposição", /\bpreposi(ç|c)(ão|ões)\b/i, "p"], ["artigo", /\bartigos?\b/i, "p"],
@@ -627,7 +660,7 @@ const JARGON = [
   ["cooler", /\bcoolers?\b|\bwater cooler\b/i, "h"], ["80 Plus", /\b80 Plus\b/i, "h"], ["fonte modular", /\bmodular(es)?\b/i, "h"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG", "historia-do-brasil": "iH", "geografia-do-brasil": "oB" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG", "historia-do-brasil": "iH", "geografia-do-brasil": "oB", "corpo-humano-e-saude": "bC" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;
