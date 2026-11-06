@@ -487,6 +487,26 @@ export const SUBJECTS: SiteSubject[] = [
       "Doenças, vetores e saneamento básico",
     ],
   },
+  {
+    slug: "quimica-organica",
+    name: "Química orgânica",
+    pitch:
+      "As cadeias de carbono, os nomes, as funções, a isomeria e os polímeros, com os combustíveis, os remédios e os plásticos do dia a dia.",
+    lessons: [
+      "O carbono e as cadeias carbônicas",
+      "Fórmulas e nomes: lendo uma substância orgânica",
+      "Hidrocarbonetos: alcanos, alcenos, alcinos e aromáticos",
+      "Petróleo, gasolina, etanol e biodiesel",
+      "Álcoois e fenóis: o grupo OH",
+      "Aldeídos, cetonas e ácidos carboxílicos",
+      "Ésteres, éteres, gorduras e sabão",
+      "Aminas, amidas e as moléculas da vida",
+      "Isomeria: mesma fórmula, substâncias diferentes",
+      "Polaridade, solubilidade e ponto de ebulição",
+      "As reações orgânicas que mais caem",
+      "Polímeros: plásticos, borracha e o lixo que fica",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -503,5 +523,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 3892,
+  questions: 4060,
 };

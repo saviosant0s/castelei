@@ -322,6 +322,30 @@ const JARGON = [
   ["vetor (de doença)", /\bvetor(es)?\b/i, "C"], ["protozoário", /(?<!\p{L})protozo(á|a)rios?(?!\p{L})/iu, "C"],
   ["hospedeiro intermediário", /(?<!\p{L})hospedeiros? (intermedi(á|a)rios?|definitivos?)(?!\p{L})/iu, "C"], ["verminose", /\bverminoses?\b/i, "C"],
   ["arbovirose", /\barboviroses?\b/i, "C"], ["cisticercose", /\bcisticercos(e|es)?\b/i, "C"], ["saneamento básico", /(?<!\p{L})saneamento b(á|a)sico(?!\p{L})/iu, "C"],
+  // Química orgânica (escopo "O", somado ao "x" da Química básica).
+  ["tetravalência", /(?<!\p{L})tetraval(ê|e)ncia(?!\p{L})|\btetravalentes?\b/iu, "O"], ["cadeia carbônica", /(?<!\p{L})cadeias? carb(ô|o)nicas?(?!\p{L})/iu, "O"],
+  ["cadeia saturada e insaturada", /(?<!\p{L})(in)?saturad(a|as|o|os)(?!\p{L})/iu, "O"], ["cadeia ramificada", /(?<!\p{L})ramificad(a|as|o|os)(?!\p{L})/iu, "O"],
+  ["heteroátomo", /(?<!\p{L})hetero(á|a)tomos?(?!\p{L})/iu, "O"], ["anel aromático", /(?<!\p{L})arom(á|a)tic(o|os|a|as)(?!\p{L})/iu, "O"],
+  ["carbono primário", /(?<!\p{L})carbonos? (prim|secund|terci|quatern)(á|a)rios?(?!\p{L})/iu, "O"],
+  ["fórmula molecular, estrutural e condensada", /(?<!\p{L})f(ó|o)rmulas? (estrutura(l|is)|molecular(es)?|condensadas?)(?!\p{L})/iu, "O"],
+  ["IUPAC", /\bIUPAC\b/, "O"], ["infixo", /\binfixos?\b/i, "O"],
+  ["alcano, alceno e alcino", /\balc(a|e|i)nos?\b/i, "O"], ["ciclano", /\bciclanos?\b/i, "O"], ["benzeno", /\bbenzenos?\b/i, "O"],
+  ["polar e apolar", /(?<!\p{L})a?polar(es)?(?!\p{L})|(?<!\p{L})polaridades?(?!\p{L})/iu, "O"],
+  ["craqueamento", /\bcraqueamentos?\b/i, "O"], ["octanagem", /\boctanagens?\b/i, "O"], ["GLP", /\bGLP\b/, "O"],
+  ["biodiesel", /\bbiodiesel\b/i, "O"], ["transesterificação", /(?<!\p{L})transesterifica(ç|c)(ão|ões)(?!\p{L})/iu, "O"],
+  ["grupo funcional", /\bgrupos? funciona(l|is)\b/i, "O"], ["hidroxila", /\bhidroxilas?\b/i, "O"], ["fenol", /(?<!\p{L})fen(ol|óis|ois)(?!\p{L})/iu, "O"],
+  ["fermentação", /(?<!\p{L})fermenta(ç|c)(ão|ões)(?!\p{L})/iu, "O"], ["aldeído e cetona", /(?<!\p{L})alde(í|i)dos?(?!\p{L})|\bcetonas?\b/iu, "O"],
+  ["ácido carboxílico", /(?<!\p{L})carbox(í|i)lic(o|os)(?!\p{L})|\bcarboxilas?\b/iu, "O"], ["carbonila", /\bcarbonilas?\b/i, "O"],
+  ["éster", /(?<!\p{L})(é|e)ster(es)?(?!\p{L})/iu, "O"], ["esterificação", /(?<!\p{L})esterifica(ç|c)(ão|ões)(?!\p{L})/iu, "O"], ["éter", /(?<!\p{L})(é|e)ter(es)?(?!\p{L})/iu, "O"],
+  ["triglicerídeo", /(?<!\p{L})triglicer(í|i)deos?(?!\p{L})/iu, "O"], ["ácido graxo", /(?<!\p{L})(á|a)cidos? graxos?(?!\p{L})/iu, "O"],
+  ["hidrogenação", /(?<!\p{L})hidrogena(ç|c)(ão|ões)(?!\p{L})/iu, "O"], ["gordura trans", /\bgorduras? trans\b/i, "O"],
+  ["saponificação", /(?<!\p{L})saponifica(ç|c)(ão|ões)(?!\p{L})/iu, "O"], ["micela", /\bmicelas?\b/i, "O"], ["biodegradável", /(?<!\p{L})biodegrad(á|a)ve(l|is)(?!\p{L})/iu, "O"],
+  ["amina e amida", /\baminas?\b|\bamidas?\b/i, "O"], ["ligação peptídica", /(?<!\p{L})pept(í|i)dic(a|as)(?!\p{L})/iu, "O"],
+  ["isomeria", /(?<!\p{L})is(ô|o)mer(o|os|a|as|ia|ias)(?!\p{L})/iu, "O"], ["isomeria cis-trans", /\bcis\b/i, "O"], ["carbono quiral", /\bquira(l|is)\b/i, "O"],
+  ["ligação de hidrogênio", /(?<!\p{L})liga(ç|c)(ão|ões) de hidrog(ê|e)nio(?!\p{L})/iu, "O"],
+  ["reação de adição, substituição e eliminação", /(?<!\p{L})rea(ç|c)(ão|ões) de (adi|substitui|elimina)(ç|c)(ão|ões)(?!\p{L})/iu, "O"],
+  ["polímero e monômero", /(?<!\p{L})(pol(í|i)|mon(ô|o))meros?(?!\p{L})/iu, "O"], ["vulcanização", /(?<!\p{L})vulcaniza(ç|c)(ão|ões)(?!\p{L})/iu, "O"],
+  ["microplástico", /(?<!\p{L})micropl(á|a)sticos?(?!\p{L})/iu, "O"], ["termoplástico e termorrígido", /(?<!\p{L})termo(pl(á|a)stic|rr(í|i)gid)(o|os|a|as)(?!\p{L})/iu, "O"],
   ["Estado", /\bEstado\b/, "j"], ["cidadania", /\bcidadania\b/i, "j"], ["movimento social", /\bmovimentos? socia(l|is)\b/i, "j"], ["ação social", /(?<!\p{L})a(ç|c)(ão|ões) socia(l|is)(?!\p{L})/iu, "j"], ["artigo", /\bartigos?\b/i, "u"], ["conjugação", /\bconjuga(ç|c)(ão|ões)\b|\bconjugad(o|a)\b/i, "u"], ["combustível fóssil", /(?<!\p{L})combust(í|i)ve(l|is) f(ó|o)sse(l|is)(?!\p{L})/iu, "x"], ["biocombustível", /(?<!\p{L})biocombust(í|i)ve(l|is)(?!\p{L})/iu, "x"],
 
   ["preposição", /\bpreposi(ç|c)(ão|ões)\b/i, "p"], ["artigo", /\bartigos?\b/i, "p"],
@@ -660,7 +684,7 @@ const JARGON = [
   ["cooler", /\bcoolers?\b|\bwater cooler\b/i, "h"], ["80 Plus", /\b80 Plus\b/i, "h"], ["fonte modular", /\bmodular(es)?\b/i, "h"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG", "historia-do-brasil": "iH", "geografia-do-brasil": "oB", "corpo-humano-e-saude": "bC" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG", "historia-do-brasil": "iH", "geografia-do-brasil": "oB", "corpo-humano-e-saude": "bC", "quimica-organica": "xO" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;

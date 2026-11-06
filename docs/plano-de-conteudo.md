@@ -256,7 +256,7 @@ escrever.
 | História | História do Brasil (feita: 13 lições em três módulos, com os níveis) |
 | Geografia | Geografia do Brasil (feita: 13 lições em quatro módulos, com os níveis) |
 | Biologia | Corpo humano e saúde (feita: 13 lições em quatro módulos, com os níveis) |
-| Química | Química orgânica |
+| Química | Química orgânica (feita: 12 lições em quatro módulos, com os níveis) |
 | Física | Óptica, termodinâmica e física moderna |
 | Sociologia | Sociedade brasileira |
 | Filosofia | Os autores que mais caem |
