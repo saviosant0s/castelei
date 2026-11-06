@@ -260,7 +260,7 @@ escrever.
 | Física | Termodinâmica, óptica e física moderna (feita: 12 lições em três módulos, com os níveis) |
 | Sociologia | Sociedade brasileira (feita: 12 lições em quatro módulos, com os níveis) |
 | Filosofia | Os filósofos que mais caem (feita: 12 lições em três módulos, com os níveis) |
-| Inglês | Leitura em inglês para o ENEM |
+| Inglês | Leitura em inglês para o ENEM (feita: 12 lições em três módulos, com os níveis) |
 | Espanhol | Leitura em espanhol para o ENEM |
 | Informática | Informática para concursos |
 | Artes | Música |
