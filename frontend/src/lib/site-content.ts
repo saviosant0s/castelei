@@ -587,6 +587,26 @@ export const SUBJECTS: SiteSubject[] = [
       "Poemas e letras de música: o sentido além das palavras",
     ],
   },
+  {
+    slug: "leitura-em-espanhol-enem",
+    name: "Leitura em espanhol para o ENEM",
+    pitch:
+      "Os falsos amigos, as palavras pequenas e o espanhol de cada país, para não ler correndo só porque parece fácil.",
+    lessons: [
+      "A armadilha de ser parecido: como ler a questão de espanhol",
+      "Mais falsos amigos: os que a prova adora",
+      "Gênero e acento trocados: el puente, la leche",
+      "As palavras pequenas que decidem: muy, ya, ni e hasta",
+      "O lo, o se e os pronomes: quem é quem na frase",
+      "Os tempos do passado e as perífrases do dia a dia",
+      "O subjuntivo na leitura: desejo, conselho e hipótese",
+      "Os conectivos da argumentação: sino, a pesar de e por lo tanto",
+      "O espanhol de cada lugar: vos, ustedes e as palavras de cada país",
+      "Tirinhas e humor em espanhol",
+      "Notícias, campanhas e anúncios em espanhol",
+      "Poemas e canções em espanhol",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -603,5 +623,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 4732,
+  questions: 4900,
 };
