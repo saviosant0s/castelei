@@ -72,6 +72,7 @@ return [
             'steps' => [
                 ['subject' => 'matematica-basica', 'name' => 'Matemática Básica', 'why' => 'Frações, porcentagem, potências, equações e funções: sem isso nenhuma questão anda.'],
                 ['subject' => 'matematica-do-dia-a-dia', 'name' => 'Matemática do dia a dia', 'why' => 'Medidas, juros, áreas, gráficos e chances: o tipo de situação que o ENEM mais usa.'],
+                ['subject' => 'geometria-e-trigonometria', 'name' => 'Geometria e trigonometria', 'why' => 'Semelhança, áreas, sólidos e o triângulo retângulo: a geometria que vem em quase toda prova.'],
                 ['subject' => 'logica', 'name' => 'Lógica', 'why' => 'Ler uma afirmação com cuidado e tirar a conclusão certa.'],
             ],
         ],
@@ -81,8 +82,11 @@ return [
             'description' => 'Física, Química e Biologia: a prova de Natureza do ENEM, da medida e da força até a célula e o ambiente.',
             'steps' => [
                 ['subject' => 'fisica-basica', 'name' => 'Física', 'why' => 'Movimento, energia e eletricidade: as contas e os conceitos que aparecem em situações do dia a dia.'],
+                ['subject' => 'termodinamica-optica-e-fisica-moderna', 'name' => 'Termodinâmica, óptica e física moderna', 'why' => 'Calor, gases, espelhos, lentes e radiação: a outra metade da Física que o ENEM cobra.'],
                 ['subject' => 'quimica-basica', 'name' => 'Química', 'why' => 'Átomos, ligações, reações e soluções: do que as coisas são feitas e como se transformam.'],
+                ['subject' => 'quimica-organica', 'name' => 'Química orgânica', 'why' => 'Cadeias de carbono, funções, combustíveis e plásticos: o assunto de Química que mais cai.'],
                 ['subject' => 'biologia-basica', 'name' => 'Biologia', 'why' => 'Célula, herança, evolução, ecologia e corpo humano: a parte que mais cai em Natureza.'],
+                ['subject' => 'corpo-humano-e-saude', 'name' => 'Corpo humano e saúde', 'why' => 'Os sistemas do corpo, a defesa e a saúde pública: o tema de Biologia mais ligado ao dia a dia.'],
             ],
         ],
         [
@@ -91,9 +95,13 @@ return [
             'description' => 'História, Geografia, Filosofia e Sociologia: a prova de Humanas do ENEM, na ordem em que uma ajuda a entender a outra.',
             'steps' => [
                 ['subject' => 'historia-basica', 'name' => 'História', 'why' => 'O que aconteceu e por quê: a base para entender o mundo e o Brasil de hoje.'],
+                ['subject' => 'historia-do-brasil', 'name' => 'História do Brasil', 'why' => 'Da Colônia à Nova República: a parte de História que o ENEM mais cobra.'],
                 ['subject' => 'geografia-basica', 'name' => 'Geografia', 'why' => 'Mapas, clima, população e economia: onde as coisas acontecem e por quê.'],
+                ['subject' => 'geografia-do-brasil', 'name' => 'Geografia do Brasil', 'why' => 'Território, natureza, cidades e campo no Brasil: o recorte que a prova prefere.'],
                 ['subject' => 'filosofia-basica', 'name' => 'Filosofia', 'why' => 'Ética, política e conhecimento: as perguntas que atravessam a história.'],
+                ['subject' => 'autores-de-filosofia', 'name' => 'Os filósofos que mais caem', 'why' => 'Um pensador por vez, com os conceitos e as frases que a questão cita.'],
                 ['subject' => 'sociologia-basica', 'name' => 'Sociologia', 'why' => 'Cultura, trabalho, desigualdade e cidadania: como a sociedade funciona.'],
+                ['subject' => 'sociedade-brasileira', 'name' => 'Sociedade brasileira', 'why' => 'Os intérpretes do Brasil, a cidadania, o trabalho e a desigualdade daqui.'],
             ],
         ],
         [
@@ -102,10 +110,30 @@ return [
             'description' => 'Ler, escrever, outra língua, arte e corpo: a prova de Linguagens do ENEM e a redação.',
             'steps' => [
                 ['subject' => 'portugues', 'name' => 'Português', 'why' => 'Interpretação, gramática e gêneros: a maior parte da prova de Linguagens.'],
+                ['subject' => 'literatura-brasileira', 'name' => 'Literatura brasileira', 'why' => 'O poema, as escolas literárias e os autores: o texto literário que a prova traz para interpretar.'],
                 ['subject' => 'producao-textual', 'name' => 'Produção Textual', 'why' => 'A redação dissertativa, da tese à proposta de intervenção.'],
                 ['subject' => 'ingles-basico', 'name' => 'Inglês', 'why' => 'Ler um texto em inglês com cognatos e estratégia. Quem escolhe espanhol faz Espanhol.'],
+                ['subject' => 'leitura-em-ingles-enem', 'name' => 'Leitura em inglês para o ENEM', 'why' => 'Os gêneros e as pegadinhas da questão de inglês. Quem escolhe espanhol faz Leitura em espanhol para o ENEM.'],
                 ['subject' => 'artes-basica', 'name' => 'Artes', 'why' => 'Movimentos, linguagens e arte brasileira, que o ENEM cobra com imagens.'],
+                ['subject' => 'musica', 'name' => 'Música', 'why' => 'Os elementos da música, a história e a canção brasileira de protesto, que a prova cobra com letras.'],
                 ['subject' => 'educacao-fisica-basica', 'name' => 'Educação Física', 'why' => 'Corpo, saúde, esporte e mídia: tema frequente nas questões de Linguagens.'],
+            ],
+        ],
+        /*
+        | Concurso de nível médio cobra quase sempre o mesmo trio: Português,
+        | raciocínio lógico e Informática. Matemática entra porque metade das
+        | provas de lógica é conta.
+        */
+        [
+            'slug' => 'concursos-nivel-medio',
+            'name' => 'Concursos de nível médio',
+            'description' => 'Português, raciocínio lógico, Matemática e Informática: as matérias que quase todo edital de nível médio repete.',
+            'steps' => [
+                ['subject' => 'portugues', 'name' => 'Português', 'why' => 'Concordância, regência, crase, vírgula e interpretação: o que mais pesa na nota de qualquer edital.'],
+                ['subject' => 'logica', 'name' => 'Lógica', 'why' => 'Negação, equivalência e tabela-verdade: o raciocínio lógico que as bancas cobram com esse nome.'],
+                ['subject' => 'matematica-basica', 'name' => 'Matemática Básica', 'why' => 'Frações, porcentagem e equações: a conta que sustenta as questões de raciocínio.'],
+                ['subject' => 'informatica-basica', 'name' => 'Informática básica', 'why' => 'Arquivos, internet, planilha e segurança: o vocabulário antes da questão de banca.'],
+                ['subject' => 'informatica-para-concursos', 'name' => 'Informática para concursos', 'why' => 'Atalhos, Linux, backup, protocolos e golpes, do jeito que a banca pergunta.'],
             ],
         ],
     ],

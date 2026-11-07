@@ -119,4 +119,26 @@ class SubjectAreaTest extends TestCase
             }
         }
     }
+
+    public function test_trilha_publica_so_tem_passo_de_materia_publica(): void
+    {
+        $privadas = [];
+        foreach (glob(database_path('seeders/content/*.json')) as $arquivo) {
+            $dados = json_decode(file_get_contents($arquivo), true);
+            if (($dados['visibility'] ?? 'public') === 'private') {
+                $privadas[] = $dados['slug'];
+            }
+        }
+
+        foreach (config('castelei.trails') as $trilha) {
+            if (($trilha['visibility'] ?? 'public') === 'private') {
+                continue;
+            }
+            foreach ($trilha['steps'] as $passo) {
+                // Quem não administra não enxerga a matéria privada: o passo
+                // ficaria para sempre em "Em breve", sem nunca acender.
+                $this->assertNotContains($passo['subject'], $privadas, "{$trilha['slug']} → {$passo['subject']}");
+            }
+        }
+    }
 }
