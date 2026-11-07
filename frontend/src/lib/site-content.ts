@@ -687,6 +687,26 @@ export const SUBJECTS: SiteSubject[] = [
       "Variação linguística: diferente não é errado",
     ],
   },
+  {
+    slug: "ecologia-e-meio-ambiente",
+    name: "Ecologia e meio ambiente",
+    pitch:
+      "Nicho, relações, pirâmides, eutrofização, mangues, lixo, biodiversidade e controle biológico, do jeito que a prova cobra.",
+    lessons: [
+      "Do indivíduo à biosfera: população, comunidade, habitat e nicho",
+      "As relações entre os seres vivos",
+      "As pirâmides ecológicas e o veneno que sobe a cadeia",
+      "Populações: crescer, parar e invadir",
+      "Sucessão ecológica: como a vida ocupa um lugar vazio",
+      "O ciclo do nitrogênio e as bactérias que adubam",
+      "Eutrofização: quando o excesso de adubo mata o rio",
+      "A vida na água: plâncton, mangues e corais",
+      "O lixo, o solo e a água que ninguém vê",
+      "Biodiversidade: por que as espécies somem",
+      "Pragas, agrotóxicos e controle biológico",
+      "Sustentabilidade: o que a natureza faz de graça",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -703,5 +723,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 5572,
+  questions: 5740,
 };
