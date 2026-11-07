@@ -1,0 +1,4363 @@
+{
+  "slug": "contagem-e-probabilidade",
+  "name": "Contagem e probabilidade",
+  "area": "matematica",
+  "description": "Contar sem listar e calcular a chance do jeito que a prova pede: o ou que soma e o e que multiplica, arranjo, combinação, anagramas e mesa redonda, probabilidade com contagem, condicional e independente, a binomial, o valor esperado, o desvio padrão e a pesquisa por amostra. Supõe a Matemática do dia a dia.",
+  "lessons": [
+    {
+      "slug": "o-e-que-multiplica-e-o-ou-que-soma",
+      "title": "Contar com regras: o “e” que multiplica e o “ou” que soma",
+      "module": "Contar sem listar",
+      "summary": "Toda contagem começa por duas regras: o “e” multiplica e o “ou” soma. A lição mostra as duas, como lidar com restrições e o truque de contar o contrário para resolver o “pelo menos um”.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O lanche",
+          "body": [
+            "A lanchonete tem 3 sanduíches e 2 sucos. Um combo é um sanduíche e um suco: 3 × 2 = 6 combos.",
+            "Agora você vai levar só um sanduíche ou só um suco. São 3 + 2 = 5 opções. A palavra mudou, e a conta também."
+          ],
+          "terms": [
+            {
+              "word": "princípio multiplicativo",
+              "meaning": "se uma escolha tem m opções e a seguinte tem n, as duas juntas têm m × n."
+            },
+            {
+              "word": "princípio aditivo",
+              "meaning": "se o caminho é um ou outro, sem os dois ao mesmo tempo, somam-se as opções."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "“E” multiplica, “ou” soma",
+          "body": [
+            "A pergunta-chave é: as escolhas acontecem juntas ou uma no lugar da outra?"
+          ],
+          "table": {
+            "label": "As duas regras",
+            "headers": [
+              "Situação",
+              "Palavra",
+              "Conta"
+            ],
+            "rows": [
+              [
+                "calça e camisa",
+                "e",
+                "multiplica"
+              ],
+              [
+                "ônibus ou trem",
+                "ou",
+                "soma"
+              ],
+              [
+                "sanduíche e suco e sobremesa",
+                "e",
+                "multiplica as três"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Uma casa para cada escolha",
+          "body": [
+            "Desenhe uma casinha para cada escolha e escreva quantas opções cabem nela. Depois multiplique."
+          ],
+          "example": {
+            "label": "Quantos números de 3 algarismos existem?",
+            "lines": [
+              "Primeira casa: de 1 a 9, porque o zero não pode começar. São 9.",
+              "Segunda casa: de 0 a 9. São 10.",
+              "Terceira casa: de 0 a 9. São 10.",
+              "Total: 9 × 10 × 10 = 900."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Comece pela casa mais difícil",
+          "body": [
+            "Quando há uma regra, preencha primeiro a casa que tem a regra. Assim as outras não roubam as opções dela."
+          ],
+          "example": {
+            "label": "Senha de 3 dígitos diferentes que começa com ímpar",
+            "lines": [
+              "Primeira casa: ímpar (1, 3, 5, 7 ou 9). São 5.",
+              "Segunda casa: qualquer dígito menos o usado. São 9.",
+              "Terceira casa: menos os dois usados. São 8.",
+              "Total: 5 × 9 × 8 = 360."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Placas de carro",
+          "body": [
+            "A placa no padrão Mercosul do Brasil tem quatro letras e três algarismos, em posições fixas. Letras e números podem repetir."
+          ],
+          "example": {
+            "label": "A conta da placa",
+            "lines": [
+              "Cada letra: 26 opções. Cada algarismo: 10.",
+              "Total: 26 × 26 × 26 × 26 × 10 × 10 × 10.",
+              "Isso dá 456 976 000 placas."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "“Pelo menos um”: conte o contrário",
+          "body": [
+            "Contar direto o “pelo menos um” dá muito trabalho. É mais fácil tirar do total os casos que não têm nenhum."
+          ],
+          "example": {
+            "label": "Senhas de 4 dígitos com pelo menos um 7",
+            "lines": [
+              "Total de senhas: 10 × 10 × 10 × 10 = 10 000.",
+              "Senhas sem nenhum 7: 9 × 9 × 9 × 9 = 6 561.",
+              "Com pelo menos um 7: 10 000 − 6 561 = 3 439."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova conta senhas, placas, roupas e caminhos (às vezes com alguma regra). Quase sempre basta montar as casinhas na ordem certa."
+          ],
+          "bullets": [
+            "“Quantos números de 3 algarismos distintos podem ser formados…”",
+            "“De quantas maneiras é possível ir de A até C passando por B…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Somar quando as escolhas acontecem juntas.",
+            "Esquecer que o zero não pode começar um número.",
+            "Preencher a casa com regra por último.",
+            "Contar o “pelo menos um” direto e esquecer casos."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Escolhas juntas (“e”) multiplicam; escolhas no lugar uma da outra (“ou”) somam.",
+            "Monte uma casa por escolha e comece pela que tem a regra. Para “pelo menos um”, faça o total menos o caso sem nenhum."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Combo",
+          "statement": "Uma lanchonete tem 4 sanduíches e 3 sucos. Quantos combos diferentes de um sanduíche e um suco existem?",
+          "options": [
+            "12",
+            "7",
+            "4",
+            "3",
+            "64"
+          ],
+          "correct_index": 0,
+          "explanation": "Sanduíche e suco: 4 × 3.",
+          "pitfall": "“7” somou quando as escolhas acontecem juntas."
+        },
+        {
+          "topic": "Filme ou série",
+          "statement": "Uma pessoa vai assistir a um filme ou a uma série. Há 5 filmes e 4 séries. Quantas opções ela tem?",
+          "options": [
+            "9",
+            "20",
+            "5",
+            "4",
+            "1"
+          ],
+          "correct_index": 0,
+          "explanation": "É um ou outro: 5 + 4.",
+          "pitfall": "“20” multiplicou, como se ela fosse ver os dois."
+        },
+        {
+          "topic": "Três algarismos",
+          "statement": "Quantos números de 3 algarismos existem, de 100 a 999?",
+          "options": [
+            "900",
+            "1 000",
+            "999",
+            "729",
+            "810"
+          ],
+          "correct_index": 0,
+          "explanation": "9 × 10 × 10, porque o zero não começa.",
+          "pitfall": "“1 000” deixou o zero começar o número."
+        },
+        {
+          "topic": "Senha",
+          "statement": "Uma senha tem 4 dígitos de 0 a 9, e os dígitos podem repetir. Quantas senhas existem?",
+          "options": [
+            "10 000",
+            "5 040",
+            "40",
+            "1 000",
+            "9 999"
+          ],
+          "correct_index": 0,
+          "explanation": "10 × 10 × 10 × 10.",
+          "pitfall": "“5 040” proibiu repetir, e a senha permite."
+        },
+        {
+          "topic": "Começa com ímpar",
+          "statement": "Quantas senhas de 3 dígitos diferentes começam com um dígito ímpar?",
+          "options": [
+            "360",
+            "405",
+            "720",
+            "500",
+            "125"
+          ],
+          "correct_index": 0,
+          "explanation": "5 × 9 × 8: a primeira casa tem a regra.",
+          "pitfall": "“405” fez 5 × 9 × 9 e deixou repetir o dígito."
+        },
+        {
+          "topic": "Pelo menos um 7",
+          "statement": "Quantas senhas de 4 dígitos têm pelo menos um 7?",
+          "options": [
+            "3 439",
+            "6 561",
+            "1 000",
+            "4 000",
+            "10 000"
+          ],
+          "correct_index": 0,
+          "explanation": "Total menos as sem nenhum 7: 10 000 − 6 561.",
+          "pitfall": "“6 561” é o número de senhas sem nenhum 7."
+        },
+        {
+          "topic": "Regras",
+          "format": "match",
+          "statement": "Ligue cada situação ao que fazer na conta.",
+          "pairs": [
+            {
+              "left": "comprar sanduíche e suco",
+              "right": "multiplicar"
+            },
+            {
+              "left": "escolher filme ou série",
+              "right": "somar"
+            },
+            {
+              "left": "pelo menos um",
+              "right": "total menos o caso sem nenhum"
+            },
+            {
+              "left": "o zero não pode começar",
+              "right": "a primeira casa tem uma opção a menos"
+            }
+          ],
+          "explanation": "São as quatro ideias da lição.",
+          "pitfall": "“Pelo menos um” não se conta direto: conta-se o contrário."
+        },
+        {
+          "topic": "Restrição",
+          "statement": "Ao contar com uma regra, por exemplo “a senha precisa começar com vogal”, a dica é:",
+          "options": [
+            "começar pela casa que tem a regra",
+            "começar sempre pela última casa",
+            "ignorar a regra",
+            "somar todas as casas",
+            "dividir pelo número de casas"
+          ],
+          "correct_index": 0,
+          "explanation": "Assim nenhuma outra casa rouba as opções dela.",
+          "pitfall": "“Ignorar a regra” conta senhas que não valem."
+        },
+        {
+          "topic": "Roupas",
+          "statement": "Uma pessoa tem 3 calças e 5 camisas. De quantas formas ela se veste com uma calça e uma camisa?",
+          "options": [
+            "15",
+            "8",
+            "35",
+            "53",
+            "125"
+          ],
+          "correct_index": 0,
+          "explanation": "Calça e camisa: 3 × 5.",
+          "pitfall": "“8” somou as peças.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Ônibus ou trem",
+          "statement": "Para ir de A a B há 3 linhas de ônibus e 2 de trem. Indo de ônibus ou de trem, há quantas opções?",
+          "options": [
+            "5",
+            "6",
+            "9",
+            "3",
+            "2"
+          ],
+          "correct_index": 0,
+          "explanation": "Um ou outro: 3 + 2.",
+          "pitfall": "“6” multiplicou, como se a pessoa usasse os dois.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Placas",
+          "statement": "As placas no padrão Mercosul do Brasil têm 4 letras (26 opções cada) e 3 algarismos (10 opções cada). O número de placas possíveis é:",
+          "options": [
+            "26⁴ × 10³",
+            "26 × 4 × 10 × 3",
+            "26⁴ + 10³",
+            "(26 + 10)⁷",
+            "26³ × 10⁴"
+          ],
+          "correct_index": 0,
+          "explanation": "Quatro casas de 26 e três de 10, multiplicadas.",
+          "pitfall": "“26³ × 10⁴” trocou o número de letras pelo de algarismos.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Ida e volta",
+          "statement": "De A a B há 3 estradas, e de B a C há 4. Para ir de A a C passando por B e voltar sem repetir nenhuma estrada, quantos caminhos há?",
+          "options": [
+            "72",
+            "144",
+            "24",
+            "12",
+            "7"
+          ],
+          "correct_index": 0,
+          "explanation": "Ida: 3 × 4 = 12. Volta sem repetir: 3 × 2 = 6. Total: 12 × 6.",
+          "pitfall": "“144” deixou repetir as estradas na volta.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Com zero",
+          "statement": "Quantos números de 3 algarismos diferentes podem ser formados com 0, 1, 2, 3 e 4?",
+          "options": [
+            "48",
+            "60",
+            "125",
+            "100",
+            "24"
+          ],
+          "correct_index": 0,
+          "explanation": "Primeira casa: 4 (sem o zero). Depois 4 e 3.",
+          "pitfall": "“60” fez 5 × 4 × 3 e deixou o zero começar: o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Verdadeiro ou falso",
+          "statement": "Uma prova tem 5 questões de verdadeiro ou falso. De quantas formas um aluno pode responder com pelo menos uma resposta “verdadeiro”?",
+          "options": [
+            "31",
+            "32",
+            "5",
+            "10",
+            "16"
+          ],
+          "correct_index": 0,
+          "explanation": "Total 2⁵ = 32, menos a folha toda falsa.",
+          "pitfall": "“32” esqueceu de tirar o caso sem nenhum “verdadeiro”: o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "arranjo",
+      "title": "Arranjo: quando a ordem importa",
+      "module": "Contar sem listar",
+      "summary": "Num pódio, ouro e prata trocados dão outro resultado. A lição mostra o arranjo, o teste da troca, a conta pelas casinhas e a fórmula com fatorial.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O pódio",
+          "body": [
+            "Oito corredores disputam ouro, prata e bronze. Para o ouro há 8 candidatos; para a prata sobram 7; para o bronze, 6.",
+            "São 8 × 7 × 6 = 336 pódios diferentes. Trocar dois de lugar dá outro pódio."
+          ],
+          "terms": [
+            {
+              "word": "arranjo",
+              "meaning": "escolher alguns elementos de um grupo e pôr em fila, quando trocar a ordem muda o resultado."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O teste da troca",
+          "body": [
+            "Escolha dois elementos e troque a posição deles. Se o resultado muda, a ordem importa, e a conta é um arranjo."
+          ],
+          "table": {
+            "label": "A ordem importa?",
+            "headers": [
+              "Situação",
+              "Trocar muda?",
+              "Tipo"
+            ],
+            "rows": [
+              [
+                "pódio de corrida",
+                "sim",
+                "arranjo"
+              ],
+              [
+                "presidente e vice",
+                "sim",
+                "arranjo"
+              ],
+              [
+                "senha sem repetir dígito",
+                "sim",
+                "arranjo"
+              ],
+              [
+                "comissão sem cargos",
+                "não",
+                "outro tipo de conta"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A conta pelas casinhas",
+          "body": [
+            "No arranjo, cada casa tem uma opção a menos que a anterior. Multiplica-se até preencher as casas pedidas."
+          ],
+          "example": {
+            "label": "Presidente e vice entre 10 alunos",
+            "lines": [
+              "Presidente: 10 opções.",
+              "Vice: 9, porque o presidente já saiu.",
+              "Total: 10 × 9 = 90 chapas."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "princípio multiplicativo",
+              "meaning": "se uma escolha tem m opções e a seguinte tem n, as duas juntas têm m × n."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A fórmula com fatorial",
+          "body": [
+            "O arranjo de n elementos tomados p a p é n! ÷ (n − p)!. A divisão corta a parte da fila que não foi usada."
+          ],
+          "example": {
+            "label": "O pódio pela fórmula",
+            "lines": [
+              "n = 8 corredores, p = 3 lugares.",
+              "8! ÷ 5! = 8 × 7 × 6 = 336."
+            ]
+          },
+          "terms": [
+            {
+              "word": "fatorial",
+              "meaning": "o produto de um número por todos os inteiros positivos menores que ele. Escreve-se com ponto de exclamação: 4! = 4 × 3 × 2 × 1 = 24."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quando a fila usa todo mundo",
+          "body": [
+            "Se as casas são tantas quanto os elementos, o arranjo vira permutação. É o caso de pôr todos em fila."
+          ],
+          "terms": [
+            {
+              "word": "permutação",
+              "meaning": "a fila com todos os elementos de um grupo. Com n elementos, são n! filas."
+            }
+          ],
+          "table": {
+            "label": "Arranjo e permutação",
+            "headers": [
+              "",
+              "Arranjo",
+              "Permutação"
+            ],
+            "rows": [
+              [
+                "usa",
+                "alguns elementos",
+                "todos os elementos"
+              ],
+              [
+                "conta",
+                "n! ÷ (n − p)!",
+                "n!"
+              ],
+              [
+                "exemplo",
+                "pódio de 3 entre 8",
+                "fila de 4 amigos: 4! = 24"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Grudar quem precisa ficar junto",
+          "body": [
+            "Se duas pessoas precisam ficar lado a lado, trate as duas como uma só. Depois multiplique pelas formas de elas trocarem de lugar entre si."
+          ],
+          "example": {
+            "label": "Fila de 5 com Ana e Bia juntas",
+            "lines": [
+              "Ana e Bia viram um bloco: são 4 itens na fila.",
+              "Filas com 4 itens: 4! = 24.",
+              "Dentro do bloco, Ana e Bia trocam: × 2.",
+              "Total: 24 × 2 = 48."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova conta pódios, chapas, senhas e jogos de ida e volta. Às vezes pede só a expressão, e não o número."
+          ],
+          "bullets": [
+            "“O número de resultados possíveis para os três primeiros lugares é…”",
+            "“Quantas senhas de 4 dígitos distintos…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Usar arranjo quando a ordem não importa.",
+            "Esquecer de diminuir uma opção em cada casa.",
+            "No bloco de quem fica junto, esquecer a troca dentro do bloco.",
+            "Calcular 8! inteiro quando só três casas foram pedidas."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Se trocar a ordem muda o resultado, é arranjo: n × (n − 1) × … até preencher as casas, ou n! ÷ (n − p)!.",
+            "Quando a fila usa todos, é permutação: n!. Quem precisa ficar junto vira bloco, e o bloco troca por dentro."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Pódio",
+          "statement": "Oito corredores disputam ouro, prata e bronze. Quantos pódios diferentes podem sair?",
+          "options": [
+            "336",
+            "56",
+            "24",
+            "512",
+            "40 320"
+          ],
+          "correct_index": 0,
+          "explanation": "8 × 7 × 6.",
+          "pitfall": "“56” dividiu pelas ordens, como se o pódio não tivesse ordem."
+        },
+        {
+          "topic": "Chapa",
+          "statement": "Numa sala de 10 alunos, elege-se um presidente e um vice. Quantas chapas são possíveis?",
+          "options": [
+            "90",
+            "45",
+            "100",
+            "20",
+            "19"
+          ],
+          "correct_index": 0,
+          "explanation": "10 × 9: presidente e vice são cargos diferentes.",
+          "pitfall": "“45” tratou os cargos como iguais."
+        },
+        {
+          "topic": "Quando usar",
+          "statement": "O arranjo é usado quando:",
+          "options": [
+            "a ordem dos escolhidos muda o resultado",
+            "a ordem não importa",
+            "todos os elementos são iguais",
+            "não há escolha",
+            "os elementos sempre se repetem"
+          ],
+          "correct_index": 0,
+          "explanation": "É o teste da troca.",
+          "pitfall": "“A ordem não importa” é o caso contrário."
+        },
+        {
+          "topic": "5!",
+          "statement": "Quanto vale 5!?",
+          "options": [
+            "120",
+            "25",
+            "15",
+            "60",
+            "720"
+          ],
+          "correct_index": 0,
+          "explanation": "5 × 4 × 3 × 2 × 1.",
+          "pitfall": "“15” somou em vez de multiplicar."
+        },
+        {
+          "topic": "Senha sem repetir",
+          "statement": "Quantas senhas de 4 dígitos sem repetir dígito existem?",
+          "options": [
+            "5 040",
+            "10 000",
+            "210",
+            "40",
+            "6 561"
+          ],
+          "correct_index": 0,
+          "explanation": "10 × 9 × 8 × 7.",
+          "pitfall": "“10 000” deixou repetir."
+        },
+        {
+          "topic": "Quatro cadeiras",
+          "statement": "De quantas formas 4 amigos podem se sentar em 4 cadeiras em fila?",
+          "options": [
+            "24",
+            "16",
+            "4",
+            "256",
+            "12"
+          ],
+          "correct_index": 0,
+          "explanation": "É uma permutação: 4!.",
+          "pitfall": "“16” fez 4 × 4."
+        },
+        {
+          "topic": "Contas",
+          "format": "match",
+          "statement": "Ligue cada situação à conta certa.",
+          "pairs": [
+            {
+              "left": "pódio de 3 entre 8 corredores",
+              "right": "8 × 7 × 6"
+            },
+            {
+              "left": "fila com 4 pessoas",
+              "right": "4!"
+            },
+            {
+              "left": "presidente e vice entre 10",
+              "right": "10 × 9"
+            },
+            {
+              "left": "senha de 3 letras sem repetir",
+              "right": "26 × 25 × 24"
+            }
+          ],
+          "explanation": "Cada casa tem uma opção a menos.",
+          "pitfall": "A fila com todos é permutação; as outras usam só algumas casas."
+        },
+        {
+          "topic": "Fórmula",
+          "statement": "A fórmula do arranjo de n elementos tomados p a p é:",
+          "options": [
+            "n! ÷ (n − p)!",
+            "n! ÷ [p! × (n − p)!]",
+            "n × p",
+            "n elevado a p",
+            "n + p"
+          ],
+          "correct_index": 0,
+          "explanation": "A divisão corta a parte da fila que não foi usada.",
+          "pitfall": "“n! ÷ [p! × (n − p)!]” divide também pelas ordens do grupo: serve quando a ordem não importa."
+        },
+        {
+          "topic": "3!",
+          "statement": "Quanto vale 3!?",
+          "options": [
+            "6",
+            "3",
+            "9",
+            "27",
+            "1"
+          ],
+          "correct_index": 0,
+          "explanation": "3 × 2 × 1.",
+          "pitfall": "“9” fez 3 × 3.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Bandas",
+          "statement": "Num concurso de 6 bandas, saem o 1º e o 2º lugar. Quantos resultados são possíveis?",
+          "options": [
+            "30",
+            "15",
+            "36",
+            "12",
+            "720"
+          ],
+          "correct_index": 0,
+          "explanation": "6 × 5.",
+          "pitfall": "“36” deixou a mesma banda ficar nos dois lugares.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Divisão de fatoriais",
+          "statement": "Quanto vale 8! ÷ 6!?",
+          "options": [
+            "56",
+            "2",
+            "48",
+            "336",
+            "40 320"
+          ],
+          "correct_index": 0,
+          "explanation": "Corta tudo até o 6: sobra 8 × 7.",
+          "pitfall": "“2” dividiu 8 por 6, e não os fatoriais.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Algarismos",
+          "statement": "Quantos números de 3 algarismos diferentes podem ser formados com 1, 2, 3, 4, 5 e 6?",
+          "options": [
+            "120",
+            "216",
+            "20",
+            "720",
+            "18"
+          ],
+          "correct_index": 0,
+          "explanation": "6 × 5 × 4.",
+          "pitfall": "“216” deixou repetir: 6 × 6 × 6.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Ida e volta",
+          "statement": "Num campeonato com 12 times, cada time joga com cada outro duas vezes, uma em casa e outra fora. Quantos jogos há?",
+          "options": [
+            "132",
+            "66",
+            "144",
+            "24",
+            "264"
+          ],
+          "correct_index": 0,
+          "explanation": "Mandante e visitante têm ordem: 12 × 11.",
+          "pitfall": "“66” contou um jogo só por dupla: o distrator mais fino, que esquece a volta.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Ana e Bia",
+          "statement": "Uma fila tem 5 pessoas, e Ana e Bia precisam ficar juntas. Quantas filas são possíveis?",
+          "options": [
+            "48",
+            "24",
+            "120",
+            "10",
+            "96"
+          ],
+          "correct_index": 0,
+          "explanation": "Bloco com 4 itens: 4! = 24, vezes 2 trocas no bloco.",
+          "pitfall": "“24” esqueceu que Ana e Bia trocam de lugar dentro do bloco: o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "combinacao",
+      "title": "Combinação: quando a ordem não importa",
+      "module": "Contar sem listar",
+      "summary": "Numa comissão sem cargos, trocar duas pessoas de lugar não muda nada. A lição mostra a combinação, por que ela divide o arranjo, a fórmula e casos como a Mega-Sena.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A comissão",
+          "body": [
+            "Uma turma de 8 escolhe 3 pessoas para uma comissão sem cargos. Ana, Beto e Caio formam a mesma comissão que Caio, Ana e Beto.",
+            "Se a ordem não importa, contar como no pódio daria resultado demais."
+          ],
+          "terms": [
+            {
+              "word": "combinação",
+              "meaning": "escolher alguns elementos de um grupo quando a ordem não muda nada, como montar uma comissão."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Por que se divide",
+          "body": [
+            "No arranjo, o mesmo grupo de 3 aparece em várias ordens. Cada ordem foi contada como se fosse diferente."
+          ],
+          "example": {
+            "label": "O grupo Ana, Beto e Caio no arranjo",
+            "lines": [
+              "ABC, ACB, BAC, BCA, CAB, CBA.",
+              "São 3! = 6 ordens para o mesmo grupo.",
+              "Por isso: 336 ÷ 6 = 56 comissões."
+            ]
+          },
+          "terms": [
+            {
+              "word": "arranjo",
+              "meaning": "escolher alguns elementos de um grupo e pôr em fila, quando trocar a ordem muda o resultado."
+            },
+            {
+              "word": "fatorial",
+              "meaning": "o produto de um número por todos os inteiros positivos menores que ele. Escreve-se com ponto de exclamação: 4! = 4 × 3 × 2 × 1 = 24."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A fórmula",
+          "body": [
+            "A combinação de n elementos tomados p a p é n! ÷ [p! × (n − p)!]. É o arranjo dividido pelas ordens do grupo."
+          ],
+          "example": {
+            "label": "A comissão pela fórmula",
+            "lines": [
+              "n = 8, p = 3.",
+              "8! ÷ (3! × 5!) = (8 × 7 × 6) ÷ (3 × 2 × 1) = 56."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O teste da troca, de novo",
+          "body": [
+            "Troque dois escolhidos de lugar. Se nada muda, é combinação; se muda, é arranjo."
+          ],
+          "table": {
+            "label": "Combinação ou arranjo?",
+            "headers": [
+              "Situação",
+              "Tipo"
+            ],
+            "rows": [
+              [
+                "comissão sem cargos",
+                "combinação"
+              ],
+              [
+                "salada com 3 frutas",
+                "combinação"
+              ],
+              [
+                "aperto de mão entre duas pessoas",
+                "combinação"
+              ],
+              [
+                "pódio",
+                "arranjo"
+              ],
+              [
+                "senha",
+                "arranjo"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A Mega-Sena",
+          "body": [
+            "Na aposta simples, escolhem-se 6 números entre 60. A ordem não importa: o bilhete vale o mesmo em qualquer ordem."
+          ],
+          "example": {
+            "label": "A conta da aposta",
+            "lines": [
+              "Combinação de 60 tomados 6 a 6.",
+              "Dá 50 063 860 apostas possíveis.",
+              "Uma aposta simples tem uma chance em mais de 50 milhões."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Apertos de mão e triângulos",
+          "body": [
+            "Muita questão é combinação disfarçada. Um aperto de mão é escolher 2 pessoas; um triângulo é escolher 3 pontos."
+          ],
+          "example": {
+            "label": "Dois disfarces",
+            "lines": [
+              "10 pessoas, todos apertam a mão de todos: C(10, 2) = 45.",
+              "6 pontos num círculo, triângulos possíveis: C(6, 3) = 20."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova conta comissões, apostas e apertos de mão (e também jogos sem volta). O primeiro passo é sempre o teste da troca."
+          ],
+          "bullets": [
+            "“De quantas maneiras se pode formar uma comissão de 3 pessoas…”",
+            "“Quantos jogos serão disputados se cada time enfrenta cada outro uma vez…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Usar arranjo numa comissão sem cargos.",
+            "Esquecer de dividir pelas ordens do grupo.",
+            "Achar que escolher 3 de 10 é diferente de deixar 7 de fora.",
+            "Somar quando a escolha é de dois grupos ao mesmo tempo (meninas e meninos)."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Se trocar não muda nada, é combinação: n! ÷ [p! × (n − p)!], o arranjo dividido pelas ordens do grupo.",
+            "Comissões, apostas, apertos de mão e jogos sem volta são combinação. Escolher p é o mesmo que deixar n − p de fora."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Comissão",
+          "statement": "Escolher 3 de 8 pessoas para uma comissão sem cargos pode ser feito de quantas formas?",
+          "options": [
+            "56",
+            "336",
+            "24",
+            "512",
+            "11"
+          ],
+          "correct_index": 0,
+          "explanation": "8 × 7 × 6 ÷ 3!.",
+          "pitfall": "“336” contou cada comissão seis vezes, uma por ordem."
+        },
+        {
+          "topic": "Apertos",
+          "statement": "Numa festa com 10 pessoas, cada uma aperta a mão de todas as outras uma vez. Quantos apertos de mão há?",
+          "options": [
+            "45",
+            "90",
+            "100",
+            "10",
+            "20"
+          ],
+          "correct_index": 0,
+          "explanation": "C(10, 2): cada aperto é um par.",
+          "pitfall": "“90” contou o aperto de Ana com Beto e o de Beto com Ana."
+        },
+        {
+          "topic": "Quando usar",
+          "statement": "A combinação é usada quando:",
+          "options": [
+            "a ordem dos escolhidos não muda o resultado",
+            "a ordem importa",
+            "os elementos são todos usados em fila",
+            "não há escolha",
+            "os elementos se repetem"
+          ],
+          "correct_index": 0,
+          "explanation": "É o teste da troca dando “não muda”.",
+          "pitfall": "“A ordem importa” é o arranjo."
+        },
+        {
+          "topic": "Qual é",
+          "statement": "Qual situação é de combinação?",
+          "options": [
+            "escolher 2 sabores de sorvete para uma casquinha",
+            "definir o 1º e o 2º lugar de um concurso",
+            "montar uma senha",
+            "formar uma fila",
+            "eleger presidente e vice"
+          ],
+          "correct_index": 0,
+          "explanation": "Chocolate e morango é o mesmo que morango e chocolate.",
+          "pitfall": "“1º e 2º lugar” têm ordem."
+        },
+        {
+          "topic": "C(5, 2)",
+          "statement": "Quanto vale C(5, 2)?",
+          "options": [
+            "10",
+            "20",
+            "25",
+            "7",
+            "60"
+          ],
+          "correct_index": 0,
+          "explanation": "5 × 4 ÷ 2.",
+          "pitfall": "“20” esqueceu de dividir pelas 2 ordens."
+        },
+        {
+          "topic": "Mega-Sena",
+          "statement": "Na Mega-Sena, escolhem-se 6 números entre 60. O número de apostas simples possíveis é dado por:",
+          "options": [
+            "C(60, 6)",
+            "A(60, 6)",
+            "60 × 6",
+            "60 elevado a 6",
+            "6!"
+          ],
+          "correct_index": 0,
+          "explanation": "A ordem dos números no bilhete não importa.",
+          "pitfall": "“A(60, 6)” contaria o mesmo bilhete em várias ordens."
+        },
+        {
+          "topic": "Tipo",
+          "format": "match",
+          "statement": "Ligue cada situação ao tipo de conta.",
+          "pairs": [
+            {
+              "left": "comissão de 3 pessoas sem cargos",
+              "right": "combinação: trocar duas pessoas não muda nada"
+            },
+            {
+              "left": "pódio de 3 corredores",
+              "right": "arranjo: trocar muda o pódio"
+            },
+            {
+              "left": "salada com 3 frutas",
+              "right": "combinação: a ordem das frutas não importa"
+            },
+            {
+              "left": "senha de 3 dígitos sem repetir",
+              "right": "arranjo: trocar muda a senha"
+            }
+          ],
+          "explanation": "O teste da troca decide.",
+          "pitfall": "A comissão não tem cargos: trocar não muda nada."
+        },
+        {
+          "topic": "Por que divide",
+          "statement": "Por que a combinação divide o arranjo por p!?",
+          "options": [
+            "porque cada grupo foi contado uma vez para cada ordem dos seus p elementos",
+            "porque a ordem importa mais",
+            "para o número ficar maior",
+            "porque p! é sempre 1",
+            "porque se somam as ordens"
+          ],
+          "correct_index": 0,
+          "explanation": "Um grupo de 3 aparece em 3! = 6 ordens.",
+          "pitfall": "“Para o número ficar maior” erra: dividir diminui."
+        },
+        {
+          "topic": "C(4, 4)",
+          "statement": "Quanto vale C(4, 4)?",
+          "options": [
+            "1",
+            "4",
+            "16",
+            "24",
+            "0"
+          ],
+          "correct_index": 0,
+          "explanation": "Só há um jeito de escolher todos.",
+          "pitfall": "“24” é 4!, que conta ordens.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Livros",
+          "statement": "Escolher 2 de 4 livros para levar na viagem pode ser feito de quantas formas?",
+          "options": [
+            "6",
+            "12",
+            "8",
+            "16",
+            "2"
+          ],
+          "correct_index": 0,
+          "explanation": "4 × 3 ÷ 2.",
+          "pitfall": "“12” contou cada par duas vezes.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Triângulos",
+          "statement": "Com 6 pontos marcados num círculo, quantos triângulos dá para formar?",
+          "options": [
+            "20",
+            "120",
+            "18",
+            "36",
+            "216"
+          ],
+          "correct_index": 0,
+          "explanation": "C(6, 3): cada triângulo é um trio de pontos.",
+          "pitfall": "“120” contou o mesmo triângulo em 6 ordens.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Meninas e meninos",
+          "statement": "Uma turma tem 5 meninas e 4 meninos. Quantas comissões de 2 meninas e 1 menino podem ser formadas?",
+          "options": [
+            "40",
+            "84",
+            "10",
+            "14",
+            "20"
+          ],
+          "correct_index": 0,
+          "explanation": "C(5, 2) × 4 = 10 × 4: as duas escolhas acontecem juntas.",
+          "pitfall": "“84” é C(9, 3), que ignora a regra de 2 meninas e 1 menino.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Iguais",
+          "statement": "C(10, 3) e C(10, 7) são:",
+          "options": [
+            "iguais, porque escolher 3 é o mesmo que deixar 7 de fora",
+            "diferentes, porque 3 é diferente de 7",
+            "um o dobro do outro",
+            "iguais a 3 e a 7",
+            "ambos iguais a 10"
+          ],
+          "correct_index": 0,
+          "explanation": "Os dois valem 120.",
+          "pitfall": "“Diferentes, porque 3 é diferente de 7” é o distrator mais fino: cada escolha de 3 deixa um grupo de 7 de fora.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Torneio",
+          "statement": "Num torneio com 8 times, cada um joga uma única vez com cada outro. Quantos jogos há?",
+          "options": [
+            "28",
+            "56",
+            "64",
+            "16",
+            "36"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada jogo é um par de times: C(8, 2).",
+          "pitfall": "“56” é o arranjo, que contaria ida e volta: o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "anagramas-e-mesa-redonda",
+      "title": "Anagramas, letras repetidas e a mesa redonda",
+      "module": "Contar sem listar",
+      "summary": "Trocar letras de lugar é contar filas. A lição mostra os anagramas, o que fazer quando há letras repetidas, a mesa redonda e os caminhos numa grade.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "AMOR, ROMA, MORA",
+          "body": [
+            "Trocando as letras de AMOR saem ROMA, MORA, OMRA e muitas outras. Com sentido ou sem, cada uma é uma fila das quatro letras.",
+            "São 4! = 24 anagramas."
+          ],
+          "terms": [
+            {
+              "word": "anagrama",
+              "meaning": "cada palavra, com sentido ou não, formada trocando a ordem das letras de outra."
+            },
+            {
+              "word": "fatorial",
+              "meaning": "o produto de um número por todos os inteiros positivos menores que ele. Escreve-se com ponto de exclamação: 4! = 4 × 3 × 2 × 1 = 24."
+            },
+            {
+              "word": "permutação",
+              "meaning": "a fila com todos os elementos de um grupo. Com n elementos, são n! filas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Letras repetidas",
+          "body": [
+            "Em ARARA, trocar dois As de lugar não muda a palavra. Contar 5! contaria a mesma palavra várias vezes."
+          ],
+          "example": {
+            "label": "ARARA e BANANA",
+            "lines": [
+              "ARARA: 5 letras, com 3 As e 2 Rs.",
+              "5! ÷ (3! × 2!) = 120 ÷ 12 = 10 anagramas.",
+              "BANANA: 6 letras, com 3 As e 2 Ns.",
+              "6! ÷ (3! × 2!) = 720 ÷ 12 = 60 anagramas."
+            ]
+          },
+          "terms": [
+            {
+              "word": "permutação com repetição",
+              "meaning": "a fila com elementos repetidos. Divide-se n! pelo fatorial de cada repetição, porque trocar duas letras iguais não muda nada."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Anagramas com regra",
+          "body": [
+            "A regra prende algumas letras. Conte só as filas das letras que sobraram."
+          ],
+          "example": {
+            "label": "Com AMOR",
+            "lines": [
+              "Começam com A: sobram M, O, R. São 3! = 6.",
+              "Começam e terminam com vogal: A no começo e O no fim, ou o contrário. São 2 × 2! = 4."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A mesa redonda",
+          "body": [
+            "Numa mesa redonda, se todos andam uma cadeira para o lado, a mesa continua igual. Por isso se fixa uma pessoa e se conta a fila das outras."
+          ],
+          "example": {
+            "label": "Cinco pessoas na mesa redonda",
+            "lines": [
+              "Fixa-se uma pessoa numa cadeira.",
+              "As outras 4 formam a fila: 4! = 24.",
+              "Em fila reta seriam 5! = 120."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "permutação circular",
+              "meaning": "a fila em volta de uma mesa redonda. Como girar todo mundo não muda a mesa, são (n − 1)! jeitos."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Caminhos numa grade",
+          "body": [
+            "Para ir de um canto a outro andando só para a direita e para cima, cada caminho é uma palavra de Ds e Cs."
+          ],
+          "example": {
+            "label": "3 para a direita e 2 para cima",
+            "lines": [
+              "Um caminho é, por exemplo, D D C D C.",
+              "São anagramas de DDDCC: 5! ÷ (3! × 2!) = 10."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede anagramas de uma palavra, com ou sem regra, pessoas em volta de uma mesa ou caminhos num mapa de ruas."
+          ],
+          "bullets": [
+            "“Quantos anagramas da palavra … começam por vogal?”",
+            "“De quantos modos 6 pessoas podem sentar-se em torno de uma mesa circular?”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Esquecer de dividir pelas letras repetidas.",
+            "Usar n! na mesa redonda, em vez de (n − 1)!.",
+            "Contar o caminho na grade multiplicando as quadras.",
+            "Esquecer que letras iguais no bloco não trocam de lugar."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Anagrama sem repetição: n!. Com letras repetidas, divide-se n! pelo fatorial de cada repetição.",
+            "Na mesa redonda, (n − 1)!. Caminhos numa grade são anagramas de uma palavra de Ds e Cs."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "AMOR",
+          "statement": "Quantos anagramas tem a palavra AMOR?",
+          "options": [
+            "24",
+            "16",
+            "4",
+            "12",
+            "256"
+          ],
+          "correct_index": 0,
+          "explanation": "4 letras diferentes: 4!.",
+          "pitfall": "“16” fez 4 × 4."
+        },
+        {
+          "topic": "ARARA",
+          "statement": "Quantos anagramas tem a palavra ARARA?",
+          "options": [
+            "10",
+            "120",
+            "20",
+            "5",
+            "60"
+          ],
+          "correct_index": 0,
+          "explanation": "5! ÷ (3! × 2!).",
+          "pitfall": "“120” não dividiu pelas letras repetidas."
+        },
+        {
+          "topic": "Começa com A",
+          "statement": "Quantos anagramas de AMOR começam com A?",
+          "options": [
+            "6",
+            "24",
+            "4",
+            "12",
+            "3"
+          ],
+          "correct_index": 0,
+          "explanation": "Sobram 3 letras: 3!.",
+          "pitfall": "“24” esqueceu a regra."
+        },
+        {
+          "topic": "Mesa",
+          "statement": "De quantas formas 5 pessoas podem se sentar em volta de uma mesa redonda?",
+          "options": [
+            "24",
+            "120",
+            "5",
+            "25",
+            "60"
+          ],
+          "correct_index": 0,
+          "explanation": "(5 − 1)! = 4!.",
+          "pitfall": "“120” contou como fila reta, em que girar muda a fila."
+        },
+        {
+          "topic": "Por que divide",
+          "statement": "Na permutação com repetição, divide-se n! pelos fatoriais das repetições porque:",
+          "options": [
+            "trocar duas letras iguais não cria uma palavra nova",
+            "as letras repetidas valem o dobro",
+            "a fila fica maior",
+            "a ordem nunca importa",
+            "é preciso somar as letras"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada palavra apareceria várias vezes.",
+          "pitfall": "“A ordem nunca importa” erra: a ordem importa, só que trocar iguais não muda nada."
+        },
+        {
+          "topic": "BANANA",
+          "statement": "Quantos anagramas tem a palavra BANANA?",
+          "options": [
+            "60",
+            "720",
+            "120",
+            "36",
+            "6"
+          ],
+          "correct_index": 0,
+          "explanation": "6! ÷ (3! × 2!).",
+          "pitfall": "“720” não dividiu pelas letras repetidas."
+        },
+        {
+          "topic": "Contas",
+          "format": "match",
+          "statement": "Ligue cada situação à conta certa.",
+          "pairs": [
+            {
+              "left": "anagramas de AMOR",
+              "right": "4!"
+            },
+            {
+              "left": "anagramas de ARARA",
+              "right": "5! ÷ (3! × 2!)"
+            },
+            {
+              "left": "5 pessoas numa mesa redonda",
+              "right": "(5 − 1)!"
+            },
+            {
+              "left": "5 pessoas numa fila reta",
+              "right": "5!"
+            }
+          ],
+          "explanation": "Fila, repetição e mesa redonda.",
+          "pitfall": "Mesa redonda e fila reta têm o mesmo número de pessoas, e contas diferentes."
+        },
+        {
+          "topic": "Grade",
+          "statement": "Para ir de um canto a outro de uma grade andando 3 quadras para a direita e 2 para cima, há quantos caminhos?",
+          "options": [
+            "10",
+            "6",
+            "5",
+            "32",
+            "120"
+          ],
+          "correct_index": 0,
+          "explanation": "Anagramas de DDDCC: 5! ÷ (3! × 2!).",
+          "pitfall": "“6” multiplicou 3 × 2."
+        },
+        {
+          "topic": "SOL",
+          "statement": "Quantos anagramas tem a palavra SOL?",
+          "options": [
+            "6",
+            "3",
+            "9",
+            "27",
+            "1"
+          ],
+          "correct_index": 0,
+          "explanation": "3!.",
+          "pitfall": "“9” fez 3 × 3.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Quatro na mesa",
+          "statement": "Numa mesa redonda com 4 lugares, 4 amigos podem se sentar de quantas formas?",
+          "options": [
+            "6",
+            "24",
+            "4",
+            "16",
+            "12"
+          ],
+          "correct_index": 0,
+          "explanation": "(4 − 1)! = 3!.",
+          "pitfall": "“24” contou como fila reta.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Vogal nas pontas",
+          "statement": "Quantos anagramas de AMOR começam e terminam com vogal?",
+          "options": [
+            "4",
+            "2",
+            "6",
+            "12",
+            "24"
+          ],
+          "correct_index": 0,
+          "explanation": "A e O nas pontas, em 2 ordens; M e R no meio, em 2 ordens.",
+          "pitfall": "“2” esqueceu de trocar o M e o R de lugar.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "OVO",
+          "statement": "Quantos anagramas tem a palavra OVO?",
+          "options": [
+            "3",
+            "6",
+            "2",
+            "9",
+            "1"
+          ],
+          "correct_index": 0,
+          "explanation": "3! ÷ 2! = 3: OVO, OOV, VOO.",
+          "pitfall": "“6” não dividiu pelos dois Os.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "CASA",
+          "statement": "Quantos anagramas de CASA têm as duas letras A juntas?",
+          "options": [
+            "6",
+            "12",
+            "24",
+            "3",
+            "18"
+          ],
+          "correct_index": 0,
+          "explanation": "O bloco AA, o C e o S: 3! = 6. Os dois As são iguais, então o bloco não troca.",
+          "pitfall": "“12” multiplicou por 2 a troca dentro do bloco: o distrator mais fino, porque trocar dois As iguais não muda nada.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Grade maior",
+          "statement": "Numa grade, uma pessoa anda 4 quadras para a direita e 3 para cima, sempre avançando. O número de caminhos é:",
+          "options": [
+            "35",
+            "12",
+            "7",
+            "5 040",
+            "70"
+          ],
+          "correct_index": 0,
+          "explanation": "7! ÷ (4! × 3!) = 35.",
+          "pitfall": "“12” multiplicou 4 × 3: o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "probabilidade-com-contagem",
+      "title": "Probabilidade com contagem: quando não dá para listar",
+      "module": "Calcular a chance",
+      "summary": "Quando os casos são muitos para listar, a contagem entra na conta da chance. A lição mostra como usar combinação nos dois lados da divisão, o caminho pelas frações e a Mega-Sena.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A rifa e a Mega-Sena",
+          "body": [
+            "Numa rifa de 100 números, quem tem um número tem 1 chance em 100. Dá para listar os 100.",
+            "Na Mega-Sena, ninguém lista as apostas possíveis. Aí a contagem faz o trabalho."
+          ],
+          "terms": [
+            {
+              "word": "probabilidade",
+              "meaning": "a chance de algo acontecer, num número de 0 (impossível) a 1 (certo). É a conta dos casos favoráveis divididos pelos casos possíveis."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A conta de sempre",
+          "body": [
+            "A chance é sempre favoráveis divididos por possíveis. O que muda é o jeito de contar cada um."
+          ],
+          "example": {
+            "label": "Uma rifa",
+            "lines": [
+              "Possíveis: 100 números.",
+              "Favoráveis: os 5 números que você comprou.",
+              "Chance: 5 ÷ 100 = 1 em 20."
+            ]
+          },
+          "terms": [
+            {
+              "word": "espaço amostral",
+              "meaning": "a lista de todos os resultados possíveis de um experimento."
+            },
+            {
+              "word": "evento",
+              "meaning": "o resultado (ou grupo de resultados) cuja chance se quer calcular, como “sair número par”."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Contar com combinação",
+          "body": [
+            "Quando se tiram várias coisas de uma vez, a ordem não importa. Conta-se com combinação em cima e embaixo."
+          ],
+          "example": {
+            "label": "Urna com 5 vermelhas e 3 azuis: tirar 2 vermelhas",
+            "lines": [
+              "Possíveis: C(8, 2) = 28 pares.",
+              "Favoráveis: C(5, 2) = 10 pares de vermelhas.",
+              "Chance: 10 ÷ 28 = 5/14."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "combinação",
+              "meaning": "escolher alguns elementos de um grupo quando a ordem não muda nada. Escreve-se C(n, p)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O caminho pelas frações",
+          "body": [
+            "A mesma urna dá a mesma resposta tirando uma bola por vez. A segunda chance muda, porque a primeira bola não volta."
+          ],
+          "example": {
+            "label": "Uma de cada vez",
+            "lines": [
+              "Primeira vermelha: 5/8.",
+              "Segunda vermelha, com 4 vermelhas em 7 bolas: 4/7.",
+              "As duas: 5/8 × 4/7 = 20/56 = 5/14."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Um sorteio de pessoas",
+          "body": [
+            "Sortear uma comissão é tirar bolas de uma urna. Cada pessoa é uma bola."
+          ],
+          "example": {
+            "label": "5 meninas e 5 meninos, 3 sorteados",
+            "lines": [
+              "Possíveis: C(10, 3) = 120 trios.",
+              "Só meninas: C(5, 3) = 10 trios.",
+              "Chance: 10 ÷ 120 = 1/12."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A Mega-Sena",
+          "body": [
+            "Há 50 063 860 jeitos de escolher 6 números entre 60. A aposta simples é um deles.",
+            "Uma aposta com 7 números contém 7 apostas simples, porque C(7, 6) = 7. A chance sobe para 7 em 50 063 860."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova sorteia bolas, pessoas, cartas e números de loteria. O segredo é contar os favoráveis e os possíveis do mesmo jeito."
+          ],
+          "bullets": [
+            "“Retirando-se duas bolas ao acaso, a probabilidade de ambas serem…”",
+            "“Uma aposta com 7 dezenas tem probabilidade de acerto…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Contar os possíveis com ordem e os favoráveis sem ordem.",
+            "Esquecer que a bola tirada não volta.",
+            "Achar que tirar de uma vez é diferente de tirar uma por uma, sem devolver.",
+            "Inverter a divisão: possíveis sobre favoráveis."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Chance é favoráveis ÷ possíveis, e a contagem conta os dois quando não dá para listar.",
+            "Tirar várias de uma vez é combinação em cima e embaixo. O caminho pelas frações, sem devolver, dá o mesmo resultado."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Rifa",
+          "statement": "Numa rifa de 100 números, quem comprou 5 tem chance de ganhar de:",
+          "options": [
+            "1 em 20",
+            "1 em 100",
+            "1 em 5",
+            "5 em 95",
+            "1 em 95"
+          ],
+          "correct_index": 0,
+          "explanation": "5 ÷ 100 = 1/20.",
+          "pitfall": "“1 em 100” é a chance de quem tem um número só."
+        },
+        {
+          "topic": "A conta",
+          "statement": "A probabilidade é calculada como:",
+          "options": [
+            "casos favoráveis ÷ casos possíveis",
+            "casos possíveis ÷ casos favoráveis",
+            "favoráveis + possíveis",
+            "favoráveis × possíveis",
+            "possíveis − favoráveis"
+          ],
+          "correct_index": 0,
+          "explanation": "O resultado fica entre 0 e 1.",
+          "pitfall": "“Possíveis ÷ favoráveis” inverte e dá número maior que 1."
+        },
+        {
+          "topic": "Duas vermelhas",
+          "statement": "Uma urna tem 5 bolas vermelhas e 3 azuis. Tirando 2 sem devolver, a chance de as duas serem vermelhas é:",
+          "options": [
+            "5/14",
+            "25/64",
+            "5/8",
+            "5/28",
+            "1/2"
+          ],
+          "correct_index": 0,
+          "explanation": "C(5, 2) ÷ C(8, 2) = 10/28.",
+          "pitfall": "“25/64” devolveu a bola: 5/8 × 5/8."
+        },
+        {
+          "topic": "Uma azul",
+          "statement": "Na urna de 5 vermelhas e 3 azuis, a chance de tirar uma bola e ela ser azul é:",
+          "options": [
+            "3/8",
+            "3/5",
+            "5/8",
+            "1/3",
+            "1/8"
+          ],
+          "correct_index": 0,
+          "explanation": "3 azuis em 8 bolas.",
+          "pitfall": "“3/5” dividiu pelas vermelhas, e não pelo total."
+        },
+        {
+          "topic": "Mega-Sena",
+          "statement": "Uma aposta simples da Mega-Sena, com 6 números, acerta as 6 dezenas com chance de:",
+          "options": [
+            "1 em 50 063 860",
+            "1 em 60",
+            "6 em 60",
+            "1 em 36",
+            "1 em 1 000 000"
+          ],
+          "correct_index": 0,
+          "explanation": "É uma entre C(60, 6) apostas.",
+          "pitfall": "“6 em 60” é a chance de um número só ser sorteado."
+        },
+        {
+          "topic": "Só meninas",
+          "statement": "Numa turma de 5 meninas e 5 meninos, 3 alunos são sorteados. A chance de serem 3 meninas é:",
+          "options": [
+            "1/12",
+            "1/8",
+            "1/2",
+            "3/10",
+            "1/3"
+          ],
+          "correct_index": 0,
+          "explanation": "C(5, 3) ÷ C(10, 3) = 10/120.",
+          "pitfall": "“1/8” fez 1/2 × 1/2 × 1/2, como se a aluna sorteada voltasse."
+        },
+        {
+          "topic": "Passo a passo",
+          "format": "order",
+          "statement": "Ponha na ordem o cálculo de uma probabilidade por contagem.",
+          "options": [
+            "Definir o que conta como caso favorável",
+            "Contar os casos possíveis",
+            "Contar os casos favoráveis",
+            "Dividir os favoráveis pelos possíveis"
+          ],
+          "explanation": "Primeiro saber o que se procura, depois contar e dividir.",
+          "pitfall": "Dividir antes de contar não tem como dar certo."
+        },
+        {
+          "topic": "Sete números",
+          "statement": "Uma aposta com 7 números na Mega-Sena tem mais chance que a simples porque:",
+          "options": [
+            "ela contém 7 apostas simples de 6 números",
+            "o sorteio passa a ter 7 números",
+            "a chance dobra a cada número",
+            "ela muda as regras do sorteio",
+            "não tem: a chance é a mesma"
+          ],
+          "correct_index": 0,
+          "explanation": "C(7, 6) = 7.",
+          "pitfall": "“O sorteio passa a ter 7 números” erra: continuam saindo 6."
+        },
+        {
+          "topic": "Dado",
+          "statement": "Um dado comum é lançado. A chance de sair 6 é:",
+          "options": [
+            "1/6",
+            "1/2",
+            "6/6",
+            "1/5",
+            "5/6"
+          ],
+          "correct_index": 0,
+          "explanation": "Um resultado em seis.",
+          "pitfall": "“5/6” é a chance de não sair 6.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Impossível",
+          "statement": "A probabilidade de um evento impossível é:",
+          "options": [
+            "0",
+            "1",
+            "1/2",
+            "100",
+            "−1"
+          ],
+          "correct_index": 0,
+          "explanation": "Nenhum caso favorável.",
+          "pitfall": "“1” é a do evento certo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Bombons",
+          "statement": "Numa caixa há 4 bombons de morango e 6 de coco. Pegando 2 sem olhar, a chance de os dois serem de morango é:",
+          "options": [
+            "2/15",
+            "4/25",
+            "2/5",
+            "3/5",
+            "1/4"
+          ],
+          "correct_index": 0,
+          "explanation": "C(4, 2) ÷ C(10, 2) = 6/45.",
+          "pitfall": "“4/25” devolveu o bombom: 2/5 × 2/5.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Senha",
+          "statement": "Uma senha de 3 dígitos, de 0 a 9 e podendo repetir, é chutada uma vez. A chance de acertar é:",
+          "options": [
+            "1/1 000",
+            "1/30",
+            "3/10",
+            "1/720",
+            "1/100"
+          ],
+          "correct_index": 0,
+          "explanation": "São 10 × 10 × 10 senhas.",
+          "pitfall": "“1/720” proibiu repetir os dígitos.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Ana e Beto",
+          "statement": "Numa turma de 6 alunos, sorteiam-se 2 para uma comissão. A chance de Ana e Beto serem os sorteados é:",
+          "options": [
+            "1/15",
+            "1/30",
+            "1/6",
+            "1/3",
+            "1/36"
+          ],
+          "correct_index": 0,
+          "explanation": "Um par entre C(6, 2) = 15.",
+          "pitfall": "“1/30” contou o par em duas ordens: o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Uma de cada",
+          "statement": "Uma urna tem 3 bolas brancas e 2 pretas. Tiram-se 2 de uma vez. A chance de sair uma de cada cor é:",
+          "options": [
+            "3/5",
+            "3/10",
+            "6/25",
+            "1/2",
+            "2/5"
+          ],
+          "correct_index": 0,
+          "explanation": "Favoráveis: 3 × 2 = 6. Possíveis: C(5, 2) = 10.",
+          "pitfall": "“3/10” calculou só branca e depois preta, esquecendo a outra ordem: o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "a-chance-do-ou-e-do-nao",
+      "title": "A chance do “ou” e a do “não”",
+      "module": "Calcular a chance",
+      "summary": "“Par ou maior que 4” não é só somar as chances. A lição mostra quando dá para somar, o que tirar quando os eventos se misturam e o atalho do complementar.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Par ou maior que 4?",
+          "body": [
+            "Num dado, sair par é 2, 4 ou 6. Sair maior que 4 é 5 ou 6.",
+            "“Par ou maior que 4” é 2, 4, 5 ou 6: quatro casos. Somar 3 + 2 daria cinco, porque o 6 seria contado duas vezes."
+          ],
+          "terms": [
+            {
+              "word": "probabilidade",
+              "meaning": "a chance de algo acontecer, num número de 0 (impossível) a 1 (certo). É a conta dos casos favoráveis divididos pelos casos possíveis."
+            },
+            {
+              "word": "evento",
+              "meaning": "o resultado (ou grupo de resultados) cuja chance se quer calcular, como “sair número par”."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quando dá para somar",
+          "body": [
+            "Se dois eventos não podem acontecer juntos, a chance de um ou outro é a soma das duas."
+          ],
+          "example": {
+            "label": "Sair 1 ou 2 num dado",
+            "lines": [
+              "Sair 1: 1/6. Sair 2: 1/6.",
+              "Não acontecem juntos: 1/6 + 1/6 = 2/6 = 1/3."
+            ]
+          },
+          "terms": [
+            {
+              "word": "eventos mutuamente exclusivos",
+              "meaning": "eventos que não podem acontecer juntos, como sair 2 e sair 5 no mesmo lançamento de um dado."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Tirar o que contou duas vezes",
+          "body": [
+            "Quando os eventos podem acontecer juntos, a soma conta a parte comum duas vezes. Tira-se uma vez."
+          ],
+          "example": {
+            "label": "A regra do “ou”",
+            "lines": [
+              "P(A ou B) = P(A) + P(B) − P(A e B).",
+              "Par ou maior que 4: 3/6 + 2/6 − 1/6 = 4/6."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A tabela resolve",
+          "body": [
+            "Com grupos que se misturam, uma tabela ou um diagrama evita contar gente duas vezes."
+          ],
+          "table": {
+            "label": "Turma de 20 alunos",
+            "headers": [
+              "Grupo",
+              "Alunos"
+            ],
+            "rows": [
+              [
+                "só futebol",
+                "7"
+              ],
+              [
+                "só vôlei",
+                "3"
+              ],
+              [
+                "futebol e vôlei",
+                "5"
+              ],
+              [
+                "nenhum dos dois",
+                "5"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O atalho do “não”",
+          "body": [
+            "A chance de não acontecer é 1 menos a de acontecer. Às vezes é muito mais fácil calcular o “não”."
+          ],
+          "example": {
+            "label": "Exemplos",
+            "lines": [
+              "Não sair 6 num dado: 1 − 1/6 = 5/6.",
+              "Não chover, se a chance de chuva é 0,3: 1 − 0,3 = 0,7."
+            ]
+          },
+          "terms": [
+            {
+              "word": "evento complementar",
+              "meaning": "o “não acontecer” de um evento. A chance dos dois somada dá 1."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Pelo menos um, pela chance",
+          "body": [
+            "“Pelo menos um” é o contrário de “nenhum”. Calcula-se a chance de nenhum e tira-se de 1."
+          ],
+          "example": {
+            "label": "Pelo menos um 6 em dois dados",
+            "lines": [
+              "Nenhum 6: 5/6 × 5/6 = 25/36.",
+              "Pelo menos um 6: 1 − 25/36 = 11/36."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova usa diagramas de grupos, cartas, dados e pesquisas com quem faz duas coisas. O “pelo menos um” aparece muito."
+          ],
+          "bullets": [
+            "“Escolhendo-se um aluno ao acaso, a probabilidade de que pratique ao menos um dos esportes…”",
+            "“A probabilidade de não ocorrer…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Somar as chances quando os eventos podem acontecer juntos.",
+            "Esquecer o grupo “nenhum dos dois” na tabela.",
+            "Calcular “pelo menos um” somando as chances de cada um.",
+            "Achar que a chance do “não” é a mesma do “sim”."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Eventos que não se misturam: soma-se. Que se misturam: soma-se e tira-se a parte comum.",
+            "O “não” vale 1 menos o “sim”. “Pelo menos um” é 1 menos a chance de nenhum."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "1 ou 2",
+          "statement": "Lançando um dado, a chance de sair 1 ou 2 é:",
+          "options": [
+            "1/3",
+            "1/6",
+            "1/36",
+            "1/2",
+            "2/3"
+          ],
+          "correct_index": 0,
+          "explanation": "1/6 + 1/6.",
+          "pitfall": "“1/36” multiplicou, como se fossem dois dados."
+        },
+        {
+          "topic": "Exclusivos",
+          "statement": "Eventos mutuamente exclusivos são os que:",
+          "options": [
+            "não podem acontecer juntos",
+            "sempre acontecem juntos",
+            "têm a mesma chance",
+            "dependem um do outro",
+            "têm chance zero"
+          ],
+          "correct_index": 0,
+          "explanation": "Um impede o outro.",
+          "pitfall": "“Têm a mesma chance” não tem a ver com se misturar."
+        },
+        {
+          "topic": "Par ou maior que 4",
+          "statement": "Num dado, a chance de sair par ou maior que 4 é:",
+          "options": [
+            "2/3",
+            "5/6",
+            "1/2",
+            "1/3",
+            "1"
+          ],
+          "correct_index": 0,
+          "explanation": "Os casos são 2, 4, 5 e 6.",
+          "pitfall": "“5/6” contou o 6 duas vezes."
+        },
+        {
+          "topic": "Chuva",
+          "statement": "Se a chance de chover amanhã é 0,3, a de não chover é:",
+          "options": [
+            "0,7",
+            "0,3",
+            "1,3",
+            "0,6",
+            "0"
+          ],
+          "correct_index": 0,
+          "explanation": "1 − 0,3.",
+          "pitfall": "“1,3” somou, e chance nunca passa de 1."
+        },
+        {
+          "topic": "Esportes",
+          "statement": "Numa turma de 20, 12 jogam futebol, 8 jogam vôlei e 5 jogam os dois. Quantos jogam pelo menos um esporte?",
+          "options": [
+            "15",
+            "20",
+            "25",
+            "7",
+            "3"
+          ],
+          "correct_index": 0,
+          "explanation": "12 + 8 − 5.",
+          "pitfall": "“20” contou duas vezes os 5 que jogam os dois."
+        },
+        {
+          "topic": "Fórmula",
+          "statement": "A chance de A ou B, quando eles podem acontecer juntos, é:",
+          "options": [
+            "P(A) + P(B) − P(A e B)",
+            "P(A) + P(B)",
+            "P(A) × P(B)",
+            "P(A) − P(B)",
+            "1 − P(A)"
+          ],
+          "correct_index": 0,
+          "explanation": "Tira-se a parte comum, que foi contada duas vezes.",
+          "pitfall": "“P(A) + P(B)” só vale quando eles não se misturam."
+        },
+        {
+          "topic": "Contas",
+          "format": "match",
+          "statement": "Ligue cada pergunta à conta certa.",
+          "pairs": [
+            {
+              "left": "sair 1 ou 2 num dado",
+              "right": "somar as chances"
+            },
+            {
+              "left": "não sair 6",
+              "right": "1 menos a chance de sair 6"
+            },
+            {
+              "left": "par ou maior que 4",
+              "right": "somar e tirar o que contou duas vezes"
+            },
+            {
+              "left": "pelo menos um 6 em dois dados",
+              "right": "1 menos a chance de nenhum 6"
+            }
+          ],
+          "explanation": "Somar, tirar a parte comum e usar o complementar.",
+          "pitfall": "“Pelo menos um” não se soma: calcula-se pelo “nenhum”."
+        },
+        {
+          "topic": "Somam 1",
+          "statement": "A chance de um evento e a do seu complementar somam:",
+          "options": [
+            "1",
+            "0",
+            "1/2",
+            "2",
+            "100"
+          ],
+          "correct_index": 0,
+          "explanation": "Ou acontece, ou não acontece.",
+          "pitfall": "“1/2” valeria só se as duas chances fossem iguais."
+        },
+        {
+          "topic": "Coroa",
+          "statement": "A chance de tirar cara numa moeda é 1/2. A de não tirar cara é:",
+          "options": [
+            "1/2",
+            "0",
+            "1",
+            "1/4",
+            "2"
+          ],
+          "correct_index": 0,
+          "explanation": "1 − 1/2.",
+          "pitfall": "“0” acharia que a cara é certa.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Copas",
+          "statement": "Num baralho de 52 cartas há 13 de copas. A chance de não tirar copas é:",
+          "options": [
+            "3/4",
+            "1/4",
+            "13/52",
+            "1/13",
+            "4/3"
+          ],
+          "correct_index": 0,
+          "explanation": "39 cartas não são de copas: 39/52.",
+          "pitfall": "“1/4” é a chance de tirar copas.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Nenhum esporte",
+          "statement": "Na turma de 20 (12 futebol, 8 vôlei, 5 os dois), sorteando um aluno, a chance de ele não jogar nada é:",
+          "options": [
+            "1/4",
+            "3/4",
+            "0",
+            "1/5",
+            "5/12"
+          ],
+          "correct_index": 0,
+          "explanation": "15 jogam pelo menos um; sobram 5 de 20.",
+          "pitfall": "“3/4” é a chance de jogar pelo menos um.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Dois dados",
+          "statement": "Lançam-se dois dados. A chance de sair pelo menos um 6 é:",
+          "options": [
+            "11/36",
+            "12/36",
+            "1/36",
+            "1/6",
+            "25/36"
+          ],
+          "correct_index": 0,
+          "explanation": "1 − 25/36.",
+          "pitfall": "“12/36” somou 1/6 + 1/6 e contou o 6 duplo duas vezes.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Idiomas",
+          "statement": "Num grupo, 40% falam inglês, 30% falam espanhol e 10% falam os dois. A chance de alguém sorteado falar pelo menos uma das duas línguas é:",
+          "options": [
+            "60%",
+            "70%",
+            "80%",
+            "50%",
+            "12%"
+          ],
+          "correct_index": 0,
+          "explanation": "40 + 30 − 10.",
+          "pitfall": "“70%” somou sem tirar os que falam as duas: o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Lâmpadas",
+          "statement": "Uma lâmpada queima no primeiro mês com chance de 0,1. Numa casa com 3 lâmpadas que queimam uma sem depender da outra, a chance de pelo menos uma queimar é:",
+          "options": [
+            "0,271",
+            "0,3",
+            "0,001",
+            "0,729",
+            "0,1"
+          ],
+          "correct_index": 0,
+          "explanation": "1 − 0,9 × 0,9 × 0,9 = 1 − 0,729.",
+          "pitfall": "“0,3” somou as três chances: o distrator mais fino, que conta duas vezes os casos em que mais de uma queima.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "probabilidade-condicional",
+      "title": "Probabilidade condicional: a chance depois de saber algo",
+      "module": "Calcular a chance",
+      "summary": "Uma informação nova muda a chance. A lição mostra como encolher o total, a tabela de dupla entrada, por que a ordem da pergunta importa e o caso famoso do falso positivo.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O dado escondido",
+          "body": [
+            "Um amigo lança o dado, esconde e avisa: “saiu par”. Qual a chance de ter saído 6?",
+            "Não é 1/6. Sobraram só o 2, o 4 e o 6, então é 1/3."
+          ],
+          "terms": [
+            {
+              "word": "probabilidade",
+              "meaning": "a chance de algo acontecer, num número de 0 (impossível) a 1 (certo). É a conta dos casos favoráveis divididos pelos casos possíveis."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Encolher o total",
+          "body": [
+            "A informação conhecida vira o novo total. Só os casos em que ela é verdade continuam na conta."
+          ],
+          "example": {
+            "label": "A regra",
+            "lines": [
+              "P(A dado B) = P(A e B) ÷ P(B).",
+              "No dado: P(6 e par) = 1/6; P(par) = 3/6.",
+              "1/6 ÷ 3/6 = 1/3."
+            ]
+          },
+          "terms": [
+            {
+              "word": "evento",
+              "meaning": "o resultado (ou grupo de resultados) cuja chance se quer calcular, como “sair número par”."
+            },
+            {
+              "word": "probabilidade condicional",
+              "meaning": "a chance de A acontecer sabendo que B já aconteceu. A conta passa a usar só os casos de B."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A tabela de dupla entrada",
+          "body": [
+            "Com duas características, uma tabela mostra todos os grupos. A pergunta diz qual linha ou coluna vira o total."
+          ],
+          "table": {
+            "label": "Escola com 100 alunos",
+            "headers": [
+              "",
+              "Trabalha",
+              "Não trabalha",
+              "Total"
+            ],
+            "rows": [
+              [
+                "manhã",
+                "10",
+                "40",
+                "50"
+              ],
+              [
+                "noite",
+                "35",
+                "15",
+                "50"
+              ],
+              [
+                "total",
+                "45",
+                "55",
+                "100"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A ordem da pergunta importa",
+          "body": [
+            "Na tabela, sabendo que o aluno estuda à noite, a chance de ele trabalhar é 35 de 50: 70%.",
+            "A chance de estudar à noite, sabendo que trabalha, é 35 de 45: cerca de 78%. Trocar a ordem troca o total."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O exame e o falso positivo",
+          "body": [
+            "Uma doença atinge 1% das pessoas. O exame detecta 90% dos doentes, mas dá positivo em 5% dos sadios."
+          ],
+          "example": {
+            "label": "Em 10 000 pessoas",
+            "lines": [
+              "Doentes: 100. Positivos entre eles: 90.",
+              "Sadios: 9 900. Falsos positivos: 495.",
+              "Positivos ao todo: 585.",
+              "Doentes entre os positivos: 90 ÷ 585, cerca de 15%."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "falso positivo",
+              "meaning": "o exame que dá positivo para quem não tem a doença."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Sem devolver também é condicional",
+          "body": [
+            "Tirar bolas sem devolver é uma chance condicional disfarçada. A primeira bola muda o que sobra na urna."
+          ],
+          "example": {
+            "label": "Urna com 3 vermelhas e 2 azuis",
+            "lines": [
+              "Saiu uma vermelha, que não volta.",
+              "Sobram 2 vermelhas em 4 bolas.",
+              "A chance de a próxima ser vermelha é 2/4 = 1/2."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova traz uma tabela de pesquisa e pergunta a chance dentro de um grupo. O exame com falso positivo é um clássico."
+          ],
+          "bullets": [
+            "“Sabendo que o aluno sorteado trabalha, a probabilidade de que estude à noite é…”",
+            "“Dado que o resultado foi positivo, a probabilidade de a pessoa estar doente é…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Dividir pelo total da tabela, e não pelo grupo conhecido.",
+            "Achar que P(A dado B) é igual a P(B dado A).",
+            "Achar que exame com 90% de acerto dá 90% de certeza para o positivo.",
+            "Esquecer que a bola tirada mudou a urna."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A informação conhecida vira o novo total: P(A dado B) = P(A e B) ÷ P(B).",
+            "Trocar a ordem da pergunta troca o total. Quando a doença é rara, mesmo um bom exame tem muitos falsos positivos."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Saiu par",
+          "statement": "Lança-se um dado, e alguém avisa que saiu número par. A chance de ter saído 6 é:",
+          "options": [
+            "1/3",
+            "1/6",
+            "1/2",
+            "2/3",
+            "1"
+          ],
+          "correct_index": 0,
+          "explanation": "Sobraram 2, 4 e 6.",
+          "pitfall": "“1/6” ignorou a informação."
+        },
+        {
+          "topic": "Novo total",
+          "statement": "Na probabilidade condicional, o total de casos passa a ser:",
+          "options": [
+            "só os casos em que a informação conhecida é verdadeira",
+            "o mesmo total de antes",
+            "o dobro do total",
+            "sempre 100",
+            "só os casos impossíveis"
+          ],
+          "correct_index": 0,
+          "explanation": "A informação encolhe o espaço.",
+          "pitfall": "“O mesmo total de antes” ignora o que se sabe."
+        },
+        {
+          "topic": "Noite e trabalho",
+          "statement": "Numa escola de 100 alunos, 50 estudam à noite, e 35 deles trabalham. Sorteado um aluno da noite, a chance de ele trabalhar é:",
+          "options": [
+            "70%",
+            "35%",
+            "50%",
+            "15%",
+            "45%"
+          ],
+          "correct_index": 0,
+          "explanation": "35 ÷ 50.",
+          "pitfall": "“35%” dividiu pelos 100 alunos da escola, e não pelos 50 da noite."
+        },
+        {
+          "topic": "Trabalho e noite",
+          "statement": "Na mesma escola, 45 alunos trabalham, e 35 deles estudam à noite. Sorteado um aluno que trabalha, a chance de ele estudar à noite é:",
+          "options": [
+            "7/9",
+            "7/10",
+            "7/20",
+            "9/20",
+            "1/2"
+          ],
+          "correct_index": 0,
+          "explanation": "35 ÷ 45.",
+          "pitfall": "“7/10” é a pergunta ao contrário: 35 ÷ 50."
+        },
+        {
+          "topic": "Falso positivo",
+          "statement": "Falso positivo é:",
+          "options": [
+            "o exame que dá positivo para quem não tem a doença",
+            "o exame que dá negativo para quem tem a doença",
+            "o exame que sempre acerta",
+            "o doente que não fez o exame",
+            "o resultado que demora"
+          ],
+          "correct_index": 0,
+          "explanation": "Positivo, mas falso.",
+          "pitfall": "“Negativo para quem tem a doença” é o falso negativo."
+        },
+        {
+          "topic": "Sem devolver",
+          "statement": "Uma urna tem 3 bolas vermelhas e 2 azuis. Sai uma vermelha, que não volta. A chance de a próxima ser vermelha é:",
+          "options": [
+            "1/2",
+            "3/5",
+            "2/5",
+            "3/4",
+            "1/4"
+          ],
+          "correct_index": 0,
+          "explanation": "Sobram 2 vermelhas em 4 bolas.",
+          "pitfall": "“3/5” esqueceu que a bola não voltou."
+        },
+        {
+          "topic": "Falso positivo",
+          "format": "order",
+          "statement": "Ponha na ordem o cálculo da chance de estar doente depois de um exame positivo.",
+          "options": [
+            "Partir de um grupo grande, como 10 000 pessoas",
+            "Separar os doentes e os sadios",
+            "Calcular os positivos de cada grupo",
+            "Dividir os positivos doentes pelo total de positivos"
+          ],
+          "explanation": "Contar pessoas, e não chances soltas, evita se perder na conta.",
+          "pitfall": "Dividir antes de separar os grupos mistura doentes e sadios."
+        },
+        {
+          "topic": "A ordem importa",
+          "statement": "P(A dado B) e P(B dado A) são:",
+          "options": [
+            "em geral diferentes, porque o total muda",
+            "sempre iguais",
+            "sempre zero",
+            "sempre 1",
+            "a mesma conta escrita de outro jeito"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada uma divide por um grupo diferente.",
+          "pitfall": "“Sempre iguais” é o erro mais comum."
+        },
+        {
+          "topic": "Óculos",
+          "statement": "Num grupo de 10 pessoas, 4 usam óculos, e 3 delas são mulheres. Sorteando alguém de óculos, a chance de ser mulher é:",
+          "options": [
+            "3/4",
+            "3/10",
+            "2/5",
+            "1/2",
+            "3/7"
+          ],
+          "correct_index": 0,
+          "explanation": "3 de 4.",
+          "pitfall": "“3/10” dividiu pelo grupo inteiro.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Maior que 4",
+          "statement": "Saber que o dado deu número maior que 4 deixa como casos possíveis:",
+          "options": [
+            "5 e 6",
+            "1, 2, 3 e 4",
+            "só o 6",
+            "todos os seis",
+            "4, 5 e 6"
+          ],
+          "correct_index": 0,
+          "explanation": "Maior que 4 não inclui o 4.",
+          "pitfall": "“4, 5 e 6” incluiu o 4.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Ímpar",
+          "statement": "Lança-se um dado. Sabendo que saiu número ímpar, a chance de ser menor que 4 é:",
+          "options": [
+            "2/3",
+            "1/2",
+            "1/3",
+            "1/6",
+            "1"
+          ],
+          "correct_index": 0,
+          "explanation": "Ímpares: 1, 3, 5. Menores que 4: 1 e 3.",
+          "pitfall": "“1/2” contou 1, 2 e 3 entre os seis números.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Dois ases",
+          "statement": "Duas cartas são tiradas de um baralho de 52, sem devolver. A primeira foi um ás. A chance de a segunda também ser ás é:",
+          "options": [
+            "1/17",
+            "1/13",
+            "3/52",
+            "4/51",
+            "4/52"
+          ],
+          "correct_index": 0,
+          "explanation": "Sobram 3 ases em 51 cartas: 3/51.",
+          "pitfall": "“1/13” esqueceu que a primeira carta não voltou.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Doença rara",
+          "statement": "Uma doença atinge 1% das pessoas. Um exame detecta 90% dos doentes e dá falso positivo em 5% dos sadios. Quem testou positivo tem chance de estar doente de cerca de:",
+          "options": [
+            "15%",
+            "90%",
+            "95%",
+            "1%",
+            "50%"
+          ],
+          "correct_index": 0,
+          "explanation": "Em 10 000 pessoas: 90 doentes positivos entre 585 positivos.",
+          "pitfall": "“90%” confunde o acerto do exame com a chance de quem deu positivo: o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Inverteu",
+          "statement": "Na escola, sabendo que o aluno estuda à noite, a chance de ele trabalhar é 70%. Quem conclui que 70% dos que trabalham estudam à noite erra porque:",
+          "options": [
+            "trocou a informação conhecida, e o total de casos mudou",
+            "as duas chances são sempre iguais, então não errou",
+            "70% é pouco",
+            "a chance condicional não existe",
+            "o turno não tem relação com o trabalho"
+          ],
+          "correct_index": 0,
+          "explanation": "Uma divide pelos 50 da noite; a outra, pelos 45 que trabalham.",
+          "pitfall": "“São sempre iguais” é o distrator mais fino: é justamente o erro da pessoa.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "eventos-independentes",
+      "title": "Eventos independentes e a moeda que não tem memória",
+      "module": "Calcular a chance",
+      "summary": "Uma moeda não lembra do que saiu antes. A lição mostra quando multiplicar as chances, a falácia do jogador, a conta do “pelo menos uma vez” e por que toda sequência tem a mesma chance.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Cinco caras seguidas",
+          "body": [
+            "Uma moeda deu cara cinco vezes. Muita gente aposta coroa na sexta, achando que ela “está devendo”.",
+            "A moeda não sabe o que saiu antes. A chance de cara continua 1/2."
+          ],
+          "terms": [
+            {
+              "word": "probabilidade",
+              "meaning": "a chance de algo acontecer, num número de 0 (impossível) a 1 (certo). É a conta dos casos favoráveis divididos pelos casos possíveis."
+            },
+            {
+              "word": "evento",
+              "meaning": "o resultado (ou grupo de resultados) cuja chance se quer calcular, como “sair número par”."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Independentes: multiplica",
+          "body": [
+            "Se um evento não muda a chance do outro, a chance dos dois juntos é o produto das chances."
+          ],
+          "example": {
+            "label": "Exemplos",
+            "lines": [
+              "Duas moedas, cara nas duas: 1/2 × 1/2 = 1/4.",
+              "Dado e moeda, 6 e cara: 1/6 × 1/2 = 1/12.",
+              "Três moedas, três caras: 1/2 × 1/2 × 1/2 = 1/8."
+            ]
+          },
+          "terms": [
+            {
+              "word": "eventos independentes",
+              "meaning": "eventos em que um acontecer não muda a chance do outro, como duas moedas jogadas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Com ou sem devolução",
+          "body": [
+            "Tirar com devolução deixa a urna igual: os sorteios são independentes. Sem devolução, a urna muda, e os sorteios dependem um do outro."
+          ],
+          "table": {
+            "label": "Urna com 3 vermelhas e 2 azuis: duas vermelhas",
+            "headers": [
+              "",
+              "Conta",
+              "Resultado"
+            ],
+            "rows": [
+              [
+                "com devolução",
+                "3/5 × 3/5",
+                "9/25"
+              ],
+              [
+                "sem devolução",
+                "3/5 × 2/4",
+                "3/10"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A moeda não tem memória",
+          "body": [
+            "Na loteria e na roleta, cada sorteio começa do zero. Jogar o número “atrasado” não muda nada."
+          ],
+          "terms": [
+            {
+              "word": "falácia do jogador",
+              "meaning": "a crença errada de que, depois de muitas caras, a coroa “está devendo”."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Pelo menos uma vez em várias tentativas",
+          "body": [
+            "Para várias tentativas independentes, calcula-se a chance de nunca acontecer e tira-se de 1."
+          ],
+          "example": {
+            "label": "Pelo menos um 6 em 4 lançamentos",
+            "lines": [
+              "Nenhum 6: 5/6 × 5/6 × 5/6 × 5/6 = 625/1 296.",
+              "Pelo menos um 6: 1 − 625/1 296, cerca de 52%.",
+              "Somar 4 × 1/6 daria 67%, e está errado."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Toda sequência tem a mesma chance",
+          "body": [
+            "Em 5 lançamentos, CCCCC parece improvável e CKCKC parece normal. As duas têm chance de 1/32, com C para cara e K para coroa.",
+            "O que é mais provável é o grupo “três caras em qualquer ordem”, porque ele junta várias sequências."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova multiplica chances de moedas, dados, semáforos e peças com defeito. A falácia do jogador aparece em questões de interpretação."
+          ],
+          "bullets": [
+            "“Admitindo-se que os eventos são independentes, a probabilidade de…”",
+            "“Após cinco caras seguidas, a probabilidade de sair coroa é…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que o resultado anterior muda a chance do próximo.",
+            "Somar as chances para “pelo menos uma vez”.",
+            "Multiplicar sem descontar a bola que não voltou.",
+            "Achar que uma sequência “misturada” é mais provável que uma repetida."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Eventos independentes multiplicam as chances. Sem devolução, a segunda chance muda.",
+            "A moeda não tem memória. “Pelo menos uma vez” é 1 menos a chance de nunca, e toda sequência exata tem a mesma chance."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Duas caras",
+          "statement": "Duas moedas são lançadas. A chance de dar cara nas duas é:",
+          "options": [
+            "1/4",
+            "1/2",
+            "1",
+            "1/3",
+            "2/3"
+          ],
+          "correct_index": 0,
+          "explanation": "1/2 × 1/2.",
+          "pitfall": "“1/2” olhou uma moeda só."
+        },
+        {
+          "topic": "Independentes",
+          "statement": "Eventos independentes são aqueles em que:",
+          "options": [
+            "um acontecer não muda a chance do outro",
+            "um impede o outro",
+            "os dois têm chance zero",
+            "um sempre causa o outro",
+            "os dois são o mesmo evento"
+          ],
+          "correct_index": 0,
+          "explanation": "Um não interfere no outro.",
+          "pitfall": "“Um impede o outro” descreve eventos que não podem acontecer juntos, e não independentes."
+        },
+        {
+          "topic": "Sexta jogada",
+          "statement": "Uma moeda deu cara 5 vezes seguidas. A chance de dar cara na sexta é:",
+          "options": [
+            "1/2",
+            "1/64",
+            "menor que 1/2",
+            "maior que 1/2",
+            "0"
+          ],
+          "correct_index": 0,
+          "explanation": "A moeda não tem memória.",
+          "pitfall": "“Menor que 1/2” é a falácia do jogador."
+        },
+        {
+          "topic": "Dado e moeda",
+          "statement": "Lançando um dado e uma moeda, a chance de sair 6 e cara é:",
+          "options": [
+            "1/12",
+            "1/8",
+            "2/3",
+            "1/6",
+            "7/12"
+          ],
+          "correct_index": 0,
+          "explanation": "1/6 × 1/2.",
+          "pitfall": "“2/3” somou as chances."
+        },
+        {
+          "topic": "Falácia",
+          "statement": "A falácia do jogador é:",
+          "options": [
+            "achar que um resultado “está devendo” porque não sai há tempo",
+            "ganhar sempre",
+            "a regra de um jogo",
+            "a chance certa de um sorteio",
+            "um tipo de baralho"
+          ],
+          "correct_index": 0,
+          "explanation": "É acreditar que o acaso compensa.",
+          "pitfall": "“A chance certa de um sorteio” é o contrário da falácia."
+        },
+        {
+          "topic": "Com devolução",
+          "statement": "Tirar duas bolas de uma urna, devolvendo a primeira antes da segunda, torna os sorteios:",
+          "options": [
+            "independentes",
+            "dependentes",
+            "impossíveis",
+            "certos",
+            "iguais a zero"
+          ],
+          "correct_index": 0,
+          "explanation": "A urna volta a ser a mesma.",
+          "pitfall": "“Dependentes” seria sem devolução."
+        },
+        {
+          "topic": "Produtos",
+          "format": "match",
+          "statement": "Ligue cada pergunta à conta.",
+          "pairs": [
+            {
+              "left": "duas moedas, cara nas duas",
+              "right": "1/2 × 1/2"
+            },
+            {
+              "left": "dado e moeda, 6 e cara",
+              "right": "1/6 × 1/2"
+            },
+            {
+              "left": "três moedas, nenhuma cara",
+              "right": "1/2 × 1/2 × 1/2"
+            },
+            {
+              "left": "dois dados, nenhum 6",
+              "right": "5/6 × 5/6"
+            }
+          ],
+          "explanation": "Eventos independentes: multiplica.",
+          "pitfall": "“Nenhum 6” usa 5/6, e não 1/6."
+        },
+        {
+          "topic": "Número atrasado",
+          "statement": "Uma pessoa joga sempre os números que “não saem há meses” na loteria. A estratégia:",
+          "options": [
+            "não muda a chance, porque cada sorteio é independente",
+            "aumenta a chance",
+            "garante o prêmio",
+            "zera a chance",
+            "dobra a chance"
+          ],
+          "correct_index": 0,
+          "explanation": "O sorteio não lembra do passado.",
+          "pitfall": "“Aumenta a chance” é a falácia do jogador."
+        },
+        {
+          "topic": "Três caras",
+          "statement": "Três moedas são lançadas. A chance de saírem três caras é:",
+          "options": [
+            "1/8",
+            "1/3",
+            "1/6",
+            "3/8",
+            "1/2"
+          ],
+          "correct_index": 0,
+          "explanation": "1/2 × 1/2 × 1/2.",
+          "pitfall": "“1/3” dividiu por três moedas.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Dois uns",
+          "statement": "Um dado é lançado duas vezes. A chance de sair 1 nas duas é:",
+          "options": [
+            "1/36",
+            "1/6",
+            "1/3",
+            "1/12",
+            "1/18"
+          ],
+          "correct_index": 0,
+          "explanation": "1/6 × 1/6.",
+          "pitfall": "“1/3” somou as chances.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Ordem certa",
+          "statement": "Em três lançamentos, a chance de sair cara, cara e coroa nessa ordem é:",
+          "options": [
+            "1/8",
+            "3/8",
+            "1/3",
+            "1/2",
+            "1/4"
+          ],
+          "correct_index": 0,
+          "explanation": "Uma sequência exata: 1/2 × 1/2 × 1/2.",
+          "pitfall": "“3/8” é duas caras e uma coroa em qualquer ordem.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Nenhum 6",
+          "statement": "Lançando um dado 2 vezes, a chance de não sair 6 em nenhuma é:",
+          "options": [
+            "25/36",
+            "5/6",
+            "11/36",
+            "5/12",
+            "1/36"
+          ],
+          "correct_index": 0,
+          "explanation": "5/6 × 5/6.",
+          "pitfall": "“11/36” é a chance de pelo menos um 6.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Quatro lançamentos",
+          "statement": "Em 4 lançamentos de um dado, a chance de sair pelo menos um 6 é de cerca de:",
+          "options": [
+            "52%",
+            "67%",
+            "17%",
+            "48%",
+            "100%"
+          ],
+          "correct_index": 0,
+          "explanation": "1 − (5/6 × 5/6 × 5/6 × 5/6).",
+          "pitfall": "“67%” somou 4 × 1/6: o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Sequências",
+          "statement": "Numa moeda honesta, com C para cara e K para coroa, qual sequência de 5 lançamentos é mais provável: CCCCC ou CKCKC?",
+          "options": [
+            "as duas têm a mesma chance, 1/32",
+            "CKCKC, porque parece mais misturada",
+            "CCCCC",
+            "nenhuma das duas pode acontecer",
+            "depende de quem lança"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada sequência exata tem chance 1/2 multiplicado cinco vezes.",
+          "pitfall": "“CKCKC, porque parece mais misturada” é o distrator mais fino: confunde a sequência exata com o grupo de sequências parecidas.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "distribuicao-binomial",
+      "title": "Exatamente k vezes: a distribuição binomial",
+      "module": "Chance e dados na vida real",
+      "summary": "Qual a chance de acertar exatamente 2 de 3 pênaltis? A lição monta a conta em três peças (as ordens, a chance de cada ordem e o produto) e aplica em moedas, filhos e chutes na prova.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Três pênaltis",
+          "body": [
+            "Um jogador acerta 80% dos pênaltis. Ele vai cobrar três. Qual a chance de acertar exatamente dois?",
+            "Não é só 0,8 × 0,8 × 0,2. O erro pode vir no primeiro, no segundo ou no terceiro chute."
+          ],
+          "terms": [
+            {
+              "word": "probabilidade",
+              "meaning": "a chance de algo acontecer, num número de 0 (impossível) a 1 (certo)."
+            },
+            {
+              "word": "eventos independentes",
+              "meaning": "eventos em que um acontecer não muda a chance do outro, como dois lançamentos de moeda."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As três peças",
+          "body": [
+            "A conta do “exatamente k vezes” tem sempre três partes. Ela vale quando as tentativas são independentes e têm a mesma chance."
+          ],
+          "example": {
+            "label": "As peças",
+            "lines": [
+              "Quantas ordens os acertos podem ter: C(n, k).",
+              "A chance de uma ordem: a chance do acerto k vezes, vezes a do erro nas outras.",
+              "Multiplicar as duas."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "distribuição binomial",
+              "meaning": "a conta da chance de um resultado acontecer exatamente k vezes em n tentativas independentes e iguais."
+            },
+            {
+              "word": "combinação",
+              "meaning": "escolher alguns elementos de um grupo quando a ordem não muda nada. Escreve-se C(n, k)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Contar as ordens",
+          "body": [
+            "Com A para acerto e E para erro, dois acertos em três chutes podem vir assim: AAE, AEA ou EAA. São C(3, 2) = 3 ordens."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A conta dos pênaltis",
+          "body": [
+            "Cada ordem tem a mesma chance: 0,8 × 0,8 × 0,2 = 0,128. Como são três ordens, multiplica-se por 3."
+          ],
+          "example": {
+            "label": "Exatamente 2 de 3",
+            "lines": [
+              "Ordens: 3.",
+              "Chance de cada ordem: 0,128.",
+              "Total: 3 × 0,128 = 0,384, ou 38,4%."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Moedas e filhos",
+          "body": [
+            "Com chance de 1/2, toda ordem tem a mesma chance, e a conta fica simples."
+          ],
+          "example": {
+            "label": "Dois exemplos",
+            "lines": [
+              "Exatamente 2 caras em 4 lançamentos: C(4, 2) = 6 ordens, cada uma com 1/16. Total: 6/16 = 3/8.",
+              "Exatamente 2 meninas em 3 filhos: 3 ordens de 1/8. Total: 3/8."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O chute na prova",
+          "body": [
+            "Uma questão de 5 alternativas acerta no chute com chance 1/5 = 0,2. Chutando 5 questões, dá para calcular cada caso."
+          ],
+          "table": {
+            "label": "Chutando 5 questões",
+            "headers": [
+              "Resultado",
+              "Conta",
+              "Chance"
+            ],
+            "rows": [
+              [
+                "nenhum acerto",
+                "0,8 × 0,8 × 0,8 × 0,8 × 0,8",
+                "cerca de 33%"
+              ],
+              [
+                "exatamente 1 acerto",
+                "5 × 0,2 × 0,8 × 0,8 × 0,8 × 0,8",
+                "cerca de 41%"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pergunta a chance de exatamente k sucessos (filhos, pênaltis, peças com defeito, questões no chute). Às vezes só pede a expressão."
+          ],
+          "bullets": [
+            "“A probabilidade de que exatamente duas das três peças sejam defeituosas é…”",
+            "“A expressão que representa essa probabilidade é…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Esquecer de multiplicar pelo número de ordens.",
+            "Usar a binomial quando as tentativas mudam a chance umas das outras.",
+            "Confundir “exatamente k” com “pelo menos k”.",
+            "Esquecer a chance dos erros nas tentativas restantes."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Exatamente k sucessos em n tentativas: C(n, k) ordens, vezes a chance de uma ordem.",
+            "A chance de uma ordem é a do sucesso k vezes, vezes a do fracasso nas outras. Só vale com tentativas independentes e de mesma chance."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Três acertos",
+          "statement": "Um jogador acerta 80% dos pênaltis. A chance de ele acertar os 3 que vai cobrar é:",
+          "options": [
+            "0,512",
+            "0,8",
+            "2,4",
+            "0,24",
+            "0,384"
+          ],
+          "correct_index": 0,
+          "explanation": "0,8 × 0,8 × 0,8.",
+          "pitfall": "“2,4” somou, e chance nunca passa de 1."
+        },
+        {
+          "topic": "As ordens",
+          "statement": "Na binomial, o C(n, k) conta:",
+          "options": [
+            "de quantas ordens diferentes os k sucessos podem aparecer",
+            "a chance de cada sucesso",
+            "o número de erros",
+            "a média dos sucessos",
+            "o total de tentativas"
+          ],
+          "correct_index": 0,
+          "explanation": "É a primeira das três peças.",
+          "pitfall": "“A chance de cada sucesso” é outra peça da conta."
+        },
+        {
+          "topic": "Duas caras",
+          "statement": "Lançando uma moeda 4 vezes, a chance de saírem exatamente 2 caras é:",
+          "options": [
+            "3/8",
+            "1/2",
+            "1/16",
+            "1/4",
+            "3/4"
+          ],
+          "correct_index": 0,
+          "explanation": "C(4, 2) = 6 ordens de 1/16.",
+          "pitfall": "“1/2” acha que metade das caras é o mais garantido."
+        },
+        {
+          "topic": "Errar uma",
+          "statement": "Chutando uma questão de 5 alternativas, a chance de errar é:",
+          "options": [
+            "4/5",
+            "1/5",
+            "1/4",
+            "5/4",
+            "1/2"
+          ],
+          "correct_index": 0,
+          "explanation": "Quatro das cinco alternativas estão erradas.",
+          "pitfall": "“1/5” é a chance de acertar."
+        },
+        {
+          "topic": "Errar todas",
+          "statement": "Chutando 5 questões de 5 alternativas cada, a chance de errar todas é de:",
+          "options": [
+            "cerca de 33%",
+            "0%",
+            "80%",
+            "20%",
+            "cerca de 67%"
+          ],
+          "correct_index": 0,
+          "explanation": "0,8 × 0,8 × 0,8 × 0,8 × 0,8.",
+          "pitfall": "“80%” olhou uma questão só."
+        },
+        {
+          "topic": "Quando vale",
+          "statement": "A binomial só vale se as tentativas forem:",
+          "options": [
+            "independentes e com a mesma chance em todas",
+            "dependentes umas das outras",
+            "com chances que mudam a cada vez",
+            "só duas",
+            "infinitas"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada tentativa é igual à outra.",
+          "pitfall": "“Com chances que mudam” é o caso sem devolução, que pede outra conta."
+        },
+        {
+          "topic": "A conta",
+          "format": "order",
+          "statement": "Ponha na ordem a conta da chance de exatamente k sucessos.",
+          "options": [
+            "Contar as ordens possíveis dos k sucessos: C(n, k)",
+            "Calcular a chance de uma ordem: sucessos vezes fracassos",
+            "Multiplicar as duas coisas"
+          ],
+          "explanation": "Ordens, chance de uma ordem e produto.",
+          "pitfall": "Multiplicar antes de contar as ordens deixa casos de fora."
+        },
+        {
+          "topic": "Dois de três",
+          "statement": "Um jogador acerta 80% dos pênaltis. A chance de acertar exatamente 2 de 3 é:",
+          "options": [
+            "0,384",
+            "0,128",
+            "0,64",
+            "0,512",
+            "0,8"
+          ],
+          "correct_index": 0,
+          "explanation": "3 ordens × 0,8 × 0,8 × 0,2.",
+          "pitfall": "“0,128” é a chance de uma ordem só."
+        },
+        {
+          "topic": "Ordens de um",
+          "statement": "Quantas ordens há para 1 acerto em 3 tentativas?",
+          "options": [
+            "3",
+            "1",
+            "6",
+            "9",
+            "2"
+          ],
+          "correct_index": 0,
+          "explanation": "O acerto pode vir em qualquer uma das três.",
+          "pitfall": "“1” esqueceu as outras posições.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Fracasso",
+          "statement": "Se a chance de sucesso numa tentativa é 0,3, a de fracasso é:",
+          "options": [
+            "0,7",
+            "0,3",
+            "1,3",
+            "0",
+            "0,6"
+          ],
+          "correct_index": 0,
+          "explanation": "1 − 0,3.",
+          "pitfall": "“1,3” somou.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Duas meninas",
+          "statement": "Uma família quer 3 filhos. Considerando chance de 1/2 para cada sexo, a chance de exatamente 2 meninas é:",
+          "options": [
+            "3/8",
+            "1/8",
+            "2/3",
+            "1/2",
+            "1/4"
+          ],
+          "correct_index": 0,
+          "explanation": "3 ordens de 1/8.",
+          "pitfall": "“1/8” contou uma ordem só.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Um acerto no chute",
+          "statement": "Chutando 5 questões de 5 alternativas, a chance de acertar exatamente 1 é de cerca de:",
+          "options": [
+            "41%",
+            "20%",
+            "8%",
+            "33%",
+            "100%"
+          ],
+          "correct_index": 0,
+          "explanation": "5 × 0,2 × 0,8 × 0,8 × 0,8 × 0,8.",
+          "pitfall": "“20%” é a chance de acertar uma questão sozinha.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Remédio",
+          "statement": "Um remédio funciona em 90% dos casos. Em 4 pacientes, a chance de funcionar em exatamente 3 é de cerca de:",
+          "options": [
+            "29%",
+            "7%",
+            "73%",
+            "66%",
+            "90%"
+          ],
+          "correct_index": 0,
+          "explanation": "4 ordens × 0,9 × 0,9 × 0,9 × 0,1.",
+          "pitfall": "“7%” é a chance de uma ordem só: o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Por que maior",
+          "statement": "Em 4 lançamentos de moeda, a chance de exatamente 2 caras (3/8) é maior que a de 4 caras (1/16) porque:",
+          "options": [
+            "há 6 ordens com 2 caras e só 1 ordem com 4 caras",
+            "cada sequência com 2 caras é mais provável",
+            "cara é mais provável que coroa",
+            "a moeda lembra os lançamentos",
+            "2 é menor que 4"
+          ],
+          "correct_index": 0,
+          "explanation": "Toda sequência exata tem 1/16; o que muda é quantas sequências há.",
+          "pitfall": "“Cada sequência com 2 caras é mais provável” é o distrator mais fino: todas têm a mesma chance.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "valor-esperado",
+      "title": "Valor esperado: quanto se ganha, em média",
+      "module": "Chance e dados na vida real",
+      "summary": "Uma rifa, um jogo de dado, um seguro e um chute na prova têm uma conta em comum: o valor esperado. A lição mostra como calcular e o que ele diz sobre jogos de azar e seguros.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A rifa de R$ 5",
+          "body": [
+            "Uma rifa vende 100 números a R$ 5, e o prêmio é R$ 300. Quem organiza arrecada R$ 500 e paga R$ 300.",
+            "Para quem compra, em média, cada número dá prejuízo. Quanto, exatamente?"
+          ],
+          "terms": [
+            {
+              "word": "probabilidade",
+              "meaning": "a chance de algo acontecer, num número de 0 (impossível) a 1 (certo)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A conta",
+          "body": [
+            "Multiplica-se cada resultado possível pela chance dele, e soma-se tudo."
+          ],
+          "example": {
+            "label": "A rifa",
+            "lines": [
+              "Ganhar R$ 300 com chance 1/100: vale R$ 3.",
+              "Pagar R$ 5 sempre.",
+              "Valor esperado: 3 − 5 = −R$ 2 por número."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "valor esperado",
+              "meaning": "a média do que se ganha ou perde num jogo repetido muitas vezes. Multiplica-se cada resultado pela chance dele e soma-se tudo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "É uma média ponderada",
+          "body": [
+            "O valor esperado é a média dos resultados, cada um pesando pela sua chance. Ninguém ganha “−R$ 2” numa rifa: é a média de muitas rifas."
+          ],
+          "terms": [
+            {
+              "word": "média ponderada",
+              "meaning": "a média em que cada valor pesa de acordo com a sua importância. Aqui, o peso é a chance."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Jogos de azar perdem, em média",
+          "body": [
+            "Loteria, rifa e cassino são montados para quem organiza ganhar. Para quem joga, o valor esperado é negativo."
+          ],
+          "example": {
+            "label": "Um jogo de dado",
+            "lines": [
+              "Paga-se R$ 3 para jogar.",
+              "Se sair 6, ganha-se R$ 12: chance 1/6, vale R$ 2.",
+              "Valor esperado: 2 − 3 = −R$ 1 por jogada."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O seguro",
+          "body": [
+            "Para o cliente, o seguro também tem valor esperado negativo: senão a seguradora quebraria. Mesmo assim pode valer a pena.",
+            "Ele troca uma perda grande e rara por um gasto pequeno e certo."
+          ],
+          "example": {
+            "label": "Um seguro de carro",
+            "lines": [
+              "O cliente paga R$ 1 000 por ano.",
+              "O roubo tem chance de 1%, e o seguro paga R$ 50 000.",
+              "Para a seguradora: 1 000 − 0,01 × 50 000 = +R$ 500 por cliente."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Vale a pena chutar?",
+          "body": [
+            "Algumas provas descontam ponto por erro. O valor esperado diz se chutar compensa."
+          ],
+          "table": {
+            "label": "Acerto +10, erro −3, 5 alternativas",
+            "headers": [
+              "Situação",
+              "Conta",
+              "Valor esperado"
+            ],
+            "rows": [
+              [
+                "chute puro",
+                "0,2 × 10 − 0,8 × 3",
+                "−0,4: não compensa"
+              ],
+              [
+                "eliminando 2 alternativas",
+                "1/3 × 10 − 2/3 × 3",
+                "cerca de +1,3: compensa"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova calcula o ganho médio de um jogo, compara duas apostas ou pergunta se uma regra de pontuação deixa o chute vantajoso."
+          ],
+          "bullets": [
+            "“O valor esperado do prêmio, por bilhete, é…”",
+            "“Para que o jogo seja justo, o preço da aposta deve ser…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Esquecer de descontar o preço da aposta.",
+            "Achar que o valor esperado é o que vai acontecer numa jogada.",
+            "Esquecer a chance de perder ao calcular o chute.",
+            "Achar que valor esperado negativo quer dizer que o seguro nunca vale a pena."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Valor esperado: cada resultado vezes a chance, somados. É a média de muitas repetições.",
+            "Jogos de azar têm valor esperado negativo para quem joga. O seguro também, mas protege de uma perda grande. Jogo justo tem valor esperado zero."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Rifa",
+          "statement": "Numa rifa, 100 números são vendidos a R$ 5, e o prêmio é R$ 300. Para quem compra um número, o valor esperado é:",
+          "options": [
+            "perder R$ 2, em média",
+            "ganhar R$ 295",
+            "ganhar R$ 3",
+            "perder R$ 5",
+            "não ganhar nem perder"
+          ],
+          "correct_index": 0,
+          "explanation": "300 × 1/100 − 5.",
+          "pitfall": "“Ganhar R$ 3” esqueceu de descontar o preço do número."
+        },
+        {
+          "topic": "A conta",
+          "statement": "O valor esperado é calculado:",
+          "options": [
+            "multiplicando cada resultado pela chance dele e somando tudo",
+            "somando os resultados",
+            "pegando o maior resultado",
+            "dividindo o prêmio por 2",
+            "multiplicando todas as chances"
+          ],
+          "correct_index": 0,
+          "explanation": "É uma média ponderada pelas chances.",
+          "pitfall": "“Somando os resultados” ignora as chances."
+        },
+        {
+          "topic": "Meio a meio",
+          "statement": "Um jogo paga R$ 10 com chance 1/2 e nada com chance 1/2. O valor esperado do prêmio é:",
+          "options": [
+            "R$ 5",
+            "R$ 10",
+            "R$ 0",
+            "R$ 20",
+            "R$ 2,50"
+          ],
+          "correct_index": 0,
+          "explanation": "10 × 1/2 + 0 × 1/2.",
+          "pitfall": "“R$ 10” é o melhor caso, e não a média."
+        },
+        {
+          "topic": "Loteria",
+          "statement": "Para o apostador, os jogos de loteria têm valor esperado:",
+          "options": [
+            "negativo",
+            "positivo",
+            "sempre zero",
+            "infinito",
+            "igual ao prêmio"
+          ],
+          "correct_index": 0,
+          "explanation": "Quem organiza fica com parte do dinheiro.",
+          "pitfall": "“Positivo” faria a loteria quebrar."
+        },
+        {
+          "topic": "Penalidade",
+          "statement": "Numa prova, acertar vale +10 e errar vale −3. Chutando uma questão de 5 alternativas, o valor esperado é:",
+          "options": [
+            "−0,4",
+            "+2",
+            "+10",
+            "−3",
+            "0"
+          ],
+          "correct_index": 0,
+          "explanation": "0,2 × 10 − 0,8 × 3 = 2 − 2,4.",
+          "pitfall": "“+2” esqueceu do desconto pelo erro."
+        },
+        {
+          "topic": "Que média",
+          "statement": "O valor esperado é uma:",
+          "options": [
+            "média ponderada pelas chances",
+            "soma simples dos resultados",
+            "chance de ganhar",
+            "lista dos prêmios",
+            "conta sem chances"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada resultado pesa pela chance dele.",
+          "pitfall": "“Soma simples” daria peso igual a todos."
+        },
+        {
+          "topic": "Situações",
+          "format": "match",
+          "statement": "Ligue cada situação ao que o valor esperado diz.",
+          "pairs": [
+            {
+              "left": "rifa de R$ 5 com prêmio de R$ 300 em 100 números",
+              "right": "perde R$ 2 em média"
+            },
+            {
+              "left": "jogo justo",
+              "right": "valor esperado zero"
+            },
+            {
+              "left": "seguro de carro",
+              "right": "paga pouco e certo para não perder muito"
+            },
+            {
+              "left": "chute com desconto por erro",
+              "right": "pode ter valor esperado negativo"
+            }
+          ],
+          "explanation": "A mesma conta em quatro lugares.",
+          "pitfall": "O seguro tem valor esperado negativo e, mesmo assim, pode valer a pena."
+        },
+        {
+          "topic": "Justo",
+          "statement": "Um jogo é chamado de justo quando o valor esperado é:",
+          "options": [
+            "zero",
+            "positivo",
+            "negativo",
+            "1",
+            "100"
+          ],
+          "correct_index": 0,
+          "explanation": "Ninguém ganha nem perde, em média.",
+          "pitfall": "“Positivo” favorece quem joga."
+        },
+        {
+          "topic": "Um quarto",
+          "statement": "Ganha-se R$ 4 com chance 1/4 e nada no resto. O valor esperado é:",
+          "options": [
+            "R$ 1",
+            "R$ 4",
+            "R$ 0",
+            "R$ 3",
+            "R$ 16"
+          ],
+          "correct_index": 0,
+          "explanation": "4 × 1/4.",
+          "pitfall": "“R$ 16” multiplicou por 4 em vez de dividir.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Negativo",
+          "statement": "Se o valor esperado de um jogo é negativo, jogando muitas vezes a tendência é:",
+          "options": [
+            "perder dinheiro",
+            "ganhar dinheiro",
+            "empatar sempre",
+            "ganhar o prêmio",
+            "nada mudar"
+          ],
+          "correct_index": 0,
+          "explanation": "A média puxa para o prejuízo.",
+          "pitfall": "“Ganhar o prêmio” pode acontecer uma vez, e não é a tendência.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Jogo de dado",
+          "statement": "Num jogo de dado, paga-se R$ 3 para jogar e ganha-se R$ 12 se sair 6. O valor esperado de cada jogada é:",
+          "options": [
+            "perder R$ 1",
+            "ganhar R$ 9",
+            "ganhar R$ 2",
+            "perder R$ 3",
+            "zero"
+          ],
+          "correct_index": 0,
+          "explanation": "12 × 1/6 − 3 = 2 − 3.",
+          "pitfall": "“Ganhar R$ 2” esqueceu de descontar o preço.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Seguradora",
+          "statement": "Uma seguradora cobra R$ 1 000 por ano. A chance de roubo é 1%, e o seguro paga R$ 50 000. O valor esperado para a seguradora, por cliente, é:",
+          "options": [
+            "ganhar R$ 500",
+            "perder R$ 49 000",
+            "ganhar R$ 1 000",
+            "zero",
+            "perder R$ 500"
+          ],
+          "correct_index": 0,
+          "explanation": "1 000 − 0,01 × 50 000.",
+          "pitfall": "“Perder R$ 49 000” olhou só o ano do roubo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Eliminar duas",
+          "statement": "Na prova com +10 por acerto e −3 por erro, o aluno elimina 2 das 5 alternativas e chuta entre as 3 restantes. O valor esperado do chute passa a ser:",
+          "options": [
+            "cerca de +1,3",
+            "−0,4",
+            "+10",
+            "−3",
+            "zero"
+          ],
+          "correct_index": 0,
+          "explanation": "1/3 × 10 − 2/3 × 3 = 3,33 − 2.",
+          "pitfall": "“−0,4” é o chute puro, sem eliminar nada: o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Seguro vale?",
+          "statement": "Uma pessoa diz: “O seguro tem valor esperado negativo para mim, então nunca vale a pena.” O erro dela é:",
+          "options": [
+            "esquecer que o seguro troca uma perda grande e rara por um gasto pequeno e certo",
+            "achar que o valor esperado do seguro é negativo, quando é positivo para o cliente",
+            "achar que seguro tem valor esperado",
+            "achar que valor esperado só vale para loteria",
+            "não há erro"
+          ],
+          "correct_index": 0,
+          "explanation": "Valor esperado mede a média, e não o risco de uma perda que quebraria a pessoa.",
+          "pitfall": "“É positivo para o cliente” é o distrator mais fino: o valor esperado é mesmo negativo, e o erro está em parar a análise nele.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "amplitude-variancia-e-desvio-padrao",
+      "title": "Amplitude, variância e desvio padrão: o quanto os dados se espalham",
+      "module": "Chance e dados na vida real",
+      "summary": "Duas turmas com a mesma média podem ser bem diferentes. A lição mostra três medidas de quanto os dados se espalham e por que a prova pergunta quem é mais regular.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Duas alunas com média 7",
+          "body": [
+            "Ana tirou 7, 7, 7 e 7. Bia tirou 4, 10, 4 e 10. As duas têm média 7.",
+            "Mesmo assim, ninguém diria que elas estudam do mesmo jeito. A média não mostra o quanto as notas variam."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A amplitude",
+          "body": [
+            "A medida mais simples é a diferença entre o maior e o menor valor. Ela é rápida, mas usa só dois números."
+          ],
+          "example": {
+            "label": "As notas",
+            "lines": [
+              "Ana: 7 − 7 = 0.",
+              "Bia: 10 − 4 = 6."
+            ]
+          },
+          "terms": [
+            {
+              "word": "amplitude",
+              "meaning": "a diferença entre o maior e o menor valor de uma lista de dados."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A variância passo a passo",
+          "body": [
+            "A variância usa todos os valores. Ela mede, em média, quão longe cada um está da média."
+          ],
+          "example": {
+            "label": "As notas de Bia: 4, 10, 4 e 10",
+            "lines": [
+              "Média: 7.",
+              "Distâncias até a média: −3, 3, −3 e 3.",
+              "Ao quadrado: 9, 9, 9 e 9.",
+              "Média dos quadrados: 9. Essa é a variância."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "variância",
+              "meaning": "a média dos quadrados das distâncias de cada valor até a média."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Por que elevar ao quadrado",
+          "body": [
+            "Somadas, as distâncias sempre dão zero: as de cima cancelam as de baixo. Elevando ao quadrado, todas ficam positivas e não se cancelam."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O desvio padrão",
+          "body": [
+            "A variância de Bia é 9 “pontos ao quadrado”, uma unidade estranha. Tirando a raiz quadrada, volta-se para pontos."
+          ],
+          "example": {
+            "label": "As duas alunas",
+            "lines": [
+              "Ana: desvio padrão 0. Todas as notas iguais à média.",
+              "Bia: raiz quadrada de 9 = 3. As notas costumam ficar 3 pontos longe da média."
+            ]
+          },
+          "terms": [
+            {
+              "word": "raiz quadrada",
+              "meaning": "o número que, multiplicado por ele mesmo, dá o número de dentro. A raiz quadrada de 9 é 3."
+            },
+            {
+              "word": "desvio padrão",
+              "meaning": "a raiz quadrada da variância. Mostra, na mesma unidade dos dados, quanto eles costumam se afastar da média."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quem é mais regular",
+          "body": [
+            "Com médias iguais, o mais regular é o de menor desvio padrão. É a pergunta que a prova mais faz."
+          ],
+          "table": {
+            "label": "Gols por jogo, média 2 nos dois times",
+            "headers": [
+              "Time",
+              "Gols",
+              "Desvio padrão"
+            ],
+            "rows": [
+              [
+                "X",
+                "2, 2, 2, 2",
+                "0"
+              ],
+              [
+                "Y",
+                "0, 4, 1, 3",
+                "cerca de 1,6"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá duas listas com a mesma média e pergunta qual é mais regular, ou pede a amplitude e o desvio padrão de uma tabela."
+          ],
+          "bullets": [
+            "“O candidato de desempenho mais regular é aquele que apresenta…”",
+            "“O desvio padrão das notas é…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que médias iguais querem dizer desempenhos iguais.",
+            "Esquecer de tirar a raiz quadrada da variância.",
+            "Escolher como mais regular quem tem o maior desvio padrão.",
+            "Achar que somar o mesmo valor a todos muda o desvio padrão."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Amplitude: maior menos menor. Variância: média dos quadrados das distâncias até a média. Desvio padrão: a raiz quadrada da variância.",
+            "Com a mesma média, quem tem menor desvio padrão é mais regular."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Amplitude",
+          "statement": "A amplitude dos valores 3, 8, 5, 10 e 4 é:",
+          "options": [
+            "7",
+            "6",
+            "30",
+            "5",
+            "10"
+          ],
+          "correct_index": 0,
+          "explanation": "10 − 3.",
+          "pitfall": "“30” somou os valores."
+        },
+        {
+          "topic": "O que mede",
+          "statement": "O desvio padrão mede:",
+          "options": [
+            "o quanto os dados costumam se afastar da média",
+            "o valor que mais aparece",
+            "o valor do meio",
+            "a soma dos dados",
+            "o maior valor"
+          ],
+          "correct_index": 0,
+          "explanation": "É uma medida de espalhamento.",
+          "pitfall": "“O valor do meio” é outra medida, que não fala de espalhamento."
+        },
+        {
+          "topic": "Ana e Bia",
+          "statement": "Ana tirou 7, 7, 7 e 7; Bia tirou 4, 10, 4 e 10. As duas têm média 7. Quem foi mais regular?",
+          "options": [
+            "Ana, porque as notas se afastam menos da média",
+            "Bia",
+            "as duas igualmente, porque a média é igual",
+            "nenhuma das duas",
+            "depende da maior nota"
+          ],
+          "correct_index": 0,
+          "explanation": "O desvio padrão de Ana é 0; o de Bia, 3.",
+          "pitfall": "“As duas igualmente” olha só a média."
+        },
+        {
+          "topic": "Definição",
+          "statement": "O desvio padrão é:",
+          "options": [
+            "a raiz quadrada da variância",
+            "o dobro da variância",
+            "a média dos dados",
+            "a amplitude dividida por 2",
+            "o quadrado da média"
+          ],
+          "correct_index": 0,
+          "explanation": "A raiz devolve a unidade dos dados.",
+          "pitfall": "“O dobro da variância” não volta para a unidade dos dados."
+        },
+        {
+          "topic": "Ao quadrado",
+          "statement": "Na variância, as distâncias até a média são elevadas ao quadrado porque:",
+          "options": [
+            "senão as distâncias positivas e negativas se cancelariam",
+            "para o número ficar menor",
+            "porque a média é sempre zero",
+            "para trocar a unidade",
+            "por costume, sem motivo"
+          ],
+          "correct_index": 0,
+          "explanation": "Somadas, as distâncias dão zero.",
+          "pitfall": "“Para o número ficar menor” erra: o quadrado costuma aumentar."
+        },
+        {
+          "topic": "Todos iguais",
+          "statement": "Os valores 2, 2, 2 e 2 têm desvio padrão:",
+          "options": [
+            "0",
+            "2",
+            "1",
+            "4",
+            "8"
+          ],
+          "correct_index": 0,
+          "explanation": "Nenhum valor se afasta da média.",
+          "pitfall": "“2” confundiu o valor com o espalhamento."
+        },
+        {
+          "topic": "Passo a passo",
+          "format": "order",
+          "statement": "Ponha na ordem o cálculo do desvio padrão.",
+          "options": [
+            "Calcular a média",
+            "Calcular a distância de cada valor até a média",
+            "Elevar cada distância ao quadrado",
+            "Tirar a média dos quadrados",
+            "Tirar a raiz quadrada"
+          ],
+          "explanation": "A média dos quadrados é a variância; a raiz dela, o desvio padrão.",
+          "pitfall": "Tirar a raiz antes de elevar ao quadrado não faz sentido."
+        },
+        {
+          "topic": "Variância de Bia",
+          "statement": "Bia tirou 4, 10, 4 e 10 (média 7). A variância das notas dela é:",
+          "options": [
+            "9",
+            "3",
+            "6",
+            "0",
+            "36"
+          ],
+          "correct_index": 0,
+          "explanation": "Todas as distâncias valem 3; ao quadrado, 9.",
+          "pitfall": "“3” é o desvio padrão, e não a variância."
+        },
+        {
+          "topic": "Usa o quê",
+          "statement": "A amplitude usa:",
+          "options": [
+            "só o maior e o menor valor",
+            "todos os valores",
+            "a média",
+            "o valor do meio",
+            "a chance"
+          ],
+          "correct_index": 0,
+          "explanation": "É maior menos menor.",
+          "pitfall": "“Todos os valores” é a variância.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Desvio pequeno",
+          "statement": "Quanto menor o desvio padrão, os dados estão:",
+          "options": [
+            "mais perto da média",
+            "mais espalhados",
+            "maiores",
+            "menores",
+            "sem média"
+          ],
+          "correct_index": 0,
+          "explanation": "Desvio pequeno é pouca variação.",
+          "pitfall": "“Mais espalhados” é o contrário.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Raiz",
+          "statement": "Uma variância de 16 dá desvio padrão de:",
+          "options": [
+            "4",
+            "8",
+            "256",
+            "16",
+            "2"
+          ],
+          "correct_index": 0,
+          "explanation": "A raiz quadrada de 16 é 4.",
+          "pitfall": "“8” dividiu por 2.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Previsível",
+          "statement": "Dois times têm média de 2 gols por jogo. O desvio padrão do time A é 0,5, e o do B é 2. Qual é mais previsível?",
+          "options": [
+            "o time A",
+            "o time B",
+            "os dois igualmente",
+            "nenhum",
+            "não dá para saber, porque a média é igual"
+          ],
+          "correct_index": 0,
+          "explanation": "Menor desvio padrão, menos surpresa.",
+          "pitfall": "“Não dá para saber” ignora que o desvio padrão é justamente a resposta.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Variância",
+          "statement": "Os valores 0, 4, 1 e 3 têm média 2. A variância é:",
+          "options": [
+            "2,5",
+            "10",
+            "cerca de 1,6",
+            "1,5",
+            "0"
+          ],
+          "correct_index": 0,
+          "explanation": "Distâncias −2, 2, −1, 1; quadrados 4, 4, 1, 1; média 10 ÷ 4.",
+          "pitfall": "“Cerca de 1,6” é o desvio padrão, e “10” é a soma dos quadrados: o distrator mais fino é o desvio.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Mais 5",
+          "statement": "Somando 5 pontos à nota de todos os alunos, o desvio padrão:",
+          "options": [
+            "não muda, porque todos se afastam igual da nova média",
+            "aumenta 5",
+            "diminui 5",
+            "dobra",
+            "vira zero"
+          ],
+          "correct_index": 0,
+          "explanation": "A média também sobe 5, e as distâncias ficam iguais.",
+          "pitfall": "“Aumenta 5” é o distrator mais fino: confunde mudar os valores com mudar o espalhamento.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "amostras-e-pesquisas",
+      "title": "Amostra, pesquisa e margem de erro",
+      "module": "Chance e dados na vida real",
+      "summary": "Ninguém pergunta a todo mundo: pergunta a uma parte. A lição mostra quando a parte representa o todo, o que é margem de erro e empate técnico, e por que a frequência se aproxima da chance.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Provar a sopa",
+          "body": [
+            "Para saber se a sopa está salgada, basta provar uma colher, desde que a panela esteja bem mexida.",
+            "Pesquisa é a mesma coisa. Ouve-se uma parte, e ela fala pelo todo, se tiver sido bem escolhida."
+          ],
+          "terms": [
+            {
+              "word": "amostra",
+              "meaning": "a parte do grupo que é pesquisada para dizer algo sobre o grupo todo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "População e amostra",
+          "body": [
+            "Na estatística, população é o grupo inteiro sobre o qual se quer saber algo. A amostra é a parte que se ouve."
+          ],
+          "example": {
+            "label": "Exemplos",
+            "lines": [
+              "População: os eleitores de uma cidade. Amostra: 1 000 eleitores sorteados.",
+              "População: as lâmpadas de uma fábrica. Amostra: 50 testadas."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Amostra boa é sorteada e variada",
+          "body": [
+            "Se a amostra é escolhida de um jeito torto, a pesquisa erra, por maior que ela seja."
+          ],
+          "example": {
+            "label": "Amostras tortas",
+            "lines": [
+              "Perguntar só na academia se as pessoas fazem exercício.",
+              "Enquete de site, em que só vota quem quer.",
+              "Ouvir só os clientes escolhidos pela própria marca."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A margem de erro",
+          "body": [
+            "Toda pesquisa por amostra tem uma folga. O resultado real deve estar numa faixa em volta do número divulgado."
+          ],
+          "example": {
+            "label": "Uma pesquisa eleitoral",
+            "lines": [
+              "A tem 40%, B tem 38%, com margem de 2 pontos.",
+              "A pode estar entre 38% e 42%; B, entre 36% e 40%.",
+              "As faixas se cruzam: é empate técnico."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "margem de erro",
+              "meaning": "a faixa, para mais e para menos, em que o resultado real deve estar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Frequência e chance",
+          "body": [
+            "Jogando uma moeda 10 vezes, podem sair 7 caras. Jogando 10 000 vezes, a parte de caras fica perto de metade."
+          ],
+          "terms": [
+            {
+              "word": "probabilidade",
+              "meaning": "a chance de algo acontecer, num número de 0 (impossível) a 1 (certo)."
+            },
+            {
+              "word": "frequência relativa",
+              "meaning": "quantas vezes algo aconteceu, dividido pelo número de tentativas."
+            },
+            {
+              "word": "lei dos grandes números",
+              "meaning": "com muitas tentativas, a frequência relativa fica cada vez mais perto da probabilidade."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A pesquisa que engana",
+          "body": [
+            "Antes de acreditar num número, vale fazer três perguntas."
+          ],
+          "example": {
+            "label": "Três perguntas",
+            "lines": [
+              "Quantas pessoas foram ouvidas?",
+              "Como elas foram escolhidas?",
+              "Qual foi a pergunta feita?"
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede o problema de uma amostra, a faixa dada pela margem de erro ou a ligação entre frequência e chance."
+          ],
+          "bullets": [
+            "“Considerando a margem de erro, é correto afirmar que…”",
+            "“A amostra utilizada é inadequada porque…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que amostra grande corrige amostra mal escolhida.",
+            "Ler o número da pesquisa sem a margem de erro.",
+            "Achar que a frequência de poucas tentativas é a probabilidade.",
+            "Achar que empate técnico quer dizer números iguais."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A amostra fala pela população se for sorteada e variada. A margem de erro dá a faixa do resultado real, e faixas que se cruzam são empate técnico.",
+            "Com muitas tentativas, a frequência relativa se aproxima da probabilidade."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Amostra",
+          "statement": "Amostra é:",
+          "options": [
+            "a parte do grupo pesquisada para dizer algo sobre o todo",
+            "o grupo inteiro",
+            "o resultado da pesquisa",
+            "o erro da pesquisa",
+            "a pergunta feita"
+          ],
+          "correct_index": 0,
+          "explanation": "É a colher da sopa.",
+          "pitfall": "“O grupo inteiro” é a população."
+        },
+        {
+          "topic": "Academia",
+          "statement": "Uma pesquisa sobre o hábito de fazer exercício ouve só pessoas numa academia. O problema é que:",
+          "options": [
+            "a amostra não representa a população toda",
+            "a amostra foi sorteada",
+            "a amostra é grande demais",
+            "não há problema",
+            "as pessoas sempre mentem"
+          ],
+          "correct_index": 0,
+          "explanation": "Quem está na academia já faz exercício.",
+          "pitfall": "“A amostra foi sorteada” é o que faltou."
+        },
+        {
+          "topic": "Faixa",
+          "statement": "Um candidato tem 40%, com margem de erro de 2 pontos. O resultado real deve estar entre:",
+          "options": [
+            "38% e 42%",
+            "40% e 42%",
+            "36% e 44%",
+            "39% e 41%",
+            "20% e 80%"
+          ],
+          "correct_index": 0,
+          "explanation": "2 para menos e 2 para mais.",
+          "pitfall": "“40% e 42%” só olhou para cima."
+        },
+        {
+          "topic": "Empate técnico",
+          "statement": "A e B têm 40% e 38%, com margem de erro de 2 pontos. A situação é:",
+          "options": [
+            "empate técnico, porque as faixas se cruzam",
+            "vitória certa de A",
+            "vitória certa de B",
+            "empate exato",
+            "erro da pesquisa"
+          ],
+          "correct_index": 0,
+          "explanation": "A pode ter 38%, e B pode ter 40%.",
+          "pitfall": "“Vitória certa de A” ignora a margem de erro."
+        },
+        {
+          "topic": "Frequência",
+          "statement": "Uma moeda deu 7 caras em 10 lançamentos. A frequência relativa de cara foi:",
+          "options": [
+            "0,7",
+            "0,5",
+            "7",
+            "0,3",
+            "10"
+          ],
+          "correct_index": 0,
+          "explanation": "7 ÷ 10.",
+          "pitfall": "“0,5” é a chance, e não o que aconteceu."
+        },
+        {
+          "topic": "Muitas jogadas",
+          "statement": "Com 10 000 lançamentos de uma moeda honesta, a frequência relativa de cara deve ficar:",
+          "options": [
+            "perto de 0,5",
+            "exatamente 0,5",
+            "perto de 0,7",
+            "perto de 0",
+            "perto de 1"
+          ],
+          "correct_index": 0,
+          "explanation": "É a lei dos grandes números.",
+          "pitfall": "“Exatamente 0,5” exagera: fica perto, não necessariamente igual."
+        },
+        {
+          "topic": "Termos",
+          "format": "match",
+          "statement": "Ligue cada termo ao que ele quer dizer.",
+          "pairs": [
+            {
+              "left": "amostra",
+              "right": "a parte pesquisada"
+            },
+            {
+              "left": "margem de erro",
+              "right": "a faixa para mais e para menos"
+            },
+            {
+              "left": "frequência relativa",
+              "right": "vezes que aconteceu ÷ tentativas"
+            },
+            {
+              "left": "lei dos grandes números",
+              "right": "muitas tentativas aproximam da chance"
+            }
+          ],
+          "explanation": "São as quatro ideias da lição.",
+          "pitfall": "Frequência é o que aconteceu; chance é o que se espera."
+        },
+        {
+          "topic": "Boa amostra",
+          "statement": "Para uma amostra representar bem a população, o mais importante é que ela seja:",
+          "options": [
+            "escolhida ao acaso e variada como a população",
+            "formada por amigos de quem pesquisa",
+            "escolhida pelos próprios entrevistados",
+            "só de um bairro",
+            "só de quem quer responder"
+          ],
+          "correct_index": 0,
+          "explanation": "O sorteio evita escolher de um jeito torto.",
+          "pitfall": "“Só de quem quer responder” é a enquete de site."
+        },
+        {
+          "topic": "Sopa",
+          "statement": "Provar uma colher de sopa bem mexida para saber se a panela está salgada é usar:",
+          "options": [
+            "uma amostra",
+            "a população toda",
+            "uma margem de erro",
+            "um desvio padrão",
+            "um anagrama"
+          ],
+          "correct_index": 0,
+          "explanation": "Uma parte fala pelo todo.",
+          "pitfall": "“A população toda” seria tomar a panela inteira.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Enquete",
+          "statement": "Uma enquete de site, em que só vota quem quer, tende a:",
+          "options": [
+            "não representar a população, porque quem vota escolheu participar",
+            "ser perfeita",
+            "ter margem de erro zero",
+            "ser sorteada",
+            "representar todo o país"
+          ],
+          "correct_index": 0,
+          "explanation": "Quem se interessa pelo tema vota mais.",
+          "pitfall": "“Ser sorteada” é o que ela não é.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Dado em 12",
+          "statement": "Num teste com um dado, o 6 saiu 3 vezes em 12. A frequência relativa foi 0,25, e a probabilidade é 1/6. A diferença se explica porque:",
+          "options": [
+            "12 lançamentos são poucos; com muitos, a frequência se aproxima de 1/6",
+            "o dado está viciado, com certeza",
+            "a probabilidade mudou",
+            "a frequência é sempre igual à probabilidade",
+            "o 6 é mais leve"
+          ],
+          "correct_index": 0,
+          "explanation": "Em poucas tentativas, o acaso pesa muito.",
+          "pitfall": "“Viciado, com certeza” tira uma conclusão forte de poucos lançamentos.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Dentistas",
+          "statement": "Uma propaganda diz que 80% dos dentistas recomendam a marca X, mas ouviu 10 dentistas escolhidos pela marca. O problema principal é:",
+          "options": [
+            "a amostra é pequena e foi escolhida por quem tem interesse no resultado",
+            "80% é pouco",
+            "dentistas não opinam",
+            "a margem de erro é zero",
+            "o resultado é sempre verdadeiro"
+          ],
+          "correct_index": 0,
+          "explanation": "Poucos e escolhidos a dedo.",
+          "pitfall": "“80% é pouco” discute o número e esquece de onde ele veio.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Sorteada ou maior",
+          "statement": "A pesquisa A ouviu 400 pessoas sorteadas; a B ouviu 4 000 que responderam pela internet. Qual tende a representar melhor a população?",
+          "options": [
+            "a A, porque foi sorteada, mesmo sendo menor",
+            "a B, porque é maior",
+            "as duas igualmente",
+            "nenhuma das duas",
+            "a que tiver o resultado que eu prefiro"
+          ],
+          "correct_index": 0,
+          "explanation": "Tamanho não corrige amostra escolhida de jeito torto.",
+          "pitfall": "“A B, porque é maior” é o distrator mais fino: confunde tamanho com qualidade.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Amostra maior",
+          "statement": "Aumentar muito o tamanho de uma amostra bem sorteada faz a margem de erro:",
+          "options": [
+            "diminuir",
+            "aumentar",
+            "não mudar, porque ela só depende da pergunta",
+            "virar zero com 100 pessoas",
+            "dobrar"
+          ],
+          "correct_index": 0,
+          "explanation": "Mais gente sorteada, resultado mais preciso.",
+          "pitfall": "“Não mudar, porque ela só depende da pergunta” é o distrator mais fino: a margem depende do tamanho da amostra.",
+          "difficulty": "dificil"
+        }
+      ]
+    }
+  ]
+}
