@@ -168,17 +168,17 @@ const JARGON = [
   ["verbo modal", /\bmodais\b|\bverbos? moda(l|is)\b/i, "w"], ["particípio", /(?<!\p{L})partic(í|i)pios?(?!\p{L})/iu, "wu"], ["comparativo e superlativo", /\bcomparativos?\b|\bsuperlativos?\b/i, "wu"],
   ["preposição", /\bpreposi(ç|c)(ão|ões)\b/i, "wu"], ["conectivo", /\bconectivos?\b/i, "wu"], ["possessivo", /\bpossessiv(o|os|a|as)\b/i, "wu"],
   // Leitura em inglês e em espanhol para o ENEM (escopos "R" e "P"): as ferramentas de leitura e os gêneros da prova.
-  ["extrapolação", /(?<!\p{L})extrapola(ç|c)(ão|ões)(?!\p{L})/iu, "RP"], ["prefixo e sufixo", /\bprefixos?\b|\bsufixos?\b/i, "R"],
-  ["inferência", /(?<!\p{L})infer(ê|e)ncias?(?!\p{L})/iu, "RP"], ["grupo nominal", /\bgrupos? nomina(l|is)\b/i, "R"],
+  ["extrapolação", /(?<!\p{L})extrapola(ç|c)(ão|ões)(?!\p{L})/iu, "RPQ"], ["prefixo e sufixo", /\bprefixos?\b|\bsufixos?\b/i, "R"],
+  ["inferência", /(?<!\p{L})infer(ê|e)ncias?(?!\p{L})/iu, "RPQ"], ["grupo nominal", /\bgrupos? nomina(l|is)\b/i, "R"],
   ["phrasal verb", /\bphrasal verbs?\b/i, "R"], ["voz passiva", /\bvoz passiva\b/i, "R"], ["frase condicional", /\bcondiciona(l|is)\b/i, "R"],
-  ["trocadilho", /\btrocadilhos?\b/i, "RP"], ["ironia", /\bironias?\b|(?<!\p{L})ir(ô|o)nic(o|a|os|as)(?!\p{L})/iu, "RP"],
-  ["manchete", /\bmanchetes?\b/i, "RP"], ["linguagem cautelosa", /\blinguagem cautelosa\b|\bhedging\b/i, "RP"],
-  ["imperativo", /\bimperativos?\b/i, "RP"], ["infográfico", /(?<!\p{L})infogr(á|a)fic(o|os)(?!\p{L})/iu, "RP"],
-  ["linguagem figurada", /\blinguagem figurada\b|\bsentido figurado\b/i, "RP"], ["gíria", /(?<!\p{L})g(í|i)rias?(?!\p{L})/iu, "RP"],
+  ["trocadilho", /\btrocadilhos?\b/i, "RPQ"], ["ironia", /\bironias?\b|(?<!\p{L})ir(ô|o)nic(o|a|os|as)(?!\p{L})/iu, "RPQ"],
+  ["manchete", /\bmanchetes?\b/i, "RPQ"], ["linguagem cautelosa", /\blinguagem cautelosa\b|\bhedging\b/i, "RP"],
+  ["imperativo", /\bimperativos?\b/i, "RPQ"], ["infográfico", /(?<!\p{L})infogr(á|a)fic(o|os)(?!\p{L})/iu, "RPQ"],
+  ["linguagem figurada", /\blinguagem figurada\b|\bsentido figurado\b/i, "RPQ"], ["gíria", /(?<!\p{L})g(í|i)rias?(?!\p{L})/iu, "RPQ"],
   ["heterogenérico", /(?<!\p{L})heterogen(é|e)ric(o|os|a|as)(?!\p{L})/iu, "P"], ["heterotônico", /(?<!\p{L})heterot(ô|o)nic(o|os|a|as)(?!\p{L})/iu, "P"],
   ["artigo neutro lo", /\blo neutro\b|\bartigo neutro\b/i, "P"], ["pretérito", /(?<!\p{L})pret(é|e)ritos?(?!\p{L})/iu, "P"],
   ["perífrase", /(?<!\p{L})per(í|i)frases?(?!\p{L})/iu, "P"], ["subjuntivo", /\bsubjuntivos?\b/i, "P"],
-  ["variação linguística", /(?<!\p{L})varia(ç|c)(ão|ões) lingu(í|i)sticas?(?!\p{L})/iu, "P"], ["voseo", /\bvoseo\b/i, "P"],
+  ["variação linguística", /(?<!\p{L})varia(ç|c)(ão|ões) lingu(í|i)sticas?(?!\p{L})/iu, "PQ"], ["voseo", /\bvoseo\b/i, "P"],
   // Informática básica (escopo "k"): a porta de entrada, para quem nunca estudou computador.
   ["hardware e software", /\bhardware\b|\bsoftware\b/i, "k"], ["sistema operacional", /\bsistemas? operaciona(l|is)\b/i, "k"],
   ["processador", /\bprocessador(es)?\b/i, "k"], ["memória RAM", /(?<!\p{L})mem(ó|o)ria RAM(?!\p{L})|\bRAM\b/iu, "k"], ["armazenamento", /\barmazenamento\b|\bSSD\b/i, "k"],
@@ -229,6 +229,24 @@ const JARGON = [
   ["termogênico", /(?<!\p{L})termog(ê|e)nic(o|os|a|as)(?!\p{L})/iu, "N"], ["overtraining", /\bovertraining\b/i, "N"],
   ["entorse", /\bentorses?\b/i, "N"], ["distensão muscular", /(?<!\p{L})distens(ão|ões)(?!\p{L})/iu, "N"], ["tendinite", /\btendinites?\b/i, "N"], ["fratura por estresse", /\bfraturas? por estresse\b/i, "N"],
   ["vigorexia", /\bvigorexia\b|(?<!\p{L})dismorfia muscular(?!\p{L})/iu, "N"], ["endorfina", /\bendorfinas?\b/i, "N"],
+  // Interpretação de texto (escopo "Q"): o vocabulário da questão de leitura. Herda o "t" da
+  // Produção Textual (tese, conectivo, coesão…), e os verbetes de leitura do inglês e do
+  // espanhol (inferência, ironia, variação linguística…) valem também aqui.
+  ["pressuposto", /\bpressupost(o|os|a|as)\b/i, "Q"], ["subentendido", /\bsubentendid(o|os|a|as)\b/i, "Q"],
+  ["polissemia", /\bpolissemia\b|(?<!\p{L})poliss(ê|e)mic(o|a|os|as)(?!\p{L})/iu, "Q"],
+  ["ambiguidade", /(?<!\p{L})amb(i|í)gu(o|a|os|as|idade|idades)(?!\p{L})/iu, "Q"],
+  ["paráfrase", /(?<!\p{L})par(á|a)frase(s|ar)?(?!\p{L})/iu, "Q"], ["interlocutor", /\binterlocutor(es|a|as)?\b/i, "Q"],
+  ["função da linguagem", /(?<!\p{L})fun(ç|c)(ão|ões) da linguagem(?!\p{L})/iu, "Q"],
+  ["função conativa", /\bconativa\b/i, "Q"], ["função fática", /(?<!\p{L})f(á|a)tica(?!\p{L})/iu, "Q"],
+  ["função metalinguística", /(?<!\p{L})metalingu(í|i)stica(?!\p{L})/iu, "Q"],
+  ["modalizador", /(?<!\p{L})modaliza(dor|dores|ção|ções)(?!\p{L})/iu, "Q"],
+  ["operador argumentativo", /\boperador(es)? argumentativos?\b/i, "Q"],
+  ["argumento de autoridade", /\bargumentos? de autoridade\b/i, "Q"],
+  ["intertextualidade", /\bintertextu(alidade|al|ais)\b/i, "Q"], ["paródia", /(?<!\p{L})par(ó|o)dias?(?!\p{L})/iu, "Q"],
+  ["alusão", /(?<!\p{L})alus(ão|ões)(?!\p{L})/iu, "Q"], ["epígrafe", /(?<!\p{L})ep(í|i)grafes?(?!\p{L})/iu, "Q"],
+  ["charge", /\bcharges?\b/i, "Q"], ["linguagem não verbal", /(?<!\p{L})não verba(l|is)(?!\p{L})/iu, "Q"],
+  ["texto multimodal", /\bmultimoda(l|is)\b/i, "Q"],
+  ["preconceito linguístico", /(?<!\p{L})preconceito lingu(í|i)stico(?!\p{L})/iu, "Q"],
   // Filosofia (escopo "z") e Sociologia (escopo "j"): os conceitos que a prova cobra pelo nome.
   ["mito", /\bmitos?\b/i, "z"], ["arché", /\barch(é|e)\b/i, "z"], ["maiêutica", /(?<!\p{L})mai(ê|e)utica(?!\p{L})/iu, "z"], ["mundo das ideias", /\bmundo das ideias\b/i, "z"],
   ["ética e moral", /(?<!\p{L})(é|e)tica(s)?(?!\p{L})|\bmora(l|is)\b/iu, "z"], ["racionalismo e empirismo", /\bracionalis(mo|ta|tas)\b|\bempiris(mo|ta|tas)\b/i, "z"],
@@ -269,7 +287,7 @@ const JARGON = [
   // Literatura brasileira (escopo "L"): os nomes de recurso e de estilo que a prova usa. Os nomes das
   // escolas (Romantismo, Realismo…) ficam de fora: cada lição explica a sua, e citá-las de passagem é contexto.
   ["eu lírico", /\beu l(í|i)rico\b/i, "L"], ["escola literária", /(?<!\p{L})escolas? liter(á|a)rias?(?!\p{L})/iu, "L"],
-  ["conotação e denotação", /(?<!\p{L})(conota|denota)(ç|c)(ão|ões)(?!\p{L})|(?<!\p{L})(conotativ|denotativ)(o|a|os|as)(?!\p{L})/iu, "L"],
+  ["conotação e denotação", /(?<!\p{L})(conota|denota)(ç|c)(ão|ões)(?!\p{L})|(?<!\p{L})(conotativ|denotativ)(o|a|os|as)(?!\p{L})/iu, "LQ"],
   ["gênero lírico, narrativo e dramático", /(?<!\p{L})g(ê|e)neros? (l(í|i)ric|narrativ|dram(á|a)tic)(o|os)(?!\p{L})/iu, "L"],
   ["métrica", /(?<!\p{L})m(é|e)trica(?!\p{L})/iu, "L"], ["sílaba poética", /(?<!\p{L})s(í|i)labas? po(é|e)ticas?(?!\p{L})/iu, "L"],
   ["redondilha", /\bredondilhas?\b/i, "L"], ["decassílabo e alexandrino", /(?<!\p{L})(decass(í|i)labo|alexandrino)s?(?!\p{L})/iu, "L"],
@@ -287,7 +305,7 @@ const JARGON = [
   ["neologismo", /\bneologismos?\b/i, "L"], ["metalinguagem", /\bmetalinguagem\b/i, "L"],
   ["poesia concreta", /\bpoesia concreta\b|\bpoemas? concretos?\b|\bconcretis(mo|ta|tas)\b/i, "L"], ["poesia marginal", /\bpoesia marginal\b/i, "L"],
   ["escrevivência", /(?<!\p{L})escreviv(ê|e)ncia(?!\p{L})/iu, "L"], ["cordel", /(?<!\p{L})cord(el|éis)(?!\p{L})/iu, "L"],
-  ["metáfora", /(?<!\p{L})met(á|a)foras?(?!\p{L})/iu, "L"],
+  ["metáfora", /(?<!\p{L})met(á|a)foras?(?!\p{L})/iu, "LQ"],
   // Geometria e trigonometria (escopo "G", somado ao "m" e ao "d": a matéria usa raiz, eixo, hipotenusa e π).
   ["reta transversal", /\btransversa(l|is)\b/i, "G"], ["ângulos alternos", /(?<!\p{L})alternos?(?!\p{L})/iu, "G"],
   ["complementar e suplementar", /\bcomplementares?\b|\bsuplementares?\b/i, "G"], ["opostos pelo vértice", /(?<!\p{L})opostos? pelo v(é|e)rtice(?!\p{L})/iu, "G"],
@@ -792,7 +810,7 @@ const JARGON = [
   ["cooler", /\bcoolers?\b|\bwater cooler\b/i, "h"], ["80 Plus", /\b80 Plus\b/i, "h"], ["fonte modular", /\bmodular(es)?\b/i, "h"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG", "historia-do-brasil": "iH", "geografia-do-brasil": "oB", "corpo-humano-e-saude": "bC", "quimica-organica": "xO", "termodinamica-optica-e-fisica-moderna": "fT", "sociedade-brasileira": "jS", "autores-de-filosofia": "zF", "leitura-em-ingles-enem": "wR", "leitura-em-espanhol-enem": "uP", "informatica-para-concursos": "kI", "musica": "AM", "treino-saude-e-alimentacao": "EN" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG", "historia-do-brasil": "iH", "geografia-do-brasil": "oB", "corpo-humano-e-saude": "bC", "quimica-organica": "xO", "termodinamica-optica-e-fisica-moderna": "fT", "sociedade-brasileira": "jS", "autores-de-filosofia": "zF", "leitura-em-ingles-enem": "wR", "leitura-em-espanhol-enem": "uP", "informatica-para-concursos": "kI", "musica": "AM", "treino-saude-e-alimentacao": "EN", "interpretacao-de-texto": "tQ" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;

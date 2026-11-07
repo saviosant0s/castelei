@@ -110,6 +110,7 @@ return [
             'description' => 'Ler, escrever, outra língua, arte e corpo: a prova de Linguagens do ENEM e a redação.',
             'steps' => [
                 ['subject' => 'portugues', 'name' => 'Português', 'why' => 'Interpretação, gramática e gêneros: a maior parte da prova de Linguagens.'],
+                ['subject' => 'interpretacao-de-texto', 'name' => 'Interpretação de texto', 'why' => 'O comando, o implícito, o duplo sentido, o humor e a imagem: a leitura que a prova de Linguagens mais cobra.'],
                 ['subject' => 'literatura-brasileira', 'name' => 'Literatura brasileira', 'why' => 'O poema, as escolas literárias e os autores: o texto literário que a prova traz para interpretar.'],
                 ['subject' => 'producao-textual', 'name' => 'Produção Textual', 'why' => 'A redação dissertativa, da tese à proposta de intervenção.'],
                 ['subject' => 'ingles-basico', 'name' => 'Inglês', 'why' => 'Ler um texto em inglês com cognatos e estratégia. Quem escolhe espanhol faz Espanhol.'],
@@ -130,6 +131,7 @@ return [
             'description' => 'Português, raciocínio lógico, Matemática e Informática: as matérias que quase todo edital de nível médio repete.',
             'steps' => [
                 ['subject' => 'portugues', 'name' => 'Português', 'why' => 'Concordância, regência, crase, vírgula e interpretação: o que mais pesa na nota de qualquer edital.'],
+                ['subject' => 'interpretacao-de-texto', 'name' => 'Interpretação de texto', 'why' => 'Pressuposto, paráfrase e sentido no contexto: a parte de Português que mais aparece no edital.'],
                 ['subject' => 'logica', 'name' => 'Lógica', 'why' => 'Negação, equivalência e tabela-verdade: o raciocínio lógico que as bancas cobram com esse nome.'],
                 ['subject' => 'matematica-basica', 'name' => 'Matemática Básica', 'why' => 'Frações, porcentagem e equações: a conta que sustenta as questões de raciocínio.'],
                 ['subject' => 'informatica-basica', 'name' => 'Informática básica', 'why' => 'Arquivos, internet, planilha e segurança: o vocabulário antes da questão de banca.'],

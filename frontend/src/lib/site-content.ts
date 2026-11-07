@@ -667,6 +667,26 @@ export const SUBJECTS: SiteSubject[] = [
       "Mitos do treino e a cabeça de quem treina",
     ],
   },
+  {
+    slug: "interpretacao-de-texto",
+    name: "Interpretação de texto",
+    pitch:
+      "Ler a questão do jeito que ela pede: o implícito, o duplo sentido, o humor, a imagem e a variação.",
+    lessons: [
+      "O comando da questão: o que cada pergunta pede",
+      "Pressupostos e subentendidos: o que a frase carrega sem dizer",
+      "Duplo sentido: ambiguidade e polissemia",
+      "Paráfrase e resumo: dizer o mesmo de outro jeito",
+      "Para quem e para quê: a finalidade e o interlocutor",
+      "As funções da linguagem: o que o texto faz com as palavras",
+      "Fato, opinião e as palavras que dosam a certeza",
+      "Os argumentos e as palavras que conduzem o raciocínio",
+      "Ironia e humor: o riso que diz alguma coisa",
+      "Texto e imagem: o não verbal, o gráfico e o infográfico",
+      "Textos que conversam: citação, alusão, paródia e paráfrase",
+      "Variação linguística: diferente não é errado",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -683,5 +703,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 5404,
+  questions: 5572,
 };
