@@ -8,6 +8,7 @@ use App\Models\Question;
 use App\Models\User;
 use App\Services\GamificationService;
 use App\Services\ReviewService;
+use App\Support\Practice\LessonLock;
 use App\Support\Practice\StepShuffle;
 use Illuminate\Database\UniqueConstraintViolationException;
 use Illuminate\Http\JsonResponse;
@@ -26,6 +27,10 @@ class AttemptController extends Controller
     /** Inicia uma tentativa e devolve as questões SEM gabarito nem explicação. */
     public function store(Request $request, Lesson $lesson): JsonResponse
     {
+        // A trava entre lições vale aqui também: sem ela, o endereço da
+        // prática pularia a lição que a tela mostra trancada.
+        abort_if(LessonLock::missingFor($request->user(), $lesson) !== null, 403, 'Veja a lição anterior antes de praticar esta.');
+
         $query = $lesson->questions()->where('exam_only', false)->orderBy('position');
 
         /*

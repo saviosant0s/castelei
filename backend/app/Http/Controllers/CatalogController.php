@@ -8,6 +8,7 @@ use App\Models\Lesson;
 use App\Models\Question;
 use App\Models\Subject;
 use App\Support\Content\Vocabulary;
+use App\Support\Practice\LessonLock;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -46,6 +47,16 @@ class CatalogController extends Controller
         // A data da prova é de cada pessoa (ela marca na tela da matéria).
         $datas = ExamDate::mapFor($user);
 
+        /*
+        | A trava entre lições (Support\Practice\LessonLock). "Vista" é lida
+        | até o fim ou praticada — as duas listas já estão carregadas aqui.
+        | Quem pode pular (Pro ou quem administra) não vê cadeado nenhum.
+        */
+        $vistas = $lidas->keys()->merge($stats->keys())->mapWithKeys(fn ($id) => [(int) $id => true])->all();
+        $trancadas = $user->canSkipLessons() ? [] : $subjects
+            ->mapWithKeys(fn (Subject $subject) => [$subject->id => LessonLock::lockedIn($subject->lessons, $vistas)])
+            ->all();
+
         $minForExam = (int) config('castelei.exam.min_questions');
         $examTarget = (int) config('castelei.exam.questions');
 
@@ -55,7 +66,10 @@ class CatalogController extends Controller
             | essas como "Em breve". A lista vem daqui para a tela não ter uma
             | segunda cópia dela.
             */
-            'areas' => Subject::areas(),
+            'areas' => array_map(fn (array $area) => $area + [
+                // Os grupos da área, na ordem de estudo, com o que vem "em breve".
+                'groups' => Subject::groupsFor($area['slug'], $subjects->map(fn (Subject $s) => ['slug' => $s->slug, 'area' => $s->area])->all()),
+            ], Subject::areas()),
             // A ordem de estudo que atravessa áreas. Os passos só dizem o slug:
             // o progresso sai das matérias que já vêm nesta mesma resposta.
             // A trilha privada é como a matéria privada: só quem administra vê.
@@ -86,7 +100,7 @@ class CatalogController extends Controller
                 | calada. Link para uma página vazia é pior que link nenhum.
                 */
                 'vocabulary_terms' => count(Vocabulary::fromLessons($subject->lessons)),
-                'lessons' => $subject->lessons->map(function (Lesson $lesson) use ($stats, $limit, $lidas) {
+                'lessons' => $subject->lessons->map(function (Lesson $lesson) use ($stats, $limit, $lidas, $trancadas) {
                     $stat = $stats->get($lesson->id);
                     // A prática comum é a base; lição só com questões de nível usa todas.
                     $total = $lesson->base_count > 0 ? $lesson->base_count : $lesson->questions_count;
@@ -102,6 +116,8 @@ class CatalogController extends Controller
                         'attempts' => $stat ? (int) $stat->attempts : 0,
                         'best_percent' => $stat && $stat->best_percent !== null ? (int) round((float) $stat->best_percent) : null,
                         'read' => $lidas->has($lesson->id),
+                        // Trancada até a pessoa ver a anterior (ler ou praticar).
+                        'locked' => isset($trancadas[$lesson->subject_id][$lesson->id]),
                     ];
                 })->values(),
             ])->values(),
@@ -183,6 +199,25 @@ class CatalogController extends Controller
 
     public function lesson(Request $request, Lesson $lesson): JsonResponse
     {
+        /*
+        | Lição trancada: a tela recebe só o bastante para dizer qual falta
+        | ver. As etapas não vão — senão a trava seria só um desenho, e
+        | quem abrisse o endereço leria tudo.
+        */
+        $falta = LessonLock::missingFor($request->user(), $lesson);
+        if ($falta) {
+            $lesson->load('subject');
+
+            return response()->json(['lesson' => [
+                'id' => $lesson->id,
+                'title' => $lesson->title,
+                'summary' => $lesson->summary,
+                'steps' => [],
+                'subject' => ['id' => $lesson->subject->id, 'slug' => $lesson->subject->slug, 'name' => $lesson->subject->name],
+                'locked' => ['id' => $falta->id, 'title' => $falta->title, 'position' => $falta->position],
+            ]]);
+        }
+
         $lesson->load('subject')->loadCount([
             'questions' => fn ($q) => $q->where('exam_only', false),
             'questions as base_count' => fn ($q) => $q->where('exam_only', false)->whereNull('difficulty'),
@@ -233,6 +268,7 @@ class CatalogController extends Controller
                     ->map(fn ($n) => (int) $n),
                 // Praticar por nível é do Pro: a tela mostra a escolha trancada para o grátis.
                 'can_use_levels' => $request->user()->hasLevels(),
+                'locked' => null,
             ],
         ]);
     }

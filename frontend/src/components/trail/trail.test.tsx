@@ -29,6 +29,16 @@ const materia = [
 ];
 
 describe("SubjectTrail", () => {
+  it("a lição trancada leva cadeado, diz por quê e continua levando à tela que explica", () => {
+    const comTrava = [licao(1, null, 1), licao(2, null), { ...licao(3, null), locked: true }];
+    render(<SubjectTrail lessons={comTrava} />);
+
+    const trancada = screen.getByRole("link", { name: /Lição 3: Lição 3 — trancada, veja a anterior antes/ });
+    expect(trancada.getAttribute("href")).toBe("/licao/3");
+    // A atual (a 2) abre normalmente.
+    expect(screen.getByRole("link", { name: /Lição 2: Lição 2 — é a próxima/ })).toBeTruthy();
+  });
+
   it("mostra cada módulo com número, nome e quanto já andou", () => {
     render(<SubjectTrail lessons={materia} />);
 

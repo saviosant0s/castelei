@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { Monitor, Shapes } from "lucide-react";
-import { areaIcon, areaProgress, groupByArea, subjectIcon } from "@/lib/areas";
+import { areaGroupsView, areaIcon, areaProgress, groupByArea, subjectIcon } from "@/lib/areas";
 import type { Area, Subject } from "@/lib/types";
 
 const areas: Area[] = [
@@ -47,5 +47,36 @@ describe("áreas do conhecimento", () => {
     expect(areaIcon("informatica")).toBe(Monitor);
     expect(subjectIcon({ slug: "redes", area: "informatica" })).toBe(Monitor);
     expect(subjectIcon({ slug: "redes", area: null })).toBe(Shapes);
+  });
+});
+
+describe("grupos da área", () => {
+  const materias = [materia("informatica-basica", "informatica"), materia("concursos", "informatica"), materia("python", "informatica")];
+
+  it("numera as matérias pela área inteira e deixa o em breve sem número", () => {
+    const view = areaGroupsView(
+      [
+        { name: "Usar o computador", items: [{ subject: "informatica-basica" }, { soon: "Planilhas" }, { subject: "concursos" }] },
+        { name: "Programação", items: [{ soon: "Lógica de programação" }, { subject: "python" }] },
+      ],
+      materias,
+    );
+
+    expect(view.map((g) => g.name)).toEqual(["Usar o computador", "Programação"]);
+    expect(view[0].entries.map((e) => (e.kind === "subject" ? e.step : e.name))).toEqual([1, "Planilhas", 2]);
+    expect(view[1].entries.map((e) => (e.kind === "subject" ? e.step : e.name))).toEqual(["Lógica de programação", 3]);
+  });
+
+  it("pula a matéria que não veio e some com o grupo que ficou vazio", () => {
+    const view = areaGroupsView([{ name: "Hardware", items: [{ subject: "montar-pc" }] }, { name: "Usar", items: [{ subject: "concursos" }] }], materias);
+    expect(view).toHaveLength(1);
+    expect(view[0].name).toBe("Usar");
+  });
+
+  it("sem grupos, a área vira uma lista só, na ordem das matérias", () => {
+    const view = areaGroupsView(undefined, materias);
+    expect(view).toHaveLength(1);
+    expect(view[0].name).toBeNull();
+    expect(view[0].entries).toHaveLength(3);
   });
 });

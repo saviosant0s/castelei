@@ -36,6 +36,8 @@ export interface LessonSummary {
   best_percent: number | null;
   /** leu até a última etapa (com ou sem prática): a trilha mostra pela metade */
   read?: boolean;
+  /** trancada até ver a anterior (ler ou praticar); nunca para o Pro */
+  locked?: boolean;
 }
 
 /** Situação do simulado de uma matéria. `unlocked` false = existe, mas o plano não inclui. */
@@ -51,6 +53,17 @@ export interface ExamAvailability {
 export interface Area {
   slug: string;
   name: string;
+  /** Os grupos da área, na ordem de estudo (config `area_groups`). Só o que a pessoa vê. */
+  groups?: AreaGroupData[];
+}
+
+/** Um item de grupo: uma matéria que existe, ou um assunto que ainda vai entrar. */
+export type AreaGroupItem = { subject: string } | { soon: string };
+
+export interface AreaGroupData {
+  /** nulo quando a área não tem grupos e tudo caiu numa lista só */
+  name: string | null;
+  items: AreaGroupItem[];
 }
 
 /** Um passo de uma trilha: uma matéria, na ordem de estudo. */
@@ -151,6 +164,11 @@ export interface LessonDetail {
   summary: string;
   steps: LessonStep[];
   subject: { id: number; slug: string; name: string };
+  /**
+   * Trancada: a lição anterior que falta ver. Nesse caso a API não manda as
+   * etapas nem os números, e a tela mostra só o aviso (`LockedLesson`).
+   */
+  locked?: { id: number; title: string; position: number } | null;
   questions_total: number;
   questions_available: number;
   limited_by_plan: boolean;
