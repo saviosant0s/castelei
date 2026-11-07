@@ -627,6 +627,26 @@ export const SUBJECTS: SiteSubject[] = [
       "Criptografia, assinatura e certificado digital",
     ],
   },
+  {
+    slug: "musica",
+    name: "Música",
+    pitch:
+      "Ouvir com outros ouvidos: o tempo e as notas, a história da música e a canção como tecnologia, cultura e protesto.",
+    lessons: [
+      "Pulso, compasso e andamento: o tempo da música",
+      "Notas, escalas e acordes",
+      "Textura, forma e dinâmica: como a música se organiza",
+      "Como o som funciona: vibração, decibéis e famílias de instrumentos",
+      "A música da Idade Média: canto gregoriano, trovadores e a pauta",
+      "Renascimento e Barroco: das vozes à ópera",
+      "Classicismo e Romantismo: a orquestra, a sinfonia e a emoção",
+      "A música do século XX: Debussy, Villa-Lobos e os sons novos",
+      "Blues, jazz, rock, reggae e hip-hop: a música da diáspora africana",
+      "Do cilindro ao streaming: a música e a tecnologia",
+      "Música e cultura popular: do maracatu ao carimbó",
+      "A canção e o Brasil: festivais, censura e identidade",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -643,5 +663,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 5068,
+  questions: 5236,
 };
