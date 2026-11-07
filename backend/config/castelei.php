@@ -86,6 +86,7 @@ return [
                 ['subject' => 'termodinamica-optica-e-fisica-moderna', 'name' => 'Termodinâmica, óptica e física moderna', 'why' => 'Calor, gases, espelhos, lentes e radiação: a outra metade da Física que o ENEM cobra.'],
                 ['subject' => 'quimica-basica', 'name' => 'Química', 'why' => 'Átomos, ligações, reações e soluções: do que as coisas são feitas e como se transformam.'],
                 ['subject' => 'quimica-organica', 'name' => 'Química orgânica', 'why' => 'Cadeias de carbono, funções, combustíveis e plásticos: o assunto de Química que mais cai.'],
+                ['subject' => 'fisico-quimica', 'name' => 'Físico-química', 'why' => 'Mol, estequiometria, energia, equilíbrio, pH e pilhas: as contas de Química que o ENEM cobra.'],
                 ['subject' => 'biologia-basica', 'name' => 'Biologia', 'why' => 'Célula, herança, evolução, ecologia e corpo humano: a parte que mais cai em Natureza.'],
                 ['subject' => 'corpo-humano-e-saude', 'name' => 'Corpo humano e saúde', 'why' => 'Os sistemas do corpo, a defesa e a saúde pública: o tema de Biologia mais ligado ao dia a dia.'],
                 ['subject' => 'ecologia-e-meio-ambiente', 'name' => 'Ecologia e meio ambiente', 'why' => 'Relações, ciclos, poluição e biodiversidade: o assunto de Biologia que mais cai no ENEM.'],

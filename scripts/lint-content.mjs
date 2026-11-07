@@ -229,6 +229,24 @@ const JARGON = [
   ["termogênico", /(?<!\p{L})termog(ê|e)nic(o|os|a|as)(?!\p{L})/iu, "N"], ["overtraining", /\bovertraining\b/i, "N"],
   ["entorse", /\bentorses?\b/i, "N"], ["distensão muscular", /(?<!\p{L})distens(ão|ões)(?!\p{L})/iu, "N"], ["tendinite", /\btendinites?\b/i, "N"], ["fratura por estresse", /\bfraturas? por estresse\b/i, "N"],
   ["vigorexia", /\bvigorexia\b|(?<!\p{L})dismorfia muscular(?!\p{L})/iu, "N"], ["endorfina", /\bendorfinas?\b/i, "N"],
+  // Físico-química (escopo "D"): herda o "x" da Química básica (átomo, mol, massa molar,
+  // concentração, entalpia…). "Rendimento" e "pureza" entram porque, nesta matéria, são conta.
+  ["constante de Avogadro", /(?<!\p{L})Avogadro(?!\p{L})/u, "D"], ["volume molar", /\bvolumes? molar(es)?\b/i, "D"],
+  ["estequiometria", /\bestequiometria\b|(?<!\p{L})estequiom(é|e)tric(o|a|os|as)(?!\p{L})/iu, "D"],
+  ["reagente limitante", /\blimitantes?\b/i, "D"], ["rendimento", /\brendimentos?\b/i, "D"], ["pureza", /\bpureza\b/i, "D"],
+  ["mol/L", /\bmol\/L\b/, "D"], ["título em massa", /(?<!\p{L})t(í|i)tulo em massa(?!\p{L})/iu, "D"], ["ppm", /\bppm\b/i, "D"],
+  ["lei de Hess", /\blei de Hess\b/i, "D"], ["entalpia de formação", /(?<!\p{L})entalpias? de forma(ç|c)(ão|ões)(?!\p{L})/iu, "D"],
+  ["energia de ligação", /(?<!\p{L})energias? de liga(ç|c)(ão|ões)(?!\p{L})/iu, "D"],
+  ["colisão efetiva", /(?<!\p{L})colis(ão|ões) efetivas?(?!\p{L})/iu, "D"], ["complexo ativado", /\bcomplexos? ativados?\b/i, "D"],
+  ["constante de equilíbrio", /(?<!\p{L})constantes? de equil(í|i)brio(?!\p{L})|\bKc\b/u, "D"], ["princípio de Le Chatelier", /\bLe Chatelier\b/i, "D"],
+  ["pOH", /\bpOH\b/, "D"], ["produto iônico da água", /(?<!\p{L})produto i(ô|o)nico(?!\p{L})|\bKw\b/u, "D"],
+  ["solução-tampão", /(?<!\p{L})tamp(ão|ões)(?!\p{L})/iu, "D"],
+  ["ânodo e cátodo", /(?<!\p{L})(â|a)nodos?(?!\p{L})|(?<!\p{L})c(á|a)todos?(?!\p{L})/iu, "D"], ["ponte salina", /\bpontes? salinas?\b/i, "D"],
+  ["potencial de redução", /(?<!\p{L})potencia(l|is) (padrão )?de redu(ç|c)(ão|ões)(?!\p{L})/iu, "D"], ["ddp", /\bddp\b/i, "D"],
+  ["metal de sacrifício", /(?<!\p{L})(metal|metais) de sacrif(í|i)cio(?!\p{L})/iu, "D"], ["galvanoplastia", /\bgalvanoplastia\b/i, "D"],
+  ["constante de Faraday", /\bFaraday\b/, "D"], ["propriedade coligativa", /(?<!\p{L})coligativ(a|as|o|os)(?!\p{L})/iu, "D"],
+  ["tonoscopia", /\btonoscopia\b/i, "D"], ["ebulioscopia", /\bebulioscopia\b/i, "D"], ["crioscopia", /\bcrioscopia\b/i, "D"],
+  ["osmose", /\bosmoses?\b|(?<!\p{L})osm(ó|o)tic(a|o|as|os)(?!\p{L})/iu, "D"], ["pressão de vapor", /(?<!\p{L})press(ão|ões) de vapor(?!\p{L})/iu, "D"],
   // Contagem e probabilidade (escopo "K"): herda o "m" e o "d" (probabilidade, espaço amostral,
   // princípio multiplicativo, fatorial, permutação). "Evento" e "combinação" são palavras de todo dia,
   // e mesmo assim entram: na matéria elas quase só aparecem no sentido técnico.
@@ -855,7 +873,7 @@ const JARGON = [
   ["cooler", /\bcoolers?\b|\bwater cooler\b/i, "h"], ["80 Plus", /\b80 Plus\b/i, "h"], ["fonte modular", /\bmodular(es)?\b/i, "h"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG", "historia-do-brasil": "iH", "geografia-do-brasil": "oB", "corpo-humano-e-saude": "bC", "quimica-organica": "xO", "termodinamica-optica-e-fisica-moderna": "fT", "sociedade-brasileira": "jS", "autores-de-filosofia": "zF", "leitura-em-ingles-enem": "wR", "leitura-em-espanhol-enem": "uP", "informatica-para-concursos": "kI", "musica": "AM", "treino-saude-e-alimentacao": "EN", "interpretacao-de-texto": "tQ", "ecologia-e-meio-ambiente": "bV", "contagem-e-probabilidade": "mdK" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG", "historia-do-brasil": "iH", "geografia-do-brasil": "oB", "corpo-humano-e-saude": "bC", "quimica-organica": "xO", "termodinamica-optica-e-fisica-moderna": "fT", "sociedade-brasileira": "jS", "autores-de-filosofia": "zF", "leitura-em-ingles-enem": "wR", "leitura-em-espanhol-enem": "uP", "informatica-para-concursos": "kI", "musica": "AM", "treino-saude-e-alimentacao": "EN", "interpretacao-de-texto": "tQ", "ecologia-e-meio-ambiente": "bV", "contagem-e-probabilidade": "mdK", "fisico-quimica": "xD" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;

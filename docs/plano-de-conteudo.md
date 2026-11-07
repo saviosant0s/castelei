@@ -35,7 +35,7 @@ nasceu para o Sávio.
 | Português | Português (18), Produção Textual (7), Literatura brasileira (13), Interpretação de texto (12) | — |
 | Matemática | Matemática Básica (18), Matemática do dia a dia (13), Lógica (15), Geometria e trigonometria (13), Contagem e probabilidade (12) | Álgebra Linear, Cálculo, Probabilidade e Estatística (trilha de LLMs) |
 | Física | Física (13), Termodinâmica, óptica e física moderna (12) | — |
-| Química | Química (13), Química orgânica (12) | — |
+| Química | Química (13), Química orgânica (12), Físico-química (12) | — |
 | Biologia | Biologia (12), Corpo humano e saúde (13), Ecologia e meio ambiente (12) | — |
 | História | História (12), História do Brasil (13) | — |
 | Geografia | Geografia (12), Geografia do Brasil (13) | — |
@@ -47,7 +47,7 @@ nasceu para o Sávio.
 | Educação Física | Educação Física (12), Treino, saúde e alimentação (12) | — |
 | Informática | Informática básica (12), Informática para concursos (12) | Sistemas Operacionais (33, o semestre do Sávio), Servidores (22), Refatoração (17, projeto de extensão), Programação com Python (14, candidata a pública depois de revisar), Redes Neurais e as duas de LLMs, Montar um PC (15) |
 
-São 34 públicas e 11 privadas. As trilhas estão na seção "Trilhas básicas
+São 35 públicas e 11 privadas. As trilhas estão na seção "Trilhas básicas
 planejadas", abaixo.
 
 ## A régua do básico
@@ -278,7 +278,7 @@ escrever.
 | **Base para provas** | Português → Matemática Básica → Matemática do dia a dia → Lógica → Produção Textual | **No ar** |
 | ENEM: Linguagens | Português → Interpretação de texto → Literatura brasileira → Produção Textual → Inglês → Leitura em inglês para o ENEM → Artes → Música → Educação Física | **No ar**, completa |
 | ENEM: Matemática | Matemática Básica → Matemática do dia a dia → Geometria e trigonometria → Contagem e probabilidade → Lógica | **No ar**, completa |
-| ENEM: Natureza | Física → Termodinâmica, óptica e física moderna → Química → Química orgânica → Biologia → Corpo humano e saúde → Ecologia e meio ambiente | **No ar**, completa |
+| ENEM: Natureza | Física → Termodinâmica, óptica e física moderna → Química → Química orgânica → Físico-química → Biologia → Corpo humano e saúde → Ecologia e meio ambiente | **No ar**, completa |
 | ENEM: Humanas | História → História do Brasil → Geografia → Geografia do Brasil → Filosofia → Os filósofos que mais caem → Sociologia → Sociedade brasileira | **No ar**, completa |
 | Concursos de nível médio | Português → Interpretação de texto → Lógica → Matemática Básica → Informática básica → Informática para concursos | **No ar**, completa |
 | Primeiros passos na informática | Informática básica → Montar um PC → Python | Planejada; Montar um PC e Python ainda privadas |
@@ -317,7 +317,7 @@ lista é a proposta; o recorte pode mudar ao escrever.
 | 1 | Português | Interpretação de texto (feita: 12 lições em três módulos, com os níveis) | É a maior parte da prova de Linguagens, e a básica só tem uma lição dela |
 | 2 | Biologia | Ecologia e meio ambiente (feita: 12 lições em três módulos, com os níveis) | O tema de Biologia que mais cai no ENEM; a básica tem duas lições |
 | 3 | Matemática | Contagem e probabilidade (feita: 12 lições em três módulos, com os níveis) | Análise combinatória e probabilidade a fundo, que a do dia a dia só abre |
-| 4 | Química | Físico-química | Estequiometria, soluções, energia, velocidade, equilíbrio e pilhas com conta |
+| 4 | Química | Físico-química (feita: 12 lições em três módulos, com os níveis) | Estequiometria, soluções, energia, velocidade, equilíbrio e pilhas com conta |
 | 5 | Física | Eletricidade, magnetismo e ondas | Circuitos, consumo, indução e ondas: a parte de Física que vem com situação de casa |
 | 6 | História | História contemporânea | Do imperialismo à globalização: a história do mundo que explica o de hoje |
 | 7 | Geografia | Geopolítica e mundo atual | Blocos, conflitos, migrações e a ordem mundial depois da Guerra Fria |

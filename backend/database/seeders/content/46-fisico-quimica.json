@@ -1,0 +1,4643 @@
+{
+  "slug": "fisico-quimica",
+  "name": "Físico-química",
+  "area": "quimica",
+  "description": "As contas da Química que o ENEM cobra: o mol a fundo, a estequiometria, o reagente limitante, a concentração e a diluição, a lei de Hess e a energia de ligação, a velocidade e o equilíbrio, o pH, as pilhas, a eletrólise e as propriedades coligativas. Supõe a Química básica.",
+  "lessons": [
+    {
+      "slug": "mol-avogadro-e-volume-molar",
+      "title": "O mol a fundo: Avogadro, massa molar e volume molar",
+      "module": "Quantidades",
+      "summary": "Átomos são pequenos demais para contar um a um, e por isso a Química conta por mol. A lição mostra a constante de Avogadro, como achar a massa molar, como passar de gramas para mols e o volume de um mol de gás.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A dúzia dos químicos",
+          "body": [
+            "Ninguém conta ovos um por um no mercado: compra-se uma dúzia, que são 12. A Química faz o mesmo com os átomos, só que o pacote é enorme."
+          ],
+          "terms": [
+            {
+              "word": "átomo",
+              "meaning": "a menor parte de um elemento químico, como o hidrogênio ou o oxigênio."
+            },
+            {
+              "word": "molécula",
+              "meaning": "um grupo de átomos ligados, como a água: dois hidrogênios e um oxigênio."
+            },
+            {
+              "word": "mol",
+              "meaning": "a quantidade que reúne 6,02 × 10²³ partículas, como a dúzia reúne 12."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Por que um número tão grande",
+          "body": [
+            "Um gole de água, uns 18 g, tem cerca de 6,02 × 10²³ moléculas. É esse o tamanho do pacote, e o número tem nome."
+          ],
+          "terms": [
+            {
+              "word": "constante de Avogadro",
+              "meaning": "o número de partículas num mol: cerca de 6,02 × 10²³."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A massa molar pela tabela",
+          "body": [
+            "Some as massas dos átomos da fórmula, com os valores da tabela periódica. O resultado, em gramas, é a massa de um mol."
+          ],
+          "terms": [
+            {
+              "word": "massa molar",
+              "meaning": "a massa de um mol de uma substância, em gramas por mol. A da água é 18 g/mol."
+            }
+          ],
+          "table": {
+            "label": "Massas para a conta",
+            "headers": [
+              "Substância",
+              "Conta",
+              "Massa molar"
+            ],
+            "rows": [
+              [
+                "água, H₂O",
+                "2 × 1 + 16",
+                "18 g/mol"
+              ],
+              [
+                "gás carbônico, CO₂",
+                "12 + 2 × 16",
+                "44 g/mol"
+              ],
+              [
+                "sal de cozinha, NaCl",
+                "23 + 35,5",
+                "58,5 g/mol"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "De gramas para mols",
+          "body": [
+            "Para saber quantos mols há numa massa, divida a massa pela massa molar."
+          ],
+          "example": {
+            "label": "Exemplos",
+            "lines": [
+              "36 g de água ÷ 18 g/mol = 2 mol.",
+              "88 g de gás carbônico ÷ 44 g/mol = 2 mol.",
+              "9 g de água ÷ 18 g/mol = 0,5 mol."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "De mols para partículas",
+          "body": [
+            "Multiplique os mols por 6,02 × 10²³. Cuidado com o que se conta: moléculas ou átomos."
+          ],
+          "example": {
+            "label": "Em 1 mol de água",
+            "lines": [
+              "Moléculas de água: 6,02 × 10²³.",
+              "Átomos de hidrogênio: 2 mol, ou 1,2 × 10²⁴.",
+              "Átomos ao todo: 3 mol, cerca de 1,8 × 10²⁴."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O volume de um mol de gás",
+          "body": [
+            "Na mesma temperatura e pressão, um mol de qualquer gás ocupa o mesmo volume. Não importa se é leve como o hidrogênio ou pesado como o gás carbônico.",
+            "Algumas tabelas novas usam 22,7 L, com outra pressão. A prova diz qual valor usar."
+          ],
+          "terms": [
+            {
+              "word": "volume molar",
+              "meaning": "o volume que um mol de qualquer gás ocupa. A 0 °C e 1 atm, as provas usam 22,4 L."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá a massa e pede os mols, o número de moléculas ou o volume do gás. As massas dos átomos vêm no enunciado."
+          ],
+          "bullets": [
+            "“Quantas moléculas existem em 9 g de água?”",
+            "“O volume ocupado por 88 g de CO₂ nas condições normais é…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Esquecer de multiplicar pelo número de átomos da fórmula (o 2 do H₂O).",
+            "Contar moléculas quando a pergunta pede átomos.",
+            "Achar que gás mais pesado ocupa mais volume.",
+            "Multiplicar a massa pela massa molar, em vez de dividir."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Um mol tem 6,02 × 10²³ partículas. A massa molar sai da soma das massas dos átomos.",
+            "Mols = massa ÷ massa molar. A 0 °C e 1 atm, um mol de qualquer gás ocupa 22,4 L."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Avogadro",
+          "statement": "Um mol de qualquer substância tem cerca de:",
+          "options": [
+            "6,02 × 10²³ partículas",
+            "12 partículas",
+            "1 000 partículas",
+            "22,4 partículas",
+            "6,02 partículas"
+          ],
+          "correct_index": 0,
+          "explanation": "É a constante de Avogadro.",
+          "pitfall": "“12 partículas” é a dúzia, e não o mol."
+        },
+        {
+          "topic": "Água",
+          "statement": "A massa molar da água (H = 1, O = 16) é:",
+          "options": [
+            "18 g/mol",
+            "17 g/mol",
+            "16 g/mol",
+            "34 g/mol",
+            "9 g/mol"
+          ],
+          "correct_index": 0,
+          "explanation": "2 × 1 + 16.",
+          "pitfall": "“17 g/mol” contou um hidrogênio só."
+        },
+        {
+          "topic": "36 g",
+          "statement": "Quantos mols há em 36 g de água (18 g/mol)?",
+          "options": [
+            "2",
+            "18",
+            "0,5",
+            "36",
+            "648"
+          ],
+          "correct_index": 0,
+          "explanation": "36 ÷ 18.",
+          "pitfall": "“648” multiplicou em vez de dividir."
+        },
+        {
+          "topic": "CO₂",
+          "statement": "A massa molar do CO₂ (C = 12, O = 16) é:",
+          "options": [
+            "44 g/mol",
+            "28 g/mol",
+            "40 g/mol",
+            "60 g/mol",
+            "32 g/mol"
+          ],
+          "correct_index": 0,
+          "explanation": "12 + 2 × 16.",
+          "pitfall": "“28 g/mol” contou um oxigênio só."
+        },
+        {
+          "topic": "Volume",
+          "statement": "A 0 °C e 1 atm, um mol de gás oxigênio ocupa:",
+          "options": [
+            "22,4 L",
+            "32 L",
+            "1 L",
+            "6,02 L",
+            "16 L"
+          ],
+          "correct_index": 0,
+          "explanation": "Vale para qualquer gás nessas condições.",
+          "pitfall": "“32 L” confundiu a massa molar com o volume."
+        },
+        {
+          "topic": "Hidrogênios",
+          "statement": "Em 1 mol de água, quantos mols de átomos de hidrogênio há?",
+          "options": [
+            "2",
+            "1",
+            "3",
+            "18",
+            "0,5"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada molécula tem dois hidrogênios.",
+          "pitfall": "“3” contou todos os átomos, e não só os de hidrogênio."
+        },
+        {
+          "topic": "Caminho",
+          "format": "order",
+          "statement": "Ponha na ordem o caminho de uma massa até o número de moléculas.",
+          "options": [
+            "Somar as massas dos átomos para achar a massa molar",
+            "Dividir a massa pela massa molar para achar os mols",
+            "Multiplicar os mols por 6,02 × 10²³"
+          ],
+          "explanation": "Massa molar, mols e partículas.",
+          "pitfall": "Multiplicar por 6,02 × 10²³ antes de achar os mols mistura as unidades."
+        },
+        {
+          "topic": "Mesmo volume",
+          "statement": "A 0 °C e 1 atm, 1 mol de hidrogênio e 1 mol de gás carbônico ocupam:",
+          "options": [
+            "o mesmo volume, 22,4 L",
+            "volumes diferentes, porque as massas são diferentes",
+            "o hidrogênio ocupa mais",
+            "o gás carbônico ocupa mais",
+            "nenhum volume"
+          ],
+          "correct_index": 0,
+          "explanation": "O volume de um mol de gás não depende de qual é o gás.",
+          "pitfall": "“Volumes diferentes, porque as massas são diferentes” confunde massa com volume."
+        },
+        {
+          "topic": "Sal",
+          "statement": "A massa molar do NaCl (Na = 23, Cl = 35,5) é:",
+          "options": [
+            "58,5 g/mol",
+            "12,5 g/mol",
+            "23 g/mol",
+            "35,5 g/mol",
+            "117 g/mol"
+          ],
+          "correct_index": 0,
+          "explanation": "23 + 35,5.",
+          "pitfall": "“117 g/mol” dobrou a conta.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Dúzia",
+          "statement": "O mol é, para os químicos, o que a dúzia é para:",
+          "options": [
+            "contar ovos: um número fixo de coisas",
+            "medir massa",
+            "medir volume",
+            "medir temperatura",
+            "pesar frutas"
+          ],
+          "correct_index": 0,
+          "explanation": "Os dois são pacotes com um número fixo.",
+          "pitfall": "“Medir massa” confunde o mol com a massa molar.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "9 g",
+          "statement": "Quantas moléculas há em 9 g de água (18 g/mol)?",
+          "options": [
+            "3,01 × 10²³",
+            "6,02 × 10²³",
+            "9 × 10²³",
+            "1,2 × 10²⁴",
+            "5,4 × 10²⁴"
+          ],
+          "correct_index": 0,
+          "explanation": "9 ÷ 18 = 0,5 mol; metade de 6,02 × 10²³.",
+          "pitfall": "“6,02 × 10²³” esqueceu que são só 0,5 mol.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "88 g de CO₂",
+          "statement": "Que volume ocupam 88 g de CO₂ (44 g/mol) a 0 °C e 1 atm?",
+          "options": [
+            "44,8 L",
+            "22,4 L",
+            "88 L",
+            "11,2 L",
+            "4,4 L"
+          ],
+          "correct_index": 0,
+          "explanation": "88 ÷ 44 = 2 mol; 2 × 22,4.",
+          "pitfall": "“22,4 L” é o volume de um mol só.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Átomos do CO₂",
+          "statement": "Quantos átomos ao todo há em 1 mol de CO₂?",
+          "options": [
+            "cerca de 1,8 × 10²⁴",
+            "6,02 × 10²³",
+            "1,2 × 10²⁴",
+            "3 × 10²³",
+            "2,6 × 10²⁵"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada molécula tem 3 átomos: 3 × 6,02 × 10²³.",
+          "pitfall": "“6,02 × 10²³” conta as moléculas, e não os átomos: o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Mais moléculas",
+          "statement": "Qual tem mais moléculas: 2 g de gás hidrogênio (H₂, 2 g/mol) ou 32 g de gás oxigênio (O₂, 32 g/mol)?",
+          "options": [
+            "os dois têm o mesmo número, porque cada um é 1 mol",
+            "o oxigênio, porque tem mais massa",
+            "o hidrogênio, porque é mais leve",
+            "nenhum dos dois tem moléculas",
+            "depende do volume do frasco"
+          ],
+          "correct_index": 0,
+          "explanation": "2 ÷ 2 = 1 mol e 32 ÷ 32 = 1 mol.",
+          "pitfall": "“O oxigênio, porque tem mais massa” é o distrator mais fino: mais massa, mas moléculas mais pesadas.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "estequiometria",
+      "title": "Estequiometria: a receita das reações",
+      "module": "Quantidades",
+      "summary": "A equação balanceada é uma receita em mols. A lição mostra como ler essa receita, a conta de mol para mol e de massa para massa, e por que a massa total não muda.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A receita do bolo",
+          "body": [
+            "Uma receita pede 2 ovos por bolo. Para 3 bolos, são 6 ovos. Ninguém precisa decorar: é proporção.",
+            "A equação de uma reação é uma receita assim, com os ingredientes contados em mols."
+          ],
+          "terms": [
+            {
+              "word": "reação química",
+              "meaning": "a transformação em que substâncias viram outras."
+            },
+            {
+              "word": "reagente e produto",
+              "meaning": "reagente é o que entra na reação; produto é o que sai dela."
+            },
+            {
+              "word": "mol",
+              "meaning": "a quantidade que reúne 6,02 × 10²³ partículas, como a dúzia reúne 12."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A equação balanceada é a receita",
+          "body": [
+            "Os números na frente das fórmulas dizem quantos mols de cada substância entram e saem."
+          ],
+          "example": {
+            "label": "A formação da água",
+            "lines": [
+              "2 H₂ + O₂ → 2 H₂O",
+              "2 mol de hidrogênio reagem com 1 mol de oxigênio.",
+              "Formam-se 2 mol de água."
+            ]
+          },
+          "terms": [
+            {
+              "word": "átomo",
+              "meaning": "a menor parte de um elemento químico, como o hidrogênio ou o oxigênio."
+            },
+            {
+              "word": "balanceamento",
+              "meaning": "acertar os números na frente das fórmulas para que cada átomo apareça igual dos dois lados."
+            },
+            {
+              "word": "estequiometria",
+              "meaning": "a conta das quantidades numa reação, feita a partir da equação balanceada."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "De mol para mol",
+          "body": [
+            "Com a receita, a conta é uma regra de três. Se 1 mol de oxigênio dá 2 mol de água, 5 mol dão 10."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "De massa para massa",
+          "body": [
+            "Quando o enunciado dá gramas, faz-se a viagem completa. Os gramas viram mols, os mols seguem a receita e voltam a ser gramas."
+          ],
+          "example": {
+            "label": "Quanta água sai de 4 g de hidrogênio?",
+            "lines": [
+              "4 g de H₂ ÷ 2 g/mol = 2 mol de H₂.",
+              "Pela receita, 2 mol de H₂ formam 2 mol de H₂O.",
+              "2 mol × 18 g/mol = 36 g de água."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "massa molar",
+              "meaning": "a massa de um mol de uma substância, em gramas por mol. A da água é 18 g/mol."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A queima do gás",
+          "body": [
+            "O gás de cozinha e o gás natural queimam com o oxigênio do ar. A conta é a mesma."
+          ],
+          "example": {
+            "label": "Metano queimando",
+            "lines": [
+              "CH₄ + 2 O₂ → CO₂ + 2 H₂O",
+              "16 g de metano (1 mol) consomem 64 g de oxigênio (2 mol).",
+              "Saem 44 g de gás carbônico e 36 g de água."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Nada se perde",
+          "body": [
+            "Em recipiente fechado, a massa dos produtos é igual à dos reagentes. No metano: 16 + 64 = 80, e 44 + 36 = 80.",
+            "É a mesma ideia que deixa o balanceamento fechar: nenhum átomo some, eles só mudam de lugar."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá uma reação do dia a dia (combustão, ferrugem, adubo) e pede a massa de um produto ou de um reagente."
+          ],
+          "bullets": [
+            "“A massa de CO₂ produzida na queima de 32 g de metano é…”",
+            "“Quantos mols de oxigênio são necessários para…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Usar a equação sem balancear.",
+            "Fazer a regra de três com gramas direto, sem passar por mols.",
+            "Ler os números da frente como gramas.",
+            "Esquecer que a massa total se conserva."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A equação balanceada é uma receita em mols. Entre substâncias, a conta é uma regra de três.",
+            "Com gramas: gramas viram mols, os mols seguem a receita, e os mols voltam a ser gramas. A massa total se conserva."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Os números",
+          "statement": "Na equação 2 H₂ + O₂ → 2 H₂O, os números 2, 1 e 2 indicam:",
+          "options": [
+            "a proporção em mols entre as substâncias",
+            "a massa de cada uma em gramas",
+            "o volume em litros de cada uma",
+            "a temperatura da reação",
+            "o número de átomos de cada molécula"
+          ],
+          "correct_index": 0,
+          "explanation": "São os mols da receita.",
+          "pitfall": "“A massa em gramas” ignora que cada substância tem massa molar diferente."
+        },
+        {
+          "topic": "Três de oxigênio",
+          "statement": "Pela equação 2 H₂ + O₂ → 2 H₂O, 3 mol de O₂ formam:",
+          "options": [
+            "6 mol de água",
+            "3 mol de água",
+            "2 mol de água",
+            "1,5 mol de água",
+            "9 mol de água"
+          ],
+          "correct_index": 0,
+          "explanation": "1 mol de O₂ dá 2 mol de água; 3 dão 6.",
+          "pitfall": "“3 mol” ignorou a proporção de 1 para 2."
+        },
+        {
+          "topic": "Definição",
+          "statement": "Estequiometria é:",
+          "options": [
+            "a conta das quantidades numa reação, a partir da equação balanceada",
+            "o estudo da velocidade das reações",
+            "a medida do calor de uma reação",
+            "a separação de misturas",
+            "a contagem de prótons de um átomo"
+          ],
+          "correct_index": 0,
+          "explanation": "É a conta da receita.",
+          "pitfall": "“A velocidade” é outro assunto da Físico-química."
+        },
+        {
+          "topic": "Metano e oxigênio",
+          "statement": "Na queima CH₄ + 2 O₂ → CO₂ + 2 H₂O, 1 mol de metano consome quantos mols de oxigênio?",
+          "options": [
+            "2",
+            "1",
+            "4",
+            "0,5",
+            "3"
+          ],
+          "correct_index": 0,
+          "explanation": "É o 2 na frente do O₂.",
+          "pitfall": "“1” leu a equação sem os números da frente."
+        },
+        {
+          "topic": "Gás carbônico",
+          "statement": "Pela mesma equação, 16 g de metano (16 g/mol) produzem quanto gás carbônico (44 g/mol)?",
+          "options": [
+            "44 g",
+            "16 g",
+            "22 g",
+            "88 g",
+            "32 g"
+          ],
+          "correct_index": 0,
+          "explanation": "1 mol de metano dá 1 mol de CO₂, que pesa 44 g.",
+          "pitfall": "“16 g” achou que a massa passa igual de um para o outro."
+        },
+        {
+          "topic": "Massa total",
+          "statement": "Numa reação em recipiente fechado, a massa dos produtos é:",
+          "options": [
+            "igual à massa dos reagentes",
+            "sempre maior",
+            "sempre menor",
+            "zero",
+            "o dobro"
+          ],
+          "correct_index": 0,
+          "explanation": "Os átomos só mudam de lugar.",
+          "pitfall": "“Sempre menor” pensa no gás que escapa quando o recipiente é aberto."
+        },
+        {
+          "topic": "Massa para massa",
+          "format": "order",
+          "statement": "Ponha na ordem a conta de massa para massa.",
+          "options": [
+            "Balancear a equação",
+            "Passar a massa dada para mols",
+            "Usar a proporção da equação",
+            "Passar os mols do que se quer para gramas"
+          ],
+          "explanation": "A viagem completa: receita, mols, proporção e gramas.",
+          "pitfall": "Usar a proporção antes de passar para mols mistura gramas com mols."
+        },
+        {
+          "topic": "4 g de hidrogênio",
+          "statement": "Quanta água se forma com 4 g de H₂ (2 g/mol), pela equação 2 H₂ + O₂ → 2 H₂O?",
+          "options": [
+            "36 g",
+            "18 g",
+            "4 g",
+            "72 g",
+            "2 g"
+          ],
+          "correct_index": 0,
+          "explanation": "4 g = 2 mol de H₂ → 2 mol de água → 36 g.",
+          "pitfall": "“18 g” é a massa de um mol só."
+        },
+        {
+          "topic": "Antes da conta",
+          "statement": "Antes de fazer a conta de uma reação, a equação precisa estar:",
+          "options": [
+            "balanceada",
+            "aquecida",
+            "invertida",
+            "dividida por dois",
+            "escrita em gramas"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem balancear, a receita está errada.",
+          "pitfall": "“Escrita em gramas” confunde a equação com a conta.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Proporção",
+          "statement": "Se 1 mol de A forma 2 mol de B, então 4 mol de A formam:",
+          "options": [
+            "8 mol de B",
+            "4 mol de B",
+            "2 mol de B",
+            "6 mol de B",
+            "16 mol de B"
+          ],
+          "correct_index": 0,
+          "explanation": "É o dobro: 4 × 2.",
+          "pitfall": "“16” elevou ao quadrado.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Amônia",
+          "statement": "Pela equação N₂ + 3 H₂ → 2 NH₃, quantos mols de amônia se formam com 6 mol de H₂?",
+          "options": [
+            "4",
+            "6",
+            "2",
+            "12",
+            "3"
+          ],
+          "correct_index": 0,
+          "explanation": "3 de H₂ dão 2 de NH₃; 6 dão 4.",
+          "pitfall": "“12” multiplicou 6 por 2 sem dividir por 3.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Oxigênio do metano",
+          "statement": "Na queima CH₄ + 2 O₂ → CO₂ + 2 H₂O, quantos gramas de oxigênio (32 g/mol) são consumidos por 32 g de metano (16 g/mol)?",
+          "options": [
+            "128 g",
+            "64 g",
+            "32 g",
+            "256 g",
+            "16 g"
+          ],
+          "correct_index": 0,
+          "explanation": "32 g de metano são 2 mol, que pedem 4 mol de O₂: 4 × 32.",
+          "pitfall": "“64 g” usou 1 mol de metano, e não 2.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Ferrugem",
+          "statement": "A ferrugem se forma por 4 Fe + 3 O₂ → 2 Fe₂O₃. Quantos mols de oxigênio reagem com 2 mol de ferro?",
+          "options": [
+            "1,5",
+            "3",
+            "2",
+            "0,75",
+            "6"
+          ],
+          "correct_index": 0,
+          "explanation": "4 de ferro pedem 3 de oxigênio; 2 pedem metade: 1,5.",
+          "pitfall": "“3” leu o número da equação sem fazer a proporção: o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Litros de gás",
+          "statement": "Pela equação CH₄ + 2 O₂ → CO₂ + 2 H₂O, quantos litros de CO₂ saem da queima de 8 g de metano (16 g/mol)? Considere 0 °C e 1 atm, com 22,4 L por mol de gás.",
+          "options": [
+            "11,2 L",
+            "22,4 L",
+            "44,8 L",
+            "5,6 L",
+            "8 L"
+          ],
+          "correct_index": 0,
+          "explanation": "8 g são 0,5 mol de metano, que dão 0,5 mol de CO₂: 0,5 × 22,4.",
+          "pitfall": "“22,4 L” supôs 1 mol de metano: o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "limitante-rendimento-e-pureza",
+      "title": "Reagente limitante, rendimento e pureza",
+      "module": "Quantidades",
+      "summary": "Na vida real, um reagente acaba antes do outro, a reação não dá tudo o que a conta prevê e a matéria-prima tem impureza. A lição mostra como corrigir a conta para cada um desses casos.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Os sanduíches",
+          "body": [
+            "Há 10 pães e 3 fatias de queijo, e cada sanduíche leva 2 pães e 1 fatia. Saem 3 sanduíches, e sobram 4 pães.",
+            "Quem decidiu o número de sanduíches foi o queijo, que acabou primeiro."
+          ],
+          "terms": [
+            {
+              "word": "reagente e produto",
+              "meaning": "reagente é o que entra na reação; produto é o que sai dela."
+            },
+            {
+              "word": "reagente limitante",
+              "meaning": "o reagente que acaba primeiro e para a reação. O outro sobra: é o reagente em excesso."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quem acaba primeiro",
+          "body": [
+            "Divida os mols disponíveis de cada reagente pelo número dele na equação. O menor resultado é o limitante."
+          ],
+          "example": {
+            "label": "2 H₂ + O₂ → 2 H₂O, com 4 mol de H₂ e 3 mol de O₂",
+            "lines": [
+              "Hidrogênio: 4 ÷ 2 = 2. Oxigênio: 3 ÷ 1 = 3.",
+              "O hidrogênio dá o menor número: ele é o limitante.",
+              "Formam-se 4 mol de água, e sobra 1 mol de oxigênio."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "reação química",
+              "meaning": "a transformação em que substâncias viram outras."
+            },
+            {
+              "word": "mol",
+              "meaning": "a quantidade que reúne 6,02 × 10²³ partículas, como a dúzia reúne 12."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O rendimento",
+          "body": [
+            "Quase nenhuma reação dá 100%. Parte do produto se perde, ou a reação para antes."
+          ],
+          "example": {
+            "label": "Uma conta de rendimento",
+            "lines": [
+              "A conta previa 36 g de água.",
+              "Saíram 27 g.",
+              "Rendimento: 27 ÷ 36 = 0,75, ou 75%."
+            ]
+          },
+          "terms": [
+            {
+              "word": "rendimento",
+              "meaning": "quanto do produto esperado de fato se formou, em porcento."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A pureza",
+          "body": [
+            "A matéria-prima vem misturada com outras coisas. Só a parte pura reage."
+          ],
+          "example": {
+            "label": "Calcário com 80% de pureza",
+            "lines": [
+              "100 g de calcário têm 80 g de CaCO₃ de verdade.",
+              "Pela reação CaCO₃ → CaO + CO₂, 100 g de CaCO₃ puro dariam 44 g de CO₂.",
+              "Com 80 g, saem 0,8 × 44 = 35,2 g de CO₂."
+            ]
+          },
+          "terms": [
+            {
+              "word": "pureza",
+              "meaning": "quanto de uma amostra é mesmo a substância que interessa, em porcento."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Juntando as correções",
+          "body": [
+            "Quando a questão traz tudo junto, a ordem evita erro."
+          ],
+          "example": {
+            "label": "A ordem das correções",
+            "lines": [
+              "Descontar a impureza: achar a massa que reage de verdade.",
+              "Fazer a conta da reação pela equação, com os números certos na frente das fórmulas.",
+              "Aplicar o rendimento ao resultado."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá duas massas de reagentes e pergunta quanto produto sai, ou dá a pureza e o rendimento de um processo industrial."
+          ],
+          "bullets": [
+            "“Considerando que o minério tem 80% de pureza…”",
+            "“Sabendo que o rendimento da reação é de 75%…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que o limitante é o reagente de menor massa.",
+            "Fazer a conta com o reagente em excesso.",
+            "Esquecer a pureza e usar a massa toda da amostra.",
+            "Aplicar o rendimento antes da conta da reação, ou duas vezes."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O limitante acaba primeiro: é o que tem menor resultado em mols ÷ número da equação. O outro sobra.",
+            "A pureza desconta o que não reage; o rendimento desconta o que não se formou. A ordem: pureza, conta e rendimento."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Limitante",
+          "statement": "Reagente limitante é o que:",
+          "options": [
+            "acaba primeiro e para a reação",
+            "sobra no fim",
+            "acelera a reação",
+            "não participa da reação",
+            "tem mais massa"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele decide quanto produto se forma.",
+          "pitfall": "“Sobra no fim” é o reagente em excesso."
+        },
+        {
+          "topic": "Sanduíches",
+          "statement": "Com 10 pães e 3 fatias de queijo, e cada sanduíche levando 2 pães e 1 fatia, quantos sanduíches saem?",
+          "options": [
+            "3",
+            "5",
+            "10",
+            "13",
+            "2"
+          ],
+          "correct_index": 0,
+          "explanation": "O queijo acaba no terceiro.",
+          "pitfall": "“5” olhou só os pães."
+        },
+        {
+          "topic": "O que limita",
+          "statement": "No caso dos sanduíches, o que limita é:",
+          "options": [
+            "o queijo",
+            "o pão",
+            "nada",
+            "os dois ao mesmo tempo",
+            "a faca"
+          ],
+          "correct_index": 0,
+          "explanation": "As 3 fatias acabam antes dos 10 pães.",
+          "pitfall": "“O pão” é o que sobra."
+        },
+        {
+          "topic": "Rendimento",
+          "statement": "Esperavam-se 50 g de produto, e saíram 40 g. O rendimento foi:",
+          "options": [
+            "80%",
+            "40%",
+            "125%",
+            "90%",
+            "10%"
+          ],
+          "correct_index": 0,
+          "explanation": "40 ÷ 50.",
+          "pitfall": "“125%” dividiu ao contrário."
+        },
+        {
+          "topic": "Pureza",
+          "statement": "Uma amostra de 200 g tem 90% de pureza. A massa da substância pura é:",
+          "options": [
+            "180 g",
+            "200 g",
+            "90 g",
+            "20 g",
+            "110 g"
+          ],
+          "correct_index": 0,
+          "explanation": "90% de 200.",
+          "pitfall": "“20 g” é a impureza, e não a parte pura."
+        },
+        {
+          "topic": "Hidrogênio e oxigênio",
+          "statement": "Na reação 2 H₂ + O₂ → 2 H₂O, com 4 mol de H₂ e 3 mol de O₂, o limitante é:",
+          "options": [
+            "o H₂",
+            "o O₂",
+            "a água",
+            "os dois",
+            "nenhum"
+          ],
+          "correct_index": 0,
+          "explanation": "4 ÷ 2 = 2 é menor que 3 ÷ 1 = 3.",
+          "pitfall": "“O O₂” olhou só que há menos mols de oxigênio, sem dividir pelos números da equação."
+        },
+        {
+          "topic": "Correções",
+          "format": "order",
+          "statement": "Ponha na ordem as correções de uma conta com pureza e rendimento.",
+          "options": [
+            "Descontar a impureza: achar a massa que reage de verdade",
+            "Fazer a conta da reação pela equação balanceada",
+            "Aplicar o rendimento ao resultado"
+          ],
+          "explanation": "Primeiro o que entra, depois a conta, depois o que sai.",
+          "pitfall": "O rendimento vem no fim: ele fala do produto, e não do reagente."
+        },
+        {
+          "topic": "Sobra",
+          "statement": "No caso de 4 mol de H₂ e 3 mol de O₂, pela equação 2 H₂ + O₂ → 2 H₂O, sobra:",
+          "options": [
+            "1 mol de O₂",
+            "1 mol de H₂",
+            "2 mol de O₂",
+            "nada",
+            "3 mol de O₂"
+          ],
+          "correct_index": 0,
+          "explanation": "Os 4 mol de H₂ usam 2 mol de O₂; sobram 3 − 2 = 1.",
+          "pitfall": "“1 mol de H₂” troca quem sobra: o hidrogênio é o que acaba."
+        },
+        {
+          "topic": "Excesso",
+          "statement": "O reagente que sobra no fim da reação é chamado:",
+          "options": [
+            "reagente em excesso",
+            "reagente limitante",
+            "produto",
+            "rendimento",
+            "solvente"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele não acabou.",
+          "pitfall": "“Limitante” é o que acabou.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "100%",
+          "statement": "Um rendimento de 100% quer dizer que:",
+          "options": [
+            "formou-se todo o produto que a conta prevê",
+            "não se formou nada",
+            "sobrou metade do reagente",
+            "a reação foi rápida",
+            "a amostra era pura"
+          ],
+          "correct_index": 0,
+          "explanation": "O real igualou o previsto.",
+          "pitfall": "“A amostra era pura” fala de pureza, e não de rendimento.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Água formada",
+          "statement": "Pela reação 2 H₂ + O₂ → 2 H₂O, com 4 mol de H₂ e 3 mol de O₂, quantos mols de água se formam?",
+          "options": [
+            "4",
+            "6",
+            "3",
+            "7",
+            "2"
+          ],
+          "correct_index": 0,
+          "explanation": "Quem manda é o limitante: 4 mol de H₂ dão 4 mol de água.",
+          "pitfall": "“6” fez a conta com o oxigênio, que sobra.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "75%",
+          "statement": "Uma reação deveria dar 36 g de água, mas deu 27 g. O rendimento foi:",
+          "options": [
+            "75%",
+            "27%",
+            "133%",
+            "25%",
+            "36%"
+          ],
+          "correct_index": 0,
+          "explanation": "27 ÷ 36 = 0,75.",
+          "pitfall": "“25%” é o que se perdeu, e não o que se obteve.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Calcário",
+          "statement": "Aquecendo 100 g de calcário com 80% de CaCO₃ (100 g/mol), pela reação CaCO₃ → CaO + CO₂, quanto CO₂ (44 g/mol) se forma?",
+          "options": [
+            "35,2 g",
+            "44 g",
+            "80 g",
+            "20 g",
+            "55 g"
+          ],
+          "correct_index": 0,
+          "explanation": "80 g de CaCO₃ puro são 0,8 mol, que dão 0,8 × 44.",
+          "pitfall": "“44 g” esqueceu a pureza e usou a amostra toda: o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Com rendimento",
+          "statement": "No caso do calcário, com rendimento de 50%, a massa de CO₂ obtida será:",
+          "options": [
+            "17,6 g",
+            "22 g",
+            "35,2 g",
+            "40 g",
+            "8,8 g"
+          ],
+          "correct_index": 0,
+          "explanation": "Metade de 35,2.",
+          "pitfall": "“22 g” aplicou o rendimento e esqueceu a pureza: o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "concentracao-e-diluicao",
+      "title": "Concentração, diluição e mistura de soluções",
+      "module": "Quantidades",
+      "summary": "A mesma quantidade de soluto pode estar forte ou fraca, conforme a água. A lição mostra as quatro formas de dizer a concentração, a conta da diluição e o que acontece quando se misturam duas soluções.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O suco forte demais",
+          "body": [
+            "O suco ficou forte, e você põe mais água. O açúcar do copo é o mesmo; só ficou espalhado em mais líquido.",
+            "Concentração é isso: quanto do que foi dissolvido há em cada parte."
+          ],
+          "terms": [
+            {
+              "word": "soluto e solvente",
+              "meaning": "o soluto é o que se dissolve, como o sal; o solvente é o que dissolve, quase sempre a água."
+            },
+            {
+              "word": "concentração",
+              "meaning": "quanto soluto há em cada parte da solução, como gramas por litro."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Gramas por litro",
+          "body": [
+            "A forma mais simples divide a massa de soluto pelo volume da solução."
+          ],
+          "example": {
+            "label": "Exemplo",
+            "lines": [
+              "20 g de sal em 2 L de solução.",
+              "20 ÷ 2 = 10 g/L."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Mols por litro",
+          "body": [
+            "Em vez de gramas, conta-se o soluto em mols. É a forma que a Química usa nas reações."
+          ],
+          "example": {
+            "label": "Exemplos",
+            "lines": [
+              "58,5 g de NaCl (1 mol) em 1 L: 1 mol/L.",
+              "4 g de NaOH (40 g/mol) em 500 mL: 0,1 mol em 0,5 L, ou 0,2 mol/L."
+            ]
+          },
+          "terms": [
+            {
+              "word": "mol",
+              "meaning": "a quantidade que reúne 6,02 × 10²³ partículas, como a dúzia reúne 12."
+            },
+            {
+              "word": "massa molar",
+              "meaning": "a massa de um mol de uma substância, em gramas por mol. A da água é 18 g/mol."
+            },
+            {
+              "word": "mol/L",
+              "meaning": "a concentração em mols de soluto por litro de solução."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Porcento e partes por milhão",
+          "body": [
+            "Quando o soluto é muito ou muito pouco, outras formas ficam mais práticas."
+          ],
+          "example": {
+            "label": "Exemplos",
+            "lines": [
+              "Solução de açúcar a 10% em massa: 10 g de açúcar em 100 g de solução.",
+              "Água tratada com cerca de 0,7 ppm de flúor: 0,7 mg de flúor em cada kg de água."
+            ]
+          },
+          "terms": [
+            {
+              "word": "título em massa",
+              "meaning": "a parte da massa da solução que é soluto, em porcento. A 10% são 10 g de soluto em 100 g de solução."
+            },
+            {
+              "word": "ppm",
+              "meaning": "partes por milhão: 1 ppm é 1 g de soluto em 1 milhão de gramas de solução, ou 1 mg em 1 kg."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Diluir: o soluto não muda",
+          "body": [
+            "Pôr água não muda a quantidade de soluto, só o volume. Por isso vale C₁ × V₁ = C₂ × V₂."
+          ],
+          "example": {
+            "label": "Uma diluição",
+            "lines": [
+              "100 mL de uma solução a 6 g/L.",
+              "Junta-se água até 300 mL.",
+              "6 × 100 = C₂ × 300, então C₂ = 2 g/L."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Misturar duas soluções",
+          "body": [
+            "Juntando duas soluções do mesmo soluto, somam-se as massas e os volumes. A concentração final fica entre as duas."
+          ],
+          "example": {
+            "label": "Uma mistura",
+            "lines": [
+              "1 L a 10 g/L tem 10 g. 3 L a 30 g/L têm 90 g.",
+              "Juntas: 100 g em 4 L, ou 25 g/L.",
+              "A média simples, 20 g/L, estaria errada: há mais da solução forte."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede a concentração de um remédio, de um soro ou da água tratada. A diluição e a mistura aparecem quase sempre."
+          ],
+          "bullets": [
+            "“Que volume de água deve ser adicionado para…”",
+            "“A concentração, em mol/L, da solução resultante é…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que diluir tira soluto.",
+            "Confundir o volume final com o volume de água acrescentado.",
+            "Fazer a média simples na mistura de volumes diferentes.",
+            "Esquecer de passar mL para L."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Concentração em g/L é massa ÷ volume; em mol/L, mols ÷ volume. Porcento e ppm servem para muito e para pouco soluto.",
+            "Diluindo, o soluto fica igual: C₁ × V₁ = C₂ × V₂. Misturando, somam-se massas e volumes."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "g/L",
+          "statement": "20 g de sal dissolvidos até formar 2 L de solução dão concentração de:",
+          "options": [
+            "10 g/L",
+            "40 g/L",
+            "20 g/L",
+            "22 g/L",
+            "0,1 g/L"
+          ],
+          "correct_index": 0,
+          "explanation": "20 ÷ 2.",
+          "pitfall": "“40 g/L” multiplicou em vez de dividir."
+        },
+        {
+          "topic": "Diluir",
+          "statement": "Ao diluir uma solução, a massa de soluto:",
+          "options": [
+            "fica a mesma, e o volume aumenta",
+            "aumenta",
+            "diminui",
+            "some",
+            "sempre dobra"
+          ],
+          "correct_index": 0,
+          "explanation": "Só se pôs água.",
+          "pitfall": "“Diminui” confunde a concentração com a quantidade."
+        },
+        {
+          "topic": "Diluição",
+          "statement": "100 mL de uma solução a 6 g/L recebem água até completar 300 mL. A nova concentração é:",
+          "options": [
+            "2 g/L",
+            "18 g/L",
+            "3 g/L",
+            "6 g/L",
+            "0,5 g/L"
+          ],
+          "correct_index": 0,
+          "explanation": "6 × 100 = C × 300.",
+          "pitfall": "“18 g/L” multiplicou, como se a solução ficasse mais forte."
+        },
+        {
+          "topic": "10%",
+          "statement": "Uma solução de açúcar a 10% em massa tem, em 100 g de solução:",
+          "options": [
+            "10 g de açúcar",
+            "90 g de açúcar",
+            "100 g de açúcar",
+            "1 g de açúcar",
+            "10 L de açúcar"
+          ],
+          "correct_index": 0,
+          "explanation": "10% de 100 g.",
+          "pitfall": "“90 g” é a água."
+        },
+        {
+          "topic": "mol/L",
+          "statement": "58,5 g de NaCl (58,5 g/mol) em 1 L de solução dão:",
+          "options": [
+            "1 mol/L",
+            "58,5 mol/L",
+            "0,5 mol/L",
+            "2 mol/L",
+            "117 mol/L"
+          ],
+          "correct_index": 0,
+          "explanation": "58,5 g são 1 mol.",
+          "pitfall": "“58,5 mol/L” esqueceu de passar gramas para mols."
+        },
+        {
+          "topic": "ppm",
+          "statement": "1 ppm quer dizer:",
+          "options": [
+            "1 parte de soluto em 1 milhão de partes de solução",
+            "1 por cento",
+            "1 grama por litro",
+            "1 mol por litro",
+            "1 parte em mil"
+          ],
+          "correct_index": 0,
+          "explanation": "Partes por milhão.",
+          "pitfall": "“1 parte em mil” seria mil vezes mais."
+        },
+        {
+          "topic": "Formas",
+          "format": "match",
+          "statement": "Ligue cada forma de concentração ao que ela mede.",
+          "pairs": [
+            {
+              "left": "g/L",
+              "right": "gramas de soluto por litro"
+            },
+            {
+              "left": "mol/L",
+              "right": "mols de soluto por litro"
+            },
+            {
+              "left": "título em massa",
+              "right": "porcento da massa que é soluto"
+            },
+            {
+              "left": "ppm",
+              "right": "partes por milhão"
+            }
+          ],
+          "explanation": "Quatro jeitos de dizer quanto soluto há.",
+          "pitfall": "g/L e mol/L dividem pelo volume; o título divide pela massa."
+        },
+        {
+          "topic": "Mistura igual",
+          "statement": "Misturando 1 L de solução a 10 g/L com 1 L a 20 g/L, do mesmo soluto, a concentração final é:",
+          "options": [
+            "15 g/L",
+            "30 g/L",
+            "10 g/L",
+            "20 g/L",
+            "7,5 g/L"
+          ],
+          "correct_index": 0,
+          "explanation": "30 g em 2 L.",
+          "pitfall": "“30 g/L” somou as concentrações."
+        },
+        {
+          "topic": "Solvente",
+          "statement": "Na água com açúcar, o solvente é:",
+          "options": [
+            "a água",
+            "o açúcar",
+            "o copo",
+            "o ar",
+            "a colher"
+          ],
+          "correct_index": 0,
+          "explanation": "É o que dissolve.",
+          "pitfall": "“O açúcar” é o soluto.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Quanto sal",
+          "statement": "Quanto sal há em 3 L de solução a 5 g/L?",
+          "options": [
+            "15 g",
+            "5 g",
+            "8 g",
+            "0,6 g",
+            "1,67 g"
+          ],
+          "correct_index": 0,
+          "explanation": "5 g em cada litro, 3 litros.",
+          "pitfall": "“1,67 g” dividiu em vez de multiplicar.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "NaOH",
+          "statement": "Quantos gramas de NaOH (40 g/mol) há em 500 mL de solução a 0,2 mol/L?",
+          "options": [
+            "4 g",
+            "8 g",
+            "40 g",
+            "0,4 g",
+            "20 g"
+          ],
+          "correct_index": 0,
+          "explanation": "0,2 × 0,5 = 0,1 mol; 0,1 × 40.",
+          "pitfall": "“8 g” usou 1 L, e não 500 mL.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Flúor",
+          "statement": "Uma água tratada tem 0,7 ppm de flúor. Em 1 kg dessa água há:",
+          "options": [
+            "0,7 mg de flúor",
+            "0,7 g de flúor",
+            "7 mg de flúor",
+            "70 mg de flúor",
+            "0,7 kg de flúor"
+          ],
+          "correct_index": 0,
+          "explanation": "1 ppm é 1 mg por kg.",
+          "pitfall": "“0,7 g” trocou miligrama por grama.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Quanta água",
+          "statement": "Quanta água é preciso juntar a 200 mL de solução a 5 mol/L para que ela fique a 2 mol/L?",
+          "options": [
+            "300 mL",
+            "500 mL",
+            "200 mL",
+            "800 mL",
+            "100 mL"
+          ],
+          "correct_index": 0,
+          "explanation": "5 × 200 = 2 × V, V = 500 mL; faltam 300 mL.",
+          "pitfall": "“500 mL” é o volume final, e não a água acrescentada: o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Mistura desigual",
+          "statement": "Mistura-se 1 L de solução a 10 g/L com 3 L a 30 g/L, do mesmo soluto. A concentração final é:",
+          "options": [
+            "25 g/L",
+            "20 g/L",
+            "40 g/L",
+            "30 g/L",
+            "10 g/L"
+          ],
+          "correct_index": 0,
+          "explanation": "10 g + 90 g = 100 g em 4 L.",
+          "pitfall": "“20 g/L” fez a média simples, sem pesar os volumes: o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "lei-de-hess",
+      "title": "Lei de Hess: a energia só olha o começo e o fim",
+      "module": "Energia, velocidade e equilíbrio",
+      "summary": "O calor de uma reação não depende do caminho. A lição mostra o sinal do ΔH e a soma das etapas pela lei de Hess. Depois, o que fazer ao inverter ou multiplicar uma equação e a conta pelas entalpias de formação.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Duas trilhas para o mesmo morro",
+          "body": [
+            "Duas trilhas levam ao alto do mesmo morro: uma curta e íngreme, outra longa e suave. As duas sobem a mesma altura.",
+            "Na Química, a energia de uma reação funciona assim. Só importa onde ela começa e onde termina."
+          ],
+          "terms": [
+            {
+              "word": "reação química",
+              "meaning": "a transformação em que substâncias viram outras."
+            },
+            {
+              "word": "entalpia",
+              "meaning": "a energia guardada nas substâncias. A variação dela numa reação se escreve ΔH, em kJ (o quilojoule, mil joules)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O sinal do ΔH",
+          "body": [
+            "ΔH negativo quer dizer que a energia saiu: a reação esquenta o ambiente. ΔH positivo quer dizer que a energia entrou: a reação esfria o ambiente."
+          ],
+          "terms": [
+            {
+              "word": "exotérmica e endotérmica",
+              "meaning": "a exotérmica solta calor e tem ΔH negativo; a endotérmica absorve calor e tem ΔH positivo."
+            },
+            {
+              "word": "combustão",
+              "meaning": "a queima: a reação de uma substância com o oxigênio, que solta calor."
+            }
+          ],
+          "table": {
+            "label": "Do dia a dia",
+            "headers": [
+              "Reação",
+              "ΔH",
+              "O que se sente"
+            ],
+            "rows": [
+              [
+                "queimar o gás de cozinha",
+                "negativo",
+                "a panela esquenta"
+              ],
+              [
+                "a bolsa de gelo instantâneo",
+                "positivo",
+                "a bolsa esfria"
+              ],
+              [
+                "a fotossíntese das plantas",
+                "positivo",
+                "a planta usa a luz do sol"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A lei de Hess",
+          "body": [
+            "Quando uma reação acontece em etapas, o ΔH total é a soma dos ΔH de cada etapa. O resultado é o mesmo por qualquer caminho."
+          ],
+          "example": {
+            "label": "Do carbono ao gás carbônico, em duas etapas",
+            "lines": [
+              "C + ½ O₂ → CO: ΔH = −110,5 kJ.",
+              "CO + ½ O₂ → CO₂: ΔH = −283 kJ.",
+              "Somando as duas: C + O₂ → CO₂, com ΔH = −393,5 kJ."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "lei de Hess",
+              "meaning": "o ΔH de uma reação é a soma dos ΔH das etapas, por qualquer caminho."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Mexer nas equações",
+          "body": [
+            "Para a soma dar a reação pedida, às vezes é preciso virar ou multiplicar uma etapa. O ΔH acompanha a mexida.",
+            "Se A → B tem ΔH = +50 kJ, então B → A tem −50 kJ. E 2 A → 2 B tem +100 kJ."
+          ],
+          "table": {
+            "label": "O que acontece com o ΔH",
+            "headers": [
+              "O que se faz com a equação",
+              "O ΔH"
+            ],
+            "rows": [
+              [
+                "inverter os lados",
+                "troca de sinal"
+              ],
+              [
+                "multiplicar por 2",
+                "dobra"
+              ],
+              [
+                "dividir por 2",
+                "cai à metade"
+              ],
+              [
+                "somar duas equações",
+                "somam-se os dois ΔH"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A conta pelas entalpias de formação",
+          "body": [
+            "Cada substância tem uma entalpia de formação, que vem tabelada. A conta é: ΔH = soma dos produtos − soma dos reagentes.",
+            "Substância simples na forma mais comum, como o O₂, vale zero. Os números na frente das fórmulas multiplicam os valores."
+          ],
+          "example": {
+            "label": "A queima do metano: CH₄ + 2 O₂ → CO₂ + 2 H₂O",
+            "lines": [
+              "Tabela, em kJ/mol: CH₄ = −75, CO₂ = −394, H₂O = −286 e O₂ = 0.",
+              "Produtos: −394 + 2 × (−286) = −966 kJ.",
+              "Reagentes: −75 + 0 = −75 kJ.",
+              "ΔH = −966 − (−75) = −891 kJ."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "mol",
+              "meaning": "a quantidade que reúne 6,02 × 10²³ partículas, como a dúzia reúne 12."
+            },
+            {
+              "word": "reagente e produto",
+              "meaning": "reagente é o que entra na reação; produto é o que sai dela."
+            },
+            {
+              "word": "entalpia de formação",
+              "meaning": "o ΔH para formar 1 mol de uma substância a partir das substâncias simples, como o carbono e o O₂."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá duas ou três equações com o ΔH de cada uma e pede o da reação final. Ou dá a tabela das entalpias de formação e pede o calor de uma combustão."
+          ],
+          "bullets": [
+            "“Com base nas equações, o ΔH de formação do CO₂ é…”",
+            "“A combustão de 1 mol de metano libera…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Inverter a equação e esquecer de trocar o sinal do ΔH.",
+            "Multiplicar a equação e não multiplicar o ΔH.",
+            "Fazer reagentes menos produtos, em vez de produtos menos reagentes.",
+            "Dar ao O₂ um valor diferente de zero."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "ΔH negativo solta calor; positivo absorve. Pela lei de Hess, o ΔH total é a soma das etapas.",
+            "Inverter troca o sinal, e multiplicar multiplica. Pelas entalpias de formação: produtos menos reagentes."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Sinal",
+          "statement": "Uma reação com ΔH = −200 kJ é:",
+          "options": [
+            "exotérmica: solta calor",
+            "endotérmica: absorve calor",
+            "uma reação que não troca calor",
+            "sempre lenta",
+            "sempre explosiva"
+          ],
+          "correct_index": 0,
+          "explanation": "ΔH negativo quer dizer energia saindo.",
+          "pitfall": "“Endotérmica” inverteu o sinal."
+        },
+        {
+          "topic": "Inverter",
+          "statement": "Se A → B tem ΔH = +80 kJ, a reação B → A tem:",
+          "options": [
+            "−80 kJ",
+            "+80 kJ",
+            "+160 kJ",
+            "−40 kJ",
+            "0 kJ"
+          ],
+          "correct_index": 0,
+          "explanation": "Inverter a equação troca o sinal.",
+          "pitfall": "“+80 kJ” esqueceu de trocar o sinal."
+        },
+        {
+          "topic": "Dobrar",
+          "statement": "Se A → B tem ΔH = −30 kJ, a reação 2 A → 2 B tem:",
+          "options": [
+            "−60 kJ",
+            "−30 kJ",
+            "+60 kJ",
+            "−15 kJ",
+            "+30 kJ"
+          ],
+          "correct_index": 0,
+          "explanation": "Multiplicar a equação multiplica o ΔH.",
+          "pitfall": "“−30 kJ” multiplicou a equação e não o ΔH."
+        },
+        {
+          "topic": "Duas etapas",
+          "statement": "C + ½ O₂ → CO tem ΔH = −110,5 kJ, e CO + ½ O₂ → CO₂ tem ΔH = −283 kJ. O ΔH de C + O₂ → CO₂ é:",
+          "options": [
+            "−393,5 kJ",
+            "−172,5 kJ",
+            "+393,5 kJ",
+            "−283 kJ",
+            "−110,5 kJ"
+          ],
+          "correct_index": 0,
+          "explanation": "Somam-se as etapas: −110,5 + (−283).",
+          "pitfall": "“−172,5 kJ” subtraiu em vez de somar."
+        },
+        {
+          "topic": "Substância simples",
+          "statement": "Nas tabelas, a entalpia de formação do O₂ é:",
+          "options": [
+            "zero, porque é substância simples",
+            "−394 kJ/mol",
+            "+286 kJ/mol",
+            "igual à da água",
+            "sempre negativa"
+          ],
+          "correct_index": 0,
+          "explanation": "Substância simples na forma mais comum vale zero.",
+          "pitfall": "“Sempre negativa” esquece que a tabela começa do zero."
+        },
+        {
+          "topic": "Metano",
+          "statement": "Com CH₄ = −75, CO₂ = −394 e H₂O = −286 (kJ/mol), o ΔH de CH₄ + 2 O₂ → CO₂ + 2 H₂O é:",
+          "options": [
+            "−891 kJ",
+            "−605 kJ",
+            "+891 kJ",
+            "−755 kJ",
+            "−966 kJ"
+          ],
+          "correct_index": 0,
+          "explanation": "Produtos: −394 + 2 × (−286) = −966. Reagentes: −75. ΔH = −966 − (−75).",
+          "pitfall": "“−966 kJ” esqueceu de descontar os reagentes."
+        },
+        {
+          "topic": "Mexidas",
+          "format": "match",
+          "statement": "Ligue o que se faz com a equação ao que acontece com o ΔH.",
+          "pairs": [
+            {
+              "left": "inverter a equação",
+              "right": "troca de sinal"
+            },
+            {
+              "left": "multiplicar por 3",
+              "right": "fica três vezes maior"
+            },
+            {
+              "left": "dividir por 2",
+              "right": "cai à metade"
+            },
+            {
+              "left": "somar duas equações",
+              "right": "somam-se os dois ΔH"
+            }
+          ],
+          "explanation": "É a regra da lei de Hess.",
+          "pitfall": "Trocar o sinal ao multiplicar mistura as duas regras."
+        },
+        {
+          "topic": "Caminho",
+          "statement": "Pela lei de Hess, o ΔH de uma reação:",
+          "options": [
+            "depende só do começo e do fim",
+            "depende do número de etapas",
+            "é maior quando há mais etapas",
+            "muda com o caminho escolhido",
+            "só existe em reações de uma etapa"
+          ],
+          "correct_index": 0,
+          "explanation": "Como no morro, só importa de onde se sai e aonde se chega.",
+          "pitfall": "“Depende do número de etapas” é justo o que a lei desmente."
+        },
+        {
+          "topic": "Bolsa de gelo",
+          "statement": "A bolsa de gelo instantâneo esfria a mão porque a reação dentro dela é:",
+          "options": [
+            "endotérmica: absorve calor",
+            "exotérmica: solta calor",
+            "uma combustão",
+            "sem troca de calor",
+            "uma reação de formação"
+          ],
+          "correct_index": 0,
+          "explanation": "Absorver o calor da mão é o que esfria.",
+          "pitfall": "“Exotérmica” é a do aquecedor de mão, que esquenta.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Gás de cozinha",
+          "statement": "A queima do gás de cozinha tem ΔH:",
+          "options": [
+            "negativo, porque solta calor",
+            "positivo, porque solta calor",
+            "positivo, porque absorve calor",
+            "igual a zero",
+            "que depende da panela"
+          ],
+          "correct_index": 0,
+          "explanation": "Solta calor: ΔH menor que zero.",
+          "pitfall": "“Positivo, porque solta calor” trocou o sinal.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Metade",
+          "statement": "Se 2 H₂ + O₂ → 2 H₂O tem ΔH = −572 kJ, o ΔH de H₂ + ½ O₂ → H₂O é:",
+          "options": [
+            "−286 kJ",
+            "−572 kJ",
+            "−1 144 kJ",
+            "+286 kJ",
+            "−143 kJ"
+          ],
+          "correct_index": 0,
+          "explanation": "Dividir a equação por 2 divide o ΔH.",
+          "pitfall": "“−572 kJ” dividiu a equação e esqueceu o ΔH.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Inverter e somar",
+          "statement": "A → B tem ΔH = −100 kJ, e C → B tem ΔH = −40 kJ. O ΔH de A → C é:",
+          "options": [
+            "−60 kJ",
+            "−140 kJ",
+            "+60 kJ",
+            "+140 kJ",
+            "−40 kJ"
+          ],
+          "correct_index": 0,
+          "explanation": "Use A → B e inverta a segunda: B → C tem +40 kJ. A soma dá −100 + 40.",
+          "pitfall": "“−140 kJ” somou sem inverter a segunda equação.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Etanol",
+          "statement": "Com C₂H₅OH = −278, CO₂ = −394 e H₂O = −286 (kJ/mol), o ΔH de C₂H₅OH + 3 O₂ → 2 CO₂ + 3 H₂O é:",
+          "options": [
+            "−1 368 kJ",
+            "−1 646 kJ",
+            "−1 924 kJ",
+            "+1 368 kJ",
+            "−402 kJ"
+          ],
+          "correct_index": 0,
+          "explanation": "Produtos: 2 × (−394) + 3 × (−286) = −1 646. Menos os reagentes: −1 646 − (−278).",
+          "pitfall": "“−1 924 kJ” somou os reagentes em vez de descontá-los: o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Enxofre",
+          "statement": "S + O₂ → SO₂ tem ΔH = −297 kJ, e 2 SO₂ + O₂ → 2 SO₃ tem ΔH = −198 kJ. O ΔH de S + 3/2 O₂ → SO₃ é:",
+          "options": [
+            "−396 kJ",
+            "−495 kJ",
+            "−297 kJ",
+            "−99 kJ",
+            "+396 kJ"
+          ],
+          "correct_index": 0,
+          "explanation": "A segunda equação forma 2 SO₃: divida por 2 (−99 kJ) e some com a primeira.",
+          "pitfall": "“−495 kJ” somou a segunda equação inteira, sem dividir por 2: o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "energia-de-ligacao",
+      "title": "Energia de ligação: quebrar custa, formar devolve",
+      "module": "Energia, velocidade e equilíbrio",
+      "summary": "Toda reação desmonta ligações e monta outras. A lição mostra o preço de cada ligação e a conta do ΔH pelas ligações quebradas e formadas. Depois, como contar as ligações e por que a queima esquenta.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O ímã da geladeira",
+          "body": [
+            "Para tirar um ímã da geladeira é preciso fazer força. Quando ele gruda de volta, a energia sai no estalo.",
+            "Com os átomos é igual. Separar custa energia, e juntar devolve."
+          ],
+          "terms": [
+            {
+              "word": "átomo",
+              "meaning": "a menor parte de um elemento químico, como o hidrogênio ou o oxigênio."
+            },
+            {
+              "word": "molécula",
+              "meaning": "um grupo de átomos ligados, como a água: dois hidrogênios e um oxigênio."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O preço de cada ligação",
+          "body": [
+            "Cada ligação tem um preço: a energia para quebrá-la. Ela vem tabelada por mol de ligações."
+          ],
+          "terms": [
+            {
+              "word": "mol",
+              "meaning": "a quantidade que reúne 6,02 × 10²³ partículas, como a dúzia reúne 12."
+            },
+            {
+              "word": "energia de ligação",
+              "meaning": "a energia para quebrar 1 mol de uma ligação entre dois átomos. É a mesma que sai quando a ligação se forma."
+            }
+          ],
+          "table": {
+            "label": "Valores comuns nas provas, em kJ/mol",
+            "headers": [
+              "Ligação",
+              "Energia"
+            ],
+            "rows": [
+              [
+                "H–H",
+                "436"
+              ],
+              [
+                "Cl–Cl",
+                "243"
+              ],
+              [
+                "H–Cl",
+                "432"
+              ],
+              [
+                "C–H",
+                "413"
+              ],
+              [
+                "O=O (dupla)",
+                "498"
+              ],
+              [
+                "C=O (dupla)",
+                "799"
+              ],
+              [
+                "O–H",
+                "463"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A conta",
+          "body": [
+            "ΔH = energia das ligações quebradas − energia das ligações formadas. Quebrar entra somando, porque custa. Formar entra descontando, porque devolve."
+          ],
+          "example": {
+            "label": "H₂ + Cl₂ → 2 HCl",
+            "lines": [
+              "Quebrar nos reagentes: 1 H–H e 1 Cl–Cl, ou 436 + 243 = 679 kJ.",
+              "Formar nos produtos: 2 H–Cl, ou 2 × 432 = 864 kJ.",
+              "ΔH = 679 − 864 = −185 kJ. A reação é exotérmica."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "reagente e produto",
+              "meaning": "reagente é o que entra na reação; produto é o que sai dela."
+            },
+            {
+              "word": "exotérmica e endotérmica",
+              "meaning": "a exotérmica solta calor e tem ΔH negativo; a endotérmica absorve calor e tem ΔH positivo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Contar as ligações certas",
+          "body": [
+            "O erro mais comum é contar errado. Veja quantas ligações há em cada molécula e multiplique pelo número na frente da fórmula."
+          ],
+          "table": {
+            "label": "Ligações de cada molécula",
+            "headers": [
+              "Molécula",
+              "Ligações"
+            ],
+            "rows": [
+              [
+                "H₂",
+                "1 H–H"
+              ],
+              [
+                "O₂",
+                "1 O=O"
+              ],
+              [
+                "CH₄",
+                "4 C–H"
+              ],
+              [
+                "CO₂",
+                "2 C=O"
+              ],
+              [
+                "H₂O",
+                "2 O–H"
+              ],
+              [
+                "2 H₂O",
+                "4 O–H"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Por que a queima esquenta",
+          "body": [
+            "No metano, as ligações novas são mais fortes que as antigas. Sobra energia, e ela sai como calor.",
+            "As energias de ligação são médias, e aqui a água sai como vapor. Por isso a conta dá um valor aproximado."
+          ],
+          "example": {
+            "label": "CH₄ + 2 O₂ → CO₂ + 2 H₂O (vapor)",
+            "lines": [
+              "Quebrar: 4 C–H e 2 O=O, ou 4 × 413 + 2 × 498 = 2 648 kJ.",
+              "Formar: 2 C=O e 4 O–H, ou 2 × 799 + 4 × 463 = 3 450 kJ.",
+              "ΔH = 2 648 − 3 450 = −802 kJ."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá a tabela das energias de ligação e a equação. Pede o ΔH ou se a reação solta ou absorve calor."
+          ],
+          "bullets": [
+            "“Com base nas energias de ligação, o ΔH da reação é…”",
+            "“A reação é exotérmica porque…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Fazer formadas menos quebradas, o que inverte o sinal.",
+            "Esquecer o número na frente da fórmula: 2 HCl são duas ligações H–Cl.",
+            "Achar que quebrar uma ligação libera energia.",
+            "Contar a ligação dupla O=O como duas ligações simples."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Quebrar ligação custa energia; formar devolve a mesma quantidade.",
+            "ΔH = quebradas − formadas. Se as formadas são mais fortes, sobra energia e a reação é exotérmica."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Quebrar",
+          "statement": "Quebrar uma ligação entre dois átomos:",
+          "options": [
+            "absorve energia",
+            "libera energia",
+            "não envolve energia",
+            "forma uma molécula nova",
+            "é sempre exotérmico"
+          ],
+          "correct_index": 0,
+          "explanation": "É preciso dar energia para separar os átomos.",
+          "pitfall": "“Libera energia” é o que acontece ao formar a ligação."
+        },
+        {
+          "topic": "Formar",
+          "statement": "Formar uma ligação entre dois átomos:",
+          "options": [
+            "libera energia",
+            "absorve energia",
+            "não envolve energia",
+            "destrói a molécula",
+            "é sempre endotérmico"
+          ],
+          "correct_index": 0,
+          "explanation": "A energia que custou para quebrar volta ao formar.",
+          "pitfall": "“Absorve energia” trocou formar por quebrar."
+        },
+        {
+          "topic": "A conta",
+          "statement": "Pelas energias de ligação, o ΔH de uma reação é:",
+          "options": [
+            "quebradas menos formadas",
+            "formadas menos quebradas",
+            "quebradas mais formadas",
+            "só a soma das formadas",
+            "só a soma das quebradas"
+          ],
+          "correct_index": 0,
+          "explanation": "Quebrar custa e entra somando; formar devolve e entra descontando.",
+          "pitfall": "“Formadas menos quebradas” inverte o sinal do resultado."
+        },
+        {
+          "topic": "HCl",
+          "statement": "Com H–H = 436, Cl–Cl = 243 e H–Cl = 432 (kJ/mol), o ΔH de H₂ + Cl₂ → 2 HCl é:",
+          "options": [
+            "−185 kJ",
+            "+247 kJ",
+            "−432 kJ",
+            "+185 kJ",
+            "−247 kJ"
+          ],
+          "correct_index": 0,
+          "explanation": "Quebradas: 436 + 243 = 679. Formadas: 2 × 432 = 864. ΔH = 679 − 864.",
+          "pitfall": "“+247 kJ” contou uma H–Cl só, e a equação forma duas."
+        },
+        {
+          "topic": "Água",
+          "statement": "Quantas ligações O–H há em 2 H₂O?",
+          "options": [
+            "4",
+            "2",
+            "1",
+            "3",
+            "6"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada água tem 2 ligações O–H, e são duas moléculas.",
+          "pitfall": "“2” esqueceu o número na frente da fórmula."
+        },
+        {
+          "topic": "Mais fortes",
+          "statement": "Uma reação é exotérmica quando as ligações formadas são:",
+          "options": [
+            "mais fortes que as quebradas",
+            "mais fracas que as quebradas",
+            "iguais às quebradas",
+            "só simples",
+            "só duplas"
+          ],
+          "correct_index": 0,
+          "explanation": "Formar ligações fortes devolve mais energia do que custou quebrar as fracas.",
+          "pitfall": "“Mais fracas que as quebradas” descreve a reação que absorve calor."
+        },
+        {
+          "topic": "Passos",
+          "format": "order",
+          "statement": "Ponha na ordem a conta do ΔH pelas energias de ligação.",
+          "options": [
+            "Contar as ligações quebradas nos reagentes e somar as energias",
+            "Contar as ligações formadas nos produtos e somar as energias",
+            "Fazer quebradas menos formadas"
+          ],
+          "explanation": "Primeiro o custo, depois o que volta, e por fim a diferença.",
+          "pitfall": "Fazer a diferença antes de somar as duas listas deixa a conta pela metade."
+        },
+        {
+          "topic": "Metano",
+          "statement": "Quantas ligações C–H há numa molécula de metano, CH₄?",
+          "options": [
+            "4",
+            "1",
+            "2",
+            "5",
+            "8"
+          ],
+          "correct_index": 0,
+          "explanation": "O carbono se liga a quatro hidrogênios.",
+          "pitfall": "“5” contou o carbono como mais uma ligação."
+        },
+        {
+          "topic": "Ímã",
+          "statement": "O ímã da geladeira mostra que, com os átomos:",
+          "options": [
+            "separar custa energia, e juntar devolve",
+            "juntar custa energia",
+            "separar libera energia",
+            "a energia nunca muda",
+            "só ímãs têm ligação"
+          ],
+          "correct_index": 0,
+          "explanation": "Tirar o ímã exige força; quando ele gruda, a energia sai.",
+          "pitfall": "“Separar libera energia” inverte o que acontece.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "O₂",
+          "statement": "No O₂, a ligação entre os dois oxigênios é:",
+          "options": [
+            "dupla: O=O",
+            "simples: O–O",
+            "tripla",
+            "inexistente",
+            "de hidrogênio"
+          ],
+          "correct_index": 0,
+          "explanation": "Os dois oxigênios dividem uma ligação dupla.",
+          "pitfall": "“Simples: O–O” é o que faz contar a energia errada.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Queima do metano",
+          "statement": "Dados, em kJ/mol: C–H = 413; O=O = 498; C=O = 799; O–H = 463. O ΔH de CH₄ + 2 O₂ → CO₂ + 2 H₂O (vapor) é:",
+          "options": [
+            "−802 kJ",
+            "+802 kJ",
+            "−3 450 kJ",
+            "+124 kJ",
+            "−1 300 kJ"
+          ],
+          "correct_index": 0,
+          "explanation": "Quebradas: 4 × 413 + 2 × 498 = 2 648. Formadas: 2 × 799 + 4 × 463 = 3 450. ΔH = 2 648 − 3 450.",
+          "pitfall": "“+802 kJ” fez formadas menos quebradas.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Custo",
+          "statement": "Em H₂ + Cl₂ → 2 HCl (H–H = 436, Cl–Cl = 243), a energia gasta para quebrar as ligações é:",
+          "options": [
+            "679 kJ",
+            "864 kJ",
+            "436 kJ",
+            "243 kJ",
+            "185 kJ"
+          ],
+          "correct_index": 0,
+          "explanation": "Quebra-se uma H–H e uma Cl–Cl: 436 + 243.",
+          "pitfall": "“864 kJ” é a energia das ligações formadas.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Óxido de nitrogênio",
+          "statement": "Com N≡N = 945, O=O = 498 e N=O = 607 (kJ/mol), o ΔH de N₂ + O₂ → 2 NO é:",
+          "options": [
+            "+229 kJ",
+            "−229 kJ",
+            "+836 kJ",
+            "−1 214 kJ",
+            "+1 443 kJ"
+          ],
+          "correct_index": 0,
+          "explanation": "Quebradas: 945 + 498 = 1 443. Formadas: 2 × 607 = 1 214. ΔH = 1 443 − 1 214.",
+          "pitfall": "“+836 kJ” contou uma ligação N=O só, e a equação forma duas: o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Balanço",
+          "statement": "Numa reação, as ligações quebradas somam 1 000 kJ e as formadas somam 1 200 kJ. A reação:",
+          "options": [
+            "solta 200 kJ: é exotérmica",
+            "absorve 200 kJ: é endotérmica",
+            "solta 2 200 kJ",
+            "absorve 2 200 kJ",
+            "não troca energia"
+          ],
+          "correct_index": 0,
+          "explanation": "ΔH = 1 000 − 1 200 = −200 kJ: sobra energia.",
+          "pitfall": "“Absorve 200 kJ” fez formadas menos quebradas: o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "cinetica-quimica",
+      "title": "Velocidade das reações a fundo: colisões e lei da velocidade",
+      "module": "Energia, velocidade e equilíbrio",
+      "summary": "Por que umas reações levam segundos e outras, anos. A lição mostra a velocidade média e a colisão efetiva. Depois vêm a energia de ativação, o complexo ativado, os fatores que aceleram e a lei da velocidade.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Bater na bolinha certa",
+          "body": [
+            "Num jogo de bolinha de gude, nem toda batida tira a outra do lugar. É preciso força e a mira certa.",
+            "As moléculas são assim. Só a batida forte e bem mirada vira reação."
+          ],
+          "terms": [
+            {
+              "word": "átomo",
+              "meaning": "a menor parte de um elemento químico, como o hidrogênio ou o oxigênio."
+            },
+            {
+              "word": "molécula",
+              "meaning": "um grupo de átomos ligados, como a água: dois hidrogênios e um oxigênio."
+            },
+            {
+              "word": "reação química",
+              "meaning": "a transformação em que substâncias viram outras."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A velocidade média",
+          "body": [
+            "É quanto de um reagente some, ou de um produto aparece, a cada unidade de tempo."
+          ],
+          "example": {
+            "label": "Um exemplo",
+            "lines": [
+              "Em 5 minutos, a massa de um reagente cai de 40 g para 10 g.",
+              "Sumiram 40 − 10 = 30 g.",
+              "Velocidade média: 30 ÷ 5 = 6 g por minuto."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "reagente e produto",
+              "meaning": "reagente é o que entra na reação; produto é o que sai dela."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A batida que conta",
+          "body": [
+            "Para reagir, as moléculas precisam bater com energia suficiente e na posição certa. A energia mínima funciona como uma lombada: o carro sem embalo não passa."
+          ],
+          "terms": [
+            {
+              "word": "colisão efetiva",
+              "meaning": "a batida entre moléculas que vira reação: com energia suficiente e na posição certa."
+            },
+            {
+              "word": "energia de ativação",
+              "meaning": "a energia mínima que a batida precisa ter para a reação começar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O alto da lombada",
+          "body": [
+            "No alto do caminho de energia, os átomos formam um arranjo instável que dura um instante. Dali ele vira produto ou volta a ser reagente.",
+            "A energia de ativação é a distância dos reagentes até esse alto."
+          ],
+          "example": {
+            "label": "Num gráfico de energia",
+            "lines": [
+              "Reagentes a 50 kJ, alto do caminho a 120 kJ e produtos a 20 kJ.",
+              "Energia de ativação: 120 − 50 = 70 kJ.",
+              "ΔH: 20 − 50 = −30 kJ, porque a reação solta calor."
+            ]
+          },
+          "terms": [
+            {
+              "word": "complexo ativado",
+              "meaning": "o arranjo instável no alto do caminho de energia, que dura um instante e pode virar produto ou voltar a ser reagente."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que acelera",
+          "body": [
+            "Quatro fatores aceleram uma reação. Todos aumentam as batidas que contam, ou baixam a lombada.",
+            "O catalisador abre um caminho com a lombada mais baixa. Ele não é gasto e não muda o calor que a reação solta ou absorve."
+          ],
+          "terms": [
+            {
+              "word": "concentração",
+              "meaning": "quanto de uma substância há em cada parte da mistura, como gramas por litro."
+            },
+            {
+              "word": "catalisador",
+              "meaning": "a substância que acelera a reação sem ser gasta nela, como as enzimas do corpo."
+            }
+          ],
+          "table": {
+            "label": "Os quatro fatores",
+            "headers": [
+              "Fator",
+              "Por que acelera",
+              "No dia a dia"
+            ],
+            "rows": [
+              [
+                "temperatura mais alta",
+                "mais batidas, e mais fortes",
+                "a comida estraga fora da geladeira"
+              ],
+              [
+                "superfície de contato maior",
+                "mais partes expostas",
+                "o comprimido em pó dissolve antes"
+              ],
+              [
+                "concentração maior",
+                "mais moléculas no mesmo espaço",
+                "soprar a brasa reaviva o fogo"
+              ],
+              [
+                "catalisador",
+                "lombada mais baixa",
+                "as enzimas digerem o almoço"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A lei da velocidade",
+          "body": [
+            "Em muitas reações, v = k · [A]ⁿ. O k é uma constante, [A] é a concentração do reagente e n é a ordem.",
+            "A ordem se descobre no experimento, e não na equação."
+          ],
+          "table": {
+            "label": "Ao dobrar a concentração",
+            "headers": [
+              "Ordem",
+              "A velocidade",
+              "Ao triplicar"
+            ],
+            "rows": [
+              [
+                "0",
+                "não muda",
+                "não muda"
+              ],
+              [
+                "1",
+                "dobra",
+                "triplica"
+              ],
+              [
+                "2",
+                "fica 4 vezes maior",
+                "fica 9 vezes maior"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mostra um gráfico de energia e pede a energia de ativação. Ou dá uma tabela de experimentos e pede a ordem."
+          ],
+          "bullets": [
+            "“A energia de ativação da reação, em kJ, é…”",
+            "“Ao dobrar a concentração de A, a velocidade quadruplicou. A ordem é…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que o catalisador é gasto na reação.",
+            "Achar que o catalisador muda o calor que a reação solta.",
+            "Medir a energia de ativação a partir dos produtos, e não dos reagentes.",
+            "Tirar a ordem do número na frente da fórmula, sem olhar o experimento."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Só a colisão efetiva vira reação. A energia de ativação é a lombada até o complexo ativado.",
+            "Temperatura, superfície, concentração e catalisador aceleram. A ordem vem do experimento: na ordem 2, dobrar quadruplica."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Velocidade média",
+          "statement": "A massa de um reagente cai de 40 g para 10 g em 5 minutos. A velocidade média é:",
+          "options": [
+            "6 g/min",
+            "8 g/min",
+            "2 g/min",
+            "30 g/min",
+            "10 g/min"
+          ],
+          "correct_index": 0,
+          "explanation": "Sumiram 30 g em 5 minutos: 30 ÷ 5.",
+          "pitfall": "“8 g/min” dividiu a massa inicial, e não o que sumiu."
+        },
+        {
+          "topic": "Batida",
+          "statement": "Para uma batida entre moléculas virar reação, ela precisa:",
+          "options": [
+            "de energia suficiente e da posição certa",
+            "só de energia",
+            "só da posição certa",
+            "sempre de um catalisador",
+            "de luz"
+          ],
+          "correct_index": 0,
+          "explanation": "É a colisão efetiva: força e mira.",
+          "pitfall": "“Só de energia” esquece a posição."
+        },
+        {
+          "topic": "Geladeira",
+          "statement": "A comida dura mais na geladeira porque:",
+          "options": [
+            "a temperatura baixa deixa as reações mais lentas",
+            "o frio mata todas as bactérias",
+            "a geladeira tira o oxigênio",
+            "o frio é um catalisador",
+            "o frio muda a fórmula da comida"
+          ],
+          "correct_index": 0,
+          "explanation": "Menos calor, menos batidas e mais fracas.",
+          "pitfall": "“O frio mata todas as bactérias” exagera: o frio só deixa tudo mais lento."
+        },
+        {
+          "topic": "Pó",
+          "statement": "Um comprimido em pó dissolve antes do inteiro porque:",
+          "options": [
+            "a superfície de contato é maior",
+            "a massa é maior",
+            "a temperatura sobe",
+            "o pó é catalisador",
+            "o pó tem outra fórmula"
+          ],
+          "correct_index": 0,
+          "explanation": "Mais partes expostas, mais batidas.",
+          "pitfall": "“A massa é maior” erra: a massa é a mesma."
+        },
+        {
+          "topic": "Catalisador",
+          "statement": "O catalisador acelera a reação porque:",
+          "options": [
+            "abaixa a energia de ativação",
+            "aumenta a temperatura",
+            "é gasto e vira produto",
+            "muda a energia final dos produtos",
+            "aumenta a concentração"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele abre um caminho com a lombada mais baixa.",
+          "pitfall": "“É gasto e vira produto” erra: o catalisador sai inteiro."
+        },
+        {
+          "topic": "Ordem 1",
+          "statement": "Numa reação de ordem 1, dobrar a concentração do reagente faz a velocidade:",
+          "options": [
+            "dobrar",
+            "quadruplicar",
+            "não mudar",
+            "cair à metade",
+            "triplicar"
+          ],
+          "correct_index": 0,
+          "explanation": "Na ordem 1, a velocidade acompanha a concentração.",
+          "pitfall": "“Quadruplicar” é o que acontece na ordem 2."
+        },
+        {
+          "topic": "Fatores",
+          "format": "match",
+          "statement": "Ligue cada caso ao fator que acelera a reação.",
+          "pairs": [
+            {
+              "left": "a comida estraga fora da geladeira",
+              "right": "temperatura"
+            },
+            {
+              "left": "o comprimido em pó dissolve antes",
+              "right": "superfície de contato"
+            },
+            {
+              "left": "soprar a brasa reaviva o fogo",
+              "right": "concentração de oxigênio"
+            },
+            {
+              "left": "as enzimas digerem o almoço",
+              "right": "catalisador"
+            }
+          ],
+          "explanation": "São os quatro fatores, um em cada caso.",
+          "pitfall": "Ligar a brasa ao catalisador esquece que soprar só traz mais oxigênio."
+        },
+        {
+          "topic": "Alto do caminho",
+          "statement": "O complexo ativado é:",
+          "options": [
+            "o arranjo instável no alto do caminho de energia",
+            "o produto final da reação",
+            "o catalisador depois de gasto",
+            "o reagente que sobra",
+            "o calor que a reação solta"
+          ],
+          "correct_index": 0,
+          "explanation": "Dura um instante e pode virar produto ou voltar.",
+          "pitfall": "“O produto final da reação” confunde o alto do caminho com o fim dele."
+        },
+        {
+          "topic": "Lombada",
+          "statement": "A energia de ativação é como:",
+          "options": [
+            "a lombada que o carro precisa vencer",
+            "o combustível do carro",
+            "a velocidade máxima da estrada",
+            "o destino da viagem",
+            "o tamanho do carro"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem energia suficiente, a batida não passa do alto.",
+          "pitfall": "“O combustível do carro” confunde a barreira com a fonte de energia.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Enzimas",
+          "statement": "As enzimas do corpo funcionam como:",
+          "options": [
+            "catalisadores",
+            "reagentes que somem",
+            "produtos da digestão",
+            "freios das reações",
+            "fontes de calor"
+          ],
+          "correct_index": 0,
+          "explanation": "Aceleram a digestão sem serem gastas.",
+          "pitfall": "“Reagentes que somem” erra: a enzima sai inteira.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Triplicar",
+          "statement": "Numa reação de ordem 2, triplicar a concentração faz a velocidade ficar:",
+          "options": [
+            "9 vezes maior",
+            "3 vezes maior",
+            "6 vezes maior",
+            "27 vezes maior",
+            "igual"
+          ],
+          "correct_index": 0,
+          "explanation": "Na ordem 2: 3² = 9.",
+          "pitfall": "“6 vezes maior” multiplicou 3 por 2, em vez de elevar ao quadrado.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Experimento",
+          "statement": "Num experimento, dobrar a concentração de A quadruplicou a velocidade. A ordem em relação a A é:",
+          "options": [
+            "2",
+            "1",
+            "4",
+            "0",
+            "3"
+          ],
+          "correct_index": 0,
+          "explanation": "2ⁿ = 4, então n = 2.",
+          "pitfall": "“4” confundiu o efeito com a ordem.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Gráfico",
+          "statement": "Num gráfico de energia, os reagentes estão a 50 kJ, o alto do caminho a 120 kJ e os produtos a 20 kJ. A energia de ativação é:",
+          "options": [
+            "70 kJ",
+            "120 kJ",
+            "100 kJ",
+            "30 kJ",
+            "170 kJ"
+          ],
+          "correct_index": 0,
+          "explanation": "Mede-se dos reagentes até o alto: 120 − 50.",
+          "pitfall": "“100 kJ” mediu a partir dos produtos, que é a energia de ativação da volta: o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "O que muda",
+          "statement": "Com um catalisador, o que muda no gráfico de energia?",
+          "options": [
+            "só o alto do caminho, que desce",
+            "a energia dos produtos, que desce",
+            "o calor que a reação solta, que aumenta",
+            "a energia dos reagentes, que sobe",
+            "nada, porque ele só muda a cor"
+          ],
+          "correct_index": 0,
+          "explanation": "O começo e o fim ficam onde estavam; só a lombada baixa.",
+          "pitfall": "“O calor que a reação solta, que aumenta” é o distrator mais fino: o catalisador abre um caminho mais baixo, mas não mexe no começo nem no fim.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "equilibrio-kc-e-le-chatelier",
+      "title": "Equilíbrio a fundo: Kc e o princípio de Le Chatelier",
+      "module": "Energia, velocidade e equilíbrio",
+      "summary": "No equilíbrio a reação não para: ida e volta andam juntas. A lição mostra como escrever e calcular o Kc e o que ele diz. Depois, como o equilíbrio responde a cada mexida e por que só a temperatura muda o Kc.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "As duas escadas rolantes",
+          "body": [
+            "Uma escada rolante sobe e outra desce, com o mesmo fluxo de gente. O andar de cima nunca esvazia nem enche.",
+            "O movimento não para, mas os números ficam iguais. É assim o equilíbrio de uma reação."
+          ],
+          "terms": [
+            {
+              "word": "reação química",
+              "meaning": "a transformação em que substâncias viram outras."
+            },
+            {
+              "word": "equilíbrio químico",
+              "meaning": "o ponto em que a reação de ida e a de volta andam na mesma velocidade, e as quantidades param de mudar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Um número para o equilíbrio",
+          "body": [
+            "Para a A + b B ⇌ c C + d D, o Kc é [C]ᶜ · [D]ᵈ dividido por [A]ᵃ · [B]ᵇ. Os colchetes são as concentrações em mol/L.",
+            "Os números da equação viram expoentes. Sólidos e água pura ficam fora da conta."
+          ],
+          "example": {
+            "label": "A amônia: N₂ + 3 H₂ ⇌ 2 NH₃",
+            "lines": [
+              "Kc = [NH₃]² ÷ ([N₂] · [H₂]³)"
+            ]
+          },
+          "terms": [
+            {
+              "word": "mol",
+              "meaning": "a quantidade que reúne 6,02 × 10²³ partículas, como a dúzia reúne 12."
+            },
+            {
+              "word": "concentração",
+              "meaning": "quanto de uma substância há em cada parte da mistura, como gramas por litro."
+            },
+            {
+              "word": "mol/L",
+              "meaning": "a concentração em mols por litro."
+            },
+            {
+              "word": "reagente e produto",
+              "meaning": "reagente é o que entra na reação; produto é o que sai dela."
+            },
+            {
+              "word": "constante de equilíbrio",
+              "meaning": "o número Kc, feito com as concentrações no equilíbrio: produtos em cima e reagentes embaixo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Calcular e ler o Kc",
+          "body": [
+            "Com as concentrações do equilíbrio, a conta é direta.",
+            "Kc muito maior que 1: no equilíbrio há bem mais produto. Muito menor que 1: bem mais reagente."
+          ],
+          "example": {
+            "label": "H₂ + I₂ ⇌ 2 HI",
+            "lines": [
+              "No equilíbrio: [H₂] = 0,1 e [I₂] = 0,1 e [HI] = 0,8 mol/L.",
+              "Kc = 0,8² ÷ (0,1 × 0,1).",
+              "Kc = 0,64 ÷ 0,01 = 64."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O equilíbrio se defende",
+          "body": [
+            "É como a balança de dois pratos que se acerta sozinha: pôr peso de um lado faz o outro trabalhar."
+          ],
+          "terms": [
+            {
+              "word": "princípio de Le Chatelier",
+              "meaning": "quando se mexe num equilíbrio, ele se desloca para diminuir a mexida."
+            },
+            {
+              "word": "exotérmica e endotérmica",
+              "meaning": "a exotérmica solta calor e tem ΔH negativo; a endotérmica absorve calor e tem ΔH positivo."
+            },
+            {
+              "word": "catalisador",
+              "meaning": "a substância que acelera a reação sem ser gasta nela, como as enzimas do corpo."
+            }
+          ],
+          "table": {
+            "label": "Cada mexida",
+            "headers": [
+              "O que se faz",
+              "Para onde vai"
+            ],
+            "rows": [
+              [
+                "pôr mais reagente",
+                "para os produtos"
+              ],
+              [
+                "tirar produto",
+                "para os produtos"
+              ],
+              [
+                "aumentar a pressão (gases)",
+                "para o lado com menos mols de gás"
+              ],
+              [
+                "esquentar",
+                "para o lado endotérmico"
+              ],
+              [
+                "esfriar",
+                "para o lado exotérmico"
+              ],
+              [
+                "pôr catalisador",
+                "não se desloca: só chega antes"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A fábrica de amônia",
+          "body": [
+            "A amônia dos fertilizantes sai de N₂ + 3 H₂ ⇌ 2 NH₃, que solta calor. A fábrica usa cada regra a seu favor."
+          ],
+          "example": {
+            "label": "As escolhas da fábrica",
+            "lines": [
+              "Pressão alta: de 4 mols de gás para 2, o equilíbrio vai para a amônia.",
+              "Esfriar favoreceria a amônia, mas deixa tudo lento. As fábricas trabalham perto de 450 °C, com catalisador de ferro.",
+              "A amônia é retirada aos poucos, e o equilíbrio continua produzindo."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Só a temperatura muda o Kc",
+          "body": [
+            "Mudar a concentração ou a pressão desloca o equilíbrio, mas o Kc continua o mesmo. Só a temperatura muda o valor dele.",
+            "Em H₂ + I₂ ⇌ 2 HI há 2 mols de gás de cada lado. Mudar a pressão não desloca nada."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede a expressão do Kc, a conta com as concentrações ou para onde vai o equilíbrio depois de uma mexida."
+          ],
+          "bullets": [
+            "“Para aumentar a produção de amônia, deve-se…”",
+            "“O valor da constante de equilíbrio nessas condições é…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que no equilíbrio a reação parou.",
+            "Achar que no equilíbrio as concentrações são iguais.",
+            "Dizer que o catalisador desloca o equilíbrio.",
+            "Dizer que mudar a pressão ou a concentração muda o Kc."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "No equilíbrio, ida e volta andam na mesma velocidade. Kc = produtos sobre reagentes, com os números como expoentes.",
+            "O equilíbrio se desloca para diminuir a mexida. Catalisador não desloca, e só a temperatura muda o Kc."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Dinâmico",
+          "statement": "No equilíbrio químico:",
+          "options": [
+            "as reações de ida e de volta continuam, na mesma velocidade",
+            "a reação para de acontecer",
+            "só existe produto",
+            "as concentrações são sempre iguais",
+            "a reação de volta não existe"
+          ],
+          "correct_index": 0,
+          "explanation": "É como as duas escadas rolantes: o movimento continua.",
+          "pitfall": "“A reação para de acontecer” é o engano clássico: o equilíbrio é dinâmico."
+        },
+        {
+          "topic": "Expressão",
+          "statement": "Para N₂ + 3 H₂ ⇌ 2 NH₃, o Kc é:",
+          "options": [
+            "[NH₃]² ÷ ([N₂] · [H₂]³)",
+            "[N₂] · [H₂]³ ÷ [NH₃]²",
+            "[NH₃] ÷ ([N₂] · [H₂])",
+            "2 [NH₃] ÷ (3 [H₂])",
+            "[NH₃]² · [N₂] · [H₂]³"
+          ],
+          "correct_index": 0,
+          "explanation": "Produtos em cima, reagentes embaixo, e os números como expoentes.",
+          "pitfall": "“[N₂] · [H₂]³ ÷ [NH₃]²” pôs os reagentes em cima."
+        },
+        {
+          "topic": "Calcular",
+          "statement": "No equilíbrio de H₂ + I₂ ⇌ 2 HI: [H₂] = 0,1 e [I₂] = 0,1 e [HI] = 0,8 mol/L. O Kc é:",
+          "options": [
+            "64",
+            "80",
+            "8",
+            "0,64",
+            "16"
+          ],
+          "correct_index": 0,
+          "explanation": "0,8² ÷ (0,1 × 0,1) = 0,64 ÷ 0,01.",
+          "pitfall": "“80” esqueceu de elevar o [HI] ao quadrado."
+        },
+        {
+          "topic": "Kc enorme",
+          "statement": "Um Kc de 10¹⁰ indica que, no equilíbrio, há:",
+          "options": [
+            "muito mais produto que reagente",
+            "muito mais reagente que produto",
+            "quantidades iguais",
+            "nenhum produto",
+            "uma reação que não começa"
+          ],
+          "correct_index": 0,
+          "explanation": "Kc muito maior que 1: os produtos dominam.",
+          "pitfall": "“Muito mais reagente que produto” é o caso de Kc muito menor que 1."
+        },
+        {
+          "topic": "Mais reagente",
+          "statement": "Num equilíbrio, pôr mais reagente faz o equilíbrio ir:",
+          "options": [
+            "para os produtos",
+            "para os reagentes",
+            "para nenhum lado",
+            "para o lado com mais mols",
+            "para o lado exotérmico, sempre"
+          ],
+          "correct_index": 0,
+          "explanation": "O equilíbrio gasta o reagente que sobrou.",
+          "pitfall": "“Para os reagentes” iria aumentar ainda mais a mexida."
+        },
+        {
+          "topic": "Pressão",
+          "statement": "Em 2 SO₂ + O₂ ⇌ 2 SO₃ (todos gases), aumentar a pressão desloca o equilíbrio:",
+          "options": [
+            "para o SO₃, o lado com menos mols de gás",
+            "para o SO₂ e o O₂",
+            "para nenhum lado",
+            "para o lado com mais mols de gás",
+            "e muda o Kc"
+          ],
+          "correct_index": 0,
+          "explanation": "São 3 mols de gás à esquerda e 2 à direita.",
+          "pitfall": "“Para o lado com mais mols de gás” inverte a regra."
+        },
+        {
+          "topic": "Mexidas",
+          "format": "match",
+          "statement": "Ligue cada mexida ao que acontece com o equilíbrio.",
+          "pairs": [
+            {
+              "left": "pôr mais reagente",
+              "right": "forma mais produto"
+            },
+            {
+              "left": "aumentar a pressão",
+              "right": "vai para o lado com menos mols de gás"
+            },
+            {
+              "left": "pôr catalisador",
+              "right": "chega antes, sem se deslocar"
+            },
+            {
+              "left": "esquentar",
+              "right": "vai para o lado endotérmico"
+            }
+          ],
+          "explanation": "É o princípio de Le Chatelier, uma mexida por vez.",
+          "pitfall": "Ligar o catalisador a um deslocamento esquece que ele só apressa a chegada."
+        },
+        {
+          "topic": "Catalisador",
+          "statement": "Um catalisador num equilíbrio:",
+          "options": [
+            "faz chegar antes ao equilíbrio, sem deslocá-lo",
+            "desloca para os produtos",
+            "desloca para os reagentes",
+            "muda o Kc",
+            "acaba com a reação de volta"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele acelera a ida e a volta por igual.",
+          "pitfall": "“Desloca para os produtos” é o engano mais comum."
+        },
+        {
+          "topic": "Escadas",
+          "statement": "As duas escadas rolantes com o mesmo fluxo de gente mostram que, no equilíbrio:",
+          "options": [
+            "o movimento continua, mas as quantidades não mudam",
+            "tudo para",
+            "só uma escada funciona",
+            "o andar de cima esvazia",
+            "o andar de cima enche"
+          ],
+          "correct_index": 0,
+          "explanation": "Ida e volta continuam, na mesma velocidade.",
+          "pitfall": "“Tudo para” é o engano que a imagem desmente.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Tirar amônia",
+          "statement": "Retirar a amônia aos poucos da fábrica faz o equilíbrio:",
+          "options": [
+            "produzir mais amônia",
+            "parar",
+            "produzir menos amônia",
+            "voltar ao N₂ e ao H₂",
+            "mudar o Kc"
+          ],
+          "correct_index": 0,
+          "explanation": "Tirar produto desloca para os produtos.",
+          "pitfall": "“Parar” confunde equilíbrio com reação que acabou.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Pressão sem efeito",
+          "statement": "Em H₂ + I₂ ⇌ 2 HI (todos gases), aumentar a pressão:",
+          "options": [
+            "não desloca, porque há 2 mols de gás de cada lado",
+            "desloca para o HI",
+            "desloca para o H₂ e o I₂",
+            "muda o Kc",
+            "acaba com o equilíbrio"
+          ],
+          "correct_index": 0,
+          "explanation": "Com o mesmo número de mols de gás dos dois lados, a pressão não tem para onde empurrar.",
+          "pitfall": "“Desloca para o HI” aplicou a regra sem contar os mols.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Esquentar",
+          "statement": "Em N₂ + 3 H₂ ⇌ 2 NH₃, que solta calor, esquentar desloca o equilíbrio:",
+          "options": [
+            "para o N₂ e o H₂, o lado endotérmico",
+            "para a amônia",
+            "para nenhum lado",
+            "para o lado com menos mols",
+            "sem mudar o Kc"
+          ],
+          "correct_index": 0,
+          "explanation": "Esquentar favorece o lado que absorve calor: a volta.",
+          "pitfall": "“Para a amônia” esquece que a ida é a exotérmica.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Outra conta",
+          "statement": "Em A ⇌ 2 B, no equilíbrio, [A] = 0,5 e [B] = 1,0 mol/L. O Kc é:",
+          "options": [
+            "2",
+            "0,5",
+            "4",
+            "1",
+            "0,25"
+          ],
+          "correct_index": 0,
+          "explanation": "Kc = [B]² ÷ [A] = 1,0² ÷ 0,5.",
+          "pitfall": "“4” multiplicou pelo 2 da equação em vez de elevar ao quadrado: o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Mais N₂",
+          "statement": "Pôr mais N₂ num equilíbrio de amônia, na mesma temperatura, faz o Kc:",
+          "options": [
+            "continuar o mesmo, embora o equilíbrio se desloque",
+            "aumentar, porque há mais reagente",
+            "diminuir, porque há mais reagente",
+            "dobrar",
+            "zerar"
+          ],
+          "correct_index": 0,
+          "explanation": "O equilíbrio se desloca e as concentrações mudam, mas a razão volta ao mesmo valor.",
+          "pitfall": "“Aumentar, porque há mais reagente” é o distrator mais fino: o equilíbrio se desloca, mas o Kc só muda com a temperatura.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "ph-e-poh",
+      "title": "pH e pOH: a escala da acidez a fundo",
+      "module": "Ácidos, pilhas e soluções",
+      "summary": "Um número diz se uma solução é ácida, neutra ou básica. A lição mostra o que o pH mede e por que cada ponto vale dez vezes. Depois vêm o pOH, a soma 14, o efeito de diluir e o tampão do sangue.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Um termômetro da acidez",
+          "body": [
+            "Um termômetro diz se está frio ou quente com um número só. O pH faz o mesmo com a acidez.",
+            "O suco de limão e o sabão ficam em pontas opostas da mesma régua."
+          ],
+          "terms": [
+            {
+              "word": "ácido",
+              "meaning": "a substância que, na água, solta H⁺: o hidrogênio com carga positiva. O vinagre e o limão são ácidos."
+            },
+            {
+              "word": "base",
+              "meaning": "a substância que, na água, solta OH⁻. O sabão e a soda cáustica são bases."
+            },
+            {
+              "word": "pH",
+              "meaning": "o número que mede a acidez, de 0 a 14: abaixo de 7 é ácido, 7 é neutro e acima de 7 é básico."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que o pH mede",
+          "body": [
+            "O pH conta o H⁺ da solução. Quanto mais H⁺, mais ácida ela é, e menor o pH.",
+            "A conta é pH = −log [H⁺]. Na prática: [H⁺] = 10⁻ˣ mol/L dá pH = x."
+          ],
+          "terms": [
+            {
+              "word": "átomo",
+              "meaning": "a menor parte de um elemento químico, como o hidrogênio ou o oxigênio."
+            },
+            {
+              "word": "íon",
+              "meaning": "um átomo ou grupo de átomos com carga elétrica, como o H⁺, o OH⁻ e o Na⁺."
+            },
+            {
+              "word": "mol",
+              "meaning": "a quantidade que reúne 6,02 × 10²³ partículas, como a dúzia reúne 12."
+            },
+            {
+              "word": "concentração",
+              "meaning": "quanto de uma substância há em cada parte da mistura, como gramas por litro."
+            },
+            {
+              "word": "mol/L",
+              "meaning": "a concentração em mols por litro."
+            }
+          ],
+          "table": {
+            "label": "Da concentração ao pH",
+            "headers": [
+              "[H⁺], em mol/L",
+              "pH"
+            ],
+            "rows": [
+              [
+                "10⁻¹",
+                "1"
+              ],
+              [
+                "10⁻³",
+                "3"
+              ],
+              [
+                "10⁻⁷",
+                "7"
+              ],
+              [
+                "10⁻¹²",
+                "12"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Cada ponto vale dez",
+          "body": [
+            "A escala anda de dez em dez. Uma solução de pH 3 tem dez vezes mais H⁺ que uma de pH 4, e cem vezes mais que uma de pH 5."
+          ],
+          "example": {
+            "label": "Pela casa",
+            "lines": [
+              "Suco de limão: pH perto de 2.",
+              "Café: pH perto de 5.",
+              "Água pura: pH 7.",
+              "Sabão: pH perto de 10.",
+              "Do limão ao café são 3 pontos: mil vezes menos H⁺."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O pOH e a soma 14",
+          "body": [
+            "Na água, H⁺ e OH⁻ convivem. Quando um sobe, o outro desce. A 25 °C, o produto dos dois fica fixo.",
+            "Por isso pH + pOH = 14."
+          ],
+          "example": {
+            "label": "Um exemplo",
+            "lines": [
+              "[OH⁻] = 10⁻³ mol/L: pOH = 3.",
+              "pH = 14 − 3 = 11, uma solução básica."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "produto iônico da água",
+              "meaning": "o Kw: a 25 °C, [H⁺] · [OH⁻] = 10⁻¹⁴."
+            },
+            {
+              "word": "pOH",
+              "meaning": "a mesma conta do pH, feita com o OH⁻: [OH⁻] = 10⁻ˣ mol/L dá pOH = x."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Diluir muda o pH",
+          "body": [
+            "Diluir dez vezes um ácido forte sobe o pH em 1. Mas por mais água que se ponha, ele chega perto de 7 e não passa.",
+            "A água não traz OH⁻ além do dela mesma. Por isso o ácido diluído nunca vira básico."
+          ],
+          "example": {
+            "label": "Um ácido forte, que solta todo o H⁺",
+            "lines": [
+              "Concentração de 0,1 mol/L: pH 1.",
+              "Diluído 10 vezes, 0,01 mol/L: pH 2.",
+              "Diluído 100 vezes: pH 3."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O tampão do sangue",
+          "body": [
+            "Algumas soluções resistem à mudança de pH. O sangue fica perto de 7,4 graças a um tampão.",
+            "Se o pH do sangue sai muito dessa faixa, a pessoa passa mal. O tampão segura o número mesmo quando a comida ou o exercício mexem nele."
+          ],
+          "terms": [
+            {
+              "word": "solução-tampão",
+              "meaning": "a solução que segura o pH quando entra um pouco de ácido ou de base."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá a concentração e pede o pH, ou dá o pH e pergunta quantas vezes mais ácida uma solução é que a outra."
+          ],
+          "bullets": [
+            "“Uma solução com [H⁺] = 10⁻⁴ mol/L tem pH…”",
+            "“Quantas vezes a acidez aumentou quando o pH passou de 6 para 4?”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que pH 3 é só um pouco mais ácido que pH 4, e não dez vezes.",
+            "Responder o pH quando a pergunta pede o pOH.",
+            "Achar que diluir muito um ácido o deixa básico.",
+            "Achar que pH maior quer dizer mais ácido."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "[H⁺] = 10⁻ˣ dá pH = x. Abaixo de 7 é ácido, e cada ponto vale dez vezes.",
+            "pH + pOH = 14. Diluir aproxima de 7 sem passar, e o tampão segura o pH do sangue."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Neutro",
+          "statement": "Uma solução com pH 7, a 25 °C, é:",
+          "options": [
+            "neutra",
+            "ácida",
+            "básica",
+            "muito ácida",
+            "muito básica"
+          ],
+          "correct_index": 0,
+          "explanation": "O 7 é o meio da régua.",
+          "pitfall": "“Ácida” esquece que ácido fica abaixo de 7."
+        },
+        {
+          "topic": "Concentração",
+          "statement": "Uma solução tem [H⁺] = 10⁻³ mol/L. O pH é:",
+          "options": [
+            "3",
+            "−3",
+            "10",
+            "11",
+            "0,001"
+          ],
+          "correct_index": 0,
+          "explanation": "[H⁺] = 10⁻ˣ dá pH = x.",
+          "pitfall": "“11” é o pOH, e a pergunta pede o pH."
+        },
+        {
+          "topic": "Dez vezes",
+          "statement": "Uma solução de pH 3 tem, em relação a uma de pH 4:",
+          "options": [
+            "10 vezes mais H⁺",
+            "1 vez mais H⁺",
+            "3 vezes mais H⁺",
+            "10 vezes menos H⁺",
+            "4 vezes mais H⁺"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada ponto da escala vale dez vezes.",
+          "pitfall": "“10 vezes menos H⁺” inverteu: pH menor é mais ácido."
+        },
+        {
+          "topic": "pOH",
+          "statement": "Uma solução tem pOH = 4. O pH é:",
+          "options": [
+            "10",
+            "4",
+            "14",
+            "18",
+            "7"
+          ],
+          "correct_index": 0,
+          "explanation": "pH + pOH = 14.",
+          "pitfall": "“18” somou em vez de subtrair."
+        },
+        {
+          "topic": "Básico",
+          "statement": "Qual destes pH indica uma solução básica?",
+          "options": [
+            "11",
+            "3",
+            "7",
+            "1",
+            "5"
+          ],
+          "correct_index": 0,
+          "explanation": "Básico é acima de 7.",
+          "pitfall": "“7” é neutro, e não básico."
+        },
+        {
+          "topic": "Diluir",
+          "statement": "Diluir dez vezes uma solução de ácido forte com pH 2 deixa o pH em:",
+          "options": [
+            "3",
+            "1",
+            "20",
+            "0,2",
+            "12"
+          ],
+          "correct_index": 0,
+          "explanation": "Dez vezes mais água, um ponto a mais.",
+          "pitfall": "“1” achou que diluir deixa mais ácido."
+        },
+        {
+          "topic": "Pela casa",
+          "format": "match",
+          "statement": "Ligue cada produto à faixa de pH dele.",
+          "pairs": [
+            {
+              "left": "suco de limão",
+              "right": "ácido, perto de 2"
+            },
+            {
+              "left": "água pura",
+              "right": "neutro, 7"
+            },
+            {
+              "left": "sabão",
+              "right": "básico, perto de 10"
+            },
+            {
+              "left": "soda cáustica",
+              "right": "muito básico, perto de 14"
+            }
+          ],
+          "explanation": "Do mais ácido ao mais básico, na mesma régua.",
+          "pitfall": "Pôr o sabão no lado ácido inverte a régua."
+        },
+        {
+          "topic": "Sangue",
+          "statement": "O sangue fica perto de pH 7,4 porque:",
+          "options": [
+            "tem um tampão que segura o pH",
+            "não tem nenhum ácido",
+            "é água pura",
+            "recebe base o tempo todo",
+            "não tem H⁺"
+          ],
+          "correct_index": 0,
+          "explanation": "O tampão resiste quando entra um pouco de ácido ou de base.",
+          "pitfall": "“Não tem nenhum ácido” erra: o tampão existe justo porque o ácido aparece."
+        },
+        {
+          "topic": "Régua",
+          "statement": "Quanto menor o pH:",
+          "options": [
+            "mais ácida é a solução",
+            "mais básica é a solução",
+            "mais neutra é a solução",
+            "menos H⁺ há",
+            "mais OH⁻ há"
+          ],
+          "correct_index": 0,
+          "explanation": "Mais H⁺, pH menor.",
+          "pitfall": "“Mais básica” inverteu a régua.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Soma",
+          "statement": "A 25 °C, a soma pH + pOH é:",
+          "options": [
+            "14",
+            "7",
+            "10",
+            "0",
+            "1"
+          ],
+          "correct_index": 0,
+          "explanation": "É a regra que sai do produto iônico da água.",
+          "pitfall": "“7” confunde a soma com o ponto neutro.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Limão e café",
+          "statement": "Do suco de limão (pH 2) ao café (pH 5), quantas vezes muda o H⁺?",
+          "options": [
+            "1 000 vezes",
+            "3 vezes",
+            "300 vezes",
+            "100 vezes",
+            "30 vezes"
+          ],
+          "correct_index": 0,
+          "explanation": "São 3 pontos: 10 × 10 × 10.",
+          "pitfall": "“3 vezes” esqueceu que cada ponto vale dez.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Pelo OH⁻",
+          "statement": "Uma solução tem [OH⁻] = 10⁻² mol/L. O pH é:",
+          "options": [
+            "12",
+            "2",
+            "14",
+            "10",
+            "7"
+          ],
+          "correct_index": 0,
+          "explanation": "pOH = 2, então pH = 14 − 2.",
+          "pitfall": "“2” é o pOH, e a pergunta pede o pH.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Muita água",
+          "statement": "Por mais água que se ponha num ácido, o pH:",
+          "options": [
+            "chega perto de 7, mas não passa dele",
+            "passa de 7 e vira básico",
+            "fica sempre igual",
+            "cai para 0",
+            "chega a 14"
+          ],
+          "correct_index": 0,
+          "explanation": "A água não traz OH⁻ além do dela mesma.",
+          "pitfall": "“Passa de 7 e vira básico” é o distrator mais fino: diluir não cria base.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Milésimo",
+          "statement": "A [H⁺] de uma solução é 0,001 mol/L. O pOH é:",
+          "options": [
+            "11",
+            "3",
+            "0,001",
+            "14",
+            "7"
+          ],
+          "correct_index": 0,
+          "explanation": "0,001 = 10⁻³: pH 3, e pOH = 14 − 3.",
+          "pitfall": "“3” é o pH, e a pergunta pede o pOH: o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "pilhas",
+      "title": "Pilhas: a reação que vira corrente",
+      "module": "Ácidos, pilhas e soluções",
+      "summary": "Dentro de uma pilha, um metal entrega elétrons a outro pelo fio. A lição mostra oxidação e redução, a pilha de Daniell, a tabela dos potenciais e a conta da voltagem. Depois vem o metal que se sacrifica para proteger o ferro.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A água que gira o moinho",
+          "body": [
+            "A água que desce do alto gira a roda do moinho. Na pilha, o que desce são elétrons: de um metal que os perde para outro que os ganha.",
+            "No caminho, eles passam pelo fio e acendem a lâmpada."
+          ],
+          "terms": [
+            {
+              "word": "átomo",
+              "meaning": "a menor parte de um elemento químico, como o hidrogênio ou o oxigênio."
+            },
+            {
+              "word": "elétron",
+              "meaning": "a partícula de carga negativa que fica em volta do núcleo do átomo. É ela que corre no fio."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Perder e ganhar",
+          "body": [
+            "Uma não acontece sem a outra: o que um perde, o outro ganha.",
+            "Ao perder dois elétrons, o átomo de zinco vira Zn²⁺ e vai para a água. Ao ganhar dois, o Cu²⁺ da água vira cobre sólido."
+          ],
+          "terms": [
+            {
+              "word": "oxidação e redução",
+              "meaning": "oxidação é perder elétrons; redução é ganhar elétrons."
+            },
+            {
+              "word": "íon",
+              "meaning": "um átomo ou grupo de átomos com carga elétrica, como o H⁺, o OH⁻ e o Na⁺."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A pilha de Daniell",
+          "body": [
+            "São dois copos: zinco numa solução de zinco e cobre numa solução de cobre, ligados por um fio e por um tubo de sal.",
+            "Para lembrar: ânodo e oxidação começam por vogal; cátodo e redução, por consoante."
+          ],
+          "example": {
+            "label": "O que acontece",
+            "lines": [
+              "No ânodo, o zinco se oxida: Zn → Zn²⁺ + 2 e⁻. A placa de zinco se desgasta.",
+              "Os elétrons correm pelo fio do zinco para o cobre.",
+              "No cátodo, o cobre se reduz: Cu²⁺ + 2 e⁻ → Cu. A placa de cobre engorda.",
+              "A ponte salina deixa as cargas passarem entre os copos, e o circuito se fecha."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "ânodo e cátodo",
+              "meaning": "o ânodo é onde acontece a oxidação; o cátodo é onde acontece a redução."
+            },
+            {
+              "word": "ponte salina",
+              "meaning": "o tubo com sal que liga os dois copos da pilha e deixa as cargas passarem."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quem perde e quem ganha",
+          "body": [
+            "Cada metal tem um potencial de redução. Na pilha, quem tem o maior se reduz e quem tem o menor se oxida."
+          ],
+          "terms": [
+            {
+              "word": "potencial de redução",
+              "meaning": "a vontade de um metal de ganhar elétrons, em volts. Vem tabelado."
+            }
+          ],
+          "table": {
+            "label": "Potenciais de redução, em volts",
+            "headers": [
+              "Par",
+              "Potencial"
+            ],
+            "rows": [
+              [
+                "Ag⁺ / Ag (prata)",
+                "+0,80"
+              ],
+              [
+                "Cu²⁺ / Cu (cobre)",
+                "+0,34"
+              ],
+              [
+                "Fe²⁺ / Fe (ferro)",
+                "−0,44"
+              ],
+              [
+                "Zn²⁺ / Zn (zinco)",
+                "−0,76"
+              ],
+              [
+                "Mg²⁺ / Mg (magnésio)",
+                "−2,37"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A voltagem da pilha",
+          "body": [
+            "A voltagem é a diferença entre os dois potenciais: ddp = E maior − E menor. Cuidado com o sinal de menos."
+          ],
+          "example": {
+            "label": "Zinco e cobre",
+            "lines": [
+              "E maior: cobre, +0,34 V.",
+              "E menor: zinco, −0,76 V.",
+              "ddp = 0,34 − (−0,76) = 1,10 V."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "ddp",
+              "meaning": "a diferença de potencial: o empurrão que move os elétrons pelo fio, em volts."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Proteger o ferro",
+          "body": [
+            "O casco de navio leva placas de zinco ou de magnésio. Como o potencial deles é menor que o do ferro, eles se oxidam no lugar dele.",
+            "O ferro galvanizado, coberto de zinco, usa a mesma ideia. Já o cobre encostado no ferro faz o contrário: o ferro enferruja mais rápido."
+          ],
+          "terms": [
+            {
+              "word": "metal de sacrifício",
+              "meaning": "o metal que se oxida no lugar de outro para protegê-lo, porque tem o potencial menor."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá a tabela de potenciais e pede o ânodo, o sentido dos elétrons, a ddp ou qual metal protege outro."
+          ],
+          "bullets": [
+            "“Na pilha formada por zinco e cobre, o polo negativo é…”",
+            "“Para proteger a tubulação de ferro, deve-se ligá-la a…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Trocar ânodo e cátodo.",
+            "Fazer a ddp sem o sinal de menos: 0,76 − 0,34 em vez de 0,34 − (−0,76).",
+            "Achar que os elétrons passam pela ponte salina.",
+            "Escolher como protetor um metal de potencial maior que o do ferro."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Oxidação perde elétrons, no ânodo; redução ganha, no cátodo. Os elétrons vão pelo fio do ânodo para o cátodo.",
+            "Quem tem maior potencial se reduz. ddp = E maior − E menor, e o metal de potencial menor se sacrifica."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Oxidação",
+          "statement": "Oxidação é:",
+          "options": [
+            "perder elétrons",
+            "ganhar elétrons",
+            "perder prótons",
+            "ganhar massa",
+            "ganhar oxigênio, sempre"
+          ],
+          "correct_index": 0,
+          "explanation": "Oxidar é entregar elétrons.",
+          "pitfall": "“Ganhar elétrons” é a redução."
+        },
+        {
+          "topic": "Ânodo",
+          "statement": "Na pilha, o ânodo é onde ocorre:",
+          "options": [
+            "a oxidação",
+            "a redução",
+            "a passagem pela ponte salina",
+            "o ganho de elétrons",
+            "o depósito de metal"
+          ],
+          "correct_index": 0,
+          "explanation": "Ânodo e oxidação começam por vogal.",
+          "pitfall": "“A redução” acontece no cátodo."
+        },
+        {
+          "topic": "Sentido",
+          "statement": "Na pilha de Daniell, os elétrons correm pelo fio:",
+          "options": [
+            "do zinco para o cobre",
+            "do cobre para o zinco",
+            "pela ponte salina",
+            "nos dois sentidos",
+            "só dentro do copo"
+          ],
+          "correct_index": 0,
+          "explanation": "Saem de quem se oxida, o zinco, e chegam a quem se reduz.",
+          "pitfall": "“Do cobre para o zinco” inverteu o sentido."
+        },
+        {
+          "topic": "Placa",
+          "statement": "Na pilha de Daniell, a placa de cobre:",
+          "options": [
+            "engorda, porque o cobre se deposita",
+            "se desgasta",
+            "não muda",
+            "vira gás",
+            "se dissolve na ponte"
+          ],
+          "correct_index": 0,
+          "explanation": "O Cu²⁺ da água ganha elétrons e vira cobre sólido.",
+          "pitfall": "“Se desgasta” é o que acontece com a placa de zinco."
+        },
+        {
+          "topic": "Voltagem",
+          "statement": "Com cobre = +0,34 V e zinco = −0,76 V, a ddp da pilha é:",
+          "options": [
+            "1,10 V",
+            "0,42 V",
+            "−1,10 V",
+            "0,34 V",
+            "0,76 V"
+          ],
+          "correct_index": 0,
+          "explanation": "0,34 − (−0,76) = 1,10.",
+          "pitfall": "“0,42 V” fez a conta sem o sinal de menos."
+        },
+        {
+          "topic": "Ponte salina",
+          "statement": "A ponte salina serve para:",
+          "options": [
+            "deixar as cargas passarem entre os copos e fechar o circuito",
+            "guardar os elétrons",
+            "esquentar a pilha",
+            "fabricar elétrons",
+            "impedir a reação"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem ela, as cargas se acumulam e a pilha para.",
+          "pitfall": "“Guardar os elétrons” erra: os elétrons vão pelo fio."
+        },
+        {
+          "topic": "Caminho",
+          "format": "order",
+          "statement": "Ponha na ordem o que acontece na pilha de Daniell.",
+          "options": [
+            "O zinco perde elétrons e vira Zn²⁺",
+            "Os elétrons correm pelo fio até o cobre",
+            "O Cu²⁺ da solução ganha os elétrons e vira cobre"
+          ],
+          "explanation": "Oxidação, viagem pelo fio e redução.",
+          "pitfall": "Pôr o cobre antes do zinco inverte o sentido dos elétrons."
+        },
+        {
+          "topic": "Quem reduz",
+          "statement": "Numa pilha de prata (+0,80 V) e cobre (+0,34 V), quem se reduz?",
+          "options": [
+            "a prata, que tem o maior potencial",
+            "o cobre, que tem o menor",
+            "os dois",
+            "nenhum dos dois",
+            "quem estiver no copo da esquerda"
+          ],
+          "correct_index": 0,
+          "explanation": "O maior potencial ganha os elétrons.",
+          "pitfall": "“O cobre, que tem o menor” trocou a regra."
+        },
+        {
+          "topic": "Moinho",
+          "statement": "Na imagem do moinho, a água que desce corresponde, na pilha:",
+          "options": [
+            "aos elétrons que correm pelo fio",
+            "à ponte salina",
+            "ao copo",
+            "ao zinco",
+            "à lâmpada"
+          ],
+          "correct_index": 0,
+          "explanation": "Os elétrons descem de quem perde para quem ganha.",
+          "pitfall": "“À ponte salina” confunde o caminho dos elétrons com o das cargas no copo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Consoante",
+          "statement": "Na pilha, a redução acontece no:",
+          "options": [
+            "cátodo",
+            "ânodo",
+            "fio",
+            "ponte salina",
+            "polo de zinco"
+          ],
+          "correct_index": 0,
+          "explanation": "Cátodo e redução começam por consoante.",
+          "pitfall": "“Ânodo” é o lugar da oxidação.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Prata e cobre",
+          "statement": "Com prata = +0,80 V e cobre = +0,34 V, a ddp da pilha é:",
+          "options": [
+            "0,46 V",
+            "1,14 V",
+            "0,80 V",
+            "−0,46 V",
+            "0,34 V"
+          ],
+          "correct_index": 0,
+          "explanation": "0,80 − 0,34.",
+          "pitfall": "“1,14 V” somou os dois potenciais.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Casco",
+          "statement": "Para proteger um casco de ferro (−0,44 V), qual metal serve de sacrifício?",
+          "options": [
+            "magnésio (−2,37 V)",
+            "cobre (+0,34 V)",
+            "prata (+0,80 V)",
+            "ouro (+1,50 V)",
+            "qualquer metal"
+          ],
+          "correct_index": 0,
+          "explanation": "Protege quem tem o potencial menor que o do ferro.",
+          "pitfall": "“Cobre” tem potencial maior e faz o ferro enferrujar mais rápido.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Magnésio e cobre",
+          "statement": "Numa pilha de magnésio (−2,37 V) e cobre (+0,34 V), o ânodo e a ddp são:",
+          "options": [
+            "magnésio, 2,71 V",
+            "cobre, 2,71 V",
+            "magnésio, 2,03 V",
+            "cobre, 2,03 V",
+            "magnésio, −2,71 V"
+          ],
+          "correct_index": 0,
+          "explanation": "O magnésio tem o menor potencial e se oxida. ddp = 0,34 − (−2,37).",
+          "pitfall": "“Magnésio, 2,03 V” fez a conta sem o sinal de menos: o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Prego e fio",
+          "statement": "Um prego de ferro encostado num fio de cobre, na água salgada:",
+          "options": [
+            "enferruja mais rápido, porque o ferro vira o ânodo",
+            "enferruja mais devagar, porque o cobre o protege",
+            "enferruja igual",
+            "nunca enferruja",
+            "faz só o cobre enferrujar"
+          ],
+          "correct_index": 0,
+          "explanation": "O ferro tem potencial menor que o cobre: é ele que se oxida.",
+          "pitfall": "“Mais devagar, porque o cobre o protege” é o distrator mais fino: protege quem tem potencial menor, e o do cobre é maior.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "eletrolise-a-fundo",
+      "title": "Eletrólise a fundo: a corrente que força a reação",
+      "module": "Ácidos, pilhas e soluções",
+      "summary": "Na pilha a reação gera corrente; na eletrólise a corrente força a reação. A lição compara as duas e mostra a eletrólise do sal derretido e a do sal na água. Depois vêm a galvanoplastia e a conta de quanto metal se deposita.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A bomba que sobe a água",
+          "body": [
+            "A água desce o morro sozinha, mas uma bomba pode levá-la de volta para cima. A eletrólise é a bomba.",
+            "A corrente da tomada força uma reação que não aconteceria sozinha."
+          ],
+          "terms": [
+            {
+              "word": "reação química",
+              "meaning": "a transformação em que substâncias viram outras."
+            },
+            {
+              "word": "eletrólise",
+              "meaning": "a reação química forçada por uma corrente elétrica."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Pilha contra eletrólise",
+          "body": [
+            "Nos dois casos, a oxidação fica no ânodo e a redução no cátodo. O que muda é quem manda: a reação ou a corrente."
+          ],
+          "terms": [
+            {
+              "word": "átomo",
+              "meaning": "a menor parte de um elemento químico, como o hidrogênio ou o oxigênio."
+            },
+            {
+              "word": "elétron",
+              "meaning": "a partícula de carga negativa que fica em volta do núcleo do átomo. É ela que corre no fio."
+            },
+            {
+              "word": "oxidação e redução",
+              "meaning": "oxidação é perder elétrons; redução é ganhar elétrons."
+            },
+            {
+              "word": "ânodo e cátodo",
+              "meaning": "o ânodo é onde acontece a oxidação; o cátodo é onde acontece a redução."
+            }
+          ],
+          "table": {
+            "label": "Lado a lado",
+            "headers": [
+              "",
+              "Pilha",
+              "Eletrólise"
+            ],
+            "rows": [
+              [
+                "a reação",
+                "acontece sozinha",
+                "é forçada pela corrente"
+              ],
+              [
+                "a corrente",
+                "sai da pilha",
+                "entra de fora"
+              ],
+              [
+                "o ânodo é o polo",
+                "negativo",
+                "positivo"
+              ],
+              [
+                "no celular",
+                "descarregando",
+                "carregando"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O sal derretido",
+          "body": [
+            "Na eletrólise ígnea, o sal é derretido no fogo, sem água. As partículas de carga ficam soltas e andam até os polos.",
+            "É assim que se tira o alumínio da bauxita, o minério dele."
+          ],
+          "example": {
+            "label": "Sal de cozinha derretido, NaCl",
+            "lines": [
+              "O sal derretido tem Na⁺ e Cl⁻ soltos.",
+              "No cátodo, o Na⁺ ganha um elétron e vira sódio metálico.",
+              "No ânodo, o Cl⁻ perde um elétron e vira gás cloro."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "íon",
+              "meaning": "um átomo ou grupo de átomos com carga elétrica, como o H⁺, o OH⁻ e o Na⁺."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Na água, a água compete",
+          "body": [
+            "Na eletrólise com água, ela também pode reagir. Com sal de cozinha dissolvido, quem ganha os elétrons no cátodo é a água, e não o sódio.",
+            "Por isso o sódio metálico só sai do sal derretido."
+          ],
+          "example": {
+            "label": "Sal de cozinha dissolvido em água",
+            "lines": [
+              "No cátodo: sai gás hidrogênio.",
+              "No ânodo: sai gás cloro.",
+              "Sobra na água a soda cáustica, NaOH."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Banhar de metal",
+          "body": [
+            "A peça vai no cátodo, onde o metal se deposita numa camada fina. O ânodo costuma ser uma placa do mesmo metal, que vai se gastando."
+          ],
+          "example": {
+            "label": "No dia a dia",
+            "lines": [
+              "Bijuteria dourada: banho de ouro.",
+              "Torneira cromada: banho de cromo.",
+              "Talher prateado: banho de prata."
+            ]
+          },
+          "terms": [
+            {
+              "word": "galvanoplastia",
+              "meaning": "cobrir uma peça com uma camada fina de metal, pela eletrólise."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quanto metal se deposita",
+          "body": [
+            "A carga que passa é Q = i · t: a corrente em ampères vezes o tempo em segundos. Dividindo por 96 500, sai o número de mols de elétrons."
+          ],
+          "example": {
+            "label": "Cobre: Cu²⁺ + 2 e⁻ → Cu",
+            "lines": [
+              "Corrente de 10 A por 9 650 s: Q = 96 500 C.",
+              "Isso é 1 mol de elétrons.",
+              "Cada Cu²⁺ precisa de 2 elétrons: forma-se 0,5 mol de cobre.",
+              "0,5 × 63,5 g = 31,75 g de cobre."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "mol",
+              "meaning": "a quantidade que reúne 6,02 × 10²³ partículas, como a dúzia reúne 12."
+            },
+            {
+              "word": "constante de Faraday",
+              "meaning": "a carga de 1 mol de elétrons: cerca de 96 500 C (coulombs)."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pergunta o que sai em cada polo, compara com a pilha ou pede a massa depositada por uma corrente num tempo."
+          ],
+          "bullets": [
+            "“Na eletrólise aquosa do NaCl, forma-se no cátodo…”",
+            "“A massa de cobre depositada por 5 A durante 1 hora é…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que o ânodo é negativo também na eletrólise.",
+            "Esperar sódio metálico da eletrólise do sal dissolvido em água.",
+            "Esquecer que o Cu²⁺ precisa de dois elétrons, e não de um.",
+            "Usar o tempo em minutos na conta Q = i · t."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Na eletrólise, a corrente força a reação. A oxidação continua no ânodo, que agora é o polo positivo.",
+            "Q = i · t, e 96 500 C é 1 mol de elétrons. Divida pelo número de elétrons que cada partícula precisa."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Forçada",
+          "statement": "A eletrólise é uma reação:",
+          "options": [
+            "forçada por corrente elétrica",
+            "que gera corrente",
+            "que acontece sozinha",
+            "sem elétrons",
+            "que só ocorre com água pura"
+          ],
+          "correct_index": 0,
+          "explanation": "A corrente faz o papel da bomba.",
+          "pitfall": "“Que gera corrente” descreve a pilha."
+        },
+        {
+          "topic": "Polo",
+          "statement": "Na eletrólise, o ânodo é o polo:",
+          "options": [
+            "positivo, onde ocorre a oxidação",
+            "negativo, onde ocorre a oxidação",
+            "positivo, onde ocorre a redução",
+            "negativo, onde ocorre a redução",
+            "neutro"
+          ],
+          "correct_index": 0,
+          "explanation": "A oxidação continua no ânodo, mas o sinal do polo se inverte em relação à pilha.",
+          "pitfall": "“Negativo, onde ocorre a oxidação” vale para a pilha, e não para a eletrólise."
+        },
+        {
+          "topic": "Sal derretido",
+          "statement": "Na eletrólise do sal de cozinha derretido, o que sai no cátodo?",
+          "options": [
+            "sódio metálico",
+            "gás cloro",
+            "gás hidrogênio",
+            "água",
+            "soda cáustica"
+          ],
+          "correct_index": 0,
+          "explanation": "O Na⁺ ganha um elétron e vira sódio.",
+          "pitfall": "“Gás cloro” sai no ânodo."
+        },
+        {
+          "topic": "Sal na água",
+          "statement": "Na eletrólise do sal de cozinha dissolvido em água, o que sai no cátodo?",
+          "options": [
+            "gás hidrogênio",
+            "sódio metálico",
+            "gás cloro",
+            "ouro",
+            "nada"
+          ],
+          "correct_index": 0,
+          "explanation": "A água ganha os elétrons antes do sódio.",
+          "pitfall": "“Sódio metálico” só sai do sal derretido."
+        },
+        {
+          "topic": "Peça",
+          "statement": "Na galvanoplastia, a peça a ser coberta fica:",
+          "options": [
+            "no cátodo, onde o metal se deposita",
+            "no ânodo, onde o metal se gasta",
+            "fora do circuito",
+            "na ponte salina",
+            "solta na solução, sem fio"
+          ],
+          "correct_index": 0,
+          "explanation": "O metal da solução ganha elétrons e gruda na peça.",
+          "pitfall": "“No ânodo” é o lugar da placa que se gasta."
+        },
+        {
+          "topic": "Carga",
+          "statement": "Uma corrente de 2 A durante 100 s leva uma carga de:",
+          "options": [
+            "200 C",
+            "50 C",
+            "102 C",
+            "98 C",
+            "2 C"
+          ],
+          "correct_index": 0,
+          "explanation": "Q = i · t = 2 × 100.",
+          "pitfall": "“50 C” dividiu em vez de multiplicar."
+        },
+        {
+          "topic": "Peças",
+          "format": "match",
+          "statement": "Ligue cada termo ao que ele é.",
+          "pairs": [
+            {
+              "left": "ânodo",
+              "right": "onde ocorre a oxidação"
+            },
+            {
+              "left": "cátodo",
+              "right": "onde ocorre a redução"
+            },
+            {
+              "left": "96 500 C",
+              "right": "a carga de 1 mol de elétrons"
+            },
+            {
+              "left": "corrente de fora",
+              "right": "o que força a reação na eletrólise"
+            }
+          ],
+          "explanation": "São as quatro peças da conta e da montagem.",
+          "pitfall": "Trocar ânodo e cátodo é o erro que a prova mais espera."
+        },
+        {
+          "topic": "Alumínio",
+          "statement": "O alumínio é tirado da bauxita por:",
+          "options": [
+            "eletrólise do minério derretido",
+            "pilha de Daniell",
+            "destilação",
+            "filtração",
+            "simples aquecimento, sem corrente"
+          ],
+          "correct_index": 0,
+          "explanation": "Derretido, o minério tem as cargas soltas para a corrente separar.",
+          "pitfall": "“Simples aquecimento, sem corrente” esquece que é a corrente que força a reação."
+        },
+        {
+          "topic": "Bomba",
+          "statement": "Na imagem da bomba que leva a água morro acima, a bomba é:",
+          "options": [
+            "a corrente que força a reação",
+            "o metal que se gasta",
+            "a ponte salina",
+            "a água",
+            "o fio"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem a corrente, a reação não andaria.",
+          "pitfall": "“O metal que se gasta” confunde quem empurra com o que é empurrado.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Celular",
+          "statement": "Carregar a bateria do celular é um exemplo de:",
+          "options": [
+            "reação forçada por corrente, como na eletrólise",
+            "pilha gerando corrente",
+            "reação sem elétrons",
+            "queima",
+            "mistura sem reação"
+          ],
+          "correct_index": 0,
+          "explanation": "A tomada empurra a reação ao contrário.",
+          "pitfall": "“Pilha gerando corrente” é o celular descarregando.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Mols de elétrons",
+          "statement": "Quantos mols de elétrons há em 193 000 C?",
+          "options": [
+            "2",
+            "1",
+            "0,5",
+            "193",
+            "4"
+          ],
+          "correct_index": 0,
+          "explanation": "193 000 ÷ 96 500.",
+          "pitfall": "“0,5” dividiu ao contrário.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Prata",
+          "statement": "Na reação Ag⁺ + 1 e⁻ → Ag, 1 mol de elétrons (96 500 C) deposita quanto de prata (108 g/mol)?",
+          "options": [
+            "108 g",
+            "54 g",
+            "216 g",
+            "96,5 g",
+            "1 g"
+          ],
+          "correct_index": 0,
+          "explanation": "Um elétron por prata: 1 mol de elétrons, 1 mol de prata.",
+          "pitfall": "“54 g” dividiu por 2, como se fosse Cu²⁺.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Cobre",
+          "statement": "Uma corrente de 10 A passa por 9 650 s numa solução de Cu²⁺ (63,5 g/mol). Deposita-se:",
+          "options": [
+            "31,75 g",
+            "63,5 g",
+            "127 g",
+            "15,9 g",
+            "96,5 g"
+          ],
+          "correct_index": 0,
+          "explanation": "Q = 96 500 C, ou 1 mol de elétrons. Com 2 elétrons por Cu²⁺, sai 0,5 mol.",
+          "pitfall": "“63,5 g” esqueceu que o Cu²⁺ precisa de dois elétrons: o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Sem sódio",
+          "statement": "Por que o sódio metálico não sai da eletrólise do sal dissolvido em água?",
+          "options": [
+            "porque a água ganha os elétrons antes, e sai hidrogênio",
+            "porque o sódio vira cloro",
+            "porque não passa corrente na água",
+            "porque o sódio vai para o ânodo",
+            "porque a água vira sal"
+          ],
+          "correct_index": 0,
+          "explanation": "No cátodo, a água compete com o Na⁺ e ganha.",
+          "pitfall": "“Porque não passa corrente na água” é o distrator mais fino: passa, e é a água que reage no cátodo.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "propriedades-coligativas",
+      "title": "Propriedades coligativas: o que o soluto muda na água",
+      "module": "Ácidos, pilhas e soluções",
+      "summary": "Pôr algo dissolvido na água muda a fervura, o congelamento e a evaporação dela. A lição mostra por que conta só o número de partículas e os quatro efeitos. Depois vêm a osmose e a osmose reversa, que tira o sal da água do mar.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O sal na estrada gelada",
+          "body": [
+            "Em países frios, joga-se sal na estrada para o gelo derreter. A água com sal só congela abaixo de 0 °C.",
+            "O sal não esquenta nada. Ele atrapalha a água de virar gelo."
+          ],
+          "terms": [
+            {
+              "word": "soluto e solvente",
+              "meaning": "o soluto é o que se dissolve, como o sal; o solvente é o que dissolve, quase sempre a água."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Conta o número, e não o tipo",
+          "body": [
+            "Esses efeitos dependem só de quantas partículas de soluto há na água. Não importa se é sal, açúcar ou outra coisa.",
+            "Por isso o sal rende mais que o açúcar: cada NaCl vira duas partículas na água, o Na⁺ e o Cl⁻."
+          ],
+          "terms": [
+            {
+              "word": "mol",
+              "meaning": "a quantidade que reúne 6,02 × 10²³ partículas, como a dúzia reúne 12."
+            },
+            {
+              "word": "propriedade coligativa",
+              "meaning": "a propriedade da solução que depende só do número de partículas de soluto, e não de qual soluto é."
+            },
+            {
+              "word": "átomo",
+              "meaning": "a menor parte de um elemento químico, como o hidrogênio ou o oxigênio."
+            },
+            {
+              "word": "íon",
+              "meaning": "um átomo ou grupo de átomos com carga elétrica, como o H⁺, o OH⁻ e o Na⁺."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Menos vapor",
+          "body": [
+            "Na superfície da água, algumas moléculas escapam e viram vapor. Com soluto no caminho, escapam menos."
+          ],
+          "terms": [
+            {
+              "word": "molécula",
+              "meaning": "um grupo de átomos ligados, como a água: dois hidrogênios e um oxigênio."
+            },
+            {
+              "word": "pressão de vapor",
+              "meaning": "a força com que as moléculas que escapam do líquido empurram o ar em cima dele."
+            },
+            {
+              "word": "tonoscopia",
+              "meaning": "a queda da pressão de vapor quando se põe soluto."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Ferve mais quente, congela mais frio",
+          "body": [
+            "Com menos vapor, a água precisa de mais calor para ferver. E o soluto atrapalha a arrumação do gelo, que pede mais frio."
+          ],
+          "terms": [
+            {
+              "word": "ebulioscopia",
+              "meaning": "o aumento da temperatura de fervura quando se põe soluto."
+            },
+            {
+              "word": "crioscopia",
+              "meaning": "a queda da temperatura de congelamento quando se põe soluto."
+            }
+          ],
+          "table": {
+            "label": "Os efeitos",
+            "headers": [
+              "Efeito",
+              "Nome",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "menos vapor",
+                "tonoscopia",
+                "a água com açúcar evapora mais devagar"
+              ],
+              [
+                "ferver acima de 100 °C",
+                "ebulioscopia",
+                "a calda de açúcar ferve bem acima de 100 °C"
+              ],
+              [
+                "congelar abaixo de 0 °C",
+                "crioscopia",
+                "o sal na estrada e o líquido do radiador"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Osmose",
+          "body": [
+            "Uma membrana deixa passar a água, mas segura o soluto. A água atravessa para diluir o lado mais concentrado."
+          ],
+          "example": {
+            "label": "No dia a dia",
+            "lines": [
+              "Salada com sal cedo demais: a água sai da folha, e ela murcha.",
+              "Uva-passa na água: a água entra, e ela incha.",
+              "O soro do hospital tem a concentração do sangue, para as células não murcharem nem incharem."
+            ]
+          },
+          "terms": [
+            {
+              "word": "osmose",
+              "meaning": "a passagem da água por uma membrana, do lado com menos soluto para o lado com mais."
+            },
+            {
+              "word": "concentração",
+              "meaning": "quanto de uma substância há em cada parte da mistura, como gramas por litro."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Osmose reversa",
+          "body": [
+            "Empurrando com muita força, a água vai ao contrário: do lado salgado para o doce. O sal fica preso na membrana.",
+            "É assim que muitas cidades perto do mar tiram o sal da água para beber."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova compara soluções e pergunta qual ferve mais quente ou congela mais frio. Ou mostra um caso de osmose do dia a dia."
+          ],
+          "bullets": [
+            "“Entre as soluções de mesma concentração, a de maior temperatura de ebulição é…”",
+            "“A salada murcha depois de temperada porque…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Contar uma partícula para o NaCl, que vira duas na água.",
+            "Inverter o sentido da osmose.",
+            "Achar que o sal esquenta o gelo para derretê-lo.",
+            "Exagerar o efeito: uma colher de sal no macarrão muda só décimos de grau."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Conta o número de partículas de soluto, e não o tipo. O NaCl vira duas.",
+            "Com soluto, a água evapora menos, ferve mais quente e congela mais frio. Na osmose, a água vai para o lado com mais soluto."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Estrada",
+          "statement": "Joga-se sal na estrada gelada porque a água com sal:",
+          "options": [
+            "congela abaixo de 0 °C",
+            "congela acima de 0 °C",
+            "esquenta sozinha",
+            "vira vapor na hora",
+            "fica mais pesada e afunda o gelo"
+          ],
+          "correct_index": 0,
+          "explanation": "O soluto atrapalha a água de virar gelo.",
+          "pitfall": "“Esquenta sozinha” é o engano clássico: o sal não esquenta nada."
+        },
+        {
+          "topic": "Número",
+          "statement": "As propriedades coligativas dependem:",
+          "options": [
+            "do número de partículas de soluto",
+            "do tipo de soluto",
+            "da cor da solução",
+            "do frasco",
+            "do cheiro do soluto"
+          ],
+          "correct_index": 0,
+          "explanation": "Sal ou açúcar, conta quantas partículas há.",
+          "pitfall": "“Do tipo de soluto” é justo o que a palavra coligativa nega."
+        },
+        {
+          "topic": "Sal e açúcar",
+          "statement": "Com o mesmo número de mols, o que baixa mais o congelamento: sal (NaCl) ou açúcar?",
+          "options": [
+            "o sal, porque cada NaCl vira duas partículas",
+            "o açúcar, porque é mais doce",
+            "os dois, por igual",
+            "nenhum dos dois",
+            "depende da cor"
+          ],
+          "correct_index": 0,
+          "explanation": "Na⁺ e Cl⁻ são duas partículas; o açúcar fica uma só.",
+          "pitfall": "“Os dois, por igual” esquece que o sal se separa na água."
+        },
+        {
+          "topic": "Fervura",
+          "statement": "Ao nível do mar, a água com soluto ferve:",
+          "options": [
+            "acima de 100 °C",
+            "abaixo de 100 °C",
+            "a 100 °C exatos",
+            "sem ferver",
+            "a 0 °C"
+          ],
+          "correct_index": 0,
+          "explanation": "Com menos vapor, ela precisa de mais calor.",
+          "pitfall": "“Abaixo de 100 °C” inverteu o efeito."
+        },
+        {
+          "topic": "Sentido",
+          "statement": "Na osmose, a água passa:",
+          "options": [
+            "do lado com menos soluto para o lado com mais",
+            "do lado com mais soluto para o lado com menos",
+            "nos dois sentidos por igual",
+            "só com calor",
+            "só no escuro"
+          ],
+          "correct_index": 0,
+          "explanation": "A água vai diluir o lado mais concentrado.",
+          "pitfall": "“Do lado com mais soluto para o lado com menos” inverteu o sentido."
+        },
+        {
+          "topic": "Salada",
+          "statement": "A salada temperada com sal cedo demais murcha porque:",
+          "options": [
+            "a água sai das folhas por osmose",
+            "o sal queima a folha",
+            "o sal esquenta a salada",
+            "a folha absorve o sal e incha",
+            "o vinagre evapora"
+          ],
+          "correct_index": 0,
+          "explanation": "Fora da folha há mais soluto, e a água sai para lá.",
+          "pitfall": "“A folha absorve o sal e incha” inverte o que acontece."
+        },
+        {
+          "topic": "Nomes",
+          "format": "match",
+          "statement": "Ligue cada efeito ao nome dele.",
+          "pairs": [
+            {
+              "left": "ferver acima de 100 °C",
+              "right": "ebulioscopia"
+            },
+            {
+              "left": "congelar abaixo de 0 °C",
+              "right": "crioscopia"
+            },
+            {
+              "left": "menos vapor na superfície",
+              "right": "tonoscopia"
+            },
+            {
+              "left": "a água atravessar a membrana",
+              "right": "osmose"
+            }
+          ],
+          "explanation": "Os quatro efeitos do soluto na água.",
+          "pitfall": "Trocar ebulioscopia e crioscopia confunde ferver com congelar."
+        },
+        {
+          "topic": "Mar",
+          "statement": "A osmose reversa serve para:",
+          "options": [
+            "tirar o sal da água do mar",
+            "salgar a água",
+            "ferver a água mais rápido",
+            "congelar a água",
+            "fazer gelo"
+          ],
+          "correct_index": 0,
+          "explanation": "Empurrada com força, a água vai do lado salgado para o doce.",
+          "pitfall": "“Salgar a água” inverteu o objetivo."
+        },
+        {
+          "topic": "Radiador",
+          "statement": "Em lugar frio, o líquido posto no radiador do carro serve para:",
+          "options": [
+            "a água não congelar",
+            "a água ferver antes",
+            "o motor esfriar sozinho",
+            "a água evaporar",
+            "pintar o motor"
+          ],
+          "correct_index": 0,
+          "explanation": "Com soluto, a água congela abaixo de 0 °C.",
+          "pitfall": "“A água ferver antes” inverteu o efeito.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Uva-passa",
+          "statement": "A uva-passa posta na água incha porque:",
+          "options": [
+            "a água entra nela por osmose",
+            "ela perde água",
+            "o açúcar sai e ela cresce",
+            "a água esquenta",
+            "ela congela"
+          ],
+          "correct_index": 0,
+          "explanation": "Dentro da passa há mais soluto, e a água entra.",
+          "pitfall": "“Ela perde água” é o que acontece com a salada.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Soro",
+          "statement": "O soro do hospital tem a mesma concentração do sangue para que as células:",
+          "options": [
+            "não murchem nem inchem",
+            "inchem",
+            "murchem",
+            "fervam",
+            "congelem"
+          ],
+          "correct_index": 0,
+          "explanation": "Concentrações iguais: a água não tem para onde correr.",
+          "pitfall": "“Inchem” é o que faria a água pura.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Partículas",
+          "statement": "Qual tem mais partículas de soluto: 1 mol de açúcar ou 1 mol de NaCl, cada um em 1 L de água?",
+          "options": [
+            "o NaCl, com cerca de 2 mol de partículas",
+            "o açúcar, com 2 mol",
+            "os dois, com 1 mol cada",
+            "o açúcar, com 6 mol",
+            "o NaCl, com 1 mol"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada NaCl vira Na⁺ e Cl⁻.",
+          "pitfall": "“Os dois, com 1 mol cada” esquece que o sal se separa.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Dois sais",
+          "statement": "Com o mesmo número de mols, o que baixa mais o congelamento: NaCl ou CaCl₂?",
+          "options": [
+            "o CaCl₂, que vira 3 partículas",
+            "o NaCl, que vira 2",
+            "os dois por igual, porque são sais",
+            "o NaCl, porque é mais comum",
+            "nenhum dos dois"
+          ],
+          "correct_index": 0,
+          "explanation": "O CaCl₂ vira um Ca²⁺ e dois Cl⁻.",
+          "pitfall": "“Os dois por igual, porque são sais” é o distrator mais fino: conta o número de partículas, e o CaCl₂ solta três.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Macarrão",
+          "statement": "Uma colher de sal na água do macarrão faz a água ferver:",
+          "options": [
+            "só uns décimos de grau acima, quase nada",
+            "10 °C acima, e o macarrão cozinha muito mais rápido",
+            "abaixo de 100 °C",
+            "a 0 °C",
+            "na mesma temperatura, porque o sal não conta"
+          ],
+          "correct_index": 0,
+          "explanation": "O efeito existe, mas a quantidade de sal é pequena para tanta água.",
+          "pitfall": "“10 °C acima” exagera: com uma colher o efeito é de décimos de grau. É o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    }
+  ]
+}
