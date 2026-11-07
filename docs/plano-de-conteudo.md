@@ -263,7 +263,7 @@ escrever.
 | Inglês | Leitura em inglês para o ENEM (feita: 12 lições em três módulos, com os níveis) |
 | Espanhol | Leitura em espanhol para o ENEM (feita: 12 lições em três módulos, com os níveis) |
 | Informática | Informática para concursos (feita: 12 lições em quatro módulos, com os níveis) |
-| Artes | Música |
+| Artes | Música (feita: 12 lições em três módulos, com os níveis) |
 | Educação Física | Treino, saúde e alimentação |
 
 ## Trilhas básicas planejadas

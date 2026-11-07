@@ -202,6 +202,21 @@ const JARGON = [
   ["criptografia simétrica e assimétrica", /(?<!\p{L})(sim|assim)(é|e)tric(a|as)(?!\p{L})/iu, "I"], ["chave pública e privada", /(?<!\p{L})chaves? (p(ú|u)blicas?|privadas?)(?!\p{L})/iu, "I"],
   ["assinatura digital", /\bassinaturas? digita(l|is)\b/i, "I"], ["certificado digital", /\bcertificados? digita(l|is)\b/i, "I"], ["hash", /\bhash(es)?\b/i, "I"],
   ["não repúdio", /(?<!\p{L})n(ã|a)o[- ]rep(ú|u)dio(?!\p{L})/iu, "I"],
+  // Música (escopo "M"): os nomes de teoria, de história e de tecnologia que a matéria explica.
+  ["pulsação", /(?<!\p{L})pulsa(ç|c)(ão|ões)(?!\p{L})|\bpulsos?\b/iu, "M"], ["compasso", /\bcompassos?\b/i, "M"], ["andamento", /\bandamentos?\b/i, "M"],
+  ["síncope", /(?<!\p{L})s(í|i)ncopes?(?!\p{L})|\bsincopad(o|a|os|as)\b/iu, "M"], ["escala musical", /\bescalas?\b/i, "M"], ["oitava", /\boitavas?\b/i, "M"],
+  ["tom e semitom", /\bsemito(m|ns)\b/i, "M"], ["acorde", /\bacordes?\b/i, "M"], ["cifra", /\bcifras?\b/i, "M"], ["tonalidade", /\btonalidades?\b/i, "M"],
+  ["monofonia, homofonia e polifonia", /(?<!\p{L})(mono|homo|poli)f(o|ô)n(ia|ias|ico|ica|icos|icas)(?!\p{L})/iu, "M"],
+  ["hertz", /\bhertz\b|\bHz\b/, "M"], ["decibel", /(?<!\p{L})decib(el|éis|eis)(?!\p{L})|\bdB\b/u, "M"], ["harmônico (do som)", /(?<!\p{L})harm(ô|o)nicos?(?!\p{L})/iu, "M"],
+  ["idiofone, membranofone, cordofone e aerofone", /\b(idio|membrano|cordo|aero|eletro)fones?\b/i, "M"],
+  ["canto gregoriano", /\bcantos? gregorian(o|os)\b/i, "M"], ["notação musical", /(?<!\p{L})nota(ç|c)(ão|ões)(?!\p{L})/iu, "M"], ["partitura", /\bpartituras?\b/i, "M"],
+  ["baixo contínuo", /(?<!\p{L})baixo cont(í|i)nuo(?!\p{L})/iu, "M"], ["ópera", /(?<!\p{L})óperas?(?!\p{L})/iu, "M"], ["sinfonia", /\bsinfonias?\b|(?<!\p{L})sinf(ô|o)nic(o|a|os|as)(?!\p{L})/iu, "M"],
+  ["orquestra", /\borquestras?\b/i, "M"], ["virtuose", /\bvirtuos(e|es|ismo)\b/i, "M"], ["nacionalismo musical", /\bnacionalism(o|os)\b|\bnacionalistas?\b/i, "M"],
+  ["atonalismo e dodecafonismo", /(?<!\p{L})(atona(l|is|lismo)|dodecaf(ô|o)nic(o|a|os|as)|dodecafonismo)(?!\p{L})/iu, "M"], ["música concreta", /(?<!\p{L})m(ú|u)sica concreta(?!\p{L})/iu, "M"],
+  ["minimalismo", /\bminimalis(mo|ta|tas)\b/i, "M"], ["improvisação", /(?<!\p{L})improvisa(ç|c)(ão|ões)(?!\p{L})/iu, "M"], ["blues", /\bblues\b/i, "M"],
+  ["contratempo", /\bcontratempos?\b/i, "M"], ["sampling", /\bsampl(ing|er|e|es)\b|\bsamplead(o|a|os|as)\b/i, "M"], ["streaming", /\bstreaming\b/i, "M"],
+  ["direito autoral", /\bdireitos? autora(l|is)\b/i, "M"], ["canção de protesto", /(?<!\p{L})can(ç|c)(ão|ões) de protesto(?!\p{L})/iu, "M"],
+  ["censura prévia", /(?<!\p{L})censura pr(é|e)via(?!\p{L})/iu, "M"], ["manguebeat", /\bmanguebeat\b|\bmangue beat\b/i, "M"],
   // Filosofia (escopo "z") e Sociologia (escopo "j"): os conceitos que a prova cobra pelo nome.
   ["mito", /\bmitos?\b/i, "z"], ["arché", /\barch(é|e)\b/i, "z"], ["maiêutica", /(?<!\p{L})mai(ê|e)utica(?!\p{L})/iu, "z"], ["mundo das ideias", /\bmundo das ideias\b/i, "z"],
   ["ética e moral", /(?<!\p{L})(é|e)tica(s)?(?!\p{L})|\bmora(l|is)\b/iu, "z"], ["racionalismo e empirismo", /\bracionalis(mo|ta|tas)\b|\bempiris(mo|ta|tas)\b/i, "z"],
@@ -765,7 +780,7 @@ const JARGON = [
   ["cooler", /\bcoolers?\b|\bwater cooler\b/i, "h"], ["80 Plus", /\b80 Plus\b/i, "h"], ["fonte modular", /\bmodular(es)?\b/i, "h"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG", "historia-do-brasil": "iH", "geografia-do-brasil": "oB", "corpo-humano-e-saude": "bC", "quimica-organica": "xO", "termodinamica-optica-e-fisica-moderna": "fT", "sociedade-brasileira": "jS", "autores-de-filosofia": "zF", "leitura-em-ingles-enem": "wR", "leitura-em-espanhol-enem": "uP", "informatica-para-concursos": "kI" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG", "historia-do-brasil": "iH", "geografia-do-brasil": "oB", "corpo-humano-e-saude": "bC", "quimica-organica": "xO", "termodinamica-optica-e-fisica-moderna": "fT", "sociedade-brasileira": "jS", "autores-de-filosofia": "zF", "leitura-em-ingles-enem": "wR", "leitura-em-espanhol-enem": "uP", "informatica-para-concursos": "kI", "musica": "AM" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;
