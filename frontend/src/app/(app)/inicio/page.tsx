@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, ChevronRight, CloudUpload, Route } from "lucide-react";
+import { ArrowRight, ChevronRight, CloudUpload } from "lucide-react";
 import { Card, PageHero } from "@/components/ui";
 import { HomeGoal } from "@/components/app/HomeGoal";
-import { SubjectRow, tones } from "@/components/home/SubjectRow";
+import { AreaTile } from "@/components/home/AreaTile";
+import { tones } from "@/components/home/SubjectRow";
+import { TrailCard } from "@/components/home/TrailCard";
 import { areaIcon, areaProgress, groupByArea } from "@/lib/areas";
-import { currentStep, trailView } from "@/lib/trails";
+import { currentStep, startedFirst, trailView } from "@/lib/trails";
 import { serverGet } from "@/lib/backend";
 import { firstName, pluralize } from "@/lib/format";
 import type { AppBarResponse, ProgressResponse, SubjectsResponse, User } from "@/lib/types";
@@ -48,10 +50,12 @@ export default async function Inicio() {
   const gami = progress.gamification;
   const firstLesson = subjects[0]?.lessons[0];
   const { ativas, emBreve } = groupByArea(areas ?? [], subjects);
-  const trilhas = (trails ?? []).map((trail) => {
-    const passos = trailView(trail, subjects);
-    return { trail, passos, atual: currentStep(passos), feitos: passos.filter((p) => p.state === "done").length };
-  });
+  const trilhas = startedFirst(
+    (trails ?? []).map((trail) => {
+      const passos = trailView(trail, subjects);
+      return { trail, passos, atual: currentStep(passos), feitos: passos.filter((p) => p.state === "done").length };
+    }),
+  );
 
   /*
   | O simulado atravessa várias lições, então não tem `lesson_id` — quem volta
@@ -133,71 +137,61 @@ export default async function Inicio() {
       </section>
 
       {/*
-        A trilha responde "por onde eu começo?" quando o objetivo atravessa
-        áreas: LLMs do zero mistura Matemática e Informática, e a lista de áreas
-        sozinha não diz a ordem. Mora antes das áreas porque é um caminho, e
-        as áreas são um catálogo.
-      */}
-      {trilhas.length > 0 && (
-        <section aria-labelledby="trilhas">
-          <h2 id="trilhas" className="text-2xl">{trilhas.length > 1 ? "Trilhas de estudo" : "Trilha de estudo"}</h2>
-          <ul className="mt-4 space-y-3">
-            {trilhas.map(({ trail, passos, atual, feitos }) => (
-              <li key={trail.slug}>
-                <Link
-                  href={`/trilha/${trail.slug}`}
-                  className="flex items-center gap-4 rounded-card bg-surface-raised px-4 py-4 shadow-lift transition hover:-translate-y-0.5"
-                >
-                  <span className="grid size-12 shrink-0 place-items-center rounded-control bg-sky-soft text-sky">
-                    <Route className="size-6" aria-hidden="true" />
-                  </span>
-                  <span className="min-w-0 flex-1">
-                    <span className="flex items-start justify-between gap-3">
-                      <span className="min-w-0 font-display text-lg leading-snug font-bold">{trail.name}</span>
-                      <span className="shrink-0 pt-0.5 font-mono text-sm tabular-nums text-content-subtle">
-                        {feitos}/{passos.length}
-                      </span>
-                    </span>
-                    <span className="mt-1 block text-sm text-content-secondary">
-                      {trail.private && "Só você vê · "}
-                      {atual ? `Passo ${atual.number} de ${passos.length}: ${atual.name}` : "Todos os passos disponíveis concluídos"}
-                    </span>
-                  </span>
-                  <ChevronRight className="size-5 shrink-0 text-content-faint" aria-hidden="true" />
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-
-      {/*
-        A porta de entrada é a ÁREA, não a matéria: Sistemas Operacionais é uma
-        disciplina de Informática. Primeiro as áreas que já têm aula; as outras
-        vêm depois, apagadas, com "Em breve" — para a pessoa ver o que o app
-        vai cobrir sem ter que tocar numa porta fechada para descobrir.
+        A ordem mudou em novembro de 2026 (pedido do Sávio): as trilhas vinham
+        antes das áreas, numa lista, e com seis delas o catálogo começava na
+        segunda tela — quem não rolasse não sabia que havia Física ou Artes.
+        Agora as áreas vêm logo depois do "continue", numa grade que cabe numa
+        tela, e as trilhas numa faixa só, de lado. A área é o caminho de todo
+        dia; a trilha responde "por onde eu começo?" e aparece inteira sem
+        precisar de mais espaço quando chegarem outras.
       */}
       <section aria-labelledby="areas">
         <h2 id="areas" className="text-2xl">Áreas</h2>
-        <ul className="mt-4 space-y-3">
+        <ul className="mt-4 grid grid-cols-2 gap-2.5">
           {ativas.map((area, i) => {
             const { practiced, total } = areaProgress(area.subjects);
             return (
               <li key={area.slug}>
-                <SubjectRow
+                <AreaTile
                   href={`/area/${area.slug}`}
                   name={area.name}
                   icon={areaIcon(area.slug)}
                   tone={tones[i % tones.length]}
                   practiced={practiced}
                   total={total}
-                  detail={area.subjects.map((subject) => subject.name).join(" · ")}
                 />
               </li>
             );
           })}
         </ul>
       </section>
+
+      {trilhas.length > 0 && (
+        <section aria-labelledby="trilhas">
+          <h2 id="trilhas" className="text-2xl">{trilhas.length > 1 ? "Trilhas de estudo" : "Trilha de estudo"}</h2>
+          {/*
+            Rola de lado e sangra até a borda da tela (-mx-5), para o cartão
+            seguinte aparecer cortado: é o que avisa que tem mais. O pb-3 é a
+            folga da sombra, que a caixa de rolagem cortaria embaixo.
+          */}
+          <ul className="-mx-5 mt-4 flex snap-x snap-mandatory scroll-px-5 gap-3 overflow-x-auto px-5 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {trilhas.map(({ trail, passos, atual, feitos }) => (
+              <li key={trail.slug} className={`shrink-0 snap-start ${trilhas.length > 1 ? "w-[16.5rem]" : "w-full"}`}>
+                <TrailCard
+                  href={`/trilha/${trail.slug}`}
+                  name={trail.name}
+                  detail={
+                    (trail.private ? "Só você vê · " : "") +
+                    (atual ? `Passo ${atual.number} de ${passos.length}: ${atual.name}` : "Todos os passos disponíveis concluídos")
+                  }
+                  done={feitos}
+                  total={passos.length}
+                />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {emBreve.length > 0 && (
         <section aria-labelledby="em-breve">

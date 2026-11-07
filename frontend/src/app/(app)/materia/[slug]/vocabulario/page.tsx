@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Layers } from "lucide-react";
+import { Layers } from "lucide-react";
 import { Card, EmptyState } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
 import type { Subject, VocabularyResponse } from "@/lib/types";
@@ -40,13 +40,6 @@ export default async function VocabularioPage({
 
   return (
     <div className="space-y-8">
-      <Link
-        href={`/materia/${subject.slug}`}
-        className="inline-flex min-h-11 items-center gap-2 text-base text-content-secondary hover:text-ink"
-      >
-        <ArrowLeft className="size-5" aria-hidden="true" /> {subject.name}
-      </Link>
-
       <header>
         <p className="label-mono">Vocabulário</p>
         <h1 className="mt-2 text-4xl">{subject.name}</h1>

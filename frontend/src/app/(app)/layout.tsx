@@ -6,7 +6,7 @@ import { currentUser, serverGet } from "@/lib/backend";
 import { isGuestMode } from "@/lib/proxy";
 import type { AppBarResponse } from "@/lib/types";
 
-export default async function AppLayout({ children }: { children: React.ReactNode }) {
+export default async function AppLayout({ children, voltar }: { children: React.ReactNode; voltar: React.ReactNode }) {
   /*
   | Com o modo de teste desligado, o app exige conta (pedido do Sávio). Quem
   | chega sem sessão já é barrado pelo `proxy.ts`; aqui fica o caso que o
@@ -33,7 +33,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
 
   return (
     <div className="mx-auto min-h-dvh max-w-md px-5 pb-28" style={{ paddingTop: "calc(var(--appbar) + 1.25rem)" }}>
-      <AppBar bar={bar} />
+      <AppBar bar={bar} voltar={voltar} />
       <OfflineBanner />
       {children}
       <BottomNav reviewsDue={bar?.reviews_due ?? 0} />

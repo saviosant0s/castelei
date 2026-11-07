@@ -58,3 +58,14 @@ export function stepOfSubject(trails: Trail[], slug: string): { trail: Trail; nu
   }
   return null;
 }
+
+/**
+ * A trilha que a pessoa já começou vem primeiro, sem mudar a ordem das outras.
+ *
+ * No carrossel da tela inicial só o primeiro cartão aparece inteiro: é ele que
+ * tem que ser o da trilha em andamento, e não o da primeira da configuração.
+ */
+export function startedFirst<T extends { passos: TrailStepView[] }>(trilhas: T[]): T[] {
+  const comecou = (t: T) => t.passos.some((p) => p.practiced > 0);
+  return [...trilhas.filter(comecou), ...trilhas.filter((t) => !comecou(t))];
+}

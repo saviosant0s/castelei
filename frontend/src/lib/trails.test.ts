@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { currentStep, stepOfSubject, trailView } from "@/lib/trails";
+import { currentStep, startedFirst, stepOfSubject, trailView } from "@/lib/trails";
 import type { Subject, Trail } from "@/lib/types";
 
 const trail: Trail = {
@@ -37,5 +37,12 @@ describe("trilha", () => {
   it("acha o passo de uma matéria", () => {
     expect(stepOfSubject([trail], "b")?.number).toBe(2);
     expect(stepOfSubject([trail], "z")).toBeNull();
+  });
+
+  it("põe a trilha começada na frente, sem mexer na ordem das outras", () => {
+    const nova = (slug: string) => ({ slug, passos: trailView(trail, [materia("a", [0])]) });
+    const comecada = { slug: "comecada", passos: trailView(trail, [materia("a", [1, 0])]) };
+    const ordem = startedFirst([nova("um"), nova("dois"), comecada, nova("tres")]).map((t) => t.slug);
+    expect(ordem).toEqual(["comecada", "um", "dois", "tres"]);
   });
 });
