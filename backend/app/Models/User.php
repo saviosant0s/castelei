@@ -121,6 +121,11 @@ class User extends Authenticatable
         return Plans::hasLevels($this->plan, $this->seesRealPlan());
     }
 
+    public function hasClassrooms(): bool
+    {
+        return Plans::hasClassrooms($this->plan, $this->seesRealPlan());
+    }
+
     public function hasExam(): bool
     {
         return Plans::hasExam($this->plan, $this->seesRealPlan());

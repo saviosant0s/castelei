@@ -33,6 +33,14 @@ describe("isAllowedPath", () => {
     ["lessons/abc/attempts", false],
     ["attempts/1/answers/extra", false],
     ["../login", false],
+    // Turmas: as ações que o navegador faz passam; a leitura da turma é do servidor.
+    ["classrooms", true],
+    ["classrooms/join", true],
+    ["classrooms/7", true],
+    ["classrooms/7/membership", true],
+    ["classrooms/7/members/9", true],
+    ["classrooms/code/ABCDEF", false],
+    ["classrooms/7/members", false],
   ])("%s → %s", (path, expected) => {
     expect(isAllowedPath(path)).toBe(expected);
   });

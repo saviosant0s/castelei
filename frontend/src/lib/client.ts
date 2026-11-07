@@ -18,18 +18,23 @@ export async function putJson<T>(url: string, body?: unknown): Promise<T> {
   return sendJson<T>("PUT", url, body);
 }
 
+/** DELETE: sair de uma turma, tirar um aluno, apagar a turma. */
+export async function deleteJson<T>(url: string): Promise<T> {
+  return sendJson<T>("DELETE", url);
+}
+
 /** GET JSON das rotas do próprio Next. */
 export async function getJson<T>(url: string): Promise<T> {
   return sendJson<T>("GET", url);
 }
 
-async function sendJson<T>(method: "GET" | "POST" | "PUT", url: string, body?: unknown): Promise<T> {
+async function sendJson<T>(method: "GET" | "POST" | "PUT" | "DELETE", url: string, body?: unknown): Promise<T> {
   let response: Response;
   try {
     response = await fetch(url, {
       method,
-      headers: method === "GET" ? { Accept: "application/json" } : { "Content-Type": "application/json", Accept: "application/json" },
-      body: method === "GET" ? undefined : JSON.stringify(body ?? {}),
+      headers: method === "GET" || method === "DELETE" ? { Accept: "application/json" } : { "Content-Type": "application/json", Accept: "application/json" },
+      body: method === "GET" || method === "DELETE" ? undefined : JSON.stringify(body ?? {}),
     });
   } catch {
     throw new ApiError("Sem conexão. Confira sua internet e tente de novo.", 0);

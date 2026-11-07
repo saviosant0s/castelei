@@ -67,6 +67,12 @@ const ALLOWED_PATHS = [
   /^push\/subscriptions$/,
   // A meta do dia, escolhida no Perfil.
   /^me\/daily-goal$/,
+  // Turmas: criar, entrar por código, sair, tirar um aluno e apagar a turma.
+  /^classrooms$/,
+  /^classrooms\/join$/,
+  /^classrooms\/\d+$/,
+  /^classrooms\/\d+\/membership$/,
+  /^classrooms\/\d+\/members\/\d+$/,
 ];
 
 export function isAllowedPath(path: string): boolean {

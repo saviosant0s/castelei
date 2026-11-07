@@ -62,10 +62,24 @@ describe("AppBar", () => {
 });
 
 describe("BottomNav", () => {
-  it("tem quatro abas, com Revisar entre Início e Progresso", () => {
+  it("tem quatro abas, com Turmas no lugar de Progresso", () => {
     render(<BottomNav reviewsDue={0} />);
 
-    expect(screen.getAllByRole("link").map((a) => a.textContent)).toEqual(["Início", "Revisar", "Progresso", "Perfil"]);
+    expect(screen.getAllByRole("link").map((a) => a.textContent)).toEqual(["Início", "Revisar", "Turmas", "Perfil"]);
+  });
+
+  it("o Progresso acende o Perfil, que é onde ele mora agora", () => {
+    pathname.value = "/progresso/evolucao";
+    render(<BottomNav />);
+
+    expect(screen.getByRole("link", { name: "Perfil" }).getAttribute("aria-current")).toBe("page");
+  });
+
+  it("a turma acende a aba Turmas, até na tela do convite", () => {
+    pathname.value = "/turmas/entrar/ABCDEF";
+    render(<BottomNav />);
+
+    expect(screen.getByRole("link", { name: "Turmas" }).getAttribute("aria-current")).toBe("page");
   });
 
   it("mostra quantas revisões venceram na aba Revisar", () => {
