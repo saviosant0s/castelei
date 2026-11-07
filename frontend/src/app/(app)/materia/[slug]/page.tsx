@@ -48,7 +48,9 @@ export default async function MateriaPage({ params }: { params: Promise<{ slug: 
           )
         }
       >
-        {subject.description}
+        {/* Duas linhas no máximo: é app, não página de venda. A lista inteira
+            do que a matéria cobre é a própria trilha, logo abaixo. */}
+        <span className="line-clamp-2">{subject.description}</span>
       </PageHero>
 
       {/* Quanto falta para a prova e quanto do caminho já andou: as duas

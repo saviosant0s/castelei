@@ -29,8 +29,9 @@ describe("SubjectSummary", () => {
   it("diz quanto falta para a prova e quanto do caminho já andou", () => {
     render(<SubjectSummary subjectId={1} lessons={materia} examDate="9999-12-15" />);
 
-    expect(screen.getByText(/para a prova/)).toBeTruthy();
-    expect(screen.getByText("15 de dezembro", { exact: false })).toBeTruthy();
+    // Na tela, só o botão curto; a frase inteira, com a data, fica no nome dele.
+    const botao = screen.getByRole("button", { name: /Faltam \d+ dias para a prova, 15 de dezembro/ });
+    expect(botao.textContent).toMatch(/^Prova em \d+ dias$/);
     expect(screen.getByText("2/4")).toBeTruthy();
   });
 
@@ -38,6 +39,8 @@ describe("SubjectSummary", () => {
     render(<SubjectSummary subjectId={1} lessons={materia} examDate={null} />);
 
     expect(screen.queryByText(/para a prova/)).toBeNull();
+    // O convite é um botão curto, sem o parágrafo que explicava a data.
+    expect(screen.queryByText(/revisões/)).toBeNull();
     expect(screen.getByRole("button", { name: "Marcar a data da prova" })).toBeTruthy();
     expect(screen.getByText("2/4")).toBeTruthy();
   });
