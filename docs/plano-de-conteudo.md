@@ -27,23 +27,28 @@ básico de cada área da escola**, e o que é específico fica guardado.
 
 ## O que está público e o que está privado
 
-| Matéria | Área | Situação |
-|---|---|---|
-| Matemática Básica (18 lições) | Matemática | **Pública** |
-| Português (18 lições) | Português | **Pública**, básico completo |
-| Matemática do dia a dia (13) | Matemática | **Pública** |
-| Lógica (15) | Matemática | **Pública** |
-| Produção Textual (7) | Português | **Pública** |
-| Sistemas Operacionais (33) | Informática | Privada: é o semestre do Sávio |
-| Servidores, VPS e Infraestrutura (22) | Informática | Privada |
-| Refatoração (17) | Informática | Privada: projeto de extensão |
-| Programação com Python (14) | Informática | Privada, candidata a pública depois de revisar |
-| Álgebra Linear, Cálculo, Probabilidade e Estatística | Matemática | Privadas: trilha de LLMs |
-| Redes Neurais, as duas de LLMs | Informática | Privadas: trilha de LLMs |
-| Montar um PC (15) | Informática | Privada |
+Público é o básico de cada área e a segunda matéria dela; privado é o que
+nasceu para o Sávio.
 
-Trilhas: **Base para provas** (pública: Português → Matemática Básica →
-Matemática do dia a dia → Lógica → Produção Textual) e **LLMs do zero** (privada).
+| Área | Públicas | Privadas |
+|---|---|---|
+| Português | Português (18), Produção Textual (7), Literatura brasileira (13) | — |
+| Matemática | Matemática Básica (18), Matemática do dia a dia (13), Lógica (15), Geometria e trigonometria (13) | Álgebra Linear, Cálculo, Probabilidade e Estatística (trilha de LLMs) |
+| Física | Física (13), Termodinâmica, óptica e física moderna (12) | — |
+| Química | Química (13), Química orgânica (12) | — |
+| Biologia | Biologia (12), Corpo humano e saúde (13) | — |
+| História | História (12), História do Brasil (13) | — |
+| Geografia | Geografia (12), Geografia do Brasil (13) | — |
+| Filosofia | Filosofia (12), Os filósofos que mais caem (12) | — |
+| Sociologia | Sociologia (12), Sociedade brasileira (12) | — |
+| Inglês | Inglês (12), Leitura em inglês para o ENEM (12) | — |
+| Espanhol | Espanhol (12), Leitura em espanhol para o ENEM (12) | — |
+| Artes | Artes (12), Música (12) | — |
+| Educação Física | Educação Física (12), Treino, saúde e alimentação (12) | — |
+| Informática | Informática básica (12), Informática para concursos (12) | Sistemas Operacionais (33, o semestre do Sávio), Servidores (22), Refatoração (17, projeto de extensão), Programação com Python (14, candidata a pública depois de revisar), Redes Neurais e as duas de LLMs, Montar um PC (15) |
+
+São 31 públicas e 11 privadas. As trilhas estão na seção "Trilhas básicas
+planejadas", abaixo.
 
 ## A régua do básico
 
@@ -271,12 +276,19 @@ escrever.
 | Trilha | Passos | Situação |
 |---|---|---|
 | **Base para provas** | Português → Matemática Básica → Matemática do dia a dia → Lógica → Produção Textual | **No ar** |
-| ENEM: Linguagens | Português → Produção Textual → Inglês (ou Espanhol) → Artes → Educação Física | **No ar**, completa |
-| ENEM: Matemática | Matemática Básica → Matemática do dia a dia → Lógica | **No ar**, completa |
-| ENEM: Natureza | Física → Química → Biologia | **No ar**, completa |
-| ENEM: Humanas | História → Geografia → Filosofia → Sociologia | **No ar**, completa |
+| ENEM: Linguagens | Português → Literatura brasileira → Produção Textual → Inglês → Leitura em inglês para o ENEM → Artes → Música → Educação Física | **No ar**, completa |
+| ENEM: Matemática | Matemática Básica → Matemática do dia a dia → Geometria e trigonometria → Lógica | **No ar**, completa |
+| ENEM: Natureza | Física → Termodinâmica, óptica e física moderna → Química → Química orgânica → Biologia → Corpo humano e saúde | **No ar**, completa |
+| ENEM: Humanas | História → História do Brasil → Geografia → Geografia do Brasil → Filosofia → Os filósofos que mais caem → Sociologia → Sociedade brasileira | **No ar**, completa |
+| Concursos de nível médio | Português → Lógica → Matemática Básica → Informática básica → Informática para concursos | **No ar**, completa |
 | Primeiros passos na informática | Informática básica → Montar um PC → Python | Planejada; Montar um PC e Python ainda privadas |
 | LLMs do zero | Matemática Básica → … → LLMs: treino, uso e limites | Privada |
+
+Nas trilhas do ENEM, a segunda matéria da área vem logo depois da básica: ela
+supõe a básica, e assim a área fica junta. Trilha não tem bifurcação, então
+quem faz espanhol troca os dois passos de inglês pelos de espanhol, e o
+porquê do passo diz isso. Treino, saúde e alimentação ficou fora de
+Linguagens: o que a prova cobra de Educação Física está na básica.
 
 Uma trilha só entra no ar quando o primeiro passo já existe. Os outros podem
 aparecer como "Em breve".
@@ -290,3 +302,30 @@ aparecer como "Em breve".
 5. **Uma área por rodada** (feito: todas as áreas da lista têm a sua matéria básica, de Biologia a Educação Física). Cada uma entrou com todas as lições de uma vez.
 6. As trilhas ENEM (feito: as quatro estão no ar e completas).
 7. A segunda matéria de cada área (feito: as catorze áreas têm a sua, de Literatura brasileira a Treino, saúde e alimentação).
+8. As segundas matérias nas trilhas do ENEM, e a trilha de concursos (feito).
+9. **A terceira matéria de cada área**, na ordem da tabela abaixo.
+
+## Terceira rodada (proposta, novembro de 2026)
+
+Pedido do Sávio: "se não falta nada, pode avançar nos conteúdos e criar
+outras seções para a matéria". Uma terceira matéria por área, pública e com
+os níveis, na ordem do peso na prova (o que o ENEM mais cobra vem antes). A
+lista é a proposta; o recorte pode mudar ao escrever.
+
+| Ordem | Área | Matéria | Por que ela |
+|---|---|---|---|
+| 1 | Português | Interpretação de texto | É a maior parte da prova de Linguagens, e a básica só tem uma lição dela |
+| 2 | Biologia | Ecologia e meio ambiente | O tema de Biologia que mais cai no ENEM; a básica tem duas lições |
+| 3 | Matemática | Contagem e probabilidade | Análise combinatória e probabilidade a fundo, que a do dia a dia só abre |
+| 4 | Química | Físico-química | Estequiometria, soluções, energia, velocidade, equilíbrio e pilhas com conta |
+| 5 | Física | Eletricidade, magnetismo e ondas | Circuitos, consumo, indução e ondas: a parte de Física que vem com situação de casa |
+| 6 | História | História contemporânea | Do imperialismo à globalização: a história do mundo que explica o de hoje |
+| 7 | Geografia | Geopolítica e mundo atual | Blocos, conflitos, migrações e a ordem mundial depois da Guerra Fria |
+| 8 | Sociologia | Os sociólogos que mais caem | Um autor por vez, como a de Filosofia |
+| 9 | Artes | Arte brasileira | Do Barroco à arte contemporânea daqui, que o ENEM cobra com imagem |
+| 10 | Filosofia | Ética e questões de hoje | Bioética, ética digital, ambiente e direitos humanos |
+| 11 | Informática | Planilhas a fundo | Excel e Calc: fórmulas, PROCV, filtros, tabela dinâmica e gráficos |
+| 12 | Inglês | Inglês do dia a dia | Viagem, trabalho e internet: falar e entender, além de ler |
+| 13 | Espanhol | Espanhol do dia a dia | O mesmo recorte do inglês |
+| 14 | Educação Física | Esportes: regras e jogo | As regras, a tática e a história dos esportes que a escola pratica |
+
