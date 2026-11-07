@@ -1,0 +1,5197 @@
+{
+  "slug": "informatica-para-concursos",
+  "name": "Informática para concursos",
+  "area": "informatica",
+  "description": "O que as bancas mais cobram em informática: atalhos do Windows, comandos do Linux, os tipos de backup, Word, Excel e PowerPoint ao lado do LibreOffice, redes e protocolos, nuvem, malwares, golpes e criptografia.",
+  "lessons": [
+    {
+      "slug": "windows-atalhos-e-arquivos",
+      "title": "Windows: atalhos, Lixeira e o arrastar que copia ou move",
+      "module": "Sistemas e arquivos",
+      "summary": "O Windows é o sistema mais cobrado nas provas de informática. A lição mostra os atalhos que mais caem, o que vai e o que não vai para a Lixeira e quando arrastar um arquivo copia ou move.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A prova que se resolve no teclado",
+          "body": [
+            "Uma questão pergunta o que acontece ao apertar Shift e Delete juntos num arquivo. Quem usa o computador todo dia às vezes nunca reparou.",
+            "O Windows é o sistema operacional mais usado nos computadores de mesa, e por isso é o mais cobrado. Os atalhos desta lição valem no Windows 10 e no 11."
+          ],
+          "terms": [
+            {
+              "word": "sistema operacional",
+              "meaning": "o programa principal do computador, que liga as peças aos outros programas. Windows e Linux são exemplos."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os atalhos que mais caem",
+          "body": [
+            "Win é a tecla com o logotipo do Windows. O sinal + quer dizer apertar as teclas juntas."
+          ],
+          "table": {
+            "label": "Atalhos do Windows",
+            "headers": [
+              "Atalho",
+              "O que faz"
+            ],
+            "rows": [
+              [
+                "Win + E",
+                "abre o Explorador de Arquivos"
+              ],
+              [
+                "Win + D",
+                "mostra a área de trabalho"
+              ],
+              [
+                "Win + L",
+                "bloqueia o computador"
+              ],
+              [
+                "Alt + Tab",
+                "troca de janela"
+              ],
+              [
+                "Ctrl + Shift + Esc",
+                "abre o Gerenciador de Tarefas"
+              ],
+              [
+                "Win + V",
+                "abre o histórico da área de transferência"
+              ],
+              [
+                "F2",
+                "renomeia o arquivo selecionado"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Copiar, recortar e desfazer",
+          "body": [
+            "Estes valem no Windows inteiro e em quase todo programa. A área de transferência é o lugar onde fica o que foi copiado."
+          ],
+          "table": {
+            "label": "Os atalhos de todo dia",
+            "headers": [
+              "Atalho",
+              "O que faz"
+            ],
+            "rows": [
+              [
+                "Ctrl + C",
+                "copia (o original fica)"
+              ],
+              [
+                "Ctrl + X",
+                "recorta (o original sai quando colar)"
+              ],
+              [
+                "Ctrl + V",
+                "cola"
+              ],
+              [
+                "Ctrl + Z",
+                "desfaz"
+              ],
+              [
+                "Ctrl + Y",
+                "refaz"
+              ],
+              [
+                "Ctrl + A",
+                "seleciona tudo"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A Lixeira",
+          "body": [
+            "Apagar com Delete manda o arquivo para a Lixeira, de onde ele pode voltar. Shift + Delete apaga sem passar por ela."
+          ],
+          "example": {
+            "label": "O que não vai para a Lixeira",
+            "lines": [
+              "Arquivo apagado com Shift + Delete.",
+              "Arquivo apagado de um pendrive ou de um cartão de memória.",
+              "Arquivo apagado de uma pasta na rede.",
+              "Arquivo maior que o espaço reservado à Lixeira."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Arrastar copia ou move?",
+          "body": [
+            "Arrastar com o mouse faz coisas diferentes conforme o destino. O disco C: e um pendrive são unidades diferentes, e a regra muda com a unidade."
+          ],
+          "table": {
+            "label": "O que o arrastar faz",
+            "headers": [
+              "Situação",
+              "Resultado"
+            ],
+            "rows": [
+              [
+                "mesma unidade (C: para C:)",
+                "move"
+              ],
+              [
+                "outra unidade (C: para o pendrive)",
+                "copia"
+              ],
+              [
+                "arrastar segurando Ctrl",
+                "sempre copia"
+              ],
+              [
+                "arrastar segurando Shift",
+                "sempre move"
+              ],
+              [
+                "arrastar segurando Alt",
+                "cria um atalho"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Atalho não é o arquivo",
+          "body": [
+            "Um atalho é um ícone com uma setinha que só aponta para o arquivo de verdade.",
+            "Apagar o atalho não apaga o arquivo; apagar o arquivo deixa o atalho sem destino."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca descreve uma ação e pergunta o resultado: o que um atalho faz, se o arquivo vai para a Lixeira, se arrastar copiou ou moveu. Quase sempre há uma alternativa que troca duas teclas."
+          ],
+          "bullets": [
+            "“No Windows, o atalho Win + L…”",
+            "“Ao arrastar um arquivo para um pendrive…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que todo arquivo apagado vai para a Lixeira: o do pendrive não vai.",
+            "Achar que arrastar sempre move: para outra unidade, copia.",
+            "Trocar Ctrl + X (recortar) com Ctrl + C (copiar).",
+            "Achar que apagar o atalho apaga o arquivo."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Win + E abre o Explorador, Win + L bloqueia e Ctrl + Shift + Esc abre o Gerenciador de Tarefas. Shift + Delete apaga sem passar pela Lixeira.",
+            "Arrastar na mesma unidade move, e para outra unidade copia. Ctrl força a cópia, e Shift força mover."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Bloquear",
+          "statement": "No Windows, o atalho que bloqueia o computador é:",
+          "options": [
+            "Win + L",
+            "Win + D",
+            "Win + E",
+            "Alt + Tab",
+            "Ctrl + Z"
+          ],
+          "correct_index": 0,
+          "explanation": "L de lock, bloquear em inglês.",
+          "pitfall": "Win + D só mostra a área de trabalho."
+        },
+        {
+          "topic": "Shift Delete",
+          "statement": "No Windows, apagar um arquivo com Shift + Delete:",
+          "options": [
+            "apaga sem passar pela Lixeira",
+            "manda o arquivo para a Lixeira",
+            "copia o arquivo",
+            "renomeia o arquivo",
+            "cria um atalho"
+          ],
+          "correct_index": 0,
+          "explanation": "O Shift pula a Lixeira.",
+          "pitfall": "Só o Delete sozinho manda para a Lixeira."
+        },
+        {
+          "topic": "Pendrive",
+          "statement": "Um arquivo apagado de um pendrive com a tecla Delete:",
+          "options": [
+            "não vai para a Lixeira",
+            "vai para a Lixeira do pendrive",
+            "vai para a Lixeira do computador",
+            "volta sozinho no dia seguinte",
+            "é copiado para o disco C:"
+          ],
+          "correct_index": 0,
+          "explanation": "Unidades removíveis não usam a Lixeira.",
+          "pitfall": "“Vai para a Lixeira do computador” é o engano mais comum."
+        },
+        {
+          "topic": "Mesma unidade",
+          "statement": "No Windows, arrastar um arquivo de uma pasta do disco C: para outra pasta do mesmo disco:",
+          "options": [
+            "move o arquivo",
+            "copia o arquivo",
+            "apaga o arquivo",
+            "cria um atalho",
+            "renomeia o arquivo"
+          ],
+          "correct_index": 0,
+          "explanation": "Na mesma unidade, arrastar move.",
+          "pitfall": "“Copia” é o que acontece para outra unidade."
+        },
+        {
+          "topic": "Outra unidade",
+          "statement": "Arrastar um arquivo do disco C: para um pendrive:",
+          "options": [
+            "copia o arquivo",
+            "move o arquivo",
+            "apaga o original",
+            "cria um atalho",
+            "não faz nada"
+          ],
+          "correct_index": 0,
+          "explanation": "Para outra unidade, arrastar copia.",
+          "pitfall": "“Move” é a regra da mesma unidade."
+        },
+        {
+          "topic": "Gerenciador",
+          "statement": "O atalho que abre direto o Gerenciador de Tarefas é:",
+          "options": [
+            "Ctrl + Shift + Esc",
+            "Ctrl + Alt + Tab",
+            "Win + E",
+            "Alt + F4",
+            "Ctrl + V"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele mostra os programas abertos e o quanto cada um usa.",
+          "pitfall": "Win + E abre o Explorador de Arquivos."
+        },
+        {
+          "topic": "Atalhos",
+          "format": "match",
+          "statement": "Ligue cada atalho ao que ele faz.",
+          "pairs": [
+            {
+              "left": "Ctrl + X",
+              "right": "recorta"
+            },
+            {
+              "left": "Ctrl + Z",
+              "right": "desfaz"
+            },
+            {
+              "left": "F2",
+              "right": "renomeia"
+            },
+            {
+              "left": "Win + D",
+              "right": "mostra a área de trabalho"
+            }
+          ],
+          "explanation": "São os que mais caem.",
+          "pitfall": "Ctrl + X recorta; quem copia é Ctrl + C."
+        },
+        {
+          "topic": "Atalho",
+          "statement": "Um usuário apaga o atalho de um programa da área de trabalho. O programa:",
+          "options": [
+            "continua instalado no computador",
+            "é desinstalado",
+            "vai inteiro para a Lixeira",
+            "para de funcionar",
+            "é apagado do disco"
+          ],
+          "correct_index": 0,
+          "explanation": "O atalho só aponta para o arquivo de verdade.",
+          "pitfall": "“É desinstalado” confunde o atalho com o programa."
+        },
+        {
+          "topic": "Explorador",
+          "statement": "O atalho Win + E abre:",
+          "options": [
+            "o Explorador de Arquivos",
+            "o navegador",
+            "a Lixeira",
+            "o Bloco de Notas",
+            "as configurações"
+          ],
+          "correct_index": 0,
+          "explanation": "E de explorar.",
+          "pitfall": "As configurações abrem com Win + I.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Alt Tab",
+          "statement": "O atalho Alt + Tab serve para:",
+          "options": [
+            "trocar de janela",
+            "fechar a janela",
+            "abrir o menu Iniciar",
+            "copiar",
+            "imprimir"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele passa pelas janelas abertas.",
+          "pitfall": "Fechar a janela é Alt + F4.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Ctrl arrastando",
+          "statement": "Arrastar um arquivo dentro do mesmo disco segurando a tecla Ctrl:",
+          "options": [
+            "copia o arquivo",
+            "move o arquivo",
+            "apaga o arquivo",
+            "cria um atalho",
+            "abre o arquivo"
+          ],
+          "correct_index": 0,
+          "explanation": "O Ctrl força a cópia.",
+          "pitfall": "“Move” é o que acontece sem o Ctrl.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Histórico",
+          "statement": "O atalho Win + V abre:",
+          "options": [
+            "o histórico da área de transferência",
+            "o controle do volume",
+            "a câmera",
+            "a Lixeira",
+            "o modo de voz"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele mostra as últimas coisas copiadas.",
+          "pitfall": "Ctrl + V cola só a última.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Rede",
+          "statement": "Um arquivo é apagado com a tecla Delete de uma pasta compartilhada na rede. Ele:",
+          "options": [
+            "não vai para a Lixeira de quem apagou",
+            "vai para a Lixeira de quem apagou",
+            "vai para a Lixeira de todos",
+            "é copiado antes de sumir",
+            "fica oculto na mesma pasta"
+          ],
+          "correct_index": 0,
+          "explanation": "Pasta na rede não usa a Lixeira do computador.",
+          "pitfall": "“Vai para a Lixeira de quem apagou” vale para o disco do próprio computador, o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Alt arrastando",
+          "statement": "No Windows, arrastar um arquivo segurando a tecla Alt:",
+          "options": [
+            "cria um atalho para ele",
+            "move o arquivo",
+            "copia o arquivo",
+            "apaga o arquivo",
+            "renomeia o arquivo"
+          ],
+          "correct_index": 0,
+          "explanation": "O Alt cria o atalho.",
+          "pitfall": "Ctrl copia e Shift move, e trocar as teclas é o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "linux-para-concursos",
+      "title": "Linux: diretórios, comandos e permissões",
+      "module": "Sistemas e arquivos",
+      "summary": "O Linux cai em quase toda prova de concurso. A lição mostra o que é software livre, a árvore de diretórios, os comandos do terminal e as permissões rwx com os números do chmod.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Um sistema que qualquer um pode estudar",
+          "body": [
+            "O Linux é um sistema operacional, como o Windows. A diferença é que o código dele é aberto: qualquer pessoa pode ler, mudar e distribuir.",
+            "Isso faz dele um software livre. Ele roda nos computadores que guardam sites, nos celulares Android e em muitos computadores de mesa."
+          ],
+          "terms": [
+            {
+              "word": "sistema operacional",
+              "meaning": "o programa principal do computador, que liga as peças aos outros programas. Windows e Linux são exemplos."
+            },
+            {
+              "word": "hardware e software",
+              "meaning": "hardware é a parte física do computador; software são os programas."
+            },
+            {
+              "word": "software livre",
+              "meaning": "o programa que dá quatro liberdades a quem usa: executar, estudar, copiar e distribuir versões mudadas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As quatro liberdades",
+          "body": [
+            "Livre não quer dizer grátis: quer dizer liberdade. A licença mais conhecida é a GPL, que exige que as versões mudadas continuem livres."
+          ],
+          "table": {
+            "label": "As quatro liberdades do software livre",
+            "headers": [
+              "Liberdade",
+              "O que garante"
+            ],
+            "rows": [
+              [
+                "0",
+                "usar o programa para qualquer fim"
+              ],
+              [
+                "1",
+                "estudar e mudar o programa (por isso o código precisa ser aberto)"
+              ],
+              [
+                "2",
+                "distribuir cópias"
+              ],
+              [
+                "3",
+                "distribuir versões mudadas"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A árvore de diretórios",
+          "body": [
+            "No Linux não há disco C:. Tudo começa na raiz, escrita como uma barra (/)."
+          ],
+          "terms": [
+            {
+              "word": "diretório",
+              "meaning": "o nome técnico de pasta, muito usado no Linux."
+            }
+          ],
+          "table": {
+            "label": "Os diretórios que mais caem",
+            "headers": [
+              "Diretório",
+              "O que guarda"
+            ],
+            "rows": [
+              [
+                "/",
+                "a raiz, de onde sai todo o resto"
+              ],
+              [
+                "/home",
+                "as pastas pessoais dos usuários"
+              ],
+              [
+                "/root",
+                "a pasta pessoal do administrador"
+              ],
+              [
+                "/etc",
+                "os arquivos de configuração"
+              ],
+              [
+                "/bin",
+                "os programas básicos"
+              ],
+              [
+                "/tmp",
+                "os arquivos temporários"
+              ],
+              [
+                "/dev",
+                "os dispositivos, como discos e pendrives"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O terminal e os comandos",
+          "body": [
+            "O terminal é a janela onde se digitam comandos. No Ubuntu, ele abre com Ctrl + Alt + T.",
+            "Os comandos abaixo funcionam no terminal do Linux. No Windows, os nomes são outros."
+          ],
+          "table": {
+            "label": "Comandos do terminal do Linux",
+            "headers": [
+              "Comando",
+              "O que faz"
+            ],
+            "rows": [
+              [
+                "ls",
+                "lista o que há na pasta"
+              ],
+              [
+                "cd",
+                "entra numa pasta"
+              ],
+              [
+                "pwd",
+                "mostra em que pasta você está"
+              ],
+              [
+                "mkdir",
+                "cria uma pasta"
+              ],
+              [
+                "cp",
+                "copia"
+              ],
+              [
+                "mv",
+                "move ou renomeia"
+              ],
+              [
+                "rm",
+                "apaga (sem lixeira)"
+              ],
+              [
+                "cat",
+                "mostra o conteúdo de um arquivo"
+              ],
+              [
+                "sudo",
+                "roda o comando como administrador"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Maiúscula e minúscula são diferentes",
+          "body": [
+            "O Linux diferencia letra maiúscula de minúscula. Foto.jpg e foto.jpg são dois arquivos diferentes na mesma pasta.",
+            "No Windows, os dois nomes seriam o mesmo arquivo."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As permissões",
+          "body": [
+            "Cada arquivo tem permissões para três grupos: o dono, o grupo e os outros. Cada letra vale um número, e a soma dá a permissão."
+          ],
+          "terms": [
+            {
+              "word": "permissão rwx",
+              "meaning": "as três permissões de um arquivo no Linux: r de ler, w de escrever e x de executar. O comando chmod muda essas permissões."
+            }
+          ],
+          "table": {
+            "label": "As letras e os números",
+            "headers": [
+              "Letra",
+              "Permissão",
+              "Vale"
+            ],
+            "rows": [
+              [
+                "r",
+                "ler",
+                "4"
+              ],
+              [
+                "w",
+                "escrever",
+                "2"
+              ],
+              [
+                "x",
+                "executar",
+                "1"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Lendo o chmod 755",
+          "body": [
+            "O número tem três algarismos: o primeiro é do dono, o segundo do grupo e o terceiro dos outros."
+          ],
+          "example": {
+            "label": "chmod 755 arquivo",
+            "lines": [
+              "7 = 4 + 2 + 1 → rwx: o dono lê, escreve e executa.",
+              "5 = 4 + 1 → r-x: o grupo lê e executa.",
+              "5 = 4 + 1 → r-x: os outros leem e executam.",
+              "Na tela, aparece como rwxr-xr-x."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca pergunta o que faz um comando, qual diretório guarda o quê ou o que significa uma permissão como 644. Também cobra as quatro liberdades do software livre."
+          ],
+          "bullets": [
+            "“No Linux, o diretório /etc…”",
+            "“A permissão rwxr-x--- corresponde a…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que software livre é sempre grátis: livre é sobre liberdade.",
+            "Confundir /root (a pasta do administrador) com / (a raiz).",
+            "Achar que o rm manda para a lixeira: ele apaga de vez.",
+            "Achar que foto.jpg e Foto.jpg são o mesmo arquivo no Linux."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O Linux é software livre: usar, estudar, copiar e distribuir versões mudadas. Tudo sai da raiz (/), e /home guarda as pastas pessoais.",
+            "No terminal, ls lista, cd entra e rm apaga sem lixeira. No chmod, r vale 4, w vale 2 e x vale 1: 755 é rwxr-xr-x."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Livre",
+          "statement": "Software livre é aquele que:",
+          "options": [
+            "dá a liberdade de usar, estudar, copiar e distribuir versões mudadas",
+            "é sempre grátis e tem o código fechado",
+            "só funciona no Windows",
+            "não pode ser vendido",
+            "não tem licença nenhuma"
+          ],
+          "correct_index": 0,
+          "explanation": "Livre fala de liberdade, não de preço.",
+          "pitfall": "“Sempre grátis” confunde livre com gratuito."
+        },
+        {
+          "topic": "/home",
+          "statement": "No Linux, as pastas pessoais dos usuários ficam em:",
+          "options": [
+            "/home",
+            "/root",
+            "/etc",
+            "/bin",
+            "/tmp"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada usuário tem a sua pasta dentro de /home.",
+          "pitfall": "O /root é só a pasta do administrador."
+        },
+        {
+          "topic": "pwd",
+          "statement": "O comando pwd, no terminal do Linux:",
+          "options": [
+            "mostra em que pasta você está",
+            "muda a senha",
+            "apaga a pasta",
+            "lista os arquivos",
+            "desliga o computador"
+          ],
+          "correct_index": 0,
+          "explanation": "O pwd mostra o caminho da pasta atual.",
+          "pitfall": "Mudar a senha é passwd, de nome parecido."
+        },
+        {
+          "topic": "rm",
+          "statement": "O comando rm arquivo.txt, no Linux:",
+          "options": [
+            "apaga o arquivo sem passar por lixeira",
+            "manda o arquivo para a lixeira",
+            "renomeia o arquivo",
+            "copia o arquivo",
+            "mostra o conteúdo do arquivo"
+          ],
+          "correct_index": 0,
+          "explanation": "No terminal, o rm apaga de vez.",
+          "pitfall": "“Manda para a lixeira” é o que o Delete faz no Windows."
+        },
+        {
+          "topic": "755",
+          "statement": "Um arquivo com permissão 755 permite ao dono:",
+          "options": [
+            "ler, escrever e executar",
+            "só ler",
+            "só executar",
+            "ler e escrever, mas não executar",
+            "nada"
+          ],
+          "correct_index": 0,
+          "explanation": "O 7 é 4 + 2 + 1: rwx.",
+          "pitfall": "“Ler e escrever” seria 6, sem o x."
+        },
+        {
+          "topic": "Maiúscula",
+          "statement": "No Linux, os arquivos Relatorio.txt e relatorio.txt na mesma pasta são:",
+          "options": [
+            "dois arquivos diferentes",
+            "o mesmo arquivo",
+            "um erro que o sistema não aceita",
+            "um atalho e um arquivo",
+            "o arquivo e a cópia dele"
+          ],
+          "correct_index": 0,
+          "explanation": "O Linux diferencia maiúscula de minúscula.",
+          "pitfall": "“O mesmo arquivo” é a regra do Windows."
+        },
+        {
+          "topic": "Comandos",
+          "format": "match",
+          "statement": "Ligue cada comando do Linux ao que ele faz.",
+          "pairs": [
+            {
+              "left": "ls",
+              "right": "lista a pasta"
+            },
+            {
+              "left": "cd",
+              "right": "entra numa pasta"
+            },
+            {
+              "left": "mkdir",
+              "right": "cria uma pasta"
+            },
+            {
+              "left": "mv",
+              "right": "move ou renomeia"
+            }
+          ],
+          "explanation": "São os que mais caem.",
+          "pitfall": "O mv também renomeia: não existe um comando só para isso."
+        },
+        {
+          "topic": "sudo",
+          "statement": "O comando sudo, antes de outro comando, faz com que ele:",
+          "options": [
+            "rode como administrador",
+            "rode mais rápido",
+            "rode escondido",
+            "seja apagado",
+            "rode no Windows"
+          ],
+          "correct_index": 0,
+          "explanation": "O sudo pede a senha e dá o poder de administrador.",
+          "pitfall": "“Mais rápido” não tem relação com o sudo."
+        },
+        {
+          "topic": "/etc",
+          "statement": "No Linux, os arquivos de configuração ficam em:",
+          "options": [
+            "/etc",
+            "/home",
+            "/tmp",
+            "/dev",
+            "/boot"
+          ],
+          "correct_index": 0,
+          "explanation": "O /etc guarda as configurações do sistema.",
+          "pitfall": "O /tmp guarda arquivos temporários.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Terminal",
+          "statement": "No Ubuntu, o terminal abre com o atalho:",
+          "options": [
+            "Ctrl + Alt + T",
+            "Ctrl + C",
+            "Win + E",
+            "Alt + F4",
+            "Ctrl + Shift + Esc"
+          ],
+          "correct_index": 0,
+          "explanation": "T de terminal.",
+          "pitfall": "Ctrl + C, no terminal, interrompe o comando que está rodando.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "644",
+          "statement": "A permissão 644 equivale a:",
+          "options": [
+            "rw-r--r--",
+            "rwxr-xr-x",
+            "rwxrwxrwx",
+            "r--r--r--",
+            "rw-rw-rw-"
+          ],
+          "correct_index": 0,
+          "explanation": "O 6 é 4 + 2 (rw-), e o 4 é só r (r--).",
+          "pitfall": "O rwxr-xr-x é 755.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "GPL",
+          "statement": "A licença GPL exige que:",
+          "options": [
+            "as versões mudadas do programa continuem livres",
+            "o programa seja sempre vendido",
+            "o código fique fechado",
+            "só empresas usem o programa",
+            "o programa não seja copiado"
+          ],
+          "correct_index": 0,
+          "explanation": "A liberdade passa adiante com o programa.",
+          "pitfall": "“Código fechado” é o oposto do software livre.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Raiz e root",
+          "statement": "Sobre o Linux, é correto afirmar:",
+          "options": [
+            "/ é a raiz de tudo, e /root é a pasta pessoal do administrador",
+            "/root e / são a mesma coisa",
+            "/root guarda as pastas de todos os usuários",
+            "não existe administrador no Linux",
+            "a raiz se chama C:"
+          ],
+          "correct_index": 0,
+          "explanation": "A raiz é /, e root é também o nome do administrador.",
+          "pitfall": "“São a mesma coisa” confunde os dois por causa do nome, o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "700",
+          "statement": "Depois de chmod 700 relatorio.txt, o arquivo:",
+          "options": [
+            "só pode ser lido, mudado e executado pelo dono",
+            "pode ser lido por todos",
+            "fica apagado",
+            "fica sem permissão para o dono",
+            "pode ser executado só pelos outros"
+          ],
+          "correct_index": 0,
+          "explanation": "O 7 dá rwx ao dono, e os zeros tiram tudo do grupo e dos outros.",
+          "pitfall": "“Lido por todos” ignora os dois zeros, o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "tipos-de-backup",
+      "title": "Os tipos de backup: completo, incremental e diferencial",
+      "module": "Sistemas e arquivos",
+      "summary": "Os três tipos de backup caem em quase toda prova, e a diferença está no que cada um copia e no que ele marca. A lição mostra o completo, o incremental e o diferencial, como restaurar e a regra 3-2-1.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Copiar o caderno",
+          "body": [
+            "Imagine guardar uma cópia do caderno. Dá para copiar tudo toda semana, ou copiar só as páginas novas.",
+            "No computador é igual, e cada jeito tem nome. Copiar arquivos para recuperar depois é fazer backup."
+          ],
+          "terms": [
+            {
+              "word": "backup",
+              "meaning": "a cópia de segurança dos arquivos, guardada em outro lugar para recuperar o que se perder."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A marca de arquivo alterado",
+          "body": [
+            "O Windows põe uma marca em todo arquivo criado ou mudado (o atributo de arquivamento). O backup lê essa marca para saber o que copiar, e alguns tipos a apagam depois.",
+            "É essa marca que separa os três tipos."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os três tipos",
+          "body": [
+            "O completo é a base. Os outros dois copiam só o que mudou, cada um contando de um ponto diferente."
+          ],
+          "terms": [
+            {
+              "word": "backup incremental e diferencial",
+              "meaning": "o incremental copia o que mudou desde o último completo ou incremental; o diferencial copia o que mudou desde o último completo."
+            }
+          ],
+          "table": {
+            "label": "Completo, incremental e diferencial",
+            "headers": [
+              "Tipo",
+              "O que copia",
+              "Apaga a marca?"
+            ],
+            "rows": [
+              [
+                "completo",
+                "tudo",
+                "sim"
+              ],
+              [
+                "incremental",
+                "o que mudou desde o último completo ou incremental",
+                "sim"
+              ],
+              [
+                "diferencial",
+                "o que mudou desde o último completo",
+                "não"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Uma semana de backups",
+          "body": [
+            "O diferencial cresce a cada dia, porque acumula tudo desde o completo. O incremental fica pequeno, porque recomeça a cada backup."
+          ],
+          "example": {
+            "label": "Do domingo à quarta",
+            "lines": [
+              "Domingo: o completo copia tudo.",
+              "Segunda: o incremental copia o que mudou na segunda; o diferencial também.",
+              "Terça: o incremental copia só a terça; o diferencial copia segunda e terça.",
+              "Quarta: o incremental copia só a quarta; o diferencial copia segunda, terça e quarta."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Na hora de restaurar",
+          "body": [
+            "A diferença aparece quando é preciso recuperar tudo."
+          ],
+          "table": {
+            "label": "O que é preciso para restaurar",
+            "headers": [
+              "Esquema",
+              "Precisa de",
+              "Vantagem"
+            ],
+            "rows": [
+              [
+                "completo + incrementais",
+                "o completo e todos os incrementais, em ordem",
+                "backup diário rápido e pequeno"
+              ],
+              [
+                "completo + diferenciais",
+                "o completo e só o último diferencial",
+                "restauração mais simples"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A regra 3-2-1",
+          "body": [
+            "Uma cópia só não basta: se ela fica ao lado do computador, um incêndio leva as duas."
+          ],
+          "example": {
+            "label": "A regra 3-2-1",
+            "lines": [
+              "3 cópias dos dados (a original e mais duas).",
+              "2 tipos diferentes de mídia, como um HD externo e um serviço on-line.",
+              "1 cópia fora do lugar onde está o computador."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Sincronizar não é fazer backup",
+          "body": [
+            "Pastas que sincronizam com a internet copiam também o erro. Se o arquivo é apagado no computador, ele some no serviço on-line.",
+            "Um backup de verdade guarda versões antigas e fica separado do original."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca descreve um esquema de backup e pergunta o que cada um copia ou o que é preciso para restaurar. O ponto que mais cai é a marca: o incremental apaga, e o diferencial não."
+          ],
+          "bullets": [
+            "“No backup diferencial, são copiados…”",
+            "“Para restaurar os dados de quinta-feira, serão necessários…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que o diferencial copia o que mudou desde o último backup: é desde o último completo.",
+            "Achar que basta o último incremental para restaurar: precisa de todos.",
+            "Achar que sincronizar com a internet é fazer backup.",
+            "Guardar a única cópia ao lado do computador."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O completo copia tudo e apaga a marca. O incremental copia o que mudou desde o último completo ou incremental e também apaga a marca.",
+            "O diferencial copia o que mudou desde o último completo e não apaga a marca, por isso cresce. Para restaurar: completo e todos os incrementais, ou completo e o último diferencial."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Completo",
+          "statement": "O backup completo:",
+          "options": [
+            "copia todos os arquivos selecionados",
+            "copia só o que mudou desde ontem",
+            "copia só o que mudou desde o último completo",
+            "não copia nada e só marca os arquivos",
+            "apaga os originais"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele é a base dos outros dois.",
+          "pitfall": "“Desde o último completo” é o diferencial."
+        },
+        {
+          "topic": "Incremental",
+          "statement": "O backup incremental copia:",
+          "options": [
+            "o que mudou desde o último completo ou incremental",
+            "tudo, sempre",
+            "o que mudou desde o último completo, e só ele",
+            "só arquivos de texto",
+            "só o que nunca mudou"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele recomeça a cada backup.",
+          "pitfall": "“Desde o último completo, e só ele” é o diferencial."
+        },
+        {
+          "topic": "Diferencial",
+          "statement": "O backup diferencial copia:",
+          "options": [
+            "o que mudou desde o último backup completo",
+            "o que mudou desde o último incremental",
+            "tudo, sempre",
+            "só os arquivos apagados",
+            "só a marca dos arquivos"
+          ],
+          "correct_index": 0,
+          "explanation": "Por isso ele cresce a cada dia.",
+          "pitfall": "“Desde o último incremental” é a regra do incremental."
+        },
+        {
+          "topic": "Marca",
+          "statement": "Qual tipo de backup NÃO apaga a marca de arquivo alterado?",
+          "options": [
+            "o diferencial",
+            "o incremental",
+            "o completo",
+            "todos apagam",
+            "nenhum lê a marca"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem apagar a marca, ele copia de novo tudo desde o completo.",
+          "pitfall": "O incremental apaga, e é por isso que fica pequeno."
+        },
+        {
+          "topic": "Restaurar com incrementais",
+          "statement": "Uma empresa faz backup completo no domingo e incremental nos outros dias. Para restaurar tudo na quinta, ela precisa:",
+          "options": [
+            "do completo e de todos os incrementais até quinta",
+            "só do último incremental",
+            "só do completo",
+            "do completo e só do último incremental",
+            "de nenhum backup"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada incremental guarda só um dia.",
+          "pitfall": "“Só do último incremental” perde os outros dias."
+        },
+        {
+          "topic": "Restaurar com diferenciais",
+          "statement": "Com backup completo no domingo e diferencial nos outros dias, restaurar tudo na quinta exige:",
+          "options": [
+            "o completo e o diferencial de quinta",
+            "todos os diferenciais da semana",
+            "só o diferencial de quinta",
+            "só o completo",
+            "o completo e o diferencial de segunda"
+          ],
+          "correct_index": 0,
+          "explanation": "O diferencial de quinta já tem tudo desde domingo.",
+          "pitfall": "“Todos os diferenciais” é a regra do incremental."
+        },
+        {
+          "topic": "Tipos",
+          "format": "match",
+          "statement": "Ligue cada um ao que ele copia.",
+          "pairs": [
+            {
+              "left": "completo",
+              "right": "tudo"
+            },
+            {
+              "left": "incremental",
+              "right": "o que mudou desde o último completo ou incremental"
+            },
+            {
+              "left": "diferencial",
+              "right": "o que mudou desde o último completo"
+            },
+            {
+              "left": "sincronização",
+              "right": "o estado atual, inclusive o que foi apagado"
+            }
+          ],
+          "explanation": "Cada tipo conta a mudança de um ponto diferente.",
+          "pitfall": "Sincronizar não guarda versões antigas, então não substitui o backup."
+        },
+        {
+          "topic": "3-2-1",
+          "statement": "Na regra 3-2-1, o 1 quer dizer:",
+          "options": [
+            "uma cópia fora do lugar onde está o computador",
+            "um backup por dia",
+            "um único tipo de mídia",
+            "uma senha para cada cópia",
+            "um arquivo por pasta"
+          ],
+          "correct_index": 0,
+          "explanation": "Assim, um incêndio ou um roubo não leva tudo.",
+          "pitfall": "“Um tipo de mídia” erra o 2, que pede dois tipos."
+        },
+        {
+          "topic": "Para que",
+          "statement": "Fazer backup serve para:",
+          "options": [
+            "recuperar arquivos perdidos ou estragados",
+            "deixar o computador mais rápido",
+            "apagar vírus",
+            "liberar espaço na memória",
+            "trocar a senha"
+          ],
+          "correct_index": 0,
+          "explanation": "É uma cópia de segurança.",
+          "pitfall": "O backup não remove nada nem acelera o computador.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Sincronizar",
+          "statement": "Uma pasta sincronizada com um serviço on-line apaga lá o arquivo que foi apagado no computador. Por isso, ela:",
+          "options": [
+            "não substitui um backup de verdade",
+            "é o melhor backup que existe",
+            "guarda todas as versões sempre",
+            "impede que se apague qualquer arquivo",
+            "é um backup diferencial"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela copia também o erro.",
+          "pitfall": "“O melhor backup” ignora que ela repete o que foi apagado.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Tamanho",
+          "statement": "Ao longo da semana, o backup que fica maior a cada dia é o:",
+          "options": [
+            "diferencial",
+            "incremental",
+            "completo de domingo",
+            "de segunda",
+            "nenhum deles"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele acumula tudo desde o completo.",
+          "pitfall": "O incremental recomeça a cada dia e fica pequeno.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Rápido",
+          "statement": "O esquema que deixa o backup diário mais rápido e menor é:",
+          "options": [
+            "completo mais incrementais",
+            "completo mais diferenciais",
+            "um completo todo dia",
+            "nenhum backup",
+            "só diferenciais, sem completo"
+          ],
+          "correct_index": 0,
+          "explanation": "O incremental copia só o que mudou desde o último.",
+          "pitfall": "O diferencial cresce e fica mais lento.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Copia e apaga",
+          "statement": "Um backup copia só os arquivos com a marca de alterado e depois apaga a marca. Ele é o:",
+          "options": [
+            "incremental",
+            "diferencial",
+            "completo",
+            "de sincronização",
+            "de imagem do disco"
+          ],
+          "correct_index": 0,
+          "explanation": "O incremental copia o que tem a marca e a apaga.",
+          "pitfall": "O diferencial também copia o que tem a marca, mas não a apaga, o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Incêndio",
+          "statement": "Uma loja faz backup todo dia num HD externo que fica ao lado do computador, e um incêndio destrói a sala. O erro foi:",
+          "options": [
+            "não ter nenhuma cópia fora do lugar",
+            "fazer backup todo dia",
+            "usar um HD externo",
+            "não usar o backup diferencial",
+            "não sincronizar a pasta"
+          ],
+          "correct_index": 0,
+          "explanation": "A regra 3-2-1 pede uma cópia em outro lugar.",
+          "pitfall": "“Não usar o diferencial” troca o problema de lugar por um de tipo, o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "word-e-writer",
+      "title": "Word e Writer: os atalhos que trocam de letra",
+      "module": "Escritório",
+      "summary": "Word e Writer fazem quase o mesmo, mas muitos atalhos mudam de letra entre os dois. A lição mostra os atalhos que as bancas trocam, os formatos .docx e .odt, os estilos e o sumário automático.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O mesmo N, dois efeitos",
+          "body": [
+            "No Word em português, Ctrl + N põe o texto em negrito. No Writer, do LibreOffice, Ctrl + N abre um documento novo.",
+            "É o tipo de troca que a banca adora. Os dois programas fazem quase tudo igual, mas os atalhos seguem línguas diferentes."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os atalhos que mudam",
+          "body": [
+            "O Word em português traduziu os atalhos (N de negrito, S de sublinhado). O Writer usa as letras do inglês (B de bold, U de underline)."
+          ],
+          "table": {
+            "label": "Word em português × Writer",
+            "headers": [
+              "Ação",
+              "Word",
+              "Writer"
+            ],
+            "rows": [
+              [
+                "negrito",
+                "Ctrl + N",
+                "Ctrl + B"
+              ],
+              [
+                "itálico",
+                "Ctrl + I",
+                "Ctrl + I"
+              ],
+              [
+                "sublinhado",
+                "Ctrl + S",
+                "Ctrl + U"
+              ],
+              [
+                "salvar",
+                "Ctrl + B",
+                "Ctrl + S"
+              ],
+              [
+                "novo documento",
+                "Ctrl + O",
+                "Ctrl + N"
+              ],
+              [
+                "abrir",
+                "Ctrl + A",
+                "Ctrl + O"
+              ],
+              [
+                "selecionar tudo",
+                "Ctrl + T",
+                "Ctrl + A"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os que não mudam",
+          "body": [
+            "Estes funcionam igual no Word e no Writer. Ctrl + Enter começa uma página nova sem precisar apertar Enter várias vezes."
+          ],
+          "table": {
+            "label": "Atalhos iguais nos dois",
+            "headers": [
+              "Atalho",
+              "O que faz"
+            ],
+            "rows": [
+              [
+                "Ctrl + Z",
+                "desfaz"
+              ],
+              [
+                "Ctrl + C e Ctrl + V",
+                "copia e cola"
+              ],
+              [
+                "Ctrl + P",
+                "imprime"
+              ],
+              [
+                "Ctrl + E",
+                "centraliza"
+              ],
+              [
+                "Ctrl + J",
+                "justifica"
+              ],
+              [
+                "Ctrl + Enter",
+                "quebra de página"
+              ],
+              [
+                "F7",
+                "verificação de ortografia"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os formatos",
+          "body": [
+            "Cada programa tem o seu formato padrão, mas os dois abrem o formato do outro."
+          ],
+          "terms": [
+            {
+              "word": "extensão de arquivo",
+              "meaning": "as letras depois do ponto no nome do arquivo, que dizem o tipo dele: .docx, .pdf."
+            }
+          ],
+          "table": {
+            "label": "Os formatos de texto",
+            "headers": [
+              "Extensão",
+              "De quem é",
+              "Observação"
+            ],
+            "rows": [
+              [
+                ".docx",
+                "Word (desde 2007)",
+                "o padrão de hoje"
+              ],
+              [
+                ".doc",
+                "Word antigo",
+                "ainda abre nos dois"
+              ],
+              [
+                ".odt",
+                "Writer (formato aberto)",
+                "o Word também abre"
+              ],
+              [
+                ".pdf",
+                "qualquer programa",
+                "para ler e imprimir igual em todo lugar"
+              ],
+              [
+                ".txt",
+                "qualquer programa",
+                "só texto, sem formatação"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Estilos e sumário",
+          "body": [
+            "Estilo é um conjunto de formatação com nome, como Título 1. Quem formata os títulos com estilos ganha o sumário automático.",
+            "O sumário lê os títulos e monta a lista com as páginas. Mudou um título, basta atualizar."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Outras ferramentas que caem",
+          "body": [
+            "Estas aparecem nas provas com o nome e uma descrição do uso."
+          ],
+          "table": {
+            "label": "Ferramentas do editor de texto",
+            "headers": [
+              "Ferramenta",
+              "O que faz"
+            ],
+            "rows": [
+              [
+                "mala direta",
+                "gera várias cartas iguais com nomes diferentes, a partir de uma lista"
+              ],
+              [
+                "controle de alterações",
+                "marca o que cada pessoa mudou no texto"
+              ],
+              [
+                "cabeçalho e rodapé",
+                "texto que se repete em todas as páginas"
+              ],
+              [
+                "localizar e substituir",
+                "troca uma palavra por outra no texto todo"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca dá um atalho e pergunta o que ele faz no Word ou no Writer, ou pede o formato padrão de cada um. A troca entre os dois programas é a pegadinha mais comum."
+          ],
+          "bullets": [
+            "“No Microsoft Word, em português, o atalho Ctrl + S…”",
+            "“O formato padrão do LibreOffice Writer é…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que Ctrl + S salva no Word em português: ali ele sublinha.",
+            "Achar que Ctrl + N põe negrito no Writer: ali ele abre um documento novo.",
+            "Achar que o Word não abre .odt.",
+            "Achar que o sumário automático funciona sem os estilos de título."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "No Word em português, Ctrl + N é negrito e Ctrl + B salva. No Writer, Ctrl + B é negrito e Ctrl + S salva.",
+            "O formato do Word é .docx, e o do Writer é .odt. O sumário automático vem dos estilos de título."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Negrito no Word",
+          "statement": "No Word em português, o atalho Ctrl + N:",
+          "options": [
+            "aplica negrito",
+            "abre um documento novo",
+            "salva o documento",
+            "imprime",
+            "sublinha"
+          ],
+          "correct_index": 0,
+          "explanation": "N de negrito.",
+          "pitfall": "“Documento novo” é o Ctrl + N do Writer."
+        },
+        {
+          "topic": "Salvar no Writer",
+          "statement": "No Writer, do LibreOffice, o atalho para salvar é:",
+          "options": [
+            "Ctrl + S",
+            "Ctrl + B",
+            "Ctrl + N",
+            "Ctrl + P",
+            "Ctrl + U"
+          ],
+          "correct_index": 0,
+          "explanation": "O Writer usa as letras do inglês: S de save.",
+          "pitfall": "Ctrl + B salva no Word, mas no Writer é negrito."
+        },
+        {
+          "topic": "Sublinhado no Word",
+          "statement": "No Word em português, Ctrl + S:",
+          "options": [
+            "sublinha o texto",
+            "salva o documento",
+            "seleciona tudo",
+            "abre um documento",
+            "centraliza"
+          ],
+          "correct_index": 0,
+          "explanation": "S de sublinhado.",
+          "pitfall": "“Salva” é a armadilha: no Word, salvar é Ctrl + B."
+        },
+        {
+          "topic": "Quebra",
+          "statement": "No Word e no Writer, Ctrl + Enter:",
+          "options": [
+            "insere uma quebra de página",
+            "salva e fecha",
+            "abre um parágrafo novo",
+            "justifica o texto",
+            "imprime"
+          ],
+          "correct_index": 0,
+          "explanation": "O texto continua na página seguinte.",
+          "pitfall": "“Parágrafo novo” é só o Enter."
+        },
+        {
+          "topic": "Formato do Writer",
+          "statement": "O formato padrão do Writer é:",
+          "options": [
+            ".odt",
+            ".docx",
+            ".pdf",
+            ".txt",
+            ".xlsx"
+          ],
+          "correct_index": 0,
+          "explanation": "É o formato aberto do LibreOffice.",
+          "pitfall": "O .docx é o do Word."
+        },
+        {
+          "topic": "Sumário",
+          "statement": "Para gerar o sumário automático, os títulos precisam estar:",
+          "options": [
+            "formatados com estilos de título",
+            "em negrito",
+            "em letras maiúsculas",
+            "sublinhados",
+            "em outra fonte"
+          ],
+          "correct_index": 0,
+          "explanation": "O sumário lê os estilos, não a aparência.",
+          "pitfall": "“Em negrito” deixa o título bonito, mas o sumário não o reconhece."
+        },
+        {
+          "topic": "Atalhos do Writer",
+          "format": "match",
+          "statement": "Ligue cada atalho do Writer ao que ele faz.",
+          "pairs": [
+            {
+              "left": "Ctrl + B",
+              "right": "negrito"
+            },
+            {
+              "left": "Ctrl + U",
+              "right": "sublinhado"
+            },
+            {
+              "left": "Ctrl + O",
+              "right": "abrir"
+            },
+            {
+              "left": "Ctrl + N",
+              "right": "documento novo"
+            }
+          ],
+          "explanation": "O Writer usa as letras do inglês.",
+          "pitfall": "No Word em português, as mesmas teclas fazem outra coisa."
+        },
+        {
+          "topic": "Mala direta",
+          "statement": "Para mandar a mesma carta a 200 clientes, cada uma com o nome do cliente, usa-se:",
+          "options": [
+            "a mala direta",
+            "o controle de alterações",
+            "o sumário",
+            "o cabeçalho",
+            "a quebra de página"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela junta o modelo com a lista de nomes.",
+          "pitfall": "O controle de alterações marca o que mudou no texto."
+        },
+        {
+          "topic": "F7",
+          "statement": "No Word e no Writer, a tecla F7 abre:",
+          "options": [
+            "a verificação de ortografia",
+            "a impressão",
+            "um documento novo",
+            "o sumário",
+            "a ajuda"
+          ],
+          "correct_index": 0,
+          "explanation": "O F7 confere a ortografia.",
+          "pitfall": "A ajuda costuma ser F1.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "PDF",
+          "statement": "Para mandar um documento que abra igual em qualquer computador, o melhor formato é:",
+          "options": [
+            ".pdf",
+            ".txt",
+            ".doc",
+            ".odt",
+            ".tmp"
+          ],
+          "correct_index": 0,
+          "explanation": "O PDF guarda a aparência.",
+          "pitfall": "O .txt perde toda a formatação.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Abrir no Word",
+          "statement": "No Word em português, Ctrl + A:",
+          "options": [
+            "abre um documento",
+            "seleciona tudo",
+            "aplica negrito",
+            "salva",
+            "alinha à esquerda"
+          ],
+          "correct_index": 0,
+          "explanation": "A de abrir.",
+          "pitfall": "“Seleciona tudo” é o Ctrl + A do Writer, o mais confundido.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "odt no Word",
+          "statement": "Um documento .odt enviado a quem só tem o Word:",
+          "options": [
+            "abre no Word, que lê esse formato",
+            "não abre de jeito nenhum",
+            "precisa virar .txt antes",
+            "perde toda a formatação",
+            "só abre no celular"
+          ],
+          "correct_index": 0,
+          "explanation": "O Word abre e salva .odt.",
+          "pitfall": "“Não abre” é o engano mais comum.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Ctrl + B",
+          "statement": "No Word em português, alguém aperta Ctrl + B achando que vai aplicar negrito, como no Writer. O que acontece?",
+          "options": [
+            "o documento é salvo",
+            "o texto fica em negrito",
+            "o texto fica sublinhado",
+            "abre um documento novo",
+            "nada acontece"
+          ],
+          "correct_index": 0,
+          "explanation": "No Word em português, Ctrl + B é salvar.",
+          "pitfall": "“Fica em negrito” é o resultado no Writer, o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Sumário vazio",
+          "statement": "Um aluno deixou todos os títulos em negrito e tamanho 16, mas o sumário automático saiu vazio. O motivo é que:",
+          "options": [
+            "os títulos não usam estilos de título",
+            "o negrito apaga o sumário",
+            "o tamanho 16 é pequeno demais",
+            "o sumário só funciona no Writer",
+            "o sumário precisa de internet"
+          ],
+          "correct_index": 0,
+          "explanation": "O sumário lê o estilo, não a aparência.",
+          "pitfall": "“Só funciona no Writer” é falso: os dois têm sumário, o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "planilhas-para-concursos",
+      "title": "Planilhas: referências, funções e erros",
+      "module": "Escritório",
+      "summary": "As planilhas caem em toda prova de informática, e a questão favorita é copiar uma fórmula. A lição mostra as referências relativa, absoluta e mista, as funções que mais caem e o que cada erro quer dizer.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A fórmula que anda",
+          "body": [
+            "Na célula C1 está =A1+B1. Copie para C2, e a fórmula vira =A2+B2 sozinha.",
+            "Isso acontece porque a referência é relativa: ela anda junto com a fórmula. Entender isso resolve metade das questões de planilha."
+          ],
+          "terms": [
+            {
+              "word": "planilha",
+              "meaning": "a tabela de linhas e colunas do Excel ou do Calc, onde cada caixinha guarda um dado ou uma conta."
+            },
+            {
+              "word": "célula (de planilha)",
+              "meaning": "cada caixinha da planilha, chamada pela coluna e pela linha, como B3."
+            },
+            {
+              "word": "fórmula",
+              "meaning": "a conta escrita numa célula, que começa com o sinal de igual (=)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Relativa, absoluta e mista",
+          "body": [
+            "O cifrão ($) trava o que vem logo depois dele. No Excel, a tecla F4 alterna entre os quatro jeitos; no Calc, é Shift + F4."
+          ],
+          "terms": [
+            {
+              "word": "referência relativa, absoluta e mista",
+              "meaning": "o jeito de citar uma célula numa fórmula. A relativa (A1) muda ao copiar; a absoluta ($A$1) fica fixa; a mista ($A1 ou A$1) fixa só a coluna ou só a linha."
+            }
+          ],
+          "table": {
+            "label": "O que o cifrão trava",
+            "headers": [
+              "Referência",
+              "Ao copiar",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "A1",
+                "muda coluna e linha",
+                "vira B2 uma célula para baixo e para a direita"
+              ],
+              [
+                "$A$1",
+                "não muda nada",
+                "continua $A$1"
+              ],
+              [
+                "$A1",
+                "trava a coluna",
+                "a linha muda"
+              ],
+              [
+                "A$1",
+                "trava a linha",
+                "a coluna muda"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Copiando passo a passo",
+          "body": [
+            "Para saber o resultado, conte quanto a fórmula andou e aplique só no que não tem cifrão."
+          ],
+          "example": {
+            "label": "Copiando =A1*$B$1 de C1 para D2",
+            "lines": [
+              "A fórmula desceu uma linha e andou uma coluna.",
+              "A1 é relativa: vira B2.",
+              "$B$1 é absoluta: fica $B$1.",
+              "Resultado em D2: =B2*$B$1."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Dois-pontos ou ponto e vírgula",
+          "body": [
+            "Na fórmula, o dois-pontos marca um intervalo, e o ponto e vírgula separa itens. A diferença muda o resultado."
+          ],
+          "example": {
+            "label": "A diferença de um sinal",
+            "lines": [
+              "=SOMA(A1:A4) soma A1, A2, A3 e A4.",
+              "=SOMA(A1;A4) soma só A1 e A4.",
+              "Com A1 a A4 valendo 1, 2, 3 e 4, a primeira dá 10, e a segunda dá 5."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "As funções que mais caem",
+          "body": [
+            "Os nomes são os mesmos no Excel e no Calc em português. Os dois usam o ponto e vírgula para separar as partes."
+          ],
+          "table": {
+            "label": "Funções do Excel e do Calc",
+            "headers": [
+              "Função",
+              "O que faz"
+            ],
+            "rows": [
+              [
+                "SOMA",
+                "soma os valores"
+              ],
+              [
+                "MÉDIA",
+                "faz a média"
+              ],
+              [
+                "MÁXIMO e MÍNIMO",
+                "o maior e o menor valor"
+              ],
+              [
+                "SE",
+                "testa uma condição: =SE(A1>=7;\"Aprovado\";\"Reprovado\")"
+              ],
+              [
+                "CONT.SE",
+                "conta as células que atendem a um critério"
+              ],
+              [
+                "CONT.VALORES",
+                "conta as células que não estão vazias"
+              ],
+              [
+                "PROCV",
+                "procura um valor na primeira coluna e devolve outra coluna da mesma linha"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que cada erro quer dizer",
+          "body": [
+            "Quando a conta não dá certo, a planilha mostra um código. Cada código aponta um problema diferente."
+          ],
+          "table": {
+            "label": "Os erros das planilhas",
+            "headers": [
+              "Erro",
+              "Quer dizer"
+            ],
+            "rows": [
+              [
+                "#DIV/0!",
+                "divisão por zero"
+              ],
+              [
+                "#NOME?",
+                "nome de função escrito errado"
+              ],
+              [
+                "#REF!",
+                "a fórmula aponta para uma célula que não existe mais"
+              ],
+              [
+                "#VALOR!",
+                "tipo errado na conta, como texto no lugar de número"
+              ],
+              [
+                "#N/D",
+                "o valor procurado não foi achado (comum no PROCV)"
+              ],
+              [
+                "#####",
+                "a coluna é estreita demais para o número"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Outra folha do mesmo arquivo",
+          "body": [
+            "Para usar uma célula de outra folha, o Excel usa o ponto de exclamação e o Calc usa o ponto."
+          ],
+          "example": {
+            "label": "Citando outra folha",
+            "lines": [
+              "Excel: =Planilha2!A1",
+              "Calc: =Planilha2.A1"
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca mostra uma planilha, copia uma fórmula e pergunta o resultado. Também pede o significado de um erro ou o que faz uma função."
+          ],
+          "bullets": [
+            "“Ao copiar a fórmula da célula C3 para D4, o resultado será…”",
+            "“A célula exibe #REF! porque…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Esquecer que a referência relativa anda ao copiar.",
+            "Achar que $A1 trava a linha: trava a coluna.",
+            "Ler =SOMA(A1;A4) como um intervalo: são só duas células.",
+            "Confundir #NOME? (função escrita errado) com #REF! (célula que sumiu)."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A referência relativa (A1) anda ao copiar, e a absoluta ($A$1) fica parada. O cifrão trava o que vem depois dele.",
+            "Dois-pontos é intervalo, e ponto e vírgula separa itens. Erro de divisão por zero é #DIV/0!, e célula que sumiu é #REF!."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Copiar",
+          "statement": "A célula C1 tem =A1+B1. Copiada para C2, a fórmula fica:",
+          "options": [
+            "=A2+B2",
+            "=A1+B1",
+            "=B1+C1",
+            "=A2+B1",
+            "=$A$1+$B$1"
+          ],
+          "correct_index": 0,
+          "explanation": "A referência relativa desce uma linha junto.",
+          "pitfall": "“=A1+B1” só aconteceria com referências absolutas."
+        },
+        {
+          "topic": "Absoluta",
+          "statement": "A célula D1 tem =A1*$B$1. Copiada para D2, ela fica:",
+          "options": [
+            "=A2*$B$1",
+            "=A2*$B$2",
+            "=A1*$B$1",
+            "=B2*$B$1",
+            "=A2*B2"
+          ],
+          "correct_index": 0,
+          "explanation": "O A1 anda, e o $B$1 fica parado.",
+          "pitfall": "“=A2*$B$2” ignora o cifrão da linha."
+        },
+        {
+          "topic": "Intervalo",
+          "statement": "A coluna A tem os valores 1, 2, 3 e 4 em A1 a A4. O resultado de =SOMA(A1:A4) é:",
+          "options": [
+            "10",
+            "5",
+            "4",
+            "1",
+            "24"
+          ],
+          "correct_index": 0,
+          "explanation": "O dois-pontos pega o intervalo inteiro: 1 + 2 + 3 + 4.",
+          "pitfall": "O 5 é o resultado de =SOMA(A1;A4), que soma só duas."
+        },
+        {
+          "topic": "Ponto e vírgula",
+          "statement": "Com os mesmos valores, =SOMA(A1;A4) dá:",
+          "options": [
+            "5",
+            "10",
+            "4",
+            "1",
+            "14"
+          ],
+          "correct_index": 0,
+          "explanation": "O ponto e vírgula separa: só A1 e A4.",
+          "pitfall": "O 10 lê o ponto e vírgula como intervalo."
+        },
+        {
+          "topic": "Divisão",
+          "statement": "Uma célula mostra #DIV/0!. Isso quer dizer que:",
+          "options": [
+            "a fórmula tentou dividir por zero",
+            "o nome da função está errado",
+            "a coluna está estreita",
+            "a célula foi apagada",
+            "o valor não foi achado"
+          ],
+          "correct_index": 0,
+          "explanation": "É a divisão por zero.",
+          "pitfall": "O nome de função errado dá #NOME?."
+        },
+        {
+          "topic": "SE",
+          "statement": "A fórmula =SE(B2>=7;\"Aprovado\";\"Reprovado\") mostra Aprovado quando:",
+          "options": [
+            "B2 vale 7 ou mais",
+            "B2 vale menos que 7",
+            "B2 está vazia",
+            "B2 tem texto",
+            "sempre"
+          ],
+          "correct_index": 0,
+          "explanation": "O teste é B2 maior ou igual a 7.",
+          "pitfall": "“Menos que 7” é o caso do Reprovado."
+        },
+        {
+          "topic": "Erros",
+          "format": "match",
+          "statement": "Ligue cada erro ao que ele indica.",
+          "pairs": [
+            {
+              "left": "#NOME?",
+              "right": "função escrita errada"
+            },
+            {
+              "left": "#REF!",
+              "right": "célula que não existe mais"
+            },
+            {
+              "left": "#VALOR!",
+              "right": "tipo errado na conta"
+            },
+            {
+              "left": "#N/D",
+              "right": "valor não encontrado"
+            }
+          ],
+          "explanation": "Cada erro aponta um problema diferente.",
+          "pitfall": "O #NOME? e o #REF! são os mais trocados."
+        },
+        {
+          "topic": "Mista",
+          "statement": "Na referência $A1, ao copiar a fórmula:",
+          "options": [
+            "a coluna fica travada e a linha muda",
+            "a linha fica travada e a coluna muda",
+            "nada muda",
+            "tudo muda",
+            "a fórmula é apagada"
+          ],
+          "correct_index": 0,
+          "explanation": "O cifrão trava o que vem logo depois: a coluna A.",
+          "pitfall": "“A linha fica travada” seria A$1."
+        },
+        {
+          "topic": "Igual",
+          "statement": "Toda fórmula de planilha começa com:",
+          "options": [
+            "o sinal de igual (=)",
+            "um ponto",
+            "uma aspa",
+            "um cifrão",
+            "um espaço"
+          ],
+          "correct_index": 0,
+          "explanation": "O = avisa que vem uma conta.",
+          "pitfall": "O cifrão trava a referência, mas não começa a fórmula.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Cerquilhas",
+          "statement": "Uma célula mostra #####. O mais provável é que:",
+          "options": [
+            "a coluna esteja estreita demais para o número",
+            "a fórmula esteja errada",
+            "o arquivo esteja estragado",
+            "a célula esteja vazia",
+            "o número seja negativo"
+          ],
+          "correct_index": 0,
+          "explanation": "Basta alargar a coluna.",
+          "pitfall": "Uma fórmula errada mostraria outro erro, com nome.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "CONT.SE",
+          "statement": "A fórmula =CONT.SE(B2:B30;\"Sim\"):",
+          "options": [
+            "conta quantas células de B2 a B30 têm Sim",
+            "soma os valores de B2 a B30",
+            "procura Sim e devolve a linha",
+            "apaga as células com Sim",
+            "conta as células vazias"
+          ],
+          "correct_index": 0,
+          "explanation": "O CONT.SE conta pelo critério.",
+          "pitfall": "Somar pelo critério seria SOMASE.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Calc",
+          "statement": "No Calc, para citar a célula A1 da folha Planilha2, escreve-se:",
+          "options": [
+            "=Planilha2.A1",
+            "=Planilha2!A1",
+            "=Planilha2:A1",
+            "=Planilha2;A1",
+            "=A1.Planilha2"
+          ],
+          "correct_index": 0,
+          "explanation": "O Calc usa o ponto.",
+          "pitfall": "O ponto de exclamação é do Excel.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Diagonal",
+          "statement": "A célula C3 tem =$A3+B$1. Copiada para D4, ela fica:",
+          "options": [
+            "=$A4+C$1",
+            "=$A3+B$1",
+            "=$B4+C$2",
+            "=$A4+B$1",
+            "=A4+C1"
+          ],
+          "correct_index": 0,
+          "explanation": "O $A trava a coluna e a linha anda; o B$1 trava a linha e a coluna anda.",
+          "pitfall": "“=$A4+B$1” anda só a primeira referência, o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "PROCV",
+          "statement": "A fórmula =PROCV(\"Ana\";A2:C20;3;0) procura Ana:",
+          "options": [
+            "na coluna A e devolve o valor da coluna C na mesma linha",
+            "em todas as colunas e devolve a linha 3",
+            "na coluna C e devolve a coluna A",
+            "na linha 3 e devolve a coluna A",
+            "e conta quantas vezes ela aparece"
+          ],
+          "correct_index": 0,
+          "explanation": "O 3 é a terceira coluna do intervalo, e o 0 pede o valor exato.",
+          "pitfall": "“Devolve a linha 3” lê o 3 como linha, o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "apresentacoes-e-formatos",
+      "title": "Apresentações e formatos de arquivo",
+      "module": "Escritório",
+      "summary": "PowerPoint e Impress caem menos que o texto e a planilha, mas têm pegadinhas certas. A lição mostra como começar a apresentação, o slide mestre, a diferença entre transição e animação e as extensões de cada programa.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "F5 ou Shift + F5",
+          "body": [
+            "No meio da reunião, alguém aperta F5, e a apresentação volta para o primeiro slide. Era para começar de onde estava, com Shift + F5.",
+            "Detalhes assim viram questão. Eles valem no PowerPoint e no Impress, do LibreOffice."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Começar e sair",
+          "body": [
+            "Estas teclas valem durante a apresentação, no PowerPoint e no Impress."
+          ],
+          "table": {
+            "label": "As teclas da apresentação",
+            "headers": [
+              "Tecla",
+              "O que faz"
+            ],
+            "rows": [
+              [
+                "F5",
+                "começa do primeiro slide"
+              ],
+              [
+                "Shift + F5",
+                "começa do slide atual"
+              ],
+              [
+                "Esc",
+                "sai da apresentação"
+              ],
+              [
+                "B ou ponto",
+                "deixa a tela preta"
+              ],
+              [
+                "número + Enter",
+                "vai direto para aquele slide"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os modos de exibição",
+          "body": [
+            "Os nomes abaixo são do PowerPoint. No Impress, a classificação se chama Organizador de slides."
+          ],
+          "table": {
+            "label": "Modos de exibição",
+            "headers": [
+              "Modo",
+              "Serve para"
+            ],
+            "rows": [
+              [
+                "Normal",
+                "editar um slide por vez"
+              ],
+              [
+                "Classificação de slides",
+                "ver todos em miniatura e mudar a ordem"
+              ],
+              [
+                "Anotações",
+                "escrever o que o apresentador vai falar"
+              ],
+              [
+                "Apresentação de slides",
+                "mostrar em tela cheia"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O slide mestre",
+          "body": [
+            "Mudar a fonte de 40 slides um por um dá trabalho. No slide mestre, a mudança vale para todos de uma vez.",
+            "É lá que se põe o logotipo que aparece em todas as páginas."
+          ],
+          "terms": [
+            {
+              "word": "slide mestre",
+              "meaning": "o modelo que define a aparência de todos os slides de uma vez: fonte, cores e logotipo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Transição ou animação",
+          "body": [
+            "As duas palavras parecem iguais, e a banca troca uma pela outra."
+          ],
+          "table": {
+            "label": "Os dois efeitos",
+            "headers": [
+              "Efeito",
+              "Onde acontece",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "transição",
+                "entre um slide e o próximo",
+                "o slide entra deslizando"
+              ],
+              [
+                "animação",
+                "num objeto dentro do slide",
+                "um título que aparece letra por letra"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "As extensões de cada programa",
+          "body": [
+            "O Microsoft Office e o LibreOffice usam extensões diferentes para o mesmo tipo de arquivo."
+          ],
+          "terms": [
+            {
+              "word": "extensão de arquivo",
+              "meaning": "as letras depois do ponto no nome do arquivo, que dizem o tipo dele: .docx, .pdf."
+            },
+            {
+              "word": "planilha",
+              "meaning": "a tabela de linhas e colunas do Excel ou do Calc, onde cada caixinha guarda um dado ou uma conta."
+            }
+          ],
+          "table": {
+            "label": "Extensões do escritório",
+            "headers": [
+              "Tipo",
+              "Microsoft Office",
+              "LibreOffice"
+            ],
+            "rows": [
+              [
+                "texto",
+                ".docx",
+                ".odt"
+              ],
+              [
+                "planilha",
+                ".xlsx",
+                ".ods"
+              ],
+              [
+                "apresentação",
+                ".pptx",
+                ".odp"
+              ],
+              [
+                "apresentação que abre já em tela cheia",
+                ".ppsx",
+                "não tem"
+              ],
+              [
+                "modelo de apresentação",
+                ".potx",
+                ".otp"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Formatos de qualquer programa",
+          "body": [
+            "Alguns formatos não são de um programa só e caem junto com os outros."
+          ],
+          "table": {
+            "label": "Formatos comuns",
+            "headers": [
+              "Extensão",
+              "O que guarda"
+            ],
+            "rows": [
+              [
+                ".pdf",
+                "documento que abre igual em todo lugar"
+              ],
+              [
+                ".csv",
+                "tabela em texto puro, com os valores separados"
+              ],
+              [
+                ".txt",
+                "texto sem formatação"
+              ],
+              [
+                ".zip",
+                "arquivos compactados num só"
+              ],
+              [
+                ".jpg e .png",
+                "imagens"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca pergunta que tecla começa a apresentação, onde se muda o visual de todos os slides ou qual extensão é de qual programa."
+          ],
+          "bullets": [
+            "“No PowerPoint, para iniciar a apresentação a partir do slide atual…”",
+            "“O arquivo com extensão .ods é…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que F5 começa do slide atual: ele começa do primeiro.",
+            "Confundir transição (entre slides) com animação (dentro do slide).",
+            "Mudar o logotipo slide por slide em vez de usar o slide mestre.",
+            "Achar que .ods é texto: é a planilha do LibreOffice."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "F5 começa do primeiro slide, e Shift + F5 do slide atual. O slide mestre muda o visual de todos de uma vez.",
+            "Transição é entre slides, e animação é dentro do slide. No LibreOffice, as extensões são .odt, .ods e .odp. No Microsoft Office, são .docx, .xlsx e .pptx."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "F5",
+          "statement": "No PowerPoint, a tecla F5:",
+          "options": [
+            "começa a apresentação do primeiro slide",
+            "começa do slide atual",
+            "salva a apresentação",
+            "fecha o programa",
+            "abre o slide mestre"
+          ],
+          "correct_index": 0,
+          "explanation": "Do slide atual é Shift + F5.",
+          "pitfall": "“Do slide atual” é o Shift + F5."
+        },
+        {
+          "topic": "Shift F5",
+          "statement": "Para começar a apresentação a partir do slide em que se está, usa-se:",
+          "options": [
+            "Shift + F5",
+            "F5",
+            "Ctrl + F5",
+            "Esc",
+            "F7"
+          ],
+          "correct_index": 0,
+          "explanation": "O Shift muda o ponto de partida.",
+          "pitfall": "O F5 sozinho volta ao primeiro."
+        },
+        {
+          "topic": "Mestre",
+          "statement": "Para pôr o logotipo da empresa em todos os slides de uma vez, usa-se:",
+          "options": [
+            "o slide mestre",
+            "a transição",
+            "a animação",
+            "o modo de anotações",
+            "a classificação de slides"
+          ],
+          "correct_index": 0,
+          "explanation": "O mestre define a aparência de todos.",
+          "pitfall": "A transição é o efeito entre slides."
+        },
+        {
+          "topic": "Transição",
+          "statement": "O efeito que acontece na passagem de um slide para o próximo é a:",
+          "options": [
+            "transição",
+            "animação",
+            "anotação",
+            "classificação",
+            "mala direta"
+          ],
+          "correct_index": 0,
+          "explanation": "Transição é entre slides.",
+          "pitfall": "A animação é o efeito de um objeto dentro do slide."
+        },
+        {
+          "topic": "Animação",
+          "statement": "Fazer um título aparecer letra por letra dentro do slide é usar:",
+          "options": [
+            "uma animação",
+            "uma transição",
+            "o slide mestre",
+            "uma anotação",
+            "uma quebra de página"
+          ],
+          "correct_index": 0,
+          "explanation": "Animação é efeito num objeto.",
+          "pitfall": "A transição vale para o slide inteiro."
+        },
+        {
+          "topic": "odp",
+          "statement": "A extensão .odp é de:",
+          "options": [
+            "apresentação do LibreOffice Impress",
+            "texto do Writer",
+            "planilha do Calc",
+            "apresentação do PowerPoint",
+            "imagem"
+          ],
+          "correct_index": 0,
+          "explanation": "O p de .odp é de presentation.",
+          "pitfall": "O .pptx é do PowerPoint."
+        },
+        {
+          "topic": "Extensões",
+          "format": "match",
+          "statement": "Ligue cada extensão ao tipo de arquivo.",
+          "pairs": [
+            {
+              "left": ".ods",
+              "right": "planilha do LibreOffice"
+            },
+            {
+              "left": ".xlsx",
+              "right": "planilha do Excel"
+            },
+            {
+              "left": ".odt",
+              "right": "texto do LibreOffice"
+            },
+            {
+              "left": ".ppsx",
+              "right": "apresentação que abre em tela cheia"
+            }
+          ],
+          "explanation": "A letra do meio costuma dizer o tipo.",
+          "pitfall": "O .ods e o .odt mudam numa letra: s de spreadsheet, t de text."
+        },
+        {
+          "topic": "Miniaturas",
+          "statement": "O modo que mostra todos os slides em miniatura para mudar a ordem é:",
+          "options": [
+            "a classificação de slides",
+            "o modo de anotações",
+            "o slide mestre",
+            "a apresentação de slides",
+            "a transição"
+          ],
+          "correct_index": 0,
+          "explanation": "No Impress, ele se chama Organizador de slides.",
+          "pitfall": "O slide mestre muda o visual, não a ordem."
+        },
+        {
+          "topic": "Esc",
+          "statement": "Durante a apresentação, a tecla Esc:",
+          "options": [
+            "sai da apresentação",
+            "volta ao primeiro slide",
+            "deixa a tela preta",
+            "apaga o slide",
+            "salva o arquivo"
+          ],
+          "correct_index": 0,
+          "explanation": "O Esc encerra a tela cheia.",
+          "pitfall": "A tela preta é com B ou ponto.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "PDF",
+          "statement": "Para mandar uma apresentação que abra igual em qualquer computador, mesmo sem PowerPoint, o melhor formato é:",
+          "options": [
+            ".pdf",
+            ".pptx",
+            ".odp",
+            ".txt",
+            ".csv"
+          ],
+          "correct_index": 0,
+          "explanation": "O PDF guarda a aparência e abre em qualquer lugar.",
+          "pitfall": "O .pptx precisa de um programa de apresentação.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Tela preta",
+          "statement": "Durante a apresentação no PowerPoint, apertar B:",
+          "options": [
+            "deixa a tela preta",
+            "volta ao início",
+            "apaga o slide",
+            "liga a animação",
+            "abre o mestre"
+          ],
+          "correct_index": 0,
+          "explanation": "Serve para tirar a atenção da tela por um momento.",
+          "pitfall": "“Volta ao início” é o que a tecla Home faz.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "CSV",
+          "statement": "Um arquivo .csv guarda:",
+          "options": [
+            "uma tabela em texto puro, com os valores separados",
+            "uma apresentação",
+            "uma imagem",
+            "um programa",
+            "um vídeo"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele abre no Excel e no Calc como tabela.",
+          "pitfall": "“Uma apresentação” confunde com .pptx.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "ppsx",
+          "statement": "Um arquivo salvo como .ppsx, ao ser aberto com dois cliques:",
+          "options": [
+            "já começa a apresentação em tela cheia",
+            "abre no modo de edição normal",
+            "não abre no PowerPoint",
+            "vira um PDF",
+            "abre como modelo"
+          ],
+          "correct_index": 0,
+          "explanation": "É o formato de apresentação pronta para mostrar.",
+          "pitfall": "“Abre no modo de edição” é o .pptx, o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Mestre e slide",
+          "statement": "Um usuário muda a cor do título no slide mestre, mas um slide continua com a cor antiga. O provável é que:",
+          "options": [
+            "esse slide tinha uma formatação feita direto nele, que fica por cima da do mestre",
+            "o mestre só vale para o primeiro slide",
+            "a mudança precisa de internet",
+            "o slide mestre não muda cores",
+            "o arquivo é .pdf"
+          ],
+          "correct_index": 0,
+          "explanation": "Formatação aplicada direto no slide vence a do mestre.",
+          "pitfall": "“Só vale para o primeiro slide” contradiz o papel do mestre, o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "redes-e-protocolos",
+      "title": "Redes e protocolos: quem leva o quê",
+      "module": "Redes e internet",
+      "summary": "As bancas cobram os protocolos pelo nome, pela função e às vezes pela porta. A lição mostra os protocolos da web e do e-mail, o DNS e o DHCP, a diferença entre TCP e UDP e as redes por tamanho.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Uma língua combinada",
+          "body": [
+            "Para duas pessoas conversarem, elas precisam falar a mesma língua. Dois computadores também: cada serviço tem as suas regras.",
+            "Essas regras são os protocolos. Cada um tem uma tarefa, e a prova cobra qual é a de cada um."
+          ],
+          "terms": [
+            {
+              "word": "protocolo",
+              "meaning": "o conjunto de regras que dois computadores seguem para conversar, como uma língua combinada."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O endereço de cada aparelho",
+          "body": [
+            "Todo aparelho ligado numa rede tem um número que o identifica. É por esse endereço que os dados acham o caminho.",
+            "O DHCP é o protocolo que dá esse número sozinho a quem entra na rede. É por isso que o celular conecta no Wi-Fi sem que ninguém digite nada."
+          ],
+          "terms": [
+            {
+              "word": "endereço IP",
+              "meaning": "o número que identifica cada aparelho numa rede, como o endereço de uma casa."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os protocolos da web",
+          "body": [
+            "A porta é o número da entrada de cada serviço no servidor. Nem toda banca cobra, mas 80 e 443 caem bastante."
+          ],
+          "terms": [
+            {
+              "word": "servidor",
+              "meaning": "o computador que fica ligado o tempo todo para oferecer um serviço a outros, como guardar sites ou e-mails."
+            },
+            {
+              "word": "HTTPS",
+              "meaning": "o protocolo das páginas da web. O HTTP manda tudo aberto; o HTTPS manda cifrado, e por isso aparece o cadeado ao lado do endereço."
+            },
+            {
+              "word": "DNS",
+              "meaning": "o serviço que traduz o nome de um site no endereço IP do computador que guarda o site."
+            }
+          ],
+          "table": {
+            "label": "Protocolos da web e de arquivos",
+            "headers": [
+              "Protocolo",
+              "Para que serve",
+              "Porta"
+            ],
+            "rows": [
+              [
+                "HTTP",
+                "páginas da web, sem cifra",
+                "80"
+              ],
+              [
+                "HTTPS",
+                "páginas da web, cifradas",
+                "443"
+              ],
+              [
+                "FTP",
+                "mandar e baixar arquivos",
+                "20 e 21"
+              ],
+              [
+                "SSH",
+                "acesso remoto seguro a outro computador",
+                "22"
+              ],
+              [
+                "DNS",
+                "traduzir nome de site em endereço IP",
+                "53"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os protocolos do e-mail",
+          "body": [
+            "Enviar e receber usam protocolos diferentes. A diferença entre POP3 e IMAP é a que mais cai."
+          ],
+          "table": {
+            "label": "Protocolos do e-mail",
+            "headers": [
+              "Protocolo",
+              "Para que serve",
+              "Porta"
+            ],
+            "rows": [
+              [
+                "SMTP",
+                "enviar e-mail",
+                "25 (ou 587)"
+              ],
+              [
+                "POP3",
+                "baixar o e-mail para o aparelho (em geral, apaga do servidor)",
+                "110"
+              ],
+              [
+                "IMAP",
+                "ler o e-mail guardado no servidor, igual em todos os aparelhos",
+                "143"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "TCP e UDP",
+          "body": [
+            "Os dados viajam em pacotes, pedaços pequenos que se juntam na chegada. Há dois jeitos de mandar esses pacotes."
+          ],
+          "example": {
+            "label": "Quem usa cada um",
+            "lines": [
+              "TCP: páginas, e-mail e arquivos, onde nada pode faltar.",
+              "UDP: chamada de vídeo e jogo on-line, onde atrasar é pior que perder um pedaço.",
+              "TCP/IP é o nome do conjunto de protocolos da internet."
+            ]
+          },
+          "terms": [
+            {
+              "word": "TCP e UDP",
+              "meaning": "dois jeitos de mandar os dados. O TCP confere se tudo chegou e na ordem; o UDP manda sem conferir, e por isso é mais rápido."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As redes por tamanho",
+          "body": [
+            "Intranet e extranet não são tamanhos: são redes de uma empresa que usam a mesma tecnologia da internet."
+          ],
+          "terms": [
+            {
+              "word": "intranet e extranet",
+              "meaning": "a intranet é a rede interna de uma empresa, com a mesma tecnologia da internet; a extranet é a parte dela aberta a parceiros de fora."
+            }
+          ],
+          "table": {
+            "label": "Redes por tamanho",
+            "headers": [
+              "Sigla",
+              "Alcance",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "PAN",
+                "em volta de uma pessoa",
+                "fone ligado por Bluetooth"
+              ],
+              [
+                "LAN",
+                "uma casa, uma escola, um escritório",
+                "a rede do Wi-Fi de casa"
+              ],
+              [
+                "MAN",
+                "uma cidade",
+                "a rede que liga os prédios de uma prefeitura"
+              ],
+              [
+                "WAN",
+                "um país ou o mundo",
+                "a internet"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca dá a função e pede o protocolo, ou dá o protocolo e pede a função. A troca entre POP3 e IMAP e entre HTTP e HTTPS é a mais comum."
+          ],
+          "bullets": [
+            "“O protocolo utilizado para o envio de mensagens de correio eletrônico é o…”",
+            "“O serviço que converte nomes de domínio em endereços IP é o…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que o SMTP também recebe e-mail: ele só envia.",
+            "Achar que o POP3 deixa o e-mail no servidor: em geral, ele baixa e apaga.",
+            "Achar que intranet é uma rede sem internet: ela usa a mesma tecnologia, só que é interna.",
+            "Confundir DNS (traduz nomes) com DHCP (dá o endereço IP)."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "HTTP e HTTPS levam páginas (o HTTPS cifrado, na porta 443), o FTP leva arquivos e o DNS traduz nomes em endereço IP.",
+            "O SMTP envia e-mail; o POP3 baixa e o IMAP lê no servidor. O DHCP dá o endereço IP, o TCP confere a entrega e o UDP não confere."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "SMTP",
+          "statement": "O protocolo usado para enviar e-mail é o:",
+          "options": [
+            "SMTP",
+            "POP3",
+            "IMAP",
+            "FTP",
+            "DNS"
+          ],
+          "correct_index": 0,
+          "explanation": "O SMTP envia; POP3 e IMAP recebem.",
+          "pitfall": "POP3 e IMAP são para receber."
+        },
+        {
+          "topic": "IMAP",
+          "statement": "Quem lê o e-mail no celular e no computador e quer ver as mesmas mensagens nos dois deve usar:",
+          "options": [
+            "IMAP",
+            "POP3",
+            "SMTP",
+            "FTP",
+            "HTTP"
+          ],
+          "correct_index": 0,
+          "explanation": "O IMAP deixa as mensagens no servidor.",
+          "pitfall": "O POP3 costuma baixar e apagar do servidor."
+        },
+        {
+          "topic": "DNS",
+          "statement": "O serviço que traduz o nome de um site no endereço IP do servidor é o:",
+          "options": [
+            "DNS",
+            "DHCP",
+            "FTP",
+            "SMTP",
+            "HTTPS"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele funciona como uma lista telefônica da internet.",
+          "pitfall": "O DHCP dá endereço aos aparelhos da rede."
+        },
+        {
+          "topic": "DHCP",
+          "statement": "O celular entra no Wi-Fi e recebe um endereço IP sem ninguém digitar nada. Quem fez isso foi o:",
+          "options": [
+            "DHCP",
+            "DNS",
+            "SMTP",
+            "FTP",
+            "POP3"
+          ],
+          "correct_index": 0,
+          "explanation": "O DHCP distribui os endereços.",
+          "pitfall": "O DNS traduz nomes, não distribui endereços."
+        },
+        {
+          "topic": "HTTPS",
+          "statement": "A diferença entre HTTP e HTTPS é que o HTTPS:",
+          "options": [
+            "manda os dados cifrados",
+            "é mais antigo",
+            "serve só para e-mail",
+            "não precisa de servidor",
+            "é usado só em redes locais"
+          ],
+          "correct_index": 0,
+          "explanation": "Por isso aparece o cadeado ao lado do endereço.",
+          "pitfall": "“Só para e-mail” confunde com o SMTP."
+        },
+        {
+          "topic": "FTP",
+          "statement": "O protocolo próprio para mandar e baixar arquivos é o:",
+          "options": [
+            "FTP",
+            "SMTP",
+            "DNS",
+            "IMAP",
+            "DHCP"
+          ],
+          "correct_index": 0,
+          "explanation": "F de file, arquivo.",
+          "pitfall": "O SMTP manda e-mail, não arquivo solto."
+        },
+        {
+          "topic": "Protocolos",
+          "format": "match",
+          "statement": "Ligue cada protocolo ao que ele faz.",
+          "pairs": [
+            {
+              "left": "SMTP",
+              "right": "envia e-mail"
+            },
+            {
+              "left": "POP3",
+              "right": "baixa e-mail"
+            },
+            {
+              "left": "DNS",
+              "right": "traduz nomes de sites"
+            },
+            {
+              "left": "DHCP",
+              "right": "dá o endereço IP"
+            }
+          ],
+          "explanation": "Cada protocolo tem uma tarefa.",
+          "pitfall": "DNS e DHCP são os mais trocados."
+        },
+        {
+          "topic": "Intranet",
+          "statement": "A intranet de uma empresa é:",
+          "options": [
+            "uma rede interna que usa a mesma tecnologia da internet",
+            "uma rede sem nenhuma tecnologia da internet",
+            "o mesmo que a internet",
+            "uma rede aberta a qualquer pessoa",
+            "um tipo de programa malicioso"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela é interna, mas funciona como a internet.",
+          "pitfall": "“Sem nenhuma tecnologia da internet” é o erro mais comum."
+        },
+        {
+          "topic": "443",
+          "statement": "A porta padrão do HTTPS é a:",
+          "options": [
+            "443",
+            "80",
+            "25",
+            "110",
+            "21"
+          ],
+          "correct_index": 0,
+          "explanation": "A 443 é a do HTTPS.",
+          "pitfall": "A 80 é do HTTP, sem cifra.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "WAN",
+          "statement": "A rede que cobre um país ou o mundo, como a internet, é a:",
+          "options": [
+            "WAN",
+            "LAN",
+            "PAN",
+            "MAN",
+            "rede local"
+          ],
+          "correct_index": 0,
+          "explanation": "W de wide, ampla.",
+          "pitfall": "A LAN é local.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "UDP",
+          "statement": "Numa chamada de vídeo, perder um pedacinho é melhor que atrasar. O protocolo mais usado aí é o:",
+          "options": [
+            "UDP",
+            "TCP",
+            "SMTP",
+            "FTP",
+            "POP3"
+          ],
+          "correct_index": 0,
+          "explanation": "O UDP não confere a entrega e por isso é mais rápido.",
+          "pitfall": "O TCP confere tudo e atrasaria a chamada.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Extranet",
+          "statement": "Uma empresa abre parte da sua rede interna para fornecedores. Essa parte é a:",
+          "options": [
+            "extranet",
+            "intranet",
+            "internet",
+            "LAN",
+            "PAN"
+          ],
+          "correct_index": 0,
+          "explanation": "A extranet é a parte aberta a parceiros.",
+          "pitfall": "A intranet é só para quem é da empresa.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "POP3",
+          "statement": "Um usuário baixa os e-mails pelo POP3 no computador e depois não os encontra no celular. O provável é que:",
+          "options": [
+            "o POP3 baixou as mensagens e as apagou do servidor",
+            "o IMAP apagou as mensagens",
+            "o SMTP perdeu as mensagens",
+            "o celular não recebe e-mail",
+            "o DNS bloqueou o celular"
+          ],
+          "correct_index": 0,
+          "explanation": "O POP3, no padrão, tira as mensagens do servidor.",
+          "pitfall": "“O IMAP apagou” culpa o protocolo que mantém tudo no servidor, o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "TCP/IP",
+          "statement": "Sobre o TCP/IP, é correto dizer que:",
+          "options": [
+            "é o conjunto de protocolos em que a internet funciona",
+            "é um único protocolo só de e-mail",
+            "é um tipo de cabo",
+            "é o nome de um programa malicioso",
+            "é um navegador"
+          ],
+          "correct_index": 0,
+          "explanation": "O nome junta o TCP e o IP, dois dos mais importantes.",
+          "pitfall": "“Um único protocolo” ignora que o nome é de um conjunto, o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "navegadores-e-busca",
+      "title": "Navegadores: aba anônima, cookies e busca avançada",
+      "module": "Redes e internet",
+      "summary": "As bancas perguntam o que a navegação anônima esconde de verdade, o que são cookies e cache e como buscar com precisão. A lição mostra os atalhos do navegador e os operadores de busca que mais caem.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Anônima para quem?",
+          "body": [
+            "Um funcionário abre uma aba anônima no trabalho e acha que ninguém vai saber o que ele vê. Mas a empresa continua vendo.",
+            "A aba anônima esconde o que se fez de quem usa o mesmo aparelho, e não do resto do mundo. É a pegadinha mais comum sobre navegador."
+          ],
+          "terms": [
+            {
+              "word": "navegador",
+              "meaning": "o programa que abre os sites, como Chrome, Edge e Firefox."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que a aba anônima faz e não faz",
+          "body": [
+            "Os downloads e os favoritos salvos na aba anônima continuam no computador."
+          ],
+          "terms": [
+            {
+              "word": "cookie",
+              "meaning": "um pequeno arquivo que o site guarda no navegador para lembrar de você, como o login ou o carrinho de compras."
+            }
+          ],
+          "table": {
+            "label": "A navegação anônima",
+            "headers": [
+              "Faz",
+              "Não faz"
+            ],
+            "rows": [
+              [
+                "não guarda o histórico depois de fechar",
+                "não esconde nada do provedor de internet"
+              ],
+              [
+                "apaga os cookies daquela janela ao fechar",
+                "não esconde da empresa ou da escola dona da rede"
+              ],
+              [
+                "não guarda o que foi digitado em formulários",
+                "não protege contra programas maliciosos"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Cookies e cache",
+          "body": [
+            "Os cookies guardam informação sobre você; o cache guarda pedaços dos sites. Apagar os dois resolve muito site que abre errado, mas desconecta você das contas."
+          ],
+          "example": {
+            "label": "Cookies e cache no dia a dia",
+            "lines": [
+              "Cookie: o site da loja lembra o que está no carrinho.",
+              "Cookie: o e-mail abre sem pedir a senha de novo.",
+              "Cache: a logo do site aparece na hora, sem baixar de novo."
+            ]
+          },
+          "terms": [
+            {
+              "word": "cache",
+              "meaning": "as cópias de partes dos sites que o navegador guarda para abrir mais rápido da próxima vez."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os atalhos do navegador",
+          "body": [
+            "Estes valem no Chrome e no Edge, no Windows. Quase todos funcionam também no Firefox."
+          ],
+          "table": {
+            "label": "Atalhos do navegador",
+            "headers": [
+              "Atalho",
+              "O que faz"
+            ],
+            "rows": [
+              [
+                "Ctrl + T",
+                "abre uma aba nova"
+              ],
+              [
+                "Ctrl + W",
+                "fecha a aba"
+              ],
+              [
+                "Ctrl + Shift + T",
+                "reabre a aba que foi fechada"
+              ],
+              [
+                "Ctrl + H",
+                "mostra o histórico"
+              ],
+              [
+                "Ctrl + J",
+                "mostra os downloads"
+              ],
+              [
+                "Ctrl + D",
+                "salva a página nos favoritos"
+              ],
+              [
+                "Ctrl + Shift + N",
+                "abre uma janela anônima (no Firefox, Ctrl + Shift + P)"
+              ],
+              [
+                "F5",
+                "recarrega a página"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Buscar com precisão",
+          "body": [
+            "Os operadores vão junto das palavras, sem espaço depois dos dois-pontos."
+          ],
+          "table": {
+            "label": "Operadores de busca do Google",
+            "headers": [
+              "Operador",
+              "Exemplo",
+              "O que faz"
+            ],
+            "rows": [
+              [
+                "aspas",
+                "\"direitos do consumidor\"",
+                "busca a frase exata"
+              ],
+              [
+                "sinal de menos",
+                "jaguar -carro",
+                "tira os resultados com a palavra"
+              ],
+              [
+                "site:",
+                "concurso site:gov.br",
+                "busca só dentro de um site ou domínio"
+              ],
+              [
+                "filetype:",
+                "edital filetype:pdf",
+                "busca só um tipo de arquivo"
+              ],
+              [
+                "OR",
+                "vagas OR concurso",
+                "aceita uma palavra ou a outra"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "As partes de um endereço",
+          "body": [
+            "O endereço de uma página tem partes, e cada uma diz uma coisa. O começo dele é o protocolo."
+          ],
+          "example": {
+            "label": "As partes de um endereço",
+            "lines": [
+              "https:// → o protocolo, com cifra",
+              "www.gov.br → o domínio, o nome do site",
+              "/inicio → a página dentro do site"
+            ]
+          },
+          "terms": [
+            {
+              "word": "URL",
+              "meaning": "o endereço completo de uma página, como https://www.gov.br/inicio."
+            },
+            {
+              "word": "protocolo",
+              "meaning": "o conjunto de regras que dois computadores seguem para conversar, como uma língua combinada."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca pergunta o que a navegação anônima garante, o que um cookie guarda ou o que faz um operador de busca."
+          ],
+          "bullets": [
+            "“Na navegação anônima do Google Chrome…”",
+            "“Para buscar somente arquivos em PDF, utiliza-se…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que a aba anônima esconde tudo da empresa ou do provedor.",
+            "Achar que os downloads da aba anônima somem ao fechar.",
+            "Confundir cookie (informação sobre você) com cache (pedaços dos sites).",
+            "Pôr espaço depois de site: e estragar a busca."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A aba anônima não guarda histórico nem cookies depois de fechar, mas não esconde nada do provedor nem da empresa. Os downloads ficam.",
+            "Cookie guarda informação sobre você, e cache guarda pedaços dos sites. Na busca, aspas pedem a frase exata, o menos tira palavras e site: limita o lugar."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Anônima",
+          "statement": "A navegação anônima garante que:",
+          "options": [
+            "o histórico daquela janela não fica salvo no aparelho",
+            "o provedor de internet não vê os sites visitados",
+            "a empresa não sabe o que foi acessado",
+            "o computador fica protegido de vírus",
+            "os downloads somem ao fechar"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela só não deixa rastro no próprio aparelho.",
+          "pitfall": "“O provedor não vê” é a pegadinha mais comum."
+        },
+        {
+          "topic": "Downloads",
+          "statement": "Um arquivo baixado numa janela anônima, depois que a janela é fechada:",
+          "options": [
+            "continua no computador",
+            "é apagado sozinho",
+            "vai para a Lixeira",
+            "fica oculto para sempre",
+            "volta para o site"
+          ],
+          "correct_index": 0,
+          "explanation": "A aba anônima não apaga downloads.",
+          "pitfall": "“É apagado sozinho” confunde arquivo com histórico."
+        },
+        {
+          "topic": "Cookie",
+          "statement": "O site de uma loja lembra os produtos do carrinho no dia seguinte. Isso acontece por causa dos:",
+          "options": [
+            "cookies",
+            "vírus",
+            "favoritos",
+            "downloads",
+            "protocolos"
+          ],
+          "correct_index": 0,
+          "explanation": "O cookie guarda informação sobre a visita.",
+          "pitfall": "Os favoritos guardam endereços, não o carrinho."
+        },
+        {
+          "topic": "Reabrir",
+          "statement": "No Chrome, o atalho que reabre a aba fechada sem querer é:",
+          "options": [
+            "Ctrl + Shift + T",
+            "Ctrl + T",
+            "Ctrl + W",
+            "Ctrl + H",
+            "Ctrl + D"
+          ],
+          "correct_index": 0,
+          "explanation": "O Shift junto do T desfaz o fechamento.",
+          "pitfall": "Ctrl + T só abre uma aba nova, vazia."
+        },
+        {
+          "topic": "Aspas",
+          "statement": "Na busca do Google, pôr a expressão entre aspas:",
+          "options": [
+            "busca a frase exata",
+            "tira a frase dos resultados",
+            "busca só imagens",
+            "busca só em sites do governo",
+            "traduz a frase"
+          ],
+          "correct_index": 0,
+          "explanation": "As aspas exigem as palavras juntas e na ordem.",
+          "pitfall": "“Tira a frase” é o sinal de menos."
+        },
+        {
+          "topic": "filetype",
+          "statement": "A busca edital filetype:pdf mostra:",
+          "options": [
+            "só arquivos PDF com a palavra edital",
+            "só sites sem PDF",
+            "todos os resultados menos os PDF",
+            "só imagens de editais",
+            "só o site do governo"
+          ],
+          "correct_index": 0,
+          "explanation": "O filetype: limita o tipo de arquivo.",
+          "pitfall": "“Menos os PDF” seria com o sinal de menos."
+        },
+        {
+          "topic": "Atalhos",
+          "format": "match",
+          "statement": "Ligue cada atalho do navegador ao que ele faz.",
+          "pairs": [
+            {
+              "left": "Ctrl + H",
+              "right": "histórico"
+            },
+            {
+              "left": "Ctrl + J",
+              "right": "downloads"
+            },
+            {
+              "left": "Ctrl + D",
+              "right": "favoritos"
+            },
+            {
+              "left": "Ctrl + W",
+              "right": "fecha a aba"
+            }
+          ],
+          "explanation": "São os que mais caem.",
+          "pitfall": "Ctrl + D salva nos favoritos, e não baixa nada."
+        },
+        {
+          "topic": "Cache",
+          "statement": "O navegador abre mais rápido um site já visitado porque guardou partes dele no:",
+          "options": [
+            "cache",
+            "cookie",
+            "histórico",
+            "favoritos",
+            "downloads"
+          ],
+          "correct_index": 0,
+          "explanation": "O cache guarda pedaços dos sites.",
+          "pitfall": "O cookie guarda informação sobre você, não as imagens do site."
+        },
+        {
+          "topic": "Aba nova",
+          "statement": "No navegador, Ctrl + T:",
+          "options": [
+            "abre uma aba nova",
+            "fecha a aba",
+            "imprime a página",
+            "abre o histórico",
+            "salva a página"
+          ],
+          "correct_index": 0,
+          "explanation": "T de tab, aba.",
+          "pitfall": "Fechar a aba é Ctrl + W.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Menos",
+          "statement": "A busca jaguar -carro mostra:",
+          "options": [
+            "resultados sobre jaguar sem a palavra carro",
+            "só resultados sobre carros",
+            "carros da marca Jaguar",
+            "nenhum resultado",
+            "só imagens de jaguar"
+          ],
+          "correct_index": 0,
+          "explanation": "O sinal de menos tira a palavra.",
+          "pitfall": "“Carros da marca” é o contrário do pedido.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "site:",
+          "statement": "A busca concurso site:gov.br mostra resultados:",
+          "options": [
+            "só de sites que terminam em gov.br",
+            "de todos os sites menos o gov.br",
+            "só de notícias",
+            "só de vídeos",
+            "do site concurso.com"
+          ],
+          "correct_index": 0,
+          "explanation": "O site: limita o lugar da busca.",
+          "pitfall": "“Menos o gov.br” seria com o sinal de menos.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Firefox",
+          "statement": "No Firefox, a janela de navegação privada abre com:",
+          "options": [
+            "Ctrl + Shift + P",
+            "Ctrl + Shift + N",
+            "Ctrl + P",
+            "Ctrl + N",
+            "Ctrl + Shift + T"
+          ],
+          "correct_index": 0,
+          "explanation": "No Chrome e no Edge, é Ctrl + Shift + N.",
+          "pitfall": "Ctrl + Shift + N é o do Chrome e do Edge.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Rede da empresa",
+          "statement": "Um funcionário usa a janela anônima no computador do trabalho. Sobre o que ele acessa, é correto afirmar:",
+          "options": [
+            "a empresa ainda pode ver os sites, porque controla a rede",
+            "ninguém consegue saber de nada",
+            "só o provedor fica sem saber",
+            "os sites não sabem que ele entrou",
+            "o computador apaga tudo, até os downloads"
+          ],
+          "correct_index": 0,
+          "explanation": "A aba anônima só não deixa rastro no aparelho.",
+          "pitfall": "“Ninguém consegue saber” é o exagero que a banca espera, o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Cookies apagados",
+          "statement": "Depois de apagar os cookies do navegador, o mais provável é que:",
+          "options": [
+            "os sites peçam login de novo",
+            "o computador fique sem internet",
+            "os favoritos sumam",
+            "os downloads sejam apagados",
+            "o navegador seja desinstalado"
+          ],
+          "correct_index": 0,
+          "explanation": "O login fica guardado nos cookies.",
+          "pitfall": "“Os favoritos sumam” mistura favoritos com cookies, o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "computacao-em-nuvem",
+      "title": "Computação em nuvem: IaaS, PaaS e SaaS",
+      "module": "Redes e internet",
+      "summary": "A nuvem é usar pela internet os computadores de outra empresa. A lição mostra os três modelos de serviço, os quatro tipos de nuvem e as vantagens e os riscos que as bancas cobram.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Alugar em vez de comprar",
+          "body": [
+            "Quem não tem carro pode pegar um carro de aplicativo: paga só pelo que usa e não cuida da manutenção.",
+            "A nuvem faz o mesmo com computadores. Em vez de comprar e manter um servidor, a empresa aluga o que precisa pela internet."
+          ],
+          "terms": [
+            {
+              "word": "guardar na nuvem",
+              "meaning": "usar os computadores de uma empresa pela internet, em vez de guardar e rodar tudo no próprio aparelho."
+            },
+            {
+              "word": "servidor",
+              "meaning": "o computador que fica ligado o tempo todo para oferecer um serviço a outros, como guardar sites ou e-mails."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os três modelos de serviço",
+          "body": [
+            "Quanto mais para baixo na tabela, menos o cliente precisa cuidar. No SaaS, ele só usa."
+          ],
+          "terms": [
+            {
+              "word": "IaaS, PaaS e SaaS",
+              "meaning": "os três modelos de serviço da nuvem: a empresa aluga a máquina (IaaS), a plataforma para criar programas (PaaS) ou o programa pronto (SaaS)."
+            }
+          ],
+          "table": {
+            "label": "Quanto a empresa entrega",
+            "headers": [
+              "Modelo",
+              "O que você recebe",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "IaaS",
+                "a máquina (processamento, espaço, rede)",
+                "alugar um servidor virtual"
+              ],
+              [
+                "PaaS",
+                "a plataforma pronta para criar e rodar programas",
+                "um serviço que publica um site a partir do código"
+              ],
+              [
+                "SaaS",
+                "o programa pronto, usado pela internet",
+                "e-mail na web, editor de texto on-line"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A pizza como comparação",
+          "body": [
+            "Uma comparação ajuda a guardar quem faz o quê."
+          ],
+          "example": {
+            "label": "Quem faz o quê",
+            "lines": [
+              "Sem nuvem: fazer a pizza inteira em casa.",
+              "IaaS: alugar a cozinha e fazer a pizza.",
+              "PaaS: comprar a massa pronta e montar.",
+              "SaaS: pedir a pizza pronta."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os quatro tipos de nuvem",
+          "body": [
+            "Além do modelo, a nuvem muda conforme quem a usa."
+          ],
+          "table": {
+            "label": "Quem usa a nuvem",
+            "headers": [
+              "Tipo",
+              "Quem usa"
+            ],
+            "rows": [
+              [
+                "pública",
+                "qualquer cliente, dividindo a estrutura de uma empresa"
+              ],
+              [
+                "privada",
+                "uma só organização"
+              ],
+              [
+                "híbrida",
+                "uma mistura de pública e privada"
+              ],
+              [
+                "comunitária",
+                "um grupo com interesses comuns, como órgãos do governo"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "As características",
+          "body": [
+            "Uma definição muito usada pelas bancas lista cinco características da nuvem."
+          ],
+          "table": {
+            "label": "As cinco características",
+            "headers": [
+              "Característica",
+              "Quer dizer"
+            ],
+            "rows": [
+              [
+                "autoatendimento",
+                "o cliente contrata sozinho, sem falar com ninguém"
+              ],
+              [
+                "acesso pela rede",
+                "funciona de qualquer aparelho com internet"
+              ],
+              [
+                "recursos compartilhados",
+                "vários clientes dividem as mesmas máquinas"
+              ],
+              [
+                "elasticidade",
+                "cresce e diminui conforme a necessidade"
+              ],
+              [
+                "serviço medido",
+                "paga-se pelo que se usa"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Vantagens e riscos",
+          "body": [
+            "Guardar na nuvem não é o mesmo que ter uma cópia de segurança. Se a conta for invadida ou o arquivo apagado, a cópia vai junto."
+          ],
+          "table": {
+            "label": "Os dois lados",
+            "headers": [
+              "Vantagem",
+              "Risco"
+            ],
+            "rows": [
+              [
+                "paga só pelo que usa",
+                "depende da internet"
+              ],
+              [
+                "não precisa manter máquinas",
+                "os dados ficam com outra empresa"
+              ],
+              [
+                "acessa de qualquer lugar",
+                "o serviço pode sair do ar"
+              ],
+              [
+                "cresce rápido",
+                "a conta pode subir sem controle"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca descreve um serviço e pergunta o modelo (IaaS, PaaS ou SaaS), ou pede uma característica da nuvem. O SaaS é o mais cobrado, porque é o que todo mundo usa."
+          ],
+          "bullets": [
+            "“Um serviço de correio eletrônico acessado pelo navegador é exemplo de…”",
+            "“A capacidade de aumentar os recursos conforme a demanda é chamada de…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que o SaaS é a máquina alugada: é o programa pronto.",
+            "Achar que a nuvem privada é a que fica em casa: é a de uma só organização.",
+            "Achar que guardar na nuvem dispensa uma cópia de segurança.",
+            "Achar que a nuvem funciona sem internet."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Na nuvem, a empresa aluga pela internet o que precisa. O IaaS entrega a máquina, o PaaS entrega a plataforma e o SaaS entrega o programa pronto.",
+            "A nuvem pode ser pública, privada, híbrida ou comunitária. Ela cresce e diminui conforme o uso, e cobra pelo que se usa."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "SaaS",
+          "statement": "Usar um e-mail pela internet, sem instalar nada, é um exemplo de:",
+          "options": [
+            "SaaS",
+            "IaaS",
+            "PaaS",
+            "nuvem privada",
+            "rede local"
+          ],
+          "correct_index": 0,
+          "explanation": "É o programa pronto, entregue pela internet.",
+          "pitfall": "O IaaS seria alugar a máquina."
+        },
+        {
+          "topic": "IaaS",
+          "statement": "Uma empresa aluga um servidor virtual e instala nele tudo o que quiser. O modelo é:",
+          "options": [
+            "IaaS",
+            "SaaS",
+            "PaaS",
+            "nuvem comunitária",
+            "software livre"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela recebe a máquina e cuida do resto.",
+          "pitfall": "O SaaS já viria com o programa pronto."
+        },
+        {
+          "topic": "PaaS",
+          "statement": "Um programador manda o código, e o serviço cuida de publicar e rodar o site. O modelo é:",
+          "options": [
+            "PaaS",
+            "IaaS",
+            "SaaS",
+            "nuvem pública",
+            "rede local"
+          ],
+          "correct_index": 0,
+          "explanation": "A plataforma pronta é o PaaS.",
+          "pitfall": "No IaaS, ele teria de montar a máquina sozinho."
+        },
+        {
+          "topic": "Privada",
+          "statement": "A nuvem usada por uma só organização é a:",
+          "options": [
+            "privada",
+            "pública",
+            "híbrida",
+            "comunitária",
+            "doméstica"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela pode até ficar fora da empresa, mas é só dela.",
+          "pitfall": "A pública divide a estrutura com outros clientes."
+        },
+        {
+          "topic": "Híbrida",
+          "statement": "Uma empresa guarda os dados sensíveis na nuvem privada e usa a nuvem pública para o resto. Ela usa uma nuvem:",
+          "options": [
+            "híbrida",
+            "comunitária",
+            "pública",
+            "privada",
+            "local"
+          ],
+          "correct_index": 0,
+          "explanation": "Híbrida é a mistura das duas.",
+          "pitfall": "A comunitária é a de um grupo com interesses comuns."
+        },
+        {
+          "topic": "Elasticidade",
+          "statement": "No Natal, uma loja virtual recebe dez vezes mais visitas, e a nuvem aumenta os recursos sozinha. Essa característica é a:",
+          "options": [
+            "elasticidade",
+            "autoatendimento",
+            "privacidade",
+            "cobrança fixa",
+            "portabilidade"
+          ],
+          "correct_index": 0,
+          "explanation": "Cresce e diminui conforme a necessidade.",
+          "pitfall": "O autoatendimento é contratar sem falar com ninguém."
+        },
+        {
+          "topic": "Modelos",
+          "format": "match",
+          "statement": "Ligue cada um ao que ele entrega.",
+          "pairs": [
+            {
+              "left": "IaaS",
+              "right": "a máquina"
+            },
+            {
+              "left": "PaaS",
+              "right": "a plataforma para criar programas"
+            },
+            {
+              "left": "SaaS",
+              "right": "o programa pronto"
+            },
+            {
+              "left": "nuvem comunitária",
+              "right": "estrutura dividida por um grupo com interesses comuns"
+            }
+          ],
+          "explanation": "Quanto mais pronto, menos o cliente cuida.",
+          "pitfall": "IaaS e SaaS são os mais trocados."
+        },
+        {
+          "topic": "Internet",
+          "statement": "Uma desvantagem da computação em nuvem é:",
+          "options": [
+            "depender da conexão com a internet",
+            "não poder acessar de outro lugar",
+            "ter de comprar todas as máquinas",
+            "não pagar pelo uso",
+            "não crescer nunca"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem internet, o serviço não abre.",
+          "pitfall": "Acessar de qualquer lugar é uma vantagem, e não um problema."
+        },
+        {
+          "topic": "Pagar pelo uso",
+          "statement": "Na nuvem, o cliente costuma pagar:",
+          "options": [
+            "pelo que usa",
+            "um valor fixo para sempre",
+            "nada, nunca",
+            "só pela máquina comprada",
+            "só pelo cabo de rede"
+          ],
+          "correct_index": 0,
+          "explanation": "É o serviço medido.",
+          "pitfall": "“Nada, nunca” confunde nuvem com serviço grátis.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Pública",
+          "statement": "Na nuvem pública, a estrutura é:",
+          "options": [
+            "dividida entre vários clientes",
+            "de uma só empresa cliente",
+            "de uma só pessoa",
+            "sempre grátis",
+            "sem internet"
+          ],
+          "correct_index": 0,
+          "explanation": "Os clientes dividem as máquinas de uma empresa.",
+          "pitfall": "“De uma só empresa cliente” é a privada.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Editor on-line",
+          "statement": "Um editor de texto que abre pela internet, sem instalação, e salva os arquivos on-line é:",
+          "options": [
+            "SaaS",
+            "IaaS",
+            "PaaS",
+            "hardware",
+            "um protocolo"
+          ],
+          "correct_index": 0,
+          "explanation": "É um programa pronto, entregue como serviço.",
+          "pitfall": "O PaaS é para quem cria programas.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Não é cópia",
+          "statement": "Guardar os arquivos na nuvem:",
+          "options": [
+            "não substitui uma cópia de segurança separada",
+            "dispensa qualquer cópia",
+            "impede que alguém apague os arquivos",
+            "funciona sem internet",
+            "deixa os arquivos imunes a ataques"
+          ],
+          "correct_index": 0,
+          "explanation": "Se o arquivo for apagado ou a conta invadida, a nuvem perde junto.",
+          "pitfall": "“Dispensa qualquer cópia” é a falsa segurança.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Quem cuida",
+          "statement": "No modelo IaaS, quem cuida de instalar o sistema operacional e os programas é:",
+          "options": [
+            "o cliente",
+            "a empresa da nuvem",
+            "o fabricante do computador do cliente",
+            "o provedor de internet",
+            "ninguém, porque tudo vem pronto"
+          ],
+          "correct_index": 0,
+          "explanation": "No IaaS, a empresa da nuvem entrega só a máquina.",
+          "pitfall": "“Tudo vem pronto” é o SaaS, o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Autoatendimento",
+          "statement": "Um cliente contrata mais espaço pelo site, a qualquer hora, sem falar com nenhum atendente. Essa é a característica de:",
+          "options": [
+            "autoatendimento",
+            "elasticidade",
+            "nuvem privada",
+            "acesso pela rede",
+            "serviço medido"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele mesmo contrata, sem ninguém no meio.",
+          "pitfall": "A elasticidade é crescer e diminuir sozinha conforme o uso, o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "malwares-um-por-um",
+      "title": "Malwares: vírus, worm, cavalo de Troia e companhia",
+      "module": "Segurança",
+      "summary": "Malware é o nome geral de todo programa malicioso, e as bancas cobram a diferença entre os tipos. A lição mostra como cada um entra, o que faz e como se espalha.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Nem todo malware é vírus",
+          "body": [
+            "No dia a dia, chamamos tudo de vírus. Na prova, vírus é só um dos tipos de malware, e cada tipo age de um jeito.",
+            "A banca cobra justamente a diferença: quem precisa ser aberto, quem se espalha sozinho, quem se esconde."
+          ],
+          "terms": [
+            {
+              "word": "malware",
+              "meaning": "qualquer programa feito para causar dano, espionar ou roubar. É o nome geral; vírus é só um tipo."
+            },
+            {
+              "word": "vírus de computador",
+              "meaning": "o malware que se gruda em outro arquivo e só age quando alguém abre esse arquivo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Vírus e worm",
+          "body": [
+            "Os dois se espalham, mas de jeitos diferentes. É a comparação que mais cai."
+          ],
+          "terms": [
+            {
+              "word": "worm",
+              "meaning": "o malware que se espalha sozinho pela rede, de computador em computador, sem ninguém abrir nada."
+            }
+          ],
+          "table": {
+            "label": "Vírus × worm",
+            "headers": [
+              "Ponto",
+              "Vírus",
+              "Worm"
+            ],
+            "rows": [
+              [
+                "precisa de outro arquivo",
+                "sim, vive grudado num arquivo",
+                "não, é um programa sozinho"
+              ],
+              [
+                "precisa de alguém abrir",
+                "sim",
+                "não"
+              ],
+              [
+                "como se espalha",
+                "quando o arquivo é copiado e aberto",
+                "sozinho, pela rede, explorando falhas"
+              ],
+              [
+                "efeito típico",
+                "estraga arquivos",
+                "deixa a rede lenta"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os disfarçados e os espiões",
+          "body": [
+            "Alguns entram porque a própria pessoa deixa. Outros ficam quietos, observando."
+          ],
+          "terms": [
+            {
+              "word": "cavalo de Troia",
+              "meaning": "o malware disfarçado de programa útil, que a própria pessoa instala."
+            },
+            {
+              "word": "spyware",
+              "meaning": "o malware que espiona. O keylogger grava o que se digita; o screenlogger grava a tela."
+            }
+          ],
+          "table": {
+            "label": "Disfarce e espionagem",
+            "headers": [
+              "Tipo",
+              "O que faz"
+            ],
+            "rows": [
+              [
+                "cavalo de Troia",
+                "finge ser útil (um jogo, um programa grátis) e a pessoa instala"
+              ],
+              [
+                "spyware",
+                "espiona e manda os dados para o invasor"
+              ],
+              [
+                "keylogger",
+                "grava as teclas digitadas, como senhas"
+              ],
+              [
+                "screenlogger",
+                "grava a tela e os cliques"
+              ],
+              [
+                "adware",
+                "enche a tela de anúncios"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O sequestro dos arquivos",
+          "body": [
+            "O ransomware embaralha os arquivos e mostra um aviso pedindo dinheiro, quase sempre em criptomoeda.",
+            "Pagar não garante a volta dos arquivos. A melhor defesa é ter uma cópia de segurança separada, que o ataque não alcança."
+          ],
+          "terms": [
+            {
+              "word": "ransomware",
+              "meaning": "o malware que embaralha os arquivos para ninguém conseguir abrir e pede dinheiro para devolver."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os que ficam escondidos",
+          "body": [
+            "Estes não aparecem: servem para o invasor continuar no computador ou usá-lo de longe."
+          ],
+          "terms": [
+            {
+              "word": "rootkit",
+              "meaning": "o malware que se esconde no sistema e esconde os outros, para continuar lá sem ser visto."
+            },
+            {
+              "word": "backdoor",
+              "meaning": "uma porta dos fundos: um jeito escondido de o invasor voltar ao computador quando quiser."
+            },
+            {
+              "word": "bot e botnet",
+              "meaning": "o bot é o computador controlado de longe por um invasor; a botnet é uma rede de muitos deles, usada em ataques."
+            }
+          ],
+          "table": {
+            "label": "Os escondidos",
+            "headers": [
+              "Tipo",
+              "O que faz"
+            ],
+            "rows": [
+              [
+                "rootkit",
+                "esconde a si mesmo e a outros malwares"
+              ],
+              [
+                "backdoor",
+                "deixa uma porta dos fundos para o invasor voltar"
+              ],
+              [
+                "bot",
+                "deixa o computador ser controlado de longe"
+              ],
+              [
+                "botnet",
+                "junta milhares de bots para um ataque"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Como se proteger",
+          "body": [
+            "Nenhuma defesa sozinha resolve. Elas funcionam juntas."
+          ],
+          "example": {
+            "label": "As defesas que funcionam",
+            "lines": [
+              "Manter o sistema e os programas atualizados, porque as falhas são a porta dos worms.",
+              "Não abrir anexo nem link inesperado, mesmo de conhecido.",
+              "Instalar programas só de lojas e sites oficiais.",
+              "Ter um antivírus ligado e uma cópia de segurança separada."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca descreve o comportamento e pergunta o nome do malware. A pista está em três perguntas: precisa ser aberto? Se espalha sozinho? Se esconde?"
+          ],
+          "bullets": [
+            "“O malware que se propaga automaticamente pelas redes é o…”",
+            "“O programa que captura as teclas digitadas é o…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Chamar todo malware de vírus.",
+            "Achar que o worm precisa de alguém abrir um arquivo: ele se espalha sozinho.",
+            "Achar que o cavalo de Troia se espalha sozinho: é a própria pessoa que o instala.",
+            "Achar que pagar o resgate do ransomware garante os arquivos de volta."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Malware é o nome geral. O vírus precisa de um arquivo e de alguém que o abra; o worm se espalha sozinho pela rede.",
+            "O cavalo de Troia se disfarça, o spyware espiona e o ransomware sequestra os arquivos. O rootkit esconde, o backdoor abre a porta e o bot obedece de longe."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Worm",
+          "statement": "O malware que se espalha sozinho pela rede, sem ninguém abrir nada, é o:",
+          "options": [
+            "worm",
+            "vírus",
+            "cavalo de Troia",
+            "adware",
+            "keylogger"
+          ],
+          "correct_index": 0,
+          "explanation": "O worm não precisa de outro arquivo nem de clique.",
+          "pitfall": "O vírus precisa que alguém abra o arquivo."
+        },
+        {
+          "topic": "Vírus",
+          "statement": "O vírus de computador, para agir:",
+          "options": [
+            "precisa de um arquivo hospedeiro e de que alguém o abra",
+            "se espalha sozinho pela rede",
+            "fica só no celular",
+            "não faz nada",
+            "precisa de internet o tempo todo"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele vive grudado num arquivo.",
+          "pitfall": "“Sozinho pela rede” é o worm."
+        },
+        {
+          "topic": "Troia",
+          "statement": "Um jogo grátis baixado de um site estranho instala, escondido, um programa que dá acesso ao invasor. Esse jogo é um:",
+          "options": [
+            "cavalo de Troia",
+            "worm",
+            "rootkit",
+            "adware",
+            "firewall"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele se disfarça de coisa útil.",
+          "pitfall": "O worm não depende de a pessoa instalar nada."
+        },
+        {
+          "topic": "Ransomware",
+          "statement": "Os arquivos da empresa viram um embaralhado, e aparece um pedido de pagamento para devolvê-los. É um ataque de:",
+          "options": [
+            "ransomware",
+            "spyware",
+            "adware",
+            "worm",
+            "bot"
+          ],
+          "correct_index": 0,
+          "explanation": "O ransomware sequestra os dados.",
+          "pitfall": "O spyware espiona, mas não tranca os arquivos."
+        },
+        {
+          "topic": "Keylogger",
+          "statement": "O programa que grava as teclas digitadas para roubar senhas é o:",
+          "options": [
+            "keylogger",
+            "screenlogger",
+            "adware",
+            "rootkit",
+            "worm"
+          ],
+          "correct_index": 0,
+          "explanation": "Key é tecla em inglês.",
+          "pitfall": "O screenlogger grava a tela, não as teclas."
+        },
+        {
+          "topic": "Rootkit",
+          "statement": "O malware que se esconde no sistema e esconde outros malwares é o:",
+          "options": [
+            "rootkit",
+            "adware",
+            "keylogger",
+            "worm",
+            "ransomware"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele serve para o invasor continuar ali sem ser visto.",
+          "pitfall": "O adware só mostra anúncios, e não se esconde."
+        },
+        {
+          "topic": "Tipos",
+          "format": "match",
+          "statement": "Ligue cada malware ao que ele faz.",
+          "pairs": [
+            {
+              "left": "adware",
+              "right": "mostra anúncios"
+            },
+            {
+              "left": "spyware",
+              "right": "espiona"
+            },
+            {
+              "left": "backdoor",
+              "right": "abre porta para o invasor voltar"
+            },
+            {
+              "left": "botnet",
+              "right": "rede de computadores controlados"
+            }
+          ],
+          "explanation": "Cada nome diz o comportamento.",
+          "pitfall": "Backdoor e rootkit andam juntos, mas um abre a porta e o outro esconde."
+        },
+        {
+          "topic": "Defesa",
+          "statement": "A melhor defesa contra a perda de arquivos por ransomware é:",
+          "options": [
+            "ter uma cópia de segurança separada",
+            "pagar o resgate rápido",
+            "desligar o monitor",
+            "trocar o papel de parede",
+            "apagar o histórico"
+          ],
+          "correct_index": 0,
+          "explanation": "Com a cópia, os arquivos voltam sem pagar.",
+          "pitfall": "Pagar não garante nada."
+        },
+        {
+          "topic": "Malware",
+          "statement": "Malware é:",
+          "options": [
+            "o nome geral de todo programa malicioso",
+            "só o vírus",
+            "um tipo de antivírus",
+            "uma peça do computador",
+            "um navegador"
+          ],
+          "correct_index": 0,
+          "explanation": "Vírus é só um tipo de malware.",
+          "pitfall": "“Só o vírus” confunde o tipo com o grupo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Adware",
+          "statement": "O malware que enche a tela de anúncios é o:",
+          "options": [
+            "adware",
+            "worm",
+            "rootkit",
+            "keylogger",
+            "ransomware"
+          ],
+          "correct_index": 0,
+          "explanation": "Ad é anúncio em inglês.",
+          "pitfall": "O ransomware pede dinheiro, não mostra anúncios.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Botnet",
+          "statement": "Milhares de computadores, sem os donos saberem, obedecem a um invasor e atacam juntos um site. Eles formam uma:",
+          "options": [
+            "botnet",
+            "intranet",
+            "rede local",
+            "nuvem privada",
+            "extranet"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada computador controlado é um bot, e a rede é a botnet.",
+          "pitfall": "Uma rede interna de empresa não tem nada a ver com computadores sequestrados.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Atualizar",
+          "statement": "Manter o sistema atualizado protege principalmente contra:",
+          "options": [
+            "os worms, que entram por falhas antigas",
+            "a falta de espaço no disco",
+            "a tela que quebra",
+            "o cabo que solta",
+            "a lentidão da internet"
+          ],
+          "correct_index": 0,
+          "explanation": "As atualizações fecham as falhas.",
+          "pitfall": "“Falta de espaço” não tem relação com as falhas.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Screenlogger",
+          "statement": "Um banco passou a usar teclado virtual na tela para a senha, e o invasor passou a gravar a tela e os cliques. O malware usado agora é o:",
+          "options": [
+            "screenlogger",
+            "keylogger",
+            "adware",
+            "worm",
+            "rootkit"
+          ],
+          "correct_index": 0,
+          "explanation": "O screenlogger grava a tela, e o teclado virtual não o atrapalha.",
+          "pitfall": "O keylogger grava teclas, e é justamente ele que o teclado virtual atrapalha, o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Vírus e worm",
+          "statement": "Sobre vírus e worms, é correto afirmar:",
+          "options": [
+            "o worm se espalha sozinho pela rede, e o vírus precisa que alguém abra o arquivo",
+            "os dois precisam que alguém abra um arquivo",
+            "o vírus se espalha sozinho, e o worm não",
+            "os dois são o mesmo programa com nomes diferentes",
+            "nenhum dos dois causa dano"
+          ],
+          "correct_index": 0,
+          "explanation": "A diferença é depender ou não de um clique.",
+          "pitfall": "“O vírus se espalha sozinho” inverte os dois, o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "golpes-e-defesas",
+      "title": "Golpes e defesas: phishing, pharming, firewall e VPN",
+      "module": "Segurança",
+      "summary": "Muitos ataques não quebram a máquina: enganam a pessoa. A lição mostra os golpes que mais caem (phishing, pharming, spoofing, engenharia social, DDoS) e as defesas que a prova cobra.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A isca no anzol",
+          "body": [
+            "Chega uma mensagem do “banco”: sua conta será bloqueada, clique aqui. O link leva a uma página idêntica à do banco, que guarda a senha digitada.",
+            "É o phishing, a pescaria de senhas. Ele não ataca o computador: ataca a pressa e o medo de quem lê."
+          ],
+          "terms": [
+            {
+              "word": "phishing",
+              "meaning": "o golpe da isca: uma mensagem falsa que finge ser de um banco ou de uma loja para roubar senhas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Enganar a pessoa",
+          "body": [
+            "Estes golpes funcionam mesmo num computador perfeito, porque o alvo é quem usa."
+          ],
+          "terms": [
+            {
+              "word": "engenharia social",
+              "meaning": "enganar a pessoa, e não a máquina: convencer alguém a entregar uma senha ou abrir uma porta."
+            }
+          ],
+          "table": {
+            "label": "Golpes que enganam a pessoa",
+            "headers": [
+              "Golpe",
+              "Como funciona"
+            ],
+            "rows": [
+              [
+                "phishing",
+                "mensagem falsa que leva a um site falso"
+              ],
+              [
+                "spoofing",
+                "falsificar o remetente ou o número, para parecer outra pessoa"
+              ],
+              [
+                "engenharia social",
+                "convencer alguém a entregar a senha, por telefone ou pessoalmente"
+              ],
+              [
+                "falso suporte",
+                "alguém liga dizendo ser do banco e pede o código do celular"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O site falso no endereço certo",
+          "body": [
+            "No pharming, a pessoa digita o endereço certo e mesmo assim cai num site falso. O golpe adulterou o DNS, que traduz o nome do site.",
+            "Por isso, conferir o endereço não basta no pharming. Vale olhar o cadeado e os dados do site."
+          ],
+          "terms": [
+            {
+              "word": "DNS",
+              "meaning": "o serviço que traduz o nome do site no número do computador que o guarda."
+            },
+            {
+              "word": "pharming",
+              "meaning": "o golpe que adultera o DNS para levar a pessoa a um site falso, mesmo digitando o endereço certo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Derrubar em vez de roubar",
+          "body": [
+            "Nem todo ataque quer dados. O DDoS quer tirar o site do ar, enchendo-o de pedidos falsos até ele não aguentar.",
+            "Os pedidos costumam vir de uma rede de computadores controlados, sem que os donos saibam."
+          ],
+          "terms": [
+            {
+              "word": "DoS e DDoS",
+              "meaning": "o ataque que derruba um site enchendo-o de pedidos. No DDoS, os pedidos vêm de milhares de computadores ao mesmo tempo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Força bruta e senhas",
+          "body": [
+            "Força bruta é tentar todas as senhas possíveis até acertar. Quanto mais longa e variada a senha, mais tempo o ataque leva."
+          ],
+          "example": {
+            "label": "Senha forte",
+            "lines": [
+              "Fraca: 123456 ou o nome do time.",
+              "Melhor: uma frase longa, como pao-de-queijo-no-cafe-da-tarde.",
+              "Uma senha diferente para cada site, guardada num gerenciador de senhas."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "As defesas",
+          "body": [
+            "O firewall não é antivírus: ele filtra conexões, e não examina arquivos. A banca adora trocar os dois."
+          ],
+          "terms": [
+            {
+              "word": "firewall",
+              "meaning": "o filtro que controla o que entra e o que sai da rede, bloqueando as conexões não permitidas."
+            },
+            {
+              "word": "VPN",
+              "meaning": "uma ligação protegida entre o aparelho e outra rede, por dentro da internet. Funciona como um túnel fechado."
+            },
+            {
+              "word": "verificação em duas etapas",
+              "meaning": "pedir uma segunda prova além da senha, como um código no celular."
+            }
+          ],
+          "table": {
+            "label": "Cada defesa, a sua tarefa",
+            "headers": [
+              "Defesa",
+              "Protege contra"
+            ],
+            "rows": [
+              [
+                "firewall",
+                "conexões não permitidas entrando ou saindo da rede"
+              ],
+              [
+                "antivírus",
+                "programas maliciosos no computador"
+              ],
+              [
+                "antispam",
+                "mensagens indesejadas no e-mail"
+              ],
+              [
+                "VPN",
+                "alguém espiando os dados no caminho, como num Wi-Fi público"
+              ],
+              [
+                "verificação em duas etapas",
+                "o uso da senha roubada sozinha"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca descreve o golpe e pede o nome, ou dá a defesa e pergunta contra o que ela protege. A troca entre phishing e pharming e entre firewall e antivírus é a mais comum."
+          ],
+          "bullets": [
+            "“O ataque que redireciona o usuário para um site falso, mesmo com o endereço correto digitado, é o…”",
+            "“O firewall tem como função…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que o firewall limpa programas maliciosos: ele filtra conexões.",
+            "Confundir phishing (o link falso) com pharming (o DNS adulterado).",
+            "Achar que o cadeado garante que o site é honesto: ele só garante a conexão cifrada.",
+            "Achar que a verificação em duas etapas é uma senha maior: é uma segunda prova."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Phishing é a mensagem falsa, e pharming é o DNS adulterado que leva ao site falso. Engenharia social engana a pessoa, e o DDoS derruba o site com pedidos.",
+            "O firewall filtra conexões, o antivírus cuida dos programas maliciosos e a VPN protege os dados no caminho. A verificação em duas etapas pede uma segunda prova."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Phishing",
+          "statement": "Um e-mail falso, com a cara do banco, pede para clicar num link e confirmar a senha. É um golpe de:",
+          "options": [
+            "phishing",
+            "pharming",
+            "DDoS",
+            "força bruta",
+            "rootkit"
+          ],
+          "correct_index": 0,
+          "explanation": "É a isca para pescar a senha.",
+          "pitfall": "O pharming não precisa de link: adultera o DNS."
+        },
+        {
+          "topic": "Pharming",
+          "statement": "A pessoa digita o endereço certo do banco e mesmo assim cai num site falso. O golpe é o:",
+          "options": [
+            "pharming",
+            "phishing",
+            "spoofing",
+            "DDoS",
+            "adware"
+          ],
+          "correct_index": 0,
+          "explanation": "O DNS adulterado leva ao lugar errado.",
+          "pitfall": "No phishing, a pessoa clica num link falso."
+        },
+        {
+          "topic": "DDoS",
+          "statement": "Milhares de computadores mandam pedidos ao mesmo tempo a um site até ele cair. O ataque é um:",
+          "options": [
+            "DDoS",
+            "phishing",
+            "pharming",
+            "keylogger",
+            "spoofing"
+          ],
+          "correct_index": 0,
+          "explanation": "O objetivo é derrubar, não roubar.",
+          "pitfall": "O phishing quer a senha, e não derrubar o site."
+        },
+        {
+          "topic": "Firewall",
+          "statement": "O firewall serve para:",
+          "options": [
+            "controlar o que entra e sai da rede",
+            "remover programas maliciosos dos arquivos",
+            "fazer cópias de segurança",
+            "acelerar a internet",
+            "criar senhas"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele filtra conexões.",
+          "pitfall": "“Remover programas maliciosos” é o papel do antivírus."
+        },
+        {
+          "topic": "Engenharia social",
+          "statement": "Alguém liga dizendo ser do suporte da empresa e pede a senha do funcionário. Isso é:",
+          "options": [
+            "engenharia social",
+            "worm",
+            "DDoS",
+            "pharming",
+            "spam"
+          ],
+          "correct_index": 0,
+          "explanation": "O ataque engana a pessoa, e não a máquina.",
+          "pitfall": "O pharming adultera o DNS, sem conversar com ninguém."
+        },
+        {
+          "topic": "Duas etapas",
+          "statement": "Mesmo com a senha roubada, o invasor não entrou na conta, porque faltava o código do celular. O que protegeu a conta foi:",
+          "options": [
+            "a verificação em duas etapas",
+            "o firewall",
+            "a aba anônima",
+            "o antispam",
+            "o cache"
+          ],
+          "correct_index": 0,
+          "explanation": "A segunda prova barra quem só tem a senha.",
+          "pitfall": "O firewall não pede código nenhum."
+        },
+        {
+          "topic": "Defesas",
+          "format": "match",
+          "statement": "Ligue cada defesa ao que ela faz.",
+          "pairs": [
+            {
+              "left": "firewall",
+              "right": "filtra as conexões"
+            },
+            {
+              "left": "antivírus",
+              "right": "procura programas maliciosos"
+            },
+            {
+              "left": "antispam",
+              "right": "filtra e-mails indesejados"
+            },
+            {
+              "left": "VPN",
+              "right": "protege os dados no caminho"
+            }
+          ],
+          "explanation": "Cada defesa tem uma tarefa.",
+          "pitfall": "Firewall e antivírus são os mais trocados."
+        },
+        {
+          "topic": "Cadeado",
+          "statement": "O cadeado ao lado do endereço do site garante que:",
+          "options": [
+            "a conexão com o site é cifrada",
+            "o site é honesto",
+            "o site não tem programas maliciosos",
+            "a loja vai entregar o produto",
+            "ninguém consegue derrubar o site"
+          ],
+          "correct_index": 0,
+          "explanation": "Golpistas também usam o cadeado.",
+          "pitfall": "“O site é honesto” é a falsa segurança que o golpe explora."
+        },
+        {
+          "topic": "Spoofing",
+          "statement": "Falsificar o remetente de um e-mail para parecer outra pessoa é o:",
+          "options": [
+            "spoofing",
+            "backup",
+            "firewall",
+            "cache",
+            "cookie"
+          ],
+          "correct_index": 0,
+          "explanation": "Spoof é enganar, imitar.",
+          "pitfall": "Os outros nomes são ferramentas comuns, e não golpes.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Senha",
+          "statement": "A senha mais forte entre estas é:",
+          "options": [
+            "uma frase longa e diferente para cada site",
+            "123456",
+            "a data de nascimento",
+            "o nome do time",
+            "a mesma senha em todos os sites"
+          ],
+          "correct_index": 0,
+          "explanation": "Tamanho e variedade atrasam a força bruta.",
+          "pitfall": "Repetir a senha faz um vazamento abrir todas as contas.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "VPN",
+          "statement": "Num Wi-Fi público de aeroporto, a VPN ajuda porque:",
+          "options": [
+            "protege os dados no caminho até a outra rede",
+            "deixa o Wi-Fi mais rápido",
+            "remove programas maliciosos",
+            "dispensa senha",
+            "bloqueia todos os anúncios"
+          ],
+          "correct_index": 0,
+          "explanation": "É como um túnel fechado por dentro da internet.",
+          "pitfall": "“Remove programas maliciosos” é o papel do antivírus.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Força bruta",
+          "statement": "Um programa testa milhões de senhas até acertar a de uma conta. É um ataque de:",
+          "options": [
+            "força bruta",
+            "phishing",
+            "pharming",
+            "spoofing",
+            "adware"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele tenta todas as combinações.",
+          "pitfall": "O phishing pede a senha, sem precisar adivinhar.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Na ordem",
+          "statement": "Num golpe, a pessoa clica num link de mensagem; no outro, digita o endereço certo e mesmo assim cai num site falso. Eles são, nessa ordem:",
+          "options": [
+            "phishing e pharming",
+            "pharming e phishing",
+            "spoofing e DDoS",
+            "phishing e DDoS",
+            "pharming e spoofing"
+          ],
+          "correct_index": 0,
+          "explanation": "O link é a isca; o endereço certo que falha é o DNS adulterado.",
+          "pitfall": "“Pharming e phishing” inverte a ordem, o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Firewall não basta",
+          "statement": "Um computador com firewall ligado abre um anexo com programa malicioso enviado por e-mail. O firewall:",
+          "options": [
+            "não examina o arquivo, porque filtra conexões e não arquivos",
+            "remove o programa malicioso na hora",
+            "apaga o e-mail sozinho",
+            "impede qualquer arquivo de abrir",
+            "avisa o banco"
+          ],
+          "correct_index": 0,
+          "explanation": "Quem examina arquivos é o antivírus.",
+          "pitfall": "“Remove na hora” dá ao firewall o papel do antivírus, o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "criptografia-e-certificado",
+      "title": "Criptografia, assinatura e certificado digital",
+      "module": "Segurança",
+      "summary": "A criptografia é o que protege senhas, compras e documentos na internet. A lição mostra a simétrica e a assimétrica, as chaves pública e privada, a assinatura e o certificado digital e os princípios da segurança.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O cadeado e a chave",
+          "body": [
+            "Imagine um cadeado que qualquer um pode fechar, mas só você abre. Você distribui cadeados abertos, e quem quer mandar um segredo tranca a caixa com ele.",
+            "Essa é a ideia da criptografia com duas chaves: todos têm a que fecha, e só você tem a que abre."
+          ],
+          "terms": [
+            {
+              "word": "criptografia",
+              "meaning": "embaralhar uma mensagem com uma chave, para que só quem tem a chave certa consiga ler."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Simétrica e assimétrica",
+          "body": [
+            "Há dois jeitos de cifrar, e cada um tem o seu ponto fraco."
+          ],
+          "terms": [
+            {
+              "word": "criptografia simétrica e assimétrica",
+              "meaning": "na simétrica, a mesma chave fecha e abre. Na assimétrica, há um par de chaves (uma pública e outra privada)."
+            }
+          ],
+          "table": {
+            "label": "Os dois jeitos de cifrar",
+            "headers": [
+              "Tipo",
+              "Chaves",
+              "Ponto forte",
+              "Ponto fraco"
+            ],
+            "rows": [
+              [
+                "simétrica",
+                "uma só, que fecha e abre",
+                "rápida",
+                "a chave precisa ser combinada antes"
+              ],
+              [
+                "assimétrica",
+                "um par: pública e privada",
+                "não precisa combinar segredo",
+                "mais lenta"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Para mandar um segredo",
+          "body": [
+            "Para dar sigilo, cifra-se com a chave pública de quem vai receber."
+          ],
+          "example": {
+            "label": "Ana manda um segredo a Beto",
+            "lines": [
+              "Ana pega a chave pública de Beto, que é dada a todos.",
+              "Ana cifra a mensagem com essa chave.",
+              "Só a chave privada de Beto abre a mensagem.",
+              "Quem interceptar no caminho não consegue ler."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "chave pública e privada",
+              "meaning": "o par da criptografia assimétrica. A pública pode ser dada a todos; a privada fica só com o dono."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A assinatura digital",
+          "body": [
+            "A assinatura faz o caminho contrário. Ana assina com a própria chave privada, e qualquer um confere com a chave pública dela.",
+            "Se conferir, só pode ter sido Ana, e nada mudou no caminho. Mas a assinatura não esconde o conteúdo: ela prova quem mandou, e não guarda segredo."
+          ],
+          "example": {
+            "label": "O que cada uma garante",
+            "lines": [
+              "Cifrar com a pública do destinatário → sigilo (confidencialidade).",
+              "Assinar com a privada do autor → autenticidade, integridade e não repúdio."
+            ]
+          },
+          "terms": [
+            {
+              "word": "assinatura digital",
+              "meaning": "a marca feita com a chave privada do autor, que prova quem mandou e que nada mudou no caminho."
+            },
+            {
+              "word": "não repúdio",
+              "meaning": "a garantia de que o autor não pode negar que mandou a mensagem."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O hash",
+          "body": [
+            "O hash é como a impressão digital de um arquivo. Dois arquivos iguais têm o mesmo hash; mudou uma vírgula, o hash muda inteiro.",
+            "Ele é de mão única: do hash, não dá para voltar ao arquivo. Por isso os sites guardam o hash da senha, e não a senha."
+          ],
+          "terms": [
+            {
+              "word": "hash",
+              "meaning": "o resumo de tamanho fixo de um arquivo. Qualquer mudança no arquivo muda o resumo inteiro."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O certificado digital",
+          "body": [
+            "Como saber que a chave pública é mesmo de Beto, e não de um impostor? O certificado digital resolve: uma autoridade certificadora confere a identidade e assina o documento.",
+            "No Brasil, a cadeia oficial é a ICP-Brasil. É ela que dá validade jurídica aos documentos assinados com certificado."
+          ],
+          "terms": [
+            {
+              "word": "certificado digital",
+              "meaning": "o documento eletrônico que liga uma chave pública a uma pessoa ou empresa, emitido por uma autoridade de confiança."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os princípios da segurança",
+          "body": [
+            "As bancas cobram os princípios pelo nome e pelo exemplo. A sigla CID junta os três primeiros."
+          ],
+          "table": {
+            "label": "Os princípios da segurança",
+            "headers": [
+              "Princípio",
+              "Garante que",
+              "Ameaçado por"
+            ],
+            "rows": [
+              [
+                "confidencialidade",
+                "só quem pode lê",
+                "um espião que lê os dados"
+              ],
+              [
+                "integridade",
+                "nada foi mudado",
+                "alguém que altera os dados no caminho"
+              ],
+              [
+                "disponibilidade",
+                "o serviço está no ar quando se precisa",
+                "um ataque que derruba o site"
+              ],
+              [
+                "autenticidade",
+                "a origem é quem diz ser",
+                "um impostor"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca pergunta qual chave cifra e qual decifra, o que a assinatura garante ou qual princípio um ataque fere. A pegadinha favorita é dizer que a assinatura garante sigilo."
+          ],
+          "bullets": [
+            "“A assinatura digital garante…”",
+            "“Na criptografia assimétrica, para garantir o sigilo, o remetente utiliza…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que a assinatura digital esconde o conteúdo: ela prova a origem, e não dá sigilo.",
+            "Trocar as chaves: para sigilo, cifra-se com a pública do destinatário.",
+            "Achar que dá para voltar do hash ao arquivo.",
+            "Achar que derrubar um site fere a confidencialidade: fere a disponibilidade."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Na criptografia simétrica, uma chave fecha e abre; na assimétrica, a pública fecha e só a privada abre. A assinatura usa a privada do autor e garante autenticidade, integridade e não repúdio, mas não sigilo.",
+            "O hash é o resumo que muda com qualquer alteração, e o certificado digital liga a chave pública a uma pessoa."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Simétrica",
+          "statement": "Na criptografia simétrica:",
+          "options": [
+            "a mesma chave cifra e decifra",
+            "há uma chave pública e uma privada",
+            "não existe chave",
+            "a chave pública decifra tudo",
+            "só o governo tem a chave"
+          ],
+          "correct_index": 0,
+          "explanation": "É uma chave só, que precisa ser combinada antes.",
+          "pitfall": "O par de chaves é da assimétrica."
+        },
+        {
+          "topic": "Sigilo",
+          "statement": "Para mandar uma mensagem que só Beto consiga ler, Ana deve cifrá-la com:",
+          "options": [
+            "a chave pública de Beto",
+            "a chave privada de Beto",
+            "a chave privada de Ana",
+            "a chave pública de Ana",
+            "nenhuma chave"
+          ],
+          "correct_index": 0,
+          "explanation": "Só a privada de Beto abre.",
+          "pitfall": "A privada de Beto só ele tem: Ana não teria como usá-la."
+        },
+        {
+          "topic": "Assinar",
+          "statement": "Para assinar digitalmente um documento, Ana usa:",
+          "options": [
+            "a própria chave privada",
+            "a própria chave pública",
+            "a chave pública do destinatário",
+            "a chave privada do destinatário",
+            "o hash do destinatário"
+          ],
+          "correct_index": 0,
+          "explanation": "Assina com a privada, e todos conferem com a pública.",
+          "pitfall": "A chave pública do destinatário é a usada para dar sigilo."
+        },
+        {
+          "topic": "Não garante",
+          "statement": "A assinatura digital NÃO garante:",
+          "options": [
+            "a confidencialidade",
+            "a autenticidade",
+            "a integridade",
+            "o não repúdio",
+            "a origem da mensagem"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela prova quem mandou, mas não esconde o conteúdo.",
+          "pitfall": "Autenticidade e integridade são justamente o que ela garante."
+        },
+        {
+          "topic": "Hash",
+          "statement": "Sobre o hash de um arquivo, é correto afirmar:",
+          "options": [
+            "qualquer mudança no arquivo muda o hash",
+            "dá para recuperar o arquivo a partir do hash",
+            "o hash cresce com o tamanho do arquivo",
+            "arquivos diferentes têm sempre o mesmo hash",
+            "o hash é a senha do arquivo"
+          ],
+          "correct_index": 0,
+          "explanation": "É um resumo de mão única e de tamanho fixo.",
+          "pitfall": "“Dá para recuperar o arquivo” esquece que ele é de mão única."
+        },
+        {
+          "topic": "Certificado",
+          "statement": "O certificado digital serve para:",
+          "options": [
+            "ligar uma chave pública a uma pessoa ou empresa",
+            "guardar a chave privada de todo mundo",
+            "acelerar a internet",
+            "substituir o antivírus",
+            "apagar o histórico"
+          ],
+          "correct_index": 0,
+          "explanation": "Uma autoridade de confiança confere quem é o dono.",
+          "pitfall": "A chave privada fica só com o dono, e não no certificado."
+        },
+        {
+          "topic": "Princípios",
+          "format": "match",
+          "statement": "Ligue cada princípio ao que ele garante.",
+          "pairs": [
+            {
+              "left": "confidencialidade",
+              "right": "só quem pode lê"
+            },
+            {
+              "left": "integridade",
+              "right": "nada foi mudado"
+            },
+            {
+              "left": "disponibilidade",
+              "right": "o serviço está no ar"
+            },
+            {
+              "left": "autenticidade",
+              "right": "a origem é verdadeira"
+            }
+          ],
+          "explanation": "A sigla CID junta os três primeiros.",
+          "pitfall": "Integridade e confidencialidade são as mais trocadas."
+        },
+        {
+          "topic": "Site fora do ar",
+          "statement": "Um ataque derruba o site de um órgão público por horas. O princípio ferido é a:",
+          "options": [
+            "disponibilidade",
+            "confidencialidade",
+            "integridade",
+            "autenticidade",
+            "legalidade"
+          ],
+          "correct_index": 0,
+          "explanation": "O serviço não estava no ar quando se precisava.",
+          "pitfall": "Ninguém leu dados secretos, então não é a confidencialidade."
+        },
+        {
+          "topic": "Privada",
+          "statement": "Na criptografia assimétrica, a chave privada:",
+          "options": [
+            "fica só com o dono",
+            "é dada a todos",
+            "fica no site do governo",
+            "é igual à pública",
+            "não existe"
+          ],
+          "correct_index": 0,
+          "explanation": "A pública é a que se distribui.",
+          "pitfall": "“É dada a todos” é a chave pública.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "ICP-Brasil",
+          "statement": "No Brasil, a cadeia oficial de certificados digitais é a:",
+          "options": [
+            "ICP-Brasil",
+            "LGPD",
+            "Anatel",
+            "Receita Federal",
+            "Polícia Federal"
+          ],
+          "correct_index": 0,
+          "explanation": "É ela que dá validade jurídica aos certificados.",
+          "pitfall": "A lei de dados pessoais é outra coisa, e não emite certificados.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Integridade",
+          "statement": "Um invasor muda o valor de uma transferência no caminho entre o cliente e o banco. O princípio ferido é a:",
+          "options": [
+            "integridade",
+            "disponibilidade",
+            "confidencialidade",
+            "autenticidade",
+            "economia"
+          ],
+          "correct_index": 0,
+          "explanation": "O dado foi mudado.",
+          "pitfall": "Ninguém precisou ler em segredo: o problema é a mudança.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Senha guardada",
+          "statement": "Os sites sérios guardam, no lugar da senha, o hash dela. Isso protege porque:",
+          "options": [
+            "do hash não dá para voltar à senha",
+            "o hash é mais curto",
+            "o hash muda todo dia",
+            "o hash fica no celular",
+            "o hash é a própria senha"
+          ],
+          "correct_index": 0,
+          "explanation": "Mesmo se os dados vazarem, a senha não aparece.",
+          "pitfall": "“É a própria senha” desfaz a proteção.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Assinar e cifrar",
+          "statement": "Ana quer que só Beto leia e que Beto tenha certeza de que foi ela que mandou. Ela deve:",
+          "options": [
+            "assinar com a própria privada e cifrar com a pública de Beto",
+            "cifrar só com a própria pública",
+            "assinar com a pública de Beto",
+            "cifrar com a privada de Beto",
+            "mandar sem chave nenhuma"
+          ],
+          "correct_index": 0,
+          "explanation": "A assinatura prova a origem, e a cifra com a pública de Beto dá o sigilo.",
+          "pitfall": "“Assinar com a pública de Beto” troca as chaves, o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Negar",
+          "statement": "Um cliente assinou digitalmente um contrato e depois disse que não assinou. A assinatura impede essa negação porque garante o:",
+          "options": [
+            "não repúdio",
+            "sigilo",
+            "disponibilidade",
+            "cache",
+            "anonimato"
+          ],
+          "correct_index": 0,
+          "explanation": "Só a chave privada dele poderia ter feito aquela assinatura.",
+          "pitfall": "“Sigilo” é o que a assinatura não dá, o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    }
+  ]
+}
