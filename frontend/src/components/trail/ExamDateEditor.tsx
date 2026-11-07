@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { CalendarDays } from "lucide-react";
+import { CalendarDays, CalendarPlus } from "lucide-react";
 import { ApiError, messageOf, putJson } from "@/lib/client";
 import { contagemParaProva, hojeNoFuso } from "@/lib/subject-summary";
 
@@ -18,8 +18,12 @@ function amanha(hoje: string): string {
  *
  * Decisão do Sávio: quem sabe quando é a prova é a pessoa, e não quem
  * escreve a matéria. É dessa data que sai o ritmo das revisões; sem ela, o
- * app usa o FSRS (ver docs/revisao-espacada.md). Por isso o convite explica
- * o que a data muda, em vez de só pedir um número.
+ * app usa o FSRS (ver docs/revisao-espacada.md).
+ *
+ * É um BOTÃO PEQUENO, não um parágrafo (pedido do Sávio, novembro de 2026:
+ * "é um app, não um site"). O convite antigo explicava o que a data muda em
+ * duas linhas, para quem nunca ia marcar data nenhuma. A explicação ficou
+ * numa linha dentro do formulário, que só abre para quem tocou no botão.
  */
 export function ExamDateEditor({ subjectId, examDate }: { subjectId: number; examDate: string | null }) {
   const router = useRouter();
@@ -46,7 +50,7 @@ export function ExamDateEditor({ subjectId, examDate }: { subjectId: number; exa
   if (editando) {
     return (
       <form
-        className="space-y-2"
+        className="w-full space-y-2"
         onSubmit={(event) => {
           event.preventDefault();
           if (valor) void salvar(valor);
@@ -55,6 +59,7 @@ export function ExamDateEditor({ subjectId, examDate }: { subjectId: number; exa
         <label className="block text-base font-bold" htmlFor={`prova-${subjectId}`}>
           Quando é a sua prova?
         </label>
+        <p className="text-sm text-content-secondary">As revisões apertam o ritmo conforme ela chega.</p>
         <div className="flex flex-wrap items-center gap-2">
           <input
             id={`prova-${subjectId}`}
@@ -91,40 +96,26 @@ export function ExamDateEditor({ subjectId, examDate }: { subjectId: number; exa
     );
   }
 
+  const pilula = "inline-flex min-h-9 shrink-0 items-center gap-1.5 rounded-pill bg-surface-raised px-3 text-sm font-bold shadow-lift";
+
   if (prova) {
     return (
-      <p className="flex items-start gap-2.5 text-base">
-        <CalendarDays className="mt-0.5 size-5 shrink-0 text-sky" aria-hidden="true" />
-        <span>
-          <strong>{prova.frase}</strong>
-          <span className="text-content-secondary"> — {prova.data}. </span>
-          <button
-            type="button"
-            onClick={() => setEditando(true)}
-            className="text-sm font-bold underline underline-offset-4"
-          >
-            Mudar
-          </button>
-        </span>
-      </p>
+      <button
+        type="button"
+        onClick={() => setEditando(true)}
+        aria-label={`${prova.frase}, ${prova.data}. Mudar a data`}
+        className={pilula}
+      >
+        <CalendarDays className="size-4 text-sky" aria-hidden="true" />
+        {prova.dias === 0 ? "Prova hoje" : prova.dias === 1 ? "Prova amanhã" : `Prova em ${prova.dias} dias`}
+      </button>
     );
   }
 
   return (
-    <div className="flex items-start gap-2.5 text-base">
-      <CalendarDays className="mt-0.5 size-5 shrink-0 text-sky" aria-hidden="true" />
-      <div>
-        <p className="text-content-secondary">
-          Tem prova marcada? Com a data, as revisões seguem o seu prazo e apertam o ritmo conforme ela chega.
-        </p>
-        <button
-          type="button"
-          onClick={() => setEditando(true)}
-          className="mt-1 min-h-11 font-bold underline underline-offset-4"
-        >
-          Marcar a data da prova
-        </button>
-      </div>
-    </div>
+    <button type="button" onClick={() => setEditando(true)} aria-label="Marcar a data da prova" className={pilula}>
+      <CalendarPlus className="size-4 text-sky" aria-hidden="true" />
+      Data da prova
+    </button>
   );
 }

@@ -1,4 +1,4 @@
-import { Card, ProgressBar } from "@/components/ui";
+import { ProgressBar } from "@/components/ui";
 import { progressoDaMateria } from "@/lib/subject-summary";
 import { ExamDateEditor } from "./ExamDateEditor";
 import type { LessonSummary } from "@/lib/types";
@@ -36,29 +36,26 @@ export function SubjectSummary({
   // Matéria vazia não tem o que resumir, e barra de 0/0 é só ruído.
   if (progresso.total === 0) return null;
 
+  /*
+  | Uma linha só: a barra, o número e o botão da prova. Era um cartão com
+  | três linhas de convite em cima da barra, e a matéria abria com dois
+  | parágrafos antes da primeira lição. O formulário da data quebra para a
+  | linha de baixo (flex-wrap) quando abre.
+  */
   return (
-    <Card tone="sunken" className="space-y-3">
+    <div className="flex flex-wrap items-center gap-x-3 gap-y-3">
+      <ProgressBar
+        percent={progresso.percent}
+        size="sm"
+        tone={progresso.done === progresso.total ? "sage" : "sky"}
+        label={`${progresso.done} de ${progresso.total} lições praticadas nesta matéria`}
+        className="min-w-24 flex-1"
+      />
+      {/* O número vem escrito junto: barra sozinha obriga a medir a olho. */}
+      <span className="shrink-0 font-mono text-sm font-bold tabular-nums text-content-secondary">
+        {progresso.done}/{progresso.total}
+      </span>
       <ExamDateEditor subjectId={subjectId} examDate={examDate} />
-
-      <div className="flex items-center gap-3">
-        <ProgressBar
-          percent={progresso.percent}
-          size="sm"
-          tone={progresso.done === progresso.total ? "sage" : "sky"}
-          label={`${progresso.done} de ${progresso.total} lições praticadas nesta matéria`}
-          className="flex-1"
-        />
-        {/* O número vem escrito junto: barra sozinha obriga a medir a olho.
-            E vem com o substantivo — "6/30" sozinho não diz de quê. */}
-        <span className="shrink-0 text-sm text-content-secondary">
-          <span className="font-mono font-bold tabular-nums">
-            {progresso.done}/{progresso.total}
-          </span>{" "}
-          {/* "praticadas", não "concluídas com nota": a trilha não cobra
-              acerto, e esta palavra precisa dizer o mesmo que os nós verdes. */}
-          praticadas
-        </span>
-      </div>
-    </Card>
+    </div>
   );
 }
