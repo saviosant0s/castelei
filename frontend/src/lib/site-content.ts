@@ -647,6 +647,26 @@ export const SUBJECTS: SiteSubject[] = [
       "A canção e o Brasil: festivais, censura e identidade",
     ],
   },
+  {
+    slug: "treino-saude-e-alimentacao",
+    name: "Treino, saúde e alimentação",
+    pitch:
+      "Treino que funciona e comida para treinar, sem mito e sem promessa milagrosa.",
+    lessons: [
+      "As variáveis do treino: quanto, quão forte e quantas vezes",
+      "Treino aeróbico: o coração, o fôlego e o intervalado",
+      "Treino de força: séries, repetições e hipertrofia",
+      "Aquecer, alongar e a dor do dia seguinte",
+      "Energia: calorias, gasto e a gordura que não sai de um lugar só",
+      "Carboidrato, proteína e gordura para quem treina",
+      "Hidratação: suor, sede e quando beber o quê",
+      "Comer antes, durante e depois do treino",
+      "Suplementos: o que a ciência diz",
+      "Sono e recuperação: o treino que acontece dormindo",
+      "As lesões mais comuns e como evitá-las",
+      "Mitos do treino e a cabeça de quem treina",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -663,5 +683,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 5236,
+  questions: 5404,
 };
