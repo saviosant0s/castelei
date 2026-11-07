@@ -3,7 +3,7 @@ import { paginasDaMateria } from "@/lib/offline";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, BookA, ClipboardCheck, Crown } from "lucide-react";
+import { ArrowRight, BookA, ClipboardCheck, Crown } from "lucide-react";
 import { SubjectArt, subjectArtKey } from "@/components/illustrations/SubjectArt";
 import { SubjectSummary } from "@/components/trail/SubjectSummary";
 import { SubjectTrail } from "@/components/trail/SubjectTrail";
@@ -23,7 +23,8 @@ export default async function MateriaPage({ params }: { params: Promise<{ slug: 
   const subject = subjects.find((s) => s.slug === slug);
   if (!subject) notFound();
 
-  // Volta para a área de onde a pessoa veio; sem área conhecida, "Outras matérias".
+  // A área da matéria (sem área conhecida, "Outras matérias"): guardar para ler sem
+  // internet guarda a área junto, que é para onde o voltar do cabeçalho leva.
   const area = (areas ?? []).find((a) => a.slug === subject.area) ?? OUTRAS;
   const naTrilha = stepOfSubject(trails ?? [], subject.slug);
 
@@ -36,10 +37,6 @@ export default async function MateriaPage({ params }: { params: Promise<{ slug: 
 
   return (
     <div className="space-y-6">
-      <Link href={`/area/${area.slug}`} className="inline-flex min-h-11 items-center gap-2 text-base text-content-secondary hover:text-ink">
-        <ArrowLeft className="size-5" aria-hidden="true" /> {area.name}
-      </Link>
-
       <PageHero
         title={subject.name}
         art={<SubjectArt name={subjectArtKey(subject)} />}

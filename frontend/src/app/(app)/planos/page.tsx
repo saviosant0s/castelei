@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowLeft, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import { Card } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
 import type { User } from "@/lib/types";
@@ -49,10 +48,6 @@ export default async function Planos() {
 
   return (
     <div className="space-y-8">
-      <Link href="/perfil" className="inline-flex min-h-11 items-center gap-2 text-base text-content-secondary hover:text-ink">
-        <ArrowLeft className="size-5" aria-hidden="true" /> Perfil
-      </Link>
-
       <header>
         <h1 className="text-4xl">Planos</h1>
         {user.unlocked_for_testing ? (

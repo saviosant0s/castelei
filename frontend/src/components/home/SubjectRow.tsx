@@ -18,11 +18,13 @@ interface SubjectRowProps {
 }
 
 /*
-| Uma linha da lista da tela inicial — de área ou de matéria, com a mesma cara.
+| Uma linha da lista de matérias, na tela da área.
 |
 | É LISTA, não grade de cartões: cartões altos em duas colunas tinham um vão
 | vazio no meio, e com seis matérias a tela virou três de rolagem. A linha
 | mostra o que a pessoa procura: o nome, quanto falta e o que vem a seguir.
+| As áreas, na tela inicial, são outra peça (`AreaTile`): ali o que importa é
+| ver o catálogo inteiro de uma vez, e a matéria seguinte fica para depois.
 */
 export function SubjectRow({ href, name, icon: Icon, tone, practiced, total, detail }: SubjectRowProps) {
   return (

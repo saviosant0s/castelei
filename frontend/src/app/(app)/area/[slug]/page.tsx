@@ -1,8 +1,6 @@
 import { createElement } from "react";
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
 import { SubjectArt, subjectArtKey } from "@/components/illustrations/SubjectArt";
 import { SubjectRow, nextLessonLine, tones } from "@/components/home/SubjectRow";
 import { EmptyState, PageHero } from "@/components/ui";
@@ -26,10 +24,6 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
 
   return (
     <div className="space-y-6">
-      <Link href="/inicio" className="inline-flex min-h-11 items-center gap-2 text-base text-content-secondary hover:text-ink">
-        <ArrowLeft className="size-5" aria-hidden="true" /> Início
-      </Link>
-
       <PageHero
         title={area.name}
         art={

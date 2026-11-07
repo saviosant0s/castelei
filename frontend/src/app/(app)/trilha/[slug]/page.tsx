@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Check, ChevronRight } from "lucide-react";
+import { Check, ChevronRight } from "lucide-react";
 import { ProgressBar, PageHero } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
 import { trailView, type TrailStepView } from "@/lib/trails";
@@ -27,10 +27,6 @@ export default async function TrilhaPage({ params }: { params: Promise<{ slug: s
 
   return (
     <div className="space-y-6">
-      <Link href="/inicio" className="inline-flex min-h-11 items-center gap-2 text-base text-content-secondary hover:text-ink">
-        <ArrowLeft className="size-5" aria-hidden="true" /> Início
-      </Link>
-
       <header>
         <PageHero eyebrow="Trilha de estudo" title={trail.name}>
           {trail.description}
