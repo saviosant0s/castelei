@@ -727,6 +727,26 @@ export const SUBJECTS: SiteSubject[] = [
       "Amostra, pesquisa e margem de erro",
     ],
   },
+  {
+    slug: "fisico-quimica",
+    name: "Físico-química",
+    pitch:
+      "Mol, estequiometria, limitante, concentração, lei de Hess, equilíbrio, pH, pilhas, eletrólise e propriedades coligativas: as contas de Química que a prova cobra.",
+    lessons: [
+      "O mol a fundo: Avogadro, massa molar e volume molar",
+      "Estequiometria: a receita das reações",
+      "Reagente limitante, rendimento e pureza",
+      "Concentração, diluição e mistura de soluções",
+      "Lei de Hess: a energia só olha o começo e o fim",
+      "Energia de ligação: quebrar custa, formar devolve",
+      "Velocidade das reações a fundo: colisões e lei da velocidade",
+      "Equilíbrio a fundo: Kc e o princípio de Le Chatelier",
+      "pH e pOH: a escala da acidez a fundo",
+      "Pilhas: a reação que vira corrente",
+      "Eletrólise a fundo: a corrente que força a reação",
+      "Propriedades coligativas: o que o soluto muda na água",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -743,5 +763,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 5908,
+  questions: 6076,
 };
