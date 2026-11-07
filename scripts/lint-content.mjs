@@ -229,6 +229,34 @@ const JARGON = [
   ["termogênico", /(?<!\p{L})termog(ê|e)nic(o|os|a|as)(?!\p{L})/iu, "N"], ["overtraining", /\bovertraining\b/i, "N"],
   ["entorse", /\bentorses?\b/i, "N"], ["distensão muscular", /(?<!\p{L})distens(ão|ões)(?!\p{L})/iu, "N"], ["tendinite", /\btendinites?\b/i, "N"], ["fratura por estresse", /\bfraturas? por estresse\b/i, "N"],
   ["vigorexia", /\bvigorexia\b|(?<!\p{L})dismorfia muscular(?!\p{L})/iu, "N"], ["endorfina", /\bendorfinas?\b/i, "N"],
+  // Ecologia e meio ambiente (escopo "V"): herda o "b" da Biologia básica (ecossistema, nível
+  // trófico, decompositor, seleção natural…). "População" e "competição" ficaram de fora, por
+  // serem palavras de todo dia; cada lição define as duas no sentido da ecologia.
+  ["habitat", /(?<!\p{L})h(á|a)bitats?(?!\p{L})/iu, "V"], ["nicho ecológico", /(?<!\p{L})nichos? ecol(ó|o)gicos?(?!\p{L})/iu, "V"],
+  ["biosfera", /\bbiosfera\b/i, "V"], ["mutualismo", /\bmutualismo\b/i, "V"], ["comensalismo", /\bcomensalismo\b/i, "V"],
+  ["protocooperação", /(?<!\p{L})protocoopera(ç|c)(ão|ões)(?!\p{L})/iu, "V"], ["inquilinismo", /\binquilinismo\b/i, "V"],
+  ["amensalismo", /\bamensalismo\b/i, "V"], ["predação", /(?<!\p{L})preda(ç|c)(ão|ões)(?!\p{L})/iu, "V"],
+  ["parasitismo", /\bparasitismo\b/i, "V"], ["biomassa", /\bbiomassas?\b/i, "V"],
+  ["magnificação trófica", /(?<!\p{L})magnifica(ç|c)(ão|ões) tr(ó|o)ficas?(?!\p{L})|(?<!\p{L})bioacumula(ç|c)(ão|ões)(?!\p{L})/iu, "V"],
+  ["capacidade de suporte", /\bcapacidade de suporte\b/i, "V"], ["espécie invasora", /(?<!\p{L})esp(é|e)cies? invasoras?(?!\p{L})/iu, "V"],
+  ["sucessão ecológica", /(?<!\p{L})sucess(ão|ões) ecol(ó|o)gicas?(?!\p{L})/iu, "V"], ["espécie pioneira", /(?<!\p{L})esp(é|e)cies? pioneiras?(?!\p{L})/iu, "V"],
+  ["comunidade clímax", /(?<!\p{L})comunidades? cl(í|i)max(?!\p{L})/iu, "V"],
+  ["bactéria fixadora", /(?<!\p{L})bact(é|e)rias? fixadoras?(?!\p{L})/iu, "V"], ["nitrificação", /(?<!\p{L})nitrifica(ç|c)(ão|ões)(?!\p{L})/iu, "V"],
+  ["desnitrificação", /(?<!\p{L})desnitrifica(ç|c)(ão|ões)(?!\p{L})/iu, "V"], ["leguminosa", /\bleguminosas?\b/i, "V"],
+  ["rotação de culturas", /(?<!\p{L})rota(ç|c)(ão|ões) de culturas?(?!\p{L})/iu, "V"],
+  ["eutrofização", /(?<!\p{L})eutrofiza(ç|c)(ão|ões)(?!\p{L})|\beutrofizad(o|a|os|as)\b/iu, "V"], ["DBO", /\bDBO\b/, "V"],
+  ["plâncton", /(?<!\p{L})(fito|zoo)?pl(â|a)ncton(?!\p{L})/iu, "V"], ["nécton e bentos", /(?<!\p{L})n(é|e)cton(?!\p{L})|\bbentos\b/iu, "V"],
+  ["branqueamento de corais", /\bbranqueamento\b/i, "V"], ["chorume", /\bchorume\b/i, "V"],
+  ["aterro sanitário", /(?<!\p{L})aterros? sanit(á|a)rios?(?!\p{L})/iu, "V"], ["compostagem", /\bcompostagem\b/i, "V"],
+  ["biodiversidade", /\bbiodiversidade\b/i, "V"], ["espécie endêmica", /(?<!\p{L})end(ê|e)mic(o|a|os|as)(?!\p{L})/iu, "V"],
+  ["hotspot", /\bhotspots?\b/i, "V"], ["fragmentação de habitat", /(?<!\p{L})fragmenta(ç|c)(ão|ões)(?!\p{L})/iu, "V"],
+  ["corredor ecológico", /(?<!\p{L})corredor(es)? ecol(ó|o)gicos?(?!\p{L})/iu, "V"],
+  ["controle biológico", /(?<!\p{L})controle biol(ó|o)gico(?!\p{L})/iu, "V"], ["agrotóxico", /(?<!\p{L})agrot(ó|o)xicos?(?!\p{L})/iu, "V"],
+  ["transgênico", /(?<!\p{L})transg(ê|e)nic(o|a|os|as)(?!\p{L})/iu, "V"], ["monocultura", /\bmonoculturas?\b/i, "V"],
+  ["serviço ecossistêmico", /(?<!\p{L})servi(ç|c)os? ecossist(ê|e)micos?(?!\p{L})/iu, "V"],
+  ["polinização", /(?<!\p{L})poliniza(ç|c)(ão|ões)(?!\p{L})|\bpolinizador(es|a|as)?\b/iu, "V"],
+  ["pegada ecológica", /(?<!\p{L})pegadas? ecol(ó|o)gicas?(?!\p{L})/iu, "V"],
+  ["desenvolvimento sustentável", /(?<!\p{L})desenvolvimento sustent(á|a)vel(?!\p{L})/iu, "V"],
   // Interpretação de texto (escopo "Q"): o vocabulário da questão de leitura. Herda o "t" da
   // Produção Textual (tese, conectivo, coesão…), e os verbetes de leitura do inglês e do
   // espanhol (inferência, ironia, variação linguística…) valem também aqui.
@@ -810,7 +838,7 @@ const JARGON = [
   ["cooler", /\bcoolers?\b|\bwater cooler\b/i, "h"], ["80 Plus", /\b80 Plus\b/i, "h"], ["fonte modular", /\bmodular(es)?\b/i, "h"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG", "historia-do-brasil": "iH", "geografia-do-brasil": "oB", "corpo-humano-e-saude": "bC", "quimica-organica": "xO", "termodinamica-optica-e-fisica-moderna": "fT", "sociedade-brasileira": "jS", "autores-de-filosofia": "zF", "leitura-em-ingles-enem": "wR", "leitura-em-espanhol-enem": "uP", "informatica-para-concursos": "kI", "musica": "AM", "treino-saude-e-alimentacao": "EN", "interpretacao-de-texto": "tQ" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG", "historia-do-brasil": "iH", "geografia-do-brasil": "oB", "corpo-humano-e-saude": "bC", "quimica-organica": "xO", "termodinamica-optica-e-fisica-moderna": "fT", "sociedade-brasileira": "jS", "autores-de-filosofia": "zF", "leitura-em-ingles-enem": "wR", "leitura-em-espanhol-enem": "uP", "informatica-para-concursos": "kI", "musica": "AM", "treino-saude-e-alimentacao": "EN", "interpretacao-de-texto": "tQ", "ecologia-e-meio-ambiente": "bV" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;

@@ -87,6 +87,7 @@ return [
                 ['subject' => 'quimica-organica', 'name' => 'Química orgânica', 'why' => 'Cadeias de carbono, funções, combustíveis e plásticos: o assunto de Química que mais cai.'],
                 ['subject' => 'biologia-basica', 'name' => 'Biologia', 'why' => 'Célula, herança, evolução, ecologia e corpo humano: a parte que mais cai em Natureza.'],
                 ['subject' => 'corpo-humano-e-saude', 'name' => 'Corpo humano e saúde', 'why' => 'Os sistemas do corpo, a defesa e a saúde pública: o tema de Biologia mais ligado ao dia a dia.'],
+                ['subject' => 'ecologia-e-meio-ambiente', 'name' => 'Ecologia e meio ambiente', 'why' => 'Relações, ciclos, poluição e biodiversidade: o assunto de Biologia que mais cai no ENEM.'],
             ],
         ],
         [
