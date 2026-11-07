@@ -2,25 +2,30 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChartColumn, History, House, User } from "lucide-react";
+import { History, House, User, Users } from "lucide-react";
 
 /*
 | Quatro abas. Revisar ganhou a sua (pedido do Sávio): é o hábito de todo
 | dia, e morava escondido num sininho no topo da tela inicial. O número é o
 | de revisões vencidas, em coral — nunca vermelho, porque atrasar uma
 | revisão não é erro.
+|
+| Turmas entrou no lugar de Progresso (pedido do Sávio, novembro de 2026), e o
+| Progresso foi morar no Perfil, que é onde fica o "você": os números, as
+| conquistas e os ajustes. Os endereços de /progresso não mudaram; ali, a aba
+| acesa é a do Perfil.
 */
 const items = [
   { href: "/inicio", label: "Início", icon: House },
   { href: "/revisar", label: "Revisar", icon: History },
-  { href: "/progresso", label: "Progresso", icon: ChartColumn },
+  { href: "/turmas", label: "Turmas", icon: Users },
   { href: "/perfil", label: "Perfil", icon: User },
 ];
 
 function ativa(href: string, pathname: string): boolean {
   if (pathname === href || pathname.startsWith(`${href}/`)) return true;
   if (href === "/inicio") return ["/area", "/trilha", "/materia", "/licao"].some((p) => pathname.startsWith(p));
-  if (href === "/perfil") return pathname.startsWith("/correcoes") || pathname.startsWith("/buscar") || pathname.startsWith("/planos");
+  if (href === "/perfil") return ["/progresso", "/correcoes", "/buscar", "/planos"].some((p) => pathname.startsWith(p));
   return false;
 }
 

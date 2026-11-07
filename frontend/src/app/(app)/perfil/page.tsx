@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ChevronRight, CloudUpload, Crown, LogIn, Palette, Search, ShieldCheck, SlidersHorizontal, Sparkles, Users, Volume2 } from "lucide-react";
+import { ChartColumn, ChevronRight, CloudUpload, Crown, LogIn, Medal, Palette, Search, ShieldCheck, SlidersHorizontal, Sparkles, TrendingUp, Volume2 } from "lucide-react";
 import { DeleteAccountButton } from "@/components/DeleteAccountButton";
 import { InstallButton } from "@/components/InstallButton";
 import { LogoutButton } from "@/components/LogoutButton";
@@ -90,6 +90,19 @@ export default async function Perfil({ searchParams }: { searchParams: Promise<{
         </SettingsGroup>
       )}
 
+      {/* O Progresso saiu da barra de baixo para dar lugar às Turmas, e mora aqui: é o "você" do app. */}
+      <SettingsGroup id="progresso" title="Meu progresso">
+        <SettingsRow
+          icon={ChartColumn}
+          iconTone="sky"
+          title="Resumo"
+          description="Como você está, a semana e as lições mais fracas."
+          href="/progresso"
+        />
+        <SettingsRow icon={TrendingUp} iconTone="sage" title="Evolução" description="O acerto e o tempo ao longo das semanas." href="/progresso/evolucao" />
+        <SettingsRow icon={Medal} iconTone="coral" title="Conquistas" description="As medalhas que você já ganhou e as que faltam." href="/progresso/conquistas" />
+      </SettingsGroup>
+
       <SettingsGroup id="aparencia" title="Aparência e som">
         <SettingsRow
           icon={Palette}
@@ -122,13 +135,6 @@ export default async function Perfil({ searchParams }: { searchParams: Promise<{
           title="Minhas dúvidas e correções"
           description="O que você perguntou à IA e o que ela corrigiu, para rever sem gastar de novo."
           href="/correcoes"
-        />
-        <SettingsRow
-          icon={Users}
-          iconTone="sage"
-          title="Turmas"
-          description="Entre na turma do professor com o código, ou crie a sua para acompanhar os alunos."
-          href="/turmas"
         />
         <PushToggle />
         <InstallButton />
