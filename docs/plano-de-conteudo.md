@@ -264,7 +264,7 @@ escrever.
 | Espanhol | Leitura em espanhol para o ENEM (feita: 12 lições em três módulos, com os níveis) |
 | Informática | Informática para concursos (feita: 12 lições em quatro módulos, com os níveis) |
 | Artes | Música (feita: 12 lições em três módulos, com os níveis) |
-| Educação Física | Treino, saúde e alimentação |
+| Educação Física | Treino, saúde e alimentação (feita: 12 lições em três módulos, com os níveis) |
 
 ## Trilhas básicas planejadas
 
@@ -289,3 +289,4 @@ aparecer como "Em breve".
 4. Matemática do dia a dia (feito: 13 lições em quatro módulos, já com os níveis).
 5. **Uma área por rodada** (feito: todas as áreas da lista têm a sua matéria básica, de Biologia a Educação Física). Cada uma entrou com todas as lições de uma vez.
 6. As trilhas ENEM (feito: as quatro estão no ar e completas).
+7. A segunda matéria de cada área (feito: as catorze áreas têm a sua, de Literatura brasileira a Treino, saúde e alimentação).
