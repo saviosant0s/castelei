@@ -707,6 +707,26 @@ export const SUBJECTS: SiteSubject[] = [
       "Sustentabilidade: o que a natureza faz de graça",
     ],
   },
+  {
+    slug: "contagem-e-probabilidade",
+    name: "Contagem e probabilidade",
+    pitch:
+      "Arranjo, combinação, anagramas, chance condicional, binomial, valor esperado e desvio padrão, com as contas que a prova cobra.",
+    lessons: [
+      "Contar com regras: o “e” que multiplica e o “ou” que soma",
+      "Arranjo: quando a ordem importa",
+      "Combinação: quando a ordem não importa",
+      "Anagramas, letras repetidas e a mesa redonda",
+      "Probabilidade com contagem: quando não dá para listar",
+      "A chance do “ou” e a do “não”",
+      "Probabilidade condicional: a chance depois de saber algo",
+      "Eventos independentes e a moeda que não tem memória",
+      "Exatamente k vezes: a distribuição binomial",
+      "Valor esperado: quanto se ganha, em média",
+      "Amplitude, variância e desvio padrão: o quanto os dados se espalham",
+      "Amostra, pesquisa e margem de erro",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -723,5 +743,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 5740,
+  questions: 5908,
 };

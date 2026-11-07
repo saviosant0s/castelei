@@ -229,6 +229,23 @@ const JARGON = [
   ["termogênico", /(?<!\p{L})termog(ê|e)nic(o|os|a|as)(?!\p{L})/iu, "N"], ["overtraining", /\bovertraining\b/i, "N"],
   ["entorse", /\bentorses?\b/i, "N"], ["distensão muscular", /(?<!\p{L})distens(ão|ões)(?!\p{L})/iu, "N"], ["tendinite", /\btendinites?\b/i, "N"], ["fratura por estresse", /\bfraturas? por estresse\b/i, "N"],
   ["vigorexia", /\bvigorexia\b|(?<!\p{L})dismorfia muscular(?!\p{L})/iu, "N"], ["endorfina", /\bendorfinas?\b/i, "N"],
+  // Contagem e probabilidade (escopo "K"): herda o "m" e o "d" (probabilidade, espaço amostral,
+  // princípio multiplicativo, fatorial, permutação). "Evento" e "combinação" são palavras de todo dia,
+  // e mesmo assim entram: na matéria elas quase só aparecem no sentido técnico.
+  ["princípio aditivo", /(?<!\p{L})princ(í|i)pio aditivo(?!\p{L})/iu, "K"], ["arranjo", /\barranjos?\b/i, "K"],
+  ["combinação", /(?<!\p{L})combina(ç|c)(ão|ões)(?!\p{L})/iu, "K"], ["anagrama", /\banagramas?\b/i, "K"],
+  ["permutação com repetição", /(?<!\p{L})permuta(ç|c)(ão|ões) com repeti(ç|c)(ão|ões)(?!\p{L})/iu, "K"],
+  ["permutação circular", /(?<!\p{L})permuta(ç|c)(ão|ões) circular(es)?(?!\p{L})/iu, "K"],
+  ["evento", /\beventos?\b/i, "K"], ["eventos mutuamente exclusivos", /\bmutuamente exclusivos\b/i, "K"],
+  ["eventos independentes", /\beventos? independentes?\b/i, "K"], ["evento complementar", /\beventos? complementares?\b/i, "K"],
+  ["probabilidade condicional", /(?<!\p{L})probabilidades? condiciona(l|is)(?!\p{L})/iu, "K"],
+  ["falso positivo", /\bfalsos? positivos?\b/i, "K"], ["falácia do jogador", /(?<!\p{L})fal(á|a)cia do jogador(?!\p{L})/iu, "K"],
+  ["distribuição binomial", /(?<!\p{L})binomia(l|is)(?!\p{L})/iu, "K"],
+  ["valor esperado", /\bvalor(es)? esperados?\b/i, "K"], ["variância", /(?<!\p{L})vari(â|a)ncias?(?!\p{L})/iu, "K"],
+  ["desvio padrão", /(?<!\p{L})desvios?[- ]padr(ão|ões)(?!\p{L})/iu, "K"], ["amplitude", /\bamplitudes?\b/i, "K"],
+  ["amostra", /\bamostras?\b/i, "K"], ["margem de erro", /\bmargens? de erro\b/i, "K"],
+  ["frequência relativa", /(?<!\p{L})frequ(ê|e)ncias? relativas?(?!\p{L})/iu, "K"],
+  ["lei dos grandes números", /(?<!\p{L})lei dos grandes n(ú|u)meros(?!\p{L})/iu, "K"],
   // Ecologia e meio ambiente (escopo "V"): herda o "b" da Biologia básica (ecossistema, nível
   // trófico, decompositor, seleção natural…). "População" e "competição" ficaram de fora, por
   // serem palavras de todo dia; cada lição define as duas no sentido da ecologia.
@@ -838,7 +855,7 @@ const JARGON = [
   ["cooler", /\bcoolers?\b|\bwater cooler\b/i, "h"], ["80 Plus", /\b80 Plus\b/i, "h"], ["fonte modular", /\bmodular(es)?\b/i, "h"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG", "historia-do-brasil": "iH", "geografia-do-brasil": "oB", "corpo-humano-e-saude": "bC", "quimica-organica": "xO", "termodinamica-optica-e-fisica-moderna": "fT", "sociedade-brasileira": "jS", "autores-de-filosofia": "zF", "leitura-em-ingles-enem": "wR", "leitura-em-espanhol-enem": "uP", "informatica-para-concursos": "kI", "musica": "AM", "treino-saude-e-alimentacao": "EN", "interpretacao-de-texto": "tQ", "ecologia-e-meio-ambiente": "bV" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG", "historia-do-brasil": "iH", "geografia-do-brasil": "oB", "corpo-humano-e-saude": "bC", "quimica-organica": "xO", "termodinamica-optica-e-fisica-moderna": "fT", "sociedade-brasileira": "jS", "autores-de-filosofia": "zF", "leitura-em-ingles-enem": "wR", "leitura-em-espanhol-enem": "uP", "informatica-para-concursos": "kI", "musica": "AM", "treino-saude-e-alimentacao": "EN", "interpretacao-de-texto": "tQ", "ecologia-e-meio-ambiente": "bV", "contagem-e-probabilidade": "mdK" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;

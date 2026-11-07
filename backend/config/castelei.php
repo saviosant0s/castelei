@@ -73,6 +73,7 @@ return [
                 ['subject' => 'matematica-basica', 'name' => 'Matemática Básica', 'why' => 'Frações, porcentagem, potências, equações e funções: sem isso nenhuma questão anda.'],
                 ['subject' => 'matematica-do-dia-a-dia', 'name' => 'Matemática do dia a dia', 'why' => 'Medidas, juros, áreas, gráficos e chances: o tipo de situação que o ENEM mais usa.'],
                 ['subject' => 'geometria-e-trigonometria', 'name' => 'Geometria e trigonometria', 'why' => 'Semelhança, áreas, sólidos e o triângulo retângulo: a geometria que vem em quase toda prova.'],
+                ['subject' => 'contagem-e-probabilidade', 'name' => 'Contagem e probabilidade', 'why' => 'Arranjo, combinação, chance condicional e desvio padrão: as contas de contagem e de dados que o ENEM repete.'],
                 ['subject' => 'logica', 'name' => 'Lógica', 'why' => 'Ler uma afirmação com cuidado e tirar a conclusão certa.'],
             ],
         ],
