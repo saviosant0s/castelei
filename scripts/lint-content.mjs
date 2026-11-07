@@ -188,6 +188,20 @@ const JARGON = [
   ["backup", /\bbackups?\b/i, "k"], ["malware", /\bmalwares?\b/i, "k"], ["planilha", /\bplanilhas?\b/i, "k"], ["célula (de planilha)", /(?<!\p{L})c(é|e)lulas?(?!\p{L})/iu, "k"],
   ["fórmula", /(?<!\p{L})f(ó|o)rmulas?(?!\p{L})/iu, "k"], ["algoritmo", /\balgoritmos?\b/i, "k"],
   ["roteador", /\broteador(es)?\b/i, "k"], ["LGPD", /\bLGPD\b/, "k"], ["inteligência artificial", /(?<!\p{L})intelig(ê|e)ncias? artificia(l|is)(?!\p{L})/iu, "k"],
+  // Informática para concursos (escopo "I"): o que as bancas cobram pelo nome.
+  ["diretório", /(?<!\p{L})diret(ó|o)rios?(?!\p{L})/iu, "I"], ["software livre", /\bsoftwares? livres?\b/i, "I"], ["permissão rwx", /\brwx\b|\bchmod\b/, "I"],
+  ["backup incremental e diferencial", /\bincrementa(l|is)\b|\bdiferencia(l|is)\b/i, "I"],
+  ["referência relativa, absoluta e mista", /(?<!\p{L})refer(ê|e)ncias? (absolutas?|relativas?|mistas?)(?!\p{L})/iu, "I"], ["slide mestre", /\bslides? mestres?\b/i, "I"],
+  ["protocolo", /\bprotocolos?\b/i, "I"], ["intranet e extranet", /\bintranets?\b|\bextranets?\b/i, "I"], ["TCP e UDP", /\bTCP\b|\bUDP\b/, "I"],
+  ["cookie", /\bcookies?\b/i, "I"], ["cache", /\bcaches?\b/i, "I"], ["IaaS, PaaS e SaaS", /\b(IaaS|PaaS|SaaS)\b/, "I"],
+  ["vírus de computador", /(?<!\p{L})v(í|i)rus(?!\p{L})/iu, "I"], ["worm", /\bworms?\b/i, "I"], ["cavalo de Troia", /\bcavalos? de [Tt]roia\b/, "I"],
+  ["ransomware", /\bransomwares?\b/i, "I"], ["spyware", /\bspywares?\b|\bkeyloggers?\b|\bscreenloggers?\b/i, "I"], ["rootkit", /\brootkits?\b/i, "I"],
+  ["backdoor", /\bbackdoors?\b/i, "I"], ["bot e botnet", /\bbotnets?\b|\bbots?\b/i, "I"],
+  ["pharming", /\bpharming\b/i, "I"], ["engenharia social", /\bengenharia social\b/i, "I"], ["DoS e DDoS", /\bD?DoS\b/, "I"],
+  ["firewall", /\bfirewalls?\b/i, "I"], ["VPN", /\bVPNs?\b/, "I"], ["criptografia", /\bcriptografias?\b|\bcriptografad(o|a|os|as)\b/i, "I"],
+  ["criptografia simétrica e assimétrica", /(?<!\p{L})(sim|assim)(é|e)tric(a|as)(?!\p{L})/iu, "I"], ["chave pública e privada", /(?<!\p{L})chaves? (p(ú|u)blicas?|privadas?)(?!\p{L})/iu, "I"],
+  ["assinatura digital", /\bassinaturas? digita(l|is)\b/i, "I"], ["certificado digital", /\bcertificados? digita(l|is)\b/i, "I"], ["hash", /\bhash(es)?\b/i, "I"],
+  ["não repúdio", /(?<!\p{L})n(ã|a)o[- ]rep(ú|u)dio(?!\p{L})/iu, "I"],
   // Filosofia (escopo "z") e Sociologia (escopo "j"): os conceitos que a prova cobra pelo nome.
   ["mito", /\bmitos?\b/i, "z"], ["arché", /\barch(é|e)\b/i, "z"], ["maiêutica", /(?<!\p{L})mai(ê|e)utica(?!\p{L})/iu, "z"], ["mundo das ideias", /\bmundo das ideias\b/i, "z"],
   ["ética e moral", /(?<!\p{L})(é|e)tica(s)?(?!\p{L})|\bmora(l|is)\b/iu, "z"], ["racionalismo e empirismo", /\bracionalis(mo|ta|tas)\b|\bempiris(mo|ta|tas)\b/i, "z"],
@@ -751,7 +765,7 @@ const JARGON = [
   ["cooler", /\bcoolers?\b|\bwater cooler\b/i, "h"], ["80 Plus", /\b80 Plus\b/i, "h"], ["fonte modular", /\bmodular(es)?\b/i, "h"],
 ].map(([name, re, scope]) => [name, re, scope ?? "s"]);
 
-const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG", "historia-do-brasil": "iH", "geografia-do-brasil": "oB", "corpo-humano-e-saude": "bC", "quimica-organica": "xO", "termodinamica-optica-e-fisica-moderna": "fT", "sociedade-brasileira": "jS", "autores-de-filosofia": "zF", "leitura-em-ingles-enem": "wR", "leitura-em-espanhol-enem": "uP" };
+const SCOPE_BY_SUBJECT = { "matematica-basica": "m", portugues: "p", "sistemas-operacionais": "s", "servidores-vps": "v", refatoracao: "r", "producao-textual": "t", "programacao-python": "y", "algebra-linear": "a", calculo: "c", "probabilidade-estatistica": "e", "redes-neurais": "n", "llms-como-funcionam": "g", "llms-na-pratica": "l", logica: "q", "montar-pc": "h", "matematica-do-dia-a-dia": "md", "biologia-basica": "b", "historia-basica": "i", "geografia-basica": "o", "fisica-basica": "f", "quimica-basica": "x", "ingles-basico": "w", "espanhol-basico": "u", "informatica-basica": "k", "filosofia-basica": "z", "sociologia-basica": "j", "artes-basica": "A", "educacao-fisica-basica": "E", "literatura-brasileira": "L", "geometria-e-trigonometria": "mdG", "historia-do-brasil": "iH", "geografia-do-brasil": "oB", "corpo-humano-e-saude": "bC", "quimica-organica": "xO", "termodinamica-optica-e-fisica-moderna": "fT", "sociedade-brasileira": "jS", "autores-de-filosofia": "zF", "leitura-em-ingles-enem": "wR", "leitura-em-espanhol-enem": "uP", "informatica-para-concursos": "kI" };
 // O Castelei é independente: nada de "o livro diz", autores, capítulos ou páginas.
 const SOURCE_REF = /segundo o livro|o livro (conta|diz|chama|lembra|observa|explica|dá|mostra|traz)|livro-texto|tanenbaum|para ler no livro|\bcap\.? ?\d|\bseção \d|\bp\. ?\d/i;
 const FORBIDDEN = /como vimos|anteriormente|na aula passada|conforme visto|j(á|a) vimos/i;

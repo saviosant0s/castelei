@@ -607,6 +607,26 @@ export const SUBJECTS: SiteSubject[] = [
       "Poemas e canções em espanhol",
     ],
   },
+  {
+    slug: "informatica-para-concursos",
+    name: "Informática para concursos",
+    pitch:
+      "Os atalhos, os comandos, os protocolos e os golpes que as bancas mais cobram, com as trocas que elas esperam.",
+    lessons: [
+      "Windows: atalhos, Lixeira e o arrastar que copia ou move",
+      "Linux: diretórios, comandos e permissões",
+      "Os tipos de backup: completo, incremental e diferencial",
+      "Word e Writer: os atalhos que trocam de letra",
+      "Planilhas: referências, funções e erros",
+      "Apresentações e formatos de arquivo",
+      "Redes e protocolos: quem leva o quê",
+      "Navegadores: aba anônima, cookies e busca avançada",
+      "Computação em nuvem: IaaS, PaaS e SaaS",
+      "Malwares: vírus, worm, cavalo de Troia e companhia",
+      "Golpes e defesas: phishing, pharming, firewall e VPN",
+      "Criptografia, assinatura e certificado digital",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -623,5 +643,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 4900,
+  questions: 5068,
 };
