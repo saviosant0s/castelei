@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PracticeClient } from "@/components/PracticeClient";
+import { LockedLesson } from "@/components/LockedLesson";
 import { serverGet } from "@/lib/backend";
 import type { Difficulty, LessonDetail } from "@/lib/types";
 
@@ -19,6 +20,9 @@ export default async function PraticarPage({
   // `?nivel=facil|media|dificil`: praticar só um nível (Pro).
   const level = (["facil", "media", "dificil"] as const).find((n) => n === busca.nivel) as Difficulty | undefined;
   const { lesson } = await serverGet<{ lesson: LessonDetail }>(`/lessons/${encodeURIComponent(id)}`);
+
+  // Trancada: a prática também não abre (a API recusa a tentativa).
+  if (lesson.locked) return <LockedLesson lesson={lesson} />;
 
   return (
     <PracticeClient

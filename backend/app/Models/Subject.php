@@ -41,6 +41,48 @@ class Subject extends Model
     }
 
     /**
+     * Os grupos de uma área, na ordem de estudo, só com o que esta pessoa vê.
+     *
+     * Vem de `config('castelei.area_groups')`. Matéria que a pessoa não vê
+     * (privada) sai da lista, e o grupo que fica vazio some — o nome de uma
+     * matéria privada nunca chega a quem não administra. A matéria da área
+     * que não está em grupo nenhum vai para "Mais matérias", no fim, na
+     * ordem de posição.
+     *
+     * @param  list<array{slug: string, area: ?string}>  $visiveis  na ordem de posição
+     * @return list<array{name: ?string, items: list<array{subject: string}|array{soon: string}>}>
+     */
+    public static function groupsFor(string $area, array $visiveis): array
+    {
+        $daArea = array_values(array_map(fn ($s) => $s['slug'], array_filter($visiveis, fn ($s) => $s['area'] === $area)));
+        $usadas = [];
+        $grupos = [];
+
+        foreach ((array) config("castelei.area_groups.$area", []) as $grupo) {
+            $itens = [];
+            foreach ($grupo['items'] as $item) {
+                if (is_array($item)) {
+                    $itens[] = ['soon' => (string) $item['soon']];
+                } elseif (in_array($item, $daArea, true)) {
+                    $itens[] = ['subject' => $item];
+                    $usadas[] = $item;
+                }
+            }
+            // Grupo só de "em breve" fica: é o que mostra o que vem por aí.
+            if ($itens !== []) {
+                $grupos[] = ['name' => (string) $grupo['name'], 'items' => $itens];
+            }
+        }
+
+        $soltas = array_values(array_diff($daArea, $usadas));
+        if ($soltas !== []) {
+            $grupos[] = ['name' => $grupos === [] ? null : 'Mais matérias', 'items' => array_map(fn ($slug) => ['subject' => $slug], $soltas)];
+        }
+
+        return $grupos;
+    }
+
+    /**
      * As matérias que esta pessoa enxerga. Sem pessoa (a vitrine pública),
      * só as públicas.
      */

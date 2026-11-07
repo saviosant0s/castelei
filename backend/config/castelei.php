@@ -161,6 +161,107 @@ return [
     ],
 
     /*
+    | Os grupos de cada área, na ORDEM DE ESTUDO.
+    |
+    | Pedido do Sávio (novembro de 2026): Informática virou uma lista de
+    | coisas soltas (hardware, programação, IA) sem dizer por onde começar.
+    | Cada área agora tem grupos, e dentro deles as matérias vêm na ordem em
+    | que faz sentido estudar — substantivo antes de verbo. A ordem ORIENTA e
+    | não tranca: ninguém é obrigado a estudar o que já sabe. (Quem tranca é a
+    | lição DENTRO da matéria; ver Support\Practice\LessonLock.)
+    |
+    | Cada item é o slug de uma matéria ou ['soon' => 'Nome'], um assunto que
+    | ainda vai entrar. Ele aparece apagado, com "Em breve", e não é link —
+    | é o que mostra que o app está andando. Quando a matéria chegar, troque o
+    | item pelo slug dela.
+    |
+    | A matéria privada só aparece para quem administra, e o grupo que fica
+    | vazio para os outros some. Matéria que não está em grupo nenhum (criada
+    | pelo painel, por exemplo) vai para "Mais matérias", no fim da área. Um
+    | teste reprova matéria pública do repositório fora de grupo.
+    */
+    'area_groups' => [
+        'portugues' => [
+            ['name' => 'Língua e gramática', 'items' => ['portugues', ['soon' => 'Gramática a fundo: sintaxe e pontuação']]],
+            ['name' => 'Leitura', 'items' => ['interpretacao-de-texto']],
+            ['name' => 'Literatura', 'items' => ['literatura-brasileira', ['soon' => 'Literatura portuguesa']]],
+            ['name' => 'Escrita', 'items' => ['producao-textual', ['soon' => 'Textos do dia a dia: e-mail, carta e relatório']]],
+        ],
+        'matematica' => [
+            ['name' => 'Fundamentos', 'items' => ['matematica-basica', 'matematica-do-dia-a-dia', ['soon' => 'Funções a fundo: afim, quadrática e exponencial']]],
+            ['name' => 'Raciocínio lógico', 'items' => ['logica']],
+            ['name' => 'Geometria', 'items' => ['geometria-e-trigonometria', ['soon' => 'Geometria analítica']]],
+            ['name' => 'Dados e chance', 'items' => ['contagem-e-probabilidade', 'probabilidade-estatistica', ['soon' => 'Matemática financeira']]],
+            ['name' => 'Para a faculdade', 'items' => ['algebra-linear', 'calculo']],
+        ],
+        'fisica' => [
+            ['name' => 'Fundamentos', 'items' => ['fisica-basica']],
+            ['name' => 'Mecânica', 'items' => [['soon' => 'Leis de Newton e mecânica a fundo']]],
+            ['name' => 'Calor, luz e física moderna', 'items' => ['termodinamica-optica-e-fisica-moderna']],
+            ['name' => 'Eletricidade e ondas', 'items' => [['soon' => 'Eletricidade, magnetismo e ondas']]],
+        ],
+        'quimica' => [
+            ['name' => 'Fundamentos', 'items' => ['quimica-basica']],
+            ['name' => 'Química orgânica', 'items' => ['quimica-organica']],
+            ['name' => 'Físico-química', 'items' => ['fisico-quimica']],
+            ['name' => 'Química e ambiente', 'items' => [['soon' => 'Química do cotidiano e do ambiente']]],
+        ],
+        'biologia' => [
+            ['name' => 'Fundamentos', 'items' => ['biologia-basica']],
+            ['name' => 'Corpo humano', 'items' => ['corpo-humano-e-saude']],
+            ['name' => 'Ecologia', 'items' => ['ecologia-e-meio-ambiente']],
+            ['name' => 'Genética e evolução', 'items' => [['soon' => 'Genética e evolução a fundo']]],
+        ],
+        'historia' => [
+            ['name' => 'Fundamentos', 'items' => ['historia-basica']],
+            ['name' => 'História do Brasil', 'items' => ['historia-do-brasil']],
+            ['name' => 'História geral', 'items' => [['soon' => 'História contemporânea'], ['soon' => 'Antiguidade e Idade Média a fundo']]],
+        ],
+        'geografia' => [
+            ['name' => 'Fundamentos', 'items' => ['geografia-basica']],
+            ['name' => 'Brasil', 'items' => ['geografia-do-brasil']],
+            ['name' => 'Mundo', 'items' => [['soon' => 'Geopolítica e mundo atual']]],
+        ],
+        'filosofia' => [
+            ['name' => 'Fundamentos', 'items' => ['filosofia-basica']],
+            ['name' => 'Autores', 'items' => ['autores-de-filosofia']],
+            ['name' => 'Questões de hoje', 'items' => [['soon' => 'Ética e questões de hoje']]],
+        ],
+        'sociologia' => [
+            ['name' => 'Fundamentos', 'items' => ['sociologia-basica']],
+            ['name' => 'Autores', 'items' => [['soon' => 'Os sociólogos que mais caem']]],
+            ['name' => 'Brasil', 'items' => ['sociedade-brasileira']],
+        ],
+        'ingles' => [
+            ['name' => 'Fundamentos', 'items' => ['ingles-basico']],
+            ['name' => 'Leitura para provas', 'items' => ['leitura-em-ingles-enem']],
+            ['name' => 'Conversa', 'items' => [['soon' => 'Inglês do dia a dia: viagem, trabalho e internet']]],
+        ],
+        'espanhol' => [
+            ['name' => 'Fundamentos', 'items' => ['espanhol-basico']],
+            ['name' => 'Leitura para provas', 'items' => ['leitura-em-espanhol-enem']],
+            ['name' => 'Conversa', 'items' => [['soon' => 'Espanhol do dia a dia']]],
+        ],
+        'artes' => [
+            ['name' => 'Fundamentos', 'items' => ['artes-basica']],
+            ['name' => 'Música', 'items' => ['musica']],
+            ['name' => 'Artes visuais', 'items' => [['soon' => 'Arte brasileira: do Barroco ao contemporâneo']]],
+        ],
+        'educacao-fisica' => [
+            ['name' => 'Fundamentos', 'items' => ['educacao-fisica-basica']],
+            ['name' => 'Treino e saúde', 'items' => ['treino-saude-e-alimentacao']],
+            ['name' => 'Esportes', 'items' => [['soon' => 'Esportes: regras e jogo']]],
+        ],
+        'informatica' => [
+            ['name' => 'Usar o computador', 'items' => ['informatica-basica', 'informatica-para-concursos', ['soon' => 'Planilhas a fundo: fórmulas, PROCV e tabela dinâmica']]],
+            ['name' => 'Hardware', 'items' => ['montar-pc', ['soon' => 'Como o computador funciona por dentro']]],
+            ['name' => 'Sistemas e redes', 'items' => ['sistemas-operacionais', 'servidores-vps', ['soon' => 'Redes e internet a fundo']]],
+            ['name' => 'Programação', 'items' => [['soon' => 'Lógica de programação'], 'programacao-python', 'refatoracao']],
+            ['name' => 'Inteligência artificial', 'items' => [['soon' => 'IA no dia a dia: como funciona e como usar bem'], 'redes-neurais', 'llms-como-funcionam', 'llms-na-pratica']],
+        ],
+    ],
+
+    /*
     | Painel de conteúdo (/admin).
     |
     | `admin_emails` é uma lista separada por vírgula. Ela é a porta de entrada:
@@ -449,6 +550,6 @@ return [
         */
         'free' => ['label' => 'Grátis', 'questions_per_lesson' => 8, 'gamification' => true, 'exam' => false],
         'plus' => ['label' => 'Plus', 'questions_per_lesson' => 30, 'gamification' => true, 'exam' => false],
-        'pro' => ['label' => 'Pro', 'questions_per_lesson' => null, 'gamification' => true, 'exam' => true, 'classrooms' => true],
+        'pro' => ['label' => 'Pro', 'questions_per_lesson' => null, 'gamification' => true, 'exam' => true, 'classrooms' => true, 'skip_lessons' => true],
     ],
 ];

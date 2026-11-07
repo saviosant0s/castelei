@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BookOpen, Check, Star } from "lucide-react";
+import { BookOpen, Check, Lock, Star } from "lucide-react";
 import { TrailLabel } from "./TrailLabel";
 import { TrailResume } from "./TrailResume";
 import { NODE, ROW, type TrailAccent, type TrailLesson, labelSide, stars } from "@/lib/lesson-trail";
@@ -12,12 +12,12 @@ import { NODE, ROW, type TrailAccent, type TrailLesson, labelSide, stars } from 
 | design system) e ainda sobra cor para dizer em que trecho da matéria você
 | está.
 |
-| A que falta é CINZA, MAS CONTINUA CLICÁVEL, e isso é decisão. O app
-| acompanha um semestre com data marcada: quem chega na véspera da prova
-| querendo revisar Memória não pode esbarrar num cadeado porque pulou uma
-| lição de setembro. O cinza orienta ("você ainda não chegou aqui"), não
-| proíbe — por isso também não tem cadeado, que prometeria uma tranca que não
-| existe.
+| A que falta é CINZA. A que vem depois de uma ainda não vista leva CADEADO
+| (`lesson.locked`, decisão do Sávio de novembro de 2026: dentro da matéria
+| é uma coisa só, e a lição 5 não se entende sem a 4). "Ver" é ler até o fim
+| ou praticar, e o Pro pula — para ele, e na fase de testes, nenhum nó vem
+| trancado. O nó trancado continua sendo link: abre a tela que diz qual
+| lição falta e leva até ela, em vez de um toque que não responde.
 |
 | A LINHA INTEIRA É O LINK, não só o círculo. O título está ao lado do nó, e
 | quem toca no título quer abrir a lição — alvo de 60px no meio de uma linha
@@ -51,12 +51,15 @@ const words = {
 export function TrailNode({ item, index, accent }: { item: TrailLesson; index: number; accent: TrailAccent }) {
   const { lesson, state, x } = item;
   const ganhas = state === "concluida" ? stars(lesson.best_percent) : 0;
+  // A atual nunca vem trancada: antes dela, tudo já foi visto.
+  const trancada = state === "adiante" && lesson.locked === true;
 
   return (
     <Link
       href={`/licao/${lesson.id}`}
       aria-label={
-        `Lição ${lesson.position}: ${lesson.title} — ${words[state]}` + (ganhas ? `, ${ganhas} de 3 estrelas` : "")
+        `Lição ${lesson.position}: ${lesson.title} — ${trancada ? "trancada, veja a anterior antes" : words[state]}` +
+        (ganhas ? `, ${ganhas} de 3 estrelas` : "")
       }
       className="group absolute inset-x-0 outline-none"
       style={{ top: index * ROW, height: NODE }}
@@ -75,6 +78,8 @@ export function TrailNode({ item, index, accent }: { item: TrailLesson; index: n
           <span className="grid size-9 place-items-center rounded-full bg-surface-raised">
             <BookOpen className="size-5" strokeWidth={2.5} />
           </span>
+        ) : trancada ? (
+          <Lock className="size-5" strokeWidth={2.5} />
         ) : (
           lesson.position
         )}

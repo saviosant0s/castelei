@@ -39,6 +39,7 @@ const plans = [
       "Questões em três níveis: fácil, média e difícil",
       "Muito mais questões por lição",
       "Criar turmas e acompanhar os alunos",
+      "Abrir qualquer lição, sem seguir a ordem",
     ],
   },
 ] as const;

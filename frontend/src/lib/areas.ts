@@ -31,7 +31,7 @@ import {
   Wrench,
   type LucideIcon,
 } from "lucide-react";
-import type { Area, Subject } from "./types";
+import type { Area, AreaGroupData, Subject } from "./types";
 
 /*
 | Áreas do conhecimento.
@@ -134,4 +134,40 @@ export function areaProgress(subjects: Subject[]): { practiced: number; total: n
     practiced += subject.lessons.filter((lesson) => lesson.attempts > 0).length;
   }
   return { practiced, total };
+}
+
+export type AreaGroupEntry =
+  | { kind: "subject"; step: number; subject: Subject }
+  | { kind: "soon"; name: string };
+
+export interface AreaGroupView {
+  name: string | null;
+  entries: AreaGroupEntry[];
+}
+
+/**
+ * Os grupos da área, já com as matérias e o número de cada uma na ordem.
+ *
+ * A ordem de estudo vem do backend (`area_groups`); aqui ela ganha número,
+ * contínuo pela área inteira — "1, 2, 3" diz por onde começar sem precisar
+ * de frase. O "em breve" não leva número: ainda não dá para estudá-lo, e
+ * contá-lo faria o 2 virar 3 quando ele chegar. Sem grupos (API antiga ou
+ * página guardada para ler sem internet), a área vira uma lista só.
+ */
+export function areaGroupsView(groups: AreaGroupData[] | undefined, subjects: Subject[]): AreaGroupView[] {
+  const bySlug = new Map(subjects.map((subject) => [subject.slug, subject]));
+  const fonte: AreaGroupData[] =
+    groups && groups.length > 0 ? groups : [{ name: null, items: subjects.map((subject) => ({ subject: subject.slug })) }];
+
+  let passo = 0;
+  return fonte
+    .map((group) => ({
+      name: group.name,
+      entries: group.items.flatMap((item): AreaGroupEntry[] => {
+        if ("soon" in item) return [{ kind: "soon", name: item.soon }];
+        const subject = bySlug.get(item.subject);
+        return subject ? [{ kind: "subject", step: ++passo, subject }] : [];
+      }),
+    }))
+    .filter((group) => group.entries.length > 0);
 }

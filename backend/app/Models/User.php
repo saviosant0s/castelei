@@ -121,6 +121,12 @@ class User extends Authenticatable
         return Plans::hasLevels($this->plan, $this->seesRealPlan());
     }
 
+    /** Abre qualquer lição sem ver a anterior: Pro, ou quem administra o conteúdo. */
+    public function canSkipLessons(): bool
+    {
+        return $this->isAdmin() || Plans::canSkipLessons($this->plan, $this->seesRealPlan());
+    }
+
     public function hasClassrooms(): bool
     {
         return Plans::hasClassrooms($this->plan, $this->seesRealPlan());

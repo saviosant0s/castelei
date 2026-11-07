@@ -329,3 +329,7 @@ lista é a proposta; o recorte pode mudar ao escrever.
 | 13 | Espanhol | Espanhol do dia a dia | O mesmo recorte do inglês |
 | 14 | Educação Física | Esportes: regras e jogo | As regras, a tática e a história dos esportes que a escola pratica |
 
+Os assuntos que ainda não existem aparecem no app como "Em breve", dentro do
+grupo da área (`config/castelei.php` → `area_groups`). Ao publicar a matéria,
+troque o item `['soon' => …]` pelo slug dela, no mesmo lugar da ordem.
+

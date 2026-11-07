@@ -89,6 +89,16 @@ class Plans
     }
 
     /**
+     * Pode abrir qualquer lição da matéria, sem ter visto a anterior? A trava
+     * entre lições é do grátis; pular é do Pro (ver Support\Practice\LessonLock).
+     */
+    public static function canSkipLessons(string $plan, bool $realPlan = false): bool
+    {
+        return self::unlockedForEveryone($realPlan)
+            || (bool) (self::all()[$plan]['skip_lessons'] ?? false);
+    }
+
+    /**
      * Pode praticar por nível de dificuldade e receber as questões além das
      * oito? É o mesmo corte do simulado: a parte paga é o Pro.
      */

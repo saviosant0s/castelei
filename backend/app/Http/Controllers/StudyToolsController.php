@@ -10,6 +10,7 @@ use App\Models\Subject;
 use App\Support\Content\Vocabulary;
 use App\Support\Notes\DoubtAnswerer;
 use App\Support\Notes\NoteReviewer;
+use App\Support\Practice\LessonLock;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -31,6 +32,9 @@ class StudyToolsController extends Controller
      */
     public function markRead(Request $request, Lesson $lesson): JsonResponse
     {
+        // Marcar como lida a lição trancada abriria a seguinte sem ver esta.
+        abort_if(LessonLock::missingFor($request->user(), $lesson) !== null, 403, 'Veja a lição anterior antes.');
+
         $agora = now();
         DB::table('lesson_reads')->insertOrIgnore([
             'user_id' => $request->user()->id,
