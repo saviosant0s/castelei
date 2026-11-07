@@ -90,7 +90,8 @@ Curso gerado nasce privado. O que ficou decidido:
 - **Compartilhar por link ou e-mail: GRÁTIS.** A pessoa convidada estuda o
   curso com o próprio progresso. Não custa nada para nós (ninguém gera nada
   de novo) e cada curso compartilhado traz gente nova para o app.
-- **Turma: PAGO, e é implementação nova.** Hoje o sistema não tem nada disso.
+- **Turma: PAGO. A primeira versão está feita** (novembro de 2026, ver “Turmas para professor” no `CLAUDE.md`): turma de uma matéria pública, convite por código e link, e a tela de desempenho. Falta a turma de curso gerado, que depende do dono do curso.
+  O briefing original: Hoje o sistema não tem nada disso.
   Quem cria compartilha com uma turma e acompanha o desempenho dela: quem já
   estudou, em que lição a turma erra mais, quem está atrasado para a prova. O
   público natural é o professor que gera o curso dos próprios slides. Peças

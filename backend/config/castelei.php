@@ -448,6 +448,6 @@ return [
         */
         'free' => ['label' => 'Grátis', 'questions_per_lesson' => 8, 'gamification' => true, 'exam' => false],
         'plus' => ['label' => 'Plus', 'questions_per_lesson' => 30, 'gamification' => true, 'exam' => false],
-        'pro' => ['label' => 'Pro', 'questions_per_lesson' => null, 'gamification' => true, 'exam' => true],
+        'pro' => ['label' => 'Pro', 'questions_per_lesson' => null, 'gamification' => true, 'exam' => true, 'classrooms' => true],
     ],
 ];

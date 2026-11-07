@@ -69,6 +69,17 @@ class Plans
             || (bool) (self::all()[$plan]['gamification'] ?? false);
     }
 
+    /**
+     * Criar turma está liberado para este plano? Decisão do Sávio: entrar numa
+     * turma é grátis (é como o curso chega a gente nova); criar e acompanhar a
+     * turma é o que se paga.
+     */
+    public static function hasClassrooms(string $plan, bool $realPlan = false): bool
+    {
+        return self::unlockedForEveryone($realPlan)
+            || (bool) (self::all()[$plan]['classrooms'] ?? false);
+    }
+
     /** O simulado está liberado para este plano? */
     public static function hasExam(string $plan, bool $realPlan = false): bool
     {

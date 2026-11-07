@@ -9,6 +9,7 @@ use App\Http\Controllers\AttemptController;
 use App\Http\Controllers\AppBarController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CatalogController;
+use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\CronController;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\ExamDateController;
@@ -98,6 +99,16 @@ Route::middleware('auth:sanctum')->group(function () {
     // Conferir um texto não grava nada, e pode ser feito muitas vezes. O limite existe pelo LanguageTool.
     Route::post('/attempts/{attempt}/writing/check', [WritingController::class, 'check'])->whereNumber('attempt')->middleware('throttle:30,1');
     Route::post('/attempts/{attempt}/writing/review', [WritingController::class, 'review'])->whereNumber('attempt')->middleware('throttle:10,1');
+
+    // Turmas: o professor acompanha a turma numa matéria. Criar é Pro; entrar é grátis.
+    Route::get('/classrooms', [ClassroomController::class, 'index']);
+    Route::post('/classrooms', [ClassroomController::class, 'store'])->middleware('throttle:20,1');
+    Route::post('/classrooms/join', [ClassroomController::class, 'join'])->middleware('throttle:20,1');
+    Route::get('/classrooms/code/{code}', [ClassroomController::class, 'preview'])->where('code', '[A-Za-z0-9-]{1,20}')->middleware('throttle:30,1');
+    Route::get('/classrooms/{classroom}', [ClassroomController::class, 'show'])->whereNumber('classroom');
+    Route::delete('/classrooms/{classroom}', [ClassroomController::class, 'destroy'])->whereNumber('classroom');
+    Route::delete('/classrooms/{classroom}/membership', [ClassroomController::class, 'leave'])->whereNumber('classroom');
+    Route::delete('/classrooms/{classroom}/members/{user}', [ClassroomController::class, 'removeMember'])->whereNumber('classroom')->whereNumber('user');
 
     Route::get('/progress', [ProgressController::class, 'index']);
     // O que estudar: prontidão para a prova, onde erra e o que esqueceu.

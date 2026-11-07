@@ -9,9 +9,10 @@ export const metadata: Metadata = { title: "Planos" };
 
 /*
 | O corte decidido pelo Sávio: TUDO que existe hoje fica no grátis. O Pro
-| ganha só duas coisas por cima — o simulado por matéria e as questões em três
-| níveis de dificuldade. O plano Plus saiu da vitrine: não havia nada que ele
-| desse e o grátis não.
+| ganha por cima o simulado por matéria, as questões em três níveis de
+| dificuldade e criar turmas (entrar numa turma continua grátis, porque é
+| assim que o curso chega a gente nova). O plano Plus saiu da vitrine: não
+| havia nada que ele desse e o grátis não.
 |
 | A tela descreve o destino, e a cobrança ainda não existe (ver CLAUDE.md).
 */
@@ -38,6 +39,7 @@ const plans = [
       "Simulado por matéria",
       "Questões em três níveis: fácil, média e difícil",
       "Muito mais questões por lição",
+      "Criar turmas e acompanhar os alunos",
     ],
   },
 ] as const;

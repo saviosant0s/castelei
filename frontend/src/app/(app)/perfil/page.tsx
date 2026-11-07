@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ChevronRight, CloudUpload, Crown, LogIn, Palette, Search, ShieldCheck, SlidersHorizontal, Sparkles, Volume2 } from "lucide-react";
+import { ChevronRight, CloudUpload, Crown, LogIn, Palette, Search, ShieldCheck, SlidersHorizontal, Sparkles, Users, Volume2 } from "lucide-react";
 import { DeleteAccountButton } from "@/components/DeleteAccountButton";
 import { InstallButton } from "@/components/InstallButton";
 import { LogoutButton } from "@/components/LogoutButton";
@@ -122,6 +122,13 @@ export default async function Perfil({ searchParams }: { searchParams: Promise<{
           title="Minhas dúvidas e correções"
           description="O que você perguntou à IA e o que ela corrigiu, para rever sem gastar de novo."
           href="/correcoes"
+        />
+        <SettingsRow
+          icon={Users}
+          iconTone="sage"
+          title="Turmas"
+          description="Entre na turma do professor com o código, ou crie a sua para acompanhar os alunos."
+          href="/turmas"
         />
         <PushToggle />
         <InstallButton />
