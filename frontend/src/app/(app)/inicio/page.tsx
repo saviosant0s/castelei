@@ -4,7 +4,6 @@ import { ArrowRight, ChevronRight, CloudUpload } from "lucide-react";
 import { Card, PageHero } from "@/components/ui";
 import { HomeGoal } from "@/components/app/HomeGoal";
 import { AreaTile } from "@/components/home/AreaTile";
-import { tones } from "@/components/home/SubjectRow";
 import { TrailCard } from "@/components/home/TrailCard";
 import { areaIcon, areaProgress, groupByArea } from "@/lib/areas";
 import { currentStep, startedFirst, trailView } from "@/lib/trails";
@@ -71,7 +70,7 @@ export default async function Inicio() {
     : null;
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-8">
       {/*
         A saudação fica sozinha e no centro: os dias seguidos e o XP subiram
         para o cabeçalho fixo (e aparecem em toda tela), a revisão virou aba e
@@ -156,7 +155,7 @@ export default async function Inicio() {
                   href={`/area/${area.slug}`}
                   name={area.name}
                   icon={areaIcon(area.slug)}
-                  tone={tones[i % tones.length]}
+                  index={i}
                   practiced={practiced}
                   total={total}
                 />

@@ -15,15 +15,14 @@ senha ou a sua identidade. O resto já está pronto no código.
 ### 1. O domínio
 
 O TWA amarra o app a **um domínio**, e essa amarração é a prova de que o app e
-o site são da mesma pessoa. Hoje o app vive em
-`frontend-production-3c7da.up.railway.app`.
+o site são da mesma pessoa. Hoje o app vive em `castelei.vercel.app`.
 
-Funciona, mas tem dois problemas: se a Railway trocar esse subdomínio, o app da
-loja quebra na mão de quem já instalou; e o endereço aparece para o usuário em
-alguns momentos, o que não ajuda a parecer produto sério.
+Funciona, e o endereço é estável enquanto o projeto do Vercel existir. O
+problema é outro: ele aparece para o usuário em alguns momentos, e um endereço
+`vercel.app` não ajuda a parecer produto sério.
 
 **Recomendação:** registrar um domínio (`castelei.com.br` no Registro.br custa
-cerca de R$ 40/ano) e apontar para a Railway antes de publicar. Trocar de
+cerca de R$ 40/ano) e apontar para o Vercel antes de publicar. Trocar de
 domínio **depois** de publicado dá trabalho: exige nova verificação e uma
 atualização do app na loja.
 
@@ -132,7 +131,7 @@ abre parecendo um site dentro de uma janela — exatamente o que não queremos.
 2. Copie o **SHA-256 do certificado de assinatura do app** (o do Google, não o
    do seu keystore — com o App Signing ligado, quem assina o que chega ao
    celular é o Google).
-3. Na Railway, no serviço **frontend**, crie:
+3. No Vercel, no projeto **castelei** (Settings → Environment Variables), crie:
 
    | Variável | Valor |
    |---|---|
@@ -344,7 +343,7 @@ e o [exemplo completo do Google](https://github.com/chromeos/pwa-play-billing).
 1. Decidir domínio, nome de pacote e e-mail de contato
 2. Criar e verificar a conta de desenvolvedor (US$ 25)
 3. Gerar o `.aab` e **guardar o keystore em lugar seguro**
-4. Copiar o SHA-256 e criar as duas variáveis na Railway
+4. Copiar o SHA-256 e criar as duas variáveis no projeto `castelei` do Vercel
 5. Tirar as 4 capturas de tela no celular
 6. Juntar 12 testadores e segurar 14 dias
 7. Preencher Segurança de Dados e Classificação de Conteúdo

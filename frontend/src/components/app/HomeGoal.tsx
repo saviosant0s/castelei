@@ -20,7 +20,7 @@ export function HomeGoal({ goal }: { goal: NonNullable<AppBarResponse["gamificat
         aria-label={`Meta do dia: ${goal.today} de ${goal.target} XP`}
         className="rounded-full"
       >
-        <GoalRing today={goal.today} target={goal.target} size={132} big />
+        <GoalRing today={goal.today} target={goal.target} size={116} big />
       </button>
       <Balao aberto={aberto} aoFechar={fechar} ancora={caixa} rotulo="Meta do dia" alinhar="center">
         <PainelMeta goal={goal} semAnel />
