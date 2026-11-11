@@ -1,0 +1,4754 @@
+{
+  "slug": "eletricidade-magnetismo-e-ondas",
+  "name": "Eletricidade, magnetismo e ondas",
+  "area": "fisica",
+  "description": "A Física que vem com situação de casa: a carga e o para-raios, a lei de Ohm, a potência do chuveiro e a conta de luz, os circuitos, o ímã e o eletroímã, a indução e o transformador, as ondas, o som, o espectro eletromagnético e os fenômenos das ondas. Supõe a Física básica.",
+  "lessons": [
+    {
+      "slug": "carga-eletrica-e-eletrizacao",
+      "title": "Carga elétrica: o balão, o atrito e o para-raios",
+      "module": "Carga e corrente",
+      "summary": "Por que o balão esfregado no cabelo gruda na parede. A lição mostra as cargas, os três jeitos de eletrizar um corpo e a diferença entre condutor e isolante. Depois vêm a força entre cargas, o raio e o para-raios.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O balão no cabelo",
+          "body": [
+            "Esfregue um balão no cabelo e ele gruda na parede. O cabelo fica arrepiado, cada fio fugindo do outro.",
+            "Não há cola nenhuma. Partículas passaram do cabelo para o balão."
+          ],
+          "terms": [
+            {
+              "word": "carga elétrica",
+              "meaning": "a propriedade que faz as partículas se atraírem ou se repelirem. Há dois tipos: positiva e negativa."
+            },
+            {
+              "word": "elétron",
+              "meaning": "a partícula de carga negativa da parte de fora do átomo. É ela que passa de um corpo para outro."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Iguais se repelem, opostas se atraem",
+          "body": [
+            "Um corpo neutro tem tanta carga positiva quanto negativa. Ganhar elétrons o deixa negativo; perder o deixa positivo.",
+            "Os fios do cabelo ficam com a mesma carga, e por isso se afastam."
+          ],
+          "terms": [
+            {
+              "word": "eletrização",
+              "meaning": "deixar um corpo com carga, fazendo-o ganhar ou perder elétrons."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Três jeitos de eletrizar",
+          "body": [
+            "Um corpo pode ganhar carga de três jeitos. O resultado muda de um para o outro."
+          ],
+          "terms": [
+            {
+              "word": "atrito",
+              "meaning": "o esfregar de uma superfície na outra."
+            },
+            {
+              "word": "indução",
+              "meaning": "aqui, separar as cargas de um corpo só aproximando dele outro corpo com carga, sem encostar."
+            }
+          ],
+          "table": {
+            "label": "Os três jeitos",
+            "headers": [
+              "Jeito",
+              "Como",
+              "Resultado"
+            ],
+            "rows": [
+              [
+                "atrito",
+                "esfregar dois materiais diferentes",
+                "ficam com cargas opostas"
+              ],
+              [
+                "contato",
+                "encostar um corpo com carga num neutro",
+                "ficam com carga de mesmo sinal"
+              ],
+              [
+                "indução",
+                "aproximar sem encostar",
+                "as cargas do neutro se separam"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Condutor e isolante",
+          "body": [
+            "No metal, os elétrons andam soltos; na borracha, ficam presos. Por isso o fio é de cobre e a capa dele é de plástico.",
+            "A carga do balão fica onde ele foi esfregado, porque a borracha não a deixa correr."
+          ],
+          "terms": [
+            {
+              "word": "condutor e isolante",
+              "meaning": "o condutor deixa os elétrons andarem por ele, como os metais; o isolante os segura, como a borracha e o plástico."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A força entre cargas",
+          "body": [
+            "Quanto maiores as cargas, maior a força. Quanto mais longe, menor, e ela cai depressa: F = k · q₁ · q₂ ÷ d²."
+          ],
+          "example": {
+            "label": "O que muda a força",
+            "lines": [
+              "Dobrar uma das cargas: a força dobra.",
+              "Dobrar a distância: a força cai para 1/4.",
+              "Triplicar a distância: cai para 1/9."
+            ]
+          },
+          "terms": [
+            {
+              "word": "lei de Coulomb",
+              "meaning": "a força entre duas cargas cresce com o tamanho delas e cai com o quadrado da distância."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O raio e o para-raios",
+          "body": [
+            "Na nuvem de tempestade, as cargas se separam. Quando a diferença fica enorme, o ar deixa de segurar a carga por um instante: é o raio."
+          ],
+          "example": {
+            "label": "O que protege",
+            "lines": [
+              "O para-raios: uma haste de metal ligada ao chão por um cabo. A carga desce pelo cabo, e não pela casa.",
+              "O carro: a carcaça de metal leva a carga por fora de quem está dentro."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mostra uma situação de casa e pergunta o sinal das cargas, o jeito de eletrizar ou o que acontece com a força ao mudar a distância."
+          ],
+          "bullets": [
+            "“Após o atrito, os dois corpos ficam com cargas…”",
+            "“Se a distância entre as cargas triplicar, a força passa a ser…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que o corpo fica positivo porque ganhou carga positiva: ele perdeu elétrons.",
+            "Dizer que no contato os corpos ficam com cargas opostas.",
+            "Achar que dobrar a distância corta a força pela metade, e não por quatro.",
+            "Achar que os pneus de borracha protegem o carro do raio."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Ganhar elétrons deixa negativo; perder deixa positivo. Iguais se repelem, opostas se atraem.",
+            "Atrito dá cargas opostas, contato dá o mesmo sinal, indução separa sem encostar. A força cai com o quadrado da distância."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Balão",
+          "statement": "O balão esfregado no cabelo gruda na parede porque:",
+          "options": [
+            "ficou com carga elétrica",
+            "ficou mais leve",
+            "ficou molhado",
+            "virou ímã",
+            "esquentou"
+          ],
+          "correct_index": 0,
+          "explanation": "O atrito passou elétrons do cabelo para o balão.",
+          "pitfall": "“Virou ímã” confunde carga com magnetismo."
+        },
+        {
+          "topic": "Ganhar",
+          "statement": "Um corpo neutro que ganha elétrons fica:",
+          "options": [
+            "negativo",
+            "positivo",
+            "neutro",
+            "magnético",
+            "sem carga nenhuma"
+          ],
+          "correct_index": 0,
+          "explanation": "O elétron tem carga negativa.",
+          "pitfall": "“Positivo” inverteu o sinal."
+        },
+        {
+          "topic": "Iguais",
+          "statement": "Duas cargas negativas:",
+          "options": [
+            "se repelem",
+            "se atraem",
+            "não se afetam",
+            "se anulam",
+            "viram positivas"
+          ],
+          "correct_index": 0,
+          "explanation": "Cargas iguais se repelem.",
+          "pitfall": "“Se atraem” vale para cargas opostas."
+        },
+        {
+          "topic": "Contato",
+          "statement": "Ao encostar um corpo negativo num corpo de metal neutro, o neutro fica:",
+          "options": [
+            "negativo também",
+            "positivo",
+            "neutro",
+            "com o dobro da carga",
+            "magnético"
+          ],
+          "correct_index": 0,
+          "explanation": "No contato, a carga se divide e os dois ficam com o mesmo sinal.",
+          "pitfall": "“Positivo” é o resultado do atrito, e não do contato."
+        },
+        {
+          "topic": "Capa do fio",
+          "statement": "A capa do fio elétrico é de plástico porque o plástico:",
+          "options": [
+            "segura os elétrons: é isolante",
+            "deixa os elétrons andarem: é condutor",
+            "é magnético",
+            "tem carga positiva",
+            "esquenta menos o fio"
+          ],
+          "correct_index": 0,
+          "explanation": "O isolante impede a corrente de escapar para a mão.",
+          "pitfall": "“É condutor” é o papel do cobre de dentro."
+        },
+        {
+          "topic": "Distância",
+          "statement": "Se a distância entre duas cargas dobra, a força entre elas:",
+          "options": [
+            "cai para 1/4",
+            "cai à metade",
+            "dobra",
+            "quadruplica",
+            "não muda"
+          ],
+          "correct_index": 0,
+          "explanation": "A força cai com o quadrado da distância: 2² = 4.",
+          "pitfall": "“Cai à metade” esqueceu o quadrado."
+        },
+        {
+          "topic": "Jeitos",
+          "format": "match",
+          "statement": "Ligue cada caso ao que acontece.",
+          "pairs": [
+            {
+              "left": "atrito",
+              "right": "os dois ficam com cargas opostas"
+            },
+            {
+              "left": "contato",
+              "right": "os dois ficam com carga de mesmo sinal"
+            },
+            {
+              "left": "indução",
+              "right": "as cargas do neutro se separam, sem encostar"
+            },
+            {
+              "left": "para-raios",
+              "right": "dá à carga um caminho até o chão"
+            }
+          ],
+          "explanation": "Três jeitos de eletrizar e a proteção contra o raio.",
+          "pitfall": "Trocar atrito e contato é o engano que a prova mais espera."
+        },
+        {
+          "topic": "Para-raios",
+          "statement": "O para-raios protege a casa porque:",
+          "options": [
+            "dá à carga do raio um caminho de metal até o chão",
+            "atrai a chuva",
+            "afasta a nuvem",
+            "segura a carga dentro dele",
+            "transforma o raio em luz"
+          ],
+          "correct_index": 0,
+          "explanation": "A carga desce pelo cabo, e não pelas paredes.",
+          "pitfall": "“Segura a carga dentro dele” erra: ele a manda para o chão."
+        },
+        {
+          "topic": "Cabelo",
+          "statement": "O cabelo arrepia depois de esfregado no balão porque os fios:",
+          "options": [
+            "ficam com a mesma carga e se repelem",
+            "ficam com cargas opostas e se atraem",
+            "ficam molhados",
+            "viram ímãs",
+            "ficam mais pesados"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada fio perdeu elétrons: todos ficaram com o mesmo sinal.",
+          "pitfall": "“Ficam com cargas opostas” não explica por que eles se afastam.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Bom condutor",
+          "statement": "Qual destes é bom condutor?",
+          "options": [
+            "o cobre",
+            "a borracha",
+            "o vidro",
+            "o plástico",
+            "a madeira seca"
+          ],
+          "correct_index": 0,
+          "explanation": "No metal, os elétrons andam soltos.",
+          "pitfall": "“A borracha” é um bom isolante.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Três vezes",
+          "statement": "Se a distância entre duas cargas triplica, a força passa a ser:",
+          "options": [
+            "1/9 da original",
+            "1/3 da original",
+            "3 vezes maior",
+            "9 vezes maior",
+            "igual"
+          ],
+          "correct_index": 0,
+          "explanation": "3² = 9: a força cai para 1/9.",
+          "pitfall": "“1/3 da original” esqueceu o quadrado.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Sem encostar",
+          "statement": "Aproximar, sem encostar, um bastão negativo de uma esfera de metal neutra faz a esfera:",
+          "options": [
+            "separar as cargas: o lado de perto fica positivo e o de longe, negativo",
+            "ficar toda negativa",
+            "ficar toda positiva",
+            "não mudar nada",
+            "perder todas as cargas"
+          ],
+          "correct_index": 0,
+          "explanation": "O bastão empurra os elétrons da esfera para o lado de longe.",
+          "pitfall": "“Ficar toda negativa” seria o contato, e não a indução.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Dobrar tudo",
+          "statement": "Dobrar as duas cargas e dobrar a distância faz a força:",
+          "options": [
+            "ficar igual",
+            "dobrar",
+            "quadruplicar",
+            "cair à metade",
+            "cair para 1/4"
+          ],
+          "correct_index": 0,
+          "explanation": "As cargas multiplicam por 2 × 2 = 4, e a distância divide por 2² = 4.",
+          "pitfall": "“Quadruplicar” multiplicou as cargas e esqueceu a distância: o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "No carro",
+          "statement": "Durante uma tempestade, quem está dentro de um carro de metal fica protegido porque:",
+          "options": [
+            "a carga corre pela carcaça de metal, por fora",
+            "os pneus de borracha isolam o carro do chão",
+            "o vidro segura o raio",
+            "o carro é um ímã",
+            "a chuva desvia o raio"
+          ],
+          "correct_index": 0,
+          "explanation": "O metal leva a carga por fora e a manda para o chão.",
+          "pitfall": "“Os pneus de borracha isolam o carro” é o distrator mais fino: o raio atravessa quilômetros de ar, e alguns centímetros de borracha não o seguram.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "lei-de-ohm-e-resistencia",
+      "title": "Lei de Ohm: corrente, tensão e resistência na conta",
+      "module": "Carga e corrente",
+      "summary": "Tensão empurra, corrente anda e resistência atrapalha: agora com conta. A lição mostra a corrente como carga por tempo e a lei de Ohm. Depois vêm o que muda a resistência de um fio, o resistor que esquenta e por que o choque piora com a pele molhada.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A mangueira do jardim",
+          "body": [
+            "Abrir mais a torneira empurra mais água. Apertar a mangueira atrapalha a passagem.",
+            "No fio é igual: a torneira é a tensão, a água que passa é a corrente e o aperto é a resistência."
+          ],
+          "terms": [
+            {
+              "word": "corrente elétrica",
+              "meaning": "o movimento ordenado de cargas num fio, medido em ampères (A)."
+            },
+            {
+              "word": "tensão elétrica",
+              "meaning": "o empurrão que faz a corrente andar, medido em volts (V). A tomada de casa tem 127 V ou 220 V."
+            },
+            {
+              "word": "resistência elétrica",
+              "meaning": "a dificuldade que o material põe à corrente, medida em ohms (Ω)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A corrente como conta",
+          "body": [
+            "A corrente é a carga que passa por segundo: i = Q ÷ t. A carga se mede em coulombs (C)."
+          ],
+          "example": {
+            "label": "Um exemplo",
+            "lines": [
+              "Passam 30 C por um fio em 10 s.",
+              "i = 30 ÷ 10 = 3 A."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A lei de Ohm",
+          "body": [
+            "U = R · i. Com a mesma tensão, mais resistência dá menos corrente.",
+            "Dá para achar qualquer uma das três sabendo as outras duas."
+          ],
+          "example": {
+            "label": "Duas contas",
+            "lines": [
+              "Um aparelho de 20 Ω na tomada de 220 V: i = 220 ÷ 20 = 11 A.",
+              "Uma lâmpada com 0,5 A em 127 V: R = 127 ÷ 0,5 = 254 Ω."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que muda a resistência de um fio",
+          "body": [
+            "Fio mais comprido resiste mais; fio mais grosso resiste menos. E cada material tem a sua resistividade: R = ρ · L ÷ A."
+          ],
+          "terms": [
+            {
+              "word": "resistividade",
+              "meaning": "o quanto um material resiste, por natureza. A do cobre é baixa; a do fio do chuveiro, alta."
+            }
+          ],
+          "table": {
+            "label": "Mexendo no fio",
+            "headers": [
+              "Mudança",
+              "A resistência"
+            ],
+            "rows": [
+              [
+                "dobrar o comprimento",
+                "dobra"
+              ],
+              [
+                "dobrar a área do fio",
+                "cai à metade"
+              ],
+              [
+                "trocar o cobre pelo fio do chuveiro",
+                "sobe muito"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O resistor esquenta",
+          "body": [
+            "Ao passar pelo resistor, a energia da corrente vira calor. É assim que esquentam o chuveiro, o ferro de passar e a torradeira.",
+            "Uma extensão fina e comprida também esquenta: ela resiste mais, e parte da energia vira calor no caminho."
+          ],
+          "terms": [
+            {
+              "word": "resistor",
+              "meaning": "a peça feita para resistir à corrente e esquentar, como a do chuveiro."
+            },
+            {
+              "word": "efeito Joule",
+              "meaning": "o aquecimento de um fio quando a corrente passa por ele."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O choque",
+          "body": [
+            "O que machuca é a corrente que passa pelo corpo. A pele seca resiste muito; molhada, bem menos."
+          ],
+          "example": {
+            "label": "Na tomada de 127 V",
+            "lines": [
+              "Pele seca, perto de 100 000 Ω: cerca de 0,001 A.",
+              "Pele molhada, perto de 1 000 Ω: cerca de 0,127 A, o bastante para descompassar o coração."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá duas das três grandezas e pede a terceira. Ou pergunta o que acontece com a resistência ao mudar o fio."
+          ],
+          "bullets": [
+            "“Um resistor de 10 Ω percorrido por 2 A está submetido a uma tensão de…”",
+            "“Ao trocar o fio por outro, de mesmo material e o dobro do comprimento…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Multiplicar a tensão pela resistência para achar a corrente, em vez de dividir.",
+            "Achar que fio mais grosso resiste mais.",
+            "Dizer que o que machuca no choque é só a tensão.",
+            "Esquecer que a área é a grossura do fio, e não o comprimento."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "i = Q ÷ t e U = R · i. Mais resistência, menos corrente na mesma tensão.",
+            "Comprido resiste mais, grosso resiste menos. O resistor transforma energia em calor, e a pele molhada deixa passar mais corrente."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Carga por tempo",
+          "statement": "Passam 30 C por um fio em 10 s. A corrente é:",
+          "options": [
+            "3 A",
+            "300 A",
+            "0,3 A",
+            "40 A",
+            "20 A"
+          ],
+          "correct_index": 0,
+          "explanation": "i = Q ÷ t = 30 ÷ 10.",
+          "pitfall": "“300 A” multiplicou em vez de dividir."
+        },
+        {
+          "topic": "Ohm",
+          "statement": "Um aparelho de 20 Ω ligado em 220 V recebe uma corrente de:",
+          "options": [
+            "11 A",
+            "4 400 A",
+            "200 A",
+            "0,09 A",
+            "240 A"
+          ],
+          "correct_index": 0,
+          "explanation": "i = U ÷ R = 220 ÷ 20.",
+          "pitfall": "“4 400 A” multiplicou a tensão pela resistência."
+        },
+        {
+          "topic": "Lâmpada",
+          "statement": "Uma lâmpada com 0,5 A em 127 V tem resistência de:",
+          "options": [
+            "254 Ω",
+            "63,5 Ω",
+            "127,5 Ω",
+            "0,004 Ω",
+            "126,5 Ω"
+          ],
+          "correct_index": 0,
+          "explanation": "R = U ÷ i = 127 ÷ 0,5.",
+          "pitfall": "“63,5 Ω” multiplicou em vez de dividir."
+        },
+        {
+          "topic": "Comprimento",
+          "statement": "Dobrar o comprimento de um fio faz a resistência:",
+          "options": [
+            "dobrar",
+            "cair à metade",
+            "quadruplicar",
+            "não mudar",
+            "cair para 1/4"
+          ],
+          "correct_index": 0,
+          "explanation": "Fio mais comprido, caminho mais difícil.",
+          "pitfall": "“Cair à metade” é o efeito de dobrar a grossura."
+        },
+        {
+          "topic": "Grossura",
+          "statement": "Um fio mais grosso, do mesmo material e do mesmo comprimento, tem resistência:",
+          "options": [
+            "menor",
+            "maior",
+            "igual",
+            "zero",
+            "infinita"
+          ],
+          "correct_index": 0,
+          "explanation": "Mais espaço para a corrente passar.",
+          "pitfall": "“Maior” inverteu o efeito."
+        },
+        {
+          "topic": "Choque",
+          "statement": "No choque, o que machuca é:",
+          "options": [
+            "a corrente que passa pelo corpo",
+            "a tensão sozinha, sem corrente",
+            "a cor do fio",
+            "o tamanho da tomada",
+            "o plástico do fio"
+          ],
+          "correct_index": 0,
+          "explanation": "A corrente atravessa o corpo e mexe com o coração e os músculos.",
+          "pitfall": "“A tensão sozinha, sem corrente” erra: sem corrente, não há choque."
+        },
+        {
+          "topic": "Unidades",
+          "format": "match",
+          "statement": "Ligue cada grandeza à sua unidade.",
+          "pairs": [
+            {
+              "left": "tensão",
+              "right": "volt (V)"
+            },
+            {
+              "left": "corrente",
+              "right": "ampère (A)"
+            },
+            {
+              "left": "resistência",
+              "right": "ohm (Ω)"
+            },
+            {
+              "left": "carga",
+              "right": "coulomb (C)"
+            }
+          ],
+          "explanation": "As quatro medidas das contas de circuito.",
+          "pitfall": "Trocar volt e ampère é o erro que mais derruba a conta."
+        },
+        {
+          "topic": "Pele molhada",
+          "statement": "Com a pele molhada, o choque é pior porque:",
+          "options": [
+            "a resistência cai e a corrente sobe",
+            "a tensão da tomada sobe",
+            "a resistência sobe",
+            "a corrente cai",
+            "a água muda a tomada"
+          ],
+          "correct_index": 0,
+          "explanation": "Na mesma tensão, menos resistência dá mais corrente.",
+          "pitfall": "“A tensão da tomada sobe” erra: a tomada continua com a mesma tensão."
+        },
+        {
+          "topic": "Mangueira",
+          "statement": "Na comparação com a mangueira, apertá-la é como:",
+          "options": [
+            "aumentar a resistência",
+            "aumentar a tensão",
+            "aumentar a corrente",
+            "desligar a tomada",
+            "trocar a cor do fio"
+          ],
+          "correct_index": 0,
+          "explanation": "O aperto atrapalha a passagem.",
+          "pitfall": "“Aumentar a tensão” seria abrir mais a torneira.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Chuveiro",
+          "statement": "O chuveiro esquenta a água porque o resistor:",
+          "options": [
+            "transforma a energia elétrica em calor",
+            "fabrica água quente",
+            "guarda o calor do dia",
+            "é um ímã",
+            "esfria o ar em volta"
+          ],
+          "correct_index": 0,
+          "explanation": "É o aquecimento do fio pela corrente.",
+          "pitfall": "“Guarda o calor do dia” confunde com um aquecedor solar.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Dois em um",
+          "statement": "Um fio tem 4 Ω. Outro fio do mesmo material tem o dobro do comprimento e o dobro da área. A resistência dele é:",
+          "options": [
+            "4 Ω",
+            "8 Ω",
+            "2 Ω",
+            "16 Ω",
+            "1 Ω"
+          ],
+          "correct_index": 0,
+          "explanation": "O comprimento dobra a resistência, e a área a divide por 2.",
+          "pitfall": "“8 Ω” só olhou o comprimento.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Corpo molhado",
+          "statement": "Na tomada de 127 V, quanto passa por um corpo de 1 000 Ω?",
+          "options": [
+            "0,127 A",
+            "127 A",
+            "1,27 A",
+            "0,00127 A",
+            "7,87 A"
+          ],
+          "correct_index": 0,
+          "explanation": "i = 127 ÷ 1 000.",
+          "pitfall": "“127 A” esqueceu de dividir pela resistência.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Extensão",
+          "statement": "Uma extensão fina e comprida esquenta mais que uma grossa e curta porque:",
+          "options": [
+            "resiste mais, e mais energia vira calor nela",
+            "resiste menos",
+            "leva mais corrente, sempre",
+            "recebe mais tensão",
+            "é de plástico"
+          ],
+          "correct_index": 0,
+          "explanation": "Fina e comprida, ela tem resistência maior.",
+          "pitfall": "“Leva mais corrente, sempre” é o distrator mais fino: a corrente é a do aparelho, e o que muda é quanto dela vira calor no caminho.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Proporção",
+          "statement": "Num resistor, com 10 V passam 2 A. Com 25 V passam:",
+          "options": [
+            "5 A",
+            "4 A",
+            "50 A",
+            "2 A",
+            "12,5 A"
+          ],
+          "correct_index": 0,
+          "explanation": "R = 10 ÷ 2 = 5 Ω. Depois, i = 25 ÷ 5.",
+          "pitfall": "“12,5 A” dividiu a tensão pela corrente antiga, como se ela fosse a resistência: o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "potencia-e-consumo",
+      "title": "Potência e consumo: o chuveiro, o kWh e a conta de luz",
+      "module": "Carga e corrente",
+      "summary": "Por que o chuveiro pesa mais na conta que a geladeira. A lição mostra os três jeitos de calcular a potência e o inverno e o verão do chuveiro. Depois vêm o aparelho ligado na tensão errada, a conta em kWh e a troca de lâmpada.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Quem gasta mais",
+          "body": [
+            "Um chuveiro ligado dez minutos gasta mais que uma lâmpada de LED acesa o dia inteiro.",
+            "O segredo está em duas coisas: a força do aparelho e o tempo ligado."
+          ],
+          "terms": [
+            {
+              "word": "potência",
+              "meaning": "a energia que o aparelho usa a cada segundo, medida em watts."
+            },
+            {
+              "word": "watt",
+              "meaning": "a unidade de potência (W). Um quilowatt (kW) são 1 000 W."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Três jeitos de calcular",
+          "body": [
+            "P = U · i. Juntando com a lei de Ohm, saem mais dois jeitos: P = R · i² e P = U² ÷ R.",
+            "Use o que combina com os dados do enunciado."
+          ],
+          "example": {
+            "label": "Um exemplo",
+            "lines": [
+              "Chuveiro de 220 V com 20 A: P = 220 × 20 = 4 400 W."
+            ]
+          },
+          "terms": [
+            {
+              "word": "tensão elétrica",
+              "meaning": "o empurrão que faz a corrente andar, medido em volts (V). A tomada de casa tem 127 V ou 220 V."
+            },
+            {
+              "word": "corrente elétrica",
+              "meaning": "o movimento ordenado de cargas num fio, medido em ampères (A)."
+            },
+            {
+              "word": "resistência elétrica",
+              "meaning": "a dificuldade que o material põe à corrente, medida em ohms (Ω)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Inverno e verão no chuveiro",
+          "body": [
+            "Com a mesma tensão, P = U² ÷ R: menos resistência, mais potência.",
+            "Na posição inverno, a corrente passa por um pedaço menor do resistor. A resistência cai, e a água sai mais quente."
+          ],
+          "example": {
+            "label": "Chuveiro de 220 V",
+            "lines": [
+              "Inverno, com 11 Ω: 220² ÷ 11 = 4 400 W.",
+              "Verão, com 22 Ω: 220² ÷ 22 = 2 200 W."
+            ]
+          },
+          "terms": [
+            {
+              "word": "resistor",
+              "meaning": "a peça feita para resistir à corrente e esquentar, como a do chuveiro."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Ligar na tensão errada",
+          "body": [
+            "Um aparelho de 127 V ligado em 220 V recebe tensão demais. Como a potência vai com o quadrado da tensão, ela quase triplica, e o aparelho queima.",
+            "Ao contrário, um chuveiro de 220 V em 127 V trabalha com um terço da potência: a água sai morna."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A conta do kWh",
+          "body": [
+            "Energia é potência em quilowatts vezes as horas ligadas. Depois, multiplica-se pela tarifa, que muda de cidade para cidade."
+          ],
+          "example": {
+            "label": "O chuveiro no mês",
+            "lines": [
+              "Chuveiro de 4 400 W = 4,4 kW.",
+              "Ligado meia hora por dia: 4,4 × 0,5 = 2,2 kWh.",
+              "Em 30 dias: 66 kWh.",
+              "Com a tarifa a R$ 0,80 o kWh: R$ 52,80 no mês."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "quilowatt-hora",
+              "meaning": "a energia de um aparelho de 1 kW ligado por 1 hora: o kWh, a unidade da conta de luz."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Trocar a lâmpada",
+          "body": [
+            "A lâmpada de LED dá a mesma luz gastando bem menos. A diferença vira dinheiro no fim do mês.",
+            "O aparelho em espera também gasta, com a luzinha acesa. É pouco por hora, mas o dia inteiro."
+          ],
+          "table": {
+            "label": "Lâmpadas com luz parecida",
+            "headers": [
+              "Tipo",
+              "Potência"
+            ],
+            "rows": [
+              [
+                "incandescente",
+                "60 W"
+              ],
+              [
+                "fluorescente compacta",
+                "cerca de 15 W"
+              ],
+              [
+                "LED",
+                "cerca de 9 W"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá a etiqueta do aparelho e pede o gasto no mês, o valor da conta ou o que acontece ao trocar a chave do chuveiro."
+          ],
+          "bullets": [
+            "“Um chuveiro de 5 400 W usado 20 minutos por dia consome, em 30 dias…”",
+            "“Ao passar a chave do chuveiro para a posição inverno, a resistência…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Esquecer de passar os watts para quilowatts e os minutos para horas.",
+            "Achar que na posição inverno a resistência é maior.",
+            "Achar que a conta cobra a potência, e não a energia.",
+            "Esquecer que a potência vai com o quadrado da tensão."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "P = U · i = R · i² = U² ÷ R. Na mesma tensão, menos resistência dá mais potência: é o inverno do chuveiro.",
+            "Energia em kWh = kW × horas. A conta cobra a energia, e a troca de lâmpada corta o gasto."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "P = U · i",
+          "statement": "Um aparelho de 127 V com 10 A tem potência de:",
+          "options": [
+            "1 270 W",
+            "137 W",
+            "12,7 W",
+            "117 W",
+            "12 700 W"
+          ],
+          "correct_index": 0,
+          "explanation": "P = 127 × 10.",
+          "pitfall": "“137 W” somou em vez de multiplicar."
+        },
+        {
+          "topic": "kWh",
+          "statement": "Um aparelho de 2 kW ligado por 3 horas gasta:",
+          "options": [
+            "6 kWh",
+            "5 kWh",
+            "1,5 kWh",
+            "6 000 kWh",
+            "0,67 kWh"
+          ],
+          "correct_index": 0,
+          "explanation": "Energia = 2 kW × 3 h.",
+          "pitfall": "“6 000 kWh” misturou watts com quilowatts."
+        },
+        {
+          "topic": "Inverno",
+          "statement": "Na posição inverno, o chuveiro esquenta mais porque:",
+          "options": [
+            "a resistência cai e a potência sobe",
+            "a resistência sobe",
+            "a tensão da casa sobe",
+            "a água chega mais fria",
+            "o chuveiro gasta menos"
+          ],
+          "correct_index": 0,
+          "explanation": "Na mesma tensão, P = U² ÷ R.",
+          "pitfall": "“A resistência sobe” é o engano clássico."
+        },
+        {
+          "topic": "U² ÷ R",
+          "statement": "Um resistor de 10 Ω em 100 V tem potência de:",
+          "options": [
+            "1 000 W",
+            "10 W",
+            "100 W",
+            "10 000 W",
+            "110 W"
+          ],
+          "correct_index": 0,
+          "explanation": "P = 100² ÷ 10 = 10 000 ÷ 10.",
+          "pitfall": "“10 W” dividiu a tensão sem elevar ao quadrado."
+        },
+        {
+          "topic": "LED",
+          "statement": "Uma lâmpada de LED de 9 W e uma incandescente de 60 W dão luz parecida. A de LED gasta:",
+          "options": [
+            "cerca de um sétimo",
+            "o dobro",
+            "o mesmo",
+            "a metade",
+            "dez vezes mais"
+          ],
+          "correct_index": 0,
+          "explanation": "9 ÷ 60 é perto de 0,15.",
+          "pitfall": "“A metade” subestima a economia."
+        },
+        {
+          "topic": "No mês",
+          "statement": "Um chuveiro de 4,4 kW ligado meia hora por dia gasta, em 30 dias:",
+          "options": [
+            "66 kWh",
+            "2,2 kWh",
+            "132 kWh",
+            "13,2 kWh",
+            "660 kWh"
+          ],
+          "correct_index": 0,
+          "explanation": "4,4 × 0,5 × 30.",
+          "pitfall": "“2,2 kWh” é o gasto de um dia só."
+        },
+        {
+          "topic": "A conta",
+          "format": "order",
+          "statement": "Ponha na ordem a conta do gasto de um aparelho no mês.",
+          "options": [
+            "Passar a potência de watts para quilowatts",
+            "Multiplicar pelas horas de uso no mês",
+            "Multiplicar os kWh pela tarifa"
+          ],
+          "explanation": "Primeiro a unidade certa, depois a energia e por fim o dinheiro.",
+          "pitfall": "Multiplicar pela tarifa antes de achar os kWh mistura as unidades."
+        },
+        {
+          "topic": "Tensão errada",
+          "statement": "Um secador de 127 V ligado por engano em 220 V:",
+          "options": [
+            "recebe potência demais e pode queimar",
+            "funciona mais fraco",
+            "funciona igual",
+            "não liga",
+            "gasta menos"
+          ],
+          "correct_index": 0,
+          "explanation": "A potência vai com o quadrado da tensão e quase triplica.",
+          "pitfall": "“Funciona mais fraco” é o que acontece no caso contrário."
+        },
+        {
+          "topic": "Dez minutos",
+          "statement": "Ligados dez minutos cada, o que gasta mais: um chuveiro de 5 500 W ou um LED de 9 W?",
+          "options": [
+            "o chuveiro",
+            "o LED",
+            "os dois, por igual",
+            "nenhum dos dois",
+            "depende da cor da luz"
+          ],
+          "correct_index": 0,
+          "explanation": "Mesmo tempo, potência centenas de vezes maior.",
+          "pitfall": "“Os dois, por igual” esquece que a potência muda tudo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "O que se paga",
+          "statement": "A conta de luz cobra:",
+          "options": [
+            "a energia, em kWh",
+            "a potência, em W",
+            "a tensão, em V",
+            "a corrente, em A",
+            "a resistência, em Ω"
+          ],
+          "correct_index": 0,
+          "explanation": "Paga-se o que foi gasto ao longo do tempo.",
+          "pitfall": "“A potência, em W” esquece o tempo ligado.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Verão",
+          "statement": "Um chuveiro de 220 V tem 11 Ω no inverno e 22 Ω no verão. No verão, a potência é:",
+          "options": [
+            "2 200 W",
+            "4 400 W",
+            "8 800 W",
+            "1 100 W",
+            "242 W"
+          ],
+          "correct_index": 0,
+          "explanation": "P = 220² ÷ 22 = 48 400 ÷ 22.",
+          "pitfall": "“8 800 W” achou que mais resistência dá mais potência.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "R · i²",
+          "statement": "Um resistor de 5 Ω com 4 A tem potência de:",
+          "options": [
+            "80 W",
+            "20 W",
+            "100 W",
+            "1,25 W",
+            "40 W"
+          ],
+          "correct_index": 0,
+          "explanation": "P = 5 × 4² = 5 × 16.",
+          "pitfall": "“20 W” esqueceu de elevar a corrente ao quadrado.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Chuveiro morno",
+          "statement": "Um chuveiro de 220 V ligado por engano em 127 V:",
+          "options": [
+            "trabalha com cerca de um terço da potência, e a água sai morna",
+            "queima na hora",
+            "esquenta mais",
+            "trabalha com metade da potência",
+            "não muda nada"
+          ],
+          "correct_index": 0,
+          "explanation": "(127 ÷ 220)² é perto de 0,33.",
+          "pitfall": "“Trabalha com metade da potência” é o distrator mais fino: a tensão cai para quase metade, mas a potência vai com o quadrado dela.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Economia",
+          "statement": "Trocar uma incandescente de 60 W por um LED de 9 W, aceso 5 horas por dia, economiza em 30 dias:",
+          "options": [
+            "7,65 kWh",
+            "9 kWh",
+            "1,35 kWh",
+            "51 kWh",
+            "255 kWh"
+          ],
+          "correct_index": 0,
+          "explanation": "(60 − 9) W × 5 h × 30 = 7 650 Wh.",
+          "pitfall": "“9 kWh” é o gasto da lâmpada velha, e não a economia: o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "circuitos-serie-e-paralelo",
+      "title": "Circuitos: série, paralelo e resistência equivalente",
+      "module": "Carga e corrente",
+      "summary": "Fila única ou várias portas: os dois jeitos de montar um circuito. A lição mostra a conta em série e em paralelo e por que a casa é ligada em paralelo. Depois vêm o curto-circuito, o disjuntor e onde se põe o medidor.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Uma fila ou várias portas",
+          "body": [
+            "Numa fila única, se alguém trava, todos param. Com várias portas, cada um passa pela sua.",
+            "Os circuitos elétricos se montam desses dois jeitos."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Em série",
+          "body": [
+            "As peças ficam uma depois da outra, e a mesma corrente passa por todas. A resistência equivalente é a soma."
+          ],
+          "example": {
+            "label": "Três resistências de 10 Ω em série",
+            "lines": [
+              "Equivalente: 10 + 10 + 10 = 30 Ω.",
+              "Ligadas em 120 V: i = 120 ÷ 30 = 4 A.",
+              "Cada uma fica com 40 V: a tensão se divide."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "corrente elétrica",
+              "meaning": "o movimento ordenado de cargas num fio, medido em ampères (A)."
+            },
+            {
+              "word": "tensão elétrica",
+              "meaning": "o empurrão que faz a corrente andar, medido em volts (V). A tomada de casa tem 127 V ou 220 V."
+            },
+            {
+              "word": "resistência elétrica",
+              "meaning": "a dificuldade que o material põe à corrente, medida em ohms (Ω)."
+            },
+            {
+              "word": "resistência equivalente",
+              "meaning": "a resistência de uma peça só que faria o mesmo papel de um conjunto."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Em paralelo",
+          "body": [
+            "Cada peça tem o seu caminho, e todas recebem a mesma tensão. A corrente se divide entre elas.",
+            "Para duas iguais, a equivalente é a metade de uma. Para duas diferentes: R₁ · R₂ ÷ (R₁ + R₂)."
+          ],
+          "example": {
+            "label": "Exemplos",
+            "lines": [
+              "Duas de 10 Ω: 5 Ω.",
+              "Uma de 6 Ω e uma de 3 Ω: 18 ÷ 9 = 2 Ω.",
+              "A equivalente em paralelo é sempre menor que a menor delas."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A casa é em paralelo",
+          "body": [
+            "Cada tomada recebe a tensão inteira, e desligar um aparelho não apaga os outros.",
+            "O pisca-pisca antigo era em série: queimava uma lâmpada, apagava a fileira inteira."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Curto-circuito e disjuntor",
+          "body": [
+            "Se os dois fios se encostam, a corrente acha um caminho quase sem resistência e dispara. O fio esquenta e pode pegar fogo.",
+            "Um benjamim com muita coisa ligada faz parecido: cada aparelho a mais puxa mais corrente pelo mesmo fio."
+          ],
+          "terms": [
+            {
+              "word": "curto-circuito",
+              "meaning": "quando a corrente acha um caminho quase sem resistência e fica enorme."
+            },
+            {
+              "word": "disjuntor",
+              "meaning": "a chave que desliga sozinha quando a corrente passa do limite. Faz o papel do antigo fusível."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Onde vai o medidor",
+          "body": [
+            "O amperímetro mede a corrente: entra em série, no caminho dela. O voltímetro mede a tensão: fica em paralelo, entre os dois pontos."
+          ],
+          "table": {
+            "label": "Os dois medidores",
+            "headers": [
+              "Medidor",
+              "Mede",
+              "Como se liga"
+            ],
+            "rows": [
+              [
+                "amperímetro",
+                "a corrente",
+                "em série"
+              ],
+              [
+                "voltímetro",
+                "a tensão",
+                "em paralelo"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova desenha um circuito e pede a resistência equivalente, a corrente ou o que acontece quando uma lâmpada queima."
+          ],
+          "bullets": [
+            "“A resistência equivalente entre os pontos A e B é…”",
+            "“Se a lâmpada L₂ queimar, as demais…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Somar as resistências em paralelo como se fossem em série.",
+            "Achar que a equivalente em paralelo é maior que a menor delas.",
+            "Dizer que em série cada peça recebe a tensão inteira.",
+            "Ligar o amperímetro em paralelo."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Série: mesma corrente, tensão dividida, equivalente é a soma. Paralelo: mesma tensão, corrente dividida, equivalente menor que a menor.",
+            "A casa é em paralelo. Curto e benjamim cheio puxam corrente demais, e o disjuntor desliga."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Em série",
+          "statement": "Três resistências de 10 Ω em série dão:",
+          "options": [
+            "30 Ω",
+            "10 Ω",
+            "3,3 Ω",
+            "1 000 Ω",
+            "13 Ω"
+          ],
+          "correct_index": 0,
+          "explanation": "Em série, soma-se.",
+          "pitfall": "“3,3 Ω” fez a conta do paralelo."
+        },
+        {
+          "topic": "Duas iguais",
+          "statement": "Duas resistências de 10 Ω em paralelo dão:",
+          "options": [
+            "5 Ω",
+            "20 Ω",
+            "10 Ω",
+            "100 Ω",
+            "2 Ω"
+          ],
+          "correct_index": 0,
+          "explanation": "Duas iguais em paralelo: metade de uma.",
+          "pitfall": "“20 Ω” somou como se fosse série."
+        },
+        {
+          "topic": "6 e 3",
+          "statement": "Uma resistência de 6 Ω e outra de 3 Ω, em paralelo, dão:",
+          "options": [
+            "2 Ω",
+            "9 Ω",
+            "4,5 Ω",
+            "18 Ω",
+            "3 Ω"
+          ],
+          "correct_index": 0,
+          "explanation": "6 × 3 ÷ (6 + 3) = 18 ÷ 9.",
+          "pitfall": "“9 Ω” somou como se fosse série."
+        },
+        {
+          "topic": "A casa",
+          "statement": "As tomadas de uma casa são ligadas em paralelo porque:",
+          "options": [
+            "cada aparelho recebe a tensão inteira e funciona sozinho",
+            "a corrente é a mesma em todos",
+            "fica mais barato",
+            "assim, se um queima, todos apagam",
+            "a tensão se divide entre eles"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada um tem o seu caminho.",
+          "pitfall": "“A tensão se divide entre eles” descreve a série."
+        },
+        {
+          "topic": "Mesma corrente",
+          "statement": "Num circuito em série:",
+          "options": [
+            "a mesma corrente passa por todas as peças",
+            "cada peça recebe a tensão inteira",
+            "a corrente se divide",
+            "tirar uma peça não muda nada",
+            "a equivalente é a menor delas"
+          ],
+          "correct_index": 0,
+          "explanation": "Há um caminho só.",
+          "pitfall": "“A corrente se divide” acontece no paralelo."
+        },
+        {
+          "topic": "Corrente",
+          "statement": "Três resistências de 10 Ω em série, ligadas em 120 V, deixam passar:",
+          "options": [
+            "4 A",
+            "12 A",
+            "36 A",
+            "1 200 A",
+            "0,25 A"
+          ],
+          "correct_index": 0,
+          "explanation": "Equivalente 30 Ω: i = 120 ÷ 30.",
+          "pitfall": "“12 A” usou uma resistência só."
+        },
+        {
+          "topic": "Peças",
+          "format": "match",
+          "statement": "Ligue cada coisa ao que a define.",
+          "pairs": [
+            {
+              "left": "série",
+              "right": "a mesma corrente em todas as peças"
+            },
+            {
+              "left": "paralelo",
+              "right": "a mesma tensão em todas as peças"
+            },
+            {
+              "left": "disjuntor",
+              "right": "desliga quando a corrente passa do limite"
+            },
+            {
+              "left": "curto-circuito",
+              "right": "caminho quase sem resistência"
+            }
+          ],
+          "explanation": "As quatro ideias da lição.",
+          "pitfall": "Trocar série e paralelo é o engano que a prova mais espera."
+        },
+        {
+          "topic": "Amperímetro",
+          "statement": "Para medir a corrente, o amperímetro deve ficar:",
+          "options": [
+            "em série, no caminho da corrente",
+            "em paralelo",
+            "fora do circuito",
+            "só no fio terra",
+            "no lugar da tomada"
+          ],
+          "correct_index": 0,
+          "explanation": "Só mede a corrente quem fica no caminho dela.",
+          "pitfall": "“Em paralelo” é o jeito do voltímetro."
+        },
+        {
+          "topic": "Pisca-pisca",
+          "statement": "No pisca-pisca antigo, uma lâmpada queimada apagava a fileira porque as lâmpadas estavam:",
+          "options": [
+            "em série",
+            "em paralelo",
+            "sem fio",
+            "em curto",
+            "no disjuntor"
+          ],
+          "correct_index": 0,
+          "explanation": "Num caminho só, uma falha corta tudo.",
+          "pitfall": "“Em paralelo” manteria as outras acesas.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Benjamim",
+          "statement": "Ligar muitos aparelhos no mesmo benjamim é perigoso porque:",
+          "options": [
+            "a corrente no fio fica grande demais",
+            "a tensão sobe",
+            "a resistência do fio some",
+            "os aparelhos ficam em série",
+            "o fio esfria"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada aparelho a mais puxa mais corrente pelo mesmo fio.",
+          "pitfall": "“Os aparelhos ficam em série” erra: no benjamim, eles ficam em paralelo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Tensão dividida",
+          "statement": "Três resistências iguais em série, ligadas em 120 V. Cada uma fica com:",
+          "options": [
+            "40 V",
+            "120 V",
+            "360 V",
+            "3 V",
+            "60 V"
+          ],
+          "correct_index": 0,
+          "explanation": "Em série, a tensão se divide: 120 ÷ 3.",
+          "pitfall": "“120 V” é a tensão de cada uma no paralelo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "100 e 1",
+          "statement": "Uma resistência de 100 Ω e outra de 1 Ω em paralelo dão:",
+          "options": [
+            "um pouco menos que 1 Ω",
+            "101 Ω",
+            "50,5 Ω",
+            "100 Ω",
+            "exatamente 1 Ω"
+          ],
+          "correct_index": 0,
+          "explanation": "100 × 1 ÷ 101: menor que a menor delas.",
+          "pitfall": "“Exatamente 1 Ω” esquece que o caminho extra ainda ajuda um pouco.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Misto",
+          "statement": "Uma resistência de 4 Ω em série com duas de 6 Ω em paralelo dá:",
+          "options": [
+            "7 Ω",
+            "16 Ω",
+            "10 Ω",
+            "3 Ω",
+            "4 Ω"
+          ],
+          "correct_index": 0,
+          "explanation": "As duas de 6 Ω em paralelo dão 3 Ω. Somando a de 4 Ω: 7 Ω.",
+          "pitfall": "“16 Ω” somou as três, como se estivessem todas em série: o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Mais lâmpadas",
+          "statement": "Numa casa, acender mais lâmpadas no mesmo circuito faz a resistência equivalente:",
+          "options": [
+            "diminuir, e a corrente total aumentar",
+            "aumentar, e a corrente total diminuir",
+            "ficar igual",
+            "aumentar, e a corrente total aumentar",
+            "zerar"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada caminho novo em paralelo facilita a passagem.",
+          "pitfall": "“Aumentar, e a corrente total diminuir” é o distrator mais fino: mais lâmpadas em paralelo baixam a equivalente.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "imas-e-campo-magnetico",
+      "title": "Ímãs e campo magnético: as linhas que a bússola segue",
+      "module": "Magnetismo e indução",
+      "summary": "O ímã age sem encostar, e a limalha de ferro mostra como. A lição mostra os polos, as linhas de campo e o que o ímã atrai. Depois vêm a Terra como ímã, o desvio da bússola e a medida do campo.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A limalha desenha o invisível",
+          "body": [
+            "Espalhe limalha de ferro (ferro em pó grosso) numa folha e ponha um ímã embaixo. Os grãos se arrumam em linhas curvas, de uma ponta à outra.",
+            "O ímã age à distância. Em volta dele existe algo que não se vê, e a limalha mostra a forma."
+          ],
+          "terms": [
+            {
+              "word": "campo magnético",
+              "meaning": "a região em volta de um ímã onde ele consegue puxar ou empurrar."
+            },
+            {
+              "word": "linha de campo",
+              "meaning": "o traço que mostra para onde o campo magnético aponta em cada lugar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Dois polos, sempre juntos",
+          "body": [
+            "Todo ímã tem um polo norte e um polo sul. Polos iguais se repelem, e polos opostos se atraem.",
+            "Partido ao meio, o ímã não se divide em norte e sul. Cada pedaço vira um ímã inteiro, com os dois polos."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Ler as linhas",
+          "body": [
+            "Por fora do ímã, as linhas saem do polo norte e entram no polo sul. Elas nunca se cruzam.",
+            "Perto dos polos as linhas se apertam, e é ali que o ímã puxa mais."
+          ],
+          "example": {
+            "label": "O que as linhas dizem",
+            "lines": [
+              "Linhas juntas: campo forte.",
+              "Linhas afastadas: campo fraco.",
+              "A agulha da bússola se alinha com a linha que passa por ela."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que o ímã atrai",
+          "body": [
+            "O ímã atrai ferro, níquel e cobalto. Atrai também as ligas feitas com eles, como o aço comum.",
+            "Um prego encostado no ímã vira ímã também, mas só por um tempo. Aquecer muito um ímã ou bater nele o enfraquece."
+          ],
+          "table": {
+            "label": "Gruda ou não gruda",
+            "headers": [
+              "Objeto",
+              "O ímã atrai?"
+            ],
+            "rows": [
+              [
+                "prego de ferro",
+                "sim"
+              ],
+              [
+                "clipe de aço",
+                "sim"
+              ],
+              [
+                "lata de alumínio",
+                "não"
+              ],
+              [
+                "fio de cobre",
+                "não"
+              ],
+              [
+                "aliança de ouro",
+                "não"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A Terra é um ímã ao contrário",
+          "body": [
+            "O norte da agulha aponta para o norte do planeta. Como polos opostos se atraem, lá perto fica um polo SUL magnético.",
+            "E os dois nortes não coincidem: a bússola aponta um pouco fora do norte dos mapas. Esse desvio muda de um lugar para outro."
+          ],
+          "terms": [
+            {
+              "word": "declinação magnética",
+              "meaning": "o ângulo entre o norte da bússola e o norte dos mapas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O escudo do planeta",
+          "body": [
+            "O campo da Terra desvia boa parte das partículas com carga que vêm do Sol. Perto dos polos, algumas entram e acendem o céu: são as auroras.",
+            "Aves que migram e tartarugas marinhas sentem esse campo e se orientam por ele."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Medir o campo",
+          "body": [
+            "O campo se mede em tesla. Um tesla é muito: os ímãs do dia a dia ficam bem abaixo disso."
+          ],
+          "terms": [
+            {
+              "word": "tesla",
+              "meaning": "a unidade que mede o campo magnético (T)."
+            }
+          ],
+          "table": {
+            "label": "Ordem de tamanho",
+            "headers": [
+              "Onde",
+              "Campo"
+            ],
+            "rows": [
+              [
+                "a Terra, na superfície",
+                "cerca de 0,00005 T"
+              ],
+              [
+                "ímã de geladeira",
+                "cerca de 0,005 T"
+              ],
+              [
+                "o grande ímã dos exames de imagem",
+                "de 1,5 a 3 T"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede o sentido das linhas, o que acontece ao partir um ímã ou por que a bússola aponta o norte."
+          ],
+          "bullets": [
+            "“As linhas de indução do campo saem do polo…”",
+            "“O polo norte geográfico da Terra corresponde, magneticamente, a um polo…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que partir o ímã separa o norte do sul.",
+            "Dizer que o ímã atrai qualquer metal.",
+            "Achar que o norte dos mapas é um polo norte magnético.",
+            "Dizer que linhas mais afastadas indicam campo mais forte."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "As linhas de campo saem do norte e entram no sul. Mais juntas, campo mais forte.",
+            "O ímã atrai ferro, níquel e cobalto. Perto do norte dos mapas fica um polo sul magnético, e o campo da Terra protege o planeta."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Polos",
+          "statement": "Dois polos norte, um perto do outro:",
+          "options": [
+            "se repelem",
+            "se atraem",
+            "não se afetam",
+            "viram polos sul",
+            "perdem a força"
+          ],
+          "correct_index": 0,
+          "explanation": "Polos iguais se repelem.",
+          "pitfall": "“Se atraem” vale para polos opostos."
+        },
+        {
+          "topic": "Partir",
+          "statement": "Um ímã em barra é partido ao meio. Cada pedaço:",
+          "options": [
+            "é um ímã inteiro, com norte e sul",
+            "fica só com o polo norte",
+            "fica só com o polo sul",
+            "deixa de ser ímã",
+            "vira um ímã sem polos"
+          ],
+          "correct_index": 0,
+          "explanation": "Os polos nunca se separam.",
+          "pitfall": "“Fica só com o polo norte” é o engano clássico: não existe polo sozinho."
+        },
+        {
+          "topic": "Sentido",
+          "statement": "Por fora do ímã, as linhas de campo:",
+          "options": [
+            "saem do norte e entram no sul",
+            "saem do sul e entram no norte",
+            "saem dos dois polos",
+            "entram nos dois polos",
+            "ficam paradas no meio"
+          ],
+          "correct_index": 0,
+          "explanation": "É a convenção: do norte para o sul, por fora.",
+          "pitfall": "“Saem do sul e entram no norte” inverteu o sentido."
+        },
+        {
+          "topic": "Força",
+          "statement": "Onde as linhas de campo estão mais juntas, o campo é:",
+          "options": [
+            "mais forte",
+            "mais fraco",
+            "nulo",
+            "igual ao resto",
+            "invertido"
+          ],
+          "correct_index": 0,
+          "explanation": "Linhas apertadas, campo forte: é o que acontece perto dos polos.",
+          "pitfall": "“Mais fraco” inverteu a leitura."
+        },
+        {
+          "topic": "Materiais",
+          "statement": "Qual destes objetos um ímã atrai?",
+          "options": [
+            "um prego de ferro",
+            "uma lata de alumínio",
+            "um fio de cobre",
+            "uma aliança de ouro",
+            "uma colher de plástico"
+          ],
+          "correct_index": 0,
+          "explanation": "O ímã atrai ferro, níquel e cobalto.",
+          "pitfall": "“Uma lata de alumínio” é de metal, mas o ímã não atrai todo metal."
+        },
+        {
+          "topic": "Terra",
+          "statement": "Perto do polo norte dos mapas, a Terra tem, como ímã:",
+          "options": [
+            "um polo sul magnético",
+            "um polo norte magnético",
+            "nenhum polo",
+            "os dois polos juntos",
+            "um polo que muda todo dia"
+          ],
+          "correct_index": 0,
+          "explanation": "É ele que atrai o norte da agulha.",
+          "pitfall": "“Um polo norte magnético” repeliria o norte da bússola."
+        },
+        {
+          "topic": "Leituras",
+          "format": "match",
+          "statement": "Ligue cada coisa ao que ela mostra.",
+          "pairs": [
+            {
+              "left": "limalha de ferro",
+              "right": "a forma das linhas de campo"
+            },
+            {
+              "left": "bússola",
+              "right": "a direção do campo no lugar"
+            },
+            {
+              "left": "linhas apertadas",
+              "right": "campo forte"
+            },
+            {
+              "left": "aurora",
+              "right": "partículas do Sol guiadas pelo campo da Terra"
+            }
+          ],
+          "explanation": "Quatro jeitos de enxergar um campo que não se vê.",
+          "pitfall": "Ligar linhas apertadas a campo fraco inverte a leitura."
+        },
+        {
+          "topic": "Escudo",
+          "statement": "O campo magnético da Terra protege o planeta porque:",
+          "options": [
+            "desvia partículas com carga que vêm do Sol",
+            "esquenta o ar",
+            "segura a Lua",
+            "bloqueia toda a luz do Sol",
+            "cria a chuva"
+          ],
+          "correct_index": 0,
+          "explanation": "As partículas são desviadas, e só algumas entram perto dos polos.",
+          "pitfall": "“Bloqueia toda a luz do Sol” erra: a luz passa, e o que o campo desvia são partículas."
+        },
+        {
+          "topic": "Limalha",
+          "statement": "A limalha de ferro em volta de um ímã se arruma em linhas porque:",
+          "options": [
+            "cada grão se alinha com o campo",
+            "os grãos são colados",
+            "o papel é magnético",
+            "o ar empurra os grãos",
+            "os grãos têm a mesma cor"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada grão vira um ímã pequeno e gira até se alinhar.",
+          "pitfall": "“O papel é magnético” erra: o papel só segura a limalha.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Geladeira",
+          "statement": "O ímã de geladeira gruda na porta porque ela é feita de:",
+          "options": [
+            "aço, que tem ferro",
+            "alumínio",
+            "plástico",
+            "cobre",
+            "vidro"
+          ],
+          "correct_index": 0,
+          "explanation": "O ferro do aço é atraído.",
+          "pitfall": "“Alumínio” não é atraído por ímã.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Bússola no ímã",
+          "statement": "Uma bússola é posta perto do polo sul de um ímã em barra. O norte da agulha:",
+          "options": [
+            "aponta para o polo sul do ímã",
+            "foge do polo sul do ímã",
+            "continua apontando o norte do planeta",
+            "fica girando sem parar",
+            "aponta para cima"
+          ],
+          "correct_index": 0,
+          "explanation": "Polos opostos se atraem, e o ímã de perto vence o campo fraco da Terra.",
+          "pitfall": "“Continua apontando o norte do planeta” esquece que o ímã está muito mais perto.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Tamanhos",
+          "statement": "Um ímã de geladeira tem cerca de 0,005 T. A Terra tem cerca de 0,00005 T. O campo do ímã é:",
+          "options": [
+            "100 vezes maior",
+            "10 vezes maior",
+            "1 000 vezes maior",
+            "100 vezes menor",
+            "igual"
+          ],
+          "correct_index": 0,
+          "explanation": "0,005 ÷ 0,00005 = 100.",
+          "pitfall": "“10 vezes maior” contou uma casa a menos.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Três pedaços",
+          "statement": "Um ímã em barra é partido em três pedaços. Quantos polos há, ao todo?",
+          "options": [
+            "6",
+            "2",
+            "3",
+            "4",
+            "1"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada pedaço vira um ímã inteiro, com 2 polos: 3 × 2.",
+          "pitfall": "“2” supõe que só as pontas originais continuam sendo polos: o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Desvio",
+          "statement": "Um navegador segue exatamente o norte da bússola, sem corrigir nada. Ele chega:",
+          "options": [
+            "um pouco fora do polo norte dos mapas",
+            "exatamente ao polo norte dos mapas",
+            "ao polo sul dos mapas",
+            "ao meio do oceano Pacífico",
+            "ao ponto de partida"
+          ],
+          "correct_index": 0,
+          "explanation": "A bússola aponta para o polo magnético, que não coincide com o dos mapas.",
+          "pitfall": "“Exatamente ao polo norte dos mapas” é o distrator mais fino: os dois nortes ficam perto, mas não no mesmo lugar.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "eletroima-forca-magnetica-e-motor",
+      "title": "Corrente que vira ímã: o eletroímã, a força e o motor",
+      "module": "Magnetismo e indução",
+      "summary": "Todo fio com corrente tem um campo magnético em volta. A lição mostra a regra da mão direita e como a bobina vira um eletroímã. Depois vêm a força que o campo faz num fio e como ela gira o motor.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O guindaste do ferro-velho",
+          "body": [
+            "No ferro-velho, um guindaste levanta um carro com um disco de metal e depois o solta. Não há gancho nem garra.",
+            "O disco é um ímã que liga e desliga num botão. Quem o liga é a corrente."
+          ],
+          "terms": [
+            {
+              "word": "campo magnético",
+              "meaning": "a região em volta de um ímã onde ele consegue puxar ou empurrar."
+            },
+            {
+              "word": "corrente elétrica",
+              "meaning": "o movimento ordenado de cargas num fio, medido em ampères (A)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O fio e a bússola",
+          "body": [
+            "Um fio com corrente desvia a agulha de uma bússola posta ao lado. Em volta do fio aparece um campo em forma de círculos.",
+            "Quanto maior a corrente, mais forte o campo. Quanto mais longe do fio, mais fraco."
+          ],
+          "example": {
+            "label": "A regra da mão direita",
+            "lines": [
+              "Segure o fio com a mão direita.",
+              "Aponte o polegar no sentido da corrente.",
+              "Os outros dedos, dobrados, mostram a volta do campo."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "regra da mão direita",
+              "meaning": "o polegar aponta o sentido da corrente, e os dedos dobrados mostram a volta do campo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Enrolar o fio",
+          "body": [
+            "O campo de cada volta de fio se soma ao das outras. Uma bobina com corrente se comporta como um ímã em barra, com norte e sul.",
+            "Um pedaço de ferro dentro dela reforça o campo muitas vezes."
+          ],
+          "terms": [
+            {
+              "word": "bobina",
+              "meaning": "um fio enrolado em muitas voltas."
+            },
+            {
+              "word": "eletroímã",
+              "meaning": "um fio enrolado num pedaço de ferro, que vira ímã enquanto a corrente passa."
+            }
+          ],
+          "table": {
+            "label": "Para um eletroímã mais forte",
+            "headers": [
+              "O que fazer",
+              "Efeito"
+            ],
+            "rows": [
+              [
+                "dar mais voltas de fio",
+                "campo mais forte"
+              ],
+              [
+                "aumentar a corrente",
+                "campo mais forte"
+              ],
+              [
+                "pôr um núcleo de ferro",
+                "campo muito mais forte"
+              ],
+              [
+                "inverter a corrente",
+                "os polos trocam de lugar"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Onde o eletroímã trabalha",
+          "body": [
+            "A vantagem sobre o ímã comum é poder ligar, desligar e regular a força."
+          ],
+          "example": {
+            "label": "No dia a dia",
+            "lines": [
+              "Campainha e trava elétrica de portão.",
+              "Alto-falante e fone de ouvido.",
+              "Guindaste de ferro-velho.",
+              "Trem que flutua sobre os trilhos."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A força num fio",
+          "body": [
+            "Um fio com corrente, dentro de um campo, é empurrado de lado. Com o fio atravessado nas linhas do campo, a força é F = B · i · L.",
+            "B é o campo, em tesla; i é a corrente; L é o comprimento do fio dentro do campo. O fio paralelo às linhas não sente força nenhuma."
+          ],
+          "example": {
+            "label": "Um exemplo",
+            "lines": [
+              "Campo de 0,5 T, corrente de 4 A e 0,2 m de fio.",
+              "F = 0,5 × 4 × 0,2.",
+              "F = 0,4 N."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "tesla",
+              "meaning": "a unidade que mede o campo magnético (T)."
+            },
+            {
+              "word": "newton",
+              "meaning": "a unidade de força (N). Segurar uma maçã pequena pede cerca de 1 N."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O motor",
+          "body": [
+            "Ponha uma bobina com corrente entre os polos de um ímã. Um lado é empurrado para cima e o outro para baixo: ela gira.",
+            "A cada meia-volta, o comutador inverte a corrente, e o giro continua no mesmo sentido. O motor transforma energia elétrica em movimento."
+          ],
+          "example": {
+            "label": "Onde há motor elétrico",
+            "lines": [
+              "Ventilador e liquidificador.",
+              "Máquina de lavar.",
+              "Carro elétrico.",
+              "O vibrador do celular."
+            ]
+          },
+          "terms": [
+            {
+              "word": "comutador",
+              "meaning": "a peça do motor que inverte a corrente a cada meia-volta."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede o sentido do campo em volta do fio, o que deixa o eletroímã mais forte ou a força num fio."
+          ],
+          "bullets": [
+            "“Para aumentar a intensidade do campo do eletroímã, deve-se…”",
+            "“A força magnética sobre o condutor vale…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Usar a mão esquerda na regra do polegar.",
+            "Achar que o eletroímã continua forte com a corrente desligada.",
+            "Calcular força num fio paralelo às linhas, onde ela é zero.",
+            "Dizer que o motor transforma movimento em energia elétrica: é o contrário."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Corrente cria campo em círculos, e a mão direita dá o sentido. Bobina com núcleo de ferro é o eletroímã.",
+            "No campo, o fio com corrente sente F = B · i · L. É essa força que gira o motor."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Fio",
+          "statement": "Uma bússola ao lado de um fio muda de direção quando se liga a corrente porque:",
+          "options": [
+            "a corrente cria um campo magnético em volta do fio",
+            "o fio esquenta a agulha",
+            "o fio vira de ferro",
+            "a agulha perde os polos",
+            "o ar em volta fica com carga"
+          ],
+          "correct_index": 0,
+          "explanation": "Corrente cria campo, e a agulha se alinha com ele.",
+          "pitfall": "“O fio esquenta a agulha” troca o efeito magnético pelo calor."
+        },
+        {
+          "topic": "Polegar",
+          "statement": "Na regra da mão direita para um fio reto, o polegar aponta:",
+          "options": [
+            "o sentido da corrente",
+            "o sentido do campo",
+            "o polo norte da Terra",
+            "o lado mais frio do fio",
+            "a força no fio"
+          ],
+          "correct_index": 0,
+          "explanation": "O polegar é a corrente; os dedos dobrados são o campo.",
+          "pitfall": "“O sentido do campo” trocou o polegar pelos outros dedos."
+        },
+        {
+          "topic": "Mais forte",
+          "statement": "Qual mudança deixa um eletroímã mais forte?",
+          "options": [
+            "dar mais voltas de fio na bobina",
+            "tirar o núcleo de ferro",
+            "diminuir a corrente",
+            "usar menos voltas de fio",
+            "desligar a pilha"
+          ],
+          "correct_index": 0,
+          "explanation": "O campo de cada volta se soma.",
+          "pitfall": "“Tirar o núcleo de ferro” enfraquece o campo."
+        },
+        {
+          "topic": "Desligar",
+          "statement": "Ao desligar a corrente de um eletroímã, ele:",
+          "options": [
+            "deixa de atrair",
+            "fica mais forte",
+            "inverte os polos",
+            "continua igual para sempre",
+            "vira um ímã permanente"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem corrente, o campo da bobina some.",
+          "pitfall": "“Vira um ímã permanente” esquece que o campo depende da corrente."
+        },
+        {
+          "topic": "Força",
+          "statement": "Um fio de 0,2 m com 4 A atravessa um campo de 0,5 T. A força é:",
+          "options": [
+            "0,4 N",
+            "2 N",
+            "10 N",
+            "0,04 N",
+            "4,7 N"
+          ],
+          "correct_index": 0,
+          "explanation": "F = B · i · L = 0,5 × 4 × 0,2.",
+          "pitfall": "“2 N” esqueceu de multiplicar pelo comprimento do fio."
+        },
+        {
+          "topic": "Motor",
+          "statement": "O motor elétrico transforma:",
+          "options": [
+            "energia elétrica em movimento",
+            "movimento em energia elétrica",
+            "calor em luz",
+            "luz em energia elétrica",
+            "som em movimento"
+          ],
+          "correct_index": 0,
+          "explanation": "A força do campo sobre a bobina a faz girar.",
+          "pitfall": "“Movimento em energia elétrica” é o caminho contrário."
+        },
+        {
+          "topic": "Regra",
+          "format": "order",
+          "statement": "Ponha na ordem os passos da regra da mão direita.",
+          "options": [
+            "Segurar o fio com a mão direita",
+            "Apontar o polegar no sentido da corrente",
+            "Ler o sentido do campo nos dedos dobrados"
+          ],
+          "explanation": "Primeiro a mão, depois o polegar e por fim os dedos.",
+          "pitfall": "Ler os dedos antes de acertar o polegar dá o sentido errado."
+        },
+        {
+          "topic": "Inverter",
+          "statement": "Inverter o sentido da corrente num eletroímã:",
+          "options": [
+            "troca os polos de lugar",
+            "desliga o campo",
+            "dobra a força",
+            "não muda nada",
+            "derrete o núcleo"
+          ],
+          "correct_index": 0,
+          "explanation": "O campo acompanha a corrente: invertida uma, inverte o outro.",
+          "pitfall": "“Não muda nada” esquece que o sentido do campo vem do sentido da corrente."
+        },
+        {
+          "topic": "Guindaste",
+          "statement": "O guindaste do ferro-velho solta o carro quando:",
+          "options": [
+            "a corrente do eletroímã é desligada",
+            "o ímã é aquecido",
+            "o carro fica mais leve",
+            "o disco gira",
+            "o motorista buzina"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem corrente, o disco deixa de ser ímã.",
+          "pitfall": "“O ímã é aquecido” seria lento, e não é assim que ele funciona.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Qual tem motor",
+          "statement": "Qual destes aparelhos funciona com motor elétrico?",
+          "options": [
+            "o ventilador",
+            "a lâmpada de LED",
+            "o ferro de passar",
+            "o chuveiro",
+            "a torradeira"
+          ],
+          "correct_index": 0,
+          "explanation": "As pás giram por causa de um motor.",
+          "pitfall": "“O chuveiro” só esquenta: nada nele gira.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Paralelo",
+          "statement": "Um fio com corrente está paralelo às linhas de um campo magnético. A força sobre ele é:",
+          "options": [
+            "zero",
+            "máxima",
+            "metade da máxima",
+            "o dobro",
+            "infinita"
+          ],
+          "correct_index": 0,
+          "explanation": "A força só aparece quando o fio atravessa as linhas.",
+          "pitfall": "“Máxima” é o caso do fio atravessado nas linhas.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Dobrar a corrente",
+          "statement": "Na conta F = B · i · L, dobrar a corrente e manter o resto faz a força:",
+          "options": [
+            "dobrar",
+            "quadruplicar",
+            "cair à metade",
+            "não mudar",
+            "triplicar"
+          ],
+          "correct_index": 0,
+          "explanation": "A força acompanha a corrente na mesma proporção.",
+          "pitfall": "“Quadruplicar” seria o caso de uma conta com a corrente ao quadrado.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Outro fio",
+          "statement": "Um fio de 50 cm com 10 A atravessa um campo de 0,2 T. A força é:",
+          "options": [
+            "1 N",
+            "100 N",
+            "10 N",
+            "0,1 N",
+            "2 N"
+          ],
+          "correct_index": 0,
+          "explanation": "50 cm são 0,5 m: F = 0,2 × 10 × 0,5.",
+          "pitfall": "“100 N” usou o comprimento em centímetros: o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Meia-volta",
+          "statement": "Num motor simples, a peça que inverte a corrente a cada meia-volta serve para:",
+          "options": [
+            "a bobina continuar girando no mesmo sentido",
+            "aumentar a tensão",
+            "esfriar o motor",
+            "desligar o motor a cada volta",
+            "trocar o ímã de lugar"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem a inversão, a força passaria a empurrar a bobina de volta.",
+          "pitfall": "“Desligar o motor a cada volta” é o distrator mais fino: a corrente não é cortada, é invertida.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "inducao-eletromagnetica",
+      "title": "Indução: o ímã em movimento que gera corrente",
+      "module": "Magnetismo e indução",
+      "summary": "A corrente cria campo, e o caminho também volta: campo que muda cria corrente. A lição mostra o fluxo, a lei de Faraday e a lei de Lenz. Depois vêm o gerador e os usos, do fogão ao carregador sem fio.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A lanterna de sacudir",
+          "body": [
+            "Existe lanterna sem pilha: sacode-se, e ela acende. Dentro, um ímã corre de um lado para o outro por dentro de um fio enrolado.",
+            "O ímã parado não acende nada. É o movimento que gera a corrente."
+          ],
+          "terms": [
+            {
+              "word": "campo magnético",
+              "meaning": "a região em volta de um ímã onde ele consegue puxar ou empurrar."
+            },
+            {
+              "word": "bobina",
+              "meaning": "um fio enrolado em muitas voltas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que precisa mudar",
+          "body": [
+            "Pense nas linhas de campo que atravessam uma volta de fio. Enquanto esse número não muda, nada acontece.",
+            "Quando ele muda, aparece uma tensão no fio, e a corrente anda."
+          ],
+          "example": {
+            "label": "Jeitos de mudar o fluxo",
+            "lines": [
+              "Aproximar ou afastar o ímã.",
+              "Girar a bobina dentro do campo.",
+              "Ligar, desligar ou variar a corrente de uma bobina vizinha."
+            ]
+          },
+          "terms": [
+            {
+              "word": "linha de campo",
+              "meaning": "o traço que mostra para onde o campo magnético aponta em cada lugar."
+            },
+            {
+              "word": "fluxo magnético",
+              "meaning": "a quantidade de linhas de campo que atravessam uma volta de fio."
+            },
+            {
+              "word": "tensão elétrica",
+              "meaning": "o empurrão que faz a corrente andar, medido em volts (V)."
+            },
+            {
+              "word": "indução eletromagnética",
+              "meaning": "o aparecimento de tensão num fio quando o campo magnético que o atravessa muda."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quanto de tensão",
+          "body": [
+            "Quanto mais rápida a mudança, maior a tensão. E cada volta da bobina soma a sua parte: ε = N · ΔΦ ÷ Δt.",
+            "N é o número de voltas, ΔΦ é quanto o fluxo mudou e Δt é o tempo que levou. O fluxo se mede em weber (Wb)."
+          ],
+          "example": {
+            "label": "Um exemplo",
+            "lines": [
+              "Bobina de 100 voltas.",
+              "O fluxo muda 0,2 Wb em 0,1 s.",
+              "ε = 100 × 0,2 ÷ 0,1 = 200 V."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "lei de Faraday",
+              "meaning": "a tensão induzida é tanto maior quanto mais rápido o fluxo muda."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A corrente que resiste",
+          "body": [
+            "A corrente induzida cria o seu próprio campo, e ele sempre atrapalha a mudança que a causou.",
+            "Se ela ajudasse a mudança, o ímã entraria sozinho e geraria cada vez mais corrente. Seria energia de graça, e isso não existe."
+          ],
+          "example": {
+            "label": "Com um ímã e uma bobina",
+            "lines": [
+              "O norte do ímã se aproxima: a ponta da bobina vira norte e o empurra de volta.",
+              "O norte se afasta: a ponta vira sul e o puxa.",
+              "Por isso é preciso fazer força para gerar corrente."
+            ]
+          },
+          "terms": [
+            {
+              "word": "lei de Lenz",
+              "meaning": "a corrente induzida aparece no sentido que atrapalha a mudança que a criou."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O gerador",
+          "body": [
+            "Gire uma bobina entre os polos de um ímã, e o fluxo muda o tempo todo. Sai corrente enquanto houver giro.",
+            "Na usina, quem gira é a turbina. Ela é empurrada por água, vapor ou vento."
+          ],
+          "terms": [
+            {
+              "word": "gerador",
+              "meaning": "a máquina que transforma movimento em energia elétrica."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Onde a indução aparece",
+          "body": [
+            "Em todos estes casos, um campo que muda cria corrente sem fio ligando as duas partes.",
+            "No fogão de indução, o vidro fica quase frio: quem esquenta é a panela. Panela de vidro ou de barro não funciona."
+          ],
+          "table": {
+            "label": "No dia a dia",
+            "headers": [
+              "Aparelho",
+              "Como usa a indução"
+            ],
+            "rows": [
+              [
+                "fogão de indução",
+                "a bobina cria corrente no fundo da panela de ferro, que esquenta"
+              ],
+              [
+                "carregador sem fio",
+                "uma bobina na base cria corrente na bobina do celular"
+              ],
+              [
+                "cartão por aproximação",
+                "a maquininha cria corrente no fio do cartão"
+              ],
+              [
+                "farol de bicicleta sem pilha",
+                "a roda gira um ímã perto de uma bobina"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pergunta em que situação aparece corrente induzida e qual o sentido dela. Também compara o motor com o gerador."
+          ],
+          "bullets": [
+            "“Haverá corrente induzida na espira enquanto…”",
+            "“De acordo com a lei de Lenz, o sentido da corrente induzida é tal que…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que ímã parado dentro da bobina gera corrente.",
+            "Dizer que a corrente induzida ajuda a mudança que a criou.",
+            "Confundir o motor com o gerador.",
+            "Esquecer de multiplicar pelo número de voltas."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Fluxo que muda cria tensão: mais rápido e com mais voltas, mais tensão.",
+            "Pela lei de Lenz, a corrente induzida se opõe à mudança. O gerador transforma movimento em energia elétrica."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Parado",
+          "statement": "Um ímã parado dentro de uma bobina:",
+          "options": [
+            "não gera corrente",
+            "gera corrente forte",
+            "gera corrente fraca e constante",
+            "esquenta a bobina",
+            "inverte os polos da bobina"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem mudança no fluxo, não há tensão induzida.",
+          "pitfall": "“Gera corrente fraca e constante” é o engano clássico: parado, não gera nada."
+        },
+        {
+          "topic": "Depressa",
+          "statement": "Aproximar um ímã de uma bobina depressa, em vez de devagar, faz a tensão induzida:",
+          "options": [
+            "aumentar",
+            "diminuir",
+            "ficar igual",
+            "zerar",
+            "mudar só de sentido"
+          ],
+          "correct_index": 0,
+          "explanation": "Quanto mais rápida a mudança do fluxo, maior a tensão.",
+          "pitfall": "“Ficar igual” esquece que o tempo entra na conta."
+        },
+        {
+          "topic": "Conta",
+          "statement": "Numa bobina de 100 voltas, o fluxo muda 0,2 Wb em 0,1 s. A tensão induzida é:",
+          "options": [
+            "200 V",
+            "2 V",
+            "20 V",
+            "0,02 V",
+            "2 000 V"
+          ],
+          "correct_index": 0,
+          "explanation": "ε = 100 × 0,2 ÷ 0,1.",
+          "pitfall": "“2 V” esqueceu de multiplicar pelas 100 voltas."
+        },
+        {
+          "topic": "Lenz",
+          "statement": "Pela lei de Lenz, a corrente induzida:",
+          "options": [
+            "se opõe à mudança que a criou",
+            "ajuda a mudança que a criou",
+            "não cria campo nenhum",
+            "tem sempre o mesmo sentido",
+            "só aparece em ímãs fracos"
+          ],
+          "correct_index": 0,
+          "explanation": "O campo da corrente induzida atrapalha a mudança do fluxo.",
+          "pitfall": "“Ajuda a mudança que a criou” daria energia de graça."
+        },
+        {
+          "topic": "Gerador",
+          "statement": "O gerador de uma usina transforma:",
+          "options": [
+            "movimento em energia elétrica",
+            "energia elétrica em movimento",
+            "calor em frio",
+            "luz em som",
+            "energia elétrica em calor"
+          ],
+          "correct_index": 0,
+          "explanation": "A turbina gira a bobina, e o fluxo que muda cria a corrente.",
+          "pitfall": "“Energia elétrica em movimento” é o que faz o motor."
+        },
+        {
+          "topic": "Fogão",
+          "statement": "No fogão de indução, o que esquenta é:",
+          "options": [
+            "o fundo da panela de ferro, pela corrente induzida nele",
+            "o vidro do fogão",
+            "o ar em volta",
+            "uma chama escondida",
+            "a tomada"
+          ],
+          "correct_index": 0,
+          "explanation": "A bobina do fogão cria corrente na panela, e ela se aquece.",
+          "pitfall": "“O vidro do fogão” só esquenta porque encosta na panela quente."
+        },
+        {
+          "topic": "Peças",
+          "format": "match",
+          "statement": "Ligue cada coisa ao que ela faz.",
+          "pairs": [
+            {
+              "left": "motor",
+              "right": "transforma energia elétrica em movimento"
+            },
+            {
+              "left": "gerador",
+              "right": "transforma movimento em energia elétrica"
+            },
+            {
+              "left": "lei de Lenz",
+              "right": "diz o sentido da corrente induzida"
+            },
+            {
+              "left": "fluxo magnético",
+              "right": "as linhas de campo que atravessam a volta de fio"
+            }
+          ],
+          "explanation": "As quatro ideias da lição.",
+          "pitfall": "Trocar motor e gerador é o engano que a prova mais espera."
+        },
+        {
+          "topic": "Aproximar",
+          "statement": "O polo norte de um ímã se aproxima de uma bobina. A ponta da bobina voltada para ele vira:",
+          "options": [
+            "um polo norte, que o empurra de volta",
+            "um polo sul, que o puxa",
+            "um polo sem nome",
+            "um pedaço de vidro",
+            "um ímã permanente"
+          ],
+          "correct_index": 0,
+          "explanation": "A corrente induzida se opõe à aproximação.",
+          "pitfall": "“Um polo sul, que o puxa” ajudaria a mudança, contra a lei de Lenz."
+        },
+        {
+          "topic": "Lanterna",
+          "statement": "A lanterna de sacudir acende porque:",
+          "options": [
+            "o ímã em movimento muda o fluxo na bobina",
+            "a mão esquenta a lâmpada",
+            "o ímã guarda luz",
+            "a bobina tem uma pilha escondida",
+            "o plástico esfrega no ímã"
+          ],
+          "correct_index": 0,
+          "explanation": "O vaivém do ímã cria tensão na bobina.",
+          "pitfall": "“A bobina tem uma pilha escondida” ignora de onde vem a energia: do braço.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Carregador",
+          "statement": "O carregador sem fio passa energia ao celular por meio de:",
+          "options": [
+            "um campo magnético que muda",
+            "um fio invisível",
+            "calor",
+            "som",
+            "luz visível"
+          ],
+          "correct_index": 0,
+          "explanation": "A bobina da base cria corrente na bobina do aparelho.",
+          "pitfall": "“Calor” é só uma sobra do processo, e não o caminho da energia.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Mais voltas",
+          "statement": "Troca-se a bobina de 100 voltas por uma de 200. Com a mesma mudança de fluxo no mesmo tempo, a tensão:",
+          "options": [
+            "dobra",
+            "cai à metade",
+            "fica igual",
+            "quadruplica",
+            "zera"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada volta soma a sua parte.",
+          "pitfall": "“Fica igual” esqueceu o número de voltas da conta.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Outra conta",
+          "statement": "Numa bobina de 50 voltas, o fluxo muda 0,4 Wb em 0,2 s. A tensão induzida é:",
+          "options": [
+            "100 V",
+            "4 V",
+            "2 V",
+            "40 V",
+            "1 000 V"
+          ],
+          "correct_index": 0,
+          "explanation": "ε = 50 × 0,4 ÷ 0,2.",
+          "pitfall": "“2 V” esqueceu as 50 voltas.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Ímã no cano",
+          "statement": "Um ímã cai por dentro de um cano de cobre e demora mais que fora dele. Isso acontece porque:",
+          "options": [
+            "as correntes induzidas no cano criam um campo que freia o ímã",
+            "o cobre é atraído pelo ímã",
+            "o ar dentro do cano é mais pesado",
+            "o cano tira os polos do ímã",
+            "o ímã fica mais leve"
+          ],
+          "correct_index": 0,
+          "explanation": "É a lei de Lenz: a corrente induzida se opõe ao movimento que a criou.",
+          "pitfall": "“O cobre é atraído pelo ímã” é o distrator mais fino: o ímã não atrai cobre, e o freio vem das correntes induzidas.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Tempo menor",
+          "statement": "Numa bobina, certa mudança de fluxo em 0,1 s induz 200 V. Se a mesma mudança leva 0,05 s, a tensão é:",
+          "options": [
+            "400 V",
+            "100 V",
+            "200 V",
+            "800 V",
+            "50 V"
+          ],
+          "correct_index": 0,
+          "explanation": "Metade do tempo, o dobro da tensão.",
+          "pitfall": "“100 V” inverteu a relação: mudança mais rápida dá mais tensão, e não menos. É o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "corrente-alternada-e-transformador",
+      "title": "Corrente alternada, transformador e o caminho até a tomada",
+      "module": "Magnetismo e indução",
+      "summary": "Por que a tomada tem corrente que vai e volta, e por que as torres levam tensão tão alta. A lição mostra a corrente alternada e a conta do transformador. Depois vêm a perda nos fios e o caminho da usina até a sua casa.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O serrote",
+          "body": [
+            "O serrote corta indo e voltando. Ele não precisa andar sempre para o mesmo lado para fazer o trabalho.",
+            "A corrente da tomada é assim: vai e volta, muitas vezes por segundo."
+          ],
+          "terms": [
+            {
+              "word": "corrente elétrica",
+              "meaning": "o movimento ordenado de cargas num fio, medido em ampères (A)."
+            },
+            {
+              "word": "corrente alternada e contínua",
+              "meaning": "a contínua anda sempre no mesmo sentido, como a da pilha; a alternada vai e volta, como a da tomada."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Contínua e alternada",
+          "body": [
+            "No Brasil, a corrente da tomada completa 60 vaivéns por segundo. A lâmpada pisca tão rápido que o olho não percebe."
+          ],
+          "terms": [
+            {
+              "word": "frequência",
+              "meaning": "quantas vezes algo se repete a cada segundo."
+            },
+            {
+              "word": "hertz",
+              "meaning": "a unidade de frequência (Hz): 1 Hz é uma repetição por segundo."
+            }
+          ],
+          "table": {
+            "label": "As duas correntes",
+            "headers": [
+              "",
+              "Contínua",
+              "Alternada"
+            ],
+            "rows": [
+              [
+                "sentido",
+                "sempre o mesmo",
+                "vai e volta"
+              ],
+              [
+                "de onde vem",
+                "pilha, bateria e painel solar",
+                "tomada e usina"
+              ],
+              [
+                "frequência no Brasil",
+                "não tem",
+                "60 Hz"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O transformador",
+          "body": [
+            "São duas bobinas enroladas no mesmo núcleo de ferro. A corrente alternada da primeira cria um campo que muda, e esse campo faz aparecer tensão na segunda.",
+            "A tensão acompanha o número de voltas: U₁ ÷ U₂ = N₁ ÷ N₂."
+          ],
+          "example": {
+            "label": "Abaixar a tensão",
+            "lines": [
+              "Primeira bobina: 1 000 voltas, ligada em 220 V.",
+              "Segunda bobina: 100 voltas.",
+              "Dez vezes menos voltas: 220 ÷ 10 = 22 V."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "bobina",
+              "meaning": "um fio enrolado em muitas voltas."
+            },
+            {
+              "word": "tensão elétrica",
+              "meaning": "o empurrão que faz a corrente andar, medido em volts (V)."
+            },
+            {
+              "word": "transformador",
+              "meaning": "o aparelho que aumenta ou abaixa a tensão, com duas bobinas num mesmo núcleo de ferro."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Só funciona com alternada",
+          "body": [
+            "O transformador precisa de um campo que mude. Com corrente contínua, o campo fica parado e nada aparece na segunda bobina.",
+            "Por isso o carregador do celular tem duas etapas: primeiro abaixa a tensão, depois transforma a alternada em contínua."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que sobe de um lado desce do outro",
+          "body": [
+            "O transformador não cria energia. Num aparelho ideal, a potência que entra é a que sai: U₁ · i₁ = U₂ · i₂.",
+            "Se a tensão cai dez vezes, a corrente pode ser dez vezes maior. Se a tensão sobe, a corrente cai."
+          ],
+          "example": {
+            "label": "Um exemplo",
+            "lines": [
+              "Entram 220 V e 0,5 A: 110 W.",
+              "Saem 11 V.",
+              "Corrente na saída: 110 ÷ 11 = 10 A."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "potência",
+              "meaning": "a energia usada ou entregue a cada segundo, medida em watts (W)."
+            },
+            {
+              "word": "watt",
+              "meaning": "a unidade de potência (W). Um quilowatt (kW) são 1 000 W."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Por que as torres usam alta tensão",
+          "body": [
+            "O fio da linha resiste à corrente, esquenta e joga energia fora. Essa perda vale R · i².",
+            "Para levar a mesma potência com menos corrente, sobe-se a tensão."
+          ],
+          "example": {
+            "label": "Levar 1 000 000 W por um fio de 5 Ω",
+            "lines": [
+              "A 10 000 V: corrente de 100 A e perda de 50 000 W.",
+              "A 100 000 V: corrente de 10 A e perda de 500 W.",
+              "Dez vezes mais tensão, cem vezes menos perda."
+            ]
+          },
+          "terms": [
+            {
+              "word": "resistência elétrica",
+              "meaning": "a dificuldade que o fio põe à corrente, medida em ohms (Ω)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Da usina à tomada",
+          "body": [
+            "No caminho, a tensão sobe uma vez e desce em etapas."
+          ],
+          "example": {
+            "label": "O caminho",
+            "lines": [
+              "A usina gera na casa dos 10 a 20 mil volts.",
+              "Um transformador eleva a tensão para centenas de milhares de volts.",
+              "As torres levam a energia por centenas de quilômetros.",
+              "Perto da cidade, a subestação abaixa a tensão.",
+              "No poste, outro transformador abaixa para 127 V ou 220 V."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede a tensão na saída do transformador, por que ele não funciona com pilha ou por que a transmissão usa alta tensão."
+          ],
+          "bullets": [
+            "“Um transformador com 500 espiras no primário e 50 no secundário…”",
+            "“A transmissão de energia é feita em alta tensão para…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que o transformador funciona com corrente contínua.",
+            "Dizer que o transformador aumenta a potência.",
+            "Achar que a alta tensão das linhas serve para a energia andar mais rápido.",
+            "Esquecer que a perda vai com o quadrado da corrente."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A tomada tem corrente alternada de 60 Hz. O transformador muda a tensão na proporção das voltas e só funciona com alternada.",
+            "A potência se mantém: tensão maior, corrente menor. Por isso as linhas usam alta tensão, e a perda R · i² despenca."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Tomada",
+          "statement": "A corrente da tomada de casa é:",
+          "options": [
+            "alternada: vai e volta",
+            "contínua: sempre no mesmo sentido",
+            "parada",
+            "igual à da pilha",
+            "contínua de dia e alternada à noite"
+          ],
+          "correct_index": 0,
+          "explanation": "No Brasil, ela completa 60 vaivéns por segundo.",
+          "pitfall": "“Contínua” é a corrente da pilha e da bateria."
+        },
+        {
+          "topic": "60 Hz",
+          "statement": "Dizer que a rede elétrica tem 60 Hz significa que a corrente:",
+          "options": [
+            "completa 60 vaivéns por segundo",
+            "tem 60 volts",
+            "anda 60 metros por segundo",
+            "liga 60 aparelhos",
+            "dura 60 segundos"
+          ],
+          "correct_index": 0,
+          "explanation": "Hertz é a unidade de frequência: repetições por segundo.",
+          "pitfall": "“Tem 60 volts” confunde frequência com tensão."
+        },
+        {
+          "topic": "Voltas",
+          "statement": "Um transformador tem 1 000 voltas na entrada e 100 na saída. Ligado em 220 V, entrega:",
+          "options": [
+            "22 V",
+            "2 200 V",
+            "220 V",
+            "2,2 V",
+            "120 V"
+          ],
+          "correct_index": 0,
+          "explanation": "Dez vezes menos voltas, dez vezes menos tensão.",
+          "pitfall": "“2 200 V” inverteu a proporção."
+        },
+        {
+          "topic": "Pilha",
+          "statement": "Um transformador ligado a uma pilha não funciona porque:",
+          "options": [
+            "a corrente contínua cria um campo que não muda",
+            "a pilha é fraca demais",
+            "a pilha não tem polos",
+            "o ferro não deixa a corrente passar",
+            "a pilha tem tensão alta demais"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem campo mudando, não aparece tensão na segunda bobina.",
+          "pitfall": "“A pilha é fraca demais” erra: nem uma bateria forte faria o transformador funcionar."
+        },
+        {
+          "topic": "Troca",
+          "statement": "Num transformador ideal que abaixa a tensão dez vezes, a corrente disponível na saída:",
+          "options": [
+            "fica dez vezes maior",
+            "fica dez vezes menor",
+            "não muda",
+            "zera",
+            "fica cem vezes maior"
+          ],
+          "correct_index": 0,
+          "explanation": "A potência que entra é a que sai: U₁ · i₁ = U₂ · i₂.",
+          "pitfall": "“Fica dez vezes menor” faria a potência cair cem vezes."
+        },
+        {
+          "topic": "Alta tensão",
+          "statement": "As linhas de transmissão usam alta tensão para:",
+          "options": [
+            "diminuir a corrente e a perda nos fios",
+            "a energia andar mais rápido",
+            "aumentar a potência da usina",
+            "esquentar os fios",
+            "gastar menos água na usina"
+          ],
+          "correct_index": 0,
+          "explanation": "Menos corrente, menos perda: ela vale R · i².",
+          "pitfall": "“A energia andar mais rápido” é o engano clássico."
+        },
+        {
+          "topic": "Caminho",
+          "format": "order",
+          "statement": "Ponha na ordem o caminho da energia até a tomada.",
+          "options": [
+            "A usina gera a energia",
+            "Um transformador eleva a tensão",
+            "As torres levam a energia até perto da cidade",
+            "A subestação e o poste abaixam a tensão"
+          ],
+          "explanation": "Gerar, elevar, transportar e abaixar.",
+          "pitfall": "Abaixar a tensão antes das torres aumentaria a perda no caminho."
+        },
+        {
+          "topic": "Carregador",
+          "statement": "O carregador de celular, ligado na tomada:",
+          "options": [
+            "abaixa a tensão e transforma a alternada em contínua",
+            "aumenta a tensão",
+            "só muda a cor do fio",
+            "transforma a contínua em alternada",
+            "guarda a energia da tomada para sempre"
+          ],
+          "correct_index": 0,
+          "explanation": "A bateria precisa de tensão baixa e corrente contínua.",
+          "pitfall": "“Transforma a contínua em alternada” inverteu: a tomada já é alternada."
+        },
+        {
+          "topic": "Serrote",
+          "statement": "Na comparação com o serrote, o vaivém da lâmina corresponde:",
+          "options": [
+            "à corrente alternada",
+            "à corrente contínua",
+            "à pilha",
+            "ao fio terra",
+            "ao poste"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela vai e volta, e mesmo assim faz o trabalho.",
+          "pitfall": "“À corrente contínua” seria uma serra que só anda para um lado.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Poste",
+          "statement": "A caixa cinza no alto do poste da rua é um transformador que:",
+          "options": [
+            "abaixa a tensão para 127 V ou 220 V",
+            "aumenta a tensão para as casas",
+            "gera a energia do bairro",
+            "guarda energia para a noite",
+            "mede a conta de luz"
+          ],
+          "correct_index": 0,
+          "explanation": "É a última queda de tensão antes da casa.",
+          "pitfall": "“Gera a energia do bairro” erra: o transformador só muda a tensão.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Elevar",
+          "statement": "Um transformador tem 100 voltas na entrada e 2 000 na saída. Ligado em 220 V, entrega:",
+          "options": [
+            "4 400 V",
+            "11 V",
+            "220 V",
+            "2 000 V",
+            "440 V"
+          ],
+          "correct_index": 0,
+          "explanation": "Vinte vezes mais voltas: 220 × 20.",
+          "pitfall": "“11 V” dividiu, como se a saída tivesse menos voltas.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Saída",
+          "statement": "Num transformador ideal entram 220 V e 0,5 A. Se a saída é de 11 V, a corrente disponível é:",
+          "options": [
+            "10 A",
+            "0,025 A",
+            "0,5 A",
+            "110 A",
+            "20 A"
+          ],
+          "correct_index": 0,
+          "explanation": "Potência de 110 W: 110 ÷ 11.",
+          "pitfall": "“0,025 A” baixou a corrente junto com a tensão.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Perda",
+          "statement": "Uma linha leva sempre a mesma potência. Se a tensão dobra, a perda nos fios cai para:",
+          "options": [
+            "1/4",
+            "1/2",
+            "1/8",
+            "o dobro",
+            "zero"
+          ],
+          "correct_index": 0,
+          "explanation": "A corrente cai à metade, e a perda vai com o quadrado: (1/2)².",
+          "pitfall": "“1/2” esqueceu o quadrado da corrente: o distrator mais fino.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Cem vezes",
+          "statement": "Uma linha de 5 Ω leva 1 000 000 W. A 10 000 V, a perda é de 50 000 W. A 100 000 V, a perda passa a ser:",
+          "options": [
+            "500 W",
+            "5 000 W",
+            "50 W",
+            "25 000 W",
+            "500 000 W"
+          ],
+          "correct_index": 0,
+          "explanation": "A corrente cai de 100 A para 10 A: 5 × 10².",
+          "pitfall": "“5 000 W” dividiu a perda por dez, como a corrente: o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "ondas-tipos-e-medidas",
+      "title": "Ondas a fundo: tipos, medidas e a conta v = λ · f",
+      "module": "Ondas",
+      "summary": "A onda leva energia sem levar matéria. A lição mostra os dois jeitos de balançar e as medidas de uma onda. Depois vêm a conta v = λ · f e o que muda quando a onda troca de meio.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A ola do estádio",
+          "body": [
+            "Na ola, cada torcedor só levanta e senta no seu lugar. Mesmo assim, a onda dá a volta no estádio.",
+            "Ninguém saiu da cadeira. O que viajou foi o movimento."
+          ],
+          "terms": [
+            {
+              "word": "onda",
+              "meaning": "um balanço que se espalha e leva energia sem levar matéria."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Dois jeitos de balançar",
+          "body": [
+            "Sacuda uma corda para cima e para baixo: a onda corre para a frente, e a corda balança de lado.",
+            "Empurre e puxe uma mola: as voltas se apertam e se afastam na mesma direção em que a onda anda."
+          ],
+          "terms": [
+            {
+              "word": "onda transversal e longitudinal",
+              "meaning": "na transversal, o meio balança atravessado ao caminho da onda; na longitudinal, balança na mesma direção do caminho."
+            }
+          ],
+          "table": {
+            "label": "Os dois tipos",
+            "headers": [
+              "Tipo",
+              "O meio balança",
+              "Exemplos"
+            ],
+            "rows": [
+              [
+                "transversal",
+                "atravessado ao caminho da onda",
+                "corda, ola e luz"
+              ],
+              [
+                "longitudinal",
+                "na direção do caminho da onda",
+                "mola e som"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Com meio ou sem meio",
+          "body": [
+            "O som precisa de ar, água ou sólido para andar. A luz do Sol chega até aqui pelo vazio do espaço."
+          ],
+          "terms": [
+            {
+              "word": "onda mecânica",
+              "meaning": "a onda que precisa de um meio para andar, como o som e as ondas do mar."
+            },
+            {
+              "word": "onda eletromagnética",
+              "meaning": "a onda que não precisa de meio e anda até no vazio, como a luz e as ondas de rádio."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As medidas",
+          "body": [
+            "Toda onda que se repete tem quatro medidas."
+          ],
+          "example": {
+            "label": "Uma boia no mar",
+            "lines": [
+              "A boia sobe e desce 2 vezes por segundo: f = 2 Hz.",
+              "Cada vaivém leva meio segundo: T = 0,5 s.",
+              "Uma é o inverso da outra: f = 1 ÷ T."
+            ]
+          },
+          "terms": [
+            {
+              "word": "amplitude",
+              "meaning": "a altura da onda, medida do nível de repouso até o topo."
+            },
+            {
+              "word": "comprimento de onda",
+              "meaning": "a distância entre dois topos seguidos. Escreve-se com a letra grega λ."
+            },
+            {
+              "word": "período",
+              "meaning": "o tempo de um vaivém completo."
+            },
+            {
+              "word": "frequência",
+              "meaning": "quantas vezes algo se repete a cada segundo."
+            },
+            {
+              "word": "hertz",
+              "meaning": "a unidade de frequência (Hz): 1 Hz é uma repetição por segundo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A conta da onda",
+          "body": [
+            "A cada vaivém, a onda anda um comprimento de onda. Por isso a velocidade é v = λ · f."
+          ],
+          "example": {
+            "label": "Três contas",
+            "lines": [
+              "Som de 340 Hz no ar (340 m/s): λ = 340 ÷ 340 = 1 m.",
+              "Rádio de 100 000 000 Hz (300 000 000 m/s): λ = 3 m.",
+              "Onda de 2 Hz e 3 m: v = 3 × 2 = 6 m/s."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Quem manda em quê",
+          "body": [
+            "A velocidade depende do meio. A frequência depende de quem produz a onda, e não muda quando ela troca de meio.",
+            "Então, ao entrar num meio em que anda mais rápido, a onda estica: o comprimento de onda aumenta."
+          ],
+          "table": {
+            "label": "A velocidade do som",
+            "headers": [
+              "Meio",
+              "Velocidade"
+            ],
+            "rows": [
+              [
+                "ar",
+                "cerca de 340 m/s"
+              ],
+              [
+                "água",
+                "cerca de 1 500 m/s"
+              ],
+              [
+                "aço",
+                "cerca de 5 000 m/s"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A energia e a altura",
+          "body": [
+            "A amplitude diz quanta energia a onda leva. Onda mais alta, mais energia.",
+            "Em alto-mar, a onda de um tsunami é baixa e muito comprida, e passa quase despercebida. Perto da praia ela freia, encurta e cresce."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá duas das três medidas da conta e pede a terceira. Ou pergunta o que muda quando a onda passa de um meio para outro."
+          ],
+          "bullets": [
+            "“O comprimento de onda dessa emissora, em metros, é…”",
+            "“Ao passar do ar para a água, a onda sonora mantém…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que a onda carrega a água ou o ar junto com ela.",
+            "Dizer que a frequência muda quando a onda troca de meio.",
+            "Confundir amplitude com comprimento de onda.",
+            "Dizer que o som é uma onda transversal."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Transversal balança atravessado; longitudinal, na direção do caminho. O som é longitudinal e a luz é transversal.",
+            "v = λ · f e f = 1 ÷ T. O meio decide a velocidade, e a fonte decide a frequência."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Ola",
+          "statement": "Na ola do estádio, o que viaja pelas arquibancadas é:",
+          "options": [
+            "o movimento, e não as pessoas",
+            "as pessoas",
+            "as cadeiras",
+            "o ar do estádio",
+            "a bola"
+          ],
+          "correct_index": 0,
+          "explanation": "A onda leva energia sem levar matéria.",
+          "pitfall": "“As pessoas” ficam cada uma no seu lugar."
+        },
+        {
+          "topic": "Som",
+          "statement": "O som é uma onda:",
+          "options": [
+            "longitudinal e mecânica",
+            "transversal e mecânica",
+            "transversal e eletromagnética",
+            "longitudinal e eletromagnética",
+            "que anda no vazio"
+          ],
+          "correct_index": 0,
+          "explanation": "O ar se aperta e se afasta na direção em que o som anda.",
+          "pitfall": "“Transversal e eletromagnética” descreve a luz."
+        },
+        {
+          "topic": "Boia",
+          "statement": "Uma boia sobe e desce 2 vezes por segundo. A frequência e o período são:",
+          "options": [
+            "2 Hz e 0,5 s",
+            "0,5 Hz e 2 s",
+            "2 Hz e 2 s",
+            "4 Hz e 0,25 s",
+            "1 Hz e 1 s"
+          ],
+          "correct_index": 0,
+          "explanation": "f = 2 Hz e T = 1 ÷ 2.",
+          "pitfall": "“0,5 Hz e 2 s” trocou uma medida pela outra."
+        },
+        {
+          "topic": "Conta",
+          "statement": "Um som de 340 Hz anda a 340 m/s no ar. O comprimento de onda é:",
+          "options": [
+            "1 m",
+            "680 m",
+            "115 600 m",
+            "0,5 m",
+            "340 m"
+          ],
+          "correct_index": 0,
+          "explanation": "λ = v ÷ f = 340 ÷ 340.",
+          "pitfall": "“115 600 m” multiplicou em vez de dividir."
+        },
+        {
+          "topic": "Velocidade",
+          "statement": "Uma onda tem 3 m de comprimento de onda e 2 Hz. A velocidade é:",
+          "options": [
+            "6 m/s",
+            "1,5 m/s",
+            "5 m/s",
+            "0,67 m/s",
+            "9 m/s"
+          ],
+          "correct_index": 0,
+          "explanation": "v = λ · f = 3 × 2.",
+          "pitfall": "“1,5 m/s” dividiu em vez de multiplicar."
+        },
+        {
+          "topic": "Meio",
+          "statement": "A velocidade de uma onda depende:",
+          "options": [
+            "do meio em que ela anda",
+            "só da frequência",
+            "só da amplitude",
+            "da cor da fonte",
+            "de quem a observa"
+          ],
+          "correct_index": 0,
+          "explanation": "No ar, o som anda a cerca de 340 m/s; na água, a cerca de 1 500 m/s.",
+          "pitfall": "“Só da amplitude” confunde a altura da onda com a rapidez dela."
+        },
+        {
+          "topic": "Medidas",
+          "format": "match",
+          "statement": "Ligue cada medida ao que ela é.",
+          "pairs": [
+            {
+              "left": "amplitude",
+              "right": "a altura da onda"
+            },
+            {
+              "left": "comprimento de onda",
+              "right": "a distância entre dois topos seguidos"
+            },
+            {
+              "left": "período",
+              "right": "o tempo de um vaivém"
+            },
+            {
+              "left": "frequência",
+              "right": "quantos vaivéns por segundo"
+            }
+          ],
+          "explanation": "As quatro medidas de uma onda.",
+          "pitfall": "Trocar amplitude e comprimento de onda é o engano mais comum."
+        },
+        {
+          "topic": "Vazio",
+          "statement": "No vazio do espaço, anda:",
+          "options": [
+            "a luz, mas não o som",
+            "o som, mas não a luz",
+            "a luz e o som",
+            "nem a luz nem o som",
+            "só o som grave"
+          ],
+          "correct_index": 0,
+          "explanation": "A luz é eletromagnética e não precisa de meio; o som precisa.",
+          "pitfall": "“A luz e o som” esquece que o som é uma onda mecânica."
+        },
+        {
+          "topic": "Corda",
+          "statement": "Sacudir uma corda para cima e para baixo cria uma onda:",
+          "options": [
+            "transversal",
+            "longitudinal",
+            "sem amplitude",
+            "eletromagnética",
+            "que não leva energia"
+          ],
+          "correct_index": 0,
+          "explanation": "A corda balança atravessada ao caminho da onda.",
+          "pitfall": "“Longitudinal” é o caso da mola empurrada e puxada.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Mais alta",
+          "statement": "Entre duas ondas iguais no resto, a de maior amplitude:",
+          "options": [
+            "leva mais energia",
+            "anda mais rápido",
+            "tem maior frequência",
+            "tem menor período",
+            "não chega à praia"
+          ],
+          "correct_index": 0,
+          "explanation": "A amplitude diz quanta energia a onda carrega.",
+          "pitfall": "“Anda mais rápido” erra: a velocidade depende do meio.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Rádio",
+          "statement": "Uma rádio transmite em 100 000 000 Hz. As ondas andam a 300 000 000 m/s. O comprimento de onda é:",
+          "options": [
+            "3 m",
+            "0,33 m",
+            "30 m",
+            "300 m",
+            "3 000 m"
+          ],
+          "correct_index": 0,
+          "explanation": "λ = 300 000 000 ÷ 100 000 000.",
+          "pitfall": "“0,33 m” dividiu ao contrário.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Período",
+          "statement": "Uma onda tem período de 0,25 s. A frequência é:",
+          "options": [
+            "4 Hz",
+            "0,25 Hz",
+            "2,5 Hz",
+            "25 Hz",
+            "0,4 Hz"
+          ],
+          "correct_index": 0,
+          "explanation": "f = 1 ÷ 0,25.",
+          "pitfall": "“0,25 Hz” repetiu o período como se fosse a frequência.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Do ar para a água",
+          "statement": "Um som de 680 Hz passa do ar (340 m/s) para a água (1 500 m/s). Na água, ele tem:",
+          "options": [
+            "a mesma frequência e comprimento de onda maior",
+            "frequência maior e o mesmo comprimento de onda",
+            "a mesma frequência e o mesmo comprimento de onda",
+            "frequência menor e comprimento de onda menor",
+            "frequência maior e comprimento de onda maior"
+          ],
+          "correct_index": 0,
+          "explanation": "A frequência é da fonte e não muda. Com mais velocidade, λ = v ÷ f aumenta.",
+          "pitfall": "“Frequência maior e o mesmo comprimento de onda” é o distrator mais fino: quem muda com o meio é o comprimento de onda.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Tsunami",
+          "statement": "Ao chegar perto da praia, a onda de um tsunami freia. Com a mesma frequência, ela:",
+          "options": [
+            "encurta e cresce",
+            "estica e baixa",
+            "fica igual",
+            "some",
+            "ganha frequência"
+          ],
+          "correct_index": 0,
+          "explanation": "Menos velocidade com a mesma frequência dá comprimento de onda menor, e a energia se junta em altura.",
+          "pitfall": "“Estica e baixa” é o distrator mais fino: é o que acontece quando a onda ganha velocidade, e não quando freia.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "som-altura-volume-e-timbre",
+      "title": "O som a fundo: altura, volume, timbre, eco e Doppler",
+      "module": "Ondas",
+      "summary": "Por que se reconhece uma voz ao telefone e por que a sirene muda de tom ao passar. A lição mostra as três qualidades do som e a escala dos decibéis. Depois vêm o eco, a ressonância e o efeito Doppler.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A voz ao telefone",
+          "body": [
+            "Basta um alô para saber quem ligou. E a mesma nota soa diferente no violão e no piano.",
+            "O som carrega mais de uma informação ao mesmo tempo."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As três qualidades",
+          "body": [
+            "Na Física, som alto quer dizer agudo, e não forte. O que o botão de volume muda é a intensidade."
+          ],
+          "terms": [
+            {
+              "word": "frequência",
+              "meaning": "quantas vezes algo se repete a cada segundo."
+            },
+            {
+              "word": "amplitude",
+              "meaning": "a altura da onda, medida do nível de repouso até o topo."
+            },
+            {
+              "word": "timbre",
+              "meaning": "o jeito próprio de cada som, que permite reconhecer uma voz ou um instrumento na mesma nota."
+            }
+          ],
+          "table": {
+            "label": "O que cada uma diz",
+            "headers": [
+              "Qualidade",
+              "Depende de",
+              "O que se ouve"
+            ],
+            "rows": [
+              [
+                "altura",
+                "frequência",
+                "grave ou agudo"
+              ],
+              [
+                "intensidade",
+                "amplitude",
+                "fraco ou forte"
+              ],
+              [
+                "timbre",
+                "forma da onda",
+                "violão ou piano"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A escala dos decibéis",
+          "body": [
+            "A intensidade se mede em decibéis. A escala anda de dez em dez: cada 10 dB a mais são dez vezes mais energia chegando ao ouvido.",
+            "Acima de 85 dB por muitas horas, o ouvido sofre dano que não volta."
+          ],
+          "terms": [
+            {
+              "word": "decibel",
+              "meaning": "a unidade do nível de som (dB)."
+            }
+          ],
+          "table": {
+            "label": "Para ter ideia",
+            "headers": [
+              "Som",
+              "Nível"
+            ],
+            "rows": [
+              [
+                "sussurro",
+                "30 dB"
+              ],
+              [
+                "conversa",
+                "60 dB"
+              ],
+              [
+                "trânsito pesado",
+                "85 dB"
+              ],
+              [
+                "show ou fone no máximo",
+                "110 dB"
+              ],
+              [
+                "limite da dor",
+                "cerca de 130 dB"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O eco",
+          "body": [
+            "O som bate num obstáculo e volta. O ouvido só separa dois sons se houver pelo menos 0,1 s entre eles."
+          ],
+          "example": {
+            "label": "A conta do eco",
+            "lines": [
+              "Em 0,1 s, o som anda 34 m no ar.",
+              "É ida e volta: a parede precisa estar a pelo menos 17 m.",
+              "Mais perto que isso, o som se emenda: é a reverberação."
+            ]
+          },
+          "terms": [
+            {
+              "word": "reverberação",
+              "meaning": "o som que continua por um instante no ambiente, emendado no som original."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Medir com o eco",
+          "body": [
+            "O sonar dos navios mede o tempo de ida e volta do som para achar a distância do fundo.",
+            "Morcegos e golfinhos fazem a mesma conta, e o exame de ultrassom também. Ele usa sons agudos demais para o nosso ouvido."
+          ],
+          "example": {
+            "label": "O sonar de um navio",
+            "lines": [
+              "O som anda a 1 500 m/s na água.",
+              "O eco volta 4 s depois.",
+              "Ida e volta: 1 500 × 4 = 6 000 m.",
+              "O fundo está a 3 000 m."
+            ],
+            "ordered": true
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Empurrar no ritmo certo",
+          "body": [
+            "Todo objeto tem um ritmo próprio de balançar. Empurrado nesse ritmo, ele balança cada vez mais."
+          ],
+          "example": {
+            "label": "Exemplos",
+            "lines": [
+              "O balanço do parque: empurrado na hora certa, vai cada vez mais alto.",
+              "A caixa do violão, que reforça o som das cordas.",
+              "A taça de cristal que trinca com uma nota sustentada na frequência dela."
+            ]
+          },
+          "terms": [
+            {
+              "word": "ressonância",
+              "meaning": "o aumento forte do balanço quando algo é empurrado no seu ritmo próprio."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A sirene que passa",
+          "body": [
+            "A sirene da ambulância soa mais aguda quando se aproxima e mais grave quando se afasta. A sirene não mudou: muda o som que chega ao ouvido.",
+            "Na aproximação, as ondas chegam mais apertadas, e a frequência ouvida sobe."
+          ],
+          "example": {
+            "label": "Onde se usa",
+            "lines": [
+              "Radar de velocidade nas estradas.",
+              "Exame que mede a velocidade do sangue.",
+              "Astronomia: a luz das galáxias que se afastam chega mais avermelhada."
+            ]
+          },
+          "terms": [
+            {
+              "word": "efeito Doppler",
+              "meaning": "a mudança da frequência que se percebe quando a fonte e o ouvinte se aproximam ou se afastam."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede a qualidade do som ligada a cada medida, a conta do eco ou o que se ouve quando a fonte se move."
+          ],
+          "bullets": [
+            "“A qualidade que permite distinguir dois instrumentos é…”",
+            "“O intervalo entre a emissão e a recepção do eco foi de 4 s. A profundidade é…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Dizer que som alto é som forte: na Física, alto é agudo.",
+            "Achar que 20 dB a mais são o dobro de energia: são cem vezes mais.",
+            "Esquecer de dividir por dois na conta do eco.",
+            "Dizer que a sirene muda de frequência no efeito Doppler."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Altura vem da frequência, intensidade da amplitude e timbre da forma da onda. Cada 10 dB são dez vezes mais energia.",
+            "O eco pede 17 m de distância. Ressonância é empurrar no ritmo certo, e no efeito Doppler muda a frequência ouvida."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Agudo",
+          "statement": "O que faz um som ser grave ou agudo é:",
+          "options": [
+            "a frequência",
+            "a amplitude",
+            "o timbre",
+            "a velocidade",
+            "a distância"
+          ],
+          "correct_index": 0,
+          "explanation": "Frequência alta, som agudo; frequência baixa, som grave.",
+          "pitfall": "“A amplitude” decide se o som é fraco ou forte."
+        },
+        {
+          "topic": "Volume",
+          "statement": "Aumentar o volume da TV aumenta:",
+          "options": [
+            "a intensidade do som",
+            "a altura do som",
+            "o timbre",
+            "a velocidade do som",
+            "a frequência"
+          ],
+          "correct_index": 0,
+          "explanation": "O botão mexe na amplitude da onda.",
+          "pitfall": "“A altura do som” é o engano clássico: altura é grave ou agudo."
+        },
+        {
+          "topic": "Timbre",
+          "statement": "A mesma nota no violão e no piano soa diferente por causa:",
+          "options": [
+            "do timbre",
+            "da altura",
+            "da intensidade",
+            "da velocidade do som",
+            "do eco"
+          ],
+          "correct_index": 0,
+          "explanation": "A forma da onda de cada instrumento é própria.",
+          "pitfall": "“Da altura” erra: sendo a mesma nota, a altura é igual."
+        },
+        {
+          "topic": "Decibéis",
+          "statement": "Um som de 70 dB tem, em relação a um de 60 dB:",
+          "options": [
+            "10 vezes mais energia",
+            "o dobro da energia",
+            "um sexto a mais de energia",
+            "a mesma energia",
+            "70 vezes mais energia"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada 10 dB a mais são dez vezes mais energia.",
+          "pitfall": "“O dobro da energia” lê a escala como se ela andasse de um em um."
+        },
+        {
+          "topic": "Eco",
+          "statement": "Para ouvir o eco da própria voz, a parede precisa estar a pelo menos:",
+          "options": [
+            "17 m",
+            "34 m",
+            "3,4 m",
+            "340 m",
+            "1,7 m"
+          ],
+          "correct_index": 0,
+          "explanation": "Em 0,1 s o som anda 34 m, entre ida e volta.",
+          "pitfall": "“34 m” esqueceu que o som vai e volta."
+        },
+        {
+          "topic": "Sonar",
+          "statement": "O sonar de um navio recebe o eco 4 s depois de emitir o som (1 500 m/s na água). O fundo está a:",
+          "options": [
+            "3 000 m",
+            "6 000 m",
+            "375 m",
+            "1 500 m",
+            "750 m"
+          ],
+          "correct_index": 0,
+          "explanation": "1 500 × 4 = 6 000 m de ida e volta; metade disso.",
+          "pitfall": "“6 000 m” esqueceu de dividir por dois."
+        },
+        {
+          "topic": "Sirene",
+          "statement": "Quando a ambulância se aproxima, o som da sirene parece:",
+          "options": [
+            "mais agudo",
+            "mais grave",
+            "igual",
+            "mais lento",
+            "sem timbre"
+          ],
+          "correct_index": 0,
+          "explanation": "As ondas chegam mais apertadas, e a frequência ouvida sobe.",
+          "pitfall": "“Mais grave” é o que se ouve quando ela se afasta."
+        },
+        {
+          "topic": "Nomes",
+          "format": "match",
+          "statement": "Ligue cada caso ao nome dele.",
+          "pairs": [
+            {
+              "left": "ouvir a própria voz voltar da montanha",
+              "right": "eco"
+            },
+            {
+              "left": "o balanço que sobe a cada empurrão no ritmo certo",
+              "right": "ressonância"
+            },
+            {
+              "left": "a sirene que muda de tom ao passar",
+              "right": "efeito Doppler"
+            },
+            {
+              "left": "reconhecer a voz de alguém",
+              "right": "timbre"
+            }
+          ],
+          "explanation": "Quatro ideias do som.",
+          "pitfall": "Ligar a sirene à ressonância troca movimento da fonte por ritmo próprio."
+        },
+        {
+          "topic": "Limite",
+          "statement": "Ficar muitas horas num ambiente acima de 85 dB:",
+          "options": [
+            "pode causar dano que não volta ao ouvido",
+            "melhora a audição",
+            "não faz nada",
+            "muda o timbre da voz",
+            "só incomoda à noite"
+          ],
+          "correct_index": 0,
+          "explanation": "O dano por barulho se acumula e não tem volta.",
+          "pitfall": "“Não faz nada” ignora que o limite existe por causa do dano.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Trovão",
+          "statement": "O trovão chega 3 s depois do relâmpago. Com o som a 340 m/s, o raio caiu a cerca de:",
+          "options": [
+            "1 020 m",
+            "113 m",
+            "340 m",
+            "3 400 m",
+            "510 m"
+          ],
+          "correct_index": 0,
+          "explanation": "340 × 3. Aqui o som só vem: não há ida e volta.",
+          "pitfall": "“510 m” dividiu por dois, como no eco.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Cem vezes",
+          "statement": "Um show a 110 dB tem, em relação a um som de 90 dB:",
+          "options": [
+            "100 vezes mais energia",
+            "20 vezes mais energia",
+            "o dobro da energia",
+            "10 vezes mais energia",
+            "1,2 vez mais energia"
+          ],
+          "correct_index": 0,
+          "explanation": "São dois passos de 10 dB: 10 × 10.",
+          "pitfall": "“20 vezes mais energia” leu os 20 dB como se fossem 20 vezes.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Taça",
+          "statement": "Uma cantora trinca uma taça de cristal com a voz quando:",
+          "options": [
+            "sustenta uma nota na frequência própria da taça",
+            "canta qualquer nota bem forte",
+            "canta bem grave",
+            "canta muito rápido",
+            "muda de timbre"
+          ],
+          "correct_index": 0,
+          "explanation": "Empurrada no ritmo dela, a taça balança cada vez mais.",
+          "pitfall": "“Canta qualquer nota bem forte” esquece que o ritmo precisa ser o da taça.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Motorista",
+          "statement": "Uma ambulância passa com a sirene ligada. Para o motorista dela, o som da sirene:",
+          "options": [
+            "não muda de tom",
+            "fica mais agudo o tempo todo",
+            "fica mais grave o tempo todo",
+            "some",
+            "muda como para quem está na calçada"
+          ],
+          "correct_index": 0,
+          "explanation": "Não há aproximação nem afastamento entre a sirene e o motorista.",
+          "pitfall": "“Muda como para quem está na calçada” é o distrator mais fino: o efeito depende do movimento entre a fonte e quem ouve.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Sala",
+          "statement": "Numa sala de 8 m de comprimento, um grito não produz eco nítido porque:",
+          "options": [
+            "o som volta em menos de 0,1 s e se emenda no original",
+            "o som não bate na parede",
+            "a sala absorve todo o som",
+            "o som anda mais devagar em sala fechada",
+            "o grito é agudo demais"
+          ],
+          "correct_index": 0,
+          "explanation": "Ida e volta dão 16 m, menos que os 34 m que o som anda em 0,1 s.",
+          "pitfall": "“A sala absorve todo o som” é o distrator mais fino: o som volta, só que cedo demais para o ouvido separar.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "espectro-eletromagnetico",
+      "title": "O espectro eletromagnético: do rádio aos raios gama",
+      "module": "Ondas",
+      "summary": "O controle remoto, o forno de micro-ondas e o raio X usam o mesmo tipo de onda. A lição mostra as sete faixas em ordem e para que serve cada uma. Depois vem a diferença entre a radiação que faz mal e a que não faz.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Uma família só",
+          "body": [
+            "A luz da lâmpada, o sinal do celular e o raio X do dentista parecem coisas sem relação. São a mesma coisa em tamanhos diferentes."
+          ],
+          "terms": [
+            {
+              "word": "onda eletromagnética",
+              "meaning": "a onda que não precisa de meio e anda até no vazio, como a luz e as ondas de rádio."
+            },
+            {
+              "word": "frequência",
+              "meaning": "quantas vezes algo se repete a cada segundo."
+            },
+            {
+              "word": "hertz",
+              "meaning": "a unidade de frequência (Hz): 1 Hz é uma repetição por segundo."
+            },
+            {
+              "word": "comprimento de onda",
+              "meaning": "a distância entre dois topos seguidos. Escreve-se com a letra grega λ."
+            },
+            {
+              "word": "espectro eletromagnético",
+              "meaning": "a fila de todas as ondas eletromagnéticas, da menor frequência à maior."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que elas têm em comum",
+          "body": [
+            "Todas andam no vazio a cerca de 300 000 km por segundo. A diferença entre elas está na frequência.",
+            "Frequência maior quer dizer comprimento de onda menor e mais energia."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As sete faixas",
+          "body": [
+            "A ordem cai na prova. Quanto mais para o fim da lista, menor a onda e maior a energia."
+          ],
+          "table": {
+            "label": "Da menor à maior frequência",
+            "headers": [
+              "Faixa",
+              "Onde aparece"
+            ],
+            "rows": [
+              [
+                "ondas de rádio",
+                "rádio e TV"
+              ],
+              [
+                "micro-ondas",
+                "forno, wi-fi, celular e radar"
+              ],
+              [
+                "infravermelho",
+                "controle remoto, calor da brasa e câmera térmica"
+              ],
+              [
+                "luz visível",
+                "tudo o que o olho enxerga"
+              ],
+              [
+                "ultravioleta",
+                "o Sol, que bronzeia e queima a pele"
+              ],
+              [
+                "raios X",
+                "radiografia"
+              ],
+              [
+                "raios gama",
+                "tratamento de câncer e esterilização"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A luz que se vê",
+          "body": [
+            "A luz visível é uma faixa estreita no meio da fila. O vermelho tem a menor frequência, e o violeta, a maior.",
+            "Logo antes do vermelho fica o infravermelho; logo depois do violeta, o ultravioleta. Os nomes dizem isso: abaixo do vermelho e além do violeta."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A que faz mal e a que não faz",
+          "body": [
+            "A partir do ultravioleta, a onda tem energia para arrancar elétrons dos átomos. Isso pode danificar o material que comanda as células.",
+            "O sinal do celular e do wi-fi é não ionizante. O protetor solar existe contra o ultravioleta, e não contra a luz da lâmpada."
+          ],
+          "terms": [
+            {
+              "word": "elétron",
+              "meaning": "a partícula de carga negativa que fica na parte de fora do átomo."
+            },
+            {
+              "word": "radiação ionizante",
+              "meaning": "a onda com energia bastante para arrancar elétrons dos átomos."
+            }
+          ],
+          "table": {
+            "label": "Dois grupos",
+            "headers": [
+              "Grupo",
+              "Faixas",
+              "Efeito no corpo"
+            ],
+            "rows": [
+              [
+                "não ionizante",
+                "rádio, micro-ondas, infravermelho e visível",
+                "no máximo aquece"
+              ],
+              [
+                "ionizante",
+                "parte do ultravioleta, raios X e gama",
+                "pode danificar as células"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Como o forno de micro-ondas esquenta",
+          "body": [
+            "As micro-ondas do forno fazem as moléculas de água da comida se agitar, e a agitação é calor. Por isso o prato seco esquenta pouco.",
+            "A porta tem uma grade com furos pequenos. A onda do forno tem cerca de 12 cm e não passa por eles; a luz visível é muito menor e passa."
+          ],
+          "example": {
+            "label": "A conta",
+            "lines": [
+              "Frequência do forno: 2 450 000 000 Hz.",
+              "λ = 300 000 000 ÷ 2 450 000 000.",
+              "λ é cerca de 0,12 m, ou 12 cm."
+            ],
+            "ordered": true
+          },
+          "terms": [
+            {
+              "word": "molécula",
+              "meaning": "um grupo de átomos ligados, como a da água."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede a ordem das faixas, o uso de cada uma ou qual radiação é ionizante."
+          ],
+          "bullets": [
+            "“Em ordem crescente de frequência, as radiações são…”",
+            "“A radiação usada no controle remoto é…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que o sinal do celular é radiação ionizante.",
+            "Trocar a ordem e pôr o ultravioleta antes da luz visível.",
+            "Dizer que raios X e ondas de rádio andam em velocidades diferentes no vazio.",
+            "Achar que o infravermelho é uma luz vermelha que se enxerga."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Todas as ondas eletromagnéticas andam a 300 000 km/s no vazio. Em ordem de frequência, são sete faixas (rádio, micro-ondas, infravermelho, visível, ultravioleta, raios X e gama).",
+            "Quanto maior a frequência, mais energia. Do ultravioleta em diante, a radiação é ionizante e pode danificar as células."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Em comum",
+          "statement": "No vazio, todas as ondas eletromagnéticas têm a mesma:",
+          "options": [
+            "velocidade",
+            "frequência",
+            "energia",
+            "cor",
+            "amplitude"
+          ],
+          "correct_index": 0,
+          "explanation": "Cerca de 300 000 km por segundo.",
+          "pitfall": "“Frequência” é justo o que muda de uma para outra."
+        },
+        {
+          "topic": "Ordem",
+          "statement": "Qual lista está em ordem crescente de frequência?",
+          "options": [
+            "rádio → infravermelho → ultravioleta → raios X",
+            "raios X → ultravioleta → infravermelho → rádio",
+            "infravermelho → rádio → raios X → ultravioleta",
+            "ultravioleta → rádio → raios X → infravermelho",
+            "rádio → raios X → infravermelho → ultravioleta"
+          ],
+          "correct_index": 0,
+          "explanation": "Rádio no começo da fila, raios X perto do fim.",
+          "pitfall": "A lista que começa em raios X e termina em rádio está na ordem contrária."
+        },
+        {
+          "topic": "Controle",
+          "statement": "O controle remoto da TV manda o sinal por:",
+          "options": [
+            "infravermelho",
+            "raios X",
+            "ultravioleta",
+            "raios gama",
+            "som"
+          ],
+          "correct_index": 0,
+          "explanation": "É uma luz que o olho não vê, logo abaixo do vermelho.",
+          "pitfall": "“Ultravioleta” fica do outro lado da luz visível."
+        },
+        {
+          "topic": "Cores",
+          "statement": "Na luz visível, a cor de maior frequência é:",
+          "options": [
+            "o violeta",
+            "o vermelho",
+            "o amarelo",
+            "o verde",
+            "o laranja"
+          ],
+          "correct_index": 0,
+          "explanation": "O violeta fica na ponta de maior frequência.",
+          "pitfall": "“O vermelho” fica na ponta de menor frequência."
+        },
+        {
+          "topic": "Ionizante",
+          "statement": "Qual destas é radiação ionizante?",
+          "options": [
+            "raios X",
+            "ondas de rádio",
+            "micro-ondas",
+            "infravermelho",
+            "luz vermelha"
+          ],
+          "correct_index": 0,
+          "explanation": "Raios X têm energia para arrancar elétrons dos átomos.",
+          "pitfall": "“Micro-ondas” só aquecem: não são ionizantes."
+        },
+        {
+          "topic": "Celular",
+          "statement": "O sinal do celular é uma radiação:",
+          "options": [
+            "não ionizante",
+            "ionizante como o raio X",
+            "mais energética que o ultravioleta",
+            "igual aos raios gama",
+            "que não é onda"
+          ],
+          "correct_index": 0,
+          "explanation": "A frequência dele fica bem abaixo da luz visível.",
+          "pitfall": "“Ionizante como o raio X” é o engano mais comum."
+        },
+        {
+          "topic": "Usos",
+          "format": "match",
+          "statement": "Ligue cada faixa a um uso dela.",
+          "pairs": [
+            {
+              "left": "micro-ondas",
+              "right": "esquentar a comida no forno"
+            },
+            {
+              "left": "raios X",
+              "right": "radiografia de um osso"
+            },
+            {
+              "left": "ultravioleta",
+              "right": "bronzear e queimar a pele"
+            },
+            {
+              "left": "infravermelho",
+              "right": "câmera que enxerga calor"
+            }
+          ],
+          "explanation": "Cada faixa, com a sua frequência, serve para uma coisa.",
+          "pitfall": "Ligar a radiografia ao ultravioleta troca duas faixas vizinhas."
+        },
+        {
+          "topic": "Forno",
+          "statement": "O forno de micro-ondas esquenta a comida porque as ondas:",
+          "options": [
+            "agitam as moléculas de água",
+            "queimam o prato",
+            "são ionizantes",
+            "esquentam primeiro o ar",
+            "são raios X fracos"
+          ],
+          "correct_index": 0,
+          "explanation": "Agitação das moléculas é calor.",
+          "pitfall": "“São ionizantes” erra: micro-ondas só aquecem."
+        },
+        {
+          "topic": "Nome",
+          "statement": "O infravermelho tem esse nome porque a frequência dele fica:",
+          "options": [
+            "logo abaixo da do vermelho",
+            "logo acima da do violeta",
+            "dentro da luz visível",
+            "acima dos raios X",
+            "igual à do vermelho"
+          ],
+          "correct_index": 0,
+          "explanation": "Infra quer dizer abaixo.",
+          "pitfall": "“Logo acima da do violeta” é o lugar do ultravioleta.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Protetor",
+          "statement": "O protetor solar protege a pele principalmente contra:",
+          "options": [
+            "o ultravioleta",
+            "o infravermelho",
+            "as ondas de rádio",
+            "a luz visível",
+            "as micro-ondas"
+          ],
+          "correct_index": 0,
+          "explanation": "É o ultravioleta do Sol que queima e pode causar câncer de pele.",
+          "pitfall": "“O infravermelho” só esquenta a pele.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Onda do forno",
+          "statement": "O forno de micro-ondas usa 2 450 000 000 Hz. Com as ondas a 300 000 000 m/s, o comprimento de onda é de cerca de:",
+          "options": [
+            "12 cm",
+            "8 m",
+            "1,2 mm",
+            "12 m",
+            "0,8 cm"
+          ],
+          "correct_index": 0,
+          "explanation": "λ = 300 000 000 ÷ 2 450 000 000, perto de 0,12 m.",
+          "pitfall": "“8 m” dividiu ao contrário.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Mais energia",
+          "statement": "Entre estas, a onda de maior energia é:",
+          "options": [
+            "o raio gama",
+            "a onda de rádio",
+            "o infravermelho",
+            "a luz verde",
+            "a micro-onda"
+          ],
+          "correct_index": 0,
+          "explanation": "Maior frequência, mais energia: o gama fica no fim da fila.",
+          "pitfall": "“A onda de rádio” fica na ponta de menor energia.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Grade",
+          "statement": "Vê-se a comida pela porta do forno, e as micro-ondas não saem. Isso acontece porque:",
+          "options": [
+            "a luz visível tem onda muito menor que os furos da grade, e a micro-onda, maior",
+            "a luz é mais forte que as micro-ondas",
+            "o vidro segura as micro-ondas",
+            "as micro-ondas são mais lentas que a luz",
+            "a grade esquenta e absorve a luz"
+          ],
+          "correct_index": 0,
+          "explanation": "Onda bem maior que o furo não passa; a de 12 cm fica presa.",
+          "pitfall": "“As micro-ondas são mais lentas que a luz” é o distrator mais fino: as duas andam à mesma velocidade, e o que muda é o tamanho da onda.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Mesma velocidade",
+          "statement": "No vazio, um raio X e uma onda de rádio diferem em quase tudo, menos:",
+          "options": [
+            "na velocidade",
+            "na frequência",
+            "no comprimento de onda",
+            "na energia",
+            "no uso"
+          ],
+          "correct_index": 0,
+          "explanation": "Todas as ondas eletromagnéticas andam a 300 000 km/s no vazio.",
+          "pitfall": "“Na energia” é o distrator mais fino: a energia acompanha a frequência, que é diferente.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "fenomenos-das-ondas",
+      "title": "O que as ondas fazem ao encontrar um obstáculo",
+      "module": "Ondas",
+      "summary": "Ouve-se quem está atrás de uma porta, mas não se vê. A lição mostra a reflexão e a refração, e depois a difração e a interferência. No fim vem a polarização, que só a onda transversal sofre.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Ouvir sem ver",
+          "body": [
+            "De um quarto, ouve-se a conversa do corredor pela porta entreaberta. Mas não se vê quem está falando.",
+            "O som faz a curva na porta, e a luz não. A diferença está no tamanho das ondas."
+          ],
+          "terms": [
+            {
+              "word": "comprimento de onda",
+              "meaning": "a distância entre dois topos seguidos. Escreve-se com a letra grega λ."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Bater e voltar, entrar e desviar",
+          "body": [
+            "Ao bater num obstáculo, a onda volta: é o eco e é a imagem no espelho. Ao entrar em outro meio, ela muda de velocidade e pode mudar de direção.",
+            "Nos dois casos, a frequência continua a mesma."
+          ],
+          "example": {
+            "label": "Refração no dia a dia",
+            "lines": [
+              "O canudo que parece quebrado no copo d'água.",
+              "A piscina que parece mais rasa do que é."
+            ]
+          },
+          "terms": [
+            {
+              "word": "reflexão",
+              "meaning": "a onda que bate num obstáculo e volta para o meio de onde veio."
+            },
+            {
+              "word": "refração",
+              "meaning": "a onda que passa para outro meio e muda de velocidade."
+            },
+            {
+              "word": "frequência",
+              "meaning": "quantas vezes algo se repete a cada segundo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Contornar",
+          "body": [
+            "A onda contorna obstáculos e se espalha depois de uma abertura. Isso é forte quando a abertura tem tamanho parecido com o comprimento de onda.",
+            "As ondas do rádio AM têm centenas de metros e contornam morros. As do FM têm cerca de 3 m e contornam bem menos."
+          ],
+          "terms": [
+            {
+              "word": "difração",
+              "meaning": "a onda que contorna um obstáculo ou se espalha ao passar por uma abertura."
+            }
+          ],
+          "table": {
+            "label": "Por que se ouve e não se vê",
+            "headers": [
+              "Onda",
+              "Comprimento de onda",
+              "Numa porta de 1 m"
+            ],
+            "rows": [
+              [
+                "som da voz",
+                "cerca de 1 m",
+                "contorna bem"
+              ],
+              [
+                "luz visível",
+                "menos de um milésimo de milímetro",
+                "quase não contorna"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Somar ondas",
+          "body": [
+            "Quando duas ondas se encontram, elas se somam. Topo com topo dá uma onda maior. Topo com fundo, as duas se cancelam.",
+            "Passado o encontro, cada onda segue o seu caminho, inteira. Por isso duas conversas se cruzam numa sala sem se estragar."
+          ],
+          "example": {
+            "label": "Onde aparece",
+            "lines": [
+              "Fone com cancelamento de ruído: cria uma onda invertida que apaga o barulho.",
+              "As cores da bolha de sabão e da mancha de óleo.",
+              "Os pontos da casa em que o wi-fi fica fraco."
+            ]
+          },
+          "terms": [
+            {
+              "word": "interferência",
+              "meaning": "a soma de duas ondas que se encontram. É construtiva quando reforça e destrutiva quando cancela."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Filtrar a direção",
+          "body": [
+            "A luz comum vibra em todas as direções atravessadas ao caminho. Um filtro pode deixar passar só uma delas.",
+            "Só onda transversal pode ser polarizada. O som, que é longitudinal, não pode."
+          ],
+          "example": {
+            "label": "Onde aparece",
+            "lines": [
+              "Óculos de sol polarizados, que cortam o reflexo da água e do asfalto.",
+              "Os óculos do cinema 3D.",
+              "A tela de cristal líquido da calculadora e do celular."
+            ]
+          },
+          "terms": [
+            {
+              "word": "onda transversal e longitudinal",
+              "meaning": "na transversal, o meio balança atravessado ao caminho da onda; na longitudinal, balança na mesma direção do caminho."
+            },
+            {
+              "word": "polarização",
+              "meaning": "deixar a onda vibrando numa direção só."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Tudo junto",
+          "body": [
+            "Os cinco valem para qualquer onda, menos a polarização, que é só das transversais."
+          ],
+          "table": {
+            "label": "Os cinco fenômenos",
+            "headers": [
+              "Fenômeno",
+              "O que a onda faz",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "reflexão",
+                "bate e volta",
+                "eco e espelho"
+              ],
+              [
+                "refração",
+                "muda de meio e de velocidade",
+                "canudo quebrado"
+              ],
+              [
+                "difração",
+                "contorna e se espalha",
+                "ouvir atrás da porta"
+              ],
+              [
+                "interferência",
+                "soma com outra onda",
+                "fone que cancela ruído"
+              ],
+              [
+                "polarização",
+                "vibra numa direção só",
+                "óculos polarizados"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova descreve uma situação do dia a dia e pede o nome do fenômeno."
+          ],
+          "bullets": [
+            "“O fenômeno que permite ouvir o som atrás de um muro é a…”",
+            "“O fenômeno que comprova a natureza transversal da luz é a…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Confundir difração (contornar) com refração (mudar de meio).",
+            "Achar que duas ondas que se cancelam somem para sempre.",
+            "Dizer que o som pode ser polarizado.",
+            "Achar que a frequência muda na refração."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Reflexão volta, refração muda de meio, difração contorna. A difração é forte quando a abertura tem o tamanho da onda.",
+            "Interferência é soma de ondas, e pode reforçar ou cancelar. Polarização filtra a direção e só vale para onda transversal."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Porta",
+          "statement": "Ouve-se a conversa atrás de uma porta entreaberta porque o som sofre:",
+          "options": [
+            "difração",
+            "polarização",
+            "refração",
+            "reflexão total",
+            "interferência destrutiva"
+          ],
+          "correct_index": 0,
+          "explanation": "O som contorna a porta: a onda dele tem tamanho parecido com a abertura.",
+          "pitfall": "“Refração” é mudar de meio, e aqui o som continua no ar."
+        },
+        {
+          "topic": "Canudo",
+          "statement": "O canudo que parece quebrado no copo d'água é um caso de:",
+          "options": [
+            "refração",
+            "difração",
+            "interferência",
+            "polarização",
+            "eco"
+          ],
+          "correct_index": 0,
+          "explanation": "A luz muda de velocidade e de direção ao sair da água.",
+          "pitfall": "“Difração” é contornar um obstáculo."
+        },
+        {
+          "topic": "Eco",
+          "statement": "O eco é um caso de:",
+          "options": [
+            "reflexão do som",
+            "refração do som",
+            "difração do som",
+            "polarização do som",
+            "interferência do som"
+          ],
+          "correct_index": 0,
+          "explanation": "O som bate no obstáculo e volta.",
+          "pitfall": "“Refração do som” seria o som passando para outro meio."
+        },
+        {
+          "topic": "Cancelar",
+          "statement": "O fone com cancelamento de ruído funciona por:",
+          "options": [
+            "interferência destrutiva",
+            "difração",
+            "polarização",
+            "refração",
+            "reflexão"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele cria uma onda invertida, e topo com fundo se cancelam.",
+          "pitfall": "“Polarização” não vale para o som."
+        },
+        {
+          "topic": "Polarizar",
+          "statement": "Só pode ser polarizada a onda:",
+          "options": [
+            "transversal",
+            "longitudinal",
+            "sonora",
+            "muito lenta",
+            "de grande amplitude"
+          ],
+          "correct_index": 0,
+          "explanation": "Só quem vibra atravessado ao caminho tem direção para filtrar.",
+          "pitfall": "“Longitudinal” vibra na direção do caminho: não há o que filtrar."
+        },
+        {
+          "topic": "Tamanho",
+          "statement": "A difração é mais forte quando a abertura:",
+          "options": [
+            "tem tamanho parecido com o comprimento de onda",
+            "é muito maior que o comprimento de onda",
+            "é pintada de preto",
+            "é feita de metal",
+            "fica no alto"
+          ],
+          "correct_index": 0,
+          "explanation": "É por isso que o som contorna portas, e a luz não.",
+          "pitfall": "“É muito maior que o comprimento de onda” é o caso em que a onda quase não se espalha."
+        },
+        {
+          "topic": "Nomes",
+          "format": "match",
+          "statement": "Ligue cada caso ao fenômeno.",
+          "pairs": [
+            {
+              "left": "a imagem no espelho",
+              "right": "reflexão"
+            },
+            {
+              "left": "a piscina que parece mais rasa",
+              "right": "refração"
+            },
+            {
+              "left": "as cores da bolha de sabão",
+              "right": "interferência"
+            },
+            {
+              "left": "os óculos que cortam o reflexo do asfalto",
+              "right": "polarização"
+            }
+          ],
+          "explanation": "Quatro dos cinco fenômenos, cada um com o seu caso.",
+          "pitfall": "Ligar a piscina à reflexão esquece que a luz mudou de meio."
+        },
+        {
+          "topic": "Fica igual",
+          "statement": "Quando a onda passa de um meio para outro, não muda:",
+          "options": [
+            "a frequência",
+            "a velocidade",
+            "o comprimento de onda",
+            "a direção, quando entra inclinada",
+            "nenhuma das medidas"
+          ],
+          "correct_index": 0,
+          "explanation": "A frequência é da fonte. Mudam a velocidade e o comprimento de onda.",
+          "pitfall": "“A velocidade” é justo o que define a refração."
+        },
+        {
+          "topic": "Espelho",
+          "statement": "A imagem no espelho se forma porque a luz:",
+          "options": [
+            "bate e volta",
+            "contorna o espelho",
+            "muda de meio",
+            "se cancela",
+            "para de vibrar"
+          ],
+          "correct_index": 0,
+          "explanation": "É a reflexão.",
+          "pitfall": "“Muda de meio” seria a refração.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Óculos",
+          "statement": "Os óculos de sol polarizados servem para:",
+          "options": [
+            "cortar o reflexo da água e do asfalto",
+            "aumentar a luz",
+            "mudar a cor do céu",
+            "ouvir melhor",
+            "enxergar no escuro"
+          ],
+          "correct_index": 0,
+          "explanation": "O filtro barra a luz que vibra na direção do reflexo.",
+          "pitfall": "“Aumentar a luz” é o contrário: o filtro deixa passar só uma parte.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "AM e FM",
+          "statement": "As ondas do rádio AM contornam morros melhor que as do FM porque:",
+          "options": [
+            "têm comprimento de onda muito maior",
+            "são mais rápidas",
+            "têm maior frequência",
+            "são ondas de som",
+            "são polarizadas"
+          ],
+          "correct_index": 0,
+          "explanation": "Onda de centenas de metros contorna obstáculos grandes.",
+          "pitfall": "“Têm maior frequência” inverteu: a frequência do AM é menor.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Topos",
+          "statement": "Duas ondas iguais se encontram com os topos juntos. No ponto de encontro:",
+          "options": [
+            "a onda fica com o dobro da altura",
+            "as duas se cancelam",
+            "nada muda",
+            "as duas param",
+            "uma vira a outra"
+          ],
+          "correct_index": 0,
+          "explanation": "É a interferência construtiva: topo com topo se reforçam.",
+          "pitfall": "“As duas se cancelam” é o caso de topo com fundo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Depois",
+          "statement": "Duas ondas se cancelam num ponto de uma corda. Logo depois do encontro:",
+          "options": [
+            "cada uma segue o seu caminho, inteira",
+            "as duas desaparecem para sempre",
+            "sobra só a maior",
+            "a corda para",
+            "as duas voltam juntas"
+          ],
+          "correct_index": 0,
+          "explanation": "O cancelamento só vale no ponto e no instante do encontro.",
+          "pitfall": "“As duas desaparecem para sempre” é o distrator mais fino: a energia não some, e as ondas continuam.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Prova",
+          "statement": "A polarização da luz mostra que ela é uma onda transversal porque:",
+          "options": [
+            "só onda que vibra atravessada ao caminho tem direção para filtrar",
+            "a luz anda no vazio",
+            "a luz é muito rápida",
+            "a luz se reflete",
+            "o som também se polariza"
+          ],
+          "correct_index": 0,
+          "explanation": "Uma onda longitudinal não teria direção de vibração para barrar.",
+          "pitfall": "“A luz anda no vazio” é verdade, mas não diz nada sobre a direção em que ela vibra: é o distrator mais fino.",
+          "difficulty": "dificil"
+        }
+      ]
+    }
+  ]
+}

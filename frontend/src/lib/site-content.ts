@@ -747,6 +747,26 @@ export const SUBJECTS: SiteSubject[] = [
       "Propriedades coligativas: o que o soluto muda na água",
     ],
   },
+  {
+    slug: "eletricidade-magnetismo-e-ondas",
+    name: "Eletricidade, magnetismo e ondas",
+    pitch:
+      "Circuitos e conta de luz, ímãs, indução e transformador, ondas, som e o espectro eletromagnético: a Física que vem com situação de casa.",
+    lessons: [
+      "Carga elétrica: o balão, o atrito e o para-raios",
+      "Lei de Ohm: corrente, tensão e resistência na conta",
+      "Potência e consumo: o chuveiro, o kWh e a conta de luz",
+      "Circuitos: série, paralelo e resistência equivalente",
+      "Ímãs e campo magnético: as linhas que a bússola segue",
+      "Corrente que vira ímã: o eletroímã, a força e o motor",
+      "Indução: o ímã em movimento que gera corrente",
+      "Corrente alternada, transformador e o caminho até a tomada",
+      "Ondas a fundo: tipos, medidas e a conta v = λ · f",
+      "O som a fundo: altura, volume, timbre, eco e Doppler",
+      "O espectro eletromagnético: do rádio aos raios gama",
+      "O que as ondas fazem ao encontrar um obstáculo",
+    ],
+  },
 ];
 
 /** Números da vitrine. Calculados, para nunca discordarem da lista acima. */
@@ -763,5 +783,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 6076,
+  questions: 6244,
 };
