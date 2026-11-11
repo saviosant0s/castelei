@@ -95,15 +95,26 @@ class User extends Authenticatable
         return Plans::seesRealPlan($this->email);
     }
 
+    /**
+     * O plano que entra nas contas de acesso. Quem administra estuda como Pro:
+     * precisa abrir tudo para conferir o que publica, e sem pagamento no ar
+     * não teria como chegar lá. A exceção é a conta de `REAL_PLAN_EMAILS`,
+     * que existe justamente para ver o app como o plano guardado.
+     */
+    private function accessPlan(): string
+    {
+        return $this->isAdmin() && ! $this->seesRealPlan() ? 'pro' : (string) $this->plan;
+    }
+
     public function questionLimit(): ?int
     {
-        return Plans::questionLimit($this->plan, $this->seesRealPlan());
+        return Plans::questionLimit($this->accessPlan(), $this->seesRealPlan());
     }
 
     /** O plano que vale na prática (na fase de testes, todo mundo estuda como Pro). */
     public function effectivePlan(): string
     {
-        return Plans::effective($this->plan, $this->seesRealPlan());
+        return Plans::effective($this->accessPlan(), $this->seesRealPlan());
     }
 
     public function planLabel(): string
@@ -113,28 +124,28 @@ class User extends Authenticatable
 
     public function hasGamification(): bool
     {
-        return Plans::hasGamification($this->plan, $this->seesRealPlan());
+        return Plans::hasGamification($this->accessPlan(), $this->seesRealPlan());
     }
 
     public function hasLevels(): bool
     {
-        return Plans::hasLevels($this->plan, $this->seesRealPlan());
+        return Plans::hasLevels($this->accessPlan(), $this->seesRealPlan());
     }
 
     /** Abre qualquer lição sem ver a anterior: Pro, ou quem administra o conteúdo. */
     public function canSkipLessons(): bool
     {
-        return $this->isAdmin() || Plans::canSkipLessons($this->plan, $this->seesRealPlan());
+        return $this->isAdmin() || Plans::canSkipLessons($this->accessPlan(), $this->seesRealPlan());
     }
 
     public function hasClassrooms(): bool
     {
-        return Plans::hasClassrooms($this->plan, $this->seesRealPlan());
+        return Plans::hasClassrooms($this->accessPlan(), $this->seesRealPlan());
     }
 
     public function hasExam(): bool
     {
-        return Plans::hasExam($this->plan, $this->seesRealPlan());
+        return Plans::hasExam($this->accessPlan(), $this->seesRealPlan());
     }
 
     /** A meta de XP do dia: a escolhida, ou a padrão. */

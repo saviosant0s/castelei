@@ -50,4 +50,24 @@ class PlansTest extends TestCase
         $this->assertSame(8, Plans::questionLimit('free', true));
         $this->assertFalse(Plans::hasExam('free', true));
     }
+
+    public function test_quem_administra_estuda_como_pro_menos_a_conta_de_plano_real(): void
+    {
+        config(['castelei.unlock_all' => false, 'castelei.admin_emails' => 'chefe@teste.dev,teste@teste.dev', 'castelei.real_plan_emails' => 'teste@teste.dev']);
+
+        $admin = new \App\Models\User(['email' => 'chefe@teste.dev', 'plan' => 'free']);
+        $this->assertTrue($admin->hasExam());
+        $this->assertTrue($admin->hasLevels());
+        $this->assertTrue($admin->hasClassrooms());
+        $this->assertNull($admin->questionLimit());
+
+        // A conta de plano real existe para ver o app como o grátis de verdade.
+        $teste = new \App\Models\User(['email' => 'teste@teste.dev', 'plan' => 'free']);
+        $this->assertFalse($teste->hasExam());
+        $this->assertSame(8, $teste->questionLimit());
+
+        $aluno = new \App\Models\User(['email' => 'aluno@teste.dev', 'plan' => 'free']);
+        $this->assertFalse($aluno->hasExam());
+        $this->assertFalse($aluno->canSkipLessons());
+    }
 }
