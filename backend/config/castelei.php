@@ -84,6 +84,7 @@ return [
             'steps' => [
                 ['subject' => 'fisica-basica', 'name' => 'Física', 'why' => 'Movimento, energia e eletricidade: as contas e os conceitos que aparecem em situações do dia a dia.'],
                 ['subject' => 'termodinamica-optica-e-fisica-moderna', 'name' => 'Termodinâmica, óptica e física moderna', 'why' => 'Calor, gases, espelhos, lentes e radiação: a outra metade da Física que o ENEM cobra.'],
+                ['subject' => 'eletricidade-magnetismo-e-ondas', 'name' => 'Eletricidade, magnetismo e ondas', 'why' => 'Circuitos, conta de luz, ímãs, indução e ondas: a Física que vem com situação de casa.'],
                 ['subject' => 'quimica-basica', 'name' => 'Química', 'why' => 'Átomos, ligações, reações e soluções: do que as coisas são feitas e como se transformam.'],
                 ['subject' => 'quimica-organica', 'name' => 'Química orgânica', 'why' => 'Cadeias de carbono, funções, combustíveis e plásticos: o assunto de Química que mais cai.'],
                 ['subject' => 'fisico-quimica', 'name' => 'Físico-química', 'why' => 'Mol, estequiometria, energia, equilíbrio, pH e pilhas: as contas de Química que o ENEM cobra.'],
@@ -198,7 +199,7 @@ return [
             ['name' => 'Fundamentos', 'items' => ['fisica-basica']],
             ['name' => 'Mecânica', 'items' => [['soon' => 'Leis de Newton e mecânica a fundo']]],
             ['name' => 'Calor, luz e física moderna', 'items' => ['termodinamica-optica-e-fisica-moderna']],
-            ['name' => 'Eletricidade e ondas', 'items' => [['soon' => 'Eletricidade, magnetismo e ondas']]],
+            ['name' => 'Eletricidade e ondas', 'items' => ['eletricidade-magnetismo-e-ondas']],
         ],
         'quimica' => [
             ['name' => 'Fundamentos', 'items' => ['quimica-basica']],
