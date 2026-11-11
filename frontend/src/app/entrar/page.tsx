@@ -3,7 +3,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { AuthForm } from "@/components/AuthForm";
 import { GoogleButton, OrDivider } from "@/components/GoogleButton";
-import { Logo } from "@/components/Logo";
+import { CastleMark } from "@/components/Logo";
 import { Callout } from "@/components/ui";
 import { currentUser } from "@/lib/backend";
 import { googleEnabled } from "@/lib/google";
@@ -29,9 +29,13 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ e
 
   return (
     <main className="mx-auto min-h-dvh max-w-md px-6 pb-12 pt-6">
-      <Link href="/" aria-label="Página inicial do Castelei"><Logo /></Link>
-      <h1 className="mt-12 text-4xl">Bem-vindo de volta</h1>
-      <p className="mt-3 text-base text-content-secondary">Entre para continuar de onde parou.</p>
+      {/* Marca grande e topo centralizado, como nas telas do app: é a primeira
+          tela que a pessoa vê, e alinhada à esquerda tinha cara de formulário de site. */}
+      <Link href="/" aria-label="Página inicial do Castelei" className="mx-auto mt-6 block w-fit">
+        <CastleMark className="size-16" />
+      </Link>
+      <h1 className="mt-5 text-center text-4xl">Bem-vindo de volta</h1>
+      <p className="mx-auto mt-2 max-w-xs text-center text-base text-balance text-content-secondary">Entre para continuar de onde parou.</p>
 
       {visitante && (
         <div className="mt-6">
