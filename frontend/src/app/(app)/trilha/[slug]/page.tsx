@@ -28,7 +28,7 @@ export default async function TrilhaPage({ params }: { params: Promise<{ slug: s
   return (
     <div className="space-y-6">
       <header>
-        <PageHero eyebrow="Trilha de estudo" title={trail.name}>
+        <PageHero title={trail.name}>
           {trail.description}
         </PageHero>
         <ProgressBar

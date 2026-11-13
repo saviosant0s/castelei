@@ -87,10 +87,8 @@ export default async function MateriaPage({ params }: { params: Promise<{ slug: 
           {atalhos > 0 && (
             <div className={`grid gap-3 ${atalhos === 2 ? "grid-cols-2" : "grid-cols-1"}`}>
               {simuladoLiberado && (
-                <Card href={`/simulado/${subject.slug}`} size="sm" className="flex flex-col gap-3">
-                  <span className="grid size-10 place-items-center rounded-control bg-coral-soft text-coral">
-                    <ClipboardCheck className="size-5" aria-hidden="true" />
-                  </span>
+                <Card href={`/simulado/${subject.slug}`} size="sm" className="flex items-start gap-2.5">
+                  <ClipboardCheck className="mt-0.5 size-5 shrink-0 text-coral" aria-hidden="true" />
                   <span>
                     <span className="block text-base font-bold">Simulado</span>
                     <span className="block text-sm text-content-subtle">
@@ -107,10 +105,8 @@ export default async function MateriaPage({ params }: { params: Promise<{ slug: 
               | das etapas das lições, então cresce sozinha com o conteúdo.
               */}
               {subject.vocabulary_terms > 0 && (
-                <Card href={`/materia/${subject.slug}/vocabulario`} size="sm" className="flex flex-col gap-3">
-                  <span className="grid size-10 place-items-center rounded-control bg-sky-soft text-sky">
-                    <BookA className="size-5" aria-hidden="true" />
-                  </span>
+                <Card href={`/materia/${subject.slug}/vocabulario`} size="sm" className="flex items-start gap-2.5">
+                  <BookA className="mt-0.5 size-5 shrink-0 text-sky" aria-hidden="true" />
                   <span>
                     <span className="block text-base font-bold">Vocabulário</span>
                     <span className="block text-sm text-content-subtle">
@@ -124,7 +120,7 @@ export default async function MateriaPage({ params }: { params: Promise<{ slug: 
 
           {subject.exam.available && !subject.exam.unlocked && (
             <Callout role="bloqueado" icon={ClipboardCheck} href="/planos">
-              <strong>Simulado da matéria.</strong> Mistura questões de todas as lições — faz parte do plano Pro.
+              <strong>Simulado da matéria.</strong> Mistura questões de todas as lições. Faz parte do plano Pro.
             </Callout>
           )}
         </div>

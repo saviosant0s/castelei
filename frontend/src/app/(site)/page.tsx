@@ -38,7 +38,7 @@ const layers = [
   {
     icon: Lightbulb,
     title: "Pegadinhas",
-    text: "Os erros mais comuns, mostrados antes de você cair neles — e não depois, no gabarito.",
+    text: "Os erros mais comuns, mostrados antes de você cair neles, e não depois, no gabarito.",
     indent: "sm:ml-20",
   },
 ];
@@ -47,7 +47,7 @@ const features = [
   {
     icon: Timer,
     title: "Modo Prova, com cronômetro",
-    text: "Terminada a lição, você responde questões no tempo — porque saber o assunto e resolver sob pressão são duas habilidades diferentes.",
+    text: "Terminada a lição, você responde questões no tempo. Saber o assunto e resolver sob pressão são duas habilidades diferentes.",
   },
   {
     icon: Target,
@@ -83,7 +83,7 @@ const faq = [
   },
   {
     q: "Serve para qual prova?",
-    a: "Para qualquer prova que cobre os assuntos do catálogo — trabalho de faculdade, concurso, vestibular. O que o Castelei treina é o assunto e o jeito que a banca pergunta, e esse jeito se repete.",
+    a: "Para qualquer prova que cobre os assuntos do catálogo: trabalho de faculdade, concurso, vestibular. O que o Castelei treina é o assunto e o jeito que a banca pergunta, e esse jeito se repete.",
   },
   {
     q: "É mais um app que só mostra videoaula?",
@@ -91,7 +91,7 @@ const faq = [
   },
   {
     q: "E os meus dados?",
-    a: "Guardamos o mínimo: quem é você e como você está indo. Sem anúncios, sem rastreador de terceiros, sem venda de dados. Está tudo escrito na Política de Privacidade — e você apaga a conta pelo próprio app, quando quiser.",
+    a: "Guardamos o mínimo: quem é você e como você está indo. Sem anúncios, sem rastreador de terceiros, sem venda de dados. Está tudo escrito na Política de Privacidade, e você apaga a conta pelo próprio app, quando quiser.",
   },
 ];
 
@@ -235,7 +235,7 @@ export default async function Landing() {
         <Card tone="sage" size="lg" radius="panel" className="mt-6">
           <p className="text-base">
             <strong>Tudo liberado enquanto o app está em testes.</strong> Os planos abaixo mostram como vai ficar
-            depois — e quase tudo continua no grátis.
+            depois, e quase tudo continua no grátis.
           </p>
         </Card>
 

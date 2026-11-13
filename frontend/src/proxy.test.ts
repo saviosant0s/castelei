@@ -1,6 +1,8 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { NextRequest } from "next/server";
-import { marcaDaSessao, proxy, SESSAO_HEADER } from "./proxy";
+import { readdirSync } from "node:fs";
+import { resolve } from "node:path";
+import { config, marcaDaSessao, proxy, SESSAO_HEADER } from "./proxy";
 import { TOKEN_COOKIE } from "@/lib/proxy";
 
 const jsonResponse = (body: unknown, status = 200) =>
@@ -80,5 +82,14 @@ describe("proxy (telas protegidas)", () => {
     expect(res.status).toBe(200);
     expect(res.headers.get(SESSAO_HEADER)).toBe("nenhuma");
     expect(fetchMock).not.toHaveBeenCalled(); // não cria visitante na tela de entrar
+  });
+
+  it("protege toda tela do app (tela nova fora do matcher abre sem sessão e quebra)", () => {
+    const telas = readdirSync(resolve(__dirname, "app/(app)"), { withFileTypes: true })
+      .filter((d) => d.isDirectory() && !d.name.startsWith("@") && !d.name.startsWith("("))
+      .map((d) => d.name);
+    // A lição e a prática moram em /licao; o simulado tem trava própria na página.
+    const fora = telas.filter((t) => !config.matcher.includes(`/${t}/:path*`) && t !== "simulado");
+    expect(fora).toEqual([]);
   });
 });

@@ -38,6 +38,8 @@ export interface LessonSummary {
   read?: boolean;
   /** trancada até ver a anterior (ler ou praticar); nunca para o Pro */
   locked?: boolean;
+  /** questões por nível (só os que existem); vazio = lição sem nível */
+  levels?: Partial<Record<Difficulty, number>>;
 }
 
 /** Situação do simulado de uma matéria. `unlocked` false = existe, mas o plano não inclui. */
@@ -92,6 +94,8 @@ export interface SubjectsResponse {
   /** As trilhas de estudo, com os passos já na ordem. */
   trails?: Trail[];
   subjects: Subject[];
+  /** praticar por nível é do Pro: a tela Questões mostra os níveis trancados para o grátis */
+  can_use_levels?: boolean;
 }
 
 export interface Subject {

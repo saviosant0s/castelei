@@ -186,10 +186,10 @@ function Chart({ points, measure }: { points: EvolutionPoint[]; measure: Measure
           {isAccuracy
             ? better
               ? "Seu acerto subiu desde a primeira destas práticas."
-              : "Seu acerto caiu um pouco — vale revisar os pontos fracos."
+              : "Seu acerto caiu um pouco. Vale revisar os pontos fracos."
             : better
               ? "Você está resolvendo mais rápido do que antes."
-              : "Você está levando mais tempo — questões novas costumam pesar no começo."}
+              : "Você está levando mais tempo. Questões novas costumam pesar no começo."}
         </p>
       )}
     </figure>

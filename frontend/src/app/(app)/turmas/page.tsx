@@ -19,7 +19,7 @@ export default async function TurmasPage() {
 
   return (
     <div className="space-y-8">
-      <PageHero eyebrow="Estudo" title="Turmas">
+      <PageHero title="Turmas">
         Estude a matéria junto com a sua turma.
       </PageHero>
 

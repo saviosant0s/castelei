@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Mic, NotebookPen, Sparkles, Square } from "lucide-react";
+import { CheckCheck, Mic, NotebookPen, Square } from "lucide-react";
 import { getJson, messageOf, postJson, putJson } from "@/lib/client";
 import Link from "next/link";
 import { formatDateTime } from "@/lib/format";
@@ -170,7 +170,7 @@ export function LessonNote({ lessonId, bare = false }: { lessonId: number; bare?
             disabled={correcao.carregando || texto.trim().length < 20 || ditado.listening}
             className="btn btn-dark w-full"
           >
-            <Sparkles className="size-5" aria-hidden="true" />
+            <CheckCheck className="size-5" aria-hidden="true" />
             {correcao.carregando ? "Corrigindo…" : correcao.dados ? "Corrigir de novo" : "Corrigir minha explicação"}
           </button>
           {texto.trim().length < 20 && !correcao.dados && (

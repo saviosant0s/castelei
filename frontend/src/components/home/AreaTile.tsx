@@ -45,9 +45,8 @@ export function AreaTile({ href, name, icon: Icon, index, practiced, total }: Ar
       aria-label={`${name}: ${practiced} de ${total} lições praticadas`}
       className={`flex h-full items-center gap-2.5 rounded-card px-3 py-3.5 transition hover:-translate-y-0.5 active:translate-y-0.5 ${cor.peca}`}
     >
-      <span className={`grid size-10 shrink-0 place-items-center rounded-control bg-surface-raised shadow-lift ${cor.icone}`}>
-        <Icon className="size-5" aria-hidden="true" />
-      </span>
+      {/* O ícone vai solto na cor da peça: num quadradinho, era o molde de tela gerada por IA. */}
+      <Icon className={`size-6 shrink-0 ${cor.icone}`} aria-hidden="true" />
       <span className="min-w-0 flex-1">
         <span className="block font-display text-[15px] leading-tight font-bold">{name}</span>
         {/* Barra e número juntos: barra sozinha obriga a medir a olho. */}

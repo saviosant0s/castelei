@@ -40,7 +40,7 @@ export default function ExcluirConta() {
           <p className="mt-3">
             Tudo: seu cadastro (nome e e-mail), o histórico de questões respondidas, o acerto por tópico,
             os tempos, o XP, os dias seguidos e as conquistas. A exclusão é imediata e{" "}
-            <strong>não tem volta</strong> — não guardamos cópia para restaurar depois.
+            <strong>não tem volta</strong>: não guardamos cópia para restaurar depois.
           </p>
         </section>
 

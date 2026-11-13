@@ -56,4 +56,21 @@ class DifficultyTest extends TestCase
             ->assertJsonPath('lesson.levels.media', 1);
         $this->postJson("/api/lessons/{$lesson->id}/attempts", ['level' => 'media'])->assertJsonCount(1, 'questions');
     }
+
+    /** A tela Questões monta a escolha de nível com a lista de matérias, sem uma chamada por lição. */
+    public function test_a_lista_de_materias_traz_os_niveis_de_cada_licao(): void
+    {
+        config(['castelei.unlock_all' => false]);
+        $lesson = $this->makeLesson(11);
+        $lesson->questions()->where('position', '>', 8)->get()
+            ->each(fn ($q) => $q->update(['difficulty' => $q->position === 9 ? 'facil' : 'dificil']));
+
+        Sanctum::actingAs(User::factory()->create(['plan' => 'free']));
+        $resposta = $this->getJson('/api/subjects')->assertOk()->assertJsonPath('can_use_levels', false);
+        $licao = collect($resposta->json('subjects'))->flatMap(fn ($s) => $s['lessons'])->firstWhere('id', $lesson->id);
+        $this->assertEquals(['facil' => 1, 'dificil' => 2], $licao['levels']);
+
+        Sanctum::actingAs(User::factory()->create(['plan' => 'pro']));
+        $this->getJson('/api/subjects')->assertJsonPath('can_use_levels', true);
+    }
 }

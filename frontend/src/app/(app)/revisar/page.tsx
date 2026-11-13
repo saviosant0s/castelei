@@ -22,7 +22,7 @@ export default async function Revisar() {
   if (due.length === 0) {
     return (
       <div className="space-y-8">
-        <PageHero eyebrow="Revisão" title={next ? "Tudo em dia" : "Nada para revisar"} />
+        <PageHero title={next ? "Tudo em dia" : "Nada para revisar"} />
 
         {next ? (
           <>
@@ -31,9 +31,7 @@ export default async function Revisar() {
                 Próxima revisão
               </h2>
               <Card size="lg" className="flex items-start gap-4">
-                <span className="grid size-11 shrink-0 place-items-center rounded-control bg-sky-soft text-sky">
-                  <CalendarClock className="size-6" aria-hidden="true" />
-                </span>
+                <CalendarClock className="mt-1 size-6 shrink-0 text-sky" aria-hidden="true" />
                 <span className="min-w-0 flex-1">
                   <span className="block font-display text-xl font-bold">{next.lesson_title}</span>
                   {next.subject_name && <span className="block text-sm text-content-subtle">{next.subject_name}</span>}
@@ -66,7 +64,7 @@ export default async function Revisar() {
 
   return (
     <div className="space-y-8">
-      <PageHero eyebrow="Revisão" title={tituloDaFila(due.length)}>
+      <PageHero title={tituloDaFila(due.length)}>
         {COMO_FUNCIONA}
       </PageHero>
 

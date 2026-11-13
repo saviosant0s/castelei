@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { History, House, User, Users } from "lucide-react";
+import { History, House, ListChecks, User, Users } from "lucide-react";
 
 /*
 | Quatro abas. Revisar ganhou a sua (pedido do Sávio): é o hábito de todo
@@ -17,6 +17,8 @@ import { History, House, User, Users } from "lucide-react";
 */
 const items = [
   { href: "/inicio", label: "Início", icon: House },
+  // Treinar fora da trilha: a matéria, a lição e, no Pro, o nível (novembro de 2026).
+  { href: "/questoes", label: "Questões", icon: ListChecks },
   { href: "/revisar", label: "Revisar", icon: History },
   { href: "/turmas", label: "Turmas", icon: Users },
   { href: "/perfil", label: "Perfil", icon: User },

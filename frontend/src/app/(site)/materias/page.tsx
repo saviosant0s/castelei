@@ -29,7 +29,7 @@ export default async function Materias() {
           Toda lição segue a mesma receita: explicação humana, como o assunto cai na prova e as pegadinhas
           mais comuns
           {/* O número só é dito enquanto for verdade em toda lição. */}
-          {questionsPerLesson ? ` — e termina com ${questionsPerLesson} questões em modo prova.` : ", e termina em modo prova, com cronômetro."}
+          {questionsPerLesson ? `, e termina com ${questionsPerLesson} questões em modo prova.` : ", e termina em modo prova, com cronômetro."}
         </p>
         <p className="mt-6 font-mono text-sm text-content-subtle">
           {totals.subjects} matérias · {totals.lessons} lições · {totals.questions} questões

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ChartColumn, ChevronRight, CloudUpload, Crown, LogIn, Medal, Palette, Search, ShieldCheck, SlidersHorizontal, Sparkles, TrendingUp, Volume2 } from "lucide-react";
+import { ChartColumn, MessageCircleQuestion, ChevronRight, CloudUpload, Crown, LogIn, Medal, Palette, Search, ShieldCheck, SlidersHorizontal, TrendingUp, Volume2 } from "lucide-react";
 import { DeleteAccountButton } from "@/components/DeleteAccountButton";
 import { InstallButton } from "@/components/InstallButton";
 import { LogoutButton } from "@/components/LogoutButton";
@@ -52,9 +52,7 @@ export default async function Perfil({ searchParams }: { searchParams: Promise<{
           href="/planos"
           className="flex items-center gap-4 rounded-card bg-surface-bold p-5 text-on-bold shadow-lift transition hover:-translate-y-0.5"
         >
-          <span className="grid size-11 shrink-0 place-items-center rounded-control bg-sky text-on-accent">
-            <Crown className="size-6" aria-hidden="true" />
-          </span>
+          <Crown className="size-6 shrink-0 text-sky" aria-hidden="true" />
           <span className="min-w-0 flex-1">
             <span className="block text-sm on-bold-secondary">Seu plano</span>
             <span className="block font-display text-2xl font-bold">{user.plan_label}</span>
@@ -83,7 +81,7 @@ export default async function Perfil({ searchParams }: { searchParams: Promise<{
             icon={CloudUpload}
             iconTone="sage"
             title="Criar minha conta"
-            description="Leva tudo que você já estudou aqui. Depois é só entrar em qualquer aparelho."
+            description="Para não perder o que já estudou."
             href="/cadastro"
           />
           <SettingsRow icon={LogIn} iconTone="sky" title="Já tenho conta: entrar" href="/entrar" />
@@ -96,11 +94,10 @@ export default async function Perfil({ searchParams }: { searchParams: Promise<{
           icon={ChartColumn}
           iconTone="sky"
           title="Resumo"
-          description="Como você está, a semana e as lições mais fracas."
           href="/progresso"
         />
-        <SettingsRow icon={TrendingUp} iconTone="sage" title="Evolução" description="O acerto e o tempo ao longo das semanas." href="/progresso/evolucao" />
-        <SettingsRow icon={Medal} iconTone="coral" title="Conquistas" description="As medalhas que você já ganhou e as que faltam." href="/progresso/conquistas" />
+        <SettingsRow icon={TrendingUp} iconTone="sage" title="Evolução" href="/progresso/evolucao" />
+        <SettingsRow icon={Medal} iconTone="coral" title="Conquistas" href="/progresso/conquistas" />
       </SettingsGroup>
 
       <SettingsGroup id="aparencia" title="Aparência e som">
@@ -108,14 +105,12 @@ export default async function Perfil({ searchParams }: { searchParams: Promise<{
           icon={Palette}
           iconTone="sky"
           title="Tema"
-          description="No automático, segue o tema do aparelho."
           below={<ThemeToggle />}
         />
         <SettingsRow
           icon={Volume2}
           iconTone="sage"
           title="Som nas respostas"
-          description="Um toque curto ao acertar e ao errar."
           trailing={<SoundToggle />}
         />
       </SettingsGroup>
@@ -126,14 +121,12 @@ export default async function Perfil({ searchParams }: { searchParams: Promise<{
           icon={Search}
           iconTone="sky"
           title="Buscar"
-          description="Lições, palavras do vocabulário e as suas anotações."
           href="/buscar"
         />
         <SettingsRow
-          icon={Sparkles}
+          icon={MessageCircleQuestion}
           iconTone="coral"
           title="Minhas dúvidas e correções"
-          description="O que você perguntou à IA e o que ela corrigiu, para rever sem gastar de novo."
           href="/correcoes"
         />
         <PushToggle />
@@ -146,7 +139,6 @@ export default async function Perfil({ searchParams }: { searchParams: Promise<{
           <SettingsRow
             icon={SlidersHorizontal}
             title="Painel de conteúdo"
-            description="Matérias, lições, questões e mídia"
             href="/admin"
           />
         )}

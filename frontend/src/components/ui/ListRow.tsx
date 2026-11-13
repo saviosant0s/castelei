@@ -20,7 +20,7 @@ export function ListRow({ href, leading, title, meta }: ListRowProps) {
   return (
     <Card href={href} size="sm" className="flex items-center gap-4">
       {leading && (
-        <span className="grid size-11 shrink-0 place-items-center rounded-control bg-surface-sunken font-mono text-base font-medium">
+        <span className="grid w-8 shrink-0 place-items-center font-mono text-base font-medium text-content-secondary">
           {leading}
         </span>
       )}

@@ -1,22 +1,15 @@
 "use client";
 
-import { LevelPicker } from "@/components/LevelPicker";
 import { LessonStudyBox } from "@/components/study/LessonStudyBox";
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import {
   ArrowLeft,
   ArrowRight,
-  BookOpen,
-  Check,
-  Lightbulb,
   Pause,
   Play,
-  Sparkles,
-  Target,
   Volume2,
   X,
-  type LucideIcon,
 } from "lucide-react";
 import { LessonVideo } from "@/components/LessonVideo";
 import { StepCode } from "@/components/StepCode";
@@ -31,13 +24,13 @@ import type { LessonDetail, StepKind } from "@/lib/types";
 
 const KIND: Record<
   StepKind,
-  { label: string; icon: LucideIcon; chip: string }
+  { label: string }
 > = {
-  idea: { label: "Para começar", icon: Sparkles, chip: "bg-sky-soft" },
-  explain: { label: "Explicando", icon: BookOpen, chip: "bg-paper-2" },
-  exam: { label: "Como cai na prova", icon: Target, chip: "bg-coral-soft" },
-  pitfall: { label: "Pegadinhas", icon: Lightbulb, chip: "bg-coral-soft" },
-  recap: { label: "Resumo em 1 minuto", icon: Check, chip: "bg-sage-soft" },
+  idea: { label: "Para começar" },
+  explain: { label: "Explicando" },
+  exam: { label: "Como cai na prova" },
+  pitfall: { label: "Pegadinhas" },
+  recap: { label: "Resumo em 1 minuto" },
 };
 
 /** A lição, uma ideia por tela. */
@@ -148,7 +141,6 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
 
   if (!step) return null;
   const meta = KIND[step.kind];
-  const Icon = meta.icon;
 
   return (
     <div className="mx-auto min-h-dvh max-w-md px-5 pb-44 pt-4">
@@ -230,11 +222,13 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
 
       <article key={index} className="anim-rise mt-2">
         <div className="flex items-center justify-between gap-3">
-          <p
-            className={`inline-flex items-center gap-2 rounded-full px-3 py-1.5 font-mono text-sm font-medium ${meta.chip}`}
-          >
-            <Icon className="size-4" aria-hidden="true" /> {meta.label}
-          </p>
+          {/*
+            O tipo da etapa vai como rótulo de texto, sem selo, ícone nem fonte
+            de máquina: selo em pílula com ícone era um dos sinais de tela
+            gerada por IA. E some quando repete o título da etapa ("Resumo em
+            1 minuto" aparecia duas vezes, uma em cima da outra).
+          */}
+          {meta.label !== step.title ? <p className="label-mono">{meta.label}</p> : <span />}
           {audioSrc && (
             <button
               type="button"
@@ -332,9 +326,6 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
       </article>
 
       {/* O caderno da lição mora na etapa de resumo: depois de ler, antes de praticar. */}
-      {isLast && lesson.levels && (
-        <LevelPicker lessonId={lesson.id} levels={lesson.levels} canUse={lesson.can_use_levels ?? false} />
-      )}
       {isLast && <LessonStudyBox lessonId={lesson.id} />}
 
       <div className="fixed inset-x-0 bottom-0 z-20 border-t border-ink/10 bg-surface/95 backdrop-blur">

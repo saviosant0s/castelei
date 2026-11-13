@@ -62,10 +62,10 @@ describe("AppBar", () => {
 });
 
 describe("BottomNav", () => {
-  it("tem quatro abas, com Turmas no lugar de Progresso", () => {
+  it("tem cinco abas, com Questões logo depois do Início", () => {
     render(<BottomNav reviewsDue={0} />);
 
-    expect(screen.getAllByRole("link").map((a) => a.textContent)).toEqual(["Início", "Revisar", "Turmas", "Perfil"]);
+    expect(screen.getAllByRole("link").map((a) => a.textContent)).toEqual(["Início", "Questões", "Revisar", "Turmas", "Perfil"]);
   });
 
   it("o Progresso acende o Perfil, que é onde ele mora agora", () => {

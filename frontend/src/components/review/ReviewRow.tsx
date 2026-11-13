@@ -23,9 +23,7 @@ export function ReviewRow({ item }: { item: ReviewItem }) {
   return (
     <li>
       <Card href={`/licao/${item.lesson_id}`} size="sm" className="flex items-center gap-4">
-        <span className="grid size-11 shrink-0 place-items-center rounded-control bg-sky-soft text-sky">
-          <RotateCcw className="size-5" aria-hidden={true} />
-        </span>
+        <RotateCcw className="size-5 shrink-0 text-sky" aria-hidden={true} />
         <span className="min-w-0 flex-1">
           {/*
             `line-clamp-2`, nunca `truncate`: Sistemas Operacionais tem duas
