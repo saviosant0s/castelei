@@ -205,10 +205,10 @@
           "statement": "Qual destes é um exemplo de software?",
           "options": [
             "um aplicativo de mensagens",
-            "o teclado",
-            "a tela",
-            "o mouse",
-            "a impressora"
+            "o teclado do computador",
+            "a tela do celular",
+            "o mouse sem fio",
+            "a placa de vídeo"
           ],
           "correct_index": 0,
           "explanation": "O aplicativo é um programa: não dá para tocar nele.",
@@ -233,10 +233,10 @@
           "statement": "O sistema operacional tem a função de:",
           "options": [
             "comandar as peças e permitir que os outros programas rodem",
-            "imprimir documentos",
-            "editar fotos",
-            "navegar na internet",
-            "ser uma peça física do computador"
+            "imprimir documentos e fotos em papel",
+            "editar fotos e vídeos guardados no computador",
+            "ser uma peça física que fica dentro do gabinete",
+            "guardar os arquivos mesmo com o computador desligado"
           ],
           "correct_index": 0,
           "explanation": "Ele é o programa principal, que abre e cuida dos outros.",
@@ -358,9 +358,9 @@
           "statement": "O computador fica lento com muitos programas abertos. A peça mais ligada a isso é:",
           "options": [
             "a memória RAM, que enche",
-            "o teclado",
-            "a impressora",
-            "o monitor",
+            "o teclado e o mouse",
+            "a impressora ligada",
+            "o monitor, que esquenta",
             "a caixa de som"
           ],
           "correct_index": 0,
@@ -373,10 +373,10 @@
           "statement": "Você escreve um texto e o computador desliga sem você salvar. O texto se perde porque:",
           "options": [
             "estava só na memória RAM, que se apaga",
-            "o armazenamento apagou",
-            "o teclado guardou",
-            "o processador quebrou",
-            "o monitor desligou"
+            "o armazenamento apagou tudo de propósito",
+            "o teclado guardou o texto e não o passou",
+            "o processador quebrou com a queda de luz",
+            "o monitor desligou e levou o texto junto"
           ],
           "correct_index": 0,
           "explanation": "Salvar é passar da bancada para a despensa.",
@@ -388,10 +388,10 @@
           "statement": "Um pen drive tem 32 GB. Cabem nele, mais ou menos, quantos arquivos de 1 MB?",
           "options": [
             "cerca de 32 mil",
-            "32",
-            "320",
-            "3,2 milhões",
-            "3.200"
+            "cerca de 32",
+            "cerca de 320",
+            "cerca de 3.200",
+            "cerca de 3,2 milhões"
           ],
           "correct_index": 0,
           "explanation": "1 GB tem cerca de mil MB: 32 × 1.000 = 32 mil.",
@@ -403,10 +403,10 @@
           "statement": "Qual frase está certa?",
           "options": [
             "um computador precisa de hardware e de software para funcionar",
-            "só o hardware basta",
-            "só o software basta",
-            "o software é a parte física",
-            "o sistema operacional é uma peça"
+            "só o hardware basta, porque as peças fazem tudo",
+            "só o software basta, porque ele funciona sozinho",
+            "o software é a parte física, que dá para tocar",
+            "o sistema operacional é uma peça dentro do gabinete"
           ],
           "correct_index": 0,
           "explanation": "As peças fazem o trabalho, e os programas dizem o que fazer.",
@@ -631,10 +631,10 @@
           "statement": "Qual a diferença entre copiar e recortar?",
           "options": [
             "recortar tira do lugar original; copiar deixa uma cópia lá",
-            "não há diferença",
-            "copiar apaga o original",
-            "recortar só funciona com imagens",
-            "copiar só funciona no Linux"
+            "não há diferença, só muda o nome no menu",
+            "copiar apaga o original e deixa só a cópia",
+            "recortar só funciona com imagens e fotos",
+            "copiar só funciona no Linux, e recortar no Windows"
           ],
           "correct_index": 0,
           "explanation": "Ao colar depois de recortar, o arquivo muda de lugar.",
@@ -674,9 +674,9 @@
           "options": [
             "/home/ana/Documentos/foto.jpg",
             "C:\\Users\\Ana\\foto.jpg",
-            "www.foto.com",
-            "foto@ana.com",
-            "Ctrl + C"
+            "www.ana.com/foto.jpg",
+            "ana@foto.com.br",
+            "Ctrl + C e Ctrl + V"
           ],
           "correct_index": 0,
           "explanation": "No Linux, as pastas são separadas por / a partir de /home.",
@@ -771,10 +771,10 @@
           "statement": "No Windows, um jeito rápido de achar um arquivo é:",
           "options": [
             "apertar a tecla do Windows e digitar o nome",
-            "desligar o computador",
-            "abrir a lixeira",
-            "apertar Ctrl + Z",
-            "olhar a impressora"
+            "desligar e ligar o computador de novo",
+            "abrir a lixeira e procurar lá dentro",
+            "apertar Ctrl + Z várias vezes seguidas",
+            "abrir cada pasta até achar o arquivo"
           ],
           "correct_index": 0,
           "explanation": "A busca do menu Iniciar procura arquivos e programas.",
@@ -786,10 +786,10 @@
           "statement": "Trocar o nome de musica.mp3 para musica.jpg faz o quê?",
           "options": [
             "confunde o programa, mas o arquivo continua sendo música",
-            "transforma a música em imagem",
-            "apaga o arquivo",
-            "melhora o som",
-            "deixa o arquivo menor"
+            "transforma a música em imagem de verdade",
+            "apaga o arquivo e deixa só o nome novo",
+            "melhora o som, porque o formato é outro",
+            "deixa o arquivo menor, porque a imagem pesa menos"
           ],
           "correct_index": 0,
           "explanation": "A extensão só diz qual programa tentar. O conteúdo não muda.",
@@ -801,10 +801,10 @@
           "statement": "Qual frase sobre caminhos de arquivo está certa?",
           "options": [
             "no Windows as pastas são separadas por \\ e no Linux por /",
-            "os dois usam a mesma barra",
-            "o Linux usa C:\\",
-            "o Windows começa por /home",
-            "caminhos não existem no Linux"
+            "os dois usam a mesma barra para separar as pastas",
+            "o Linux usa C:\\ no começo de todo caminho",
+            "o Windows começa todo caminho por /home",
+            "caminhos não existem no Linux, só no Windows"
           ],
           "correct_index": 0,
           "explanation": "Windows: C:\\Users\\... Linux: /home/...",
@@ -1005,10 +1005,10 @@
           "statement": "O cadeado ao lado do endereço indica que:",
           "options": [
             "os dados viajam protegidos entre você e o site",
-            "o site é honesto com certeza",
-            "o site é do governo",
-            "o site não tem vírus",
-            "a internet está rápida"
+            "o site é honesto com certeza e pode receber dados",
+            "o site é do governo e foi verificado",
+            "o site não tem vírus nem golpe",
+            "a internet está rápida e segura"
           ],
           "correct_index": 0,
           "explanation": "O HTTPS embaralha os dados no caminho.",
@@ -1047,10 +1047,10 @@
           "statement": "Onde ficam guardados os sites?",
           "options": [
             "em servidores, computadores ligados o tempo todo",
-            "no seu teclado",
-            "no navegador de cada pessoa",
-            "no DNS",
-            "na lixeira"
+            "no seu teclado, até você digitar o endereço",
+            "no navegador de cada pessoa que visita o site",
+            "no DNS, que guarda todas as páginas",
+            "na lixeira do computador de quem fez o site"
           ],
           "correct_index": 0,
           "explanation": "O servidor guarda o site e responde a quem pede.",
@@ -1061,10 +1061,10 @@
           "statement": "O endereço IP serve para:",
           "options": [
             "identificar cada aparelho na internet",
-            "deixar o site bonito",
-            "guardar senhas",
-            "imprimir páginas",
-            "fechar o navegador"
+            "deixar o site bonito e rápido",
+            "guardar as senhas dos usuários",
+            "imprimir as páginas da internet",
+            "fechar o navegador quando trava"
           ],
           "correct_index": 0,
           "explanation": "É como o endereço de uma casa, para os dados acharem o caminho.",
@@ -1102,10 +1102,10 @@
           "statement": "A internet é:",
           "options": [
             "uma rede que liga computadores do mundo todo",
-            "um programa do computador",
-            "o mesmo que o navegador",
-            "uma peça do computador",
-            "um site"
+            "um programa instalado no computador",
+            "o mesmo que o navegador de internet",
+            "uma peça física dentro do computador",
+            "um site grande que reúne todos os outros"
           ],
           "correct_index": 0,
           "explanation": "O navegador é só a porta de entrada.",
@@ -1132,10 +1132,10 @@
           "statement": "A busca “jaguar -carro” traz resultados:",
           "options": [
             "sobre jaguar, sem os que falam de carro",
-            "só sobre carros",
+            "só sobre carros da marca Jaguar",
             "sobre carro e jaguar juntos",
-            "nenhum resultado",
-            "só imagens"
+            "nenhum resultado, porque o sinal apaga tudo",
+            "só imagens de jaguar"
           ],
           "correct_index": 0,
           "explanation": "O sinal de menos tira a palavra da busca.",
@@ -1147,10 +1147,10 @@
           "statement": "Por que o DNS é comparado a uma agenda de contatos?",
           "options": [
             "traduz um nome fácil num número que o computador usa",
-            "guarda as fotos dos contatos",
-            "liga para as pessoas",
-            "apaga os sites antigos",
-            "protege as senhas"
+            "guarda as fotos e os números dos contatos",
+            "liga para as pessoas quando você pede",
+            "apaga os sites antigos que ninguém usa",
+            "protege as senhas que você salva no celular"
           ],
           "correct_index": 0,
           "explanation": "Você procura pelo nome; a agenda acha o número.",
@@ -1162,10 +1162,10 @@
           "statement": "Um site falso de loja tem o cadeado do HTTPS. Isso quer dizer que:",
           "options": [
             "os dados vão protegidos até o golpista, mas o site continua falso",
-            "o site é verdadeiro com certeza",
-            "o banco aprovou o site",
-            "o governo verificou a loja",
-            "o site não pode roubar dados"
+            "o site é verdadeiro com certeza, porque o cadeado só aparece nos seguros",
+            "o banco aprovou o site antes de deixar a loja funcionar",
+            "o governo verificou a loja e deu o cadeado a ela",
+            "o site não pode roubar dados, porque o cadeado não deixa"
           ],
           "correct_index": 0,
           "explanation": "O cadeado protege o caminho, não garante quem está do outro lado.",
@@ -1177,10 +1177,10 @@
           "statement": "Por que os dados viajam em pequenos pedaços na internet?",
           "options": [
             "pedaços podem ir por caminhos diferentes e ser reenviados se algum se perder",
-            "para deixar o site feio",
-            "porque o servidor é pequeno",
-            "para gastar menos luz",
-            "porque a internet só tem um caminho"
+            "para deixar o site mais leve e mais bonito na tela",
+            "porque o servidor é pequeno e não aguenta mandar tudo de uma vez",
+            "para gastar menos luz no caminho entre os computadores",
+            "porque a internet só tem um caminho, e os pedaços fazem fila"
           ],
           "correct_index": 0,
           "explanation": "Se um pedaço se perde, só ele é pedido de novo.",
@@ -1322,10 +1322,10 @@
           "statement": "Wi-Fi é:",
           "options": [
             "a ligação sem fio entre os aparelhos e o roteador",
-            "a própria internet do mundo todo",
-            "um tipo de cabo",
-            "um programa de texto",
-            "uma senha"
+            "a própria internet do mundo todo, sem fio",
+            "um tipo de cabo de rede mais rápido",
+            "um programa de texto do celular",
+            "a senha que o roteador pede para entrar"
           ],
           "correct_index": 0,
           "explanation": "É o trecho sem fio até o roteador.",
@@ -1364,10 +1364,10 @@
           "statement": "Para uma TV que trava no Wi-Fi, uma boa solução é:",
           "options": [
             "ligar a TV no roteador por cabo",
-            "desligar o roteador",
-            "trocar de televisão",
-            "apagar os aplicativos",
-            "usar dados móveis"
+            "desligar o roteador de vez",
+            "trocar de televisão por uma maior",
+            "apagar os aplicativos da TV",
+            "usar os dados móveis do celular"
           ],
           "correct_index": 0,
           "explanation": "O cabo é mais estável.",
@@ -1378,10 +1378,10 @@
           "statement": "Sobre o 5G, é certo dizer que:",
           "options": [
             "é uma rede de celular mais rápida que o 4G",
-            "é a rede do Wi-Fi de casa",
-            "é um cabo de internet",
-            "é mais lento que o 4G",
-            "só funciona no computador"
+            "é a rede do Wi-Fi de casa, mais nova",
+            "é um cabo de internet por fibra",
+            "é mais lento que o 4G, mas pega melhor",
+            "só funciona no computador, e não no celular"
           ],
           "correct_index": 0,
           "explanation": "É a rede da operadora, na rua.",
@@ -1506,10 +1506,10 @@
           "statement": "Uma propaganda diz “internet de 500 mega”. Para saber quanto tempo leva para baixar um jogo de 50 GB, é preciso lembrar que:",
           "options": [
             "mega na propaganda é megabit, e o jogo é medido em bytes",
-            "mega é sempre igual a megabyte",
-            "GB e Gb são a mesma coisa",
-            "velocidade não muda o tempo",
-            "jogo não é arquivo"
+            "mega é sempre igual a megabyte, em qualquer lugar",
+            "GB e Gb são a mesma coisa, só muda a letra",
+            "a velocidade não muda o tempo de baixar nada",
+            "o jogo não é arquivo e não tem tamanho"
           ],
           "correct_index": 0,
           "explanation": "Bits e bytes: divida por 8.",
@@ -1647,10 +1647,10 @@
           "statement": "Guardar arquivos na nuvem quer dizer guardá-los:",
           "options": [
             "em servidores de empresas, acessados pela internet",
-            "no céu",
-            "só no pen drive",
-            "dentro do monitor",
-            "na memória do teclado"
+            "no céu, em cima das nuvens de verdade",
+            "só no pen drive que fica com você",
+            "dentro do monitor do computador",
+            "na memória do teclado, que guarda tudo"
           ],
           "correct_index": 0,
           "explanation": "A nuvem são computadores de verdade.",
@@ -1675,10 +1675,10 @@
           "statement": "Sincronizar arquivos é:",
           "options": [
             "manter o mesmo arquivo igual em vários aparelhos",
-            "apagar todos os arquivos",
-            "imprimir um arquivo",
-            "trocar a senha",
-            "desligar a internet"
+            "apagar todos os arquivos de uma vez",
+            "imprimir um arquivo em várias cópias",
+            "trocar a senha em todos os aparelhos",
+            "fazer uma cópia nova a cada mudança"
           ],
           "correct_index": 0,
           "explanation": "O que muda num aparelho muda nos outros.",
@@ -1689,10 +1689,10 @@
           "statement": "Ao compartilhar um link com permissão de edição, a outra pessoa pode:",
           "options": [
             "mudar e apagar o conteúdo",
-            "só olhar",
-            "só comentar",
-            "nada",
-            "só imprimir"
+            "só olhar, sem mudar",
+            "só comentar ao lado",
+            "nada, só baixar",
+            "só imprimir o arquivo"
           ],
           "correct_index": 0,
           "explanation": "Editar dá controle sobre o conteúdo.",
@@ -1718,8 +1718,8 @@
           "options": [
             "pode apagar também nos outros aparelhos",
             "nunca apaga em lugar nenhum",
-            "apaga só o celular",
-            "cria uma cópia nova",
+            "apaga só no celular",
+            "cria uma cópia nova guardada",
             "manda a foto para o e-mail"
           ],
           "correct_index": 0,
@@ -1731,10 +1731,10 @@
           "statement": "Guardar tudo só na nuvem é arriscado porque:",
           "options": [
             "se a conta for invadida ou apagada, tudo vai junto",
-            "a nuvem chove",
-            "a nuvem não guarda fotos",
-            "os arquivos ficam maiores",
-            "a internet fica mais rápida"
+            "a nuvem pode chover e molhar os arquivos",
+            "a nuvem não guarda fotos, só documentos",
+            "os arquivos ficam maiores e pesados",
+            "a internet fica lenta para todo mundo"
           ],
           "correct_index": 0,
           "explanation": "Uma cópia só é um ponto só de falha.",
@@ -1785,10 +1785,10 @@
           "statement": "Uma vantagem da nuvem é:",
           "options": [
             "acessar os arquivos de qualquer lugar com internet",
-            "não precisar de internet nunca",
-            "ficar sem senha",
-            "deixar o celular mais pesado",
-            "apagar vírus sozinha"
+            "não precisar de internet nunca para abrir",
+            "ficar sem senha e sem preocupação",
+            "deixar o celular mais pesado e lento",
+            "apagar vírus sozinha dos arquivos"
           ],
           "correct_index": 0,
           "explanation": "Os arquivos estão na internet.",
@@ -1800,10 +1800,10 @@
           "statement": "A regra simples de cópia de segurança é:",
           "options": [
             "três cópias, em dois tipos de lugar, uma fora de casa",
-            "uma cópia só, na nuvem",
+            "uma cópia só, guardada na nuvem",
             "duas cópias no mesmo pen drive",
-            "nenhuma cópia",
-            "cópias só no celular"
+            "nenhuma cópia, para não ocupar espaço",
+            "cópias só no celular, que vai sempre junto"
           ],
           "correct_index": 0,
           "explanation": "Lugares diferentes protegem de perdas diferentes.",
@@ -1830,10 +1830,10 @@
           "statement": "Um currículo com CPF e endereço foi compartilhado como “qualquer pessoa com o link pode ver”. O risco é:",
           "options": [
             "o link ser repassado e os dados caírem em mãos erradas",
-            "o arquivo apagar sozinho",
-            "a nuvem cobrar uma multa",
-            "o arquivo ficar maior",
-            "nenhum, porque só quem tem o link vê"
+            "o arquivo apagar sozinho depois de ser aberto",
+            "a nuvem cobrar uma multa pelo uso do link",
+            "o arquivo ficar maior a cada pessoa que abre",
+            "nenhum, porque só quem tem o link consegue ver"
           ],
           "correct_index": 0,
           "explanation": "Link pode ser repassado sem controle.",
@@ -1845,10 +1845,10 @@
           "statement": "Por que a sincronização sozinha não é backup?",
           "options": [
             "porque um arquivo apagado num aparelho some nos outros também",
-            "porque ela não funciona",
-            "porque deixa os arquivos lentos",
-            "porque só vale para fotos",
-            "porque precisa de impressora"
+            "porque ela não funciona direito na maioria dos celulares",
+            "porque deixa os arquivos lentos e pesados de abrir",
+            "porque só vale para fotos, e não para documentos",
+            "porque precisa de impressora para guardar as cópias"
           ],
           "correct_index": 0,
           "explanation": "Ela copia também o erro.",
@@ -2033,8 +2033,8 @@
             "uma frase longa como meu gato come bolo às três",
             "123456",
             "a data do seu aniversário",
-            "o nome do seu cachorro",
-            "senha"
+            "o nome do seu cachorro com 123",
+            "senha123 com uma letra maiúscula"
           ],
           "correct_index": 0,
           "explanation": "Tamanho pesa mais que símbolos; frase longa é difícil de adivinhar.",
@@ -2046,9 +2046,9 @@
           "options": [
             "exigir um código além da senha para entrar",
             "deixar a internet mais rápida",
-            "apagar a conta",
-            "guardar fotos",
-            "trocar o celular"
+            "apagar a conta antiga",
+            "guardar as fotos na nuvem",
+            "trocar a senha a cada mês"
           ],
           "correct_index": 0,
           "explanation": "Quem tiver só a senha não entra sem o código.",
@@ -2073,10 +2073,10 @@
           "statement": "Para que serve o backup?",
           "options": [
             "ter uma cópia dos arquivos se o aparelho quebrar ou sumir",
-            "deixar o celular mais rápido",
-            "bloquear vírus",
-            "pagar contas",
-            "aumentar a bateria"
+            "deixar o celular mais rápido e leve",
+            "bloquear vírus antes de entrarem",
+            "pagar contas sem sair de casa",
+            "aumentar a duração da bateria"
           ],
           "correct_index": 0,
           "explanation": "Com a cópia em outro lugar, nada se perde de vez.",
@@ -2101,9 +2101,9 @@
           "statement": "Um parente manda mensagem de um número novo pedindo dinheiro com urgência. O que fazer?",
           "options": [
             "ligar para o número antigo dele e confirmar",
-            "mandar o dinheiro na hora",
-            "pedir mais detalhes e mandar",
-            "passar sua senha do banco",
+            "mandar o dinheiro na hora, porque é urgente",
+            "pedir mais detalhes e mandar se fizer sentido",
+            "passar sua senha do banco para ele",
             "ignorar para sempre o parente"
           ],
           "correct_index": 0,
@@ -2140,10 +2140,10 @@
           "statement": "O banco manda mensagem pedindo sua senha. Isso é:",
           "options": [
             "golpe: banco nunca pede senha por mensagem",
-            "normal",
-            "uma atualização",
-            "um backup",
-            "uma promoção"
+            "normal, para conferir a conta",
+            "uma atualização do aplicativo",
+            "um backup da conta",
+            "uma promoção do banco"
           ],
           "correct_index": 0,
           "explanation": "Nenhum banco pede senha por mensagem ou ligação.",
@@ -2155,7 +2155,7 @@
           "statement": "Onde é mais seguro baixar aplicativos?",
           "options": [
             "nas lojas oficiais do celular",
-            "em links de mensagens",
+            "em links que chegam por mensagem",
             "em sites desconhecidos",
             "em anúncios de prêmio",
             "em qualquer lugar"
@@ -2170,10 +2170,10 @@
           "statement": "Por que vale atualizar o sistema e os aplicativos?",
           "options": [
             "as atualizações fecham brechas de segurança",
-            "só para mudar as cores",
-            "para gastar internet",
-            "para apagar fotos",
-            "não serve para nada"
+            "só para mudar as cores e os ícones",
+            "para gastar internet e espaço",
+            "para apagar as fotos antigas",
+            "não serve para nada além de enfeite"
           ],
           "correct_index": 0,
           "explanation": "Muitas atualizações corrigem falhas que golpistas exploram.",
@@ -2185,10 +2185,10 @@
           "statement": "Guardar fotos na nuvem quer dizer:",
           "options": [
             "guardá-las em computadores de uma empresa, pela internet",
-            "guardá-las no céu de verdade",
-            "apagá-las",
-            "imprimi-las",
-            "deixá-las só na memória RAM"
+            "guardá-las no céu, dentro das nuvens de verdade",
+            "apagá-las do celular para liberar espaço",
+            "imprimi-las e guardar no álbum",
+            "deixá-las só na memória RAM do celular"
           ],
           "correct_index": 0,
           "explanation": "A nuvem é um conjunto de computadores de empresas que guardam seus arquivos.",
@@ -2215,10 +2215,10 @@
           "statement": "Por que guardar o backup em dois lugares, como num disco e na nuvem?",
           "options": [
             "se um falhar ou sumir, o outro ainda tem a cópia",
-            "porque é obrigatório por lei",
-            "para gastar mais espaço",
-            "porque um só não funciona",
-            "para deixar mais lento"
+            "porque é obrigatório por lei guardar em dois lugares",
+            "para gastar mais espaço e ter certeza",
+            "porque um só não funciona direito",
+            "para deixar o aparelho mais lento"
           ],
           "correct_index": 0,
           "explanation": "Disco pode quebrar junto com o computador; a nuvem fica fora de casa.",
@@ -2365,10 +2365,10 @@
           "statement": "Qual destes é um dado pessoal?",
           "options": [
             "a localização do seu celular",
-            "a cor do céu",
-            "o preço do pão",
+            "a cor do céu hoje",
+            "o preço do pão na padaria",
             "a capital do país",
-            "a hora oficial"
+            "a hora oficial de Brasília"
           ],
           "correct_index": 0,
           "explanation": "Ela diz onde você está.",
@@ -2393,9 +2393,9 @@
           "statement": "A LGPD é:",
           "options": [
             "a lei brasileira que protege os dados pessoais",
-            "um aplicativo de mensagens",
-            "um tipo de vírus",
-            "uma rede social",
+            "um aplicativo de mensagens do governo",
+            "um tipo de vírus que rouba dados",
+            "uma rede social brasileira",
             "um programa de planilha"
           ],
           "correct_index": 0,
@@ -2435,10 +2435,10 @@
           "statement": "Cookies, nos sites, são:",
           "options": [
             "pequenos arquivos que lembram o que você fez",
-            "biscoitos de verdade",
-            "sempre vírus perigosos",
-            "senhas do banco",
-            "fotos do usuário"
+            "biscoitos de verdade, oferecidos pelo site",
+            "sempre vírus perigosos que roubam senhas",
+            "senhas do banco guardadas no site",
+            "fotos do usuário tiradas pela câmera"
           ],
           "correct_index": 0,
           "explanation": "Eles guardam preferências e rastros.",
@@ -2518,7 +2518,7 @@
           "statement": "No Brasil, quem fiscaliza o cumprimento da LGPD é:",
           "options": [
             "a ANPD, autoridade de proteção de dados",
-            "a escola",
+            "a escola de cada aluno",
             "o dono do aplicativo",
             "o próprio usuário sozinho",
             "a operadora de celular"
@@ -2533,10 +2533,10 @@
           "statement": "Uma loja coletou o e-mail para mandar a nota fiscal e passou a vender esse e-mail a outras empresas. Pela LGPD:",
           "options": [
             "ela desviou o uso do dado do fim combinado",
-            "ela agiu certo",
+            "ela agiu certo, porque o e-mail era dela",
             "o e-mail não é dado pessoal",
-            "isso é obrigatório",
-            "o cliente perdeu os direitos"
+            "isso é obrigatório para quem vende",
+            "o cliente perdeu os direitos ao comprar"
           ],
           "correct_index": 0,
           "explanation": "O dado só pode servir ao fim combinado.",
@@ -2766,7 +2766,7 @@
           "options": [
             "o sinal de igual",
             "a letra A",
-            "um ponto",
+            "um ponto final",
             "o número 1",
             "um parêntese"
           ],
@@ -2779,10 +2779,10 @@
           "statement": "Para montar slides de uma apresentação, usa-se:",
           "options": [
             "um programa como PowerPoint ou Google Apresentações",
-            "uma planilha",
-            "um navegador só",
+            "uma planilha com fórmulas",
+            "um navegador só, sem programa",
             "o sistema operacional",
-            "um antivírus"
+            "um antivírus instalado"
           ],
           "correct_index": 0,
           "explanation": "Esses programas são feitos para slides.",
@@ -2793,10 +2793,10 @@
           "statement": "Numa planilha, B3 é:",
           "options": [
             "a célula da coluna B e linha 3",
-            "a terceira planilha",
-            "uma fórmula",
-            "um gráfico",
-            "a coluna 3 e linha B"
+            "a terceira planilha do arquivo",
+            "uma fórmula que soma tudo",
+            "um gráfico de barras",
+            "a coluna 3 e a linha B"
           ],
           "correct_index": 0,
           "explanation": "O endereço é a letra da coluna mais o número da linha.",
@@ -2919,10 +2919,10 @@
           "statement": "Uma vantagem da fórmula na planilha é que:",
           "options": [
             "o resultado se refaz sozinho quando um número muda",
-            "deixa a planilha colorida",
-            "imprime sozinha",
-            "apaga os dados antigos",
-            "manda e-mail sozinha"
+            "deixa a planilha colorida e bonita",
+            "imprime sozinha quando muda",
+            "apaga os dados antigos da coluna",
+            "manda e-mail sozinha para todos"
           ],
           "correct_index": 0,
           "explanation": "Mude um valor, e todas as contas que dependem dele se atualizam.",
@@ -3117,7 +3117,7 @@
           "statement": "Toda fórmula de planilha começa com:",
           "options": [
             "o sinal de igual (=)",
-            "um ponto",
+            "um ponto (.)",
             "a letra A",
             "um espaço",
             "o sinal de mais"
@@ -3256,7 +3256,7 @@
           "options": [
             "mostra o texto, sem fazer a conta",
             "faz a conta mesmo assim",
-            "apaga a coluna",
+            "apaga a coluna inteira",
             "fecha o arquivo",
             "cria um gráfico"
           ],
@@ -3512,10 +3512,10 @@
           "statement": "Encaminhar um e-mail é:",
           "options": [
             "mandá-lo, com os anexos, para alguém que não estava na conversa",
-            "apagar o e-mail",
-            "responder só ao remetente",
-            "bloquear o remetente",
-            "imprimir o e-mail"
+            "apagar o e-mail e os anexos de uma vez",
+            "responder só ao remetente, sem os anexos",
+            "bloquear o remetente para não receber mais",
+            "imprimir o e-mail com todos os anexos"
           ],
           "correct_index": 0,
           "explanation": "Leva a mensagem a alguém novo.",
@@ -3527,9 +3527,9 @@
           "options": [
             "um arquivo mandado junto com o e-mail",
             "o assunto do e-mail",
-            "o endereço do remetente",
-            "sempre um vírus",
-            "a assinatura"
+            "o endereço de quem mandou",
+            "sempre um vírus perigoso",
+            "a assinatura no fim"
           ],
           "correct_index": 0,
           "explanation": "PDF, foto ou documento que vai junto.",
@@ -3555,8 +3555,8 @@
           "options": [
             "resumir a mensagem em poucas palavras",
             "esconder os destinatários",
-            "anexar arquivos",
-            "bloquear spam",
+            "anexar os arquivos",
+            "bloquear o spam",
             "escolher a cor da letra"
           ],
           "correct_index": 0,
@@ -3669,9 +3669,9 @@
           "options": [
             "o remetente e quem estava no Para e no Cc",
             "só os outros que estavam no Cco",
-            "ninguém",
-            "toda a internet",
-            "só o próprio Cco"
+            "ninguém, porque o Cco não responde",
+            "toda a lista de contatos",
+            "só o próprio Cco, de volta"
           ],
           "correct_index": 0,
           "explanation": "Quem está no Cco não vê os outros do Cco, então eles não recebem.",
@@ -3822,10 +3822,10 @@
           "statement": "Um algoritmo é:",
           "options": [
             "uma sequência de passos com fim para resolver um problema",
-            "um tipo de computador",
-            "um vírus",
+            "um tipo de computador muito rápido",
+            "um vírus que apaga arquivos",
             "uma peça do teclado",
-            "um site de busca"
+            "um site de busca na internet"
           ],
           "correct_index": 0,
           "explanation": "É uma receita: passos claros, em ordem, que terminam.",
@@ -3864,10 +3864,10 @@
           "statement": "Uma receita de bolo é um exemplo de algoritmo porque:",
           "options": [
             "tem passos em ordem que levam a um resultado e terminam",
-            "fica escrita num papel",
-            "é doce",
-            "usa forno",
-            "foi feita no computador"
+            "fica escrita num papel ou num caderno",
+            "é doce e todo mundo gosta",
+            "usa forno e ingredientes",
+            "foi feita num computador"
           ],
           "correct_index": 0,
           "explanation": "Passos claros, ordem e fim: é a definição.",
@@ -3878,10 +3878,10 @@
           "statement": "Qual a relação entre algoritmo e programa?",
           "options": [
             "o programa é o algoritmo escrito numa linguagem que o computador entende",
-            "são exatamente a mesma coisa, sem diferença",
-            "o algoritmo é uma peça do computador",
-            "o programa não usa algoritmos",
-            "o algoritmo só existe em inglês"
+            "são exatamente a mesma coisa, sem nenhuma diferença entre eles",
+            "o algoritmo é uma peça do computador, e o programa roda nela",
+            "o programa não usa algoritmos, só comandos soltos",
+            "o algoritmo só existe em inglês, e o programa em português"
           ],
           "correct_index": 0,
           "explanation": "O algoritmo é a ideia; o programa, a tradução para a máquina.",
@@ -3906,9 +3906,9 @@
           "statement": "Por que a ordem dos passos importa?",
           "options": [
             "trocar a ordem pode mudar ou estragar o resultado",
-            "não importa",
-            "o computador reordena sozinho",
-            "só importa em inglês",
+            "não importa, porque o resultado é sempre o mesmo",
+            "o computador reordena sozinho os passos",
+            "só importa quando o algoritmo é em inglês",
             "porque o algoritmo nunca termina"
           ],
           "correct_index": 0,
@@ -3934,8 +3934,8 @@
           "options": [
             "as instruções para montar um móvel",
             "uma foto de paisagem",
-            "uma música",
-            "um teclado",
+            "uma música no rádio",
+            "um teclado de computador",
             "um número solto"
           ],
           "correct_index": 0,
@@ -3948,10 +3948,10 @@
           "statement": "Python é:",
           "options": [
             "uma linguagem de programação",
-            "um algoritmo",
-            "um processador",
-            "um navegador",
-            "uma planilha"
+            "um algoritmo de busca",
+            "um processador de computador",
+            "um navegador de internet",
+            "uma planilha de cálculo"
           ],
           "correct_index": 0,
           "explanation": "É uma das linguagens usadas para escrever programas.",
@@ -3993,10 +3993,10 @@
           "statement": "Um algoritmo diz: comece com 0; repita 3 vezes: some 5. No fim, qual o resultado?",
           "options": [
             "15",
-            "5",
-            "3",
+            "10",
+            "20",
             "8",
-            "0"
+            "53"
           ],
           "correct_index": 0,
           "explanation": "0 + 5 + 5 + 5 = 15.",
@@ -4168,10 +4168,10 @@
           "statement": "A inteligência artificial se diferencia de um programa comum porque:",
           "options": [
             "aprende com muitos exemplos, em vez de seguir só passos escritos",
-            "não usa eletricidade",
-            "é sempre um robô com corpo",
-            "nunca erra",
-            "funciona sem dados"
+            "não usa eletricidade e funciona sozinha",
+            "é sempre um robô com corpo e braços",
+            "nunca erra, porque aprende com tudo",
+            "funciona sem dados, só com regras escritas"
           ],
           "correct_index": 0,
           "explanation": "Ela tira o caminho dos exemplos.",
@@ -4182,10 +4182,10 @@
           "statement": "Para aprender a reconhecer gatos, uma IA precisa principalmente de:",
           "options": [
             "muitas fotos de gatos com a resposta certa",
-            "um gato de verdade",
-            "uma única foto",
-            "um teclado novo",
-            "nenhum exemplo"
+            "um gato de verdade na frente da câmera",
+            "uma única foto de gato bem nítida",
+            "um teclado novo para digitar",
+            "nenhum exemplo, só regras"
           ],
           "correct_index": 0,
           "explanation": "Aprende com muitos exemplos rotulados.",
@@ -4224,10 +4224,10 @@
           "statement": "Um deepfake é:",
           "options": [
             "um vídeo, foto ou áudio falso feito por IA imitando uma pessoa real",
-            "um vídeo antigo",
-            "um filme de animação",
-            "um vírus de e-mail",
-            "uma foto tirada de longe"
+            "um vídeo antigo que foi restaurado",
+            "um filme de animação feito por computador",
+            "um vírus que chega por e-mail",
+            "uma foto tirada de longe com zoom"
           ],
           "correct_index": 0,
           "explanation": "Parece real, mas é fabricado.",
@@ -4252,10 +4252,10 @@
           "statement": "Sobre usar IA nos estudos, a atitude mais adequada é:",
           "options": [
             "usar para aprender, conferir o que ela diz e avisar quando usou",
-            "entregar o texto dela como se fosse seu",
-            "nunca abrir um livro de novo",
-            "acreditar em tudo",
-            "esconder que usou"
+            "entregar o texto dela como se fosse seu, porque ela escreve melhor",
+            "nunca mais abrir um livro, porque ela sabe tudo",
+            "acreditar em tudo o que ela diz",
+            "esconder que usou para o professor não saber"
           ],
           "correct_index": 0,
           "explanation": "A IA ajuda quem continua pensando.",
@@ -4292,9 +4292,9 @@
           "options": [
             "a recomendação de vídeos de um aplicativo",
             "uma régua de plástico",
-            "um caderno",
+            "um caderno de anotações",
             "uma lâmpada comum",
-            "um lápis"
+            "um lápis com borracha"
           ],
           "correct_index": 0,
           "explanation": "Ela aprende o que você gosta.",
@@ -4306,10 +4306,10 @@
           "statement": "O banco que bloqueia uma compra estranha no cartão está usando IA para:",
           "options": [
             "perceber um padrão fora do normal",
-            "pintar o cartão",
+            "pintar o cartão de outra cor",
             "trocar a senha sozinho",
-            "imprimir extratos",
-            "apagar a conta"
+            "imprimir os extratos",
+            "apagar a conta do cliente"
           ],
           "correct_index": 0,
           "explanation": "Ela conhece o seu jeito de comprar.",
@@ -4351,10 +4351,10 @@
           "statement": "Uma IA responde com muita segurança, citando um livro. Isso garante que a informação é certa?",
           "options": [
             "não, porque a IA pode inventar até livros, com confiança",
-            "sim, porque ela citou um livro",
-            "sim, porque ela respondeu rápido",
-            "sim, porque ela nunca erra",
-            "não, porque livros não existem"
+            "sim, porque ela citou um livro, e livro não mente",
+            "sim, porque ela respondeu rápido e sem dúvida",
+            "sim, porque ela nunca erra quando cita fontes",
+            "não, porque livros não existem dentro da IA"
           ],
           "correct_index": 0,
           "explanation": "Segurança no tom não é prova.",
@@ -4366,10 +4366,10 @@
           "statement": "Por que uma IA pode ser injusta mesmo que ninguém a programe para isso?",
           "options": [
             "porque aprende com exemplos que já trazem desigualdades",
-            "porque tem vontade própria",
-            "porque odeia pessoas",
-            "porque usa muita energia",
-            "porque não tem internet"
+            "porque tem vontade própria e escolhe de quem gosta",
+            "porque odeia algumas pessoas sem motivo",
+            "porque usa muita energia e esquenta",
+            "porque não tem internet e aprende pouco"
           ],
           "correct_index": 0,
           "explanation": "Ela repete o que viu.",
