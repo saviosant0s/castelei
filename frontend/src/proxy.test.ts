@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { NextRequest } from "next/server";
-import { proxy } from "./proxy";
+import { marcaDaSessao, proxy, SESSAO_HEADER } from "./proxy";
 import { TOKEN_COOKIE } from "@/lib/proxy";
 
 const jsonResponse = (body: unknown, status = 200) =>
@@ -59,5 +59,26 @@ describe("proxy (telas protegidas)", () => {
 
     expect(res.status).toBe(503);
     expect(res.headers.get("location")).toBeNull();
+  });
+
+  it("marca toda resposta com a sessão, sem expor o token", async () => {
+    vi.stubEnv("GUEST_MODE", "false");
+    const comSessao = await proxy(visit(`${TOKEN_COOKIE}=abc`));
+    const marca = comSessao.headers.get(SESSAO_HEADER);
+    expect(marca).toBe(await marcaDaSessao("abc"));
+    expect(marca).toMatch(/^[0-9a-f]{16}$/);
+    expect(marca).not.toContain("abc");
+
+    // Outra conta, outra marca: é o que faz o service worker apagar as páginas guardadas.
+    expect(await marcaDaSessao("xyz")).not.toBe(marca);
+    expect((await proxy(visit())).headers.get(SESSAO_HEADER)).toBe("nenhuma");
+  });
+
+  it("Entrar abre sem sessão e diz isso na marca (é o que limpa as páginas de quem saiu)", async () => {
+    vi.stubEnv("GUEST_MODE", "true");
+    const res = await proxy(new NextRequest("http://localhost/entrar"));
+    expect(res.status).toBe(200);
+    expect(res.headers.get(SESSAO_HEADER)).toBe("nenhuma");
+    expect(fetchMock).not.toHaveBeenCalled(); // não cria visitante na tela de entrar
   });
 });
