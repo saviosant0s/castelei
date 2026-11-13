@@ -80,6 +80,16 @@ class Plans
             || (bool) (self::all()[$plan]['classrooms'] ?? false);
     }
 
+    /**
+     * A correção da redação por IA está liberada? É o recurso que custa por
+     * uso, e por isso é do Pro desde que foi ligada.
+     */
+    public static function hasWritingAi(string $plan, bool $realPlan = false): bool
+    {
+        return self::unlockedForEveryone($realPlan)
+            || (bool) (self::all()[$plan]['writing_ai'] ?? false);
+    }
+
     /** O simulado está liberado para este plano? */
     public static function hasExam(string $plan, bool $realPlan = false): bool
     {

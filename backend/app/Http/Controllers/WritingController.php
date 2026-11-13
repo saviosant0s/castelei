@@ -42,7 +42,9 @@ class WritingController extends Controller
             ],
             'model' => $writing['model'] ?? null,
             'checklist' => array_values($writing['checklist'] ?? []),
-            'ai' => self::aiEnabled(),
+            // `ai`: o botão aparece. `ai_locked`: a correção existe, mas é do Pro.
+            'ai' => self::aiEnabled() && $request->user()->hasWritingAi(),
+            'ai_locked' => self::aiEnabled() && ! $request->user()->hasWritingAi(),
         ]);
     }
 
@@ -56,6 +58,7 @@ class WritingController extends Controller
     public function review(Request $request, Attempt $attempt, WritingReviewer $reviewer): JsonResponse
     {
         abort_unless(self::aiEnabled(), 404);
+        abort_unless($request->user()->hasWritingAi(), 403, 'A correção por IA é do plano Pro.');
 
         [$question, $texto] = $this->validated($request, $attempt);
         abort_if($texto === '', 422, 'Escreva o texto antes de pedir a correção.');

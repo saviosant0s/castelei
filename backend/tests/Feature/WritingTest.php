@@ -283,6 +283,19 @@ class WritingTest extends TestCase
         $this->postJson("/api/attempts/{$attemptId}/writing/review", $pedido)->assertStatus(429);
     }
 
+    public function test_a_correcao_por_ia_e_do_pro(): void
+    {
+        config(['castelei.unlock_all' => false, 'castelei.writing.ai.key' => 'chave-de-teste', 'castelei.writing.ai.enabled' => true, 'castelei.writing.ai.daily_limit' => 2]);
+        [$lesson, $question] = $this->licaoDeEscrita();
+        $attemptId = $this->comecar($lesson, 'free')['attempt']['id'];
+        $pedido = ['question_id' => $question->id, 'text' => 'Um texto.'];
+
+        $this->postJson("/api/attempts/{$attemptId}/writing/check", $pedido)
+            ->assertJsonPath('ai', false)
+            ->assertJsonPath('ai_locked', true);
+        $this->postJson("/api/attempts/{$attemptId}/writing/review", $pedido)->assertForbidden();
+    }
+
     public function test_falha_da_ia_devolve_a_correcao_do_dia(): void
     {
         config(['castelei.writing.ai.key' => 'chave-de-teste', 'castelei.writing.ai.enabled' => true, 'castelei.writing.ai.daily_limit' => 1]);
