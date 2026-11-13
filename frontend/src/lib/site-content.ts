@@ -164,20 +164,34 @@ export const SUBJECTS: SiteSubject[] = [
     slug: "historia-basica",
     name: "História",
     pitch:
-      "Da Grécia e de Roma à Constituição de 1988: Idade Média, navegações, revoluções, Brasil Colônia, Império, Vargas, guerras mundiais e ditadura, na ordem em que uma coisa explica a outra.",
+      "Das fontes e da Pré-história ao mundo de hoje: Grécia e Roma, Idade Média, Islã, navegações, absolutismo, revoluções, independências, imperialismo, totalitarismos, Guerra Fria e o Brasil da Colônia à Nova República, na ordem em que uma coisa explica a outra.",
     lessons: [
       "Para que serve a História",
+      "Fontes: como se descobre o passado",
+      "Memória, patrimônio e quem conta a história",
       "Os primeiros povos: Pré-história, Egito e Mesopotâmia",
+      "Hebreus, fenícios e persas",
       "Grécia e Roma: a Antiguidade que deixou herança",
       "Idade Média: feudos, servos e Igreja",
+      "Bizâncio e o mundo islâmico",
+      "Cruzadas, cidades e a crise do século XIV",
       "África e América antes dos europeus",
       "Navegações, Renascimento e Reforma",
+      "Absolutismo e mercantilismo: reis fortes e ouro no cofre",
+      "A colonização da América espanhola e inglesa",
       "Brasil Colônia: pau-brasil, açúcar e ouro",
       "Iluminismo, Revolução Francesa e Revolução Industrial",
+      "As independências na América",
+      "A corte no Brasil e a independência",
       "Brasil Império e o fim da escravidão",
       "Da Primeira República à Era Vargas",
+      "O Brasil de 1945 a 1964: democracia e crise",
+      "Imperialismo: a partilha da África e da Ásia",
+      "Revolução Russa, crise de 1929 e totalitarismos",
       "Guerras mundiais e Guerra Fria",
+      "Descolonização da Ásia e da África",
       "Ditadura militar e a volta da democracia",
+      "O fim da Guerra Fria e o mundo de hoje",
     ],
   },
   {
@@ -783,5 +797,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 6244,
+  questions: 6440,
 };
