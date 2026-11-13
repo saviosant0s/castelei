@@ -172,9 +172,9 @@
           "statement": "O balão esfregado no cabelo gruda na parede porque:",
           "options": [
             "ficou com carga elétrica",
-            "ficou mais leve",
+            "ficou mais leve e flutua",
             "ficou molhado",
-            "virou ímã",
+            "virou ímã por um tempo",
             "esquentou"
           ],
           "correct_index": 0,
@@ -281,9 +281,9 @@
           "statement": "O para-raios protege a casa porque:",
           "options": [
             "dá à carga do raio um caminho de metal até o chão",
-            "atrai a chuva",
+            "atrai a chuva para longe das casas e dos prédios",
             "afasta a nuvem",
-            "segura a carga dentro dele",
+            "segura a carga dentro dele até o raio acabar",
             "transforma o raio em luz"
           ],
           "correct_index": 0,
@@ -340,9 +340,9 @@
           "statement": "Aproximar, sem encostar, um bastão negativo de uma esfera de metal neutra faz a esfera:",
           "options": [
             "separar as cargas: o lado de perto fica positivo e o de longe, negativo",
-            "ficar toda negativa",
+            "ficar toda negativa, porque o bastão passa elétrons para ela pelo ar",
             "ficar toda positiva",
-            "não mudar nada",
+            "não mudar nada, porque sem encostar não há como as cargas se mexerem",
             "perder todas as cargas"
           ],
           "correct_index": 0,
@@ -654,9 +654,9 @@
           "statement": "Com a pele molhada, o choque é pior porque:",
           "options": [
             "a resistência cai e a corrente sobe",
-            "a tensão da tomada sobe",
+            "a tensão da tomada sobe e o choque piora",
             "a resistência sobe",
-            "a corrente cai",
+            "a corrente cai porque a água isola",
             "a água muda a tomada"
           ],
           "correct_index": 0,
@@ -683,8 +683,8 @@
           "statement": "O chuveiro esquenta a água porque o resistor:",
           "options": [
             "transforma a energia elétrica em calor",
-            "fabrica água quente",
-            "guarda o calor do dia",
+            "fabrica água quente a partir do frio",
+            "guarda o calor do dia para a noite",
             "é um ímã",
             "esfria o ar em volta"
           ],
@@ -728,9 +728,9 @@
           "statement": "Uma extensão fina e comprida esquenta mais que uma grossa e curta porque:",
           "options": [
             "resiste mais, e mais energia vira calor nela",
-            "resiste menos",
+            "resiste menos, e por isso esquenta menos",
             "leva mais corrente, sempre",
-            "recebe mais tensão",
+            "recebe mais tensão que o resto do fio",
             "é de plástico"
           ],
           "correct_index": 0,
@@ -955,10 +955,10 @@
           "statement": "Na posição inverno, o chuveiro esquenta mais porque:",
           "options": [
             "a resistência cai e a potência sobe",
-            "a resistência sobe",
+            "a resistência sobe e a potência cai",
             "a tensão da casa sobe",
             "a água chega mais fria",
-            "o chuveiro gasta menos"
+            "o chuveiro gasta menos energia por mês"
           ],
           "correct_index": 0,
           "explanation": "Na mesma tensão, P = U² ÷ R.",
@@ -1023,8 +1023,8 @@
           "statement": "Um secador de 127 V ligado por engano em 220 V:",
           "options": [
             "recebe potência demais e pode queimar",
-            "funciona mais fraco",
-            "funciona igual",
+            "funciona mais fraco, mas sem problema",
+            "funciona igual, porque a tomada se ajusta",
             "não liga",
             "gasta menos"
           ],
@@ -1097,9 +1097,9 @@
           "statement": "Um chuveiro de 220 V ligado por engano em 127 V:",
           "options": [
             "trabalha com cerca de um terço da potência, e a água sai morna",
-            "queima na hora",
+            "queima na hora, porque recebe tensão errada",
             "esquenta mais",
-            "trabalha com metade da potência",
+            "trabalha com metade da potência, e a água sai fria",
             "não muda nada"
           ],
           "correct_index": 0,
@@ -1322,9 +1322,9 @@
           "statement": "As tomadas de uma casa são ligadas em paralelo porque:",
           "options": [
             "cada aparelho recebe a tensão inteira e funciona sozinho",
-            "a corrente é a mesma em todos",
+            "a corrente é a mesma em todos, como numa fila",
             "fica mais barato",
-            "assim, se um queima, todos apagam",
+            "assim, se um queima, todos os outros apagam juntos",
             "a tensão se divide entre eles"
           ],
           "correct_index": 0,
@@ -1389,8 +1389,8 @@
           "statement": "Para medir a corrente, o amperímetro deve ficar:",
           "options": [
             "em série, no caminho da corrente",
-            "em paralelo",
-            "fora do circuito",
+            "em paralelo, ao lado do circuito",
+            "fora do circuito, longe dos fios",
             "só no fio terra",
             "no lugar da tomada"
           ],
@@ -1418,8 +1418,8 @@
           "statement": "Ligar muitos aparelhos no mesmo benjamim é perigoso porque:",
           "options": [
             "a corrente no fio fica grande demais",
-            "a tensão sobe",
-            "a resistência do fio some",
+            "a tensão da casa sobe de repente",
+            "a resistência do fio some de vez",
             "os aparelhos ficam em série",
             "o fio esfria"
           ],
@@ -1449,7 +1449,7 @@
           "options": [
             "um pouco menos que 1 Ω",
             "101 Ω",
-            "50,5 Ω",
+            "50,5 Ω, a média",
             "100 Ω",
             "exatamente 1 Ω"
           ],
@@ -1684,9 +1684,9 @@
           "statement": "Um ímã em barra é partido ao meio. Cada pedaço:",
           "options": [
             "é um ímã inteiro, com norte e sul",
-            "fica só com o polo norte",
+            "fica só com o polo norte de um lado",
             "fica só com o polo sul",
-            "deixa de ser ímã",
+            "deixa de ser ímã e vira ferro comum",
             "vira um ímã sem polos"
           ],
           "correct_index": 0,
@@ -1779,9 +1779,9 @@
           "statement": "O campo magnético da Terra protege o planeta porque:",
           "options": [
             "desvia partículas com carga que vêm do Sol",
-            "esquenta o ar",
+            "esquenta o ar e cria o vento",
             "segura a Lua",
-            "bloqueia toda a luz do Sol",
+            "bloqueia toda a luz do Sol que chegaria ao chão",
             "cria a chuva"
           ],
           "correct_index": 0,
@@ -1808,9 +1808,9 @@
           "statement": "O ímã de geladeira gruda na porta porque ela é feita de:",
           "options": [
             "aço, que tem ferro",
-            "alumínio",
+            "alumínio de lata",
             "plástico",
-            "cobre",
+            "cobre de fio",
             "vidro"
           ],
           "correct_index": 0,
@@ -2075,10 +2075,10 @@
           "statement": "Uma bússola ao lado de um fio muda de direção quando se liga a corrente porque:",
           "options": [
             "a corrente cria um campo magnético em volta do fio",
-            "o fio esquenta a agulha",
+            "o fio esquenta a agulha e ela gira com o calor",
             "o fio vira de ferro",
             "a agulha perde os polos",
-            "o ar em volta fica com carga"
+            "o ar em volta do fio fica com carga e empurra a agulha"
           ],
           "correct_index": 0,
           "explanation": "Corrente cria campo, e a agulha se alinha com ele.",
@@ -2103,9 +2103,9 @@
           "statement": "Qual mudança deixa um eletroímã mais forte?",
           "options": [
             "dar mais voltas de fio na bobina",
-            "tirar o núcleo de ferro",
+            "tirar o núcleo de ferro da bobina",
             "diminuir a corrente",
-            "usar menos voltas de fio",
+            "usar menos voltas de fio na bobina",
             "desligar a pilha"
           ],
           "correct_index": 0,
@@ -2171,8 +2171,8 @@
           "statement": "Inverter o sentido da corrente num eletroímã:",
           "options": [
             "troca os polos de lugar",
-            "desliga o campo",
-            "dobra a força",
+            "desliga o campo do ímã",
+            "dobra a força de atração",
             "não muda nada",
             "derrete o núcleo"
           ],
@@ -2185,9 +2185,9 @@
           "statement": "O guindaste do ferro-velho solta o carro quando:",
           "options": [
             "a corrente do eletroímã é desligada",
-            "o ímã é aquecido",
+            "o ímã é aquecido até perder força",
             "o carro fica mais leve",
-            "o disco gira",
+            "o disco gira e solta o carro",
             "o motorista buzina"
           ],
           "correct_index": 0,
@@ -2260,9 +2260,9 @@
           "statement": "Num motor simples, a peça que inverte a corrente a cada meia-volta serve para:",
           "options": [
             "a bobina continuar girando no mesmo sentido",
-            "aumentar a tensão",
+            "aumentar a tensão a cada meia volta",
             "esfriar o motor",
-            "desligar o motor a cada volta",
+            "desligar o motor a cada volta para ele descansar",
             "trocar o ímã de lugar"
           ],
           "correct_index": 0,
@@ -2531,9 +2531,9 @@
           "statement": "No fogão de indução, o que esquenta é:",
           "options": [
             "o fundo da panela de ferro, pela corrente induzida nele",
-            "o vidro do fogão",
+            "o vidro do fogão, que fica quente por baixo",
             "o ar em volta",
-            "uma chama escondida",
+            "uma chama escondida embaixo do vidro do fogão",
             "a tomada"
           ],
           "correct_index": 0,
@@ -2570,10 +2570,10 @@
           "statement": "O polo norte de um ímã se aproxima de uma bobina. A ponta da bobina voltada para ele vira:",
           "options": [
             "um polo norte, que o empurra de volta",
-            "um polo sul, que o puxa",
+            "um polo sul, que o puxa para dentro",
             "um polo sem nome",
             "um pedaço de vidro",
-            "um ímã permanente"
+            "um ímã permanente que não muda"
           ],
           "correct_index": 0,
           "explanation": "A corrente induzida se opõe à aproximação.",
@@ -2599,10 +2599,10 @@
           "statement": "O carregador sem fio passa energia ao celular por meio de:",
           "options": [
             "um campo magnético que muda",
-            "um fio invisível",
+            "um fio invisível no ar",
             "calor",
             "som",
-            "luz visível"
+            "luz visível sobre o fio"
           ],
           "correct_index": 0,
           "explanation": "A bobina da base cria corrente na bobina do aparelho.",
@@ -2644,9 +2644,9 @@
           "statement": "Um ímã cai por dentro de um cano de cobre e demora mais que fora dele. Isso acontece porque:",
           "options": [
             "as correntes induzidas no cano criam um campo que freia o ímã",
-            "o cobre é atraído pelo ímã",
+            "o cobre é atraído pelo ímã como o ferro, e o ímã gruda nas paredes",
             "o ar dentro do cano é mais pesado",
-            "o cano tira os polos do ímã",
+            "o cano tira os polos do ímã, e ele cai mais devagar sem os polos",
             "o ímã fica mais leve"
           ],
           "correct_index": 0,
@@ -2924,9 +2924,9 @@
           "statement": "Um transformador ligado a uma pilha não funciona porque:",
           "options": [
             "a corrente contínua cria um campo que não muda",
-            "a pilha é fraca demais",
+            "a pilha é fraca demais para qualquer transformador",
             "a pilha não tem polos",
-            "o ferro não deixa a corrente passar",
+            "o ferro do núcleo não deixa a corrente contínua passar",
             "a pilha tem tensão alta demais"
           ],
           "correct_index": 0,
@@ -2952,8 +2952,8 @@
           "statement": "As linhas de transmissão usam alta tensão para:",
           "options": [
             "diminuir a corrente e a perda nos fios",
-            "a energia andar mais rápido",
-            "aumentar a potência da usina",
+            "a energia andar mais rápido até as cidades",
+            "aumentar a potência que sai da usina",
             "esquentar os fios",
             "gastar menos água na usina"
           ],
@@ -2979,9 +2979,9 @@
           "statement": "O carregador de celular, ligado na tomada:",
           "options": [
             "abaixa a tensão e transforma a alternada em contínua",
-            "aumenta a tensão",
+            "aumenta a tensão para o celular carregar mais rápido",
             "só muda a cor do fio",
-            "transforma a contínua em alternada",
+            "transforma a contínua em alternada para o celular",
             "guarda a energia da tomada para sempre"
           ],
           "correct_index": 0,
@@ -3279,10 +3279,10 @@
           "statement": "Na ola do estádio, o que viaja pelas arquibancadas é:",
           "options": [
             "o movimento, e não as pessoas",
-            "as pessoas",
+            "as pessoas que levantam",
             "as cadeiras",
             "o ar do estádio",
-            "a bola"
+            "a bola jogada no campo"
           ],
           "correct_index": 0,
           "explanation": "A onda leva energia sem levar matéria.",
@@ -3349,8 +3349,8 @@
           "statement": "A velocidade de uma onda depende:",
           "options": [
             "do meio em que ela anda",
-            "só da frequência",
-            "só da amplitude",
+            "só da frequência da fonte",
+            "só da amplitude da onda",
             "da cor da fonte",
             "de quem a observa"
           ],
@@ -3836,9 +3836,9 @@
           "statement": "Ficar muitas horas num ambiente acima de 85 dB:",
           "options": [
             "pode causar dano que não volta ao ouvido",
-            "melhora a audição",
+            "melhora a audição com o costume",
             "não faz nada",
-            "muda o timbre da voz",
+            "muda o timbre da voz de quem ouve",
             "só incomoda à noite"
           ],
           "correct_index": 0,
@@ -3881,8 +3881,8 @@
           "statement": "Uma cantora trinca uma taça de cristal com a voz quando:",
           "options": [
             "sustenta uma nota na frequência própria da taça",
-            "canta qualquer nota bem forte",
-            "canta bem grave",
+            "canta qualquer nota bem forte, em qualquer altura",
+            "canta bem grave e bem alto",
             "canta muito rápido",
             "muda de timbre"
           ],
@@ -3911,7 +3911,7 @@
           "statement": "Numa sala de 8 m de comprimento, um grito não produz eco nítido porque:",
           "options": [
             "o som volta em menos de 0,1 s e se emenda no original",
-            "o som não bate na parede",
+            "o som não bate na parede de uma sala pequena",
             "a sala absorve todo o som",
             "o som anda mais devagar em sala fechada",
             "o grito é agudo demais"
@@ -4301,9 +4301,9 @@
           "statement": "Vê-se a comida pela porta do forno, e as micro-ondas não saem. Isso acontece porque:",
           "options": [
             "a luz visível tem onda muito menor que os furos da grade, e a micro-onda, maior",
-            "a luz é mais forte que as micro-ondas",
+            "a luz é mais forte que as micro-ondas e passa por qualquer buraco",
             "o vidro segura as micro-ondas",
-            "as micro-ondas são mais lentas que a luz",
+            "as micro-ondas são mais lentas que a luz e ficam presas na grade",
             "a grade esquenta e absorve a luz"
           ],
           "correct_index": 0,
@@ -4582,9 +4582,9 @@
           "statement": "O fone com cancelamento de ruído funciona por:",
           "options": [
             "interferência destrutiva",
-            "difração",
+            "difração das ondas",
             "polarização",
-            "refração",
+            "refração do som",
             "reflexão"
           ],
           "correct_index": 0,
@@ -4678,10 +4678,10 @@
           "statement": "Os óculos de sol polarizados servem para:",
           "options": [
             "cortar o reflexo da água e do asfalto",
-            "aumentar a luz",
+            "aumentar a luz que chega ao olho",
             "mudar a cor do céu",
             "ouvir melhor",
-            "enxergar no escuro"
+            "enxergar no escuro com mais nitidez"
           ],
           "correct_index": 0,
           "explanation": "O filtro barra a luz que vibra na direção do reflexo.",
@@ -4693,8 +4693,8 @@
           "statement": "As ondas do rádio AM contornam morros melhor que as do FM porque:",
           "options": [
             "têm comprimento de onda muito maior",
-            "são mais rápidas",
-            "têm maior frequência",
+            "são mais rápidas que a luz",
+            "têm maior frequência que a luz",
             "são ondas de som",
             "são polarizadas"
           ],
@@ -4708,10 +4708,10 @@
           "statement": "Duas ondas iguais se encontram com os topos juntos. No ponto de encontro:",
           "options": [
             "a onda fica com o dobro da altura",
-            "as duas se cancelam",
+            "as duas se cancelam e somem",
             "nada muda",
             "as duas param",
-            "uma vira a outra"
+            "uma vira a outra e segue sozinha"
           ],
           "correct_index": 0,
           "explanation": "É a interferência construtiva: topo com topo se reforçam.",
@@ -4738,10 +4738,10 @@
           "statement": "A polarização da luz mostra que ela é uma onda transversal porque:",
           "options": [
             "só onda que vibra atravessada ao caminho tem direção para filtrar",
-            "a luz anda no vazio",
+            "a luz anda no vazio e por isso pode ser filtrada",
             "a luz é muito rápida",
             "a luz se reflete",
-            "o som também se polariza"
+            "o som também se polariza, do mesmo jeito que a luz"
           ],
           "correct_index": 0,
           "explanation": "Uma onda longitudinal não teria direção de vibração para barrar.",
