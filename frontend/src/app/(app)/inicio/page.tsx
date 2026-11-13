@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ChevronRight, CloudUpload } from "lucide-react";
-import { Card, PageHero } from "@/components/ui";
+import { Card } from "@/components/ui";
 import { HomeGoal } from "@/components/app/HomeGoal";
 import { AreaTile } from "@/components/home/AreaTile";
 import { TrailCard } from "@/components/home/TrailCard";
@@ -77,17 +77,20 @@ export default async function Inicio() {
         a busca mora no Perfil. A frase de baixo é a única coisa que muda de
         um dia para o outro, e diz o que fazer agora.
       */}
-      <PageHero
-        eyebrow="Bora estudar"
-        title={`Oi, ${firstName(user.name)}!`}
-        art={
-          meta && (
-            <HomeGoal goal={meta} />
-          )
-        }
-      >
-        {meta ? fraseDaMeta(meta, gami) : saudacao(gami)}
-      </PageHero>
+      {/*
+        Uma linha, e não o topo centralizado das outras telas: com o anel em
+        cima do título, a saudação ocupava meia tela antes de qualquer coisa
+        que se pudesse tocar. Aqui o anel fica ao lado e o "continue" sobe.
+      */}
+      <header className="flex items-center gap-4">
+        <div className="min-w-0 flex-1">
+          <h1 className="text-3xl">Oi, {firstName(user.name)}!</h1>
+          <p className="mt-1 text-base text-balance text-content-secondary">
+            {meta ? fraseDaMeta(meta, gami) : saudacao(gami)}
+          </p>
+        </div>
+        {meta && <HomeGoal goal={meta} />}
+      </header>
 
       {/*
         Só para visitante que JÁ estudou alguma coisa: antes disso não há o que
@@ -109,28 +112,37 @@ export default async function Inicio() {
       <section aria-labelledby="continue">
         <h2 id="continue" className="sr-only">Continuar</h2>
         {last && continueHref ? (
-          <Card tone="bold" size="lg" radius="panel" href={continueHref}>
-            <p className="label-mono !text-sky">Continue de onde parou</p>
-            <p className="mt-3 font-display text-2xl font-bold">{last.lesson_title}</p>
-            <p className="mt-1 text-base on-bold-secondary">
-              {last.subject_name}
-              {last.percent !== null ? ` · último resultado ${last.percent}%` : " · você não terminou a última prática"}
-            </p>
-            <span className="mt-5 inline-flex items-center gap-2 font-bold text-sky">
-              {last.kind === "exam" ? "Abrir matéria" : "Abrir lição"}{" "}
-              <ArrowRight className="size-5" aria-hidden="true" />
-            </span>
+          <Card tone="bold" radius="panel" href={continueHref}>
+            <div className="flex items-center gap-4">
+              <div className="min-w-0 flex-1">
+                <p className="label-mono !text-sky">Continue de onde parou</p>
+                <p className="mt-2 font-display text-xl leading-snug font-bold">{last.lesson_title}</p>
+                <p className="mt-1 text-sm on-bold-secondary">
+                  {last.subject_name}
+                  {last.percent !== null ? ` · último resultado ${last.percent}%` : " · prática não terminada"}
+                </p>
+              </div>
+              <span className="grid size-12 shrink-0 place-items-center rounded-full bg-sky text-on-accent">
+                <ArrowRight className="size-6" aria-hidden="true" />
+                <span className="sr-only">{last.kind === "exam" ? "Abrir matéria" : "Abrir lição"}</span>
+              </span>
+            </div>
           </Card>
         ) : firstLesson ? (
-          <Card tone="bold" size="lg" radius="panel" href={`/licao/${firstLesson.id}`}>
-            <p className="label-mono !text-sky">Comece por aqui</p>
-            <p className="mt-3 font-display text-2xl font-bold">{firstLesson.title}</p>
-            <p className="mt-1 text-base on-bold-secondary">
-              Leva poucos minutos: leia a lição e treine {pluralize(firstLesson.questions_available, "questão", "questões")}.
-            </p>
-            <span className="mt-5 inline-flex items-center gap-2 font-bold text-sky">
-              Começar <ArrowRight className="size-5" aria-hidden="true" />
-            </span>
+          <Card tone="bold" radius="panel" href={`/licao/${firstLesson.id}`}>
+            <div className="flex items-center gap-4">
+              <div className="min-w-0 flex-1">
+                <p className="label-mono !text-sky">Comece por aqui</p>
+                <p className="mt-2 font-display text-xl leading-snug font-bold">{firstLesson.title}</p>
+                <p className="mt-1 text-sm on-bold-secondary">
+                  Poucos minutos: leia e treine {pluralize(firstLesson.questions_available, "questão", "questões")}.
+                </p>
+              </div>
+              <span className="grid size-12 shrink-0 place-items-center rounded-full bg-sky text-on-accent">
+                <ArrowRight className="size-6" aria-hidden="true" />
+                <span className="sr-only">Começar</span>
+              </span>
+            </div>
           </Card>
         ) : null}
       </section>

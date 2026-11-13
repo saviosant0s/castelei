@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Lock } from "lucide-react";
 import { Card, ListRow, PageHero } from "@/components/ui";
 import { CreateClassroomForm } from "@/components/classroom/CreateClassroomForm";
 import { JoinByCode } from "@/components/classroom/JoinByCode";
@@ -19,18 +20,17 @@ export default async function TurmasPage() {
   return (
     <div className="space-y-8">
       <PageHero eyebrow="Estudo" title="Turmas">
-        O professor cria a turma de uma matéria e acompanha quem já estudou e onde a turma erra.
+        Estude a matéria junto com a sua turma.
       </PageHero>
 
       <section aria-labelledby="h-entrar" className="space-y-3">
-        <h2 id="h-entrar" className="text-2xl">Entrar numa turma</h2>
-        <p className="text-base text-content-secondary">Digite o código que o professor passou.</p>
+        <h2 id="h-entrar" className="text-xl">Tenho um código</h2>
         <JoinByCode />
       </section>
 
       {joined.length > 0 && (
         <section aria-labelledby="h-estou" className="space-y-3">
-          <h2 id="h-estou" className="text-2xl">Turmas em que estou</h2>
+          <h2 id="h-estou" className="text-xl">Turmas em que estou</h2>
           <ul className="space-y-3">
             {joined.map((c) => (
               <li key={c.id}>
@@ -43,7 +43,7 @@ export default async function TurmasPage() {
 
       {owned.length > 0 && (
         <section aria-labelledby="h-minhas" className="space-y-3">
-          <h2 id="h-minhas" className="text-2xl">Turmas que eu criei</h2>
+          <h2 id="h-minhas" className="text-xl">Turmas que eu criei</h2>
           <ul className="space-y-3">
             {owned.map((c) => (
               <li key={c.id}>
@@ -59,17 +59,18 @@ export default async function TurmasPage() {
       )}
 
       <section aria-labelledby="h-criar" className="space-y-3">
-        <h2 id="h-criar" className="text-2xl">Criar uma turma</h2>
+        <h2 id="h-criar" className="text-xl">Sou professor</h2>
         {can_create ? (
           <Card tone="raised">
             <CreateClassroomForm subjects={subjects} />
           </Card>
         ) : (
-          <Card tone="sky" href="/planos">
-            <p className="text-base">
-              <strong>Criar e acompanhar turma é do plano Pro.</strong> Entrar numa turma continua grátis para os alunos.
-            </p>
-          </Card>
+          <ListRow
+            href="/planos"
+            leading={<Lock className="size-5" aria-hidden="true" />}
+            title="Criar uma turma"
+            meta="Do plano Pro. Entrar continua grátis."
+          />
         )}
       </section>
     </div>
