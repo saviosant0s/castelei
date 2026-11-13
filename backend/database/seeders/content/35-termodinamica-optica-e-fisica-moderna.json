@@ -242,10 +242,10 @@
           "statement": "Um termômetro precisa ficar alguns minutos no corpo porque:",
           "options": [
             "precisa chegar ao equilíbrio térmico com ele",
-            "o mercúrio é preguiçoso",
-            "a febre demora a começar",
-            "o corpo esfria o termômetro",
-            "o vidro precisa derreter"
+            "o mercúrio é lento e precisa acordar",
+            "a febre demora alguns minutos para começar",
+            "o corpo esfria o termômetro antes de medir",
+            "o vidro precisa amolecer para o líquido subir"
           ],
           "correct_index": 0,
           "explanation": "O calor passa até as temperaturas se igualarem.",
@@ -356,10 +356,10 @@
           "statement": "Uma pessoa diz que um dia a 30 °C é duas vezes mais quente que um a 15 °C. A crítica correta é:",
           "options": [
             "em kelvin são 303 e 288 K, então a agitação não dobrou",
-            "está certa, porque 30 é o dobro de 15",
-            "o certo seria comparar em Fahrenheit",
-            "temperatura não pode ser comparada",
-            "o dobro de 15 °C é 60 °C"
+            "está certa, porque 30 é o dobro de 15 em qualquer escala",
+            "o certo seria comparar em Fahrenheit, que é a escala exata",
+            "temperatura não pode ser comparada entre dias diferentes",
+            "o dobro de 15 °C seria 60 °C, e não 30 °C"
           ],
           "correct_index": 0,
           "explanation": "Dobrar a agitação exige dobrar a temperatura em kelvin.",
@@ -538,10 +538,10 @@
           "statement": "Ao meio-dia, a areia da praia está mais quente que o mar porque:",
           "options": [
             "a areia tem calor específico menor que a água",
-            "a areia recebe mais sol",
-            "a água tem calor específico menor",
-            "o mar reflete toda a luz",
-            "a areia é molhada"
+            "a areia recebe mais sol que a água",
+            "a água tem calor específico menor que a areia",
+            "o mar reflete toda a luz que chega",
+            "a areia está molhada e guarda calor"
           ],
           "correct_index": 0,
           "explanation": "Com a mesma energia, a areia esquenta mais.",
@@ -608,10 +608,10 @@
           "statement": "Cidades à beira-mar têm menor variação de temperatura entre o dia e a noite porque:",
           "options": [
             "a água do mar demora a esquentar e a esfriar",
-            "o mar está sempre gelado",
-            "chove todo dia no litoral",
-            "o sol não chega ao litoral",
-            "a areia esfria a cidade"
+            "o mar está sempre gelado e esfria tudo",
+            "chove todo dia no litoral e segura o calor",
+            "o sol chega mais fraco ao litoral",
+            "a areia esfria a cidade durante a tarde"
           ],
           "correct_index": 0,
           "explanation": "O calor específico alto da água segura a temperatura.",
@@ -680,10 +680,10 @@
           "statement": "Por que um copo de água com gelo continua a 0 °C enquanto ainda há gelo?",
           "options": [
             "o calor que entra é usado para derreter o gelo",
-            "o gelo gera frio sem parar",
-            "a água não recebe calor",
-            "o copo isola tudo",
-            "o gelo tem calor específico zero"
+            "o gelo gera frio sem parar enquanto existe",
+            "a água não recebe calor nenhum do ambiente",
+            "o copo isola tudo e nada entra",
+            "o gelo tem calor específico zero e não esquenta"
           ],
           "correct_index": 0,
           "explanation": "Enquanto há gelo derretendo, a temperatura não sobe.",
@@ -695,10 +695,10 @@
           "statement": "Uma queimadura com vapor a 100 °C costuma ser pior que com água a 100 °C porque:",
           "options": [
             "o vapor libera também o calor latente ao virar água na pele",
-            "o vapor é mais quente que 100 °C sempre",
-            "a água não queima",
-            "o vapor tem menos energia",
-            "a pele absorve só o vapor"
+            "o vapor é mais quente que 100 °C sempre, mesmo saindo da panela",
+            "a água a 100 °C não queima, porque já está esfriando",
+            "o vapor tem menos energia, mas toca mais pele de uma vez",
+            "a pele absorve só o vapor e deixa a água escorrer"
           ],
           "correct_index": 0,
           "explanation": "Cada grama de vapor solta 540 cal ao condensar.",
@@ -725,10 +725,10 @@
           "statement": "Uma cidade do interior tem dias muito quentes e noites frias. Uma do litoral, na mesma latitude, varia pouco. A explicação está:",
           "options": [
             "no calor específico alto da água do mar, que segura a temperatura do litoral",
-            "no calor latente do gelo",
-            "na distância até o sol",
-            "na quantidade de árvores apenas",
-            "no fuso horário"
+            "no calor latente do gelo, que derrete no inverno do litoral",
+            "na distância até o sol, que é menor no interior",
+            "na quantidade de árvores, que seguram o calor no interior",
+            "no fuso horário diferente entre o interior e o litoral"
           ],
           "correct_index": 0,
           "explanation": "A água guarda e devolve calor devagar.",
@@ -934,10 +934,10 @@
           "statement": "A panela de pressão cozinha mais rápido porque:",
           "options": [
             "a pressão maior faz a água ferver a uma temperatura mais alta",
-            "ela usa menos água",
-            "o fogo fica mais forte",
-            "a água ferve a uma temperatura mais baixa",
-            "o vapor esfria a comida"
+            "ela usa menos água e esquenta mais rápido",
+            "o fogo fica mais forte por causa da tampa",
+            "a água ferve a uma temperatura mais baixa lá dentro",
+            "o vapor esfria a comida e ela amolece"
           ],
           "correct_index": 0,
           "explanation": "Perto de 120 °C.",
@@ -962,10 +962,10 @@
           "statement": "O pneu deve ser calibrado frio porque, quente:",
           "options": [
             "a pressão do ar está maior que a normal",
-            "o ar escapou",
-            "a borracha encolheu",
-            "a pressão está menor",
-            "o calibrador não funciona"
+            "o ar escapou pelo bico",
+            "a borracha encolheu com o calor",
+            "a pressão está menor que a normal",
+            "o calibrador não funciona no calor"
           ],
           "correct_index": 0,
           "explanation": "O ar esquentado empurra mais.",
@@ -997,10 +997,10 @@
           "statement": "Uma lata de spray não pode ir ao fogo porque:",
           "options": [
             "o volume não muda e a pressão sobe até a lata explodir",
-            "a lata derrete na hora",
-            "o gás esfria demais",
-            "a pressão cai e a lata amassa",
-            "o spray vira água"
+            "a lata derrete na hora, antes de esquentar o gás",
+            "o gás esfria demais e congela a válvula",
+            "a pressão cai e a lata amassa para dentro",
+            "o spray vira água e escorre pelo fogo"
           ],
           "correct_index": 0,
           "explanation": "É uma transformação isocórica.",
@@ -1057,10 +1057,10 @@
           "statement": "Um aluno calcula que um gás aquecido de 10 °C para 20 °C, em volume fixo, dobra a pressão. O erro é:",
           "options": [
             "usar Celsius; em kelvin, 283 K vira 293 K e a pressão sobe pouco",
-            "nenhum, a pressão dobra",
-            "a pressão cai",
-            "o volume deveria dobrar",
-            "gases não mudam de pressão"
+            "nenhum, a pressão dobra mesmo, porque 20 é o dobro de 10",
+            "a pressão cai, porque o gás se espalha com o calor",
+            "o volume é que deveria dobrar, e não a pressão",
+            "gases não mudam de pressão quando o volume é fixo"
           ],
           "correct_index": 0,
           "explanation": "O aumento real é de cerca de 3,5%.",
@@ -1250,9 +1250,9 @@
           "statement": "Um motor de carro transforma em movimento cerca de:",
           "options": [
             "30% da energia da gasolina",
-            "100% da energia",
-            "99% da energia",
-            "1% da energia",
+            "100% da energia, sem perda",
+            "70% da energia da gasolina",
+            "5% da energia",
             "nada da energia"
           ],
           "correct_index": 0,
@@ -1306,10 +1306,10 @@
           "statement": "Nenhuma máquina térmica chega a 100% de rendimento porque:",
           "options": [
             "sempre sobra calor jogado para um lugar mais frio",
-            "os motores são mal feitos",
-            "a gasolina é fraca",
-            "o ar atrapalha",
-            "o metal derrete"
+            "os motores são mal feitos e ainda vão melhorar",
+            "a gasolina é fraca e queima pela metade",
+            "o ar atrapalha o pistão e rouba a força",
+            "o metal derrete se o motor render mais"
           ],
           "correct_index": 0,
           "explanation": "É uma lei, não um defeito.",
@@ -1320,10 +1320,10 @@
           "statement": "A grade atrás da geladeira esquenta porque:",
           "options": [
             "é por ali que sai o calor tirado de dentro",
-            "a geladeira está quebrada",
-            "o motor queima gasolina",
-            "o frio vira calor",
-            "a lâmpada esquenta"
+            "a geladeira está quebrada e precisa de conserto",
+            "o motor queima gasolina para gerar o frio",
+            "o frio vira calor quando passa pela grade",
+            "a lâmpada de dentro esquenta a parte de trás"
           ],
           "correct_index": 0,
           "explanation": "A geladeira leva calor de dentro para fora.",
@@ -1388,10 +1388,10 @@
           "statement": "Um cubo de gelo derrete na mesa, mas a água não volta a congelar sozinha. Isso mostra:",
           "options": [
             "que a natureza tem um sentido, medido pela entropia",
-            "que a primeira lei não vale",
-            "que o gelo não tem energia",
-            "que a mesa é fria",
-            "que a água não tem temperatura"
+            "que a primeira lei não vale para a água que derrete",
+            "que o gelo não tem energia guardada para voltar",
+            "que a mesa é fria e segura o gelo",
+            "que a água não tem temperatura própria"
           ],
           "correct_index": 0,
           "explanation": "Processos naturais aumentam a entropia.",
@@ -1418,10 +1418,10 @@
           "statement": "Um aluno calcula o rendimento de Carnot entre 227 °C e 27 °C fazendo 1 − 27/227. O erro é:",
           "options": [
             "usar Celsius; em kelvin são 500 K e 300 K, e o rendimento é 40%",
-            "nenhum",
-            "o certo seria 27/227",
-            "o rendimento é sempre 100%",
-            "deveria usar Fahrenheit"
+            "nenhum, a conta está certa e dá cerca de 88%",
+            "o certo seria 27/227, sem o 1 na frente",
+            "o rendimento de Carnot é sempre 100%, sem conta",
+            "deveria usar Fahrenheit, que é a escala dos motores"
           ],
           "correct_index": 0,
           "explanation": "A conta só funciona em kelvin.",
@@ -1448,10 +1448,10 @@
           "statement": "Um ar-condicionado esfria a sala, mas esquenta a área externa. Isso acontece porque:",
           "options": [
             "ele leva calor de dentro para fora, gastando energia",
-            "ele cria frio do nada",
-            "o calor some dentro do aparelho",
-            "a sala estava fria antes",
-            "ele funciona sem energia"
+            "ele cria frio do nada, sem gastar nada",
+            "o calor some dentro do aparelho e não sai",
+            "a sala estava fria antes e só voltou ao normal",
+            "ele funciona sem energia, só com o gás de dentro"
           ],
           "correct_index": 0,
           "explanation": "É o mesmo princípio da geladeira.",
@@ -1702,10 +1702,10 @@
           "statement": "Uma camisa é vermelha porque:",
           "options": [
             "reflete a luz vermelha e absorve as outras",
-            "produz luz vermelha",
-            "absorve só o vermelho",
-            "não recebe luz",
-            "reflete todas as cores"
+            "produz luz vermelha própria",
+            "absorve só o vermelho e reflete as outras cores",
+            "não recebe luz de nenhuma cor",
+            "reflete todas as cores juntas, mas o olho vê só uma"
           ],
           "correct_index": 0,
           "explanation": "Ela devolve só o vermelho.",
@@ -1812,10 +1812,10 @@
           "statement": "Por que um eclipse solar total só é visto numa faixa estreita da Terra, e um lunar é visto por metade do planeta?",
           "options": [
             "a sombra da Lua na Terra é pequena, e a Lua inteira entra na sombra da Terra",
-            "o Sol é menor que a Lua",
-            "a Terra não gira",
-            "eclipse lunar acontece de dia",
-            "a Lua tem luz própria"
+            "o Sol é menor que a Lua e só cobre uma parte do céu",
+            "a Terra não gira durante o eclipse solar e fica parada",
+            "o eclipse lunar acontece de dia, quando todos estão acordados",
+            "a Lua tem luz própria, que só se apaga numa faixa estreita"
           ],
           "correct_index": 0,
           "explanation": "Quem vê a Lua à noite vê o eclipse lunar.",
@@ -1986,9 +1986,9 @@
           "statement": "A imagem num espelho plano é:",
           "options": [
             "virtual, direita e do mesmo tamanho",
-            "real e invertida",
-            "maior e real",
-            "menor e virtual",
+            "real, invertida e menor",
+            "maior, real e de cabeça para baixo",
+            "menor e virtual, mais longe",
             "real e do mesmo tamanho"
           ],
           "correct_index": 0,
@@ -2091,10 +2091,10 @@
           "statement": "O espelho redondo nas saídas de garagem é convexo porque:",
           "options": [
             "mostra uma área grande da rua",
-            "deixa tudo maior",
-            "funciona como farol",
-            "inverte as cores",
-            "esquenta com o sol"
+            "deixa tudo maior e mais perto",
+            "funciona como farol à noite",
+            "inverte as cores dos carros",
+            "esquenta com o sol e não embaça"
           ],
           "correct_index": 0,
           "explanation": "É o mesmo motivo do retrovisor.",
@@ -2384,10 +2384,10 @@
           "statement": "O fundo de uma piscina parece mais raso do que é por causa da:",
           "options": [
             "refração da luz ao sair da água",
-            "reflexão total",
-            "cor da água",
-            "dispersão da luz",
-            "sombra da borda"
+            "reflexão total na superfície",
+            "cor azul da água tratada",
+            "dispersão da luz em cores",
+            "sombra da borda da piscina"
           ],
           "correct_index": 0,
           "explanation": "A luz muda de direção na superfície.",
@@ -2426,10 +2426,10 @@
           "statement": "O arco-íris se forma porque:",
           "options": [
             "cada cor se desvia diferente ao atravessar as gotas",
-            "as gotas pintam a luz",
-            "o Sol tem sete cores separadas",
-            "a luz reflete no céu azul",
-            "as nuvens são coloridas"
+            "as gotas pintam a luz que passa por elas",
+            "o Sol tem sete cores separadas que se afastam",
+            "a luz reflete no céu azul e se divide",
+            "as nuvens são coloridas por dentro"
           ],
           "correct_index": 0,
           "explanation": "É a dispersão da luz.",
@@ -2507,10 +2507,10 @@
           "statement": "O diamante brilha tanto porque:",
           "options": [
             "tem índice de refração alto e a luz faz reflexão total dentro dele",
-            "tem luz própria",
-            "é transparente como o ar",
-            "absorve toda a luz",
-            "é um espelho plano"
+            "tem luz própria, que acende quando ele é lapidado e polido",
+            "é transparente como o ar e deixa a luz passar reta",
+            "absorve toda a luz que chega e devolve só um brilho branco",
+            "é um espelho plano em todas as faces lapidadas"
           ],
           "correct_index": 0,
           "explanation": "A luz fica presa e sai por poucas faces.",
@@ -2552,10 +2552,10 @@
           "statement": "Para ver o arco-íris, a pessoa precisa estar:",
           "options": [
             "de costas para o Sol, olhando para a chuva",
-            "olhando direto para o Sol",
-            "dentro de casa",
-            "no escuro",
-            "acima das nuvens sempre"
+            "olhando direto para o Sol, contra a luz",
+            "dentro de casa, pela janela",
+            "no escuro, logo depois que a chuva passou",
+            "acima das nuvens, num avião"
           ],
           "correct_index": 0,
           "explanation": "A luz entra nas gotas e volta para quem olha.",
@@ -2582,10 +2582,10 @@
           "statement": "Num prisma, a cor que mais se desvia é o violeta. Isso quer dizer que, no vidro:",
           "options": [
             "a luz violeta anda mais devagar que a vermelha",
-            "a luz violeta anda mais rápido",
-            "todas as cores andam igual",
-            "o vermelho não atravessa o vidro",
-            "o violeta não existe na luz branca"
+            "a luz violeta anda mais rápido que a vermelha",
+            "todas as cores andam igual dentro do vidro",
+            "o vermelho não atravessa o vidro do prisma",
+            "o violeta não existe na luz branca do Sol"
           ],
           "correct_index": 0,
           "explanation": "Mais desvio, maior índice e menor velocidade.",
@@ -2848,10 +2848,10 @@
           "statement": "Depois dos 40 anos, muita gente afasta o celular para ler. Isso é:",
           "options": [
             "presbiopia, a vista cansada",
-            "miopia",
-            "astigmatismo",
-            "daltonismo",
-            "catarata sempre"
+            "miopia, que piora com a idade",
+            "astigmatismo de nascença",
+            "daltonismo, que confunde cores",
+            "catarata, sempre"
           ],
           "correct_index": 0,
           "explanation": "O cristalino perde a força para focar de perto.",
@@ -2916,10 +2916,10 @@
           "statement": "Quem troca o foco do olho de perto para longe é:",
           "options": [
             "o cristalino, que muda de forma",
-            "a pupila",
-            "a retina",
-            "a pálpebra",
-            "o nervo óptico"
+            "a pupila, que abre e fecha",
+            "a retina, que se move",
+            "a pálpebra, que aperta o olho",
+            "o nervo óptico, que estica"
           ],
           "correct_index": 0,
           "explanation": "É a lente natural do olho.",
@@ -2976,10 +2976,10 @@
           "statement": "A presbiopia é corrigida com lente convergente porque:",
           "options": [
             "o cristalino já não junta a luz o bastante para ver de perto",
-            "o olho ficou comprido",
-            "a córnea ficou ovalada",
-            "a retina parou",
-            "a imagem se forma antes da retina"
+            "o olho ficou comprido demais com o tempo",
+            "a córnea ficou ovalada com a idade",
+            "a retina parou de captar a luz de perto",
+            "a imagem se forma antes da retina, como na miopia"
           ],
           "correct_index": 0,
           "explanation": "A lente faz o trabalho que o cristalino perdeu.",
@@ -3128,10 +3128,10 @@
           "statement": "Pela relatividade, a velocidade da luz no vácuo:",
           "options": [
             "é a mesma para qualquer pessoa, parada ou em movimento",
-            "depende da velocidade de quem mede",
-            "é infinita",
-            "muda com a cor da luz no vácuo",
-            "é zero"
+            "depende da velocidade de quem mede, como a de um carro",
+            "é infinita e chega a todo lugar no mesmo instante",
+            "muda com a cor da luz, mesmo no vácuo",
+            "é zero para quem está parado"
           ],
           "correct_index": 0,
           "explanation": "É a base da teoria.",
@@ -3156,10 +3156,10 @@
           "statement": "Os relógios dos satélites de GPS precisam de correção porque:",
           "options": [
             "o tempo passa diferente para eles, como prevê a relatividade",
-            "as baterias acabam",
-            "o sinal é lento demais",
-            "a Terra para de girar",
-            "os satélites caem"
+            "as baterias acabam e os relógios atrasam alguns minutos por dia",
+            "o sinal é lento demais e chega velho aos aparelhos da Terra",
+            "a Terra para de girar enquanto eles passam",
+            "os satélites caem um pouco a cada volta"
           ],
           "correct_index": 0,
           "explanation": "Sem a correção, o erro passaria de 10 km por dia.",
@@ -3170,10 +3170,10 @@
           "statement": "A equação E = mc² indica que:",
           "options": [
             "massa e energia podem se transformar uma na outra",
-            "a energia é sempre zero",
-            "a massa não tem energia",
-            "só a luz tem energia",
-            "a velocidade da luz muda"
+            "a energia de qualquer corpo parado é sempre zero",
+            "a massa não tem energia nenhuma guardada",
+            "só a luz tem energia, e a matéria não",
+            "a velocidade da luz muda conforme a massa"
           ],
           "correct_index": 0,
           "explanation": "Um pouco de massa guarda muita energia.",
@@ -3184,10 +3184,10 @@
           "statement": "O eclipse de 1919 foi fotografado em Sobral, no Ceará. Ele confirmou que:",
           "options": [
             "a luz faz curva ao passar perto do Sol",
-            "a Terra é plana",
+            "a Terra é plana e a luz faz curva",
             "o Sol gira em volta da Terra",
-            "a luz não tem velocidade",
-            "não existe gravidade"
+            "a luz não tem velocidade nenhuma",
+            "não existe gravidade perto do Sol"
           ],
           "correct_index": 0,
           "explanation": "A gravidade curva o espaço-tempo.",
@@ -3198,10 +3198,10 @@
           "statement": "Na relatividade geral, a gravidade é explicada como:",
           "options": [
             "a curva que a massa faz no espaço-tempo",
-            "uma corda invisível",
-            "o magnetismo da Terra",
-            "o vento",
-            "a falta de ar"
+            "uma corda invisível entre os corpos",
+            "o magnetismo do centro da Terra",
+            "o vento solar que empurra os planetas",
+            "a falta de ar no espaço"
           ],
           "correct_index": 0,
           "explanation": "Como uma bola pesada num lençol esticado.",
@@ -3213,9 +3213,9 @@
           "options": [
             "do choque de dois buracos negros",
             "de uma explosão na Terra",
-            "do Sol",
+            "das manchas do Sol",
             "do som de um trovão",
-            "de antenas de rádio"
+            "de antenas de rádio na Lua"
           ],
           "correct_index": 0,
           "explanation": "Corpos enormes fazem o espaço-tempo ondular.",
@@ -3262,10 +3262,10 @@
           "statement": "Não notamos a dilatação do tempo no dia a dia porque:",
           "options": [
             "nossas velocidades são muito menores que a da luz",
-            "ela não existe",
+            "ela não existe, é só teoria",
             "o relógio do celular corrige tudo",
-            "só existe à noite",
-            "o tempo não passa"
+            "só existe à noite, com pouca luz",
+            "o tempo não passa para quem está parado"
           ],
           "correct_index": 0,
           "explanation": "O efeito só fica grande perto da velocidade da luz.",
@@ -3307,10 +3307,10 @@
           "statement": "Correndo atrás de um ônibus, ele parece mais lento. Correndo atrás de um raio de luz:",
           "options": [
             "a luz continua a cerca de 300 mil km/s para você",
-            "a luz parece mais lenta",
-            "a luz para",
-            "a luz fica mais rápida",
-            "você alcança a luz"
+            "a luz parece mais lenta, como o ônibus",
+            "a luz para e fica do seu lado",
+            "a luz fica mais rápida para fugir de você",
+            "você alcança a luz se correr bastante"
           ],
           "correct_index": 0,
           "explanation": "É o que separa a luz de qualquer outra coisa.",
@@ -3322,10 +3322,10 @@
           "statement": "Na comparação da bola pesada num lençol esticado, uma bolinha que passa perto faz uma curva. Isso representa:",
           "options": [
             "a luz e os corpos seguindo a curva do espaço-tempo perto de uma massa",
-            "o magnetismo puxando a bolinha",
-            "o atrito do lençol",
-            "a bolinha sendo empurrada pelo vento",
-            "a dilatação do tempo apenas"
+            "o magnetismo puxando a bolinha de metal para o centro do lençol",
+            "o atrito do lençol freando a bolinha e mudando o caminho",
+            "a bolinha sendo empurrada pelo vento da sala",
+            "a dilatação do tempo apenas, sem nada a ver com o espaço"
           ],
           "correct_index": 0,
           "explanation": "A massa curva o espaço, e o resto segue a curva.",
@@ -3511,10 +3511,10 @@
           "statement": "O fóton é:",
           "options": [
             "o pacote de energia da luz",
-            "um tipo de átomo",
-            "uma lente",
-            "um elétron parado",
-            "uma onda de som"
+            "um tipo de átomo de luz",
+            "uma lente muito pequena",
+            "um elétron parado no átomo",
+            "uma onda de som muito rápida"
           ],
           "correct_index": 0,
           "explanation": "A luz chega em pacotes.",
@@ -3539,10 +3539,10 @@
           "statement": "Uma luz ultravioleta fraca arranca elétrons de um metal, e uma luz vermelha forte não. Isso acontece porque:",
           "options": [
             "cada fóton ultravioleta tem mais energia que um vermelho",
-            "a luz vermelha é mais rápida",
-            "o vermelho não é luz",
-            "a luz forte esquenta demais o metal",
-            "o ultravioleta tem mais fótons"
+            "a luz vermelha é mais rápida e passa direto pelo metal",
+            "o vermelho não é luz de verdade, é só calor",
+            "a luz forte esquenta demais o metal e o deixa preso",
+            "o ultravioleta fraco tem mais fótons que o vermelho forte"
           ],
           "correct_index": 0,
           "explanation": "Um fóton só precisa ter energia suficiente.",
@@ -3567,10 +3567,10 @@
           "statement": "O painel solar gera eletricidade porque:",
           "options": [
             "a luz solta elétrons dentro de um material especial",
-            "esquenta água",
-            "reflete a luz",
-            "guarda calor",
-            "gira uma turbina"
+            "esquenta água num cano preto em cima do telhado",
+            "reflete a luz para dentro de casa",
+            "guarda o calor do dia para a noite",
+            "gira uma turbina pequena com o ar quente do sol"
           ],
           "correct_index": 0,
           "explanation": "É uma ideia parecida com o efeito fotoelétrico.",
@@ -3581,10 +3581,10 @@
           "statement": "Pelo modelo de Bohr, o elétron no átomo:",
           "options": [
             "só pode ficar em certos degraus de energia",
-            "pode ter qualquer energia",
-            "não tem energia",
-            "fica parado no centro",
-            "é feito de luz"
+            "pode ter qualquer energia, sem limite",
+            "não tem energia nenhuma enquanto gira",
+            "fica parado no centro, junto do núcleo",
+            "é feito de luz presa no átomo"
           ],
           "correct_index": 0,
           "explanation": "Ao trocar de degrau, ele solta ou absorve um fóton.",
@@ -3595,10 +3595,10 @@
           "statement": "Cada elemento dá uma cor diferente nos fogos de artifício porque:",
           "options": [
             "tem degraus de energia próprios e solta fótons de cores certas",
-            "foi pintado antes",
-            "queima em temperaturas diferentes apenas",
-            "reflete a luz da Lua",
-            "absorve o som"
+            "foi pintado antes de ir para o tubo do fogo de artifício",
+            "queima em temperaturas diferentes, e só isso muda a cor",
+            "reflete a luz da Lua de um jeito diferente no céu",
+            "absorve o som da explosão e o transforma em cor"
           ],
           "correct_index": 0,
           "explanation": "O espectro de cada elemento é como uma impressão digital.",
@@ -3634,10 +3634,10 @@
           "statement": "A dualidade onda-partícula diz que a luz:",
           "options": [
             "se comporta às vezes como onda e às vezes como partícula",
-            "é só onda",
-            "é só partícula",
-            "não existe",
-            "é feita de som"
+            "é só onda, e nunca se comporta como partícula",
+            "é só partícula, e nunca se comporta como onda",
+            "não existe sem um observador",
+            "é feita de som muito agudo"
           ],
           "correct_index": 0,
           "explanation": "O elétron também tem os dois comportamentos.",
@@ -3694,10 +3694,10 @@
           "statement": "Um elétron cai de um degrau de energia mais alto para um mais baixo. Ele:",
           "options": [
             "solta um fóton com a energia da diferença entre os degraus",
-            "absorve um fóton",
-            "some do átomo",
-            "fica com qualquer energia",
-            "vira um próton"
+            "absorve um fóton e ganha a energia que faltava",
+            "some do átomo e vai para outro",
+            "fica com qualquer energia no meio do caminho entre eles",
+            "vira um próton ao perder energia"
           ],
           "correct_index": 0,
           "explanation": "Por isso cada salto dá uma cor certa.",
@@ -3709,10 +3709,10 @@
           "statement": "Um astrônomo descobre do que é feita uma estrela distante olhando a luz dela. Isso é possível porque:",
           "options": [
             "cada elemento tem um espectro próprio, como uma impressão digital",
-            "as estrelas mandam cartas",
-            "a luz traz pedaços da estrela",
-            "todas as estrelas são iguais",
-            "a cor depende só da distância"
+            "as estrelas mandam pedaços pela luz até o telescópio",
+            "a luz traz pedaços da estrela até o telescópio",
+            "todas as estrelas são iguais e feitas das mesmas coisas",
+            "a cor depende só da distância da estrela até a Terra"
           ],
           "correct_index": 0,
           "explanation": "As cores certas revelam os elementos.",
@@ -3901,10 +3901,10 @@
           "statement": "O sinal do celular não causa o mesmo dano que o raio X porque:",
           "options": [
             "não tem energia para arrancar elétrons dos átomos",
-            "não é uma onda",
-            "é mais forte que o raio X",
-            "é som",
-            "não existe"
+            "não é uma onda, e sim uma partícula sem energia",
+            "é mais forte que o raio X, mas não atravessa a pele",
+            "é som, e não luz",
+            "não chega ao corpo"
           ],
           "correct_index": 0,
           "explanation": "Ele é radiação não ionizante.",
@@ -3943,8 +3943,8 @@
           "statement": "No raio X, os ossos aparecem brancos porque:",
           "options": [
             "barram mais radiação que a carne",
-            "brilham sozinhos",
-            "são radioativos",
+            "brilham sozinhos no escuro",
+            "são radioativos por natureza",
             "refletem a luz da sala",
             "são feitos de chumbo"
           ],
@@ -3957,10 +3957,10 @@
           "statement": "O acidente de Goiânia, em 1987, foi causado:",
           "options": [
             "pela abertura de um aparelho de radioterapia abandonado com césio-137",
-            "pela explosão de uma usina nuclear",
-            "por uma bomba atômica",
-            "por um vazamento de gás de cozinha",
-            "por raios de uma tempestade"
+            "pela explosão de uma usina nuclear perto da cidade de Goiânia",
+            "por uma bomba atômica de teste que caiu num terreno baldio",
+            "por um vazamento de gás de cozinha numa fábrica do centro",
+            "por raios de uma tempestade que caíram numa antena de rádio"
           ],
           "correct_index": 0,
           "explanation": "O pó brilhante passou de mão em mão.",
@@ -4030,9 +4030,9 @@
           "statement": "O forno de micro-ondas esquenta a comida porque:",
           "options": [
             "agita as moléculas de água da comida",
-            "deixa a comida radioativa",
-            "usa raios gama",
-            "usa fogo escondido",
+            "deixa a comida radioativa por alguns minutos",
+            "usa raios gama, como os hospitais",
+            "usa fogo escondido atrás da grade",
             "arranca elétrons da comida"
           ],
           "correct_index": 0,
@@ -4045,10 +4045,10 @@
           "statement": "Um técnico de radiologia sai da sala durante o raio X, e o paciente fica. Isso se explica porque:",
           "options": [
             "o técnico receberia doses todos os dias, e o paciente recebe uma dose só",
-            "o raio X não faz mal a ninguém",
-            "o paciente é imune",
-            "o técnico tem medo de barulho",
-            "a radiação só atinge quem está em pé"
+            "o raio X não faz mal a ninguém, e o técnico sai por costume",
+            "o paciente é imune à radiação durante o exame",
+            "o técnico tem medo do barulho do aparelho ligado",
+            "a radiação só atinge quem está em pé na sala"
           ],
           "correct_index": 0,
           "explanation": "O risco vem da soma das doses.",
@@ -4060,10 +4060,10 @@
           "statement": "Do acidente de Goiânia, a principal lição para a saúde pública é que:",
           "options": [
             "materiais radioativos precisam de controle até o descarte final",
-            "a radiação não faz mal",
-            "o césio é seguro de manusear",
-            "só usinas são perigosas",
-            "aparelhos de hospital nunca têm radiação"
+            "a radiação não faz mal se for de hospital e estiver guardada",
+            "o césio é seguro de manusear se a pessoa usar luvas",
+            "só usinas são perigosas, e os hospitais não",
+            "aparelhos de hospital nunca têm radiação de verdade"
           ],
           "correct_index": 0,
           "explanation": "O aparelho tinha sido abandonado sem cuidado.",
@@ -4249,10 +4249,10 @@
           "statement": "Os chips de computadores e celulares são feitos de:",
           "options": [
             "semicondutores, como o silício",
-            "chumbo",
+            "chumbo e cobre, como os fios",
             "vidro comum",
-            "madeira",
-            "água"
+            "madeira prensada",
+            "plástico puro, como a capa"
           ],
           "correct_index": 0,
           "explanation": "Bilhões de transistores ligam e desligam a corrente.",
@@ -4263,10 +4263,10 @@
           "statement": "O LED produz luz porque:",
           "options": [
             "os elétrons mudam de degrau de energia e soltam fótons",
-            "um fio esquenta até brilhar",
-            "queima um gás",
-            "reflete a luz do sol",
-            "tem fogo dentro"
+            "um fio esquenta até ficar vermelho e brilhar",
+            "queima um gás dentro do bulbo de vidro",
+            "reflete a luz do sol guardada durante o dia",
+            "tem um fogo pequeno preso dentro da cápsula"
           ],
           "correct_index": 0,
           "explanation": "O mesmo princípio das cores dos fogos.",
@@ -4277,9 +4277,9 @@
           "statement": "A lâmpada de LED gasta menos energia que a lâmpada antiga porque:",
           "options": [
             "quase não desperdiça energia como calor",
-            "fica apagada metade do tempo",
-            "usa pilha",
-            "é menor",
+            "fica apagada metade do tempo, sem a gente ver",
+            "usa pilha em vez de tomada",
+            "é menor que a lâmpada antiga e esquenta mais",
             "não usa eletricidade"
           ],
           "correct_index": 0,
@@ -4291,10 +4291,10 @@
           "statement": "A luz do laser é diferente da luz comum porque:",
           "options": [
             "é de uma cor só, com as ondas em passo",
-            "é sempre mais quente",
-            "não é luz",
+            "é sempre mais quente que a comum",
+            "não é luz, é calor",
             "tem todas as cores misturadas",
-            "é feita de som"
+            "é feita de som muito agudo"
           ],
           "correct_index": 0,
           "explanation": "Por isso forma um feixe fino.",
@@ -4305,9 +4305,9 @@
           "statement": "A ressonância magnética usa:",
           "options": [
             "ímã forte e ondas de rádio, sem radiação ionizante",
-            "raios X",
-            "raios gama",
-            "som apenas",
+            "raios X, como o exame comum do hospital",
+            "raios gama em doses pequenas e seguras",
+            "som de frequência muito alta",
             "luz ultravioleta"
           ],
           "correct_index": 0,
@@ -4333,10 +4333,10 @@
           "statement": "O exame de ultrassom, usado na gravidez, funciona com:",
           "options": [
             "som de frequência muito alta",
-            "raios X",
-            "radiação gama",
-            "laser",
-            "ímã forte"
+            "raios X em dose bem baixa",
+            "radiação gama fraca e segura",
+            "laser vermelho",
+            "ímã muito forte"
           ],
           "correct_index": 0,
           "explanation": "Não usa radiação ionizante.",
@@ -4387,10 +4387,10 @@
           "statement": "Um celular depende da física moderna porque tem:",
           "options": [
             "chip de semicondutor, tela de LED e GPS",
-            "só peças de madeira",
-            "motor a vapor",
-            "fogo dentro",
-            "só ímãs"
+            "só peças de madeira, metal e vidro",
+            "um motor a vapor pequeno na bateria",
+            "fogo dentro da bateria",
+            "só ímãs e fios de cobre"
           ],
           "correct_index": 0,
           "explanation": "Quase toda a física do século XX está nele.",
@@ -4417,10 +4417,10 @@
           "statement": "Um transistor, dentro do chip, funciona como:",
           "options": [
             "uma chavinha que liga e desliga a corrente",
-            "uma pilha",
-            "uma lâmpada",
-            "um ímã",
-            "um alto-falante"
+            "uma pilha que guarda energia para depois",
+            "uma lâmpada que acende",
+            "um ímã que puxa os elétrons pelo chip",
+            "um alto-falante pequeno"
           ],
           "correct_index": 0,
           "explanation": "Bilhões deles fazem as contas do computador.",
@@ -4432,10 +4432,10 @@
           "statement": "A teoria da luz em pacotes, de 1900 e 1905, virou tecnologia décadas depois. Isso mostra que:",
           "options": [
             "pesquisa sem uso imediato pode gerar aplicações importantes no futuro",
-            "a ciência só vale se der lucro na hora",
-            "teoria e tecnologia não têm ligação",
-            "o celular existia em 1900",
-            "Einstein inventou o LED"
+            "a ciência só vale se der lucro na hora em que é feita",
+            "teoria e tecnologia não têm ligação nenhuma entre si",
+            "o celular já existia em 1900, só que maior e mais pesado",
+            "Einstein inventou o LED em 1905 junto com a teoria"
           ],
           "correct_index": 0,
           "explanation": "Chip, laser e painel solar vieram dessa física.",
@@ -4447,10 +4447,10 @@
           "statement": "LEDs de cores diferentes soltam luz de cores diferentes porque:",
           "options": [
             "o salto de energia dos elétrons muda de um material para outro",
-            "cada LED é pintado por fora",
-            "a corrente tem cores",
-            "o vidro filtra a luz branca sempre",
-            "a temperatura muda a cor"
+            "cada LED é pintado por fora com uma tinta diferente",
+            "a corrente elétrica tem cores diferentes em cada fio",
+            "o vidro filtra a luz branca sempre, e só passa uma cor",
+            "a temperatura muda a cor, e cada LED esquenta diferente"
           ],
           "correct_index": 0,
           "explanation": "Salto maior, fóton de frequência maior.",

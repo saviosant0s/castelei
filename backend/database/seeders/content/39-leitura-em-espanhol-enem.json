@@ -239,9 +239,9 @@
           "statement": "Um texto diz: “El ejercicio puede mejorar el ánimo.” A alternativa “o exercício cura a depressão” está errada porque:",
           "options": [
             "vai além do texto, que diz que pode melhorar o humor",
-            "contradiz o texto",
+            "contradiz o texto, que diz que o exercício piora o humor",
             "pega só um detalhe do texto",
-            "traduz um falso cognato",
+            "traduz um falso cognato e troca o sentido de ánimo",
             "fala de outro assunto"
           ],
           "correct_index": 0,
@@ -253,8 +253,8 @@
           "statement": "Na frase “El gobierno anunció un programa contra la pobreza”, quase todas as palavras são:",
           "options": [
             "cognatos, parecidas com o português e de mesmo sentido",
-            "falsos cognatos",
-            "palavras sem tradução",
+            "falsos cognatos, que parecem português mas mudam de sentido",
+            "palavras sem tradução, que só existem no espanhol",
             "nomes próprios",
             "palavras inglesas"
           ],
@@ -267,8 +267,8 @@
           "statement": "Ao ler um texto em espanhol, o melhor é parar com mais cuidado:",
           "options": [
             "nas palavras pequenas e nas parecidas com o português",
-            "em todas as palavras, uma por uma",
-            "só no título",
+            "em todas as palavras, uma por uma, do começo ao fim",
+            "só no título e no primeiro parágrafo do texto",
             "só nos nomes próprios",
             "só nos números"
           ],
@@ -334,8 +334,8 @@
           "statement": "Um texto termina com “Fuente: Ministerio de Salud”. Ele vem provavelmente de:",
           "options": [
             "um órgão do governo ligado à saúde",
-            "um romance",
-            "uma letra de música",
+            "um romance sobre um médico famoso",
+            "uma letra de música sobre hospitais",
             "uma receita de bolo",
             "uma tirinha"
           ],
@@ -364,8 +364,8 @@
           "statement": "Um texto diz que el desempleo sube por la crisis, la tecnología y la falta de formación. A alternativa “o desemprego sobe só por causa da tecnologia” erra por:",
           "options": [
             "redução: pega uma causa e trata como a única",
-            "contradição",
-            "extrapolação",
+            "contradição: diz o contrário do texto",
+            "extrapolação: vai além do que o texto diz",
             "tradução pela aparência",
             "não ter erro nenhum"
           ],
@@ -379,9 +379,9 @@
           "statement": "Um texto diz: “Ni el gobierno ni las empresas resolvieron el problema.” A alternativa fiel é:",
           "options": [
             "nenhum dos dois resolveu o problema",
-            "só o governo resolveu",
+            "só o governo resolveu o problema",
             "só as empresas resolveram",
-            "os dois resolveram juntos",
+            "os dois resolveram o problema juntos",
             "o problema não existia"
           ],
           "correct_index": 0,
@@ -866,8 +866,8 @@
           "statement": "Em “Pronto vamos a tener resultados”, os resultados:",
           "options": [
             "vão sair logo, em breve",
-            "já estão prontos",
-            "nunca vão sair",
+            "já estão prontos e na mesa",
+            "nunca vão sair, de jeito nenhum",
             "saíram ontem",
             "foram cancelados"
           ],
@@ -1317,8 +1317,8 @@
           "statement": "Em “No hay señal en esta zona”, o texto diz que:",
           "options": [
             "não há sinal (de celular ou de rádio) na região",
-            "não há senhoras na região",
-            "não há placas de rua",
+            "não há senhoras morando na região",
+            "não há placas de rua para se orientar",
             "não há senha",
             "não há sal"
           ],
@@ -1559,9 +1559,9 @@
           "statement": "A: “No me gusta el frío.” B: “A mí tampoco.” A pessoa B:",
           "options": [
             "também não gosta de frio",
-            "gosta de frio",
+            "gosta de frio, ao contrário de A",
             "não sabe",
-            "gosta só um pouco",
+            "gosta só um pouco do inverno",
             "prefere neve"
           ],
           "correct_index": 0,
@@ -1683,8 +1683,8 @@
           "statement": "Em “Todavía no llegó el autobús”, o ônibus:",
           "options": [
             "ainda não chegou",
-            "já chegou",
-            "nunca chega",
+            "já chegou faz tempo",
+            "nunca chega na hora",
             "chegou cedo",
             "foi embora"
           ],
@@ -2014,8 +2014,8 @@
           "statement": "Em “¿Usted tiene su pasaporte?”, o falante trata a outra pessoa:",
           "options": [
             "com educação, como o senhor ou a senhora",
-            "como um amigo íntimo",
-            "como um grupo de pessoas",
+            "como um amigo íntimo, de igual para igual",
+            "como um grupo de pessoas ao mesmo tempo",
             "como uma criança",
             "como um animal"
           ],
@@ -2053,9 +2053,9 @@
           "statement": "Em “No entiendo lo que dices”, a pessoa:",
           "options": [
             "não entende o que o outro diz",
-            "não entende a língua",
+            "não entende a língua espanhola",
             "não ouve nada",
-            "não quer falar",
+            "não quer falar com o outro",
             "não sabe ler"
           ],
           "correct_index": 0,
@@ -2067,8 +2067,8 @@
           "statement": "Em “Lo mejor del viaje fue la comida”, a comida foi:",
           "options": [
             "a melhor parte da viagem",
-            "a pior parte",
-            "cara",
+            "a pior parte da viagem",
+            "cara demais para todos",
             "estranha",
             "esquecida"
           ],
@@ -2112,8 +2112,8 @@
           "statement": "Em “María llamó a Pedro y le pidió su libro”, su pode ser:",
           "options": [
             "de María ou de Pedro, e o contexto decide",
-            "só de María",
-            "só de Pedro",
+            "só de María, porque ela pediu",
+            "só de Pedro, porque ele recebeu",
             "dos dois juntos",
             "de ninguém"
           ],
@@ -2789,8 +2789,8 @@
           "statement": "Em “Aunque está cansado, sigue trabajando”, a pessoa:",
           "options": [
             "está cansada e continua trabalhando",
-            "talvez fique cansada",
-            "parou de trabalhar",
+            "talvez fique cansada mais tarde",
+            "parou de trabalhar porque está cansada",
             "não está cansada",
             "trabalha pouco"
           ],
@@ -2817,9 +2817,9 @@
           "statement": "Em “Si tuviera tiempo, aprendería a tocar guitarra”, a pessoa:",
           "options": [
             "não tem tempo e imagina aprender violão",
-            "tem tempo e toca violão",
+            "tem tempo de sobra e já toca violão",
             "aprendeu violão",
-            "vai aprender amanhã",
+            "vai aprender a tocar violão amanhã cedo",
             "não gosta de violão"
           ],
           "correct_index": 0,
@@ -2900,8 +2900,8 @@
           "statement": "Em “Cuando llego a casa, ceno”, a frase fala de:",
           "options": [
             "um hábito: sempre que chega, janta",
-            "um plano para amanhã",
-            "algo que nunca acontece",
+            "um plano para amanhã à noite",
+            "algo que nunca acontece na casa",
             "um desejo",
             "uma ordem"
           ],
@@ -3186,10 +3186,10 @@
           "statement": "Em “Ya que llueve, nos quedamos en casa”, ya que indica:",
           "options": [
             "causa: como está chovendo",
-            "consequência",
+            "consequência: por isso",
             "contraste",
             "condição",
-            "tempo: já choveu"
+            "tempo: já choveu ontem"
           ],
           "correct_index": 0,
           "explanation": "Ya que é já que, a causa.",
@@ -3200,8 +3200,8 @@
           "statement": "Em “Estudió mucho; por lo tanto, aprobó”, por lo tanto indica:",
           "options": [
             "consequência: portanto",
-            "causa",
-            "contraste",
+            "causa: porque",
+            "contraste: mas",
             "exemplo",
             "tempo"
           ],
@@ -3295,9 +3295,9 @@
           "statement": "Em “Es barato y además es bueno”, además indica:",
           "options": [
             "soma: além disso",
-            "contraste",
+            "contraste: mas",
             "causa",
-            "condição",
+            "condição: se",
             "tempo"
           ],
           "correct_index": 0,
@@ -3310,9 +3310,9 @@
           "statement": "Em “Perdí el autobús y por eso llegué tarde”, por eso indica:",
           "options": [
             "consequência: por isso",
-            "causa",
+            "causa: porque",
             "contraste",
-            "condição",
+            "condição: se for",
             "tempo"
           ],
           "correct_index": 0,
@@ -3325,9 +3325,9 @@
           "statement": "Em “Mi hermano es tímido; en cambio yo hablo mucho”, en cambio indica:",
           "options": [
             "contraste entre os dois",
-            "troca de dinheiro",
+            "troca de dinheiro entre os dois",
             "causa",
-            "consequência",
+            "consequência: por isso",
             "soma"
           ],
           "correct_index": 0,
@@ -3569,9 +3569,9 @@
           "statement": "Uma argentina diz: “Vos tenés razón.” A frase:",
           "options": [
             "está certa: é o jeito de tratar da Argentina",
-            "tem um erro de gramática",
+            "tem um erro de gramática no verbo",
             "é português",
-            "é da Espanha",
+            "é da Espanha, onde se usa vos",
             "fala com várias pessoas"
           ],
           "correct_index": 0,
@@ -3625,8 +3625,8 @@
           "statement": "A forma vosotros é usada sobretudo:",
           "options": [
             "na Espanha, para falar com várias pessoas próximas",
-            "em toda a América",
-            "só por escrito",
+            "em toda a América, no lugar de ustedes",
+            "só por escrito, em textos formais",
             "só com o rei",
             "no Brasil"
           ],
@@ -3639,8 +3639,8 @@
           "statement": "Um texto fala do espanhol da Bolívia, com palavras do quéchua. A alternativa coerente com o texto é:",
           "options": [
             "a língua varia e mostra a identidade de um povo",
-            "o espanhol da Bolívia é errado",
-            "só o espanhol da Espanha é correto",
+            "o espanhol da Bolívia é errado por causa do quéchua",
+            "só o espanhol da Espanha é correto e deve ser seguido",
             "o quéchua não existe mais",
             "as línguas indígenas não têm valor"
           ],
@@ -3707,8 +3707,8 @@
           "statement": "A forma usted é usada:",
           "options": [
             "em toda parte, no trato educado",
-            "só na Argentina",
-            "só entre amigos",
+            "só na Argentina, no lugar de vos",
+            "só entre amigos muito próximos",
             "só por crianças",
             "só na escrita"
           ],
@@ -3752,9 +3752,9 @@
           "statement": "Em “¿Vos querés venir?”, a pessoa:",
           "options": [
             "convida alguém, usando o vos da Argentina",
-            "fala com várias pessoas",
+            "fala com várias pessoas ao mesmo tempo",
             "fala de si mesma",
-            "cometeu um erro de escrita",
+            "cometeu um erro de escrita no verbo",
             "fala com o rei"
           ],
           "correct_index": 0,
@@ -4018,8 +4018,8 @@
           "statement": "Em “¿Me esperas un momentito?”, o momentito indica:",
           "options": [
             "um pedido gentil de pouca espera",
-            "uma espera de horas",
-            "uma ordem grosseira",
+            "uma espera de várias horas",
+            "uma ordem grosseira e seca",
             "um momento triste",
             "um erro de escrita"
           ],
@@ -4032,8 +4032,8 @@
           "statement": "Uma menina pergunta ao pai por que há guerras, e ele responde: “¡Shh, que empieza el partido!” A tirinha critica:",
           "options": [
             "a indiferença diante dos problemas do mundo",
-            "o futebol na televisão",
-            "a curiosidade da menina",
+            "o futebol na televisão aos domingos",
+            "a curiosidade da menina, que pergunta demais",
             "o barulho da casa",
             "as guerras do passado"
           ],
@@ -4071,9 +4071,9 @@
           "statement": "Numa tirinha, alguém diz que vai “al banco” e aparece sentado num banco de praça. A graça vem:",
           "options": [
             "do trocadilho com banco, que é assento e lugar de dinheiro",
-            "do preço do banco",
+            "do preço alto do banco de madeira na praça",
             "da cor do banco",
-            "de um erro de gramática",
+            "de um erro de gramática na fala do personagem",
             "da praça vazia"
           ],
           "correct_index": 0,
@@ -4145,9 +4145,9 @@
           "statement": "Quando a mãe diz que vai chover, o filho responde “¡Bah!” e sai sem guarda-chuva. Ele:",
           "options": [
             "dá pouca importância ao aviso",
-            "agradece o aviso",
+            "agradece o aviso da mãe",
             "tem medo da chuva",
-            "pede o guarda-chuva",
+            "pede o guarda-chuva emprestado",
             "concorda com a mãe"
           ],
           "correct_index": 0,
@@ -4160,10 +4160,10 @@
           "statement": "Um cartum mostra um homem com dez sacolas de compras dizendo: “No tengo dinero para libros.” A crítica é:",
           "options": [
             "às prioridades de consumo, que deixam a leitura de lado",
-            "ao preço dos livros",
+            "ao preço dos livros, que sobe todo ano",
             "às lojas que não vendem livros",
             "à falta de sacolas",
-            "aos livros caros demais para todos"
+            "aos livros caros demais para qualquer pessoa"
           ],
           "correct_index": 0,
           "explanation": "Ele gasta muito e diz não ter dinheiro para ler.",
@@ -4391,8 +4391,8 @@
           "statement": "Um cartaz diz: “Cuida el agua. Cierra el grifo.” O objetivo é:",
           "options": [
             "convencer as pessoas a economizar água",
-            "vender torneiras",
-            "informar o preço da água",
+            "vender torneiras novas que não pingam",
+            "informar o preço da água na cidade",
             "anunciar uma festa",
             "contar a história de um rio"
           ],
@@ -4574,8 +4574,8 @@
           "statement": "Uma reportagem diz: “Se estima que un millón de personas visitaron la feria.” O número é:",
           "options": [
             "um cálculo aproximado, e não uma contagem exata",
-            "uma contagem exata",
-            "uma meta para o futuro",
+            "uma contagem exata, feita na entrada",
+            "uma meta para a feira do ano que vem",
             "o número de vendedores",
             "o preço da feira"
           ],
@@ -4794,8 +4794,8 @@
           "statement": "O verso “Tus ojos son como el mar” usa:",
           "options": [
             "uma comparação, com como",
-            "uma ordem",
-            "uma pergunta",
+            "uma ordem dada ao outro",
+            "uma pergunta sem resposta",
             "uma notícia",
             "uma lista"
           ],
@@ -4822,9 +4822,9 @@
           "statement": "No verso “Tu nombre vive en el olvido”, olvido quer dizer:",
           "options": [
             "esquecimento",
-            "ouvido",
+            "ouvido, que escuta",
             "olhar",
-            "lembrança",
+            "lembrança guardada",
             "ódio"
           ],
           "correct_index": 0,
@@ -4850,9 +4850,9 @@
           "statement": "A canção de protesto latino-americana dos anos 1960 e 1970 usava a música para:",
           "options": [
             "criticar a pobreza e as ditaduras",
-            "vender produtos",
+            "vender produtos nas rádios",
             "ensinar gramática",
-            "falar só de amor",
+            "falar só de amor e de saudade",
             "anunciar festas"
           ],
           "correct_index": 0,
@@ -4889,8 +4889,8 @@
           "statement": "Num poema, quem diz “Soy la tierra que ustedes pisan” é:",
           "options": [
             "uma voz criada, a da própria terra",
-            "o autor falando de si",
-            "um agricultor",
+            "o autor falando de si mesmo",
+            "um agricultor que planta a terra",
             "um turista",
             "um professor"
           ],
@@ -4903,9 +4903,9 @@
           "statement": "No verso “Te esperé mil años”, a pessoa:",
           "options": [
             "exagera para mostrar que esperou muito",
-            "esperou exatamente mil anos",
+            "esperou exatamente mil anos, contados",
             "não esperou",
-            "esperou um dia",
+            "esperou um dia só, mas cansou",
             "vai esperar"
           ],
           "correct_index": 0,
@@ -4918,8 +4918,8 @@
           "statement": "No verso “Eres mi luz”, a pessoa diz que o outro:",
           "options": [
             "traz alegria e sentido à vida dela",
-            "é uma lâmpada",
-            "trabalha com luz",
+            "é uma lâmpada que acende à noite",
+            "trabalha com luz e eletricidade",
             "é muito alto",
             "acorda cedo"
           ],
@@ -4978,8 +4978,8 @@
           "statement": "Num tango, a letra diz “Vos sabés que te quiero”. O vos indica:",
           "options": [
             "que a voz fala com alguém próximo, no jeito do Rio da Prata",
-            "que fala com várias pessoas",
-            "que é um erro de escrita",
+            "que fala com várias pessoas ao mesmo tempo, no plural",
+            "que é um erro de escrita do autor da letra do tango",
             "que fala com o rei",
             "que fala de si mesma"
           ],

@@ -330,10 +330,10 @@
           "statement": "O atalho Win + E abre:",
           "options": [
             "o Explorador de Arquivos",
-            "o navegador",
-            "a Lixeira",
+            "o navegador de internet",
+            "a Lixeira do Windows",
             "o Bloco de Notas",
-            "as configurações"
+            "as Configurações do sistema"
           ],
           "correct_index": 0,
           "explanation": "E de explorar.",
@@ -375,10 +375,10 @@
           "statement": "O atalho Win + V abre:",
           "options": [
             "o histórico da área de transferência",
-            "o controle do volume",
-            "a câmera",
-            "a Lixeira",
-            "o modo de voz"
+            "o controle do volume do som e dos alertas",
+            "a câmera do computador",
+            "a Lixeira com os apagados",
+            "o modo de digitação por voz do Windows"
           ],
           "correct_index": 0,
           "explanation": "Ele mostra as últimas coisas copiadas.",
@@ -682,10 +682,10 @@
           "statement": "Software livre é aquele que:",
           "options": [
             "dá a liberdade de usar, estudar, copiar e distribuir versões mudadas",
-            "é sempre grátis e tem o código fechado",
-            "só funciona no Windows",
-            "não pode ser vendido",
-            "não tem licença nenhuma"
+            "é sempre grátis e tem o código fechado para ninguém mexer",
+            "só funciona no Windows e precisa de licença para cada máquina",
+            "não pode ser vendido por ninguém, em nenhuma hipótese",
+            "não tem licença nenhuma, e cada um faz o que quiser"
           ],
           "correct_index": 0,
           "explanation": "Livre fala de liberdade, não de preço.",
@@ -710,9 +710,9 @@
           "statement": "O comando pwd, no terminal do Linux:",
           "options": [
             "mostra em que pasta você está",
-            "muda a senha",
-            "apaga a pasta",
-            "lista os arquivos",
+            "muda a senha do usuário",
+            "apaga a pasta atual",
+            "lista os arquivos da pasta",
             "desliga o computador"
           ],
           "correct_index": 0,
@@ -793,7 +793,7 @@
             "rode como administrador",
             "rode mais rápido",
             "rode escondido",
-            "seja apagado",
+            "seja apagado depois",
             "rode no Windows"
           ],
           "correct_index": 0,
@@ -850,10 +850,10 @@
           "statement": "A licença GPL exige que:",
           "options": [
             "as versões mudadas do programa continuem livres",
-            "o programa seja sempre vendido",
-            "o código fique fechado",
-            "só empresas usem o programa",
-            "o programa não seja copiado"
+            "o programa seja sempre vendido com licença",
+            "o código das versões novas fique fechado",
+            "só empresas registradas usem o programa",
+            "o programa não seja copiado por ninguém"
           ],
           "correct_index": 0,
           "explanation": "A liberdade passa adiante com o programa.",
@@ -865,10 +865,10 @@
           "statement": "Sobre o Linux, é correto afirmar:",
           "options": [
             "/ é a raiz de tudo, e /root é a pasta pessoal do administrador",
-            "/root e / são a mesma coisa",
-            "/root guarda as pastas de todos os usuários",
-            "não existe administrador no Linux",
-            "a raiz se chama C:"
+            "/root e / são a mesma coisa, com dois nomes",
+            "/root guarda as pastas de todos os usuários do sistema",
+            "não existe administrador no Linux, só usuários comuns",
+            "a raiz se chama C:, como no Windows"
           ],
           "correct_index": 0,
           "explanation": "A raiz é /, e root é também o nome do administrador.",
@@ -880,10 +880,10 @@
           "statement": "Depois de chmod 700 relatorio.txt, o arquivo:",
           "options": [
             "só pode ser lido, mudado e executado pelo dono",
-            "pode ser lido por todos",
-            "fica apagado",
-            "fica sem permissão para o dono",
-            "pode ser executado só pelos outros"
+            "pode ser lido por todos, mas mudado só pelo dono",
+            "fica apagado até o dono liberar de novo",
+            "fica sem nenhuma permissão, nem para o dono",
+            "pode ser executado só pelos outros usuários"
           ],
           "correct_index": 0,
           "explanation": "O 7 dá rwx ao dono, e os zeros tiram tudo do grupo e dos outros.",
@@ -1173,10 +1173,10 @@
           "statement": "Na regra 3-2-1, o 1 quer dizer:",
           "options": [
             "uma cópia fora do lugar onde está o computador",
-            "um backup por dia",
-            "um único tipo de mídia",
-            "uma senha para cada cópia",
-            "um arquivo por pasta"
+            "um backup por dia, sempre no mesmo horário",
+            "um único tipo de mídia para todas as cópias",
+            "uma senha diferente para cada cópia guardada",
+            "um arquivo por pasta, para não misturar"
           ],
           "correct_index": 0,
           "explanation": "Assim, um incêndio ou um roubo não leva tudo.",
@@ -1188,9 +1188,9 @@
           "options": [
             "recuperar arquivos perdidos ou estragados",
             "deixar o computador mais rápido",
-            "apagar vírus",
-            "liberar espaço na memória",
-            "trocar a senha"
+            "apagar vírus e programas maliciosos",
+            "liberar espaço na memória RAM",
+            "trocar a senha de forma segura"
           ],
           "correct_index": 0,
           "explanation": "É uma cópia de segurança.",
@@ -1581,10 +1581,10 @@
           "statement": "Para gerar o sumário automático, os títulos precisam estar:",
           "options": [
             "formatados com estilos de título",
-            "em negrito",
+            "em negrito e tamanho maior",
             "em letras maiúsculas",
-            "sublinhados",
-            "em outra fonte"
+            "sublinhados e centralizados",
+            "em outra fonte e cor"
           ],
           "correct_index": 0,
           "explanation": "O sumário lê os estilos, não a aparência.",
@@ -1634,10 +1634,10 @@
           "statement": "No Word e no Writer, a tecla F7 abre:",
           "options": [
             "a verificação de ortografia",
-            "a impressão",
-            "um documento novo",
-            "o sumário",
-            "a ajuda"
+            "a impressão do documento",
+            "um documento novo em branco",
+            "o sumário automático",
+            "a ajuda do programa"
           ],
           "correct_index": 0,
           "explanation": "O F7 confere a ortografia.",
@@ -1679,9 +1679,9 @@
           "statement": "Um documento .odt enviado a quem só tem o Word:",
           "options": [
             "abre no Word, que lê esse formato",
-            "não abre de jeito nenhum",
-            "precisa virar .txt antes",
-            "perde toda a formatação",
+            "não abre de jeito nenhum no Word",
+            "precisa virar .txt antes de abrir",
+            "perde toda a formatação ao abrir",
             "só abre no celular"
           ],
           "correct_index": 0,
@@ -2084,10 +2084,10 @@
           "statement": "Toda fórmula de planilha começa com:",
           "options": [
             "o sinal de igual (=)",
-            "um ponto",
-            "uma aspa",
-            "um cifrão",
-            "um espaço"
+            "um ponto final (.)",
+            "uma aspa (\")",
+            "um cifrão de real ($)",
+            "um espaço ( )"
           ],
           "correct_index": 0,
           "explanation": "O = avisa que vem uma conta.",
@@ -2099,10 +2099,10 @@
           "statement": "Uma célula mostra #####. O mais provável é que:",
           "options": [
             "a coluna esteja estreita demais para o número",
-            "a fórmula esteja errada",
-            "o arquivo esteja estragado",
-            "a célula esteja vazia",
-            "o número seja negativo"
+            "a fórmula esteja errada e precise ser refeita",
+            "o arquivo esteja estragado e não abra direito",
+            "a célula esteja vazia e sem nenhum valor",
+            "o número seja negativo e não possa aparecer"
           ],
           "correct_index": 0,
           "explanation": "Basta alargar a coluna.",
@@ -2116,8 +2116,8 @@
             "conta quantas células de B2 a B30 têm Sim",
             "soma os valores de B2 a B30",
             "procura Sim e devolve a linha",
-            "apaga as células com Sim",
-            "conta as células vazias"
+            "apaga as células que têm Sim",
+            "conta as células vazias de B2 a B30"
           ],
           "correct_index": 0,
           "explanation": "O CONT.SE conta pelo critério.",
@@ -2159,10 +2159,10 @@
           "statement": "A fórmula =PROCV(\"Ana\";A2:C20;3;0) procura Ana:",
           "options": [
             "na coluna A e devolve o valor da coluna C na mesma linha",
-            "em todas as colunas e devolve a linha 3",
-            "na coluna C e devolve a coluna A",
-            "na linha 3 e devolve a coluna A",
-            "e conta quantas vezes ela aparece"
+            "em todas as colunas e devolve a linha 3 inteira",
+            "na coluna C e devolve o valor da coluna A na mesma linha",
+            "na linha 3 e devolve o valor da coluna A",
+            "e conta quantas vezes ela aparece de A2 a C20"
           ],
           "correct_index": 0,
           "explanation": "O 3 é a terceira coluna do intervalo, e o 0 pede o valor exato.",
@@ -2421,10 +2421,10 @@
           "statement": "No PowerPoint, a tecla F5:",
           "options": [
             "começa a apresentação do primeiro slide",
-            "começa do slide atual",
-            "salva a apresentação",
-            "fecha o programa",
-            "abre o slide mestre"
+            "começa a apresentação do slide atual, onde você está",
+            "salva a apresentação no disco",
+            "fecha o programa sem salvar",
+            "abre o slide mestre para editar"
           ],
           "correct_index": 0,
           "explanation": "Do slide atual é Shift + F5.",
@@ -2491,10 +2491,10 @@
           "statement": "A extensão .odp é de:",
           "options": [
             "apresentação do LibreOffice Impress",
-            "texto do Writer",
-            "planilha do Calc",
+            "texto do LibreOffice Writer",
+            "planilha do LibreOffice Calc",
             "apresentação do PowerPoint",
-            "imagem"
+            "imagem do LibreOffice Draw"
           ],
           "correct_index": 0,
           "explanation": "O p de .odp é de presentation.",
@@ -2589,10 +2589,10 @@
           "statement": "Um arquivo .csv guarda:",
           "options": [
             "uma tabela em texto puro, com os valores separados",
-            "uma apresentação",
-            "uma imagem",
-            "um programa",
-            "um vídeo"
+            "uma apresentação com slides guardados em texto",
+            "uma imagem compactada de uma tabela",
+            "um programa pequeno que abre e roda planilhas",
+            "um vídeo com legenda separada"
           ],
           "correct_index": 0,
           "explanation": "Ele abre no Excel e no Calc como tabela.",
@@ -2605,9 +2605,9 @@
           "options": [
             "já começa a apresentação em tela cheia",
             "abre no modo de edição normal",
-            "não abre no PowerPoint",
-            "vira um PDF",
-            "abre como modelo"
+            "não abre no PowerPoint, só no Impress",
+            "vira um PDF de uma página por slide",
+            "abre como modelo para um arquivo novo"
           ],
           "correct_index": 0,
           "explanation": "É o formato de apresentação pronta para mostrar.",
@@ -2619,10 +2619,10 @@
           "statement": "Um usuário muda a cor do título no slide mestre, mas um slide continua com a cor antiga. O provável é que:",
           "options": [
             "esse slide tinha uma formatação feita direto nele, que fica por cima da do mestre",
-            "o mestre só vale para o primeiro slide",
-            "a mudança precisa de internet",
-            "o slide mestre não muda cores",
-            "o arquivo é .pdf"
+            "o mestre só vale para o primeiro slide da apresentação e não para os outros",
+            "a mudança no mestre precisa de internet para chegar a todos os slides",
+            "o slide mestre não muda cores, só a fonte e o tamanho",
+            "o arquivo é .pdf e não deixa mudar nada no mestre"
           ],
           "correct_index": 0,
           "explanation": "Formatação aplicada direto no slide vence a do mestre.",
@@ -3039,10 +3039,10 @@
           "statement": "Um usuário baixa os e-mails pelo POP3 no computador e depois não os encontra no celular. O provável é que:",
           "options": [
             "o POP3 baixou as mensagens e as apagou do servidor",
-            "o IMAP apagou as mensagens",
-            "o SMTP perdeu as mensagens",
-            "o celular não recebe e-mail",
-            "o DNS bloqueou o celular"
+            "o IMAP apagou as mensagens que estavam no celular",
+            "o SMTP perdeu as mensagens no caminho do envio",
+            "o celular não recebe e-mail por POP3",
+            "o DNS bloqueou o acesso do celular"
           ],
           "correct_index": 0,
           "explanation": "O POP3, no padrão, tira as mensagens do servidor.",
@@ -3054,10 +3054,10 @@
           "statement": "Sobre o TCP/IP, é correto dizer que:",
           "options": [
             "é o conjunto de protocolos em que a internet funciona",
-            "é um único protocolo só de e-mail",
-            "é um tipo de cabo",
-            "é o nome de um programa malicioso",
-            "é um navegador"
+            "é um único protocolo, usado só para mandar e-mail",
+            "é um tipo de cabo de rede",
+            "é o nome de um programa malicioso que ataca redes",
+            "é um navegador antigo"
           ],
           "correct_index": 0,
           "explanation": "O nome junta o TCP e o IP, dois dos mais importantes.",
@@ -3338,9 +3338,9 @@
           "options": [
             "Ctrl + Shift + T",
             "Ctrl + T",
-            "Ctrl + W",
+            "Ctrl + Shift + N",
             "Ctrl + H",
-            "Ctrl + D"
+            "Ctrl + Shift + D"
           ],
           "correct_index": 0,
           "explanation": "O Shift junto do T desfaz o fechamento.",
@@ -3433,8 +3433,8 @@
           "statement": "A busca jaguar -carro mostra:",
           "options": [
             "resultados sobre jaguar sem a palavra carro",
-            "só resultados sobre carros",
-            "carros da marca Jaguar",
+            "só resultados sobre carros, sem o animal",
+            "carros da marca Jaguar e as suas lojas",
             "nenhum resultado",
             "só imagens de jaguar"
           ],
@@ -3478,10 +3478,10 @@
           "statement": "Um funcionário usa a janela anônima no computador do trabalho. Sobre o que ele acessa, é correto afirmar:",
           "options": [
             "a empresa ainda pode ver os sites, porque controla a rede",
-            "ninguém consegue saber de nada",
-            "só o provedor fica sem saber",
-            "os sites não sabem que ele entrou",
-            "o computador apaga tudo, até os downloads"
+            "ninguém consegue saber de nada do que ele acessa",
+            "só o provedor de internet fica sem saber",
+            "os sites não sabem que ele entrou neles",
+            "o computador apaga tudo, até os arquivos baixados"
           ],
           "correct_index": 0,
           "explanation": "A aba anônima só não deixa rastro no aparelho.",
@@ -4175,10 +4175,10 @@
           "statement": "O vírus de computador, para agir:",
           "options": [
             "precisa de um arquivo hospedeiro e de que alguém o abra",
-            "se espalha sozinho pela rede",
-            "fica só no celular",
-            "não faz nada",
-            "precisa de internet o tempo todo"
+            "se espalha sozinho pela rede, sem precisar de ninguém",
+            "fica só no celular e não passa para o computador",
+            "não faz nada enquanto o computador está ligado",
+            "precisa de internet o tempo todo para funcionar"
           ],
           "correct_index": 0,
           "explanation": "Ele vive grudado num arquivo.",
@@ -4189,10 +4189,10 @@
           "statement": "Um jogo grátis baixado de um site estranho instala, escondido, um programa que dá acesso ao invasor. Esse jogo é um:",
           "options": [
             "cavalo de Troia",
-            "worm",
-            "rootkit",
-            "adware",
-            "firewall"
+            "worm de rede",
+            "rootkit oculto",
+            "adware de anúncios",
+            "firewall falso"
           ],
           "correct_index": 0,
           "explanation": "Ele se disfarça de coisa útil.",
@@ -4203,8 +4203,8 @@
           "statement": "Os arquivos da empresa viram um embaralhado, e aparece um pedido de pagamento para devolvê-los. É um ataque de:",
           "options": [
             "ransomware",
-            "spyware",
-            "adware",
+            "spyware espião",
+            "adware de anúncios",
             "worm",
             "bot"
           ],
@@ -4270,10 +4270,10 @@
           "statement": "A melhor defesa contra a perda de arquivos por ransomware é:",
           "options": [
             "ter uma cópia de segurança separada",
-            "pagar o resgate rápido",
+            "pagar o resgate rápido, antes do prazo",
             "desligar o monitor",
             "trocar o papel de parede",
-            "apagar o histórico"
+            "apagar o histórico do navegador todo dia"
           ],
           "correct_index": 0,
           "explanation": "Com a cópia, os arquivos voltam sem pagar.",
@@ -4284,8 +4284,8 @@
           "statement": "Malware é:",
           "options": [
             "o nome geral de todo programa malicioso",
-            "só o vírus",
-            "um tipo de antivírus",
+            "só o vírus, e nenhum outro programa",
+            "um tipo de antivírus gratuito e leve",
             "uma peça do computador",
             "um navegador"
           ],
@@ -4329,10 +4329,10 @@
           "statement": "Manter o sistema atualizado protege principalmente contra:",
           "options": [
             "os worms, que entram por falhas antigas",
-            "a falta de espaço no disco",
+            "a falta de espaço no disco do computador",
             "a tela que quebra",
             "o cabo que solta",
-            "a lentidão da internet"
+            "a lentidão da internet nos horários de pico"
           ],
           "correct_index": 0,
           "explanation": "As atualizações fecham as falhas.",
@@ -4344,9 +4344,9 @@
           "statement": "Um banco passou a usar teclado virtual na tela para a senha, e o invasor passou a gravar a tela e os cliques. O malware usado agora é o:",
           "options": [
             "screenlogger",
-            "keylogger",
+            "keylogger comum",
             "adware",
-            "worm",
+            "worm de rede",
             "rootkit"
           ],
           "correct_index": 0,
@@ -4359,10 +4359,10 @@
           "statement": "Sobre vírus e worms, é correto afirmar:",
           "options": [
             "o worm se espalha sozinho pela rede, e o vírus precisa que alguém abra o arquivo",
-            "os dois precisam que alguém abra um arquivo",
-            "o vírus se espalha sozinho, e o worm não",
-            "os dois são o mesmo programa com nomes diferentes",
-            "nenhum dos dois causa dano"
+            "os dois precisam que alguém abra um arquivo para começar a agir",
+            "o vírus se espalha sozinho pela rede, e o worm precisa que alguém o abra",
+            "os dois são o mesmo programa malicioso com nomes diferentes",
+            "nenhum dos dois causa dano, só deixam o computador lento"
           ],
           "correct_index": 0,
           "explanation": "A diferença é depender ou não de um clique.",
@@ -4621,8 +4621,8 @@
           "statement": "Alguém liga dizendo ser do suporte da empresa e pede a senha do funcionário. Isso é:",
           "options": [
             "engenharia social",
-            "worm",
-            "DDoS",
+            "ataque de worm",
+            "ataque de DDoS",
             "pharming",
             "spam"
           ],
@@ -4635,8 +4635,8 @@
           "statement": "Mesmo com a senha roubada, o invasor não entrou na conta, porque faltava o código do celular. O que protegeu a conta foi:",
           "options": [
             "a verificação em duas etapas",
-            "o firewall",
-            "a aba anônima",
+            "o firewall do computador",
+            "a aba anônima do navegador",
             "o antispam",
             "o cache"
           ],
@@ -4704,9 +4704,9 @@
           "options": [
             "uma frase longa e diferente para cada site",
             "123456",
-            "a data de nascimento",
+            "a data de nascimento com o nome do pai",
             "o nome do time",
-            "a mesma senha em todos os sites"
+            "a mesma senha forte em todos os sites"
           ],
           "correct_index": 0,
           "explanation": "Tamanho e variedade atrasam a força bruta.",
@@ -4718,8 +4718,8 @@
           "statement": "Num Wi-Fi público de aeroporto, a VPN ajuda porque:",
           "options": [
             "protege os dados no caminho até a outra rede",
-            "deixa o Wi-Fi mais rápido",
-            "remove programas maliciosos",
+            "deixa o Wi-Fi do aeroporto mais rápido",
+            "remove os programas maliciosos do celular",
             "dispensa senha",
             "bloqueia todos os anúncios"
           ],
@@ -4733,9 +4733,9 @@
           "statement": "Um programa testa milhões de senhas até acertar a de uma conta. É um ataque de:",
           "options": [
             "força bruta",
-            "phishing",
+            "phishing por e-mail",
             "pharming",
-            "spoofing",
+            "spoofing de endereço",
             "adware"
           ],
           "correct_index": 0,
@@ -4763,10 +4763,10 @@
           "statement": "Um computador com firewall ligado abre um anexo com programa malicioso enviado por e-mail. O firewall:",
           "options": [
             "não examina o arquivo, porque filtra conexões e não arquivos",
-            "remove o programa malicioso na hora",
-            "apaga o e-mail sozinho",
-            "impede qualquer arquivo de abrir",
-            "avisa o banco"
+            "remove o programa malicioso na hora, antes de ele rodar",
+            "apaga o e-mail sozinho assim que ele chega",
+            "impede qualquer arquivo de abrir no computador",
+            "avisa o banco e bloqueia a conta do usuário"
           ],
           "correct_index": 0,
           "explanation": "Quem examina arquivos é o antivírus.",
@@ -5151,8 +5151,8 @@
           "statement": "Os sites sérios guardam, no lugar da senha, o hash dela. Isso protege porque:",
           "options": [
             "do hash não dá para voltar à senha",
-            "o hash é mais curto",
-            "o hash muda todo dia",
+            "o hash é mais curto e cabe melhor no banco",
+            "o hash muda todo dia e a senha antiga some",
             "o hash fica no celular",
             "o hash é a própria senha"
           ],
@@ -5166,10 +5166,10 @@
           "statement": "Ana quer que só Beto leia e que Beto tenha certeza de que foi ela que mandou. Ela deve:",
           "options": [
             "assinar com a própria privada e cifrar com a pública de Beto",
-            "cifrar só com a própria pública",
-            "assinar com a pública de Beto",
-            "cifrar com a privada de Beto",
-            "mandar sem chave nenhuma"
+            "cifrar só com a própria chave pública e mandar",
+            "assinar com a pública de Beto e cifrar com a dela",
+            "cifrar com a privada de Beto, que ela pediu a ele",
+            "mandar sem chave nenhuma, pelo e-mail da empresa"
           ],
           "correct_index": 0,
           "explanation": "A assinatura prova a origem, e a cifra com a pública de Beto dá o sigilo.",

@@ -257,10 +257,10 @@
           "statement": "A síncope, tão comum no samba e no choro, é:",
           "options": [
             "o acento que sai do tempo forte esperado",
-            "um erro de quem toca",
-            "uma música sem pulso",
-            "um instrumento de percussão",
-            "o nome do refrão"
+            "um erro de quem toca fora do tempo marcado",
+            "uma música sem pulso nenhum",
+            "um instrumento de percussão do samba",
+            "o nome do refrão que se repete no fim"
           ],
           "correct_index": 0,
           "explanation": "A nota começa antes e atravessa o tempo forte.",
@@ -325,8 +325,8 @@
           "statement": "A maior parte das músicas pop e de rock é contada em compasso:",
           "options": [
             "quaternário",
-            "ternário",
-            "binário",
+            "ternário, de valsa",
+            "binário composto",
             "livre",
             "quinário"
           ],
@@ -739,10 +739,10 @@
           "statement": "A cifra G7 indica:",
           "options": [
             "o acorde de sol com uma nota a mais, a sétima",
-            "o acorde de sol tocado sete vezes",
-            "o sétimo acorde da música",
-            "sol menor",
-            "a nota sol sozinha"
+            "o acorde de sol tocado sete vezes seguidas",
+            "o sétimo acorde que aparece na música",
+            "o acorde de sol menor, mais triste",
+            "a nota sol sozinha, sem acorde"
           ],
           "correct_index": 0,
           "explanation": "O 7 acrescenta uma nota ao acorde.",
@@ -754,10 +754,10 @@
           "statement": "Sobre o clima das escalas, é correto afirmar:",
           "options": [
             "o maior tende a soar alegre e o menor, melancólico, mas há exceções",
-            "todo acorde menor é triste",
-            "a escala maior não pode soar triste",
-            "o clima depende só da velocidade",
-            "as escalas não mudam o clima"
+            "todo acorde menor é triste, sem nenhuma exceção em música nenhuma",
+            "a escala maior não pode soar triste, por mais lenta que seja",
+            "o clima depende só da velocidade, e a escala não muda nada",
+            "as escalas não mudam o clima, só o volume muda"
           ],
           "correct_index": 0,
           "explanation": "É uma tendência da nossa cultura, e não uma lei.",
@@ -1045,10 +1045,10 @@
           "statement": "No cânone, as vozes:",
           "options": [
             "cantam a mesma melodia entrando uma depois da outra",
-            "cantam juntas a mesma nota",
-            "cantam melodias que nunca se cruzam",
-            "ficam em silêncio",
-            "cantam só o refrão"
+            "cantam juntas a mesma nota do começo ao fim",
+            "cantam melodias diferentes que nunca se cruzam",
+            "ficam em silêncio e só os instrumentos tocam",
+            "cantam só o refrão, cada uma num tom"
           ],
           "correct_index": 0,
           "explanation": "É a polifonia mais simples.",
@@ -1157,7 +1157,7 @@
           "options": [
             "tema e variações",
             "rondó",
-            "binária",
+            "forma binária",
             "monofonia",
             "cânone"
           ],
@@ -1186,10 +1186,10 @@
           "statement": "Num cânone, todos cantam a mesma melodia. Mesmo assim, ele é polifonia porque:",
           "options": [
             "as vozes entram defasadas e soam linhas diferentes ao mesmo tempo",
-            "todos cantam a mesma nota juntos",
-            "não tem acompanhamento",
-            "tem refrão",
-            "é cantado por muita gente"
+            "todos cantam a mesma nota juntos, do começo ao fim, como um coro só",
+            "não tem acompanhamento de instrumento nenhum",
+            "tem refrão que todos repetem juntos no final de cada estrofe",
+            "é cantado por muita gente ao mesmo tempo"
           ],
           "correct_index": 0,
           "explanation": "Em cada momento, cada voz está num ponto diferente da melodia.",
@@ -1403,10 +1403,10 @@
           "statement": "No espaço, longe de qualquer planeta, uma explosão:",
           "options": [
             "não faz som, porque não há ar para levar a vibração",
-            "faz um som muito forte",
-            "faz um som agudo",
-            "faz um som grave",
-            "faz som só de dia"
+            "faz um som muito forte, que viaja longe pelo espaço vazio",
+            "faz um som agudo, porque o frio do espaço afina a vibração",
+            "faz um som grave, por causa do vácuo",
+            "faz som só do lado em que bate o Sol"
           ],
           "correct_index": 0,
           "explanation": "O som precisa de um meio para viajar.",
@@ -1459,10 +1459,10 @@
           "statement": "Um lá do violão e o mesmo lá da flauta soam diferentes por causa:",
           "options": [
             "do timbre, que vem dos harmônicos",
-            "da altura",
-            "da velocidade",
-            "do compasso",
-            "da duração"
+            "da altura diferente de cada um",
+            "da velocidade do som",
+            "do compasso da música",
+            "da duração diferente de cada nota"
           ],
           "correct_index": 0,
           "explanation": "A nota é a mesma, mas a mistura de harmônicos muda.",
@@ -1512,9 +1512,9 @@
           "statement": "Ouvir som acima de 85 decibéis por horas, todo dia:",
           "options": [
             "pode estragar a audição para sempre",
-            "melhora a audição",
-            "não faz nada",
-            "só cansa e passa",
+            "melhora a audição com o treino",
+            "não faz nada se a música for boa",
+            "só cansa e passa no dia seguinte",
             "deixa o som mais grave"
           ],
           "correct_index": 0,
@@ -1586,10 +1586,10 @@
           "statement": "A sanfona, que tem teclas e botões, pertence à família dos:",
           "options": [
             "aerofones, porque o som vem do ar passando por palhetas",
-            "cordofones, como o piano",
-            "idiofones, porque é toda de madeira",
-            "membranofones",
-            "eletrofones"
+            "cordofones, como o piano, porque tem teclas",
+            "idiofones, porque é toda de madeira e vibra",
+            "membranofones, por causa do fole",
+            "eletrofones, porque amplifica o som"
           ],
           "correct_index": 0,
           "explanation": "O fole empurra o ar que faz vibrar as palhetas.",
@@ -1602,9 +1602,9 @@
           "options": [
             "a criança faz o som mais alto, e o homem o mais forte",
             "o homem faz o som mais alto e mais forte",
-            "a criança faz o som mais forte",
-            "os dois fazem o mesmo som",
-            "nenhum dos dois tem timbre"
+            "a criança faz o som mais forte e mais grave",
+            "os dois fazem o mesmo som, só muda o volume",
+            "nenhum dos dois tem timbre próprio"
           ],
           "correct_index": 0,
           "explanation": "Alto é agudo, e forte é intenso.",
@@ -1755,10 +1755,10 @@
           "statement": "O canto gregoriano é:",
           "options": [
             "monofônico, em latim e sem instrumentos",
-            "polifônico e com orquestra",
-            "cantado na língua do povo",
-            "acompanhado de guitarra",
-            "uma música de dança"
+            "polifônico e acompanhado de orquestra",
+            "cantado na língua do povo, e não em latim",
+            "acompanhado de alaúde",
+            "uma música de dança de corte"
           ],
           "correct_index": 0,
           "explanation": "Todos cantam a mesma melodia.",
@@ -1811,9 +1811,9 @@
           "statement": "A polifonia nasceu quando os cantores:",
           "options": [
             "juntaram uma segunda melodia ao canto gregoriano",
-            "inventaram o piano",
+            "inventaram o piano e o órgão de tubos",
             "pararam de cantar em latim",
-            "criaram o rock",
+            "criaram a primeira orquestra de cordas",
             "trocaram a voz por instrumentos"
           ],
           "correct_index": 0,
@@ -1825,10 +1825,10 @@
           "statement": "Escrever a música no papel permitiu, sobretudo, que:",
           "options": [
             "uma música fosse tocada por quem nunca a ouviu",
-            "a música ficasse mais alta",
-            "ninguém mais cantasse",
+            "a música ficasse mais alta nas igrejas",
+            "ninguém mais cantasse de ouvido",
             "os instrumentos fossem inventados",
-            "a música durasse menos"
+            "a música durasse menos tempo"
           ],
           "correct_index": 0,
           "explanation": "Antes, tudo dependia de decorar de ouvido.",
@@ -1907,9 +1907,9 @@
           "statement": "No canto gregoriano, o ritmo:",
           "options": [
             "segue as palavras do texto, sem batida marcada",
-            "segue um compasso de valsa",
-            "é marcado por tambores",
-            "é sempre rápido",
+            "segue um compasso de valsa, de três tempos",
+            "é marcado por tambores no fundo da igreja",
+            "é sempre rápido e dançante",
             "não tem nenhum som longo"
           ],
           "correct_index": 0,
@@ -1937,10 +1937,10 @@
           "statement": "Um mosteiro com cinquenta monges canta um canto gregoriano. A textura é:",
           "options": [
             "monofonia, porque todos cantam a mesma melodia",
-            "polifonia, porque são muitas vozes",
+            "polifonia, porque são muitas vozes juntas",
             "homofonia, porque há acompanhamento",
-            "cânone",
-            "rondó"
+            "cânone, porque cantam em grupo",
+            "rondó, porque o tema volta"
           ],
           "correct_index": 0,
           "explanation": "São muitas pessoas, mas uma linha só.",
@@ -1952,9 +1952,9 @@
           "statement": "Antes da pauta, um coral aprendia os cantos:",
           "options": [
             "de ouvido, decorando com quem já sabia",
-            "lendo partituras modernas",
-            "ouvindo gravações",
-            "pelo rádio",
+            "lendo partituras modernas com pauta",
+            "ouvindo gravações antigas em disco",
+            "pelo rádio do mosteiro",
             "com aplicativos"
           ],
           "correct_index": 0,
@@ -2158,10 +2158,10 @@
           "statement": "Uma marca do Barroco é:",
           "options": [
             "o contraste entre forte e fraco e entre solista e grupo",
-            "a música sem nenhum enfeite",
-            "a melodia sozinha sem instrumentos",
-            "a guitarra elétrica",
-            "a ausência de emoção"
+            "a música sem nenhum enfeite e sem contraste nenhum",
+            "a melodia sozinha, sem instrumentos nem acompanhamento",
+            "a guitarra elétrica e a bateria",
+            "a ausência de emoção e de drama"
           ],
           "correct_index": 0,
           "explanation": "Contraste e movimento definem o estilo.",
@@ -2172,10 +2172,10 @@
           "statement": "Palestrina, no Renascimento, é lembrado pela:",
           "options": [
             "polifonia vocal para a Igreja",
-            "invenção da ópera",
-            "música para guitarra",
-            "música eletrônica",
-            "invenção da pauta"
+            "invenção da ópera em Florença",
+            "música para guitarra elétrica",
+            "música eletrônica de estúdio",
+            "invenção da pauta musical"
           ],
           "correct_index": 0,
           "explanation": "São várias vozes em equilíbrio.",
@@ -2186,9 +2186,9 @@
           "statement": "No século XVIII, em Minas Gerais, Lobo de Mesquita compôs:",
           "options": [
             "música para as igrejas e as irmandades",
-            "rock",
-            "óperas em Florença",
-            "samba",
+            "rock para as festas do ouro",
+            "óperas para os teatros de Florença",
+            "samba para o carnaval",
             "música eletrônica"
           ],
           "correct_index": 0,
@@ -2225,10 +2225,10 @@
           "statement": "A imprensa musical, a partir de 1501, permitiu que:",
           "options": [
             "a música escrita circulasse em cópias iguais por vários lugares",
-            "a música fosse gravada em disco",
-            "a ópera surgisse",
-            "as orquestras acabassem",
-            "ninguém mais precisasse ler música"
+            "a música fosse gravada em disco pela primeira vez",
+            "a ópera surgisse nos teatros de Florença",
+            "as orquestras acabassem e só os cantores ficassem",
+            "ninguém mais precisasse aprender a ler música"
           ],
           "correct_index": 0,
           "explanation": "Antes, tudo era copiado à mão.",
@@ -2269,10 +2269,10 @@
           "statement": "Comparando os dois períodos, é correto dizer que:",
           "options": [
             "o Renascimento buscou o equilíbrio, e o Barroco, o contraste",
-            "os dois buscavam só o contraste",
-            "o Barroco é mais antigo",
-            "o Renascimento inventou a ópera",
-            "o Barroco não usava instrumentos"
+            "os dois buscavam só o contraste e o drama",
+            "o Barroco é mais antigo que o Renascimento",
+            "o Renascimento inventou a ópera e o Barroco a acabou",
+            "o Barroco não usava instrumentos, só vozes"
           ],
           "correct_index": 0,
           "explanation": "O Barroco veio depois e trouxe os contrastes.",
@@ -2284,10 +2284,10 @@
           "statement": "Os criadores da ópera, em Florença, queriam:",
           "options": [
             "recriar o teatro grego, que imaginavam todo cantado",
-            "acabar com o teatro",
+            "acabar com o teatro e trocá-lo por música",
             "fazer música só para a igreja",
-            "imitar o rock",
-            "criar a música eletrônica"
+            "imitar a música das ruas",
+            "criar uma música sem palavras"
           ],
           "correct_index": 0,
           "explanation": "Eles olhavam para a Grécia antiga.",
@@ -2299,10 +2299,10 @@
           "statement": "Sobre a música no Barroco mineiro, é correto afirmar:",
           "options": [
             "havia muitos músicos negros e mulatos livres, ligados às irmandades",
-            "não havia música, só arquitetura",
-            "toda a música vinha pronta da Europa",
-            "os músicos eram só padres europeus",
-            "ela foi proibida pela Igreja"
+            "não havia música, só arquitetura e escultura nas igrejas",
+            "toda a música vinha pronta da Europa nos navios",
+            "os músicos eram só padres europeus mandados pelo rei",
+            "ela foi proibida pela Igreja por ser alegre demais"
           ],
           "correct_index": 0,
           "explanation": "A música mineira foi composta aqui, por músicos daqui.",
@@ -2675,10 +2675,10 @@
           "statement": "Wagner é lembrado por ter levado a ópera:",
           "options": [
             "ao tamanho de um espetáculo gigante, com orquestra enorme",
-            "de volta à melodia sozinha",
-            "para o rádio",
-            "ao rock",
-            "a ser só instrumental"
+            "de volta à melodia sozinha, sem orquestra e sem cenário",
+            "para o rádio, onde fez sucesso",
+            "ao formato de canção curta, de três minutos",
+            "a ser só instrumental, sem cantores nem palavras no palco"
           ],
           "correct_index": 0,
           "explanation": "As óperas dele são longas e grandiosas.",
@@ -2835,10 +2835,10 @@
           "statement": "A obra 4'33\", de John Cage, faz o público ouvir:",
           "options": [
             "os sons do próprio ambiente, porque o pianista não toca",
-            "uma sinfonia de quatro horas",
-            "um solo de bateria",
-            "um canto gregoriano",
-            "uma ópera italiana"
+            "uma sinfonia de quatro horas tocada sem nenhuma pausa",
+            "um solo de bateria muito rápido",
+            "um canto gregoriano gravado em disco e tocado no fundo",
+            "uma ópera italiana inteira em minutos"
           ],
           "correct_index": 0,
           "explanation": "O silêncio do pianista revela o som da sala.",
@@ -2849,9 +2849,9 @@
           "statement": "Debussy, como os pintores impressionistas, quis criar:",
           "options": [
             "atmosferas, e não histórias",
-            "músicas de guerra",
-            "a ópera",
-            "o rock",
+            "músicas de guerra e de marcha",
+            "a primeira ópera da França",
+            "o ritmo do samba",
             "a música sem som"
           ],
           "correct_index": 0,
@@ -2863,9 +2863,9 @@
           "statement": "A música atonal é aquela que:",
           "options": [
             "não gira em volta de uma nota central",
-            "está desafinada",
+            "está desafinada de propósito, para chocar",
             "não tem ritmo nenhum",
-            "não usa instrumentos",
+            "não usa instrumentos, só sons gravados",
             "só usa uma nota"
           ],
           "correct_index": 0,
@@ -2877,10 +2877,10 @@
           "statement": "A música concreta, criada na França a partir de 1948, usa:",
           "options": [
             "sons gravados do dia a dia, recortados e montados",
-            "só instrumentos de corda",
-            "só a voz",
+            "só instrumentos de corda tocados ao contrário",
+            "só a voz humana",
             "partituras medievais",
-            "cantos sem nenhuma gravação"
+            "cantos sem nenhuma gravação, só ao vivo"
           ],
           "correct_index": 0,
           "explanation": "Passos, portas e motores viram música.",
@@ -2891,10 +2891,10 @@
           "statement": "O minimalismo, dos anos 1960, se baseia em:",
           "options": [
             "poucos elementos repetidos que mudam bem devagar",
-            "muitos instrumentos tocando forte",
-            "solos longos e livres",
-            "silêncio absoluto",
-            "canto em latim"
+            "muitos instrumentos tocando forte o tempo todo",
+            "solos longos e livres de cada músico",
+            "silêncio absoluto do começo ao fim",
+            "canto em latim com uma melodia só"
           ],
           "correct_index": 0,
           "explanation": "A repetição é a matéria da música.",
@@ -2905,9 +2905,9 @@
           "statement": "Nas Bachianas Brasileiras, Villa-Lobos juntou:",
           "options": [
             "o jeito de compor de Bach com a música popular brasileira",
-            "o rock com o samba",
+            "o rock americano dos anos 1950 com o samba carioca",
             "a ópera italiana com o funk",
-            "o canto medieval com o rap",
+            "o canto medieval da igreja com a música caipira",
             "a música eletrônica com o frevo"
           ],
           "correct_index": 0,
@@ -2944,10 +2944,10 @@
           "statement": "A estreia de A Sagração da Primavera, em 1913, ficou famosa porque:",
           "options": [
             "a plateia vaiou e brigou, chocada com o ritmo violento",
-            "foi a primeira ópera da história",
-            "não teve música",
-            "foi gravada em disco",
-            "foi tocada por um computador"
+            "foi a primeira ópera da história a ser cantada em russo",
+            "não teve música, só dança",
+            "foi gravada em disco ao vivo",
+            "foi tocada por um computador, sem nenhum músico no palco"
           ],
           "correct_index": 0,
           "explanation": "O ritmo irregular era novo demais para o público.",
@@ -3003,10 +3003,10 @@
           "statement": "A diferença entre a música concreta e a eletrônica é que:",
           "options": [
             "a concreta usa sons gravados, e a eletrônica cria sons com aparelhos",
-            "as duas usam só violinos",
+            "as duas usam só violinos e pianos de verdade, gravados em estúdio",
             "a eletrônica é mais antiga que o canto medieval",
-            "a concreta não usa som",
-            "não há diferença"
+            "a concreta não usa som nenhum, só o silêncio da sala de concerto",
+            "não há diferença, são dois nomes do mesmo gênero"
           ],
           "correct_index": 0,
           "explanation": "Uma grava o mundo; a outra fabrica o som.",
@@ -3018,8 +3018,8 @@
           "statement": "A pergunta que a obra 4'33\" faz ao público é:",
           "options": [
             "o que pode ser chamado de música",
-            "quanto custa um piano",
-            "quem é o melhor pianista",
+            "quanto custa um piano de cauda",
+            "quem é o melhor pianista do mundo",
             "por que a plateia tosse",
             "como se afina um piano"
           ],
@@ -3033,10 +3033,10 @@
           "statement": "No dodecafonismo de Schoenberg:",
           "options": [
             "as doze notas entram numa ordem fixa, e nenhuma manda nas outras",
-            "só se usa uma nota",
-            "a música gira em volta do dó",
-            "não há melodia nenhuma",
-            "as notas são sorteadas a cada vez"
+            "só se usa uma nota, repetida a peça inteira em ritmos diferentes",
+            "a música gira em volta do dó, como em qualquer escala maior",
+            "não há melodia nenhuma, só acordes",
+            "as notas são sorteadas a cada vez que se toca"
           ],
           "correct_index": 0,
           "explanation": "É o jeito organizado de fugir da nota central.",
@@ -3248,8 +3248,8 @@
           "statement": "O hip-hop é uma cultura formada por:",
           "options": [
             "MC, DJ, breaking e grafite",
-            "só o rap",
-            "orquestra e coro",
+            "só o rap cantado em cima de uma batida",
+            "orquestra, coro e regente",
             "piano e violino",
             "samba e choro"
           ],
@@ -3262,10 +3262,10 @@
           "statement": "O blues nasceu:",
           "options": [
             "entre os afro-americanos do sul dos Estados Unidos",
-            "nas cortes da Europa",
-            "nos mosteiros medievais",
-            "nas praias do Rio",
-            "na Jamaica"
+            "nas cortes da Europa do século XVIII, entre os nobres",
+            "nos mosteiros medievais da França, com os monges",
+            "nas praias do Rio de Janeiro",
+            "na Jamaica, junto com o reggae"
           ],
           "correct_index": 0,
           "explanation": "Foi no fim do século XIX, cantando a dor e a resistência.",
@@ -3276,10 +3276,10 @@
           "statement": "No reggae, a guitarra costuma tocar:",
           "options": [
             "no contratempo, entre as batidas principais",
-            "só no primeiro tempo",
-            "sem nenhum ritmo",
+            "só no primeiro tempo do compasso, com força",
+            "sem nenhum ritmo marcado",
             "como no canto gregoriano",
-            "mais rápido que a bateria"
+            "mais rápido que a bateria e o baixo juntos"
           ],
           "correct_index": 0,
           "explanation": "É o que dá o balanço típico.",
@@ -3315,10 +3315,10 @@
           "statement": "A diáspora africana, na música, ajuda a explicar por que:",
           "options": [
             "gêneros das Américas, como o samba e o jazz, têm raízes parecidas",
-            "a ópera nasceu na Itália",
-            "o canto gregoriano é em latim",
-            "o piano tem cordas",
-            "o minimalismo repete pouco"
+            "a ópera nasceu na Itália e não na África, mesmo cantando sobre ela",
+            "o canto gregoriano é cantado em latim",
+            "o piano tem cordas e é tocado com martelos, como um tambor",
+            "o minimalismo repete poucos elementos"
           ],
           "correct_index": 0,
           "explanation": "Os africanos levaram ritmos e cantos a vários países.",
@@ -3374,9 +3374,9 @@
           "statement": "No hip-hop, o DJ:",
           "options": [
             "cria a base com discos e trechos gravados",
-            "pinta as paredes",
-            "dança no chão",
-            "canta a letra falada",
+            "pinta as paredes da cidade com spray",
+            "dança no chão em giros",
+            "canta a letra falada em cima da base",
             "rege a orquestra"
           ],
           "correct_index": 0,
@@ -3389,10 +3389,10 @@
           "statement": "Sobre o rock e o samba, é correto afirmar:",
           "options": [
             "os dois têm raízes na música trazida por africanos para as Américas",
-            "os dois nasceram na Europa",
-            "o samba nasceu do rock",
-            "o rock nasceu do samba",
-            "nenhum dos dois tem relação com a África"
+            "os dois nasceram na Europa e chegaram à América pelo rádio",
+            "o samba nasceu do rock, nos anos 1950",
+            "o rock nasceu do samba, levado aos Estados Unidos",
+            "nenhum dos dois tem relação com a música da África"
           ],
           "correct_index": 0,
           "explanation": "O rock vem do blues; o samba, das rodas afro-brasileiras.",
@@ -3592,10 +3592,10 @@
           "statement": "A primeira transmissão de rádio no Brasil aconteceu em:",
           "options": [
             "1922, no centenário da Independência",
-            "1500",
-            "1877",
-            "1990",
-            "2010"
+            "1500, com os jesuítas e os sinos",
+            "1877, com o fonógrafo de Edison",
+            "1990, com a internet",
+            "1950, com a televisão"
           ],
           "correct_index": 0,
           "explanation": "Nos anos seguintes, o rádio virou a diversão das famílias.",
@@ -3634,9 +3634,9 @@
           "statement": "A fita cassete e o computador mudaram a música porque:",
           "options": [
             "gravar deixou de exigir um estúdio caro",
-            "acabaram com o rádio",
-            "proibiram os shows",
-            "trouxeram a ópera",
+            "acabaram com o rádio de vez",
+            "proibiram os shows ao vivo",
+            "trouxeram a ópera para as casas",
             "eliminaram os instrumentos"
           ],
           "correct_index": 0,
@@ -3662,10 +3662,10 @@
           "statement": "Artistas pequenos reclamam do streaming porque:",
           "options": [
             "cada vez que a música toca rende só uma fração de centavo",
-            "o streaming é proibido no Brasil",
-            "ninguém usa streaming",
+            "o streaming é proibido no Brasil para artistas pequenos",
+            "ninguém usa streaming para ouvir música nova",
             "o streaming não toca música brasileira",
-            "o streaming só toca ópera"
+            "o streaming só toca ópera e música clássica"
           ],
           "correct_index": 0,
           "explanation": "São precisos milhões de execuções para ganhar algo.",
@@ -3706,10 +3706,10 @@
           "statement": "Entre os anos 1930 e 1950, no Brasil, o rádio era:",
           "options": [
             "a grande diversão das famílias, com cantoras que viravam estrelas",
-            "proibido",
-            "só para notícias",
+            "proibido pelo governo dentro das casas das famílias",
+            "só para notícias de guerra, sem música nem novelas",
             "usado só por cientistas",
-            "menos ouvido que o streaming"
+            "menos ouvido que o streaming de hoje"
           ],
           "correct_index": 0,
           "explanation": "As rádios tinham programas de auditório e conjuntos ao vivo.",
@@ -3721,10 +3721,10 @@
           "statement": "O autotune é uma tecnologia que:",
           "options": [
             "ajusta a afinação da voz automaticamente",
-            "grava em cilindro",
-            "toca no contratempo",
-            "transmite rádio",
-            "escreve partituras"
+            "grava a voz em cilindros de cera",
+            "toca no contratempo da música",
+            "transmite rádio pela internet",
+            "escreve a partitura da música sozinho"
           ],
           "correct_index": 0,
           "explanation": "Pode corrigir um deslize ou virar efeito de propósito.",
@@ -3751,10 +3751,10 @@
           "statement": "Antes de 1877, uma pessoa que quisesse ouvir uma música de novo precisava:",
           "options": [
             "que alguém a tocasse de novo, ao vivo",
-            "dar play no celular",
-            "ligar o rádio",
-            "pôr um disco",
-            "abrir o streaming"
+            "dar play no celular ou no computador",
+            "ligar o rádio de casa",
+            "pôr um disco na vitrola",
+            "pôr um disco de vinil na vitrola"
           ],
           "correct_index": 0,
           "explanation": "A música só existia enquanto era tocada.",
@@ -3948,10 +3948,10 @@
           "statement": "O patrimônio imaterial protege:",
           "options": [
             "tradições vivas, como danças, festas e jeitos de cantar",
-            "só prédios antigos",
-            "só objetos de museu",
-            "só documentos escritos",
-            "só igrejas"
+            "só prédios antigos e igrejas que foram tombadas",
+            "só objetos guardados em museu, longe das ruas",
+            "só documentos escritos e cartas",
+            "só igrejas e mosteiros"
           ],
           "correct_index": 0,
           "explanation": "É a cultura que se faz, e não a que se guarda.",
@@ -4073,10 +4073,10 @@
           "statement": "O congado, de Minas Gerais e outros estados, é uma festa de:",
           "options": [
             "louvor a Nossa Senhora do Rosário, com coroação de reis do Congo",
-            "carnaval com sombrinhas",
-            "música eletrônica",
-            "ópera italiana",
-            "rock dos anos 1980"
+            "carnaval com sombrinhas coloridas e passos rápidos de frevo",
+            "música eletrônica nas praças, com DJs famosos de fora",
+            "ópera italiana nas igrejas",
+            "rock dos anos 1980 nas ruas"
           ],
           "correct_index": 0,
           "explanation": "Une fé católica e memória africana.",
@@ -4088,10 +4088,10 @@
           "statement": "O jongo é:",
           "options": [
             "uma roda de tambores com versos em desafio, do Sudeste",
-            "uma dança gaúcha",
-            "uma ópera",
-            "um gênero de rock",
-            "um canto de igreja medieval"
+            "uma dança gaúcha de bota, espora e lenço vermelho",
+            "uma ópera cantada em italiano",
+            "um gênero de rock dos anos 1970",
+            "um canto de igreja medieval, em latim e sem tambor"
           ],
           "correct_index": 0,
           "explanation": "Tem origem africana e é patrimônio do país.",
@@ -4103,10 +4103,10 @@
           "statement": "Registrar uma tradição como patrimônio imaterial:",
           "options": [
             "protege quem a mantém viva, sem proibir que ela mude",
-            "obriga a tradição a nunca mudar",
-            "transforma a tradição em museu fechado",
-            "tira a tradição das ruas",
-            "proíbe instrumentos novos"
+            "obriga a tradição a nunca mais mudar em nada",
+            "transforma a tradição em museu fechado ao público",
+            "tira a tradição das ruas e das festas",
+            "proíbe o uso de instrumentos novos"
           ],
           "correct_index": 0,
           "explanation": "A tradição viva se renova.",
@@ -4118,10 +4118,10 @@
           "statement": "Nos anos 1990, músicos do Recife juntaram o maracatu com o rock e o hip-hop. Isso mostra que:",
           "options": [
             "a cultura popular se renova misturando o novo com o antigo",
-            "o maracatu acabou",
-            "a tradição foi proibida",
-            "o rock substituiu o maracatu",
-            "o hip-hop é de Pernambuco"
+            "o maracatu acabou e foi trocado pelo rock",
+            "a tradição foi proibida e virou outra música",
+            "o rock substituiu o maracatu nas ruas do Recife",
+            "o hip-hop nasceu em Pernambuco nos anos 1990"
           ],
           "correct_index": 0,
           "explanation": "A tradição continua viva e mudando.",
@@ -4303,10 +4303,10 @@
           "statement": "Nos anos 1960, os festivais de música na TV:",
           "options": [
             "fizeram da canção um debate sobre o país",
-            "eram proibidos",
+            "eram proibidos pela censura do governo",
             "só tocavam ópera",
             "não tinham plateia",
-            "só tocavam música estrangeira"
+            "só tocavam música estrangeira traduzida"
           ],
           "correct_index": 0,
           "explanation": "A plateia torcia como num jogo.",
@@ -4331,10 +4331,10 @@
           "statement": "Na ditadura, muitos compositores usavam imagens de duplo sentido porque:",
           "options": [
             "a crítica direta era perigosa e passava pela censura",
-            "não sabiam escrever direto",
-            "o rádio exigia rimas",
-            "queriam vender mais discos de ópera",
-            "a lei mandava falar só de amor"
+            "não sabiam escrever direto e precisavam de imagens",
+            "o rádio exigia rimas em todas as canções",
+            "queriam vender mais discos fora do país",
+            "a lei mandava falar só de amor nas músicas"
           ],
           "correct_index": 0,
           "explanation": "O recado ficava escondido na imagem.",
@@ -4345,10 +4345,10 @@
           "statement": "Chico Buarque usou o nome falso Julinho da Adelaide para:",
           "options": [
             "driblar a censura, que vetava as músicas dele",
-            "ganhar um festival",
-            "esconder que era cantor",
-            "gravar em outro país",
-            "fugir dos fãs"
+            "ganhar um festival com outro nome e outra voz",
+            "esconder que era cantor da família",
+            "gravar em outro país sem precisar de contrato",
+            "fugir dos fãs nas ruas do Rio"
           ],
           "correct_index": 0,
           "explanation": "Músicas com o nome dele eram barradas.",
@@ -4359,10 +4359,10 @@
           "statement": "A Tropicália, de Caetano Veloso e Gilberto Gil, propunha:",
           "options": [
             "misturar guitarra elétrica, ritmos brasileiros e crítica",
-            "voltar ao canto medieval",
-            "acabar com a música brasileira",
-            "tocar só música de concerto",
-            "fazer só rock de letras leves"
+            "voltar ao canto medieval e à música da igreja",
+            "acabar com a música brasileira e copiar a de fora",
+            "tocar só música de concerto nos festivais",
+            "fazer só rock de letras leves sobre amor"
           ],
           "correct_index": 0,
           "explanation": "Ela misturou o nacional com o estrangeiro.",
@@ -4412,7 +4412,7 @@
           "statement": "Para entender o sentido escondido de uma canção dos anos 1970, a pista mais importante é:",
           "options": [
             "a data e o que acontecia no país",
-            "o número de instrumentos",
+            "o número de instrumentos da gravação",
             "a cor da capa do disco",
             "o tamanho da letra",
             "o nome do produtor"
@@ -4441,10 +4441,10 @@
           "statement": "Na ditadura, a censura prévia:",
           "options": [
             "revisava as letras antes de serem gravadas e podia proibi-las",
-            "só existia no rádio",
-            "premiava as canções de protesto",
-            "não existia",
-            "só cuidava de novelas"
+            "só existia no rádio, e não nos discos nem nos shows",
+            "premiava as canções de protesto com espaço na TV",
+            "não existia, era só boato",
+            "só cuidava de novelas e filmes"
           ],
           "correct_index": 0,
           "explanation": "Nenhuma letra era gravada sem passar por ela.",
@@ -4456,10 +4456,10 @@
           "statement": "“Apesar de Você”, de Chico Buarque, foi liberada em 1970 e depois proibida porque:",
           "options": [
             "os censores perceberam a crítica ao governo escondida na letra",
-            "era longa demais",
-            "falava de futebol",
-            "não tinha melodia",
-            "era em inglês"
+            "era longa demais para tocar inteira nas rádios da época",
+            "falava de futebol, e o futebol era assunto proibido",
+            "não tinha melodia, só letra",
+            "era em inglês e ninguém entendia"
           ],
           "correct_index": 0,
           "explanation": "O recado estava no duplo sentido.",
@@ -4471,10 +4471,10 @@
           "statement": "Em 1967, houve no Brasil uma passeata contra:",
           "options": [
             "a guitarra elétrica",
-            "o samba",
+            "o samba de morro",
             "o rádio",
-            "a ópera",
-            "o violão"
+            "a bossa nova",
+            "o teclado"
           ],
           "correct_index": 0,
           "explanation": "Parte dos músicos via a guitarra como ameaça à música brasileira.",
@@ -4486,10 +4486,10 @@
           "statement": "Sobre a música de protesto no Brasil, é correto afirmar:",
           "options": [
             "ela continuou depois da ditadura, em gêneros como o rap",
-            "ela acabou em 1985",
-            "ela nunca existiu",
+            "ela acabou em 1985, junto com a ditadura militar",
+            "ela nunca existiu no Brasil",
             "ela só existiu na ópera",
-            "ela era proibida por todos os festivais"
+            "ela era proibida por todos os festivais de música"
           ],
           "correct_index": 0,
           "explanation": "O rap e o manguebeat seguiram cantando os problemas do país.",
@@ -4501,9 +4501,9 @@
           "statement": "Um aluno lê uma canção de 1971 sobre “um dia que vai raiar” como uma simples previsão do tempo. O erro dele é:",
           "options": [
             "ignorar o contexto da ditadura, que dá outro sentido à imagem",
-            "não saber o que é raiar",
+            "não saber o que quer dizer a palavra raiar",
             "ler a letra em voz alta",
-            "achar que a canção é longa",
+            "achar que a canção é longa demais para ser lida",
             "não conhecer o cantor"
           ],
           "correct_index": 0,

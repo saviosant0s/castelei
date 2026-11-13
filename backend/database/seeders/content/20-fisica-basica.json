@@ -214,8 +214,8 @@
             "o quilograma",
             "o grama",
             "o newton",
-            "o litro",
-            "o metro"
+            "o litro cúbico",
+            "o quilômetro"
           ],
           "correct_index": 0,
           "explanation": "O SI usa o quilograma como unidade básica de massa.",
@@ -696,7 +696,7 @@
             "kg",
             "m²",
             "°C",
-            "N"
+            "N·m"
           ],
           "correct_index": 0,
           "explanation": "Velocidade é distância por tempo: quilômetros por hora.",
@@ -738,10 +738,10 @@
           "statement": "Na Lua, um astronauta soltou um martelo e uma pena ao mesmo tempo. O que aconteceu?",
           "options": [
             "chegaram juntos, porque lá não há ar",
-            "o martelo chegou bem antes",
-            "a pena flutuou para cima",
-            "nenhum dos dois caiu",
-            "a pena chegou antes"
+            "o martelo chegou bem antes, por ser mais pesado",
+            "a pena flutuou para cima e não caiu",
+            "nenhum dos dois caiu, porque não há gravidade",
+            "a pena chegou antes, por ser mais leve"
           ],
           "correct_index": 0,
           "explanation": "Sem ar para frear a pena, os dois caíram com a mesma aceleração.",
@@ -1122,10 +1122,10 @@
           "statement": "Dois amigos andam na mesma pista. No gráfico da posição pelo tempo, as duas retas se cruzam. O cruzamento mostra:",
           "options": [
             "o instante e o lugar em que eles se encontram",
-            "que os dois estão parados",
-            "que os dois têm a mesma velocidade",
-            "o fim da pista",
-            "que um deles voltou"
+            "que os dois estão parados naquele ponto",
+            "que os dois têm a mesma velocidade naquele instante",
+            "o fim da pista, onde os dois param",
+            "que um deles voltou para trás"
           ],
           "correct_index": 0,
           "explanation": "No cruzamento, os dois estão na mesma posição no mesmo tempo.",
@@ -1310,10 +1310,10 @@
           "statement": "O uso do cinto de segurança está ligado a qual lei de Newton?",
           "options": [
             "primeira lei, da inércia",
-            "segunda lei",
-            "terceira lei",
-            "lei da gravitação",
-            "nenhuma"
+            "segunda lei, da força e da aceleração",
+            "terceira lei, da ação e reação",
+            "lei da gravitação universal",
+            "nenhuma das leis de Newton"
           ],
           "correct_index": 0,
           "explanation": "Na freada, o corpo tende a continuar indo para a frente; o cinto o segura.",
@@ -1338,10 +1338,10 @@
           "statement": "Um foguete sobe porque:",
           "options": [
             "empurra os gases para baixo, e os gases o empurram para cima",
-            "fica mais leve que o ar",
-            "a Terra para de puxá-lo",
-            "o ar o empurra por baixo como uma pipa",
-            "não tem massa"
+            "fica mais leve que o ar e sobe como um balão",
+            "a Terra para de puxá-lo depois que ele sai do chão",
+            "o ar o empurra por baixo como uma pipa no vento",
+            "não tem massa e por isso nada o segura"
           ],
           "correct_index": 0,
           "explanation": "É a terceira lei: ação e reação. Funciona até no espaço, sem ar.",
@@ -1394,10 +1394,10 @@
           "statement": "Por que é difícil andar sobre gelo liso?",
           "options": [
             "há pouco atrito entre o sapato e o gelo",
-            "o gelo tem muita massa",
-            "o gelo empurra as pessoas",
-            "falta gravidade no gelo",
-            "o gelo tem muito atrito"
+            "o gelo tem muita massa e puxa o pé",
+            "o gelo empurra as pessoas para trás",
+            "falta gravidade em cima do gelo",
+            "o gelo tem muito atrito e prende o pé"
           ],
           "correct_index": 0,
           "explanation": "Sem atrito, o pé escorrega em vez de empurrar o chão para trás.",
@@ -1448,10 +1448,10 @@
           "statement": "Um livro parado na mesa continua parado porque:",
           "options": [
             "nenhuma força resultante o tira do lugar",
-            "ele não tem massa",
+            "ele não tem massa nenhuma",
             "a mesa o puxa para os lados",
-            "ele está acelerando",
-            "não existe gravidade na mesa"
+            "ele está acelerando devagar",
+            "não existe gravidade em cima da mesa"
           ],
           "correct_index": 0,
           "explanation": "Sem força resultante, o corpo fica como está.",
@@ -1493,10 +1493,10 @@
           "statement": "Um disco desliza numa pista sem nenhum atrito. Sem ninguém empurrar, ele:",
           "options": [
             "continua deslizando em linha reta com a mesma velocidade",
-            "para logo em seguida",
-            "volta para trás",
-            "acelera sozinho",
-            "afunda na pista"
+            "para logo em seguida, porque perde a força",
+            "volta para trás depois de um tempo",
+            "acelera sozinho, porque nada o segura",
+            "afunda na pista por causa da gravidade"
           ],
           "correct_index": 0,
           "explanation": "Pela inércia, sem força nenhuma ele mantém o movimento.",
@@ -1730,10 +1730,10 @@
           "statement": "Num carro fazendo uma curva, a força que puxa para o centro vem principalmente:",
           "options": [
             "do atrito dos pneus com o chão",
-            "do motor",
-            "do volante sozinho",
-            "do vento",
-            "do banco do motorista"
+            "do motor que puxa o carro",
+            "do volante sozinho, sem o chão",
+            "do vento que bate de lado",
+            "do banco que empurra o motorista"
           ],
           "correct_index": 0,
           "explanation": "Sem atrito, o carro sairia reto.",
@@ -1744,10 +1744,10 @@
           "statement": "A Lua não cai na Terra porque:",
           "options": [
             "ela cai o tempo todo, mas anda rápido de lado e nunca chega",
-            "no espaço não existe gravidade",
-            "a Terra a empurra para longe",
-            "ela está parada no céu",
-            "o Sol a segura no lugar"
+            "no espaço não existe gravidade nenhuma para puxá-la",
+            "a Terra a empurra para longe com a mesma força",
+            "ela está parada no céu, presa no mesmo lugar",
+            "o Sol a segura no lugar e não deixa ela cair"
           ],
           "correct_index": 0,
           "explanation": "A órbita é uma queda que nunca termina.",
@@ -1842,10 +1842,10 @@
           "statement": "Numa subida, o ciclista troca para uma catraca maior. Com isso:",
           "options": [
             "cada pedalada gira menos a roda, e pedalar fica mais leve",
-            "a bicicleta fica mais rápida",
+            "a bicicleta fica mais rápida na subida",
             "a roda gira mais vezes por pedalada",
-            "a corrente deixa de funcionar",
-            "nada muda"
+            "a corrente deixa de funcionar direito",
+            "nada muda, só o barulho"
           ],
           "correct_index": 0,
           "explanation": "Menos voltas por pedalada pedem menos força.",
@@ -1858,9 +1858,9 @@
           "options": [
             "a velocidade dos dentes, que andam com a corrente",
             "o número de voltas por minuto",
-            "o tamanho",
+            "o tamanho de cada uma",
             "o número de dentes",
-            "o período"
+            "o período de uma volta"
           ],
           "correct_index": 0,
           "explanation": "A corrente leva os dentes das duas no mesmo passo.",
@@ -1872,9 +1872,9 @@
           "statement": "Na estação espacial, a cerca de 400 km de altura, a gravidade da Terra é:",
           "options": [
             "quase 90% da que sentimos aqui",
-            "zero",
+            "zero, porque não há gravidade lá",
             "o dobro da daqui",
-            "10% da daqui",
+            "cerca de 10% da daqui",
             "igual à da Lua"
           ],
           "correct_index": 0,
@@ -2106,10 +2106,10 @@
           "statement": "O que acontece com a energia quando um carrinho de montanha-russa desce?",
           "options": [
             "a potencial vira cinética, e uma parte vira calor",
-            "a energia desaparece",
-            "a cinética vira potencial",
-            "a energia é criada do nada",
-            "a energia vira massa"
+            "a energia desaparece aos poucos durante a descida",
+            "a cinética vira potencial enquanto o carrinho desce",
+            "a energia é criada do nada pela velocidade",
+            "a energia vira massa e o carrinho fica mais pesado"
           ],
           "correct_index": 0,
           "explanation": "A altura vira velocidade; o atrito transforma uma parte em calor.",
@@ -2121,9 +2121,9 @@
           "options": [
             "a energia usada dividida pelo tempo",
             "a mesma coisa que energia",
-            "a força vezes a massa",
+            "a força vezes a massa do corpo",
             "a velocidade ao quadrado",
-            "o peso de um corpo"
+            "a força que a gravidade faz"
           ],
           "correct_index": 0,
           "explanation": "Mais potência é gastar a mesma energia em menos tempo.",
@@ -2220,10 +2220,10 @@
           "statement": "Por que uma batida a 100 km/h é muito mais grave que a 50 km/h?",
           "options": [
             "a energia cinética fica quatro vezes maior",
-            "a energia dobra",
-            "a massa do carro aumenta",
-            "o atrito some",
-            "a energia potencial aumenta"
+            "a energia só dobra, como a velocidade",
+            "a massa do carro aumenta com a velocidade",
+            "o atrito some em velocidade alta",
+            "a energia potencial aumenta muito"
           ],
           "correct_index": 0,
           "explanation": "Dobrando a velocidade, a energia que precisa ser dissipada na batida quadruplica.",
@@ -2484,10 +2484,10 @@
           "statement": "Enquanto a água ferve ao nível do mar, a temperatura dela:",
           "options": [
             "fica em 100 °C até virar toda vapor",
-            "sobe sem parar",
-            "cai para 0 °C",
-            "sobe até 200 °C",
-            "oscila sem regra"
+            "sobe sem parar até secar",
+            "cai para 0 °C de repente",
+            "sobe até 200 °C no fim",
+            "oscila sem nenhuma regra"
           ],
           "correct_index": 0,
           "explanation": "Toda a energia vai para a mudança de estado, não para subir a temperatura.",
@@ -2512,9 +2512,9 @@
           "statement": "Por que pontes e trilhos têm pequenos vãos entre as partes?",
           "options": [
             "para dar espaço à dilatação no calor",
-            "para economizar material",
+            "para economizar material na obra",
             "para a água da chuva passar",
-            "por erro de construção",
+            "por erro de construção antigo",
             "para o trem fazer barulho"
           ],
           "correct_index": 0,
@@ -2540,10 +2540,10 @@
           "statement": "Por que o ar-condicionado costuma ser instalado no alto da parede?",
           "options": [
             "o ar frio desce e o quente sobe, e assim o ambiente circula",
-            "o ar frio sobe",
-            "para ficar longe das crianças",
-            "porque a irradiação só funciona no alto",
-            "para conduzir calor pela parede"
+            "o ar frio sobe e o quente desce, por isso é preciso empurrar de cima",
+            "para ficar longe das crianças e não ser desligado",
+            "porque a irradiação do frio só funciona perto do teto",
+            "para conduzir o frio pela parede até o resto da casa"
           ],
           "correct_index": 0,
           "explanation": "O ar frio, mais pesado, desce e empurra o quente para cima: é convecção.",
@@ -2594,9 +2594,9 @@
           "statement": "Uma garrafa de vidro cheia de água estoura no congelador porque:",
           "options": [
             "a água aumenta de volume ao virar gelo",
-            "o vidro esquenta",
-            "a água evapora",
-            "o gelo ocupa menos espaço",
+            "o vidro esquenta e racha",
+            "a água evapora e empurra o vidro",
+            "o gelo ocupa menos espaço e puxa o vidro",
             "o congelador tem pressão alta"
           ],
           "correct_index": 0,
@@ -2609,10 +2609,10 @@
           "statement": "De manhã, a maçaneta de metal parece mais fria que a porta de madeira. Por quê?",
           "options": [
             "o metal conduz o calor da mão mais rápido",
-            "o metal está mais frio",
-            "a madeira produz calor",
-            "o metal não tem temperatura",
-            "a madeira está mais quente"
+            "o metal está mais frio que a madeira",
+            "a madeira produz calor próprio",
+            "o metal não tem temperatura nenhuma",
+            "a madeira está mais quente que o metal"
           ],
           "correct_index": 0,
           "explanation": "Os dois estão na mesma temperatura do ambiente. O metal tira calor da mão mais depressa.",
@@ -2639,10 +2639,10 @@
           "statement": "Qual frase está certa?",
           "options": [
             "calor é energia que passa do corpo mais quente para o mais frio",
-            "um corpo quente tem muito calor guardado",
-            "calor e temperatura são a mesma coisa",
-            "o calor passa do frio para o quente",
-            "o frio é uma energia que entra nos corpos"
+            "um corpo quente tem muito calor guardado dentro dele",
+            "calor e temperatura são a mesma coisa, com nomes diferentes",
+            "o calor passa do corpo mais frio para o mais quente",
+            "o frio é uma energia que entra nos corpos e os esfria"
           ],
           "correct_index": 0,
           "explanation": "Calor é energia em trânsito; o que o corpo tem é temperatura.",
@@ -2831,10 +2831,10 @@
           "statement": "Uma faca afiada corta melhor que uma cega porque:",
           "options": [
             "a mesma força se concentra numa área menor",
-            "a faca afiada é mais pesada",
-            "a cega tem mais força",
-            "a pressão não depende da área",
-            "a afiada é mais densa"
+            "a faca afiada é mais pesada e faz mais força",
+            "a faca cega tem mais força, mas espalha",
+            "a pressão não depende da área, só da força",
+            "a faca afiada é mais densa que a cega"
           ],
           "correct_index": 0,
           "explanation": "Menos área, mais pressão.",
@@ -2901,10 +2901,10 @@
           "statement": "Um navio de aço flutua porque:",
           "options": [
             "é oco, e no total fica menos denso que a água",
-            "o aço é menos denso que a água",
-            "a água do mar não faz empuxo",
-            "ele é leve",
-            "o motor o segura em cima"
+            "o aço é menos denso que a água do mar",
+            "a água do mar não faz empuxo em metal",
+            "ele é leve, mesmo sendo de aço",
+            "o motor o segura em cima da água"
           ],
           "correct_index": 0,
           "explanation": "O ar de dentro conta na densidade média.",
@@ -2917,8 +2917,8 @@
             "ao peso da água que o corpo tirou do lugar",
             "ao peso do próprio corpo, sempre",
             "à massa da piscina inteira",
-            "a zero",
-            "à pressão do ar"
+            "a zero quando o corpo afunda",
+            "à pressão do ar em cima da água"
           ],
           "correct_index": 0,
           "explanation": "É a regra de Arquimedes.",
@@ -2984,10 +2984,10 @@
           "statement": "Uma pessoa deita numa cama de milhares de pregos e não se fere. O motivo é:",
           "options": [
             "o peso se divide entre muitas pontas, e a pressão em cada uma fica pequena",
-            "os pregos são de borracha",
-            "o corpo fica mais leve",
-            "não há força nenhuma",
-            "a pressão não depende da área"
+            "os pregos são de borracha e não furam a pele de ninguém",
+            "o corpo fica mais leve quando está deitado de costas",
+            "não há força nenhuma, porque a pessoa está parada",
+            "a pressão não depende da área, só do peso da pessoa"
           ],
           "correct_index": 0,
           "explanation": "Muitas pontas somam uma área grande.",
@@ -2999,10 +2999,10 @@
           "statement": "É mais fácil boiar no mar que na piscina porque a água salgada:",
           "options": [
             "é mais densa, e faz mais empuxo",
-            "é menos densa",
-            "não tem pressão",
-            "é mais quente",
-            "tem ondas que empurram"
+            "é menos densa e deixa o corpo leve",
+            "não tem pressão nenhuma",
+            "é mais quente e o corpo flutua",
+            "tem ondas que empurram para cima"
           ],
           "correct_index": 0,
           "explanation": "O sal deixa a água mais densa.",
@@ -3017,7 +3017,7 @@
             "a densidade do aço",
             "a massa do aço",
             "a gravidade sobre o aço",
-            "a pressão do ar"
+            "a pressão do ar em volta"
           ],
           "correct_index": 0,
           "explanation": "Oco, ele desloca muito mais água.",
@@ -3030,9 +3030,9 @@
           "options": [
             "5.000 N",
             "100 N",
-            "2 N",
-            "150 N",
-            "50 N"
+            "2.500 N",
+            "50.000 N",
+            "150 N"
           ],
           "correct_index": 0,
           "explanation": "A pressão é a mesma: a força cresce na mesma proporção da área.",
@@ -3218,10 +3218,10 @@
           "statement": "No espaço, não se ouve uma explosão porque:",
           "options": [
             "o som precisa de um meio para andar, e lá há vácuo",
-            "o som é rápido demais",
-            "a explosão não faz barulho",
+            "o som é rápido demais para o ouvido",
+            "a explosão não faz barulho no espaço",
             "os astronautas usam capacete",
-            "a luz apaga o som"
+            "a luz da explosão apaga o som"
           ],
           "correct_index": 0,
           "explanation": "Sem ar ou outra matéria, não há o que vibrar.",
@@ -3357,9 +3357,9 @@
           "statement": "Em qual meio o som anda mais rápido?",
           "options": [
             "nos sólidos, como o ferro",
-            "no ar",
-            "no vácuo",
-            "igual em todos",
+            "no ar, que é leve",
+            "no vácuo, sem nada",
+            "igual em todos os meios",
             "no gás hélio parado"
           ],
           "correct_index": 0,
@@ -3588,10 +3588,10 @@
           "statement": "Uma camisa parece vermelha porque:",
           "options": [
             "reflete a luz vermelha e absorve as outras cores",
-            "absorve a luz vermelha",
-            "produz luz vermelha",
+            "absorve a luz vermelha e reflete as outras",
+            "produz luz vermelha própria",
             "não reflete nenhuma luz",
-            "é feita de luz"
+            "é feita de luz vermelha"
           ],
           "correct_index": 0,
           "explanation": "Vemos a cor que o objeto reflete.",
@@ -3631,7 +3631,7 @@
           "options": [
             "volta com o mesmo ângulo com que chegou",
             "atravessa o espelho",
-            "some",
+            "some no vidro",
             "entorta para dentro do vidro",
             "vira som"
           ],
@@ -3727,10 +3727,10 @@
           "statement": "O arco-íris se forma quando:",
           "options": [
             "gotas de chuva separam as cores da luz do Sol",
-            "a Lua reflete a chuva",
-            "o vento pinta o céu",
+            "a Lua reflete a chuva no céu",
+            "o vento pinta o céu de cores",
             "as nuvens produzem luz colorida",
-            "a luz anda em curva"
+            "a luz anda em curva no ar"
           ],
           "correct_index": 0,
           "explanation": "Cada cor entorta um pouco diferente dentro da gota e elas se separam.",
@@ -4074,10 +4074,10 @@
           "statement": "O disjuntor serve para:",
           "options": [
             "desligar o circuito quando a corrente passa do limite",
-            "aumentar a tensão da casa",
-            "guardar energia",
-            "medir a conta de luz",
-            "trocar a corrente de lugar"
+            "aumentar a tensão da casa nos horários de pico",
+            "guardar energia para quando faltar luz",
+            "medir a conta de luz do mês",
+            "trocar a corrente de lugar entre os fios"
           ],
           "correct_index": 0,
           "explanation": "Ele protege a instalação contra sobrecarga e curto-circuito.",
@@ -4189,9 +4189,9 @@
           "options": [
             "a água diminui a resistência do corpo, e passa mais corrente",
             "a água aumenta a tensão da tomada",
-            "a água produz eletricidade",
-            "a água esquenta o fio",
-            "não faz diferença"
+            "a água produz eletricidade no corpo",
+            "a água esquenta o fio da tomada",
+            "não faz diferença nenhuma estar molhado"
           ],
           "correct_index": 0,
           "explanation": "Com menos resistência, a mesma tensão faz passar mais corrente: U = R × i.",
@@ -4363,7 +4363,7 @@
             "um ímã inteiro, com norte e sul",
             "só com o polo norte",
             "só com o polo sul",
-            "sem magnetismo",
+            "sem magnetismo nenhum",
             "com três polos"
           ],
           "correct_index": 0,
@@ -4375,10 +4375,10 @@
           "statement": "A agulha da bússola aponta para o norte porque:",
           "options": [
             "se alinha com o campo magnético da Terra",
-            "é atraída pelo Sol",
-            "o vento a empurra",
-            "é feita de ouro",
-            "o GPS a controla"
+            "é atraída pelo Sol durante o dia",
+            "o vento a empurra para um lado",
+            "é feita de ouro, que aponta para o norte",
+            "o GPS do celular a controla"
           ],
           "correct_index": 0,
           "explanation": "A Terra se comporta como um grande ímã.",
@@ -4518,10 +4518,10 @@
           "statement": "Um ímã fica parado dentro de uma bobina. A corrente no fio é:",
           "options": [
             "zero, porque a indução precisa de movimento",
-            "alta, porque o ímã está perto",
-            "alternada",
-            "contínua e forte",
-            "a mesma da tomada"
+            "alta, porque o ímã está perto do fio",
+            "alternada, porque o ímã tem dois polos",
+            "contínua e forte, como a de uma pilha",
+            "a mesma da tomada da casa"
           ],
           "correct_index": 0,
           "explanation": "Sem movimento, não aparece corrente.",
@@ -4760,7 +4760,7 @@
             "transforma mais energia em luz e menos em calor",
             "não usa eletricidade",
             "tem rendimento de 100%",
-            "é menor",
+            "é menor e pesa menos",
             "fica desligada de dia"
           ],
           "correct_index": 0,

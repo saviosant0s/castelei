@@ -167,7 +167,7 @@
             "6,02 × 10²³ partículas",
             "12 partículas",
             "1 000 partículas",
-            "22,4 partículas",
+            "22,4 × 10²³ partículas",
             "6,02 partículas"
           ],
           "correct_index": 0,
@@ -290,10 +290,10 @@
           "statement": "O mol é, para os químicos, o que a dúzia é para:",
           "options": [
             "contar ovos: um número fixo de coisas",
-            "medir massa",
+            "medir massa: um peso fixo",
             "medir volume",
             "medir temperatura",
-            "pesar frutas"
+            "pesar frutas na balança da feira"
           ],
           "correct_index": 0,
           "explanation": "Os dois são pacotes com um número fixo.",
@@ -335,8 +335,8 @@
           "statement": "Quantos átomos ao todo há em 1 mol de CO₂?",
           "options": [
             "cerca de 1,8 × 10²⁴",
-            "6,02 × 10²³",
-            "1,2 × 10²⁴",
+            "cerca de 6,02 × 10²³",
+            "cerca de 1,2 × 10²⁴",
             "3 × 10²³",
             "2,6 × 10²⁵"
           ],
@@ -350,8 +350,8 @@
           "statement": "Qual tem mais moléculas: 2 g de gás hidrogênio (H₂, 2 g/mol) ou 32 g de gás oxigênio (O₂, 32 g/mol)?",
           "options": [
             "os dois têm o mesmo número, porque cada um é 1 mol",
-            "o oxigênio, porque tem mais massa",
-            "o hidrogênio, porque é mais leve",
+            "o oxigênio, porque tem mais massa por molécula",
+            "o hidrogênio, porque é mais leve e cabe mais",
             "nenhum dos dois tem moléculas",
             "depende do volume do frasco"
           ],
@@ -538,8 +538,8 @@
           "statement": "Estequiometria é:",
           "options": [
             "a conta das quantidades numa reação, a partir da equação balanceada",
-            "o estudo da velocidade das reações",
-            "a medida do calor de uma reação",
+            "o estudo da velocidade das reações e do que as acelera",
+            "a medida do calor que uma reação solta ou absorve",
             "a separação de misturas",
             "a contagem de prótons de um átomo"
           ],
@@ -580,8 +580,8 @@
           "statement": "Numa reação em recipiente fechado, a massa dos produtos é:",
           "options": [
             "igual à massa dos reagentes",
-            "sempre maior",
-            "sempre menor",
+            "sempre maior que a dos reagentes",
+            "sempre menor, porque algo se perde",
             "zero",
             "o dobro"
           ],
@@ -855,8 +855,8 @@
           "statement": "Reagente limitante é o que:",
           "options": [
             "acaba primeiro e para a reação",
-            "sobra no fim",
-            "acelera a reação",
+            "sobra no fim, sem reagir",
+            "acelera a reação até o fim",
             "não participa da reação",
             "tem mais massa"
           ],
@@ -980,8 +980,8 @@
           "statement": "Um rendimento de 100% quer dizer que:",
           "options": [
             "formou-se todo o produto que a conta prevê",
-            "não se formou nada",
-            "sobrou metade do reagente",
+            "não se formou nada, porque faltou reagente",
+            "sobrou metade do reagente sem reagir",
             "a reação foi rápida",
             "a amostra era pura"
           ],
@@ -1025,8 +1025,8 @@
           "statement": "Aquecendo 100 g de calcário com 80% de CaCO₃ (100 g/mol), pela reação CaCO₃ → CaO + CO₂, quanto CO₂ (44 g/mol) se forma?",
           "options": [
             "35,2 g",
-            "44 g",
-            "80 g",
+            "44,0 g",
+            "80,0 g",
             "20 g",
             "55 g"
           ],
@@ -1226,8 +1226,8 @@
           "statement": "Ao diluir uma solução, a massa de soluto:",
           "options": [
             "fica a mesma, e o volume aumenta",
-            "aumenta",
-            "diminui",
+            "aumenta junto com a água",
+            "diminui na mesma proporção",
             "some",
             "sempre dobra"
           ],
@@ -1282,10 +1282,10 @@
           "statement": "1 ppm quer dizer:",
           "options": [
             "1 parte de soluto em 1 milhão de partes de solução",
-            "1 por cento",
+            "1 parte de soluto em cada 100 partes",
             "1 grama por litro",
             "1 mol por litro",
-            "1 parte em mil"
+            "1 parte em mil partes de solução"
           ],
           "correct_index": 0,
           "explanation": "Partes por milhão.",
@@ -1670,8 +1670,8 @@
           "statement": "Nas tabelas, a entalpia de formação do O₂ é:",
           "options": [
             "zero, porque é substância simples",
-            "−394 kJ/mol",
-            "+286 kJ/mol",
+            "−394 kJ/mol, como a do CO₂",
+            "+286 kJ/mol, como a da água",
             "igual à da água",
             "sempre negativa"
           ],
@@ -2134,8 +2134,8 @@
           "statement": "O ímã da geladeira mostra que, com os átomos:",
           "options": [
             "separar custa energia, e juntar devolve",
-            "juntar custa energia",
-            "separar libera energia",
+            "juntar custa energia, e separar devolve",
+            "separar libera energia, e juntar também",
             "a energia nunca muda",
             "só ímãs têm ligação"
           ],
@@ -2444,9 +2444,9 @@
           "statement": "Para uma batida entre moléculas virar reação, ela precisa:",
           "options": [
             "de energia suficiente e da posição certa",
-            "só de energia",
+            "só de energia, em qualquer posição",
             "só da posição certa",
-            "sempre de um catalisador",
+            "sempre de um catalisador junto",
             "de luz"
           ],
           "correct_index": 0,
@@ -2458,10 +2458,10 @@
           "statement": "A comida dura mais na geladeira porque:",
           "options": [
             "a temperatura baixa deixa as reações mais lentas",
-            "o frio mata todas as bactérias",
+            "o frio mata todas as bactérias da comida",
             "a geladeira tira o oxigênio",
             "o frio é um catalisador",
-            "o frio muda a fórmula da comida"
+            "o frio muda a fórmula química da comida"
           ],
           "correct_index": 0,
           "explanation": "Menos calor, menos batidas e mais fracas.",
@@ -2472,9 +2472,9 @@
           "statement": "Um comprimido em pó dissolve antes do inteiro porque:",
           "options": [
             "a superfície de contato é maior",
-            "a massa é maior",
+            "a massa é maior quando está em pó",
             "a temperatura sobe",
-            "o pó é catalisador",
+            "o pó funciona como catalisador",
             "o pó tem outra fórmula"
           ],
           "correct_index": 0,
@@ -2539,10 +2539,10 @@
           "statement": "O complexo ativado é:",
           "options": [
             "o arranjo instável no alto do caminho de energia",
-            "o produto final da reação",
+            "o produto final da reação, que sai no fim",
             "o catalisador depois de gasto",
             "o reagente que sobra",
-            "o calor que a reação solta"
+            "o calor que a reação solta no fim do caminho"
           ],
           "correct_index": 0,
           "explanation": "Dura um instante e pode virar produto ou voltar.",
@@ -2833,9 +2833,9 @@
           "statement": "No equilíbrio químico:",
           "options": [
             "as reações de ida e de volta continuam, na mesma velocidade",
-            "a reação para de acontecer",
+            "a reação para de acontecer, nos dois sentidos",
             "só existe produto",
-            "as concentrações são sempre iguais",
+            "as concentrações são sempre iguais, de reagente e de produto",
             "a reação de volta não existe"
           ],
           "correct_index": 0,
@@ -2942,8 +2942,8 @@
           "statement": "Um catalisador num equilíbrio:",
           "options": [
             "faz chegar antes ao equilíbrio, sem deslocá-lo",
-            "desloca para os produtos",
-            "desloca para os reagentes",
+            "desloca para os produtos e forma mais",
+            "desloca o equilíbrio para os reagentes",
             "muda o Kc",
             "acaba com a reação de volta"
           ],
@@ -2956,9 +2956,9 @@
           "statement": "As duas escadas rolantes com o mesmo fluxo de gente mostram que, no equilíbrio:",
           "options": [
             "o movimento continua, mas as quantidades não mudam",
-            "tudo para",
+            "tudo para, e ninguém mais sobe nem desce",
             "só uma escada funciona",
-            "o andar de cima esvazia",
+            "o andar de cima esvazia aos poucos",
             "o andar de cima enche"
           ],
           "correct_index": 0,
@@ -2986,8 +2986,8 @@
           "statement": "Em H₂ + I₂ ⇌ 2 HI (todos gases), aumentar a pressão:",
           "options": [
             "não desloca, porque há 2 mols de gás de cada lado",
-            "desloca para o HI",
-            "desloca para o H₂ e o I₂",
+            "desloca para o HI, o lado do produto",
+            "desloca para o H₂ e o I₂, os reagentes",
             "muda o Kc",
             "acaba com o equilíbrio"
           ],
@@ -3001,9 +3001,9 @@
           "statement": "Em N₂ + 3 H₂ ⇌ 2 NH₃, que solta calor, esquentar desloca o equilíbrio:",
           "options": [
             "para o N₂ e o H₂, o lado endotérmico",
-            "para a amônia",
+            "para a amônia, o lado exotérmico",
             "para nenhum lado",
-            "para o lado com menos mols",
+            "para o lado com menos mols de gás",
             "sem mudar o Kc"
           ],
           "correct_index": 0,
@@ -3031,8 +3031,8 @@
           "statement": "Pôr mais N₂ num equilíbrio de amônia, na mesma temperatura, faz o Kc:",
           "options": [
             "continuar o mesmo, embora o equilíbrio se desloque",
-            "aumentar, porque há mais reagente",
-            "diminuir, porque há mais reagente",
+            "aumentar, porque há mais reagente no frasco",
+            "diminuir, porque há mais reagente no frasco",
             "dobrar",
             "zerar"
           ],
@@ -3297,7 +3297,7 @@
             "11",
             "3",
             "7",
-            "1",
+            "13",
             "5"
           ],
           "correct_index": 0,
@@ -3425,7 +3425,7 @@
             "passa de 7 e vira básico",
             "fica sempre igual",
             "cai para 0",
-            "chega a 14"
+            "chega a 14 com muita água"
           ],
           "correct_index": 0,
           "explanation": "A água não traz OH⁻ além do dela mesma.",
@@ -3678,9 +3678,9 @@
           "statement": "Na pilha de Daniell, a placa de cobre:",
           "options": [
             "engorda, porque o cobre se deposita",
-            "se desgasta",
+            "se desgasta, porque o cobre se dissolve",
             "não muda",
-            "vira gás",
+            "vira gás e sai do copo",
             "se dissolve na ponte"
           ],
           "correct_index": 0,
@@ -3706,9 +3706,9 @@
           "statement": "A ponte salina serve para:",
           "options": [
             "deixar as cargas passarem entre os copos e fechar o circuito",
-            "guardar os elétrons",
+            "guardar os elétrons que sobram da reação",
             "esquentar a pilha",
-            "fabricar elétrons",
+            "fabricar elétrons novos para o fio",
             "impedir a reação"
           ],
           "correct_index": 0,
@@ -3746,9 +3746,9 @@
           "statement": "Na imagem do moinho, a água que desce corresponde, na pilha:",
           "options": [
             "aos elétrons que correm pelo fio",
-            "à ponte salina",
+            "à ponte salina entre os copos",
             "ao copo",
-            "ao zinco",
+            "ao zinco que se desgasta",
             "à lâmpada"
           ],
           "correct_index": 0,
@@ -4161,8 +4161,8 @@
           "statement": "Na imagem da bomba que leva a água morro acima, a bomba é:",
           "options": [
             "a corrente que força a reação",
-            "o metal que se gasta",
-            "a ponte salina",
+            "o metal que se gasta sozinho",
+            "a ponte salina que fecha",
             "a água",
             "o fio"
           ],
@@ -4176,8 +4176,8 @@
           "statement": "Carregar a bateria do celular é um exemplo de:",
           "options": [
             "reação forçada por corrente, como na eletrólise",
-            "pilha gerando corrente",
-            "reação sem elétrons",
+            "pilha gerando corrente sozinha",
+            "reação sem troca de elétrons",
             "queima",
             "mistura sem reação"
           ],
@@ -4236,8 +4236,8 @@
           "statement": "Por que o sódio metálico não sai da eletrólise do sal dissolvido em água?",
           "options": [
             "porque a água ganha os elétrons antes, e sai hidrogênio",
-            "porque o sódio vira cloro",
-            "porque não passa corrente na água",
+            "porque o sódio vira cloro antes de chegar ao polo",
+            "porque não passa corrente na água com sal dissolvido",
             "porque o sódio vai para o ânodo",
             "porque a água vira sal"
           ],
@@ -4443,10 +4443,10 @@
           "statement": "As propriedades coligativas dependem:",
           "options": [
             "do número de partículas de soluto",
-            "do tipo de soluto",
+            "do tipo de soluto usado",
             "da cor da solução",
             "do frasco",
-            "do cheiro do soluto"
+            "do cheiro e da cor do soluto"
           ],
           "correct_index": 0,
           "explanation": "Sal ou açúcar, conta quantas partículas há.",
@@ -4457,8 +4457,8 @@
           "statement": "Com o mesmo número de mols, o que baixa mais o congelamento: sal (NaCl) ou açúcar?",
           "options": [
             "o sal, porque cada NaCl vira duas partículas",
-            "o açúcar, porque é mais doce",
-            "os dois, por igual",
+            "o açúcar, porque é mais doce e mais pesado",
+            "os dois, por igual, porque têm a mesma massa",
             "nenhum dos dois",
             "depende da cor"
           ],
@@ -4582,8 +4582,8 @@
           "statement": "O soro do hospital tem a mesma concentração do sangue para que as células:",
           "options": [
             "não murchem nem inchem",
-            "inchem",
-            "murchem",
+            "inchem até estourar",
+            "murchem e sequem",
             "fervam",
             "congelem"
           ],
@@ -4597,10 +4597,10 @@
           "statement": "Qual tem mais partículas de soluto: 1 mol de açúcar ou 1 mol de NaCl, cada um em 1 L de água?",
           "options": [
             "o NaCl, com cerca de 2 mol de partículas",
-            "o açúcar, com 2 mol",
+            "o açúcar, com 2 mol de partículas",
             "os dois, com 1 mol cada",
             "o açúcar, com 6 mol",
-            "o NaCl, com 1 mol"
+            "o NaCl, com só 1 mol de partículas"
           ],
           "correct_index": 0,
           "explanation": "Cada NaCl vira Na⁺ e Cl⁻.",
