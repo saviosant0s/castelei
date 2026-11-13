@@ -11,13 +11,20 @@
    tela diz isso em vez de fingir que funciona.
 
    As páginas guardadas têm dados da conta (o progresso aparece nelas). Por isso
-   o cache de páginas é APAGADO ao sair da conta, ao entrar em outra e ao
-   excluir a conta — ver lib/offline.ts. Num aparelho emprestado, o próximo a
-   usar não abre o que o anterior estudou. */
+   elas ficam AMARRADAS À SESSÃO: toda página do app chega com a marca da
+   sessão (`x-castelei-sessao`, posta pelo src/proxy.ts). Página sem marca não
+   é guardada; marca diferente da última, ou "nenhuma" (saiu da conta), apaga
+   tudo antes. Quem decide é o servidor, e vale por qualquer caminho de
+   entrada, inclusive o Google. A limpeza feita pelas telas (lib/offline.ts)
+   continua, como segunda tranca. Num aparelho emprestado, o próximo a usar
+   não abre o que o anterior estudou. */
 const CACHE = "castelei-static-v2";
 const PAGINAS = "castelei-paginas-v1";
 
 /* As telas que valem guardar: são as de LER. Prática, perfil e painel ficam de fora. */
+const SESSAO_HEADER = "x-castelei-sessao";
+const CHAVE_SESSAO = "/__castelei-sessao";
+
 const GUARDAVEL = /^\/(inicio|revisar|progresso|correcoes|area\/[^/]+|trilha\/[^/]+|licao\/\d+|materia\/[^/]+(\/vocabulario(\/cartoes)?)?)$/;
 
 self.addEventListener("install", (event) => {
@@ -49,6 +56,25 @@ async function guardarEstatico(request) {
 }
 
 /*
+| Confere a marca da sessão de uma resposta contra a das páginas guardadas.
+| Marca nova (ou "nenhuma") apaga tudo antes. Devolve se a página pode ser
+| guardada: só com marca de sessão de verdade.
+*/
+async function conferirSessao(response) {
+  const marca = response.headers.get(SESSAO_HEADER);
+  if (!marca) return false;
+  const cache = await caches.open(PAGINAS);
+  const guardada = await cache.match(CHAVE_SESSAO);
+  const anterior = guardada ? await guardada.text() : null;
+  if (anterior !== marca) {
+    await caches.delete(PAGINAS);
+    if (marca === "nenhuma") return false;
+    await (await caches.open(PAGINAS)).put(CHAVE_SESSAO, new Response(marca));
+  }
+  return marca !== "nenhuma";
+}
+
+/*
 | Uma página guardada só serve se os scripts dela também estiverem guardados:
 | sem eles, a lição abre na primeira etapa e o botão "Continuar" não faz
 | nada. Então, ao guardar a página, guardamos junto todo /_next/static/ que o
@@ -57,6 +83,7 @@ async function guardarEstatico(request) {
 async function guardarPagina(url) {
   const response = await fetch(url, { credentials: "same-origin", redirect: "follow" });
   if (!response.ok || response.redirected) return false;
+  if (!(await conferirSessao(response))) return false;
 
   const html = await response.clone().text();
   const cache = await caches.open(PAGINAS);
@@ -89,10 +116,16 @@ self.addEventListener("fetch", (event) => {
     event.respondWith(
       fetch(request)
         .then((response) => {
-          if (guardavel && response.ok && !response.redirected) {
-            const copia = response.clone();
-            caches.open(PAGINAS).then((cache) => cache.put(url.pathname, copia));
-          }
+          /*
+          | Toda navegação confere a marca, guardável ou não: é a ida para
+          | /entrar depois de sair que apaga as páginas da conta anterior.
+          */
+          const copia = guardavel && response.ok && !response.redirected ? response.clone() : null;
+          event.waitUntil(
+            conferirSessao(response)
+              .then((pode) => pode && copia && caches.open(PAGINAS).then((cache) => cache.put(url.pathname, copia)))
+              .catch(() => null),
+          );
           return response;
         })
         .catch(async () => (guardavel && (await caches.match(url.pathname, { cacheName: PAGINAS }))) || caches.match("/offline.html")),

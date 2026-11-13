@@ -16,6 +16,13 @@ describe("offline", () => {
     expect(sw).toContain(`const PAGINAS = "${CACHE_PAGINAS}";`);
   });
 
+  it("o service worker lê a mesma marca de sessão que o proxy escreve", async () => {
+    const { SESSAO_HEADER } = await import("@/proxy");
+    const sw = readFileSync(resolve(__dirname, "../../public/sw.js"), "utf8");
+    expect(sw).toContain(`const SESSAO_HEADER = "${SESSAO_HEADER}";`);
+    expect(sw).toContain("conferirSessao(response)");
+  });
+
   it("o service worker só guarda telas de ler, nunca a prática", () => {
     const sw = readFileSync(resolve(__dirname, "../../public/sw.js"), "utf8");
     const padrao = new RegExp(sw.match(/const GUARDAVEL = \/(.+)\/;/)![1]);
