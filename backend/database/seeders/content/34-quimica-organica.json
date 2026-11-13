@@ -245,10 +245,10 @@
           "statement": "No eteno (C₂H₄), cada carbono tem:",
           "options": [
             "uma ligação dupla e duas simples",
-            "quatro ligações simples",
-            "uma tripla e uma simples",
-            "duas duplas",
-            "só três ligações"
+            "quatro ligações simples, como no metano",
+            "uma ligação tripla e uma simples",
+            "duas ligações duplas iguais",
+            "só três ligações, uma de cada tipo"
           ],
           "correct_index": 0,
           "explanation": "A soma dá quatro.",
@@ -354,10 +354,10 @@
           "statement": "O carbono forma tantas substâncias porque:",
           "options": [
             "faz quatro ligações e se liga a outros carbonos em cadeias longas",
-            "é o elemento mais pesado",
-            "não faz ligações",
-            "só existe em seres vivos",
-            "é um gás nobre"
+            "é o elemento mais pesado da tabela e atrai os outros átomos",
+            "não faz ligações e por isso fica sozinho em cada substância",
+            "só existe em seres vivos, que fabricam as substâncias",
+            "é um gás nobre, muito estável e sem reação"
           ],
           "correct_index": 0,
           "explanation": "Filas longas e firmes permitem muitas combinações.",
@@ -384,10 +384,10 @@
           "statement": "No metano (CH₄), o carbono:",
           "options": [
             "não se liga a nenhum outro carbono",
-            "é primário",
-            "é terciário",
-            "é quaternário",
-            "é secundário"
+            "é primário, ligado a um carbono",
+            "é terciário, ligado a três carbonos",
+            "é quaternário, ligado a quatro",
+            "é secundário, ligado a dois"
           ],
           "correct_index": 0,
           "explanation": "Ele só tem hidrogênios em volta.",
@@ -399,10 +399,10 @@
           "statement": "Uma cadeia de três carbonos com um OH na ponta é:",
           "options": [
             "homogênea, porque o oxigênio não está entre carbonos",
-            "heterogênea, porque tem oxigênio",
-            "aromática",
-            "ramificada",
-            "insaturada"
+            "heterogênea, porque tem oxigênio em algum lugar da cadeia",
+            "aromática, porque tem um anel com ligações duplas",
+            "ramificada, porque o OH forma um galho",
+            "insaturada, porque o oxigênio faz uma ligação dupla"
           ],
           "correct_index": 0,
           "explanation": "O heteroátomo precisa estar no meio da fila.",
@@ -774,10 +774,10 @@
           "statement": "O nome “etanol” indica uma substância com:",
           "options": [
             "2 carbonos, só ligações simples, da família dos álcoois",
-            "3 carbonos e uma dupla",
-            "1 carbono e um aldeído",
-            "2 carbonos e uma tripla",
-            "4 carbonos e uma cetona"
+            "3 carbonos e uma dupla entre eles, da família dos alcenos",
+            "1 carbono e um grupo de aldeído na ponta",
+            "2 carbonos e uma ligação tripla, da família dos alcinos",
+            "4 carbonos e um grupo de cetona no meio"
           ],
           "correct_index": 0,
           "explanation": "Et (2), an (simples), ol (álcool).",
@@ -1134,10 +1134,10 @@
           "statement": "O etino, usado em maçaricos, é um:",
           "options": [
             "alcino, com uma tripla",
-            "alcano",
-            "alceno",
-            "aromático",
-            "ciclano"
+            "alcano, só com simples",
+            "alceno, com uma dupla",
+            "aromático, com anel",
+            "ciclano, fechado em anel"
           ],
           "correct_index": 0,
           "explanation": "É o acetileno.",
@@ -1179,7 +1179,7 @@
             "não existe na natureza",
             "é o gás de cozinha",
             "deixa a água salgada",
-            "é um nutriente"
+            "é um nutriente essencial"
           ],
           "correct_index": 0,
           "explanation": "Está na gasolina e na fumaça do cigarro.",
@@ -1211,9 +1211,9 @@
           "statement": "O metano é considerado um gás do efeito estufa porque:",
           "options": [
             "retém calor na atmosfera",
-            "esfria o planeta",
+            "esfria o planeta à noite",
             "é o oxigênio do ar",
-            "destrói a água",
+            "destrói a água da chuva",
             "não existe no ar"
           ],
           "correct_index": 0,
@@ -1256,10 +1256,10 @@
           "statement": "Petróleo derramado no mar forma uma mancha na superfície porque:",
           "options": [
             "é apolar e mais leve que a água",
-            "se dissolve na água",
-            "afunda até o fundo",
-            "vira gás na hora",
-            "é polar como a água"
+            "se dissolve na água do mar",
+            "afunda até o fundo do oceano",
+            "vira gás logo que toca a água",
+            "é polar como a água e se mistura"
           ],
           "correct_index": 0,
           "explanation": "Não se mistura e boia.",
@@ -1286,10 +1286,10 @@
           "statement": "A fórmula C₃H₆ pode ser de:",
           "options": [
             "um alceno ou de um ciclano",
-            "só de um alcano",
-            "só de um alcino",
-            "um aromático",
-            "um álcool"
+            "só de um alcano de cadeia aberta",
+            "só de um alcino com tripla",
+            "um aromático com anel",
+            "um álcool com OH"
           ],
           "correct_index": 0,
           "explanation": "As duas famílias têm a fórmula CₙH₂ₙ.",
@@ -1493,10 +1493,10 @@
           "statement": "Na destilação fracionada, o petróleo é separado pela diferença de:",
           "options": [
             "ponto de ebulição",
-            "cor",
-            "cheiro",
-            "preço",
-            "acidez"
+            "cor de cada parte",
+            "cheiro de cada parte",
+            "densidade na água",
+            "acidez de cada parte"
           ],
           "correct_index": 0,
           "explanation": "Cada parte vira vapor numa temperatura.",
@@ -1521,9 +1521,9 @@
           "statement": "O craqueamento do petróleo serve para:",
           "options": [
             "quebrar moléculas grandes e fazer mais gasolina",
-            "juntar moléculas pequenas",
-            "tirar o cheiro do gás",
-            "separar a água do óleo",
+            "juntar moléculas pequenas numa grande",
+            "tirar o cheiro do gás de cozinha",
+            "separar a água do óleo no poço",
             "transformar gasolina em asfalto"
           ],
           "correct_index": 0,
@@ -1535,10 +1535,10 @@
           "statement": "A octanagem de uma gasolina indica:",
           "options": [
             "sua resistência a explodir antes da hora no motor",
-            "quanta energia ela tem por litro",
-            "o preço dela",
-            "a cor dela",
-            "quanto etanol tem"
+            "quanta energia ela tem por litro queimado no motor",
+            "o preço dela na bomba do posto",
+            "a cor dela depois de misturada",
+            "quanto etanol foi misturado nela na refinaria"
           ],
           "correct_index": 0,
           "explanation": "Gasolina fraca faz o motor bater pino.",
@@ -1549,10 +1549,10 @@
           "statement": "O etanol brasileiro é feito a partir:",
           "options": [
             "da fermentação do caldo de cana",
-            "do petróleo",
+            "do petróleo refinado em São Paulo",
             "do gás natural",
-            "do carvão mineral",
-            "do biodiesel"
+            "do carvão mineral moído e aquecido",
+            "do biodiesel de soja"
           ],
           "correct_index": 0,
           "explanation": "Depois ele é destilado.",
@@ -1563,10 +1563,10 @@
           "statement": "O biodiesel é obtido por transesterificação de:",
           "options": [
             "óleo vegetal ou gordura animal",
-            "petróleo",
-            "água do mar",
-            "gás carbônico",
-            "areia"
+            "petróleo cru da refinaria",
+            "água do mar com sal",
+            "gás carbônico do ar",
+            "carvão mineral moído"
           ],
           "correct_index": 0,
           "explanation": "O óleo reage com um álcool.",
@@ -1577,10 +1577,10 @@
           "statement": "O etanol é considerado renovável porque:",
           "options": [
             "a cana tira do ar o carbono que a queima devolve",
-            "não solta gás carbônico",
-            "vem do petróleo",
-            "nunca acaba sem plantar",
-            "é feito em laboratório sem planta"
+            "não solta gás carbônico nenhum ao queimar",
+            "vem do petróleo misturado ao caldo de cana",
+            "nunca acaba, mesmo sem plantar de novo",
+            "é feito em laboratório, sem precisar de planta"
           ],
           "correct_index": 0,
           "explanation": "O carbono gira num ciclo curto.",
@@ -1650,10 +1650,10 @@
           "statement": "O petróleo é um combustível fóssil porque:",
           "options": [
             "veio de restos de seres vivos enterrados há milhões de anos",
-            "é feito de pedra pura",
-            "é renovável em poucos anos",
-            "vem da cana",
-            "é feito em laboratório"
+            "é feito de pedra pura que derreteu com o calor",
+            "é renovável em poucos anos, como a cana",
+            "vem da cana enterrada há poucas décadas",
+            "é feito em laboratório a partir do carvão"
           ],
           "correct_index": 0,
           "explanation": "Não se renova na escala da vida humana.",
@@ -1665,10 +1665,10 @@
           "statement": "Queimar etanol e queimar gasolina liberam gás carbônico. A diferença para o clima é que:",
           "options": [
             "o carbono do etanol foi tirado do ar pela cana há pouco tempo",
-            "o etanol não libera nada",
-            "a gasolina absorve gás carbônico",
-            "o etanol vem do petróleo",
-            "os dois têm a mesma origem"
+            "o etanol não libera nada ao queimar no motor",
+            "a gasolina absorve gás carbônico enquanto queima",
+            "o etanol vem do petróleo, mas é mais limpo",
+            "os dois têm a mesma origem e o mesmo efeito"
           ],
           "correct_index": 0,
           "explanation": "Na gasolina, é carbono que estava enterrado.",
@@ -1680,8 +1680,8 @@
           "statement": "Sobre a destilação fracionada, é correto dizer que:",
           "options": [
             "ela só separa as partes, sem mudar as moléculas",
-            "ela quebra as moléculas grandes",
-            "ela transforma petróleo em etanol",
+            "ela quebra as moléculas grandes em pequenas",
+            "ela transforma o petróleo em etanol",
             "ela é o mesmo que craqueamento",
             "ela junta as moléculas pequenas"
           ],
@@ -1854,10 +1854,10 @@
           "statement": "O grupo funcional dos álcoois é:",
           "options": [
             "a hidroxila (OH) num carbono de ligações simples",
-            "o grupo C=O no meio da cadeia",
-            "o grupo COOH",
-            "um oxigênio entre dois carbonos",
-            "um nitrogênio"
+            "o grupo C=O no meio da cadeia, preso a dois carbonos",
+            "o grupo COOH na ponta da cadeia",
+            "um oxigênio entre dois carbonos de ligações simples",
+            "um nitrogênio ligado a hidrogênios"
           ],
           "correct_index": 0,
           "explanation": "O nome termina em ol.",
@@ -1910,10 +1910,10 @@
           "statement": "O álcool 70% desinfeta melhor que o puro porque:",
           "options": [
             "a água ajuda o álcool a entrar no micróbio",
-            "é mais barato",
-            "tem mais álcool",
-            "não evapora",
-            "é um fenol"
+            "é mais barato e rende mais no frasco",
+            "tem mais álcool que o puro",
+            "não evapora antes de agir sobre a pele",
+            "é um fenol, mais forte"
           ],
           "correct_index": 0,
           "explanation": "O álcool puro evapora rápido demais e age pior.",
@@ -1938,10 +1938,10 @@
           "statement": "O bafômetro consegue medir o álcool porque:",
           "options": [
             "parte do etanol sai no ar dos pulmões",
-            "o álcool fica na pele",
-            "o álcool vira água no nariz",
-            "mede o açúcar do sangue",
-            "mede o cheiro da boca"
+            "o álcool fica na pele e sai no suor",
+            "o álcool vira água dentro do nariz",
+            "mede o açúcar do sangue pela boca",
+            "mede o cheiro da boca e o hálito da pessoa"
           ],
           "correct_index": 0,
           "explanation": "O ar expirado leva um pouco do álcool.",
@@ -1977,10 +1977,10 @@
           "statement": "O nome “propan-1-ol” indica:",
           "options": [
             "um álcool de 3 carbonos com OH no carbono 1",
-            "uma cetona de 3 carbonos",
-            "um fenol",
-            "um aldeído de 1 carbono",
-            "um hidrocarboneto"
+            "uma cetona de 3 carbonos com C=O no meio",
+            "um fenol com um anel",
+            "um aldeído de 1 carbono com C=O na ponta",
+            "um hidrocarboneto sem oxigênio"
           ],
           "correct_index": 0,
           "explanation": "Prop (3), an (simples), ol (álcool) no carbono 1.",
@@ -1992,10 +1992,10 @@
           "statement": "O pão cresce na fermentação por causa:",
           "options": [
             "do gás carbônico que as leveduras soltam",
-            "do etanol que fica na massa",
-            "do açúcar que derrete",
-            "do sal",
-            "do oxigênio que entra"
+            "do etanol que fica na massa e evapora",
+            "do açúcar que derrete com o calor do forno",
+            "do sal que incha a farinha",
+            "do oxigênio que entra na massa"
           ],
           "correct_index": 0,
           "explanation": "As bolhas de gás estufam a massa.",
@@ -2284,10 +2284,10 @@
           "statement": "O formol é proibido como alisante de cabelo porque:",
           "options": [
             "é tóxico e pode causar câncer",
-            "não alisa nada",
-            "é um açúcar",
-            "é muito caro",
-            "é um ácido do limão"
+            "não alisa nada e só tem cheiro",
+            "é um tipo de açúcar",
+            "é muito caro para os salões",
+            "é o ácido do limão"
           ],
           "correct_index": 0,
           "explanation": "É o metanal dissolvido em água.",
@@ -2312,8 +2312,8 @@
           "statement": "A ardência da picada da formiga vem do ácido:",
           "options": [
             "metanoico (fórmico)",
-            "acético",
-            "cítrico",
+            "acético (do vinagre)",
+            "cítrico (do limão)",
             "butanoico",
             "sulfúrico"
           ],
@@ -2412,10 +2412,10 @@
           "statement": "Uma cetona não oxida até ácido carboxílico com facilidade porque:",
           "options": [
             "o carbono do C=O está no meio da cadeia, preso a outros dois carbonos",
-            "não tem oxigênio",
-            "é um gás",
-            "já é um ácido",
-            "não tem carbono"
+            "não tem oxigênio nenhum na molécula, e por isso não pode oxidar mais",
+            "é um gás e escapa antes de oxidar",
+            "já é um ácido carboxílico e não pode mudar para outra função",
+            "não tem carbono ligado ao oxigênio"
           ],
           "correct_index": 0,
           "explanation": "Não há hidrogênio nesse carbono para sair.",
@@ -2672,10 +2672,10 @@
           "statement": "Quimicamente, óleos e gorduras são:",
           "options": [
             "triglicerídeos, um tipo de éster",
-            "hidrocarbonetos",
-            "álcoois",
-            "açúcares",
-            "aldeídos"
+            "hidrocarbonetos puros, sem oxigênio",
+            "álcoois de cadeia longa",
+            "açúcares e amido de cadeia longa",
+            "aldeídos e cetonas"
           ],
           "correct_index": 0,
           "explanation": "Glicerol ligado a três ácidos graxos.",
@@ -2714,9 +2714,9 @@
           "statement": "Na fabricação da margarina, o óleo passa por:",
           "options": [
             "hidrogenação, que endurece a gordura",
-            "fermentação",
+            "fermentação com leveduras e açúcar",
             "destilação fracionada",
-            "saponificação",
+            "saponificação com soda cáustica",
             "oxidação até ácido"
           ],
           "correct_index": 0,
@@ -2728,9 +2728,9 @@
           "statement": "A gordura trans preocupa porque:",
           "options": [
             "aumenta o risco de doença do coração",
-            "não tem calorias",
-            "é uma vitamina",
-            "é o sabão",
+            "não tem calorias e engana o corpo",
+            "é uma vitamina que o corpo guarda demais",
+            "é o próprio sabão",
             "só existe no peixe"
           ],
           "correct_index": 0,
@@ -2812,10 +2812,10 @@
           "statement": "Fazer sabão com óleo de cozinha usado ajuda o ambiente porque:",
           "options": [
             "evita que o óleo vá para o esgoto e os rios",
-            "transforma o óleo em água pura",
-            "cria petróleo",
+            "transforma o óleo em água pura e limpa",
+            "cria petróleo novo",
             "deixa o óleo radioativo",
-            "aumenta a gordura trans"
+            "aumenta a gordura trans do óleo e do sabão"
           ],
           "correct_index": 0,
           "explanation": "Um litro de óleo no ralo polui muita água.",
@@ -2827,10 +2827,10 @@
           "statement": "A diferença entre um éster e um éter é que:",
           "options": [
             "no éster o oxigênio liga a cadeia a um C=O; no éter ele fica entre dois carbonos simples",
-            "o éter tem cheiro de fruta e o éster não",
-            "o éster não tem oxigênio",
-            "os dois são a mesma família",
-            "o éter é um ácido"
+            "o éter tem cheiro de fruta e o éster não tem cheiro nenhum, porque não evapora",
+            "o éster não tem oxigênio na molécula, e o éter tem dois",
+            "os dois são a mesma família, só muda o nome",
+            "o éter é um ácido, e o éster é uma base"
           ],
           "correct_index": 0,
           "explanation": "Os nomes parecidos enganam.",
@@ -2842,10 +2842,10 @@
           "statement": "A hidrogenação deixa o óleo sólido porque:",
           "options": [
             "tira as duplas e deixa as cadeias saturadas, que se empilham melhor",
-            "acrescenta água ao óleo",
-            "transforma o óleo em sabão",
-            "esfria o óleo",
-            "acrescenta açúcar"
+            "acrescenta água ao óleo e ele endurece como gelo na geladeira",
+            "transforma o óleo em sabão, que é sólido",
+            "esfria o óleo até ele virar uma pasta firme que não derrete mais",
+            "acrescenta açúcar, que deixa a gordura mais dura"
           ],
           "correct_index": 0,
           "explanation": "Cadeias retas se encaixam e endurecem.",
@@ -3168,10 +3168,10 @@
           "statement": "O corpo humano não aproveita a celulose como energia porque:",
           "options": [
             "não tem como quebrar a ligação entre as glicoses dela",
-            "ela não tem glicose",
-            "ela é uma proteína",
-            "ela é um éster",
-            "ela é tóxica"
+            "ela não tem glicose nenhuma na sua cadeia",
+            "ela é uma proteína muito grande",
+            "ela é um éster, como as gorduras",
+            "ela é tóxica e o corpo a rejeita"
           ],
           "correct_index": 0,
           "explanation": "Ela é feita de glicoses, ligadas de outro jeito que o amido.",
@@ -3218,10 +3218,10 @@
           "statement": "As proteínas do corpo humano são formadas a partir de:",
           "options": [
             "20 aminoácidos diferentes",
-            "2 aminoácidos",
+            "2 aminoácidos que se repetem",
             "um só aminoácido",
-            "só glicose",
-            "só gordura"
+            "só glicose ligada",
+            "só gordura e água"
           ],
           "correct_index": 0,
           "explanation": "A ordem deles decide a proteína.",
@@ -3511,10 +3511,10 @@
           "statement": "A isomeria cis-trans aparece em substâncias com:",
           "options": [
             "ligação dupla entre carbonos com grupos diferentes",
-            "só ligações simples em cadeia aberta",
-            "nitrogênio",
+            "só ligações simples em cadeia aberta e longa",
+            "nitrogênio no meio da cadeia",
             "fórmula molecular diferente",
-            "carbono quiral"
+            "carbono quiral, ligado a quatro grupos diferentes"
           ],
           "correct_index": 0,
           "explanation": "A dupla impede o giro.",
@@ -3525,10 +3525,10 @@
           "statement": "Um carbono quiral é aquele ligado a:",
           "options": [
             "quatro grupos diferentes",
-            "dois grupos iguais",
+            "dois grupos iguais e dois diferentes",
             "uma dupla ligação",
-            "três hidrogênios",
-            "só carbonos"
+            "três hidrogênios e um carbono",
+            "só outros carbonos"
           ],
           "correct_index": 0,
           "explanation": "Gera formas espelhadas.",
@@ -3539,10 +3539,10 @@
           "statement": "O caso da talidomida mostra que:",
           "options": [
             "formas espelhadas da mesma substância podem ter efeitos diferentes no corpo",
-            "isômeros têm sempre o mesmo efeito",
-            "remédio não tem isomeria",
-            "a fórmula molecular decide tudo",
-            "só a dose importa"
+            "isômeros têm sempre o mesmo efeito no corpo, porque a fórmula é a mesma",
+            "remédio não tem isomeria, porque é feito em laboratório",
+            "a fórmula molecular decide tudo o que a substância faz",
+            "só a dose importa, e a forma da molécula não muda nada"
           ],
           "correct_index": 0,
           "explanation": "Uma forma acalmava; a outra causava malformação.",
@@ -3574,9 +3574,9 @@
           "statement": "As duas formas de um carbono quiral são comparadas às mãos porque:",
           "options": [
             "são espelhadas e não se encaixam uma sobre a outra",
-            "têm cinco grupos",
-            "são iguais em tudo",
-            "uma é maior que a outra",
+            "têm cinco grupos, como os cinco dedos da mão",
+            "são iguais em tudo e se encaixam",
+            "uma é maior que a outra, como as mãos de muita gente",
             "só existem no corpo humano"
           ],
           "correct_index": 0,
@@ -3589,7 +3589,7 @@
           "statement": "O nome “gordura trans” vem:",
           "options": [
             "da isomeria cis-trans da dupla ligação",
-            "do transporte da gordura",
+            "do transporte da gordura no sangue",
             "da palavra transgênico",
             "de uma marca de margarina",
             "do fato de ser transparente"
@@ -3604,10 +3604,10 @@
           "statement": "Isômeros de função, como etanol e metoximetano, podem ter pontos de ebulição bem diferentes porque:",
           "options": [
             "são substâncias diferentes, com forças de atração diferentes",
-            "têm fórmulas diferentes",
-            "um tem mais átomos",
+            "têm fórmulas diferentes, com átomos em quantidades diferentes",
+            "um tem mais átomos que o outro",
             "um é sólido e o outro não existe",
-            "isômeros sempre fervem juntos"
+            "isômeros sempre fervem juntos, na mesma temperatura"
           ],
           "correct_index": 0,
           "explanation": "O etanol ferve a 78 °C; o éter, abaixo de zero.",
@@ -3619,10 +3619,10 @@
           "statement": "Não existe isomeria cis-trans no etano (só ligações simples) porque:",
           "options": [
             "a ligação simples gira e os grupos trocam de lado o tempo todo",
-            "o etano não tem carbono",
-            "a ligação simples é mais forte",
-            "o etano é aromático",
-            "o etano tem dupla"
+            "o etano não tem carbono suficiente para isso",
+            "a ligação simples é mais forte e não deixa nada mudar",
+            "o etano é aromático e tem um anel",
+            "o etano tem dupla, mas ela não gira"
           ],
           "correct_index": 0,
           "explanation": "Só a dupla trava os grupos.",
@@ -3634,10 +3634,10 @@
           "statement": "No butan-2-ol (CH₃–CHOH–CH₂–CH₃), o carbono 2 é quiral porque está ligado a:",
           "options": [
             "quatro grupos diferentes (H, OH, CH₃ e CH₂CH₃)",
-            "dois grupos CH₃ iguais",
-            "uma dupla ligação",
-            "três hidrogênios",
-            "um nitrogênio"
+            "dois grupos CH₃ iguais, um de cada lado",
+            "uma dupla ligação com o OH do álcool",
+            "três hidrogênios iguais",
+            "um nitrogênio e um oxigênio"
           ],
           "correct_index": 0,
           "explanation": "Metil e etil são grupos diferentes.",
@@ -3873,10 +3873,10 @@
           "statement": "O etanol se mistura com a água porque:",
           "options": [
             "tem o grupo OH, que deixa a molécula polar",
-            "é um hidrocarboneto",
+            "é um hidrocarboneto leve que boia na água",
             "é mais pesado que a água",
-            "é apolar",
-            "não tem oxigênio"
+            "é apolar como o óleo, mas mais leve",
+            "não tem oxigênio na molécula"
           ],
           "correct_index": 0,
           "explanation": "O OH faz ligações de hidrogênio com a água.",
@@ -3887,10 +3887,10 @@
           "statement": "No teste da gasolina com água salgada, a camada de água aumenta porque:",
           "options": [
             "o etanol sai da gasolina e passa para a água",
-            "a gasolina vira água",
-            "o sal aumenta de volume",
-            "a água evapora",
-            "a gasolina absorve o sal"
+            "a gasolina vira água em contato com o sal",
+            "o sal aumenta de volume e empurra a gasolina",
+            "a água evapora e sobra só a gasolina",
+            "a gasolina absorve o sal e fica mais pesada"
           ],
           "correct_index": 0,
           "explanation": "O etanol prefere o solvente polar.",
@@ -3929,10 +3929,10 @@
           "statement": "O sabão remove a gordura porque sua molécula tem:",
           "options": [
             "uma parte polar e uma parte apolar",
-            "só uma parte polar",
-            "só uma parte apolar",
+            "só uma parte polar, que gruda na água",
+            "só uma parte apolar, que gruda na gordura",
             "um anel de benzeno",
-            "um metal"
+            "um metal no centro"
           ],
           "correct_index": 0,
           "explanation": "A cauda pega a gordura; a cabeça, a água.",
@@ -3943,10 +3943,10 @@
           "statement": "A micela é:",
           "options": [
             "a bolinha de sabão em volta da gordura",
-            "uma bactéria",
+            "uma bactéria do esgoto que come gordura",
             "um tipo de gasolina",
-            "um isômero",
-            "a espuma do mar"
+            "um isômero do sabão",
+            "a espuma do mar quando bate nas pedras"
           ],
           "correct_index": 0,
           "explanation": "Caudas para dentro, cabeças para fora.",
@@ -3985,10 +3985,10 @@
           "statement": "Um detergente biodegradável é aquele que:",
           "options": [
             "bactérias e fungos conseguem decompor na natureza",
-            "não faz espuma",
-            "dura para sempre no rio",
-            "é feito de petróleo",
-            "não limpa"
+            "não faz espuma nenhuma quando é usado",
+            "dura para sempre no rio sem mudar nada",
+            "é feito só de petróleo",
+            "não limpa a gordura"
           ],
           "correct_index": 0,
           "explanation": "Hoje se usam cadeias normais.",
@@ -4015,10 +4015,10 @@
           "statement": "O etanol ferve a 78 °C. O metoximetano, com a mesma fórmula, ferve a −24 °C. A diferença vem:",
           "options": [
             "das ligações de hidrogênio do OH do etanol",
-            "do número de carbonos",
+            "do número de carbonos, que é diferente",
             "do metoximetano ser mais pesado",
             "do etanol ser um hidrocarboneto",
-            "da cor das substâncias"
+            "da cor das duas substâncias"
           ],
           "correct_index": 0,
           "explanation": "O OH segura as moléculas umas nas outras.",
@@ -4030,10 +4030,10 @@
           "statement": "Os primeiros detergentes deixavam espuma nos rios porque:",
           "options": [
             "tinham cadeias ramificadas que as bactérias não decompunham",
-            "eram feitos de sabão de óleo",
-            "tinham cadeias normais",
-            "eram polares demais",
-            "não tinham carbono"
+            "eram feitos de sabão de óleo de cozinha, que não se desfaz",
+            "tinham cadeias normais, que as bactérias não conseguiam quebrar",
+            "eram polares demais e afundavam",
+            "não tinham carbono na molécula"
           ],
           "correct_index": 0,
           "explanation": "Cadeias normais são biodegradáveis.",
@@ -4045,10 +4045,10 @@
           "statement": "O açúcar se dissolve bem na água e mal no óleo porque:",
           "options": [
             "tem muitos grupos OH, que o deixam polar",
-            "é apolar",
-            "é um hidrocarboneto",
-            "é mais leve que o óleo",
-            "não tem oxigênio"
+            "é apolar como o óleo, mas doce",
+            "é um hidrocarboneto doce",
+            "é mais leve que o óleo e boia",
+            "não tem oxigênio na molécula"
           ],
           "correct_index": 0,
           "explanation": "Polar com polar.",
@@ -4326,10 +4326,10 @@
           "statement": "A combustão incompleta é perigosa porque produz:",
           "options": [
             "monóxido de carbono, um gás venenoso e sem cheiro",
-            "oxigênio puro",
-            "água em excesso",
-            "açúcar",
-            "ozônio"
+            "oxigênio puro em excesso no ambiente",
+            "água em excesso que molha tudo",
+            "açúcar queimado",
+            "ozônio na cozinha"
           ],
           "correct_index": 0,
           "explanation": "Ele impede o sangue de levar oxigênio.",
@@ -4421,10 +4421,10 @@
           "statement": "A fuligem que se forma na queima com pouco oxigênio é:",
           "options": [
             "carbono que não chegou a queimar",
-            "água",
-            "oxigênio",
-            "açúcar",
-            "sal"
+            "água condensada na panela",
+            "oxigênio preso",
+            "açúcar queimado da comida",
+            "sal da madeira"
           ],
           "correct_index": 0,
           "explanation": "É o preto da panela.",
@@ -4436,10 +4436,10 @@
           "statement": "O benzeno, mesmo tendo duplas, costuma fazer substituição porque:",
           "options": [
             "o anel é muito estável e não se abre fácil",
-            "não tem carbono",
-            "é um alcano",
-            "não tem hidrogênio",
-            "é um gás"
+            "não tem carbono suficiente na molécula",
+            "é um alcano, só de simples",
+            "não tem hidrogênio para trocar nas ligações",
+            "é um gás e escapa da reação"
           ],
           "correct_index": 0,
           "explanation": "As duplas do anel se mantêm.",
@@ -4451,10 +4451,10 @@
           "statement": "Aquecedor a gás em banheiro fechado é perigoso porque:",
           "options": [
             "com pouco oxigênio, a combustão fica incompleta e solta monóxido",
-            "o gás vira água",
-            "o banheiro esquenta demais",
-            "o gás tem muito oxigênio",
-            "a água do banho apaga a chama"
+            "o gás vira água no ar e encharca o ambiente fechado",
+            "o banheiro esquenta demais e a pessoa desmaia pelo calor",
+            "o gás tem muito oxigênio e faz a chama crescer",
+            "a água do banho apaga a chama e o gás vaza"
           ],
           "correct_index": 0,
           "explanation": "Ambiente ventilado mantém a queima completa.",
@@ -4723,10 +4723,10 @@
           "statement": "Um polímero é:",
           "options": [
             "uma molécula gigante feita de peças repetidas",
-            "um tipo de átomo",
+            "um tipo de átomo grande e pesado",
             "uma mistura de água e sal",
-            "uma molécula pequena",
-            "um metal"
+            "uma molécula pequena e leve, como a água",
+            "um metal moldável"
           ],
           "correct_index": 0,
           "explanation": "Cada peça é um monômero.",
@@ -4737,10 +4737,10 @@
           "statement": "As sacolas plásticas comuns são feitas de:",
           "options": [
             "polietileno",
-            "PET",
+            "PET de garrafa",
             "náilon",
             "teflon",
-            "borracha"
+            "PVC de cano"
           ],
           "correct_index": 0,
           "explanation": "Um polímero de adição do eteno.",
@@ -4751,9 +4751,9 @@
           "statement": "As garrafas de refrigerante são feitas de:",
           "options": [
             "PET, um polímero de condensação",
-            "PVC",
-            "isopor",
-            "teflon",
+            "PVC, o plástico dos canos",
+            "isopor expandido",
+            "teflon, o das panelas",
             "vidro orgânico"
           ],
           "correct_index": 0,
@@ -4765,10 +4765,10 @@
           "statement": "Na polimerização por adição:",
           "options": [
             "a dupla do monômero se abre e as peças se ligam",
-            "sai água a cada ligação",
-            "não há monômero",
+            "sai uma molécula de água a cada ligação",
+            "não há monômero nenhum",
             "o polímero vira gás",
-            "o plástico se decompõe"
+            "o plástico se decompõe ao formar a cadeia"
           ],
           "correct_index": 0,
           "explanation": "Polietileno, PVC e isopor se formam assim.",
@@ -4807,10 +4807,10 @@
           "statement": "Os termoplásticos podem ser reciclados derretendo porque:",
           "options": [
             "amolecem com o calor e podem ser moldados de novo",
-            "não amolecem nunca",
-            "são biodegradáveis",
+            "não amolecem nunca com o calor, por isso são moídos",
+            "são biodegradáveis e somem na natureza",
             "são feitos de metal",
-            "viram gás"
+            "viram gás quando aquecem"
           ],
           "correct_index": 0,
           "explanation": "PET e polietileno são exemplos.",
@@ -4846,10 +4846,10 @@
           "statement": "Microplásticos são:",
           "options": [
             "pedacinhos de plástico menores que 5 milímetros",
-            "plásticos que se decompõem em um dia",
+            "plásticos que se decompõem em um dia na água",
             "bactérias que comem plástico",
-            "plásticos feitos de cana",
-            "garrafas pequenas"
+            "plásticos feitos de cana, que não poluem",
+            "garrafas pequenas de água"
           ],
           "correct_index": 0,
           "explanation": "Já foram achados no mar e no sangue humano.",
@@ -4861,10 +4861,10 @@
           "statement": "O número dentro do triângulo no fundo das embalagens indica:",
           "options": [
             "o tipo de plástico, para a reciclagem",
-            "a validade",
-            "o preço",
-            "o peso",
-            "a cor"
+            "a validade do produto embalado",
+            "o preço da embalagem",
+            "o peso do produto sem a embalagem",
+            "a cor do plástico"
           ],
           "correct_index": 0,
           "explanation": "O 1 é o PET.",
@@ -4906,10 +4906,10 @@
           "statement": "O PET e o náilon são polímeros de condensação porque:",
           "options": [
             "cada ligação entre monômeros solta uma molécula pequena, como água",
-            "seus monômeros têm dupla que se abre",
-            "não têm monômeros",
-            "são naturais",
-            "são feitos de enxofre"
+            "seus monômeros têm uma dupla que se abre na ligação",
+            "não têm monômeros, só uma cadeia única",
+            "são naturais e feitos por seres vivos",
+            "são feitos de enxofre e de carbono"
           ],
           "correct_index": 0,
           "explanation": "É o jeito de formação, não o uso.",
@@ -4921,9 +4921,9 @@
           "statement": "Uma proteína pode ser vista como um polímero porque:",
           "options": [
             "é uma corrente de aminoácidos repetidos",
-            "é um plástico",
+            "é um plástico que o corpo fabrica",
             "é feita de eteno",
-            "derrete com o calor como o PET",
+            "derrete com o calor como o PET da garrafa",
             "não tem carbono"
           ],
           "correct_index": 0,
