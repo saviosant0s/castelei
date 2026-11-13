@@ -29,9 +29,7 @@ export function TrailCard({ href, name, detail, done, total }: TrailCardProps) {
       className="flex h-full flex-col rounded-card bg-surface-raised px-4 py-3.5 shadow-lift transition hover:-translate-y-0.5"
     >
       <span className="flex items-center gap-3">
-        <span className="grid size-9 shrink-0 place-items-center rounded-control bg-sky-soft text-sky">
-          <Route className="size-5" aria-hidden="true" />
-        </span>
+        <Route className="size-5 shrink-0 text-sky" aria-hidden="true" />
         <span className="min-w-0 flex-1 font-display text-base leading-tight font-bold">{name}</span>
       </span>
       <span className="mt-2 line-clamp-2 flex-1 text-sm text-content-secondary">{detail}</span>

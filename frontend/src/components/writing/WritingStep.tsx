@@ -267,7 +267,7 @@ export function WritingStep({
             </h2>
             {!check.language.available ? (
               <p className="mt-2 text-base text-content-secondary">
-                O corretor ficou fora do ar agora. O resto da conferência continua valendo — tente de novo daqui a pouco.
+                O corretor ficou fora do ar agora. O resto da conferência continua valendo. Tente de novo daqui a pouco.
               </p>
             ) : issues.length === 0 ? (
               <p className="mt-2 text-base text-content-secondary">

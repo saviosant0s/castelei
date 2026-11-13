@@ -29,7 +29,7 @@ export default async function BuscarPage({ searchParams }: { searchParams: Promi
   return (
     <div className="space-y-8">
       <header>
-        <PageHero eyebrow="Buscar" title="O que você procura?" />
+        <PageHero title="O que você procura?" />
         <form action="/buscar" method="get" role="search" className="mt-5 flex gap-2">
           <label htmlFor="q" className="sr-only">
             Buscar lição, palavra ou anotação

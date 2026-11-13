@@ -41,7 +41,7 @@ export default async function CorrecoesPage() {
     return (
       <EmptyState
         art="correcoes"
-        title="Nada por aqui ainda"
+        title="Nenhuma dúvida ainda"
         description="No fim de cada lição dá para tirar uma dúvida ou pedir a correção da sua explicação. Tudo fica guardado aqui, para rever sem gastar de novo."
       />
     );
@@ -49,7 +49,7 @@ export default async function CorrecoesPage() {
 
   return (
     <div className="space-y-8">
-      <PageHero eyebrow="Anotações" title="Minhas dúvidas e correções">
+      <PageHero title="Minhas dúvidas e correções">
         O que você perguntou, o que explicou e o que a IA respondeu. Rever aqui não gasta nada.
       </PageHero>
 

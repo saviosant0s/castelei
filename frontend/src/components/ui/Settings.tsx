@@ -19,7 +19,7 @@ export function SettingsGroup({ id, title, children }: { id: string; title: stri
       <h2 id={id} className="label-mono px-1">
         {title}
       </h2>
-      <div className="mt-2 divide-y divide-ink/10 overflow-hidden rounded-card bg-surface-raised shadow-lift">
+      <div className="mt-2 divide-y divide-ink/10 overflow-hidden rounded-card border border-ink/10 bg-surface-raised">
         {children}
       </div>
     </section>
@@ -28,12 +28,18 @@ export function SettingsGroup({ id, title, children }: { id: string; title: stri
 
 export type SettingsIconTone = "sky" | "coral" | "sage" | "neutral" | "danger";
 
+/*
+| O ícone vai SOLTO, na cor do grupo, e não num quadradinho colorido.
+| Ícone dentro de quadrado arredondado em toda linha é o sinal mais citado de
+| tela gerada por IA (ver reports/ e o CLAUDE.md). Solto, ele ajuda a achar a
+| linha sem virar enfeite.
+*/
 const iconTones: Record<SettingsIconTone, string> = {
-  sky: "bg-sky-soft text-sky",
-  coral: "bg-coral-soft text-coral",
-  sage: "bg-sage-soft text-sage",
-  neutral: "bg-surface-sunken text-content-secondary",
-  danger: "bg-brick-soft text-brick",
+  sky: "text-sky",
+  coral: "text-coral",
+  sage: "text-sage",
+  neutral: "text-content-secondary",
+  danger: "text-brick",
 };
 
 interface SettingsRowProps {
@@ -71,7 +77,7 @@ export function SettingsRow({
     <>
       {/* span, não div: a linha também vira botão, e botão só aceita conteúdo em linha. */}
       <span className="flex min-h-11 items-center gap-3.5">
-        <span className={`grid size-10 shrink-0 place-items-center rounded-control ${iconTones[iconTone]}`}>
+        <span className={`grid size-6 shrink-0 place-items-center ${iconTones[iconTone]}`}>
           <Icon className="size-5" aria-hidden="true" />
         </span>
         <span className="min-w-0 flex-1">

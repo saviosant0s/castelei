@@ -48,6 +48,21 @@ class CatalogController extends Controller
         $datas = ExamDate::mapFor($user);
 
         /*
+        | Quantas questões cada lição tem em cada nível, numa consulta só. É o
+        | que a tela Questões mostra para escolher o nível (Pro). `reorder()`:
+        | o Postgres recusa ORDER BY fora do GROUP BY.
+        */
+        $niveis = DB::table('questions')
+            ->whereIn('lesson_id', $subjects->flatMap(fn (Subject $s) => $s->lessons->pluck('id')))
+            ->where('exam_only', false)
+            ->whereNotNull('difficulty')
+            ->selectRaw('lesson_id, difficulty, count(*) as total')
+            ->groupBy('lesson_id', 'difficulty')
+            ->get()
+            ->groupBy('lesson_id')
+            ->map(fn ($linhas) => $linhas->mapWithKeys(fn ($l) => [$l->difficulty => (int) $l->total]));
+
+        /*
         | A trava entre lições (Support\Practice\LessonLock). "Vista" é lida
         | até o fim ou praticada — as duas listas já estão carregadas aqui.
         | Quem pode pular (Pro ou quem administra) não vê cadeado nenhum.
@@ -61,6 +76,8 @@ class CatalogController extends Controller
         $examTarget = (int) config('castelei.exam.questions');
 
         return response()->json([
+            // Praticar por nível é do Pro: a tela Questões mostra os níveis trancados para o grátis.
+            'can_use_levels' => $user->hasLevels(),
             /*
             | Todas as áreas, inclusive as sem matéria: a tela inicial mostra
             | essas como "Em breve". A lista vem daqui para a tela não ter uma
@@ -100,7 +117,7 @@ class CatalogController extends Controller
                 | calada. Link para uma página vazia é pior que link nenhum.
                 */
                 'vocabulary_terms' => count(Vocabulary::fromLessons($subject->lessons)),
-                'lessons' => $subject->lessons->map(function (Lesson $lesson) use ($stats, $limit, $lidas, $trancadas) {
+                'lessons' => $subject->lessons->map(function (Lesson $lesson) use ($stats, $limit, $lidas, $trancadas, $niveis) {
                     $stat = $stats->get($lesson->id);
                     // A prática comum é a base; lição só com questões de nível usa todas.
                     $total = $lesson->base_count > 0 ? $lesson->base_count : $lesson->questions_count;
@@ -118,6 +135,8 @@ class CatalogController extends Controller
                         'read' => $lidas->has($lesson->id),
                         // Trancada até a pessoa ver a anterior (ler ou praticar).
                         'locked' => isset($trancadas[$lesson->subject_id][$lesson->id]),
+                        // Questões por nível (só os que existem). Vazio = lição sem nível.
+                        'levels' => (object) ($niveis->get($lesson->id)?->all() ?? []),
                     ];
                 })->values(),
             ])->values(),

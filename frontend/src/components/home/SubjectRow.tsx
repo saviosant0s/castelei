@@ -38,9 +38,13 @@ export function SubjectRow({ href, name, icon: Icon, tone, practiced, total, det
       href={href}
       className="flex items-center gap-4 rounded-card bg-surface-raised px-4 py-4 shadow-lift transition hover:-translate-y-0.5"
     >
-      <span className={`grid size-12 shrink-0 place-items-center rounded-control ${tone}`}>
+      {/*
+        O número da ordem vai solto, grande, na cor da matéria. Num quadrado
+        colorido ele virava o "ícone em quadradinho" das telas geradas por IA.
+      */}
+      <span className={`grid w-8 shrink-0 place-items-center ${tone.split(" ").filter((c) => c.startsWith("text-")).join(" ")}`}>
         {step !== undefined ? (
-          <span className="font-display text-xl font-bold tabular-nums">
+          <span className="font-display text-3xl font-bold tabular-nums">
             <span className="sr-only">Passo </span>
             {step}
           </span>
@@ -90,7 +94,7 @@ export function nextLessonLine(lessons: { title: string; attempts: number }[]): 
 export function SoonRow({ name }: { name: string }) {
   return (
     <div className="flex items-center gap-4 rounded-card border border-dashed border-ink/15 px-4 py-3 text-content-subtle">
-      <span className="grid size-12 shrink-0 place-items-center rounded-control bg-ink/5">
+      <span className="grid w-8 shrink-0 place-items-center">
         <Clock className="size-5 text-content-faint" aria-hidden="true" />
       </span>
       <span className="min-w-0 flex-1 font-display text-base leading-snug font-bold">{name}</span>

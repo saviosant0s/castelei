@@ -21,7 +21,7 @@ export default async function EntrarNaTurmaPage({ params }: { params: Promise<{ 
   if (classroom.is_owner || classroom.is_member) {
     return (
       <div className="space-y-6">
-        <PageHero eyebrow="Turma" title={classroom.name}>
+        <PageHero title={classroom.name}>
           {classroom.is_owner ? "Esta turma é sua." : "Você já está nesta turma."}
         </PageHero>
         <Link href={`/turmas/${classroom.id}`} className="btn btn-primary w-full">

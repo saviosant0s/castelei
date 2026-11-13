@@ -56,7 +56,7 @@ export default async function Planos() {
           <Card tone="sage" className="mt-3">
             <p className="text-base">
               <strong>Tudo liberado enquanto o app está em testes.</strong> Você estuda com todos os recursos
-              do Pro. Os planos abaixo mostram como vai ficar depois — e quase tudo continua grátis.
+              do Pro. Os planos abaixo mostram como vai ficar depois, e quase tudo continua grátis.
             </p>
           </Card>
         ) : (
@@ -81,7 +81,7 @@ export default async function Planos() {
             >
               <div className="flex items-baseline justify-between gap-3">
                 <h2 id={`plano-${plan.key}`} className="text-2xl">{plan.name}</h2>
-                <p className="font-mono text-base font-medium">{plan.price}</p>
+                <p className="font-display text-base font-bold">{plan.price}</p>
               </div>
               <ul className="mt-4 space-y-2">
                 {plan.items.map((item) => (

@@ -28,7 +28,7 @@ function steps(questionsPerLesson: number | null) {
     {
       icon: Target,
       title: "Como o assunto cai na prova",
-      text: "Uma etapa só para isso: os formatos de pergunta que o tema costuma assumir e as palavras que denunciam cada formato. É a parte que quase nenhum material traz — e é o que separa quem entendeu de quem acerta.",
+      text: "Uma etapa só para isso: os formatos de pergunta que o tema costuma assumir e as palavras que denunciam cada formato. É a parte que quase nenhum material traz. É o que separa quem entendeu de quem acerta.",
     },
     {
       icon: Lightbulb,
@@ -46,12 +46,12 @@ function steps(questionsPerLesson: number | null) {
     {
       icon: TrendingUp,
       title: "O resultado diz o que fazer",
-      text: "No fim: seu acerto, seu recorde e o tópico que mais te derrubou. O relatório guarda acerto e tempo separados — tempo e acerto contam histórias diferentes e nunca dividem o mesmo eixo.",
+      text: "No fim: seu acerto, seu recorde e o tópico que mais te derrubou. O relatório guarda acerto e tempo separados: os dois contam histórias diferentes e nunca dividem o mesmo eixo.",
     },
     {
       icon: Repeat,
       title: "Repetir até virar automático",
-      text: "Dá para refazer a lição quantas vezes quiser, e fazer o simulado da matéria inteira, com questões sorteadas em rodízio entre todas as lições — misturado, como na prova.",
+      text: "Dá para refazer a lição quantas vezes quiser, e fazer o simulado da matéria inteira, com questões sorteadas em rodízio entre todas as lições. Misturado, como na prova.",
     },
   ];
 }
@@ -142,7 +142,7 @@ export default async function ComoFunciona() {
           <Card tone="outline" size="lg">
             <h3 className="text-base font-bold">Escrito para quem parte do zero</h3>
             <p className="mt-2 text-base text-content-secondary">
-              Se um iniciante trava numa frase, a frase está errada — não a pessoa. Mais etapas, mais
+              Se um iniciante trava numa frase, a frase está errada, não a pessoa. Mais etapas, mais
               exemplos, menos pressa.
             </p>
           </Card>

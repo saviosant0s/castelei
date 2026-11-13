@@ -38,7 +38,7 @@ export default function Privacidade() {
           <ul className="mt-3 list-disc space-y-2 pl-5">
             <li>
               <strong>Cadastro:</strong> seu nome e seu e-mail. A senha é guardada apenas como um código
-              embaralhado (hash), que não permite recuperar a senha original — nem por nós.
+              embaralhado (hash), que não permite recuperar a senha original, nem por nós.
             </li>
             <li>
               <strong>Estudo:</strong> as questões que você respondeu, se acertou, quanto tempo levou em cada
@@ -97,7 +97,7 @@ export default function Privacidade() {
           <h2 className="text-2xl">Seus direitos</h2>
           <p className="mt-3">
             Pela LGPD (Lei 13.709/2018), você pode pedir para ver, corrigir ou apagar seus dados, e pedir uma
-            cópia deles. Atendemos em até 15 dias. Apagar a conta apaga também todo o histórico de estudo —
+            cópia deles. Atendemos em até 15 dias. Apagar a conta apaga também todo o histórico de estudo,
             essa ação não tem volta.
           </p>
         </section>

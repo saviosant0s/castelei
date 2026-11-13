@@ -9,7 +9,7 @@ import { PageHero } from "@/components/ui";
 export default function ProgressoLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="space-y-6">
-      <PageHero eyebrow="Seus números" title="Progresso" />
+      <PageHero title="Progresso" />
       <ProgressTabs />
       {children}
     </div>
