@@ -18,30 +18,35 @@ interface TrailCardProps {
 | catálogo para a segunda tela. No carrossel elas ocupam uma faixa só, de
 | qualquer tamanho, e o pedaço do cartão seguinte aparecendo na borda é o que
 | diz "tem mais para o lado" sem precisar de seta.
+|
+| O ícone mora na mesma linha do nome: em cima dele, sozinho, deixava um vão
+| no meio do cartão. A contagem vai junto da barra, que é o que ela mede.
 */
 export function TrailCard({ href, name, detail, done, total }: TrailCardProps) {
   return (
     <Link
       href={href}
-      className="flex h-full flex-col rounded-card bg-surface-raised px-4 py-4 shadow-lift transition hover:-translate-y-0.5"
+      className="flex h-full flex-col rounded-card bg-surface-raised px-4 py-3.5 shadow-lift transition hover:-translate-y-0.5"
     >
-      <span className="flex items-start justify-between gap-3">
-        <span className="grid size-10 shrink-0 place-items-center rounded-control bg-sky-soft text-sky">
+      <span className="flex items-center gap-3">
+        <span className="grid size-9 shrink-0 place-items-center rounded-control bg-sky-soft text-sky">
           <Route className="size-5" aria-hidden="true" />
         </span>
-        <span className="pt-0.5 font-mono text-sm tabular-nums text-content-subtle">
+        <span className="min-w-0 flex-1 font-display text-base leading-tight font-bold">{name}</span>
+      </span>
+      <span className="mt-2 line-clamp-2 flex-1 text-sm text-content-secondary">{detail}</span>
+      <span className="mt-2.5 flex items-center gap-2">
+        <ProgressBar
+          percent={total > 0 ? (done / total) * 100 : 0}
+          tone="ink"
+          size="sm"
+          label={`${name}: ${done} de ${total} passos concluídos`}
+          className="flex-1"
+        />
+        <span className="font-mono text-xs tabular-nums text-content-subtle" aria-hidden="true">
           {done}/{total}
         </span>
       </span>
-      <span className="mt-3 font-display text-lg leading-snug font-bold">{name}</span>
-      <span className="mt-1 flex-1 text-sm text-content-secondary">{detail}</span>
-      <ProgressBar
-        percent={total > 0 ? (done / total) * 100 : 0}
-        tone="ink"
-        size="sm"
-        label={`${name}: ${done} de ${total} passos concluídos`}
-        className="mt-3"
-      />
     </Link>
   );
 }

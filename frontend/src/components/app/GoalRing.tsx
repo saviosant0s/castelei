@@ -59,11 +59,18 @@ export function GoalRing({ today, target, size, big = false }: { today: number; 
       {big ? (
         <span className="relative text-center">
           {completa ? (
-            <Check className="mx-auto size-10 text-sage" aria-hidden="true" />
+            <Check className={`mx-auto text-sage ${size < 100 ? "size-7" : "size-10"}`} aria-hidden="true" />
           ) : (
-            <motion.span className="block font-display text-4xl font-bold tabular-nums">{numero}</motion.span>
+            <motion.span
+              className={`block font-display font-bold tabular-nums ${size < 100 ? "text-2xl leading-none" : "text-4xl"}`}
+            >
+              {numero}
+            </motion.span>
           )}
-          <span className="mt-1 block text-xs text-content-subtle">{completa ? "meta de hoje feita" : `de ${target} XP hoje`}</span>
+          {/* No anel menor do Início a legenda encolhe junto: "de 120 XP hoje" não cabe em 88px. */}
+          <span className="mt-1 block text-xs leading-none text-content-subtle">
+            {completa ? (size < 100 ? "feita" : "meta de hoje feita") : size < 100 ? `de ${target} XP` : `de ${target} XP hoje`}
+          </span>
         </span>
       ) : completa ? (
         <Check className="relative size-3.5 text-sage" aria-hidden="true" />
