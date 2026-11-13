@@ -50,6 +50,7 @@ class SubjectExporter
             'module' => $lesson->module,
             'summary' => $lesson->summary,
             'steps' => $lesson->steps ?: null,
+            'video' => $lesson->video ?: null,
             'questions' => $lesson->questions->map(fn (Question $q) => $this->question($q))->values()->all(),
         ], fn ($valor) => $valor !== null);
     }

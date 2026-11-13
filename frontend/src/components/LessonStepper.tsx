@@ -1,13 +1,12 @@
 "use client";
 
-import { LessonStudyBox } from "@/components/study/LessonStudyBox";
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import {
   ArrowLeft,
   ArrowRight,
+  Check,
   Pause,
-  Play,
   Volume2,
   X,
 } from "lucide-react";
@@ -17,7 +16,6 @@ import { StepExample } from "@/components/StepExample";
 import { StepTable } from "@/components/StepTable";
 import { useNarration } from "@/components/useNarration";
 import { postJson } from "@/lib/client";
-import { pluralize } from "@/lib/format";
 import { clearSpot, saveSpot, useSpot } from "@/lib/lesson-progress";
 import { narrationSrc } from "@/lib/narration";
 import type { LessonDetail, StepKind } from "@/lib/types";
@@ -146,8 +144,8 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
     <div className="mx-auto min-h-dvh max-w-md px-5 pb-44 pt-4">
       <header className="flex items-center justify-between gap-3">
         <Link
-          href={`/materia/${lesson.subject.slug}`}
-          aria-label={`Sair da lição e voltar para ${lesson.subject.name}`}
+          href={`/licao/${lesson.id}`}
+          aria-label="Sair da leitura e voltar para a lição"
           className="grid size-11 place-items-center rounded-full text-ink/70 hover:bg-ink/5"
         >
           <X className="size-6" aria-hidden="true" />
@@ -340,57 +338,29 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
         )}
       </article>
 
-      {/* O caderno da lição mora na etapa de resumo: depois de ler, antes de praticar. */}
-      {isLast && <LessonStudyBox lessonId={lesson.id} />}
 
       <div className="fixed inset-x-0 bottom-0 z-20 border-t border-ink/10 bg-surface/95 backdrop-blur">
         <div className="mx-auto max-w-md px-5 pb-[max(1rem,env(safe-area-inset-bottom))] pt-3">
-          {isLast && (lesson.wrong_count ?? 0) > 0 && lesson.practice !== "writing" && (
-            <p className="mb-2 text-center text-sm">
-              <Link href={`/licao/${lesson.id}/praticar?erradas=1`} className="font-bold text-content-secondary underline underline-offset-4">
-                Ou refaça só as {lesson.wrong_count} que você errou
-              </Link>
-            </p>
-          )}
-          {isLast && lesson.limited_by_plan && (
-            <p className="mb-2 text-center text-sm text-ink/60">
-              Plano grátis: {lesson.questions_available} de{" "}
-              {lesson.questions_total} questões.{" "}
-              <Link
-                href="/planos"
-                className="font-bold text-ink underline underline-offset-4"
-              >
-                Ver planos
-              </Link>
-            </p>
-          )}
           <div className="flex gap-3">
             {!isFirst && (
-              /*
-              | Na última etapa o botão principal tem o texto mais longo da
-              | lição ("Praticar 8 questões"), e com "Voltar" ao lado ele
-              | quebrava em duas linhas e era cortado embaixo. Ali o voltar
-              | fica só com a seta, e o rótulo continua para o leitor de tela.
-              */
               <button
                 type="button"
                 onClick={back}
-                className={`btn btn-ghost shrink-0 border-2 border-ink/15 ${isLast ? "px-4" : ""}`}
+                className="btn btn-ghost shrink-0 border-2 border-ink/15"
                 aria-label="Voltar para a etapa anterior"
               >
-                <ArrowLeft className="size-5" aria-hidden="true" />
-                {!isLast && " Voltar"}
+                <ArrowLeft className="size-5" aria-hidden="true" /> Voltar
               </button>
             )}
+            {/*
+            | A última etapa termina na tela da lição, e não nas questões. Ali
+            | estão "Fazer as questões" (agora em destaque), a dúvida e a
+            | anotação. Antes elas se espremiam aqui, com um botão de voltar
+            | só de seta, e o fim da leitura parecia mal encaixado.
+            */}
             {isLast ? (
-              <Link
-                href={`/licao/${lesson.id}/praticar`}
-                className="btn btn-primary min-w-0 flex-1 whitespace-nowrap px-4"
-              >
-                <Play className="size-5" aria-hidden="true" />{" "}
-                {lesson.practice === "writing"
-                  ? `Escrever o texto em ${lesson.questions_available} partes`
-                  : `Praticar ${pluralize(lesson.questions_available, "questão", "questões")}`}
+              <Link href={`/licao/${lesson.id}`} className="btn btn-primary min-w-0 flex-1 whitespace-nowrap px-4">
+                Concluir leitura <Check className="size-5" aria-hidden="true" />
               </Link>
             ) : (
               <button

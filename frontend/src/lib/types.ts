@@ -190,6 +190,18 @@ export interface LessonDetail {
   levels?: Partial<Record<Difficulty, number>>;
   /** Praticar por nível é do Pro. */
   can_use_levels?: boolean;
+  /** Já leu até a última etapa: a tela da lição passa o destaque para as questões. */
+  read?: boolean;
+  /** Aula em vídeo da lição (YouTube), oferecida na tela da lição. */
+  video?: LessonVideoInfo | null;
+}
+
+/** Uma aula em vídeo: o link do YouTube (ou arquivo), o título e o canal de quem fez. */
+export interface LessonVideoInfo {
+  src: string;
+  title?: string;
+  caption?: string;
+  channel?: string;
 }
 
 /** Nível de dificuldade de uma questão. */

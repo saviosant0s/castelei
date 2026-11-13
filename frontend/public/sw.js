@@ -25,7 +25,7 @@ const PAGINAS = "castelei-paginas-v1";
 const SESSAO_HEADER = "x-castelei-sessao";
 const CHAVE_SESSAO = "/__castelei-sessao";
 
-const GUARDAVEL = /^\/(inicio|revisar|progresso|correcoes|area\/[^/]+|trilha\/[^/]+|licao\/\d+|materia\/[^/]+(\/vocabulario(\/cartoes)?)?)$/;
+const GUARDAVEL = /^\/(inicio|revisar|progresso|correcoes|area\/[^/]+|trilha\/[^/]+|licao\/\d+(\/ler)?|materia\/[^/]+(\/vocabulario(\/cartoes)?)?)$/;
 
 self.addEventListener("install", (event) => {
   event.waitUntil(

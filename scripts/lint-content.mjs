@@ -1046,6 +1046,17 @@ for (const file of arquivos) {
       if (steps.filter((s) => s.kind === k).length !== 1) fail(L, `deve haver exatamente uma etapa “${k}”`);
     }
     checkProse(`${L} › resumo`, lesson.summary ?? "");
+    /*
+    | A aula em vídeo da lição (YouTube), mostrada na tela da lição. Precisa
+    | do título e do canal: o título diz o que a pessoa vai ver, e o canal dá
+    | o crédito a quem fez a aula.
+    */
+    if (lesson.video) {
+      const v = lesson.video;
+      if (!/^https:\/\/(www\.)?(youtube\.com\/watch\?v=|youtu\.be\/)[\w-]{11}/.test(v.src ?? "")) fail(`${L} › vídeo`, `link do YouTube inválido: ${v.src}`);
+      if (!v.title) fail(`${L} › vídeo`, "falta o título do vídeo");
+      if (!v.channel) fail(`${L} › vídeo`, "falta o canal de quem fez a aula");
+    }
     checkVisuals(L, steps);
 
     const defined = new Set();

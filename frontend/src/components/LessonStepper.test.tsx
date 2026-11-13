@@ -87,7 +87,7 @@ describe("LessonStepper", () => {
     expect(screen.getByText("Etapa 1 de 4")).toBeTruthy();
   });
 
-  it("na última etapa troca Continuar por Praticar, com o número de questões do plano", async () => {
+  it("na última etapa troca Continuar por Concluir leitura, que volta à tela da lição", async () => {
     const user = userEvent.setup();
     render(<LessonStepper lesson={lesson} />);
 
@@ -95,9 +95,10 @@ describe("LessonStepper", () => {
 
     expect(screen.getByRole("heading", { name: "Resumo em 1 minuto" })).toBeTruthy();
     expect(screen.queryByRole("button", { name: /continuar/i })).toBeNull();
-    const practice = screen.getByRole("link", { name: /Praticar 5 questões/ });
-    expect(practice.getAttribute("href")).toBe("/licao/7/praticar");
-    expect(screen.getByText(/Plano grátis: 5 de 8 questões/)).toBeTruthy();
+    // As questões, a dúvida e o aviso do plano moram na tela da lição.
+    expect(screen.getByRole("link", { name: /Concluir leitura/ }).getAttribute("href")).toBe("/licao/7");
+    // O voltar continua com o nome escrito, como nas outras etapas: só a seta parecia solta.
+    expect(screen.getByRole("button", { name: "Voltar para a etapa anterior" }).textContent).toContain("Voltar");
   });
 
   it("aceita as setas do teclado", async () => {
@@ -124,7 +125,7 @@ describe("LessonStepper", () => {
     render(<LessonStepper lesson={lesson} />);
 
     expect(screen.getByRole("link", { name: "Ir às questões" }).getAttribute("href")).toBe("/licao/7/praticar");
-    expect(screen.getByRole("link", { name: /Sair da lição/ }).getAttribute("href")).toBe("/materia/matematica-basica");
+    expect(screen.getByRole("link", { name: /Sair da leitura/ }).getAttribute("href")).toBe("/licao/7");
   });
 
   it("mostra os itens da lista na etapa de prova", async () => {

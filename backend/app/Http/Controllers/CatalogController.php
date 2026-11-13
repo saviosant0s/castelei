@@ -274,6 +274,10 @@ class CatalogController extends Controller
                 | reversão da especialização). Ver docs/principios-pedagogicos.md.
                 */
                 'mastery' => StatsController::lessonMastery($request->user()->id, $lesson->id),
+                // A tela da lição destaca "Ler" até a pessoa ler, e depois "Fazer questões".
+                'read' => DB::table('lesson_reads')->where('user_id', $request->user()->id)->where('lesson_id', $lesson->id)->exists(),
+                // Aula em vídeo da lição (YouTube), quando houver.
+                'video' => $lesson->video,
                 // Questões cuja última resposta foi errada: a lição oferece refazer só elas.
                 'wrong_count' => count(AttemptController::wrongQuestionIds($request->user()->id, $lesson)),
                 /*

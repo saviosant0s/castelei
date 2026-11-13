@@ -15,6 +15,7 @@ class Lesson extends Model
         return [
             'pitfalls' => 'array',
             'steps' => 'array',
+            'video' => 'array',
         ];
     }
 
