@@ -186,10 +186,10 @@
           "statement": "O comando “segundo o texto” pede uma resposta que:",
           "options": [
             "está escrita no texto, mesmo com outras palavras",
-            "é a opinião do leitor sobre o tema",
-            "vai além do que o texto diz",
-            "contradiz o autor",
-            "vem de outro texto"
+            "é a opinião do leitor sobre o tema, com base no texto",
+            "vai além do que o texto diz e tira uma conclusão nova",
+            "contradiz o autor quando ele está errado",
+            "vem de outro texto sobre o mesmo assunto"
           ],
           "correct_index": 0,
           "explanation": "É o pedido de localizar.",
@@ -214,10 +214,10 @@
           "statement": "Texto: “A feira do bairro agora abre também aos domingos, das 7h às 13h.” Segundo o texto:",
           "options": [
             "a feira passou a funcionar no domingo de manhã",
-            "a feira fechava aos sábados",
-            "a feira é a mais barata da cidade",
-            "a feira abre todos os dias",
-            "a feira só abre à tarde"
+            "a feira fechava aos sábados e agora abre aos domingos",
+            "a feira é a mais barata da cidade aos domingos",
+            "a feira abre todos os dias da semana",
+            "a feira só abre à tarde, depois das 13h"
           ],
           "correct_index": 0,
           "explanation": "É o que a frase diz, com outras palavras.",
@@ -229,9 +229,9 @@
           "options": [
             "acha que o leitor vai estar na rua à noite",
             "mora numa cidade fria o ano todo",
-            "não gosta de frio",
-            "vende casacos",
-            "errou a previsão"
+            "não gosta de frio e reclama dele",
+            "vende casacos e quer que o leitor compre",
+            "errou a previsão da temperatura"
           ],
           "correct_index": 0,
           "explanation": "Só faz sentido avisar do frio da noite a quem vai sair.",
@@ -256,10 +256,10 @@
           "statement": "Uma alternativa verdadeira pelo texto pode estar errada porque:",
           "options": [
             "responde a outra pergunta, e não ao comando",
-            "toda frase verdadeira está certa",
-            "a prova só aceita frases copiadas",
-            "o texto sempre mente",
-            "a certa é sempre a mais longa"
+            "toda frase verdadeira está certa, em qualquer questão",
+            "a prova só aceita frases copiadas do texto",
+            "o texto sempre mente de algum jeito",
+            "a certa é sempre a alternativa mais longa"
           ],
           "correct_index": 0,
           "explanation": "Ela pode ser um detalhe quando o comando pediu a ideia central.",
@@ -612,10 +612,10 @@
           "statement": "Para descobrir um pressuposto, um bom teste é:",
           "options": [
             "negar a frase e ver o que continua valendo",
-            "trocar as palavras por sinônimos",
-            "ler só o título",
-            "contar as vírgulas",
-            "procurar a palavra mais longa"
+            "trocar as palavras por sinônimos e comparar",
+            "ler só o título e o primeiro parágrafo",
+            "contar as vírgulas da frase",
+            "procurar a palavra mais difícil"
           ],
           "correct_index": 0,
           "explanation": "O pressuposto sobrevive à negação.",
@@ -654,10 +654,10 @@
           "statement": "A diferença entre pressuposto e subentendido é que:",
           "options": [
             "o pressuposto vem preso às palavras, e o subentendido depende da situação",
-            "os dois são a mesma coisa",
-            "o subentendido está sempre escrito",
-            "o pressuposto depende só do tom de voz",
-            "o pressuposto some quando a frase é negada"
+            "os dois são a mesma coisa, só muda o nome que a prova usa",
+            "o subentendido está sempre escrito, e o pressuposto nunca está",
+            "o pressuposto depende só do tom de voz de quem fala a frase",
+            "o pressuposto some quando a frase é negada, e o subentendido fica"
           ],
           "correct_index": 0,
           "explanation": "Um mora na frase; o outro, na situação.",
@@ -693,10 +693,10 @@
           "statement": "“O novo sabão deixa a roupa ainda mais branca.” Pressupõe-se que:",
           "options": [
             "existia um sabão antigo, que já deixava a roupa branca",
-            "a roupa era suja demais",
-            "o sabão antigo manchava a roupa",
-            "o novo sabão é mais barato",
-            "nenhum sabão funciona"
+            "a roupa era suja demais antes do sabão novo",
+            "o sabão antigo manchava a roupa de quem usava",
+            "o novo sabão é mais barato que o antigo",
+            "nenhum sabão funcionava antes deste"
           ],
           "correct_index": 0,
           "explanation": "“Novo” pressupõe um antigo, e “ainda mais” pressupõe que ele já branqueava.",
@@ -707,10 +707,10 @@
           "statement": "“Até o goleiro fez gol.” A palavra “até” sugere que:",
           "options": [
             "era pouco esperado que o goleiro marcasse",
-            "o goleiro sempre faz gol",
-            "ninguém fez gol",
-            "o goleiro é o artilheiro",
-            "o jogo terminou empatado"
+            "o goleiro sempre faz gol nos jogos",
+            "ninguém mais fez gol na partida",
+            "o goleiro é o artilheiro do time",
+            "o jogo terminou empatado no fim"
           ],
           "correct_index": 0,
           "explanation": "“Até” marca o caso mais improvável.",
@@ -752,10 +752,10 @@
           "statement": "Num jantar, alguém diz: “Nossa, já são onze horas!” O subentendido mais provável é:",
           "options": [
             "a vontade de ir embora ou de encerrar a noite",
-            "a informação exata da hora",
-            "uma reclamação do relógio",
-            "um elogio à comida",
-            "um pedido de mais comida"
+            "a informação exata da hora, sem mais nada",
+            "uma reclamação sobre o relógio da casa",
+            "um elogio à comida do jantar",
+            "um pedido de mais comida e de mais tempo"
           ],
           "correct_index": 0,
           "explanation": "A situação transforma a hora num sinal.",
@@ -1003,10 +1003,10 @@
           "statement": "Na propaganda e no humor, o duplo sentido costuma ser:",
           "options": [
             "usado de propósito, para chamar a atenção",
-            "sempre um erro de quem escreveu",
-            "proibido",
-            "sinal de texto científico",
-            "falta de revisão"
+            "sempre um erro de quem escreveu o texto",
+            "proibido em textos publicados",
+            "sinal de texto científico e técnico",
+            "falta de revisão antes de publicar"
           ],
           "correct_index": 0,
           "explanation": "Ele faz o leitor parar para pensar.",
@@ -1017,10 +1017,10 @@
           "statement": "Numa notícia, uma frase ambígua é um problema porque:",
           "options": [
             "o leitor pode entender um fato diferente do que aconteceu",
-            "deixa o texto engraçado",
-            "obriga a usar vírgula",
-            "deixa a manchete longa",
-            "é sempre proposital"
+            "deixa o texto engraçado demais para uma notícia",
+            "obriga a usar mais vírgulas na frase",
+            "deixa a manchete longa e cansativa",
+            "é sempre proposital e mostra a opinião do jornal"
           ],
           "correct_index": 0,
           "explanation": "Texto que informa precisa dizer uma coisa só.",
@@ -1070,10 +1070,10 @@
           "statement": "Anúncio de uma ótica: “A gente vê o seu problema.” O efeito vem de:",
           "options": [
             "o verbo “ver” valer como enxergar e como cuidar",
-            "um erro de concordância",
-            "uma informação falsa",
-            "um pressuposto de que a loja fechou",
-            "uma palavra estrangeira"
+            "um erro de concordância entre o verbo e “a gente”",
+            "uma informação falsa sobre a loja",
+            "um pressuposto de que a loja fechou e voltou a abrir",
+            "uma palavra estrangeira no anúncio"
           ],
           "correct_index": 0,
           "explanation": "Na ótica, “ver” é literal e também figurado.",
@@ -1099,10 +1099,10 @@
           "statement": "O que escolhe o sentido certo de uma palavra com vários sentidos?",
           "options": [
             "o contexto em que ela aparece",
-            "o dicionário sozinho",
+            "o dicionário sozinho, sem a frase",
             "o tamanho da palavra",
-            "a primeira letra",
-            "a opinião do leitor"
+            "a primeira letra dela",
+            "a opinião de quem está lendo"
           ],
           "correct_index": 0,
           "explanation": "As palavras em volta escolhem uma das opções.",
@@ -1130,9 +1130,9 @@
           "options": [
             "“em sua casa” por “na casa do suspeito”",
             "“prendeu” por “pegou”",
-            "“policial” por “guarda”",
-            "tirar o artigo “o”",
-            "“suspeito” por “homem”"
+            "“policial” por “guarda municipal”",
+            "tirar o artigo “o” da frase",
+            "“suspeito” por “homem suspeito”"
           ],
           "correct_index": 0,
           "explanation": "A dúvida está em “sua”, que pode ser dos dois.",
@@ -1144,10 +1144,10 @@
           "statement": "Em “Comprei um vaso para a sala de cristal”, o duplo sentido vem:",
           "options": [
             "da ordem das palavras, que deixa “de cristal” ligado ao vaso ou à sala",
-            "de uma palavra com vários sentidos",
-            "de um pressuposto",
-            "de uma ironia",
-            "de uma gíria"
+            "de uma palavra com vários sentidos no dicionário, como “vaso” ou “sala”",
+            "de um pressuposto escondido no verbo “comprei”, que fala de um gasto",
+            "de uma ironia sobre o preço do vaso",
+            "de uma gíria que mudou o sentido de “cristal”"
           ],
           "correct_index": 0,
           "explanation": "Nenhuma palavra tem dois sentidos: a dúvida é de qual termo “de cristal” fala.",
@@ -1159,10 +1159,10 @@
           "statement": "Um contrato diz: “O inquilino paga a taxa e a limpeza mensal.” A dúvida é se:",
           "options": [
             "“mensal” vale só para a limpeza ou também para a taxa",
-            "a limpeza é paga todo mês",
-            "o inquilino existe",
-            "o contrato é válido",
-            "a taxa é alta"
+            "a limpeza é paga todo mês ou só uma vez no ano",
+            "o inquilino existe e assinou o contrato",
+            "o contrato é válido sem assinatura",
+            "a taxa é alta demais para o inquilino pagar sozinho"
           ],
           "correct_index": 0,
           "explanation": "O adjetivo pode ir com uma palavra ou com as duas.",
@@ -1348,10 +1348,10 @@
           "statement": "Paráfrase é:",
           "options": [
             "dizer o mesmo que o texto com outras palavras",
-            "copiar o texto igual",
-            "dar a opinião sobre o texto",
+            "copiar o texto igual, entre aspas, sem mudar nada",
+            "dar a opinião sobre o texto lido, com exemplos",
             "imitar o texto para fazer graça",
-            "resumir só o título"
+            "resumir só o título e o tema"
           ],
           "correct_index": 0,
           "explanation": "Muda a forma, e não o sentido.",
@@ -1457,10 +1457,10 @@
           "statement": "“O médico examinou o paciente.” Por que “O médico vigiou o paciente” não é uma boa paráfrase?",
           "options": [
             "porque “vigiar” não tem o mesmo sentido de “examinar”",
-            "porque mudou o tempo do verbo",
-            "porque tirou o médico da frase",
-            "porque ficou mais longa",
-            "porque é proibido trocar palavras"
+            "porque mudou o tempo do verbo de passado para presente",
+            "porque tirou o médico da frase e deixou só o paciente",
+            "porque ficou mais longa que a frase original",
+            "porque é proibido trocar palavras numa frase curta"
           ],
           "correct_index": 0,
           "explanation": "Vigiar é tomar conta; examinar é avaliar a saúde.",
@@ -1487,9 +1487,9 @@
           "options": [
             "fica menor que o texto e guarda a ideia central",
             "acrescenta a opinião de quem resume",
-            "copia o primeiro parágrafo",
-            "muda a conclusão",
-            "fica maior que o texto"
+            "copia o primeiro parágrafo inteiro",
+            "muda a conclusão para ficar mais clara",
+            "fica maior que o texto, com explicações"
           ],
           "correct_index": 0,
           "explanation": "Encolhe sem perder o essencial.",
@@ -1769,9 +1769,9 @@
           "statement": "Texto: “Já pensou em ganhar uma hora por dia? Baixe o aplicativo e organize sua rotina.” O interlocutor é:",
           "options": [
             "alguém que quer organizar o próprio tempo",
-            "o dono do aplicativo",
-            "um médico",
-            "uma criança pequena",
+            "o dono do aplicativo, que quer vender",
+            "um médico que cuida do sono",
+            "uma criança pequena que ainda não lê",
             "um professor de matemática"
           ],
           "correct_index": 0,
@@ -1850,10 +1850,10 @@
           "statement": "Para descobrir a finalidade de um texto, ajuda muito perguntar:",
           "options": [
             "o que ele quer que o leitor faça, pense ou sinta",
-            "quantos parágrafos ele tem",
-            "qual é a palavra mais longa",
-            "se ele tem título",
-            "em que ano o leitor nasceu"
+            "quantos parágrafos ele tem e quantas frases",
+            "qual é a palavra mais longa e mais difícil",
+            "se ele tem título e subtítulo",
+            "em que ano o texto foi escrito"
           ],
           "correct_index": 0,
           "explanation": "A finalidade é o efeito que o texto busca no leitor.",
@@ -1879,10 +1879,10 @@
           "statement": "O bilhete “Não esquece o pão!”, preso na geladeira, foi escrito para:",
           "options": [
             "alguém da casa, para lembrar de comprar pão",
-            "um padeiro",
+            "um padeiro que entrega pão na casa toda manhã",
             "um leitor desconhecido",
-            "a professora",
-            "um jornal"
+            "a professora, para avisar sobre o lanche",
+            "um jornal do bairro"
           ],
           "correct_index": 0,
           "explanation": "O lugar e o tom mostram o interlocutor.",
@@ -1894,10 +1894,10 @@
           "statement": "Texto: “Notificar os casos suspeitos em até 24 horas.” O que mostra que o interlocutor é um profissional de saúde?",
           "options": [
             "a tarefa técnica, que só cabe a quem atende os casos",
-            "o uso de brincadeira",
-            "as perguntas ao leitor",
-            "o tom de conversa",
-            "a palavra “você”"
+            "o uso de brincadeira e de humor na frase",
+            "as perguntas feitas ao leitor",
+            "o tom de conversa entre amigos que se conhecem",
+            "a palavra “você” no começo"
           ],
           "correct_index": 0,
           "explanation": "Só quem atende doentes notifica casos.",
@@ -1909,10 +1909,10 @@
           "statement": "O mesmo assunto, a dengue, aparece num gibi e na embalagem de um inseticida. O que muda de um para o outro é principalmente:",
           "options": [
             "o interlocutor e a finalidade",
-            "o assunto",
-            "a doença",
-            "o mosquito",
-            "a língua usada"
+            "o assunto tratado nos dois",
+            "a doença descrita",
+            "o mosquito mostrado",
+            "a língua usada em cada um"
           ],
           "correct_index": 0,
           "explanation": "O assunto é o mesmo; mudam o público e o objetivo.",
@@ -1939,10 +1939,10 @@
           "statement": "Num cartaz: “Você, motorista: celular no volante tira vidas.” O “você” e a palavra “motorista” servem para:",
           "options": [
             "escolher quem o texto quer atingir e chamar essa pessoa diretamente",
-            "dar uma informação neutra para qualquer leitor",
-            "mostrar quem escreveu o cartaz",
-            "descrever um acidente",
-            "falar com os pedestres"
+            "dar uma informação neutra para qualquer leitor que passe",
+            "mostrar quem escreveu o cartaz e assinou a campanha",
+            "descrever um acidente que aconteceu naquela rua",
+            "falar com os pedestres que atravessam fora da faixa"
           ],
           "correct_index": 0,
           "explanation": "O cartaz aponta para um leitor e fala com ele.",
@@ -2193,7 +2193,7 @@
             "conativa",
             "emotiva",
             "fática",
-            "poética"
+            "referencial"
           ],
           "correct_index": 0,
           "explanation": "É a língua falando da língua.",
@@ -2271,10 +2271,10 @@
           "statement": "Quando um texto mistura várias funções, a prova costuma perguntar pela:",
           "options": [
             "função predominante, ligada à finalidade do texto",
-            "função que aparece primeiro",
-            "função mais rara",
-            "função da última frase",
-            "função que tem mais verbos"
+            "função que aparece primeiro, na abertura do texto",
+            "função mais rara do texto",
+            "função da última frase, que fecha o texto",
+            "função com mais verbos"
           ],
           "correct_index": 0,
           "explanation": "A finalidade decide qual função manda.",
@@ -2360,10 +2360,10 @@
           "statement": "Texto: “Saudade é a palavra que a língua portuguesa criou para a falta que fica.” A função predominante é a:",
           "options": [
             "metalinguística, porque a frase fala de uma palavra da língua",
-            "emotiva, porque fala de sentimento",
-            "fática",
-            "conativa",
-            "referencial"
+            "emotiva, porque a frase fala de um sentimento de quem escreve",
+            "fática, porque testa o canal",
+            "conativa, porque convence o leitor",
+            "referencial, porque informa um fato sobre a língua portuguesa"
           ],
           "correct_index": 0,
           "explanation": "A frase define uma palavra.",
@@ -2579,8 +2579,8 @@
           "statement": "“Talvez chova amanhã.” A palavra “talvez” indica:",
           "options": [
             "possibilidade",
-            "certeza",
-            "obrigação",
+            "certeza absoluta",
+            "obrigação de fazer",
             "ordem",
             "passado"
           ],
@@ -2593,9 +2593,9 @@
           "statement": "“O técnico admitiu que o time jogou mal.” Trocar “admitiu” por “disse” faz a frase perder:",
           "options": [
             "a ideia de que ele reconheceu algo ruim",
-            "a informação de quem falou",
-            "o tempo da frase",
-            "o nome do time",
+            "a informação de quem falou sobre o jogo",
+            "o tempo verbal da frase, que muda",
+            "o nome do time citado",
             "o assunto do jogo"
           ],
           "correct_index": 0,
@@ -2607,9 +2607,9 @@
           "statement": "Um texto de notícia que quer parecer imparcial evita, principalmente:",
           "options": [
             "palavras que avaliam os fatos",
-            "números",
-            "datas",
-            "nomes de lugares",
+            "números e porcentagens exatas",
+            "datas e horários",
+            "nomes de pessoas e de lugares",
             "verbos no passado"
           ],
           "correct_index": 0,
@@ -2675,10 +2675,10 @@
           "statement": "“Provavelmente o jogo será adiado.” A frase mostra:",
           "options": [
             "uma possibilidade, e não uma certeza",
-            "uma certeza",
-            "uma ordem",
-            "um fato já acontecido",
-            "uma definição"
+            "uma certeza sobre o adiamento",
+            "uma ordem para adiar",
+            "um fato que já aconteceu ontem",
+            "uma definição de jogo"
           ],
           "correct_index": 0,
           "explanation": "“Provavelmente” é modalizador de possibilidade.",
@@ -2690,9 +2690,9 @@
           "statement": "“O prefeito alegou que a obra atrasou por causa da chuva.” O verbo “alegou” sugere que:",
           "options": [
             "quem escreveu não assume a explicação como verdadeira",
-            "a chuva com certeza atrasou a obra",
-            "o prefeito mentiu",
-            "a obra já terminou",
+            "a chuva com certeza atrasou a obra, como ele disse",
+            "o prefeito mentiu e o jornal provou isso",
+            "a obra já terminou, apesar da chuva",
             "o jornalista concorda com o prefeito"
           ],
           "correct_index": 0,
@@ -2705,10 +2705,10 @@
           "statement": "Qual frase mistura fato e opinião?",
           "options": [
             "O estádio, que tem 40 mil lugares, é o mais lindo do país.",
-            "O estádio tem 40 mil lugares.",
+            "O estádio tem 40 mil lugares e fica na zona norte.",
             "O estádio foi inaugurado em 1998.",
-            "O estádio fica na zona norte.",
-            "O estádio recebe jogos aos domingos."
+            "O estádio fica na zona norte da cidade.",
+            "O estádio recebe jogos aos domingos à tarde."
           ],
           "correct_index": 0,
           "explanation": "O número é fato; “o mais lindo” é opinião.",
@@ -2720,10 +2720,10 @@
           "statement": "“É evidente que a nova regra vai reduzir os acidentes.” A expressão “é evidente que” serve para:",
           "options": [
             "apresentar como certeza o que ainda é uma previsão",
-            "relatar um fato já comprovado",
-            "indicar dúvida",
-            "citar uma pesquisa",
-            "mostrar um dado medido"
+            "relatar um fato já comprovado por pesquisa",
+            "indicar dúvida sobre o efeito da regra",
+            "citar uma pesquisa feita antes da regra",
+            "mostrar um dado medido depois da regra"
           ],
           "correct_index": 0,
           "explanation": "A regra é nova: o efeito ainda não aconteceu.",
@@ -2735,10 +2735,10 @@
           "statement": "Duas manchetes: “Governo reajusta tarifa de ônibus em 5%” e “Governo volta a apertar o bolso do passageiro”. A diferença é que:",
           "options": [
             "a primeira informa o reajuste; a segunda avalia e diz que já houve outro",
-            "as duas só informam",
-            "a segunda dá mais números",
-            "a primeira é opinião e a segunda é fato",
-            "as duas usam a mesma palavra para o aumento"
+            "as duas só informam o reajuste, cada uma com palavras diferentes",
+            "a segunda dá mais números sobre o reajuste",
+            "a primeira é opinião sobre o reajuste, e a segunda é fato comprovado",
+            "as duas usam a mesma palavra para o aumento da tarifa"
           ],
           "correct_index": 0,
           "explanation": "“Apertar o bolso” avalia, e “volta a” traz um aumento anterior.",
@@ -2949,9 +2949,9 @@
           "statement": "A tese de um texto é:",
           "options": [
             "a ideia principal que ele defende",
-            "o primeiro parágrafo",
-            "o título",
-            "o exemplo mais longo",
+            "o primeiro parágrafo inteiro",
+            "o título do texto",
+            "o exemplo mais longo do texto",
             "a opinião do leitor"
           ],
           "correct_index": 0,
@@ -3019,9 +3019,9 @@
           "statement": "“Todos foram à festa, até o vizinho que nunca sai de casa.” A palavra “até” marca:",
           "options": [
             "o caso mais forte, o menos esperado",
-            "o fim da festa",
-            "um lugar",
-            "uma oposição",
+            "o fim da festa, quando todos saem",
+            "um lugar da casa",
+            "uma oposição entre o vizinho e os outros",
             "uma conclusão"
           ],
           "correct_index": 0,
@@ -3101,10 +3101,10 @@
           "statement": "“Embora o ônibus demore, ele é a opção mais barata.” A primeira parte da frase:",
           "options": [
             "admite um ponto fraco, que não muda a conclusão",
-            "é a conclusão do texto",
-            "mostra a causa da demora",
-            "nega que o ônibus demore",
-            "compara o ônibus com o metrô"
+            "é a conclusão do texto sobre o ônibus",
+            "mostra a causa da demora do ônibus",
+            "nega que o ônibus demore de verdade",
+            "compara o ônibus com o metrô da cidade"
           ],
           "correct_index": 0,
           "explanation": "É uma concessão.",
@@ -3116,10 +3116,10 @@
           "statement": "Um texto diz: “Meu tio fuma há 50 anos e nunca adoeceu; logo, cigarro não faz mal.” O problema do argumento é:",
           "options": [
             "tirar uma regra geral de um único caso",
-            "usar um dado de pesquisa",
-            "citar uma autoridade",
+            "usar um dado de pesquisa sobre o fumo",
+            "citar uma autoridade médica como prova",
             "usar a palavra “logo”",
-            "falar de saúde"
+            "falar de saúde sem ser médico"
           ],
           "correct_index": 0,
           "explanation": "Um caso não derruba o que milhares de casos mostram.",
@@ -3315,10 +3315,10 @@
           "statement": "Um aluno chega uma hora atrasado, e o professor diz: “Que pontualidade!” A fala é:",
           "options": [
             "irônica, porque diz o contrário do que pensa",
-            "um elogio sincero",
-            "uma pergunta",
+            "um elogio sincero à pontualidade do aluno",
+            "uma pergunta sobre o horário de chegada",
             "uma informação de horário",
-            "uma ordem"
+            "uma ordem para chegar cedo"
           ],
           "correct_index": 0,
           "explanation": "A situação desmente as palavras.",
@@ -3329,10 +3329,10 @@
           "statement": "A ironia depende principalmente de:",
           "options": [
             "a situação contradizer o que as palavras dizem",
-            "rimas",
+            "rimas no fim das frases e das falas",
             "palavras estrangeiras",
-            "números",
-            "perguntas"
+            "números e datas exatos",
+            "perguntas feitas ao leitor no meio do texto"
           ],
           "correct_index": 0,
           "explanation": "Sem a situação, a frase seria lida ao pé da letra.",
@@ -3343,10 +3343,10 @@
           "statement": "Charge é:",
           "options": [
             "o desenho de humor que comenta um fato do noticiário",
-            "um poema rimado",
-            "um verbete de dicionário",
-            "um anúncio de produto",
-            "um texto científico"
+            "um poema rimado sobre o noticiário da semana",
+            "um verbete de dicionário ilustrado",
+            "um anúncio de produto com desenho e preço",
+            "um texto científico com gráficos"
           ],
           "correct_index": 0,
           "explanation": "Ela critica rindo de um fato real.",
@@ -3357,10 +3357,10 @@
           "statement": "Tirinha. Quadro 1: um menino pergunta ao avô como era a vida sem celular. Quadro 2: o avô conta que conversava com as pessoas olhando nos olhos. Quadro 3: o menino, espantado: “E a bateria durava quanto?” O humor vem de:",
           "options": [
             "o menino só conseguir pensar na conversa como se fosse um aparelho",
-            "um erro de português",
-            "o avô mentir",
-            "uma informação científica",
-            "uma rima"
+            "um erro de português na fala do avô sobre a conversa",
+            "o avô mentir sobre como era a vida",
+            "uma informação científica sobre como os celulares funcionam",
+            "uma rima entre a fala do menino e a do avô"
           ],
           "correct_index": 0,
           "explanation": "O menino trata a conversa como um aparelho.",
@@ -3371,8 +3371,8 @@
           "statement": "Numa tirinha de três quadros, o humor costuma aparecer:",
           "options": [
             "no último quadro, que quebra a expectativa",
-            "no título",
-            "sempre no primeiro quadro",
+            "no título da tirinha, antes do primeiro quadro",
+            "sempre no primeiro quadro, que apresenta a cena",
             "no nome do autor",
             "na cor do desenho"
           ],
@@ -3385,10 +3385,10 @@
           "statement": "Charge: uma cidade alagada, e um político rema num barquinho com a placa “Obras contra enchentes: em breve”. A crítica é:",
           "options": [
             "à promessa de obra que nunca chega",
-            "à chuva",
-            "aos barcos",
-            "aos moradores",
-            "à placa mal escrita"
+            "à chuva forte do verão",
+            "aos barcos da prefeitura",
+            "aos moradores do bairro",
+            "à placa mal escrita do político"
           ],
           "correct_index": 0,
           "explanation": "O “em breve” no meio da enchente mostra o atraso.",
@@ -3424,9 +3424,9 @@
           "statement": "Para entender uma charge, o leitor precisa principalmente:",
           "options": [
             "conhecer o fato do noticiário que ela comenta",
-            "saber desenhar",
-            "conhecer quem desenhou",
-            "ler o jornal inteiro",
+            "saber desenhar como o autor da charge",
+            "conhecer quem desenhou e o jornal em que saiu",
+            "ler o jornal inteiro do dia",
             "saber outra língua"
           ],
           "correct_index": 0,
@@ -3468,10 +3468,10 @@
           "statement": "Placa num restaurante: “Aqui você come bem e paga melhor.” O efeito de humor vem de:",
           "options": [
             "“paga melhor” sugerir que a conta é alta",
-            "um erro de concordância",
-            "a comida ser ruim",
-            "um preço exato",
-            "uma rima"
+            "um erro de concordância na placa",
+            "a comida ser ruim e a conta ser baixa",
+            "um preço exato no cardápio",
+            "uma rima entre as palavras"
           ],
           "correct_index": 0,
           "explanation": "“Melhor” para o restaurante quer dizer mais caro para o cliente.",
@@ -3483,9 +3483,9 @@
           "statement": "Numa charge, um homem procura emprego segurando o diploma, e todas as placas dizem “Exige experiência”. A crítica é:",
           "options": [
             "à exigência de experiência de quem acabou de se formar",
-            "ao diploma",
-            "às placas mal escritas",
-            "ao homem que não estudou",
+            "ao diploma, que não serve para nada no mercado de hoje",
+            "às placas mal escritas das lojas",
+            "ao homem, que não estudou o bastante para a vaga",
             "às empresas que contratam demais"
           ],
           "correct_index": 0,
@@ -3514,8 +3514,8 @@
           "options": [
             "a ironia somada ao exagero, para criticar a desorganização",
             "o elogio sincero à organização do país",
-            "a informação objetiva sobre filas",
-            "a definição da palavra “fila”",
+            "a informação objetiva sobre o tamanho das filas",
+            "a definição da palavra “fila” no dicionário",
             "o trocadilho com a palavra “fila”"
           ],
           "correct_index": 0,
@@ -3707,10 +3707,10 @@
           "statement": "Texto multimodal é o que:",
           "options": [
             "junta palavra e imagem para fazer sentido",
-            "só tem palavras",
-            "só tem números",
-            "foi escrito em várias línguas",
-            "tem vários autores"
+            "só tem palavras, sem imagem nenhuma",
+            "só tem números e tabelas",
+            "foi escrito em várias línguas ao mesmo tempo",
+            "tem vários autores juntos"
           ],
           "correct_index": 0,
           "explanation": "O sentido depende das duas linguagens.",
@@ -3735,10 +3735,10 @@
           "statement": "Ao ler um gráfico, a primeira coisa a olhar é:",
           "options": [
             "o título e o que cada eixo mede",
-            "a cor mais bonita",
-            "só o número maior",
+            "a cor mais bonita do gráfico",
+            "só o número maior de todos",
             "o nome de quem fez",
-            "a última barra"
+            "a última barra da direita"
           ],
           "correct_index": 0,
           "explanation": "Sem saber o que se mede, não dá para comparar.",
@@ -3763,10 +3763,10 @@
           "statement": "Infográfico é:",
           "options": [
             "uma imagem que explica um assunto com desenhos, setas e números",
-            "um texto sem imagem",
-            "um poema ilustrado",
-            "uma charge política",
-            "uma tabela de preços"
+            "um texto sem imagem nenhuma, só com números e porcentagens",
+            "um poema ilustrado com desenhos",
+            "uma charge sobre um fato do noticiário, com balões de fala",
+            "uma tabela de preços de uma loja"
           ],
           "correct_index": 0,
           "explanation": "Ele explica com pouco texto.",
@@ -3790,9 +3790,9 @@
           "statement": "Um gráfico com o eixo começando em 90, e não em zero, pode:",
           "options": [
             "fazer uma diferença pequena parecer enorme",
-            "deixar o gráfico mais exato",
-            "mudar os números medidos",
-            "esconder o título",
+            "deixar o gráfico mais exato e mais fácil de ler",
+            "mudar os números medidos na pesquisa",
+            "esconder o título do gráfico",
             "transformar o gráfico em tabela"
           ],
           "correct_index": 0,
@@ -3849,9 +3849,9 @@
           "statement": "Anúncio: foto de um carro numa estrada vazia ao pôr do sol, com a frase “Liberdade tem nome”. A imagem serve para:",
           "options": [
             "ligar o carro à ideia de liberdade",
-            "informar o preço do carro",
-            "mostrar como dirigir",
-            "criticar a estrada",
+            "informar o preço do carro novo",
+            "mostrar como dirigir bem na estrada",
+            "criticar a estrada vazia",
             "explicar o pôr do sol"
           ],
           "correct_index": 0,
@@ -3879,10 +3879,10 @@
           "statement": "Num gráfico, a barra da cidade A vai até o topo, e a da cidade B até a metade. O eixo começa em 95% e termina em 100%. A conclusão mais segura é que:",
           "options": [
             "a diferença real entre as cidades é pequena, apesar das barras",
-            "a cidade A tem o dobro da cidade B",
-            "a cidade B quase não tem nada",
-            "os dados estão errados",
-            "o gráfico não tem eixo"
+            "a cidade A tem o dobro da cidade B, como mostram as barras",
+            "a cidade B quase não tem nada, porque a barra é baixa",
+            "os dados estão errados no gráfico",
+            "o gráfico não tem eixo nenhum"
           ],
           "correct_index": 0,
           "explanation": "A fica perto de 100%, e B perto de 97,5%.",
@@ -4100,10 +4100,10 @@
           "statement": "Intertextualidade é:",
           "options": [
             "a conversa entre textos, quando um retoma outro",
-            "um texto sem título",
+            "um texto sem título nem autor conhecido",
             "um texto com muitas vírgulas",
-            "um texto escrito por duas pessoas",
-            "um texto traduzido"
+            "um texto escrito por duas pessoas ao mesmo tempo",
+            "um texto traduzido de outra língua"
           ],
           "correct_index": 0,
           "explanation": "Um texto que lembra, repete ou imita outro.",
@@ -4128,10 +4128,10 @@
           "statement": "A paródia:",
           "options": [
             "retoma o original mudando o sentido, para criticar ou fazer rir",
-            "repete o original com as mesmas palavras",
-            "mantém o sentido com outras palavras",
-            "nunca tem humor",
-            "não tem relação com outro texto"
+            "repete o original com as mesmas palavras, sem mudar nada",
+            "mantém o sentido do original com outras palavras",
+            "nunca tem humor, porque é uma crítica séria",
+            "não tem relação com outro texto, porque é original"
           ],
           "correct_index": 0,
           "explanation": "Ela imita para virar o sentido.",
@@ -4142,10 +4142,10 @@
           "statement": "Na paráfrase, o texto novo:",
           "options": [
             "mantém o sentido do original com outras palavras",
-            "inverte o sentido do original",
-            "zomba do original",
+            "inverte o sentido do original para fazer rir",
+            "zomba do original para criticar quem o escreveu",
             "copia o original sem mudar nada",
-            "não lembra o original"
+            "não lembra o original em nada"
           ],
           "correct_index": 0,
           "explanation": "Muda a forma e conserva o sentido.",
@@ -4156,10 +4156,10 @@
           "statement": "Original: “Minha terra tem palmeiras, / Onde canta o Sabiá.” Versão: “Minha terra tem palmeiras / onde toca o celular.” A versão é:",
           "options": [
             "uma paródia, que critica o barulho de hoje",
-            "uma paráfrase fiel",
-            "uma citação",
-            "um verbete",
-            "uma epígrafe"
+            "uma paráfrase fiel ao poema, com outras palavras",
+            "uma citação do poema, entre aspas",
+            "um verbete sobre o poema",
+            "uma epígrafe no começo"
           ],
           "correct_index": 0,
           "explanation": "Imita o verso e troca o canto do pássaro pelo toque do celular.",
@@ -4253,10 +4253,10 @@
           "statement": "Campanha: “Era uma vez um rio limpo…” A abertura retoma:",
           "options": [
             "o começo dos contos de fadas, para sugerir que o rio limpo ficou no passado",
-            "uma notícia de jornal",
-            "um verbete de dicionário",
-            "uma receita",
-            "um texto científico"
+            "uma notícia de jornal sobre um rio que ficou poluído na cidade",
+            "um verbete de dicionário sobre rios",
+            "uma receita de como limpar um rio passo a passo, com ingredientes",
+            "um texto científico sobre a água"
           ],
           "correct_index": 0,
           "explanation": "“Era uma vez” põe o rio limpo no mundo das histórias antigas.",
@@ -4268,8 +4268,8 @@
           "statement": "“Chapeuzinho Vermelho pediu o caminho ao GPS e não encontrou o lobo.” O humor nasce de:",
           "options": [
             "misturar um conto antigo com a tecnologia de hoje",
-            "um erro de concordância",
-            "uma informação científica",
+            "um erro de concordância na frase sobre o GPS",
+            "uma informação científica sobre como o GPS funciona",
             "uma ordem ao leitor",
             "uma definição de palavra"
           ],
@@ -4298,9 +4298,9 @@
           "statement": "Num texto sobre lixo, o autor escreve: “Minha terra tem palmeiras, e garrafas pelo chão.” O efeito pretendido é:",
           "options": [
             "usar um poema de exaltação para criticar a sujeira de hoje",
-            "exaltar a natureza do país, como o original",
+            "exaltar a natureza do país, do mesmo jeito que o original",
             "citar o poema com o nome do autor",
-            "explicar o que é uma palmeira",
+            "explicar o que é uma palmeira para quem nunca viu uma",
             "abrir o texto com uma epígrafe"
           ],
           "correct_index": 0,
@@ -4520,10 +4520,10 @@
           "statement": "Diante de uma variedade diferente da norma-padrão, a pergunta mais adequada é:",
           "options": [
             "o jeito de falar está adequado à situação?",
-            "quem fala assim é ignorante?",
-            "a pessoa estudou?",
-            "isso é português?",
-            "como corrigir quem fala assim?"
+            "quem fala assim é ignorante e não estudou?",
+            "a pessoa estudou o bastante?",
+            "isso é português de verdade?",
+            "como corrigir quem fala assim na hora?"
           ],
           "correct_index": 0,
           "explanation": "A língua se avalia por adequação.",
@@ -4534,10 +4534,10 @@
           "statement": "Preconceito linguístico é:",
           "options": [
             "julgar uma pessoa como inferior pelo jeito como ela fala",
-            "estudar a gramática",
-            "falar outra língua",
-            "usar gíria",
-            "escrever um texto formal"
+            "estudar a gramática da norma-padrão na escola, com regras",
+            "falar outra língua além do português",
+            "usar gíria numa conversa entre amigos do mesmo bairro",
+            "escrever um texto formal para a escola"
           ],
           "correct_index": 0,
           "explanation": "É discriminar pela fala.",
@@ -4548,10 +4548,10 @@
           "statement": "A norma-padrão é:",
           "options": [
             "a variedade usada em documentos, textos formais e provas",
-            "a única forma certa de falar",
-            "a fala de uma região",
-            "uma gíria antiga",
-            "a língua dos jovens"
+            "a única forma certa de falar português, em qualquer situação",
+            "a fala de uma região do país, escolhida como a melhor",
+            "uma gíria antiga que virou regra",
+            "a língua usada pelos jovens"
           ],
           "correct_index": 0,
           "explanation": "É uma variedade de prestígio, com lugar certo.",
@@ -4587,10 +4587,10 @@
           "statement": "Num poema, a personagem diz: “Num carece de pressa, minino. O tempo é nosso.” Esse jeito de escrever serve para:",
           "options": [
             "mostrar a identidade e o jeito de falar da personagem",
-            "mostrar que o poeta não sabe escrever",
-            "deixar o texto mais científico",
-            "esconder o sentido",
-            "corrigir a personagem"
+            "mostrar que o poeta não sabe escrever direito em português",
+            "deixar o texto mais científico e exato",
+            "esconder o sentido da fala",
+            "corrigir a personagem diante do leitor, mostrando o erro"
           ],
           "correct_index": 0,
           "explanation": "A marca de fala dá voz e lugar à personagem.",
@@ -4633,8 +4633,8 @@
             "Gostaria de saber o horário da reunião.",
             "E aí, que horas é a parada?",
             "Fala, diretor, bora marcar?",
-            "Qual é a boa da reunião?",
-            "Manda a hora aí."
+            "Qual é a boa da reunião, chefe?",
+            "Manda a hora aí, valeu."
           ],
           "correct_index": 0,
           "explanation": "A situação formal pede a norma-padrão.",
@@ -4646,10 +4646,10 @@
           "statement": "Em “os menino chegaram”, o plural aparece no “os” e no verbo. Isso mostra que:",
           "options": [
             "a informação de plural continua clara, numa regra própria dessa variedade",
-            "a frase não tem sentido nenhum",
-            "quem fala assim não sabe português",
-            "o plural foi esquecido de vez",
-            "é uma forma que só existiu no passado"
+            "a frase não tem sentido nenhum e não se entende",
+            "quem fala assim não sabe português de verdade",
+            "o plural foi esquecido de vez e a frase ficou no singular",
+            "é uma forma que só existiu no passado e não se usa mais"
           ],
           "correct_index": 0,
           "explanation": "O plural está marcado: só não se repete em toda palavra.",
@@ -4661,10 +4661,10 @@
           "statement": "Uma propaganda de banco usa gírias jovens: “Conta sem tarifa? Aí sim, hein!” A escolha mostra:",
           "options": [
             "a adequação da linguagem ao público que o banco quer atrair",
-            "que o banco não domina a norma-padrão",
-            "um erro de revisão",
-            "variação histórica",
-            "linguagem técnica"
+            "que o banco não domina a norma-padrão e escreve como fala",
+            "um erro de revisão da agência que fez a propaganda do banco",
+            "uma variação histórica da língua",
+            "uma linguagem técnica de banco"
           ],
           "correct_index": 0,
           "explanation": "A gíria aproxima o anúncio do público jovem.",
@@ -4676,10 +4676,10 @@
           "statement": "Um texto afirma: “Quem diz ‘nós vai’ fala errado e não deve ser ouvido.” A afirmação revela:",
           "options": [
             "preconceito linguístico, que confunde variedade com falta de capacidade",
-            "uma observação neutra sobre a norma-padrão",
-            "respeito à variação",
-            "uma variação regional",
-            "uma regra de gramática sem julgamento"
+            "uma observação neutra sobre a norma-padrão e o seu uso",
+            "respeito à variação linguística e a quem fala diferente",
+            "uma variação regional que o autor quis registrar",
+            "uma regra de gramática apresentada sem nenhum julgamento"
           ],
           "correct_index": 0,
           "explanation": "“Não deve ser ouvido” julga a pessoa pela fala.",
