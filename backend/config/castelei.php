@@ -367,8 +367,11 @@ return [
             'key' => env('ANTHROPIC_API_KEY', ''),
             // A chave sozinha NÃO liga esta correção: ela é dividida com a da
             // anotação (`notes.ai`), e o Sávio ligou a IA só para a anotação.
+            // Ligada em produção desde novembro de 2026, mas SÓ para o Pro
+            // (`writing_ai` no plano): como ninguém compra o Pro ainda, quem usa
+            // hoje é quem administra, e o gasto não cresce sozinho.
             'enabled' => (bool) env('WRITING_AI_ENABLED', false),
-            'model' => env('WRITING_AI_MODEL', 'claude-opus-5'),
+            'model' => env('WRITING_AI_MODEL', 'claude-sonnet-5-5'),
             // Correções por pessoa por dia. É a trava de custo, não um detalhe.
             'daily_limit' => (int) env('WRITING_AI_DAILY_LIMIT', 5),
         ],
@@ -551,6 +554,6 @@ return [
         */
         'free' => ['label' => 'Grátis', 'questions_per_lesson' => 8, 'gamification' => true, 'exam' => false],
         'plus' => ['label' => 'Plus', 'questions_per_lesson' => 30, 'gamification' => true, 'exam' => false],
-        'pro' => ['label' => 'Pro', 'questions_per_lesson' => null, 'gamification' => true, 'exam' => true, 'classrooms' => true, 'skip_lessons' => true],
+        'pro' => ['label' => 'Pro', 'questions_per_lesson' => null, 'gamification' => true, 'exam' => true, 'classrooms' => true, 'skip_lessons' => true, 'writing_ai' => true],
     ],
 ];

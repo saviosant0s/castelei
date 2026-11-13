@@ -976,6 +976,33 @@ function checkVisuals(L, steps) {
   }
 }
 
+/*
+| A alternativa certa não pode se entregar pelo tamanho. Quem escreve tende a
+| caprichar na certa (ela precisa ser verdadeira, com a ressalva junto) e a
+| encurtar as erradas. Medido em novembro de 2026: em metade das questões a
+| certa era a mais longa de todas, e em 2.010 delas era 30% maior que qualquer
+| outra — "marque a mais comprida" acertava muito mais que o chute (20%). É o
+| mesmo vício da letra A, que o embaralhamento resolveu; este só se resolve no
+| texto. Aviso por matéria, a partir de 20% das questões.
+*/
+function checkLongestAnswer(subject) {
+  let total = 0;
+  let entregues = 0;
+  for (const lesson of subject.lessons) {
+    for (const q of lesson.questions ?? []) {
+      const opts = q.options ?? [];
+      if ((q.format ?? "choice") !== "choice" || opts.length < 2) continue;
+      total += 1;
+      const tamanhos = opts.map((o) => o.length).sort((a, b) => b - a);
+      const certa = (opts[q.correct_index ?? 0] ?? "").length;
+      if (certa === tamanhos[0] && certa >= 1.3 * tamanhos[1]) entregues += 1;
+    }
+  }
+  if (total >= 10 && entregues / total > 0.2) {
+    warn(subject.name, `em ${entregues} de ${total} questões a certa é bem mais longa que todas as outras (${Math.round((100 * entregues) / total)}%): iguale o tamanho das alternativas`);
+  }
+}
+
 function checkModules(subject) {
   const modules = subject.lessons.map((lesson) => lesson.module?.trim() || null);
   const named = modules.filter(Boolean);
@@ -1007,6 +1034,7 @@ for (const file of arquivos) {
   // usa o vocabulário da básica e o dela.
   const jargon = letra ? JARGON.filter(([, , scope]) => [...letra].some((c) => scope.includes(c))) : [];
   checkModules(subject);
+  checkLongestAnswer(subject);
   for (const lesson of subject.lessons) {
     lessonCount++;
     const L = `${subject.name} › ${lesson.title}`;

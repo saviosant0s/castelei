@@ -224,8 +224,10 @@ export interface WritingCheckResponse {
   };
   model: string | null;
   checklist: string[];
-  /** A correção por IA existe neste servidor (há chave configurada). */
+  /** A correção por IA existe e esta conta pode usar. */
   ai: boolean;
+  /** A correção existe, mas é do Pro: a tela mostra o convite em vez do botão. */
+  ai_locked?: boolean;
 }
 
 export interface LanguageIssue {

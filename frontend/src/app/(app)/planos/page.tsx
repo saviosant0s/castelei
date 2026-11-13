@@ -40,6 +40,7 @@ const plans = [
       "Muito mais questões por lição",
       "Criar turmas e acompanhar os alunos",
       "Abrir qualquer lição, sem seguir a ordem",
+      "Correção da redação por IA, dentro do app",
     ],
   },
 ] as const;

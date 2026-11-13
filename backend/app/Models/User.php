@@ -138,6 +138,11 @@ class User extends Authenticatable
         return $this->isAdmin() || Plans::canSkipLessons($this->accessPlan(), $this->seesRealPlan());
     }
 
+    public function hasWritingAi(): bool
+    {
+        return Plans::hasWritingAi($this->accessPlan(), $this->seesRealPlan());
+    }
+
     public function hasClassrooms(): bool
     {
         return Plans::hasClassrooms($this->accessPlan(), $this->seesRealPlan());

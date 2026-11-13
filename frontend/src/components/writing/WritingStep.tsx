@@ -1,7 +1,8 @@
 "use client";
 
 import { useMemo, useRef, useState } from "react";
-import { AlertCircle, Bot, Check, CircleDashed, ClipboardCopy, FileText, Lightbulb, ListChecks, SkipForward, SpellCheck } from "lucide-react";
+import Link from "next/link";
+import { AlertCircle, Bot, Check, CircleDashed, ClipboardCopy, FileText, Lightbulb, ListChecks, Lock, SkipForward, SpellCheck } from "lucide-react";
 import { messageOf, postJson } from "@/lib/client";
 import { aiPrompt, checkWriting, type WritingBrief } from "@/lib/writing";
 import type { AnswerResult, LanguageIssue, PracticeQuestion, WritingCheckResponse, WritingReviewResponse } from "@/lib/types";
@@ -361,6 +362,11 @@ export function WritingStep({
                   <button type="button" onClick={corrigirComIa} disabled={ai.loading} className="btn btn-primary">
                     <Bot className="size-5" aria-hidden="true" /> {ai.loading ? "Lendo o seu texto…" : "Corrigir com IA aqui"}
                   </button>
+                )}
+                {!check.ai && check.ai_locked && (
+                  <Link href="/planos" className="btn btn-ghost border-2 border-ink/15">
+                    <Lock className="size-5" aria-hidden="true" /> Corrigir aqui: Pro
+                  </Link>
                 )}
               </div>
               {copied && <p className="mt-2 text-sm text-content-secondary" role="status">Cole no ChatGPT, no Claude ou na IA que você preferir.</p>}
