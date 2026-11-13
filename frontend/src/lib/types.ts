@@ -152,7 +152,11 @@ export interface LessonStep {
   /** palavras novas explicadas nesta etapa */
   terms?: { word: string; meaning: string }[];
   /** figura (SVG do próprio app), com texto alternativo e legenda */
-  figure?: { src: string; alt: string; caption?: string };
+  /**
+   * `credit`: de quem é a foto e sob qual licença. Foto real com licença livre
+   * (Wikimedia Commons) exige o crédito; desenho do próprio app não leva.
+   */
+  figure?: { src: string; alt: string; caption?: string; credit?: { author: string; license: string; url: string } };
   /** trecho de código, mostrado em fonte monoespaçada */
   /** `notes`: uma tradução por linha de código, na ordem. Ver `StepCode`. */
   code?: { label?: string; text: string; notes?: string[] };

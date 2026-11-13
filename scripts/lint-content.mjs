@@ -1069,6 +1069,11 @@ for (const file of arquivos) {
         if (!f.caption) warn(W, "figura sem legenda");
         if (!f.src?.startsWith("/figuras/") || !existsSync(join(publicDir, f.src))) fail(W, `arquivo da figura não encontrado: ${f.src}`);
         if (f.caption) checkProse(`${W} (legenda)`, f.caption);
+        // Foto real (Wikimedia Commons e afins): a licença livre exige crédito completo.
+        if (/\.(jpe?g|png|webp)$/i.test(f.src ?? "")) {
+          const c = f.credit;
+          if (!c?.author || !c?.license || !c?.url) fail(W, `foto sem crédito completo (author, license e url): ${f.src}`);
+        }
         if (SOURCE_REF.test(f.alt ?? "")) fail(W, "o texto alternativo cita livro ou fonte");
       }
       if (step.code && !String(step.code.text ?? "").trim()) fail(W, "bloco de código vazio");

@@ -268,9 +268,24 @@ export function LessonStepper({ lesson }: { lesson: LessonDetail }) {
               className="h-auto w-full rounded-xl bg-sheet"
               loading="lazy"
             />
-            {step.figure.caption && (
+            {(step.figure.caption || step.figure.credit) && (
               <figcaption className="mt-2 px-2 pb-1 text-sm text-ink/70">
                 {step.figure.caption}
+                {/*
+                  Foto real com licença livre pede o crédito do autor. Fica numa
+                  linha pequena, depois da legenda: é exigência da licença, não
+                  parte da explicação.
+                */}
+                {step.figure.credit && (
+                  <a
+                    href={step.figure.credit.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 block text-xs text-content-subtle underline-offset-2 hover:underline"
+                  >
+                    Foto: {step.figure.credit.author} · {step.figure.credit.license}
+                  </a>
+                )}
               </figcaption>
             )}
           </figure>

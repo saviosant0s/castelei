@@ -461,6 +461,22 @@ class ContentValidator
         }
 
         $this->optionalText($figure['caption'] ?? null, "{$path}.caption", max: 300);
+
+        /*
+        | Crédito de foto real (autor, licença e link da página da foto). A
+        | licença livre exige; um crédito pela metade não cumpre a licença.
+        */
+        if (array_key_exists('credit', $figure)) {
+            $credit = $figure['credit'];
+            if (! is_array($credit) || array_is_list($credit)) {
+                $this->error("{$path}.credit", 'O crédito precisa ter "author", "license" e "url".');
+
+                return;
+            }
+            foreach (['author', 'license', 'url'] as $campo) {
+                $this->text($credit[$campo] ?? null, "{$path}.credit.{$campo}", max: 300);
+            }
+        }
     }
 
     private function video(mixed $video, string $path): void
