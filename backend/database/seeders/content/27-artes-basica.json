@@ -9,6 +9,11 @@
       "title": "As linguagens da arte",
       "module": "Olhar a arte",
       "summary": "A arte se expressa em várias linguagens: visual, música, teatro e dança. Cada uma usa materiais próprios, e todas comunicam ideias e emoções.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=3n_NxEnELZc",
+        "title": "O que são linguagens da Arte?",
+        "channel": "Pra falar de Arte-Educação"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -355,6 +360,11 @@
       "title": "Cor, forma e composição",
       "module": "Olhar a arte",
       "summary": "Ponto, linha, forma e cor são as peças da imagem. As cores primárias formam as outras, as complementares se realçam e a perspectiva cria profundidade.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=bmpj90robWM",
+        "title": "CORES FRIAS E QUENTES - AULA DE ARTE - Atividade prática + Teoria - Passo-a-passo e fácil - online",
+        "channel": "Arte que me invade - aulas de Arte"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -733,10 +743,764 @@
       ]
     },
     {
+      "slug": "escultura",
+      "title": "Escultura: a arte que ocupa espaço",
+      "module": "Olhar a arte",
+      "summary": "A escultura é arte em três dimensões: dá para andar em volta dela. A lição mostra os dois jeitos de esculpir (tirar e juntar) e o relevo. Mostra também o vazio como parte da obra e escultores como Michelangelo, Rodin e Aleijadinho.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=PoTaviPvZps",
+        "title": "O QUE É ESCULTURA? AULA DE ARTE. EXPLICAÇÃO",
+        "channel": "ARTE PARA VIDA!"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Tirar o que sobra",
+          "body": [
+            "Conta-se que um escultor, perguntado sobre como fazia um cavalo de pedra, respondeu: é só tirar tudo o que não é cavalo.",
+            "A piada esconde uma verdade. Esculpir pode ser tirar, mas também pode ser juntar. Esta lição mostra os dois caminhos."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Três dimensões",
+          "body": [
+            "Uma pintura tem altura e largura. A escultura tem também profundidade: ocupa espaço, e a gente pode andar em volta dela.",
+            "Por isso a luz muda a escultura. A sombra de um nariz de mármore muda conforme o sol anda, e a obra parece outra de manhã e de tarde."
+          ],
+          "terms": [
+            {
+              "word": "escultura",
+              "meaning": "a obra de arte em três dimensões (altura, largura e profundidade), que ocupa espaço."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Tirar ou juntar",
+          "body": [
+            "Há dois jeitos básicos de esculpir. No primeiro, o escultor parte de um bloco de pedra ou de madeira e vai tirando material. Errou um golpe, não tem volta.",
+            "No segundo, ele junta material: modela barro ou cera, ou solda pedaços de metal. A estátua de bronze nasce assim, de um molde onde se derrama o metal derretido."
+          ],
+          "terms": [
+            {
+              "word": "fundição",
+              "meaning": "o jeito de fazer escultura de metal: derramar o metal derretido num molde e esperar esfriar."
+            }
+          ],
+          "table": {
+            "label": "Os dois caminhos",
+            "headers": [
+              "Jeito",
+              "Material",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "tirar",
+                "pedra, madeira",
+                "estátua de mármore"
+              ],
+              [
+                "juntar",
+                "barro, cera, metal",
+                "estátua de bronze"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Relevo e vulto",
+          "body": [
+            "Nem toda escultura se solta da parede. No relevo, as figuras saem de um fundo, como nas portas de igrejas e nas moedas.",
+            "A escultura de vulto redondo é a que fica solta, e pode ser vista de todos os lados. A moeda tem relevo; a estátua da praça é de vulto redondo."
+          ],
+          "terms": [
+            {
+              "word": "relevo",
+              "meaning": "a escultura em que as figuras saem de um fundo e não podem ser vistas por trás, como numa moeda."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Três escultores",
+          "body": [
+            "Michelangelo esculpiu o Davi em mármore, entre 1501 e 1504, com mais de cinco metros. O francês Rodin fez O pensador em bronze no fim do século XIX. A superfície ficou cheia de marcas da mão.",
+            "No Brasil, Aleijadinho esculpiu doze profetas em pedra-sabão no começo do século XIX. Eles estão em Congonhas (Minas Gerais). Fez isso doente, com as ferramentas amarradas às mãos, segundo a tradição."
+          ],
+          "table": {
+            "label": "Obras e materiais",
+            "headers": [
+              "Obra",
+              "Autor",
+              "Material"
+            ],
+            "rows": [
+              [
+                "Davi",
+                "Michelangelo",
+                "mármore"
+              ],
+              [
+                "O pensador",
+                "Rodin",
+                "bronze"
+              ],
+              [
+                "Os profetas",
+                "Aleijadinho",
+                "pedra-sabão"
+              ]
+            ]
+          },
+          "figure": {
+            "src": "/figuras/artes/davi.jpg",
+            "alt": "Estátua de mármore branco de um jovem nu, em pé, com o peso numa perna, a cabeça virada para o lado e uma funda apoiada no ombro.",
+            "caption": "O Davi, de Michelangelo (1501 a 1504): mais de cinco metros de mármore, esculpidos tirando pedra de um bloco só.",
+            "credit": {
+              "author": "Jörg Bittner Unna",
+              "license": "CC BY-SA 3.0",
+              "url": "https://commons.wikimedia.org/wiki/File:%27David%27_by_Michelangelo_Fir_JBU005_denoised.jpg"
+            }
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O vazio também é forma",
+          "body": [
+            "No século XX, escultores perceberam que o buraco também esculpe. A inglesa Barbara Hepworth e o inglês Henry Moore abriram furos nas suas peças.",
+            "No Brasil, Amilcar de Castro dobrava e cortava chapas de ferro, sem soldar nada. A obra passou a ser também o espaço que ela abraça."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mostra uma escultura e pergunta o material, o modo de fazer ou o que a diferencia de uma pintura."
+          ],
+          "bullets": [
+            "“Diferentemente da pintura, a escultura…”",
+            "“Os profetas de Congonhas foram feitos em…”",
+            "“No relevo, as figuras…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que toda escultura é feita tirando material. A de bronze nasce num molde.",
+            "Confundir relevo com vulto redondo. O relevo não se solta do fundo.",
+            "Dizer que os profetas de Aleijadinho são de mármore. São de pedra-sabão."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A escultura tem três dimensões e muda com a luz. Esculpe-se tirando material da pedra ou da madeira. Ou juntando barro, cera e metal, como na fundição do bronze.",
+            "No relevo, as figuras saem de um fundo. Michelangelo fez o Davi em mármore; Rodin, O pensador em bronze; Aleijadinho, os profetas em pedra-sabão."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Dimensões",
+          "statement": "O que diferencia a escultura da pintura é que a escultura:",
+          "options": [
+            "tem profundidade e ocupa espaço",
+            "só pode ser feita em mármore branco",
+            "nunca mostra pessoas nem bichos",
+            "usa sempre muitas cores fortes",
+            "é sempre pendurada numa parede"
+          ],
+          "correct_index": 0,
+          "explanation": "Dá para andar em volta dela.",
+          "pitfall": "Pode ser de muitos materiais."
+        },
+        {
+          "topic": "Tirar",
+          "statement": "Esculpir uma estátua num bloco de mármore é um jeito de:",
+          "options": [
+            "juntar material",
+            "tirar material",
+            "derreter metal num molde",
+            "colar papel",
+            "pintar uma tela"
+          ],
+          "correct_index": 1,
+          "explanation": "Errou um golpe, não tem volta.",
+          "pitfall": "Juntar é o barro e o metal."
+        },
+        {
+          "topic": "Bronze",
+          "statement": "Uma estátua de bronze costuma ser feita por:",
+          "options": [
+            "golpes de martelo num bloco de pedra",
+            "pintura numa parede ainda úmida",
+            "fundição, com metal derretido num molde",
+            "recorte de papel colorido",
+            "costura de tecido grosso"
+          ],
+          "correct_index": 2,
+          "explanation": "O metal esfria e toma a forma.",
+          "pitfall": "Golpes em pedra é o mármore."
+        },
+        {
+          "topic": "Relevo",
+          "statement": "No relevo, as figuras:",
+          "options": [
+            "ficam soltas no meio da praça",
+            "são pintadas sem nenhum volume",
+            "flutuam presas por fios no teto",
+            "saem de um fundo e não se veem por trás",
+            "são feitas só de vidro colorido"
+          ],
+          "correct_index": 3,
+          "explanation": "Como numa moeda.",
+          "pitfall": "Solta é o vulto redondo."
+        },
+        {
+          "topic": "Davi",
+          "statement": "O Davi de Michelangelo foi esculpido em:",
+          "options": [
+            "bronze",
+            "barro",
+            "pedra-sabão",
+            "madeira",
+            "mármore"
+          ],
+          "correct_index": 4,
+          "explanation": "Entre 1501 e 1504.",
+          "pitfall": "Pedra-sabão é de Aleijadinho."
+        },
+        {
+          "topic": "Profetas",
+          "statement": "Os doze profetas de Aleijadinho, em Congonhas, são de:",
+          "options": [
+            "pedra-sabão",
+            "mármore italiano",
+            "bronze",
+            "barro cru",
+            "ferro"
+          ],
+          "correct_index": 0,
+          "explanation": "Uma pedra macia de Minas Gerais.",
+          "pitfall": "Mármore é a pegadinha."
+        },
+        {
+          "topic": "Luz",
+          "statement": "Uma escultura parece diferente de manhã e de tarde porque:",
+          "options": [
+            "o material troca de cor sozinho",
+            "a luz e as sombras mudam com o sol",
+            "ela é girada todo dia por alguém",
+            "o escultor a repinta toda semana",
+            "a pedra encolhe com o calor do dia"
+          ],
+          "correct_index": 1,
+          "explanation": "Ela tem volume.",
+          "pitfall": "O material não muda."
+        },
+        {
+          "topic": "Vazio",
+          "statement": "Escultores do século XX, como Henry Moore, passaram a usar:",
+          "options": [
+            "só pinturas na parede",
+            "apenas mármore polido sem furo",
+            "o vazio e os furos como parte da obra",
+            "fotografias coladas na pedra",
+            "tinta a óleo sobre tela"
+          ],
+          "correct_index": 2,
+          "explanation": "O buraco também esculpe.",
+          "pitfall": "Eles furaram as peças."
+        },
+        {
+          "topic": "Vulto",
+          "statement": "Uma estátua solta numa praça, vista de todos os lados, é de:",
+          "options": [
+            "relevo raso",
+            "pintura",
+            "gravura em metal",
+            "vulto redondo",
+            "mosaico"
+          ],
+          "correct_index": 3,
+          "explanation": "Ela se solta do fundo.",
+          "pitfall": "Relevo fica preso ao fundo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Pensador",
+          "statement": "O pensador, de Rodin, é feito de:",
+          "options": [
+            "pedra-sabão",
+            "papel",
+            "vidro",
+            "barro cru",
+            "bronze"
+          ],
+          "correct_index": 4,
+          "explanation": "Fundido em molde.",
+          "pitfall": "Pedra-sabão é de Aleijadinho.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Juntar",
+          "statement": "Modelar uma figura em barro é um jeito de esculpir:",
+          "options": [
+            "juntando material",
+            "tirando material de um bloco",
+            "pintando uma tela",
+            "derrubando uma parede",
+            "gravando um vídeo"
+          ],
+          "correct_index": 0,
+          "explanation": "O barro vai sendo somado.",
+          "pitfall": "Tirar é o caminho da pedra.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Amilcar",
+          "statement": "Amilcar de Castro fazia esculturas:",
+          "options": [
+            "esculpindo mármore como no Renascimento",
+            "dobrando e cortando chapas de ferro",
+            "pintando telas a óleo",
+            "modelando cera de abelha",
+            "soldando milhares de peças pequenas"
+          ],
+          "correct_index": 1,
+          "explanation": "Sem soldar nada.",
+          "pitfall": "Ele não soldava.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Moeda",
+          "statement": "A figura de uma moeda e a estátua da praça são, respectivamente:",
+          "options": [
+            "vulto redondo e relevo",
+            "pintura e gravura",
+            "relevo e vulto redondo",
+            "relevo e pintura",
+            "mosaico e relevo"
+          ],
+          "correct_index": 2,
+          "explanation": "A moeda não se vê por trás.",
+          "pitfall": "A ordem trocada é a pegadinha.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Errar",
+          "statement": "Na escultura em pedra, um golpe errado é mais grave que no barro porque:",
+          "options": [
+            "a pedra muda de cor quando é batida",
+            "o barro nunca seca sozinho",
+            "a pedra derrete com o sol forte",
+            "o material tirado não volta",
+            "o barro só serve para fazer relevo"
+          ],
+          "correct_index": 3,
+          "explanation": "Tirar é um caminho sem volta.",
+          "pitfall": "Não é questão de cor.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "figurativo-e-abstrato",
+      "title": "Figurativo e abstrato: quando a pintura não mostra nada",
+      "module": "Olhar a arte",
+      "summary": "Uma pintura pode mostrar coisas que se reconhecem (pessoas, paisagens). Ou pode mostrar só cores, linhas e formas. A lição explica a diferença, os elementos da linguagem visual e os pioneiros da arte abstrata, como Kandinsky e Mondrian.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=IN7NCQZsaro",
+        "title": "ABSTRACIONISMO",
+        "channel": "Caminhos da Linguagem"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Isso eu também fazia",
+          "body": [
+            "Diante de um quadro só com quadrados coloridos, muita gente diz: isso até eu fazia.",
+            "Talvez. Mas alguém precisou ter a ideia de que uma pintura podia não mostrar coisa nenhuma, e ainda assim dizer algo. Esta lição mostra de onde veio essa ideia."
+          ],
+          "figure": {
+            "src": "/figuras/artes/mondrian.jpg",
+            "alt": "Um quadrado branco dividido por linhas retas pretas, com um grande retângulo vermelho no alto, um pequeno azul embaixo à esquerda e um amarelo no canto.",
+            "caption": "Composição com vermelho, azul e amarelo, de Mondrian (1930): só linhas retas pretas e três cores puras.",
+            "credit": {
+              "author": "Piet Mondrian",
+              "license": "Public domain",
+              "url": "https://commons.wikimedia.org/wiki/File:Piet_Mondriaan,_1930_-_Mondrian_Composition_II_in_Red,_Blue,_and_Yellow.jpg"
+            }
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Figurativo e abstrato",
+          "body": [
+            "Arte figurativa é a que representa coisas reconhecíveis: um rosto, uma árvore, uma rua. A maior parte da arte da história é figurativa.",
+            "Arte abstrata não tenta mostrar nada do mundo. Ela usa só cor, linha e forma. O que conta é a relação entre elas, como numa música sem letra."
+          ],
+          "terms": [
+            {
+              "word": "arte figurativa",
+              "meaning": "a arte que representa coisas que se reconhecem, como pessoas, objetos e paisagens."
+            },
+            {
+              "word": "arte abstrata",
+              "meaning": "a arte que não representa coisas do mundo e usa só cores, linhas e formas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As peças da linguagem visual",
+          "body": [
+            "Toda imagem, figurativa ou abstrata, é feita de alguns elementos básicos. As peças com que o artista monta a obra são cinco (ponto, linha, forma, cor e textura).",
+            "Na arte abstrata, essas peças aparecem sozinhas, sem fingir que são outra coisa. Uma linha é só uma linha, e pode transmitir calma ou agitação."
+          ],
+          "table": {
+            "label": "Os elementos visuais",
+            "headers": [
+              "Elemento",
+              "Exemplo do efeito"
+            ],
+            "rows": [
+              [
+                "ponto",
+                "chama a atenção para um lugar"
+              ],
+              [
+                "linha",
+                "reta acalma; quebrada agita"
+              ],
+              [
+                "forma",
+                "geométrica é rígida; curva é suave"
+              ],
+              [
+                "cor",
+                "quente aproxima; fria afasta"
+              ],
+              [
+                "textura",
+                "lisa ou áspera, ao toque e à vista"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Kandinsky e Mondrian",
+          "body": [
+            "O russo Wassily Kandinsky pintou algumas das primeiras obras abstratas, por volta de 1910. Ele comparava a pintura à música: cada cor teria um som e uma emoção.",
+            "O holandês Piet Mondrian foi por outro caminho. Usou só linhas retas pretas e as cores primárias (vermelho, azul e amarelo). Buscava uma ordem pura, sem nada do mundo."
+          ],
+          "terms": [
+            {
+              "word": "cores primárias",
+              "meaning": "as cores que não se obtêm misturando outras. Na pintura tradicional, vermelho, azul e amarelo."
+            }
+          ],
+          "table": {
+            "label": "Dois jeitos de ser abstrato",
+            "headers": [
+              "",
+              "Kandinsky",
+              "Mondrian"
+            ],
+            "rows": [
+              [
+                "formas",
+                "livres e curvas",
+                "retângulos e linhas retas"
+              ],
+              [
+                "sensação",
+                "música, emoção",
+                "ordem, equilíbrio"
+              ],
+              [
+                "cores",
+                "muitas",
+                "primárias, branco e preto"
+              ]
+            ]
+          },
+          "figure": {
+            "src": "/figuras/artes/kandinsky.jpg",
+            "alt": "Uma tela cheia de manchas, linhas e formas coloridas que se cruzam em todas as direções, sem nenhuma figura que se reconheça.",
+            "caption": "Composição VII, de Kandinsky (1913): formas livres e muitas cores, como uma música para os olhos.",
+            "credit": {
+              "author": "Wassily Kandinsky",
+              "license": "Public domain",
+              "url": "https://commons.wikimedia.org/wiki/File:Vassily_Kandinsky,_1913_-_Composition_7.jpg"
+            }
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Abstrato no Brasil",
+          "body": [
+            "Nos anos 1950, artistas brasileiros como Lygia Clark e Hélio Oiticica partiram da arte abstrata geométrica. Depois, levaram a forma para fora da tela, em obras que o público podia tocar e vestir.",
+            "Ou seja: abstrato não quer dizer sem sentido. Quer dizer que o sentido vem da cor e da forma, e não de uma figura."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mostra uma obra e pede se é figurativa ou abstrata, ou pergunta de onde vem o sentido numa pintura sem figuras."
+          ],
+          "bullets": [
+            "“A obra pode ser classificada como abstrata porque…”",
+            "“Na pintura de Mondrian, predominam…”",
+            "“Kandinsky aproximava a pintura da…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que abstrato é qualquer coisa feita sem pensar. A composição é planejada.",
+            "Dizer que toda arte moderna é abstrata. Muita arte moderna é figurativa.",
+            "Trocar Kandinsky por Mondrian. Kandinsky tem formas livres; Mondrian, linhas retas."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Arte figurativa mostra coisas reconhecíveis; arte abstrata usa só cor, linha e forma. As peças de toda imagem são cinco (ponto, linha, forma, cor e textura).",
+            "Kandinsky fez obras abstratas livres, pensando na música. Mondrian usou linhas retas e cores primárias. No Brasil, Lygia Clark e Hélio Oiticica levaram a forma para fora da tela."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Figurativa",
+          "statement": "Uma pintura de uma rua com pessoas e carros é:",
+          "options": [
+            "abstrata",
+            "sem nenhuma forma",
+            "uma escultura",
+            "figurativa",
+            "uma música"
+          ],
+          "correct_index": 3,
+          "explanation": "Mostra coisas reconhecíveis.",
+          "pitfall": "Abstrata não mostra coisas do mundo."
+        },
+        {
+          "topic": "Abstrata",
+          "statement": "A arte abstrata é aquela que:",
+          "options": [
+            "mostra pessoas com muito detalhe e luz",
+            "copia fotos de paisagens reais",
+            "usa só a cor preta",
+            "é feita sem nenhuma cor",
+            "usa só cor, linha e forma, sem mostrar coisas"
+          ],
+          "correct_index": 4,
+          "explanation": "Como música sem letra.",
+          "pitfall": "Pode ter muitas cores."
+        },
+        {
+          "topic": "Elementos",
+          "statement": "Os cinco itens (ponto, linha, forma, cor e textura) são:",
+          "options": [
+            "os elementos da linguagem visual",
+            "os movimentos da arte moderna",
+            "as partes de uma escultura grega",
+            "os nomes de cinco pintores",
+            "as notas de uma escala"
+          ],
+          "correct_index": 0,
+          "explanation": "Toda imagem é feita deles.",
+          "pitfall": "Não são movimentos."
+        },
+        {
+          "topic": "Kandinsky",
+          "statement": "Wassily Kandinsky comparava a pintura:",
+          "options": [
+            "à fotografia",
+            "à música",
+            "à arquitetura de igrejas",
+            "à escrita de leis",
+            "ao cinema mudo"
+          ],
+          "correct_index": 1,
+          "explanation": "Cada cor teria um som.",
+          "pitfall": "Foto é o oposto da abstração."
+        },
+        {
+          "topic": "Mondrian",
+          "statement": "As pinturas de Mondrian usam principalmente:",
+          "options": [
+            "formas livres e curvas, sem linha reta",
+            "rostos e paisagens",
+            "linhas retas pretas e cores primárias",
+            "manchas de luz ao ar livre",
+            "claro-escuro com fundo preto"
+          ],
+          "correct_index": 2,
+          "explanation": "Ordem pura.",
+          "pitfall": "Formas livres são de Kandinsky."
+        },
+        {
+          "topic": "Primárias",
+          "statement": "Na pintura tradicional, as cores primárias são:",
+          "options": [
+            "verde, roxo e laranja",
+            "preto, branco e cinza",
+            "rosa, marrom e bege",
+            "vermelho, azul e amarelo",
+            "azul, verde e roxo"
+          ],
+          "correct_index": 3,
+          "explanation": "Não se obtêm misturando outras.",
+          "pitfall": "Verde e laranja são misturas."
+        },
+        {
+          "topic": "Pioneiros",
+          "statement": "As primeiras obras abstratas da pintura apareceram por volta de:",
+          "options": [
+            "1400",
+            "1650",
+            "1874",
+            "2000",
+            "1910"
+          ],
+          "correct_index": 4,
+          "explanation": "Kandinsky foi um dos pioneiros.",
+          "pitfall": "1874 é bem antes, com os pintores da luz."
+        },
+        {
+          "topic": "Sentido",
+          "statement": "Numa obra abstrata, o sentido vem:",
+          "options": [
+            "da relação entre cores e formas",
+            "de uma figura escondida",
+            "do título obrigatório",
+            "da história do pintor só",
+            "de nada, ela não tem sentido"
+          ],
+          "correct_index": 0,
+          "explanation": "Abstrato não é sem sentido.",
+          "pitfall": "Não precisa de figura escondida."
+        },
+        {
+          "topic": "Retrato",
+          "statement": "Um retrato de uma mulher sorrindo é arte:",
+          "options": [
+            "abstrata",
+            "figurativa",
+            "sem forma",
+            "geométrica pura",
+            "musical"
+          ],
+          "correct_index": 1,
+          "explanation": "Mostra alguém reconhecível.",
+          "pitfall": "Abstrato não mostra pessoas.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Linha",
+          "statement": "Na linguagem visual, uma linha quebrada em zigue-zague costuma passar sensação de:",
+          "options": [
+            "calma total",
+            "silêncio",
+            "agitação",
+            "frio",
+            "sono"
+          ],
+          "correct_index": 2,
+          "explanation": "Reta acalma; quebrada agita.",
+          "pitfall": "Calma é da linha reta.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Brasil",
+          "statement": "Lygia Clark e Hélio Oiticica, nos anos 1950, partiram da:",
+          "options": [
+            "pintura renascentista",
+            "arte do Barroco mineiro",
+            "fotografia de guerra",
+            "arte abstrata geométrica",
+            "arte rupestre"
+          ],
+          "correct_index": 3,
+          "explanation": "Depois levaram a forma para fora da tela.",
+          "pitfall": "Arte de igrejas do século XVIII é outra época.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Diferença",
+          "statement": "A diferença principal entre Kandinsky e Mondrian é que Kandinsky usava:",
+          "options": [
+            "linhas retas, e Mondrian, formas livres",
+            "só preto e branco",
+            "fotografias coladas",
+            "perspectiva renascentista",
+            "formas livres e curvas, e Mondrian, linhas retas"
+          ],
+          "correct_index": 4,
+          "explanation": "A troca dos dois é a pegadinha.",
+          "pitfall": "Mondrian é o das linhas retas.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Moderna",
+          "statement": "Dizer que toda arte moderna é abstrata é um erro porque:",
+          "options": [
+            "muita arte moderna mostra figuras reconhecíveis",
+            "nenhuma arte moderna é abstrata, nem uma",
+            "a arte abstrata nasceu no Renascimento",
+            "a arte moderna não usa cor",
+            "só a fotografia é moderna"
+          ],
+          "correct_index": 0,
+          "explanation": "Van Gogh e Munch, por exemplo, mostram figuras.",
+          "pitfall": "Abstrato é uma parte, não o todo.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Até eu fazia",
+          "statement": "Diante de um quadro abstrato, a frase “até eu fazia” ignora que:",
+          "options": [
+            "o quadro é sempre caro demais para comprar",
+            "a composição é planejada e a ideia foi nova na época",
+            "a tinta é difícil de achar nas lojas",
+            "o artista copiou uma foto antiga",
+            "todo quadro abstrato é figurativo"
+          ],
+          "correct_index": 1,
+          "explanation": "Ter a ideia primeiro é parte da obra.",
+          "pitfall": "Não é sobre o preço.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "da-caverna-a-catedral",
       "title": "Da caverna à catedral: a arte antes do Renascimento",
       "module": "Movimentos da arte",
       "summary": "Muito antes dos museus, já se pintava em cavernas. A lição vai da arte rupestre ao Egito, à Grécia, a Roma e às catedrais da Idade Média.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=h2h24Q_J7M8",
+        "title": "🗿 Arte na Pré-história: Paleolítico e Neolítico - Mundo Artes - ENEM",
+        "channel": "MundoEdu ENEM"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -1092,6 +1856,11 @@
       "title": "Do Renascimento ao Surrealismo",
       "module": "Movimentos da arte",
       "summary": "Cada época teve seu jeito de fazer arte. Do equilíbrio do Renascimento ao drama do Barroco, da luz do Impressionismo aos sonhos do Surrealismo.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=ZoWRBhWZ1As",
+        "title": "História da arte em 20 minutos #VIVIEUVI",
+        "channel": "vivieuvi"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -1473,10 +2242,1434 @@
       ]
     },
     {
+      "slug": "renascimento",
+      "title": "O Renascimento: o ser humano no centro do quadro",
+      "module": "Movimentos da arte",
+      "summary": "Na Itália dos séculos XV e XVI, os artistas voltaram a estudar gregos e romanos e passaram a pintar o mundo como o olho vê. A lição mostra a perspectiva, o estudo do corpo e as obras de Leonardo, Michelangelo e Rafael.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=dVndoT87eTA",
+        "title": "RENASCIMENTO │ Artes",
+        "channel": "reVisão"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O sorriso mais famoso",
+          "body": [
+            "Milhões de pessoas viajam a Paris só para ver um quadro pequeno de uma mulher sorrindo. É a Mona Lisa, pintada há mais de quinhentos anos.",
+            "O que ela tem de tão especial? Ela parece uma pessoa de verdade, num espaço de verdade. Isso era novo na época, e é o coração desta lição."
+          ],
+          "figure": {
+            "src": "/figuras/artes/mona-lisa.jpg",
+            "alt": "Retrato de meio corpo de uma mulher de cabelos escuros, mãos cruzadas e um leve sorriso, com uma paisagem de montanhas e caminhos ao fundo, que vai ficando azulada e esfumada.",
+            "caption": "A Mona Lisa, de Leonardo da Vinci (começo do século XVI): o contorno esfumado do rosto e a paisagem que se perde ao longe.",
+            "credit": {
+              "author": "Leonardo da Vinci",
+              "license": "Public domain",
+              "url": "https://commons.wikimedia.org/wiki/File:Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg"
+            }
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Renascer o mundo antigo",
+          "body": [
+            "O Renascimento foi um movimento que começou na Itália, por volta de 1400. Artistas e pensadores voltaram a estudar a arte e os textos da Grécia e de Roma antigas.",
+            "Eles passaram a pôr o ser humano no centro, e não só Deus. Cidades ricas, como Florença, e famílias de banqueiros pagavam os artistas: eram os mecenas."
+          ],
+          "terms": [
+            {
+              "word": "Renascimento",
+              "meaning": "o movimento artístico e cultural que começou na Itália por volta de 1400 e retomou a arte e as ideias da Grécia e de Roma antigas."
+            },
+            {
+              "word": "mecenas",
+              "meaning": "a pessoa rica que paga e protege artistas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A perspectiva: profundidade no plano",
+          "body": [
+            "Os pintores do Renascimento aprenderam a criar a ilusão de profundidade numa superfície plana. As linhas do quadro se encontram num ponto lá no fundo, e o que está longe fica menor.",
+            "Essa técnica se chama perspectiva. Na Idade Média, o tamanho das figuras mostrava a importância delas; no Renascimento, mostra a distância."
+          ],
+          "terms": [
+            {
+              "word": "perspectiva",
+              "meaning": "a técnica de desenhar objetos com a aparência de profundidade, fazendo as linhas se encontrarem num ponto de fuga."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Leonardo, Michelangelo e Rafael",
+          "body": [
+            "Leonardo da Vinci era pintor, engenheiro e estudioso do corpo humano. Na Mona Lisa, ele usou o esfumado: contornos suaves e sem linha dura, como na vista real.",
+            "Michelangelo pintou o teto da Capela Sistina, em Roma, e esculpiu o Davi. Rafael pintou a Escola de Atenas, um grande encontro dos filósofos gregos num prédio em perspectiva."
+          ],
+          "terms": [
+            {
+              "word": "esfumado",
+              "meaning": "a técnica de pintar contornos suaves e esfumaçados, sem linhas duras, usada por Leonardo da Vinci."
+            }
+          ],
+          "table": {
+            "label": "Os três mestres",
+            "headers": [
+              "Artista",
+              "Obra famosa"
+            ],
+            "rows": [
+              [
+                "Leonardo da Vinci",
+                "Mona Lisa"
+              ],
+              [
+                "Michelangelo",
+                "o teto da Capela Sistina"
+              ],
+              [
+                "Rafael",
+                "Escola de Atenas"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Como reconhecer uma obra renascentista",
+          "body": [
+            "Algumas marcas ajudam: perspectiva com ponto de fuga, corpos com músculos e proporções estudados, composição equilibrada e temas religiosos ou da Antiguidade.",
+            "A luz é calma e o quadro parece em ordem. Esse equilíbrio é o que o movimento seguinte vai sacudir."
+          ],
+          "terms": [
+            {
+              "word": "Barroco",
+              "meaning": "o estilo do século XVII, que veio depois do Renascimento. Tem drama, curvas e contraste forte de luz e sombra."
+            }
+          ],
+          "example": {
+            "label": "Marcas de uma obra renascentista",
+            "lines": [
+              "Profundidade, com perspectiva.",
+              "Corpo humano estudado e proporcional.",
+              "Composição equilibrada, sem exagero.",
+              "Temas religiosos e da Grécia e de Roma."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mostra uma obra e pede o movimento, ou pergunta o que mudou em relação à arte medieval. A perspectiva e o ser humano no centro são as respostas mais cobradas."
+          ],
+          "bullets": [
+            "“Uma característica da pintura renascentista é…”",
+            "“O uso da perspectiva permitiu…”",
+            "“O mecenato contribuiu para o Renascimento porque…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que o Renascimento abandonou a religião. Os temas religiosos continuaram, com o ser humano mais presente.",
+            "Dizer que a perspectiva já era usada na Idade Média. Ela foi sistematizada no Renascimento.",
+            "Trocar os mestres. A Capela Sistina é de Michelangelo; a Mona Lisa, de Leonardo."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O Renascimento começou na Itália por volta de 1400, retomando a Grécia e Roma e pondo o ser humano no centro. Mecenas ricos pagavam os artistas.",
+            "A perspectiva criou profundidade no plano. Leonardo pintou a Mona Lisa; Michelangelo, a Capela Sistina; Rafael, a Escola de Atenas."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Onde",
+          "statement": "O Renascimento começou:",
+          "options": [
+            "na Itália, por volta de 1400",
+            "na França, em 1789",
+            "no Brasil, em 1922",
+            "no Egito antigo",
+            "na Inglaterra, em 1900"
+          ],
+          "correct_index": 0,
+          "explanation": "Florença foi um dos centros.",
+          "pitfall": "1922 é a Semana de Arte Moderna."
+        },
+        {
+          "topic": "Retomar",
+          "statement": "Os artistas do Renascimento retomaram a arte:",
+          "options": [
+            "dos povos indígenas",
+            "da Grécia e de Roma antigas",
+            "do Egito, e só dele",
+            "da China medieval",
+            "das pinturas das cavernas"
+          ],
+          "correct_index": 1,
+          "explanation": "Daí o nome: renascer.",
+          "pitfall": "Não foi a arte das cavernas."
+        },
+        {
+          "topic": "Perspectiva",
+          "statement": "A perspectiva é a técnica de:",
+          "options": [
+            "pintar só com uma cor",
+            "esculpir em mármore",
+            "criar a ilusão de profundidade",
+            "pintar sem nenhuma figura",
+            "usar só linhas retas"
+          ],
+          "correct_index": 2,
+          "explanation": "As linhas se encontram num ponto de fuga.",
+          "pitfall": "Não tem a ver com a cor."
+        },
+        {
+          "topic": "Mecenas",
+          "statement": "Um mecenas era:",
+          "options": [
+            "um tipo de tinta a óleo",
+            "um pintor da Idade Média",
+            "um prédio famoso de Florença",
+            "um rico que pagava artistas",
+            "o nome de uma escultura"
+          ],
+          "correct_index": 3,
+          "explanation": "Famílias de banqueiros faziam isso.",
+          "pitfall": "Não é técnica nem obra."
+        },
+        {
+          "topic": "Mona Lisa",
+          "statement": "A Mona Lisa foi pintada por:",
+          "options": [
+            "Michelangelo",
+            "Rafael Sanzio",
+            "Claude Monet",
+            "Vincent van Gogh",
+            "Leonardo da Vinci"
+          ],
+          "correct_index": 4,
+          "explanation": "Ele usou o esfumado.",
+          "pitfall": "Michelangelo pintou a Capela Sistina."
+        },
+        {
+          "topic": "Sistina",
+          "statement": "O teto da Capela Sistina foi pintado por:",
+          "options": [
+            "Michelangelo",
+            "Leonardo da Vinci",
+            "Rafael",
+            "Caravaggio",
+            "Monet"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele também esculpiu o Davi.",
+          "pitfall": "Não troque os mestres."
+        },
+        {
+          "topic": "Esfumado",
+          "statement": "O esfumado, usado por Leonardo, é:",
+          "options": [
+            "pintar com fumaça de verdade",
+            "pintar contornos suaves",
+            "usar só as cores escuras",
+            "desenhar linhas grossas",
+            "pintar só com os dedos"
+          ],
+          "correct_index": 1,
+          "explanation": "Como a vista real, sem contorno.",
+          "pitfall": "Não é fumaça de verdade."
+        },
+        {
+          "topic": "Ser humano",
+          "statement": "Uma ideia central do Renascimento era:",
+          "options": [
+            "proibir temas religiosos",
+            "pintar só animais",
+            "pôr o ser humano no centro",
+            "abandonar o estudo do corpo",
+            "copiar a arte das cavernas"
+          ],
+          "correct_index": 2,
+          "explanation": "Os temas religiosos continuaram.",
+          "pitfall": "A religião não foi proibida."
+        },
+        {
+          "topic": "Escola de Atenas",
+          "statement": "A Escola de Atenas, que reúne filósofos gregos num prédio em perspectiva, é de:",
+          "options": [
+            "Leonardo da Vinci",
+            "Michelangelo",
+            "Monet",
+            "Rafael",
+            "Rembrandt"
+          ],
+          "correct_index": 3,
+          "explanation": "Rafael é o terceiro dos grandes mestres.",
+          "pitfall": "Rembrandt é do Barroco.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Idade Média",
+          "statement": "Na arte medieval, o tamanho das figuras mostrava:",
+          "options": [
+            "a distância delas",
+            "a cor delas",
+            "a idade do pintor",
+            "o preço da obra",
+            "a importância delas"
+          ],
+          "correct_index": 4,
+          "explanation": "No Renascimento, passou a mostrar a distância.",
+          "pitfall": "Distância é do Renascimento.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Linha do tempo",
+          "format": "order",
+          "statement": "Coloque na ordem em que surgiram.",
+          "options": [
+            "arte medieval",
+            "Renascimento",
+            "Impressionismo",
+            "Semana de Arte Moderna"
+          ],
+          "explanation": "Do século XV ao XX.",
+          "pitfall": "A Semana de 22 é a mais recente.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Equilíbrio",
+          "statement": "Comparada à arte que veio depois, a obra renascentista costuma ter:",
+          "options": [
+            "composição equilibrada e calma",
+            "muito drama e contraste forte",
+            "cores puras sem desenho",
+            "formas geométricas abstratas",
+            "figuras distorcidas"
+          ],
+          "correct_index": 0,
+          "explanation": "O drama vem no movimento seguinte.",
+          "pitfall": "Contraste forte é do Barroco.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Religião",
+          "statement": "Dizer que o Renascimento abandonou a religião é um erro porque:",
+          "options": [
+            "toda obra renascentista é religiosa e nada mais",
+            "os temas religiosos continuaram, com mais ser humano",
+            "a Igreja proibiu a pintura nessa época",
+            "os artistas só pintavam os deuses gregos",
+            "o movimento aconteceu dentro de uma igreja só"
+          ],
+          "correct_index": 1,
+          "explanation": "A Capela Sistina é religiosa.",
+          "pitfall": "Mudou o olhar, não o tema.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Por que real",
+          "statement": "A Mona Lisa parece uma pessoa num espaço real principalmente por causa:",
+          "options": [
+            "do tamanho enorme que o quadro tem",
+            "das cores fortes e puras",
+            "do esfumado e da paisagem em perspectiva",
+            "das linhas grossas do contorno",
+            "de ser pintada em cima de pedra"
+          ],
+          "correct_index": 2,
+          "explanation": "O quadro é pequeno.",
+          "pitfall": "Cores puras são de outro movimento.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "barroco-europeu",
+      "title": "O Barroco: drama, luz e sombra",
+      "module": "Movimentos da arte",
+      "summary": "Depois do equilíbrio do Renascimento, a arte do século XVII quis emocionar. A lição mostra o contraste forte entre luz e sombra, o movimento das figuras e as obras de Caravaggio, Rembrandt e Bernini.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=5-tQS59DRFg",
+        "title": "ARTE BARROCA: o movimento artístico que marcou o Brasil e a Europa",
+        "channel": "Toda Matéria"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Uma luz de holofote",
+          "body": [
+            "Imagine um palco escuro e um holofote acendendo só sobre um rosto. Você olha para lá na hora.",
+            "Os pintores do século XVII fizeram isso com tinta. Eles queriam que o quadro pegasse o público pela emoção."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Uma arte para emocionar",
+          "body": [
+            "O Barroco é o estilo que dominou a arte europeia no século XVII e em parte do XVIII. Ele troca o equilíbrio calmo do Renascimento pelo drama e pelo movimento.",
+            "Foi também uma arte da Igreja Católica, que queria emocionar os fiéis depois da divisão com os protestantes. Igrejas cheias de ouro, curvas e anjos são marcas dele."
+          ],
+          "terms": [
+            {
+              "word": "Barroco",
+              "meaning": "o estilo de arte do século XVII que busca a emoção, com contraste forte entre luz e sombra, curvas e movimento."
+            },
+            {
+              "word": "Renascimento",
+              "meaning": "o movimento que começou na Itália por volta de 1400, com equilíbrio e o ser humano no centro."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Luz e sombra, lado a lado",
+          "body": [
+            "A marca mais forte da pintura barroca é o contraste entre luz e sombra, chamado de claro-escuro. O fundo fica quase preto, e a luz cai forte sobre o que importa.",
+            "Caravaggio foi o mestre disso. Na Vocação de São Mateus, um raio de luz entra pela janela. Junto com a mão de Cristo, ele aponta quem vai ser chamado."
+          ],
+          "terms": [
+            {
+              "word": "claro-escuro",
+              "meaning": "o contraste forte entre áreas muito iluminadas e áreas muito escuras numa pintura."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/artes/caravaggio-mateus.jpg",
+            "alt": "Cena escura numa sala onde homens em volta de uma mesa olham para a direita. Um feixe de luz forte entra pelo alto e ilumina os rostos, e Jesus aponta para um deles.",
+            "caption": "A vocação de São Mateus, de Caravaggio (1599 a 1600): a luz entra como um holofote, e o resto fica na sombra.",
+            "credit": {
+              "author": "Caravaggio",
+              "license": "Public domain",
+              "url": "https://commons.wikimedia.org/wiki/File:The_Calling_of_Saint_Matthew-Caravaggo_(1599-1600).jpg"
+            }
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Rembrandt e Bernini",
+          "body": [
+            "Na Holanda, Rembrandt usou o claro-escuro em retratos e cenas de grupo, como A Ronda Noturna. Ali a pintura não era só da Igreja: comerciantes ricos também encomendavam quadros.",
+            "Em Roma, o escultor Bernini fez o mármore parecer se mexer. Panos esvoaçam, corpos se torcem e rostos gritam. A pedra parece congelada no meio de uma cena."
+          ],
+          "table": {
+            "label": "Renascimento e Barroco",
+            "headers": [
+              "",
+              "Renascimento",
+              "Barroco"
+            ],
+            "rows": [
+              [
+                "sensação",
+                "calma, ordem",
+                "drama, emoção"
+              ],
+              [
+                "luz",
+                "suave e igual",
+                "forte, com sombras"
+              ],
+              [
+                "composição",
+                "equilibrada",
+                "em diagonal, em movimento"
+              ],
+              [
+                "formas",
+                "retas, estáveis",
+                "curvas, torcidas"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Como reconhecer uma obra barroca",
+          "body": [
+            "Procure o fundo escuro com luz forte, figuras em diagonal, corpos em movimento e expressões intensas.",
+            "Se o quadro parece uma cena de filme congelada no momento mais dramático, há boa chance de ser barroco."
+          ],
+          "example": {
+            "label": "Marcas de uma obra barroca",
+            "lines": [
+              "Claro-escuro forte.",
+              "Composição em diagonal.",
+              "Movimento e curvas.",
+              "Emoção intensa nos rostos."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova compara uma obra renascentista com uma barroca e pede a diferença, ou pede o nome da técnica de luz e sombra."
+          ],
+          "bullets": [
+            "“O contraste intenso entre luz e sombra, típico do Barroco, chama-se…”",
+            "“Diferentemente do Renascimento, o Barroco valoriza…”",
+            "“A arte barroca esteve ligada à Igreja Católica porque…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que o Barroco é calmo e equilibrado. Isso é do Renascimento.",
+            "Pensar que claro-escuro é pintar só em preto e branco. É o contraste forte de luz, com cores.",
+            "Dizer que o Barroco só existiu na Europa. Ele chegou forte ao Brasil, em Minas Gerais e na Bahia."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "No século XVII, o Barroco trocou o equilíbrio pela emoção. Ele tem drama, curvas e movimento. A Igreja Católica o usou para emocionar os fiéis.",
+            "O claro-escuro, de Caravaggio e Rembrandt, põe luz forte num fundo escuro. Bernini fez o mármore parecer se mexer."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Objetivo",
+          "statement": "A arte barroca buscava principalmente:",
+          "options": [
+            "mostrar o equilíbrio e a calma",
+            "pintar só formas geométricas",
+            "copiar a arte das cavernas",
+            "emocionar o público",
+            "evitar temas religiosos"
+          ],
+          "correct_index": 3,
+          "explanation": "Drama e movimento.",
+          "pitfall": "Equilíbrio é do Renascimento."
+        },
+        {
+          "topic": "Século",
+          "statement": "O Barroco dominou a arte europeia principalmente no:",
+          "options": [
+            "século XX",
+            "século V",
+            "século XXI",
+            "ano 1922",
+            "século XVII"
+          ],
+          "correct_index": 4,
+          "explanation": "Logo depois do Renascimento.",
+          "pitfall": "1922 é a Semana de Arte Moderna."
+        },
+        {
+          "topic": "Claro-escuro",
+          "statement": "O contraste forte entre luz e sombra na pintura chama-se:",
+          "options": [
+            "claro-escuro",
+            "perspectiva",
+            "esfumado",
+            "pontilhismo",
+            "colagem"
+          ],
+          "correct_index": 0,
+          "explanation": "É a marca do Barroco.",
+          "pitfall": "Esfumado é de Leonardo."
+        },
+        {
+          "topic": "Caravaggio",
+          "statement": "O pintor mais lembrado pelo claro-escuro é:",
+          "options": [
+            "Monet",
+            "Caravaggio",
+            "Leonardo da Vinci",
+            "Van Gogh",
+            "Tarsila do Amaral"
+          ],
+          "correct_index": 1,
+          "explanation": "Na Vocação de São Mateus, a luz aponta o escolhido.",
+          "pitfall": "Monet é de outro movimento, bem mais tarde."
+        },
+        {
+          "topic": "Igreja",
+          "statement": "A Igreja Católica apoiou a arte barroca porque queria:",
+          "options": [
+            "vender quadros no exterior",
+            "acabar com a pintura",
+            "emocionar os fiéis",
+            "copiar os protestantes",
+            "pintar só paisagens"
+          ],
+          "correct_index": 2,
+          "explanation": "Depois da divisão com os protestantes.",
+          "pitfall": "Não queria acabar com a arte."
+        },
+        {
+          "topic": "Bernini",
+          "statement": "O escultor que fez o mármore parecer em movimento foi:",
+          "options": [
+            "Michelangelo",
+            "Rembrandt",
+            "Monet",
+            "Bernini",
+            "Aleijadinho"
+          ],
+          "correct_index": 3,
+          "explanation": "Panos esvoaçando, corpos torcidos.",
+          "pitfall": "Rembrandt era pintor."
+        },
+        {
+          "topic": "Composição",
+          "statement": "Na pintura barroca, as figuras costumam estar:",
+          "options": [
+            "paradas e em fila",
+            "sempre de frente, como no Egito",
+            "em formas geométricas puras",
+            "sem nenhum fundo",
+            "em diagonal, como em movimento"
+          ],
+          "correct_index": 4,
+          "explanation": "A diagonal dá ação à cena.",
+          "pitfall": "De frente é a arte egípcia."
+        },
+        {
+          "topic": "Rembrandt",
+          "statement": "A Ronda Noturna, com claro-escuro e um grupo de pessoas, é de:",
+          "options": [
+            "Rembrandt",
+            "Caravaggio",
+            "Leonardo da Vinci",
+            "Monet",
+            "Rafael"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele era holandês.",
+          "pitfall": "Rafael é do Renascimento."
+        },
+        {
+          "topic": "Fundo",
+          "statement": "Um quadro com fundo quase preto e luz forte sobre um rosto é típico do:",
+          "options": [
+            "Impressionismo",
+            "Barroco",
+            "Cubismo",
+            "Renascimento calmo",
+            "arte rupestre"
+          ],
+          "correct_index": 1,
+          "explanation": "É o claro-escuro.",
+          "pitfall": "Pintar ao ar livre, com luz clara, é de outro movimento.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Igrejas",
+          "statement": "Igrejas cheias de ouro, curvas e anjos são marcas do estilo:",
+          "options": [
+            "gótico",
+            "impressionista",
+            "barroco",
+            "cubista",
+            "egípcio"
+          ],
+          "correct_index": 2,
+          "explanation": "No Brasil, Minas Gerais e Bahia têm muitas.",
+          "pitfall": "As catedrais medievais tinham outro estilo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Holanda",
+          "statement": "Na Holanda do século XVII, além da Igreja, quem encomendava muitos quadros eram:",
+          "options": [
+            "os faraós",
+            "os indígenas",
+            "os operários das fábricas",
+            "comerciantes ricos",
+            "os gregos antigos"
+          ],
+          "correct_index": 3,
+          "explanation": "Retratos e cenas de grupo.",
+          "pitfall": "Faraó é do Egito antigo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Brasil",
+          "statement": "O Barroco chegou ao Brasil e deixou marcas fortes principalmente em:",
+          "options": [
+            "Brasília",
+            "São Paulo em 1922",
+            "aldeias da Amazônia",
+            "nenhum lugar do país",
+            "Minas Gerais e na Bahia"
+          ],
+          "correct_index": 4,
+          "explanation": "Igrejas do século XVIII.",
+          "pitfall": "Brasília é do século XX.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Comparar",
+          "statement": "A principal diferença entre a luz de um quadro renascentista e a de um barroco é que a barroca é:",
+          "options": [
+            "forte e contrastada, com sombras",
+            "suave e igual em todo o quadro",
+            "sempre azul",
+            "ausente, sem luz nenhuma",
+            "feita só de pontos"
+          ],
+          "correct_index": 0,
+          "explanation": "O Renascimento tem luz calma.",
+          "pitfall": "Pontos são do pontilhismo.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Preto e branco",
+          "statement": "Um colega diz que claro-escuro é pintar em preto e branco. Ele erra porque:",
+          "options": [
+            "claro-escuro é um tipo de escultura",
+            "o claro-escuro usa cores, com luz e sombra",
+            "claro-escuro só existe no cinema",
+            "a pintura barroca não usava luz",
+            "claro-escuro é uma cor de tinta pronta"
+          ],
+          "correct_index": 1,
+          "explanation": "As cores continuam lá.",
+          "pitfall": "É contraste de luz, não falta de cor.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "impressionismo",
+      "title": "O Impressionismo: pintar a luz ao ar livre",
+      "module": "Movimentos da arte",
+      "summary": "No fim do século XIX, pintores franceses saíram do ateliê para pintar ao ar livre. Pintavam rápido, antes de a luz mudar. A lição mostra a pincelada solta, a cor da sombra e por que Monet pintou a mesma catedral dezenas de vezes.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=K0IKlIStMD8",
+        "title": "IMPRESSIONISMO | RESUMÃO",
+        "channel": "Eu conto a Arte"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Um nome que era xingamento",
+          "body": [
+            "Em 1874, um crítico viu um quadro de Claude Monet chamado Impressão, nascer do sol. Achou que parecia inacabado e chamou o grupo, com deboche, de impressionistas.",
+            "O apelido pegou, e o grupo virou um dos mais amados da história da arte. Esta lição mostra o que eles fizeram de tão novo."
+          ],
+          "terms": [
+            {
+              "word": "Impressionismo",
+              "meaning": "o movimento francês do fim do século XIX que pintava ao ar livre, com pinceladas rápidas, para captar a luz de um instante."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/artes/monet-impressao.jpg",
+            "alt": "Um porto visto pela neblina azulada da manhã, com um sol laranja baixo refletido na água e barquinhos escuros pintados com poucas pinceladas.",
+            "caption": "O quadro Impressão, sol nascente (Monet, 1872) deu nome ao Impressionismo por zombaria.",
+            "credit": {
+              "author": "Claude Monet",
+              "license": "Public domain",
+              "url": "https://commons.wikimedia.org/wiki/File:Claude_Monet,_Impression,_soleil_levant.jpg"
+            }
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Sair do ateliê",
+          "body": [
+            "Antes, a maioria dos pintores trabalhava dentro do ateliê, com luz controlada. Os impressionistas levaram o cavalete para o campo, para a beira do rio e para as ruas de Paris.",
+            "Isso só ficou fácil porque a tinta passou a ser vendida em tubos, que dava para levar no bolso. Eles queriam pegar a luz de um instante: o sol da manhã, a neblina, o reflexo na água."
+          ],
+          "terms": [
+            {
+              "word": "Renascimento",
+              "meaning": "o movimento que começou na Itália por volta de 1400, com contornos nítidos e ordem."
+            },
+            {
+              "word": "Barroco",
+              "meaning": "o estilo do século XVII, com fundo escuro e contraste forte de luz e sombra."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Pinceladas soltas e cores puras",
+          "body": [
+            "De perto, um quadro impressionista parece um monte de manchas. De longe, as manchas se juntam no olho e viram água, árvore e céu.",
+            "Eles evitavam misturar demais as cores na paleta. Punham cores puras lado a lado e deixavam o olho fazer a mistura. E descobriram que a sombra não é preta: tem cor, muitas vezes azul ou roxa."
+          ],
+          "example": {
+            "label": "Marcas de um quadro impressionista",
+            "lines": [
+              "Pinceladas curtas e visíveis.",
+              "Cores claras e puras, lado a lado.",
+              "Sombras coloridas, sem preto.",
+              "Cenas do dia a dia, ao ar livre."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A mesma catedral, várias vezes",
+          "body": [
+            "Monet pintou a fachada da catedral de Rouen mais de trinta vezes, em horas e climas diferentes. O prédio é o mesmo; o que muda é a luz.",
+            "Para os impressionistas, o tema do quadro era a luz, e não o objeto. Ele também pintou dezenas de vezes os nenúfares do lago do seu jardim."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os nomes do grupo",
+          "body": [
+            "Além de Monet, o grupo tinha Renoir, que pintava pessoas em festas ao ar livre. Degas pintou bailarinas. Berthe Morisot foi uma das mulheres do grupo.",
+            "Na época, o salão oficial de Paris recusava esses quadros. Eles fizeram as próprias exposições, e o público aprendeu a gostar aos poucos."
+          ],
+          "table": {
+            "label": "Quem é quem",
+            "headers": [
+              "Artista",
+              "Tema que mais pintou"
+            ],
+            "rows": [
+              [
+                "Claude Monet",
+                "paisagens, luz na água, nenúfares"
+              ],
+              [
+                "Pierre-Auguste Renoir",
+                "pessoas em festas e passeios"
+              ],
+              [
+                "Edgar Degas",
+                "bailarinas e cavalos"
+              ],
+              [
+                "Berthe Morisot",
+                "cenas de casa e de família"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mostra uma pintura e pede o movimento, ou pergunta o que os impressionistas queriam captar. A resposta quase sempre é a luz."
+          ],
+          "bullets": [
+            "“Os impressionistas buscavam representar…”",
+            "“A pintura ao ar livre foi facilitada pela invenção…”",
+            "“As séries de Monet sobre a mesma catedral mostram…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que o Impressionismo queria detalhe exato. Ele queria a impressão da luz num instante.",
+            "Dizer que a sombra impressionista é preta. Ela tem cor.",
+            "Pensar que o grupo foi aplaudido desde o começo. O nome nasceu de um deboche."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "No fim do século XIX, os impressionistas saíram do ateliê para pintar a luz de um instante. A tinta em tubo ajudou.",
+            "Pinceladas soltas, cores puras lado a lado e sombras coloridas são as marcas. Monet pintou a mesma catedral dezenas de vezes, porque o tema era a luz."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Objetivo",
+          "statement": "Os impressionistas queriam captar principalmente:",
+          "options": [
+            "o detalhe exato de cada objeto",
+            "a emoção do drama religioso",
+            "a luz de um instante",
+            "formas geométricas",
+            "a arte das cavernas"
+          ],
+          "correct_index": 2,
+          "explanation": "O sol, a neblina, o reflexo.",
+          "pitfall": "Detalhe exato não era o foco."
+        },
+        {
+          "topic": "Onde pintavam",
+          "statement": "Os impressionistas costumavam pintar:",
+          "options": [
+            "só dentro de igrejas",
+            "só no ateliê escuro",
+            "em paredes de cavernas",
+            "ao ar livre",
+            "em vitrais"
+          ],
+          "correct_index": 3,
+          "explanation": "Levavam o cavalete para fora.",
+          "pitfall": "Ateliê escuro era o costume anterior."
+        },
+        {
+          "topic": "Tubo",
+          "statement": "A pintura ao ar livre ficou mais fácil com a invenção:",
+          "options": [
+            "da fotografia colorida",
+            "da tinta a óleo",
+            "do pincel de pelo",
+            "da tela elétrica",
+            "da tinta em tubo"
+          ],
+          "correct_index": 4,
+          "explanation": "Dava para levar no bolso.",
+          "pitfall": "A tinta a óleo é bem mais antiga."
+        },
+        {
+          "topic": "Nome",
+          "statement": "O nome Impressionismo veio de:",
+          "options": [
+            "um deboche de um crítico",
+            "um livro de filosofia",
+            "uma lei francesa",
+            "um grupo de músicos",
+            "uma igreja de Paris"
+          ],
+          "correct_index": 0,
+          "explanation": "Impressão, nascer do sol.",
+          "pitfall": "Não foi um elogio."
+        },
+        {
+          "topic": "Sombra",
+          "statement": "Para os impressionistas, a sombra:",
+          "options": [
+            "é sempre preta",
+            "tem cor, muitas vezes azul ou roxa",
+            "não existe",
+            "é sempre cinza",
+            "é pintada por último em preto"
+          ],
+          "correct_index": 1,
+          "explanation": "Eles olhavam a luz de verdade.",
+          "pitfall": "Sombra preta é o erro esperado."
+        },
+        {
+          "topic": "Pinceladas",
+          "statement": "De perto, um quadro impressionista mostra:",
+          "options": [
+            "linhas finas e precisas",
+            "formas geométricas",
+            "pinceladas curtas e visíveis",
+            "um fundo preto",
+            "colagens de papel"
+          ],
+          "correct_index": 2,
+          "explanation": "De longe, viram imagem.",
+          "pitfall": "Linhas finas são de outro estilo."
+        },
+        {
+          "topic": "Catedral",
+          "statement": "Monet pintou a mesma catedral dezenas de vezes porque:",
+          "options": [
+            "errava sempre o desenho",
+            "não tinha outro tema",
+            "era obrigado pela Igreja",
+            "queria mostrar a luz mudando",
+            "queria vender igual"
+          ],
+          "correct_index": 3,
+          "explanation": "O tema era a luz.",
+          "pitfall": "Não era falta de tema."
+        },
+        {
+          "topic": "Degas",
+          "statement": "O impressionista lembrado pelas bailarinas é:",
+          "options": [
+            "Monet",
+            "Caravaggio",
+            "Leonardo da Vinci",
+            "Rembrandt",
+            "Degas"
+          ],
+          "correct_index": 4,
+          "explanation": "Ele também pintou cavalos.",
+          "pitfall": "Monet pintava paisagens."
+        },
+        {
+          "topic": "Século",
+          "statement": "O Impressionismo surgiu:",
+          "options": [
+            "na França, no fim do século XIX",
+            "na Itália, por volta de 1400",
+            "no Brasil, em 1922",
+            "na Holanda, no século XVII",
+            "no Egito antigo"
+          ],
+          "correct_index": 0,
+          "explanation": "Paris, anos 1870.",
+          "pitfall": "Itália de 1400 é o Renascimento.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Monet",
+          "statement": "O pintor do quadro Impressão, nascer do sol é:",
+          "options": [
+            "Renoir",
+            "Claude Monet",
+            "Edgar Degas",
+            "Van Gogh",
+            "Rembrandt"
+          ],
+          "correct_index": 1,
+          "explanation": "O quadro deu nome ao movimento.",
+          "pitfall": "Van Gogh veio logo depois.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Cores puras",
+          "statement": "Os impressionistas punham cores puras lado a lado para que:",
+          "options": [
+            "a tinta secasse mais rápido",
+            "o quadro ficasse escuro",
+            "o olho fizesse a mistura de longe",
+            "a sombra ficasse preta",
+            "economizassem tinta"
+          ],
+          "correct_index": 2,
+          "explanation": "A mistura acontece na vista.",
+          "pitfall": "Não era economia.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Salão",
+          "statement": "No começo, o salão oficial de Paris:",
+          "options": [
+            "premiava todos os impressionistas",
+            "só aceitava impressionistas",
+            "não existia",
+            "recusava os quadros impressionistas",
+            "era dirigido por Monet"
+          ],
+          "correct_index": 3,
+          "explanation": "Eles fizeram as próprias exposições.",
+          "pitfall": "Eles não foram aplaudidos logo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Foco",
+          "statement": "Um quadro impressionista e um renascentista do mesmo jardim diferem porque o impressionista:",
+          "options": [
+            "tem perspectiva perfeita e contorno nítido",
+            "é sempre religioso",
+            "usa claro-escuro com fundo preto",
+            "não tem cor nenhuma",
+            "mostra a luz de um momento, com pinceladas soltas"
+          ],
+          "correct_index": 4,
+          "explanation": "O renascentista busca ordem e contorno.",
+          "pitfall": "Fundo preto é do Barroco.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Inacabado",
+          "statement": "O crítico de 1874 achou o quadro de Monet inacabado. Hoje se entende que a pincelada solta era:",
+          "options": [
+            "uma escolha para pegar a luz",
+            "falta de tempo do pintor",
+            "um erro de técnica do pintor",
+            "um defeito da tinta em tubo",
+            "uma regra da Igreja da época"
+          ],
+          "correct_index": 0,
+          "explanation": "Era intenção, não descuido.",
+          "pitfall": "Não foi falta de técnica.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "pos-impressionismo-e-expressionismo",
+      "title": "Van Gogh, Munch e a emoção na tinta",
+      "module": "Movimentos da arte",
+      "summary": "Depois do Impressionismo, alguns pintores quiseram mais do que a luz: quiseram mostrar o que sentiam. A lição mostra as pinceladas de Van Gogh, as formas de Cézanne e o grito de Munch, que abriram caminho para o Expressionismo.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=JDZ6n_-srXI",
+        "title": "Expressionismo: características e principais artistas",
+        "channel": "Toda Matéria"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Um céu que gira",
+          "body": [
+            "Na Noite estrelada, de Van Gogh, o céu não está parado. Ele gira em redemoinhos, e as estrelas parecem pegar fogo.",
+            "Nenhum céu de verdade é assim. Van Gogh não pintou o que via: pintou o que sentia olhando. Essa virada é o assunto desta lição."
+          ],
+          "figure": {
+            "src": "/figuras/artes/noite-estrelada.jpg",
+            "alt": "Um céu noturno azul cheio de redemoinhos, estrelas e uma lua amarela que parecem brilhar em espiral, sobre uma vila pequena, com um cipreste escuro em forma de chama na frente.",
+            "caption": "A Noite estrelada, de Van Gogh (1889): o céu gira em pinceladas grossas e em espiral.",
+            "credit": {
+              "author": "Vincent van Gogh",
+              "license": "Public domain",
+              "url": "https://commons.wikimedia.org/wiki/File:VanGogh-starry_night_ballance1.jpg"
+            }
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Além da luz",
+          "body": [
+            "Os impressionistas queriam pintar a luz de um instante. Alguns pintores que vieram logo depois, no fim do século XIX, acharam isso pouco.",
+            "Eles usaram cor e forma para mostrar emoção ou ideia, e não só o que o olho vê. Por terem vindo depois do Impressionismo, foram chamados de pós-impressionistas."
+          ],
+          "terms": [
+            {
+              "word": "Impressionismo",
+              "meaning": "o movimento francês do fim do século XIX que pintava a luz de um instante, ao ar livre."
+            },
+            {
+              "word": "pós-impressionismo",
+              "meaning": "o nome dado aos pintores que vieram logo depois do Impressionismo e usaram a cor para mostrar emoção ou ideia."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Três caminhos diferentes",
+          "body": [
+            "Van Gogh pintava com camadas grossas e pinceladas em espiral, com cores fortes. Vendeu pouquíssimos quadros em vida; hoje está entre os pintores mais famosos do mundo.",
+            "Cézanne via a natureza como formas simples: cilindros, esferas e cones. Gauguin usou cores chapadas e fortes, muitas pintadas no Taiti."
+          ],
+          "terms": [
+            {
+              "word": "Cubismo",
+              "meaning": "o movimento do começo do século XX que mostra os objetos em formas geométricas, vistos de vários lados ao mesmo tempo."
+            }
+          ],
+          "table": {
+            "label": "Os três pós-impressionistas",
+            "headers": [
+              "Pintor",
+              "Marca"
+            ],
+            "rows": [
+              [
+                "Van Gogh",
+                "pinceladas grossas e em espiral"
+              ],
+              [
+                "Cézanne",
+                "formas geométricas simples"
+              ],
+              [
+                "Gauguin",
+                "cores chapadas e fortes"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O grito",
+          "body": [
+            "Em 1893, o norueguês Edvard Munch pintou O grito: uma figura com as mãos no rosto, sob um céu vermelho que parece ondular.",
+            "A cor e a forma estão distorcidas de propósito. O que importa não é a ponte nem o céu, e sim a angústia. Essa ideia vira o centro de um movimento inteiro."
+          ],
+          "figure": {
+            "src": "/figuras/artes/o-grito.jpg",
+            "alt": "Uma figura de rosto pálido e magro, com as mãos no rosto e a boca aberta, numa ponte. Atrás, um céu de faixas vermelhas e laranja que parecem ondular.",
+            "caption": "O grito, de Edvard Munch (1893): a cor e a forma se deformam para mostrar angústia.",
+            "credit": {
+              "author": "Edvard Munch",
+              "license": "Public domain",
+              "url": "https://commons.wikimedia.org/wiki/File:Edvard_Munch,_1893,_The_Scream,_oil,_tempera_and_pastel_on_cardboard,_91_x_73_cm,_National_Gallery_of_Norway.jpg"
+            }
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O Expressionismo",
+          "body": [
+            "No começo do século XX, sobretudo na Alemanha, artistas fizeram da emoção o tema da obra. É o Expressionismo: cores fortes e irreais, formas deformadas e temas de solidão, medo e cidade grande.",
+            "No Brasil, a pintora Anita Malfatti trouxe essa linguagem numa exposição de 1917. Foi duramente criticada, e a briga ajudou a preparar a Semana de Arte Moderna de 1922."
+          ],
+          "terms": [
+            {
+              "word": "Expressionismo",
+              "meaning": "o movimento do começo do século XX que deforma cores e formas para mostrar emoções fortes, como angústia e medo."
+            }
+          ],
+          "example": {
+            "label": "Da luz à emoção",
+            "ordered": true,
+            "lines": [
+              "Impressionismo: pintar a luz que o olho vê.",
+              "Pós-impressionismo: a cor começa a mostrar emoção e ideia.",
+              "Expressionismo: a emoção vira o tema, e a forma se deforma."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mostra O grito ou a Noite estrelada e pede o que a deformação quer mostrar. Também liga Anita Malfatti à chegada do Expressionismo ao Brasil."
+          ],
+          "bullets": [
+            "“A distorção das formas em O grito busca…”",
+            "“Diferentemente dos impressionistas, Van Gogh…”",
+            "“A exposição de Anita Malfatti em 1917…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que a deformação é falta de habilidade. Ela é escolha para mostrar emoção.",
+            "Colocar Van Gogh entre os impressionistas. Ele veio depois e foi além da luz.",
+            "Pensar que o Expressionismo quer retratar o mundo como ele é. Ele mostra o mundo como é sentido."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Os pós-impressionistas foram além da luz: Van Gogh com pinceladas em espiral, Cézanne com formas geométricas e Gauguin com cores chapadas.",
+            "O grito, de Munch, deforma a cor para mostrar angústia. O Expressionismo fez da emoção o tema, e chegou ao Brasil com Anita Malfatti, em 1917."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Objetivo",
+          "statement": "Os pós-impressionistas usaram a cor principalmente para:",
+          "options": [
+            "mostrar emoção ou ideia",
+            "copiar a foto exata da paisagem",
+            "pintar só a luz de um instante",
+            "imitar a arte do Egito",
+            "evitar qualquer cor forte"
+          ],
+          "correct_index": 0,
+          "explanation": "Foram além da luz.",
+          "pitfall": "Só a luz era o Impressionismo."
+        },
+        {
+          "topic": "Van Gogh",
+          "statement": "As pinceladas de Van Gogh são conhecidas por serem:",
+          "options": [
+            "finas e invisíveis",
+            "grossas e em espiral",
+            "feitas só de pontos",
+            "sempre retas",
+            "pintadas com o dedo"
+          ],
+          "correct_index": 1,
+          "explanation": "Como o céu da Noite estrelada.",
+          "pitfall": "Pontos é outro pintor."
+        },
+        {
+          "topic": "Cézanne",
+          "statement": "Cézanne via a natureza como:",
+          "options": [
+            "manchas de luz sem forma",
+            "um palco escuro",
+            "cilindros, esferas e cones",
+            "fotos em preto e branco",
+            "linhas de texto"
+          ],
+          "correct_index": 2,
+          "explanation": "Isso abriu caminho ao Cubismo.",
+          "pitfall": "Manchas de luz é Impressionismo."
+        },
+        {
+          "topic": "O grito",
+          "statement": "O grito, de Munch, deforma o céu e a figura para mostrar:",
+          "options": [
+            "alegria de uma festa",
+            "a luz exata do pôr do sol",
+            "a planta de uma ponte",
+            "angústia",
+            "um retrato fiel"
+          ],
+          "correct_index": 3,
+          "explanation": "A emoção é o tema.",
+          "pitfall": "Não é retrato fiel."
+        },
+        {
+          "topic": "Expressionismo",
+          "statement": "O Expressionismo é o movimento que:",
+          "options": [
+            "copia a natureza com perfeição",
+            "pinta só formas geométricas puras",
+            "pinta a luz ao ar livre",
+            "usa a perspectiva do Renascimento",
+            "deforma cor e forma para mostrar emoção"
+          ],
+          "correct_index": 4,
+          "explanation": "Solidão, medo, angústia.",
+          "pitfall": "Formas geométricas puras são outro caminho."
+        },
+        {
+          "topic": "Anita Malfatti",
+          "statement": "A exposição de Anita Malfatti em 1917 é lembrada por:",
+          "options": [
+            "trazer o Expressionismo ao Brasil",
+            "inaugurar o Barroco mineiro",
+            "fundar a Academia Imperial",
+            "pintar a Mona Lisa",
+            "criar o Impressionismo"
+          ],
+          "correct_index": 0,
+          "explanation": "Foi duramente criticada.",
+          "pitfall": "A arte das igrejas mineiras é do século XVIII."
+        },
+        {
+          "topic": "Deformar",
+          "statement": "Nos quadros expressionistas, a deformação das figuras é:",
+          "options": [
+            "falta de habilidade do pintor",
+            "uma escolha para mostrar emoção",
+            "erro de perspectiva",
+            "defeito da tinta",
+            "uma regra da Igreja"
+          ],
+          "correct_index": 1,
+          "explanation": "É de propósito.",
+          "pitfall": "Não é erro."
+        },
+        {
+          "topic": "Gauguin",
+          "statement": "Gauguin é lembrado pelas cores:",
+          "options": [
+            "escuras, com claro-escuro e fundo preto",
+            "em pontos minúsculos",
+            "chapadas e fortes, muitas pintadas no Taiti",
+            "só em tons de cinza",
+            "esfumadas, sem contorno"
+          ],
+          "correct_index": 2,
+          "explanation": "Cores puras, sem sombra.",
+          "pitfall": "Claro-escuro é de outra época."
+        },
+        {
+          "topic": "Noite estrelada",
+          "statement": "A Noite estrelada foi pintada por:",
+          "options": [
+            "Monet",
+            "Munch",
+            "Cézanne",
+            "Van Gogh",
+            "Leonardo da Vinci"
+          ],
+          "correct_index": 3,
+          "explanation": "O céu gira em redemoinhos.",
+          "pitfall": "Munch pintou O grito.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Munch",
+          "statement": "O grito foi pintado por:",
+          "options": [
+            "Van Gogh",
+            "Caravaggio",
+            "Monet",
+            "Rafael",
+            "Edvard Munch"
+          ],
+          "correct_index": 4,
+          "explanation": "Um norueguês, em 1893.",
+          "pitfall": "Van Gogh pintou a Noite estrelada.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Da luz à emoção",
+          "format": "order",
+          "statement": "Coloque os movimentos na ordem em que surgiram.",
+          "options": [
+            "Impressionismo",
+            "pós-impressionismo",
+            "Expressionismo",
+            "Semana de Arte Moderna no Brasil"
+          ],
+          "explanation": "Do fim do século XIX a 1922.",
+          "pitfall": "A Semana veio por último.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Em vida",
+          "statement": "Sobre Van Gogh, é correto dizer que:",
+          "options": [
+            "vendeu pouquíssimos quadros em vida",
+            "foi rico e famoso a vida toda",
+            "nunca pintou paisagens",
+            "era impressionista do grupo de Monet",
+            "pintava só retratos de reis"
+          ],
+          "correct_index": 0,
+          "explanation": "A fama veio depois da morte.",
+          "pitfall": "Ele veio depois do Impressionismo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Diferença",
+          "statement": "A principal diferença entre um quadro impressionista e um expressionista é que o expressionista:",
+          "options": [
+            "mostra a luz exata de um instante",
+            "mostra o que o pintor sente, não o que vê",
+            "usa a perspectiva perfeita",
+            "evita qualquer cor forte",
+            "pinta sempre ao ar livre"
+          ],
+          "correct_index": 1,
+          "explanation": "O Impressionismo pinta a luz que se vê.",
+          "pitfall": "Ar livre é do Impressionismo.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Crítica",
+          "statement": "A dura crítica à exposição de Anita Malfatti em 1917 ajudou a:",
+          "options": [
+            "acabar com a pintura no Brasil",
+            "trazer de volta a arte acadêmica para sempre",
+            "unir os artistas que fariam a Semana de 1922",
+            "proibir o Expressionismo no país",
+            "criar o Barroco mineiro"
+          ],
+          "correct_index": 2,
+          "explanation": "A briga juntou os artistas da Semana.",
+          "pitfall": "A arte não acabou.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "arte-brasileira",
       "title": "Arte brasileira: do Barroco mineiro à Semana de 22",
       "module": "Arte no Brasil",
       "summary": "A arte brasileira junta raízes indígenas, africanas e europeias. O Barroco mineiro teve Aleijadinho; a Semana de 1922 trouxe o Modernismo; e a arte popular vive no cordel e na cerâmica.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=02n2j7vRMuE",
+        "title": "SEMANA DE ARTE MODERNA | QUER QUE DESENHE? | DESCOMPLICA",
+        "channel": "Descomplica"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -1831,10 +4024,353 @@
       ]
     },
     {
+      "slug": "arte-academica-no-brasil",
+      "title": "A Academia e a pintura do Império",
+      "module": "Arte no Brasil",
+      "summary": "No século XIX, a arte brasileira passou a ser ensinada numa escola oficial, com regras vindas da França. A lição mostra a Missão Artística Francesa, os desenhos de Debret, as grandes telas de história e o caipira de Almeida Júnior.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=vlzLj3erW8M",
+        "title": "HISTÓRIA DA ARTE: MISSÃO ARTÍSTICA FRANCESA E ACADEMICISMO NO BRASIL",
+        "channel": "Garcia Junior Arte"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A missa que ninguém fotografou",
+          "body": [
+            "Ninguém fotografou a primeira missa rezada no Brasil, em 1500. Mesmo assim, quase todo brasileiro já viu uma imagem dela nos livros da escola.",
+            "Essa imagem foi pintada mais de 350 anos depois, numa escola de arte criada pelo governo. Esta lição conta como essa escola ensinou o país a se ver."
+          ],
+          "figure": {
+            "src": "/figuras/artes/primeira-missa.jpg",
+            "alt": "Uma multidão de indígenas e portugueses em volta de um altar com uma grande cruz de madeira, numa clareira cercada de mata. Um padre ergue as mãos no centro.",
+            "caption": "A Primeira Missa no Brasil, de Victor Meirelles (1860): uma cena de 1500 imaginada mais de 350 anos depois.",
+            "credit": {
+              "author": "Victor Meirelles",
+              "license": "Public domain",
+              "url": "https://commons.wikimedia.org/wiki/File:Meirelles-primeiramissa2.jpg"
+            }
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os franceses chegam ao Rio",
+          "body": [
+            "Com a corte portuguesa no Rio de Janeiro, chegou em 1816 um grupo de artistas franceses, a Missão Artística Francesa. Dela nasceu, em 1826, a Academia Imperial de Belas Artes.",
+            "A Academia ensinava regras de origem europeia: desenho preciso, cores contidas e temas nobres, como a história e a mitologia. Era o padrão oficial do que contava como boa arte."
+          ],
+          "terms": [
+            {
+              "word": "Academia Imperial de Belas Artes",
+              "meaning": "a escola oficial de arte criada no Rio de Janeiro em 1826, que seguia regras europeias de desenho e de tema."
+            },
+            {
+              "word": "arte acadêmica",
+              "meaning": "a arte feita segundo as regras de uma academia oficial, com desenho preciso e temas nobres."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Debret desenha o cotidiano",
+          "body": [
+            "Jean-Baptiste Debret, um dos franceses da missão, desenhou e pintou o dia a dia do Rio. Mostrou vendedores, festas e a vida dos escravizados.",
+            "Seus desenhos são hoje uma fonte importante sobre o Brasil do começo do século XIX. Mas são o olhar de um europeu, com as escolhas e os limites desse olhar."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Pintar a história do país",
+          "body": [
+            "Para o Império, a pintura de história ajudava a criar uma ideia de nação. Victor Meirelles pintou A Primeira Missa no Brasil, em 1860. Pedro Américo pintou Independência ou Morte, em 1888.",
+            "São telas enormes, de cenas que os pintores não viram. Elas mostram os fatos como o governo queria que fossem lembrados, mais grandiosos do que foram."
+          ],
+          "table": {
+            "label": "Telas de história",
+            "headers": [
+              "Obra",
+              "Pintor",
+              "Ano"
+            ],
+            "rows": [
+              [
+                "A Primeira Missa no Brasil",
+                "Victor Meirelles",
+                "1860"
+              ],
+              [
+                "Independência ou Morte",
+                "Pedro Américo",
+                "1888"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O caipira entra na tela",
+          "body": [
+            "No fim do século XIX, Almeida Júnior fez algo diferente. No quadro Caipira picando fumo (1893), ele pintou um homem simples do interior paulista, com pés descalços e luz forte do sol.",
+            "Era a técnica da Academia aplicada a um tema do povo, e não a um herói. Em 1922, os artistas da Semana de Arte Moderna rejeitariam as regras da Academia. Mesmo assim, muitos respeitavam Almeida Júnior."
+          ],
+          "figure": {
+            "src": "/figuras/artes/caipira.jpg",
+            "alt": "Um homem descalço, de calça e camisa simples, sentado num tronco diante de uma casa de pau a pique, picando fumo com uma faca sob uma luz de sol muito forte.",
+            "caption": "Caipira picando fumo, de Almeida Júnior (1893): a técnica da Academia a serviço de um tema do povo.",
+            "credit": {
+              "author": "José Ferraz de Almeida Júnior",
+              "license": "Public domain",
+              "url": "https://commons.wikimedia.org/wiki/File:Almeida_J%C3%BAnior_-_Caipira_Cutting_Tobacco_-_Google_Art_Project.jpg"
+            }
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mostra uma tela de história e pergunta para que ela servia, ou cobra Debret como fonte sobre a escravidão."
+          ],
+          "bullets": [
+            "“A pintura histórica do Império buscava…”",
+            "“As imagens de Debret são fontes sobre…”",
+            "“Caipira picando fumo se diferencia por…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Tratar a tela de história como foto do que aconteceu. Ela foi pintada muito depois, com intenção.",
+            "Achar que Debret mostra o Brasil sem filtro. É o olhar de um europeu.",
+            "Pensar que a Academia valorizava temas do povo. O caipira de Almeida Júnior foi uma exceção."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A Missão Artística Francesa chegou em 1816, e dela nasceu a Academia Imperial de Belas Artes, com regras europeias. Debret desenhou o cotidiano, inclusive a escravidão.",
+            "Victor Meirelles e Pedro Américo pintaram a história para criar uma ideia de nação. Almeida Júnior pôs o caipira na tela, com a técnica da Academia."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Missão",
+          "statement": "A Missão Artística Francesa chegou ao Rio de Janeiro em:",
+          "options": [
+            "1500",
+            "1922",
+            "1816",
+            "1888",
+            "1960"
+          ],
+          "correct_index": 2,
+          "explanation": "Com a corte portuguesa no Brasil.",
+          "pitfall": "1922 é a Semana de Arte Moderna."
+        },
+        {
+          "topic": "Academia",
+          "statement": "Da Missão Artística Francesa nasceu:",
+          "options": [
+            "a Semana de Arte Moderna de 1922",
+            "o Barroco mineiro",
+            "a arte rupestre",
+            "a Academia Imperial de Belas Artes",
+            "o cinema brasileiro"
+          ],
+          "correct_index": 3,
+          "explanation": "Em 1826.",
+          "pitfall": "A Semana é de 1922."
+        },
+        {
+          "topic": "Regras",
+          "statement": "A arte acadêmica valorizava:",
+          "options": [
+            "formas deformadas e emoção",
+            "só cores puras sem desenho",
+            "temas do dia a dia do povo, sempre",
+            "obras sem nenhuma figura",
+            "desenho preciso e temas nobres"
+          ],
+          "correct_index": 4,
+          "explanation": "História e mitologia.",
+          "pitfall": "Deformar formas é de outro movimento."
+        },
+        {
+          "topic": "Debret",
+          "statement": "Jean-Baptiste Debret é lembrado por desenhar:",
+          "options": [
+            "o cotidiano do Rio, inclusive a escravidão",
+            "os faraós e as pirâmides do Egito",
+            "a Mona Lisa",
+            "o teto da Capela Sistina",
+            "a Semana de 1922"
+          ],
+          "correct_index": 0,
+          "explanation": "Vendedores, festas e escravizados.",
+          "pitfall": "Os outros não são dele."
+        },
+        {
+          "topic": "Olhar",
+          "statement": "Ao usar Debret como fonte, é preciso lembrar que:",
+          "options": [
+            "ele fotografou tudo exatamente",
+            "é o olhar de um europeu, com limites",
+            "ele nasceu escravizado no Brasil",
+            "ele nunca esteve no Brasil",
+            "ele pintou em 1500"
+          ],
+          "correct_index": 1,
+          "explanation": "Toda fonte tem um ponto de vista.",
+          "pitfall": "Ele não fotografou."
+        },
+        {
+          "topic": "Primeira Missa",
+          "statement": "A Primeira Missa no Brasil, de 1860, é de:",
+          "options": [
+            "Pedro Américo",
+            "Almeida Júnior",
+            "Victor Meirelles",
+            "Debret",
+            "Anita Malfatti"
+          ],
+          "correct_index": 2,
+          "explanation": "Pintada mais de 350 anos depois do fato.",
+          "pitfall": "Pedro Américo pintou Independência ou Morte."
+        },
+        {
+          "topic": "Para quê",
+          "statement": "A pintura de história do Império servia principalmente para:",
+          "options": [
+            "registrar os fatos como foto",
+            "criticar o imperador",
+            "imitar a arte indígena",
+            "criar uma ideia de nação",
+            "vender quadros na França"
+          ],
+          "correct_index": 3,
+          "explanation": "Os fatos aparecem grandiosos.",
+          "pitfall": "Não é registro fiel."
+        },
+        {
+          "topic": "Caipira",
+          "statement": "Em Caipira picando fumo, Almeida Júnior pintou:",
+          "options": [
+            "um herói da independência a cavalo",
+            "um deus grego",
+            "um rei europeu",
+            "uma paisagem abstrata",
+            "um homem simples do interior paulista"
+          ],
+          "correct_index": 4,
+          "explanation": "Técnica acadêmica, tema do povo.",
+          "pitfall": "Herói é tela de história."
+        },
+        {
+          "topic": "Independência",
+          "statement": "Independência ou Morte, de 1888, foi pintado por:",
+          "options": [
+            "Pedro Américo",
+            "Victor Meirelles",
+            "Almeida Júnior",
+            "Debret",
+            "Tarsila do Amaral"
+          ],
+          "correct_index": 0,
+          "explanation": "Muito depois do grito do Ipiranga.",
+          "pitfall": "Victor Meirelles pintou a Primeira Missa.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "1826",
+          "statement": "A Academia Imperial de Belas Artes foi criada no:",
+          "options": [
+            "Recife",
+            "Rio de Janeiro",
+            "Ouro Preto, em Minas",
+            "São Paulo",
+            "Salvador"
+          ],
+          "correct_index": 1,
+          "explanation": "A corte estava no Rio.",
+          "pitfall": "Ouro Preto é de outra época.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Linha do tempo",
+          "format": "order",
+          "statement": "Coloque na ordem os fatos da arte no Brasil.",
+          "options": [
+            "chegada da Missão Artística Francesa",
+            "criação da Academia Imperial",
+            "A Primeira Missa, de Victor Meirelles",
+            "Semana de Arte Moderna"
+          ],
+          "explanation": "1816, 1826, 1860 e 1922.",
+          "pitfall": "A Semana veio por último.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Exceção",
+          "statement": "Caipira picando fumo é uma exceção na arte acadêmica porque:",
+          "options": [
+            "não usa desenho nem cor de verdade",
+            "foi pintado em 1500, junto da missa",
+            "aplica a técnica da Academia a um tema do povo",
+            "é uma escultura em pedra",
+            "foi feito pelos indígenas"
+          ],
+          "correct_index": 2,
+          "explanation": "A Academia preferia temas nobres.",
+          "pitfall": "Ele usa a técnica, sim.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Foto",
+          "statement": "Tratar A Primeira Missa no Brasil como registro fiel do que aconteceu é um erro porque:",
+          "options": [
+            "foi pintada no próprio dia da missa, ao vivo",
+            "é uma fotografia antiga do século XVI",
+            "Victor Meirelles estava na missa",
+            "foi pintada séculos depois, com a intenção de criar uma memória",
+            "a missa nunca aconteceu"
+          ],
+          "correct_index": 3,
+          "explanation": "Ninguém da época a pintou.",
+          "pitfall": "A missa aconteceu; a cena foi imaginada.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Modernistas",
+          "statement": "Em 1922, os artistas da Semana de Arte Moderna reagiram contra:",
+          "options": [
+            "a arte indígena",
+            "a fotografia e o cinema",
+            "a música popular",
+            "a arte rupestre",
+            "as regras da arte acadêmica"
+          ],
+          "correct_index": 4,
+          "explanation": "Queriam uma arte brasileira e livre.",
+          "pitfall": "Não eram contra a arte indígena.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "arte-indigena-e-afro-brasileira",
       "title": "Arte indígena e afro-brasileira",
       "module": "Arte no Brasil",
       "summary": "A arte do Brasil tem raízes indígenas e africanas que continuam vivas. A lição mostra o grafismo, a cerâmica marajoara, a arte de matriz africana e os artistas de hoje.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=TH94tXvSqTU",
+        "title": "👨‍🎨 Arte no Brasil (3/4): Cultura africana no Brasil - Mundo Artes - ENEM",
+        "channel": "MundoEdu ENEM"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -2205,6 +4741,11 @@
       "title": "Arquitetura e patrimônio cultural",
       "module": "Arte no Brasil",
       "summary": "A arquitetura é a arte de organizar o espaço, e uma cidade guarda a sua história. A lição vai das igrejas de Ouro Preto a Brasília e explica o que é patrimônio material e imaterial.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=CLpBg8x-gdY",
+        "title": "O QUE É PATRIMÔNIO MATERIAL E IMATERIAL?",
+        "channel": "Educa Periferia"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -2578,6 +5119,11 @@
       "title": "Música: som, silêncio e os seus elementos",
       "module": "Som e cena",
       "summary": "Música é som e silêncio organizados no tempo. A lição mostra altura, duração, intensidade e timbre. Depois vêm ritmo, melodia e harmonia.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=SWB20HjcpXc",
+        "title": "Elementos da Música [Teoria 2]",
+        "channel": "Fernando Alves"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -2960,6 +5506,11 @@
       "title": "Música brasileira: do choro ao rap",
       "module": "Som e cena",
       "summary": "A música do Brasil nasceu da mistura de ritmos africanos, europeus e indígenas. A lição vai do choro e do samba à bossa nova, à Tropicália e aos gêneros de hoje.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=kb54SqE4RhE",
+        "title": "Melhor vídeo sobre a História da Música Brasileira",
+        "channel": "Vestibuler com prof. Altemir"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -3274,6 +5825,11 @@
       "title": "Teatro: o corpo em cena",
       "module": "Som e cena",
       "summary": "Teatro precisa de três coisas: alguém em cena, alguém assistindo e um lugar. A lição vai da Grécia antiga ao teatro brasileiro e ao Teatro do Oprimido.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=xq1Vbr0qaWk",
+        "title": "HISTÓRIA DO TEATRO - Aula de Artes",
+        "channel": "Artes & Ação - Professora Ana Paula Santana"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -3629,6 +6185,11 @@
       "title": "Fotografia e cinema: ler a imagem",
       "module": "Arte de hoje",
       "summary": "A fotografia mudou a pintura, e o cinema ensinou o mundo a contar histórias com imagens. A lição mostra enquadramento, ângulo e montagem, e como ler uma imagem com olhar crítico.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=lQe_EnvxfwY",
+        "title": "Planos e Enquadramentos no Cinema",
+        "channel": "Cine8 Filmes"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -3985,10 +6546,355 @@
       ]
     },
     {
+      "slug": "design-e-arte-grafica",
+      "title": "Design: a arte que se usa",
+      "module": "Arte de hoje",
+      "summary": "Cadeira, cartaz, logotipo e aplicativo foram desenhados por alguém. A lição mostra o que é design, a ideia de que a forma segue a função, a escola Bauhaus e como a tipografia e a cor comunicam antes de se ler qualquer palavra.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=ERrzzMFAeNY",
+        "title": "BAUHAUS | A PRIMEIRA ESCOLA DE DESIGN DO MUNDO | Paulo Biacchi",
+        "channel": "Paulo Biacchi"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Quem desenhou a sua cadeira?",
+          "body": [
+            "A cadeira em que você senta, o ônibus que pega e o ícone do aplicativo no celular foram desenhados por alguém.",
+            "Ninguém pendura essas coisas num museu, e mesmo assim elas foram pensadas como arte. Esta lição mostra a arte que a gente usa todo dia."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que é design",
+          "body": [
+            "Design é planejar a forma de um objeto ou de uma imagem para que ela cumpra uma tarefa. A cadeira precisa aguentar o peso; o cartaz precisa ser lido de longe.",
+            "Por isso o design fica entre a arte e a utilidade. Ele também pensa na beleza, mas responde a uma pergunta prática: para que serve isto?"
+          ],
+          "terms": [
+            {
+              "word": "design",
+              "meaning": "o planejamento da forma de um objeto ou de uma imagem para que ela sirva a uma tarefa, sem esquecer a beleza."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A forma segue a função",
+          "body": [
+            "Um arquiteto americano do fim do século XIX resumiu uma ideia que marcou o século seguinte: a forma segue a função.",
+            "Quer dizer que o objeto deve ter a forma que o uso pede, sem enfeite sobrando. Uma xícara tem asa porque o líquido queima a mão, e não para decorar."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A Bauhaus",
+          "body": [
+            "Em 1919 abriu na Alemanha a Bauhaus, uma escola que juntava arte, artesanato e indústria. A ideia era fazer objetos bonitos que a fábrica pudesse produzir para muita gente.",
+            "Dali saíram cadeiras de tubo de aço, luminárias e letras simples, sem enfeite. Os nazistas fecharam a escola em 1933, mas o estilo se espalhou pelo mundo."
+          ],
+          "terms": [
+            {
+              "word": "Bauhaus",
+              "meaning": "a escola alemã de 1919 que juntou arte e indústria e defendia objetos simples, úteis e bonitos."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A letra também fala",
+          "body": [
+            "Tipografia é o desenho das letras. Uma letra com serifa, aqueles pezinhos nas pontas, lembra jornal e livro antigo. Uma letra sem serifa parece moderna e limpa.",
+            "A cor também comunica antes da palavra. Vermelho chama atenção e avisa perigo, por isso aparece em placas de pare. Por isso o mesmo texto, em letra e cor diferentes, parece dizer outra coisa."
+          ],
+          "terms": [
+            {
+              "word": "tipografia",
+              "meaning": "o desenho das letras e a escolha de como elas aparecem num texto."
+            },
+            {
+              "word": "serifa",
+              "meaning": "o pequeno traço que fica na ponta de algumas letras, como nos jornais impressos."
+            }
+          ],
+          "table": {
+            "label": "O que a letra sugere",
+            "headers": [
+              "Tipo de letra",
+              "Sensação comum"
+            ],
+            "rows": [
+              [
+                "com serifa",
+                "tradição, jornal, livro"
+              ],
+              [
+                "sem serifa",
+                "moderno, limpo, tela"
+              ],
+              [
+                "manuscrita",
+                "pessoal, festa, convite"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Design no Brasil",
+          "body": [
+            "Nos anos 1960, Aloísio Magalhães desenhou símbolos que o país inteiro reconhece, como as notas de dinheiro da época. Lina Bo Bardi, arquiteta nascida na Itália, valorizou os objetos feitos pelo povo do Nordeste.",
+            "Os irmãos Campana, de São Paulo, fazem cadeiras com bichos de pelúcia e cordas. Mostram que o design também pode brincar."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mostra um cartaz ou um objeto e pergunta como a forma, a letra ou a cor ajudam a passar a mensagem."
+          ],
+          "bullets": [
+            "“A frase ‘a forma segue a função’ defende…”",
+            "“A escola Bauhaus propunha…”",
+            "“No cartaz, a escolha da cor vermelha…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que design é só deixar bonito. Ele começa pela tarefa do objeto.",
+            "Pensar que a Bauhaus fazia peças únicas para ricos. Ela queria produzir para muita gente.",
+            "Achar que a letra não diz nada. O tipo de letra muda a sensação do texto."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Design é planejar a forma de um objeto ou de uma imagem para que ela sirva a uma tarefa. A forma segue a função: nada de enfeite sobrando.",
+            "A Bauhaus, de 1919, juntou arte e indústria. Tipografia e cor comunicam antes da palavra. No Brasil, Aloísio Magalhães, Lina Bo Bardi e os irmãos Campana marcaram o design."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Design",
+          "statement": "Design é:",
+          "options": [
+            "pintar quadros só para os museus famosos",
+            "copiar objetos antigos sem mudar nada neles",
+            "enfeitar o que já está pronto",
+            "esculpir estátuas de mármore",
+            "planejar a forma de algo para que sirva a uma tarefa"
+          ],
+          "correct_index": 4,
+          "explanation": "Forma e uso juntos.",
+          "pitfall": "Não é só enfeite."
+        },
+        {
+          "topic": "Função",
+          "statement": "A frase “a forma segue a função” quer dizer que:",
+          "options": [
+            "o objeto deve ter a forma que o uso pede",
+            "todo objeto precisa de muito enfeite",
+            "a cor importa mais que tudo",
+            "a função muda conforme a moda",
+            "a forma não importa nada"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem enfeite sobrando.",
+          "pitfall": "Enfeite em excesso é o contrário."
+        },
+        {
+          "topic": "Bauhaus",
+          "statement": "A escola Bauhaus, de 1919, queria:",
+          "options": [
+            "fazer peças únicas e caras só para os reis",
+            "juntar arte e indústria para produzir para muita gente",
+            "proibir as máquinas nas fábricas do país",
+            "voltar à pintura do Renascimento",
+            "pintar só telas para igrejas"
+          ],
+          "correct_index": 1,
+          "explanation": "Objetos bonitos e úteis em série.",
+          "pitfall": "Peças únicas é o contrário."
+        },
+        {
+          "topic": "Fechou",
+          "statement": "A Bauhaus foi fechada em 1933:",
+          "options": [
+            "por falta de alunos",
+            "por um incêndio",
+            "pelos nazistas",
+            "pela Igreja",
+            "pelos próprios professores"
+          ],
+          "correct_index": 2,
+          "explanation": "Mas o estilo se espalhou.",
+          "pitfall": "Não foi por falta de alunos."
+        },
+        {
+          "topic": "Tipografia",
+          "statement": "Tipografia é:",
+          "options": [
+            "o estudo dos tipos de tinta",
+            "a arte de fazer esculturas",
+            "a impressão de fotos coloridas",
+            "o desenho das letras",
+            "o nome de um movimento antigo"
+          ],
+          "correct_index": 3,
+          "explanation": "Com serifa, sem serifa, manuscrita.",
+          "pitfall": "Não é sobre tinta."
+        },
+        {
+          "topic": "Serifa",
+          "statement": "Serifa é:",
+          "options": [
+            "uma cor forte usada em placas",
+            "um tipo de papel grosso e caro",
+            "o nome de uma cadeira famosa",
+            "a sombra atrás de um texto",
+            "o pequeno traço na ponta de algumas letras"
+          ],
+          "correct_index": 4,
+          "explanation": "Lembra jornal impresso.",
+          "pitfall": "Não é cor."
+        },
+        {
+          "topic": "Vermelho",
+          "statement": "Placas de pare costumam ser vermelhas porque o vermelho:",
+          "options": [
+            "chama atenção e avisa perigo",
+            "é a cor mais barata de tinta",
+            "acalma quem dirige",
+            "some à noite",
+            "é a cor do céu limpo"
+          ],
+          "correct_index": 0,
+          "explanation": "A cor fala antes da palavra.",
+          "pitfall": "Não acalma."
+        },
+        {
+          "topic": "Bonito",
+          "statement": "Dizer que design é só deixar as coisas bonitas é um erro porque:",
+          "options": [
+            "design nunca pensa em beleza",
+            "ele começa pela tarefa do objeto",
+            "só a arte de museu pensa em beleza",
+            "beleza é proibida no design",
+            "design é igual a pintura"
+          ],
+          "correct_index": 1,
+          "explanation": "A beleza vem junto, não sozinha.",
+          "pitfall": "Ele também pensa na beleza."
+        },
+        {
+          "topic": "Xícara",
+          "statement": "A asa da xícara é um exemplo de forma que:",
+          "options": [
+            "serve só para enfeitar",
+            "foi copiada da Bauhaus",
+            "segue a função",
+            "não tem uso",
+            "existe por moda"
+          ],
+          "correct_index": 2,
+          "explanation": "O líquido queima a mão.",
+          "pitfall": "Ela tem uso.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Sem serifa",
+          "statement": "Uma letra sem serifa costuma passar a sensação de:",
+          "options": [
+            "livro muito antigo",
+            "convite de casamento",
+            "jornal de 1900",
+            "moderno e limpo",
+            "carta escrita à mão"
+          ],
+          "correct_index": 3,
+          "explanation": "Comum nas telas.",
+          "pitfall": "Livro antigo é a com serifa.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Campana",
+          "statement": "Os irmãos Campana mostram que o design também pode:",
+          "options": [
+            "ser feito só em fábrica alemã",
+            "dispensar a função sempre",
+            "copiar a Bauhaus sem mudar",
+            "usar só mármore",
+            "brincar com materiais inesperados"
+          ],
+          "correct_index": 4,
+          "explanation": "Cadeiras com pelúcia e cordas.",
+          "pitfall": "Não precisa ser alemão.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Lina",
+          "statement": "Lina Bo Bardi é lembrada por:",
+          "options": [
+            "valorizar objetos feitos pelo povo do Nordeste",
+            "fundar a Bauhaus na Alemanha em 1919",
+            "pintar a Noite estrelada",
+            "inventar a letra com serifa",
+            "esculpir os profetas de Congonhas"
+          ],
+          "correct_index": 0,
+          "explanation": "Arquiteta nascida na Itália.",
+          "pitfall": "A Bauhaus é alemã.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Mesma frase",
+          "statement": "A mesma frase, num convite em letra manuscrita e num aviso em letra sem serifa, parece diferente porque:",
+          "options": [
+            "as palavras mudam de sentido no dicionário",
+            "a letra muda a sensação do texto",
+            "a letra manuscrita é proibida em aviso",
+            "o papel muda o que está escrito",
+            "a cor não aparece em convites"
+          ],
+          "correct_index": 1,
+          "explanation": "A letra também fala.",
+          "pitfall": "O dicionário não muda.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Indústria",
+          "statement": "A diferença entre a Bauhaus e o artesão de peça única é que a Bauhaus pensava:",
+          "options": [
+            "em peças únicas só para museus",
+            "em fugir de toda máquina da fábrica",
+            "em objetos que a fábrica produz para muita gente",
+            "em enfeites cada vez maiores",
+            "em obras que ninguém pode usar"
+          ],
+          "correct_index": 2,
+          "explanation": "Arte e indústria juntas.",
+          "pitfall": "Ela não fugia da máquina.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "arte-contemporanea",
       "title": "Arte contemporânea e cultura digital",
       "module": "Arte de hoje",
       "summary": "A arte de hoje sai da moldura: vira espaço, corpo, muro e tela de celular. Muitas vezes pede a participação do público e faz pensar mais do que agradar.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=UBDOa7cz4eA",
+        "title": "QUARENTENA ENEM: Arte Contemporânea | História da Arte",
+        "channel": "Portal do Enem"
+      },
       "steps": [
         {
           "kind": "idea",
