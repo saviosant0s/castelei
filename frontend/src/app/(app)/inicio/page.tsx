@@ -1,3 +1,4 @@
+import { ScrollMemory } from "@/components/app/ScrollMemory";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ChevronRight, CloudUpload } from "lucide-react";
@@ -71,6 +72,7 @@ export default async function Inicio() {
 
   return (
     <div className="space-y-8">
+      <ScrollMemory id={"inicio"} />
       {/*
         A saudação fica sozinha e no centro: os dias seguidos e o XP subiram
         para o cabeçalho fixo (e aparecem em toda tela), a revisão virou aba e

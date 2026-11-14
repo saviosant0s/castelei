@@ -1,3 +1,4 @@
+import { ScrollMemory } from "@/components/app/ScrollMemory";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
@@ -21,6 +22,7 @@ export default async function QuestoesPage() {
 
   return (
     <div className="space-y-7">
+      <ScrollMemory id={"questoes"} />
       <PageHero title="Questões">Escolha a matéria e a lição que quer treinar.</PageHero>
 
       {ativas.length === 0 ? (

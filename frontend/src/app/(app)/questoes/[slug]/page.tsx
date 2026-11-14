@@ -1,3 +1,4 @@
+import { ScrollMemory } from "@/components/app/ScrollMemory";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -27,6 +28,7 @@ export default async function QuestoesDaMateria({ params }: { params: Promise<{ 
 
   return (
     <div className="space-y-7">
+      <ScrollMemory id={`questoes:${slug}`} />
       <PageHero title={subject.name}>Escolha a lição{temNivel ? " e o nível" : ""}.</PageHero>
 
       {temNivel && !podeNivel && (
