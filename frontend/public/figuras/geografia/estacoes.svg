@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 210" width="360" height="210" role="img" aria-label="O Sol no centro e a Terra em dois pontos da órbita, sempre com o eixo inclinado para o mesmo lado. Em dezembro, o hemisfério sul está virado para o Sol; em junho, o hemisfério norte."><title>Estações do ano</title>
+<ellipse cx="180" cy="95" rx="135" ry="42" fill="none" stroke="#1C1C2E" stroke-opacity="0.3" stroke-width="1.5" stroke-dasharray="5 4"/>
+<circle cx="180" cy="95" r="26" fill="#F6C760" stroke="#1C1C2E" stroke-width="2.5"/>
+<g transform="translate(52 95)">
+<circle r="38" fill="#DCEBF7" stroke="#1C1C2E" stroke-width="2.5"/>
+<path d="M -38 0 A 38 38 0 0 0 38 0 Z" fill="#F6C760" fill-opacity="0.5" transform="rotate(-23.5)"/>
+<path d="M -38 0 L 38 0" stroke="#2F6FB0" stroke-width="2.5" transform="rotate(-23.5)"/>
+<path d="M 0 -52 L 0 52" stroke="#E07A5F" stroke-width="3" transform="rotate(-23.5)"/>
+</g>
+<g transform="translate(308 95)">
+<circle r="38" fill="#DCEBF7" stroke="#1C1C2E" stroke-width="2.5"/>
+<path d="M -38 0 A 38 38 0 0 1 38 0 Z" fill="#F6C760" fill-opacity="0.5" transform="rotate(-23.5)"/>
+<path d="M -38 0 L 38 0" stroke="#2F6FB0" stroke-width="2.5" transform="rotate(-23.5)"/>
+<path d="M 0 -52 L 0 52" stroke="#E07A5F" stroke-width="3" transform="rotate(-23.5)"/>
+</g>
+<g font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-weight="700" font-size="15" fill="#1C1C2E" text-anchor="middle">
+<text x="180" y="100">Sol</text>
+<text x="52" y="176">Dezembro</text>
+<text x="52" y="196" font-weight="500" font-size="14">verão no sul</text>
+<text x="308" y="176">Junho</text>
+<text x="308" y="196" font-weight="500" font-size="14">verão no norte</text>
+</g>
+</svg>
