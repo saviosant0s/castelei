@@ -9,6 +9,11 @@
       "title": "Medidas: comprimento, massa e capacidade",
       "module": "Medidas",
       "summary": "Metro, grama e litro, e como passar de uma unidade para outra sem decorar tabela: é uma escada de dez em dez.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=AEq9ykJkR2U",
+        "title": "MEDIDAS DE COMPRIMENTO | FÁCIL e RÁPIDO ",
+        "channel": "Dicasdemat Sandro Curió"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -427,6 +432,11 @@
       "title": "Tempo, horários e velocidade",
       "module": "Medidas",
       "summary": "O relógio conta de sessenta em sessenta, e é aí que mora o erro. Depois, a velocidade: distância dividida pelo tempo.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=0RyV6qUoG3g",
+        "title": "VELOCIDADE MÉDIA EM 12 MINUTOS",
+        "channel": "Dicasdemat Sandro Curió"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -810,10 +820,352 @@
       ]
     },
     {
+      "slug": "escala-plantas-e-mapas",
+      "title": "Escala: plantas, maquetes e mapas",
+      "module": "Medidas",
+      "summary": "Uma planta de apartamento cabe numa folha porque tudo foi encolhido na mesma medida. A lição mostra como ler uma escala como 1:100, achar o tamanho real de um desenho e por que a área encolhe muito mais que o lado.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=sEDRPZChK5M",
+        "title": "ESCALA CARTOGRÁFICA | RAZÃO e PROPORÇÃO ENEM",
+        "channel": "Dicasdemat Sandro Curió"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O quarto na folha",
+          "body": [
+            "No anúncio do apartamento, o quarto aparece com 3 centímetros de largura na folha. Ninguém mora num quarto de 3 centímetros.",
+            "O desenho foi encolhido, e um número pequeno no canto diz quanto. Saber ler esse número é saber o tamanho de verdade."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que 1:100 quer dizer",
+          "body": [
+            "Escala é a comparação entre o tamanho no desenho e o tamanho real. A escala 1:100 (lê-se “um para cem”) quer dizer que 1 centímetro no desenho vale 100 centímetros na realidade.",
+            "Então os 3 centímetros do quarto valem 300 centímetros, ou seja, 3 metros. A conta é sempre a mesma: multiplique a medida do desenho pelo número da escala."
+          ],
+          "terms": [
+            {
+              "word": "escala",
+              "meaning": "a comparação entre o tamanho no desenho e o tamanho real, escrita como 1:100 ou 1:50 000."
+            }
+          ],
+          "example": {
+            "label": "Do desenho ao real",
+            "ordered": true,
+            "lines": [
+              "Meça no desenho: 3 cm.",
+              "Multiplique pela escala: 3 × 100 = 300 cm.",
+              "Passe para metros: 300 cm = 3 m."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Escala pequena, escala grande",
+          "body": [
+            "Na planta de uma casa, a escala costuma ser 1:50 ou 1:100. Num mapa de cidade, 1:10 000. Num mapa do Brasil inteiro, 1:5 000 000 ou mais.",
+            "Quanto maior o número depois dos dois-pontos, mais o desenho foi encolhido e menos detalhe ele mostra. O mapa do Brasil não tem espaço para a sua rua."
+          ],
+          "table": {
+            "label": "Escalas comuns",
+            "headers": [
+              "Desenho",
+              "Escala",
+              "1 cm vale"
+            ],
+            "rows": [
+              [
+                "planta de casa",
+                "1:100",
+                "1 m"
+              ],
+              [
+                "mapa de bairro",
+                "1:10 000",
+                "100 m"
+              ],
+              [
+                "mapa do país",
+                "1:5 000 000",
+                "50 km"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Do real para o desenho",
+          "body": [
+            "Para desenhar, a conta vai ao contrário: divida a medida real pelo número da escala. Uma sala de 5 metros, na escala 1:100, vira 500 ÷ 100 = 5 centímetros.",
+            "Antes de dividir, ponha as duas medidas na mesma unidade. Metro com centímetro na mesma conta é o erro mais comum."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A área encolhe mais",
+          "body": [
+            "Na escala 1:100, cada lado encolhe 100 vezes. Mas a área encolhe 100 × 100 = 10 000 vezes, porque largura e comprimento encolhem juntos.",
+            "Por isso não dá para medir a área no desenho e multiplicar só por 100. Calcule cada lado real primeiro e depois multiplique os dois."
+          ],
+          "example": {
+            "label": "Quarto de 3 cm por 4 cm na escala 1:100",
+            "lines": [
+              "Lados reais: 3 m e 4 m.",
+              "Área real: 3 × 4 = 12 m².",
+              "Errado: 12 cm² × 100 = 1 200 cm²."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá um mapa ou uma planta com a escala e pede uma distância ou uma área real, ou pede a escala a partir de duas medidas."
+          ],
+          "bullets": [
+            "“Num mapa de escala 1:250 000, duas cidades estão a 4 cm…”",
+            "“A escala da maquete é…”",
+            "Passe tudo para a mesma unidade antes da conta."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Misturar centímetro e metro na mesma conta.",
+            "Multiplicar a área do desenho só pelo número da escala.",
+            "Achar que 1:1 000 000 mostra mais detalhe que 1:1 000. Mostra menos."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Na escala 1:100, 1 cm do desenho vale 100 cm reais. Do desenho ao real, multiplique; do real ao desenho, divida.",
+            "Quanto maior o número da escala, menor o detalhe. A área encolhe o número da escala vezes ele mesmo."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Ler",
+          "statement": "Na escala 1:100, 1 cm no desenho vale:",
+          "options": [
+            "100 cm reais",
+            "1 cm real",
+            "10 cm reais",
+            "1 km real",
+            "100 m reais"
+          ],
+          "correct_index": 0,
+          "explanation": "1 para 100.",
+          "pitfall": "100 m seria 1:10 000."
+        },
+        {
+          "topic": "Quarto",
+          "statement": "Numa planta 1:100, uma parede mede 4 cm. O tamanho real é:",
+          "options": [
+            "40 cm",
+            "4 m",
+            "4 cm",
+            "40 m",
+            "400 m"
+          ],
+          "correct_index": 1,
+          "explanation": "4 × 100 = 400 cm.",
+          "pitfall": "40 cm esquece um zero."
+        },
+        {
+          "topic": "Mapa",
+          "statement": "Num mapa 1:10 000, duas casas estão a 3 cm. A distância real é:",
+          "options": [
+            "30 m",
+            "3 km",
+            "300 m",
+            "3 000 m",
+            "30 km"
+          ],
+          "correct_index": 2,
+          "explanation": "3 × 10 000 = 30 000 cm.",
+          "pitfall": "3 km tem um zero a mais."
+        },
+        {
+          "topic": "Ao contrário",
+          "statement": "Uma sala de 6 m será desenhada na escala 1:100. No papel, ela mede:",
+          "options": [
+            "60 cm",
+            "0,6 cm",
+            "600 cm",
+            "6 cm",
+            "6 m"
+          ],
+          "correct_index": 3,
+          "explanation": "600 cm ÷ 100.",
+          "pitfall": "60 cm esquece de dividir certo."
+        },
+        {
+          "topic": "Detalhe",
+          "statement": "Qual escala mostra mais detalhe?",
+          "options": [
+            "1:50 000",
+            "1:500 000",
+            "1:5 000 000",
+            "todas mostram o mesmo",
+            "1:500"
+          ],
+          "correct_index": 4,
+          "explanation": "Menor número, menos encolhimento.",
+          "pitfall": "Número grande encolhe mais."
+        },
+        {
+          "topic": "Área",
+          "statement": "Na escala 1:100, a área real é quantas vezes maior que a do desenho?",
+          "options": [
+            "10 000 vezes",
+            "100 vezes",
+            "200 vezes",
+            "1 000 vezes",
+            "a mesma"
+          ],
+          "correct_index": 0,
+          "explanation": "100 × 100.",
+          "pitfall": "100 vezes vale só para o lado."
+        },
+        {
+          "topic": "Unidade",
+          "statement": "Antes de fazer a conta da escala, é preciso:",
+          "options": [
+            "arredondar tudo para o inteiro",
+            "pôr as medidas na mesma unidade",
+            "somar as duas medidas",
+            "trocar a escala por 1:1",
+            "medir o papel inteiro"
+          ],
+          "correct_index": 1,
+          "explanation": "Metro e centímetro não se misturam.",
+          "pitfall": "Somar não resolve."
+        },
+        {
+          "topic": "Área real",
+          "statement": "Um quarto mede 3 cm por 5 cm numa planta 1:100. A área real é:",
+          "options": [
+            "15 cm²",
+            "150 m²",
+            "15 m²",
+            "1 500 m²",
+            "1,5 m²"
+          ],
+          "correct_index": 2,
+          "explanation": "Lados reais: 3 m e 5 m.",
+          "pitfall": "150 m² multiplica errado."
+        },
+        {
+          "topic": "Fácil 1",
+          "statement": "Na escala 1:50, 1 cm no desenho vale:",
+          "options": [
+            "5 cm",
+            "50 m",
+            "1 cm",
+            "50 cm",
+            "500 cm"
+          ],
+          "correct_index": 3,
+          "explanation": "Um para cinquenta.",
+          "pitfall": "50 m seria 1:5 000.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Fácil 2",
+          "statement": "Escala é a comparação entre:",
+          "options": [
+            "dois mapas diferentes",
+            "a altura e a largura",
+            "o preço e o tamanho",
+            "a cor e a forma",
+            "o tamanho no desenho e o tamanho real"
+          ],
+          "correct_index": 4,
+          "explanation": "Desenho e realidade.",
+          "pitfall": "Não compara dois mapas.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Descobrir",
+          "statement": "Uma rua de 200 m aparece com 2 cm num mapa. A escala é:",
+          "options": [
+            "1:10 000",
+            "1:100",
+            "1:1 000",
+            "1:100 000",
+            "1:200"
+          ],
+          "correct_index": 0,
+          "explanation": "20 000 cm ÷ 2 cm.",
+          "pitfall": "1:100 esquece a conversão.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Cidades",
+          "statement": "Num mapa 1:250 000, duas cidades estão a 4 cm. A distância real é:",
+          "options": [
+            "1 km",
+            "10 km",
+            "100 km",
+            "25 km",
+            "40 km"
+          ],
+          "correct_index": 1,
+          "explanation": "4 × 250 000 = 1 000 000 cm.",
+          "pitfall": "100 km tem um zero a mais.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Maquete",
+          "statement": "Numa maquete 1:50, um prédio tem 40 cm de altura. A altura real é:",
+          "options": [
+            "2 m",
+            "200 m",
+            "20 m",
+            "4 m",
+            "80 m"
+          ],
+          "correct_index": 2,
+          "explanation": "40 × 50 = 2 000 cm.",
+          "pitfall": "2 m perde um zero.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Erro",
+          "statement": "Alguém achou 15 cm² de área no desenho 1:100 e respondeu 1 500 cm² reais. O erro foi:",
+          "options": [
+            "usar centímetros quadrados",
+            "medir o desenho",
+            "usar a escala 1:100",
+            "multiplicar a área só pela escala",
+            "somar os lados"
+          ],
+          "correct_index": 3,
+          "explanation": "A área encolhe 10 000 vezes.",
+          "pitfall": "O desenho estava certo.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "juros-simples-e-compostos",
       "title": "Juros simples e compostos",
       "module": "Dinheiro",
       "summary": "Juro é o aluguel do dinheiro. No simples, ele é sempre o mesmo; no composto, rende juro sobre juro e cresce cada vez mais rápido.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=Uth75BB0ASU",
+        "title": "Juros Simples e Juros Compostos",
+        "channel": "Descomplica"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -1254,6 +1606,11 @@
       "title": "Comprar bem: preço por unidade, descontos e parcelas",
       "module": "Dinheiro",
       "summary": "Embalagem maior nem sempre sai mais barato, e “sem juros” nem sempre é verdade. A conta que decide é a do preço por unidade e a do total pago.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=3EefFSEF8Ds",
+        "title": "PORCENTAGEM | AUMENTO E DESCONTO",
+        "channel": "Dicasdemat Sandro Curió"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -1629,10 +1986,368 @@
       ]
     },
     {
+      "slug": "orcamento-e-inflacao",
+      "title": "Orçamento do mês e inflação",
+      "module": "Dinheiro",
+      "summary": "Saber quanto entra, quanto sai e para onde vai é a base de toda decisão com dinheiro. A lição mostra como montar um orçamento, separar o que é fixo do que muda e entender por que a inflação faz o mesmo dinheiro comprar menos.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=ZZEFReskU0Y",
+        "title": "O que é inflação",
+        "channel": "Nexo Jornal"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O dinheiro que sumiu",
+          "body": [
+            "No começo do mês o salário entra. No dia 20, acabou, e ninguém lembra bem onde foi parar.",
+            "O problema quase nunca é uma compra grande. São várias pequenas que ninguém anotou. O orçamento existe para tornar visível o que some aos poucos."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Entra e sai",
+          "body": [
+            "Orçamento é uma lista de tudo o que entra (salário, bico, mesada) e tudo o que sai (aluguel, comida, transporte, lazer) num mês.",
+            "A conta mais importante é a diferença. Se sobra, dá para guardar. Se falta, alguém vai pagar a diferença com juros, no cartão ou no cheque especial."
+          ],
+          "terms": [
+            {
+              "word": "orçamento",
+              "meaning": "a lista do dinheiro que entra e do que sai num período, quase sempre um mês."
+            }
+          ],
+          "table": {
+            "label": "Orçamento de Ana",
+            "headers": [
+              "Item",
+              "Valor (R$)"
+            ],
+            "rows": [
+              [
+                "salário (entra)",
+                "2 000"
+              ],
+              [
+                "aluguel",
+                "−700"
+              ],
+              [
+                "comida",
+                "−600"
+              ],
+              [
+                "transporte",
+                "−250"
+              ],
+              [
+                "lazer",
+                "−200"
+              ],
+              [
+                "sobra",
+                "250"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Fixo e o que muda",
+          "body": [
+            "Gasto fixo é o que vem igual todo mês: aluguel, mensalidade, plano de celular. Gasto que muda é o que depende do mês (mercado, luz, lazer e presentes).",
+            "Para economizar, os que mudam são o primeiro lugar a olhar. Mas um fixo cortado vale para todos os meses seguintes, e por isso pesa mais no ano."
+          ],
+          "terms": [
+            {
+              "word": "gasto fixo",
+              "meaning": "a despesa que vem com o mesmo valor todo mês, como o aluguel."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Inflação: o dinheiro encolhe",
+          "body": [
+            "Inflação é a alta geral dos preços ao longo do tempo. Se a inflação de um ano foi de 5%, o que custava R$ 100 passa a custar cerca de R$ 105.",
+            "O mesmo salário, se não sobe junto, compra menos. Por isso dinheiro parado na gaveta perde valor, mesmo sem ninguém mexer nele."
+          ],
+          "terms": [
+            {
+              "word": "inflação",
+              "meaning": "a alta geral dos preços ao longo do tempo, que faz o mesmo dinheiro comprar menos."
+            },
+            {
+              "word": "porcentagem",
+              "meaning": "uma parte de cada 100. Dizer 5% é dizer 5 de cada 100."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Inflação acumulada",
+          "body": [
+            "Dois anos de 5% não dão 10%: dão um pouco mais, porque o segundo ano sobe em cima do preço já aumentado. R$ 100 vira R$ 105 e depois R$ 110,25.",
+            "É a mesma lógica do juro sobre juro, agora contra o seu bolso. Em muitos anos, a diferença fica grande."
+          ],
+          "example": {
+            "label": "R$ 100 com 5% ao ano",
+            "ordered": true,
+            "lines": [
+              "Depois de 1 ano: 100 × 1,05 = 105,00.",
+              "Depois de 2 anos: 105 × 1,05 = 110,25.",
+              "Depois de 3 anos: 110,25 × 1,05 ≈ 115,76."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mostra um orçamento em tabela e pergunta a sobra ou a parte de um gasto, ou pede o preço depois de alguns anos de inflação."
+          ],
+          "bullets": [
+            "“Qual porcentagem do salário vai para o aluguel?”",
+            "“Com inflação de 4% ao ano, o preço após dois anos será…”",
+            "Inflação acumulada se multiplica, não se soma."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Somar as inflações de cada ano. Elas se multiplicam.",
+            "Achar que dinheiro parado mantém o valor. A inflação o corrói.",
+            "Esquecer os gastos pequenos no orçamento. Somados, eles pesam."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Orçamento é anotar o que entra e o que sai. A diferença diz se dá para guardar ou se vai faltar.",
+            "Inflação é a alta dos preços: o mesmo dinheiro compra menos. Anos de inflação se acumulam multiplicando, como juro sobre juro."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Orçamento",
+          "statement": "Orçamento é:",
+          "options": [
+            "só a lista das compras do mercado",
+            "o valor do salário",
+            "um tipo de empréstimo",
+            "a conta do cartão de crédito",
+            "a lista do que entra e do que sai num período"
+          ],
+          "correct_index": 4,
+          "explanation": "Entradas e saídas.",
+          "pitfall": "Não é só o salário."
+        },
+        {
+          "topic": "Sobra",
+          "statement": "Ana ganha R$ 2 000 e gasta R$ 1 750. A sobra é:",
+          "options": [
+            "R$ 250",
+            "R$ 350",
+            "R$ 150",
+            "R$ 3 750",
+            "R$ 1 750"
+          ],
+          "correct_index": 0,
+          "explanation": "2 000 − 1 750.",
+          "pitfall": "3 750 soma em vez de subtrair."
+        },
+        {
+          "topic": "Fixo",
+          "statement": "Qual destes é um gasto fixo?",
+          "options": [
+            "o lanche da rua",
+            "o aluguel",
+            "um presente de aniversário",
+            "o cinema do fim de semana",
+            "uma roupa nova"
+          ],
+          "correct_index": 1,
+          "explanation": "Vem igual todo mês.",
+          "pitfall": "Lanche muda de mês para mês."
+        },
+        {
+          "topic": "Parte",
+          "statement": "Ana ganha R$ 2 000 e paga R$ 700 de aluguel. O aluguel é que parte do salário?",
+          "options": [
+            "7%",
+            "70%",
+            "35%",
+            "20%",
+            "3,5%"
+          ],
+          "correct_index": 2,
+          "explanation": "700 ÷ 2 000 = 0,35.",
+          "pitfall": "70% esquece a vírgula."
+        },
+        {
+          "topic": "Inflação",
+          "statement": "Inflação é:",
+          "options": [
+            "a queda de todos os preços",
+            "o aumento do salário",
+            "o juro do banco",
+            "a alta geral dos preços ao longo do tempo",
+            "o imposto sobre compras"
+          ],
+          "correct_index": 3,
+          "explanation": "O dinheiro compra menos.",
+          "pitfall": "Queda de preços é o contrário."
+        },
+        {
+          "topic": "Um ano",
+          "statement": "Com inflação de 5% em um ano, algo que custava R$ 200 passa a custar cerca de:",
+          "options": [
+            "R$ 205",
+            "R$ 250",
+            "R$ 195",
+            "R$ 300",
+            "R$ 210"
+          ],
+          "correct_index": 4,
+          "explanation": "5% de 200 é 10.",
+          "pitfall": "205 aplica 5 reais, não 5%."
+        },
+        {
+          "topic": "Gaveta",
+          "statement": "Dinheiro guardado na gaveta durante anos de inflação:",
+          "options": [
+            "perde poder de compra",
+            "ganha valor sozinho",
+            "fica com o mesmo valor",
+            "rende juros",
+            "dobra a cada ano"
+          ],
+          "correct_index": 0,
+          "explanation": "Os preços sobem, o dinheiro não.",
+          "pitfall": "Não rende nada."
+        },
+        {
+          "topic": "Acumulada",
+          "statement": "Dois anos seguidos de 10% de inflação somam:",
+          "options": [
+            "20%",
+            "21%",
+            "10%",
+            "11%",
+            "100%"
+          ],
+          "correct_index": 1,
+          "explanation": "1,1 × 1,1 = 1,21.",
+          "pitfall": "20% soma em vez de multiplicar."
+        },
+        {
+          "topic": "Fácil 1",
+          "statement": "Se o que entra é menor que o que sai, o orçamento:",
+          "options": [
+            "sobra dinheiro",
+            "fica certo",
+            "fica no vermelho",
+            "dobra",
+            "não muda nada"
+          ],
+          "correct_index": 2,
+          "explanation": "Falta para pagar.",
+          "pitfall": "Sobrar seria o contrário.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Fácil 2",
+          "statement": "5% quer dizer:",
+          "options": [
+            "5 de cada 10",
+            "50 de cada 100",
+            "5 de cada 1 000",
+            "5 de cada 100",
+            "metade"
+          ],
+          "correct_index": 3,
+          "explanation": "Por cento é por cem.",
+          "pitfall": "5 de cada 10 seria 50%.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Cortar",
+          "statement": "Cortar um gasto fixo de R$ 50 por mês economiza no ano:",
+          "options": [
+            "R$ 50",
+            "R$ 500",
+            "R$ 120",
+            "R$ 6 000",
+            "R$ 600"
+          ],
+          "correct_index": 4,
+          "explanation": "50 × 12.",
+          "pitfall": "500 conta só dez meses.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Três anos",
+          "statement": "Um preço de R$ 100 com 5% ao ano, depois de dois anos, fica:",
+          "options": [
+            "R$ 110,25",
+            "R$ 110,00",
+            "R$ 105,00",
+            "R$ 115,00",
+            "R$ 120,00"
+          ],
+          "correct_index": 0,
+          "explanation": "105 × 1,05.",
+          "pitfall": "110 soma em vez de multiplicar.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Salário",
+          "statement": "O salário subiu 4% num ano em que a inflação foi de 6%. Isso quer dizer que:",
+          "options": [
+            "o salário passou a comprar mais",
+            "o salário passou a comprar menos que antes",
+            "nada mudou no poder de compra",
+            "a inflação caiu",
+            "o salário dobrou"
+          ],
+          "correct_index": 1,
+          "explanation": "Os preços subiram mais.",
+          "pitfall": "Aumento menor que a inflação é perda.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Erro",
+          "statement": "Alguém disse: “Três anos de 10% de inflação são 30% no total”. O certo é:",
+          "options": [
+            "exatamente 30%",
+            "menos de 30%",
+            "mais de 30%, porque cada ano sobe sobre o anterior",
+            "10%, porque é a mesma taxa",
+            "não dá para saber"
+          ],
+          "correct_index": 2,
+          "explanation": "1,1 × 1,1 × 1,1 ≈ 1,331.",
+          "pitfall": "Somar é o erro.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "angulos-e-triangulos",
       "title": "Ângulos e triângulos",
       "module": "Geometria",
       "summary": "Ângulo é o quanto uma coisa gira. Num triângulo, os três ângulos somam sempre 180 graus, e isso resolve muita questão.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=-gYqXon14rA",
+        "title": "ÂNGULOS DO TRIÂNGULO | INTERNOS E EXTERNOS",
+        "channel": "Dicasdemat Sandro Curió"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -2003,6 +2718,11 @@
       "title": "Perímetro e área",
       "module": "Geometria",
       "summary": "Perímetro é o contorno, que se mede em metros. Área é o que cabe dentro, que se mede em metros quadrados. Confundir os dois é o erro mais comum.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=P_oB6jR8LiQ",
+        "title": "ÁREA E PERÍMETRO | RESOLUÇÃO DE PROBLEMAS EXERCÍCIOS",
+        "channel": "Dicasdemat Sandro Curió"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -2380,6 +3100,11 @@
       "title": "O círculo: raio, contorno e área",
       "module": "Geometria",
       "summary": "Toda roda guarda o mesmo segredo: o contorno é um pouco mais que três diâmetros. Esse número é o pi, e com ele se acha contorno e área.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=ZJvkD2zEFVQ",
+        "title": "CIRCUNFERÊNCIA E CÍRCULO | RÁPIDO e FÁCIL ",
+        "channel": "Dicasdemat Sandro Curió"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -2725,6 +3450,11 @@
       "title": "O teorema de Pitágoras",
       "module": "Geometria",
       "summary": "No triângulo com um canto reto, os quadrados dos dois lados menores somam o quadrado do maior. Com isso se mede o que não dá para medir com trena.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=7YeYeL2MjB4",
+        "title": "TEOREMA DE PITÁGORAS | FÁCIL e RÁPIDO",
+        "channel": "Dicasdemat Sandro Curió"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -3100,6 +3830,11 @@
       "title": "Volume: caixas, latas e litros",
       "module": "Geometria",
       "summary": "Volume é quanto espaço uma coisa ocupa. Numa caixa, é comprimento × largura × altura; numa lata, a área do fundo × a altura. E cada mil centímetros cúbicos são um litro.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=3iWl-Liuw5s",
+        "title": "CÁLCULO DE VOLUMES: O QUE VOCÊ PRECISA SABER? | MATEMÁTICA | QUER QUE DESENHE?",
+        "channel": "Descomplica"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -3472,6 +4207,11 @@
       "title": "Média, moda e mediana",
       "module": "Dados e chance",
       "summary": "Três jeitos de resumir uma lista de números num só. A média divide por igual, a mediana é o do meio e a moda é o que mais aparece.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=IgoKxQK5hGQ",
+        "title": "ESTATÍSTICA: MÉDIA, MODA e MEDIANA | RÁPIDO E FÁCIL",
+        "channel": "Dicasdemat Sandro Curió"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -3834,6 +4574,11 @@
       "title": "Ler gráficos e tabelas",
       "module": "Dados e chance",
       "summary": "Gráfico é um resumo desenhado. Saber qual tipo serve para quê, e onde ele pode enganar, resolve boa parte das questões de prova.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=M-UrLeWqfxo",
+        "title": "COMO INTERPRETAR GRÁFICOS E TABELAS | Resumo de Matemática para o Enem",
+        "channel": "Curso Enem Gratuito"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -4215,6 +4960,11 @@
       "title": "Contar sem listar: o princípio multiplicativo",
       "module": "Dados e chance",
       "summary": "Quantas senhas, quantas roupas, quantos jeitos de formar uma fila? Quando as escolhas vêm em etapas, multiplica-se.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=9YHZdxtd6cc",
+        "title": "Aprenda em 3 Minutos: PRINCÍPIO FUNDAMENTAL DA CONTAGEM (PFC)",
+        "channel": "Matemática Desenhada"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -4587,6 +5337,11 @@
       "title": "Probabilidade: a chance em números",
       "module": "Dados e chance",
       "summary": "Probabilidade é quantos casos servem dividido por quantos casos existem. Com isso se calcula a chance no dado, na moeda e no sorteio.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=iNCkGogNtKI",
+        "title": "PROBABILIDADE | APRENDA EM 13MIN",
+        "channel": "Dicasdemat Sandro Curió"
+      },
       "steps": [
         {
           "kind": "idea",

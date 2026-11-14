@@ -89,8 +89,10 @@ export const SUBJECTS: SiteSubject[] = [
     lessons: [
       "Medidas: comprimento, massa e capacidade",
       "Tempo, horários e velocidade",
+      "Escala: plantas, maquetes e mapas",
       "Juros simples e compostos",
       "Comprar bem: preço por unidade, descontos e parcelas",
+      "Orçamento do mês e inflação",
       "Ângulos e triângulos",
       "Perímetro e área",
       "O círculo: raio, contorno e área",
@@ -864,5 +866,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 7378,
+  questions: 7406,
 };
