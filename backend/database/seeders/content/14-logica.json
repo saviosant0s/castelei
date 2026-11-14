@@ -14,6 +14,11 @@
       "title": "Proposição: a frase que é verdadeira ou falsa",
       "module": "Proposições e conectivos",
       "summary": "A lógica trabalha com proposições: frases que afirmam algo e podem ser julgadas verdadeiras ou falsas. Pergunta, ordem, exclamação e frase com um “x” no meio não são proposições.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=_yMyiFxJ10U",
+        "title": "Proposições Lógicas - Aula 1",
+        "channel": "Felippe Loureiro"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -422,6 +427,11 @@
       "title": "Negação: virar o valor lógico",
       "module": "Proposições e conectivos",
       "summary": "Negar uma proposição é trocar o valor lógico dela: o verdadeiro vira falso e o falso vira verdadeiro. A pegadinha mais comum é confundir a negação com o contrário.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=4QK69EOKHOo",
+        "title": "Negações Lógicas para Concursos Públicos Aula 1",
+        "channel": "Felippe Loureiro"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -819,6 +829,11 @@
       "title": "E, ou e ou exclusivo",
       "module": "Proposições e conectivos",
       "summary": "A conjunção (“e”) só é verdadeira quando as duas partes são. A disjunção (“ou”) só é falsa quando as duas partes são. O “ou… ou…” é o ou exclusivo: verdadeiro quando só uma delas vale.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=i8jbzEWEOYk",
+        "title": "LÓGICA: CONECTIVOS LÓGICOS",
+        "channel": "Equaciona Com Paulo Pereira"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -1292,6 +1307,11 @@
       "title": "Condicional: se… então",
       "module": "Proposições e conectivos",
       "summary": "“Se p, então q” só é falsa num caso: quando p acontece e q não. É o conectivo mais cobrado em prova, e o que mais engana, porque quando p é falso a condicional é verdadeira.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=u6C_RHwMJI8",
+        "title": "🧠 CONECTIVOS LÓGICOS \"SE ENTÃO\" e \"SE E SOMENTE SE\" e TABELA VERDADE | Curso de RLM | Aula 07",
+        "channel": "Matemática Rio com Prof. Rafael Procopio"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -1723,6 +1743,11 @@
       "title": "Bicondicional: se e somente se",
       "module": "Proposições e conectivos",
       "summary": "“p se e somente se q” é a condicional valendo nos dois sentidos. Ela é verdadeira quando p e q têm o mesmo valor lógico, e falsa quando têm valores diferentes.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=aJKVej57bWE",
+        "title": "Condicional vs Bicondicional: Entenda os Conectivos Lógicos Mais Cobrados em Concursos",
+        "channel": "Felippe Loureiro"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -2189,6 +2214,11 @@
       "title": "Montar uma tabela-verdade",
       "module": "Tabela-verdade",
       "summary": "A tabela-verdade testa uma proposição composta em todas as combinações de V e F. Com n letras são 2ⁿ linhas, preenchidas numa ordem fixa. As contas seguem uma ordem de precedência, como na matemática.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=LGCQ0HZpTDw",
+        "title": "Aprenda de uma vez por todas a montar a Tabela Verdade - Prof Robson Liers - Mathematicamente",
+        "channel": "Prof. Robson Liers - Mathematicamente"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -2679,6 +2709,11 @@
       "title": "Tautologia, contradição e contingência",
       "module": "Tabela-verdade",
       "summary": "Olhando a última coluna da tabela-verdade, toda proposição composta cai num de três grupos. Sempre verdadeira é tautologia; sempre falsa, contradição; às vezes uma e às vezes outra, contingência.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=3PXQU2Kyw9E",
+        "title": "Aprenda Tautologia de uma vez por todas - Aula 1 - Contradição e Contingência",
+        "channel": "Felippe Loureiro"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -3095,10 +3130,380 @@
       ]
     },
     {
+      "slug": "valor-logico-sem-tabela",
+      "title": "Descobrir o valor lógico sem montar a tabela",
+      "module": "Tabela-verdade",
+      "summary": "Quando a prova já diz quais partes são verdadeiras e quais são falsas, não precisa de tabela: basta trocar cada letra pelo valor e resolver de dentro para fora. A lição mostra a ordem certa e os atalhos de cada ligação.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=KXm8Hi-I_G0",
+        "title": "RACIOCÍNIO LÓGICO - PROPOSIÇÕES E TABELA VERDADE - Professora Angela Matemática",
+        "channel": "Professora Angela Matemática"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Uma conta de letras",
+          "body": [
+            "Na escola, para resolver 2 + 3 × 4, a gente sabe que a multiplicação vem antes. Primeiro 3 × 4, depois soma o 2.",
+            "Com frases ligadas por “e”, “ou” e “se… então” é igual. Quando a prova diz o valor de cada parte, dá para resolver a frase toda como uma conta, sem tabela nenhuma."
+          ],
+          "terms": [
+            {
+              "word": "proposição",
+              "meaning": "uma frase que afirma alguma coisa e pode ser julgada verdadeira ou falsa, mas não as duas ao mesmo tempo."
+            },
+            {
+              "word": "valor lógico",
+              "meaning": "o resultado de uma proposição: V (verdadeira) ou F (falsa)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Troque cada letra pelo valor",
+          "body": [
+            "A prova costuma dizer: p é verdadeira, q é falsa e r é verdadeira. Então reescreva a frase com V e F no lugar das letras.",
+            "Depois resolva primeiro o que está entre parênteses e as negações. Por último, a ligação principal, a que junta tudo."
+          ],
+          "terms": [
+            {
+              "word": "conectivo",
+              "meaning": "a palavra que liga proposições (“e”, “ou”, “se… então”, “se e somente se”) ou que as nega (“não”)."
+            },
+            {
+              "word": "negação",
+              "meaning": "a operação que troca o valor lógico: o que era V vira F, e o que era F vira V."
+            }
+          ],
+          "example": {
+            "label": "p = V, q = F. Quanto vale “p e não q”?",
+            "ordered": true,
+            "lines": [
+              "Troque as letras: V e não F.",
+              "Resolva a negação: não F vira V.",
+              "Resolva o “e”: V e V dá V.",
+              "Resposta: a frase é verdadeira."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Os atalhos de cada ligação",
+          "body": [
+            "Cada ligação tem um caso só que decide tudo. Gravar esse caso poupa metade do trabalho.",
+            "No “e”, basta uma parte falsa para tudo ser falso. No “ou”, basta uma parte verdadeira para tudo ser verdadeiro. No “se… então”, só existe um jeito de dar falso."
+          ],
+          "terms": [
+            {
+              "word": "condicional",
+              "meaning": "a ligação “se p, então q”. Só é falsa quando p é verdadeira e q é falsa."
+            }
+          ],
+          "table": {
+            "label": "O caso que decide",
+            "headers": [
+              "Ligação",
+              "Decide sozinho"
+            ],
+            "rows": [
+              [
+                "p e q",
+                "uma falsa: tudo F"
+              ],
+              [
+                "p ou q",
+                "uma verdadeira: tudo V"
+              ],
+              [
+                "se p, então q",
+                "só V e F, nessa ordem, dá F"
+              ],
+              [
+                "p se e somente se q",
+                "valores iguais dão V"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O atalho do “se… então”",
+          "body": [
+            "A condicional só é falsa quando a primeira parte é V e a segunda é F. Daí saem dois atalhos.",
+            "Se a primeira parte é falsa, a frase é verdadeira, seja qual for a segunda. Se a segunda parte é verdadeira, a frase também é verdadeira. Muita conta de prova termina aqui."
+          ],
+          "example": {
+            "label": "Sem nem olhar a outra parte",
+            "lines": [
+              "Se 2 + 2 = 5 (F), então … : verdadeira.",
+              "Se … , então a Terra é redonda (V): verdadeira."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Frase com três letras",
+          "body": [
+            "Com p = V, q = F e r = V, quanto vale “(p ou q) → r”? A flecha é o jeito curto de escrever “se… então”.",
+            "Primeiro o parêntese: V ou F dá V. Depois a flecha: V → V dá V. A frase inteira é verdadeira, e não foi preciso escrever oito linhas de tabela."
+          ],
+          "example": {
+            "label": "Passo a passo",
+            "ordered": true,
+            "lines": [
+              "Troque: (V ou F) → V.",
+              "Parêntese primeiro: V ou F dá V.",
+              "Flecha por último: V → V dá V."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca dá os valores das proposições simples e pergunta o valor lógico da composta. Às vezes dá o valor da composta e pede o de uma parte."
+          ],
+          "bullets": [
+            "“Sabendo que p é verdadeira e q é falsa, o valor lógico de ~p ∨ q é…”",
+            "“Se a proposição composta é falsa, então…”",
+            "O símbolo ~ é a negação, ∧ é o “e”, ∨ é o “ou” e → é o “se… então”."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Resolver a ligação de fora antes do parêntese. O parêntese vem primeiro, como na conta.",
+            "Esquecer a negação que está na frente de uma letra. Troque o valor antes de seguir.",
+            "Achar que “se F, então F” é falso. Começou falso, a frase é verdadeira."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Com os valores dados, troque cada letra por V ou F. Resolva primeiro parênteses e negações, e por último a ligação principal.",
+            "Atalhos: no “e”, uma falsa derruba tudo. No “ou”, uma verdadeira salva tudo. No “se… então”, só V seguido de F dá falso."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "E",
+          "statement": "Com p = V e q = F, a frase “p e q” é:",
+          "options": [
+            "falsa, porque uma das partes é falsa",
+            "verdadeira, porque p é verdadeira",
+            "verdadeira, porque uma parte basta",
+            "impossível de saber sem tabela",
+            "falsa, porque p é verdadeira"
+          ],
+          "correct_index": 0,
+          "explanation": "No “e”, uma falsa derruba tudo.",
+          "pitfall": "Uma parte basta é a regra do “ou”."
+        },
+        {
+          "topic": "Ou",
+          "statement": "Com p = F e q = V, a frase “p ou q” é:",
+          "options": [
+            "falsa, porque p é falsa",
+            "verdadeira, porque uma parte é verdadeira",
+            "falsa, porque as duas precisam valer",
+            "verdadeira só se p também for",
+            "impossível de saber"
+          ],
+          "correct_index": 1,
+          "explanation": "No “ou”, uma verdadeira salva tudo.",
+          "pitfall": "As duas precisarem valer é o “e”."
+        },
+        {
+          "topic": "Negação",
+          "statement": "Com p = V, quanto vale “não p”?",
+          "options": [
+            "V",
+            "V e F ao mesmo tempo",
+            "F",
+            "depende de q",
+            "não tem valor"
+          ],
+          "correct_index": 2,
+          "explanation": "A negação troca o valor.",
+          "pitfall": "Não depende de outra letra."
+        },
+        {
+          "topic": "Se então",
+          "statement": "Com p = V e q = F, a frase “se p, então q” é:",
+          "options": [
+            "verdadeira",
+            "verdadeira só às vezes",
+            "sem valor lógico",
+            "falsa",
+            "igual a “p e q”, que é verdadeira"
+          ],
+          "correct_index": 3,
+          "explanation": "V seguido de F é o único caso falso.",
+          "pitfall": "É o caso que derruba a condicional."
+        },
+        {
+          "topic": "Começou falso",
+          "statement": "Se a primeira parte de um “se… então” é falsa, a frase inteira é:",
+          "options": [
+            "falsa, seja qual for a segunda",
+            "verdadeira só se a segunda for falsa",
+            "falsa só se a segunda for verdadeira",
+            "sempre impossível de saber",
+            "verdadeira, seja qual for a segunda"
+          ],
+          "correct_index": 4,
+          "explanation": "Começou falso, a condicional vale.",
+          "pitfall": "É a pegadinha do “se F, então F”."
+        },
+        {
+          "topic": "Ordem",
+          "statement": "Para achar o valor de “(p ou q) e r”, o primeiro passo depois de trocar as letras é resolver:",
+          "options": [
+            "o parêntese",
+            "o “e”, que está fora",
+            "a letra r",
+            "a frase de trás para a frente",
+            "qualquer parte, a ordem não importa"
+          ],
+          "correct_index": 0,
+          "explanation": "Como na conta da escola.",
+          "pitfall": "A ordem importa."
+        },
+        {
+          "topic": "Três letras",
+          "statement": "Com p = V, q = F e r = F, quanto vale “(p ou q) → r”?",
+          "options": [
+            "V, porque fica V → V",
+            "F, porque fica V → F",
+            "V, porque r é falsa",
+            "F, porque q é falsa",
+            "V, porque o parêntese é falso"
+          ],
+          "correct_index": 1,
+          "explanation": "V ou F dá V; V → F dá F.",
+          "pitfall": "O parêntese dá V, não F."
+        },
+        {
+          "topic": "Bicondicional",
+          "statement": "Com p = F e q = F, a frase “p se e somente se q” é:",
+          "options": [
+            "falsa, porque as duas são falsas",
+            "falsa, porque precisa de uma V",
+            "verdadeira, porque os valores são iguais",
+            "verdadeira só se p for V",
+            "sem valor"
+          ],
+          "correct_index": 2,
+          "explanation": "Valores iguais dão V.",
+          "pitfall": "Duas falsas iguais também dão V."
+        },
+        {
+          "topic": "Símbolo",
+          "statement": "Na prova, o símbolo ~ antes de uma letra quer dizer:",
+          "options": [
+            "“e”",
+            "“ou”",
+            "“se… então”",
+            "negação (não)",
+            "“se e somente se”"
+          ],
+          "correct_index": 3,
+          "explanation": "~p se lê “não p”.",
+          "pitfall": "O “e” é ∧.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "E fácil",
+          "statement": "Com p = V e q = V, a frase “p e q” é:",
+          "options": [
+            "falsa",
+            "falsa, porque o “e” exige uma falsa",
+            "sem valor lógico",
+            "depende de r",
+            "verdadeira"
+          ],
+          "correct_index": 4,
+          "explanation": "As duas valem.",
+          "pitfall": "Não depende de outra letra.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Negação na frente",
+          "statement": "Com p = V e q = F, quanto vale “não p ou q”?",
+          "options": [
+            "F, porque fica F ou F",
+            "V, porque p é verdadeira",
+            "V, porque o “ou” sempre dá V",
+            "F, porque q é verdadeira",
+            "V, porque fica V ou F"
+          ],
+          "correct_index": 0,
+          "explanation": "Não V vira F; F ou F dá F.",
+          "pitfall": "Esquecer a negação dá V ou F.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Passos",
+          "format": "order",
+          "statement": "Coloque na ordem os passos para achar o valor de “não (p e q)”, com p = V e q = F.",
+          "options": [
+            "trocar as letras: não (V e F)",
+            "resolver o parêntese: V e F dá F",
+            "resolver a negação: não F dá V",
+            "escrever a resposta: verdadeira"
+          ],
+          "explanation": "Parêntese antes da negação de fora.",
+          "pitfall": "A negação de fora vem por último.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Descobrir a parte",
+          "statement": "Sabe-se que “se p, então q” é falsa. Então:",
+          "options": [
+            "p e q são falsas",
+            "p é verdadeira e q é falsa",
+            "p é falsa e q é verdadeira",
+            "p e q são verdadeiras",
+            "não dá para saber nada"
+          ],
+          "correct_index": 1,
+          "explanation": "Só existe um jeito de a condicional ser falsa.",
+          "pitfall": "Falsa e falsa daria verdadeira.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Sem olhar",
+          "statement": "Com q = V e sem saber nada de p, o valor de “se p, então q” é:",
+          "options": [
+            "falso, porque p pode ser falsa",
+            "impossível de saber sem p",
+            "verdadeiro, porque a segunda parte é verdadeira",
+            "verdadeiro só se p for verdadeira",
+            "falso só se p for verdadeira"
+          ],
+          "correct_index": 2,
+          "explanation": "Terminou verdadeiro, a condicional vale.",
+          "pitfall": "Não precisa de p.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "equivalencia-e-contrapositiva",
       "title": "Equivalência lógica e contrapositiva",
       "module": "Equivalências e negações",
       "summary": "Duas proposições são equivalentes quando têm a mesma tabela-verdade. A condicional tem duas equivalências que caem sempre: a contrapositiva e a forma com “ou”. A recíproca parece equivalente, mas não é.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=KGAOeHyWefY",
+        "title": "LÓGICA: EQUIVALÊNCIAS LÓGICAS",
+        "channel": "Equaciona Com Paulo Pereira"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -3561,6 +3966,11 @@
       "title": "Leis de De Morgan: negar “e” e “ou”",
       "module": "Equivalências e negações",
       "summary": "Para negar uma conjunção ou uma disjunção, nega-se cada parte e troca-se o conectivo: o “e” vira “ou”, e o “ou” vira “e”. São as leis de De Morgan, que as provas cobram o tempo todo.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=R5RN50vMUv0",
+        "title": "Raciocínio Lógico - Leis de Morgan (negação do \"e\", \"ou\", \"se então\")",
+        "channel": "MATEMÁTICA com Prof. Cláudio Teodista"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -3999,6 +4409,11 @@
       "title": "Negar condicional e bicondicional",
       "module": "Equivalências e negações",
       "summary": "A negação de “se p, então q” não é outra condicional: é “p e não q”. A negação da bicondicional é o ou exclusivo. Essas duas regras estão entre as mais cobradas de todo o raciocínio lógico.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=-TnPfPJQUUY",
+        "title": "NEGAÇÃO da CONDICIONAL :: Como negar Se Então :: Noções de Lógica :: Teoria + Exercícios",
+        "channel": "Central dos Números"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -4482,6 +4897,11 @@
       "title": "Todo, algum e nenhum: quantificadores e negações",
       "module": "Equivalências e negações",
       "summary": "“Todo”, “algum” e “nenhum” dizem para quantos vale uma afirmação. Negar “todo” não é dizer “nenhum”: basta um exemplo contrário, e por isso a negação de “todo A é B” é “algum A não é B”.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=zr7vjCc6o3Y",
+        "title": "🧠 QUANTIFICADORES LÓGICOS: Todo, Nenhum, Existe, Algum, etc | Curso de RLM | Aula 13",
+        "channel": "Matemática Rio com Prof. Rafael Procopio"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -4863,6 +5283,11 @@
       "title": "Argumento válido: modus ponens e modus tollens",
       "module": "Argumentos",
       "summary": "Um argumento é válido quando a conclusão é obrigada a ser verdadeira sempre que as premissas forem. Validade é questão de forma, e não de assunto. Quatro formas válidas resolvem a maior parte das questões.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=5NPPjMh_ulo",
+        "title": "RLM para Concursos: Aprenda o que são Argumentações Lógicas de uma forma fácil e rápida",
+        "channel": "Focus Concursos"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -5294,6 +5719,11 @@
       "title": "Falácias: afirmar o consequente e negar o antecedente",
       "module": "Argumentos",
       "summary": "Duas formas parecem modus ponens e modus tollens, mas são inválidas: afirmar o consequente e negar o antecedente. Elas enganam porque a conclusão às vezes é verdadeira, só que não é obrigada a ser.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=QdR9d1uQAVc",
+        "title": "Lógica - Aula 06 - Falácias formais",
+        "channel": "Andre Henrique"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -5716,6 +6146,11 @@
       "title": "Silogismos com diagramas de Venn",
       "module": "Argumentos",
       "summary": "Argumentos com “todo”, “algum” e “nenhum” se resolvem desenhando círculos. A conclusão só é válida se aparecer em todos os desenhos possíveis das premissas.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=l_20kYKKZk0",
+        "title": "Aprenda DIAGRAMAS LÓGICOS em 30 minutos - Aula 1",
+        "channel": "Felippe Loureiro"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -6115,6 +6550,11 @@
       "title": "Lógica no dia a dia: regras, filtros e promoções",
       "module": "Lógica no dia a dia",
       "summary": "Toda regra do dia a dia é feita dos mesmos conectivos da matéria. Saber lê-los diz quem ganha a promoção, quem descumpre uma regra e o que um filtro de busca vai mostrar.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=4hzHG3qTQQU",
+        "title": "Noções Básicas de Lógica - Brasil Escola",
+        "channel": "Brasil Escola Oficial"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -6548,6 +6988,1033 @@
           "correct_index": 0,
           "explanation": "A negação da condicional é “atrasou e não devolveu”. É o único caso que quebra a promessa.",
           "pitfall": "Devolver o frete sem atraso é generosidade, e não quebra de promessa.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "verdades-e-mentiras",
+      "title": "Quem está mentindo? Verdades e mentiras",
+      "module": "Lógica no dia a dia",
+      "summary": "Três pessoas, cada uma diz uma frase, e uma delas mente. A lição mostra como resolver esse tipo de questão sem chute: supor uma pessoa culpada, testar as falas e procurar as duas frases que não podem valer juntas.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=WLpXg6eGPvI",
+        "title": "🧠 RACIOCÍNIO LÓGICO: Verdades e Mentiras com dicas INCRÍVEIS | Curso de RLM | Aula 17",
+        "channel": "Matemática Rio com Prof. Rafael Procopio"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O vaso quebrado",
+          "body": [
+            "A mãe chega e o vaso está quebrado. Ana diz: “Foi o Beto.” Beto diz: “Não fui eu.” Caio diz: “Não fui eu.” Só um dos três mente.",
+            "Quem quebrou? Dá para descobrir sem adivinhar, só testando as falas. É isso que a prova chama de questão de verdades e mentiras."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O método: supor e testar",
+          "body": [
+            "Escolha um suspeito e suponha que foi ele. Depois veja quantas falas ficam verdadeiras e quantas ficam falsas.",
+            "Se a conta bater com o que o enunciado disse (por exemplo, só um mente), achou. Se não bater, troque de suspeito e teste de novo."
+          ],
+          "terms": [
+            {
+              "word": "suposição",
+              "meaning": "um palpite que a gente assume como verdade por um momento, só para testar se ele dá certo."
+            }
+          ],
+          "table": {
+            "label": "O vaso: quem mente em cada caso",
+            "headers": [
+              "Se foi…",
+              "Ana",
+              "Beto",
+              "Caio",
+              "Mentirosos"
+            ],
+            "rows": [
+              [
+                "Ana",
+                "mente",
+                "fala a verdade",
+                "fala a verdade",
+                "1"
+              ],
+              [
+                "Beto",
+                "fala a verdade",
+                "mente",
+                "fala a verdade",
+                "1"
+              ],
+              [
+                "Caio",
+                "mente",
+                "fala a verdade",
+                "mente",
+                "2"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Quando sobra mais de uma resposta",
+          "body": [
+            "No vaso, dois casos deram um mentiroso só (Ana ou Beto). Então o enunciado não basta para decidir, e a prova teria de dar outra pista.",
+            "Questão bem feita deixa um caso só. Se sobrou mais de um, releia: costuma haver uma frase que você não usou."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O atalho: frases que se chocam",
+          "body": [
+            "Às vezes duas pessoas dizem coisas opostas. Ana diz “foi o Beto” e Beto diz “não fui eu”. As duas frases não podem ser verdadeiras ao mesmo tempo, nem falsas ao mesmo tempo.",
+            "Então uma delas mente, com certeza. Se o enunciado diz que só um mente, o mentiroso está entre os dois, e todos os outros falam a verdade."
+          ],
+          "terms": [
+            {
+              "word": "contradição",
+              "meaning": "duas frases que não podem ser verdadeiras juntas, como “foi o Beto” e “não foi o Beto”."
+            },
+            {
+              "word": "proposição",
+              "meaning": "uma frase que afirma alguma coisa e pode ser julgada verdadeira ou falsa, mas não as duas ao mesmo tempo."
+            }
+          ],
+          "example": {
+            "label": "Usando o choque",
+            "ordered": true,
+            "lines": [
+              "Ana e Beto se contradizem: um dos dois mente.",
+              "Só um mente no total: Caio fala a verdade.",
+              "Caio diz “não fui eu”: não foi o Caio.",
+              "Sobram Ana e Beto como culpados possíveis."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que mentir quer dizer",
+          "body": [
+            "Na lógica, quem mente diz uma frase falsa. Então, para saber a verdade, basta trocar a frase dele pelo contrário.",
+            "Se o mentiroso diz “eu sou inocente”, a verdade é “eu sou culpado”. Cuidado com frases com “todos” e “algum”: o contrário de “todos foram” é “algum não foi”."
+          ],
+          "terms": [
+            {
+              "word": "negação",
+              "meaning": "a operação que troca o valor lógico: o que era V vira F, e o que era F vira V."
+            },
+            {
+              "word": "valor lógico",
+              "meaning": "o resultado de uma proposição: V (verdadeira) ou F (falsa)."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca conta uma história com três a cinco pessoas, diz quantas mentem e pergunta quem fez a coisa ou quem mentiu."
+          ],
+          "bullets": [
+            "“Sabendo que apenas um deles mente, conclui-se que…”",
+            "“Se exatamente dois dizem a verdade, então…”",
+            "Faça a tabela de suposições: ela resolve quase todas."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Parar no primeiro caso que funciona sem testar os outros. Pode haver um segundo.",
+            "Achar que o contrário de “todos foram” é “ninguém foi”. É “algum não foi”.",
+            "Esquecer que quem mente mente na frase inteira, e não só numa parte dela."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Suponha um culpado, conte quantas falas ficam falsas e compare com o enunciado. Troque de suspeito até sobrar um caso só.",
+            "Duas falas que se contradizem têm um mentiroso entre elas. Quem mente diz o contrário da verdade."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Método",
+          "statement": "O jeito seguro de resolver uma questão de verdades e mentiras é:",
+          "options": [
+            "chutar a pessoa que fala por último",
+            "acreditar em quem fala mais",
+            "escolher quem diz “não fui eu”",
+            "supor cada culpado e contar quem mente",
+            "olhar só a primeira fala"
+          ],
+          "correct_index": 3,
+          "explanation": "Testar cada caso.",
+          "pitfall": "Chute não é método."
+        },
+        {
+          "topic": "Mentir",
+          "statement": "Na lógica, uma pessoa que mente:",
+          "options": [
+            "diz metade verdade, metade mentira",
+            "fica calada",
+            "diz sempre “não fui eu”",
+            "diz uma frase sem valor",
+            "diz uma frase falsa"
+          ],
+          "correct_index": 4,
+          "explanation": "É só isso.",
+          "pitfall": "Não é meia mentira."
+        },
+        {
+          "topic": "Choque",
+          "statement": "Ana diz “foi o Beto” e Beto diz “não fui eu”. Com certeza:",
+          "options": [
+            "um dos dois está mentindo",
+            "os dois falam a verdade",
+            "os dois mentem",
+            "Ana é a culpada",
+            "Beto é inocente"
+          ],
+          "correct_index": 0,
+          "explanation": "As frases se contradizem.",
+          "pitfall": "Não dá para os dois valerem."
+        },
+        {
+          "topic": "Só um mente",
+          "statement": "Se Ana e Beto se contradizem e só um dos três mente, então Caio:",
+          "options": [
+            "mente",
+            "fala a verdade",
+            "é o culpado",
+            "não disse nada",
+            "pode mentir ou não"
+          ],
+          "correct_index": 1,
+          "explanation": "O mentiroso já está entre Ana e Beto.",
+          "pitfall": "Não sobra mentira para ele."
+        },
+        {
+          "topic": "Contrário",
+          "statement": "O mentiroso diz “eu sou inocente”. A verdade é:",
+          "options": [
+            "ele é inocente",
+            "ninguém é culpado",
+            "ele é culpado",
+            "todos são culpados",
+            "não dá para saber nada"
+          ],
+          "correct_index": 2,
+          "explanation": "Troque pelo contrário.",
+          "pitfall": "Inocente é o que ele disse."
+        },
+        {
+          "topic": "Todos",
+          "statement": "O contrário de “todos foram à festa” é:",
+          "options": [
+            "ninguém foi à festa",
+            "todos não foram à festa",
+            "algum foi à festa",
+            "algum não foi à festa",
+            "todos foram à festa"
+          ],
+          "correct_index": 3,
+          "explanation": "Basta um que não foi.",
+          "pitfall": "“Ninguém” é forte demais."
+        },
+        {
+          "topic": "Dois casos",
+          "statement": "Se dois suspeitos deixam a conta certa no teste, isso indica que:",
+          "options": [
+            "os dois são culpados",
+            "a lógica não funciona",
+            "o primeiro testado é o culpado",
+            "a resposta é sempre o último",
+            "falta usar alguma pista do enunciado"
+          ],
+          "correct_index": 4,
+          "explanation": "Releia o enunciado.",
+          "pitfall": "Não se escolhe o primeiro."
+        },
+        {
+          "topic": "Tabela",
+          "statement": "Na tabela de suposições, cada linha mostra:",
+          "options": [
+            "quem mente se aquele suspeito for o culpado",
+            "a idade de cada uma das pessoas",
+            "quem falou primeiro e quem falou depois",
+            "o horário de cada fala",
+            "só as frases verdadeiras"
+          ],
+          "correct_index": 0,
+          "explanation": "Uma linha por suspeito.",
+          "pitfall": "Não é a ordem das falas."
+        },
+        {
+          "topic": "Dizer a verdade",
+          "statement": "Quem diz a verdade numa questão de lógica diz uma frase:",
+          "options": [
+            "falsa",
+            "verdadeira",
+            "pela metade",
+            "sem sentido",
+            "sempre negativa"
+          ],
+          "correct_index": 1,
+          "explanation": "É o oposto de mentir.",
+          "pitfall": "Falsa é a do mentiroso.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Suposição",
+          "statement": "Supor que “foi o Caio” serve para:",
+          "options": [
+            "acusar o Caio de vez, sem testar mais nada",
+            "descobrir a idade e a cidade do Caio",
+            "testar se as falas ficam de acordo com o enunciado",
+            "pular a parte de pensar nas falas",
+            "mudar o que o enunciado disse"
+          ],
+          "correct_index": 2,
+          "explanation": "É um palpite para testar.",
+          "pitfall": "Não é acusação definitiva.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Contagem",
+          "statement": "Num teste, supondo que foi o Beto, duas pessoas mentem. Mas o enunciado diz que só uma mente. Então:",
+          "options": [
+            "foi o Beto",
+            "o enunciado está errado",
+            "todos mentem",
+            "não foi o Beto",
+            "a pessoa que mente é o Beto"
+          ],
+          "correct_index": 3,
+          "explanation": "A conta não bateu.",
+          "pitfall": "Conta errada elimina o suspeito.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Algum",
+          "statement": "O mentiroso diz “algum de nós comeu o bolo”. A verdade é:",
+          "options": [
+            "todos comeram o bolo",
+            "algum não comeu o bolo",
+            "algum comeu o bolo",
+            "só ele comeu o bolo",
+            "nenhum de nós comeu o bolo"
+          ],
+          "correct_index": 4,
+          "explanation": "O contrário de “algum” é “nenhum”.",
+          "pitfall": "“Algum não” é a negação de “todos”.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Três falas",
+          "statement": "Ana: “Foi o Beto.” Beto: “A Ana mente.” Caio: “Não fui eu.” Só um diz a verdade. Quem fez?",
+          "options": [
+            "Caio",
+            "Ana",
+            "Beto",
+            "ninguém",
+            "não dá para saber"
+          ],
+          "correct_index": 0,
+          "explanation": "Se foi o Caio, só o Beto diz a verdade.",
+          "pitfall": "Se fosse o Beto, Ana e Caio diriam a verdade.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Choque e número",
+          "statement": "Duas pessoas se contradizem e o enunciado diz que exatamente dois mentem, entre quatro. Então, das outras duas:",
+          "options": [
+            "as duas mentem",
+            "exatamente uma mente",
+            "nenhuma mente",
+            "as duas são culpadas",
+            "não dá para dizer nada"
+          ],
+          "correct_index": 1,
+          "explanation": "Uma mentira já está no par que se choca.",
+          "pitfall": "Duas mentiras fora seriam três no total.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "associacao-logica",
+      "title": "Quem é quem: associação lógica com tabela",
+      "module": "Lógica no dia a dia",
+      "summary": "Três amigos, três profissões e três cidades, mais algumas pistas. A lição ensina a montar a tabela de cruzamentos, marcar o que cada pista elimina e usar o fato de que cada linha e cada coluna têm um sim só.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=0sDKO4U9UtY",
+        "title": "ASSOCIAÇÃO LÓGICA - COMO RESOLVER TODOS OS PROBLEMAS.",
+        "channel": "Equaciona Com Paulo Pereira"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O jogo do detetive",
+          "body": [
+            "Num jogo de detetive, ninguém conta quem é o culpado. A gente vai riscando: não foi na cozinha, não foi com a faca. No fim, sobra uma resposta.",
+            "As questões de associação lógica são esse jogo. Algumas pistas, várias combinações, e um jeito organizado de riscar até sobrar uma."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A tabela de cruzamento",
+          "body": [
+            "Ponha as pessoas nas linhas e as outras coisas nas colunas (profissão, cidade, cor). Cada quadrinho é uma pergunta: esta pessoa tem esta coisa?",
+            "Marque X quando a resposta é não e um sinal de certo quando é sim. Na maior parte das questões, comece pelos X: as pistas costumam dizer o que alguém não é."
+          ],
+          "terms": [
+            {
+              "word": "associação lógica",
+              "meaning": "o tipo de questão em que se descobre que coisa vai com que pessoa, a partir de pistas."
+            }
+          ],
+          "table": {
+            "label": "Quem é professor, médico e piloto?",
+            "headers": [
+              "",
+              "professor",
+              "médico",
+              "piloto"
+            ],
+            "rows": [
+              [
+                "Rita",
+                "",
+                "",
+                ""
+              ],
+              [
+                "Davi",
+                "",
+                "",
+                ""
+              ],
+              [
+                "Lia",
+                "",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A regra de ouro",
+          "body": [
+            "Em cada linha só pode haver um sim, porque cada pessoa tem uma profissão. Em cada coluna também, porque cada profissão é de uma pessoa só.",
+            "Por isso, quando uma linha fica com dois X, o terceiro quadrinho é sim. E quando aparece um sim, o resto da linha e o resto da coluna viram X."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Resolvendo com as pistas",
+          "body": [
+            "Pistas: Rita não é médica. Davi não é professor nem médico. Com isso, a linha de Davi tem dois X, então Davi é piloto.",
+            "A coluna de piloto fica com X para Rita e Lia. A linha de Rita fica com X em médico e piloto: Rita é professora. Sobra Lia para médica."
+          ],
+          "example": {
+            "label": "A ordem das marcas",
+            "ordered": true,
+            "lines": [
+              "Pista 1: X em Rita × médico.",
+              "Pista 2: X em Davi × professor e Davi × médico.",
+              "Linha de Davi com dois X: Davi é piloto.",
+              "Coluna de piloto: X para Rita e Lia.",
+              "Linha de Rita com dois X: Rita é professora.",
+              "Sobra: Lia é médica."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Com três grupos",
+          "body": [
+            "Se a questão tem pessoa, profissão e cidade, faça uma tabela para cada par (pessoa com profissão, pessoa com cidade e profissão com cidade).",
+            "Uma pista como “o médico mora em Natal” não diz quem é o médico. Ela entra na tabela de profissão com cidade, e ajuda quando as outras tabelas andarem."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca dá de três a cinco pistas e pergunta uma combinação ou qual alternativa está certa."
+          ],
+          "bullets": [
+            "“Com base nessas informações, é correto afirmar que…”",
+            "“A profissão de Lia é…”",
+            "Às vezes não precisa resolver tudo: a alternativa sai no meio do caminho."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Esquecer de riscar a coluna inteira depois de um sim. É onde se perde a pista seguinte.",
+            "Ler “Rita não é médica” como “Rita é professora”. Ela ainda pode ser piloto.",
+            "Achar que a pista de duas coisas sem pessoa não serve. Ela vale na tabela certa."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Monte a tabela de cruzamento e marque X para cada não que as pistas dão. Cada linha e cada coluna têm um sim só.",
+            "Linha com todos os X menos um: o que sobra é sim. Achou um sim, risque o resto da linha e da coluna."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Tabela",
+          "statement": "Na tabela de associação lógica, cada quadrinho responde:",
+          "options": [
+            "quantos anos a pessoa tem",
+            "quem falou primeiro",
+            "se aquela pessoa tem aquela coisa",
+            "se a pista é verdadeira",
+            "quantas pistas faltam"
+          ],
+          "correct_index": 2,
+          "explanation": "Sim ou não em cada cruzamento.",
+          "pitfall": "A pista é sempre verdadeira."
+        },
+        {
+          "topic": "Regra",
+          "statement": "Em cada linha da tabela, quando cada pessoa tem uma profissão só, pode haver:",
+          "options": [
+            "dois sins",
+            "nenhum sim",
+            "tantos sins quantas pistas",
+            "um sim só",
+            "três sins"
+          ],
+          "correct_index": 3,
+          "explanation": "Uma pessoa, uma profissão.",
+          "pitfall": "Dois sins quebrariam a regra."
+        },
+        {
+          "topic": "Sobrou",
+          "statement": "Numa tabela de três colunas, uma linha ficou com dois X. O terceiro quadrinho é:",
+          "options": [
+            "não",
+            "impossível de saber",
+            "uma nova pista",
+            "um erro",
+            "sim"
+          ],
+          "correct_index": 4,
+          "explanation": "Só sobrou ele.",
+          "pitfall": "Não precisa de pista nova."
+        },
+        {
+          "topic": "Depois do sim",
+          "statement": "Depois de marcar um sim, o certo é:",
+          "options": [
+            "riscar o resto da linha e da coluna",
+            "apagar as outras pistas",
+            "começar outra tabela do zero",
+            "marcar sim na coluna inteira",
+            "deixar o resto em branco"
+          ],
+          "correct_index": 0,
+          "explanation": "Ninguém mais tem aquela coisa.",
+          "pitfall": "Em branco perde pista."
+        },
+        {
+          "topic": "Ler a pista",
+          "statement": "A pista “Rita não é médica” permite concluir que:",
+          "options": [
+            "Rita é professora",
+            "Rita é professora ou piloto",
+            "Rita é piloto",
+            "Rita é médica",
+            "ninguém é médico"
+          ],
+          "correct_index": 1,
+          "explanation": "Ela só elimina um quadrinho.",
+          "pitfall": "Concluir professora é pular um passo."
+        },
+        {
+          "topic": "Davi",
+          "statement": "Com as opções professor, médico e piloto, a pista “Davi não é professor nem médico” mostra que Davi é:",
+          "options": [
+            "professor",
+            "médico",
+            "piloto",
+            "professor ou médico",
+            "nenhum dos três"
+          ],
+          "correct_index": 2,
+          "explanation": "Dois X na linha.",
+          "pitfall": "Os dois foram riscados."
+        },
+        {
+          "topic": "Três grupos",
+          "statement": "Com pessoa, profissão e cidade, a pista “o médico mora em Natal” entra na tabela de:",
+          "options": [
+            "pessoa com profissão",
+            "pessoa com cidade",
+            "nenhuma tabela",
+            "profissão com cidade",
+            "todas, como sim"
+          ],
+          "correct_index": 3,
+          "explanation": "A pista não fala de pessoa.",
+          "pitfall": "Não diz quem é o médico."
+        },
+        {
+          "topic": "Começar",
+          "statement": "Na maioria das questões de associação, convém começar marcando:",
+          "options": [
+            "os sins por chute",
+            "a última linha",
+            "as colunas vazias como sim",
+            "a resposta da alternativa A",
+            "os X que as pistas dão"
+          ],
+          "correct_index": 4,
+          "explanation": "As pistas costumam dizer o que alguém não é.",
+          "pitfall": "Chute não ajuda."
+        },
+        {
+          "topic": "X",
+          "statement": "Na tabela, o X quer dizer:",
+          "options": [
+            "não combina",
+            "combina",
+            "talvez",
+            "pista falsa",
+            "resposta final"
+          ],
+          "correct_index": 0,
+          "explanation": "É o risco do detetive.",
+          "pitfall": "Combinar é o sinal de certo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Detetive",
+          "statement": "O jogo de detetive se parece com associação lógica porque:",
+          "options": [
+            "a resposta é contada logo no começo do jogo",
+            "a gente risca o que não pode até sobrar uma resposta",
+            "as pistas são todas mentiras de propósito",
+            "sempre há duas respostas certas",
+            "não precisa pensar em nada"
+          ],
+          "correct_index": 1,
+          "explanation": "Eliminar até sobrar uma.",
+          "pitfall": "A resposta não é contada.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Ordem",
+          "format": "order",
+          "statement": "Coloque na ordem os passos para resolver uma associação lógica.",
+          "options": [
+            "montar a tabela de cruzamento",
+            "marcar os X que as pistas dão",
+            "achar a linha que sobrou com um quadrinho só",
+            "riscar o resto da linha e da coluna do sim"
+          ],
+          "explanation": "Montar, riscar, achar e espalhar.",
+          "pitfall": "Os sins vêm depois dos X.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Coluna",
+          "statement": "Se a coluna “piloto” tem X para Rita e Lia, então:",
+          "options": [
+            "ninguém é piloto",
+            "Rita é a piloto",
+            "Davi é o piloto",
+            "Lia é a piloto",
+            "faltam pistas para saber"
+          ],
+          "correct_index": 2,
+          "explanation": "Cada coluna também tem um sim só.",
+          "pitfall": "A coluna fecha como a linha.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Meio do caminho",
+          "statement": "A alternativa pergunta só a profissão de Davi, e já se sabe que ele é piloto. O melhor a fazer é:",
+          "options": [
+            "resolver a tabela toda antes de marcar",
+            "trocar de questão sem marcar",
+            "conferir a cidade de cada um",
+            "marcar a resposta sem resolver o resto",
+            "reler todas as pistas de novo"
+          ],
+          "correct_index": 3,
+          "explanation": "A alternativa sai no meio do caminho.",
+          "pitfall": "Resolver tudo gasta tempo.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Erro comum",
+          "statement": "Alguém leu “Lia não mora em Recife” e marcou sim em Lia × Natal. O erro foi:",
+          "options": [
+            "riscar Lia × Recife",
+            "usar a tabela de pessoa com cidade",
+            "acreditar na pista",
+            "começar pelos X",
+            "pular para um sim que a pista não dá"
+          ],
+          "correct_index": 4,
+          "explanation": "A pista só elimina Recife.",
+          "pitfall": "Riscar Recife estava certo.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "sequencias-logicas",
+      "title": "Sequências: achar a regra que continua",
+      "module": "Lógica no dia a dia",
+      "summary": "Em toda sequência há uma regra que passa de um termo para o outro. A lição mostra como procurá-la: olhar a diferença entre os termos, a multiplicação, as posições alternadas e as letras do alfabeto.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=eBjuSzZQ4P4",
+        "title": "Como Gabaritar SEQUÊNCIA LÓGICA DE NÚMEROS em Concursos | Felippe Loureiro",
+        "channel": "Felippe Loureiro"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O próximo da fila",
+          "body": [
+            "Segunda, terça, quarta… Ninguém precisa pensar para dizer que vem quinta. A gente já sabe a regra.",
+            "As sequências da prova são parecidas, só que a regra está escondida. O trabalho é achá-la antes de responder."
+          ],
+          "terms": [
+            {
+              "word": "sequência",
+              "meaning": "uma lista de coisas (números, letras ou figuras) em que cada uma segue uma regra a partir das anteriores."
+            },
+            {
+              "word": "termo",
+              "meaning": "cada item de uma sequência: o primeiro termo, o segundo termo e assim por diante."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Primeiro: a diferença",
+          "body": [
+            "O primeiro teste é subtrair cada termo do seguinte. Em 3, 7, 11, 15, a diferença é sempre 4. O próximo é 19.",
+            "Às vezes a diferença também muda, mas com regra. Em 1, 2, 4, 7, 11, as diferenças são 1, 2, 3, 4. A próxima é 5, e o termo seguinte é 16."
+          ],
+          "example": {
+            "label": "Escrever as diferenças embaixo",
+            "lines": [
+              "1   2   4   7   11   ?",
+              "  +1  +2  +3  +4  +5",
+              "O próximo termo é 11 + 5 = 16."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Depois: a multiplicação",
+          "body": [
+            "Se as diferenças crescem depressa demais, teste dividir. Em 2, 6, 18, 54, cada termo é o anterior vezes 3. O próximo é 162.",
+            "Há regras misturadas também. Em 1, 3, 7, 15, 31, cada termo é o dobro do anterior mais 1. O próximo é 63."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Duas sequências em uma",
+          "body": [
+            "Quando nada funciona, olhe os termos pulando de dois em dois. Em 1, 10, 2, 20, 3, 30, as posições ímpares fazem 1, 2, 3 e as pares fazem 10, 20, 30.",
+            "O próximo termo está numa posição ímpar, então é 4. Essa é a sequência intercalada, e ela engana quem só olha vizinhos."
+          ],
+          "terms": [
+            {
+              "word": "sequência intercalada",
+              "meaning": "duas sequências misturadas, uma nas posições ímpares e outra nas pares."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Letras: troque por números",
+          "body": [
+            "Com letras, o truque é trocar cada uma pela sua posição no alfabeto (A é 1, B é 2 e assim por diante). A sequência de letras vira uma de números.",
+            "A sequência (A, C, F, J) pula 1, 2 e 3 letras. Em números, 1, 3, 6, 10. A próxima diferença é 4, então vem a posição 15: a letra O."
+          ],
+          "table": {
+            "label": "Posições no alfabeto (com K, W e Y)",
+            "headers": [
+              "Letra",
+              "A",
+              "C",
+              "F",
+              "J",
+              "O"
+            ],
+            "rows": [
+              [
+                "Posição",
+                "1",
+                "3",
+                "6",
+                "10",
+                "15"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A banca mostra quatro a seis termos e pede o próximo ou um termo distante. Às vezes a sequência é de figuras que giram."
+          ],
+          "bullets": [
+            "“O próximo termo da sequência 2, 5, 10, 17… é…”",
+            "“Seguindo o padrão, a letra que ocupa o lugar do ponto de interrogação é…”",
+            "A banca avisa se o alfabeto conta K, W e Y. Hoje eles contam."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar a regra com dois termos só. Confira em todos antes de responder.",
+            "Esquecer que o alfabeto atual tem 26 letras, com K, W e Y.",
+            "Olhar só os vizinhos numa sequência intercalada. Teste de dois em dois."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Teste nesta ordem: diferença entre os termos, diferença das diferenças, multiplicação e posições alternadas.",
+            "Com letras, troque cada uma pela posição no alfabeto. Confira a regra em todos os termos antes de marcar."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Diferença",
+          "statement": "Qual é o próximo termo de 3, 7, 11, 15?",
+          "options": [
+            "19",
+            "18",
+            "20",
+            "21",
+            "17"
+          ],
+          "correct_index": 0,
+          "explanation": "A diferença é sempre 4.",
+          "pitfall": "18 seria somar 3."
+        },
+        {
+          "topic": "Dobro",
+          "statement": "Qual é o próximo termo de 2, 4, 8, 16?",
+          "options": [
+            "24",
+            "32",
+            "20",
+            "18",
+            "64"
+          ],
+          "correct_index": 1,
+          "explanation": "Cada termo é o dobro do anterior.",
+          "pitfall": "24 seria somar 8."
+        },
+        {
+          "topic": "Vezes três",
+          "statement": "Qual é o próximo termo de 2, 6, 18, 54?",
+          "options": [
+            "108",
+            "72",
+            "162",
+            "60",
+            "216"
+          ],
+          "correct_index": 2,
+          "explanation": "Cada termo vezes 3.",
+          "pitfall": "108 é vezes 2."
+        },
+        {
+          "topic": "Diferenças crescem",
+          "statement": "Qual é o próximo termo de 1, 2, 4, 7, 11?",
+          "options": [
+            "15",
+            "14",
+            "17",
+            "16",
+            "22"
+          ],
+          "correct_index": 3,
+          "explanation": "As diferenças são 1, 2, 3, 4 e 5.",
+          "pitfall": "15 repete a diferença 4."
+        },
+        {
+          "topic": "Intercalada",
+          "statement": "Qual é o próximo termo de 1, 10, 2, 20, 3, 30?",
+          "options": [
+            "40",
+            "31",
+            "33",
+            "5",
+            "4"
+          ],
+          "correct_index": 4,
+          "explanation": "Posição ímpar: 1, 2, 3, 4.",
+          "pitfall": "40 é o seguinte depois dele."
+        },
+        {
+          "topic": "Letras",
+          "statement": "Qual é a próxima letra da sequência (A, C, E, G)?",
+          "options": [
+            "I",
+            "H",
+            "J",
+            "K",
+            "F"
+          ],
+          "correct_index": 0,
+          "explanation": "Pula uma letra de cada vez.",
+          "pitfall": "H é a seguinte sem pular."
+        },
+        {
+          "topic": "Termo",
+          "statement": "Em 5, 9, 13, 17, o terceiro termo é:",
+          "options": [
+            "9",
+            "13",
+            "17",
+            "5",
+            "3"
+          ],
+          "correct_index": 1,
+          "explanation": "Conte da esquerda: 5, 9, 13.",
+          "pitfall": "3 é a posição, não o termo."
+        },
+        {
+          "topic": "Conferir",
+          "statement": "Antes de marcar a resposta de uma sequência, convém:",
+          "options": [
+            "olhar só os dois primeiros",
+            "escolher o maior número",
+            "conferir a regra em todos os termos",
+            "chutar a alternativa do meio",
+            "olhar só o último termo"
+          ],
+          "correct_index": 2,
+          "explanation": "Dois termos podem enganar.",
+          "pitfall": "A regra precisa valer em todos."
+        },
+        {
+          "topic": "Dias",
+          "statement": "Qual é o próximo da sequência domingo, terça, quinta?",
+          "options": [
+            "sexta",
+            "segunda",
+            "quarta",
+            "sábado",
+            "domingo"
+          ],
+          "correct_index": 3,
+          "explanation": "Pula um dia de cada vez.",
+          "pitfall": "Sexta seria sem pular.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "De cinco em cinco",
+          "statement": "Qual é o próximo termo de 5, 10, 15, 20?",
+          "options": [
+            "30",
+            "21",
+            "24",
+            "40",
+            "25"
+          ],
+          "correct_index": 4,
+          "explanation": "Soma 5 a cada passo.",
+          "pitfall": "30 pula um termo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Dobro mais um",
+          "statement": "Qual é o próximo termo de 1, 3, 7, 15, 31?",
+          "options": [
+            "63",
+            "47",
+            "62",
+            "64",
+            "46"
+          ],
+          "correct_index": 0,
+          "explanation": "Dobro do anterior, mais 1.",
+          "pitfall": "62 esquece o mais 1.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Quadrados",
+          "statement": "Qual é o próximo termo de 1, 4, 9, 16, 25?",
+          "options": [
+            "30",
+            "36",
+            "34",
+            "35",
+            "49"
+          ],
+          "correct_index": 1,
+          "explanation": "São 1×1, 2×2, 3×3 e assim por diante.",
+          "pitfall": "30 soma 5 de novo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Alfabeto",
+          "statement": "Qual é a próxima letra da sequência (A, C, F, J)?",
+          "options": [
+            "N",
+            "M",
+            "O",
+            "P",
+            "K"
+          ],
+          "correct_index": 2,
+          "explanation": "As posições 1, 3, 6, 10 pulam 2, 3 e 4. Agora pula 5: 15.",
+          "pitfall": "N é a posição 14.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Distante",
+          "statement": "Na sequência 4, 8, 12, 16…, qual é o 20º termo?",
+          "options": [
+            "76",
+            "84",
+            "20",
+            "80",
+            "64"
+          ],
+          "correct_index": 3,
+          "explanation": "Cada termo é a posição vezes 4.",
+          "pitfall": "76 é o 19º.",
           "difficulty": "dificil"
         }
       ]
