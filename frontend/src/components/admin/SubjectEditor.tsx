@@ -77,7 +77,7 @@ export function SubjectEditor({ subject, areas }: { subject: AdminSubjectDetail;
             hint="Só eu: a matéria some para todo mundo que não administra o conteúdo, inclusive da vitrine. É o jeito de estudar e revisar antes de abrir."
           >
             <option value="public">Todo mundo</option>
-            <option value="private">Só quem administra</option>
+            <option value="private">Só quem tem o Pro</option>
           </SelectField>
           <TextField
             label="Slug"

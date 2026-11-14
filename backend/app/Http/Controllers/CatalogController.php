@@ -89,9 +89,9 @@ class CatalogController extends Controller
             ], Subject::areas()),
             // A ordem de estudo que atravessa áreas. Os passos só dizem o slug:
             // o progresso sai das matérias que já vêm nesta mesma resposta.
-            // A trilha privada é como a matéria privada: só quem administra vê.
+            // A trilha privada é como a matéria privada: exclusiva do Pro.
             'trails' => collect((array) config('castelei.trails'))
-                ->filter(fn (array $trail) => ($trail['visibility'] ?? Subject::PUBLIC) === Subject::PUBLIC || $user->isAdmin())
+                ->filter(fn (array $trail) => ($trail['visibility'] ?? Subject::PUBLIC) === Subject::PUBLIC || $user->seesProSubjects())
                 ->map(fn (array $trail) => collect($trail)->except('visibility')->all() + ['private' => ($trail['visibility'] ?? null) === Subject::PRIVATE])
                 ->values(),
             'subjects' => $subjects->map(fn (Subject $subject) => [

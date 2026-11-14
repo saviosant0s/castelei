@@ -83,17 +83,18 @@ class Subject extends Model
     }
 
     /**
-     * As matérias que esta pessoa enxerga. Sem pessoa (a vitrine pública),
-     * só as públicas.
+     * As matérias que esta pessoa enxerga. A matéria "private" é exclusiva do
+     * Pro: aparece para quem tem o Pro e para quem administra. Sem pessoa (a
+     * vitrine pública), só as públicas.
      */
     public function scopeVisibleTo(Builder $query, ?User $user): Builder
     {
-        return $user?->isAdmin() ? $query : $query->where('visibility', self::PUBLIC);
+        return $user?->seesProSubjects() ? $query : $query->where('visibility', self::PUBLIC);
     }
 
     public function isVisibleTo(?User $user): bool
     {
-        return $this->visibility !== self::PRIVATE || (bool) $user?->isAdmin();
+        return $this->visibility !== self::PRIVATE || (bool) $user?->seesProSubjects();
     }
 
     public function lessons(): HasMany

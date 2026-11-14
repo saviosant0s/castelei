@@ -192,7 +192,7 @@ export default async function Inicio() {
                   href={`/trilha/${trail.slug}`}
                   name={trail.name}
                   detail={
-                    (trail.private ? "Só você vê · " : "") +
+                    (trail.private ? "Exclusiva do Pro · " : "") +
                     (atual ? `Passo ${atual.number} de ${passos.length}: ${atual.name}` : "Todos os passos disponíveis concluídos")
                   }
                   done={feitos}

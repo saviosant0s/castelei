@@ -90,6 +90,17 @@ class Plans
             || (bool) (self::all()[$plan]['writing_ai'] ?? false);
     }
 
+    /**
+     * Enxerga as matérias e trilhas exclusivas do Pro (`"visibility": "private"`
+     * no arquivo)? Decisão do Sávio: elas nasceram como rascunho só de quem
+     * administra e viraram parte do que o Pro oferece.
+     */
+    public static function hasProSubjects(string $plan, bool $realPlan = false): bool
+    {
+        return self::unlockedForEveryone($realPlan)
+            || (bool) (self::all()[$plan]['pro_subjects'] ?? false);
+    }
+
     /** O simulado está liberado para este plano? */
     public static function hasExam(string $plan, bool $realPlan = false): bool
     {
