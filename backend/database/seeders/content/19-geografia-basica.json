@@ -5,10 +5,415 @@
   "description": "Mapas, fusos, relevo, clima, ambiente, população, economia, globalização e as regiões do Brasil: o básico de Geografia para qualquer prova, do zero.",
   "lessons": [
     {
+      "slug": "orientacao-e-gps",
+      "title": "Orientação: pontos cardeais, bússola e GPS",
+      "module": "Mapas",
+      "summary": "Antes de ler um mapa, é preciso saber para que lado fica cada coisa. Há quatro jeitos de se orientar (o Sol, as estrelas, a bússola e o GPS), e cada um tem um limite.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=3Y_tlg5UaX8",
+        "title": "Pontos cardeais, colaterais e rosa dos ventos",
+        "channel": "Geobrasil"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Perdido sem bateria",
+          "body": [
+            "Imagine que o celular descarregou numa trilha. Não há placa nem sinal.",
+            "Mesmo assim dá para achar o caminho. Gente fez isso por milhares de anos olhando para o céu. Esta lição mostra como."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os quatro pontos principais",
+          "body": [
+            "Os pontos cardeais são quatro: norte, sul, leste e oeste. Entre eles ficam os colaterais, como nordeste e sudoeste.",
+            "Juntos, eles formam a rosa dos ventos, o desenho que aparece no canto de muitos mapas. No Brasil, leste também se escreve com a letra L, e oeste com O (em inglês, E e W)."
+          ],
+          "terms": [
+            {
+              "word": "pontos cardeais",
+              "meaning": "as quatro direções principais: norte, sul, leste e oeste."
+            },
+            {
+              "word": "pontos colaterais",
+              "meaning": "as direções entre os cardeais: nordeste, sudeste, sudoeste e noroeste."
+            }
+          ],
+          "table": {
+            "label": "A rosa dos ventos",
+            "headers": [
+              "Sigla",
+              "Nome",
+              "Fica entre"
+            ],
+            "rows": [
+              [
+                "N",
+                "norte",
+                "(ponto cardeal)"
+              ],
+              [
+                "NE",
+                "nordeste",
+                "norte e leste"
+              ],
+              [
+                "SE",
+                "sudeste",
+                "sul e leste"
+              ],
+              [
+                "SO",
+                "sudoeste",
+                "sul e oeste"
+              ],
+              [
+                "NO",
+                "noroeste",
+                "norte e oeste"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O Sol aponta o leste, mais ou menos",
+          "body": [
+            "O Sol nasce do lado leste e se põe do lado oeste. De manhã, aponte o braço direito para onde o Sol nasce: à sua frente fica o norte.",
+            "Mas ele só nasce exatamente no leste em dois dias do ano, em março e em setembro. No resto do ano, nasce um pouco para o norte ou para o sul. Por isso o Sol dá uma direção aproximada, não exata."
+          ],
+          "example": {
+            "label": "O truque do braço, de manhã",
+            "ordered": true,
+            "lines": [
+              "Fique de pé com o braço direito apontando para onde o Sol nasceu.",
+              "Seu braço direito aponta o leste.",
+              "O braço esquerdo, aberto, aponta o oeste.",
+              "À sua frente fica o norte; às suas costas, o sul."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "À noite: o Cruzeiro do Sul",
+          "body": [
+            "No céu do hemisfério sul, o Cruzeiro do Sul é um grupo de estrelas em forma de cruz. Prolongando o braço maior da cruz umas quatro vezes e meia, chega-se perto do polo sul do céu.",
+            "Ele aparece na bandeira do Brasil. Quem está bem ao norte do planeta não consegue vê-lo."
+          ],
+          "terms": [
+            {
+              "word": "hemisfério",
+              "meaning": "cada metade da Terra. O hemisfério sul fica abaixo da linha que divide o planeta no meio, e o norte fica acima."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A bússola e os dois nortes",
+          "body": [
+            "A agulha da bússola é um ímã. Ela aponta para o norte magnético, que é o polo do grande ímã que a Terra é.",
+            "O detalhe é que o norte magnético não fica no mesmo lugar do norte geográfico, o ponto em que o eixo da Terra sai do planeta. A diferença entre os dois se chama declinação magnética, e ela muda com o lugar e com os anos."
+          ],
+          "terms": [
+            {
+              "word": "norte magnético",
+              "meaning": "o ponto para onde a agulha da bússola aponta. Ele fica perto do polo norte, mas não em cima dele, e anda devagar com o tempo."
+            },
+            {
+              "word": "declinação magnética",
+              "meaning": "o ângulo entre o norte da bússola e o norte geográfico verdadeiro."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O GPS: satélites dizendo a hora",
+          "body": [
+            "O GPS é um sistema de cerca de 30 satélites que giram em volta da Terra. Cada um manda, o tempo todo, um sinal com a hora exata e a sua posição.",
+            "O receptor do celular mede quanto cada sinal demorou para chegar e calcula a distância. Com pelo menos quatro satélites, ele acha onde você está."
+          ],
+          "terms": [
+            {
+              "word": "GPS",
+              "meaning": "sistema de posicionamento por satélites, criado pelos Estados Unidos. Hoje existem outros parecidos, da Europa, da Rússia e da China."
+            }
+          ],
+          "table": {
+            "label": "Os sistemas de satélites",
+            "headers": [
+              "Nome",
+              "De onde é"
+            ],
+            "rows": [
+              [
+                "GPS",
+                "Estados Unidos"
+              ],
+              [
+                "Galileo",
+                "União Europeia"
+              ],
+              [
+                "GLONASS",
+                "Rússia"
+              ],
+              [
+                "BeiDou",
+                "China"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá uma rosa dos ventos ou um mapa e pede uma direção. Também cobra a diferença entre norte magnético e geográfico e como o GPS funciona."
+          ],
+          "bullets": [
+            "“Uma pessoa que caminha do ponto A para o ponto B segue na direção…”",
+            "“A bússola não aponta exatamente para o polo norte porque…”",
+            "“O funcionamento do GPS depende de…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Dizer que o Sol nasce sempre no ponto leste exato. Isso só acontece em março e setembro.",
+            "Achar que a bússola aponta para o polo norte geográfico. Ela aponta para o magnético.",
+            "Trocar nordeste por noroeste. Nordeste fica entre o norte e o leste.",
+            "Pensar que o GPS precisa de internet. Ele precisa do sinal dos satélites; a internet só baixa o mapa."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Os pontos cardeais são quatro (norte, sul, leste e oeste). Os colaterais ficam entre eles. O Sol nasce do lado leste, mas só exatamente no leste em março e setembro.",
+            "À noite, o Cruzeiro do Sul indica o sul. A bússola aponta o norte magnético, diferente do geográfico. O GPS calcula a posição pelo sinal de pelo menos quatro satélites."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Pontos cardeais",
+          "statement": "Quais são os quatro pontos cardeais?",
+          "options": [
+            "norte, sul, leste e oeste",
+            "norte, sul, nordeste e sudoeste",
+            "leste, oeste, sudeste e noroeste",
+            "norte, leste, nordeste e sudeste",
+            "sul, oeste, sudoeste e noroeste"
+          ],
+          "correct_index": 0,
+          "explanation": "Os quatro principais da rosa dos ventos.",
+          "pitfall": "Os de nome composto são colaterais."
+        },
+        {
+          "topic": "Colaterais",
+          "statement": "A direção entre o sul e o leste chama-se:",
+          "options": [
+            "sudoeste",
+            "sudeste",
+            "nordeste",
+            "noroeste",
+            "sul-sul"
+          ],
+          "correct_index": 1,
+          "explanation": "Sul mais leste dá sudeste.",
+          "pitfall": "Sudoeste fica entre o sul e o oeste."
+        },
+        {
+          "topic": "Nascer do Sol",
+          "statement": "De modo geral, o Sol nasce do lado:",
+          "options": [
+            "oeste",
+            "norte",
+            "leste",
+            "sul",
+            "sudoeste"
+          ],
+          "correct_index": 2,
+          "explanation": "Ele nasce do lado leste e se põe do lado oeste.",
+          "pitfall": "Ele só nasce no leste exato em março e setembro."
+        },
+        {
+          "topic": "Truque do braço",
+          "statement": "Com o braço direito apontado para onde o Sol nasceu, a pessoa tem à sua frente o:",
+          "options": [
+            "sul",
+            "leste",
+            "oeste",
+            "norte",
+            "sudeste"
+          ],
+          "correct_index": 3,
+          "explanation": "Direita no leste, frente no norte.",
+          "pitfall": "Não confunda a frente com o lado do braço."
+        },
+        {
+          "topic": "Cruzeiro do Sul",
+          "statement": "O Cruzeiro do Sul ajuda a encontrar, à noite, a direção:",
+          "options": [
+            "norte",
+            "leste",
+            "oeste",
+            "nordeste",
+            "sul"
+          ],
+          "correct_index": 4,
+          "explanation": "O braço maior da cruz aponta perto do polo sul do céu.",
+          "pitfall": "Ele não aparece para quem está muito ao norte."
+        },
+        {
+          "topic": "Bússola",
+          "statement": "A agulha da bússola aponta para o:",
+          "options": [
+            "norte magnético",
+            "norte geográfico exato",
+            "Sol do meio-dia",
+            "polo sul geográfico",
+            "satélite mais próximo"
+          ],
+          "correct_index": 0,
+          "explanation": "A agulha é um ímã atraído pelo magnetismo da Terra.",
+          "pitfall": "O norte magnético não fica em cima do polo geográfico."
+        },
+        {
+          "topic": "Declinação",
+          "statement": "A diferença entre o norte da bússola e o norte geográfico chama-se:",
+          "options": [
+            "fuso horário",
+            "declinação magnética",
+            "escala do mapa",
+            "rosa dos ventos",
+            "ponto colateral"
+          ],
+          "correct_index": 1,
+          "explanation": "É um ângulo que muda com o lugar.",
+          "pitfall": "Essa outra diferença é sobre hora, não sobre direção."
+        },
+        {
+          "topic": "GPS",
+          "statement": "Para calcular a posição, o receptor de GPS precisa receber o sinal de pelo menos:",
+          "options": [
+            "um satélite",
+            "duas antenas de celular",
+            "quatro satélites",
+            "uma torre de rádio",
+            "dez satélites"
+          ],
+          "correct_index": 2,
+          "explanation": "Três dão a posição, e o quarto acerta o relógio.",
+          "pitfall": "O GPS não usa as antenas de celular para isso."
+        },
+        {
+          "topic": "Sigla",
+          "statement": "Na rosa dos ventos em português, a sigla NO quer dizer:",
+          "options": [
+            "nordeste",
+            "norte-oeste exato",
+            "nenhum ponto",
+            "noroeste",
+            "sudoeste"
+          ],
+          "correct_index": 3,
+          "explanation": "N de norte e O de oeste.",
+          "pitfall": "Nordeste é NE.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Pôr do Sol",
+          "statement": "O Sol se põe, de modo geral, do lado:",
+          "options": [
+            "leste",
+            "norte",
+            "sul",
+            "nordeste",
+            "oeste"
+          ],
+          "correct_index": 4,
+          "explanation": "Ele nasce no leste e se põe no oeste.",
+          "pitfall": "Não inverta os dois lados.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Internet e GPS",
+          "statement": "Um celular sem internet, mas com o GPS ligado, consegue:",
+          "options": [
+            "saber a posição, mas pode não ter o mapa para mostrar",
+            "mostrar o mapa e não saber a posição",
+            "nada, porque o GPS depende da internet",
+            "só saber a hora do dia exata",
+            "só mostrar o norte magnético"
+          ],
+          "correct_index": 0,
+          "explanation": "A posição vem dos satélites; o mapa costuma vir da internet.",
+          "pitfall": "Com o mapa baixado antes, ele funciona sem internet.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Nordeste e noroeste",
+          "statement": "Uma cidade que fica entre o norte e o oeste de outra está a:",
+          "options": [
+            "nordeste dela",
+            "noroeste dela",
+            "sudoeste dela",
+            "sudeste dela",
+            "leste dela"
+          ],
+          "correct_index": 1,
+          "explanation": "Norte mais oeste dá noroeste.",
+          "pitfall": "Nordeste é norte mais leste.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Sol no leste exato",
+          "statement": "Em que época o Sol nasce exatamente no ponto leste?",
+          "options": [
+            "todos os dias do ano, sem exceção",
+            "só no dia mais longo do ano, em dezembro",
+            "em março e em setembro, nos dois dias de dia e noite iguais",
+            "só no dia mais curto do ano, em junho",
+            "nunca, porque ele sempre nasce no norte"
+          ],
+          "correct_index": 2,
+          "explanation": "No resto do ano ele nasce um pouco deslocado.",
+          "pitfall": "“Sempre no leste exato” é o quantificador absoluto que a prova usa.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Dois nortes",
+          "statement": "Por que um mapa antigo feito com bússola pode ficar torto depois de muitos anos?",
+          "options": [
+            "porque o norte geográfico troca de lugar todo ano",
+            "porque a Terra mudou de forma desde então",
+            "porque a bússola aponta para o Sol",
+            "porque o norte magnético anda, e a declinação muda com o tempo",
+            "porque os pontos cardeais foram mudados"
+          ],
+          "correct_index": 3,
+          "explanation": "O polo magnético se desloca devagar.",
+          "pitfall": "Quem anda é o norte magnético, não o geográfico.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "mapas-e-escala",
       "title": "Mapas: escala, legenda e projeções",
       "module": "Mapas",
       "summary": "Todo mapa é uma redução do mundo real. A escala diz quanto foi reduzido, a legenda explica os símbolos e a projeção decide o que vai ficar distorcido.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=2kvFTq8fSjk",
+        "title": "Escala cartográfica",
+        "channel": "Geobrasil"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -401,6 +806,11 @@
       "title": "Coordenadas e fusos horários",
       "module": "Mapas",
       "summary": "Latitude e longitude formam o endereço de qualquer ponto da Terra. Como a Terra gira, ela é dividida em 24 fusos, e a hora muda de um para o outro.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=oDouTDx2-dY",
+        "title": "Coordenadas geográficas",
+        "channel": "Geobrasil"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -786,10 +1196,772 @@
       ]
     },
     {
+      "slug": "mapas-tematicos-e-satelites",
+      "title": "Mapas temáticos, curvas de nível e imagens de satélite",
+      "module": "Mapas",
+      "summary": "O mapa também pode mostrar um assunto (renda, chuva ou altitude), e não só onde as coisas ficam. A lição ensina a ler os tipos de mapa temático, as curvas de nível e o que os satélites contam sobre a Terra.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=HOoVp7GU7p4",
+        "title": "Cartografia temática: mapas, isolinhas e anamorfose",
+        "channel": "Prof Silvester Geografia"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O mapa da previsão do tempo",
+          "body": [
+            "No jornal, o mapa do tempo pinta o país de cores. Vermelho onde vai fazer calor, azul onde vai esfriar.",
+            "Ele não mostra rua nenhuma. Mostra um assunto. É um mapa temático, e a prova adora esse tipo."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Mapa de base e mapa temático",
+          "body": [
+            "O mapa de base mostra o que existe no lugar: rios, cidades, estradas e limites. O mapa temático usa essa base para mostrar um tema, como população, chuva ou voto.",
+            "Para ler um mapa temático, o primeiro passo é sempre a legenda. É ela que diz o que cada cor ou símbolo quer dizer."
+          ],
+          "terms": [
+            {
+              "word": "legenda",
+              "meaning": "o quadro do mapa que explica o que significa cada cor, linha ou símbolo."
+            },
+            {
+              "word": "mapa temático",
+              "meaning": "mapa feito para mostrar um assunto (renda, chuva ou população) em cima de um mapa de base."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Três jeitos de mostrar um tema",
+          "body": [
+            "Há o mapa de cores, em que cada área ganha um tom conforme o valor. Há o de símbolos proporcionais, em que um círculo maior quer dizer mais. E há o de fluxos, com setas que mostram movimento.",
+            "Cada um serve para um tipo de dado. Setas mostram migração ou comércio. Círculos mostram quantidades, como a população de cada cidade."
+          ],
+          "table": {
+            "label": "Qual mapa para qual dado",
+            "headers": [
+              "Tipo",
+              "Como mostra",
+              "Bom para"
+            ],
+            "rows": [
+              [
+                "mapa de cores",
+                "tons mais fortes para valores maiores",
+                "renda média, taxa de desmatamento"
+              ],
+              [
+                "símbolos proporcionais",
+                "círculo maior para mais",
+                "população das cidades"
+              ],
+              [
+                "fluxos",
+                "setas de largura variável",
+                "migrações, exportações"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "As curvas de nível",
+          "body": [
+            "Uma curva de nível é uma linha que liga pontos de mesma altitude. Imagine cortar um morro em fatias na mesma altura e olhar de cima: cada fatia vira uma linha.",
+            "Quando as linhas ficam juntinhas, o terreno é íngreme. Quando ficam afastadas, o terreno é suave. Os círculos menores, no meio, são o topo do morro."
+          ],
+          "terms": [
+            {
+              "word": "altitude",
+              "meaning": "a altura de um ponto em relação ao nível do mar."
+            },
+            {
+              "word": "curva de nível",
+              "meaning": "linha que, num mapa, liga todos os pontos que estão na mesma altitude."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/geografia/curvas-de-nivel.svg",
+            "alt": "À esquerda, um morro visto de lado, cortado por linhas horizontais nas alturas 100, 200 e 300 metros. À direita, o mesmo morro visto de cima: três anéis, mais juntos do lado da encosta íngreme.",
+            "caption": "Linhas juntas indicam encosta íngreme; linhas afastadas, encosta suave."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Olhar a Terra do espaço",
+          "body": [
+            "Sensoriamento remoto é estudar a Terra sem tocar nela, por imagens de satélite. Com ele se mede plantação, cheia de rio e queimada.",
+            "O Brasil faz isso há décadas. O INPE acompanha o desmatamento da Amazônia por satélite e solta alertas quase diários. Uma parte dos satélites usados foi feita em parceria com a China."
+          ],
+          "terms": [
+            {
+              "word": "sensoriamento remoto",
+              "meaning": "obter informações da superfície da Terra a distância, principalmente por imagens de satélite."
+            },
+            {
+              "word": "INPE",
+              "meaning": "o Instituto Nacional de Pesquisas Espaciais, órgão brasileiro que estuda o espaço e monitora o território por satélite."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O mapa que estica os países",
+          "body": [
+            "A anamorfose é um mapa que muda o tamanho de cada país conforme um dado. Num mapa da população, a Índia e a China ficam enormes, e a Rússia encolhe.",
+            "Ela não serve para achar caminho. Serve para mostrar, de um golpe só, quem tem mais de alguma coisa."
+          ],
+          "terms": [
+            {
+              "word": "anamorfose",
+              "meaning": "mapa em que o tamanho de cada lugar é desenhado conforme um dado, como população ou riqueza, e não conforme a área real."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mostra um mapa temático e pede a conclusão certa. A resposta certa sai da legenda, e não do que você acha do assunto."
+          ],
+          "bullets": [
+            "“De acordo com o mapa, a maior concentração de… ocorre…”",
+            "“As curvas de nível mais próximas indicam…”",
+            "“A anamorfose apresentada destaca…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Ler a cor sem olhar a legenda. Em alguns mapas, a cor clara é o valor alto.",
+            "Achar que curvas juntas indicam terreno plano. É o contrário: juntas, o terreno é íngreme.",
+            "Usar a anamorfose para medir área. Nela, o tamanho é o dado, não o território."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O mapa temático mostra um assunto sobre um mapa de base, e se lê pela legenda. Cores, círculos proporcionais e setas servem a dados diferentes.",
+            "Curvas de nível ligam pontos de mesma altitude: juntas, encosta íngreme. Satélites mostram a Terra de longe, e a anamorfose estica os países conforme um dado."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Mapa temático",
+          "statement": "Um mapa que pinta cada estado conforme a renda média mostra:",
+          "options": [
+            "só as estradas de cada estado",
+            "o caminho entre duas cidades",
+            "a altitude exata de cada ponto",
+            "apenas os rios do país",
+            "um tema, sobre um mapa de base"
+          ],
+          "correct_index": 4,
+          "explanation": "Ele usa a base para mostrar um assunto.",
+          "pitfall": "Mapa de base é o que mostra rios e cidades."
+        },
+        {
+          "topic": "Legenda",
+          "statement": "Para ler um mapa temático, o primeiro passo é:",
+          "options": [
+            "olhar a legenda",
+            "olhar a cor mais forte",
+            "medir a área de cada país",
+            "achar o norte magnético",
+            "contar as cidades do mapa"
+          ],
+          "correct_index": 0,
+          "explanation": "A legenda diz o que cada cor quer dizer.",
+          "pitfall": "A cor sozinha pode enganar."
+        },
+        {
+          "topic": "Fluxos",
+          "statement": "Para mostrar a migração entre regiões, o tipo de mapa mais indicado é o de:",
+          "options": [
+            "cores por área",
+            "fluxos, com setas",
+            "curvas de nível",
+            "símbolos de igrejas",
+            "base, sem tema"
+          ],
+          "correct_index": 1,
+          "explanation": "Setas mostram movimento.",
+          "pitfall": "Cor por área mostra valor, não movimento."
+        },
+        {
+          "topic": "Símbolos proporcionais",
+          "statement": "Num mapa de símbolos proporcionais, um círculo maior indica:",
+          "options": [
+            "uma área menor",
+            "uma altitude menor",
+            "uma quantidade maior",
+            "um lugar mais ao norte",
+            "um dado sem importância"
+          ],
+          "correct_index": 2,
+          "explanation": "O tamanho do círculo segue o valor.",
+          "pitfall": "Não é o tamanho do lugar, é o do dado."
+        },
+        {
+          "topic": "Curvas de nível",
+          "statement": "Curvas de nível muito próximas umas das outras indicam terreno:",
+          "options": [
+            "plano",
+            "alagado",
+            "sem altitude",
+            "íngreme",
+            "com muitas cidades"
+          ],
+          "correct_index": 3,
+          "explanation": "A altura muda rápido em pouco espaço.",
+          "pitfall": "Afastadas é que indicam terreno suave."
+        },
+        {
+          "topic": "Definição",
+          "statement": "Uma curva de nível liga pontos que têm a mesma:",
+          "options": [
+            "temperatura",
+            "população",
+            "longitude",
+            "chuva no ano",
+            "altitude"
+          ],
+          "correct_index": 4,
+          "explanation": "É a linha da mesma altura.",
+          "pitfall": "Linha de mesma temperatura é outra coisa."
+        },
+        {
+          "topic": "Sensoriamento remoto",
+          "statement": "O monitoramento do desmatamento da Amazônia é feito principalmente por:",
+          "options": [
+            "imagens de satélite",
+            "visitas a pé em cada árvore",
+            "entrevistas com moradores",
+            "mapas feitos à mão no século XIX",
+            "contagem de cidades"
+          ],
+          "correct_index": 0,
+          "explanation": "É o sensoriamento remoto.",
+          "pitfall": "O território é grande demais para ver de perto."
+        },
+        {
+          "topic": "Anamorfose",
+          "statement": "Numa anamorfose da população mundial, a Índia aparece enorme porque:",
+          "options": [
+            "ela tem a maior área do mundo",
+            "o tamanho segue o número de habitantes",
+            "fica perto da linha do meio da Terra",
+            "o mapa foi desenhado errado",
+            "a projeção aumenta os países do sul"
+          ],
+          "correct_index": 1,
+          "explanation": "O dado define o tamanho.",
+          "pitfall": "A Índia não é o maior país em área."
+        },
+        {
+          "topic": "INPE",
+          "statement": "O órgão brasileiro que acompanha o desmatamento por satélite é o:",
+          "options": [
+            "IBGE",
+            "IPHAN",
+            "INPE",
+            "INSS",
+            "Banco Central"
+          ],
+          "correct_index": 2,
+          "explanation": "Instituto Nacional de Pesquisas Espaciais.",
+          "pitfall": "O IBGE faz o Censo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Mapa de base",
+          "statement": "Qual destes elementos faz parte de um mapa de base?",
+          "options": [
+            "a renda média por estado",
+            "a taxa de natalidade",
+            "o voto em cada eleição",
+            "os rios e as cidades",
+            "o desmatamento por ano"
+          ],
+          "correct_index": 3,
+          "explanation": "O mapa de base mostra o que existe no lugar.",
+          "pitfall": "Os outros são temas.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Topo do morro",
+          "statement": "Num mapa de curvas de nível, o topo de um morro aparece como:",
+          "options": [
+            "a linha mais comprida da borda",
+            "uma seta apontando para o norte",
+            "um círculo proporcional grande",
+            "uma área pintada de azul",
+            "o anel menor, no meio dos outros"
+          ],
+          "correct_index": 4,
+          "explanation": "Quanto mais alto, menor a fatia.",
+          "pitfall": "A linha da borda é a parte mais baixa.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Escolher o mapa",
+          "statement": "Para mostrar quantas toneladas de soja cada porto exporta, o mapa mais indicado é o de:",
+          "options": [
+            "símbolos proporcionais em cada porto",
+            "curvas de nível do terreno",
+            "base, sem nenhum tema",
+            "anamorfose da área real",
+            "rosa dos ventos ampliada"
+          ],
+          "correct_index": 0,
+          "explanation": "Quantidade por ponto pede símbolo proporcional.",
+          "pitfall": "Curva de nível só mostra altitude.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Cor clara",
+          "statement": "Um mapa usa cor clara para os estados com MAIS desmatamento. Quem lê sem olhar a legenda tende a:",
+          "options": [
+            "acertar, porque cor clara é sempre pouco",
+            "concluir o contrário do que o mapa mostra",
+            "acertar, porque o mapa não tem tema",
+            "ver melhor as curvas de nível",
+            "medir a área do estado"
+          ],
+          "correct_index": 1,
+          "explanation": "A convenção de cor muda de mapa para mapa.",
+          "pitfall": "“Cor clara é sempre pouco” é o erro esperado.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Anamorfose e área",
+          "statement": "Um aluno usa uma anamorfose da riqueza para comparar a área do Brasil e da Alemanha. O erro dele é que:",
+          "options": [
+            "a anamorfose sempre mostra a área real",
+            "a Alemanha não aparece nesse tipo de mapa",
+            "nesse mapa o tamanho mostra a riqueza, não a área",
+            "a riqueza não pode virar mapa",
+            "o Brasil fica sempre do mesmo tamanho"
+          ],
+          "correct_index": 2,
+          "explanation": "Na anamorfose o tamanho é o dado.",
+          "pitfall": "Para área, use um mapa comum.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "movimentos-da-terra",
+      "title": "A Terra no espaço: dia, noite e estações",
+      "module": "A Terra",
+      "summary": "A Terra gira em torno de si e em torno do Sol, com o eixo inclinado. Isso explica o dia e a noite, as estações do ano, os trópicos e as zonas mais quentes e mais frias do planeta.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=B3fBDGR1G1Y",
+        "title": "Os movimentos da Terra: rotação, translação, solstício e equinócio",
+        "channel": "geo ilustrada"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Natal de bermuda",
+          "body": [
+            "No Brasil, o Natal cai no verão. Na Europa, cai no inverno, às vezes com neve.",
+            "É o mesmo dia e o mesmo planeta. A explicação está numa inclinação de pouco mais de 23 graus."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Girar em volta de si: dia e noite",
+          "body": [
+            "A Terra gira em torno de um eixo imaginário, de oeste para leste. Uma volta leva cerca de 24 horas, e esse giro se chama rotação.",
+            "A metade virada para o Sol tem dia; a outra, noite. Como a Terra gira para o leste, o Sol parece nascer do lado leste."
+          ],
+          "terms": [
+            {
+              "word": "rotação",
+              "meaning": "o giro da Terra em torno do próprio eixo, que leva cerca de 24 horas e produz o dia e a noite."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Girar em volta do Sol: o ano",
+          "body": [
+            "Ao mesmo tempo, a Terra dá uma volta em torno do Sol. Essa volta, chamada translação, leva 365 dias e cerca de seis horas.",
+            "As seis horas que sobram somam um dia a cada quatro anos. É por isso que existe o ano bissexto, com 29 de fevereiro."
+          ],
+          "terms": [
+            {
+              "word": "translação",
+              "meaning": "a volta da Terra em torno do Sol, que leva cerca de 365 dias e 6 horas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O eixo torto faz as estações",
+          "body": [
+            "O eixo da Terra é inclinado, cerca de 23,5 graus. Por isso, em parte do ano o hemisfério sul fica mais virado para o Sol, e em outra parte é o norte.",
+            "O lado mais virado recebe luz mais direta e dias mais longos: é o verão. O outro lado, ao mesmo tempo, está no inverno. A distância até o Sol quase não pesa nisso."
+          ],
+          "terms": [
+            {
+              "word": "hemisfério",
+              "meaning": "cada metade da Terra, dividida por uma linha no meio do planeta: a metade norte e a metade sul."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/geografia/estacoes.svg",
+            "alt": "O Sol no centro e a Terra em dois pontos da órbita, sempre com o eixo inclinado para o mesmo lado. Em dezembro, o hemisfério sul está virado para o Sol; em junho, o hemisfério norte.",
+            "caption": "O eixo aponta sempre para o mesmo lado. Em dezembro, é o sul que recebe mais sol."
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Solstícios e equinócios",
+          "body": [
+            "Solstício é o dia em que um hemisfério fica mais virado para o Sol. Em dezembro, o sul tem o dia mais longo do ano e começa o verão. Em junho, é o contrário.",
+            "Equinócio é o dia em que o Sol ilumina os dois hemisférios por igual. Dia e noite têm quase a mesma duração. Ele acontece em março e em setembro."
+          ],
+          "terms": [
+            {
+              "word": "solstício",
+              "meaning": "o dia em que um hemisfério recebe mais sol e tem o dia mais longo do ano, por volta de 21 de junho ou de dezembro."
+            },
+            {
+              "word": "equinócio",
+              "meaning": "o dia em que o dia e a noite têm quase a mesma duração nos dois hemisférios, por volta de 20 de março e de 22 de setembro."
+            }
+          ],
+          "table": {
+            "label": "No hemisfério sul",
+            "headers": [
+              "Data aproximada",
+              "O que acontece",
+              "Começa"
+            ],
+            "rows": [
+              [
+                "21 de dezembro",
+                "solstício: dia mais longo",
+                "verão"
+              ],
+              [
+                "20 de março",
+                "equinócio: dia igual à noite",
+                "outono"
+              ],
+              [
+                "21 de junho",
+                "solstício: dia mais curto",
+                "inverno"
+              ],
+              [
+                "22 de setembro",
+                "equinócio: dia igual à noite",
+                "primavera"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Trópicos, círculos polares e zonas",
+          "body": [
+            "A linha do Equador divide a Terra em norte e sul. Os trópicos de Câncer e de Capricórnio marcam até onde o Sol pode ficar a pino, bem em cima da cabeça. O de Capricórnio passa pelo Brasil, em estados como São Paulo e Paraná.",
+            "Entre os trópicos fica a zona tropical, a mais quente. Depois vêm as temperadas e, perto dos polos, as polares."
+          ],
+          "terms": [
+            {
+              "word": "Equador",
+              "meaning": "a linha imaginária que divide a Terra em hemisfério norte e hemisfério sul, a igual distância dos dois polos."
+            },
+            {
+              "word": "trópicos",
+              "meaning": "duas linhas imaginárias, uma em cada hemisfério, que marcam até onde o Sol pode ficar bem em cima da cabeça em algum dia do ano."
+            }
+          ],
+          "table": {
+            "label": "As zonas da Terra",
+            "headers": [
+              "Zona",
+              "Onde fica",
+              "Como é"
+            ],
+            "rows": [
+              [
+                "tropical",
+                "entre os trópicos",
+                "quente o ano todo"
+              ],
+              [
+                "temperadas",
+                "entre os trópicos e os círculos polares",
+                "estações bem marcadas"
+              ],
+              [
+                "polares",
+                "além dos círculos polares",
+                "frio intenso, meses de dia ou de noite"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova cobra por que existem estações e por que elas são opostas nos dois hemisférios. Também pede o nome do movimento que causa o dia, a noite e o ano."
+          ],
+          "bullets": [
+            "“As estações do ano são causadas principalmente…”",
+            "“No solstício de dezembro, no hemisfério sul…”",
+            "“O movimento de rotação é responsável por…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Dizer que é verão quando a Terra está mais perto do Sol. A Terra fica mais perto em janeiro, e no norte é inverno.",
+            "Trocar rotação por translação. Rotação dá o dia; translação dá o ano.",
+            "Achar que no equinócio é verão nos dois hemisférios. No equinócio, um entra no outono e o outro na primavera."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A rotação leva cerca de 24 horas e faz o dia e a noite. A translação leva cerca de 365 dias e faz o ano.",
+            "O eixo inclinado faz as estações, opostas nos dois hemisférios. Solstícios têm o dia mais longo ou mais curto; equinócios, dia igual à noite. Entre os trópicos fica a zona mais quente."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Rotação",
+          "statement": "O movimento da Terra que produz o dia e a noite é a:",
+          "options": [
+            "translação",
+            "inclinação",
+            "precessão anual",
+            "rotação",
+            "erosão"
+          ],
+          "correct_index": 3,
+          "explanation": "É o giro em torno do próprio eixo.",
+          "pitfall": "Translação produz o ano."
+        },
+        {
+          "topic": "Translação",
+          "statement": "Uma volta completa da Terra em torno do Sol leva cerca de:",
+          "options": [
+            "24 horas",
+            "30 dias",
+            "12 meses e meio",
+            "10 anos",
+            "365 dias e 6 horas"
+          ],
+          "correct_index": 4,
+          "explanation": "É a translação.",
+          "pitfall": "24 horas é a rotação."
+        },
+        {
+          "topic": "Ano bissexto",
+          "statement": "O ano bissexto existe porque:",
+          "options": [
+            "as cerca de 6 horas que sobram por ano somam um dia a cada quatro anos",
+            "a Terra para de girar a cada quatro anos",
+            "a Lua atrasa o calendário todo ano",
+            "fevereiro é um mês com dias demais",
+            "o Sol muda de lugar a cada quatro anos"
+          ],
+          "correct_index": 0,
+          "explanation": "A translação passa um pouco de 365 dias.",
+          "pitfall": "Não tem nada a ver com a Lua."
+        },
+        {
+          "topic": "Causa das estações",
+          "statement": "As estações do ano acontecem principalmente por causa:",
+          "options": [
+            "da distância entre a Terra e o Sol",
+            "da inclinação do eixo da Terra",
+            "das fases da Lua",
+            "do giro da Terra em 24 horas",
+            "do vento que vem dos polos"
+          ],
+          "correct_index": 1,
+          "explanation": "A inclinação muda quanto sol cada hemisfério recebe.",
+          "pitfall": "A distância quase não pesa."
+        },
+        {
+          "topic": "Estações opostas",
+          "statement": "Quando é verão no Brasil, na Europa é:",
+          "options": [
+            "verão também",
+            "primavera",
+            "inverno",
+            "sempre outono",
+            "a mesma estação de sempre"
+          ],
+          "correct_index": 2,
+          "explanation": "Os hemisférios têm estações opostas.",
+          "pitfall": "Por isso o Natal europeu tem neve."
+        },
+        {
+          "topic": "Solstício de dezembro",
+          "statement": "No solstício de dezembro, no hemisfério sul:",
+          "options": [
+            "acontece o dia mais curto e começa o inverno",
+            "o dia e a noite têm a mesma duração",
+            "o Sol fica a pino no polo sul",
+            "acontece o dia mais longo do ano e começa o verão",
+            "começa a primavera em todo o mundo"
+          ],
+          "correct_index": 3,
+          "explanation": "O sul está mais virado para o Sol.",
+          "pitfall": "No norte, é o dia mais curto."
+        },
+        {
+          "topic": "Equinócio",
+          "statement": "No equinócio:",
+          "options": [
+            "o dia dura 24 horas no Brasil inteiro",
+            "a Terra fica mais perto do Sol",
+            "começa o verão nos dois hemisférios",
+            "o Sol nasce no oeste",
+            "o dia e a noite têm quase a mesma duração"
+          ],
+          "correct_index": 4,
+          "explanation": "O Sol ilumina os dois hemisférios por igual.",
+          "pitfall": "Um hemisfério entra no outono e o outro na primavera."
+        },
+        {
+          "topic": "Trópicos",
+          "statement": "Os trópicos marcam:",
+          "options": [
+            "até onde o Sol pode ficar a pino em algum dia do ano",
+            "onde começam os polos",
+            "a divisão entre leste e oeste",
+            "o limite das águas do mar",
+            "onde o dia dura 24 horas"
+          ],
+          "correct_index": 0,
+          "explanation": "Fora dos trópicos o Sol nunca passa bem em cima.",
+          "pitfall": "Os círculos polares é que marcam a zona polar."
+        },
+        {
+          "topic": "Zona tropical",
+          "statement": "A zona mais quente da Terra fica:",
+          "options": [
+            "entre os círculos polares e os polos",
+            "entre os dois trópicos",
+            "só no hemisfério norte",
+            "perto do polo sul",
+            "entre um trópico e um círculo polar"
+          ],
+          "correct_index": 1,
+          "explanation": "Ali o Sol chega mais direto.",
+          "pitfall": "Entre trópico e círculo polar ficam as temperadas.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Sentido",
+          "statement": "A Terra gira em torno do próprio eixo de:",
+          "options": [
+            "leste para oeste",
+            "norte para sul",
+            "oeste para leste",
+            "sul para norte",
+            "um lado só, sem sentido"
+          ],
+          "correct_index": 2,
+          "explanation": "Por isso o Sol parece nascer no leste.",
+          "pitfall": "O Sol é que parece andar ao contrário.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Capricórnio",
+          "statement": "O trópico que passa pelo território brasileiro é o de:",
+          "options": [
+            "Câncer",
+            "Áries",
+            "Leão",
+            "Capricórnio",
+            "nenhum, só o Equador"
+          ],
+          "correct_index": 3,
+          "explanation": "Ele corta estados como São Paulo e Paraná.",
+          "pitfall": "O de Câncer fica no hemisfério norte.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Ordem das estações",
+          "format": "order",
+          "statement": "Coloque na ordem em que acontecem no hemisfério sul, começando em dezembro.",
+          "options": [
+            "solstício de dezembro: começa o verão",
+            "equinócio de março: começa o outono",
+            "solstício de junho: começa o inverno",
+            "equinócio de setembro: começa a primavera"
+          ],
+          "explanation": "A cada três meses muda a estação: verão, outono, inverno e primavera.",
+          "pitfall": "No hemisfério norte a ordem começa no inverno.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Distância e estação",
+          "statement": "A Terra fica mais perto do Sol no começo de janeiro. Isso mostra que:",
+          "options": [
+            "janeiro é verão no mundo inteiro",
+            "a Terra não tem eixo inclinado",
+            "o inverno acontece quando ela está longe",
+            "a distância decide as estações",
+            "a distância não é o que causa as estações"
+          ],
+          "correct_index": 4,
+          "explanation": "Em janeiro, é inverno no norte.",
+          "pitfall": "“Mais perto, mais calor” é a pegadinha.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Dia polar",
+          "statement": "Nas zonas polares, há períodos com dia ou noite por semanas. Isso acontece porque:",
+          "options": [
+            "com o eixo inclinado, o polo fica muito tempo virado para o Sol ou para longe dele",
+            "a Terra para de girar no inverno",
+            "o Sol gira em volta dos polos",
+            "os polos ficam mais perto do Sol",
+            "a translação dura só seis meses ali"
+          ],
+          "correct_index": 0,
+          "explanation": "É a inclinação, vista do extremo.",
+          "pitfall": "A Terra nunca para de girar.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "estrutura-e-relevo",
       "title": "A Terra por dentro e o relevo",
       "module": "A Terra",
       "summary": "A Terra tem camadas, e a de fora é quebrada em placas que se movem. Forças de dentro levantam o relevo, e o sol, a chuva e o vento o desgastam.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=il0MEu_gLPs",
+        "title": "As placas tectônicas e seus movimentos",
+        "channel": "geo ilustrada"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -1172,10 +2344,454 @@
       ]
     },
     {
+      "slug": "solos-e-erosao",
+      "title": "Solos: como nascem e como se perdem",
+      "module": "A Terra",
+      "summary": "O solo nasce da rocha desgastada ao longo de séculos, misturada com restos de seres vivos. A lição mostra as camadas do solo, os solos férteis do Brasil e como a erosão leva embora em poucos anos o que levou séculos para se formar.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=E9oeChbKvwI",
+        "title": "Erosão e intemperismo",
+        "channel": "Descomplica"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Um centímetro em séculos",
+          "body": [
+            "Um único centímetro de solo pode levar centenas de anos para se formar. Uma chuva forte num terreno pelado pode levar vários centímetros numa tarde.",
+            "Por isso se diz que o solo é um recurso que não se repõe no tempo de uma vida."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Da rocha ao solo",
+          "body": [
+            "Tudo começa numa rocha. Sol, chuva e variação de temperatura racham a rocha devagar, e raízes e bactérias ajudam a quebrá-la. Esse desgaste no próprio lugar se chama intemperismo.",
+            "Os pedaços se misturam com restos de folhas e de bichos, a matéria orgânica. Com o tempo, essa mistura vira solo."
+          ],
+          "terms": [
+            {
+              "word": "intemperismo",
+              "meaning": "o desgaste da rocha no próprio lugar pela ação do clima, da água e dos seres vivos."
+            },
+            {
+              "word": "matéria orgânica",
+              "meaning": "restos de plantas e de animais, como folhas e raízes, que se decompõem e enriquecem o solo."
+            }
+          ],
+          "example": {
+            "label": "Como o solo se forma",
+            "ordered": true,
+            "lines": [
+              "A rocha fica exposta ao sol, à chuva e às raízes.",
+              "Ela racha e se quebra em pedaços cada vez menores.",
+              "Restos de folhas e de bichos se misturam aos pedaços.",
+              "Depois de séculos, a mistura vira um solo com camadas."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "As camadas do solo",
+          "body": [
+            "Se você cavar um barranco, vai ver faixas de cores diferentes. Cada faixa é um horizonte do solo.",
+            "Em cima fica a camada escura, cheia de matéria orgânica, onde as raízes crescem. Mais embaixo, o solo fica mais claro e com mais pedaços de rocha. No fundo está a rocha que deu origem a tudo, a rocha-mãe."
+          ],
+          "terms": [
+            {
+              "word": "horizonte do solo",
+              "meaning": "cada uma das camadas que aparecem quando se corta o solo de cima a baixo."
+            },
+            {
+              "word": "rocha-mãe",
+              "meaning": "a rocha que, desgastada, deu origem ao solo que está em cima dela."
+            }
+          ],
+          "table": {
+            "label": "Do topo para o fundo",
+            "headers": [
+              "Camada",
+              "Como é"
+            ],
+            "rows": [
+              [
+                "superficial",
+                "escura, com folhas e raízes"
+              ],
+              [
+                "do meio",
+                "mais clara, recebe o que a água leva de cima"
+              ],
+              [
+                "de baixo",
+                "pedaços de rocha ainda pouco desgastados"
+              ],
+              [
+                "rocha-mãe",
+                "a rocha inteira, que originou o resto"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Solos famosos do Brasil",
+          "body": [
+            "A terra roxa vem do desgaste de uma rocha vulcânica, o basalto. É muito fértil e ajudou o café a se espalhar por São Paulo e pelo Paraná.",
+            "O massapê é um solo escuro e fértil da faixa litorânea do Nordeste, onde se plantou cana por séculos. Já muitos solos tropicais são pobres, porque a chuva forte lava os nutrientes para baixo. Essa lavagem se chama lixiviação."
+          ],
+          "terms": [
+            {
+              "word": "lixiviação",
+              "meaning": "a lavagem dos nutrientes do solo pela água da chuva, que os leva para camadas mais fundas."
+            },
+            {
+              "word": "terra roxa",
+              "meaning": "solo avermelhado e fértil, formado do desgaste do basalto, comum no Paraná e em São Paulo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A erosão leva o solo embora",
+          "body": [
+            "Erosão é o transporte do solo pela água ou pelo vento. Em terreno sem plantas, a chuva bate direto e arrasta a terra.",
+            "Começa com pequenos sulcos. Se nada for feito, eles viram ravinas e depois voçorocas, buracos enormes que engolem estradas. A terra arrastada vai parar no fundo dos rios, que ficam rasos: é o assoreamento."
+          ],
+          "terms": [
+            {
+              "word": "erosão",
+              "meaning": "o transporte de pedaços de solo e de rocha pela água, pelo vento ou pelo gelo."
+            },
+            {
+              "word": "voçoroca",
+              "meaning": "grande buraco aberto pela erosão, que pode ter dezenas de metros de fundo."
+            },
+            {
+              "word": "assoreamento",
+              "meaning": "o acúmulo de terra e areia no fundo de rios e lagos, que ficam mais rasos."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/geografia/vocoroca.jpg",
+            "alt": "Um barranco de terra vermelha rasgado pela água, com paredes altas e capim só nas bordas de cima.",
+            "caption": "Uma voçoroca: a erosão abriu na terra um buraco do tamanho de uma casa.",
+            "credit": {
+              "author": "Carmem Lucas Vieira",
+              "license": "CC BY-SA 4.0",
+              "url": "https://commons.wikimedia.org/wiki/File:Vo%C3%A7oroca.jpg"
+            }
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Como segurar o solo",
+          "body": [
+            "A primeira defesa é manter o chão coberto: plantas, palha ou restos da colheita. No plantio direto, a semente entra na palha da safra anterior, sem revirar a terra.",
+            "Em terreno inclinado, planta-se em linhas que acompanham a altura do morro. Assim a água encontra uma barreira em cada linha. Na beira dos rios, a mata ciliar segura as margens."
+          ],
+          "terms": [
+            {
+              "word": "plantio direto",
+              "meaning": "técnica de plantar sobre a palha da colheita anterior, sem arar a terra, o que protege o solo da chuva."
+            },
+            {
+              "word": "mata ciliar",
+              "meaning": "a vegetação da beira dos rios, que protege as margens como os cílios protegem os olhos."
+            }
+          ],
+          "table": {
+            "label": "Problema e solução",
+            "headers": [
+              "Problema",
+              "O que ajuda"
+            ],
+            "rows": [
+              [
+                "chuva batendo em solo pelado",
+                "palha, plantio direto"
+              ],
+              [
+                "água descendo o morro",
+                "plantio em linhas de mesma altura, terraços"
+              ],
+              [
+                "margem do rio desabando",
+                "mata ciliar"
+              ],
+              [
+                "solo cansado de uma só planta",
+                "trocar a cultura a cada safra"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Quando o solo vira deserto",
+          "body": [
+            "Em áreas secas, o mau uso pode deixar o solo tão pobre que nada mais cresce. É a desertificação, e ela não é o avanço de um deserto de areia.",
+            "No Brasil, o risco é maior no semiárido do Nordeste. O caso mais conhecido é Gilbués, no Piauí, com áreas inteiras de solo exposto."
+          ],
+          "terms": [
+            {
+              "word": "semiárido",
+              "meaning": "região de clima quente e seco, com chuva pouca e mal distribuída. No Brasil, cobre boa parte do interior do Nordeste."
+            },
+            {
+              "word": "desertificação",
+              "meaning": "a perda da capacidade do solo de produzir em áreas secas, causada pelo clima e pelo mau uso da terra."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mostra uma foto de voçoroca ou um texto sobre agricultura e pede a causa ou a solução. A resposta certa quase sempre passa por manter o solo coberto."
+          ],
+          "bullets": [
+            "“A prática que reduz a erosão em terrenos inclinados é…”",
+            "“A retirada da mata ciliar provoca…”",
+            "“A desertificação no semiárido está associada a…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Trocar intemperismo por erosão. Intemperismo desgasta no lugar; erosão leva embora.",
+            "Achar que todo solo de floresta tropical é fértil. Muitos são pobres, porque a chuva lava os nutrientes.",
+            "Pensar que desertificação é areia avançando. É o solo perdendo a capacidade de produzir.",
+            "Plantar morro abaixo. As linhas devem seguir a altura, cruzando a descida da água."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O intemperismo desgasta a rocha, e a mistura com matéria orgânica vira solo, em séculos. O solo tem camadas, da escura de cima até a rocha-mãe.",
+            "A erosão leva o solo embora e assoreia os rios. Chão coberto, plantio direto, linhas em nível e mata ciliar seguram o solo. No semiárido, o mau uso causa desertificação."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Intemperismo",
+          "statement": "O desgaste da rocha no próprio lugar, pela ação do clima, chama-se:",
+          "options": [
+            "intemperismo",
+            "erosão",
+            "assoreamento",
+            "lixiviação",
+            "desertificação"
+          ],
+          "correct_index": 0,
+          "explanation": "É o primeiro passo para formar o solo.",
+          "pitfall": "Erosão é quando o material é levado embora."
+        },
+        {
+          "topic": "Formação",
+          "statement": "O solo se forma principalmente a partir de:",
+          "options": [
+            "areia trazida do mar pelas ondas",
+            "rocha desgastada misturada com matéria orgânica",
+            "lixo jogado ao longo dos anos",
+            "água de chuva que endurece no chão",
+            "cinza de queimadas recentes"
+          ],
+          "correct_index": 1,
+          "explanation": "Rocha quebrada e restos de seres vivos.",
+          "pitfall": "Não é um processo rápido."
+        },
+        {
+          "topic": "Camada de cima",
+          "statement": "A camada mais escura e superficial do solo é rica em:",
+          "options": [
+            "rocha inteira",
+            "petróleo",
+            "matéria orgânica",
+            "sal do mar",
+            "metal puro"
+          ],
+          "correct_index": 2,
+          "explanation": "É onde caem folhas e crescem raízes.",
+          "pitfall": "A rocha-mãe fica no fundo."
+        },
+        {
+          "topic": "Terra roxa",
+          "statement": "A terra roxa, solo fértil do Paraná e de São Paulo, vem do desgaste do:",
+          "options": [
+            "calcário de praia",
+            "gelo das montanhas",
+            "barro dos manguezais",
+            "basalto",
+            "carvão mineral"
+          ],
+          "correct_index": 3,
+          "explanation": "O basalto é uma rocha vulcânica.",
+          "pitfall": "O nome vem da cor avermelhada, não de roxo."
+        },
+        {
+          "topic": "Lixiviação",
+          "statement": "Muitos solos tropicais são pobres porque:",
+          "options": [
+            "faz frio demais para as plantas",
+            "não chove nunca nessas áreas",
+            "as raízes comem a terra",
+            "o sol queima toda a matéria orgânica",
+            "a chuva forte lava os nutrientes para baixo"
+          ],
+          "correct_index": 4,
+          "explanation": "É a lixiviação.",
+          "pitfall": "Floresta exuberante não garante solo rico."
+        },
+        {
+          "topic": "Voçoroca",
+          "statement": "Um buraco enorme aberto pela erosão, que engole estradas, chama-se:",
+          "options": [
+            "voçoroca",
+            "horizonte",
+            "mata ciliar",
+            "planície",
+            "rocha-mãe"
+          ],
+          "correct_index": 0,
+          "explanation": "É o último estágio da erosão por água.",
+          "pitfall": "Começa com sulcos pequenos."
+        },
+        {
+          "topic": "Assoreamento",
+          "statement": "A terra levada pela erosão que se acumula no fundo dos rios causa:",
+          "options": [
+            "a lixiviação",
+            "o assoreamento",
+            "o intemperismo",
+            "a formação de basalto",
+            "o plantio direto"
+          ],
+          "correct_index": 1,
+          "explanation": "O rio fica raso.",
+          "pitfall": "Assoreamento é consequência da erosão."
+        },
+        {
+          "topic": "Mata ciliar",
+          "statement": "A mata ciliar protege principalmente:",
+          "options": [
+            "o topo das montanhas",
+            "as praias do mar",
+            "as margens dos rios",
+            "o centro das cidades",
+            "as rochas do fundo do solo"
+          ],
+          "correct_index": 2,
+          "explanation": "Como os cílios protegem os olhos.",
+          "pitfall": "Tirá-la acelera a erosão e o assoreamento."
+        },
+        {
+          "topic": "Plantio direto",
+          "statement": "No plantio direto, a semente é colocada:",
+          "options": [
+            "depois de revirar toda a terra",
+            "dentro da água do rio",
+            "só em terrenos sem nenhuma planta",
+            "sobre a palha da colheita anterior",
+            "em vasos fora do campo"
+          ],
+          "correct_index": 3,
+          "explanation": "A palha protege o solo da chuva.",
+          "pitfall": "Não se ara a terra.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Defesa simples",
+          "statement": "A defesa mais simples contra a erosão é:",
+          "options": [
+            "deixar o solo pelado ao sol",
+            "tirar as árvores da beira do rio",
+            "plantar morro abaixo",
+            "queimar a palha da colheita",
+            "manter o solo coberto"
+          ],
+          "correct_index": 4,
+          "explanation": "Cobertura amortece a chuva.",
+          "pitfall": "Solo exposto é o que mais perde terra.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Da rocha ao solo",
+          "format": "order",
+          "statement": "Coloque na ordem a formação de um solo.",
+          "options": [
+            "a rocha fica exposta ao sol, à chuva e às raízes",
+            "a rocha racha e se quebra em pedaços menores",
+            "restos de folhas e de bichos se misturam aos pedaços",
+            "depois de séculos, forma-se um solo com camadas"
+          ],
+          "explanation": "Primeiro o desgaste, depois a mistura com matéria orgânica.",
+          "pitfall": "Não é um processo de anos: são séculos.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Morro",
+          "statement": "Num terreno inclinado, as linhas de plantio devem:",
+          "options": [
+            "acompanhar a altura do morro, cruzando a descida da água",
+            "descer o morro em linha reta",
+            "ficar só no topo do morro",
+            "seguir o caminho da enxurrada",
+            "ser feitas sem nenhuma ordem"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada linha vira uma barreira.",
+          "pitfall": "Morro abaixo, a linha vira canal de água.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Desertificação",
+          "statement": "No semiárido brasileiro, a desertificação é:",
+          "options": [
+            "o avanço de dunas de areia vindas do mar",
+            "a perda da capacidade do solo de produzir, por clima e mau uso",
+            "a chegada de um deserto vindo da África",
+            "o aumento da chuva em poucos anos",
+            "um processo que só a natureza causa"
+          ],
+          "correct_index": 1,
+          "explanation": "Gilbués, no Piauí, é o caso mais lembrado.",
+          "pitfall": "Não é areia avançando.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Erosão e intemperismo",
+          "statement": "Uma rocha racha com o calor e o frio, e depois a chuva leva os pedaços morro abaixo. Os dois processos são, nessa ordem:",
+          "options": [
+            "erosão e intemperismo",
+            "assoreamento e lixiviação",
+            "intemperismo e erosão",
+            "lixiviação e intemperismo",
+            "erosão e assoreamento"
+          ],
+          "correct_index": 2,
+          "explanation": "Primeiro desgasta no lugar, depois transporta.",
+          "pitfall": "A ordem trocada é o distrator mais comum.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "tempo-e-clima",
       "title": "Tempo, clima e os climas do Brasil",
       "module": "A Terra",
       "summary": "Tempo é como está o ar agora; clima é o padrão de muitos anos. Latitude, altitude, mar e massas de ar explicam por que o Brasil tem climas tão diferentes.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=zd8R5BLWjyM",
+        "title": "Climas do Brasil",
+        "channel": "Geobrasil"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -1575,10 +3191,413 @@
       ]
     },
     {
+      "slug": "paisagens-do-mundo",
+      "title": "Os climas e as paisagens do mundo",
+      "module": "A Terra",
+      "summary": "Do Equador aos polos, a temperatura e a chuva mudam. A vegetação muda junto (floresta, savana, deserto, floresta de pinheiros e tundra). Subir uma montanha faz o mesmo caminho em poucos quilômetros.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=R9mPxtkNm74",
+        "title": "Climas e vegetações do planeta",
+        "channel": "Prof Silvester Geografia"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Uma viagem de avião",
+          "body": [
+            "Num voo do Brasil até a Europa, dá para ver da janela uma floresta. Depois vêm um deserto e campos plantados.",
+            "Cada paisagem é o resultado do clima daquele lugar. Quem entende o clima consegue adivinhar a paisagem."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Clima faz a paisagem",
+          "body": [
+            "Uma planta precisa de calor e de água. Onde sobra os dois, cresce floresta fechada. Onde falta água, crescem plantas baixas ou quase nada.",
+            "Por isso a vegetação muda em faixas, conforme a latitude. Perto do Equador é quente e chuvoso. Perto dos polos, frio demais para árvore."
+          ],
+          "terms": [
+            {
+              "word": "Equador",
+              "meaning": "a linha imaginária no meio da Terra, que divide o planeta em metade norte e metade sul."
+            },
+            {
+              "word": "latitude",
+              "meaning": "a distância de um lugar até a linha do Equador, medida em graus para o norte ou para o sul."
+            },
+            {
+              "word": "vegetação",
+              "meaning": "o conjunto das plantas que cobrem naturalmente uma região."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As grandes paisagens",
+          "body": [
+            "A tabela mostra as principais, do Equador para os polos. Repare como a falta de água ou de calor vai deixando as plantas menores.",
+            "Nem todo deserto é quente: o do interior da Ásia tem inverno gelado. O que define um deserto é a falta de chuva."
+          ],
+          "table": {
+            "label": "Do Equador aos polos",
+            "headers": [
+              "Clima",
+              "Como é",
+              "Paisagem",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "equatorial",
+                "quente e chuvoso o ano todo",
+                "floresta fechada",
+                "Amazônia, Congo"
+              ],
+              [
+                "tropical",
+                "quente, com estação seca",
+                "savana: capim e árvores espalhadas",
+                "Cerrado, savanas da África"
+              ],
+              [
+                "desértico",
+                "quase sem chuva",
+                "deserto",
+                "Saara, Atacama"
+              ],
+              [
+                "temperado",
+                "quatro estações bem marcadas",
+                "floresta que perde as folhas no outono",
+                "leste dos EUA, Europa"
+              ],
+              [
+                "mediterrâneo",
+                "verão seco e inverno chuvoso",
+                "arbustos e oliveiras",
+                "sul da Europa"
+              ],
+              [
+                "frio",
+                "inverno longo e gelado",
+                "taiga: floresta de pinheiros",
+                "Canadá, Rússia"
+              ],
+              [
+                "polar",
+                "frio quase o ano todo",
+                "tundra: musgos e liquens",
+                "norte do Canadá, Groenlândia"
+              ]
+            ]
+          },
+          "figure": {
+            "src": "/figuras/geografia/taiga.jpg",
+            "alt": "Floresta de pinheiros baixos e escuros crescendo entre pedras, no norte do Canadá.",
+            "caption": "A taiga no norte do Canadá: pinheiros que aguentam o inverno longo.",
+            "credit": {
+              "author": "Daniel Case",
+              "license": "CC BY-SA 3.0",
+              "url": "https://commons.wikimedia.org/wiki/File:Taiga_and_bedrock_in_Yellowknife.jpg"
+            }
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Subir a montanha é andar para o polo",
+          "body": [
+            "A temperatura cai, em média, cerca de 0,6 °C a cada 100 metros de subida. No alto de uma montanha faz frio mesmo perto do Equador.",
+            "Por isso os Andes têm neve no topo, embora fiquem na faixa tropical. Subindo, a floresta dá lugar a campos e depois a pedra e gelo, como numa viagem para o polo."
+          ],
+          "terms": [
+            {
+              "word": "altitude",
+              "meaning": "a altura de um lugar em relação ao nível do mar."
+            }
+          ],
+          "example": {
+            "label": "Uma montanha tropical, de baixo para cima",
+            "ordered": true,
+            "lines": [
+              "Na base, floresta quente e úmida.",
+              "No meio, floresta mais baixa e mais fria.",
+              "Mais alto, campos de capim.",
+              "No topo, rocha e neve."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Desertos na beira do mar",
+          "body": [
+            "O deserto do Atacama, no Chile, fica colado ao oceano e é um dos lugares mais secos do mundo. A explicação está na água fria que passa ao longo da costa.",
+            "Água fria esfria o ar de cima, e o ar frio quase não forma nuvem de chuva. O mesmo acontece no deserto da Namíbia, na África."
+          ],
+          "terms": [
+            {
+              "word": "corrente marítima",
+              "meaning": "uma grande faixa de água do mar que se desloca sempre no mesmo sentido, como um rio dentro do oceano."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/geografia/atacama.jpg",
+            "alt": "Morros de terra seca e rachada, sem nenhuma planta, em tons de marrom e cinza, no deserto do Atacama.",
+            "caption": "O Atacama, no Chile: um dos lugares mais secos do mundo, colado ao mar.",
+            "credit": {
+              "author": "Diego Delso",
+              "license": "CC BY-SA 4.0",
+              "url": "https://commons.wikimedia.org/wiki/File:Valle_de_la_Luna,_San_Pedro_de_Atacama,_Chile,_2016-02-01,_DD_169.JPG"
+            }
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mostra um climograma, um gráfico de chuva e temperatura do ano, ou a foto de uma paisagem. Ela pede para ligar os dois ao clima certo."
+          ],
+          "bullets": [
+            "“O climograma representa um clima com…”",
+            "“A vegetação de coníferas é típica do clima…”",
+            "“A aridez do deserto do Atacama se explica…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que todo deserto é quente. Deserto é falta de chuva, e há desertos frios.",
+            "Esquecer a altitude. Uma cidade alta perto do Equador pode ser fria.",
+            "Trocar taiga por tundra. Taiga tem pinheiros; tundra só tem musgos e plantas rasteiras.",
+            "Achar que deserto só existe longe do mar. O Atacama fica na costa."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Calor e chuva decidem a vegetação. Do Equador aos polos vêm as paisagens (floresta, savana, deserto, floresta temperada, taiga e tundra).",
+            "A temperatura cai cerca de 0,6 °C a cada 100 metros de subida. Correntes frias secam o ar e ajudam a formar desertos na costa, como o Atacama."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Equatorial",
+          "statement": "Um clima quente e chuvoso o ano todo favorece:",
+          "options": [
+            "tundra",
+            "deserto",
+            "taiga",
+            "floresta fechada",
+            "campos de gelo"
+          ],
+          "correct_index": 3,
+          "explanation": "Sobram calor e água.",
+          "pitfall": "Tundra é do frio extremo."
+        },
+        {
+          "topic": "Savana",
+          "statement": "Capim com árvores espalhadas e uma estação seca descrevem:",
+          "options": [
+            "a tundra",
+            "a taiga",
+            "a floresta equatorial",
+            "o deserto polar",
+            "a savana"
+          ],
+          "correct_index": 4,
+          "explanation": "É a paisagem do clima tropical.",
+          "pitfall": "O Cerrado é um tipo de savana."
+        },
+        {
+          "topic": "Deserto",
+          "statement": "O que define um deserto é:",
+          "options": [
+            "a falta de chuva",
+            "o calor muito forte",
+            "a presença de areia",
+            "a distância do mar",
+            "a falta de vento"
+          ],
+          "correct_index": 0,
+          "explanation": "Há desertos frios.",
+          "pitfall": "Areia não é o critério."
+        },
+        {
+          "topic": "Taiga",
+          "statement": "A floresta de pinheiros do clima frio, no Canadá e na Rússia, chama-se:",
+          "options": [
+            "tundra",
+            "taiga",
+            "savana",
+            "caatinga",
+            "mangue"
+          ],
+          "correct_index": 1,
+          "explanation": "É floresta de coníferas.",
+          "pitfall": "Tundra não tem árvores."
+        },
+        {
+          "topic": "Tundra",
+          "statement": "Musgos e liquens sem nenhuma árvore, em clima muito frio, formam a:",
+          "options": [
+            "taiga",
+            "savana",
+            "tundra",
+            "floresta temperada",
+            "floresta equatorial"
+          ],
+          "correct_index": 2,
+          "explanation": "Faz frio demais para árvores.",
+          "pitfall": "Taiga é a de pinheiros."
+        },
+        {
+          "topic": "Altitude",
+          "statement": "Em média, ao subir 1.000 metros, a temperatura cai cerca de:",
+          "options": [
+            "0,6 °C",
+            "60 °C",
+            "1 °C",
+            "6 °C",
+            "nada, ela sobe"
+          ],
+          "correct_index": 3,
+          "explanation": "São 0,6 °C a cada 100 metros.",
+          "pitfall": "Cuidado com a vírgula: 0,6 é a cada 100 metros."
+        },
+        {
+          "topic": "Atacama",
+          "statement": "O deserto do Atacama é muito seco principalmente por causa:",
+          "options": [
+            "da distância enorme do oceano",
+            "do calor de um vulcão",
+            "da floresta que bebe a água",
+            "da neve que cobre o deserto",
+            "da água fria do mar ao longo da costa"
+          ],
+          "correct_index": 4,
+          "explanation": "Água fria esfria o ar e quase não há chuva.",
+          "pitfall": "Ele fica colado ao mar."
+        },
+        {
+          "topic": "Mediterrâneo",
+          "statement": "Verão seco e inverno chuvoso caracterizam o clima:",
+          "options": [
+            "mediterrâneo",
+            "equatorial",
+            "polar",
+            "desértico frio",
+            "frio da taiga"
+          ],
+          "correct_index": 0,
+          "explanation": "É o clima do sul da Europa.",
+          "pitfall": "No Brasil, o verão costuma ser chuvoso."
+        },
+        {
+          "topic": "Temperado",
+          "statement": "A floresta que perde as folhas no outono é típica do clima:",
+          "options": [
+            "equatorial",
+            "temperado",
+            "desértico",
+            "polar",
+            "semiárido"
+          ],
+          "correct_index": 1,
+          "explanation": "Quatro estações bem marcadas.",
+          "pitfall": "Na floresta equatorial, a folha não cai toda de uma vez.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Andes",
+          "statement": "Os Andes têm neve no topo, mesmo na faixa tropical, por causa:",
+          "options": [
+            "da latitude polar",
+            "da proximidade com a Europa",
+            "da altitude",
+            "da floresta que os cobre",
+            "do deserto ao lado"
+          ],
+          "correct_index": 2,
+          "explanation": "Quanto mais alto, mais frio.",
+          "pitfall": "Eles ficam perto do Equador em parte.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Montanha",
+          "format": "order",
+          "statement": "Coloque as paisagens de uma montanha tropical na ordem, da base ao topo.",
+          "options": [
+            "floresta quente e úmida",
+            "floresta mais baixa e mais fria",
+            "campos de capim",
+            "rocha e neve"
+          ],
+          "explanation": "Subir é como andar em direção ao polo.",
+          "pitfall": "O topo é o mais frio.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Deserto frio",
+          "statement": "Um deserto no interior da Ásia com inverno gelado mostra que:",
+          "options": [
+            "todo deserto é quente o ano todo",
+            "desertos só existem perto do Equador",
+            "a areia é o que define o deserto",
+            "um deserto pode ser frio, porque o que conta é a falta de chuva",
+            "deserto frio é o mesmo que tundra"
+          ],
+          "correct_index": 3,
+          "explanation": "Deserto é seca, não calor.",
+          "pitfall": "Tundra tem musgos e não é definida pela chuva.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Cidade alta",
+          "statement": "Uma cidade a 2.800 metros de altitude, quase em cima da linha do meio da Terra, tende a ter clima:",
+          "options": [
+            "igual ao das praias da mesma região",
+            "polar, com gelo o ano todo",
+            "desértico, sem chuva",
+            "mais quente que o litoral ao lado",
+            "ameno, mais frio que o das cidades baixas da região"
+          ],
+          "correct_index": 4,
+          "explanation": "A altitude esfria o clima.",
+          "pitfall": "Latitude baixa não basta para fazer calor.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Causa do deserto",
+          "statement": "Dois desertos colados ao mar, um na América do Sul e outro na África, têm em comum:",
+          "options": [
+            "uma corrente fria passando ao longo da costa",
+            "uma floresta tropical ao lado",
+            "muita chuva no verão",
+            "uma montanha de gelo no meio",
+            "a mesma latitude que o polo norte"
+          ],
+          "correct_index": 0,
+          "explanation": "Água fria seca o ar.",
+          "pitfall": "Estar perto do mar não garante chuva.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "agua-e-hidrografia",
       "title": "A água: rios, bacias e quem gasta",
       "module": "A Terra",
       "summary": "Pouca água da Terra é doce, e quase toda está em geleiras e no subsolo. A lição mostra as bacias do Brasil, os aquíferos e por que o país rico em água também passa sede.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=mwRYjfPRYGs",
+        "title": "Bacias hidrográficas do Brasil",
+        "channel": "geo ilustrada"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -1964,10 +3983,411 @@
       ]
     },
     {
+      "slug": "oceanos-e-correntes",
+      "title": "Oceanos: correntes, marés e lixo no mar",
+      "module": "A Terra",
+      "summary": "O mar cobre cerca de 70% da Terra. Correntes levam calor de um lado ao outro do planeta e mudam o clima, a Lua puxa as marés, e o plástico jogado em terra acaba no meio do oceano.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=0Nf8y6izrgQ",
+        "title": "O que são correntes marítimas",
+        "channel": "Prof Silvester Geografia"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Londres não é o Canadá",
+          "body": [
+            "Londres fica mais ao norte que boa parte do Canadá. Mesmo assim, tem invernos bem mais amenos.",
+            "A diferença vem de um rio de água morna que atravessa o oceano Atlântico. Esta lição é sobre esses rios dentro do mar."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Um planeta de água",
+          "body": [
+            "Cerca de 70% da superfície da Terra é coberta por oceanos. São cinco (Pacífico, Atlântico, Índico, Glacial Ártico e Glacial Antártico).",
+            "O Pacífico é o maior, maior até que todos os continentes juntos. O Brasil é banhado só pelo Atlântico."
+          ],
+          "table": {
+            "label": "Os cinco oceanos",
+            "headers": [
+              "Oceano",
+              "Onde fica"
+            ],
+            "rows": [
+              [
+                "Pacífico",
+                "entre a América e a Ásia e a Oceania"
+              ],
+              [
+                "Atlântico",
+                "entre a América e a Europa e a África"
+              ],
+              [
+                "Índico",
+                "entre a África, a Ásia e a Oceania"
+              ],
+              [
+                "Glacial Ártico",
+                "em volta do polo norte"
+              ],
+              [
+                "Glacial Antártico",
+                "em volta da Antártida"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Rios dentro do mar",
+          "body": [
+            "Uma corrente marítima é uma faixa de água que se move sempre no mesmo sentido. Os ventos e a diferença de temperatura da água as empurram.",
+            "As correntes quentes saem da faixa do Equador e levam calor para regiões frias. As frias saem dos polos e esfriam as costas por onde passam."
+          ],
+          "terms": [
+            {
+              "word": "corrente marítima",
+              "meaning": "uma grande faixa de água do mar que se move sempre no mesmo sentido, como um rio dentro do oceano."
+            },
+            {
+              "word": "Equador",
+              "meaning": "a linha imaginária que divide a Terra em metade norte e metade sul."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que as correntes fazem com o clima",
+          "body": [
+            "A corrente do Golfo leva água morna do golfo do México até a Europa. É ela que deixa o inverno de Londres mais ameno que o do Canadá.",
+            "Já a corrente de Humboldt traz água fria pela costa do Chile e do Peru. Ela esfria o ar e quase não deixa chover, o que ajuda a formar o deserto do Atacama."
+          ],
+          "table": {
+            "label": "Duas correntes famosas",
+            "headers": [
+              "Corrente",
+              "Tipo",
+              "Efeito"
+            ],
+            "rows": [
+              [
+                "do Golfo",
+                "quente",
+                "invernos amenos no oeste da Europa"
+              ],
+              [
+                "de Humboldt",
+                "fria",
+                "costa seca no Chile e no Peru, e muito peixe"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Água fria, muito peixe",
+          "body": [
+            "Nas costas de água fria, a água do fundo sobe e traz nutrientes. Eles alimentam o plâncton, que alimenta os peixes.",
+            "Por isso o Peru está entre os países que mais pescam no mundo. Quando acontece o El Niño, o mar ali esquenta, os nutrientes somem e a pesca despenca."
+          ],
+          "terms": [
+            {
+              "word": "plâncton",
+              "meaning": "seres muito pequenos que boiam na água e são a base da alimentação no mar."
+            },
+            {
+              "word": "El Niño",
+              "meaning": "o aquecimento fora do normal das águas do Pacífico perto da América do Sul, que muda as chuvas em vários países."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As marés",
+          "body": [
+            "A maré é a subida e a descida do nível do mar ao longo do dia. Quem puxa a água é principalmente a gravidade da Lua, com ajuda do Sol.",
+            "Na maioria das praias, a maré sobe e desce duas vezes por dia. Na lua cheia e na lua nova, Sol e Lua puxam juntos, e as marés ficam mais fortes."
+          ],
+          "terms": [
+            {
+              "word": "maré",
+              "meaning": "a subida e a descida do nível do mar, causadas principalmente pela atração da Lua."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O lixo que vai parar no mar",
+          "body": [
+            "Boa parte do plástico do mar sai de terra firme: lixo mal descartado que a chuva leva aos rios, e os rios levam ao oceano.",
+            "As correntes juntam esse lixo em grandes áreas no meio do oceano. Com o sol, o plástico se quebra em pedaços minúsculos. É o microplástico, que os peixes engolem."
+          ],
+          "terms": [
+            {
+              "word": "microplástico",
+              "meaning": "pedaços de plástico menores que 5 milímetros, que se espalham pela água e entram na cadeia alimentar."
+            }
+          ],
+          "example": {
+            "label": "O caminho de uma sacola",
+            "ordered": true,
+            "lines": [
+              "A sacola é jogada na rua.",
+              "A chuva a leva para o bueiro e depois para o rio.",
+              "O rio a leva até o mar.",
+              "As correntes a juntam com outros lixos no meio do oceano.",
+              "O sol a quebra em microplástico."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede o efeito de uma corrente sobre o clima de uma costa, ou a causa das marés. Também cobra a poluição dos oceanos ligada ao lixo das cidades."
+          ],
+          "bullets": [
+            "“O inverno ameno da Europa ocidental se deve…”",
+            "“A grande pesca na costa do Peru se explica…”",
+            "“As marés resultam principalmente…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que corrente fria traz chuva. Ela esfria o ar e deixa a costa seca.",
+            "Dizer que o vento causa as marés. Quem puxa é a Lua, com ajuda do Sol.",
+            "Pensar que o lixo do mar vem só dos navios. A maior parte sai de terra, pelos rios."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Os oceanos cobrem cerca de 70% da Terra, e o Pacífico é o maior. Correntes quentes levam calor; as frias esfriam a costa, secam o ar e trazem peixe.",
+            "A Lua puxa as marés, mais fortes na lua cheia e na nova. O plástico de terra chega ao mar pelos rios e vira microplástico."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Superfície",
+          "statement": "Os oceanos cobrem cerca de quanto da superfície da Terra?",
+          "options": [
+            "10%",
+            "70%",
+            "30%",
+            "50%",
+            "95%"
+          ],
+          "correct_index": 1,
+          "explanation": "Por isso a Terra parece azul do espaço.",
+          "pitfall": "Água doce é outra conta, bem menor."
+        },
+        {
+          "topic": "Maior oceano",
+          "statement": "O maior oceano da Terra é o:",
+          "options": [
+            "Atlântico",
+            "Índico",
+            "Pacífico",
+            "Glacial Ártico",
+            "Glacial Antártico"
+          ],
+          "correct_index": 2,
+          "explanation": "Ele é maior que todos os continentes juntos.",
+          "pitfall": "O Brasil é banhado pelo Atlântico, não pelo maior."
+        },
+        {
+          "topic": "Corrente",
+          "statement": "Uma corrente marítima é:",
+          "options": [
+            "a subida e a descida do mar no dia",
+            "uma onda gigante após terremoto",
+            "o encontro de um rio com o mar",
+            "uma faixa de água que se move sempre no mesmo sentido",
+            "uma área de água parada"
+          ],
+          "correct_index": 3,
+          "explanation": "Um rio dentro do oceano.",
+          "pitfall": "Subida e descida é maré."
+        },
+        {
+          "topic": "Golfo",
+          "statement": "O inverno ameno do oeste da Europa se deve à corrente:",
+          "options": [
+            "de Humboldt, que leva água fria",
+            "do Pacífico, que vem da Ásia",
+            "que nasce no polo sul",
+            "que sai do rio Amazonas",
+            "do Golfo, que leva água morna"
+          ],
+          "correct_index": 4,
+          "explanation": "Ela cruza o Atlântico com água morna.",
+          "pitfall": "Humboldt fica no Pacífico, na América do Sul."
+        },
+        {
+          "topic": "Humboldt",
+          "statement": "A corrente de Humboldt, na costa do Peru e do Chile, é:",
+          "options": [
+            "fria",
+            "quente",
+            "de água doce",
+            "de lava",
+            "parada"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela vem do sul, das águas frias.",
+          "pitfall": "Por isso a costa é seca."
+        },
+        {
+          "topic": "Pesca",
+          "statement": "A costa do Peru tem muita pesca porque a água fria:",
+          "options": [
+            "afasta todos os peixes da costa",
+            "traz do fundo nutrientes que alimentam o plâncton",
+            "é mais salgada que as outras",
+            "congela e prende os peixes",
+            "faz chover muito no litoral"
+          ],
+          "correct_index": 1,
+          "explanation": "Mais plâncton, mais peixe.",
+          "pitfall": "A costa é seca, não chuvosa."
+        },
+        {
+          "topic": "Marés",
+          "statement": "As marés são causadas principalmente:",
+          "options": [
+            "pelo vento do mar",
+            "pelas correntes quentes",
+            "pela atração da Lua",
+            "pelos rios que deságuam",
+            "pelos terremotos no fundo"
+          ],
+          "correct_index": 2,
+          "explanation": "A Lua puxa a água, com ajuda do Sol.",
+          "pitfall": "Vento faz onda, não maré."
+        },
+        {
+          "topic": "Microplástico",
+          "statement": "Pedaços de plástico menores que 5 milímetros no mar são chamados de:",
+          "options": [
+            "plâncton",
+            "maré",
+            "corrente",
+            "microplástico",
+            "sal marinho"
+          ],
+          "correct_index": 3,
+          "explanation": "O sol quebra o plástico em pedaços.",
+          "pitfall": "Plâncton é ser vivo."
+        },
+        {
+          "topic": "Brasil",
+          "statement": "O oceano que banha o litoral brasileiro é o:",
+          "options": [
+            "Pacífico",
+            "Índico",
+            "Glacial Ártico",
+            "Glacial Antártico",
+            "Atlântico"
+          ],
+          "correct_index": 4,
+          "explanation": "Toda a costa do Brasil fica no Atlântico.",
+          "pitfall": "O Pacífico banha o Chile e o Peru.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Marés fortes",
+          "statement": "As marés ficam mais fortes na lua:",
+          "options": [
+            "cheia e na lua nova",
+            "crescente apenas",
+            "minguante apenas",
+            "em nenhuma fase",
+            "só durante o dia"
+          ],
+          "correct_index": 0,
+          "explanation": "Sol e Lua puxam alinhados.",
+          "pitfall": "Não é questão de dia ou noite.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Sacola",
+          "format": "order",
+          "statement": "Coloque na ordem o caminho de uma sacola jogada na rua até o meio do oceano.",
+          "options": [
+            "a sacola é jogada na rua",
+            "a chuva a leva para o bueiro e depois para o rio",
+            "o rio a leva até o mar",
+            "as correntes a juntam com outros lixos"
+          ],
+          "explanation": "Rua, rio, mar e correntes.",
+          "pitfall": "O rio é o elo que muita gente esquece.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "El Niño e pesca",
+          "statement": "Num ano de El Niño, a pesca no Peru costuma:",
+          "options": [
+            "subir, porque o mar fica mais frio",
+            "cair, porque o mar esquenta e os nutrientes diminuem",
+            "não mudar em nada",
+            "dobrar, porque chove mais no mar",
+            "acabar para sempre"
+          ],
+          "correct_index": 1,
+          "explanation": "Sem água fria do fundo, falta alimento.",
+          "pitfall": "El Niño é aquecimento, não esfriamento.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Corrente e chuva",
+          "statement": "Uma cidade litorânea banhada por corrente fria tende a ter:",
+          "options": [
+            "chuva o ano todo, porque está perto do mar",
+            "neve todos os dias do ano",
+            "pouca chuva, porque o ar esfriado forma poucas nuvens de chuva",
+            "o mesmo clima de uma floresta tropical",
+            "furacões constantes"
+          ],
+          "correct_index": 2,
+          "explanation": "Água fria esfria o ar de baixo.",
+          "pitfall": "Estar perto do mar não garante chuva.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Origem do lixo",
+          "statement": "A melhor forma de reduzir o plástico no meio do oceano é:",
+          "options": [
+            "proibir apenas os navios de pescar",
+            "esperar o sol desfazer todo o plástico",
+            "aumentar as marés com barragens",
+            "cuidar do lixo em terra, antes que chegue aos rios",
+            "jogar o lixo mais longe da praia"
+          ],
+          "correct_index": 3,
+          "explanation": "A maior parte vem de terra.",
+          "pitfall": "O sol só quebra o plástico em pedaços menores.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "questoes-ambientais",
       "title": "Biomas e questões ambientais",
       "module": "Natureza e sociedade",
       "summary": "O Brasil tem seis grandes biomas, todos sob pressão. Aquecimento global, desmatamento e os problemas das cidades são os temas ambientais que mais caem.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=nTmWFWWbzkQ",
+        "title": "O que é o efeito estufa",
+        "channel": "Toda Matéria"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -2338,10 +4758,775 @@
       ]
     },
     {
+      "slug": "acordos-ambientais",
+      "title": "O mundo discute o ambiente: conferências e acordos",
+      "module": "Natureza e sociedade",
+      "summary": "Desde 1972 os países se reúnem para discutir o ambiente. A lição mostra o que é desenvolvimento sustentável e o que cada grande encontro decidiu, de Estocolmo ao Acordo de Paris e à COP de Belém.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=i4WsG7MpH58",
+        "title": "Conferências mundiais para o meio ambiente",
+        "channel": "Canal Futura"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Um problema sem fronteira",
+          "body": [
+            "A fumaça de uma fábrica não para na fronteira do país. O gás que esquenta o planeta também não.",
+            "Por isso nenhum país resolve o clima sozinho. Ele precisa combinar com os outros, e combinar é difícil."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Desenvolvimento sustentável",
+          "body": [
+            "Em 1987, um relatório da ONU definiu desenvolvimento sustentável: atender às necessidades de hoje sem tirar das próximas gerações a chance de atender às delas.",
+            "A ideia junta três coisas que costumavam brigar. São o crescimento da economia, a justiça social e o cuidado com a natureza."
+          ],
+          "terms": [
+            {
+              "word": "ONU",
+              "meaning": "a Organização das Nações Unidas, que reúne quase todos os países do mundo para discutir paz, direitos e ambiente."
+            },
+            {
+              "word": "desenvolvimento sustentável",
+              "meaning": "crescer atendendo às necessidades de hoje sem comprometer as das gerações futuras."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Estocolmo e a Rio-92",
+          "body": [
+            "A primeira grande conferência sobre o ambiente foi em Estocolmo, na Suécia, em 1972. Ali o tema entrou de vez na agenda dos governos.",
+            "Vinte anos depois veio a Rio-92, no Rio de Janeiro. Dela saíram a Agenda 21, um plano de ação, e duas convenções: uma sobre o clima e outra sobre a biodiversidade."
+          ],
+          "terms": [
+            {
+              "word": "biodiversidade",
+              "meaning": "a variedade de seres vivos de um lugar, das bactérias às árvores e aos animais."
+            },
+            {
+              "word": "convenção",
+              "meaning": "um acordo entre países sobre um tema, que obriga quem assina a cumprir regras combinadas."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Kyoto: metas só para os ricos",
+          "body": [
+            "O efeito estufa natural mantém a Terra morna. O problema é o excesso de gás carbônico e de metano, que esquenta o planeta além da conta.",
+            "Em 1997, o Protocolo de Kyoto deu metas de corte desses gases só aos países ricos, que poluíram primeiro. A ideia era que cada um tem responsabilidade, mas não do mesmo tamanho."
+          ],
+          "terms": [
+            {
+              "word": "efeito estufa",
+              "meaning": "a retenção de calor na Terra por alguns gases do ar. Natural, ele mantém o planeta habitável; em excesso, esquenta demais."
+            },
+            {
+              "word": "crédito de carbono",
+              "meaning": "um certificado de que uma tonelada de gás de efeito estufa deixou de ir para o ar, que pode ser vendido a quem precisa compensar o que emitiu."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Paris: todo mundo com uma meta",
+          "body": [
+            "O Acordo de Paris, de 2015, mudou a lógica. Todos os países passaram a ter metas, e cada um escolhe a sua e a revê de tempos em tempos.",
+            "O objetivo é segurar o aquecimento bem abaixo de 2 °C em relação à era antes das fábricas, e tentar ficar em 1,5 °C. A conferência anual do clima de 2025, a COP30, aconteceu em Belém."
+          ],
+          "terms": [
+            {
+              "word": "COP",
+              "meaning": "a Conferência das Partes, reunião anual dos países que assinaram a convenção do clima."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Um acordo que deu certo",
+          "body": [
+            "Na década de 1980, descobriu-se um buraco na camada de ozônio, a faixa do ar que filtra a luz ultravioleta do Sol. A causa eram gases de geladeiras e de sprays.",
+            "Em 1987, o Protocolo de Montreal proibiu esses gases. A camada está se recuperando devagar. É o exemplo de que acordo cumprido funciona."
+          ],
+          "terms": [
+            {
+              "word": "camada de ozônio",
+              "meaning": "faixa alta da atmosfera que filtra boa parte da radiação ultravioleta do Sol."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A linha do tempo",
+          "body": [
+            "A tabela junta os encontros na ordem em que aconteceram. Na prova, confundir Kyoto com Paris é o erro mais comum."
+          ],
+          "table": {
+            "label": "Os grandes encontros",
+            "headers": [
+              "Ano",
+              "Encontro",
+              "O que ficou"
+            ],
+            "rows": [
+              [
+                "1972",
+                "Estocolmo",
+                "o ambiente entra na agenda dos governos"
+              ],
+              [
+                "1987",
+                "Montreal",
+                "fim dos gases que destroem o ozônio"
+              ],
+              [
+                "1992",
+                "Rio-92",
+                "Agenda 21 e as convenções do clima e da biodiversidade"
+              ],
+              [
+                "1997",
+                "Kyoto",
+                "metas de corte só para os países ricos"
+              ],
+              [
+                "2015",
+                "Paris",
+                "metas para todos, escolhidas por cada país"
+              ],
+              [
+                "2025",
+                "COP30, Belém",
+                "conferência do clima na Amazônia"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova cobra a diferença entre Kyoto e Paris, a definição de desenvolvimento sustentável e a confusão entre ozônio e efeito estufa."
+          ],
+          "bullets": [
+            "“Diferentemente do Protocolo de Kyoto, o Acordo de Paris…”",
+            "“O conceito de desenvolvimento sustentável propõe…”",
+            "“O Protocolo de Montreal tratou…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Dizer que Kyoto deu metas a todos os países. Só os ricos tinham metas.",
+            "Achar que o Acordo de Paris impõe a mesma meta a todos. Cada país escolhe a sua.",
+            "Misturar ozônio com efeito estufa. O buraco no ozônio é outro problema, tratado em Montreal.",
+            "Pensar que desenvolvimento sustentável é parar de crescer. A ideia é crescer sem destruir."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Desenvolvimento sustentável é atender a hoje sem tirar o futuro. Estocolmo, em 1972, abriu a discussão; a Rio-92 trouxe a Agenda 21 e as convenções.",
+            "Kyoto deu metas só aos ricos; Paris deu metas a todos, escolhidas por cada um. Montreal salvou a camada de ozônio. A COP30 foi em Belém, em 2025."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Sustentável",
+          "statement": "Desenvolvimento sustentável é:",
+          "options": [
+            "atender às necessidades de hoje sem prejudicar as das gerações futuras",
+            "parar de crescer para proteger a natureza",
+            "crescer a economia a qualquer custo",
+            "proibir toda a indústria do mundo",
+            "usar só energia de carvão mineral"
+          ],
+          "correct_index": 0,
+          "explanation": "A definição é de um relatório da ONU de 1987.",
+          "pitfall": "Não é parar de crescer."
+        },
+        {
+          "topic": "Primeira",
+          "statement": "A primeira grande conferência da ONU sobre o ambiente foi em:",
+          "options": [
+            "Paris, em 2015",
+            "Estocolmo, em 1972",
+            "Kyoto, em 1997",
+            "Rio de Janeiro, em 1992",
+            "Belém, em 2025"
+          ],
+          "correct_index": 1,
+          "explanation": "Foi ali que o tema entrou na agenda.",
+          "pitfall": "A Rio-92 veio vinte anos depois."
+        },
+        {
+          "topic": "Rio-92",
+          "statement": "Um dos resultados da Rio-92 foi:",
+          "options": [
+            "o fim dos gases de geladeira",
+            "a criação da COP30 em Belém",
+            "a Agenda 21, um plano de ação",
+            "a proibição do petróleo",
+            "o Acordo de Paris"
+          ],
+          "correct_index": 2,
+          "explanation": "Junto vieram as convenções do clima e da biodiversidade.",
+          "pitfall": "Paris é de 2015."
+        },
+        {
+          "topic": "Kyoto",
+          "statement": "O Protocolo de Kyoto deu metas de corte de gases:",
+          "options": [
+            "a todos os países igualmente",
+            "só aos países pobres",
+            "só ao Brasil",
+            "só aos países ricos",
+            "a nenhum país"
+          ],
+          "correct_index": 3,
+          "explanation": "Quem poluiu primeiro teria de cortar primeiro.",
+          "pitfall": "Metas para todos vieram em Paris."
+        },
+        {
+          "topic": "Paris",
+          "statement": "No Acordo de Paris:",
+          "options": [
+            "só os países ricos têm metas",
+            "todos têm exatamente a mesma meta",
+            "nenhum país assume compromisso",
+            "só a Europa participa",
+            "todos os países têm metas, escolhidas por cada um"
+          ],
+          "correct_index": 4,
+          "explanation": "Cada país propõe e revê a sua meta.",
+          "pitfall": "Meta igual para todos é o distrator."
+        },
+        {
+          "topic": "Meta do aquecimento",
+          "statement": "O Acordo de Paris busca segurar o aquecimento global:",
+          "options": [
+            "bem abaixo de 2 °C, tentando ficar em 1,5 °C",
+            "acima de 5 °C",
+            "em exatamente 0 °C",
+            "em 10 °C até 2030",
+            "sem nenhum limite combinado"
+          ],
+          "correct_index": 0,
+          "explanation": "A comparação é com a era antes das fábricas.",
+          "pitfall": "Zero grau não é meta possível."
+        },
+        {
+          "topic": "Montreal",
+          "statement": "O Protocolo de Montreal combateu:",
+          "options": [
+            "o desmatamento da Amazônia",
+            "os gases que destroem a camada de ozônio",
+            "a pesca em excesso",
+            "o lixo plástico no mar",
+            "a falta de água no semiárido"
+          ],
+          "correct_index": 1,
+          "explanation": "Gases de geladeiras e sprays.",
+          "pitfall": "Ozônio não é o mesmo que efeito estufa."
+        },
+        {
+          "topic": "COP30",
+          "statement": "A COP30, conferência anual do clima, aconteceu em 2025 em:",
+          "options": [
+            "Estocolmo",
+            "Kyoto",
+            "Belém",
+            "Paris",
+            "Montreal"
+          ],
+          "correct_index": 2,
+          "explanation": "Foi na Amazônia brasileira.",
+          "pitfall": "Os outros nomes são de encontros antigos."
+        },
+        {
+          "topic": "Sem fronteira",
+          "statement": "Os problemas do clima precisam de acordos entre países porque:",
+          "options": [
+            "cada país tem um clima separado",
+            "só um país polui o mundo inteiro",
+            "a ONU proíbe leis nacionais",
+            "a poluição não para na fronteira de nenhum país",
+            "o clima não muda com a poluição"
+          ],
+          "correct_index": 3,
+          "explanation": "O ar é um só.",
+          "pitfall": "Nenhum país resolve sozinho.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Biodiversidade",
+          "statement": "Biodiversidade é:",
+          "options": [
+            "a quantidade de chuva de um lugar",
+            "o número de fábricas de um país",
+            "o tamanho de uma floresta em metros",
+            "a temperatura média do ano",
+            "a variedade de seres vivos de um lugar"
+          ],
+          "correct_index": 4,
+          "explanation": "Das bactérias às árvores.",
+          "pitfall": "Não é medida de chuva.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Linha do tempo",
+          "format": "order",
+          "statement": "Coloque os encontros na ordem em que aconteceram.",
+          "options": [
+            "Estocolmo",
+            "Rio-92",
+            "Protocolo de Kyoto",
+            "Acordo de Paris"
+          ],
+          "explanation": "1972, 1992, 1997 e 2015.",
+          "pitfall": "Paris é o mais recente dos quatro.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Crédito de carbono",
+          "statement": "Um crédito de carbono representa:",
+          "options": [
+            "uma tonelada de gás de efeito estufa que deixou de ir para o ar",
+            "o direito de desmatar uma floresta",
+            "uma multa por jogar lixo no mar",
+            "o carvão vendido a uma fábrica",
+            "um imposto sobre carros elétricos"
+          ],
+          "correct_index": 0,
+          "explanation": "Pode ser vendido a quem precisa compensar.",
+          "pitfall": "Não é licença para desmatar.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Kyoto e Paris",
+          "statement": "A principal diferença entre Kyoto e Paris é que Paris:",
+          "options": [
+            "tirou as metas de todos os países",
+            "estendeu as metas a todos os países, cada um com a sua",
+            "deu metas só aos países pobres",
+            "tratou apenas da camada de ozônio",
+            "proibiu de vez o uso de petróleo"
+          ],
+          "correct_index": 1,
+          "explanation": "Kyoto tinha metas só para os ricos.",
+          "pitfall": "Paris não trata de ozônio.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Exemplo de sucesso",
+          "statement": "O Protocolo de Montreal costuma ser citado como exemplo porque:",
+          "options": [
+            "acabou com o aquecimento global",
+            "foi o único acordo assinado pelo Brasil",
+            "os gases foram proibidos e a camada de ozônio está se recuperando",
+            "tirou as metas dos países ricos",
+            "resolveu o problema do lixo no mar"
+          ],
+          "correct_index": 2,
+          "explanation": "Acordo cumprido trouxe resultado medido.",
+          "pitfall": "Ozônio não resolve o aquecimento.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "desastres-e-riscos",
+      "title": "Enchentes, deslizamentos e barragens: o risco",
+      "module": "Natureza e sociedade",
+      "summary": "A chuva forte é natural; o desastre depende de quem está no caminho dela. A lição explica o risco e por que as cidades alagam e os morros deslizam. Também mostra o que ensinaram Mariana, Brumadinho e as enchentes do Rio Grande do Sul.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=oQHTWzVCADM",
+        "title": "Desastres ambientais",
+        "channel": "Descomplica"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A mesma chuva",
+          "body": [
+            "A mesma chuva forte cai sobre uma mata e sobre uma encosta cheia de casas. Na mata, a água escorre. Na encosta, pode virar tragédia.",
+            "A chuva foi igual. O que mudou foi quem estava no caminho e como estava protegido."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Ameaça e vulnerabilidade",
+          "body": [
+            "A ameaça é o fenômeno: chuva forte, seca ou terremoto. A vulnerabilidade é o quanto as pessoas estão expostas e despreparadas.",
+            "O risco junta as duas. Uma chuva forte numa cidade preparada causa transtorno. A mesma chuva num bairro sem estrutura pode matar."
+          ],
+          "terms": [
+            {
+              "word": "ameaça",
+              "meaning": "o fenômeno que pode causar dano, como uma chuva extrema ou um terremoto."
+            },
+            {
+              "word": "vulnerabilidade",
+              "meaning": "o quanto um grupo de pessoas está exposto e despreparado diante de uma ameaça."
+            },
+            {
+              "word": "risco",
+              "meaning": "a chance de um desastre acontecer, que cresce com a ameaça e com a vulnerabilidade."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Por que a cidade alaga",
+          "body": [
+            "Em terra com mata, boa parte da chuva entra no solo. Na cidade, o asfalto e o concreto não deixam a água entrar. Ela escorre toda de uma vez para as ruas e os rios.",
+            "Muitos rios urbanos foram cobertos ou postos em canais de concreto. Quando a água chega rápido demais, eles transbordam."
+          ],
+          "terms": [
+            {
+              "word": "impermeabilização",
+              "meaning": "cobrir o solo com asfalto, concreto ou telhado, o que impede a água da chuva de entrar na terra."
+            }
+          ],
+          "table": {
+            "label": "Para onde vai a chuva",
+            "headers": [
+              "Terreno",
+              "Entra no solo",
+              "Escorre"
+            ],
+            "rows": [
+              [
+                "mata",
+                "a maior parte",
+                "pouca"
+              ],
+              [
+                "cidade asfaltada",
+                "quase nada",
+                "quase tudo, de uma vez"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Por que o morro desliza",
+          "body": [
+            "Num morro, a chuva encharca a terra e a deixa pesada e lisa. Sem a mata, que segura o solo com as raízes, a encosta pode escorregar.",
+            "Casas construídas em morro sem obra de contenção correm mais risco. Muitas vezes é onde a família pobre conseguiu morar, longe do centro e do emprego."
+          ],
+          "terms": [
+            {
+              "word": "encosta",
+              "meaning": "o lado inclinado de um morro ou de uma serra."
+            }
+          ],
+          "example": {
+            "label": "Como um deslizamento acontece",
+            "ordered": true,
+            "lines": [
+              "Chove muito por vários dias.",
+              "A terra do morro fica encharcada e pesada.",
+              "Sem raízes segurando, a camada de cima perde a firmeza.",
+              "A encosta escorrega e leva o que está em cima."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Barragens de rejeito",
+          "body": [
+            "A mineração separa o minério da terra e da água que sobram, o rejeito. Esse barro é guardado atrás de barragens.",
+            "Em 2015, uma barragem rompeu em Mariana (Minas Gerais), e a lama desceu o rio Doce até o mar. Em 2019, outra rompeu em Brumadinho, também em Minas. Morreram cerca de 270 pessoas."
+          ],
+          "terms": [
+            {
+              "word": "rejeito",
+              "meaning": "o resto de terra, água e produtos que sobra quando se separa o minério, guardado em barragens."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/geografia/bento-rodrigues.jpg",
+            "alt": "Casa destruída e coberta por lama marrom até a metade das paredes, no distrito de Bento Rodrigues.",
+            "caption": "Bento Rodrigues, em Mariana, depois do rompimento da barragem em 2015.",
+            "credit": {
+              "author": "Senado Federal",
+              "license": "CC BY 2.0",
+              "url": "https://commons.wikimedia.org/wiki/File:Bento_Rodrigues,_Mariana,_Minas_Gerais_(22527921963).jpg"
+            }
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Quando o clima piora o risco",
+          "body": [
+            "Com o planeta mais quente, chuvas extremas e secas longas ficam mais frequentes. Em maio de 2024, enchentes no Rio Grande do Sul deixaram mais de 180 mortos e cidades inteiras debaixo d'água.",
+            "Reduzir o risco tem duas frentes. Uma é diminuir a ameaça, cuidando do clima. A outra é diminuir a vulnerabilidade, com alerta no celular, obras e moradia segura."
+          ],
+          "terms": [
+            {
+              "word": "Defesa Civil",
+              "meaning": "o órgão público que prevê, avisa e socorre a população em desastres."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova cobra a relação entre ocupação do espaço e desastre. A resposta certa raramente culpa só a natureza ou só a pessoa: ela junta ameaça e vulnerabilidade."
+          ],
+          "bullets": [
+            "“As enchentes urbanas são agravadas por…”",
+            "“Os deslizamentos em encostas ocupadas relacionam-se a…”",
+            "“O rompimento de barragens de rejeito evidencia…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Chamar todo desastre de natural. A chuva é natural; o estrago depende da ocupação.",
+            "Culpar quem mora na encosta. Muitas vezes era o único lugar que a família podia pagar.",
+            "Achar que canalizar o rio resolve a enchente. A água chega mais rápido e transborda em outro ponto."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Risco é ameaça somada à vulnerabilidade. A cidade alaga porque o asfalto não deixa a água entrar no solo, e o morro desliza quando a terra encharca sem mata.",
+            "Mariana em 2015 e Brumadinho em 2019 foram rompimentos de barragens de rejeito. O clima mais quente aumenta as chuvas extremas, como as do Rio Grande do Sul em 2024."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Risco",
+          "statement": "O risco de desastre cresce quando:",
+          "options": [
+            "só quando chove pouco",
+            "a cidade está bem preparada",
+            "não há ninguém morando no lugar",
+            "a ameaça encontra pessoas vulneráveis",
+            "a mata é preservada na encosta"
+          ],
+          "correct_index": 3,
+          "explanation": "Risco junta ameaça e vulnerabilidade.",
+          "pitfall": "Chuva sem gente exposta não vira tragédia."
+        },
+        {
+          "topic": "Vulnerabilidade",
+          "statement": "Vulnerabilidade é:",
+          "options": [
+            "a força da chuva que cai",
+            "o tamanho do rio da cidade",
+            "a altura do morro",
+            "a quantidade de asfalto na rua",
+            "o quanto as pessoas estão expostas e despreparadas"
+          ],
+          "correct_index": 4,
+          "explanation": "É o lado humano do risco.",
+          "pitfall": "A força da chuva é a ameaça."
+        },
+        {
+          "topic": "Enchente urbana",
+          "statement": "Na cidade, a chuva escorre mais rápido porque:",
+          "options": [
+            "o asfalto e o concreto não deixam a água entrar no solo",
+            "a cidade tem mais árvores que a mata",
+            "a água da cidade é mais pesada",
+            "chove mais dentro da cidade do que fora",
+            "os rios da cidade são mais fundos"
+          ],
+          "correct_index": 0,
+          "explanation": "É a impermeabilização.",
+          "pitfall": "O problema é o solo coberto."
+        },
+        {
+          "topic": "Deslizamento",
+          "statement": "Um deslizamento de encosta é favorecido por:",
+          "options": [
+            "tempo seco e frio",
+            "chuva forte em terra sem mata",
+            "mata fechada no morro",
+            "solo coberto de raízes",
+            "pouca gente morando perto"
+          ],
+          "correct_index": 1,
+          "explanation": "A terra encharca e escorrega.",
+          "pitfall": "As raízes seguram o solo."
+        },
+        {
+          "topic": "Rejeito",
+          "statement": "Barragens de rejeito guardam:",
+          "options": [
+            "água limpa para beber",
+            "o esgoto das cidades",
+            "o barro que sobra da mineração",
+            "petróleo do pré-sal",
+            "lixo hospitalar"
+          ],
+          "correct_index": 2,
+          "explanation": "É o resto da separação do minério.",
+          "pitfall": "Não é barragem de água potável."
+        },
+        {
+          "topic": "Mariana",
+          "statement": "Em 2015, o rompimento da barragem de Mariana levou lama:",
+          "options": [
+            "até o rio Amazonas",
+            "para dentro de São Paulo",
+            "pelo rio São Francisco até o Piauí",
+            "pelo rio Doce até o mar",
+            "somente para dentro da mina"
+          ],
+          "correct_index": 3,
+          "explanation": "A lama atravessou dois estados.",
+          "pitfall": "Não confunda com Brumadinho, de 2019."
+        },
+        {
+          "topic": "Brumadinho",
+          "statement": "O rompimento de Brumadinho, em 2019, aconteceu no estado de:",
+          "options": [
+            "Rio Grande do Sul",
+            "Pará",
+            "Bahia",
+            "Santa Catarina",
+            "Minas Gerais"
+          ],
+          "correct_index": 4,
+          "explanation": "Matou cerca de 270 pessoas.",
+          "pitfall": "Mariana também fica em Minas."
+        },
+        {
+          "topic": "Defesa Civil",
+          "statement": "O órgão que avisa a população e socorre em desastres é a:",
+          "options": [
+            "Defesa Civil",
+            "Receita Federal",
+            "Justiça Eleitoral",
+            "Polícia Rodoviária",
+            "ONU"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela manda alertas e organiza a retirada.",
+          "pitfall": "A ONU não age nas cidades brasileiras assim."
+        },
+        {
+          "topic": "Mata e chuva",
+          "statement": "Num terreno com mata, a maior parte da chuva:",
+          "options": [
+            "escorre de uma vez para a rua",
+            "entra no solo",
+            "evapora antes de cair",
+            "vira enxurrada imediata",
+            "fica parada em cima das folhas"
+          ],
+          "correct_index": 1,
+          "explanation": "As raízes e o solo absorvem a água.",
+          "pitfall": "É o contrário da cidade asfaltada.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Deslizamento",
+          "format": "order",
+          "statement": "Coloque na ordem o que acontece num deslizamento de encosta.",
+          "options": [
+            "chove muito por vários dias",
+            "a terra do morro fica encharcada e pesada",
+            "a camada de cima perde a firmeza",
+            "a encosta escorrega"
+          ],
+          "explanation": "A água vem antes, a queda vem por último.",
+          "pitfall": "A terra seca não escorrega assim.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Canalizar",
+          "statement": "Pôr um rio da cidade num canal de concreto costuma:",
+          "options": [
+            "acabar com todas as enchentes",
+            "aumentar a água que entra no solo",
+            "fazer a água chegar mais rápido e transbordar em outro ponto",
+            "trazer a mata de volta à margem",
+            "diminuir a chuva na cidade"
+          ],
+          "correct_index": 2,
+          "explanation": "O problema muda de lugar.",
+          "pitfall": "Canal não é solução sozinho.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Rio Grande do Sul",
+          "statement": "As enchentes de maio de 2024 no Rio Grande do Sul mostram que:",
+          "options": [
+            "desastres só acontecem no Nordeste",
+            "a chuva no Sul nunca é forte",
+            "enchente é sempre culpa de quem mora perto",
+            "chuvas extremas e ocupação vulnerável juntas causam grandes desastres",
+            "barragens de rejeito causaram tudo"
+          ],
+          "correct_index": 3,
+          "explanation": "Foram mais de 180 mortos.",
+          "pitfall": "Não foi rompimento de barragem.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Desastre natural",
+          "statement": "Chamar um deslizamento numa encosta ocupada de “desastre natural” é impreciso porque:",
+          "options": [
+            "morro não desliza com chuva",
+            "a chuva é causada pelas casas",
+            "nenhum deslizamento envolve chuva",
+            "só a natureza decide onde as pessoas moram",
+            "a chuva é natural, mas o estrago depende de como o lugar foi ocupado"
+          ],
+          "correct_index": 4,
+          "explanation": "Risco é ameaça somada à vulnerabilidade.",
+          "pitfall": "Culpar só a natureza é o erro esperado.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Reduzir o risco",
+          "statement": "Instalar alerta no celular e construir moradias seguras reduz o risco porque:",
+          "options": [
+            "diminui a vulnerabilidade, mesmo sem mudar a chuva",
+            "acaba com as chuvas fortes",
+            "aumenta a força da ameaça",
+            "impede o aquecimento global sozinho",
+            "tira o rio do lugar"
+          ],
+          "correct_index": 0,
+          "explanation": "A ameaça continua; a exposição diminui.",
+          "pitfall": "Não confunda as duas frentes.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "populacao-e-urbanizacao",
       "title": "População, migração e cidades",
       "module": "População e economia",
       "summary": "O Brasil tem cada vez menos filhos por família e cada vez mais idosos. Em poucas décadas, a maior parte da população saiu do campo e foi para as cidades.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=xBwb8Gh14Y4",
+        "title": "Pirâmide etária",
+        "channel": "Geobrasil"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -2739,6 +5924,11 @@
       "title": "Economia: setores, indústria e campo",
       "module": "População e economia",
       "summary": "A economia se divide em três setores. O Brasil se industrializou tarde, concentrado no Sudeste, e hoje é um dos maiores exportadores de alimentos do mundo.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=b8TlLqb07xs",
+        "title": "Industrialização brasileira",
+        "channel": "Geobrasil"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -3112,6 +6302,11 @@
       "title": "Energia: a do Brasil e a do mundo",
       "module": "População e economia",
       "summary": "O Brasil usa muito mais fontes renováveis que a média do mundo. A lição separa matriz energética de elétrica e mostra o pré-sal, o etanol e o preço de cada fonte.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=US2kDBH64gU",
+        "title": "Fontes de energia no Brasil",
+        "channel": "Brasil Escola Oficial"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -3452,6 +6647,11 @@
       "title": "Globalização e blocos econômicos",
       "module": "População e economia",
       "summary": "A globalização ligou o mundo pelo comércio, pelas empresas e pela internet, mas de forma desigual. Os países se juntam em blocos para facilitar o comércio entre vizinhos.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=tFGlxXZSTqY",
+        "title": "Blocos econômicos",
+        "channel": "Descomplica"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -3803,10 +7003,376 @@
       ]
     },
     {
+      "slug": "estado-nacao-e-territorio",
+      "title": "Estado, nação e território",
+      "module": "Mundo de hoje",
+      "summary": "Estado, nação e território parecem a mesma coisa, mas não são. A lição separa os três, mostra povos sem país próprio, países com vários povos e fronteiras desenhadas de fora.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=XKAOb5Xkphc",
+        "title": "Estado, país, nação, governo, território e povo",
+        "channel": "Desvendando a Geografia"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Um povo sem país",
+          "body": [
+            "Os curdos são dezenas de milhões de pessoas, com língua e costumes próprios. Mesmo assim, não têm um país.",
+            "Eles vivem divididos entre a Turquia, o Iraque, o Irã e a Síria. Como pode um povo tão grande não ter Estado? A resposta começa separando três palavras."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Três palavras diferentes",
+          "body": [
+            "Estado é a organização política que governa: tem governo, leis, exército e fronteiras reconhecidas. Nação é um povo que se sente unido por língua, história e costumes.",
+            "Território é o espaço sobre o qual um poder manda. Um país, no sentido de todo dia, costuma juntar os três. Mas nem sempre eles coincidem."
+          ],
+          "terms": [
+            {
+              "word": "Estado (país)",
+              "meaning": "a organização política que governa um território, com governo, leis e poder reconhecido pelos outros países."
+            },
+            {
+              "word": "nação",
+              "meaning": "um grupo de pessoas que se sente um povo, unido por língua, história e costumes."
+            },
+            {
+              "word": "território",
+              "meaning": "o espaço sobre o qual um poder manda e que ele defende."
+            }
+          ],
+          "table": {
+            "label": "Para não confundir",
+            "headers": [
+              "Palavra",
+              "Pergunta que responde"
+            ],
+            "rows": [
+              [
+                "Estado",
+                "quem governa?"
+              ],
+              [
+                "nação",
+                "quem se sente um povo?"
+              ],
+              [
+                "território",
+                "onde esse poder manda?"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Soberania e fronteira",
+          "body": [
+            "Soberania é o poder de um Estado de decidir sozinho dentro do seu território. Nenhum outro país pode mandar ali.",
+            "A fronteira é a faixa que separa um território do outro. O limite é a linha exata no mapa; a fronteira é a região em volta dela, onde as pessoas cruzam e se misturam."
+          ],
+          "terms": [
+            {
+              "word": "soberania",
+              "meaning": "o poder de um Estado de decidir por conta própria dentro do seu território."
+            },
+            {
+              "word": "fronteira",
+              "meaning": "a faixa de terra em volta do limite entre dois países, onde os dois lados convivem."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Nação sem Estado e Estado com várias nações",
+          "body": [
+            "Os curdos são o maior exemplo de nação sem Estado. Os palestinos também lutam por um Estado com território próprio.",
+            "O contrário também existe: um Estado com várias nações. Na Espanha, catalães e bascos têm língua própria. No Reino Unido convivem quatro povos (ingleses, escoceses, galeses e norte-irlandeses)."
+          ],
+          "example": {
+            "label": "Quando as três palavras não batem",
+            "lines": [
+              "Curdos: nação sem Estado.",
+              "Palestinos: lutam por um Estado próprio.",
+              "Espanha: um Estado com catalães, bascos e outros povos.",
+              "Brasil: um Estado com centenas de povos indígenas."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Separatismo",
+          "body": [
+            "Quando uma nação dentro de um Estado quer formar o seu próprio, fala-se em separatismo. Às vezes isso passa por voto, às vezes por guerra.",
+            "Em 2014, a Escócia votou para continuar no Reino Unido. Na Catalunha, um referendo de 2017 foi considerado ilegal pela Espanha e gerou uma crise."
+          ],
+          "terms": [
+            {
+              "word": "separatismo",
+              "meaning": "o movimento de um povo que quer se separar do Estado em que vive e formar um país próprio."
+            },
+            {
+              "word": "referendo",
+              "meaning": "uma votação em que a população responde sim ou não a uma pergunta sobre uma decisão."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Fronteiras desenhadas de fora",
+          "body": [
+            "No fim do século XIX, países europeus dividiram a África entre si numa conferência em Berlim. Muitas fronteiras foram traçadas com régua, sem olhar quem morava ali.",
+            "Povos rivais ficaram no mesmo país, e povos irmãos ficaram separados. Parte dos conflitos africanos de hoje vem dessa divisão."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede para identificar se um caso é de nação sem Estado, de Estado com várias nações ou de separatismo. Também cobra as fronteiras artificiais da África."
+          ],
+          "bullets": [
+            "“O povo curdo é exemplo de…”",
+            "“A partilha da África gerou fronteiras que…”",
+            "“A soberania de um Estado significa…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Usar Estado e nação como sinônimos. Um é a organização política; o outro é o povo.",
+            "Achar que toda nação tem um país. Os curdos são o contraexemplo clássico.",
+            "Confundir limite com fronteira. O limite é a linha; a fronteira é a faixa em volta."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Estado é quem governa; nação é quem se sente um povo; território é onde o poder manda. Soberania é decidir sozinho no próprio território.",
+            "Há nações sem Estado, como os curdos. Há também Estados com várias nações, como a Espanha. O separatismo busca um país próprio, e as fronteiras africanas foram traçadas pelos europeus."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Estado",
+          "statement": "A organização política que governa um território, com leis e governo, é o:",
+          "options": [
+            "nação",
+            "Estado",
+            "fronteira",
+            "limite",
+            "referendo"
+          ],
+          "correct_index": 1,
+          "explanation": "Estado responde a “quem governa?”.",
+          "pitfall": "Nação é o povo, não o governo."
+        },
+        {
+          "topic": "Nação",
+          "statement": "Um grupo que se sente um povo, unido por língua e história, forma uma:",
+          "options": [
+            "soberania",
+            "fronteira",
+            "nação",
+            "capital",
+            "constituição"
+          ],
+          "correct_index": 2,
+          "explanation": "Nação é sentimento de pertencer.",
+          "pitfall": "Ter governo próprio não é necessário."
+        },
+        {
+          "topic": "Curdos",
+          "statement": "Os curdos são o exemplo mais citado de:",
+          "options": [
+            "Estado sem território",
+            "país sem fronteira",
+            "nação com vários Estados próprios",
+            "nação sem Estado",
+            "povo sem língua própria"
+          ],
+          "correct_index": 3,
+          "explanation": "Vivem divididos entre quatro países.",
+          "pitfall": "Eles têm língua própria."
+        },
+        {
+          "topic": "Soberania",
+          "statement": "Soberania é:",
+          "options": [
+            "a obrigação de obedecer a outro país",
+            "o nome da capital de um país",
+            "a faixa em volta do limite",
+            "o voto de sim ou não",
+            "o poder de um Estado de decidir sozinho no seu território"
+          ],
+          "correct_index": 4,
+          "explanation": "Nenhum outro país manda ali.",
+          "pitfall": "Voto de sim ou não é referendo."
+        },
+        {
+          "topic": "Limite e fronteira",
+          "statement": "A diferença entre limite e fronteira é que:",
+          "options": [
+            "o limite é a linha exata, e a fronteira é a faixa em volta",
+            "a fronteira é a linha, e o limite é a faixa",
+            "os dois são a mesma coisa",
+            "o limite só existe no mar",
+            "a fronteira só existe na África"
+          ],
+          "correct_index": 0,
+          "explanation": "Na fronteira, os dois lados convivem.",
+          "pitfall": "A troca dos dois é o distrator."
+        },
+        {
+          "topic": "Espanha",
+          "statement": "Catalães e bascos dentro da Espanha mostram:",
+          "options": [
+            "uma nação sem nenhuma língua",
+            "um Estado com várias nações",
+            "um país sem território",
+            "o fim da soberania espanhola",
+            "uma fronteira desenhada na África"
+          ],
+          "correct_index": 1,
+          "explanation": "Cada um tem língua e história próprias.",
+          "pitfall": "Ser parte da Espanha não apaga a nação."
+        },
+        {
+          "topic": "Separatismo",
+          "statement": "Quando um povo quer sair do Estado em que vive e formar o próprio, fala-se em:",
+          "options": [
+            "soberania",
+            "globalização",
+            "separatismo",
+            "urbanização",
+            "colonização"
+          ],
+          "correct_index": 2,
+          "explanation": "Pode passar por voto ou por guerra.",
+          "pitfall": "Soberania é outra ideia."
+        },
+        {
+          "topic": "África",
+          "statement": "Muitas fronteiras africanas foram traçadas:",
+          "options": [
+            "pelos próprios povos africanos em acordo",
+            "seguindo sempre os rios e as montanhas",
+            "pela ONU depois do ano 2000",
+            "por países europeus, sem considerar os povos que moravam ali",
+            "de acordo com cada língua local"
+          ],
+          "correct_index": 3,
+          "explanation": "A partilha aconteceu no fim do século XIX.",
+          "pitfall": "Daí vêm muitos conflitos."
+        },
+        {
+          "topic": "Território",
+          "statement": "O espaço sobre o qual um poder manda e que ele defende é o:",
+          "options": [
+            "referendo",
+            "separatismo",
+            "povo",
+            "idioma",
+            "território"
+          ],
+          "correct_index": 4,
+          "explanation": "Território responde a “onde?”.",
+          "pitfall": "Povo é a nação.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Referendo",
+          "statement": "Uma votação em que a população responde sim ou não a uma pergunta é um:",
+          "options": [
+            "referendo",
+            "limite",
+            "território",
+            "Estado",
+            "tratado de fronteira"
+          ],
+          "correct_index": 0,
+          "explanation": "A Escócia fez um em 2014.",
+          "pitfall": "Não confunda com eleição de candidatos.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Escócia",
+          "statement": "No referendo de 2014, a maioria dos escoceses votou para:",
+          "options": [
+            "sair do Reino Unido",
+            "continuar no Reino Unido",
+            "entrar na Espanha",
+            "criar uma nova moeda europeia",
+            "dividir a Inglaterra"
+          ],
+          "correct_index": 1,
+          "explanation": "O “não” à separação venceu.",
+          "pitfall": "O separatismo não venceu ali.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Brasil",
+          "statement": "A presença de centenas de povos indígenas no Brasil mostra que:",
+          "options": [
+            "o Brasil não tem soberania",
+            "os povos indígenas não têm território",
+            "um mesmo Estado pode abrigar muitas nações",
+            "o Brasil é uma nação sem Estado",
+            "toda nação precisa de um Estado próprio"
+          ],
+          "correct_index": 2,
+          "explanation": "Cada povo tem língua e história.",
+          "pitfall": "Ter muitas nações não tira a soberania.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Palestinos",
+          "statement": "A luta dos palestinos por um Estado com território próprio se relaciona principalmente à ideia de:",
+          "options": [
+            "um Estado que não quer território",
+            "uma fronteira sem nenhum povo",
+            "uma soberania sem governo",
+            "uma nação que busca ter o seu Estado",
+            "um referendo sobre moeda"
+          ],
+          "correct_index": 3,
+          "explanation": "Nação existe; o Estado pleno é o que se busca.",
+          "pitfall": "Não é o caso de Estado sem povo.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Conflitos africanos",
+          "statement": "Por que fronteiras traçadas com régua contribuem para conflitos na África?",
+          "options": [
+            "porque a régua deixa as fronteiras curvas",
+            "porque seguem exatamente cada povo",
+            "porque nenhum país africano tem limite",
+            "porque foram decididas pelos próprios africanos",
+            "porque juntaram povos rivais num país e separaram povos irmãos"
+          ],
+          "correct_index": 4,
+          "explanation": "A divisão ignorou quem morava ali.",
+          "pitfall": "Seguir os povos teria sido o contrário.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "geopolitica-e-conflitos",
       "title": "O mundo de hoje: poder, conflitos e refugiados",
       "module": "Mundo de hoje",
       "summary": "O poder no mundo mudou de dois polos para vários. A lição mostra a ONU e o veto, os grupos de países, os conflitos de hoje e por que tanta gente vira refugiada.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=oSElG3zNtFw",
+        "title": "A nova ordem mundial",
+        "channel": "Geobrasil"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -4158,10 +7724,369 @@
       ]
     },
     {
+      "slug": "desenvolvimento-e-desigualdade",
+      "title": "Riqueza não é desenvolvimento: PIB, IDH e fome",
+      "module": "Mundo de hoje",
+      "summary": "Um país pode ser rico e ter muita gente pobre. A lição separa PIB, renda por pessoa e IDH, explica a divisão entre Norte e Sul e conta como o Brasil entrou e saiu do Mapa da Fome.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=urwj2GYM2HE",
+        "title": "Índice de Desenvolvimento Humano (IDH)",
+        "channel": "Geobrasil"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Dois países com o mesmo tamanho de economia",
+          "body": [
+            "Imagine dois países que produzem a mesma riqueza num ano. Num deles moram 10 milhões de pessoas. No outro, 200 milhões.",
+            "A riqueza total é igual, mas a vida de cada pessoa é muito diferente. Por isso um número só nunca basta para medir um país."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "PIB e PIB por pessoa",
+          "body": [
+            "O PIB soma tudo o que um país produz num ano, em dinheiro. O Brasil tem um dos maiores do mundo.",
+            "Dividindo o PIB pelo número de habitantes, chega-se ao PIB por pessoa. Ele é uma média, e média esconde a desigualdade: um bilionário e mil pessoas sem renda dão uma média alta."
+          ],
+          "terms": [
+            {
+              "word": "PIB",
+              "meaning": "o Produto Interno Bruto: o valor de tudo o que um país produz em bens e serviços durante um ano."
+            },
+            {
+              "word": "PIB por pessoa",
+              "meaning": "o PIB dividido pelo número de habitantes. Mostra a riqueza média, não como ela está repartida."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O IDH: renda, estudo e saúde",
+          "body": [
+            "O IDH foi criado pela ONU para olhar além do dinheiro. Ele junta três coisas: a renda, a educação e a expectativa de vida.",
+            "O índice vai de 0 a 1. Quanto mais perto de 1, melhor. Países como Noruega e Suíça ficam no topo, e o Brasil fica na faixa do desenvolvimento humano alto."
+          ],
+          "terms": [
+            {
+              "word": "IDH",
+              "meaning": "o Índice de Desenvolvimento Humano, que vai de 0 a 1 e junta renda, educação e expectativa de vida."
+            },
+            {
+              "word": "expectativa de vida",
+              "meaning": "quantos anos, em média, uma pessoa que nasce hoje deve viver."
+            }
+          ],
+          "table": {
+            "label": "As três partes do IDH",
+            "headers": [
+              "Dimensão",
+              "O que mede"
+            ],
+            "rows": [
+              [
+                "renda",
+                "quanto as pessoas ganham, em média"
+              ],
+              [
+                "educação",
+                "anos de estudo dos adultos e esperados para as crianças"
+              ],
+              [
+                "saúde",
+                "expectativa de vida ao nascer"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Norte e Sul",
+          "body": [
+            "Na Geografia, Norte e Sul não falam do mapa. O Norte reúne os países mais ricos e industrializados; o Sul, os países em desenvolvimento.",
+            "Por isso a Austrália, que fica no hemisfério sul, faz parte do Norte. A linha que separa os dois grupos não é o Equador."
+          ],
+          "terms": [
+            {
+              "word": "Equador",
+              "meaning": "a linha imaginária que divide a Terra em metade norte e metade sul."
+            },
+            {
+              "word": "Norte e Sul",
+              "meaning": "a divisão dos países pelo nível de desenvolvimento: o Norte rico e industrializado e o Sul em desenvolvimento."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Fome no meio da fartura",
+          "body": [
+            "O Brasil é um dos maiores produtores de comida do mundo. Mesmo assim, já teve milhões de pessoas passando fome.",
+            "A ONU mantém o Mapa da Fome, com os países onde mais de 2,5% da população não come o suficiente. O Brasil saiu dele em 2014, voltou anos depois e saiu de novo em 2025. A fome tem mais a ver com renda que com falta de comida."
+          ],
+          "terms": [
+            {
+              "word": "Mapa da Fome",
+              "meaning": "a lista da ONU com os países em que mais de 2,5% da população não consegue comer o suficiente."
+            }
+          ],
+          "example": {
+            "label": "O Brasil e o Mapa da Fome",
+            "ordered": true,
+            "lines": [
+              "2014: o Brasil sai do Mapa da Fome.",
+              "Anos depois, com a crise e o desemprego, volta para ele.",
+              "2025: a ONU anuncia que o país saiu de novo."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mostra uma tabela com PIB e IDH de vários países e pede a conclusão. A resposta certa nunca trata PIB alto como sinônimo de vida boa."
+          ],
+          "bullets": [
+            "“A comparação entre o PIB e o IDH dos países indica…”",
+            "“A divisão Norte-Sul baseia-se…”",
+            "“A persistência da fome em países grandes produtores de alimentos se explica…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que PIB alto quer dizer povo rico. O PIB pode ser alto e mal repartido.",
+            "Pensar que Norte e Sul seguem o Equador. A divisão é pelo desenvolvimento.",
+            "Dizer que o IDH mede só renda. Ele junta renda, educação e saúde.",
+            "Explicar a fome por falta de comida. No Brasil, o problema é renda para comprar."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O PIB soma a produção do país, e o PIB por pessoa é uma média que esconde a desigualdade. O IDH junta renda, educação e saúde, de 0 a 1.",
+            "Norte e Sul dividem os países pelo desenvolvimento, não pelo Equador. O Brasil saiu do Mapa da Fome em 2014, voltou e saiu de novo em 2025."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "PIB",
+          "statement": "O PIB de um país mede:",
+          "options": [
+            "o valor de tudo o que ele produz num ano",
+            "quantos anos as pessoas vivem",
+            "quantos alunos terminam a escola",
+            "como a riqueza está repartida",
+            "o tamanho do território"
+          ],
+          "correct_index": 0,
+          "explanation": "Soma bens e serviços.",
+          "pitfall": "Repartição o PIB não mostra."
+        },
+        {
+          "topic": "Média",
+          "statement": "O PIB por pessoa pode enganar porque:",
+          "options": [
+            "mede só a educação",
+            "é uma média e esconde a desigualdade",
+            "conta só os idosos",
+            "ignora a produção do país",
+            "muda todo dia"
+          ],
+          "correct_index": 1,
+          "explanation": "Poucos muito ricos puxam a média para cima.",
+          "pitfall": "Média não mostra a distribuição."
+        },
+        {
+          "topic": "IDH",
+          "statement": "O IDH junta:",
+          "options": [
+            "só a renda das famílias",
+            "o PIB e o tamanho do país",
+            "renda, educação e expectativa de vida",
+            "a chuva e a temperatura",
+            "o número de fábricas e de carros"
+          ],
+          "correct_index": 2,
+          "explanation": "Foi criado para olhar além do dinheiro.",
+          "pitfall": "Não é só renda."
+        },
+        {
+          "topic": "Escala do IDH",
+          "statement": "O IDH vai de:",
+          "options": [
+            "0 a 100, e quanto menor, melhor",
+            "1 a 10, e o meio é o ideal",
+            "0 a 1, e quanto mais perto de 0, melhor",
+            "0 a 1, e quanto mais perto de 1, melhor",
+            "sem limite, como o PIB"
+          ],
+          "correct_index": 3,
+          "explanation": "Países como a Noruega ficam perto de 1.",
+          "pitfall": "A ordem invertida é o distrator."
+        },
+        {
+          "topic": "Norte e Sul",
+          "statement": "A divisão entre Norte e Sul se baseia:",
+          "options": [
+            "na linha do Equador",
+            "na posição em relação a Greenwich",
+            "na língua falada em cada país",
+            "no tamanho de cada território",
+            "no nível de desenvolvimento dos países"
+          ],
+          "correct_index": 4,
+          "explanation": "É uma divisão econômica e social.",
+          "pitfall": "Não é a do mapa."
+        },
+        {
+          "topic": "Austrália",
+          "statement": "A Austrália fica no hemisfério sul, mas faz parte do:",
+          "options": [
+            "Norte, por ser desenvolvida",
+            "Sul, por estar abaixo do Equador",
+            "Sul, por ser uma ilha",
+            "nenhum dos dois grupos",
+            "Norte, por ficar perto do polo norte"
+          ],
+          "correct_index": 0,
+          "explanation": "A divisão segue o desenvolvimento.",
+          "pitfall": "Posição no mapa não decide."
+        },
+        {
+          "topic": "Fome",
+          "statement": "Num grande produtor de alimentos como o Brasil, a fome se explica principalmente:",
+          "options": [
+            "pela falta de terra para plantar",
+            "pela falta de renda para comprar comida",
+            "pelo clima frio demais",
+            "pela falta total de alimentos",
+            "pelo excesso de exportação de carros"
+          ],
+          "correct_index": 1,
+          "explanation": "Há comida; falta dinheiro para quem tem fome.",
+          "pitfall": "“Falta comida” é o erro esperado."
+        },
+        {
+          "topic": "Mapa da Fome",
+          "statement": "Um país entra no Mapa da Fome da ONU quando:",
+          "options": [
+            "o PIB cai num ano",
+            "o país importa comida",
+            "mais de 2,5% da população não come o suficiente",
+            "chove pouco num verão",
+            "metade da população é rural"
+          ],
+          "correct_index": 2,
+          "explanation": "É o critério da ONU.",
+          "pitfall": "Importar comida não é passar fome."
+        },
+        {
+          "topic": "Expectativa de vida",
+          "statement": "Expectativa de vida é:",
+          "options": [
+            "a idade do habitante mais velho",
+            "a idade média de quem trabalha",
+            "a idade para se aposentar",
+            "quantos anos, em média, quem nasce hoje deve viver",
+            "quantos filhos cada mulher tem"
+          ],
+          "correct_index": 3,
+          "explanation": "É uma das partes do IDH.",
+          "pitfall": "Não é a idade do mais velho.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Topo",
+          "statement": "Países com IDH entre os mais altos do mundo são, por exemplo:",
+          "options": [
+            "Brasil e México",
+            "Índia e Bangladesh",
+            "Haiti e Níger",
+            "Bolívia e Paraguai",
+            "Noruega e Suíça"
+          ],
+          "correct_index": 4,
+          "explanation": "Ficam perto de 1.",
+          "pitfall": "O Brasil fica na faixa alta, não no topo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Brasil e a fome",
+          "format": "order",
+          "statement": "Coloque na ordem a trajetória do Brasil no Mapa da Fome.",
+          "options": [
+            "o Brasil sai do Mapa da Fome em 2014",
+            "com a crise e o desemprego, o país volta para ele",
+            "em 2025, a ONU anuncia que o país saiu de novo"
+          ],
+          "explanation": "Saiu, voltou e saiu de novo.",
+          "pitfall": "Sair não é para sempre: depende da renda.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "PIB e IDH",
+          "statement": "Um país tem PIB enorme e IDH médio. A conclusão mais segura é que:",
+          "options": [
+            "a riqueza produzida não chega bem a educação e saúde de todos",
+            "o país é pobre em produção",
+            "o IDH está calculado errado",
+            "o país tem pouca população",
+            "o PIB mede a qualidade de vida"
+          ],
+          "correct_index": 0,
+          "explanation": "PIB e IDH medem coisas diferentes.",
+          "pitfall": "PIB alto não garante vida boa.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Dois países",
+          "statement": "Dois países têm o mesmo PIB. O de menor população terá:",
+          "options": [
+            "PIB por pessoa menor",
+            "PIB por pessoa maior",
+            "o mesmo PIB por pessoa",
+            "IDH obrigatoriamente menor",
+            "fome obrigatoriamente maior"
+          ],
+          "correct_index": 1,
+          "explanation": "A mesma riqueza dividida por menos gente.",
+          "pitfall": "PIB por pessoa ainda não diz como a riqueza se reparte.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Média que engana",
+          "statement": "Uma cidade tem PIB por pessoa alto, mas muitos moradores sem renda. Isso acontece porque:",
+          "options": [
+            "o PIB por pessoa é sempre baixo",
+            "todos ganham exatamente a média",
+            "uma parte pequena concentra a maior fatia da riqueza",
+            "a média mostra cada salário",
+            "a cidade não produz nada"
+          ],
+          "correct_index": 2,
+          "explanation": "A média soma e divide, sem mostrar quem tem quanto.",
+          "pitfall": "Ninguém precisa ganhar a média.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "regioes-do-brasil",
       "title": "As regiões do Brasil e suas diferenças",
       "module": "Brasil",
       "summary": "O IBGE divide o Brasil em cinco regiões, seguindo os limites dos estados. Riqueza, população e desenvolvimento são bem diferentes entre elas.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=y4xW_zOWJJY",
+        "title": "Regionalização do Brasil",
+        "channel": "geo ilustrada"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -4530,6 +8455,752 @@
           "correct_index": 0,
           "explanation": "A concentração de indústria e investimento ao longo do tempo explica boa parte.",
           "pitfall": "Achar que a diferença é natural é o engano que a prova espera.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "cidades-brasileiras",
+      "title": "As cidades brasileiras: moradia, transporte e saneamento",
+      "module": "Brasil",
+      "summary": "As cidades brasileiras cresceram rápido e sem plano. A lição mostra a distância entre centro e periferia, as favelas e o tempo perdido no transporte. Também mostra a falta de esgoto e as leis que tentam pôr ordem nisso.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=g-DEwpP2xuM",
+        "title": "Urbanização brasileira",
+        "channel": "Geobrasil"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Três horas por dia",
+          "body": [
+            "Em grandes cidades brasileiras, há quem passe três horas por dia dentro do ônibus. É tempo de estudo, de descanso e de família que fica no caminho.",
+            "Isso não é acaso. É o resultado de como as cidades foram crescendo."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Uma urbanização rápida demais",
+          "body": [
+            "Em poucas décadas, a maior parte dos brasileiros saiu do campo e foi para a cidade. Hoje, mais de oito em cada dez vivem em áreas urbanas.",
+            "As cidades não ficaram prontas para tanta gente ao mesmo tempo. Faltou casa, transporte e esgoto, e cada um se arranjou como pôde."
+          ],
+          "terms": [
+            {
+              "word": "urbanização",
+              "meaning": "o aumento da parte da população que vive nas cidades em relação à que vive no campo."
+            },
+            {
+              "word": "metrópole",
+              "meaning": "uma cidade muito grande que comanda a economia e os serviços de uma região inteira."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Centro e periferia",
+          "body": [
+            "Os bairros com mais emprego, hospital e metrô costumam ter terreno caro. Quem ganha menos acaba morando longe, na periferia, onde a terra é mais barata e o serviço é pior.",
+            "Essa separação dos grupos pelo espaço da cidade se chama segregação socioespacial. Ela explica as três horas de ônibus do começo da lição."
+          ],
+          "terms": [
+            {
+              "word": "periferia",
+              "meaning": "a parte de fora da cidade, mais longe do centro, em geral com menos serviços públicos."
+            },
+            {
+              "word": "segregação socioespacial",
+              "meaning": "a separação dos grupos sociais em partes diferentes da cidade, conforme a renda."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As favelas",
+          "body": [
+            "Favela é um bairro formado por moradias construídas sem título da terra e, muitas vezes, sem rede de esgoto ou ruas planejadas. O Censo de 2022 contou cerca de 16 milhões de pessoas vivendo nelas, perto de 8% da população.",
+            "Favela não é sinônimo de crime nem de miséria total. É onde milhões de trabalhadores moram, perto do emprego, num lugar que a cidade formal não lhes ofereceu."
+          ],
+          "terms": [
+            {
+              "word": "Censo",
+              "meaning": "a contagem de toda a população do país, feita pelo IBGE de tempos em tempos, de casa em casa."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/geografia/rocinha.jpg",
+            "alt": "Morro coberto de casas de tijolo e telhado de laje, umas grudadas nas outras, com mata no alto.",
+            "caption": "A Rocinha, no Rio de Janeiro, uma das maiores favelas do Brasil.",
+            "credit": {
+              "author": "chensiyuan",
+              "license": "CC BY-SA 4.0",
+              "url": "https://commons.wikimedia.org/wiki/File:1_rocinha_favela_closeup.JPG"
+            }
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Terreno vazio e aluguel caro",
+          "body": [
+            "Em muitas cidades há terrenos e prédios vazios em bairros com tudo pronto. O dono espera a área valorizar para vender mais caro: é a especulação imobiliária.",
+            "Quando um bairro pobre recebe melhorias e o aluguel sobe, os antigos moradores são empurrados para longe. Isso se chama gentrificação."
+          ],
+          "terms": [
+            {
+              "word": "especulação imobiliária",
+              "meaning": "manter um imóvel vazio esperando ele valorizar, em vez de usá-lo ou vendê-lo."
+            },
+            {
+              "word": "gentrificação",
+              "meaning": "a troca dos moradores de um bairro por gente de renda mais alta, depois que ele se valoriza."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Esgoto e as leis da cidade",
+          "body": [
+            "Uma parte grande dos brasileiros ainda não tem esgoto coletado, e boa parte do que é coletado não é tratado. O esgoto vai para os rios e volta como doença.",
+            "O Estatuto da Cidade, de 2001, obriga as cidades com mais de 20 mil habitantes a ter um plano diretor. O marco do saneamento, de 2020, fixou a meta de esgoto para quase todos até 2033."
+          ],
+          "terms": [
+            {
+              "word": "plano diretor",
+              "meaning": "a lei de cada cidade que diz como ela deve crescer: onde pode ter casa, comércio, indústria e área verde."
+            },
+            {
+              "word": "Estatuto da Cidade",
+              "meaning": "a lei federal de 2001 que dá às cidades instrumentos para cumprir a função social da terra urbana."
+            }
+          ],
+          "table": {
+            "label": "Problema e ferramenta",
+            "headers": [
+              "Problema",
+              "Ferramenta"
+            ],
+            "rows": [
+              [
+                "terreno vazio esperando valorizar",
+                "imposto mais alto a cada ano parado"
+              ],
+              [
+                "cidade crescendo sem regra",
+                "plano diretor"
+              ],
+              [
+                "falta de esgoto",
+                "metas do marco do saneamento"
+              ],
+              [
+                "moradia sem título",
+                "regularização fundiária"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mostra uma foto, um mapa ou uma letra de música sobre a cidade e pede o processo por trás. Segregação, especulação e gentrificação são as palavras que mais caem."
+          ],
+          "bullets": [
+            "“A distância entre a moradia e o trabalho das populações pobres revela…”",
+            "“A manutenção de imóveis vazios em áreas centrais caracteriza…”",
+            "“O plano diretor é o instrumento que…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Explicar a periferia como escolha. É o que a renda permite pagar.",
+            "Tratar favela como sinônimo de crime. É moradia de milhões de trabalhadores.",
+            "Trocar especulação por gentrificação. Uma é guardar o imóvel vazio; a outra é expulsar pelo preço."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "As cidades cresceram mais rápido que a casa, o transporte e o esgoto. Quem ganha menos mora longe, e isso é segregação socioespacial.",
+            "Cerca de 16 milhões vivem em favelas. A especulação guarda imóveis vazios, e a gentrificação empurra os moradores. O plano diretor e o marco do saneamento são as ferramentas."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Urbanização",
+          "statement": "A urbanização brasileira foi marcada por:",
+          "options": [
+            "um crescimento lento e todo planejado",
+            "a saída do povo das cidades para o campo",
+            "cidades vazias e campo cheio",
+            "um crescimento rápido, sem casa e serviços para todos",
+            "esgoto completo desde o começo"
+          ],
+          "correct_index": 3,
+          "explanation": "Em poucas décadas, o campo esvaziou.",
+          "pitfall": "Não houve planejamento à altura."
+        },
+        {
+          "topic": "Segregação",
+          "statement": "A separação dos grupos sociais em partes diferentes da cidade, conforme a renda, chama-se:",
+          "options": [
+            "gentrificação",
+            "conurbação",
+            "êxodo rural",
+            "plano diretor",
+            "segregação socioespacial"
+          ],
+          "correct_index": 4,
+          "explanation": "Ricos no centro equipado, pobres longe.",
+          "pitfall": "Gentrificação é a troca de moradores após valorização."
+        },
+        {
+          "topic": "Periferia",
+          "statement": "As famílias de menor renda tendem a morar na periferia porque:",
+          "options": [
+            "a terra é mais barata, ainda que haja menos serviços",
+            "preferem ficar longe do emprego",
+            "a periferia tem mais metrô",
+            "o centro é proibido para elas por lei",
+            "lá há mais hospitais"
+          ],
+          "correct_index": 0,
+          "explanation": "É o que a renda permite pagar.",
+          "pitfall": "Não é preferência."
+        },
+        {
+          "topic": "Favelas",
+          "statement": "O Censo de 2022 contou nas favelas cerca de:",
+          "options": [
+            "16 mil pessoas",
+            "16 milhões de pessoas",
+            "160 milhões de pessoas",
+            "1 milhão de pessoas",
+            "nenhuma pessoa"
+          ],
+          "correct_index": 1,
+          "explanation": "Perto de 8% da população.",
+          "pitfall": "160 milhões seria quase o país todo."
+        },
+        {
+          "topic": "Especulação",
+          "statement": "Manter um terreno vazio esperando ele valorizar é:",
+          "options": [
+            "gentrificação",
+            "plano diretor",
+            "especulação imobiliária",
+            "regularização fundiária",
+            "urbanização"
+          ],
+          "correct_index": 2,
+          "explanation": "O dono ganha com a espera.",
+          "pitfall": "Gentrificação expulsa moradores."
+        },
+        {
+          "topic": "Gentrificação",
+          "statement": "Quando um bairro se valoriza e os antigos moradores saem pelo aluguel alto, ocorre:",
+          "options": [
+            "especulação imobiliária",
+            "êxodo rural",
+            "segregação planejada por lei",
+            "gentrificação",
+            "conurbação"
+          ],
+          "correct_index": 3,
+          "explanation": "A população do bairro é trocada.",
+          "pitfall": "Especulação é guardar o imóvel vazio."
+        },
+        {
+          "topic": "Plano diretor",
+          "statement": "O plano diretor é:",
+          "options": [
+            "o mapa das linhas de ônibus",
+            "a lista de favelas do país",
+            "o imposto sobre carros",
+            "o orçamento de um ano",
+            "a lei que diz como a cidade deve crescer"
+          ],
+          "correct_index": 4,
+          "explanation": "Define onde pode casa, comércio e área verde.",
+          "pitfall": "É lei da cidade, não do país."
+        },
+        {
+          "topic": "Estatuto da Cidade",
+          "statement": "O Estatuto da Cidade obriga a ter plano diretor as cidades com mais de:",
+          "options": [
+            "20 mil habitantes",
+            "2 milhões de habitantes",
+            "200 habitantes",
+            "500 mil habitantes",
+            "1 bilhão de habitantes"
+          ],
+          "correct_index": 0,
+          "explanation": "É a lei federal de 2001.",
+          "pitfall": "Não é só para metrópoles."
+        },
+        {
+          "topic": "Tempo no ônibus",
+          "statement": "As longas viagens diárias de ônibus nas metrópoles se relacionam principalmente:",
+          "options": [
+            "ao excesso de metrô nas periferias",
+            "à distância entre a moradia e o emprego",
+            "à falta de gente nas cidades",
+            "ao clima frio do Brasil",
+            "ao número pequeno de carros"
+          ],
+          "correct_index": 1,
+          "explanation": "É a segregação vista no dia a dia.",
+          "pitfall": "Falta transporte rápido, não sobra.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Esgoto",
+          "statement": "O esgoto que não é coletado nem tratado acaba:",
+          "options": [
+            "virando água potável sozinho",
+            "evaporando sem deixar rastro",
+            "nos rios, e volta como doença",
+            "no fundo da terra sem efeito",
+            "dentro das usinas de energia"
+          ],
+          "correct_index": 2,
+          "explanation": "Rio sujo espalha doença.",
+          "pitfall": "O esgoto não some sozinho.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Gentrificação",
+          "format": "order",
+          "statement": "Coloque na ordem como acontece a gentrificação de um bairro.",
+          "options": [
+            "o bairro pobre recebe melhorias",
+            "o bairro passa a ser procurado",
+            "o aluguel e os preços sobem",
+            "os antigos moradores se mudam para longe"
+          ],
+          "explanation": "Primeiro a melhoria e a procura; depois o preço e a saída.",
+          "pitfall": "A saída é o fim, não o começo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Marco do saneamento",
+          "statement": "O marco do saneamento, de 2020, fixou como meta:",
+          "options": [
+            "acabar com todas as favelas em um ano",
+            "proibir prédios novos nas cidades",
+            "tirar a água encanada do campo",
+            "levar coleta de esgoto a quase todos até 2033",
+            "trocar o plano diretor por lei federal"
+          ],
+          "correct_index": 3,
+          "explanation": "É uma meta de longo prazo.",
+          "pitfall": "Não trata de favela nem de prédio.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Favela e trabalho",
+          "statement": "Uma leitura correta sobre as favelas brasileiras é que elas:",
+          "options": [
+            "são formadas só por quem não trabalha",
+            "existem apenas no Rio de Janeiro",
+            "não têm nenhuma relação com o emprego",
+            "foram planejadas pelo governo",
+            "abrigam milhões de trabalhadores que a cidade formal não acolheu"
+          ],
+          "correct_index": 4,
+          "explanation": "Muitas ficam perto do emprego.",
+          "pitfall": "Associar favela a crime é o preconceito que a prova cobra.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Dois processos",
+          "statement": "Num bairro central, prédios ficam vazios por anos; ao lado, um bairro reformado expulsa os moradores pelo preço. Os dois casos são, nessa ordem:",
+          "options": [
+            "especulação imobiliária e gentrificação",
+            "gentrificação e especulação imobiliária",
+            "segregação e urbanização",
+            "conurbação e êxodo rural",
+            "plano diretor e saneamento"
+          ],
+          "correct_index": 0,
+          "explanation": "Primeiro o vazio, depois a troca de moradores.",
+          "pitfall": "A ordem trocada é o distrator.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "comercio-exterior",
+      "title": "O Brasil no comércio do mundo",
+      "module": "Brasil",
+      "summary": "O Brasil vende ao mundo principalmente soja, petróleo e minério, e compra produtos industrializados. A lição explica a balança comercial, as commodities, o valor agregado e por que a China virou o maior parceiro.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=qu3kKadqPmo",
+        "title": "O Brasil e o comércio exterior",
+        "channel": "Curso Enem Gratuito"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A soja que volta como celular",
+          "body": [
+            "Um navio sai de Paranaguá cheio de soja rumo à China. Outro navio chega de lá cheio de celulares, peças e máquinas.",
+            "Os dois navios contam a mesma história: o que o Brasil vende e o que compra do mundo."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Exportar, importar e a balança",
+          "body": [
+            "Exportar é vender para outro país; importar é comprar de fora. A balança comercial compara as duas contas.",
+            "Se o país vende mais do que compra, a balança tem superávit. Se compra mais, tem déficit. Nos últimos anos, o Brasil tem vendido mais do que comprado."
+          ],
+          "terms": [
+            {
+              "word": "balança comercial",
+              "meaning": "a comparação entre o valor do que um país exporta e o do que ele importa."
+            },
+            {
+              "word": "superávit e déficit",
+              "meaning": "superávit é quando se vende mais do que se compra; déficit é o contrário."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que o Brasil vende",
+          "body": [
+            "As maiores vendas do Brasil são produtos pouco transformados: soja, petróleo bruto e minério de ferro. Também pesam carne, açúcar e café.",
+            "Esses produtos se chamam commodities. São vendidos em grande quantidade, quase iguais em qualquer lugar, e o preço é decidido no mercado mundial."
+          ],
+          "terms": [
+            {
+              "word": "commodity",
+              "meaning": "um produto básico, vendido em grande quantidade e com preço definido no mercado mundial (soja, petróleo e minério)."
+            },
+            {
+              "word": "agronegócio",
+              "meaning": "o conjunto de atividades ligadas à produção agropecuária, da semente e da máquina até a venda do alimento."
+            }
+          ],
+          "table": {
+            "label": "O que entra e o que sai",
+            "headers": [
+              "O Brasil vende muito",
+              "O Brasil compra muito"
+            ],
+            "rows": [
+              [
+                "soja",
+                "adubos e defensivos"
+              ],
+              [
+                "petróleo bruto",
+                "combustível refinado"
+              ],
+              [
+                "minério de ferro",
+                "máquinas e peças"
+              ],
+              [
+                "carne, açúcar e café",
+                "remédios e eletrônicos"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Valor agregado",
+          "body": [
+            "Uma tonelada de minério vale pouco perto de uma tonelada de aço, e menos ainda perto de um carro. Cada etapa de transformação aumenta o valor. Esse aumento é o valor agregado.",
+            "Quem vende produto bruto e compra produto pronto fica com a parte menor do ganho. É também onde ficam os empregos mais bem pagos da indústria."
+          ],
+          "terms": [
+            {
+              "word": "valor agregado",
+              "meaning": "o valor que um produto ganha a cada etapa em que é transformado, do bruto ao pronto."
+            }
+          ],
+          "example": {
+            "label": "Do bruto ao pronto",
+            "ordered": true,
+            "lines": [
+              "Minério de ferro: vale pouco por tonelada.",
+              "Aço: o minério derretido e trabalhado vale mais.",
+              "Peça de carro: o aço moldado vale mais ainda.",
+              "Carro pronto: o maior valor da cadeia."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Voltar a vender produto bruto",
+          "body": [
+            "Nas últimas décadas, a parte dos produtos industrializados na venda do Brasil caiu, e a das commodities subiu. Isso se chama reprimarização da pauta de exportação.",
+            "O lado bom é o dinheiro que entra quando os preços estão altos. O lado ruim é depender de preços que o país não controla."
+          ],
+          "terms": [
+            {
+              "word": "reprimarização",
+              "meaning": "o aumento do peso dos produtos primários, como grãos e minérios, nas vendas de um país."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A China, maior parceira",
+          "body": [
+            "Desde 2009, a China é o país que mais compra do Brasil e o maior parceiro no comércio. Ela precisa de comida e de matéria-prima para a sua indústria gigante.",
+            "Os Estados Unidos vêm em segundo, e compram mais produtos industrializados. Na América do Sul, a Argentina é a maior parceira, com muito comércio de carros e peças."
+          ],
+          "terms": [
+            {
+              "word": "matéria-prima",
+              "meaning": "o material bruto usado para fabricar outros produtos, como o minério para o aço."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mostra um gráfico das exportações e pede a interpretação. Commodities, valor agregado e a dependência da China são as ideias centrais."
+          ],
+          "bullets": [
+            "“A pauta de exportações brasileira caracteriza-se por…”",
+            "“A balança comercial apresenta superávit quando…”",
+            "“A venda de produtos com baixo valor agregado implica…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Trocar superávit por déficit. Superávit é vender mais do que se compra.",
+            "Achar que o maior comprador do Brasil são os Estados Unidos. Desde 2009, é a China.",
+            "Pensar que vender muito garante ganhar muito. Produto bruto tem pouco valor agregado."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A balança comercial compara o que se vende e o que se compra: superávit é vender mais. O Brasil vende principalmente commodities, como soja, petróleo e minério.",
+            "Produto bruto tem pouco valor agregado, e o peso dele nas vendas cresceu. Desde 2009, a China é a maior parceira comercial do Brasil."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Exportar",
+          "statement": "Exportar é:",
+          "options": [
+            "comprar produtos de outro país",
+            "vender produtos para outro país",
+            "produzir só para o mercado interno",
+            "trocar dinheiro por outra moeda",
+            "proibir a venda de um produto"
+          ],
+          "correct_index": 1,
+          "explanation": "Importar é comprar de fora.",
+          "pitfall": "Não inverta os dois."
+        },
+        {
+          "topic": "Superávit",
+          "statement": "A balança comercial tem superávit quando o país:",
+          "options": [
+            "compra mais do que vende",
+            "não vende nada",
+            "vende mais do que compra",
+            "vende e compra exatamente o mesmo valor",
+            "só compra matéria-prima"
+          ],
+          "correct_index": 2,
+          "explanation": "Sobra dinheiro na conta.",
+          "pitfall": "Comprar mais é déficit."
+        },
+        {
+          "topic": "Pauta",
+          "statement": "As principais vendas do Brasil ao exterior são:",
+          "options": [
+            "aviões, celulares e computadores",
+            "carros elétricos e chips",
+            "remédios e máquinas de fábrica",
+            "soja, petróleo bruto e minério de ferro",
+            "roupas de grife e perfumes"
+          ],
+          "correct_index": 3,
+          "explanation": "São commodities.",
+          "pitfall": "O Brasil vende alguns aviões, mas não é o que mais pesa."
+        },
+        {
+          "topic": "Commodity",
+          "statement": "Uma commodity é:",
+          "options": [
+            "um produto de luxo feito sob encomenda",
+            "uma marca famosa de celular",
+            "um imposto sobre a exportação",
+            "um tipo de moeda estrangeira",
+            "um produto básico com preço definido no mercado mundial"
+          ],
+          "correct_index": 4,
+          "explanation": "Soja e minério são exemplos.",
+          "pitfall": "Não é produto exclusivo."
+        },
+        {
+          "topic": "Valor agregado",
+          "statement": "Valor agregado é:",
+          "options": [
+            "o valor que o produto ganha a cada etapa de transformação",
+            "o imposto pago na alfândega",
+            "o preço da matéria-prima pura",
+            "o lucro do navio que transporta",
+            "o desconto dado ao comprador"
+          ],
+          "correct_index": 0,
+          "explanation": "Minério vira aço, aço vira carro.",
+          "pitfall": "Não é imposto."
+        },
+        {
+          "topic": "China",
+          "statement": "Desde 2009, o maior parceiro comercial do Brasil é:",
+          "options": [
+            "os Estados Unidos",
+            "a China",
+            "a Argentina",
+            "a Alemanha",
+            "o Japão"
+          ],
+          "correct_index": 1,
+          "explanation": "Ela compra comida e matéria-prima.",
+          "pitfall": "Os Estados Unidos vêm em segundo."
+        },
+        {
+          "topic": "Reprimarização",
+          "statement": "Reprimarização é:",
+          "options": [
+            "a volta da população para o campo",
+            "o fim das exportações de um país",
+            "o aumento do peso dos produtos brutos nas vendas de um país",
+            "a troca da moeda nacional",
+            "o aumento das vendas de carros"
+          ],
+          "correct_index": 2,
+          "explanation": "Mais grão e minério, menos indústria.",
+          "pitfall": "Não é migração."
+        },
+        {
+          "topic": "Argentina",
+          "statement": "Na América do Sul, o maior parceiro comercial do Brasil é:",
+          "options": [
+            "o Chile",
+            "a Bolívia",
+            "o Uruguai",
+            "a Argentina",
+            "a Venezuela"
+          ],
+          "correct_index": 3,
+          "explanation": "Com muito comércio de carros e peças.",
+          "pitfall": "Os dois são vizinhos e sócios num acordo de comércio."
+        },
+        {
+          "topic": "Importar",
+          "statement": "Importar é:",
+          "options": [
+            "vender produtos a outro país",
+            "fabricar dentro do país",
+            "guardar produtos num armazém",
+            "plantar para consumo próprio",
+            "comprar produtos de outro país"
+          ],
+          "correct_index": 4,
+          "explanation": "Exportar é vender.",
+          "pitfall": "Não inverta.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Déficit",
+          "statement": "Se um país compra do exterior mais do que vende, a balança tem:",
+          "options": [
+            "déficit",
+            "superávit",
+            "equilíbrio perfeito",
+            "valor agregado",
+            "reprimarização"
+          ],
+          "correct_index": 0,
+          "explanation": "Falta dinheiro na conta.",
+          "pitfall": "Superávit é o contrário.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Do bruto ao pronto",
+          "format": "order",
+          "statement": "Coloque os produtos na ordem, do menor ao maior valor agregado.",
+          "options": [
+            "minério de ferro",
+            "aço",
+            "peça de carro",
+            "carro pronto"
+          ],
+          "explanation": "Cada etapa de transformação acrescenta valor.",
+          "pitfall": "O produto bruto vem primeiro.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Dependência",
+          "statement": "Depender muito da venda de commodities deixa o país:",
+          "options": [
+            "livre de qualquer crise externa",
+            "exposto a preços que ele não controla",
+            "com a indústria cada vez mais forte",
+            "sem precisar importar nada",
+            "com preços sempre altos garantidos"
+          ],
+          "correct_index": 1,
+          "explanation": "O preço é decidido no mercado mundial.",
+          "pitfall": "Preço alto não é garantido.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Navios",
+          "statement": "Um país que vende soja e compra celulares tende a ficar com a parte menor do ganho porque:",
+          "options": [
+            "a soja é proibida de ser vendida caro",
+            "celular não paga imposto na alfândega",
+            "vende produto de pouco valor agregado e compra produto de muito valor",
+            "a balança sempre fica em déficit",
+            "a soja não é uma commodity"
+          ],
+          "correct_index": 2,
+          "explanation": "Transformar é o que agrega valor.",
+          "pitfall": "Superávit não garante ganho maior.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Superávit e indústria",
+          "statement": "Um país pode ter superávit na balança e, ao mesmo tempo, ver a indústria perder espaço. Isso acontece quando:",
+          "options": [
+            "o país para de exportar soja",
+            "as importações superam as exportações",
+            "a indústria passa a vender mais que o campo",
+            "as vendas de commodities crescem mais do que as de industrializados",
+            "a China deixa de comprar do país"
+          ],
+          "correct_index": 3,
+          "explanation": "É a reprimarização com conta positiva.",
+          "pitfall": "Superávit não quer dizer industrialização.",
           "difficulty": "dificil"
         }
       ]

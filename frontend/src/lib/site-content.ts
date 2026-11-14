@@ -198,20 +198,32 @@ export const SUBJECTS: SiteSubject[] = [
     slug: "geografia-basica",
     name: "Geografia",
     pitch:
-      "Mapas, escala, coordenadas e fusos; relevo, clima e as questões ambientais; população, cidades, economia, globalização e as regiões do Brasil.",
+      "Orientação, mapas, coordenadas e fusos; as estações, o relevo, os solos, o clima e os oceanos; ambiente e desastres; população, economia, desigualdade, as cidades e o comércio do Brasil.",
     lessons: [
+      "Orientação: pontos cardeais, bússola e GPS",
       "Mapas: escala, legenda e projeções",
       "Coordenadas e fusos horários",
+      "Mapas temáticos, curvas de nível e imagens de satélite",
+      "A Terra no espaço: dia, noite e estações",
       "A Terra por dentro e o relevo",
+      "Solos: como nascem e como se perdem",
       "Tempo, clima e os climas do Brasil",
+      "Os climas e as paisagens do mundo",
       "A água: rios, bacias e quem gasta",
+      "Oceanos: correntes, marés e lixo no mar",
       "Biomas e questões ambientais",
+      "O mundo discute o ambiente: conferências e acordos",
+      "Enchentes, deslizamentos e barragens: o risco",
       "População, migração e cidades",
       "Economia: setores, indústria e campo",
       "Energia: a do Brasil e a do mundo",
       "Globalização e blocos econômicos",
+      "Estado, nação e território",
       "O mundo de hoje: poder, conflitos e refugiados",
+      "Riqueza não é desenvolvimento: PIB, IDH e fome",
       "As regiões do Brasil e suas diferenças",
+      "As cidades brasileiras: moradia, transporte e saneamento",
+      "O Brasil no comércio do mundo",
     ],
   },
   {
@@ -797,5 +809,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 6440,
+  questions: 6608,
 };

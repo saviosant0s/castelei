@@ -259,6 +259,33 @@ class ContentSeederTest extends TestCase
         $this->assertSame($this->esperado()['questions'], Question::count());
     }
 
+    /**
+     * A marca mudou de regra (do resumo do arquivo do importador para uma
+     * versão escrita à mão). Se as marcas antigas deixassem de valer, a troca
+     * recarregaria todas as matérias no build, que é justamente o que ela
+     * existe para evitar: foi isso que estourou os 45 minutos do Vercel.
+     */
+    public function test_marca_gravada_pela_regra_antiga_continua_valendo(): void
+    {
+        $this->seed(DatabaseSeeder::class);
+
+        $arquivos = glob(database_path('seeders/content/*.json'));
+        sort($arquivos);
+        foreach ($arquivos as $i => $arquivo) {
+            $texto = file_get_contents($arquivo);
+            $slug = json_decode($texto, true)['slug'];
+            \Illuminate\Support\Facades\Cache::forever("conteudo-carregado:{$slug}", md5($texto.'76c81a4d9e56116126dc762a76631c4a'.($i + 1)));
+        }
+
+        \Illuminate\Support\Facades\DB::enableQueryLog();
+        $this->seed(DatabaseSeeder::class);
+        $escritas = collect(\Illuminate\Support\Facades\DB::getQueryLog())
+            ->filter(fn ($q) => preg_match('/^\s*(insert|update)\s+(into\s+)?"?(subjects|lessons|questions)/i', $q['query']))
+            ->count();
+
+        $this->assertSame(0, $escritas, 'marca antiga fez o seeder regravar o conteúdo');
+    }
+
     public function test_comando_setup_roda_migrations_e_carrega_o_conteudo(): void
     {
         $this->artisan('castelei:setup')->assertSuccessful();
