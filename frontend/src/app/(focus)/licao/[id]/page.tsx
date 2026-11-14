@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { LessonStepper } from "@/components/LessonStepper";
+import { LessonHub } from "@/components/lesson/LessonHub";
 import { LockedLesson } from "@/components/LockedLesson";
 import { serverGet } from "@/lib/backend";
 import type { LessonDetail } from "@/lib/types";
@@ -13,5 +13,6 @@ export default async function LicaoPage({ params }: { params: Promise<{ id: stri
   // Trancada até ver a anterior: a API não manda as etapas, só o que falta.
   if (lesson.locked) return <LockedLesson lesson={lesson} />;
 
-  return <LessonStepper lesson={lesson} />;
+  // A tela da lição: ler, assistir ou fazer as questões. A leitura mora em /ler.
+  return <LessonHub lesson={lesson} />;
 }

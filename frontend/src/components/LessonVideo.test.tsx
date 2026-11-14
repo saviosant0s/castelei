@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 import { afterEach, describe, expect, it } from "vitest";
-import { cleanup, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { LessonVideo, youtubeId } from "./LessonVideo";
 
 afterEach(cleanup);
@@ -46,8 +46,12 @@ describe("LessonVideo", () => {
   it("incorpora o YouTube sem cookie de rastreio", () => {
     const { container } = render(<LessonVideo video={{ src: "https://youtu.be/abc123", title: "Aula" }} />);
 
+    // Antes do toque, só a miniatura: o quadro do YouTube não carrega à toa.
+    expect(container.querySelector("iframe")).toBeNull();
+    fireEvent.click(screen.getByRole("button", { name: "Assistir: Aula" }));
+
     const iframe = container.querySelector("iframe");
-    expect(iframe?.getAttribute("src")).toBe("https://www.youtube-nocookie.com/embed/abc123");
+    expect(iframe?.getAttribute("src")).toBe("https://www.youtube-nocookie.com/embed/abc123?autoplay=1");
     expect(iframe?.getAttribute("title")).toBe("Aula");
   });
 

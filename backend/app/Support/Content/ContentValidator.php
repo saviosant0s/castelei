@@ -108,6 +108,8 @@ class ContentValidator
             // o nome do assunto ("Processos") — o número sai da ordem na tela.
             $this->optionalText($lesson['module'] ?? null, "{$path}.module", max: 60);
             $this->text($lesson['summary'] ?? null, "{$path}.summary");
+            // A aula em vídeo da lição: o mesmo formato do bloco de vídeo de uma etapa.
+            $this->video($lesson['video'] ?? null, "{$path}.video");
             $this->steps($lesson['steps'] ?? null, "{$path}.steps");
             $this->questions($lesson['questions'] ?? null, "{$path}.questions");
         }
@@ -461,6 +463,22 @@ class ContentValidator
         }
 
         $this->optionalText($figure['caption'] ?? null, "{$path}.caption", max: 300);
+
+        /*
+        | Crédito de foto real (autor, licença e link da página da foto). A
+        | licença livre exige; um crédito pela metade não cumpre a licença.
+        */
+        if (array_key_exists('credit', $figure)) {
+            $credit = $figure['credit'];
+            if (! is_array($credit) || array_is_list($credit)) {
+                $this->error("{$path}.credit", 'O crédito precisa ter "author", "license" e "url".');
+
+                return;
+            }
+            foreach (['author', 'license', 'url'] as $campo) {
+                $this->text($credit[$campo] ?? null, "{$path}.credit.{$campo}", max: 300);
+            }
+        }
     }
 
     private function video(mixed $video, string $path): void
@@ -479,6 +497,8 @@ class ContentValidator
         $this->optionalText($video['title'] ?? null, "{$path}.title", max: 160);
         $this->optionalText($video['caption'] ?? null, "{$path}.caption", max: 300);
         $this->optionalText($video['poster'] ?? null, "{$path}.poster", max: 500);
+        // O canal de quem fez a aula: crédito e o que a pessoa reconhece.
+        $this->optionalText($video['channel'] ?? null, "{$path}.channel", max: 120);
 
         if (! isset($video['caption']) && ! isset($video['title'])) {
             $this->warn($path, 'O vídeo não tem título nem legenda. Sem um dos dois, quem não pode assistir não sabe o que perdeu.');

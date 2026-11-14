@@ -33,5 +33,6 @@ export function paginasDaMateria(slug: string, lessonIds: number[], comVocabular
   // A área entra junto: sem ela, o "voltar" da matéria abriria a tela de sem internet.
   const base = area ? [`/area/${area}`, `/materia/${slug}`] : [`/materia/${slug}`];
   if (comVocabulario) base.push(`/materia/${slug}/vocabulario`);
-  return [...base, ...lessonIds.map((id) => `/licao/${id}`)];
+  // A tela da lição e a leitura: as duas abrem sem internet.
+  return [...base, ...lessonIds.flatMap((id) => [`/licao/${id}`, `/licao/${id}/ler`])];
 }

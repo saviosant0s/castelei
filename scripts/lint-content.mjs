@@ -1046,6 +1046,17 @@ for (const file of arquivos) {
       if (steps.filter((s) => s.kind === k).length !== 1) fail(L, `deve haver exatamente uma etapa “${k}”`);
     }
     checkProse(`${L} › resumo`, lesson.summary ?? "");
+    /*
+    | A aula em vídeo da lição (YouTube), mostrada na tela da lição. Precisa
+    | do título e do canal: o título diz o que a pessoa vai ver, e o canal dá
+    | o crédito a quem fez a aula.
+    */
+    if (lesson.video) {
+      const v = lesson.video;
+      if (!/^https:\/\/(www\.)?(youtube\.com\/watch\?v=|youtu\.be\/)[\w-]{11}/.test(v.src ?? "")) fail(`${L} › vídeo`, `link do YouTube inválido: ${v.src}`);
+      if (!v.title) fail(`${L} › vídeo`, "falta o título do vídeo");
+      if (!v.channel) fail(`${L} › vídeo`, "falta o canal de quem fez a aula");
+    }
     checkVisuals(L, steps);
 
     const defined = new Set();
@@ -1069,6 +1080,11 @@ for (const file of arquivos) {
         if (!f.caption) warn(W, "figura sem legenda");
         if (!f.src?.startsWith("/figuras/") || !existsSync(join(publicDir, f.src))) fail(W, `arquivo da figura não encontrado: ${f.src}`);
         if (f.caption) checkProse(`${W} (legenda)`, f.caption);
+        // Foto real (Wikimedia Commons e afins): a licença livre exige crédito completo.
+        if (/\.(jpe?g|png|webp)$/i.test(f.src ?? "")) {
+          const c = f.credit;
+          if (!c?.author || !c?.license || !c?.url) fail(W, `foto sem crédito completo (author, license e url): ${f.src}`);
+        }
         if (SOURCE_REF.test(f.alt ?? "")) fail(W, "o texto alternativo cita livro ou fonte");
       }
       if (step.code && !String(step.code.text ?? "").trim()) fail(W, "bloco de código vazio");

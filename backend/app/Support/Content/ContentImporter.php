@@ -147,6 +147,8 @@ class ContentImporter
             'module' => $this->module($data['module'] ?? null),
             'summary' => $data['summary'],
             'steps' => $data['steps'],
+            // A aula em vídeo da lição (YouTube), oferecida na tela da lição.
+            'video' => $data['video'] ?? null,
         ] + self::legacyFields($data['steps']));
 
         $lesson->save();
