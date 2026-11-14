@@ -111,10 +111,10 @@ export function LessonHub({ lesson }: { lesson: LessonDetail }) {
           <h2 id="em-video" className="text-xl">
             Em vídeo
           </h2>
-          <p className="mt-1 text-sm text-content-secondary">
-            Uma aula sobre o mesmo assunto{lesson.video.channel ? `, do canal ${lesson.video.channel}` : ""}. Abre aqui mesmo.
-          </p>
+          <p className="mt-1 text-sm text-content-secondary">Uma aula sobre o mesmo assunto, que abre aqui mesmo.</p>
           <LessonVideo video={lesson.video} />
+          {/* O canal mora numa linha só dele: nome de canal termina em "?" ou "!", e no meio da frase a pontuação dobrava. */}
+          {lesson.video.channel && <p className="mt-2 text-sm text-content-secondary">Canal: {lesson.video.channel}</p>}
         </section>
       )}
 
