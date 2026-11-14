@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 | privacidade que abra sem login. Por isso ela não fica em (app).
 |
 | O conteúdo descreve o que o sistema realmente faz hoje. Se o app passar a
-| coletar outra coisa — pagamento, login do Google, analytics —, esta página
+| coletar outra coisa (pagamento, analytics), esta página
 | muda junto, e a ficha de Segurança de Dados no Play Console também.
 */
-const ATUALIZADA_EM = "21 de setembro de 2026";
+const ATUALIZADA_EM = "14 de novembro de 2026";
 
 const contato = process.env.CONTACT_EMAIL?.trim();
 
@@ -38,7 +38,9 @@ export default function Privacidade() {
           <ul className="mt-3 list-disc space-y-2 pl-5">
             <li>
               <strong>Cadastro:</strong> seu nome e seu e-mail. A senha é guardada apenas como um código
-              embaralhado (hash), que não permite recuperar a senha original, nem por nós.
+              embaralhado (hash), que não permite recuperar a senha original, nem por nós. Se você entrar com
+              o Google, recebemos do Google só o seu nome, o seu e-mail e um número que identifica a sua conta
+              Google. Não recebemos a sua senha do Google nem acesso a mais nada da conta.
             </li>
             <li>
               <strong>Estudo:</strong> as questões que você respondeu, se acertou, quanto tempo levou em cada
@@ -47,6 +49,20 @@ export default function Privacidade() {
             <li>
               <strong>Textos:</strong> em Produção Textual, o que você escreve e entrega em cada parte, junto
               da sua autoavaliação. O rascunho que ainda não foi entregue fica só no seu aparelho.
+            </li>
+            <li>
+              <strong>Anotações e dúvidas:</strong> o que você escreve na anotação de uma lição, as dúvidas que
+              pergunta e as respostas e correções que recebe. Ditar em vez de digitar usa o reconhecimento de
+              voz do seu navegador: nenhum áudio passa pelo Castelei, só o texto que aparece na tela.
+            </li>
+            <li>
+              <strong>Turmas:</strong> se você entrar numa turma, quem a criou passa a ver seu nome e, só
+              naquela matéria, as lições praticadas, o acerto e quando você estudou pela última vez. Nunca o
+              seu e-mail. Sair da turma encerra isso.
+            </li>
+            <li>
+              <strong>Lembretes:</strong> se você ligar os lembretes de revisão, guardamos o endereço que o
+              navegador do aparelho cria para receber o aviso. Desligar apaga esse endereço.
             </li>
             <li>
               <strong>Plano:</strong> qual plano está associado à sua conta.
@@ -70,8 +86,8 @@ export default function Privacidade() {
         <section>
           <h2 className="text-2xl">Com quem compartilhamos</h2>
           <p className="mt-3">
-            Com ninguém, para fins comerciais. Seus dados ficam no banco de dados do Castelei, hospedado na
-            Railway, que atua apenas como fornecedor de infraestrutura. Podemos divulgar informação se formos
+            Com ninguém, para fins comerciais. O Castelei roda na Vercel e o banco de dados fica na Neon, que
+            atuam apenas como fornecedores de infraestrutura. Podemos divulgar informação se formos
             obrigados por lei ou ordem judicial.
           </p>
           <p className="mt-3">
@@ -81,6 +97,11 @@ export default function Privacidade() {
             inteligência artificial estiver ligada e você tocar em “Corrigir com IA”, o texto vai também para
             a Anthropic, com o mesmo fim. O botão “Copiar para corrigir com IA” não envia nada: só copia o
             texto para você colar onde quiser.
+          </p>
+          <p className="mt-3">
+            <strong>Dúvidas e anotações.</strong> Quando você pergunta uma dúvida ou pede para corrigir a sua
+            explicação de uma lição, o texto vai para a Anthropic junto com o conteúdo da lição, só para gerar
+            a resposta. Não vai junto seu nome nem seu e-mail.
           </p>
         </section>
 

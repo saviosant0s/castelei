@@ -54,6 +54,10 @@ na Política de Privacidade (variável `CONTACT_EMAIL`).
 | Excluir a conta pelo app | Perfil → Sua conta | ✅ |
 | Página pública de exclusão | `/excluir-conta` | ✅ |
 | Digital Asset Links | `/.well-known/assetlinks.json` | ✅ (falta a impressão digital) |
+| Gráfico de destaque 1024×500 | `docs/play-store/feature-graphic.png` | ✅ |
+| 7 capturas de tela 1080×1920 | `docs/play-store/capturas/` | ✅ |
+| Textos da ficha (curta e completa) | seção 5, abaixo | ✅ |
+| Política de Privacidade atualizada | `/privacidade` (novembro de 2026) | ✅ |
 
 O `assetlinks.json` lê duas variáveis de ambiente e devolve 404 enquanto elas
 não existirem — de propósito, porque um arquivo vazio o Android leria como
@@ -156,13 +160,13 @@ curl https://SEU-DOMINIO/.well-known/assetlinks.json
 | Item | Requisito | Situação |
 |---|---|---|
 | Ícone | 512×512 PNG, sem transparência | usar `frontend/public/icons/icon-512.png` |
-| Gráfico de destaque | **1024×500**, PNG ou JPEG, **sem transparência** | modelo em `docs/play-store/feature-graphic.html` |
-| Capturas de tela | 2 a 8, celular | 🧑 tirar no seu celular |
+| Gráfico de destaque | **1024×500**, PNG ou JPEG, **sem transparência** | ✅ `docs/play-store/feature-graphic.png` (o modelo editável é o `.html` ao lado) |
+| Capturas de tela | 2 a 8, celular | ✅ 7 prontas em `docs/play-store/capturas/` |
 | Descrição curta | até 80 caracteres | texto abaixo |
 | Descrição completa | até 4000 caracteres | texto abaixo |
 | Política de Privacidade | URL pública | `https://SEU-DOMINIO/privacidade` |
 
-**Descrição curta** (73 caracteres):
+**Descrição curta** (70 caracteres):
 
 ```
 Estude do jeito que a prova pergunta: explicação humana e treino real.
@@ -174,36 +178,47 @@ Estude do jeito que a prova pergunta: explicação humana e treino real.
 O Castelei ensina o conteúdo e a linguagem da prova.
 
 Cada lição é uma sequência de telas curtas, uma ideia por vez, escrita para
-quem está começando do zero. Sem decoreba, sem parágrafo gigante: analogia
-antes de definição, exemplo antes de regra.
+quem está começando do zero. Sem decoreba e sem parágrafo gigante: analogia
+antes de definição, exemplo antes de regra, figura e vídeo quando ajudam.
 
-Depois de entender, você treina no Modo Prova — questões no formato que as
-bancas usam, com cronômetro e, no fim, a explicação de cada resposta e a
-pegadinha que costuma derrubar.
+Depois de entender, você treina com questões no formato das provas, com
+cronômetro e, a cada resposta, a explicação e a pegadinha que costuma
+derrubar.
 
 O que você encontra:
 
-• Lições em etapas, feitas para iniciante
-• Modo Prova com cronômetro e correção comentada
-• Simulado da matéria inteira, com questões sorteadas entre as lições
-• Progresso por tópico: o que você já domina e o que vale revisar
-• Gráficos de evolução de acerto e de tempo
-• Dias seguidos de estudo, XP e conquistas
-• Funciona como aplicativo, direto na tela inicial
+• As 14 áreas da escola, de Português e Matemática a Física, Química,
+  Biologia, História, Geografia, Filosofia, Sociologia, Inglês, Espanhol,
+  Artes, Educação Física e Informática
+• Mais de 30 matérias, do básico ao que mais cai no ENEM e em concursos
+• Milhares de questões, com a matéria inteira em rodadas sorteadas
+• Trilhas prontas para o ENEM e para concursos de nível médio
+• Produção textual: escreva a redação por partes e confira cada uma
+• Revisão espaçada: o app avisa a hora de revisar, e acelera quando a
+  data da sua prova chega
+• Vocabulário de cada matéria e cartões para memorizar
+• Progresso que mostra o que você já domina e onde você erra
+• Turmas: o professor acompanha a turma numa matéria
+• Dias seguidos de estudo, meta do dia, XP e conquistas
+• Leia as lições sem internet
 
-Matérias disponíveis: Matemática Básica, Português e Sistemas Operacionais.
-Novas matérias entram sempre.
+Tudo isso é grátis. O plano Pro, que chega em breve, acrescenta simulados,
+questões em três níveis de dificuldade e matérias exclusivas.
 ```
 
-**Capturas de tela — as 4 telas que valem a pena mostrar**, nesta ordem:
+**Capturas de tela** (já prontas, nesta ordem):
 
-1. `/inicio` — a cara do app e as matérias
-2. uma lição aberta, numa etapa com figura
-3. o Modo Prova com o cronômetro rodando
-4. `/progresso/evolucao` — os gráficos
+1. `1-inicio.png`: a tela inicial, com as áreas e a meta do dia
+2. `2-trilha.png`: a trilha de uma matéria
+3. `3-licao.png`: a tela da lição, com ler, assistir e praticar
+4. `4-leitura.png`: uma etapa da lição
+5. `5-questoes.png`: a aba Questões, com o total da matéria
+6. `6-correcao.png`: uma questão respondida, com a explicação e a pegadinha
+7. `7-progresso.png`: o Progresso
 
-Tire com a tela do celular já no app instalado (sem a barra do navegador), em
-retrato. Mínimo de 320 px e máximo de 3840 px no lado maior.
+São do app rodando de verdade, numa conta de teste, em 1080×1920. Se quiser
+refazer depois de mudar alguma tela, o roteiro está no histórico do PR que as
+criou; tirar no próprio celular também serve.
 
 ### 6. 🧑 Teste fechado — a parte mais demorada
 
@@ -231,20 +246,30 @@ o sistema realmente faz hoje:
 |---|---|
 | O app coleta ou compartilha dados? | **Sim, coleta** |
 | Os dados são criptografados em trânsito? | **Sim** (todo o tráfego é HTTPS) |
-| Dá para pedir exclusão dos dados? | **Sim** |
-| Compartilha dados com terceiros? | **Não** |
+| Dá para pedir exclusão dos dados? | **Sim** (no Perfil e em `/excluir-conta`) |
+| Compartilha dados com terceiros? | **Não** (ver a nota abaixo) |
 
 Tipos de dados a marcar:
 
 | Tipo | Coletado | Obrigatório | Finalidade |
 |---|---|---|---|
-| Nome | Sim | Sim | Funcionalidade do app, Gerenciamento de conta |
-| E-mail | Sim | Sim | Funcionalidade do app, Gerenciamento de conta |
-| Interações no app | Sim | Sim | Funcionalidade do app, Análises |
+| Informações pessoais → Nome | Sim | Sim | Funcionalidade do app, Gerenciamento de conta |
+| Informações pessoais → Endereço de e-mail | Sim | Sim | Funcionalidade do app, Gerenciamento de conta |
+| Informações pessoais → IDs do usuário | Sim | Não (só quem entra com o Google) | Gerenciamento de conta |
+| Mensagens → Outras mensagens no app | Sim | Não | Funcionalidade do app (anotações, dúvidas e redações) |
+| Atividade no app → Interações no app | Sim | Sim | Funcionalidade do app, Análises |
+| Atividade no app → Outro conteúdo gerado pelo usuário | Sim | Não | Funcionalidade do app |
 
-**Não** marque: localização, contatos, fotos, arquivos, mensagens, saúde,
+**Por que "não compartilha":** a Play não conta como compartilhamento o envio
+a um **prestador de serviço** que processa o dado em nome do app. É o caso da
+Anthropic (responde dúvidas e corrige textos) e do LanguageTool (ortografia),
+que recebem só o texto, sem nome nem e-mail, e da Vercel e da Neon
+(hospedagem). A Política de Privacidade cita os quatro.
+
+**Não** marque: localização, contatos, fotos, arquivos, áudio, saúde,
 financeiro, identificadores de publicidade, histórico de navegação. O app não
-toca em nada disso.
+toca em nada disso. O ditado da anotação usa o reconhecimento de voz do
+próprio navegador, e nenhum áudio passa pelo Castelei.
 
 > As fontes são servidas pelo próprio app (`@fontsource`), não por CDN de
 > terceiros. Isso é o que permite responder "não compartilha" com sinceridade.
@@ -340,13 +365,26 @@ e o [exemplo completo do Google](https://github.com/chromeos/pwa-play-billing).
 
 ## Resumo do que é seu
 
-1. Decidir domínio, nome de pacote e e-mail de contato
-2. Criar e verificar a conta de desenvolvedor (US$ 25)
-3. Gerar o `.aab` e **guardar o keystore em lugar seguro**
-4. Copiar o SHA-256 e criar as duas variáveis no projeto `castelei` do Vercel
-5. Tirar as 4 capturas de tela no celular
-6. Juntar 12 testadores e segurar 14 dias
-7. Preencher Segurança de Dados e Classificação de Conteúdo
-8. Aplicar para produção
+**Dá para fazer agora, sem pagar nada:**
+
+1. Decidir o domínio (recomendado `castelei.com.br`, cerca de R$ 40/ano) e
+   apontá-lo para o Vercel
+2. Decidir o nome do pacote (sugestão `br.com.castelei.app`) e o e-mail de
+   contato, e pôr `CONTACT_EMAIL` no projeto `castelei`
+3. Gerar o `.aab` no PWABuilder (não pede conta) e **guardar o keystore e a
+   senha em lugar seguro, fora do repositório**. Perder o keystore é perder o
+   direito de atualizar o app
+4. Juntar os e-mails Gmail de 12 testadores que aceitem deixar o app
+   instalado por 14 dias
+
+**Depois de pagar a conta (US$ 25):**
+
+5. Criar e verificar a conta de desenvolvedor
+6. Copiar o SHA-256 da assinatura e criar as duas variáveis no projeto
+   `castelei` do Vercel
+7. Subir o `.aab` no teste fechado e segurar os 14 dias
+8. Colar os textos e as imagens desta página na ficha da loja
+9. Preencher Segurança de Dados e Classificação de Conteúdo
+10. Aplicar para produção
 
 O resto eu faço.
