@@ -144,20 +144,29 @@ export const SUBJECTS: SiteSubject[] = [
     slug: "biologia-basica",
     name: "Biologia",
     pitch:
-      "A célula, o DNA, a herança de Mendel, a evolução, a ecologia e os biomas do Brasil, o corpo humano e as vacinas: o básico que toda prova de Biologia cobra.",
+      "A célula e a energia da vida, o DNA e a biotecnologia, a herança de Mendel, a evolução, a ecologia e os biomas do Brasil, o corpo humano, as vacinas e a diversidade dos seres vivos: o básico que toda prova de Biologia cobra.",
     lessons: [
       "A célula: a menor parte viva",
+      "A membrana da célula: o que entra e o que sai",
       "As organelas: as peças de dentro da célula",
+      "Energia da vida: fotossíntese, respiração e fermentação",
       "Mitose e meiose: como a célula se divide",
       "Do DNA à proteína: a receita da vida",
+      "Biotecnologia: transgênicos, clones e o DNA no tribunal",
       "Herança: as leis de Mendel",
       "Evolução: como as espécies mudam",
+      "De onde veio a vida: da geração espontânea às primeiras células",
       "Cadeias alimentares: quem come quem",
+      "Relações entre os seres vivos: quem ajuda, quem atrapalha",
       "Os ciclos da natureza e os biomas do Brasil",
       "Digestão e respiração: combustível e oxigênio",
       "Circulação, nervos e hormônios",
       "Vírus, bactérias e vacinas",
       "Plantas e a classificação dos seres vivos",
+      "Flor, fruto e semente: como as plantas se reproduzem",
+      "Fungos, protozoários e algas: os seres que quase não se veem",
+      "Os animais sem coluna: dos vermes aos insetos",
+      "Os animais com coluna: peixes, anfíbios, répteis, aves e mamíferos",
     ],
   },
   {
@@ -828,5 +837,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 6874,
+  questions: 7000,
 };

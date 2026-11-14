@@ -9,6 +9,11 @@
       "title": "A célula: a menor parte viva",
       "module": "A célula",
       "summary": "Todo ser vivo é feito de células, das bactérias às baleias. Elas têm partes em comum e se dividem em dois grandes tipos.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=I_KaAQV8hZw",
+        "title": "Citologia: o mundo das células",
+        "channel": "Toda Matéria"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -425,10 +430,361 @@
       ]
     },
     {
+      "slug": "membrana-e-transporte",
+      "title": "A membrana da célula: o que entra e o que sai",
+      "module": "A célula",
+      "summary": "A célula vive cercada por uma película que escolhe o que entra e o que sai. A lição mostra a difusão, a osmose que murcha a salada e o transporte que gasta energia para empurrar contra a corrente.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=qJXAkXa3-Mk",
+        "title": "Membrana plasmática",
+        "channel": "Toda Matéria"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A salada murcha",
+          "body": [
+            "Tempere uma salada de alface com sal e espere meia hora. As folhas ficam moles e soltam água no prato.",
+            "Ninguém espremeu a alface. A água saiu sozinha das células dela, atravessando uma película finíssima. Esta lição explica como."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Uma película que escolhe",
+          "body": [
+            "Toda célula é cercada pela membrana plasmática, uma película fina que separa o lado de dentro do lado de fora.",
+            "Ela não é um muro: deixa passar algumas coisas e segura outras. Por isso se diz que tem permeabilidade seletiva. Gás oxigênio e água passam com facilidade; muitas outras substâncias precisam de ajuda."
+          ],
+          "terms": [
+            {
+              "word": "membrana plasmática",
+              "meaning": "a película fina que envolve toda célula e controla o que entra e o que sai dela."
+            },
+            {
+              "word": "permeabilidade seletiva",
+              "meaning": "a capacidade da membrana de deixar passar algumas substâncias e barrar outras."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Difusão: do cheio para o vazio",
+          "body": [
+            "Abra um vidro de perfume num canto da sala. Aos poucos, o cheiro chega ao outro lado, sem ninguém empurrar. As partículas vão de onde há muitas para onde há poucas.",
+            "Isso é a difusão. É assim que o oxigênio entra nas células e o gás carbônico sai, sem gastar energia."
+          ],
+          "terms": [
+            {
+              "word": "difusão",
+              "meaning": "o movimento de partículas de onde estão mais concentradas para onde estão menos, sem gasto de energia."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Osmose: a água atrás do sal",
+          "body": [
+            "Osmose é a passagem da água pela membrana, do lado com menos coisas dissolvidas para o lado com mais. A água vai para onde está mais salgado.",
+            "Na alface temperada, o lado de fora ficou salgado. A água sai das células para o sal, e a folha murcha. O mesmo princípio conserva a carne-seca: o sal tira a água, e os micróbios não conseguem crescer."
+          ],
+          "terms": [
+            {
+              "word": "osmose",
+              "meaning": "a passagem de água através da membrana, do meio menos concentrado para o mais concentrado."
+            }
+          ],
+          "table": {
+            "label": "A célula em três águas",
+            "headers": [
+              "Meio de fora",
+              "Para onde vai a água",
+              "O que acontece"
+            ],
+            "rows": [
+              [
+                "mais salgado que a célula",
+                "para fora",
+                "a célula murcha"
+              ],
+              [
+                "igual à célula",
+                "entra e sai igual",
+                "nada muda"
+              ],
+              [
+                "menos salgado que a célula",
+                "para dentro",
+                "a célula incha"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Contra a corrente, gastando energia",
+          "body": [
+            "Às vezes a célula precisa juntar uma substância onde ela já está mais concentrada. Isso é ir contra a corrente, e custa energia.",
+            "Esse é o transporte ativo. A célula usa uma molécula de energia, o ATP, para bombear a substância. As células dos nervos fazem isso o tempo todo com sódio e potássio."
+          ],
+          "terms": [
+            {
+              "word": "transporte ativo",
+              "meaning": "a passagem de substâncias contra a diferença de concentração, que exige gasto de energia."
+            },
+            {
+              "word": "ATP",
+              "meaning": "a molécula que guarda e entrega energia dentro da célula, como uma bateria pequena."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mostra a salada murchando, a carne-seca ou uma célula em água salgada e pede o nome do processo. Também cobra a diferença entre gastar e não gastar energia."
+          ],
+          "bullets": [
+            "“A salada temperada murcha devido à…”",
+            "“O transporte que ocorre com gasto de energia é…”",
+            "“Uma hemácia colocada em água pura tende a…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que na osmose quem se move é o sal. Quem atravessa a membrana é a água.",
+            "Dizer que difusão gasta energia. Ela acontece sozinha, do cheio para o vazio.",
+            "Pensar que a membrana deixa passar tudo. Ela escolhe."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A membrana plasmática envolve a célula e escolhe o que passa. Na difusão, as partículas vão do cheio para o vazio, sem gastar energia.",
+            "Na osmose, a água atravessa a membrana em direção ao lado mais salgado: é por isso que a salada murcha. O transporte ativo vai contra a corrente e gasta ATP."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Membrana",
+          "statement": "A membrana plasmática serve para:",
+          "options": [
+            "controlar o que entra e sai da célula",
+            "guardar as instruções da célula",
+            "fazer a fotossíntese da planta",
+            "produzir energia a partir da luz",
+            "dar a cor verde às folhas"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela é seletiva.",
+          "pitfall": "Guardar as instruções da célula é papel de outra parte."
+        },
+        {
+          "topic": "Difusão",
+          "statement": "Na difusão, as partículas se movem:",
+          "options": [
+            "do lugar mais vazio para o mais cheio",
+            "do lugar mais cheio para o mais vazio",
+            "só quando a célula gasta energia",
+            "sempre para o centro da célula",
+            "sem nenhuma direção definida"
+          ],
+          "correct_index": 1,
+          "explanation": "Do cheio para o vazio.",
+          "pitfall": "Contra a corrente é transporte ativo."
+        },
+        {
+          "topic": "Osmose",
+          "statement": "Na osmose, o que atravessa a membrana é:",
+          "options": [
+            "o sal",
+            "o açúcar",
+            "a água",
+            "o DNA",
+            "o ATP"
+          ],
+          "correct_index": 2,
+          "explanation": "A água vai para o lado mais salgado.",
+          "pitfall": "O sal não passa nesse caso."
+        },
+        {
+          "topic": "Salada",
+          "statement": "A alface temperada com sal murcha porque:",
+          "options": [
+            "o sal entra nas células e as esmaga",
+            "a alface perde o seu DNA",
+            "o óleo fecha a membrana",
+            "a água sai das células em direção ao sal",
+            "as células se dividem demais"
+          ],
+          "correct_index": 3,
+          "explanation": "É osmose.",
+          "pitfall": "Quem se move é a água."
+        },
+        {
+          "topic": "Carne-seca",
+          "statement": "O sal conserva a carne-seca porque:",
+          "options": [
+            "mata a carne por dentro com calor",
+            "deixa a carne mais pesada e firme",
+            "fecha a membrana com uma camada de óleo",
+            "transforma a carne em proteína nova",
+            "tira a água, e os micróbios não crescem"
+          ],
+          "correct_index": 4,
+          "explanation": "Sem água, os micróbios não se multiplicam.",
+          "pitfall": "Não é calor."
+        },
+        {
+          "topic": "Água pura",
+          "statement": "Uma célula animal colocada em água pura, sem sal, tende a:",
+          "options": [
+            "inchar, porque a água entra nela",
+            "murchar, porque a água sai",
+            "ficar igual, sem mudar nada",
+            "virar uma célula vegetal",
+            "perder o núcleo"
+          ],
+          "correct_index": 0,
+          "explanation": "Fora está menos concentrado; a água entra.",
+          "pitfall": "Murchar é no meio salgado."
+        },
+        {
+          "topic": "Transporte ativo",
+          "statement": "O transporte ativo se diferencia da difusão porque:",
+          "options": [
+            "não gasta energia nenhuma",
+            "gasta energia e vai contra a corrente",
+            "só acontece com a água",
+            "acontece só fora da célula",
+            "leva as substâncias para o vazio"
+          ],
+          "correct_index": 1,
+          "explanation": "Usa ATP.",
+          "pitfall": "Difusão é que não gasta."
+        },
+        {
+          "topic": "ATP",
+          "statement": "O ATP é:",
+          "options": [
+            "a película que envolve a célula",
+            "o gás que sai na respiração da célula",
+            "a molécula que entrega energia na célula",
+            "um tipo de sal que conserva a carne",
+            "o nome da parte central da célula"
+          ],
+          "correct_index": 2,
+          "explanation": "É como uma bateria pequena.",
+          "pitfall": "A película é a membrana."
+        },
+        {
+          "topic": "Perfume",
+          "statement": "O cheiro de um perfume que se espalha pela sala é um exemplo de:",
+          "options": [
+            "osmose",
+            "transporte ativo",
+            "fotossíntese",
+            "difusão",
+            "mitose"
+          ],
+          "correct_index": 3,
+          "explanation": "As partículas vão do cheio para o vazio.",
+          "pitfall": "Osmose é só com água e membrana.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Seletiva",
+          "statement": "Dizer que a membrana tem permeabilidade seletiva quer dizer que ela:",
+          "options": [
+            "deixa passar tudo, sem escolher",
+            "não deixa passar nada de fora",
+            "só deixa passar a luz do sol",
+            "muda de cor conforme o que passa",
+            "deixa passar umas coisas e barra outras"
+          ],
+          "correct_index": 4,
+          "explanation": "Ela escolhe.",
+          "pitfall": "Não é um muro nem uma porta aberta.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Três águas",
+          "statement": "Uma célula colocada num líquido com a mesma concentração dela:",
+          "options": [
+            "não muda: a água entra e sai igual",
+            "murcha muito depressa",
+            "incha até estourar",
+            "perde a membrana de vez",
+            "vira um micróbio no líquido"
+          ],
+          "correct_index": 0,
+          "explanation": "Não há diferença para puxar a água.",
+          "pitfall": "Murchar exige meio mais salgado.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Contra a corrente",
+          "statement": "Uma célula junta uma substância onde ela já está mais concentrada. Para isso, ela precisa:",
+          "options": [
+            "esperar a difusão acontecer",
+            "gastar energia, no transporte ativo",
+            "fazer osmose com o sal",
+            "perder a membrana",
+            "dividir o núcleo"
+          ],
+          "correct_index": 1,
+          "explanation": "Ir contra a corrente custa ATP.",
+          "pitfall": "Difusão só vai a favor.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Soro",
+          "statement": "Num hospital, o soro injetado na veia tem a mesma concentração de sal do sangue. Isso evita que as células do sangue:",
+          "options": [
+            "percam o DNA",
+            "façam fotossíntese",
+            "inchem ou murchem pela osmose",
+            "gastem ATP demais com a difusão",
+            "virem bactérias"
+          ],
+          "correct_index": 2,
+          "explanation": "Mesma concentração, a água não muda de lado.",
+          "pitfall": "O problema é a água entrando ou saindo.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Água do mar",
+          "statement": "Beber água do mar piora a sede porque:",
+          "options": [
+            "a água do mar quase não tem água",
+            "o sal entra nas instruções da célula",
+            "a membrana das células deixa de existir",
+            "o sal tira água das células por osmose",
+            "o corpo passa a produzir sal sozinho"
+          ],
+          "correct_index": 3,
+          "explanation": "O meio fica mais salgado, e a água sai das células.",
+          "pitfall": "Não é falta de água no mar.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "organelas",
       "title": "As organelas: as peças de dentro da célula",
       "module": "A célula",
       "summary": "Dentro da célula há peças com trabalhos diferentes, como numa fábrica. Uma faz energia, outra monta proteínas e outra recicla.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=rjH2xzCwNx0",
+        "title": "A célula, as organelas e suas funções",
+        "channel": "Descomplica"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -832,10 +1188,392 @@
       ]
     },
     {
+      "slug": "fotossintese-e-respiracao",
+      "title": "Energia da vida: fotossíntese, respiração e fermentação",
+      "module": "A célula",
+      "summary": "Toda a energia que os seres vivos usam começa na luz do Sol, guardada pelas plantas em açúcar. A lição mostra a fotossíntese, a respiração celular que libera essa energia e a fermentação, que faz o pão crescer e o iogurte.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=VL9-i27spBQ",
+        "title": "Fotossíntese e respiração celular",
+        "channel": "Mais Ciências - Profa Rafaela Lima"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Um pão crescendo",
+          "body": [
+            "A massa de pão com fermento dobra de tamanho em uma hora. Ela está cheia de bolhas de gás.",
+            "Quem faz as bolhas é um ser vivo minúsculo, comendo o açúcar da massa. Ele está tirando energia do alimento, como todos os seres vivos fazem."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A planta guarda a luz em açúcar",
+          "body": [
+            "A fotossíntese acontece no cloroplasto, uma organela verde das células das folhas. A planta pega gás carbônico do ar e água do solo.",
+            "Com a energia da luz, ela junta os dois e fabrica glicose, um açúcar. O que sobra é gás oxigênio, que vai para o ar. A energia da luz fica guardada na glicose."
+          ],
+          "terms": [
+            {
+              "word": "fotossíntese",
+              "meaning": "o processo em que a planta usa a luz para fazer açúcar a partir de gás carbônico e água, soltando gás oxigênio."
+            },
+            {
+              "word": "cloroplasto",
+              "meaning": "a organela verde das células das plantas, onde acontece a fotossíntese."
+            },
+            {
+              "word": "organela",
+              "meaning": "cada uma das partes da célula com uma função própria, como pequenos órgãos."
+            },
+            {
+              "word": "glicose",
+              "meaning": "um açúcar simples, a principal fonte de energia das células."
+            }
+          ],
+          "example": {
+            "label": "A receita da fotossíntese",
+            "lines": [
+              "Entram: gás carbônico, água e luz.",
+              "Saem: glicose e gás oxigênio."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Respirar de verdade é na célula",
+          "body": [
+            "Para usar a energia da glicose, as células a quebram usando oxigênio. Isso é a respiração celular, e acontece na mitocôndria.",
+            "Saem gás carbônico, água e energia, guardada em ATP. Repare: é quase a fotossíntese ao contrário. Plantas também respiram, dia e noite."
+          ],
+          "terms": [
+            {
+              "word": "respiração celular",
+              "meaning": "a quebra da glicose com oxigênio dentro da célula. Ela libera energia, gás carbônico e água."
+            },
+            {
+              "word": "mitocôndria",
+              "meaning": "a organela onde acontece a respiração celular, a usina de energia da célula."
+            },
+            {
+              "word": "ATP",
+              "meaning": "a molécula que guarda e entrega energia dentro da célula."
+            }
+          ],
+          "table": {
+            "label": "Lado a lado",
+            "headers": [
+              "",
+              "Fotossíntese",
+              "Respiração celular"
+            ],
+            "rows": [
+              [
+                "onde",
+                "cloroplasto",
+                "mitocôndria"
+              ],
+              [
+                "entra",
+                "gás carbônico e água",
+                "glicose e oxigênio"
+              ],
+              [
+                "sai",
+                "glicose e oxigênio",
+                "gás carbônico e água"
+              ],
+              [
+                "energia",
+                "guarda a da luz",
+                "libera para a célula"
+              ],
+              [
+                "quem faz",
+                "plantas e algas",
+                "quase todos os seres vivos"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Sem oxigênio: a fermentação",
+          "body": [
+            "Alguns seres vivos tiram energia da glicose sem usar oxigênio. É a fermentação, que rende bem menos energia que a respiração.",
+            "O fermento do pão é um fungo que fermenta o açúcar e solta gás carbônico (as bolhas) e álcool. No iogurte, bactérias fermentam o açúcar do leite e fazem ácido lático, que o deixa azedo e grosso."
+          ],
+          "terms": [
+            {
+              "word": "fermentação",
+              "meaning": "o jeito de tirar energia do açúcar sem oxigênio, feito por alguns fungos e bactérias."
+            }
+          ],
+          "example": {
+            "label": "Fermentação no dia a dia",
+            "lines": [
+              "Pão: o fungo solta gás carbônico, e a massa cresce.",
+              "Vinho e cerveja: o fungo faz álcool.",
+              "Iogurte e coalhada: bactérias fazem ácido lático."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Por que a planta é a base de tudo",
+          "body": [
+            "Quase toda a energia que um ser vivo usa começou como luz do Sol, guardada por uma planta ou alga. O boi comeu o capim; você comeu o boi.",
+            "E quase todo o oxigênio do ar vem da fotossíntese, feita em boa parte pelas algas dos oceanos, e não só pelas florestas."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede o que entra e o que sai da fotossíntese e da respiração, ou dá um exemplo de fermentação. Também cobra que plantas respiram."
+          ],
+          "bullets": [
+            "“São produtos da fotossíntese…”",
+            "“A respiração celular ocorre na organela…”",
+            "“O crescimento da massa de pão se deve…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que planta só faz fotossíntese e não respira. Ela respira o tempo todo.",
+            "Confundir respiração celular com a respiração do pulmão. A celular é a quebra da glicose na célula.",
+            "Dizer que as florestas fazem quase todo o oxigênio. Boa parte vem das algas do mar."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A fotossíntese acontece no cloroplasto. A planta usa luz, gás carbônico e água, faz glicose e solta oxigênio. Na respiração celular, na mitocôndria, a glicose é quebrada com oxigênio e libera energia.",
+            "A fermentação tira energia sem oxigênio: faz o pão crescer, o vinho e o iogurte. Quase toda a energia da vida começou como luz guardada por plantas e algas."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Fotossíntese",
+          "statement": "Na fotossíntese, a planta produz:",
+          "options": [
+            "gás carbônico e água",
+            "álcool e gás carbônico",
+            "ATP e ácido lático",
+            "sal e proteína",
+            "glicose e gás oxigênio"
+          ],
+          "correct_index": 4,
+          "explanation": "Com luz, gás carbônico e água.",
+          "pitfall": "Gás carbônico entra, não sai."
+        },
+        {
+          "topic": "Cloroplasto",
+          "statement": "A fotossíntese acontece no:",
+          "options": [
+            "cloroplasto",
+            "núcleo",
+            "ribossomo",
+            "lisossomo",
+            "pulmão"
+          ],
+          "correct_index": 0,
+          "explanation": "A organela verde.",
+          "pitfall": "A mitocôndria faz a respiração."
+        },
+        {
+          "topic": "Respiração",
+          "statement": "Na respiração celular, a glicose é quebrada com:",
+          "options": [
+            "luz, liberando açúcar",
+            "oxigênio, liberando energia",
+            "sal, liberando água",
+            "álcool, liberando oxigênio",
+            "gás carbônico, liberando glicose"
+          ],
+          "correct_index": 1,
+          "explanation": "Saem gás carbônico, água e ATP.",
+          "pitfall": "Luz é na fotossíntese."
+        },
+        {
+          "topic": "Mitocôndria",
+          "statement": "A organela onde acontece a respiração celular é a:",
+          "options": [
+            "parede celular",
+            "membrana plasmática",
+            "mitocôndria",
+            "célula do pulmão",
+            "vacúolo"
+          ],
+          "correct_index": 2,
+          "explanation": "É a usina de energia.",
+          "pitfall": "O pulmão é órgão, não organela."
+        },
+        {
+          "topic": "Planta respira",
+          "statement": "Sobre as plantas, é correto dizer que:",
+          "options": [
+            "só fazem fotossíntese e nunca respiram",
+            "só respiram à noite e nunca fazem fotossíntese",
+            "não precisam de energia",
+            "fazem fotossíntese e também respiram, dia e noite",
+            "respiram só pelo caule"
+          ],
+          "correct_index": 3,
+          "explanation": "Toda célula viva precisa de energia.",
+          "pitfall": "“Planta não respira” é o erro clássico."
+        },
+        {
+          "topic": "Fermentação",
+          "statement": "A fermentação é o jeito de tirar energia da glicose:",
+          "options": [
+            "usando muita luz",
+            "usando oxigênio e luz",
+            "só dentro do cloroplasto",
+            "só nas células humanas",
+            "sem usar oxigênio"
+          ],
+          "correct_index": 4,
+          "explanation": "Rende menos energia que a respiração.",
+          "pitfall": "Com oxigênio é respiração."
+        },
+        {
+          "topic": "Pão",
+          "statement": "A massa de pão cresce porque o fermento:",
+          "options": [
+            "solta gás carbônico ao fermentar o açúcar",
+            "solta oxigênio dentro da massa",
+            "faz fotossíntese no calor do forno",
+            "absorve a água e incha a massa",
+            "derrete a farinha em bolhas"
+          ],
+          "correct_index": 0,
+          "explanation": "As bolhas são de gás carbônico.",
+          "pitfall": "Não é oxigênio."
+        },
+        {
+          "topic": "Iogurte",
+          "statement": "O iogurte fica azedo porque bactérias fazem, ao fermentar:",
+          "options": [
+            "álcool",
+            "ácido lático",
+            "gás oxigênio",
+            "glicose",
+            "sal"
+          ],
+          "correct_index": 1,
+          "explanation": "O ácido deixa azedo e grosso.",
+          "pitfall": "Álcool é do vinho e da cerveja."
+        },
+        {
+          "topic": "Luz",
+          "statement": "A energia que a planta guarda na glicose vem:",
+          "options": [
+            "do solo",
+            "do gás oxigênio",
+            "da luz do Sol",
+            "do vento",
+            "da água da chuva"
+          ],
+          "correct_index": 2,
+          "explanation": "A fotossíntese guarda a luz.",
+          "pitfall": "A água entra na receita, mas não dá a energia.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Glicose",
+          "statement": "A glicose é:",
+          "options": [
+            "um gás que existe no ar",
+            "uma organela da célula",
+            "um tipo de sal mineral",
+            "um açúcar que dá energia",
+            "uma proteína do músculo"
+          ],
+          "correct_index": 3,
+          "explanation": "É ela que a respiração quebra.",
+          "pitfall": "Não é organela.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Ao contrário",
+          "statement": "Comparando as duas, a respiração celular é quase:",
+          "options": [
+            "a mesma coisa que a fotossíntese",
+            "um tipo de fermentação",
+            "a respiração do pulmão",
+            "a digestão da comida",
+            "a fotossíntese ao contrário"
+          ],
+          "correct_index": 4,
+          "explanation": "O que entra numa sai na outra.",
+          "pitfall": "Não confunda com o pulmão.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Oxigênio do mar",
+          "statement": "Boa parte do oxigênio do ar é produzida:",
+          "options": [
+            "pelas algas dos oceanos",
+            "só pela floresta amazônica",
+            "pela respiração dos animais",
+            "pela fermentação do pão",
+            "pelos vulcões"
+          ],
+          "correct_index": 0,
+          "explanation": "O fitoplâncton faz muita fotossíntese.",
+          "pitfall": "A Amazônia não faz quase todo o oxigênio.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Base da energia",
+          "statement": "Ao comer um bife, a energia que você recebe começou como:",
+          "options": [
+            "energia do próprio boi, criada do nada",
+            "luz do Sol, guardada pelo capim que o boi comeu",
+            "oxigênio do ar que o boi respirou",
+            "sal que o boi tirou do solo",
+            "calor do fogão"
+          ],
+          "correct_index": 1,
+          "explanation": "A energia passa da planta ao boi e a você.",
+          "pitfall": "Energia não é criada do nada.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Fotossíntese e respiração",
+          "statement": "Uma planta num quarto escuro por uma semana tende a:",
+          "options": [
+            "fazer mais fotossíntese no escuro, sem luz",
+            "parar de respirar até a luz voltar",
+            "gastar a glicose: respira, mas não faz fotossíntese",
+            "produzir mais oxigênio do que nunca",
+            "fermentar o açúcar e virar um fungo"
+          ],
+          "correct_index": 2,
+          "explanation": "Sem luz não há fotossíntese, mas a respiração continua.",
+          "pitfall": "Ela não para de respirar.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "divisao-celular",
       "title": "Mitose e meiose: como a célula se divide",
       "module": "A célula",
       "summary": "Uma célula vira duas para o corpo crescer e se consertar (mitose), e forma as células de reprodução com metade das instruções (meiose).",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=p4qTpxtJS4o",
+        "title": "Mitose e meiose em 5 minutos",
+        "channel": "Descomplica"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -1207,6 +1945,11 @@
       "title": "Do DNA à proteína: a receita da vida",
       "module": "Hereditariedade",
       "summary": "O DNA guarda receitas chamadas genes. Cada receita é copiada e lida para montar uma proteína, e as proteínas fazem quase tudo no corpo.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=JbzM3wtWOUU",
+        "title": "Síntese proteica: transcrição e tradução",
+        "channel": "Pandêmicos"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -1635,10 +2378,367 @@
       ]
     },
     {
+      "slug": "biotecnologia",
+      "title": "Biotecnologia: transgênicos, clones e o DNA no tribunal",
+      "module": "Hereditariedade",
+      "summary": "Hoje dá para ler, cortar e trocar pedaços de DNA. A lição mostra como se faz um ser transgênico, o que é um clone, como o teste de DNA identifica uma pessoa e como a tecnologia de genes chegou às vacinas.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=VYC9v9E9-xQ",
+        "title": "Células-tronco, clonagem, transgênicos e teste de DNA",
+        "channel": "Paulo Jubilut"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A insulina da bactéria",
+          "body": [
+            "Quem tem diabetes precisa de insulina. Hoje, boa parte dela é fabricada por bactérias.",
+            "As bactérias não faziam insulina. Alguém pôs nelas a receita humana para isso. Esse tipo de truque é a biotecnologia."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Recortar e colar receitas",
+          "body": [
+            "O DNA guarda as receitas da célula, e cada receita é um gene. Desde os anos 1970, cientistas conseguem recortar um gene de um ser vivo e colar em outro.",
+            "Um ser que recebe gene de outra espécie é um transgênico. A bactéria com o gene humano da insulina é um. O milho que recebeu o gene de uma bactéria para resistir a lagartas também."
+          ],
+          "terms": [
+            {
+              "word": "DNA",
+              "meaning": "a molécula que guarda as instruções de um ser vivo, dentro das células."
+            },
+            {
+              "word": "gene",
+              "meaning": "um trecho do DNA com a receita para fazer uma proteína."
+            },
+            {
+              "word": "transgênico",
+              "meaning": "um ser vivo que recebeu um gene de outra espécie."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Clone: uma cópia genética",
+          "body": [
+            "Um clone é um ser com o mesmo DNA de outro. Em 1996 nasceu a ovelha Dolly, o primeiro mamífero clonado de uma célula adulta.",
+            "Na natureza também há clones: gêmeos idênticos são clones um do outro, e a muda de uma planta feita de um galho é clone da planta-mãe."
+          ],
+          "terms": [
+            {
+              "word": "clone",
+              "meaning": "um ser vivo com o DNA igual ao de outro, como gêmeos idênticos ou a muda feita de um galho."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O DNA no tribunal",
+          "body": [
+            "Fora os gêmeos idênticos, cada pessoa tem um DNA único. Alguns trechos dele variam muito de uma pessoa para outra.",
+            "Comparando esses trechos, um laboratório diz se um fio de cabelo é de um suspeito ou se uma criança é filha de um homem. Metade do DNA vem da mãe e metade do pai, e é isso que o teste confere."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Editar genes e fazer vacinas",
+          "body": [
+            "Uma ferramenta de 2012, chamada CRISPR, deixou mais fácil editar o DNA. É como trocar uma palavra num texto. Em 2023, ela foi aprovada em alguns países para tratar doenças do sangue.",
+            "As vacinas de RNA mensageiro, usadas na pandemia de covid-19, também são biotecnologia. Elas levam às células a receita de um pedaço do vírus, e o corpo aprende a se defender sem pegar a doença."
+          ],
+          "terms": [
+            {
+              "word": "RNA",
+              "meaning": "uma molécula parecida com o DNA, que leva a receita do gene até onde a proteína é feita."
+            }
+          ],
+          "table": {
+            "label": "O que a biotecnologia já faz",
+            "headers": [
+              "Técnica",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "transgenia",
+                "insulina feita por bactéria; milho resistente a lagartas"
+              ],
+              [
+                "clonagem",
+                "a ovelha Dolly; mudas de plantas"
+              ],
+              [
+                "teste de DNA",
+                "exame de paternidade; investigação de crimes"
+              ],
+              [
+                "edição de genes",
+                "tratamento de doenças do sangue"
+              ],
+              [
+                "vacina de RNA",
+                "vacinas contra a covid-19"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "As perguntas que ficam",
+          "body": [
+            "A biotecnologia levanta debates. Há quem se preocupe com o efeito dos transgênicos no ambiente e com o poder de poucas empresas sobre as sementes.",
+            "Há também limites éticos: a clonagem de seres humanos é proibida no Brasil. A ciência diz o que dá para fazer; a sociedade decide o que deve ser feito."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede para identificar um transgênico ou um clone num texto, ou explicar como funciona o teste de paternidade."
+          ],
+          "bullets": [
+            "“Um organismo transgênico é aquele que…”",
+            "“Gêmeos idênticos podem ser considerados…”",
+            "“O teste de paternidade compara…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que todo ser modificado é transgênico. Transgênico recebe gene de OUTRA espécie.",
+            "Pensar que o clone nasce adulto. Ele nasce bebê, como qualquer filhote.",
+            "Dizer que a vacina de RNA muda o DNA da pessoa. Ela leva uma receita temporária, que não entra no DNA."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Transgênico recebe gene de outra espécie, como a bactéria que faz insulina. Clone tem o mesmo DNA de outro, como Dolly e os gêmeos idênticos.",
+            "O teste de DNA compara trechos únicos de cada pessoa. A edição de genes e as vacinas de RNA são biotecnologia recente, e o uso dela é também uma escolha da sociedade."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Transgênico",
+          "statement": "Um ser transgênico é aquele que:",
+          "options": [
+            "foi clonado de uma célula adulta",
+            "nasceu de pais da mesma espécie",
+            "perdeu todo o seu DNA",
+            "recebeu um gene de outra espécie",
+            "foi criado sem nenhum gene"
+          ],
+          "correct_index": 3,
+          "explanation": "A bactéria com gene humano da insulina é um.",
+          "pitfall": "Clone é outra coisa."
+        },
+        {
+          "topic": "Insulina",
+          "statement": "Boa parte da insulina usada por quem tem diabetes hoje é feita por:",
+          "options": [
+            "fábricas de açúcar refinado",
+            "plantas de milho comuns",
+            "pessoas que doam sangue",
+            "vacas sem nenhuma mudança",
+            "bactérias com o gene humano"
+          ],
+          "correct_index": 4,
+          "explanation": "É um exemplo clássico de transgenia.",
+          "pitfall": "Não vem de doadores."
+        },
+        {
+          "topic": "Clone",
+          "statement": "Um clone é um ser:",
+          "options": [
+            "com o mesmo DNA de outro",
+            "com gene de outra espécie",
+            "sem nenhum DNA",
+            "que nasce já adulto",
+            "com metade do DNA de cada pai"
+          ],
+          "correct_index": 0,
+          "explanation": "Dolly foi clonada.",
+          "pitfall": "Metade de cada pai é o filho comum."
+        },
+        {
+          "topic": "Gêmeos",
+          "statement": "Gêmeos idênticos podem ser considerados:",
+          "options": [
+            "transgênicos",
+            "clones naturais um do outro",
+            "seres sem DNA",
+            "de espécies diferentes",
+            "irmãos sem parentesco"
+          ],
+          "correct_index": 1,
+          "explanation": "Têm o mesmo DNA.",
+          "pitfall": "Não receberam gene de outra espécie."
+        },
+        {
+          "topic": "Dolly",
+          "statement": "A ovelha Dolly, de 1996, ficou famosa por ser:",
+          "options": [
+            "o primeiro animal transgênico do mundo",
+            "a primeira ovelha que existiu",
+            "o primeiro mamífero clonado de célula adulta",
+            "um animal criado sem nenhum DNA",
+            "a base das vacinas de RNA"
+          ],
+          "correct_index": 2,
+          "explanation": "Ela era cópia genética de outra ovelha.",
+          "pitfall": "Clone não é transgênico."
+        },
+        {
+          "topic": "Teste de DNA",
+          "statement": "O teste de paternidade funciona porque:",
+          "options": [
+            "todas as pessoas têm o mesmo DNA",
+            "o DNA de cada um muda todo ano",
+            "o filho tem o DNA só da mãe",
+            "metade do DNA do filho vem do pai",
+            "o sangue do pai é igual ao do filho"
+          ],
+          "correct_index": 3,
+          "explanation": "Ele confere a metade paterna.",
+          "pitfall": "O DNA não é igual em todos."
+        },
+        {
+          "topic": "CRISPR",
+          "statement": "A ferramenta CRISPR serve para:",
+          "options": [
+            "clonar ovelhas de forma natural",
+            "medir o açúcar do sangue",
+            "fazer fotossíntese em animais",
+            "contar as células do corpo",
+            "editar trechos do DNA"
+          ],
+          "correct_index": 4,
+          "explanation": "É como trocar uma palavra num texto.",
+          "pitfall": "Não é clonagem."
+        },
+        {
+          "topic": "Vacina de RNA",
+          "statement": "A vacina de RNA mensageiro funciona porque:",
+          "options": [
+            "leva às células a receita de um pedaço do vírus",
+            "muda o DNA da pessoa para sempre",
+            "coloca o vírus inteiro e vivo no corpo",
+            "mata todas as bactérias do corpo",
+            "é feita de ovelhas clonadas"
+          ],
+          "correct_index": 0,
+          "explanation": "O corpo aprende a se defender.",
+          "pitfall": "Ela não altera o DNA."
+        },
+        {
+          "topic": "Muda",
+          "statement": "Uma muda feita de um galho de roseira é:",
+          "options": [
+            "um transgênico",
+            "um clone da planta-mãe",
+            "uma planta sem DNA",
+            "uma espécie nova",
+            "uma semente"
+          ],
+          "correct_index": 1,
+          "explanation": "Tem o mesmo DNA da roseira.",
+          "pitfall": "Ninguém pôs gene de fora.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "DNA único",
+          "statement": "Fora os gêmeos idênticos, o DNA de cada pessoa é:",
+          "options": [
+            "igual ao de todas as outras",
+            "igual ao do vizinho",
+            "único",
+            "o mesmo dos pais, inteiro",
+            "inexistente"
+          ],
+          "correct_index": 2,
+          "explanation": "Por isso o teste identifica alguém.",
+          "pitfall": "O filho tem metade de cada pai.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Milho",
+          "statement": "O milho que recebeu um gene de bactéria para resistir a lagartas é:",
+          "options": [
+            "um clone natural",
+            "uma planta sem gene",
+            "um fungo",
+            "um transgênico",
+            "uma vacina"
+          ],
+          "correct_index": 3,
+          "explanation": "Gene de outra espécie.",
+          "pitfall": "Clone não recebe gene de fora.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Clone adulto",
+          "statement": "Um clone de um cachorro adulto nasce:",
+          "options": [
+            "já adulto, igual ao original",
+            "sem DNA",
+            "com as lembranças do original",
+            "de outra espécie",
+            "filhote, e cresce como qualquer outro"
+          ],
+          "correct_index": 4,
+          "explanation": "Tem o mesmo DNA, não a mesma idade.",
+          "pitfall": "Lembranças não estão no DNA.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Modificado",
+          "statement": "Um tomate obtido por cruzamentos tradicionais entre variedades de tomate NÃO é transgênico porque:",
+          "options": [
+            "não recebeu gene de outra espécie",
+            "foi plantado na terra",
+            "tem DNA de tomate",
+            "é um clone de uma bactéria",
+            "não tem nenhum gene"
+          ],
+          "correct_index": 0,
+          "explanation": "Cruzar variedades da mesma espécie não é transgenia.",
+          "pitfall": "Ser modificado não basta.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Ética",
+          "statement": "Sobre a clonagem humana no Brasil, é correto dizer que:",
+          "options": [
+            "é permitida para qualquer pessoa",
+            "é proibida por lei, por razões éticas",
+            "é obrigatória nos hospitais",
+            "nunca foi discutida no país",
+            "é feita em todas as vacinas"
+          ],
+          "correct_index": 1,
+          "explanation": "A sociedade decide o que deve ser feito.",
+          "pitfall": "Poder fazer não é o mesmo que dever fazer.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "leis-de-mendel",
       "title": "Herança: as leis de Mendel",
       "module": "Hereditariedade",
       "summary": "Cada característica vem de um par de versões do gene, uma da mãe e outra do pai. Uma pode esconder a outra, e o quadro de cruzamento mostra as chances.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=-Vv3USW7iRU",
+        "title": "Genética: leis de Mendel, genótipo e fenótipo",
+        "channel": "Descomplica"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -2045,6 +3145,11 @@
       "title": "Evolução: como as espécies mudam",
       "module": "Hereditariedade",
       "summary": "Os seres vivos de uma espécie são diferentes entre si. Os que sobrevivem melhor deixam mais filhos, e ao longo de muitas gerações a espécie muda.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=KvxeYq4cAwI",
+        "title": "Darwin e Lamarck: evolução",
+        "channel": "Estudar Mais Biologia com Prof. Fontinele"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -2438,10 +3543,365 @@
       ]
     },
     {
+      "slug": "origem-da-vida",
+      "title": "De onde veio a vida: da geração espontânea às primeiras células",
+      "module": "Hereditariedade",
+      "summary": "Por séculos se acreditou que a vida nascia de coisas sem vida, como carne podre. A lição mostra os experimentos que derrubaram essa ideia, a hipótese de como surgiram as primeiras moléculas da vida e quando apareceram as primeiras células.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=VASPBcNFCzs",
+        "title": "Origem da vida",
+        "channel": "Descomplica"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Ratos de uma camisa suja",
+          "body": [
+            "No século XVII, um estudioso escreveu uma receita para criar ratos: uma camisa suja e um pouco de trigo num canto escuro. Em semanas, apareciam ratos.",
+            "Os ratos, claro, vinham de fora atraídos pelo trigo. Mas a ideia de que a vida nasce do nada durou muito tempo."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Duas ideias em disputa",
+          "body": [
+            "A abiogênese, ou geração espontânea, dizia que seres vivos podiam nascer de matéria sem vida. Seriam as larvas da carne podre e os sapos da lama.",
+            "A biogênese diz o contrário: todo ser vivo vem de outro ser vivo. Hoje sabemos que a biogênese está certa para os seres de agora."
+          ],
+          "terms": [
+            {
+              "word": "abiogênese",
+              "meaning": "a ideia antiga de que seres vivos nasceriam espontaneamente de matéria sem vida."
+            },
+            {
+              "word": "biogênese",
+              "meaning": "a ideia, confirmada pelos experimentos, de que todo ser vivo vem de outro ser vivo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os frascos de Redi e de Pasteur",
+          "body": [
+            "Em 1668, Redi pôs carne em frascos. Os abertos ganharam larvas; os cobertos com um pano fino, não. As larvas vinham dos ovos das moscas, que não conseguiam pousar.",
+            "Dois séculos depois, Pasteur ferveu caldo de carne num frasco com o gargalo curvo, como o pescoço de um cisne. O ar entrava, mas os micróbios ficavam presos na curva, e o caldo não estragava."
+          ],
+          "example": {
+            "label": "O frasco de Pasteur",
+            "ordered": true,
+            "lines": [
+              "Ferve o caldo para matar os micróbios.",
+              "Entorta o gargalo em curva, sem fechar.",
+              "O ar entra, mas a poeira com micróbios fica na curva.",
+              "O caldo fica limpo por meses.",
+              "Quebrando o gargalo, o caldo estraga em poucos dias."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Mas e a primeira vida?",
+          "body": [
+            "Se todo ser vivo vem de outro, de onde veio o primeiro? A hipótese mais aceita diz que as moléculas da vida se formaram aos poucos na Terra jovem. Elas teriam surgido de gases e de muita energia, como a dos raios.",
+            "Em 1953, o experimento de Miller pôs gases parecidos com os da Terra primitiva num aparelho com faíscas elétricas. Em dias, apareceram aminoácidos, as peças das proteínas."
+          ],
+          "terms": [
+            {
+              "word": "aminoácido",
+              "meaning": "a pequena molécula que, em fila com outras, forma as proteínas dos seres vivos."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As primeiras células",
+          "body": [
+            "A Terra tem cerca de 4,6 bilhões de anos. Os sinais mais antigos de vida têm cerca de 3,5 bilhões de anos, em rochas formadas por colônias de micróbios.",
+            "Os primeiros seres eram de uma célula só, sem núcleo: procariontes, como as bactérias. Seres com muitas células só apareceram bilhões de anos depois."
+          ],
+          "terms": [
+            {
+              "word": "procarionte",
+              "meaning": "um ser de célula sem núcleo separado, como as bactérias."
+            },
+            {
+              "word": "núcleo (da célula)",
+              "meaning": "a parte da célula que guarda as instruções do ser vivo, separada do resto por uma película."
+            }
+          ],
+          "table": {
+            "label": "A linha do tempo da vida",
+            "headers": [
+              "Quando (aproximado)",
+              "O que aconteceu"
+            ],
+            "rows": [
+              [
+                "4,6 bilhões de anos atrás",
+                "a Terra se forma"
+              ],
+              [
+                "3,5 bilhões de anos atrás",
+                "os primeiros sinais de vida, em micróbios"
+              ],
+              [
+                "cerca de 600 milhões de anos atrás",
+                "seres com muitas células se espalham"
+              ],
+              [
+                "cerca de 300 mil anos atrás",
+                "surge o ser humano moderno"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova descreve um experimento, como o de Redi ou o de Pasteur, e pergunta qual ideia ele derrubou. Também cobra o experimento de Miller."
+          ],
+          "bullets": [
+            "“O experimento de Pasteur contribuiu para refutar…”",
+            "“No experimento de Redi, a gaze servia para…”",
+            "“O experimento de Miller mostrou que…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Trocar abiogênese por biogênese. Abiogênese é a ideia antiga, da vida surgindo do nada.",
+            "Achar que Miller criou vida no laboratório. Ele obteve aminoácidos, não seres vivos.",
+            "Pensar que o frasco de Pasteur era fechado. O gargalo era aberto, e o ar entrava."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A abiogênese dizia que a vida nasce do nada; a biogênese, que vem de outro ser vivo. Redi e Pasteur derrubaram a abiogênese com frascos.",
+            "Para a primeira vida, a hipótese é que moléculas se formaram de gases com energia, como mostrou Miller. Os primeiros seres, há cerca de 3,5 bilhões de anos, eram procariontes."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Abiogênese",
+          "statement": "A abiogênese, ou geração espontânea, dizia que:",
+          "options": [
+            "seres vivos nascem de matéria sem vida",
+            "todo ser vivo vem de outro ser vivo",
+            "a vida chegou de outro planeta",
+            "só as plantas têm vida",
+            "os micróbios não existem"
+          ],
+          "correct_index": 0,
+          "explanation": "Larvas da carne podre, sapos da lama.",
+          "pitfall": "Vir de outro ser vivo é a biogênese."
+        },
+        {
+          "topic": "Biogênese",
+          "statement": "A biogênese afirma que:",
+          "options": [
+            "a vida nasce da carne podre",
+            "todo ser vivo vem de outro ser vivo",
+            "a vida nasce de camisas sujas",
+            "os ratos nascem do trigo",
+            "as larvas nascem do ar"
+          ],
+          "correct_index": 1,
+          "explanation": "É a ideia confirmada pelos experimentos.",
+          "pitfall": "As outras são exemplos de abiogênese."
+        },
+        {
+          "topic": "Redi",
+          "statement": "No experimento de Redi, a carne dos frascos cobertos com pano fino:",
+          "options": [
+            "ganhou mais larvas que a dos abertos",
+            "virou sapo",
+            "não ganhou larvas",
+            "ficou com moscas dentro",
+            "desapareceu"
+          ],
+          "correct_index": 2,
+          "explanation": "As moscas não pousavam para pôr ovos.",
+          "pitfall": "Larvas vêm de ovos."
+        },
+        {
+          "topic": "Pasteur",
+          "statement": "O frasco de Pasteur tinha o gargalo curvo para:",
+          "options": [
+            "fechar o frasco para nada entrar",
+            "esquentar o caldo mais depressa",
+            "deixar as moscas entrarem no caldo",
+            "deixar o ar entrar e prender os micróbios",
+            "impedir a entrada de qualquer ar"
+          ],
+          "correct_index": 3,
+          "explanation": "O ar entrava; a poeira ficava presa.",
+          "pitfall": "O frasco não era fechado."
+        },
+        {
+          "topic": "Refutar",
+          "statement": "Os experimentos de Redi e de Pasteur ajudaram a derrubar a ideia da:",
+          "options": [
+            "biogênese",
+            "evolução",
+            "fotossíntese",
+            "seleção natural",
+            "abiogênese"
+          ],
+          "correct_index": 4,
+          "explanation": "Mostraram que a vida vem de vida.",
+          "pitfall": "Biogênese saiu fortalecida."
+        },
+        {
+          "topic": "Miller",
+          "statement": "No experimento de Miller, de 1953, apareceram:",
+          "options": [
+            "aminoácidos, de gases e faíscas",
+            "seres vivos completos e ativos",
+            "bactérias e fungos vivos",
+            "células inteiras com núcleo",
+            "restos de seres antigos"
+          ],
+          "correct_index": 0,
+          "explanation": "As peças das proteínas.",
+          "pitfall": "Não criou vida."
+        },
+        {
+          "topic": "Primeiros seres",
+          "statement": "Os primeiros seres vivos da Terra eram:",
+          "options": [
+            "animais grandes e com ossos",
+            "de uma célula só, sem núcleo",
+            "plantas com flores",
+            "seres com muitas células",
+            "seres humanos primitivos"
+          ],
+          "correct_index": 1,
+          "explanation": "Procariontes, como as bactérias.",
+          "pitfall": "Muitas células vieram bem depois."
+        },
+        {
+          "topic": "Idade",
+          "statement": "Os sinais mais antigos de vida na Terra têm cerca de:",
+          "options": [
+            "6 mil anos",
+            "65 milhões de anos",
+            "3,5 bilhões de anos",
+            "300 mil anos",
+            "46 bilhões de anos"
+          ],
+          "correct_index": 2,
+          "explanation": "A Terra tem cerca de 4,6 bilhões.",
+          "pitfall": "65 milhões é o fim dos dinossauros."
+        },
+        {
+          "topic": "Aminoácido",
+          "statement": "Os aminoácidos são:",
+          "options": [
+            "células sem núcleo",
+            "gases da Terra antiga",
+            "um tipo de micróbio",
+            "as peças das proteínas",
+            "o mesmo que um gene"
+          ],
+          "correct_index": 3,
+          "explanation": "Em fila, formam proteínas.",
+          "pitfall": "Não são seres vivos.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Procarionte",
+          "statement": "Um ser procarionte tem célula:",
+          "options": [
+            "com vários núcleos",
+            "com núcleo grande",
+            "sem nenhuma película em volta",
+            "de planta",
+            "sem núcleo separado"
+          ],
+          "correct_index": 4,
+          "explanation": "Como as bactérias.",
+          "pitfall": "Com núcleo é outro grupo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Pasteur",
+          "format": "order",
+          "statement": "Coloque na ordem as etapas do experimento de Pasteur.",
+          "options": [
+            "ferve o caldo para matar os micróbios",
+            "entorta o gargalo em curva, sem fechar",
+            "o caldo fica limpo por meses",
+            "quebrando o gargalo, o caldo estraga"
+          ],
+          "explanation": "A quebra do gargalo foi a prova final.",
+          "pitfall": "O frasco nunca foi fechado.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Ratos",
+          "statement": "A receita da camisa suja para criar ratos dava certo porque:",
+          "options": [
+            "os ratos vinham de fora, atrás do trigo",
+            "a camisa suja virava rato com o tempo",
+            "o trigo se transformava em rato",
+            "o escuro do canto criava vida",
+            "ratos nascem da sujeira acumulada"
+          ],
+          "correct_index": 0,
+          "explanation": "Vida vem de vida.",
+          "pitfall": "Essa era a falha da abiogênese.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Miller e vida",
+          "statement": "Um colega diz que Miller “criou vida em laboratório”. O erro dele é que Miller:",
+          "options": [
+            "nunca fez experimento nenhum",
+            "obteve moléculas, não seres vivos",
+            "criou bactérias inteiras",
+            "provou que a abiogênese é certa",
+            "usou carne podre e moscas"
+          ],
+          "correct_index": 1,
+          "explanation": "Aminoácidos não são vivos.",
+          "pitfall": "Moléculas da vida não são a vida.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Por que quebrar",
+          "statement": "Pasteur quebrou o gargalo de um frasco e o caldo estragou. Isso mostrou que:",
+          "options": [
+            "o ar sozinho cria micróbios no caldo",
+            "o caldo fervido cria vida sozinho",
+            "o problema eram os micróbios, não o ar",
+            "o vidro do frasco tinha micróbios",
+            "a curva do gargalo estragava o caldo"
+          ],
+          "correct_index": 2,
+          "explanation": "Sem a curva, a poeira com micróbios caiu no caldo.",
+          "pitfall": "O ar entrava antes também.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "cadeias-alimentares",
       "title": "Cadeias alimentares: quem come quem",
       "module": "Ecologia",
       "summary": "A energia entra pelas plantas, que usam a luz do Sol, e passa de um ser para outro quando um come o outro. A cada passo, boa parte dela se perde.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=X4Xj2wFHtVs",
+        "title": "Como funciona uma cadeia alimentar",
+        "channel": "Toda Matéria"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -2857,10 +4317,375 @@
       ]
     },
     {
+      "slug": "relacoes-entre-seres-vivos",
+      "title": "Relações entre os seres vivos: quem ajuda, quem atrapalha",
+      "module": "Ecologia",
+      "summary": "Nenhum ser vive sozinho. A lição mostra as relações em que os dois lados ganham e as em que um ganha sem atrapalhar. Também mostra as em que alguém perde, como a predação, e as de dentro da mesma espécie.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=CBN9WgeGkTA",
+        "title": "O que são relações ecológicas",
+        "channel": "Descomplica"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A abelha e a flor",
+          "body": [
+            "A abelha pousa na flor, toma o néctar e sai carregando pólen grudado no corpo. Na flor seguinte, o pólen cai e a planta se reproduz.",
+            "As duas ganham. Mas nem toda relação na natureza é assim. Esta lição organiza as principais."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Harmônicas e desarmônicas",
+          "body": [
+            "Quando nenhum dos lados sai prejudicado, a relação é harmônica. Quando pelo menos um perde, é desarmônica.",
+            "As relações também podem ser entre seres da mesma espécie ou de espécies diferentes. Uma espécie é um grupo de seres parecidos que se reproduzem entre si e têm filhos férteis."
+          ],
+          "terms": [
+            {
+              "word": "espécie",
+              "meaning": "um grupo de seres parecidos que se reproduzem entre si e têm filhos férteis."
+            },
+            {
+              "word": "relação harmônica",
+              "meaning": "uma relação em que nenhum dos lados sai prejudicado."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os dois ganham, ou um ganha sem atrapalhar",
+          "body": [
+            "No mutualismo, os dois ganham e às vezes não vivem um sem o outro. O líquen é uma alga e um fungo juntos: a alga faz alimento, e o fungo dá abrigo e água.",
+            "No comensalismo, um ganha e o outro nem percebe. A rêmora gruda no tubarão e come as sobras da caçada dele."
+          ],
+          "terms": [
+            {
+              "word": "mutualismo",
+              "meaning": "relação entre espécies diferentes em que as duas ganham."
+            },
+            {
+              "word": "comensalismo",
+              "meaning": "relação em que uma espécie aproveita as sobras de outra, sem prejudicá-la."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quando alguém perde",
+          "body": [
+            "Na predação, um animal mata e come outro, como a onça e a capivara. No parasitismo, o parasita vive no corpo do hospedeiro e se alimenta dele, em geral sem matar logo. Piolho, carrapato e lombriga são exemplos.",
+            "Na competição, espécies disputam a mesma coisa, como alimento ou lugar. As duas perdem um pouco, porque sobra menos para cada uma."
+          ],
+          "terms": [
+            {
+              "word": "predação",
+              "meaning": "relação em que um animal (o predador) mata e come outro (a presa)."
+            },
+            {
+              "word": "parasitismo",
+              "meaning": "relação em que um ser vive no corpo de outro e se alimenta dele, prejudicando-o."
+            }
+          ],
+          "table": {
+            "label": "Quem ganha e quem perde",
+            "headers": [
+              "Relação",
+              "Um lado",
+              "Outro lado",
+              "Exemplo"
+            ],
+            "rows": [
+              [
+                "mutualismo",
+                "ganha",
+                "ganha",
+                "líquen"
+              ],
+              [
+                "comensalismo",
+                "ganha",
+                "nada",
+                "rêmora e tubarão"
+              ],
+              [
+                "predação",
+                "ganha",
+                "perde",
+                "onça e capivara"
+              ],
+              [
+                "parasitismo",
+                "ganha",
+                "perde",
+                "piolho"
+              ],
+              [
+                "competição",
+                "perde",
+                "perde",
+                "dois animais pelo mesmo alimento"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Dentro da mesma espécie",
+          "body": [
+            "Na sociedade, os indivíduos vivem separados no corpo e dividem o trabalho, como as abelhas e as formigas. Na colônia, eles ficam grudados uns nos outros, como os corais.",
+            "Também há disputa dentro da espécie: dois machos brigando pela mesma fêmea ou pelo mesmo território."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova descreve uma relação e pede o nome dela, ou pergunta quem ganha e quem perde. O mais cobrado é separar mutualismo, comensalismo e parasitismo."
+          ],
+          "bullets": [
+            "“A relação entre a rêmora e o tubarão é…”",
+            "“O líquen é um exemplo de…”",
+            "“Piolhos e lombrigas mantêm com o ser humano uma relação de…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Trocar comensalismo por mutualismo. No comensalismo, só um ganha.",
+            "Achar que parasita sempre mata. Em geral ele vive às custas do hospedeiro por muito tempo.",
+            "Dizer que competição é só entre espécies diferentes. Ela acontece dentro da espécie também."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Harmônica é quando ninguém perde; desarmônica, quando alguém perde. Mutualismo: os dois ganham. Comensalismo: um ganha e o outro nem percebe.",
+            "Predação mata e come; parasitismo vive às custas do outro; competição faz os dois perderem um pouco. Na mesma espécie, há sociedades e colônias."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Mutualismo",
+          "statement": "Uma relação em que as duas espécies ganham é o:",
+          "options": [
+            "parasitismo",
+            "comensalismo",
+            "predação",
+            "mutualismo",
+            "competição"
+          ],
+          "correct_index": 3,
+          "explanation": "O líquen é o exemplo clássico.",
+          "pitfall": "No comensalismo, só um ganha."
+        },
+        {
+          "topic": "Líquen",
+          "statement": "O líquen é formado por:",
+          "options": [
+            "uma planta e um inseto",
+            "duas bactérias iguais",
+            "um peixe e um tubarão",
+            "um vírus e uma célula viva",
+            "uma alga e um fungo juntos"
+          ],
+          "correct_index": 4,
+          "explanation": "A alga faz alimento; o fungo dá abrigo.",
+          "pitfall": "Não é planta com inseto."
+        },
+        {
+          "topic": "Rêmora",
+          "statement": "A rêmora come as sobras do tubarão sem prejudicá-lo. Essa relação é:",
+          "options": [
+            "comensalismo",
+            "mutualismo",
+            "parasitismo",
+            "predação",
+            "competição"
+          ],
+          "correct_index": 0,
+          "explanation": "Um ganha, o outro nem percebe.",
+          "pitfall": "O tubarão não ganha nada."
+        },
+        {
+          "topic": "Parasitismo",
+          "statement": "Piolhos e lombrigas mantêm com o ser humano uma relação de:",
+          "options": [
+            "mutualismo",
+            "parasitismo",
+            "comensalismo",
+            "sociedade",
+            "colônia"
+          ],
+          "correct_index": 1,
+          "explanation": "Vivem às custas do hospedeiro.",
+          "pitfall": "Ninguém ganha com piolho."
+        },
+        {
+          "topic": "Predação",
+          "statement": "Na predação:",
+          "options": [
+            "os dois animais ganham",
+            "um vive dentro do outro sem matar",
+            "um animal mata e come outro",
+            "os dois dividem o trabalho",
+            "um come as sobras do outro"
+          ],
+          "correct_index": 2,
+          "explanation": "Onça e capivara.",
+          "pitfall": "Sobras é comensalismo."
+        },
+        {
+          "topic": "Competição",
+          "statement": "Na competição entre duas espécies pelo mesmo alimento:",
+          "options": [
+            "as duas ganham muito",
+            "só uma existe",
+            "uma vira parasita da outra",
+            "as duas perdem um pouco",
+            "nada muda para ninguém"
+          ],
+          "correct_index": 3,
+          "explanation": "Sobra menos para cada uma.",
+          "pitfall": "Não é relação harmônica."
+        },
+        {
+          "topic": "Sociedade",
+          "statement": "Abelhas e formigas, que dividem o trabalho e vivem separadas no corpo, formam:",
+          "options": [
+            "uma colônia",
+            "um mutualismo",
+            "um parasitismo",
+            "uma predação",
+            "uma sociedade"
+          ],
+          "correct_index": 4,
+          "explanation": "Colônia é com indivíduos grudados.",
+          "pitfall": "Não confunda com colônia."
+        },
+        {
+          "topic": "Colônia",
+          "statement": "Os corais, com indivíduos grudados uns nos outros, formam:",
+          "options": [
+            "uma colônia",
+            "uma sociedade",
+            "um comensalismo",
+            "uma competição",
+            "uma predação"
+          ],
+          "correct_index": 0,
+          "explanation": "Ficam presos entre si.",
+          "pitfall": "Sociedade tem indivíduos soltos."
+        },
+        {
+          "topic": "Abelha e flor",
+          "statement": "Na relação entre a abelha e a flor:",
+          "options": [
+            "só a flor ganha",
+            "as duas ganham",
+            "só a abelha ganha",
+            "as duas perdem",
+            "a abelha mata a flor"
+          ],
+          "correct_index": 1,
+          "explanation": "Néctar para uma, pólen levado para a outra.",
+          "pitfall": "É mutualismo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Harmônica",
+          "statement": "Uma relação harmônica é aquela em que:",
+          "options": [
+            "os dois lados morrem",
+            "um lado sempre mata o outro",
+            "nenhum dos lados sai prejudicado",
+            "só existe uma espécie",
+            "os dois brigam por comida"
+          ],
+          "correct_index": 2,
+          "explanation": "Pode ser mutualismo ou comensalismo.",
+          "pitfall": "Predação não é harmônica.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Carrapato",
+          "statement": "O carrapato no cachorro é um exemplo de:",
+          "options": [
+            "mutualismo",
+            "comensalismo",
+            "sociedade",
+            "parasitismo",
+            "colônia"
+          ],
+          "correct_index": 3,
+          "explanation": "Ele se alimenta do sangue do cachorro.",
+          "pitfall": "O cachorro sai perdendo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Dentro da espécie",
+          "statement": "Dois machos da mesma espécie brigando pelo mesmo território mostram:",
+          "options": [
+            "mutualismo entre os dois",
+            "comensalismo",
+            "parasitismo",
+            "uma colônia",
+            "competição dentro da espécie"
+          ],
+          "correct_index": 4,
+          "explanation": "Competição também é intraespecífica.",
+          "pitfall": "Não é só entre espécies diferentes.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Parasita que mata",
+          "statement": "Para um parasita, matar o hospedeiro logo costuma ser ruim porque:",
+          "options": [
+            "ele perde o lugar onde vive e se alimenta",
+            "ele precisa de um hospedeiro morto",
+            "ele vira predador",
+            "o hospedeiro passa a ajudá-lo",
+            "isso transforma a relação em mutualismo"
+          ],
+          "correct_index": 0,
+          "explanation": "O hospedeiro é a casa e a comida.",
+          "pitfall": "Por isso em geral ele não mata logo.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Comensal e mútuo",
+          "statement": "Uma ave come os carrapatos do boi, e o boi fica livre deles. Essa relação é mais parecida com:",
+          "options": [
+            "comensalismo, porque só a ave ganha",
+            "mutualismo, porque os dois ganham",
+            "parasitismo da ave sobre o boi",
+            "predação do boi sobre a ave",
+            "competição pelo mesmo alimento"
+          ],
+          "correct_index": 1,
+          "explanation": "A ave come e o boi se livra do parasita.",
+          "pitfall": "O boi também ganha.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "ciclos-e-biomas",
       "title": "Os ciclos da natureza e os biomas do Brasil",
       "module": "Ecologia",
       "summary": "Água e carbono andam em círculos entre os seres vivos, o ar e o solo. O Brasil tem seis grandes regiões naturais, cada uma com clima e vida próprios.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=GkAdsxETLUs",
+        "title": "Ciclos biogeoquímicos",
+        "channel": "Descomplica"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -3259,6 +5084,11 @@
       "title": "Digestão e respiração: combustível e oxigênio",
       "module": "Corpo humano e saúde",
       "summary": "A digestão quebra a comida em peças pequenas que o sangue consegue levar. A respiração traz o oxigênio que as células usam para queimar essas peças.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=NItAZJbcLu0",
+        "title": "Sistema digestório",
+        "channel": "Toda Matéria"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -3630,6 +5460,11 @@
       "title": "Circulação, nervos e hormônios",
       "module": "Corpo humano e saúde",
       "summary": "O sangue leva tudo para todas as células. Os nervos dão ordens rápidas, e os hormônios dão ordens lentas e duradouras.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=Z8wt13KSJJM",
+        "title": "Sistema cardiovascular",
+        "channel": "Anatomia e etc. com Natalia Reinecke"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -4034,6 +5869,11 @@
       "title": "Vírus, bactérias e vacinas",
       "module": "Corpo humano e saúde",
       "summary": "Vírus e bactérias são diferentes, e por isso o tratamento é diferente. A vacina ensina o corpo a reconhecer um invasor antes de ele chegar.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=KwJsEnIMPj0",
+        "title": "Microrganismos, vacina e soro",
+        "channel": "Paulo Jubilut"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -4432,6 +6272,11 @@
       "title": "Plantas e a classificação dos seres vivos",
       "module": "A diversidade da vida",
       "summary": "Os cientistas organizam os seres vivos em grupos, do maior ao menor, e dão a cada espécie um nome em duas palavras. As plantas se dividem em quatro grupos.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=L3WMJ2t7i5c",
+        "title": "Os cinco reinos dos seres vivos",
+        "channel": "Toda Matéria"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -4860,6 +6705,1440 @@
           "correct_index": 0,
           "explanation": "Os vasos levam água das raízes ao topo. Sem eles, a planta fica rente ao chão, como o musgo.",
           "pitfall": "Flor e fruto servem à reprodução, não ao transporte de água.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "flor-fruto-e-semente",
+      "title": "Flor, fruto e semente: como as plantas se reproduzem",
+      "module": "A diversidade da vida",
+      "summary": "A flor é o órgão de reprodução das plantas que a têm. A lição mostra as partes da flor e a polinização. Mostra também como o ovário vira fruto, o óvulo vira semente e as sementes se espalham.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=UlNCJd3fJe8",
+        "title": "Reprodução no reino vegetal",
+        "channel": "Canal Futura"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O tomate é fruta",
+          "body": [
+            "Na feira, o tomate fica com os legumes. Para a Biologia, ele é fruto: veio de uma flor e guarda sementes dentro.",
+            "Pepino, abóbora e pimentão também. Entender a flor explica essa confusão."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As partes da flor",
+          "body": [
+            "As pétalas, coloridas, atraem os animais. Por baixo ficam as sépalas, verdes, que protegiam o botão.",
+            "No centro estão as partes da reprodução. Os estames são a parte masculina e produzem o pólen. O pistilo é a parte feminina; na base dele fica o ovário, com os óvulos dentro."
+          ],
+          "terms": [
+            {
+              "word": "estame",
+              "meaning": "a parte masculina da flor, que produz o pólen."
+            },
+            {
+              "word": "pistilo",
+              "meaning": "a parte feminina da flor, com o ovário e os óvulos na base."
+            }
+          ],
+          "table": {
+            "label": "As partes da flor",
+            "headers": [
+              "Parte",
+              "Função"
+            ],
+            "rows": [
+              [
+                "pétalas",
+                "atrair os animais"
+              ],
+              [
+                "sépalas",
+                "proteger o botão"
+              ],
+              [
+                "estames",
+                "produzir o pólen (parte masculina)"
+              ],
+              [
+                "pistilo",
+                "receber o pólen e guardar os óvulos (parte feminina)"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Polinização: o pólen viaja",
+          "body": [
+            "Para a planta se reproduzir, o pólen precisa chegar ao pistilo. Isso é a polinização. Quem leva pode ser o vento, como no milho. Ou pode ser um animal (abelhas, borboletas, beija-flores e morcegos).",
+            "Flores polinizadas por animais costumam ser coloridas e ter néctar. As polinizadas pelo vento são discretas e soltam muito pólen."
+          ],
+          "terms": [
+            {
+              "word": "polinização",
+              "meaning": "o transporte do pólen até a parte feminina da flor, pelo vento ou por animais."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Do ovário ao fruto",
+          "body": [
+            "Depois da polinização, o pólen fecunda o óvulo. Aí o óvulo vira semente, e o ovário em volta cresce e vira o fruto.",
+            "Por isso todo fruto vem de uma flor e guarda sementes, mesmo quando elas são pequenas. A banana do mercado quase não tem semente porque foi selecionada assim por pessoas."
+          ],
+          "example": {
+            "label": "Da flor ao fruto",
+            "ordered": true,
+            "lines": [
+              "O pólen chega ao pistilo, na polinização.",
+              "O pólen fecunda o óvulo.",
+              "O óvulo vira semente.",
+              "O ovário cresce e vira o fruto."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Espalhar as sementes",
+          "body": [
+            "Uma semente que cai debaixo da mãe disputa luz com ela. Por isso as plantas têm jeitos de espalhar as sementes para longe.",
+            "O vento leva as sementes leves, como as do dente-de-leão. Animais comem frutos e soltam as sementes nas fezes, longe dali. A água leva o coco por quilômetros."
+          ],
+          "terms": [
+            {
+              "word": "dispersão",
+              "meaning": "o espalhamento das sementes para longe da planta-mãe, pelo vento, pela água ou por animais."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede as partes da flor, quem vira fruto e quem vira semente, ou o jeito de dispersão de uma semente pela forma dela."
+          ],
+          "bullets": [
+            "“Após a fecundação, o ovário se desenvolve em…”",
+            "“Flores com cores vivas e néctar costumam ser polinizadas por…”",
+            "“Sementes com estruturas leves e plumosas são dispersas por…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Trocar quem vira o quê. O óvulo vira semente; o ovário vira fruto.",
+            "Chamar tomate e pepino de legumes na Biologia. São frutos.",
+            "Achar que toda planta tem flor. Musgos, samambaias e pinheiros não têm."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Estames fazem o pólen; o pistilo guarda os óvulos no ovário. Na polinização, o vento ou um animal leva o pólen até o pistilo.",
+            "Depois da fecundação, o óvulo vira semente e o ovário vira fruto. As sementes se espalham pelo vento, pela água ou pelos animais."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Estame",
+          "statement": "A parte masculina da flor, que produz o pólen, é o:",
+          "options": [
+            "pistilo",
+            "ovário",
+            "estame",
+            "sépala",
+            "óvulo"
+          ],
+          "correct_index": 2,
+          "explanation": "O pistilo é a parte feminina.",
+          "pitfall": "Não troque os dois."
+        },
+        {
+          "topic": "Pistilo",
+          "statement": "O pistilo é:",
+          "options": [
+            "a parte que produz o pólen",
+            "a pétala colorida da flor",
+            "a folha verde em volta da flor",
+            "a parte feminina, com o ovário",
+            "a raiz que segura a planta"
+          ],
+          "correct_index": 3,
+          "explanation": "Ele recebe o pólen.",
+          "pitfall": "Pólen vem do estame."
+        },
+        {
+          "topic": "Pétalas",
+          "statement": "As pétalas coloridas servem principalmente para:",
+          "options": [
+            "fazer fotossíntese",
+            "produzir o pólen",
+            "guardar os óvulos",
+            "segurar a planta no chão",
+            "atrair os animais polinizadores"
+          ],
+          "correct_index": 4,
+          "explanation": "Cor e cheiro chamam os bichos.",
+          "pitfall": "Pólen é do estame."
+        },
+        {
+          "topic": "Polinização",
+          "statement": "A polinização é:",
+          "options": [
+            "o transporte do pólen até o pistilo",
+            "a queda das folhas no outono",
+            "a germinação da semente",
+            "o crescimento da raiz",
+            "a produção de néctar"
+          ],
+          "correct_index": 0,
+          "explanation": "Pelo vento ou por animais.",
+          "pitfall": "Germinar é outra etapa."
+        },
+        {
+          "topic": "Fruto",
+          "statement": "Depois da fecundação, o fruto se forma a partir do:",
+          "options": [
+            "óvulo",
+            "ovário",
+            "estame",
+            "pólen",
+            "caule"
+          ],
+          "correct_index": 1,
+          "explanation": "O ovário cresce em volta das sementes.",
+          "pitfall": "O óvulo vira semente."
+        },
+        {
+          "topic": "Semente",
+          "statement": "A semente se forma a partir do:",
+          "options": [
+            "ovário da flor",
+            "estame da flor",
+            "óvulo fecundado",
+            "pétala caída",
+            "galho da planta"
+          ],
+          "correct_index": 2,
+          "explanation": "O ovário vira o fruto.",
+          "pitfall": "A troca dos dois é a pegadinha clássica."
+        },
+        {
+          "topic": "Tomate",
+          "statement": "Para a Biologia, o tomate é:",
+          "options": [
+            "um legume, porque não é doce",
+            "uma raiz que cresce para cima",
+            "um caule grosso e vermelho",
+            "um fruto: veio de uma flor e tem sementes",
+            "uma folha que ficou redonda"
+          ],
+          "correct_index": 3,
+          "explanation": "Pepino e abóbora também.",
+          "pitfall": "A cozinha classifica diferente."
+        },
+        {
+          "topic": "Dente-de-leão",
+          "statement": "As sementes leves e com pelos do dente-de-leão são espalhadas:",
+          "options": [
+            "pela água do mar",
+            "pelas formigas apenas",
+            "pelo fogo",
+            "por ninguém, caem no pé",
+            "pelo vento"
+          ],
+          "correct_index": 4,
+          "explanation": "São como paraquedas.",
+          "pitfall": "Leves e com pelos indicam vento."
+        },
+        {
+          "topic": "Coco",
+          "statement": "O coco, que boia, costuma ter as sementes espalhadas:",
+          "options": [
+            "pela água",
+            "pelo vento",
+            "pelos morcegos",
+            "pelo fogo",
+            "pelas minhocas"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele viaja quilômetros no mar.",
+          "pitfall": "Coco é pesado demais para o vento.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Néctar",
+          "statement": "Flores coloridas e com néctar costumam ser polinizadas por:",
+          "options": [
+            "vento, que leva o pólen",
+            "animais, como as abelhas",
+            "água da chuva",
+            "fogo das queimadas",
+            "ninguém, elas se polinizam sozinhas"
+          ],
+          "correct_index": 1,
+          "explanation": "O néctar é a recompensa.",
+          "pitfall": "Flor de vento é discreta.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Flor ao fruto",
+          "format": "order",
+          "statement": "Coloque na ordem o caminho da flor até o fruto.",
+          "options": [
+            "o pólen chega ao pistilo",
+            "o pólen fecunda o óvulo",
+            "o óvulo vira semente",
+            "o ovário cresce e vira fruto"
+          ],
+          "explanation": "Polinização, fecundação, semente e fruto.",
+          "pitfall": "A fecundação vem depois da polinização.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Milho",
+          "statement": "O milho tem flores discretas e solta muito pólen. Isso indica polinização pelo:",
+          "options": [
+            "beija-flor",
+            "morcego",
+            "vento",
+            "besouro",
+            "ser humano"
+          ],
+          "correct_index": 2,
+          "explanation": "Sem cor nem néctar, muito pólen.",
+          "pitfall": "Flor de animal é chamativa.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Sem flor",
+          "statement": "Qual destas plantas NÃO tem flor?",
+          "options": [
+            "o tomateiro",
+            "a roseira",
+            "o milho",
+            "a samambaia",
+            "o feijão"
+          ],
+          "correct_index": 3,
+          "explanation": "Samambaias se reproduzem por esporos.",
+          "pitfall": "O milho tem flor, só que discreta.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Dispersão",
+          "statement": "Para uma planta, espalhar as sementes para longe é vantajoso porque:",
+          "options": [
+            "faz a semente virar um fruto maior",
+            "mata as pragas que atacam a planta-mãe",
+            "aumenta o pólen das flores seguintes",
+            "faz a planta-mãe crescer mais rápido",
+            "evita que a planta nova dispute luz com a mãe"
+          ],
+          "correct_index": 4,
+          "explanation": "Debaixo da mãe falta luz.",
+          "pitfall": "Espalhar não muda a mãe.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "fungos-protozoarios-e-algas",
+      "title": "Fungos, protozoários e algas: os seres que quase não se veem",
+      "module": "A diversidade da vida",
+      "summary": "Entre as plantas e os animais há grupos que confundem: o cogumelo não é planta, a ameba é um ser inteiro numa célula, e a alga faz fotossíntese sem ser planta. A lição mostra o que cada um faz, para o bem e para o mal.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=_VnxtJ-fqPg",
+        "title": "Reino Protista: protozoários e algas",
+        "channel": "Mais Ciências - Profa Rafaela Lima"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O pão mofado",
+          "body": [
+            "Esqueça um pão no armário por uma semana. Aparecem manchas verdes e peludas.",
+            "Aquilo é um fungo, vivo, comendo o pão. Fungos, protozoários e algas estão em todo lugar, e a maioria a gente nem vê."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Fungos: os decompositores",
+          "body": [
+            "Fungos não fazem fotossíntese: eles se alimentam de matéria orgânica, muitas vezes de restos de seres mortos. Por isso são grandes decompositores, que devolvem os nutrientes ao solo.",
+            "O cogumelo que se vê é só a parte que faz a reprodução. O resto do fungo é uma rede de fios finos dentro do solo ou do tronco."
+          ],
+          "terms": [
+            {
+              "word": "fotossíntese",
+              "meaning": "o processo em que plantas e algas usam a luz para fazer o próprio alimento."
+            },
+            {
+              "word": "decompositor",
+              "meaning": "o ser vivo que se alimenta de restos mortos e devolve os nutrientes ao ambiente, como fungos e bactérias."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Fungos que ajudam e que atrapalham",
+          "body": [
+            "O fermento do pão é um fungo. Outro fungo deu origem à penicilina, o primeiro antibiótico. Ela foi descoberta por acaso em 1928.",
+            "Mas há fungos que causam doenças, as micoses, como o pé de atleta e a frieira. Alguns cogumelos são venenosos, e não há jeito seguro de saber só olhando."
+          ],
+          "terms": [
+            {
+              "word": "antibiótico",
+              "meaning": "um remédio que mata bactérias ou impede que elas se multipliquem."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Protozoários: um ser numa célula",
+          "body": [
+            "Protozoários são seres de uma célula só, com núcleo, que se mexem e comem como pequenos animais. A ameba e o paramécio vivem na água.",
+            "Alguns causam doenças sérias no Brasil. A malária é transmitida por um mosquito, e a doença de Chagas, pelo inseto barbeiro."
+          ],
+          "terms": [
+            {
+              "word": "núcleo (da célula)",
+              "meaning": "a parte da célula que guarda as instruções do ser vivo, separada do resto por uma película."
+            },
+            {
+              "word": "eucarionte",
+              "meaning": "um ser cujas células têm núcleo (protozoários, fungos, plantas e animais)."
+            },
+            {
+              "word": "procarionte",
+              "meaning": "um ser de célula sem núcleo, como as bactérias."
+            }
+          ],
+          "table": {
+            "label": "Doenças por protozoário",
+            "headers": [
+              "Doença",
+              "Como pega"
+            ],
+            "rows": [
+              [
+                "malária",
+                "picada do mosquito Anopheles"
+              ],
+              [
+                "doença de Chagas",
+                "fezes do barbeiro, que pica e defeca na pele"
+              ],
+              [
+                "giardíase",
+                "água ou alimento contaminado"
+              ],
+              [
+                "leishmaniose",
+                "picada do mosquito-palha"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Algas: fotossíntese sem ser planta",
+          "body": [
+            "As algas fazem fotossíntese como as plantas, mas não têm raiz, caule nem folha de verdade. Há algas de uma célula só, que boiam aos bilhões no mar. E há algas grandes, como as dos costões rochosos.",
+            "As algas do mar fazem uma parte enorme do oxigênio do planeta. Delas também se tiram produtos, como o ágar, usado em laboratório e em doces."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede o grupo de um ser pela descrição, o papel dos fungos na natureza ou como se transmite uma doença por protozoário."
+          ],
+          "bullets": [
+            "“Os fungos são importantes nos ecossistemas por…”",
+            "“A doença de Chagas é transmitida…”",
+            "“As algas diferem das plantas por…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Chamar cogumelo de planta. Fungo não faz fotossíntese.",
+            "Achar que protozoário é bactéria. Ele tem núcleo; a bactéria não.",
+            "Pensar que antibiótico cura doença de protozoário ou de vírus. Ele age contra bactérias."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Fungos não fazem fotossíntese e decompõem restos. Dão o fermento e a penicilina, mas também causam micoses.",
+            "Protozoários são seres de uma célula com núcleo, e alguns causam malária e Chagas. Algas fazem fotossíntese sem ser plantas e produzem muito do oxigênio do planeta."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Fungo planta",
+          "statement": "O cogumelo não é uma planta porque:",
+          "options": [
+            "não tem células",
+            "é um tipo de animal",
+            "não faz fotossíntese",
+            "não se reproduz",
+            "é uma bactéria"
+          ],
+          "correct_index": 2,
+          "explanation": "Fungos se alimentam de matéria orgânica.",
+          "pitfall": "Ele tem células, sim."
+        },
+        {
+          "topic": "Decompositor",
+          "statement": "Os fungos são importantes na natureza porque:",
+          "options": [
+            "fazem a maior parte do oxigênio",
+            "comem os animais ainda vivos",
+            "produzem luz para as florestas",
+            "decompõem restos e devolvem nutrientes",
+            "transmitem a malária aos animais"
+          ],
+          "correct_index": 3,
+          "explanation": "São grandes decompositores.",
+          "pitfall": "O oxigênio vem mais das algas."
+        },
+        {
+          "topic": "Cogumelo",
+          "statement": "O cogumelo que aparece no tronco é:",
+          "options": [
+            "o fungo inteiro, sem mais nada",
+            "a raiz que a árvore pôs para fora",
+            "um tipo de alga de terra",
+            "um protozoário grande",
+            "a parte do fungo que se reproduz"
+          ],
+          "correct_index": 4,
+          "explanation": "O resto é uma rede de fios escondida.",
+          "pitfall": "Não é o fungo inteiro."
+        },
+        {
+          "topic": "Penicilina",
+          "statement": "A penicilina, primeiro antibiótico, veio de:",
+          "options": [
+            "um fungo",
+            "uma alga",
+            "um protozoário",
+            "um vírus",
+            "uma planta com flores"
+          ],
+          "correct_index": 0,
+          "explanation": "O Penicillium.",
+          "pitfall": "Não é planta."
+        },
+        {
+          "topic": "Micose",
+          "statement": "O pé de atleta e a frieira são causados por:",
+          "options": [
+            "protozoários",
+            "fungos",
+            "algas",
+            "vírus",
+            "vermes"
+          ],
+          "correct_index": 1,
+          "explanation": "São micoses.",
+          "pitfall": "Não é protozoário."
+        },
+        {
+          "topic": "Protozoário",
+          "statement": "Os protozoários são:",
+          "options": [
+            "seres de muitas células, como plantas",
+            "células sem núcleo, como bactérias",
+            "seres de uma célula só, com núcleo",
+            "fungos de cogumelo",
+            "algas do mar"
+          ],
+          "correct_index": 2,
+          "explanation": "Ameba e paramécio.",
+          "pitfall": "Sem núcleo seria bactéria."
+        },
+        {
+          "topic": "Chagas",
+          "statement": "A doença de Chagas é transmitida por meio do:",
+          "options": [
+            "mosquito da dengue",
+            "cachorro",
+            "ar que se respira",
+            "inseto barbeiro",
+            "fungo do pão"
+          ],
+          "correct_index": 3,
+          "explanation": "O barbeiro defeca na pele ao picar.",
+          "pitfall": "Dengue é vírus, por outro mosquito."
+        },
+        {
+          "topic": "Algas",
+          "statement": "As algas fazem fotossíntese, mas diferem das plantas porque:",
+          "options": [
+            "não têm células nenhumas",
+            "não precisam de luz nenhuma",
+            "comem outros seres vivos",
+            "são todas um tipo de fungo",
+            "não têm raiz, caule nem folha"
+          ],
+          "correct_index": 4,
+          "explanation": "Muitas são de uma célula só.",
+          "pitfall": "Elas precisam de luz."
+        },
+        {
+          "topic": "Fermento",
+          "statement": "O fermento usado no pão é um:",
+          "options": [
+            "fungo",
+            "protozoário",
+            "alga",
+            "vírus",
+            "animal"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele fermenta o açúcar.",
+          "pitfall": "Não é bactéria nem alga.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Malária",
+          "statement": "A malária é causada por um protozoário e transmitida por:",
+          "options": [
+            "um barbeiro",
+            "um mosquito",
+            "uma alga",
+            "um fungo",
+            "um cachorro"
+          ],
+          "correct_index": 1,
+          "explanation": "O mosquito Anopheles.",
+          "pitfall": "O barbeiro é da doença de Chagas.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Antibiótico",
+          "statement": "Um antibiótico serve para combater:",
+          "options": [
+            "vírus",
+            "protozoários",
+            "bactérias",
+            "fungos de cogumelo",
+            "algas"
+          ],
+          "correct_index": 2,
+          "explanation": "Contra vírus, ele não funciona.",
+          "pitfall": "Gripe não se trata com antibiótico.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Oxigênio do mar",
+          "statement": "Uma parte enorme do oxigênio do planeta é produzida:",
+          "options": [
+            "pelos fungos",
+            "pelos protozoários",
+            "pelos cogumelos",
+            "pelas algas do mar",
+            "pelos vírus"
+          ],
+          "correct_index": 3,
+          "explanation": "Bilhões de algas de uma célula.",
+          "pitfall": "Fungos não fazem fotossíntese.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Cogumelo venenoso",
+          "statement": "Sobre os cogumelos, a atitude mais segura é:",
+          "options": [
+            "comer os que têm cor bonita",
+            "comer só os que nascem em troncos",
+            "comer os que têm cheiro bom",
+            "comer qualquer um, depois de cozido",
+            "não comer cogumelo sem conhecer a espécie"
+          ],
+          "correct_index": 4,
+          "explanation": "Não há jeito seguro de saber só olhando.",
+          "pitfall": "Cozinhar não tira todo veneno.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Ameba e bactéria",
+          "statement": "A diferença principal entre uma ameba e uma bactéria é que:",
+          "options": [
+            "a ameba tem núcleo e a bactéria não",
+            "a bactéria tem núcleo e a ameba não",
+            "as duas têm muitas células",
+            "a ameba faz fotossíntese",
+            "a bactéria é um fungo"
+          ],
+          "correct_index": 0,
+          "explanation": "A ameba é eucarionte.",
+          "pitfall": "Bactéria é procarionte.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "invertebrados",
+      "title": "Os animais sem coluna: dos vermes aos insetos",
+      "module": "A diversidade da vida",
+      "summary": "A grande maioria dos animais não tem coluna vertebral. A lição percorre os principais grupos, das esponjas aos insetos, e mostra o que separa um inseto de uma aranha e por que a minhoca é amiga do agricultor.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=2f1iC-a9Ygg",
+        "title": "Animais invertebrados",
+        "channel": "Com Ciência"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Quase todos sem coluna",
+          "body": [
+            "Pense em animais e logo vêm à cabeça cachorros, peixes e passarinhos. Mas eles são a minoria.",
+            "A imensa maioria das espécies de animais não tem coluna nem ossos por dentro. São os invertebrados, e só os insetos já somam mais de um milhão de espécies conhecidas."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que é um invertebrado",
+          "body": [
+            "Invertebrado é o animal sem coluna vertebral, a fileira de ossos das costas. Alguns são moles, como a minhoca. Outros têm uma carapaça por fora, como o caranguejo.",
+            "Essa carapaça externa se chama exoesqueleto. Ela protege, mas não cresce: o animal precisa trocá-la de tempos em tempos, na muda."
+          ],
+          "terms": [
+            {
+              "word": "invertebrado",
+              "meaning": "um animal sem coluna vertebral, como insetos, vermes e moluscos."
+            },
+            {
+              "word": "exoesqueleto",
+              "meaning": "a carapaça dura do lado de fora do corpo de alguns invertebrados, como insetos e caranguejos."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os grupos, do mais simples ao mais complexo",
+          "body": [
+            "As esponjas são os animais mais simples, sem órgãos. As águas-vivas e os corais têm tentáculos com células que queimam. Os vermes podem ser achatados, como a tênia, ou cilíndricos como a lombriga.",
+            "As minhocas têm o corpo em anéis. Os moluscos, como o caracol e o polvo, têm corpo mole. As estrelas-do-mar e os ouriços vivem só no mar."
+          ],
+          "table": {
+            "label": "Os principais grupos",
+            "headers": [
+              "Grupo",
+              "Marca",
+              "Exemplos"
+            ],
+            "rows": [
+              [
+                "esponjas",
+                "sem órgãos, cheias de poros",
+                "esponja-do-mar"
+              ],
+              [
+                "cnidários",
+                "tentáculos que queimam",
+                "água-viva, coral"
+              ],
+              [
+                "vermes achatados",
+                "corpo em fita",
+                "tênia, esquistossomo"
+              ],
+              [
+                "vermes cilíndricos",
+                "corpo de fio",
+                "lombriga"
+              ],
+              [
+                "anelídeos",
+                "corpo em anéis",
+                "minhoca, sanguessuga"
+              ],
+              [
+                "moluscos",
+                "corpo mole, muitos com concha",
+                "caracol, polvo, mexilhão"
+              ],
+              [
+                "artrópodes",
+                "patas articuladas e exoesqueleto",
+                "insetos, aranhas, caranguejos"
+              ],
+              [
+                "equinodermos",
+                "pele com espinhos, só no mar",
+                "estrela-do-mar, ouriço"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Artrópodes: o maior grupo",
+          "body": [
+            "Artrópodes têm patas com juntas e exoesqueleto. Dentro deles, cada grupo tem um número de patas que ajuda a reconhecer.",
+            "O inseto tem 6 patas, o corpo em três partes e antenas. A aranha e o escorpião, que são aracnídeos, têm 8 patas e nenhuma antena. Por isso a aranha não é inseto.",
+            "O caranguejo e o camarão são crustáceos, e a maioria tem 10 patas. A centopeia é um miriápode, com muitas patas."
+          ],
+          "terms": [
+            {
+              "word": "artrópode",
+              "meaning": "o invertebrado com patas articuladas e exoesqueleto, como insetos, aranhas e caranguejos."
+            }
+          ],
+          "table": {
+            "label": "Como reconhecer",
+            "headers": [
+              "Grupo",
+              "Patas",
+              "Antenas"
+            ],
+            "rows": [
+              [
+                "insetos",
+                "6",
+                "2"
+              ],
+              [
+                "aracnídeos",
+                "8",
+                "0"
+              ],
+              [
+                "crustáceos",
+                "10",
+                "4"
+              ],
+              [
+                "miriápodes",
+                "muitas",
+                "2"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Pequenos e importantes",
+          "body": [
+            "A minhoca cava túneis que deixam entrar ar e água no solo, e suas fezes adubam a terra. As abelhas polinizam boa parte das plantas que viram comida.",
+            "Alguns invertebrados causam doenças. O mosquito transmite dengue e malária, e o caramujo de água doce transmite a esquistossomose."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mostra um animal e pede o grupo, ou pergunta por que a aranha não é inseto. Também cobra o papel da minhoca e das abelhas."
+          ],
+          "bullets": [
+            "“A aranha não é considerada inseto porque…”",
+            "“A presença de exoesqueleto obriga os artrópodes a…”",
+            "“As minhocas são importantes para o solo porque…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Chamar aranha de inseto. Ela tem 8 patas e nenhuma antena.",
+            "Achar que todo molusco tem concha. O polvo não tem.",
+            "Pensar que invertebrados são minoria. São a imensa maioria das espécies de animais."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Invertebrados não têm coluna e são a maioria dos animais. Os grupos vão das esponjas aos equinodermos, passando por vermes, anelídeos e moluscos.",
+            "Os artrópodes têm patas com juntas e exoesqueleto: insetos com 6 patas, aranhas com 8. A minhoca areja o solo e as abelhas polinizam, mas mosquitos transmitem doenças."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Invertebrado",
+          "statement": "Um invertebrado é um animal:",
+          "options": [
+            "sem coluna vertebral",
+            "sem nenhuma célula",
+            "que não se mexe",
+            "que vive só na água",
+            "com ossos por dentro"
+          ],
+          "correct_index": 0,
+          "explanation": "Como insetos, vermes e moluscos.",
+          "pitfall": "Ossos por dentro é de vertebrado."
+        },
+        {
+          "topic": "Maioria",
+          "statement": "Comparando com os vertebrados, os invertebrados são:",
+          "options": [
+            "uma pequena minoria dos animais",
+            "a imensa maioria das espécies de animais",
+            "o mesmo número que os vertebrados",
+            "um grupo que já foi extinto",
+            "só os animais do mar"
+          ],
+          "correct_index": 1,
+          "explanation": "Só os insetos passam de um milhão de espécies.",
+          "pitfall": "Bichos com coluna é que são minoria."
+        },
+        {
+          "topic": "Inseto",
+          "statement": "Um inseto tem:",
+          "options": [
+            "8 patas e nenhuma antena",
+            "muitas patas e o corpo em anéis",
+            "6 patas, corpo em três partes e antenas",
+            "nenhuma pata e corpo mole",
+            "4 patas e coluna vertebral"
+          ],
+          "correct_index": 2,
+          "explanation": "Formiga, abelha, besouro.",
+          "pitfall": "8 patas é aracnídeo."
+        },
+        {
+          "topic": "Aranha",
+          "statement": "A aranha não é inseto porque:",
+          "options": [
+            "não tem exoesqueleto",
+            "vive só na água",
+            "tem coluna vertebral",
+            "tem 8 patas e nenhuma antena",
+            "não tem patas nenhuma"
+          ],
+          "correct_index": 3,
+          "explanation": "É um aracnídeo.",
+          "pitfall": "Ela tem exoesqueleto, sim."
+        },
+        {
+          "topic": "Exoesqueleto",
+          "statement": "Os artrópodes trocam o exoesqueleto de tempos em tempos porque:",
+          "options": [
+            "ele fica sujo e pesado com o tempo",
+            "eles mudam de espécie a cada vez",
+            "ele é feito de osso, que se gasta",
+            "eles perdem as patas e precisam de novas",
+            "a carapaça não cresce com o corpo"
+          ],
+          "correct_index": 4,
+          "explanation": "É a muda.",
+          "pitfall": "Não muda de espécie."
+        },
+        {
+          "topic": "Minhoca",
+          "statement": "A minhoca ajuda o solo porque:",
+          "options": [
+            "cava túneis que deixam o ar entrar",
+            "come as raízes vivas das plantas",
+            "transmite doenças às plantas",
+            "seca a terra para as raízes",
+            "faz fotossíntese embaixo da terra"
+          ],
+          "correct_index": 0,
+          "explanation": "E suas fezes adubam a terra.",
+          "pitfall": "Ela não come raízes vivas."
+        },
+        {
+          "topic": "Polvo",
+          "statement": "O polvo é um molusco, mesmo sem concha, porque:",
+          "options": [
+            "tem 8 braços, como a aranha",
+            "tem corpo mole, como os moluscos",
+            "tem coluna vertebral flexível",
+            "tem o corpo em anéis",
+            "é um tipo de peixe sem escamas"
+          ],
+          "correct_index": 1,
+          "explanation": "Nem todo molusco tem concha.",
+          "pitfall": "8 braços não o tornam aracnídeo."
+        },
+        {
+          "topic": "Esquistossomose",
+          "statement": "A esquistossomose é transmitida por meio de um:",
+          "options": [
+            "mosquito da dengue",
+            "inseto barbeiro",
+            "caramujo de água doce",
+            "cachorro",
+            "pombo"
+          ],
+          "correct_index": 2,
+          "explanation": "O verme passa pelo caramujo antes de chegar às pessoas.",
+          "pitfall": "Barbeiro é da doença de Chagas."
+        },
+        {
+          "topic": "Abelha",
+          "statement": "As abelhas são importantes para a alimentação humana porque:",
+          "options": [
+            "comem as pragas da lavoura",
+            "fazem fotossíntese nas flores",
+            "adubam o solo com o mel",
+            "polinizam plantas que viram comida",
+            "transmitem doenças às pragas"
+          ],
+          "correct_index": 3,
+          "explanation": "Sem polinização, muitas plantas não dão fruto.",
+          "pitfall": "Mel não aduba o solo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Caranguejo",
+          "statement": "O caranguejo, com patas articuladas e carapaça, é um:",
+          "options": [
+            "molusco",
+            "verme",
+            "cnidário",
+            "vertebrado",
+            "artrópode"
+          ],
+          "correct_index": 4,
+          "explanation": "É um crustáceo, dentro dos artrópodes.",
+          "pitfall": "Carapaça não o faz molusco.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Água-viva",
+          "statement": "A água-viva e o coral pertencem ao grupo dos cnidários, que têm:",
+          "options": [
+            "tentáculos com células que queimam",
+            "8 patas e corpo em duas partes",
+            "coluna vertebral flexível",
+            "corpo em anéis, como a minhoca",
+            "conchas duras em espiral"
+          ],
+          "correct_index": 0,
+          "explanation": "É o que faz a água-viva queimar a pele.",
+          "pitfall": "Anéis são das minhocas.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Escorpião",
+          "statement": "O escorpião, com 8 patas e sem antenas, é do mesmo grupo que:",
+          "options": [
+            "a formiga",
+            "a aranha",
+            "o caranguejo",
+            "a minhoca",
+            "a água-viva"
+          ],
+          "correct_index": 1,
+          "explanation": "Os dois são aracnídeos.",
+          "pitfall": "Formiga é inseto, com 6 patas.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Muda e perigo",
+          "statement": "Logo depois da muda, um caranguejo fica mais vulnerável porque:",
+          "options": [
+            "ele perde todas as patas",
+            "fica sem coluna vertebral",
+            "a carapaça nova ainda está mole",
+            "deixa de respirar",
+            "vira outro animal"
+          ],
+          "correct_index": 2,
+          "explanation": "Ele precisa esperar a carapaça endurecer.",
+          "pitfall": "Ele nunca teve coluna.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Contar patas",
+          "statement": "Um bicho da horta tem 6 patas, antenas e corpo em três partes. Ele é:",
+          "options": [
+            "um aracnídeo",
+            "um crustáceo",
+            "um molusco",
+            "um inseto",
+            "um anelídeo"
+          ],
+          "correct_index": 3,
+          "explanation": "Seis patas e antenas definem o inseto.",
+          "pitfall": "Aracnídeo teria 8 patas.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "vertebrados",
+      "title": "Os animais com coluna: peixes, anfíbios, répteis, aves e mamíferos",
+      "module": "A diversidade da vida",
+      "summary": "Os vertebrados têm coluna e esqueleto por dentro, e se dividem em cinco grupos. A lição mostra o que marca cada um, a vida dupla dos anfíbios, quem controla a própria temperatura e por que a baleia e o morcego são mamíferos.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=4NODvYsNpOw",
+        "title": "Vertebrados: características e grupos",
+        "channel": "Biologia com Samuel Cunha"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A baleia que não é peixe",
+          "body": [
+            "A baleia vive no mar e tem forma de peixe. Mesmo assim, não é peixe: ela respira ar e amamenta os filhotes.",
+            "Para saber o grupo de um animal, o lugar onde ele vive engana. O que conta são as marcas do corpo."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Uma coluna e um esqueleto por dentro",
+          "body": [
+            "Vertebrados têm coluna vertebral e um esqueleto interno, que cresce junto com o corpo. São bem menos espécies que os invertebrados, mas incluem os maiores animais.",
+            "Eles se dividem em cinco grupos (peixes, anfíbios, répteis, aves e mamíferos)."
+          ],
+          "terms": [
+            {
+              "word": "vertebrado",
+              "meaning": "um animal com coluna vertebral e esqueleto por dentro do corpo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Peixes e anfíbios",
+          "body": [
+            "Os peixes vivem na água e respiram por brânquias, que tiram o oxigênio dissolvido na água. A maioria tem escamas e nadadeiras.",
+            "Os anfíbios, como o sapo, têm vida dupla. O girino nasce na água e respira por brânquias; depois passa por uma transformação, a metamorfose, e vira adulto com pulmões. A pele precisa ficar úmida, porque também respira por ela."
+          ],
+          "terms": [
+            {
+              "word": "brânquia",
+              "meaning": "o órgão que tira o oxigênio dissolvido na água, usado pelos peixes e pelos girinos."
+            },
+            {
+              "word": "metamorfose",
+              "meaning": "a grande mudança de forma do corpo durante a vida, como o girino virando sapo."
+            }
+          ],
+          "example": {
+            "label": "Do ovo ao sapo",
+            "ordered": true,
+            "lines": [
+              "Os ovos são postos na água.",
+              "Nasce o girino, com cauda e brânquias.",
+              "Crescem as patas, e a cauda some.",
+              "O sapo adulto respira por pulmões e pela pele."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Répteis e aves",
+          "body": [
+            "Os répteis, como o jacaré e a cobra, têm pele seca com escamas. Eles põem ovos com casca, que não secam em terra. Eles dependem do sol para esquentar o corpo.",
+            "As aves têm penas, bico sem dentes e ossos com ar por dentro, que deixam o corpo leve. Todas põem ovos com casca, e elas mantêm a temperatura do corpo sozinhas."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Mamíferos, e a temperatura do corpo",
+          "body": [
+            "Os mamíferos têm pelos e glândulas mamárias, que fazem o leite para os filhotes. A baleia, o morcego e o ser humano são mamíferos. O ornitorrinco é um mamífero que põe ovos.",
+            "Aves e mamíferos mantêm o corpo na mesma temperatura, faça frio ou calor: são endotérmicos. Peixes, anfíbios e répteis dependem do ambiente: são ectotérmicos. Chamar isso de “sangue frio” engana, porque um lagarto ao sol fica bem quente."
+          ],
+          "terms": [
+            {
+              "word": "endotérmico",
+              "meaning": "o animal que mantém a temperatura do corpo sozinho, como aves e mamíferos."
+            },
+            {
+              "word": "ectotérmico",
+              "meaning": "o animal cuja temperatura do corpo depende do ambiente, como peixes, anfíbios e répteis."
+            }
+          ],
+          "table": {
+            "label": "Os cinco grupos",
+            "headers": [
+              "Grupo",
+              "Marca",
+              "Temperatura"
+            ],
+            "rows": [
+              [
+                "peixes",
+                "brânquias, nadadeiras",
+                "do ambiente"
+              ],
+              [
+                "anfíbios",
+                "vida dupla, pele úmida",
+                "do ambiente"
+              ],
+              [
+                "répteis",
+                "pele seca, ovo com casca",
+                "do ambiente"
+              ],
+              [
+                "aves",
+                "penas, bico",
+                "própria"
+              ],
+              [
+                "mamíferos",
+                "pelos, leite",
+                "própria"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá as características de um animal e pede o grupo, ou explica a metamorfose do sapo. Também cobra a diferença entre endotérmico e ectotérmico."
+          ],
+          "bullets": [
+            "“A baleia é classificada como mamífero porque…”",
+            "“Os anfíbios dependem de ambientes úmidos porque…”",
+            "“O ovo com casca permitiu aos répteis…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Chamar baleia e golfinho de peixes. São mamíferos.",
+            "Achar que morcego é ave. Ele tem pelos e amamenta.",
+            "Dizer que todo mamífero tem filhote dentro da barriga. O ornitorrinco põe ovos."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Vertebrados têm coluna e esqueleto por dentro. Peixes respiram por brânquias; anfíbios têm vida dupla e metamorfose; répteis têm pele seca e ovo com casca.",
+            "Aves têm penas, e mamíferos têm pelos e leite. Aves e mamíferos são endotérmicos; peixes, anfíbios e répteis dependem do ambiente."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Vertebrado",
+          "statement": "Os vertebrados têm:",
+          "options": [
+            "só uma carapaça por fora",
+            "corpo mole, sem ossos",
+            "8 patas e antenas",
+            "brânquias a vida toda, todos eles",
+            "coluna e esqueleto por dentro do corpo"
+          ],
+          "correct_index": 4,
+          "explanation": "Por isso o esqueleto cresce junto.",
+          "pitfall": "Carapaça por fora é de artrópode."
+        },
+        {
+          "topic": "Baleia",
+          "statement": "A baleia é um mamífero porque:",
+          "options": [
+            "respira ar e amamenta os filhotes",
+            "vive no mar e tem nadadeiras",
+            "tem escamas e brânquias",
+            "põe ovos com casca na areia",
+            "tem penas escondidas"
+          ],
+          "correct_index": 0,
+          "explanation": "O lugar onde vive engana.",
+          "pitfall": "Viver no mar não a faz peixe."
+        },
+        {
+          "topic": "Peixes",
+          "statement": "Os peixes respiram por meio de:",
+          "options": [
+            "pulmões",
+            "brânquias",
+            "pele seca",
+            "penas",
+            "glândulas mamárias"
+          ],
+          "correct_index": 1,
+          "explanation": "Elas tiram o oxigênio da água.",
+          "pitfall": "Pulmão é de outros grupos."
+        },
+        {
+          "topic": "Anfíbio",
+          "statement": "O sapo tem vida dupla porque:",
+          "options": [
+            "vive só na água a vida toda",
+            "vive só em terra a vida toda",
+            "nasce na água como girino e depois vive em terra",
+            "tem dois corações, um para cada lugar",
+            "põe ovos com casca no meio da terra"
+          ],
+          "correct_index": 2,
+          "explanation": "É a metamorfose.",
+          "pitfall": "Ovo com casca é de réptil e ave."
+        },
+        {
+          "topic": "Pele do sapo",
+          "statement": "Os anfíbios precisam de lugares úmidos porque:",
+          "options": [
+            "não têm pulmões quando adultos",
+            "têm pelos que secam no sol",
+            "comem só plantas que vivem na água",
+            "também respiram pela pele, que deve estar úmida",
+            "têm escamas que racham no seco"
+          ],
+          "correct_index": 3,
+          "explanation": "Pele seca atrapalha a respiração.",
+          "pitfall": "O adulto tem pulmões."
+        },
+        {
+          "topic": "Réptil",
+          "statement": "O ovo com casca permitiu aos répteis:",
+          "options": [
+            "voar mais alto que as aves",
+            "respirar por brânquias em terra",
+            "amamentar os filhotes",
+            "viver só dentro do mar",
+            "pôr ovos em terra sem que eles sequem"
+          ],
+          "correct_index": 4,
+          "explanation": "A casca protege o ovo.",
+          "pitfall": "Amamentar é de mamífero."
+        },
+        {
+          "topic": "Aves",
+          "statement": "Uma marca exclusiva das aves é:",
+          "options": [
+            "ter penas",
+            "pôr ovos",
+            "ter coluna vertebral",
+            "respirar ar",
+            "ter bico com dentes"
+          ],
+          "correct_index": 0,
+          "explanation": "Pôr ovos não é exclusivo delas.",
+          "pitfall": "O bico das aves não tem dentes."
+        },
+        {
+          "topic": "Endotérmico",
+          "statement": "Os animais que mantêm a temperatura do corpo sozinhos são:",
+          "options": [
+            "peixes e anfíbios",
+            "aves e mamíferos",
+            "répteis e peixes",
+            "só os répteis",
+            "todos os vertebrados"
+          ],
+          "correct_index": 1,
+          "explanation": "São os endotérmicos.",
+          "pitfall": "Répteis dependem do sol."
+        },
+        {
+          "topic": "Morcego",
+          "statement": "O morcego é um:",
+          "options": [
+            "ave",
+            "réptil",
+            "mamífero",
+            "inseto",
+            "anfíbio"
+          ],
+          "correct_index": 2,
+          "explanation": "Tem pelos e amamenta.",
+          "pitfall": "Voar não o faz ave.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Mamífero",
+          "statement": "Uma marca dos mamíferos é:",
+          "options": [
+            "ter penas e bico",
+            "respirar só por brânquias",
+            "ter a pele sempre úmida",
+            "ter pelos e produzir leite",
+            "não ter coluna nem ossos"
+          ],
+          "correct_index": 3,
+          "explanation": "As glândulas mamárias fazem o leite.",
+          "pitfall": "Penas são das aves.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Sapo",
+          "format": "order",
+          "statement": "Coloque na ordem a vida de um sapo.",
+          "options": [
+            "os ovos são postos na água",
+            "nasce o girino, com cauda e brânquias",
+            "crescem as patas e a cauda some",
+            "o adulto respira por pulmões e pela pele"
+          ],
+          "explanation": "Da água para a terra.",
+          "pitfall": "O girino vem antes das patas.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Ornitorrinco",
+          "statement": "O ornitorrinco é um mamífero que:",
+          "options": [
+            "tem penas",
+            "respira por brânquias",
+            "não tem pelos",
+            "não produz leite",
+            "põe ovos"
+          ],
+          "correct_index": 4,
+          "explanation": "Mesmo assim, amamenta os filhotes.",
+          "pitfall": "Pôr ovos não o tira dos mamíferos.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Sangue frio",
+          "statement": "Dizer que o lagarto tem “sangue frio” engana porque:",
+          "options": [
+            "ao sol ele fica quente; só depende do ambiente",
+            "o sangue dele é gelado o tempo todo",
+            "ele é endotérmico, como as aves",
+            "ele não tem sangue nas veias",
+            "o sangue dele é azul e frio"
+          ],
+          "correct_index": 0,
+          "explanation": "Ectotérmico depende do ambiente, não é sempre frio.",
+          "pitfall": "Não é endotérmico.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Golfinho",
+          "statement": "Um golfinho e um tubarão têm forma parecida. A diferença de grupo aparece em que:",
+          "options": [
+            "os dois são peixes de mar aberto",
+            "o golfinho respira ar e amamenta",
+            "os dois são mamíferos do mar",
+            "o tubarão amamenta e o golfinho não",
+            "o golfinho tem escamas e brânquias"
+          ],
+          "correct_index": 1,
+          "explanation": "Forma parecida não é parentesco próximo.",
+          "pitfall": "O lugar e a forma enganam.",
           "difficulty": "dificil"
         }
       ]
