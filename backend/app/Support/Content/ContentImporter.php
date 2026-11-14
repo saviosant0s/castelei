@@ -26,6 +26,18 @@ use Illuminate\Support\Facades\DB;
 class ContentImporter
 {
     /**
+     * A versão da REGRA de importação, que entra na marca de "arquivo já
+     * carregado" do ContentSeeder.
+     *
+     * Suba este número só quando uma mudança aqui obrigar a regravar o que já
+     * está no banco (uma coluna derivada nova, por exemplo). Antes a marca
+     * usava o resumo deste arquivo inteiro: qualquer mudança, até num
+     * comentário, fazia o deploy recarregar todas as matérias. Foi assim que
+     * o build da API estourou os 45 minutos do Vercel em novembro de 2026.
+     */
+    public const VERSAO = 1;
+
+    /**
      * As colunas antigas continuam preenchidas (derivadas das etapas) enquanto o app antigo
      * ainda pode estar no ar durante um deploy.
      *
