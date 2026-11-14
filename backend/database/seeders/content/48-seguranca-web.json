@@ -1,0 +1,2797 @@
+{
+  "_leia_me": [
+    "Segurança de aplicações web do Castelei: as falhas mais comuns num app de quem está começando e como evitá-las.",
+    "As lições partem de um caso real, contado de forma genérica (um app de fila de barbearia). Nenhum dado real está aqui: sem endereço, senha ou nome.",
+    "Chaves começadas por _ são comentário e somem na importação."
+  ],
+  "slug": "seguranca-web",
+  "name": "Segurança de aplicações web",
+  "area": "informatica",
+  "visibility": "private",
+  "description": "As falhas que mais aparecem num app feito por quem está começando, e como não cometê-las: login, banco aberto, senhas, XSS, cabeçalhos e dados pessoais, a partir de um caso de verdade.",
+  "lessons": [
+    {
+      "slug": "o-navegador-e-do-usuario",
+      "title": "O navegador é do usuário: a regra de ouro",
+      "module": "Pensar em segurança",
+      "summary": "Tudo o que roda no celular de quem usa o app pode ser lido e mudado por essa pessoa. A lição mostra as duas pontas de um sistema e a regra que vem antes de todas: nunca confie no que chega do navegador.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O app da barbearia",
+          "body": [
+            "Imagine o app de fila de uma barbearia. O cliente abre o link no celular, digita o nome e entra na fila. O dono acompanha tudo num painel.",
+            "Parece simples, e é. Mas esse app esconde uma pergunta que decide se ele é seguro: quem manda no que roda no celular do cliente?"
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As duas pontas",
+          "body": [
+            "Todo sistema na internet tem duas pontas. Uma roda no aparelho de quem usa: a página, com os botões e a lista.",
+            "A outra roda num computador da empresa, longe de todo mundo. É o servidor, e o banco de dados costuma morar do lado dele."
+          ],
+          "terms": [
+            {
+              "word": "front-end",
+              "meaning": "a parte do sistema que roda no aparelho de quem usa: a página, os botões e o que aparece na tela."
+            },
+            {
+              "word": "servidor",
+              "meaning": "o computador da empresa que recebe os pedidos do app, decide o que fazer e responde. Também se diz back-end."
+            },
+            {
+              "word": "JavaScript",
+              "meaning": "a linguagem de programação que roda dentro da página, no navegador."
+            }
+          ],
+          "table": {
+            "label": "As duas pontas",
+            "headers": [
+              "",
+              "Front-end",
+              "Servidor"
+            ],
+            "rows": [
+              [
+                "onde roda",
+                "no celular de quem usa",
+                "num computador da empresa"
+              ],
+              [
+                "quem controla",
+                "quem usa",
+                "quem fez o sistema"
+              ],
+              [
+                "dá para mudar?",
+                "sim, sempre",
+                "só quem tem acesso"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Tudo no navegador pode ser mudado",
+          "body": [
+            "No computador, a tecla F12 abre as ferramentas do navegador. Com elas, qualquer pessoa lê o código da página, muda valores e manda pedidos que o botão nunca mandaria.",
+            "Pense num formulário de papel que o próprio cliente preenche. Ele escreve o que quiser, porque a caneta é dele."
+          ],
+          "terms": [
+            {
+              "word": "ferramentas do navegador",
+              "meaning": "o conjunto de telas, aberto pelo F12, que mostra o código e os dados da página e deixa mudar os dois."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A regra de ouro",
+          "body": [
+            "Daí sai a regra que vem antes de todas: nunca confie no que chega do navegador. Toda decisão que importa é tomada de novo no servidor, onde o usuário não põe a mão.",
+            "Quem pode ver o painel, quanto custa o corte e que horas a pessoa chegou são decisões que importam. Se só o celular decide, quem segura o celular decide."
+          ],
+          "table": {
+            "label": "Onde cada decisão deve morar",
+            "headers": [
+              "Decisão",
+              "Onde decidir"
+            ],
+            "rows": [
+              [
+                "conferir a senha",
+                "servidor"
+              ],
+              [
+                "calcular o preço",
+                "servidor"
+              ],
+              [
+                "marcar a hora de chegada",
+                "servidor"
+              ],
+              [
+                "esconder um botão",
+                "navegador (só conforto)"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Conforto não é tranca",
+          "body": [
+            "Conferir no navegador ainda vale a pena. Avisar “falta o nome” na hora poupa a pessoa de esperar a resposta do servidor. Isso é conforto.",
+            "A tranca é outra coisa. O servidor confere tudo de novo, porque o pedido pode ter vindo de alguém que pulou o navegador."
+          ],
+          "example": {
+            "label": "O caminho de um pedido",
+            "ordered": true,
+            "lines": [
+              "O cliente toca em Entrar na fila.",
+              "O navegador confere se o nome foi digitado (conforto).",
+              "O pedido viaja até o servidor.",
+              "O servidor confere tudo de novo e só então grava (tranca)."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como achar isso no seu código",
+          "body": [
+            "Leia o seu código procurando decisões que só o JavaScript da página toma. Para cada uma, pergunte: e se alguém mudar esse valor antes de mandar?"
+          ],
+          "bullets": [
+            "Um if que libera alguma coisa sem o servidor saber.",
+            "Um preço, uma hora ou uma quantidade calculados na página e gravados como vieram.",
+            "Uma checagem que existe no formulário e não existe no servidor."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Enganos comuns",
+          "body": [
+            "Estes são os enganos de quem está começando:"
+          ],
+          "bullets": [
+            "Achar que o usuário só faz o que os botões deixam. Ele pode mandar qualquer pedido.",
+            "Validar só no navegador e chamar isso de segurança. É só conforto.",
+            "Achar que o código da página é secreto. Qualquer um lê com o F12."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Um sistema tem duas pontas: o front-end roda no aparelho de quem usa, e o servidor roda longe dele. Tudo no front-end pode ser lido e mudado.",
+            "Por isso toda decisão que importa é tomada no servidor. Conferir no navegador é conforto; a tranca de verdade mora do lado de lá."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Front-end",
+          "statement": "O front-end de um app é:",
+          "options": [
+            "a parte que roda no aparelho de quem usa",
+            "a parte que roda num computador da empresa",
+            "o banco onde ficam os dados guardados",
+            "a senha que protege o painel",
+            "o cabo que leva a internet até a casa"
+          ],
+          "correct_index": 0,
+          "explanation": "É a página, com botões e listas.",
+          "pitfall": "O computador da empresa é o servidor."
+        },
+        {
+          "topic": "F12",
+          "statement": "Com as ferramentas do navegador (F12), uma pessoa comum consegue:",
+          "options": [
+            "só olhar a página, sem mexer em nada",
+            "ler o código da página e mudar valores",
+            "entrar direto no servidor da empresa",
+            "desligar a internet do bairro todo",
+            "nada, isso só serve para quem programa"
+          ],
+          "correct_index": 1,
+          "explanation": "O código da página não é segredo.",
+          "pitfall": "Ver e mexer estão ao alcance de qualquer um."
+        },
+        {
+          "topic": "Regra de ouro",
+          "statement": "A regra de ouro da segurança de um app é:",
+          "options": [
+            "confiar no que o botão da página manda",
+            "esconder o código da página com cores",
+            "não confiar no que chega do navegador",
+            "deixar o cliente decidir o próprio preço",
+            "conferir a senha só dentro da página"
+          ],
+          "correct_index": 2,
+          "explanation": "O servidor decide de novo.",
+          "pitfall": "O botão pode ser pulado."
+        },
+        {
+          "topic": "Preço",
+          "statement": "O preço de um serviço deve ser calculado:",
+          "options": [
+            "no celular do cliente",
+            "pelo próprio cliente, por confiança",
+            "no momento em que o cliente digita",
+            "no servidor",
+            "em qualquer lugar, tanto faz"
+          ],
+          "correct_index": 3,
+          "explanation": "O servidor usa a tabela de preços.",
+          "pitfall": "O celular pode ser mexido."
+        },
+        {
+          "topic": "Conforto",
+          "statement": "Conferir no navegador se o nome foi digitado serve para:",
+          "options": [
+            "proteger o banco de qualquer ataque",
+            "dispensar a conferência no servidor",
+            "esconder o nome dos outros clientes",
+            "deixar o app seguro sem mais nada",
+            "avisar o erro mais rápido"
+          ],
+          "correct_index": 4,
+          "explanation": "É conforto para a pessoa.",
+          "pitfall": "Não substitui a conferência no servidor."
+        },
+        {
+          "topic": "Pular o navegador",
+          "statement": "Por que o servidor confere de novo o que o navegador já conferiu?",
+          "options": [
+            "porque o pedido pode vir de quem pulou o navegador",
+            "porque o navegador sempre erra a conta",
+            "porque a lei manda conferir duas vezes",
+            "porque o servidor desconfia da internet",
+            "porque assim o app fica mais bonito"
+          ],
+          "correct_index": 0,
+          "explanation": "Pedidos podem ser montados à mão.",
+          "pitfall": "Não é desconfiança da internet."
+        },
+        {
+          "topic": "Formulário de papel",
+          "statement": "A comparação com o formulário de papel quer mostrar que:",
+          "options": [
+            "o papel é mais seguro que o celular",
+            "quem preenche escreve o que quiser",
+            "o dono preenche tudo pelo cliente",
+            "o formulário não serve para nada",
+            "só o servidor tem caneta para escrever"
+          ],
+          "correct_index": 1,
+          "explanation": "A caneta está na mão do cliente.",
+          "pitfall": "Não diz que o papel é mais seguro."
+        },
+        {
+          "topic": "Esconder botão",
+          "statement": "Esconder um botão na página é:",
+          "options": [
+            "a melhor proteção que existe",
+            "o mesmo que trancar no servidor",
+            "conforto, e não proteção",
+            "proibido em todo app de fila",
+            "um jeito de apagar dados do banco"
+          ],
+          "correct_index": 2,
+          "explanation": "Quem quer acha o botão.",
+          "pitfall": "Não equivale a trancar."
+        }
+      ]
+    },
+    {
+      "slug": "esconder-nao-e-trancar",
+      "title": "Esconder não é trancar: o login que era só um if",
+      "module": "Pensar em segurança",
+      "summary": "Um painel que pede senha pode não proteger nada. A lição mostra o login feito só no navegador e o painel que já vem escondido na página. Mostra também o jeito certo: o servidor só entrega o que a pessoa pode ver.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A porta encostada",
+          "body": [
+            "Uma porta encostada parece fechada. Quem passa na rua acha que está trancada. Mas basta empurrar.",
+            "Muitos painéis de app são assim. Pedem senha e mostram uma tela bonita de login, mas por trás não trancam nada."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O login que é só um if",
+          "body": [
+            "Num app feito às pressas, o login funciona assim: a página busca a senha certa e compara com a digitada. Se bater, ela mostra o painel.",
+            "Tudo isso acontece no navegador. O servidor nem fica sabendo que alguém tentou entrar."
+          ],
+          "terms": [
+            {
+              "word": "if",
+              "meaning": "o “se” da programação: faz uma coisa só quando uma condição é verdadeira."
+            }
+          ],
+          "code": {
+            "label": "login.js (o jeito errado)",
+            "text": "if (digitada !== senhaCerta) {\n  alert(\"Senha incorreta\");\n  return;\n}\npainel.style.display = \"block\";",
+            "notes": [
+              "Compara a senha digitada com a senha certa, que a página buscou do banco.",
+              "Se forem diferentes, mostra o aviso de senha errada.",
+              "E para por aqui, sem mostrar o painel.",
+              "Fecha o bloco do se.",
+              "Se a senha bateu, mostra o painel. Ele já estava na página, só escondido."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Por que isso não tranca",
+          "body": [
+            "Repare que o painel já estava dentro da página. A senha só decidia se ele aparecia ou não.",
+            "Quem abre o F12 troca o display para block e vê tudo sem senha. Pior: para comparar, a página baixou a senha certa, e quem lê o código a encontra."
+          ],
+          "terms": [
+            {
+              "word": "display",
+              "meaning": "a regra de aparência que diz se um pedaço da página aparece (block) ou fica escondido (none)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Segurança por esconder",
+          "body": [
+            "Esse erro tem nome: segurança por obscuridade. É confiar que ninguém vai achar o que está escondido.",
+            "Esconder ajuda pouco e nunca sozinho. Quem ataca tem tempo e ferramentas para procurar."
+          ],
+          "terms": [
+            {
+              "word": "segurança por obscuridade",
+              "meaning": "proteger alguma coisa só escondendo, na esperança de que ninguém a encontre."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O jeito certo",
+          "body": [
+            "O navegador manda a senha ao servidor, e só o servidor confere. Se bater, ele devolve um token, uma espécie de pulseira de festa que prova que a pessoa entrou.",
+            "Os dados do painel só saem do servidor para quem mostra a pulseira. Sem ela, o servidor não entrega nada, e mexer no F12 não adianta."
+          ],
+          "terms": [
+            {
+              "word": "token",
+              "meaning": "uma credencial que o servidor entrega depois do login. O navegador a mostra em cada pedido para provar quem é."
+            }
+          ],
+          "example": {
+            "label": "Login de verdade",
+            "ordered": true,
+            "lines": [
+              "A pessoa digita a senha e envia.",
+              "O servidor confere a senha.",
+              "O servidor devolve um token.",
+              "Cada pedido do painel leva o token, e o servidor confere antes de responder."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A porta dos fundos",
+          "body": [
+            "Às vezes a porta da frente tem senha e a dos fundos não. É o caso de uma página de configurações que abre direto pelo endereço, sem login nenhum.",
+            "Se ela grava no banco, quem acha o endereço troca a senha do painel e tranca o dono do lado de fora. Toda página e todo pedido que mexe em dados precisam da tranca."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como achar isso no seu código",
+          "body": [
+            "Procure os lugares onde a página decide sozinha se mostra alguma coisa."
+          ],
+          "bullets": [
+            "display: none escondendo algo sensível que já veio na página.",
+            "Uma senha ou uma regra de acesso que o JavaScript compara.",
+            "Páginas de administração que abrem direto pelo endereço."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Enganos comuns",
+          "body": [
+            "Estes são os enganos de quem está começando:"
+          ],
+          "bullets": [
+            "Achar que a tela de login protege. Quem protege é o servidor.",
+            "Esconder com display: none e chamar isso de tranca.",
+            "Trancar o painel e esquecer a página de configurações."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Login feito só no navegador não tranca nada: o painel já está na página e a senha precisa vir junto. Esconder não é proteger.",
+            "No jeito certo, o servidor confere a senha e entrega um token. Só quem mostra o token recebe os dados, e toda página que mexe em dados pede a tranca."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Onde confere",
+          "statement": "Num login seguro, quem confere a senha é:",
+          "options": [
+            "o navegador",
+            "a regra de aparência da página",
+            "o próprio usuário",
+            "o servidor",
+            "o roteador da casa"
+          ],
+          "correct_index": 3,
+          "explanation": "Só o servidor é confiável.",
+          "pitfall": "O navegador pode ser mexido."
+        },
+        {
+          "topic": "Display",
+          "statement": "Um painel escondido com display: none:",
+          "options": [
+            "fica apagado para sempre",
+            "só abre com a senha certa",
+            "some até para o dono",
+            "não pode ser mudado por ninguém",
+            "continua na página e aparece pelo F12"
+          ],
+          "correct_index": 4,
+          "explanation": "Esconder não tira da página.",
+          "pitfall": "A senha não o protege."
+        },
+        {
+          "topic": "Obscuridade",
+          "statement": "Segurança por obscuridade é:",
+          "options": [
+            "confiar que ninguém vai achar o escondido",
+            "usar uma senha bem longa e difícil",
+            "trancar tudo do lado do servidor",
+            "apagar os dados antigos do banco",
+            "trocar a senha do painel todo mês"
+          ],
+          "correct_index": 0,
+          "explanation": "É só esconder.",
+          "pitfall": "Trancar no servidor é o contrário."
+        },
+        {
+          "topic": "Token",
+          "statement": "O token funciona como:",
+          "options": [
+            "a senha escrita no canto da tela",
+            "uma pulseira que prova que a pessoa entrou",
+            "um botão escondido dentro do painel",
+            "o endereço do site na barra de cima",
+            "uma cópia do banco inteiro no celular"
+          ],
+          "correct_index": 1,
+          "explanation": "Vai junto em cada pedido.",
+          "pitfall": "Não é a senha."
+        },
+        {
+          "topic": "Senha baixada",
+          "statement": "No login feito só no navegador, um problema a mais é que:",
+          "options": [
+            "a senha fica mais forte com o passar do tempo",
+            "o servidor bloqueia sozinho quem ataca",
+            "a página baixa a senha certa para comparar",
+            "o painel some de vez de dentro da página",
+            "ninguém mais consegue errar a senha"
+          ],
+          "correct_index": 2,
+          "explanation": "Quem lê o código acha a senha.",
+          "pitfall": "O servidor nem participa."
+        },
+        {
+          "topic": "Fundos",
+          "statement": "Uma página de configurações que abre sem login é perigosa porque:",
+          "options": [
+            "ela deixa o site inteiro mais lento",
+            "ela só funciona no computador de mesa",
+            "ela apaga o login da porta da frente",
+            "quem acha o endereço mexe nos dados",
+            "ela não abre de jeito nenhum no celular"
+          ],
+          "correct_index": 3,
+          "explanation": "Falta tranca nos fundos.",
+          "pitfall": "Não é sobre velocidade."
+        },
+        {
+          "topic": "Sem token",
+          "statement": "Se um pedido chega ao servidor sem token, o certo é:",
+          "options": [
+            "entregar, porque o botão estava escondido",
+            "entregar só metade dos dados",
+            "pedir para a página recarregar",
+            "mostrar o painel mesmo assim",
+            "não entregar os dados"
+          ],
+          "correct_index": 4,
+          "explanation": "Sem pulseira, sem dados.",
+          "pitfall": "Esconder botão não é prova."
+        },
+        {
+          "topic": "Onde a tranca",
+          "statement": "Num sistema seguro, a tranca precisa estar:",
+          "options": [
+            "em todo pedido que mexe em dados",
+            "só na tela de login, que é a porta",
+            "só no botão de entrar do painel",
+            "só na página inicial do site",
+            "em lugar nenhum, basta esconder"
+          ],
+          "correct_index": 0,
+          "explanation": "Frente e fundos.",
+          "pitfall": "Só a frente deixa os fundos abertos."
+        }
+      ]
+    },
+    {
+      "slug": "autenticacao-e-autorizacao",
+      "title": "Autenticação e autorização: quem é e o que pode",
+      "module": "Pensar em segurança",
+      "summary": "Duas palavras parecidas fazem trabalhos diferentes. A lição separa provar quem você é de decidir o que você pode, mostra o login anônimo e por que estar logado não dá direito a tudo.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O crachá e a chave",
+          "body": [
+            "Num prédio comercial, a portaria pede o seu documento e entrega um crachá. Isso prova quem você é.",
+            "Mas o crachá não abre todas as salas. Cada porta tem a sua chave, e você só recebe a das salas em que pode entrar."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Duas palavras",
+          "body": [
+            "Autenticação é provar quem você é: digitar a senha, entrar com o Google, mostrar o crachá.",
+            "Autorização é decidir o que essa pessoa pode fazer: ler a fila, mexer no caixa, trocar a senha. Ela vem sempre depois da autenticação."
+          ],
+          "terms": [
+            {
+              "word": "autenticação",
+              "meaning": "provar quem você é para o sistema, com senha, login do Google ou outro jeito."
+            },
+            {
+              "word": "autorização",
+              "meaning": "a regra que decide o que uma pessoa já identificada pode ler e fazer."
+            }
+          ],
+          "table": {
+            "label": "Quem pode o quê no app da barbearia",
+            "headers": [
+              "Ação",
+              "Quem pode"
+            ],
+            "rows": [
+              [
+                "entrar na fila",
+                "qualquer cliente"
+              ],
+              [
+                "ver a fila",
+                "qualquer pessoa"
+              ],
+              [
+                "tirar alguém da fila",
+                "só o dono"
+              ],
+              [
+                "ver o caixa",
+                "só o dono"
+              ],
+              [
+                "trocar a senha do painel",
+                "só o dono"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Estar logado não é poder tudo",
+          "body": [
+            "Um erro comum é conferir só a autenticação. O sistema vê que a pessoa entrou e libera tudo.",
+            "Aí um cliente logado consegue apagar a fila ou ver o caixa. Ele provou quem é, mas ninguém perguntou se ele podia."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Login anônimo",
+          "body": [
+            "E o cliente da fila, que não quer criar conta? Há serviços que dão um login anônimo: uma identidade sem cadastro, criada na hora.",
+            "Ela não diz o nome da pessoa, mas deixa o servidor saber que aquele lugar na fila é dela. Assim o cliente mexe só no próprio lugar, e não no dos outros."
+          ],
+          "terms": [
+            {
+              "word": "login anônimo",
+              "meaning": "uma identidade criada na hora, sem cadastro, que permite ao servidor reconhecer o mesmo aparelho depois."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O menor privilégio",
+          "body": [
+            "A regra que guia a autorização se chama princípio do menor privilégio. Cada um recebe só o mínimo de que precisa.",
+            "O cliente precisa entrar na fila; não precisa ver o caixa. O dono precisa do painel inteiro; o funcionário talvez só de chamar o próximo."
+          ],
+          "terms": [
+            {
+              "word": "princípio do menor privilégio",
+              "meaning": "dar a cada pessoa ou programa só o acesso mínimo de que precisa, e nada além."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como achar isso no seu código",
+          "body": [
+            "Para cada ação do sistema, escreva quem pode fazê-la. Depois confira se o servidor checa isso, e não só se a pessoa entrou."
+          ],
+          "bullets": [
+            "Regras que só perguntam “está logado?”.",
+            "Ações de dono que qualquer conta consegue chamar.",
+            "Cliente que consegue mexer no lugar de outro cliente."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Enganos comuns",
+          "body": [
+            "Estes são os enganos de quem está começando:"
+          ],
+          "bullets": [
+            "Confundir autenticação com autorização.",
+            "Liberar tudo para quem entrou.",
+            "Dar a todo mundo o poder do dono por preguiça de separar."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Autenticação prova quem você é; autorização decide o que você pode. Uma vem depois da outra, e as duas moram no servidor.",
+            "O login anônimo dá identidade sem cadastro. O princípio do menor privilégio manda dar a cada um só o que ele precisa."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Autenticação",
+          "statement": "Autenticação é:",
+          "options": [
+            "decidir o que você pode fazer",
+            "provar quem você é",
+            "apagar os dados de alguém",
+            "escolher a cor do app",
+            "guardar o caixa do dia"
+          ],
+          "correct_index": 1,
+          "explanation": "É o crachá.",
+          "pitfall": "Decidir o que pode é autorização."
+        },
+        {
+          "topic": "Autorização",
+          "statement": "Autorização é:",
+          "options": [
+            "provar quem a pessoa é",
+            "criar uma conta nova",
+            "decidir o que a pessoa pode fazer",
+            "recuperar a senha esquecida",
+            "mostrar a tela de login"
+          ],
+          "correct_index": 2,
+          "explanation": "É a chave de cada sala.",
+          "pitfall": "Provar quem é vem antes."
+        },
+        {
+          "topic": "Ordem",
+          "statement": "Entre as duas, a que vem primeiro é:",
+          "options": [
+            "a autorização",
+            "as duas ao mesmo tempo, sempre",
+            "nenhuma, as duas são opcionais",
+            "a autenticação",
+            "a que o usuário escolher"
+          ],
+          "correct_index": 3,
+          "explanation": "Primeiro se sabe quem é.",
+          "pitfall": "Só depois se decide o que pode."
+        },
+        {
+          "topic": "Logado",
+          "statement": "Um cliente logado consegue ver o caixa do dono. O erro foi:",
+          "options": [
+            "usar uma senha fraca demais no painel",
+            "não ter nenhuma tela de login no app",
+            "guardar o caixa dentro do próprio app",
+            "oferecer login anônimo ao cliente da fila",
+            "conferir quem é e esquecer o que pode"
+          ],
+          "correct_index": 4,
+          "explanation": "Ninguém perguntou se ele podia.",
+          "pitfall": "Ter login não basta."
+        },
+        {
+          "topic": "Anônimo",
+          "statement": "O login anônimo serve para:",
+          "options": [
+            "dar uma identidade sem pedir cadastro",
+            "mostrar o nome completo da pessoa",
+            "dispensar qualquer regra no servidor",
+            "dar ao cliente o poder do dono",
+            "esconder o app das buscas"
+          ],
+          "correct_index": 0,
+          "explanation": "O servidor reconhece o aparelho.",
+          "pitfall": "Não dispensa regras."
+        },
+        {
+          "topic": "Menor privilégio",
+          "statement": "O princípio do menor privilégio diz que:",
+          "options": [
+            "todos recebem o mesmo poder do dono",
+            "cada um recebe só o mínimo de que precisa",
+            "ninguém pode fazer nada no sistema",
+            "quem chegou antes pode mais",
+            "quem paga mais pode tudo"
+          ],
+          "correct_index": 1,
+          "explanation": "Nada além do necessário.",
+          "pitfall": "Poder igual para todos é o contrário."
+        },
+        {
+          "topic": "Fila dos outros",
+          "statement": "Com login anônimo e regras bem feitas, o cliente pode:",
+          "options": [
+            "apagar a fila inteira de uma vez",
+            "trocar o lugar dos outros clientes",
+            "mexer só no próprio lugar da fila",
+            "ver o caixa do dia inteiro",
+            "trocar a senha do painel do dono"
+          ],
+          "correct_index": 2,
+          "explanation": "Cada um no seu.",
+          "pitfall": "Mexer nos outros é falha de autorização."
+        },
+        {
+          "topic": "Crachá",
+          "statement": "Na comparação do prédio, a chave de cada sala representa:",
+          "options": [
+            "a autenticação",
+            "a senha do Wi-Fi",
+            "o endereço do prédio",
+            "a autorização",
+            "o crachá da portaria"
+          ],
+          "correct_index": 3,
+          "explanation": "Diz onde você pode entrar.",
+          "pitfall": "O crachá é a autenticação."
+        }
+      ]
+    },
+    {
+      "slug": "o-banco-que-atende-qualquer-um",
+      "title": "O banco que atende qualquer um: regras de acesso",
+      "module": "O servidor e os segredos",
+      "summary": "Em alguns serviços o app fala direto com o banco de dados, e quem protege são as regras de acesso. A lição mostra uma regra aberta, o que um estranho consegue fazer com ela e como escrever regras que trancam de verdade.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O cofre sem porta",
+          "body": [
+            "Imagine um cofre bonito e pesado no meio da loja. Só que sem porta.",
+            "É assim um banco de dados com as regras abertas. Tudo está guardado, mas qualquer um alcança."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O app fala direto com o banco",
+          "body": [
+            "Em serviços como o Firebase, o app no celular conversa direto com o banco de dados. Não há um servidor seu no meio.",
+            "Por isso o serviço oferece regras de acesso: um arquivo que diz quem pode ler e quem pode escrever cada parte. Essas regras são a única tranca."
+          ],
+          "terms": [
+            {
+              "word": "banco de dados",
+              "meaning": "o lugar onde o sistema guarda as informações, como a fila, o caixa e a configuração."
+            },
+            {
+              "word": "regras de acesso",
+              "meaning": "o arquivo que diz, para cada parte do banco, quem pode ler e quem pode escrever."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A regra que abre tudo",
+          "body": [
+            "Muita gente deixa as regras assim para o app funcionar logo no começo, e esquece. Essas duas linhas dizem que qualquer pessoa na internet lê e escreve tudo."
+          ],
+          "code": {
+            "label": "regras (o jeito errado)",
+            "text": "{\n  \"rules\": {\n    \".read\": true,\n    \".write\": true\n  }\n}",
+            "notes": [
+              "Abre o arquivo de regras.",
+              "Começa a lista de regras do banco inteiro.",
+              "Ler: liberado para todo mundo, com ou sem login.",
+              "Escrever: liberado para todo mundo também.",
+              "Fecha a lista de regras.",
+              "Fecha o arquivo."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que um estranho consegue",
+          "body": [
+            "Com a regra aberta, basta abrir no navegador o endereço do banco terminado em .json. Aparece o banco inteiro, com a fila, o caixa e a configuração.",
+            "Escrever é igual de fácil. Dá para apagar a fila, zerar o caixa e trocar a senha do dono."
+          ],
+          "table": {
+            "label": "Regra aberta: o que vaza",
+            "headers": [
+              "Parte do banco",
+              "O estranho consegue"
+            ],
+            "rows": [
+              [
+                "fila",
+                "ler os nomes, apagar, furar"
+              ],
+              [
+                "caixa",
+                "ler o faturamento, zerar"
+              ],
+              [
+                "configuração",
+                "ler e trocar a senha"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Regras que trancam",
+          "body": [
+            "A expressão auth != null quer dizer “quem fez login”. Num app de verdade, o caixa ainda pede que a pessoa seja o dono, e não qualquer conta."
+          ],
+          "code": {
+            "label": "regras (o jeito certo)",
+            "text": "\"config\": { \".read\": true, \".write\": \"auth != null\" },\n\"fila\": { \".read\": true, \"$id\": { \".write\": \"auth != null\" } },\n\"caixa\": { \".read\": \"auth != null\", \".write\": \"auth != null\" }",
+            "notes": [
+              "A configuração todos leem, mas só quem fez login escreve.",
+              "A fila todos leem; cada lugar só é escrito por quem fez login.",
+              "O caixa só quem fez login lê e escreve."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O teste de quem constrói",
+          "body": [
+            "Antes de publicar, abra o endereço do seu banco num navegador sem login. Se aparecer algum dado que não devia, a regra está aberta.",
+            "O próprio serviço manda e-mail avisando quando as regras estão abertas. Esse aviso não é enfeite."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como achar isso no seu código",
+          "body": [
+            "Abra o arquivo de regras e leia parte por parte."
+          ],
+          "bullets": [
+            "Regras com .read ou .write igual a true.",
+            "Partes do banco sem regra própria, herdando uma aberta.",
+            "Dado de dono que só exige login, e não que seja o dono."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Enganos comuns",
+          "body": [
+            "Estes são os enganos de quem está começando:"
+          ],
+          "bullets": [
+            "Deixar a regra aberta “só para testar” e publicar assim.",
+            "Achar que esconder o endereço do banco protege. Ele está no código da página.",
+            "Exigir só login onde precisava exigir o dono."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Quando o app fala direto com o banco, as regras de acesso são a única tranca. Regra true deixa qualquer pessoa ler e escrever tudo.",
+            "Tranque cada parte só para quem precisa. Teste abrindo o banco sem login."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Escrita aberta",
+          "statement": "Nas regras do banco, \".write\": true quer dizer:",
+          "options": [
+            "só o dono pode escrever",
+            "ninguém pode escrever nada",
+            "só quem pagou pode escrever",
+            "escrever exige uma senha",
+            "qualquer pessoa pode escrever"
+          ],
+          "correct_index": 4,
+          "explanation": "Liberado para todos.",
+          "pitfall": "Só o dono seria uma regra fechada."
+        },
+        {
+          "topic": "Única tranca",
+          "statement": "Quando o app fala direto com o banco, a proteção dos dados depende:",
+          "options": [
+            "das regras de acesso",
+            "da cor dos botões",
+            "do tamanho do app",
+            "da senha do Wi-Fi",
+            "da tela de carregamento"
+          ],
+          "correct_index": 0,
+          "explanation": "Não há servidor no meio.",
+          "pitfall": "Aparência não protege."
+        },
+        {
+          "topic": "Endereço",
+          "statement": "Esconder o endereço do banco protege?",
+          "options": [
+            "sim, se ninguém souber o nome",
+            "não, porque ele está no código da página",
+            "sim, se o app for pago",
+            "só quando o app roda no celular",
+            "só se o banco for pequeno"
+          ],
+          "correct_index": 1,
+          "explanation": "O endereço não é segredo.",
+          "pitfall": "Esconder é obscuridade."
+        },
+        {
+          "topic": "Teste",
+          "statement": "Um jeito simples de testar se o banco está aberto é:",
+          "options": [
+            "perguntar a um cliente se ele viu algo",
+            "mudar a cor do app e ver se ele quebra",
+            "abrir o endereço dele sem login",
+            "desligar o celular e ligar de novo",
+            "trocar o nome do banco por outro nome"
+          ],
+          "correct_index": 2,
+          "explanation": "Sem login, nada sensível pode aparecer.",
+          "pitfall": "Perguntar não testa nada."
+        },
+        {
+          "topic": "Caixa",
+          "statement": "Para o caixa, exigir só “quem fez login” é fraco porque:",
+          "options": [
+            "o login é sempre falso nesse serviço",
+            "o caixa não guarda nada de importante",
+            "o dono nunca precisa fazer login",
+            "qualquer conta leria o caixa",
+            "o caixa é público por força de lei"
+          ],
+          "correct_index": 3,
+          "explanation": "Falta exigir que seja o dono.",
+          "pitfall": "Login sozinho não diz quem pode."
+        },
+        {
+          "topic": "Esquecer",
+          "statement": "Um erro comum com as regras é:",
+          "options": [
+            "usar regras demais em cada parte do banco",
+            "trancar o caixa para os clientes",
+            "pedir login no painel do dono",
+            "ler a documentação do serviço",
+            "deixar aberto para testar e publicar assim"
+          ],
+          "correct_index": 4,
+          "explanation": "O teste vira produção.",
+          "pitfall": "Trancar o caixa está certo."
+        },
+        {
+          "topic": "Estrago",
+          "statement": "Com a escrita aberta, um estranho consegue:",
+          "options": [
+            "apagar a fila e trocar a senha do dono",
+            "só ver a página inicial",
+            "nada sem as ferramentas do navegador",
+            "só ler, nunca mudar",
+            "só trocar a própria foto"
+          ],
+          "correct_index": 0,
+          "explanation": "Escrever é mudar tudo.",
+          "pitfall": "Escrita aberta não é só leitura."
+        },
+        {
+          "topic": "Aviso",
+          "statement": "Quando o serviço avisa por e-mail que as regras estão abertas, o certo é:",
+          "options": [
+            "ignorar, porque é propaganda",
+            "corrigir as regras logo",
+            "apagar o e-mail e seguir",
+            "trocar de celular",
+            "esperar um ataque para agir"
+          ],
+          "correct_index": 1,
+          "explanation": "O aviso é sério.",
+          "pitfall": "Ignorar deixa o cofre sem porta."
+        }
+      ]
+    },
+    {
+      "slug": "onde-mora-o-segredo",
+      "title": "Onde mora o segredo: senhas e chaves",
+      "module": "O servidor e os segredos",
+      "summary": "Uma senha protege pouco se ela vaza. A lição mostra três jeitos de uma senha escapar sem ninguém invadir nada, por que quatro dígitos são pouco e como guardar senha do jeito certo, longe da página.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O papelzinho no monitor",
+          "body": [
+            "Todo escritório tem alguém com a senha num papelzinho colado no monitor. A senha pode ser ótima. Não adianta.",
+            "Em app acontece igual, só que o papelzinho fica na internet. Ninguém precisa adivinhar a senha se ela está escrita onde todos leem."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Três vazamentos",
+          "body": [
+            "Um painel pode vazar a senha por três caminhos ao mesmo tempo. Nenhum deles exige invadir nada: basta ler o que o próprio app mostra."
+          ],
+          "terms": [
+            {
+              "word": "texto puro",
+              "meaning": "a senha guardada exatamente como foi digitada, sem nenhuma proteção."
+            }
+          ],
+          "table": {
+            "label": "Os três caminhos",
+            "headers": [
+              "Caminho",
+              "O que aconteceu"
+            ],
+            "rows": [
+              [
+                "banco aberto",
+                "a senha estava em texto puro e todos liam"
+              ],
+              [
+                "campo preenchido",
+                "a tela de configurações já mostrava a senha no campo"
+              ],
+              [
+                "aviso esquecido",
+                "um alert de teste mostrava a configuração inteira"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O aviso de teste esquecido",
+          "body": [
+            "Quem programa usa avisos assim para enxergar os valores enquanto caça erros. Isso se chama depuração.",
+            "O problema é esquecer o aviso no app publicado. Qualquer clique em Entrar abria uma janela com a senha."
+          ],
+          "terms": [
+            {
+              "word": "depuração",
+              "meaning": "o trabalho de caçar e corrigir erros no programa, muitas vezes mostrando os valores na tela."
+            }
+          ],
+          "code": {
+            "label": "login.js (sobra de teste)",
+            "text": "alert(JSON.stringify(dados));",
+            "notes": [
+              "Mostra numa janela todos os dados que a página buscou, inclusive a senha. Foi posto para testar e ninguém tirou."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Quatro dígitos",
+          "body": [
+            "Uma senha de 4 números tem só 10 mil combinações, de 0000 a 9999. Um programa testa todas em segundos.",
+            "Isso se chama força bruta: tentar todas as senhas possíveis até acertar. A defesa é senha longa e um limite de tentativas no servidor."
+          ],
+          "terms": [
+            {
+              "word": "força bruta",
+              "meaning": "tentar todas as senhas possíveis, uma por uma, até acertar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Guardar senha do jeito certo",
+          "body": [
+            "Senha nunca fica em texto puro. O servidor guarda um hash dela: uma impressão digital que não se desfaz de volta na senha.",
+            "No login, o servidor calcula o hash do que foi digitado e compara. Use funções feitas para senha, como bcrypt ou Argon2, que são lentas de propósito."
+          ],
+          "terms": [
+            {
+              "word": "hash",
+              "meaning": "o resultado de uma conta que transforma um texto numa sequência fixa de caracteres. Não dá para voltar do hash ao texto."
+            }
+          ],
+          "example": {
+            "label": "Login com hash",
+            "ordered": true,
+            "lines": [
+              "No cadastro, o servidor guarda só o hash da senha.",
+              "No login, a pessoa digita a senha.",
+              "O servidor calcula o hash do que foi digitado.",
+              "Se os dois hashes forem iguais, a senha está certa."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Chaves fora do código",
+          "body": [
+            "Além de senhas, sistemas usam chaves secretas para falar com outros serviços. Elas nunca vão no código da página, que todo mundo lê.",
+            "Elas moram em variáveis de ambiente, do lado do servidor. E sempre que der, use um serviço de login pronto em vez de inventar o seu."
+          ],
+          "terms": [
+            {
+              "word": "variável de ambiente",
+              "meaning": "um valor guardado nas configurações do servidor, fora do código, que o programa lê quando roda."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como achar isso no seu código",
+          "body": [
+            "Procure qualquer segredo que chegue ao navegador."
+          ],
+          "bullets": [
+            "Senha ou chave escrita no código da página.",
+            "alert ou console.log mostrando dados sensíveis.",
+            "Campo de senha que já vem preenchido com a senha atual.",
+            "Senha guardada do jeito que foi digitada."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Enganos comuns",
+          "body": [
+            "Estes são os enganos de quem está começando:"
+          ],
+          "bullets": [
+            "Achar que senha forte resolve se ela vaza.",
+            "Esquecer avisos de teste no app publicado.",
+            "Guardar senha em texto puro, mesmo no servidor."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Senha vaza sem invasão quando fica em texto puro, aparece num campo ou num aviso de teste. Quatro dígitos caem por força bruta em segundos.",
+            "Guarde só o hash da senha, com uma função feita para isso. Chaves secretas moram em variáveis de ambiente, nunca na página."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Texto puro",
+          "statement": "Guardar a senha em texto puro significa:",
+          "options": [
+            "guardar só o hash da senha",
+            "não guardar senha nenhuma",
+            "guardar a senha como foi digitada",
+            "guardar a senha num cofre",
+            "trocar a senha todo dia"
+          ],
+          "correct_index": 2,
+          "explanation": "Sem proteção nenhuma.",
+          "pitfall": "Hash é o jeito certo."
+        },
+        {
+          "topic": "Força bruta",
+          "statement": "Força bruta é:",
+          "options": [
+            "adivinhar a senha pelo nome do dono",
+            "quebrar o celular de quem usa",
+            "pedir a senha por e-mail falso",
+            "tentar todas as senhas possíveis até acertar",
+            "usar uma senha muito comprida"
+          ],
+          "correct_index": 3,
+          "explanation": "Uma por uma.",
+          "pitfall": "Pedir por e-mail é outro golpe."
+        },
+        {
+          "topic": "Quatro dígitos",
+          "statement": "Uma senha de 4 números tem quantas combinações?",
+          "options": [
+            "4 mil",
+            "40",
+            "1 milhão",
+            "infinitas",
+            "10 mil"
+          ],
+          "correct_index": 4,
+          "explanation": "De 0000 a 9999.",
+          "pitfall": "Não são infinitas."
+        },
+        {
+          "topic": "Hash",
+          "statement": "Guardar o hash da senha é bom porque:",
+          "options": [
+            "não dá para voltar do hash à senha",
+            "o hash é a própria senha",
+            "o hash pode ser lido por todos",
+            "o hash dispensa o login",
+            "o hash encurta a senha"
+          ],
+          "correct_index": 0,
+          "explanation": "É uma impressão digital.",
+          "pitfall": "O hash não é a senha."
+        },
+        {
+          "topic": "Comparar",
+          "statement": "No login com hash, o servidor:",
+          "options": [
+            "mostra a senha certa no canto da tela",
+            "compara o hash do digitado com o guardado",
+            "manda a senha certa para o navegador",
+            "desfaz o hash e lê a senha guardada",
+            "aceita qualquer senha que for digitada"
+          ],
+          "correct_index": 1,
+          "explanation": "Compara impressões digitais.",
+          "pitfall": "O hash não se desfaz."
+        },
+        {
+          "topic": "Aviso esquecido",
+          "statement": "Um alert de teste que mostra a configuração é perigoso porque:",
+          "options": [
+            "deixa o app inteiro bem mais lento",
+            "apaga os dados guardados no banco",
+            "pode mostrar a senha a qualquer um",
+            "só aparece na tela do próprio dono",
+            "trava o celular de quem está usando"
+          ],
+          "correct_index": 2,
+          "explanation": "Qualquer clique o abre.",
+          "pitfall": "Não aparece só para o dono."
+        },
+        {
+          "topic": "Chave",
+          "statement": "Uma chave secreta de serviço deve ficar:",
+          "options": [
+            "no código da página",
+            "num comentário dentro da página",
+            "na tela de login",
+            "numa variável de ambiente, no servidor",
+            "no nome do arquivo"
+          ],
+          "correct_index": 3,
+          "explanation": "Fora do alcance do navegador.",
+          "pitfall": "O código da página todos leem."
+        },
+        {
+          "topic": "Limite",
+          "statement": "Além de senha longa, uma defesa contra força bruta é:",
+          "options": [
+            "mostrar a senha certa após 3 erros",
+            "deixar o campo de senha maior",
+            "trocar a cor do botão Entrar",
+            "aceitar senha de 4 dígitos",
+            "limitar as tentativas no servidor"
+          ],
+          "correct_index": 4,
+          "explanation": "Poucas tentativas, pouco tempo para testar.",
+          "pitfall": "Mostrar a senha é o oposto."
+        }
+      ]
+    },
+    {
+      "slug": "nunca-confie-na-entrada",
+      "title": "Nunca confie na entrada: hora, preço e validação",
+      "module": "O servidor e os segredos",
+      "summary": "O que o navegador manda pode ser forjado. A lição mostra como furar uma fila mudando o relógio, como falsificar um preço calculado no celular e como validar a entrada nas duas pontas.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Furar a fila pelo relógio",
+          "body": [
+            "Num app de fila, quem chegou primeiro é atendido primeiro. Para saber quem chegou antes, o app guarda a hora de cada um.",
+            "Agora imagine que essa hora vem do relógio do celular do cliente. Quem adianta o relógio fura a fila."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A hora que vem do celular",
+          "body": [
+            "Date.now() lê o relógio do aparelho. Se a fila ordena por esse número, quem manda no relógio manda na fila.",
+            "Dá até para gravar a hora como zero e ficar em primeiro para sempre. O certo é deixar o servidor marcar a hora."
+          ],
+          "terms": [
+            {
+              "word": "timestamp",
+              "meaning": "um número que representa um instante (data e hora). Quem gera o timestamp decide a ordem."
+            }
+          ],
+          "code": {
+            "label": "fila.js",
+            "text": "horario: Date.now()\nhorario: serverTimestamp()",
+            "notes": [
+              "Jeito errado: a hora vem do relógio do celular, que o cliente controla.",
+              "Jeito certo: a hora é marcada pelo servidor no momento de gravar."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O preço que vem do celular",
+          "body": [
+            "Se o app calcula o preço na página e grava o número pronto, o servidor só confia. Dá para gravar zero, ou um valor negativo que abaixa o caixa.",
+            "O certo é o cliente mandar só o serviço escolhido. O servidor olha a tabela de preços e calcula o valor."
+          ],
+          "table": {
+            "label": "Quem decide cada coisa",
+            "headers": [
+              "Dado",
+              "Quem decide"
+            ],
+            "rows": [
+              [
+                "serviço escolhido",
+                "o cliente"
+              ],
+              [
+                "preço",
+                "o servidor, pela tabela"
+              ],
+              [
+                "hora de chegada",
+                "o servidor"
+              ],
+              [
+                "lugar na fila",
+                "o servidor, pela hora"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Validar a entrada",
+          "body": [
+            "Validar é conferir se o que chegou faz sentido. O nome tem tamanho máximo e não pode vir vazio. O serviço precisa ser um da lista.",
+            "Sem isso, entra nome de 10 mil letras que quebra a tela, ou pedido sem serviço nenhum."
+          ],
+          "terms": [
+            {
+              "word": "validar",
+              "meaning": "conferir se um dado que chegou faz sentido antes de aceitá-lo: tamanho, formato e se é obrigatório."
+            }
+          ],
+          "example": {
+            "label": "Regras para o campo nome",
+            "lines": [
+              "obrigatório",
+              "no máximo 40 letras",
+              "sem espaços no começo e no fim",
+              "só texto, nunca código"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Nas duas pontas",
+          "body": [
+            "Valide no navegador para avisar a pessoa na hora. Valide de novo no servidor, ou nas regras do banco, porque é lá que a tranca vale.",
+            "Validação só na página é conforto. Quem pula a página manda o que quiser."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como achar isso no seu código",
+          "body": [
+            "Procure valores que o navegador manda prontos e o servidor aceita sem conferir."
+          ],
+          "bullets": [
+            "Date.now() ou a hora do aparelho gravada como verdade.",
+            "Preço, desconto ou total calculado na página.",
+            "Campo sem limite de tamanho no servidor.",
+            "Pedido aceito sem o campo obrigatório."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Enganos comuns",
+          "body": [
+            "Estes são os enganos de quem está começando:"
+          ],
+          "bullets": [
+            "Ordenar a fila pela hora do celular.",
+            "Confiar no total que a página manda.",
+            "Validar só no formulário."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Hora, preço e quantidade decididos no celular podem ser forjados. O servidor marca a hora e calcula o preço pela tabela.",
+            "Valide a entrada no navegador para ajudar a pessoa e no servidor para proteger o sistema."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Relógio",
+          "statement": "Se a fila ordena pela hora do celular, quem adianta o relógio:",
+          "options": [
+            "fura a fila",
+            "vai para o fim da fila",
+            "é bloqueado na hora",
+            "não muda de lugar",
+            "apaga a fila inteira"
+          ],
+          "correct_index": 0,
+          "explanation": "Quem manda no relógio manda na fila.",
+          "pitfall": "Não há bloqueio sem servidor."
+        },
+        {
+          "topic": "Timestamp",
+          "statement": "Timestamp é:",
+          "options": [
+            "a senha que abre o painel",
+            "um número que marca data e hora",
+            "o nome completo do cliente",
+            "o preço cobrado pelo corte",
+            "um tipo de vírus de celular"
+          ],
+          "correct_index": 1,
+          "explanation": "Marca um instante.",
+          "pitfall": "Não é senha."
+        },
+        {
+          "topic": "Hora certa",
+          "statement": "Quem deve marcar a hora de chegada na fila é:",
+          "options": [
+            "o celular do cliente",
+            "o próprio cliente, digitando",
+            "o servidor",
+            "o dono, de cabeça",
+            "o roteador da barbearia"
+          ],
+          "correct_index": 2,
+          "explanation": "O cliente não alcança o relógio dele.",
+          "pitfall": "O celular pode ser adiantado."
+        },
+        {
+          "topic": "Preço",
+          "statement": "Para não falsificarem o preço, o cliente deve mandar:",
+          "options": [
+            "o preço já calculado",
+            "o preço com desconto aplicado",
+            "o total do dia inteiro",
+            "só o serviço escolhido",
+            "nada, o preço é sorteado"
+          ],
+          "correct_index": 3,
+          "explanation": "O servidor calcula pela tabela.",
+          "pitfall": "Preço pronto é confiar no celular."
+        },
+        {
+          "topic": "Validar",
+          "statement": "Validar a entrada é:",
+          "options": [
+            "aceitar tudo o que chega",
+            "apagar o que o cliente digitou",
+            "mostrar uma propaganda",
+            "trocar a senha do dono",
+            "conferir se o que chegou faz sentido"
+          ],
+          "correct_index": 4,
+          "explanation": "Tamanho, formato, obrigatório.",
+          "pitfall": "Aceitar tudo é o oposto."
+        },
+        {
+          "topic": "Duas pontas",
+          "statement": "A validação que realmente protege é a feita:",
+          "options": [
+            "no servidor ou nas regras do banco",
+            "só no formulário da própria página",
+            "só na aparência dos campos da página",
+            "pelo próprio cliente, por honestidade",
+            "em lugar nenhum, porque não precisa"
+          ],
+          "correct_index": 0,
+          "explanation": "Lá a tranca vale.",
+          "pitfall": "No formulário é conforto."
+        },
+        {
+          "topic": "Nome enorme",
+          "statement": "Um nome de 10 mil letras na fila mostra que faltou:",
+          "options": [
+            "uma senha mais forte",
+            "um limite de tamanho no campo",
+            "um botão maior",
+            "um vídeo de ajuda",
+            "um servidor mais rápido"
+          ],
+          "correct_index": 1,
+          "explanation": "Falta validação.",
+          "pitfall": "Senha não tem relação."
+        },
+        {
+          "topic": "Zero",
+          "statement": "Gravar a hora como zero, num app que ordena pela hora, faz a pessoa:",
+          "options": [
+            "sair da fila",
+            "pagar mais caro",
+            "ficar em primeiro",
+            "ficar invisível",
+            "ir para o último lugar"
+          ],
+          "correct_index": 2,
+          "explanation": "Zero é o menor instante possível.",
+          "pitfall": "Ela não vai para o fim."
+        }
+      ]
+    },
+    {
+      "slug": "xss-quando-o-nome-vira-codigo",
+      "title": "XSS: quando o nome vira código",
+      "module": "Ataques pela página",
+      "summary": "Um campo de nome pode virar uma porta para rodar código na tela de outra pessoa. A lição mostra a diferença entre dois jeitos de pôr texto na página, por que o ataque chega ao dono e como impedir.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O nome que vira comando",
+          "body": [
+            "No app de fila, o cliente digita o nome e ele aparece na lista de todos. Agora imagine que alguém digita, em vez de um nome, um pedaço de código.",
+            "Se a página não tomar cuidado, ela não mostra o código. Ela roda o código, no celular de cada pessoa que abrir a fila."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Dois jeitos de pôr texto na página",
+          "body": [
+            "Para pôr um texto na página, o JavaScript tem dois jeitos. O innerHTML lê o texto como HTML e obedece às etiquetas que estiverem nele.",
+            "O textContent põe o texto como texto, letra por letra, sem interpretar nada."
+          ],
+          "terms": [
+            {
+              "word": "HTML",
+              "meaning": "a linguagem de etiquetas que monta a página. Por exemplo, a etiqueta <b> deixa o texto em negrito."
+            },
+            {
+              "word": "innerHTML",
+              "meaning": "o jeito de pôr texto na página que lê esse texto como HTML e obedece às etiquetas dele."
+            },
+            {
+              "word": "textContent",
+              "meaning": "o jeito de pôr texto na página que o mostra como texto puro, sem interpretar etiqueta nenhuma."
+            }
+          ],
+          "code": {
+            "label": "lista.js",
+            "text": "item.innerHTML = cliente.nome;\nitem.textContent = cliente.nome;",
+            "notes": [
+              "Jeito errado: se o nome tiver etiquetas de HTML, a página obedece a elas.",
+              "Jeito certo: o nome aparece como texto, mesmo que tenha os sinais < e >."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Um teste inofensivo",
+          "body": [
+            "Digite como nome <b>Ana</b>. Com textContent, aparece na tela exatamente isso, com os sinais. Com innerHTML, aparece Ana em negrito.",
+            "Se a etiqueta de negrito funcionou, outras também funcionam. Inclusive etiquetas que carregam um comando escondido."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O ataque chega ao dono",
+          "body": [
+            "Isso se chama XSS. Como o nome fica salvo no banco, o código roda para todo mundo que abre a lista: é o XSS armazenado.",
+            "O pior lugar para isso rodar é o painel do dono, que tem poder de mexer em tudo. O código que entrou pelo nome herda esse poder."
+          ],
+          "terms": [
+            {
+              "word": "XSS",
+              "meaning": "ataque em que alguém consegue rodar o próprio código na página que outra pessoa está vendo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O tamanho do estrago",
+          "body": [
+            "Com o código rodando no painel do dono, o atacante pode mostrar uma tela falsa pedindo um Pix. Pode mudar valores do caixa ou apagar a fila.",
+            "Tudo parece vir do próprio app, porque vem mesmo. Por isso o XSS é tão perigoso."
+          ],
+          "table": {
+            "label": "Onde o código roda",
+            "headers": [
+              "Onde roda",
+              "O que consegue"
+            ],
+            "rows": [
+              [
+                "no celular de um cliente",
+                "mostrar coisas falsas para ele"
+              ],
+              [
+                "no painel do dono",
+                "tudo o que o dono pode fazer"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Como impedir",
+          "body": [
+            "Texto que vem do usuário vai com textContent. Se precisar montar HTML, troque os sinais perigosos (como < e >) pelos códigos que só desenham o sinal.",
+            "Bibliotecas como React já fazem essa troca sozinhas. O perigo volta quando alguém usa a saída de emergência delas para pôr HTML cru na página."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como achar isso no seu código",
+          "body": [
+            "Procure todo lugar onde um texto que veio do usuário vira parte da página."
+          ],
+          "bullets": [
+            "innerHTML recebendo qualquer coisa que o usuário digitou.",
+            "Texto do banco colado dentro de HTML com +.",
+            "Campos que um usuário escreve e outro lê, como nome, recado e comunicado."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Enganos comuns",
+          "body": [
+            "Estes são os enganos de quem está começando:"
+          ],
+          "bullets": [
+            "Achar que só o campo de busca é perigoso. Todo texto do usuário é.",
+            "Proteger a lista pública e esquecer a lista do painel.",
+            "Achar que, por ser um app pequeno, ninguém vai tentar."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "XSS é fazer a página de outra pessoa rodar o seu código. innerHTML com texto do usuário abre a porta; textContent fecha.",
+            "No XSS armazenado o código fica no banco e roda para todos, inclusive para o dono, com todo o poder dele."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "XSS",
+          "statement": "XSS é:",
+          "options": [
+            "roubar fisicamente o celular de alguém",
+            "descobrir a senha testando todas as combinações",
+            "derrubar o servidor com milhares de pedidos",
+            "rodar o próprio código na página que outra pessoa vê",
+            "copiar o app inteiro de outra empresa"
+          ],
+          "correct_index": 3,
+          "explanation": "Código alheio na sua tela.",
+          "pitfall": "Testar senhas é outro ataque."
+        },
+        {
+          "topic": "innerHTML",
+          "statement": "Pôr o nome do cliente com innerHTML é perigoso porque:",
+          "options": [
+            "deixa o nome em letras bem pequenas",
+            "apaga o nome guardado no banco",
+            "só funciona no computador de mesa",
+            "esconde o nome do dono da lista",
+            "a página obedece às etiquetas do nome"
+          ],
+          "correct_index": 4,
+          "explanation": "Ela interpreta HTML.",
+          "pitfall": "Não é sobre tamanho de letra."
+        },
+        {
+          "topic": "textContent",
+          "statement": "Para mostrar um texto que o usuário digitou, o mais seguro é:",
+          "options": [
+            "textContent",
+            "innerHTML",
+            "alert",
+            "display: none",
+            "Date.now()"
+          ],
+          "correct_index": 0,
+          "explanation": "Mostra como texto.",
+          "pitfall": "innerHTML interpreta."
+        },
+        {
+          "topic": "Negrito",
+          "statement": "Digitar <b>Ana</b> e o nome aparecer em negrito indica que:",
+          "options": [
+            "a página está protegida contra ataques",
+            "a página interpreta o HTML do usuário",
+            "o nome foi apagado do banco",
+            "o banco está trancado para estranhos",
+            "o usuário digitou o nome errado"
+          ],
+          "correct_index": 1,
+          "explanation": "Se o negrito pegou, outras etiquetas pegam.",
+          "pitfall": "Não é sinal de segurança."
+        },
+        {
+          "topic": "Armazenado",
+          "statement": "No XSS armazenado, o código:",
+          "options": [
+            "roda uma vez só, no celular de quem digitou",
+            "some sozinho quando a página recarrega",
+            "fica salvo e roda para quem abre a página",
+            "só roda dentro do servidor da empresa",
+            "não chega a nenhuma outra pessoa"
+          ],
+          "correct_index": 2,
+          "explanation": "Está no banco.",
+          "pitfall": "Não roda só uma vez."
+        },
+        {
+          "topic": "Dono",
+          "statement": "O XSS é mais perigoso no painel do dono porque:",
+          "options": [
+            "o dono tem um celular mais caro",
+            "o painel tem um visual mais bonito",
+            "o dono nunca usa senha nenhuma",
+            "o código herda o poder do dono",
+            "o painel fica sem internet às vezes"
+          ],
+          "correct_index": 3,
+          "explanation": "Faz tudo o que o dono pode.",
+          "pitfall": "Não tem a ver com o aparelho."
+        },
+        {
+          "topic": "React",
+          "statement": "Bibliotecas como React ajudam contra XSS porque:",
+          "options": [
+            "proíbem o usuário de digitar qualquer coisa",
+            "apagam o banco inteiro todo dia",
+            "escondem o código da página de todos",
+            "dispensam o servidor por completo",
+            "trocam os sinais perigosos sozinhas"
+          ],
+          "correct_index": 4,
+          "explanation": "Fazem a troca automática.",
+          "pitfall": "Não proíbem digitar."
+        },
+        {
+          "topic": "Todo texto",
+          "statement": "Qual campo precisa de cuidado contra XSS?",
+          "options": [
+            "todo texto que um escreve e outro lê",
+            "só o campo onde se digita a senha",
+            "só o campo de busca da página",
+            "nenhum, se o app for pequeno",
+            "só os campos que aceitam números"
+          ],
+          "correct_index": 0,
+          "explanation": "Nome, recado, comunicado.",
+          "pitfall": "Não é só a busca."
+        }
+      ]
+    },
+    {
+      "slug": "as-travas-do-navegador",
+      "title": "As travas do navegador: CSP, moldura e SRI",
+      "module": "Ataques pela página",
+      "summary": "O servidor pode mandar junto com a página instruções que o navegador obedece para se proteger. A lição mostra a trava contra código estranho, a trava contra o site dentro de moldura e a conferência de arquivos que vêm de fora.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O site dentro da moldura",
+          "body": [
+            "Imagine o painel do dono aberto dentro de outro site, numa moldura invisível. Por cima, um botão chamativo: “Clique para ganhar um prêmio”.",
+            "O dono clica no prêmio e aperta, sem saber, o botão Encerrar expediente que estava embaixo. Isso tem nome."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Cabeçalhos de segurança",
+          "body": [
+            "Quando o servidor manda uma página, ele manda junto uns recados para o navegador. São os cabeçalhos.",
+            "Alguns servem só para segurança. Eles não custam nada e travam ataques inteiros."
+          ],
+          "terms": [
+            {
+              "word": "cabeçalho",
+              "meaning": "um recado que o servidor manda junto com a página, que o navegador lê e obedece."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Clickjacking",
+          "body": [
+            "O golpe da moldura se chama clickjacking: enganar o clique da vítima. A moldura é um iframe, a etiqueta que põe um site dentro de outro.",
+            "A defesa é um cabeçalho dizendo que a página não pode abrir em moldura de outro site. Ele se chama X-Frame-Options, ou frame-ancestors na versão mais nova."
+          ],
+          "terms": [
+            {
+              "word": "clickjacking",
+              "meaning": "o golpe de pôr um site dentro de uma moldura invisível para enganar o clique da vítima."
+            },
+            {
+              "word": "iframe",
+              "meaning": "a etiqueta que põe um site inteiro dentro de outro, como uma janela."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "CSP: de onde vem o código",
+          "body": [
+            "A CSP é uma lista que diz de onde a página pode carregar código. Se um código vier de fora da lista, o navegador recusa.",
+            "Ela não substitui o cuidado com o texto do usuário. Mas, se um XSS escapar, a CSP segura boa parte do estrago."
+          ],
+          "terms": [
+            {
+              "word": "CSP",
+              "meaning": "Content Security Policy: o cabeçalho que lista de onde a página pode carregar código e outros arquivos."
+            },
+            {
+              "word": "XSS",
+              "meaning": "ataque em que alguém consegue rodar o próprio código na página que outra pessoa está vendo."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "SRI: conferir o que vem de fora",
+          "body": [
+            "Muita página carrega bibliotecas de uma CDN, um serviço de outra empresa que entrega arquivos rápido. E se esse arquivo for trocado no caminho?",
+            "O SRI resolve: a página guarda o hash do arquivo esperado. Se o que chegar tiver outro hash, o navegador não roda."
+          ],
+          "terms": [
+            {
+              "word": "CDN",
+              "meaning": "um serviço de outra empresa, espalhado pelo mundo, que entrega arquivos para as páginas com rapidez."
+            },
+            {
+              "word": "hash",
+              "meaning": "o resultado de uma conta que transforma um arquivo numa sequência fixa de caracteres. Arquivo diferente dá hash diferente."
+            },
+            {
+              "word": "SRI",
+              "meaning": "Subresource Integrity: o hash que a página guarda para conferir se o arquivo de fora não foi trocado."
+            }
+          ],
+          "code": {
+            "label": "index.html",
+            "text": "<script src=\"https://cdn.exemplo.com/lib.js\"\n  integrity=\"sha384-...\"\n  crossorigin=\"anonymous\"></script>",
+            "notes": [
+              "Carrega uma biblioteca de uma CDN.",
+              "Diz qual é o hash esperado do arquivo. Se não bater, o navegador recusa.",
+              "Faz o pedido sem mandar dados da pessoa, como o SRI exige."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O cadeado",
+          "body": [
+            "Por fim, o cadeado na barra de endereço. Com HTTPS, o que vai e vem entre o celular e o servidor viaja cifrado.",
+            "Sem ele, quem está na mesma rede Wi-Fi pode ler senhas no caminho. Hoje, todo serviço de hospedagem oferece HTTPS de graça."
+          ],
+          "terms": [
+            {
+              "word": "HTTPS",
+              "meaning": "o jeito cifrado de a página e o servidor conversarem. É o cadeado na barra de endereço."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como achar isso no seu código",
+          "body": [
+            "Confira o que o servidor manda junto com a página."
+          ],
+          "bullets": [
+            "Site sem nenhum cabeçalho de segurança.",
+            "Script de CDN sem o atributo integrity.",
+            "Painel que abre normalmente dentro da moldura de outro site.",
+            "Algum endereço ainda em http, sem o s."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Enganos comuns",
+          "body": [
+            "Estes são os enganos de quem está começando:"
+          ],
+          "bullets": [
+            "Achar que a CSP dispensa tratar o texto do usuário. Ela é a segunda tranca.",
+            "Copiar o script da CDN sem o integrity.",
+            "Esquecer o cabeçalho contra moldura."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Cabeçalhos são recados que o navegador obedece. A CSP limita de onde vem o código e segura o XSS que escapar.",
+            "A trava contra moldura impede o clickjacking. O SRI confere o hash de arquivos de CDN, e o HTTPS cifra o caminho."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Clickjacking",
+          "statement": "Clickjacking é:",
+          "options": [
+            "roubar a senha testando todas as opções",
+            "enganar o clique com o site numa moldura",
+            "rodar código pelo campo de nome",
+            "apagar dados de um banco aberto",
+            "mudar a hora do relógio do celular"
+          ],
+          "correct_index": 1,
+          "explanation": "Moldura invisível por cima.",
+          "pitfall": "Rodar código pelo nome é XSS."
+        },
+        {
+          "topic": "iframe",
+          "statement": "Um iframe é:",
+          "options": [
+            "um tipo de senha de quatro dígitos",
+            "um vírus que ataca o celular",
+            "a etiqueta que põe um site dentro de outro",
+            "o endereço secreto do banco",
+            "uma regra de acesso do servidor"
+          ],
+          "correct_index": 2,
+          "explanation": "Uma janela para outro site.",
+          "pitfall": "Não é senha."
+        },
+        {
+          "topic": "CSP",
+          "statement": "A CSP serve para:",
+          "options": [
+            "guardar a senha do dono com segurança",
+            "marcar a hora de chegada na fila",
+            "calcular o preço de cada serviço",
+            "dizer de onde a página pode carregar código",
+            "aumentar a velocidade da internet"
+          ],
+          "correct_index": 3,
+          "explanation": "É uma lista de origens.",
+          "pitfall": "Não guarda senha."
+        },
+        {
+          "topic": "Segunda tranca",
+          "statement": "Com CSP, ainda é preciso usar textContent porque:",
+          "options": [
+            "a CSP não existe nos celulares",
+            "o textContent deixa o app mais rápido",
+            "a CSP só protege as imagens",
+            "o textContent substitui o servidor",
+            "a CSP é a segunda tranca, não a primeira"
+          ],
+          "correct_index": 4,
+          "explanation": "Duas trancas são melhores que uma.",
+          "pitfall": "A CSP existe nos celulares."
+        },
+        {
+          "topic": "SRI",
+          "statement": "O SRI protege contra:",
+          "options": [
+            "um arquivo de CDN trocado no caminho",
+            "uma senha de apenas 4 dígitos",
+            "o cliente furando a fila",
+            "a moldura invisível por cima",
+            "o fuso horário errado no caixa"
+          ],
+          "correct_index": 0,
+          "explanation": "Confere o hash.",
+          "pitfall": "Moldura é clickjacking."
+        },
+        {
+          "topic": "Hash no SRI",
+          "statement": "No SRI, se o arquivo chegar com outro hash:",
+          "options": [
+            "o navegador roda o arquivo assim mesmo",
+            "o navegador não roda o arquivo",
+            "o servidor apaga o site inteiro",
+            "a página troca de CDN sozinha",
+            "o usuário ganha um aviso de prêmio"
+          ],
+          "correct_index": 1,
+          "explanation": "Hash diferente, arquivo trocado.",
+          "pitfall": "Não roda assim mesmo."
+        },
+        {
+          "topic": "Cabeçalho",
+          "statement": "Um cabeçalho de segurança é:",
+          "options": [
+            "um texto grande no topo da página",
+            "a primeira linha do banco de dados",
+            "um recado que o servidor manda e o navegador obedece",
+            "o título que aparece na aba",
+            "uma senha escondida no código"
+          ],
+          "correct_index": 2,
+          "explanation": "Vai junto com a página.",
+          "pitfall": "Não é o título."
+        },
+        {
+          "topic": "HTTPS",
+          "statement": "Sem HTTPS, alguém na mesma rede Wi-Fi pode:",
+          "options": [
+            "mudar a cor do site para todos",
+            "nada, porque o Wi-Fi já cifra tudo",
+            "só ver o nome do site aberto",
+            "ler o que passa entre o celular e o servidor",
+            "apagar o servidor da empresa"
+          ],
+          "correct_index": 3,
+          "explanation": "O caminho vai aberto.",
+          "pitfall": "O Wi-Fi não protege o caminho até o servidor."
+        }
+      ]
+    },
+    {
+      "slug": "dados-pessoais-e-lgpd",
+      "title": "Dados pessoais e a LGPD: guardar só o que precisa",
+      "module": "Dados e descuidos",
+      "summary": "Nome completo e forma de pagamento abertos na internet são dado pessoal exposto. A lição mostra o que é dado pessoal, o que a lei brasileira pede e por que guardar menos é a melhor defesa.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A lista que todo mundo vê",
+          "body": [
+            "O app guarda o histórico de atendimentos: o nome completo de cada cliente e como ele pagou. Com o banco aberto, essa lista estava na internet.",
+            "A política de privacidade do app prometia que os dados não eram compartilhados. Na prática, estavam à vista de qualquer um."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O que é dado pessoal",
+          "body": [
+            "Dado pessoal é qualquer informação que identifica uma pessoa (nome completo, telefone, CPF ou endereço). Em inglês se diz PII.",
+            "Alguns são sensíveis, como saúde, religião e origem racial. Esses pedem ainda mais cuidado."
+          ],
+          "terms": [
+            {
+              "word": "dado pessoal",
+              "meaning": "qualquer informação que identifica uma pessoa, como o nome completo ou o telefone."
+            },
+            {
+              "word": "PII",
+              "meaning": "a sigla em inglês para dado pessoal: informação que identifica alguém."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A lei",
+          "body": [
+            "A LGPD é a lei brasileira que diz como empresas podem usar dados pessoais. Vale para a barbearia do bairro também.",
+            "Ela pede que os dados sejam protegidos e que a empresa use só o necessário para o que prometeu. Vazamento pode render multa e processo."
+          ],
+          "terms": [
+            {
+              "word": "LGPD",
+              "meaning": "a Lei Geral de Proteção de Dados, lei brasileira de 2018 sobre o uso de dados pessoais."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Guardar menos",
+          "body": [
+            "Para chamar alguém na fila, basta o primeiro nome. Nome completo para quê? Dado que não existe não vaza.",
+            "Essa ideia se chama minimização: coletar o mínimo e apagar o que já não serve. O fechamento do caixa precisa do valor e da forma de pagamento, não do nome."
+          ],
+          "terms": [
+            {
+              "word": "minimização",
+              "meaning": "coletar só os dados de que o sistema precisa e apagar os que deixaram de servir."
+            }
+          ],
+          "table": {
+            "label": "Precisa mesmo?",
+            "headers": [
+              "Dado",
+              "Serve para",
+              "Guardar?"
+            ],
+            "rows": [
+              [
+                "primeiro nome",
+                "chamar a pessoa",
+                "sim"
+              ],
+              [
+                "nome completo",
+                "nada na fila",
+                "não"
+              ],
+              [
+                "telefone",
+                "avisar que chegou a vez",
+                "só se a pessoa quiser"
+              ],
+              [
+                "pagamento no histórico",
+                "fechar o caixa",
+                "sem o nome junto"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A promessa e o sistema",
+          "body": [
+            "A política de privacidade é uma promessa. Se o sistema não a cumpre, a promessa vira mentira, e isso pesa mais que o próprio vazamento.",
+            "Antes de escrever a política, olhe o que o sistema guarda e quem consegue ler."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como achar isso no seu código",
+          "body": [
+            "Liste cada dado pessoal que o sistema guarda e pergunte por que ele está ali."
+          ],
+          "bullets": [
+            "Dado pessoal numa parte do banco sem regra de leitura.",
+            "Campos que coletam mais do que o app usa.",
+            "Histórico que nunca é apagado.",
+            "Política de privacidade que promete o que o sistema não faz."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Enganos comuns",
+          "body": [
+            "Estes são os enganos de quem está começando:"
+          ],
+          "bullets": [
+            "Achar que app pequeno não precisa seguir a LGPD.",
+            "Guardar tudo “porque pode servir um dia”.",
+            "Escrever a política sem olhar o sistema."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Dado pessoal é o que identifica alguém. A LGPD pede proteção e o uso só do necessário.",
+            "Guardar menos é a melhor defesa: dado que não existe não vaza. E a política de privacidade tem que bater com o sistema."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Dado pessoal",
+          "statement": "Qual destes é um dado pessoal?",
+          "options": [
+            "o preço de um corte de cabelo",
+            "a cor escolhida para o app",
+            "o horário de abertura da loja",
+            "o nome de um dos serviços",
+            "o nome completo de um cliente"
+          ],
+          "correct_index": 4,
+          "explanation": "Identifica alguém.",
+          "pitfall": "Preço não identifica ninguém."
+        },
+        {
+          "topic": "PII",
+          "statement": "PII é o nome em inglês para:",
+          "options": [
+            "dado que identifica uma pessoa",
+            "um tipo de vírus de computador",
+            "a senha que abre o painel",
+            "o endereço secreto do banco",
+            "um cabeçalho de segurança"
+          ],
+          "correct_index": 0,
+          "explanation": "Informação pessoal.",
+          "pitfall": "Não é vírus."
+        },
+        {
+          "topic": "LGPD",
+          "statement": "A LGPD é:",
+          "options": [
+            "um tipo de senha mais forte",
+            "a lei brasileira de dados pessoais",
+            "uma regra de acesso do banco",
+            "um aplicativo de fila",
+            "um vírus de computador"
+          ],
+          "correct_index": 1,
+          "explanation": "Lei de 2018.",
+          "pitfall": "Não é regra técnica do banco."
+        },
+        {
+          "topic": "Pequeno",
+          "statement": "A LGPD vale para a barbearia do bairro?",
+          "options": [
+            "não, vale só para os bancos",
+            "só se tiver mais de mil clientes",
+            "sim, vale para quem trata dados pessoais",
+            "só para empresas de outro país",
+            "não, vale só para o governo"
+          ],
+          "correct_index": 2,
+          "explanation": "Tamanho não isenta.",
+          "pitfall": "Não é só para bancos."
+        },
+        {
+          "topic": "Minimização",
+          "statement": "Minimização de dados quer dizer:",
+          "options": [
+            "guardar tudo, por segurança",
+            "esconder os dados com uma cor",
+            "copiar os dados em vários lugares",
+            "coletar o mínimo e apagar o que não serve",
+            "vender os dados antigos"
+          ],
+          "correct_index": 3,
+          "explanation": "Menos é mais seguro.",
+          "pitfall": "Guardar tudo é o oposto."
+        },
+        {
+          "topic": "Fila",
+          "statement": "Para chamar o cliente na fila, basta guardar:",
+          "options": [
+            "o nome completo",
+            "o CPF",
+            "o endereço de casa",
+            "a data de nascimento",
+            "o primeiro nome"
+          ],
+          "correct_index": 4,
+          "explanation": "Só o necessário.",
+          "pitfall": "Nome completo sobra."
+        },
+        {
+          "topic": "Promessa",
+          "statement": "Uma política de privacidade que o sistema não cumpre:",
+          "options": [
+            "vira uma promessa falsa e piora o problema",
+            "protege a empresa de qualquer multa",
+            "não tem importância nenhuma",
+            "substitui as regras do banco",
+            "deixa o app mais seguro"
+          ],
+          "correct_index": 0,
+          "explanation": "Promessa quebrada pesa.",
+          "pitfall": "Não protege de multa."
+        },
+        {
+          "topic": "Não vaza",
+          "statement": "Por que guardar menos dados protege?",
+          "options": [
+            "porque o banco fica mais rápido",
+            "porque dado que não existe não vaza",
+            "porque a lei proíbe guardar nomes",
+            "porque quem ataca desiste logo",
+            "porque ocupa menos espaço na tela"
+          ],
+          "correct_index": 1,
+          "explanation": "Nada para roubar.",
+          "pitfall": "A lei não proíbe nomes."
+        }
+      ]
+    },
+    {
+      "slug": "bugs-que-viram-brecha",
+      "title": "Bugs que viram brecha: fuso, sobrescrita e cache",
+      "module": "Dados e descuidos",
+      "summary": "Nem toda falha é um ataque. A lição mostra três descuidos que bagunçam os dados sem ninguém querer: a data no fuso errado, o registro que apaga o anterior e o app que nunca atualiza.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O caixa do sábado que sumiu",
+          "body": [
+            "O dono fecha o expediente às 21h de sábado. No relatório, o dia aparece como domingo.",
+            "Ele fecha de novo para conferir, e o primeiro registro some. Ninguém atacou nada: são bugs."
+          ],
+          "terms": [
+            {
+              "word": "bug",
+              "meaning": "um erro no programa que o faz agir diferente do esperado."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O fuso horário",
+          "body": [
+            "O horário de Brasília está três horas atrás do horário universal. Muitos comandos de data usam o horário universal sem avisar.",
+            "Às 21h em Brasília já é meia-noite no horário universal. Se a data do registro vier de lá, o sábado vira domingo. O certo é calcular a data no fuso da loja."
+          ],
+          "terms": [
+            {
+              "word": "UTC",
+              "meaning": "o horário universal, a referência mundial a partir da qual cada fuso é contado."
+            }
+          ],
+          "code": {
+            "label": "caixa.js",
+            "text": "const hoje = new Date().toISOString().split(\"T\")[0];",
+            "notes": [
+              "Pega a data de hoje no horário universal (UTC), e não no de Brasília. Depois das 21h, já devolve o dia seguinte."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O registro que apaga o anterior",
+          "body": [
+            "Para gravar o caixa do dia, o app usa um comando que substitui tudo naquele endereço do banco. Encerrar duas vezes no mesmo dia apaga o primeiro fechamento.",
+            "O certo é acrescentar sem apagar: somar ao que já existe ou criar um registro novo para cada fechamento."
+          ],
+          "terms": [
+            {
+              "word": "sobrescrever",
+              "meaning": "gravar por cima, apagando o que estava antes no mesmo lugar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O app que nunca atualiza",
+          "body": [
+            "Um service worker é um programa que o navegador roda por trás da página, até sem internet. Ele pode guardar cópias dos arquivos, que são o cache.",
+            "Se ele sempre entrega a cópia guardada antes de olhar a rede, a correção de um bug nunca chega a quem já instalou. O app fica preso na versão velha."
+          ],
+          "terms": [
+            {
+              "word": "service worker",
+              "meaning": "um programa que o navegador roda por trás da página e que pode responder até sem internet."
+            },
+            {
+              "word": "cache",
+              "meaning": "as cópias de arquivos guardadas no aparelho para abrir mais rápido ou sem internet."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A pasta que manda",
+          "body": [
+            "O service worker só controla a pasta de onde foi registrado. Registrado dentro da pasta js, ele manda só nos arquivos dessa pasta, e não nas páginas.",
+            "Aí o modo sem internet parece ligado e não funciona. Registre o service worker na raiz do site."
+          ],
+          "example": {
+            "label": "Onde registrar",
+            "lines": [
+              "/js/service-worker.js controla só /js/",
+              "/service-worker.js controla o site inteiro"
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como achar isso no seu código",
+          "body": [
+            "Procure lugares onde o dado pode sair errado sem ninguém atacar."
+          ],
+          "bullets": [
+            "Data calculada com toISOString num lugar que não usa UTC.",
+            "Gravação que substitui o registro inteiro quando devia acrescentar.",
+            "Service worker que entrega o cache antes da rede, para sempre.",
+            "Service worker registrado fora da raiz."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Enganos comuns",
+          "body": [
+            "Estes são os enganos de quem está começando:"
+          ],
+          "bullets": [
+            "Achar que bug não é problema de segurança. Dado errado engana quem decide.",
+            "Testar só de manhã, quando o fuso não atrapalha.",
+            "Esquecer que quem já instalou o app pode estar numa versão velha."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Datas no horário universal trocam o dia à noite: calcule no fuso da loja. Gravação que sobrescreve apaga o que já existia.",
+            "O service worker controla só a pasta de onde foi registrado, e o cache que nunca olha a rede prende o app na versão velha."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Fuso",
+          "statement": "Às 21h em Brasília, no horário universal já é:",
+          "options": [
+            "18h do mesmo dia",
+            "21h do mesmo dia",
+            "meia-noite do dia seguinte",
+            "meio-dia do mesmo dia",
+            "meia-noite do dia anterior"
+          ],
+          "correct_index": 2,
+          "explanation": "Três horas a mais.",
+          "pitfall": "18h seria três horas a menos."
+        },
+        {
+          "topic": "UTC",
+          "statement": "UTC é:",
+          "options": [
+            "o horário oficial de Brasília",
+            "um tipo de senha numérica",
+            "um cabeçalho de segurança",
+            "o horário universal de referência",
+            "o nome do banco de dados"
+          ],
+          "correct_index": 3,
+          "explanation": "A referência mundial.",
+          "pitfall": "Não é o de Brasília."
+        },
+        {
+          "topic": "Sobrescrever",
+          "statement": "Sobrescrever um registro é:",
+          "options": [
+            "fazer uma cópia de segurança dele",
+            "acrescentar uma linha nova no fim",
+            "mostrar o registro na tela do dono",
+            "esconder o registro de quem lê",
+            "gravar por cima, apagando o que estava lá"
+          ],
+          "correct_index": 4,
+          "explanation": "Apaga o anterior.",
+          "pitfall": "Acrescentar é o oposto."
+        },
+        {
+          "topic": "Fechar duas vezes",
+          "statement": "Se encerrar o expediente duas vezes apaga o primeiro registro, o problema é:",
+          "options": [
+            "gravar substituindo em vez de acrescentar",
+            "o celular estar sem bateria",
+            "a senha do painel ser fraca",
+            "a fila estar vazia no fim do dia",
+            "o horário de verão estar ligado"
+          ],
+          "correct_index": 0,
+          "explanation": "O comando substitui tudo.",
+          "pitfall": "A bateria não tem relação."
+        },
+        {
+          "topic": "Service worker",
+          "statement": "Um service worker é:",
+          "options": [
+            "um funcionário que atende na barbearia",
+            "um programa que o navegador roda por trás da página",
+            "o servidor da empresa de hospedagem",
+            "um tipo de senha de quatro dígitos",
+            "um botão escondido dentro do painel"
+          ],
+          "correct_index": 1,
+          "explanation": "Roda nos bastidores.",
+          "pitfall": "Não é o servidor."
+        },
+        {
+          "topic": "Cache preso",
+          "statement": "Se o service worker sempre entrega o cache primeiro, uma correção:",
+          "options": [
+            "chega mais rápido para todos",
+            "apaga o app do celular",
+            "pode nunca chegar a quem já instalou",
+            "aparece só no computador",
+            "não muda nada para ninguém"
+          ],
+          "correct_index": 2,
+          "explanation": "Fica a versão velha.",
+          "pitfall": "Não chega mais rápido."
+        },
+        {
+          "topic": "Pasta",
+          "statement": "Um service worker registrado dentro da pasta js controla:",
+          "options": [
+            "o site inteiro, de ponta a ponta",
+            "o celular inteiro de quem usa",
+            "todos os sites do navegador",
+            "só os arquivos dessa pasta",
+            "nada, ele não funciona assim"
+          ],
+          "correct_index": 3,
+          "explanation": "Manda só na pasta dele.",
+          "pitfall": "Não controla o site inteiro."
+        },
+        {
+          "topic": "Bug e segurança",
+          "statement": "Por que um bug de data também importa para a segurança?",
+          "options": [
+            "porque ele apaga a senha do painel",
+            "porque ele abre o banco para todos",
+            "porque ele deixa o app pago",
+            "não importa, é só aparência",
+            "porque dado errado engana quem decide"
+          ],
+          "correct_index": 4,
+          "explanation": "Decisão com dado errado é decisão errada.",
+          "pitfall": "Não é só aparência."
+        }
+      ]
+    },
+    {
+      "slug": "revisar-o-proprio-sistema",
+      "title": "Revisar o próprio sistema: pensar como quem ataca",
+      "module": "Dados e descuidos",
+      "summary": "A melhor hora de achar uma falha é antes de alguém de fora. A lição dá um roteiro para revisar o próprio app, a ordem de gravidade das falhas e as regras para testar sem estragar nada.",
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O amigo que tenta invadir",
+          "body": [
+            "Um dono de app pede a um amigo que entende do assunto: tenta entrar no meu sistema. O amigo lê o código, abre o banco e acha várias falhas.",
+            "Ninguém foi prejudicado, e o dono aprendeu o que corrigir. É assim que funciona uma revisão de segurança."
+          ],
+          "terms": [
+            {
+              "word": "revisão de segurança",
+              "meaning": "o trabalho de procurar falhas num sistema antes que alguém de fora as encontre, com a permissão do dono."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Pensar como quem ataca",
+          "body": [
+            "Para cada tela e cada dado, faça três perguntas. Se alguma resposta for “qualquer um” ou “sim”, você achou uma falha."
+          ],
+          "example": {
+            "label": "As três perguntas",
+            "ordered": true,
+            "lines": [
+              "Quem consegue ler este dado?",
+              "Quem consegue mudar este dado?",
+              "Dá para mudar sem passar pela tela?"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A ordem de gravidade",
+          "body": [
+            "Nem toda falha pesa igual. As críticas deixam qualquer pessoa ler ou mudar tudo: banco aberto, login de enfeite, senha vazando.",
+            "Depois vêm as altas, como XSS e preço forjado. Corrija sempre da mais grave para a mais leve."
+          ],
+          "terms": [
+            {
+              "word": "XSS",
+              "meaning": "ataque em que alguém consegue rodar o próprio código na página que outra pessoa está vendo."
+            }
+          ],
+          "table": {
+            "label": "Por onde começar",
+            "headers": [
+              "Gravidade",
+              "Exemplo",
+              "Por quê"
+            ],
+            "rows": [
+              [
+                "crítica",
+                "banco aberto para escrita",
+                "qualquer um muda tudo"
+              ],
+              [
+                "alta",
+                "XSS no nome",
+                "roda código no painel"
+              ],
+              [
+                "média",
+                "dado pessoal exposto",
+                "risco legal e de confiança"
+              ],
+              [
+                "baixa",
+                "falta de cabeçalho",
+                "é uma tranca a mais"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O roteiro",
+          "body": [
+            "Revise na ordem abaixo. Quase todo app de iniciante cai em pelo menos três destes itens."
+          ],
+          "example": {
+            "label": "O roteiro de revisão",
+            "ordered": true,
+            "lines": [
+              "Regras do banco: ninguém lê nem escreve o que não deve.",
+              "Login: conferido no servidor.",
+              "Segredos: nenhum dentro da página.",
+              "Entrada: hora, preço e tamanho decididos no servidor.",
+              "Texto do usuário: sempre mostrado como texto.",
+              "Cabeçalhos de segurança e o cadeado.",
+              "Dados pessoais: só o necessário."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Testar sem estragar",
+          "body": [
+            "Teste só sistemas que são seus ou que o dono autorizou por escrito. Mexer no sistema dos outros sem permissão é crime.",
+            "Use uma cópia de teste, nunca o sistema com clientes de verdade. E não aperte botões que apagam ou mudam dados sem combinar antes."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como fazer na prática",
+          "body": [
+            "Com o sistema numa cópia de teste, faça estas checagens."
+          ],
+          "bullets": [
+            "Abra o banco sem login e veja o que aparece.",
+            "Tente abrir o painel e as páginas de administração direto pelo endereço.",
+            "Digite <b>teste</b> nos campos de texto e veja se fica em negrito.",
+            "Procure no código senhas, chaves e avisos de teste esquecidos."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Enganos comuns",
+          "body": [
+            "Estes são os enganos de quem está começando:"
+          ],
+          "bullets": [
+            "Corrigir a falha mais fácil primeiro e deixar a crítica para depois.",
+            "Testar no sistema com clientes de verdade.",
+            "Testar sistema de outra pessoa sem permissão."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Para cada dado, pergunte quem lê, quem muda e se dá para mudar pulando a tela. Corrija da falha mais grave para a mais leve.",
+            "Teste só o que é seu ou o que te autorizaram, numa cópia, sem apagar nada."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Três perguntas",
+          "statement": "Uma das três perguntas da revisão é:",
+          "options": [
+            "dá para mudar o dado sem passar pela tela?",
+            "qual é a cor do botão principal?",
+            "quantos clientes usam o app por dia?",
+            "o app ficou bonito no celular?",
+            "quanto custou o servidor no mês?"
+          ],
+          "correct_index": 0,
+          "explanation": "Pular a tela é o teste.",
+          "pitfall": "Aparência não importa aqui."
+        },
+        {
+          "topic": "Ordem",
+          "statement": "Ao revisar, a falha a corrigir primeiro é:",
+          "options": [
+            "a mais fácil de resolver",
+            "a mais grave",
+            "a mais antiga do sistema",
+            "a que dá menos trabalho",
+            "a que o cliente reclamou"
+          ],
+          "correct_index": 1,
+          "explanation": "Da crítica para a baixa.",
+          "pitfall": "A fácil pode esperar."
+        },
+        {
+          "topic": "Crítica",
+          "statement": "Qual destas é uma falha crítica?",
+          "options": [
+            "falta de um cabeçalho de segurança",
+            "um botão desalinhado na tela",
+            "banco aberto para escrita",
+            "texto com erro de digitação",
+            "uma cor feia no painel"
+          ],
+          "correct_index": 2,
+          "explanation": "Qualquer um muda tudo.",
+          "pitfall": "Cabeçalho faltando é baixa."
+        },
+        {
+          "topic": "Autorização",
+          "statement": "Testar a segurança de um sistema só é permitido:",
+          "options": [
+            "sempre, se a intenção for ajudar",
+            "se o sistema for pequeno",
+            "se ninguém descobrir o teste",
+            "se ele for seu ou o dono autorizar",
+            "à noite, quando não há clientes"
+          ],
+          "correct_index": 3,
+          "explanation": "Sem permissão é crime.",
+          "pitfall": "Boa intenção não basta."
+        },
+        {
+          "topic": "Onde testar",
+          "statement": "Para testar, o certo é usar:",
+          "options": [
+            "o sistema com clientes de verdade",
+            "o celular pessoal do dono",
+            "o banco de outra empresa",
+            "a conta de um dos clientes",
+            "uma cópia de teste, sem clientes reais"
+          ],
+          "correct_index": 4,
+          "explanation": "Nada se estraga.",
+          "pitfall": "Produção tem gente de verdade."
+        },
+        {
+          "topic": "Negrito",
+          "statement": "Digitar <b>teste</b> num campo serve para checar:",
+          "options": [
+            "se a página interpreta HTML do usuário",
+            "se a senha do painel é forte",
+            "se o banco está aberto para todos",
+            "se o fuso horário está certo",
+            "se o cadeado está ligado"
+          ],
+          "correct_index": 0,
+          "explanation": "É o teste inofensivo de XSS.",
+          "pitfall": "Não testa a senha."
+        },
+        {
+          "topic": "Alta",
+          "statement": "XSS no campo de nome costuma ser classificado como falha:",
+          "options": [
+            "baixa",
+            "alta",
+            "inexistente",
+            "só de aparência",
+            "sem importância"
+          ],
+          "correct_index": 1,
+          "explanation": "Roda código no painel.",
+          "pitfall": "Não é só aparência."
+        },
+        {
+          "topic": "Revisão",
+          "statement": "Uma revisão de segurança feita por um amigo autorizado serve para:",
+          "options": [
+            "deixar o app mais bonito",
+            "dispensar as regras do banco",
+            "achar as falhas antes de alguém de fora",
+            "provar que o app não tem falha",
+            "apagar os dados antigos"
+          ],
+          "correct_index": 2,
+          "explanation": "Antes de quem ataca.",
+          "pitfall": "Não prova que não há falha."
+        }
+      ]
+    }
+  ]
+}

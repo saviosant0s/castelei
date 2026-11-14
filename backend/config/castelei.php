@@ -257,7 +257,7 @@ return [
             ['name' => 'Usar o computador', 'items' => ['informatica-basica', 'informatica-para-concursos', ['soon' => 'Planilhas a fundo: fórmulas, PROCV e tabela dinâmica']]],
             ['name' => 'Hardware', 'items' => ['montar-pc', ['soon' => 'Como o computador funciona por dentro']]],
             ['name' => 'Sistemas e redes', 'items' => ['sistemas-operacionais', 'servidores-vps', ['soon' => 'Redes e internet a fundo']]],
-            ['name' => 'Programação', 'items' => [['soon' => 'Lógica de programação'], 'programacao-python', 'refatoracao']],
+            ['name' => 'Programação', 'items' => [['soon' => 'Lógica de programação'], 'programacao-python', 'refatoracao', 'seguranca-web']],
             ['name' => 'Inteligência artificial', 'items' => [['soon' => 'IA no dia a dia: como funciona e como usar bem'], 'redes-neurais', 'llms-como-funcionam', 'llms-na-pratica']],
         ],
     ],
