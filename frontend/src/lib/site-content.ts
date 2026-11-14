@@ -262,11 +262,16 @@ export const SUBJECTS: SiteSubject[] = [
     slug: "quimica-basica",
     name: "Química",
     pitch:
-      "Misturas e separação, átomos e tabela periódica, ligações, ácidos e bases, reações e mol, soluções, química orgânica e o impacto no ambiente.",
+      "Estados e misturas, o átomo e a tabela periódica, ligações e polaridade, ácidos e bases, reações e mol, soluções, química orgânica, e a química da água, dos metais, do campo e do ambiente.",
     lessons: [
+      "Sólido, líquido e gasoso: as mudanças de estado",
+      "Propriedades da matéria e fenômenos físicos e químicos",
       "Matéria, misturas e como separá-las",
       "O átomo e a tabela periódica",
+      "Os elétrons em camadas, e por que isso decide tudo",
+      "Lendo a tabela periódica: famílias, tamanho e eletronegatividade",
       "Ligações químicas: como os átomos se unem",
+      "Polaridade: por que a água e o óleo não se misturam",
       "Ácidos, bases, sais e óxidos",
       "Reações químicas, balanceamento e mol",
       "Reações que esquentam e reações que esfriam",
@@ -276,6 +281,9 @@ export const SUBJECTS: SiteSubject[] = [
       "Pilhas, baterias e ferrugem",
       "Química orgânica: o mundo do carbono",
       "Química e ambiente: combustíveis, poluição e reciclagem",
+      "Da represa à torneira: como a água é tratada",
+      "Do minério ao aço: metais, ligas e reciclagem",
+      "Química no campo: fertilizantes e a correção do solo",
       "Radioatividade e energia nuclear",
     ],
   },
@@ -820,5 +828,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 6762,
+  questions: 6874,
 };

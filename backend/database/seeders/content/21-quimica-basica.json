@@ -5,10 +5,753 @@
   "description": "Misturas, átomos, ligações, ácidos e bases, reações, soluções, química orgânica e ambiente: o básico de Química para qualquer prova, explicado do zero.",
   "lessons": [
     {
+      "slug": "estados-fisicos",
+      "title": "Sólido, líquido e gasoso: as mudanças de estado",
+      "module": "Matéria",
+      "summary": "A mesma água pode ser gelo, líquido ou vapor. A lição mostra o que muda nas partículas em cada estado, o nome de cada mudança e como o gráfico de aquecimento separa uma substância pura de uma mistura.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=isPzCiQ0WEs",
+        "title": "Estados físicos da matéria",
+        "channel": "Descomplica"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O gelo no copo",
+          "body": [
+            "Um cubo de gelo derrete no copo. Se a água ficar no sol, some aos poucos no ar.",
+            "É a mesma água o tempo todo. O que muda é como as partes minúsculas dela estão arrumadas e o quanto se mexem."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Partículas paradas e partículas soltas",
+          "body": [
+            "Toda matéria é feita de partículas minúsculas, como as moléculas, que nunca param de se mexer. No sólido, elas ficam presas no lugar e só vibram. Por isso o sólido tem forma e volume fixos.",
+            "No líquido, elas deslizam umas sobre as outras: o volume é fixo, mas a forma é a do copo. No gás, elas se afastam e ocupam todo o espaço que houver."
+          ],
+          "terms": [
+            {
+              "word": "molécula",
+              "meaning": "um grupo de átomos ligados, a menor parte de uma substância como a água que ainda é aquela substância."
+            },
+            {
+              "word": "átomo",
+              "meaning": "a unidade minúscula que forma toda a matéria, como uma peça de montar."
+            }
+          ],
+          "table": {
+            "label": "Os três estados",
+            "headers": [
+              "Estado",
+              "Forma",
+              "Volume"
+            ],
+            "rows": [
+              [
+                "sólido",
+                "fixa",
+                "fixo"
+              ],
+              [
+                "líquido",
+                "a do recipiente",
+                "fixo"
+              ],
+              [
+                "gasoso",
+                "a do recipiente",
+                "ocupa todo o espaço"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O nome de cada mudança",
+          "body": [
+            "Esquentar dá mais agitação às partículas, e o estado muda. Do sólido para o líquido é a fusão. Do líquido para o gás é a vaporização. Do sólido direto para o gás, sem passar pelo líquido, é a sublimação. É o que acontece com o gelo seco.",
+            "Esfriar faz o caminho de volta: solidificação, condensação e a sublimação ao contrário, chamada às vezes de deposição."
+          ],
+          "table": {
+            "label": "As mudanças de estado",
+            "headers": [
+              "De",
+              "Para",
+              "Nome"
+            ],
+            "rows": [
+              [
+                "sólido",
+                "líquido",
+                "fusão"
+              ],
+              [
+                "líquido",
+                "sólido",
+                "solidificação"
+              ],
+              [
+                "líquido",
+                "gás",
+                "vaporização"
+              ],
+              [
+                "gás",
+                "líquido",
+                "condensação"
+              ],
+              [
+                "sólido",
+                "gás",
+                "sublimação"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Evaporar não é ferver",
+          "body": [
+            "A vaporização tem três jeitos. A evaporação é lenta e acontece em qualquer temperatura, como a roupa secando no varal. A ebulição é a fervura, com bolhas, numa temperatura certa.",
+            "A calefação é a vaporização instantânea, como a gota d'água que pula numa chapa muito quente."
+          ],
+          "terms": [
+            {
+              "word": "ebulição",
+              "meaning": "a vaporização com bolhas, que acontece numa temperatura certa para cada substância, como 100 °C para a água ao nível do mar."
+            },
+            {
+              "word": "evaporação",
+              "meaning": "a vaporização lenta, na superfície do líquido, que acontece em qualquer temperatura."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O gráfico do aquecimento",
+          "body": [
+            "Esquente gelo e anote a temperatura minuto a minuto. Ela sobe, para em 0 °C enquanto o gelo derrete e volta a subir. Depois para de novo em 100 °C enquanto a água ferve.",
+            "Esses trechos parados se chamam patamares. Uma substância pura tem patamares retos. Numa mistura, como água com sal, a temperatura continua subindo devagar durante a mudança."
+          ],
+          "terms": [
+            {
+              "word": "substância pura",
+              "meaning": "um material formado por um só tipo de substância, com ponto de fusão e de ebulição fixos, como a água destilada."
+            },
+            {
+              "word": "mistura homogênea e heterogênea",
+              "meaning": "mistura homogênea tem uma fase só, como água com sal; a heterogênea tem partes que se distinguem, como água e óleo."
+            }
+          ],
+          "figure": {
+            "src": "/figuras/quimica/aquecimento.svg",
+            "alt": "Gráfico da temperatura pelo tempo ao aquecer gelo: a linha sobe, fica reta em 0 °C, sobe de novo e fica reta em 100 °C. Uma segunda linha, da mistura, sobe inclinada nos trechos de mudança.",
+            "caption": "A água pura para em 0 °C e em 100 °C; a mistura não para."
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mostra um gráfico de aquecimento e pergunta se é substância pura ou mistura. Também pede o nome de uma mudança de estado do dia a dia."
+          ],
+          "bullets": [
+            "“O trecho horizontal do gráfico corresponde à…”",
+            "“A naftalina que some no armário passa por…”",
+            "“A roupa seca no varal por…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que a temperatura sobe enquanto o gelo derrete. Na substância pura, ela fica parada.",
+            "Trocar evaporação por ebulição. Evaporar é lento e em qualquer temperatura; ferver tem bolhas.",
+            "Dizer que as partículas do sólido ficam paradas. Elas vibram no lugar."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "No sólido as partículas vibram presas; no líquido deslizam; no gás se espalham. Fusão, vaporização e sublimação vão no sentido de esquentar.",
+            "A evaporação é lenta, a ebulição tem bolhas e a calefação é instantânea. No gráfico de aquecimento, a substância pura tem patamares retos e a mistura não."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Sólido",
+          "statement": "No estado sólido, as partículas:",
+          "options": [
+            "vibram presas no lugar",
+            "ficam totalmente paradas",
+            "se espalham pelo espaço todo",
+            "deslizam umas sobre as outras",
+            "somem quando esfriam"
+          ],
+          "correct_index": 0,
+          "explanation": "Por isso o sólido tem forma fixa.",
+          "pitfall": "Paradas de verdade elas nunca ficam."
+        },
+        {
+          "topic": "Líquido",
+          "statement": "Um líquido tem:",
+          "options": [
+            "forma e volume fixos",
+            "volume fixo e a forma do recipiente",
+            "forma fixa e volume variável",
+            "nem forma nem volume fixos",
+            "sempre a forma de uma esfera"
+          ],
+          "correct_index": 1,
+          "explanation": "As partículas deslizam, mas ficam juntas.",
+          "pitfall": "Sem volume fixo é o gás."
+        },
+        {
+          "topic": "Fusão",
+          "statement": "A passagem do sólido para o líquido se chama:",
+          "options": [
+            "solidificação",
+            "condensação",
+            "fusão",
+            "sublimação",
+            "ebulição"
+          ],
+          "correct_index": 2,
+          "explanation": "O gelo derretendo é fusão.",
+          "pitfall": "Solidificação é o caminho de volta."
+        },
+        {
+          "topic": "Condensação",
+          "statement": "As gotas que aparecem do lado de fora de um copo gelado vêm da:",
+          "options": [
+            "água que atravessa o vidro",
+            "fusão do vidro do copo",
+            "sublimação do gelo de dentro",
+            "condensação do vapor do ar",
+            "ebulição da água de dentro"
+          ],
+          "correct_index": 3,
+          "explanation": "O vapor do ar esfria e vira líquido.",
+          "pitfall": "A água não atravessa o vidro."
+        },
+        {
+          "topic": "Sublimação",
+          "statement": "O gelo seco vira gás sem derreter antes. Isso é:",
+          "options": [
+            "fusão",
+            "ebulição",
+            "condensação",
+            "evaporação lenta",
+            "sublimação"
+          ],
+          "correct_index": 4,
+          "explanation": "Do sólido direto para o gás.",
+          "pitfall": "Não passa pelo líquido."
+        },
+        {
+          "topic": "Evaporação",
+          "statement": "A roupa que seca no varal num dia de 25 °C passa por:",
+          "options": [
+            "evaporação",
+            "ebulição",
+            "calefação",
+            "fusão",
+            "solidificação"
+          ],
+          "correct_index": 0,
+          "explanation": "É lenta e acontece em qualquer temperatura.",
+          "pitfall": "Ferver exigiria 100 °C."
+        },
+        {
+          "topic": "Patamar",
+          "statement": "No gráfico de aquecimento da água pura, a temperatura fica parada em 0 °C porque:",
+          "options": [
+            "a água deixou de receber calor do fogão",
+            "o calor está sendo usado para derreter o gelo",
+            "o termômetro para de medir no gelo",
+            "o gelo esfria a chama até ela parar",
+            "a água vira gás antes de derreter"
+          ],
+          "correct_index": 1,
+          "explanation": "Enquanto derrete, a temperatura não sobe.",
+          "pitfall": "Calor continua entrando."
+        },
+        {
+          "topic": "Mistura",
+          "statement": "No aquecimento de água com sal, durante a fervura a temperatura:",
+          "options": [
+            "fica parada como na água pura",
+            "cai até 0 °C",
+            "continua subindo devagar",
+            "sobe de repente para 200 °C",
+            "não muda nunca"
+          ],
+          "correct_index": 2,
+          "explanation": "Mistura não tem patamar reto.",
+          "pitfall": "Patamar reto é de substância pura."
+        },
+        {
+          "topic": "Gás",
+          "statement": "No estado gasoso, as partículas:",
+          "options": [
+            "ficam presas no lugar e só vibram",
+            "deslizam juntas, sem se afastar",
+            "ficam juntas no fundo do recipiente",
+            "se afastam e ocupam todo o espaço disponível",
+            "formam cristais duros e organizados"
+          ],
+          "correct_index": 3,
+          "explanation": "Por isso o gás não tem volume fixo.",
+          "pitfall": "Presas no lugar é o sólido.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Calefação",
+          "statement": "A gota d'água que pula e some numa chapa muito quente passa por:",
+          "options": [
+            "evaporação lenta",
+            "fusão",
+            "sublimação",
+            "condensação",
+            "calefação"
+          ],
+          "correct_index": 4,
+          "explanation": "É a vaporização quase instantânea.",
+          "pitfall": "Evaporação é lenta.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Aquecimento",
+          "format": "order",
+          "statement": "Coloque na ordem o que acontece ao aquecer um cubo de gelo a −10 °C até virar vapor.",
+          "options": [
+            "o gelo esquenta até 0 °C",
+            "o gelo derrete a 0 °C",
+            "a água esquenta até 100 °C",
+            "a água ferve a 100 °C"
+          ],
+          "explanation": "A temperatura sobe e para duas vezes.",
+          "pitfall": "Durante as mudanças, a temperatura fica parada.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Naftalina",
+          "statement": "As bolinhas de naftalina que somem no armário sem deixar líquido passam por:",
+          "options": [
+            "sublimação",
+            "fusão",
+            "ebulição",
+            "condensação",
+            "solidificação"
+          ],
+          "correct_index": 0,
+          "explanation": "Do sólido direto para o gás.",
+          "pitfall": "Se derretessem, deixariam líquido.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Ebulição e altitude",
+          "statement": "Uma substância tem patamar reto na fervura. Isso indica que ela provavelmente é:",
+          "options": [
+            "uma mistura heterogênea",
+            "uma substância pura",
+            "uma mistura de água com sal",
+            "um material que não ferve",
+            "um gás desde o começo"
+          ],
+          "correct_index": 1,
+          "explanation": "Substância pura tem ponto de ebulição fixo.",
+          "pitfall": "Mistura comum não tem patamar reto.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Vibrar",
+          "statement": "Dizer que no sólido as partículas estão paradas é um erro porque:",
+          "options": [
+            "elas se espalham pelo espaço todo, como no gás",
+            "elas deslizam umas sobre as outras, como no líquido",
+            "elas vibram o tempo todo, só não saem do lugar",
+            "elas não existem dentro de um sólido",
+            "elas só se mexem quando o sólido derrete"
+          ],
+          "correct_index": 2,
+          "explanation": "Toda partícula se agita um pouco.",
+          "pitfall": "Vibrar não é deslizar.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "propriedades-e-fenomenos",
+      "title": "Propriedades da matéria e fenômenos físicos e químicos",
+      "module": "Matéria",
+      "summary": "Cada material tem um jeito de ser: densidade, ponto de fusão, cor e cheiro. A lição mostra como essas propriedades identificam uma substância e como saber se uma mudança criou uma substância nova ou só mudou a forma.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=wO65r7J-BbM",
+        "title": "Fenômenos físicos e químicos",
+        "channel": "Brasil Escola Oficial"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O óleo que boia",
+          "body": [
+            "Coloque óleo num copo de água. Ele sobe e fica por cima, por mais que você mexa.",
+            "Agora queime um papel. O que sobra não é papel. Os dois casos mostram duas ideias desta lição: propriedade e transformação."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Densidade: quanto cabe num espaço",
+          "body": [
+            "Densidade é a massa de um material dividida pelo volume que ele ocupa. A água tem cerca de 1 grama por centímetro cúbico.",
+            "O que tem densidade menor que a do líquido boia nele. O óleo e o gelo, com cerca de 0,9, boiam na água. O ferro, com quase 8, afunda."
+          ],
+          "terms": [
+            {
+              "word": "densidade",
+              "meaning": "a massa de um material dividida pelo volume que ele ocupa. Decide o que boia e o que afunda."
+            }
+          ],
+          "table": {
+            "label": "Densidades aproximadas",
+            "headers": [
+              "Material",
+              "Densidade (g/cm³)"
+            ],
+            "rows": [
+              [
+                "óleo de cozinha",
+                "0,9"
+              ],
+              [
+                "gelo",
+                "0,92"
+              ],
+              [
+                "água",
+                "1"
+              ],
+              [
+                "alumínio",
+                "2,7"
+              ],
+              [
+                "ferro",
+                "7,9"
+              ],
+              [
+                "ouro",
+                "19,3"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Propriedades que identificam",
+          "body": [
+            "Massa e volume todo material tem, e não dizem qual ele é. Já densidade, ponto de fusão e ponto de ebulição são próprios de cada substância. Por isso se chamam propriedades específicas.",
+            "Um anel que diz ser de ouro pode ser testado pela densidade. Se der bem menos que 19,3, não é ouro puro."
+          ],
+          "terms": [
+            {
+              "word": "propriedade específica",
+              "meaning": "uma característica própria de cada substância, como a densidade ou o ponto de fusão, que ajuda a identificá-la."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Fenômeno físico: muda a forma, não a substância",
+          "body": [
+            "Derreter gelo, rasgar papel e dissolver açúcar no café são fenômenos físicos. A substância continua a mesma: a água derretida ainda é água.",
+            "Muitos fenômenos físicos se desfazem. Dá para congelar a água de novo ou evaporar o café e recuperar o açúcar."
+          ],
+          "terms": [
+            {
+              "word": "fenômeno físico",
+              "meaning": "uma mudança que não cria substância nova, como derreter, rasgar ou dissolver."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Fenômeno químico: nasce uma substância nova",
+          "body": [
+            "Queimar papel, enferrujar um prego, cozinhar um ovo e o leite azedar são fenômenos químicos. As substâncias do começo viram outras, diferentes.",
+            "Um fenômeno químico também se chama reação química. Alguns sinais ajudam a perceber que houve uma (mudança de cor, gás saindo, calor ou luz, e um sólido aparecendo num líquido)."
+          ],
+          "terms": [
+            {
+              "word": "reação química",
+              "meaning": "uma transformação em que substâncias se convertem em outras, diferentes das do começo."
+            }
+          ],
+          "example": {
+            "label": "Sinais de que houve reação",
+            "lines": [
+              "Mudou de cor: a maçã cortada escurece.",
+              "Saiu gás: o comprimido efervescente na água.",
+              "Soltou calor ou luz: o fósforo aceso.",
+              "Apareceu um sólido: o leite que coalha."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova lista situações do dia a dia e pede quais são fenômenos químicos. Também cobra o que boia ou afunda pela densidade."
+          ],
+          "bullets": [
+            "“É exemplo de fenômeno químico…”",
+            "“O gelo flutua na água porque…”",
+            "“Para identificar uma substância, a propriedade mais útil é…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que dissolver açúcar é fenômeno químico. O açúcar continua açúcar.",
+            "Dizer que o que é mais pesado afunda. Decide a densidade, não o peso: um navio de aço boia.",
+            "Usar massa ou volume para identificar a substância. Elas não são específicas."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Densidade é massa dividida pelo volume, e quem tem menor densidade boia. Densidade e pontos de fusão e ebulição identificam a substância.",
+            "Fenômeno físico muda a forma, e a substância continua a mesma. O fenômeno químico, ou reação química, cria substâncias novas. Os sinais são cor, gás, calor e sólido aparecendo."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Densidade",
+          "statement": "Densidade é:",
+          "options": [
+            "a massa somada ao volume",
+            "o volume dividido pelo tempo",
+            "o peso vezes a altura",
+            "a massa dividida pelo volume",
+            "a temperatura dividida pela massa"
+          ],
+          "correct_index": 3,
+          "explanation": "Gramas por centímetro cúbico, por exemplo.",
+          "pitfall": "Não é soma."
+        },
+        {
+          "topic": "Boiar",
+          "statement": "O gelo boia na água porque:",
+          "options": [
+            "é mais leve que qualquer líquido",
+            "tem densidade maior que a da água",
+            "tem ar preso em todo cubo",
+            "a água empurra todo sólido para cima",
+            "tem densidade menor que a da água líquida"
+          ],
+          "correct_index": 4,
+          "explanation": "Cerca de 0,92 contra 1.",
+          "pitfall": "Decide a densidade, não o peso."
+        },
+        {
+          "topic": "Ferro",
+          "statement": "Uma bolinha de ferro, com densidade perto de 8, colocada na água:",
+          "options": [
+            "afunda",
+            "boia",
+            "fica no meio da água",
+            "derrete",
+            "vira gás"
+          ],
+          "correct_index": 0,
+          "explanation": "8 é bem mais que 1.",
+          "pitfall": "Boia o que tem densidade menor."
+        },
+        {
+          "topic": "Específica",
+          "statement": "Qual propriedade ajuda a identificar uma substância?",
+          "options": [
+            "a massa",
+            "a densidade",
+            "o volume",
+            "o tamanho do pedaço",
+            "o preço"
+          ],
+          "correct_index": 1,
+          "explanation": "É própria de cada substância.",
+          "pitfall": "Massa e volume todo material tem."
+        },
+        {
+          "topic": "Físico",
+          "statement": "Qual destes é um fenômeno físico?",
+          "options": [
+            "queimar papel",
+            "enferrujar um prego",
+            "dissolver açúcar no café",
+            "cozinhar um ovo",
+            "o leite azedar"
+          ],
+          "correct_index": 2,
+          "explanation": "O açúcar continua açúcar.",
+          "pitfall": "Os outros criam substâncias novas."
+        },
+        {
+          "topic": "Químico",
+          "statement": "Qual destes é um fenômeno químico?",
+          "options": [
+            "gelo derretendo",
+            "papel rasgando",
+            "água fervendo",
+            "um prego enferrujando",
+            "sal se dissolvendo"
+          ],
+          "correct_index": 3,
+          "explanation": "A ferrugem é uma substância nova.",
+          "pitfall": "Mudança de estado é física."
+        },
+        {
+          "topic": "Sinais",
+          "statement": "Um comprimido efervescente que solta bolhas na água indica:",
+          "options": [
+            "só uma mudança de estado da água",
+            "um fenômeno físico, sem nada novo",
+            "que a água começou a ferver",
+            "que nada mudou, só a cor da água",
+            "uma reação química, com saída de gás"
+          ],
+          "correct_index": 4,
+          "explanation": "Gás novo saindo é sinal de reação.",
+          "pitfall": "A água não está fervendo."
+        },
+        {
+          "topic": "Anel",
+          "statement": "Um anel vendido como ouro puro tem densidade de 10 g/cm³. A conclusão é que:",
+          "options": [
+            "não é ouro puro, porque o ouro tem cerca de 19,3",
+            "é ouro puro, porque brilha como ouro",
+            "é ouro puro, só que com mais massa",
+            "a densidade não serve para testar metal",
+            "é ouro puro, porque o ouro tem densidade 10"
+          ],
+          "correct_index": 0,
+          "explanation": "A densidade não bate.",
+          "pitfall": "Brilho não identifica substância."
+        },
+        {
+          "topic": "Mudança de estado",
+          "statement": "Derreter gelo é um fenômeno:",
+          "options": [
+            "químico",
+            "físico",
+            "nuclear",
+            "biológico",
+            "impossível"
+          ],
+          "correct_index": 1,
+          "explanation": "A água continua água.",
+          "pitfall": "Mudança de estado não cria substância.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Queimar",
+          "statement": "Queimar papel é um fenômeno:",
+          "options": [
+            "físico",
+            "de mudança de estado",
+            "químico",
+            "reversível com facilidade",
+            "que não muda nada"
+          ],
+          "correct_index": 2,
+          "explanation": "As cinzas e a fumaça são outras substâncias.",
+          "pitfall": "Não dá para desfazer.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Óleo",
+          "statement": "O óleo fica por cima da água num copo porque:",
+          "options": [
+            "é mais denso que a água",
+            "é mais pesado que a água",
+            "é uma substância química nova",
+            "é menos denso que a água",
+            "não tem massa"
+          ],
+          "correct_index": 3,
+          "explanation": "Cerca de 0,9 contra 1.",
+          "pitfall": "Mais denso afundaria.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Leite coalhado",
+          "statement": "Quando o leite azeda e aparecem pedaços sólidos, o sinal de reação é:",
+          "options": [
+            "a mudança de estado do leite",
+            "a fervura do leite na geladeira",
+            "o leite ficar mais leve e boiar",
+            "nenhum, é só um fenômeno físico",
+            "o aparecimento de um sólido no líquido"
+          ],
+          "correct_index": 4,
+          "explanation": "As proteínas do leite mudaram.",
+          "pitfall": "Não é só mudar de estado.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Navio",
+          "statement": "Um navio de aço boia, embora o aço afunde sozinho. Isso acontece porque:",
+          "options": [
+            "o casco oco faz o navio inteiro ter densidade média menor que a da água",
+            "o aço de navio é um tipo diferente, que boia sozinho",
+            "o mar empurra para cima só os objetos de metal",
+            "o navio é mais leve que toda a água do mar",
+            "o peso não importa para nada na hora de afundar"
+          ],
+          "correct_index": 0,
+          "explanation": "Aço com muito ar dentro dá densidade média baixa.",
+          "pitfall": "Não é o peso que decide.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Reversível",
+          "statement": "Evaporar a água do café e recuperar o açúcar mostra que dissolver foi:",
+          "options": [
+            "um fenômeno químico, porque o açúcar sumiu",
+            "um fenômeno físico, porque o açúcar continuou o mesmo",
+            "uma reação que criou outro açúcar",
+            "uma mudança que não se desfaz",
+            "uma reação com saída de gás"
+          ],
+          "correct_index": 1,
+          "explanation": "A substância não mudou.",
+          "pitfall": "Sumir da vista não é virar outra coisa.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "materia-e-misturas",
       "title": "Matéria, misturas e como separá-las",
       "module": "Matéria",
       "summary": "Quase tudo à nossa volta é mistura. Ela pode ser homogênea ou heterogênea, e cada tipo pede um jeito diferente de separar.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=YRGyXswza8g",
+        "title": "Separação de misturas",
+        "channel": "Descomplica"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -415,6 +1158,11 @@
       "title": "O átomo e a tabela periódica",
       "module": "O átomo",
       "summary": "Tudo é feito de átomos, com prótons e nêutrons no núcleo e elétrons em volta. O número de prótons define o elemento, e a tabela periódica organiza todos eles.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=5-fa4IKp5bU",
+        "title": "Modelos atômicos",
+        "channel": "Toda Matéria"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -814,10 +1562,760 @@
       ]
     },
     {
+      "slug": "camadas-eletronicas",
+      "title": "Os elétrons em camadas, e por que isso decide tudo",
+      "module": "O átomo",
+      "summary": "Os elétrons ficam em volta do núcleo do átomo em camadas, como andares de um prédio. A lição mostra como distribuir os elétrons, o que é a camada de valência e por que é ela que decide com quem o átomo vai se ligar.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=zqOpIovJ39Y",
+        "title": "Distribuição eletrônica em camadas",
+        "channel": "Professora Priscila Marques"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Os andares do prédio",
+          "body": [
+            "Num prédio, os moradores enchem primeiro os andares de baixo. Só quando um andar lota é que alguém sobe.",
+            "As partes minúsculas que formam a matéria fazem algo parecido. E quem mora no último andar é quem sai para conversar com os vizinhos."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Um núcleo e uma nuvem de elétrons",
+          "body": [
+            "O átomo tem um núcleo no centro, com prótons e nêutrons. Em volta ficam os elétrons, bem mais leves e com carga negativa.",
+            "Num átomo neutro, o número de elétrons é igual ao de prótons. Esse número de prótons é o número atômico, e é ele que diz qual é o elemento."
+          ],
+          "terms": [
+            {
+              "word": "átomo",
+              "meaning": "a unidade minúscula que forma toda a matéria, com um núcleo no centro e elétrons em volta."
+            },
+            {
+              "word": "próton, nêutron e elétron",
+              "meaning": "as partes do átomo: prótons (positivos) e nêutrons (sem carga) ficam no núcleo; elétrons (negativos) ficam em volta."
+            },
+            {
+              "word": "número atômico",
+              "meaning": "o número de prótons do núcleo. Ele define o elemento: todo átomo com 6 prótons é carbono."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As camadas e quantos cabem",
+          "body": [
+            "Os elétrons ficam em camadas (K, L, M e N), da mais perto do núcleo para a mais longe. Cada camada aguenta um máximo: 2 na K e 8 na L, nos átomos que mais caem na prova.",
+            "Para os primeiros 20 elementos, há uma regra prática. Enche a K com 2, a L com 8 e a M com 8; o que sobrar vai para a N."
+          ],
+          "table": {
+            "label": "Alguns átomos, camada por camada",
+            "headers": [
+              "Elemento",
+              "Elétrons",
+              "K",
+              "L",
+              "M",
+              "N"
+            ],
+            "rows": [
+              [
+                "hidrogênio",
+                "1",
+                "1",
+                "",
+                "",
+                ""
+              ],
+              [
+                "carbono",
+                "6",
+                "2",
+                "4",
+                "",
+                ""
+              ],
+              [
+                "oxigênio",
+                "8",
+                "2",
+                "6",
+                "",
+                ""
+              ],
+              [
+                "sódio",
+                "11",
+                "2",
+                "8",
+                "1",
+                ""
+              ],
+              [
+                "cloro",
+                "17",
+                "2",
+                "8",
+                "7",
+                ""
+              ],
+              [
+                "cálcio",
+                "20",
+                "2",
+                "8",
+                "8",
+                "2"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A camada de valência",
+          "body": [
+            "A última camada com elétrons se chama camada de valência. São os elétrons dela que participam das ligações com outros átomos.",
+            "O sódio tem só 1 elétron na última camada e tende a perdê-lo. O cloro tem 7 e tende a ganhar 1. É por isso que os dois se juntam e formam o sal de cozinha."
+          ],
+          "terms": [
+            {
+              "word": "camada de valência",
+              "meaning": "a última camada de elétrons de um átomo, a que participa das ligações químicas."
+            },
+            {
+              "word": "regra do octeto",
+              "meaning": "a tendência dos átomos de ficar com 8 elétrons na última camada, perdendo, ganhando ou dividindo elétrons."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A família na tabela",
+          "body": [
+            "Os elementos de uma mesma coluna da tabela periódica, uma família, têm o mesmo número de elétrons na camada de valência. Por isso se comportam de forma parecida.",
+            "Lítio, sódio e potássio têm 1 elétron na última camada, e todos reagem com a água com violência. Os gases nobres, com a última camada cheia, quase não reagem com nada."
+          ],
+          "terms": [
+            {
+              "word": "gás nobre",
+              "meaning": "os elementos da última coluna da tabela, como hélio e neônio, que têm a última camada cheia e quase não reagem."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova dá o número atômico e pede a distribuição nas camadas, ou quantos elétrons há na valência. Depois pergunta se o átomo tende a ganhar ou perder elétrons."
+          ],
+          "bullets": [
+            "“A distribuição eletrônica do átomo de número atômico 17 é…”",
+            "“O número de elétrons na camada de valência do sódio é…”",
+            "“Elementos da mesma família têm em comum…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Pôr mais de 2 elétrons na camada K. Ela aguenta só 2.",
+            "Achar que o número de nêutrons define o elemento. Quem define é o número de prótons.",
+            "Dizer que gás nobre reage fácil. Com a última camada cheia, ele quase não reage."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Os elétrons ficam em camadas em volta do núcleo: 2 na K, 8 na L e assim por diante. O número atômico, de prótons, define o elemento.",
+            "A camada de valência é a última, e é ela que faz as ligações. Átomos tendem a ficar com 8 nela, e elementos da mesma família têm a mesma valência."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Núcleo",
+          "statement": "No núcleo do átomo ficam:",
+          "options": [
+            "os elétrons e os prótons",
+            "só os elétrons",
+            "os prótons e os nêutrons",
+            "os elétrons e os nêutrons",
+            "nenhuma partícula"
+          ],
+          "correct_index": 2,
+          "explanation": "Os elétrons ficam em volta.",
+          "pitfall": "Elétron não fica no núcleo."
+        },
+        {
+          "topic": "Número atômico",
+          "statement": "O número atômico de um elemento é o número de:",
+          "options": [
+            "nêutrons",
+            "camadas",
+            "átomos da molécula",
+            "prótons",
+            "elétrons perdidos"
+          ],
+          "correct_index": 3,
+          "explanation": "Ele define qual elemento é.",
+          "pitfall": "Nêutrons podem variar."
+        },
+        {
+          "topic": "Camada K",
+          "statement": "A camada K, a mais perto do núcleo, aguenta no máximo:",
+          "options": [
+            "8 elétrons",
+            "1 elétron",
+            "18 elétrons",
+            "32 elétrons",
+            "2 elétrons"
+          ],
+          "correct_index": 4,
+          "explanation": "Depois de 2, os elétrons vão para a L.",
+          "pitfall": "8 é a L."
+        },
+        {
+          "topic": "Oxigênio",
+          "statement": "O oxigênio, com 8 elétrons, tem a distribuição:",
+          "options": [
+            "K = 2; L = 6",
+            "K = 8",
+            "K = 4; L = 4",
+            "K = 2; L = 8",
+            "K = 6; L = 2"
+          ],
+          "correct_index": 0,
+          "explanation": "Enche a K com 2; o resto vai para a L.",
+          "pitfall": "A K não aguenta 8."
+        },
+        {
+          "topic": "Sódio",
+          "statement": "O sódio, com 11 elétrons, tem na camada de valência:",
+          "options": [
+            "11 elétrons",
+            "1 elétron",
+            "8 elétrons",
+            "2 elétrons",
+            "nenhum elétron"
+          ],
+          "correct_index": 1,
+          "explanation": "2, 8 e 1: a última camada tem 1.",
+          "pitfall": "Não conte todos os elétrons."
+        },
+        {
+          "topic": "Valência",
+          "statement": "A camada de valência é:",
+          "options": [
+            "a camada mais perto do núcleo",
+            "o núcleo do átomo",
+            "a última camada com elétrons do átomo",
+            "a camada que nunca tem elétrons",
+            "a soma de todas as camadas"
+          ],
+          "correct_index": 2,
+          "explanation": "É a que participa das ligações.",
+          "pitfall": "A mais perto do núcleo é a K."
+        },
+        {
+          "topic": "Cloro",
+          "statement": "O cloro, com 7 elétrons na última camada, tende a:",
+          "options": [
+            "perder 7 elétrons",
+            "ganhar 7 elétrons",
+            "não fazer ligação nenhuma",
+            "ganhar 1 elétron",
+            "perder todos os prótons"
+          ],
+          "correct_index": 3,
+          "explanation": "Com 1 a mais, completa 8.",
+          "pitfall": "Perder 7 é bem mais difícil."
+        },
+        {
+          "topic": "Família",
+          "statement": "Elementos da mesma família da tabela têm em comum:",
+          "options": [
+            "o mesmo número de prótons no núcleo",
+            "a mesma massa e o mesmo tamanho",
+            "o mesmo número de camadas de elétrons",
+            "o mesmo nome, com outra letra",
+            "o mesmo número de elétrons na camada de valência"
+          ],
+          "correct_index": 4,
+          "explanation": "Por isso reagem de modo parecido.",
+          "pitfall": "Prótons são diferentes em cada elemento."
+        },
+        {
+          "topic": "Elétron",
+          "statement": "O elétron tem carga:",
+          "options": [
+            "negativa",
+            "positiva",
+            "nula",
+            "igual à do próton",
+            "variável conforme o átomo"
+          ],
+          "correct_index": 0,
+          "explanation": "Prótons são positivos.",
+          "pitfall": "Nêutron é que não tem carga.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Gás nobre",
+          "statement": "Os gases nobres quase não reagem porque:",
+          "options": [
+            "não têm elétrons",
+            "têm a última camada cheia",
+            "não têm núcleo",
+            "têm só um elétron",
+            "são pesados demais"
+          ],
+          "correct_index": 1,
+          "explanation": "Já estão estáveis.",
+          "pitfall": "Têm elétrons, sim.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Carbono",
+          "statement": "O carbono, com 6 elétrons, tem na camada de valência:",
+          "options": [
+            "6 elétrons",
+            "2 elétrons",
+            "4 elétrons",
+            "8 elétrons",
+            "1 elétron"
+          ],
+          "correct_index": 2,
+          "explanation": "2 na K e 4 na L.",
+          "pitfall": "A K tem 2; a valência é a L.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Cálcio",
+          "statement": "O cálcio, com 20 elétrons, pela regra prática fica com:",
+          "options": [
+            "K = 2; L = 8; M = 10",
+            "K = 2; L = 18",
+            "K = 10; L = 10",
+            "K = 2; L = 8; M = 8; N = 2",
+            "K = 2; L = 8; M = 9; N = 1"
+          ],
+          "correct_index": 3,
+          "explanation": "Enche K, L e M e sobram 2.",
+          "pitfall": "A M para em 8 nos primeiros 20.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Sal",
+          "statement": "O sódio e o cloro se juntam para formar o sal de cozinha porque:",
+          "options": [
+            "os dois já têm a última camada cheia de elétrons",
+            "os dois tendem a perder elétrons ao mesmo tempo",
+            "o cloro tende a perder os seus 7 elétrons",
+            "os dois são gases nobres e se atraem",
+            "o sódio tende a perder 1 elétron e o cloro tende a ganhar 1"
+          ],
+          "correct_index": 4,
+          "explanation": "Um dá, o outro recebe.",
+          "pitfall": "Gases nobres não se ligam assim.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Isótopos",
+          "statement": "Dois átomos de carbono, um com 6 e outro com 8 nêutrons, são:",
+          "options": [
+            "do mesmo elemento, porque têm o mesmo número de prótons",
+            "de elementos diferentes, porque os nêutrons mudam",
+            "do mesmo elemento só se tiverem a mesma massa",
+            "de elementos diferentes, porque a massa muda",
+            "impossíveis de existir"
+          ],
+          "correct_index": 0,
+          "explanation": "O que define o elemento são os prótons.",
+          "pitfall": "Nêutrons diferentes não mudam o elemento.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "propriedades-periodicas",
+      "title": "Lendo a tabela periódica: famílias, tamanho e eletronegatividade",
+      "module": "O átomo",
+      "summary": "A tabela periódica não é uma lista solta: a posição de cada elemento conta como ele se comporta. A lição mostra as famílias que mais caem, onde ficam os metais, como o tamanho do átomo muda e quem puxa elétrons com mais força.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=eaGqKb22_7I",
+        "title": "Propriedades periódicas",
+        "channel": "Prof. Silvio Predis - Química Nota 10"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Um mapa, não uma lista",
+          "body": [
+            "Num mapa, saber que uma cidade fica no litoral já diz muito sobre ela: tem praia e porto e é úmida.",
+            "Na tabela periódica é igual. Só pela posição de um elemento dá para prever se ele é metal, se é grande e como se liga aos outros."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Linhas e colunas",
+          "body": [
+            "As linhas da tabela se chamam períodos. Elementos do mesmo período têm o mesmo número de camadas de elétrons.",
+            "As colunas são as famílias. Elementos da mesma família têm o mesmo número de elétrons na última camada, e por isso reagem de forma parecida."
+          ],
+          "terms": [
+            {
+              "word": "átomo",
+              "meaning": "a unidade minúscula que forma toda a matéria, com um núcleo no centro e elétrons em volta."
+            },
+            {
+              "word": "próton, nêutron e elétron",
+              "meaning": "as partes do átomo. No núcleo ficam os prótons (positivos) e os nêutrons (sem carga); em volta ficam os elétrons (negativos)."
+            },
+            {
+              "word": "período e família",
+              "meaning": "período é cada linha da tabela, com o mesmo número de camadas; família é cada coluna, com a mesma última camada."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As famílias com nome",
+          "body": [
+            "Quatro famílias têm nome e caem sempre. Os metais alcalinos ficam na primeira coluna e reagem com a água com violência. Os halogênios ficam na penúltima e formam sais com os metais.",
+            "Os gases nobres ocupam a última coluna e quase não reagem. O hidrogênio aparece na primeira coluna, mas não é metal alcalino."
+          ],
+          "table": {
+            "label": "As famílias que mais caem",
+            "headers": [
+              "Família",
+              "Onde fica",
+              "Exemplos"
+            ],
+            "rows": [
+              [
+                "metais alcalinos",
+                "1ª coluna",
+                "lítio, sódio, potássio"
+              ],
+              [
+                "alcalino-terrosos",
+                "2ª coluna",
+                "magnésio, cálcio"
+              ],
+              [
+                "halogênios",
+                "penúltima coluna",
+                "flúor, cloro, iodo"
+              ],
+              [
+                "gases nobres",
+                "última coluna",
+                "hélio, neônio, argônio"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Metais e não metais",
+          "body": [
+            "A maior parte da tabela é de metais, que ficam à esquerda e no centro. Eles brilham, conduzem calor e eletricidade e podem ser dobrados ou esticados em fios.",
+            "Os não metais ficam à direita, como o carbono, o oxigênio e o cloro. Em geral não conduzem bem e não brilham."
+          ],
+          "terms": [
+            {
+              "word": "metal",
+              "meaning": "um elemento que brilha, conduz calor e eletricidade e pode ser dobrado sem quebrar, como o ferro e o cobre."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quem é maior e quem puxa mais",
+          "body": [
+            "Descendo uma coluna, o átomo ganha camadas e fica maior. Andando para a direita num período, o núcleo ganha prótons e puxa os elétrons para mais perto: o átomo fica menor.",
+            "Eletronegatividade é a força com que o átomo puxa os elétrons de uma ligação. Ela cresce para cima e para a direita. O flúor é o campeão, e logo depois vêm o oxigênio e o nitrogênio."
+          ],
+          "terms": [
+            {
+              "word": "eletronegatividade",
+              "meaning": "a força com que um átomo puxa para si os elétrons que divide com outro numa ligação."
+            }
+          ],
+          "table": {
+            "label": "Como as propriedades mudam",
+            "headers": [
+              "Propriedade",
+              "Na coluna, descendo",
+              "No período, para a direita"
+            ],
+            "rows": [
+              [
+                "tamanho do átomo",
+                "aumenta",
+                "diminui"
+              ],
+              [
+                "eletronegatividade",
+                "diminui",
+                "aumenta"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mostra a tabela ou dá dois elementos e pergunta qual é maior, qual é mais eletronegativo ou se é metal. Também pede a família de um elemento."
+          ],
+          "bullets": [
+            "“Entre os elementos indicados, o de maior raio é…”",
+            "“O elemento mais eletronegativo da tabela é…”",
+            "“Os halogênios formam, com os metais alcalinos…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que o átomo cresce para a direita. Mais prótons puxam os elétrons, e ele encolhe.",
+            "Pôr o hidrogênio entre os metais alcalinos. Ele fica na coluna, mas não é metal.",
+            "Trocar período por família. Período é linha; família é coluna."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Período é linha, com o mesmo número de camadas; família é coluna, com a mesma última camada. Alcalinos, alcalino-terrosos, halogênios e gases nobres são as famílias com nome.",
+            "Metais ficam à esquerda e no centro. O átomo cresce para baixo e encolhe para a direita. A eletronegatividade cresce para cima e para a direita, e o flúor é o maior."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Família",
+          "statement": "Elementos da mesma coluna da tabela formam:",
+          "options": [
+            "uma família, com a mesma última camada",
+            "um período, com o mesmo número de camadas",
+            "um único elemento com nomes diferentes",
+            "um grupo sem nada em comum",
+            "uma mistura de metais e gases"
+          ],
+          "correct_index": 0,
+          "explanation": "Por isso reagem de modo parecido.",
+          "pitfall": "Linha é período."
+        },
+        {
+          "topic": "Período",
+          "statement": "Elementos do mesmo período têm em comum:",
+          "options": [
+            "o mesmo número de elétrons na última camada",
+            "o mesmo número de camadas de elétrons",
+            "a mesma massa",
+            "o mesmo número de prótons",
+            "o mesmo estado físico"
+          ],
+          "correct_index": 1,
+          "explanation": "Período é a linha.",
+          "pitfall": "Última camada igual é família."
+        },
+        {
+          "topic": "Alcalinos",
+          "statement": "Sódio e potássio pertencem à família dos:",
+          "options": [
+            "gases nobres",
+            "halogênios",
+            "metais alcalinos",
+            "alcalino-terrosos",
+            "não metais"
+          ],
+          "correct_index": 2,
+          "explanation": "Ficam na primeira coluna.",
+          "pitfall": "Alcalino-terrosos ficam na segunda."
+        },
+        {
+          "topic": "Halogênios",
+          "statement": "Flúor, cloro e iodo são:",
+          "options": [
+            "gases nobres",
+            "metais alcalinos",
+            "metais de transição",
+            "halogênios",
+            "alcalino-terrosos"
+          ],
+          "correct_index": 3,
+          "explanation": "Ficam na penúltima coluna.",
+          "pitfall": "Gases nobres ficam na última."
+        },
+        {
+          "topic": "Metais",
+          "statement": "Na tabela periódica, os metais ficam:",
+          "options": [
+            "só na última coluna, junto dos gases",
+            "à direita, e são uma minoria",
+            "só na primeira linha, em cima",
+            "fora da tabela, numa lista à parte",
+            "à esquerda e no centro, e são a maioria"
+          ],
+          "correct_index": 4,
+          "explanation": "A maior parte dos elementos é metal.",
+          "pitfall": "À direita ficam os não metais."
+        },
+        {
+          "topic": "Tamanho na coluna",
+          "statement": "Descendo uma coluna da tabela, o tamanho do átomo:",
+          "options": [
+            "aumenta, porque ganha camadas",
+            "diminui, porque perde camadas",
+            "fica igual",
+            "aumenta só nos gases nobres",
+            "zera no fim da coluna"
+          ],
+          "correct_index": 0,
+          "explanation": "Cada linha de baixo tem uma camada a mais.",
+          "pitfall": "Não confunda com o período."
+        },
+        {
+          "topic": "Tamanho no período",
+          "statement": "Andando para a direita num período, o átomo:",
+          "options": [
+            "fica maior, porque ganha mais elétrons",
+            "fica menor, porque mais prótons puxam os elétrons",
+            "fica igual do começo ao fim do período",
+            "perde camadas a cada passo para a direita",
+            "vira metal alcalino no fim do período"
+          ],
+          "correct_index": 1,
+          "explanation": "O núcleo mais carregado puxa mais.",
+          "pitfall": "Ganhar elétron não faz crescer aqui."
+        },
+        {
+          "topic": "Mais eletronegativo",
+          "statement": "O elemento mais eletronegativo da tabela é o:",
+          "options": [
+            "frâncio",
+            "hélio",
+            "flúor",
+            "sódio",
+            "ferro"
+          ],
+          "correct_index": 2,
+          "explanation": "Fica no alto, à direita.",
+          "pitfall": "Gases nobres ficam de fora dessa disputa."
+        },
+        {
+          "topic": "Metal",
+          "statement": "Uma propriedade típica dos metais é:",
+          "options": [
+            "não conduzir calor",
+            "ser sempre gás",
+            "quebrar ao ser dobrado",
+            "conduzir bem a eletricidade",
+            "não ter brilho"
+          ],
+          "correct_index": 3,
+          "explanation": "Por isso os fios são de cobre.",
+          "pitfall": "Quebrar fácil é de não metal sólido.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Gases nobres",
+          "statement": "Os gases nobres ficam na:",
+          "options": [
+            "primeira coluna",
+            "primeira linha",
+            "parte de baixo, separada",
+            "coluna do meio",
+            "última coluna da tabela"
+          ],
+          "correct_index": 4,
+          "explanation": "Hélio, neônio, argônio.",
+          "pitfall": "A primeira coluna é a dos alcalinos.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Hidrogênio",
+          "statement": "O hidrogênio aparece na primeira coluna, mas:",
+          "options": [
+            "não é um metal alcalino",
+            "é o metal alcalino mais forte",
+            "é um gás nobre",
+            "é um halogênio",
+            "não tem elétrons"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele é um não metal.",
+          "pitfall": "Estar na coluna não faz dele metal.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Comparar",
+          "statement": "O lítio fica no período 2 e o potássio no período 4, na mesma família. O maior átomo é o:",
+          "options": [
+            "lítio, porque fica mais em cima",
+            "potássio, porque tem mais camadas",
+            "os dois são do mesmo tamanho",
+            "lítio, porque tem menos prótons",
+            "impossível comparar"
+          ],
+          "correct_index": 1,
+          "explanation": "Mais embaixo, mais camadas.",
+          "pitfall": "Mais em cima é menor.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Direção",
+          "statement": "A eletronegatividade cresce na tabela:",
+          "options": [
+            "para baixo e para a esquerda",
+            "só para baixo",
+            "para cima e para a direita",
+            "só para a esquerda",
+            "igual em todas as direções"
+          ],
+          "correct_index": 2,
+          "explanation": "O flúor, no alto à direita, é o maior.",
+          "pitfall": "O tamanho é que cresce para baixo.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Tamanho e puxão",
+          "statement": "Um átomo pequeno costuma ser mais eletronegativo porque:",
+          "options": [
+            "tem mais camadas para guardar os elétrons",
+            "não tem núcleo para segurar os elétrons",
+            "é sempre um metal, e metal puxa mais",
+            "o núcleo, mais perto dos elétrons, puxa mais forte",
+            "perde elétrons com facilidade nas ligações"
+          ],
+          "correct_index": 3,
+          "explanation": "Perto do núcleo, o puxão é maior.",
+          "pitfall": "Perder elétron fácil é coisa de metal grande.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "ligacoes-quimicas",
       "title": "Ligações químicas: como os átomos se unem",
       "module": "O átomo",
       "summary": "Os átomos se unem para ficar estáveis. Uns passam elétrons para outros, uns dividem elétrons e os metais formam um mar de elétrons livres.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=FDnxddw0P1g",
+        "title": "Ligações químicas",
+        "channel": "Toda Matéria"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -1195,10 +2693,376 @@
       ]
     },
     {
+      "slug": "polaridade-e-forcas",
+      "title": "Polaridade: por que a água e o óleo não se misturam",
+      "module": "O átomo",
+      "summary": "Numa ligação, um átomo pode puxar os elétrons mais que o outro e deixar a molécula com um lado negativo e outro positivo. A lição mostra o que é molécula polar, por que a água e o óleo se separam e o que segura as moléculas umas nas outras.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=NV93Bh7aXqk",
+        "title": "Polaridade das ligações e das moléculas",
+        "channel": "Curso Enem Gratuito"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O cabo de guerra",
+          "body": [
+            "Dois times puxam uma corda. Se forem iguais, a corda fica no meio. Se um for mais forte, ela vai para o lado dele.",
+            "Quando duas partes minúsculas da matéria se ligam, algo parecido acontece. Quem puxa mais fica com um pouco mais de carga negativa."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Ligação polar e apolar",
+          "body": [
+            "Na ligação covalente, dois átomos dividem elétrons. Se os dois puxam igual, como dois átomos de oxigênio, a ligação é apolar.",
+            "Se um puxa mais, os elétrons ficam mais perto dele, e a ligação é polar. Na água, o oxigênio puxa os elétrons mais que os hidrogênios."
+          ],
+          "terms": [
+            {
+              "word": "átomo",
+              "meaning": "a unidade minúscula que forma a matéria, com um núcleo e elétrons em volta."
+            },
+            {
+              "word": "elétron",
+              "meaning": "a parte do átomo com carga negativa, que fica em volta do núcleo."
+            },
+            {
+              "word": "ligação covalente",
+              "meaning": "a ligação em que dois átomos dividem elétrons entre si."
+            },
+            {
+              "word": "eletronegatividade",
+              "meaning": "a força com que um átomo puxa os elétrons de uma ligação."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Molécula polar: depende da forma",
+          "body": [
+            "Uma molécula é polar quando, somando todas as ligações, sobra um lado mais negativo e outro mais positivo. Isso depende também da forma dela.",
+            "A água tem forma de V, e o lado do oxigênio fica negativo: ela é polar. O gás carbônico é uma linha reta, com os dois puxões iguais e opostos: eles se cancelam, e a molécula é apolar."
+          ],
+          "terms": [
+            {
+              "word": "molécula",
+              "meaning": "um grupo de átomos ligados que forma uma substância, como a água."
+            },
+            {
+              "word": "molécula polar",
+              "meaning": "uma molécula com um lado um pouco negativo e outro um pouco positivo."
+            }
+          ],
+          "table": {
+            "label": "Polar ou apolar?",
+            "headers": [
+              "Molécula",
+              "Forma",
+              "Tipo"
+            ],
+            "rows": [
+              [
+                "água",
+                "em V",
+                "polar"
+              ],
+              [
+                "gás carbônico",
+                "reta",
+                "apolar"
+              ],
+              [
+                "óleo e gordura",
+                "cadeia longa de carbono",
+                "apolar"
+              ],
+              [
+                "álcool comum",
+                "tem uma parte parecida com a da água",
+                "polar"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Semelhante dissolve semelhante",
+          "body": [
+            "Substâncias polares se misturam com polares, e apolares com apolares. Por isso o sal e o açúcar dissolvem na água, e o óleo não.",
+            "A tinta a óleo sai com aguarrás, que é apolar, e não com água. E o sabão funciona porque tem uma ponta que gosta de água e outra que gosta de gordura."
+          ],
+          "example": {
+            "label": "Quem se mistura com quem",
+            "lines": [
+              "Água e sal: misturam (os dois polares).",
+              "Água e óleo: não misturam (um polar, outro apolar).",
+              "Óleo e gasolina: misturam (os dois apolares)."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que segura as moléculas juntas",
+          "body": [
+            "Entre as moléculas também há atrações, bem mais fracas que as ligações de dentro delas. A mais forte se chama ligação de hidrogênio, e aparece na água.",
+            "É por causa dela que a água ferve a 100 °C, alto para uma molécula tão pequena. Ela também explica por que o gelo boia e por que alguns insetos andam sobre a água."
+          ],
+          "terms": [
+            {
+              "word": "ligação de hidrogênio",
+              "meaning": "a atração forte entre moléculas em que o hidrogênio está ligado a flúor, oxigênio ou nitrogênio, como na água."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede para explicar por que algo dissolve ou não, ou por que a água tem ponto de ebulição alto. A resposta passa por polaridade e pelas forças entre as moléculas."
+          ],
+          "bullets": [
+            "“A água e o óleo não se misturam porque…”",
+            "“A molécula de gás carbônico é apolar porque…”",
+            "“O ponto de ebulição elevado da água se explica…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que molécula com ligação polar é sempre polar. No gás carbônico, os puxões se cancelam.",
+            "Dizer que óleo e água não se misturam porque o óleo é mais leve. A causa é a polaridade.",
+            "Confundir a ligação de hidrogênio com uma ligação dentro da molécula. Ela é uma atração entre moléculas."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Quando um átomo puxa mais os elétrons, a ligação é polar. A molécula é polar se sobrar um lado negativo, o que depende da forma: a água é polar e o gás carbônico não.",
+            "Semelhante dissolve semelhante: polar com polar, apolar com apolar. A ligação de hidrogênio segura as moléculas de água e explica o ponto de ebulição alto."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Polar",
+          "statement": "Uma ligação é polar quando:",
+          "options": [
+            "os dois átomos puxam exatamente igual",
+            "não há elétrons na ligação",
+            "os átomos são do mesmo elemento",
+            "a molécula é uma linha reta",
+            "um dos átomos puxa os elétrons mais que o outro"
+          ],
+          "correct_index": 4,
+          "explanation": "É o cabo de guerra desigual.",
+          "pitfall": "Átomos iguais dão ligação apolar."
+        },
+        {
+          "topic": "Água",
+          "statement": "A água é uma molécula polar porque:",
+          "options": [
+            "tem forma de V e o lado do oxigênio fica negativo",
+            "é um líquido transparente e sem cheiro",
+            "tem só um tipo de átomo na molécula",
+            "é uma linha reta, com os puxões iguais",
+            "não tem elétrons nas suas ligações"
+          ],
+          "correct_index": 0,
+          "explanation": "A forma em V não deixa os puxões se cancelarem.",
+          "pitfall": "Ser líquida não decide."
+        },
+        {
+          "topic": "Gás carbônico",
+          "statement": "O gás carbônico é apolar, mesmo tendo ligações polares, porque:",
+          "options": [
+            "não tem ligação nenhuma entre os átomos",
+            "é reto, e os dois puxões opostos se cancelam",
+            "é um gás, e todo gás é sempre apolar",
+            "tem forma de V, igual à da água",
+            "o carbono não puxa elétron nenhum"
+          ],
+          "correct_index": 1,
+          "explanation": "A forma decide o resultado.",
+          "pitfall": "Nem todo gás é apolar."
+        },
+        {
+          "topic": "Sal",
+          "statement": "O sal se dissolve bem na água porque:",
+          "options": [
+            "os dois são apolares",
+            "o sal é mais leve que a água",
+            "os dois são polares",
+            "a água é apolar",
+            "o sal é um gás"
+          ],
+          "correct_index": 2,
+          "explanation": "Semelhante dissolve semelhante.",
+          "pitfall": "Peso não decide."
+        },
+        {
+          "topic": "Óleo",
+          "statement": "A água e o óleo não se misturam porque:",
+          "options": [
+            "o óleo é mais leve que a água",
+            "a água é apolar e o óleo também",
+            "o óleo é polar demais",
+            "a água é polar e o óleo é apolar",
+            "os dois são sólidos"
+          ],
+          "correct_index": 3,
+          "explanation": "Polar não se mistura com apolar.",
+          "pitfall": "Ser mais leve só explica quem fica em cima."
+        },
+        {
+          "topic": "Aguarrás",
+          "statement": "A tinta a óleo sai com aguarrás, e não com água, porque:",
+          "options": [
+            "a aguarrás é mais quente que a água",
+            "a água é apolar, como a tinta",
+            "a tinta é polar, como a aguarrás",
+            "a aguarrás é mais pesada que a tinta",
+            "a aguarrás é apolar, como a tinta"
+          ],
+          "correct_index": 4,
+          "explanation": "Apolar dissolve apolar.",
+          "pitfall": "Não é questão de temperatura."
+        },
+        {
+          "topic": "Ligação de hidrogênio",
+          "statement": "A ligação de hidrogênio é:",
+          "options": [
+            "uma atração forte entre moléculas, como as da água",
+            "a ligação entre os átomos dentro da molécula",
+            "uma ligação que só existe nos metais",
+            "a força que segura o núcleo",
+            "o mesmo que ligação iônica"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela age entre moléculas.",
+          "pitfall": "Não é a ligação de dentro."
+        },
+        {
+          "topic": "Ebulição",
+          "statement": "A água ferve a 100 °C, um valor alto para uma molécula tão pequena, por causa:",
+          "options": [
+            "do tamanho enorme da molécula de água",
+            "das ligações de hidrogênio entre as moléculas",
+            "da falta de polaridade da molécula",
+            "do sal que está dissolvido em toda água",
+            "do peso grande do átomo de hidrogênio"
+          ],
+          "correct_index": 1,
+          "explanation": "É preciso muita energia para separá-las.",
+          "pitfall": "A molécula é pequena."
+        },
+        {
+          "topic": "Semelhante",
+          "statement": "A regra “semelhante dissolve semelhante” quer dizer que:",
+          "options": [
+            "tudo se mistura com tudo, sem exceção",
+            "só líquidos idênticos se misturam",
+            "polar se mistura com polar, e apolar com apolar",
+            "polar só se mistura com apolar",
+            "nada se mistura com a água, que é especial"
+          ],
+          "correct_index": 2,
+          "explanation": "É a regra da polaridade.",
+          "pitfall": "Polar e apolar não se misturam.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Gasolina",
+          "statement": "Óleo e gasolina, os dois apolares:",
+          "options": [
+            "não se misturam",
+            "explodem ao se tocar",
+            "viram água",
+            "se misturam",
+            "se separam em camadas"
+          ],
+          "correct_index": 3,
+          "explanation": "Apolar com apolar.",
+          "pitfall": "Camadas aparecem com água e óleo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Sabão",
+          "statement": "O sabão consegue tirar gordura com água porque:",
+          "options": [
+            "é mais quente que a água e derrete a gordura",
+            "transforma a gordura em água e ela some",
+            "é apolar nas duas pontas, como a gordura",
+            "deixa a água apolar enquanto está nela",
+            "tem uma ponta que ama água e outra que ama gordura"
+          ],
+          "correct_index": 4,
+          "explanation": "Ele faz a ponte entre os dois.",
+          "pitfall": "Não transforma a gordura.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Inseto",
+          "statement": "Alguns insetos andam sobre a água por causa:",
+          "options": [
+            "da atração forte entre as moléculas da superfície",
+            "de serem mais pesados que a água em volta",
+            "de a água ser apolar e escorregadia",
+            "de a água estar quente na superfície",
+            "de baterem as asas o tempo todo"
+          ],
+          "correct_index": 0,
+          "explanation": "A superfície fica como uma película.",
+          "pitfall": "Mais pesado afundaria.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Ligação polar e molécula",
+          "statement": "Uma molécula pode ter ligações polares e ainda assim ser apolar porque:",
+          "options": [
+            "ligação polar sempre faz molécula polar",
+            "a forma pode fazer os puxões se cancelarem",
+            "a polaridade não depende da forma",
+            "os elétrons somem da molécula",
+            "só moléculas com metais são polares"
+          ],
+          "correct_index": 1,
+          "explanation": "É o caso do gás carbônico.",
+          "pitfall": "A forma decide.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Óleo e peso",
+          "statement": "Um colega diz que o óleo não se mistura com a água porque é mais leve. O erro dele é que:",
+          "options": [
+            "o óleo é mais pesado que a água e afunda",
+            "o óleo se mistura com a água, sim, se mexer bem",
+            "o peso só diz quem fica em cima; a mistura depende da polaridade",
+            "a água é apolar, como o óleo, e eles se repelem",
+            "o peso não muda nada, em nenhum caso, na mistura"
+          ],
+          "correct_index": 2,
+          "explanation": "Densidade e polaridade explicam coisas diferentes.",
+          "pitfall": "As duas ideias andam juntas, mas não são a mesma.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "acidos-bases-sais-oxidos",
       "title": "Ácidos, bases, sais e óxidos",
       "module": "Reações",
       "summary": "Ácidos azedam e soltam H⁺ na água; bases são amargas e soltam OH⁻. O pH mede de 0 a 14, e ácido com base vira sal e água.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=qEMStx7_f3U",
+        "title": "Ácidos, bases, sais e óxidos",
+        "channel": "Ciência Mapeada"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -1598,6 +3462,11 @@
       "title": "Reações químicas, balanceamento e mol",
       "module": "Reações",
       "summary": "Numa reação, átomos se rearranjam e nada some: a massa se conserva. O balanceamento acerta as contas, e o mol é o pacote que conta partículas.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=yF8o5vTOGc4",
+        "title": "Balanceamento de equações químicas",
+        "channel": "Brasil Escola Oficial"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -1972,6 +3841,11 @@
       "title": "Reações que esquentam e reações que esfriam",
       "module": "Reações",
       "summary": "Toda reação mexe com energia. Umas soltam calor, outras absorvem. A lição mostra o sinal do ΔH, o papel das ligações e por que o etanol rende menos.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=esqhgvFljIY",
+        "title": "O que é termoquímica",
+        "channel": "Descomplica"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -2328,6 +4202,11 @@
       "title": "A velocidade das reações",
       "module": "Reações",
       "summary": "Umas reações levam segundos, outras, anos. Quatro fatores mudam essa velocidade (calor, superfície, concentração e catalisador), e é por isso que a geladeira conserva a comida.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=tj638Wk3GNg",
+        "title": "Cinética química: a velocidade das reações",
+        "channel": "Descomplica"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -2691,6 +4570,11 @@
       "title": "Equilíbrio químico: a reação que vai e volta",
       "module": "Reações",
       "summary": "Muitas reações andam nos dois sentidos ao mesmo tempo. A lição mostra o equilíbrio, o que o desloca e por que o refrigerante solta bolhas ao ser aberto.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=joQbc8s6DKE",
+        "title": "Equilíbrio químico: o que é",
+        "channel": "Professor Gabriel Cabral"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -3040,6 +4924,11 @@
       "title": "Soluções e concentração",
       "module": "Reações",
       "summary": "Uma solução tem soluto e solvente. A concentração diz quanto soluto há em cada litro, e a solubilidade diz o máximo que dá para dissolver.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=yU70WTXKyrc",
+        "title": "Concentração das soluções",
+        "channel": "Canal Futura"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -3403,6 +5292,11 @@
       "title": "Pilhas, baterias e ferrugem",
       "module": "Química no mundo",
       "summary": "Algumas reações passam elétrons de um átomo a outro. Aproveitada, essa passagem vira a pilha; sem controle, vira a ferrugem. E a eletrólise faz o caminho de volta.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=Dm03CZ5mpNs",
+        "title": "Como funcionam as pilhas e as baterias",
+        "channel": "Curso Enem Gratuito"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -3748,6 +5642,11 @@
       "title": "Química orgânica: o mundo do carbono",
       "module": "Química no mundo",
       "summary": "O carbono faz quatro ligações e forma cadeias enormes. Por isso existem milhões de substâncias orgânicas, dos combustíveis aos remédios e aos plásticos.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=fY8E1dhNGNc",
+        "title": "Química orgânica: comece aqui",
+        "channel": "Toda Matéria"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -4137,6 +6036,11 @@
       "title": "Química e ambiente: combustíveis, poluição e reciclagem",
       "module": "Química no mundo",
       "summary": "Queimar combustíveis solta energia e também gases que poluem e aquecem o planeta. Biocombustíveis e reciclagem são parte da resposta.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=B9vpbIbsg9A",
+        "title": "Química ambiental",
+        "channel": "Descomplica"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -4503,10 +6407,1071 @@
       ]
     },
     {
+      "slug": "tratamento-de-agua",
+      "title": "Da represa à torneira: como a água é tratada",
+      "module": "Química no mundo",
+      "summary": "A água que chega à torneira passou por uma sequência de separações e de química. A lição segue o caminho na estação de tratamento, explica o cloro e o flúor e mostra a diferença entre água potável, pura e fervida.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=cWBSF0VyiMI",
+        "title": "Como é feito o tratamento de água",
+        "channel": "Manual do Mundo"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Água barrenta, água limpa",
+          "body": [
+            "A água do rio é barrenta e tem micróbios. A da torneira é transparente e pode ser bebida.",
+            "Entre uma e outra, há uma estação de tratamento usando as mesmas separações de mistura que se estudam na escola."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Juntar a sujeira em flocos",
+          "body": [
+            "Primeiro, a água recebe um produto como o sulfato de alumínio. Ele faz as partículas de sujeira grudarem umas nas outras e formarem flocos maiores.",
+            "Essa etapa se chama coagulação e floculação. Sozinhas, as partículas eram pequenas demais para afundar; juntas em flocos, ficam pesadas."
+          ],
+          "terms": [
+            {
+              "word": "floculação",
+              "meaning": "a etapa em que as partículas de sujeira se juntam em flocos maiores, mais fáceis de separar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Deixar assentar e passar no filtro",
+          "body": [
+            "Os flocos descem para o fundo de grandes tanques: é a decantação. A água de cima, já mais limpa, segue para os filtros.",
+            "Os filtros têm camadas de areia, cascalho e às vezes carvão. A filtração segura o que sobrou de sujeira fina, e o carvão ajuda a tirar cheiro e gosto."
+          ],
+          "terms": [
+            {
+              "word": "decantação",
+              "meaning": "a separação em que o sólido mais denso desce e se deposita no fundo do líquido."
+            },
+            {
+              "word": "filtração",
+              "meaning": "a separação de um sólido de um líquido passando a mistura por um filtro que segura o sólido."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Matar os micróbios e proteger os dentes",
+          "body": [
+            "Limpa não quer dizer segura: ainda pode haver micróbios. Por isso se põe cloro, que os mata e continua agindo pelos canos até a casa.",
+            "No Brasil também se adiciona flúor, que ajuda a prevenir cárie. E se acerta a acidez da água com cal, para ela não corroer os canos."
+          ],
+          "terms": [
+            {
+              "word": "ácido",
+              "meaning": "uma substância que deixa a água ácida, como o suco de limão e o vinagre."
+            },
+            {
+              "word": "pH",
+              "meaning": "uma escala de 0 a 14 que mede a acidez de uma solução. Abaixo de 7 é ácida, 7 é neutra e acima de 7 é básica."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O caminho inteiro",
+          "body": [
+            "A lista junta as etapas na ordem. Cada uma usa uma ideia de química: separação de misturas, reação e acerto da acidez."
+          ],
+          "example": {
+            "label": "Da represa à torneira",
+            "ordered": true,
+            "lines": [
+              "Captação: a água é tirada do rio ou da represa.",
+              "Coagulação e floculação: a sujeira vira flocos.",
+              "Decantação: os flocos descem para o fundo.",
+              "Filtração: areia e carvão seguram o resto.",
+              "Cloro, flúor e cal: desinfecção, proteção dos dentes e acidez acertada.",
+              "Distribuição: a água segue pelos canos até as casas."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Potável, pura e fervida",
+          "body": [
+            "Água potável é a que pode ser bebida sem risco. Ela tem sais dissolvidos, e isso é normal. Água pura, sem nada além de água, existe em laboratório: é a destilada.",
+            "Ferver a água mata os micróbios, mas não tira metais nem agrotóxicos. Se a água estiver contaminada por um produto químico, ferver não resolve."
+          ],
+          "terms": [
+            {
+              "word": "água potável",
+              "meaning": "a água própria para beber, sem micróbios nem substâncias que façam mal, mesmo com sais dissolvidos."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede a ordem das etapas ou o nome da separação em cada uma. Também pergunta para que servem o cloro e o flúor."
+          ],
+          "bullets": [
+            "“A etapa em que os flocos se depositam no fundo do tanque é…”",
+            "“O cloro é adicionado à água para…”",
+            "“Ferver a água não elimina…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que água potável é água pura. A potável tem sais, e isso é normal.",
+            "Dizer que ferver resolve qualquer contaminação. Ferver não tira metais nem agrotóxicos.",
+            "Trocar decantação por filtração. Na decantação o sólido desce; na filtração, fica no filtro."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Na estação, a sujeira vira flocos, que decantam. Depois a água passa por filtros de areia e carvão.",
+            "O cloro mata micróbios, o flúor previne cárie e a cal acerta a acidez. Potável não é pura, e ferver não tira metais nem agrotóxicos."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Floculação",
+          "statement": "Na floculação, a sujeira da água:",
+          "options": [
+            "vira gás e sai no ar",
+            "se dissolve de vez na água",
+            "é transformada em cloro",
+            "se junta em flocos maiores",
+            "fica invisível sem sair"
+          ],
+          "correct_index": 3,
+          "explanation": "Flocos maiores afundam mais fácil.",
+          "pitfall": "Ela não desaparece."
+        },
+        {
+          "topic": "Decantação",
+          "statement": "Na decantação, os flocos de sujeira:",
+          "options": [
+            "sobem e boiam na superfície",
+            "passam pelo filtro de areia",
+            "são queimados",
+            "evaporam com o sol",
+            "descem e ficam no fundo do tanque"
+          ],
+          "correct_index": 4,
+          "explanation": "O sólido mais denso desce.",
+          "pitfall": "Passar pelo filtro é a filtração."
+        },
+        {
+          "topic": "Filtração",
+          "statement": "Os filtros de areia e carvão servem para:",
+          "options": [
+            "segurar a sujeira fina e o cheiro",
+            "matar todos os micróbios da água",
+            "pôr o flúor que previne a cárie",
+            "acertar a acidez antes dos canos",
+            "esquentar a água para a cidade"
+          ],
+          "correct_index": 0,
+          "explanation": "O carvão ajuda com cheiro e gosto.",
+          "pitfall": "Quem mata micróbio é o cloro."
+        },
+        {
+          "topic": "Cloro",
+          "statement": "O cloro é adicionado à água para:",
+          "options": [
+            "dar cor à água",
+            "matar os micróbios",
+            "prevenir cárie",
+            "deixar a água mais densa",
+            "tirar o sal da água"
+          ],
+          "correct_index": 1,
+          "explanation": "Ele continua agindo pelos canos.",
+          "pitfall": "Prevenir cárie é o flúor."
+        },
+        {
+          "topic": "Flúor",
+          "statement": "No Brasil, o flúor é adicionado à água para:",
+          "options": [
+            "matar os micróbios",
+            "deixar a água mais gelada",
+            "ajudar a prevenir cárie",
+            "tirar a lama do rio",
+            "acertar a cor da água"
+          ],
+          "correct_index": 2,
+          "explanation": "É uma medida de saúde bucal.",
+          "pitfall": "Matar micróbio é o cloro."
+        },
+        {
+          "topic": "Cal",
+          "statement": "A cal é usada no tratamento para:",
+          "options": [
+            "matar os micróbios que sobraram",
+            "juntar a sujeira em flocos grandes",
+            "dar gosto e cheiro bons à água",
+            "acertar a acidez da água e proteger os canos",
+            "tirar o flúor que veio do rio"
+          ],
+          "correct_index": 3,
+          "explanation": "Água muito ácida corrói os canos.",
+          "pitfall": "Juntar sujeira é a floculação."
+        },
+        {
+          "topic": "Potável",
+          "statement": "Água potável é:",
+          "options": [
+            "a que só tem água, sem sal nenhum",
+            "a água destilada feita em laboratório",
+            "qualquer água que pareça transparente",
+            "a água fervida por uma hora inteira",
+            "a que se bebe sem risco, mesmo com sais"
+          ],
+          "correct_index": 4,
+          "explanation": "Ter sais é normal.",
+          "pitfall": "Só água é a pura, a destilada."
+        },
+        {
+          "topic": "Ferver",
+          "statement": "Ferver a água contaminada por metal pesado:",
+          "options": [
+            "não resolve, porque ferver não tira o metal",
+            "resolve, porque o fogo mata tudo",
+            "transforma o metal em vapor e ele sai",
+            "deixa a água potável na mesma hora",
+            "aumenta o flúor que protege a água"
+          ],
+          "correct_index": 0,
+          "explanation": "Ferver mata micróbios, só isso.",
+          "pitfall": "“Ferver resolve tudo” é o erro."
+        },
+        {
+          "topic": "Transparente",
+          "statement": "Uma água transparente:",
+          "options": [
+            "é sempre potável e segura",
+            "pode ter micróbios e fazer mal",
+            "é sempre pura, só com água",
+            "nunca tem micróbio nenhum",
+            "é sempre destilada e limpa"
+          ],
+          "correct_index": 1,
+          "explanation": "Micróbio não se vê a olho nu.",
+          "pitfall": "Limpa de aparência não é segura.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Pura",
+          "statement": "A água que tem só moléculas de água, sem sais, é a:",
+          "options": [
+            "da torneira",
+            "do mar",
+            "destilada",
+            "mineral",
+            "da chuva no chão"
+          ],
+          "correct_index": 2,
+          "explanation": "Ela é feita em laboratório.",
+          "pitfall": "A da torneira tem sais.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Etapas",
+          "format": "order",
+          "statement": "Coloque na ordem as etapas do tratamento da água.",
+          "options": [
+            "captação no rio ou na represa",
+            "floculação",
+            "decantação",
+            "filtração",
+            "cloro e flúor"
+          ],
+          "explanation": "Juntar, deixar descer, filtrar e desinfetar.",
+          "pitfall": "O cloro vem depois da limpeza.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Por que flocos",
+          "statement": "A sujeira precisa virar flocos antes da decantação porque:",
+          "options": [
+            "os flocos deixam o cheiro da água melhor",
+            "o cloro só consegue agir dentro dos flocos",
+            "os flocos sobem e saem pela superfície",
+            "as partículas soltas são pequenas demais para afundar",
+            "sem flocos a água não passa pelos canos"
+          ],
+          "correct_index": 3,
+          "explanation": "Juntas, ficam pesadas.",
+          "pitfall": "Os flocos descem, não sobem.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Cloro nos canos",
+          "statement": "O cloro é posto no fim do tratamento, e não no começo, também porque:",
+          "options": [
+            "ele junta a sujeira em flocos no tanque",
+            "ele só funciona na água ainda suja",
+            "ele é mais leve que a água e boia",
+            "o filtro de areia tiraria o cloro todo",
+            "ele precisa agir pelos canos até a casa"
+          ],
+          "correct_index": 4,
+          "explanation": "Ele protege a água no caminho.",
+          "pitfall": "Juntar sujeira é outro produto.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Agrotóxico",
+          "statement": "Numa cidade onde o rio recebeu agrotóxico, a medida que NÃO resolve sozinha é:",
+          "options": [
+            "ferver a água em casa",
+            "tratar a água com etapas próprias para o produto",
+            "analisar a água em laboratório",
+            "buscar outra fonte de água",
+            "controlar o uso do produto no campo"
+          ],
+          "correct_index": 0,
+          "explanation": "Ferver não tira substância química.",
+          "pitfall": "As outras atacam o problema certo.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "metais-e-siderurgia",
+      "title": "Do minério ao aço: metais, ligas e reciclagem",
+      "module": "Química no mundo",
+      "summary": "O ferro não sai da terra pronto: sai preso ao oxigênio, no minério. A lição mostra como o alto-forno tira o oxigênio, o que é aço, o que são ligas como o bronze e o ouro 18 e por que reciclar latinha poupa tanta energia.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=H79C51Z9-iU",
+        "title": "Produção do ferro: a diferença entre ferro e aço",
+        "channel": "Mundo Aberto"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Uma pedra avermelhada",
+          "body": [
+            "O minério de ferro parece uma pedra avermelhada e pesada. Não tem nada de prego nem de panela.",
+            "Para virar metal, ele precisa perder algo que está grudado nele. Essa é a química que move a siderurgia, uma das maiores indústrias do Brasil."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O metal vem preso no minério",
+          "body": [
+            "Quase nenhum metal aparece puro na natureza. O ferro vem num minério chamado hematita, que é ferro unido a oxigênio: um óxido.",
+            "O alumínio vem da bauxita, outro minério com oxigênio. O Brasil está entre os maiores produtores dos dois minérios."
+          ],
+          "terms": [
+            {
+              "word": "minério",
+              "meaning": "uma rocha de onde se tira um metal ou outra substância útil com lucro."
+            },
+            {
+              "word": "óxido",
+              "meaning": "uma substância formada por um elemento unido ao oxigênio, como a ferrugem."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O alto-forno tira o oxigênio",
+          "body": [
+            "No alto-forno, o minério é aquecido com carvão a mais de 1.500 °C. O carbono do carvão rouba o oxigênio do minério e sai como gás carbônico.",
+            "Sobra o ferro, derretido. Tirar o oxigênio de um metal assim se chama redução. O ferro que sai do forno, chamado ferro-gusa, ainda tem carbono demais e é quebradiço."
+          ],
+          "terms": [
+            {
+              "word": "oxidação e redução",
+              "meaning": "nos metais, oxidação é ganhar oxigênio (o ferro que enferruja). Redução é o contrário: o minério perdendo oxigênio no alto-forno."
+            }
+          ],
+          "example": {
+            "label": "Do minério ao aço",
+            "ordered": true,
+            "lines": [
+              "O minério de ferro sai da mina.",
+              "No alto-forno, o carvão tira o oxigênio do minério.",
+              "Sai o ferro-gusa, com carbono demais.",
+              "Na aciaria, tira-se carbono e sai o aço."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Aço e outras ligas",
+          "body": [
+            "O aço é ferro com um pouco de carbono, menos de 2%. Ele é duro e resistente. Quando leva cromo, vira aço inox, que não enferruja fácil.",
+            "Uma mistura de metais assim se chama liga. O bronze é cobre com estanho. O latão é cobre com zinco. O ouro 18 quilates tem 75% de ouro e o resto de outros metais, que o deixam mais duro."
+          ],
+          "terms": [
+            {
+              "word": "liga metálica",
+              "meaning": "uma mistura de um metal com outros elementos, feita para mudar as qualidades dele, como o aço e o bronze."
+            }
+          ],
+          "table": {
+            "label": "Ligas do dia a dia",
+            "headers": [
+              "Liga",
+              "Feita de",
+              "Uso"
+            ],
+            "rows": [
+              [
+                "aço",
+                "ferro e pouco carbono",
+                "prédios, carros"
+              ],
+              [
+                "aço inox",
+                "aço e cromo",
+                "pias, talheres"
+              ],
+              [
+                "bronze",
+                "cobre e estanho",
+                "estátuas, medalhas"
+              ],
+              [
+                "latão",
+                "cobre e zinco",
+                "torneiras, instrumentos"
+              ],
+              [
+                "ouro 18",
+                "75% de ouro e outros metais",
+                "joias"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Reciclar é muito mais barato",
+          "body": [
+            "Tirar alumínio da bauxita gasta muita eletricidade. Derreter uma latinha usada gasta só cerca de 5% dessa energia.",
+            "Por isso a latinha tem valor de venda. O Brasil recicla quase todas as latas de alumínio que usa, uma das maiores taxas do mundo."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova cobra o papel do carvão no alto-forno, a diferença entre ferro e aço e a economia de energia da reciclagem do alumínio."
+          ],
+          "bullets": [
+            "“No alto-forno, o carvão atua como…”",
+            "“O aço difere do ferro-gusa por…”",
+            "“A reciclagem do alumínio é vantajosa porque…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que o ferro sai puro da mina. Ele sai preso ao oxigênio.",
+            "Dizer que a liga cria uma substância nova. Liga é mistura de metais.",
+            "Pensar que ouro 18 é ouro puro. Ouro puro é 24; o 18 tem 75%."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Os metais vêm presos ao oxigênio nos minérios. No alto-forno, o carvão tira o oxigênio: é a redução. O ferro-gusa vira aço quando perde carbono.",
+            "Liga é mistura de metais, como bronze, latão e ouro 18. Reciclar alumínio gasta cerca de 5% da energia de tirá-lo do minério."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Minério",
+          "statement": "O ferro é encontrado na natureza principalmente:",
+          "options": [
+            "preso ao oxigênio, num minério",
+            "puro, em pepitas brilhantes",
+            "dissolvido na água do mar",
+            "como gás no ar",
+            "dentro das plantas"
+          ],
+          "correct_index": 0,
+          "explanation": "A hematita é ferro com oxigênio.",
+          "pitfall": "Ferro puro quase não existe na natureza."
+        },
+        {
+          "topic": "Carvão",
+          "statement": "No alto-forno, o carvão serve para:",
+          "options": [
+            "pôr mais oxigênio no ferro",
+            "tirar o oxigênio do minério de ferro",
+            "pintar o ferro de preto",
+            "esfriar o minério",
+            "transformar ferro em alumínio"
+          ],
+          "correct_index": 1,
+          "explanation": "O carbono rouba o oxigênio.",
+          "pitfall": "Pôr oxigênio seria enferrujar."
+        },
+        {
+          "topic": "Redução",
+          "statement": "Tirar o oxigênio do minério para obter o metal se chama:",
+          "options": [
+            "oxidação",
+            "fusão",
+            "redução",
+            "liga",
+            "sublimação"
+          ],
+          "correct_index": 2,
+          "explanation": "É o contrário da oxidação.",
+          "pitfall": "Oxidação seria ganhar oxigênio."
+        },
+        {
+          "topic": "Aço",
+          "statement": "O aço é:",
+          "options": [
+            "ferro puro, sem nada",
+            "alumínio com cobre",
+            "cobre com estanho",
+            "ferro com um pouco de carbono",
+            "ferro com muito oxigênio"
+          ],
+          "correct_index": 3,
+          "explanation": "Menos de 2% de carbono.",
+          "pitfall": "Cobre com estanho é bronze."
+        },
+        {
+          "topic": "Inox",
+          "statement": "O aço inox resiste à ferrugem porque leva:",
+          "options": [
+            "mais carbono",
+            "oxigênio",
+            "sal",
+            "água",
+            "cromo"
+          ],
+          "correct_index": 4,
+          "explanation": "O cromo protege a superfície.",
+          "pitfall": "Mais carbono não impede ferrugem."
+        },
+        {
+          "topic": "Bronze",
+          "statement": "O bronze é uma liga de:",
+          "options": [
+            "cobre e estanho",
+            "cobre e zinco",
+            "ferro e carbono",
+            "ouro e prata",
+            "alumínio e ferro"
+          ],
+          "correct_index": 0,
+          "explanation": "Cobre com zinco é latão.",
+          "pitfall": "Não troque os dois."
+        },
+        {
+          "topic": "Ouro 18",
+          "statement": "Uma joia de ouro 18 quilates tem de ouro cerca de:",
+          "options": [
+            "18%",
+            "75%",
+            "100%",
+            "50%",
+            "24%"
+          ],
+          "correct_index": 1,
+          "explanation": "18 de 24 partes.",
+          "pitfall": "Ouro puro é 24 quilates."
+        },
+        {
+          "topic": "Reciclagem",
+          "statement": "Reciclar uma latinha de alumínio gasta, comparado a tirar o metal da bauxita:",
+          "options": [
+            "o dobro da energia",
+            "a mesma energia",
+            "cerca de 5% da energia",
+            "cerca de 50% da energia",
+            "nenhuma energia"
+          ],
+          "correct_index": 2,
+          "explanation": "Por isso a latinha vale dinheiro.",
+          "pitfall": "Não é de graça, mas é muito menos."
+        },
+        {
+          "topic": "Liga",
+          "statement": "Uma liga metálica é:",
+          "options": [
+            "uma reação que cria um elemento novo",
+            "um metal totalmente puro",
+            "um tipo de minério",
+            "uma mistura de um metal com outros elementos",
+            "um gás que sai do forno"
+          ],
+          "correct_index": 3,
+          "explanation": "Aço e bronze são exemplos.",
+          "pitfall": "Liga não é elemento novo.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Bauxita",
+          "statement": "O alumínio é tirado de um minério chamado:",
+          "options": [
+            "hematita",
+            "carvão",
+            "calcário",
+            "areia",
+            "bauxita"
+          ],
+          "correct_index": 4,
+          "explanation": "A hematita é do ferro.",
+          "pitfall": "Não troque os minérios.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Aço",
+          "format": "order",
+          "statement": "Coloque na ordem o caminho do ferro até virar aço.",
+          "options": [
+            "o minério sai da mina",
+            "o alto-forno tira o oxigênio com carvão",
+            "sai o ferro-gusa, com carbono demais",
+            "tira-se carbono e sai o aço"
+          ],
+          "explanation": "Primeiro se tira o oxigênio, depois o excesso de carbono.",
+          "pitfall": "O aço é o fim do caminho.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Ferro-gusa",
+          "statement": "O ferro que sai do alto-forno ainda é quebradiço porque:",
+          "options": [
+            "tem carbono demais",
+            "tem oxigênio de menos",
+            "está frio demais",
+            "é puro demais",
+            "não tem nenhum carbono"
+          ],
+          "correct_index": 0,
+          "explanation": "Na aciaria, tira-se esse excesso.",
+          "pitfall": "Aço tem pouco carbono, não nenhum.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Gás carbônico",
+          "statement": "No alto-forno, o oxigênio que sai do minério vai embora:",
+          "options": [
+            "preso dentro do aço pronto",
+            "com o carbono, como gás carbônico",
+            "como água líquida no fundo",
+            "misturado ao ferro-gusa",
+            "dentro da escória do forno"
+          ],
+          "correct_index": 1,
+          "explanation": "É por isso que a siderurgia emite muito gás carbônico.",
+          "pitfall": "O oxigênio não fica no aço.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Por que reciclar",
+          "statement": "Reciclar alumínio é muito mais vantajoso que reciclar muitos outros materiais porque:",
+          "options": [
+            "o alumínio nunca se desgasta no uso",
+            "a bauxita está acabando no mundo inteiro",
+            "tirar o metal do minério gasta muita eletricidade",
+            "a lata reciclada vira ouro",
+            "o alumínio não pode ser jogado no lixo"
+          ],
+          "correct_index": 2,
+          "explanation": "A diferença de energia é enorme.",
+          "pitfall": "A bauxita não está acabando.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "fertilizantes-e-solo",
+      "title": "Química no campo: fertilizantes e a correção do solo",
+      "module": "Química no mundo",
+      "summary": "As plantas tiram do solo alguns elementos que precisam repor. A lição mostra o que significa o NPK do saco de adubo e como se faz adubo a partir do ar. Também explica por que o Cerrado recebe calcário e o que o excesso causa nos rios.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=VqKr4rm9LvY",
+        "title": "Como é fabricado o adubo",
+        "channel": "Manual do Mundo"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O saco com três números",
+          "body": [
+            "Num saco de adubo aparece algo como 10-10-10. Parece código, mas é uma conta simples.",
+            "Ela diz quanto de três elementos o adubo leva. E cada um tem um papel diferente na planta."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Nitrogênio, fósforo e potássio",
+          "body": [
+            "As plantas precisam de vários elementos, e três deles em grande quantidade: nitrogênio (N), fósforo (P) e potássio (K). A cada colheita, eles saem do solo junto com a planta.",
+            "Os números do saco são as porcentagens desses três, nessa ordem: N, P e K. Num adubo 10-10-10, cada um responde por 10% do peso."
+          ],
+          "terms": [
+            {
+              "word": "fertilizante",
+              "meaning": "um produto que repõe no solo os elementos que as plantas precisam para crescer."
+            },
+            {
+              "word": "NPK",
+              "meaning": "a sigla de nitrogênio, fósforo e potássio, os três elementos que as plantas mais usam."
+            }
+          ],
+          "table": {
+            "label": "O que cada um faz",
+            "headers": [
+              "Elemento",
+              "Símbolo",
+              "Ajuda principalmente"
+            ],
+            "rows": [
+              [
+                "nitrogênio",
+                "N",
+                "as folhas e o crescimento"
+              ],
+              [
+                "fósforo",
+                "P",
+                "as raízes e as flores"
+              ],
+              [
+                "potássio",
+                "K",
+                "os frutos e a resistência"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Adubo feito do ar",
+          "body": [
+            "O ar é quase 80% nitrogênio, mas as plantas não conseguem usar esse gás direto. No começo do século XX, químicos alemães criaram um jeito de juntá-lo ao hidrogênio e fazer amônia.",
+            "Da amônia se fazem os adubos de nitrogênio. Essa reação alimenta hoje boa parte da humanidade. O Brasil importa a maior parte dos fertilizantes que usa."
+          ],
+          "terms": [
+            {
+              "word": "amônia",
+              "meaning": "um gás feito de nitrogênio e hidrogênio, base dos adubos de nitrogênio."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Orgânico ou químico",
+          "body": [
+            "O adubo orgânico vem de restos de seres vivos, como esterco e composto. Ele solta os nutrientes devagar e melhora o solo.",
+            "O adubo químico, ou mineral, é fabricado e já vem com os nutrientes prontos e na medida. Os dois levam os mesmos elementos à planta; mudam a origem e a velocidade."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Corrigir o solo ácido",
+          "body": [
+            "O solo do Cerrado é ácido, com pH baixo. Nele, a planta não aproveita bem os nutrientes, mesmo com adubo.",
+            "Por isso se espalha calcário moído antes de plantar. É a calagem: o calcário neutraliza parte da acidez. Foi ela que transformou o Cerrado numa das maiores áreas agrícolas do mundo."
+          ],
+          "terms": [
+            {
+              "word": "ácido",
+              "meaning": "uma substância que deixa o meio ácido, como o suco de limão. Solo ácido tem pH baixo."
+            },
+            {
+              "word": "pH",
+              "meaning": "uma escala de 0 a 14 que mede a acidez. Abaixo de 7 é ácido, 7 é neutro e acima de 7 é básico."
+            },
+            {
+              "word": "calagem",
+              "meaning": "o espalhamento de calcário moído no solo para diminuir a acidez dele."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quando sobra adubo",
+          "body": [
+            "Adubo em excesso não fica na plantação. A chuva leva o que sobrou de nitrogênio e fósforo para os rios e lagos.",
+            "Lá, ele alimenta as algas, que crescem demais e roubam o oxigênio da água. Os peixes morrem. Usar a dose certa protege o bolso do agricultor e o rio."
+          ],
+          "example": {
+            "label": "O caminho do adubo que sobra",
+            "ordered": true,
+            "lines": [
+              "O agricultor põe mais adubo do que a planta usa.",
+              "A chuva leva o excesso para o rio.",
+              "As algas crescem demais com esses nutrientes.",
+              "Falta oxigênio na água, e os peixes morrem."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede o significado do NPK, o papel da calagem no Cerrado ou a consequência do excesso de adubo nos rios."
+          ],
+          "bullets": [
+            "“Os números 10-10-10 no rótulo indicam…”",
+            "“A calagem é feita para…”",
+            "“O uso excessivo de fertilizantes pode causar nos rios…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que mais adubo é sempre melhor. O excesso vai para o rio e mata os peixes.",
+            "Dizer que as plantas usam o nitrogênio do ar direto. Elas precisam dele em outra forma.",
+            "Pensar que a calagem aduba o solo. Ela corrige a acidez."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "As plantas tiram do solo nitrogênio, fósforo e potássio, e o NPK do saco diz quanto de cada. O nitrogênio do adubo vem da amônia, feita a partir do ar.",
+            "O solo ácido do Cerrado recebe calcário, na calagem. Adubo em excesso vai para os rios, faz as algas crescerem e mata os peixes."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "NPK",
+          "statement": "As letras N, P e K do adubo representam:",
+          "options": [
+            "neônio, prata e criptônio",
+            "nitrogênio, potássio e cálcio",
+            "níquel, platina e potássio",
+            "nitrogênio, fósforo e potássio",
+            "nutriente, proteína e carbono"
+          ],
+          "correct_index": 3,
+          "explanation": "São os três que a planta mais usa.",
+          "pitfall": "K é potássio, não cálcio."
+        },
+        {
+          "topic": "Números",
+          "statement": "Num adubo 10-10-10, os números indicam:",
+          "options": [
+            "a data de validade do adubo no saco",
+            "o preço por quilo, em reais",
+            "quantas plantas ele consegue adubar",
+            "os dias que a planta leva para crescer",
+            "quanto há de N, P e K, em porcentagem"
+          ],
+          "correct_index": 4,
+          "explanation": "Cada um vale 10% do peso.",
+          "pitfall": "Não é validade nem preço."
+        },
+        {
+          "topic": "Nitrogênio",
+          "statement": "O nitrogênio ajuda principalmente:",
+          "options": [
+            "as folhas e o crescimento",
+            "só as raízes",
+            "só os frutos",
+            "a cor das flores",
+            "nada, a planta não usa"
+          ],
+          "correct_index": 0,
+          "explanation": "É o mais ligado ao verde das folhas.",
+          "pitfall": "Raízes são mais o fósforo."
+        },
+        {
+          "topic": "Ar",
+          "statement": "As plantas não usam direto o nitrogênio do ar porque:",
+          "options": [
+            "o ar quase não tem nitrogênio",
+            "precisam dele em outra forma, como a da amônia",
+            "o nitrogênio do ar é venenoso para elas",
+            "elas só tiram do ar o oxigênio",
+            "o nitrogênio fica guardado só no mar"
+          ],
+          "correct_index": 1,
+          "explanation": "O ar tem quase 80% de nitrogênio.",
+          "pitfall": "O ar tem, sim, muito nitrogênio."
+        },
+        {
+          "topic": "Amônia",
+          "statement": "A amônia, base dos adubos de nitrogênio, é feita a partir de:",
+          "options": [
+            "oxigênio e carbono do ar",
+            "água do mar e sal",
+            "nitrogênio do ar e hidrogênio",
+            "petróleo e ouro moído",
+            "calcário e areia de rio"
+          ],
+          "correct_index": 2,
+          "explanation": "Uma reação que alimenta boa parte da humanidade.",
+          "pitfall": "Não leva calcário."
+        },
+        {
+          "topic": "Orgânico",
+          "statement": "O adubo orgânico vem de:",
+          "options": [
+            "rochas moídas e mais nada",
+            "fábricas que produzem amônia",
+            "petróleo refinado em usinas",
+            "restos de seres vivos, como esterco",
+            "metais reciclados de latinhas"
+          ],
+          "correct_index": 3,
+          "explanation": "Ele solta os nutrientes devagar.",
+          "pitfall": "Amônia é adubo químico."
+        },
+        {
+          "topic": "Calagem",
+          "statement": "A calagem, feita com calcário, serve para:",
+          "options": [
+            "aumentar a acidez do solo",
+            "repor o nitrogênio",
+            "matar as pragas",
+            "regar a plantação",
+            "diminuir a acidez do solo"
+          ],
+          "correct_index": 4,
+          "explanation": "O Cerrado tem solo ácido.",
+          "pitfall": "Calagem não é adubar."
+        },
+        {
+          "topic": "Excesso",
+          "statement": "Adubo em excesso que chega aos rios faz:",
+          "options": [
+            "as algas crescerem e faltar oxigênio",
+            "os peixes crescerem mais rápido",
+            "a água ficar mais limpa e clara",
+            "o rio secar em poucos dias",
+            "o sal da água do rio sumir"
+          ],
+          "correct_index": 0,
+          "explanation": "As algas roubam o oxigênio.",
+          "pitfall": "Mais nutriente não é mais peixe."
+        },
+        {
+          "topic": "Potássio",
+          "statement": "O símbolo do potássio é:",
+          "options": [
+            "P",
+            "K",
+            "Po",
+            "N",
+            "Pt"
+          ],
+          "correct_index": 1,
+          "explanation": "P é o fósforo.",
+          "pitfall": "O símbolo vem do nome em latim.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Cerrado",
+          "statement": "O solo do Cerrado é corrigido antes do plantio porque é:",
+          "options": [
+            "salgado demais",
+            "gelado",
+            "ácido",
+            "básico demais",
+            "feito só de areia de praia"
+          ],
+          "correct_index": 2,
+          "explanation": "Tem pH baixo.",
+          "pitfall": "A calagem corrige a acidez.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Excesso",
+          "format": "order",
+          "statement": "Coloque na ordem o que acontece quando sobra adubo na plantação.",
+          "options": [
+            "o agricultor põe mais adubo do que a planta usa",
+            "a chuva leva o excesso para o rio",
+            "as algas crescem demais",
+            "falta oxigênio e os peixes morrem"
+          ],
+          "explanation": "Do campo ao rio, e do rio aos peixes.",
+          "pitfall": "As algas vêm antes da falta de oxigênio.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Orgânico e químico",
+          "statement": "A diferença principal entre adubo orgânico e químico está:",
+          "options": [
+            "nos elementos que cada um leva à planta",
+            "no fato de só o químico ter nitrogênio",
+            "no fato de só o orgânico funcionar de verdade",
+            "na origem e na velocidade com que agem",
+            "na cor que a planta fica depois de crescer"
+          ],
+          "correct_index": 3,
+          "explanation": "Os elementos são os mesmos.",
+          "pitfall": "Os dois podem ter nitrogênio.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Calagem e adubo",
+          "statement": "Um agricultor põe muito adubo num solo ácido e a colheita continua fraca. O mais provável é que:",
+          "options": [
+            "faltou pôr ainda mais adubo no solo",
+            "a planta não aproveita nitrogênio",
+            "o adubo virou água com a chuva",
+            "o calcário do solo estragou o adubo",
+            "a acidez impede a planta de usar o adubo"
+          ],
+          "correct_index": 4,
+          "explanation": "Primeiro se corrige o pH.",
+          "pitfall": "Mais adubo não resolve solo ácido.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Dose certa",
+          "statement": "Usar a dose certa de adubo protege, ao mesmo tempo:",
+          "options": [
+            "o bolso do agricultor e os rios da região",
+            "só o bolso, sem efeito no ambiente",
+            "só os rios, com mais custo",
+            "nada, porque o excesso some",
+            "a planta contra todas as pragas"
+          ],
+          "correct_index": 0,
+          "explanation": "O que sobra é dinheiro perdido e poluição.",
+          "pitfall": "O excesso não some: vai para a água.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "radioatividade",
       "title": "Radioatividade e energia nuclear",
       "module": "Química no mundo",
       "summary": "Núcleos instáveis soltam radiação num ritmo conhecido, a meia-vida. A lição mostra os três tipos de radiação e para que ela serve. Também mostra a fissão, a fusão e o acidente de Goiânia.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=wphktISJEIM",
+        "title": "Radioatividade para o ENEM",
+        "channel": "Descomplica"
+      },
       "steps": [
         {
           "kind": "idea",
