@@ -142,8 +142,11 @@ export const SUBJECTS: SiteSubject[] = [
       "Argumentos que convencem",
       "Contra-argumento e conclusão",
       "A redação dissertativa-argumentativa",
+      "O repertório: o que você sabe a favor da redação",
       "A proposta de intervenção",
       "Fábula: uma história com lição",
+      "O diálogo na fábula: dar voz aos animais",
+      "Recontar uma fábula: outro final e outro narrador",
     ],
   },
   {
@@ -873,5 +876,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 7504,
+  questions: 7522,
 };
