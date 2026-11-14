@@ -138,6 +138,15 @@ class User extends Authenticatable
         return $this->isAdmin() || Plans::canSkipLessons($this->accessPlan(), $this->seesRealPlan());
     }
 
+    /**
+     * Enxerga as matérias e trilhas exclusivas do Pro. Quem administra vê
+     * sempre, porque é quem as escreve e confere antes de abrir.
+     */
+    public function seesProSubjects(): bool
+    {
+        return $this->isAdmin() || Plans::hasProSubjects($this->accessPlan(), $this->seesRealPlan());
+    }
+
     public function hasWritingAi(): bool
     {
         return Plans::hasWritingAi($this->accessPlan(), $this->seesRealPlan());

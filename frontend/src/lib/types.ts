@@ -81,7 +81,7 @@ export interface TrailStep {
 export interface Trail {
   slug: string;
   name: string;
-  /** Trilha que só quem administra vê. */
+  /** Trilha exclusiva do Pro. */
   private?: boolean;
   description: string;
   steps: TrailStep[];
