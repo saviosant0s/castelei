@@ -288,7 +288,7 @@
           "topic": "Declinação",
           "statement": "A diferença entre o norte da bússola e o norte geográfico chama-se:",
           "options": [
-            "fuso horário",
+            "fuso horário do lugar",
             "declinação magnética",
             "escala do mapa",
             "rosa dos ventos",
@@ -346,11 +346,11 @@
           "topic": "Internet e GPS",
           "statement": "Um celular sem internet, mas com o GPS ligado, consegue:",
           "options": [
-            "saber a posição, mas pode não ter o mapa para mostrar",
-            "mostrar o mapa e não saber a posição",
+            "saber a posição, mas talvez não ter o mapa",
+            "mostrar o mapa, mas não saber onde está",
             "nada, porque o GPS depende da internet",
-            "só saber a hora do dia exata",
-            "só mostrar o norte magnético"
+            "só saber a hora certa, sem a posição",
+            "só mostrar o norte magnético na tela"
           ],
           "correct_index": 0,
           "explanation": "A posição vem dos satélites; o mapa costuma vir da internet.",
@@ -376,11 +376,11 @@
           "topic": "Sol no leste exato",
           "statement": "Em que época o Sol nasce exatamente no ponto leste?",
           "options": [
-            "todos os dias do ano, sem exceção",
+            "todos os dias do ano, sem nenhuma exceção",
             "só no dia mais longo do ano, em dezembro",
-            "em março e em setembro, nos dois dias de dia e noite iguais",
+            "em março e setembro, quando dia e noite se igualam",
             "só no dia mais curto do ano, em junho",
-            "nunca, porque ele sempre nasce no norte"
+            "nunca, porque ele sempre nasce um pouco ao norte"
           ],
           "correct_index": 2,
           "explanation": "No resto do ano ele nasce um pouco deslocado.",
@@ -1516,10 +1516,10 @@
           "statement": "Para mostrar quantas toneladas de soja cada porto exporta, o mapa mais indicado é o de:",
           "options": [
             "símbolos proporcionais em cada porto",
-            "curvas de nível do terreno",
-            "base, sem nenhum tema",
-            "anamorfose da área real",
-            "rosa dos ventos ampliada"
+            "curvas de nível do terreno em volta",
+            "base, sem nenhum tema por cima",
+            "anamorfose desenhada pela área real",
+            "rosa dos ventos ampliada no canto"
           ],
           "correct_index": 0,
           "explanation": "Quantidade por ponto pede símbolo proporcional.",
@@ -1781,11 +1781,11 @@
           "topic": "Ano bissexto",
           "statement": "O ano bissexto existe porque:",
           "options": [
-            "as cerca de 6 horas que sobram por ano somam um dia a cada quatro anos",
-            "a Terra para de girar a cada quatro anos",
-            "a Lua atrasa o calendário todo ano",
-            "fevereiro é um mês com dias demais",
-            "o Sol muda de lugar a cada quatro anos"
+            "as cerca de 6 horas que sobram por ano somam um dia a cada 4 anos",
+            "a Terra para de girar por um dia a cada quatro anos",
+            "a Lua atrasa o calendário um pouco a cada ano que passa",
+            "fevereiro tem dias demais e precisa ser corrigido",
+            "o Sol muda de lugar no céu a cada quatro anos"
           ],
           "correct_index": 0,
           "explanation": "A translação passa um pouco de 365 dias.",
@@ -1852,10 +1852,10 @@
           "statement": "Os trópicos marcam:",
           "options": [
             "até onde o Sol pode ficar a pino em algum dia do ano",
-            "onde começam os polos",
-            "a divisão entre leste e oeste",
-            "o limite das águas do mar",
-            "onde o dia dura 24 horas"
+            "onde começam as zonas polares de cada hemisfério",
+            "a divisão do planeta entre leste e oeste",
+            "o limite até onde chegam as águas do mar",
+            "os lugares onde o dia dura 24 horas no verão"
           ],
           "correct_index": 0,
           "explanation": "Fora dos trópicos o Sol nunca passa bem em cima.",
@@ -1939,11 +1939,11 @@
           "topic": "Dia polar",
           "statement": "Nas zonas polares, há períodos com dia ou noite por semanas. Isso acontece porque:",
           "options": [
-            "com o eixo inclinado, o polo fica muito tempo virado para o Sol ou para longe dele",
-            "a Terra para de girar no inverno",
-            "o Sol gira em volta dos polos",
-            "os polos ficam mais perto do Sol",
-            "a translação dura só seis meses ali"
+            "com o eixo inclinado, o polo fica meses virado para o Sol ou longe dele",
+            "a Terra para de girar em torno de si durante o inverno",
+            "o Sol gira em volta dos polos em vez de em volta do Equador",
+            "os polos ficam mais perto do Sol que o resto do planeta",
+            "a translação dura só seis meses nas zonas polares"
           ],
           "correct_index": 0,
           "explanation": "É a inclinação, vista do extremo.",
@@ -2597,11 +2597,11 @@
           "topic": "Formação",
           "statement": "O solo se forma principalmente a partir de:",
           "options": [
-            "areia trazida do mar pelas ondas",
+            "areia que o mar traz pelas ondas e deixa na terra",
             "rocha desgastada misturada com matéria orgânica",
-            "lixo jogado ao longo dos anos",
-            "água de chuva que endurece no chão",
-            "cinza de queimadas recentes"
+            "lixo jogado no chão e acumulado ao longo dos anos",
+            "água de chuva que endurece no chão com o calor",
+            "cinza de queimadas que se junta com o tempo"
           ],
           "correct_index": 1,
           "explanation": "Rocha quebrada e restos de seres vivos.",
@@ -2740,10 +2740,10 @@
           "statement": "Num terreno inclinado, as linhas de plantio devem:",
           "options": [
             "acompanhar a altura do morro, cruzando a descida da água",
-            "descer o morro em linha reta",
-            "ficar só no topo do morro",
-            "seguir o caminho da enxurrada",
-            "ser feitas sem nenhuma ordem"
+            "descer o morro em linha reta, para a água escorrer rápido",
+            "ficar só no topo do morro, longe da parte inclinada",
+            "seguir o caminho da enxurrada, para aproveitar a água",
+            "ser feitas sem ordem, porque a direção não importa"
           ],
           "correct_index": 0,
           "explanation": "Cada linha vira uma barreira.",
@@ -2754,11 +2754,11 @@
           "topic": "Desertificação",
           "statement": "No semiárido brasileiro, a desertificação é:",
           "options": [
-            "o avanço de dunas de areia vindas do mar",
+            "o avanço de dunas de areia que vêm do litoral",
             "a perda da capacidade do solo de produzir, por clima e mau uso",
-            "a chegada de um deserto vindo da África",
-            "o aumento da chuva em poucos anos",
-            "um processo que só a natureza causa"
+            "a chegada de um deserto que avança desde a África",
+            "o aumento da chuva em poucos anos na região seca",
+            "um processo que só a natureza causa, sem o ser humano"
           ],
           "correct_index": 1,
           "explanation": "Gilbués, no Piauí, é o caso mais lembrado.",
@@ -3545,11 +3545,11 @@
           "topic": "Deserto frio",
           "statement": "Um deserto no interior da Ásia com inverno gelado mostra que:",
           "options": [
-            "todo deserto é quente o ano todo",
-            "desertos só existem perto do Equador",
-            "a areia é o que define o deserto",
-            "um deserto pode ser frio, porque o que conta é a falta de chuva",
-            "deserto frio é o mesmo que tundra"
+            "todo deserto é quente o ano inteiro, sem exceção",
+            "desertos só existem perto da linha do meio da Terra",
+            "a areia, e não a chuva, é o que define o deserto",
+            "deserto pode ser frio, porque o que conta é a falta de chuva",
+            "deserto frio é só outro nome para a tundra polar"
           ],
           "correct_index": 3,
           "explanation": "Deserto é seca, não calor.",
@@ -3560,10 +3560,10 @@
           "topic": "Cidade alta",
           "statement": "Uma cidade a 2.800 metros de altitude, quase em cima da linha do meio da Terra, tende a ter clima:",
           "options": [
-            "igual ao das praias da mesma região",
-            "polar, com gelo o ano todo",
-            "desértico, sem chuva",
-            "mais quente que o litoral ao lado",
+            "igual ao das praias da mesma região, quente o ano todo",
+            "polar, com gelo cobrindo a cidade o ano inteiro",
+            "desértico, sem nenhuma chuva durante o ano",
+            "mais quente que o litoral ao lado, pelo sol mais perto",
             "ameno, mais frio que o das cidades baixas da região"
           ],
           "correct_index": 4,
@@ -3576,10 +3576,10 @@
           "statement": "Dois desertos colados ao mar, um na América do Sul e outro na África, têm em comum:",
           "options": [
             "uma corrente fria passando ao longo da costa",
-            "uma floresta tropical ao lado",
-            "muita chuva no verão",
-            "uma montanha de gelo no meio",
-            "a mesma latitude que o polo norte"
+            "uma floresta tropical bem ao lado do litoral",
+            "muita chuva concentrada nos meses de verão",
+            "uma montanha de gelo no meio de cada deserto",
+            "a mesma latitude do polo norte nos dois lugares"
           ],
           "correct_index": 0,
           "explanation": "Água fria seca o ar.",
@@ -4207,11 +4207,11 @@
           "topic": "Corrente",
           "statement": "Uma corrente marítima é:",
           "options": [
-            "a subida e a descida do mar no dia",
-            "uma onda gigante após terremoto",
-            "o encontro de um rio com o mar",
+            "a subida e a descida do mar ao longo do dia",
+            "uma onda gigante que vem depois de um terremoto",
+            "o encontro da água de um rio com a do mar",
             "uma faixa de água que se move sempre no mesmo sentido",
-            "uma área de água parada"
+            "uma área de água parada no meio do oceano"
           ],
           "correct_index": 3,
           "explanation": "Um rio dentro do oceano.",
@@ -4249,11 +4249,11 @@
           "topic": "Pesca",
           "statement": "A costa do Peru tem muita pesca porque a água fria:",
           "options": [
-            "afasta todos os peixes da costa",
+            "afasta todos os peixes para o alto-mar",
             "traz do fundo nutrientes que alimentam o plâncton",
-            "é mais salgada que as outras",
-            "congela e prende os peixes",
-            "faz chover muito no litoral"
+            "é mais salgada e por isso atrai mais peixe",
+            "congela na superfície e prende os peixes embaixo",
+            "faz chover muito no litoral e leva comida ao mar"
           ],
           "correct_index": 1,
           "explanation": "Mais plâncton, mais peixe.",
@@ -4335,11 +4335,11 @@
           "topic": "El Niño e pesca",
           "statement": "Num ano de El Niño, a pesca no Peru costuma:",
           "options": [
-            "subir, porque o mar fica mais frio",
+            "subir, porque o mar fica mais frio e cheio de vida",
             "cair, porque o mar esquenta e os nutrientes diminuem",
-            "não mudar em nada",
-            "dobrar, porque chove mais no mar",
-            "acabar para sempre"
+            "não mudar em nada, porque o peixe não sente a água",
+            "dobrar, porque chove mais sobre o mar nesses anos",
+            "acabar para sempre, porque os peixes vão embora"
           ],
           "correct_index": 1,
           "explanation": "Sem água fria do fundo, falta alimento.",
@@ -4350,11 +4350,11 @@
           "topic": "Corrente e chuva",
           "statement": "Uma cidade litorânea banhada por corrente fria tende a ter:",
           "options": [
-            "chuva o ano todo, porque está perto do mar",
-            "neve todos os dias do ano",
-            "pouca chuva, porque o ar esfriado forma poucas nuvens de chuva",
-            "o mesmo clima de uma floresta tropical",
-            "furacões constantes"
+            "chuva o ano todo, porque toda cidade perto do mar é úmida",
+            "neve todos os dias, porque a água fria congela o ar",
+            "pouca chuva, porque o ar esfriado forma poucas nuvens",
+            "o clima de uma floresta tropical, quente e chuvoso",
+            "furacões frequentes, formados pela água fria da costa"
           ],
           "correct_index": 2,
           "explanation": "Água fria esfria o ar de baixo.",
@@ -4365,11 +4365,11 @@
           "topic": "Origem do lixo",
           "statement": "A melhor forma de reduzir o plástico no meio do oceano é:",
           "options": [
-            "proibir apenas os navios de pescar",
-            "esperar o sol desfazer todo o plástico",
-            "aumentar as marés com barragens",
+            "proibir apenas os navios de pescar no oceano",
+            "esperar o sol desfazer todo o plástico do mar",
+            "aumentar as marés com barragens no litoral",
             "cuidar do lixo em terra, antes que chegue aos rios",
-            "jogar o lixo mais longe da praia"
+            "jogar o lixo mais longe da praia, em alto-mar"
           ],
           "correct_index": 3,
           "explanation": "A maior parte vem de terra.",
@@ -4944,11 +4944,11 @@
           "topic": "Sustentável",
           "statement": "Desenvolvimento sustentável é:",
           "options": [
-            "atender às necessidades de hoje sem prejudicar as das gerações futuras",
-            "parar de crescer para proteger a natureza",
-            "crescer a economia a qualquer custo",
-            "proibir toda a indústria do mundo",
-            "usar só energia de carvão mineral"
+            "atender ao presente sem tirar o futuro das próximas gerações",
+            "parar de crescer de vez para proteger a natureza",
+            "crescer a economia a qualquer custo e cuidar depois",
+            "proibir toda a indústria do mundo a partir de hoje",
+            "usar só energia de carvão, que é mais barata"
           ],
           "correct_index": 0,
           "explanation": "A definição é de um relatório da ONU de 1987.",
@@ -5000,10 +5000,10 @@
           "topic": "Paris",
           "statement": "No Acordo de Paris:",
           "options": [
-            "só os países ricos têm metas",
-            "todos têm exatamente a mesma meta",
-            "nenhum país assume compromisso",
-            "só a Europa participa",
+            "só os países ricos têm metas de corte",
+            "todos têm exatamente a mesma meta de corte",
+            "nenhum país assume compromisso de verdade",
+            "só os países da Europa participam do acordo",
             "todos os países têm metas, escolhidas por cada um"
           ],
           "correct_index": 4,
@@ -5015,10 +5015,10 @@
           "statement": "O Acordo de Paris busca segurar o aquecimento global:",
           "options": [
             "bem abaixo de 2 °C, tentando ficar em 1,5 °C",
-            "acima de 5 °C",
-            "em exatamente 0 °C",
-            "em 10 °C até 2030",
-            "sem nenhum limite combinado"
+            "acima de 5 °C, que ainda é considerado seguro",
+            "em exatamente 0 °C, sem aquecimento nenhum",
+            "em 10 °C até o fim de 2030",
+            "sem nenhum limite de temperatura combinado"
           ],
           "correct_index": 0,
           "explanation": "A comparação é com a era antes das fábricas.",
@@ -5028,11 +5028,11 @@
           "topic": "Montreal",
           "statement": "O Protocolo de Montreal combateu:",
           "options": [
-            "o desmatamento da Amazônia",
+            "o desmatamento da floresta amazônica",
             "os gases que destroem a camada de ozônio",
-            "a pesca em excesso",
-            "o lixo plástico no mar",
-            "a falta de água no semiárido"
+            "a pesca em excesso nos oceanos do mundo",
+            "o lixo plástico jogado no mar",
+            "a falta de água no semiárido nordestino"
           ],
           "correct_index": 1,
           "explanation": "Gases de geladeiras e sprays.",
@@ -5056,11 +5056,11 @@
           "topic": "Sem fronteira",
           "statement": "Os problemas do clima precisam de acordos entre países porque:",
           "options": [
-            "cada país tem um clima separado",
-            "só um país polui o mundo inteiro",
-            "a ONU proíbe leis nacionais",
+            "cada país tem um clima separado dos vizinhos",
+            "só um país polui o mundo inteiro sozinho",
+            "a ONU proíbe que cada país faça as suas leis",
             "a poluição não para na fronteira de nenhum país",
-            "o clima não muda com a poluição"
+            "o clima não muda com a poluição do ar"
           ],
           "correct_index": 3,
           "explanation": "O ar é um só.",
@@ -5100,11 +5100,11 @@
           "topic": "Crédito de carbono",
           "statement": "Um crédito de carbono representa:",
           "options": [
-            "uma tonelada de gás de efeito estufa que deixou de ir para o ar",
-            "o direito de desmatar uma floresta",
-            "uma multa por jogar lixo no mar",
-            "o carvão vendido a uma fábrica",
-            "um imposto sobre carros elétricos"
+            "uma tonelada de gás de efeito estufa que deixou de ir ao ar",
+            "o direito de desmatar uma área de floresta por um ano",
+            "uma multa paga por quem joga lixo plástico no mar",
+            "o carvão vendido a uma fábrica para gerar energia",
+            "um imposto cobrado sobre a venda de carros elétricos"
           ],
           "correct_index": 0,
           "explanation": "Pode ser vendido a quem precisa compensar.",
@@ -5115,11 +5115,11 @@
           "topic": "Kyoto e Paris",
           "statement": "A principal diferença entre Kyoto e Paris é que Paris:",
           "options": [
-            "tirou as metas de todos os países",
+            "tirou as metas de todos os países que tinham",
             "estendeu as metas a todos os países, cada um com a sua",
-            "deu metas só aos países pobres",
-            "tratou apenas da camada de ozônio",
-            "proibiu de vez o uso de petróleo"
+            "deu metas só aos países pobres, que poluem menos",
+            "tratou apenas da camada de ozônio, e não do clima",
+            "proibiu de vez o uso de petróleo em todo o mundo"
           ],
           "correct_index": 1,
           "explanation": "Kyoto tinha metas só para os ricos.",
@@ -5130,11 +5130,11 @@
           "topic": "Exemplo de sucesso",
           "statement": "O Protocolo de Montreal costuma ser citado como exemplo porque:",
           "options": [
-            "acabou com o aquecimento global",
-            "foi o único acordo assinado pelo Brasil",
-            "os gases foram proibidos e a camada de ozônio está se recuperando",
-            "tirou as metas dos países ricos",
-            "resolveu o problema do lixo no mar"
+            "acabou de vez com o aquecimento global do planeta",
+            "foi o único acordo ambiental assinado pelo Brasil",
+            "os gases foram proibidos e o ozônio está se recuperando",
+            "tirou as metas de corte dos países mais ricos",
+            "resolveu o problema do lixo plástico nos oceanos"
           ],
           "correct_index": 2,
           "explanation": "Acordo cumprido trouxe resultado medido.",
@@ -5332,10 +5332,10 @@
           "topic": "Vulnerabilidade",
           "statement": "Vulnerabilidade é:",
           "options": [
-            "a força da chuva que cai",
-            "o tamanho do rio da cidade",
-            "a altura do morro",
-            "a quantidade de asfalto na rua",
+            "a força da chuva que cai sobre a cidade",
+            "o tamanho do rio que passa pela cidade",
+            "a altura do morro onde estão as casas",
+            "a quantidade de asfalto nas ruas do bairro",
             "o quanto as pessoas estão expostas e despreparadas"
           ],
           "correct_index": 4,
@@ -5347,10 +5347,10 @@
           "statement": "Na cidade, a chuva escorre mais rápido porque:",
           "options": [
             "o asfalto e o concreto não deixam a água entrar no solo",
-            "a cidade tem mais árvores que a mata",
-            "a água da cidade é mais pesada",
-            "chove mais dentro da cidade do que fora",
-            "os rios da cidade são mais fundos"
+            "a cidade tem mais árvores que a mata em volta",
+            "a água da chuva na cidade é mais pesada",
+            "chove sempre mais dentro da cidade do que fora",
+            "os rios da cidade são mais fundos que os do campo"
           ],
           "correct_index": 0,
           "explanation": "É a impermeabilização.",
@@ -5374,11 +5374,11 @@
           "topic": "Rejeito",
           "statement": "Barragens de rejeito guardam:",
           "options": [
-            "água limpa para beber",
-            "o esgoto das cidades",
+            "água limpa guardada para a cidade beber",
+            "o esgoto das cidades antes de ser tratado",
             "o barro que sobra da mineração",
-            "petróleo do pré-sal",
-            "lixo hospitalar"
+            "petróleo tirado do pré-sal",
+            "lixo dos hospitais da região"
           ],
           "correct_index": 2,
           "explanation": "É o resto da separação do minério.",
@@ -5459,11 +5459,11 @@
           "topic": "Canalizar",
           "statement": "Pôr um rio da cidade num canal de concreto costuma:",
           "options": [
-            "acabar com todas as enchentes",
-            "aumentar a água que entra no solo",
-            "fazer a água chegar mais rápido e transbordar em outro ponto",
-            "trazer a mata de volta à margem",
-            "diminuir a chuva na cidade"
+            "acabar com todas as enchentes da cidade de vez",
+            "aumentar a água que entra no solo das margens",
+            "fazer a água chegar mais rápido e transbordar adiante",
+            "trazer a mata de volta para a beira do rio",
+            "diminuir a quantidade de chuva sobre a cidade"
           ],
           "correct_index": 2,
           "explanation": "O problema muda de lugar.",
@@ -5474,11 +5474,11 @@
           "topic": "Rio Grande do Sul",
           "statement": "As enchentes de maio de 2024 no Rio Grande do Sul mostram que:",
           "options": [
-            "desastres só acontecem no Nordeste",
-            "a chuva no Sul nunca é forte",
-            "enchente é sempre culpa de quem mora perto",
-            "chuvas extremas e ocupação vulnerável juntas causam grandes desastres",
-            "barragens de rejeito causaram tudo"
+            "desastres de chuva só acontecem no Nordeste",
+            "a chuva no Sul do Brasil nunca é forte de verdade",
+            "enchente é sempre culpa de quem mora perto do rio",
+            "chuva extrema e ocupação vulnerável juntas fazem desastre",
+            "barragens de rejeito romperam e causaram tudo"
           ],
           "correct_index": 3,
           "explanation": "Foram mais de 180 mortos.",
@@ -5489,11 +5489,11 @@
           "topic": "Desastre natural",
           "statement": "Chamar um deslizamento numa encosta ocupada de “desastre natural” é impreciso porque:",
           "options": [
-            "morro não desliza com chuva",
-            "a chuva é causada pelas casas",
-            "nenhum deslizamento envolve chuva",
-            "só a natureza decide onde as pessoas moram",
-            "a chuva é natural, mas o estrago depende de como o lugar foi ocupado"
+            "morro nenhum desliza com chuva, nem sem mata",
+            "a chuva forte é causada pelas casas no morro",
+            "nenhum deslizamento de terra envolve chuva",
+            "só a natureza decide onde as pessoas vão morar",
+            "a chuva é natural, mas o estrago depende da ocupação"
           ],
           "correct_index": 4,
           "explanation": "Risco é ameaça somada à vulnerabilidade.",
@@ -5505,10 +5505,10 @@
           "statement": "Instalar alerta no celular e construir moradias seguras reduz o risco porque:",
           "options": [
             "diminui a vulnerabilidade, mesmo sem mudar a chuva",
-            "acaba com as chuvas fortes",
-            "aumenta a força da ameaça",
-            "impede o aquecimento global sozinho",
-            "tira o rio do lugar"
+            "acaba com as chuvas fortes na região",
+            "aumenta a força da ameaça sobre a cidade",
+            "impede sozinho o aquecimento do planeta",
+            "tira o rio do lugar onde ele passa"
           ],
           "correct_index": 0,
           "explanation": "A ameaça continua; a exposição diminui.",
@@ -7205,10 +7205,10 @@
           "topic": "Soberania",
           "statement": "Soberania é:",
           "options": [
-            "a obrigação de obedecer a outro país",
-            "o nome da capital de um país",
-            "a faixa em volta do limite",
-            "o voto de sim ou não",
+            "a obrigação de obedecer às leis de outro país",
+            "o nome dado à capital de um país",
+            "a faixa de terra em volta do limite",
+            "o voto de sim ou não numa pergunta",
             "o poder de um Estado de decidir sozinho no seu território"
           ],
           "correct_index": 4,
@@ -7219,11 +7219,11 @@
           "topic": "Limite e fronteira",
           "statement": "A diferença entre limite e fronteira é que:",
           "options": [
-            "o limite é a linha exata, e a fronteira é a faixa em volta",
-            "a fronteira é a linha, e o limite é a faixa",
-            "os dois são a mesma coisa",
-            "o limite só existe no mar",
-            "a fronteira só existe na África"
+            "o limite é a linha exata; a fronteira, a faixa em volta",
+            "a fronteira é a linha exata; o limite, a faixa em volta",
+            "os dois são a mesma coisa com nomes diferentes",
+            "o limite só existe no mar, e a fronteira em terra",
+            "a fronteira só existe nos países da África"
           ],
           "correct_index": 0,
           "explanation": "Na fronteira, os dois lados convivem.",
@@ -7261,11 +7261,11 @@
           "topic": "África",
           "statement": "Muitas fronteiras africanas foram traçadas:",
           "options": [
-            "pelos próprios povos africanos em acordo",
-            "seguindo sempre os rios e as montanhas",
-            "pela ONU depois do ano 2000",
-            "por países europeus, sem considerar os povos que moravam ali",
-            "de acordo com cada língua local"
+            "pelos próprios povos africanos, num acordo entre eles",
+            "seguindo sempre o caminho dos rios e das montanhas",
+            "pela ONU, depois do ano 2000, com voto de todos",
+            "por países europeus, sem considerar os povos dali",
+            "de acordo com a língua falada em cada região"
           ],
           "correct_index": 3,
           "explanation": "A partilha aconteceu no fim do século XIX.",
@@ -7350,11 +7350,11 @@
           "topic": "Conflitos africanos",
           "statement": "Por que fronteiras traçadas com régua contribuem para conflitos na África?",
           "options": [
-            "porque a régua deixa as fronteiras curvas",
-            "porque seguem exatamente cada povo",
-            "porque nenhum país africano tem limite",
-            "porque foram decididas pelos próprios africanos",
-            "porque juntaram povos rivais num país e separaram povos irmãos"
+            "porque a régua deixou as fronteiras curvas demais",
+            "porque elas seguem exatamente o lugar de cada povo",
+            "porque nenhum país africano tem limite definido",
+            "porque foram decididas pelos próprios povos africanos",
+            "porque juntaram povos rivais e separaram povos irmãos"
           ],
           "correct_index": 4,
           "explanation": "A divisão ignorou quem morava ali.",
@@ -7893,11 +7893,11 @@
           "topic": "Média",
           "statement": "O PIB por pessoa pode enganar porque:",
           "options": [
-            "mede só a educação",
+            "mede só a educação e deixa a renda de fora",
             "é uma média e esconde a desigualdade",
-            "conta só os idosos",
-            "ignora a produção do país",
-            "muda todo dia"
+            "conta só a renda dos mais idosos",
+            "ignora tudo o que o país produz",
+            "muda todo dia com o preço do dólar"
           ],
           "correct_index": 1,
           "explanation": "Poucos muito ricos puxam a média para cima.",
@@ -7977,11 +7977,11 @@
           "topic": "Mapa da Fome",
           "statement": "Um país entra no Mapa da Fome da ONU quando:",
           "options": [
-            "o PIB cai num ano",
-            "o país importa comida",
+            "o PIB do país cai durante um ano",
+            "o país compra comida de outros países",
             "mais de 2,5% da população não come o suficiente",
-            "chove pouco num verão",
-            "metade da população é rural"
+            "chove pouco durante um verão inteiro",
+            "metade da população mora no campo"
           ],
           "correct_index": 2,
           "explanation": "É o critério da ONU.",
@@ -7991,11 +7991,11 @@
           "topic": "Expectativa de vida",
           "statement": "Expectativa de vida é:",
           "options": [
-            "a idade do habitante mais velho",
-            "a idade média de quem trabalha",
-            "a idade para se aposentar",
+            "a idade do habitante mais velho do país",
+            "a idade média das pessoas que trabalham",
+            "a idade mínima para alguém se aposentar",
             "quantos anos, em média, quem nasce hoje deve viver",
-            "quantos filhos cada mulher tem"
+            "quantos filhos cada mulher tem, em média"
           ],
           "correct_index": 3,
           "explanation": "É uma das partes do IDH.",
@@ -8034,11 +8034,11 @@
           "topic": "PIB e IDH",
           "statement": "Um país tem PIB enorme e IDH médio. A conclusão mais segura é que:",
           "options": [
-            "a riqueza produzida não chega bem a educação e saúde de todos",
-            "o país é pobre em produção",
-            "o IDH está calculado errado",
-            "o país tem pouca população",
-            "o PIB mede a qualidade de vida"
+            "a riqueza produzida não chega à educação e à saúde de todos",
+            "o país é pobre e produz muito pouco por ano",
+            "o IDH foi calculado errado e deve ser ignorado",
+            "o país tem pouca gente para tanta produção",
+            "o PIB já mede, sozinho, a qualidade de vida"
           ],
           "correct_index": 0,
           "explanation": "PIB e IDH medem coisas diferentes.",
@@ -8064,11 +8064,11 @@
           "topic": "Média que engana",
           "statement": "Uma cidade tem PIB por pessoa alto, mas muitos moradores sem renda. Isso acontece porque:",
           "options": [
-            "o PIB por pessoa é sempre baixo",
-            "todos ganham exatamente a média",
+            "o PIB por pessoa é sempre baixo nessas cidades",
+            "todos os moradores ganham exatamente a média",
             "uma parte pequena concentra a maior fatia da riqueza",
-            "a média mostra cada salário",
-            "a cidade não produz nada"
+            "a média mostra o salário de cada morador",
+            "a cidade quase não produz nada durante o ano"
           ],
           "correct_index": 2,
           "explanation": "A média soma e divide, sem mostrar quem tem quanto.",
@@ -8637,11 +8637,11 @@
           "topic": "Urbanização",
           "statement": "A urbanização brasileira foi marcada por:",
           "options": [
-            "um crescimento lento e todo planejado",
-            "a saída do povo das cidades para o campo",
-            "cidades vazias e campo cheio",
+            "um crescimento lento e planejado em todas as cidades",
+            "a saída do povo das cidades de volta para o campo",
+            "cidades vazias enquanto o campo ficava cheio",
             "um crescimento rápido, sem casa e serviços para todos",
-            "esgoto completo desde o começo"
+            "esgoto e transporte prontos desde o começo"
           ],
           "correct_index": 3,
           "explanation": "Em poucas décadas, o campo esvaziou.",
@@ -8651,10 +8651,10 @@
           "topic": "Segregação",
           "statement": "A separação dos grupos sociais em partes diferentes da cidade, conforme a renda, chama-se:",
           "options": [
-            "gentrificação",
-            "conurbação",
+            "gentrificação do bairro",
+            "conurbação das cidades",
             "êxodo rural",
-            "plano diretor",
+            "plano diretor da cidade",
             "segregação socioespacial"
           ],
           "correct_index": 4,
@@ -8666,10 +8666,10 @@
           "statement": "As famílias de menor renda tendem a morar na periferia porque:",
           "options": [
             "a terra é mais barata, ainda que haja menos serviços",
-            "preferem ficar longe do emprego",
-            "a periferia tem mais metrô",
+            "preferem ficar longe do lugar onde trabalham",
+            "a periferia tem mais metrô que o centro",
             "o centro é proibido para elas por lei",
-            "lá há mais hospitais"
+            "lá há mais hospitais e escolas que no centro"
           ],
           "correct_index": 0,
           "explanation": "É o que a renda permite pagar.",
@@ -8721,10 +8721,10 @@
           "topic": "Plano diretor",
           "statement": "O plano diretor é:",
           "options": [
-            "o mapa das linhas de ônibus",
-            "a lista de favelas do país",
-            "o imposto sobre carros",
-            "o orçamento de um ano",
+            "o mapa das linhas de ônibus da cidade",
+            "a lista das favelas de todo o país",
+            "o imposto cobrado sobre os carros",
+            "o orçamento da prefeitura para um ano",
             "a lei que diz como a cidade deve crescer"
           ],
           "correct_index": 4,
@@ -8808,10 +8808,10 @@
           "topic": "Favela e trabalho",
           "statement": "Uma leitura correta sobre as favelas brasileiras é que elas:",
           "options": [
-            "são formadas só por quem não trabalha",
-            "existem apenas no Rio de Janeiro",
-            "não têm nenhuma relação com o emprego",
-            "foram planejadas pelo governo",
+            "são formadas só por gente que não trabalha",
+            "existem apenas no Rio de Janeiro e em mais nenhum lugar",
+            "não têm nenhuma relação com o emprego na cidade",
+            "foram planejadas pelo governo para os trabalhadores",
             "abrigam milhões de trabalhadores que a cidade formal não acolheu"
           ],
           "correct_index": 4,
@@ -9049,9 +9049,9 @@
           "statement": "Uma commodity é:",
           "options": [
             "um produto de luxo feito sob encomenda",
-            "uma marca famosa de celular",
-            "um imposto sobre a exportação",
-            "um tipo de moeda estrangeira",
+            "uma marca famosa de celular importado",
+            "um imposto cobrado sobre a exportação",
+            "um tipo de moeda usada no comércio entre países",
             "um produto básico com preço definido no mercado mundial"
           ],
           "correct_index": 4,
@@ -9063,10 +9063,10 @@
           "statement": "Valor agregado é:",
           "options": [
             "o valor que o produto ganha a cada etapa de transformação",
-            "o imposto pago na alfândega",
-            "o preço da matéria-prima pura",
-            "o lucro do navio que transporta",
-            "o desconto dado ao comprador"
+            "o imposto que se paga quando o produto passa na alfândega",
+            "o preço da matéria-prima pura, antes de qualquer etapa",
+            "o lucro do navio que leva o produto até o outro país",
+            "o desconto que se dá ao comprador que leva muito"
           ],
           "correct_index": 0,
           "explanation": "Minério vira aço, aço vira carro.",
@@ -9090,11 +9090,11 @@
           "topic": "Reprimarização",
           "statement": "Reprimarização é:",
           "options": [
-            "a volta da população para o campo",
-            "o fim das exportações de um país",
-            "o aumento do peso dos produtos brutos nas vendas de um país",
-            "a troca da moeda nacional",
-            "o aumento das vendas de carros"
+            "a volta da população das cidades para o campo",
+            "o fim das exportações de um país por falta de produto",
+            "o aumento do peso dos produtos brutos nas vendas",
+            "a troca da moeda nacional por uma moeda estrangeira",
+            "o aumento das vendas de carros para outros países"
           ],
           "correct_index": 2,
           "explanation": "Mais grão e minério, menos indústria.",
@@ -9177,11 +9177,11 @@
           "topic": "Navios",
           "statement": "Um país que vende soja e compra celulares tende a ficar com a parte menor do ganho porque:",
           "options": [
-            "a soja é proibida de ser vendida caro",
-            "celular não paga imposto na alfândega",
-            "vende produto de pouco valor agregado e compra produto de muito valor",
-            "a balança sempre fica em déficit",
-            "a soja não é uma commodity"
+            "a soja é proibida de ser vendida por um preço alto",
+            "o celular não paga imposto ao entrar no país",
+            "vende produto de pouco valor agregado e compra de muito",
+            "a balança comercial sempre fica em déficit nesse caso",
+            "a soja não é uma commodity e não tem preço mundial"
           ],
           "correct_index": 2,
           "explanation": "Transformar é o que agrega valor.",
@@ -9192,11 +9192,11 @@
           "topic": "Superávit e indústria",
           "statement": "Um país pode ter superávit na balança e, ao mesmo tempo, ver a indústria perder espaço. Isso acontece quando:",
           "options": [
-            "o país para de exportar soja",
-            "as importações superam as exportações",
+            "o país para de exportar soja e minério",
+            "as importações passam a superar as exportações",
             "a indústria passa a vender mais que o campo",
-            "as vendas de commodities crescem mais do que as de industrializados",
-            "a China deixa de comprar do país"
+            "as vendas de commodities crescem mais que as da indústria",
+            "a China deixa de comprar produtos do país"
           ],
           "correct_index": 3,
           "explanation": "É a reprimarização com conta positiva.",

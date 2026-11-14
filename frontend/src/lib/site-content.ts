@@ -230,21 +230,32 @@ export const SUBJECTS: SiteSubject[] = [
     slug: "fisica-basica",
     name: "Física",
     pitch:
-      "Medidas, movimento, as leis de Newton, energia, calor, ondas, luz e eletricidade, com a conta de luz e outros exemplos de casa.",
+      "Medidas e vetores, movimento e lançamentos, as leis de Newton, trabalho, energia e colisões, calor, pressão e fluidos, ondas, luz e comunicação, eletricidade e o céu, com a conta de luz e outros exemplos de casa.",
     lessons: [
       "Grandezas, unidades e notação científica",
+      "Medir com cuidado: precisão, erro e ordem de grandeza",
+      "Vetores: quando a direção importa",
       "Movimento: velocidade e aceleração",
       "Os gráficos do movimento",
+      "Lançamentos: o que sobe, o que cai e o que é atirado",
       "As três leis de Newton",
       "Movimento circular: rodas, engrenagens e satélites",
+      "Trabalho: a força que move, e as máquinas que ajudam",
       "Energia: movimento, altura e potência",
+      "Impulso e colisões: por que o airbag salva",
       "Calor, temperatura e mudanças de estado",
       "Pressão, densidade e empuxo: por que o navio flutua",
+      "O peso do ar: pressão atmosférica, altitude e o canudinho",
+      "Fluidos em movimento: a mangueira, o chuveiro e a asa do avião",
       "Ondas e som",
       "Luz: reflexão, refração e cores",
+      "Rádio, wi-fi e celular: a informação viaja em ondas",
       "Eletricidade: corrente, tensão e a conta de luz",
       "Ímãs, motores e geradores",
       "De onde vem a energia: usinas e rendimento",
+      "Gravitação: as leis de Kepler e o peso em outros planetas",
+      "A Lua: fases, a face escondida e as marés",
+      "O Sistema Solar e o tamanho do universo",
     ],
   },
   {
@@ -809,5 +820,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 6608,
+  questions: 6762,
 };

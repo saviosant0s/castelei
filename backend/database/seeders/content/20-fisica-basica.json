@@ -9,6 +9,11 @@
       "title": "Grandezas, unidades e notação científica",
       "module": "Medir",
       "summary": "Medir é comparar com um padrão. A Física usa unidades combinadas no mundo todo, prefixos como quilo e mili, e a notação científica para números enormes ou minúsculos.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=recMlMwRhGw",
+        "title": "Notação científica",
+        "channel": "Stoodi"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -409,10 +414,750 @@
       ]
     },
     {
+      "slug": "medidas-e-erros",
+      "title": "Medir com cuidado: precisão, erro e ordem de grandeza",
+      "module": "Medir",
+      "summary": "Toda medida tem um erro, e saber o tamanho dele faz parte de medir. A lição separa precisão de exatidão, mostra quantos algarismos uma medida merece e ensina a estimar a ordem de grandeza.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=r6hBlDC5kng",
+        "title": "Algarismos significativos",
+        "channel": "Ciência Exata"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A régua da escola",
+          "body": [
+            "Meça um lápis com a régua da escola. Você dirá algo como 14,3 centímetros.",
+            "Ninguém diz 14,3172 centímetros. A régua não deixa ver tanto. Saber até onde a medida é confiável é o assunto desta lição."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Toda medida tem erro",
+          "body": [
+            "Nenhum instrumento é perfeito, e quem mede também não. Por isso toda medida vem com uma margem de dúvida, o erro da medida.",
+            "Uma regra prática: o erro de um instrumento comum é cerca de metade da menor marca dele. Numa régua com marcas de milímetro, o erro fica em torno de meio milímetro."
+          ],
+          "terms": [
+            {
+              "word": "grandeza",
+              "meaning": "tudo o que pode ser medido e expresso com um número e uma unidade, como comprimento, tempo e massa."
+            },
+            {
+              "word": "erro da medida",
+              "meaning": "a diferença provável entre o valor medido e o valor verdadeiro. Ela nunca é zero."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Precisão não é exatidão",
+          "body": [
+            "Pense em dardos num alvo. Dardos todos juntos num canto são precisos, mas não exatos. Dardos espalhados em volta do centro são exatos na média, mas pouco precisos.",
+            "Precisão é repetir o mesmo resultado. Exatidão é acertar o valor verdadeiro. Uma balança mal regulada pode ser muito precisa e sempre errada."
+          ],
+          "terms": [
+            {
+              "word": "precisão",
+              "meaning": "o quanto medidas repetidas dão resultados parecidos entre si."
+            },
+            {
+              "word": "exatidão",
+              "meaning": "o quanto uma medida chega perto do valor verdadeiro."
+            }
+          ],
+          "table": {
+            "label": "Os quatro casos do alvo",
+            "headers": [
+              "Dardos",
+              "Preciso?",
+              "Exato?"
+            ],
+            "rows": [
+              [
+                "juntos, no centro",
+                "sim",
+                "sim"
+              ],
+              [
+                "juntos, num canto",
+                "sim",
+                "não"
+              ],
+              [
+                "espalhados, em volta do centro",
+                "não",
+                "sim, na média"
+              ],
+              [
+                "espalhados, longe do centro",
+                "não",
+                "não"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Quantos algarismos escrever",
+          "body": [
+            "Algarismos significativos são os que a medida realmente garante, mais um duvidoso no fim. Em 14,3 cm, o 1 e o 4 são certos e o 3 é o duvidoso.",
+            "Numa conta, o resultado não pode ser mais confiável que a medida pior. Se um lado mede 2,1 m e outro 3,45 m, a área não vale 7,245 m²: escreva cerca de 7,2 m²."
+          ],
+          "terms": [
+            {
+              "word": "algarismos significativos",
+              "meaning": "os algarismos de uma medida em que se pode confiar, contando os certos e o primeiro duvidoso."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Ordem de grandeza: a conta de cabeça",
+          "body": [
+            "Às vezes basta saber o tamanho aproximado: dezenas, milhares, milhões? Isso é a ordem de grandeza, a potência de 10 mais próxima do valor.",
+            "A população do Brasil é de cerca de 200 milhões, ou 2 × 10⁸. A ordem de grandeza é 10⁸. Um prédio de 30 metros tem ordem de grandeza 10¹, porque 30 fica mais perto de 10 que de 100 numa escala de multiplicar."
+          ],
+          "terms": [
+            {
+              "word": "potência de 10",
+              "meaning": "um número como 10, 100 ou 1.000, escrito como 10 elevado a um expoente: 10², 10³."
+            },
+            {
+              "word": "ordem de grandeza",
+              "meaning": "a potência de 10 mais próxima de um valor, usada para comparar tamanhos de cabeça."
+            }
+          ],
+          "example": {
+            "label": "Ordens de grandeza do dia a dia",
+            "lines": [
+              "Altura de uma pessoa (1,7 m): 10⁰ m.",
+              "Distância de São Paulo ao Rio (cerca de 400 km): 10⁵ m.",
+              "Batidas do coração num dia (cerca de 100 mil): 10⁵.",
+              "População do Brasil (cerca de 200 milhões): 10⁸."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede a ordem de grandeza de um número da vida real, ou pergunta qual medida foi escrita com algarismos demais. Também cobra a diferença entre precisão e exatidão."
+          ],
+          "bullets": [
+            "“A ordem de grandeza do número de… é”",
+            "“A medida registrada corretamente com a régua é…”",
+            "“Um instrumento preciso, mas pouco exato…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que medida boa não tem erro. Toda medida tem.",
+            "Usar precisão e exatidão como sinônimos. Preciso é repetir; exato é acertar.",
+            "Copiar todos os algarismos da calculadora. O resultado não pode ser melhor que a medida.",
+            "Confundir ordem de grandeza com o valor exato. Ela é só a potência de 10 mais próxima."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Toda medida tem erro, cerca de metade da menor marca do instrumento. Precisão é repetir o resultado; exatidão é chegar ao valor verdadeiro.",
+            "Algarismos significativos são os certos mais um duvidoso. A ordem de grandeza é a potência de 10 mais próxima do valor."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Erro",
+          "statement": "Toda medida feita com um instrumento:",
+          "options": [
+            "tem uma margem de erro",
+            "é exata se o instrumento for novo",
+            "não tem erro nenhum",
+            "só erra se a pessoa se distrair",
+            "tem erro só no tempo"
+          ],
+          "correct_index": 0,
+          "explanation": "Nenhum instrumento é perfeito.",
+          "pitfall": "Instrumento novo também tem erro."
+        },
+        {
+          "topic": "Erro da régua",
+          "statement": "Numa régua com marcas de milímetro, o erro de uma medida fica em torno de:",
+          "options": [
+            "um metro",
+            "meio milímetro",
+            "um centímetro",
+            "dez centímetros",
+            "zero"
+          ],
+          "correct_index": 1,
+          "explanation": "Cerca de metade da menor marca.",
+          "pitfall": "Não é a régua inteira."
+        },
+        {
+          "topic": "Precisão",
+          "statement": "Dardos que caem todos juntos, mas num canto do alvo, mostram:",
+          "options": [
+            "exatidão sem precisão",
+            "precisão e exatidão",
+            "precisão sem exatidão",
+            "nem precisão nem exatidão",
+            "um erro que não existe"
+          ],
+          "correct_index": 2,
+          "explanation": "Repetiram, mas longe do centro.",
+          "pitfall": "Juntos não quer dizer certos."
+        },
+        {
+          "topic": "Exatidão",
+          "statement": "Exatidão é:",
+          "options": [
+            "o quanto as medidas repetidas se parecem",
+            "a quantidade de algarismos escritos",
+            "a menor marca do instrumento",
+            "o quanto a medida chega perto do valor verdadeiro",
+            "o preço do instrumento"
+          ],
+          "correct_index": 3,
+          "explanation": "Acertar o valor real.",
+          "pitfall": "Repetir é precisão."
+        },
+        {
+          "topic": "Balança",
+          "statement": "Uma balança mal regulada que sempre marca 2 kg a mais é:",
+          "options": [
+            "exata, mas não precisa",
+            "exata e precisa",
+            "nem precisa nem exata",
+            "sem nenhum erro",
+            "precisa, mas não exata"
+          ],
+          "correct_index": 4,
+          "explanation": "Repete sempre o mesmo erro.",
+          "pitfall": "O erro constante não estraga a precisão."
+        },
+        {
+          "topic": "Algarismos",
+          "statement": "Na medida 14,3 cm feita com régua, o algarismo duvidoso é o:",
+          "options": [
+            "3",
+            "1",
+            "4",
+            "14",
+            "nenhum, todos são certos"
+          ],
+          "correct_index": 0,
+          "explanation": "O último é o estimado.",
+          "pitfall": "O duvidoso entra na conta dos significativos."
+        },
+        {
+          "topic": "Ordem de grandeza",
+          "statement": "A ordem de grandeza da população do Brasil, cerca de 200 milhões, é:",
+          "options": [
+            "10²",
+            "10⁸",
+            "10⁶",
+            "10¹⁰",
+            "10³"
+          ],
+          "correct_index": 1,
+          "explanation": "200 milhões é 2 × 10⁸.",
+          "pitfall": "Conte os zeros com cuidado."
+        },
+        {
+          "topic": "Calculadora",
+          "statement": "A calculadora dá 7,245 para a área de um terreno de 2,1 m por 3,45 m. O jeito correto de escrever é:",
+          "options": [
+            "7,245 m², exatamente",
+            "7,24500 m²",
+            "cerca de 7,2 m²",
+            "7 m² exatos, sem dúvida",
+            "72,45 m²"
+          ],
+          "correct_index": 2,
+          "explanation": "O resultado não pode ser melhor que a medida pior.",
+          "pitfall": "Copiar a calculadora inteira é o erro."
+        },
+        {
+          "topic": "Precisão é",
+          "statement": "Precisão é:",
+          "options": [
+            "acertar o valor verdadeiro da grandeza medida",
+            "medir só uma vez",
+            "usar sempre o instrumento com a maior escala",
+            "o quanto medidas repetidas dão resultados parecidos",
+            "ter a unidade certa"
+          ],
+          "correct_index": 3,
+          "explanation": "É repetir.",
+          "pitfall": "Acertar é exatidão.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Pessoa",
+          "statement": "A ordem de grandeza da altura de uma pessoa, em metros, é:",
+          "options": [
+            "10²",
+            "10⁵",
+            "10⁻⁵",
+            "10³",
+            "10⁰"
+          ],
+          "correct_index": 4,
+          "explanation": "1,7 m fica perto de 1, que é 10⁰.",
+          "pitfall": "Não é em centímetros.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Dardos espalhados",
+          "statement": "Dardos espalhados por todo o alvo, mas com a média no centro, mostram:",
+          "options": [
+            "exatidão na média, com pouca precisão",
+            "muita precisão",
+            "precisão e exatidão perfeitas",
+            "um alvo sem centro",
+            "nenhuma exatidão"
+          ],
+          "correct_index": 0,
+          "explanation": "Na média acertam; um a um, variam.",
+          "pitfall": "Espalhados não repetem.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Coração",
+          "statement": "O coração bate cerca de 100 mil vezes por dia. A ordem de grandeza desse número é:",
+          "options": [
+            "10³",
+            "10⁵",
+            "10⁸",
+            "10¹",
+            "10¹⁰"
+          ],
+          "correct_index": 1,
+          "explanation": "100 mil tem cinco zeros.",
+          "pitfall": "Não confunda com a população.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Prédio",
+          "statement": "Um prédio tem 30 metros. Por que sua ordem de grandeza é 10¹, e não 10²?",
+          "options": [
+            "porque a ordem de grandeza sempre corta o último zero",
+            "porque 30 é maior que 100",
+            "porque 30 fica mais perto de 10 que de 100, numa escala de multiplicar",
+            "porque a ordem de grandeza ignora o número",
+            "porque a ordem de grandeza se arredonda sempre para baixo"
+          ],
+          "correct_index": 2,
+          "explanation": "De 10 a 30 se multiplica por 3; de 30 a 100, por mais de 3.",
+          "pitfall": "Não é arredondar sempre para baixo.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Medida pior",
+          "statement": "Somando 12,4 cm medidos com régua e 3,1257 cm medidos com paquímetro, o resultado deve ter:",
+          "options": [
+            "quatro casas depois da vírgula",
+            "nenhuma casa depois da vírgula",
+            "dez casas, para ficar mais exato",
+            "uma casa depois da vírgula, como a medida pior",
+            "o número de casas que a calculadora mostrar"
+          ],
+          "correct_index": 3,
+          "explanation": "A soma não fica melhor que a régua.",
+          "pitfall": "Mais casas não é mais exatidão.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "vetores",
+      "title": "Vetores: quando a direção importa",
+      "module": "Medir",
+      "summary": "Algumas grandezas só fazem sentido com direção: andar 5 km não diz onde você chegou. A lição mostra o que é um vetor, a diferença entre direção e sentido, como somar vetores e por que distância não é deslocamento.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=RRgBdqBl6Ig",
+        "title": "Entenda tudo sobre vetores",
+        "channel": "Descomplica"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Ande 5 quilômetros",
+          "body": [
+            "Alguém diz: ande 5 quilômetros. Para onde? Sem isso, você pode parar em qualquer lugar de um círculo enorme.",
+            "Já “a temperatura é 30 °C” não pede direção nenhuma. A Física separa essas duas famílias."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Escalar e vetorial",
+          "body": [
+            "Uma grandeza escalar fica completa com um número e uma unidade: massa, tempo, temperatura. Uma grandeza vetorial precisa também de direção e sentido: deslocamento, velocidade, força.",
+            "Para desenhar uma grandeza vetorial, usa-se uma seta, o vetor. O tamanho da seta é o valor; para onde ela aponta mostra o resto."
+          ],
+          "terms": [
+            {
+              "word": "grandeza",
+              "meaning": "tudo o que pode ser medido com um número e uma unidade."
+            },
+            {
+              "word": "vetor",
+              "meaning": "uma seta que representa uma grandeza com valor, direção e sentido."
+            }
+          ],
+          "table": {
+            "label": "Escalar ou vetorial?",
+            "headers": [
+              "Grandeza",
+              "Tipo"
+            ],
+            "rows": [
+              [
+                "massa",
+                "escalar"
+              ],
+              [
+                "temperatura",
+                "escalar"
+              ],
+              [
+                "tempo",
+                "escalar"
+              ],
+              [
+                "deslocamento",
+                "vetorial"
+              ],
+              [
+                "velocidade",
+                "vetorial"
+              ],
+              [
+                "força",
+                "vetorial"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Direção não é sentido",
+          "body": [
+            "Na Física, direção é a linha (horizontal, vertical ou norte-sul). Sentido é para que lado dessa linha: para o norte ou para o sul.",
+            "Uma rua norte-sul tem uma direção só. Os carros que sobem e os que descem estão na mesma direção, em sentidos opostos."
+          ],
+          "terms": [
+            {
+              "word": "direção",
+              "meaning": "a linha em que a grandeza atua, como horizontal ou norte-sul."
+            },
+            {
+              "word": "sentido",
+              "meaning": "para qual dos dois lados da direção a grandeza aponta."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Somar setas",
+          "body": [
+            "Duas forças no mesmo sentido se somam: 3 e 4 dão 7. Em sentidos opostos, uma desconta a outra: 4 menos 3 dá 1, no sentido da maior.",
+            "Se as duas forem perpendiculares, formando um canto em L, a soma é a diagonal. Ela sai pelo teorema de Pitágoras: 3 e 4 dão 5. O resultado da soma de todas as forças se chama força resultante."
+          ],
+          "terms": [
+            {
+              "word": "força resultante",
+              "meaning": "a única força que teria o mesmo efeito de todas as forças que agem num corpo, somadas como vetores."
+            },
+            {
+              "word": "perpendicular",
+              "meaning": "que forma um ângulo reto, de 90 graus, como as linhas de um L."
+            }
+          ],
+          "example": {
+            "label": "Duas forças de 3 e 4",
+            "lines": [
+              "Mesmo sentido: 3 + 4 = 7.",
+              "Sentidos opostos: 4 − 3 = 1.",
+              "Em ângulo reto: a diagonal vale 5, porque 3² + 4² = 5²."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Distância e deslocamento",
+          "body": [
+            "A distância percorrida conta todo o caminho feito. O deslocamento é a seta que liga o ponto de saída ao de chegada.",
+            "Quem dá uma volta completa numa pista de 400 metros percorreu 400 metros. Mas o deslocamento é zero, porque terminou onde começou."
+          ],
+          "terms": [
+            {
+              "word": "deslocamento",
+              "meaning": "a seta do ponto de partida ao ponto de chegada, sem importar o caminho."
+            },
+            {
+              "word": "distância percorrida",
+              "meaning": "o comprimento total do caminho feito, com todas as curvas."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede a força resultante de duas ou três forças, ou o deslocamento de alguém que andou em L. Também cobra quais grandezas são vetoriais."
+          ],
+          "bullets": [
+            "“O módulo da força resultante é…”",
+            "“O deslocamento da pessoa, após andar 3 km para o norte e 4 km para o leste…”",
+            "“É uma grandeza vetorial…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Trocar direção por sentido. Direção é a linha; sentido é o lado dela.",
+            "Somar 3 e 4 sempre dando 7. Em ângulo reto dá 5; em sentidos opostos, 1.",
+            "Achar que distância e deslocamento são iguais. Numa volta inteira, o deslocamento é zero."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Grandeza escalar é número e unidade; vetorial precisa também de direção e sentido. Direção é a linha; sentido é o lado.",
+            "Vetores se somam pela regra das setas: mesmo sentido soma, sentidos opostos descontam e em ângulo reto vale Pitágoras. Deslocamento é a seta da partida à chegada."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Vetorial",
+          "statement": "Qual destas grandezas é vetorial?",
+          "options": [
+            "massa",
+            "tempo",
+            "temperatura",
+            "volume",
+            "velocidade"
+          ],
+          "correct_index": 4,
+          "explanation": "Ela precisa de direção e sentido.",
+          "pitfall": "As outras ficam completas com número e unidade."
+        },
+        {
+          "topic": "Escalar",
+          "statement": "Qual destas grandezas é escalar?",
+          "options": [
+            "temperatura",
+            "força",
+            "deslocamento",
+            "velocidade",
+            "aceleração"
+          ],
+          "correct_index": 0,
+          "explanation": "30 °C não aponta para lugar nenhum.",
+          "pitfall": "Força sempre empurra para algum lado."
+        },
+        {
+          "topic": "Direção e sentido",
+          "statement": "Numa rua norte-sul, um carro que vai para o norte e outro que vai para o sul têm:",
+          "options": [
+            "direções opostas e o mesmo sentido",
+            "a mesma direção e sentidos opostos",
+            "a mesma direção e o mesmo sentido",
+            "direções e sentidos iguais",
+            "nenhuma direção"
+          ],
+          "correct_index": 1,
+          "explanation": "A linha é a mesma; o lado muda.",
+          "pitfall": "A troca das duas palavras é o distrator."
+        },
+        {
+          "topic": "Mesmo sentido",
+          "statement": "Duas forças de 3 e 4, no mesmo sentido, dão uma resultante de:",
+          "options": [
+            "1",
+            "5",
+            "7",
+            "12",
+            "0"
+          ],
+          "correct_index": 2,
+          "explanation": "No mesmo sentido, soma direto.",
+          "pitfall": "5 é para ângulo reto."
+        },
+        {
+          "topic": "Opostas",
+          "statement": "Duas forças de 4 e 3, em sentidos opostos, dão uma resultante de:",
+          "options": [
+            "7, no sentido da menor",
+            "5, na diagonal",
+            "0, sempre",
+            "1, no sentido da maior",
+            "12, para cima"
+          ],
+          "correct_index": 3,
+          "explanation": "Uma desconta a outra.",
+          "pitfall": "Não some as duas."
+        },
+        {
+          "topic": "Ângulo reto",
+          "statement": "Duas forças de 3 e 4, perpendiculares, dão uma resultante de:",
+          "options": [
+            "7",
+            "1",
+            "12",
+            "25",
+            "5"
+          ],
+          "correct_index": 4,
+          "explanation": "Pela regra de Pitágoras: 9 + 16 = 25, e a raiz é 5.",
+          "pitfall": "25 é o quadrado, não a resultante."
+        },
+        {
+          "topic": "Pista",
+          "statement": "Quem dá uma volta completa numa pista de 400 m tem deslocamento de:",
+          "options": [
+            "zero",
+            "400 m",
+            "200 m",
+            "800 m",
+            "impossível saber"
+          ],
+          "correct_index": 0,
+          "explanation": "Terminou onde começou.",
+          "pitfall": "400 m é a distância percorrida."
+        },
+        {
+          "topic": "Vetor",
+          "statement": "Um vetor é representado por:",
+          "options": [
+            "um número sozinho, sem unidade nem direção",
+            "uma seta, com tamanho, direção e sentido",
+            "um ponto marcado no lugar onde a força age",
+            "um círculo fechado",
+            "uma reta sem começo nem fim"
+          ],
+          "correct_index": 1,
+          "explanation": "O tamanho da seta é o valor.",
+          "pitfall": "Ponto não aponta para lugar algum."
+        },
+        {
+          "topic": "Força",
+          "statement": "A força é uma grandeza:",
+          "options": [
+            "escalar",
+            "sem unidade",
+            "vetorial",
+            "sem direção",
+            "igual à massa"
+          ],
+          "correct_index": 2,
+          "explanation": "Toda força empurra ou puxa para algum lado.",
+          "pitfall": "Massa é escalar.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Andar em L",
+          "statement": "Uma pessoa anda 3 km para o norte e depois 4 km para o leste. A distância percorrida é:",
+          "options": [
+            "5 km",
+            "1 km",
+            "12 km",
+            "7 km",
+            "0 km"
+          ],
+          "correct_index": 3,
+          "explanation": "Distância soma todo o caminho.",
+          "pitfall": "5 km é o deslocamento.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Deslocamento em L",
+          "statement": "A mesma pessoa, que andou 3 km para o norte e 4 km para o leste, teve deslocamento de:",
+          "options": [
+            "7 km",
+            "1 km",
+            "12 km",
+            "0 km",
+            "5 km"
+          ],
+          "correct_index": 4,
+          "explanation": "É a diagonal do L, por Pitágoras.",
+          "pitfall": "7 km é a distância percorrida.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Resultante zero",
+          "statement": "Três pessoas puxam uma caixa e ela não se move. A força resultante sobre a caixa é:",
+          "options": [
+            "zero",
+            "a soma de todas as forças sem sinal",
+            "a maior das três forças",
+            "impossível de saber",
+            "sempre para baixo"
+          ],
+          "correct_index": 0,
+          "explanation": "As forças se anulam.",
+          "pitfall": "Somar sem olhar o sentido é o erro.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Maior e menor",
+          "statement": "Duas forças de 6 e 8 agem num corpo. A resultante pode valer:",
+          "options": [
+            "só 14, porque as forças sempre se somam",
+            "qualquer valor entre 2 e 14, conforme o ângulo",
+            "só 10, porque se usa sempre Pitágoras",
+            "só 2",
+            "qualquer valor acima de 14"
+          ],
+          "correct_index": 1,
+          "explanation": "Opostas dão 2; juntas, 14; em ângulo reto, 10.",
+          "pitfall": "O ângulo decide.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Velocidade e rapidez",
+          "statement": "Um carro faz uma curva sempre a 60 km/h. Sua velocidade, como vetor:",
+          "options": [
+            "não muda, porque marca sempre 60",
+            "é zero na curva",
+            "muda, porque a direção muda",
+            "só muda se ele frear",
+            "é escalar e não tem direção"
+          ],
+          "correct_index": 2,
+          "explanation": "Velocidade é vetorial: mudar de direção já é mudar de velocidade.",
+          "pitfall": "O velocímetro mostra só o valor.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "velocidade-e-aceleracao",
       "title": "Movimento: velocidade e aceleração",
       "module": "Movimento",
       "summary": "Velocidade média é distância dividida por tempo. Aceleração é o quanto a velocidade muda a cada segundo, e na queda livre todos os corpos ganham a mesma aceleração.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=wlTa_yTElGM",
+        "title": "Velocidade média",
+        "channel": "Professor Boaro"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -785,6 +1530,11 @@
       "title": "Os gráficos do movimento",
       "module": "Movimento",
       "summary": "O movimento pode ser desenhado: o tempo num eixo, a posição ou a velocidade no outro. Saber ler o desenho é saber se o objeto parou, correu ou freou.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=gNysJ6qzT5o",
+        "title": "Gráficos na cinemática",
+        "channel": "Eureka Matemática"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -1165,10 +1915,369 @@
       ]
     },
     {
+      "slug": "lancamentos",
+      "title": "Lançamentos: o que sobe, o que cai e o que é atirado",
+      "module": "Movimento",
+      "summary": "Uma bola jogada para cima freia até parar e volta. Uma bola chutada para a frente cai enquanto anda. A lição mostra os lançamentos vertical, horizontal e oblíquo, e por que a queda não depende de quanto a coisa anda para o lado.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=pI7v4pplr_s",
+        "title": "Lançamento vertical",
+        "channel": "Matemática no Papel"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A bala e a moeda",
+          "body": [
+            "Imagine atirar uma bala na horizontal e, no mesmo instante, largar uma moeda da mesma altura. Qual chega ao chão primeiro?",
+            "A resposta surpreende: chegam juntas, se não houver ar atrapalhando. Esta lição explica por quê."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A gravidade puxa sempre igual",
+          "body": [
+            "Perto da superfície da Terra, tudo que cai sem o ar atrapalhar ganha cerca de 10 m/s de velocidade a cada segundo. Isso é a aceleração da gravidade, chamada g.",
+            "Cair assim, só sob a gravidade, é a queda livre. Ela vale para a pedra e para a pena, se não houver ar."
+          ],
+          "terms": [
+            {
+              "word": "aceleração",
+              "meaning": "o quanto a velocidade muda a cada segundo, medida em m/s²."
+            },
+            {
+              "word": "queda livre",
+              "meaning": "a queda de um corpo puxado só pela gravidade, sem a resistência do ar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Jogar para cima",
+          "body": [
+            "Uma bola jogada para cima a 20 m/s perde 10 m/s a cada segundo. Depois de 2 segundos, ela para no alto. Então começa a cair e ganha velocidade do mesmo jeito.",
+            "No ponto mais alto, a velocidade é zero. Mas a aceleração não é: a gravidade continua puxando, e é por isso que a bola volta."
+          ],
+          "example": {
+            "label": "A bola lançada a 20 m/s",
+            "ordered": true,
+            "lines": [
+              "No lançamento: 20 m/s para cima.",
+              "Depois de 1 s: 10 m/s para cima.",
+              "Depois de 2 s: parada no alto, a 20 metros.",
+              "Depois de 3 s: 10 m/s para baixo.",
+              "Depois de 4 s: de volta à mão, a 20 m/s para baixo."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Altura máxima: a conta",
+          "body": [
+            "O tempo de subida é a velocidade inicial dividida por g. A 20 m/s, são 2 segundos.",
+            "A altura máxima é a velocidade inicial ao quadrado dividida por duas vezes g. A 20 m/s: 400 ÷ 20 = 20 metros. Dobrar a velocidade quadruplica a altura."
+          ],
+          "table": {
+            "label": "Com g = 10 m/s²",
+            "headers": [
+              "Velocidade inicial",
+              "Tempo de subida",
+              "Altura máxima"
+            ],
+            "rows": [
+              [
+                "10 m/s",
+                "1 s",
+                "5 m"
+              ],
+              [
+                "20 m/s",
+                "2 s",
+                "20 m"
+              ],
+              [
+                "30 m/s",
+                "3 s",
+                "45 m"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Jogar na horizontal",
+          "body": [
+            "Uma bola que sai rolando da mesa faz dois movimentos ao mesmo tempo. Para a frente, segue com a mesma velocidade, num movimento uniforme. Para baixo, cai em queda livre.",
+            "Os dois não se atrapalham. Por isso a bala e a moeda chegam juntas: a queda das duas é igual, e só a bala anda para o lado."
+          ],
+          "terms": [
+            {
+              "word": "movimento uniforme",
+              "meaning": "movimento com velocidade constante, que percorre distâncias iguais em tempos iguais."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Jogar em diagonal",
+          "body": [
+            "No lançamento oblíquo, como num chute, a bola sobe e desce numa curva: a parábola. A parte horizontal anda sempre igual, e a vertical sobe, para e cai.",
+            "Sem a resistência do ar, o maior alcance sai com ângulo de 45 graus. Ângulos que somam 90 graus, como 30 e 60, dão o mesmo alcance."
+          ],
+          "terms": [
+            {
+              "word": "parábola",
+              "meaning": "a curva em forma de arco que um objeto lançado desenha no ar."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede a altura máxima ou o tempo de subida, quase sempre com g = 10 m/s². Também cobra o ponto mais alto e a queda de dois objetos ao mesmo tempo."
+          ],
+          "bullets": [
+            "“No ponto mais alto da trajetória, a velocidade e a aceleração valem…”",
+            "“O tempo de queda da bola lançada horizontalmente depende…”",
+            "“O alcance máximo é obtido com ângulo de…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Dizer que no alto a aceleração é zero. A velocidade é zero; a aceleração continua sendo g.",
+            "Achar que a bala atirada demora mais para cair. A queda é igual à da moeda largada.",
+            "Pensar que dobrar a velocidade dobra a altura. A altura quadruplica."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Na queda livre, a velocidade muda 10 m/s a cada segundo. Jogada para cima, a bola freia, para no alto e volta. A aceleração é sempre igual a g.",
+            "No lançamento horizontal, andar para o lado não muda a queda. No oblíquo, a trajetória é uma parábola, e 45 graus dá o maior alcance sem ar."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Gravidade",
+          "statement": "Perto da superfície da Terra, um corpo em queda livre ganha a cada segundo cerca de:",
+          "options": [
+            "10 metros de altura",
+            "1 m/s de velocidade",
+            "100 km/h",
+            "10 m/s de velocidade",
+            "nada, cai sempre igual"
+          ],
+          "correct_index": 3,
+          "explanation": "É a aceleração da gravidade.",
+          "pitfall": "Não é distância, é velocidade."
+        },
+        {
+          "topic": "Ponto mais alto",
+          "statement": "No ponto mais alto de uma bola jogada para cima:",
+          "options": [
+            "a velocidade e a aceleração são zero",
+            "a aceleração é zero e a velocidade é máxima",
+            "a gravidade deixa de agir",
+            "a bola flutua por um instante sem força",
+            "a velocidade é zero, mas a aceleração continua sendo g"
+          ],
+          "correct_index": 4,
+          "explanation": "Se a aceleração fosse zero, a bola ficaria parada lá.",
+          "pitfall": "Velocidade zero não é aceleração zero."
+        },
+        {
+          "topic": "Tempo de subida",
+          "statement": "Uma bola jogada para cima a 30 m/s leva para chegar ao alto, com g = 10 m/s²:",
+          "options": [
+            "3 s",
+            "30 s",
+            "1 s",
+            "0,3 s",
+            "9 s"
+          ],
+          "correct_index": 0,
+          "explanation": "30 ÷ 10 = 3.",
+          "pitfall": "Não multiplique."
+        },
+        {
+          "topic": "Altura máxima",
+          "statement": "A 20 m/s para cima, com g = 10 m/s², a bola sobe até:",
+          "options": [
+            "40 m",
+            "20 m",
+            "200 m",
+            "2 m",
+            "10 m"
+          ],
+          "correct_index": 1,
+          "explanation": "20² ÷ 20 = 20.",
+          "pitfall": "200 seria esquecer de dividir por 2g."
+        },
+        {
+          "topic": "Bala e moeda",
+          "statement": "Uma bala é atirada na horizontal e uma moeda é largada da mesma altura, juntas. Sem ar, chega primeiro ao chão:",
+          "options": [
+            "a bala",
+            "a moeda",
+            "nenhuma, chegam juntas",
+            "a mais pesada",
+            "a que for mais rápida para o lado"
+          ],
+          "correct_index": 2,
+          "explanation": "A queda das duas é igual.",
+          "pitfall": "Andar para o lado não atrasa a queda."
+        },
+        {
+          "topic": "Horizontal",
+          "statement": "Numa bola que sai rolando de uma mesa, o movimento para a frente é:",
+          "options": [
+            "acelerado pela gravidade",
+            "parado",
+            "cada vez mais lento até zero",
+            "uniforme, com velocidade constante",
+            "para trás"
+          ],
+          "correct_index": 3,
+          "explanation": "A gravidade só puxa para baixo.",
+          "pitfall": "A queda é que é acelerada."
+        },
+        {
+          "topic": "Parábola",
+          "statement": "A curva que uma bola chutada desenha no ar se chama:",
+          "options": [
+            "circunferência",
+            "reta",
+            "espiral",
+            "elipse fechada",
+            "parábola"
+          ],
+          "correct_index": 4,
+          "explanation": "Sobe, para e desce num arco.",
+          "pitfall": "Sem ar, é sempre parábola."
+        },
+        {
+          "topic": "Alcance",
+          "statement": "Sem a resistência do ar, o maior alcance de um lançamento sai com ângulo de:",
+          "options": [
+            "45 graus",
+            "90 graus",
+            "10 graus",
+            "60 graus",
+            "0 grau"
+          ],
+          "correct_index": 0,
+          "explanation": "É o meio entre o horizontal e o vertical.",
+          "pitfall": "90 graus sobe e volta ao mesmo lugar."
+        },
+        {
+          "topic": "Pena e pedra",
+          "statement": "Sem ar, uma pena e uma pedra largadas juntas:",
+          "options": [
+            "a pedra cai primeiro",
+            "caem juntas",
+            "a pena cai primeiro",
+            "a pena não cai",
+            "a pedra flutua"
+          ],
+          "correct_index": 1,
+          "explanation": "A queda livre é igual para todos.",
+          "pitfall": "Na Terra, quem atrasa a pena é o ar.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Volta",
+          "statement": "Uma bola jogada para cima a 20 m/s volta à mão com velocidade de:",
+          "options": [
+            "zero",
+            "40 m/s, para baixo",
+            "20 m/s, para baixo",
+            "10 m/s, para cima",
+            "20 m/s, para cima"
+          ],
+          "correct_index": 2,
+          "explanation": "Sem ar, ela perde e recupera a mesma velocidade.",
+          "pitfall": "O sentido muda.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Bola para cima",
+          "format": "order",
+          "statement": "Coloque na ordem o que acontece com uma bola jogada para cima a 20 m/s.",
+          "options": [
+            "sai da mão a 20 m/s para cima",
+            "depois de 1 s, sobe a 10 m/s",
+            "depois de 2 s, para no alto",
+            "depois de 4 s, volta à mão a 20 m/s"
+          ],
+          "explanation": "Perde 10 m/s por segundo na subida e ganha na descida.",
+          "pitfall": "No alto ela para, mas não fica lá.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Dobrar",
+          "statement": "Se a velocidade inicial de uma bola jogada para cima dobra, a altura máxima:",
+          "options": [
+            "dobra",
+            "fica igual",
+            "cai pela metade",
+            "fica quatro vezes maior",
+            "fica oito vezes maior"
+          ],
+          "correct_index": 3,
+          "explanation": "A altura depende da velocidade ao quadrado.",
+          "pitfall": "Dobrar a altura é o erro esperado.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Mesmo alcance",
+          "statement": "Sem ar, dois chutes com a mesma velocidade e ângulos de 30 e 60 graus têm:",
+          "options": [
+            "alcance maior no de 30 graus",
+            "alcance maior no de 60 graus",
+            "alcance zero no de 60 graus",
+            "alcances sem relação",
+            "o mesmo alcance"
+          ],
+          "correct_index": 4,
+          "explanation": "Ângulos que somam 90 graus dão o mesmo alcance.",
+          "pitfall": "O de 60 sobe mais, mas cai no mesmo ponto.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Mesa mais alta",
+          "statement": "Uma bola sai rolando de uma mesa duas vezes mais alta que outra, com a mesma velocidade. Comparando as duas quedas:",
+          "options": [
+            "a da mesa mais alta demora mais para cair e vai mais longe",
+            "as duas demoram o mesmo tempo, porque a velocidade é igual",
+            "a mais alta demora menos para cair e vai mais perto",
+            "a velocidade para a frente muda a queda",
+            "a mais alta cai em linha reta"
+          ],
+          "correct_index": 0,
+          "explanation": "O tempo de queda depende só da altura.",
+          "pitfall": "Mais tempo no ar, mais distância para a frente.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "leis-de-newton",
       "title": "As três leis de Newton",
       "module": "Movimento",
       "summary": "Um corpo tende a continuar como está, força muda o movimento na proporção da massa, e toda força vem com outra igual e contrária. Peso não é massa.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=B2u8FYE9fWk",
+        "title": "As três leis de Newton explicadas",
+        "channel": "Ciência Todo Dia"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -1525,6 +2634,11 @@
       "title": "Movimento circular: rodas, engrenagens e satélites",
       "module": "Movimento",
       "summary": "Rodas, ventiladores e satélites andam em círculo. A lição mostra o período e a frequência, a conta das engrenagens e por que a Lua não cai.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=Abfhsry4GFE",
+        "title": "Força centrípeta",
+        "channel": "Brasil Escola Oficial"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -1885,10 +2999,370 @@
       ]
     },
     {
+      "slug": "trabalho-e-maquinas-simples",
+      "title": "Trabalho: a força que move, e as máquinas que ajudam",
+      "module": "Energia",
+      "summary": "Na Física, trabalho é força que faz algo se deslocar, e é assim que a energia passa de um corpo para outro. A lição mostra a conta do trabalho, por que segurar algo parado não realiza trabalho e como rampas e alavancas poupam força, mas não energia.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=8OOXdgS-FsM",
+        "title": "Trabalho de uma força",
+        "channel": "Maurício Física"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Cansado e sem trabalho",
+          "body": [
+            "Segure uma mochila pesada parado por dez minutos. Seu braço vai doer.",
+            "Para a Física, porém, você não realizou trabalho nenhum. A palavra tem um sentido próprio aqui, e vale a pena entender qual."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Força vezes deslocamento",
+          "body": [
+            "Trabalho é o produto da força pelo deslocamento, quando os dois estão na mesma direção. Empurrar uma caixa com 50 N por 4 metros realiza 200 joules de trabalho.",
+            "Sem deslocamento, não há trabalho. Por isso segurar a mochila parado não conta: o músculo gasta energia por dentro, mas a mochila não sai do lugar."
+          ],
+          "terms": [
+            {
+              "word": "newton",
+              "meaning": "a unidade de força, escrita N. Um newton é mais ou menos a força para segurar uma maçã pequena."
+            },
+            {
+              "word": "joule",
+              "meaning": "a unidade de energia e de trabalho, escrita J. Um joule é o trabalho de uma força de 1 N que desloca algo por 1 metro."
+            },
+            {
+              "word": "trabalho",
+              "meaning": "a energia passada a um corpo por uma força que o desloca. Vale força vezes deslocamento, na mesma direção."
+            }
+          ],
+          "example": {
+            "label": "Trabalho = força × deslocamento",
+            "lines": [
+              "50 N por 4 m: 200 J.",
+              "50 N por 0 m (segurar parado): 0 J.",
+              "100 N por 4 m: 400 J."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Força de lado não trabalha",
+          "body": [
+            "Se a força é perpendicular ao movimento, ela não realiza trabalho. Quem carrega uma mala andando no plano faz força para cima, mas anda para a frente.",
+            "A força para cima segura a mala e não a empurra para a frente. O trabalho dela é zero, mesmo que a pessoa se canse."
+          ],
+          "terms": [
+            {
+              "word": "perpendicular",
+              "meaning": "que forma um ângulo reto, de 90 graus, com outra direção."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Trabalho vira energia de movimento",
+          "body": [
+            "Quando você empurra um carrinho parado, o trabalho feito vira energia de movimento, a energia cinética. É assim que a energia passa de um corpo para outro.",
+            "Se o atrito estiver agindo, uma parte do trabalho vira calor no chão e nas rodas. Esse pedaço não vira movimento."
+          ],
+          "terms": [
+            {
+              "word": "energia cinética",
+              "meaning": "a energia que um corpo tem por estar em movimento. Cresce com a massa e com o quadrado da velocidade."
+            },
+            {
+              "word": "atrito",
+              "meaning": "a força que aparece entre duas superfícies que se esfregam e que se opõe ao deslizamento."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Rampas e alavancas poupam força",
+          "body": [
+            "Subir uma geladeira por uma rampa exige menos força que erguê-la direto. Em troca, você empurra por uma distância maior. O trabalho total, sem atrito, é o mesmo.",
+            "A alavanca funciona igual. Com um braço longo, uma força pequena move uma carga grande, mas a ponta da alavanca anda bem mais. As máquinas simples trocam força por distância."
+          ],
+          "terms": [
+            {
+              "word": "máquina simples",
+              "meaning": "um dispositivo (rampa, alavanca ou roldana) que muda o tamanho ou a direção da força necessária."
+            }
+          ],
+          "table": {
+            "label": "Erguer 1 metro ou rampa de 4 metros",
+            "headers": [
+              "Jeito",
+              "Força",
+              "Distância",
+              "Trabalho"
+            ],
+            "rows": [
+              [
+                "erguer direto",
+                "800 N",
+                "1 m",
+                "800 J"
+              ],
+              [
+                "rampa de 4 m, sem atrito",
+                "200 N",
+                "4 m",
+                "800 J"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede a conta do trabalho com força e distância. Também cobra os casos em que o trabalho é zero e o que uma máquina simples economiza."
+          ],
+          "bullets": [
+            "“O trabalho realizado pela força foi de…”",
+            "“Ao carregar a mala no plano horizontal, o trabalho da força…”",
+            "“A rampa facilita a tarefa porque…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que cansar é realizar trabalho. Sem deslocamento, o trabalho é zero.",
+            "Dizer que a rampa economiza energia. Ela economiza força; o trabalho é o mesmo.",
+            "Esquecer a direção. Força perpendicular ao movimento não realiza trabalho."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Trabalho é força vezes deslocamento na mesma direção, medido em joules. Segurar parado ou fazer força de lado não realiza trabalho.",
+            "O trabalho vira energia cinética, e o atrito leva uma parte como calor. Rampas e alavancas trocam força por distância, mas não poupam energia."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Conta",
+          "statement": "Uma força de 50 N empurra uma caixa por 4 m, na mesma direção. O trabalho é de:",
+          "options": [
+            "200 J",
+            "54 J",
+            "12,5 J",
+            "46 J",
+            "2.000 J"
+          ],
+          "correct_index": 0,
+          "explanation": "50 × 4 = 200.",
+          "pitfall": "Não some força e distância."
+        },
+        {
+          "topic": "Parado",
+          "statement": "Segurar uma mochila parado por dez minutos realiza um trabalho de:",
+          "options": [
+            "muitos joules",
+            "zero",
+            "um joule por minuto",
+            "o peso da mochila",
+            "impossível de calcular"
+          ],
+          "correct_index": 1,
+          "explanation": "Sem deslocamento, não há trabalho.",
+          "pitfall": "Cansaço não é trabalho na Física."
+        },
+        {
+          "topic": "Unidade",
+          "statement": "A unidade de trabalho é o:",
+          "options": [
+            "newton",
+            "watt",
+            "joule",
+            "metro",
+            "quilograma"
+          ],
+          "correct_index": 2,
+          "explanation": "A mesma da energia.",
+          "pitfall": "Newton é de força."
+        },
+        {
+          "topic": "Perpendicular",
+          "statement": "Quem carrega uma mala andando em terreno plano faz uma força para cima que realiza trabalho:",
+          "options": [
+            "positivo, porque a pessoa faz força o tempo todo",
+            "negativo, porque cansa",
+            "igual ao peso da mala vezes o caminho andado",
+            "zero, porque ela é perpendicular ao movimento",
+            "maior quanto mais rápido se anda"
+          ],
+          "correct_index": 3,
+          "explanation": "A força para cima não empurra para a frente.",
+          "pitfall": "Fazer força não basta: tem de ser na direção do movimento."
+        },
+        {
+          "topic": "Vira o quê",
+          "statement": "O trabalho feito para empurrar um carrinho parado vira, principalmente:",
+          "options": [
+            "massa nova, que se soma à do carrinho",
+            "força guardada nas rodas do carrinho",
+            "luz",
+            "tempo",
+            "energia de movimento do carrinho"
+          ],
+          "correct_index": 4,
+          "explanation": "É a energia cinética.",
+          "pitfall": "Energia não vira massa nesse caso."
+        },
+        {
+          "topic": "Atrito",
+          "statement": "Com atrito, parte do trabalho feito para empurrar algo vira:",
+          "options": [
+            "calor",
+            "mais velocidade",
+            "força nova",
+            "massa",
+            "trabalho negativo da pessoa"
+          ],
+          "correct_index": 0,
+          "explanation": "Esfregar esquenta.",
+          "pitfall": "Essa parte não vira movimento."
+        },
+        {
+          "topic": "Rampa",
+          "statement": "Uma rampa ajuda a subir uma carga porque:",
+          "options": [
+            "diminui a energia necessária pela metade",
+            "exige menos força, em troca de uma distância maior",
+            "faz a carga ficar mais leve",
+            "elimina o trabalho da subida",
+            "aumenta a força da pessoa"
+          ],
+          "correct_index": 1,
+          "explanation": "Ela troca força por distância.",
+          "pitfall": "A energia, sem atrito, é a mesma."
+        },
+        {
+          "topic": "Alavanca",
+          "statement": "Com uma alavanca de braço longo, uma força pequena move uma carga grande porque:",
+          "options": [
+            "a carga perde massa quando é erguida",
+            "a alavanca cria a energia que falta",
+            "a ponta da alavanca anda uma distância maior",
+            "a alavanca cria força sozinha",
+            "a gravidade para de agir"
+          ],
+          "correct_index": 2,
+          "explanation": "É a mesma troca da rampa.",
+          "pitfall": "Máquina simples não cria energia."
+        },
+        {
+          "topic": "Dobro",
+          "statement": "Uma força de 100 N empurra algo por 4 m. O trabalho é de:",
+          "options": [
+            "104 J",
+            "25 J",
+            "40 J",
+            "400 J",
+            "4.000 J"
+          ],
+          "correct_index": 3,
+          "explanation": "100 × 4 = 400.",
+          "pitfall": "Multiplique, não some.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Exemplo",
+          "statement": "Qual destas é uma máquina simples?",
+          "options": [
+            "um celular",
+            "uma geladeira",
+            "uma lâmpada",
+            "uma televisão",
+            "uma rampa"
+          ],
+          "correct_index": 4,
+          "explanation": "Rampa, alavanca e roldana são as clássicas.",
+          "pitfall": "Aparelho elétrico não é máquina simples.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Do esforço ao movimento",
+          "format": "order",
+          "statement": "Coloque na ordem o que acontece quando alguém empurra um carrinho parado.",
+          "options": [
+            "a pessoa faz força sobre o carrinho",
+            "o carrinho se desloca na direção da força",
+            "a força realiza trabalho",
+            "o carrinho ganha energia de movimento"
+          ],
+          "explanation": "Sem deslocamento, não haveria trabalho.",
+          "pitfall": "A energia de movimento é o resultado, não o começo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Rampa de 4 m",
+          "statement": "Erguer 800 N a 1 m de altura exige 800 J. Por uma rampa de 4 m, sem atrito, a força necessária é de:",
+          "options": [
+            "200 N",
+            "800 N",
+            "3.200 N",
+            "400 N",
+            "50 N"
+          ],
+          "correct_index": 0,
+          "explanation": "800 J ÷ 4 m = 200 N.",
+          "pitfall": "O trabalho é o mesmo, a força cai.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Economia",
+          "statement": "Um vendedor diz que a rampa dele “economiza energia”. A frase correta seria que a rampa:",
+          "options": [
+            "economiza energia e força ao mesmo tempo, sem perda",
+            "economiza força, mas o trabalho total é o mesmo ou maior",
+            "cria energia a partir do atrito",
+            "elimina a necessidade de qualquer trabalho na subida",
+            "faz a carga perder peso"
+          ],
+          "correct_index": 1,
+          "explanation": "Com atrito, gasta até um pouco mais.",
+          "pitfall": "Nenhuma máquina dá energia de graça.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Esteira",
+          "statement": "Uma pessoa empurra com 100 N uma caixa que não se move, porque o atrito impede. O trabalho da pessoa sobre a caixa é:",
+          "options": [
+            "100 J por segundo",
+            "igual ao trabalho do atrito, positivo",
+            "zero, porque a caixa não se desloca",
+            "100 N vezes o tempo empurrando",
+            "infinito"
+          ],
+          "correct_index": 2,
+          "explanation": "Força sem deslocamento não realiza trabalho.",
+          "pitfall": "Tempo não entra na conta do trabalho.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "energia-e-potencia",
       "title": "Energia: movimento, altura e potência",
       "module": "Energia",
       "summary": "Energia de movimento é cinética; de altura, potencial. Ela não some, só se transforma. Potência é a rapidez com que a energia é usada.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=3ESkxyY9qio",
+        "title": "Energia cinética e potencial",
+        "channel": "Maurício Física"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -2263,10 +3737,384 @@
       ]
     },
     {
+      "slug": "impulso-e-colisoes",
+      "title": "Impulso e colisões: por que o airbag salva",
+      "module": "Energia",
+      "summary": "Um caminhão devagar é mais difícil de parar que uma bola rápida. A lição mostra a quantidade de movimento, o impulso, por que o airbag e o cinto salvam vidas e o que se conserva numa batida.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=j3ZqHOz9js4",
+        "title": "Impulso e quantidade de movimento",
+        "channel": "Curso Enem Gratuito"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Pular no colchão",
+          "body": [
+            "Pular de uma cadeira no chão duro dói nos joelhos. Pular da mesma cadeira num colchão quase não dói.",
+            "A velocidade da chegada é a mesma. O que muda é o tempo que a parada leva, e isso faz toda a diferença."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Quantidade de movimento",
+          "body": [
+            "A quantidade de movimento é a massa vezes a velocidade. Um caminhão de 10 toneladas a 1 m/s tem 10 mil kg·m/s. Uma bola de meio quilo a 20 m/s tem só 10.",
+            "Quanto maior a quantidade de movimento, mais difícil é parar o corpo. Por isso um caminhão devagar pode fazer mais estrago que uma bola rápida."
+          ],
+          "terms": [
+            {
+              "word": "quantidade de movimento",
+              "meaning": "a massa de um corpo vezes a sua velocidade. Mede o quanto é difícil fazê-lo parar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Impulso: força vezes tempo",
+          "body": [
+            "Para mudar a quantidade de movimento de um corpo, é preciso uma força agindo por um tempo. Esse produto se chama impulso.",
+            "Para parar um mesmo corpo, o impulso é sempre o mesmo. Se o tempo da parada for maior, a força fica menor. É a matemática do colchão."
+          ],
+          "terms": [
+            {
+              "word": "impulso",
+              "meaning": "a força vezes o tempo em que ela age. Ele é igual à mudança da quantidade de movimento."
+            }
+          ],
+          "table": {
+            "label": "Mesmo impulso, tempos diferentes",
+            "headers": [
+              "Parada",
+              "Tempo",
+              "Força sobre o corpo"
+            ],
+            "rows": [
+              [
+                "no chão duro",
+                "muito curto",
+                "muito grande"
+              ],
+              [
+                "no colchão",
+                "mais longo",
+                "pequena"
+              ],
+              [
+                "dobrando os joelhos",
+                "mais longo",
+                "menor"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Cinto, airbag e zona de deformação",
+          "body": [
+            "Numa batida, o corpo do motorista precisa parar de qualquer jeito. O airbag e o cinto fazem a parada demorar um pouco mais, e a força sobre o corpo cai muito.",
+            "A frente do carro também ajuda: ela é feita para amassar. Amassando, ela estica o tempo da batida. Um carro que não amassasse passaria a força inteira para quem está dentro."
+          ],
+          "example": {
+            "label": "Onde o tempo da parada é esticado",
+            "lines": [
+              "Airbag e cinto de segurança.",
+              "A frente do carro que amassa.",
+              "O capacete com espuma por dentro.",
+              "A areia do salto em distância."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que se conserva numa batida",
+          "body": [
+            "Se nenhuma força de fora atrapalha, a quantidade de movimento total antes de um choque é igual à de depois. Dois patinadores parados que se empurram saem em sentidos opostos.",
+            "Um de 40 kg sai a 3 m/s para um lado. O outro, de 60 kg, sai a 2 m/s para o outro. Os dois têm 120 kg·m/s, em sentidos opostos, e a soma continua zero."
+          ],
+          "terms": [
+            {
+              "word": "energia cinética",
+              "meaning": "a energia que um corpo tem por estar em movimento."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Choques que quicam e choques que grudam",
+          "body": [
+            "Numa colisão elástica, como bolas de bilhar, os corpos se separam e a energia cinética quase não se perde. Numa inelástica, como dois carros que ficam grudados, parte da energia vira amassado e calor.",
+            "Nos dois tipos, a quantidade de movimento se conserva. O que pode se perder é a energia de movimento."
+          ],
+          "table": {
+            "label": "Os dois tipos de choque",
+            "headers": [
+              "Tipo",
+              "Quantidade de movimento",
+              "Energia cinética"
+            ],
+            "rows": [
+              [
+                "elástico (bilhar)",
+                "conserva",
+                "conserva"
+              ],
+              [
+                "inelástico (carros grudados)",
+                "conserva",
+                "perde uma parte"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede para explicar o airbag, o capacete ou a corda elástica do alpinista pelo tempo da parada. Também pede a velocidade de recuo em problemas de conservação."
+          ],
+          "bullets": [
+            "“O airbag reduz os danos porque…”",
+            "“A velocidade de recuo da arma é…”",
+            "“Numa colisão inelástica, conserva-se…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Dizer que o airbag diminui o impulso. O impulso é o mesmo; a força é que diminui.",
+            "Achar que na batida inelástica a quantidade de movimento se perde. Ela se conserva; a energia cinética é que diminui.",
+            "Pensar que carro que não amassa é mais seguro. Amassar estica o tempo e protege quem está dentro."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Quantidade de movimento é massa vezes velocidade. Impulso é força vezes tempo, e ele muda a quantidade de movimento.",
+            "Esticar o tempo da parada diminui a força: é o que fazem o airbag, o cinto e a frente que amassa. Num choque sem força de fora, a quantidade de movimento total se conserva."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Definição",
+          "statement": "A quantidade de movimento de um corpo é:",
+          "options": [
+            "a força vezes o tempo",
+            "a massa vezes a altura",
+            "a velocidade dividida pelo tempo",
+            "a massa vezes a velocidade",
+            "a força dividida pela massa"
+          ],
+          "correct_index": 3,
+          "explanation": "Mede o quanto é difícil parar o corpo.",
+          "pitfall": "Força vezes tempo é impulso."
+        },
+        {
+          "topic": "Caminhão",
+          "statement": "Um caminhão de 10 toneladas a 1 m/s tem quantidade de movimento maior que uma bola de 0,5 kg a 20 m/s porque:",
+          "options": [
+            "o caminhão anda sempre mais rápido que a bola",
+            "a bola não tem massa",
+            "a velocidade não entra na conta da quantidade",
+            "o caminhão está parado",
+            "a massa enorme compensa a velocidade pequena"
+          ],
+          "correct_index": 4,
+          "explanation": "10.000 contra 10.",
+          "pitfall": "Velocidade alta sozinha não decide."
+        },
+        {
+          "topic": "Impulso",
+          "statement": "O impulso é:",
+          "options": [
+            "a força vezes o tempo em que ela age",
+            "a massa do corpo vezes a sua velocidade",
+            "a força vezes a distância que o corpo anda",
+            "a velocidade ao quadrado",
+            "o tempo dividido pela força"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele muda a quantidade de movimento.",
+          "pitfall": "Força vezes distância é trabalho."
+        },
+        {
+          "topic": "Colchão",
+          "statement": "Pular num colchão dói menos que no chão porque o colchão:",
+          "options": [
+            "diminui a velocidade da queda no ar",
+            "aumenta o tempo da parada e diminui a força",
+            "diminui a massa da pessoa",
+            "aumenta o impulso necessário",
+            "faz a pessoa cair mais devagar desde o começo"
+          ],
+          "correct_index": 1,
+          "explanation": "O mesmo impulso, num tempo maior, pede força menor.",
+          "pitfall": "A velocidade de chegada é a mesma."
+        },
+        {
+          "topic": "Airbag",
+          "statement": "O airbag protege o motorista porque:",
+          "options": [
+            "diminui o impulso da batida até ele virar zero",
+            "faz o carro frear sozinho antes da batida",
+            "estica o tempo da parada, reduzindo a força sobre o corpo",
+            "aumenta a velocidade do motorista",
+            "deixa o motorista mais leve"
+          ],
+          "correct_index": 2,
+          "explanation": "O impulso é o mesmo; a força cai.",
+          "pitfall": "Ele não apaga o impulso."
+        },
+        {
+          "topic": "Zona de deformação",
+          "statement": "A frente do carro é feita para amassar numa batida porque:",
+          "options": [
+            "fica mais barata de consertar",
+            "fica mais pesada ao amassar",
+            "isso aumenta a velocidade do carro",
+            "amassando, ela aumenta o tempo da batida",
+            "assim o carro não perde energia"
+          ],
+          "correct_index": 3,
+          "explanation": "Mais tempo, menos força sobre quem está dentro.",
+          "pitfall": "Carro duro passaria a força inteira."
+        },
+        {
+          "topic": "Patinadores",
+          "statement": "Dois patinadores parados se empurram. Um tem 40 kg e sai a 3 m/s. O outro, de 60 kg, sai a:",
+          "options": [
+            "3 m/s, no mesmo sentido",
+            "4,5 m/s, no sentido oposto",
+            "zero, fica parado",
+            "1 m/s, no mesmo sentido",
+            "2 m/s, no sentido oposto"
+          ],
+          "correct_index": 4,
+          "explanation": "40 × 3 = 60 × 2.",
+          "pitfall": "Os sentidos são opostos para a soma dar zero."
+        },
+        {
+          "topic": "Conservação",
+          "statement": "Num choque sem forças de fora, sempre se conserva:",
+          "options": [
+            "a quantidade de movimento total",
+            "a energia cinética total, em qualquer choque",
+            "a velocidade de cada corpo",
+            "a forma de cada corpo",
+            "a força de cada corpo"
+          ],
+          "correct_index": 0,
+          "explanation": "Vale para choques que quicam e que grudam.",
+          "pitfall": "A energia cinética só se conserva no elástico."
+        },
+        {
+          "topic": "Capacete",
+          "statement": "A espuma dentro do capacete serve principalmente para:",
+          "options": [
+            "deixar o capacete mais bonito",
+            "aumentar o tempo da parada da cabeça",
+            "aumentar a velocidade do impacto",
+            "esquentar a cabeça",
+            "diminuir a massa da cabeça"
+          ],
+          "correct_index": 1,
+          "explanation": "Mais tempo, menos força.",
+          "pitfall": "É a mesma ideia do airbag.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Bilhar",
+          "statement": "Um choque entre bolas de bilhar, que se separam quase sem perder energia, é chamado:",
+          "options": [
+            "inelástico",
+            "parado",
+            "elástico",
+            "magnético",
+            "impossível"
+          ],
+          "correct_index": 2,
+          "explanation": "A energia cinética quase não se perde.",
+          "pitfall": "Inelástico é quando os corpos grudam.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Carros grudados",
+          "statement": "Dois carros batem e seguem grudados. Nesse choque:",
+          "options": [
+            "nada se conserva",
+            "a energia cinética se conserva inteira, sem nenhuma perda",
+            "a quantidade de movimento some, e a energia cinética fica",
+            "a quantidade de movimento se conserva, e a energia cinética cai",
+            "os carros ganham energia cinética com o choque"
+          ],
+          "correct_index": 3,
+          "explanation": "A energia vira amassado, calor e barulho.",
+          "pitfall": "Quantidade de movimento não se perde no choque.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Joelhos",
+          "statement": "Ao pular de um muro, dobrar os joelhos na chegada:",
+          "options": [
+            "diminui a velocidade da queda ainda no ar",
+            "aumenta o impulso necessário para o corpo parar",
+            "faz a pessoa ficar mais leve",
+            "não muda nada na força",
+            "aumenta o tempo da parada e diminui a força nas pernas"
+          ],
+          "correct_index": 4,
+          "explanation": "É o colchão que o corpo carrega.",
+          "pitfall": "O impulso é o mesmo.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Recuo",
+          "statement": "Uma espingarda de 4 kg dispara uma bala de 0,02 kg a 400 m/s. A espingarda recua a:",
+          "options": [
+            "2 m/s",
+            "400 m/s",
+            "0,02 m/s",
+            "8 m/s",
+            "200 m/s"
+          ],
+          "correct_index": 0,
+          "explanation": "0,02 × 400 = 8; 8 ÷ 4 = 2.",
+          "pitfall": "Antes do tiro a soma era zero.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Carro duro",
+          "statement": "Um carro muito rígido, que quase não amassa numa batida, tende a:",
+          "options": [
+            "ser mais seguro, porque não se deforma na batida",
+            "ser mais perigoso para quem está dentro, pela força maior",
+            "diminuir o impulso que os passageiros recebem",
+            "fazer a batida durar mais",
+            "não passar força nenhuma aos passageiros"
+          ],
+          "correct_index": 1,
+          "explanation": "Pouco tempo de parada, força grande.",
+          "pitfall": "Não amassar é o que parece seguro e não é.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "calor-e-temperatura",
       "title": "Calor, temperatura e mudanças de estado",
       "module": "Energia",
       "summary": "Temperatura mede a agitação das partículas; calor é a energia que passa do mais quente para o mais frio. Ele viaja de três jeitos e pode mudar o estado da matéria.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=dgDqJp4ppN4",
+        "title": "Temperatura e calor",
+        "channel": "Matemática no Papel"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -2671,6 +4519,11 @@
       "title": "Pressão, densidade e empuxo: por que o navio flutua",
       "module": "Fluidos",
       "summary": "A faca corta porque concentra a força. A pressão cresce com a profundidade, e o empuxo explica por que um navio de aço flutua e uma pedra afunda.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=57qs91GBscU",
+        "title": "Empuxo e o princípio de Arquimedes",
+        "channel": "Ciência Todo Dia"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -3042,10 +4895,684 @@
       ]
     },
     {
+      "slug": "pressao-atmosferica",
+      "title": "O peso do ar: pressão atmosférica, altitude e o canudinho",
+      "module": "Fluidos",
+      "summary": "O ar parece não pesar nada, mas uma coluna de quilômetros dele aperta tudo à nossa volta. A lição mostra a experiência de Torricelli, por que a pressão cai com a altitude e o que de fato sobe o suco no canudinho.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=639RgoEmuMg",
+        "title": "A experiência de Torricelli",
+        "channel": "Me Salva! ENEM"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O canudinho",
+          "body": [
+            "Quando você toma suco de canudinho, parece que puxa o suco para a boca. Mas não dá para puxar líquido.",
+            "Quem empurra o suco para cima é o ar de fora. Para entender isso, é preciso aceitar uma ideia estranha: o ar pesa."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Um oceano de ar em cima de nós",
+          "body": [
+            "Vivemos no fundo de uma camada de ar com dezenas de quilômetros de altura. O ar tem massa, e a gravidade puxa essa massa toda para baixo.",
+            "Esse aperto do ar sobre tudo se chama pressão atmosférica. Não sentimos porque o corpo empurra de volta por dentro, com a mesma força."
+          ],
+          "terms": [
+            {
+              "word": "pressão",
+              "meaning": "o quanto uma força está concentrada sobre uma área. A mesma força numa área menor dá pressão maior."
+            },
+            {
+              "word": "pressão atmosférica",
+              "meaning": "a pressão que o ar da atmosfera faz sobre tudo o que está nele."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A experiência de Torricelli",
+          "body": [
+            "Em 1643, Torricelli encheu um tubo de mercúrio e o virou de boca para baixo numa bacia. O mercúrio desceu, mas parou numa altura de 76 centímetros.",
+            "Quem segurava aquela coluna era o ar, empurrando a superfície da bacia. Com água, que é bem mais leve, a coluna teria cerca de 10 metros. Assim nasceu o barômetro."
+          ],
+          "terms": [
+            {
+              "word": "barômetro",
+              "meaning": "o instrumento que mede a pressão atmosférica."
+            }
+          ],
+          "table": {
+            "label": "O que o ar segura ao nível do mar",
+            "headers": [
+              "Líquido",
+              "Altura da coluna"
+            ],
+            "rows": [
+              [
+                "mercúrio",
+                "76 cm"
+              ],
+              [
+                "água",
+                "cerca de 10 m"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Mais alto, menos ar",
+          "body": [
+            "Quanto mais alto se sobe, menos ar fica em cima. Por isso a pressão cai com a altitude. Em La Paz, a mais de 3.600 metros, ela é só cerca de dois terços da do nível do mar.",
+            "Com menos pressão, cada respiração traz menos oxigênio. Quem chega lá sente falta de ar até se acostumar. A água também ferve antes dos 100 °C."
+          ],
+          "terms": [
+            {
+              "word": "altitude",
+              "meaning": "a altura de um lugar em relação ao nível do mar."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O ar empurrando no dia a dia",
+          "body": [
+            "No canudinho, você tira o ar de dentro dele com a boca. A pressão ali dentro fica menor que a de fora, e o ar de fora empurra o suco para cima.",
+            "A ventosa funciona igual: ao apertá-la, sai o ar de baixo, e o ar de fora a prende na parede. E no avião o ouvido estala porque a pressão de fora muda mais rápido que a de dentro dele."
+          ],
+          "example": {
+            "label": "Como o suco sobe",
+            "ordered": true,
+            "lines": [
+              "Você tira o ar de dentro do canudinho com a boca.",
+              "A pressão dentro do canudinho fica menor.",
+              "O ar de fora continua apertando a superfície do suco.",
+              "O suco é empurrado para cima, até a boca."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede para explicar o canudinho, a ventosa ou o ouvido no avião pela diferença de pressão. Também cobra a queda da pressão com a altitude."
+          ],
+          "bullets": [
+            "“O líquido sobe pelo canudo porque…”",
+            "“Em cidades de grande altitude, a pressão atmosférica…”",
+            "“A experiência de Torricelli mostrou que…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Dizer que a boca puxa o suco. Quem empurra é o ar de fora.",
+            "Achar que a pressão aumenta ao subir. Ela diminui, porque há menos ar em cima.",
+            "Pensar que não sentimos o ar porque ele não pesa. Ele pesa; o corpo empurra de volta por dentro."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O ar tem massa e aperta tudo: é a pressão atmosférica. Ao nível do mar, ela segura 76 cm de mercúrio, ou cerca de 10 m de água.",
+            "Quanto mais alto, menor a pressão. O suco sobe no canudinho e a ventosa gruda porque o ar de fora empurra onde a pressão ficou menor."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Canudinho",
+          "statement": "O suco sobe pelo canudinho porque:",
+          "options": [
+            "a boca puxa o líquido com força para cima",
+            "o suco é mais leve que o ar",
+            "o ar de fora empurra o suco quando a pressão no canudinho diminui",
+            "o plástico do canudinho atrai o líquido para dentro",
+            "a gravidade empurra o suco para cima"
+          ],
+          "correct_index": 2,
+          "explanation": "Ninguém puxa líquido: o ar de fora empurra.",
+          "pitfall": "“A boca puxa” é o erro esperado."
+        },
+        {
+          "topic": "Ar pesa",
+          "statement": "A pressão atmosférica existe porque:",
+          "options": [
+            "o ar não tem massa",
+            "o vento sopra sobre tudo o tempo todo",
+            "o Sol aquece o ar e o empurra para baixo",
+            "o ar tem massa e é puxado pela gravidade",
+            "a Terra gira em torno de si"
+          ],
+          "correct_index": 3,
+          "explanation": "Uma coluna enorme de ar aperta tudo.",
+          "pitfall": "Ar parece leve, mas pesa."
+        },
+        {
+          "topic": "Torricelli",
+          "statement": "Na experiência de Torricelli, ao nível do mar, a coluna de mercúrio parou em:",
+          "options": [
+            "10 m",
+            "1 m",
+            "7,6 m",
+            "76 m",
+            "76 cm"
+          ],
+          "correct_index": 4,
+          "explanation": "É o que o ar consegue segurar.",
+          "pitfall": "10 m seria a coluna de água."
+        },
+        {
+          "topic": "Água",
+          "statement": "Se a experiência fosse feita com água, a coluna teria cerca de:",
+          "options": [
+            "10 metros",
+            "76 centímetros",
+            "1 metro",
+            "100 metros",
+            "7,6 centímetros"
+          ],
+          "correct_index": 0,
+          "explanation": "A água é bem mais leve que o mercúrio.",
+          "pitfall": "Líquido mais leve sobe mais."
+        },
+        {
+          "topic": "Altitude",
+          "statement": "Ao subir uma montanha, a pressão atmosférica:",
+          "options": [
+            "aumenta, porque se está mais perto do Sol",
+            "diminui, porque há menos ar em cima",
+            "fica igual em qualquer altura",
+            "aumenta, porque o ar fica mais frio",
+            "some de uma vez"
+          ],
+          "correct_index": 1,
+          "explanation": "Menos coluna de ar, menos aperto.",
+          "pitfall": "Mais perto do Sol não muda a pressão."
+        },
+        {
+          "topic": "Barômetro",
+          "statement": "O instrumento que mede a pressão atmosférica é o:",
+          "options": [
+            "termômetro",
+            "velocímetro",
+            "barômetro",
+            "dinamômetro",
+            "cronômetro"
+          ],
+          "correct_index": 2,
+          "explanation": "Nasceu da experiência de Torricelli.",
+          "pitfall": "Termômetro mede temperatura."
+        },
+        {
+          "topic": "La Paz",
+          "statement": "Em La Paz, a mais de 3.600 m de altitude, os visitantes sentem falta de ar porque:",
+          "options": [
+            "o ar lá em cima não tem oxigênio nenhum",
+            "a pressão lá em cima é maior que a pressão do litoral",
+            "faz calor demais e o ar fica pesado",
+            "cada respiração traz menos oxigênio, pela pressão menor",
+            "a gravidade lá em cima é bem maior"
+          ],
+          "correct_index": 3,
+          "explanation": "Há oxigênio, mas o ar é mais rarefeito.",
+          "pitfall": "Não é falta total de oxigênio."
+        },
+        {
+          "topic": "Área",
+          "statement": "A mesma força aplicada sobre uma área menor produz uma pressão:",
+          "options": [
+            "menor",
+            "igual",
+            "nula",
+            "negativa",
+            "maior"
+          ],
+          "correct_index": 4,
+          "explanation": "Por isso a faca afiada corta melhor.",
+          "pitfall": "Área menor concentra a força."
+        },
+        {
+          "topic": "Ventosa",
+          "statement": "A ventosa fica presa na parede porque:",
+          "options": [
+            "o ar de fora a empurra contra a parede",
+            "ela tem cola invisível",
+            "a parede a puxa",
+            "o ar de dentro dela empurra mais",
+            "ela é um ímã"
+          ],
+          "correct_index": 0,
+          "explanation": "Ao apertar, sai o ar de baixo dela.",
+          "pitfall": "Ninguém puxa: o ar de fora empurra.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Corpo",
+          "statement": "Não sentimos o peso do ar sobre nós porque:",
+          "options": [
+            "o ar não pesa nada, por ser invisível",
+            "o corpo empurra de volta por dentro, com igual pressão",
+            "a pele é dura o bastante para segurar o ar",
+            "a pressão do ar só existe no alto das montanhas",
+            "o vento leva a pressão embora"
+          ],
+          "correct_index": 1,
+          "explanation": "As pressões de dentro e de fora se equilibram.",
+          "pitfall": "O ar pesa, sim.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Suco",
+          "format": "order",
+          "statement": "Coloque na ordem o que acontece quando alguém toma suco de canudinho.",
+          "options": [
+            "a boca tira o ar de dentro do canudinho",
+            "a pressão dentro do canudinho fica menor",
+            "o ar de fora aperta a superfície do suco",
+            "o suco é empurrado para cima"
+          ],
+          "explanation": "A diferença de pressão vem antes do suco subir.",
+          "pitfall": "A boca não puxa o suco.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Ouvido",
+          "statement": "O ouvido estala na descida de um avião porque:",
+          "options": [
+            "o barulho do motor machuca o ouvido",
+            "a altitude esquenta o ar de dentro do ouvido",
+            "a pressão de fora muda mais rápido que a de dentro",
+            "a pressão fica sempre igual dentro e fora do avião",
+            "o ar some dentro do avião"
+          ],
+          "correct_index": 2,
+          "explanation": "Engolir ajuda a igualar as duas.",
+          "pitfall": "É diferença de pressão, não barulho.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Canudo longo",
+          "statement": "Por que, ao nível do mar, é impossível tomar água com um canudo de 15 metros de altura?",
+          "options": [
+            "porque a água esquenta no caminho",
+            "porque um canudo tão longo fica estreito demais",
+            "porque a boca não tem força para puxar tanta água",
+            "porque o ar de fora só empurra a água até cerca de 10 m",
+            "porque a gravidade da Terra some acima de 10 metros"
+          ],
+          "correct_index": 3,
+          "explanation": "Mesmo tirando todo o ar, a coluna para em cerca de 10 m.",
+          "pitfall": "Ninguém puxa: o limite é o empurrão do ar.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Água fervendo",
+          "statement": "Em cidades de grande altitude, a água ferve abaixo de 100 °C porque:",
+          "options": [
+            "o fogo é mais forte lá",
+            "a água tem menos massa",
+            "a pressão do ar é maior",
+            "a água é diferente da do litoral",
+            "a pressão do ar sobre ela é menor"
+          ],
+          "correct_index": 4,
+          "explanation": "Com menos pressão, ferver fica mais fácil.",
+          "pitfall": "Pressão maior faria ferver acima de 100 °C.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "fluidos-em-movimento",
+      "title": "Fluidos em movimento: a mangueira, o chuveiro e a asa do avião",
+      "module": "Fluidos",
+      "summary": "Água e ar em movimento seguem duas regras simples. Onde o caminho estreita, o fluido corre mais rápido; e onde ele corre mais rápido, a pressão cai. Com isso se explicam a mangueira, a cortina do chuveiro, o telhado que voa e parte do voo do avião.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=n3hqVpf0uMc",
+        "title": "O princípio de Bernoulli e o voo",
+        "channel": "Engenharia Detalhada"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O dedo na mangueira",
+          "body": [
+            "Aperte a ponta da mangueira com o dedo e a água sai em jato, bem mais longe. Você não ligou mais a torneira.",
+            "A água que entra por segundo continua a mesma. O que mudou foi o tamanho da saída."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Vazão: quanto passa por segundo",
+          "body": [
+            "Vazão é o volume de fluido que passa por um ponto a cada segundo, como litros por segundo. Fluido é tudo que escorre: líquidos e gases.",
+            "Num cano sem vazamento, a vazão é a mesma em todo o caminho. Se o cano estreita, a água precisa correr mais rápido para passar a mesma quantidade."
+          ],
+          "terms": [
+            {
+              "word": "fluido",
+              "meaning": "qualquer material que escorre e toma a forma do recipiente, como a água e o ar."
+            },
+            {
+              "word": "vazão",
+              "meaning": "o volume de fluido que passa por um ponto a cada segundo."
+            }
+          ],
+          "example": {
+            "label": "A mesma vazão, saídas diferentes",
+            "lines": [
+              "Saída larga: a água sai devagar.",
+              "Saída pela metade da área: a água sai duas vezes mais rápido.",
+              "Saída com um quarto da área: quatro vezes mais rápido."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Mais rápido, menos pressão",
+          "body": [
+            "Há uma segunda regra, descoberta por Bernoulli no século XVIII. Onde um fluido corre mais rápido, a pressão dele fica menor.",
+            "Ligue o chuveiro e a cortina é puxada para dentro. O ar que se move junto com a água tem pressão menor que o ar parado do banheiro. O ar de fora, com pressão maior, empurra a cortina."
+          ],
+          "terms": [
+            {
+              "word": "pressão",
+              "meaning": "o quanto uma força está concentrada sobre uma área."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O telhado que voa",
+          "body": [
+            "Num vendaval, o vento passa muito rápido por cima do telhado. Em cima, a pressão cai. Dentro da casa, o ar está parado e tem pressão maior.",
+            "A diferença empurra o telhado para cima e pode arrancá-lo. Por isso os telhados são presos à estrutura, e não só apoiados."
+          ],
+          "example": {
+            "label": "Como o vendaval arranca o telhado",
+            "ordered": true,
+            "lines": [
+              "O vento passa muito rápido por cima do telhado.",
+              "A pressão em cima do telhado cai.",
+              "Dentro da casa, o ar parado mantém a pressão maior.",
+              "A diferença empurra o telhado para cima."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Como a asa sustenta o avião",
+          "body": [
+            "A asa tem um formato e uma inclinação que fazem o ar passar mais rápido por cima do que por baixo. Pela regra de Bernoulli, a pressão em cima fica menor, e isso ajuda a empurrar a asa para cima.",
+            "Há também outro efeito: a asa inclinada joga o ar para baixo. Pela terceira lei de Newton, o ar empurra a asa para cima. As duas explicações são partes da mesma força, a sustentação."
+          ],
+          "terms": [
+            {
+              "word": "sustentação",
+              "meaning": "a força para cima que o ar faz sobre a asa de um avião em movimento."
+            },
+            {
+              "word": "terceira lei de Newton",
+              "meaning": "a lei da ação e reação: se um corpo empurra outro, é empurrado de volta com a mesma força."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede para explicar um fenômeno do dia a dia pela velocidade e pela pressão do fluido. Também cobra a conta da vazão quando o cano muda de largura."
+          ],
+          "bullets": [
+            "“Ao estreitar a saída da mangueira, a velocidade da água…”",
+            "“A cortina do chuveiro se move para dentro porque…”",
+            "“Em vendavais, telhados são arrancados porque…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que apertar a mangueira aumenta a vazão. A vazão é a mesma; a velocidade é que sobe.",
+            "Inverter a regra de Bernoulli. Onde o fluido corre mais rápido, a pressão é MENOR.",
+            "Dizer que o vento puxa o telhado. Quem empurra é o ar de dentro, com pressão maior."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Vazão é o volume que passa por segundo, e ela é a mesma num cano sem vazamento. Onde o cano estreita, o fluido corre mais rápido.",
+            "Onde o fluido corre mais rápido, a pressão cai. Isso explica a cortina do chuveiro e o telhado arrancado. A asa sustenta o avião pela diferença de pressão e por jogar o ar para baixo."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Mangueira",
+          "statement": "Ao apertar a ponta da mangueira, a água sai mais longe porque:",
+          "options": [
+            "a saída menor faz a água correr mais rápido",
+            "a vazão da torneira aumenta junto",
+            "a água fica mais pesada",
+            "o dedo empurra a água para a frente",
+            "a pressão da rua aumenta"
+          ],
+          "correct_index": 0,
+          "explanation": "A mesma vazão por uma saída menor pede mais velocidade.",
+          "pitfall": "A vazão não muda."
+        },
+        {
+          "topic": "Vazão",
+          "statement": "Vazão é:",
+          "options": [
+            "a velocidade com que a água anda no cano",
+            "o volume de fluido que passa por um ponto por segundo",
+            "o peso de toda a água que está no cano",
+            "a pressão que a água faz no fundo do cano",
+            "o tamanho do cano"
+          ],
+          "correct_index": 1,
+          "explanation": "Litros por segundo, por exemplo.",
+          "pitfall": "Velocidade e vazão são coisas diferentes."
+        },
+        {
+          "topic": "Fluido",
+          "statement": "São exemplos de fluido:",
+          "options": [
+            "o ferro e a madeira",
+            "o vidro e a pedra",
+            "a água e o ar",
+            "o gelo e o sal",
+            "o papel e o plástico duro"
+          ],
+          "correct_index": 2,
+          "explanation": "Fluido escorre e toma a forma do recipiente.",
+          "pitfall": "Gás também é fluido."
+        },
+        {
+          "topic": "Metade",
+          "statement": "Se a saída de um cano tem metade da área, com a mesma vazão, a água sai:",
+          "options": [
+            "na metade da velocidade",
+            "na mesma velocidade",
+            "quatro vezes mais devagar",
+            "duas vezes mais rápido",
+            "parada"
+          ],
+          "correct_index": 3,
+          "explanation": "Área e velocidade compensam uma à outra.",
+          "pitfall": "Menos área, mais velocidade."
+        },
+        {
+          "topic": "Bernoulli",
+          "statement": "Pela regra de Bernoulli, onde um fluido corre mais rápido, a pressão dele:",
+          "options": [
+            "fica maior",
+            "fica igual",
+            "dobra sempre",
+            "vira zero sempre",
+            "fica menor"
+          ],
+          "correct_index": 4,
+          "explanation": "Mais velocidade, menos pressão.",
+          "pitfall": "A inversão é o erro mais comum."
+        },
+        {
+          "topic": "Cortina",
+          "statement": "A cortina do chuveiro é puxada para dentro porque:",
+          "options": [
+            "o ar que se move com a água tem pressão menor",
+            "a água molhada atrai o plástico da cortina",
+            "o vapor quente pesa sobre o lado de dentro da cortina",
+            "o ar de dentro do box tem pressão maior",
+            "a cortina fica mais leve molhada"
+          ],
+          "correct_index": 0,
+          "explanation": "O ar de fora, com pressão maior, empurra.",
+          "pitfall": "Ninguém puxa: o ar de fora empurra."
+        },
+        {
+          "topic": "Telhado",
+          "statement": "Num vendaval, o telhado pode ser arrancado porque:",
+          "options": [
+            "o vento puxa o telhado para cima pela frente da casa",
+            "o vento rápido baixa a pressão em cima, e o ar de dentro empurra",
+            "a casa fica mais pesada e o telhado se solta das paredes",
+            "a chuva bate embaixo das telhas e as empurra para cima",
+            "a pressão de dentro some"
+          ],
+          "correct_index": 1,
+          "explanation": "A diferença de pressão vem de baixo para cima.",
+          "pitfall": "Não é o vento puxando."
+        },
+        {
+          "topic": "Sustentação",
+          "statement": "A força para cima que o ar faz sobre a asa de um avião se chama:",
+          "options": [
+            "empuxo da água",
+            "atrito",
+            "sustentação",
+            "vazão",
+            "inércia"
+          ],
+          "correct_index": 2,
+          "explanation": "Ela vem da diferença de pressão e do ar jogado para baixo.",
+          "pitfall": "A força da água sobre o que boia é outra coisa."
+        },
+        {
+          "topic": "Gás",
+          "statement": "O ar é um fluido porque:",
+          "options": [
+            "é invisível e por isso não tem forma",
+            "não tem massa nem ocupa lugar",
+            "não se move nunca",
+            "escorre e toma a forma do lugar em que está",
+            "é sempre quente"
+          ],
+          "correct_index": 3,
+          "explanation": "Gases e líquidos são fluidos.",
+          "pitfall": "Não precisa ser líquido.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Velocidade e pressão",
+          "statement": "Num lugar onde o ar corre rápido, comparado com o ar parado ao lado, a pressão é:",
+          "options": [
+            "maior",
+            "igual",
+            "o dobro",
+            "impossível de comparar",
+            "menor"
+          ],
+          "correct_index": 4,
+          "explanation": "É a regra de Bernoulli.",
+          "pitfall": "Não inverta.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Telhado",
+          "format": "order",
+          "statement": "Coloque na ordem como um vendaval arranca um telhado.",
+          "options": [
+            "o vento passa muito rápido por cima do telhado",
+            "a pressão em cima do telhado cai",
+            "o ar de dentro da casa fica com pressão maior que o de cima",
+            "a diferença empurra o telhado para cima"
+          ],
+          "explanation": "A velocidade causa a queda de pressão, e a diferença empurra.",
+          "pitfall": "Quem empurra é o ar de dentro.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Asa",
+          "statement": "Além da diferença de pressão, a asa sustenta o avião porque:",
+          "options": [
+            "joga o ar para baixo, e o ar empurra a asa para cima",
+            "a asa é mais leve que o ar em volta dela",
+            "o motor empurra a asa para cima o tempo todo",
+            "o ar fica parado em volta da asa",
+            "a gravidade some na altura de voo"
+          ],
+          "correct_index": 0,
+          "explanation": "É ação e reação.",
+          "pitfall": "O motor empurra para a frente.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Um quarto",
+          "statement": "A água entra num cano a 2 m/s e passa por um trecho com um quarto da área. Nesse trecho, ela corre a:",
+          "options": [
+            "0,5 m/s",
+            "8 m/s",
+            "2 m/s",
+            "4 m/s",
+            "6 m/s"
+          ],
+          "correct_index": 1,
+          "explanation": "Um quarto da área, quatro vezes a velocidade.",
+          "pitfall": "Área menor, velocidade maior.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Caminhão",
+          "statement": "Um caminhão passa rápido muito perto de uma bicicleta parada. A bicicleta tende a ser:",
+          "options": [
+            "empurrada para longe, pela pressão maior entre os dois",
+            "levantada do chão pelo vento que passa por baixo",
+            "empurrada na direção do caminhão, pela pressão menor entre os dois",
+            "parada, sem efeito nenhum",
+            "empurrada para trás, no sentido contrário"
+          ],
+          "correct_index": 2,
+          "explanation": "O ar rápido entre os dois tem pressão menor.",
+          "pitfall": "O ar do outro lado empurra a bicicleta para perto.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "ondas-e-som",
       "title": "Ondas e som",
       "module": "Ondas",
       "summary": "Onda leva energia sem levar matéria. O som é uma onda que precisa de um meio para andar, e sua frequência decide se ele é grave ou agudo.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=kR5FSlOPrhI",
+        "title": "Ondas sonoras",
+        "channel": "Brasil Escola Oficial"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -3419,6 +5946,11 @@
       "title": "Luz: reflexão, refração e cores",
       "module": "Ondas",
       "summary": "A luz anda em linha reta, a 300 mil km por segundo. Ela volta nos espelhos, entorta ao mudar de meio e se separa em cores no arco-íris.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=-GMtjKlPCOw",
+        "title": "Refração da luz",
+        "channel": "Descomplica"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -3785,10 +6317,372 @@
       ]
     },
     {
+      "slug": "comunicacao-por-ondas",
+      "title": "Rádio, wi-fi e celular: a informação viaja em ondas",
+      "module": "Ondas",
+      "summary": "A rádio, o wi-fi e o celular mandam informação por ondas que não se veem. A lição mostra como uma onda carrega uma mensagem, a diferença entre AM e FM, por que o wi-fi de 5 GHz alcança menos e como a fibra óptica prende a luz no vidro.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=JtbN9FsbhsE",
+        "title": "Como funciona o rádio",
+        "channel": "Ciência & Tecnologia"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Uma música atravessando a parede",
+          "body": [
+            "O rádio do vizinho toca a mesma música que o seu, sem fio nenhum ligando os dois à rádio.",
+            "A música chega pelo ar, numa onda que atravessa paredes e não se vê. É a mesma família de onda da luz."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Ondas que não precisam de ar",
+          "body": [
+            "Rádio, wi-fi, celular e a luz são ondas eletromagnéticas. Elas viajam até no vácuo, à velocidade da luz.",
+            "O que diferencia uma da outra é a frequência, quantas vezes ela vibra por segundo. A unidade é o hertz."
+          ],
+          "terms": [
+            {
+              "word": "onda eletromagnética",
+              "meaning": "uma onda de energia elétrica e magnética que viaja até no vácuo, como a luz e as ondas de rádio."
+            },
+            {
+              "word": "frequência",
+              "meaning": "quantas vezes uma onda vibra a cada segundo."
+            },
+            {
+              "word": "hertz",
+              "meaning": "a unidade de frequência, escrita Hz: uma vibração por segundo. Mega é um milhão; giga, um bilhão."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Como a onda leva a mensagem",
+          "body": [
+            "Uma onda sempre igual não diz nada. Para levar uma música, a rádio vai mudando a onda no ritmo do som.",
+            "No AM, o que muda é a altura da onda, a amplitude. No FM, o que muda é a frequência. O FM sofre menos interferência e tem som melhor; o AM vai mais longe, principalmente à noite."
+          ],
+          "terms": [
+            {
+              "word": "amplitude",
+              "meaning": "a altura de uma onda, o quanto ela sobe e desce a partir do meio."
+            }
+          ],
+          "table": {
+            "label": "AM e FM",
+            "headers": [
+              "",
+              "AM",
+              "FM"
+            ],
+            "rows": [
+              [
+                "o que varia",
+                "a amplitude",
+                "a frequência"
+              ],
+              [
+                "qualidade do som",
+                "menor, com chiado",
+                "melhor"
+              ],
+              [
+                "alcance",
+                "maior",
+                "menor"
+              ],
+              [
+                "faixa no Brasil",
+                "kHz (quilohertz)",
+                "de 88 a 108 MHz"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O wi-fi de 2,4 e o de 5",
+          "body": [
+            "O roteador de casa costuma ter duas faixas, 2,4 GHz e 5 GHz. A de 5 GHz carrega mais dados por segundo e é mais rápida.",
+            "Em troca, ondas de frequência mais alta atravessam pior paredes e móveis. Por isso a rede de 5 GHz alcança menos cômodos. Longe do roteador, a de 2,4 GHz costuma funcionar melhor."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O celular e as antenas",
+          "body": [
+            "O celular não fala direto com o outro celular. Ele fala com uma antena próxima, que passa a ligação adiante pela rede da operadora.",
+            "Cada antena cobre uma área, e quem anda de carro vai sendo passado de uma para outra sem perceber. O 5G usa frequências mais altas em parte da rede, e por isso precisa de mais antenas."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Luz presa no vidro: a fibra óptica",
+          "body": [
+            "A internet de casa muitas vezes chega por fibra óptica, um fio de vidro mais fino que um cabelo. A informação vai em pulsos de luz.",
+            "A luz bate na parede do fio num ângulo tão inclinado que não consegue sair: ela reflete inteira e segue em zigue-zague. É a reflexão total, e ela leva a luz por quilômetros."
+          ],
+          "terms": [
+            {
+              "word": "reflexão",
+              "meaning": "a volta de uma onda ao bater numa superfície, como a luz num espelho."
+            },
+            {
+              "word": "fibra óptica",
+              "meaning": "um fio de vidro muito fino que leva informação em pulsos de luz."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede para comparar AM e FM, explicar por que uma frequência alcança mais que outra ou como a luz fica presa na fibra."
+          ],
+          "bullets": [
+            "“Na transmissão em FM, a grandeza modificada é…”",
+            "“A rede de 5 GHz tem menor alcance porque…”",
+            "“A fibra óptica funciona por causa…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que ondas de rádio são som. Elas são eletromagnéticas; o som só aparece no alto-falante.",
+            "Trocar AM por FM. No AM varia a amplitude; no FM, a frequência.",
+            "Pensar que frequência maior alcança mais longe. Em geral, atravessa pior os obstáculos."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Rádio, wi-fi, celular e luz são ondas eletromagnéticas. Elas diferem pela frequência. No AM varia a amplitude; no FM, a frequência.",
+            "Frequências mais altas levam mais dados, mas atravessam pior as paredes. O celular fala com antenas, e a fibra óptica prende a luz no vidro pela reflexão total."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Tipo de onda",
+          "statement": "As ondas de rádio, de wi-fi e de celular são:",
+          "options": [
+            "ondas de som",
+            "ondas do mar",
+            "ondas que só andam na água",
+            "ondas eletromagnéticas",
+            "correntes elétricas em fios"
+          ],
+          "correct_index": 3,
+          "explanation": "São da mesma família da luz.",
+          "pitfall": "O som só aparece no alto-falante."
+        },
+        {
+          "topic": "Vácuo",
+          "statement": "Ondas eletromagnéticas conseguem viajar:",
+          "options": [
+            "só no ar, como o som",
+            "só na água",
+            "só dentro de fios de cobre",
+            "só durante o dia",
+            "até no vácuo, sem ar nenhum"
+          ],
+          "correct_index": 4,
+          "explanation": "Por isso a luz do Sol chega até nós.",
+          "pitfall": "O som é que precisa de um meio."
+        },
+        {
+          "topic": "Frequência",
+          "statement": "O que diferencia a onda de rádio da luz visível é principalmente:",
+          "options": [
+            "a frequência",
+            "a cor do aparelho",
+            "o volume do som",
+            "a temperatura do ar",
+            "o tamanho da antena da casa"
+          ],
+          "correct_index": 0,
+          "explanation": "Mesma família, frequências diferentes.",
+          "pitfall": "A velocidade no vácuo é a mesma."
+        },
+        {
+          "topic": "FM",
+          "statement": "Na transmissão em FM, a característica da onda que varia é a:",
+          "options": [
+            "amplitude",
+            "frequência",
+            "cor",
+            "temperatura",
+            "massa"
+          ],
+          "correct_index": 1,
+          "explanation": "FM é frequência modulada.",
+          "pitfall": "No AM é a amplitude."
+        },
+        {
+          "topic": "AM",
+          "statement": "Comparada com a FM, a rádio AM costuma ter:",
+          "options": [
+            "alcance menor e som melhor",
+            "o mesmo alcance e o mesmo som",
+            "alcance maior e som com mais chiado",
+            "som em vídeo",
+            "nenhum alcance à noite"
+          ],
+          "correct_index": 2,
+          "explanation": "É a troca entre as duas.",
+          "pitfall": "FM tem som melhor."
+        },
+        {
+          "topic": "5 GHz",
+          "statement": "A rede wi-fi de 5 GHz costuma alcançar menos cômodos que a de 2,4 GHz porque:",
+          "options": [
+            "ela carrega menos dados e por isso é mais lenta",
+            "ela usa som em vez de luz",
+            "ela não é eletromagnética",
+            "ondas de frequência mais alta atravessam pior as paredes",
+            "o roteador manda essa onda com menos força"
+          ],
+          "correct_index": 3,
+          "explanation": "Ela é mais rápida, mas alcança menos.",
+          "pitfall": "Frequência maior não quer dizer alcance maior."
+        },
+        {
+          "topic": "Celular",
+          "statement": "Numa ligação, o celular manda o sinal primeiro para:",
+          "options": [
+            "o outro celular, direto, sem nada no meio",
+            "um satélite sempre",
+            "o roteador de casa, sempre",
+            "a rádio FM mais próxima",
+            "uma antena próxima da operadora"
+          ],
+          "correct_index": 4,
+          "explanation": "A antena passa a ligação adiante.",
+          "pitfall": "Celular não fala direto com celular."
+        },
+        {
+          "topic": "Fibra",
+          "statement": "A luz segue dentro da fibra óptica por causa da:",
+          "options": [
+            "reflexão total nas paredes do fio",
+            "eletricidade do vidro",
+            "gravidade que puxa a luz",
+            "frequência do som",
+            "pressão do ar dentro do fio"
+          ],
+          "correct_index": 0,
+          "explanation": "Ela bate inclinada e não consegue sair.",
+          "pitfall": "Na fibra viaja luz, não eletricidade."
+        },
+        {
+          "topic": "Hertz",
+          "statement": "A unidade de frequência é o:",
+          "options": [
+            "metro",
+            "hertz",
+            "newton",
+            "joule",
+            "litro"
+          ],
+          "correct_index": 1,
+          "explanation": "Uma vibração por segundo.",
+          "pitfall": "Newton é de força.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Faixa FM",
+          "statement": "No Brasil, as rádios FM ficam na faixa de:",
+          "options": [
+            "1 a 10 Hz",
+            "88 a 108 km",
+            "88 a 108 MHz",
+            "2,4 a 5 GHz",
+            "0 a 1 grau"
+          ],
+          "correct_index": 2,
+          "explanation": "MHz é milhão de hertz.",
+          "pitfall": "2,4 e 5 GHz são do wi-fi.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Rádio e som",
+          "statement": "O som que você ouve no rádio:",
+          "options": [
+            "viaja como som pelo ar desde a estação",
+            "vem pelo fio da tomada junto com a energia",
+            "é gravado antes dentro do aparelho e só repetido",
+            "é produzido pelo alto-falante, a partir da onda recebida",
+            "chega pela luz do Sol"
+          ],
+          "correct_index": 3,
+          "explanation": "A onda de rádio carrega a mensagem; o alto-falante a vira som.",
+          "pitfall": "Som não atravessa quilômetros assim.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "5G",
+          "statement": "O 5G precisa de mais antenas em parte da rede porque:",
+          "options": [
+            "usa som em vez de ondas eletromagnéticas",
+            "não funciona de dia",
+            "tem frequências mais baixas que o 4G",
+            "os celulares 5G são maiores",
+            "usa frequências mais altas, que alcançam menos"
+          ],
+          "correct_index": 4,
+          "explanation": "Mais frequência, menos alcance por antena.",
+          "pitfall": "É a mesma troca do wi-fi.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "AM à noite",
+          "statement": "Uma vantagem do AM em relação ao FM, que a prova costuma cobrar, é:",
+          "options": [
+            "chegar mais longe, principalmente à noite",
+            "ter som limpo, sem nenhum chiado",
+            "usar frequências de giga-hertz, como o wi-fi",
+            "não usar ondas eletromagnéticas",
+            "precisar de fibra óptica"
+          ],
+          "correct_index": 0,
+          "explanation": "É por isso que se ouve AM de outros estados à noite.",
+          "pitfall": "Qualidade de som é vantagem do FM.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Wi-fi longe",
+          "statement": "Num quarto longe do roteador, cheio de paredes, a melhor escolha costuma ser a rede de:",
+          "options": [
+            "5 GHz, porque é mais rápida em qualquer lugar",
+            "2,4 GHz, que atravessa melhor os obstáculos",
+            "nenhuma, wi-fi não passa parede",
+            "5 GHz, porque tem frequência menor",
+            "2,4 GHz, porque tem frequência maior"
+          ],
+          "correct_index": 1,
+          "explanation": "Frequência mais baixa atravessa melhor.",
+          "pitfall": "Mais rápida perto não é melhor longe.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "eletricidade",
       "title": "Eletricidade: corrente, tensão e a conta de luz",
       "module": "Eletricidade",
       "summary": "Tensão empurra, corrente anda e resistência atrapalha. A potência do aparelho e o tempo ligado decidem quanto se paga na conta de luz.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=lMFRBc2_Vo0",
+        "title": "Tensão, corrente, resistência e potência",
+        "channel": "Simplificando a Elétrica"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -4205,6 +7099,11 @@
       "title": "Ímãs, motores e geradores",
       "module": "Eletricidade",
       "summary": "Ímãs têm dois polos que não se separam. A corrente elétrica vira ímã, o ímã em movimento vira corrente, e é assim que funcionam o motor e a usina.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=dKEo3Ru1qls",
+        "title": "Eletromagnetismo",
+        "channel": "Descomplica"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -4550,6 +7449,11 @@
       "title": "De onde vem a energia: usinas e rendimento",
       "module": "Eletricidade",
       "summary": "Toda usina transforma uma energia da natureza em eletricidade. A lição compara as fontes, separa renovável de não renovável e mostra por que nenhuma máquina aproveita tudo.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=bdgYTLW4ec4",
+        "title": "Fontes de energia renováveis e não renováveis",
+        "channel": "Descomplica"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -4908,6 +7812,1092 @@
           "correct_index": 0,
           "explanation": "A altura vira movimento, e o movimento vira eletricidade.",
           "pitfall": "A segunda opção é a mesma cadeia de trás para a frente.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "gravitacao-e-kepler",
+      "title": "Gravitação: as leis de Kepler e o peso em outros planetas",
+      "module": "O céu",
+      "summary": "Os planetas andam em elipses, mais rápido perto do Sol, e os mais distantes demoram mais para dar a volta. A lição mostra as três leis de Kepler, a conta da gravitação de Newton e por que seu peso muda na Lua, mas a sua massa não.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=1dBYixqIoYU",
+        "title": "As leis de Kepler",
+        "channel": "Brasil Escola Oficial"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Um astronauta na balança da Lua",
+          "body": [
+            "Um astronauta de 60 kg sobe numa balança na Lua. Ela mostra um número seis vezes menor que na Terra.",
+            "Ele não emagreceu. O que mudou foi o puxão da gravidade, e esta lição explica de onde vem esse puxão."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Primeira lei: a órbita é uma elipse",
+          "body": [
+            "No começo do século XVII, Kepler estudou anos de anotações sobre Marte. Concluiu que os planetas não andam em círculos perfeitos, e sim em elipses, um círculo um pouco achatado.",
+            "O Sol não fica no centro dessa elipse. Ele fica num ponto deslocado, chamado foco. A órbita da Terra é quase um círculo, mas não é um."
+          ],
+          "terms": [
+            {
+              "word": "órbita",
+              "meaning": "o caminho que um corpo faz ao girar em volta de outro, como a Terra em volta do Sol."
+            },
+            {
+              "word": "elipse",
+              "meaning": "uma curva fechada em forma de círculo achatado."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Segunda e terceira leis",
+          "body": [
+            "A segunda lei diz que o planeta varre áreas iguais em tempos iguais. Na prática, ele anda mais rápido quando está perto do Sol e mais devagar quando está longe.",
+            "A terceira lei diz que quanto mais longe do Sol, mais tempo o planeta leva para dar uma volta. A Terra leva um ano; Netuno, cerca de 165 anos."
+          ],
+          "table": {
+            "label": "As três leis de Kepler",
+            "headers": [
+              "Lei",
+              "O que diz"
+            ],
+            "rows": [
+              [
+                "primeira",
+                "a órbita é uma elipse, com o Sol num foco"
+              ],
+              [
+                "segunda",
+                "perto do Sol, o planeta anda mais rápido"
+              ],
+              [
+                "terceira",
+                "mais longe do Sol, volta mais demorada"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A conta de Newton",
+          "body": [
+            "Newton mostrou que qualquer par de corpos se atrai. A força cresce com as massas dos dois e cai com o quadrado da distância entre eles.",
+            "Dobrando a distância, a força fica quatro vezes menor. Triplicando, nove vezes menor. É a mesma força que segura a Lua em volta da Terra e faz uma maçã cair."
+          ],
+          "terms": [
+            {
+              "word": "gravitação universal",
+              "meaning": "a lei de Newton segundo a qual dois corpos quaisquer se atraem, com uma força que cresce com as massas e cai com o quadrado da distância."
+            }
+          ],
+          "example": {
+            "label": "Quanto a força cai com a distância",
+            "lines": [
+              "Distância 2 vezes maior: força 4 vezes menor.",
+              "Distância 3 vezes maior: força 9 vezes menor.",
+              "Distância 10 vezes maior: força 100 vezes menor."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Massa não muda; peso muda",
+          "body": [
+            "Massa é a quantidade de matéria do corpo, medida em quilogramas. Ela é a mesma em qualquer lugar do universo. Peso é a força com que a gravidade puxa essa massa, medido em newtons.",
+            "Na Terra, um astronauta de 60 kg pesa cerca de 600 N. Na Lua, onde a gravidade é cerca de um sexto, pesa uns 100 N. A massa continua 60 kg."
+          ],
+          "terms": [
+            {
+              "word": "massa e peso",
+              "meaning": "massa é a quantidade de matéria, em quilogramas, e não muda. Peso é a força da gravidade sobre essa massa, em newtons, e muda de planeta para planeta."
+            },
+            {
+              "word": "newton",
+              "meaning": "a unidade de força, escrita N."
+            }
+          ],
+          "table": {
+            "label": "Um astronauta de 60 kg",
+            "headers": [
+              "Lugar",
+              "Gravidade (m/s²)",
+              "Peso",
+              "Massa"
+            ],
+            "rows": [
+              [
+                "Terra",
+                "cerca de 10",
+                "cerca de 600 N",
+                "60 kg"
+              ],
+              [
+                "Lua",
+                "cerca de 1,6",
+                "cerca de 100 N",
+                "60 kg"
+              ],
+              [
+                "Marte",
+                "cerca de 3,7",
+                "cerca de 220 N",
+                "60 kg"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova cobra as leis de Kepler por um desenho de órbita e a conta da força quando a distância muda. Também cobra a diferença entre massa e peso fora da Terra."
+          ],
+          "bullets": [
+            "“De acordo com a segunda lei de Kepler, a velocidade do planeta…”",
+            "“Se a distância entre os corpos dobrar, a força gravitacional…”",
+            "“Na Lua, a massa e o peso do astronauta…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Dizer que a massa muda na Lua. Muda o peso; a massa é a mesma.",
+            "Achar que dobrar a distância divide a força por 2. Divide por 4.",
+            "Pensar que o planeta anda sempre na mesma velocidade. Perto do Sol, anda mais rápido."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Kepler: órbitas em elipse, mais rápidas perto do Sol, e mais demoradas quanto mais longe. Newton: todo par de corpos se atrai, e a força cai com o quadrado da distância.",
+            "Massa é quantidade de matéria e não muda. Peso é a força da gravidade, e na Lua fica cerca de seis vezes menor."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Primeira lei",
+          "statement": "Segundo a primeira lei de Kepler, a órbita dos planetas é:",
+          "options": [
+            "uma elipse, com o Sol num foco",
+            "um círculo perfeito, com o Sol no centro",
+            "uma reta que vai e volta",
+            "uma espiral que se aproxima do Sol",
+            "um quadrado"
+          ],
+          "correct_index": 0,
+          "explanation": "Um círculo achatado, com o Sol deslocado.",
+          "pitfall": "Círculo perfeito é a ideia antiga."
+        },
+        {
+          "topic": "Segunda lei",
+          "statement": "Pela segunda lei de Kepler, um planeta anda mais rápido quando está:",
+          "options": [
+            "mais longe do Sol",
+            "mais perto do Sol",
+            "sempre na mesma velocidade",
+            "no meio do caminho",
+            "atrás de outro planeta"
+          ],
+          "correct_index": 1,
+          "explanation": "Áreas iguais em tempos iguais.",
+          "pitfall": "Velocidade constante é o erro."
+        },
+        {
+          "topic": "Terceira lei",
+          "statement": "Pela terceira lei de Kepler, um planeta mais distante do Sol:",
+          "options": [
+            "leva menos tempo para dar uma volta",
+            "leva sempre um ano",
+            "leva mais tempo para dar uma volta",
+            "não dá volta completa",
+            "anda em linha reta"
+          ],
+          "correct_index": 2,
+          "explanation": "Netuno leva cerca de 165 anos.",
+          "pitfall": "Mais longe, mais demorado."
+        },
+        {
+          "topic": "Dobro da distância",
+          "statement": "Se a distância entre dois corpos dobra, a força gravitacional entre eles:",
+          "options": [
+            "fica duas vezes menor",
+            "dobra",
+            "fica igual",
+            "fica quatro vezes menor",
+            "fica quatro vezes maior"
+          ],
+          "correct_index": 3,
+          "explanation": "A força cai com o quadrado da distância.",
+          "pitfall": "Dividir por 2 é o erro esperado."
+        },
+        {
+          "topic": "Massas",
+          "statement": "A força gravitacional entre dois corpos cresce quando:",
+          "options": [
+            "a distância aumenta",
+            "os corpos esfriam",
+            "os corpos ficam parados",
+            "a luz diminui",
+            "as massas aumentam"
+          ],
+          "correct_index": 4,
+          "explanation": "Mais massa, mais atração.",
+          "pitfall": "Mais distância, menos força."
+        },
+        {
+          "topic": "Massa na Lua",
+          "statement": "Um astronauta de 60 kg vai à Lua. Lá, a massa dele é:",
+          "options": [
+            "60 kg",
+            "10 kg",
+            "360 kg",
+            "zero",
+            "100 N"
+          ],
+          "correct_index": 0,
+          "explanation": "Massa não muda de lugar para lugar.",
+          "pitfall": "100 N seria o peso."
+        },
+        {
+          "topic": "Peso na Lua",
+          "statement": "Na Lua, onde a gravidade é cerca de um sexto da terrestre, um peso de 600 N passa a ser de cerca de:",
+          "options": [
+            "600 N",
+            "100 N",
+            "3.600 N",
+            "60 kg",
+            "zero"
+          ],
+          "correct_index": 1,
+          "explanation": "600 ÷ 6 = 100.",
+          "pitfall": "Peso e massa têm unidades diferentes."
+        },
+        {
+          "topic": "Unidade",
+          "statement": "O peso é uma força, e por isso é medido em:",
+          "options": [
+            "quilogramas",
+            "metros",
+            "newtons",
+            "segundos",
+            "litros"
+          ],
+          "correct_index": 2,
+          "explanation": "Massa é em quilogramas.",
+          "pitfall": "No dia a dia se fala peso em quilos, mas a Física separa."
+        },
+        {
+          "topic": "Mesma força",
+          "statement": "A força que faz uma maçã cair é a mesma que:",
+          "options": [
+            "faz o ímã grudar na geladeira",
+            "acende a lâmpada",
+            "faz o som viajar",
+            "mantém a Lua em órbita da Terra",
+            "produz o vento"
+          ],
+          "correct_index": 3,
+          "explanation": "Foi a grande ideia de Newton.",
+          "pitfall": "Ímã é outra força.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Elipse",
+          "statement": "Uma elipse é:",
+          "options": [
+            "uma linha reta que vai e volta",
+            "um círculo perfeito, com o Sol no centro",
+            "uma espiral aberta",
+            "um triângulo",
+            "uma curva fechada em forma de círculo achatado"
+          ],
+          "correct_index": 4,
+          "explanation": "É a forma das órbitas.",
+          "pitfall": "Círculo perfeito é um caso especial.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Triplo",
+          "statement": "Se a distância entre dois corpos triplica, a força entre eles fica:",
+          "options": [
+            "nove vezes menor",
+            "três vezes menor",
+            "seis vezes menor",
+            "três vezes maior",
+            "igual"
+          ],
+          "correct_index": 0,
+          "explanation": "3² = 9.",
+          "pitfall": "Lembre do quadrado.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Marte",
+          "statement": "Num planeta com gravidade de cerca de 3,7 m/s², um astronauta de 60 kg teria peso de cerca de:",
+          "options": [
+            "60 N",
+            "220 N",
+            "600 N",
+            "37 N",
+            "2.200 N"
+          ],
+          "correct_index": 1,
+          "explanation": "60 × 3,7 ≈ 222.",
+          "pitfall": "A massa continua 60 kg.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Balança",
+          "statement": "Uma balança de banheiro levada à Lua marca um número menor porque:",
+          "options": [
+            "a massa da pessoa diminui quando ela chega à Lua",
+            "a balança só funciona direito dentro da Terra",
+            "ela mede a força com que o corpo aperta: o peso, não a massa",
+            "o ar da Lua empurra a pessoa para cima da balança",
+            "a pessoa emagrece na viagem"
+          ],
+          "correct_index": 2,
+          "explanation": "A balança sente a força da gravidade.",
+          "pitfall": "A massa é a mesma.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Velocidade na órbita",
+          "statement": "A Terra fica mais perto do Sol no começo de janeiro. Pela segunda lei de Kepler, nessa época ela:",
+          "options": [
+            "anda mais devagar na órbita",
+            "para por um instante",
+            "anda na mesma velocidade de julho",
+            "anda um pouco mais rápido na órbita",
+            "muda de sentido"
+          ],
+          "correct_index": 3,
+          "explanation": "Perto do Sol, mais rápido.",
+          "pitfall": "A estação não muda essa regra.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "fases-da-lua-e-mares",
+      "title": "A Lua: fases, a face escondida e as marés",
+      "module": "O céu",
+      "summary": "A Lua não tem luz própria: ela reflete a luz do Sol, e a parte iluminada que vemos muda ao longo do mês. A lição explica as quatro fases, por que vemos sempre o mesmo lado dela e como ela puxa as marés.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=3Wefx4Vpx1M",
+        "title": "A Lua e suas fases",
+        "channel": "Canal Futura"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A bola e a lâmpada",
+          "body": [
+            "Num quarto escuro com uma lâmpada acesa, segure uma bola com o braço esticado e gire devagar em volta de si.",
+            "Você vai ver a bola toda clara, metade clara, toda escura. A bola é a Lua, a lâmpada é o Sol e você é a Terra."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A Lua só reflete",
+          "body": [
+            "A Lua não produz luz. Metade dela está sempre iluminada pelo Sol, como metade da Terra está sempre de dia.",
+            "Enquanto ela gira em volta da Terra, vemos pedaços diferentes dessa metade iluminada. Isso são as fases. O ciclo completo leva cerca de 29 dias e meio."
+          ],
+          "terms": [
+            {
+              "word": "fases da Lua",
+              "meaning": "as formas que a parte iluminada da Lua toma vista da Terra, ao longo de cerca de 29 dias e meio."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As quatro fases",
+          "body": [
+            "Na lua nova, a Lua está entre a Terra e o Sol, e a face virada para nós fica escura. Na lua cheia, é a Terra que fica entre os dois, e vemos a face inteira iluminada.",
+            "Entre elas vêm as quartas. Na crescente, a parte clara aumenta noite a noite; na minguante, ela diminui."
+          ],
+          "table": {
+            "label": "As quatro fases",
+            "headers": [
+              "Fase",
+              "Posição",
+              "O que se vê"
+            ],
+            "rows": [
+              [
+                "nova",
+                "Lua entre a Terra e o Sol",
+                "quase nada"
+              ],
+              [
+                "quarto crescente",
+                "um quarto da volta depois",
+                "metade iluminada, aumentando"
+              ],
+              [
+                "cheia",
+                "Terra entre o Sol e a Lua",
+                "o disco inteiro"
+              ],
+              [
+                "quarto minguante",
+                "três quartos da volta",
+                "metade iluminada, diminuindo"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O lado que nunca vemos",
+          "body": [
+            "A Lua leva o mesmo tempo para girar em torno de si e para dar uma volta na Terra. Por isso ela mostra sempre a mesma face para nós.",
+            "O outro lado não é escuro: ele recebe sol na lua nova, quando o nosso lado está apagado. Ele só ficou desconhecido até as primeiras sondas o fotografarem, em 1959."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Por que não há eclipse todo mês",
+          "body": [
+            "Se a Lua passa entre a Terra e o Sol todo mês, por que não há eclipse do Sol todo mês? Porque a órbita da Lua é um pouco inclinada em relação à da Terra.",
+            "Na maioria das luas novas, a Lua passa um pouco acima ou abaixo da linha do Sol. O eclipse só acontece quando os três ficam bem alinhados."
+          ],
+          "terms": [
+            {
+              "word": "eclipse",
+              "meaning": "quando um astro esconde outro, ou quando a sombra de um cai sobre o outro, como a Lua tapando o Sol."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A Lua puxa o mar",
+          "body": [
+            "A gravidade da Lua puxa mais forte o lado da Terra que está perto dela. O mar desse lado se estica na direção da Lua. Do lado oposto, a Terra é puxada mais que a água, e o mar também fica alto.",
+            "Por isso há duas marés altas por dia em muitos lugares. Na lua cheia e na nova, o Sol puxa na mesma linha, e as marés ficam maiores."
+          ],
+          "terms": [
+            {
+              "word": "maré",
+              "meaning": "a subida e a descida do nível do mar, causadas principalmente pela gravidade da Lua."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mostra um desenho com o Sol, a Terra e a Lua e pede a fase. Também cobra por que a Lua mostra sempre a mesma face e por que há duas marés altas por dia."
+          ],
+          "bullets": [
+            "“Na posição indicada, a fase da Lua observada da Terra é…”",
+            "“A Lua apresenta sempre a mesma face voltada para a Terra porque…”",
+            "“As marés mais intensas ocorrem nas fases…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que as fases são a sombra da Terra na Lua. Isso é eclipse; fase é o pedaço iluminado que vemos.",
+            "Dizer que o outro lado da Lua é sempre escuro. Ele recebe sol; só não é visto daqui.",
+            "Pensar que a Lua não gira. Ela gira, no mesmo tempo da volta em torno da Terra."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "A Lua reflete a luz do Sol, e as fases são o pedaço iluminado que vemos ao longo de cerca de 29 dias e meio. Na nova ela fica entre a Terra e o Sol; na cheia, é a Terra que fica no meio.",
+            "Ela mostra sempre a mesma face porque gira no mesmo tempo da volta. A gravidade dela faz duas marés altas por dia, maiores na lua nova e na cheia."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Luz da Lua",
+          "statement": "A luz da Lua vem:",
+          "options": [
+            "dela mesma, porque a Lua é uma estrela",
+            "da Terra, que ilumina a Lua de noite",
+            "dos vulcões ativos dela",
+            "das outras estrelas",
+            "do Sol, refletida pela superfície dela"
+          ],
+          "correct_index": 4,
+          "explanation": "A Lua não produz luz.",
+          "pitfall": "Ela não é estrela."
+        },
+        {
+          "topic": "Ciclo",
+          "statement": "Um ciclo completo das fases da Lua leva cerca de:",
+          "options": [
+            "29 dias e meio",
+            "cerca de 24 horas",
+            "cerca de 7 dias",
+            "365 dias",
+            "2 anos"
+          ],
+          "correct_index": 0,
+          "explanation": "É mais ou menos um mês.",
+          "pitfall": "24 horas é um dia na Terra."
+        },
+        {
+          "topic": "Lua nova",
+          "statement": "Na lua nova:",
+          "options": [
+            "a Terra está entre o Sol e a Lua",
+            "a Lua está entre a Terra e o Sol",
+            "a Lua está atrás do Sol",
+            "a Lua some do espaço",
+            "o Sol está entre a Terra e a Lua"
+          ],
+          "correct_index": 1,
+          "explanation": "A face virada para nós fica escura.",
+          "pitfall": "Terra no meio é lua cheia."
+        },
+        {
+          "topic": "Lua cheia",
+          "statement": "Na lua cheia, vemos:",
+          "options": [
+            "quase nada",
+            "só metade, aumentando",
+            "o disco inteiro iluminado",
+            "só metade, diminuindo",
+            "a Lua vermelha sempre"
+          ],
+          "correct_index": 2,
+          "explanation": "A Terra fica entre o Sol e a Lua.",
+          "pitfall": "Vermelha é no eclipse."
+        },
+        {
+          "topic": "Crescente",
+          "statement": "No quarto crescente, a parte iluminada vista da Terra:",
+          "options": [
+            "diminui noite a noite",
+            "fica igual o mês inteiro",
+            "some de vez",
+            "aumenta noite a noite",
+            "fica vermelha"
+          ],
+          "correct_index": 3,
+          "explanation": "Ela caminha para a cheia.",
+          "pitfall": "Diminuir é a minguante."
+        },
+        {
+          "topic": "Mesma face",
+          "statement": "Vemos sempre a mesma face da Lua porque:",
+          "options": [
+            "ela não gira em torno de si, fica sempre parada",
+            "o outro lado fica sempre no escuro e não aparece",
+            "a Terra não gira",
+            "o Sol fica sempre na frente do outro lado e o esconde",
+            "ela gira em torno de si no tempo exato da volta na Terra"
+          ],
+          "correct_index": 4,
+          "explanation": "Os dois tempos são iguais.",
+          "pitfall": "Dizer que ela não gira é o erro."
+        },
+        {
+          "topic": "Eclipse mensal",
+          "statement": "Não há eclipse do Sol em toda lua nova porque:",
+          "options": [
+            "a órbita da Lua é um pouco inclinada em relação à da Terra",
+            "a Lua para de girar em volta da Terra em alguns meses",
+            "o Sol fica menor e mais fraco em alguns meses",
+            "a lua nova não existe todo mês",
+            "a Terra esconde a Lua sempre"
+          ],
+          "correct_index": 0,
+          "explanation": "Na maioria das vezes a Lua passa acima ou abaixo da linha do Sol.",
+          "pitfall": "A lua nova acontece todo mês."
+        },
+        {
+          "topic": "Marés",
+          "statement": "As marés são causadas principalmente pela:",
+          "options": [
+            "rotação dos ventos",
+            "gravidade da Lua",
+            "chuva nos oceanos",
+            "luz do Sol na água",
+            "temperatura do mar"
+          ],
+          "correct_index": 1,
+          "explanation": "A Lua puxa a água.",
+          "pitfall": "O vento faz ondas, não marés."
+        },
+        {
+          "topic": "Fase e sombra",
+          "statement": "As fases da Lua acontecem porque:",
+          "options": [
+            "a sombra da Terra cobre uma parte da Lua todo mês",
+            "a Lua apaga e acende sozinha",
+            "vemos pedaços diferentes da metade iluminada pelo Sol",
+            "nuvens altas tapam uma parte da Lua",
+            "a Lua muda de tamanho"
+          ],
+          "correct_index": 2,
+          "explanation": "Sombra da Terra na Lua é eclipse.",
+          "pitfall": "É posição, não sombra.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Outro lado",
+          "statement": "O lado da Lua que não vemos da Terra:",
+          "options": [
+            "fica escuro para sempre",
+            "não existe",
+            "é feito de gelo",
+            "também recebe luz do Sol em parte do mês",
+            "é virado para o Sol o tempo todo"
+          ],
+          "correct_index": 3,
+          "explanation": "Na lua nova, ele é que está iluminado.",
+          "pitfall": "“Lado escuro” é nome popular, não verdade.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Fases",
+          "format": "order",
+          "statement": "Coloque as fases da Lua na ordem em que acontecem, a partir da nova.",
+          "options": [
+            "lua nova",
+            "quarto crescente",
+            "lua cheia",
+            "quarto minguante"
+          ],
+          "explanation": "A parte clara cresce até a cheia e depois diminui.",
+          "pitfall": "Minguante vem depois da cheia.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Marés maiores",
+          "statement": "As marés ficam maiores nas luas:",
+          "options": [
+            "crescente e minguante, quando puxam em linhas diferentes",
+            "só na crescente",
+            "só durante os eclipses",
+            "em nenhuma fase, são sempre iguais",
+            "nova e cheia, quando Sol e Lua puxam na mesma linha"
+          ],
+          "correct_index": 4,
+          "explanation": "Os dois puxões se somam.",
+          "pitfall": "Nas quartas eles se cruzam.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Duas marés",
+          "statement": "Muitos lugares têm duas marés altas por dia porque:",
+          "options": [
+            "o mar sobe no lado virado para a Lua e também no oposto",
+            "a Lua dá duas voltas em torno da Terra por dia",
+            "o Sol puxa a água duas vezes, de manhã e de tarde",
+            "o vento do mar muda de direção duas vezes por dia",
+            "existem duas Luas"
+          ],
+          "correct_index": 0,
+          "explanation": "No lado oposto, a Terra é puxada mais que a água.",
+          "pitfall": "A Lua dá uma volta por mês, não duas por dia.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Eclipse e fase",
+          "statement": "Um eclipse da Lua só pode acontecer na lua:",
+          "options": [
+            "nova, quando a Lua fica entre a Terra e o Sol",
+            "cheia, quando a Terra fica entre o Sol e a Lua",
+            "crescente",
+            "minguante",
+            "em qualquer fase"
+          ],
+          "correct_index": 1,
+          "explanation": "A sombra da Terra precisa cair sobre a Lua.",
+          "pitfall": "Na lua nova pode haver eclipse do Sol.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "sistema-solar-e-universo",
+      "title": "O Sistema Solar e o tamanho do universo",
+      "module": "O céu",
+      "summary": "Oito planetas giram em volta de uma estrela média, numa galáxia com centenas de bilhões delas. A lição mostra os planetas rochosos e os gigantes, o que aconteceu com Plutão, o que é um ano-luz e a idade do universo.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=3bE0NZVRwNo",
+        "title": "O Sistema Solar e seus planetas",
+        "channel": "Toda Matéria"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "A luz que já foi",
+          "body": [
+            "A luz do Sol que bate no seu rosto saiu dele há cerca de 8 minutos. A de algumas estrelas que você vê à noite saiu há milhares de anos.",
+            "Olhar para o céu é olhar para o passado. Esta lição mostra o tamanho do lugar em que moramos."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Uma estrela comum",
+          "body": [
+            "O Sol é uma estrela, uma enorme bola de gás que produz luz e calor. Entre as estrelas, ele é de tamanho médio.",
+            "Em volta dele giram os planetas, as luas, os asteroides e os cometas. Esse conjunto é o Sistema Solar."
+          ],
+          "terms": [
+            {
+              "word": "estrela",
+              "meaning": "um astro de gás muito quente que produz a própria luz, como o Sol."
+            },
+            {
+              "word": "planeta",
+              "meaning": "um astro que gira em volta de uma estrela, não produz luz própria e é grande o bastante para limpar a vizinhança da sua órbita."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Rochosos e gigantes",
+          "body": [
+            "Os quatro planetas mais perto do Sol são rochosos e pequenos: Mercúrio, Vênus, Terra e Marte. Depois de um cinturão de asteroides vêm os quatro gigantes (Júpiter, Saturno, Urano e Netuno).",
+            "Os gigantes são feitos principalmente de gás ou de gelo, e todos têm anéis, embora os de Saturno sejam os mais visíveis. Júpiter é o maior de todos."
+          ],
+          "table": {
+            "label": "Os oito planetas, a partir do Sol",
+            "headers": [
+              "Planeta",
+              "Tipo"
+            ],
+            "rows": [
+              [
+                "Mercúrio",
+                "rochoso"
+              ],
+              [
+                "Vênus",
+                "rochoso"
+              ],
+              [
+                "Terra",
+                "rochoso"
+              ],
+              [
+                "Marte",
+                "rochoso"
+              ],
+              [
+                "Júpiter",
+                "gigante gasoso"
+              ],
+              [
+                "Saturno",
+                "gigante gasoso"
+              ],
+              [
+                "Urano",
+                "gigante de gelo"
+              ],
+              [
+                "Netuno",
+                "gigante de gelo"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O que aconteceu com Plutão",
+          "body": [
+            "Até 2006, Plutão era chamado de nono planeta. Naquele ano, os astrônomos criaram uma definição de planeta, e Plutão não cumpria uma parte dela.",
+            "Ele divide a sua região com muitos outros corpos parecidos. Virou planeta-anão, junto com outros, como Ceres e Éris. Plutão não mudou: mudou a regra."
+          ],
+          "terms": [
+            {
+              "word": "planeta-anão",
+              "meaning": "um astro que gira em volta do Sol e é redondo, mas não limpou a vizinhança da sua órbita, como Plutão."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Distâncias que não cabem em quilômetros",
+          "body": [
+            "Para medir o espaço, usa-se o ano-luz: a distância que a luz percorre em um ano, cerca de 9,5 trilhões de quilômetros. Ele é uma distância, não um tempo.",
+            "A estrela mais próxima do Sol fica a pouco mais de 4 anos-luz. O Sol faz parte da Via Láctea, uma galáxia com centenas de bilhões de estrelas. E há bilhões de galáxias."
+          ],
+          "terms": [
+            {
+              "word": "ano-luz",
+              "meaning": "a distância que a luz percorre em um ano, cerca de 9,5 trilhões de quilômetros."
+            },
+            {
+              "word": "galáxia",
+              "meaning": "um conjunto enorme de estrelas, gás e poeira, preso pela gravidade. A nossa é a Via Láctea."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "De onde veio tudo isso",
+          "body": [
+            "As galáxias estão se afastando umas das outras. Voltando o filme, tudo estaria muito mais junto, quente e denso.",
+            "Essa é a ideia do Big Bang: o universo começou a se expandir há cerca de 13,8 bilhões de anos. O Sol e a Terra são bem mais novos, com cerca de 4,6 bilhões de anos."
+          ],
+          "terms": [
+            {
+              "word": "Big Bang",
+              "meaning": "a teoria segundo a qual o universo começou muito quente e denso e vem se expandindo há cerca de 13,8 bilhões de anos."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova cobra a ordem dos planetas, a diferença entre rochosos e gigantes, o que é um ano-luz e por que Plutão deixou de ser planeta."
+          ],
+          "bullets": [
+            "“O ano-luz é uma unidade de…”",
+            "“Plutão foi reclassificado porque…”",
+            "“Os planetas rochosos do Sistema Solar são…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que ano-luz mede tempo. Ele mede distância.",
+            "Dizer que só Saturno tem anéis. Os quatro gigantes têm.",
+            "Pensar que Plutão mudou de tamanho. Mudou a definição de planeta."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O Sol é uma estrela média, com quatro planetas rochosos e quatro gigantes em volta. Plutão virou planeta-anão em 2006, quando a regra mudou.",
+            "Ano-luz é distância: cerca de 9,5 trilhões de quilômetros. A Via Láctea tem centenas de bilhões de estrelas, e o universo se expande há cerca de 13,8 bilhões de anos."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Sol",
+          "statement": "O Sol é:",
+          "options": [
+            "um planeta muito quente",
+            "a maior estrela do universo",
+            "uma estrela de tamanho médio",
+            "uma galáxia pequena",
+            "um satélite da Terra"
+          ],
+          "correct_index": 2,
+          "explanation": "Ele produz a própria luz.",
+          "pitfall": "Há estrelas muito maiores."
+        },
+        {
+          "topic": "Rochosos",
+          "statement": "Os planetas rochosos do Sistema Solar são:",
+          "options": [
+            "Júpiter, Saturno, Urano e Netuno",
+            "Terra, Júpiter, Marte e Plutão",
+            "Vênus, Saturno, Terra e Netuno",
+            "Mercúrio, Vênus, Terra e Marte",
+            "só a Terra"
+          ],
+          "correct_index": 3,
+          "explanation": "São os quatro mais perto do Sol.",
+          "pitfall": "Os de fora são gigantes."
+        },
+        {
+          "topic": "Maior",
+          "statement": "O maior planeta do Sistema Solar é:",
+          "options": [
+            "Saturno",
+            "Terra",
+            "Netuno",
+            "Urano",
+            "Júpiter"
+          ],
+          "correct_index": 4,
+          "explanation": "É um gigante gasoso.",
+          "pitfall": "Saturno é o dos anéis mais visíveis, não o maior."
+        },
+        {
+          "topic": "Anéis",
+          "statement": "Sobre os anéis dos planetas, é correto dizer que:",
+          "options": [
+            "os quatro gigantes têm anéis; os de Saturno são os mais vistos",
+            "só Saturno tem anéis, e os outros não têm nenhum",
+            "a Terra também tem anéis, mas são invisíveis",
+            "nenhum planeta tem anéis de verdade, só nuvens em volta",
+            "só os planetas rochosos têm anéis"
+          ],
+          "correct_index": 0,
+          "explanation": "Júpiter, Urano e Netuno têm anéis finos.",
+          "pitfall": "“Só Saturno” é o quantificador absoluto."
+        },
+        {
+          "topic": "Plutão",
+          "statement": "Plutão deixou de ser chamado de planeta em 2006 porque:",
+          "options": [
+            "explodiu e virou um cinturão de pedras",
+            "não cumpre toda a nova definição de planeta",
+            "saiu do Sistema Solar",
+            "encolheu de repente e virou uma lua",
+            "deixou de girar em volta do Sol"
+          ],
+          "correct_index": 1,
+          "explanation": "Ele divide a região com muitos corpos parecidos.",
+          "pitfall": "Plutão não mudou: a regra mudou."
+        },
+        {
+          "topic": "Ano-luz",
+          "statement": "O ano-luz é uma unidade de:",
+          "options": [
+            "tempo",
+            "velocidade",
+            "distância",
+            "massa",
+            "temperatura"
+          ],
+          "correct_index": 2,
+          "explanation": "É quanto a luz anda em um ano.",
+          "pitfall": "O nome engana, mas mede distância."
+        },
+        {
+          "topic": "Galáxia",
+          "statement": "A galáxia em que fica o Sistema Solar se chama:",
+          "options": [
+            "Andrômeda",
+            "Plutão",
+            "Big Bang",
+            "Via Láctea",
+            "Cinturão de asteroides"
+          ],
+          "correct_index": 3,
+          "explanation": "Tem centenas de bilhões de estrelas.",
+          "pitfall": "Andrômeda é uma galáxia vizinha."
+        },
+        {
+          "topic": "Idade",
+          "statement": "Pela teoria do Big Bang, o universo começou a se expandir há cerca de:",
+          "options": [
+            "4,6 bilhões de anos",
+            "6 mil anos",
+            "100 milhões de anos",
+            "1 trilhão de anos",
+            "13,8 bilhões de anos"
+          ],
+          "correct_index": 4,
+          "explanation": "4,6 bilhões é a idade do Sol e da Terra.",
+          "pitfall": "Não confunda as duas idades."
+        },
+        {
+          "topic": "Luz do Sol",
+          "statement": "A luz do Sol leva para chegar à Terra cerca de:",
+          "options": [
+            "8 minutos",
+            "8 segundos",
+            "8 horas",
+            "8 dias",
+            "8 anos"
+          ],
+          "correct_index": 0,
+          "explanation": "O Sol fica a cerca de 150 milhões de quilômetros.",
+          "pitfall": "É rápida, mas não é instantânea.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Planetas",
+          "statement": "Quantos planetas tem o Sistema Solar, desde 2006?",
+          "options": [
+            "nove",
+            "oito",
+            "sete",
+            "dez",
+            "doze"
+          ],
+          "correct_index": 1,
+          "explanation": "Plutão virou planeta-anão.",
+          "pitfall": "Nove era a conta antiga.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Ordem dos planetas",
+          "format": "order",
+          "statement": "Coloque estes planetas na ordem de distância ao Sol, do mais perto ao mais longe.",
+          "options": [
+            "Vênus",
+            "Marte",
+            "Júpiter",
+            "Netuno"
+          ],
+          "explanation": "Os rochosos vêm antes dos gigantes.",
+          "pitfall": "Netuno é o último dos oito.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Estrela próxima",
+          "statement": "A estrela mais próxima do Sol fica a pouco mais de 4 anos-luz. Isso quer dizer que a luz dela:",
+          "options": [
+            "leva só 4 minutos para chegar até nós",
+            "saiu de lá há cerca de 4 mil anos",
+            "leva pouco mais de 4 anos para chegar até nós",
+            "não chega até a Terra",
+            "anda 4 quilômetros por ano"
+          ],
+          "correct_index": 2,
+          "explanation": "A luz anda um ano-luz por ano.",
+          "pitfall": "Ano-luz é distância; o tempo vem da definição.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Gigantes de gelo",
+          "statement": "Urano e Netuno são chamados de gigantes de gelo porque:",
+          "options": [
+            "são cobertos por neve igual à das montanhas da Terra",
+            "ficam dentro do cinturão de asteroides, perto de Marte",
+            "são menores que Mercúrio",
+            "têm muita água, amônia e metano em forma de gelo, além de gás",
+            "não têm atmosfera"
+          ],
+          "correct_index": 3,
+          "explanation": "São diferentes de Júpiter e Saturno, quase só gás.",
+          "pitfall": "Não é neve de montanha.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Passado",
+          "statement": "Ao olhar uma galáxia a 2 milhões de anos-luz, vemos:",
+          "options": [
+            "a galáxia exatamente como ela está neste instante",
+            "como ela vai ser daqui a 2 milhões de anos",
+            "uma imagem inventada pelo telescópio",
+            "nada, porque a luz não chega",
+            "a galáxia como ela era há cerca de 2 milhões de anos"
+          ],
+          "correct_index": 4,
+          "explanation": "A luz levou 2 milhões de anos para chegar.",
+          "pitfall": "Olhar longe é olhar o passado.",
           "difficulty": "dificil"
         }
       ]
