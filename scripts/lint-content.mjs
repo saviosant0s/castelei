@@ -1137,6 +1137,15 @@ for (const file of arquivos) {
       if (q.difficulty != null && i < ultimaBase) fail(`${L} › questão ${i + 1}`, "questão com nível antes de uma de base: ponha as com nível depois de todas as de base");
     });
 
+    // Lição com níveis tem 8 questões de base: é o que o grátis recebe, e o
+    // ContentSeederTest exige. Uma questão marcada com nível por engano
+    // derrubava a base para 7 sem que nada aqui reclamasse.
+    const praticaveis = lesson.questions.filter((q) => !q.exam_only && q.format !== "writing");
+    if (praticaveis.some((q) => q.difficulty != null)) {
+      const base = praticaveis.filter((q) => q.difficulty == null).length;
+      if (base !== 8) fail(L, `${base} questões de base (sem nível): a lição com níveis precisa de 8`);
+    }
+
     lesson.questions.forEach((q, i) => {
       questionCount++;
       const W = `${L} › questão ${i + 1}`;
