@@ -1,3 +1,4 @@
+import { ScrollMemory } from "@/components/app/ScrollMemory";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ChevronRight, CloudUpload } from "lucide-react";
@@ -71,6 +72,7 @@ export default async function Inicio() {
 
   return (
     <div className="space-y-8">
+      <ScrollMemory id={"inicio"} />
       {/*
         A saudação fica sozinha e no centro: os dias seguidos e o XP subiram
         para o cabeçalho fixo (e aparecem em toda tela), a revisão virou aba e
@@ -124,7 +126,7 @@ export default async function Inicio() {
               </div>
               <span className="grid size-12 shrink-0 place-items-center rounded-full bg-sky text-on-accent">
                 <ArrowRight className="size-6" aria-hidden="true" />
-                <span className="sr-only">{last.kind === "exam" ? "Abrir matéria" : "Abrir lição"}</span>
+                <span className="sr-only">{last.lesson_id === null ? "Abrir matéria" : "Abrir lição"}</span>
               </span>
             </div>
           </Card>

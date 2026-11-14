@@ -12,6 +12,9 @@ class Attempt extends Model
 
     public const KIND_EXAM = 'exam';
 
+    /** A rodada de questões da matéria inteira, pela aba Questões. */
+    public const KIND_PRACTICE = 'practice';
+
     protected $guarded = [];
 
     protected function casts(): array

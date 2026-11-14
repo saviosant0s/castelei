@@ -264,7 +264,7 @@ export interface WritingReviewResponse {
   remaining: number;
 }
 
-export type AttemptKind = "lesson" | "exam";
+export type AttemptKind = "lesson" | "exam" | "practice";
 
 export interface StartAttemptResponse {
   attempt: { id: number; total: number; kind: AttemptKind };

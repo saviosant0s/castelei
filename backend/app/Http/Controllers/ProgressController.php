@@ -76,7 +76,7 @@ class ProgressController extends Controller
                 'kind' => $last->kind,
                 'lesson_id' => $last->lesson_id,
                 // O simulado não tem lição: o título é a própria matéria.
-                'lesson_title' => $last->lesson?->title ?? 'Simulado',
+                'lesson_title' => $last->lesson?->title ?? ($last->kind === Attempt::KIND_PRACTICE ? 'Questões da matéria' : 'Simulado'),
                 'subject_id' => $last->subject_id,
                 'subject_name' => $last->lesson?->subject->name ?? $last->subject?->name,
                 // O app precisa do slug para saber para onde levar quem voltar
@@ -123,7 +123,7 @@ class ProgressController extends Controller
             ->map(fn (Attempt $attempt) => [
                 'attempt_id' => $attempt->id,
                 'kind' => $attempt->kind,
-                'title' => $attempt->lesson?->title ?? ('Simulado — '.($attempt->subject?->name ?? 'matéria removida')),
+                'title' => $attempt->lesson?->title ?? (($attempt->kind === Attempt::KIND_PRACTICE ? 'Questões — ' : 'Simulado — ').($attempt->subject?->name ?? 'matéria removida')),
                 'finished_at' => $attempt->finished_at?->toIso8601String(),
                 'percent' => (int) round($attempt->correct_count / max($attempt->total_questions, 1) * 100),
                 'avg_seconds' => $attempt->avg_seconds,

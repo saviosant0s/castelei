@@ -1,3 +1,4 @@
+import { ScrollMemory } from "@/components/app/ScrollMemory";
 import { SaveOffline } from "@/components/offline/SaveOffline";
 import { paginasDaMateria } from "@/lib/offline";
 import type { Metadata } from "next";
@@ -37,6 +38,7 @@ export default async function MateriaPage({ params }: { params: Promise<{ slug: 
 
   return (
     <div className="space-y-6">
+      <ScrollMemory id={`materia:${slug}`} />
       <PageHero
         title={subject.name}
         art={<SubjectArt name={subjectArtKey(subject)} />}

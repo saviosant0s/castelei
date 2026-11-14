@@ -9,6 +9,9 @@ import type { Difficulty, LessonSummary, Subject } from "@/lib/types";
 */
 export const NIVEIS: Difficulty[] = ["facil", "media", "dificil"];
 
+/** Questões numa rodada da matéria: o mesmo `subject_practice.questions` do backend. */
+export const RODADA = 10;
+
 /** Matéria de escrita não entra: a prática dela é texto, não questão. */
 export function materiasDeQuestao(subjects: Subject[]): Subject[] {
   return subjects.filter((s) => !s.exam?.writing && s.lessons.some((l) => l.questions_total > 0));

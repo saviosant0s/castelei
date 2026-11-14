@@ -1,3 +1,4 @@
+import { ScrollMemory } from "@/components/app/ScrollMemory";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
@@ -11,7 +12,7 @@ import type { SubjectsResponse } from "@/lib/types";
 export const metadata: Metadata = { title: "Questões" };
 
 /*
-| A aba Questões: treinar fora da trilha. Primeiro a matéria, depois a lição.
+| A aba Questões: treinar fora da trilha. Escolhe-se a matéria; dentro dela, a rodada da matéria inteira ou o nível.
 | Fica separada da lição de propósito: quem termina de estudar faz as
 | questões da lição, sem escolher nada; quem quer treinar vem aqui.
 */
@@ -21,7 +22,8 @@ export default async function QuestoesPage() {
 
   return (
     <div className="space-y-7">
-      <PageHero title="Questões">Escolha a matéria e a lição que quer treinar.</PageHero>
+      <ScrollMemory id={"questoes"} />
+      <PageHero title="Questões">Escolha a matéria que quer treinar.</PageHero>
 
       {ativas.length === 0 ? (
         <EmptyState level="h2" art="em-breve" title="Ainda sem questões" description="Quando houver matéria com questões, ela aparece aqui." />

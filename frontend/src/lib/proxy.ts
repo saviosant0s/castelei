@@ -48,6 +48,7 @@ export function apiBase(): string {
 const ALLOWED_PATHS = [
   /^lessons\/\d+\/attempts$/,
   /^subjects\/\d+\/exams$/,
+  /^subjects\/\d+\/practice$/,
   // A data da prova, que cada pessoa marca na tela da matéria.
   /^subjects\/\d+\/exam-date$/,
   /^attempts\/\d+\/answers$/,

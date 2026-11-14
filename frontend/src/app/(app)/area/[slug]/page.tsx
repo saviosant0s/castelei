@@ -1,3 +1,4 @@
+import { ScrollMemory } from "@/components/app/ScrollMemory";
 import { createElement } from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -25,6 +26,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
 
   return (
     <div className="space-y-6">
+      <ScrollMemory id={`area:${slug}`} />
       <PageHero
         title={area.name}
         art={

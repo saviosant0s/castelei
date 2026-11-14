@@ -12,6 +12,7 @@ use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\CronController;
 use App\Http\Controllers\ExamController;
+use App\Http\Controllers\SubjectPracticeController;
 use App\Http\Controllers\ExamDateController;
 use App\Http\Controllers\StudyToolsController;
 use App\Http\Controllers\WritingController;
@@ -94,6 +95,8 @@ Route::middleware('auth:sanctum')->group(function () {
     // A data da prova é de quem estuda: cada um marca a sua na tela da matéria.
     Route::put('/subjects/{subject}/exam-date', [ExamDateController::class, 'update'])->whereNumber('subject')->middleware('visible');
     Route::post('/subjects/{subject}/exams', [ExamController::class, 'store'])->whereNumber('subject')->middleware('visible');
+    // A aba Questões: uma rodada sorteada da matéria inteira, com ou sem nível.
+    Route::post('/subjects/{subject}/practice', [SubjectPracticeController::class, 'store'])->whereNumber('subject')->middleware('visible');
     Route::post('/attempts/{attempt}/answers', [AttemptController::class, 'answer'])->whereNumber('attempt');
     Route::post('/attempts/{attempt}/finish', [AttemptController::class, 'finish'])->whereNumber('attempt');
     // Conferir um texto não grava nada, e pode ser feito muitas vezes. O limite existe pelo LanguageTool.
