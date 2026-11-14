@@ -126,7 +126,7 @@ export default async function Inicio() {
               </div>
               <span className="grid size-12 shrink-0 place-items-center rounded-full bg-sky text-on-accent">
                 <ArrowRight className="size-6" aria-hidden="true" />
-                <span className="sr-only">{last.kind === "exam" ? "Abrir matéria" : "Abrir lição"}</span>
+                <span className="sr-only">{last.lesson_id === null ? "Abrir matéria" : "Abrir lição"}</span>
               </span>
             </div>
           </Card>

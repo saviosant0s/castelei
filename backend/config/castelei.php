@@ -399,6 +399,11 @@ return [
         ],
     ],
 
+    // A rodada da aba Questões: curta, porque mostra o gabarito a cada questão.
+    'subject_practice' => [
+        'questions' => 10,
+    ],
+
     'exam' => [
         'questions' => 20,      // alvo de questões por simulado
         'min_questions' => 5,   // abaixo disso a matéria ainda não dá simulado

@@ -476,12 +476,13 @@ class AttemptController extends Controller
     /** @return array<string, mixed> */
     private function result(Attempt $attempt): array
     {
-        // O recorde compara com o mesmo desafio: a mesma lição, ou o simulado da mesma matéria.
+        // O recorde compara com o mesmo desafio: a mesma lição, ou o simulado
+        // (ou a rodada da aba Questões) da mesma matéria.
         $previousBest = Attempt::query()
             ->where('user_id', $attempt->user_id)
             ->where('kind', $attempt->kind)
             ->when(
-                $attempt->isExam(),
+                $attempt->lesson_id === null,
                 fn ($query) => $query->where('subject_id', $attempt->subject_id),
                 fn ($query) => $query->where('lesson_id', $attempt->lesson_id),
             )

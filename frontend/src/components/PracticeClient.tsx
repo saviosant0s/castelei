@@ -34,16 +34,18 @@ type Phase = "loading" | "failed" | "answering" | "feedback" | "result";
  */
 export type PracticeSource =
   | { kind: "lesson"; lessonId: number; lessonTitle: string; onlyWrong?: boolean; level?: Difficulty }
-  | { kind: "exam"; subjectId: number; subjectSlug: string; subjectName: string };
+  | { kind: "exam"; subjectId: number; subjectSlug: string; subjectName: string }
+  // A aba Questões: uma rodada sorteada da matéria inteira, com ou sem nível.
+  | { kind: "subject"; subjectId: number; subjectSlug: string; subjectName: string; level?: Difficulty };
 
 function startUrl(source: PracticeSource): string {
-  return source.kind === "lesson"
-    ? `/api/lessons/${source.lessonId}/attempts`
-    : `/api/subjects/${source.subjectId}/exams`;
+  if (source.kind === "lesson") return `/api/lessons/${source.lessonId}/attempts`;
+  return source.kind === "subject" ? `/api/subjects/${source.subjectId}/practice` : `/api/subjects/${source.subjectId}/exams`;
 }
 
 function backHref(source: PracticeSource): string {
-  return source.kind === "lesson" ? `/licao/${source.lessonId}` : `/materia/${source.subjectSlug}`;
+  if (source.kind === "lesson") return `/licao/${source.lessonId}`;
+  return source.kind === "subject" ? `/questoes/${source.subjectSlug}` : `/materia/${source.subjectSlug}`;
 }
 
 function sourceTitle(source: PracticeSource): string {
@@ -52,6 +54,7 @@ function sourceTitle(source: PracticeSource): string {
     if (source.level) return `${DIFFICULTY_LABEL[source.level]} · ${source.lessonTitle}`;
     return source.lessonTitle;
   }
+  if (source.kind === "subject") return source.level ? `${DIFFICULTY_LABEL[source.level]} · ${source.subjectName}` : source.subjectName;
   return `Simulado · ${source.subjectName}`;
 }
 
@@ -144,7 +147,7 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
         startUrl(source),
         source.kind === "lesson" && source.onlyWrong
           ? { only: "wrong" }
-          : source.kind === "lesson" && source.level
+          : source.kind !== "exam" && source.level
             ? { level: source.level }
             : undefined,
       );
@@ -294,7 +297,7 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
               Tentar de novo
             </button>
             <Link href={backHref(source)} className="btn btn-ghost">
-              {source.kind === "lesson" ? "Voltar para a lição" : "Voltar para a matéria"}
+              {source.kind === "lesson" ? "Voltar para a lição" : source.kind === "subject" ? "Voltar para as questões" : "Voltar para a matéria"}
             </Link>
           </div>
         </div>
@@ -572,6 +575,7 @@ export function ResultView({
   writing?: boolean;
 }) {
   const isExam = source.kind === "exam";
+  const isRodada = source.kind === "subject";
   const headline = writing
     ? result.percent >= 80
       ? "Texto de pé!"
@@ -615,7 +619,7 @@ export function ResultView({
     <div className="relative mx-auto min-h-dvh max-w-md px-5 pb-44 pt-10">
       {celebrate && <Confetti />}
 
-      <p className="label-mono">{isExam ? "Simulado concluído" : "Lição concluída"}</p>
+      <p className="label-mono">{isExam ? "Simulado concluído" : isRodada ? "Rodada concluída" : "Lição concluída"}</p>
       <h1 className="anim-rise mt-1.5 text-3xl">{headline}</h1>
 
       <div className="mt-7">
@@ -679,7 +683,7 @@ export function ResultView({
             href={source.kind === "lesson" ? `/licao/${source.lessonId}` : `/materia/${source.subjectSlug}`}
             className="mt-0.5 inline-block font-bold underline underline-offset-4"
           >
-            {isExam ? "Ver as lições da matéria" : "Revisar a lição"}
+            {source.kind === "lesson" ? "Revisar a lição" : "Ver as lições da matéria"}
           </Link>
         </div>
       )}
@@ -749,10 +753,10 @@ export function ResultView({
               type="button"
               className={`btn ${result.next_lesson ? "btn-ghost border-2 border-ink/15 px-4" : "btn-primary flex-1"}`}
               onClick={onRetry}
-              aria-label={isExam ? "Fazer um novo simulado" : "Praticar esta lição de novo"}
+              aria-label={isExam ? "Fazer um novo simulado" : isRodada ? "Fazer outra rodada" : "Praticar esta lição de novo"}
             >
               <RotateCcw className="size-5" aria-hidden="true" />
-              {result.next_lesson ? "" : isExam ? "Novo simulado" : "Praticar de novo"}
+              {result.next_lesson ? "" : isExam ? "Novo simulado" : isRodada ? "Outra rodada" : "Praticar de novo"}
             </button>
             {result.next_lesson && (
               <Link href={`/licao/${result.next_lesson.id}`} className="btn btn-primary flex-1">
