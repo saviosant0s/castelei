@@ -333,6 +333,7 @@ export const SUBJECTS: SiteSubject[] = [
     lessons: [
       "O computador por dentro: hardware, software e sistema",
       "Arquivos e pastas: organizar e encontrar",
+      "Instalar programas e manter o sistema atualizado",
       "Como a internet funciona e como buscar bem",
       "Redes em casa: Wi-Fi, roteador e velocidade",
       "A nuvem: guardar e compartilhar arquivos",
@@ -343,6 +344,7 @@ export const SUBJECTS: SiteSubject[] = [
       "E-mail: para, cópia, cópia oculta e anexo",
       "O que é um algoritmo",
       "Inteligência artificial no dia a dia",
+      "Notícias falsas: como checar antes de compartilhar",
     ],
   },
   {
@@ -359,6 +361,8 @@ export const SUBJECTS: SiteSubject[] = [
       "Argumentar bem: dedução, indução e falácias",
       "Ciência: como sabemos o que sabemos",
       "Ética: o certo e o errado",
+      "Justiça: o que é dar a cada um o que é seu",
+      "Liberdade: escolhemos ou somos levados?",
       "Política: poder, Estado e contrato social",
       "Estética e indústria cultural: o belo e a arte de massa",
       "Filosofia contemporânea: Marx, Nietzsche e o existencialismo",
@@ -860,5 +864,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 7322,
+  questions: 7378,
 };

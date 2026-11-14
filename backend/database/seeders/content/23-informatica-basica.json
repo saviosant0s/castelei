@@ -9,6 +9,11 @@
       "title": "O computador por dentro: hardware, software e sistema",
       "module": "O computador",
       "summary": "O computador tem peças físicas e programas. O processador calcula, a memória RAM guarda o que está aberto e o armazenamento guarda os arquivos. O sistema operacional comanda tudo.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=Z5TvnCWPwes",
+        "title": "Hardware e Software",
+        "channel": "Dicionário de Informática"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -420,6 +425,11 @@
       "title": "Arquivos e pastas: organizar e encontrar",
       "module": "O computador",
       "summary": "Tudo o que se guarda no computador é arquivo, com nome e extensão. Pastas organizam os arquivos, e alguns atalhos de teclado economizam tempo.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=AX5IYQP6Nn4",
+        "title": "O QUE É EXPLORADOR DE ARQUIVOS NO WINDOWS - AULA 12 - CURSO BÁSICO DE INFORMÁTICA",
+        "channel": "Sou independente digital"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -814,10 +824,366 @@
       ]
     },
     {
+      "slug": "instalar-e-atualizar",
+      "title": "Instalar programas e manter o sistema atualizado",
+      "module": "O computador",
+      "summary": "Instalar um programa do lugar errado é o jeito mais comum de levar um vírus para casa. A lição mostra onde baixar com segurança no computador e no celular, como desinstalar e por que a atualização do sistema não pode ficar para depois.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=xIjDbSHU0Vw",
+        "title": "Como BAIXAR e INSTALAR Programas com SEGURANÇA no PC",
+        "channel": "BPV"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O jogo de graça",
+          "body": [
+            "Alguém acha um site que oferece de graça um jogo que custa caro. Baixa, instala, e o computador começa a ficar lento e a abrir propagandas sozinho.",
+            "O jogo veio com um passageiro escondido. Esta lição mostra como instalar programas sem levar junto o que não se pediu."
+          ],
+          "terms": [
+            {
+              "word": "software",
+              "meaning": "os programas do aparelho, a parte que não se toca. Hardware é a parte física."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Onde baixar",
+          "body": [
+            "O lugar mais seguro é a loja oficial do aparelho: Play Store no Android, App Store no iPhone e Microsoft Store no Windows. No Linux, a central de programas da própria distribuição.",
+            "Fora da loja, baixe só do site oficial de quem faz o programa. Site que oferece programa pago de graça é a porta mais comum de entrada de programa malicioso."
+          ],
+          "terms": [
+            {
+              "word": "sistema operacional",
+              "meaning": "o programa principal do aparelho, que liga as peças aos outros programas (Windows, Android, iOS e Linux)."
+            },
+            {
+              "word": "malware",
+              "meaning": "programa feito para causar dano: roubar dados, travar arquivos ou espionar quem usa."
+            }
+          ],
+          "table": {
+            "label": "A loja de cada sistema",
+            "headers": [
+              "Sistema",
+              "Onde instalar"
+            ],
+            "rows": [
+              [
+                "Android",
+                "Play Store"
+              ],
+              [
+                "iPhone",
+                "App Store"
+              ],
+              [
+                "Windows",
+                "Microsoft Store ou site oficial"
+              ],
+              [
+                "Linux",
+                "central de programas ou gerenciador de pacotes"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "As permissões",
+          "body": [
+            "Ao instalar, o aplicativo pede permissões (câmera, microfone, contatos e localização). Leia antes de aceitar.",
+            "Uma lanterna que pede acesso aos seus contatos não precisa disso para acender. Pedido que não combina com o que o programa faz é sinal de alerta."
+          ],
+          "terms": [
+            {
+              "word": "permissão",
+              "meaning": "a autorização que um aplicativo pede para usar uma parte do aparelho, como a câmera ou os contatos."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Atualizar não é luxo",
+          "body": [
+            "Toda semana alguém descobre um furo de segurança em algum programa. A atualização é o remendo desse furo.",
+            "Quem adia a atualização deixa a porta aberta para um golpe que já é conhecido. Por isso vale ligar a atualização automática do sistema e dos aplicativos."
+          ],
+          "terms": [
+            {
+              "word": "atualização",
+              "meaning": "a nova versão de um programa que corrige erros, fecha furos de segurança e às vezes traz novidades."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Desinstalar o que não usa",
+          "body": [
+            "Programa esquecido ocupa espaço, pode rodar escondido e para de receber atualização. No Windows, desinstale em Configurações, Aplicativos. No Android, segure o ícone e toque em Desinstalar.",
+            "No Linux, use a central de programas ou o comando do gerenciador de pacotes. Menos programas é menos porta para problema."
+          ],
+          "example": {
+            "label": "Instalar com segurança",
+            "ordered": true,
+            "lines": [
+              "Abra a loja oficial do aparelho.",
+              "Confira o nome de quem publicou o aplicativo.",
+              "Leia as permissões antes de aceitar.",
+              "Deixe a atualização automática ligada."
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pergunta qual atitude é mais segura ao instalar um programa, ou por que atualizar o sistema."
+          ],
+          "bullets": [
+            "“A forma mais segura de obter um aplicativo é…”",
+            "“As atualizações de segurança servem para…”",
+            "Desconfie da alternativa que manda desligar a atualização."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que atualização só traz enfeite. Ela fecha furos de segurança.",
+            "Aceitar todas as permissões sem ler.",
+            "Achar que programa pago oferecido de graça é sorte. Costuma ser isca."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Instale pela loja oficial ou pelo site de quem faz o programa. Leia as permissões: pedido sem motivo é alerta.",
+            "Atualização fecha furos de segurança, então deixe a automática ligada. Desinstale o que não usa."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Onde",
+          "statement": "O lugar mais seguro para instalar um aplicativo no Android é:",
+          "options": [
+            "a Play Store",
+            "um site de downloads grátis qualquer",
+            "um link recebido por mensagem",
+            "um arquivo de um desconhecido",
+            "um anúncio que piscou na tela"
+          ],
+          "correct_index": 0,
+          "explanation": "É a loja oficial.",
+          "pitfall": "Link recebido é o caminho do golpe."
+        },
+        {
+          "topic": "Grátis",
+          "statement": "Um site oferece de graça um programa que custa caro. O mais provável é que:",
+          "options": [
+            "seja um presente da empresa",
+            "o arquivo venha com programa malicioso",
+            "seja mais rápido que o original",
+            "seja sempre seguro",
+            "seja a versão oficial"
+          ],
+          "correct_index": 1,
+          "explanation": "É isca comum.",
+          "pitfall": "Não é presente."
+        },
+        {
+          "topic": "Permissão",
+          "statement": "Um aplicativo de lanterna pede acesso aos contatos. O certo é:",
+          "options": [
+            "aceitar, porque todo app pede isso",
+            "aceitar e esquecer do assunto",
+            "desconfiar: a lanterna não precisa disso",
+            "dar também a localização",
+            "instalar duas vezes"
+          ],
+          "correct_index": 2,
+          "explanation": "Pedido sem motivo é alerta.",
+          "pitfall": "Nem todo pedido é normal."
+        },
+        {
+          "topic": "Atualizar",
+          "statement": "As atualizações de segurança servem principalmente para:",
+          "options": [
+            "deixar o aparelho mais lento",
+            "trocar a cor do ícone",
+            "apagar as fotos",
+            "fechar furos conhecidos",
+            "gastar a bateria"
+          ],
+          "correct_index": 3,
+          "explanation": "São remendos.",
+          "pitfall": "Não é enfeite."
+        },
+        {
+          "topic": "Adiar",
+          "statement": "Quem adia a atualização do sistema por meses:",
+          "options": [
+            "fica mais protegido contra vírus",
+            "ganha mais espaço no aparelho",
+            "evita todo vírus",
+            "melhora a internet",
+            "fica exposto a golpes já conhecidos"
+          ],
+          "correct_index": 4,
+          "explanation": "O furo segue aberto.",
+          "pitfall": "Adiar não protege."
+        },
+        {
+          "topic": "Windows",
+          "statement": "No Windows, o lugar para desinstalar um programa é:",
+          "options": [
+            "Configurações, Aplicativos",
+            "a Lixeira da área de trabalho",
+            "o navegador de internet",
+            "a pasta Downloads",
+            "o Bloco de Notas"
+          ],
+          "correct_index": 0,
+          "explanation": "Arrastar para a Lixeira não desinstala.",
+          "pitfall": "A Lixeira é a pegadinha."
+        },
+        {
+          "topic": "iPhone",
+          "statement": "No iPhone, a loja oficial de aplicativos é:",
+          "options": [
+            "Play Store",
+            "App Store",
+            "Microsoft Store",
+            "o navegador",
+            "a câmera"
+          ],
+          "correct_index": 1,
+          "explanation": "Cada sistema tem a sua.",
+          "pitfall": "Play Store é do Android."
+        },
+        {
+          "topic": "Esquecido",
+          "statement": "Um programa que você não usa mais deve ser:",
+          "options": [
+            "mantido sem atualizar",
+            "copiado para outro aparelho",
+            "desinstalado",
+            "aberto todo dia",
+            "renomeado"
+          ],
+          "correct_index": 2,
+          "explanation": "Menos programa, menos porta.",
+          "pitfall": "Sem atualização ele vira risco."
+        },
+        {
+          "topic": "Fácil 1",
+          "statement": "Atualização automática ligada é:",
+          "options": [
+            "um risco grave para os dados",
+            "proibida pela loja",
+            "inútil no dia a dia",
+            "uma boa prática de segurança",
+            "só para jogos"
+          ],
+          "correct_index": 3,
+          "explanation": "O remendo chega sozinho.",
+          "pitfall": "Não é risco.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Fácil 2",
+          "statement": "Programa, a parte que não se toca, também se chama:",
+          "options": [
+            "hardware",
+            "monitor",
+            "teclado",
+            "roteador",
+            "software"
+          ],
+          "correct_index": 4,
+          "explanation": "Hardware é a parte física.",
+          "pitfall": "Hardware é o que se toca.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Instalar",
+          "format": "order",
+          "statement": "Coloque na ordem os passos para instalar com segurança.",
+          "options": [
+            "abrir a loja oficial",
+            "conferir quem publicou o aplicativo",
+            "ler as permissões",
+            "instalar e deixar a atualização ligada"
+          ],
+          "explanation": "Loja, autor, permissões e instalação.",
+          "pitfall": "Instalar vem por último.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Linux",
+          "statement": "No Linux, o jeito mais seguro de instalar um programa costuma ser:",
+          "options": [
+            "a central de programas da distribuição",
+            "um arquivo de um fórum qualquer",
+            "um anexo de e-mail de desconhecido",
+            "um link de mensagem",
+            "um pendrive achado na rua"
+          ],
+          "correct_index": 0,
+          "explanation": "Fonte oficial da distribuição.",
+          "pitfall": "Anexo desconhecido é risco.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Quem publicou",
+          "statement": "Na loja oficial, conferir o nome de quem publicou ajuda a:",
+          "options": [
+            "deixar o aplicativo mais rápido",
+            "evitar cópias falsas de aplicativos famosos",
+            "ganhar desconto na compra",
+            "apagar propagandas",
+            "mudar o idioma"
+          ],
+          "correct_index": 1,
+          "explanation": "Golpistas imitam nomes.",
+          "pitfall": "Não muda velocidade.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Ligar os pontos",
+          "statement": "Um aparelho sem atualização há um ano e cheio de apps de sites desconhecidos tem como maior risco:",
+          "options": [
+            "ficar com a tela mais clara à noite",
+            "gastar menos internet por mês",
+            "programa malicioso por furos conhecidos",
+            "ganhar mais espaço",
+            "ficar mais rápido"
+          ],
+          "correct_index": 2,
+          "explanation": "Dois riscos somados.",
+          "pitfall": "Não há benefício nisso.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "como-a-internet-funciona",
       "title": "Como a internet funciona e como buscar bem",
       "module": "Internet e segurança",
       "summary": "A internet é uma rede de computadores. Quando você digita um endereço, o DNS acha o servidor, os dados viajam em pedaços e o navegador monta a página.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=hBRDMaxKB8Q",
+        "title": "O que é e como funciona a internet",
+        "channel": "Nexo Jornal"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -1194,6 +1560,11 @@
       "title": "Redes em casa: Wi-Fi, roteador e velocidade",
       "module": "Internet e segurança",
       "summary": "A internet chega pela rua e se espalha pela casa. A lição mostra modem e roteador, por que 100 mega não baixam 100 MB por segundo e os cuidados com a rede.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=V2XW8nxNjcc",
+        "title": "Entenda o WI-FI de uma VEZ por TODAS!",
+        "channel": "Manual do Mundo"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -1523,6 +1894,11 @@
       "title": "A nuvem: guardar e compartilhar arquivos",
       "module": "Internet e segurança",
       "summary": "A nuvem são computadores de empresas que guardam seus arquivos. A lição mostra a sincronização, as permissões de um link e por que a nuvem sozinha não é cópia de segurança.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=ymZo-ZwXFw8",
+        "title": "O que é cloud computing e como funciona? (Computação em Nuvem)",
+        "channel": "Eu TI Ensino"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -1862,6 +2238,11 @@
       "title": "Segurança digital: senhas, golpes e cópias",
       "module": "Internet e segurança",
       "summary": "Senha longa e diferente para cada conta, verificação em duas etapas, desconfiança de mensagens urgentes e cópia de segurança protegem quase tudo.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=pHcjLy9uROs",
+        "title": "O QUE É PHISHING E COMO SE PROTEGER DE GOLPES VIRTUAIS",
+        "channel": "Bruno Siqueira - Simplificando Celular"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -2232,6 +2613,11 @@
       "title": "Privacidade e dados pessoais: a LGPD",
       "module": "Internet e segurança",
       "summary": "Seus dados valem dinheiro, e uma lei diz o que podem fazer com eles. A lição mostra dado pessoal e sensível, os direitos da LGPD e os cuidados no celular.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=oFRROvMVUWQ",
+        "title": "Entenda: O que é e pra que serve a LGPD? – TecMundo",
+        "channel": "TecMundo"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -2580,6 +2966,11 @@
       "title": "Texto, planilha e apresentação",
       "module": "Ferramentas",
       "summary": "O editor de texto escreve e formata documentos, a planilha faz contas sozinha e a apresentação mostra ideias em slides. Há versões pagas e gratuitas de cada um.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=j3Qez3rDGkY",
+        "title": "🔥 O que é PACOTE OFFICE Básico? Para que SERVE Curso do Pacote Office. Explico tudo nesse vídeo. ❤",
+        "channel": "Pacote Office Sem Segredo - Lourival Melo"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -2966,6 +3357,11 @@
       "title": "Planilhas: fórmulas, funções e gráficos",
       "module": "Ferramentas",
       "summary": "Na planilha, a conta se refaz sozinha. A lição mostra as fórmulas e as funções (SOMA, MÉDIA e SE). Depois vêm a ordem das contas, o cifrão e a escolha do gráfico.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=E-HUlk2WLUI",
+        "title": "Fórmulas Básicas do Excel com Exemplos",
+        "channel": "Curso de Excel Online"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -3332,6 +3728,11 @@
       "title": "E-mail: para, cópia, cópia oculta e anexo",
       "module": "Ferramentas",
       "summary": "Cada campo do e-mail tem um sentido. A lição mostra Para, Cc e Cco e as três formas de responder. No fim, ensina a reconhecer um e-mail de golpe.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=tfRUB6tH3Uw",
+        "title": "Aprenda As Diferenças Entre \"Para\", \"CC\" e \"CCO\" Ao Enviar EMAILS (Gmail, Outlook, Etc )",
+        "channel": "Musashiden Tutoriais 2"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -3685,6 +4086,11 @@
       "title": "O que é um algoritmo",
       "module": "Mundo digital",
       "summary": "Algoritmo é uma receita: passos em ordem, com decisões e repetições, que chegam ao fim. Um programa é um algoritmo escrito numa língua que o computador entende.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=iEVLDKOLgQk",
+        "title": "O que é Algoritmo?",
+        "channel": "LearnFree em Português"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -4025,6 +4431,11 @@
       "title": "Inteligência artificial no dia a dia",
       "module": "Mundo digital",
       "summary": "A inteligência artificial aprende com exemplos e já está no celular, no mapa e no banco. A lição mostra como ela funciona, onde erra e como usá-la bem nos estudos.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=Sho2hvTQxKE",
+        "title": "Como uma IA funciona? - @CursoemVideo Inteligência Artificial",
+        "channel": "Curso em Vídeo"
+      },
       "steps": [
         {
           "kind": "idea",
@@ -4374,6 +4785,351 @@
           "correct_index": 0,
           "explanation": "Ela repete o que viu.",
           "pitfall": "Vontade própria ela não tem.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "noticias-falsas-e-checagem",
+      "title": "Notícias falsas: como checar antes de compartilhar",
+      "module": "Mundo digital",
+      "summary": "Uma notícia falsa corre mais rápido que a verdadeira porque mexe com a emoção. A lição dá um roteiro de checagem (a fonte, a data, outros veículos, a imagem fora de contexto e as agências de checagem).",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=1XYNl91Zh7c",
+        "title": "7 passos para identificar notícias falsas",
+        "channel": "BBC News Brasil"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Repassa urgente!",
+          "body": [
+            "Chega no grupo da família: “URGENTE! Repassem antes que apaguem!”. Tem foto, tem número, tem tom de medo. Em minutos, todo mundo repassou.",
+            "No dia seguinte, descobre-se que era mentira. O estrago já foi feito. Esta lição ensina a checar em dois minutos, antes de apertar o botão."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Por que a mentira corre",
+          "body": [
+            "Notícia falsa costuma mexer com medo, raiva ou indignação. Emoção forte faz a pessoa compartilhar sem pensar, e as redes mostram mais o que é mais compartilhado.",
+            "Por isso o primeiro sinal de alerta é o próprio sentimento. Se a notícia deu muita raiva ou muito medo, é hora de checar."
+          ],
+          "terms": [
+            {
+              "word": "notícia falsa",
+              "meaning": "informação inventada ou distorcida, feita para parecer notícia e enganar quem lê."
+            },
+            {
+              "word": "algoritmo",
+              "meaning": "o conjunto de passos que decide automaticamente o que cada pessoa vê primeiro na rede."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O roteiro de checagem",
+          "body": [
+            "Primeiro, quem publicou: um jornal conhecido ou um perfil sem nome? Segundo, a data: é de hoje ou é uma notícia velha requentada?",
+            "Terceiro, procure o assunto em outros veículos. Se só um site estranho fala de algo enorme, desconfie. Quarto, leia o texto inteiro, não só o título."
+          ],
+          "example": {
+            "label": "Antes de repassar",
+            "ordered": true,
+            "lines": [
+              "Quem publicou?",
+              "Quando foi publicado?",
+              "Outros veículos falam disso?",
+              "O texto confirma o título?"
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A foto fora de contexto",
+          "body": [
+            "Muitas notícias falsas usam uma foto verdadeira de outro lugar ou de outra época. A enchente de 2010 vira “a enchente de hoje”.",
+            "A busca reversa de imagem mostra onde a foto já apareceu antes. No Google Lens ou no Bing, envie a foto e veja a data e o lugar da primeira publicação."
+          ],
+          "terms": [
+            {
+              "word": "busca reversa de imagem",
+              "meaning": "a pesquisa feita com uma foto, e não com palavras, para achar onde ela já apareceu na internet."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As agências de checagem",
+          "body": [
+            "Há sites especializados em conferir boatos. No Brasil, Lupa, Aos Fatos e Fato ou Fake são alguns deles.",
+            "Muitos boatos que circulam já foram checados. Uma busca com as palavras principais e a palavra “checagem” costuma resolver em segundos."
+          ],
+          "terms": [
+            {
+              "word": "agência de checagem",
+              "meaning": "um veículo jornalístico que confere se informações que circulam são verdadeiras e mostra as fontes."
+            }
+          ],
+          "table": {
+            "label": "Sinais de alerta",
+            "headers": [
+              "Sinal",
+              "Por que desconfiar"
+            ],
+            "rows": [
+              [
+                "“repasse urgente”",
+                "pressa impede pensar"
+              ],
+              [
+                "tudo em letra maiúscula",
+                "apelo à emoção"
+              ],
+              [
+                "sem fonte nem data",
+                "não dá para conferir"
+              ],
+              [
+                "só um site fala disso",
+                "notícia grande sai em vários lugares"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mostra uma mensagem e pede o sinal de que ela pode ser falsa, ou a atitude certa antes de compartilhar."
+          ],
+          "bullets": [
+            "“A melhor forma de verificar a informação é…”",
+            "“O apelo ‘repasse antes que apaguem’ indica…”",
+            "Desconfie da alternativa que manda compartilhar para alertar os outros."
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que, se tem foto, é verdade. A foto pode ser de outro lugar.",
+            "Repassar “só por garantia”. Isso espalha a mentira.",
+            "Confiar porque veio de alguém conhecido. Quem repassou também pode ter sido enganado."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Notícia falsa usa emoção e pressa. Antes de repassar, confira quem publicou, a data e outros veículos.",
+            "Foto pode estar fora de contexto: use a busca reversa de imagem. As agências de checagem já conferiram muitos boatos."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Sinal",
+          "statement": "Uma mensagem que diz “repasse urgente antes que apaguem” deve:",
+          "options": [
+            "ser repassada logo",
+            "ser enviada a todos os grupos",
+            "ser tratada como verdade",
+            "acender um sinal de alerta",
+            "ser copiada sem ler"
+          ],
+          "correct_index": 3,
+          "explanation": "A pressa impede pensar.",
+          "pitfall": "Repassar é o que o golpe quer."
+        },
+        {
+          "topic": "Emoção",
+          "statement": "Notícias falsas costumam se espalhar rápido porque:",
+          "options": [
+            "são sempre muito curtas e simples",
+            "vêm de jornais conhecidos e sérios",
+            "têm fonte e data claras",
+            "são chatas de ler",
+            "mexem com medo, raiva ou indignação"
+          ],
+          "correct_index": 4,
+          "explanation": "Emoção faz compartilhar.",
+          "pitfall": "Fonte clara é sinal do contrário."
+        },
+        {
+          "topic": "Data",
+          "statement": "Conferir a data da notícia ajuda a descobrir:",
+          "options": [
+            "se é um fato velho apresentado como novo",
+            "a cor do texto da página",
+            "o tamanho do arquivo da página",
+            "a senha do site",
+            "a velocidade da internet"
+          ],
+          "correct_index": 0,
+          "explanation": "Notícia requentada engana.",
+          "pitfall": "Não tem relação com a internet."
+        },
+        {
+          "topic": "Outros veículos",
+          "statement": "Se só um site desconhecido fala de um fato enorme, o mais sensato é:",
+          "options": [
+            "acreditar, porque é notícia exclusiva",
+            "desconfiar e procurar em outros veículos",
+            "repassar para alertar os amigos",
+            "ignorar todo jornal",
+            "criar um grupo novo"
+          ],
+          "correct_index": 1,
+          "explanation": "Notícia grande sai em vários lugares.",
+          "pitfall": "Repassar espalha."
+        },
+        {
+          "topic": "Foto",
+          "statement": "Uma foto real de uma enchente de anos atrás usada como se fosse de hoje é exemplo de:",
+          "options": [
+            "checagem de fatos",
+            "notícia verdadeira",
+            "imagem fora de contexto",
+            "busca reversa",
+            "atualização de sistema"
+          ],
+          "correct_index": 2,
+          "explanation": "A foto é real, o contexto não.",
+          "pitfall": "Ter foto não garante verdade."
+        },
+        {
+          "topic": "Busca reversa",
+          "statement": "A busca reversa de imagem serve para:",
+          "options": [
+            "apagar a foto da internet",
+            "deixar a foto mais bonita",
+            "mudar a data da foto",
+            "achar onde a foto já apareceu antes",
+            "baixar a foto em alta resolução"
+          ],
+          "correct_index": 3,
+          "explanation": "Mostra a origem.",
+          "pitfall": "Não apaga nada."
+        },
+        {
+          "topic": "Agência",
+          "statement": "Lupa, Aos Fatos e Fato ou Fake são:",
+          "options": [
+            "redes sociais",
+            "navegadores",
+            "programas maliciosos",
+            "lojas de aplicativos",
+            "agências de checagem"
+          ],
+          "correct_index": 4,
+          "explanation": "Conferem boatos.",
+          "pitfall": "Não são redes sociais."
+        },
+        {
+          "topic": "Título",
+          "statement": "Ler só o título de uma notícia é arriscado porque:",
+          "options": [
+            "o texto pode não confirmar o título",
+            "o título é sempre falso",
+            "o texto é sempre igual",
+            "título não existe na internet",
+            "ler o texto gasta dados"
+          ],
+          "correct_index": 0,
+          "explanation": "Título pode exagerar.",
+          "pitfall": "Nem todo título é falso."
+        },
+        {
+          "topic": "Fácil 1",
+          "statement": "Antes de compartilhar uma notícia, o primeiro passo é ver:",
+          "options": [
+            "quantas curtidas ela tem",
+            "quem publicou",
+            "a cor do texto",
+            "o horário em que você recebeu",
+            "quantos emojis tem"
+          ],
+          "correct_index": 1,
+          "explanation": "A fonte vem primeiro.",
+          "pitfall": "Curtida não é prova.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Fácil 2",
+          "statement": "Notícia falsa é:",
+          "options": [
+            "qualquer notícia de que não gostamos",
+            "toda notícia antiga",
+            "informação feita para enganar",
+            "toda notícia com foto",
+            "uma notícia sobre tecnologia"
+          ],
+          "correct_index": 2,
+          "explanation": "Feita para enganar.",
+          "pitfall": "Não gostar não a torna falsa.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Checar",
+          "format": "order",
+          "statement": "Coloque na ordem o roteiro de checagem.",
+          "options": [
+            "ver quem publicou",
+            "ver a data da publicação",
+            "procurar o assunto em outros veículos",
+            "ler o texto inteiro antes de decidir"
+          ],
+          "explanation": "Fonte, data, outros veículos e texto.",
+          "pitfall": "Decidir vem por último.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Conhecido",
+          "statement": "Uma notícia veio do seu tio, em quem você confia. Isso:",
+          "options": [
+            "prova que é verdade",
+            "torna a checagem proibida",
+            "dispensa ler o texto",
+            "não garante nada: ele pode ter sido enganado",
+            "garante que tem fonte"
+          ],
+          "correct_index": 3,
+          "explanation": "Quem repassa também se engana.",
+          "pitfall": "Confiança não é prova.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Por garantia",
+          "statement": "Repassar uma notícia duvidosa “só por garantia” é um problema porque:",
+          "options": [
+            "protege todos do perigo",
+            "mostra que você checou",
+            "apaga a notícia falsa",
+            "não tem efeito nenhum",
+            "ajuda a espalhar a mentira"
+          ],
+          "correct_index": 4,
+          "explanation": "Cada repasse amplia o alcance.",
+          "pitfall": "Não protege ninguém.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Algoritmo",
+          "statement": "As redes sociais ajudam boatos a correr porque o algoritmo:",
+          "options": [
+            "mostra mais o que é mais compartilhado",
+            "apaga tudo o que é falso na hora",
+            "mostra só notícias checadas",
+            "esconde o que tem emoção",
+            "escolhe ao acaso"
+          ],
+          "correct_index": 0,
+          "explanation": "Engajamento vira alcance.",
+          "pitfall": "Ele não apaga tudo sozinho.",
           "difficulty": "dificil"
         }
       ]
