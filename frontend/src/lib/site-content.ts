@@ -473,8 +473,10 @@ export const SUBJECTS: SiteSubject[] = [
     lessons: [
       "O que é literatura",
       "O poema: verso, estrofe, rima e métrica",
+      "Os elementos da narrativa: enredo, personagem, tempo e espaço",
       "Quinhentismo e Barroco",
       "Arcadismo: a vida simples no campo",
+      "O Arcadismo épico e satírico: O Uraguai, Caramuru e as Cartas Chilenas",
       "Romantismo: as três gerações da poesia",
       "Romantismo: o romance brasileiro",
       "Realismo e Naturalismo",
@@ -503,8 +505,10 @@ export const SUBJECTS: SiteSubject[] = [
       "Funções trigonométricas: as ondas que se repetem",
       "Poliedros e prismas",
       "Pirâmide, cilindro, cone e esfera",
+      "A área do cilindro e do cone: quanto material gasta",
       "Distância entre dois pontos e ponto médio",
       "A equação da reta e a da circunferência",
+      "Onde as retas se cruzam: interseção, alinhamento e área",
     ],
   },
   {
@@ -535,6 +539,7 @@ export const SUBJECTS: SiteSubject[] = [
       "O território, o relevo, os climas e os domínios, as cidades, o campo e a Amazônia: a Geografia do país em detalhe, com os números que o ENEM cobra.",
     lessons: [
       "O território: tamanho, limites e formação",
+      "A divisão política: estados, capitais e territórios",
       "Três jeitos de dividir o Brasil",
       "O relevo brasileiro e suas classificações",
       "Climas do Brasil e as massas de ar",
@@ -578,8 +583,10 @@ export const SUBJECTS: SiteSubject[] = [
     lessons: [
       "O carbono e as cadeias carbônicas",
       "Fórmulas e nomes: lendo uma substância orgânica",
+      "Cadeias ramificadas: radicais e o nome completo",
       "Hidrocarbonetos: alcanos, alcenos, alcinos e aromáticos",
       "Petróleo, gasolina, etanol e biodiesel",
+      "Gás natural, GLP e carvão: os outros fósseis",
       "Álcoois e fenóis: o grupo OH",
       "Aldeídos, cetonas e ácidos carboxílicos",
       "Ésteres, éteres, gorduras e sabão",
@@ -866,5 +873,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 7406,
+  questions: 7504,
 };

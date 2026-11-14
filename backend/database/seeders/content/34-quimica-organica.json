@@ -939,6 +939,424 @@
       ]
     },
     {
+      "slug": "cadeias-ramificadas-e-radicais",
+      "title": "Cadeias ramificadas: radicais e o nome completo",
+      "module": "O carbono",
+      "summary": "Quando a cadeia tem galhos, o nome ganha números e radicais. A lição mostra como achar a cadeia principal, numerar e montar o nome, até o do isooctano da gasolina.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=xFAomK9_2ag",
+        "title": "Nomenclatura de Hidrocarbonetos Ramificados",
+        "channel": "Estuda Mais"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Um tronco com galhos",
+          "body": [
+            "Pense numa árvore. O nome dela é o do tronco, e os galhos são contados à parte.",
+            "Com uma cadeia de carbonos é igual. A fila mais longa dá o nome principal, e cada galho ganha um nome e um número."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A cadeia principal",
+          "body": [
+            "O primeiro passo é achar a fila mais longa de carbonos seguidos. Ela é a cadeia principal.",
+            "A fila mais longa nem sempre é a que está desenhada em linha reta. Às vezes ela faz uma curva e entra num galho.",
+            "O que sobra fora dela são as ramificações."
+          ],
+          "terms": [
+            {
+              "word": "átomo",
+              "meaning": "a menor parte de um elemento químico, como um carbono ou um hidrogênio."
+            },
+            {
+              "word": "cadeia carbônica",
+              "meaning": "a fila de átomos de carbono ligados uns aos outros dentro de uma substância orgânica."
+            },
+            {
+              "word": "cadeia ramificada",
+              "meaning": "cadeia com galhos, ou seja, com carbonos que saem da fila principal."
+            },
+            {
+              "word": "alcano, alceno e alcino",
+              "meaning": "famílias de substâncias só de carbono e hidrogênio. O alcano tem só ligações simples entre carbonos. O alceno tem uma dupla, e o alcino tem uma tripla."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Os galhos têm nome: os radicais",
+          "body": [
+            "Cada galho é um pedaço de cadeia preso por uma ligação só. Esse pedaço se chama radical.",
+            "O nome do radical usa o mesmo prefixo da contagem de carbonos e termina em “il”."
+          ],
+          "terms": [
+            {
+              "word": "radical",
+              "meaning": "o grupo de átomos que fica preso à cadeia principal como um galho. O nome dele termina em “il”."
+            },
+            {
+              "word": "prefixo",
+              "meaning": "o começo do nome, que diz quantos carbonos há (met 1, et 2, prop 3, but 4, pent 5, hex 6)."
+            }
+          ],
+          "table": {
+            "label": "Os radicais que mais caem",
+            "headers": [
+              "Radical",
+              "Fórmula",
+              "Carbonos"
+            ],
+            "rows": [
+              [
+                "metil",
+                "CH₃–",
+                "1"
+              ],
+              [
+                "etil",
+                "CH₃–CH₂–",
+                "2"
+              ],
+              [
+                "propil",
+                "CH₃–CH₂–CH₂–",
+                "3, preso pela ponta"
+              ],
+              [
+                "isopropil",
+                "(CH₃)₂CH–",
+                "3, preso pelo meio"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Numerar pela ponta certa",
+          "body": [
+            "Os carbonos da cadeia principal são numerados de uma ponta à outra. Comece pela ponta mais perto do primeiro galho.",
+            "Assim os números do nome ficam os menores possíveis."
+          ],
+          "example": {
+            "label": "2-metilbutano",
+            "ordered": true,
+            "lines": [
+              "A substância é CH₃–CH(CH₃)–CH₂–CH₃.",
+              "A fila mais longa tem 4 carbonos: é um butano.",
+              "Há um galho de 1 carbono: um metil.",
+              "Pela ponta da esquerda, o galho fica no carbono 2. Pela outra, no 3.",
+              "Vence o número menor: 2-metilbutano."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Galhos repetidos e ordem alfabética",
+          "body": [
+            "Quando o mesmo radical aparece duas vezes, o nome usa “di”. Três vezes, “tri”.",
+            "Cada galho ganha o seu número, mesmo que dois fiquem no mesmo carbono.",
+            "Radicais diferentes entram em ordem alfabética. O “di” e o “tri” não contam na ordem."
+          ],
+          "example": {
+            "label": "Três nomes montados",
+            "lines": [
+              "2,2-dimetilpropano: dois metis no carbono 2 de uma fila de 3.",
+              "3-metilpentano: um metil no meio de uma fila de 5.",
+              "3-etil-2-metil-hexano: o etil vem antes do metil, pela ordem alfabética."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O galho que não é galho",
+          "body": [
+            "Um erro comum é chamar de galho o que é a continuação da fila. Não existe “1-metil”: um metil na ponta só aumenta a cadeia.",
+            "Também não existe “2-etilbutano”. Somando o etil à fila, ela fica com 5 carbonos, e o nome certo é 3-metilpentano."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O isooctano da gasolina",
+          "body": [
+            "A gasolina boa resiste à compressão no motor sem explodir antes da hora. Essa resistência é a octanagem.",
+            "A referência de nota 100 é o isooctano. O nome oficial dele é 2,2,4-trimetilpentano.",
+            "Uma cadeia muito ramificada resiste mais que uma fila reta com os mesmos carbonos."
+          ],
+          "terms": [
+            {
+              "word": "octanagem",
+              "meaning": "a nota que mede quanto a gasolina resiste a explodir antes da hora dentro do motor."
+            },
+            {
+              "word": "fórmula molecular, estrutural e condensada",
+              "meaning": "três jeitos de escrever a substância. A molecular só conta os átomos, como C₅H₁₂. A estrutural desenha as ligações, e a condensada escreve a fila numa linha só."
+            },
+            {
+              "word": "isômero",
+              "meaning": "substância com a mesma fórmula molecular de outra, mas com os átomos arrumados de outro jeito."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Galho não muda a fórmula",
+          "body": [
+            "O 2-metilbutano tem 5 carbonos e 12 hidrogênios, igual ao pentano. A fórmula molecular dos dois é C₅H₁₂.",
+            "Eles são isômeros: mesma fórmula, cadeias diferentes. Por isso têm propriedades diferentes, como o ponto de ebulição."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova mostra a fórmula e pede o nome, ou dá o nome e pede quantos carbonos há. Também cobra o isooctano e a octanagem."
+          ],
+          "bullets": [
+            "“O nome oficial da substância representada é…”",
+            "“O 2,2,4-trimetilpentano apresenta fórmula molecular…”",
+            "“A cadeia principal desse composto possui…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Escolher a fila desenhada em linha reta em vez da mais longa.",
+            "Numerar pela ponta errada e ficar com números maiores.",
+            "Pôr o metil antes do etil. A ordem é alfabética.",
+            "Contar o “di” na ordem alfabética. Ele não conta."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Ache a fila mais longa de carbonos: ela dá o nome principal. Numere pela ponta mais perto do primeiro galho.",
+            "Cada galho é um radical terminado em “il”, com seu número. Repetidos levam di ou tri, e diferentes vão em ordem alfabética."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Cadeia principal",
+          "statement": "A cadeia principal de um alcano ramificado é:",
+          "options": [
+            "a fila mais longa de carbonos seguidos",
+            "a fila desenhada em linha reta na fórmula",
+            "a fila com mais hidrogênios presos nas pontas",
+            "o maior galho que sai da fila do meio",
+            "a fila que começa no primeiro carbono desenhado"
+          ],
+          "correct_index": 0,
+          "explanation": "O nome sai da fila mais longa, com ou sem curva.",
+          "pitfall": "O desenho em linha reta engana: a fila pode virar num galho."
+        },
+        {
+          "topic": "Radical",
+          "statement": "O radical CH₃–CH₂– se chama:",
+          "options": [
+            "etil",
+            "metil",
+            "propil",
+            "etano",
+            "isopropil"
+          ],
+          "correct_index": 0,
+          "explanation": "Dois carbonos dão “et”, e o radical termina em “il”.",
+          "pitfall": "Etano é a substância inteira, não o galho."
+        },
+        {
+          "topic": "Numeração",
+          "statement": "Ao numerar a cadeia principal, começa-se pela ponta:",
+          "options": [
+            "mais perto do primeiro galho",
+            "mais longe do primeiro galho",
+            "que está à esquerda no desenho",
+            "que tem o carbono com mais hidrogênios",
+            "que deixa o maior número no nome"
+          ],
+          "correct_index": 0,
+          "explanation": "Assim os números do nome ficam os menores.",
+          "pitfall": "A esquerda do desenho não manda em nada."
+        },
+        {
+          "topic": "Nome 1",
+          "statement": "A substância CH₃–CH(CH₃)–CH₂–CH₃ se chama:",
+          "options": [
+            "2-metilbutano",
+            "3-metilbutano",
+            "2-metilpropano",
+            "pentano",
+            "1,2-dimetilpropano"
+          ],
+          "correct_index": 0,
+          "explanation": "Fila de 4 e um metil no carbono 2.",
+          "pitfall": "3-metilbutano é a mesma coisa numerada pela ponta errada."
+        },
+        {
+          "topic": "Ordem alfabética",
+          "statement": "No nome de um composto com um etil e um metil, a regra é:",
+          "options": [
+            "escrever o etil antes do metil, pela ordem alfabética",
+            "escrever o metil antes, por ser o menor",
+            "escrever primeiro o que tem o número menor",
+            "escrever primeiro o que aparece mais vezes",
+            "juntar os dois num nome só, sem números"
+          ],
+          "correct_index": 0,
+          "explanation": "E vem antes de M no alfabeto.",
+          "pitfall": "O tamanho do radical não decide a ordem."
+        },
+        {
+          "topic": "Repetidos",
+          "statement": "No nome 2,2-dimetilpropano, o “di” indica:",
+          "options": [
+            "que há dois radicais metil",
+            "que há duas ligações duplas",
+            "que a cadeia principal tem dois carbonos",
+            "que o composto tem dois isômeros",
+            "que há dois carbonos no metil"
+          ],
+          "correct_index": 0,
+          "explanation": "“Di” conta quantos radicais iguais há. Cada um tem seu número.",
+          "pitfall": "Dupla ligação usaria “en”, não “di”."
+        },
+        {
+          "topic": "Isooctano",
+          "statement": "O isooctano, referência de octanagem 100, tem o nome oficial:",
+          "options": [
+            "2,2,4-trimetilpentano",
+            "octano",
+            "2,2,4-trimetiloctano",
+            "2-metilheptano",
+            "4,4,2-trimetilpentano"
+          ],
+          "correct_index": 0,
+          "explanation": "Fila de 5 carbonos com três metis nos carbonos 2, 2 e 4.",
+          "pitfall": "Os números vão do menor para o maior, nunca 4,4,2."
+        },
+        {
+          "topic": "Isômeros",
+          "statement": "O pentano e o 2-metilbutano:",
+          "options": [
+            "têm a mesma fórmula molecular, C₅H₁₂",
+            "têm fórmulas diferentes, porque um tem galho",
+            "são a mesma substância com dois nomes",
+            "diferem em um átomo de carbono",
+            "têm o mesmo ponto de ebulição"
+          ],
+          "correct_index": 0,
+          "explanation": "Os dois têm 5 carbonos e 12 hidrogênios: são isômeros.",
+          "pitfall": "Mesma fórmula não quer dizer mesma substância."
+        },
+        {
+          "topic": "Radicais",
+          "format": "match",
+          "statement": "Ligue cada radical ao número de carbonos dele.",
+          "pairs": [
+            {
+              "left": "metil",
+              "right": "1 carbono"
+            },
+            {
+              "left": "etil",
+              "right": "2 carbonos"
+            },
+            {
+              "left": "propil",
+              "right": "3 carbonos, preso pela ponta"
+            },
+            {
+              "left": "isopropil",
+              "right": "3 carbonos, preso pelo meio"
+            }
+          ],
+          "explanation": "Met, et e prop contam 1, 2 e 3 carbonos.",
+          "pitfall": "O isopropil também tem 3 carbonos: muda só o ponto de ligação.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Montar o nome",
+          "format": "order",
+          "statement": "Ponha os passos para dar nome a um alcano ramificado na ordem.",
+          "options": [
+            "Achar a fila mais longa de carbonos",
+            "Numerar pela ponta mais perto do primeiro galho",
+            "Dar nome e número a cada radical",
+            "Escrever os radicais em ordem alfabética antes do nome da cadeia"
+          ],
+          "explanation": "Primeiro a cadeia, depois a numeração, depois os radicais.",
+          "pitfall": "Numerar antes de achar a fila mais longa leva ao nome errado.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Erro de nome",
+          "statement": "O nome “2-etilbutano” está errado porque:",
+          "options": [
+            "a fila mais longa tem 5 carbonos, e o nome certo é 3-metilpentano",
+            "o etil deveria vir no carbono 1, na ponta da fila",
+            "falta escrever “di” antes de etil",
+            "o etil deveria ser escrito depois de butano",
+            "butano não pode ter galhos de dois carbonos ou mais"
+          ],
+          "correct_index": 0,
+          "explanation": "Somando o etil à fila, ela passa a ter 5 carbonos.",
+          "pitfall": "Etil no carbono 1 também só aumentaria a fila.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Fórmula do isooctano",
+          "statement": "A fórmula molecular do 2,2,4-trimetilpentano é:",
+          "options": [
+            "C₈H₁₈",
+            "C₅H₁₂",
+            "C₈H₁₆",
+            "C₃H₈",
+            "C₇H₁₆"
+          ],
+          "correct_index": 0,
+          "explanation": "São 5 carbonos na fila e 3 nos galhos: 8 no total. Alcano com 8 carbonos tem 2 × 8 + 2 = 18 hidrogênios.",
+          "pitfall": "C₅H₁₂ conta só a cadeia principal.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Nome 2",
+          "statement": "Um composto tem fila principal de 6 carbonos, um metil no carbono 2 e um etil no carbono 3. O nome correto é:",
+          "options": [
+            "3-etil-2-metil-hexano",
+            "2-metil-3-etil-hexano",
+            "3-etil-2-metilpentano",
+            "2-etil-3-metil-hexano",
+            "3-metil-2-etil-hexano"
+          ],
+          "correct_index": 0,
+          "explanation": "Etil vem antes de metil, cada um com o seu número.",
+          "pitfall": "Pôr o metil primeiro por ter número menor é o erro mais comum.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Octanagem",
+          "statement": "Por que o isooctano tem octanagem maior que o octano de fila reta, se os dois têm C₈H₁₈?",
+          "options": [
+            "a cadeia ramificada resiste mais à explosão antes da hora",
+            "o isooctano tem mais átomos de carbono que o octano",
+            "o octano de fila reta tem ligações duplas",
+            "o isooctano não queima no motor",
+            "os dois têm a mesma octanagem, por serem isômeros"
+          ],
+          "correct_index": 0,
+          "explanation": "A forma da cadeia muda o comportamento, mesmo com a mesma fórmula.",
+          "pitfall": "Isômeros têm a mesma fórmula, não as mesmas propriedades.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "hidrocarbonetos",
       "title": "Hidrocarbonetos: alcanos, alcenos, alcinos e aromáticos",
       "module": "Hidrocarbonetos e petróleo",
@@ -1708,6 +2126,417 @@
           "correct_index": 0,
           "explanation": "É uma separação física.",
           "pitfall": "Quebrar moléculas é o craqueamento.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "gas-natural-glp-e-carvao",
+      "title": "Gás natural, GLP e carvão: os outros fósseis",
+      "module": "Hidrocarbonetos e petróleo",
+      "summary": "Nem todo combustível fóssil é gasolina. A lição compara o gás encanado, o gás do botijão e o carvão, e mostra por que a chama azul é mais segura que a amarela.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=o3zrvIYme_w",
+        "title": "Combustíveis fósseis - Brasil Escola",
+        "channel": "Brasil Escola Oficial"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Dois gases, dois vazamentos",
+          "body": [
+            "Num vazamento de gás de botijão, a orientação é abrir portas e janelas embaixo. O gás se junta perto do chão.",
+            "Num vazamento de gás encanado, o gás sobe. A diferença está no que forma cada um."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O gás natural é quase só metano",
+          "body": [
+            "O gás natural sai da terra, junto com o petróleo ou sozinho. Ele é formado quase todo por metano.",
+            "É o gás encanado das cidades e o GNV dos carros. O metano é mais leve que o ar e sobe quando vaza."
+          ],
+          "terms": [
+            {
+              "word": "hidrocarboneto",
+              "meaning": "substância formada só por carbono e hidrogênio."
+            },
+            {
+              "word": "átomo",
+              "meaning": "a menor parte de um elemento químico, como um carbono ou um hidrogênio."
+            },
+            {
+              "word": "molécula",
+              "meaning": "um grupo de átomos ligados que forma a menor parte de uma substância."
+            },
+            {
+              "word": "metano",
+              "meaning": "o hidrocarboneto mais simples, com um carbono e quatro hidrogênios (CH₄)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O GLP é o gás do botijão",
+          "body": [
+            "O GLP sai da refinaria de petróleo. É uma mistura de propano e butano.",
+            "No botijão, a pressão deixa o gás líquido. Ao sair, ele volta a ser gás.",
+            "As moléculas dele são maiores que as do metano. Por isso ele é mais pesado que o ar e desce."
+          ],
+          "terms": [
+            {
+              "word": "GLP",
+              "meaning": "gás liquefeito de petróleo: propano e butano guardados líquidos sob pressão, no botijão."
+            }
+          ],
+          "table": {
+            "label": "Gás natural e GLP lado a lado",
+            "headers": [
+              "",
+              "Gás natural",
+              "GLP"
+            ],
+            "rows": [
+              [
+                "De onde vem",
+                "direto da terra",
+                "da refinaria de petróleo"
+              ],
+              [
+                "O que tem",
+                "quase só metano",
+                "propano e butano"
+              ],
+              [
+                "Onde se usa",
+                "gás encanado e GNV",
+                "botijão de cozinha"
+              ],
+              [
+                "No vazamento",
+                "sobe",
+                "desce e fica perto do chão"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O carvão mineral",
+          "body": [
+            "O carvão mineral é resto de plantas soterradas há milhões de anos. Sem ar e sob pressão, elas foram perdendo água e gases.",
+            "Quanto mais tempo enterrado, mais carbono ele tem e mais calor dá ao queimar."
+          ],
+          "terms": [
+            {
+              "word": "combustível fóssil",
+              "meaning": "combustível formado de restos de seres vivos enterrados há milhões de anos, como petróleo, gás natural e carvão mineral."
+            }
+          ],
+          "example": {
+            "label": "Do mais novo ao mais velho",
+            "ordered": true,
+            "lines": [
+              "Turfa: pouco carbono, ainda com cara de planta.",
+              "Linhito: mais escuro, com mais carbono.",
+              "Hulha: o carvão das usinas e das siderúrgicas.",
+              "Antracito: o mais rico em carbono e o que mais esquenta."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Carvão mineral e carvão vegetal",
+          "body": [
+            "O carvão vegetal é feito de madeira queimada com pouco ar, nas carvoarias. Ele não é fóssil.",
+            "No Brasil, parte do ferro é feita com carvão vegetal. O carvão mineral brasileiro fica no Sul e tem muita cinza e enxofre."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Combustão completa e incompleta",
+          "body": [
+            "Queimar um combustível é juntá-lo com o oxigênio do ar. Com oxigênio de sobra, saem gás carbônico e água, e a chama fica azul.",
+            "Com pouco oxigênio, sai também monóxido de carbono e fuligem. A chama fica amarela."
+          ],
+          "terms": [
+            {
+              "word": "combustão",
+              "meaning": "a queima: a reação de um combustível com o oxigênio, que solta calor."
+            },
+            {
+              "word": "monóxido de carbono",
+              "meaning": "gás venenoso, sem cor e sem cheiro, que sai da queima com pouco oxigênio (CO)."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "O perigo do banheiro fechado",
+          "body": [
+            "Um aquecedor a gás num banheiro sem ventilação gasta o oxigênio do ar. A queima vira incompleta e solta monóxido de carbono.",
+            "Como ele não tem cheiro, a pessoa não percebe e pode desmaiar. Por isso o aquecedor precisa de saída para fora."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Qual polui mais",
+          "body": [
+            "Para dar o mesmo calor, o carvão solta mais gás carbônico que o petróleo. O gás natural é o que solta menos dos três.",
+            "O carvão também libera gases de enxofre ao queimar. Eles ajudam a formar a chuva ácida."
+          ],
+          "terms": [
+            {
+              "word": "chuva ácida",
+              "meaning": "chuva mais ácida que o normal, por causa de gases de enxofre e de nitrogênio jogados no ar."
+            }
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova cobra a composição do GLP e do gás natural, a ordem dos carvões e a diferença entre as duas combustões. O aquecedor no banheiro é um clássico."
+          ],
+          "bullets": [
+            "“O gás liquefeito de petróleo é formado principalmente por…”",
+            "“A chama amarela de um fogão indica…”",
+            "“Entre os combustíveis fósseis, o que emite menos CO₂ por energia é…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar que o GLP é metano. Ele é propano e butano.",
+            "Achar que todo gás vazado sobe. O do botijão desce.",
+            "Chamar carvão vegetal de fóssil. Ele vem de madeira cortada hoje.",
+            "Achar que o monóxido de carbono tem cheiro. Ele não tem nenhum."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O gás natural é quase só metano e sobe ao vazar. O GLP é propano e butano e desce. O carvão mineral ganha carbono com o tempo, da turfa ao antracito.",
+            "Com oxigênio de sobra, a queima é completa e a chama é azul. Com pouco, sai monóxido de carbono, que é venenoso e não tem cheiro."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "GLP",
+          "statement": "O gás de cozinha do botijão, o GLP, é formado principalmente por:",
+          "options": [
+            "propano e butano",
+            "metano",
+            "monóxido de carbono",
+            "etanol vaporizado",
+            "hidrogênio puro"
+          ],
+          "correct_index": 0,
+          "explanation": "GLP é gás liquefeito de petróleo: propano e butano.",
+          "pitfall": "Metano é o gás natural, não o do botijão."
+        },
+        {
+          "topic": "Gás natural",
+          "statement": "O principal componente do gás natural é:",
+          "options": [
+            "o metano",
+            "o butano",
+            "o propano",
+            "o gás carbônico",
+            "o oxigênio"
+          ],
+          "correct_index": 0,
+          "explanation": "O gás natural é quase todo metano.",
+          "pitfall": "Propano e butano são do botijão."
+        },
+        {
+          "topic": "Vazamento",
+          "statement": "Num vazamento de gás de botijão, o gás tende a:",
+          "options": [
+            "se acumular perto do chão, por ser mais pesado que o ar",
+            "subir rápido e sair pelas frestas do teto da casa",
+            "virar líquido de novo assim que encontra o ar",
+            "se misturar com a água que estiver no chão",
+            "desaparecer no ar sem deixar nenhum risco"
+          ],
+          "correct_index": 0,
+          "explanation": "Propano e butano são mais pesados que o ar.",
+          "pitfall": "Quem sobe é o metano do gás encanado."
+        },
+        {
+          "topic": "Carvão",
+          "statement": "O carvão mineral se formou a partir de:",
+          "options": [
+            "plantas soterradas há milhões de anos",
+            "madeira queimada em carvoarias",
+            "petróleo que secou com o tempo",
+            "rochas vulcânicas resfriadas",
+            "conchas de animais marinhos"
+          ],
+          "correct_index": 0,
+          "explanation": "Plantas enterradas, sem ar e sob pressão, viraram carvão.",
+          "pitfall": "Carvão de carvoaria é o vegetal, que não é fóssil."
+        },
+        {
+          "topic": "Carvão vegetal",
+          "statement": "Sobre o carvão vegetal, é correto dizer:",
+          "options": [
+            "é feito de madeira e não é combustível fóssil",
+            "é um tipo de carvão mineral mais novo",
+            "é extraído de minas no Sul do país",
+            "é o carvão com mais carbono que existe",
+            "é feito de petróleo pesado"
+          ],
+          "correct_index": 0,
+          "explanation": "Ele vem de madeira cortada hoje, nas carvoarias.",
+          "pitfall": "O nome “carvão” não o torna fóssil."
+        },
+        {
+          "topic": "Chama",
+          "statement": "A chama amarela num fogão a gás indica:",
+          "options": [
+            "combustão incompleta, com pouco oxigênio",
+            "combustão completa, com oxigênio de sobra",
+            "gás de melhor qualidade",
+            "que o gás acabou no botijão",
+            "queima sem nenhum resíduo"
+          ],
+          "correct_index": 0,
+          "explanation": "Chama amarela tem fuligem e pode soltar monóxido de carbono.",
+          "pitfall": "A azul é a da queima completa."
+        },
+        {
+          "topic": "Monóxido",
+          "statement": "O monóxido de carbono é perigoso principalmente porque:",
+          "options": [
+            "é venenoso e não tem cor nem cheiro",
+            "explode ao contato com a água",
+            "tem cheiro forte que causa enjoo",
+            "é o principal gás da chuva ácida",
+            "deixa a chama do fogão azul"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem cheiro, a pessoa não percebe que está respirando o gás.",
+          "pitfall": "O cheiro do gás de cozinha é posto de propósito no GLP, não no CO."
+        },
+        {
+          "topic": "Poluição",
+          "statement": "Para produzir a mesma quantidade de calor, o combustível fóssil que solta menos gás carbônico é:",
+          "options": [
+            "o gás natural",
+            "o carvão mineral",
+            "o óleo diesel",
+            "a turfa",
+            "a lenha"
+          ],
+          "correct_index": 0,
+          "explanation": "Com moléculas pequenas e muito hidrogênio, o metano solta menos CO₂ por calor.",
+          "pitfall": "Carvão é o que mais solta."
+        },
+        {
+          "topic": "Gases",
+          "format": "match",
+          "statement": "Ligue cada gás ao que ele é.",
+          "pairs": [
+            {
+              "left": "metano",
+              "right": "principal parte do gás natural"
+            },
+            {
+              "left": "propano e butano",
+              "right": "mistura do GLP"
+            },
+            {
+              "left": "monóxido de carbono",
+              "right": "venenoso, sai da queima incompleta"
+            },
+            {
+              "left": "gás carbônico",
+              "right": "sai da queima completa"
+            }
+          ],
+          "explanation": "Cada gás tem um uso e uma origem.",
+          "pitfall": "GLP e gás natural são os mais trocados.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Carvões",
+          "format": "order",
+          "statement": "Ponha os carvões na ordem, do que tem menos carbono ao que tem mais.",
+          "options": [
+            "Turfa",
+            "Linhito",
+            "Hulha",
+            "Antracito"
+          ],
+          "explanation": "Quanto mais tempo enterrado, mais carbono.",
+          "pitfall": "O antracito é o mais rico, não a turfa.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Banheiro",
+          "statement": "Um aquecedor a gás num banheiro fechado é perigoso porque:",
+          "options": [
+            "gasta o oxigênio, a queima fica incompleta e solta monóxido de carbono",
+            "o vapor do banho apaga a chama e o gás vaza pelo ambiente",
+            "a água quente reage com o gás e forma um ácido no ar",
+            "o metano vira gás carbônico, que tem cheiro forte e intoxica",
+            "o aquecedor esquenta demais as paredes e o teto do banheiro"
+          ],
+          "correct_index": 0,
+          "explanation": "Sem ventilação, falta oxigênio e sai CO.",
+          "pitfall": "O gás carbônico não tem cheiro forte nem é o veneno aqui.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Enxofre",
+          "statement": "O carvão mineral brasileiro é mais poluente porque:",
+          "options": [
+            "tem muita cinza e enxofre, que forma gases da chuva ácida",
+            "é o que tem mais carbono entre todos os carvões",
+            "vem de madeira cortada nas carvoarias",
+            "não solta gás carbônico ao queimar",
+            "é formado só por metano sólido"
+          ],
+          "correct_index": 0,
+          "explanation": "O enxofre vira gases que deixam a chuva ácida.",
+          "pitfall": "O carvão do Sul tem pouco carbono, não muito.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Combustão do metano",
+          "statement": "Na combustão completa do metano, os produtos são:",
+          "options": [
+            "gás carbônico e água",
+            "monóxido de carbono e fuligem",
+            "hidrogênio e carbono puro",
+            "metano e oxigênio",
+            "gás carbônico e monóxido de carbono"
+          ],
+          "correct_index": 0,
+          "explanation": "CH₄ + 2 O₂ → CO₂ + 2 H₂O.",
+          "pitfall": "Monóxido aparece só quando falta oxigênio.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Afirmação",
+          "statement": "Um aluno diz: “O GLP sobe ao vazar, porque todo gás é mais leve que o ar”. O erro dele é:",
+          "options": [
+            "generalizar: há gases mais pesados que o ar, como o propano e o butano",
+            "trocar o GLP pelo gás carbônico, que é o gás que de fato sobe",
+            "achar que o GLP é gás, quando ele está sempre na forma líquida",
+            "dizer que o GLP vaza, quando o botijão moderno não deixa vazar",
+            "nenhum: o GLP sobe ao vazar"
+          ],
+          "correct_index": 0,
+          "explanation": "“Todo gás” é um quantificador absoluto, e está errado.",
+          "pitfall": "No botijão ele é líquido, mas ao vazar vira gás.",
           "difficulty": "dificil"
         }
       ]

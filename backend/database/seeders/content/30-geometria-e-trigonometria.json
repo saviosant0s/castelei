@@ -4252,6 +4252,408 @@
       ]
     },
     {
+      "slug": "area-do-cilindro-e-do-cone",
+      "title": "A área do cilindro e do cone: quanto material gasta",
+      "module": "Geometria espacial",
+      "summary": "O volume diz quanto cabe; a área diz quanto material é preciso. A lição abre a lata e o cone no plano e mostra as fórmulas da área, com a lata que gasta menos alumínio.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=Bu0X1_P_O5k",
+        "title": "ÁREA DO CILINDRO - ÁREA DA BASE, ÁREA LATERAL e ÁREA TOTAL   \\Prof. Gis/",
+        "channel": "Gis com Giz"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "O que cabe e o que gasta",
+          "body": [
+            "Uma fábrica de latas paga pelo alumínio, não pelo refrigerante. O que importa para ela é a área da chapa.",
+            "O volume diz quanto cabe dentro. A área diz quanto material cobre o sólido por fora."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Abrir a lata",
+          "body": [
+            "Corte a lata de cima a baixo e abra. Sobram duas tampas redondas e um retângulo.",
+            "A altura do retângulo é a altura da lata. A largura dele é a volta inteira da tampa."
+          ],
+          "terms": [
+            {
+              "word": "cilindro",
+              "meaning": "sólido com duas bases redondas iguais e paralelas, como uma lata."
+            },
+            {
+              "word": "planificação",
+              "meaning": "abrir um sólido no plano para ver todas as faces de uma vez."
+            },
+            {
+              "word": "diâmetro",
+              "meaning": "a linha que atravessa o círculo passando pelo centro. Mede duas vezes o raio."
+            },
+            {
+              "word": "pi (π)",
+              "meaning": "o número que dá quantas vezes o diâmetro cabe na volta de um círculo, cerca de 3,14."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A área do cilindro",
+          "body": [
+            "Cada tampa é um círculo de área π × r². A volta da tampa mede 2 × π × r.",
+            "O retângulo do lado tem área 2 × π × r × h. Somando tudo, a área total é 2 × π × r² + 2 × π × r × h."
+          ],
+          "example": {
+            "label": "Lata de raio 3 cm e altura 10 cm, com π ≈ 3",
+            "ordered": true,
+            "lines": [
+              "Cada tampa: 3 × 3² = 27 cm².",
+              "As duas tampas: 2 × 27 = 54 cm².",
+              "O lado: 2 × 3 × 3 × 10 = 180 cm².",
+              "Área total: 54 + 180 = 234 cm²."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "O cone tem uma medida a mais",
+          "body": [
+            "Abrindo um chapéu de festa, aparece um pedaço de círculo, como uma fatia de pizza. Se ele tiver fundo, soma-se um círculo.",
+            "A conta do lado usa a geratriz, não a altura. A geratriz é a linha da ponta até a borda da base."
+          ],
+          "terms": [
+            {
+              "word": "cone",
+              "meaning": "sólido com uma base redonda e uma ponta, como um chapéu de festa."
+            },
+            {
+              "word": "geratriz",
+              "meaning": "no cone, o segmento que vai da ponta até a borda da base, por fora."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A geratriz sai de Pitágoras",
+          "body": [
+            "A altura, o raio e a geratriz formam um triângulo retângulo. A geratriz é a hipotenusa.",
+            "Por isso g² = r² + h². Num cone de raio 3 e altura 4, a geratriz é 5."
+          ],
+          "terms": [
+            {
+              "word": "hipotenusa",
+              "meaning": "o lado mais comprido do triângulo retângulo, oposto ao canto de 90°."
+            },
+            {
+              "word": "teorema de Pitágoras",
+              "meaning": "no triângulo retângulo, o quadrado da hipotenusa é a soma dos quadrados dos outros dois lados."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A área do cone",
+          "body": [
+            "A área do lado do cone é π × r × g. Com o fundo, a área total é π × r² + π × r × g.",
+            "No cone de raio 3 e geratriz 5, com π ≈ 3: o lado dá 45 cm², e o fundo 27 cm². A soma é 72 cm²."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "As fórmulas lado a lado",
+          "body": [
+            "Toda área total soma as partes da planificação. A esfera é a exceção e tem fórmula própria."
+          ],
+          "table": {
+            "label": "Área total",
+            "headers": [
+              "Sólido",
+              "Área total"
+            ],
+            "rows": [
+              [
+                "Cubo de aresta a",
+                "6 × a²"
+              ],
+              [
+                "Cilindro",
+                "2 × π × r² + 2 × π × r × h"
+              ],
+              [
+                "Cone com fundo",
+                "π × r² + π × r × g"
+              ],
+              [
+                "Esfera",
+                "4 × π × r²"
+              ]
+            ]
+          },
+          "terms": [
+            {
+              "word": "face, aresta e vértice",
+              "meaning": "num sólido de faces planas, a face é cada lado chato, a aresta é a linha onde duas faces se encontram e o vértice é a ponta."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "A lata que gasta menos",
+          "body": [
+            "Para guardar o mesmo volume, há latas altas e finas e latas baixas e largas. Nem todas gastam a mesma chapa.",
+            "A que gasta menos material tem a altura igual ao diâmetro. Muitas latas reais fogem disso por outros motivos, como caber na mão."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede quanto material uma embalagem gasta ou quanta tinta cobre um tanque. Também cobra a geratriz do cone por Pitágoras."
+          ],
+          "bullets": [
+            "“Quantos cm² de alumínio são necessários para fabricar a lata…”",
+            "“A planificação da superfície lateral do cilindro é um…”",
+            "“Um cone de altura 8 cm e raio 6 cm tem geratriz…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Calcular o volume quando a pergunta é sobre material. Material é área.",
+            "Usar o diâmetro no lugar do raio.",
+            "Usar a altura do cone no lugar da geratriz.",
+            "Esquecer uma das tampas, ou contar a tampa quando o tanque é aberto."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "Área é material, e volume é o que cabe. O cilindro aberto vira dois círculos e um retângulo: 2 × π × r² + 2 × π × r × h.",
+            "O lado do cone usa a geratriz, que sai de Pitágoras: π × r × g. A lata que gasta menos tem altura igual ao diâmetro."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Área ou volume",
+          "statement": "Para saber quanto alumínio uma lata gasta, calcula-se:",
+          "options": [
+            "a área da superfície",
+            "o volume",
+            "o perímetro da tampa",
+            "a altura da lata",
+            "o diâmetro da tampa"
+          ],
+          "correct_index": 0,
+          "explanation": "Material que cobre o sólido é área.",
+          "pitfall": "Volume diz quanto cabe dentro, não quanto material."
+        },
+        {
+          "topic": "Planificação",
+          "statement": "A planificação de um cilindro com tampas é formada por:",
+          "options": [
+            "dois círculos e um retângulo",
+            "dois círculos e um triângulo",
+            "um círculo e um setor de círculo",
+            "seis quadrados",
+            "dois retângulos e um círculo"
+          ],
+          "correct_index": 0,
+          "explanation": "As tampas são círculos, e o lado vira retângulo.",
+          "pitfall": "Um círculo e um setor é o cone."
+        },
+        {
+          "topic": "Largura do retângulo",
+          "statement": "No cilindro aberto, a largura do retângulo do lado é igual:",
+          "options": [
+            "à volta da tampa, 2 × π × r",
+            "à altura do cilindro",
+            "ao diâmetro da tampa",
+            "à área da tampa, π × r²",
+            "ao raio da tampa"
+          ],
+          "correct_index": 0,
+          "explanation": "O retângulo enrola em volta da tampa inteira.",
+          "pitfall": "O diâmetro atravessa a tampa; a volta é π vezes ele."
+        },
+        {
+          "topic": "Área lateral",
+          "statement": "Uma lata tem raio 2 cm e altura 5 cm. Com π ≈ 3, a área do lado é:",
+          "options": [
+            "60 cm²",
+            "30 cm²",
+            "84 cm²",
+            "20 cm²",
+            "120 cm²"
+          ],
+          "correct_index": 0,
+          "explanation": "2 × 3 × 2 × 5 = 60.",
+          "pitfall": "84 já soma as duas tampas."
+        },
+        {
+          "topic": "Área total",
+          "statement": "A mesma lata (raio 2 cm, altura 5 cm, π ≈ 3), com as duas tampas, tem área total de:",
+          "options": [
+            "84 cm²",
+            "60 cm²",
+            "72 cm²",
+            "24 cm²",
+            "96 cm²"
+          ],
+          "correct_index": 0,
+          "explanation": "Lado 60 mais duas tampas de 12: 60 + 24 = 84.",
+          "pitfall": "72 conta só uma tampa."
+        },
+        {
+          "topic": "Geratriz",
+          "statement": "Um cone tem raio 6 cm e altura 8 cm. A geratriz mede:",
+          "options": [
+            "10 cm",
+            "14 cm",
+            "48 cm",
+            "7 cm",
+            "100 cm"
+          ],
+          "correct_index": 0,
+          "explanation": "g² = 6² + 8² = 100, então g = 10.",
+          "pitfall": "14 é a soma, não Pitágoras."
+        },
+        {
+          "topic": "Lado do cone",
+          "statement": "O lado de um cone de raio 6 cm e geratriz 10 cm, com π ≈ 3, tem área de:",
+          "options": [
+            "180 cm²",
+            "108 cm²",
+            "288 cm²",
+            "60 cm²",
+            "360 cm²"
+          ],
+          "correct_index": 0,
+          "explanation": "π × r × g = 3 × 6 × 10 = 180.",
+          "pitfall": "288 já soma o fundo de 108."
+        },
+        {
+          "topic": "Lata econômica",
+          "statement": "Entre latas de mesmo volume, a que gasta menos material tem:",
+          "options": [
+            "altura igual ao diâmetro",
+            "altura igual ao raio",
+            "altura bem maior que o diâmetro",
+            "a menor altura possível",
+            "a maior altura possível"
+          ],
+          "correct_index": 0,
+          "explanation": "É o equilíbrio entre tampas e lado.",
+          "pitfall": "Lata muito alta ou muito baixa gasta mais."
+        },
+        {
+          "topic": "Fórmulas",
+          "format": "match",
+          "statement": "Ligue cada sólido à fórmula da área total.",
+          "pairs": [
+            {
+              "left": "cubo de aresta a",
+              "right": "6 × a²"
+            },
+            {
+              "left": "cilindro",
+              "right": "2 × π × r² + 2 × π × r × h"
+            },
+            {
+              "left": "cone com fundo",
+              "right": "π × r² + π × r × g"
+            },
+            {
+              "left": "esfera",
+              "right": "4 × π × r²"
+            }
+          ],
+          "explanation": "Cada fórmula soma as partes da planificação.",
+          "pitfall": "A do cone usa g, não h.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Passos",
+          "format": "order",
+          "statement": "Ponha na ordem os passos para achar a área total de um cilindro.",
+          "options": [
+            "Achar o raio a partir do diâmetro",
+            "Calcular a área de uma tampa",
+            "Calcular a área do lado",
+            "Somar o lado com as duas tampas"
+          ],
+          "explanation": "Primeiro o raio certo, depois as partes, depois a soma.",
+          "pitfall": "Usar o diâmetro direto estraga todas as contas.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Tanque aberto",
+          "statement": "Um tanque cilíndrico sem tampa em cima tem raio 1 m e altura 2 m. Com π ≈ 3, a área a pintar por dentro é:",
+          "options": [
+            "15 m²",
+            "18 m²",
+            "12 m²",
+            "6 m²",
+            "9 m²"
+          ],
+          "correct_index": 0,
+          "explanation": "Lado 2 × 3 × 1 × 2 = 12, mais o fundo 3: 15.",
+          "pitfall": "18 conta duas tampas, mas o tanque é aberto.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Altura ou geratriz",
+          "statement": "Um aluno calculou o lado de um cone de raio 3 e altura 4 como π × 3 × 4. O erro foi:",
+          "options": [
+            "usar a altura no lugar da geratriz, que mede 5",
+            "usar o raio no lugar do diâmetro",
+            "esquecer de dividir por 3, como no volume",
+            "somar o fundo quando não devia",
+            "nenhum: a conta está certa"
+          ],
+          "correct_index": 0,
+          "explanation": "O lado usa a geratriz: π × 3 × 5.",
+          "pitfall": "Dividir por 3 é coisa do volume do cone.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Dobrar o raio",
+          "statement": "Se o raio de uma lata dobra e a altura fica igual, a área das duas tampas:",
+          "options": [
+            "fica 4 vezes maior, e a do lado fica 2 vezes maior",
+            "fica 2 vezes maior, como a do lado",
+            "fica 8 vezes maior, e a do lado 4 vezes maior",
+            "não muda, porque a altura é a mesma",
+            "fica 4 vezes maior, como a do lado"
+          ],
+          "correct_index": 0,
+          "explanation": "A tampa depende de r², e o lado depende de r.",
+          "pitfall": "8 vezes é do volume quando todas as medidas dobram.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Embalagem",
+          "statement": "Duas embalagens guardam o mesmo volume. Uma é alta e fina, a outra tem altura igual ao diâmetro. É correto dizer:",
+          "options": [
+            "a de altura igual ao diâmetro gasta menos material",
+            "as duas gastam o mesmo material, porque guardam o mesmo volume",
+            "a alta e fina gasta menos, porque as tampas são menores",
+            "a alta e fina sempre guarda mais",
+            "só dá para saber medindo o peso"
+          ],
+          "correct_index": 0,
+          "explanation": "Mesmo volume não quer dizer mesma área.",
+          "pitfall": "Tampas menores não compensam o lado maior.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
       "slug": "distancia-e-ponto-medio",
       "title": "Distância entre dois pontos e ponto médio",
       "module": "Geometria analítica",
@@ -5001,6 +5403,401 @@
           "correct_index": 0,
           "explanation": "Ele obedece à equação.",
           "pitfall": "“O raio é 25” esqueceu a raiz: o raio é 5.",
+          "difficulty": "dificil"
+        }
+      ]
+    },
+    {
+      "slug": "intersecao-alinhamento-e-area",
+      "title": "Onde as retas se cruzam: interseção, alinhamento e área",
+      "module": "Geometria analítica",
+      "summary": "Duas retas no plano podem se cruzar num ponto ou nunca se encontrar. A lição mostra como achar esse ponto, como saber se três pontos estão alinhados e como calcular a área de um triângulo pelas coordenadas.",
+      "video": {
+        "src": "https://www.youtube.com/watch?v=Rpcy8CgD3pQ",
+        "title": "Geometria Analítica: Condição de Alinhamento de Três Pontos",
+        "channel": "Matemática no Papel"
+      },
+      "steps": [
+        {
+          "kind": "idea",
+          "title": "Duas ruas que se cruzam",
+          "body": [
+            "No mapa, duas ruas retas se cruzam numa esquina. Ali está o único ponto que pertence às duas.",
+            "No plano cartesiano é igual. O ponto de encontro obedece às duas regras ao mesmo tempo."
+          ],
+          "terms": [
+            {
+              "word": "eixo",
+              "meaning": "cada uma das duas retas numeradas do plano: a horizontal mede o x, e a vertical mede o y."
+            },
+            {
+              "word": "plano cartesiano",
+              "meaning": "o plano com dois eixos que se cruzam, onde cada ponto tem um endereço (x, y)."
+            },
+            {
+              "word": "coordenada",
+              "meaning": "cada número do endereço de um ponto: o x diz a posição na horizontal, e o y na vertical."
+            }
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Achar o ponto de encontro",
+          "body": [
+            "Cada reta tem uma equação. No ponto de encontro, o y das duas é o mesmo.",
+            "Então basta igualar as duas expressões, achar o x e depois o y."
+          ],
+          "terms": [
+            {
+              "word": "equação",
+              "meaning": "uma igualdade com um valor desconhecido, que se descobre fazendo contas dos dois lados."
+            },
+            {
+              "word": "equação da reta",
+              "meaning": "a regra y = mx + n que todos os pontos de uma reta obedecem. O m é a inclinação."
+            }
+          ],
+          "example": {
+            "label": "y = 2x + 1 e y = −x + 7",
+            "ordered": true,
+            "lines": [
+              "Igualar: 2x + 1 = −x + 7.",
+              "Juntar os x: 3x = 6, então x = 2.",
+              "Pôr o x numa das equações: y = 2 × 2 + 1 = 5.",
+              "O ponto de encontro é (2, 5)."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Retas que nunca se encontram",
+          "body": [
+            "Se as duas retas têm a mesma inclinação, elas são paralelas. Ao igualar, o x some, e a conta não dá resposta.",
+            "Se tiverem a mesma inclinação e o mesmo n, são a mesma reta. Aí todos os pontos são comuns."
+          ],
+          "table": {
+            "label": "As três situações",
+            "headers": [
+              "Inclinações",
+              "O que acontece"
+            ],
+            "rows": [
+              [
+                "diferentes",
+                "as retas se cruzam em um ponto só"
+              ],
+              [
+                "iguais, com n diferente",
+                "paralelas: nunca se cruzam"
+              ],
+              [
+                "iguais, com o mesmo n",
+                "é a mesma reta"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Três pontos alinhados",
+          "body": [
+            "Três pontos estão alinhados quando cabem na mesma reta. O teste é comparar as inclinações.",
+            "Se a inclinação de A para B é igual à de B para C, eles estão alinhados."
+          ],
+          "example": {
+            "label": "A(1, 1), B(3, 5) e C(5, 9)",
+            "lines": [
+              "De A para B: sobe 4 e anda 2. Inclinação 2.",
+              "De B para C: sobe 4 e anda 2. Inclinação 2.",
+              "Mesma inclinação: os três estão na mesma reta."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "A área do triângulo pelas coordenadas",
+          "body": [
+            "Com os três vértices, a área sai de uma conta só. Multiplique cada x pela diferença dos outros dois y, na ordem.",
+            "Some tudo, tire o sinal e divida por 2."
+          ],
+          "terms": [
+            {
+              "word": "vértice",
+              "meaning": "cada ponta de um triângulo, onde dois lados se encontram."
+            }
+          ],
+          "example": {
+            "label": "A(1, 1), B(5, 1) e C(3, 4)",
+            "ordered": true,
+            "lines": [
+              "1 × (1 − 4) = −3.",
+              "5 × (4 − 1) = 15.",
+              "3 × (1 − 1) = 0.",
+              "Soma: −3 + 15 + 0 = 12. Área: 12 ÷ 2 = 6."
+            ]
+          }
+        },
+        {
+          "kind": "explain",
+          "title": "Conferir pelo desenho",
+          "body": [
+            "No triângulo acima, a base AB está deitada e mede 4. A altura vai de y = 1 até y = 4 e mede 3.",
+            "Base vezes altura dividido por 2 dá 4 × 3 ÷ 2 = 6. As duas contas batem."
+          ]
+        },
+        {
+          "kind": "explain",
+          "title": "Área zero quer dizer alinhados",
+          "body": [
+            "Se a conta da área der zero, não existe triângulo. Os três pontos estão na mesma reta.",
+            "Com A(1, 1), B(3, 5) e C(5, 9), a soma dá −4 + 24 − 20 = 0. É o mesmo resultado do teste das inclinações."
+          ]
+        },
+        {
+          "kind": "exam",
+          "title": "Como cai na prova",
+          "body": [
+            "A prova pede o ponto de encontro de duas estradas num mapa, se três pontos estão alinhados ou a área de um terreno dado por coordenadas."
+          ],
+          "bullets": [
+            "“As retas r e s se intersectam no ponto…”",
+            "“Para que os pontos A, B e C sejam colineares, o valor de k deve ser…”",
+            "“A área do triângulo de vértices A, B e C é…”"
+          ]
+        },
+        {
+          "kind": "pitfall",
+          "title": "Pegadinhas clássicas",
+          "body": [
+            "Estes são os enganos que a prova espera de você:"
+          ],
+          "bullets": [
+            "Achar o x e esquecer de calcular o y do ponto.",
+            "Achar que retas paralelas se cruzam longe. Elas nunca se cruzam.",
+            "Esquecer de dividir por 2 na área do triângulo.",
+            "Deixar a área negativa. Área é sempre positiva: tire o sinal."
+          ]
+        },
+        {
+          "kind": "recap",
+          "title": "Resumo em 1 minuto",
+          "body": [
+            "O ponto de encontro sai de igualar as duas equações. Mesma inclinação quer dizer paralelas ou a mesma reta.",
+            "Três pontos estão alinhados se as inclinações são iguais, ou se a área do triângulo dá zero. A área é a soma de cada x vezes a diferença dos outros y, sem sinal e dividida por 2."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "topic": "Interseção",
+          "statement": "As retas y = 2x + 1 e y = −x + 7 se cruzam no ponto:",
+          "options": [
+            "(2, 5)",
+            "(5, 2)",
+            "(2, 3)",
+            "(6, 13)",
+            "(3, 7)"
+          ],
+          "correct_index": 0,
+          "explanation": "2x + 1 = −x + 7 dá x = 2, e y = 5.",
+          "pitfall": "(5, 2) troca a ordem: o x vem primeiro."
+        },
+        {
+          "topic": "Paralelas",
+          "statement": "As retas y = 3x + 2 e y = 3x − 1:",
+          "options": [
+            "são paralelas e não têm ponto comum",
+            "se cruzam no ponto (0, 2), no eixo vertical",
+            "são a mesma reta",
+            "se cruzam em ângulo reto, por serem diferentes",
+            "se cruzam no ponto (1, 3)"
+          ],
+          "correct_index": 0,
+          "explanation": "Mesma inclinação, n diferente: paralelas.",
+          "pitfall": "Ângulo reto pede inclinações cujo produto dá −1."
+        },
+        {
+          "topic": "Alinhamento",
+          "statement": "Os pontos A(0, 0), B(1, 2) e C(3, 6):",
+          "options": [
+            "estão alinhados, com inclinação 2 entre eles",
+            "formam um triângulo de área 3, com base no eixo",
+            "formam um triângulo retângulo com canto em A",
+            "estão alinhados, com inclinação 3 entre eles",
+            "não têm como ser comparados"
+          ],
+          "correct_index": 0,
+          "explanation": "De A para B e de B para C a inclinação é 2.",
+          "pitfall": "A inclinação é quanto sobe por quanto anda: 2, não 3."
+        },
+        {
+          "topic": "Área",
+          "statement": "A área do triângulo de vértices (0, 0), (6, 0) e (0, 4) é:",
+          "options": [
+            "12",
+            "24",
+            "10",
+            "20",
+            "6"
+          ],
+          "correct_index": 0,
+          "explanation": "Base 6 e altura 4: 6 × 4 ÷ 2 = 12.",
+          "pitfall": "24 esquece de dividir por 2."
+        },
+        {
+          "topic": "Área zero",
+          "statement": "Na conta da área, três pontos deram resultado zero. Isso quer dizer que:",
+          "options": [
+            "os três estão alinhados",
+            "o triângulo é muito pequeno",
+            "o triângulo é retângulo",
+            "a conta foi feita na ordem errada",
+            "os pontos estão todos na origem"
+          ],
+          "correct_index": 0,
+          "explanation": "Área zero: não há triângulo, os pontos estão na mesma reta.",
+          "pitfall": "A ordem só muda o sinal, não zera a conta."
+        },
+        {
+          "topic": "Eixo x",
+          "statement": "A reta y = 2x − 6 corta o eixo horizontal no ponto:",
+          "options": [
+            "(3, 0)",
+            "(0, −6)",
+            "(−3, 0)",
+            "(6, 0)",
+            "(0, 3)"
+          ],
+          "correct_index": 0,
+          "explanation": "No eixo horizontal, y = 0: 2x − 6 = 0, então x = 3.",
+          "pitfall": "(0, −6) é onde ela corta o eixo vertical."
+        },
+        {
+          "topic": "Sistema",
+          "statement": "Resolver o sistema com as equações de duas retas serve para achar:",
+          "options": [
+            "o ponto que pertence às duas retas",
+            "a inclinação de cada reta",
+            "a distância entre as duas retas",
+            "a área entre as retas",
+            "o ponto médio das retas"
+          ],
+          "correct_index": 0,
+          "explanation": "A solução obedece às duas equações: é o ponto de encontro.",
+          "pitfall": "Inclinação se lê direto no m."
+        },
+        {
+          "topic": "Área 2",
+          "statement": "A área do triângulo de vértices A(1, 1), B(5, 1) e C(3, 4) é:",
+          "options": [
+            "6",
+            "12",
+            "8",
+            "3",
+            "10"
+          ],
+          "correct_index": 0,
+          "explanation": "A soma dá 12, e a área é a metade: 6.",
+          "pitfall": "12 é antes de dividir por 2."
+        },
+        {
+          "topic": "Situações",
+          "format": "match",
+          "statement": "Ligue cada situação ao que ela quer dizer.",
+          "pairs": [
+            {
+              "left": "inclinações diferentes",
+              "right": "um ponto de encontro"
+            },
+            {
+              "left": "mesma inclinação e n diferente",
+              "right": "paralelas, sem encontro"
+            },
+            {
+              "left": "mesma inclinação e mesmo n",
+              "right": "a mesma reta"
+            },
+            {
+              "left": "área do triângulo igual a zero",
+              "right": "pontos alinhados"
+            }
+          ],
+          "explanation": "A inclinação e o n decidem o encontro.",
+          "pitfall": "Paralelas e mesma reta têm a mesma inclinação: muda o n.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Passos",
+          "format": "order",
+          "statement": "Ponha na ordem os passos para achar onde duas retas se cruzam.",
+          "options": [
+            "Igualar as duas expressões do y",
+            "Resolver e achar o x",
+            "Pôr o x numa das equações e achar o y",
+            "Escrever o ponto (x, y)"
+          ],
+          "explanation": "Primeiro o x, depois o y.",
+          "pitfall": "Parar no x deixa o ponto pela metade.",
+          "difficulty": "facil"
+        },
+        {
+          "topic": "Achar k",
+          "statement": "Para que A(1, 2), B(2, 4) e C(4, k) fiquem alinhados, k deve ser:",
+          "options": [
+            "8",
+            "6",
+            "4",
+            "10",
+            "16"
+          ],
+          "correct_index": 0,
+          "explanation": "A inclinação de A para B é 2. De B para C, andando 2, sobe 4: k = 8.",
+          "pitfall": "6 soma só 2, como se andasse uma casa.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Sistema 2",
+          "statement": "As retas x + y = 10 e x − y = 2 se cruzam no ponto:",
+          "options": [
+            "(6, 4)",
+            "(4, 6)",
+            "(5, 5)",
+            "(8, 2)",
+            "(12, −2)"
+          ],
+          "correct_index": 0,
+          "explanation": "Somando as duas: 2x = 12, x = 6 e y = 4.",
+          "pitfall": "(4, 6) não obedece a x − y = 2.",
+          "difficulty": "media"
+        },
+        {
+          "topic": "Área com k",
+          "statement": "O triângulo de vértices (2, 1), (6, 1) e (4, k) tem área 8. Um valor possível de k é:",
+          "options": [
+            "5",
+            "3",
+            "9",
+            "8",
+            "4"
+          ],
+          "correct_index": 0,
+          "explanation": "A base mede 4. Para a área dar 8, a altura é 4: de y = 1 até y = 5.",
+          "pitfall": "9 dá altura 8 e área 16.",
+          "difficulty": "dificil"
+        },
+        {
+          "topic": "Erro do aluno",
+          "statement": "Um aluno diz: “y = 2x + 1 e y = 2x + 5 se cruzam num ponto bem distante”. O erro dele é:",
+          "options": [
+            "paralelas nunca se cruzam, por mais longe que se vá",
+            "elas se cruzam no ponto (0, 1), onde a primeira corta o eixo",
+            "elas são a mesma reta",
+            "elas se cruzam em ângulo reto",
+            "nenhum: toda reta cruza toda outra em algum lugar"
+          ],
+          "correct_index": 0,
+          "explanation": "Mesma inclinação: a distância entre elas nunca muda.",
+          "pitfall": "“Toda reta cruza toda outra” é o quantificador absoluto do erro.",
           "difficulty": "dificil"
         }
       ]
