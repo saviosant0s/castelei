@@ -373,16 +373,22 @@ export const SUBJECTS: SiteSubject[] = [
     lessons: [
       "O que é sociologia: indivíduo e sociedade",
       "Os clássicos: Durkheim, Weber e Marx",
+      "Pesquisa social: como a sociologia sabe o que sabe",
       "Cultura, identidade e diversidade",
       "Trabalho e desigualdade social",
+      "Cultura popular, erudita e de massa",
       "Raça, racismo e desigualdade racial",
       "Gênero: papéis, desigualdade e violência",
+      "Preconceito, estereótipo e discriminação",
       "Religião e sociedade",
       "Escola e desigualdade",
+      "Controle social: normas, sanções e desvio",
       "A cidade: periferia, segregação e violência",
       "Mídia, consumo e redes sociais",
+      "Sociedade e meio ambiente: quem polui e quem sofre",
       "Poder, Estado, democracia e cidadania",
       "Movimentos sociais e direitos humanos",
+      "Liberalismo, socialismo e as ideias de esquerda e direita",
     ],
   },
   {
@@ -854,5 +860,5 @@ export const CATALOG = {
   */
   questionsPerLesson: null as number | null,
   /** Questões de prática publicadas (sem as propostas do simulado). O teste confere. */
-  questions: 7238,
+  questions: 7322,
 };
