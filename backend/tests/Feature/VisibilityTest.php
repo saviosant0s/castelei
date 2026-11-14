@@ -10,7 +10,8 @@ use Tests\Concerns\MakesLessons;
 use Tests\TestCase;
 
 /**
- * Matéria privada: só quem administra o conteúdo vê.
+ * Matéria privada: exclusiva do Pro. Quem tem o Pro e quem administra o
+ * conteúdo veem.
  *
  * Para todo o resto ela não existe — nem na lista, nem na busca, nem na
  * vitrine, e quem souber o endereço recebe 404.
@@ -76,6 +77,22 @@ class VisibilityTest extends TestCase
         $this->postJson("/api/lessons/{$privada->id}/attempts")->assertCreated();
     }
 
+    public function test_quem_tem_o_pro_ve_e_estuda_a_materia_exclusiva(): void
+    {
+        $privada = $this->privada();
+        Sanctum::actingAs(User::factory()->create(['plan' => 'pro']));
+
+        $this->getJson('/api/subjects')
+            ->assertOk()
+            ->assertJsonPath('subjects.0.id', $privada->subject_id)
+            ->assertJsonPath('subjects.0.private', true);
+        $this->getJson("/api/lessons/{$privada->id}")->assertOk();
+        $this->postJson("/api/lessons/{$privada->id}/attempts")->assertCreated();
+
+        $slugs = array_column($this->getJson('/api/subjects')->json('trails'), 'slug');
+        $this->assertContains('llms-do-zero', $slugs);
+    }
+
     public function test_a_vitrine_publica_nunca_anuncia_a_privada(): void
     {
         $this->privada();
@@ -88,7 +105,7 @@ class VisibilityTest extends TestCase
             ->assertJsonPath('totals.lessons', 1);
     }
 
-    public function test_a_trilha_privada_so_aparece_para_quem_administra(): void
+    public function test_a_trilha_privada_nao_aparece_para_o_gratis(): void
     {
         Sanctum::actingAs(User::factory()->create());
         $slugs = array_column($this->getJson('/api/subjects')->json('trails'), 'slug');

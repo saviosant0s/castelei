@@ -9,8 +9,9 @@ export const metadata: Metadata = { title: "Planos" };
 /*
 | O corte decidido pelo Sávio: TUDO que existe hoje fica no grátis. O Pro
 | ganha por cima o simulado por matéria, as questões em três níveis de
-| dificuldade e criar turmas (entrar numa turma continua grátis, porque é
-| assim que o curso chega a gente nova). O plano Plus saiu da vitrine: não
+| dificuldade, criar turmas (entrar numa turma continua grátis, porque é
+| assim que o curso chega a gente nova) e as matérias exclusivas, as que
+| têm `"visibility": "private"` no arquivo. O plano Plus saiu da vitrine: não
 | havia nada que ele desse e o grátis não.
 |
 | A tela descreve o destino, e a cobrança ainda não existe (ver CLAUDE.md).
@@ -21,7 +22,7 @@ const plans = [
     name: "Grátis",
     price: "R$ 0",
     items: [
-      "Todas as matérias e todas as lições",
+      "Todas as matérias abertas e todas as lições",
       "Todas as questões de cada lição",
       "Trilha, vocabulário e revisão espaçada",
       "Lembretes de revisão",
@@ -35,6 +36,7 @@ const plans = [
     price: "Em breve",
     items: [
       "Tudo do Grátis",
+      "Matérias exclusivas, como Python, Sistemas Operacionais e a trilha de IA",
       "Simulado por matéria",
       "Questões em três níveis: fácil, média e difícil",
       "Muito mais questões por lição",

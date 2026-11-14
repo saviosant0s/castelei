@@ -71,7 +71,7 @@ class ContentValidator
         $this->area($data['area'] ?? null);
 
         if (isset($data['visibility']) && ! in_array($data['visibility'], ['public', 'private'], true)) {
-            $this->error('visibility', 'A visibilidade é "public" (todo mundo vê) ou "private" (só quem administra o conteúdo).');
+            $this->error('visibility', 'A visibilidade é "public" (todo mundo vê) ou "private" (só quem tem o Pro, e quem administra).');
         }
 
         $lessons = $data['lessons'] ?? null;

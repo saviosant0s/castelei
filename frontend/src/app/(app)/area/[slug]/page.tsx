@@ -77,8 +77,8 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
                         step={entry.step}
                         practiced={entry.subject.lessons.filter((lesson) => lesson.attempts > 0).length}
                         total={entry.subject.lessons.length}
-                        // A privada só aparece para quem administra: o aviso lembra que ninguém mais a vê.
-                        detail={`${entry.subject.private ? "Só você vê · " : ""}${nextLessonLine(entry.subject.lessons)}`}
+                        // A privada é exclusiva do Pro: o selo mostra por que ela está ali.
+                        detail={`${entry.subject.private ? "Exclusiva do Pro · " : ""}${nextLessonLine(entry.subject.lessons)}`}
                       />
                     </li>
                   ),
