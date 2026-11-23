@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ChevronDown, Lock } from "lucide-react";
+import { IncidenceTag } from "@/components/IncidenceTag";
 import { PageHero } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
 import { pluralize } from "@/lib/format";
@@ -114,6 +115,7 @@ export default async function QuestoesDaMateria({ params }: { params: Promise<{ 
                     <span className="text-content-subtle tabular-nums">{lesson.position}. </span>
                     {lesson.title}
                   </p>
+                  {lesson.incidence && <IncidenceTag incidence={lesson.incidence} className="mt-1" />}
                   {lesson.locked ? (
                     <p className="mt-2 flex items-center gap-2 text-sm text-content-secondary">
                       <Lock className="size-4 shrink-0" aria-hidden="true" />

@@ -97,14 +97,21 @@ node scripts/lint-content.mjs   # o verificador do conteúdo
 
 O CI ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)) roda os quatro a cada push.
 
-## Os três formatos de questão
+## Os formatos de questão
 
-O padrão é `choice`: cinco alternativas e um `correct_index`. Continua sendo o principal, porque é o formato da prova que o aluno vai fazer. Os outros dois existem porque múltipla escolha só mede **reconhecer**:
+O padrão é `choice`: cinco alternativas e um `correct_index`. Continua sendo o principal, porque é o formato da prova que o aluno vai fazer. `order` e `match` existem porque múltipla escolha só mede **reconhecer**:
 
 - **`order` — pôr os passos na ordem.** `fork` vem antes de `execve`, liberar o SSH vem antes de ligar o firewall. Quem troca a ordem quebra a máquina, e a alternativa nunca cobra isso. As `options` são os passos escritos na ordem certa; não existe `correct_index`.
 - **`match` — ligar os pares.** Em vez de `options`, traz `pairs` com `{left, right}`. Usar um par errado tira a opção certa de outro, então a pessoa precisa saber os quatro ao mesmo tempo.
 
 Nos dois casos **o gabarito é a própria estrutura da questão**, então o servidor embaralha antes de entregar, com semente derivada de `(tentativa, questão)`: a ordem é reproduzível nas duas pontas sem guardar estado, e duas pessoas na mesma questão veem ordens diferentes. Um teste garante que o sorteio nunca devolve a ordem certa.
+
+Há ainda dois formatos com função própria:
+
+- **`judge` — certo ou errado, como no Cebraspe.** Uma afirmação no `statement` e o gabarito por extenso em `"answer": "certo"` ou `"errado"`, sem `options` nem `correct_index`. As opções são sempre Certo e Errado, nessa ordem e sem sorteio, e o botão de pular vira "Em branco". No resultado aparece também a nota da banca: certos menos errados.
+- **`writing` — escrever uma parte de um texto.** Não tem gabarito: tem roteiro, critérios de autoavaliação e texto-modelo (ver a Produção Textual).
+
+Toda questão aceita `exam_ref`, o item de prova real que a inspirou (`"PF 2025, item 108"`). A questão é escrita por nós; a referência mostra que o assunto caiu, sem copiar o texto da banca.
 
 ## Escrevendo conteúdo
 
@@ -123,7 +130,7 @@ Uma etapa tem:
 | `code` | trecho de código: `label`, `text` e `notes` — uma frase por linha dizendo o que ela faz, **obrigatório**: quem lê a lição pode nunca ter visto código |
 | `video` | vídeo: `src` (arquivo enviado pelo painel ou link do YouTube), `title`, `caption` e `poster` |
 
-A matéria aceita `area` (a área do conhecimento onde ela aparece na tela inicial: `portugues`, `matematica`, `informatica`… — a lista está em `backend/config/castelei.php`), `exam_date` (`"2026-12-15"`), que é o prazo de onde sai todo intervalo de revisão, e a lição aceita `module`, o assunto que a agrupa na trilha.
+A matéria aceita `area` (a área do conhecimento onde ela aparece na tela inicial: `portugues`, `matematica`, `informatica`… — a lista está em `backend/config/castelei.php`), `exam_date` (`"2026-12-15"`), que é o prazo de onde sai todo intervalo de revisão, e a lição aceita `module`, o assunto que a agrupa na trilha, e `incidence` (`alta`, `media` ou `baixa`), o quanto o assunto cai na prova, contado nas provas reais. A tela mostra como "Cai muito", "Cai às vezes" ou "Cai pouco".
 
 Antes de enviar, rode o verificador:
 

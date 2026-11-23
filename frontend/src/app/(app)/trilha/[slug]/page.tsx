@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Check, ChevronRight } from "lucide-react";
+import { IncidenceTag } from "@/components/IncidenceTag";
 import { ProgressBar, PageHero } from "@/components/ui";
 import { serverGet } from "@/lib/backend";
 import { trailView, type TrailStepView } from "@/lib/trails";
@@ -87,6 +88,8 @@ function Passo({ passo }: { passo: TrailStepView }) {
           </span>
         )}
       </span>
+      {/* O quanto o passo cai na prova. Aparece até no "Em breve": é o mapa do que estudar primeiro. */}
+      {passo.importance && <IncidenceTag incidence={passo.importance} className="mt-1" />}
       <span className="mt-1 block text-sm text-content-secondary">{passo.why}</span>
       {passo.state !== "soon" && (
         <>

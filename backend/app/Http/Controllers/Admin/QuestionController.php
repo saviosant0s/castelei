@@ -120,9 +120,9 @@ class QuestionController extends Controller
         $data = $request->validate([
             'topic' => ['required', 'string', 'max:120'],
             'statement' => ['required', 'string'],
-            'options' => ['required_unless:format,match', 'array', 'min:2', 'max:8'],
+            'options' => ['required_unless:format,match,judge', 'array', 'min:2', 'max:8'],
             'options.*' => ['required', 'string'],
-            'format' => ['nullable', 'string', 'in:choice,order,match'],
+            'format' => ['nullable', 'string', 'in:choice,order,match,judge'],
             'difficulty' => ['nullable', 'string', 'in:facil,media,dificil'],
             'pairs' => ['required_if:format,match', 'array', 'min:3', 'max:5'],
             'pairs.*.left' => ['required', 'string', 'max:120'],
@@ -132,6 +132,8 @@ class QuestionController extends Controller
             'correct_index' => ['required_unless:format,order', 'integer', 'min:0'],
             'explanation' => ['required', 'string'],
             'pitfall' => ['nullable', 'string'],
+            // O item de prova real que inspirou a questão ("PF 2025, item 108").
+            'exam_ref' => ['nullable', 'string', 'max:120'],
         ], [
             'topic.required' => 'Informe o tópico da questão (é o que aparece no seu progresso).',
             'statement.required' => 'Escreva o enunciado.',
@@ -143,6 +145,23 @@ class QuestionController extends Controller
         ]);
 
         $data['format'] = $data['format'] ?? Question::FORMAT_CHOICE;
+        $data['exam_ref'] = isset($data['exam_ref']) && trim($data['exam_ref']) !== '' ? trim($data['exam_ref']) : null;
+
+        /*
+        | Certo ou errado: as opções são sempre as mesmas, na mesma ordem. O
+        | que vem do formulário é só o gabarito (0 = Certo, 1 = Errado).
+        */
+        if ($data['format'] === Question::FORMAT_JUDGE) {
+            abort_unless(in_array((int) ($data['correct_index'] ?? -1), [0, 1], true), response()->json([
+                'message' => 'Marque se a afirmação está certa ou errada.',
+                'errors' => ['correct_index' => ['Escolha Certo ou Errado.']],
+            ], 422));
+            $data['options'] = Question::JUDGE_OPTIONS;
+            $data['pairs'] = null;
+            $data['correct_index'] = (int) $data['correct_index'];
+
+            return $data;
+        }
 
         if ($data['format'] === Question::FORMAT_MATCH) {
             $esquerda = array_map(fn (array $par) => trim($par['left']), $data['pairs']);
@@ -221,6 +240,7 @@ class QuestionController extends Controller
             'difficulty' => $question->difficulty,
             'writing' => $question->writing,
             'exam_only' => (bool) $question->exam_only,
+            'exam_ref' => $question->exam_ref,
         ];
     }
 }

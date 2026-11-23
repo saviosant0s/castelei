@@ -161,6 +161,8 @@ class ContentImporter
             'steps' => $data['steps'],
             // A aula em vídeo da lição (YouTube), oferecida na tela da lição.
             'video' => $data['video'] ?? null,
+            // O quanto o assunto cai na prova (alta, media, baixa), quando se sabe.
+            'incidence' => $data['incidence'] ?? null,
         ] + self::legacyFields($data['steps']));
 
         $lesson->save();
@@ -170,6 +172,17 @@ class ContentImporter
         foreach ($data['questions'] as $index => $questionData) {
             $question = Question::firstOrNew(['lesson_id' => $lesson->id, 'position' => $index + 1]);
             $criada = ! $question->exists;
+
+            /*
+            | A de julgar escreve o gabarito por extenso ("certo" ou "errado").
+            | No banco ela vira uma múltipla escolha de duas opções fixas, e
+            | todo o resto do app (resposta, acerto, estatística) já funciona.
+            */
+            $julgar = ($questionData['format'] ?? null) === Question::FORMAT_JUDGE;
+            if ($julgar) {
+                $questionData['options'] = Question::JUDGE_OPTIONS;
+                $questionData['correct_index'] = ($questionData['answer'] ?? 'certo') === 'certo' ? 0 : 1;
+            }
 
             $question->fill([
                 'topic' => $questionData['topic'],
@@ -189,6 +202,8 @@ class ContentImporter
                 'correct_index' => $questionData['correct_index'] ?? 0,
                 'explanation' => $questionData['explanation'],
                 'pitfall' => $questionData['pitfall'] ?? null,
+                // O item de prova real que inspirou a questão, quando houver.
+                'exam_ref' => $questionData['exam_ref'] ?? null,
             ]);
 
             $question->save();

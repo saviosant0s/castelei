@@ -9,16 +9,22 @@
 | a pergunta; o que vem depois da primeira quebra de linha é código, e sai no
 | mesmo bloco escuro das lições. Enunciado de uma linha só não muda nada.
 */
-export function QuestionStatement({ statement }: { statement: string }) {
+/*
+| O item de certo ou errado sai menor (`compact`). Ele é uma afirmação de duas
+| a quatro linhas, e não uma pergunta curta: no tamanho de título, um item do
+| Cebraspe ocupava meia tela antes dos botões.
+*/
+export function QuestionStatement({ statement, compact = false }: { statement: string; compact?: boolean }) {
+  const tamanho = compact ? "text-xl leading-snug" : "text-2xl";
   const quebra = statement.indexOf("\n");
-  if (quebra === -1) return <h1 className="mt-3 text-2xl">{statement}</h1>;
+  if (quebra === -1) return <h1 className={`mt-3 ${tamanho}`}>{statement}</h1>;
 
   const pergunta = statement.slice(0, quebra);
   const trecho = statement.slice(quebra + 1);
 
   return (
     <>
-      <h1 className="mt-3 text-2xl">{pergunta}</h1>
+      <h1 className={`mt-3 ${tamanho}`}>{pergunta}</h1>
       <pre className="mt-4 overflow-x-auto whitespace-pre rounded-2xl bg-surface-bold p-4 font-mono text-sm leading-relaxed text-on-bold">
         <code>{trecho}</code>
       </pre>

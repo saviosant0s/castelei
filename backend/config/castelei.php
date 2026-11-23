@@ -142,6 +142,52 @@ return [
                 ['subject' => 'informatica-para-concursos', 'name' => 'Informática para concursos', 'why' => 'Atalhos, Linux, backup, protocolos e golpes, do jeito que a banca pergunta.'],
             ],
         ],
+        /*
+        | A trilha de perito criminal em informática, montada sobre as provas
+        | reais da PF (2013, 2018 e 2025) e o edital de 2025. A ordem e a
+        | importância de cada passo saem de docs/trilha-perito.md.
+        |
+        | `importance` diz o quanto o passo cai na prova: `alta`, `media` ou
+        | `baixa`. É a mesma régua da importância das lições. Passo sem a
+        | chave (o treino físico) não mostra nada.
+        |
+        | Exclusiva do Pro: a informática forense nasceu para o Sávio, como as
+        | outras matérias privadas. Os passos de matéria que ainda não existe
+        | aparecem como "Em breve" e acendem quando o arquivo chegar, então o
+        | nome de cada passo é o nome que a matéria vai ter.
+        */
+        [
+            'slug' => 'perito-informatica-forense',
+            'name' => 'Perito Criminal: Informática Forense',
+            'visibility' => 'private',
+            'description' => 'Do português à análise de um celular apreendido, na ordem das provas da Polícia Federal e marcada pelo que mais cai.',
+            'steps' => [
+                ['subject' => 'portugues', 'name' => 'Português', 'importance' => 'alta', 'why' => 'Doze dos cinquenta itens básicos da PF em 2025: o maior peso fora da informática.'],
+                ['subject' => 'interpretacao-de-texto', 'name' => 'Interpretação de texto', 'importance' => 'alta', 'why' => 'Os itens de português começam sempre por um texto, e metade deles é sobre o sentido dele.'],
+                ['subject' => 'redacao-oficial', 'name' => 'Redação oficial', 'importance' => 'media', 'why' => 'O Manual de Redação da Presidência: quatro itens certos na prova de 2025.'],
+                ['subject' => 'logica', 'name' => 'Lógica', 'importance' => 'media', 'why' => 'Condicional, equivalência e negação: cinco itens básicos, quase sempre num cenário de perícia.'],
+                ['subject' => 'contagem-e-probabilidade', 'name' => 'Contagem e probabilidade', 'importance' => 'baixa', 'why' => 'O pedaço de contagem e chance do raciocínio lógico do edital.'],
+                ['subject' => 'informatica-para-concursos', 'name' => 'Informática para concursos', 'importance' => 'alta', 'why' => 'Oito itens básicos: Windows, Excel, malware, banco de dados e aprendizado de máquina.'],
+                ['subject' => 'direito-constitucional', 'name' => 'Direito constitucional', 'importance' => 'media', 'why' => 'Direitos fundamentais e segurança pública: quatro itens básicos.'],
+                ['subject' => 'direito-administrativo', 'name' => 'Direito administrativo', 'importance' => 'media', 'why' => 'Organização do Estado, atos, poderes e licitação: quatro itens básicos.'],
+                ['subject' => 'direito-penal-e-processual-penal', 'name' => 'Direito penal e processual penal', 'importance' => 'media', 'why' => 'A perícia no processo e a cadeia de custódia: o direito que o perito usa todo dia.'],
+                ['subject' => 'direitos-humanos', 'name' => 'Direitos humanos', 'importance' => 'alta', 'why' => 'Seis itens básicos em 2025, sobre tratados que quase ninguém estuda.'],
+                ['subject' => 'criminalistica', 'name' => 'Criminalística', 'importance' => 'media', 'why' => 'Vestígio, princípio de Locard, local de crime e laudo: a base de toda perícia.'],
+                ['subject' => 'fundamentos-da-computacao', 'name' => 'Fundamentos da computação', 'importance' => 'alta', 'why' => 'Arquitetura, virtualização, RAID e sistemas de arquivos: 27 dos 210 itens das três provas.'],
+                ['subject' => 'sistemas-operacionais', 'name' => 'Sistemas Operacionais', 'importance' => 'media', 'why' => 'Processos, memória e arquivos por dentro: o que o perito lê quando abre uma imagem de disco.'],
+                ['subject' => 'programacao-e-algoritmos', 'name' => 'Programação e algoritmos', 'importance' => 'alta', 'why' => 'Linguagens, estruturas de dados e complexidade: o bloco que mais caiu somando as três provas.'],
+                ['subject' => 'bancos-de-dados', 'name' => 'Bancos de dados', 'importance' => 'alta', 'why' => 'SQL, transações, SQLite e NoSQL, que já foi tema da discursiva.'],
+                ['subject' => 'redes-de-computadores', 'name' => 'Redes de computadores', 'importance' => 'alta', 'why' => 'Protocolos, DNS, NAT, Wi-Fi e nuvem: o caminho por onde o crime passa.'],
+                ['subject' => 'seguranca-da-informacao', 'name' => 'Segurança da informação', 'importance' => 'alta', 'why' => 'Normas, OWASP, autenticação, ataques e defesas: o bloco que mais cresceu no edital.'],
+                ['subject' => 'criptografia', 'name' => 'Criptografia', 'importance' => 'media', 'why' => 'Cifras, hashes e certificados: o hash é a prova de que a cópia é fiel.'],
+                ['subject' => 'windows-linux-e-celulares', 'name' => 'Windows, Linux e celulares', 'importance' => 'media', 'why' => 'Registro, logs, permissões e as proteções do Android e do iOS.'],
+                ['subject' => 'engenharia-reversa-e-malware', 'name' => 'Engenharia reversa e malware', 'importance' => 'media', 'why' => 'Debugger, descompilador, ofuscação e sandbox: o tema da discursiva de 2025.'],
+                ['subject' => 'computacao-forense', 'name' => 'Computação forense', 'importance' => 'alta', 'why' => 'Coleta, preservação e exame de vestígios digitais: 17 dos 70 itens específicos em 2025.'],
+                ['subject' => 'ia-governanca-e-legislacao-de-ti', 'name' => 'IA, governança e legislação de TI', 'importance' => 'baixa', 'why' => 'Aprendizado de máquina, deepfakes, ITIL, Lei 14.133 e Marco Civil: pouco, mas sempre aparece.'],
+                ['subject' => 'discursiva-de-perito', 'name' => 'Discursiva de perito', 'importance' => 'alta', 'why' => 'O texto de 30 linhas vale 20 pontos: é treinado escrevendo, com os quesitos da banca.'],
+                ['subject' => 'treino-saude-e-alimentacao', 'name' => 'Treino, saúde e alimentação', 'why' => 'O teste físico elimina: barra, impulsão, 50 metros de natação e 2.300 metros em 12 minutos.'],
+            ],
+        ],
     ],
 
     'areas' => [

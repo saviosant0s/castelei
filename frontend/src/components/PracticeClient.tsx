@@ -7,6 +7,7 @@ import { motion } from "motion/react";
 import { BadgeMedal } from "@/components/illustrations/BadgeMedal";
 import { CountUp } from "@/components/app/CountUp";
 import { Confetti } from "@/components/Confetti";
+import { JudgeQuestion } from "@/components/JudgeQuestion";
 import { MatchQuestion } from "@/components/MatchQuestion";
 import { OrderQuestion } from "@/components/OrderQuestion";
 import { QuestionStatement } from "@/components/QuestionStatement";
@@ -375,8 +376,10 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
               {DIFFICULTY_LABEL[question.difficulty]}
             </span>
           )}
+          {/* A questão é nossa; a referência diz que o assunto caiu de verdade, e onde. */}
+          {question.exam_ref && <span className="text-xs text-content-subtle">Inspirada em {question.exam_ref}</span>}
         </p>
-        <QuestionStatement statement={question.statement} />
+        <QuestionStatement statement={question.statement} compact={question.format === "judge"} />
 
         {escrita ? (
           <WritingStep
@@ -414,6 +417,13 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
             onChange={setOrdering}
             disabled={phase !== "answering" || busy}
             correctOrder={phase === "feedback" ? (feedback?.correct_order ?? null) : null}
+          />
+        ) : question.format === "judge" ? (
+          <JudgeQuestion
+            selected={selected}
+            onSelect={setSelected}
+            disabled={phase !== "answering" || busy}
+            feedback={phase === "feedback" ? feedback : null}
           />
         ) : (
           <ul className="mt-6 space-y-3">
@@ -459,7 +469,9 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
                   {feedback.is_correct
                     ? "Acertou!"
                     : pulou
-                      ? "Você pulou esta"
+                      ? question.format === "judge"
+                        ? "Em branco: zero ponto"
+                        : "Você pulou esta"
                       : feedback.correct_order
                         ? "A ordem não era essa"
                         : "Não foi dessa vez"}
@@ -472,7 +484,12 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
               </div>
               {!feedback.is_correct && !feedback.correct_order && !feedback.correct_pairs && feedback.correct_index !== null && (
                 <p className="mt-1 text-base">
-                  Gabarito: <strong>{optionLetter(feedback.correct_index)}) {question.options[feedback.correct_index]}</strong>
+                  Gabarito:{" "}
+                  <strong>
+                    {question.format === "judge"
+                      ? question.options[feedback.correct_index]
+                      : `${optionLetter(feedback.correct_index)}) ${question.options[feedback.correct_index]}`}
+                  </strong>
                 </p>
               )}
               <p className="mt-3 text-base leading-relaxed">{feedback.explanation}</p>
@@ -496,7 +513,7 @@ export function PracticeClient({ source }: { source: PracticeSource }) {
           {phase === "answering" ? (
             <>
               <button type="button" className="btn btn-ghost border-2 border-ink/15" disabled={busy} onClick={() => submit(null)}>
-                <SkipForward className="size-5" aria-hidden="true" /> Pular
+                <SkipForward className="size-5" aria-hidden="true" /> {question.format === "judge" ? "Em branco" : "Pular"}
               </button>
               {question.format === "match" ? (
                 <button
@@ -639,6 +656,21 @@ export function ResultView({
           className="mt-3"
         />
       </div>
+
+      {/* Itens de certo ou errado: a nota do jeito do Cebraspe, em que o erro tira ponto.
+          O acerto em porcentagem esconde isso, e é essa conta que decide a prova. */}
+      {result.judge && (
+        <p className="mt-4 text-base">
+          Na conta do Cebraspe:{" "}
+          <strong className={result.judge.net > 0 ? "text-sage" : "text-content"}>
+            {result.judge.net} {Math.abs(result.judge.net) === 1 ? "ponto" : "pontos"}
+          </strong>{" "}
+          <span className="text-content-secondary">
+            ({result.judge.right} certos menos {result.judge.wrong} {result.judge.wrong === 1 ? "errado" : "errados"}
+            {result.judge.blank > 0 ? `, ${result.judge.blank} em branco` : ""})
+          </span>
+        </p>
+      )}
 
       {resumo.length > 0 && (
         <dl className="mt-6 flex divide-x divide-ink/10 rounded-2xl bg-surface-raised shadow-lift">

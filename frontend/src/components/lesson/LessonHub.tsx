@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { IncidenceTag } from "@/components/IncidenceTag";
 import { BookOpen, ChevronDown, ListChecks, X } from "lucide-react";
 import { LessonVideo } from "@/components/LessonVideo";
 import { dominada } from "@/components/LessonStepper";
@@ -56,6 +57,8 @@ export function LessonHub({ lesson }: { lesson: LessonDetail }) {
       </header>
 
       <h1 className="mt-6 text-3xl">{lesson.title}</h1>
+      {/* O quanto o assunto cai na prova, quando a lição sabe (contado nas provas reais). */}
+      {lesson.incidence && <IncidenceTag incidence={lesson.incidence} className="mt-2 text-sm" />}
       <p className="mt-3 text-base leading-relaxed text-content-secondary">{lesson.summary}</p>
 
       {dominada(lesson.mastery) && (

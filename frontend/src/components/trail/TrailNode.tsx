@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { BookOpen, Check, Lock, Star } from "lucide-react";
+import { IncidenceTag } from "@/components/IncidenceTag";
+import { INCIDENCE_LABEL } from "@/lib/types";
 import { TrailLabel } from "./TrailLabel";
 import { TrailResume } from "./TrailResume";
 import { NODE, ROW, type TrailAccent, type TrailLesson, labelSide, stars } from "@/lib/lesson-trail";
@@ -59,7 +61,8 @@ export function TrailNode({ item, index, accent }: { item: TrailLesson; index: n
       href={`/licao/${lesson.id}`}
       aria-label={
         `Lição ${lesson.position}: ${lesson.title} — ${trancada ? "trancada, veja a anterior antes" : words[state]}` +
-        (ganhas ? `, ${ganhas} de 3 estrelas` : "")
+        (ganhas ? `, ${ganhas} de 3 estrelas` : "") +
+        (lesson.incidence ? `, ${INCIDENCE_LABEL[lesson.incidence].toLowerCase()} na prova` : "")
       }
       className="group absolute inset-x-0 outline-none"
       style={{ top: index * ROW, height: NODE }}
@@ -104,6 +107,16 @@ export function TrailNode({ item, index, accent }: { item: TrailLesson; index: n
         {state === "atual" && (
           <span className="mt-1.5 inline-block rounded-pill bg-surface-bold px-2.5 py-0.5 text-[0.625rem] font-bold tracking-wide text-on-bold uppercase">
             Agora
+          </span>
+        )}
+
+        {/* O quanto cai na prova só importa para o que ainda vai ser estudado:
+            na atual vai ao lado do "Agora", na que falta ocupa a linha vazia.
+            Na concluída e na lida a linha já tem dono, e a altura da trilha é fixa. */}
+        {lesson.incidence && state === "atual" && <IncidenceTag incidence={lesson.incidence} className="ml-2 align-middle" />}
+        {lesson.incidence && state === "adiante" && (
+          <span className="mt-1 block" aria-hidden="true">
+            <IncidenceTag incidence={lesson.incidence} />
           </span>
         )}
 

@@ -128,6 +128,8 @@ class CatalogController extends Controller
                         'position' => $lesson->position,
                         // Nome do módulo, sem número: a trilha numera pela ordem.
                         'module' => $lesson->module,
+                        // O quanto o assunto cai na prova (alta, media, baixa), quando se sabe.
+                        'incidence' => $lesson->incidence,
                         'questions_total' => $total,
                         'questions_available' => $limit === null ? $total : min($limit, $total),
                         'attempts' => $stat ? (int) $stat->attempts : 0,
@@ -253,6 +255,7 @@ class CatalogController extends Controller
                 'id' => $lesson->id,
                 'title' => $lesson->title,
                 'summary' => $lesson->summary,
+                'incidence' => $lesson->incidence,
                 'steps' => $lesson->stepsOrFallback(),
                 'explanation' => $lesson->explanation,
                 'exam_style' => $lesson->exam_style,
