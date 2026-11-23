@@ -48,6 +48,7 @@ class SubjectExporter
             'title' => $lesson->title,
             // O nome do módulo, nunca o número: a trilha numera pela ordem.
             'module' => $lesson->module,
+            'incidence' => $lesson->incidence,
             'summary' => $lesson->summary,
             'steps' => $lesson->steps ?: null,
             'video' => $lesson->video ?: null,
@@ -64,7 +65,8 @@ class SubjectExporter
             'format' => $question->format === Question::FORMAT_CHOICE ? null : $question->format,
             'difficulty' => $question->difficulty,
             'statement' => $question->statement,
-            'options' => in_array($question->format, [Question::FORMAT_MATCH, Question::FORMAT_WRITING], true) ? null : $question->options,
+            // A de julgar não escreve as opções: são sempre Certo e Errado.
+            'options' => in_array($question->format, [Question::FORMAT_MATCH, Question::FORMAT_WRITING, Question::FORMAT_JUDGE], true) ? null : $question->options,
             'pairs' => $question->pairs,
             'writing' => $question->writing,
             // false é o padrão: só sai no arquivo quando liga.
@@ -79,9 +81,12 @@ class SubjectExporter
             */
             // Questão de ordenar não tem alternativa certa: o gabarito é a
             // ordem das opções, e um `correct_index` aqui só confundiria.
-            'correct_index' => in_array($question->format, [Question::FORMAT_ORDER, Question::FORMAT_WRITING], true) ? null : $question->correct_index,
+            'correct_index' => in_array($question->format, [Question::FORMAT_ORDER, Question::FORMAT_WRITING, Question::FORMAT_JUDGE], true) ? null : $question->correct_index,
+            // Na de julgar, o gabarito sai por extenso, como foi escrito.
+            'answer' => $question->isJudge() ? ($question->correct_index === 0 ? 'certo' : 'errado') : null,
             'explanation' => $question->explanation,
             'pitfall' => $question->pitfall,
+            'exam_ref' => $question->exam_ref,
         ];
 
         return array_filter($dados, fn ($valor) => $valor !== null);

@@ -1,4 +1,4 @@
-import type { Difficulty, LessonStep, QuestionFormat } from "@/lib/types";
+import type { Difficulty, Incidence, LessonStep, QuestionFormat } from "@/lib/types";
 
 /**
  * De onde vem o conteúdo de uma matéria.
@@ -69,6 +69,8 @@ export interface AdminQuestion {
   writing?: AdminWriting | null;
   /** Proposta que só o simulado usa. */
   exam_only?: boolean;
+  /** O item de prova real que inspirou a questão ("PF 2025, item 108"). */
+  exam_ref?: string | null;
 }
 
 /** A folha de uma questão de escrita, como o painel edita. */
@@ -91,6 +93,8 @@ export interface AdminLessonDetail {
   position: number;
   /** o assunto que agrupa a lição na trilha da matéria */
   module: string | null;
+  /** o quanto o assunto cai na prova; null = não marcado */
+  incidence?: Incidence | null;
   summary: string;
   steps: LessonStep[];
   subject: { id: number; slug: string; name: string; origin: SubjectOrigin };

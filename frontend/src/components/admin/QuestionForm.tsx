@@ -20,6 +20,7 @@ const VAZIA = {
   explanation: "",
   pitfall: "",
   difficulty: null,
+  exam_ref: null,
 };
 
 interface Props {
@@ -56,9 +57,12 @@ export function QuestionForm({ question, lessonId, onDone, onCancel }: Props) {
   );
   const ordenar = format === "order";
   const associar = format === "match";
+  // Certo ou errado (Cebraspe): as opções são fixas, e o rádio marca só o gabarito.
+  const julgar = format === "judge";
   const [explanation, setExplanation] = useState(inicial.explanation);
   const [pitfall, setPitfall] = useState(inicial.pitfall ?? "");
   const [difficulty, setDifficulty] = useState<Difficulty | "">(inicial.difficulty ?? "");
+  const [examRef, setExamRef] = useState(inicial.exam_ref ?? "");
 
   const [busy, setBusy] = useState(false);
   const [erro, setErro] = useState<string | null>(null);
@@ -83,10 +87,11 @@ export function QuestionForm({ question, lessonId, onDone, onCancel }: Props) {
       topic,
       format,
       statement,
-      ...(associar ? { pairs } : { options, correct_index: correct }),
+      ...(associar ? { pairs } : julgar ? { correct_index: correct > 1 ? 0 : correct } : { options, correct_index: correct }),
       explanation,
       pitfall: pitfall.trim() === "" ? null : pitfall,
       difficulty: difficulty === "" ? null : difficulty,
+      exam_ref: examRef.trim() === "" ? null : examRef.trim(),
     };
 
     try {
@@ -136,6 +141,7 @@ export function QuestionForm({ question, lessonId, onDone, onCancel }: Props) {
             ["choice", "Escolher uma alternativa", "Cinco opções, uma certa. É o formato da prova."],
             ["order", "Pôr os passos na ordem", "O app embaralha. Escreva na ordem CERTA."],
             ["match", "Ligar os pares", "Cada item da esquerda com o seu par."],
+            ["judge", "Certo ou errado", "Uma afirmação para julgar, como no Cebraspe."],
           ] as const).map(([valor, rotulo, dica]) => (
             <label
               key={valor}
@@ -211,7 +217,27 @@ export function QuestionForm({ question, lessonId, onDone, onCancel }: Props) {
         </fieldset>
       )}
 
-      <fieldset className={`space-y-2 ${associar ? "hidden" : ""}`}>
+      {julgar && (
+        <fieldset className="space-y-2">
+          <legend className="text-sm text-content-subtle">A afirmação do enunciado está…</legend>
+          {campos.correct_index?.[0] && <p className="text-sm text-brick">{campos.correct_index[0]}</p>}
+          <div className="flex gap-2">
+            {(["Certo", "Errado"] as const).map((nome, valor) => (
+              <label
+                key={nome}
+                className={`flex-1 cursor-pointer rounded-control border-2 px-3 py-2 text-center text-base font-bold ${
+                  correct === valor ? "border-sage bg-sage-soft" : "border-ink/15"
+                }`}
+              >
+                <input type="radio" name="julgamento" checked={correct === valor} onChange={() => setCorrect(valor)} className="sr-only" />
+                {nome}
+              </label>
+            ))}
+          </div>
+        </fieldset>
+      )}
+
+      <fieldset className={`space-y-2 ${associar || julgar ? "hidden" : ""}`}>
         <legend className="text-sm text-content-subtle">
           {ordenar ? "Os passos, NA ORDEM CERTA — o app embaralha na tela" : "Alternativas — marque a certa"}
         </legend>
@@ -301,6 +327,14 @@ export function QuestionForm({ question, lessonId, onDone, onCancel }: Props) {
           </option>
         ))}
       </SelectField>
+
+      <TextField
+        label="Prova de onde veio"
+        value={examRef}
+        onChange={(event) => setExamRef(event.target.value)}
+        hint="Opcional. O item de prova real que inspirou a questão, como “PF 2025, item 108”. A questão é sua; isto só mostra que o assunto caiu."
+        error={campos.exam_ref?.[0]}
+      />
 
       <div className="flex gap-3">
         <Button peso="principal" onClick={salvar} disabled={busy}>

@@ -2,6 +2,9 @@
 
 namespace App\Support\Content;
 
+use App\Models\Lesson;
+use App\Models\Question;
+
 /**
  * Confere um arquivo de conteúdo antes de ele entrar no banco.
  *
@@ -107,6 +110,11 @@ class ContentValidator
             // Opcional: matéria curta não precisa de módulo. Quando existe, é
             // o nome do assunto ("Processos") — o número sai da ordem na tela.
             $this->optionalText($lesson['module'] ?? null, "{$path}.module", max: 60);
+            // Opcional: o quanto o assunto cai na prova, contado nas provas reais.
+            $incidencia = $lesson['incidence'] ?? null;
+            if ($incidencia !== null && ! in_array($incidencia, Lesson::INCIDENCES, true)) {
+                $this->error("{$path}.incidence", 'A importância precisa ser "alta", "media" ou "baixa", sem acento.');
+            }
             $this->text($lesson['summary'] ?? null, "{$path}.summary");
             // A aula em vídeo da lição: o mesmo formato do bloco de vídeo de uma etapa.
             $this->video($lesson['video'] ?? null, "{$path}.video");
@@ -615,11 +623,13 @@ class ContentValidator
             $this->text($question['statement'] ?? null, "{$qPath}.statement");
             $this->text($question['explanation'] ?? null, "{$qPath}.explanation");
             $this->optionalText($question['pitfall'] ?? null, "{$qPath}.pitfall");
+            // De qual item de prova real a questão saiu ("PF 2025, item 108").
+            $this->optionalText($question['exam_ref'] ?? null, "{$qPath}.exam_ref", max: 120);
 
             $formato = $question['format'] ?? 'choice';
 
-            if (! in_array($formato, ['choice', 'order', 'match', 'writing'], true)) {
-                $this->error("{$qPath}.format", 'O formato da questão precisa ser "choice" (alternativas), "order" (pôr na ordem), "match" (ligar os pares) ou "writing" (escrever).');
+            if (! in_array($formato, Question::FORMATS, true)) {
+                $this->error("{$qPath}.format", 'O formato da questão precisa ser "choice" (alternativas), "order" (pôr na ordem), "match" (ligar os pares), "writing" (escrever) ou "judge" (certo ou errado).');
 
                 continue;
             }
@@ -636,6 +646,22 @@ class ContentValidator
             // A questão de escrita não tem alternativa nem gabarito: tem roteiro, critérios e modelo.
             if ($formato === 'writing') {
                 $this->writing($question['writing'] ?? null, $qPath);
+
+                continue;
+            }
+
+            /*
+            | A de julgar não tem alternativas escritas: são sempre "Certo" e
+            | "Errado". O gabarito é a palavra, e não um índice, para quem
+            | escreve não ter de lembrar que 0 é Certo.
+            */
+            if ($formato === Question::FORMAT_JUDGE) {
+                if (! in_array($question['answer'] ?? null, ['certo', 'errado'], true)) {
+                    $this->error("{$qPath}.answer", 'A questão de certo ou errado precisa de "answer": "certo" ou "errado".');
+                }
+                if (isset($question['options']) || isset($question['correct_index'])) {
+                    $this->error("{$qPath}.options", 'A questão de certo ou errado não leva "options" nem "correct_index": as opções são sempre Certo e Errado, e o gabarito vai em "answer".');
+                }
 
                 continue;
             }

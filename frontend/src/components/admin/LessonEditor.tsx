@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
-import { Aviso, Button, TextField } from "@/components/admin/Form";
+import { Aviso, Button, SelectField, TextField } from "@/components/admin/Form";
 import { StepsEditor } from "@/components/admin/StepsEditor";
 import { ConfirmDelete } from "@/components/admin/ConfirmDelete";
 import { IssueList } from "@/components/admin/IssueList";
@@ -11,7 +11,7 @@ import { adminFetch, ContentError } from "@/lib/admin-client";
 import { ApiError, messageOf } from "@/lib/client";
 import { limpar } from "@/lib/steps";
 import type { AdminLessonDetail, ContentIssue } from "@/lib/admin-types";
-import type { LessonStep } from "@/lib/types";
+import { INCIDENCE_LABEL, type Incidence, type LessonStep } from "@/lib/types";
 
 /**
  * O texto da lição: título, resumo e as etapas.
@@ -59,6 +59,8 @@ export function LessonEditor({ lesson }: { lesson: AdminLessonDetail }) {
         body: {
           title: form.get("title"),
           module: form.get("module"),
+          // Vazio quer dizer "não marcado": o servidor guarda nulo.
+          incidence: form.get("incidence") || null,
           summary: form.get("summary"),
           // `limpar` tira campo opcional vazio: sem isso o arquivo exportado
           // encheria de `caption: ""` e `label: ""`, que é ruído para quem lê.
@@ -108,6 +110,20 @@ export function LessonEditor({ lesson }: { lesson: AdminLessonDetail }) {
             hint="O assunto que agrupa a lição na trilha, ex.: Processos. Lições seguidas com o mesmo nome viram um módulo. Deixe em branco para ficar fora."
             error={campos.module?.[0]}
           />
+          <SelectField
+            label="Quanto cai na prova"
+            name="incidence"
+            defaultValue={lesson.incidence ?? ""}
+            hint="Opcional. Sai da contagem de itens das provas reais. A trilha e a tela da lição mostram como “Cai muito”, “Cai às vezes” ou “Cai pouco”."
+            error={campos.incidence?.[0]}
+          >
+            <option value="">Não marcado</option>
+            {(Object.keys(INCIDENCE_LABEL) as Incidence[]).map((nivel) => (
+              <option key={nivel} value={nivel}>
+                {INCIDENCE_LABEL[nivel]}
+              </option>
+            ))}
+          </SelectField>
           <TextField
             label="Resumo"
             name="summary"

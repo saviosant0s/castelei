@@ -8,6 +8,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Lesson extends Model
 {
+    /**
+     * O quanto o assunto da lição cai na prova. Sai da contagem de itens das
+     * provas reais (ver docs/trilha-perito.md); lição sem marca não mostra nada.
+     */
+    public const INCIDENCES = ['alta', 'media', 'baixa'];
+
     protected $guarded = [];
 
     protected function casts(): array

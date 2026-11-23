@@ -40,7 +40,17 @@ export interface LessonSummary {
   locked?: boolean;
   /** questões por nível (só os que existem); vazio = lição sem nível */
   levels?: Partial<Record<Difficulty, number>>;
+  /** o quanto o assunto cai na prova, contado nas provas reais; null = não se sabe */
+  incidence?: Incidence | null;
 }
+
+/**
+ * O quanto um assunto cai na prova, contado nas provas reais (ver
+ * docs/trilha-perito.md). Vale para a lição e para o passo de uma trilha.
+ */
+export type Incidence = "alta" | "media" | "baixa";
+
+export const INCIDENCE_LABEL: Record<Incidence, string> = { alta: "Cai muito", media: "Cai às vezes", baixa: "Cai pouco" };
 
 /** Situação do simulado de uma matéria. `unlocked` false = existe, mas o plano não inclui. */
 export interface ExamAvailability {
@@ -75,6 +85,8 @@ export interface TrailStep {
   name: string;
   /** Por que este passo vem aqui, numa frase. */
   why: string;
+  /** O quanto o passo cai na prova. Sem a chave, a tela não diz nada. */
+  importance?: Incidence;
 }
 
 /** Uma ordem de estudo que atravessa áreas, como "LLMs do zero". */
@@ -194,6 +206,8 @@ export interface LessonDetail {
   read?: boolean;
   /** Aula em vídeo da lição (YouTube), oferecida na tela da lição. */
   video?: LessonVideoInfo | null;
+  /** O quanto o assunto cai na prova. */
+  incidence?: Incidence | null;
 }
 
 /** Uma aula em vídeo: o link do YouTube (ou arquivo), o título e o canal de quem fez. */
@@ -217,8 +231,10 @@ export const DIFFICULTY_LABEL: Record<Difficulty, string> = { facil: "Fácil", m
  * chega embaralhado.
  * `writing`: escrever uma parte de um texto. Não tem gabarito: o roteiro vem
  * em `writing`, e o texto-modelo só chega depois de a pessoa conferir.
+ * `judge`: julgar uma afirmação, como no Cebraspe. As opções são sempre
+ * "Certo" e "Errado", nessa ordem e sem sorteio.
  */
-export type QuestionFormat = "choice" | "order" | "match" | "writing";
+export type QuestionFormat = "choice" | "order" | "match" | "writing" | "judge";
 
 export interface PracticeQuestion {
   id: number;
@@ -233,6 +249,8 @@ export interface PracticeQuestion {
   prompts?: string[];
   /** Só na questão de escrita: o roteiro, o tamanho e as conferências da forma. */
   writing?: WritingBrief;
+  /** O item de prova real que inspirou a questão ("PF 2025, item 108"). */
+  exam_ref?: string;
 }
 
 /** O que a conferência de um texto devolve. Não grava nada: dá para conferir de novo. */
@@ -340,6 +358,11 @@ export interface FinishResult {
   gamification: ResultGamification | null;
   /** Quantas questões desta lição estão erradas agora, contando esta tentativa. */
   wrong_count?: number;
+  /**
+   * A nota do jeito do Cebraspe, só dos itens de certo ou errado: certo vale
+   * um, errado tira um, em branco vale zero. Nulo quando não há item de julgar.
+   */
+  judge?: { right: number; wrong: number; blank: number; net: number } | null;
 }
 
 export interface TopicStat {

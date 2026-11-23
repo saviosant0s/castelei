@@ -1046,6 +1046,10 @@ for (const file of arquivos) {
   for (const lesson of subject.lessons) {
     lessonCount++;
     const L = `${subject.name} › ${lesson.title}`;
+    // O quanto o assunto cai na prova: só as três palavras, sem acento.
+    if (lesson.incidence !== undefined && !["alta", "media", "baixa"].includes(lesson.incidence)) {
+      fail(L, `importância "${lesson.incidence}" não existe: use alta, media ou baixa`);
+    }
     const steps = lesson.steps ?? [];
     if (steps.length < 6) fail(L, `poucas etapas (${steps.length}); use pelo menos 6`);
     if (steps[0]?.kind !== "idea") fail(L, "a primeira etapa deve ser “idea” (analogia antes de definição)");
@@ -1169,8 +1173,22 @@ for (const file of arquivos) {
       | resposta é uma alternativa), e escrever a ordem já embaralhada,
       | achando que o arquivo é o que a pessoa vai ver.
       */
-      if (q.format && !["choice", "order", "match", "writing"].includes(q.format)) {
-        fail(W, `formato inválido “${q.format}”: use “choice”, “order”, “match” ou “writing”`);
+      if (q.format && !["choice", "order", "match", "writing", "judge"].includes(q.format)) {
+        fail(W, `formato inválido “${q.format}”: use “choice”, “order”, “match”, “writing” ou “judge”`);
+      }
+      /*
+      | A questão de certo ou errado (Cebraspe).
+      |
+      | As opções são sempre Certo e Errado, e o gabarito vai por extenso em
+      | `answer`. Escrever `options` ou `correct_index` aqui é sinal de que a
+      | questão foi copiada de uma de alternativas e não foi adaptada.
+      */
+      if (q.format === "judge") {
+        if (!["certo", "errado"].includes(q.answer)) fail(W, "questão de certo ou errado precisa de answer: \"certo\" ou \"errado\"");
+        if (q.options || q.correct_index !== undefined) fail(W, "questão de certo ou errado não leva options nem correct_index: o gabarito vai em answer");
+      }
+      if (q.exam_ref !== undefined && (typeof q.exam_ref !== "string" || !q.exam_ref.trim() || q.exam_ref.length > 120)) {
+        fail(W, "exam_ref precisa ser um texto curto, como “PF 2025, item 108”");
       }
       if (q.exam_only && q.format !== "writing") fail(W, "só a questão de escrita pode ser exclusiva do simulado");
       if (q.difficulty != null && !["facil", "media", "dificil"].includes(q.difficulty)) fail(W, `nível "${q.difficulty}" não existe: use facil, media ou dificil`);

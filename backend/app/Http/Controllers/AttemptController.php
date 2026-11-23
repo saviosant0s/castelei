@@ -173,6 +173,8 @@ class AttemptController extends Controller
             // A etiqueta de nível na tela. Sem nível, nada aparece.
             'difficulty' => $question->difficulty,
             'topic' => $question->topic,
+            // O item de prova real que inspirou a questão ("PF 2025, item 108").
+            'exam_ref' => $question->exam_ref,
             'statement' => $question->statement,
             'options' => $options,
             // Só a questão de associar tem coluna da esquerda.
@@ -264,7 +266,12 @@ class AttemptController extends Controller
         | Guardamos e conferimos a posição ORIGINAL, a do conteúdo — assim a
         | resposta gravada continua valendo se a ordem na tela mudar.
         */
-        $mostradas = $sequencia ? [] : StepShuffle::display($attempt->id, $question->id, count($question->options));
+        // A de julgar não embaralha: Certo e Errado ficam sempre no mesmo lugar, como na prova.
+        $mostradas = match (true) {
+            $sequencia => [],
+            $question->isJudge() => array_keys($question->options),
+            default => StepShuffle::display($attempt->id, $question->id, count($question->options)),
+        };
         if ($selected !== null) {
             $selected = $mostradas[$selected];
         }
@@ -468,6 +475,39 @@ class AttemptController extends Controller
         }
     }
 
+    /**
+     * A nota do jeito do Cebraspe, só das questões de certo ou errado.
+     *
+     * Na prova, cada item certo vale um ponto, cada errado tira um, e o item
+     * em branco vale zero. Quem chuta tudo tende a zero, e saber deixar em
+     * branco é parte da prova. O acerto comum (certos sobre o total) esconde
+     * isso; por isso a tentativa que tem itens de julgar mostra também a
+     * nota líquida. Sem itens de julgar, nada muda.
+     *
+     * @return array{right: int, wrong: int, blank: int, net: int}|null
+     */
+    public static function judgeScore(Attempt $attempt): ?array
+    {
+        $ids = Question::query()->whereIn('id', $attempt->allowedQuestionIds())
+            ->where('format', Question::FORMAT_JUDGE)->pluck('id');
+
+        if ($ids->isEmpty()) {
+            return null;
+        }
+
+        $respostas = $attempt->answers()->whereIn('question_id', $ids)->get(['is_correct', 'selected_index']);
+        $certos = $respostas->where('is_correct', true)->count();
+        // Errado é o que foi marcado e não bateu; o que ficou sem marca é branco.
+        $errados = $respostas->filter(fn ($r) => ! $r->is_correct && $r->selected_index !== null)->count();
+
+        return [
+            'right' => $certos,
+            'wrong' => $errados,
+            'blank' => $ids->count() - $certos - $errados,
+            'net' => $certos - $errados,
+        ];
+    }
+
     private function ensureOwner(Request $request, Attempt $attempt): void
     {
         abort_unless((int) $attempt->user_id === (int) $request->user()->id, 404);
@@ -526,6 +566,7 @@ class AttemptController extends Controller
             'weak_topic' => $weakTopic,
             'next_lesson' => $next ? ['id' => $next->id, 'title' => $next->title] : null,
             'limited_by_plan' => $lesson !== null && $lesson->questions()->where('exam_only', false)->count() > $attempt->total_questions,
+            'judge' => self::judgeScore($attempt),
             // Quantas desta lição estão erradas AGORA, contando esta tentativa. A tela oferece refazer só elas.
             'wrong_count' => $lesson !== null ? count(self::wrongQuestionIds($attempt->user_id, $lesson)) : 0,
         ];

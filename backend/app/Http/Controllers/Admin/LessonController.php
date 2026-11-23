@@ -10,6 +10,7 @@ use App\Support\Content\ContentImporter;
 use App\Support\Content\ContentValidator;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class LessonController extends Controller
 {
@@ -24,6 +25,7 @@ class LessonController extends Controller
                 'title' => $lesson->title,
                 'position' => $lesson->position,
                 'module' => $lesson->module,
+                'incidence' => $lesson->incidence,
                 'summary' => $lesson->summary,
                 'steps' => $lesson->steps ?? [],
                 'subject' => [
@@ -43,6 +45,7 @@ class LessonController extends Controller
             'slug' => ['required', 'string', 'max:80', 'regex:/^[a-z0-9]+(?:-[a-z0-9]+)*$/'],
             'title' => ['required', 'string', 'max:160'],
             'module' => ['nullable', 'string', 'max:60'],
+            'incidence' => ['nullable', Rule::in(Lesson::INCIDENCES)],
             'summary' => ['required', 'string'],
             'steps' => ['required', 'array', 'min:1'],
         ], self::messages());
@@ -63,6 +66,7 @@ class LessonController extends Controller
             'slug' => $data['slug'],
             'title' => $data['title'],
             'module' => self::module($data['module'] ?? null),
+            'incidence' => $data['incidence'] ?? null,
             'summary' => $data['summary'],
             'steps' => $data['steps'],
             'position' => (int) $subject->lessons()->max('position') + 1,
@@ -83,6 +87,7 @@ class LessonController extends Controller
         $data = $request->validate([
             'title' => ['required', 'string', 'max:160'],
             'module' => ['nullable', 'string', 'max:60'],
+            'incidence' => ['nullable', Rule::in(Lesson::INCIDENCES)],
             'summary' => ['required', 'string'],
             'steps' => ['required', 'array', 'min:1'],
         ], self::messages());
@@ -97,6 +102,10 @@ class LessonController extends Controller
             'summary' => $data['summary'],
             'steps' => $data['steps'],
         ] + ContentImporter::legacyFields($data['steps']));
+        // Só muda quando o formulário manda: tela antiga que não conhece o campo não o apaga.
+        if ($request->exists('incidence')) {
+            $lesson->incidence = $data['incidence'] ?? null;
+        }
 
         $lesson->save();
         $lesson->subject->takeOverByPanel();

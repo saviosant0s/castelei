@@ -19,7 +19,18 @@ class Question extends Model
     /** Escrever uma parte de um texto (ou o texto inteiro, no simulado). Não tem gabarito. */
     public const FORMAT_WRITING = 'writing';
 
-    public const FORMATS = [self::FORMAT_CHOICE, self::FORMAT_ORDER, self::FORMAT_MATCH, self::FORMAT_WRITING];
+    /**
+     * Julgar uma afirmação como certa ou errada, como no Cebraspe (PF, PRF e
+     * muitas polícias). As opções são sempre "Certo" e "Errado", nessa ordem
+     * e sem embaralhar: na prova elas não mudam de lugar, e o treino tem de
+     * ser igual. A certa é guardada em `correct_index` (0 = Certo, 1 = Errado).
+     */
+    public const FORMAT_JUDGE = 'judge';
+
+    public const FORMATS = [self::FORMAT_CHOICE, self::FORMAT_ORDER, self::FORMAT_MATCH, self::FORMAT_WRITING, self::FORMAT_JUDGE];
+
+    /** As duas opções de uma questão de julgar, na ordem fixa. */
+    public const JUDGE_OPTIONS = ['Certo', 'Errado'];
 
     /** Níveis de dificuldade. Opcional: questão sem nível não mostra etiqueta. */
     public const LEVELS = ['facil', 'media', 'dificil'];
@@ -35,6 +46,11 @@ class Question extends Model
             'exam_only' => 'boolean',
             'correct_index' => 'integer',
         ];
+    }
+
+    public function isJudge(): bool
+    {
+        return $this->format === self::FORMAT_JUDGE;
     }
 
     public function isWriting(): bool
