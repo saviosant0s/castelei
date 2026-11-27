@@ -3,6 +3,66 @@
 Combinado com o Sávio em outubro de 2026. **Nada daqui foi implementado.** É o
 briefing para começar quando ele pedir, na ordem abaixo.
 
+## O próximo: o pacote Adobe (pedido do Sávio, novembro de 2026)
+
+**É a próxima coisa a fazer.** Nas palavras dele: "as próximas coisas que a
+gente vai fazer é com relação a isso". Ficou só anotado porque, no dia do
+pedido, ele estava sem limite de uso para escrever as lições.
+
+O pedido:
+
+- Ele vai comprar um PC e ter todos os aplicativos da Adobe. Quer aprender
+  principalmente **Illustrator e After Effects**. Photoshop ele já sabe um
+  pouco, mas pode ter a matéria também.
+- **Aprender fazendo, com um objetivo.** O tutorial do YouTube ensina "como
+  fazer tal coisa", mas na hora real ele não vê onde usar aquilo. Então a
+  teoria termina numa **tarefa prática com propósito**: "crie um logo para
+  tal coisa".
+- **A dificuldade sobe aos poucos.** No começo ele não sabe mexer em nada no
+  Illustrator, e a primeira tarefa tem que ser fácil.
+- Sem pressa: ele sabe que leva tempo.
+
+A proposta (confirmar com ele antes de escrever):
+
+- **Uma matéria por programa**, num grupo novo de Informática, "Pacote Adobe"
+  (`area_groups`). Cada programa tem uma lógica: o Illustrator desenha com
+  pontos e curvas, o Photoshop pinta pixels, o After Effects anima no tempo.
+  A ordem: Illustrator, After Effects, Photoshop (para fechar as lacunas de
+  quem já mexe) e, se ele quiser, Premiere e InDesign depois.
+- **Cada módulo termina num projeto**, com o briefing de um cliente inventado:
+  o que entregar, as restrições (duas cores, funcionar em preto e branco,
+  legível pequeno) e a lista de conferência. Os projetos sobem de nível e
+  conversam entre si. Um rascunho:
+  - Illustrator: o ícone de um app com formas simples; ícones de nuvem e de
+    cadeado, juntando e cortando formas; contornar um desenho com a Caneta;
+    um cartão de visita com texto; o **logo de uma padaria do bairro**,
+    colorido e em preto e branco; uma estampa de camiseta, exportada para a
+    web e para impressão.
+  - After Effects: um texto que entra na tela; o movimento com aceleração;
+    uma vinheta de cinco segundos; e **animar o logo da padaria** feito no
+    Illustrator. Usar o que ele mesmo fez é o que dá sentido ao exercício.
+- **O formato da tarefa prática ainda não existe.** Alternativa, ordenar,
+  ligar e certo ou errado não cobrem "faça um logo". O mais perto é a escrita:
+  roteiro antes, autoavaliação depois, e a parte conta como cumprida quando
+  todos os critérios são marcados. Um formato de **projeto** seguiria esse
+  molde: briefing, critérios, a pessoa faz no programa, volta e se avalia.
+  Mandar a imagem exportada para a IA corrigir é possível, mas custa por uso,
+  como a correção da escrita: decidir com ele, com limite por dia e só no Pro.
+- **Questões continuam onde cabem.** Qual ferramenta faz o quê e qual atalho
+  usar cabem em alternativa e em ligar os pares; o passo a passo de uma
+  técnica cabe em ordenar.
+- **O atalho diz o sistema** (regra 3): Ctrl no Windows, Cmd no Mac.
+- **A interface muda todo ano**, e a Adobe vem pondo IA (Firefly) em tudo.
+  Ensinar a lógica e escrever a versão com o ano, como Montar um PC faz com os
+  modelos de peça.
+- **Figuras nossas.** Captura de tela da Adobe é obra da Adobe. O esquema da
+  interface, as curvas e as camadas são desenhados por nós (regra 6).
+- **"Vetor" muda de sentido.** Na Álgebra Linear é a seta com tamanho e
+  direção; no Illustrator é o desenho feito de pontos e curvas. O escopo novo
+  do verificador define o sentido dele.
+- **Quem vê:** nasceu para ele, então pela regra do lançamento fica exclusiva
+  do Pro, como Montar um PC, a não ser que ele queira abrir.
+
 ## A ideia central: o gerador de cursos
 
 O Castelei como um "NotebookLM que ensina". A pessoa pesquisa um assunto (ou
@@ -160,6 +220,9 @@ o diferencial de verdade.
   passo a passo, e a ordem certa embaixo (`OrderQuestion`, `Gabarito`).
 
 ## Ordem combinada
+
+Antes de tudo, **o pacote Adobe** (seção no topo). As matérias novas da trilha
+de perito esperam as decisões do Sávio, listadas em `docs/trilha-perito.md`.
 
 1. ~~Refazer as estatísticas.~~ Feito.
 2. "Do slide à lição", só para admin. Usa o que já existe; o Sávio testa no
